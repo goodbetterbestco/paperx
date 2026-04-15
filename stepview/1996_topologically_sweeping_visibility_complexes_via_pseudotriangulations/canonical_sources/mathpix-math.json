@@ -1,0 +1,346 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p003-0013",
+      "kind": "display",
+      "display_latex": "X_{0}=\\left\\{(v, u) \\in B^{\\mathrm{or}} \\times \\mathcal{R} \\mid \\exp (u) \\text { is the unit vector along } v\\right\\} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 130.5,
+            "y0": 365.5,
+            "x1": 373.0,
+            "y1": 378.5,
+            "width": 242.5,
+            "height": 13.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0009",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\inf x \\preceq x \\preceq \\sup x, \\quad \\forall x \\in X_{1} \\cup X_{2}^{*}, \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 172.0,
+            "y0": 206.0,
+            "x1": 333.5,
+            "y1": 223.0,
+            "width": 161.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0025",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nt \\in X_{0} \\mapsto \\sup \\sup t \\in X_{0}, \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 196.0,
+            "y0": 608.5,
+            "x1": 302.5,
+            "y1": 620.5,
+            "width": 106.5,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0012",
+      "kind": "display",
+      "display_latex": "T=\\bigcup_{\\alpha \\in[0,1]} \\operatorname{seg}(t(\\alpha)) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 208.0,
+            "y0": 404.0,
+            "x1": 295.5,
+            "y1": 428.0,
+            "width": 87.5,
+            "height": 24.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0026",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nA^{+}=\\left\\{x \\in X_{0} \\mid y \\leq x \\text { for some } y \\in A\\right\\} . \\tag{3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 165.5,
+            "y0": 640.0,
+            "x1": 337.0,
+            "y1": 654.0,
+            "width": 171.5,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0005",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\hat{I}=\\left\\{x \\in X_{1} \\cup X_{2}^{*} \\mid \\sup x \\in I, \\inf x \\notin I\\right\\} \\cup\\{\\text { unbounded faces }\\} . \\tag{4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 117.5,
+            "y0": 120.5,
+            "x1": 384.0,
+            "y1": 138.0,
+            "width": 266.5,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0008",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nS(I)=\\left\\{b \\in I \\mid \\varphi^{-1}(b) \\notin I\\right\\} . \\tag{5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 187.5,
+            "y0": 158.5,
+            "x1": 317.0,
+            "y1": 176.0,
+            "width": 129.5,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0016",
+      "kind": "display",
+      "display_latex": "t, \\operatorname{succ}(t), \\operatorname{succ}^{2}(t), \\ldots .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 201.5,
+            "y0": 251.0,
+            "x1": 300.5,
+            "y1": 264.5,
+            "width": 99.0,
+            "height": 13.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0023",
+      "kind": "display",
+      "display_latex": "\\left\\{t, t^{\\prime}, \\operatorname{succ}(t), \\operatorname{succ}\\left(t^{\\prime}\\right), \\operatorname{succ}^{2}(t), \\operatorname{succ}^{2}\\left(t^{\\prime}\\right), \\ldots,\\right\\},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 152.0,
+            "y0": 347.5,
+            "x1": 350.5,
+            "y1": 362.0,
+            "width": 198.5,
+            "height": 14.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p020-0022",
+      "kind": "display",
+      "display_latex": "\\mathcal{D}(u)=\\{\\operatorname{death}(e) \\mid e \\text { is an edge of } \\Gamma(u) \\text { and death }(e)<\\pi\\} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 129.5,
+            "y0": 432.0,
+            "x1": 373.0,
+            "y1": 444.0,
+            "width": 243.5,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p034-0035",
+      "kind": "display",
+      "display_latex": "r-\\log r+1 \\geq\\left(r_{1}-\\log r_{1}\\right)+\\left(r_{2}-\\log r_{2}\\right)+\\log r_{2}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 34,
+          "bbox": {
+            "x0": 140.0,
+            "y0": 488.0,
+            "x1": 361.5,
+            "y1": 504.5,
+            "width": 221.5,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

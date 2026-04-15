@@ -1,0 +1,439 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "Kt = l r'",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 75.24,
+            "y0": 100.1,
+            "x1": 121.37,
+            "y1": 108.82,
+            "width": 46.13,
+            "height": 8.72
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "KTKt = K,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 75.42,
+            "y0": 145.01,
+            "x1": 123.96,
+            "y1": 153.61,
+            "width": 48.54,
+            "height": 8.6
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "dK_ -^app -CtKf -: j r",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 75.42,
+            "y0": 213.77,
+            "x1": 157.76,
+            "y1": 230.05,
+            "width": 82.34,
+            "height": 16.28
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "_dK_ ^app g ·",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 51.12,
+            "y0": 179.31,
+            "x1": 103.05,
+            "y1": 196.88,
+            "width": 51.93,
+            "height": 17.57
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "z(x, y) - \\(ax 2 + 2bxy + cy 2 )+ (third-order and higher terms). ( Al)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 76.5,
+            "y0": 307.54,
+            "x1": 438.55,
+            "y1": 317.33,
+            "width": 362.05,
+            "height": 9.79
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "dz ^- = ax + by + (second-order and higher terms) = 0, (A2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 76.86,
+            "y0": 343.58,
+            "x1": 437.83,
+            "y1": 361.43,
+            "width": 360.97,
+            "height": 17.85
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "ac- b 2 y 2 = \\Kxy 2 , (A3)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 102.24,
+            "y0": 434.8,
+            "x1": 437.05,
+            "y1": 451.97,
+            "width": 334.81,
+            "height": 17.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": "acb 2 Kt - j -· (A4)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 76.68,
+            "y0": 504.82,
+            "x1": 437.23,
+            "y1": 522.53,
+            "width": 360.55,
+            "height": 17.71
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "z = \\ax 2 = \\Ktx 2 , (A5)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 76.14,
+            "y0": 564.58,
+            "x1": 437.59,
+            "y1": 574.37,
+            "width": 361.45,
+            "height": 9.79
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "KT = a. (A6)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 76.14,
+            "y0": 601.8,
+            "x1": 437.41,
+            "y1": 609.65,
+            "width": 361.27,
+            "height": 7.85
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "2 _ (d 2 z dx 2 )(d 2 z by 2 )-(b 2 z dxdy) 2 KtKt-ac b -\\ + (dz dx) 2 +(dz by) 2 ~ K * ( A 7 )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 77.58,
+            "y0": 632.44,
+            "x1": 436.03,
+            "y1": 653.55,
+            "width": 358.45,
+            "height": 21.11
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "a. = arctan \\dKt)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 46.08,
+            "y0": 268.68,
+            "x1": 118.01,
+            "y1": 281.96,
+            "width": 71.93,
+            "height": 13.28
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0013",
+      "kind": "display",
+      "display_latex": "^app = COt a.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 45.9,
+            "y0": 356.58,
+            "x1": 104.07,
+            "y1": 363.56,
+            "width": 58.17,
+            "height": 6.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0014",
+      "kind": "display",
+      "display_latex": "^app = dK\\->",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 45.72,
+            "y0": 390.81,
+            "x1": 99.63,
+            "y1": 399.56,
+            "width": 53.91,
+            "height": 8.75
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0023",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\ng(\\mathbf{p})=(\\mathbf{c}-\\mathbf{p}) \\cdot \\mathbf{n} . \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 137.5,
+            "y0": 392.5,
+            "x1": 207.5,
+            "y1": 404.0,
+            "width": 70.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0066",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\operatorname{sign}\\left(\\left(\\mathbf{f}_{u} \\times \\mathbf{f}_{v}\\right) \\cdot(\\mathbf{c}-\\mathbf{f})\\right)=\\operatorname{sign} \\operatorname{det}\\left(\\mathbf{f}_{u}, \\mathbf{f}_{v},-\\mathbf{f}\\right) \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 357.5,
+            "y0": 552.0,
+            "x1": 520.5,
+            "y1": 563.5,
+            "width": 163.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0074",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\n\\operatorname{sign}\\left(\\left(\\mathbf{p}_{u} \\times \\mathbf{p}_{v}\\right) \\cdot(\\mathbf{c}-\\mathbf{p})\\right) & =\\operatorname{sign} \\operatorname{det}\\left(\\mathbf{p}_{u}, \\mathbf{p}_{v},-\\mathbf{p}\\right)  \\tag{3}\\\\\n& =\\operatorname{sign} \\operatorname{det}\\left(\\mathbf{f}_{u} z+\\mathbf{f} z_{u}, \\mathbf{f}_{v} z+\\mathbf{f} z_{v},-\\mathbf{f} z\\right)  \\tag{4}\\\\\n& =\\operatorname{sign} z^{3} \\operatorname{det}\\left(\\mathbf{f}_{u}, \\mathbf{f}_{v},-\\mathbf{f}\\right)  \\tag{5}\\\\\n& =\\operatorname{sign} \\operatorname{det}\\left(\\mathbf{f}_{u}, \\mathbf{f}_{v},-\\mathbf{f}\\right) \\tag{6}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 322.5,
+            "y0": 636.0,
+            "x1": 546.5,
+            "y1": 691.0,
+            "width": 224.0,
+            "height": 55.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

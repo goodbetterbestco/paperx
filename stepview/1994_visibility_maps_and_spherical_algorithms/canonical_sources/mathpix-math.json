@@ -1,0 +1,67 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0010",
+      "kind": "display",
+      "display_latex": "S=\\iint_{c} \\mathrm{~d} x \\mathrm{~d} y",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 63.5,
+            "y0": 165.5,
+            "x1": 121.0,
+            "y1": 202.5,
+            "width": 57.5,
+            "height": 37.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0013",
+      "kind": "display",
+      "display_latex": "V=\\int S \\mathrm{~d} z",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 64.5,
+            "y0": 251.0,
+            "x1": 109.5,
+            "y1": 280.0,
+            "width": 45.0,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

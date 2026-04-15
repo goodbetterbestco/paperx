@@ -1,0 +1,67 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p005-0083",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nl=\\left\\lceil\\left\\|\\mathbf{p}_{w}^{\\prime}-\\mathbf{q}_{w}^{\\prime}\\right\\| / k\\right\\rceil \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 397.0,
+            "y0": 682.0,
+            "x1": 476.5,
+            "y1": 696.0,
+            "width": 79.5,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0031",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathbf{s}=(s \\bmod w,\\lfloor s / w\\rfloor) \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 130.0,
+            "y0": 408.5,
+            "x1": 218.5,
+            "y1": 422.5,
+            "width": 88.5,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

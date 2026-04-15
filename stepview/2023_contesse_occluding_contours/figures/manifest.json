@@ -1,0 +1,532 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 1,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-1-p001.png",
+      "caption_text": "Fig. 1. Given (a) a smooth 3D surface S and a camera viewpoint, our method produces (b) a triangle mesh M where the occluding contour of the mesh accurately approximates the occluding contour of the smooth surface. Standard algorithms may then be used to extract (c) the view map of occluding contours, and to (d) stylize them. (Fertility courtesy UU from AIM@SHAPE-VISIONAIR Shape Repository).",
+      "figure_bbox": {
+        "x0": 53.82,
+        "y0": 161.09,
+        "x1": 509.04,
+        "y1": 273.1,
+        "width": 455.22,
+        "height": 112.01
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 280.8,
+        "x1": 561.07,
+        "y1": 308.88,
+        "width": 509.27,
+        "height": 28.08
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 2,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-2-p002.png",
+      "caption_text": "Fig. 2. Definition of occluding contour (or apparent contour) and occluding contour generator, for meshes (a) and smooth surfaces (b), from [BH\u00a73.4,7.2]. The occluding contour describes occlusion boundaries in the image. Through- out the paper, we use the follow color scheme: contour points are red , front-facing points are yellow , and back-facing points are blue .",
+      "figure_bbox": {
+        "x0": 59.58,
+        "y0": 67.1,
+        "x1": 561.47,
+        "y1": 164.29,
+        "width": 501.9,
+        "height": 97.19
+      },
+      "caption_bbox": {
+        "x0": 51.59,
+        "y0": 168.4,
+        "x1": 295.38,
+        "y1": 216.57,
+        "width": 243.79,
+        "height": 48.18
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_767",
+        "image_xref_772"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 2,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-3-p002.png",
+      "caption_text": "Fig. 3. Convex contour tessellation. (a) The input is a convex smooth sur- face viewed from a camera position c . The contour projects to a simple convex curve. (b) Naively converting the smooth surface to a triangle mesh produces a mesh for which the occluding contour projects to a curve with very different topology. The new topology can be badly behaved, leading to many visibility errors [B\u00e9nard et al. 2014].",
+      "figure_bbox": {
+        "x0": 42.63,
+        "y0": 47.97,
+        "x1": 577.48,
+        "y1": 167.27,
+        "width": 534.85,
+        "height": 119.3
+      },
+      "caption_bbox": {
+        "x0": 317.77,
+        "y0": 171.17,
+        "x1": 561.53,
+        "y1": 228.96,
+        "width": 243.76,
+        "height": 57.78
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_777",
+        "image_xref_779"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 2,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-4-p002.png",
+      "caption_text": "Fig. 4. Naive visibility. In this example, the occluding contour has been sam- pled into line segments, and then visibility for each segment was computed by a separate ray test against a dense triangulation of the surface. This naive strategy produces unreliable visibility, such as incorrect gaps in the contours. Most algorithms use a combination of heuristics that can greatly improve over a naive result, but they cannot remove all visibility errors. (Fertility by UU from AIM@SHAPE-VISIONAIR Shape Repository).",
+      "figure_bbox": {
+        "x0": 42.19,
+        "y0": 47.97,
+        "x1": 577.48,
+        "y1": 357.35,
+        "width": 535.28,
+        "height": 309.38
+      },
+      "caption_bbox": {
+        "x0": 317.72,
+        "y0": 348.26,
+        "x1": 561.52,
+        "y1": 416.01,
+        "width": 243.81,
+        "height": 67.75
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_777",
+        "image_xref_779"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 3,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-5-p003.png",
+      "caption_text": "Fig. 5. Steps of the convex surface tessellation algorithm. (a) Points are sampled along the smooth surface contour. These points are projected to a 2D polygon in image space. (b) The polygon is triangulated in image space. (c) 2D triangles are lifted to 3D, by projecting their vertices back onto the original surface, in both the front-facing and back-facing regions.",
+      "figure_bbox": {
+        "x0": 1.77,
+        "y0": 62.81,
+        "x1": 570.89,
+        "y1": 236.88,
+        "width": 569.11,
+        "height": 174.07
+      },
+      "caption_bbox": {
+        "x0": 51.57,
+        "y0": 251.1,
+        "x1": 295.27,
+        "y1": 298.92,
+        "width": 243.71,
+        "height": 47.82
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_777"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 5,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-6-p005.png",
+      "caption_text": "Fig. 6. The four categories of contour regions in 3D, and how they project to 2D. Each row shows a smooth surface from the camera view and from a side view (first and second columns) with the contour in red , the front-facing region in yellow , back-facing regions in blue , and cusps/singularities as red dots. A 2D projection of the front-facing region is shown (third column), with vertices sampled from the contour. The final column is meant to aid in understanding the 2D region; vertices are translated to unfold the region.",
+      "figure_bbox": {
+        "x0": 64.36,
+        "y0": 554.69,
+        "x1": 544.48,
+        "y1": 648.01,
+        "width": 480.12,
+        "height": 93.32
+      },
+      "caption_bbox": {
+        "x0": 51.57,
+        "y0": 525.57,
+        "x1": 560.48,
+        "y1": 563.43,
+        "width": 508.91,
+        "height": 37.86
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 5,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-7-p005.png",
+      "caption_text": "Fig. 7. Invalid curves. (a) An example in which sparsely-sampled points around a simple smooth curve produce an invalid 2D polygon (in grey). The polygon self-intersects, and cannot be triangulated without introducing a twist in the resulting 3D surface. In this case, adding a sample point (purple) makes the polygon valid. (b) A common case where the polygon is very skinny near a cusp, and undersampling introduces a loop near the cusp.",
+      "figure_bbox": {
+        "x0": 50.24,
+        "y0": 189.28,
+        "x1": 565.43,
+        "y1": 648.01,
+        "width": 515.18,
+        "height": 458.73
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 653.95,
+        "x1": 560.19,
+        "y1": 681.85,
+        "width": 508.39,
+        "height": 27.9
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 6,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-10-p006.png",
+      "caption_text": "Fig. 10. Elements of the proof of Theorem 2. See text for details.",
+      "figure_bbox": {
+        "x0": 67.89,
+        "y0": 201.19,
+        "x1": 282.89,
+        "y1": 248.3,
+        "width": 214.99,
+        "height": 47.12
+      },
+      "caption_bbox": {
+        "x0": 334.41,
+        "y0": 198.64,
+        "x1": 543.74,
+        "y1": 206.61,
+        "width": 209.33,
+        "height": 7.97
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 6,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-8-p006.png",
+      "caption_text": "Fig. 8. (a) Elements of the definition of Weakly Self-Overlapping (WSO), shown here with a self-overlapping polygon \ud835\udc43 . There exists a mesh \ud835\udc40 with disk topology and a map \ud835\udc53 such that \ud835\udc43 is the boundary of \ud835\udc53 ( \ud835\udc40 ) , and the mapping \ud835\udc53 ( \ud835\udc40 ) has no flipped triangles or spiral structures. (b) Elements of the WSOH definition. A set of polygons P = { \ud835\udc43 1 , \ud835\udc43 2 } form the boundary of a mapping \ud835\udc53 ( \ud835\udc40 ) , where \ud835\udc40 is a mesh with holes. Some vertices are numbered to show the correspondence. (Figure (a) from [Weber and Zorin 2014], used courtesy the authors.)",
+      "figure_bbox": {
+        "x0": 91.09,
+        "y0": 369.51,
+        "x1": 264.32,
+        "y1": 450.23,
+        "width": 173.22,
+        "height": 80.71
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 280.95,
+        "x1": 294.92,
+        "y1": 358.66,
+        "width": 243.11,
+        "height": 77.71
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 6,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-9-p006.png",
+      "caption_text": "Fig. 9. Rotations around a vertex in 2D. Let \u0398 be the sum of the angles adjacent to a vertex. (a) Normally, at interior vertices of a typical planar triangulation with positive orientation, there are no overlaps or folds, imply- ing \u0398 = 2 \ud835\udf0b . (b) A vertex where \u0398 = 4 \ud835\udf0b . We disallow this case in the WSOH definition.",
+      "figure_bbox": {
+        "x0": 50.67,
+        "y0": 71.79,
+        "x1": 574.84,
+        "y1": 450.23,
+        "width": 524.17,
+        "height": 378.43
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 457.54,
+        "x1": 295.37,
+        "y1": 505.36,
+        "width": 243.57,
+        "height": 47.82
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 8,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-11-p008.png",
+      "caption_text": "Fig. 11. Invalid contours with [B\u00e9nard et al . 2014]. (a) B\u00e9nard et al. produce highly refined contours using root-finding. Nonetheless, the contours may fail to be WSO. In the example here, a twist occurs in the sampling near a cusp, similar to the example in Figure 7(b). (b) In image-space, this twist is an extremely thin structure, nearly invisible even at the 1600 \u00d7 zoom shown here. (c) As a result, B\u00e9nard et al.\u2019s triangulation produces an inconsistent triangle in this region, shown in a side view highlighted in purple. This instance is occluded and thus does not affect visibility, but there is no guarantee that this will always be the case. For this example, the output includes 11 inconsistent triangles out of 546,624 that were generated. Our method produces 100% consistent triangles, generating only 55,476 triangles for this view (Figure 14), and performing substantially faster (2 minutes for our method, and 10 minutes for B\u00e9nard et al.) (Killeroo \u00a9 headus.com.au)",
+      "figure_bbox": {
+        "x0": 106.86,
+        "y0": 70.79,
+        "x1": 540.24,
+        "y1": 226.98,
+        "width": 433.38,
+        "height": 156.19
+      },
+      "caption_bbox": {
+        "x0": 51.57,
+        "y0": 213.49,
+        "x1": 561.07,
+        "y1": 281.24,
+        "width": 509.51,
+        "height": 67.75
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 9,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-13-p009.png",
+      "caption_text": "Fig. 13. Singularity side determination. (a) At a cusp, one of the two adjacent regions self-overlaps in image-space, i.e., the total rotation angle of the polygons \u0398 > 2 \ud835\udf0b . (b) In the tangent plane of a cusp on a smooth surface, the curve Laplacian points toward the smaller, non-overlapping region, which is back-facing (blue) in this example. (c) Since we are operating with a discrete mesh output, we compute the discrete curve Laplacian, and tag a singularity in the region (yellow) that it does not point to.",
+      "figure_bbox": {
+        "x0": 54.43,
+        "y0": 71.62,
+        "x1": 302.68,
+        "y1": 157.51,
+        "width": 248.25,
+        "height": 85.89
+      },
+      "caption_bbox": {
+        "x0": 51.52,
+        "y0": 163.95,
+        "x1": 294.92,
+        "y1": 231.7,
+        "width": 243.4,
+        "height": 67.75
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 11,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-14-p011.png",
+      "caption_text": "Fig. 14. Examples of the ConTesse algorithm applied to various surfaces and camera views. Each example is a commonly-used mesh in geometry processing, treated as a Catmull-Clark base mesh. (a) Camera view of the output mesh, (b) side view of the output mesh, (c) view graph (curve network) of the visible occluding contours of the output mesh, with cusps marked in orange and 2D intersections in green, and (d) occluding contours, after computing visibility. (Public domain Spot model by Keenan Crane, Killeroo \u00a9 headus.com.au.)",
+      "figure_bbox": {
+        "x0": 51.47,
+        "y0": 81.76,
+        "x1": 560.53,
+        "y1": 538.61,
+        "width": 509.05,
+        "height": 456.85
+      },
+      "caption_bbox": {
+        "x0": 51.57,
+        "y0": 546.53,
+        "x1": 561.42,
+        "y1": 584.39,
+        "width": 509.85,
+        "height": 37.86
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 12,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-15-p012.png",
+      "caption_text": "Fig. 15. Stylized versions of the contours from Figure 14, and results from three more models in our dataset. Note that we do not render mesh self-intersections. (Public domain Pig, ogre, and Spot models by Keenan Crane, Killeroo \u00a9 headus.com.au, Bigguy and Monster Frog \u00a9 Bay Raitt, Walking Man \u00a9 Ryan Dale.)",
+      "figure_bbox": {
+        "x0": 61.23,
+        "y0": 70.78,
+        "x1": 550.78,
+        "y1": 413.7,
+        "width": 489.55,
+        "height": 342.92
+      },
+      "caption_bbox": {
+        "x0": 51.57,
+        "y0": 418.33,
+        "x1": 561.42,
+        "y1": 436.27,
+        "width": 509.86,
+        "height": 17.93
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 13,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-16-p013.png",
+      "caption_text": "Fig. 16. Finer-resolution meshes may be obtained by increasing the number of initial subdivision levels. Here the torus was subdivided twice initially, as compared to once in Figure 14.",
+      "figure_bbox": {
+        "x0": 54.62,
+        "y0": 70.78,
+        "x1": 570.45,
+        "y1": 192.26,
+        "width": 515.82,
+        "height": 121.48
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 184.65,
+        "x1": 294.19,
+        "y1": 212.55,
+        "width": 242.38,
+        "height": 27.9
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 14,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-17-p014.png",
+      "caption_text": "Fig. 17. Computation time and output size for each of the inputs. These results are for generating front-faces only; output triangles for back-facing regions are not generated in these plots, since they would almost never be used in practice. Each dot represents one or more of the 1580 test cases (mesh, camera), with the number of subdivision rounds required for that case color-coded. The vertical strip of dots at 39,576 input triangles are different tests on the Angela mesh. The green diagonal line shows where unity values would occur on the plot (i.e., one input for one output). These computations were performed on a MacBook Pro M1, 3.2Ghz, 16Gb memory.",
+      "figure_bbox": {
+        "x0": 57.0,
+        "y0": 244.26,
+        "x1": 612.0,
+        "y1": 555.37,
+        "width": 555.0,
+        "height": 311.12
+      },
+      "caption_bbox": {
+        "x0": 51.59,
+        "y0": 198.28,
+        "x1": 561.42,
+        "y1": 246.1,
+        "width": 509.83,
+        "height": 47.82
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 14,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-18-p014.png",
+      "caption_text": "Fig. 18. Two views of the complex \u201cYeah, Right\u201d model, which has genus 131. (Public domain model by Keenan Crane.)",
+      "figure_bbox": {
+        "x0": 57.0,
+        "y0": 174.81,
+        "x1": 612.0,
+        "y1": 555.37,
+        "width": 555.0,
+        "height": 380.57
+      },
+      "caption_bbox": {
+        "x0": 111.61,
+        "y0": 560.01,
+        "x1": 500.39,
+        "y1": 567.98,
+        "width": 388.78,
+        "height": 7.97
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 15,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-19-p015.png",
+      "caption_text": "Fig. 19. Side view of the output triangulation of \u201cYeah, Right,\u201d for the left- most rendering in Figure 18",
+      "figure_bbox": {
+        "x0": 55.75,
+        "y0": 68.02,
+        "x1": 552.84,
+        "y1": 287.78,
+        "width": 497.09,
+        "height": 219.76
+      },
+      "caption_bbox": {
+        "x0": 51.81,
+        "y0": 272.49,
+        "x1": 295.37,
+        "y1": 290.43,
+        "width": 243.57,
+        "height": 17.93
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 15,
+      "image_path": "docs/2023_contesse_occluding_contours/figures/figure-20-p015.png",
+      "caption_text": "Fig. 20. The five cases of twists that we detect and resolve; see text for details.",
+      "figure_bbox": {
+        "x0": 324.62,
+        "y0": 68.02,
+        "x1": 552.84,
+        "y1": 300.2,
+        "width": 228.22,
+        "height": 232.19
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 307.69,
+        "x1": 560.34,
+        "y1": 325.62,
+        "width": 242.38,
+        "height": 17.93
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0083",
+      "kind": "display",
+      "display_latex": "\\left(\\begin{array}{l}\nx \\\\\ny \\\\\nz \\\\\n1\n\\end{array}\\right) \\rightarrow\\left(\\begin{array}{l}\nx_{c} \\\\\ny_{c} \\\\\nz_{c} \\\\\nw_{c}\n\\end{array}\\right):=\\left(\\begin{array}{cccc}\nP_{11} & 0 & 0 & 0 \\\\\n0 & P_{22} & 0 & 0 \\\\\n0 & 0 & P_{33} & P_{34} \\\\\n0 & 0 & -1 & 0\n\\end{array}\\right)\\left(\\begin{array}{l}\nx \\\\\ny \\\\\nz \\\\\n1\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 324.38,
+            "y0": 653.91,
+            "x1": 538.3,
+            "y1": 707.91,
+            "width": 213.92,
+            "height": 53.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0011",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\n& \\mathrm{P}: \\mathbb{R}^{3} \\rightarrow \\mathbb{R}^{2} \\quad w_{x}:=\\frac{P_{11} W}{2}, w_{y}:=\\frac{P_{22} H}{2} \\\\\n& (x, y, z) \\rightarrow(\\tilde{\\mathrm{x}}, \\tilde{\\mathrm{y}}):=\\left(w_{x} \\frac{x}{z}+c_{x}, w_{y} \\frac{y}{z}+c_{y}\\right) \\tag{1}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 64.48,
+            "y0": 193.47,
+            "x1": 260.9,
+            "y1": 242.47,
+            "width": 196.43,
+            "height": 48.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0015",
+      "kind": "display",
+      "display_latex": "\\mathbf{x}: U \\subsetneq \\mathbb{R}^{2} \\rightarrow \\mathbb{R}^{3} \\quad(u, v) \\rightarrow \\mathbf{x}(u, v):=\\left(\\begin{array}{l}\nx(u, v)  \\tag{2}\\\\\ny(u, v) \\\\\nz(u, v)\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 42.98,
+            "y0": 273.46,
+            "x1": 270.4,
+            "y1": 316.46,
+            "width": 227.41,
+            "height": 42.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0020",
+      "kind": "display",
+      "display_latex": "\\mathbf{x}(u, v):=\\sum_{i} \\sum_{j} \\mathbf{c}_{i j} b_{i}(u) b_{j}(v)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 92.97,
+            "y0": 352.45,
+            "x1": 232.91,
+            "y1": 381.95,
+            "width": 139.95,
+            "height": 29.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0023",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\gamma: T \\subsetneq \\mathbb{R} \\rightarrow U \\quad t \\rightarrow \\gamma(t):=(u(t), v(t)) . \\tag{3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 66.97,
+            "y0": 411.95,
+            "x1": 258.4,
+            "y1": 427.94,
+            "width": 191.43,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0080",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nV_{i}:=\\left\\{(u, v) \\in U, \\quad \\nu_{i} \\leq v<\\nu_{i+1}\\right\\} . \\tag{4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 353.87,
+            "y0": 484.94,
+            "x1": 509.81,
+            "y1": 500.43,
+            "width": 155.94,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0093",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n|\\tilde{\\mathrm{x}}(u, v)-\\tilde{\\mathrm{x}}(u, v+h)|=h\\left|\\tilde{\\mathrm{x}}_{v}\\left(u, v^{*}\\right)\\right|, \\quad \\tilde{\\mathrm{x}}_{v}:=\\frac{\\partial \\tilde{\\mathrm{x}}}{\\partial v} \\tag{5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 312.38,
+            "y0": 645.92,
+            "x1": 539.8,
+            "y1": 672.41,
+            "width": 227.41,
+            "height": 26.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0096",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\nh \\rho_{i}(v) & <1, \\quad v \\in\\left[\\nu_{i} . \\nu_{i+1}\\right]  \\tag{6}\\\\\n\\rho_{i}(v) & :=\\max \\left\\{\\sup _{u}\\left|\\tilde{\\mathrm{x}}_{v}(u, v)\\right|, \\sup _{u}\\left|\\tilde{\\mathrm{y}}_{v}(u, v)\\right|\\right\\}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 332.87,
+            "y0": 697.41,
+            "x1": 531.8,
+            "y1": 733.4,
+            "width": 198.93,
+            "height": 36.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0008",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mu_{i}:=\\left\\lceil\\left(\\nu_{i+1}-\\nu_{i}\\right) \\sup _{v \\in\\left[\\nu_{i} . . \\nu_{i+1}\\right]} \\rho_{i}(v)\\right\\rceil \\tag{7}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 87.97,
+            "y0": 327.46,
+            "x1": 237.41,
+            "y1": 350.45,
+            "width": 149.44,
+            "height": 23.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0023",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\tilde{\\mathbf{x}}_{v}=\\tilde{\\mathbf{x}}_{x} x_{v}+\\tilde{\\mathbf{x}}_{y} y_{v}+\\tilde{\\mathbf{x}}_{z} z_{v}=\\frac{w_{x}}{z}\\left(x_{v}-\\frac{x}{z} z_{v}\\right) \\tag{8}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 69.47,
+            "y0": 644.42,
+            "x1": 254.9,
+            "y1": 666.41,
+            "width": 185.43,
+            "height": 22.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0030",
+      "kind": "display",
+      "display_latex": "\\rho_{\\triangle}:=\\max _{k}\\left|\\frac{1}{z}\\right| \\max _{k}\\left|w_{x}\\left(x_{v}-\\frac{x}{z} z_{v}\\right)\\right|,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 83.97,
+            "y0": 739.4,
+            "x1": 242.41,
+            "y1": 766.9,
+            "width": 158.44,
+            "height": 27.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0033",
+      "kind": "display",
+      "display_latex": "\\left(\\nu_{i+1}-\\nu_{i}\\right) \\max _{\\triangle} \\rho_{\\triangle}, \\quad \\triangle \\cap V_{i} \\neq \\emptyset,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 353.87,
+            "y0": 324.96,
+            "x1": 510.81,
+            "y1": 343.46,
+            "width": 156.94,
+            "height": 18.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0040",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\rho_{\\alpha}:=\\max \\left\\{\\left|\\tilde{\\mathrm{x}}_{v}\\left(u_{\\alpha}, v_{\\alpha}\\right)\\right|,\\left|\\tilde{\\mathrm{y}}_{v}\\left(u_{\\alpha}, v_{\\alpha}\\right)\\right|\\right\\} \\tag{9}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 351.37,
+            "y0": 426.44,
+            "x1": 512.31,
+            "y1": 439.94,
+            "width": 160.94,
+            "height": 13.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0043",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mu_{i}:=\\left(\\nu_{i+1}-\\nu_{i}\\right) \\max _{\\alpha} \\rho_{\\alpha}, \\quad \\alpha \\in V_{i} . \\tag{10}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 351.37,
+            "y0": 461.94,
+            "x1": 512.31,
+            "y1": 479.44,
+            "width": 160.94,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0063",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\operatorname{base}_{i}+j, \\quad \\operatorname{base}_{i}:=\\sum_{k=1}^{i-1} \\mu_{k}, \\quad j:=\\frac{v-\\nu_{i}}{\\nu_{i+1}-\\nu_{i}} \\mu_{i}, \\tag{11}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 319.38,
+            "y0": 733.9,
+            "x1": 527.8,
+            "y1": 766.4,
+            "width": 208.42,
+            "height": 32.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

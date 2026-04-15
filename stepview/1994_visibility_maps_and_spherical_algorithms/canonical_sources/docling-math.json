@@ -1,0 +1,67 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "c",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 85.2,
+            "y0": 197.53,
+            "x1": 89.76,
+            "y1": 201.78,
+            "width": 4.56,
+            "height": 4.25
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "v=fSdz",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 66.24,
+            "y0": 248.59,
+            "x1": 126.3,
+            "y1": 278.82,
+            "width": 60.06,
+            "height": 30.23
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

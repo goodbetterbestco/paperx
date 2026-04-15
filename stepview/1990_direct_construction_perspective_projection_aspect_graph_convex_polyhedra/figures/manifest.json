@@ -1,0 +1,139 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 5,
+      "image_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-p005.png",
+      "caption_text": "FIG. 3. Object description and boundary surface representation for the truncated wedge.",
+      "figure_bbox": {
+        "x0": 30.6,
+        "y0": 60.95,
+        "x1": 734.4,
+        "y1": 657.42,
+        "width": 703.8,
+        "height": 596.47
+      },
+      "caption_bbox": {
+        "x0": 131.83,
+        "y0": 661.42,
+        "x1": 663.13,
+        "y1": 677.41,
+        "width": 531.31,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3-2",
+      "label": "3",
+      "page": 8,
+      "image_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-2-p008.png",
+      "caption_text": "Fig. 3. For simplicity, the parcellation graph is shown without auxiliary points.",
+      "figure_bbox": {
+        "x0": 30.6,
+        "y0": 60.95,
+        "x1": 734.4,
+        "y1": 805.29,
+        "width": 703.8,
+        "height": 744.34
+      },
+      "caption_bbox": {
+        "x0": 79.9,
+        "y0": 809.29,
+        "x1": 657.14,
+        "y1": 829.27,
+        "width": 577.25,
+        "height": 19.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 10,
+      "image_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-4-p010.png",
+      "caption_text": "FIG. 4. Parcellation graph for the truncated wedge.",
+      "figure_bbox": {
+        "x0": 30.6,
+        "y0": 60.95,
+        "x1": 359.55,
+        "y1": 399.65,
+        "width": 328.95,
+        "height": 338.7
+      },
+      "caption_bbox": {
+        "x0": 227.7,
+        "y0": 403.65,
+        "x1": 531.31,
+        "y1": 417.63,
+        "width": 303.6,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 10,
+      "image_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-5-p010.png",
+      "caption_text": "FiG. 5. A four-sided pyramid.",
+      "figure_bbox": {
+        "x0": 30.6,
+        "y0": 421.63,
+        "x1": 359.55,
+        "y1": 1053.07,
+        "width": 328.95,
+        "height": 631.44
+      },
+      "caption_bbox": {
+        "x0": 287.62,
+        "y0": 1057.07,
+        "x1": 471.38,
+        "y1": 1075.06,
+        "width": 183.76,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 14,
+      "image_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-6-p014.png",
+      "caption_text": "FIG. 6. Depiction of pattern of cell number generation. (Points of intersection in the row sets input",
+      "figure_bbox": {
+        "x0": 30.6,
+        "y0": 60.95,
+        "x1": 734.4,
+        "y1": 651.42,
+        "width": 703.8,
+        "height": 590.47
+      },
+      "caption_bbox": {
+        "x0": 99.87,
+        "y0": 655.42,
+        "x1": 689.1,
+        "y1": 671.41,
+        "width": 589.23,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

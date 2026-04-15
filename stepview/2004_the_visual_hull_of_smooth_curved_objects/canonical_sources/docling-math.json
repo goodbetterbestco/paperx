@@ -1,0 +1,470 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "[ p 1 ( u1 ,v 1 ) -p 2 ( u2 ,v 2 ) ] · n 1 ( u1 ,v 1 )=0 [ p 1 ( u1 ,v 1 ) -p 2 ( u2 ,v 2 ) ] · n 2 ( u2 ,v 2 )=0 (1) [[ p 1 ( u1 ,v 1 ) -p 2 ( u2 ,v 2 ) ]x n 1 ( u1 ,v 1 )] · n 2 ( u2 ,v 2 )=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 212.16,
+            "x1": 498.4,
+            "y1": 286.6,
+            "width": 413.4,
+            "height": 74.44
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "[ p 1 ( u1 ,v 1 ) -p 2 ( u2 ,v 2 ) ] · n 3 ( u3 ,v 3 )=0 [ p 2 ( u2 ,v 2 ) -p 3 ( u3 ,v 3 ) ] · n 2 ( u2 ,v 2 )=0 (2) [ p 3 ( u3 ,v 3 ) -p 1 ( u1 ,v 1 ) ] · n 1 ( u1 ,v 1 )=0 [ p 1 ( u1 ,v 1 ) -p 2 ( u2 ,v 2 ) ]x[ p 1 ( u1 ,v 1 ) -p 3 ( u3 ,v 3 ) ]=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 126.11,
+            "x1": 463.01,
+            "y1": 222.9,
+            "width": 378.01,
+            "height": 96.79
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "2z = k 1 ( p ) x 2 + k 2 ( p ) y 2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 427.72,
+            "x1": 191.5,
+            "y1": 443.7,
+            "width": 106.5,
+            "height": 15.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "k ( θ ) = k 1 ( p ) cos 2 θ + k 2 ( p ) sin 2 θ",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 180.28,
+            "x1": 232.28,
+            "y1": 196.48,
+            "width": 147.28,
+            "height": 16.2
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "| p 1' p | P | p p 2' | P < d 1 d 2 (*)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 56.68,
+            "y0": 70.44,
+            "x1": 250.59,
+            "y1": 86.08,
+            "width": 193.91,
+            "height": 15.64
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "| p 1' p | P | p p 2' | P = | p 1 p | | p 2 p |",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 56.68,
+            "y0": 156.84,
+            "x1": 209.92,
+            "y1": 172.48,
+            "width": 153.24,
+            "height": 15.64
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "d 1 d 2 = r 1 r 2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 56.68,
+            "y0": 216.11,
+            "x1": 120.85,
+            "y1": 230.1,
+            "width": 64.17,
+            "height": 13.99
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": "| p 1 p | | p 2 p | < r 1 r 2 (**)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 56.68,
+            "y0": 270.84,
+            "x1": 221.2,
+            "y1": 286.48,
+            "width": 164.52,
+            "height": 15.64
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "| p 1 p* | | p*p 2 | = r 1 r 2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 59.68,
+            "y0": 383.04,
+            "x1": 169.33,
+            "y1": 398.68,
+            "width": 109.65,
+            "height": 15.64
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "P 1 | p p 2' | P > d 2 that is | p 1 p | | p 2 p | < r 1 r 2 (*)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 378.64,
+            "x1": 285.99,
+            "y1": 474.16,
+            "width": 200.99,
+            "height": 95.52
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "| p 1 p* | | p 2 p* | = r 1 r 2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 572.52,
+            "x1": 193.69,
+            "y1": 588.16,
+            "width": 108.69,
+            "height": 15.64
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "n = t 1 x t 2= ( 0 1 k 1 ( p* ) x )x(1 0 k 2 ( p* ) y )) = (-k 1 ( p* ) x -k 2 ( p* ) y 1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 26,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 400.43,
+            "x1": 443.0,
+            "y1": 414.42,
+            "width": 358.0,
+            "height": 13.99
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0013",
+      "kind": "display",
+      "display_latex": "n ( p ) · pp' =(-k 1 ( p* ) x -k 2 ( p* ) y 1) · ( X' -x Y' -y ½( k 1 ( p* ) x 2 + k 2 ( p* ) y 2 )) =0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 26,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 482.2,
+            "x1": 496.45,
+            "y1": 498.4,
+            "width": 411.45,
+            "height": 16.2
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0014",
+      "kind": "display",
+      "display_latex": "k 1 ( p* ) X'x +( k 1 ( p* ) x 2 -k 2 ( p* ) Y' y + k 2 ( p* ) y 2 -½( k 1 ( p* ) x 2 + k 2 ( p* ) y 2 )=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 26,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 538.24,
+            "x1": 431.1,
+            "y1": 554.22,
+            "width": 346.1,
+            "height": 15.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0015",
+      "kind": "display",
+      "display_latex": "x y = - ( k 2 ( p* ) k 1 ( p* )) Y' X'",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 26,
+          "bbox": {
+            "x0": 85.0,
+            "y0": 595.43,
+            "x1": 218.32,
+            "y1": 609.42,
+            "width": 133.32,
+            "height": 13.99
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

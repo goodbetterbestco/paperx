@@ -1,0 +1,36 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p024-0012",
+      "kind": "display",
+      "display_latex": "C_{0}^{\\prime}=\\{h, k, m, n, b, f\\}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 24,
+          "bbox": {
+            "x0": 243.5,
+            "y0": 383.0,
+            "x1": 348.0,
+            "y1": 396.5,
+            "width": 104.5,
+            "height": 13.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

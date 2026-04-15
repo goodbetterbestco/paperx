@@ -1,0 +1,527 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-1-p003.png",
+      "caption_text": "Fig. 1. Left: A cubic B\u00e9zier triangle and its associated ordinates. Right: Labelling of control points in two adjacent triangles T and \u00af T . The control points V i correspond to vertices U i in parameter space.",
+      "figure_bbox": {
+        "x0": 92.09,
+        "y0": 54.56,
+        "x1": 436.89,
+        "y1": 184.25,
+        "width": 344.8,
+        "height": 129.7
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 194.28,
+        "x1": 502.39,
+        "y1": 213.06,
+        "width": 465.53,
+        "height": 18.78
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-2-p004.png",
+      "caption_text": "Fig. 2. Left: The Clough\u2013Tocher split performed on two macro-triangles T and \u00af T (thick edges) gives rise to six micro-triangles (thin edges): three per original triangle. Right: Labelling of control points in adjacent micro-triangles.",
+      "figure_bbox": {
+        "x0": 75.07,
+        "y0": 48.51,
+        "x1": 472.23,
+        "y1": 235.79,
+        "width": 397.16,
+        "height": 187.28
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 247.29,
+        "x1": 510.26,
+        "y1": 265.82,
+        "width": 469.11,
+        "height": 18.53
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-3-p006.png",
+      "caption_text": "Fig. 3. Left: If the data (position, marked by bullets, and gradients, marked by circles) at the six vertices U 1 , ..., U 6 surrounding T come from a common cubic, then the macro-patch corresponding to T constructed by FO or Ka reproduces that cubic. Right: If mid-edge gradients are known, as in MG o and MG i , cubic reproduction over T is guaranteed by the input data shown.",
+      "figure_bbox": {
+        "x0": 131.85,
+        "y0": 52.07,
+        "x1": 424.35,
+        "y1": 156.65,
+        "width": 292.5,
+        "height": 104.58
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 166.29,
+        "x1": 510.17,
+        "y1": 193.39,
+        "width": 469.01,
+        "height": 27.1
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 8,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-4-p008.png",
+      "caption_text": "Fig. 4. Triangulations shown in parameter space. Left: Without shape constraints (135 vertices, 160 triangles; CAD\ufb01x option DelC). Right: With aspect ratio constraints (443 vertices, 776 triangles; CAD\ufb01x option DelQ). Both triangulations were generated with the same error tolerance. Note that the error and aspect ratio criteria are satis\ufb01ed in 3D.",
+      "figure_bbox": {
+        "x0": 60.21,
+        "y0": 47.17,
+        "x1": 487.7,
+        "y1": 231.53,
+        "width": 427.49,
+        "height": 184.36
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 233.29,
+        "x1": 510.38,
+        "y1": 260.38,
+        "width": 469.23,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 10,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-5-p010.png",
+      "caption_text": "Fig. 5. Farin\u2019s cubic given in (26) . From left to right: Function values and gradients were sampled at a regular grid of 7 \u00d7 7 vertices over the unit square in parameter space; only the highlighted region is reconstructed to avoid boundary in\ufb02uence. A 3D view of the cubic with the triangular grid superimposed. Edges of individual micro-triangles ( Ka with Bary ). The cubic without the outer-most layer.",
+      "figure_bbox": {
+        "x0": 123.3,
+        "y0": 175.42,
+        "x1": 425.95,
+        "y1": 439.23,
+        "width": 302.65,
+        "height": 263.81
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 145.28,
+        "x1": 510.48,
+        "y1": 172.38,
+        "width": 469.32,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 10,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-6-p010.png",
+      "caption_text": "Fig. 6. Clough\u2013Tocher spline approximations of Farin\u2019s cubic; see Fig. 5 for setup. Rows from top to bottom: Re\ufb02ection lines, Gaussian curvature [\u2212 1 . 938 , 4 . 073 ] and mean curvature [\u2212 2 . 054 , 0 . 717 ] (the scale is the same across each row). Last row: Error plots on the common scale of [ 0 , 1 . 361 \u00b7 10 \u2212 4 ] , computed as function value differences. Observe that FO , MG o , MG i , and Ka all give the same result; this follows from the cubic precision of these con- structions. Barycentres were used as the split point Z in all cases.",
+      "figure_bbox": {
+        "x0": 105.59,
+        "y0": 52.47,
+        "x1": 451.93,
+        "y1": 439.23,
+        "width": 346.34,
+        "height": 386.76
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 451.75,
+        "x1": 510.19,
+        "y1": 487.42,
+        "width": 469.03,
+        "height": 35.67
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 11,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-7-p011.png",
+      "caption_text": "Fig. 7. Franke function (27) . From left to right: Shaded plot, re\ufb02ection lines on the input surface, a close-up, and an error plot for Ka with Bary ; data were sampled over the same 7 \u00d7 7 grid shown in Fig. 5 , left; here superimposed in green. (For interpretation of the references to color in this \ufb01gure legend, the reader is referred to the web version of this article.)",
+      "figure_bbox": {
+        "x0": 69.21,
+        "y0": 130.96,
+        "x1": 470.98,
+        "y1": 245.81,
+        "width": 401.77,
+        "height": 114.85
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 247.78,
+        "x1": 506.17,
+        "y1": 274.87,
+        "width": 469.31,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 12,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-8-p012.png",
+      "caption_text": "Fig. 8. Clough\u2013Tocher spline approximations of Franke function (27) . Top row: Shaded renderings. Middle row: Mean curvature plots, all on the same scale [\u2212 27 . 48 , 39 . 47 ] . In this case, grey-scale (black to white) was used because it better reveals curvature discontinuities. Bottom row: Re\ufb02ection lines on the close-up part shown in Fig. 7 . All results are based on Bary . The rightmost plot shows Ka after 10 steps of the iterative procedure IM .",
+      "figure_bbox": {
+        "x0": 34.01,
+        "y0": 47.35,
+        "x1": 515.22,
+        "y1": 240.29,
+        "width": 481.21,
+        "height": 192.93
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 253.28,
+        "x1": 510.33,
+        "y1": 280.38,
+        "width": 469.17,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 12,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-9-p012.png",
+      "caption_text": "Fig. 9. A simple wave example. The triangulation in 3D (top right) remains \ufb01xed, but we consider two parameterisations, \u25b3 1 and \u25b3 2 , which are related by a non-uniform scaling in parameter space. As expected, CT i gives identical results on both parameterisations due to its invariance to a\ufb03ne reparam- eterisations. In contrast, the shape and fairness of CT o are heavily in\ufb02uenced by the parameterisation; compare CT o ( \u25b3 1 ) and CT o ( \u25b3 2 ) . Top views with re\ufb02ection lines are shown. All three examples were generated using Bary . The four numbers under each re\ufb02ection line plot are C 2 discontinuities: mean and maximum C 2 discontinuity at macro-edges and the same two measures at micro-edges, in that order.",
+      "figure_bbox": {
+        "x0": 34.01,
+        "y0": 47.35,
+        "x1": 515.22,
+        "y1": 456.8,
+        "width": 481.21,
+        "height": 409.45
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 458.61,
+        "x1": 510.24,
+        "y1": 502.84,
+        "width": 469.08,
+        "height": 44.23
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 13,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-10-p013.png",
+      "caption_text": "Fig. 10. Octant of a sphere: Convergence of Gaussian (left) and mean curvature (middle), and approximation error (right). All three horizontal axes corre- spond to the tessellation level l of one octant of the unit sphere; level l = [ 1 , ..., 5 ] has 4 l macro-triangles. Bary were used in all cases.",
+      "figure_bbox": {
+        "x0": 29.32,
+        "y0": 198.19,
+        "x1": 510.77,
+        "y1": 542.87,
+        "width": 481.45,
+        "height": 344.68
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 174.28,
+        "x1": 503.4,
+        "y1": 192.81,
+        "width": 466.55,
+        "height": 18.53
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 13,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-11-p013.png",
+      "caption_text": "Fig. 11. One octant of the unit sphere with tessellation level l = 2. Top row to bottom: re\ufb02ection lines, Gaussian curvature ranging in [ 0 . 738 , 1 . 663 ] , and error in [ 0 , 2 . 265 \u00b7 10 \u2212 3 ] .",
+      "figure_bbox": {
+        "x0": 29.32,
+        "y0": 439.38,
+        "x1": 510.77,
+        "y1": 542.87,
+        "width": 481.45,
+        "height": 103.49
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 416.06,
+        "x1": 505.97,
+        "y1": 434.59,
+        "width": 469.12,
+        "height": 18.53
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 13,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-12-p013.png",
+      "caption_text": "Fig. 12. Car front wing model ( GrabCAD, 2015 ). The full B-rep model is on the left. One trimmed NURBS patch is shown shaded and with re\ufb02ection lines. Approximation results based on \u25b3 C and \u25b3 Q (cf. Fig. 4 ) using Ka with Inc 3 are shown on the right.",
+      "figure_bbox": {
+        "x0": 29.32,
+        "y0": 56.11,
+        "x1": 510.77,
+        "y1": 542.87,
+        "width": 481.45,
+        "height": 486.76
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 544.61,
+        "x1": 506.17,
+        "y1": 563.34,
+        "width": 469.31,
+        "height": 18.72
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 14,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-13-p014.png",
+      "caption_text": "Fig. 13. Spline approximations of the car front wing model shown with re\ufb02ection lines. Top row: \u25b3 C . Bottom row: \u25b3 Q . All results are based on Inc 3.",
+      "figure_bbox": {
+        "x0": 60.43,
+        "y0": 214.13,
+        "x1": 487.88,
+        "y1": 566.23,
+        "width": 427.45,
+        "height": 352.1
+      },
+      "caption_bbox": {
+        "x0": 49.53,
+        "y0": 197.73,
+        "x1": 499.01,
+        "y1": 206.43,
+        "width": 449.48,
+        "height": 8.7
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 14,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-14-p014.png",
+      "caption_text": "Fig. 14. Split point comparison on the model of Fig. 12 , middle. Top row: Macro- and micro-patch edges (blue) and inward normals (red; all of the same magnitude). Observe how the split point in\ufb02uences the shape of the micro-patches within the macro-patches (angles shown in black, split points in cyan) at the top of the model; cf. Fig. 16 . Bary leads to fold-overs on the Clough\u2013Tocher spline, indicated by normals pointing outwards. Bottom row: Close-ups of the top of the model with re\ufb02ections lines. Note that barycentres produce the worst shape behaviour. Ka was used in all examples shown. (For interpretation of the references to color in this \ufb01gure legend, the reader is referred to the web version of this article.)",
+      "figure_bbox": {
+        "x0": 115.06,
+        "y0": 475.86,
+        "x1": 485.89,
+        "y1": 566.23,
+        "width": 370.83,
+        "height": 90.37
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 422.65,
+        "x1": 510.25,
+        "y1": 466.88,
+        "width": 469.09,
+        "height": 44.23
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 14,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-15-p014.png",
+      "caption_text": "Fig. 15. C 2 discontinuity graphs for the car front wing model. Solid lines represent C 2 discontinuities across macro-edges and dashed lines correspond to C 2 discontinuities across micro-edges. The two graphs on the left are for \u25b3 C , the two on the right for \u25b3 Q . The horizontal axes in all four graphs state the number of steps of IM applied. FO with mid-edge gradients at boundary edges produced nearly indistinguishable results from those shown for KaG .",
+      "figure_bbox": {
+        "x0": 33.62,
+        "y0": 47.06,
+        "x1": 515.07,
+        "y1": 566.23,
+        "width": 481.45,
+        "height": 519.17
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 577.75,
+        "x1": 510.17,
+        "y1": 604.85,
+        "width": 469.02,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 15,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-16-p015.png",
+      "caption_text": "Fig. 16. Split point illustration. Six pairs of triangles, two for each split point type, are shown. In each pair, the left triangle is T in parameter space given by U i and the right triangle is the corresponding triangle in 3D given by f i . Split points Z are shown in red and their corresponding points in 3D using the same barycentric coordinates are shown in blue. In general, the position of the blue point depends on the shape of the macro-patch, but we assume \ufb02at 3D triangles for the sake of this illustration. (For interpretation of the references to color in this \ufb01gure legend, the reader is referred to the web version of this article.)",
+      "figure_bbox": {
+        "x0": 56.54,
+        "y0": 171.2,
+        "x1": 483.89,
+        "y1": 288.21,
+        "width": 427.35,
+        "height": 117.01
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 290.56,
+        "x1": 506.01,
+        "y1": 334.78,
+        "width": 469.15,
+        "height": 44.22
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 15,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-17-p015.png",
+      "caption_text": "Fig. 17. Car model ( GrabCAD, 2015 ). From left to right: The input model shaded and with re\ufb02ection lines. The B-rep model consists of 42 NURBS patches, 14 of which have trimming curves that do not follow isoparameter lines. B-rep edges are shown in red. The model is topologically closed (it has no boundary), but it is not geometrically watertight. (For interpretation of the references to color in this \ufb01gure legend, the reader is referred to the web version of this article.)",
+      "figure_bbox": {
+        "x0": 35.69,
+        "y0": 171.2,
+        "x1": 504.18,
+        "y1": 436.44,
+        "width": 468.49,
+        "height": 265.24
+      },
+      "caption_bbox": {
+        "x0": 36.86,
+        "y0": 437.82,
+        "x1": 506.15,
+        "y1": 473.49,
+        "width": 469.3,
+        "height": 35.67
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 16,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-18-p016.png",
+      "caption_text": "Fig. 18. The car model from Fig. 17 converted into a collection of 42 Clough\u2013Tocher splines using Ka with Bary . Left: The layout of macro-patches. Middle: A conversion result without adjusting control points corresponding to input B-rep edges; note the gaps. Right: A watertight conversion result after adjusting control points to match common cubic splines which approximate B-rep edges; see Section 4 .",
+      "figure_bbox": {
+        "x0": 60.12,
+        "y0": 47.05,
+        "x1": 487.57,
+        "y1": 130.55,
+        "width": 427.45,
+        "height": 83.49
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 132.29,
+        "x1": 510.28,
+        "y1": 159.39,
+        "width": 469.12,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 16,
+      "image_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-19-p016.png",
+      "caption_text": "Fig. 19. The car model converted to a collection of 42 splines. The adjustment achieves watertightness at the expense of reducing the continuity across some internal edges from C 1 to C 0 ; this corresponds to discontinuities in re\ufb02ection lines. To maintain invariance to a\ufb03ne reparameterisations for all the methods shown (all based on Inc 3), boundary triangles used the midpoint modi\ufb01cation described in Section 3.8 where necessary.",
+      "figure_bbox": {
+        "x0": 60.12,
+        "y0": 47.05,
+        "x1": 487.84,
+        "y1": 361.07,
+        "width": 427.72,
+        "height": 314.02
+      },
+      "caption_bbox": {
+        "x0": 41.16,
+        "y0": 373.79,
+        "x1": 510.29,
+        "y1": 400.89,
+        "width": 469.14,
+        "height": 27.1
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    }
+  ]
+}

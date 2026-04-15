@@ -1,0 +1,220 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-1-p003.png",
+      "caption_text": "(b) (c) Figure 1. (a) A surface seen from a visual direction \u00a3, the eye at infinity. The shaded region cannot be seen from that vantage point, its border is the rim. A tangent ray at the rim is not (in general) perpendicular to the visual direction (T? not perpendicular to \u00a3). (b) The projection of the rim on a plane IT, normal to the visual direction. Its curvature is K t . (c) The object cut with a plane v defined by the visual direction \u00a3 and the normal at the surface. Its curvature is K t .",
+      "figure_bbox": {
+        "x0": 64.62,
+        "y0": 512.05,
+        "x1": 439.73,
+        "y1": 588.27,
+        "width": 375.11,
+        "height": 76.22
+      },
+      "caption_bbox": {
+        "x0": 64.8,
+        "y0": 592.27,
+        "x1": 431.45,
+        "y1": 659.45,
+        "width": 366.65,
+        "height": 67.18
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-2-p004.png",
+      "caption_text": "Figure 2. (a) Conventions of the sign of curvatures used in the text. Left: only a positive radial curvature leads to a visual contour. Right: a negative apparent curvature is a concavity, a positive apparent curvature a convexity, (b) Top: the visual direction along an asymptotic ray. The normal cut is shown, the radial curvature vanishes. Theray touches the surface, yet enters it. Bottom: the same case in projection: the contour is cusped (infinite apparent curvature), and an ending contour is obtained.",
+      "figure_bbox": {
+        "x0": 39.78,
+        "y0": 477.95,
+        "x1": 413.03,
+        "y1": 618.22,
+        "width": 373.25,
+        "height": 140.27
+      },
+      "caption_bbox": {
+        "x0": 40.32,
+        "y0": 622.22,
+        "x1": 412.84,
+        "y1": 673.83,
+        "width": 372.52,
+        "height": 51.61
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 5,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-3-p005.png",
+      "caption_text": "Figure 3. (a) A figure taken from Marr (1982). The suggestion is that convexities and concavities in the projection of the snake have to do with relative distances rather than with local shapes. (b) A torus cut into two and pasted together again. The shaded regions are anticlastic, the other regions synclastic. The small insets show the generic case after a small deformation. In projection (right), this 'snake' has convexities where the body is locally egg-shaped, concavities where the body is locally saddle-shaped, inflexions at flexional curves of the body.",
+      "figure_bbox": {
+        "x0": 61.74,
+        "y0": 211.83,
+        "x1": 429.06,
+        "y1": 394.92,
+        "width": 367.32,
+        "height": 183.1
+      },
+      "caption_bbox": {
+        "x0": 62.46,
+        "y0": 398.92,
+        "x1": 428.69,
+        "y1": 460.43,
+        "width": 366.23,
+        "height": 61.51
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 5,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-4-p005.png",
+      "caption_text": "Figure 4. Details from Durer's \"Samson killing the lion\". (Bartsch #2; the print dates from 1498.)",
+      "figure_bbox": {
+        "x0": 61.74,
+        "y0": 464.43,
+        "x1": 429.06,
+        "y1": 649.8,
+        "width": 367.32,
+        "height": 185.37
+      },
+      "caption_bbox": {
+        "x0": 61.74,
+        "y0": 653.8,
+        "x1": 432.44,
+        "y1": 665.81,
+        "width": 370.7,
+        "height": 12.01
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 6,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-5-p006.png",
+      "caption_text": "Figure 5. Examples from technical drawing. These are just some random selections; numerous examples of nonplanar rims can be found in any book on technical drawing methods, (a) Figure from the leaflet on Rotring drawing implements. Isometric after DIN 5. (b) Figure from \"Audels Mechanical Drawing Guide\" by Audel Staff, Theo. Audel and Cp, Publ., New York, 1947, p 88.)",
+      "figure_bbox": {
+        "x0": 45.36,
+        "y0": 443.75,
+        "x1": 418.03,
+        "y1": 616.63,
+        "width": 372.67,
+        "height": 172.88
+      },
+      "caption_bbox": {
+        "x0": 45.36,
+        "y0": 620.63,
+        "x1": 411.96,
+        "y1": 663.67,
+        "width": 366.6,
+        "height": 43.04
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 7,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-6-p007.png",
+      "caption_text": "Figure 6. An instructive figure taken from a book on drawing (Hogarth 1981, p 11). Note how the strongest spatial impressions arise from the 'generic' views for which the rim is everything but a plane curve. The original legend runs: \"Geometrical Silhouettes Some silhouettes are ambiguous and some are not. In the first column at the left, the three squares are ambiguous because they do not suggest specific three-dimensional forms. It is not clear whether they represent cubes, a head-on view of a cylinder, or the rectangular base of a pyramid. The middle column represents a slight shift in viewpoint, with less visual confusion: the three silhouettes do, in fact, suggest a cubic form, a cylinder, and a pyramid. But the three silhouettes in the righthand column are clearer still, particularly in the case of the pyramid, which now obviously rests on a square base\".",
+      "figure_bbox": {
+        "x0": 65.88,
+        "y0": 235.39,
+        "x1": 435.09,
+        "y1": 406.8,
+        "width": 369.21,
+        "height": 171.41
+      },
+      "caption_bbox": {
+        "x0": 65.16,
+        "y0": 410.8,
+        "x1": 436.05,
+        "y1": 520.55,
+        "width": 370.89,
+        "height": 109.75
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 7,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-7-p007.png",
+      "caption_text": "Figure 7. A typical view of a torus. Note the two ending contours. At these points the rim is along the visual direction. The rim is a twisted space curve.",
+      "figure_bbox": {
+        "x0": 65.88,
+        "y0": 524.55,
+        "x1": 435.09,
+        "y1": 646.2,
+        "width": 369.21,
+        "height": 121.65
+      },
+      "caption_bbox": {
+        "x0": 64.98,
+        "y0": 650.2,
+        "x1": 421.76,
+        "y1": 671.93,
+        "width": 356.78,
+        "height": 21.73
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-a1",
+      "label": "A1",
+      "page": 10,
+      "image_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-a1-p010.png",
+      "caption_text": "Figure A1.",
+      "figure_bbox": {
+        "x0": 35.1,
+        "y0": 432.96,
+        "x1": 409.93,
+        "y1": 564.0,
+        "width": 374.83,
+        "height": 131.04
+      },
+      "caption_bbox": {
+        "x0": 33.93,
+        "y0": 568.0,
+        "x1": 77.84,
+        "y1": 580.0,
+        "width": 43.91,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

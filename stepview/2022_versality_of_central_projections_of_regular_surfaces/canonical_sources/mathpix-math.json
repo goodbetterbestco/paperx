@@ -1,0 +1,3012 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0024",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nf=\\left(f_{1}(x), f_{2}(x), f_{3}(x)\\right): U \\rightarrow \\mathbb{R}^{3}:\\left(x_{1}, x_{2}\\right) \\mapsto f(0)+x_{1} \\boldsymbol{u}+x_{2} \\boldsymbol{v}+Q(x) \\boldsymbol{w} \\tag{1.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 132.95,
+            "y0": 391.95,
+            "x1": 461.83,
+            "y1": 410.95,
+            "width": 328.88,
+            "height": 19.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0028",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\sum_{l \\geq 2}^{k} H_{l}\\left(x_{1}, x_{2}\\right), H_{l}\\left(x_{1}, x_{2}\\right):=\\sum_{i+j=l} \\frac{a_{i j}}{i!j!} x_{1}^{i} x_{2}^{j}, \\tag{1.2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 195.93,
+            "y0": 435.44,
+            "x1": 397.85,
+            "y1": 474.44,
+            "width": 201.93,
+            "height": 38.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0034",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\pi: U \\times \\mathbb{R}^{3} \\longrightarrow \\mathbb{R}^{2}:\\left(x_{1}, x_{2}, y\\right) \\mapsto \\pi_{y}\\left(x_{1}, x_{2}\\right) \\tag{1.3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 199.93,
+            "y0": 527.43,
+            "x1": 393.85,
+            "y1": 547.93,
+            "width": 193.93,
+            "height": 20.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0037",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\n\\pi_{y}\\left(x_{1}, x_{2}\\right):=\\binom{\\left\\langle t(x, y) f(x)+(1-t(x, y)) y, \\boldsymbol{e}_{1}\\right\\rangle}{\\left\\langle t(x, y) f(x)+(1-t(x, y)) y, \\boldsymbol{e}_{2}\\right\\rangle}, \\\\\nt(x, y):=\\frac{y_{3}}{y_{3}-\\left\\langle f(x), \\boldsymbol{e}_{3}\\right\\rangle} \\text { and } \\boldsymbol{e}_{1}, \\boldsymbol{e}_{2}, \\boldsymbol{e}_{3}: \\text { the standard basis of } \\mathbb{R}^{3} .\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 132.95,
+            "y0": 557.93,
+            "x1": 440.34,
+            "y1": 626.92,
+            "width": 307.39,
+            "height": 68.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0039",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\frac{1}{y_{3}-f_{3}(x)}\\left(y_{3}\\binom{f_{1}(x)}{f_{2}(x)}-f_{3}(x)\\binom{y_{1}}{y_{2}}\\right) . \\tag{1.4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 203.42,
+            "y0": 637.42,
+            "x1": 391.36,
+            "y1": 670.41,
+            "width": 187.93,
+            "height": 33.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0021",
+      "kind": "display",
+      "display_latex": "E:=\\left\\langle f_{x_{1}}, f_{x_{1}}\\right\\rangle, F:=\\left\\langle f_{x_{1}}, f_{x_{2}}\\right\\rangle, G:=\\left\\langle f_{x_{2}}, f_{x_{2}}\\right\\rangle",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 191.93,
+            "y0": 387.95,
+            "x1": 401.85,
+            "y1": 405.95,
+            "width": 209.92,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0023",
+      "kind": "display",
+      "display_latex": "L:=\\left\\langle f_{x_{1} x_{1}}, \\mathbf{n}\\right\\rangle, M:=\\left\\langle f_{x_{1} x_{2}}, \\mathbf{n}\\right\\rangle, N:=\\left\\langle f_{x_{2} x_{2}}, \\mathbf{n}\\right\\rangle",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 189.43,
+            "y0": 421.44,
+            "x1": 404.35,
+            "y1": 438.94,
+            "width": 214.92,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0026",
+      "kind": "display",
+      "display_latex": "K:=\\frac{L N-M^{2}}{E G-F^{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 258.4,
+            "y0": 477.44,
+            "x1": 337.38,
+            "y1": 506.43,
+            "width": 78.97,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0032",
+      "kind": "display",
+      "display_latex": "\\left(\\begin{array}{cc}\nL & M \\\\\nM & N\n\\end{array}\\right) \\mathbf{v}=\\kappa\\left(\\begin{array}{ll}\nE & F \\\\\nF & G\n\\end{array}\\right) \\mathbf{v} \\text { for some } \\kappa",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 204.92,
+            "y0": 608.92,
+            "x1": 391.36,
+            "y1": 639.42,
+            "width": 186.43,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0006",
+      "kind": "display",
+      "display_latex": "\\mathbf{v}_{i}^{(m)} \\kappa_{i}(0)=0 \\quad(1 \\leq m \\leq k) \\quad \\text { and } \\quad \\mathbf{v}_{i}^{(k+1)} \\kappa_{i}(0) \\neq 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 172.44,
+            "y0": 166.98,
+            "x1": 422.34,
+            "y1": 187.98,
+            "width": 249.91,
+            "height": 21.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0012",
+      "kind": "display",
+      "display_latex": "a_{30}=0 \\quad \\text { and } \\quad 3 a_{21}^{2}-a_{40} k_{2} \\neq 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 224.92,
+            "y0": 274.96,
+            "x1": 369.36,
+            "y1": 293.46,
+            "width": 144.45,
+            "height": 18.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0022",
+      "kind": "display",
+      "display_latex": "a_{21} \\neq 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 276.4,
+            "y0": 435.44,
+            "x1": 317.38,
+            "y1": 451.94,
+            "width": 40.98,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0026",
+      "kind": "display",
+      "display_latex": "I I:=L d x_{1}^{2}+2 M d x_{1} d x_{2}+N d x_{2}^{2}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 222.42,
+            "y0": 497.44,
+            "x1": 372.36,
+            "y1": 516.43,
+            "width": 149.94,
+            "height": 19.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0036",
+      "kind": "display",
+      "display_latex": "g\\left(t_{0}\\right)=g^{\\prime}\\left(t_{0}\\right)=\\cdots=g^{(k)}\\left(t_{0}\\right)=0 \\text { and } g^{(k+1)}\\left(t_{0}\\right) \\neq 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 174.94,
+            "y0": 643.92,
+            "x1": 418.85,
+            "y1": 664.41,
+            "width": 243.91,
+            "height": 20.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0011",
+      "kind": "display",
+      "display_latex": "\\mathcal{E}_{m}^{n}:=\\left\\{f:\\left(\\mathbb{R}^{m}, 0\\right) \\longrightarrow\\left(\\mathbb{R}^{n}, f(0)\\right): f \\text { is a smooth map germ at } 0\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 153.94,
+            "y0": 258.97,
+            "x1": 439.84,
+            "y1": 272.96,
+            "width": 285.89,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0013",
+      "kind": "display",
+      "display_latex": "\\mathrm{m}_{m} \\mathcal{E}_{m}^{n}:=\\left\\{f \\in \\mathcal{E}_{m}^{n}: f(0)=0\\right\\} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 229.42,
+            "y0": 300.46,
+            "x1": 364.87,
+            "y1": 313.96,
+            "width": 135.45,
+            "height": 13.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0031",
+      "kind": "display",
+      "display_latex": "F_{1}(x, y)=t\\left(F_{2}(s(x, y), \\varphi(y)), y\\right) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 237.91,
+            "y0": 681.41,
+            "x1": 380.86,
+            "y1": 695.41,
+            "width": 142.95,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0009",
+      "kind": "display",
+      "display_latex": "t f: \\theta_{m} \\rightarrow \\theta(f): \\xi \\mapsto d f \\circ \\xi, \\quad \\omega f: \\theta_{n} \\rightarrow \\theta(f): \\eta \\mapsto \\eta \\circ f",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 171.44,
+            "y0": 213.97,
+            "x1": 422.84,
+            "y1": 229.47,
+            "width": 251.41,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0011",
+      "kind": "display",
+      "display_latex": "T \\mathcal{A}_{e}(f):=t f\\left(\\theta_{m}\\right)+\\omega f\\left(\\theta_{n}\\right) \\subset \\theta(f)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 216.92,
+            "y0": 257.97,
+            "x1": 376.86,
+            "y1": 274.46,
+            "width": 159.94,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0013",
+      "kind": "display",
+      "display_latex": "\\operatorname{cod}\\left(\\mathcal{A}_{e}, f\\right):=\\operatorname{dim}_{\\mathbb{R}} \\frac{\\theta(f)}{T \\mathcal{A}_{e}(f)}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 233.41,
+            "y0": 299.96,
+            "x1": 360.87,
+            "y1": 329.46,
+            "width": 127.45,
+            "height": 29.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0017",
+      "kind": "display",
+      "display_latex": "T \\mathcal{A}_{e}(f)+\\sum_{i=1}^{k} \\mathbb{R} \\frac{\\partial F}{\\partial y_{i}}(x, 0)=\\theta(f)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 223.42,
+            "y0": 379.95,
+            "x1": 370.36,
+            "y1": 414.95,
+            "width": 146.95,
+            "height": 35.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0030",
+      "kind": "display",
+      "display_latex": "\\mathrm{m}_{n}^{k+1} \\theta(f) \\subset T \\mathcal{A}_{e}(f)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 250.41,
+            "y0": 621.42,
+            "x1": 343.87,
+            "y1": 639.42,
+            "width": 93.47,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0015",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\ny-f(0)=p_{1} f_{x_{1}}(0)+p_{2} f_{x_{2}}(0) . \\tag{2.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 227.42,
+            "y0": 385.45,
+            "x1": 366.36,
+            "y1": 397.95,
+            "width": 138.95,
+            "height": 12.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0017",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=0, a_{11} \\neq 0, a_{30}=a_{40}=0 \\\\\n& \\binom{\\left(48 a_{50} a_{70}-35 a_{60}^{2}\\right) a_{11}^{2}+42\\left(a_{21} a_{60}-40 a_{31} a_{50}\\right) a_{50} a_{11}}{+2205 a_{21}^{2} a_{50}^{2}} p_{1}^{2} \\\\\n& +\\left(-84 a_{50} a_{60} a_{11}^{2}+252 a_{21} a_{50}^{2} a_{11}\\right) p_{1}+756 a_{50}^{2} a_{11}^{2} \\neq 0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 262.9,
+            "y0": 177.48,
+            "x1": 489.82,
+            "y1": 220.97,
+            "width": 226.92,
+            "height": 43.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0021",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=0, a_{11} \\neq 0, a_{30}=a_{40}=0, \\\\\n& \\binom{\\left(48 a_{50} a_{70}-35 a_{60}^{2}\\right) a_{11}^{2}+42\\left(a_{21} a_{60}-40 a_{31} a_{50}\\right) a_{50} a_{11}}{+2205 a_{21}^{2} a_{50}^{2}} p_{1}^{2} \\\\\n& +\\left(-84 a_{50} a_{60} a_{11}^{2}+252 a_{21} a_{50}^{2} a_{11}\\right) p_{1}+756 a_{50}^{2} a_{11}^{2}=0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 220.47,
+            "x1": 489.82,
+            "y1": 263.47,
+            "width": 225.92,
+            "height": 42.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0025",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=0, a_{11} \\neq 0, a_{30}=a_{40}=a_{50}=0 \\\\\n& \\binom{\\left(35 a_{60} a_{80}-24 a_{70}^{2}\\right) a_{11}^{2}+28\\left(a_{21} a_{60} a_{70}-70 a_{31} a_{60}^{2}\\right) a_{11}}{+2646 a_{21}^{2} a_{60}^{2}} p_{1}^{2} \\\\\n& -28 a_{60} a_{11}\\left(2 a_{70} a_{11}-7 a_{21} a_{60}\\right) p_{1}+784 a_{60}^{2} a_{11}^{2} \\neq 0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 262.9,
+            "y0": 262.97,
+            "x1": 489.82,
+            "y1": 305.96,
+            "width": 226.92,
+            "height": 42.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0030",
+      "kind": "display",
+      "display_latex": "\\left(x_{1}, x_{2}^{3}+x_{1}^{2} x_{2}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 166.94,
+            "y0": 306.96,
+            "x1": 231.41,
+            "y1": 320.46,
+            "width": 64.48,
+            "height": 13.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0033",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30} \\neq 0 \\\\\n& \\left.H_{2}\\left(-a_{21}, a_{30}\\right)<H_{3 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1} \\quad \\text { (resp. }>\\right)\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 308.46,
+            "x1": 468.33,
+            "y1": 332.96,
+            "width": 204.42,
+            "height": 24.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0037",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30} \\neq 0 \\\\\n& H_{2}\\left(-a_{21}, a_{30}\\right)=H_{3 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1} \\text { and } \\\\\n& H_{3}\\left(-a_{21}, a_{30}\\right) \\neq \\frac{1}{2} H_{4 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1} \\\\\n& \\hline\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 332.96,
+            "x1": 438.84,
+            "y1": 369.45,
+            "width": 174.94,
+            "height": 36.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0041",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30} \\neq 0 \\\\\n& H_{2}\\left(-a_{21}, a_{30}\\right)=H_{3 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1}, \\\\\n& H_{3}\\left(-a_{21}, a_{30}\\right)=\\frac{1}{2} H_{4 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1} \\text { and } \\\\\n& a_{30}\\left(H_{5 x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1}-3 H_{4}\\left(-a_{21}, a_{30}\\right)\\right) p_{1} \\\\\n& \\neq \\frac{1}{2}\\left(H_{4 x_{1} x_{1}}\\left(-a_{21}, a_{30}\\right) p_{1}-2 H_{3 x_{1}}\\left(-a_{21}, a_{30}\\right)\\right)^{2}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 369.45,
+            "x1": 453.33,
+            "y1": 429.44,
+            "width": 189.43,
+            "height": 59.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0045",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30}=0, a_{40} \\neq 0, a_{21} \\neq 0 \\\\\n& \\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right) p_{1} \\neq 5 a_{40}\\left(a_{40} a_{02}-3 a_{21}^{2}\\right)\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 429.44,
+            "x1": 499.32,
+            "y1": 453.44,
+            "width": 235.41,
+            "height": 24.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0049",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30}=0, a_{40} \\neq 0, a_{21} \\neq 0, \\\\\n& \\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right) p_{1}=5 a_{40}\\left(a_{40} a_{02}-3 a_{21}^{2}\\right), \\\\\n& \\left(\\begin{array}{l}\n225 a_{21}^{3} a_{40}^{2} a_{70}-315 a_{21}^{2} a_{40}\\left(3 a_{21} a_{50}-5 a_{31} a_{40}\\right) a_{60} \\\\\n-1575 a_{21}^{2} a_{40}^{3} a_{51} \\\\\n+\\binom{756 a_{21}^{3} a_{50}^{2}-3150 a_{21}^{2} a_{40}\\left(a_{31} a_{50}-a_{40} a_{41}\\right)}{-1575 a_{21} a_{22} a_{40}^{3}+4200 a_{21} a_{31}^{2} a_{40}^{2}} a_{50} \\\\\n-5250 a_{21} a_{31} a_{40}^{3} a_{41} \\\\\n-875 a_{13} a_{40}^{5}+2625\\left(a_{21} a_{32}+a_{22} a_{31}\\right) a_{40}^{4}-1750 a_{31}^{3} a_{40}^{3}\n\\end{array}\\right) p_{1}^{2} \\\\\n& -70 a_{40}\\binom{5 a_{40}\\binom{9 a_{21}^{2}\\left(a_{21} a_{60}-5 a_{40} a_{41}\\right)}{-5 a_{40}^{2}\\left(a_{03} a_{40}-9 a_{21} a_{22}\\right)}}{-3\\left(3 a_{21} a_{50}-5 a_{31} a_{40}\\right)\\binom{9 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}}{-20 a_{21} a_{31} a_{40}} p_{1}} p_{1} \\\\\n& +3150 a_{21} a_{40}^{2}\\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right) \\neq 0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 453.44,
+            "x1": 502.31,
+            "y1": 586.92,
+            "width": 238.41,
+            "height": 133.48
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0053",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30}=a_{40}=0, a_{50} \\neq 0, a_{21} \\neq 0, \\\\\n& \\left(a_{21} a_{60}-5 a_{31} a_{50}\\right) p_{1}+6 a_{21} a_{50} \\neq 0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 586.92,
+            "x1": 468.33,
+            "y1": 610.92,
+            "width": 204.42,
+            "height": 24.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0057",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{20}=a_{11}=0, a_{30}=0, a_{40} \\neq 0, a_{21}=0, \\\\\n& \\left(a_{12} a_{50}-10 a_{22} a_{40}+10 a_{31}^{2}\\right) p_{1}^{2} \\\\\n& -\\left(a_{50} a_{02}-25 a_{12} a_{40}\\right) p_{1}-5 a_{40} a_{02} \\neq 0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 263.9,
+            "y0": 611.42,
+            "x1": 441.34,
+            "y1": 646.42,
+            "width": 177.43,
+            "height": 35.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0011",
+      "kind": "display",
+      "display_latex": "\\boldsymbol{u}=\\left(\\begin{array}{c}\n\\cos \\theta \\\\\n0 \\\\\n\\sin \\theta\n\\end{array}\\right), \\boldsymbol{v}=\\left(\\begin{array}{l}\n0 \\\\\n1 \\\\\n0\n\\end{array}\\right), \\boldsymbol{w}=\\left(\\begin{array}{c}\n-\\sin \\theta \\\\\n0 \\\\\n\\cos \\theta\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 203.92,
+            "y0": 264.47,
+            "x1": 387.86,
+            "y1": 307.96,
+            "width": 183.93,
+            "height": 43.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0014",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nH_{2}(x)=k_{1} x_{1} x_{2}+\\frac{k_{2}}{2} x_{2}^{2} \\tag{3.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 239.41,
+            "y0": 344.46,
+            "x1": 354.87,
+            "y1": 371.45,
+            "width": 115.46,
+            "height": 27.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0026",
+      "kind": "display",
+      "display_latex": "2 a_{31} k_{1}-3 a_{21}^{2} \\neq 0 \\quad \\text { and } \\quad\\left(a_{60} k_{1}-3 a_{21} a_{50}\\right) p_{1}-18 a_{50} k_{1} \\neq 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 172.44,
+            "y0": 539.43,
+            "x1": 447.83,
+            "y1": 558.43,
+            "width": 275.4,
+            "height": 19.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0013",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nT \\mathcal{A}_{e} \\pi_{y}+\\left\\langle\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{2}}, \\frac{\\partial \\pi_{y}}{\\partial y_{3}}\\right\\rangle_{\\mathbb{R}}=\\theta\\left(\\pi_{y}\\right) \\tag{3.2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 210.92,
+            "y0": 295.46,
+            "x1": 383.36,
+            "y1": 326.96,
+            "width": 172.44,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0017",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\pi_{y}(x)=\\sum_{i+j \\geq 1}^{k}\\binom{c_{i j}}{d_{i j}} \\frac{x_{1}^{i} x_{2}^{j}}{i!j!} \\tag{3.3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 235.41,
+            "y0": 365.45,
+            "x1": 359.87,
+            "y1": 404.45,
+            "width": 124.45,
+            "height": 38.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0022",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& c_{10}=d_{10}=c_{01}=0, d_{01}=c:=\\frac{y_{3}}{p_{1} \\sin \\theta} \\neq 0 \\\\\n& c_{20}=d_{20}=0, c_{11}=-\\frac{k_{1} c}{\\sin \\theta}, d_{11}=\\frac{c}{p_{1}} \\neq 0, c_{02}=-\\frac{k_{2} c}{\\sin \\theta}, d_{02}=0 \\\\\n& c_{30}=-\\frac{a_{30} c}{y_{3} \\sin \\theta}, c_{21}=-\\left(a_{21} p_{1}+2 k_{1}\\right) \\frac{c}{p_{1} \\sin \\theta}, c_{12}=-\\left(a_{12} p_{1}+k_{2}\\right) \\frac{c}{p_{1} \\sin \\theta}, c_{03}=-\\frac{a_{03} c}{\\sin \\theta} \\\\\n& d_{30}=0, d_{21}=\\frac{2 c}{p_{1}^{2}} \\neq 0, d_{12}=\\frac{2 k_{1} c \\cos \\theta}{p_{1} \\sin \\theta}, d_{03}=\\frac{3 k_{2} c \\cos \\theta}{p_{1} \\sin \\theta}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 456.44,
+            "x1": 471.33,
+            "y1": 540.43,
+            "width": 385.86,
+            "height": 83.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0004",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nT \\mathcal{A}_{e} \\pi_{y}+\\left\\langle\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{2}}, \\frac{\\partial \\pi_{y}}{\\partial y_{3}}\\right\\rangle_{\\mathbb{R}} \\tag{3.4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 229.92,
+            "y0": 148.48,
+            "x1": 364.87,
+            "y1": 180.98,
+            "width": 134.95,
+            "height": 32.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0009",
+      "kind": "display",
+      "display_latex": "c_{40}=-\\frac{a_{40} c}{\\sin \\theta} \\quad \\text { and } \\quad d_{40}=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 233.91,
+            "y0": 214.47,
+            "x1": 360.37,
+            "y1": 239.97,
+            "width": 126.45,
+            "height": 25.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0019",
+      "kind": "display",
+      "display_latex": "\\binom{0}{x_{2} O_{1}}=\\frac{1}{d_{01}} x_{2} O_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}} \\quad \\text { and } \\quad\\binom{x_{2}^{2}}{\\frac{d_{11}}{c_{11}} x_{2}^{2}}=\\frac{1}{c_{11}} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 176.43,
+            "y0": 447.94,
+            "x1": 418.85,
+            "y1": 479.94,
+            "width": 242.41,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0022",
+      "kind": "display",
+      "display_latex": "\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{1}}{x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}}=\\left(\\begin{array}{cc}\nc_{11} & c_{40} / 24 \\\\\nc_{11} & c_{40} / 6\n\\end{array}\\right)\\binom{x_{1} x_{2} \\boldsymbol{e}_{1}}{x_{1}^{4} \\boldsymbol{e}_{1}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 202.43,
+            "y0": 511.93,
+            "x1": 393.85,
+            "y1": 543.93,
+            "width": 191.43,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0025",
+      "kind": "display",
+      "display_latex": "\\binom{x_{2}}{0}=\\frac{1}{d_{01}}\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}{ 0},\\binom{0}{x_{2}}=\\frac{1}{d_{01}}\\binom{0}{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle},\\binom{0}{x_{1}^{3}}=\\frac{1}{d_{01}} x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 141.95,
+            "y0": 577.42,
+            "x1": 454.33,
+            "y1": 608.92,
+            "width": 312.38,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0002",
+      "kind": "display",
+      "display_latex": "\\left(\\begin{array}{c}\n\\frac{\\partial \\pi_{y}}{\\partial y_{2}} \\\\\n\\frac{\\partial \\pi_{y}}{\\partial x_{2}} \\\\\nx_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}} \\\\\nx_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\n\\end{array}\\right)=\\left(\\begin{array}{cccc}\n0 & -c / p_{1} & 0 & -c / p_{1}^{2} \\\\\nc_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 \\\\\n0 & d_{01} & c_{11} & d_{11} \\\\\n0 & 0 & 0 & d_{01}\n\\end{array}\\right)\\left(\\begin{array}{l}\nx_{1} \\boldsymbol{e}_{1} \\\\\nx_{1} \\boldsymbol{e}_{2} \\\\\nx_{1}^{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} \\boldsymbol{e}_{2}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 179.43,
+            "y0": 119.48,
+            "x1": 414.85,
+            "y1": 185.48,
+            "width": 235.41,
+            "height": 65.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0016",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\left(\\binom{0}{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{2}}{0}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right) \\\\\n& =D^{t}\\left(\\binom{0}{x_{2}},\\binom{0}{x_{1} x_{2}},\\binom{x_{2}^{2}}{0},\\binom{x_{1}^{3}}{0},\\binom{x_{1}^{2} x_{2}}{0},\\binom{x_{1} x_{2}^{2}}{0}\\right)\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 106.46,
+            "y0": 416.95,
+            "x1": 420.34,
+            "y1": 475.94,
+            "width": 313.88,
+            "height": 58.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0018",
+      "kind": "display",
+      "display_latex": "D:=\\left(\\begin{array}{cccccc}\nd_{01} & d_{11} & 0 & 0 & 0 & 0 \\\\\n0 & 0 & d_{01}^{2} & 0 & 0 & 2 d_{01} d_{11} \\\\\n0 & 0 & 0 & 0 & c_{30} / 2 & c_{21} \\\\\n0 & d_{11} & 0 & c_{30} / 2 & c_{21} & c_{12} / 2 \\\\\nd_{01} & d_{11} & c_{02} & 0 & c_{21} / 2 & c_{12} \\\\\n0 & d_{01} & 0 & 0 & 0 & c_{02}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 186.93,
+            "y0": 486.94,
+            "x1": 405.85,
+            "y1": 567.43,
+            "width": 218.92,
+            "height": 80.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0002",
+      "kind": "display",
+      "display_latex": "\\left(\\begin{array}{c}\n\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{1} \\\\\n\\frac{\\partial \\pi_{y}}{\\partial x_{1}} \\\\\n\\frac{\\partial \\pi_{y}}{\\partial x_{2}} \\\\\nx_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\n\\end{array}\\right)=\\left(\\begin{array}{cccc}\n0 & d_{01} & 0 & d_{11} \\\\\n0 & 0 & c_{30} / 2 & c_{21} \\\\\nd_{11} & c_{02} & c_{21} / 2 & c_{12} \\\\\nd_{01} & 0 & 0 & c_{02}\n\\end{array}\\right)\\left(\\begin{array}{c}\nx_{1} \\boldsymbol{e}_{2} \\\\\nx_{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} \\boldsymbol{e}_{1} \\\\\nx_{1} x_{2} \\boldsymbol{e}_{1}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 174.94,
+            "y0": 131.98,
+            "x1": 422.34,
+            "y1": 195.97,
+            "width": 247.41,
+            "height": 63.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0011",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\nc_{40}=d_{40}=0, c_{31}=-\\left(a_{31} p_{1}^{2}+3 a_{21} p_{1}+6 k_{1}\\right) \\frac{c^{2}}{p_{1} y_{3}}, d_{31}=\\frac{6 c}{p_{1}^{3}}, \\\\\nc_{50}=-\\frac{a_{50} p_{1} c^{2}}{y_{3}} \\neq 0, d_{50}=0, c_{41}=-\\left(a_{41} p_{1}^{3}+4 a_{31} p_{1}^{2}+12 a_{21} p_{1}+24 k_{1}\\right) \\frac{c^{2}}{p_{1}^{2} y_{3}}, d_{41}=\\frac{24 c}{p_{1}^{4}}, \\\\\nc_{60}=-\\left(a_{60} p_{1}+6 a_{50}\\right) \\frac{c^{2}}{y_{3}}, d_{60}=0, c_{70}=-\\left(a_{70} p_{1}^{2}+7 a_{60} p_{1}+42 a_{50}\\right) \\frac{c^{2}}{p_{1} y_{3}}, d_{70}=0,\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 90.97,
+            "y0": 358.45,
+            "x1": 502.81,
+            "y1": 458.94,
+            "width": 411.85,
+            "height": 100.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0019",
+      "kind": "display",
+      "display_latex": "\\frac{1}{d_{01}} x_{2} O_{k} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=\\binom{0}{x_{2} O_{k}} \\quad \\text { and } \\quad \\frac{1}{c_{11}} O_{l} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=\\binom{x_{2} O_{l}}{\\frac{d_{11}}{c_{11}} x_{2} O_{l}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 168.44,
+            "y0": 614.42,
+            "x1": 426.84,
+            "y1": 649.42,
+            "width": 258.4,
+            "height": 35.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0002",
+      "kind": "display",
+      "display_latex": "\\frac{1}{c_{11}} x_{2} O_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=\\binom{x_{2}^{2} O_{1}}{\\frac{d_{11}}{c_{11}} x_{2}^{2} O_{1}} \\quad \\text { and } \\quad \\frac{1}{d_{01}} x_{2}^{2} O_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=\\binom{0}{x_{2}^{2} O_{1}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 164.44,
+            "y0": 132.98,
+            "x1": 430.84,
+            "y1": 163.98,
+            "width": 266.4,
+            "height": 31.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0004",
+      "kind": "display",
+      "display_latex": "\\frac{1}{c_{11}} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=\\binom{x_{2}^{2}}{\\frac{d_{11}}{c_{11}} x_{2}^{2}} \\quad \\text { and } \\quad \\frac{1}{d_{01}} x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=\\binom{0}{x_{2}^{2}},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 187.93,
+            "y0": 203.97,
+            "x1": 406.85,
+            "y1": 235.47,
+            "width": 218.92,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0008",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{2},}{\\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial x_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{4} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{5} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{6} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}} \\\\\n& =D_{1}{ }^{t}\\binom{x_{2} \\boldsymbol{e}_{1}, x_{2} \\boldsymbol{e}_{2}, x_{1} x_{2} \\boldsymbol{e}_{1}, x_{1} x_{2} \\boldsymbol{e}_{2}, x_{1}^{3} \\boldsymbol{e}_{2}, x_{1}^{2} x_{2} \\boldsymbol{e}_{1}, x_{1}^{2} x_{2} \\boldsymbol{e}_{2},}{x_{1}^{4} \\boldsymbol{e}_{1}, x_{1}^{4} \\boldsymbol{e}_{2}, x_{1}^{3} x_{2} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{2}, x_{1}^{6} \\boldsymbol{e}_{1}, x_{1}^{6} \\boldsymbol{e}_{2}, x_{1}^{7} \\boldsymbol{e}_{1}}, \\\\\n& D_{1}:=\\left(\\begin{array}{ccccccccccccccc}\n0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & c_{31} / 6 & c_{50} / 120 & 0 & c_{60} / 720 & 0 & c_{70} / 5040 \\\\\n0 & 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & c_{50} / 120 & 0 & c_{60} / 720 & 0 \\\\\nd_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & d_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\nc_{11} & d_{11} & c_{21} & d_{21} & 0 & c_{31} / 2 & d_{31} / 2 & c_{50} / 24 & 0 & c_{41} / 6 & c_{60} / 120 & 0 & c_{70} / 720 & 0 & * \\\\\n0 & 0 & c_{11} & d_{11} & 0 & c_{21} & d_{21} & 0 & 0 & c_{31} / 2 & c_{50} / 24 & 0 & c_{60} / 120 & 0 & c_{70} / 720 \\\\\n0 & d_{01} & c_{11} & d_{11} & 0 & c_{21} / 2 & d_{21} / 2 & 0 & 0 & c_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} & 0 & 0 & c_{50} / 24 & 0 & c_{60} / 120 \\\\\n0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & c_{50} / 24 \\\\\n0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & d_{11} & 0 & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 & d_{31} / 6 & c_{41} / 24 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & c_{21} / 2 & d_{21} & c_{31} / 6 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11}\n\\end{array}\\right) .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 102.46,
+            "y0": 292.96,
+            "x1": 492.82,
+            "y1": 488.44,
+            "width": 390.36,
+            "height": 195.47
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0010",
+      "kind": "display",
+      "display_latex": "\\left\\{\\left(\\begin{array}{l}\n\\left(48 a_{50} a_{70}-35 a_{60}^{2}\\right) k_{1}^{2} \\\\\n+42\\left(a_{21} a_{60}-40 a_{31} a_{50}\\right) a_{50} k_{1} \\\\\n+2205 a_{21}^{2} a_{50}^{2}\n\\end{array}\\right) p_{1}^{2}-84 a_{50} k_{1}\\left(a_{60} k_{1}-3 a_{21} a_{50}\\right) p_{1}+756 a_{50}^{2} k_{1}^{2}\\right\\} \\frac{a_{55}^{2} k_{1}^{2} p_{1}^{6} c^{23}}{10450944000 y_{3}^{8}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 86.97,
+            "y0": 516.93,
+            "x1": 498.32,
+            "y1": 552.93,
+            "width": 411.35,
+            "height": 36.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0013",
+      "kind": "display",
+      "display_latex": "t\\left(\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{2}}, \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right)=D_{2}^{t}\\left(\\binom{x_{1}}{0},\\binom{0}{x_{1}},\\binom{x_{1}^{2}}{0},\\binom{0}{x_{1}^{2}},\\binom{x_{1}^{3}}{0}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 137.95,
+            "y0": 584.92,
+            "x1": 454.83,
+            "y1": 616.42,
+            "width": 316.88,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0015",
+      "kind": "display",
+      "display_latex": "D_{2}:=\\left(\\begin{array}{ccccc}\n-c / p_{1} & 0 & -c / p_{1}^{2} & 0 & c / p_{1}^{3} \\\\\n0 & -c / p_{1} & 0 & -c / p_{1}^{2} & 0 \\\\\nc_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 \\\\\n0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\\\\n0 & 0 & 0 & d_{01} & c_{11}\n\\end{array}\\right),",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 185.43,
+            "y0": 624.42,
+            "x1": 409.85,
+            "y1": 691.41,
+            "width": 224.42,
+            "height": 66.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0001",
+      "kind": "display",
+      "display_latex": "\\frac{\\partial^{2} \\pi_{y}}{\\partial y_{1} \\partial x_{1}}=\\binom{-\\frac{c}{p_{1}}}{0}, \\frac{1}{2} \\frac{\\partial^{3} \\pi_{y}}{\\partial y_{1} \\partial x_{1}^{2}}=\\binom{-\\frac{c}{p_{1}^{2}}}{0} \\text { and } \\frac{1}{6} \\frac{\\partial^{3} \\pi_{y}}{\\partial y_{1} \\partial x_{1}^{3}}=\\binom{-\\frac{c}{p_{1}^{3}}}{0}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 144.45,
+            "y0": 97.49,
+            "x1": 449.83,
+            "y1": 129.48,
+            "width": 305.39,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0013",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\left(\\begin{array}{l}\n\\frac{\\partial \\pi_{y}}{\\partial y_{3}}+\\frac{\\partial \\pi_{y}}{\\partial y_{1}} \\tan \\theta \\\\\n\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{2} \\\\\n\\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{4} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{5} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{6} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\n\\end{array}\\right) \\\\\n& \\quad=\\binom{\\boldsymbol{d}_{11}}{D_{12}} t\\binom{x_{2} \\boldsymbol{e}_{1}, x_{2} \\boldsymbol{e}_{2}, x_{1} x_{2} \\boldsymbol{e}_{1}, x_{1} x_{2} \\boldsymbol{e}_{2}, x_{1}^{3} \\boldsymbol{e}_{2}, x_{1}^{2} x_{2} \\boldsymbol{e}_{1}, x_{1}^{2} x_{2} \\boldsymbol{e}_{2},}{x_{1}^{4} \\boldsymbol{e}_{1}, x_{1}^{4} \\boldsymbol{e}_{2}, x_{1}^{3} x_{2} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{2}, x_{1}^{6} \\boldsymbol{e}_{1}, x_{1}^{6} \\boldsymbol{e}_{2}, x_{1}^{7} \\boldsymbol{e}_{1}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 118.46,
+            "y0": 316.96,
+            "x1": 474.32,
+            "y1": 401.95,
+            "width": 355.87,
+            "height": 84.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0015",
+      "kind": "display",
+      "display_latex": "\\left(\\begin{array}{ccccccccccccccc}\n0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & c_{31} / 6 & c_{50} / 120 & 0 & c_{60} / 720 & 0 & c_{70} / 5040 \\\\\n0 & 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & c_{50} / 120 & 0 & c_{60} / 720 & 0 \\\\\nd_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & d_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\nc_{11} & d_{11} & c_{21} & d_{21} & 0 & c_{31} / 2 & d_{31} / 2 & c_{50} / 24 & 0 & c_{41} / 6 & c_{60} / 120 & 0 & c_{70} / 720 & 0 & * \\\\\n0 & 0 & c_{11} & d_{11} & 0 & c_{21} & d_{21} & 0 & 0 & c_{31} / 2 & c_{50} / 24 & 0 & c_{60} / 120 & 0 & c_{70} / 720 \\\\\n0 & 0 & 0 & 0 & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} & 0 & 0 & c_{50} / 24 & 0 & c_{60} / 120 \\\\\n0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & c_{50} / 24 \\\\\n0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 & d_{31} / 6 & c_{41} / 24 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 121.46,
+            "y0": 442.44,
+            "x1": 472.83,
+            "y1": 566.93,
+            "width": 351.37,
+            "height": 124.48
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0017",
+      "kind": "display",
+      "display_latex": "\\boldsymbol{d}_{11}:=\\frac{c^{3}}{y_{3}^{3}}\\left(\\begin{array}{l}\n0,-\\frac{f_{3}(0) y_{3}}{c}, f_{3}(0) k_{1} p_{1},-\\frac{\\left(y_{3}+f_{3}(0)\\right) y_{3}}{p_{1} c}, 0 \\\\\n\\frac{\\left(2 k_{1}\\left(y_{3}+f_{3}(0)\\right)+a_{21} f_{3}(0) p_{1}\\right)}{2},-\\frac{\\left(2 y_{3}+f_{3}(0)\\right) y_{3}}{p_{1}^{2} c}, 0,0, \\frac{3 a_{21} p_{1}\\left(y_{3}+f_{3}(0)\\right)+6 k_{1}\\left(2 y_{3}+f_{3}(0)\\right)+a_{31} f_{3}(0) p_{1}^{2}}{6 p_{1}}, \\\\\n\\frac{a_{50} f_{3}(0) p_{1}}{120}, 0, \\frac{6 a_{50}\\left(y_{3}+f_{3}(0)\\right)+a_{60} f_{3}(0) p_{1}}{720}, 0, \\frac{7 a_{60} p_{1}\\left(y_{3}+f_{3}(0)\\right)+42 a_{50}\\left(2 a_{50} y_{3}+f_{3}(0)\\right)+a_{70} f_{3}(0) p_{1}^{2}}{5040 p_{1}}\n\\end{array}\\right) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 85.97,
+            "y0": 590.42,
+            "x1": 514.81,
+            "y1": 642.42,
+            "width": 428.84,
+            "height": 51.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p017-0007",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\left(\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\quad \\frac{\\partial \\pi_{y}}{\\partial y_{2}}, \\quad \\frac{\\partial \\pi_{y}}{\\partial y_{3}}, \\quad \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, \\quad x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, \\quad x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, \\quad x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right) \\\\\n= & \\left(\\begin{array}{ccccccc}\n-\\frac{y_{3}}{p_{1}^{2} \\sin \\theta} & 0 & -\\frac{y_{3}}{p_{1}^{3} \\sin \\theta} & 0 & -\\frac{y_{3}}{p_{1}^{4} \\sin \\theta} & 0 & -\\frac{y_{3}}{p_{1}^{5} \\sin \\theta} \\\\\n0 & -\\frac{y_{3}}{p_{1}^{2} \\sin \\theta} & 0 & -\\frac{y_{3}}{p_{1}^{3} \\sin \\theta} & 0 & -\\frac{y_{3}}{p_{1}^{4} \\sin \\theta} & 0 \\\\\n\\frac{y_{3} \\cos \\theta}{p_{1}^{2} \\sin ^{2} \\theta} & 0 & \\frac{y_{3} \\cos \\theta}{p_{1}^{3} \\sin ^{2} \\theta} & 0 & \\frac{y_{3} \\cos \\theta}{p_{1}^{4} \\sin ^{2} \\theta} & 0 & \\frac{y_{3} \\cos \\theta}{p_{1}^{5} \\sin ^{2} \\theta} \\\\\nc_{11} & d_{11} & c_{21} & d_{21} & c_{31} & d_{31} & c_{41} \\\\\n0 & d_{01} & c_{11} & d_{11} & c_{21} & d_{21} & c_{31} \\\\\n0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} \\\\\n0 & 0 & 0 & 0 & 0 & d_{01} & c_{11}\n\\end{array}\\right)\\left(\\begin{array}{l}\nx_{1} \\boldsymbol{e}_{1} \\\\\nx_{1} \\boldsymbol{e}_{2} \\\\\nx_{1}^{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} \\boldsymbol{e}_{2} \\\\\nx_{1}^{3} \\boldsymbol{e}_{1} \\\\\nx_{1}^{3} \\boldsymbol{e}_{2} \\\\\nx_{1}^{4} \\boldsymbol{e}_{1}\n\\end{array}\\right)+\\cdots\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 17,
+          "bbox": {
+            "x0": 94.47,
+            "y0": 210.97,
+            "x1": 500.32,
+            "y1": 337.96,
+            "width": 405.85,
+            "height": 126.98
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p017-0016",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& c_{40}=-\\frac{a_{40} p_{1} c^{2}}{y_{3}}, d_{40}=0, c_{31}=-\\left(a_{31} p_{1}+3 a_{21}\\right) \\frac{c^{2}}{2 y_{3}}, d_{31}=\\frac{6 c}{p_{1}^{3}} \\\\\n& c_{22}=-\\left(a_{22} p_{1}^{2}+2 a_{12} p_{1}+2 k_{2}\\right) \\frac{c^{2}}{p_{1} y_{3}}, c_{13}=-\\left(a_{13} p_{1}+a_{03}\\right) \\frac{c^{2}}{y_{3}} \\\\\n& c_{50}=-\\left(a_{50} p_{1}+5 a_{40}\\right) \\frac{c^{2}}{y_{3}}, c_{41}=-\\left(a_{41} p_{1}^{2}+4 a_{31} p_{1}+12 a_{21}\\right) \\frac{c^{2}}{p_{1} y_{3}} \\\\\n& c_{32}=-\\left(a_{32} p_{1}^{3}+3 a_{22} p_{1}^{2}+6 a_{12} p_{1}+6 k_{2}\\right) \\frac{c^{2}}{p_{1}^{2} y_{3}} \\\\\n& c_{60}=-\\left(a_{60} p_{1}^{2}+6 a_{50} p_{1}+30 a_{40}\\right) \\frac{c^{2}}{p_{1} y_{3}}, c_{51}=-\\left(a_{51} p_{1}^{3}+5 a_{41} p_{1}^{2}+20 a_{31} p_{1}+60 a_{21}\\right) \\frac{c^{2}}{p_{1}^{2} y_{3}} \\\\\n& c_{70}=-\\left(a_{70} p_{1}^{3}+7 a_{60} p_{1}^{2}+42 a_{50} p_{1}+210 a_{40}\\right) \\frac{c^{2}}{p_{1}^{2} y_{3}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 17,
+          "bbox": {
+            "x0": 85.97,
+            "y0": 474.44,
+            "x1": 477.32,
+            "y1": 601.92,
+            "width": 391.36,
+            "height": 127.48
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0008",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{2} \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{2} \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{3} \\boldsymbol{e}_{1},}{x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}} \\\\\n& =D^{t}\\binom{x_{2} \\boldsymbol{e}_{2}, x_{1} x_{2} \\boldsymbol{e}_{2}, x_{2}^{2} \\boldsymbol{e}_{1}, x_{2}^{2} \\boldsymbol{e}_{2}, x_{1}^{2} x_{2} \\boldsymbol{e}_{1}, x_{1}^{2} x_{2} \\boldsymbol{e}_{2}, x_{1} x_{2}^{2} \\boldsymbol{e}_{1}, x_{1} x_{2}^{2} \\boldsymbol{e}_{2}, x_{2}^{3} \\boldsymbol{e}_{1},}{x_{1}^{4} \\boldsymbol{e}_{1}, x_{1}^{3} x_{2} \\boldsymbol{e}_{1}, x_{1}^{2} x_{2}^{2} \\boldsymbol{e}_{1}, x_{1} x_{2}^{3} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{1}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 110.46,
+            "y0": 279.46,
+            "x1": 454.33,
+            "y1": 350.45,
+            "width": 343.87,
+            "height": 70.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0010",
+      "kind": "display",
+      "display_latex": "D:=\\left(\\begin{array}{cccccccccccccc}\n0 & 0 & c_{02} / 2 & 0 & c_{21} / 2 & 0 & c_{12} / 2 & 0 & c_{03} / 6 & c_{40} / 24 & c_{31} / 6 & c_{22} / 4 & c_{13} / 6 & c_{50} / 120 \\\\\n0 & 0 & 0 & c_{02} / 2 & 0 & c_{21} / 2 & 0 & c_{12} / 2 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\nd_{01} & d_{11} & 0 & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & d_{01}^{2} & 0 & 0 & 0 & 2 d_{01} d_{11} & 0 & 0 & 0 & 0 & d_{01} d_{21}+d_{11}^{2} & 0 & 0 \\\\\n0 & 0 & 0 & d_{01}^{2} & 0 & 0 & 0 & 2 d_{01} d_{11} & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01}^{3} & 0 & 0 & 0 & 3 d_{01}^{2} d_{11} & 0 \\\\\n0 & d_{11} & 0 & 0 & c_{21} & d_{21} & c_{12} / 2 & 0 & 0 & c_{40} / 6 & c_{31} / 2 & c_{22} / 2 & c_{13} / 6 & c_{50} / 24 \\\\\n0 & 0 & 0 & d_{11} & 0 & 0 & c_{21} & d_{21} & c_{12} / 2 & 0 & c_{40} / 6 & c_{31} / 2 & c_{22} / 2 & 0 \\\\\nd_{01} & d_{11} & c_{02} & 0 & c_{21} / 2 & d_{21} / 2 & c_{12} & 0 & c_{03} / 2 & 0 & c_{31} / 6 & c_{22} / 2 & c_{13} / 2 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & d_{11} & 0 & 0 & 0 & 0 & c_{21} & c_{12} / 2 & 0 & c_{40} / 6 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{11} & 0 & 0 & 0 & c_{21} & c_{12} / 2 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{21} & 0 \\\\\n0 & d_{01} & 0 & 0 & 0 & d_{11} & c_{02} & 0 & 0 & 0 & c_{21} / 2 & c_{12} & c_{03} / 2 & 0 \\\\\n0 & 0 & 0 & d_{01} & 0 & 0 & 0 & d_{11} & c_{02} & 0 & 0 & c_{21} / 2 & c_{12} & 0\n\\end{array}\\right) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 94.47,
+            "y0": 360.45,
+            "x1": 501.31,
+            "y1": 491.44,
+            "width": 406.85,
+            "height": 130.98
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0012",
+      "kind": "display",
+      "display_latex": "-\\frac{a_{21}^{4} a_{40}\\left(3 a_{21}^{2} a_{50} p_{1}+5 a_{12} a_{40}^{2} p_{1}-10 a_{21} a_{31} a_{40} p_{1}-5 a_{40}^{2} k_{2}+15 a_{21}^{2} a_{40}\\right) p_{1}^{6} c^{26}}{23040 y_{3}^{8}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 119.46,
+            "y0": 502.93,
+            "x1": 474.32,
+            "y1": 537.43,
+            "width": 354.87,
+            "height": 34.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0020",
+      "kind": "display",
+      "display_latex": "\\left(\\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right)=\\left(\\binom{x_{1} x_{2}}{0},\\binom{x_{1}^{3}}{0}\\right)\\left(\\begin{array}{cc}\nc_{21} & c_{02} \\\\\n\\frac{c_{40}}{6} & \\frac{c_{21}}{2}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 189.43,
+            "y0": 666.91,
+            "x1": 406.85,
+            "y1": 700.91,
+            "width": 217.42,
+            "height": 34.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0004",
+      "kind": "display",
+      "display_latex": "\\frac{\\partial \\pi_{y}}{\\partial y_{1}}=\\binom{-\\frac{c}{p_{1}} x_{1}-\\frac{c}{p_{1}^{2}} x_{1}^{2}}{0},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}{ 0}=\\binom{d_{01} x_{2}}{0} \\quad \\text { and } \\quad \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=\\binom{c_{02} x_{2}+\\frac{c_{21}}{2} x_{1}^{2}}{0}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 118.46,
+            "y0": 168.48,
+            "x1": 475.32,
+            "y1": 201.97,
+            "width": 356.87,
+            "height": 33.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0015",
+      "kind": "display",
+      "display_latex": "O_{5} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=O_{5}\\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{7}}{0}=\\binom{d_{01}^{7} x_{2}^{7}}{0} \\quad \\text { and } \\quad O_{6} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=O_{6}\\binom{c_{02} x_{2}}{d_{01}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 96.46,
+            "y0": 416.45,
+            "x1": 497.82,
+            "y1": 450.44,
+            "width": 401.35,
+            "height": 34.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0018",
+      "kind": "display",
+      "display_latex": "x_{2} O_{3} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=x_{2} O_{3}\\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{6}}{0}=\\binom{d_{01}^{6} x_{2}^{6}}{0} \\text { and } x_{2} O_{4} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=x_{2} O_{4}\\binom{c_{02} x_{2}}{d_{01}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 497.44,
+            "x1": 524.31,
+            "y1": 530.93,
+            "width": 438.84,
+            "height": 33.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0020",
+      "kind": "display",
+      "display_latex": "x_{2}^{2} O_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}=x_{2}^{2} O_{1}\\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{5}}{0}=\\binom{d_{01}^{5} x_{2}^{5}}{0} \\text { and } x_{2}^{2} O_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=x_{2}^{2} O_{2}\\binom{c_{02} x_{2}}{d_{01}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 568.43,
+            "x1": 518.31,
+            "y1": 602.92,
+            "width": 432.84,
+            "height": 34.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0023",
+      "kind": "display",
+      "display_latex": "\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{4}}{0}=\\binom{d_{01}^{4} x_{2}^{4}}{0} \\quad \\text { and } \\quad x_{2}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}=\\binom{c_{02} x_{2}^{4}}{d_{01} x_{2}^{3}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 185.43,
+            "y0": 663.41,
+            "x1": 409.85,
+            "y1": 697.91,
+            "width": 224.42,
+            "height": 34.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p020-0004",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\nt\\left(\\begin{array}{c}\n\\frac{\\partial \\pi_{y}}{\\partial y_{3}}+\\frac{1}{\\tan \\theta} \\frac{\\partial \\pi_{y}}{\\partial y_{1}}+\\frac{f_{3}(0)}{y_{3} p_{1} \\sin \\theta}\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle}{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}, \\\\\n\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{2},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{1}\\right\\rangle\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{2} \\boldsymbol{e}_{1},\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{3} \\boldsymbol{e}_{1}, \\\\\nx_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, \\\\\nx_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1} x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{4} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, x_{1}^{4} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{3} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{5} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\n\\end{array}\\right) \\\\\n=\\binom{\\boldsymbol{d}}{D_{1}} t\\left(\\begin{array}{c}\nx_{2} \\boldsymbol{e}_{2}, x_{1} x_{2} \\boldsymbol{e}_{2}, x_{2}^{2} \\boldsymbol{e}_{1}, x_{2}^{2} \\boldsymbol{e}_{2}, x_{1}^{2} x_{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} x_{2} \\boldsymbol{e}_{2}, x_{1} x_{2}^{2} \\boldsymbol{e}_{1}, x_{1} x_{2}^{2} \\boldsymbol{e}_{2}, x_{2}^{3} \\boldsymbol{e}_{1} \\\\\nx_{1}^{4} \\boldsymbol{e}_{1}, x_{1}^{4} \\boldsymbol{e}_{2}, x_{1}^{3} x_{2} \\boldsymbol{e}_{1}, x_{1}^{3} x_{2} \\boldsymbol{e}_{2}, x_{1}^{2} x_{2}^{2} \\boldsymbol{e}_{1}, x_{1} x_{2}^{3} \\boldsymbol{e}_{1} \\\\\nx_{1}^{5} \\boldsymbol{e}_{1}, x_{1}^{5} \\boldsymbol{e}_{2}, x_{1}^{4} x_{2} \\boldsymbol{e}_{1}, x_{1}^{3} x_{2}^{2} \\boldsymbol{e}_{1}, x_{1}^{6} \\boldsymbol{e}_{1}, x_{1}^{5} x_{2} \\boldsymbol{e}_{1}, x_{1}^{7} \\boldsymbol{e}_{1}\n\\end{array}\\right)\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 85.97,
+            "y0": 166.98,
+            "x1": 464.33,
+            "y1": 287.96,
+            "width": 378.36,
+            "height": 120.98
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p020-0008",
+      "kind": "display",
+      "display_latex": "\\beta_{22}:=d_{01} d_{21}+d_{11}^{2}, \\quad \\beta_{32}:=d_{01} d_{31}+3 d_{11} d_{21}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 86.97,
+            "y0": 537.93,
+            "x1": 289.89,
+            "y1": 552.93,
+            "width": 202.93,
+            "height": 15.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p020-0010",
+      "kind": "display",
+      "display_latex": "\\boldsymbol{d}:=\\frac{c^{2}}{p_{1} y_{3}}\\binom{0,-1,0,0,0,-\\frac{2}{p_{1}}, \\frac{k_{2}}{2 \\sin \\theta}, 0,0,0,0, \\frac{a_{21}}{2 \\sin \\theta},-\\frac{3}{p_{1}^{2}}, \\frac{a_{12} p_{1}+2 k_{2}}{2 p_{1} \\sin \\theta}, \\frac{a_{03}}{6 \\sin \\theta}, \\frac{a_{40}}{24 \\sin \\theta}, 0,}{\\frac{a_{31} p_{1}+6 a_{21}}{6 p_{1} \\sin \\theta}, \\frac{a_{22} p_{1}^{2}+4 a_{12} p_{1}+6 k_{2}}{4 p_{1}^{2} \\sin \\theta}, \\frac{a_{50} p_{1}+10 a_{40}}{120 p_{1} \\sin \\theta}, \\frac{a_{41} p_{1}^{2}+8 a_{31} p_{1}+36 a_{21}}{24 p_{1}^{2} \\sin \\theta}, \\frac{a_{60} p_{1}^{2}+12 a_{50} p_{1}+90 a_{40}}{720 p_{1}^{2} \\sin \\theta}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 20,
+          "bbox": {
+            "x0": 86.97,
+            "y0": 558.43,
+            "x1": 502.81,
+            "y1": 595.42,
+            "width": 415.85,
+            "height": 37.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p021-0001",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& t\\left(\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{2}},\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}{ 0}, \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{3} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right) \\\\\n= & D_{2}^{t}\\left(\\binom{x_{1}}{0},\\binom{0}{x_{1}},\\binom{x_{2}}{0},\\binom{x_{1}^{2}}{0},\\binom{0}{x_{1}^{2}},\\binom{x_{1} x_{2}}{0},\\binom{x_{1}^{3}}{0},\\binom{0}{x_{1}^{3}}\\right)\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 21,
+          "bbox": {
+            "x0": 85.97,
+            "y0": 107.99,
+            "x1": 412.35,
+            "y1": 165.98,
+            "width": 326.38,
+            "height": 57.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p021-0002",
+      "kind": "display",
+      "display_latex": "D_{2}:=\\left(\\begin{array}{cccccccc}\n-\\frac{c}{p_{1}} & 0 & 0 & -\\frac{c}{p_{1}^{2}} & 0 & 0 & -\\frac{c}{p_{1}^{3}} & 0 \\\\\n0 & -\\frac{c}{p_{1}} & 0 & 0 & -\\frac{c}{p_{1}^{2}} & 0 & 0 & -\\frac{c}{p_{1}^{3}} \\\\\n0 & 0 & d_{01} & 0 & 0 & d_{11} & 0 & 0 \\\\\n0 & 0 & 0 & 0 & 0 & c_{21} & c_{40} / 6 & 0 \\\\\n0 & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{12} & c_{31} / 6 & d_{31} / 6 \\\\\n0 & d_{01} & 0 & 0 & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 \\\\\n0 & 0 & 0 & 0 & d_{01} & 0 & 0 & d_{11} \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 21,
+          "bbox": {
+            "x0": 157.94,
+            "y0": 166.48,
+            "x1": 435.34,
+            "y1": 272.46,
+            "width": 277.4,
+            "height": 105.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p021-0010",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nt\\left(\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{3}},\\right. & \\left.\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}{ 0}, \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}, x_{1}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right) \\\\\n& =\\left(\\begin{array}{ccccccc}\n-\\frac{c}{p_{1}} & 0 & -\\frac{c}{p_{1}^{2}} & 0 & 0 & -\\frac{c}{p_{1}^{3}} & -\\frac{c}{p_{1}^{4}} \\\\\n\\frac{c \\cos \\theta}{y_{3}} & 0 & \\frac{c \\cos \\theta}{p_{1} y_{3}} & 0 & 0 & \\frac{c \\cos \\theta}{p_{1}^{2} y_{3}} & \\frac{c \\cos \\theta}{p_{1}^{3} y_{3}} \\\\\n0 & d_{01} & 0 & 0 & d_{11} & 0 & 0 \\\\\n0 & 0 & 0 & 0 & c_{21} & 0 & c_{50} / 24 \\\\\n0 & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{12} & c_{31} / 6 & c_{41} / 24 \\\\\n0 & 0 & 0 & d_{11} & c_{02} & c_{21} / 2 & c_{31} / 6 \\\\\n0 & 0 & 0 & d_{01} & 0 & 0 & c_{21} / 2\n\\end{array}\\right)\\left(\\begin{array}{c}\nx_{1} \\boldsymbol{e}_{1} \\\\\nx_{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{2} \\boldsymbol{e}_{2} \\\\\nx_{1} x_{2} \\boldsymbol{e}_{1} \\\\\nx_{1}^{3} \\boldsymbol{e}_{1} \\\\\nx_{1}^{4} \\boldsymbol{e}_{1}\n\\end{array}\\right)+\\cdots\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 21,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 399.95,
+            "x1": 458.83,
+            "y1": 528.93,
+            "width": 373.36,
+            "height": 128.98
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p021-0019",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& c_{40}=-\\left(a_{40} p_{1}+4 a_{30}\\right) \\frac{c^{2}}{y_{3}}, d_{40}=0 \\\\\n& c_{31}=-\\left(a_{31} p_{1}+3 a_{21}\\right) \\frac{c^{2}}{y_{3}}, d_{31}=\\left(6 \\sin \\theta+a_{30} p_{1}^{2} \\cos \\theta\\right) \\frac{c^{2}}{p_{1}^{2} y_{3}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 21,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 658.91,
+            "x1": 348.37,
+            "y1": 699.41,
+            "width": 262.9,
+            "height": 40.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p022-0001",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& c_{22}=-\\left(a_{22} p_{1}^{2}+2 a_{12} p_{1}+2 k_{2}\\right) \\frac{c^{2}}{p_{1} y_{3}}, d_{22}=\\left(2 a_{21} \\cos \\theta\\right) \\frac{c^{2}}{y_{3}}, \\\\\n& c_{13}=-\\left(a_{13} p_{1}+a_{03}\\right) \\frac{c^{2}}{y_{3}}, d_{13}=\\left(3\\left(a_{12} p_{1}+2 k_{2}\\right) \\cos \\theta\\right) \\frac{c^{2}}{p_{1} y_{3}}, \\\\\n& c_{04}=-p_{1}\\left(a_{04}+6 k_{2}^{2} \\frac{c}{y_{3}} \\cos \\theta\\right) \\frac{c^{2}}{y_{3}}, d_{04}=4 a_{03} \\cos \\theta \\frac{c^{2}}{y_{3}}, \\\\\n& c_{50}=-\\left(a_{50} p_{1}^{2}+5 a_{40} p_{1}+20 a_{30}\\right) \\frac{c^{2}}{p_{1} y_{3}}, d_{50}=0, \\\\\n& c_{41}=-\\left(a_{41} p_{1}^{2}+4 a_{31} p_{1}+12 a_{21}\\right) \\frac{c^{2}}{p_{1} y_{3}}, d_{41}=\\left\\{24 \\sin \\theta+\\left(a_{40} p_{1}+8 a_{30}\\right) p_{1}^{2} \\cos \\theta\\right\\} \\frac{c^{2}}{p_{1}^{3} y_{3}}, \\\\\n& c_{32}=-\\left\\{\\left(a_{32} p_{1}^{3}+3 a_{22} p_{1}^{2}+6 a_{12} p_{1}+6 k_{2}\\right) \\sin \\theta+2 a_{30} k_{2} p_{1}^{2} \\cos \\theta\\right\\} \\frac{c^{3}}{p_{1} y_{3}^{2}}, \\\\\n& d_{32}=2\\left(a_{31} p_{1}+6 a_{21}\\right) \\cos \\theta \\frac{c^{2}}{p_{1} y_{3}}, \\\\\n& c_{23}=-\\left\\{\\left(a_{23} p_{1}^{2}+2 a_{13} p_{1}+2 a_{03}\\right) \\sin \\theta+6 a_{21} k_{2} p_{1} \\cos \\theta\\right\\} \\frac{c^{3}}{y_{3}^{2}}, \\\\\n& d_{23}=3\\left(a_{22} p_{1}^{2}+4 a_{12} p_{1}+6 k_{2}\\right) \\cos \\theta \\frac{c^{2}}{p_{1}^{2} y_{3}}, \\\\\n& c_{14}=-12 k_{2}\\left(a_{12} p_{1}+k_{2}\\right) \\cos \\theta \\frac{c^{3}}{y_{3}^{2}}-\\left(a_{14} p_{1}+a_{04}\\right) \\frac{c^{2}}{y_{3}}, d_{14}=4\\left(a_{13} p_{1}+2 a_{03}\\right) \\cos \\theta \\frac{c^{2}}{p_{1} y_{3}}, \\\\\n& c_{05}=-20 a_{03} k_{2} \\cos \\theta \\frac{p_{1} c^{3}}{y_{3}^{2}}-a_{05} \\frac{p_{1} c^{2}}{y_{3}} .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 22,
+          "bbox": {
+            "x0": 85.47,
+            "y0": 96.49,
+            "x1": 463.83,
+            "y1": 293.46,
+            "width": 378.36,
+            "height": 196.97
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p024-0001",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\nt\\left(\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle}{ 0}, \\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{3}}, \\frac{\\partial \\pi_{y}}{\\partial x_{1}}, \\frac{\\partial \\pi_{y}}{\\partial x_{2}}\\right)=D^{t}\\left(\\binom{x_{1}}{0},\\binom{x_{2}}{0},\\binom{x_{1}^{2}}{0},\\binom{x_{1} x_{2}}{0}\\right) \\\\\nD:=\\left(\\begin{array}{cccc}\n0 & d_{01} & 0 & d_{11} \\\\\n-\\frac{c}{p_{1}} & 0 & -\\frac{c}{p_{1}^{2}} & 0 \\\\\n\\frac{c}{p_{1} \\tan \\theta} & 0 & \\frac{c}{p_{1}^{2} \\tan \\theta} & 0 \\\\\n0 & 0 & c_{30} / 2 & c_{21} \\\\\n0 & 0 & c_{21} / 2 & c_{12}\n\\end{array}\\right)\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 24,
+          "bbox": {
+            "x0": 116.96,
+            "y0": 106.99,
+            "x1": 449.33,
+            "y1": 210.97,
+            "width": 332.38,
+            "height": 103.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p024-0012",
+      "kind": "display",
+      "display_latex": "\\binom{0}{O_{5}}=\\frac{1}{d_{01}} O_{5} \\frac{\\partial \\pi_{y}}{\\partial x_{2}},\\binom{0}{x_{2}^{4}+\\frac{2 d_{01}^{3} d_{11}}{d_{01}^{4}} x_{1} x_{2}^{4}}=\\frac{1}{d_{01}^{4}}\\binom{0}{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{4}},\\binom{x_{2}^{5}}{0}=\\frac{1}{d_{01}^{5}}\\binom{\\left\\langle\\pi_{y}, \\boldsymbol{e}_{2}\\right\\rangle^{5}}{0}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 24,
+          "bbox": {
+            "x0": 105.96,
+            "y0": 360.45,
+            "x1": 488.82,
+            "y1": 397.95,
+            "width": 382.86,
+            "height": 37.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0142",
+      "kind": "display",
+      "display_latex": "x_{1} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 96.46,
+            "y0": 283.96,
+            "x1": 127.95,
+            "y1": 296.46,
+            "width": 31.49,
+            "height": 12.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0173",
+      "kind": "display",
+      "display_latex": "x_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{1}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 96.46,
+            "y0": 318.46,
+            "x1": 127.95,
+            "y1": 330.96,
+            "width": 31.49,
+            "height": 12.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0184",
+      "kind": "display",
+      "display_latex": "x_{1} x_{2}^{2} \\frac{\\partial \\pi_{\\underline{y}}}{\\partial x_{1}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 96.96,
+            "y0": 328.96,
+            "x1": 127.45,
+            "y1": 341.46,
+            "width": 30.49,
+            "height": 12.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0215",
+      "kind": "display",
+      "display_latex": "x_{1}^{2} x_{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 96.46,
+            "y0": 362.95,
+            "x1": 127.95,
+            "y1": 375.45,
+            "width": 31.49,
+            "height": 12.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0226",
+      "kind": "display",
+      "display_latex": "x_{1} x_{2}^{2} \\frac{\\partial \\pi_{y}}{\\partial x_{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 96.96,
+            "y0": 374.45,
+            "x1": 127.45,
+            "y1": 386.45,
+            "width": 30.49,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p027-0007",
+      "kind": "display",
+      "display_latex": "t\\left(\\frac{\\partial \\pi_{y}}{\\partial y_{1}}, \\frac{\\partial \\pi_{y}}{\\partial y_{3}}\\right)=\\left(\\begin{array}{cc}\n-\\frac{c}{p_{1}} & -\\frac{c}{p_{1}^{2}} \\\\\n\\frac{c}{p_{1} \\tan \\theta} & \\frac{c}{p_{1}^{2} \\tan \\theta}\n\\end{array}\\right) t\\left(\\binom{x_{1}}{0},\\binom{x_{1}^{2}}{0}\\right)+\\cdots",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 27,
+          "bbox": {
+            "x0": 160.94,
+            "y0": 198.47,
+            "x1": 432.84,
+            "y1": 235.47,
+            "width": 271.9,
+            "height": 37.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p027-0016",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nC_{y, \\boldsymbol{d}, \\theta}\\left(z_{1}, z_{2}, z_{3}\\right):=\\langle\\boldsymbol{d}, z-y\\rangle^{2}-|z-y|^{2} \\cos ^{2} \\theta=0 \\tag{4.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 27,
+          "bbox": {
+            "x0": 184.93,
+            "y0": 370.45,
+            "x1": 409.85,
+            "y1": 389.95,
+            "width": 224.92,
+            "height": 19.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p027-0020",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\nC\\left(x_{1}, x_{2}\\right) & =C_{y, \\boldsymbol{d}, \\theta}\\left(x_{1}, x_{2}, Q(x)\\right)  \\tag{4.2}\\\\\n& =\\sum_{k \\geq 2}^{m} C_{k}\\left(x_{1}, x_{2}\\right)+o\\left(x_{1}, x_{2}\\right)^{m+1} \\text { where } C_{k}\\left(x_{1}, x_{2}\\right):=\\sum_{i+j=k} \\frac{c_{i j}}{i j} x_{1}^{i} x_{2}^{j} .\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 27,
+          "bbox": {
+            "x0": 119.46,
+            "y0": 426.44,
+            "x1": 474.32,
+            "y1": 476.94,
+            "width": 354.87,
+            "height": 50.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p027-0036",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\ny_{3}=d_{1} y_{2}-d_{2} y_{1}=0 \\tag{4.3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 27,
+          "bbox": {
+            "x0": 245.91,
+            "y0": 679.91,
+            "x1": 347.87,
+            "y1": 695.91,
+            "width": 101.96,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p028-0015",
+      "kind": "display",
+      "display_latex": "d_{3}=-\\frac{d_{1}}{k_{2} y_{1}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 28,
+          "bbox": {
+            "x0": 289.39,
+            "y0": 327.96,
+            "x1": 351.87,
+            "y1": 356.95,
+            "width": 62.48,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p028-0030",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\left(k_{2} a_{40}-3 a_{21}^{2}\\right) d_{3} y_{1}+a_{40} d_{1} \\neq 0 \\tag{4.4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 28,
+          "bbox": {
+            "x0": 235.41,
+            "y0": 565.43,
+            "x1": 384.86,
+            "y1": 582.92,
+            "width": 149.44,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p028-0035",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right) y_{1}-5 a_{40}\\left(k_{2} a_{40}-3 a_{21}^{2}\\right) \\neq 0 \\tag{4.5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 28,
+          "bbox": {
+            "x0": 165.94,
+            "y0": 644.42,
+            "x1": 454.33,
+            "y1": 663.41,
+            "width": 288.39,
+            "height": 19.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p029-0003",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& A C_{5}:=\\left(45 a_{21}^{3} a_{40} a_{60}-54 a_{21}^{3} a_{50}^{2}+180 a_{21}^{2} a_{31} a_{40} a_{50}-225 a_{21}^{2} a_{40}^{2} a_{41}-25 a_{03} a_{40}^{4}+225 a_{21} a_{22} a_{40}^{3}-\\right. \\\\\n& \\left.150 a_{21} a_{31}^{2} a_{40}^{2}\\right) y_{1}-270 a_{21}^{3} a_{40} a_{50}-450 a_{12} a_{21} a_{40}^{3}+900 a_{21}^{2} a_{31} a_{40}^{2}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 29,
+          "bbox": {
+            "x0": 111.96,
+            "y0": 127.48,
+            "x1": 526.81,
+            "y1": 156.98,
+            "width": 414.85,
+            "height": 29.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p029-0008",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\left(\\begin{array}{l}\n225 a_{21}^{3} a_{40}^{2} a_{70}-945 a_{21}^{3} a_{40} a_{50} a_{60}+1575 a_{21}^{2} a_{31} a_{40}^{2} a_{60}-1575 a_{21}^{2} a_{40}^{3} a_{51} \\\\\n+756 a_{21}^{3} a_{50}^{3}-3150 a_{21}^{2} a_{31} a_{40} a_{50}^{2}+3150 a_{21}^{2} a_{40}^{2} a_{41} a_{50}-1575 a_{21} a_{22} a_{40}^{3} a_{50} \\\\\n+4200 a_{21} a_{31}^{2} a_{40}^{2} a_{50}-5250 a_{21} a_{31} a_{40}^{3} a_{41}-875 a_{13} a_{40}^{5}+2625 a_{21} a_{32} a_{40}^{4} \\\\\n+2625 a_{22} a_{31} a_{40}^{4}-1750 a_{31}^{3} a_{40}^{3}\n\\end{array}\\right) y_{1}^{2} \\\\\n& +210 a_{40}\\left(3 a_{21} a_{50}-5 a_{31} a_{40}\\right)\\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right) y_{1} \\\\\n& -3150 a_{21} a_{40}^{2}\\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\\right)\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 29,
+          "bbox": {
+            "x0": 110.96,
+            "y0": 212.97,
+            "x1": 479.82,
+            "y1": 292.46,
+            "width": 368.86,
+            "height": 79.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p029-0015",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nA C_{6}-70 a_{40} A C_{5} \\tag{4.6}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 29,
+          "bbox": {
+            "x0": 268.9,
+            "y0": 385.95,
+            "x1": 350.37,
+            "y1": 401.45,
+            "width": 81.47,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

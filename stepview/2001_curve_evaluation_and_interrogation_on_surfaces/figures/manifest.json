@@ -1,0 +1,274 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 4,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-1-p004.png",
+      "caption_text": "FIG. 1. Highlight curves (in gray) can help in the detection of surface discontinuities. The given surface is bicubic, and hence C 2 continuous, in general. A C 2 discontinuity about a third (from the left) along the surface is detected as a C 1 discontinuity in the highlight curves. A C 1 discontinuity about a two thirds along the surface is detected as an actual discontinuity in the highlight curves.",
+      "figure_bbox": {
+        "x0": 57.51,
+        "y0": 36.21,
+        "x1": 334.98,
+        "y1": 236.03,
+        "width": 277.47,
+        "height": 199.82
+      },
+      "caption_bbox": {
+        "x0": 17.07,
+        "y0": 238.27,
+        "x1": 375.73,
+        "y1": 281.78,
+        "width": 358.66,
+        "height": 43.51
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 6,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-2-p006.png",
+      "caption_text": "FIG. 2. The Utah teapot as four bicubic surfaces on the side with isoclines (in thick gray) presenting surface normals at 40, 50, 60, 70, 80, 85, and 89 \u25e6 from the V direction.",
+      "figure_bbox": {
+        "x0": 51.51,
+        "y0": 36.61,
+        "x1": 341.22,
+        "y1": 278.91,
+        "width": 289.71,
+        "height": 242.3
+      },
+      "caption_bbox": {
+        "x0": 17.07,
+        "y0": 281.27,
+        "x1": 375.75,
+        "y1": 303.33,
+        "width": 358.68,
+        "height": 22.07
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-3-p006.png",
+      "caption_text": "FIG. 3. Isoclines at 70 \u25e6 of a wine glass laying on its side. The function F i ( u , v ), whose zero set is the desired set of isoclines, is presented in (a) along with its zero set in thick gray lines. Part (b) shows the isoclines (in thick gray) on the surface of the glass while (c) shows (in thin lines) the regions of the glass of the surface that are trimmed away, leaving only regions (in thick gray lines) with slopes of 70 \u25e6 or less, regions that, for example, might require support in a layered manufacturing process.",
+      "figure_bbox": {
+        "x0": 23.51,
+        "y0": 411.51,
+        "x1": 369.14,
+        "y1": 590.69,
+        "width": 345.63,
+        "height": 179.18
+      },
+      "caption_bbox": {
+        "x0": 17.08,
+        "y0": 592.93,
+        "x1": 375.71,
+        "y1": 647.39,
+        "width": 358.64,
+        "height": 54.47
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 7,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-4-p007.png",
+      "caption_text": "FIG. 4. Isoclines at 45 \u25e6 of a horn surface laying on its side. The function F i ( u , v ), whose zero set is the desired set of isoclines, is presented in (a) along with its zero set, in thick gray lines. Part (b) shows the isoclines (in thick gray) on the surface of the horn while (c) shows the regions of the horn of the surface that are trimmed away, leaving only regions (in thick gray lines) with slopes of 45 \u25e6 or less, regions that, for example, might require support in a layered manufacturing process.",
+      "figure_bbox": {
+        "x0": 19.66,
+        "y0": 36.54,
+        "x1": 374.41,
+        "y1": 220.04,
+        "width": 354.75,
+        "height": 183.5
+      },
+      "caption_bbox": {
+        "x0": 17.72,
+        "y0": 222.27,
+        "x1": 376.41,
+        "y1": 276.74,
+        "width": 358.69,
+        "height": 54.47
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 8,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-5-p008.png",
+      "caption_text": "FIG. 5. We question when an incoming ray in the V direction is re\ufb02ected in the r ( u , v ) direction through line L .",
+      "figure_bbox": {
+        "x0": 61.51,
+        "y0": 36.74,
+        "x1": 331.54,
+        "y1": 203.92,
+        "width": 270.03,
+        "height": 167.18
+      },
+      "caption_bbox": {
+        "x0": 17.08,
+        "y0": 206.27,
+        "x1": 375.73,
+        "y1": 227.86,
+        "width": 358.65,
+        "height": 21.59
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 9,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-6-p009.png",
+      "caption_text": "FIG. 6. We question when an incoming ray in the V direction is re\ufb02ected in the r ( u , v ) direction that forms an angle \u03b1 with line P S \u2212 S ( u , v ).",
+      "figure_bbox": {
+        "x0": 86.15,
+        "y0": 411.75,
+        "x1": 307.7,
+        "y1": 623.57,
+        "width": 221.55,
+        "height": 211.82
+      },
+      "caption_bbox": {
+        "x0": 17.72,
+        "y0": 625.8,
+        "x1": 376.37,
+        "y1": 647.94,
+        "width": 358.65,
+        "height": 22.14
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 10,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-7-p010.png",
+      "caption_text": "FIG. 7. Re\ufb02ection lines (thick gray lines) off a single, C \u221e , biquadratic patch. The view direction is shown by the arrow.",
+      "figure_bbox": {
+        "x0": 52.01,
+        "y0": 411.27,
+        "x1": 340.76,
+        "y1": 623.57,
+        "width": 288.75,
+        "height": 212.3
+      },
+      "caption_bbox": {
+        "x0": 17.07,
+        "y0": 625.8,
+        "x1": 375.73,
+        "y1": 647.39,
+        "width": 358.66,
+        "height": 21.59
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 11,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-8-p011.png",
+      "caption_text": "FIG. 8. Re\ufb02ection lines (thick gray lines) off a biquadratic B-spline surface with two interior knots that introduces two C 2 discontinuous lines. The view direction is shown by the arrow.",
+      "figure_bbox": {
+        "x0": 44.15,
+        "y0": 36.85,
+        "x1": 350.42,
+        "y1": 248.91,
+        "width": 306.27,
+        "height": 212.06
+      },
+      "caption_bbox": {
+        "x0": 17.72,
+        "y0": 251.27,
+        "x1": 376.32,
+        "y1": 272.86,
+        "width": 358.6,
+        "height": 21.59
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 11,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-9-p011.png",
+      "caption_text": "FIG. 9. Re\ufb02ection lines (thick gray lines) off a bicubic sphere. The view direction is shown by the arrow.",
+      "figure_bbox": {
+        "x0": 21.65,
+        "y0": 450.89,
+        "x1": 372.56,
+        "y1": 634.63,
+        "width": 350.91,
+        "height": 183.74
+      },
+      "caption_bbox": {
+        "x0": 26.71,
+        "y0": 636.86,
+        "x1": 367.38,
+        "y1": 647.97,
+        "width": 340.68,
+        "height": 11.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 12,
+      "image_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/figures/figure-10-p012.png",
+      "caption_text": "FIG. 10. Re\ufb02ection ovals (thick gray lines) off a biquadratic B-spline surface with C 2 discontinuities (compare with Fig. 8). The view direction is shown by the arrow.",
+      "figure_bbox": {
+        "x0": 68.01,
+        "y0": 36.53,
+        "x1": 324.84,
+        "y1": 294.91,
+        "width": 256.83,
+        "height": 258.38
+      },
+      "caption_bbox": {
+        "x0": 17.07,
+        "y0": 292.17,
+        "x1": 375.72,
+        "y1": 316.65,
+        "width": 358.65,
+        "height": 24.48
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    }
+  ]
+}

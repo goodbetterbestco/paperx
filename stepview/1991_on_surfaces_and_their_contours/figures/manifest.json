@@ -1,0 +1,301 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 5,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-3-p005.png",
+      "caption_text": "Fig.3-1eft.",
+      "figure_bbox": {
+        "x0": 64.8,
+        "y0": 121.04,
+        "x1": 407.39,
+        "y1": 266.0,
+        "width": 342.59,
+        "height": 144.95
+      },
+      "caption_bbox": {
+        "x0": 66.24,
+        "y0": 104.88,
+        "x1": 106.83,
+        "y1": 117.04,
+        "width": 40.59,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3-2",
+      "label": "3",
+      "page": 5,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-3-2-p005.png",
+      "caption_text": "Fig.3",
+      "figure_bbox": {
+        "x0": 64.8,
+        "y0": 121.04,
+        "x1": 407.39,
+        "y1": 266.0,
+        "width": 342.59,
+        "height": 144.95
+      },
+      "caption_bbox": {
+        "x0": 208.8,
+        "y0": 270.0,
+        "x1": 231.2,
+        "y1": 282.16,
+        "width": 22.4,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 7,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-4-p007.png",
+      "caption_text": "Fig.4",
+      "figure_bbox": {
+        "x0": 64.8,
+        "y0": 270.02,
+        "x1": 407.23,
+        "y1": 440.73,
+        "width": 342.43,
+        "height": 170.71
+      },
+      "caption_bbox": {
+        "x0": 209.04,
+        "y0": 444.73,
+        "x1": 232.04,
+        "y1": 456.58,
+        "width": 23.0,
+        "height": 11.85
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 8,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-5-p008.png",
+      "caption_text": "Fig.5",
+      "figure_bbox": {
+        "x0": 64.8,
+        "y0": 251.54,
+        "x1": 407.16,
+        "y1": 454.89,
+        "width": 342.36,
+        "height": 203.35
+      },
+      "caption_bbox": {
+        "x0": 209.04,
+        "y0": 458.89,
+        "x1": 232.04,
+        "y1": 470.74,
+        "width": 23.0,
+        "height": 11.85
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 11,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-6-p011.png",
+      "caption_text": "Fig.6",
+      "figure_bbox": {
+        "x0": 65.52,
+        "y0": 38.2,
+        "x1": 407.04,
+        "y1": 298.4,
+        "width": 341.52,
+        "height": 260.2
+      },
+      "caption_bbox": {
+        "x0": 216.24,
+        "y0": 302.4,
+        "x1": 238.08,
+        "y1": 314.56,
+        "width": 21.84,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 15,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-7-p015.png",
+      "caption_text": "Fig.7",
+      "figure_bbox": {
+        "x0": 66.0,
+        "y0": 38.2,
+        "x1": 405.86,
+        "y1": 420.57,
+        "width": 339.86,
+        "height": 382.37
+      },
+      "caption_bbox": {
+        "x0": 208.32,
+        "y0": 424.57,
+        "x1": 231.13,
+        "y1": 436.42,
+        "width": 22.81,
+        "height": 11.85
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 16,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-8-p016.png",
+      "caption_text": "Fig.8",
+      "figure_bbox": {
+        "x0": 64.8,
+        "y0": 175.76,
+        "x1": 405.5,
+        "y1": 592.4,
+        "width": 340.7,
+        "height": 416.63
+      },
+      "caption_bbox": {
+        "x0": 207.36,
+        "y0": 596.4,
+        "x1": 229.76,
+        "y1": 608.56,
+        "width": 22.4,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 18,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-9-p018.png",
+      "caption_text": "Fig.9",
+      "figure_bbox": {
+        "x0": 64.32,
+        "y0": 148.4,
+        "x1": 407.64,
+        "y1": 292.16,
+        "width": 343.32,
+        "height": 143.75
+      },
+      "caption_bbox": {
+        "x0": 214.56,
+        "y0": 296.16,
+        "x1": 236.22,
+        "y1": 308.32,
+        "width": 21.66,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 18,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-10-p018.png",
+      "caption_text": "Fig. 10",
+      "figure_bbox": {
+        "x0": 64.32,
+        "y0": 394.4,
+        "x1": 407.64,
+        "y1": 590.24,
+        "width": 343.32,
+        "height": 195.83
+      },
+      "caption_bbox": {
+        "x0": 210.24,
+        "y0": 594.24,
+        "x1": 237.94,
+        "y1": 606.4,
+        "width": 27.7,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 19,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-11-p019.png",
+      "caption_text": "Fig. 11",
+      "figure_bbox": {
+        "x0": 66.0,
+        "y0": 272.96,
+        "x1": 406.19,
+        "y1": 464.96,
+        "width": 340.19,
+        "height": 191.99
+      },
+      "caption_bbox": {
+        "x0": 208.56,
+        "y0": 468.96,
+        "x1": 235.66,
+        "y1": 481.12,
+        "width": 27.1,
+        "height": 12.17
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 24,
+      "image_path": "docs/1991_on_surfaces_and_their_contours/figures/figure-12-p024.png",
+      "caption_text": "Fig. 12",
+      "figure_bbox": {
+        "x0": 18.72,
+        "y0": 38.2,
+        "x1": 219.96,
+        "y1": 586.35,
+        "width": 201.24,
+        "height": 548.15
+      },
+      "caption_bbox": {
+        "x0": 211.92,
+        "y0": 590.35,
+        "x1": 239.33,
+        "y1": 603.79,
+        "width": 27.41,
+        "height": 13.45
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

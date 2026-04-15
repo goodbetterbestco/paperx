@@ -1,0 +1,67 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "FaceId@ = [stepId, facelndex, surfaceTy~ ]2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 354.24,
+            "y0": 154.15,
+            "x1": 524.11,
+            "y1": 161.13,
+            "width": 169.87,
+            "height": 6.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "EdgeId(e) = [ a~FaceIds, endFaceIdro. 1, edgeGeomTyF J",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 331.44,
+            "y0": 334.87,
+            "x1": 548.77,
+            "y1": 341.85,
+            "width": 217.33,
+            "height": 6.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

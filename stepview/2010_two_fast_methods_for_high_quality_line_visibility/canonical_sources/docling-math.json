@@ -1,0 +1,37 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "l = glyph[ceilingleft]|| p ′ w -q ′ w || k glyph[ceilingright] (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 398.84,
+            "y0": 682.58,
+            "x1": 563.03,
+            "y1": 695.61,
+            "width": 164.19,
+            "height": 13.03
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    }
+  ]
+}

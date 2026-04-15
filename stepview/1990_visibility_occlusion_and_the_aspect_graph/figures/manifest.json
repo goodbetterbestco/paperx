@@ -1,0 +1,706 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 12,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-1-p012.png",
+      "caption_text": "Figure 1. The point (8,\u00a2) on the unit sphere.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 270.0,
+        "width": 264.19,
+        "height": 226.4
+      },
+      "caption_bbox": {
+        "x0": 173.55,
+        "y0": 274.0,
+        "x1": 404.95,
+        "y1": 286.0,
+        "width": 231.4,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 12,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-2-p012.png",
+      "caption_text": "Figure 2. The merging of two regions in the image is a topological change.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 290.0,
+        "x1": 589.82,
+        "y1": 682.0,
+        "width": 565.25,
+        "height": 392.0
+      },
+      "caption_bbox": {
+        "x0": 93.76,
+        "y0": 686.0,
+        "x1": 488.73,
+        "y1": 700.0,
+        "width": 394.97,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 13,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-3-p013.png",
+      "caption_text": "Figure 3. A change in the number of sides of a polygon in the image is not a",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 254.0,
+        "width": 565.25,
+        "height": 210.4
+      },
+      "caption_bbox": {
+        "x0": 127.67,
+        "y0": 258.0,
+        "x1": 528.62,
+        "y1": 272.0,
+        "width": 400.96,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 14,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-4-p014.png",
+      "caption_text": "Figure 4. A tetrahedron.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 612.0,
+        "width": 264.19,
+        "height": 568.4
+      },
+      "caption_bbox": {
+        "x0": 223.42,
+        "y0": 616.0,
+        "x1": 357.07,
+        "y1": 628.0,
+        "width": 133.65,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 15,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-5-p015.png",
+      "caption_text": "Figure 5. The viewpoint space partition for a tetrahedron.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 228.0,
+        "width": 264.19,
+        "height": 184.4
+      },
+      "caption_bbox": {
+        "x0": 171.55,
+        "y0": 232.0,
+        "x1": 482.74,
+        "y1": 244.0,
+        "width": 311.19,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 16,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-6-p016.png",
+      "caption_text": "Figure 6.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 268.0,
+        "width": 264.19,
+        "height": 224.4
+      },
+      "caption_bbox": {
+        "x0": 153.6,
+        "y0": 272.0,
+        "x1": 203.47,
+        "y1": 284.0,
+        "width": 49.87,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 16,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-7-p016.png",
+      "caption_text": "Figure 7. The aspect graph for a tetrahedron.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 288.0,
+        "x1": 288.77,
+        "y1": 480.0,
+        "width": 264.19,
+        "height": 192.0
+      },
+      "caption_bbox": {
+        "x0": 167.56,
+        "y0": 484.0,
+        "x1": 410.93,
+        "y1": 498.0,
+        "width": 243.37,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 17,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-8-p017.png",
+      "caption_text": "Figure 8. The boundary between four regions of viewpoint space.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 516.0,
+        "width": 264.19,
+        "height": 472.4
+      },
+      "caption_bbox": {
+        "x0": 157.59,
+        "y0": 520.0,
+        "x1": 504.69,
+        "y1": 534.0,
+        "width": 347.1,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 18,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-9-p018.png",
+      "caption_text": "Figure 9. An image of a eube under our viewing model and that of Koenderink and",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 386.0,
+        "width": 565.25,
+        "height": 342.4
+      },
+      "caption_bbox": {
+        "x0": 65.83,
+        "y0": 390.0,
+        "x1": 506.68,
+        "y1": 404.0,
+        "width": 440.85,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 20,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-10-p020.png",
+      "caption_text": "Figure 10. A band of m sides.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 258.0,
+        "width": 264.19,
+        "height": 214.4
+      },
+      "caption_bbox": {
+        "x0": 207.46,
+        "y0": 262.0,
+        "x1": 363.05,
+        "y1": 274.0,
+        "width": 155.59,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 20,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-11-p020.png",
+      "caption_text": "Figure 11. A convex polyhedron with two orthogonal bands.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 278.0,
+        "x1": 288.77,
+        "y1": 492.0,
+        "width": 264.19,
+        "height": 214.0
+      },
+      "caption_bbox": {
+        "x0": 127.67,
+        "y0": 496.0,
+        "x1": 444.84,
+        "y1": 508.0,
+        "width": 317.17,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 23,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-12-p023.png",
+      "caption_text": "Figure 12. Two quarter-bands.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 468.0,
+        "width": 264.19,
+        "height": 424.4
+      },
+      "caption_bbox": {
+        "x0": 247.36,
+        "y0": 472.0,
+        "x1": 408.94,
+        "y1": 484.0,
+        "width": 161.58,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 30,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-19-p030.png",
+      "caption_text": "Figure 19. Two grids behind two screens.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 366.0,
+        "width": 264.19,
+        "height": 322.4
+      },
+      "caption_bbox": {
+        "x0": 175.54,
+        "y0": 370.0,
+        "x1": 394.97,
+        "y1": 382.0,
+        "width": 219.43,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 30,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-20-p030.png",
+      "caption_text": "Figure 20. A typical view of the two grids (seen simultaneously).",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 386.0,
+        "x1": 288.77,
+        "y1": 610.0,
+        "width": 264.19,
+        "height": 224.0
+      },
+      "caption_bbox": {
+        "x0": 115.7,
+        "y0": 614.0,
+        "x1": 458.81,
+        "y1": 626.0,
+        "width": 343.11,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-21",
+      "label": "21",
+      "page": 31,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-21-p031.png",
+      "caption_text": "Figure 21. Close-up views through the slits.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 302.0,
+        "width": 264.19,
+        "height": 258.4
+      },
+      "caption_bbox": {
+        "x0": 209.45,
+        "y0": 306.0,
+        "x1": 440.85,
+        "y1": 318.0,
+        "width": 231.4,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-22a",
+      "label": "22a",
+      "page": 35,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-22a-p035.png",
+      "caption_text": "Figure 22a. The triangle (1,1,0), (2,1,0), (1,2,0) in object space.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 342.0,
+        "width": 264.19,
+        "height": 298.4
+      },
+      "caption_bbox": {
+        "x0": 169.56,
+        "y0": 346.0,
+        "x1": 488.73,
+        "y1": 360.0,
+        "width": 319.17,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-22b",
+      "label": "22b",
+      "page": 35,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-22b-p035.png",
+      "caption_text": "Figure 22b. A cross-section of the asp for the triangle for 0 = 0\u00b0.",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 364.0,
+        "x1": 589.82,
+        "y1": 548.0,
+        "width": 264.19,
+        "height": 184.0
+      },
+      "caption_bbox": {
+        "x0": 159.58,
+        "y0": 552.0,
+        "x1": 496.71,
+        "y1": 566.0,
+        "width": 337.12,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-22c",
+      "label": "22c",
+      "page": 36,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-22c-p036.png",
+      "caption_text": "Figure 22c. A cross-section of the asp for the triangle for \u0444 = 30\u00b0.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 254.0,
+        "width": 264.19,
+        "height": 210.4
+      },
+      "caption_bbox": {
+        "x0": 117.69,
+        "y0": 258.0,
+        "x1": 458.81,
+        "y1": 272.0,
+        "width": 341.11,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-23a",
+      "label": "23a",
+      "page": 38,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-23a-p038.png",
+      "caption_text": "Figure 23a. Two triangles in object space.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 206.0,
+        "width": 264.19,
+        "height": 162.4
+      },
+      "caption_bbox": {
+        "x0": 173.55,
+        "y0": 210.0,
+        "x1": 394.97,
+        "y1": 222.0,
+        "width": 221.42,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-23b",
+      "label": "23b",
+      "page": 38,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-23b-p038.png",
+      "caption_text": "Figure 23b. The asps for two triangles.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 226.0,
+        "x1": 288.77,
+        "y1": 410.0,
+        "width": 264.19,
+        "height": 184.0
+      },
+      "caption_bbox": {
+        "x0": 181.53,
+        "y0": 414.0,
+        "x1": 390.98,
+        "y1": 432.0,
+        "width": 209.45,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-24",
+      "label": "24",
+      "page": 38,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-24-p038.png",
+      "caption_text": "Figure 24. Occlusion in image space corresponds to subtraction in aspect space.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 436.0,
+        "x1": 589.82,
+        "y1": 692.0,
+        "width": 565.25,
+        "height": 256.0
+      },
+      "caption_bbox": {
+        "x0": 77.8,
+        "y0": 696.0,
+        "x1": 502.69,
+        "y1": 712.0,
+        "width": 424.89,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-25",
+      "label": "25",
+      "page": 40,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-25-p040.png",
+      "caption_text": "Figure 25. The viewing direction along which two lines appear to intersect.",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 696.0,
+        "width": 565.25,
+        "height": 652.4
+      },
+      "caption_bbox": {
+        "x0": 85.78,
+        "y0": 700.0,
+        "x1": 490.72,
+        "y1": 720.0,
+        "width": 404.95,
+        "height": 20.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-26",
+      "label": "26",
+      "page": 41,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-26-p041.png",
+      "caption_text": "Figure 26. A viewing direction along which three object edges appear to intersect",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 688.0,
+        "width": 565.25,
+        "height": 644.4
+      },
+      "caption_bbox": {
+        "x0": 111.71,
+        "y0": 692.0,
+        "x1": 546.58,
+        "y1": 710.0,
+        "width": 434.87,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-27",
+      "label": "27",
+      "page": 42,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-27-p042.png",
+      "caption_text": "Figure 27. A viewing direction along which four object edges appear to intersect ir",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 584.0,
+        "width": 565.25,
+        "height": 540.4
+      },
+      "caption_bbox": {
+        "x0": 67.82,
+        "y0": 588.0,
+        "x1": 504.69,
+        "y1": 606.0,
+        "width": 436.86,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-28",
+      "label": "28",
+      "page": 43,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-28-p043.png",
+      "caption_text": "Figure 28. An example of a scene for which the asp has size O(n*).",
+      "figure_bbox": {
+        "x0": 325.63,
+        "y0": 43.6,
+        "x1": 589.82,
+        "y1": 494.0,
+        "width": 264.19,
+        "height": 450.4
+      },
+      "caption_bbox": {
+        "x0": 155.59,
+        "y0": 498.0,
+        "x1": 504.69,
+        "y1": 512.0,
+        "width": 349.09,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-29",
+      "label": "29",
+      "page": 48,
+      "image_path": "docs/1990_visibility_occlusion_and_the_aspect_graph/figures/figure-29-p048.png",
+      "caption_text": "Figure 29. Polyhedra with VSP of size 2(n\u00b0).",
+      "figure_bbox": {
+        "x0": 24.58,
+        "y0": 43.6,
+        "x1": 288.77,
+        "y1": 629.87,
+        "width": 264.19,
+        "height": 586.27
+      },
+      "caption_bbox": {
+        "x0": 169.45,
+        "y0": 633.87,
+        "x1": 407.03,
+        "y1": 650.18,
+        "width": 237.58,
+        "height": 16.31
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

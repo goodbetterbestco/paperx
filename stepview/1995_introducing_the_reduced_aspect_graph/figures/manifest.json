@@ -1,0 +1,220 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-1-p002.png",
+      "caption_text": "Fig. 1. In this case, the parallel and perspective AGs",
+      "figure_bbox": {
+        "x0": 427.71,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 829.08,
+        "width": 347.01,
+        "height": 768.28
+      },
+      "caption_bbox": {
+        "x0": 421.37,
+        "y0": 833.08,
+        "x1": 753.15,
+        "y1": 852.37,
+        "width": 331.78,
+        "height": 19.29
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-1-2",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-1-2-p003.png",
+      "caption_text": "Fig. I. A tetrahedron and its AG. The nodes of the AG have been labeled with the indices of the visible faces.",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 348.0,
+        "width": 742.44,
+        "height": 287.2
+      },
+      "caption_bbox": {
+        "x0": 123.85,
+        "y0": 352.0,
+        "x1": 679.16,
+        "y1": 370.0,
+        "width": 555.31,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 3,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-2-p003.png",
+      "caption_text": "Fig. 2. The three line drawings of a tetrahedron which are topo-",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 374.0,
+        "x1": 379.29,
+        "y1": 964.0,
+        "width": 347.01,
+        "height": 590.0
+      },
+      "caption_bbox": {
+        "x0": 55.93,
+        "y0": 968.0,
+        "x1": 387.52,
+        "y1": 986.0,
+        "width": 331.59,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 4,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-3-p004.png",
+      "caption_text": "Fig. 3. A pentahedron and its AG. The nodes of the Ag are labeled with the indices of the visible faces.",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 354.0,
+        "width": 742.44,
+        "height": 293.2
+      },
+      "caption_bbox": {
+        "x0": 143.82,
+        "y0": 358.0,
+        "x1": 663.18,
+        "y1": 372.0,
+        "width": 519.36,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 4,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-4-p004.png",
+      "caption_text": "Fig. 4. The reduced aspect graph of the pentahedron. Each node",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 376.0,
+        "x1": 379.29,
+        "y1": 532.0,
+        "width": 347.01,
+        "height": 156.0
+      },
+      "caption_bbox": {
+        "x0": 55.93,
+        "y0": 536.0,
+        "x1": 387.52,
+        "y1": 550.0,
+        "width": 331.59,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-s",
+      "label": "S",
+      "page": 4,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-s-p004.png",
+      "caption_text": "Fig. S. The reduced aspect graph of a cube.",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 554.0,
+        "x1": 379.29,
+        "y1": 684.0,
+        "width": 347.01,
+        "height": 130.0
+      },
+      "caption_bbox": {
+        "x0": 111.86,
+        "y0": 688.0,
+        "x1": 331.59,
+        "y1": 704.0,
+        "width": 219.73,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 5,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-6-p005.png",
+      "caption_text": "Fig. 6. An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 392.0,
+        "width": 742.44,
+        "height": 331.2
+      },
+      "caption_bbox": {
+        "x0": 57.93,
+        "y0": 396.0,
+        "x1": 745.08,
+        "y1": 412.0,
+        "width": 687.15,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 5,
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-7-p005.png",
+      "caption_text": "Fig. 7. The RAG of both P and P'.",
+      "figure_bbox": {
+        "x0": 32.28,
+        "y0": 416.0,
+        "x1": 379.29,
+        "y1": 646.0,
+        "width": 347.01,
+        "height": 230.0
+      },
+      "caption_bbox": {
+        "x0": 133.83,
+        "y0": 650.0,
+        "x1": 311.61,
+        "y1": 664.0,
+        "width": 177.78,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

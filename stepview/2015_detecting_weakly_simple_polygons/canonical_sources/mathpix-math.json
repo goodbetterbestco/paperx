@@ -1,0 +1,284 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p003-0025",
+      "kind": "display",
+      "display_latex": "d_{\\mathcal{F}}(P, Q):=\\inf _{\\rho: S^{1} \\rightarrow S^{1}} \\max _{t \\in S^{1}} d(P(\\rho(t)), Q(t))",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 206.5,
+            "y0": 399.5,
+            "x1": 404.0,
+            "y1": 425.0,
+            "width": 197.5,
+            "height": 25.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0031",
+      "kind": "display",
+      "display_latex": "d_{V}(P, Q):=\\min _{s} \\max _{i} d\\left(p_{i}, q_{i+s \\bmod n}\\right) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 220.5,
+            "y0": 500.0,
+            "x1": 391.5,
+            "y1": 521.5,
+            "width": 171.0,
+            "height": 21.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0020",
+      "kind": "display",
+      "display_latex": "O(\\sigma(u)+\\sigma(v))+O\\left(\\phi(u)-n\\left(u^{\\prime}\\right)+\\phi(v)-n\\left(v^{\\prime}\\right)\\right)+O(\\operatorname{deg}(u)+\\operatorname{deg}(v)) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 131.0,
+            "y0": 328.5,
+            "x1": 481.0,
+            "y1": 346.0,
+            "width": 350.0,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0035",
+      "kind": "display",
+      "display_latex": "\\phi(u)=\\sum_{x \\in C(u)}(n(x)+\\sigma(x)) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 237.5,
+            "y0": 544.5,
+            "x1": 375.0,
+            "y1": 576.5,
+            "width": 137.5,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0037",
+      "kind": "display",
+      "display_latex": "\\phi(u)-n\\left(u^{\\prime}\\right)=\\sum_{x \\in C(u) \\backslash\\left\\{u^{\\prime}\\right\\}} n(x)+\\sum_{x \\in C(u)} \\sigma(x),",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 200.5,
+            "y0": 588.5,
+            "x1": 411.5,
+            "y1": 622.5,
+            "width": 211.0,
+            "height": 34.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0039",
+      "kind": "display",
+      "display_latex": "\\sum_{u \\in N}\\left(\\phi(u)-n\\left(u^{\\prime}\\right)\\right)=\\sum_{x \\in N \\backslash N^{\\prime}} n(x)+O(n) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 209.0,
+            "y0": 631.5,
+            "x1": 401.5,
+            "y1": 664.0,
+            "width": 192.5,
+            "height": 32.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0047",
+      "kind": "display",
+      "display_latex": "A_{p_{0}, p_{1}}, A_{p_{1}, p_{0}}, A_{p_{1}, p_{2}}, A_{p_{2}, p_{1}}, \\ldots, A_{p_{n-1}, p_{0}}, A_{p_{0}, p_{n-1}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 189.5,
+            "y0": 175.5,
+            "x1": 420.0,
+            "y1": 191.0,
+            "width": 230.5,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p023-0029",
+      "kind": "display",
+      "display_latex": "d_{\\mathcal{F}}\\left([[u a], u, v, u,[u b]],\\left[a^{\\prime}, a_{i}, z_{i}, a_{i}, b^{\\prime}\\right]\\right)<\\delta / \\sin \\theta+\\varepsilon .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 23,
+          "bbox": {
+            "x0": 175.0,
+            "y0": 437.0,
+            "x1": 436.0,
+            "y1": 455.0,
+            "width": 261.0,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p024-0013",
+      "kind": "display",
+      "display_latex": "d_{\\mathcal{F}}(P, Q)=\\inf _{\\phi: H \\rightarrow H} \\max _{x \\in H} d(P(\\phi(x)), Q(x))",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 24,
+          "bbox": {
+            "x0": 213.0,
+            "y0": 225.5,
+            "x1": 399.0,
+            "y1": 247.5,
+            "width": 186.0,
+            "height": 22.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

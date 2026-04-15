@@ -1,0 +1,571 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1-p003.png",
+      "caption_text": "Figure 1. Inminico raica",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.1,
+        "x1": 279.65,
+        "y1": 262.0,
+        "width": 255.85,
+        "height": 215.9
+      },
+      "caption_bbox": {
+        "x0": 111.81,
+        "y0": 266.0,
+        "x1": 203.66,
+        "y1": 272.0,
+        "width": 91.85,
+        "height": 6.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-5-p003.png",
+      "caption_text": "Figure 5: Explicit B\u00e9zier curve",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.1,
+        "x1": 571.2,
+        "y1": 280.0,
+        "width": 255.85,
+        "height": 233.9
+      },
+      "caption_bbox": {
+        "x0": 361.39,
+        "y0": 284.0,
+        "x1": 475.2,
+        "y1": 296.0,
+        "width": 113.81,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2-p003.png",
+      "caption_text": "Figure 2: Trimming Curves",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 276.0,
+        "x1": 279.65,
+        "y1": 426.0,
+        "width": 255.85,
+        "height": 150.0
+      },
+      "caption_bbox": {
+        "x0": 105.82,
+        "y0": 430.0,
+        "x1": 207.65,
+        "y1": 440.0,
+        "width": 101.83,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-6-p003.png",
+      "caption_text": "Figure 6: B\u00e9zier clips per classification",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 300.0,
+        "x1": 571.2,
+        "y1": 512.0,
+        "width": 255.85,
+        "height": 212.0
+      },
+      "caption_bbox": {
+        "x0": 345.42,
+        "y0": 516.0,
+        "x1": 487.18,
+        "y1": 526.0,
+        "width": 141.76,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-3-p003.png",
+      "caption_text": "Figure 3: Quadrants",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 444.0,
+        "x1": 279.65,
+        "y1": 586.0,
+        "width": 255.85,
+        "height": 142.0
+      },
+      "caption_bbox": {
+        "x0": 117.8,
+        "y0": 590.0,
+        "x1": 193.67,
+        "y1": 602.0,
+        "width": 75.87,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-7-p003.png",
+      "caption_text": "Figure 7: Sample trimmed patch",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 530.0,
+        "x1": 571.2,
+        "y1": 734.0,
+        "width": 255.85,
+        "height": 204.0
+      },
+      "caption_bbox": {
+        "x0": 355.4,
+        "y0": 738.0,
+        "x1": 475.2,
+        "y1": 748.0,
+        "width": 119.8,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 3,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-4-p003.png",
+      "caption_text": "Figure 4: B\u00e9zier curve/line intersection",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 606.0,
+        "x1": 279.65,
+        "y1": 754.0,
+        "width": 255.85,
+        "height": 148.0
+      },
+      "caption_bbox": {
+        "x0": 83.86,
+        "y0": 758.0,
+        "x1": 227.62,
+        "y1": 768.0,
+        "width": 143.76,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 5,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-9-p005.png",
+      "caption_text": "Figure 9: Line L,",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.1,
+        "x1": 571.2,
+        "y1": 342.0,
+        "width": 255.85,
+        "height": 295.9
+      },
+      "caption_bbox": {
+        "x0": 387.35,
+        "y0": 346.0,
+        "x1": 453.24,
+        "y1": 356.0,
+        "width": 65.89,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 5,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-8-p005.png",
+      "caption_text": "Figure 8: Projected patch P",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.1,
+        "x1": 279.65,
+        "y1": 426.0,
+        "width": 255.85,
+        "height": 379.9
+      },
+      "caption_bbox": {
+        "x0": 107.82,
+        "y0": 430.0,
+        "x1": 209.65,
+        "y1": 442.0,
+        "width": 101.83,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 5,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-p005.png",
+      "caption_text": "Figure 10: Control point distances",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 360.0,
+        "x1": 571.2,
+        "y1": 680.0,
+        "width": 255.85,
+        "height": 320.0
+      },
+      "caption_bbox": {
+        "x0": 357.4,
+        "y0": 684.0,
+        "x1": 483.19,
+        "y1": 694.0,
+        "width": 125.79,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10-2",
+      "label": "10",
+      "page": 6,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-2-p006.png",
+      "caption_text": "Figure 10.",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.1,
+        "x1": 279.65,
+        "y1": 186.0,
+        "width": 255.85,
+        "height": 139.9
+      },
+      "caption_bbox": {
+        "x0": 39.93,
+        "y0": 190.0,
+        "x1": 79.87,
+        "y1": 200.0,
+        "width": 39.93,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 6,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-13-p006.png",
+      "caption_text": "Figure 13: First clip in s.",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.1,
+        "x1": 571.2,
+        "y1": 270.0,
+        "width": 255.85,
+        "height": 223.9
+      },
+      "caption_bbox": {
+        "x0": 379.36,
+        "y0": 274.0,
+        "x1": 471.21,
+        "y1": 286.0,
+        "width": 91.85,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-i1",
+      "label": "I1",
+      "page": 6,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-i1-p006.png",
+      "caption_text": "Figure I1: Top view of D (s,t) parch.",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 204.0,
+        "x1": 279.65,
+        "y1": 392.0,
+        "width": 255.85,
+        "height": 188.0
+      },
+      "caption_bbox": {
+        "x0": 91.85,
+        "y0": 396.0,
+        "x1": 231.61,
+        "y1": 408.0,
+        "width": 139.77,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 6,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-14-p006.png",
+      "caption_text": "Figure 14: Iterating to the solution.",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 290.0,
+        "x1": 571.2,
+        "y1": 512.0,
+        "width": 255.85,
+        "height": 222.0
+      },
+      "caption_bbox": {
+        "x0": 361.39,
+        "y0": 516.0,
+        "x1": 491.17,
+        "y1": 528.0,
+        "width": 129.78,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 6,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-12-p006.png",
+      "caption_text": "Figure 12: Side view of D(s. t) patch.",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 412.0,
+        "x1": 279.65,
+        "y1": 642.0,
+        "width": 255.85,
+        "height": 230.0
+      },
+      "caption_bbox": {
+        "x0": 91.85,
+        "y0": 646.0,
+        "x1": 235.6,
+        "y1": 658.0,
+        "width": 143.76,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 7,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-16-p007.png",
+      "caption_text": "Figure 16: Trimming to the Scan Line.",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.1,
+        "x1": 571.2,
+        "y1": 284.0,
+        "width": 255.85,
+        "height": 237.9
+      },
+      "caption_bbox": {
+        "x0": 357.4,
+        "y0": 288.0,
+        "x1": 501.16,
+        "y1": 298.0,
+        "width": 143.76,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 7,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-15-p007.png",
+      "caption_text": "Figure 15: Patch domain - two intersections",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.1,
+        "x1": 279.65,
+        "y1": 462.0,
+        "width": 255.85,
+        "height": 415.9
+      },
+      "caption_bbox": {
+        "x0": 81.86,
+        "y0": 466.0,
+        "x1": 245.59,
+        "y1": 476.0,
+        "width": 163.72,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2u",
+      "label": "2U",
+      "page": 8,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2u-p008.png",
+      "caption_text": "Figure 2U: leapot encased in deformed glass cube: 39 patches, 21.3",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.1,
+        "x1": 571.2,
+        "y1": 310.0,
+        "width": 255.85,
+        "height": 263.9
+      },
+      "caption_bbox": {
+        "x0": 301.49,
+        "y0": 314.0,
+        "x1": 543.09,
+        "y1": 320.0,
+        "width": 241.59,
+        "height": 6.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-1x",
+      "label": "1X",
+      "page": 8,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1x-p008.png",
+      "caption_text": "Figure 1X: Modihed teapor: 2504 parches, 64% backeround. 4.0",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.1,
+        "x1": 279.65,
+        "y1": 512.0,
+        "width": 255.85,
+        "height": 465.9
+      },
+      "caption_bbox": {
+        "x0": 33.94,
+        "y0": 516.0,
+        "x1": 279.53,
+        "y1": 522.0,
+        "width": 245.59,
+        "height": 6.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-21",
+      "label": "21",
+      "page": 8,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-21-p008.png",
+      "caption_text": "Figure 21: House of mirrors",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 324.0,
+        "x1": 571.2,
+        "y1": 568.0,
+        "width": 255.85,
+        "height": 244.0
+      },
+      "caption_bbox": {
+        "x0": 369.38,
+        "y0": 572.0,
+        "x1": 473.2,
+        "y1": 580.0,
+        "width": 103.83,
+        "height": 8.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 8,
+      "image_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-19-p008.png",
+      "caption_text": "Figure 19: Chain on patch-work quilt: 4024 patches. 18 back",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 526.0,
+        "x1": 279.65,
+        "y1": 734.0,
+        "width": 255.85,
+        "height": 208.0
+      },
+      "caption_bbox": {
+        "x0": 33.94,
+        "y0": 738.0,
+        "x1": 275.54,
+        "y1": 744.0,
+        "width": 241.59,
+        "height": 6.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

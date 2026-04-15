@@ -1,0 +1,36 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p007-0061",
+      "kind": "display",
+      "display_latex": "\\Delta u=0 \\quad \\text { with }\\left.\\quad u\\right|_{\\partial M_{k}}=u_{c},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 387.5,
+            "y0": 354.0,
+            "x1": 490.5,
+            "y1": 365.5,
+            "width": 103.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

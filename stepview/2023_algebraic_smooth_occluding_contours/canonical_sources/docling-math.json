@@ -1,0 +1,387 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "n ( 𝑢, 𝑣 ) · ( c -p ( 𝑢, 𝑣 )) = 0 (perspective), n ( 𝑢, 𝑣 ) · 𝜏 = 0 (orthographic) (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 53.8,
+            "y0": 454.77,
+            "x1": 294.58,
+            "y1": 472.08,
+            "width": 240.78,
+            "height": 17.31
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "𝜏 · n ( r ) = 1 2 r 𝑇 𝐴 r + b 𝑇 r + 𝑐 = 0 , (2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 117.11,
+            "y0": 664.71,
+            "x1": 294.58,
+            "y1": 681.02,
+            "width": 177.47,
+            "height": 16.31
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(2)"
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "𝜎 1 𝑧 2 1 + 𝜎 2 𝑧 2 2 + ˆ 𝑐 = 0 . (3)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 402.15,
+            "y0": 149.08,
+            "x1": 558.74,
+            "y1": 158.9,
+            "width": 156.59,
+            "height": 9.82
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(3)"
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "𝜎 1 𝑧 2 1 + ˆ b 𝑇 z + 𝑐 = 0 (4)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 404.7,
+            "y0": 286.78,
+            "x1": 558.74,
+            "y1": 296.6,
+            "width": 154.04,
+            "height": 9.82
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(4)"
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "t ( 𝑢, 𝑣 ) = -p 𝑢 ( n 𝑣 · 𝜏 ) + p 𝑣 ( n 𝑢 · 𝜏 ) (5)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 114.14,
+            "y0": 553.89,
+            "x1": 294.58,
+            "y1": 562.15,
+            "width": 180.44,
+            "height": 8.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(5)"
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "t ( 𝑢, 𝑣 ) · 𝜏 1 = 0 , and t ( 𝑢, 𝑣 ) · 𝜏 2 = 0 , (6)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 111.76,
+            "y0": 604.48,
+            "x1": 294.58,
+            "y1": 612.74,
+            "width": 182.82,
+            "height": 8.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(6)"
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "𝑞 = [ p 1 , g 𝑢 1 , g 𝑣 1 . . . p 𝑛 , g 𝑢 𝑛 , g 𝑣 𝑛 , g 𝑚 1 . . . g 𝑚 𝑚 ] (7)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 367.47,
+            "y0": 384.31,
+            "x1": 558.74,
+            "y1": 394.01,
+            "width": 191.27,
+            "height": 9.7
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(7)"
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": "𝑝 ℓ = 𝐵 ℓ 𝑞 loc , ℓ = 1 . . . 12",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 394.86,
+            "y0": 523.83,
+            "x1": 481.12,
+            "y1": 532.43,
+            "width": 86.26,
+            "height": 8.6
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "𝑖 𝑘",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 96.68,
+            "y0": 248.38,
+            "x1": 123.05,
+            "y1": 252.29,
+            "width": 26.37,
+            "height": 3.91
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "𝐸 ( 𝑞 ) = ∑︁ ℓ ∫ Ω ℓ p 2 𝑢𝑢 + p 2 𝑣𝑣 + 2 p 2 𝑢𝑣 𝑑𝑢𝑑𝑣 + 𝑤 ∑︁ 𝑖 𝐴 𝑖 ( p 𝑖 -p 0 𝑖 ) 2 (8)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 63.8,
+            "y0": 683.19,
+            "x1": 294.58,
+            "y1": 706.49,
+            "width": 230.78,
+            "height": 23.3
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(8)"
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "𝐸 ( 𝑞 ) = 1 2 ( 𝑞 𝑇 𝐻 𝑠 𝑞 + 𝑤 ( 𝑞 -𝑞 0 ) 𝑇 𝐻 𝑓 ( 𝑞 -𝑞 0 )) (9)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 359.61,
+            "y0": 214.01,
+            "x1": 558.74,
+            "y1": 230.32,
+            "width": 199.13,
+            "height": 16.31
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(9)"
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "= 1 2 𝑞 𝑇 𝐻𝑞 -𝑤𝑞 𝑇 𝐻 𝑓 𝑞 0 + const (10)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 378.89,
+            "y0": 235.52,
+            "x1": 558.74,
+            "y1": 251.83,
+            "width": 179.85,
+            "height": 16.31
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(10)"
+    }
+  ]
+}

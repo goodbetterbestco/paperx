@@ -1,0 +1,253 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p003-0061",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathcal{N}_{s}(u, v)=\\frac{\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}}{\\left\\|\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}\\right\\|} . \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 373.0,
+            "y0": 183.5,
+            "x1": 503.0,
+            "y1": 213.5,
+            "width": 130.0,
+            "height": 30.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0075",
+      "kind": "display",
+      "display_latex": "\\mathcal{V}_{s}=\\left\\{\\vec{\\alpha} \\mid\\left\\langle\\vec{\\alpha}, \\mathcal{N}_{s}(u, v)\\right\\rangle \\geq 0, \\forall u, v,\\|\\vec{\\alpha}\\|=1\\right\\} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 335.0,
+            "y0": 361.0,
+            "x1": 515.5,
+            "y1": 373.0,
+            "width": 180.5,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0088",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\hat{\\mathcal{N}}_{s}(u, v)=\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}, \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 372.0,
+            "y0": 505.0,
+            "x1": 504.0,
+            "y1": 527.5,
+            "width": 132.0,
+            "height": 22.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0050",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathcal{S}_{s}=\\left\\{(u, v) \\mid\\left\\langle S(u, v), \\dot{\\mathcal{N}}_{s}(u, v)\\right\\rangle=0\\right\\} . \\tag{3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 95.0,
+            "y0": 588.0,
+            "x1": 252.0,
+            "y1": 604.5,
+            "width": 157.0,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0065",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathcal{S}=\\left\\{(u, v) \\mid\\left\\langle\\dot{\\mathcal{N}}_{s}(u, v), \\dot{\\mathcal{N}}_{s}^{2}(u, v)\\right\\rangle=0\\right\\} \\tag{4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 355.5,
+            "y0": 251.5,
+            "x1": 519.5,
+            "y1": 267.0,
+            "width": 164.0,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0103",
+      "kind": "display",
+      "display_latex": "\\mathcal{H}=\\{\\vec{\\beta} \\mid\\|\\vec{\\beta}\\|=1,\\langle\\vec{\\beta}, \\vec{\\alpha}\\rangle \\geq 0\\} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 368.5,
+            "y0": 651.0,
+            "x1": 504.0,
+            "y1": 666.5,
+            "width": 135.5,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0034",
+      "kind": "display",
+      "display_latex": "\\overline{\\mathcal{G}}_{s} \\Leftarrow \\mathcal{R}^{-1}\\left(\\overline{\\mathcal{G}}_{\\cdot}^{P}\\right) ;",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 88.5,
+            "y0": 623.0,
+            "x1": 166.0,
+            "y1": 642.5,
+            "width": 77.5,
+            "height": 19.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0058",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathcal{V}_{s}=\\bigcap_{f_{1} \\in \\mathcal{F}} \\mathcal{H}_{i} \\tag{5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 413.5,
+            "y0": 530.5,
+            "x1": 467.5,
+            "y1": 557.0,
+            "width": 54.0,
+            "height": 26.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

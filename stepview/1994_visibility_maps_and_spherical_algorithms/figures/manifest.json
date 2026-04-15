@@ -1,0 +1,355 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-1-p002.png",
+      "caption_text": "Figure 1 Visibility hierarchy; (a) point visibility, (b) line visibility, (c) curve visibility, (d) plane visibility, (e) surface visibifity [(a) numerically controlled machining, 0a) wire-cutting electric- discharge machining, (d) stereolithography apparatus, (e) mould and die design.]",
+      "figure_bbox": {
+        "x0": 324.36,
+        "y0": 285.41,
+        "x1": 587.52,
+        "y1": 705.16,
+        "width": 263.16,
+        "height": 419.75
+      },
+      "caption_bbox": {
+        "x0": 315.6,
+        "y0": 709.16,
+        "x1": 559.18,
+        "y1": 757.57,
+        "width": 243.58,
+        "height": 48.41
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 4,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-3-p004.png",
+      "caption_text": "Figure 3",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 440.95,
+        "x1": 287.64,
+        "y1": 737.99,
+        "width": 263.16,
+        "height": 297.04
+      },
+      "caption_bbox": {
+        "x0": 52.32,
+        "y0": 741.99,
+        "x1": 84.38,
+        "y1": 759.94,
+        "width": 32.06,
+        "height": 17.95
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 5,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-4-p005.png",
+      "caption_text": "Figure 4",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 45.4,
+        "x1": 287.64,
+        "y1": 432.93,
+        "width": 263.16,
+        "height": 387.53
+      },
+      "caption_bbox": {
+        "x0": 83.28,
+        "y0": 436.93,
+        "x1": 115.3,
+        "y1": 451.66,
+        "width": 32.02,
+        "height": 14.73
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 5,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-5-p005.png",
+      "caption_text": "Figure 5",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 455.66,
+        "x1": 287.64,
+        "y1": 740.37,
+        "width": 263.16,
+        "height": 284.71
+      },
+      "caption_bbox": {
+        "x0": 81.6,
+        "y0": 744.37,
+        "x1": 113.62,
+        "y1": 759.1,
+        "width": 32.02,
+        "height": 14.73
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 6,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-6-p006.png",
+      "caption_text": "Figure 6 Construction of visibility maps",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 610.76,
+        "x1": 287.64,
+        "y1": 743.35,
+        "width": 263.16,
+        "height": 132.6
+      },
+      "caption_bbox": {
+        "x0": 54.72,
+        "y0": 747.35,
+        "x1": 200.83,
+        "y1": 762.64,
+        "width": 146.11,
+        "height": 15.29
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 7,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-8-p007.png",
+      "caption_text": "Figure 8 Augmented visibility maps",
+      "figure_bbox": {
+        "x0": 324.36,
+        "y0": 45.4,
+        "x1": 587.52,
+        "y1": 329.16,
+        "width": 263.16,
+        "height": 283.76
+      },
+      "caption_bbox": {
+        "x0": 318.96,
+        "y0": 333.16,
+        "x1": 449.28,
+        "y1": 347.12,
+        "width": 130.32,
+        "height": 13.96
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 7,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-7-p007.png",
+      "caption_text": "Figure 7 Empty visibility map",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 442.3,
+        "x1": 287.64,
+        "y1": 740.28,
+        "width": 263.16,
+        "height": 297.98
+      },
+      "caption_bbox": {
+        "x0": 54.72,
+        "y0": 744.28,
+        "x1": 165.3,
+        "y1": 758.24,
+        "width": 110.58,
+        "height": 13.96
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 8,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-9-p008.png",
+      "caption_text": "Figure 9 Spherical algorithms",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 45.4,
+        "x1": 287.64,
+        "y1": 411.26,
+        "width": 263.16,
+        "height": 365.86
+      },
+      "caption_bbox": {
+        "x0": 50.88,
+        "y0": 415.26,
+        "x1": 160.72,
+        "y1": 428.55,
+        "width": 109.84,
+        "height": 13.3
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 9,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-11-p009.png",
+      "caption_text": "Figure 11",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 442.71,
+        "x1": 287.64,
+        "y1": 568.48,
+        "width": 263.16,
+        "height": 125.77
+      },
+      "caption_bbox": {
+        "x0": 56.4,
+        "y0": 572.48,
+        "x1": 90.59,
+        "y1": 585.11,
+        "width": 34.19,
+        "height": 12.63
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 10,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-14-p010.png",
+      "caption_text": "Figure 14 V~nap for all 12 surfaces",
+      "figure_bbox": {
+        "x0": 324.36,
+        "y0": 45.4,
+        "x1": 587.52,
+        "y1": 187.34,
+        "width": 263.16,
+        "height": 141.94
+      },
+      "caption_bbox": {
+        "x0": 318.0,
+        "y0": 191.34,
+        "x1": 445.88,
+        "y1": 204.63,
+        "width": 127.88,
+        "height": 13.3
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 10,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-15-p010.png",
+      "caption_text": "Figure 15 Intersecting the maps",
+      "figure_bbox": {
+        "x0": 324.36,
+        "y0": 208.63,
+        "x1": 587.52,
+        "y1": 353.66,
+        "width": 263.16,
+        "height": 145.02
+      },
+      "caption_bbox": {
+        "x0": 317.28,
+        "y0": 357.66,
+        "x1": 432.85,
+        "y1": 370.95,
+        "width": 115.57,
+        "height": 13.3
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 10,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-12-p010.png",
+      "caption_text": "Figure 12 Object with 12 surfaces",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 416.29,
+        "x1": 287.64,
+        "y1": 602.54,
+        "width": 263.16,
+        "height": 186.25
+      },
+      "caption_bbox": {
+        "x0": 56.88,
+        "y0": 606.54,
+        "x1": 179.24,
+        "y1": 619.83,
+        "width": 122.36,
+        "height": 13.3
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 10,
+      "image_path": "docs/1994_visibility_maps_and_spherical_algorithms/figures/figure-13-p010.png",
+      "caption_text": "Figure 13 GAnap for one surface",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 623.83,
+        "x1": 287.64,
+        "y1": 738.53,
+        "width": 263.16,
+        "height": 114.7
+      },
+      "caption_bbox": {
+        "x0": 56.64,
+        "y0": 742.53,
+        "x1": 178.24,
+        "y1": 755.75,
+        "width": 121.6,
+        "height": 13.22
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

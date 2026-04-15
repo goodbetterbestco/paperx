@@ -1,0 +1,687 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "AFS(TE) = {Fili = 1,2,...n).",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 56.23,
+            "y0": 567.83,
+            "x1": 239.79,
+            "y1": 584.5,
+            "width": 183.56,
+            "height": 16.67
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "ONside = [FeatID, FeatIDp, IDelement, FeatID path, IDtrajectory ],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.57,
+            "y0": 875.74,
+            "x1": 405.16,
+            "y1": 894.07,
+            "width": 350.59,
+            "height": 18.33
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "[FeatID, 0, - 1, 0, 0], ON(F) = ONside, if F is a side face. [FeatID, 0, - 2, 0,0], if Fis the starting face. if Fis the ending face.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 433.27,
+            "y0": 117.54,
+            "x1": 780.54,
+            "y1": 182.11,
+            "width": 347.27,
+            "height": 64.57
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "[FeatID, 0, - 1,0,0], if F is the starting face. ON(F) = [FeatID, FeatIDp, Idelement, 0, 0],, if F is a side face. [FeatID, 0, -2,0,0], if F is the ending face.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 434.92,
+            "y0": 278.13,
+            "x1": 783.85,
+            "y1": 341.04,
+            "width": 348.93,
+            "height": 62.91
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "[FeatID, 0, - 1, 0, 0], if Fis the starting face. [FeatID, FeatIp, IDclement, FeatID,, IDaxis], ON(F) = if Fis a side face. [FeatID, 0, - 2, 0, 0], if Fis the ending face.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 433.27,
+            "y0": 471.82,
+            "x1": 780.54,
+            "y1": 562.88,
+            "width": 347.27,
+            "height": 91.06
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "ON(F) = [FeatID, FeatID FF1, ID element, FeatID FF2, ID element2],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 433.27,
+            "y0": 849.28,
+            "x1": 785.51,
+            "y1": 865.84,
+            "width": 352.24,
+            "height": 16.56
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "ON(FI) = [6, 5, ID12, 0, 0],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 581.09,
+            "x1": 224.9,
+            "y1": 599.3,
+            "width": 158.75,
+            "height": 18.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": "ON(F2) = [6, 5, ID11, 0, 0],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 615.82,
+            "x1": 223.25,
+            "y1": 632.48,
+            "width": 157.1,
+            "height": 16.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "ON(F3) = [6,5, - 2,0, 0].",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 667.14,
+            "x1": 218.29,
+            "y1": 683.8,
+            "width": 152.14,
+            "height": 16.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "ON(face(a, b, e, f)) = [7, 6, - 2, 6, IDı]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 736.71,
+            "x1": 294.36,
+            "y1": 753.26,
+            "width": 228.21,
+            "height": 16.55
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "ON(face(b, c, d, e)) = [7, 6, -2, 6, ID12].",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 788.03,
+            "x1": 300.97,
+            "y1": 802.93,
+            "width": 234.82,
+            "height": 14.9
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "ON(F) = [FeatID, FeatIDp, IDclement, FeatIDpath» IDtrajectory, InsNum],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 444.84,
+            "y0": 168.86,
+            "x1": 725.97,
+            "y1": 218.6,
+            "width": 281.13,
+            "height": 49.74
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0013",
+      "kind": "display",
+      "display_latex": "ON(FI) = [6,5, - 2,0,0],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 443.19,
+            "y0": 390.55,
+            "x1": 596.98,
+            "y1": 407.26,
+            "width": 153.79,
+            "height": 16.71
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0014",
+      "kind": "display",
+      "display_latex": "ON(F2) = [6, 5, - 1, 0,0]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 444.84,
+            "y0": 423.81,
+            "x1": 593.68,
+            "y1": 442.02,
+            "width": 148.84,
+            "height": 18.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0015",
+      "kind": "display",
+      "display_latex": "ON(F3) = [6, 5, IDc, 0, 0].",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 444.84,
+            "y0": 475.14,
+            "x1": 598.64,
+            "y1": 493.35,
+            "width": 153.8,
+            "height": 18.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0016",
+      "kind": "display",
+      "display_latex": "ON(Fy) = [7,5, - 2, 0, 1], ON(F2!) = [7,5, - 1,0, 1], ON(F31) = 17,5, IDc, 0, 1] ON(F») = [7,5, - 2,0, 2], ON(F2\") = 17,5, - 1,0,21 and ON(F31) = [7,5, IDe, 0, 2].",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 444.84,
+            "y0": 543.01,
+            "x1": 601.95,
+            "y1": 746.78,
+            "width": 157.11,
+            "height": 203.77
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0017",
+      "kind": "display",
+      "display_latex": "ON(F) = [FeatID, idj, id2, idz, id4, ids, option],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 444.84,
+            "y0": 831.07,
+            "x1": 717.7,
+            "y1": 849.42,
+            "width": 272.86,
+            "height": 18.35
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0018",
+      "kind": "display",
+      "display_latex": "RN(F) = [ON(F), PSI],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 433.27,
+            "y0": 807.76,
+            "x1": 573.83,
+            "y1": 824.45,
+            "width": 140.56,
+            "height": 16.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0019",
+      "kind": "display",
+      "display_latex": "RN(E) = [RN(FI), RN(F2), PSI],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 433.27,
+            "y0": 1039.67,
+            "x1": 628.4,
+            "y1": 1056.36,
+            "width": 195.13,
+            "height": 16.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0020",
+      "kind": "display",
+      "display_latex": "RN(V) = [RN(E), RN(E2), PSI],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 518.18,
+            "x1": 261.28,
+            "y1": 534.84,
+            "width": 195.13,
+            "height": 16.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0021",
+      "kind": "display",
+      "display_latex": "RN(V) = (RN(FI), RN(F2), RN(F3), PSI),",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 66.15,
+            "y0": 675.45,
+            "x1": 317.51,
+            "y1": 692.13,
+            "width": 251.36,
+            "height": 16.68
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0022",
+      "kind": "display",
+      "display_latex": "PSI(TE) = [ON(F), Seq, Totle],",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 54.57,
+            "y0": 359.23,
+            "x1": 243.09,
+            "y1": 375.89,
+            "width": 188.52,
+            "height": 16.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

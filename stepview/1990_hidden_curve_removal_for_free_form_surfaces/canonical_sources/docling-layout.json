@@ -1,0 +1,4086 @@
+{
+  "engine": "docling",
+  "pdf_path": "docs/1990_hidden_curve_removal_for_free_form_surfaces/1990_hidden_curve_removal_for_free_form_surfaces.pdf",
+  "page_count": 25,
+  "page_sizes_pt": [
+    {
+      "page": 1,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 2,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 3,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 4,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 5,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 6,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 7,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 8,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 9,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 10,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 11,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 12,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 13,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 14,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 15,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 16,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 17,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 18,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 19,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 20,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 21,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 22,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 23,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 24,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 25,
+      "width": 612.0,
+      "height": 792.0
+    }
+  ],
+  "blocks": [
+    {
+      "id": "#/texts/0",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Hidden Surface Removal Algorithms for Curved Surfaces",
+      "bbox": {
+        "x0": 96.72,
+        "y0": 114.5,
+        "x1": 515.52,
+        "y1": 152.18,
+        "width": 418.8,
+        "height": 37.68
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Hidden Surface Removal Algorithms for Curved Surfaces"
+      }
+    },
+    {
+      "id": "#/texts/1",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "Shankar Krishnan",
+      "bbox": {
+        "x0": 195.36,
+        "y0": 170.66,
+        "x1": 287.52,
+        "y1": 179.3,
+        "width": 92.16,
+        "height": 8.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Shankar Krishnan"
+      }
+    },
+    {
+      "id": "#/texts/2",
+      "page": 1,
+      "order": 3,
+      "role": "front_matter",
+      "text": "Dinesh Manocha",
+      "bbox": {
+        "x0": 331.2,
+        "y0": 170.66,
+        "x1": 416.4,
+        "y1": 179.3,
+        "width": 85.2,
+        "height": 8.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Dinesh Manocha"
+      }
+    },
+    {
+      "id": "#/texts/3",
+      "page": 1,
+      "order": 4,
+      "role": "front_matter",
+      "text": "Department of Computer Science, University of North Carolina, Chapel Hill, NC 2 7 5 9 9- 3 1 7 5",
+      "bbox": {
+        "x0": 224.88,
+        "y0": 224.66,
+        "x1": 386.88,
+        "y1": 262.82,
+        "width": 162.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Department of Computer Science, University of North Carolina, Chapel Hill, NC 2 7 5 9 9- 3 1 7 5"
+      }
+    },
+    {
+      "id": "#/texts/4",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Abstract Computing the visible portions of curved surfaces from a given viewpoint is of great interest in many applications. It is closely related to the hidden surface removal problem in computer graphics and machining applications in manufacturing. Most of the earlier work has focused on discrete methods based on polygonization or ray-tracing and hidden curve removal. In this paper we present an algorithm for hidden surface computations on curved surfaces. Given a viewpoint, it decomposes the domain of each surface based on silhouettes and boundary curves. To compute the exact visibility, we introduce a notion of \\visibility curves\" obtained by projection of silhouette and boundary curves and decomposing the surface into non-overlapping regions. These curves are computed using marching methods and we present techniques to compute all the components. The non-overlapping and visible portions of the surface are represented as trimmed surfaces and we present a representation based on polygon trapezoidation algorithms. The algorithms presented use some recently developed algorithms from computational geometry like triangulation of simple polygons and point location. Given the non-overlapping regions, we use a simple randomized algorithm for visibility computations from a given viewpoint.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 275.3,
+        "x1": 540.0,
+        "y1": 489.86,
+        "width": 468.0,
+        "height": 214.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Abstract Computing the visible portions of curved surfaces from a given viewpoint is of great interest in many applications. It is closely related to the hidden surface removal problem in computer graphics and machining applications in manufacturing. Most of the earlier work has focused on discrete methods based on polygonization or ray-tracing and hidden curve removal. In this paper we present an algorithm for hidden surface computations on curved surfaces. Given a viewpoint, it decomposes the domain of each surface based on silhouettes and boundary curves. To compute the exact visibility, we introduce a notion of \\visibility curves\" obtained by projection of silhouette and boundary curves and decomposing the surface into non-overlapping regions. These curves are computed using marching methods and we present techniques to compute all the components. The non-overlapping and visible portions of the surface are represented as trimmed surfaces and we present a representation based on polygon trapezoidation algorithms. The algorithms presented use some recently developed algorithms from computational geometry like triangulation of simple polygons and point location. Given the non-overlapping regions, we use a simple randomized algorithm for visibility computations from a given viewpoint."
+      }
+    },
+    {
+      "id": "#/texts/5",
+      "page": 1,
+      "order": 6,
+      "role": "footnote",
+      "text": "Supported in part by a Sloan Fellowship, university research council grant, NSF grant CCR- 9 3 1 9 9 5 7, ONR contract N 0 0 0 1 4- 9 4- 1- 0 7 3 8, ARPA contract DABT 6 3- 9 3-C- 0 0 4 8, NSF ARPA Science and Technology Center for Computer Graphics & Scienti c Visualization and NSF Prime contract No. 8 9 2 0 2 1 9",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 648.25,
+        "x1": 540.0,
+        "y1": 678.98,
+        "width": 468.0,
+        "height": 30.73
+      },
+      "meta": {
+        "docling_label": "footnote",
+        "docling_orig": "Supported in part by a Sloan Fellowship, university research council grant, NSF grant CCR- 9 3 1 9 9 5 7, ONR contract N 0 0 0 1 4- 9 4- 1- 0 7 3 8, ARPA contract DABT 6 3- 9 3-C- 0 0 4 8, NSF ARPA Science and Technology Center for Computer Graphics & Scienti c Visualization and NSF Prime contract No. 8 9 2 0 2 1 9"
+      }
+    },
+    {
+      "id": "#/texts/7",
+      "page": 2,
+      "order": 1,
+      "role": "heading",
+      "text": "1 Introduction",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 72.73,
+        "x1": 187.68,
+        "y1": 86.17,
+        "width": 115.68,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1 Introduction"
+      }
+    },
+    {
+      "id": "#/texts/8",
+      "page": 2,
+      "order": 2,
+      "role": "paragraph",
+      "text": "The problems of visibility and accessibility computations are fundamental for computer graphics, computer-aided design and manufacturing applications. In particular, hidden line and surface re moval algorithms in computer graphics are related to visibility computations [FDHF 9 0, Hor 8 4, SSS 7 4, HG 7 7]. Similarly, accessibility computations in manufacturing applications are based on Gauss maps and visibility sets [Woo 9 4, CCW 9 3, GWT 9 4]. These problems have been extensively studied in computer graphics, computer-aided design, computational geometry and manufacturing literature. In this paper, we are dealing with algebraic surfaces and surfaces de ned using rational splines [Far 9 3] that are di erentiable.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 99.13,
+        "x1": 540.0,
+        "y1": 204.97,
+        "width": 468.0,
+        "height": 105.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The problems of visibility and accessibility computations are fundamental for computer graphics, computer-aided design and manufacturing applications. In particular, hidden line and surface re moval algorithms in computer graphics are related to visibility computations [FDHF 9 0, Hor 8 4, SSS 7 4, HG 7 7]. Similarly, accessibility computations in manufacturing applications are based on Gauss maps and visibility sets [Woo 9 4, CCW 9 3, GWT 9 4]. These problems have been extensively studied in computer graphics, computer-aided design, computational geometry and manufacturing literature. In this paper, we are dealing with algebraic surfaces and surfaces de ned using rational splines [Far 9 3] that are di erentiable."
+      }
+    },
+    {
+      "id": "#/texts/9",
+      "page": 2,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Given a viewpoint, the hidden surface removal problem deals with computation of the surface boundary visible from that viewpoint. Most of the earlier algorithms in the literature are for pla nar and polygonal primitives and hidden lines removal [FDHF 9 0, Mul 8 9, SSS 7 4]. In computational geometry literature, many of the hidden surface algorithms simply calculate the entire arrangement of lines (projections of edges and vertices of the objects on the viewing plane). Output-sensitive hidden surface algorithms were developed for special input cases like c-oriented solids [GO 8 7], axis parallel rectangles [PVY 9 2] and polyhedral terrains [RS 8 8]. Very few algorithms are able to cope with cycles (impossible to obtain an ordering among the faces without splitting some of them) e ciently. A randomized algorithm to generate the visibility map was given by Mulmuley [Mul 8 9] for the general case. The algorithm maintains the trapezoidation of the visibility map and updates it by randomly adding one face at a time. The algorithm is (almost) output-sensitive. In [Mul 9 1], the expected time was improved to O ( n log n + q ), where q is the number of edges in the visibility map. Extensions of the hidden surface algorithm from planar to curved faces are described in [Mul 9 0]. A survey of most of the recent results in computational geometry regarding object-space hidden surface removal is presented in [Dor 9 4].",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 213.85,
+        "x1": 540.24,
+        "y1": 414.74,
+        "width": 468.24,
+        "height": 200.89
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given a viewpoint, the hidden surface removal problem deals with computation of the surface boundary visible from that viewpoint. Most of the earlier algorithms in the literature are for pla nar and polygonal primitives and hidden lines removal [FDHF 9 0, Mul 8 9, SSS 7 4]. In computational geometry literature, many of the hidden surface algorithms simply calculate the entire arrangement of lines (projections of edges and vertices of the objects on the viewing plane). Output-sensitive hidden surface algorithms were developed for special input cases like c-oriented solids [GO 8 7], axis parallel rectangles [PVY 9 2] and polyhedral terrains [RS 8 8]. Very few algorithms are able to cope with cycles (impossible to obtain an ordering among the faces without splitting some of them) e ciently. A randomized algorithm to generate the visibility map was given by Mulmuley [Mul 8 9] for the general case. The algorithm maintains the trapezoidation of the visibility map and updates it by randomly adding one face at a time. The algorithm is (almost) output-sensitive. In [Mul 9 1], the expected time was improved to O ( n log n + q ), where q is the number of edges in the visibility map. Extensions of the hidden surface algorithm from planar to curved faces are described in [Mul 9 0]. A survey of most of the recent results in computational geometry regarding object-space hidden surface removal is presented in [Dor 9 4]."
+      }
+    },
+    {
+      "id": "#/texts/10",
+      "page": 2,
+      "order": 4,
+      "role": "paragraph",
+      "text": "When dealing with curved surfaces, most hidden surface removal algorithms must be capable of manipulating semi-algebraic sets [Mul 9 0]. Results from elimination theory and algebraic decision procedures like Gr obner bases are usually used for this purpose [Can 8 8]. Unfortunately, algorithms based entirely on symbolic manipulation require in nite precision to represent algebraic numbers. Bounds based on Gap theorems [Can 8 8] have been developed to approximate these numbers using nite precision. However, implementations of these algorithms are very non-trivial and applicability of these bounds in practical situations are still not clear.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 423.62,
+        "x1": 540.0,
+        "y1": 515.78,
+        "width": 468.0,
+        "height": 92.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "When dealing with curved surfaces, most hidden surface removal algorithms must be capable of manipulating semi-algebraic sets [Mul 9 0]. Results from elimination theory and algebraic decision procedures like Gr obner bases are usually used for this purpose [Can 8 8]. Unfortunately, algorithms based entirely on symbolic manipulation require in nite precision to represent algebraic numbers. Bounds based on Gap theorems [Can 8 8] have been developed to approximate these numbers using nite precision. However, implementations of these algorithms are very non-trivial and applicability of these bounds in practical situations are still not clear."
+      }
+    },
+    {
+      "id": "#/texts/11",
+      "page": 2,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Given a model composed of algebraic or parametric surfaces, it can be polygonized and algorithms developed for polygonal models can then be applied. However, the accuracy of the overall algo rithm is limited by the accuracy of the polygonal approximation. Other techniques for visibility computations are based on ray-tracing [FDHF 9 0]. Not only are the resulting algorithms slow but their accuracy is limited by the image-precision. These techniques are device resolution dependent and many applications in modeling and rendering desire a device-independent solution [TW 9 3]. Given a curved surface model and a viewpoint, the silhouettes on the model partition it into front facing and back facing regions (as shown in Fig. 1). The silhouettes are composed of points on surfaces where the normal vector is orthogonal to the viewing direction. The surfaces obtained after partitioning based on the silhouette computation need not be completely visible, as shown in Fig. 1. More recently, a hidden curve removal algorithm has been presented for parametric surfaces",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 524.65,
+        "x1": 540.24,
+        "y1": 671.3,
+        "width": 468.24,
+        "height": 146.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given a model composed of algebraic or parametric surfaces, it can be polygonized and algorithms developed for polygonal models can then be applied. However, the accuracy of the overall algo rithm is limited by the accuracy of the polygonal approximation. Other techniques for visibility computations are based on ray-tracing [FDHF 9 0]. Not only are the resulting algorithms slow but their accuracy is limited by the image-precision. These techniques are device resolution dependent and many applications in modeling and rendering desire a device-independent solution [TW 9 3]. Given a curved surface model and a viewpoint, the silhouettes on the model partition it into front facing and back facing regions (as shown in Fig. 1). The silhouettes are composed of points on surfaces where the normal vector is orthogonal to the viewing direction. The surfaces obtained after partitioning based on the silhouette computation need not be completely visible, as shown in Fig. 1. More recently, a hidden curve removal algorithm has been presented for parametric surfaces"
+      }
+    },
+    {
+      "id": "#/texts/13",
+      "page": 3,
+      "order": 1,
+      "role": "paragraph",
+      "text": "Back Facing Region",
+      "bbox": {
+        "x0": 105.5,
+        "y0": 384.98,
+        "x1": 202.14,
+        "y1": 395.25,
+        "width": 96.64,
+        "height": 10.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Back Facing Region"
+      }
+    },
+    {
+      "id": "#/texts/14",
+      "page": 3,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Front Facing Region",
+      "bbox": {
+        "x0": 238.25,
+        "y0": 509.18,
+        "x1": 336.09,
+        "y1": 519.45,
+        "width": 97.84,
+        "height": 10.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Front Facing Region"
+      }
+    },
+    {
+      "id": "#/texts/15",
+      "page": 3,
+      "order": 3,
+      "role": "heading",
+      "text": "Parameter Space",
+      "bbox": {
+        "x0": 178.85,
+        "y0": 665.51,
+        "x1": 346.92,
+        "y1": 686.05,
+        "width": 168.07,
+        "height": 20.54
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Parameter Space"
+      }
+    },
+    {
+      "id": "#/texts/16",
+      "page": 3,
+      "order": 4,
+      "role": "paragraph",
+      "text": "261.747 102.9 -57.4605 199.883 95.7857 28.4751 82.1126 93.3985 120.048 -56.2504 112.366 87.0828 218.825 -205.839 -67.2272 173.737 -97.1096 20.2249 76.4257 41.7767 113.648 -60.3006 72.0456 80.8298 78.9959 -257.342 355.755 86.3181 -129.309 284.667 52.9209 33.118 184.749 -78.6922 65.2702 136.464 97.1888 42.2773 440.321 98.4073 58.4023 335.435 57.5666 84.3559 194.299 -74.642 105.59 142.717",
+      "bbox": {
+        "x0": 399.8,
+        "y0": 366.53,
+        "x1": 539.1,
+        "y1": 572.5,
+        "width": 139.3,
+        "height": 205.97
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "261.747 102.9 -57.4605 199.883 95.7857 28.4751 82.1126 93.3985 120.048 -56.2504 112.366 87.0828 218.825 -205.839 -67.2272 173.737 -97.1096 20.2249 76.4257 41.7767 113.648 -60.3006 72.0456 80.8298 78.9959 -257.342 355.755 86.3181 -129.309 284.667 52.9209 33.118 184.749 -78.6922 65.2702 136.464 97.1888 42.2773 440.321 98.4073 58.4023 335.435 57.5666 84.3559 194.299 -74.642 105.59 142.717"
+      }
+    },
+    {
+      "id": "#/texts/17",
+      "page": 3,
+      "order": 5,
+      "role": "paragraph",
+      "text": "At this point there are two Z values for",
+      "bbox": {
+        "x0": 263.9,
+        "y0": 96.98,
+        "x1": 445.78,
+        "y1": 107.25,
+        "width": 181.88,
+        "height": 10.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "At this point there are two Z values for"
+      }
+    },
+    {
+      "id": "#/texts/18",
+      "page": 3,
+      "order": 6,
+      "role": "paragraph",
+      "text": "the same front facing surface piece. These points",
+      "bbox": {
+        "x0": 263.9,
+        "y0": 110.02,
+        "x1": 506.66,
+        "y1": 120.3,
+        "width": 242.76,
+        "height": 10.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "the same front facing surface piece. These points"
+      }
+    },
+    {
+      "id": "#/texts/19",
+      "page": 3,
+      "order": 7,
+      "role": "paragraph",
+      "text": "are shown as \"x\"es in the parameter space",
+      "bbox": {
+        "x0": 263.9,
+        "y0": 123.07,
+        "x1": 469.06,
+        "y1": 133.34,
+        "width": 205.16,
+        "height": 10.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "are shown as \"x\"es in the parameter space"
+      }
+    },
+    {
+      "id": "#/texts/20",
+      "page": 3,
+      "order": 8,
+      "role": "heading",
+      "text": "Patch Coordinates",
+      "bbox": {
+        "x0": 400.7,
+        "y0": 344.06,
+        "x1": 504.35,
+        "y1": 356.04,
+        "width": 103.65,
+        "height": 11.98
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Patch Coordinates"
+      }
+    },
+    {
+      "id": "#/texts/21",
+      "page": 3,
+      "order": 9,
+      "role": "paragraph",
+      "text": "x",
+      "bbox": {
+        "x0": 310.7,
+        "y0": 364.28,
+        "x1": 316.1,
+        "y1": 374.55,
+        "width": 5.4,
+        "height": 10.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "x"
+      }
+    },
+    {
+      "id": "#/texts/22",
+      "page": 3,
+      "order": 10,
+      "role": "paragraph",
+      "text": "x",
+      "bbox": {
+        "x0": 131.6,
+        "y0": 594.67,
+        "x1": 137.0,
+        "y1": 604.95,
+        "width": 5.4,
+        "height": 10.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "x"
+      }
+    },
+    {
+      "id": "#/texts/25",
+      "page": 4,
+      "order": 1,
+      "role": "paragraph",
+      "text": "by Elber and Cohen [EC 9 0]. In particular, [EC 9 0] extract the curves of interest by considering boundary curves, silhouette curves, iso-parametric curves and curves along C 1 discontinuity based on 2D curve-curve intersections. Their intersection algorithms are based on subdivision.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 540.0,
+        "y1": 113.05,
+        "width": 468.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "by Elber and Cohen [EC 9 0]. In particular, [EC 9 0] extract the curves of interest by considering boundary curves, silhouette curves, iso-parametric curves and curves along C 1 discontinuity based on 2D curve-curve intersections. Their intersection algorithms are based on subdivision."
+      }
+    },
+    {
+      "id": "#/texts/26",
+      "page": 4,
+      "order": 2,
+      "role": "paragraph",
+      "text": "We present an algorithm for hidden surface removal on a set of parametric surfaces from a given viewpoint. We decompose it into a series of B ezier surfaces. Each B ezier surface is partitioned into non-overlapping regions based on silhouette and visibility curves . Each computed region has the property that it is either entirely visible or invisible in the absence of other surfaces. The visibility curves are computed based on the silhouette and boundary curves. Each non-overlapping region is represented as a trimmed B ezier surface bounded by silhouettes, visibility and boundary curves. Given a collection of these trimmed surfaces, we then use a simple randomized algorithm to compute the visible portions. Our algorithm can easily be extended to handle intersecting surfaces. However, for ease of argument we assume that the surfaces are non-intersecting. The algorithm uses a combination of symbolic techniques and results from numerical linear algebra. The algorithm is simple to implement and it has been implemented in xed precision (using 6 4-bit double precision oating-point arithmetic). The main aim of this paper is to present a simple implementable algo rithm for the hidden surface problem that performs reasonably well in practice.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 121.69,
+        "x1": 540.24,
+        "y1": 295.45,
+        "width": 468.24,
+        "height": 173.76
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We present an algorithm for hidden surface removal on a set of parametric surfaces from a given viewpoint. We decompose it into a series of B ezier surfaces. Each B ezier surface is partitioned into non-overlapping regions based on silhouette and visibility curves . Each computed region has the property that it is either entirely visible or invisible in the absence of other surfaces. The visibility curves are computed based on the silhouette and boundary curves. Each non-overlapping region is represented as a trimmed B ezier surface bounded by silhouettes, visibility and boundary curves. Given a collection of these trimmed surfaces, we then use a simple randomized algorithm to compute the visible portions. Our algorithm can easily be extended to handle intersecting surfaces. However, for ease of argument we assume that the surfaces are non-intersecting. The algorithm uses a combination of symbolic techniques and results from numerical linear algebra. The algorithm is simple to implement and it has been implemented in xed precision (using 6 4-bit double precision oating-point arithmetic). The main aim of this paper is to present a simple implementable algo rithm for the hidden surface problem that performs reasonably well in practice."
+      }
+    },
+    {
+      "id": "#/texts/27",
+      "page": 4,
+      "order": 3,
+      "role": "paragraph",
+      "text": "The rest of the paper is organized in the following manner. Section 2 presents background material and reviews algorithms from computational geometry and numerical linear algebra used in the rest of the paper. We outline an e cient algorithm for computing the silhouettes based on marching methods in Section 3. We introduce the notion of visibility curves in Section 4 and show that sil houettes and visibility curves partition a general surface into non-overlapping regions. We present algorithms and implementations for computation of visibility curves in Section 5. Finally, Section 6 describes a simple randomized visible surface computation algorithm for multiple non-overlapping surfaces.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 304.33,
+        "x1": 540.0,
+        "y1": 410.18,
+        "width": 468.0,
+        "height": 105.85
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The rest of the paper is organized in the following manner. Section 2 presents background material and reviews algorithms from computational geometry and numerical linear algebra used in the rest of the paper. We outline an e cient algorithm for computing the silhouettes based on marching methods in Section 3. We introduce the notion of visibility curves in Section 4 and show that sil houettes and visibility curves partition a general surface into non-overlapping regions. We present algorithms and implementations for computation of visibility curves in Section 5. Finally, Section 6 describes a simple randomized visible surface computation algorithm for multiple non-overlapping surfaces."
+      }
+    },
+    {
+      "id": "#/texts/28",
+      "page": 4,
+      "order": 4,
+      "role": "heading",
+      "text": "2 Background",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 444.98,
+        "x1": 182.4,
+        "y1": 458.42,
+        "width": 110.4,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2 Background"
+      }
+    },
+    {
+      "id": "#/texts/29",
+      "page": 4,
+      "order": 5,
+      "role": "paragraph",
+      "text": "The overall algorithm for visibility computation uses algorithms from computational geometry and linear algebra. Some of them include trapezoidation of polygons, partitioning a simple polygon using non-intersecting chains, curve surface intersections and local methods of tracing based on power iterations. We review some of these techniques in this section. Some of the algorithms presented here might not be the most optimal in terms of worst case asymptotic complexity;; we compromised this over simplicity and ease of implementation.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 471.38,
+        "x1": 540.0,
+        "y1": 550.1,
+        "width": 468.0,
+        "height": 78.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The overall algorithm for visibility computation uses algorithms from computational geometry and linear algebra. Some of them include trapezoidation of polygons, partitioning a simple polygon using non-intersecting chains, curve surface intersections and local methods of tracing based on power iterations. We review some of these techniques in this section. Some of the algorithms presented here might not be the most optimal in terms of worst case asymptotic complexity;; we compromised this over simplicity and ease of implementation."
+      }
+    },
+    {
+      "id": "#/texts/30",
+      "page": 4,
+      "order": 6,
+      "role": "heading",
+      "text": "2. 1 Triangulating Simple Polygons",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 567.62,
+        "x1": 282.96,
+        "y1": 579.38,
+        "width": 210.96,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2. 1 Triangulating Simple Polygons"
+      }
+    },
+    {
+      "id": "#/texts/31",
+      "page": 4,
+      "order": 7,
+      "role": "paragraph",
+      "text": "We represent trimmed surfaces as well as portions of surfaces obtained after visibility decomposi tion using non-convex simple polygons in the domain. These non-convex polygonal domains are decomposed into triangles for many geometric operations like intersections and partitioning.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 588.98,
+        "x1": 540.0,
+        "y1": 627.13,
+        "width": 468.0,
+        "height": 38.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We represent trimmed surfaces as well as portions of surfaces obtained after visibility decomposi tion using non-convex simple polygons in the domain. These non-convex polygonal domains are decomposed into triangles for many geometric operations like intersections and partitioning."
+      }
+    },
+    {
+      "id": "#/texts/32",
+      "page": 4,
+      "order": 8,
+      "role": "paragraph",
+      "text": "To decompose a simple polygon into an optimal number of triangles we use Seidel's algorithm [Sei 9 1]. It is an incremental randomized algorithm whose expected complexity is O ( N log N ),",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 636.02,
+        "x1": 540.24,
+        "y1": 660.5,
+        "width": 468.24,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To decompose a simple polygon into an optimal number of triangles we use Seidel's algorithm [Sei 9 1]. It is an incremental randomized algorithm whose expected complexity is O ( N log N ),"
+      }
+    },
+    {
+      "id": "#/texts/35",
+      "page": 5,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 2: Three stages of Seidel's algorithm",
+      "bbox": {
+        "x0": 204.96,
+        "y0": 243.38,
+        "x1": 407.52,
+        "y1": 254.41,
+        "width": 202.56,
+        "height": 11.03
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 2: Three stages of Seidel's algorithm"
+      }
+    },
+    {
+      "id": "#/texts/36",
+      "page": 5,
+      "order": 2,
+      "role": "paragraph",
+      "text": "where N is the number of vertices. In practice, it is almost linear time. The algorithm proceeds in three steps as shown in g. 2. They are:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 276.25,
+        "x1": 539.76,
+        "y1": 300.97,
+        "width": 467.76,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where N is the number of vertices. In practice, it is almost linear time. The algorithm proceeds in three steps as shown in g. 2. They are:"
+      }
+    },
+    {
+      "id": "#/texts/37",
+      "page": 5,
+      "order": 3,
+      "role": "list_item",
+      "text": "Decompose the polygon into trapezoids in O ( N log N ) time,",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 315.13,
+        "x1": 391.2,
+        "y1": 326.41,
+        "width": 302.88,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "Decompose the polygon into trapezoids in O ( N log N ) time,"
+      }
+    },
+    {
+      "id": "#/texts/38",
+      "page": 5,
+      "order": 4,
+      "role": "list_item",
+      "text": "Decompose the trapezoids into monotone polygons in linear time, and",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 337.69,
+        "x1": 434.16,
+        "y1": 348.97,
+        "width": 345.84,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "Decompose the trapezoids into monotone polygons in linear time, and"
+      }
+    },
+    {
+      "id": "#/texts/39",
+      "page": 5,
+      "order": 5,
+      "role": "list_item",
+      "text": "Triangulate the monotone polygons in linear time.",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 360.25,
+        "x1": 339.6,
+        "y1": 371.53,
+        "width": 251.28,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "Triangulate the monotone polygons in linear time."
+      }
+    },
+    {
+      "id": "#/texts/41",
+      "page": 5,
+      "order": 6,
+      "role": "paragraph",
+      "text": "The trapezoidation of the polygon is useful in two ways. We can nd whether a given point is inside the polygon in O (log N ) time by doing binary search on the trapezoids. Moreover, we can obtain a point inside the polygon in constant time. For the purposes of the visibility computation algorithm, trapezoidation is su cient. However, the triangulation is eventually used for rendering the visible portions.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 385.93,
+        "x1": 540.0,
+        "y1": 451.21,
+        "width": 468.0,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The trapezoidation of the polygon is useful in two ways. We can nd whether a given point is inside the polygon in O (log N ) time by doing binary search on the trapezoids. Moreover, we can obtain a point inside the polygon in constant time. For the purposes of the visibility computation algorithm, trapezoidation is su cient. However, the triangulation is eventually used for rendering the visible portions."
+      }
+    },
+    {
+      "id": "#/texts/42",
+      "page": 5,
+      "order": 7,
+      "role": "heading",
+      "text": "2. 2 Partitioning a Simple Polygon using Non-Intersecting Chains",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 468.73,
+        "x1": 463.68,
+        "y1": 480.49,
+        "width": 391.68,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2. 2 Partitioning a Simple Polygon using Non-Intersecting Chains"
+      }
+    },
+    {
+      "id": "#/texts/43",
+      "page": 5,
+      "order": 8,
+      "role": "paragraph",
+      "text": "We use algorithms for partitioning a simple polygon based on non-intersecting chains. Given a simple polygon P and a number of non-intersecting polygonal chains C , our task is to partition P . We make no assumptions on C except that each chain c i 2 C in itself should partition P . Let us assume for the sake of simplicity that the chain does not form a loop inside the polygon. We handle this case as a special case in our algorithm, and hence details are omitted. The main idea in this algorithm is the fact that since the chains are non-intersecting, each of the partitioned region starts and ends at intersection points (with the polygon) of the same chain. Fig. 3 shows a simple polygon P and three non-intersecting chains a , b and c . Since the vertices of each chain are given in a speci c order, we shall assume that to be the direction of the chain (see g.). The algorithm works in two steps.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 489.85,
+        "x1": 540.0,
+        "y1": 623.06,
+        "width": 468.0,
+        "height": 133.21
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We use algorithms for partitioning a simple polygon based on non-intersecting chains. Given a simple polygon P and a number of non-intersecting polygonal chains C , our task is to partition P . We make no assumptions on C except that each chain c i 2 C in itself should partition P . Let us assume for the sake of simplicity that the chain does not form a loop inside the polygon. We handle this case as a special case in our algorithm, and hence details are omitted. The main idea in this algorithm is the fact that since the chains are non-intersecting, each of the partitioned region starts and ends at intersection points (with the polygon) of the same chain. Fig. 3 shows a simple polygon P and three non-intersecting chains a , b and c . Since the vertices of each chain are given in a speci c order, we shall assume that to be the direction of the chain (see g.). The algorithm works in two steps."
+      }
+    },
+    {
+      "id": "#/texts/44",
+      "page": 5,
+      "order": 9,
+      "role": "list_item",
+      "text": "Find all the intersection points of each chain with the polygon and number them according to the order in which they occur. This problem can be solved in time O ( N log 2 N ) [CEGS 9 4], where N is the total number of segments in the polygon and chains. We associate three elds",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 637.22,
+        "x1": 540.24,
+        "y1": 675.62,
+        "width": 451.92,
+        "height": 38.4
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "Find all the intersection points of each chain with the polygon and number them according to the order in which they occur. This problem can be solved in time O ( N log 2 N ) [CEGS 9 4], where N is the total number of segments in the polygon and chains. We associate three elds"
+      }
+    },
+    {
+      "id": "#/texts/46",
+      "page": 6,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 3: Partitioning a polygon with polygonal chains",
+      "bbox": {
+        "x0": 180.48,
+        "y0": 303.38,
+        "x1": 431.28,
+        "y1": 314.42,
+        "width": 250.8,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 3: Partitioning a polygon with polygonal chains"
+      }
+    },
+    {
+      "id": "#/texts/47",
+      "page": 6,
+      "order": 2,
+      "role": "paragraph",
+      "text": "with each intersection point - the chain corresponding to each intersection point ( type ), the number of the intersection point within the chain ( rank ), and whether the chain was coming in or going out of the polygon at this point ( in or out ). For example, the intersection point a 1 in the gure has type = a , rank = 1 and in or out = out as its three elds. The in or out eld is actually unnecessary because rank has that information. However, we use it for ease of description.",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 336.25,
+        "x1": 540.0,
+        "y1": 415.21,
+        "width": 440.64,
+        "height": 78.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "with each intersection point - the chain corresponding to each intersection point ( type ), the number of the intersection point within the chain ( rank ), and whether the chain was coming in or going out of the polygon at this point ( in or out ). For example, the intersection point a 1 in the gure has type = a , rank = 1 and in or out = out as its three elds. The in or out eld is actually unnecessary because rank has that information. However, we use it for ease of description."
+      }
+    },
+    {
+      "id": "#/texts/48",
+      "page": 6,
+      "order": 3,
+      "role": "list_item",
+      "text": "Given all the intersections, we traverse the polygon in some order starting from an arbitrary vertex. We use a stack as a data structure to compute the partitions. Let us assume that we start traversing the polygon from vertex v 0 in an anticlockwise order for the example given in the gure. Given this traversal, we can order the intersection points around the polygon. In the example, the order would be a 0 , b 3 , b 2 , b 1 , c 0 , c 1 , b 0 , a 3 , a 2 , a 1 . As we proceed from vertex v i to v i + 1 in the polygon, we retrieve all the intersection points of the various chains with the edge ( v i ;; v i + 1 ) in order. If q is an intersection point, and let p be the point on the top of the stack. To determine if q is pushed or p is popped , the following condition is checked.",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 426.5,
+        "x1": 540.24,
+        "y1": 532.58,
+        "width": 451.92,
+        "height": 106.08
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "Given all the intersections, we traverse the polygon in some order starting from an arbitrary vertex. We use a stack as a data structure to compute the partitions. Let us assume that we start traversing the polygon from vertex v 0 in an anticlockwise order for the example given in the gure. Given this traversal, we can order the intersection points around the polygon. In the example, the order would be a 0 , b 3 , b 2 , b 1 , c 0 , c 1 , b 0 , a 3 , a 2 , a 1 . As we proceed from vertex v i to v i + 1 in the polygon, we retrieve all the intersection points of the various chains with the edge ( v i ;; v i + 1 ) in order. If q is an intersection point, and let p be the point on the top of the stack. To determine if q is pushed or p is popped , the following condition is checked."
+      }
+    },
+    {
+      "id": "#/texts/49",
+      "page": 6,
+      "order": 4,
+      "role": "paragraph",
+      "text": "6",
+      "bbox": {
+        "x0": 146.4,
+        "y0": 551.29,
+        "x1": 146.4,
+        "y1": 562.58,
+        "width": 0.0,
+        "height": 11.29
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "6"
+      }
+    },
+    {
+      "id": "#/texts/50",
+      "page": 6,
+      "order": 5,
+      "role": "code",
+      "text": "if ( q .type = p .type) push( q );; if (( q .rank p .rank == 1) && ( q .in or out == out ) && ( p .in or out == in )) pop( p );; if (( p .rank q .rank == 1) && ( p .in or out == out ) && ( q .in or out == in )) pop( p );; push( q );;",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 551.53,
+        "x1": 467.28,
+        "y1": 643.69,
+        "width": 367.92,
+        "height": 92.16
+      },
+      "meta": {
+        "docling_label": "code",
+        "docling_orig": "if ( q .type = p .type) push( q );; if (( q .rank p .rank == 1) && ( q .in or out == out ) && ( p .in or out == in )) pop( p );; if (( p .rank q .rank == 1) && ( p .in or out == out ) && ( q .in or out == in )) pop( p );; push( q );;"
+      }
+    },
+    {
+      "id": "#/texts/52",
+      "page": 7,
+      "order": 1,
+      "role": "paragraph",
+      "text": "If p is popped, then p and q form a partition of the polygon. The corresponding partition is read out and the chain of vertices between p and q is appended to the vertex (this chain will be a part of the partition that involves this vertex) currently on top of the stack (the one that was below p ). Some details about reading out the proper partitions once a vertex is popped are omitted. After traversing the polygon completely once, we would have obtained all the partitions.",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 74.89,
+        "x1": 540.24,
+        "y1": 153.61,
+        "width": 440.88,
+        "height": 78.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "If p is popped, then p and q form a partition of the polygon. The corresponding partition is read out and the chain of vertices between p and q is appended to the vertex (this chain will be a part of the partition that involves this vertex) currently on top of the stack (the one that was below p ). Some details about reading out the proper partitions once a vertex is popped are omitted. After traversing the polygon completely once, we would have obtained all the partitions."
+      }
+    },
+    {
+      "id": "#/texts/53",
+      "page": 7,
+      "order": 2,
+      "role": "heading",
+      "text": "2. 3 Curve Surface Intersection",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 171.13,
+        "x1": 262.32,
+        "y1": 182.89,
+        "width": 190.32,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2. 3 Curve Surface Intersection"
+      }
+    },
+    {
+      "id": "#/texts/54",
+      "page": 7,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Computing the intersection of curves and surfaces is needed to nd whether a given surface is occluded. Basically we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects with any other surface. If the number of intersections is 0, the surface is visible, otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD 9 4].",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 192.25,
+        "x1": 539.76,
+        "y1": 257.53,
+        "width": 467.76,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Computing the intersection of curves and surfaces is needed to nd whether a given surface is occluded. Basically we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects with any other surface. If the number of intersections is 0, the surface is visible, otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD 9 4]."
+      }
+    },
+    {
+      "id": "#/texts/55",
+      "page": 7,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Given a surface F ( s;; t ), we compute its implicit representation using resultant methods [Dix 0 8] and obtain a matrix formulation M ( x;; y;; z;; w ). We substitute the parametrization of the curve, say G ( u ) = ( X ( u ) ;;Y ( u ) ;;Z ( u ) ;;W ( u )) of degree d , and obtain a univariate matrix polynomial M ( u ). The problem of intersection computation reduces to computing the roots of the non-linear matrix polynomial M ( u ). The polynomial which are in Bernstein basis can be converted to the power basis by the transformation u = u 1 u . The resulting matrix M ( u ) can be represented as",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 264.97,
+        "x1": 540.24,
+        "y1": 339.86,
+        "width": 468.24,
+        "height": 74.89
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given a surface F ( s;; t ), we compute its implicit representation using resultant methods [Dix 0 8] and obtain a matrix formulation M ( x;; y;; z;; w ). We substitute the parametrization of the curve, say G ( u ) = ( X ( u ) ;;Y ( u ) ;;Z ( u ) ;;W ( u )) of degree d , and obtain a univariate matrix polynomial M ( u ). The problem of intersection computation reduces to computing the roots of the non-linear matrix polynomial M ( u ). The polynomial which are in Bernstein basis can be converted to the power basis by the transformation u = u 1 u . The resulting matrix M ( u ) can be represented as"
+      }
+    },
+    {
+      "id": "#/texts/57",
+      "page": 7,
+      "order": 5,
+      "role": "paragraph",
+      "text": "; M ( u ) = u d M d + u d ; 1 M d ; 1 + : : : + uM 1 + M 0 : ( 1) where M i 's are matrices of order 2 mn with numeric entries. Furthermore, the roots of the matrix polynomial, M ( u ), have one-to-one correspondence with the eigendecomposition of",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 333.38,
+        "x1": 540.0,
+        "y1": 420.01,
+        "width": 468.0,
+        "height": 86.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "; M ( u ) = u d M d + u d ; 1 M d ; 1 + : : : + uM 1 + M 0 : ( 1) where M i 's are matrices of order 2 mn with numeric entries. Furthermore, the roots of the matrix polynomial, M ( u ), have one-to-one correspondence with the eigendecomposition of"
+      }
+    },
+    {
+      "id": "#/texts/58",
+      "page": 7,
+      "order": 6,
+      "role": "paragraph",
+      "text": "; where M i = M ; 1 d M i [GLR 8 2]. In case M d is singular or ill-conditioned, the intersection problem is reduced to a generalized eigenvalue problem [MD 9 4]. Algorithms to compute all the eigenvalues are based on QR orthogonal transformations [GL 8 9]. They compute all the real as well as complex eigenvalues. Algorithms to compute eigenvalues in a subset of the real or complex domain are presented in [MD 9 4].",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 463.22,
+        "x1": 540.0,
+        "y1": 548.65,
+        "width": 468.0,
+        "height": 85.43
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "; where M i = M ; 1 d M i [GLR 8 2]. In case M d is singular or ill-conditioned, the intersection problem is reduced to a generalized eigenvalue problem [MD 9 4]. Algorithms to compute all the eigenvalues are based on QR orthogonal transformations [GL 8 9]. They compute all the real as well as complex eigenvalues. Algorithms to compute eigenvalues in a subset of the real or complex domain are presented in [MD 9 4]."
+      }
+    },
+    {
+      "id": "#/texts/59",
+      "page": 7,
+      "order": 7,
+      "role": "heading",
+      "text": "2. 4 Power Iterations",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 565.94,
+        "x1": 200.4,
+        "y1": 577.7,
+        "width": 128.4,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2. 4 Power Iterations"
+      }
+    },
+    {
+      "id": "#/texts/60",
+      "page": 7,
+      "order": 8,
+      "role": "paragraph",
+      "text": "We use marching methods to trace the visibility curves. At each iterations, we pose the problem as an eigenvalue problem and use local methods to compute points on the curve. Power iteration is a fundamental local technique used to compute eigenvalues and eigenvectors of a matrix. Given a di agonalizable matrix, A , we can nd X (=[ x 1 ;; x 2 ;; : : : ;; x n ]) such that X ; 1 AX = Diag ( 1 ;; 2 ;; : : : ;; n ) and j 1 j > j 2 j : : : j n j . Given a unit vector q 0 , the power method produces a sequence of vector q k as follows: z k = Aq k 1 ;; q k = z k = k z k k ;; s k = q T k Aq k ;;",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 587.3,
+        "x1": 540.0,
+        "y1": 692.18,
+        "width": 468.0,
+        "height": 104.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We use marching methods to trace the visibility curves. At each iterations, we pose the problem as an eigenvalue problem and use local methods to compute points on the curve. Power iteration is a fundamental local technique used to compute eigenvalues and eigenvectors of a matrix. Given a di agonalizable matrix, A , we can nd X (=[ x 1 ;; x 2 ;; : : : ;; x n ]) such that X ; 1 AX = Diag ( 1 ;; 2 ;; : : : ;; n ) and j 1 j > j 2 j : : : j n j . Given a unit vector q 0 , the power method produces a sequence of vector q k as follows: z k = Aq k 1 ;; q k = z k = k z k k ;; s k = q T k Aq k ;;"
+      }
+    },
+    {
+      "id": "#/texts/61",
+      "page": 7,
+      "order": 9,
+      "role": "paragraph",
+      "text": ";",
+      "bbox": {
+        "x0": 239.28,
+        "y0": 674.17,
+        "x1": 245.76,
+        "y1": 738.5,
+        "width": 6.48,
+        "height": 64.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ";"
+      }
+    },
+    {
+      "id": "#/texts/62",
+      "page": 7,
+      "order": 10,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 335.76,
+        "y0": 674.17,
+        "x1": 344.16,
+        "y1": 738.5,
+        "width": 8.4,
+        "height": 64.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/64",
+      "page": 8,
+      "order": 1,
+      "role": "paragraph",
+      "text": "where k z k k refers to the in nity norm of the vector z k . s k converges to the largest eigenvalue 1 and q k converges to the corresponding eigenvector x 1 .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.65,
+        "x1": 539.52,
+        "y1": 100.33,
+        "width": 467.52,
+        "height": 25.68
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where k z k k refers to the in nity norm of the vector z k . s k converges to the largest eigenvalue 1 and q k converges to the corresponding eigenvector x 1 ."
+      }
+    },
+    {
+      "id": "#/texts/65",
+      "page": 8,
+      "order": 2,
+      "role": "paragraph",
+      "text": "; 1 We use inverse power iterations to trace curves. We formulate the curve as the singular set of a matrix polynomial and reduce it to an eigenvalue problem. Given a point on the curve, we approximate the next point on the curve by taking a small stepsize in a direction determined by the local geometry of the curve. We use this point as our guess and use inverse power iterations to converge back to the curve.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 181.45,
+        "x1": 540.24,
+        "y1": 261.37,
+        "width": 468.24,
+        "height": 79.92
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "; 1 We use inverse power iterations to trace curves. We formulate the curve as the singular set of a matrix polynomial and reduce it to an eigenvalue problem. Given a point on the curve, we approximate the next point on the curve by taking a small stepsize in a direction determined by the local geometry of the curve. We use this point as our guess and use inverse power iterations to converge back to the curve."
+      }
+    },
+    {
+      "id": "#/texts/66",
+      "page": 8,
+      "order": 3,
+      "role": "paragraph",
+      "text": "1 The basic idea of power iterations can be used and modi ed to obtain the eigenvalue of a matrix A that is closest to a given guess s . It actually corresponds to the largest eigenvalue of the matrix ( A ; s I ) ; 1 . Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector q 0 , we generate a sequence of vectors q k as Solve ( A ; s I ) z k = q k 1 ;; q k = z k = k z k k ;; s k = q T k Aq k ;;",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 80.41,
+        "x1": 540.0,
+        "y1": 199.45,
+        "width": 468.0,
+        "height": 119.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1 The basic idea of power iterations can be used and modi ed to obtain the eigenvalue of a matrix A that is closest to a given guess s . It actually corresponds to the largest eigenvalue of the matrix ( A ; s I ) ; 1 . Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector q 0 , we generate a sequence of vectors q k as Solve ( A ; s I ) z k = q k 1 ;; q k = z k = k z k k ;; s k = q T k Aq k ;;"
+      }
+    },
+    {
+      "id": "#/texts/67",
+      "page": 8,
+      "order": 4,
+      "role": "heading",
+      "text": "3 Silhouettes",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 282.49,
+        "x1": 176.64,
+        "y1": 295.93,
+        "width": 104.64,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3 Silhouettes"
+      }
+    },
+    {
+      "id": "#/texts/68",
+      "page": 8,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Silhouette computation forms an important part of visibility algorithms for curved surfaces. We shall restrict our discussion to surfaces whose silhouette (from a given viewpoint) is a curve on the surface. The property of the silhouette curve is that it subdivides the surface into front and back facing regions. However, as shown in g. 1, silhouettes alone are not su cient to determine all visible regions. In this section, we describe an algorithm to compute the silhouette curve on a parametric (represented as B ezier [Far 9 3]) patch e ciently.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 308.89,
+        "x1": 540.0,
+        "y1": 387.85,
+        "width": 468.0,
+        "height": 78.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Silhouette computation forms an important part of visibility algorithms for curved surfaces. We shall restrict our discussion to surfaces whose silhouette (from a given viewpoint) is a curve on the surface. The property of the silhouette curve is that it subdivides the surface into front and back facing regions. However, as shown in g. 1, silhouettes alone are not su cient to determine all visible regions. In this section, we describe an algorithm to compute the silhouette curve on a parametric (represented as B ezier [Far 9 3]) patch e ciently."
+      }
+    },
+    {
+      "id": "#/texts/69",
+      "page": 8,
+      "order": 6,
+      "role": "paragraph",
+      "text": "We assume for the sake of simplicity that the viewpoint is located at ( 0 ;; 0 ;; ; 1 ). It is easy to see that even if this is not the case, one can always achieve it by applying an appropriate perspective transformation to the parametric surface F ( s;; t ). We also require that all the surfaces are di eren tiable everywhere. We formulate the silhouette curve as an algebraic plane curve in the domain of F ( s;; t ).",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 396.25,
+        "x1": 540.0,
+        "y1": 461.77,
+        "width": 468.0,
+        "height": 65.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We assume for the sake of simplicity that the viewpoint is located at ( 0 ;; 0 ;; ; 1 ). It is easy to see that even if this is not the case, one can always achieve it by applying an appropriate perspective transformation to the parametric surface F ( s;; t ). We also require that all the surfaces are di eren tiable everywhere. We formulate the silhouette curve as an algebraic plane curve in the domain of F ( s;; t )."
+      }
+    },
+    {
+      "id": "#/texts/70",
+      "page": 8,
+      "order": 7,
+      "role": "heading",
+      "text": "3. 1 Formulation of the Silhouette Curve",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 479.29,
+        "x1": 316.32,
+        "y1": 491.05,
+        "width": 244.32,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3. 1 Formulation of the Silhouette Curve"
+      }
+    },
+    {
+      "id": "#/texts/71",
+      "page": 8,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Let F ( s;; t ) denote the parametric (di erentiable) surface and let 1 ( s;; t ) ;; 2 ( s;; t ) and 3 ( s;; t ) denote the mappings from the parametric space to ( x;; y;; z ) space.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 500.65,
+        "x1": 540.0,
+        "y1": 525.13,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Let F ( s;; t ) denote the parametric (di erentiable) surface and let 1 ( s;; t ) ;; 2 ( s;; t ) and 3 ( s;; t ) denote the mappings from the parametric space to ( x;; y;; z ) space."
+      }
+    },
+    {
+      "id": "#/texts/74",
+      "page": 8,
+      "order": 9,
+      "role": "paragraph",
+      "text": "In the rest of the paper, we shall drop the ( s;; t ) su xes from all the functions for more concise notation. The z ; component of the normal at an arbitrary point on the surface is given by the determinant",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 594.74,
+        "x1": 540.0,
+        "y1": 632.89,
+        "width": 468.0,
+        "height": 38.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the rest of the paper, we shall drop the ( s;; t ) su xes from all the functions for more concise notation. The z ; component of the normal at an arbitrary point on the surface is given by the determinant"
+      }
+    },
+    {
+      "id": "#/texts/76",
+      "page": 8,
+      "order": 10,
+      "role": "paragraph",
+      "text": "s",
+      "bbox": {
+        "x0": 310.08,
+        "y0": 667.94,
+        "x1": 313.68,
+        "y1": 731.54,
+        "width": 3.6,
+        "height": 63.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "s"
+      }
+    },
+    {
+      "id": "#/texts/77",
+      "page": 8,
+      "order": 11,
+      "role": "paragraph",
+      "text": "t",
+      "bbox": {
+        "x0": 335.28,
+        "y0": 667.94,
+        "x1": 338.16,
+        "y1": 731.54,
+        "width": 2.88,
+        "height": 63.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "t"
+      }
+    },
+    {
+      "id": "#/texts/78",
+      "page": 9,
+      "order": 1,
+      "role": "paragraph",
+      "text": "where i s and i t denote the partial derivatives of the appropriate function i with respect to s and t . 1 s = ( WX s ; W s X ) W 2 1 t = ( WX t ; W t X ) W 2 2 s = ( WY s ; W s Y ) W 2 2 = ( WY t ; W t Y ) W 2",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 540.0,
+        "y1": 236.65,
+        "width": 468.0,
+        "height": 161.76
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where i s and i t denote the partial derivatives of the appropriate function i with respect to s and t . 1 s = ( WX s ; W s X ) W 2 1 t = ( WX t ; W t X ) W 2 2 s = ( WY s ; W s Y ) W 2 2 = ( WY t ; W t Y ) W 2"
+      }
+    },
+    {
+      "id": "#/texts/80",
+      "page": 9,
+      "order": 2,
+      "role": "paragraph",
+      "text": "t On the silhouette curve, N z = 0. Since W ( s;; t ) > 0, we can express the plane curve representing the silhouette as the determinant",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 203.77,
+        "x1": 539.76,
+        "y1": 267.37,
+        "width": 467.76,
+        "height": 63.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "t On the silhouette curve, N z = 0. Since W ( s;; t ) > 0, we can express the plane curve representing the silhouette as the determinant"
+      }
+    },
+    {
+      "id": "#/texts/81",
+      "page": 9,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Expanding the determinant and rearranging the terms, we can express it as the singular set of the matrix M ( s;; t )",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 292.57,
+        "x1": 540.0,
+        "y1": 317.3,
+        "width": 468.0,
+        "height": 24.73
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Expanding the determinant and rearranging the terms, we can express it as the singular set of the matrix M ( s;; t )"
+      }
+    },
+    {
+      "id": "#/texts/83",
+      "page": 9,
+      "order": 4,
+      "role": "paragraph",
+      "text": "The singular set of M ( s;; t ) are the values of s and t which make it singular.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 378.25,
+        "x1": 433.68,
+        "y1": 389.29,
+        "width": 361.68,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The singular set of M ( s;; t ) are the values of s and t which make it singular."
+      }
+    },
+    {
+      "id": "#/texts/84",
+      "page": 9,
+      "order": 5,
+      "role": "heading",
+      "text": "3. 2 Silhouette Computation",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 406.81,
+        "x1": 244.32,
+        "y1": 418.57,
+        "width": 172.32,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3. 2 Silhouette Computation"
+      }
+    },
+    {
+      "id": "#/texts/85",
+      "page": 9,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Let us denote the projected silhouette curve corresponding to Det( M ( s;; t )) by D ( s;; t ). If the B ezier patch F ( s;; t ) is of degree m in s and n in t , the curve D ( s;; t ) has degree at most 3( m + n ). This is a high degree algebraic curve and can have a number of components (both open and closed) possibly with singularities. Our task is to evaluate this curve completely and e ciently inside our domain of interest.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 427.93,
+        "x1": 540.0,
+        "y1": 493.21,
+        "width": 468.0,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Let us denote the projected silhouette curve corresponding to Det( M ( s;; t )) by D ( s;; t ). If the B ezier patch F ( s;; t ) is of degree m in s and n in t , the curve D ( s;; t ) has degree at most 3( m + n ). This is a high degree algebraic curve and can have a number of components (both open and closed) possibly with singularities. Our task is to evaluate this curve completely and e ciently inside our domain of interest."
+      }
+    },
+    {
+      "id": "#/texts/86",
+      "page": 9,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Our approach is based on marching along the curve using local geometric properties of the curve. All marching methods require at least one point on every component of the curve inside the domain of interest. We adopt di erent methods to compute starting points on open (intersect the boundary of the domain) and closed components (or loops).",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 502.09,
+        "x1": 540.0,
+        "y1": 553.93,
+        "width": 468.0,
+        "height": 51.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Our approach is based on marching along the curve using local geometric properties of the curve. All marching methods require at least one point on every component of the curve inside the domain of interest. We adopt di erent methods to compute starting points on open (intersect the boundary of the domain) and closed components (or loops)."
+      }
+    },
+    {
+      "id": "#/texts/87",
+      "page": 9,
+      "order": 8,
+      "role": "paragraph",
+      "text": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We nd all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M ( 0 ;; t ), M ( 1 ;; t ), M ( s;; 0) and M ( s;; 1). This problem can be reduced to nding the eigenvalues of an associated companion matrix (see eq. ( 2)) [MD 9 4]. We retain only the real solutions that lie within the domain.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 562.58,
+        "x1": 540.24,
+        "y1": 641.54,
+        "width": 468.24,
+        "height": 78.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We nd all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M ( 0 ;; t ), M ( 1 ;; t ), M ( s;; 0) and M ( s;; 1). This problem can be reduced to nding the eigenvalues of an associated companion matrix (see eq. ( 2)) [MD 9 4]. We retain only the real solutions that lie within the domain."
+      }
+    },
+    {
+      "id": "#/texts/88",
+      "page": 9,
+      "order": 9,
+      "role": "paragraph",
+      "text": "A much harder problem is to determine if the silhouette curve has loops inside the domain of the surface, and if so to compute at least one point on each of them. We use the fact that the silhouette",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 650.41,
+        "x1": 540.0,
+        "y1": 674.89,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A much harder problem is to determine if the silhouette curve has loops inside the domain of the surface, and if so to compute at least one point on each of them. We use the fact that the silhouette"
+      }
+    },
+    {
+      "id": "#/texts/90",
+      "page": 10,
+      "order": 1,
+      "role": "paragraph",
+      "text": "curve is an algebraic plane curve that is continuous in the complex domain. Since the coe cients of the curve are real, all complex portions of the curve must occur in conjugate pairs. We characterize certain special points on loops (turning points) as places where two complex conjugate paths merge to form a real component [KM 9 5]. By following all the complex paths inside the domain we can locate at least a single point on each loop.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 540.0,
+        "y1": 139.93,
+        "width": 468.0,
+        "height": 65.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "curve is an algebraic plane curve that is continuous in the complex domain. Since the coe cients of the curve are real, all complex portions of the curve must occur in conjugate pairs. We characterize certain special points on loops (turning points) as places where two complex conjugate paths merge to form a real component [KM 9 5]. By following all the complex paths inside the domain we can locate at least a single point on each loop."
+      }
+    },
+    {
+      "id": "#/texts/91",
+      "page": 10,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Given a point on each component of the silhouette curve, marching methods obtain approximations of the next point by taking a small step size in a direction determined by the local geometry of the curve. Based on the approximate value, these algorithms use local iterative methods to trace back on to the curve to evaluate the silhouette curve. The three main issues concerning tracing algorithms are:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 148.81,
+        "x1": 540.0,
+        "y1": 214.09,
+        "width": 468.0,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given a point on each component of the silhouette curve, marching methods obtain approximations of the next point by taking a small step size in a direction determined by the local geometry of the curve. Based on the approximate value, these algorithms use local iterative methods to trace back on to the curve to evaluate the silhouette curve. The three main issues concerning tracing algorithms are:"
+      }
+    },
+    {
+      "id": "#/texts/92",
+      "page": 10,
+      "order": 3,
+      "role": "list_item",
+      "text": "1. Converging back on to the curve.",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 224.89,
+        "x1": 257.76,
+        "y1": 235.93,
+        "width": 172.32,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "1. Converging back on to the curve."
+      }
+    },
+    {
+      "id": "#/texts/93",
+      "page": 10,
+      "order": 4,
+      "role": "list_item",
+      "text": "2. Preventing component jumping .",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 247.21,
+        "x1": 249.84,
+        "y1": 258.25,
+        "width": 164.4,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2. Preventing component jumping ."
+      }
+    },
+    {
+      "id": "#/texts/94",
+      "page": 10,
+      "order": 5,
+      "role": "list_item",
+      "text": "3. Ability to handle singularities and trace through multiple branches.",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 269.53,
+        "x1": 422.4,
+        "y1": 280.57,
+        "width": 336.96,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "3. Ability to handle singularities and trace through multiple branches."
+      }
+    },
+    {
+      "id": "#/texts/95",
+      "page": 10,
+      "order": 6,
+      "role": "paragraph",
+      "text": "We have developed an algorithm based on inverse power iterations (section 2. 4) to trace the curve. The details of the complete algorithm are presented in [KM 9 5]. Our algorithm evaluates the sil houette curve at discrete steps to create a piecewise linear approximation. The tracing algorithm has been implemented and tested on a variety of examples and has proved to be fairly robust.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 291.37,
+        "x1": 540.0,
+        "y1": 342.97,
+        "width": 468.0,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We have developed an algorithm based on inverse power iterations (section 2. 4) to trace the curve. The details of the complete algorithm are presented in [KM 9 5]. Our algorithm evaluates the sil houette curve at discrete steps to create a piecewise linear approximation. The tracing algorithm has been implemented and tested on a variety of examples and has proved to be fairly robust."
+      }
+    },
+    {
+      "id": "#/texts/96",
+      "page": 10,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Consider a patch F ( s;; t ) of degree m in s and n in t , and let N =max f m;; n g . Then the com panion matrix (eq. ( 2), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3 N . We use the QR method [GL 8 9] to compute all the eigenvalues. The number of oating point operations performed is 8 N 3 . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU de composition is computed using Gaussian elimination and it takes about 1 3 N 3 operations (without pivoting). Solving each triangular system costs about 1 2 N 2 operations. As a result, the inverse power iteration takes about 1 3 N 3 + k 2 N 2 operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition ( 9 N operations) as well as solving the triangular systems ( 1 2 kN operations, where k is the number of iterations).",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 351.62,
+        "x1": 540.0,
+        "y1": 499.45,
+        "width": 468.0,
+        "height": 147.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Consider a patch F ( s;; t ) of degree m in s and n in t , and let N =max f m;; n g . Then the com panion matrix (eq. ( 2), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3 N . We use the QR method [GL 8 9] to compute all the eigenvalues. The number of oating point operations performed is 8 N 3 . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU de composition is computed using Gaussian elimination and it takes about 1 3 N 3 operations (without pivoting). Solving each triangular system costs about 1 2 N 2 operations. As a result, the inverse power iteration takes about 1 3 N 3 + k 2 N 2 operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition ( 9 N operations) as well as solving the triangular systems ( 1 2 kN operations, where k is the number of iterations)."
+      }
+    },
+    {
+      "id": "#/texts/97",
+      "page": 10,
+      "order": 8,
+      "role": "heading",
+      "text": "3. 3 Surface Partitioning based on Silhouettes",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 530.41,
+        "x1": 346.8,
+        "y1": 542.17,
+        "width": 274.8,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3. 3 Surface Partitioning based on Silhouettes"
+      }
+    },
+    {
+      "id": "#/texts/98",
+      "page": 10,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Fig. 4 shows the silhouette curve on an example patch along with the curve on its domain. It is clear from the gure that the silhouette divides the patch into front and back facing regions. We shall make this concept more precise using the following lemma.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 551.77,
+        "x1": 540.0,
+        "y1": 589.93,
+        "width": 468.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Fig. 4 shows the silhouette curve on an example patch along with the curve on its domain. It is clear from the gure that the silhouette divides the patch into front and back facing regions. We shall make this concept more precise using the following lemma."
+      }
+    },
+    {
+      "id": "#/texts/99",
+      "page": 10,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Lemma 1 Let C < 3 be the set of silhouette curves on a given surface S < 3 from a given viewpoint. Then C partitions S .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 601.69,
+        "x1": 540.24,
+        "y1": 627.62,
+        "width": 468.24,
+        "height": 25.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 1 Let C < 3 be the set of silhouette curves on a given surface S < 3 from a given viewpoint. Then C partitions S ."
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 10,
+      "order": 11,
+      "role": "paragraph",
+      "text": "Proof: Let p , q and r be points on S . Consider the natural relation = induced by C on S . p = q if and only if there exists a continuous path from p to q without crossing any silhouette curve. Let us look at the properties of = .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 641.29,
+        "x1": 540.0,
+        "y1": 679.69,
+        "width": 468.0,
+        "height": 38.4
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof: Let p , q and r be points on S . Consider the natural relation = induced by C on S . p = q if and only if there exists a continuous path from p to q without crossing any silhouette curve. Let us look at the properties of = ."
+      }
+    },
+    {
+      "id": "#/texts/102",
+      "page": 11,
+      "order": 1,
+      "role": "paragraph",
+      "text": "on-p",
+      "bbox": {
+        "x0": 0.0,
+        "y0": 1.97,
+        "x1": 21.33,
+        "y1": 12.45,
+        "width": 21.33,
+        "height": 10.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "on-p"
+      }
+    },
+    {
+      "id": "#/texts/103",
+      "page": 11,
+      "order": 2,
+      "role": "caption",
+      "text": "Figure 4: Silhouette curve on the patch and the domain",
+      "bbox": {
+        "x0": 172.32,
+        "y0": 254.89,
+        "x1": 439.68,
+        "y1": 265.93,
+        "width": 267.36,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 4: Silhouette curve on the patch and the domain"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 11,
+      "order": 3,
+      "role": "list_item",
+      "text": "= is symmetric because p = q ) q = p .",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 284.89,
+        "x1": 287.28,
+        "y1": 296.17,
+        "width": 198.96,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "= is symmetric because p = q ) q = p ."
+      }
+    },
+    {
+      "id": "#/texts/105",
+      "page": 11,
+      "order": 4,
+      "role": "list_item",
+      "text": "= is re exive because p = p .",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 306.01,
+        "x1": 234.24,
+        "y1": 317.29,
+        "width": 145.92,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "= is re exive because p = p ."
+      }
+    },
+    {
+      "id": "#/texts/106",
+      "page": 11,
+      "order": 5,
+      "role": "list_item",
+      "text": "= is transitive because p = q and q = r ) p = r .",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 327.38,
+        "x1": 333.12,
+        "y1": 338.65,
+        "width": 244.8,
+        "height": 11.27
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "= is transitive because p = q and q = r ) p = r ."
+      }
+    },
+    {
+      "id": "#/texts/107",
+      "page": 11,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Thus = is an equivalence relation . Since an equivalence relation induces a partition of the set, C partitions S .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 346.33,
+        "x1": 540.0,
+        "y1": 371.29,
+        "width": 468.0,
+        "height": 24.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Thus = is an equivalence relation . Since an equivalence relation induces a partition of the set, C partitions S ."
+      }
+    },
+    {
+      "id": "#/texts/108",
+      "page": 11,
+      "order": 7,
+      "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 531.84,
+        "y0": 375.13,
+        "x1": 540.0,
+        "y1": 381.13,
+        "width": 8.16,
+        "height": 6.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/109",
+      "page": 11,
+      "order": 8,
+      "role": "paragraph",
+      "text": "From the above lemma we can conclude that S can be partitioned into a set of regions R such that the boundaries of each region } 2 R consists of original surface boundaries and silhouette curves.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 387.37,
+        "x1": 540.24,
+        "y1": 412.09,
+        "width": 468.24,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "From the above lemma we can conclude that S can be partitioned into a set of regions R such that the boundaries of each region } 2 R consists of original surface boundaries and silhouette curves."
+      }
+    },
+    {
+      "id": "#/texts/110",
+      "page": 11,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Given the silhouette curve on the domain as a polygonal chain, we initially check for self-intersections (in case the silhouette curve has a singularity) and break it into non-intersecting chains. The do main of each patch is represented as a polygon (not necessarily convex in case of trimmed patches) in counterclockwise order. For example, a complete tensor product B ezier patch has its domain polygon as f ( 0 ;; 0) ;; ( 1 ;; 0) ;; ( 1 ;; 1) ;; ( 0 ;; 1) ;; ( 0 ;; 0) g . We then use our partition polygon routine to subdivide the domain into disjoint regions.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 420.73,
+        "x1": 540.48,
+        "y1": 499.69,
+        "width": 468.48,
+        "height": 78.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given the silhouette curve on the domain as a polygonal chain, we initially check for self-intersections (in case the silhouette curve has a singularity) and break it into non-intersecting chains. The do main of each patch is represented as a polygon (not necessarily convex in case of trimmed patches) in counterclockwise order. For example, a complete tensor product B ezier patch has its domain polygon as f ( 0 ;; 0) ;; ( 1 ;; 0) ;; ( 1 ;; 1) ;; ( 0 ;; 1) ;; ( 0 ;; 0) g . We then use our partition polygon routine to subdivide the domain into disjoint regions."
+      }
+    },
+    {
+      "id": "#/texts/111",
+      "page": 11,
+      "order": 10,
+      "role": "heading",
+      "text": "4 Visibility Curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 512.89,
+        "x1": 218.16,
+        "y1": 526.34,
+        "width": 146.16,
+        "height": 13.45
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 Visibility Curves"
+      }
+    },
+    {
+      "id": "#/texts/112",
+      "page": 11,
+      "order": 11,
+      "role": "paragraph",
+      "text": "In the previous section, we described a method to compute silhouettes. We shall now introduce the notion of visibility curves and elucidate their role in determining global visibility. We now state without proof a fundamental theorem from vector calculus called the global inverse theorem which provides the basis for our method [Ful 7 8].",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 539.53,
+        "x1": 540.24,
+        "y1": 591.13,
+        "width": 468.24,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the previous section, we described a method to compute silhouettes. We shall now introduce the notion of visibility curves and elucidate their role in determining global visibility. We now state without proof a fundamental theorem from vector calculus called the global inverse theorem which provides the basis for our method [Ful 7 8]."
+      }
+    },
+    {
+      "id": "#/texts/113",
+      "page": 11,
+      "order": 12,
+      "role": "paragraph",
+      "text": "Theorem 1 Let F be a continuously di erentiable mapping de ned on an open region D 2 < 2 , with range R 2 < 2 , and let its Jacobian be never zero in D . Suppose further that C is a simple closed curve that, together with its interior, lies in D , and that F is one-to-one on C . Then the image ; of C is a simple closed curve that, together with its interior, lies in R . Furthermore, F is one-to-one on the closed region consisting of C and its interior, so that the inverse transformation can be de ned on the closed region consisting of ; and its interior.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 599.05,
+        "x1": 540.24,
+        "y1": 679.69,
+        "width": 468.24,
+        "height": 80.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 1 Let F be a continuously di erentiable mapping de ned on an open region D 2 < 2 , with range R 2 < 2 , and let its Jacobian be never zero in D . Suppose further that C is a simple closed curve that, together with its interior, lies in D , and that F is one-to-one on C . Then the image ; of C is a simple closed curve that, together with its interior, lies in R . Furthermore, F is one-to-one on the closed region consisting of C and its interior, so that the inverse transformation can be de ned on the closed region consisting of ; and its interior."
+      }
+    },
+    {
+      "id": "#/texts/116",
+      "page": 12,
+      "order": 1,
+      "role": "paragraph",
+      "text": "The importance of this theorem lies in the fact that properties of the entire region can be argued by looking at the properties of its boundary.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 103.22,
+        "x1": 540.0,
+        "y1": 127.93,
+        "width": 468.0,
+        "height": 24.71
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The importance of this theorem lies in the fact that properties of the entire region can be argued by looking at the properties of its boundary."
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 12,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Consider the vector eld M : < 2 ! < 2 such that",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 134.89,
+        "x1": 304.32,
+        "y1": 147.85,
+        "width": 232.32,
+        "height": 12.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Consider the vector eld M : < 2 ! < 2 such that"
+      }
+    },
+    {
+      "id": "#/texts/119",
+      "page": 12,
+      "order": 3,
+      "role": "paragraph",
+      "text": "where the 0 i s were de ned in the previous section. Intuitively, the vector eld M projects a point on the surface F ( s;; t ) on to the xy ; plane. We now relate the silhouette curve and the Jacobian of the function M .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 180.49,
+        "x1": 540.0,
+        "y1": 244.81,
+        "width": 468.0,
+        "height": 64.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where the 0 i s were de ned in the previous section. Intuitively, the vector eld M projects a point on the surface F ( s;; t ) on to the xy ; plane. We now relate the silhouette curve and the Jacobian of the function M ."
+      }
+    },
+    {
+      "id": "#/texts/120",
+      "page": 12,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Lemma 2 Let M be a mapping from < 2 ! < 2 such that M ( s;; t ) = X ( s;;t ) W ( s;;t ) ;; Y ( s;;t ) W ( s;;t ) . Then the locus of all points on the surface that have vanishing Jacobians correspond exactly to the silhouette curve.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 226.33,
+        "x1": 540.0,
+        "y1": 269.05,
+        "width": 468.0,
+        "height": 42.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 2 Let M be a mapping from < 2 ! < 2 such that M ( s;; t ) = X ( s;;t ) W ( s;;t ) ;; Y ( s;;t ) W ( s;;t ) . Then the locus of all points on the surface that have vanishing Jacobians correspond exactly to the silhouette curve."
+      }
+    },
+    {
+      "id": "#/texts/121",
+      "page": 12,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Proof: The Jacobian J ( s;; t ) of M is given by",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 281.05,
+        "x1": 290.88,
+        "y1": 292.09,
+        "width": 218.88,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof: The Jacobian J ( s;; t ) of M is given by"
+      }
+    },
+    {
+      "id": "#/texts/122",
+      "page": 12,
+      "order": 6,
+      "role": "paragraph",
+      "text": "J ( s;; t ) = ( WX s ; W s X ) W 2 ( WX t ; W t X ) W 2 ( WY s ; W s Y ) W 2 ( WY t ; W t Y ) W 2 ( 6) However when J = 0, we get the same equation as eqn. 4. That is precisely the equation of the silhouette curve in the domain of the surface. Therefore, the silhouette curves are the only places on the surface where the Jacobian of M vanishes. 2",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 301.21,
+        "x1": 540.24,
+        "y1": 390.74,
+        "width": 468.24,
+        "height": 89.53
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "J ( s;; t ) = ( WX s ; W s X ) W 2 ( WX t ; W t X ) W 2 ( WY s ; W s Y ) W 2 ( WY t ; W t Y ) W 2 ( 6) However when J = 0, we get the same equation as eqn. 4. That is precisely the equation of the silhouette curve in the domain of the surface. Therefore, the silhouette curves are the only places on the surface where the Jacobian of M vanishes. 2"
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 12,
+      "order": 7,
+      "role": "paragraph",
+      "text": "After determining the silhouette curve we proved that it introduces a partition on the surface. Let us denote this set of regions obtained after partitioning as R . Henceforth, we shall be considering a single element of this set } 2 R . Because of the previous lemma, we can conclude that the interior of each } 2 R have no vanishing Jacobians. This implies that we can apply the global inverse theorem on each of the regions in R .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 398.66,
+        "x1": 540.24,
+        "y1": 463.94,
+        "width": 468.24,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "After determining the silhouette curve we proved that it introduces a partition on the surface. Let us denote this set of regions obtained after partitioning as R . Henceforth, we shall be considering a single element of this set } 2 R . Because of the previous lemma, we can conclude that the interior of each } 2 R have no vanishing Jacobians. This implies that we can apply the global inverse theorem on each of the regions in R ."
+      }
+    },
+    {
+      "id": "#/texts/124",
+      "page": 12,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Consider a region } 2 R . Let us denote the boundary of } by @ } and the interior of } , the open set } ; @ } , by int ( } ).",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 472.58,
+        "x1": 539.76,
+        "y1": 497.3,
+        "width": 467.76,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Consider a region } 2 R . Let us denote the boundary of } by @ } and the interior of } , the open set } ; @ } , by int ( } )."
+      }
+    },
+    {
+      "id": "#/texts/125",
+      "page": 12,
+      "order": 9,
+      "role": "paragraph",
+      "text": "De nition 1 Given a region } 2 R , the visibility curves on } , V ( } ) , is de ned as the locus of points,",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 508.58,
+        "x1": 540.0,
+        "y1": 532.82,
+        "width": 468.0,
+        "height": 24.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "De nition 1 Given a region } 2 R , the visibility curves on } , V ( } ) , is de ned as the locus of points,"
+      }
+    },
+    {
+      "id": "#/texts/127",
+      "page": 12,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Lemma 3 The visibility curves on } , V ( } ) as de ned above, indeed, form a set of curves with the property that each such curve ends in @ } .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 558.5,
+        "x1": 540.0,
+        "y1": 582.74,
+        "width": 468.0,
+        "height": 24.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 3 The visibility curves on } , V ( } ) as de ned above, indeed, form a set of curves with the property that each such curve ends in @ } ."
+      }
+    },
+    {
+      "id": "#/texts/128",
+      "page": 12,
+      "order": 11,
+      "role": "paragraph",
+      "text": "Proof: We shall prove both the parts by contradiction. Let us assume that there exists an isolated point p i 2 V ( } ). But by de nition, there must be a point p b 2 @ } such that M ( p i ) = M ( p b ). We know that @ } is a continuous closed curve. Consider a small displacement, 2 < 2 , of p b along @ } . Since M is a smooth map, there exists an 2 < 2 such that M ( p i + ) = M ( p b + ). In fact, in the limit going to zero, J ; 1 ( p i ) J ( p b ) , where J and J ; 1 are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J 1 ( p i ) exists because p i 2 int ( } ). 1 2",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 594.5,
+        "x1": 540.24,
+        "y1": 713.06,
+        "width": 468.24,
+        "height": 118.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof: We shall prove both the parts by contradiction. Let us assume that there exists an isolated point p i 2 V ( } ). But by de nition, there must be a point p b 2 @ } such that M ( p i ) = M ( p b ). We know that @ } is a continuous closed curve. Consider a small displacement, 2 < 2 , of p b along @ } . Since M is a smooth map, there exists an 2 < 2 such that M ( p i + ) = M ( p b + ). In fact, in the limit going to zero, J ; 1 ( p i ) J ( p b ) , where J and J ; 1 are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J 1 ( p i ) exists because p i 2 int ( } ). 1 2"
+      }
+    },
+    {
+      "id": "#/texts/129",
+      "page": 12,
+      "order": 12,
+      "role": "paragraph",
+      "text": ";",
+      "bbox": {
+        "x0": 316.56,
+        "y0": 662.17,
+        "x1": 323.04,
+        "y1": 726.5,
+        "width": 6.48,
+        "height": 64.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ";"
+      }
+    },
+    {
+      "id": "#/texts/130",
+      "page": 13,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 5: A helical patch with no silhouettes",
+      "bbox": {
+        "x0": 203.28,
+        "y0": 303.38,
+        "x1": 408.24,
+        "y1": 314.42,
+        "width": 204.96,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 5: A helical patch with no silhouettes"
+      }
+    },
+    {
+      "id": "#/texts/131",
+      "page": 13,
+      "order": 2,
+      "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 531.84,
+        "y0": 337.69,
+        "x1": 540.0,
+        "y1": 343.69,
+        "width": 8.16,
+        "height": 6.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/132",
+      "page": 13,
+      "order": 3,
+      "role": "paragraph",
+      "text": "The previous argument showed that if we are in the interior of } , we can always nd more points on V ( } ) unless we return to an original point on V ( } ). Therefore, all visibility curves must either extend to the boundary of } or end up as loops.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 347.53,
+        "x1": 540.0,
+        "y1": 385.69,
+        "width": 468.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The previous argument showed that if we are in the interior of } , we can always nd more points on V ( } ) unless we return to an original point on V ( } ). Therefore, all visibility curves must either extend to the boundary of } or end up as loops."
+      }
+    },
+    {
+      "id": "#/texts/133",
+      "page": 13,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Let p b be a point on the boundary, and let p i be the corresponding point in the interior with the same projection. If p i is a point on the loop, we can show that there exists a simple path between p i and p b which crosses a silhouette curve. Therefore, visibility curves cannot exist as loops.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 394.57,
+        "x1": 540.0,
+        "y1": 432.74,
+        "width": 468.0,
+        "height": 38.17
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Let p b be a point on the boundary, and let p i be the corresponding point in the interior with the same projection. If p i is a point on the loop, we can show that there exists a simple path between p i and p b which crosses a silhouette curve. Therefore, visibility curves cannot exist as loops."
+      }
+    },
+    {
+      "id": "#/texts/134",
+      "page": 13,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Corollary 1 The set of visibility curves V ( } ) , induces a partition on the region } .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 447.13,
+        "x1": 469.92,
+        "y1": 458.18,
+        "width": 397.92,
+        "height": 11.05
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Corollary 1 The set of visibility curves V ( } ) , induces a partition on the region } ."
+      }
+    },
+    {
+      "id": "#/texts/135",
+      "page": 13,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Proof: We can prove this fact using the same argument as Lemma 1.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 472.57,
+        "x1": 406.32,
+        "y1": 483.62,
+        "width": 334.32,
+        "height": 11.05
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof: We can prove this fact using the same argument as Lemma 1."
+      }
+    },
+    {
+      "id": "#/texts/136",
+      "page": 13,
+      "order": 7,
+      "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 531.84,
+        "y0": 492.25,
+        "x1": 540.0,
+        "y1": 498.25,
+        "width": 8.16,
+        "height": 6.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/137",
+      "page": 13,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Fig. 5 shows a helical patch with no silhouettes. Fig. 6 shows the visibility curves computed on the same patch. The visibility curves are also shown in the domain of the patch. The patch in g. 5 is deliberately transformed to provide a better view. Lemma 3 provides a constructive method to nd all the visibility curves. Given the boundary representation of each region, we have to deter mine all the intersections among the various curves comprising the boundary projections (including self-intersections). We are assuming that the boundary curves are in general position so that their projections intersect only in discrete points. These points form the endpoints for all the visibility curves inside the region } . Once all the endpoints are found, we use marching methods to trace all the curves. Details of the method are discussed in the next section.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 509.3,
+        "x1": 540.24,
+        "y1": 628.58,
+        "width": 468.24,
+        "height": 119.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Fig. 5 shows a helical patch with no silhouettes. Fig. 6 shows the visibility curves computed on the same patch. The visibility curves are also shown in the domain of the patch. The patch in g. 5 is deliberately transformed to provide a better view. Lemma 3 provides a constructive method to nd all the visibility curves. Given the boundary representation of each region, we have to deter mine all the intersections among the various curves comprising the boundary projections (including self-intersections). We are assuming that the boundary curves are in general position so that their projections intersect only in discrete points. These points form the endpoints for all the visibility curves inside the region } . Once all the endpoints are found, we use marching methods to trace all the curves. Details of the method are discussed in the next section."
+      }
+    },
+    {
+      "id": "#/texts/138",
+      "page": 13,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Given } 2 R , we can construct a partition of } induced by the visibility curves using Corollary 1. Let us denote the set of regions obtained after partitioning by K } . If k 2 K } , @k denotes the boundary of the region k and int ( k ), k ; @k , is the interior of k . Fig. 7(a) shows the partition of",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 637.21,
+        "x1": 540.0,
+        "y1": 675.62,
+        "width": 468.0,
+        "height": 38.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given } 2 R , we can construct a partition of } induced by the visibility curves using Corollary 1. Let us denote the set of regions obtained after partitioning by K } . If k 2 K } , @k denotes the boundary of the region k and int ( k ), k ; @k , is the interior of k . Fig. 7(a) shows the partition of"
+      }
+    },
+    {
+      "id": "#/texts/140",
+      "page": 14,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 6: Visibility curves on the helical patch",
+      "bbox": {
+        "x0": 194.88,
+        "y0": 299.53,
+        "x1": 417.36,
+        "y1": 310.57,
+        "width": 222.48,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 6: Visibility curves on the helical patch"
+      }
+    },
+    {
+      "id": "#/texts/141",
+      "page": 14,
+      "order": 2,
+      "role": "paragraph",
+      "text": "the helical patch based on the visibility curves. In g. 7(b), we see the image of K 2 under M . It is clear that the boundary of this region is not one-to-one (as seen in the case of points a and a 0 ). However, in the next lemma, we are going to argue that the the interior of each region k 2 K } is one-to-one under the map M .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 332.65,
+        "x1": 540.24,
+        "y1": 384.25,
+        "width": 468.24,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "the helical patch based on the visibility curves. In g. 7(b), we see the image of K 2 under M . It is clear that the boundary of this region is not one-to-one (as seen in the case of points a and a 0 ). However, in the next lemma, we are going to argue that the the interior of each region k 2 K } is one-to-one under the map M ."
+      }
+    },
+    {
+      "id": "#/texts/142",
+      "page": 14,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Lemma 4 Let k 2 K } . Then int ( k ) is one-to-one under the projection mapping M .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 398.66,
+        "x1": 475.92,
+        "y1": 410.18,
+        "width": 403.92,
+        "height": 11.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 4 Let k 2 K } . Then int ( k ) is one-to-one under the projection mapping M ."
+      }
+    },
+    {
+      "id": "#/texts/143",
+      "page": 14,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Proof: The main idea in the proof is to construct a simple closed curve C in int ( k ) such that it is one-to-one under M . Since the Jacobian never vanishes in the interior of each region, we use the global inverse theorem to conclude that the entire region on and inside the closed curve C is one-to-one.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 424.33,
+        "x1": 540.0,
+        "y1": 475.94,
+        "width": 468.0,
+        "height": 51.61
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof: The main idea in the proof is to construct a simple closed curve C in int ( k ) such that it is one-to-one under M . Since the Jacobian never vanishes in the interior of each region, we use the global inverse theorem to conclude that the entire region on and inside the closed curve C is one-to-one."
+      }
+    },
+    {
+      "id": "#/texts/144",
+      "page": 14,
+      "order": 5,
+      "role": "paragraph",
+      "text": "It is clear that the closed curve representing M ( @k ) of each region k is not necessarily one-to-one (region K 2 in g. 7(b)). Therefore, in order to construct C let us look at the generation of a visibility curve shown in g. 8. Let b 1 and b 2 be the projection of two boundary curves of the region } intersecting at the point p . p splits the curve b 1 into two parts: one that lies locally inside the region whose boundary is b 2, and the other that lies outside. A similar observation holds for b 2 as well. The curves that lie in the interior are marked darker in the gure. These are the curves that precisely become visibility curves when projected onto the other curve. These visibility curves partition the region locally near p into at least two regions K 1 and K 2 (by corollary 1). The boundary curve of region K 2 is not one-to-one because there are two points (say a and b ) having the same projection point p . However, locally near p , it is the only point that violates the one-to-one property of K 2. Therefore, by removing the points a and b from the boundary curve and closing the curve using interior points in the neighborhood of a and b , we get rid of point p . Extending this to all intersection points, we get a simple closed curve C which is one-to-one with the property that every interior point of the region lies either on or inside C .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 484.81,
+        "x1": 540.24,
+        "y1": 672.01,
+        "width": 468.24,
+        "height": 187.2
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "It is clear that the closed curve representing M ( @k ) of each region k is not necessarily one-to-one (region K 2 in g. 7(b)). Therefore, in order to construct C let us look at the generation of a visibility curve shown in g. 8. Let b 1 and b 2 be the projection of two boundary curves of the region } intersecting at the point p . p splits the curve b 1 into two parts: one that lies locally inside the region whose boundary is b 2, and the other that lies outside. A similar observation holds for b 2 as well. The curves that lie in the interior are marked darker in the gure. These are the curves that precisely become visibility curves when projected onto the other curve. These visibility curves partition the region locally near p into at least two regions K 1 and K 2 (by corollary 1). The boundary curve of region K 2 is not one-to-one because there are two points (say a and b ) having the same projection point p . However, locally near p , it is the only point that violates the one-to-one property of K 2. Therefore, by removing the points a and b from the boundary curve and closing the curve using interior points in the neighborhood of a and b , we get rid of point p . Extending this to all intersection points, we get a simple closed curve C which is one-to-one with the property that every interior point of the region lies either on or inside C ."
+      }
+    },
+    {
+      "id": "#/texts/146",
+      "page": 15,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 7: (a) Partitioning based on visibility curves (b) Image of region K 2 under M",
+      "bbox": {
+        "x0": 113.04,
+        "y0": 267.38,
+        "x1": 498.96,
+        "y1": 278.41,
+        "width": 385.92,
+        "height": 11.03
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 7: (a) Partitioning based on visibility curves (b) Image of region K 2 under M"
+      }
+    },
+    {
+      "id": "#/texts/147",
+      "page": 15,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Using C and the global inverse theorem we conclude that the interior of every region k 2 K } is one-to-one under the projection mapping M .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 305.29,
+        "x1": 539.76,
+        "y1": 330.01,
+        "width": 467.76,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Using C and the global inverse theorem we conclude that the interior of every region k 2 K } is one-to-one under the projection mapping M ."
+      }
+    },
+    {
+      "id": "#/texts/148",
+      "page": 15,
+      "order": 3,
+      "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 531.84,
+        "y0": 335.77,
+        "x1": 540.0,
+        "y1": 341.77,
+        "width": 8.16,
+        "height": 6.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/149",
+      "page": 15,
+      "order": 4,
+      "role": "heading",
+      "text": "5 Computation of Visibility Curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 360.49,
+        "x1": 337.44,
+        "y1": 373.93,
+        "width": 265.44,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "5 Computation of Visibility Curves"
+      }
+    },
+    {
+      "id": "#/texts/150",
+      "page": 15,
+      "order": 5,
+      "role": "paragraph",
+      "text": "In this section, we will describe our method to compute visibility curves. The whole algorithm is split into two parts (i) nding all the intersections on the projected boundary curves, and (ii) tracing each visibility curve.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 386.89,
+        "x1": 539.76,
+        "y1": 425.05,
+        "width": 467.76,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In this section, we will describe our method to compute visibility curves. The whole algorithm is split into two parts (i) nding all the intersections on the projected boundary curves, and (ii) tracing each visibility curve."
+      }
+    },
+    {
+      "id": "#/texts/151",
+      "page": 15,
+      "order": 6,
+      "role": "heading",
+      "text": "5. 1 Boundary Intersections",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 442.09,
+        "x1": 240.0,
+        "y1": 453.85,
+        "width": 168.0,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "5. 1 Boundary Intersections"
+      }
+    },
+    {
+      "id": "#/texts/152",
+      "page": 15,
+      "order": 7,
+      "role": "paragraph",
+      "text": "After partitioning based on silhouettes, we obtain regions whose boundaries consist of parts of the original boundary curves of the patch and the silhouette. Let us consider a single region whose boundary is made up of a set of original boundary curves, B , and another set of silhouette curves, L . Each element of B is represented by the corresponding B ezier curve and the interval of parameter values in which it is valid. We also maintain the projection of the boundary curves as a polygonal chain in order to obtain its intersections with silhouette curves. Each element of L and its projection under M is maintained just as a polygonal chain. In order to compute all the intersection points on the projection, we must detect all self-intersections in each element of B and L and intersections between elements. Overall, there are only four basic categories in which all of them fall. We shall discuss each one in detail.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 463.45,
+        "x1": 540.24,
+        "y1": 596.41,
+        "width": 468.24,
+        "height": 132.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "After partitioning based on silhouettes, we obtain regions whose boundaries consist of parts of the original boundary curves of the patch and the silhouette. Let us consider a single region whose boundary is made up of a set of original boundary curves, B , and another set of silhouette curves, L . Each element of B is represented by the corresponding B ezier curve and the interval of parameter values in which it is valid. We also maintain the projection of the boundary curves as a polygonal chain in order to obtain its intersections with silhouette curves. Each element of L and its projection under M is maintained just as a polygonal chain. In order to compute all the intersection points on the projection, we must detect all self-intersections in each element of B and L and intersections between elements. Overall, there are only four basic categories in which all of them fall. We shall discuss each one in detail."
+      }
+    },
+    {
+      "id": "#/texts/153",
+      "page": 15,
+      "order": 8,
+      "role": "list_item",
+      "text": "1. Intersection between two boundary curves: Basically, this case reduces to nding the intersection points between two B ezier plane curves. Let f and g be two plane curves parametrized by u and v respectively. The two equations that give rise to the solution are",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 607.69,
+        "x1": 540.0,
+        "y1": 645.86,
+        "width": 454.56,
+        "height": 38.17
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "1. Intersection between two boundary curves: Basically, this case reduces to nding the intersection points between two B ezier plane curves. Let f and g be two plane curves parametrized by u and v respectively. The two equations that give rise to the solution are"
+      }
+    },
+    {
+      "id": "#/texts/156",
+      "page": 16,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 8: Generation of visibility curves near the boundaries",
+      "bbox": {
+        "x0": 168.72,
+        "y0": 267.38,
+        "x1": 443.04,
+        "y1": 278.41,
+        "width": 274.32,
+        "height": 11.03
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 8: Generation of visibility curves near the boundaries"
+      }
+    },
+    {
+      "id": "#/texts/158",
+      "page": 16,
+      "order": 2,
+      "role": "paragraph",
+      "text": "where X f , Y f , W f and X g , Y g , W g are the componentwise functions of f and g respectively. By eliminating u from these two equations using Sylvester's resultant [Sed 8 3], we obtain a matrix polynomial in v . We can reduce it to an eigenvalue problem of an associated companion matrix [GLR 8 2]. After obtaining all the eigenvalues (using LAPACK routines) only the solutions that lie within the intervals are taken. Using this method, all the intersection points are determined accurately and e ciently.",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 330.5,
+        "x1": 540.24,
+        "y1": 409.22,
+        "width": 440.88,
+        "height": 78.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where X f , Y f , W f and X g , Y g , W g are the componentwise functions of f and g respectively. By eliminating u from these two equations using Sylvester's resultant [Sed 8 3], we obtain a matrix polynomial in v . We can reduce it to an eigenvalue problem of an associated companion matrix [GLR 8 2]. After obtaining all the eigenvalues (using LAPACK routines) only the solutions that lie within the intervals are taken. Using this method, all the intersection points are determined accurately and e ciently."
+      }
+    },
+    {
+      "id": "#/texts/159",
+      "page": 16,
+      "order": 3,
+      "role": "paragraph",
+      "text": "6",
+      "bbox": {
+        "x0": 493.44,
+        "y0": 433.94,
+        "x1": 493.44,
+        "y1": 445.22,
+        "width": 0.0,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "6"
+      }
+    },
+    {
+      "id": "#/texts/160",
+      "page": 16,
+      "order": 4,
+      "role": "list_item",
+      "text": "2. Self-intersections on boundary curves: Consider a plane B ezier curve f = h X ( s ) ;;Y ( s ) ;;W ( s ) i of degree n . This curve self-intersects if there exist parameter values u and v , u = v , such that",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 420.26,
+        "x1": 558.0,
+        "y1": 458.66,
+        "width": 472.56,
+        "height": 38.4
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2. Self-intersections on boundary curves: Consider a plane B ezier curve f = h X ( s ) ;;Y ( s ) ;;W ( s ) i of degree n . This curve self-intersects if there exist parameter values u and v , u = v , such that"
+      }
+    },
+    {
+      "id": "#/texts/163",
+      "page": 16,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Since u = v is a trivial solution to the above pair of equations, we eliminate it by dividing each of the equations by the factor ( u ; v ). Thus the equations become",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 522.25,
+        "x1": 539.52,
+        "y1": 546.97,
+        "width": 440.16,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Since u = v is a trivial solution to the above pair of equations, we eliminate it by dividing each of the equations by the factor ( u ; v ). Thus the equations become"
+      }
+    },
+    {
+      "id": "#/texts/167",
+      "page": 16,
+      "order": 6,
+      "role": "paragraph",
+      "text": "These are two equations each of degree n ; 1 in u and v . By eliminating u from these equations using Sylvester's resultant, we get a ( 2 n ; 2) -( 2 n ; 2) matrix polynomial of degree n ; 1. We reduce this problem to one of nding eigenvalues of an associated matrix of size 2( n ; 1) 2 . This gives all the self-intersections on the boundary curve.",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 627.86,
+        "x1": 540.24,
+        "y1": 679.69,
+        "width": 440.88,
+        "height": 51.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "These are two equations each of degree n ; 1 in u and v . By eliminating u from these equations using Sylvester's resultant, we get a ( 2 n ; 2) -( 2 n ; 2) matrix polynomial of degree n ; 1. We reduce this problem to one of nding eigenvalues of an associated matrix of size 2( n ; 1) 2 . This gives all the self-intersections on the boundary curve."
+      }
+    },
+    {
+      "id": "#/texts/169",
+      "page": 17,
+      "order": 1,
+      "role": "list_item",
+      "text": "3. Intersection between two silhouette curves: The equations governing the solution set are",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 74.89,
+        "x1": 540.0,
+        "y1": 99.37,
+        "width": 454.56,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "3. Intersection between two silhouette curves: The equations governing the solution set are"
+      }
+    },
+    {
+      "id": "#/texts/171",
+      "page": 17,
+      "order": 2,
+      "role": "paragraph",
+      "text": "where D ( s;; t ) = 0 is the equation of the silhouette curve de ned in section 2 and X , Y , Z and W are the componentwise functions of the patch. These four equations in four variables, typically, give rise to a zero dimensional solution set. However, it is not feasible to solve these four equations directly because of the high degree of the silhouette curve and the algebraic complexity of the resulting system. Therefore, we use piecewise linear approximation of all silhouette curves as the rst iteration in our intersection computation. We treat the chain as a set of line segments. We use the Bentley-Ottmann algorithm [PS 8 5] to obtain the inter section points in O (( N + k ) log N ) time, where k is the number of intersection points. This algorithm is close to optimal because in our case k is very small. Each intersection point obtained by this method is re ned using local minimization methods like Powell's method using the energy equation E ( u;; v;; s;; t ) given by",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 205.7,
+        "x1": 540.0,
+        "y1": 352.34,
+        "width": 440.64,
+        "height": 146.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where D ( s;; t ) = 0 is the equation of the silhouette curve de ned in section 2 and X , Y , Z and W are the componentwise functions of the patch. These four equations in four variables, typically, give rise to a zero dimensional solution set. However, it is not feasible to solve these four equations directly because of the high degree of the silhouette curve and the algebraic complexity of the resulting system. Therefore, we use piecewise linear approximation of all silhouette curves as the rst iteration in our intersection computation. We treat the chain as a set of line segments. We use the Bentley-Ottmann algorithm [PS 8 5] to obtain the inter section points in O (( N + k ) log N ) time, where k is the number of intersection points. This algorithm is close to optimal because in our case k is very small. Each intersection point obtained by this method is re ned using local minimization methods like Powell's method using the energy equation E ( u;; v;; s;; t ) given by"
+      }
+    },
+    {
+      "id": "#/texts/173",
+      "page": 17,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Self-intersections are also found using the same method. We found that in practice this method of nding intersections works well and gives accurate results.",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 435.85,
+        "x1": 540.0,
+        "y1": 460.57,
+        "width": 440.64,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Self-intersections are also found using the same method. We found that in practice this method of nding intersections works well and gives accurate results."
+      }
+    },
+    {
+      "id": "#/texts/174",
+      "page": 17,
+      "order": 4,
+      "role": "list_item",
+      "text": "4. Intersection between boundary curve and silhouette: Consider a boundary curve f parametrized by u . X f , Y f , Z f and W f are the scalar functions of F . X f , for example, could represent any one of the four functions, X ( s;; 0), X ( s;; 1), X ( 0 ;; t ) and X ( 1 ;; t ). The set of intersection points of this curve with the silhouette satisfy",
+      "bbox": {
+        "x0": 85.44,
+        "y0": 472.09,
+        "x1": 540.0,
+        "y1": 523.69,
+        "width": 454.56,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "4. Intersection between boundary curve and silhouette: Consider a boundary curve f parametrized by u . X f , Y f , Z f and W f are the scalar functions of F . X f , for example, could represent any one of the four functions, X ( s;; 0), X ( s;; 1), X ( 0 ;; t ) and X ( 1 ;; t ). The set of intersection points of this curve with the silhouette satisfy"
+      }
+    },
+    {
+      "id": "#/texts/178",
+      "page": 17,
+      "order": 5,
+      "role": "paragraph",
+      "text": "In this case, we use the approximated version of the boundary curves (as a piecewise linear chain) and apply a similar procedure as the previous case. The minimization equation in this case is",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 626.89,
+        "x1": 540.0,
+        "y1": 665.06,
+        "width": 440.64,
+        "height": 38.17
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In this case, we use the approximated version of the boundary curves (as a piecewise linear chain) and apply a similar procedure as the previous case. The minimization equation in this case is"
+      }
+    },
+    {
+      "id": "#/texts/180",
+      "page": 18,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 9: Tracing of visibility curves",
+      "bbox": {
+        "x0": 222.96,
+        "y0": 225.62,
+        "x1": 389.04,
+        "y1": 236.65,
+        "width": 166.08,
+        "height": 11.03
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 9: Tracing of visibility curves"
+      }
+    },
+    {
+      "id": "#/texts/181",
+      "page": 18,
+      "order": 2,
+      "role": "code",
+      "text": "E ( u;; s;; t ) = D 2 ( s;; t )+ ( X ( s;; t ) W f ( u ) ; X f ( u ) W ( s;; t )) 2 + ( Y ( s;; t ) W f ( u ) ; Y f ( u ) W ( s;; t )) 2 .",
+      "bbox": {
+        "x0": 99.36,
+        "y0": 255.37,
+        "x1": 317.76,
+        "y1": 295.69,
+        "width": 218.4,
+        "height": 40.32
+      },
+      "meta": {
+        "docling_label": "code",
+        "docling_orig": "E ( u;; s;; t ) = D 2 ( s;; t )+ ( X ( s;; t ) W f ( u ) ; X f ( u ) W ( s;; t )) 2 + ( Y ( s;; t ) W f ( u ) ; Y f ( u ) W ( s;; t )) 2 ."
+      }
+    },
+    {
+      "id": "#/texts/182",
+      "page": 18,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Once all the intersection points are computed, we are ready to trace all the visibility curves.",
+      "bbox": {
+        "x0": 84.0,
+        "y0": 309.37,
+        "x1": 525.12,
+        "y1": 320.41,
+        "width": 441.12,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Once all the intersection points are computed, we are ready to trace all the visibility curves."
+      }
+    },
+    {
+      "id": "#/texts/183",
+      "page": 18,
+      "order": 4,
+      "role": "heading",
+      "text": "5. 2 Tracing Visibility Curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 337.45,
+        "x1": 250.08,
+        "y1": 349.21,
+        "width": 178.08,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "5. 2 Tracing Visibility Curves"
+      }
+    },
+    {
+      "id": "#/texts/184",
+      "page": 18,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Given the starting point of each visibility curve, we are ready to trace it. The starting point is represented in the following form",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 358.81,
+        "x1": 539.76,
+        "y1": 383.29,
+        "width": 467.76,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given the starting point of each visibility curve, we are ready to trace it. The starting point is represented in the following form"
+      }
+    },
+    {
+      "id": "#/texts/185",
+      "page": 18,
+      "order": 6,
+      "role": "code",
+      "text": "struct start point f double xval, yval;; * x and y value of intersection point * double dom point 1 u, dom point 1 v;; * domain coordinates of rst point * double dom point 2 u, dom point 2 v;; * domain coordinates of second point * int index of rst point;; * index of the rst point in the polygonal region * int index of second point;; * index of the second point in the polygonal region * g",
+      "bbox": {
+        "x0": 147.6,
+        "y0": 401.54,
+        "x1": 552.0,
+        "y1": 494.18,
+        "width": 404.4,
+        "height": 92.64
+      },
+      "meta": {
+        "docling_label": "code",
+        "docling_orig": "struct start point f double xval, yval;; * x and y value of intersection point * double dom point 1 u, dom point 1 v;; * domain coordinates of rst point * double dom point 2 u, dom point 2 v;; * domain coordinates of second point * int index of rst point;; * index of the rst point in the polygonal region * int index of second point;; * index of the second point in the polygonal region * g"
+      }
+    },
+    {
+      "id": "#/texts/186",
+      "page": 18,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Fig. 9 shows the tracing of a visibility curve in the domain of a region and in projection space. Points a and b have the same projection point p . Let the curve b 2 in g. 9(b) correspond to the portion of the boundary from a to c (see g. 9(a)). The boundary of the region on the domain is represented as a polygon (obtained after partitioning based on silhouettes). Let us assume that at an arbitrary step of the tracing method we are at point e on b 2 and at f on the visibility curve. Both e and f have the same projection point p 1. Let the domain coordinates of f be ( f u ;; f v ). If we move from e to g on b 2, the point f must move to a neighboring point, h , on the visibility curve. If ( g u ;; g v ) are the domain coordinates of g , let x = X ( g u ;;g v ) W ( g u ;;g v ) and y = Y ( g u ;;g v ) W ( g u ;;g v ) . X , Y and W are the componentwise functions of the original patch. We would like to nd ( h u ;;h v ) in the local neighborhood of ( f u ;; f v ) such that X ( h u ;;h v ) W ( h u ;;h v ) ; x = 0",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 519.62,
+        "x1": 540.24,
+        "y1": 687.62,
+        "width": 468.24,
+        "height": 168.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Fig. 9 shows the tracing of a visibility curve in the domain of a region and in projection space. Points a and b have the same projection point p . Let the curve b 2 in g. 9(b) correspond to the portion of the boundary from a to c (see g. 9(a)). The boundary of the region on the domain is represented as a polygon (obtained after partitioning based on silhouettes). Let us assume that at an arbitrary step of the tracing method we are at point e on b 2 and at f on the visibility curve. Both e and f have the same projection point p 1. Let the domain coordinates of f be ( f u ;; f v ). If we move from e to g on b 2, the point f must move to a neighboring point, h , on the visibility curve. If ( g u ;; g v ) are the domain coordinates of g , let x = X ( g u ;;g v ) W ( g u ;;g v ) and y = Y ( g u ;;g v ) W ( g u ;;g v ) . X , Y and W are the componentwise functions of the original patch. We would like to nd ( h u ;;h v ) in the local neighborhood of ( f u ;; f v ) such that X ( h u ;;h v ) W ( h u ;;h v ) ; x = 0"
+      }
+    },
+    {
+      "id": "#/texts/188",
+      "page": 19,
+      "order": 1,
+      "role": "paragraph",
+      "text": "Y (hu, ho)",
+      "bbox": {
+        "x0": 11.28,
+        "y0": 0.0,
+        "x1": 57.71,
+        "y1": 9.33,
+        "width": 46.43,
+        "height": 9.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Y (hu, ho)"
+      }
+    },
+    {
+      "id": "#/texts/189",
+      "page": 19,
+      "order": 2,
+      "role": "paragraph",
+      "text": "1 4 ЧМ",
+      "bbox": {
+        "x0": 9.23,
+        "y0": 12.23,
+        "x1": 57.77,
+        "y1": 19.77,
+        "width": 48.54,
+        "height": 7.54
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1 4 ЧМ"
+      }
+    },
+    {
+      "id": "#/texts/190",
+      "page": 19,
+      "order": 3,
+      "role": "caption",
+      "text": "Figure 1 0: (a) Partitioning of patch in g. 1 based on visibility curves (b) Visibility curves in the domain",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 281.77,
+        "x1": 540.0,
+        "y1": 292.81,
+        "width": 468.0,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 1 0: (a) Partitioning of patch in g. 1 based on visibility curves (b) Visibility curves in the domain"
+      }
+    },
+    {
+      "id": "#/texts/192",
+      "page": 19,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Eliminating h v from these two equations results in a matrix polynomial in h u . The singular set of this polynomial determines h u and from the corresponding eigenvector , we can nd h v . However, a lot of unnecessary work can be avoided by observing that ( h u ;;h v ) is in the neighborhood of ( f u ;; f v ). Using f u as a guess to h u and building a corresponding eigenvector out of f v , we perform inverse power iterations (described in section 2) to obtain ( h u ;;h v ).",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 345.37,
+        "x1": 540.24,
+        "y1": 410.89,
+        "width": 468.24,
+        "height": 65.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Eliminating h v from these two equations results in a matrix polynomial in h u . The singular set of this polynomial determines h u and from the corresponding eigenvector , we can nd h v . However, a lot of unnecessary work can be avoided by observing that ( h u ;;h v ) is in the neighborhood of ( f u ;; f v ). Using f u as a guess to h u and building a corresponding eigenvector out of f v , we perform inverse power iterations (described in section 2) to obtain ( h u ;;h v )."
+      }
+    },
+    {
+      "id": "#/texts/193",
+      "page": 19,
+      "order": 5,
+      "role": "paragraph",
+      "text": "It is possible to use Newton's method to solve the above set of equations. However, as we will see, this method has some problems. Let us assume that point b on the boundary is on a silhouette. We proved that a silhouette point is one where the jacobian vanishes. Therefore, Newton's method does not perform well close to silhouette points. Inverse power iteration su ers from no such problem.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 426.73,
+        "x1": 540.0,
+        "y1": 478.33,
+        "width": 468.0,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "It is possible to use Newton's method to solve the above set of equations. However, as we will see, this method has some problems. Let us assume that point b on the boundary is on a silhouette. We proved that a silhouette point is one where the jacobian vanishes. Therefore, Newton's method does not perform well close to silhouette points. Inverse power iteration su ers from no such problem."
+      }
+    },
+    {
+      "id": "#/texts/194",
+      "page": 19,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Tracing terminates when one of the following two cases occur.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 494.41,
+        "x1": 368.4,
+        "y1": 505.45,
+        "width": 296.4,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Tracing terminates when one of the following two cases occur."
+      }
+    },
+    {
+      "id": "#/texts/195",
+      "page": 19,
+      "order": 7,
+      "role": "list_item",
+      "text": "( h u ;;h v ) goes out of the region, or",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 516.74,
+        "x1": 259.44,
+        "y1": 528.25,
+        "width": 171.12,
+        "height": 11.51
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "( h u ;;h v ) goes out of the region, or"
+      }
+    },
+    {
+      "id": "#/texts/196",
+      "page": 19,
+      "order": 8,
+      "role": "list_item",
+      "text": "( h u ;;h v ) = ( g u ;; g v ).",
+      "bbox": {
+        "x0": 88.32,
+        "y0": 539.29,
+        "x1": 187.2,
+        "y1": 550.82,
+        "width": 98.88,
+        "height": 11.53
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "( h u ;;h v ) = ( g u ;; g v )."
+      }
+    },
+    {
+      "id": "#/texts/197",
+      "page": 19,
+      "order": 9,
+      "role": "paragraph",
+      "text": "The rst case occurs more often. For example, if we trace further from point c , d goes out of the region. Therefore, after each step of the tracing process we have to check for containment of a point inside an arbitrary (simple, but not necessarily convex) polygon. This could be very expensive unless some processing is done on the polygon. We use Seidel's trapezoidation algorithm (created during triangulation) to create trapezoids by horizontal decomposition in O ( N ) time. Any point can then be determined inside or outside in O (log N ) time.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 561.86,
+        "x1": 540.0,
+        "y1": 640.82,
+        "width": 468.0,
+        "height": 78.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The rst case occurs more often. For example, if we trace further from point c , d goes out of the region. Therefore, after each step of the tracing process we have to check for containment of a point inside an arbitrary (simple, but not necessarily convex) polygon. This could be very expensive unless some processing is done on the polygon. We use Seidel's trapezoidation algorithm (created during triangulation) to create trapezoids by horizontal decomposition in O ( N ) time. Any point can then be determined inside or outside in O (log N ) time."
+      }
+    },
+    {
+      "id": "#/texts/198",
+      "page": 19,
+      "order": 10,
+      "role": "paragraph",
+      "text": "The second case occurs when the visibility curve hits the boundary curve and then continues along it. This will not be detected in the previous case, and hence, has to be checked explicitly.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 649.69,
+        "x1": 540.0,
+        "y1": 674.17,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The second case occurs when the visibility curve hits the boundary curve and then continues along it. This will not be detected in the previous case, and hence, has to be checked explicitly."
+      }
+    },
+    {
+      "id": "#/texts/200",
+      "page": 20,
+      "order": 1,
+      "role": "paragraph",
+      "text": "on-pr",
+      "bbox": {
+        "x0": 0.0,
+        "y0": 2.62,
+        "x1": 21.33,
+        "y1": 13.1,
+        "width": 21.33,
+        "height": 10.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "on-pr"
+      }
+    },
+    {
+      "id": "#/texts/201",
+      "page": 20,
+      "order": 2,
+      "role": "caption",
+      "text": "Figure 1 1: Partitioning of patch in g. 5 based on visibility curves",
+      "bbox": {
+        "x0": 156.48,
+        "y0": 303.38,
+        "x1": 455.28,
+        "y1": 314.42,
+        "width": 298.8,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 1 1: Partitioning of patch in g. 5 based on visibility curves"
+      }
+    },
+    {
+      "id": "#/texts/202",
+      "page": 20,
+      "order": 3,
+      "role": "paragraph",
+      "text": "After computing all the visibility curves, we calculate all the partitions induced by the visibility curves in each region using the partition polygon routine. Figs. 1 0 and 1 1 show the partitioning of the patches in g. 1 and g. 5 using the visibility curves. Each partition thus obtained is one-to-one under projection. It transforms the original visibility problem into one of n polygons on space.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 336.25,
+        "x1": 540.0,
+        "y1": 388.1,
+        "width": 468.0,
+        "height": 51.85
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "After computing all the visibility curves, we calculate all the partitions induced by the visibility curves in each region using the partition polygon routine. Figs. 1 0 and 1 1 show the partitioning of the patches in g. 1 and g. 5 using the visibility curves. Each partition thus obtained is one-to-one under projection. It transforms the original visibility problem into one of n polygons on space."
+      }
+    },
+    {
+      "id": "#/texts/203",
+      "page": 20,
+      "order": 4,
+      "role": "heading",
+      "text": "6 Visibility for complex scenes",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 409.22,
+        "x1": 303.36,
+        "y1": 422.66,
+        "width": 231.36,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "6 Visibility for complex scenes"
+      }
+    },
+    {
+      "id": "#/texts/204",
+      "page": 20,
+      "order": 5,
+      "role": "paragraph",
+      "text": "In the previous sections, we looked at the visibility problem for a single patch. After partitioning each patch based on silhouettes and visibility curves, each region is one-to-one under the projection operation, and can now be treated as a polygon. We shall, therefore, refer to each such region as a face . Recently fast randomized algorithms have been developed that can handle this problem for polygonal models [Mul 8 9]. However, we present a simple algorithm based on the the same projection idea that works well.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 435.86,
+        "x1": 540.0,
+        "y1": 514.58,
+        "width": 468.0,
+        "height": 78.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the previous sections, we looked at the visibility problem for a single patch. After partitioning each patch based on silhouettes and visibility curves, each region is one-to-one under the projection operation, and can now be treated as a polygon. We shall, therefore, refer to each such region as a face . Recently fast randomized algorithms have been developed that can handle this problem for polygonal models [Mul 8 9]. However, we present a simple algorithm based on the the same projection idea that works well."
+      }
+    },
+    {
+      "id": "#/texts/205",
+      "page": 20,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Our nal goal is to output trimmed patches of the scene that are visible from the given viewpoint. We shall assume for simplicity that the faces input to this algorithm are non-intersecting. If they are intersecting, we may have to compute all the pairwise surface intersections [KM 9 5] and split them into non-intersecting faces.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 523.46,
+        "x1": 540.0,
+        "y1": 575.06,
+        "width": 468.0,
+        "height": 51.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Our nal goal is to output trimmed patches of the scene that are visible from the given viewpoint. We shall assume for simplicity that the faces input to this algorithm are non-intersecting. If they are intersecting, we may have to compute all the pairwise surface intersections [KM 9 5] and split them into non-intersecting faces."
+      }
+    },
+    {
+      "id": "#/texts/206",
+      "page": 20,
+      "order": 7,
+      "role": "paragraph",
+      "text": "The input to the algorithm is a set of n faces, each of whose boundaries is represented as a collection of B ezier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm rst. Let us represent the set of faces by H = f h 1 ;;h 2 ;; : : : ;;h n g . Let V i denote the collection of visible regions after adding i faces in random. The i faces already added are kept in the set Q . We want to compute V n . After i steps of the algorithm, we maintain V i . At the ( i + 1) st step, we pick a random face h i + 1 from the set H n Q . For each face in V i , we nd all the boundary intersections",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 583.94,
+        "x1": 540.0,
+        "y1": 677.3,
+        "width": 468.0,
+        "height": 93.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The input to the algorithm is a set of n faces, each of whose boundaries is represented as a collection of B ezier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm rst. Let us represent the set of faces by H = f h 1 ;;h 2 ;; : : : ;;h n g . Let V i denote the collection of visible regions after adding i faces in random. The i faces already added are kept in the set Q . We want to compute V n . After i steps of the algorithm, we maintain V i . At the ( i + 1) st step, we pick a random face h i + 1 from the set H n Q . For each face in V i , we nd all the boundary intersections"
+      }
+    },
+    {
+      "id": "#/texts/208",
+      "page": 21,
+      "order": 1,
+      "role": "paragraph",
+      "text": "with the face h i + 1 using the method described in the previous section. Let us consider a speci c intersection point ( p;; q ) such that p lies on the boundary of one of the faces in V i and q lies on the boundary of h i + 1 . If the z ; coordinate of p is less than that of q ( p lies in front of q ), then project the boundary curve on which p lies on h i + 1 , else the other way around. Tracing only one of the curves is su cient because the faces are non-intersecting. Tracing is accomplished by inverse power iteration, which was described in both sections 2 and 5. The equations used to trace these curves is exactly the same as those used in section 5. In some sense, the projected curves are similar to our notion of visibility curves. We split it up this way so that the theoretical argument could be made much easier. We do tracing for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region is now entirely visible or not, we check only on one point. We shoot a ray from the point r to ; 1 in the z ; direction and nd the number of intersections with faces of V i [ f h i + 1 g . The curve surface intersection method used is described in section 2. If the number of intersections is 0, this face is added, otherwise it is discarded. All the faces that were not partitioned in step ( i + 1) are retained in V i + 1 . After all the n faces are added, we obtain V n . We shall now provide the pseudocode for this algorithm. For ease of writing the pseudocode, we shall assume that we have a routine project boundary curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns 0 if there are no boundary curves between the two faces, otherwise, it returns 1. We also have another routine called partition face that computes the partition of the face using the projected boundary curve.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 540.48,
+        "y1": 343.21,
+        "width": 468.48,
+        "height": 268.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "with the face h i + 1 using the method described in the previous section. Let us consider a speci c intersection point ( p;; q ) such that p lies on the boundary of one of the faces in V i and q lies on the boundary of h i + 1 . If the z ; coordinate of p is less than that of q ( p lies in front of q ), then project the boundary curve on which p lies on h i + 1 , else the other way around. Tracing only one of the curves is su cient because the faces are non-intersecting. Tracing is accomplished by inverse power iteration, which was described in both sections 2 and 5. The equations used to trace these curves is exactly the same as those used in section 5. In some sense, the projected curves are similar to our notion of visibility curves. We split it up this way so that the theoretical argument could be made much easier. We do tracing for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region is now entirely visible or not, we check only on one point. We shoot a ray from the point r to ; 1 in the z ; direction and nd the number of intersections with faces of V i [ f h i + 1 g . The curve surface intersection method used is described in section 2. If the number of intersections is 0, this face is added, otherwise it is discarded. All the faces that were not partitioned in step ( i + 1) are retained in V i + 1 . After all the n faces are added, we obtain V n . We shall now provide the pseudocode for this algorithm. For ease of writing the pseudocode, we shall assume that we have a routine project boundary curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns 0 if there are no boundary curves between the two faces, otherwise, it returns 1. We also have another routine called partition face that computes the partition of the face using the projected boundary curve."
+      }
+    },
+    {
+      "id": "#/texts/209",
+      "page": 21,
+      "order": 2,
+      "role": "code",
+      "text": "Q = ;; ;; H = f h 1 ;;h 2 ;; : : : ;;h n g ;; V 0 = ;; ;; for ( i = 1;; i n ;; i + +) f h i =random face from set H n Q ;; Q = Q [ h i ;; V i = ;; ;; T = ;; ;; * stores faces that are partitioned in this iteration * for each face f 2 V i ; 1 do f j =project boundary curves( f , h i , & c );; if ( j == 0) V i = V i [ f f g ;; else f T = T [ partition face( f , c );; T = T [ partition face( h i , c );; g g for each face t 2 T do f ( s x ;; s y ;; s z ) =some poin t inside t ;; r =semi-in nite ra y from ( s x ;; s y ;; s z ) to ( s x ;; s y ;; ; 1 );; if (ray intersection count( r ) = = 0) V i = V i [ f t g ;; g g output V n ;;",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 356.65,
+        "x1": 380.64,
+        "y1": 666.01,
+        "width": 308.64,
+        "height": 309.36
+      },
+      "meta": {
+        "docling_label": "code",
+        "docling_orig": "Q = ;; ;; H = f h 1 ;;h 2 ;; : : : ;;h n g ;; V 0 = ;; ;; for ( i = 1;; i n ;; i + +) f h i =random face from set H n Q ;; Q = Q [ h i ;; V i = ;; ;; T = ;; ;; * stores faces that are partitioned in this iteration * for each face f 2 V i ; 1 do f j =project boundary curves( f , h i , & c );; if ( j == 0) V i = V i [ f f g ;; else f T = T [ partition face( f , c );; T = T [ partition face( h i , c );; g g for each face t 2 T do f ( s x ;; s y ;; s z ) =some poin t inside t ;; r =semi-in nite ra y from ( s x ;; s y ;; s z ) to ( s x ;; s y ;; ; 1 );; if (ray intersection count( r ) = = 0) V i = V i [ f t g ;; g g output V n ;;"
+      }
+    },
+    {
+      "id": "#/texts/211",
+      "page": 22,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 1 2: Visibility computation on a set of faces",
+      "bbox": {
+        "x0": 190.32,
+        "y0": 303.38,
+        "x1": 421.68,
+        "y1": 314.42,
+        "width": 231.36,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 1 2: Visibility computation on a set of faces"
+      }
+    },
+    {
+      "id": "#/texts/212",
+      "page": 22,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Fig. 1 2 shows how our algorithm works. Each face boundary is made up of curves and piecewise straight lines. The dark broken lines shown in g. 1 2(a) are the projected boundary curves drawn on the objects behind. Fig. 1 2(b) shows the result of the algorithm on the set of faces. The complexity of this algorithm varies according to the order in which the faces are added. Therefore, by adding the faces randomly we reduce the expected running time of the algorithm. The output of the algorithm is a set of visible portions of patches represented as trimmed surfaces. The accuracy of the trimming curve can be adjusted according to the preferences of the user by changing the step size in the tracing method.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 338.66,
+        "x1": 540.0,
+        "y1": 444.5,
+        "width": 468.0,
+        "height": 105.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Fig. 1 2 shows how our algorithm works. Each face boundary is made up of curves and piecewise straight lines. The dark broken lines shown in g. 1 2(a) are the projected boundary curves drawn on the objects behind. Fig. 1 2(b) shows the result of the algorithm on the set of faces. The complexity of this algorithm varies according to the order in which the faces are added. Therefore, by adding the faces randomly we reduce the expected running time of the algorithm. The output of the algorithm is a set of visible portions of patches represented as trimmed surfaces. The accuracy of the trimming curve can be adjusted according to the preferences of the user by changing the step size in the tracing method."
+      }
+    },
+    {
+      "id": "#/texts/213",
+      "page": 22,
+      "order": 3,
+      "role": "heading",
+      "text": "6. 1 Implementation and Performance",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 462.02,
+        "x1": 300.48,
+        "y1": 473.78,
+        "width": 228.48,
+        "height": 11.76
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "6. 1 Implementation and Performance"
+      }
+    },
+    {
+      "id": "#/texts/214",
+      "page": 22,
+      "order": 4,
+      "role": "paragraph",
+      "text": "The algorithm has been implemented and its performance was measured on a number of models. The algorithm uses existing EISPACK and LAPACK routines for some of the matrix computations. At each stage of the algorithm, we can compute bounds on the accuracy of the results obtained based on the accuracy and convergence of numerical methods adopted like eigenvalue computation, power iteration and Gaussian elimination. Our implementation uses EISPACK [GBDM 7 7] routines (in Fortran) to compute the eigenvalues of matrices. The algorithm was run on a high-end SGI Onyx workstation with a single processor con guration. The performance of the algorithm was measured on a number of bicubic (of degree 3 in both parameters) patches. It takes a few millisec onds to produce non-overlapping regions on each patch. We used bicubic patches for most of our experiments because most models used in graphics applications are seldom of higher degree.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 483.38,
+        "x1": 540.24,
+        "y1": 616.34,
+        "width": 468.24,
+        "height": 132.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The algorithm has been implemented and its performance was measured on a number of models. The algorithm uses existing EISPACK and LAPACK routines for some of the matrix computations. At each stage of the algorithm, we can compute bounds on the accuracy of the results obtained based on the accuracy and convergence of numerical methods adopted like eigenvalue computation, power iteration and Gaussian elimination. Our implementation uses EISPACK [GBDM 7 7] routines (in Fortran) to compute the eigenvalues of matrices. The algorithm was run on a high-end SGI Onyx workstation with a single processor con guration. The performance of the algorithm was measured on a number of bicubic (of degree 3 in both parameters) patches. It takes a few millisec onds to produce non-overlapping regions on each patch. We used bicubic patches for most of our experiments because most models used in graphics applications are seldom of higher degree."
+      }
+    },
+    {
+      "id": "#/texts/216",
+      "page": 23,
+      "order": 1,
+      "role": "heading",
+      "text": "7 Conclusion",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 72.73,
+        "x1": 175.92,
+        "y1": 86.17,
+        "width": 103.92,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "7 Conclusion"
+      }
+    },
+    {
+      "id": "#/texts/217",
+      "page": 23,
+      "order": 2,
+      "role": "paragraph",
+      "text": "We have presented an algorithm for computing the visible portions of a scene composed of curved (parametric) surfaces from a given viewpoint. We have also given a method to compute the silhou ette curve e ciently and correctly. We introduced the notion of visibility curves, which are used to partition each patch into non-overlapping regions. The algorithm has been implemented in oating point arithmetic and performs well in practice.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 99.13,
+        "x1": 540.24,
+        "y1": 164.41,
+        "width": 468.24,
+        "height": 65.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We have presented an algorithm for computing the visible portions of a scene composed of curved (parametric) surfaces from a given viewpoint. We have also given a method to compute the silhou ette curve e ciently and correctly. We introduced the notion of visibility curves, which are used to partition each patch into non-overlapping regions. The algorithm has been implemented in oating point arithmetic and performs well in practice."
+      }
+    },
+    {
+      "id": "#/texts/218",
+      "page": 23,
+      "order": 3,
+      "role": "heading",
+      "text": "8 Acknowledgement",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 185.53,
+        "x1": 227.76,
+        "y1": 198.97,
+        "width": 155.76,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "8 Acknowledgement"
+      }
+    },
+    {
+      "id": "#/texts/219",
+      "page": 23,
+      "order": 4,
+      "role": "paragraph",
+      "text": "We would like to thank David Banks, David Eberly, Brice Tebbs and Turner Whitted for all the productive discussions and helpful insights. We would also like to thank Brice Tebbs for providing the patch in Fig. 1 and 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 211.93,
+        "x1": 540.0,
+        "y1": 250.09,
+        "width": 468.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We would like to thank David Banks, David Eberly, Brice Tebbs and Turner Whitted for all the productive discussions and helpful insights. We would also like to thank Brice Tebbs for providing the patch in Fig. 1 and 4."
+      }
+    },
+    {
+      "id": "#/texts/220",
+      "page": 23,
+      "order": 5,
+      "role": "heading",
+      "text": "References",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 271.21,
+        "x1": 150.0,
+        "y1": 284.65,
+        "width": 78.0,
+        "height": 13.44
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "References"
+      }
+    },
+    {
+      "id": "#/texts/221",
+      "page": 23,
+      "order": 6,
+      "role": "list_item",
+      "text": "[Can 8 8] J.F. Canny. The Complexity of Robot Motion Planning . ACM Doctoral Dissertation Award. MIT Press, 1 9 8 8.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 297.61,
+        "x1": 540.0,
+        "y1": 322.09,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Can 8 8] J.F. Canny. The Complexity of Robot Motion Planning . ACM Doctoral Dissertation Award. MIT Press, 1 9 8 8."
+      }
+    },
+    {
+      "id": "#/texts/222",
+      "page": 23,
+      "order": 7,
+      "role": "list_item",
+      "text": "[CCW 9 3] L. Chen, S. Chou, and T.C. Woo. Separating and intersecting spherical polygons: computing machinability on three, four and ve axis numerically controlled machines. ACM Transactions on Graphics , 1 2( 4): 3 0 5 { 3 2 6, 1 9 9 3.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 333.37,
+        "x1": 540.0,
+        "y1": 371.53,
+        "width": 468.0,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[CCW 9 3] L. Chen, S. Chou, and T.C. Woo. Separating and intersecting spherical polygons: computing machinability on three, four and ve axis numerically controlled machines. ACM Transactions on Graphics , 1 2( 4): 3 0 5 { 3 2 6, 1 9 9 3."
+      }
+    },
+    {
+      "id": "#/texts/223",
+      "page": 23,
+      "order": 8,
+      "role": "list_item",
+      "text": "[CEGS 9 4] B. Chazelle, H. Edelsbrunner, L. Guibas, and M. Sharir. Algorithms for bichromatic line segment problems and polyhedral terrains. Algorithmica II , pages 1 1 6 { 1 3 2, 1 9 9 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 382.57,
+        "x1": 539.76,
+        "y1": 407.29,
+        "width": 467.76,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[CEGS 9 4] B. Chazelle, H. Edelsbrunner, L. Guibas, and M. Sharir. Algorithms for bichromatic line segment problems and polyhedral terrains. Algorithmica II , pages 1 1 6 { 1 3 2, 1 9 9 4."
+      }
+    },
+    {
+      "id": "#/texts/224",
+      "page": 23,
+      "order": 9,
+      "role": "list_item",
+      "text": "[Dix 0 8] A.L. Dixon. The eliminant of three quantics in two independent variables. Proceedings of London Mathematical Society , 6: 4 9 { 6 9, 2 0 9 { 2 3 6, 1 9 0 8.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 418.33,
+        "x1": 540.48,
+        "y1": 443.06,
+        "width": 468.48,
+        "height": 24.73
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Dix 0 8] A.L. Dixon. The eliminant of three quantics in two independent variables. Proceedings of London Mathematical Society , 6: 4 9 { 6 9, 2 0 9 { 2 3 6, 1 9 0 8."
+      }
+    },
+    {
+      "id": "#/texts/225",
+      "page": 23,
+      "order": 10,
+      "role": "list_item",
+      "text": "[Dor 9 4] S. E. Dorward. A survey of object-space hidden surface removal. International journal of Computational Geometry and Applications , 4: 3 2 5 { 3 6 2, 1 9 9 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 454.09,
+        "x1": 540.0,
+        "y1": 478.81,
+        "width": 468.0,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Dor 9 4] S. E. Dorward. A survey of object-space hidden surface removal. International journal of Computational Geometry and Applications , 4: 3 2 5 { 3 6 2, 1 9 9 4."
+      }
+    },
+    {
+      "id": "#/texts/226",
+      "page": 23,
+      "order": 11,
+      "role": "list_item",
+      "text": "[EC 9 0] G. Elber and E. Cohen. Hidden curve removal for free form surfaces. Computer Graph ics , 2 4( 4): 9 5 { 1 0 4, 1 9 9 0.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 489.85,
+        "x1": 539.76,
+        "y1": 514.58,
+        "width": 467.76,
+        "height": 24.73
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[EC 9 0] G. Elber and E. Cohen. Hidden curve removal for free form surfaces. Computer Graph ics , 2 4( 4): 9 5 { 1 0 4, 1 9 9 0."
+      }
+    },
+    {
+      "id": "#/texts/227",
+      "page": 23,
+      "order": 12,
+      "role": "list_item",
+      "text": "[EC 9 3] G. Elber and E. Cohen. Second order surface analysis using hybrid symbolic and numeric operators. ACM Transactions on Graphics , 1 2( 2): 1 6 0 { 1 7 8, 1 9 9 3.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 525.62,
+        "x1": 540.0,
+        "y1": 550.34,
+        "width": 468.0,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[EC 9 3] G. Elber and E. Cohen. Second order surface analysis using hybrid symbolic and numeric operators. ACM Transactions on Graphics , 1 2( 2): 1 6 0 { 1 7 8, 1 9 9 3."
+      }
+    },
+    {
+      "id": "#/texts/228",
+      "page": 23,
+      "order": 13,
+      "role": "list_item",
+      "text": "[EC 9 4] G. Elber and E. Cohen. Exact computation of gauss maps and visibility sets for freefrom surfaces. Technical report CIS # 9 4 1 4, Computer Science Department, Technion, 1 9 9 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 561.38,
+        "x1": 540.24,
+        "y1": 586.1,
+        "width": 468.24,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[EC 9 4] G. Elber and E. Cohen. Exact computation of gauss maps and visibility sets for freefrom surfaces. Technical report CIS # 9 4 1 4, Computer Science Department, Technion, 1 9 9 4."
+      }
+    },
+    {
+      "id": "#/texts/229",
+      "page": 23,
+      "order": 14,
+      "role": "list_item",
+      "text": "[Far 9 3] G. Farin. Curves and Surfaces for Computer Aided Geometric Design: A Practical Guide . Academic Press Inc., 1 9 9 3.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 597.13,
+        "x1": 540.24,
+        "y1": 621.86,
+        "width": 468.24,
+        "height": 24.73
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Far 9 3] G. Farin. Curves and Surfaces for Computer Aided Geometric Design: A Practical Guide . Academic Press Inc., 1 9 9 3."
+      }
+    },
+    {
+      "id": "#/texts/230",
+      "page": 23,
+      "order": 15,
+      "role": "list_item",
+      "text": "[FDHF 9 0] J. Foley, A. Van Dam, J. Hughes, and S. Feiner. Computer Graphics: Principles and Practice . Addison Wesley, Reading, Mass., 1 9 9 0.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 632.89,
+        "x1": 540.0,
+        "y1": 657.38,
+        "width": 468.0,
+        "height": 24.49
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[FDHF 9 0] J. Foley, A. Van Dam, J. Hughes, and S. Feiner. Computer Graphics: Principles and Practice . Addison Wesley, Reading, Mass., 1 9 9 0."
+      }
+    },
+    {
+      "id": "#/texts/231",
+      "page": 23,
+      "order": 16,
+      "role": "list_item",
+      "text": "[Ful 7 8] W. Fulks. Advanced Calculus: An introduction to analysis . John Wiley & sons, 1 9 7 8.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 668.65,
+        "x1": 537.12,
+        "y1": 679.69,
+        "width": 465.12,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Ful 7 8] W. Fulks. Advanced Calculus: An introduction to analysis . John Wiley & sons, 1 9 7 8."
+      }
+    },
+    {
+      "id": "#/texts/233",
+      "page": 24,
+      "order": 1,
+      "role": "list_item",
+      "text": "[GBDM 7 7] B.S. Garbow, J.M. Boyle, J. Dongarra, and C.B. Moler. Matrix Eigensystem Routines { EISPACK Guide Extension , volume 5 1. Springer-Verlag, Berlin, 1 9 7 7.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 540.0,
+        "y1": 99.37,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[GBDM 7 7] B.S. Garbow, J.M. Boyle, J. Dongarra, and C.B. Moler. Matrix Eigensystem Routines { EISPACK Guide Extension , volume 5 1. Springer-Verlag, Berlin, 1 9 7 7."
+      }
+    },
+    {
+      "id": "#/texts/234",
+      "page": 24,
+      "order": 2,
+      "role": "list_item",
+      "text": "[GL 8 9] G.H. Golub and C.F. Van Loan. Matrix Computations . John Hopkins Press, Baltimore, 1 9 8 9.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 110.89,
+        "x1": 540.0,
+        "y1": 135.37,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[GL 8 9] G.H. Golub and C.F. Van Loan. Matrix Computations . John Hopkins Press, Baltimore, 1 9 8 9."
+      }
+    },
+    {
+      "id": "#/texts/235",
+      "page": 24,
+      "order": 3,
+      "role": "list_item",
+      "text": "[GLR 8 2] I. Gohberg, P. Lancaster, and L. Rodman. Matrix Polynomials . Academic Press, New York, 1 9 8 2.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 146.89,
+        "x1": 540.0,
+        "y1": 171.61,
+        "width": 468.0,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[GLR 8 2] I. Gohberg, P. Lancaster, and L. Rodman. Matrix Polynomials . Academic Press, New York, 1 9 8 2."
+      }
+    },
+    {
+      "id": "#/texts/236",
+      "page": 24,
+      "order": 4,
+      "role": "list_item",
+      "text": "[GO 8 7] R. H. G uting and T. Ottmann. New algorithms for special cases of the hidden line elimination problem. Comput. Vision Graph. Image Process. , 4 0: 1 8 8 { 2 0 4, 1 9 8 7.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 182.89,
+        "x1": 539.52,
+        "y1": 207.61,
+        "width": 467.52,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[GO 8 7] R. H. G uting and T. Ottmann. New algorithms for special cases of the hidden line elimination problem. Comput. Vision Graph. Image Process. , 4 0: 1 8 8 { 2 0 4, 1 9 8 7."
+      }
+    },
+    {
+      "id": "#/texts/237",
+      "page": 24,
+      "order": 5,
+      "role": "list_item",
+      "text": "[GWT 9 4] J.G. Gan, T.C. Woo, and K. Tang. Spherical maps: Their construction, properties, and approximation. ASME Trans. J. Mech. Des. , 1 9 9 4. To appear.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 219.13,
+        "x1": 540.0,
+        "y1": 243.61,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[GWT 9 4] J.G. Gan, T.C. Woo, and K. Tang. Spherical maps: Their construction, properties, and approximation. ASME Trans. J. Mech. Des. , 1 9 9 4. To appear."
+      }
+    },
+    {
+      "id": "#/texts/238",
+      "page": 24,
+      "order": 6,
+      "role": "list_item",
+      "text": "[HG 7 7] G. Hamlin and C. W. Gear. Raster-scan hidden surface algorithm techniques. Computer Graphics , 1 1: 2 0 6 { 2 1 3, 1 9 7 7.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 255.13,
+        "x1": 539.76,
+        "y1": 279.61,
+        "width": 467.76,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[HG 7 7] G. Hamlin and C. W. Gear. Raster-scan hidden surface algorithm techniques. Computer Graphics , 1 1: 2 0 6 { 2 1 3, 1 9 7 7."
+      }
+    },
+    {
+      "id": "#/texts/239",
+      "page": 24,
+      "order": 7,
+      "role": "list_item",
+      "text": "[Hor 8 4] C. Hornung. A method for solving the visibility problem. IEEE Computer Graphics and Applications , pages 2 6 { 3 3, July 1 9 8 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 291.13,
+        "x1": 540.0,
+        "y1": 315.85,
+        "width": 468.0,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Hor 8 4] C. Hornung. A method for solving the visibility problem. IEEE Computer Graphics and Applications , pages 2 6 { 3 3, July 1 9 8 4."
+      }
+    },
+    {
+      "id": "#/texts/240",
+      "page": 24,
+      "order": 8,
+      "role": "list_item",
+      "text": "[KM 9 5] S. Krishnan and D. Manocha. Numeric-symbolic algorithms for evaluating one dimensional algebraic sets. In Proceedings of International Symposium on Symbolic and Algebraic Computation , 1 9 9 5.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 327.37,
+        "x1": 540.24,
+        "y1": 365.29,
+        "width": 468.24,
+        "height": 37.92
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[KM 9 5] S. Krishnan and D. Manocha. Numeric-symbolic algorithms for evaluating one dimensional algebraic sets. In Proceedings of International Symposium on Symbolic and Algebraic Computation , 1 9 9 5."
+      }
+    },
+    {
+      "id": "#/texts/241",
+      "page": 24,
+      "order": 9,
+      "role": "list_item",
+      "text": "[Li 8 1] L. Li. Hidden-line algorithm for curved surfaces. Computer-Aided Design , 2 0( 8): 4 6 6 { 4 7 0, 1 9 8 1.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 376.81,
+        "x1": 540.72,
+        "y1": 401.53,
+        "width": 468.72,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Li 8 1] L. Li. Hidden-line algorithm for curved surfaces. Computer-Aided Design , 2 0( 8): 4 6 6 { 4 7 0, 1 9 8 1."
+      }
+    },
+    {
+      "id": "#/texts/242",
+      "page": 24,
+      "order": 10,
+      "role": "list_item",
+      "text": "[MD 9 4] D. Manocha and J. Demmel. Algorithms for intersecting parametric and algebraic curves i: simple intersections. ACM Transactions on Graphics , 1 3( 1): 7 3 { 1 0 0, 1 9 9 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 413.05,
+        "x1": 539.76,
+        "y1": 437.53,
+        "width": 467.76,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[MD 9 4] D. Manocha and J. Demmel. Algorithms for intersecting parametric and algebraic curves i: simple intersections. ACM Transactions on Graphics , 1 3( 1): 7 3 { 1 0 0, 1 9 9 4."
+      }
+    },
+    {
+      "id": "#/texts/243",
+      "page": 24,
+      "order": 11,
+      "role": "list_item",
+      "text": "[Mul 8 9] K. Mulmuley. An e cient algorithm for hidden surface removal. Computer Graphics , 2 3( 3): 3 7 9 { 3 8 8, 1 9 8 9.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 449.05,
+        "x1": 540.0,
+        "y1": 473.53,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Mul 8 9] K. Mulmuley. An e cient algorithm for hidden surface removal. Computer Graphics , 2 3( 3): 3 7 9 { 3 8 8, 1 9 8 9."
+      }
+    },
+    {
+      "id": "#/texts/244",
+      "page": 24,
+      "order": 12,
+      "role": "list_item",
+      "text": "[Mul 9 0] K. Mulmuley. An e cient algorithm for hidden surface removal, ii. Report TR- 9 0- 3 1, Dept. Comput. Sci., Univ. Of Chicago, Chicago, Illinois, 1 9 9 0.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 485.05,
+        "x1": 540.24,
+        "y1": 509.77,
+        "width": 468.24,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Mul 9 0] K. Mulmuley. An e cient algorithm for hidden surface removal, ii. Report TR- 9 0- 3 1, Dept. Comput. Sci., Univ. Of Chicago, Chicago, Illinois, 1 9 9 0."
+      }
+    },
+    {
+      "id": "#/texts/245",
+      "page": 24,
+      "order": 13,
+      "role": "list_item",
+      "text": "[Mul 9 1] K. Mulmuley. Hidden surface removal with respect to a moving point. In Proc. 2 3rd Annu. ACM Sympos. Theory Comput. , pages 5 1 2 { 5 2 2, 1 9 9 1.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 521.05,
+        "x1": 539.76,
+        "y1": 545.77,
+        "width": 467.76,
+        "height": 24.72
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Mul 9 1] K. Mulmuley. Hidden surface removal with respect to a moving point. In Proc. 2 3rd Annu. ACM Sympos. Theory Comput. , pages 5 1 2 { 5 2 2, 1 9 9 1."
+      }
+    },
+    {
+      "id": "#/texts/246",
+      "page": 24,
+      "order": 14,
+      "role": "list_item",
+      "text": "[PS 8 5] F.P. Preparata and M. I. Shamos. Computational Geometry . Springer-Verlag, New York, 1 9 8 5.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 557.29,
+        "x1": 540.0,
+        "y1": 581.77,
+        "width": 468.0,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[PS 8 5] F.P. Preparata and M. I. Shamos. Computational Geometry . Springer-Verlag, New York, 1 9 8 5."
+      }
+    },
+    {
+      "id": "#/texts/247",
+      "page": 24,
+      "order": 15,
+      "role": "list_item",
+      "text": "[PVY 9 2] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output-sensitive generation of the per spective view of isothetic par allelepipeds. Algorithmica , 8: 2 5 7 { 2 8 3, 1 9 9 2.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 593.29,
+        "x1": 539.76,
+        "y1": 617.77,
+        "width": 467.76,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[PVY 9 2] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output-sensitive generation of the per spective view of isothetic par allelepipeds. Algorithmica , 8: 2 5 7 { 2 8 3, 1 9 9 2."
+      }
+    },
+    {
+      "id": "#/texts/248",
+      "page": 24,
+      "order": 16,
+      "role": "list_item",
+      "text": "[RS 8 8] J. H. Reif and S. Sen. An e cient output-sensitive hidden-surface removal algorithms and its parallelization. In Proc. 4th Annu. ACM Sympos. Comput. Geom. , pages 1 9 3 { 2 0 0, 1 9 8 8.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 629.29,
+        "x1": 540.24,
+        "y1": 667.45,
+        "width": 468.24,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[RS 8 8] J. H. Reif and S. Sen. An e cient output-sensitive hidden-surface removal algorithms and its parallelization. In Proc. 4th Annu. ACM Sympos. Comput. Geom. , pages 1 9 3 { 2 0 0, 1 9 8 8."
+      }
+    },
+    {
+      "id": "#/texts/250",
+      "page": 25,
+      "order": 1,
+      "role": "list_item",
+      "text": "[Sed 8 3] T.W. Sederberg. Implicit and Parametric Curves and Surfaces . PhD thesis, Purdue University, 1 9 8 3.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 74.89,
+        "x1": 539.76,
+        "y1": 99.37,
+        "width": 467.76,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Sed 8 3] T.W. Sederberg. Implicit and Parametric Curves and Surfaces . PhD thesis, Purdue University, 1 9 8 3."
+      }
+    },
+    {
+      "id": "#/texts/251",
+      "page": 25,
+      "order": 2,
+      "role": "list_item",
+      "text": "[Sei 9 1] R. Seidel. A simple and fast randomized algorithm for computing trapezoidal decompo sitions and for triangulating polygons. Computational Geometry Theory & Applications , 1( 1): 5 1 { 6 4, 1 9 9 1.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 110.89,
+        "x1": 540.24,
+        "y1": 149.05,
+        "width": 468.24,
+        "height": 38.16
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Sei 9 1] R. Seidel. A simple and fast randomized algorithm for computing trapezoidal decompo sitions and for triangulating polygons. Computational Geometry Theory & Applications , 1( 1): 5 1 { 6 4, 1 9 9 1."
+      }
+    },
+    {
+      "id": "#/texts/252",
+      "page": 25,
+      "order": 3,
+      "role": "list_item",
+      "text": "[SSS 7 4] I. Sutherland, R. Sproull, and R. Schumaker. A characterization of ten hidden-surface algorithms. Computing Surveys , 6( 1): 1 { 5 5, 1 9 7 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 160.57,
+        "x1": 539.52,
+        "y1": 185.05,
+        "width": 467.52,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[SSS 7 4] I. Sutherland, R. Sproull, and R. Schumaker. A characterization of ten hidden-surface algorithms. Computing Surveys , 6( 1): 1 { 5 5, 1 9 7 4."
+      }
+    },
+    {
+      "id": "#/texts/253",
+      "page": 25,
+      "order": 4,
+      "role": "list_item",
+      "text": "[TW 9 3] B. Tebbs and T. Whitted. Numerical Design Limited, Personal Communication, 1 9 9 3.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 196.57,
+        "x1": 540.24,
+        "y1": 207.61,
+        "width": 468.24,
+        "height": 11.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[TW 9 3] B. Tebbs and T. Whitted. Numerical Design Limited, Personal Communication, 1 9 9 3."
+      }
+    },
+    {
+      "id": "#/texts/254",
+      "page": 25,
+      "order": 5,
+      "role": "list_item",
+      "text": "[Woo 9 4] T. Woo. Visibility maps and spherical algorithms. Computer-Aided Design , 2 6( 1): 6 { 1 6, 1 9 9 4.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 219.13,
+        "x1": 540.72,
+        "y1": 243.61,
+        "width": 468.72,
+        "height": 24.48
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[Woo 9 4] T. Woo. Visibility maps and spherical algorithms. Computer-Aided Design , 2 6( 1): 6 { 1 6, 1 9 9 4."
+      }
+    }
+  ]
+}

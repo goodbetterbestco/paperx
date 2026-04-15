@@ -1,0 +1,302 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-1-p003.png",
+      "caption_text": "Figure 1: A smooth surface (left), its apparent contour under parallel projection along the z direction (middle), and its contour generator, seen from a di\ufb00erent position (right). For generic surfaces (or, generic parallel projections) the contour generator is a smooth, possibly disconnected curve on the surface, whereas the apparent contour may have isolated cusp points.",
+      "figure_bbox": {
+        "x0": 63.08,
+        "y0": 63.78,
+        "x1": 548.82,
+        "y1": 193.92,
+        "width": 485.75,
+        "height": 130.14
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 200.84,
+        "x1": 539.95,
+        "y1": 252.43,
+        "width": 467.95,
+        "height": 51.59
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 6,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-2-p006.png",
+      "caption_text": "Figure 2: (a) A local model of the surface at a fold point is x + z 2 = 0. Both the contour generator \u0393, and the visible contour \u03b3 , are regular at the fold point, and its projection onto the image plane, respectively. (b) A local model at a cusp point is x + yz + z 3 = 0. Here the contour generator is regular, but the apparent contour has a regular cusp.",
+      "figure_bbox": {
+        "x0": 188.72,
+        "y0": 451.48,
+        "x1": 461.99,
+        "y1": 615.66,
+        "width": 273.27,
+        "height": 164.18
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 633.56,
+        "x1": 540.02,
+        "y1": 689.11,
+        "width": 468.03,
+        "height": 55.55
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 8,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-3-p008.png",
+      "caption_text": "Figure 3: The beak-to-beak bifurcation. With respect to the local model (14) the bifurcation corresponds to t < 0 (left), t = 0 (middle), and t > 0 (right).",
+      "figure_bbox": {
+        "x0": 72.79,
+        "y0": 278.15,
+        "x1": 528.24,
+        "y1": 471.11,
+        "width": 455.46,
+        "height": 192.96
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 491.36,
+        "x1": 539.96,
+        "y1": 515.83,
+        "width": 467.96,
+        "height": 24.47
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 9,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-4-p009.png",
+      "caption_text": "Figure 4: The lips bifurcation. Left: t < 0. Middle: t = 0. Right: t > 0.",
+      "figure_bbox": {
+        "x0": 72.86,
+        "y0": 66.81,
+        "x1": 541.38,
+        "y1": 261.6,
+        "width": 468.52,
+        "height": 194.79
+      },
+      "caption_bbox": {
+        "x0": 134.52,
+        "y0": 281.84,
+        "x1": 477.39,
+        "y1": 292.75,
+        "width": 342.87,
+        "height": 10.91
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 9,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-5-p009.png",
+      "caption_text": "Figure 5: The swallowtail bifurcation. Left: t < 0. Middle: t = 0. Right: t > 0.",
+      "figure_bbox": {
+        "x0": 70.86,
+        "y0": 459.01,
+        "x1": 541.48,
+        "y1": 655.55,
+        "width": 470.62,
+        "height": 196.55
+      },
+      "caption_bbox": {
+        "x0": 116.64,
+        "y0": 675.8,
+        "x1": 495.27,
+        "y1": 686.71,
+        "width": 378.63,
+        "height": 10.91
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 14,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-6-p014.png",
+      "caption_text": "Figure 6: A beak-to-beak bifurcation. Top row: a sequence of views of a smooth surface. Middle row: the corresponding apparent contours. Bottom row: blow up of the apparent contour near the bifurcation event.",
+      "figure_bbox": {
+        "x0": 121.51,
+        "y0": 359.08,
+        "x1": 490.4,
+        "y1": 633.0,
+        "width": 368.89,
+        "height": 273.92
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 639.92,
+        "x1": 540.09,
+        "y1": 677.95,
+        "width": 468.09,
+        "height": 38.03
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 17,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-7-p017.png",
+      "caption_text": "Figure 7: A swallowtail bifurcation. Top row: a sequence of views of a smooth surface. Middle row: the corresponding apparent contours. Bottom row: blow up of the apparent contour near the bifurcation event.",
+      "figure_bbox": {
+        "x0": 123.31,
+        "y0": 63.78,
+        "x1": 488.58,
+        "y1": 422.64,
+        "width": 365.27,
+        "height": 358.86
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 429.56,
+        "x1": 540.09,
+        "y1": 467.59,
+        "width": 468.09,
+        "height": 38.03
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 23,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-8-p023.png",
+      "caption_text": "Figure 8: Left: N ( p i ) is a tangent to the intersection of F = 0 and F z = 0. Right: a \ufb01xed step size can miss part of the contour generator.",
+      "figure_bbox": {
+        "x0": 131.26,
+        "y0": 64.91,
+        "x1": 480.57,
+        "y1": 171.69,
+        "width": 349.31,
+        "height": 106.78
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 177.71,
+        "x1": 539.93,
+        "y1": 204.07,
+        "width": 467.93,
+        "height": 26.36
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 23,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-9-p023.png",
+      "caption_text": "Figure 9: The sphere containing the line segment, and its bounding box.",
+      "figure_bbox": {
+        "x0": 227.48,
+        "y0": 263.7,
+        "x1": 384.79,
+        "y1": 392.11,
+        "width": 157.31,
+        "height": 128.41
+      },
+      "caption_bbox": {
+        "x0": 132.6,
+        "y0": 400.28,
+        "x1": 479.45,
+        "y1": 411.19,
+        "width": 346.85,
+        "height": 10.91
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 24,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-10-p024.png",
+      "caption_text": "Figure 10: The contour generator lies within a cone.",
+      "figure_bbox": {
+        "x0": 234.57,
+        "y0": 72.0,
+        "x1": 391.47,
+        "y1": 193.98,
+        "width": 156.9,
+        "height": 121.98
+      },
+      "caption_bbox": {
+        "x0": 180.96,
+        "y0": 200.72,
+        "x1": 430.98,
+        "y1": 211.63,
+        "width": 250.02,
+        "height": 10.91
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 24,
+      "image_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-11-p024.png",
+      "caption_text": "Figure 11: Contour generator of a sphere and of 8 metaballs (see appendix D) near the vertices of a cube. The small squares indicate the initial points. The dots on the sphere show the dynamic step size. Note that the metaballs are close to a singularity under motion of the viewpoint. The sizes of the eight components range from 439 to 879 segments.",
+      "figure_bbox": {
+        "x0": 226.15,
+        "y0": 403.07,
+        "x1": 544.12,
+        "y1": 565.08,
+        "width": 317.97,
+        "height": 162.01
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 572.0,
+        "x1": 540.07,
+        "y1": 623.59,
+        "width": 468.07,
+        "height": 51.59
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 1,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-1-p001.png",
+      "caption_text": "Figure 1: Non-injective discrete maps of a cone shaped mesh to the plane with \ufb01xed boundary. (a) None of the triangles are \ufb02ipped but the angle sum around the center vertex is 4 \u03c0 rather than 2 \u03c0 . (b) It is impossible to position the center vertex in a way that will produce discrete injective map.",
+      "figure_bbox": {
+        "x0": 309.02,
+        "y0": 183.13,
+        "x1": 566.93,
+        "y1": 257.32,
+        "width": 257.91,
+        "height": 74.19
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 256.36,
+        "x1": 558.0,
+        "y1": 303.98,
+        "width": 240.05,
+        "height": 47.62
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 3,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-2-p003.png",
+      "caption_text": "Figure 2: Self-overlapping and non-self-overlapping polygons. (left to right) A self-overlapping polygon P. A locally injective map",
+      "figure_bbox": {
+        "x0": 45.53,
+        "y0": 152.24,
+        "x1": 413.33,
+        "y1": 232.39,
+        "width": 367.79,
+        "height": 80.15
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 228.64,
+        "x1": 294.05,
+        "y1": 247.27,
+        "width": 240.05,
+        "height": 18.63
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 3,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-4-p003.png",
+      "caption_text": "Figure 4: The weakly self-overlapping polygon P is split into two weakly self-overlapping polygons, P i , j and P j + 1 , i .",
+      "figure_bbox": {
+        "x0": 44.42,
+        "y0": 152.24,
+        "x1": 566.23,
+        "y1": 274.51,
+        "width": 521.81,
+        "height": 122.27
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 279.57,
+        "x1": 558.0,
+        "y1": 299.64,
+        "width": 240.04,
+        "height": 20.07
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 3,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-3-p003.png",
+      "caption_text": "Figure 3: Weakly self-overlapping polygon. (left) The \u201cpants\u201d mesh is bounded by a simple polygon. (right) The boundary poly- gon is slightly perturbed to form a self-intersecting polygon which is not self-overlapping. While there is no locally injective map from M 1 (or any other mesh) to M 2 , f is locally injective everywhere be- side at the singular (marked red) boundary vertex. The boundary of M 2 is called a weakly self-overlapping polygon.",
+      "figure_bbox": {
+        "x0": 45.15,
+        "y0": 352.64,
+        "x1": 298.62,
+        "y1": 435.65,
+        "width": 253.47,
+        "height": 83.01
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 448.11,
+        "x1": 294.05,
+        "y1": 516.63,
+        "width": 240.05,
+        "height": 68.53
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 4,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-5-p004.png",
+      "caption_text": "Figure 5: Notations for the triangulation algorithm.",
+      "figure_bbox": {
+        "x0": 46.13,
+        "y0": 159.58,
+        "x1": 403.18,
+        "y1": 284.27,
+        "width": 357.06,
+        "height": 124.69
+      },
+      "caption_bbox": {
+        "x0": 80.05,
+        "y0": 283.45,
+        "x1": 268.0,
+        "y1": 292.49,
+        "width": 187.95,
+        "height": 9.04
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 5,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-6-p005.png",
+      "caption_text": "Figure 6: Two globally bijective maps to a common intermediate domain. h s \u2192 i maps the source mesh M to the intermediate domain \u2126 i and h t \u2192 i maps the target mesh M t to the same intermediate do- main.",
+      "figure_bbox": {
+        "x0": 48.74,
+        "y0": 44.3,
+        "x1": 557.05,
+        "y1": 151.28,
+        "width": 508.31,
+        "height": 106.98
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 147.43,
+        "x1": 294.05,
+        "y1": 185.39,
+        "width": 240.05,
+        "height": 37.96
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 5,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-8-p005.png",
+      "caption_text": "Figure 8: Target mesh density variation. The Julius model with 39164 triangles is parameterized using our method with different target mesh densities. As evident from the visual results, the resolu- tion of the target has little effect on the overall map quality.",
+      "figure_bbox": {
+        "x0": 48.74,
+        "y0": 44.3,
+        "x1": 564.87,
+        "y1": 186.19,
+        "width": 516.13,
+        "height": 141.89
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 187.55,
+        "x1": 558.0,
+        "y1": 225.51,
+        "width": 240.05,
+        "height": 37.96
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 5,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-9-p005.png",
+      "caption_text": "Figure 9: Mandatory re\ufb01nement for a planar deformation example. (a) A snake-like source mesh. (b) The boundary undergoes a very small deformation. Nevertheless, it is impossible to position the chain of 5 red edges inside the deformed target polygon. (c) Our algorithm automatically re\ufb01ne M by adding 5 new vertices along the red edge chain. (d) An injective map where the re\ufb01ned red chain lies fully inside the polygon.",
+      "figure_bbox": {
+        "x0": 44.39,
+        "y0": 281.66,
+        "x1": 546.13,
+        "y1": 610.84,
+        "width": 501.74,
+        "height": 329.18
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 606.16,
+        "x1": 558.0,
+        "y1": 673.11,
+        "width": 240.05,
+        "height": 66.95
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 6,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-11-p006.png",
+      "caption_text": "Figure 11: The simpli\ufb01cation procedure. (left) A mesh M r with three triangles. Two points (red and green) were added during the re\ufb01nement step. (a) The image of M r under the map f r be- fore simpli\ufb01cation. (b) Removal of the red point is illegal since it causes polygon B to stop being self-overlapping. (c) Removal of the green point is possible since both neighboring polygons (A and B) stays self-overlapping. (d) Once the green point is removed, the red one can be removed as well, and the algorithm terminates since all added points are removed.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 46.57,
+        "x1": 566.7,
+        "y1": 177.59,
+        "width": 521.88,
+        "height": 131.02
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 162.41,
+        "x1": 558.0,
+        "y1": 248.68,
+        "width": 240.05,
+        "height": 86.28
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 6,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-10-p006.png",
+      "caption_text": "Figure 10: The image of a triangle \u25b3 under f = h \u2212 1",
+      "figure_bbox": {
+        "x0": 45.06,
+        "y0": 68.14,
+        "x1": 557.01,
+        "y1": 302.15,
+        "width": 511.95,
+        "height": 234.01
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 300.96,
+        "x1": 247.51,
+        "y1": 312.24,
+        "width": 193.51,
+        "height": 11.29
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 6,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-12-p006.png",
+      "caption_text": "Figure 12: Compatible triangulation. (left to right) A re\ufb01ned tri- angle of the mesh M r . The \u201ccurved\u201d triangle image (which is a self-overlapping polygon). Compatible triangulations of these two polygons.",
+      "figure_bbox": {
+        "x0": 308.72,
+        "y0": 391.53,
+        "x1": 565.82,
+        "y1": 473.94,
+        "width": 257.1,
+        "height": 82.41
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 471.81,
+        "x1": 558.0,
+        "y1": 509.77,
+        "width": 240.05,
+        "height": 37.96
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 7,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-14-p007.png",
+      "caption_text": "Figure 14: Image deformation. The raptor source planar mesh with 4554 triangles is being deformed. The user prescribes the shape of the deformed boundary such that it intersect itself. Our dual harmonic map algorithm produces a smooth and natural de- formation of the image within a total time of 0.524 sec. The color visualization shows the conformal distortion of the map. No mesh re\ufb01nement was needed.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 305.81,
+        "x1": 567.19,
+        "y1": 513.8,
+        "width": 522.37,
+        "height": 207.99
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 250.13,
+        "x1": 558.0,
+        "y1": 317.08,
+        "width": 240.05,
+        "height": 66.95
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 7,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-15-p007.png",
+      "caption_text": "Figure 15: Deformation of the horse. A sharp bend of the head and tail leads to a weakly self-overlapping polygon with two singular vertices (marked pink). Each singular vertex has full rotation index 1 , meaning the triangulation angle at these vertices is in the range [ 2 \u03c0 , 4 \u03c0 ) . The obtained dual harmonic map is natural and smooth, even in the vicinity of the singular vertices.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 46.08,
+        "x1": 567.19,
+        "y1": 504.32,
+        "width": 522.37,
+        "height": 458.24
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 511.67,
+        "x1": 558.0,
+        "y1": 568.95,
+        "width": 240.05,
+        "height": 57.29
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 8,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-17-p008.png",
+      "caption_text": "Figure 17: The beetle model mapped using our algorithm to create a seamless global parametrization with alignment to sharp borders. 10 new vertices were added. The weakly self-overlapping polygon and the singularities were created by the Mixed-Integer algorithm.",
+      "figure_bbox": {
+        "x0": 308.77,
+        "y0": 173.37,
+        "x1": 567.16,
+        "y1": 357.46,
+        "width": 258.38,
+        "height": 184.09
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 355.32,
+        "x1": 558.0,
+        "y1": 393.28,
+        "width": 240.05,
+        "height": 37.96
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 8,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-16-p008.png",
+      "caption_text": "Figure 16: Parametrization of the hand and bull models with sphere topology. (left) [Springborn et al. 2008]. (right) Our dual harmonic map. We \ufb01x the boundary of the dual harmonic maps based on the result of [Springborn et al. 2008], such that both methods have identical boundary. The discrete conformal maps and the dual harmonic maps are remarkably similar and possess low amount of conformal distortion. No re\ufb01nement was needed for the dual harmonic maps.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 44.57,
+        "x1": 567.18,
+        "y1": 405.03,
+        "width": 522.36,
+        "height": 360.46
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 402.89,
+        "x1": 294.05,
+        "y1": 479.51,
+        "width": 240.05,
+        "height": 76.61
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 9,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-18-p009.png",
+      "caption_text": "Figure 18: Dual harmonic map with variable metric. (top row) a squared shape mesh M is mapped to a cross shape using the method of [Weber et al. 2012]. The histograms show the distri- bution of the conformal distortion. As evident by the histogram and the applied texture, the map is a good approximation to the ex- tremal map. Nonetheless, the map contains \ufb02ipped triangles. (bot- tom row) Our method uses the nearly \ufb02at metric obtained using [Weber et al. 2012], to produce a bijective map from a re\ufb01ned mesh M r (with 9 new vertices) to the same target. Note that M is not 3- connected (see the red \u201cear\u201d triangle at the corner), so a bijective map from M to the cross domain does not exist. Hence, any existing parametrization method that prohibit mesh re\ufb01nement will fail on this particular input.",
+      "figure_bbox": {
+        "x0": 331.36,
+        "y0": 46.79,
+        "x1": 574.12,
+        "y1": 229.73,
+        "width": 242.76,
+        "height": 182.94
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 217.23,
+        "x1": 558.0,
+        "y1": 342.16,
+        "width": 240.05,
+        "height": 124.93
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 10,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-19-p010.png",
+      "caption_text": "Figure 19: Computation of extremal quasiconformal map using our method. The color visualization shows the conformal distortion, where red indicates \ufb02ipped triangles. Our method (bottom right) produced a high quality approximation to the extremal map, as ev- ident by the nearly constant conformal distortion.",
+      "figure_bbox": {
+        "x0": 346.45,
+        "y0": 211.67,
+        "x1": 527.01,
+        "y1": 242.5,
+        "width": 180.56,
+        "height": 30.83
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 226.77,
+        "x1": 294.05,
+        "y1": 274.39,
+        "width": 240.05,
+        "height": 47.62
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 10,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-20-p010.png",
+      "caption_text": "Figure 20: Combining our method with the method of [Lipman 2012] in order to avoid mesh re\ufb01nement. A mesh is deformed into an unnatural highly distorted con\ufb01guration. We applied the meth- ods of [Liu et al. 2008; Xu et al. 2011; Weber et al. 2012] which all failed to produce bijective maps. We also applied the algorithm of [Lipman 2012], by setting the upper bound on conformal dis- tortion to the maximum (k = 1 ). The method failed to \ufb01nd a bi- jective solution within the restricted convex subspace in which it operates, for several different initializations (as explained in [Lip- man 2012]). Running our method (Section 5.1) produced a bijective map by adding 9 new vertices. Finally, we used the result of our al- gorithm without re\ufb01nement (which contained 4 \ufb02ipped triangles) to initialize Lipman\u2019s algorithm. This time, the algorithm of Lipman\u2019s produced a bijective result. The color visualization shows the con- formal distortion k.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 435.78,
+        "x1": 567.5,
+        "y1": 596.59,
+        "width": 522.68,
+        "height": 160.81
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 310.83,
+        "x1": 558.0,
+        "y1": 455.09,
+        "width": 240.05,
+        "height": 144.26
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-21",
+      "label": "21",
+      "page": 10,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-21-p010.png",
+      "caption_text": "Figure 21: Parametrization with aligned sharp features and bound- ary. The front of the fandisk model is cut to a topological disk and mapped using our algorithm to obtain an injective feature aligned parametrization. The image of the boundary is a weakly self-overlapping polygon with two singularities of index 1. The tri- angulation angles (Section 3.2) at the singularities (marked black) are precisely 2 \u03c0 . The color visualization and the histogram show the conformal distortion. No re\ufb01nement was needed.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 135.51,
+        "x1": 567.5,
+        "y1": 593.74,
+        "width": 522.68,
+        "height": 458.24
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 592.88,
+        "x1": 558.0,
+        "y1": 669.5,
+        "width": 240.05,
+        "height": 76.61
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-22",
+      "label": "22",
+      "page": 11,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-22-p011.png",
+      "caption_text": "Figure 22: Image deformation. The thickness of the doughnut is changed by scaling its inner boundary. A single straight cut is made, connecting the inner and outer boundaries. ARAP produced a map with 1,802 \ufb02ipped triangles out of 12,720. [Xu et al. 2011] produced a bijective map, but the conformal distortion is high and is mostly concentrated near the inner boundary. Our dual harmonic map (Section 5.1) produced a bijective map, with overall low dis- tortion, without any mesh re\ufb01nement.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 46.08,
+        "x1": 567.18,
+        "y1": 204.81,
+        "width": 522.36,
+        "height": 158.73
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 195.74,
+        "x1": 294.05,
+        "y1": 272.35,
+        "width": 240.05,
+        "height": 76.61
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-23",
+      "label": "23",
+      "page": 12,
+      "image_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/figures/figure-23-p012.png",
+      "caption_text": "Figure 23: Computing full rotation indices R \u03b1 + \u03b2 for 3 different con\ufb01gurations.",
+      "figure_bbox": {
+        "x0": 44.82,
+        "y0": 102.98,
+        "x1": 567.65,
+        "y1": 225.32,
+        "width": 522.83,
+        "height": 122.35
+      },
+      "caption_bbox": {
+        "x0": 317.95,
+        "y0": 223.18,
+        "x1": 558.0,
+        "y1": 242.96,
+        "width": 240.05,
+        "height": 19.78
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

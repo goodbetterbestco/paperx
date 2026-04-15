@@ -1,0 +1,3035 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+  "title": "Why Aspect Graphs Are Not (Yet) Practical for Computer Vision",
+  "source": {
+    "pdf_path": "docs/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision.pdf",
+    "page_count": 8,
+    "page_sizes_pt": [
+      {
+        "page": 1,
+        "width": 612.48,
+        "height": 791.04
+      },
+      {
+        "page": 2,
+        "width": 622.08,
+        "height": 797.28
+      },
+      {
+        "page": 3,
+        "width": 618.24,
+        "height": 794.88
+      },
+      {
+        "page": 4,
+        "width": 618.24,
+        "height": 794.16
+      },
+      {
+        "page": 5,
+        "width": 619.68,
+        "height": 795.6
+      },
+      {
+        "page": 6,
+        "width": 618.24,
+        "height": 795.12
+      },
+      {
+        "page": 7,
+        "width": 616.32,
+        "height": 792.96
+      },
+      {
+        "page": 8,
+        "width": 902.4,
+        "height": 1065.36
+      }
+    ]
+  },
+  "build": {
+    "created_at": "2026-04-15T17:23:35Z",
+    "updated_at": "2026-04-15T17:23:35Z",
+    "builder_version": "0.2.0",
+    "sources": {
+      "native_pdf": true,
+      "layout_engine": "docling",
+      "math_engine": "docling+heuristic",
+      "figure_engine": "local",
+      "text_engine": "native_pdf"
+    },
+    "flags": {
+      "use_external_layout": true,
+      "use_external_math": true,
+      "rebuild": false
+    },
+    "inputs": {
+      "pdf": {
+        "path": "docs/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision.pdf",
+        "exists": true,
+        "size_bytes": 143681,
+        "modified_at": "2026-04-13T16:18:56Z",
+        "sha256": "0e2c898df4f60b1ece7d86fcd886e8dde382ceeb9489405a895a1686b64d2e3b"
+      },
+      "external_layout": {
+        "path": "docs/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/canonical_sources/layout.json",
+        "exists": true,
+        "size_bytes": 110944,
+        "modified_at": "2026-04-15T16:59:27Z",
+        "sha256": "a6fee07bc9ec9f85f05b77f26dc5c2c9db5e6e04a5f22e1f561bedb9d6ed91d0"
+      },
+      "external_math": {
+        "path": "docs/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/canonical_sources/math.json",
+        "exists": true,
+        "size_bytes": 43,
+        "modified_at": "2026-04-15T16:59:27Z",
+        "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
+      }
+    },
+    "pipeline": {
+      "builder_version": "0.2.0",
+      "fingerprint": "77418ae377b752ecebb38f9df191aea6d09fc6da4882215f931f872c2593f259",
+      "modules": {
+        "scripts/kernel/canonical/reconcile_blocks.py": "05f94040243e1552b20b2fbc45c9a2efadc8957f148888a5e7d09d66eaae5a14",
+        "scripts/kernel/canonical/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
+        "scripts/kernel/canonical/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
+        "scripts/kernel/canonical/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
+        "scripts/kernel/canonical/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
+        "scripts/kernel/canonical/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
+        "scripts/kernel/canonical/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
+        "scripts/kernel/canonical/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "scripts/kernel/canonical/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
+        "scripts/kernel/canonical/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "scripts/kernel/canonical/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      }
+    }
+  },
+  "front_matter": {
+    "title": "Why Aspect Graphs Are Not (Yet) Practical for Computer Vision",
+    "authors": [
+      {
+        "name": "Olivier Faugeras",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Joe Mundy",
+        "affiliation_ids": [
+          "aff-2"
+        ]
+      },
+      {
+        "name": "KEVIN BOWYER",
+        "affiliation_ids": [
+          "aff-3"
+        ]
+      },
+      {
+        "name": "Narendra Ahuja",
+        "affiliation_ids": [
+          "aff-4"
+        ]
+      },
+      {
+        "name": "Charles Dyer",
+        "affiliation_ids": [
+          "aff-5"
+        ]
+      },
+      {
+        "name": "Alex Pentland",
+        "affiliation_ids": [
+          "aff-6"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "aff-1",
+        "department": "Massachuserrs Institute o f Technology",
+        "institution": "",
+        "address": ""
+      },
+      {
+        "id": "aff-2",
+        "department": "RAMESH JAIN University of Michigan",
+        "institution": "",
+        "address": ""
+      },
+      {
+        "id": "aff-3",
+        "department": "INRIA. Sophiu-Antipolis",
+        "institution": "",
+        "address": ""
+      },
+      {
+        "id": "aff-4",
+        "department": "KATSUSHI IKEUCHI Carnegie Mellon University",
+        "institution": "",
+        "address": ""
+      },
+      {
+        "id": "aff-5",
+        "department": "University of Illinois",
+        "institution": "",
+        "address": ""
+      },
+      {
+        "id": "aff-6",
+        "department": "University of Wisconsin",
+        "institution": "",
+        "address": ""
+      }
+    ],
+    "abstract_block_id": "blk-front-abstract-1",
+    "funding_block_id": null
+  },
+  "styles": {
+    "document_style": {},
+    "category_styles": {},
+    "block_styles": {}
+  },
+  "sections": [
+    {
+      "id": "sec-1",
+      "label": "1",
+      "title": "Introduction",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0002",
+        "blk-paragraph-0003",
+        "blk-paragraph-0004",
+        "blk-paragraph-0005",
+        "blk-paragraph-0006",
+        "blk-paragraph-0007",
+        "blk-paragraph-0008",
+        "blk-paragraph-0009",
+        "blk-paragraph-0010",
+        "blk-paragraph-0011",
+        "blk-paragraph-0012",
+        "blk-paragraph-0013",
+        "blk-paragraph-0014",
+        "blk-paragraph-0016",
+        "blk-list_item-0017",
+        "blk-list_item-0018",
+        "blk-list_item-0019",
+        "blk-list_item-0020",
+        "blk-list_item-0021",
+        "blk-paragraph-0022",
+        "blk-list_item-0023"
+      ],
+      "children": [],
+      "source_spans": []
+    },
+    {
+      "id": "sec-3",
+      "label": "3",
+      "title": "3 RESPONSES TO THE CRITIQUES",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0024",
+        "blk-paragraph-0026",
+        "blk-paragraph-0027",
+        "blk-paragraph-0028",
+        "blk-paragraph-0029",
+        "blk-paragraph-0030",
+        "blk-paragraph-0031",
+        "blk-paragraph-0032",
+        "blk-paragraph-0033",
+        "blk-paragraph-0034",
+        "blk-list_item-0036",
+        "blk-list_item-0037",
+        "blk-list_item-0038",
+        "blk-paragraph-0039",
+        "blk-paragraph-0040",
+        "blk-paragraph-0041",
+        "blk-paragraph-0042",
+        "blk-paragraph-0043",
+        "blk-paragraph-0045",
+        "blk-paragraph-0046",
+        "blk-paragraph-0047",
+        "blk-list_item-0048",
+        "blk-paragraph-0049",
+        "blk-list_item-0050",
+        "blk-paragraph-0051",
+        "blk-paragraph-0052",
+        "blk-list_item-0053",
+        "blk-paragraph-0054",
+        "blk-list_item-0055",
+        "blk-paragraph-0056",
+        "blk-list_item-0057",
+        "blk-paragraph-0058",
+        "blk-list_item-0059",
+        "blk-paragraph-0060",
+        "blk-paragraph-0061",
+        "blk-paragraph-0062",
+        "blk-paragraph-0064",
+        "blk-paragraph-0065",
+        "blk-paragraph-0066",
+        "blk-paragraph-0067",
+        "blk-paragraph-0068",
+        "blk-paragraph-0069",
+        "blk-paragraph-0070",
+        "blk-paragraph-0071",
+        "blk-paragraph-0072",
+        "blk-paragraph-0073"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 360.72,
+            "y0": 227.61,
+            "x1": 525.57,
+            "y1": 233.76,
+            "width": 164.85,
+            "height": 6.15
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-appendix",
+      "label": null,
+      "title": "Appendix",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0074",
+        "blk-paragraph-0075",
+        "blk-paragraph-0076",
+        "blk-paragraph-0077"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 405.84,
+            "y0": 58.31,
+            "x1": 456.65,
+            "y1": 63.77,
+            "width": 50.81,
+            "height": 5.46
+          },
+          "engine": "docling"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-front-abstract-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "[missing from original]"
+          }
+        ]
+      },
+      "source_spans": [],
+      "alternates": [],
+      "review": {
+        "status": "edited",
+        "risk": "low",
+        "notes": "[missing from original]"
+      }
+    },
+    {
+      "id": "blk-paragraph-0002",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The uspecr,vi-qh of an object is a graph structure in which each node represents a general view of the object as seen from some maximal, connected cell of viewpoint space. each arc represents an accidental uiew (or uisual eucnt) which occurs on the boundary between two cells of general viewpoint. there is a node for each possible general view of the object. and there is an arc for each possible visual event. The aspect graph representation is often considered to have great potential for computer vision. In the last few years. algorithms have been developed to automatically compute the aspect graphs of polyhedra. general curved objects. and even objects with articulated connections between parts. However, much of the work in this area has a somewhat theoretical flavor and it is not clear that the aspect graph representation, at least as it is currently conceived. will find practical application."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 41.28,
+            "y0": 456.63,
+            "x1": 299.12,
+            "y1": 475.09,
+            "width": 257.84,
+            "height": 18.46
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 41.28,
+            "y0": 487.05,
+            "x1": 300.14,
+            "y1": 516.74,
+            "width": 258.86,
+            "height": 29.69
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 41.28,
+            "y0": 522.81,
+            "x1": 300.07,
+            "y1": 552.98,
+            "width": 258.79,
+            "height": 30.17
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 41.28,
+            "y0": 559.05,
+            "x1": 299.98,
+            "y1": 577.22,
+            "width": 258.7,
+            "height": 18.17
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 59.52,
+            "y0": 583.29,
+            "x1": 269.16,
+            "y1": 589.22,
+            "width": 209.64,
+            "height": 5.93
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 41.04,
+            "y0": 601.05,
+            "x1": 300.83,
+            "y1": 702.5,
+            "width": 259.79,
+            "height": 101.45
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0003",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "For this panel discussion, several distinguished researchers have agreed to provide a critique of the aspect graph approach, and several other distinguished researchers who are working in the aspect graph area have agreed to respond to the critiques. It is hoped that this exchange will help to identify the volved in this area of research. essential issues in-"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 308.88,
+            "y0": 354.84,
+            "x1": 566.5,
+            "y1": 433.22,
+            "width": 257.62,
+            "height": 78.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0004",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "As far as the first point goes, we know that the cells in viewpoint space that define the aspect graph of an object are separated by surfaces (or curves. if we stay on the Gaussian sphere) which signal a change in the topology of the silhouette of the object. Those visual events can in principle be computed from the equations defining the object, but mathematicians are presently in the blue for telling us at which scale on the silhouette the changes will happen. Some of them may happen at a large scale and some at a \"microscopic\" scale. but predicting the scale which would allow us not to compute everything and to group cells together seems to be a very hard mathematical question which is as yet unanswered. To quote a mathematician friend of mine. 'mathematics has nothing to say about scale.'"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 309.12,
+            "y0": 589.92,
+            "x1": 567.91,
+            "y1": 703.94,
+            "width": 258.79,
+            "height": 114.02
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 36.96,
+            "y0": 58.17,
+            "x1": 297.75,
+            "y1": 112.1,
+            "width": 260.79,
+            "height": 53.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0005",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "This has very serious implications for computer vision, since we know that the number of cells in the aspect graph of a real object can easily reach several million and many of those may be irrelevant at the scale at which the observations are made. But because of the previous mathematical lack of understanding of the scale at which the visual events occur, we must compute all of them before we can attempt to group them. Therefore, there does not seem to be any practical means in view to reduce the complexity of the computation of aspect graphs."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.2,
+            "y0": 118.17,
+            "x1": 296.94,
+            "y1": 231.38,
+            "width": 259.74,
+            "height": 113.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0006",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The second reason that I believe aspect graphs are difficult to use is the following. Suppose we have computed the aspect graph of an object and we observe that object from an unknown viewpoint (I assume that the object is isolated and will not deal with the even more difficult problem of occlusion). We extract, say the silhouette, and are faced with the task of matching it to one of the silhouettes stored in the aspect graph modeling that object. If the number of cells is high, let use say a few thousands, then this is a very difficult indexing problem: we probably do not want to try to match our measured silhouette to all those stored in the model, even i f we have a highly parallel processor. Good solutions to this problem are unknown to me. Of course, it becomes even more difficult if we do not assume that we know which object we are looking atwe then also have to index in our data base of models."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.68,
+            "y0": 237.45,
+            "x1": 296.98,
+            "y1": 435.86,
+            "width": 259.3,
+            "height": 198.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0007",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "I believe that this indexing problem is one of the key issues that the computer vision community has to face in the next few years and for which genuinely new ideas have to be found because none of the available ones will work."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.92,
+            "y0": 442.17,
+            "x1": 296.47,
+            "y1": 495.62,
+            "width": 258.55,
+            "height": 53.45
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0008",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "To summarize, I believe there are two main reasons why aspect graphs are so difficult to use and, strangely enough, those two reasons correspond to two very big unsolved issues in computer vision. The first issue is our poor understanding of what scale means. This lack of understanding makes it extremely costly to compute the aspect graph of real objects. The second issue is our just as poor understanding of what model indexing is all about."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.2,
+            "y0": 501.72,
+            "x1": 296.45,
+            "y1": 603.86,
+            "width": 259.25,
+            "height": 102.14
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0009",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Joe Mundy, General Electric C, R, & D."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.68,
+            "y0": 620.55,
+            "x1": 229.2,
+            "y1": 627.03,
+            "width": 191.52,
+            "height": 6.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0010",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs have some appeal in that they provide an exhaustive catalog of the distinct views of a 3D object as projected onto an image plane. The great weakness of the approach is the use of feature topology to define the boundary between aspects. A view is defined in terms of the usual concepts ofjunction (or vertex), edge. and face topology. Whenever this structure changes as with res p "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-1"
+          },
+          {
+            "kind": "text",
+            "text": " to viewpoint, a new aspect is generated."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 638.49,
+            "x1": 296.82,
+            "y1": 703.96,
+            "width": 259.38,
+            "height": 65.47
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0011",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "On the one hand, these topological structures are well defined and are well developed within the mathematical literature. On the other hand, there is little reason to believe that these topological relations can be reliably retrieved from an image, even without considering occlusion. For example, it is well known that the broadly used Canny edge detector is unable to recover junctions. In our own experience, it is also difficult to recover internal boundary edges between surface faces due to low contrast and self-shadows. One can rely only on recovering fragments of occluding boundaries as features to index into 3D descriptions."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 306.72,
+            "y0": 81.93,
+            "x1": 565.87,
+            "y1": 219.62,
+            "width": 259.15,
+            "height": 137.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0012",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "In addition it is important to be able to determine the pose of the 3D model from image features so that the model can be projected onto the image to guide additional feature extraction. This requirement introduces the concept of an 'effective viewpoint,' which we have used in our model-based vision system. Briefly, an effective set of features are those features which can be used to determine model pose with good accuracy in the context of feature positional uncertainties caused by segmentation. Since pose recovery accuracy depends on viewpoint for a given set of features, additional features are required to cover the full range of viewpoints. The boundaries of effective performance for feature groups produce a kind of 'aspect' graph but in terms not of topology, but of pose recovery accuracy. The boundaries between these 'aspects' are not sharp and we represent the pose accuracy for a feature set as a variance distributed over the viewsphere. We select feature groups from a model which maximize performance for each viewpoint."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 306.96,
+            "y0": 225.45,
+            "x1": 565.59,
+            "y1": 448.82,
+            "width": 258.63,
+            "height": 223.37
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0013",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Current research on aspect graphs does not typically take into account these feature recovery and pose computation problems. (There has been some work on sensor modeling by Ikeuchi and Kanade in this context.) A much better direction for research on aspect graphs would be to form a set of 'recoverable aspects,' which quantify the image segmentation problem and potential self illumination effects. Such notions can be generalized to define an aspect graph which produces feature sets that are likely to be recovered from segmentation and are also effective in indexing model class and are accurate in pose recovery. These properties are difficult to quantify but this evolution of the aspect graph will be needed to make the idea of precomputed views an attractive approach for object recognition."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 305.76,
+            "y0": 455.53,
+            "x1": 564.45,
+            "y1": 629.78,
+            "width": 258.69,
+            "height": 174.25
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0014",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Narendra Ahuja, University o f Nlinois"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "The aspect graph is an intuitive, simple, and appealing method of representing an object, since it enumerates all appearances, or aspects, of the object, along with the viewpoints from which these aspects can be seen. In a sense. this seems to be the minimal information about the object that any complete representation must be able to capture (for example. to match an image of an object to the object.) Thc different representations in vogue differ in (i) how the aspect is defined, and (ii) whether the different aspects are captured implicitly or explicity. According to the answers chosen to these questions, different representations have different mixes of advantages and disadvantages, and different domains of applicability. This implies that the question of whether a method of object representation (for that matter, any representation) is good or not can be answered only with respect to its desired usage."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 305.28,
+            "y0": 647.57,
+            "x1": 483.15,
+            "y1": 653.43,
+            "width": 177.87,
+            "height": 5.86
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 305.28,
+            "y0": 665.05,
+            "x1": 563.08,
+            "y1": 707.3,
+            "width": 257.8,
+            "height": 42.25
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 44.4,
+            "y0": 63.21,
+            "x1": 305.13,
+            "y1": 211.98,
+            "width": 260.73,
+            "height": 148.77
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0016",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "In what has come to be known as the aspect graph representation, (i) an aspect is defined as the topological structure of an image of the geometric contours of the object. specifically, orientation and depth boundaries; and (ii) all different aspects and the associated sets of viewpoints are explicitly specified. The most common application of aspect graphs is object recognition (aspect graph is a misfit if the objective is to compute, say, the size of an object.) The discussion below is for this definition and application of aspect graphs; the shortcomings listed are direct consequences of the specific mix of object characteristics made implicit and explicit in the definition."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 44.4,
+            "y0": 217.92,
+            "x1": 305.55,
+            "y1": 368.66,
+            "width": 261.15,
+            "height": 150.74
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0017",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "I. The implicit presumption that the geometric contour information is sufficient for recognition is questionable. For example. the gray level and relative size information may be necessary, or even crucial."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 47.04,
+            "y0": 398.25,
+            "x1": 305.88,
+            "y1": 440.42,
+            "width": 258.84,
+            "height": 42.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0018",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Generating an aspect graph is a very complex computation as a function of object complexity."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 47.28,
+            "y0": 446.73,
+            "x1": 305.6,
+            "y1": 464.66,
+            "width": 258.32,
+            "height": 17.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0019",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs are very large."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 57.36,
+            "y0": 470.73,
+            "x1": 207.24,
+            "y1": 476.68,
+            "width": 149.88,
+            "height": 5.95
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0020",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "A consequence of (3) above is that the cost of using aspect graphs is high. Significant additions must be made to the representation to efficiently retrieve object information (e.g.. methods for indexing the graph to access aspects of specific types). Without this, a huge search effort is necessary to match a view to an object."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 47.04,
+            "y0": 482.49,
+            "x1": 305.95,
+            "y1": 548.66,
+            "width": 258.91,
+            "height": 66.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0021",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Extraction of line drawings corresponding to geometric contours from noisy images is highly unreliable. Since lines are the source of all information in aspect graphs, any errors therein may lead to serious errors in results. Line drawing extraction may be made robust by carrying out extensive three-dimensional reconstruction, but this would mean solving the three-dimensional reconstruction problem first (at least partly), and thus collecting much more object information in the process than called for by the aspect graph representation. But this changes the problem fundamentally: with the threedimensional structure already extracted. recognition may be easier, e.g., by using a more complete threedimen-"
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 46.8,
+            "y0": 554.4,
+            "x1": 307.28,
+            "y1": 702.74,
+            "width": 260.48,
+            "height": 148.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0022",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "sional, surface-based representation rather than the aspect graph (i.e., by using a richer definition of the aspew."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 313.92,
+            "y0": 62.01,
+            "x1": 572.71,
+            "y1": 93.86,
+            "width": 258.79,
+            "height": 31.85
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0023",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Related to (5) above is another issue. Objects contain geometric as well as brightness contours, and confusing one type with the other would be catastrophic since each line means a lot. How does one distinguish between the two? It appears crucial that this distinction be made before any matching with aspect graphs begins. But it may not be easy to do so without extensive analysis, such as mentioned in (5). which would again make the use o f aspect graphs superfluous in the presence of the extracted additional information."
+          }
+        ],
+        "marker": "6.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 314.16,
+            "y0": 99.21,
+            "x1": 573.42,
+            "y1": 211.94,
+            "width": 259.26,
+            "height": 112.73
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0024",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Charles Dyer, University of Wisconsin"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "I see the major criticisms of the aspect graph to be of two general types: one is based on how an aspect graph is defined, and the second is based on how it will be used."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 314.88,
+            "y0": 248.1,
+            "x1": 494.36,
+            "y1": 253.96,
+            "width": 179.48,
+            "height": 5.86
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 314.88,
+            "y0": 265.56,
+            "x1": 572.58,
+            "y1": 295.94,
+            "width": 257.7,
+            "height": 30.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0026",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The first issue deals with questions such as what kinds of models and features define the visual events that identify a change in the aspect of an object. To date, the primary concern of most researchers has been on how a complete set of topologically-distinct views can be enumerated given a particular type of object model and image features generated by that model. The use of edge and vertex features generated by a polyhedral model was an important first step because it led to precise algorithms for computing visual events and aspect graphs. Polyhedral models are also important as approximations of natui rai, piecewise-smooth 3D shapes. As in computer graphics, the linear features of polyhedra permit faster algorithms than are possible using smooth models and complex numerical techniques. As long as the algorithms that use the representation (e.g., indexing and matching in object recognition) take into account that the model is an approximation of a smooth object, this is an important and practical tradeoff."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 314.87,
+            "y0": 301.77,
+            "x1": 573.2,
+            "y1": 524.9,
+            "width": 258.33,
+            "height": 223.13
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0027",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "One of the negative results of work using polyhedral models was the realization that aspect graphs can be extremely large for complex objects containing many features. Consequently, new models and features have been used to define the aspects of an object. For example, piecewise smooth models (see work by Ponce. Kriegman, Bowyer, and others), models decomposed into parts (see Pentland below), and features generated by only the occluding contour of a model (see the paper by Seales and Dyer in the Workshop Proceedings) have been studied. These approaches are important because they focus on ways of (1) reducing the number of features, leading to a smaller aspect graph, and (2) restricting the types of features to the most relevant and detectable ones. Incorporating scale is another way to achieve these same ends. The important point is that many types of features and ohject models can be used within this framework. The fact that researchers continue to change the way aspect graphs are defined only emphasizes the fact that the core ideas lead to multiple interesting realizations."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 315.12,
+            "y0": 530.97,
+            "x1": 573.53,
+            "y1": 704.42,
+            "width": 258.41,
+            "height": 173.45
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 43.44,
+            "y0": 59.13,
+            "x1": 303.48,
+            "y1": 124.82,
+            "width": 260.04,
+            "height": 65.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0028",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Even with a more selective set of object features, the size of the aspect graph can still grow very large. This is because aspect is a globul property defined in terms of all visible features. and a visual event is produced by a change in any one of those features. Another consequence of this emphasis on creating a set of global descriptions (i.e.. image structure graphs) of the views of an object, is that information about the visibility and geometry of individual features and groups of features is less accessible."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 44.4,
+            "y0": 130.41,
+            "x1": 304.57,
+            "y1": 244.58,
+            "width": 260.17,
+            "height": 114.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0029",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The aspect graph is but one type of the more general class of viewer-centered 3D object representations that incorporates a complete analysis of the continuous viewpoint space in order to explicitly describe the features that are detectable in an image. Mundy's effective feature sets and Ikeuchi's sets of visible features fit into this more general framework. Another alternative is to create structures that are organized in terms of the appearance of individual features. This approach emphasizes making explicit how interfeature relationships and geometric features in an image change with viewpoint (i.e.. pose)."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 45.12,
+            "y0": 250.41,
+            "x1": 304.09,
+            "y1": 376.1,
+            "width": 258.97,
+            "height": 125.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0030",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Our work on the \"asp\" and the \"rim appearance representation\" does just this-characterizing the range of viewpoints where each feature is visible and the geometry of its appearance over that cell of viewpoint space. For example, the geometry of T-junctions and curvature extrema of the occluding contour of a shape can be explicitly represented. What is novel about this approach is that not only is information organized in terms of individual features instead of the global image structure graph of features. but this organization (1) is usually much smaller than the aspect graph, and (2) explicitly describes how features dynamically change over viewpoint. The second point is especially important if one of the uses of the representation is with a dynamic vision system where spatiotemporal data are being used and therefore constraints are available from the way image features change over time."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 45.6,
+            "y0": 382.41,
+            "x1": 305.17,
+            "y1": 580.58,
+            "width": 259.57,
+            "height": 198.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0031",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The second broad criticism is based on how the aspect graph will be used. Primarily, this concerns the indexing problem for object recognition. Because each node in an aspect graph represents a set of views (or, equivalently, poses), the usual assumption is that recognition will use a brute-force. node-parallel search to find the best matching aspect for a given (segmented) set of image features. This aspect classification procedure can then be followed by a pose calculation step if necessary. This use of aspect graphs completely ignores aspect cell boundaries, cell adjacency information, and intracell geometry of the views. Successful classification therefore requires the unrealistic assumptions that the image has been segmented into the correct global image structure graph of features, and interobject occlusion is largely absent."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 46.56,
+            "y0": 586.41,
+            "x1": 306.18,
+            "y1": 698.9,
+            "width": 259.62,
+            "height": 112.49
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0032",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "To avoid these problems, one can perform indexing and matching based on the appearance of individual features or relations between small groups of features. Selected feature configurations can be described in terms of the viewpoint cells in which they are visible and their changing geometry within a cell. For example, a T-junction, formed by the apparent intersection of two rim contours of a model, is stable over a bounded cell of viewpoint space. The boundaries of this cell can be precomputed in closed form from the model. The orientation and angle sizes of the \"T\" feature can be described as a function of viewpoint within this cell. A correspondence between an image T-junction and a model T-junction therefore,constrains the possible viewpoints of the object to the associated cell of viewpoint space where this match is geometrically consistent. We have tested this approach using the rim appearance representation. implementing a system that finds the best consistent match with a set of image features and its associated cell of viewpoint space (see the Workshop Proceedings). Finally, because this representation framework is dynamic in the sense that features are represented as a function of viewpoint, when the viewer or object is moving, indexing could be based on how appearance is changing, matching model-based \"spatioviewpointal\" structures with spatiotemporal image data."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 313.2,
+            "y0": 118.65,
+            "x1": 572.82,
+            "y1": 424.58,
+            "width": 259.62,
+            "height": 305.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0033",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "In summary, aspect graphs are an important first step in analyzing methods of encoding viewer-centered descriptions of 3D shape. In my view. future directions should deemphasize the issue of cataloging the topologically distinct views of an object. Greater emphasis is needed on determining geometric constraints on viewpoint, and modeling how detectable features change over viewpoint."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 314.4,
+            "y0": 430.89,
+            "x1": 572.39,
+            "y1": 520.82,
+            "width": 257.99,
+            "height": 89.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0034",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Alex Pentland. MIT"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "There are three central criticisms of the aspect graph approach that are raised. in various forms, by each of Professor Faugeras, Dr. Mundy, and Professor Ahuja. These criticisms are:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 314.16,
+            "y0": 550.47,
+            "x1": 408.14,
+            "y1": 556.76,
+            "width": 93.98,
+            "height": 6.29
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 314.16,
+            "y0": 568.65,
+            "x1": 571.75,
+            "y1": 611.06,
+            "width": 257.59,
+            "height": 42.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0036",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs can be very large and complex, leading to dimculties in matching, indexing, etc."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 314.64,
+            "y0": 623.37,
+            "x1": 572.11,
+            "y1": 641.06,
+            "width": 257.47,
+            "height": 17.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0037",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Matching image contours to aspect graphs can require a good segmentation, which is difficult to achieve."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 314.16,
+            "y0": 647.13,
+            "x1": 571.59,
+            "y1": 664.82,
+            "width": 257.43,
+            "height": 17.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0038",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs are ill-defined (especially with respect to scale and curvature) and impoverished (including no grey-level or sensor information)."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 313.68,
+            "y0": 670.89,
+            "x1": 571.73,
+            "y1": 700.58,
+            "width": 258.05,
+            "height": 29.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0039",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "I agree strongly with these points; however, I also see that there may be general methods of reducing or even avoiding these difficulties. In particular:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 48.96,
+            "y0": 57.03,
+            "x1": 308.27,
+            "y1": 87.6,
+            "width": 259.31,
+            "height": 30.57
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0040",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "A general method for avoiding the complexity of full aspect graphs is to apply the aspect graph approach only to component parts, subassemblies or critical features. In our work (e.g.. Dickinson. Pentland, and Rosenfeld, elsewhere in this workshop) we have applied them only to component parts, so that the resulting aspect graphs are extremely simple. The major difficulty of using components is that it forces you to confront the occlusion problem 'head on'-which is perhaps not such a bad idea in any case."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 49.2,
+            "y0": 93.36,
+            "x1": 310.61,
+            "y1": 206.16,
+            "width": 261.41,
+            "height": 112.8
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0041",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The segmentation problem (e.g., edge and face finding) is a general problem that plagues all of machine vision, and so in one sense is not an objection to the aspect graph approach per se. However, in aspect graph applications knowledge about the types of aspect graph that can occur can be used to constrain the segmentation, so that segmentation becomes model based rather than generic. Thus if there are only a small set of possible aspect graphs. as in our case where only generic object parts are modeled, we have found that the problem of segmentation can become much easier."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 50.64,
+            "y0": 212.16,
+            "x1": 309.22,
+            "y1": 337.92,
+            "width": 258.58,
+            "height": 125.76
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0042",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Similarly, the criticism that aspect graphs are illdefined and improverished is a problem common to many representations used in machine vision. I suggest, however, that many of these problems can be minimized by moving from edge-bused aspect graphs to face-based aspect graphs. as was done in our work. An object's faces may be defined as a minimal set of 'smooth' surfaces that approximate its 3-D surface to within some tolerance (e.g., a set of low-order polynomials plus boundaries). The approximation of surfaces in this manner is well understood (although some stability problems remain) and allows inference of grey-level appearance, texture foreshortening, etc. It also shifts the low-level processing from edge finding to region extraction, which for range imagery appears to be a more tractable problem."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 50.88,
+            "y0": 344.16,
+            "x1": 310.87,
+            "y1": 518.16,
+            "width": 259.99,
+            "height": 174.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0043",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Ramesh Jain. University o f Michigan"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "The critiques of aspect graphs have raised several interesting issues. Clearly, there are many problems to be solved before we can use aspect graphs in object recognition systems. Let us first consider why aspect graphs are useful and then address specific issues raised above."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 51.84,
+            "y0": 542.36,
+            "x1": 225.9,
+            "y1": 548.03,
+            "width": 174.06,
+            "height": 5.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 51.84,
+            "y0": 560.16,
+            "x1": 310.48,
+            "y1": 613.92,
+            "width": 258.64,
+            "height": 53.76
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0045",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Object recognition has two distinct phases: learning or model formation, and recognition using images. The learning phase is off-line and, therefore, it does not matter much if this phase is slow. What is important is that the on-line recognition phase be completed fast."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 51.6,
+            "y0": 619.71,
+            "x1": 310.6,
+            "y1": 673.44,
+            "width": 259.0,
+            "height": 53.73
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0046",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Most objects to be recognized are three-dimensional. They must be recognized from their two-dimensional views. In addition to the well known problem that the intensity value at a point is the result of several factors, we have to consider the fact that the objects in images appear in 'viewer-centered' representation. The models used for recognition of three-dimensional objects in a two-dimensional viewer-centered space will be multipleview representations. If we try to use three-dimensional object-centered models, the on-line recognition time will be very slow. Thus, aspect graphs are useful only if they help us in solving the standard time-memory trade-off."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 50.88,
+            "y0": 679.44,
+            "x1": 309.55,
+            "y1": 697.2,
+            "width": 258.67,
+            "height": 17.76
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0047",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Now, let us consider the key issues raised by the critics."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.48,
+            "y0": 176.88,
+            "x1": 576.08,
+            "y1": 194.16,
+            "width": 257.6,
+            "height": 17.28
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0048",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Our poor understanding of what scale means, which makes it extremely costly to compute the aspect graph of real objects."
+          }
+        ],
+        "marker": "1.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.0,
+            "y0": 211.92,
+            "x1": 574.99,
+            "y1": 241.92,
+            "width": 256.99,
+            "height": 30.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0049",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The scale issue is not only related to aspect graphs, but edges, comers, and all other features that we can think of. It starts much before we use a digital image. Did we sample an image at the rate to preserve all information? Researchers are trying to understand this issue in other contexts and aspect graphs will be no exception."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.0,
+            "y0": 248.16,
+            "x1": 575.53,
+            "y1": 313.44,
+            "width": 257.53,
+            "height": 65.28
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0050",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Our poor understanding of what model indexing is all about."
+          }
+        ],
+        "marker": "2.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.0,
+            "y0": 319.44,
+            "x1": 575.19,
+            "y1": 337.68,
+            "width": 257.19,
+            "height": 18.24
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0051",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "I agree with this completely. Indexing is a key issue that we have failed to address adequately. Whether we use aspect graphs or some other representations, if we want an object recognition system to work with a large number of objects, we will have to deal with indexing problem. Aspect graphs are responsible neither for our ignoring the indexing problem, nor for creating this problem."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.72,
+            "y0": 343.32,
+            "x1": 576.64,
+            "y1": 434.16,
+            "width": 257.92,
+            "height": 90.84
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0052",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Before going to other issues, I must point out that Professor Faugeras is aware of the above problems being general problems, he himself says, 'I believe there are two main reasons why aspect graphs are so difficult to use and, strangely enough, those two reasons correspond to two very big unsolved issues in computer vision.'"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.72,
+            "y0": 440.4,
+            "x1": 576.58,
+            "y1": 506.64,
+            "width": 257.86,
+            "height": 66.24
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0053",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "There is little reason to believe that the topological relations can be reliably retrieved from an image, even without considering occlusion."
+          }
+        ],
+        "marker": "3.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 319.2,
+            "y0": 512.55,
+            "x1": 576.64,
+            "y1": 542.64,
+            "width": 257.44,
+            "height": 30.09
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0054",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Based on the amount of research effort spent on edge detection algorithms, and on their success, there is no reason to believe that we will be able to develop a 'universal' edge detector to reliably recover edges in an arbitrary image. Thus, there is no hope of retrieving the aspect graphs from images. In fact, we have to learn to live in this imperfect world of unreliable edges. However, why should we worry about this problem in the context of aspect graph generation? Aspect graphs will be generated off-line either from models or under controlled conditions, even, with human interaction."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.96,
+            "y0": 548.64,
+            "x1": 577.0,
+            "y1": 674.64,
+            "width": 258.04,
+            "height": 126.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0055",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "It is important to be able to determine the pose of the 3D model from image features so that the model can be projected onto the image to guide additional feature extrxfion."
+          }
+        ],
+        "marker": "4.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 318.96,
+            "y0": 680.16,
+            "x1": 576.56,
+            "y1": 698.45,
+            "width": 257.6,
+            "height": 18.29
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 46.56,
+            "y0": 63.93,
+            "x1": 307.19,
+            "y1": 81.86,
+            "width": 260.63,
+            "height": 17.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0056",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Indexing using aspect graphs is precisely going to do this. In fact. Mundy himself says. \"A much better direction for resezlrch on aspect graphs would be to form a set of \"recovenble aspects.\" which quantify the image segmentation problem and potential self illumination effects. Such notions can be generalized to define an aspect graph which produces feature sets that are likely to be recovered from segmentation and are also effective in indexing model class and are accurate in pose recovery.\""
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 46.8,
+            "y0": 87.69,
+            "x1": 307.77,
+            "y1": 189.14,
+            "width": 260.97,
+            "height": 101.45
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0057",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The implicit presumption that the geometric contour information is sufficient for recognition is questionable. For example. the gray level and relative size information may be necessary, or even crucial."
+          }
+        ],
+        "marker": "5.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.0,
+            "y0": 195.21,
+            "x1": 308.34,
+            "y1": 237.38,
+            "width": 260.34,
+            "height": 42.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0058",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs are not supposed to be based only on geometric contour information. For recognition, the surface information and other features will be required. I believe, however, that the gray level depends on illumination and it will be a mistake to include such scene dependent information in object models."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.0,
+            "y0": 243.45,
+            "x1": 308.43,
+            "y1": 309.38,
+            "width": 260.43,
+            "height": 65.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0059",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Generating an aspect graph is a very complex computation as a function of object complexity."
+          }
+        ],
+        "marker": "6.",
+        "ordered": true,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.72,
+            "y0": 315.45,
+            "x1": 308.26,
+            "y1": 333.38,
+            "width": 259.54,
+            "height": 17.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0060",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Since aspect graphs are computed off-line, we can afford to spend time on these computations. The complexity of an aspect graph will depend on the complexity of the corresponding object. However, this is true for every operation, including boundary detection."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.48,
+            "y0": 339.69,
+            "x1": 309.34,
+            "y1": 393.38,
+            "width": 260.86,
+            "height": 53.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0061",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs are just an intermediate representation for object recognition. The criticism that most work in this area has been theoretical is a valid one, but not a surprising one. Efforts are underway to develop algorithms for the generation of aspect graphs at several laboratories."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.72,
+            "y0": 405.45,
+            "x1": 308.62,
+            "y1": 471.38,
+            "width": 259.9,
+            "height": 65.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0062",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Katsushi Ikeuchi. Carnegie-Mellon University"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "The critiques of aspect graphs have raised several interesting issues. However, these critiques have been based on misunderstandings or narrow interpretations of the concepts of aspects and aspect graphs. The critiques assume that aspects are narrowly defined as topologically equivalent classes of line drawings of an object. This is an incorrect assumption."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 49.2,
+            "y0": 488.91,
+            "x1": 266.1,
+            "y1": 494.7,
+            "width": 216.9,
+            "height": 5.79
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.72,
+            "y0": 506.55,
+            "x1": 308.59,
+            "y1": 584.9,
+            "width": 259.87,
+            "height": 78.35
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0064",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The definition of aspects can be based on various visible features. Originally, an aspect was defined as a class of appearance with a common topological structure. However, the concept can be broadened by replacing \"common topological structure\" with \"common set of visible features,\" and we can then evolve a family of aspects based on the features used. Using this expanded definition. aspects based on line-drawing topology are only one class within an entire family of aspects. W e can define aspects based on visible faces, edges, or vertices. Moreover, the family of aspects also has a dimension characterized by sensors: aspects under photometric stereo are different from those under a light-stripe range finder. It is important to investigate the characteristics and structure of the entire family of aspects. I claim that such a broad family of aspects is a useful, practical, and essential tool for object recognition research."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 48.24,
+            "y0": 590.97,
+            "x1": 310.38,
+            "y1": 715.7,
+            "width": 262.14,
+            "height": 124.73
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0065",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The appearance of a 3D object vanes as viewing direction varies. The changes in appearance fall into two classes: changes in aspect, and linear shape change. A change in aspect changes the overall appearance of the object, in terms of visible features. For example, a face may be visible in one aspect, then disappear when the aspect changes. On the other hand, a linear shape change preserves the overall appearance: the collection of features remains the same, but the apparent shapes and relationships may be skewed smoothly."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 317.04,
+            "y0": 134.31,
+            "x1": 575.83,
+            "y1": 248.9,
+            "width": 258.79,
+            "height": 114.59
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0066",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The goal of object recognition is to determine the presence absence of an object in an image based on visible features; object localization aims to precisely determine object attitude using visible features. Aspects characterize sets of visible features, and the types of changes that can take place among visible features. It is natural to decompose an object recognition and localization task into two phases: aspect classification (AC), and determination of linear shape change (LC). The AC phase classifies an appearance into an aspect, and then the LC phase performs attitudedetermination existence-verification within an aspect using the visible features of the aspect. The purpuse of the AC phase is to identify proper visible features and to simplify and stabilize the LC phase. Thus, we can say that the primary goal of object recognition and localization consists in the LC part."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 317.52,
+            "y0": 254.97,
+            "x1": 586.33,
+            "y1": 441.62,
+            "width": 268.81,
+            "height": 186.65
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0067",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "An LC method usually consists of an evaluation function that measures the match between visible features and model features. For example, the EGI matching function measures the similarity between visible and model EGI's to determine the attitude of an object. Lowe's matching function minimizes the distances between projected model points and image edges to verify the existence of an object."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 317.76,
+            "y0": 447.6,
+            "x1": 576.4,
+            "y1": 537.86,
+            "width": 258.64,
+            "height": 90.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0068",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "These evaluation functions are usually continuous and well-behaved within an aspect, provided that the set of visible features correctly matches the hypothesized set of model features. That is, given correct aspect classification, model features can be correctly matched to image features, and the evaluation function will converge to the correct solution. On the other hand, discontinuities exist across aspect boundaries since features appear and disappear. Thus, if an appearance is incorrectly classified into an aspect, then model and image features will be incorrectly matched, and the evaluation function may not converge to the correct solution and may instead converge to an incorrect local minimum."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 318.0,
+            "y0": 544.17,
+            "x1": 576.71,
+            "y1": 694.34,
+            "width": 258.71,
+            "height": 150.17
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0069",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Generalizing from the above discussion, the purpose of the AC phase is to determine the interval within which a particular LC evaluation function is continuous and wellbehaved. Thus, in the extreme case in which the LC function is continuous in all viewing directions, it is not necessary to have an AC phase at all. For example, when we determine thc attitude of an ellipsoid using EGIS, the AC phase is not necded."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 318.72,
+            "y0": 700.17,
+            "x1": 576.88,
+            "y1": 718.34,
+            "width": 258.16,
+            "height": 18.17
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 33.36,
+            "y0": 57.69,
+            "x1": 292.41,
+            "y1": 124.34,
+            "width": 259.05,
+            "height": 66.65
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0070",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The relationship of the "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-2"
+          },
+          {
+            "kind": "text",
+            "text": " and LC phases guides us in the selection of aspects from the global aspect family:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 33.84,
+            "y0": 130.23,
+            "x1": 292.16,
+            "y1": 148.34,
+            "width": 258.32,
+            "height": 18.11
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0071",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "9 Aspects should he defined based on the features that will be used in the corresponding LC function. For example, if an LC evaluation function is based on the largest visible face under photometric stereo, then aspects should be defined based on largest visible faces under photometric stereo. If a LC function is based on the visible edges extracted from a TV camera, then aspects should be based on line drawings."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 34.56,
+            "y0": 161.0,
+            "x1": 293.72,
+            "y1": 249.38,
+            "width": 259.16,
+            "height": 88.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0072",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The resolution of uspects should be bused on the robustness o f the LC function. If an LC function is robust enough to determine attitude given a few incorrect visible features, then a separate aspect does not need to be defined for every combination of visible features. The appearance disappearance of minor features can be ignored, and the AC phase simplified."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 34.8,
+            "y0": 255.72,
+            "x1": 294.13,
+            "y1": 333.38,
+            "width": 259.33,
+            "height": 77.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0073",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "In summary, aspects are important and convenient tools. However, we have to develop a general theory' of aspects based on features detectable by sensors. The the ory of aspects should have the capability to accommo date various LC methods and clarify the relationship be tween the "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-3"
+          },
+          {
+            "kind": "text",
+            "text": " and LC phases. The general aspect theory also should make clear the types and characteristics of aspect boundaries. General aspects can be used to solve the object recognition problem in efficient ways."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 34.56,
+            "y0": 345.21,
+            "x1": 294.33,
+            "y1": 446.9,
+            "width": 259.77,
+            "height": 101.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0074",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Clearly the kind of misunderstanding which led to the critiques occurs due to a bug in the 'general purpose vision' paradigm. This paradigm defines a vision module in a general and isolated condition. and develops theories independent of other modules. If this is done properly, it provides rich vision theories. However, it often occurs that along the course of research the effort loses sight of the original goal and instead generates unrealistic solutions from ill-defined assumptions. The bug in the paradigm is the lack of focus on the interaction between modules which allows poor assumptions to be introduced."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 302.64,
+            "y0": 81.93,
+            "x1": 560.9,
+            "y1": 207.62,
+            "width": 258.26,
+            "height": 125.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0075",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "This kind of bug can be avoided by introducing the notion of a 'task' within which a vision module works. A task specifies the purpose of a vision module, as well as the inputs and outputs, and forces the consideration of interaction between modules."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 303.12,
+            "y0": 213.93,
+            "x1": 561.1,
+            "y1": 267.86,
+            "width": 257.98,
+            "height": 53.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0076",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "We are developing vision theories and vision modules within the task-oriented vision framework. We consider a vision system as a whole and develop not only intramodule vision theories but also intermodule vision theories for specific tasks. For example, in the previous discussion, the relationship between the AC and LC evaluation functions corresponds to an intermodule theory, while a method of generating aspect graphs corresponds to an intramodule theory."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 302.88,
+            "y0": 273.93,
+            "x1": 561.39,
+            "y1": 375.86,
+            "width": 258.51,
+            "height": 101.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0077",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Such a task-oriented vision framework determines the choice of vision modules and clarifies the assumptions and goals underlying each vision module. We have to promote this task-oriented vision framework to ensure the healthy development of the computer vision community."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 303.12,
+            "y0": 381.93,
+            "x1": 561.7,
+            "y1": 447.86,
+            "width": 258.58,
+            "height": 65.93
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "math": [
+    {
+      "id": "math-inline-1",
+      "kind": "inline",
+      "display_latex": "c_{t}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>c</mi><mrow><mi>t</mi></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 638.49,
+            "x1": 296.82,
+            "y1": 703.96,
+            "width": 259.38,
+            "height": 65.47
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-2",
+      "kind": "inline",
+      "display_latex": "\\mathbf{A C}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold\">A</mi><mi mathvariant=\"bold\">C</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 33.84,
+            "y0": 130.23,
+            "x1": 292.16,
+            "y1": 148.34,
+            "width": 258.32,
+            "height": 18.11
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-3",
+      "kind": "inline",
+      "display_latex": "\\mathbf{A C}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold\">A</mi><mi mathvariant=\"bold\">C</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 34.56,
+            "y0": 345.21,
+            "x1": 294.33,
+            "y1": 446.9,
+            "width": 259.77,
+            "height": 101.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    }
+  ],
+  "figures": [],
+  "references": []
+}

@@ -1,0 +1,220 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 5,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-1-p005.png",
+      "caption_text": "Fig. 1. (a) An object with a blind step. (b) AG of object in (a). (c)EAG with E=(e.ez.ez.e,. eg. eg. eg.0j.\"2.\"g.\"g.\"g.46.07) as labeled in",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 824.64,
+        "y1": 964.0,
+        "width": 790.28,
+        "height": 903.2
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 968.0,
+        "x1": 805.06,
+        "y1": 984.0,
+        "width": 733.15,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 6,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-2-p006.png",
+      "caption_text": "Fig. 2. (a) An object with a pocket on the top face. (b) The",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 403.73,
+        "y1": 198.0,
+        "width": 369.37,
+        "height": 137.2
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 202.0,
+        "x1": 421.51,
+        "y1": 218.0,
+        "width": 349.59,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-3-p006.png",
+      "caption_text": "Fig. 3. The characteristic views of four nodes in the aspect graph in Fig. I(b). (a) Characteristic view of node 9. (b) Characteristic view of",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 222.0,
+        "x1": 824.64,
+        "y1": 964.0,
+        "width": 790.28,
+        "height": 742.0
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 968.0,
+        "x1": 805.06,
+        "y1": 986.0,
+        "width": 733.15,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 7,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-4-p007.png",
+      "caption_text": "Fig. 4. (a) An object with two pockets, Pocket 1 and Pocket 2, (b) the labels for the entities of Pocket 1 and entities of Pocket 2, (c) EAG",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 824.64,
+        "y1": 372.0,
+        "width": 790.28,
+        "height": 311.2
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 376.0,
+        "x1": 805.06,
+        "y1": 390.0,
+        "width": 733.15,
+        "height": 14.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 9,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-5-p009.png",
+      "caption_text": "Fig. 5. (a) An object with two steps and a pocket. (b) The",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 403.73,
+        "y1": 362.0,
+        "width": 369.37,
+        "height": 301.2
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 366.0,
+        "x1": 421.51,
+        "y1": 382.0,
+        "width": 349.59,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 11,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-6-p011.png",
+      "caption_text": "Fig. 6. The experimental computation time for generating the",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 403.73,
+        "y1": 408.0,
+        "width": 369.37,
+        "height": 347.2
+      },
+      "caption_bbox": {
+        "x0": 69.92,
+        "y0": 412.0,
+        "x1": 423.51,
+        "y1": 436.0,
+        "width": 353.59,
+        "height": 24.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 11,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-7-p011.png",
+      "caption_text": "Fig. 7. (a) Object 1, (b) Object 2 and (c) Object 3.",
+      "figure_bbox": {
+        "x0": 455.27,
+        "y0": 60.8,
+        "x1": 824.64,
+        "y1": 978.0,
+        "width": 369.37,
+        "height": 917.2
+      },
+      "caption_bbox": {
+        "x0": 305.64,
+        "y0": 982.0,
+        "x1": 569.34,
+        "y1": 1000.0,
+        "width": 263.69,
+        "height": 18.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 12,
+      "image_path": "docs/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/figures/figure-8-p012.png",
+      "caption_text": "Fig. 8. (a) An object with a blind step. (b) The entity-based aspect",
+      "figure_bbox": {
+        "x0": 34.36,
+        "y0": 60.8,
+        "x1": 403.73,
+        "y1": 282.0,
+        "width": 369.37,
+        "height": 221.2
+      },
+      "caption_bbox": {
+        "x0": 71.92,
+        "y0": 286.0,
+        "x1": 421.51,
+        "y1": 302.0,
+        "width": 349.59,
+        "height": 16.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

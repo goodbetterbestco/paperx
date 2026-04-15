@@ -1,0 +1,132 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "𝑔 ( p ) = ( c -p ) · n . (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 138.91,
+            "y0": 393.51,
+            "x1": 294.05,
+            "y1": 401.77,
+            "width": 155.14,
+            "height": 8.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "sign (( f 𝑢 × f 𝑣 ) · ( c -f )) = sign det ( f 𝑢 , f 𝑣 , -f ) (2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 358.21,
+            "y0": 553.47,
+            "x1": 560.19,
+            "y1": 561.72,
+            "width": 201.98,
+            "height": 8.25
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(2)"
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "sign (( p 𝑢 × p 𝑣 ) · ( c -p )) = sign det ( p 𝑢 , p 𝑣 , -p )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 324.13,
+            "y0": 637.85,
+            "x1": 493.87,
+            "y1": 646.11,
+            "width": 169.74,
+            "height": 8.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "(3) = sign det ( f 𝑢 𝑧 + f 𝑧 𝑢 , f 𝑣 𝑧 + f 𝑧 𝑣 , -f 𝑧 ) (4) = sign 𝑧 3 det ( f 𝑢 , f 𝑣 , -f ) (5) = sign det ( f 𝑢 , f 𝑣 , -f ) (6)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 416.07,
+            "y0": 640.12,
+            "x1": 560.19,
+            "y1": 689.54,
+            "width": 144.12,
+            "height": 49.42
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(6)"
+    }
+  ]
+}

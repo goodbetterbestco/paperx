@@ -1,0 +1,4172 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "1995_introducing_the_reduced_aspect_graph",
+  "title": "Introducing the Reduced Aspect Graph",
+  "source": {
+    "pdf_path": "docs/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
+    "page_count": 6,
+    "page_sizes_pt": [
+      {
+        "page": 1,
+        "width": 807.0,
+        "height": 1136.0
+      },
+      {
+        "page": 2,
+        "width": 807.0,
+        "height": 1136.0
+      },
+      {
+        "page": 3,
+        "width": 807.0,
+        "height": 1136.0
+      },
+      {
+        "page": 4,
+        "width": 807.0,
+        "height": 1136.0
+      },
+      {
+        "page": 5,
+        "width": 807.0,
+        "height": 1136.0
+      },
+      {
+        "page": 6,
+        "width": 807.0,
+        "height": 1136.0
+      }
+    ]
+  },
+  "build": {
+    "created_at": "2026-04-15T17:00:36Z",
+    "updated_at": "2026-04-15T17:00:36Z",
+    "builder_version": "0.2.0",
+    "sources": {
+      "native_pdf": true,
+      "layout_engine": "docling",
+      "math_engine": "docling+heuristic",
+      "figure_engine": "local",
+      "text_engine": "native_pdf"
+    },
+    "flags": {
+      "use_external_layout": true,
+      "use_external_math": true,
+      "rebuild": false
+    },
+    "inputs": {
+      "pdf": {
+        "path": "docs/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
+        "exists": true,
+        "size_bytes": 7545096,
+        "modified_at": "2026-04-13T16:18:56Z",
+        "sha256": "22af620907f2b9625ab08c75d6393f5ee2b6fdb8cdef32cfd9f1d16f448ce2f7"
+      },
+      "external_layout": {
+        "path": "docs/1995_introducing_the_reduced_aspect_graph/canonical_sources/layout.json",
+        "exists": true,
+        "size_bytes": 79629,
+        "modified_at": "2026-04-15T17:00:34Z",
+        "sha256": "81c7ba4e5e1549d3d9bcc6e9221b962c54b3ea3db1cbf95d700c2d9e4a4c5724"
+      },
+      "external_math": {
+        "path": "docs/1995_introducing_the_reduced_aspect_graph/canonical_sources/math.json",
+        "exists": true,
+        "size_bytes": 2152,
+        "modified_at": "2026-04-15T17:00:34Z",
+        "sha256": "56191f39df2fe956088e53ae6f1f81c33c70c36f1b89dd07ba4eb389d7dd6ed3"
+      }
+    },
+    "pipeline": {
+      "builder_version": "0.2.0",
+      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "modules": {
+        "scripts/kernel/canonical/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
+        "scripts/kernel/canonical/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
+        "scripts/kernel/canonical/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
+        "scripts/kernel/canonical/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
+        "scripts/kernel/canonical/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
+        "scripts/kernel/canonical/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
+        "scripts/kernel/canonical/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
+        "scripts/kernel/canonical/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "scripts/kernel/canonical/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
+        "scripts/kernel/canonical/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "scripts/kernel/canonical/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      }
+    }
+  },
+  "front_matter": {
+    "title": "Introducing the Reduced Aspect Graph",
+    "authors": [
+      {
+        "name": "Aldo Laurentini",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Dipartimento di Automatica e Informatica",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Politecnico di Torino",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Corso Duca degli Abruzzi , Torino",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Italy",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Received September",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Pattern Recognition Letters",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "aff-1",
+        "department": "[missing from original]",
+        "institution": "",
+        "address": ""
+      }
+    ],
+    "abstract_block_id": "blk-front-abstract-1",
+    "funding_block_id": null
+  },
+  "styles": {
+    "document_style": {},
+    "category_styles": {},
+    "block_styles": {}
+  },
+  "sections": [
+    {
+      "id": "sec-1",
+      "label": "1",
+      "title": "Introduction",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0002",
+        "blk-paragraph-0003",
+        "blk-paragraph-0004",
+        "blk-display_equation_ref-0005",
+        "blk-paragraph-0006"
+      ],
+      "children": [],
+      "source_spans": []
+    },
+    {
+      "id": "sec-2",
+      "label": "2",
+      "title": "2 Recognition through topological matching of multiple views",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0007",
+        "blk-figure-0008",
+        "blk-figure-0009",
+        "blk-list_item-0010",
+        "blk-figure-0011",
+        "blk-list_item-0012"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 315.33,
+            "x1": 709.63,
+            "y1": 350.05,
+            "width": 290.45,
+            "height": 34.72
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-3",
+      "label": "3",
+      "title": "3 The reduced aspect graph",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0013",
+        "blk-list_item-0014",
+        "blk-list_item-0015",
+        "blk-paragraph-0016",
+        "blk-figure-0017",
+        "blk-figure-0018",
+        "blk-figure-0019",
+        "blk-paragraph-0020",
+        "blk-paragraph-0021"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 465.63,
+            "x1": 590.81,
+            "y1": 482.14,
+            "width": 173.28,
+            "height": 16.51
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-4",
+      "label": "4",
+      "title": "4 The discriminating power of AG and RAG",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0022",
+        "blk-figure-0023",
+        "blk-figure-0024",
+        "blk-paragraph-0025",
+        "blk-paragraph-0026",
+        "blk-paragraph-0027"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 686.88,
+            "x1": 693.13,
+            "y1": 703.4,
+            "width": 273.95,
+            "height": 16.52
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-5",
+      "label": "5",
+      "title": "5 Discussion",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0028",
+        "blk-paragraph-0029",
+        "blk-paragraph-0030",
+        "blk-paragraph-0031"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 911.33,
+            "x1": 504.99,
+            "y1": 926.33,
+            "width": 85.81,
+            "height": 15.0
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-references",
+      "label": null,
+      "title": "References",
+      "level": 1,
+      "block_ids": [
+        "blk-reference-0032"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 419.14,
+            "y0": 202.89,
+            "x1": 490.18,
+            "y1": 218.16,
+            "width": 71.04,
+            "height": 15.27
+          },
+          "engine": "docling"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-front-abstract-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aspect graphs (AGs) have been proposed as viewer centered representations of 3D objects, suitable for recognizing objects from single or multiple views. Many algorithms for computing the AGs of various categories of objects have been presented; however, very few AG-based recognition applications have been developed. One reason for the limited practical use of AGs is the impressive growth of the information stored as the complexity of the object increases. This may imply comparing the views of the unknown object with a very high number of stored views, and therefore a time-consuming recognition process. The purpose of this paper is to introduce a new kind of aspect graph representation, the reduced aspect graph (RAG). RAGs are suitable for topological object recognition from single or multiple views, and require less information to be stored. Therefore, the matching process is shortened. Keywords: Line drawings; Aspect graphs; Topological matching; Reduced aspect graph"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 437.56,
+            "x1": 750.89,
+            "y1": 571.33,
+            "width": 694.78,
+            "height": 133.77
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 591.0,
+            "x1": 496.74,
+            "y1": 604.33,
+            "width": 438.98,
+            "height": 13.33
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0002",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "When computer vision is aimed at recognizing known objects in a 3D environment, a popular approach consists in storing a number of possible appearances of the objects. This should allow recognition of an object by matching one or more views of the object to the stored views."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 690.19,
+            "x1": 387.82,
+            "y1": 797.67,
+            "width": 331.71,
+            "height": 107.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0003",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "A notable development along this line is the aspect graph (AG), proposed first by Koenderink and van Doorn (1979). The Ag concerns views consisting of line drawings generated by projecting onto the image plane the edges of polyhedral objects, or the creases (surface normal discontinuities) or limbs (depth discontinuities) of general objects. Two ideas are at the basis of the the AG concept. The first idea is clustering the infinite possible views into a set of representative views, the aspects, according to their topological equivalence. The second idea is the topological adjacency of the aspects. The AG is a graph structure where topologically distinct views, i.e. aspects, are stored at the vertices, and the arcs connecting topologically adjacent aspects represent topological changes, or visual events, or transitions."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 802.33,
+            "x1": 387.82,
+            "y1": 1002.33,
+            "width": 333.36,
+            "height": 200.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0004",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "According to recent research, human perception may involve an AG-like internal representation of objects. References to neurophysiological work on this subject, as well as other topics concerning AGs, can be found in a recent paper by Seibert and Waxman (1992). Each aspect of an object corresponds to a characteristic zone of the viewing space. The graph structure of the AG is the dual graph of the partition into characteristic zones of the viewing space. If parallel aspects, obtained from parallel projections of the object, are considered, the viewing space consists of ideal points. In this case, a useful representation of the viewing space is the Gaussian sphere. algorithms for computing the partition of the viewing space under parallel or perspective projection have been given for polygons, convex and general polyhedra, solids of revolution and other curved objects. For further details on this matter, the interested reader is referred to the above cited paper by Seibert and Waxman (1992), the survey paper by Bowyer and Dyer (1990) and the work by Gigus et al. (1991). Although the bibliography on AGs today includes dozens of papers, relatively little work has been reported on AG-based recognition algorithms. In particular, very little work fully exploits the information stored, i.e. aspects and transitions. This information suggests a multiple views recognition approach, where we match a sequence of aspects and transitions of the unknown object to the stored information. An important drawback of the AG approach is the number of aspects and transitions that must be stored, even for relatively simple objects. Let us consider for instance polyhedral convex objects with n faces. If the planes supporting the faces are in general position (i.e., the intersection of each triplet of planes is a point, and all these points are different), the number of perspective aspects is"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 746.33,
+            "x1": 750.89,
+            "y1": 856.95,
+            "width": 331.71,
+            "height": 110.62
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 858.6,
+            "x1": 750.89,
+            "y1": 1002.33,
+            "width": 331.71,
+            "height": 143.73
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 54.24,
+            "y0": 110.63,
+            "x1": 387.82,
+            "y1": 257.67,
+            "width": 333.58,
+            "height": 147.04
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 259.23,
+            "x1": 386.26,
+            "y1": 406.33,
+            "width": 331.8,
+            "height": 147.1
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 407.84,
+            "x1": 387.82,
+            "y1": 556.44,
+            "width": 331.71,
+            "height": 148.6
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-display_equation_ref-0005",
+      "type": "display_equation_ref",
+      "content": {
+        "math_id": "docling-eq-0001"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.03,
+            "y0": 569.3,
+            "x1": 386.17,
+            "y1": 586.51,
+            "width": 330.14,
+            "height": 17.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0006",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "and the number of transitions is is the number of zones in which a hyperspace with d dimensions is divided by n hyperplanes, for n> d (see (Gruenbaum, 1967, p. 393)). The numbers of aspects and transitions of the parallel AG are 2+n(n+1) and 2n(nt1), respectively. For instance, a simple convex polyhedron with ten faces has a perspective AG with 175 aspects and 450 transitions. If the faces are not in general position, the above formulae supply upper bounds. Formulae giving the number of aspects of the case of pairs of parallel faces are reported by Laurentini (1990). The numbers of aspects can sharply increase with n for concave polyhedra. Worst case polyhedral scenes, such that nodes and arcs of the parallel and perspective AG are "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-1"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 599.33,
+            "x1": 257.45,
+            "y1": 612.67,
+            "width": 201.34,
+            "height": 13.34
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 743.0,
+            "x1": 387.89,
+            "y1": 999.0,
+            "width": 333.43,
+            "height": 256.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0007",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "However, it is easy to see that in many cases the information stored in an AG is redundant for this purpose. For instance, let us consider the topological recognition of a simple polyhedron, a tetrahedron, using its AG. The AG of a tetrahedron is shown in Fig. 1. In this case, the parallel and perspective AGs are coincident, and there are 14 aspects. Since we deal with a convex polyhedron, we can specify the aspects as the sets of visible faces. If we consider, from a topological point of view, a line drawing extracted from an image of the tetrahedon, it is clear that we are not able to tell one face from the other (for a regular tetrahedron this happens even if we use metrical information). Let us suppose that the current view of the"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 740.97,
+            "x1": 750.89,
+            "y1": 1000.01,
+            "width": 331.71,
+            "height": 259.04
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0008",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-1-2"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 421.37,
+            "y0": 833.08,
+            "x1": 753.15,
+            "y1": 852.37,
+            "width": 331.78,
+            "height": 19.29
+          },
+          "engine": "local_figure_linker"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0009",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-1-2"
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 125.42,
+            "y0": 353.33,
+            "x1": 678.28,
+            "y1": 366.67,
+            "width": 552.86,
+            "height": 13.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0010",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "(i) there are three topologically distinct aspects, corresponding to the line drawings in Fig. 2(a), (b) and (c);"
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 54.36,
+            "y0": 752.93,
+            "x1": 386.17,
+            "y1": 809.42,
+            "width": 331.81,
+            "height": 56.49
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0011",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-2"
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 970.88,
+            "x1": 386.17,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 28.12
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0012",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "(ii) transitions are possible between the pairs of aspects [ (a)(b)] and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-2"
+          },
+          {
+            "kind": "text",
+            "text": "(c)]."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 391.33,
+            "x1": 750.89,
+            "y1": 427.67,
+            "width": 333.36,
+            "height": 36.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0013",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The example discussed in the previous section suggests the idea of reduced aspect graph (RAG) of a polyhedron. The RAG can be obtained as follows from the full AG. Consider any pair of nodes in AG and merge them together if the aspects they are labeled with are topologically equivalent. The arcs incident at the two original nodes become arcs incident at the unique resulting node. If two arcs joining the same nodes are obtained, delete one of them. Each aspect of the RAG represents a category of topologically equivalent aspects of AG. The RAG nodes must be labeled with a topological description of the aspect without reference to the edges or faces of the originating polyhedron. A description of aspect suitable for topological matching can be given in terms of adjacent polygons (Laurentini, 1993). It is clear that the reduced aspect graph has the following properties:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 501.95,
+            "x1": 750.89,
+            "y1": 799.16,
+            "width": 333.36,
+            "height": 297.21
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 800.67,
+            "x1": 749.24,
+            "y1": 835.49,
+            "width": 331.71,
+            "height": 34.82
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0014",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "(a) for each aspect A in AG there is one aspect RA topologically equivalent in RAG;"
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 837.0,
+            "x1": 749.24,
+            "y1": 873.47,
+            "width": 330.06,
+            "height": 36.47
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0015",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "(b) for each transition connecting two aspects A' and A\" in AG, there is in RAG a transition connecting the aspects of the topologically equivalent pair RA' and RA\"."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 873.33,
+            "x1": 749.24,
+            "y1": 944.47,
+            "width": 330.06,
+            "height": 71.14
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0016",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "This guarantees that any sequence of aspects and transitions which can be found in the full AG of a polyhedron can be found also in its RAG. Thus, if we"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 947.67,
+            "x1": 749.24,
+            "y1": 1000.67,
+            "width": 330.06,
+            "height": 53.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0017",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-3"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 143.58,
+            "y0": 358.3,
+            "x1": 661.77,
+            "y1": 371.67,
+            "width": 518.19,
+            "height": 13.37
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0018",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-4"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 56.09,
+            "y0": 536.63,
+            "x1": 387.82,
+            "y1": 596.15,
+            "width": 331.73,
+            "height": 59.52
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0019",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-s"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 112.22,
+            "y0": 690.19,
+            "x1": 331.71,
+            "y1": 703.4,
+            "width": 219.49,
+            "height": 13.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0020",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "want to topologically recognize a polyhedron by extracting a sequence of aspects and transitions from multiple images, we can use the RAG instead of the complete AG. Let us now determine the RAG for some simple polyhedra. Consider first a pentahedron. If the planes supporting the faces are in general position, from formulae (1) and (2) of Section 2 we obtain that the perspective AG has 25 nodes and 50 edges. The complete AG is shown in Fig. 3. From this AG, by merging together the topologically equivalent aspects, we obtain the RAG shown in Fig. 4. In this figure, the aspects relative to each node have been specified by one representative line drawing. The RAG contains eight aspects and nine transitions, a substantial reduction with respect to the complete AG."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 56.04,
+            "y0": 723.21,
+            "x1": 386.17,
+            "y1": 796.26,
+            "width": 330.13,
+            "height": 73.05
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 797.51,
+            "x1": 387.82,
+            "y1": 906.49,
+            "width": 331.71,
+            "height": 108.98
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 906.33,
+            "x1": 387.82,
+            "y1": 995.67,
+            "width": 333.36,
+            "height": 89.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0021",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "An even larger reduction can be obtained for nongeneral polyhedra. Let us consider a cube. Its perspective AG (which is coincident with the parallel AG) contains 26 aspects, as can be obtained from the formulae giving the number of aspects for the case of polyhedra with pairs of parallel faces (Laurentini, 1990). An image of the complete AG of a cube can be found in the survey paper by Besl and Jain (1985) on three-dimensional object recognition. It is easy to see that the RAG of the cube contains only three aspects and two transitions, as shown in Fig. 5."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 444.0,
+            "x1": 750.89,
+            "y1": 645.67,
+            "width": 333.36,
+            "height": 201.67
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0022",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "We have seen that any sequence of aspects and transitions which can be found in the regular AG of a polyhedron can be also found in its RAG. Should we conclude that all the topological information of an AG is resumed by the corresponding RAG? Actually, this is not the case, as we will show with the following example. Let us consider the full AG of the esahedron P of Fig. 6(a). Let "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-3"
+          },
+          {
+            "kind": "text",
+            "text": " be the plane supporting the face "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-4"
+          },
+          {
+            "kind": "text",
+            "text": ". The intersection of "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-5"
+          },
+          {
+            "kind": "text",
+            "text": " and plane "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-6"
+          },
+          {
+            "kind": "text",
+            "text": ", normal to the back face "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-7"
+          },
+          {
+            "kind": "text",
+            "text": " and containing the intersection "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-8"
+          },
+          {
+            "kind": "text",
+            "text": " of "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-9"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-10"
+          },
+          {
+            "kind": "text",
+            "text": " is shown in Fig. 6(b). In this figure, the section of the un bounded characteristic zone "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-11"
+          },
+          {
+            "kind": "text",
+            "text": " is also shown. From the viewpoints belonging to "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-12"
+          },
+          {
+            "kind": "text",
+            "text": " we can observe the as-"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0023",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-6"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 396.28,
+            "x1": 749.24,
+            "y1": 442.67,
+            "width": 693.13,
+            "height": 46.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0024",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-7"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 135.33,
+            "y0": 650.56,
+            "x1": 310.26,
+            "y1": 663.77,
+            "width": 174.93,
+            "height": 13.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0025",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Since crossing one of these planes makes the corresponding face invisible, this aspect is adjacent to three aspects with four faces:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 688.53,
+            "x1": 387.82,
+            "y1": 761.33,
+            "width": 333.36,
+            "height": 72.8
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0026",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Consider now polyhedron "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-13"
+          },
+          {
+            "kind": "text",
+            "text": ", obtained from "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-14"
+          },
+          {
+            "kind": "text",
+            "text": " by displacing plane "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-15"
+          },
+          {
+            "kind": "text",
+            "text": ". The intersection of "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-16"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-17"
+          },
+          {
+            "kind": "text",
+            "text": " is shown in Fig. 6(c). In this case, the zone "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-18"
+          },
+          {
+            "kind": "text",
+            "text": ", relative to the aspect with five faces "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-19"
+          },
+          {
+            "kind": "text",
+            "text": ", is bounded by the four planes "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-20"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-21"
+          },
+          {
+            "kind": "text",
+            "text": ". Therefore it is adjacent to four aspects with four faces: "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-22"
+          },
+          {
+            "kind": "text",
+            "text": ", "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-23"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-24"
+          },
+          {
+            "kind": "text",
+            "text": ". Since both "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-25"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-26"
+          },
+          {
+            "kind": "text",
+            "text": " have only one aspect with five faces, adja cent to three aspects in one case and to four aspects in the other, their AGs are different. Let us derive the RAGs of both "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-27"
+          },
+          {
+            "kind": "text",
+            "text": " and "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-28"
+          },
+          {
+            "kind": "text",
+            "text": ". It is easy to see that they are equal. In both cases, the aspects"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0027",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "In conclusion, we have shown that two polyhedra having different AGs could have the same RAG, and therefore the AG could have a greater capability than the RAG for discriminating objects topologically. However, it should be observed that this capability cannot be exploited under our recognition paradigm, consisting of : (i) extracting a sequence of aspects and transitions from an image of the object in relative motion with respect to the viewpoint; (ii) topologi cally matching this sequence to the stored informa tion. In the example presented, for telling "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-29"
+          },
+          {
+            "kind": "text",
+            "text": " from "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-30"
+          },
+          {
+            "kind": "text",
+            "text": ", we should be able to explore the full AG of the un known object. In particular, we should be able to find how many topologically equivalent aspects are adja cent to the aspect with five faces. For performing such tasks the viewpoint should be driven by some active algorithm based on metric properties of the object, in contrast with the simple topological approach assumed."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 519.91,
+            "x1": 749.24,
+            "y1": 870.63,
+            "width": 330.06,
+            "height": 350.72
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0028",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "We have introduced a new kind of aspect graph representation, the reduced aspect graph, which is suitable for the topological identification of polyhedral objects from multiple views. The main feature of the RAG is that any sequence of aspects and transitions which can be found in the full AG of a polyhedron can be also found in its RAG."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 947.67,
+            "x1": 750.89,
+            "y1": 1000.67,
+            "width": 331.71,
+            "height": 53.0
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 110.63,
+            "x1": 387.82,
+            "y1": 180.0,
+            "width": 331.71,
+            "height": 69.37
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0029",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Although the examples presented in this paper refer to convex polyhedra, the idea of reduced aspect graph can be extended to general polyhedra or even to objects with curved surfaces. The rationale of the RAG idea is that it requires storing a reduced number of views with respect to the AG, and therefore the identification of an object can be performed with a reduced number of comparisons. A substantial reduction of the information stored has been verified for some simple polyhedra."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 183.28,
+            "x1": 386.17,
+            "y1": 368.33,
+            "width": 330.06,
+            "height": 185.05
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0030",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The RAG idea raises a number of problems. first observe that the algorithm described in Section 3 for computing the RAG requires "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-31"
+          },
+          {
+            "kind": "text",
+            "text": " comparisons for an AG with "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-32"
+          },
+          {
+            "kind": "text",
+            "text": " aspects. This means "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-33"
+          },
+          {
+            "kind": "text",
+            "text": " compari sons for the perpective RAG of a non-convex poly hedron. Thus it should be only considered an ideal procedure, and in practice more efficient algorithms are needed. A possible approach consists of modify ing an algorithm for computing the full AG, like the algorithm of Gigus et al. (1991) for computing the parallel AG of general polyhedra. Each new aspect generated by this algorithm should be compared with the previously generated aspects; many comparisons could be pruned using some suitable data organization."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 371.51,
+            "x1": 387.82,
+            "y1": 647.49,
+            "width": 333.36,
+            "height": 275.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0031",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "For a better understanding of the advantages provided by the RAG it would be important to derive the average and worst-case complexities of the reduced aspect graph. These problems, though restricted to convex polyhdra, do not appear to have trivial solutions."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 650.56,
+            "x1": 387.82,
+            "y1": 703.4,
+            "width": 331.71,
+            "height": 52.84
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0032",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-001"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 237.67,
+            "x1": 749.24,
+            "y1": 267.49,
+            "width": 328.41,
+            "height": 29.82
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 269.0,
+            "x1": 749.24,
+            "y1": 313.72,
+            "width": 328.41,
+            "height": 44.72
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 317.0,
+            "x1": 750.89,
+            "y1": 360.0,
+            "width": 330.06,
+            "height": 43.0
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 378.0,
+            "x1": 749.24,
+            "y1": 422.7,
+            "width": 330.06,
+            "height": 44.7
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 424.33,
+            "x1": 749.24,
+            "y1": 469.0,
+            "width": 328.41,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 470.58,
+            "x1": 732.74,
+            "y1": 483.79,
+            "width": 311.91,
+            "height": 13.21
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 487.0,
+            "x1": 749.24,
+            "y1": 531.67,
+            "width": 328.41,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 533.33,
+            "x1": 750.89,
+            "y1": 578.0,
+            "width": 330.06,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 579.56,
+            "x1": 749.24,
+            "y1": 622.49,
+            "width": 328.41,
+            "height": 42.93
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 625.67,
+            "x1": 749.24,
+            "y1": 655.67,
+            "width": 328.41,
+            "height": 30.0
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 655.51,
+            "x1": 749.24,
+            "y1": 701.74,
+            "width": 328.41,
+            "height": 46.23
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "math": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "K (n, 3) - 1 (1)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>K</mi><mo stretchy=\"false\">&#x00028;</mo><mi>n</mi><mo>&#x0002C;</mo><mn>3</mn><mo stretchy=\"false\">&#x00029;</mo><mo>&#x02212;</mo><mn>1</mn><mo stretchy=\"false\">&#x00028;</mo><mn>1</mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.03,
+            "y0": 569.3,
+            "x1": 386.17,
+            "y1": 586.51,
+            "width": 330.14,
+            "height": 17.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "external_engine": "docling",
+      "equation_number": "(1)",
+      "classification": {
+        "category": "unknown",
+        "semantic_policy": "graphic_only",
+        "role": "unknown",
+        "confidence": "low",
+        "signals": [
+          "fallback_unknown"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-1",
+      "kind": "inline",
+      "display_latex": "O(n°)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>O</mi><mo stretchy=\"false\">&#x00028;</mo><mi>n</mi><mi>°</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 599.33,
+            "x1": 257.45,
+            "y1": 612.67,
+            "width": 201.34,
+            "height": 13.34
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 743.0,
+            "x1": 387.89,
+            "y1": 999.0,
+            "width": 333.43,
+            "height": 256.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "complexity_or_class",
+        "semantic_policy": "structure_only",
+        "role": "notation_binding",
+        "confidence": "high",
+        "signals": [
+          "complexity_or_class_tokens",
+          "notation_binding_role"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-2",
+      "kind": "inline",
+      "display_latex": "I(b)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>I</mi><mo stretchy=\"false\">&#x00028;</mo><mi>b</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 417.53,
+            "y0": 391.33,
+            "x1": 750.89,
+            "y1": 427.67,
+            "width": 333.36,
+            "height": 36.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_mapping_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-3",
+      "kind": "inline",
+      "display_latex": "p_{i}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mi>i</mi></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-4",
+      "kind": "inline",
+      "display_latex": "f_{i}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>f</mi><mrow><mi>i</mi></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-5",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-6",
+      "kind": "inline",
+      "display_latex": "p",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>p</mi></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-7",
+      "kind": "inline",
+      "display_latex": "f_{4}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>f</mi><mrow><mn>4</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-8",
+      "kind": "inline",
+      "display_latex": "L",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>L</mi></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-9",
+      "kind": "inline",
+      "display_latex": "p_{1}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mn>1</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-10",
+      "kind": "inline",
+      "display_latex": "p_{3}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mn>3</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-11",
+      "kind": "inline",
+      "display_latex": "c_{z}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>c</mi><mrow><mi>z</mi></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-12",
+      "kind": "inline",
+      "display_latex": "c_{z}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>c</mi><mrow><mi>z</mi></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 723.21,
+            "x1": 750.89,
+            "y1": 850.35,
+            "width": 331.71,
+            "height": 127.14
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 852.0,
+            "x1": 750.89,
+            "y1": 888.33,
+            "width": 331.71,
+            "height": 36.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 886.67,
+            "x1": 749.24,
+            "y1": 995.67,
+            "width": 328.41,
+            "height": 109.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-13",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}^{\\prime}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow><mrow><mi>&#x02032;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-14",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-15",
+      "kind": "inline",
+      "display_latex": "p_{6}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mn>6</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-16",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}^{\\prime}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow><mrow><mi>&#x02032;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-17",
+      "kind": "inline",
+      "display_latex": "p",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>p</mi></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-18",
+      "kind": "inline",
+      "display_latex": "c z^{*}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>c</mi><msup><mi>z</mi><mrow><mo>&#x0002A;</mo></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-19",
+      "kind": "inline",
+      "display_latex": "\\left\\{f_{1}, f_{2}, f_{3}, f_{4}, f_{6}\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><msub><mi>f</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>3</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>4</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>6</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-20",
+      "kind": "inline",
+      "display_latex": "p_{1}, p_{3}, p_{4}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>p</mi><mrow><mn>3</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>p</mi><mrow><mn>4</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-21",
+      "kind": "inline",
+      "display_latex": "p_{6}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>p</mi><mrow><mn>6</mn></mrow></msub></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-22",
+      "kind": "inline",
+      "display_latex": "\\left\\{f_{2}, f_{3}, f_{4}, f_{6}\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><msub><mi>f</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>3</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>4</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>6</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-23",
+      "kind": "inline",
+      "display_latex": "\\left\\{f_{1}, f_{2}, f_{4}, f_{6}\\right\\},\\left\\{f_{1}, f_{2}, f_{3}, f_{6}\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><msub><mi>f</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>4</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>6</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow><mo>&#x0002C;</mo><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><msub><mi>f</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>3</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>6</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-24",
+      "kind": "inline",
+      "display_latex": "\\left\\{f_{1}, f_{2}, f_{3}, f_{4}\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><msub><mi>f</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>3</mn></mrow></msub><mo>&#x0002C;</mo><msub><mi>f</mi><mrow><mn>4</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-25",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-26",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}^{\\prime}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow><mrow><mi>&#x02032;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-27",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-28",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}^{\\prime}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow><mrow><mi>&#x02032;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 782.65,
+            "x1": 387.93,
+            "y1": 964.33,
+            "width": 333.47,
+            "height": 181.68
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 57.76,
+            "y0": 965.93,
+            "x1": 387.82,
+            "y1": 999.0,
+            "width": 330.06,
+            "height": 33.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-29",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 519.91,
+            "x1": 749.24,
+            "y1": 870.63,
+            "width": 330.06,
+            "height": 350.72
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-30",
+      "kind": "inline",
+      "display_latex": "\\boldsymbol{P}^{\\prime}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow><mi mathvariant=\"bold-italic\">P</mi></mrow><mrow><mi>&#x02032;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 519.91,
+            "x1": 749.24,
+            "y1": 870.63,
+            "width": 330.06,
+            "height": 350.72
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-31",
+      "kind": "inline",
+      "display_latex": "\\mathrm{O}\\left(m^{2}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x0004F;</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mi>m</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 371.51,
+            "x1": 387.82,
+            "y1": 647.49,
+            "width": 333.36,
+            "height": 275.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_mapping_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-32",
+      "kind": "inline",
+      "display_latex": "m",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>m</mi></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 371.51,
+            "x1": 387.82,
+            "y1": 647.49,
+            "width": 333.36,
+            "height": 275.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-33",
+      "kind": "inline",
+      "display_latex": "\\mathrm{O}\\left(n^{18}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x0004F;</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mi>n</mi><mrow><mn>18</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 54.46,
+            "y0": 371.51,
+            "x1": 387.82,
+            "y1": 647.49,
+            "width": 333.36,
+            "height": 275.98
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_mapping_reference"
+        ]
+      }
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig-1",
+      "label": "Figure 1. In this case, the parallel and perspective AGs",
+      "caption": "In this case, the parallel and perspective AGs",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-1-p002.png",
+      "page": 2,
+      "bbox": {
+        "x0": 427.71,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 829.08,
+        "width": 347.01,
+        "height": 768.28
+      },
+      "display_size_in": {
+        "width": 4.8196,
+        "height": 10.6706
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 421.37,
+          "y0": 833.08,
+          "x1": 753.15,
+          "y1": 852.37,
+          "width": 331.78,
+          "height": 19.29
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-1-2",
+      "label": "Figure I. A tetrahedron and its AG. The nodes of the AG have been labeled with the indices of the visible faces.",
+      "caption": "Fig. I. A tetrahedron and its AG. The nodes of the AG have been labeled with the indices of the visible faces.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-1-2-p003.png",
+      "page": 3,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 348.0,
+        "width": 742.44,
+        "height": 287.2
+      },
+      "display_size_in": {
+        "width": 10.3117,
+        "height": 3.9889
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 123.85,
+          "y0": 352.0,
+          "x1": 679.16,
+          "y1": 370.0,
+          "width": 555.31,
+          "height": 18.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-2",
+      "label": "Figure 2. The three line drawings of a tetrahedron which are topo-",
+      "caption": "The three line drawings of a tetrahedron which are topo- topologically different.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-2-p003.png",
+      "page": 3,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 374.0,
+        "x1": 379.29,
+        "y1": 964.0,
+        "width": 347.01,
+        "height": 590.0
+      },
+      "display_size_in": {
+        "width": 4.8196,
+        "height": 8.1944
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 55.93,
+          "y0": 968.0,
+          "x1": 387.52,
+          "y1": 986.0,
+          "width": 331.59,
+          "height": 18.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-3",
+      "label": "Figure 3. A pentahedron and its AG. The nodes of the Ag are labeled with the indices of the visible faces.",
+      "caption": "A pentahedron and its AG. The nodes of the Ag are labeled with the indices of the visible faces.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-3-p004.png",
+      "page": 4,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 354.0,
+        "width": 742.44,
+        "height": 293.2
+      },
+      "display_size_in": {
+        "width": 10.3117,
+        "height": 4.0722
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 143.82,
+          "y0": 358.0,
+          "x1": 663.18,
+          "y1": 372.0,
+          "width": 519.36,
+          "height": 14.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-4",
+      "label": "Figure 4. The reduced aspect graph of the pentahedron. Each node",
+      "caption": "The reduced aspect graph of the pentahedron. Each node has been labeled with a representative line drawing of the category of topologically equivalent line drawings which form the aspect.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-4-p004.png",
+      "page": 4,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 376.0,
+        "x1": 379.29,
+        "y1": 532.0,
+        "width": 347.01,
+        "height": 156.0
+      },
+      "display_size_in": {
+        "width": 4.8196,
+        "height": 2.1667
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 55.93,
+          "y0": 536.0,
+          "x1": 387.52,
+          "y1": 550.0,
+          "width": 331.59,
+          "height": 14.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-s",
+      "label": "Figure S. The reduced aspect graph of a cube.",
+      "caption": "Fig. S. The reduced aspect graph of a cube.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-s-p004.png",
+      "page": 4,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 554.0,
+        "x1": 379.29,
+        "y1": 684.0,
+        "width": 347.01,
+        "height": 130.0
+      },
+      "display_size_in": {
+        "width": 4.8196,
+        "height": 1.8056
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 111.86,
+          "y0": 688.0,
+          "x1": 331.59,
+          "y1": 704.0,
+          "width": 219.73,
+          "height": 16.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-6",
+      "label": "Figure 6. An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec",
+      "caption": "An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec intersection of the planes supporting the side faces fi and fz. In (c) the section of the esahedron P', obtained from P by displacing plane po supporting face f6, is shown.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-6-p005.png",
+      "page": 5,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 60.8,
+        "x1": 774.72,
+        "y1": 392.0,
+        "width": 742.44,
+        "height": 331.2
+      },
+      "display_size_in": {
+        "width": 10.3117,
+        "height": 4.6
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 57.93,
+          "y0": 396.0,
+          "x1": 745.08,
+          "y1": 412.0,
+          "width": 687.15,
+          "height": 16.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-7",
+      "label": "Figure 7. The RAG of both P and P'.",
+      "caption": "The RAG of both P and P'.",
+      "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-7-p005.png",
+      "page": 5,
+      "bbox": {
+        "x0": 32.28,
+        "y0": 416.0,
+        "x1": 379.29,
+        "y1": 646.0,
+        "width": 347.01,
+        "height": 230.0
+      },
+      "display_size_in": {
+        "width": 4.8196,
+        "height": 3.1944
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 133.83,
+          "y0": 650.0,
+          "x1": 311.61,
+          "y1": 664.0,
+          "width": 177.78,
+          "height": 14.0
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "ref-001",
+      "raw_text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York. Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"Efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell. Plantinga, W.H. and C.R. Dyer (1990). Visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
+      "text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York. Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell. Plantinga, W.H. and C.R. Dyer (1990). visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 237.67,
+            "x1": 749.24,
+            "y1": 267.49,
+            "width": 328.41,
+            "height": 29.82
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 269.0,
+            "x1": 749.24,
+            "y1": 313.72,
+            "width": 328.41,
+            "height": 44.72
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 317.0,
+            "x1": 750.89,
+            "y1": 360.0,
+            "width": 330.06,
+            "height": 43.0
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 419.18,
+            "y0": 378.0,
+            "x1": 749.24,
+            "y1": 422.7,
+            "width": 330.06,
+            "height": 44.7
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 424.33,
+            "x1": 749.24,
+            "y1": 469.0,
+            "width": 328.41,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 470.58,
+            "x1": 732.74,
+            "y1": 483.79,
+            "width": 311.91,
+            "height": 13.21
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 487.0,
+            "x1": 749.24,
+            "y1": 531.67,
+            "width": 328.41,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 533.33,
+            "x1": 750.89,
+            "y1": 578.0,
+            "width": 330.06,
+            "height": 44.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 579.56,
+            "x1": 749.24,
+            "y1": 622.49,
+            "width": 328.41,
+            "height": 42.93
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 625.67,
+            "x1": 749.24,
+            "y1": 655.67,
+            "width": 328.41,
+            "height": 30.0
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 420.83,
+            "y0": 655.51,
+            "x1": 749.24,
+            "y1": 701.74,
+            "width": 328.41,
+            "height": 46.23
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

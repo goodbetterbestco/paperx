@@ -1,0 +1,2120 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1-1",
+      "label": "1.1",
+      "page": 7,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-1-p007.png",
+      "caption_text": "Figure 1.1: Occluding contours \u2014 The occluding contours of the 3D model \u201cOrigins of the Pig\u201d \u00a9 Keenan Crane, shown in (a) with diffuse shading, are depicted in (b) composited with toon shading to produce a cel-like drawing. As illustrated in (c) from a side view, they delineate the frontier between the front and back parts of the surface when seen from the camera. These contour curves can be further process to produce stylized imagery, such as the calligraphic brush strokes in (d) .",
+      "figure_bbox": {
+        "x0": 88.35,
+        "y0": 100.73,
+        "x1": 521.74,
+        "y1": 451.99,
+        "width": 433.38,
+        "height": 351.26
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 453.58,
+        "x1": 523.94,
+        "y1": 532.34,
+        "width": 433.94,
+        "height": 78.75
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-1-2",
+      "label": "1.2",
+      "page": 8,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-2-p008.png",
+      "caption_text": "Figure 1.2: Artworks created by artists using Blender Freestyle \u2014 Each of these is a non- photorealistic rendering, using the techniques described in this tutorial in different ways.",
+      "figure_bbox": {
+        "x0": 88.77,
+        "y0": 106.73,
+        "x1": 523.21,
+        "y1": 686.76,
+        "width": 434.44,
+        "height": 580.03
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 688.36,
+        "x1": 523.81,
+        "y1": 712.91,
+        "width": 433.81,
+        "height": 24.56
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-1-3",
+      "label": "1.3",
+      "page": 11,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-3-p011.png",
+      "caption_text": "Figure 1.3: Correlation between hand-drawn lines and contours \u2014 A 3D model rendered from a given viewpoint and illumination (left) has been hand-drawn by ten artists (center). Observe how consistent the drawings are, especially near the contours of the shape. The contours (in red) and suggestive contours (in black) extracted from the 3D model are depicted in the right. Images taken from the \u201cJavascript Drawing Viewer\u201d 1 of Cole et al. ( 2008 ).",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 100.58,
+        "x1": 520.38,
+        "y1": 240.16,
+        "width": 439.56,
+        "height": 139.58
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 240.33,
+        "x1": 522.39,
+        "y1": 305.53,
+        "width": 432.39,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-1-4",
+      "label": "1.4",
+      "page": 12,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-4-p012.png",
+      "caption_text": "Figure 1.4: Surface-surface intersection curves (from B\u00e9nard et al. ( 2014 )) \u2014 Professionally- modeled surfaces include many intersections between surface, such as this ice-skating character. Surface intersection curves are shown in green, occluding contours in red, and boundaries in blue. Observe how the ear muffs intersects the headband and the hoodie; the shoulder also happens to intersect the hoodie in this animation frame. (a,b) Original surface. (c) Cross-section from a different viewpoint. (\u201cRed\u201d character created at Pixar by Andrew Schmidt, Brian Tindall, Bernhard Haux and Paul Aichele, based on the original design of Teddy Newton.)",
+      "figure_bbox": {
+        "x0": 98.38,
+        "y0": 100.57,
+        "x1": 518.74,
+        "y1": 235.51,
+        "width": 420.36,
+        "height": 134.93
+      },
+      "caption_bbox": {
+        "x0": 89.73,
+        "y0": 237.57,
+        "x1": 523.91,
+        "y1": 329.88,
+        "width": 434.19,
+        "height": 92.3
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-1-5",
+      "label": "1.5",
+      "page": 13,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-5-p013.png",
+      "caption_text": "Figure 1.5: Feature curve examples \u2014 From left to right, top to bottom: diffuse rendering of the 3D scanned David model by \u201cScan The World\u201d ( http://mmf.io/o/2052 ), occluding contours (OC), OC + suggestive contours (SC) (DeCarlo et al., 2004 ), OC + apparent ridges (Judd et al., 2007 ), OC + ridges & valleys (Rusinkiewicz, 2004 ), and OC + SC + principal highlights + toon shading (DeCarlo and Rusinkiewicz, 2007 ). Images generated with \u201cqrtsc\u201d (Cole et al., 2011 ).",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 100.57,
+        "x1": 519.89,
+        "y1": 459.73,
+        "width": 439.07,
+        "height": 359.15
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 459.89,
+        "x1": 523.36,
+        "y1": 525.1,
+        "width": 433.72,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-1-6",
+      "label": "1.6",
+      "page": 14,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-1-6-p014.png",
+      "caption_text": "Figure 1.6: Hatching \u2014 Left, 3D Cupid model and hatching result obtain with the automatic method of Hertzmann and Zorin ( 2000 ); right, shoulder blade model and user-edited result of Gerl and Isenberg ( 2013 ).",
+      "figure_bbox": {
+        "x0": 93.79,
+        "y0": 100.58,
+        "x1": 518.21,
+        "y1": 260.39,
+        "width": 424.43,
+        "height": 159.81
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 264.89,
+        "x1": 522.0,
+        "y1": 302.99,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2-1",
+      "label": "2.1",
+      "page": 18,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-2-1-p018.png",
+      "caption_text": "Figure 2.1: Image-space edges \u2014 The depth buffer of the scene (\u201cOrigins of the Pig\u201d \u00a9 Keenan Crane) is obtained by rasterization and linearized (a) , depth discontinuities are then extracted by \ufb01ltering, here, with a Laplacian of Gaussian \ufb01lter (b) ; normals discontinuities can also be considered (c) to extract creases; the \ufb01nal edges can eventually be re-composited with the color buffer (f) . Images computed with BlenderNPR Edge Node plugin (BlenderNPR, 2015a ). The pupils are added separately, as materials on the surface.",
+      "figure_bbox": {
+        "x0": 94.95,
+        "y0": 124.39,
+        "x1": 517.05,
+        "y1": 614.92,
+        "width": 422.1,
+        "height": 490.53
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 616.16,
+        "x1": 523.91,
+        "y1": 695.26,
+        "width": 434.27,
+        "height": 79.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2-2",
+      "label": "2.2",
+      "page": 20,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-2-2-p020.png",
+      "caption_text": "Figure 2.2: Region segmentation (Kolliopoulos et al., 2006 ) \u2014 Toon rendering of a forest scene with no segmentation (left) exhibiting cluttering in the background. With segmentation (right), many of the background trees are grouped together. Contours are only drawn near segment boundaries, resulting in a cleaner image.",
+      "figure_bbox": {
+        "x0": 94.95,
+        "y0": 100.58,
+        "x1": 517.06,
+        "y1": 240.86,
+        "width": 422.11,
+        "height": 140.28
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 241.02,
+        "x1": 523.36,
+        "y1": 292.68,
+        "width": 433.76,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2-3",
+      "label": "2.3",
+      "page": 21,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-2-3-p021.png",
+      "caption_text": "Figure 2.3: Implicit brushes (Vergne et al., 2011 ) \u2014 Surface feature pro\ufb01les (left) are extracted in image-space and \ufb01tted with polynomials; they are then convolved with a brush footprint (inset) to produce stylized lines (right).",
+      "figure_bbox": {
+        "x0": 94.95,
+        "y0": 100.58,
+        "x1": 517.05,
+        "y1": 236.16,
+        "width": 422.1,
+        "height": 135.58
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 236.33,
+        "x1": 522.0,
+        "y1": 274.44,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2-4",
+      "label": "2.4",
+      "page": 22,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-2-4-p022.png",
+      "caption_text": "Figure 2.4: Ray-traced feature lines \u2014 (a) Around a central ray (black dot) a stencil of rays (grey and white dots) is cast to estimate the foreign primitive area, i.e., the proportion of samples intersecting a different primitive than the central one (orange vs. green surfaces). (b) Image-space depth, ID and normals discontinuities extracted taking into account re\ufb02ections and refractions.",
+      "figure_bbox": {
+        "x0": 24.48,
+        "y0": 554.93,
+        "x1": 587.52,
+        "y1": 748.4,
+        "width": 563.04,
+        "height": 193.47
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 499.28,
+        "x1": 522.0,
+        "y1": 550.93,
+        "width": 432.36,
+        "height": 51.66
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3-1",
+      "label": "3.1",
+      "page": 24,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-1-p024.png",
+      "caption_text": "Figure 3.1: Polygonal meshes \u2014 Since each face of a polygonal mesh is planar, its normal n can be computed as ( p 3 \u2212 p 2 ) \u00d7 ( p 2 \u2212 p 1 ) , where p 1:3 are any three vertices of the face.",
+      "figure_bbox": {
+        "x0": 90.81,
+        "y0": 113.27,
+        "x1": 521.17,
+        "y1": 291.29,
+        "width": 430.35,
+        "height": 178.02
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 292.89,
+        "x1": 522.0,
+        "y1": 319.08,
+        "width": 432.0,
+        "height": 26.19
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3-2",
+      "label": "3.2",
+      "page": 24,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-2-p024.png",
+      "caption_text": "Figure 3.2: Projections \u2014 The triangular face formed by the vertices p 1 , p 2 and p 3 is viewed (a) under orthographic projection along the view direction v , and (b) under perspective projection of center c .",
+      "figure_bbox": {
+        "x0": 81.78,
+        "y0": 113.27,
+        "x1": 521.17,
+        "y1": 492.64,
+        "width": 439.39,
+        "height": 379.37
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 494.23,
+        "x1": 522.0,
+        "y1": 532.34,
+        "width": 432.36,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3-3",
+      "label": "3.3",
+      "page": 25,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-3-p025.png",
+      "caption_text": "Figure 3.3: Contour renderings of a non-orientable surface , the Klein bottle, left by Hertzmann and Zorin ( 2000 ) and right by Kalnins et al. ( 2003 ). Right image generated with \u201cJot\u201d (Kalnins et al., 2007 ).",
+      "figure_bbox": {
+        "x0": 100.95,
+        "y0": 100.58,
+        "x1": 511.04,
+        "y1": 244.92,
+        "width": 410.09,
+        "height": 144.34
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 245.08,
+        "x1": 523.37,
+        "y1": 283.19,
+        "width": 433.37,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-3-4",
+      "label": "3.4",
+      "page": 26,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-4-p026.png",
+      "caption_text": "Figure 3.4: Front faces, back faces, and contour \u2014 The front faces are shown in yellow, and are visible to the camera. The back faces are in blue, and are not visible to the camera. The contour generator separates the front facing regions from the back-facing regions of the surface. The apparent contour is the visible projection of this curve onto the image plane.",
+      "figure_bbox": {
+        "x0": 147.48,
+        "y0": 102.24,
+        "x1": 465.08,
+        "y1": 304.3,
+        "width": 317.59,
+        "height": 202.05
+      },
+      "caption_bbox": {
+        "x0": 89.73,
+        "y0": 305.58,
+        "x1": 522.19,
+        "y1": 357.24,
+        "width": 432.46,
+        "height": 51.66
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3-5",
+      "label": "3.5",
+      "page": 29,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-5-p029.png",
+      "caption_text": "Figure 3.5: Results \u2014 Mesh contours extracted from a low-resolution torus (bottom left), the \u201cOrigins of the Pig\u201d \u00a9 Keenan Crane (top left), and the \u201cMoebius Torus Knot\u201d \u00a9 Francisco Javier",
+      "figure_bbox": {
+        "x0": 4.17,
+        "y0": 58.45,
+        "x1": 612.0,
+        "y1": 371.92,
+        "width": 607.83,
+        "height": 313.47
+      },
+      "caption_bbox": {
+        "x0": 88.55,
+        "y0": 367.93,
+        "x1": 522.19,
+        "y1": 392.49,
+        "width": 433.64,
+        "height": 24.56
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2497",
+        "image_xref_2498",
+        "image_xref_2499"
+      ]
+    },
+    {
+      "figure_id": "figure-3-6",
+      "label": "3.6",
+      "page": 30,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-6-p030.png",
+      "caption_text": "Figure 3.6: Dual spaces \u2014 Preprocessing by (a) projecting the normals of two adjacent faces onto the Gaussian sphere, or (b) constructing a representation of the mesh in 4D space based on the position and tangent planes of its vertices. At runtime, \ufb01nding the contour edges consists in computing the intersection of the dual viewing plane (in blue) with (a) circular arcs or (b) the dual surface, which can be further accelerated by space-partitioning data-structures.",
+      "figure_bbox": {
+        "x0": 81.56,
+        "y0": 99.41,
+        "x1": 518.9,
+        "y1": 277.85,
+        "width": 437.34,
+        "height": 178.44
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 279.45,
+        "x1": 522.01,
+        "y1": 344.65,
+        "width": 432.01,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2106",
+        "image_xref_2107",
+        "image_xref_2108",
+        "image_xref_2109"
+      ]
+    },
+    {
+      "figure_id": "figure-3-7",
+      "label": "3.7",
+      "page": 31,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-3-7-p031.png",
+      "caption_text": "Figure 3.7: Spatial partitioning \u2014 (a) A given edge is on the contour generator if the viewpoint trajectory c ( t ) is inside the intersection (in grey) of one positive and one negative half-space de\ufb01ned by the face supporting plane \u03c0 1 and \u03c0 2 , i.e., during the time intervals [ t 0 , t 1 ] and [ t 2 , t 3 ] in this example. (b) The front and back-facing anchored cones are de\ufb01ned by their center o f | b , an opposite normal n f = n b and a common half opening angle \u03b8 , here visualized in 2D for four oriented segments.",
+      "figure_bbox": {
+        "x0": 81.07,
+        "y0": 64.53,
+        "x1": 543.32,
+        "y1": 246.81,
+        "width": 462.25,
+        "height": 182.28
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 239.79,
+        "x1": 523.91,
+        "y1": 306.73,
+        "width": 434.27,
+        "height": 66.94
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-1",
+      "label": "4.1",
+      "page": 34,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-1-p034.png",
+      "caption_text": "Figure 4.1: Visibility, ray tests, and convex/concave contours \u2014 A point is visible if the line segment from the camera to the point does not intersect any other surface point. Determining this is called a ray test. In the example here, the segment from p 1 to the camera c intersects another part of the surface, so p 1 is not visible. The segment from p 2 does not intersect the surface so it is visible. One can avoid computing one of these ray tests: p 1 lies on a concave contour point, so it must be invisible. The other point, p 2 , is on a concave contour, so a ray test is necessary to determine if it is visible.",
+      "figure_bbox": {
+        "x0": 121.99,
+        "y0": 101.39,
+        "x1": 497.99,
+        "y1": 232.01,
+        "width": 376.0,
+        "height": 130.62
+      },
+      "caption_bbox": {
+        "x0": 89.73,
+        "y0": 232.99,
+        "x1": 523.91,
+        "y1": 325.29,
+        "width": 434.18,
+        "height": 92.3
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-2",
+      "label": "4.2",
+      "page": 35,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-2-p035.png",
+      "caption_text": "Figure 4.2: Singular points \u2014 From the camera viewpoint, 1 \u20dd T-junctions at image-space intersec- tions, 2 \u20dd Y-junctions between a contour generator and two boundary edges, 3 \u20dd contour generator curtain folds, 4 \u20dd boundary curtain-folds. Contour generator edges are drawn in red, and boundaries in blue. Curtain folds are visualized in more detail in Figure 4.3 .",
+      "figure_bbox": {
+        "x0": 93.44,
+        "y0": 102.26,
+        "x1": 539.86,
+        "y1": 278.84,
+        "width": 446.42,
+        "height": 176.58
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 279.87,
+        "x1": 523.81,
+        "y1": 334.55,
+        "width": 433.81,
+        "height": 54.68
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-3",
+      "label": "4.3",
+      "page": 36,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-3-p036.png",
+      "caption_text": "Figure 4.3: Curtain folds \u2014 A vertex p is a curtain fold if (a) it connects a convex contour generator edge to a concave edge, or (b) the edge pe is occluded by a face of the one-ring neighborhood of p (here, the triangle pqr in brown). (The former case (a) is a special case of the latter (b) .)",
+      "figure_bbox": {
+        "x0": 94.28,
+        "y0": 104.11,
+        "x1": 519.02,
+        "y1": 268.1,
+        "width": 424.74,
+        "height": 164.0
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 275.75,
+        "x1": 522.18,
+        "y1": 313.86,
+        "width": 432.54,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-4",
+      "label": "4.4",
+      "page": 37,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-4-p037.png",
+      "caption_text": "Figure 4.4: Bifurcations in the contour generator occur when more than two contour generator curves meet at a vertex. Closeup view on the mesh contours extracted from the smooth surface shown in Figure 1.4 . \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 113.22,
+        "y0": 100.85,
+        "x1": 498.13,
+        "y1": 257.35,
+        "width": 384.91,
+        "height": 156.49
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 258.16,
+        "x1": 522.19,
+        "y1": 296.26,
+        "width": 432.19,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-5",
+      "label": "4.5",
+      "page": 38,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-5-p038.png",
+      "caption_text": "Figure 4.5: View Graph of Figure 1.1 \u2014 The View Graph structures the extracted contour curves by storing their topology and geometry. It serves as a support for both determining their visibility ef\ufb01ciently and generating stylized strokes.",
+      "figure_bbox": {
+        "x0": 40.31,
+        "y0": 81.92,
+        "x1": 531.17,
+        "y1": 222.07,
+        "width": 490.86,
+        "height": 140.15
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 224.21,
+        "x1": 522.38,
+        "y1": 262.31,
+        "width": 432.38,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2155"
+      ]
+    },
+    {
+      "figure_id": "figure-4-7",
+      "label": "4.7",
+      "page": 40,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-7-p040.png",
+      "caption_text": "Figure 4.7: The View Graph around a \u201c\ufb01shtail\u201d, a common contour shape \u2014 Studying render- ings like these, and how the 2D \ufb01gure relates to the 3D drawing, is very helpful in understanding a speci\ufb01c rendering. (a) The \u201c\ufb01shtail\u201d shape in image space includes two cusps, and a partially- occluded contour. (b) The overhead view shows the contour\u2019s path over the surface. The contour separates front-facing and back-facing, and curtain fold cusps appear when the path switches direc- tion. The curtain folds also separate convex from concave contours, which are always invisible. (c) A stylized rendering of this path produces this overlap drawing. This shape can occur at a large scale (e.g., a pair of hills or a puffy cloud), or at a subpixel level. In the latter case, we may wish to trim the extra bit of curve, as discussed in Section 9.3 .",
+      "figure_bbox": {
+        "x0": 81.07,
+        "y0": 64.53,
+        "x1": 530.93,
+        "y1": 222.5,
+        "width": 449.86,
+        "height": 157.97
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 223.09,
+        "x1": 523.82,
+        "y1": 342.49,
+        "width": 434.21,
+        "height": 119.4
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-8",
+      "label": "4.8",
+      "page": 42,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-8-p042.png",
+      "caption_text": "Figure 4.8: View Graph & QI propagation \u2014 QI values can be propagated at image-space intersections and curtain folds. 1 \u20dd T-junctions at image-space intersections, 2 \u20dd Y-junctions between a contour generator, two boundary edges, 3 \u20dd contour generator curtain folds, 4 \u20dd boundary curtain folds.",
+      "figure_bbox": {
+        "x0": 82.05,
+        "y0": 102.23,
+        "x1": 522.03,
+        "y1": 178.34,
+        "width": 439.98,
+        "height": 76.11
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 178.99,
+        "x1": 522.0,
+        "y1": 230.65,
+        "width": 432.0,
+        "height": 51.66
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-9",
+      "label": "4.9",
+      "page": 43,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-9-p043.png",
+      "caption_text": "Figure 4.9: Planar Map (from Eisemann et al. ( 2008 )) \u2014 Starting from a 3D model (a) , contours and isophotes are \ufb01rst extracted (b) and their visibility is computed by constructing a Planar Map (c) that yields a base vector depiction for stylization (d) . Isophotes are curves with constant shading, i.e., ( c \u2212 p ) \u00b7 n = \u03b1 for some constant \u03b1 .",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 100.58,
+        "x1": 531.75,
+        "y1": 198.57,
+        "width": 450.93,
+        "height": 98.0
+      },
+      "caption_bbox": {
+        "x0": 89.57,
+        "y0": 198.46,
+        "x1": 523.36,
+        "y1": 250.97,
+        "width": 433.78,
+        "height": 52.51
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-10",
+      "label": "4.10",
+      "page": 45,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-4-10-p045.png",
+      "caption_text": "Figure 4.10: Valid/invalid con\ufb01gurations \u2014 Two adjacent triangles, shown in cross-section, with their assigned normals \u02c6n 1 and \u02c6n 2 . The cross-section is some 3D plane perpendicular to the edge between the two triangles. (a) and (b) are valid con\ufb01gurations of the normals and (c) is invalid.",
+      "figure_bbox": {
+        "x0": 128.09,
+        "y0": 101.83,
+        "x1": 504.39,
+        "y1": 246.22,
+        "width": 376.3,
+        "height": 144.39
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 233.48,
+        "x1": 522.0,
+        "y1": 271.59,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5-1",
+      "label": "5.1",
+      "page": 46,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-5-1-p046.png",
+      "caption_text": "Figure 5.1: Two-pass hardware rendering \u2014 After a \ufb01rst standard rendering pass, the scene is enlarged and only back-faces are rendered; the visible parts of the back-faces produce the black edges (left). The back-faces scaling factor and color allow to control the line width and color (right). Image computed with Blender Solidify modi\ufb01er (BlenderNPR, 2015b ).",
+      "figure_bbox": {
+        "x0": 94.95,
+        "y0": 512.88,
+        "x1": 517.04,
+        "y1": 667.25,
+        "width": 422.09,
+        "height": 154.37
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 667.41,
+        "x1": 523.91,
+        "y1": 719.07,
+        "width": 433.91,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-5-2",
+      "label": "5.2",
+      "page": 48,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-5-2-p048.png",
+      "caption_text": "Figure 5.2: Buffer-based visibility \u2014 (a) Thick lines rendered with a simple depth test are irregu- larly occluded by the mesh geometry; (b) by \ufb01rst computing an item buffer with thin lines, and then probing visibility in this buffer (black and white circles) along the clipped lines, thick or stylized lines are correctly rendered. (The black wireframe is depicted for illustration purposes.)",
+      "figure_bbox": {
+        "x0": 97.17,
+        "y0": 105.04,
+        "x1": 516.53,
+        "y1": 277.02,
+        "width": 419.36,
+        "height": 171.98
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 278.61,
+        "x1": 523.82,
+        "y1": 330.27,
+        "width": 433.82,
+        "height": 51.66
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5-3",
+      "label": "5.3",
+      "page": 50,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-5-3-p050.png",
+      "caption_text": "Figure 5.3: Segment atlas \u2014 Each input 3D line p i q i is projected and clipped by a fragment shader, which also computes its associated number of visibility samples l i . These samples are then converted into segment atlas offsets s i by a running sum. The positions ( p \u2032",
+      "figure_bbox": {
+        "x0": 83.11,
+        "y0": 102.81,
+        "x1": 527.3,
+        "y1": 292.64,
+        "width": 444.18,
+        "height": 189.83
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 308.17,
+        "x1": 523.36,
+        "y1": 347.94,
+        "width": 433.76,
+        "height": 39.77
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-5-4",
+      "label": "5.4",
+      "page": 50,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-5-4-p050.png",
+      "caption_text": "Figure 5.4: Stylized line renderings using the Segment Atlas algorithm (Cole and Finkelstein, 2010 ) \u2014 Hidden lines are included in these renderings. Images generated with \u201cdpix\u201d (Cole et al., 2010 ).",
+      "figure_bbox": {
+        "x0": 94.95,
+        "y0": 406.99,
+        "x1": 517.05,
+        "y1": 544.57,
+        "width": 422.1,
+        "height": 137.58
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 544.73,
+        "x1": 523.37,
+        "y1": 582.84,
+        "width": 433.37,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-6-1",
+      "label": "6.1",
+      "page": 51,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-1-p051.png",
+      "caption_text": "Figure 6.1: Mesh contours of a smooth surface (B\u00e9nard et al., 2014 ) \u2014 The original surface is shown in Figure 1.4 . (a) Converting the surface to a triangle mesh and extracting contours produces overly complex topology, including many bifurcations not present in the smooth surface\u2019s contours. (b-c) Connecting chains of edges that end at singularities produces many small chains, not directly suitable for stylization. Each chain is shown in a different color. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 82.41,
+        "y0": 490.55,
+        "x1": 528.1,
+        "y1": 668.09,
+        "width": 445.69,
+        "height": 177.55
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 653.86,
+        "x1": 523.91,
+        "y1": 719.07,
+        "width": 434.27,
+        "height": 65.2
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6-2",
+      "label": "6.2",
+      "page": 53,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-2-p053.png",
+      "caption_text": "Figure 6.2: Linear interpolation \u2014 The function g ( p ) is linearly interpolated along the oriented edges ( p 3 \u2212 p 1 ) and ( p 2 \u2212 p 3 ) of the triangle to \ufb01nd the endpoints of the line segment approximating the contour generator within the face.",
+      "figure_bbox": {
+        "x0": 192.82,
+        "y0": 99.43,
+        "x1": 406.62,
+        "y1": 235.39,
+        "width": 213.8,
+        "height": 135.97
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 247.44,
+        "x1": 522.0,
+        "y1": 285.7,
+        "width": 432.0,
+        "height": 38.26
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6-3",
+      "label": "6.3",
+      "page": 54,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-3-p054.png",
+      "caption_text": "Figure 6.3: Mesh vs. Interpolated Contours \u2014 Unlike mesh contours (a) , the piecewise linear approximation of the contour generator (b) crosses back-faces of the polygonal mesh and may thus be hidden by front-faces closer to the camera.",
+      "figure_bbox": {
+        "x0": 61.11,
+        "y0": 87.71,
+        "x1": 542.6,
+        "y1": 241.18,
+        "width": 481.49,
+        "height": 153.47
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 242.77,
+        "x1": 522.18,
+        "y1": 280.88,
+        "width": 432.18,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2260"
+      ]
+    },
+    {
+      "figure_id": "figure-6-4",
+      "label": "6.4",
+      "page": 54,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-4-p054.png",
+      "caption_text": "Figure 6.4: Interpolated Contours of a smooth surface (B\u00e9nard et al., 2014 ) \u2014 The original surface is shown in Figure 1.4 . (a) Interpolated Contours are much smoother and have approximately correct topology (compared with Figure 6.1 ). (b) Chaining these curves gives much smoother, coherent curves. (c) Visibility is not well-de\ufb01ned for these curves, and gaps and other small errors may appear. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 355.87,
+        "y0": 511.67,
+        "x1": 405.37,
+        "y1": 560.86,
+        "width": 49.5,
+        "height": 49.2
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 452.83,
+        "x1": 523.36,
+        "y1": 518.04,
+        "width": 433.36,
+        "height": 65.2
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6-5",
+      "label": "6.5",
+      "page": 56,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-5-p056.png",
+      "caption_text": "Figure 6.5: Stylized interpolated contours of a smooth surface (B\u00e9nard et al., 2014 ) \u2014 The original smooth surface is shown in Figure 1.4 . After visibility computation, the contours exhibit many breaks and gaps (red arrows) which lead to objectionable temporal artifacts after stylization. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 167.22,
+        "y0": 100.58,
+        "x1": 444.78,
+        "y1": 251.4,
+        "width": 277.56,
+        "height": 150.83
+      },
+      "caption_bbox": {
+        "x0": 88.55,
+        "y0": 251.57,
+        "x1": 523.91,
+        "y1": 303.22,
+        "width": 435.36,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6-6",
+      "label": "6.6",
+      "page": 56,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-6-6-p056.png",
+      "caption_text": "Figure 6.6: An example of the problem with interpolated contour visibility (B\u00e9nard et al., 2014 ) \u2014 In image space, the interpolated contour lies within the mesh contour. This creates a \u201chalo region\u201d",
+      "figure_bbox": {
+        "x0": 167.22,
+        "y0": 100.58,
+        "x1": 512.16,
+        "y1": 497.64,
+        "width": 344.95,
+        "height": 397.07
+      },
+      "caption_bbox": {
+        "x0": 87.82,
+        "y0": 498.28,
+        "x1": 523.94,
+        "y1": 522.82,
+        "width": 436.13,
+        "height": 24.54
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-1",
+      "label": "7.1",
+      "page": 60,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-1-p060.png",
+      "caption_text": "Figure 7.1: Parametric surfaces \u2014 The map f from the parameter plane [ 0 , 1 ] 2 or the control mesh surface | M | to R 3 de\ufb01nes the surface of a NURBS patch (a) or subdivision surface (b) respectively.",
+      "figure_bbox": {
+        "x0": 58.17,
+        "y0": 64.53,
+        "x1": 605.97,
+        "y1": 289.57,
+        "width": 547.8,
+        "height": 225.04
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 286.32,
+        "x1": 522.0,
+        "y1": 314.66,
+        "width": 432.0,
+        "height": 28.33
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2276",
+        "image_xref_2277"
+      ]
+    },
+    {
+      "figure_id": "figure-7-2",
+      "label": "7.2",
+      "page": 61,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-2-p061.png",
+      "caption_text": "Figure 7.2: Smooth surface contour \u2014 The contour generator is the zero-set of the implicit orientation function g ( u ) and thus the boundary between the front-facing and back-facing parts of a surface, as seen from a camera center c . The apparent contour is the visible projection of the contour generator onto the image plane.",
+      "figure_bbox": {
+        "x0": 81.07,
+        "y0": 64.53,
+        "x1": 530.93,
+        "y1": 265.1,
+        "width": 449.86,
+        "height": 200.57
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 257.23,
+        "x1": 522.19,
+        "y1": 308.88,
+        "width": 432.19,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2593"
+      ]
+    },
+    {
+      "figure_id": "figure-7-3",
+      "label": "7.3",
+      "page": 62,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-3-p062.png",
+      "caption_text": "Figure 7.3: Shading interpretation of contours \u2014 (a) Lambertian shaded white object with light at viewpoint, so that shading is n \u00b7 v . (b) Thresholded rendering, for visualization (c) The contours are the black points in the shading image, where n \u00b7 v = 0 . (d) Identifying dark ridges in the shading image produces the contours and Suggestive Contours (DeCarlo et al., 2003 ; Lee et al., 2007 ). Images generated with \u201cqrtsc\u201d (Cole et al., 2011 ).",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 100.58,
+        "x1": 531.19,
+        "y1": 209.01,
+        "width": 450.37,
+        "height": 108.43
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 209.17,
+        "x1": 522.0,
+        "y1": 274.38,
+        "width": 432.0,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-7-4",
+      "label": "7.4",
+      "page": 62,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-4-p062.png",
+      "caption_text": "Figure 7.4: Rim lighting and rendering \u2014 (a) Photograph taken with rim lighting, i.e., a ring of lights perpendicular to the camera direction. Rim lighting approximates the occluding contour. (Photo by Flickr user japrea cba ) (b) Rim light photograph inverted and converted to grayscale, with the background removed. (c) Computer-generated line drawing using contours, Suggestive Contours (DeCarlo et al., 2003 ) and isophote thickness (Goodwin et al., 2007 ). The stroke thickness varies in the same way as it would for contours produced by rim lighting.",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 100.58,
+        "x1": 531.19,
+        "y1": 410.35,
+        "width": 450.37,
+        "height": 309.77
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 412.41,
+        "x1": 523.91,
+        "y1": 491.16,
+        "width": 434.3,
+        "height": 78.75
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-5",
+      "label": "7.5",
+      "page": 63,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-5-p063.png",
+      "caption_text": "Figure 7.5: Orientation function evaluated at the control vertices \u2014 When g ( u ) has opposite signs ( F and B ) on both ends of a control polygon edge (a) , a contour point must exist on that edge. When there is no sign change ( F and F or B or B ), there may be zero contour points, or a larger even",
+      "figure_bbox": {
+        "x0": 118.7,
+        "y0": 99.34,
+        "x1": 508.93,
+        "y1": 201.69,
+        "width": 390.23,
+        "height": 102.35
+      },
+      "caption_bbox": {
+        "x0": 89.49,
+        "y0": 208.35,
+        "x1": 523.91,
+        "y1": 246.59,
+        "width": 434.42,
+        "height": 38.24
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-6",
+      "label": "7.6",
+      "page": 64,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-6-p064.png",
+      "caption_text": "Figure 7.6: Contour generator approximation \u2014 An input smooth torus represented as a Catmull- Clark subdivision surface is uniformly tessellated with one round of subdivision. With contour- consistent tessellation (b) , the mesh contours of the polygonal mesh is both topologically equivalent to the smooth surface contour and at the boundary of visible and invisible. Interpolated contours (a) do not have this property, leading to problems with visibility.",
+      "figure_bbox": {
+        "x0": 61.11,
+        "y0": 87.65,
+        "x1": 542.6,
+        "y1": 241.18,
+        "width": 481.49,
+        "height": 153.53
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 242.77,
+        "x1": 523.81,
+        "y1": 307.98,
+        "width": 433.81,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2260",
+        "image_xref_2410"
+      ]
+    },
+    {
+      "figure_id": "figure-7-7",
+      "label": "7.7",
+      "page": 64,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-7-p064.png",
+      "caption_text": "Figure 7.7: Radial curvature \u2014 (a) The radial curvature \u03ba r ( p ) is the curvature of the radial curve at p ; (b) \u03ba r is necessarily positive for visible contours (top) otherwise it would be locally occluded by the surface (bottom), and zero at curtain folds (c) .",
+      "figure_bbox": {
+        "x0": 61.11,
+        "y0": 87.65,
+        "x1": 542.6,
+        "y1": 452.4,
+        "width": 481.49,
+        "height": 364.75
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 449.93,
+        "x1": 522.0,
+        "y1": 488.19,
+        "width": 432.0,
+        "height": 38.26
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2260",
+        "image_xref_2410"
+      ]
+    },
+    {
+      "figure_id": "figure-7-8",
+      "label": "7.8",
+      "page": 65,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-8-p065.png",
+      "caption_text": "Figure 7.8: Relationship between the surface Gaussian curvature and the contour apparent curvature \u2014 Concave apparent contours originate from hyperbolic regions (in blue) and convex ones from elliptic regions (in red); their in\ufb02ection coincides with parabolic points on the surface. Image generated with \u201cqrtsc\u201d (Cole et al., 2011 ).",
+      "figure_bbox": {
+        "x0": 154.6,
+        "y0": 83.05,
+        "x1": 458.21,
+        "y1": 301.38,
+        "width": 303.61,
+        "height": 218.33
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 295.46,
+        "x1": 523.91,
+        "y1": 347.12,
+        "width": 433.91,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2602"
+      ]
+    },
+    {
+      "figure_id": "figure-7-9",
+      "label": "7.9",
+      "page": 66,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-9-p066.png",
+      "caption_text": "Figure 7.9: Contour generator curtain folds on a smooth surface \u2014 As shown on the top view, curtain folds are at the intersection of the contour generator and radial curvature zero-isocurve. At each curtain fold, the curve tangent is aligned with the view direction.",
+      "figure_bbox": {
+        "x0": 113.57,
+        "y0": 100.58,
+        "x1": 498.88,
+        "y1": 272.57,
+        "width": 385.31,
+        "height": 171.99
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 275.88,
+        "x1": 523.37,
+        "y1": 313.99,
+        "width": 433.37,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-10",
+      "label": "7.10",
+      "page": 67,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-10-p067.png",
+      "caption_text": "Figure 7.10: Contour curtain fold detection on smooth surfaces \u2014 (a) Given a base mesh triangle, we wish to \ufb01nd all points that satisfy both g ( u ) = 0 and \u03ba r ( u ) = 0 . (b) We \ufb01nd triangles that contain sign changes of both functions between the vertices. (c) For each such triangle, we split the triangle into two, by bisecting the long edge, and recursing into each of these triangles. (d) When this process leads to a very small triangle with sign changes, a contour curtain fold is marked at the centroid of this triangle.",
+      "figure_bbox": {
+        "x0": 81.23,
+        "y0": 99.4,
+        "x1": 527.19,
+        "y1": 256.04,
+        "width": 445.96,
+        "height": 156.65
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 254.97,
+        "x1": 522.0,
+        "y1": 333.72,
+        "width": 432.0,
+        "height": 78.75
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-11",
+      "label": "7.11",
+      "page": 69,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-11-p069.png",
+      "caption_text": "Figure 7.11: Results of Elber and Cohen ( 1990 )\u2019s patch-based contour extraction algorithm \u2014 Images generated with the IRIT modeling environment (Elber, 2018 ).",
+      "figure_bbox": {
+        "x0": 78.16,
+        "y0": 100.58,
+        "x1": 514.58,
+        "y1": 269.31,
+        "width": 436.42,
+        "height": 168.73
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 262.64,
+        "x1": 524.18,
+        "y1": 287.2,
+        "width": 434.18,
+        "height": 24.56
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2557"
+      ]
+    },
+    {
+      "figure_id": "figure-7-12",
+      "label": "7.12",
+      "page": 70,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-12-p070.png",
+      "caption_text": "Figure 7.12: Contour-Consistent tessellation \u2014 Each vertex on the output triangle mesh produced by B\u00e9nard et al. ( 2014 ) corresponds to a preimage point u on the control mesh that maps to a point",
+      "figure_bbox": {
+        "x0": 81.58,
+        "y0": 101.53,
+        "x1": 530.81,
+        "y1": 250.5,
+        "width": 449.23,
+        "height": 148.98
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 266.8,
+        "x1": 522.0,
+        "y1": 291.37,
+        "width": 432.0,
+        "height": 24.56
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-13",
+      "label": "7.13",
+      "page": 70,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-13-p070.png",
+      "caption_text": "Figure 7.13: Contour-consistent contours of a smooth surface (B\u00e9nard et al., 2014 ) \u2014 Compare with the contours in Figures 6.1 and 6.4 . (a) Contours computed with the contour-consistency algorithm correctly represent the contours of the original smooth surface. (b) Chaining these segments gives smooth, coherent curves. (c) Visibility is well-de\ufb01ned for these curves. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 82.15,
+        "y0": 324.68,
+        "x1": 525.52,
+        "y1": 476.81,
+        "width": 443.37,
+        "height": 152.13
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 478.4,
+        "x1": 523.94,
+        "y1": 543.61,
+        "width": 434.34,
+        "height": 65.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7-14",
+      "label": "7.14",
+      "page": 71,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-7-14-p071.png",
+      "caption_text": "Figure 7.14: Contour-consistent contours stylized with tapered strokes (B\u00e9nard et al., 2014 ) \u2014 Compare with the contours in Figure 6.5 . Contour-consistent contours do not suffer from breaks and gaps, producing more coherent animated strokes. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 167.22,
+        "y0": 315.27,
+        "x1": 444.78,
+        "y1": 466.1,
+        "width": 277.56,
+        "height": 150.83
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 466.27,
+        "x1": 524.18,
+        "y1": 504.37,
+        "width": 434.18,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8-1",
+      "label": "8.1",
+      "page": 75,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-1-p075.png",
+      "caption_text": "Figure 8.1: Contour \ufb01nding \u2014 To \ufb01nd a starting position for tracing the occluding contour, Bremer and Hughes ( 1998 ) shoot random rays in the view direction v from the image plane (left), and march along the surface in the tangent direction aligned with the projection of the gradient (right) until v \u00b7 \u2207 f ( p ) changes sign.",
+      "figure_bbox": {
+        "x0": 103.61,
+        "y0": 101.28,
+        "x1": 482.14,
+        "y1": 249.91,
+        "width": 378.52,
+        "height": 148.63
+      },
+      "caption_bbox": {
+        "x0": 89.73,
+        "y0": 250.11,
+        "x1": 522.18,
+        "y1": 302.53,
+        "width": 432.46,
+        "height": 52.42
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8-2",
+      "label": "8.2",
+      "page": 75,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-2-p075.png",
+      "caption_text": "Figure 8.2: Implicit surface contour generator tracing \u2014 With a \ufb01xed step size (a) , the traced contour may jump to another component of the contour (left) or skip a part of it (right). (b) With a dynamic step size integration scheme, Plantinga and Vegter ( 2006 ) accurately trace the contour generator of a complex implicit tangle cube: x 4 \u2212 5 x 2 + y 4 \u2212 5 y 2 + z 4 \u2212 5 z 2 + 10 = 0 . The starting points are indicated by the black dots.",
+      "figure_bbox": {
+        "x0": 103.61,
+        "y0": 101.28,
+        "x1": 502.06,
+        "y1": 525.01,
+        "width": 398.45,
+        "height": 423.73
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 526.61,
+        "x1": 522.18,
+        "y1": 591.81,
+        "width": 432.18,
+        "height": 65.2
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8-3",
+      "label": "8.3",
+      "page": 76,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-3-p076.png",
+      "caption_text": "Figure 8.3: Surface-surface intersection \u2014 The apparent contour (left) along the view direction v is the projection of the contour generator (in red), shown from a side-view (right), at the intersection of the implicit surface S (in yellow) and the implicit contour surface \u2207 f \u00b7 v = 0 (in green). Images generated with the \u201cWickbert\u201d particles library (Stroila et al., 2011 ).",
+      "figure_bbox": {
+        "x0": 117.98,
+        "y0": 101.24,
+        "x1": 515.91,
+        "y1": 244.29,
+        "width": 397.93,
+        "height": 143.05
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 244.57,
+        "x1": 522.27,
+        "y1": 296.23,
+        "width": 432.27,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8-4",
+      "label": "8.4",
+      "page": 77,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-4-p077.png",
+      "caption_text": "Figure 8.4: Proxy-based method \u2014 The smooth surface occluding contour is approximated by com- puting the interpolated contours of on a coarse base mesh, projecting the vertices of this coarse contour onto the actual smooth surface and subdividing it. Images generated with \u201cShapeShop\u201d(Schmidt, 2008 ).",
+      "figure_bbox": {
+        "x0": 133.8,
+        "y0": 100.58,
+        "x1": 504.88,
+        "y1": 249.55,
+        "width": 371.08,
+        "height": 148.98
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 249.83,
+        "x1": 523.81,
+        "y1": 301.48,
+        "width": 433.81,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8-5",
+      "label": "8.5",
+      "page": 79,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-5-p079.png",
+      "caption_text": "Figure 8.5: Marching line algorithm \u2014 The intersections of the isosurface (left) and contour surface (center) with each face of every voxel are \ufb01rst computed. The resulting segments are intersecting on the faces at contour points (right).",
+      "figure_bbox": {
+        "x0": 81.31,
+        "y0": 100.58,
+        "x1": 530.52,
+        "y1": 222.46,
+        "width": 449.2,
+        "height": 121.88
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 223.13,
+        "x1": 522.19,
+        "y1": 261.23,
+        "width": 432.19,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8-6",
+      "label": "8.6",
+      "page": 81,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-6-p081.png",
+      "caption_text": "Figure 8.6: Direct volume rendering (Ikits et al., 2004 ) \u2014 The density value f of each voxel p i jk is mapped through a transfer function (top) into a color c and an opacity \u03b1 ; those are then accumulated along each view ray to produce an image of the data.",
+      "figure_bbox": {
+        "x0": 107.1,
+        "y0": 99.62,
+        "x1": 509.57,
+        "y1": 315.87,
+        "width": 402.48,
+        "height": 216.26
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 317.07,
+        "x1": 522.0,
+        "y1": 355.27,
+        "width": 432.0,
+        "height": 38.2
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2443",
+        "image_xref_2448",
+        "image_xref_2449"
+      ]
+    },
+    {
+      "figure_id": "figure-8-7",
+      "label": "8.7",
+      "page": 83,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-7-p083.png",
+      "caption_text": "Figure 8.7: Contour enhanced direct volume rendering.",
+      "figure_bbox": {
+        "x0": 93.21,
+        "y0": 314.32,
+        "x1": 518.79,
+        "y1": 464.08,
+        "width": 425.58,
+        "height": 149.76
+      },
+      "caption_bbox": {
+        "x0": 177.02,
+        "y0": 296.43,
+        "x1": 434.98,
+        "y1": 307.34,
+        "width": 257.96,
+        "height": 10.91
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8-8",
+      "label": "8.8",
+      "page": 83,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-8-p083.png",
+      "caption_text": "Figure 8.8: Contour thickness variations in volume rendering \u2014 From left to right, apparent contours based solely on v \u00b7 n , with controlled thickness using T = 1 and T = 2 . 5 . Images rendered with \u201cmiter\u201d courtesy of Gordon Kindlmann, more information at http://www.sci.utah.edu/ ~gk/vis03/ .",
+      "figure_bbox": {
+        "x0": 93.21,
+        "y0": 314.32,
+        "x1": 518.79,
+        "y1": 464.08,
+        "width": 425.58,
+        "height": 149.76
+      },
+      "caption_bbox": {
+        "x0": 88.86,
+        "y0": 464.25,
+        "x1": 523.15,
+        "y1": 516.22,
+        "width": 434.29,
+        "height": 51.97
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8-9",
+      "label": "8.9",
+      "page": 85,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-8-9-p085.png",
+      "caption_text": "Figure 8.9: Bonsai dataset (256 3 voxels) \u2014 Contours extracted with the marching line method of Burns et al. ( 2005 ) (a) and the particle system of Busking et al. ( 2008 ) without (b) and with (c) thickness control. Volumetric dataset courtesy of Stefan Roettger ( 2012 ).",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 318.19,
+        "x1": 540.73,
+        "y1": 466.47,
+        "width": 459.91,
+        "height": 148.29
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 459.39,
+        "x1": 522.73,
+        "y1": 501.46,
+        "width": 432.73,
+        "height": 42.07
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "image_xref_2312"
+      ]
+    },
+    {
+      "figure_id": "figure-9-1",
+      "label": "9.1",
+      "page": 86,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-1-p086.png",
+      "caption_text": "Figure 9.1: Stylized contour rendering pipeline \u2014 Starting from a 3D geometry, the contour line segments are \ufb01rst extracted. Their visibility is then computed by building their View Graph; here the visible chains are shown, each with a separate color. Topological simpli\ufb01cation can be optionally applied for legibility or artistic purposes. Finally, each chain of the View Graph is rendered with stylized strokes. Images generated with Blender Freestyle.",
+      "figure_bbox": {
+        "x0": 43.81,
+        "y0": 512.62,
+        "x1": 589.01,
+        "y1": 649.49,
+        "width": 545.2,
+        "height": 136.87
+      },
+      "caption_bbox": {
+        "x0": 89.73,
+        "y0": 653.86,
+        "x1": 522.38,
+        "y1": 719.07,
+        "width": 432.65,
+        "height": 65.2
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2569",
+        "image_xref_2570"
+      ]
+    },
+    {
+      "figure_id": "figure-9-2",
+      "label": "9.2",
+      "page": 88,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-2-p088.png",
+      "caption_text": "Figure 9.2: Segment chaining at junctions \u2014 (a) At a T-junction, a foreground chain continues through the junction, whereas a background chains stops. (b) At a Y-junction, a silhouette chain crosses the junction, whereas a boundary chain stops.",
+      "figure_bbox": {
+        "x0": 109.07,
+        "y0": 101.51,
+        "x1": 507.84,
+        "y1": 225.06,
+        "width": 398.77,
+        "height": 123.55
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 226.85,
+        "x1": 522.0,
+        "y1": 264.96,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9-3",
+      "label": "9.3",
+      "page": 89,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-3-p089.png",
+      "caption_text": "Figure 9.3: Skeletal stroke \u2014 For each vertex v i of the stroke path, a rib vector r i is generated along the angle bisector to give breadth to the stroke (left). The skeletal stroke can then be rendered as a triangle strip (right).",
+      "figure_bbox": {
+        "x0": 76.81,
+        "y0": 100.76,
+        "x1": 520.28,
+        "y1": 236.73,
+        "width": 443.47,
+        "height": 135.97
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 237.31,
+        "x1": 522.0,
+        "y1": 275.42,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9-4",
+      "label": "9.4",
+      "page": 89,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-4-p089.png",
+      "caption_text": "Figure 9.4: Stroke style \u2014 Various stroke styles applied to the contours of Figure 7.6b using Blender Freestyle. From left to right, top to bottom: calligraphy, sketchy overdraw, textured scribbles and guiding lines.",
+      "figure_bbox": {
+        "x0": 76.81,
+        "y0": 100.76,
+        "x1": 522.04,
+        "y1": 493.95,
+        "width": 445.22,
+        "height": 393.19
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 498.18,
+        "x1": 522.0,
+        "y1": 536.29,
+        "width": 432.0,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9-5",
+      "label": "9.5",
+      "page": 92,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-5-p092.png",
+      "caption_text": "Figure 9.5: Topological simpli\ufb01cation (B\u00e9nard et al., 2014 ) \u2014 Four cases are considered for simpli\ufb01cation (candidate chain depicted in grey): (a) junction to dead-end connection; (b) dead-end to dead-end connection; (c) small closed loop; (d) small overlapping pieces of curve between two junctions.",
+      "figure_bbox": {
+        "x0": 85.72,
+        "y0": 274.93,
+        "x1": 610.87,
+        "y1": 447.85,
+        "width": 525.15,
+        "height": 172.92
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 228.29,
+        "x1": 522.18,
+        "y1": 279.95,
+        "width": 432.18,
+        "height": 51.66
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2462",
+        "image_xref_2463"
+      ]
+    },
+    {
+      "figure_id": "figure-9-6",
+      "label": "9.6",
+      "page": 92,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-6-p092.png",
+      "caption_text": "Figure 9.6: Result of topological simpli\ufb01cation on Red (B\u00e9nard et al., 2014 ) \u2014 Closeup on Red\u2019s shoulder and armpit, with genuine cusps, (a) before and (b) after topological simpli\ufb01cation. \u201cRed\u201d \u00a9 Disney/Pixar",
+      "figure_bbox": {
+        "x0": 85.72,
+        "y0": 101.27,
+        "x1": 610.87,
+        "y1": 447.85,
+        "width": 525.15,
+        "height": 346.57
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 439.23,
+        "x1": 523.94,
+        "y1": 477.34,
+        "width": 433.94,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects",
+        "image_xref_2462",
+        "image_xref_2463"
+      ]
+    },
+    {
+      "figure_id": "figure-9-7",
+      "label": "9.7",
+      "page": 94,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-7-p094.png",
+      "caption_text": "Figure 9.7: 2D curve tracking by active contours (B\u00e9nard et al., 2012 ) \u2014 The contour curves extracted from a galloping horse are tracked by active contours (left) ensuring a coherent parameteri- zation of the strokes (right) during the animation.",
+      "figure_bbox": {
+        "x0": 78.57,
+        "y0": 90.67,
+        "x1": 546.8,
+        "y1": 210.69,
+        "width": 468.23,
+        "height": 120.03
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 200.44,
+        "x1": 523.82,
+        "y1": 238.55,
+        "width": 433.82,
+        "height": 38.11
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "image_xref_2465",
+        "image_xref_2466",
+        "image_xref_2467",
+        "image_xref_2468",
+        "image_xref_2469",
+        "image_xref_2470",
+        "image_xref_2471"
+      ]
+    },
+    {
+      "figure_id": "figure-9-8",
+      "label": "9.8",
+      "page": 95,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-8-p095.png",
+      "caption_text": "Figure 9.8: 2D curve matching (Ben-Zvi et al., 2015 ) \u2014 Starting from the strokes at frame f i in blue and f i + 1 in red (a) , point correspondences are computed (b) by a constrained optimization, from which consistent sub-strokes can be extracted (c) .",
+      "figure_bbox": {
+        "x0": 175.69,
+        "y0": 102.37,
+        "x1": 443.06,
+        "y1": 254.4,
+        "width": 267.37,
+        "height": 152.02
+      },
+      "caption_bbox": {
+        "x0": 89.61,
+        "y0": 256.33,
+        "x1": 522.0,
+        "y1": 294.52,
+        "width": 432.4,
+        "height": 38.2
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9-9",
+      "label": "9.9",
+      "page": 95,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-9-9-p095.png",
+      "caption_text": "Figure 9.9: Parameterization propagation (Kalnins et al., 2003 ) \u2014 The strokes at frame f i (b) are sampled uniformly along their arc-length (c) and propagated by reprojection in the new camera (d) and local search in image-space (e) . Coherently parameterized strokes are created by potentially splitting new contour curves and \ufb01tting a continuous function to the samples balancing uniformity in 2D with coherence in 3D (f) .",
+      "figure_bbox": {
+        "x0": 80.82,
+        "y0": 102.37,
+        "x1": 531.19,
+        "y1": 489.92,
+        "width": 450.37,
+        "height": 387.55
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 490.5,
+        "x1": 522.73,
+        "y1": 555.79,
+        "width": 432.73,
+        "height": 65.3
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a",
+      "label": "A",
+      "page": 99,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-a-p099.png",
+      "caption_text": "Figure A.1: Parametric surface \u2014 The immersive map f : M \u2282 R 2 \u2192 R 3 associates to each parametric location u a unique 3D point p ; the normal n at that point is de\ufb01ned as the cross-product of the partial derivatives of the parameterization.",
+      "figure_bbox": {
+        "x0": 89.48,
+        "y0": 485.94,
+        "x1": 536.93,
+        "y1": 672.48,
+        "width": 447.45,
+        "height": 186.55
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 676.71,
+        "x1": 522.0,
+        "y1": 719.07,
+        "width": 432.0,
+        "height": 42.36
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-2",
+      "label": "A",
+      "page": 101,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-a-2-p101.png",
+      "caption_text": "Figure A.2: Curvature of a curve \u2014 The curvature \u03ba of the 3D parametric curve c at p = c ( t ) corresponds to the inverse of the radius of the osculating circle S in the osculating plane (in gray) de\ufb01ned by the tangent t and principal normal n .",
+      "figure_bbox": {
+        "x0": 225.96,
+        "y0": 101.6,
+        "x1": 399.24,
+        "y1": 257.25,
+        "width": 173.29,
+        "height": 155.65
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 257.81,
+        "x1": 522.86,
+        "y1": 296.07,
+        "width": 432.86,
+        "height": 38.26
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-3",
+      "label": "A",
+      "page": 101,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-a-3-p101.png",
+      "caption_text": "Figure A.3: Normal curvature \u2014 The curvature \u03ba n of the curve at the intersection of the surface",
+      "figure_bbox": {
+        "x0": 77.04,
+        "y0": 101.6,
+        "x1": 530.63,
+        "y1": 537.4,
+        "width": 453.59,
+        "height": 435.79
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 538.3,
+        "x1": 522.0,
+        "y1": 550.97,
+        "width": 432.0,
+        "height": 12.67
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-4",
+      "label": "A",
+      "page": 102,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png",
+      "caption_text": "Figure A.4: Surface categorization based on Gaussian curvature.",
+      "figure_bbox": {
+        "x0": 81.45,
+        "y0": 98.41,
+        "x1": 537.18,
+        "y1": 220.16,
+        "width": 455.73,
+        "height": 121.75
+      },
+      "caption_bbox": {
+        "x0": 155.23,
+        "y0": 220.62,
+        "x1": 456.77,
+        "y1": 231.52,
+        "width": 301.54,
+        "height": 10.91
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-b",
+      "label": "B",
+      "page": 104,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-b-p104.png",
+      "caption_text": "Figure B.1: Concave/convex edge \u2014 Cross-section plane for a mesh edge between triangles t 1 and t 2 , with normals n 1 and n 2 . The cross-section is some 3D plane perpendicular to the edge between the two triangles. The two faces divide space in four quadrants: I,II,III, and IV. For example, I is the set of points in front of both faces, and II is in front of t 1 and behind t 2 . (a) Concave case: \u03b8 < \u03c0 . Each face is in front of the other. In this case, the edge cannot be a visible contour. (b) Convex case: \u03b8 > \u03c0 . Each face is behind the other.",
+      "figure_bbox": {
+        "x0": 189.53,
+        "y0": 502.22,
+        "x1": 439.62,
+        "y1": 645.45,
+        "width": 250.09,
+        "height": 143.23
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 640.31,
+        "x1": 523.91,
+        "y1": 719.92,
+        "width": 433.91,
+        "height": 79.61
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-b-2",
+      "label": "B",
+      "page": 105,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-b-2-p105.png",
+      "caption_text": "Figure B.2: Front-facing/back-facing edges \u2014 A contour generator edge is back-facing , resp. front- facing , when its adjacent face nearest to the camera position c is back-facing ( B ), resp. front-facing ( F ). The \u201cinterior\u201d of the mesh (assumed closed) is depicted in grey for illustration purpose. Front- facing contour edges are always convex edges on the surface, and back-facing contours are always concave.",
+      "figure_bbox": {
+        "x0": 92.89,
+        "y0": 102.93,
+        "x1": 514.99,
+        "y1": 219.15,
+        "width": 422.1,
+        "height": 116.22
+      },
+      "caption_bbox": {
+        "x0": 89.64,
+        "y0": 223.54,
+        "x1": 523.81,
+        "y1": 288.75,
+        "width": 434.17,
+        "height": 65.21
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-b-3",
+      "label": "B",
+      "page": 106,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png",
+      "caption_text": "Figure B.3: Counterexample for Markosian\u2019s de\ufb01nition of front/back-facing edges \u2014 In this example, the face nearest to the camera is t 2 , which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2 , even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible.",
+      "figure_bbox": {
+        "x0": 271.28,
+        "y0": 326.55,
+        "x1": 369.6,
+        "y1": 435.29,
+        "width": 98.32,
+        "height": 108.74
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 445.34,
+        "x1": 522.0,
+        "y1": 498.63,
+        "width": 432.0,
+        "height": 53.29
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-100",
+      "label": "100",
+      "page": 109,
+      "image_path": "docs/2019_line_drawings_from_3d_models/figures/figure-100-p109.png",
+      "caption_text": "Figure C.1: 3D orientation and sidedness tests \u2014 The 3D orientation test (a) determines whether the point d is above, below or on the supporting plane of the oriented triangle \u25b3 abc , i.e., whether the signed volume of the parallelepiped spanned by the vectors # \u00ab ad , # \u00ab bd and #\u00ab cd is positive, negative or zero. Two points d and e are then on the opposite sides of the triangle \u25b3 abc if the their orientation tests have opposite signs (b) .",
+      "figure_bbox": {
+        "x0": 123.31,
+        "y0": 99.5,
+        "x1": 488.47,
+        "y1": 237.37,
+        "width": 365.16,
+        "height": 137.87
+      },
+      "caption_bbox": {
+        "x0": 90.0,
+        "y0": 237.94,
+        "x1": 522.19,
+        "y1": 303.15,
+        "width": 432.19,
+        "height": 65.21
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

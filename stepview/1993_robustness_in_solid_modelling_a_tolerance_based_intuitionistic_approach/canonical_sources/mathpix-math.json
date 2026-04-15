@@ -1,0 +1,67 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p013-0020",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& F^{+}=\\{p: f(p)>0.0\\} \\\\\n& F^{0}=\\{p: f(p)=0.0\\} \\\\\n& F^{-}=\\{p: f(p)<0.0\\}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 243.46,
+            "y0": 601.96,
+            "x1": 362.44,
+            "y1": 690.96,
+            "width": 118.98,
+            "height": 88.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0004",
+      "kind": "display",
+      "display_latex": "\\bigcup_{i} \\bigcap_{j} F_{i, j}^{+}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 278.31,
+            "y0": 173.48,
+            "x1": 328.77,
+            "y1": 205.47,
+            "width": 50.47,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1-1",
+      "label": "1.1",
+      "page": 2,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-1-1-p002.png",
+      "caption_text": "Figure 1.1. Top row: Two weakly simple polygons from Meis- ter\u2019s seminal 1770 treatise on polygons [ 36 ]. Bottom row: The polygon ( a , x , b , x , c , x ) is weakly simple; the polygon ( a , x , b , x , c , x , a , x , b , x , c , x ) is not.",
+      "figure_bbox": {
+        "x0": 35.44,
+        "y0": 176.63,
+        "x1": 540.84,
+        "y1": 330.94,
+        "width": 505.4,
+        "height": 154.31
+      },
+      "caption_bbox": {
+        "x0": 305.31,
+        "y0": 342.73,
+        "x1": 541.37,
+        "y1": 383.75,
+        "width": 236.06,
+        "height": 41.02
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2-1",
+      "label": "2.1",
+      "page": 4,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-2-1-p004.png",
+      "caption_text": "Figure 2.1. A polygon that many published de\ufb01nitions incorrectly classify as weakly simple.",
+      "figure_bbox": {
+        "x0": 35.44,
+        "y0": 410.51,
+        "x1": 546.78,
+        "y1": 521.85,
+        "width": 511.34,
+        "height": 111.34
+      },
+      "caption_bbox": {
+        "x0": 315.0,
+        "y0": 526.45,
+        "x1": 540.0,
+        "y1": 545.06,
+        "width": 225.0,
+        "height": 18.6
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3-1",
+      "label": "3.1",
+      "page": 5,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-3-1-p005.png",
+      "caption_text": "Figure 3.1. Node expansion. Compare with Figure C.1 .",
+      "figure_bbox": {
+        "x0": 35.44,
+        "y0": 476.47,
+        "x1": 543.77,
+        "y1": 626.08,
+        "width": 508.33,
+        "height": 149.61
+      },
+      "caption_bbox": {
+        "x0": 322.82,
+        "y0": 625.83,
+        "x1": 533.98,
+        "y1": 633.62,
+        "width": 211.16,
+        "height": 7.79
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4-1",
+      "label": "4.1",
+      "page": 7,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-4-1-p007.png",
+      "caption_text": "Figure 4.1. A bar decomposition of a weakly simple polygon without spurs, and a nearby simple polygon.",
+      "figure_bbox": {
+        "x0": 38.66,
+        "y0": 64.78,
+        "x1": 544.31,
+        "y1": 161.1,
+        "width": 505.65,
+        "height": 96.32
+      },
+      "caption_bbox": {
+        "x0": 324.0,
+        "y0": 163.53,
+        "x1": 540.0,
+        "y1": 182.13,
+        "width": 216.0,
+        "height": 18.6
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a",
+      "label": "A",
+      "page": 15,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-a-p015.png",
+      "caption_text": "Figure A.1. A forward crossing and a backward crossing. The paths coincide within the cloud.",
+      "figure_bbox": {
+        "x0": 132.57,
+        "y0": 383.35,
+        "x1": 479.44,
+        "y1": 439.7,
+        "width": 346.87,
+        "height": 56.35
+      },
+      "caption_bbox": {
+        "x0": 126.86,
+        "y0": 450.19,
+        "x1": 485.14,
+        "y1": 457.99,
+        "width": 358.28,
+        "height": 7.79
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-2",
+      "label": "A",
+      "page": 15,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-a-2-p015.png",
+      "caption_text": "Figure A.2. Two pairs of crossing paths that do not satisfy the combinatorial de\ufb01nition. Vertices in each small circle coincide.",
+      "figure_bbox": {
+        "x0": 138.26,
+        "y0": 529.51,
+        "x1": 476.04,
+        "y1": 620.56,
+        "width": 337.78,
+        "height": 91.05
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 635.02,
+        "x1": 541.69,
+        "y1": 642.76,
+        "width": 469.69,
+        "height": 7.73
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-3",
+      "label": "A",
+      "page": 16,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-a-3-p016.png",
+      "caption_text": "Figure A.3 (b) cross but do not satisfy this de\ufb01nition (because P has no points in \u2202 U \\ Q ), and the paths 1",
+      "figure_bbox": {
+        "x0": 38.66,
+        "y0": 94.09,
+        "x1": 523.61,
+        "y1": 230.12,
+        "width": 484.95,
+        "height": 136.03
+      },
+      "caption_bbox": {
+        "x0": 47.84,
+        "y0": 72.7,
+        "x1": 540.0,
+        "y1": 96.69,
+        "width": 492.16,
+        "height": 23.99
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-4",
+      "label": "A",
+      "page": 16,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-a-4-p016.png",
+      "caption_text": "Figure A.3. (a) A common intuitive de\ufb01nition of \u201ccrossing\u201d. (b) Crossing paths that do not satisfy this de\ufb01nition. (c) Non- crossing paths that do satisfy this de\ufb01nition. Vertices in each small circle coincide.",
+      "figure_bbox": {
+        "x0": 86.67,
+        "y0": 123.28,
+        "x1": 523.61,
+        "y1": 222.03,
+        "width": 436.94,
+        "height": 98.75
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 230.62,
+        "x1": 541.36,
+        "y1": 249.22,
+        "width": 469.36,
+        "height": 18.6
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a-5",
+      "label": "A",
+      "page": 16,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-a-5-p016.png",
+      "caption_text": "Figure A.5. A polygon ( a , b , c , a , b , c , a , x , y , z , x , y , z , x ) that is not weakly simple, even though its rotation number is 1 and every pair of vertices splits the polygon into two paths that do not cross.",
+      "figure_bbox": {
+        "x0": 140.62,
+        "y0": 589.34,
+        "x1": 478.45,
+        "y1": 696.81,
+        "width": 337.83,
+        "height": 107.47
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 699.08,
+        "x1": 540.0,
+        "y1": 720.01,
+        "width": 468.0,
+        "height": 20.92
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-b",
+      "label": "B",
+      "page": 18,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-b-p018.png",
+      "caption_text": "Figure B.1. Subpaths of Q and Q \u2032 within the strip system of node u .",
+      "figure_bbox": {
+        "x0": 166.53,
+        "y0": 537.26,
+        "x1": 440.67,
+        "y1": 646.62,
+        "width": 274.14,
+        "height": 109.35
+      },
+      "caption_bbox": {
+        "x0": 176.04,
+        "y0": 645.24,
+        "x1": 435.96,
+        "y1": 658.82,
+        "width": 259.91,
+        "height": 13.58
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-100",
+      "label": "100",
+      "page": 20,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-100-p020.png",
+      "caption_text": "Figure C.1. Expansion in an ellipse. Left column: Expanding the image graph G . Top row: If P is weakly simple, there is a nearby simple polygon Q . Right column: Expanding Q in the same ellipse yields a simple polygon \u02dc Q . Bottom row: \u02dc Q is close to \u02dc P . (Some edges of \u02dc Q are curved in the \ufb01gure to make them visible.) Compare with Figure 3.1 .",
+      "figure_bbox": {
+        "x0": 180.72,
+        "y0": 64.08,
+        "x1": 431.28,
+        "y1": 227.22,
+        "width": 250.56,
+        "height": 163.14
+      },
+      "caption_bbox": {
+        "x0": 72.0,
+        "y0": 226.3,
+        "x1": 540.0,
+        "y1": 258.69,
+        "width": 468.0,
+        "height": 32.38
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-100-2",
+      "label": "100",
+      "page": 20,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-100-2-p020.png",
+      "caption_text": "Figure C.2. Careless expansion can make non-weakly simple polygons simple.",
+      "figure_bbox": {
+        "x0": 222.18,
+        "y0": 462.73,
+        "x1": 389.82,
+        "y1": 530.34,
+        "width": 167.63,
+        "height": 67.61
+      },
+      "caption_bbox": {
+        "x0": 155.28,
+        "y0": 540.0,
+        "x1": 456.72,
+        "y1": 547.79,
+        "width": 301.45,
+        "height": 7.79
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-100-3",
+      "label": "100",
+      "page": 21,
+      "image_path": "docs/2015_detecting_weakly_simple_polygons/figures/figure-100-3-p021.png",
+      "caption_text": "Figure C.3. Bar expansion. Compare with Figure 3.1 .",
+      "figure_bbox": {
+        "x0": 114.88,
+        "y0": 533.88,
+        "x1": 518.62,
+        "y1": 658.25,
+        "width": 403.74,
+        "height": 124.37
+      },
+      "caption_bbox": {
+        "x0": 203.92,
+        "y0": 664.17,
+        "x1": 408.08,
+        "y1": 671.97,
+        "width": 204.16,
+        "height": 7.79
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

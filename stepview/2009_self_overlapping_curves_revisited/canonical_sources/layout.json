@@ -1,0 +1,2677 @@
+{
+  "engine": "docling",
+  "pdf_path": "docs/2009_self_overlapping_curves_revisited/2009_self_overlapping_curves_revisited.pdf",
+  "page_count": 13,
+  "page_sizes_pt": [
+    {
+      "page": 1,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 2,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 3,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 4,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 5,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 6,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 7,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 8,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 9,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 10,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 11,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 12,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 13,
+      "width": 612.0,
+      "height": 792.0
+    }
+  ],
+  "blocks": [
+    {
+      "id": "#/texts/1",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Self-overlapping Curves Revisited",
+      "bbox": {
+        "x0": 201.96,
+        "y0": 65.18,
+        "x1": 409.98,
+        "y1": 77.96,
+        "width": 208.02,
+        "height": 12.78
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Self-overlapping Curves Revisited"
+      }
+    },
+    {
+      "id": "#/texts/2",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "David Eppstein 1 and Elena Mumford 2",
+      "bbox": {
+        "x0": 222.6,
+        "y0": 101.88,
+        "x1": 388.82,
+        "y1": 113.41,
+        "width": 166.22,
+        "height": 11.53
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "David Eppstein 1 and Elena Mumford 2"
+      }
+    },
+    {
+      "id": "#/texts/3",
+      "page": 1,
+      "order": 3,
+      "role": "front_matter",
+      "text": "1 Computer Science Department University of California, Irvine eppstein@ics.uci.edu",
+      "bbox": {
+        "x0": 246.48,
+        "y0": 124.14,
+        "x1": 365.37,
+        "y1": 155.47,
+        "width": 118.89,
+        "height": 31.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1 Computer Science Department University of California, Irvine eppstein@ics.uci.edu"
+      }
+    },
+    {
+      "id": "#/texts/4",
+      "page": 1,
+      "order": 4,
+      "role": "front_matter",
+      "text": "2 Faculteit Wiskunde & Informatica Technische Universiteit Eindhoven e.mumford@tue.nl",
+      "bbox": {
+        "x0": 240.36,
+        "y0": 164.22,
+        "x1": 371.54,
+        "y1": 195.55,
+        "width": 131.18,
+        "height": 31.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2 Faculteit Wiskunde & Informatica Technische Universiteit Eindhoven e.mumford@tue.nl"
+      }
+    },
+    {
+      "id": "#/texts/5",
+      "page": 1,
+      "order": 5,
+      "role": "front_matter",
+      "text": "Abstract. A surface embedded in space, in such a way that each point has a neighborhood within which the surface is a terrain, projects to an immersed surface in the plane, the boundary of which is a self-intersecting curve. Under what circumstances can we reverse these mappings algorithmically? Shor and van Wyk considered one such problem, determining whether a curve is the boundary of an immersed disk; they showed that the self-overlapping curves defined in this way can be recognized in polynomial time. We show that several related problems are more difficult: it is NP-complete to determine whether an immersed disk is the projection of a surface embedded in space, or whether a curve is the boundary of an immersed surface in the plane that is not constrained to be a disk. However, when a casing is supplied with a self-intersecting curve, describing which component of the curve lies above and which below at each crossing, we may determine in time linear in the number of crossings whether the cased curve forms the projected boundary of a surface in space. As a related result, we show that an immersed surface with a single boundary curve that crosses itself n times has at most 2 n 2 combinatorially distinct spatial embeddings, and we discuss the existence of fixed-parameter tractable algorithms for related problems.",
+      "bbox": {
+        "x0": 100.32,
+        "y0": 228.54,
+        "x1": 511.7,
+        "y1": 357.09,
+        "width": 411.38,
+        "height": 128.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Abstract. A surface embedded in space, in such a way that each point has a neighborhood within which the surface is a terrain, projects to an immersed surface in the plane, the boundary of which is a self-intersecting curve. Under what circumstances can we reverse these mappings algorithmically? Shor and van Wyk considered one such problem, determining whether a curve is the boundary of an immersed disk; they showed that the self-overlapping curves defined in this way can be recognized in polynomial time. We show that several related problems are more difficult: it is NP-complete to determine whether an immersed disk is the projection of a surface embedded in space, or whether a curve is the boundary of an immersed surface in the plane that is not constrained to be a disk. However, when a casing is supplied with a self-intersecting curve, describing which component of the curve lies above and which below at each crossing, we may determine in time linear in the number of crossings whether the cased curve forms the projected boundary of a surface in space. As a related result, we show that an immersed surface with a single boundary curve that crosses itself n times has at most 2 n 2 combinatorially distinct spatial embeddings, and we discuss the existence of fixed-parameter tractable algorithms for related problems."
+      }
+    },
+    {
+      "id": "#/texts/6",
+      "page": 1,
+      "order": 6,
+      "role": "front_matter",
+      "text": "1 Introduction",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 380.96,
+        "x1": 154.61,
+        "y1": 391.61,
+        "width": 82.61,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1 Introduction"
+      }
+    },
+    {
+      "id": "#/texts/7",
+      "page": 1,
+      "order": 7,
+      "role": "front_matter",
+      "text": "In this paper we consider the algorithmic interplay between three types of topological object: self-crossing curves in the plane, two-dimensional surfaces mapped to the plane in a self-overlapping way, and threedimensional embeddings of surfaces that generalize the terrains familiar in computational geometry.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 406.54,
+        "x1": 539.79,
+        "y1": 443.17,
+        "width": 467.79,
+        "height": 36.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In this paper we consider the algorithmic interplay between three types of topological object: self-crossing curves in the plane, two-dimensional surfaces mapped to the plane in a self-overlapping way, and threedimensional embeddings of surfaces that generalize the terrains familiar in computational geometry."
+      }
+    },
+    {
+      "id": "#/texts/8",
+      "page": 1,
+      "order": 8,
+      "role": "front_matter",
+      "text": "A surface or two-dimensional manifold with boundary is a compact Hausdorff topological space M such that every point p has a neighborhood homeomorphic to a closed disk. If this homeomorphism maps p to a boundary point of the disk, we call p a boundary point of M ; the set of boundary points is represented by ∂ M . An immersion or local homeomorphism is a continuous function i : M → T that, restricted to some neighborhood of every point, is a homeomorphism. We will here be concerned only with the case that T = R 2 , in which case we say that the surface M is immersed in the plane . If M is topologically a disk, we call i an immersed disk , but immersions of other types of manifold are also possible.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 447.22,
+        "x1": 540.04,
+        "y1": 538.09,
+        "width": 468.04,
+        "height": 90.87
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A surface or two-dimensional manifold with boundary is a compact Hausdorff topological space M such that every point p has a neighborhood homeomorphic to a closed disk. If this homeomorphism maps p to a boundary point of the disk, we call p a boundary point of M ; the set of boundary points is represented by ∂ M . An immersion or local homeomorphism is a continuous function i : M → T that, restricted to some neighborhood of every point, is a homeomorphism. We will here be concerned only with the case that T = R 2 , in which case we say that the surface M is immersed in the plane . If M is topologically a disk, we call i an immersed disk , but immersions of other types of manifold are also possible."
+      }
+    },
+    {
+      "id": "#/texts/9",
+      "page": 1,
+      "order": 9,
+      "role": "front_matter",
+      "text": "An embedding of a surface M into some space S is a closed subspace of S that is the image of M under a one-to-one continuous function e : M ↦→ S , the inverse of which is also continuous. A terrain is a surface embedded in space R 3 such that every vertical line { ( x , y , z ) | x = c 1 , y = c 2 } intersects it at most once. We are interested here in a localized version of this property: an generalized terrain is a surface M embedded in space R 3 such that every point of M has a neighborhood the image of which is a terrain. Intuitively, such a surface is embedded in such a way that it has no vertical tangent lines, so that it has a consistent up-down orientation at every point. We will also call such a surface a embedded surface, when it does not introduce any confusion-see Figure 2 for an example. Intuitively, every generalized terrain can be constructed by gluing terrains along their boundaries. As with immersions, if M is topologically a disk, we call e ( M ) an embedded disk .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 542.14,
+        "x1": 540.04,
+        "y1": 673.57,
+        "width": 468.04,
+        "height": 131.43
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "An embedding of a surface M into some space S is a closed subspace of S that is the image of M under a one-to-one continuous function e : M ↦→ S , the inverse of which is also continuous. A terrain is a surface embedded in space R 3 such that every vertical line { ( x , y , z ) | x = c 1 , y = c 2 } intersects it at most once. We are interested here in a localized version of this property: an generalized terrain is a surface M embedded in space R 3 such that every point of M has a neighborhood the image of which is a terrain. Intuitively, such a surface is embedded in such a way that it has no vertical tangent lines, so that it has a consistent up-down orientation at every point. We will also call such a surface a embedded surface, when it does not introduce any confusion-see Figure 2 for an example. Intuitively, every generalized terrain can be constructed by gluing terrains along their boundaries. As with immersions, if M is topologically a disk, we call e ( M ) an embedded disk ."
+      }
+    },
+    {
+      "id": "#/texts/10",
+      "page": 1,
+      "order": 10,
+      "role": "front_matter",
+      "text": "If i is an immersion, i ( ∂ M ) is a curve in the plane, which we call the boundary of the immersion ; with a suitable general-position assumption on i , this curve intersects itself only at proper pairwise crossings [7]. And if e is an embedding of a generalized terrain, we may project it into the plane to form an immersion:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 673.82,
+        "x1": 539.93,
+        "y1": 714.13,
+        "width": 467.93,
+        "height": 40.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "If i is an immersion, i ( ∂ M ) is a curve in the plane, which we call the boundary of the immersion ; with a suitable general-position assumption on i , this curve intersects itself only at proper pairwise crossings [7]. And if e is an embedding of a generalized terrain, we may project it into the plane to form an immersion:"
+      }
+    },
+    {
+      "id": "#/texts/11",
+      "page": 2,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 1.",
+      "bbox": {
+        "x0": 293.52,
+        "y0": 354.06,
+        "x1": 316.28,
+        "y1": 362.05,
+        "width": 22.76,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 1."
+      }
+    },
+    {
+      "id": "#/texts/12",
+      "page": 2,
+      "order": 2,
+      "role": "paragraph",
+      "text": "let π z ( x , y , z ) = ( x , y ) , then i ( p ) = π z ( e ( p )) is a local homeomorphism from M to R 2 . We are interested in this paper in the conditions under which these transformations can be reversed: if we are given an immersed surface, when is it the projection of a generalized terrain? If we are given a curve in the plane, when is it the boundary of an immersed surface, or of the projection of a generalized terrain?",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 386.42,
+        "x1": 539.93,
+        "y1": 440.41,
+        "width": 467.93,
+        "height": 53.99
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "let π z ( x , y , z ) = ( x , y ) , then i ( p ) = π z ( e ( p )) is a local homeomorphism from M to R 2 . We are interested in this paper in the conditions under which these transformations can be reversed: if we are given an immersed surface, when is it the projection of a generalized terrain? If we are given a curve in the plane, when is it the boundary of an immersed surface, or of the projection of a generalized terrain?"
+      }
+    },
+    {
+      "id": "#/texts/13",
+      "page": 2,
+      "order": 3,
+      "role": "paragraph",
+      "text": "The study of this subject goes back to a paper by Whitney [10]. Shor and Van Wyk [8] first considered problems of this type from the algorithmic point of view. In our terminology, they showed that it is possible in polynomial time to determine whether a given curve (with proper pairwise crossings) is the boundary of an immersed disk. However, the possibilities of non-disk manifolds, of curves with multiple connected components, and of space embeddings as well as of plane immersions left many similar types of problems unsolved.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 445.42,
+        "x1": 539.8,
+        "y1": 522.61,
+        "width": 467.8,
+        "height": 77.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The study of this subject goes back to a paper by Whitney [10]. Shor and Van Wyk [8] first considered problems of this type from the algorithmic point of view. In our terminology, they showed that it is possible in polynomial time to determine whether a given curve (with proper pairwise crossings) is the boundary of an immersed disk. However, the possibilities of non-disk manifolds, of curves with multiple connected components, and of space embeddings as well as of plane immersions left many similar types of problems unsolved."
+      }
+    },
+    {
+      "id": "#/texts/14",
+      "page": 2,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Figure 1 depicts the set of objects whose relationships we consider; a transformation from one type of object to another that loses information about the object is depicted as a downward arc. The algorithmic problems we consider, therefore, correspond to the upward arc in this figure; for instance, the arc from curves to immersed disks, labeled 'P', represents the result of Shor and Van Wyk that one can determine in polynomial time whether a curve is the boundary of an immersed disk; they call a curve that has this property self-overlapping . The remaining labels on the arcs of the figure represent our new results.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 527.62,
+        "x1": 539.92,
+        "y1": 604.81,
+        "width": 467.92,
+        "height": 77.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Figure 1 depicts the set of objects whose relationships we consider; a transformation from one type of object to another that loses information about the object is depicted as a downward arc. The algorithmic problems we consider, therefore, correspond to the upward arc in this figure; for instance, the arc from curves to immersed disks, labeled 'P', represents the result of Shor and Van Wyk that one can determine in polynomial time whether a curve is the boundary of an immersed disk; they call a curve that has this property self-overlapping . The remaining labels on the arcs of the figure represent our new results."
+      }
+    },
+    {
+      "id": "#/texts/15",
+      "page": 2,
+      "order": 5,
+      "role": "paragraph",
+      "text": "The cased curves mentioned on the right side of Figure 1 require further explanation. If one computes the projected boundary of a generalized terrain, one can obtain not just a set of curves in the plane, but also a 'casing' describing the above-below relationship of the two components of boundary curve at each crossing point. Casings are generally depicted graphically by interrupting the lower curve segment at a crossing, and allowing the upper curve segment to pass through the crossing uninterrupted, as we have done with the arcs and crossings of the figure. Casings of this type are standard in the two-dimensional description of mathematical knots, and have also been studied from the point of view of graph drawing [5]. By throwing away the casing information, we obtain an uncased curve in the plane, but an uncased curve with n crossings",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 609.82,
+        "x1": 540.04,
+        "y1": 714.13,
+        "width": 468.04,
+        "height": 104.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The cased curves mentioned on the right side of Figure 1 require further explanation. If one computes the projected boundary of a generalized terrain, one can obtain not just a set of curves in the plane, but also a 'casing' describing the above-below relationship of the two components of boundary curve at each crossing point. Casings are generally depicted graphically by interrupting the lower curve segment at a crossing, and allowing the upper curve segment to pass through the crossing uninterrupted, as we have done with the arcs and crossings of the figure. Casings of this type are standard in the two-dimensional description of mathematical knots, and have also been studied from the point of view of graph drawing [5]. By throwing away the casing information, we obtain an uncased curve in the plane, but an uncased curve with n crossings"
+      }
+    },
+    {
+      "id": "#/texts/17",
+      "page": 3,
+      "order": 1,
+      "role": "paragraph",
+      "text": "has 2 n different casings. As we show, this casing information is crucial: with it we can, in linear time, reconstruct a generalized terrain (if one exists) that has the given cased curve as its projected boundary. In the absence of casing, as we show, it is NP-complete to determine whether a curve is the projected boundary of a generalized terrain, or the boundary of an immersed surface. Additionally, we show using a different reduction that it is NP-complete to determine whether an immersed disk is the projection of a generalized terrain. The question mark indicates the problem that remains open.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 65.72,
+        "x1": 539.97,
+        "y1": 144.85,
+        "width": 467.97,
+        "height": 79.13
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "has 2 n different casings. As we show, this casing information is crucial: with it we can, in linear time, reconstruct a generalized terrain (if one exists) that has the given cased curve as its projected boundary. In the absence of casing, as we show, it is NP-complete to determine whether a curve is the projected boundary of a generalized terrain, or the boundary of an immersed surface. Additionally, we show using a different reduction that it is NP-complete to determine whether an immersed disk is the projection of a generalized terrain. The question mark indicates the problem that remains open."
+      }
+    },
+    {
+      "id": "#/texts/18",
+      "page": 3,
+      "order": 2,
+      "role": "paragraph",
+      "text": "The problem of embedding a cased curve as a surface boundary is related to the study of so-called Seifert surfaces in the knot theory; however, we require the surface to be a generalized terrain, which is not generally the case for Seifert surfaces. Two spatial embeddings of a curve are called combinatorially equivalent if they provide it with the same casing. Thus, every curve with n crossings has at most 2 n combinatorially different spatial embeddings. However, we show that an immersed surface has at most 2 n 2 combinatorially different spatial embeddings. As we show, the ideas behind this combinatorial result lead to a fixed-parameter-tractable algorithm for testing whether an immersed surface can be lifted to an embedded surface.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 149.74,
+        "x1": 539.94,
+        "y1": 254.05,
+        "width": 467.94,
+        "height": 104.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The problem of embedding a cased curve as a surface boundary is related to the study of so-called Seifert surfaces in the knot theory; however, we require the surface to be a generalized terrain, which is not generally the case for Seifert surfaces. Two spatial embeddings of a curve are called combinatorially equivalent if they provide it with the same casing. Thus, every curve with n crossings has at most 2 n combinatorially different spatial embeddings. However, we show that an immersed surface has at most 2 n 2 combinatorially different spatial embeddings. As we show, the ideas behind this combinatorial result lead to a fixed-parameter-tractable algorithm for testing whether an immersed surface can be lifted to an embedded surface."
+      }
+    },
+    {
+      "id": "#/texts/19",
+      "page": 3,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Our main reasons for being interested in these problems are, firstly, their mathematical pedigree stretching back to Whitney's 1937 paper and, secondly, to resolve past confusion over how variations in the definition of a self-overlapping curve can change the computational complexity of the problem. We note for instance that the original conference version of the Shor and Van Wyk paper stated incorrectly that their methods solved both the immersion problem and the (still open) problem of testing whether a curve is the boundary of an embedded disk; this error was fortunately corrected in the journal version. Beyond these motivations, however, it also may be possible to use these problems in certain application areas of geometric computation. For instance, VLSI circuits are typically designed in terms of two-dimensional polygonal regions that overlap with each other in functional regions of the circuit; the global vertical ordering of these regions is less critical for the proper operation of the circuit than the vertical adjacencies between overlapping regions. Thus, our results may shed light on the difficulty of testing whether certain two-dimensional circuit designs have a valid three-dimensional representation. In architectural and landscape design, also, one often has surfaces with no vertical tangent (because people must walk on them!) with levels that overlap in complex patterns. More generally, we feel that the concept of a generalized terrain may be relevant in many of the computational geometry applications in which terrains arise.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 258.82,
+        "x1": 539.94,
+        "y1": 458.06,
+        "width": 467.94,
+        "height": 199.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Our main reasons for being interested in these problems are, firstly, their mathematical pedigree stretching back to Whitney's 1937 paper and, secondly, to resolve past confusion over how variations in the definition of a self-overlapping curve can change the computational complexity of the problem. We note for instance that the original conference version of the Shor and Van Wyk paper stated incorrectly that their methods solved both the immersion problem and the (still open) problem of testing whether a curve is the boundary of an embedded disk; this error was fortunately corrected in the journal version. Beyond these motivations, however, it also may be possible to use these problems in certain application areas of geometric computation. For instance, VLSI circuits are typically designed in terms of two-dimensional polygonal regions that overlap with each other in functional regions of the circuit; the global vertical ordering of these regions is less critical for the proper operation of the circuit than the vertical adjacencies between overlapping regions. Thus, our results may shed light on the difficulty of testing whether certain two-dimensional circuit designs have a valid three-dimensional representation. In architectural and landscape design, also, one often has surfaces with no vertical tangent (because people must walk on them!) with levels that overlap in complex patterns. More generally, we feel that the concept of a generalized terrain may be relevant in many of the computational geometry applications in which terrains arise."
+      }
+    },
+    {
+      "id": "#/texts/20",
+      "page": 3,
+      "order": 4,
+      "role": "heading",
+      "text": "2 Additional definitions and examples",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 483.32,
+        "x1": 272.97,
+        "y1": 493.97,
+        "width": 200.97,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2 Additional definitions and examples"
+      }
+    },
+    {
+      "id": "#/texts/21",
+      "page": 3,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Let i : M → R 2 be a surface immersion in the plane. For every point p ∈ i ( M ) the thickness of i ( M ) at p is the number of points in the set i -1 ( p ) . The boundary of an immersed surface splits R 2 into faces, where the thickness at all points belonging to the same face is the same. In fact, the thickness at p can be obtained from the boundary curve of the surface and is equal to the winding number of the curve around p , defined as the number of times the curve goes around p in clockwise direction; see, e.g. [3] for a more detailed explanation of this concept.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 511.44,
+        "x1": 539.92,
+        "y1": 590.78,
+        "width": 467.92,
+        "height": 79.34
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Let i : M → R 2 be a surface immersion in the plane. For every point p ∈ i ( M ) the thickness of i ( M ) at p is the number of points in the set i -1 ( p ) . The boundary of an immersed surface splits R 2 into faces, where the thickness at all points belonging to the same face is the same. In fact, the thickness at p can be obtained from the boundary curve of the surface and is equal to the winding number of the curve around p , defined as the number of times the curve goes around p in clockwise direction; see, e.g. [3] for a more detailed explanation of this concept."
+      }
+    },
+    {
+      "id": "#/texts/22",
+      "page": 3,
+      "order": 6,
+      "role": "paragraph",
+      "text": "A lifting of an immersion i is an embedding e : M → R 3 that projects to i : that is, for all p ∈ M , i ( p ) = π z ( e ( M )) , where π z (( x , y , z )) = ( x , y ) . Necessarily, e must describe a generalized terrain, for otherwise its projection would not be a local homeomorphism.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 593.52,
+        "x1": 539.96,
+        "y1": 632.18,
+        "width": 467.96,
+        "height": 38.66
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A lifting of an immersion i is an embedding e : M → R 3 that projects to i : that is, for all p ∈ M , i ( p ) = π z ( e ( M )) , where π z (( x , y , z )) = ( x , y ) . Necessarily, e must describe a generalized terrain, for otherwise its projection would not be a local homeomorphism."
+      }
+    },
+    {
+      "id": "#/texts/23",
+      "page": 3,
+      "order": 7,
+      "role": "paragraph",
+      "text": "A hole in a surface M with an immersion i is a component C of the boundary of M such that i ( C ) is a simple curve and such that i maps a neighborhood of C to the outside of i ( C ) . It is tempting to imagine that every immersed surface, and therefore every generalized terrain, must be topologically equivalent to a disk with holes, and that every immersed surface with a single boundary component must be topologically equivalent to a disk, but this is not true. For instance, Figure 3 shows a single curve that bounds an immersed surface topologically equivalent to a punctured torus.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 635.98,
+        "x1": 540.04,
+        "y1": 714.14,
+        "width": 468.04,
+        "height": 78.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A hole in a surface M with an immersion i is a component C of the boundary of M such that i ( C ) is a simple curve and such that i maps a neighborhood of C to the outside of i ( C ) . It is tempting to imagine that every immersed surface, and therefore every generalized terrain, must be topologically equivalent to a disk with holes, and that every immersed surface with a single boundary component must be topologically equivalent to a disk, but this is not true. For instance, Figure 3 shows a single curve that bounds an immersed surface topologically equivalent to a punctured torus."
+      }
+    },
+    {
+      "id": "#/texts/25",
+      "page": 4,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 2. A generalized terrain, as viewed from above.",
+      "bbox": {
+        "x0": 84.36,
+        "y0": 166.26,
+        "x1": 270.08,
+        "y1": 174.25,
+        "width": 185.72,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 2. A generalized terrain, as viewed from above."
+      }
+    },
+    {
+      "id": "#/texts/26",
+      "page": 4,
+      "order": 2,
+      "role": "caption",
+      "text": "Fig. 3. This curve is the boundary of a unique immersed surface, topologically equivalent to a punctured torus.",
+      "bbox": {
+        "x0": 329.4,
+        "y0": 166.26,
+        "x1": 539.92,
+        "y1": 185.25,
+        "width": 210.52,
+        "height": 18.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 3. This curve is the boundary of a unique immersed surface, topologically equivalent to a punctured torus."
+      }
+    },
+    {
+      "id": "#/texts/27",
+      "page": 4,
+      "order": 3,
+      "role": "paragraph",
+      "text": "In dealing with surfaces that have multiple boundary components, it is important to have the concept of an orientation of a curve, an assignment of a consistent cyclic ordering to the points of the curve. We orient the boundary components of a surface M so that (as viewed according to the orientation) the surface itself is to the right of the boundary curve. An immersion or embedding of a surface, having a given set of curves in the plane as boundary, is consistent with an orientation of those curves if this rightwards orientation intrinsic to the surface matches the orientation in the embedding. Thus, a simple closed curve bounding a disk in the plane is oriented clockwise, while the boundary of a hole is oriented counterclockwise.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 237.1,
+        "x1": 539.94,
+        "y1": 327.85,
+        "width": 467.94,
+        "height": 90.75
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In dealing with surfaces that have multiple boundary components, it is important to have the concept of an orientation of a curve, an assignment of a consistent cyclic ordering to the points of the curve. We orient the boundary components of a surface M so that (as viewed according to the orientation) the surface itself is to the right of the boundary curve. An immersion or embedding of a surface, having a given set of curves in the plane as boundary, is consistent with an orientation of those curves if this rightwards orientation intrinsic to the surface matches the orientation in the embedding. Thus, a simple closed curve bounding a disk in the plane is oriented clockwise, while the boundary of a hole is oriented counterclockwise."
+      }
+    },
+    {
+      "id": "#/texts/28",
+      "page": 4,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Although every generalized terrain projects to an immersed surface and every immersed surface has a self-intersecting curve as a boundary, this correspondence does not always work in the opposite direction. Some immersed surfaces cannot be be lifted into space; Figure 4 shows an example of an immersed disk with a hole. Any embedding of this disk into R 3 would intersect itself at some curve connecting the selfintersection points of its boundary curve. Some curves, such as the curve defined by the ∞ symbol, cannot be embedded as boundaries of any immersed surfaces. Even more problematically, some curves can be a boundary of more than one immersed surface. Bennequin in [2] has given an example of a curve (see Figure 5) that can be viewed as a boundary of an immersed disk in five different ways. Two of these ways involve a single central component with three lobes hanging off it symmetrically, while the other three have a shape that is more like a single spiral strip. The three spiral disks can be embedded into space but the two three-lobed disks cannot.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 344.62,
+        "x1": 540.06,
+        "y1": 489.61,
+        "width": 468.06,
+        "height": 144.99
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Although every generalized terrain projects to an immersed surface and every immersed surface has a self-intersecting curve as a boundary, this correspondence does not always work in the opposite direction. Some immersed surfaces cannot be be lifted into space; Figure 4 shows an example of an immersed disk with a hole. Any embedding of this disk into R 3 would intersect itself at some curve connecting the selfintersection points of its boundary curve. Some curves, such as the curve defined by the ∞ symbol, cannot be embedded as boundaries of any immersed surfaces. Even more problematically, some curves can be a boundary of more than one immersed surface. Bennequin in [2] has given an example of a curve (see Figure 5) that can be viewed as a boundary of an immersed disk in five different ways. Two of these ways involve a single central component with three lobes hanging off it symmetrically, while the other three have a shape that is more like a single spiral strip. The three spiral disks can be embedded into space but the two three-lobed disks cannot."
+      }
+    },
+    {
+      "id": "#/texts/29",
+      "page": 4,
+      "order": 5,
+      "role": "caption",
+      "text": "Fig. 4. These two curves form the boundary of an immersed surface in two different ways, neither of which can be lifted to R 3 .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 683.82,
+        "x1": 282.64,
+        "y1": 713.73,
+        "width": 210.64,
+        "height": 29.91
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 4. These two curves form the boundary of an immersed surface in two different ways, neither of which can be lifted to R 3 ."
+      }
+    },
+    {
+      "id": "#/texts/30",
+      "page": 4,
+      "order": 6,
+      "role": "caption",
+      "text": "Fig. 5. Bennequin's curve bounding five different immersed disks.",
+      "bbox": {
+        "x0": 329.4,
+        "y0": 683.82,
+        "x1": 539.92,
+        "y1": 702.69,
+        "width": 210.52,
+        "height": 18.87
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 5. Bennequin's curve bounding five different immersed disks."
+      }
+    },
+    {
+      "id": "#/texts/32",
+      "page": 5,
+      "order": 1,
+      "role": "heading",
+      "text": "3 Lifting a cased curve",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 66.8,
+        "x1": 196.23,
+        "y1": 77.45,
+        "width": 124.23,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3 Lifting a cased curve"
+      }
+    },
+    {
+      "id": "#/texts/33",
+      "page": 5,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Theorem 1. Given a single component curve with a given casing, we can determine whether the cased curve represents the boundary of a generalized terrain, and find a terrain having it as boundary, in time linear in the number of crossings of the curve.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 93.07,
+        "x1": 539.92,
+        "y1": 129.82,
+        "width": 467.92,
+        "height": 36.75
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 1. Given a single component curve with a given casing, we can determine whether the cased curve represents the boundary of a generalized terrain, and find a terrain having it as boundary, in time linear in the number of crossings of the curve."
+      }
+    },
+    {
+      "id": "#/texts/34",
+      "page": 5,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Proof. We represent the curve using a modified form of Dowker notation [4] as follows:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 143.98,
+        "x1": 456.63,
+        "y1": 153.49,
+        "width": 384.63,
+        "height": 9.51
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. We represent the curve using a modified form of Dowker notation [4] as follows:"
+      }
+    },
+    {
+      "id": "#/texts/35",
+      "page": 5,
+      "order": 4,
+      "role": "list_item",
+      "text": "Label the n crossings of the curve by the numbers from 1 to n , arbitrarily.",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 165.58,
+        "x1": 408.21,
+        "y1": 175.09,
+        "width": 332.85,
+        "height": 9.51
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "1. Label the n crossings of the curve by the numbers from 1 to n , arbitrarily."
+      }
+    },
+    {
+      "id": "#/texts/36",
+      "page": 5,
+      "order": 5,
+      "role": "list_item",
+      "text": "Choose a starting point on a part of the curve that lies on the exterior face of the drawing, and orient the curve consistently so that at this starting point the exterior face lies to the left of the oriented curve.",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 179.14,
+        "x1": 539.93,
+        "y1": 202.21,
+        "width": 464.57,
+        "height": 23.07
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2. Choose a starting point on a part of the curve that lies on the exterior face of the drawing, and orient the curve consistently so that at this starting point the exterior face lies to the left of the oriented curve."
+      }
+    },
+    {
+      "id": "#/texts/37",
+      "page": 5,
+      "order": 6,
+      "role": "list_item",
+      "text": "At crossing i , draw two arrows, one on each of the two strands of the curve, outward from the crossing in the direction given by the orientation. Assign the arrow that is to the clockwise of the other arrow the number + i and the other the number -i .",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 206.26,
+        "x1": 539.93,
+        "y1": 250.95,
+        "width": 464.57,
+        "height": 44.69
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "3. At crossing i , draw two arrows, one on each of the two strands of the curve, outward from the crossing in the direction given by the orientation. Assign the arrow that is to the clockwise of the other arrow the number + i and the other the number -i ."
+      }
+    },
+    {
+      "id": "#/texts/38",
+      "page": 5,
+      "order": 7,
+      "role": "list_item",
+      "text": "List the marks constructed in this way, in the order that they would be found by traversing the curve as oriented from the given starting point.",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 246.82,
+        "x1": 539.92,
+        "y1": 269.89,
+        "width": 464.56,
+        "height": 23.07
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "4. List the marks constructed in this way, in the order that they would be found by traversing the curve as oriented from the given starting point."
+      }
+    },
+    {
+      "id": "#/texts/39",
+      "page": 5,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Additionally, we specify the casing as an n -bit binary number. It has a nonzero bit in position i -1 if the strand labeled + i crosses above the strand labeled -i , and a zero bit otherwise.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 281.02,
+        "x1": 539.92,
+        "y1": 313.23,
+        "width": 467.92,
+        "height": 32.21
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Additionally, we specify the casing as an n -bit binary number. It has a nonzero bit in position i -1 if the strand labeled + i crosses above the strand labeled -i , and a zero bit otherwise."
+      }
+    },
+    {
+      "id": "#/texts/40",
+      "page": 5,
+      "order": 9,
+      "role": "paragraph",
+      "text": "From these heights of the boundary curve, we can define a full surface, by stacking sheets of surface above each face of the drawing, the number of sheets equalling the winding number of the curve around the face. The height of the boundary curve tells us which sheets continue from one face to an adjacent face, and which sheet has its boundary there. This describes a valid surface if the following conditions are met:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 417.58,
+        "x1": 539.94,
+        "y1": 467.66,
+        "width": 467.94,
+        "height": 50.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "From these heights of the boundary curve, we can define a full surface, by stacking sheets of surface above each face of the drawing, the number of sheets equalling the winding number of the curve around the face. The height of the boundary curve tells us which sheets continue from one face to an adjacent face, and which sheet has its boundary there. This describes a valid surface if the following conditions are met:"
+      }
+    },
+    {
+      "id": "#/texts/41",
+      "page": 5,
+      "order": 10,
+      "role": "paragraph",
+      "text": "We use the sequence of above-below relationships to compute an array Height [ i ] , that indicates the number of layers of surface that are supposed to lie below the curve as it heads outwards from the crossing labeled i . Note that here, i may be either positive or negative. At the start of the labeling sequence, the height is zero: as it is on the outside face, the surface must be only one layer thick at that point. Subsequent heights can be computed in constant time per value, by traversing the curve: at an undercrossing, the height remains the same as at the previous arrow in the traversal order, while at an overcrossing, the height differs either by + 1 or -1. For an overcrossing with label + i , the new height is one larger than the previous height, but for an overcrossing with label -i , the new height is one smaller than the previous height.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 308.14,
+        "x1": 539.94,
+        "y1": 421.71,
+        "width": 467.94,
+        "height": 113.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We use the sequence of above-below relationships to compute an array Height [ i ] , that indicates the number of layers of surface that are supposed to lie below the curve as it heads outwards from the crossing labeled i . Note that here, i may be either positive or negative. At the start of the labeling sequence, the height is zero: as it is on the outside face, the surface must be only one layer thick at that point. Subsequent heights can be computed in constant time per value, by traversing the curve: at an undercrossing, the height remains the same as at the previous arrow in the traversal order, while at an overcrossing, the height differs either by + 1 or -1. For an overcrossing with label + i , the new height is one larger than the previous height, but for an overcrossing with label -i , the new height is one smaller than the previous height."
+      }
+    },
+    {
+      "id": "#/texts/42",
+      "page": 5,
+      "order": 11,
+      "role": "list_item",
+      "text": "The height of each strand of the curve lies between zero and the winding number of the face adjacent to the strand in the exterior direction. (These winding numbers may be determined from the curve itself in linear time, based on a similar traversal of the crossing sequence.)",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 479.74,
+        "x1": 539.94,
+        "y1": 516.38,
+        "width": 464.58,
+        "height": 36.64
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "1. The height of each strand of the curve lies between zero and the winding number of the face adjacent to the strand in the exterior direction. (These winding numbers may be determined from the curve itself in linear time, based on a similar traversal of the crossing sequence.)"
+      }
+    },
+    {
+      "id": "#/texts/43",
+      "page": 5,
+      "order": 12,
+      "role": "list_item",
+      "text": "The casing determined by the heights matches the input casing.",
+      "bbox": {
+        "x0": 75.36,
+        "y0": 520.42,
+        "x1": 365.01,
+        "y1": 529.94,
+        "width": 289.65,
+        "height": 9.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2. The casing determined by the heights matches the input casing."
+      }
+    },
+    {
+      "id": "#/texts/44",
+      "page": 5,
+      "order": 13,
+      "role": "paragraph",
+      "text": "Both conditions may easily be checked in linear time.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 542.02,
+        "x1": 306.09,
+        "y1": 551.54,
+        "width": 234.09,
+        "height": 9.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Both conditions may easily be checked in linear time."
+      }
+    },
+    {
+      "id": "#/texts/45",
+      "page": 5,
+      "order": 14,
+      "role": "paragraph",
+      "text": "intersectionsq unionsq",
+      "bbox": {
+        "x0": 532.68,
+        "y0": 541.06,
+        "x1": 539.95,
+        "y1": 559.71,
+        "width": 7.27,
+        "height": 18.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/46",
+      "page": 5,
+      "order": 15,
+      "role": "paragraph",
+      "text": "For a curve with multiple components we have a similar result but the complexity of the algorithm is higher.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 565.66,
+        "x1": 539.73,
+        "y1": 575.18,
+        "width": 467.73,
+        "height": 9.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "For a curve with multiple components we have a similar result but the complexity of the algorithm is higher."
+      }
+    },
+    {
+      "id": "#/texts/47",
+      "page": 5,
+      "order": 16,
+      "role": "paragraph",
+      "text": "Theorem 2. Given a cased oriented curve, we can determine whether the cased curve represents the boundary of a generalized terrain and find a terrain having it as a boundary, in O ( min ( nk , n + k 3 )) time, where n is the number of self-crossings of the curve and k is the number of its components.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 586.03,
+        "x1": 540.05,
+        "y1": 622.78,
+        "width": 468.05,
+        "height": 36.75
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 2. Given a cased oriented curve, we can determine whether the cased curve represents the boundary of a generalized terrain and find a terrain having it as a boundary, in O ( min ( nk , n + k 3 )) time, where n is the number of self-crossings of the curve and k is the number of its components."
+      }
+    },
+    {
+      "id": "#/texts/48",
+      "page": 5,
+      "order": 17,
+      "role": "paragraph",
+      "text": "Proof. We first calculate the winding numbers of the faces our curve C splits the plane into. For that we construct a dual graph D ( C ) of the curve defined as follows. D ( C ) has a vertex for each face. Two vertices v 1 and v 2 of D ( C ) are connected by a directed edge ( v 1 → v 2 ) if the corresponding faces f 1 and f 2 are separated by a directed strand of C in such a way that f 1 lies to the left as we move along the strand in the given direction. Let v have a winding number w . Then every neighbor u of v has a winding number w -1 if the corresponding edge is oriented from u to v or has the winding number w + 1 otherwise. (If we encounter",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 636.94,
+        "x1": 540.04,
+        "y1": 714.57,
+        "width": 468.04,
+        "height": 77.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. We first calculate the winding numbers of the faces our curve C splits the plane into. For that we construct a dual graph D ( C ) of the curve defined as follows. D ( C ) has a vertex for each face. Two vertices v 1 and v 2 of D ( C ) are connected by a directed edge ( v 1 → v 2 ) if the corresponding faces f 1 and f 2 are separated by a directed strand of C in such a way that f 1 lies to the left as we move along the strand in the given direction. Let v have a winding number w . Then every neighbor u of v has a winding number w -1 if the corresponding edge is oriented from u to v or has the winding number w + 1 otherwise. (If we encounter"
+      }
+    },
+    {
+      "id": "#/texts/50",
+      "page": 6,
+      "order": 1,
+      "role": "paragraph",
+      "text": "a vertex with a negative winding number, the curve cannot be embedded as a generalized terrain boundary.) The winding number at the vertex representing the outer face is zero and D ( C ) is connected, so we can find winding numbers for all vertices of D ( C ) in time linear in n . Next, as in the single-curve algorithm, we pick a starting point for every curve component ci with as low thickness (the winding number of a face adjacent to the left of ci ) as possible; let bi denote the height of the curve ci at that starting point. By tracing around the curve, as before, we can determine the height of the curve at each of its other strands s , as an integer offset γ s from bi . To ensure correctness of the casing, we have four types of constraints on these heights:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 67.66,
+        "x1": 540.06,
+        "y1": 159.45,
+        "width": 468.06,
+        "height": 91.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "a vertex with a negative winding number, the curve cannot be embedded as a generalized terrain boundary.) The winding number at the vertex representing the outer face is zero and D ( C ) is connected, so we can find winding numbers for all vertices of D ( C ) in time linear in n . Next, as in the single-curve algorithm, we pick a starting point for every curve component ci with as low thickness (the winding number of a face adjacent to the left of ci ) as possible; let bi denote the height of the curve ci at that starting point. By tracing around the curve, as before, we can determine the height of the curve at each of its other strands s , as an integer offset γ s from bi . To ensure correctness of the casing, we have four types of constraints on these heights:"
+      }
+    },
+    {
+      "id": "#/texts/51",
+      "page": 6,
+      "order": 2,
+      "role": "list_item",
+      "text": "bi + γ s values are non-negative for all strands s of ci , for all 0 ≤ i ≤ k . This will follow automatically from our choice of start point as long as bi itself is non-negative.",
+      "bbox": {
+        "x0": 77.4,
+        "y0": 182.54,
+        "x1": 539.58,
+        "y1": 210.45,
+        "width": 462.18,
+        "height": 27.91
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(1) bi + γ s values are non-negative for all strands s of ci , for all 0 ≤ i ≤ k . This will follow automatically from our choice of start point as long as bi itself is non-negative."
+      }
+    },
+    {
+      "id": "#/texts/52",
+      "page": 6,
+      "order": 3,
+      "role": "list_item",
+      "text": "Each bi + γ s ≤ w , where w is the winding number adjacent to s (on its left). We put all constraints of this type for a single component together to find the smallest integer Bi such that bi must be at most Bi in order to satisfy the given constraints.",
+      "bbox": {
+        "x0": 77.4,
+        "y0": 213.62,
+        "x1": 539.91,
+        "y1": 254.05,
+        "width": 462.51,
+        "height": 40.43
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(2) Each bi + γ s ≤ w , where w is the winding number adjacent to s (on its left). We put all constraints of this type for a single component together to find the smallest integer Bi such that bi must be at most Bi in order to satisfy the given constraints."
+      }
+    },
+    {
+      "id": "#/texts/53",
+      "page": 6,
+      "order": 4,
+      "role": "list_item",
+      "text": "Each crossing between two strands s 1 and s 2 of the same component ci is cased correctly. This can be tested by comparing their offsets γ s 1 and γ s 2 , and does not depend on the choice of bi .",
+      "bbox": {
+        "x0": 77.4,
+        "y0": 262.06,
+        "x1": 539.92,
+        "y1": 286.98,
+        "width": 462.52,
+        "height": 24.92
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(3) Each crossing between two strands s 1 and s 2 of the same component ci is cased correctly. This can be tested by comparing their offsets γ s 1 and γ s 2 , and does not depend on the choice of bi ."
+      }
+    },
+    {
+      "id": "#/texts/54",
+      "page": 6,
+      "order": 5,
+      "role": "list_item",
+      "text": "Each crossing between two different components ci and cj is cased correctly. This translates to the inequality bi ≥ bj -δ i j , for some value δ i j that can be calculated from the two offsets γ s i and γ s j at the two crossing strands s i ∈ ci and s j ∈ cj .",
+      "bbox": {
+        "x0": 77.4,
+        "y0": 293.14,
+        "x1": 539.92,
+        "y1": 337.95,
+        "width": 462.52,
+        "height": 44.81
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(4) Each crossing between two different components ci and cj is cased correctly. This translates to the inequality bi ≥ bj -δ i j , for some value δ i j that can be calculated from the two offsets γ s i and γ s j at the two crossing strands s i ∈ ci and s j ∈ cj ."
+      }
+    },
+    {
+      "id": "#/texts/55",
+      "page": 6,
+      "order": 6,
+      "role": "paragraph",
+      "text": "To handle constraints of types (1), (2), and (3), make a graph G , with one vertex vi per component ci , and a special starting vertex s . Draw an edge with length zero from s to each vi , and an edge of length δ i j from vj to vi . If there exists a negative cycle in this graph, it corresponds to a set of constraints of type (4) that cannot be simultaneously satisfied, and no embedding exists. Otherwise, let bi be -d ( s , vi ) where d is the distance computed by a single source shortest path algorithm (note the minus sign). The edge from s to vi forces d ( s , vi ) to be non-positive, so bi ≥ 0. The edge from vj to vi forces d ( s , vi ) ≤ d ( s , vj ) + δ i j , the negation of a constraint of type (4), so all such constraints are satisfied. We can test whether this assignment of bi values satisfies the constraints of type (2) by testing each such inequality; if one of the constraints of this type is violated then it together with the constraints on the shortest path to vi cannot be simultaneously satisfied and no embedding exists. Therefore, the casing corresponds to an embedding if and only if setting bi = -d ( s , vi ) results in a height assignment that satisfies all constraints. If there are k curve components, the graph has O ( min ( n , k 2 )) edges, the negative cycle detection and single source shortest path in graph with negative edge weights can be done in O ( min ( nk , k 3 )) time (e.g. by Bellman-Ford [1, 6]) so the total time would be O ( min ( nk , n + k 3 )) . intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 353.62,
+        "x1": 539.94,
+        "y1": 547.47,
+        "width": 467.94,
+        "height": 193.85
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To handle constraints of types (1), (2), and (3), make a graph G , with one vertex vi per component ci , and a special starting vertex s . Draw an edge with length zero from s to each vi , and an edge of length δ i j from vj to vi . If there exists a negative cycle in this graph, it corresponds to a set of constraints of type (4) that cannot be simultaneously satisfied, and no embedding exists. Otherwise, let bi be -d ( s , vi ) where d is the distance computed by a single source shortest path algorithm (note the minus sign). The edge from s to vi forces d ( s , vi ) to be non-positive, so bi ≥ 0. The edge from vj to vi forces d ( s , vi ) ≤ d ( s , vj ) + δ i j , the negation of a constraint of type (4), so all such constraints are satisfied. We can test whether this assignment of bi values satisfies the constraints of type (2) by testing each such inequality; if one of the constraints of this type is violated then it together with the constraints on the shortest path to vi cannot be simultaneously satisfied and no embedding exists. Therefore, the casing corresponds to an embedding if and only if setting bi = -d ( s , vi ) results in a height assignment that satisfies all constraints. If there are k curve components, the graph has O ( min ( n , k 2 )) edges, the negative cycle detection and single source shortest path in graph with negative edge weights can be done in O ( min ( nk , k 3 )) time (e.g. by Bellman-Ford [1, 6]) so the total time would be O ( min ( nk , n + k 3 )) . intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/56",
+      "page": 6,
+      "order": 7,
+      "role": "paragraph",
+      "text": "This result immediately leads to an O ( n 2 n ) -time algorithm, which we have implemented, for testing whether an uncased curve is the boundary of a generalized terrain: simply apply this linear time test to all possible casings of the curve. However, we believe that dynamic programming based on a separator decomposition of the curve arrangement will lead to improved running times. In such a technique, similarly to dynamic programs for other planar graph algorithms described by Smith and Wormald [9], one would partition the planar graph representing the input curve arrangement along a separator, and maintain a system of dynamic program states describing the heights of points on the input curve at each position at which the separator intersects the input curve. As the heights are at most n , and each dynamic programming state would need to combine the heights of O ( √ n ) points, the time for such an approach would be exponential in O ( √ n log n ) , improving the simple algorithm described above which is exponential in n . However, such an algorithm would be significantly more complicated than the one we implemented.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 567.2,
+        "x1": 539.97,
+        "y1": 714.13,
+        "width": 467.97,
+        "height": 146.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "This result immediately leads to an O ( n 2 n ) -time algorithm, which we have implemented, for testing whether an uncased curve is the boundary of a generalized terrain: simply apply this linear time test to all possible casings of the curve. However, we believe that dynamic programming based on a separator decomposition of the curve arrangement will lead to improved running times. In such a technique, similarly to dynamic programs for other planar graph algorithms described by Smith and Wormald [9], one would partition the planar graph representing the input curve arrangement along a separator, and maintain a system of dynamic program states describing the heights of points on the input curve at each position at which the separator intersects the input curve. As the heights are at most n , and each dynamic programming state would need to combine the heights of O ( √ n ) points, the time for such an approach would be exponential in O ( √ n log n ) , improving the simple algorithm described above which is exponential in n . However, such an algorithm would be significantly more complicated than the one we implemented."
+      }
+    },
+    {
+      "id": "#/texts/58",
+      "page": 7,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 6. Reduction from PLANAR 3-COLORABILITY to immersibility or embeddability of a curve.",
+      "bbox": {
+        "x0": 132.0,
+        "y0": 241.26,
+        "x1": 479.96,
+        "y1": 249.25,
+        "width": 347.96,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 6. Reduction from PLANAR 3-COLORABILITY to immersibility or embeddability of a curve."
+      }
+    },
+    {
+      "id": "#/texts/59",
+      "page": 7,
+      "order": 2,
+      "role": "heading",
+      "text": "4 Hardness of immersion and embedding for uncased curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 272.72,
+        "x1": 388.53,
+        "y1": 283.37,
+        "width": 316.53,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 Hardness of immersion and embedding for uncased curves"
+      }
+    },
+    {
+      "id": "#/texts/60",
+      "page": 7,
+      "order": 3,
+      "role": "paragraph",
+      "text": "As we now show, the absence of a casing makes it much more difficult to determine whether a given curve or set of curves is the boundary of an immersion or of a generalized terrain. The overall reduction is depicted in Figure 6. We start with a simplified version of the proof that applies to multiple oriented curves.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 296.86,
+        "x1": 539.8,
+        "y1": 333.49,
+        "width": 467.8,
+        "height": 36.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "As we now show, the absence of a casing makes it much more difficult to determine whether a given curve or set of curves is the boundary of an immersion or of a generalized terrain. The overall reduction is depicted in Figure 6. We start with a simplified version of the proof that applies to multiple oriented curves."
+      }
+    },
+    {
+      "id": "#/texts/61",
+      "page": 7,
+      "order": 4,
+      "role": "heading",
+      "text": "4.1 Oriented curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 353.11,
+        "x1": 171.04,
+        "y1": 362.82,
+        "width": 99.04,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.1 Oriented curves"
+      }
+    },
+    {
+      "id": "#/texts/62",
+      "page": 7,
+      "order": 5,
+      "role": "paragraph",
+      "text": "We show that finding a surface immersion for an oriented curve is NP-complete using a reduction from PLANAR 3-COLORABILITY. A PLANAR 3-COLORABILITY instance tests whether a planar graph has a vertex-coloring with three colors, such that adjacent vertices have different colors.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 372.7,
+        "x1": 540.05,
+        "y1": 409.33,
+        "width": 468.05,
+        "height": 36.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We show that finding a surface immersion for an oriented curve is NP-complete using a reduction from PLANAR 3-COLORABILITY. A PLANAR 3-COLORABILITY instance tests whether a planar graph has a vertex-coloring with three colors, such that adjacent vertices have different colors."
+      }
+    },
+    {
+      "id": "#/texts/63",
+      "page": 7,
+      "order": 6,
+      "role": "paragraph",
+      "text": "We transform a planar graph G =( V , E ) into a family CG of | V | + 3 simple closed curves. | V | of these curves, which we call vertex-curves, are oriented counterclockwise and represent the vertices of G . In any immersion or embedding having CG as boundary, vertex-curves must be hole boundaries due to their orientation. We place these curves in such a way that every pair of vertex-curves are either disjoint or have two points in common, and such that a pair of vertex-curves intersect if and only if the corresponding vertices of the graph are adjacent. The remaining three curves in CG , denoted c 1, c 2 and c 3, are oriented clockwise and surround all the vertex-curves. These three curves are disk-boundaries. See Figure 6(a),(b) for an example.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 412.42,
+        "x1": 540.05,
+        "y1": 504.13,
+        "width": 468.05,
+        "height": 91.71
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We transform a planar graph G =( V , E ) into a family CG of | V | + 3 simple closed curves. | V | of these curves, which we call vertex-curves, are oriented counterclockwise and represent the vertices of G . In any immersion or embedding having CG as boundary, vertex-curves must be hole boundaries due to their orientation. We place these curves in such a way that every pair of vertex-curves are either disjoint or have two points in common, and such that a pair of vertex-curves intersect if and only if the corresponding vertices of the graph are adjacent. The remaining three curves in CG , denoted c 1, c 2 and c 3, are oriented clockwise and surround all the vertex-curves. These three curves are disk-boundaries. See Figure 6(a),(b) for an example."
+      }
+    },
+    {
+      "id": "#/texts/64",
+      "page": 7,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Lemma 1. If G has a three-coloring then there exists an immersed surface in the plane of which CG is a boundary, having the topology of three disks with holes.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 512.83,
+        "x1": 540.05,
+        "y1": 536.02,
+        "width": 468.05,
+        "height": 23.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 1. If G has a three-coloring then there exists an immersed surface in the plane of which CG is a boundary, having the topology of three disks with holes."
+      }
+    },
+    {
+      "id": "#/texts/65",
+      "page": 7,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Proof. Form a disk in the plane for each of c 1, c 2, and c 3. For each vertex-curve cv , corresponding to a vertex v with color i , form a hole with boundary cv in the disk bounded by ci . Due to the coloring of G , no two holes in the same disk overlap, so this forms a valid immersion of three punctured disks with boundaries c 1, c 2 and c 3, together with the holes formed as above. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 547.42,
+        "x1": 540.05,
+        "y1": 605.67,
+        "width": 468.05,
+        "height": 58.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. Form a disk in the plane for each of c 1, c 2, and c 3. For each vertex-curve cv , corresponding to a vertex v with color i , form a hole with boundary cv in the disk bounded by ci . Due to the coloring of G , no two holes in the same disk overlap, so this forms a valid immersion of three punctured disks with boundaries c 1, c 2 and c 3, together with the holes formed as above. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/66",
+      "page": 7,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Corollary 1. If G has a three-coloring then CG can be embedded in space as the boundary of a generalized terrain.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 608.71,
+        "x1": 539.57,
+        "y1": 631.9,
+        "width": 467.57,
+        "height": 23.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Corollary 1. If G has a three-coloring then CG can be embedded in space as the boundary of a generalized terrain."
+      }
+    },
+    {
+      "id": "#/texts/68",
+      "page": 7,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Next we prove that given a collection of surfaces S immersed in the plane so that the boundaries of S match the reduction CG of a graph G we can define a 3-coloring of G from S .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 664.06,
+        "x1": 539.93,
+        "y1": 688.17,
+        "width": 467.93,
+        "height": 24.11
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Next we prove that given a collection of surfaces S immersed in the plane so that the boundaries of S match the reduction CG of a graph G we can define a 3-coloring of G from S ."
+      }
+    },
+    {
+      "id": "#/texts/69",
+      "page": 7,
+      "order": 11,
+      "role": "paragraph",
+      "text": "To do so, define a relation ∼ between hole-boundaries of S : b 1 ∼ b 2 if and only if there exists a curve in S that starts on b 1, ends on b 2, and does not pass through any points where two holes overlap.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 690.22,
+        "x1": 539.93,
+        "y1": 715.2,
+        "width": 467.93,
+        "height": 24.98
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To do so, define a relation ∼ between hole-boundaries of S : b 1 ∼ b 2 if and only if there exists a curve in S that starts on b 1, ends on b 2, and does not pass through any points where two holes overlap."
+      }
+    },
+    {
+      "id": "#/texts/71",
+      "page": 8,
+      "order": 1,
+      "role": "heading",
+      "text": "Lemma 2. ∼ is an equivalence relation.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 66.7,
+        "x1": 250.41,
+        "y1": 85.35,
+        "width": 178.41,
+        "height": 18.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Lemma 2. ∼ is an equivalence relation."
+      }
+    },
+    {
+      "id": "#/texts/72",
+      "page": 8,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Proof. Reflexivity and symmetry are clear. To prove transitivity, suppose b 1 ∼ b 2 and b 2 ∼ b 3, and find a curve from b 1 to b 3 by concatenating the curves b 1 ∼ b 2, b 2 ∼ b 3, and a curve around the boundary of b 2. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 86.38,
+        "x1": 540.04,
+        "y1": 118.59,
+        "width": 468.04,
+        "height": 32.21
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. Reflexivity and symmetry are clear. To prove transitivity, suppose b 1 ∼ b 2 and b 2 ∼ b 3, and find a curve from b 1 to b 3 by concatenating the curves b 1 ∼ b 2, b 2 ∼ b 3, and a curve around the boundary of b 2. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/73",
+      "page": 8,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Lemma 3. ∼ has at most three equivalence classes.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 119.74,
+        "x1": 300.69,
+        "y1": 138.39,
+        "width": 228.69,
+        "height": 18.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 3. ∼ has at most three equivalence classes."
+      }
+    },
+    {
+      "id": "#/texts/74",
+      "page": 8,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Proof. We pick a point p of the plane that is not in any of the holes: the immersed surface has three points p 1, p 2, p 3 that map to p . Then every point of the surface can be connected by a path to one of the three points pi . The path is constructed by first following a straight line segment to p and then detouring around any hole crossed by the line segment. Any two hole boundaries that connect to the same pi must be equivalent to each other by concatenation of curves. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 140.5,
+        "x1": 539.95,
+        "y1": 212.31,
+        "width": 467.95,
+        "height": 71.81
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. We pick a point p of the plane that is not in any of the holes: the immersed surface has three points p 1, p 2, p 3 that map to p . Then every point of the surface can be connected by a path to one of the three points pi . The path is constructed by first following a straight line segment to p and then detouring around any hole crossed by the line segment. Any two hole boundaries that connect to the same pi must be equivalent to each other by concatenation of curves. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/75",
+      "page": 8,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Lemma 4. If hole-boundaries bi and bj cross each other, then bi is not related by ∼ to b j .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 213.46,
+        "x1": 465.81,
+        "y1": 232.11,
+        "width": 393.81,
+        "height": 18.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 4. If hole-boundaries bi and bj cross each other, then bi is not related by ∼ to b j ."
+      }
+    },
+    {
+      "id": "#/texts/76",
+      "page": 8,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Proof. Suppose for a contradiction that bi ∼ bj , let c be a curve connecting bi and bj , and let s be a short line segment connecting bi to bj near their crossing. We can assume that c and s have the same endpoints, so together they define a (possibly self-intersecting) polygon, containing some other set of boundary holes. We choose c in such a way that this polygon contains as few boundary holes as possible, and then (among curves passing around the other holes in the same pattern) so that it is as short as possible. If c is not equal to s , then it must be stretched tight against some other hole, and we can reduce the number of holes in the polygon by replacing c by a curve that goes the other way around the same hole. Thus c must be equal to s . But then near the crossing bi and bj would be on the same layer of the surface, not possible. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 233.26,
+        "x1": 539.97,
+        "y1": 346.71,
+        "width": 467.97,
+        "height": 113.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. Suppose for a contradiction that bi ∼ bj , let c be a curve connecting bi and bj , and let s be a short line segment connecting bi to bj near their crossing. We can assume that c and s have the same endpoints, so together they define a (possibly self-intersecting) polygon, containing some other set of boundary holes. We choose c in such a way that this polygon contains as few boundary holes as possible, and then (among curves passing around the other holes in the same pattern) so that it is as short as possible. If c is not equal to s , then it must be stretched tight against some other hole, and we can reduce the number of holes in the polygon by replacing c by a curve that goes the other way around the same hole. Thus c must be equal to s . But then near the crossing bi and bj would be on the same layer of the surface, not possible. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/77",
+      "page": 8,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Thus ∼ corresponds to a partition of V into three subsets, with no adjacent pair of vertices in the same subset; that is, a 3-coloring. G may be transformed into CG in polynomial time, providing a polynomial-time many-one reduction from the known NP-complete problem of PLANAR 3-COLORABILITY to immersing or embedding a set of oriented curves. These immersion and embedding problems may be solved in NP, in the case of embedding by considering heights of curves as used in the proof of Theorem 1, or in the case of immersions by a system of disks and gluings as used by Shor and Van Wyk [8]. We have proven",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 347.86,
+        "x1": 539.93,
+        "y1": 426.01,
+        "width": 467.93,
+        "height": 78.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Thus ∼ corresponds to a partition of V into three subsets, with no adjacent pair of vertices in the same subset; that is, a 3-coloring. G may be transformed into CG in polynomial time, providing a polynomial-time many-one reduction from the known NP-complete problem of PLANAR 3-COLORABILITY to immersing or embedding a set of oriented curves. These immersion and embedding problems may be solved in NP, in the case of embedding by considering heights of curves as used in the proof of Theorem 1, or in the case of immersions by a system of disks and gluings as used by Shor and Van Wyk [8]. We have proven"
+      }
+    },
+    {
+      "id": "#/texts/78",
+      "page": 8,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Theorem 3. The problem of determining whether a set of oriented curves can be seen as a boundary of some immersed surface is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 433.87,
+        "x1": 539.91,
+        "y1": 457.06,
+        "width": 467.91,
+        "height": 23.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 3. The problem of determining whether a set of oriented curves can be seen as a boundary of some immersed surface is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/79",
+      "page": 8,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Corollary 2. The problem of determining whether a set of oriented curves can be seen as a boundary of an embedded surface is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 467.23,
+        "x1": 539.94,
+        "y1": 490.42,
+        "width": 467.94,
+        "height": 23.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Corollary 2. The problem of determining whether a set of oriented curves can be seen as a boundary of an embedded surface is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/80",
+      "page": 8,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Proof. Consider a planar graph G and the set of curves CG described above. Assume we have a generalized terrain M that has CG as a boundary. M projects to an immersed surface with CG as a boundary which, as we have shown earlier, defines a three coloring of G . In the other direction, by Corollary 1, given a 3-coloring of G , we can embed CG as a generalized terrain boundary. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 500.74,
+        "x1": 540.05,
+        "y1": 558.99,
+        "width": 468.05,
+        "height": 58.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. Consider a planar graph G and the set of curves CG described above. Assume we have a generalized terrain M that has CG as a boundary. M projects to an immersed surface with CG as a boundary which, as we have shown earlier, defines a three coloring of G . In the other direction, by Corollary 1, given a 3-coloring of G , we can embed CG as a generalized terrain boundary. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/81",
+      "page": 8,
+      "order": 11,
+      "role": "heading",
+      "text": "4.2 Non-oriented curves",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 569.71,
+        "x1": 190.97,
+        "y1": 579.42,
+        "width": 118.97,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.2 Non-oriented curves"
+      }
+    },
+    {
+      "id": "#/texts/82",
+      "page": 8,
+      "order": 12,
+      "role": "paragraph",
+      "text": "To prove a similar hardness result for unoriented curves, we simply replace each vertex-curve in the reduction by a curve that can only be embedded with one orientation, namely a curve with two self-intersections as depicted in Figure 7. If the self-crossing parts of these curves do not cross the other curves, they can only be oriented in such a way that the two outer lobes c 1 and c 2 of the curve act like hole boundaries in whatever surface they bound, i.e. for any immersed surface i the neighborhoods of c 1 and c 2 are mapped outside of i ( c 1 ) and i ( c 2 ) correspondingly. Hence,",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 588.34,
+        "x1": 539.92,
+        "y1": 666.72,
+        "width": 467.92,
+        "height": 78.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To prove a similar hardness result for unoriented curves, we simply replace each vertex-curve in the reduction by a curve that can only be embedded with one orientation, namely a curve with two self-intersections as depicted in Figure 7. If the self-crossing parts of these curves do not cross the other curves, they can only be oriented in such a way that the two outer lobes c 1 and c 2 of the curve act like hole boundaries in whatever surface they bound, i.e. for any immersed surface i the neighborhoods of c 1 and c 2 are mapped outside of i ( c 1 ) and i ( c 2 ) correspondingly. Hence,"
+      }
+    },
+    {
+      "id": "#/texts/83",
+      "page": 8,
+      "order": 13,
+      "role": "paragraph",
+      "text": "Corollary 3. It is NP-complete to determine whether a curve can be seen as a boundary of an immersed surface in the plane or an embedded surface in space.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 673.51,
+        "x1": 539.82,
+        "y1": 696.58,
+        "width": 467.82,
+        "height": 23.07
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Corollary 3. It is NP-complete to determine whether a curve can be seen as a boundary of an immersed surface in the plane or an embedded surface in space."
+      }
+    },
+    {
+      "id": "#/texts/84",
+      "page": 8,
+      "order": 14,
+      "role": "paragraph",
+      "text": "We omit the details.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 704.62,
+        "x1": 158.73,
+        "y1": 714.13,
+        "width": 86.73,
+        "height": 9.51
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We omit the details."
+      }
+    },
+    {
+      "id": "#/texts/86",
+      "page": 9,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 7. A curve that can only be embedded with one orientation.",
+      "bbox": {
+        "x0": 191.76,
+        "y0": 132.54,
+        "x1": 420.2,
+        "y1": 140.53,
+        "width": 228.44,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 7. A curve that can only be embedded with one orientation."
+      }
+    },
+    {
+      "id": "#/texts/87",
+      "page": 9,
+      "order": 2,
+      "role": "paragraph",
+      "text": "c",
+      "bbox": {
+        "x0": 296.23,
+        "y0": 64.33,
+        "x1": 299.24,
+        "y1": 67.48,
+        "width": 3.01,
+        "height": 3.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "c"
+      }
+    },
+    {
+      "id": "#/texts/88",
+      "page": 9,
+      "order": 3,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 299.24,
+        "y0": 65.21,
+        "x1": 302.01,
+        "y1": 68.45,
+        "width": 2.77,
+        "height": 3.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/89",
+      "page": 9,
+      "order": 4,
+      "role": "paragraph",
+      "text": "c",
+      "bbox": {
+        "x0": 419.81,
+        "y0": 64.74,
+        "x1": 422.82,
+        "y1": 67.89,
+        "width": 3.01,
+        "height": 3.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "c"
+      }
+    },
+    {
+      "id": "#/texts/90",
+      "page": 9,
+      "order": 5,
+      "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 422.82,
+        "y0": 65.62,
+        "x1": 425.59,
+        "y1": 68.86,
+        "width": 2.77,
+        "height": 3.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/91",
+      "page": 9,
+      "order": 6,
+      "role": "heading",
+      "text": "4.3 Finding a surface embedding for a single component curve",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 166.15,
+        "x1": 368.68,
+        "y1": 175.86,
+        "width": 296.68,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.3 Finding a surface embedding for a single component curve"
+      }
+    },
+    {
+      "id": "#/texts/92",
+      "page": 9,
+      "order": 7,
+      "role": "paragraph",
+      "text": "We finish this section by showing that it is NP-complete to determine the existence of an immersed or embedded surface for a curve even when it consist of a single component. As before, we reduce the problem from PLANAR 3-COLORABILITY. Our reduction is as before, forming a system CG of oriented curves that can be the boundary of an immersion or embedding if and only if the given graph G is 3-colorable; by adding an additional step to the reduction we transform CG into a single curve without changing the existence of an immersion or embedding. The following lemmas make this extra step possible.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 187.06,
+        "x1": 539.94,
+        "y1": 264.37,
+        "width": 467.94,
+        "height": 77.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We finish this section by showing that it is NP-complete to determine the existence of an immersed or embedded surface for a curve even when it consist of a single component. As before, we reduce the problem from PLANAR 3-COLORABILITY. Our reduction is as before, forming a system CG of oriented curves that can be the boundary of an immersion or embedding if and only if the given graph G is 3-colorable; by adding an additional step to the reduction we transform CG into a single curve without changing the existence of an immersion or embedding. The following lemmas make this extra step possible."
+      }
+    },
+    {
+      "id": "#/texts/93",
+      "page": 9,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Lemma 5. Let C be a curve or set of oriented curves, and let C ′ be a curve or set of curves formed by breaking C in two points along the boundary of a region of thickness one, and connecting these two breaks by a pair of parallel curves. Then the embedded or immersed surfaces for C are in 1-1 correspondence with those for C ′ .",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 271.94,
+        "x1": 539.94,
+        "y1": 326.25,
+        "width": 467.94,
+        "height": 54.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 5. Let C be a curve or set of oriented curves, and let C ′ be a curve or set of curves formed by breaking C in two points along the boundary of a region of thickness one, and connecting these two breaks by a pair of parallel curves. Then the embedded or immersed surfaces for C are in 1-1 correspondence with those for C ′ ."
+      }
+    },
+    {
+      "id": "#/texts/94",
+      "page": 9,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Proof. In terms of the embedded or immersed surface, going from C to C ′ corresponds to cutting the surface by removing a thin strip between the parallel curves, and going from C ′ to C corresponds to gluing the cut back together. Cutting and gluing in this way are inverse operations, so both are one-to-one. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 335.18,
+        "x1": 539.95,
+        "y1": 382.71,
+        "width": 467.95,
+        "height": 47.53
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. In terms of the embedded or immersed surface, going from C to C ′ corresponds to cutting the surface by removing a thin strip between the parallel curves, and going from C ′ to C corresponds to gluing the cut back together. Cutting and gluing in this way are inverse operations, so both are one-to-one. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/95",
+      "page": 9,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Lemma 6. Let C be a curve or set of oriented curves, and let R be a region bounded by two segments of curves and two crossing points, such that at least one of the two neighboring regions of R has smaller thickness than R, and such that R contains no crossing of C. Let C ′ be the curve or set of oriented curves formed by uncrossing the two crossings bounding R. Then C is the boundary of an embedded or immersed surface if and only if C ′ is.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 396.55,
+        "x1": 539.82,
+        "y1": 461.85,
+        "width": 467.82,
+        "height": 65.3
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 6. Let C be a curve or set of oriented curves, and let R be a region bounded by two segments of curves and two crossing points, such that at least one of the two neighboring regions of R has smaller thickness than R, and such that R contains no crossing of C. Let C ′ be the curve or set of oriented curves formed by uncrossing the two crossings bounding R. Then C is the boundary of an embedded or immersed surface if and only if C ′ is."
+      }
+    },
+    {
+      "id": "#/texts/96",
+      "page": 9,
+      "order": 11,
+      "role": "paragraph",
+      "text": "Proof. In terms of the embedded or immersed surface, the two curves bounding R must be boundaries of two different layers of the surface, so one can go from C to C ′ by pulling these layers apart without changing the existence of an immersion or embedding (Figure 8). In the other direction, we can push the two layers together without any interaction between them; note however that for embeddings these two operations may not be one-to-one as we may have a choice whether to put one layer above or below the other. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 473.62,
+        "x1": 539.95,
+        "y1": 545.43,
+        "width": 467.95,
+        "height": 71.81
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. In terms of the embedded or immersed surface, the two curves bounding R must be boundaries of two different layers of the surface, so one can go from C to C ′ by pulling these layers apart without changing the existence of an immersion or embedding (Figure 8). In the other direction, we can push the two layers together without any interaction between them; note however that for embeddings these two operations may not be one-to-one as we may have a choice whether to put one layer above or below the other. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/97",
+      "page": 9,
+      "order": 12,
+      "role": "paragraph",
+      "text": "Given an instance G of PLANAR 3-COLORABILITY we construct the curve family CG as in Section 4.1. We then transform CG into a single curve by attaching the three outer curves together, and the holes to the outer curve, via thin strips that pass across the curve without covering any crossings, go outside the outer",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 550.42,
+        "x1": 539.97,
+        "y1": 587.06,
+        "width": 467.97,
+        "height": 36.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Given an instance G of PLANAR 3-COLORABILITY we construct the curve family CG as in Section 4.1. We then transform CG into a single curve by attaching the three outer curves together, and the holes to the outer curve, via thin strips that pass across the curve without covering any crossings, go outside the outer"
+      }
+    },
+    {
+      "id": "#/texts/98",
+      "page": 9,
+      "order": 13,
+      "role": "caption",
+      "text": "Fig. 8. Uncrossing the dashed region bounded by two thick segments of curves and two indicated crossing points.",
+      "bbox": {
+        "x0": 102.72,
+        "y0": 703.86,
+        "x1": 509.12,
+        "y1": 711.85,
+        "width": 406.4,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 8. Uncrossing the dashed region bounded by two thick segments of curves and two indicated crossing points."
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 10,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 9. Reduction from ACYCLIC PARTITION to liftability of an immersed surface.",
+      "bbox": {
+        "x0": 157.8,
+        "y0": 179.46,
+        "x1": 454.04,
+        "y1": 187.45,
+        "width": 296.24,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 9. Reduction from ACYCLIC PARTITION to liftability of an immersed surface."
+      }
+    },
+    {
+      "id": "#/texts/101",
+      "page": 10,
+      "order": 2,
+      "role": "paragraph",
+      "text": "u",
+      "bbox": {
+        "x0": 118.8,
+        "y0": 109.33,
+        "x1": 126.82,
+        "y1": 119.59,
+        "width": 8.02,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "u"
+      }
+    },
+    {
+      "id": "#/texts/102",
+      "page": 10,
+      "order": 3,
+      "role": "paragraph",
+      "text": "v",
+      "bbox": {
+        "x0": 143.3,
+        "y0": 109.33,
+        "x1": 150.42,
+        "y1": 119.59,
+        "width": 7.12,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "v"
+      }
+    },
+    {
+      "id": "#/texts/103",
+      "page": 10,
+      "order": 4,
+      "role": "paragraph",
+      "text": "w",
+      "bbox": {
+        "x0": 165.56,
+        "y0": 109.33,
+        "x1": 176.25,
+        "y1": 119.59,
+        "width": 10.69,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "w"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 10,
+      "order": 5,
+      "role": "paragraph",
+      "text": "u",
+      "bbox": {
+        "x0": 263.1,
+        "y0": 67.24,
+        "x1": 271.11,
+        "y1": 77.5,
+        "width": 8.01,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "u"
+      }
+    },
+    {
+      "id": "#/texts/105",
+      "page": 10,
+      "order": 6,
+      "role": "paragraph",
+      "text": "u",
+      "bbox": {
+        "x0": 395.37,
+        "y0": 145.4,
+        "x1": 403.38,
+        "y1": 155.66,
+        "width": 8.01,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "u"
+      }
+    },
+    {
+      "id": "#/texts/106",
+      "page": 10,
+      "order": 7,
+      "role": "paragraph",
+      "text": "v",
+      "bbox": {
+        "x0": 293.61,
+        "y0": 67.24,
+        "x1": 300.73,
+        "y1": 77.5,
+        "width": 7.12,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "v"
+      }
+    },
+    {
+      "id": "#/texts/107",
+      "page": 10,
+      "order": 8,
+      "role": "paragraph",
+      "text": "v",
+      "bbox": {
+        "x0": 460.45,
+        "y0": 97.3,
+        "x1": 467.57,
+        "y1": 107.56,
+        "width": 7.12,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "v"
+      }
+    },
+    {
+      "id": "#/texts/108",
+      "page": 10,
+      "order": 9,
+      "role": "paragraph",
+      "text": "w",
+      "bbox": {
+        "x0": 321.88,
+        "y0": 67.24,
+        "x1": 332.57,
+        "y1": 77.5,
+        "width": 10.69,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "w"
+      }
+    },
+    {
+      "id": "#/texts/109",
+      "page": 10,
+      "order": 10,
+      "role": "paragraph",
+      "text": "w",
+      "bbox": {
+        "x0": 458.66,
+        "y0": 145.4,
+        "x1": 469.35,
+        "y1": 155.66,
+        "width": 10.69,
+        "height": 10.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "w"
+      }
+    },
+    {
+      "id": "#/texts/110",
+      "page": 10,
+      "order": 11,
+      "role": "paragraph",
+      "text": "boundary, and then connect back to it, as shown in Figure 6(c). Each strip connecting two boundary curves can be removed by cutting it and performing a sequence of pulling-apart operations, so by Lemmas 5 and 6 the single curve is the boundary of an immersed or embedded surface if and only if CG was. Hence we have the following theorem:",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 214.06,
+        "x1": 540.06,
+        "y1": 264.25,
+        "width": 468.06,
+        "height": 50.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "boundary, and then connect back to it, as shown in Figure 6(c). Each strip connecting two boundary curves can be removed by cutting it and performing a sequence of pulling-apart operations, so by Lemmas 5 and 6 the single curve is the boundary of an immersed or embedded surface if and only if CG was. Hence we have the following theorem:"
+      }
+    },
+    {
+      "id": "#/texts/111",
+      "page": 10,
+      "order": 12,
+      "role": "paragraph",
+      "text": "Theorem 4. The problem of determining the existence of an immersed or embedded surface that has a single component curve as a boundary is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 275.59,
+        "x1": 540.05,
+        "y1": 298.78,
+        "width": 468.05,
+        "height": 23.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 4. The problem of determining the existence of an immersed or embedded surface that has a single component curve as a boundary is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/112",
+      "page": 10,
+      "order": 13,
+      "role": "heading",
+      "text": "5 Finding an embedding from a surface immersion",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 320.84,
+        "x1": 339.53,
+        "y1": 331.49,
+        "width": 267.53,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "5 Finding an embedding from a surface immersion"
+      }
+    },
+    {
+      "id": "#/texts/113",
+      "page": 10,
+      "order": 14,
+      "role": "paragraph",
+      "text": "As we now show, it is NP-complete to lift an immersion to an embedding. Our reduction is via a graphtheoretic problem, ACYCLIC PARTITION, which we also show to be NP-complete. Define ACYCLIC PARTITION to be the decision problem that takes a directed graph G as input and outputs yes if and only if the vertices of G can be partitioned into two acyclic subsets. We first reduce ACYCLIC PARTITION to our problem by constructing an immersed disk that can be lifted into space if and only the input graph is a yes-instance of ACYCLIC PARTITION. Then we show that ACYCLIC PARTITION is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 347.74,
+        "x1": 540.04,
+        "y1": 425.06,
+        "width": 468.04,
+        "height": 77.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "As we now show, it is NP-complete to lift an immersion to an embedding. Our reduction is via a graphtheoretic problem, ACYCLIC PARTITION, which we also show to be NP-complete. Define ACYCLIC PARTITION to be the decision problem that takes a directed graph G as input and outputs yes if and only if the vertices of G can be partitioned into two acyclic subsets. We first reduce ACYCLIC PARTITION to our problem by constructing an immersed disk that can be lifted into space if and only the input graph is a yes-instance of ACYCLIC PARTITION. Then we show that ACYCLIC PARTITION is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/114",
+      "page": 10,
+      "order": 15,
+      "role": "heading",
+      "text": "Lemma 7. ACYCLIC PARTITION can be reduced in polynomial time to disk immersion lifting.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 436.39,
+        "x1": 485.61,
+        "y1": 446.1,
+        "width": 413.61,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Lemma 7. ACYCLIC PARTITION can be reduced in polynomial time to disk immersion lifting."
+      }
+    },
+    {
+      "id": "#/texts/115",
+      "page": 10,
+      "order": 16,
+      "role": "paragraph",
+      "text": "Proof. Given a directed graph G , we create an immersed disk, in the form of a single central area (a large rectangle) connected to a rectangle for each vertex of G that covers approximately the same region of the plane as the central area (perturbed slightly so the boundaries do not overlap). For each v , the rectangle for v is connected to the central rectangle by a semicircular bridge that extends out from the central rectangle and back in to the rectangle for v , as shown in Figure 9; no two of these bridges overlap. Additionally, whenever G has an edge v → w , we extend a rectangular tab out from the rectangle for v so that it covers the bridge for w . See Figure 9 showing the complete reduction for a very simple graph.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 460.54,
+        "x1": 540.04,
+        "y1": 551.42,
+        "width": 468.04,
+        "height": 90.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. Given a directed graph G , we create an immersed disk, in the form of a single central area (a large rectangle) connected to a rectangle for each vertex of G that covers approximately the same region of the plane as the central area (perturbed slightly so the boundaries do not overlap). For each v , the rectangle for v is connected to the central rectangle by a semicircular bridge that extends out from the central rectangle and back in to the rectangle for v , as shown in Figure 9; no two of these bridges overlap. Additionally, whenever G has an edge v → w , we extend a rectangular tab out from the rectangle for v so that it covers the bridge for w . See Figure 9 showing the complete reduction for a very simple graph."
+      }
+    },
+    {
+      "id": "#/texts/116",
+      "page": 10,
+      "order": 17,
+      "role": "paragraph",
+      "text": "How can the resulting immersed disk be embedded? Each vertex's rectangle must go either above or below the central rectangle, clearly, and as the rectangles all have a common intersection they can be totally ordered by height in any embedding. If v and w are both above the central rectangle, and there is an edge v → w , then the corresponding tab forces v to be above w . Thus, the total order of the rectangles above the central rectangle is consistent with the edges. This is only possible if the edges connecting pairs of points corresponding to the rectangles above the central rectangle form a directed acyclic graph. Similarly the rectangles below the central rectangle can be embedded in such a way that their tabs do not block their bridges only if the corresponding vertices form a directed acyclic graph.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 555.58,
+        "x1": 539.93,
+        "y1": 659.9,
+        "width": 467.93,
+        "height": 104.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "How can the resulting immersed disk be embedded? Each vertex's rectangle must go either above or below the central rectangle, clearly, and as the rectangles all have a common intersection they can be totally ordered by height in any embedding. If v and w are both above the central rectangle, and there is an edge v → w , then the corresponding tab forces v to be above w . Thus, the total order of the rectangles above the central rectangle is consistent with the edges. This is only possible if the edges connecting pairs of points corresponding to the rectangles above the central rectangle form a directed acyclic graph. Similarly the rectangles below the central rectangle can be embedded in such a way that their tabs do not block their bridges only if the corresponding vertices form a directed acyclic graph."
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 10,
+      "order": 18,
+      "role": "paragraph",
+      "text": "In the example in Figure 9, for instance, we can embed the rectangles in top-to-bottom order w , u , central, v . The two rectangles above the central rectangle, w and u , define an acyclic graph as does the rectangle v by itself below the rectangle. However it would not work to try to put the rectangles for u and v on the same side of the central rectangle as each other, as the two of them form a cycle in the graph. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 664.06,
+        "x1": 540.04,
+        "y1": 722.31,
+        "width": 468.04,
+        "height": 58.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the example in Figure 9, for instance, we can embed the rectangles in top-to-bottom order w , u , central, v . The two rectangles above the central rectangle, w and u , define an acyclic graph as does the rectangle v by itself below the rectangle. However it would not work to try to put the rectangles for u and v on the same side of the central rectangle as each other, as the two of them form a cycle in the graph. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/119",
+      "page": 11,
+      "order": 1,
+      "role": "paragraph",
+      "text": "Next, as promised, we prove that ACYCLIC PARTITION is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 67.66,
+        "x1": 387.69,
+        "y1": 77.17,
+        "width": 315.69,
+        "height": 9.51
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Next, as promised, we prove that ACYCLIC PARTITION is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/120",
+      "page": 11,
+      "order": 2,
+      "role": "heading",
+      "text": "Lemma 8. ACYCLIC PARTITION is NP-complete.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 88.03,
+        "x1": 292.89,
+        "y1": 97.74,
+        "width": 220.89,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Lemma 8. ACYCLIC PARTITION is NP-complete."
+      }
+    },
+    {
+      "id": "#/texts/121",
+      "page": 11,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Proof. NOT-ALL-EQUAL-3SAT is a known-NP-complete variation of 3-SAT. A NOT-ALL-EQUAL-3SAT instance consists of a set of clauses, each having three terms (variables or negations of variables). It is satisfied by a truth assignment such that in every clause not all three terms have the same values.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 111.7,
+        "x1": 539.91,
+        "y1": 148.33,
+        "width": 467.91,
+        "height": 36.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. NOT-ALL-EQUAL-3SAT is a known-NP-complete variation of 3-SAT. A NOT-ALL-EQUAL-3SAT instance consists of a set of clauses, each having three terms (variables or negations of variables). It is satisfied by a truth assignment such that in every clause not all three terms have the same values."
+      }
+    },
+    {
+      "id": "#/texts/122",
+      "page": 11,
+      "order": 4,
+      "role": "paragraph",
+      "text": "We transform NOT-ALL-EQUAL-3SAT into ACYCLIC PARTITION as follows. Create a pair of graph vertices for each variable and its negation, with edges forming a 2-cycle (Figure 10, left); the two vertices must be in different parts of any acyclic bipartition. Create another triple of vertices for each clause, with edges forming a 3-cycle; not all three may be on the same side of any acyclic bipartition. Finally, add 2-cycles connecting the term vertices with corresponding clause vertices (Figure 10, right). The resulting graph has an acyclic bipartition if and only if the input NOT-ALL-EQUAL-3SAT instance is satisfiable. intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 152.38,
+        "x1": 539.95,
+        "y1": 237.75,
+        "width": 467.95,
+        "height": 85.37
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We transform NOT-ALL-EQUAL-3SAT into ACYCLIC PARTITION as follows. Create a pair of graph vertices for each variable and its negation, with edges forming a 2-cycle (Figure 10, left); the two vertices must be in different parts of any acyclic bipartition. Create another triple of vertices for each clause, with edges forming a 3-cycle; not all three may be on the same side of any acyclic bipartition. Finally, add 2-cycles connecting the term vertices with corresponding clause vertices (Figure 10, right). The resulting graph has an acyclic bipartition if and only if the input NOT-ALL-EQUAL-3SAT instance is satisfiable. intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 11,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Combining these two reductions gives us our result:",
+      "bbox": {
+        "x0": 88.92,
+        "y0": 243.58,
+        "x1": 315.15,
+        "y1": 253.09,
+        "width": 226.23,
+        "height": 9.51
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Combining these two reductions gives us our result:"
+      }
+    },
+    {
+      "id": "#/texts/124",
+      "page": 11,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Theorem 5. It is NP-complete to determine whether an immersed surface can lift to a generalized terrain.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 266.95,
+        "x1": 537.33,
+        "y1": 276.66,
+        "width": 465.33,
+        "height": 9.71
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 5. It is NP-complete to determine whether an immersed surface can lift to a generalized terrain."
+      }
+    },
+    {
+      "id": "#/texts/125",
+      "page": 11,
+      "order": 7,
+      "role": "heading",
+      "text": "6 The number of embeddings of an immersion",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 298.16,
+        "x1": 316.49,
+        "y1": 308.81,
+        "width": 244.49,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "6 The number of embeddings of an immersion"
+      }
+    },
+    {
+      "id": "#/texts/126",
+      "page": 11,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Figure 11 shows an immersed surface with 2 n 2 combinatorially different spatial embeddings. As we now show, this is the most possible.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 321.74,
+        "x1": 539.96,
+        "y1": 347.53,
+        "width": 467.96,
+        "height": 25.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Figure 11 shows an immersed surface with 2 n 2 combinatorially different spatial embeddings. As we now show, this is the most possible."
+      }
+    },
+    {
+      "id": "#/texts/127",
+      "page": 11,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Theorem 6. An immersed surface M has at most 2 n 2 combinatorially different spatial embeddings.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 355.82,
+        "x1": 509.01,
+        "y1": 368.1,
+        "width": 437.01,
+        "height": 12.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Theorem 6. An immersed surface M has at most 2 n 2 combinatorially different spatial embeddings."
+      }
+    },
+    {
+      "id": "#/texts/128",
+      "page": 11,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Proof. We construct an undirected multigraph G on a set of self-intersections of the boundary curve, as follows. From each self-intersection v , formed by the crossing of the boundaries of two layers lscript i and lscript j , trace a curve in lscript j along the path formed in the plane by the boundary of lscript i , until reaching another crossing point w that involves a boundary of the layer in which the curve is being traced; add an edge in G connecting v and w . Figure 12 depicts this construction for a curve that is the boundary of a unique immersed surface.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 382.06,
+        "x1": 539.97,
+        "y1": 445.81,
+        "width": 467.97,
+        "height": 63.75
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Proof. We construct an undirected multigraph G on a set of self-intersections of the boundary curve, as follows. From each self-intersection v , formed by the crossing of the boundaries of two layers lscript i and lscript j , trace a curve in lscript j along the path formed in the plane by the boundary of lscript i , until reaching another crossing point w that involves a boundary of the layer in which the curve is being traced; add an edge in G connecting v and w . Figure 12 depicts this construction for a curve that is the boundary of a unique immersed surface."
+      }
+    },
+    {
+      "id": "#/texts/129",
+      "page": 11,
+      "order": 11,
+      "role": "paragraph",
+      "text": "The obtained graph G is 2-regular: there is one edge for each layer involved in each crossing. If M is obtained from a generalized terrain, both crossings connected by any edge e of G must be cased the same way: for, the path traced out by e has at all points of the path one surface consistently above or below the boundary curve of the other, so there is no way for the two surfaces to swap heights. Therefore, for a casing coming from an embedding of M , the edges around any cycle of G must alternate between upper and lower, so each cycle must have even length at least equal to two. Choosing one of two casings for each of at most n 2 cycles in G , the total number of valid casings is at most 2 n 2 . intersectionsq unionsq",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 449.86,
+        "x1": 539.95,
+        "y1": 548.79,
+        "width": 467.95,
+        "height": 98.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The obtained graph G is 2-regular: there is one edge for each layer involved in each crossing. If M is obtained from a generalized terrain, both crossings connected by any edge e of G must be cased the same way: for, the path traced out by e has at all points of the path one surface consistently above or below the boundary curve of the other, so there is no way for the two surfaces to swap heights. Therefore, for a casing coming from an embedding of M , the edges around any cycle of G must alternate between upper and lower, so each cycle must have even length at least equal to two. Choosing one of two casings for each of at most n 2 cycles in G , the total number of valid casings is at most 2 n 2 . intersectionsq unionsq"
+      }
+    },
+    {
+      "id": "#/texts/130",
+      "page": 11,
+      "order": 12,
+      "role": "paragraph",
+      "text": "One consequence of this result is a simple O ( n 2 n 2 ) -time algorithm for finding a lifting of an immersed surface with a single boundary component, by testing all casings consistent with the graph G . However, in many cases we can do better than this.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 551.9,
+        "x1": 539.94,
+        "y1": 591.25,
+        "width": 467.94,
+        "height": 39.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "One consequence of this result is a simple O ( n 2 n 2 ) -time algorithm for finding a lifting of an immersed surface with a single boundary component, by testing all casings consistent with the graph G . However, in many cases we can do better than this."
+      }
+    },
+    {
+      "id": "#/texts/131",
+      "page": 11,
+      "order": 13,
+      "role": "caption",
+      "text": "Fig. 10. Gadgets for the reduction from NOT-ALL-EQUAL-3SAT to ACYCLIC PARTITION.",
+      "bbox": {
+        "x0": 144.48,
+        "y0": 703.86,
+        "x1": 467.96,
+        "y1": 711.85,
+        "width": 323.48,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 10. Gadgets for the reduction from NOT-ALL-EQUAL-3SAT to ACYCLIC PARTITION."
+      }
+    },
+    {
+      "id": "#/texts/133",
+      "page": 12,
+      "order": 1,
+      "role": "caption",
+      "text": "Fig. 11. An immersed surface with 2 n 2 combinatorially different spatial embeddings.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 228.9,
+        "x1": 189.11,
+        "y1": 258.81,
+        "width": 117.11,
+        "height": 29.91
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 11. An immersed surface with 2 n 2 combinatorially different spatial embeddings."
+      }
+    },
+    {
+      "id": "#/texts/134",
+      "page": 12,
+      "order": 2,
+      "role": "caption",
+      "text": "Fig. 12. The graph G formed from the crossings of an immersed surface. The curve shown in black is the boundary of a unique immersed surface; the corresponding graph consists of two 4-cycles and one 6-cycle (colored red, green, and blue).",
+      "bbox": {
+        "x0": 240.48,
+        "y0": 228.9,
+        "x1": 539.9,
+        "y1": 258.81,
+        "width": 299.42,
+        "height": 29.91
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 12. The graph G formed from the crossings of an immersed surface. The curve shown in black is the boundary of a unique immersed surface; the corresponding graph consists of two 4-cycles and one 6-cycle (colored red, green, and blue)."
+      }
+    },
+    {
+      "id": "#/texts/135",
+      "page": 12,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Observe that, in Figure 12, the green cycle on the left consists of vertices and boundary paths that all lie on points contained in only two levels of the immersed surface. We call such a cycle an irrelevant cycle , because the existence of a three-dimensional embedding does not depend on how it is cased: if a threedimensional embedding with one of the two possible casings exists, then changing the casing of that cycle while keeping the casing of the rest of the drawing fixed will result in another valid embedding. The red and blue cycles in the figure are relevant cycles , because they are not irrelevant: they both include vertices that are contained within three layers of the immersion. It is possible for a cycle to have all its vertices contained in only two layers, but to have points on the curves forming its edges that are contained in three or more layers; in this case, also, we call it a relevant cycle. Then clearly, we can find a lifting of an immersed surface in time O ( n 2 k ) , where k is the number of relevant cycles: try all casings of the relevant cycles, and pick a single fixed casing for each irrelevant one. Thus, the problem of lifting an immersion to an embedding is fixed-parameter tractable, with k as the fixed parameter.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 285.22,
+        "x1": 540.05,
+        "y1": 443.78,
+        "width": 468.05,
+        "height": 158.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Observe that, in Figure 12, the green cycle on the left consists of vertices and boundary paths that all lie on points contained in only two levels of the immersed surface. We call such a cycle an irrelevant cycle , because the existence of a three-dimensional embedding does not depend on how it is cased: if a threedimensional embedding with one of the two possible casings exists, then changing the casing of that cycle while keeping the casing of the rest of the drawing fixed will result in another valid embedding. The red and blue cycles in the figure are relevant cycles , because they are not irrelevant: they both include vertices that are contained within three layers of the immersion. It is possible for a cycle to have all its vertices contained in only two layers, but to have points on the curves forming its edges that are contained in three or more layers; in this case, also, we call it a relevant cycle. Then clearly, we can find a lifting of an immersed surface in time O ( n 2 k ) , where k is the number of relevant cycles: try all casings of the relevant cycles, and pick a single fixed casing for each irrelevant one. Thus, the problem of lifting an immersion to an embedding is fixed-parameter tractable, with k as the fixed parameter."
+      }
+    },
+    {
+      "id": "#/texts/136",
+      "page": 12,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Alternatively, we may use as a parameter the number c of crossings of the input curve that lie within three or more layers of the immersion. It is not difficult to show that k = O ( c ) ; for, each relevant cycle either contains such a crossing or contains a two-layer crossing that is adjacent to a three-layer crossing in the arrangement formed by the boundary curves.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 447.82,
+        "x1": 539.93,
+        "y1": 498.02,
+        "width": 467.93,
+        "height": 50.2
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Alternatively, we may use as a parameter the number c of crossings of the input curve that lie within three or more layers of the immersion. It is not difficult to show that k = O ( c ) ; for, each relevant cycle either contains such a crossing or contains a two-layer crossing that is adjacent to a three-layer crossing in the arrangement formed by the boundary curves."
+      }
+    },
+    {
+      "id": "#/texts/137",
+      "page": 12,
+      "order": 5,
+      "role": "paragraph",
+      "text": "It would be of interest to determine whether there is a fixed parameter tractable algorithm for the problem of finding a three-dimensional embedding for a given plane curve, without being given the corresponding immersion. In this case the multigraph G cannot be defined, since it depends on having a fixed immersion, but we may still use c as the parameter for testing fixed parameter tractability.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 502.06,
+        "x1": 539.73,
+        "y1": 552.26,
+        "width": 467.73,
+        "height": 50.2
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "It would be of interest to determine whether there is a fixed parameter tractable algorithm for the problem of finding a three-dimensional embedding for a given plane curve, without being given the corresponding immersion. In this case the multigraph G cannot be defined, since it depends on having a fixed immersion, but we may still use c as the parameter for testing fixed parameter tractability."
+      }
+    },
+    {
+      "id": "#/texts/139",
+      "page": 13,
+      "order": 1,
+      "role": "heading",
+      "text": "References",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 66.8,
+        "x1": 127.29,
+        "y1": 77.45,
+        "width": 55.29,
+        "height": 10.65
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "References"
+      }
+    },
+    {
+      "id": "#/texts/140",
+      "page": 13,
+      "order": 2,
+      "role": "list_item",
+      "text": "R. Bellman. On a routing problem. Quarterly of Applied Mathematics , 16(1):87-90, 1958.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 91.86,
+        "x1": 414.44,
+        "y1": 99.69,
+        "width": 338.0,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "1. R. Bellman. On a routing problem. Quarterly of Applied Mathematics , 16(1):87-90, 1958."
+      }
+    },
+    {
+      "id": "#/texts/141",
+      "page": 13,
+      "order": 3,
+      "role": "list_item",
+      "text": "D. Bennequin. Exemples d'immersions du disque dans le plan qui ne sont pas projections de plongements dans l'espace. C. R. Acad. Sci. Paris Se'r. , A-B 281(2-3, AII):A81-A84, 1975.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 102.78,
+        "x1": 539.96,
+        "y1": 121.53,
+        "width": 463.52,
+        "height": 18.75
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2. D. Bennequin. Exemples d'immersions du disque dans le plan qui ne sont pas projections de plongements dans l'espace. C. R. Acad. Sci. Paris Se'r. , A-B 281(2-3, AII):A81-A84, 1975."
+      }
+    },
+    {
+      "id": "#/texts/142",
+      "page": 13,
+      "order": 4,
+      "role": "list_item",
+      "text": "W. G. Chinn and N. E. Steenrod. First Concepts of Topology . New Mathematical Library, MAA, 1966.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 124.74,
+        "x1": 458.48,
+        "y1": 132.57,
+        "width": 382.04,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "3. W. G. Chinn and N. E. Steenrod. First Concepts of Topology . New Mathematical Library, MAA, 1966."
+      }
+    },
+    {
+      "id": "#/texts/143",
+      "page": 13,
+      "order": 5,
+      "role": "list_item",
+      "text": "C. H. Dowker and M. B. Thistlethwaite. Classification of knot projections. Topology Appl. , 16:19-31, 1983.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 135.66,
+        "x1": 477.2,
+        "y1": 143.49,
+        "width": 400.76,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "4. C. H. Dowker and M. B. Thistlethwaite. Classification of knot projections. Topology Appl. , 16:19-31, 1983."
+      }
+    },
+    {
+      "id": "#/texts/144",
+      "page": 13,
+      "order": 6,
+      "role": "list_item",
+      "text": "D. Eppstein, M. J. van Kreveld, E. Mumford, and B. Speckmann. Edges and switches, tunnels and bridges. In Proc. 10th Worksh. Algorithms and Data Structures , volume 4619 of Lecture Notes in Computer Science , pages 77-88. Springer-Verlag, 2007.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 146.58,
+        "x1": 540.08,
+        "y1": 176.37,
+        "width": 463.64,
+        "height": 29.79
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "5. D. Eppstein, M. J. van Kreveld, E. Mumford, and B. Speckmann. Edges and switches, tunnels and bridges. In Proc. 10th Worksh. Algorithms and Data Structures , volume 4619 of Lecture Notes in Computer Science , pages 77-88. Springer-Verlag, 2007."
+      }
+    },
+    {
+      "id": "#/texts/145",
+      "page": 13,
+      "order": 7,
+      "role": "list_item",
+      "text": "J. L. R. Ford and D. R. Fulkerson. Flows in Networks . Princeton University Press, Princeton, 1962.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 179.46,
+        "x1": 445.28,
+        "y1": 187.29,
+        "width": 368.84,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "6. J. L. R. Ford and D. R. Fulkerson. Flows in Networks . Princeton University Press, Princeton, 1962."
+      }
+    },
+    {
+      "id": "#/texts/146",
+      "page": 13,
+      "order": 8,
+      "role": "list_item",
+      "text": "M. L. Marx. Extensions of normal immersions of S 1 into R 2 . Trans. Amer. Math. Soc. , 187:309-326, 1974.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 188.58,
+        "x1": 473.24,
+        "y1": 198.33,
+        "width": 396.8,
+        "height": 9.75
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "7. M. L. Marx. Extensions of normal immersions of S 1 into R 2 . Trans. Amer. Math. Soc. , 187:309-326, 1974."
+      }
+    },
+    {
+      "id": "#/texts/147",
+      "page": 13,
+      "order": 9,
+      "role": "list_item",
+      "text": "P. W. Shor and C. J. V. Wyk. Detecting and decomposing self-overlapping curves. Comput. Geom. Theory Appl. , 2(1):31-50, 1992.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 201.42,
+        "x1": 539.72,
+        "y1": 220.17,
+        "width": 463.28,
+        "height": 18.75
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "8. P. W. Shor and C. J. V. Wyk. Detecting and decomposing self-overlapping curves. Comput. Geom. Theory Appl. , 2(1):31-50, 1992."
+      }
+    },
+    {
+      "id": "#/texts/148",
+      "page": 13,
+      "order": 10,
+      "role": "list_item",
+      "text": "W. D. Smith and N. C. Wormald. Geometric separator theorems and applications. In FOCS '98: Proceedings of the 39th Annual Symposium on Foundations of Computer Science , page 232, Washington, DC, USA, 1998. IEEE Computer Society.",
+      "bbox": {
+        "x0": 76.44,
+        "y0": 223.38,
+        "x1": 539.93,
+        "y1": 242.13,
+        "width": 463.49,
+        "height": 18.75
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "9. W. D. Smith and N. C. Wormald. Geometric separator theorems and applications. In FOCS '98: Proceedings of the 39th Annual Symposium on Foundations of Computer Science , page 232, Washington, DC, USA, 1998. IEEE Computer Society."
+      }
+    },
+    {
+      "id": "#/texts/149",
+      "page": 13,
+      "order": 11,
+      "role": "list_item",
+      "text": "H. Whitney. On regular closed curves in the plane. Composition Math. , 4:276-284, 1937.",
+      "bbox": {
+        "x0": 72.0,
+        "y0": 245.22,
+        "x1": 410.48,
+        "y1": 253.05,
+        "width": 338.48,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "10. H. Whitney. On regular closed curves in the plane. Composition Math. , 4:276-284, 1937."
+      }
+    }
+  ]
+}

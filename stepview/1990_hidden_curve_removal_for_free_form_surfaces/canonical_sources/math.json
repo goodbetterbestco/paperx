@@ -1,0 +1,687 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p007-0019",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathbf{M}(\\bar{u})=\\bar{u}^{d} M_{d}+\\bar{u}^{d-1} M_{d-1}+\\ldots+\\bar{u} M_{1}+M_{0} \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 200.0,
+            "y0": 345.5,
+            "x1": 411.5,
+            "y1": 365.0,
+            "width": 211.5,
+            "height": 19.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0023",
+      "kind": "display",
+      "display_latex": "C=\\left[\\begin{array}{ccccc}\n0 & I_{n} & 0 & \\ldots & 0  \\tag{2}\\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\\\\n0 & 0 & 0 & \\ldots & I_{n} \\\\\n-\\overline{\\mathbf{M}}_{0} & -\\overline{\\mathbf{M}}_{1} & -\\overline{\\mathbf{M}}_{2} & \\ldots & -\\overline{\\mathbf{M}}_{d-1}\n\\end{array}\\right]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 195.5,
+            "y0": 406.0,
+            "x1": 412.5,
+            "y1": 474.0,
+            "width": 217.0,
+            "height": 68.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0037",
+      "kind": "display",
+      "display_latex": "\\mathbf{z}_{k}=\\mathbf{A} \\mathbf{q}_{k-1} ; \\quad \\mathbf{q}_{k}=\\mathbf{z}_{k} /\\left\\|\\mathbf{z}_{k}\\right\\|_{\\infty} ; \\quad s_{k}=\\mathbf{q}_{k}^{T} \\mathbf{A} \\mathbf{q}_{k}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 189.5,
+            "y0": 663.5,
+            "x1": 422.5,
+            "y1": 683.5,
+            "width": 233.0,
+            "height": 20.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0008",
+      "kind": "display",
+      "display_latex": "\\text { Solve }(\\mathbf{A}-s \\mathbf{I}) \\mathbf{z}_{k}=\\mathbf{q}_{k-1} ; \\quad \\mathbf{q}_{k}=\\mathbf{z}_{k} /\\left\\|\\mathbf{z}_{k}\\right\\|_{\\infty} ; \\quad s_{k}=\\mathbf{q}_{k}^{T} \\mathbf{A} \\mathbf{q}_{k} ;",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 159.5,
+            "y0": 171.0,
+            "x1": 453.0,
+            "y1": 191.0,
+            "width": 293.5,
+            "height": 20.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0029",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\n\\mathbf{F}(s, t)=\\langle X(s, t), Y(s, t), Z(s, t), W(s, t)\\rangle \\\\\n\\phi_{1}(s,)=\\frac{X(s, t)}{W(s, t}, \\quad \\phi_{2}(s, t)=\\frac{Y(s, t)}{W(s, t}, \\quad \\phi_{3}(s, t)=\\frac{Z(s, t)}{W(s, t}\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 169.5,
+            "y0": 535.0,
+            "x1": 442.5,
+            "y1": 591.0,
+            "width": 273.0,
+            "height": 56.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0033",
+      "kind": "display",
+      "display_latex": "N_{z}=\\left|\\begin{array}{ll}\n\\phi_{1_{s}} & \\phi_{1_{t}}  \\tag{3}\\\\\n\\phi_{2_{s}} & \\phi_{2_{t}}\n\\end{array}\\right|",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 260.0,
+            "y0": 640.5,
+            "x1": 350.0,
+            "y1": 679.0,
+            "width": 90.0,
+            "height": 38.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0003",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\phi_{1_{s}} & =\\frac{\\left(W X_{s}-W_{s} X\\right)}{W^{2}} \\\\\n\\phi_{1_{t}} & =\\frac{\\left(W X_{t}-W_{t} X\\right)}{W^{2}} \\\\\n\\phi_{2_{s}} & =\\frac{\\left(W Y_{s}-W_{s} Y\\right)}{W^{2}} \\\\\n\\phi_{2_{t}} & =\\frac{\\left(W Y_{t}-W_{t} Y\\right)}{W^{2}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 249.5,
+            "y0": 93.0,
+            "x1": 363.0,
+            "y1": 216.5,
+            "width": 113.5,
+            "height": 123.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0006",
+      "kind": "display",
+      "display_latex": "N_{z}=\\left|\\begin{array}{cc}\n\\left(W X_{s}-W_{s} X\\right) & \\left(W X_{t}-W_{t} X\\right)  \\tag{4}\\\\\n\\left(W Y_{s}-W_{s} Y\\right) & \\left(W Y_{t}-W_{t} Y\\right)\n\\end{array}\\right|=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 194.5,
+            "y0": 251.0,
+            "x1": 419.0,
+            "y1": 289.5,
+            "width": 224.5,
+            "height": 38.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0010",
+      "kind": "display",
+      "display_latex": "\\mathbf{M}(s, t)=\\left(\\begin{array}{ccc}\nX(s, t) & Y(s, t) & W(s, t)  \\tag{5}\\\\\nX_{s}(s, t) & Y_{s}(s, t) & Z_{s}(s, t) \\\\\nX_{t}(s, t) & Y_{t}(s, t) & Z_{t}(s, t)\n\\end{array}\\right)=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 191.0,
+            "y0": 324.0,
+            "x1": 419.5,
+            "y1": 374.5,
+            "width": 228.5,
+            "height": 50.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0004",
+      "kind": "display",
+      "display_latex": "M(s, t)=\\left(\\phi_{1}(s, t), \\phi_{2}(s, t)\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 238.0,
+            "y0": 154.5,
+            "x1": 373.5,
+            "y1": 174.0,
+            "width": 135.5,
+            "height": 19.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0012",
+      "kind": "display",
+      "display_latex": "J(s, t)=\\left|\\begin{array}{ll}\n\\frac{\\left(W X_{s}-W_{s} X\\right)}{W^{2}} & \\frac{\\left(W X_{t}-W_{t} X\\right)}{W^{2}}  \\tag{6}\\\\\n\\frac{\\left(W Y_{s}-W_{s} Y\\right)}{W^{2}} & \\frac{\\left(W Y_{t}-W_{t} Y\\right)}{W^{2}}\n\\end{array}\\right|",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 211.0,
+            "y0": 297.0,
+            "x1": 399.0,
+            "y1": 337.0,
+            "width": 188.0,
+            "height": 40.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0026",
+      "kind": "display",
+      "display_latex": "V(\\wp)=\\left\\{p_{i} \\mid p_{i} \\in \\operatorname{int}(\\wp), \\exists p_{b} \\in \\partial \\wp, M\\left(p_{i}\\right)=M\\left(p_{b}\\right)\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 181.5,
+            "y0": 531.5,
+            "x1": 431.5,
+            "y1": 552.0,
+            "width": 250.0,
+            "height": 20.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0024",
+      "kind": "display",
+      "display_latex": "\\frac{X_{f}(u)}{W_{f}(u)}=\\frac{X_{g}(v)}{W_{g}(v)}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 279.5,
+            "y0": 652.0,
+            "x1": 360.0,
+            "y1": 682.5,
+            "width": 80.5,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0003",
+      "kind": "display",
+      "display_latex": "\\frac{Y_{f}(u)}{W_{f}(u)}=\\frac{Y_{g}(v)}{W_{g}(v)}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 279.5,
+            "y0": 296.0,
+            "x1": 360.5,
+            "y1": 325.5,
+            "width": 81.0,
+            "height": 29.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0013",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\frac{X(u)}{W(u)} & =\\frac{X(v)}{W(v)} \\\\\n\\frac{Y(u)}{W(u)} & =\\frac{Y(v)}{W(v)} .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 279.0,
+            "y0": 453.5,
+            "x1": 359.5,
+            "y1": 518.5,
+            "width": 80.5,
+            "height": 65.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p016-0016",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\n\\frac{(X(u) W(v)-X(v) W(u))}{(u-v)}=0 \\\\\n\\frac{(Y(u) W(v)-Y(v) W(u))}{(u-v)}=0\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 16,
+          "bbox": {
+            "x0": 245.5,
+            "y0": 555.5,
+            "x1": 394.0,
+            "y1": 624.5,
+            "width": 148.5,
+            "height": 69.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p017-0003",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\nD(s, t)=0 \\\\\nD(u, v)=0 \\\\\n\\frac{X(s, t)}{W(s, t)}=\\frac{X(u, v)}{W(u, v)} \\\\\n\\frac{Y(s, t)}{W(s, t)}=\\frac{Y(u, v)}{W(u, v)}\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 17,
+          "bbox": {
+            "x0": 270.0,
+            "y0": 97.0,
+            "x1": 369.5,
+            "y1": 203.5,
+            "width": 99.5,
+            "height": 106.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p017-0015",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nE(u, v, s, t)= & D^{2}(s, t)+D^{2}(u, v)+ \\\\\n& (X(s, t) W(u, v)-X(u, v) W(s, t))^{2}+ \\\\\n& (Y(s, t) W(u, v)-Y(u, v) W(s, t))^{2}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 17,
+          "bbox": {
+            "x0": 96.5,
+            "y0": 377.0,
+            "x1": 344.5,
+            "y1": 424.5,
+            "width": 248.0,
+            "height": 47.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p017-0022",
+      "kind": "display",
+      "display_latex": "\\begin{gathered}\nD(s, t)=0 \\\\\n\\frac{X(s, t)}{W(s, t)}=\\frac{X_{f}(u)}{W_{f}(u)} \\\\\n\\frac{Y(s, t)}{W(s, t)}=\\frac{Y_{f}(u)}{W_{f}(u)}\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 17,
+          "bbox": {
+            "x0": 272.0,
+            "y0": 532.0,
+            "x1": 367.5,
+            "y1": 624.5,
+            "width": 95.5,
+            "height": 92.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0003",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nE(u, s, t)= & D^{2}(s, t)+ \\\\\n& \\left(X(s, t) W_{f}(u)-X_{f}(u) W(s, t)\\right)^{2}+ \\\\\n& \\left(Y(s, t) W_{f}(u)-Y_{f}(u) W(s, t)\\right)^{2} .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 96.5,
+            "y0": 253.0,
+            "x1": 320.5,
+            "y1": 299.0,
+            "width": 224.0,
+            "height": 46.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p018-0027",
+      "kind": "display",
+      "display_latex": "\\frac{X\\left(h_{u}, h_{v}\\right)}{W\\left(h_{u}, h_{v}\\right)}-x=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 18,
+          "bbox": {
+            "x0": 260.5,
+            "y0": 653.5,
+            "x1": 352.0,
+            "y1": 682.5,
+            "width": 91.5,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p019-0003",
+      "kind": "display",
+      "display_latex": "\\frac{Y\\left(h_{u}, h_{v}\\right)}{W\\left(h_{u}, h_{v}\\right)}-y=0 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 19,
+          "bbox": {
+            "x0": 258.5,
+            "y0": 310.5,
+            "x1": 353.5,
+            "y1": 340.5,
+            "width": 95.0,
+            "height": 30.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

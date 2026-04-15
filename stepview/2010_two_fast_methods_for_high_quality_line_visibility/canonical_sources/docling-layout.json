@@ -1,0 +1,4225 @@
+{
+  "engine": "docling",
+  "pdf_path": "docs/2010_two_fast_methods_for_high_quality_line_visibility/2010_two_fast_methods_for_high_quality_line_visibility.pdf",
+  "page_count": 11,
+  "page_sizes_pt": [
+    {
+      "page": 1,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 2,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 3,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 4,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 5,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 6,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 7,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 8,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 9,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 10,
+      "width": 612.0,
+      "height": 792.0
+    },
+    {
+      "page": 11,
+      "width": 612.0,
+      "height": 792.0
+    }
+  ],
+  "blocks": [
+    {
+      "id": "#/texts/2",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Two Fast Methods for High-Quality Line Visibility",
+      "bbox": {
+        "x0": 51.4,
+        "y0": 55.73,
+        "x1": 560.59,
+        "y1": 77.85,
+        "width": 509.19,
+        "height": 22.12
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Two Fast Methods for High-Quality Line Visibility"
+      }
+    },
+    {
+      "id": "#/texts/3",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "Forrester Cole and Adam Finkelstein",
+      "bbox": {
+        "x0": 217.05,
+        "y0": 93.29,
+        "x1": 394.95,
+        "y1": 103.43,
+        "width": 177.9,
+        "height": 10.14
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Forrester Cole and Adam Finkelstein"
+      }
+    },
+    {
+      "id": "#/texts/4",
+      "page": 1,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Abstract -Lines drawn over or in place of shaded 3D models can often provide greater comprehensibility and stylistic freedom than shading alone. A substantial challenge for making stylized line drawings from 3D models is the visibility computation. Current algorithms for computing line visibility in models of moderate complexity are either too slow for interactive rendering, or too brittle for coherent animation. We introduce two methods that exploit graphics hardware to provide fast and robust line visibility. First we present a simple shader that performs a visibility test for high-quality, simple lines drawn with the conventional implementation. Next we offer a full optimized pipeline that supports line visibility and a broad range of stylization options.",
+      "bbox": {
+        "x0": 70.81,
+        "y0": 122.76,
+        "x1": 541.17,
+        "y1": 181.77,
+        "width": 470.36,
+        "height": 59.01
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Abstract -Lines drawn over or in place of shaded 3D models can often provide greater comprehensibility and stylistic freedom than shading alone. A substantial challenge for making stylized line drawings from 3D models is the visibility computation. Current algorithms for computing line visibility in models of moderate complexity are either too slow for interactive rendering, or too brittle for coherent animation. We introduce two methods that exploit graphics hardware to provide fast and robust line visibility. First we present a simple shader that performs a visibility test for high-quality, simple lines drawn with the conventional implementation. Next we offer a full optimized pipeline that supports line visibility and a broad range of stylization options."
+      }
+    },
+    {
+      "id": "#/texts/5",
+      "page": 1,
+      "order": 4,
+      "role": "paragraph",
+      "text": "F",
+      "bbox": {
+        "x0": 301.65,
+        "y0": 192.41,
+        "x1": 310.34,
+        "y1": 200.17,
+        "width": 8.69,
+        "height": 7.76
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "F"
+      }
+    },
+    {
+      "id": "#/texts/6",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "PREPRINT 1 INTRODUCTION Stylized lines play a role in many applications of nonphotorealistic rendering (NPR) for 3D models. Lines can be used alone to depict shape, or in conjunction with polygons to emphasize features such as silhouettes, creases, and material boundaries. While graphics libraries such as OpenGL provide basic line drawing capabilities, their stylization options are limited. Desire to include effects such as texture, varying thickness, or wavy paths has lead to techniques that draw lines using textured triangle strips ( strokes ), for example those of Markosian, et al. [1]. Stroke-based techniques provide a broad range of stylizations, as each stroke can be arbitrarily shaped and textured. A major difficulty in drawing strokes is visibility computation. Conventional, per-fragment depth testing is insufficient for drawing broad strokes, because the strokes are partially occluded by the model itself (Figure 2). Techniques such as the item buffer introduced by Northrup and Markosian [2] can be used to compute visibility of lines prior to rendering strokes, but are much slower than conventional OpenGL rendering and are vulnerable to aliasing artifacts. While techniques exist to reduce these artifacts [3], they induce an even greater loss in performance. This paper presents two methods that exploit graphics hardware to draw strokes efficiently and with high-quality visibility testing: 1) Spine test shader. This simple method can be used in a conventional line drawing pipeline with minimal modification, but supports a limited range of stylization. datastructure (the segment atlas ), while the spine test method does not. The spine test method is a single-pass approach that computes stroke visibility at the same time as the final stroke color. The segment atlas method, by contrast, computes and stores the visibility information for all strokes prior to rendering. Computing visibility prior to rendering provides the option to filter or otherwise manipulate the visibility values, allowing effects such as overshoot, haloing, and detail elision. An additional benefit is the ability to properly parameterize strokes with multiple segments, such as curved strokes (e.g., the top of the clevis shape in Figure 1 left). This article expands on an earlier paper by the same authors [4] that introduced the segment atlas method. The spine test method is introduced for the first time in this article, and offers a simpler, more conventional alternative to the segment atlas method. This article also expands upon the description of the segment atlas in [4], adding implementation improvements, further discussion of stylization effects, and a comparison to the spine test method. Applications for these approaches include any context where interactive rendering of high-quality lines from 3D models is appropriate, including games, design and architectural modeling, medical and scientific visualization and interactive illustrations. 2 BACKGROUND AND RELATED WORK",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.04,
+        "y1": 642.4,
+        "width": 514.08,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT 1 INTRODUCTION Stylized lines play a role in many applications of nonphotorealistic rendering (NPR) for 3D models. Lines can be used alone to depict shape, or in conjunction with polygons to emphasize features such as silhouettes, creases, and material boundaries. While graphics libraries such as OpenGL provide basic line drawing capabilities, their stylization options are limited. Desire to include effects such as texture, varying thickness, or wavy paths has lead to techniques that draw lines using textured triangle strips ( strokes ), for example those of Markosian, et al. [1]. Stroke-based techniques provide a broad range of stylizations, as each stroke can be arbitrarily shaped and textured. A major difficulty in drawing strokes is visibility computation. Conventional, per-fragment depth testing is insufficient for drawing broad strokes, because the strokes are partially occluded by the model itself (Figure 2). Techniques such as the item buffer introduced by Northrup and Markosian [2] can be used to compute visibility of lines prior to rendering strokes, but are much slower than conventional OpenGL rendering and are vulnerable to aliasing artifacts. While techniques exist to reduce these artifacts [3], they induce an even greater loss in performance. This paper presents two methods that exploit graphics hardware to draw strokes efficiently and with high-quality visibility testing: 1) Spine test shader. This simple method can be used in a conventional line drawing pipeline with minimal modification, but supports a limited range of stylization. datastructure (the segment atlas ), while the spine test method does not. The spine test method is a single-pass approach that computes stroke visibility at the same time as the final stroke color. The segment atlas method, by contrast, computes and stores the visibility information for all strokes prior to rendering. Computing visibility prior to rendering provides the option to filter or otherwise manipulate the visibility values, allowing effects such as overshoot, haloing, and detail elision. An additional benefit is the ability to properly parameterize strokes with multiple segments, such as curved strokes (e.g., the top of the clevis shape in Figure 1 left). This article expands on an earlier paper by the same authors [4] that introduced the segment atlas method. The spine test method is introduced for the first time in this article, and offers a simpler, more conventional alternative to the segment atlas method. This article also expands upon the description of the segment atlas in [4], adding implementation improvements, further discussion of stylization effects, and a comparison to the spine test method. Applications for these approaches include any context where interactive rendering of high-quality lines from 3D models is appropriate, including games, design and architectural modeling, medical and scientific visualization and interactive illustrations. 2 BACKGROUND AND RELATED WORK"
+      }
+    },
+    {
+      "id": "#/texts/7",
+      "page": 1,
+      "order": 6,
+      "role": "list_item",
+      "text": "Segment atlas. This method carries a higher implementation cost that the spine test shader, but provides stored visibility values can be used for stylization, as well as to properly handle curved strokes.",
+      "bbox": {
+        "x0": 58.92,
+        "y0": 616.81,
+        "x1": 300.03,
+        "y1": 661.62,
+        "width": 241.11,
+        "height": 44.81
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "2) Segment atlas. This method carries a higher implementation cost that the spine test shader, but provides stored visibility values can be used for stylization, as well as to properly handle curved strokes."
+      }
+    },
+    {
+      "id": "#/texts/8",
+      "page": 1,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Both methods rely on a conventional depth buffer to determine visibility, but provide support for supersampling in both the depth buffer and the lines themselves (Figure 5). Both methods provide a similar level of visibility quality and speed.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 673.78,
+        "x1": 300.03,
+        "y1": 718.19,
+        "width": 251.07,
+        "height": 44.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Both methods rely on a conventional depth buffer to determine visibility, but provide support for supersampling in both the depth buffer and the lines themselves (Figure 5). Both methods provide a similar level of visibility quality and speed."
+      }
+    },
+    {
+      "id": "#/texts/9",
+      "page": 1,
+      "order": 8,
+      "role": "paragraph",
+      "text": "The major difference between the methods is that the segment atlas method stores visibility information in an intermediate",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 728.1,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 20.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The major difference between the methods is that the segment atlas method stores visibility information in an intermediate"
+      }
+    },
+    {
+      "id": "#/texts/10",
+      "page": 1,
+      "order": 9,
+      "role": "paragraph",
+      "text": "The most straightforward way to augment a shaded model with lines using the conventional rendering pipeline is to draw the polygons slightly offset from the camera and then to draw line primitives, clipped against the model via the z -buffer. This is by far the most common approach, used by programs ranging from CAD and architectural modeling to 3D animation software, because it leverages the highly-optimized pipeline implemented by graphics cards and imposes little overhead over drawing the shaded polygons alone. Unfortunately, hardware accelerated line primitives are usually rasterized with a specialized approach such as described by Wu [5], and allow only minimal stylistic control (color, fixed width, and in some implementations screen-space dash patterns).",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 596.59,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 152.01
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The most straightforward way to augment a shaded model with lines using the conventional rendering pipeline is to draw the polygons slightly offset from the camera and then to draw line primitives, clipped against the model via the z -buffer. This is by far the most common approach, used by programs ranging from CAD and architectural modeling to 3D animation software, because it leverages the highly-optimized pipeline implemented by graphics cards and imposes little overhead over drawing the shaded polygons alone. Unfortunately, hardware accelerated line primitives are usually rasterized with a specialized approach such as described by Wu [5], and allow only minimal stylistic control (color, fixed width, and in some implementations screen-space dash patterns)."
+      }
+    },
+    {
+      "id": "#/texts/13",
+      "page": 2,
+      "order": 1,
+      "role": "paragraph",
+      "text": "b",
+      "bbox": {
+        "x0": 49.33,
+        "y0": 48.0,
+        "x1": 54.0,
+        "y1": 55.33,
+        "width": 4.67,
+        "height": 7.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "b"
+      }
+    },
+    {
+      "id": "#/texts/14",
+      "page": 2,
+      "order": 2,
+      "role": "paragraph",
+      "text": "a",
+      "bbox": {
+        "x0": 23.33,
+        "y0": 67.33,
+        "x1": 28.67,
+        "y1": 74.0,
+        "width": 5.34,
+        "height": 6.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "a"
+      }
+    },
+    {
+      "id": "#/texts/15",
+      "page": 2,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Per-Fraament Visibilitv",
+      "bbox": {
+        "x0": 10.0,
+        "y0": 134.0,
+        "x1": 80.0,
+        "y1": 139.33,
+        "width": 70.0,
+        "height": 5.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Per-Fraament Visibilitv"
+      }
+    },
+    {
+      "id": "#/texts/16",
+      "page": 2,
+      "order": 4,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 1. Examples of models rendered with stylized lines. Stylized lines can provide extra information with texture and shape, and are more aesthetically appealing than conventional solid or stippled lines. Another general strategy combines visibility and rendering by simply causing the visible lines to appear in the image buffer. The techniques of Raskar and Cohen [6] and Lee et al. [7] work at interactive frame rates by using hardware rendering. For example, the Raskar and Cohen method draws back-facing polygons in black, slightly displaced towards the camera from the front-facing polygons, so that black borders appear at silhouettes. Such approaches limit stylization because by the time visibility has been calculated, the lines are already drawn. To depict strokes with obvious character (e.g. texture, wobbles, varying width, deliberate breaks or dash patterns, tapered endcaps, overshoot, or haloes) Northrup and Markosian [2] introduced a simple rendering trick wherein the OpenGL lines Per-Fragment Visibility are supplanted by textured triangle strips. The naive approach to computing visibility for such strokes would be to apply a z -buffer test to the triangle strips - a strategy that fails where the strokes interpenetrate the model (Figure 2). Therefore, NPR methods utilizing this type of stylization generally have computed line visibility prior to rendering the lines. Line visibility has been the subject of research since the 1960's. Appel [8] introduced the notion of quantitative invisibility , and computed it by finding changes in visibility at certain locations such as line junctions. This approach was further improved and adapted to NPR by Markosian et al. [1] who showed it could be performed at interactive frame rates for models of modest complexity. Appel's algorithm and its variants can be difficult to implement and are somewhat brittle when faced with degenerate segments or overlapping vertices (i.e., when the lines are not in general position). Thus, Northrup and Markosian [2] adapted the use of an item buffer (which had previously been used to accelerate ray tracing [9]) for the purpose of line visibility, calling it an 'ID reference image' in this context. Several subsequent NPR systems have adopted this approach, e.g. [10], [11], [12]. For an overview of line visibility approaches (especially with regard to silhouettes, which present a particular challenge because they lie at the cusp of visibility), see the survey by Isenberg et al. [13]. Any binary visibility test, including the item buffer approach, will lead to aliasing artifacts, analogous to those that appear for polygons when sampled into a pixel grid. To ameliorate aliasing artifacts, Cole and Finkelstein [3] adapted to lines the supersampling and depth-peeling strategies previous described for polygons, which we will revisit in Section 3.2.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.05,
+        "y1": 642.4,
+        "width": 514.09,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 1. Examples of models rendered with stylized lines. Stylized lines can provide extra information with texture and shape, and are more aesthetically appealing than conventional solid or stippled lines. Another general strategy combines visibility and rendering by simply causing the visible lines to appear in the image buffer. The techniques of Raskar and Cohen [6] and Lee et al. [7] work at interactive frame rates by using hardware rendering. For example, the Raskar and Cohen method draws back-facing polygons in black, slightly displaced towards the camera from the front-facing polygons, so that black borders appear at silhouettes. Such approaches limit stylization because by the time visibility has been calculated, the lines are already drawn. To depict strokes with obvious character (e.g. texture, wobbles, varying width, deliberate breaks or dash patterns, tapered endcaps, overshoot, or haloes) Northrup and Markosian [2] introduced a simple rendering trick wherein the OpenGL lines Per-Fragment Visibility are supplanted by textured triangle strips. The naive approach to computing visibility for such strokes would be to apply a z -buffer test to the triangle strips - a strategy that fails where the strokes interpenetrate the model (Figure 2). Therefore, NPR methods utilizing this type of stylization generally have computed line visibility prior to rendering the lines. Line visibility has been the subject of research since the 1960's. Appel [8] introduced the notion of quantitative invisibility , and computed it by finding changes in visibility at certain locations such as line junctions. This approach was further improved and adapted to NPR by Markosian et al. [1] who showed it could be performed at interactive frame rates for models of modest complexity. Appel's algorithm and its variants can be difficult to implement and are somewhat brittle when faced with degenerate segments or overlapping vertices (i.e., when the lines are not in general position). Thus, Northrup and Markosian [2] adapted the use of an item buffer (which had previously been used to accelerate ray tracing [9]) for the purpose of line visibility, calling it an 'ID reference image' in this context. Several subsequent NPR systems have adopted this approach, e.g. [10], [11], [12]. For an overview of line visibility approaches (especially with regard to silhouettes, which present a particular challenge because they lie at the cusp of visibility), see the survey by Isenberg et al. [13]. Any binary visibility test, including the item buffer approach, will lead to aliasing artifacts, analogous to those that appear for polygons when sampled into a pixel grid. To ameliorate aliasing artifacts, Cole and Finkelstein [3] adapted to lines the supersampling and depth-peeling strategies previous described for polygons, which we will revisit in Section 3.2."
+      }
+    },
+    {
+      "id": "#/texts/17",
+      "page": 2,
+      "order": 5,
+      "role": "paragraph",
+      "text": "e",
+      "bbox": {
+        "x0": 110.67,
+        "y0": 66.67,
+        "x1": 116.0,
+        "y1": 73.33,
+        "width": 5.33,
+        "height": 6.66
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e"
+      }
+    },
+    {
+      "id": "#/texts/18",
+      "page": 2,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Precomputed Visibilitv",
+      "bbox": {
+        "x0": 138.0,
+        "y0": 134.0,
+        "x1": 206.0,
+        "y1": 139.33,
+        "width": 68.0,
+        "height": 5.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Precomputed Visibilitv"
+      }
+    },
+    {
+      "id": "#/texts/19",
+      "page": 2,
+      "order": 7,
+      "role": "caption",
+      "text": "Fig. 2. Per-fragment visibility vs. precomputed visibility. When drawing wide lines using a naive per-fragment visibility test, only lines that lie entirely outside the model will be drawn correctly (b and d). Lines a, c, e are partially occluded by the model, even when some polygon offset is applied. Visibility testing along the spine of the lines (red dots) prior to rendering strokes solves the problem.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 665.5,
+        "x1": 300.03,
+        "y1": 746.44,
+        "width": 251.07,
+        "height": 80.94
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 2. Per-fragment visibility vs. precomputed visibility. When drawing wide lines using a naive per-fragment visibility test, only lines that lie entirely outside the model will be drawn correctly (b and d). Lines a, c, e are partially occluded by the model, even when some polygon offset is applied. Visibility testing along the spine of the lines (red dots) prior to rendering strokes solves the problem."
+      }
+    },
+    {
+      "id": "#/texts/20",
+      "page": 2,
+      "order": 8,
+      "role": "paragraph",
+      "text": "b",
+      "bbox": {
+        "x0": 217.65,
+        "y0": 577.76,
+        "x1": 222.23,
+        "y1": 586.98,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "b"
+      }
+    },
+    {
+      "id": "#/texts/21",
+      "page": 2,
+      "order": 9,
+      "role": "paragraph",
+      "text": "b",
+      "bbox": {
+        "x0": 89.97,
+        "y0": 455.4,
+        "x1": 94.55,
+        "y1": 464.62,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "b"
+      }
+    },
+    {
+      "id": "#/texts/22",
+      "page": 2,
+      "order": 10,
+      "role": "paragraph",
+      "text": "d",
+      "bbox": {
+        "x0": 217.65,
+        "y0": 615.59,
+        "x1": 222.23,
+        "y1": 624.81,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "d"
+      }
+    },
+    {
+      "id": "#/texts/23",
+      "page": 2,
+      "order": 11,
+      "role": "paragraph",
+      "text": "d",
+      "bbox": {
+        "x0": 120.52,
+        "y0": 455.12,
+        "x1": 125.1,
+        "y1": 464.34,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "d"
+      }
+    },
+    {
+      "id": "#/texts/24",
+      "page": 2,
+      "order": 12,
+      "role": "paragraph",
+      "text": "c",
+      "bbox": {
+        "x0": 249.31,
+        "y0": 598.82,
+        "x1": 253.42,
+        "y1": 608.04,
+        "width": 4.11,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "c"
+      }
+    },
+    {
+      "id": "#/texts/25",
+      "page": 2,
+      "order": 13,
+      "role": "paragraph",
+      "text": "c",
+      "bbox": {
+        "x0": 102.94,
+        "y0": 477.99,
+        "x1": 107.06,
+        "y1": 487.22,
+        "width": 4.12,
+        "height": 9.23
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "c"
+      }
+    },
+    {
+      "id": "#/texts/26",
+      "page": 2,
+      "order": 14,
+      "role": "paragraph",
+      "text": "e",
+      "bbox": {
+        "x0": 249.31,
+        "y0": 638.61,
+        "x1": 253.89,
+        "y1": 647.83,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e"
+      }
+    },
+    {
+      "id": "#/texts/27",
+      "page": 2,
+      "order": 15,
+      "role": "paragraph",
+      "text": "e",
+      "bbox": {
+        "x0": 151.34,
+        "y0": 473.11,
+        "x1": 155.92,
+        "y1": 482.34,
+        "width": 4.58,
+        "height": 9.23
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e"
+      }
+    },
+    {
+      "id": "#/texts/28",
+      "page": 2,
+      "order": 16,
+      "role": "paragraph",
+      "text": "a",
+      "bbox": {
+        "x0": 249.31,
+        "y0": 559.38,
+        "x1": 253.89,
+        "y1": 568.6,
+        "width": 4.58,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "a"
+      }
+    },
+    {
+      "id": "#/texts/29",
+      "page": 2,
+      "order": 17,
+      "role": "paragraph",
+      "text": "a",
+      "bbox": {
+        "x0": 64.03,
+        "y0": 473.52,
+        "x1": 68.61,
+        "y1": 482.75,
+        "width": 4.58,
+        "height": 9.23
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "a"
+      }
+    },
+    {
+      "id": "#/texts/30",
+      "page": 2,
+      "order": 18,
+      "role": "paragraph",
+      "text": "Top View",
+      "bbox": {
+        "x0": 53.56,
+        "y0": 642.18,
+        "x1": 81.29,
+        "y1": 649.87,
+        "width": 27.73,
+        "height": 7.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Top View"
+      }
+    },
+    {
+      "id": "#/texts/31",
+      "page": 2,
+      "order": 19,
+      "role": "paragraph",
+      "text": "Precomputed Visibility",
+      "bbox": {
+        "x0": 178.26,
+        "y0": 541.96,
+        "x1": 245.65,
+        "y1": 549.65,
+        "width": 67.39,
+        "height": 7.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Precomputed Visibility"
+      }
+    },
+    {
+      "id": "#/texts/32",
+      "page": 2,
+      "order": 20,
+      "role": "paragraph",
+      "text": "While the item buffer approach can determine line visibility at interactive frame rates for scenes of moderate complexity, it is slow for large models. Moreover, computation of partial visibility - which significantly improves visual quality, especially under animation - imposes a further burden on frame rates. The two algorithms described in Sections 3 and 4 provide high-quality hidden line removal (with or without partial visibility) at interactive frame rates for complex models.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 656.37,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 92.23
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "While the item buffer approach can determine line visibility at interactive frame rates for scenes of moderate complexity, it is slow for large models. Moreover, computation of partial visibility - which significantly improves visual quality, especially under animation - imposes a further burden on frame rates. The two algorithms described in Sections 3 and 4 provide high-quality hidden line removal (with or without partial visibility) at interactive frame rates for complex models."
+      }
+    },
+    {
+      "id": "#/texts/35",
+      "page": 3,
+      "order": 1,
+      "role": "paragraph",
+      "text": "Input",
+      "bbox": {
+        "x0": 85.37,
+        "y0": 59.74,
+        "x1": 105.92,
+        "y1": 70.09,
+        "width": 20.55,
+        "height": 10.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Input"
+      }
+    },
+    {
+      "id": "#/texts/36",
+      "page": 3,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Geometry Shader",
+      "bbox": {
+        "x0": 166.89,
+        "y0": 59.74,
+        "x1": 239.82,
+        "y1": 70.09,
+        "width": 72.93,
+        "height": 10.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Geometry Shader"
+      }
+    },
+    {
+      "id": "#/texts/37",
+      "page": 3,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Fragment Shader",
+      "bbox": {
+        "x0": 323.71,
+        "y0": 59.74,
+        "x1": 395.61,
+        "y1": 70.09,
+        "width": 71.9,
+        "height": 10.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Fragment Shader"
+      }
+    },
+    {
+      "id": "#/texts/38",
+      "page": 3,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Clip-Space Strokes",
+      "bbox": {
+        "x0": 174.47,
+        "y0": 175.78,
+        "x1": 234.73,
+        "y1": 183.66,
+        "width": 60.26,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Clip-Space Strokes"
+      }
+    },
+    {
+      "id": "#/texts/39",
+      "page": 3,
+      "order": 5,
+      "role": "paragraph",
+      "text": "3D Line Segments",
+      "bbox": {
+        "x0": 64.71,
+        "y0": 175.78,
+        "x1": 122.63,
+        "y1": 183.66,
+        "width": 57.92,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3D Line Segments"
+      }
+    },
+    {
+      "id": "#/texts/40",
+      "page": 3,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Visibility at Spine",
+      "bbox": {
+        "x0": 286.96,
+        "y0": 175.78,
+        "x1": 340.05,
+        "y1": 183.66,
+        "width": 53.09,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Visibility at Spine"
+      }
+    },
+    {
+      "id": "#/texts/41",
+      "page": 3,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Textured Strokes",
+      "bbox": {
+        "x0": 381.71,
+        "y0": 175.78,
+        "x1": 434.54,
+        "y1": 183.66,
+        "width": 52.83,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Textured Strokes"
+      }
+    },
+    {
+      "id": "#/texts/42",
+      "page": 3,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Visible, Textured Strokes",
+      "bbox": {
+        "x0": 479.52,
+        "y0": 175.78,
+        "x1": 556.76,
+        "y1": 183.66,
+        "width": 77.24,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Visible, Textured Strokes"
+      }
+    },
+    {
+      "id": "#/texts/43",
+      "page": 3,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Result",
+      "bbox": {
+        "x0": 504.33,
+        "y0": 59.74,
+        "x1": 530.52,
+        "y1": 70.09,
+        "width": 26.19,
+        "height": 10.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Result"
+      }
+    },
+    {
+      "id": "#/texts/44",
+      "page": 3,
+      "order": 10,
+      "role": "paragraph",
+      "text": "+",
+      "bbox": {
+        "x0": 354.58,
+        "y0": 111.47,
+        "x1": 365.85,
+        "y1": 133.07,
+        "width": 11.27,
+        "height": 21.6
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "+"
+      }
+    },
+    {
+      "id": "#/texts/45",
+      "page": 3,
+      "order": 11,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 3. Steps in the spine test method. The input is a set of 3D line segments. A geometry shader projects the line segments and creates clip-space strokes, preserving the homogenous positions for perspective-correct interpolation. A fragment shader checks visibility at the spine of the stroke, and computes a texture color. The visibility and texture are combined to produce the final result. 3 METHOD 1: SPINE TEST Our first method is simple to implement and provides good quality in many cases. The method requires only a single pass to draw the depth buffer and a single pass to draw the lines, so it can be easily added to an existing line rendering implementation. However, the method does not support some important stylization options. In particular, because it generates an independent stroke for each line segment, it cannot properly parameterize stroke paths with multiple segments such as seen in Figure 4; such paths require a continuous parameterization if they are to be rendered with texture. Nonetheless, many models (such as the Falling Water model in Figures 6 and 11) have few curved stroke paths, and can thus be effectively rendered with this method. The algorithm begins with a set of 3D line segments extracted from the model. Most of our experiments have focused on lines that are always drawn no matter the camera angle, for example creases or texture boundaries. However, our system can also selectively draw edges that lie on silhouettes (e.g. the horizontal lines at the top of the clevis model shown on the left in Figure 1) by checking the adjacent face normals during stroke generation. The line segments are passed to the GPU using standard OpenGL drawing calls with the primitive type GL LINES. A geometry shader turns each line segment into a rectangular stroke and assigns texture coordinates to each vertex (Section 3.1). After the strokes are positioned and assigned texture coordinates, a fragment shader tests visibility at the nearest point on the spine of the stroke. As explained in Section 3.2, this visibility test can be a single depth probe or an average of many probes. Finally, the alpha value of each fragment is set to the visibility value of the spine. These steps are visualized in Figure 3. 3.1 Stroke Generation Newer graphics processors that support OpenGL 3.0 or the GL EXT geometry shader4 extension (for example, NVIDIA's 8800 series) can execute geometry shaders, which are GPU programs that execute between the vertex and fragment stages and have the ability to add or remove vertices from a primitive. Geometry shaders are thus a natural choice for creating stroke geometry on the GPU. On hardware that does not support geometry shaders, it is also possible to generate strokes by creating a degenerate quad for each line segment and assigning the positions and texture coordinates in a vertex shader (similar to the approach of [14]). The vertex shader approach, however, requires additional vertices to be passed from the host to the GPU, and requires additional software support on the CPU side when compared with the geometry shader approach.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.05,
+        "y1": 658.94,
+        "width": 514.09,
+        "height": 493.87
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 3. Steps in the spine test method. The input is a set of 3D line segments. A geometry shader projects the line segments and creates clip-space strokes, preserving the homogenous positions for perspective-correct interpolation. A fragment shader checks visibility at the spine of the stroke, and computes a texture color. The visibility and texture are combined to produce the final result. 3 METHOD 1: SPINE TEST Our first method is simple to implement and provides good quality in many cases. The method requires only a single pass to draw the depth buffer and a single pass to draw the lines, so it can be easily added to an existing line rendering implementation. However, the method does not support some important stylization options. In particular, because it generates an independent stroke for each line segment, it cannot properly parameterize stroke paths with multiple segments such as seen in Figure 4; such paths require a continuous parameterization if they are to be rendered with texture. Nonetheless, many models (such as the Falling Water model in Figures 6 and 11) have few curved stroke paths, and can thus be effectively rendered with this method. The algorithm begins with a set of 3D line segments extracted from the model. Most of our experiments have focused on lines that are always drawn no matter the camera angle, for example creases or texture boundaries. However, our system can also selectively draw edges that lie on silhouettes (e.g. the horizontal lines at the top of the clevis model shown on the left in Figure 1) by checking the adjacent face normals during stroke generation. The line segments are passed to the GPU using standard OpenGL drawing calls with the primitive type GL LINES. A geometry shader turns each line segment into a rectangular stroke and assigns texture coordinates to each vertex (Section 3.1). After the strokes are positioned and assigned texture coordinates, a fragment shader tests visibility at the nearest point on the spine of the stroke. As explained in Section 3.2, this visibility test can be a single depth probe or an average of many probes. Finally, the alpha value of each fragment is set to the visibility value of the spine. These steps are visualized in Figure 3. 3.1 Stroke Generation Newer graphics processors that support OpenGL 3.0 or the GL EXT geometry shader4 extension (for example, NVIDIA's 8800 series) can execute geometry shaders, which are GPU programs that execute between the vertex and fragment stages and have the ability to add or remove vertices from a primitive. Geometry shaders are thus a natural choice for creating stroke geometry on the GPU. On hardware that does not support geometry shaders, it is also possible to generate strokes by creating a degenerate quad for each line segment and assigning the positions and texture coordinates in a vertex shader (similar to the approach of [14]). The vertex shader approach, however, requires additional vertices to be passed from the host to the GPU, and requires additional software support on the CPU side when compared with the geometry shader approach."
+      }
+    },
+    {
+      "id": "#/texts/46",
+      "page": 3,
+      "order": 12,
+      "role": "paragraph",
+      "text": "correct",
+      "bbox": {
+        "x0": 97.87,
+        "y0": 661.24,
+        "x1": 125.52,
+        "y1": 669.79,
+        "width": 27.65,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "correct"
+      }
+    },
+    {
+      "id": "#/texts/47",
+      "page": 3,
+      "order": 13,
+      "role": "paragraph",
+      "text": "incorrect",
+      "bbox": {
+        "x0": 221.71,
+        "y0": 661.24,
+        "x1": 257.11,
+        "y1": 669.79,
+        "width": 35.4,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "incorrect"
+      }
+    },
+    {
+      "id": "#/texts/48",
+      "page": 3,
+      "order": 14,
+      "role": "caption",
+      "text": "Fig. 4. Curved stroke paths. Strokes such as at the top and bottom of the cylinder consist of multiple segments. The correct approach is to parameterize the entire loop as a single stroke ( le f t ). T exturing each segment independently results in an incorrect result ( right ). Single-segment strokes as on the sides of the cylinder are not affected.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 677.54,
+        "x1": 300.03,
+        "y1": 746.53,
+        "width": 251.07,
+        "height": 68.99
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 4. Curved stroke paths. Strokes such as at the top and bottom of the cylinder consist of multiple segments. The correct approach is to parameterize the entire loop as a single stroke ( le f t ). T exturing each segment independently results in an incorrect result ( right ). Single-segment strokes as on the sides of the cylinder are not affected."
+      }
+    },
+    {
+      "id": "#/texts/49",
+      "page": 3,
+      "order": 15,
+      "role": "paragraph",
+      "text": "In the spine test method, a geometry shader takes as input line segments and produces as output rectangles, represented as triangle strips. The shader also determines the screen-space length of the rectangle and assigns texture coordinates so that the stroke texture is scaled appropriately. The examples in this paper use 2D images of marks in the style of pen, pencil, charcoal, etc., and are parameterized at a constant",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 668.32,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 80.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the spine test method, a geometry shader takes as input line segments and produces as output rectangles, represented as triangle strips. The shader also determines the screen-space length of the rectangle and assigns texture coordinates so that the stroke texture is scaled appropriately. The examples in this paper use 2D images of marks in the style of pen, pencil, charcoal, etc., and are parameterized at a constant"
+      }
+    },
+    {
+      "id": "#/texts/52",
+      "page": 4,
+      "order": 1,
+      "role": "paragraph",
+      "text": "(a) 1 sample,",
+      "bbox": {
+        "x0": 156.79,
+        "y0": 240.47,
+        "x1": 203.49,
+        "y1": 249.03,
+        "width": 46.7,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(a) 1 sample,"
+      }
+    },
+    {
+      "id": "#/texts/53",
+      "page": 4,
+      "order": 2,
+      "role": "paragraph",
+      "text": "1x depth buffer",
+      "bbox": {
+        "x0": 156.79,
+        "y0": 251.65,
+        "x1": 218.25,
+        "y1": 260.21,
+        "width": 61.46,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/54",
+      "page": 4,
+      "order": 3,
+      "role": "paragraph",
+      "text": "i",
+      "bbox": {
+        "x0": 53.3,
+        "y0": 213.02,
+        "x1": 55.89,
+        "y1": 221.05,
+        "width": 2.59,
+        "height": 8.03
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "i"
+      }
+    },
+    {
+      "id": "#/texts/55",
+      "page": 4,
+      "order": 4,
+      "role": "paragraph",
+      "text": "+1",
+      "bbox": {
+        "x0": 58.21,
+        "y0": 212.53,
+        "x1": 66.92,
+        "y1": 221.09,
+        "width": 8.71,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "+1"
+      }
+    },
+    {
+      "id": "#/texts/56",
+      "page": 4,
+      "order": 5,
+      "role": "paragraph",
+      "text": "i",
+      "bbox": {
+        "x0": 53.3,
+        "y0": 87.27,
+        "x1": 55.89,
+        "y1": 95.3,
+        "width": 2.59,
+        "height": 8.03
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "i"
+      }
+    },
+    {
+      "id": "#/texts/57",
+      "page": 4,
+      "order": 6,
+      "role": "paragraph",
+      "text": "- 1",
+      "bbox": {
+        "x0": 55.89,
+        "y0": 86.78,
+        "x1": 66.92,
+        "y1": 95.34,
+        "width": 11.03,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "- 1"
+      }
+    },
+    {
+      "id": "#/texts/58",
+      "page": 4,
+      "order": 7,
+      "role": "paragraph",
+      "text": "i",
+      "bbox": {
+        "x0": 53.3,
+        "y0": 147.82,
+        "x1": 55.89,
+        "y1": 155.85,
+        "width": 2.59,
+        "height": 8.03
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "i"
+      }
+    },
+    {
+      "id": "#/texts/59",
+      "page": 4,
+      "order": 8,
+      "role": "paragraph",
+      "text": "(b) many samples,",
+      "bbox": {
+        "x0": 246.58,
+        "y0": 240.47,
+        "x1": 311.71,
+        "y1": 249.03,
+        "width": 65.13,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(b) many samples,"
+      }
+    },
+    {
+      "id": "#/texts/60",
+      "page": 4,
+      "order": 9,
+      "role": "paragraph",
+      "text": "1x depth buffer",
+      "bbox": {
+        "x0": 246.58,
+        "y0": 251.65,
+        "x1": 308.04,
+        "y1": 260.21,
+        "width": 61.46,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/61",
+      "page": 4,
+      "order": 10,
+      "role": "paragraph",
+      "text": "(d) many samples,",
+      "bbox": {
+        "x0": 431.58,
+        "y0": 240.47,
+        "x1": 496.52,
+        "y1": 249.03,
+        "width": 64.94,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(d) many samples,"
+      }
+    },
+    {
+      "id": "#/texts/62",
+      "page": 4,
+      "order": 11,
+      "role": "paragraph",
+      "text": "3x depth buffer",
+      "bbox": {
+        "x0": 431.58,
+        "y0": 251.65,
+        "x1": 493.04,
+        "y1": 260.21,
+        "width": 61.46,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/63",
+      "page": 4,
+      "order": 12,
+      "role": "paragraph",
+      "text": "(c) 1 sample,",
+      "bbox": {
+        "x0": 338.79,
+        "y0": 240.42,
+        "x1": 385.06,
+        "y1": 248.97,
+        "width": 46.27,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(c) 1 sample,"
+      }
+    },
+    {
+      "id": "#/texts/64",
+      "page": 4,
+      "order": 13,
+      "role": "paragraph",
+      "text": "3x depth buffer",
+      "bbox": {
+        "x0": 338.79,
+        "y0": 251.6,
+        "x1": 400.25,
+        "y1": 260.15,
+        "width": 61.46,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/65",
+      "page": 4,
+      "order": 14,
+      "role": "paragraph",
+      "text": "(far)",
+      "bbox": {
+        "x0": 153.19,
+        "y0": 152.16,
+        "x1": 167.19,
+        "y1": 160.72,
+        "width": 14.0,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(far)"
+      }
+    },
+    {
+      "id": "#/texts/66",
+      "page": 4,
+      "order": 15,
+      "role": "paragraph",
+      "text": "(near)",
+      "bbox": {
+        "x0": 202.85,
+        "y0": 212.71,
+        "x1": 223.23,
+        "y1": 221.26,
+        "width": 20.38,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(near)"
+      }
+    },
+    {
+      "id": "#/texts/67",
+      "page": 4,
+      "order": 16,
+      "role": "paragraph",
+      "text": "(far)",
+      "bbox": {
+        "x0": 244.84,
+        "y0": 152.16,
+        "x1": 258.84,
+        "y1": 160.72,
+        "width": 14.0,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(far)"
+      }
+    },
+    {
+      "id": "#/texts/68",
+      "page": 4,
+      "order": 17,
+      "role": "paragraph",
+      "text": "(near)",
+      "bbox": {
+        "x0": 294.5,
+        "y0": 212.71,
+        "x1": 314.87,
+        "y1": 221.26,
+        "width": 20.37,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(near)"
+      }
+    },
+    {
+      "id": "#/texts/69",
+      "page": 4,
+      "order": 18,
+      "role": "paragraph",
+      "text": "(far)",
+      "bbox": {
+        "x0": 429.75,
+        "y0": 151.98,
+        "x1": 443.75,
+        "y1": 160.54,
+        "width": 14.0,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(far)"
+      }
+    },
+    {
+      "id": "#/texts/70",
+      "page": 4,
+      "order": 19,
+      "role": "paragraph",
+      "text": "(near)",
+      "bbox": {
+        "x0": 479.42,
+        "y0": 212.53,
+        "x1": 499.79,
+        "y1": 221.09,
+        "width": 20.37,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(near)"
+      }
+    },
+    {
+      "id": "#/texts/71",
+      "page": 4,
+      "order": 20,
+      "role": "paragraph",
+      "text": "(far)",
+      "bbox": {
+        "x0": 338.21,
+        "y0": 152.1,
+        "x1": 352.21,
+        "y1": 160.65,
+        "width": 14.0,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(far)"
+      }
+    },
+    {
+      "id": "#/texts/72",
+      "page": 4,
+      "order": 21,
+      "role": "paragraph",
+      "text": "(near)",
+      "bbox": {
+        "x0": 387.87,
+        "y0": 212.64,
+        "x1": 408.24,
+        "y1": 221.2,
+        "width": 20.37,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(near)"
+      }
+    },
+    {
+      "id": "#/texts/73",
+      "page": 4,
+      "order": 22,
+      "role": "paragraph",
+      "text": "Depth Buffer",
+      "bbox": {
+        "x0": 515.41,
+        "y0": 175.26,
+        "x1": 560.29,
+        "y1": 183.82,
+        "width": 44.88,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Depth Buffer"
+      }
+    },
+    {
+      "id": "#/texts/74",
+      "page": 4,
+      "order": 23,
+      "role": "paragraph",
+      "text": "Visualization",
+      "bbox": {
+        "x0": 515.41,
+        "y0": 186.44,
+        "x1": 558.16,
+        "y1": 194.99,
+        "width": 42.75,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Visualization"
+      }
+    },
+    {
+      "id": "#/texts/75",
+      "page": 4,
+      "order": 24,
+      "role": "paragraph",
+      "text": "frame",
+      "bbox": {
+        "x0": 515.41,
+        "y0": 86.77,
+        "x1": 537.06,
+        "y1": 95.33,
+        "width": 21.65,
+        "height": 8.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "frame"
+      }
+    },
+    {
+      "id": "#/texts/76",
+      "page": 4,
+      "order": 25,
+      "role": "paragraph",
+      "text": "i",
+      "bbox": {
+        "x0": 537.06,
+        "y0": 87.27,
+        "x1": 539.65,
+        "y1": 95.29,
+        "width": 2.59,
+        "height": 8.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "i"
+      }
+    },
+    {
+      "id": "#/texts/77",
+      "page": 4,
+      "order": 26,
+      "role": "paragraph",
+      "text": "(Inset,",
+      "bbox": {
+        "x0": 515.41,
+        "y0": 97.95,
+        "x1": 538.76,
+        "y1": 106.5,
+        "width": 23.35,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(Inset,"
+      }
+    },
+    {
+      "id": "#/texts/78",
+      "page": 4,
+      "order": 27,
+      "role": "paragraph",
+      "text": "Enlarged)",
+      "bbox": {
+        "x0": 515.41,
+        "y0": 109.13,
+        "x1": 548.53,
+        "y1": 117.68,
+        "width": 33.12,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Enlarged)"
+      }
+    },
+    {
+      "id": "#/texts/79",
+      "page": 4,
+      "order": 28,
+      "role": "paragraph",
+      "text": "Rotating Cube",
+      "bbox": {
+        "x0": 77.62,
+        "y0": 251.85,
+        "x1": 126.45,
+        "y1": 260.4,
+        "width": 48.83,
+        "height": 8.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Rotating Cube"
+      }
+    },
+    {
+      "id": "#/texts/80",
+      "page": 4,
+      "order": 29,
+      "role": "paragraph",
+      "text": "While not a novel contribution of our method, we note that generating strokes in this manner makes it very easy to rapidly extract silhouette edges from smooth portions of a mesh, such as the rounded top of the clevis on the left in Figure 1. The extraction is performed by sending all mesh edges to the GPU, then selecting the edges that lie on a silhouette boundary. To provide the necessary information to the GPU, neighboring face normals are packed into the vertex attributes for an edge prior to rendering the strokes. While generating a stroke for an edge, these face normals are checked for a silhouette condition (one front-facing and one back-facing polygon). If the edge is not a silhouette, it is discarded and no stroke is generated. The edge can be discarded directly by a geometry shader, or indirectly by a vertex shader by sending the vertices behind the camera.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 540.46,
+        "x1": 300.03,
+        "y1": 716.39,
+        "width": 251.07,
+        "height": 175.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "While not a novel contribution of our method, we note that generating strokes in this manner makes it very easy to rapidly extract silhouette edges from smooth portions of a mesh, such as the rounded top of the clevis on the left in Figure 1. The extraction is performed by sending all mesh edges to the GPU, then selecting the edges that lie on a silhouette boundary. To provide the necessary information to the GPU, neighboring face normals are packed into the vertex attributes for an edge prior to rendering the strokes. While generating a stroke for an edge, these face normals are checked for a silhouette condition (one front-facing and one back-facing polygon). If the edge is not a silhouette, it is discarded and no stroke is generated. The edge can be discarded directly by a geometry shader, or indirectly by a vertex shader by sending the vertices behind the camera."
+      }
+    },
+    {
+      "id": "#/texts/81",
+      "page": 4,
+      "order": 30,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 5. Visibility aliasing. Aliasing in line visibility usually occurs at changes in occlusion. In this example, the red line is revealed behind the blue line as the cube rotates (left). The artifacts, while transient, can be severe for a single visibility sample with a standard depth buffer (a). Multiple depth samples soften the artifacts (b). Supersampling the depth buffer without increasing the number of depth samples does not solve the problem (c), but combining a supersampled depth buffer with multiple samples gives high-quality results (d). Top: enlargement showing partially occluded red line with blue line overlaid. Bottom: depth buffer visualization showing visibility samples for red line. rate in screen space. Graphics hardware by default uses perspective-correct texture interpolation, which tends to stretch and compress textures on strokes that are not perpendicular to the viewing direction. Uniform parameterization in screen space requires perspective-correct texturing to be disabled. Conveniently, control over perspective-correct interpolation is provided by the GL EXT gpu shader4 extension, and by OpenGL 3.0. To limit crawling artifacts, we use the simple strategy of fixing the 'zero' parameter value at the screen-space center of the stroke. A more sophisticated strategy that seeks temporal coherence from frame to frame was described by Kalnins et al. [11]. proper parameterization of each segment, since each segment is processed independently and in parallel. It is therefore impossible to texture the entire path as one continuous stroke. This drawback is not very noticeable for models with many long, straight strokes, but is objectionable for models with many curving paths and short segments (Figure 4). In contrast, the segment atlas method described in Section 4 supports computation of arc length and avoids this problem. 3.2 Visibility Testing In order to perform depth testing at the spine of the stroke, the depth buffer must be drawn in a separate pass and loaded as a texture into the fragment shader. The visibility of a fragment is then computed by comparing the depth value of the closest point on the spine of the stroke with the depth value of the polygon under the spine, much like a conventional z -buffer scheme.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.05,
+        "y1": 642.4,
+        "width": 514.09,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 5. Visibility aliasing. Aliasing in line visibility usually occurs at changes in occlusion. In this example, the red line is revealed behind the blue line as the cube rotates (left). The artifacts, while transient, can be severe for a single visibility sample with a standard depth buffer (a). Multiple depth samples soften the artifacts (b). Supersampling the depth buffer without increasing the number of depth samples does not solve the problem (c), but combining a supersampled depth buffer with multiple samples gives high-quality results (d). Top: enlargement showing partially occluded red line with blue line overlaid. Bottom: depth buffer visualization showing visibility samples for red line. rate in screen space. Graphics hardware by default uses perspective-correct texture interpolation, which tends to stretch and compress textures on strokes that are not perpendicular to the viewing direction. Uniform parameterization in screen space requires perspective-correct texturing to be disabled. Conveniently, control over perspective-correct interpolation is provided by the GL EXT gpu shader4 extension, and by OpenGL 3.0. To limit crawling artifacts, we use the simple strategy of fixing the 'zero' parameter value at the screen-space center of the stroke. A more sophisticated strategy that seeks temporal coherence from frame to frame was described by Kalnins et al. [11]. proper parameterization of each segment, since each segment is processed independently and in parallel. It is therefore impossible to texture the entire path as one continuous stroke. This drawback is not very noticeable for models with many long, straight strokes, but is objectionable for models with many curving paths and short segments (Figure 4). In contrast, the segment atlas method described in Section 4 supports computation of arc length and avoids this problem. 3.2 Visibility Testing In order to perform depth testing at the spine of the stroke, the depth buffer must be drawn in a separate pass and loaded as a texture into the fragment shader. The visibility of a fragment is then computed by comparing the depth value of the closest point on the spine of the stroke with the depth value of the polygon under the spine, much like a conventional z -buffer scheme."
+      }
+    },
+    {
+      "id": "#/texts/82",
+      "page": 4,
+      "order": 31,
+      "role": "paragraph",
+      "text": "Unfortunately, when drawing stroke paths with many segments, there is no way to know at the geometry shader level the",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 728.1,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 20.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Unfortunately, when drawing stroke paths with many segments, there is no way to know at the geometry shader level the"
+      }
+    },
+    {
+      "id": "#/texts/83",
+      "page": 4,
+      "order": 32,
+      "role": "paragraph",
+      "text": "This simple approach commonly suffers from errors due to aliasing. There are two potential sources of aliasing: undersampling of the depth probes, and polygon aliasing ('jaggies') in the depth buffer itself (both shown in Figure 5). Aliasing errors occur at changes in line visibility, such as when a line is revealed by a sliding or rotating object. These errors manifest as broken or dashed lines. Broken lines may or may not be objectionable in still imagery, but under animation the breaks move, causing popping and sparkling artifacts. Any individual line will only exhibit visibility artifacts from a small set of camera angles. However, complex models (such as shown in this paper) include so many lines that errors are very common (Figure 6).",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 596.59,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 152.01
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "This simple approach commonly suffers from errors due to aliasing. There are two potential sources of aliasing: undersampling of the depth probes, and polygon aliasing ('jaggies') in the depth buffer itself (both shown in Figure 5). Aliasing errors occur at changes in line visibility, such as when a line is revealed by a sliding or rotating object. These errors manifest as broken or dashed lines. Broken lines may or may not be objectionable in still imagery, but under animation the breaks move, causing popping and sparkling artifacts. Any individual line will only exhibit visibility artifacts from a small set of camera angles. However, complex models (such as shown in this paper) include so many lines that errors are very common (Figure 6)."
+      }
+    },
+    {
+      "id": "#/texts/86",
+      "page": 5,
+      "order": 1,
+      "role": "caption",
+      "text": "(a) 1 sample, 1x depth buffer",
+      "bbox": {
+        "x0": 52.07,
+        "y0": 138.49,
+        "x1": 157.23,
+        "y1": 147.71,
+        "width": 105.16,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "(a) 1 sample, 1x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/87",
+      "page": 5,
+      "order": 2,
+      "role": "caption",
+      "text": "(b) 16 samples, 1x depth buffer",
+      "bbox": {
+        "x0": 179.04,
+        "y0": 138.49,
+        "x1": 292.9,
+        "y1": 147.71,
+        "width": 113.86,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "(b) 16 samples, 1x depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/88",
+      "page": 5,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Any number of depth probes will not produce an accurate result if the underlying depth buffer has aliasing error (Figure 5b). While impossible to eliminate entirely, this source of aliasing can be reduced through supersampling of the depth buffer by increasing the viewport resolution. Simply scaling the depth buffer without adding additional depth probes for each sample produces a marginal increase in image quality (Figure 5c), but combining depth buffer scaling and depth test supersampling largely eliminates aliasing artifacts (Figure 5d). Since typical applications are seldom fill rate bound for simple operations like drawing the depth buffer, increasing the size of the buffer typically has little impact on performance outside of an increase in memory usage. Results of these techniques for a complex model can be seen in Figure 6.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 584.64,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 163.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Any number of depth probes will not produce an accurate result if the underlying depth buffer has aliasing error (Figure 5b). While impossible to eliminate entirely, this source of aliasing can be reduced through supersampling of the depth buffer by increasing the viewport resolution. Simply scaling the depth buffer without adding additional depth probes for each sample produces a marginal increase in image quality (Figure 5c), but combining depth buffer scaling and depth test supersampling largely eliminates aliasing artifacts (Figure 5d). Since typical applications are seldom fill rate bound for simple operations like drawing the depth buffer, increasing the size of the buffer typically has little impact on performance outside of an increase in memory usage. Results of these techniques for a complex model can be seen in Figure 6."
+      }
+    },
+    {
+      "id": "#/texts/89",
+      "page": 5,
+      "order": 4,
+      "role": "paragraph",
+      "text": "PREPRINT (d) 16 samples, 3x depth buffer (c) 1 sample, 3x depth buffer (e) Falling Water Fig. 6. Aliasing in visibility test. Results for varying number of samples and scale of depth buffer. Green box in (e) indicates location of magnified area. Visibility supersampling is used in both the spine test and segment atlas methods. As noted by Cole and Finkelstein [3], aliasing can be alleviated by determining a partial visibility value for each line fragment. Conceptually, partial visibility can be computed by replacing the line (which has zero width) with a narrow quadrilateral, then computing the conventional a (occlusion) value for that quadrilateral. In our case, partial visibility is determined by making multiple depth probes in a box filter configuration around the line sample (Figure 5b). Additional depth probes are usually very fast (Table 1), but can become expensive on limited hardware. The segment atlas approach is designed to efficiently compute and store the visibility information for every stroke in the scene. The input includes 3D line segments, as with the spine test method, but also line strips (stroke paths). The output is a segment atlas containing visibility samples for each projected and clipped stroke, spaced by a constant screen-space distance (usually 2 pixels). The pipeline has four major stages, illustrated in Figure 7: line projection and clipping, computation of atlas offsets, drawing the segment atlas and testing visibility, and stroke rendering. All stages execute on the GPU, and all data required for execution resides in GPU memory in the form of OpenGL framebuffer objects or vertex buffer objects. 4.1 Projection and Clipping The first stage of the pipeline begins with a set of candidate line segments, projects them, and clips them to the viewing frustum. Ideally, we would use the GPU's clipping hardware to clip each segment. However, in current graphics hardware the output of the clipper is not available until the fragment program stage, after rasterization has already been performed. We therefore must use a fragment program to project and clip the segments, using our own clipping code. The fragment program uses the same camera and projection matrices as the conventional projection and clipping pipeline.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.04,
+        "y1": 642.4,
+        "width": 514.08,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT (d) 16 samples, 3x depth buffer (c) 1 sample, 3x depth buffer (e) Falling Water Fig. 6. Aliasing in visibility test. Results for varying number of samples and scale of depth buffer. Green box in (e) indicates location of magnified area. Visibility supersampling is used in both the spine test and segment atlas methods. As noted by Cole and Finkelstein [3], aliasing can be alleviated by determining a partial visibility value for each line fragment. Conceptually, partial visibility can be computed by replacing the line (which has zero width) with a narrow quadrilateral, then computing the conventional a (occlusion) value for that quadrilateral. In our case, partial visibility is determined by making multiple depth probes in a box filter configuration around the line sample (Figure 5b). Additional depth probes are usually very fast (Table 1), but can become expensive on limited hardware. The segment atlas approach is designed to efficiently compute and store the visibility information for every stroke in the scene. The input includes 3D line segments, as with the spine test method, but also line strips (stroke paths). The output is a segment atlas containing visibility samples for each projected and clipped stroke, spaced by a constant screen-space distance (usually 2 pixels). The pipeline has four major stages, illustrated in Figure 7: line projection and clipping, computation of atlas offsets, drawing the segment atlas and testing visibility, and stroke rendering. All stages execute on the GPU, and all data required for execution resides in GPU memory in the form of OpenGL framebuffer objects or vertex buffer objects. 4.1 Projection and Clipping The first stage of the pipeline begins with a set of candidate line segments, projects them, and clips them to the viewing frustum. Ideally, we would use the GPU's clipping hardware to clip each segment. However, in current graphics hardware the output of the clipper is not available until the fragment program stage, after rasterization has already been performed. We therefore must use a fragment program to project and clip the segments, using our own clipping code. The fragment program uses the same camera and projection matrices as the conventional projection and clipping pipeline."
+      }
+    },
+    {
+      "id": "#/texts/90",
+      "page": 5,
+      "order": 5,
+      "role": "heading",
+      "text": "4 METHOD 2: SEGMENT ATLAS",
+      "bbox": {
+        "x0": 312.27,
+        "y0": 56.46,
+        "x1": 488.28,
+        "y1": 67.69,
+        "width": 176.01,
+        "height": 11.23
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 METHOD 2: SEGMENT ATLAS"
+      }
+    },
+    {
+      "id": "#/texts/91",
+      "page": 5,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Stylization for curved strokes, or even simple effects such as endcaps or haloes, require some non-local information. For example, each segment in a curved stroke must have texture coordinates based on the entire arc length of the stroke. This information is costly to compute with a single-pass approach such as the spine test, because much of the computation is redundant across segments. The same observation holds for endcaps or haloes: while in principle each fragment could check a large neighborhood to determine the closest visibility discontinuity, it is much more efficient to store the visibility in a separate pass. Additional effects that can be achieved by precomputing visibility are explained in Section 4.5.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 79.68,
+        "x1": 563.04,
+        "y1": 219.74,
+        "width": 251.07,
+        "height": 140.06
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Stylization for curved strokes, or even simple effects such as endcaps or haloes, require some non-local information. For example, each segment in a curved stroke must have texture coordinates based on the entire arc length of the stroke. This information is costly to compute with a single-pass approach such as the spine test, because much of the computation is redundant across segments. The same observation holds for endcaps or haloes: while in principle each fragment could check a large neighborhood to determine the closest visibility discontinuity, it is much more efficient to store the visibility in a separate pass. Additional effects that can be achieved by precomputing visibility are explained in Section 4.5."
+      }
+    },
+    {
+      "id": "#/texts/92",
+      "page": 5,
+      "order": 7,
+      "role": "paragraph",
+      "text": "The input to the program is a six-channel framebuffer object packed with the world-space 3D coordinates of the endpoints of each segment ( p , q ) (Figure 7, step 1). In our implementation, this buffer must be updated at each frame with the positions of any moving line segments. However, the fragment program could also be modified to transform the segments with a time-varying matrix. The output of the fragment program is a nine-channel buffer containing the 4D homogeneous clip coordinates ( p ′ , q ′ ) and the number of visibility samples l . The number of visibility samples l is defined as:",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 558.71,
+        "x1": 563.04,
+        "y1": 674.86,
+        "width": 251.07,
+        "height": 116.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The input to the program is a six-channel framebuffer object packed with the world-space 3D coordinates of the endpoints of each segment ( p , q ) (Figure 7, step 1). In our implementation, this buffer must be updated at each frame with the positions of any moving line segments. However, the fragment program could also be modified to transform the segments with a time-varying matrix. The output of the fragment program is a nine-channel buffer containing the 4D homogeneous clip coordinates ( p ′ , q ′ ) and the number of visibility samples l . The number of visibility samples l is defined as:"
+      }
+    },
+    {
+      "id": "#/texts/94",
+      "page": 5,
+      "order": 8,
+      "role": "paragraph",
+      "text": "where ( p ′ w , q ′ w ) are the 2D window coordinates of the segment endpoints, and k is a screen-space sampling rate. The factor k trades off positional accuracy in the visibility test against segment atlas size. We usually set k = 1 or 2, meaning",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 702.02,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 46.58
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where ( p ′ w , q ′ w ) are the 2D window coordinates of the segment endpoints, and k is a screen-space sampling rate. The factor k trades off positional accuracy in the visibility test against segment atlas size. We usually set k = 1 or 2, meaning"
+      }
+    },
+    {
+      "id": "#/texts/97",
+      "page": 6,
+      "order": 1,
+      "role": "paragraph",
+      "text": "Step 1:",
+      "bbox": {
+        "x0": 158.26,
+        "y0": 60.05,
+        "x1": 191.14,
+        "y1": 69.74,
+        "width": 32.88,
+        "height": 9.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 1:"
+      }
+    },
+    {
+      "id": "#/texts/98",
+      "page": 6,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Project and Clip",
+      "bbox": {
+        "x0": 146.16,
+        "y0": 71.88,
+        "x1": 203.24,
+        "y1": 80.94,
+        "width": 57.08,
+        "height": 9.06
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Project and Clip"
+      }
+    },
+    {
+      "id": "#/texts/99",
+      "page": 6,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Step 2:",
+      "bbox": {
+        "x0": 258.11,
+        "y0": 60.05,
+        "x1": 290.99,
+        "y1": 69.74,
+        "width": 32.88,
+        "height": 9.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 2:"
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 6,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Compute Offsets",
+      "bbox": {
+        "x0": 244.28,
+        "y0": 71.88,
+        "x1": 304.82,
+        "y1": 80.94,
+        "width": 60.54,
+        "height": 9.06
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Compute Offsets"
+      }
+    },
+    {
+      "id": "#/texts/101",
+      "page": 6,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Step 3:",
+      "bbox": {
+        "x0": 369.06,
+        "y0": 60.05,
+        "x1": 401.94,
+        "y1": 69.74,
+        "width": 32.88,
+        "height": 9.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 3:"
+      }
+    },
+    {
+      "id": "#/texts/102",
+      "page": 6,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Create Atlas",
+      "bbox": {
+        "x0": 363.47,
+        "y0": 71.88,
+        "x1": 407.52,
+        "y1": 80.94,
+        "width": 44.05,
+        "height": 9.06
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Create Atlas"
+      }
+    },
+    {
+      "id": "#/texts/103",
+      "page": 6,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Step 4:",
+      "bbox": {
+        "x0": 491.1,
+        "y0": 60.05,
+        "x1": 523.98,
+        "y1": 69.74,
+        "width": 32.88,
+        "height": 9.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 4:"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 6,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Render Strokes",
+      "bbox": {
+        "x0": 479.45,
+        "y0": 71.88,
+        "x1": 535.63,
+        "y1": 80.94,
+        "width": 56.18,
+        "height": 9.06
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Render Strokes"
+      }
+    },
+    {
+      "id": "#/texts/105",
+      "page": 6,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Input",
+      "bbox": {
+        "x0": 71.84,
+        "y0": 115.52,
+        "x1": 95.94,
+        "y1": 125.21,
+        "width": 24.1,
+        "height": 9.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Input"
+      }
+    },
+    {
+      "id": "#/texts/106",
+      "page": 6,
+      "order": 10,
+      "role": "paragraph",
+      "text": "21 Line Segments",
+      "bbox": {
+        "x0": 57.79,
+        "y0": 198.65,
+        "x1": 106.69,
+        "y1": 205.44,
+        "width": 48.9,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "21 Line Segments"
+      }
+    },
+    {
+      "id": "#/texts/107",
+      "page": 6,
+      "order": 11,
+      "role": "paragraph",
+      "text": "20",
+      "bbox": {
+        "x0": 196.02,
+        "y0": 88.88,
+        "x1": 202.42,
+        "y1": 94.34,
+        "width": 6.4,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "20"
+      }
+    },
+    {
+      "id": "#/texts/108",
+      "page": 6,
+      "order": 12,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 149.13,
+        "y0": 89.03,
+        "x1": 152.33,
+        "y1": 94.49,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/109",
+      "page": 6,
+      "order": 13,
+      "role": "paragraph",
+      "text": "20",
+      "bbox": {
+        "x0": 295.6,
+        "y0": 88.88,
+        "x1": 301.99,
+        "y1": 94.34,
+        "width": 6.39,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "20"
+      }
+    },
+    {
+      "id": "#/texts/110",
+      "page": 6,
+      "order": 14,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 248.7,
+        "y0": 89.03,
+        "x1": 251.9,
+        "y1": 94.49,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/111",
+      "page": 6,
+      "order": 15,
+      "role": "paragraph",
+      "text": "20",
+      "bbox": {
+        "x0": 406.54,
+        "y0": 88.72,
+        "x1": 412.94,
+        "y1": 94.18,
+        "width": 6.4,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "20"
+      }
+    },
+    {
+      "id": "#/texts/112",
+      "page": 6,
+      "order": 16,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 359.65,
+        "y0": 88.87,
+        "x1": 362.85,
+        "y1": 94.33,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/113",
+      "page": 6,
+      "order": 17,
+      "role": "paragraph",
+      "text": "21",
+      "bbox": {
+        "x0": 403.58,
+        "y0": 102.34,
+        "x1": 411.8,
+        "y1": 109.36,
+        "width": 8.22,
+        "height": 7.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "21"
+      }
+    },
+    {
+      "id": "#/texts/114",
+      "page": 6,
+      "order": 18,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 357.14,
+        "y0": 102.5,
+        "x1": 361.26,
+        "y1": 109.52,
+        "width": 4.12,
+        "height": 7.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/115",
+      "page": 6,
+      "order": 19,
+      "role": "paragraph",
+      "text": "v",
+      "bbox": {
+        "x0": 347.02,
+        "y0": 208.86,
+        "x1": 351.82,
+        "y1": 217.34,
+        "width": 4.8,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "v"
+      }
+    },
+    {
+      "id": "#/texts/116",
+      "page": 6,
+      "order": 20,
+      "role": "paragraph",
+      "text": "α",
+      "bbox": {
+        "x0": 346.37,
+        "y0": 223.79,
+        "x1": 351.82,
+        "y1": 231.15,
+        "width": 5.45,
+        "height": 7.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "α"
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 6,
+      "order": 21,
+      "role": "paragraph",
+      "text": "s",
+      "bbox": {
+        "x0": 348.46,
+        "y0": 127.95,
+        "x1": 351.82,
+        "y1": 135.39,
+        "width": 3.36,
+        "height": 7.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "s"
+      }
+    },
+    {
+      "id": "#/texts/118",
+      "page": 6,
+      "order": 22,
+      "role": "paragraph",
+      "text": "p',q'",
+      "bbox": {
+        "x0": 334.56,
+        "y0": 97.91,
+        "x1": 352.3,
+        "y1": 106.38,
+        "width": 17.74,
+        "height": 8.47
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "p',q'"
+      }
+    },
+    {
+      "id": "#/texts/119",
+      "page": 6,
+      "order": 23,
+      "role": "paragraph",
+      "text": "20",
+      "bbox": {
+        "x0": 528.59,
+        "y0": 88.73,
+        "x1": 534.99,
+        "y1": 94.19,
+        "width": 6.4,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "20"
+      }
+    },
+    {
+      "id": "#/texts/120",
+      "page": 6,
+      "order": 24,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 481.7,
+        "y0": 88.88,
+        "x1": 484.9,
+        "y1": 94.34,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/121",
+      "page": 6,
+      "order": 25,
+      "role": "paragraph",
+      "text": "21",
+      "bbox": {
+        "x0": 525.62,
+        "y0": 102.34,
+        "x1": 533.85,
+        "y1": 109.36,
+        "width": 8.23,
+        "height": 7.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "21"
+      }
+    },
+    {
+      "id": "#/texts/122",
+      "page": 6,
+      "order": 26,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 479.19,
+        "y0": 102.5,
+        "x1": 483.3,
+        "y1": 109.52,
+        "width": 4.11,
+        "height": 7.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 6,
+      "order": 27,
+      "role": "paragraph",
+      "text": "p',q'",
+      "bbox": {
+        "x0": 456.6,
+        "y0": 97.91,
+        "x1": 474.35,
+        "y1": 106.39,
+        "width": 17.75,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "p',q'"
+      }
+    },
+    {
+      "id": "#/texts/124",
+      "page": 6,
+      "order": 28,
+      "role": "paragraph",
+      "text": "l",
+      "bbox": {
+        "x0": 349.66,
+        "y0": 113.16,
+        "x1": 352.06,
+        "y1": 120.6,
+        "width": 2.4,
+        "height": 7.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "l"
+      }
+    },
+    {
+      "id": "#/texts/125",
+      "page": 6,
+      "order": 29,
+      "role": "paragraph",
+      "text": "q",
+      "bbox": {
+        "x0": 135.74,
+        "y0": 109.0,
+        "x1": 141.01,
+        "y1": 117.48,
+        "width": 5.27,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "q"
+      }
+    },
+    {
+      "id": "#/texts/126",
+      "page": 6,
+      "order": 30,
+      "role": "paragraph",
+      "text": "p",
+      "bbox": {
+        "x0": 135.74,
+        "y0": 97.9,
+        "x1": 141.01,
+        "y1": 106.38,
+        "width": 5.27,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "p"
+      }
+    },
+    {
+      "id": "#/texts/127",
+      "page": 6,
+      "order": 31,
+      "role": "paragraph",
+      "text": "p'",
+      "bbox": {
+        "x0": 133.82,
+        "y0": 201.3,
+        "x1": 141.49,
+        "y1": 209.78,
+        "width": 7.67,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "p'"
+      }
+    },
+    {
+      "id": "#/texts/128",
+      "page": 6,
+      "order": 32,
+      "role": "paragraph",
+      "text": "q'",
+      "bbox": {
+        "x0": 133.82,
+        "y0": 212.54,
+        "x1": 141.49,
+        "y1": 221.02,
+        "width": 7.67,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "q'"
+      }
+    },
+    {
+      "id": "#/texts/129",
+      "page": 6,
+      "order": 33,
+      "role": "paragraph",
+      "text": "l",
+      "bbox": {
+        "x0": 138.86,
+        "y0": 227.79,
+        "x1": 141.26,
+        "y1": 235.23,
+        "width": 2.4,
+        "height": 7.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "l"
+      }
+    },
+    {
+      "id": "#/texts/130",
+      "page": 6,
+      "order": 34,
+      "role": "paragraph",
+      "text": "s",
+      "bbox": {
+        "x0": 237.51,
+        "y0": 201.9,
+        "x1": 240.86,
+        "y1": 209.34,
+        "width": 3.35,
+        "height": 7.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "s"
+      }
+    },
+    {
+      "id": "#/texts/131",
+      "page": 6,
+      "order": 35,
+      "role": "paragraph",
+      "text": "l",
+      "bbox": {
+        "x0": 238.71,
+        "y0": 98.51,
+        "x1": 241.1,
+        "y1": 105.95,
+        "width": 2.39,
+        "height": 7.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "l"
+      }
+    },
+    {
+      "id": "#/texts/132",
+      "page": 6,
+      "order": 36,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 354.32,
+        "y0": 240.51,
+        "x1": 357.51,
+        "y1": 245.97,
+        "width": 3.19,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/133",
+      "page": 6,
+      "order": 37,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 372.81,
+        "y0": 240.51,
+        "x1": 376.0,
+        "y1": 245.97,
+        "width": 3.19,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/134",
+      "page": 6,
+      "order": 38,
+      "role": "paragraph",
+      "text": "8",
+      "bbox": {
+        "x0": 383.9,
+        "y0": 240.51,
+        "x1": 387.1,
+        "y1": 245.97,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "8"
+      }
+    },
+    {
+      "id": "#/texts/135",
+      "page": 6,
+      "order": 39,
+      "role": "paragraph",
+      "text": "123 126",
+      "bbox": {
+        "x0": 413.98,
+        "y0": 240.51,
+        "x1": 434.68,
+        "y1": 245.97,
+        "width": 20.7,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "123 126"
+      }
+    },
+    {
+      "id": "#/texts/136",
+      "page": 6,
+      "order": 40,
+      "role": "paragraph",
+      "text": "α",
+      "bbox": {
+        "x0": 468.42,
+        "y0": 116.54,
+        "x1": 473.86,
+        "y1": 123.91,
+        "width": 5.44,
+        "height": 7.37
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "α"
+      }
+    },
+    {
+      "id": "#/texts/137",
+      "page": 6,
+      "order": 41,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 476.36,
+        "y0": 129.56,
+        "x1": 479.56,
+        "y1": 135.02,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/138",
+      "page": 6,
+      "order": 42,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 494.85,
+        "y0": 129.56,
+        "x1": 498.05,
+        "y1": 135.02,
+        "width": 3.2,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/139",
+      "page": 6,
+      "order": 43,
+      "role": "paragraph",
+      "text": "8",
+      "bbox": {
+        "x0": 505.95,
+        "y0": 129.56,
+        "x1": 509.14,
+        "y1": 135.02,
+        "width": 3.19,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "8"
+      }
+    },
+    {
+      "id": "#/texts/140",
+      "page": 6,
+      "order": 44,
+      "role": "paragraph",
+      "text": "123 126",
+      "bbox": {
+        "x0": 536.03,
+        "y0": 129.56,
+        "x1": 556.72,
+        "y1": 135.02,
+        "width": 20.69,
+        "height": 5.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "123 126"
+      }
+    },
+    {
+      "id": "#/texts/141",
+      "page": 6,
+      "order": 45,
+      "role": "paragraph",
+      "text": "Project and Clip",
+      "bbox": {
+        "x0": 151.44,
+        "y0": 148.47,
+        "x1": 194.25,
+        "y1": 155.26,
+        "width": 42.81,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Project and Clip"
+      }
+    },
+    {
+      "id": "#/texts/142",
+      "page": 6,
+      "order": 46,
+      "role": "paragraph",
+      "text": "(fragment shader)",
+      "bbox": {
+        "x0": 148.75,
+        "y0": 157.35,
+        "x1": 196.95,
+        "y1": 164.14,
+        "width": 48.2,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(fragment shader)"
+      }
+    },
+    {
+      "id": "#/texts/143",
+      "page": 6,
+      "order": 47,
+      "role": "paragraph",
+      "text": "Exclusive Scan",
+      "bbox": {
+        "x0": 252.14,
+        "y0": 148.39,
+        "x1": 293.26,
+        "y1": 155.19,
+        "width": 41.12,
+        "height": 6.8
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Exclusive Scan"
+      }
+    },
+    {
+      "id": "#/texts/144",
+      "page": 6,
+      "order": 48,
+      "role": "paragraph",
+      "text": "(fragment shader)",
+      "bbox": {
+        "x0": 248.6,
+        "y0": 157.27,
+        "x1": 296.81,
+        "y1": 164.06,
+        "width": 48.21,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(fragment shader)"
+      }
+    },
+    {
+      "id": "#/texts/145",
+      "page": 6,
+      "order": 49,
+      "role": "paragraph",
+      "text": "Create Samples +",
+      "bbox": {
+        "x0": 359.29,
+        "y0": 158.0,
+        "x1": 408.01,
+        "y1": 164.79,
+        "width": 48.72,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Create Samples +"
+      }
+    },
+    {
+      "id": "#/texts/146",
+      "page": 6,
+      "order": 50,
+      "role": "paragraph",
+      "text": "Test Visibility",
+      "bbox": {
+        "x0": 366.34,
+        "y0": 166.87,
+        "x1": 402.64,
+        "y1": 173.67,
+        "width": 36.3,
+        "height": 6.8
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Test Visibility"
+      }
+    },
+    {
+      "id": "#/texts/147",
+      "page": 6,
+      "order": 51,
+      "role": "paragraph",
+      "text": "(geom., fragment)",
+      "bbox": {
+        "x0": 359.55,
+        "y0": 175.75,
+        "x1": 407.75,
+        "y1": 182.54,
+        "width": 48.2,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(geom., fragment)"
+      }
+    },
+    {
+      "id": "#/texts/148",
+      "page": 6,
+      "order": 52,
+      "role": "paragraph",
+      "text": "Create and",
+      "bbox": {
+        "x0": 490.28,
+        "y0": 144.36,
+        "x1": 521.97,
+        "y1": 151.15,
+        "width": 31.69,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Create and"
+      }
+    },
+    {
+      "id": "#/texts/149",
+      "page": 6,
+      "order": 53,
+      "role": "paragraph",
+      "text": "Texture Strokes",
+      "bbox": {
+        "x0": 484.22,
+        "y0": 153.24,
+        "x1": 526.35,
+        "y1": 160.03,
+        "width": 42.13,
+        "height": 6.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Texture Strokes"
+      }
+    },
+    {
+      "id": "#/texts/150",
+      "page": 6,
+      "order": 54,
+      "role": "paragraph",
+      "text": "(geom., fragment)",
+      "bbox": {
+        "x0": 481.18,
+        "y0": 162.11,
+        "x1": 529.39,
+        "y1": 168.91,
+        "width": 48.21,
+        "height": 6.8
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(geom., fragment)"
+      }
+    },
+    {
+      "id": "#/texts/151",
+      "page": 6,
+      "order": 55,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 248.23,
+        "y0": 202.71,
+        "x1": 252.8,
+        "y1": 210.79,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/152",
+      "page": 6,
+      "order": 56,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 259.32,
+        "y0": 202.71,
+        "x1": 263.89,
+        "y1": 210.79,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/153",
+      "page": 6,
+      "order": 57,
+      "role": "paragraph",
+      "text": "8 11",
+      "bbox": {
+        "x0": 270.42,
+        "y0": 202.71,
+        "x1": 288.14,
+        "y1": 210.79,
+        "width": 17.72,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "8 11"
+      }
+    },
+    {
+      "id": "#/texts/154",
+      "page": 6,
+      "order": 58,
+      "role": "paragraph",
+      "text": "17 123",
+      "bbox": {
+        "x0": 282.7,
+        "y0": 203.95,
+        "x1": 303.39,
+        "y1": 209.6,
+        "width": 20.69,
+        "height": 5.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "17 123"
+      }
+    },
+    {
+      "id": "#/texts/155",
+      "page": 6,
+      "order": 59,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 359.18,
+        "y0": 128.75,
+        "x1": 363.75,
+        "y1": 136.82,
+        "width": 4.57,
+        "height": 8.07
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/156",
+      "page": 6,
+      "order": 60,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 370.27,
+        "y0": 128.75,
+        "x1": 374.84,
+        "y1": 136.82,
+        "width": 4.57,
+        "height": 8.07
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/157",
+      "page": 6,
+      "order": 61,
+      "role": "paragraph",
+      "text": "8 11",
+      "bbox": {
+        "x0": 381.37,
+        "y0": 128.75,
+        "x1": 399.09,
+        "y1": 136.82,
+        "width": 17.72,
+        "height": 8.07
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "8 11"
+      }
+    },
+    {
+      "id": "#/texts/158",
+      "page": 6,
+      "order": 62,
+      "role": "paragraph",
+      "text": "17 123",
+      "bbox": {
+        "x0": 393.65,
+        "y0": 129.98,
+        "x1": 414.34,
+        "y1": 135.63,
+        "width": 20.69,
+        "height": 5.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "17 123"
+      }
+    },
+    {
+      "id": "#/texts/159",
+      "page": 6,
+      "order": 63,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 148.38,
+        "y0": 228.6,
+        "x1": 152.95,
+        "y1": 236.68,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/160",
+      "page": 6,
+      "order": 64,
+      "role": "paragraph",
+      "text": "3 10",
+      "bbox": {
+        "x0": 159.47,
+        "y0": 228.6,
+        "x1": 177.42,
+        "y1": 236.68,
+        "width": 17.95,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3 10"
+      }
+    },
+    {
+      "id": "#/texts/161",
+      "page": 6,
+      "order": 65,
+      "role": "paragraph",
+      "text": "3",
+      "bbox": {
+        "x0": 196.45,
+        "y0": 228.6,
+        "x1": 201.02,
+        "y1": 236.68,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3"
+      }
+    },
+    {
+      "id": "#/texts/162",
+      "page": 6,
+      "order": 66,
+      "role": "paragraph",
+      "text": "11 6",
+      "bbox": {
+        "x0": 179.6,
+        "y0": 228.6,
+        "x1": 189.93,
+        "y1": 236.67,
+        "width": 10.33,
+        "height": 8.07
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "11 6"
+      }
+    },
+    {
+      "id": "#/texts/163",
+      "page": 6,
+      "order": 67,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 248.23,
+        "y0": 99.31,
+        "x1": 252.8,
+        "y1": 107.39,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/164",
+      "page": 6,
+      "order": 68,
+      "role": "paragraph",
+      "text": "3 10",
+      "bbox": {
+        "x0": 259.32,
+        "y0": 99.31,
+        "x1": 277.27,
+        "y1": 107.39,
+        "width": 17.95,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3 10"
+      }
+    },
+    {
+      "id": "#/texts/165",
+      "page": 6,
+      "order": 69,
+      "role": "paragraph",
+      "text": "3",
+      "bbox": {
+        "x0": 296.31,
+        "y0": 99.31,
+        "x1": 300.88,
+        "y1": 107.39,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3"
+      }
+    },
+    {
+      "id": "#/texts/166",
+      "page": 6,
+      "order": 70,
+      "role": "paragraph",
+      "text": "11 6",
+      "bbox": {
+        "x0": 279.46,
+        "y0": 99.31,
+        "x1": 289.78,
+        "y1": 107.39,
+        "width": 10.32,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "11 6"
+      }
+    },
+    {
+      "id": "#/texts/167",
+      "page": 6,
+      "order": 71,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 359.18,
+        "y0": 113.95,
+        "x1": 363.75,
+        "y1": 122.03,
+        "width": 4.57,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/168",
+      "page": 6,
+      "order": 72,
+      "role": "paragraph",
+      "text": "3 10",
+      "bbox": {
+        "x0": 370.27,
+        "y0": 113.95,
+        "x1": 388.22,
+        "y1": 122.03,
+        "width": 17.95,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3 10"
+      }
+    },
+    {
+      "id": "#/texts/169",
+      "page": 6,
+      "order": 73,
+      "role": "paragraph",
+      "text": "3",
+      "bbox": {
+        "x0": 407.26,
+        "y0": 113.95,
+        "x1": 411.82,
+        "y1": 122.03,
+        "width": 4.56,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3"
+      }
+    },
+    {
+      "id": "#/texts/170",
+      "page": 6,
+      "order": 74,
+      "role": "paragraph",
+      "text": "11 6",
+      "bbox": {
+        "x0": 390.4,
+        "y0": 113.95,
+        "x1": 400.73,
+        "y1": 122.03,
+        "width": 10.33,
+        "height": 8.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "11 6"
+      }
+    },
+    {
+      "id": "#/texts/171",
+      "page": 6,
+      "order": 75,
+      "role": "paragraph",
+      "text": "Finally, silhouette edges may also be extracted during the projection and clipping stage by loading face normals alongside the vertex world coordinates and checking for a silhouette edge condition at each segment. if the edge is not a silhouette, it is discarded by setting l = 0. This method is similar to the approach of Brabec and Seidel [16] for computing shadow volumes on the GPU. Note, however, that our current method is unable to stitch these silhouette edges into continuous multisegment silhouette paths, e.g., the outline of a sphere. The",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 644.41,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 104.19
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Finally, silhouette edges may also be extracted during the projection and clipping stage by loading face normals alongside the vertex world coordinates and checking for a silhouette edge condition at each segment. if the edge is not a silhouette, it is discarded by setting l = 0. This method is similar to the approach of Brabec and Seidel [16] for computing shadow volumes on the GPU. Note, however, that our current method is unable to stitch these silhouette edges into continuous multisegment silhouette paths, e.g., the outline of a sphere. The"
+      }
+    },
+    {
+      "id": "#/texts/172",
+      "page": 6,
+      "order": 76,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 7. Segment Atlas Pipeline. The input 3D line segments ( p i , q i ) are stored in a table on the GPU. At each frame, each 3D segment is projected and clipped by a fragment shader, which also determines a number of samples l i proportional to screen space length (step 1). Next, a scan operation computes the atlas offsets s from the running sum of l (step 2). The sample positions v are then created by interpolating ( p ′ , q ′ ) and writing to the segment atlas at offset s (step 3). Visibility values a j are determined by probing the depth buffer at each v j (see Figure 9). Finally, strokes are created at ( p ′ , q ′ ) and textured with the visibility values a to produce the final rendering. Note the colors used throughout to identify individual segments. visibility is determined every 1 or 2 pixels along each line; there is diminishing benefit in determining with any greater accuracy the exact position at which a line becomes occluded. A value of l = 0 is returned for segments that are entirely outside the viewing frustum. Segments for which l ≤ 1 (i.e., sub-pixel sized segments) are discarded for efficiency if not part of a path, but otherwise must be kept or the path will appear disconnected. In a separate step, the sample counts l are converted into segment atlas offsets s by computing a running sum (Figure 7, step 2). The sum is calculated by an exclusive-scan operation on l [15]. Once the atlas offsets s are computed, each segment may be drawn in the atlas independently and without overlap. If the system must handle multi-segment paths, the segment table may also include two extra channels to store the offsets of each segment from the start and end of its path. By comparing these pointers, a standalone segment can be distinguished from a segment that is part of a path. This information may be used during the final stroke rendering step to smoothly connect adjacent segments of multi-segment paths (Section 4.4). parameterization of multi-segment paths is computed by the exclusive-scan operation, which assumes that the segment indices are neighboring and constantly increasing. The segments of a silhouette path, by contrast, are in effectively random order in the segment table. In addition, silhouette paths based on polygon edges can include degeneracies (see [17]). Continuous parameterization of silhouette paths on the GPU is therefore an area for future work. 4.2 Segment Atlas Creation The purpose of the segment atlas is to store the visibility samples for every segment in the scene. The i th segment is allocated l i visibility samples, or entries, in the atlas (for example, segment 2 might be 5 pixels long, and be assigned 3 entries, while segment 3 might be 20 pixels long, and be assigned 10 entries). Each set of entries begins at the segment atlas offset si . Each entry consists of a 3D screen-space sample position v and a visibility value a . While storing the sample position v is unnecessary after visibility has been computed, current GPUs commonly support only four-channel textures, and the visibility values require only a single channel. On future hardware, storing only the visibility values a would save GPU memory.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.04,
+        "y1": 658.94,
+        "width": 514.08,
+        "height": 493.87
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 7. Segment Atlas Pipeline. The input 3D line segments ( p i , q i ) are stored in a table on the GPU. At each frame, each 3D segment is projected and clipped by a fragment shader, which also determines a number of samples l i proportional to screen space length (step 1). Next, a scan operation computes the atlas offsets s from the running sum of l (step 2). The sample positions v are then created by interpolating ( p ′ , q ′ ) and writing to the segment atlas at offset s (step 3). Visibility values a j are determined by probing the depth buffer at each v j (see Figure 9). Finally, strokes are created at ( p ′ , q ′ ) and textured with the visibility values a to produce the final rendering. Note the colors used throughout to identify individual segments. visibility is determined every 1 or 2 pixels along each line; there is diminishing benefit in determining with any greater accuracy the exact position at which a line becomes occluded. A value of l = 0 is returned for segments that are entirely outside the viewing frustum. Segments for which l ≤ 1 (i.e., sub-pixel sized segments) are discarded for efficiency if not part of a path, but otherwise must be kept or the path will appear disconnected. In a separate step, the sample counts l are converted into segment atlas offsets s by computing a running sum (Figure 7, step 2). The sum is calculated by an exclusive-scan operation on l [15]. Once the atlas offsets s are computed, each segment may be drawn in the atlas independently and without overlap. If the system must handle multi-segment paths, the segment table may also include two extra channels to store the offsets of each segment from the start and end of its path. By comparing these pointers, a standalone segment can be distinguished from a segment that is part of a path. This information may be used during the final stroke rendering step to smoothly connect adjacent segments of multi-segment paths (Section 4.4). parameterization of multi-segment paths is computed by the exclusive-scan operation, which assumes that the segment indices are neighboring and constantly increasing. The segments of a silhouette path, by contrast, are in effectively random order in the segment table. In addition, silhouette paths based on polygon edges can include degeneracies (see [17]). Continuous parameterization of silhouette paths on the GPU is therefore an area for future work. 4.2 Segment Atlas Creation The purpose of the segment atlas is to store the visibility samples for every segment in the scene. The i th segment is allocated l i visibility samples, or entries, in the atlas (for example, segment 2 might be 5 pixels long, and be assigned 3 entries, while segment 3 might be 20 pixels long, and be assigned 10 entries). Each set of entries begins at the segment atlas offset si . Each entry consists of a 3D screen-space sample position v and a visibility value a . While storing the sample position v is unnecessary after visibility has been computed, current GPUs commonly support only four-channel textures, and the visibility values require only a single channel. On future hardware, storing only the visibility values a would save GPU memory."
+      }
+    },
+    {
+      "id": "#/texts/173",
+      "page": 6,
+      "order": 77,
+      "role": "paragraph",
+      "text": "To compute the screen-space positions v of the samples we make use of the rasterization hardware of the GPU. We set up the segment atlas as a rendering target (e.g., an OpenGL framebuffer object), and draw single-pixel wide lines ( proxy lines ) into the atlas, as follows: The host passes one vertex to the GPU, identified by an index i , for each segment. A geometry shader then looks up the i th entry in the projected and",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 667.93,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 80.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To compute the screen-space positions v of the samples we make use of the rasterization hardware of the GPU. We set up the segment atlas as a rendering target (e.g., an OpenGL framebuffer object), and draw single-pixel wide lines ( proxy lines ) into the atlas, as follows: The host passes one vertex to the GPU, identified by an index i , for each segment. A geometry shader then looks up the i th entry in the projected and"
+      }
+    },
+    {
+      "id": "#/texts/176",
+      "page": 7,
+      "order": 1,
+      "role": "paragraph",
+      "text": "clipped segment table, and produces two vertices for a single proxy line segment. If the hardware does not support geometry shaders, the host must pass two vertices to a vertex shader, each identified with index i and a binary 'start vertex end vertex' flag. The shader then positions the vertex at either the beginning or the end of the proxy segment, depending on the flag.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 58.61,
+        "x1": 300.03,
+        "y1": 138.89,
+        "width": 251.07,
+        "height": 80.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "clipped segment table, and produces two vertices for a single proxy line segment. If the hardware does not support geometry shaders, the host must pass two vertices to a vertex shader, each identified with index i and a binary 'start vertex end vertex' flag. The shader then positions the vertex at either the beginning or the end of the proxy segment, depending on the flag."
+      }
+    },
+    {
+      "id": "#/texts/177",
+      "page": 7,
+      "order": 2,
+      "role": "paragraph",
+      "text": "PREPRINT In either case, the proxy segment i begins in the atlas at position si and is l i pixels long. The color of the first vertex of the proxy is set to the clip space position p ′ i , and the color of the second vertex is set to q ′ i . When the proxy lines are drawn, the rasterization hardware performs the interpolation of the clip space positions. A fragment shader then performs the perspective division and viewport transformation steps to produce the screen-space coordinate v (Figure 7, step 3). At the same time, the fragment shader checks the visibility of the sample as described in Section 4.3. The final output of the fragment shader is the interpolated position v and the visibility value a . The most natural representation for the segment atlas is a very long, 1D texture. Unfortunately, current GPUs do not allow for arbitrarily long 1D textures as targets for rendering. The segment atlas must therefore be mapped to two dimensions (Figure 8). This mapping can be achieved by wrapping the atlas positions at a predetermined width w , usually the maximum texture width W allowed by the GPU ( W = 4096 or 8192 texels is common). The 2D atlas positions s are given by: s =( s mod w , glyph[floorleft] s w glyph[floorright] ) (2) The issue then becomes how to deal with segments that extend outside the texture, i.e., segments for which ( s mod w )+ l > w . One way to address this problem is to draw the segment atlas twice, once normally and once with the projection matrix translated by ( -w , 1 ) . Long segments will thus be wrapped across two consecutive lines in the atlas (Figure 8 top). Specifically, suppose L is the largest value of l , which can be conservatively capped at the screen diagonal distance divided by k . If w > L , drawing the atlas twice is sufficient, because we are guaranteed that each segment requires at most one wrap. Drawing twice incurs a performance penalty, but as the visibility fragment program is usually the bottleneck (and is still run only once per sample) the penalty is usually small. Fig. 8. Segment atlas wrapping. Because current generation GPUs do not support arbitrarily long 1D textures, the segment atlas must be wrapped to fit in a 2D texture. One option is to draw the atlas twice, wrapping segments that fall outside the width w (shown faded). Another option is to establish a gutter of size L to catch segments that fall outside w . Here W is the maximum texture width, and L is the maximum segment length. 4.3 Visibility Computation As mentioned in Section 4.2, the visibility test for each sample is performed during rasterization of the segments into the segment atlas. While drawing the atlas, a fragment program computes an interpolated homogeneous clip space coordinate for each sample and performs the perspective division step. The resulting clip space z value is then compared to a depth buffer (Figure 9). The visibility test itself is similar to the test for the spine test approach, with the same configuration of multiple depth probes and supersampled depth buffer. Since visibility is only tested once per spine sample, however, rather than once for every fragment along the width of the stroke, even more depth probes can be efficiently computed. 4.4 Stroke Rendering",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 150.82,
+        "x1": 563.04,
+        "y1": 643.09,
+        "width": 514.08,
+        "height": 492.27
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT In either case, the proxy segment i begins in the atlas at position si and is l i pixels long. The color of the first vertex of the proxy is set to the clip space position p ′ i , and the color of the second vertex is set to q ′ i . When the proxy lines are drawn, the rasterization hardware performs the interpolation of the clip space positions. A fragment shader then performs the perspective division and viewport transformation steps to produce the screen-space coordinate v (Figure 7, step 3). At the same time, the fragment shader checks the visibility of the sample as described in Section 4.3. The final output of the fragment shader is the interpolated position v and the visibility value a . The most natural representation for the segment atlas is a very long, 1D texture. Unfortunately, current GPUs do not allow for arbitrarily long 1D textures as targets for rendering. The segment atlas must therefore be mapped to two dimensions (Figure 8). This mapping can be achieved by wrapping the atlas positions at a predetermined width w , usually the maximum texture width W allowed by the GPU ( W = 4096 or 8192 texels is common). The 2D atlas positions s are given by: s =( s mod w , glyph[floorleft] s w glyph[floorright] ) (2) The issue then becomes how to deal with segments that extend outside the texture, i.e., segments for which ( s mod w )+ l > w . One way to address this problem is to draw the segment atlas twice, once normally and once with the projection matrix translated by ( -w , 1 ) . Long segments will thus be wrapped across two consecutive lines in the atlas (Figure 8 top). Specifically, suppose L is the largest value of l , which can be conservatively capped at the screen diagonal distance divided by k . If w > L , drawing the atlas twice is sufficient, because we are guaranteed that each segment requires at most one wrap. Drawing twice incurs a performance penalty, but as the visibility fragment program is usually the bottleneck (and is still run only once per sample) the penalty is usually small. Fig. 8. Segment atlas wrapping. Because current generation GPUs do not support arbitrarily long 1D textures, the segment atlas must be wrapped to fit in a 2D texture. One option is to draw the atlas twice, wrapping segments that fall outside the width w (shown faded). Another option is to establish a gutter of size L to catch segments that fall outside w . Here W is the maximum texture width, and L is the maximum segment length. 4.3 Visibility Computation As mentioned in Section 4.2, the visibility test for each sample is performed during rasterization of the segments into the segment atlas. While drawing the atlas, a fragment program computes an interpolated homogeneous clip space coordinate for each sample and performs the perspective division step. The resulting clip space z value is then compared to a depth buffer (Figure 9). The visibility test itself is similar to the test for the spine test approach, with the same configuration of multiple depth probes and supersampled depth buffer. Since visibility is only tested once per spine sample, however, rather than once for every fragment along the width of the stroke, even more depth probes can be efficiently computed. 4.4 Stroke Rendering"
+      }
+    },
+    {
+      "id": "#/texts/178",
+      "page": 7,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Option 1:",
+      "bbox": {
+        "x0": 369.52,
+        "y0": 100.89,
+        "x1": 411.7,
+        "y1": 109.78,
+        "width": 42.18,
+        "height": 8.89
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Option 1:"
+      }
+    },
+    {
+      "id": "#/texts/179",
+      "page": 7,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Draw Twice, with Translation",
+      "bbox": {
+        "x0": 411.69,
+        "y0": 100.89,
+        "x1": 505.47,
+        "y1": 109.2,
+        "width": 93.78,
+        "height": 8.31
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Draw Twice, with Translation"
+      }
+    },
+    {
+      "id": "#/texts/180",
+      "page": 7,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Step 3a:",
+      "bbox": {
+        "x0": 416.99,
+        "y0": 63.66,
+        "x1": 458.01,
+        "y1": 74.02,
+        "width": 41.02,
+        "height": 10.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 3a:"
+      }
+    },
+    {
+      "id": "#/texts/181",
+      "page": 7,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Draw Segments into Atlas",
+      "bbox": {
+        "x0": 389.46,
+        "y0": 76.32,
+        "x1": 488.47,
+        "y1": 86.0,
+        "width": 99.01,
+        "height": 9.68
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Draw Segments into Atlas"
+      }
+    },
+    {
+      "id": "#/texts/182",
+      "page": 7,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Option 2:",
+      "bbox": {
+        "x0": 378.13,
+        "y0": 182.24,
+        "x1": 417.8,
+        "y1": 191.12,
+        "width": 39.67,
+        "height": 8.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Option 2:"
+      }
+    },
+    {
+      "id": "#/texts/183",
+      "page": 7,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Draw Once, with Gutter",
+      "bbox": {
+        "x0": 417.79,
+        "y0": 182.24,
+        "x1": 496.87,
+        "y1": 190.54,
+        "width": 79.08,
+        "height": 8.3
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Draw Once, with Gutter"
+      }
+    },
+    {
+      "id": "#/texts/184",
+      "page": 7,
+      "order": 9,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 362.69,
+        "y0": 159.64,
+        "x1": 367.71,
+        "y1": 168.21,
+        "width": 5.02,
+        "height": 8.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/185",
+      "page": 7,
+      "order": 10,
+      "role": "paragraph",
+      "text": "w",
+      "bbox": {
+        "x0": 508.68,
+        "y0": 160.12,
+        "x1": 516.97,
+        "y1": 167.91,
+        "width": 8.29,
+        "height": 7.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "w"
+      }
+    },
+    {
+      "id": "#/texts/186",
+      "page": 7,
+      "order": 11,
+      "role": "paragraph",
+      "text": "(=",
+      "bbox": {
+        "x0": 516.97,
+        "y0": 159.64,
+        "x1": 525.26,
+        "y1": 168.21,
+        "width": 8.29,
+        "height": 8.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(="
+      }
+    },
+    {
+      "id": "#/texts/187",
+      "page": 7,
+      "order": 12,
+      "role": "paragraph",
+      "text": "W",
+      "bbox": {
+        "x0": 525.26,
+        "y0": 160.12,
+        "x1": 535.04,
+        "y1": 167.91,
+        "width": 9.78,
+        "height": 7.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "W"
+      }
+    },
+    {
+      "id": "#/texts/188",
+      "page": 7,
+      "order": 13,
+      "role": "paragraph",
+      "text": ")",
+      "bbox": {
+        "x0": 535.04,
+        "y0": 159.64,
+        "x1": 538.05,
+        "y1": 168.21,
+        "width": 3.01,
+        "height": 8.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ")"
+      }
+    },
+    {
+      "id": "#/texts/189",
+      "page": 7,
+      "order": 14,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 362.69,
+        "y0": 259.06,
+        "x1": 367.71,
+        "y1": 267.63,
+        "width": 5.02,
+        "height": 8.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/190",
+      "page": 7,
+      "order": 15,
+      "role": "paragraph",
+      "text": "W",
+      "bbox": {
+        "x0": 506.05,
+        "y0": 259.54,
+        "x1": 513.58,
+        "y1": 267.33,
+        "width": 7.53,
+        "height": 7.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "W"
+      }
+    },
+    {
+      "id": "#/texts/191",
+      "page": 7,
+      "order": 16,
+      "role": "paragraph",
+      "text": "L",
+      "bbox": {
+        "x0": 471.22,
+        "y0": 277.11,
+        "x1": 476.25,
+        "y1": 284.9,
+        "width": 5.03,
+        "height": 7.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L"
+      }
+    },
+    {
+      "id": "#/texts/192",
+      "page": 7,
+      "order": 17,
+      "role": "paragraph",
+      "text": "w",
+      "bbox": {
+        "x0": 434.49,
+        "y0": 259.54,
+        "x1": 440.52,
+        "y1": 267.33,
+        "width": 6.03,
+        "height": 7.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "w"
+      }
+    },
+    {
+      "id": "#/texts/193",
+      "page": 7,
+      "order": 18,
+      "role": "paragraph",
+      "text": "After visibility is computed, all the information necessary to draw strokes is available in the projected and clipped segment table and the segment atlas. The most efficient way to render the strokes is to generate, on the host, a single point per segment. A geometry shader then uses the point as an index and looks up the appropriate ( p ′ , q ′ ) in the projected and clipped segment table. The segment endpoints may also be looked up in the segment atlas, if the positions v are stored in",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 656.37,
+        "x1": 563.04,
+        "y1": 748.62,
+        "width": 251.07,
+        "height": 92.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "After visibility is computed, all the information necessary to draw strokes is available in the projected and clipped segment table and the segment atlas. The most efficient way to render the strokes is to generate, on the host, a single point per segment. A geometry shader then uses the point as an index and looks up the appropriate ( p ′ , q ′ ) in the projected and clipped segment table. The segment endpoints may also be looked up in the segment atlas, if the positions v are stored in"
+      }
+    },
+    {
+      "id": "#/texts/194",
+      "page": 7,
+      "order": 19,
+      "role": "paragraph",
+      "text": "For some rendering applications, however, it is considerably more convenient if segments do not wrap (Section 4.4). In this case, we establish a gutter in the 2D segment atlas by setting w = W -L . The atlas position is then only drawn once (Figure 8 bottom). This approach is guaranteed to waste W -L texels per atlas line. Moreover, this waste exacerbates the waste due to our need to preallocate a large block of memory for the segment atlas without knowing how full it will become. Nevertheless, the memory usage of the segment atlas (which is limited by the number of lines drawn on the screen) is typically dominated by that of the 3D and 4D segment tables (which must hold all lines in the scene).",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 608.55,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 140.05
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "For some rendering applications, however, it is considerably more convenient if segments do not wrap (Section 4.4). In this case, we establish a gutter in the 2D segment atlas by setting w = W -L . The atlas position is then only drawn once (Figure 8 bottom). This approach is guaranteed to waste W -L texels per atlas line. Moreover, this waste exacerbates the waste due to our need to preallocate a large block of memory for the segment atlas without knowing how full it will become. Nevertheless, the memory usage of the segment atlas (which is limited by the number of lines drawn on the screen) is typically dominated by that of the 3D and 4D segment tables (which must hold all lines in the scene)."
+      }
+    },
+    {
+      "id": "#/texts/197",
+      "page": 8,
+      "order": 1,
+      "role": "paragraph",
+      "text": "3",
+      "bbox": {
+        "x0": -0.0,
+        "y0": 113.7,
+        "x1": 2.0,
+        "y1": 119.02,
+        "width": 2.0,
+        "height": 5.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3"
+      }
+    },
+    {
+      "id": "#/texts/198",
+      "page": 8,
+      "order": 2,
+      "role": "paragraph",
+      "text": "depth butter",
+      "bbox": {
+        "x0": 9.97,
+        "y0": -0.14,
+        "x1": 53.36,
+        "y1": 8.12,
+        "width": 43.39,
+        "height": 8.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "depth butter"
+      }
+    },
+    {
+      "id": "#/texts/199",
+      "page": 8,
+      "order": 3,
+      "role": "caption",
+      "text": "Fig. 10. Variation in style. A different texture may be used for lines that fail the visibility test ( le f t ), allowing visualization of hidden structures. Our method also produces attractive results for solid, simple styles ( right ).",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 701.45,
+        "x1": 300.03,
+        "y1": 746.53,
+        "width": 251.07,
+        "height": 45.08
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 10. Variation in style. A different texture may be used for lines that fail the visibility test ( le f t ), allowing visualization of hidden structures. Our method also produces attractive results for solid, simple styles ( right )."
+      }
+    },
+    {
+      "id": "#/texts/200",
+      "page": 8,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Step 3b:",
+      "bbox": {
+        "x0": 153.27,
+        "y0": 61.57,
+        "x1": 195.71,
+        "y1": 72.15,
+        "width": 42.44,
+        "height": 10.58
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Step 3b:"
+      }
+    },
+    {
+      "id": "#/texts/201",
+      "page": 8,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Compute Visibility",
+      "bbox": {
+        "x0": 139.51,
+        "y0": 74.48,
+        "x1": 209.46,
+        "y1": 84.37,
+        "width": 69.95,
+        "height": 9.89
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Compute Visibility"
+      }
+    },
+    {
+      "id": "#/texts/202",
+      "page": 8,
+      "order": 6,
+      "role": "paragraph",
+      "text": "depth buffer",
+      "bbox": {
+        "x0": 166.42,
+        "y0": 90.78,
+        "x1": 207.5,
+        "y1": 99.43,
+        "width": 41.08,
+        "height": 8.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "depth buffer"
+      }
+    },
+    {
+      "id": "#/texts/203",
+      "page": 8,
+      "order": 7,
+      "role": "paragraph",
+      "text": "segment atlas",
+      "bbox": {
+        "x0": 73.62,
+        "y0": 90.78,
+        "x1": 121.68,
+        "y1": 99.43,
+        "width": 48.06,
+        "height": 8.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "segment atlas"
+      }
+    },
+    {
+      "id": "#/texts/204",
+      "page": 8,
+      "order": 8,
+      "role": "paragraph",
+      "text": "v",
+      "bbox": {
+        "x0": 71.98,
+        "y0": 110.95,
+        "x1": 77.22,
+        "y1": 120.2,
+        "width": 5.24,
+        "height": 9.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "v"
+      }
+    },
+    {
+      "id": "#/texts/205",
+      "page": 8,
+      "order": 9,
+      "role": "paragraph",
+      "text": "α",
+      "bbox": {
+        "x0": 71.28,
+        "y0": 187.77,
+        "x1": 77.22,
+        "y1": 195.8,
+        "width": 5.94,
+        "height": 8.03
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "α"
+      }
+    },
+    {
+      "id": "#/texts/206",
+      "page": 8,
+      "order": 10,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 79.94,
+        "y0": 206.0,
+        "x1": 83.43,
+        "y1": 211.96,
+        "width": 3.49,
+        "height": 5.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/207",
+      "page": 8,
+      "order": 11,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 100.11,
+        "y0": 206.0,
+        "x1": 103.6,
+        "y1": 211.96,
+        "width": 3.49,
+        "height": 5.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/208",
+      "page": 8,
+      "order": 12,
+      "role": "paragraph",
+      "text": "8",
+      "bbox": {
+        "x0": 112.22,
+        "y0": 206.0,
+        "x1": 115.71,
+        "y1": 211.96,
+        "width": 3.49,
+        "height": 5.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "8"
+      }
+    },
+    {
+      "id": "#/texts/209",
+      "page": 8,
+      "order": 13,
+      "role": "paragraph",
+      "text": "18",
+      "bbox": {
+        "x0": 150.82,
+        "y0": 206.0,
+        "x1": 157.8,
+        "y1": 211.96,
+        "width": 6.98,
+        "height": 5.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "18"
+      }
+    },
+    {
+      "id": "#/texts/210",
+      "page": 8,
+      "order": 14,
+      "role": "paragraph",
+      "text": "Test Visibility",
+      "bbox": {
+        "x0": 99.12,
+        "y0": 141.82,
+        "x1": 138.72,
+        "y1": 149.23,
+        "width": 39.6,
+        "height": 7.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Test Visibility"
+      }
+    },
+    {
+      "id": "#/texts/211",
+      "page": 8,
+      "order": 15,
+      "role": "paragraph",
+      "text": "(fragment shader)",
+      "bbox": {
+        "x0": 91.7,
+        "y0": 151.51,
+        "x1": 144.29,
+        "y1": 158.92,
+        "width": 52.59,
+        "height": 7.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(fragment shader)"
+      }
+    },
+    {
+      "id": "#/texts/212",
+      "page": 8,
+      "order": 16,
+      "role": "caption",
+      "text": "Fig. 11. Line density control. The segment atlas can store information besides visibility, such as local line density. Left: no density control. Right: line density reduction as described in [12].",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 151.3,
+        "x1": 563.04,
+        "y1": 196.38,
+        "width": 251.07,
+        "height": 45.08
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 11. Line density control. The segment atlas can store information besides visibility, such as local line density. Left: no density control. Right: line density reduction as described in [12]."
+      }
+    },
+    {
+      "id": "#/texts/213",
+      "page": 8,
+      "order": 17,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 9. Visibility Testing. The first three segments of Figure 7 are shown. Each sample in the segment atlas corresponds to a fragment. The fragment shader uses the screen space position v j to test the sample against the depth buffer, recording the result in the visibility value a j . Colors are the same as Figure 7. the atlas. However, we find the original segment table is more convenient since both vertex positions are stored at the same texture offset in different channels. The geometry shader then emits a quad that lies between the segment endpoints, with width determined by the pen style. As with the spine test method, hardware without geometry shaders can generate the same quads, albeit less efficiently, by generating a degenerate quad on the host and positioning the four vertices in a vertex shader (again, similar to [14]). Lastly, a fragment shader textures the quad with a 2D pen texture and modulates the texture with the corresponding 1D visibility values from the segment atlas. A range of effects can be achieved by varying the pen texture and color with visibility (Figures 10 and 13). 4.5 Additional Effects By storing the visibility and screen-space positions simultaneously for all strokes in the scene, the segment atlas method allows a range of additional rendering effects not possible with the spine test method. Some examples include: Mitering In order to render multi-segment strokes without visible gaps or overlap between segments, the ends of adjacent segments must be smoothly connected ( mitered ). Proper mitering of segment i requires the positions and orientations of segments i -1 and i + 1 (if they exist). This information can be looked up in the projected and clipped segment table (see Section 4.1). Corner mitering (joining with a sharp corner) can be performed in the final rendering step by either a geometry or vertex shader, simply by adjusting the four vertices of each segment quad. While not implemented in this work, smooth mitering (joining with a rounded corner) should also be possible by emitting extra vertices from a geometry shader. Filtering The segment atlas also provides the opportunity to filter the visibility information to fill small holes or remove short, spurious sections. Other image processing operations can be performed on the atlas as well. For example, erosion and dilation can produce line overshoot or undershoot (haloing) effects (Figure 1). A convincing sketchy overshoot effect can be achieved by setting the dilation amount to a constant screenspace length, then modulating this length pseudo-randomly with the path index (or index of the starting segment of the path) to vary the size of the overshoot. For operations such as dilation, it is necessary to add padding around each segment in the atlas, so that the segment can dilate beyond its normal length. Padding can be added easily by increasing the number of samples when computing the atlas offset (Section 4.2).",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.04,
+        "y1": 642.4,
+        "width": 514.08,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 9. Visibility Testing. The first three segments of Figure 7 are shown. Each sample in the segment atlas corresponds to a fragment. The fragment shader uses the screen space position v j to test the sample against the depth buffer, recording the result in the visibility value a j . Colors are the same as Figure 7. the atlas. However, we find the original segment table is more convenient since both vertex positions are stored at the same texture offset in different channels. The geometry shader then emits a quad that lies between the segment endpoints, with width determined by the pen style. As with the spine test method, hardware without geometry shaders can generate the same quads, albeit less efficiently, by generating a degenerate quad on the host and positioning the four vertices in a vertex shader (again, similar to [14]). Lastly, a fragment shader textures the quad with a 2D pen texture and modulates the texture with the corresponding 1D visibility values from the segment atlas. A range of effects can be achieved by varying the pen texture and color with visibility (Figures 10 and 13). 4.5 Additional Effects By storing the visibility and screen-space positions simultaneously for all strokes in the scene, the segment atlas method allows a range of additional rendering effects not possible with the spine test method. Some examples include: Mitering In order to render multi-segment strokes without visible gaps or overlap between segments, the ends of adjacent segments must be smoothly connected ( mitered ). Proper mitering of segment i requires the positions and orientations of segments i -1 and i + 1 (if they exist). This information can be looked up in the projected and clipped segment table (see Section 4.1). Corner mitering (joining with a sharp corner) can be performed in the final rendering step by either a geometry or vertex shader, simply by adjusting the four vertices of each segment quad. While not implemented in this work, smooth mitering (joining with a rounded corner) should also be possible by emitting extra vertices from a geometry shader. Filtering The segment atlas also provides the opportunity to filter the visibility information to fill small holes or remove short, spurious sections. Other image processing operations can be performed on the atlas as well. For example, erosion and dilation can produce line overshoot or undershoot (haloing) effects (Figure 1). A convincing sketchy overshoot effect can be achieved by setting the dilation amount to a constant screenspace length, then modulating this length pseudo-randomly with the path index (or index of the starting segment of the path) to vary the size of the overshoot. For operations such as dilation, it is necessary to add padding around each segment in the atlas, so that the segment can dilate beyond its normal length. Padding can be added easily by increasing the number of samples when computing the atlas offset (Section 4.2)."
+      }
+    },
+    {
+      "id": "#/texts/214",
+      "page": 8,
+      "order": 18,
+      "role": "heading",
+      "text": "Density Control",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 658.09,
+        "x1": 380.07,
+        "y1": 667.31,
+        "width": 68.1,
+        "height": 9.22
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Density Control"
+      }
+    },
+    {
+      "id": "#/texts/215",
+      "page": 8,
+      "order": 19,
+      "role": "paragraph",
+      "text": "The segment atlas also can be used to store any type of persample information, not just visibility. For example, it can store a measure of the density of lines in the local area, as produced by a stroke-based line density control scheme [18], [12]. Results from the system described in [12], as implemented using a segment atlas, are shown in Figure 11.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 680.28,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 68.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The segment atlas also can be used to store any type of persample information, not just visibility. For example, it can store a measure of the density of lines in the local area, as produced by a stroke-based line density control scheme [18], [12]. Results from the system described in [12], as implemented using a segment atlas, are shown in Figure 11."
+      }
+    },
+    {
+      "id": "#/texts/218",
+      "page": 9,
+      "order": 1,
+      "role": "heading",
+      "text": "4.6 Readback",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 57.9,
+        "x1": 119.64,
+        "y1": 67.25,
+        "width": 70.68,
+        "height": 9.35
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.6 Readback"
+      }
+    },
+    {
+      "id": "#/texts/219",
+      "page": 9,
+      "order": 2,
+      "role": "paragraph",
+      "text": "For applications that are difficult to implement entirely on the GPU, such as stroke simplification [19] or complex NPR shaders [20], the segment atlas can be read back to the host. Reading back and processing the entire segment atlas is inefficient, however, since for reasonably complex models the vast majority of line samples in any given frame will have zero visibility. We can reduce this cost by applying a stream compaction operation [21] to the segment atlas visibility values. This operation yields a packed buffer with only visible samples remaining. For models of moderate complexity, compaction and readback adds an additional cost of ∼ 20 ms per frame.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 80.01,
+        "x1": 300.03,
+        "y1": 208.12,
+        "width": 251.07,
+        "height": 128.11
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "For applications that are difficult to implement entirely on the GPU, such as stroke simplification [19] or complex NPR shaders [20], the segment atlas can be read back to the host. Reading back and processing the entire segment atlas is inefficient, however, since for reasonably complex models the vast majority of line samples in any given frame will have zero visibility. We can reduce this cost by applying a stream compaction operation [21] to the segment atlas visibility values. This operation yields a packed buffer with only visible samples remaining. For models of moderate complexity, compaction and readback adds an additional cost of ∼ 20 ms per frame."
+      }
+    },
+    {
+      "id": "#/texts/220",
+      "page": 9,
+      "order": 3,
+      "role": "paragraph",
+      "text": "We tested the following rendering algorithms: (OGL) conventional OpenGL lines; (IBlo) single item buffer [Northrup2000]; (IBhi) 9 × supersampled item buffer with 3 layers [Cole2008]; (STlo SAlo) spine test shader and segment atlas, respectively, with a single depth probe, which is comparable to IBlo; and (SThi SAhi) spine test shader and segment atlas, respectively, with 9 depth probes and 2 × scaled depth buffer, which is comparable to IBhi. For small models (clevis and house), both the spine test and segment atlas methods are slower than conventional OpenGL rendering by factors of 2 -4 × , though overall speed is still high. Additional samples and depth buffer scaling also incur a noticeable penalty for these models. For the more complex models (ship and office), the penalty for using either method declines. Both methods are within 50% of conventional OpenGL in the high-quality modes (SThi SAhi). The basic segment atlas (SAlo), which suffers from some aliasing artifacts but still provides good quality, is within 75% of OpenGL on both the office and ship models.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 494.81,
+        "x1": 300.03,
+        "y1": 706.6,
+        "width": 251.07,
+        "height": 211.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We tested the following rendering algorithms: (OGL) conventional OpenGL lines; (IBlo) single item buffer [Northrup2000]; (IBhi) 9 × supersampled item buffer with 3 layers [Cole2008]; (STlo SAlo) spine test shader and segment atlas, respectively, with a single depth probe, which is comparable to IBlo; and (SThi SAhi) spine test shader and segment atlas, respectively, with 9 depth probes and 2 × scaled depth buffer, which is comparable to IBhi. For small models (clevis and house), both the spine test and segment atlas methods are slower than conventional OpenGL rendering by factors of 2 -4 × , though overall speed is still high. Additional samples and depth buffer scaling also incur a noticeable penalty for these models. For the more complex models (ship and office), the penalty for using either method declines. Both methods are within 50% of conventional OpenGL in the high-quality modes (SThi SAhi). The basic segment atlas (SAlo), which suffers from some aliasing artifacts but still provides good quality, is within 75% of OpenGL on both the office and ship models."
+      }
+    },
+    {
+      "id": "#/texts/221",
+      "page": 9,
+      "order": 4,
+      "role": "caption",
+      "text": "TABLE 1 Frame rates (FPS) for various models and methods.",
+      "bbox": {
+        "x0": 323.22,
+        "y0": 53.24,
+        "x1": 551.8,
+        "y1": 74.41,
+        "width": 228.58,
+        "height": 21.17
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "TABLE 1 Frame rates (FPS) for various models and methods."
+      }
+    },
+    {
+      "id": "#/texts/222",
+      "page": 9,
+      "order": 5,
+      "role": "paragraph",
+      "text": "The proposed methods allow rendering of high-quality stylized lines at speeds approaching those of the conventional OpenGL rendering pipeline. They provide improved temporal coherence and less aliasing (sparkle) than previous approaches for drawing stylized lines, making them suitable for animation of complex scenes. The spine test shader (method 1) is particularly simple, and should be easy to include in existing line rendering systems. The segment atlas pipeline (method 2), while more complex, is still fairly easy to implement, and provides a broader range of stylization options. Compared with previous approaches for computing line visibility, both are robust and conceptually simple. We believe these approaches will be useful for interactive applications such as games and design and modeling software, where previously the performance penalty for using stylized lines has been prohibitive.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 518.88,
+        "x1": 563.04,
+        "y1": 694.81,
+        "width": 251.07,
+        "height": 175.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The proposed methods allow rendering of high-quality stylized lines at speeds approaching those of the conventional OpenGL rendering pipeline. They provide improved temporal coherence and less aliasing (sparkle) than previous approaches for drawing stylized lines, making them suitable for animation of complex scenes. The spine test shader (method 1) is particularly simple, and should be easy to include in existing line rendering systems. The segment atlas pipeline (method 2), while more complex, is still fairly easy to implement, and provides a broader range of stylization options. Compared with previous approaches for computing line visibility, both are robust and conceptually simple. We believe these approaches will be useful for interactive applications such as games and design and modeling software, where previously the performance penalty for using stylized lines has been prohibitive."
+      }
+    },
+    {
+      "id": "#/texts/223",
+      "page": 9,
+      "order": 6,
+      "role": "paragraph",
+      "text": "PREPRINT 5 RESULTS We implemented the two methods using OpenGL and GLSL, taking care to manage GPU-side memory operations efficiently. For comparison we also implemented an optimized conventional OpenGL rendering pipeline using line primitives, the item buffer approach of Northrup and Markosian [2], and the improved item buffer approach of Cole and Finkelstein [3]. We did not use NVIDIA's CUDA architecture, because the segment atlas drawing step uses conventional line rasterization and the rasterization hardware is unavailable from CUDA. Table 1 shows frame rates for four models ranging from 1k500k line segments. The clevis, house (Falling Water), ship and office models are shown in Figures 10-12. The '+s' indicates silhouettes were extracted and drawn in addition to the fixed lines. Timings for clevis and house are averaged over an orbit of the model, whereas timings for the ship and office are averaged over a walkthrough sequence. All frames are rendered at 1024 × 768 using a commodity Dell PC running Windows XP with an Intel Core 2 Duo 2.4 GHz CPU and 2GB RAM, and an NVIDIA 8800GTS GPU with 512MB RAM. The item buffer approach with 9 × supersampling and 3 layers, as suggested by [3], gives similar image quality to our methods with 9 depth probes and 2 × scaled depth buffer. The new methods, however, deliver performance increases of up to 50 × for complex models. As mentioned in Sections 3.1 and 4.1, both methods allow for easy extraction and rendering of silhouette edges on the GPU. The last two rows of Table 1 show the performance impact when extracting and rendering silhouettes. The increase in cost is roughly proportional to the increase in the total number of potential line segments. We did not implement silhouette extraction for the other methods. However, silhouette extraction can be a costly operation when performed on the CPU. While accurate timing of the stages of our method is difficult due to the deep OpenGL pipeline, the major costs ( ∼ 80-90% of total) lie in the sample visibility testing stage and depth buffer drawing stage. For small models, the sample visibility testing is dominant, while for large models, the depth buffer creation is the primary single cost. Projection, clipping, and stroke rendering are minor costs. 6 CONCLUSION AND FUTURE WORK",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.05,
+        "y1": 642.4,
+        "width": 514.09,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT 5 RESULTS We implemented the two methods using OpenGL and GLSL, taking care to manage GPU-side memory operations efficiently. For comparison we also implemented an optimized conventional OpenGL rendering pipeline using line primitives, the item buffer approach of Northrup and Markosian [2], and the improved item buffer approach of Cole and Finkelstein [3]. We did not use NVIDIA's CUDA architecture, because the segment atlas drawing step uses conventional line rasterization and the rasterization hardware is unavailable from CUDA. Table 1 shows frame rates for four models ranging from 1k500k line segments. The clevis, house (Falling Water), ship and office models are shown in Figures 10-12. The '+s' indicates silhouettes were extracted and drawn in addition to the fixed lines. Timings for clevis and house are averaged over an orbit of the model, whereas timings for the ship and office are averaged over a walkthrough sequence. All frames are rendered at 1024 × 768 using a commodity Dell PC running Windows XP with an Intel Core 2 Duo 2.4 GHz CPU and 2GB RAM, and an NVIDIA 8800GTS GPU with 512MB RAM. The item buffer approach with 9 × supersampling and 3 layers, as suggested by [3], gives similar image quality to our methods with 9 depth probes and 2 × scaled depth buffer. The new methods, however, deliver performance increases of up to 50 × for complex models. As mentioned in Sections 3.1 and 4.1, both methods allow for easy extraction and rendering of silhouette edges on the GPU. The last two rows of Table 1 show the performance impact when extracting and rendering silhouettes. The increase in cost is roughly proportional to the increase in the total number of potential line segments. We did not implement silhouette extraction for the other methods. However, silhouette extraction can be a costly operation when performed on the CPU. While accurate timing of the stages of our method is difficult due to the deep OpenGL pipeline, the major costs ( ∼ 80-90% of total) lie in the sample visibility testing stage and depth buffer drawing stage. For small models, the sample visibility testing is dominant, while for large models, the depth buffer creation is the primary single cost. Projection, clipping, and stroke rendering are minor costs. 6 CONCLUSION AND FUTURE WORK"
+      }
+    },
+    {
+      "id": "#/texts/224",
+      "page": 9,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Both of the new methods are always considerably faster than the item buffer based approach, but the most striking difference is when comparing the high quality modes of each method.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 716.14,
+        "x1": 300.03,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 32.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Both of the new methods are always considerably faster than the item buffer based approach, but the most striking difference is when comparing the high quality modes of each method."
+      }
+    },
+    {
+      "id": "#/texts/225",
+      "page": 9,
+      "order": 8,
+      "role": "paragraph",
+      "text": "The ability to store full visibility information for all lines allows for special rendering of hidden lines (Figure 13), but also opens several possibilities for future work. Just as [12] introduced 'stylized focus' as an artistic effect inspired by",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 703.8,
+        "x1": 563.04,
+        "y1": 748.6,
+        "width": 251.07,
+        "height": 44.8
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The ability to store full visibility information for all lines allows for special rendering of hidden lines (Figure 13), but also opens several possibilities for future work. Just as [12] introduced 'stylized focus' as an artistic effect inspired by"
+      }
+    },
+    {
+      "id": "#/texts/228",
+      "page": 10,
+      "order": 1,
+      "role": "paragraph",
+      "text": "PREPRINT Fig. 12. Complex models. The ship model ( le f t ) has 300k triangles and 500k total line segments. The office model ( right ) has five levels, each with detailed furniture, totaling 330k triangles and 400k line segments. Both models can be rendered at high-quality and interactive frame rates using both the spine test and segment atlas methods.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 165.07,
+        "x1": 563.05,
+        "y1": 642.4,
+        "width": 514.09,
+        "height": 477.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Fig. 12. Complex models. The ship model ( le f t ) has 300k triangles and 500k total line segments. The office model ( right ) has five levels, each with detailed furniture, totaling 330k triangles and 400k line segments. Both models can be rendered at high-quality and interactive frame rates using both the spine test and segment atlas methods."
+      }
+    },
+    {
+      "id": "#/texts/229",
+      "page": 10,
+      "order": 2,
+      "role": "caption",
+      "text": "Fig. 13. Drawing hidden lines using the segment atlas. Locally controlling line visibility, using the stylized focus technique of [12], can reveal the internal structure of a model while providing context or hiding unimportant areas. Because the segment atlas stores visibility information for all strokes, hidden and visible lines can be drawn with no extra cost to performance.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 690.9,
+        "x1": 563.05,
+        "y1": 735.98,
+        "width": 514.09,
+        "height": 45.08
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Fig. 13. Drawing hidden lines using the segment atlas. Locally controlling line visibility, using the stylized focus technique of [12], can reveal the internal structure of a model while providing context or hiding unimportant areas. Because the segment atlas stores visibility information for all strokes, hidden and visible lines can be drawn with no extra cost to performance."
+      }
+    },
+    {
+      "id": "#/texts/232",
+      "page": 11,
+      "order": 1,
+      "role": "paragraph",
+      "text": "photorealistic defocus effects, we can imagine a 'stylized motion blur' effect inspired by photorealistic motion blur. By storing the segment atlases from previous frames, we could blur the visibility values from consecutive frames rather than the final rendered strokes. Blurring visibility could, for example, allow a disappearing stroke to break up into shrinking splotches of ink, rather than simply fading out.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 58.61,
+        "x1": 300.03,
+        "y1": 138.89,
+        "width": 251.07,
+        "height": 80.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "photorealistic defocus effects, we can imagine a 'stylized motion blur' effect inspired by photorealistic motion blur. By storing the segment atlases from previous frames, we could blur the visibility values from consecutive frames rather than the final rendered strokes. Blurring visibility could, for example, allow a disappearing stroke to break up into shrinking splotches of ink, rather than simply fading out."
+      }
+    },
+    {
+      "id": "#/texts/233",
+      "page": 11,
+      "order": 2,
+      "role": "list_item",
+      "text": "Y. Lee, L. Markosian, S. Lee, and J. F. Hughes, 'Line drawings via abstracted shading,' ACM Trans. Graph. , vol. 26, no. 3, pp. 18:1-18:5, Jul. 2007.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 59.91,
+        "x1": 563.03,
+        "y1": 84.68,
+        "width": 251.06,
+        "height": 24.77
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[7] Y. Lee, L. Markosian, S. Lee, and J. F. Hughes, 'Line drawings via abstracted shading,' ACM Trans. Graph. , vol. 26, no. 3, pp. 18:1-18:5, Jul. 2007."
+      }
+    },
+    {
+      "id": "#/texts/234",
+      "page": 11,
+      "order": 3,
+      "role": "list_item",
+      "text": "A. Appel, 'The notion of quantitative invisibility and the machine rendering of solids,' in Proceedings of the 22nd national conference of the ACM , pp. 387-393, 1967.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 92.78,
+        "x1": 563.03,
+        "y1": 117.56,
+        "width": 251.06,
+        "height": 24.78
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[8] A. Appel, 'The notion of quantitative invisibility and the machine rendering of solids,' in Proceedings of the 22nd national conference of the ACM , pp. 387-393, 1967."
+      }
+    },
+    {
+      "id": "#/texts/235",
+      "page": 11,
+      "order": 4,
+      "role": "list_item",
+      "text": "H. Weghorst, G. Hooper, and D. P. Greenberg, 'Improved computational methods for ray tracing,' ACM Tran. Graph. , vol. 3, no. 1, pp. 52-69, Jan. 1984.",
+      "bbox": {
+        "x0": 311.97,
+        "y0": 125.66,
+        "x1": 563.03,
+        "y1": 150.43,
+        "width": 251.06,
+        "height": 24.77
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[9] H. Weghorst, G. Hooper, and D. P. Greenberg, 'Improved computational methods for ray tracing,' ACM Tran. Graph. , vol. 3, no. 1, pp. 52-69, Jan. 1984."
+      }
+    },
+    {
+      "id": "#/texts/236",
+      "page": 11,
+      "order": 5,
+      "role": "paragraph",
+      "text": "PREPRINT Storing copies of the segment atlas from previous frames could also allow for performance increases in situations where computing the atlas samples is a significant cost. Rather than recomputing each sample from scratch at each frame, the sample positions could be reprojected from frame to frame and fully refreshed intermittently. Reprojection would distort the sampling rate of each line and introduce errors for clipped lines, but may be worthwhile in some applications. Other future work in this area may include adapting line density control methods such as proposed in [18], [12] to operate more effectively on the GPU. Our current implementation of [12] exhibits some sparkling artifacts under animation, and causes a hit in performance. One challenge is that these approaches do not take into account partial visibility of lines, which is necessary for smooth animation. While not a direct extension of our method, we would also like it to handle other view-dependent lines such as smooth silhouettes [17], suggestive contours [22], and apparent ridges [23]. Including these line types at a reasonable performance cost may require an extraction algorithm that executes on the GPU. In contrast to lines that are fixed on the model, consistent parameterization of such lines from frame to frame presents its own challenge [11]. Acknowledgments We would like to thank the editors and reviewers for their comments and assistance in revising the paper, and Michael Burns and the Google 3D Warehouse for the example models. This work was sponsored in part by the NSF grant IIS0511965. REFERENCES [1] L. Markosian, M. A. Kowalski, D. Goldstein, S. J. Trychin, J. F. Hughes, and L. D. Bourdev, 'Real-time nonphotorealistic rendering,' in Proceedings of SIGGRAPH 1997 , pp. 415-420, 1997. [10] R. D. Kalnins, L. Markosian, B. J. Meier, M. A. Kowalski, J. C. Lee, P. L. Davidson, M. Webb, J. F. Hughes, and A. Finkelstein, 'WYSIWYG NPR: drawing strokes directly on 3d models,' in Proceedings of SIGGRAPH 2002 , pp. 755-762, 2002. [11] R. D. Kalnins, P. L. Davidson, L. Markosian, and A. Finkelstein, 'Coherent stylized silhouettes,' ACM Trans. Graph. , vol. 22, no. 3, pp. 856-861, Jul. 2003. [12] F. Cole, D. DeCarlo, A. Finkelstein, K. Kin, K. Morley, and A. Santella, 'Directing gaze in 3D models with stylized focus,' Proceedings of Eurographics Symposium on Rendering 2006 , pp. 377-387, Jun. 2006. [13] T. Isenberg, B. Freudenberg, N. Halper, S. Schlechtweg, and T. Strothotte, 'A Developer's Guide to Silhouette Algorithms for Polygonal Models,' IEEE Computer Graphics and Applications , vol. 23, no. 4, pp. 28-37, Jul. Aug. 2003. [14] M. McGuire and J. F. Hughes, 'Hardware-determined feature edges,' in Proceedings of NPAR 2004 , pp. 35-47, 2004. [15] S. Sengupta, M. Harris, Y. Zhang, and J. D. Owens, 'Scan primitives for GPU computing,' in Graphics Hardware 2007 , pp. 97-106, 2007. [16] S. Brabec and H.-P. Seidel, 'Shadow volumes on programmable graphics hardware,' in EUROGRAPHICS 2003 , ser. Computer Graphics Forum, vol. 22, pp. 433-440, no. 3. Eurographics, September 2003. [17] A. Hertzmann and D. Zorin, 'Illustrating smooth surfaces,' in Proceedings of SIGGRAPH 2000 , pp. 517-526, 2000. [18] S. Grabli, F. Durand, and F. Sillion, 'Density measure for line-drawing simplification,' in Proceedings of Pacific Graphics , pp. 309-318, 2004. [19] P. Barla, J. Thollot, and F. Sillion, 'Geometric Clustering for Line Drawing Simplification,' in Proceedings of Eurographics Symposium on Rendering 2005 , pp. 183-192, 2005. [20] S. Grabli, E. Turquin, F. Durand, and F. Sillion, 'Programmable style for NPR line drawing,' in Proceedings of Eurographics Symposium on Rendering 2004 , pp. 33-44, 407, 2004. [21] D. Horn, 'Stream reduction operations for GPGPU applications,' in GPU Gems 2 , ch. 36, pp. 573-589, M. Pharr, Ed. Addison Wesley, 2005. [22] D. DeCarlo, A. Finkelstein, S. Rusinkiewicz, and A. Santella, 'Suggestive contours for conveying shape,' ACM Trans. Graph. , vol. 22, no. 3, pp. 848-855, 2003. [23] T. Judd, F. Durand, and E. H. Adelson, 'Apparent ridges for line drawing,' ACM Trans. Graph. , vol. 26, no. 3, ar. 19, 2007.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 149.18,
+        "x1": 563.03,
+        "y1": 642.4,
+        "width": 514.07,
+        "height": 493.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PREPRINT Storing copies of the segment atlas from previous frames could also allow for performance increases in situations where computing the atlas samples is a significant cost. Rather than recomputing each sample from scratch at each frame, the sample positions could be reprojected from frame to frame and fully refreshed intermittently. Reprojection would distort the sampling rate of each line and introduce errors for clipped lines, but may be worthwhile in some applications. Other future work in this area may include adapting line density control methods such as proposed in [18], [12] to operate more effectively on the GPU. Our current implementation of [12] exhibits some sparkling artifacts under animation, and causes a hit in performance. One challenge is that these approaches do not take into account partial visibility of lines, which is necessary for smooth animation. While not a direct extension of our method, we would also like it to handle other view-dependent lines such as smooth silhouettes [17], suggestive contours [22], and apparent ridges [23]. Including these line types at a reasonable performance cost may require an extraction algorithm that executes on the GPU. In contrast to lines that are fixed on the model, consistent parameterization of such lines from frame to frame presents its own challenge [11]. Acknowledgments We would like to thank the editors and reviewers for their comments and assistance in revising the paper, and Michael Burns and the Google 3D Warehouse for the example models. This work was sponsored in part by the NSF grant IIS0511965. REFERENCES [1] L. Markosian, M. A. Kowalski, D. Goldstein, S. J. Trychin, J. F. Hughes, and L. D. Bourdev, 'Real-time nonphotorealistic rendering,' in Proceedings of SIGGRAPH 1997 , pp. 415-420, 1997. [10] R. D. Kalnins, L. Markosian, B. J. Meier, M. A. Kowalski, J. C. Lee, P. L. Davidson, M. Webb, J. F. Hughes, and A. Finkelstein, 'WYSIWYG NPR: drawing strokes directly on 3d models,' in Proceedings of SIGGRAPH 2002 , pp. 755-762, 2002. [11] R. D. Kalnins, P. L. Davidson, L. Markosian, and A. Finkelstein, 'Coherent stylized silhouettes,' ACM Trans. Graph. , vol. 22, no. 3, pp. 856-861, Jul. 2003. [12] F. Cole, D. DeCarlo, A. Finkelstein, K. Kin, K. Morley, and A. Santella, 'Directing gaze in 3D models with stylized focus,' Proceedings of Eurographics Symposium on Rendering 2006 , pp. 377-387, Jun. 2006. [13] T. Isenberg, B. Freudenberg, N. Halper, S. Schlechtweg, and T. Strothotte, 'A Developer's Guide to Silhouette Algorithms for Polygonal Models,' IEEE Computer Graphics and Applications , vol. 23, no. 4, pp. 28-37, Jul. Aug. 2003. [14] M. McGuire and J. F. Hughes, 'Hardware-determined feature edges,' in Proceedings of NPAR 2004 , pp. 35-47, 2004. [15] S. Sengupta, M. Harris, Y. Zhang, and J. D. Owens, 'Scan primitives for GPU computing,' in Graphics Hardware 2007 , pp. 97-106, 2007. [16] S. Brabec and H.-P. Seidel, 'Shadow volumes on programmable graphics hardware,' in EUROGRAPHICS 2003 , ser. Computer Graphics Forum, vol. 22, pp. 433-440, no. 3. Eurographics, September 2003. [17] A. Hertzmann and D. Zorin, 'Illustrating smooth surfaces,' in Proceedings of SIGGRAPH 2000 , pp. 517-526, 2000. [18] S. Grabli, F. Durand, and F. Sillion, 'Density measure for line-drawing simplification,' in Proceedings of Pacific Graphics , pp. 309-318, 2004. [19] P. Barla, J. Thollot, and F. Sillion, 'Geometric Clustering for Line Drawing Simplification,' in Proceedings of Eurographics Symposium on Rendering 2005 , pp. 183-192, 2005. [20] S. Grabli, E. Turquin, F. Durand, and F. Sillion, 'Programmable style for NPR line drawing,' in Proceedings of Eurographics Symposium on Rendering 2004 , pp. 33-44, 407, 2004. [21] D. Horn, 'Stream reduction operations for GPGPU applications,' in GPU Gems 2 , ch. 36, pp. 573-589, M. Pharr, Ed. Addison Wesley, 2005. [22] D. DeCarlo, A. Finkelstein, S. Rusinkiewicz, and A. Santella, 'Suggestive contours for conveying shape,' ACM Trans. Graph. , vol. 22, no. 3, pp. 848-855, 2003. [23] T. Judd, F. Durand, and E. H. Adelson, 'Apparent ridges for line drawing,' ACM Trans. Graph. , vol. 26, no. 3, ar. 19, 2007."
+      }
+    },
+    {
+      "id": "#/texts/237",
+      "page": 11,
+      "order": 6,
+      "role": "list_item",
+      "text": "J. D. Northrup and L. Markosian, 'Artistic silhouettes: a hybrid approach,' in Proceedings of NPAR 2000 , pp. 31-37, Jun. 2000.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 632.2,
+        "x1": 300.01,
+        "y1": 648.01,
+        "width": 251.05,
+        "height": 15.81
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[2] J. D. Northrup and L. Markosian, 'Artistic silhouettes: a hybrid approach,' in Proceedings of NPAR 2000 , pp. 31-37, Jun. 2000."
+      }
+    },
+    {
+      "id": "#/texts/238",
+      "page": 11,
+      "order": 7,
+      "role": "list_item",
+      "text": "F. Cole and A. Finkelstein, 'Partial visibility for stylized lines,' in Proceedings of NPAR 2008 , pp. 9-13, Jun. 2008.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 657.25,
+        "x1": 300.01,
+        "y1": 673.05,
+        "width": 251.05,
+        "height": 15.8
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[3] F. Cole and A. Finkelstein, 'Partial visibility for stylized lines,' in Proceedings of NPAR 2008 , pp. 9-13, Jun. 2008."
+      }
+    },
+    {
+      "id": "#/texts/239",
+      "page": 11,
+      "order": 8,
+      "role": "list_item",
+      "text": "F. Co1e and A. Finkelstein, 'Fast high-quality line visibility,' in Proceedings of I3D 2009 , pp. 115-120, Feb. 2009.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 682.15,
+        "x1": 300.02,
+        "y1": 698.1,
+        "width": 251.06,
+        "height": 15.95
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[4] F. Co1e and A. Finkelstein, 'Fast high-quality line visibility,' in Proceedings of I3D 2009 , pp. 115-120, Feb. 2009."
+      }
+    },
+    {
+      "id": "#/texts/240",
+      "page": 11,
+      "order": 9,
+      "role": "list_item",
+      "text": "X. Wu, 'An efficient antialiasing technique,' in Proceedings of SIGGRAPH 1991 , pp. 143-152, 1991.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 707.19,
+        "x1": 300.02,
+        "y1": 723.14,
+        "width": 251.06,
+        "height": 15.95
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[5] X. Wu, 'An efficient antialiasing technique,' in Proceedings of SIGGRAPH 1991 , pp. 143-152, 1991."
+      }
+    },
+    {
+      "id": "#/texts/241",
+      "page": 11,
+      "order": 10,
+      "role": "list_item",
+      "text": "R. Raskar and M. Cohen, 'Image precision silhouette edges,' in Proceedings of SI3D 1999 , pp. 135-140, 1999.",
+      "bbox": {
+        "x0": 48.96,
+        "y0": 732.24,
+        "x1": 300.02,
+        "y1": 748.19,
+        "width": 251.06,
+        "height": 15.95
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[6] R. Raskar and M. Cohen, 'Image precision silhouette edges,' in Proceedings of SI3D 1999 , pp. 135-140, 1999."
+      }
+    }
+  ]
+}

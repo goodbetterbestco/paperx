@@ -1,0 +1,98 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "A =± a 2 Yi zi ( 1 a) Zi+l 1| 1l",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 315.36,
+            "y0": 541.05,
+            "x1": 466.93,
+            "y1": 578.64,
+            "width": 151.57,
+            "height": 37.59
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "A = ± b 2 zi x1 ( 1 b) Xi+l |Zi+1 Xo 1 1",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 317.04,
+            "y0": 591.7,
+            "x1": 467.08,
+            "y1": 627.38,
+            "width": 150.04,
+            "height": 35.68
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "A = ± c 2 I Xo Yo i xi Yi (lc) Xi+l Yi+~ 1",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 315.36,
+            "y0": 646.96,
+            "x1": 470.17,
+            "y1": 675.66,
+            "width": 154.81,
+            "height": 28.7
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

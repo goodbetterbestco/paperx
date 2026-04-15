@@ -1,0 +1,2083 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "r ( t ) = o + ˆ d ∗ t.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 271.32,
+            "y0": 181.83,
+            "x1": 340.7,
+            "y1": 200.6,
+            "width": 69.38,
+            "height": 18.77
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "S w ( u, v ) = M -1 ∑ i =0 N -1 ∑ j =0 P w i,j B j,k u ( u ) B i,k v ( v )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 217.92,
+            "y0": 220.85,
+            "x1": 394.13,
+            "y1": 258.5,
+            "width": 176.21,
+            "height": 37.65
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "τ u = u j N -1+ k j =0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 268.2,
+            "y0": 304.85,
+            "x1": 338.69,
+            "y1": 318.52,
+            "width": 70.49,
+            "height": 13.67
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "τ v = v i M -1+ k v",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 268.92,
+            "y0": 327.77,
+            "x1": 341.89,
+            "y1": 340.11,
+            "width": 72.97,
+            "height": 12.34
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "{ } u { } i =0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 291.12,
+            "y0": 307.12,
+            "x1": 342.87,
+            "y1": 346.52,
+            "width": 51.75,
+            "height": 39.4
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "B j,k u ( u ) ≡   1 0 u -u j u j + ku -1 -u j B j,k u -1 ( u ) + u j + ku -u u j + ku -u j +1 B j +1 ,k u -1 ( u ) if k u = 1 and u ∈ [ u j , u j +1 if k u = 1 and u glyph[negationslash]∈ [ u j , u j +1 otherwise B i,k v ( v ) ≡    1 0 v -v i v i + kv -1 -v i B i,k v -1 ( v ) + v i + kv -v v i + kv -v i +1 B i +1 ,k v -1 ( v ) if k v = 1 and v ∈ [ v i , v i +1 ) if k v = 1 and v glyph[negationslash]∈ [ v i , v i +1 ) otherwise.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 91.08,
+            "y0": 365.43,
+            "x1": 511.58,
+            "y1": 472.82,
+            "width": 420.5,
+            "height": 107.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 154.8,
+            "y0": 357.74,
+            "x1": 163.69,
+            "y1": 395.06,
+            "width": 8.89,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": ") )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 512.04,
+            "y0": 366.99,
+            "x1": 515.93,
+            "y1": 387.78,
+            "width": 3.89,
+            "height": 20.79
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "N 1 = { ( ˆ d y , -ˆ d x , 0) if | ˆ d x | > | ˆ d y | and | ˆ d x | > | ˆ d z | (0 , ˆ d z , -ˆ d y ) otherwise .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 191.4,
+            "y0": 536.3,
+            "x1": 414.5,
+            "y1": 574.4,
+            "width": 223.1,
+            "height": 38.1
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "N 2 = N 1 × ˆ d .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 274.68,
+            "y0": 598.71,
+            "x1": 337.34,
+            "y1": 617.48,
+            "width": 62.66,
+            "height": 18.77
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "d 1 = -N 1 · o",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 268.68,
+            "y0": 642.04,
+            "x1": 340.67,
+            "y1": 658.52,
+            "width": 71.99,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "d 2 = -N 2 · o .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 268.68,
+            "y0": 656.92,
+            "x1": 343.46,
+            "y1": 673.4,
+            "width": 74.78,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0013",
+      "kind": "display",
+      "display_latex": "P 1 ( S ( u, v ) , 1) = 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 255.0,
+            "y0": 698.16,
+            "x1": 354.32,
+            "y1": 707.9,
+            "width": 99.32,
+            "height": 9.74
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0014",
+      "kind": "display",
+      "display_latex": "P ( S ( u, v ) , 1) = 0 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 255.0,
+            "y0": 713.16,
+            "x1": 357.14,
+            "y1": 722.1,
+            "width": 102.14,
+            "height": 8.94
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0015",
+      "kind": "display",
+      "display_latex": "· 2 ·",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 262.8,
+            "y0": 697.84,
+            "x1": 272.78,
+            "y1": 729.32,
+            "width": 9.98,
+            "height": 31.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0016",
+      "kind": "display",
+      "display_latex": "n 1 = C 1 ∗ max [ t i ,t i +1 ) { curvature( c ( t )) } ∗ arclen( c ( t )) [ t i ,t i +1 ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 185.88,
+            "y0": 483.88,
+            "x1": 426.14,
+            "y1": 500.36,
+            "width": 240.26,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0017",
+      "kind": "display",
+      "display_latex": "h = r -d = r -r cos θ 2 ≈ r (1 -(1 -θ 2 8 )) = rθ 2 8 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 256.08,
+            "y0": 580.0,
+            "x1": 355.85,
+            "y1": 665.94,
+            "width": 99.77,
+            "height": 85.94
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0018",
+      "kind": "display",
+      "display_latex": "n 2 = 2 π √ 8 h r",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 230.4,
+            "y0": 694.23,
+            "x1": 289.56,
+            "y1": 737.06,
+            "width": 59.16,
+            "height": 42.83
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0019",
+      "kind": "display",
+      "display_latex": "= 2 π √ r √ 8 h ≈ C 2 ∗ √ arclen( c ( t )) [ t i ,t i +1 ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 250.8,
+            "y0": 205.0,
+            "x1": 381.62,
+            "y1": 269.78,
+            "width": 130.82,
+            "height": 64.78
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0020",
+      "kind": "display",
+      "display_latex": "n = C ∗ max [ t i ,t i +1 ) { curvature( c ( t )) } ∗ arclen( c ( t )) 3 2 [ t i ,t i +1 )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 191.4,
+            "y0": 289.49,
+            "x1": 420.12,
+            "y1": 308.72,
+            "width": 228.72,
+            "height": 19.23
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0021",
+      "kind": "display",
+      "display_latex": "∫ t i +1 t i | c ′ ( t ) | dt = avg [ t i ,t i +1 ) {| c ′ ( t ) |} ∗ ( t i +1 -t i ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 201.72,
+            "y0": 346.58,
+            "x1": 410.3,
+            "y1": 383.9,
+            "width": 208.58,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0022",
+      "kind": "display",
+      "display_latex": "curvature( c ( t )) = | c ′′ ( t ) × c ′ ( t ) | | c ′ ( t ) | 3 = | c ′′ ( t ) || c ′ ( t ) || sin θ | | c ′ ( t ) | 3 = | c ′′ ( t ) || sin θ | | c ′ ( t ) | 2 ≤ | c ′′ ( t ) | | c ′ ( t ) | 2",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 219.24,
+            "y0": 418.25,
+            "x1": 391.46,
+            "y1": 532.28,
+            "width": 172.22,
+            "height": 114.03
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0023",
+      "kind": "display",
+      "display_latex": "max [ t i ,t i +1 ) { curvature( c ( t ) } ≈ max [ t i ,t i +1 ) {| c ′′ ( t ) |} avg [ t i ,t i +1 ) {| c ′ ( t ) |} 2 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 204.36,
+            "y0": 597.17,
+            "x1": 407.66,
+            "y1": 629.36,
+            "width": 203.3,
+            "height": 32.19
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0024",
+      "kind": "display",
+      "display_latex": "c ′ ( t ) = i ∑ j = i -k +2 ( k -1)( P j -P j -1 ) t j + k -1 -t j B j,k -1 ( t )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 209.52,
+            "y0": 657.77,
+            "x1": 402.41,
+            "y1": 695.18,
+            "width": 192.89,
+            "height": 37.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0025",
+      "kind": "display",
+      "display_latex": "avg [ t i ,t i +1 ) { c ′ ( t ) } ≈ 1 k -1 i ∑ j = i -k +2 ( k -1) ( P j -P j -1 ) t j + k -1 -t j = 1 k -1 i ∑ j = i -k +2 V j",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 146.28,
+            "y0": 99.74,
+            "x1": 465.15,
+            "y1": 137.06,
+            "width": 318.87,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0026",
+      "kind": "display",
+      "display_latex": "avg [ t i ,t i +1 ) {| c ′ ( t ) |} ≈ 1 k -1 i ∑ j = i -k +2 | V j | .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 218.88,
+            "y0": 164.21,
+            "x1": 393.02,
+            "y1": 201.62,
+            "width": 174.14,
+            "height": 37.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0027",
+      "kind": "display",
+      "display_latex": "c ′′ ( t ) = i ∑ j = i -k +3 ( k -2) [ V j -V j -1 ] t j + k -2 -t j B j,k -2 ( t ) = i ∑ j = i -k +3 A j B j,k -2 ( t )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 159.6,
+            "y0": 222.77,
+            "x1": 452.33,
+            "y1": 260.18,
+            "width": 292.73,
+            "height": 37.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0028",
+      "kind": "display",
+      "display_latex": "max [ t i ,t i +1 ) {| c ′′ ( t ) |} ≈ max i -k +3 ≤ j ≤ i {| A j |} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 230.16,
+            "y0": 296.09,
+            "x1": 381.86,
+            "y1": 318.12,
+            "width": 151.7,
+            "height": 22.03
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0029",
+      "kind": "display",
+      "display_latex": "n = C ∗ max [ t i ,t i +1 ) {| c ′′ ( t ) |} ∗ [avg [ t i ,t i +1 ) {| c ′ ( t ) |} ∗ ( t i +1 -t i )] 3 2 avg [ t i ,t i +1 ) {| c ′ ( t ) |} 2 = C ∗ max [ t i ,t i +1 ) {| c ′′ ( t ) |} ∗ ( t i +1 -t i )] 3 2 avg [ t i ,t i +1 ) {| c ′ ( t ) |} 1 2 = C ∗ max i -k +3 ≤ j ≤ i {| A j |} ( t i +1 -t i ) 3 2 ( 1 k -1 ∑ i j = i -k +2 | V j | ) 1 2 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 157.2,
+            "y0": 350.21,
+            "x1": 453.02,
+            "y1": 459.86,
+            "width": 295.82,
+            "height": 109.65
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0030",
+      "kind": "display",
+      "display_latex": "F ( u, v ) = ( N 1 · S ( u, v ) + d 1 N 2 · S ( u, v ) + d 2 ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 233.52,
+            "y0": 574.7,
+            "x1": 378.5,
+            "y1": 612.02,
+            "width": 144.98,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0031",
+      "kind": "display",
+      "display_latex": "( u n +1 v n +1 ) = ( u n v n ) -J -1 ( u n , v n ) ∗ F ( u n , v n )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 202.32,
+            "y0": 693.86,
+            "x1": 409.73,
+            "y1": 731.18,
+            "width": 207.41,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0032",
+      "kind": "display",
+      "display_latex": "J = ( F u , F v ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 276.24,
+            "y0": 69.12,
+            "x1": 335.66,
+            "y1": 78.86,
+            "width": 59.42,
+            "height": 9.74
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0033",
+      "kind": "display",
+      "display_latex": "F u = ( N 1 · S u ( u, v ) N 2 · S u ( u, v ) )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 243.24,
+            "y0": 98.18,
+            "x1": 364.48,
+            "y1": 135.5,
+            "width": 121.24,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0034",
+      "kind": "display",
+      "display_latex": "F v = ( N 1 · S v ( u, v ) N 2 · S v ( u, v ) ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 243.36,
+            "y0": 126.14,
+            "x1": 368.78,
+            "y1": 163.46,
+            "width": 125.42,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0035",
+      "kind": "display",
+      "display_latex": "J -1 = adj( J ) det( J ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 274.68,
+            "y0": 187.8,
+            "x1": 337.34,
+            "y1": 210.3,
+            "width": 62.66,
+            "height": 22.5
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0036",
+      "kind": "display",
+      "display_latex": "C = ( C 11 C 12 C 21 C 22 )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 262.32,
+            "y0": 234.26,
+            "x1": 349.72,
+            "y1": 271.58,
+            "width": 87.4,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0037",
+      "kind": "display",
+      "display_latex": "adj( J ) = ( J 22 -J 12 -J 21 J 11 ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 244.08,
+            "y0": 299.42,
+            "x1": 367.94,
+            "y1": 336.74,
+            "width": 123.86,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0038",
+      "kind": "display",
+      "display_latex": "|| F ( u n , v n ) || < glyph[epsilon1]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 271.44,
+            "y0": 376.24,
+            "x1": 340.54,
+            "y1": 392.72,
+            "width": 69.1,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0039",
+      "kind": "display",
+      "display_latex": "|| F ( u n +1 , v n +1 ) || > || F ( u n , v n ) || .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 236.04,
+            "y0": 445.12,
+            "x1": 375.86,
+            "y1": 461.6,
+            "width": 139.82,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0040",
+      "kind": "display",
+      "display_latex": "u glyph[negationslash]∈ [ u k u -1 , u N ) , v glyph[negationslash]∈ [ v k v -1 , v M ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 235.56,
+            "y0": 490.12,
+            "x1": 376.46,
+            "y1": 506.6,
+            "width": 140.9,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0041",
+      "kind": "display",
+      "display_latex": "iter > MAXITER.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 262.2,
+            "y0": 535.47,
+            "x1": 350.07,
+            "y1": 544.37,
+            "width": 87.87,
+            "height": 8.9
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0042",
+      "kind": "display",
+      "display_latex": "| det( J ) | < glyph[epsilon1].",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 278.64,
+            "y0": 625.72,
+            "x1": 333.5,
+            "y1": 642.2,
+            "width": 54.86,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0043",
+      "kind": "display",
+      "display_latex": "( u k +1 v k +1 ) = ( u k v k ) + . 1 ∗ ( drand48() ∗ ( u 0 -u k ) drand48() ∗ ( v 0 -v k ) )",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 185.4,
+            "y0": 659.66,
+            "x1": 426.64,
+            "y1": 696.98,
+            "width": 241.24,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0044",
+      "kind": "display",
+      "display_latex": "t = ( P -o ) · ˆ d .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 272.64,
+            "y0": 263.31,
+            "x1": 339.38,
+            "y1": 282.08,
+            "width": 66.74,
+            "height": 18.77
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0045",
+      "kind": "display",
+      "display_latex": "N i,k ( t ) =    1 if k = 1 and t ∈ [ t i , t i +1 ) 0 if k = 1 and t glyph[negationslash]∈ [ t i , t i +1 ) t -t i t i + k -1 -t i N i,k -1 ( t ) + t i + k -t t i + k -t i +1 N i +1 ,k -1 ( t ) otherwise.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 129.12,
+            "y0": 494.66,
+            "x1": 476.81,
+            "y1": 558.86,
+            "width": 347.69,
+            "height": 64.2
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0046",
+      "kind": "display",
+      "display_latex": "N µ, 2 ( t ∗ ) = t ∗ -t µ t µ + k -1 -t µ N µ, 1 ( t ∗ ) + t i + k -t ∗ t µ + k -t µ +1 N µ +1 , 1 ( t ∗ ) = 0 ∗ 1 + t i + k -t ∗ t µ + k -t µ +1 ∗ 0 = 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 174.48,
+            "y0": 585.88,
+            "x1": 437.57,
+            "y1": 648.54,
+            "width": 263.09,
+            "height": 62.66
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0047",
+      "kind": "display",
+      "display_latex": "N µ -1 , 2 ( t ∗ ) = t ∗ -t µ -1 t µ + k -2 -t µ -1 N µ -1 , 1 ( t ∗ ) + t µ + k -1 -t ∗ t µ + k -1 -t µ N µ, 1 ( t ∗ ) = 0 ∗ 0 + 1 ∗ 1 = 1 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 164.16,
+            "y0": 671.08,
+            "x1": 447.77,
+            "y1": 722.1,
+            "width": 283.61,
+            "height": 51.02
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0048",
+      "kind": "display",
+      "display_latex": "N µ -1 , 3 ( t ∗ ) = t ∗ -t µ -1 ( · · · ) ∗ 1 + ( · · · ) ∗ 0 = 0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 218.16,
+            "y0": 72.4,
+            "x1": 393.92,
+            "y1": 108.18,
+            "width": 175.76,
+            "height": 35.78
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0049",
+      "kind": "display",
+      "display_latex": "N µ -2 , 3 ( t ∗ ) = ( · · · ) ∗ 0 + t µ -2+ k -t ∗ t µ -2+ k -t µ -1 ∗ 1 = 1",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 207.36,
+            "y0": 117.28,
+            "x1": 404.6,
+            "y1": 153.3,
+            "width": 197.24,
+            "height": 36.02
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0050",
+      "kind": "display",
+      "display_latex": "c ( t ∗ ) = ∑ i N i,k ( t ∗ ) ω i D i ∑ i N i,k ( t ∗ ) ω i = ω µ -k +1 D µ -k + 1 ω µ -k +1 = D µ -k + 1 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 184.44,
+            "y0": 170.66,
+            "x1": 427.58,
+            "y1": 221.66,
+            "width": 243.14,
+            "height": 51.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0051",
+      "kind": "display",
+      "display_latex": "c ( t ) = ∑ i N i,k ( t ) ω i D i ∑ i N i,k ( t ) ω i = ∑ i N i,k ( t ) D ω i ∑ i N i,k ( t ) ω i = D ( t ) ω ( t ) ,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 199.92,
+            "y0": 229.1,
+            "x1": 412.1,
+            "y1": 280.1,
+            "width": 212.18,
+            "height": 51.0
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0052",
+      "kind": "display",
+      "display_latex": "c ′ ( t ) = ω ( t )( D ω ) ′ ( t ) -D ω ( t ) ω ′ ( t ) ω ( t ) 2 .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 230.64,
+            "y0": 282.65,
+            "x1": 381.38,
+            "y1": 306.9,
+            "width": 150.74,
+            "height": 24.25
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0053",
+      "kind": "display",
+      "display_latex": "N ′ i,k ( t ) = ( k -1) [ N i,k -1 ( t ) t i + k -1 -t i -N i +1 ,k -1 ( t ) t i + k -t i +1 ] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 204.48,
+            "y0": 334.94,
+            "x1": 407.54,
+            "y1": 372.8,
+            "width": 203.06,
+            "height": 37.86
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0054",
+      "kind": "display",
+      "display_latex": "( D ω ) ′ ( t ∗ ) = ∑ i N ′ i,k ( t ∗ ) D ω i = ( k -1) ∑ i D ω i ( N i,k -1 ( t ∗ ) t i + k -1 -t i -N i +1 ,k -1 ( t ∗ ) t i + k -t i +1 ) = ( k -1) [ ∑ i D ω i N i,k -1 ( t ∗ ) t i + k -1 -t i -∑ i D ω i N i +1 ,k -1 ( t ∗ ) t i + k -t i +1 ] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 158.04,
+            "y0": 391.94,
+            "x1": 453.98,
+            "y1": 494.54,
+            "width": 295.94,
+            "height": 102.6
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0055",
+      "kind": "display",
+      "display_latex": "( D ω ) ′ ( t ∗ ) = ( k -1) [ D ω µ -k + 2 t µ +1 -t µ -k +2 -D ω µ -k + 1 t µ +1 -t µ -k +2 ] . (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 186.0,
+            "y0": 503.9,
+            "x1": 558.09,
+            "y1": 541.76,
+            "width": 372.09,
+            "height": 37.86
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0056",
+      "kind": "display",
+      "display_latex": "ω ′ ( t ∗ ) = ( k -1) [ ω µ -k +2 t µ +1 -t µ -k +2 -ω µ -k +1 t µ +1 -t µ -k +2 ] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 183.96,
+            "y0": 550.22,
+            "x1": 408.14,
+            "y1": 588.08,
+            "width": 224.18,
+            "height": 37.86
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0057",
+      "kind": "display",
+      "display_latex": "c ′ ( t ∗ ) = ( k -1)   D ω µ -k + 2 -D ω µ -k + 1 t µ +1 -t µ -k +2 ω µ -k +1 -D ω µ -k + 1 ω µ -k +2 -ω µ -k +1 t µ +1 -t µ -k +2 ω 2 µ -k +1   = k -1 ( t µ +1 -t µ -k +2 ) ω µ -k +1 [ D ω µ -k + 2 -D ω µ -k + 1 ω µ -k +2 ω µ -k +1 ] = k -1 ( t µ +1 -t µ -k +2 ) ω µ -k +1 [ ω µ -k +2 D µ -k + 2 -ω µ -k +1 D µ -k + 1 ω µ -k +2 ω µ -k +1 ] = ( k -1) ω µ -k +2 ( t µ +1 -t ∗ ) ω µ -k +1 [ D µ -k + 2 -D µ -k + 1 ] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 130.32,
+            "y0": 597.74,
+            "x1": 480.12,
+            "y1": 731.48,
+            "width": 349.8,
+            "height": 133.74
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0058",
+      "kind": "display",
+      "display_latex": "S ( u ∗ , v ∗ ) = D µ u -k u + 1 ,µ v -k v + 1 S u ( u ∗ , v ∗ ) = ( k u -1) ω µ u -k u +2 ,µ v -k v +1 ( u µ u +1 -u ∗ ) ω µ u -k u +1 ,µ v -k v +1 [ D µ u -k u + 2 ,µ v -k v + 1 -D µ u -k u + 1 ,µ v -k v + 1 ] S v ( u ∗ , v ∗ ) = ( k v -1) ω µ u -k u +1 ,µ v -k v +2 ( v µ v +1 -v ∗ ) ω µ u -k u +1 ,µ v -k v +1 [ D µ u -k u + 1 ,µ v -k v + 2 -D µ u -k u + 1 ,µ v -k v + 1 ] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 109.92,
+            "y0": 91.32,
+            "x1": 502.1,
+            "y1": 163.28,
+            "width": 392.18,
+            "height": 71.96
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0059",
+      "kind": "display",
+      "display_latex": "n ( u ∗ , v ∗ ) = S u ( u ∗ , v ∗ ) × S v ( u ∗ , v ∗ ) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 229.08,
+            "y0": 190.72,
+            "x1": 382.94,
+            "y1": 207.2,
+            "width": 153.86,
+            "height": 16.48
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0060",
+      "kind": "display",
+      "display_latex": "D ω = AP w .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 278.88,
+            "y0": 356.43,
+            "x1": 333.14,
+            "y1": 367.5,
+            "width": 54.26,
+            "height": 11.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0061",
+      "kind": "display",
+      "display_latex": "α ′ µ ′ , 0 α ′ µ ′ -1 , 1 α ′ µ ′ , 1 . . . . . . α ′ µ ′ -ν,ν · · · α ′ µ ′ ,ν",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 254.16,
+            "y0": 426.05,
+            "x1": 357.14,
+            "y1": 487.4,
+            "width": 102.98,
+            "height": 61.35
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0062",
+      "kind": "display",
+      "display_latex": "α ′ j, 1 = δ j,µ ′ α ′ j,p +1 = γ j,p α ′ j,p +(1 -γ j +1 ,p ) α ′ j +1 ,p γ j,p = ( t ∗ -τ µ ′ -p + j -( k -1 -ν ) ) d, if d = τ µ ′ +1+ j -τ µ ′ -p + j -( k -1 -ν ) > 0 arbitrary otherwise.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 128.88,
+            "y0": 513.53,
+            "x1": 476.96,
+            "y1": 567.84,
+            "width": 348.08,
+            "height": 54.31
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0063",
+      "kind": "display",
+      "display_latex": "{",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 183.24,
+            "y0": 538.1,
+            "x1": 190.74,
+            "y1": 575.42,
+            "width": 7.5,
+            "height": 37.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0064",
+      "kind": "display",
+      "display_latex": "α ′ j,ν = (1 -γ µ ′ , 0 ) l j,ν + γ µ ′ , 0 r j,ν",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 238.44,
+            "y0": 355.85,
+            "x1": 372.53,
+            "y1": 374.24,
+            "width": 134.09,
+            "height": 18.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0065",
+      "kind": "display",
+      "display_latex": "D ω = A u P w A T v .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 268.44,
+            "y0": 459.27,
+            "x1": 343.58,
+            "y1": 471.98,
+            "width": 75.14,
+            "height": 12.71
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0066",
+      "kind": "display",
+      "display_latex": "( D ω µ u -k u + 1 ,µ v -k v + 1 D ω µ u -k u + 1 ,µ v -k v + 2 D ω µ u -k u + 2 ,µ v -k v + 1 D ω µ u -k u + 2 ,µ v -k v + 2 ) = ( ( A u ) µ u + k u +1 , [ µ ′ u -ν u ...µ ′ u ] ( A u ) µ u + k u +2 , [ µ ′ u -ν u ...µ ′ u ] ) P w [ µ ′ u -ν u ...µ ′ u ][ µ ′ v -ν v ...µ ′ v ] ( ( A v ) µ v + k v +1 , [ µ ′ v -ν v ...µ ′ v ] ( A v ) µ v + k v +2 , [ µ ′ v -ν v ...µ ′ v ] ) T",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 123.0,
+            "y0": 493.82,
+            "x1": 487.49,
+            "y1": 558.14,
+            "width": 364.49,
+            "height": 64.32
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0067",
+      "kind": "display",
+      "display_latex": "A = 1 2 n ∑ i =0 u i v ( i +1) mod n -u ( i +1) mod n v i .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 217.56,
+            "y0": 219.17,
+            "x1": 394.46,
+            "y1": 256.58,
+            "width": 176.9,
+            "height": 37.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

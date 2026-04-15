@@ -1,0 +1,2670 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "1989_detecting_and_decomposing_self_overlapping_curves",
+  "title": "Detecting and Decomposing Self-Overlapping Curves",
+  "source": {
+    "pdf_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/1989_detecting_and_decomposing_self_overlapping_curves.pdf",
+    "page_count": 8,
+    "page_sizes_pt": [
+      {
+        "page": 1,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 2,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 3,
+        "width": 614.0,
+        "height": 793.0
+      },
+      {
+        "page": 4,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 5,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 6,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 7,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 8,
+        "width": 614.0,
+        "height": 793.0
+      }
+    ]
+  },
+  "build": {
+    "created_at": "2026-04-15T16:57:03Z",
+    "updated_at": "2026-04-15T16:57:03Z",
+    "builder_version": "0.2.0",
+    "sources": {
+      "native_pdf": true,
+      "layout_engine": "docling",
+      "math_engine": "docling+heuristic",
+      "figure_engine": "local",
+      "text_engine": "native_pdf"
+    },
+    "flags": {
+      "use_external_layout": true,
+      "use_external_math": true,
+      "rebuild": false
+    },
+    "inputs": {
+      "pdf": {
+        "path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/1989_detecting_and_decomposing_self_overlapping_curves.pdf",
+        "exists": true,
+        "size_bytes": 768125,
+        "modified_at": "2026-04-13T16:18:56Z",
+        "sha256": "d57df22d3ac5fe4c87da10410906ad02b1dd40073705a98b7e0cbcf04fe8db2b"
+      },
+      "external_layout": {
+        "path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/canonical_sources/layout.json",
+        "exists": true,
+        "size_bytes": 119759,
+        "modified_at": "2026-04-15T16:57:01Z",
+        "sha256": "edaaee21780ece0bd7ded061c97fc9b71b9557b7a709061af1431ecdf8978316"
+      },
+      "external_math": {
+        "path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/canonical_sources/math.json",
+        "exists": true,
+        "size_bytes": 43,
+        "modified_at": "2026-04-15T16:57:01Z",
+        "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
+      }
+    },
+    "pipeline": {
+      "builder_version": "0.2.0",
+      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "modules": {
+        "scripts/kernel/canonical/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
+        "scripts/kernel/canonical/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
+        "scripts/kernel/canonical/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
+        "scripts/kernel/canonical/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
+        "scripts/kernel/canonical/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
+        "scripts/kernel/canonical/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
+        "scripts/kernel/canonical/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
+        "scripts/kernel/canonical/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "scripts/kernel/canonical/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
+        "scripts/kernel/canonical/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "scripts/kernel/canonical/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      }
+    }
+  },
+  "front_matter": {
+    "title": "Detecting and Decomposing Self-Overlapping Curves",
+    "authors": [
+      {
+        "name": "P. W. SHOR",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Nokia Bell Labs",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Murray",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "NJ",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "United States",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "C. J. V AN WYK",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      },
+      {
+        "name": "Open Access Support provided by",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "aff-1",
+        "department": "AT&T Bell Laboratories Murray Hill, New Jersey 07974",
+        "institution": "",
+        "address": ""
+      }
+    ],
+    "abstract_block_id": "blk-front-abstract-1",
+    "funding_block_id": null
+  },
+  "styles": {
+    "document_style": {},
+    "category_styles": {},
+    "block_styles": {}
+  },
+  "sections": [
+    {
+      "id": "sec-acknowledgments",
+      "label": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0002"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 35.28,
+            "y0": 58.26,
+            "x1": 130.35,
+            "y1": 69.29,
+            "width": 95.07,
+            "height": 11.03
+          },
+          "engine": "docling"
+        }
+      ]
+    },
+    {
+      "id": "sec-references",
+      "label": null,
+      "title": "References",
+      "level": 1,
+      "block_ids": [
+        "blk-reference-0003",
+        "blk-reference-0004",
+        "blk-reference-0005",
+        "blk-reference-0006",
+        "blk-reference-0007",
+        "blk-reference-0008",
+        "blk-reference-0009",
+        "blk-reference-0010"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.0,
+            "y0": 176.82,
+            "x1": 97.47,
+            "y1": 187.85,
+            "width": 61.47,
+            "height": 11.03
+          },
+          "engine": "docling"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-front-abstract-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "PDF Download 73833.73838.pdf 07 April 2026 Total Citations: 2 Total Downloads: 577 Published: 05 June 1989 Citation in BibTeX format Conference Sponsors: SIGACT SIGGRAPH"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 494.12,
+            "y0": 69.87,
+            "x1": 549.29,
+            "y1": 102.59,
+            "width": 55.17,
+            "height": 32.72
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 463.7,
+            "y0": 114.88,
+            "x1": 533.52,
+            "y1": 120.68,
+            "width": 69.82,
+            "height": 5.8
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 463.7,
+            "y0": 133.16,
+            "x1": 544.21,
+            "y1": 138.77,
+            "width": 80.51,
+            "height": 5.61
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 463.7,
+            "y0": 151.44,
+            "x1": 531.53,
+            "y1": 173.8,
+            "width": 67.83,
+            "height": 22.36
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0002",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Micha Sharir posed this problem at the Eighth Geometry Day at the Courant Institute. Chi-Yuan Lo suggests that its solution could be useful in processing VLSI layouts that are represented by polygon bouudaries [NSi30]. We are grateful for several discussions with Kerr Clarkson. Subhash Suri, and Bob Tarjan. Steve Fortune offered some suggestions that greatly simplified the notation (Really!). David Johnson, David Levine, and Alex Schaffer ma& helpful comments on the manuscript."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 35.28,
+            "y0": 73.86,
+            "x1": 283.23,
+            "y1": 162.41,
+            "width": 247.95,
+            "height": 88.55
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0003",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-001"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.24,
+            "y0": 192.11,
+            "x1": 284.19,
+            "y1": 214.49,
+            "width": 247.95,
+            "height": 22.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0004",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-002"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.24,
+            "y0": 219.06,
+            "x1": 283.71,
+            "y1": 263.45,
+            "width": 247.47,
+            "height": 44.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0005",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-003"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 268.26,
+            "x1": 282.75,
+            "y1": 312.89,
+            "width": 246.27,
+            "height": 44.63
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0006",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-004"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 317.7,
+            "x1": 282.27,
+            "y1": 339.77,
+            "width": 245.79,
+            "height": 22.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0007",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-005"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 344.82,
+            "x1": 283.95,
+            "y1": 378.41,
+            "width": 247.47,
+            "height": 33.59
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0008",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-006"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.72,
+            "y0": 382.91,
+            "x1": 284.2,
+            "y1": 417.05,
+            "width": 247.48,
+            "height": 34.14
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0009",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-007"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 421.62,
+            "x1": 283.23,
+            "y1": 454.25,
+            "width": 246.75,
+            "height": 32.63
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0010",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-008"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 458.82,
+            "x1": 283.71,
+            "y1": 481.13,
+            "width": 247.23,
+            "height": 22.31
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.6,
+            "y0": 58.5,
+            "x1": 386.68,
+            "y1": 69.53,
+            "width": 83.08,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.08,
+            "y0": 72.9,
+            "x1": 548.2,
+            "y1": 94.97,
+            "width": 244.12,
+            "height": 22.07
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.36,
+            "y0": 98.82,
+            "x1": 549.4,
+            "y1": 154.01,
+            "width": 246.04,
+            "height": 55.19
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.6,
+            "y0": 157.62,
+            "x1": 549.4,
+            "y1": 201.53,
+            "width": 245.8,
+            "height": 43.91
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.84,
+            "y0": 205.14,
+            "x1": 550.12,
+            "y1": 239.45,
+            "width": 246.28,
+            "height": 34.31
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.08,
+            "y0": 243.06,
+            "x1": 552.04,
+            "y1": 321.77,
+            "width": 247.96,
+            "height": 78.71
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 325.62,
+            "x1": 551.8,
+            "y1": 370.49,
+            "width": 247.0,
+            "height": 44.87
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 374.34,
+            "x1": 550.84,
+            "y1": 430.25,
+            "width": 246.04,
+            "height": 55.91
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 433.14,
+            "x1": 476.2,
+            "y1": 444.41,
+            "width": 171.4,
+            "height": 11.27
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.56,
+            "y0": 448.26,
+            "x1": 551.32,
+            "y1": 481.61,
+            "width": 246.76,
+            "height": 33.35
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 130.32,
+            "y0": 172.91,
+            "x1": 145.38,
+            "y1": 186.09,
+            "width": 15.06,
+            "height": 13.18
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 253.2,
+            "y0": 171.21,
+            "x1": 264.72,
+            "y1": 181.16,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 187.2,
+            "y0": 694.65,
+            "x1": 212.4,
+            "y1": 704.6,
+            "width": 25.2,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 376.08,
+            "y0": 175.05,
+            "x1": 387.6,
+            "y1": 185.0,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 432.48,
+            "y0": 199.77,
+            "x1": 458.4,
+            "y1": 209.72,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 432.48,
+            "y0": 199.77,
+            "x1": 458.4,
+            "y1": 209.72,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 495.6,
+            "y0": 173.54,
+            "x1": 509.82,
+            "y1": 185.65,
+            "width": 14.22,
+            "height": 12.11
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 442.08,
+            "y0": 485.37,
+            "x1": 467.76,
+            "y1": 495.32,
+            "width": 25.68,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 458.88,
+            "y0": 551.56,
+            "x1": 463.55,
+            "y1": 558.02,
+            "width": 4.67,
+            "height": 6.46
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 420.48,
+            "y0": 565.29,
+            "x1": 426.96,
+            "y1": 575.24,
+            "width": 6.48,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 442.08,
+            "y0": 485.37,
+            "x1": 467.76,
+            "y1": 495.32,
+            "width": 25.68,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 496.8,
+            "y0": 567.21,
+            "x1": 503.04,
+            "y1": 577.16,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 430.56,
+            "y0": 573.69,
+            "x1": 436.56,
+            "y1": 583.64,
+            "width": 6.0,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 399.12,
+            "y0": 649.96,
+            "x1": 406.19,
+            "y1": 656.42,
+            "width": 7.07,
+            "height": 6.46
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 406.32,
+            "y0": 598.89,
+            "x1": 412.56,
+            "y1": 608.84,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 509.52,
+            "y0": 601.05,
+            "x1": 515.76,
+            "y1": 611.0,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 420.0,
+            "y0": 636.57,
+            "x1": 424.56,
+            "y1": 646.52,
+            "width": 4.56,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 457.92,
+            "y0": 641.85,
+            "x1": 462.24,
+            "y1": 651.8,
+            "width": 4.32,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 495.84,
+            "y0": 638.73,
+            "x1": 502.32,
+            "y1": 648.68,
+            "width": 6.48,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 456.48,
+            "y0": 655.53,
+            "x1": 465.84,
+            "y1": 665.48,
+            "width": 9.36,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 447.84,
+            "y0": 679.77,
+            "x1": 474.0,
+            "y1": 689.72,
+            "width": 26.16,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 92.03,
+            "y0": 497.3,
+            "x1": 98.93,
+            "y1": 505.36,
+            "width": 6.9,
+            "height": 8.06
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 102.38,
+            "y0": 466.22,
+            "x1": 109.29,
+            "y1": 474.28,
+            "width": 6.91,
+            "height": 8.06
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 110.44,
+            "y0": 567.52,
+            "x1": 120.79,
+            "y1": 580.19,
+            "width": 10.35,
+            "height": 12.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 154.15,
+            "y0": 581.34,
+            "x1": 166.8,
+            "y1": 599.76,
+            "width": 12.65,
+            "height": 18.42
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 110.44,
+            "y0": 640.05,
+            "x1": 124.24,
+            "y1": 651.56,
+            "width": 13.8,
+            "height": 11.51
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 186.36,
+            "y0": 358.0,
+            "x1": 211.67,
+            "y1": 367.33,
+            "width": 25.31,
+            "height": 9.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 184.06,
+            "y0": 561.67,
+            "x1": 208.22,
+            "y1": 573.33,
+            "width": 24.16,
+            "height": 11.66
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 189.81,
+            "y0": 658.33,
+            "x1": 213.97,
+            "y1": 670.0,
+            "width": 24.16,
+            "height": 11.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 219.72,
+            "y0": 332.69,
+            "x1": 236.98,
+            "y1": 341.9,
+            "width": 17.26,
+            "height": 9.21
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 230.08,
+            "y0": 506.51,
+            "x1": 254.23,
+            "y1": 518.02,
+            "width": 24.15,
+            "height": 11.51
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 232.38,
+            "y0": 598.6,
+            "x1": 255.38,
+            "y1": 610.12,
+            "width": 23.0,
+            "height": 11.52
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 254.55,
+            "y0": 596.04,
+            "x1": 287.28,
+            "y1": 616.19,
+            "width": 32.73,
+            "height": 20.15
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 447.84,
+            "y0": 679.77,
+            "x1": 474.0,
+            "y1": 689.72,
+            "width": 26.16,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 187.2,
+            "y0": 694.65,
+            "x1": 212.4,
+            "y1": 704.6,
+            "width": 25.2,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 104.88,
+            "y0": 1.79,
+            "x1": 269.17,
+            "y1": 82.5,
+            "width": 164.29,
+            "height": 80.71
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 161.28,
+            "y0": 176.77,
+            "x1": 172.8,
+            "y1": 186.72,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 156.48,
+            "y0": 330.3,
+            "x1": 170.7,
+            "y1": 342.41,
+            "width": 14.22,
+            "height": 12.11
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 151.2,
+            "y0": 357.97,
+            "x1": 176.64,
+            "y1": 367.92,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 203.52,
+            "y0": 85.9,
+            "x1": 210.51,
+            "y1": 96.93,
+            "width": 6.99,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 280.08,
+            "y0": 101.17,
+            "x1": 287.28,
+            "y1": 111.12,
+            "width": 7.2,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 249.6,
+            "y0": 109.63,
+            "x1": 256.76,
+            "y1": 117.44,
+            "width": 7.16,
+            "height": 7.81
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 207.6,
+            "y0": 148.78,
+            "x1": 221.31,
+            "y1": 159.81,
+            "width": 13.71,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 218.88,
+            "y0": 157.39,
+            "x1": 224.12,
+            "y1": 165.2,
+            "width": 5.24,
+            "height": 7.81
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 150.24,
+            "y0": 570.37,
+            "x1": 176.16,
+            "y1": 580.32,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 426.72,
+            "y0": 241.81,
+            "x1": 452.16,
+            "y1": 251.76,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 430.08,
+            "y0": 422.53,
+            "x1": 457.2,
+            "y1": 432.48,
+            "width": 27.12,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 107.13,
+            "y0": 133.7,
+            "x1": 134.78,
+            "y1": 145.23,
+            "width": 27.65,
+            "height": 11.53
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 426.72,
+            "y0": 241.81,
+            "x1": 452.16,
+            "y1": 251.76,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 152.06,
+            "y0": 82.99,
+            "x1": 163.58,
+            "y1": 93.36,
+            "width": 11.52,
+            "height": 10.37
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 151.2,
+            "y0": 357.97,
+            "x1": 176.64,
+            "y1": 367.92,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 155.44,
+            "y0": 95.47,
+            "x1": 186.69,
+            "y1": 107.39,
+            "width": 31.25,
+            "height": 11.92
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 169.34,
+            "y0": 110.65,
+            "x1": 193.53,
+            "y1": 125.64,
+            "width": 24.19,
+            "height": 14.99
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 430.08,
+            "y0": 422.53,
+            "x1": 457.2,
+            "y1": 432.48,
+            "width": 27.12,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 165.88,
+            "y0": 235.13,
+            "x1": 187.77,
+            "y1": 243.23,
+            "width": 21.89,
+            "height": 8.1
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 161.28,
+            "y0": 491.01,
+            "x1": 185.47,
+            "y1": 502.54,
+            "width": 24.19,
+            "height": 11.53
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 168.19,
+            "y0": 540.44,
+            "x1": 195.83,
+            "y1": 554.43,
+            "width": 27.64,
+            "height": 13.99
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "math": [],
+  "figures": [
+    {
+      "id": "fig-3",
+      "label": "FIG. 3",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-3-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 0.0,
+        "x1": 612.0,
+        "y1": 204.0,
+        "width": 612.0,
+        "height": 204.0
+      },
+      "display_size_in": {
+        "width": 8.5,
+        "height": 2.8333
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_241"
+        ],
+        "caption_bbox": {
+          "x0": 432.48,
+          "y0": 199.77,
+          "x1": 458.4,
+          "y1": 209.72,
+          "width": 25.92,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-4",
+      "label": "FIG. 4",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-4-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 481.92,
+        "x1": 612.0,
+        "y1": 791.52,
+        "width": 612.0,
+        "height": 309.6
+      },
+      "display_size_in": {
+        "width": 8.5,
+        "height": 4.3
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_266"
+        ],
+        "caption_bbox": {
+          "x0": 442.08,
+          "y0": 485.37,
+          "x1": 467.76,
+          "y1": 495.32,
+          "width": 25.68,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-5",
+      "label": "FIG. 5",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-5-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 0.0,
+        "x1": 612.0,
+        "y1": 693.6,
+        "width": 612.0,
+        "height": 693.6
+      },
+      "display_size_in": {
+        "width": 8.5,
+        "height": 9.6333
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_241"
+        ],
+        "caption_bbox": {
+          "x0": 447.84,
+          "y0": 679.77,
+          "x1": 474.0,
+          "y1": 689.72,
+          "width": 26.16,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-2",
+      "label": "FIG. 2",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-2-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 702.24,
+        "x1": 612.0,
+        "y1": 791.52,
+        "width": 612.0,
+        "height": 89.28
+      },
+      "display_size_in": {
+        "width": 8.5,
+        "height": 1.24
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_266"
+        ],
+        "caption_bbox": {
+          "x0": 187.2,
+          "y0": 694.65,
+          "x1": 212.4,
+          "y1": 704.6,
+          "width": 25.2,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-8",
+      "label": "FIG. 8",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-8-p008.png",
+      "page": 8,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 236.43,
+        "x1": 614.0,
+        "y1": 790.85,
+        "width": 614.0,
+        "height": 554.42
+      },
+      "display_size_in": {
+        "width": 8.5278,
+        "height": 7.7003
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_298"
+        ],
+        "caption_bbox": {
+          "x0": 426.72,
+          "y0": 241.81,
+          "x1": 452.16,
+          "y1": 251.76,
+          "width": 25.44,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-6",
+      "label": "FIG. 6",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-6-p008.png",
+      "page": 8,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 358.83,
+        "x1": 614.0,
+        "y1": 790.85,
+        "width": 614.0,
+        "height": 432.02
+      },
+      "display_size_in": {
+        "width": 8.5278,
+        "height": 6.0003
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_298"
+        ],
+        "caption_bbox": {
+          "x0": 151.2,
+          "y0": 357.97,
+          "x1": 176.64,
+          "y1": 367.92,
+          "width": 25.44,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-9",
+      "label": "FIG. 9",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-9-p008.png",
+      "page": 8,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 0.0,
+        "x1": 614.0,
+        "y1": 423.65,
+        "width": 614.0,
+        "height": 423.65
+      },
+      "display_size_in": {
+        "width": 8.5278,
+        "height": 5.884
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_273"
+        ],
+        "caption_bbox": {
+          "x0": 430.08,
+          "y0": 422.53,
+          "x1": 457.2,
+          "y1": 432.48,
+          "width": 27.12,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-7",
+      "label": "FIG. 7",
+      "caption": "",
+      "image_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/figures/figure-7-p008.png",
+      "page": 8,
+      "bbox": {
+        "x0": 0.0,
+        "y0": 579.15,
+        "x1": 614.0,
+        "y1": 790.85,
+        "width": 614.0,
+        "height": 211.7
+      },
+      "display_size_in": {
+        "width": 8.5278,
+        "height": 2.9403
+      },
+      "provenance": {
+        "link_mode": "visual_blocks",
+        "sources": [
+          "block_type_1",
+          "image_xref_298"
+        ],
+        "caption_bbox": {
+          "x0": 150.24,
+          "y0": 570.37,
+          "x1": 176.16,
+          "y1": 580.32,
+          "width": 25.92,
+          "height": 9.95
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "ref-001",
+      "raw_text": "b-1 L. V. Ahlfors, Conlpkx A~lysir, 2d ed., 1966, New York McGraw-Hill, 114-118.",
+      "text": "b-1 L. V. Ahlfors, Conlpkx A~lysir, 2d ed., 1966, New York McGraw-Hill, 114-118.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.24,
+            "y0": 192.11,
+            "x1": 284.19,
+            "y1": 214.49,
+            "width": 247.95,
+            "height": 22.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-002",
+      "raw_text": "[CE88] B. Chaxelle and H. Edelsbrutmer, 'An optimal algorithm for imersecting lure segments in the plane,' Pnx. 29th Ann. Symp. on Found. of Comput. Sci., 1988.590-600.",
+      "text": "[CE88] B. Chaxelle and H. Edelsbrutmer, 'An optimal algorithm for imersecting lure segments in the plane,' Pnx. 29th Ann. Symp. on Found. of Comput. Sci., 1988.590-600.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.24,
+            "y0": 219.06,
+            "x1": 283.71,
+            "y1": 263.45,
+            "width": 247.47,
+            "height": 44.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-003",
+      "raw_text": "[dFPP88] H. de Fraysseix, J. Pa& and R. Pollack, 'Small sets supporting Fary embeddings of planar graphs.' Proc. 20th Ann. Symp. on Th. Comput., 1988, 426433.",
+      "text": "[dFPP88] H. de Fraysseix, J. Pa& and R. Pollack, 'Small sets supporting Fary embeddings of planar graphs.' Proc. 20th Ann. Symp. on Th. Comput., 1988, 426433.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 268.26,
+            "x1": 282.75,
+            "y1": 312.89,
+            "width": 246.27,
+            "height": 44.63
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-004",
+      "raw_text": "[G831 D. H. Greene, 'Efficient coding and drawing of planar graphs,' 1983, unpublished manuscript.",
+      "text": "[G831 D. H. Greene, 'efficient coding and drawing of planar graphs,' 1983, unpublished manuscript.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 317.7,
+            "x1": 282.27,
+            "y1": 339.77,
+            "width": 245.79,
+            "height": 22.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-005",
+      "raw_text": "W361 D. T. Lee and A. K. Lii 'Generalized Delaunay triangulatiorr for planar graphs,' Discrete and Cornput. Gwm. 1 (1986). 201-217.",
+      "text": "W361 D. T. Lee and A. K. Lii 'Generalized Delaunay triangulatiorr for planar graphs,' Discrete and Cornput. Gwm. 1 (1986). 201-217.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 344.82,
+            "x1": 283.95,
+            "y1": 378.41,
+            "width": 247.47,
+            "height": 33.59
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-006",
+      "raw_text": "PJ3301 M. E. Newell and C. H. Sequin, 'The inside story on self-intersecting polygons,' Lambda 1 (1980). 20-21.",
+      "text": "PJ3301 M. E. Newell and C. H. Sequin, 'The inside story on self-intersecting polygons,' Lambda 1 (1980). 20-21.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.72,
+            "y0": 382.91,
+            "x1": 284.2,
+            "y1": 417.05,
+            "width": 247.48,
+            "height": 34.14
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-007",
+      "raw_text": "[RT85] P. Rosenstiehl and R. E. Tarjau, 'Rectilinear planar layouts and bipolar orientations of planar graphs,' Discrete and Comput. Gem. 1 (1986). 343-353.",
+      "text": "[RT85] P. Rosenstiehl and R. E. Tarjau, 'Rectilinear planar layouts and bipolar orientations of planar graphs,' Discrete and Comput. Gem. 1 (1986). 343-353.",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 421.62,
+            "x1": 283.23,
+            "y1": 454.25,
+            "width": 246.75,
+            "height": 32.63
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-008",
+      "raw_text": "lW37l H. Whitney, 'On regular closed curves in the plane,' Compositio Math. 4 (1937). 276-284. FIGURE CAPTIONS The curve in (a) is a self-overlapping curve. Those in (b) and (c) are not. The left column shows the diisection of Dz by the sequence ((@lr~l),(&,~z)). The right column shows the image of D2 together with appropriate chords as the sequence of mappings go, g r , and g2 is produced. The shaded regions indicate int D 0 and int D 1. The diagonal in (a) shows that the curve is selfoverlapping. The diagonal in (b). however, does not yield a proper decomposition of the non-self-overlapping curve shown. This figure has two incompatible decompositions. The diagomtls in one are 7 and &; the diagortals in the other arezand&. The points in S' that are preimages under g of the labelled points in Elgure 4 are labelled with the corresponding letters. The chords show that we are using the decomposition in which 2 and be are diagonals. Under a mapping Fdeflned by this decomposition, the inverse image of dg &es not include a path between points 0nS'. Figure (a) depicts most of the notation in the proof of Lemma 1. Figure (b) shows the images of the neighborhoods N and Ns under F and g, respectively, as well as triangle T. This illustration for the proof of Theorem 1 uses a simple polygon. Thus, F and g are homeomorphisms, and we need only draw the situation in the plane that coma+-&. The figure shows the image of one possible choice of maximal open neighborhood Ns. General step of the dynamic program. The transformation ftom curve to straight-line Hamiltonian planar graph. The edges of the two-cycle have been bowed out to make both visible. (a) (b) FIG. 2 (a) FIG. 3 FIG. 3: (b) FIG. 4 C d FIG. 4: b '\\ .@ e a f I h Cl FIG. 5 A Ф. Iz 92 A2 FIG. 1 g (41) 8 (41) (c) 19 (фл) g (ф) 139(42) FIG. 5: FIG. 2: g'(U) (a) (b) FIG. 6 u P W Li3 V FIG. 7 FIG. 8 FIG. 9 8(v) FIG. 8: No FIG. 6: )g(w) F.9. FIG. 9: F (N) F (X) g (Ng)",
+      "text": "lW37l H. Whitney, 'On regular closed curves in the plane,' Compositio Math. 4 (1937). 276-284. FIGURE CAPTIONS The curve in (a) is a self-overlapping curve. Those in (b) and (c) are not. The left column shows the diisection of Dz by the sequence ((@lr~l),(&,~z)). The right column shows the image of D2 together with appropriate chords as the sequence of mappings go, g r, and g2 is produced. The shaded regions indicate int D 0 and int D 1. The diagonal in (a) shows that the curve is selfoverlapping. The diagonal in (b). however, does not yield a proper decomposition of the non-self-overlapping curve shown. This figure has two incompatible decompositions. The diagomtls in one are 7 and &; the diagortals in the other arezand&. The points in S' that are preimages under g of the labelled points in Elgure 4 are labelled with the corresponding letters. The chords show that we are using the decomposition in which 2 and be are diagonals. Under a mapping Fdeflned by this decomposition, the inverse image of dg &es not include a path between points 0nS'. Figure (a) depicts most of the notation in the proof of Lemma 1. Figure (b) shows the images of the neighborhoods N and Ns under F and g, respectively, as well as triangle T. This illustration for the proof of Theorem 1 uses a simple polygon. Thus, F and g are homeomorphisms, and we need only draw the situation in the plane that coma+-&. The figure shows the image of one possible choice of maximal open neighborhood Ns. General step of the dynamic program. The transformation ftom curve to straight-line Hamiltonian planar graph. The edges of the two-cycle have been bowed out to make both visible. (a) (b) FIG. 2 (a) FIG. 3 FIG. 3: (b) FIG. 4 C d FIG. 4: b '\\.@ e a f I h Cl FIG. 5 A Ф. Iz 92 A2 FIG. 1 g (41) 8 (41) (c) 19 (фл) g (ф) 139(42) FIG. 5: FIG. 2: g'(U) (a) (b) FIG. 6 u P W Li3 V FIG. 7 FIG. 8 FIG. 98(v) FIG. 8: No FIG. 6:)g(w) F.9. FIG. 9: F (N) F (X) g (Ng)",
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 36.48,
+            "y0": 458.82,
+            "x1": 283.71,
+            "y1": 481.13,
+            "width": 247.23,
+            "height": 22.31
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.6,
+            "y0": 58.5,
+            "x1": 386.68,
+            "y1": 69.53,
+            "width": 83.08,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.08,
+            "y0": 72.9,
+            "x1": 548.2,
+            "y1": 94.97,
+            "width": 244.12,
+            "height": 22.07
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.36,
+            "y0": 98.82,
+            "x1": 549.4,
+            "y1": 154.01,
+            "width": 246.04,
+            "height": 55.19
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.6,
+            "y0": 157.62,
+            "x1": 549.4,
+            "y1": 201.53,
+            "width": 245.8,
+            "height": 43.91
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 303.84,
+            "y0": 205.14,
+            "x1": 550.12,
+            "y1": 239.45,
+            "width": 246.28,
+            "height": 34.31
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.08,
+            "y0": 243.06,
+            "x1": 552.04,
+            "y1": 321.77,
+            "width": 247.96,
+            "height": 78.71
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 325.62,
+            "x1": 551.8,
+            "y1": 370.49,
+            "width": 247.0,
+            "height": 44.87
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 374.34,
+            "x1": 550.84,
+            "y1": 430.25,
+            "width": 246.04,
+            "height": 55.91
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.8,
+            "y0": 433.14,
+            "x1": 476.2,
+            "y1": 444.41,
+            "width": 171.4,
+            "height": 11.27
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 304.56,
+            "y0": 448.26,
+            "x1": 551.32,
+            "y1": 481.61,
+            "width": 246.76,
+            "height": 33.35
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 130.32,
+            "y0": 172.91,
+            "x1": 145.38,
+            "y1": 186.09,
+            "width": 15.06,
+            "height": 13.18
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 253.2,
+            "y0": 171.21,
+            "x1": 264.72,
+            "y1": 181.16,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 187.2,
+            "y0": 694.65,
+            "x1": 212.4,
+            "y1": 704.6,
+            "width": 25.2,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 376.08,
+            "y0": 175.05,
+            "x1": 387.6,
+            "y1": 185.0,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 432.48,
+            "y0": 199.77,
+            "x1": 458.4,
+            "y1": 209.72,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 432.48,
+            "y0": 199.77,
+            "x1": 458.4,
+            "y1": 209.72,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 495.6,
+            "y0": 173.54,
+            "x1": 509.82,
+            "y1": 185.65,
+            "width": 14.22,
+            "height": 12.11
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 442.08,
+            "y0": 485.37,
+            "x1": 467.76,
+            "y1": 495.32,
+            "width": 25.68,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 458.88,
+            "y0": 551.56,
+            "x1": 463.55,
+            "y1": 558.02,
+            "width": 4.67,
+            "height": 6.46
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 420.48,
+            "y0": 565.29,
+            "x1": 426.96,
+            "y1": 575.24,
+            "width": 6.48,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 442.08,
+            "y0": 485.37,
+            "x1": 467.76,
+            "y1": 495.32,
+            "width": 25.68,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 496.8,
+            "y0": 567.21,
+            "x1": 503.04,
+            "y1": 577.16,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 430.56,
+            "y0": 573.69,
+            "x1": 436.56,
+            "y1": 583.64,
+            "width": 6.0,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 399.12,
+            "y0": 649.96,
+            "x1": 406.19,
+            "y1": 656.42,
+            "width": 7.07,
+            "height": 6.46
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 406.32,
+            "y0": 598.89,
+            "x1": 412.56,
+            "y1": 608.84,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 509.52,
+            "y0": 601.05,
+            "x1": 515.76,
+            "y1": 611.0,
+            "width": 6.24,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 420.0,
+            "y0": 636.57,
+            "x1": 424.56,
+            "y1": 646.52,
+            "width": 4.56,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 457.92,
+            "y0": 641.85,
+            "x1": 462.24,
+            "y1": 651.8,
+            "width": 4.32,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 495.84,
+            "y0": 638.73,
+            "x1": 502.32,
+            "y1": 648.68,
+            "width": 6.48,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 456.48,
+            "y0": 655.53,
+            "x1": 465.84,
+            "y1": 665.48,
+            "width": 9.36,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 447.84,
+            "y0": 679.77,
+            "x1": 474.0,
+            "y1": 689.72,
+            "width": 26.16,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 92.03,
+            "y0": 497.3,
+            "x1": 98.93,
+            "y1": 505.36,
+            "width": 6.9,
+            "height": 8.06
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 102.38,
+            "y0": 466.22,
+            "x1": 109.29,
+            "y1": 474.28,
+            "width": 6.91,
+            "height": 8.06
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 110.44,
+            "y0": 567.52,
+            "x1": 120.79,
+            "y1": 580.19,
+            "width": 10.35,
+            "height": 12.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 154.15,
+            "y0": 581.34,
+            "x1": 166.8,
+            "y1": 599.76,
+            "width": 12.65,
+            "height": 18.42
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 110.44,
+            "y0": 640.05,
+            "x1": 124.24,
+            "y1": 651.56,
+            "width": 13.8,
+            "height": 11.51
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 186.36,
+            "y0": 358.0,
+            "x1": 211.67,
+            "y1": 367.33,
+            "width": 25.31,
+            "height": 9.33
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 184.06,
+            "y0": 561.67,
+            "x1": 208.22,
+            "y1": 573.33,
+            "width": 24.16,
+            "height": 11.66
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 189.81,
+            "y0": 658.33,
+            "x1": 213.97,
+            "y1": 670.0,
+            "width": 24.16,
+            "height": 11.67
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 219.72,
+            "y0": 332.69,
+            "x1": 236.98,
+            "y1": 341.9,
+            "width": 17.26,
+            "height": 9.21
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 230.08,
+            "y0": 506.51,
+            "x1": 254.23,
+            "y1": 518.02,
+            "width": 24.15,
+            "height": 11.51
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 232.38,
+            "y0": 598.6,
+            "x1": 255.38,
+            "y1": 610.12,
+            "width": 23.0,
+            "height": 11.52
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 254.55,
+            "y0": 596.04,
+            "x1": 287.28,
+            "y1": 616.19,
+            "width": 32.73,
+            "height": 20.15
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 447.84,
+            "y0": 679.77,
+            "x1": 474.0,
+            "y1": 689.72,
+            "width": 26.16,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 187.2,
+            "y0": 694.65,
+            "x1": 212.4,
+            "y1": 704.6,
+            "width": 25.2,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 104.88,
+            "y0": 1.79,
+            "x1": 269.17,
+            "y1": 82.5,
+            "width": 164.29,
+            "height": 80.71
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 161.28,
+            "y0": 176.77,
+            "x1": 172.8,
+            "y1": 186.72,
+            "width": 11.52,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 156.48,
+            "y0": 330.3,
+            "x1": 170.7,
+            "y1": 342.41,
+            "width": 14.22,
+            "height": 12.11
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 151.2,
+            "y0": 357.97,
+            "x1": 176.64,
+            "y1": 367.92,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 203.52,
+            "y0": 85.9,
+            "x1": 210.51,
+            "y1": 96.93,
+            "width": 6.99,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 280.08,
+            "y0": 101.17,
+            "x1": 287.28,
+            "y1": 111.12,
+            "width": 7.2,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 249.6,
+            "y0": 109.63,
+            "x1": 256.76,
+            "y1": 117.44,
+            "width": 7.16,
+            "height": 7.81
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 207.6,
+            "y0": 148.78,
+            "x1": 221.31,
+            "y1": 159.81,
+            "width": 13.71,
+            "height": 11.03
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 218.88,
+            "y0": 157.39,
+            "x1": 224.12,
+            "y1": 165.2,
+            "width": 5.24,
+            "height": 7.81
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 150.24,
+            "y0": 570.37,
+            "x1": 176.16,
+            "y1": 580.32,
+            "width": 25.92,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 426.72,
+            "y0": 241.81,
+            "x1": 452.16,
+            "y1": 251.76,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 430.08,
+            "y0": 422.53,
+            "x1": 457.2,
+            "y1": 432.48,
+            "width": 27.12,
+            "height": 9.95
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 107.13,
+            "y0": 133.7,
+            "x1": 134.78,
+            "y1": 145.23,
+            "width": 27.65,
+            "height": 11.53
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 426.72,
+            "y0": 241.81,
+            "x1": 452.16,
+            "y1": 251.76,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 152.06,
+            "y0": 82.99,
+            "x1": 163.58,
+            "y1": 93.36,
+            "width": 11.52,
+            "height": 10.37
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 151.2,
+            "y0": 357.97,
+            "x1": 176.64,
+            "y1": 367.92,
+            "width": 25.44,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 155.44,
+            "y0": 95.47,
+            "x1": 186.69,
+            "y1": 107.39,
+            "width": 31.25,
+            "height": 11.92
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 169.34,
+            "y0": 110.65,
+            "x1": 193.53,
+            "y1": 125.64,
+            "width": 24.19,
+            "height": 14.99
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 430.08,
+            "y0": 422.53,
+            "x1": 457.2,
+            "y1": 432.48,
+            "width": 27.12,
+            "height": 9.95
+          },
+          "engine": "local_figure_linker"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 165.88,
+            "y0": 235.13,
+            "x1": 187.77,
+            "y1": 243.23,
+            "width": 21.89,
+            "height": 8.1
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 161.28,
+            "y0": 491.01,
+            "x1": 185.47,
+            "y1": 502.54,
+            "width": 24.19,
+            "height": 11.53
+          },
+          "engine": "docling"
+        },
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 168.19,
+            "y0": 540.44,
+            "x1": 195.83,
+            "y1": 554.43,
+            "width": 27.64,
+            "height": 13.99
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

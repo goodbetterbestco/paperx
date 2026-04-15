@@ -1,0 +1,490 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-1-p003.png",
+      "caption_text": "Fig. 1. The visibility graph of a collection of four obstacles.",
+      "figure_bbox": {
+        "x0": 78.24,
+        "y0": 40.0,
+        "x1": 428.25,
+        "y1": 220.25,
+        "width": 350.01,
+        "height": 180.25
+      },
+      "caption_bbox": {
+        "x0": 154.08,
+        "y0": 224.25,
+        "x1": 352.15,
+        "y1": 234.17,
+        "width": 198.07,
+        "height": 9.92
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-2-p004.png",
+      "caption_text": "Fig. 2. A counterclockwise oriented curve with initial point x, terminal point y, and two cusp points. The two cusp points subdivide the curve into three regular smooth counterclockwise subcurves, i.e., each of these three subcurves can be described by a function f: [0, 1] ~ R2 with ft(t) = Ift(t)l exp(0(t)) # 0, where O(t) is a continuous nondecreasing function. By definition the angle swept by the regular subcurve f is 0(1) - 0(0), and the angle swept by the curve is the sum of the angles swept by its regular subcurves. In the example the angle swept between the two rays starting at x and y is slightly over 2yr.",
+      "figure_bbox": {
+        "x0": 76.32,
+        "y0": 40.0,
+        "x1": 428.27,
+        "y1": 198.8,
+        "width": 351.95,
+        "height": 158.8
+      },
+      "caption_bbox": {
+        "x0": 77.76,
+        "y0": 202.8,
+        "x1": 428.57,
+        "y1": 266.32,
+        "width": 350.81,
+        "height": 63.53
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 5,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-3-p005.png",
+      "caption_text": "Fig. 3. (a) The greedy pseudotriangulation associated with the filter 1 (0) of bitangents with slope >_ 0. The dashed bitangents bl and b2 are both minimal in the filter 1 (0). (b) The greedy pseudotriangulation associated with the filter l(0)\\{bl, b2} which is obtained from G(I(O)) by flipping bl and b2.",
+      "figure_bbox": {
+        "x0": 77.04,
+        "y0": 80.07,
+        "x1": 427.54,
+        "y1": 229.5,
+        "width": 350.5,
+        "height": 149.43
+      },
+      "caption_bbox": {
+        "x0": 78.72,
+        "y0": 233.5,
+        "x1": 428.31,
+        "y1": 266.79,
+        "width": 349.59,
+        "height": 33.28
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 6,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-4-p006.png",
+      "caption_text": "Fig. 4.",
+      "figure_bbox": {
+        "x0": 76.8,
+        "y0": 40.0,
+        "x1": 428.96,
+        "y1": 226.25,
+        "width": 352.16,
+        "height": 186.25
+      },
+      "caption_bbox": {
+        "x0": 85.92,
+        "y0": 230.25,
+        "x1": 108.51,
+        "y1": 242.55,
+        "width": 22.59,
+        "height": 12.3
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 7,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-5-p007.png",
+      "caption_text": "Fig. 5. A pseudoquadrangle and its diagonals.",
+      "figure_bbox": {
+        "x0": 180.95,
+        "y0": 90.96,
+        "x1": 324.71,
+        "y1": 256.08,
+        "width": 143.76,
+        "height": 165.12
+      },
+      "caption_bbox": {
+        "x0": 175.92,
+        "y0": 252.7,
+        "x1": 330.64,
+        "y1": 265.19,
+        "width": 154.72,
+        "height": 12.49
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 8,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-6-p008.png",
+      "caption_text": "Fig. 6. The infinite strip Cu.",
+      "figure_bbox": {
+        "x0": 77.28,
+        "y0": 40.0,
+        "x1": 429.1,
+        "y1": 185.1,
+        "width": 351.82,
+        "height": 145.1
+      },
+      "caption_bbox": {
+        "x0": 203.52,
+        "y0": 189.1,
+        "x1": 301.6,
+        "y1": 201.68,
+        "width": 98.08,
+        "height": 12.58
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 10,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-7-p010.png",
+      "caption_text": "Fig. 7. (a) Two obstacles defining a vertex b of the visibility complex with slope u. (b) (Local) cross sections at slopes u - e, u, and u + e. (c) Neighborhood of a vertex of the visibility complex. (d) The Hasse diagram of the vertex-figure of a vertex of P(X)",
+      "figure_bbox": {
+        "x0": 108.53,
+        "y0": 92.01,
+        "x1": 402.53,
+        "y1": 365.13,
+        "width": 294.0,
+        "height": 273.12
+      },
+      "caption_bbox": {
+        "x0": 77.76,
+        "y0": 365.52,
+        "x1": 429.41,
+        "y1": 398.37,
+        "width": 351.65,
+        "height": 32.85
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 12,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-8-p012.png",
+      "caption_text": "Fig. 8. (a) bit(t) and bit(t t) are crossing. The 4 added obstacles and the 12 added bitangents are shown dashed. (b) seg(t)\\bit(t) and bit(t') are crossing. (c) seg(t)\\bit(t) and seg(t')\\bit(t') are crossing.",
+      "figure_bbox": {
+        "x0": 76.56,
+        "y0": 40.0,
+        "x1": 427.54,
+        "y1": 330.78,
+        "width": 350.98,
+        "height": 290.78
+      },
+      "caption_bbox": {
+        "x0": 77.28,
+        "y0": 334.78,
+        "x1": 427.97,
+        "y1": 357.35,
+        "width": 350.69,
+        "height": 22.57
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 13,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-9-p013.png",
+      "caption_text": "Fig. 9. Illustration of the proof of the \"minimum-element\" properly.",
+      "figure_bbox": {
+        "x0": 191.59,
+        "y0": 90.12,
+        "x1": 318.55,
+        "y1": 266.28,
+        "width": 126.96,
+        "height": 176.16
+      },
+      "caption_bbox": {
+        "x0": 141.12,
+        "y0": 267.4,
+        "x1": 365.17,
+        "y1": 278.6,
+        "width": 224.05,
+        "height": 11.21
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 18,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-10-p018.png",
+      "caption_text": "Fig. 10. The greedy flip algorithm. At each step the internal bitangent of minimal slope in the current pseudotriangulation is flipped.",
+      "figure_bbox": {
+        "x0": 63.56,
+        "y0": 130.6,
+        "x1": 438.68,
+        "y1": 586.12,
+        "width": 375.12,
+        "height": 455.52
+      },
+      "caption_bbox": {
+        "x0": 78.0,
+        "y0": 592.13,
+        "x1": 428.19,
+        "y1": 613.57,
+        "width": 350.2,
+        "height": 21.45
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 19,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-11-p019.png",
+      "caption_text": "Fig. 11. (a) The labeled regions in the upper left part form the faces of the initial visibility map M(0). The graph F(0) is depicted in the upper right part. (b) The labeled regions in the lower left part, together with the lightly shaded regions, are the regions of the visibility map M(zr/2). The lower right part represents the graph r(Tr/2).",
+      "figure_bbox": {
+        "x0": 79.95,
+        "y0": 91.88,
+        "x1": 420.51,
+        "y1": 466.28,
+        "width": 340.56,
+        "height": 374.4
+      },
+      "caption_bbox": {
+        "x0": 78.48,
+        "y0": 467.52,
+        "x1": 427.14,
+        "y1": 509.44,
+        "width": 348.66,
+        "height": 41.93
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 20,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-12-p020.png",
+      "caption_text": "Fig. 12. death(e) is the critical direction associated with region e.",
+      "figure_bbox": {
+        "x0": 100.49,
+        "y0": 89.24,
+        "x1": 406.01,
+        "y1": 180.92,
+        "width": 305.52,
+        "height": 91.68
+      },
+      "caption_bbox": {
+        "x0": 144.0,
+        "y0": 180.68,
+        "x1": 360.6,
+        "y1": 191.52,
+        "width": 216.6,
+        "height": 10.84
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 21,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-13-p021.png",
+      "caption_text": "Fig. 13. Transitions during the construction of the pseudotriangulation.",
+      "figure_bbox": {
+        "x0": 82.1,
+        "y0": 95.55,
+        "x1": 428.42,
+        "y1": 433.95,
+        "width": 346.32,
+        "height": 338.4
+      },
+      "caption_bbox": {
+        "x0": 135.6,
+        "y0": 432.21,
+        "x1": 371.54,
+        "y1": 445.02,
+        "width": 235.94,
+        "height": 12.81
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 22,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-14-p022.png",
+      "caption_text": "Fig. 14. Transitions during the construction of the pseudotriangulation: at least one of the regions a, b, c, and d is triangular, and hence not represented by an edge in the graph F(u).",
+      "figure_bbox": {
+        "x0": 98.79,
+        "y0": 93.86,
+        "x1": 406.23,
+        "y1": 250.34,
+        "width": 307.44,
+        "height": 156.48
+      },
+      "caption_bbox": {
+        "x0": 78.0,
+        "y0": 250.05,
+        "x1": 428.13,
+        "y1": 272.94,
+        "width": 350.13,
+        "height": 22.89
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 23,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-15-p023.png",
+      "caption_text": "Fig. 15. Forward and backward T-views P0 and pl of t cannot both have smaller slope than t.",
+      "figure_bbox": {
+        "x0": 184.39,
+        "y0": 91.25,
+        "x1": 312.79,
+        "y1": 228.05,
+        "width": 128.4,
+        "height": 136.8
+      },
+      "caption_bbox": {
+        "x0": 99.84,
+        "y0": 225.1,
+        "x1": 407.4,
+        "y1": 237.59,
+        "width": 307.56,
+        "height": 12.49
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 24,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-16-p024.png",
+      "caption_text": "Fig. 16. The pseudotriangle R' = Rtri(b*) (shaded) is obtained by flipping bitangent b. Furthermore, R' is the left or right pseudotriangle ofb~ (cases 1 and 2, respectively), or OR' does not contain b~ (case 3).",
+      "figure_bbox": {
+        "x0": 72.9,
+        "y0": 85.89,
+        "x1": 428.34,
+        "y1": 200.61,
+        "width": 355.44,
+        "height": 114.72
+      },
+      "caption_bbox": {
+        "x0": 77.28,
+        "y0": 197.5,
+        "x1": 427.79,
+        "y1": 220.07,
+        "width": 350.51,
+        "height": 22.57
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 25,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-17-p025.png",
+      "caption_text": "Fig. 17. The cusps of R ~.",
+      "figure_bbox": {
+        "x0": 105.08,
+        "y0": 98.57,
+        "x1": 411.56,
+        "y1": 265.13,
+        "width": 306.48,
+        "height": 166.56
+      },
+      "caption_bbox": {
+        "x0": 208.56,
+        "y0": 264.81,
+        "x1": 295.98,
+        "y1": 274.73,
+        "width": 87.42,
+        "height": 9.92
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 26,
+      "image_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/figures/figure-18-p026.png",
+      "caption_text": "Fig. 18. The set of points that are awake in T is the segment XTqT, for T = L, R. When the algorithm flips b = bR = bL, the walk on 0T starts in q~ (case 1) or in the cusp xr (cases 2 and 3).",
+      "figure_bbox": {
+        "x0": 107.68,
+        "y0": 88.35,
+        "x1": 400.24,
+        "y1": 222.75,
+        "width": 292.56,
+        "height": 134.4
+      },
+      "caption_bbox": {
+        "x0": 78.0,
+        "y0": 219.34,
+        "x1": 430.13,
+        "y1": 242.39,
+        "width": 352.13,
+        "height": 23.05
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    }
+  ]
+}

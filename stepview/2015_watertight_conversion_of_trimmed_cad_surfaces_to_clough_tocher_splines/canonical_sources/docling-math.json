@@ -1,0 +1,900 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "P = 2 ∑ i = 0 τ i Ui ; τ 0 + τ 1 + τ 2 = 1 , τ i ≥ 0 . (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 65.82,
+            "y0": 402.55,
+            "x1": 507.42,
+            "y1": 437.74,
+            "width": 441.6,
+            "height": 35.19
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "τ i = A ( Ui + 1 , Ui + 2 , P ) A ( U 0 , U 1 , U 2 ) (2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 469.06,
+            "x1": 507.41,
+            "y1": 496.89,
+            "width": 442.35,
+            "height": 27.83
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(2)"
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "p ( τ ) = ∑ | i |= d P i B d i ( τ ), (3)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 65.67,
+            "y0": 530.11,
+            "x1": 507.42,
+            "y1": 558.18,
+            "width": 441.75,
+            "height": 28.07
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(3)"
+    },
+    {
+      "id": "docling-eq-0004",
+      "kind": "display",
+      "display_latex": "B d i ( τ ) = d ! i ! j ! k ! τ i 1 τ j 2 τ k 3 (4)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 65.64,
+            "y0": 578.56,
+            "x1": 507.41,
+            "y1": 609.18,
+            "width": 441.77,
+            "height": 30.62
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(4)"
+    },
+    {
+      "id": "docling-eq-0005",
+      "kind": "display",
+      "display_latex": "p ( τ ) = ∑ | i |= d Pi B d i ( τ ) (5)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 652.27,
+            "x1": 507.42,
+            "y1": 680.36,
+            "width": 442.36,
+            "height": 28.09
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(5)"
+    },
+    {
+      "id": "docling-eq-0006",
+      "kind": "display",
+      "display_latex": "Q τ 0 T 01 τ 1 T 10 τ 2 Q , (6)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 67.37,
+            "y0": 290.44,
+            "x1": 503.11,
+            "y1": 299.97,
+            "width": 435.74,
+            "height": 9.53
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(6)"
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
+      "display_latex": "T 13 = τ 0 T 10 + τ 1 V 1 + τ 2 T 12 , ¯ = + + T 03 = τ 0 V 0 + τ 1 T 01 + τ 2 T 02 ,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 272.9,
+            "x1": 171.23,
+            "y1": 322.18,
+            "width": 110.47,
+            "height": 49.28
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0008",
+      "kind": "display",
+      "display_latex": "τ 0 Q + τ 1 T 12 + τ 2 T 21 = ¯ τ 0 T 13 + ¯ τ 1 ¯ Q + ¯ τ 2 T 31 , τ 0 T 02 + τ 1 Q + τ 2 T 20 = ¯ τ 0 ¯ Q + ¯ τ 1 T 03 + ¯ τ 2 T 30 , (7)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 62.76,
+            "y0": 364.65,
+            "x1": 503.11,
+            "y1": 398.7,
+            "width": 440.35,
+            "height": 34.05
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(7)"
+    },
+    {
+      "id": "docling-eq-0009",
+      "kind": "display",
+      "display_latex": "S 1 3 ( triangle star ) ={ s ∈ C 1 ( Omega1) : s | T star ∈ Pi1 3 , T star ∈ triangle star } . (8)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 548.31,
+            "x1": 503.11,
+            "y1": 566.66,
+            "width": 442.35,
+            "height": 18.35
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(8)"
+    },
+    {
+      "id": "docling-eq-0010",
+      "kind": "display",
+      "display_latex": "s ( Ui ) = f i and ∇ s ( Ui ) =∇ f i = ( f u i , f v i ), (9)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 625.89,
+            "x1": 503.11,
+            "y1": 643.5,
+            "width": 442.35,
+            "height": 17.61
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(9)"
+    },
+    {
+      "id": "docling-eq-0011",
+      "kind": "display",
+      "display_latex": "ˆ S 1 3 ( triangle star ) ={ s ∈ S 1 3 ( triangle star ) : ∂ s ∂ v ε ∣ ∣ ∣ ε ∈ Pi1 1 , ε ∈ E } , (10)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 676.77,
+            "x1": 503.11,
+            "y1": 712.2,
+            "width": 442.35,
+            "height": 35.43
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(10)"
+    },
+    {
+      "id": "docling-eq-0012",
+      "kind": "display",
+      "display_latex": "V 0 = f 0 , T 01 = V 0 + 1 3 ∇ f i · ( U 1 -U 0 ) (11)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 476.58,
+            "x1": 507.42,
+            "y1": 498.4,
+            "width": 442.36,
+            "height": 21.82
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(11)"
+    },
+    {
+      "id": "docling-eq-0013",
+      "kind": "display",
+      "display_latex": "I 01 = τ 0 V 0 + τ 1 T 01 + τ 2 T 02 (12)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 521.52,
+            "x1": 507.42,
+            "y1": 538.9,
+            "width": 442.36,
+            "height": 17.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(12)"
+    },
+    {
+      "id": "docling-eq-0014",
+      "kind": "display",
+      "display_latex": "I 02 = τ 0 I 01 + τ 1 C 2 + τ 2 C 1 (13)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 603.67,
+            "x1": 507.42,
+            "y1": 621.06,
+            "width": 442.36,
+            "height": 17.39
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(13)"
+    },
+    {
+      "id": "docling-eq-0015",
+      "kind": "display",
+      "display_latex": "S = τ 0 I 02 + τ 1 I 12 + τ 2 I 22 . (14)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 640.59,
+            "x1": 507.42,
+            "y1": 657.97,
+            "width": 442.36,
+            "height": 17.38
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(14)"
+    },
+    {
+      "id": "docling-eq-0016",
+      "kind": "display",
+      "display_latex": "C 2 = λ 0 T 01 + λ 1 T 10 + 1 2 ( I 01 + I 11 -λ 0 ( V 0 + T 10 ) -λ 1 ( V 1 + T 01 )) (15)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 176.48,
+            "x1": 503.11,
+            "y1": 198.31,
+            "width": 442.35,
+            "height": 21.83
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(15)"
+    },
+    {
+      "id": "docling-eq-0017",
+      "kind": "display",
+      "display_latex": "λ 1 = ( Z -U 0 ) · ( U 1 -U 0 ) ‖ U 1 -U 0 ‖ and λ 0 = 1 -λ 1 . (16)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 225.04,
+            "x1": 503.11,
+            "y1": 255.66,
+            "width": 442.35,
+            "height": 30.62
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(16)"
+    },
+    {
+      "id": "docling-eq-0018",
+      "kind": "display",
+      "display_latex": "λ 1 = ( Z -U 0 ) × ( ¯ Z -Z ) ( U 1 -U 0 ) × ( ¯ Z -Z ) and λ 0 = 1 -λ 1 , (17)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 432.35,
+            "x1": 503.11,
+            "y1": 465.61,
+            "width": 442.35,
+            "height": 33.26
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(17)"
+    },
+    {
+      "id": "docling-eq-0019",
+      "kind": "display",
+      "display_latex": "Q = T 01 + T 10 + T 12 + T 21 + T 20 + T 02 4 -V 0 + V 1 + V 2 6 . (18)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 581.32,
+            "x1": 503.11,
+            "y1": 605.27,
+            "width": 442.35,
+            "height": 23.95
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(18)"
+    },
+    {
+      "id": "docling-eq-0020",
+      "kind": "display",
+      "display_latex": "I 01 = τ 0 V 0 + τ 1 T 01 + τ 2 T 02 , C 2 = τ 0 T 01 + τ 1 T 10 + τ 2 Q , I 02 = τ 0 I 01 + τ 1 C 2 + τ 2 C 1 , S = τ 0 I 02 + τ 1 I 12 + τ 2 I 22 , (19)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 62.76,
+            "y0": 643.83,
+            "x1": 503.11,
+            "y1": 703.44,
+            "width": 440.35,
+            "height": 59.61
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(19)"
+    },
+    {
+      "id": "docling-eq-0021",
+      "kind": "display",
+      "display_latex": "¯ C 2 = τ 0 ( 2 τ 1 R 1 + 2 τ 2 R 2 + a 12 R 3 -2 τ 0 ( ¯ τ 2 R 1 + ¯ τ 1 R 2 ) + a 11 R 3 a 11 + 2 τ 0 a 12 + τ 2 0 a 22 , C 2 = ¯ C 2 -R 3 τ 0 , (20)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 67.06,
+            "y0": 251.93,
+            "x1": 507.41,
+            "y1": 304.62,
+            "width": 440.35,
+            "height": 52.69
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(20)"
+    },
+    {
+      "id": "docling-eq-0022",
+      "kind": "display",
+      "display_latex": "R 1 = ¯ τ 0 ¯ I 12 + ¯ τ 1 ¯ I 11 -τ 0 I 12 -τ 2 I 11 , R 2 = ¯ τ 0 ¯ I 02 + ¯ τ 2 ¯ I 01 -τ 0 I 02 -τ 1 I 01 , R 3 = τ 1 T 01 + τ 2 T 10 , a 11 = 2 (τ 2 1 + τ 2 2 ), a 12 = -2 (τ 1 ¯ τ 2 + ¯ τ 1 τ 2 ), a 22 = 2 ( ¯ τ 2 1 + ¯ τ 2 2 ). (21)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 66.84,
+            "y0": 321.72,
+            "x1": 507.42,
+            "y1": 413.12,
+            "width": 440.58,
+            "height": 91.4
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(21)"
+    },
+    {
+      "id": "docling-eq-0023",
+      "kind": "display",
+      "display_latex": "Q = ( T 30 -τ 2 1 V 0 -2 τ 1 τ 2 T 01 -2 τ 0 τ 1 T 02 -τ 2 2 T 10 -τ 2 0 T 20 + T 31 -τ 2 1 T 01 -2 τ 1 τ 2 T 10 -2 τ 0 τ 2 T 12 -τ 2 2 V 1 -τ 2 0 T 21 ) ( 2 τ 0 (τ 1 + τ 2 )) . (22)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 65.06,
+            "y0": 536.74,
+            "x1": 507.42,
+            "y1": 580.15,
+            "width": 442.36,
+            "height": 43.41
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(22)"
+    },
+    {
+      "id": "docling-eq-0024",
+      "kind": "display",
+      "display_latex": "R 1 = ¯ τ 0 ¯ T 21 + ¯ τ 1 ¯ T 12 -τ 0 T 21 -τ 2 T 12 , R 2 = ¯ τ 0 ¯ T 20 + ¯ τ 2 ¯ T 02 -τ 0 T 20 -τ 1 T 02 , (23)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 62.76,
+            "y0": 87.09,
+            "x1": 503.11,
+            "y1": 124.13,
+            "width": 440.35,
+            "height": 37.04
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      },
+      "equation_number": "(23)"
+    },
+    {
+      "id": "docling-eq-0025",
+      "kind": "display",
+      "display_latex": "∇ p ( 1 2 , 1 2 , 0 ) = 3 4 A ( U 0 , U 1 , U 2 ) ( ( v 1 -v 2 , u 2 -u 1 ) P 3 , 0 , 0 + ( 2 v 1 -v 0 -v 2 , u 0 -2 u 1 + u 2 ) P 2 , 1 , 0 + ( v 1 + v 2 -2 v 0 , 2 u 0 -u 1 -u 2 ) P 1 , 2 , 0 + ( v 2 -v 0 , u 0 -u 2 ) P 0 , 3 , 0 + ( v 0 -v 1 , u 1 -u 0 )( P 2 , 0 , 1 + 2 P 1 , 1 , 1 + P 0 , 2 , 1 ) ) (24)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 342.85,
+            "x1": 503.11,
+            "y1": 409.76,
+            "width": 442.35,
+            "height": 66.91
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(24)"
+    },
+    {
+      "id": "docling-eq-0026",
+      "kind": "display",
+      "display_latex": "∇ p ( 1 2 , 1 2 , 0 ) · v ε = g ε · v ε , (25)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 60.76,
+            "y0": 438.45,
+            "x1": 503.11,
+            "y1": 461.0,
+            "width": 442.35,
+            "height": 22.55
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(25)"
+    },
+    {
+      "id": "docling-eq-0027",
+      "kind": "display",
+      "display_latex": "c ( x , y ) = ( x -0 . 3 ) 3 + x ( y -0 . 3 ) 2 -0 . 1 x , (26)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 60.71,
+            "y0": 325.65,
+            "x1": 503.11,
+            "y1": 343.26,
+            "width": 442.4,
+            "height": 17.61
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(26)"
+    },
+    {
+      "id": "docling-eq-0028",
+      "kind": "display",
+      "display_latex": "f ( x , y ) = 3 4 e -1 4 ( 9 x -2 ) 2 -1 4 ( 9 y -2 ) 2 + 3 4 e -1 49 ( 9 x + 1 ) 2 -1 10 ( 9 y + 1 ) 2 + 1 2 e -1 4 ( 9 x -7 ) 2 -1 4 ( 9 y -3 ) 2 -1 5 e -( 9 x -4 ) 2 -( 9 y -7 ) 2 . (27)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 62.47,
+            "y0": 431.47,
+            "x1": 503.11,
+            "y1": 453.3,
+            "width": 440.64,
+            "height": 21.83
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(27)"
+    }
+  ]
+}

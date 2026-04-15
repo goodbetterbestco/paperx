@@ -1,0 +1,382 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-2-p004.png",
+      "caption_text": "Fig. 2. The tangent plane. Local surface geometry can be specified",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 255.69,
+        "width": 255.85,
+        "height": 209.64
+      },
+      "caption_bbox": {
+        "x0": 43.93,
+        "y0": 259.69,
+        "x1": 261.56,
+        "y1": 271.68,
+        "width": 217.63,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 7,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-3-p007.png",
+      "caption_text": "Fig. 3. Epipola: parameterization. A moving observer at positioa v(l) sees a!",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 625.25,
+        "width": 255.85,
+        "height": 579.2
+      },
+      "caption_bbox": {
+        "x0": 33.94,
+        "y0": 629.25,
+        "x1": 279.53,
+        "y1": 641.24,
+        "width": 245.59,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 12,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-4-p012.png",
+      "caption_text": "Fig. 4. Motion parallax. Coenider che relative displacement bereeen a poine on an appartet coetour and the imago of a nearty surface frataro",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 571.2,
+        "y1": 341.13,
+        "width": 547.4,
+        "height": 295.08
+      },
+      "caption_bbox": {
+        "x0": 43.87,
+        "y0": 345.13,
+        "x1": 501.21,
+        "y1": 359.64,
+        "width": 457.33,
+        "height": 14.51
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 17,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-6-p017.png",
+      "caption_text": "Fig. 6. Tracking image contours with B-spline snakes. A single span B-spline snake \"hangs\" in the image until it is swepe by the motion of",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 571.2,
+        "y1": 275.67,
+        "width": 547.4,
+        "height": 229.62
+      },
+      "caption_bbox": {
+        "x0": 31.95,
+        "y0": 279.67,
+        "x1": 491.17,
+        "y1": 289.66,
+        "width": 459.23,
+        "height": 9.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-z",
+      "label": "Z",
+      "page": 18,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-z-p018.png",
+      "caption_text": "Fig. Z. 3D spatiotemporal image. (a) The first and last image",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 447.46,
+        "width": 255.85,
+        "height": 401.41
+      },
+      "caption_bbox": {
+        "x0": 43.93,
+        "y0": 451.46,
+        "x1": 245.59,
+        "y1": 461.45,
+        "width": 201.66,
+        "height": 9.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 19,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-8-p019.png",
+      "caption_text": "Fig. & Spatictemporal cross-section image trajoctories. For linear",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 227.72,
+        "width": 255.85,
+        "height": 181.67
+      },
+      "caption_bbox": {
+        "x0": 33.94,
+        "y0": 231.72,
+        "x1": 249.58,
+        "y1": 241.71,
+        "width": 215.64,
+        "height": 9.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-22",
+      "label": "22",
+      "page": 19,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-22-p019.png",
+      "caption_text": "Fig. 22 Relative image positions. The eflect of robot vibrations is",
+      "figure_bbox": {
+        "x0": 315.35,
+        "y0": 46.05,
+        "x1": 571.2,
+        "y1": 525.37,
+        "width": 255.85,
+        "height": 479.32
+      },
+      "caption_bbox": {
+        "x0": 269.55,
+        "y0": 529.37,
+        "x1": 487.18,
+        "y1": 541.36,
+        "width": 217.63,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2-2",
+      "label": "2",
+      "page": 20,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-2-2-p020.png",
+      "caption_text": "Fig. II. Estimating surface curvatures from three discrete vices. Points are selected on image contours in the fine view (6), indicated by",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 571.2,
+        "y1": 179.78,
+        "width": 547.4,
+        "height": 133.73
+      },
+      "caption_bbox": {
+        "x0": 45.92,
+        "y0": 183.78,
+        "x1": 501.16,
+        "y1": 195.77,
+        "width": 455.23,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-i2",
+      "label": "I2",
+      "page": 20,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-i2-p020.png",
+      "caption_text": "Fig. I2. The epipolar plane. Each view defines a cangent to ria. 2).",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 199.77,
+        "x1": 279.65,
+        "y1": 467.44,
+        "width": 255.85,
+        "height": 267.67
+      },
+      "caption_bbox": {
+        "x0": 45.92,
+        "y0": 471.44,
+        "x1": 261.56,
+        "y1": 483.43,
+        "width": 215.64,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-1000",
+      "label": "1000",
+      "page": 22,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-1000-p022.png",
+      "caption_text": "Fig. M. Sensitivity of curvature estimate so errors in image contour",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 229.72,
+        "width": 255.85,
+        "height": 183.67
+      },
+      "caption_bbox": {
+        "x0": 43.93,
+        "y0": 233.72,
+        "x1": 259.56,
+        "y1": 241.71,
+        "width": 215.64,
+        "height": 7.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-1s",
+      "label": "1S",
+      "page": 22,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-1s-p022.png",
+      "caption_text": "Fig. 1S. Detecting and labeling extremal boundaries. The magnitade of the",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 245.71,
+        "x1": 279.65,
+        "y1": 609.27,
+        "width": 255.85,
+        "height": 363.56
+      },
+      "caption_bbox": {
+        "x0": 43.93,
+        "y0": 613.27,
+        "x1": 289.51,
+        "y1": 625.26,
+        "width": 245.59,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 24,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-18-p024.png",
+      "caption_text": "Fig. 18 Visually guided navigation around curved obstacles. Th",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 279.65,
+        "y1": 619.26,
+        "width": 255.85,
+        "height": 573.21
+      },
+      "caption_bbox": {
+        "x0": 41.93,
+        "y0": 623.26,
+        "x1": 249.58,
+        "y1": 633.25,
+        "width": 207.65,
+        "height": 9.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 25,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-12-p025.png",
+      "caption_text": "Fig. 12 Visually guided navigation over undulsing surface. After defecting a borisoetal image contour, the image motion due to a small local",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 46.05,
+        "x1": 571.2,
+        "y1": 293.65,
+        "width": 547.4,
+        "height": 247.6
+      },
+      "caption_bbox": {
+        "x0": 35.94,
+        "y0": 297.65,
+        "x1": 493.17,
+        "y1": 309.63,
+        "width": 457.23,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 25,
+      "image_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/figures/figure-20-p025.png",
+      "caption_text": "Fig. 20. Visually guided manipulation of piecewise curved objects. The manipulacion of curved objects roquires precise 3D shape (curvature)",
+      "figure_bbox": {
+        "x0": 23.8,
+        "y0": 313.63,
+        "x1": 571.2,
+        "y1": 571.32,
+        "width": 547.4,
+        "height": 257.68
+      },
+      "caption_bbox": {
+        "x0": 35.94,
+        "y0": 575.32,
+        "x1": 489.18,
+        "y1": 585.3,
+        "width": 453.24,
+        "height": 9.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

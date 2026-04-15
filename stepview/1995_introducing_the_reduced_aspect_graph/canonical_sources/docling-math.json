@@ -1,0 +1,100 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "K (n, 3) - 1 (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.03,
+            "y0": 569.3,
+            "x1": 386.17,
+            "y1": 586.51,
+            "width": 330.14,
+            "height": 17.21
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "n (K(n-1,2) - 1) (2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 56.11,
+            "y0": 630.67,
+            "x1": 386.17,
+            "y1": 649.0,
+            "width": 330.06,
+            "height": 18.33
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(2)"
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "k(n, d) = S (1) i=0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 55.94,
+            "y0": 689.61,
+            "x1": 171.8,
+            "y1": 726.51,
+            "width": 115.86,
+            "height": 36.9
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "Δ 𝑢 = 0 with 𝑢 | 𝜕𝑀 𝑘 = 𝑢 𝑐 ,",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 388.83,
+            "y0": 354.77,
+            "x1": 489.32,
+            "y1": 364.66,
+            "width": 100.49,
+            "height": 9.89
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "high",
+        "notes": ""
+      }
+    }
+  ]
+}

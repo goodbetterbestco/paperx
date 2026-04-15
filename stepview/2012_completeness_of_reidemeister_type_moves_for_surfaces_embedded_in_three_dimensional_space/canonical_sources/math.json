@@ -1,0 +1,780 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0047",
+      "kind": "display",
+      "display_latex": "F_{\\gamma}(x, t)=\\left(\\gamma_{1}(x, t), \\gamma_{2}(x, t), t\\right) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 185.5,
+            "y0": 591.0,
+            "x1": 320.0,
+            "y1": 607.0,
+            "width": 134.5,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0007",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\bigcup_{t \\in \\mathbb{S}^{1}}\\left(\\operatorname{AppCon}\\left(\\varphi_{t}\\right) \\times\\{t\\}\\right)=Y_{1} \\cup Y_{2} \\cup Y_{3} \\tag{1.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 135.0,
+            "y0": 100.5,
+            "x1": 322.0,
+            "y1": 129.0,
+            "width": 187.0,
+            "height": 28.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0037",
+      "kind": "display",
+      "display_latex": "\\operatorname{Stab}(\\mathscr{X}, \\mathscr{Y}):=\\left\\{F \\in C^{\\infty}(\\mathscr{X}, \\mathscr{Y}): F \\text { is stable }\\right\\},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 126.5,
+            "y0": 591.0,
+            "x1": 330.0,
+            "y1": 607.0,
+            "width": 203.5,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0019",
+      "kind": "display",
+      "display_latex": "X_{1}:=S_{1}(F) \\backslash S_{1_{2}}(F), \\quad X_{2}:=S_{1_{2}}(F) \\backslash S_{1_{3}}(F), \\quad X_{3}:=S_{1_{3}}(F),",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 116.0,
+            "y0": 300.5,
+            "x1": 390.0,
+            "y1": 317.0,
+            "width": 274.0,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0015",
+      "kind": "display",
+      "display_latex": "Y_{2}:=Y_{2}^{1} \\cup Y_{2}^{2}, \\quad Y_{3}:=Y_{3}^{1} \\cup Y_{3}^{2} \\cup Y_{3}^{3} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 139.0,
+            "y0": 214.5,
+            "x1": 319.5,
+            "y1": 232.0,
+            "width": 180.5,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0038",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nf(y):=\\#\\left\\{\\varphi^{-1}(y)\\right\\}, \\quad y=\\left(y_{1}, y_{2}\\right) \\in \\mathbb{R}^{2} . \\tag{3.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 135.0,
+            "y0": 555.0,
+            "x1": 321.0,
+            "y1": 572.5,
+            "width": 186.0,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0007",
+      "kind": "display",
+      "display_latex": "\\varphi=\\pi \\circ e",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 205.0,
+            "y0": 109.5,
+            "x1": 252.5,
+            "y1": 122.5,
+            "width": 47.5,
+            "height": 13.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0014",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n{\\frac{\\partial^{k} \\gamma(x, t)}{\\partial t^{k}}}_{\\mid t=0}=\\left.\\frac{\\partial^{k} \\gamma(x, t)}{\\partial t^{k}}\\right|_{\\mid t=1}=0, \\quad k \\in \\mathbb{N}, k \\geq 1 . \\tag{5.1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 145.0,
+            "y0": 199.5,
+            "x1": 359.5,
+            "y1": 231.5,
+            "width": 214.5,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0022",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathscr{X}:=M \\times \\mathbb{S}^{1} . \\tag{5.2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 218.0,
+            "y0": 317.5,
+            "x1": 287.5,
+            "y1": 334.5,
+            "width": 69.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0029",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathscr{Y}:=\\mathbb{R}^{2} \\times \\mathbb{S}^{1} . \\tag{5.3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 218.0,
+            "y0": 431.5,
+            "x1": 287.5,
+            "y1": 448.0,
+            "width": 69.5,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0035",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nF_{\\gamma}(x, t):=(\\pi(\\gamma(x, t)), t), \\quad(x, t) \\in \\mathscr{X} . \\tag{5.4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 168.0,
+            "y0": 523.0,
+            "x1": 337.5,
+            "y1": 539.0,
+            "width": 169.5,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0040",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\varphi_{\\bar{t}}:=\\pi(\\gamma(\\cdot, \\bar{t})): x \\in M \\rightarrow \\varphi_{\\bar{t}}(x):=\\left(\\gamma_{1}(x, \\bar{t}), \\gamma_{2}(x, \\bar{t})\\right) \\in \\mathbb{R}^{2} \\tag{5.5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 121.5,
+            "y0": 589.0,
+            "x1": 384.0,
+            "y1": 607.0,
+            "width": 262.5,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0009",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\np(y, t):=t, \\quad y \\in \\mathbb{R}^{2}, t \\in \\mathbb{S}^{1}, \\tag{5.6}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 160.5,
+            "y0": 138.0,
+            "x1": 296.0,
+            "y1": 156.5,
+            "width": 135.5,
+            "height": 18.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0007",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\bar{\\alpha}(x, t):=\\left(G_{1}\\left(x, g^{x}(t)\\right), G_{2}\\left(x, g^{x}(t)\\right), \\alpha_{z}(x, t)\\right), \\quad(x, t) \\in \\mathscr{X} . \\tag{5.7}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 99.0,
+            "y0": 101.0,
+            "x1": 358.5,
+            "y1": 117.5,
+            "width": 259.5,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0011",
+      "kind": "display",
+      "display_latex": "F_{\\bar{\\alpha}}(x, t)=\\left(G_{1}\\left(x, g^{x}(t)\\right), G_{2}\\left(x, g^{x}(t)\\right), t\\right), \\quad(x, t) \\in \\mathscr{X} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 111.0,
+            "y0": 171.0,
+            "x1": 346.0,
+            "y1": 187.5,
+            "width": 235.0,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0016",
+      "kind": "display",
+      "display_latex": "F_{\\bar{\\alpha}} \\in \\operatorname{Stab}(\\mathscr{X}, \\mathscr{Y}) .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 189.0,
+            "y0": 264.0,
+            "x1": 268.5,
+            "y1": 279.5,
+            "width": 79.5,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0025",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\np: \\mathscr{Y} \\rightarrow \\mathbb{S}^{1} \\text { is a stratified Morse function on }\\left(\\mathscr{Y},\\left\\{Y_{j}\\right\\}_{F_{\\tilde{\\beta}}}\\right) . \\tag{5.8}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 100.0,
+            "y0": 390.0,
+            "x1": 357.5,
+            "y1": 411.0,
+            "width": 257.5,
+            "height": 21.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0012",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\na(\\bar{y}, \\bar{t})=0, \\quad \\frac{d}{d \\sigma} a(\\lambda(\\sigma))_{\\mid \\sigma=0} \\neq 0 . \\tag{5.9}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 177.0,
+            "y0": 158.0,
+            "x1": 328.0,
+            "y1": 186.5,
+            "width": 151.0,
+            "height": 28.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0017",
+      "kind": "display",
+      "display_latex": "j(y, t):=t+\\epsilon \\chi(y, t) a(y, t), \\quad(y, t) \\in \\mathscr{Y} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 159.5,
+            "y0": 253.5,
+            "x1": 345.5,
+            "y1": 270.5,
+            "width": 186.0,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0022",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nG:=\\psi \\circ F_{\\beta} \\tag{5.10}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 223.0,
+            "y0": 324.0,
+            "x1": 283.0,
+            "y1": 340.5,
+            "width": 60.0,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0025",
+      "kind": "display",
+      "display_latex": "G(x, t)=\\left(\\pi \\circ \\beta(x, t), i^{x}(t)\\right), \\quad(x, t) \\in \\mathscr{X},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 161.5,
+            "y0": 381.0,
+            "x1": 345.0,
+            "y1": 398.0,
+            "width": 183.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0027",
+      "kind": "display",
+      "display_latex": "i^{x}(t):=t+\\epsilon \\chi\\left(F_{\\beta}(x, t)\\right) a\\left(F_{\\beta}(x, t)\\right), \\quad(x, t) \\in \\mathscr{X} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 145.5,
+            "y0": 424.0,
+            "x1": 359.5,
+            "y1": 442.5,
+            "width": 214.0,
+            "height": 18.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p014-0036",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\frac{d}{d \\sigma} j(\\lambda(\\sigma))_{\\mid \\sigma=0}=\\lambda_{3}^{\\prime}(0)+\\varepsilon \\frac{d}{d \\sigma} a(\\lambda(\\sigma))_{\\mid \\sigma=0}=\\varepsilon \\frac{d}{d \\sigma} a(\\lambda(\\sigma))_{\\mid \\sigma=0}, \\tag{5.11}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 14,
+          "bbox": {
+            "x0": 119.0,
+            "y0": 542.5,
+            "x1": 385.5,
+            "y1": 571.5,
+            "width": 266.5,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0007",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nG \\circ \\phi=F_{\\hat{\\beta}} \\tag{5.12}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 201.0,
+            "y0": 98.0,
+            "x1": 256.0,
+            "y1": 116.0,
+            "width": 55.0,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p015-0027",
+      "kind": "display",
+      "display_latex": "\\tilde{\\gamma}:=\\hat{\\beta},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 15,
+          "bbox": {
+            "x0": 211.5,
+            "y0": 363.5,
+            "x1": 245.5,
+            "y1": 381.0,
+            "width": 34.0,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

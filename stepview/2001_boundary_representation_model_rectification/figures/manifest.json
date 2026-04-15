@@ -1,0 +1,274 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 4,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-1-p004.png",
+      "caption_text": "FIG. 1. Data structure for B-rep models.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 1089.04,
+        "width": 287.67,
+        "height": 1028.09
+      },
+      "caption_bbox": {
+        "x0": 215.68,
+        "y0": 1093.04,
+        "x1": 449.33,
+        "y1": 1107.03,
+        "width": 233.65,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 6,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-2-p006.png",
+      "caption_text": "FIG. 2. Flow chart of an ideal global reconstruction algorithm.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 763.33,
+        "width": 287.67,
+        "height": 702.38
+      },
+      "caption_bbox": {
+        "x0": 153.77,
+        "y0": 767.33,
+        "x1": 511.24,
+        "y1": 787.31,
+        "width": 357.47,
+        "height": 19.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 7,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-3-p007.png",
+      "caption_text": "FIG. 3. Two homeomorphic graphs with different geometric embeddings.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 642.24,
+        "y1": 1089.04,
+        "width": 615.48,
+        "height": 1028.09
+      },
+      "caption_bbox": {
+        "x0": 125.81,
+        "y0": 1093.04,
+        "x1": 541.19,
+        "y1": 1109.03,
+        "width": 415.38,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 8,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-4-p008.png",
+      "caption_text": "FIG. 4. Curve segments from surface intersections.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 341.7,
+        "width": 287.67,
+        "height": 280.75
+      },
+      "caption_bbox": {
+        "x0": 185.72,
+        "y0": 345.7,
+        "x1": 479.28,
+        "y1": 361.68,
+        "width": 293.56,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 9,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-5-p009.png",
+      "caption_text": "FIG. 5. Initial rectification of an edge on a face.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 325.71,
+        "width": 287.67,
+        "height": 264.76
+      },
+      "caption_bbox": {
+        "x0": 191.71,
+        "y0": 329.71,
+        "x1": 471.3,
+        "y1": 343.7,
+        "width": 279.58,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 9,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-6-p009.png",
+      "caption_text": "FIG. 6. Creation of e, by vertex perturbation.",
+      "figure_bbox": {
+        "x0": 354.57,
+        "y0": 347.7,
+        "x1": 642.24,
+        "y1": 1089.04,
+        "width": 287.67,
+        "height": 741.34
+      },
+      "caption_bbox": {
+        "x0": 201.7,
+        "y0": 1093.04,
+        "x1": 467.3,
+        "y1": 1111.02,
+        "width": 265.6,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 10,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-7-p010.png",
+      "caption_text": "FIG. 7. Trimming of dangling curve segments (a) and gap filling (b).",
+      "figure_bbox": {
+        "x0": 354.57,
+        "y0": 60.95,
+        "x1": 642.24,
+        "y1": 747.34,
+        "width": 287.67,
+        "height": 686.39
+      },
+      "caption_bbox": {
+        "x0": 139.79,
+        "y0": 751.34,
+        "x1": 529.21,
+        "y1": 767.33,
+        "width": 389.42,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 12,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-8-p012.png",
+      "caption_text": "FIG. 8. Minimization of edge geometric change.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 1089.04,
+        "width": 287.67,
+        "height": 1028.09
+      },
+      "caption_bbox": {
+        "x0": 189.72,
+        "y0": 1093.04,
+        "x1": 471.3,
+        "y1": 1109.03,
+        "width": 281.58,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 14,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-9-p014.png",
+      "caption_text": "FIG. 9. An instance of the restricted FR problem.",
+      "figure_bbox": {
+        "x0": 26.76,
+        "y0": 60.95,
+        "x1": 314.43,
+        "y1": 323.71,
+        "width": 287.67,
+        "height": 262.76
+      },
+      "caption_bbox": {
+        "x0": 189.72,
+        "y0": 327.71,
+        "x1": 473.29,
+        "y1": 345.7,
+        "width": 283.58,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 16,
+      "image_path": "docs/2001_boundary_representation_model_rectification/figures/figure-10-p016.png",
+      "caption_text": "FIG. 10. Illustration of the proof of Theorem 3.2.(",
+      "figure_bbox": {
+        "x0": 354.57,
+        "y0": 60.95,
+        "x1": 642.24,
+        "y1": 439.61,
+        "width": 287.67,
+        "height": 378.66
+      },
+      "caption_bbox": {
+        "x0": 187.72,
+        "y0": 443.61,
+        "x1": 483.28,
+        "y1": 465.59,
+        "width": 295.56,
+        "height": 21.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

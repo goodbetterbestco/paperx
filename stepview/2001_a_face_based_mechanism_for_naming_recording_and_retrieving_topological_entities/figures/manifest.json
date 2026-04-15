@@ -1,0 +1,571 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-1-p002.png",
+      "caption_text": "Fig. 1. CSG Tree-like structure of the design history of a part.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 349.69,
+        "width": 365.5,
+        "height": 288.74
+      },
+      "caption_bbox": {
+        "x0": 94.0,
+        "y0": 353.69,
+        "x1": 386.0,
+        "y1": 365.68,
+        "width": 292.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 3,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-2-p003.png",
+      "caption_text": "Fig. 2. The adjacent faces of an edge.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 227.8,
+        "width": 365.5,
+        "height": 166.85
+      },
+      "caption_bbox": {
+        "x0": 140.0,
+        "y0": 231.8,
+        "x1": 318.0,
+        "y1": 243.79,
+        "width": 178.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 3,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-3-p003.png",
+      "caption_text": "Fig. 3. The feature face set of feature.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 247.79,
+        "x1": 399.5,
+        "y1": 1035.09,
+        "width": 365.5,
+        "height": 787.3
+      },
+      "caption_bbox": {
+        "x0": 138.0,
+        "y0": 1039.09,
+        "x1": 318.0,
+        "y1": 1055.07,
+        "width": 180.0,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 4,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-6-p004.png",
+      "caption_text": "Fig. 6. Typical sweep feature.",
+      "figure_bbox": {
+        "x0": 450.5,
+        "y0": 60.95,
+        "x1": 816.0,
+        "y1": 329.71,
+        "width": 365.5,
+        "height": 268.76
+      },
+      "caption_bbox": {
+        "x0": 546.0,
+        "y0": 333.71,
+        "x1": 690.0,
+        "y1": 349.69,
+        "width": 144.0,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 4,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-4-p004.png",
+      "caption_text": "Fig. 4. Brief diagram of mechanism for naming, recording and retrieving",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 403.64,
+        "width": 365.5,
+        "height": 342.69
+      },
+      "caption_bbox": {
+        "x0": 68.0,
+        "y0": 407.64,
+        "x1": 416.0,
+        "y1": 421.63,
+        "width": 348.0,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 4,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-5-p004.png",
+      "caption_text": "Fig. 5. Dependency between original names and feature faces.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 425.63,
+        "x1": 399.5,
+        "y1": 1037.09,
+        "width": 365.5,
+        "height": 611.46
+      },
+      "caption_bbox": {
+        "x0": 94.0,
+        "y0": 1041.09,
+        "x1": 386.0,
+        "y1": 1053.08,
+        "width": 292.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 5,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-7-p005.png",
+      "caption_text": "Fig. 7. Name chamfer feature.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 359.68,
+        "width": 365.5,
+        "height": 298.73
+      },
+      "caption_bbox": {
+        "x0": 158.0,
+        "y0": 363.68,
+        "x1": 300.0,
+        "y1": 377.67,
+        "width": 142.0,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 6,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-8-p006.png",
+      "caption_text": "Fig. 8. Name linear patter feature.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 363.68,
+        "width": 365.5,
+        "height": 302.73
+      },
+      "caption_bbox": {
+        "x0": 156.0,
+        "y0": 367.68,
+        "x1": 324.0,
+        "y1": 379.67,
+        "width": 168.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 7,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-9-p007.png",
+      "caption_text": "Fig. 9. Propagation of splitting topological name.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 333.7,
+        "width": 365.5,
+        "height": 272.75
+      },
+      "caption_bbox": {
+        "x0": 114.0,
+        "y0": 337.7,
+        "x1": 346.0,
+        "y1": 349.69,
+        "width": 232.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 7,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-10-p007.png",
+      "caption_text": "Fig. 10. Propagation of merging topological name.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 353.69,
+        "x1": 399.5,
+        "y1": 1037.09,
+        "width": 365.5,
+        "height": 683.39
+      },
+      "caption_bbox": {
+        "x0": 110.0,
+        "y0": 1041.09,
+        "x1": 348.0,
+        "y1": 1053.08,
+        "width": 238.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 8,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-13-p008.png",
+      "caption_text": "Fig. 13. Symmetric edges.",
+      "figure_bbox": {
+        "x0": 450.5,
+        "y0": 60.95,
+        "x1": 816.0,
+        "y1": 211.81,
+        "width": 365.5,
+        "height": 150.86
+      },
+      "caption_bbox": {
+        "x0": 554.0,
+        "y0": 215.81,
+        "x1": 682.0,
+        "y1": 231.8,
+        "width": 128.0,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 8,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-11-p008.png",
+      "caption_text": "Fig. 11. Hierarchical structure of names.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 305.73,
+        "width": 365.5,
+        "height": 244.78
+      },
+      "caption_bbox": {
+        "x0": 146.0,
+        "y0": 309.73,
+        "x1": 336.0,
+        "y1": 323.72,
+        "width": 190.0,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 8,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-12-p008.png",
+      "caption_text": "Fig. 12. Symmetric topological face.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 327.72,
+        "x1": 399.5,
+        "y1": 1035.09,
+        "width": 365.5,
+        "height": 707.37
+      },
+      "caption_bbox": {
+        "x0": 154.0,
+        "y0": 1039.09,
+        "x1": 326.0,
+        "y1": 1055.07,
+        "width": 172.0,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 9,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-14-p009.png",
+      "caption_text": "Fig. 14. Symmetric vertices.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 279.75,
+        "width": 365.5,
+        "height": 218.8
+      },
+      "caption_bbox": {
+        "x0": 162.0,
+        "y0": 283.75,
+        "x1": 296.0,
+        "y1": 295.74,
+        "width": 134.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 9,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-15-p009.png",
+      "caption_text": "Fig. 15. Shape, size, location and gesture of the original feature body have",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 299.74,
+        "x1": 399.5,
+        "y1": 1023.1,
+        "width": 365.5,
+        "height": 723.36
+      },
+      "caption_bbox": {
+        "x0": 56.0,
+        "y0": 1027.1,
+        "x1": 404.0,
+        "y1": 1039.09,
+        "width": 348.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 10,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-18-p010.png",
+      "caption_text": "Fig. 18. Obtain parametric space information.",
+      "figure_bbox": {
+        "x0": 450.5,
+        "y0": 60.95,
+        "x1": 816.0,
+        "y1": 263.76,
+        "width": 365.5,
+        "height": 202.81
+      },
+      "caption_bbox": {
+        "x0": 512.0,
+        "y0": 267.76,
+        "x1": 726.0,
+        "y1": 281.75,
+        "width": 214.0,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 10,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-16-p010.png",
+      "caption_text": "Fig. 16. The variation of parametric space.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 265.76,
+        "width": 365.5,
+        "height": 204.81
+      },
+      "caption_bbox": {
+        "x0": 140.0,
+        "y0": 269.76,
+        "x1": 340.0,
+        "y1": 281.75,
+        "width": 200.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 10,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-17-p010.png",
+      "caption_text": "Fig. 17. Select feature point.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 285.75,
+        "x1": 399.5,
+        "y1": 1037.09,
+        "width": 365.5,
+        "height": 751.33
+      },
+      "caption_bbox": {
+        "x0": 172.0,
+        "y0": 1041.09,
+        "x1": 308.0,
+        "y1": 1053.08,
+        "width": 136.0,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-21",
+      "label": "21",
+      "page": 11,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-21-p011.png",
+      "caption_text": "Fig. 21. Distinguish strongly symmetric edges.",
+      "figure_bbox": {
+        "x0": 450.5,
+        "y0": 60.95,
+        "x1": 816.0,
+        "y1": 257.77,
+        "width": 365.5,
+        "height": 196.82
+      },
+      "caption_bbox": {
+        "x0": 494.0,
+        "y0": 261.77,
+        "x1": 718.0,
+        "y1": 279.75,
+        "width": 224.0,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 11,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-19-p011.png",
+      "caption_text": "Fig. 19. Distinguish ambiguous faces.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 60.95,
+        "x1": 399.5,
+        "y1": 265.76,
+        "width": 365.5,
+        "height": 204.81
+      },
+      "caption_bbox": {
+        "x0": 140.0,
+        "y0": 269.76,
+        "x1": 318.0,
+        "y1": 283.75,
+        "width": 178.0,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 11,
+      "image_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-20-p011.png",
+      "caption_text": "Fig. 20. Distinguish weakly symmetric edges.",
+      "figure_bbox": {
+        "x0": 34.0,
+        "y0": 287.75,
+        "x1": 399.5,
+        "y1": 1035.09,
+        "width": 365.5,
+        "height": 747.34
+      },
+      "caption_bbox": {
+        "x0": 122.0,
+        "y0": 1039.09,
+        "x1": 338.0,
+        "y1": 1055.07,
+        "width": 216.0,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

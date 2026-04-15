@@ -1,0 +1,470 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p008-0024",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\mathbf{p}_{i}=\\sum_{\\mathbf{x}_{j} \\in \\mathcal{C}} w_{j}^{i} \\mathbf{x}_{j}, \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 49.48,
+            "y0": 537.41,
+            "x1": 106.96,
+            "y1": 563.9,
+            "width": 57.48,
+            "height": 26.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0030",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nw_{j}^{i}(s, t)=\\left[M_{t} \\mathbf{t}\\right]_{\\operatorname{row}(j)}\\left[M_{s} \\mathbf{s}\\right]_{\\operatorname{col}(j)}, \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 50.48,
+            "y0": 632.89,
+            "x1": 169.94,
+            "y1": 647.89,
+            "width": 119.46,
+            "height": 15.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0041",
+      "kind": "display",
+      "display_latex": "M_{s}=M_{t}=\\left[\\begin{array}{cccc}\n1 & -3 & 3 & -1  \\tag{3}\\\\\n4 & 0 & -6 & 3 \\\\\n1 & 3 & 3 & -3 \\\\\n0 & 0 & 0 & 1\n\\end{array}\\right] .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 305.39,
+            "y0": 112.48,
+            "x1": 419.34,
+            "y1": 163.97,
+            "width": 113.96,
+            "height": 51.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0060",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\boldsymbol{\\delta}_{\\mathrm{i}}=\\frac{1}{\\left|\\mathcal{A}_{\\mathrm{i}}\\right|} \\sum_{\\mathbf{p}_{\\mathrm{j}} \\in \\mathcal{A}_{\\mathrm{i}}}\\left(\\mathbf{q}_{\\mathrm{j}}-\\mathbf{p}_{\\mathrm{j}}\\right) \\mathrm{w}_{\\mathrm{i}}^{\\mathrm{j}}, \\tag{4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 305.39,
+            "y0": 391.93,
+            "x1": 410.85,
+            "y1": 421.93,
+            "width": 105.46,
+            "height": 29.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0050",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nf^{L}\\left(u_{1}, 0\\right)=f^{R}\\left(0, u_{1}\\right), \\quad u_{1} \\in[0,1], \\tag{5}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 303.89,
+            "y0": 504.41,
+            "x1": 447.33,
+            "y1": 519.41,
+            "width": 143.45,
+            "height": 15.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0011",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\n& f_{v_{1}}^{L}\\left(u_{1}, 0\\right) c\\left(u_{1}\\right)+f_{u_{1}}^{R}\\left(0, u_{1}\\right) b\\left(u_{1}\\right)+f_{v_{0}}^{L}\\left(0, u_{1}\\right) a\\left(u_{1}\\right)=0,  \\tag{6}\\\\\n& c\\left(u_{1}\\right) b\\left(u_{1}\\right)<0,  \\tag{7}\\\\\n& \\left\\langle f_{v_{1}}^{L}\\left(u_{1}, 0\\right), f_{v_{0}}^{R}\\left(0, u_{1}\\right)\\right\\rangle \\neq 0, \\tag{8}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 47.98,
+            "y0": 311.45,
+            "x1": 261.4,
+            "y1": 392.43,
+            "width": 213.42,
+            "height": 80.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0027",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a(u)=a_{0} B_{2}^{0}(u)-a_{2} B_{2}^{2}(u), \\\\\n& b(u)=-1, \\\\\n& c(u)=1,\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 47.98,
+            "y0": 555.91,
+            "x1": 156.94,
+            "y1": 602.4,
+            "width": 108.96,
+            "height": 46.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0038",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\phi_{\\sigma_{R}, \\sigma_{L}}: \\mathbb{R}^{2} \\longrightarrow \\mathbb{R}^{2}, \\quad\\left(u_{1}, v_{1}\\right) \\mapsto\\left(u_{0}, v_{0}\\right) \\\\\n& \\quad=\\binom{v_{1} \\mathfrak{b}\\left(u_{1}\\right)}{u_{1}+v_{1} \\mathfrak{a}\\left(u_{1}\\right)}, \\quad \\text { where } \\quad \\mathfrak{b}(u)=\\frac{b(u)}{c(u)}, \\mathfrak{a}(u)=\\frac{a(u)}{c(u)}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 302.89,
+            "y0": 313.95,
+            "x1": 546.79,
+            "y1": 366.44,
+            "width": 243.91,
+            "height": 52.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0043",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\mathrm{b}_{0,1}^{L}+\\mathrm{b}_{1,0}^{R} \\&=\\bar{a}_{0} \\mathrm{~b}_{0,0}^{L}+a_{0} \\mathrm{~b}_{1,0}^{L}, & \\\\\n5\\left(\\mathrm{~b}_{1,1}^{L}+\\mathrm{b}_{1,1}^{R}\\right)= & a_{0} \\mathrm{~b}_{0,0}^{L}+5 \\bar{a}_{0} \\mathrm{~b}_{1,0}^{L}+4 a_{0} \\mathrm{~b}_{2,0}^{L}, \\\\\n10\\left(\\mathrm{~b}_{2,1}^{L}+\\mathrm{b}_{1,2}^{R}\\right)= & -a_{0} \\mathrm{~b}_{0,0}^{L}+5 a_{0} \\mathrm{~b}_{1,0}^{L}+10 \\bar{a}_{0} \\mathrm{~b}_{2,0}^{L}+6 a_{0} \\mathrm{~b}_{3,0}^{L}, \\\\\n10\\left(\\mathrm{~b}_{3,1}^{L}+\\mathrm{b}_{1,3}^{R}\\right)= & a_{0} \\mathrm{~b}_{0,0}^{L}-5 a_{0} \\mathrm{~b}_{1,0}^{L}+10 a_{0} \\mathrm{~b}_{2,0}^{L}+10 \\bar{a}_{0} \\mathrm{~b}_{3,0}^{L} \\\\\n& +4 a_{0} \\mathrm{~b}_{4,0}^{L}, \\mathrm{~b}_{4,1}^{L}+\\mathrm{b}_{1,4}^{R} \\&=2 \\mathrm{~b}_{4,0}^{L}, \\\\\n\\mathrm{~b}_{5,1}^{L}+\\mathrm{b}_{1,5}^{R}= & 2 \\mathrm{~b}_{5,0}^{L}, \\\\\n10\\left(\\mathrm{~b}_{3,0}^{L}-\\mathrm{b}_{2,0}^{L}\\right)= & \\mathrm{b}_{0,0}^{L}-5 \\mathrm{~b}_{1,0}^{L}+5 \\mathrm{~b}_{4,0}^{L}-\\mathrm{b}_{5,0}^{L},\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 304.39,
+            "y0": 431.43,
+            "x1": 534.3,
+            "y1": 539.41,
+            "width": 229.91,
+            "height": 107.98
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0046",
+      "kind": "display",
+      "display_latex": "S(\\xi ; \\sigma)=\\sum_{j=1}^{n_{b}} c_{j} B_{j}(\\xi ; \\sigma), \\quad \\sigma \\in \\mathcal{M}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 47.98,
+            "y0": 623.39,
+            "x1": 189.43,
+            "y1": 657.89,
+            "width": 141.45,
+            "height": 34.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0050",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\min _{\\mathbf{c}} \\sum_{i=1}^{n_{P}}\\left\\|\\sum_{j=1}^{n_{b}} c_{j} B_{j}\\left(\\xi^{i} ; \\sigma_{\\ell}\\right)-\\mathbf{P}_{i}\\right\\|_{2}^{2}+\\lambda E_{\\text {thin }}(\\mathbf{c}), \\quad \\lambda \\geq 0 \\tag{9}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 301.89,
+            "y0": 54.99,
+            "x1": 517.81,
+            "y1": 97.48,
+            "width": 215.92,
+            "height": 42.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0054",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& E_{\\text {thin }}(\\mathbf{c})=\\sum_{\\ell=1}^{n_{F}} \\iint_{[0,1]^{2}}\\left\\|S_{\\xi_{1} \\xi_{1}}\\left(\\xi ; \\sigma_{\\ell}\\right)\\right\\|_{2}^{2} \\\\\n& \\quad+2\\left\\|S_{\\xi_{1} \\xi_{2}}\\left(\\xi ; \\sigma_{\\ell}\\right)\\right\\|_{2}^{2}+\\left\\|S_{\\xi_{2} \\xi_{2}}\\left(\\xi ; \\sigma_{\\ell}\\right)\\right\\|_{2}^{2} d \\xi\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 301.89,
+            "y0": 133.98,
+            "x1": 475.82,
+            "y1": 193.47,
+            "width": 173.93,
+            "height": 59.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0065",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\nL^{\\infty} & :=\\max _{i=1, \\ldots, n_{P}}\\left\\|S\\left(\\boldsymbol{\\xi}^{i}\\right)-\\mathbf{P}_{i}\\right\\|_{2} \\\\\n& \\text { RMSE }:=\\sqrt{\\frac{1}{n_{P}} \\sum_{i=1}^{n_{P}}\\left\\|S\\left(\\boldsymbol{\\xi}^{i}\\right)-\\mathbf{P}_{i}\\right\\|_{2}^{2}} \\tag{10}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 302.89,
+            "y0": 338.44,
+            "x1": 470.82,
+            "y1": 405.93,
+            "width": 167.94,
+            "height": 67.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0037",
+      "kind": "display",
+      "display_latex": "\\left\\{\\begin{array}{lc}\na_{1}(\\widehat{u}(\\xi, t), \\widehat{w})=b_{1}\\left(\\partial_{t} \\widehat{u}(\\xi, t), \\widehat{w}\\right), & (\\xi, t) \\in \\widehat{\\Omega} \\times(0, T],  \\tag{13}\\\\\nu(\\xi, 0)=u_{0}(\\mathbf{x}), & \\xi \\in \\widehat{\\Omega}, \\widehat{\\mathbf{x}}(\\xi) \\in \\Omega, \\\\\n\\widehat{u}(\\xi, t)=u_{D}(\\mathbf{x}, t), & (\\xi, t) \\in \\partial \\widehat{\\Omega} \\times(0, T],\n\\end{array}\\right.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 303.89,
+            "y0": 55.99,
+            "x1": 535.8,
+            "y1": 107.48,
+            "width": 231.91,
+            "height": 51.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0051",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& a_{2}(\\widehat{v}, \\widehat{w})=\\int_{\\widehat{\\Omega}} \\frac{1}{\\widehat{g}} \\widehat{\\nabla} \\cdot\\left(\\widehat{g} \\widehat{G}^{-1}(\\xi) \\widehat{\\nabla} \\widehat{v}\\right) \\widehat{\\nabla} \\\\\n& \\quad \\cdot\\left(\\widehat{g} \\widehat{G}^{-1} \\widehat{\\nabla} \\widehat{w}\\right) \\mathrm{d} \\xi, \\quad b_{2}(\\widehat{v}, \\widehat{w})=\\int_{\\widehat{\\Omega}} \\widehat{v} \\widehat{w} \\widehat{g} \\mathrm{~d} \\xi\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 303.89,
+            "y0": 402.93,
+            "x1": 488.82,
+            "y1": 458.42,
+            "width": 184.93,
+            "height": 55.49
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

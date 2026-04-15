@@ -1,0 +1,571 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-1-p002.png",
+      "caption_text": "Figure 1: Topological structure of a B-rep model showing the hierarchical relationship between bodies, shells, faces, loops, edges, and vertices. The parameter-space trims map to R 3 edges through the surface parametrization S .",
+      "figure_bbox": {
+        "x0": 44.97,
+        "y0": 43.94,
+        "x1": 544.75,
+        "y1": 239.83,
+        "width": 499.78,
+        "height": 195.89
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 246.46,
+        "x1": 536.83,
+        "y1": 262.76,
+        "width": 494.18,
+        "height": 16.31
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 2,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-2-p002.png",
+      "caption_text": "Figure 2: Continuous, non-intersecting spline geometries (left and middle: curves in R 2 ; right: surfaces in R 3 ) and their tessellated approximations (polylines and meshes) exhibiting unintended intersections.",
+      "figure_bbox": {
+        "x0": 44.97,
+        "y0": 43.94,
+        "x1": 544.75,
+        "y1": 371.0,
+        "width": 499.78,
+        "height": 327.06
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 375.46,
+        "x1": 537.37,
+        "y1": 393.94,
+        "width": 494.72,
+        "height": 18.48
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 3,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-3-p003.png",
+      "caption_text": "Figure 3: OBB calculation for a NURBS curve. The process involves: Construct a rotation system R by connecting the first and last control points; Transform the curve using R ; Calculate axis-aligned bounding box (AABB) of the transformed control points; Transform AABB back using R \u2212 1 to get the OBB.",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 43.83,
+        "x1": 550.37,
+        "y1": 164.83,
+        "width": 499.78,
+        "height": 121.01
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 171.46,
+        "x1": 556.71,
+        "y1": 196.73,
+        "width": 508.46,
+        "height": 25.27
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 3,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-4-p003.png",
+      "caption_text": "Figure 4: If the control-polygon angles relative to the initial tangent at C (0) = CV 0 are increasing, then the angle function \u03b8 ( t ) is also increasing for t \u2208 [0 , 1] .",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 43.83,
+        "x1": 550.37,
+        "y1": 354.18,
+        "width": 499.78,
+        "height": 310.36
+      },
+      "caption_bbox": {
+        "x0": 48.09,
+        "y0": 360.68,
+        "x1": 540.69,
+        "y1": 377.12,
+        "width": 492.61,
+        "height": 16.43
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 4,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-5-p004.png",
+      "caption_text": "Figure 5: Sampling at a shared endpoint C (0) of curves C 1 and C 2 using the separation vector D . (A), (B), and (C) represent the cases of opposite curvature directions, same curvature direction with different tangents, and identical curvature and tangent, respectively. T denotes the common tangent direction ( T = T 1 = T 2 ).",
+      "figure_bbox": {
+        "x0": 44.97,
+        "y0": 45.13,
+        "x1": 544.72,
+        "y1": 174.83,
+        "width": 499.75,
+        "height": 129.7
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 181.46,
+        "x1": 531.77,
+        "y1": 207.22,
+        "width": 489.11,
+        "height": 25.76
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 5,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-6-p005.png",
+      "caption_text": "Figure 6: Workflow of our algorithm. Our method ensures the generation of watertight, high-quality mesh without self-intersections through four steps.",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 43.86,
+        "x1": 550.37,
+        "y1": 264.83,
+        "width": 499.78,
+        "height": 220.97
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 271.46,
+        "x1": 541.62,
+        "y1": 287.77,
+        "width": 493.36,
+        "height": 16.31
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 5,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-7-p005.png",
+      "caption_text": "Figure 7: Construction of the parallel hexahedron bounding volume and comparison with alternative bounding volumes. The computation pipeline comprises: construct a non-rigid rotation system R ; transform the surface using R ; calculate AABB of the transformed surface; transform AABB back using R \u2212 1 to get the parallel hexahedron. The right side of the figure provides a visual comparison with two other common bounding volumes.",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 43.86,
+        "x1": 550.37,
+        "y1": 410.89,
+        "width": 499.78,
+        "height": 367.03
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 417.52,
+        "x1": 550.45,
+        "y1": 442.79,
+        "width": 502.19,
+        "height": 25.27
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 6,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-8-p006.png",
+      "caption_text": "Figure 8: Computation of critical regions between surfaces. For two surfaces with poor parametrization, our method generates uniform critical region subdivisions based on their geometric features.",
+      "figure_bbox": {
+        "x0": 73.47,
+        "y0": 43.79,
+        "x1": 516.61,
+        "y1": 172.83,
+        "width": 443.14,
+        "height": 129.05
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 179.46,
+        "x1": 549.29,
+        "y1": 195.77,
+        "width": 506.64,
+        "height": 16.31
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 6,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-9-p006.png",
+      "caption_text": "Figure 9: One surface\u2019s critical region and its tessellated triangles. The outer, inner boundary edges and critical region edges serve as constraints for CDT, which can be resampled by linear interpolation. The fixed edge points ensure a one-to-one mapping between surfaces and watertightness.",
+      "figure_bbox": {
+        "x0": 73.47,
+        "y0": 43.79,
+        "x1": 516.61,
+        "y1": 343.0,
+        "width": 443.14,
+        "height": 299.22
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 349.62,
+        "x1": 543.24,
+        "y1": 365.94,
+        "width": 500.59,
+        "height": 16.32
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 7,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-10-p007.png",
+      "caption_text": "Figure 10: Case 1 for R 2 curves tessellation. Self-intersection results are marked with \u2217 .",
+      "figure_bbox": {
+        "x0": 107.08,
+        "y0": 44.54,
+        "x1": 493.58,
+        "y1": 323.82,
+        "width": 386.5,
+        "height": 279.29
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 328.29,
+        "x1": 345.46,
+        "y1": 337.8,
+        "width": 297.2,
+        "height": 9.51
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 8,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-11-p008.png",
+      "caption_text": "Figure 11: Case 2 for R 2 curves tessellation.",
+      "figure_bbox": {
+        "x0": 101.47,
+        "y0": 44.34,
+        "x1": 487.97,
+        "y1": 327.83,
+        "width": 386.5,
+        "height": 283.49
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 332.29,
+        "x1": 192.64,
+        "y1": 341.8,
+        "width": 149.99,
+        "height": 9.52
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 9,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-12-p009.png",
+      "caption_text": "Figure 12: Case 3 for R 2 loops tessellation.",
+      "figure_bbox": {
+        "x0": 107.08,
+        "y0": 44.38,
+        "x1": 493.58,
+        "y1": 319.83,
+        "width": 386.5,
+        "height": 275.45
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 324.29,
+        "x1": 194.05,
+        "y1": 333.8,
+        "width": 145.79,
+        "height": 9.51
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 9,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-13-p009.png",
+      "caption_text": "Figure 13: Case 4 for R 2 loops tessellation.",
+      "figure_bbox": {
+        "x0": 107.08,
+        "y0": 44.38,
+        "x1": 493.58,
+        "y1": 616.04,
+        "width": 386.5,
+        "height": 571.65
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 620.49,
+        "x1": 194.05,
+        "y1": 630.01,
+        "width": 145.79,
+        "height": 9.52
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 10,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-14-p010.png",
+      "caption_text": "Figure 14: Eight CAD models tessellated with our method, demonstrating its effectiveness and generality across a variety of geometric features and complexities.",
+      "figure_bbox": {
+        "x0": 58.98,
+        "y0": 44.38,
+        "x1": 530.43,
+        "y1": 250.83,
+        "width": 471.46,
+        "height": 206.45
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 257.45,
+        "x1": 542.21,
+        "y1": 273.76,
+        "width": 499.56,
+        "height": 16.31
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 11,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-15-p011.png",
+      "caption_text": "Figure 15: Visual comparison with other methods. Surface self-intersections are highlighted in red, and regions with significant geometric errors are locally magnified for clarity.",
+      "figure_bbox": {
+        "x0": 93.09,
+        "y0": 43.91,
+        "x1": 507.9,
+        "y1": 550.83,
+        "width": 414.82,
+        "height": 506.93
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 557.46,
+        "x1": 549.78,
+        "y1": 573.77,
+        "width": 501.52,
+        "height": 16.31
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 12,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-16-p012.png",
+      "caption_text": "Figure 16: Close-up comparison of watertightness in two local regions across four meshing methods: Gmsh, Netgen, OCC, and Ours. Each row shows a magnified view of a distinct surface junction. Non-watertight regions are enclosed in red boxes. While Netgen and our method maintain consistent watertight connections, Gmsh and OCC exhibit visible gaps or misalignments at patch boundaries.",
+      "figure_bbox": {
+        "x0": 69.97,
+        "y0": 43.99,
+        "x1": 519.83,
+        "y1": 252.83,
+        "width": 449.86,
+        "height": 208.85
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 259.45,
+        "x1": 551.05,
+        "y1": 284.73,
+        "width": 508.4,
+        "height": 25.28
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-c1",
+      "label": "C1",
+      "page": 17,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-c1-p017.png",
+      "caption_text": "Figure C1: Visualization of tessellation results for the additional dataset (Part I).",
+      "figure_bbox": {
+        "x0": 79.08,
+        "y0": 43.86,
+        "x1": 521.5,
+        "y1": 654.83,
+        "width": 442.42,
+        "height": 610.97
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 661.46,
+        "x1": 320.27,
+        "y1": 668.8,
+        "width": 272.01,
+        "height": 7.34
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-c2",
+      "label": "C2",
+      "page": 18,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-c2-p018.png",
+      "caption_text": "Figure C2: Visualization of tessellation results for the additional dataset (Part II).",
+      "figure_bbox": {
+        "x0": 77.47,
+        "y0": 43.86,
+        "x1": 512.21,
+        "y1": 654.83,
+        "width": 434.74,
+        "height": 610.97
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 661.46,
+        "x1": 317.0,
+        "y1": 668.8,
+        "width": 274.35,
+        "height": 7.34
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-c3",
+      "label": "C3",
+      "page": 19,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-c3-p019.png",
+      "caption_text": "Figure C3: Distribution of running times for test cases.",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 44.42,
+        "x1": 550.37,
+        "y1": 341.82,
+        "width": 499.78,
+        "height": 297.41
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 348.45,
+        "x1": 235.39,
+        "y1": 355.8,
+        "width": 187.13,
+        "height": 7.34
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-c4",
+      "label": "C4",
+      "page": 19,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-c4-p019.png",
+      "caption_text": "Figure C4: Distribution of scaled Jacobian values for test cases.",
+      "figure_bbox": {
+        "x0": 50.59,
+        "y0": 44.42,
+        "x1": 588.24,
+        "y1": 690.27,
+        "width": 537.65,
+        "height": 645.85
+      },
+      "caption_bbox": {
+        "x0": 48.26,
+        "y0": 696.9,
+        "x1": 263.11,
+        "y1": 704.24,
+        "width": 214.85,
+        "height": 7.34
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-c5",
+      "label": "C5",
+      "page": 20,
+      "image_path": "docs/2026_robust_tessellation_without_self_intersections/figures/figure-c5-p020.png",
+      "caption_text": "Figure C5: Distribution of skewness for test cases.",
+      "figure_bbox": {
+        "x0": 44.97,
+        "y0": 43.75,
+        "x1": 544.75,
+        "y1": 342.83,
+        "width": 499.78,
+        "height": 299.09
+      },
+      "caption_bbox": {
+        "x0": 42.65,
+        "y0": 349.45,
+        "x1": 213.94,
+        "y1": 356.8,
+        "width": 171.29,
+        "height": 7.34
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    }
+  ]
+}

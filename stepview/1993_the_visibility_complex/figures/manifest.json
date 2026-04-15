@@ -1,0 +1,274 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 3,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-2-p003.png",
+      "caption_text": "Figure 2: A neighborhood of a vertex of the visibility",
+      "figure_bbox": {
+        "x0": 326.48,
+        "y0": 43.65,
+        "x1": 591.36,
+        "y1": 244.4,
+        "width": 264.88,
+        "height": 200.75
+      },
+      "caption_bbox": {
+        "x0": 322.32,
+        "y0": 248.4,
+        "x1": 540.73,
+        "y1": 257.96,
+        "width": 218.41,
+        "height": 9.56
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-1-p003.png",
+      "caption_text": "Figure 1: a. A configuration of three obstacles in the",
+      "figure_bbox": {
+        "x0": 24.64,
+        "y0": 43.65,
+        "x1": 289.52,
+        "y1": 259.52,
+        "width": 264.88,
+        "height": 215.87
+      },
+      "caption_bbox": {
+        "x0": 66.0,
+        "y0": 263.52,
+        "x1": 292.11,
+        "y1": 273.08,
+        "width": 226.11,
+        "height": 9.56
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 4,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-4-p004.png",
+      "caption_text": "Figure 4: A face of P(Om).",
+      "figure_bbox": {
+        "x0": 329.13,
+        "y0": 43.85,
+        "x1": 596.16,
+        "y1": 269.52,
+        "width": 267.03,
+        "height": 225.67
+      },
+      "caption_bbox": {
+        "x0": 377.28,
+        "y0": 273.52,
+        "x1": 482.37,
+        "y1": 283.08,
+        "width": 105.09,
+        "height": 9.56
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 4,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-3-p004.png",
+      "caption_text": "Figure 3: The set of directed lines intersecting (a) a con- vex object and (b) bounded segment.",
+      "figure_bbox": {
+        "x0": 24.84,
+        "y0": 43.85,
+        "x1": 291.87,
+        "y1": 399.53,
+        "width": 267.03,
+        "height": 355.68
+      },
+      "caption_bbox": {
+        "x0": 63.12,
+        "y0": 403.53,
+        "x1": 290.66,
+        "y1": 426.17,
+        "width": 227.54,
+        "height": 22.64
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 4,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-5-p004.png",
+      "caption_text": "Figure 5. There is a well\u2013defined tangent ray ti at ai.",
+      "figure_bbox": {
+        "x0": 329.13,
+        "y0": 653.32,
+        "x1": 596.16,
+        "y1": 753.15,
+        "width": 267.03,
+        "height": 99.83
+      },
+      "caption_bbox": {
+        "x0": 317.76,
+        "y0": 639.76,
+        "x1": 542.21,
+        "y1": 649.32,
+        "width": 224.45,
+        "height": 9.56
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5-2",
+      "label": "5",
+      "page": 5,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-5-2-p005.png",
+      "caption_text": "Figure 5: A pseudo-triangle and the set of rays emanat-",
+      "figure_bbox": {
+        "x0": 24.72,
+        "y0": 43.75,
+        "x1": 290.46,
+        "y1": 195.21,
+        "width": 265.74,
+        "height": 151.46
+      },
+      "caption_bbox": {
+        "x0": 69.12,
+        "y0": 199.21,
+        "x1": 294.31,
+        "y1": 210.09,
+        "width": 225.19,
+        "height": 10.88
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 6,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-6-p006.png",
+      "caption_text": "Figure 6: (c) Cutting the subcomplex P(CO) into patches",
+      "figure_bbox": {
+        "x0": 325.95,
+        "y0": 43.6,
+        "x1": 590.4,
+        "y1": 606.93,
+        "width": 264.45,
+        "height": 563.33
+      },
+      "caption_bbox": {
+        "x0": 315.6,
+        "y0": 610.93,
+        "x1": 541.7,
+        "y1": 621.81,
+        "width": 226.1,
+        "height": 10.88
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 7,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-7-p007.png",
+      "caption_text": "Figure 7: An admissible pseudtitriangulation. The se- quence I?I, ..., & corresponds to the linear order d.",
+      "figure_bbox": {
+        "x0": 325.42,
+        "y0": 43.6,
+        "x1": 589.44,
+        "y1": 194.85,
+        "width": 264.02,
+        "height": 151.25
+      },
+      "caption_bbox": {
+        "x0": 324.0,
+        "y0": 198.85,
+        "x1": 553.43,
+        "y1": 222.21,
+        "width": 229.43,
+        "height": 23.36
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 8,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-8-p008.png",
+      "caption_text": "Figure 8: The initial subcomplex of chain aoal of p,seu- do-triangle aoal az.",
+      "figure_bbox": {
+        "x0": 24.56,
+        "y0": 43.6,
+        "x1": 288.58,
+        "y1": 267.81,
+        "width": 264.02,
+        "height": 224.21
+      },
+      "caption_bbox": {
+        "x0": 65.51,
+        "y0": 271.81,
+        "x1": 295.94,
+        "y1": 294.46,
+        "width": 230.43,
+        "height": 22.64
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 8,
+      "image_path": "docs/1993_the_visibility_complex/figures/figure-9-p008.png",
+      "caption_text": "Figure 9: The subcomplex Pi and the canonical image ~: of aoal and al a2. Region li~iv: (shaded) replaces region",
+      "figure_bbox": {
+        "x0": 325.42,
+        "y0": 291.01,
+        "x1": 589.44,
+        "y1": 445.41,
+        "width": 264.02,
+        "height": 154.4
+      },
+      "caption_bbox": {
+        "x0": 320.88,
+        "y0": 449.41,
+        "x1": 548.69,
+        "y1": 472.06,
+        "width": 227.82,
+        "height": 22.64
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-1-p003.png",
+      "caption_text": "FIG. 1. Local visibility computations based on silhouettes.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 1221.87,
+        "width": 524.6,
+        "height": 1112.97
+      },
+      "caption_bbox": {
+        "x0": 301.95,
+        "y0": 1225.87,
+        "x1": 911.95,
+        "y1": 1256.36,
+        "width": 610.0,
+        "height": 30.49
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 5,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-2-p005.png",
+      "caption_text": "FIG. 2. Three stages of Seidel's algorithm.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 511.0,
+        "width": 524.6,
+        "height": 402.1
+      },
+      "caption_bbox": {
+        "x0": 381.25,
+        "y0": 515.0,
+        "x1": 835.7,
+        "y1": 543.0,
+        "width": 454.45,
+        "height": 28.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-3-p006.png",
+      "caption_text": "FIG. 3. Partitioning a polygon with polygonal chains.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 676.0,
+        "width": 524.6,
+        "height": 567.1
+      },
+      "caption_bbox": {
+        "x0": 323.3,
+        "y0": 680.0,
+        "x1": 887.55,
+        "y1": 711.0,
+        "width": 564.25,
+        "height": 31.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 11,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-4-p011.png",
+      "caption_text": "FIG. 4. Loops in silhouette curves.",
+      "figure_bbox": {
+        "x0": 646.6,
+        "y0": 108.9,
+        "x1": 1171.2,
+        "y1": 2011.67,
+        "width": 524.6,
+        "height": 1902.77
+      },
+      "caption_bbox": {
+        "x0": 423.95,
+        "y0": 2015.67,
+        "x1": 796.05,
+        "y1": 2040.06,
+        "width": 372.1,
+        "height": 24.4
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 12,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-5-p012.png",
+      "caption_text": "FIG. 5. Silhouette curve on the patch and the domain.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 2011.67,
+        "width": 524.6,
+        "height": 1902.77
+      },
+      "caption_bbox": {
+        "x0": 326.35,
+        "y0": 2015.67,
+        "x1": 887.55,
+        "y1": 2040.06,
+        "width": 561.2,
+        "height": 24.4
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 14,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-6-p014.png",
+      "caption_text": "FIG. 6.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 2011.67,
+        "width": 524.6,
+        "height": 1902.77
+      },
+      "caption_bbox": {
+        "x0": 381.25,
+        "y0": 2015.67,
+        "x1": 466.65,
+        "y1": 2040.06,
+        "width": 85.4,
+        "height": 24.4
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 15,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-7-p015.png",
+      "caption_text": "FIG. 7. Visibility curves on the helical patch.",
+      "figure_bbox": {
+        "x0": 646.6,
+        "y0": 108.9,
+        "x1": 1171.2,
+        "y1": 554.0,
+        "width": 524.6,
+        "height": 445.1
+      },
+      "caption_bbox": {
+        "x0": 372.1,
+        "y0": 558.0,
+        "x1": 847.9,
+        "y1": 585.49,
+        "width": 475.8,
+        "height": 27.49
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 15,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-8-p015.png",
+      "caption_text": "FIG. 8. (a) Partitioning based on visibility curves (b) Image of region K2 under M.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 589.49,
+        "x1": 1171.2,
+        "y1": 2008.62,
+        "width": 1122.4,
+        "height": 1419.13
+      },
+      "caption_bbox": {
+        "x0": 179.95,
+        "y0": 2012.62,
+        "x1": 1033.95,
+        "y1": 2043.11,
+        "width": 854.0,
+        "height": 30.49
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 18,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-9-p018.png",
+      "caption_text": "FIG. 9. Generation of visibility curves near the boundaries.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 599.78,
+        "width": 524.6,
+        "height": 490.88
+      },
+      "caption_bbox": {
+        "x0": 295.85,
+        "y0": 603.78,
+        "x1": 921.1,
+        "y1": 634.28,
+        "width": 625.25,
+        "height": 30.49
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 19,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-10-p019.png",
+      "caption_text": "FIG. 10. Tracing of visibility curves.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 608.93,
+        "width": 524.6,
+        "height": 500.03
+      },
+      "caption_bbox": {
+        "x0": 408.7,
+        "y0": 612.93,
+        "x1": 808.25,
+        "y1": 643.43,
+        "width": 399.55,
+        "height": 30.49
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 20,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-11-p020.png",
+      "caption_text": "FIG. 11. (a) Partitioning of patch in Fig. 1 based on visibility curves and (b) visibility curves in the domain.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 1171.2,
+        "y1": 703.0,
+        "width": 1122.4,
+        "height": 594.1
+      },
+      "caption_bbox": {
+        "x0": 54.9,
+        "y0": 707.0,
+        "x1": 1159.0,
+        "y1": 738.0,
+        "width": 1104.1,
+        "height": 31.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 20,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-12-p020.png",
+      "caption_text": "FIG. 12. Partitioning of patch in Fig. 6 based on visibility curves.",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 742.0,
+        "x1": 573.4,
+        "y1": 2008.62,
+        "width": 524.6,
+        "height": 1266.62
+      },
+      "caption_bbox": {
+        "x0": 268.4,
+        "y0": 2012.62,
+        "x1": 948.55,
+        "y1": 2040.06,
+        "width": 680.15,
+        "height": 27.44
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4-2",
+      "label": "4",
+      "page": 21,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-4-2-p021.png",
+      "caption_text": "Fig. 4",
+      "figure_bbox": {
+        "x0": 48.8,
+        "y0": 108.9,
+        "x1": 573.4,
+        "y1": 1914.0,
+        "width": 524.6,
+        "height": 1805.1
+      },
+      "caption_bbox": {
+        "x0": 192.15,
+        "y0": 1918.0,
+        "x1": 259.25,
+        "y1": 1949.0,
+        "width": 67.1,
+        "height": 31.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 23,
+      "image_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/figures/figure-13-p023.png",
+      "caption_text": "FIG. 13. Visibility computation on a set of faces.",
+      "figure_bbox": {
+        "x0": 646.6,
+        "y0": 108.9,
+        "x1": 1171.2,
+        "y1": 2008.62,
+        "width": 524.6,
+        "height": 1899.72
+      },
+      "caption_bbox": {
+        "x0": 353.8,
+        "y0": 2012.62,
+        "x1": 869.25,
+        "y1": 2040.06,
+        "width": 515.45,
+        "height": 27.44
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

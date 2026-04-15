@@ -1,0 +1,85 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 6,
+      "image_path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/figures/figure-1-p006.png",
+      "caption_text": "Fig.1. Example for geometry identification ( L-block model ) Each feature creation operation gives rise to certain new elements associated with that feature. The only elements in the model which do not belong to features are auxiliary geometric items such as construction geometry or datums. The set of geometric or topological elements associated with the n th feature takes into account all differences between the n th secondary B-rep model and the ( n \u2013 1)th such model, including pre-existing elements that were modified by the latest modelling operation. If we denote the set of all B-rep geometric entities in the CAD database at stage n by B n , and the status at stage ( n \u2013 1) by B n -1 then we can define the difference as \u03b4 B n = B n \u2013 B n -1 . In the example shown in Fig. 1, model B 1 has 8 visible faces and 18 visible edges (visible in the sense that they can be seen in some orientation of the model), and no invisible entities. One of the edges of B 1 is rounded at a later stage, and that edge has become invisible in model B 3 .",
+      "figure_bbox": {
+        "x0": 185.46,
+        "y0": 426.6,
+        "x1": 444.54,
+        "y1": 544.44,
+        "width": 259.08,
+        "height": 117.84
+      },
+      "caption_bbox": {
+        "x0": 36.0,
+        "y0": 547.39,
+        "x1": 577.82,
+        "y1": 660.08,
+        "width": 541.82,
+        "height": 112.69
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 15,
+      "image_path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/figures/figure-3-p015.png",
+      "caption_text": "Fig 3. Sketch segment example",
+      "figure_bbox": {
+        "x0": 36.0,
+        "y0": 460.53,
+        "x1": 576.18,
+        "y1": 599.05,
+        "width": 540.18,
+        "height": 138.52
+      },
+      "caption_bbox": {
+        "x0": 252.36,
+        "y0": 603.05,
+        "x1": 504.06,
+        "y1": 635.71,
+        "width": 251.69,
+        "height": 32.66
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 16,
+      "image_path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/figures/figure-4-p016.png",
+      "caption_text": "Fig 4. Results of demonstration of part family transfer",
+      "figure_bbox": {
+        "x0": 169.08,
+        "y0": 510.3,
+        "x1": 460.92,
+        "y1": 616.26,
+        "width": 291.84,
+        "height": 105.96
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 619.15,
+        "x1": 429.44,
+        "y1": 641.35,
+        "width": 375.44,
+        "height": 22.19
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    }
+  ]
+}

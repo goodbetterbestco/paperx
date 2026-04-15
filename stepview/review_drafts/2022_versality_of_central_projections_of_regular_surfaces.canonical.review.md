@@ -1,0 +1,865 @@
+# Versality of Central Projections of Regular Surfaces
+
+Shuhei Honda
+
+[missing from original]
+
+## Abstract
+
+We discuss singularities of central projections of a regular surface in R 3 . We describe criteria of singularity types of central projections of a given surface in terms of its Monge normal form and discuss their geometric meaning, which is often not clearly understood. We consider all possible central projections of a fixed surface as a central projection unfolding and discuss their A -versality. We obtain geometric criteria of versality for central projection unfoldings. We also observe that geometric meaning of criteria of singularity types of central projections become clear assuming the versality of central projection unfoldings.
+
+## Introduction
+
+The central projection of a point \(z\) from the center \(y(\neq z)\) onto a plane \(H\) in 3-dimensional Euclidean space \(\mathbb{R}^{3}\), that does not contains \(y\), is the intersection of the line \(\mathcal{L}\) containing \(y\) and \(z\) with the plane \(H\). The center \(y=\left(y_{1}, y_{2}, y_{3}\right)\) of this projection in often called a viewpoint and the line \(\mathcal{L}\) is called viewline. We are going to investigate central projections regarding centers \(y\) as parameters.
+
+Historically speaking, central projections (perspective projections) have been used since the ancient Greece. For star charts Thales of Miletus used the gnomonic projection, which is the central projection of the sphere from the center onto a plane tangent to the sphere. In the Renaissance period, there was interest in central projections as the drawing in perspective. G. Desargues (see, for instance, [6, Theorem 2.32]) gave a mathematical comprehension to the central projections.
+
+Nowadays, computer vision (for instance, [3]) motivates to study singularities of central pro jection. One good example is to analyze view of pinhole camera model, which is also a central projection. To understand the shape of a surface in \(\mathbb{R}^{3}\), it is important to analyze its contours by central projections. The key step is understanding the distribution of singularities of central projections, which often have geometric meaning. Our main results contribute to give criteria for distribution of singularities in generic context. The theory of singularities enables us to analyze more complex image in computer vision. In this paper, we investigate singularities of central projections of regular surfaces in \(\mathbb{R}^{3}\) changing center as parameter. Let us prepare several notation. Let \(S\) be a surface parameterized by \(f(x): U \rightarrow \mathbb{R}^{3}\). Here \(U\) is an open set of \(\mathbb{R}^{2}\) containig the origin. We are interestrd in local behavior of \(S\) at \(f(0)\), and we express \(f\) as in the following form:
+
+$$
+\begin{equation*} f=\left(f_{1}(x), f_{2}(x), f_{3}(x)\right): U \rightarrow \mathbb{R}^{3}:\left(x_{1}, x_{2}\right) \mapsto f(0)+x_{1} \boldsymbol{u}+x_{2} \boldsymbol{v}+Q(x) \boldsymbol{w} \tag{1.1} \end{equation*}
+$$
+
+where \(\{\boldsymbol{u}, \boldsymbol{v}, \boldsymbol{w}\}\) is an orthonormal frame of \(\mathbb{R}^{3}\). Here, \(Q(x)\) denotes a \(C^{\infty}\)-function whose \(k\)-th Taylor polynomial is
+
+$$
+\begin{equation*} \sum_{l \geq 2}^{k} H_{l}\left(x_{1}, x_{2}\right), H_{l}\left(x_{1}, x_{2}\right):=\sum_{i+j=l} \frac{a_{i j}}{i!j!} x_{1}^{i} x_{2}^{j}, \tag{1.2} \end{equation*}
+$$
+
+for any \(k\) at the origin. We call the expression (1.1) Monge normal form for \(\{\boldsymbol{u}, \boldsymbol{v}, \boldsymbol{w}\}\). We can fix \(H\) to be the \(z_{1} z_{2}\)-plane, since we can send \(H\) to the \(z_{1} z_{2}\)-plane by certain rotation and translation. In the rest of this paper, we fix \(H\) to be the \(z_{1} z_{2}\)-plane. We denote Euclidean inner product by \(\langle\),\(\rangle. Then, a restriction of a central projection to S\) is written as follows:
+
+$$
+\begin{equation*} \pi: U \times \mathbb{R}^{3} \longrightarrow \mathbb{R}^{2}:\left(x_{1}, x_{2}, y\right) \mapsto \pi_{y}\left(x_{1}, x_{2}\right) \tag{1.3} \end{equation*}
+$$
+
+where
+
+$$
+\begin{gathered} \pi_{y}\left(x_{1}, x_{2}\right):=\binom{\left\langle t(x, y) f(x)+(1-t(x, y)) y, \boldsymbol{e}_{1}\right\rangle}{\left\langle t(x, y) f(x)+(1-t(x, y)) y, \boldsymbol{e}_{2}\right\rangle}, \\ t(x, y):=\frac{y_{3}}{y_{3}-\left\langle f(x), \boldsymbol{e}_{3}\right\rangle} \text { and } \boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \boldsymbol{e}_{3}: \text { the standard basis of } \mathbb{R}^{3} . \end{gathered}
+$$
+
+\begin{equation*} \frac{1}{y_{3}-f_{3}(x)}\left(y_{3}\binom{f_{1}(x)}{f_{2}(x)}-f_{3}(x)\binom{y_{1}}{y_{2}}\right). \tag{1.4} \end{equation*} We regard \(\pi\) as an unfolding of \(\pi_{y}\) with parameters \(y\). We call \(\pi\) a central projection unfolding. Our main result for versality of \(\pi\) is the following Theorem:
+
+Theorem 1.1. Let \(S\) be a regular surface parameterized by \(f\) as in (1.1). Then, the criteria of the family \(\pi\) to be a versal unfolding of the singularities of \(\mathcal{A}_{e}\)-codim. \(\leq 3\) of \(\pi_{y}\) are given as in Table 1.
+
+We quickly review the history of mathematical research on central projection from singularity theory viewpoint (cf. [4]). C. T. C. Wall [25] started to consider central projections from a perspective of singularity theory and stated a general transversality theorem due to his student J. M. S. David. He considered 'generic' projections including central projections in [7].
+
+J. H. Rieger and M. A. S. Ruas [21, 22] classified all corank one map germs with \(\mathcal{A}_{e}\)-codimension \(\leq 3\). Criteria of singularities of \(\pi_{y}\) have been given by O. A. Platnova [19] and V. I. Arnold [1, 2]. O. A. Platnova recognized that asymptotic straight lines appear as a set of viewpoints \(y\) so that \(\pi_{y}\) is not fold. She states the following paragragh ([19], p.2798):
+
+The only exclusions concern some points on isolated asymptotic lines in a hyperbolic domain with fourth order contact (no more than two on a line) and on asymptotic lines passing through parabolic points of the surface (not more than one on a line).
+
+The asymptotic line here is that we call asymptotic straight line (in §2, definition 2.5). She called the excluded points " \(h\)-focal" (" \(h\) " for "hyperbolic") and " \(p\)-focal" (" \(p\) " for "parabolic") respectively. Since she mentioned " \(p\)-focal" in [19, Table 1], the author believes that she was aware of the following treatment: Once we fix \(f, \pi_{y}\) has the same type \(\Sigma\) of singularity for a viewpoint \(y\) on an asymptotic straight line except several points \(y\). We call such a point \(\Sigma\)-focal point.
+
+Y. Kabata [15] has written criteria of singularities of \(\mathcal{A}_{e}\)-codimension \(\leq 4\) from plane-to-plane map-germs and applied them to central projections of regular surfaces in the projective space \(\mathbb{P}^{3}\). He also gave the conditions of \(\Sigma\)-focal point in terms of the coefficients of the Monge normal form \(f\). We recall these results in our terminology for criteria of singularity types of a central projection \(\pi_{y}\) in §3. As an applications of singularities of \(\pi_{y}\), H. Sano, Y. Kabata and J. L. Deolindo Silva and T. Ohmoto [24] classified regular surfaces on \(\mathbb{P}^{3}\) by using the classification of singularities of central projections of them. And related to bifurcations, they have determined local topological types of binary differential equations of asymptotic curves at parabolic point in \(\mathbb{P}^{3}([8])\). From these, we are motivated to investigate certain criteria of versality of central projection unfoldings.
+
+Versality for several geometric unfoldings are already investigated in [10] and [14]. T. Fukui and M. Hasegawa show ( \(\mathcal{K}\) )-versality of distance squared unfoldings ([10]). In [14], criteria of \(\mathcal{A}\)-versality of orthogonal projection unfoldings are given. Both of them are concerned with ge ometric interpretation of conditions of versality. In this article, we show criteria of \(\mathcal{A}\)-versality of the central projection in §4. The key step is to compute the \(\mathcal{A}_{e}\)-tangent space. The compu tation is often complicated and we completed them using the aid of computer. The source code of Maxima scripts are available at https://github.com/Shuhei-singularity123/Versality_ of_central_projection_of_regular_surface.
+
+In §5 we show an application of our criteria of versality of \(\pi\) to geometric interpretations of singularities of \(\pi_{y}\). Versal gulls series singularity of central projections is related to contact type with a cone. J. Montaldi [18] defines the notion of contact between two submanifolds and established the relation to \(\mathcal{K}\)-equivalence which is introduced by J. Mather ([16, §2]). For criteria of contact types of a surface, for instance, T. Fukui, M. Hasegawa, and K. Nakagawa [11] investigated contact type of a regular surface with right circular cylinders in \(\mathbb{R}^{3}\).
+
+## 2 Preliminary
+
+### 2.1 Definitions from differential geometry
+
+We consider a regular surface \(S\) parameterized by \(f\) as in (1.1). Let
+
+$$
+E:=\left\langle f_{x_{1}}, f_{x_{1}}\right\rangle, F:=\left\langle f_{x_{1}}, f_{x_{2}}\right\rangle, G:=\left\langle f_{x_{2}}, f_{x_{2}}\right\rangle
+$$
+
+where \(\mathbf{n}\) is the unit normal vector \(\frac{f_{x_{1}} \times f_{x_{2}}}{\left|f_{x_{1}} \times f_{x_{2}}\right|}\). The function \(E, F\) and \(G\) (resp. \(L, M\) and \(N\) ) are called the first (resp. second) fundamental of \(S\). The Gauss curvature is given by
+
+$$
+K:=\frac{L N-M^{2}}{E G-F^{2}}
+$$
+
+$$
+L:=\left\langle f_{x_{1} x_{1}}, \mathbf{n}\right\rangle, M:=\left\langle f_{x_{1} x_{2}}, \mathbf{n}\right\rangle, N:=\left\langle f_{x_{2} x_{2}}, \mathbf{n}\right\rangle
+$$
+
+- If K > 0 at x, the point f (x) is elliptic,
+
+- If K = 0 at x, the point f (x) is parabolic,
+
+- If K < 0 at x, the point f (x) is hyperbolic.
+
+If there is a non-zero vector \(\mathbf{v}\) such that
+
+$$
+\left(\begin{array}{cc} L & M \\ M & N \end{array}\right) \mathbf{v}=\kappa\left(\begin{array}{ll} E & F \\ F & G \end{array}\right) \mathbf{v} \text { for some } \kappa
+$$
+
+we call \(\kappa\) a principal curvature and a unit eigenvector generated by \(\mathbf{v}\) for \(\kappa\) a principal vector on \(\mathbb{R}^{3}\). We set \(\kappa_{1}\) and \(\kappa_{2}\) the principal curvatures of \(f\) at \(x\). If \(\kappa_{1}=\kappa_{2}\) at \(x\), we call a point \(f(x)\) umbilic point. We call a point \(f(x)\) flat umbilic point if \(\kappa_{1}=\kappa_{2}=0\) at \(x\).
+
+Definition 2.1. We assume that \(f(0)\) is not an umbilic of a regular surface \(S\) parametrized by \(f\), with principal vectors \(\mathbf{v}_{1}\) ('blue') and \(\mathbf{v}_{2}\) ('red') corresponding to principal curvature \(\kappa_{1}, \kappa_{2}\). We say that the point \(f(0)\) is a \(\mathbf{v}_{i}\)-ridge point ('blue ridge point' for \(i=1\), 'red ridge point' for
+
+$$
+\mathbf{v}_{i}^{(m)} \kappa_{i}(0)=0 \quad(1 \leq m \leq k) \quad \text { and } \quad \mathbf{v}_{i}^{(k+1)} \kappa_{i}(0) \neq 0
+$$
+
+where \(\mathbf{v}_{i}^{(m)} \kappa_{i}(0)\) is the \(m\)-times directional derivative of \(\kappa_{i}\) in \(\mathbf{v}_{i}\). We call the set of ridge points a ridge line or ridges.
+
+The notion of ridge was introduced by Porteous [20] for the first time. Lemma 2.2. Let \(S\) be the regular surface parameterized by \(f\) as in 1.1 and \(f(0)\) is a parabolic point. Then, the origin is a first order blue ridge point if and only if
+
+$$
+a_{30}=0 \quad \text { and } \quad 3 a_{21}^{2}-a_{40} k_{2} \neq 0
+$$
+
+Bruce and Wilkinson [5] studied subparabolic points in terms of folding maps in details. definition 2.3. We assume that \(f(0)\) is not an umbilic of a regular surface \(S\), with principal vectors \(\mathbf{v}_{1}\) ('blue') and \(\mathbf{v}_{2}\) ('red') corresponding to principal curvature \(\kappa_{1}, \kappa_{2}\). We say that the point \(f(0)\) is a \(\mathbf{v}_{i}\)-sub-parabolic point ('blue sub-parabolic point' for \(i=1\), 'red sub-parabolic Lemma 2.4. Let \(S\) be the regular surface parameterized by \(f\) as in 1.1 and \(f(0)\) is a parabolic point. Then, the origin is not red sub-parabolic point if and only if
+
+$$
+a_{21} \neq 0
+$$
+
+Definition 2.5. We say ( \(d x_{1}, d x_{2}\) ) represents an asymptotic direction of \(S\) at \(f(0)\) if the second fundamental form
+
+$$
+I I:=L d x_{1}^{2}+2 M d x_{1} d x_{2}+N d x_{2}^{2}
+$$
+
+vanishes at \(x=0\). The tangent space of \(S\) at \(x=0\) contains a line \(\mathcal{L}\) which is generated by the corresponding direction. We call \(\mathcal{L}\) an asymptotic straight line of \(S\) at \(f(0)\).
+
+Remark 2.6. Asymptotic lines usually means the integral curves of asymptotic directions on the surface. Thus, we do not call asymptotic straight line as asymptotic line in order to avoid confusion.
+
+Definition 2.7. Let \(\alpha(t):=\left(x_{1}(t), x_{2}(t)\right)\) be a regular plane curve and let \(\beta\) another plane curve given as the zero set of a smooth function \(\Phi: \mathbb{R}^{2} \rightarrow \mathbb{R}\). We say that the curve \(\alpha\) has ( \(k+1\) )-point contact ( \(k\)-th order contact) at \(t_{0}\) with the curve \(\beta\) if \(t_{0}\) is a zero of order \(k\) of the function \(g(t)=\Phi(\alpha(t))=\Phi\left(x_{1}(t), x_{2}(t)\right)\), that is,
+
+$$
+g\left(t_{0}\right)=g^{\prime}\left(t_{0}\right)=\cdots=g^{(k)}\left(t_{0}\right)=0 \text { and } g^{(k+1)}\left(t_{0}\right) \neq 0
+$$
+
+where \(g^{(i)}\) denotes the \(i^{\text {th }}\)-derivative of the function \(g\).
+
+Definition 2.8. A point \(p\) on \(S\) is a flecnodal point if there is an asymptotic straight line through \(p\) which has at least 4-point contact with \(S\) at \(p\). Equivalently, \(p\) is a flecnodal point if it is in the closure of the set of points where the projection along an asymptotic direction has a swallowtail singularity. The flecnodal curve of \(S\) is the set of flecnodal points.
+
+Theorem 2.9 ([14, Theorem 6.6 (ii)]). We assume that the origin of regular surface \(S\) is hy perbolic and \(\pi_{y}\) has the butterfly singularity at this point. Then, the flecnodal curve of \(S\) is not singular if and only if \(2 k_{1} a_{31}-3 a_{21}^{2} \neq 0\).
+
+### 2.2 Definitions from singularity theory
+
+In this paper, "smooth" means \(C^{\infty}\). We set \(\mathcal{E}_{m}\) to be the \(\mathbb{R}\)-algebra of smooth map-germs \(\mathbb{R}^{m}, 0 \rightarrow \mathbb{R}\) with a unique maximal ideal \(\mathrm{m}_{m}:=\left\langle x_{1}, \cdots, x_{m}\right\rangle_{\mathcal{E}_{m}}\). We define
+
+$$
+\mathcal{E}_{m}^{n}:=\left\{f:\left(\mathbb{R}^{m}, 0\right) \longrightarrow\left(\mathbb{R}^{n}, f(0)\right): f \text { is a smooth map germ at } 0\right\}
+$$
+
+which is an \(\mathcal{E}_{m}\)-module. In particular,
+
+$$
+\mathrm{m}_{m} \mathcal{E}_{m}^{n}:=\left\{f \in \mathcal{E}_{m}^{n}: f(0)=0\right\} .
+$$
+
+In this section, suppose that \(f\) and \(f_{i}(i=1,2)\) be smooth map germs in \(\mathcal{E}_{m}^{n}\). We say \(f_{1}\) and \(f_{2}\)
+
+Definition 2.10 ( \(\mathcal{A}\)-stability). 1. Let \(F:\left(\mathbb{R}^{m} \times \mathbb{R}^{k}, 0 \times 0\right) \longrightarrow\left(\mathbb{R}^{n}, F(0,0)\right)\) be a smooth map germ. If \(F(x, 0)=f(x), F\) is called an unfolding of \(f\).
+
+- An unfolding F is trivial if there exist germs of diffeomorphisms h : (\(R_{m}\) × \(R_{k}\), 0 × 0) → (\(R_{m}\) × \(R_{k}\), 0 × 0) and H : (R n × \(R_{k}\), 0 × 0) → (R n × \(R_{k}\), 0 × 0) such that
+
+- (i) h (x, 0) = (x, 0) and \(H(X,0)\) = (X, 0).
+
+- (ii) The following diagram is commutative ;
+
+where \(\Pi:\left(\mathbb{R}^{m} \times \mathbb{R}^{k}, 0 \times 0\right) \rightarrow \mathbb{R}^{k}, 0\) is the canonical projection.
+
+- We call f : \(R_{m}\), 0 → R n, 0 is A-stable if every unfolding of f is trivial.
+
+Definition 2.11 (A e-versal unfolding). 1. Let F i : (\(R_{m}\) × \(R_{k}\) i, 0 × 0) → (R n, F i (0, 0))(i = 1, 2) be unfoldings of f. A triplet (s, t, φ ) is an A e-morphism from F 1 to F 2 if φ : (\(R_{k}\) 1, 0) → (\(R_{k}\) 2, 0) is a smooth map germ, s : (\(R_{m}\) × \(R_{k}\) 1, 0 × 0) → (\(R_{m}\), 0) and t : (R n × \(R_{k}\) 1, F 2 (0, 0) × 0) → (R n, F 1 (0, 0)) are unfoldings of id m and id n respectively such that
+
+$$
+F_{1}(x, y)=t\left(F_{2}(s(x, y), \varphi(y)), y\right) .
+$$
+
+- Let F : (\(R_{m}\) × \(R_{k}\), 0) → (R n, \(F(0,0)\)) be unfoldings of f with parameter y in \(R_{k}\). F is called an A e-versal unfolding if for any unfolding (\(R_{m}\) × \(R_{l}\), 0) → (R n, \(G(0,0)\)) of f, there exists an A e-morphism from G to F.
+
+Let \(\xi: \mathbb{R}^{m}, 0 \rightarrow T \mathbb{R}^{n}\) be a smooth map germ such that \(\Pi \circ \xi=f\) where \(\Pi\) is a projection of tangent vector bundle. We call \(\xi\) the vector field along \(f\) or infinitesimal deformation of \(f\). We
+
+$$
+t f: \theta_{m} \rightarrow \theta(f): \xi \mapsto d f \circ \xi, \quad \omega f: \theta_{n} \rightarrow \theta(f): \eta \mapsto \eta \circ f
+$$
+
+$$
+and \( \mathcal{A}_{e} \)-tangent space of \( f \)
+$$
+
+$$
+T \mathcal{A}_{e}(f):=t f\left(\theta_{m}\right)+\omega f\left(\theta_{n}\right) \subset \theta(f)
+$$
+
+Then, the \(\mathcal{A}_{e}\)-codimension of \(f\) is defined by
+
+$$
+\operatorname{cod}\left(\mathcal{A}_{e}, f\right):=\operatorname{dim}_{\mathbb{R}} \frac{\theta(f)}{T \mathcal{A}_{e}(f)}
+$$
+
+Definition 2.12 ( \(\mathcal{A}_{e}\)-infinitesimal versal unfolding). Let \(f:\left(\mathbb{R}^{m}, 0\right) \rightarrow\left(\mathbb{R}^{n}, f_{i}(0)\right)\) be a smooth map germ, and \(\left(\mathbb{R}^{m} \times \mathbb{R}^{k}, 0 \times 0\right) \rightarrow\left(\mathbb{R}^{n}, F(0,0)\right)\) be an unfolding of \(f\) with parameter \(y\) in \(\mathbb{R}^{k}\). Then, \(F\) is called an infinitesimal \(\mathcal{A}_{e}\)-versal unfolding if
+
+$$
+T \mathcal{A}_{e}(f)+\sum_{i=1}^{k} \mathbb{R} \frac{\partial F}{\partial y_{i}}(x, 0)=\theta(f)
+$$
+
+Theorem 2.13. Let \(f:\left(\mathbb{R}^{m}, 0\right) \rightarrow\left(\mathbb{R}^{n}, f_{i}(0)\right)\) be a smooth map germ and \(F:\left(\mathbb{R}^{m} \times \mathbb{R}^{k}, 0 \times 0\right) \rightarrow\) ( \(\mathbb{R}^{n}, F(0,0)\) ) be an unfolding of \(f\). Then, \(F\) is \(\mathcal{A}_{e}\)-versal if and only if \(F\) is infinitesimal \(\mathcal{A}_{e}\) versal.
+
+Proof. See [26, Theorem 3. 3 and Theorem 3. 4 (i Theorem 2.14. Let \(f:\left(\mathbb{R}^{m}, 0\right) \rightarrow\left(\mathbb{R}^{n}, f_{i}(0)\right)\) be a smooth map germ and \(F:\left(\mathbb{R}^{m} \times \mathbb{R}^{k}, 0 \times 0\right) \rightarrow \left(\mathbb{R}^{n}, F(0,0)\right)\) be an unfolding of \(f\). If \(f\) is \(\mathcal{A}\)-stable, any \(F\) is \(\mathcal{A}_{e}\)-versal.
+
+Proof. From [17, Theorem 1], we know \(T \mathcal{A}_{e}(f)=\theta(f)\) if \(f\) is \(\mathcal{A}\)-stable.
+
+Definition 2.15 (finite A-determinacy). A germ f is said to be k-A-determined if any g with j k g = j k f is A-equivalent to f. The least integer k with this property is called the degree of determinacy of f. A finitely A-determined germ is a k-A-determined germ for integer k.
+
+The following Theorem for \(k\) - \(\mathcal{A}\)-determinacy is important to prove versality of unfoldings.
+
+Theorem 2.16 ([26, Thorem \(1.2(i)]\) ). For a smooth map germ \(f\) in \(\mathcal{E}_{m}^{n}\),
+
+$$
+\mathrm{m}_{n}^{k+1} \theta(f) \subset T \mathcal{A}_{e}(f)
+$$
+
+### 2.3 Criteria of singularity types of central projections
+
+First of all, we recall several results for criteria of singularity type of smooth map germ \(g\) : \(\mathbb{R}^{2}, 0 \longrightarrow \mathbb{R}^{2}, 0\) with corank one at the origin. Let \(\left(x_{1}, x_{2}\right)\) be coordinates of source. We define \(\lambda\left(x_{1}, x_{2}\right):=\operatorname{det}\left(\frac{\partial g}{\partial x_{1}}, \frac{\partial g}{\partial x_{2}}\right)\) and take an arbitrary vector field \(\eta\) near the origin of the source such that \(\eta\) spans ker \(d g\) on \(\lambda=0\). We denote \(\eta^{k} \lambda:=\eta\left(\eta^{k-1} \lambda\right)\).
+
+where \(\operatorname{det} H_{\lambda}(0)\) is the Hessian of \(\lambda\) at the origin.
+
+We introduce a well-known fact as the following Lemma 2.18. Lemma 2.18. The projection \(\pi_{y}\) has a singular point at \(x=0\) if and only if the viewline \(\mathcal{L}\) is contained in the tangent space of \(S\) at \(f(0)\).
+
+Thus, from Theorem 2.18, we suppose that \(\mathcal{L}\) is a tangent of \(f\) at the origin and \(p_{1}, p_{2}\) are coefficients which satisfy
+
+$$
+\begin{equation*} y-f(0)=p_{1} f_{x_{1}}(0)+p_{2} f_{x_{2}}(0) . \tag{2.1} \end{equation*}
+$$
+
+Using the results of Kabata [15], we obtain criteria of \(\mathcal{A}\)-types of \(\mathcal{A}_{e}\)-codimension 2 to 4 for corank 1 plane-to-plane map-germ. We summarize preliminal results of criteria of \(\mathcal{A}_{e}\) codimension \(\leq 3\) singularity types of \(\pi_{y}\) as the following theorem.
+
+Theorem 2.19 (Kabata [15]). Suppose the regular surface \(S\) is parameterized by \(f\) as in (1.1) and a viewpoint \(y\) is in \(\boldsymbol{u}\)-axis, that is, \(y-f(0)=p_{1} \boldsymbol{u}\). Then, criteria of \(\mathcal{A}_{e}\)-codimension \(\leq 3\) singularities of \(\pi_{y}\) are written as in table 2.
+
+Remark 2.20. If \(f(0)\) is elliptic, \(\pi_{y}\) has only the fold singualrity at 0 for any \(y\).
+
+Remark 2.21. From criteria of butterfly and elder butterfly singualrites, it turns out that the only exclusions concern some points on isolated asymptotic straight lines in a hyperbolic domain with 4-th order contact (no more than two on a line). We call the excluded points \(h\)-focal (" \(h\) " for "hyperbolic"). This is introduced by Platnova [19] and is characterized by the coefficients of Monge form \(f\) from Kabata [15]. We often call this point butterfly-focal point.
+
+In the same way, we define u-focal point ('u' for 'unimodal') as exceptional points characterized as the formula in the table 2.
+
+Remark 2.22. 1. As seen in Remark 2.21, we also have an exceptional point on asymptotic straight lines passing through parabolic points of the surface (not more than one on a line). If \(a_{30} \neq 0\) for parabolic surface at the origin, the lips or beaks singularities appears from viewpoints on the line except for the point. The exceptional point are called \(p\)-focal point (" \(p\) " for parabolic) by Platonova [19] and characterized by the condition in the table 2 from Kabata [15]. We often call \(p\)-focal point goose-focal point.
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30}=0, a_{40} \neq 0, a_{21} \neq 0 \\ & \left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) p_{1} \neq 5 a_{40}\left(a_{40} a_{02}-3 a_{21}^{2}\right) \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=0, a_{11} \neq 0, a_{30}=a_{40}=a_{50}=0 \\ & \binom{\left(35 a_{60} a_{80}-24 a_{70}^{2}\right) a_{11}^{2}+28\left(a_{21} a_{60} a_{70}-70 a_{31} a_{60}^{2}\right) a_{11}}{+2646 a_{21}^{2} a_{60}^{2}} p_{1}^{2} \\ & -28 a_{60} a_{11}\left(2 a_{70} a_{11}-7 a_{21} a_{60}\right) p_{1}+784 a_{60}^{2} a_{11}^{2} \neq 0 \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30} \neq 0 \\ & H_{2}\left(-a_{21}, a_{30}\right)=H_{3 x_{1}}\left(-a_{21}, a_{30}\right) p_{1}, \\ & H_{3}\left(-a_{21}, a_{30}\right)=\frac{1}{2} H_{4 x_{1}}\left(-a_{21}, a_{30}\right) p_{1} \text { and } \\ & a_{30}\left(H_{5 x_{1}}\left(-a_{21}, a_{30}\right) p_{1}-3 H_{4}\left(-a_{21}, a_{30}\right)\right) p_{1} \\ & \neq \frac{1}{2}\left(H_{4 x_{1} x_{1}}\left(-a_{21}, a_{30}\right) p_{1}-2 H_{3 x_{1}}\left(-a_{21}, a_{30}\right)\right)^{2} \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30} \neq 0 \\ & H_{2}\left(-a_{21}, a_{30}\right)=H_{3 x_{1}}\left(-a_{21}, a_{30}\right) p_{1} \text { and } \\ & H_{3}\left(-a_{21}, a_{30}\right) \neq \frac{1}{2} H_{4 x_{1}}\left(-a_{21}, a_{30}\right) p_{1} \\ & \hline \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=0, a_{11} \neq 0, a_{30}=a_{40}=0 \\ & \binom{\left(48 a_{50} a_{70}-35 a_{60}^{2}\right) a_{11}^{2}+42\left(a_{21} a_{60}-40 a_{31} a_{50}\right) a_{50} a_{11}}{+2205 a_{21}^{2} a_{50}^{2}} p_{1}^{2} \\ & +\left(-84 a_{50} a_{60} a_{11}^{2}+252 a_{21} a_{50}^{2} a_{11}\right) p_{1}+756 a_{50}^{2} a_{11}^{2} \neq 0 \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30}=0, a_{40} \neq 0, a_{21}=0, \\ & \left(a_{12} a_{50}-10 a_{22} a_{40}+10 a_{31}^{2}\right) p_{1}^{2} \\ & -\left(a_{50} a_{02}-25 a_{12} a_{40}\right) p_{1}-5 a_{40} a_{02} \neq 0 \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30}=0, a_{40} \neq 0, a_{21} \neq 0, \\ & \left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) p_{1}=5 a_{40}\left(a_{40} a_{02}-3 a_{21}^{2}\right), \\ & \left(\begin{array}{l} 225 a_{21}^{3} a_{40}^{2} a_{70}-315 a_{21}^{2} a_{40}\left(3 a_{21} a_{50}-5 a_{31} a_{40}\right) a_{60} \\ -1575 a_{21}^{2} a_{40}^{3} a_{51} \\ +\binom{756 a_{21}^{3} a_{50}^{2}-3150 a_{21}^{2} a_{40}\left(a_{31} a_{50}-a_{40} a_{41}\right)}{-1575 a_{21} a_{22} a_{40}^{3}+4200 a_{21} a_{31}^{2} a_{40}^{2}} a_{50} \\ -5250 a_{21} a_{31} a_{40}^{3} a_{41} \\ -875 a_{13} a_{40}^{5}+2625\left(a_{21} a_{32}+a_{22} a_{31}\right) a_{40}^{4}-1750 a_{31}^{3} a_{40}^{3} \end{array}\right) p_{1}^{2} \\ & -70 a_{40}\binom{5 a_{40}\binom{9 a_{21}^{2}\left(a_{21} a_{60}-5 a_{40} a_{41}\right)}{-5 a_{40}^{2}\left(a_{03} a_{40}-9 a_{21} a_{22}\right)}}{-3\left(3 a_{21} a_{50}-5 a_{31} a_{40}\right)\binom{9 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}}{-20 a_{21} a_{31} a_{40}} p_{1}} p_{1} \\ & +3150 a_{21} a_{40}^{2}\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) \neq 0 \end{aligned}
+$$
+
+$$
+\left(x_{1}, x_{2}^{3}+x_{1}^{2} x_{2}\right)
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30} \neq 0 \\ & \left.H_{2}\left(-a_{21}, a_{30}\right)<H_{3 x_{1}}\left(-a_{21}, a_{30}\right) p_{1} \quad \text { (resp. }>\right) \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=a_{11}=0, a_{30}=a_{40}=0, a_{50} \neq 0, a_{21} \neq 0, \\ & \left(a_{21} a_{60}-5 a_{31} a_{50}\right) p_{1}+6 a_{21} a_{50} \neq 0 \end{aligned}
+$$
+
+$$
+\begin{aligned} & a_{20}=0, a_{11} \neq 0, a_{30}=a_{40}=0, \\ & \binom{\left(48 a_{50} a_{70}-35 a_{60}^{2}\right) a_{11}^{2}+42\left(a_{21} a_{60}-40 a_{31} a_{50}\right) a_{50} a_{11}}{+2205 a_{21}^{2} a_{50}^{2}} p_{1}^{2} \\ & +\left(-84 a_{50} a_{60} a_{11}^{2}+252 a_{21} a_{50}^{2} a_{11}\right) p_{1}+756 a_{50}^{2} a_{11}^{2}=0 \end{aligned}
+$$
+
+- As seen in the above, there is an exceptional point on asymptotic straight lines passing through parabolic points of the surface (not more than one on a line) if \(a_{30}=0\) and \(a_{40}=0\) for parabolic surface at the origin. It is called p ′ -focal by Platonova [19]. pi y has the ugly gulls singularity where a viewpoint y is p ′ -focal. Kabata [15] has characterized by the condition in the table 2. We often call p ′ -focal point gulls-focal point.
+
+- In the same way, we define 12-focal point ('12' for 'type 12 singularity') and 16-focal point ('16' for 'type 16 singularity') as exceptional points characterized as the formula in the table 2.
+
+## 3 Versality of central projection unfoldings
+
+We can set an orthonormal frame
+
+$$
+\boldsymbol{u}=\left(\begin{array}{c} \cos \theta \\ 0 \\ \sin \theta \end{array}\right), \boldsymbol{v}=\left(\begin{array}{l} 0 \\ 1 \\ 0 \end{array}\right), \boldsymbol{w}=\left(\begin{array}{c} -\sin \theta \\ 0 \\ \cos \theta \end{array}\right)
+$$
+
+with \(\theta\) in ( \(0, \frac{\pi}{2}\) ] by certain rotation and translation. Let \(S\) be given by Monge form as in (1.1) where the degree 2 polynomial of \(Q(x)\) is written as
+
+$$
+\begin{equation*} H_{2}(x)=k_{1} x_{1} x_{2}+\frac{k_{2}}{2} x_{2}^{2} \tag{3.1} \end{equation*}
+$$
+
+In the rest of this paper, we define the central projection \(\pi_{y}\) and its unfolding \(\pi\) in 1 as germs at \(x=0\). Our main claims summarized the table 1 are the following Theorem 3.1 to 3.4.
+
+Theorem 3.1. Suppose the origin is a singularity of \(\pi_{y}\) with \(\mathcal{A}_{e}\)-codimension \(\leq 1\). Then, \(\pi\) is an \(\mathcal{A}_{e}\)-versal unfolding of the singularity of \(\pi_{y}\).
+
+- Theorem 3.2. 1. If the origin is a butterfly singularity of π y, then the following two conditions are equivalent.
+
+- (i) π is an A e-versal unfolding of the singularity of π y ;
+
+- (ii) the flecnodal curve is not singular at 0, that is, 2 \(a_{31}\) \(k_{1}\)-3 \(a_{2}\) 21 = 0.
+
+- Suppose that π y has the elder butterfly singularity at the origin. Then, π is an A e-versal unfolding of the singularity of π y if and only if
+
+$$
+2 a_{31} k_{1}-3 a_{21}^{2} \neq 0 \quad \text { and } \quad\left(a_{60} k_{1}-3 a_{21} a_{50}\right) p_{1}-18 a_{50} k_{1} \neq 0
+$$
+
+The later condition means that there is a special degenerate position of a viewpoint \(y\) for \(\mathcal{A}_{e}\)-versality.
+
+- Suppose that π y has an unimodal singularity at the origin. Then, π is not an A e-versal unfolding of the singularity of π y.
+
+- Theorem 3.3. 1. Suppose that π y has a gulls or ugly gulls singularity at the origin. Then, the following two conditions are equivalent.
+
+- (i) π is an A e-versal unfolding of the singularity of π y ;
+
+- (ii) the origin is the first order blue ridge point, that is, \(a_{40}\) \(k_{2}\)-3 \(a_{2}\) 21 = 0.
+
+- If π y has a type 12 singularity at the origin, then π is not an A e-versal unfolding of the singularity of π y.
+
+Theorem 3.4. 1. If the origin is a goose or ugly goose singularity of \(\pi_{y}\), then the following two conditions are equivalent.
+
+- (i) π is an A e-versal unfolding of the singularity of π y ;
+
+- (ii) the origin is not flat umbilic point, that is, \(k_{2}=0\).
+
+- Suppose that the origin is a type 16 singularity of π y. Then, π is not an A e-versal unfolding of the singularity of π y.
+
+Remark 3.5. The conditions (Theorem 3.2 (ii), Theorem 3.3 (ii) and Theorem 3.4 (ii)) above have already appeared as criteria of versality of orthogonal projection (cf.[14, Theorem 6.8]).
+
+From Theorem 2.13 and 2.16, to prove the versality of \(\pi\) of a singularity of \(\pi_{y}\) which is \(k\) - \(\mathcal{A}\)-determined, we only need to show that the following equality
+
+$$
+\begin{equation*} T \mathcal{A}_{e} \pi_{y}+\left\langle\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{2}}, \frac{\partial \pi_{y}}{\partial y_{3}}\right\rangle_{\mathbb{R}}=\theta\left(\pi_{y}\right) \tag{3.2} \end{equation*}
+$$
+
+We write the \(k\)-th order Taylor polynomial of the central projection \(\pi_{y}\) at the origin as follows:
+
+$$
+\begin{equation*} \pi_{y}(x)=\sum_{i+j \geq 1}^{k}\binom{c_{i j}}{d_{i j}} \frac{x_{1}^{i} x_{2}^{j}}{i!j!} \tag{3.3} \end{equation*}
+$$
+
+$$
+\begin{aligned} & c_{10}=d_{10}=c_{01}=0, d_{01}=c:=\frac{y_{3}}{p_{1} \sin \theta} \neq 0 \\ & c_{20}=d_{20}=0, c_{11}=-\frac{k_{1} c}{\sin \theta}, d_{11}=\frac{c}{p_{1}} \neq 0, c_{02}=-\frac{k_{2} c}{\sin \theta}, d_{02}=0 \\ & c_{30}=-\frac{a_{30} c}{y_{3} \sin \theta}, c_{21}=-\left(a_{21} p_{1}+2 k_{1}\right) \frac{c}{p_{1} \sin \theta}, c_{12}=-\left(a_{12} p_{1}+k_{2}\right) \frac{c}{p_{1} \sin \theta}, c_{03}=-\frac{a_{03} c}{\sin \theta} \\ & d_{30}=0, d_{21}=\frac{2 c}{p_{1}^{2}} \neq 0, d_{12}=\frac{2 k_{1} c \cos \theta}{p_{1} \sin \theta}, d_{03}=\frac{3 k_{2} c \cos \theta}{p_{1} \sin \theta} \end{aligned}
+$$
+
+In the proof of the theorems above, we assume that \(H_{2}(x)=k_{1} x_{1} x_{2}+\frac{k_{2}}{2} x_{2}^{2}\) in (1.2) and suppose that \(\mathcal{L}\) is the asymptotic straight line written as \(f(0)+t \boldsymbol{u}\). Then, \(p_{1} \neq 0\) and \(p_{2}=0\) in (2.1).
+
+glyph[negationslash] glyph[negationslash] glyph[negationslash] We also assume that \(\pi_{y}(0,0)=(0,0)\).
+
+### 3.1 Proof of Theorem 3.1 for the case of A e -cod. π y ≤
+
+#### 3.1.1 Fold and cusp
+
+These singularities are stable. It is clear that the central projection unfolding \(\pi\) is \(\mathcal{A}_{e}\)-versal unfolding in this case by Theorem 2.14.
+
+#### 3.1.2 Swallowtail
+
+Proof of Theorem 3.1 in the hyperbolic case. The swallowtail singularity is 4A-deternined. Thus, it is enough to show (3.2) that
+
+$$
+\begin{equation*} T \mathcal{A}_{e} \pi_{y}+\left\langle\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{2}}, \frac{\partial \pi_{y}}{\partial y_{3}}\right\rangle_{\mathbb{R}} \tag{3.4} \end{equation*}
+$$
+
+spans \(\theta\left(\pi_{y}\right)\) over \(\mathbb{R}\) modulo \(\mathrm{m}_{2}^{5} \mathcal{E}_{2}^{2}\). From criteria of the swallowtail singularity, \(k_{1} \neq 0, a_{40} \neq 0\)
+
+Using \(\binom{0}{x_{2} O_{2}}=\frac{1}{d_{01}} x_{2} O_{2} \frac{\partial \pi_{y}}{\partial x_{2}}\) in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2} \mathrm{~m}_{2}^{3}+\mathrm{m}_{2}^{5}}{\mathrm{~m}_{2}^{4}}\), degree 3 monomials of the second component except \(\binom{0}{x_{1}^{3}}\) is in \(T \mathcal{A}_{e} \pi_{y}\). From \(\binom{x_{2} O_{2}}{0}=\frac{1}{c_{11}} O_{2} \frac{\partial \pi_{y}}{\partial x_{1}}\) in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2} \mathrm{~m}_{2}^{3}+\mathrm{m}_{2}^{5}}{x_{2} \mathrm{~m}_{2}^{2}+\mathrm{m}_{2}^{4}}\), we know that the degree 3 monomial \(\binom{x_{2} O_{2}}{0}\) is contained in \(T \mathcal{A}_{e} \pi_{y}\).
+
+$$
+c_{40}=-\frac{a_{40} c}{\sin \theta} \quad \text { and } \quad d_{40}=0
+$$
+
+Since \(\binom{0}{O_{4}}=\frac{1}{d_{01}} O_{4} \frac{\partial \pi_{y}}{\partial x_{2}}\) in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{5} \mathcal{E}_{2}^{2}\), we know all degree 4 monomials of the second component \(\binom{0}{O_{4}}\) are contained in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{5} \mathcal{E}_{2}^{2}\). Working modulo these monomials, \(\binom{x_{2} O_{3}}{0}=\frac{1}{c_{11}} O_{3} \frac{\partial \pi_{y}}{\partial x_{1}}\) is contained in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{\mathrm{m}_{2}^{5}}{\mathrm{~m}_{2}^{4}}\). This means that all degree 4 monomials except
+
+We also know that degree 2 monomials \(\binom{0}{x_{2} O_{1}}\) and \(\binom{x_{2}^{2}}{0}\) are in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2} \mathrm{~m}^{2}+\mathrm{m}^{5}}{x_{2} \mathrm{~m}^{2}+\mathrm{m}^{4}}\) from
+
+$$
+\binom{0}{x_{2} O_{1}}=\frac{1}{d_{01}} x_{2} O_{1} \frac{\partial \pi_{y}}{\partial x_{2}} \quad \text { and } \quad\binom{x_{2}^{2}}{\frac{d_{11}}{c_{11}} x_{2}^{2}}=\frac{1}{c_{11}} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}} .
+$$
+
+From this, \(\binom{x_{1} x_{2}}{0}\) and \(\binom{x_{1}^{4}}{0}\) are in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2}+x_{2} \mathrm{~m}^{2}+\mathrm{m}^{5}}{x_{2} \mathrm{~m}+\mathrm{m}^{4}}\) from the following two vectors
+
+$$
+\binom{\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{1}}{x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}}=\left(\begin{array}{cc} c_{11} & c_{40} / 24 \\ c_{11} & c_{40} / 6 \end{array}\right)\binom{x_{1} x_{2} \boldsymbol{e}_{1}}{x_{1}^{4} \boldsymbol{e}_{1}} .
+$$
+
+The determinant of the above matrix is \(\frac{a_{40} k_{1} p_{1}^{2} c^{4}}{8 y_{3}^{2}}\). This does not vanish from criteria of swal lowtail singularity. Working modulo these monomials, the following elements are written as
+
+$$
+\binom{x_{2}}{0}=\frac{1}{d_{01}}\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}{ 0},\binom{0}{x_{2}}=\frac{1}{d_{01}}\binom{0}{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle},\binom{0}{x_{1}^{3}}=\frac{1}{d_{01}} x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}
+$$
+
+Therefore, the three monomials \(\binom{x_{2}}{0},\binom{0}{x_{2}}\) and \(\binom{0}{x_{1}^{3}}\) are contained in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}^{5} \varepsilon_{2}\). From this, we know \(\binom{x_{1}^{3}}{0}=\frac{1}{c_{40}} \frac{\partial \pi_{y}}{\partial x_{1}}\) is in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\left(x_{2}+x_{2} \mathrm{~m}\right) \varepsilon_{2}+\binom{\mathrm{m}^{4}}{\mathrm{~m}^{3}}\).
+
+Finally, we consider the following four vectors
+
+$$
+\left(\begin{array}{c} \frac{\partial \pi_{y}}{\partial y_{2}} \\ \frac{\partial \pi_{y}}{\partial x_{2}} \\ x_{1} \frac{\partial \pi_{y}}{\partial x_{2}} \\ x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}} \end{array}\right)=\left(\begin{array}{cccc} 0 & -c / p_{1} & 0 & -c / p_{1}^{2} \\ c_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 \\ 0 & d_{01} & c_{11} & d_{11} \\ 0 & 0 & 0 & d_{01} \end{array}\right)\left(\begin{array}{l} x_{1} \boldsymbol{e}_{1} \\ x_{1} \boldsymbol{e}_{2} \\ x_{1}^{2} \boldsymbol{e}_{1} \\ x_{1}^{2} \boldsymbol{e}_{2} \end{array}\right)
+$$
+
+in (3.4) modulo \(\left(x_{2}+x_{2} \mathrm{~m}+\mathrm{m}^{3}\right) \varepsilon_{2}\). The determinant of the above matrix is \(\frac{k_{1}^{2} p_{1} c^{6}}{y_{3}^{2}}\) and does not vanish. It follows that \(\binom{x_{1}}{0},\binom{0}{x_{1}},\binom{x_{1}^{2}}{0}\) and \(\binom{0}{x_{1}^{2}}\) are contained in (3.4). Therefore equality (3.2) is satisfied.
+
+#### 3.1.3 Lips Beaks
+
+Thus, we need to prove equality (3.2) where k = 3.
+
+The determinant of the following \(6 \times 6\) matrix \(D\) defined by the following:
+
+$$
+\begin{aligned} & t\left(\binom{0}{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{2}}{0}, x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}\right) \\ & =D^{t}\left(\binom{0}{x_{2}},\binom{0}{x_{1} x_{2}},\binom{x_{2}^{2}}{0},\binom{x_{1}^{3}}{0},\binom{x_{1}^{2} x_{2}}{0},\binom{x_{1} x_{2}^{2}}{0}\right) \end{aligned}
+$$
+
+Thus, we get monomials (0 x 2), (0 x 1 x 2), (x 2 2 0), (x 3 1 0), (x 2 1 x 2 0) and (x 1 x 2 2 0) in T A e π y m 4 2 E 2 2.
+
+$$
+D:=\left(\begin{array}{cccccc} d_{01} & d_{11} & 0 & 0 & 0 & 0 \\ 0 & 0 & d_{01}^{2} & 0 & 0 & 2 d_{01} d_{11} \\ 0 & 0 & 0 & 0 & c_{30} / 2 & c_{21} \\ 0 & d_{11} & 0 & c_{30} / 2 & c_{21} & c_{12} / 2 \\ d_{01} & d_{11} & c_{02} & 0 & c_{21} / 2 & c_{12} \\ 0 & d_{01} & 0 & 0 & 0 & c_{02} \end{array}\right)
+$$
+
+Next, we consider the generation of degree 1 monomials and remaining degree 2 monomials. A degree 2 monomial \(\binom{0}{x_{1}^{2}}=\frac{1}{d_{01}} x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}\) is contained in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2}}{x_{2}+x_{2} \mathrm{~m}_{2}}+\mathrm{m}_{2}^{3} \mathcal{E}_{2}^{2}\). Furthemore, we consider linear independence of the following elements in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2}+\mathrm{m}_{2}^{3}}{x_{2}+\mathrm{m}_{2}^{2}}\) :
+
+$$
+\left(\begin{array}{c} \left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{1} \\ \frac{\partial \pi_{y}}{\partial x_{1}} \\ \frac{\partial \pi_{y}}{\partial x_{2}} \\ x_{1} \frac{\partial \pi_{y}}{\partial x_{2}} \end{array}\right)=\left(\begin{array}{cccc} 0 & d_{01} & 0 & d_{11} \\ 0 & 0 & c_{30} / 2 & c_{21} \\ d_{11} & c_{02} & c_{21} / 2 & c_{12} \\ d_{01} & 0 & 0 & c_{02} \end{array}\right)\left(\begin{array}{c} x_{1} \boldsymbol{e}_{2} \\ x_{2} \boldsymbol{e}_{1} \\ x_{1}^{2} \boldsymbol{e}_{1} \\ x_{1} x_{2} \boldsymbol{e}_{1} \end{array}\right)
+$$
+
+Therefore, \(\binom{0}{x_{1}},\binom{x_{2}}{0},\binom{x_{1}^{2}}{0}\) and \(\binom{x_{1} x_{2}}{0}\) are in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{4} \mathcal{E}_{2}^{2}\). Finally, we get the remaining monomial \(\binom{x_{1}}{0}\) in (3.4) modulo \(\binom{x_{2}+\mathrm{m}_{2}^{2}}{\mathrm{~m}_{2}}\) since \(\binom{x_{1}}{0}=-\frac{p_{1}}{c} \frac{\partial \pi_{y}}{\partial y_{1}}\).
+
+### 3.2 Hyperbolic surfaces with A e -cod. π y = 2 ,
+
+Using criteria of the butterfly singularity, we know two coefficients both of two coefficients \(k_{1}\) and \(a_{50}\) does not vanish and \(a_{30}=a_{40}=0\). Thus, coefficients of the 3-jet of \(\pi_{y}\) is the same as in the case of the swallowtail singularity. The coefficients of the 7-jet of \(\pi_{y}\) at 0 are as follows:
+
+$$
+\begin{gathered} c_{40}=d_{40}=0, c_{31}=-\left(a_{31} p_{1}^{2}+3 a_{21} p_{1}+6 k_{1}\right) \frac{c^{2}}{p_{1} y_{3}}, d_{31}=\frac{6 c}{p_{1}^{3}}, \\ c_{50}=-\frac{a_{50} p_{1} c^{2}}{y_{3}} \neq 0, d_{50}=0, c_{41}=-\left(a_{41} p_{1}^{3}+4 a_{31} p_{1}^{2}+12 a_{21} p_{1}+24 k_{1}\right) \frac{c^{2}}{p_{1}^{2} y_{3}}, d_{41}=\frac{24 c}{p_{1}^{4}}, \\ c_{60}=-\left(a_{60} p_{1}+6 a_{50}\right) \frac{c^{2}}{y_{3}}, d_{60}=0, c_{70}=-\left(a_{70} p_{1}^{2}+7 a_{60} p_{1}+42 a_{50}\right) \frac{c^{2}}{p_{1} y_{3}}, d_{70}=0, \end{gathered}
+$$
+
+#### 3.2.1 Butterfly
+
+Proof of 1 in Theorem 3.2. Since the butterfly singularity is 7 - \(\mathcal{A}\)-deternined, it is enough to show that (3.4) spans \(\theta\left(\pi_{y}\right)\) over \(\mathbb{R}\) modulo \(\mathrm{m}_{2}^{8} \mathcal{E}_{2}^{2}\).
+
+In the same way, all monomials \(\binom{0}{x_{2} O_{k}}\) and \(\binom{x_{2} O_{l}}{0}\) for \(k=3\) to \(5, l=4\) to 6 are in \(T \mathcal{A}_{e} \pi_{y}\)
+
+$$
+\frac{1}{d_{01}} x_{2} O_{k} \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{0}{x_{2} O_{k}} \quad \text { and } \quad \frac{1}{c_{11}} O_{l} \frac{\partial \pi_{y}}{\partial x_{1}}=\binom{x_{2} O_{l}}{\frac{d_{11}}{c_{11}} x_{2} O_{l}} .
+$$
+
+degree 3 monomials \(\binom{x_{2}^{2} O_{1}}{0}\) and \(\binom{0}{x_{2}^{2} O_{1}}\) are in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2} \mathrm{~m}_{2}^{2}+x_{2} \mathrm{~m}_{2}^{4}+\mathrm{m}_{2}^{8}}{x_{2} \mathrm{~m}_{2}^{3}+\mathrm{m}_{2}^{7}}\) since
+
+$$
+\frac{1}{c_{11}} x_{2} O_{1} \frac{\partial \pi_{y}}{\partial x_{1}}=\binom{x_{2}^{2} O_{1}}{\frac{d_{11}}{c_{11}} x_{2}^{2} O_{1}} \quad \text { and } \quad \frac{1}{d_{01}} x_{2}^{2} O_{1} \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{0}{x_{2}^{2} O_{1}} .
+$$
+
+Using the following linearly independent elements in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2} \mathrm{~m}_{2}+x_{2} \mathrm{~m}_{2}^{4}+\mathrm{m}_{2}^{8}}{x_{2}^{2} \mathrm{~m}_{2}+x_{2} \mathrm{~m}_{2}^{3}+\mathrm{m}_{2}^{7}}\)
+
+$$
+\frac{1}{c_{11}} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}=\binom{x_{2}^{2}}{\frac{d_{11}}{c_{11}} x_{2}^{2}} \quad \text { and } \quad \frac{1}{d_{01}} x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{0}{x_{2}^{2}},
+$$
+
+we know degree 2 monomials \(\binom{x_{2}^{2}}{0}\) and \(\binom{0}{x_{2}^{2}}\) are in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{8} \mathcal{E}_{2}^{2}\). We consider the following fifteen elements
+
+$$
+\begin{aligned} & t\binom{\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{2},}{\frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial x_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{4} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{5} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{6} \frac{\partial \pi_{y}}{\partial x_{2}}} \\ & =D_{1}{ }^{t}\binom{x_{2} \boldsymbol{e}_{1}, x_{2} \boldsymbol{e}_{2}, x_{1} x_{2} \boldsymbol{e}_{1}, x_{1} x_{2} \boldsymbol{e}_{2}, x_{1}^{3} \boldsymbol{e}_{2}, x_{1}^{2} x_{2} \boldsymbol{e}_{1}, x_{1}^{2} x_{2} \boldsymbol{e}_{2},}{x_{1}^{4} \boldsymbol{e}_{1}, x_{1}^{4} \boldsymbol{e}_{2}, x_{1}^{3} x_{2} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{2}, x_{1}^{6} \boldsymbol{e}_{1}, x_{1}^{6} \boldsymbol{e}_{2}, x_{1}^{7} \boldsymbol{e}_{1}}, \\ & D_{1}:=\left(\begin{array}{ccccccccccccccc} 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & c_{31} / 6 & c_{50} / 120 & 0 & c_{60} / 720 & 0 & c_{70} / 5040 \\ 0 & 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & c_{50} / 120 & 0 & c_{60} / 720 & 0 \\ d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & d_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\ 0 & d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ c_{11} & d_{11} & c_{21} & d_{21} & 0 & c_{31} / 2 & d_{31} / 2 & c_{50} / 24 & 0 & c_{41} / 6 & c_{60} / 120 & 0 & c_{70} / 720 & 0 & * \\ 0 & 0 & c_{11} & d_{11} & 0 & c_{21} & d_{21} & 0 & 0 & c_{31} / 2 & c_{50} / 24 & 0 & c_{60} / 120 & 0 & c_{70} / 720 \\ 0 & d_{01} & c_{11} & d_{11} & 0 & c_{21} / 2 & d_{21} / 2 & 0 & 0 & c_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} & 0 & 0 & c_{50} / 24 & 0 & c_{60} / 120 \\ 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & c_{50} / 24 \\ 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & d_{11} & 0 & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 & d_{31} / 6 & c_{41} / 24 \\ 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & c_{21} / 2 & d_{21} & c_{31} / 6 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} \end{array}\right) . \end{aligned}
+$$
+
+in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(x_{2}^{2} \mathcal{E}_{2}^{2}+\binom{x_{2} \mathrm{~m}_{2}^{4}+\mathrm{m}_{2}^{8}}{x_{2} \mathrm{~m}_{2}^{3}+\mathrm{m}_{2}^{7}}\). The determinant of \(D_{1}\) is
+
+$$
+\left\{\left(\begin{array}{l} \left(48 a_{50} a_{70}-35 a_{60}^{2}\right) k_{1}^{2} \\ +42\left(a_{21} a_{60}-40 a_{31} a_{50}\right) a_{50} k_{1} \\ +2205 a_{21}^{2} a_{50}^{2} \end{array}\right) p_{1}^{2}-84 a_{50} k_{1}\left(a_{60} k_{1}-3 a_{21} a_{50}\right) p_{1}+756 a_{50}^{2} k_{1}^{2}\right\} \frac{a_{55}^{2} k_{1}^{2} p_{1}^{6} c^{23}}{10450944000 y_{3}^{8}} .
+$$
+
+Thus, the fifteen monomials above are in \(T \mathcal{A}_{e} \pi_{y}\) since \(y\) is not butterfly-focal point. Finally, we consider the following five elements
+
+$$
+t\left(\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{2}}, \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}\right)=D_{2}^{t}\left(\binom{x_{1}}{0},\binom{0}{x_{1}},\binom{x_{1}^{2}}{0},\binom{0}{x_{1}^{2}},\binom{x_{1}^{3}}{0}\right)
+$$
+
+$$
+D_{2}:=\left(\begin{array}{ccccc} -c / p_{1} & 0 & -c / p_{1}^{2} & 0 & c / p_{1}^{3} \\ 0 & -c / p_{1} & 0 & -c / p_{1}^{2} & 0 \\ c_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 \\ 0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\ 0 & 0 & 0 & d_{01} & c_{11} \end{array}\right),
+$$
+
+$$
+\frac{\partial^{2} \pi_{y}}{\partial y_{1} \partial x_{1}}=\binom{-\frac{c}{p_{1}}}{0}, \frac{1}{2} \frac{\partial^{3} \pi_{y}}{\partial y_{1} \partial x_{1}^{2}}=\binom{-\frac{c}{p_{1}^{2}}}{0} \text { and } \frac{1}{6} \frac{\partial^{3} \pi_{y}}{\partial y_{1} \partial x_{1}^{3}}=\binom{-\frac{c}{p_{1}^{3}}}{0}
+$$
+
+Therefore, the five monomials above are in (3.4) if and only if \(2 a_{31} k_{1}-3 a_{21}^{2}\) does not vanish.
+
+Remark 3.6. Our source code for computation the determinant of \(D_{1}\) and \(D_{2}\) is available at
+
+#### 3.2.2 Elder butterfly
+
+Proof of 2 in Theorem 3.2. The elder butterfly singularity is 7A-determined which is equal to the determinacy of the butterfly singularity. Thus, we should prove equality (3.2) holds for k = 7. We know the fifteen elements expressed by D 1 in the subsection 3.2.1 are not linearly independent since y is butterfly-focal. The other elements used in the subsection 3.2.1 of (3.4) are linearly independent if 2 a 31 k 1-3 a 2 21 does not vanish. Thus, we retake the following fifteen 4 8
+
+$$
+\begin{aligned} & t\left(\begin{array}{l} \frac{\partial \pi_{y}}{\partial y_{3}}+\frac{\partial \pi_{y}}{\partial y_{1}} \tan \theta \\ \left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{2} \\ \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{4} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{5} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{6} \frac{\partial \pi_{y}}{\partial x_{2}} \end{array}\right) \\ & \quad=\binom{\boldsymbol{d}_{11}}{D_{12}} t\binom{x_{2} \boldsymbol{e}_{1}, x_{2} \boldsymbol{e}_{2}, x_{1} x_{2} \boldsymbol{e}_{1}, x_{1} x_{2} \boldsymbol{e}_{2}, x_{1}^{3} \boldsymbol{e}_{2}, x_{1}^{2} x_{2} \boldsymbol{e}_{1}, x_{1}^{2} x_{2} \boldsymbol{e}_{2},}{x_{1}^{4} \boldsymbol{e}_{1}, x_{1}^{4} \boldsymbol{e}_{2}, x_{1}^{3} x_{2} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{2}, x_{1}^{6} \boldsymbol{e}_{1}, x_{1}^{6} \boldsymbol{e}_{2}, x_{1}^{7} \boldsymbol{e}_{1}} \end{aligned}
+$$
+
+where the \((14,15)\)-matrix \(D_{12}\) is
+
+$$
+\left(\begin{array}{ccccccccccccccc} 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & c_{31} / 6 & c_{50} / 120 & 0 & c_{60} / 720 & 0 & c_{70} / 5040 \\ 0 & 0 & 0 & c_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & c_{50} / 120 & 0 & c_{60} / 720 & 0 \\ d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & d_{31} / 6 & 0 & 0 & 0 & 0 & 0 \\ 0 & d_{01} & 0 & d_{11} & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ c_{11} & d_{11} & c_{21} & d_{21} & 0 & c_{31} / 2 & d_{31} / 2 & c_{50} / 24 & 0 & c_{41} / 6 & c_{60} / 120 & 0 & c_{70} / 720 & 0 & * \\ 0 & 0 & c_{11} & d_{11} & 0 & c_{21} & d_{21} & 0 & 0 & c_{31} / 2 & c_{50} / 24 & 0 & c_{60} / 120 & 0 & c_{70} / 720 \\ 0 & 0 & 0 & 0 & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} & 0 & 0 & c_{50} / 24 & 0 & c_{60} / 120 \\ 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & 0 & 0 & c_{21} / 2 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & c_{50} / 24 \\ 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 & d_{31} / 6 & c_{41} / 24 \\ 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & c_{11} & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & 0 & c_{11} & d_{11} & c_{21} / 2 & d_{21} / 2 & c_{31} / 6 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} / 2 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} \end{array}\right)
+$$
+
+$$
+\boldsymbol{d}_{11}:=\frac{c^{3}}{y_{3}^{3}}\left(\begin{array}{l} 0,-\frac{f_{3}(0) y_{3}}{c}, f_{3}(0) k_{1} p_{1},-\frac{\left(y_{3}+f_{3}(0)\right) y_{3}}{p_{1} c}, 0 \\ \frac{\left(2 k_{1}\left(y_{3}+f_{3}(0)\right)+a_{21} f_{3}(0) p_{1}\right)}{2},-\frac{\left(2 y_{3}+f_{3}(0)\right) y_{3}}{p_{1}^{2} c}, 0,0, \frac{3 a_{21} p_{1}\left(y_{3}+f_{3}(0)\right)+6 k_{1}\left(2 y_{3}+f_{3}(0)\right)+a_{31} f_{3}(0) p_{1}^{2}}{6 p_{1}}, \\ \frac{a_{50} f_{3}(0) p_{1}}{120}, 0, \frac{6 a_{50}\left(y_{3}+f_{3}(0)\right)+a_{60} f_{3}(0) p_{1}}{720}, 0, \frac{7 a_{60} p_{1}\left(y_{3}+f_{3}(0)\right)+42 a_{50}\left(2 a_{50} y_{3}+f_{3}(0)\right)+a_{70} f_{3}(0) p_{1}^{2}}{5040 p_{1}} \end{array}\right) .
+$$
+
+Therefore, we get the claim. Our source code for the computation of the determinant of \(D_{12}\) is available at [12].
+
+#### 3.2.3 Unimodal
+
+Proof of 3 in Theorem 3.2. From the assumption and criteria, \(a_{50}=0\) and \(a_{60}\) does not vanish. The unimodal singularity is 8 - \(\mathcal{A}\)-deternined. If we know versality of this type, we check equality in (3.4) modulo \(\mathrm{m}_{2}^{9} \mathcal{E}_{2}^{2}\) to generate the monomials above:
+
+$$
+\begin{aligned} & t\left(\frac{\partial \pi_{y}}{\partial y_{1}}, \quad \frac{\partial \pi_{y}}{\partial y_{2}}, \quad \frac{\partial \pi_{y}}{\partial y_{3}}, \quad \frac{\partial \pi_{y}}{\partial x_{2}}, \quad x_{1} \frac{\partial \pi_{y}}{\partial x_{2}}, \quad x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}, \quad x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}\right) \\ = & \left(\begin{array}{ccccccc} -\frac{y_{3}}{p_{1}^{2} \sin \theta} & 0 & -\frac{y_{3}}{p_{1}^{3} \sin \theta} & 0 & -\frac{y_{3}}{p_{1}^{4} \sin \theta} & 0 & -\frac{y_{3}}{p_{1}^{5} \sin \theta} \\ 0 & -\frac{y_{3}}{p_{1}^{2} \sin \theta} & 0 & -\frac{y_{3}}{p_{1}^{3} \sin \theta} & 0 & -\frac{y_{3}}{p_{1}^{4} \sin \theta} & 0 \\ \frac{y_{3} \cos \theta}{p_{1}^{2} \sin ^{2} \theta} & 0 & \frac{y_{3} \cos \theta}{p_{1}^{3} \sin ^{2} \theta} & 0 & \frac{y_{3} \cos \theta}{p_{1}^{4} \sin ^{2} \theta} & 0 & \frac{y_{3} \cos \theta}{p_{1}^{5} \sin ^{2} \theta} \\ c_{11} & d_{11} & c_{21} & d_{21} & c_{31} & d_{31} & c_{41} \\ 0 & d_{01} & c_{11} & d_{11} & c_{21} & d_{21} & c_{31} \\ 0 & 0 & 0 & d_{01} & c_{11} & d_{11} & c_{21} \\ 0 & 0 & 0 & 0 & 0 & d_{01} & c_{11} \end{array}\right)\left(\begin{array}{l} x_{1} \boldsymbol{e}_{1} \\ x_{1} \boldsymbol{e}_{2} \\ x_{1}^{2} \boldsymbol{e}_{1} \\ x_{1}^{2} \boldsymbol{e}_{2} \\ x_{1}^{3} \boldsymbol{e}_{1} \\ x_{1}^{3} \boldsymbol{e}_{2} \\ x_{1}^{4} \boldsymbol{e}_{1} \end{array}\right)+\cdots \end{aligned}
+$$
+
+Therefore, we know that an unfolding \(\pi\) is not versal at the unimodal singularity.
+
+### 3.3 Parabolic surfaces so that π y has gulls series singularities with A e -cod. π y ≤
+
+$$
+\begin{aligned} & c_{40}=-\frac{a_{40} p_{1} c^{2}}{y_{3}}, d_{40}=0, c_{31}=-\left(a_{31} p_{1}+3 a_{21}\right) \frac{c^{2}}{2 y_{3}}, d_{31}=\frac{6 c}{p_{1}^{3}} \\ & c_{22}=-\left(a_{22} p_{1}^{2}+2 a_{12} p_{1}+2 k_{2}\right) \frac{c^{2}}{p_{1} y_{3}}, c_{13}=-\left(a_{13} p_{1}+a_{03}\right) \frac{c^{2}}{y_{3}} \\ & c_{50}=-\left(a_{50} p_{1}+5 a_{40}\right) \frac{c^{2}}{y_{3}}, c_{41}=-\left(a_{41} p_{1}^{2}+4 a_{31} p_{1}+12 a_{21}\right) \frac{c^{2}}{p_{1} y_{3}} \\ & c_{32}=-\left(a_{32} p_{1}^{3}+3 a_{22} p_{1}^{2}+6 a_{12} p_{1}+6 k_{2}\right) \frac{c^{2}}{p_{1}^{2} y_{3}} \\ & c_{60}=-\left(a_{60} p_{1}^{2}+6 a_{50} p_{1}+30 a_{40}\right) \frac{c^{2}}{p_{1} y_{3}}, c_{51}=-\left(a_{51} p_{1}^{3}+5 a_{41} p_{1}^{2}+20 a_{31} p_{1}+60 a_{21}\right) \frac{c^{2}}{p_{1}^{2} y_{3}} \\ & c_{70}=-\left(a_{70} p_{1}^{3}+7 a_{60} p_{1}^{2}+42 a_{50} p_{1}+210 a_{40}\right) \frac{c^{2}}{p_{1}^{2} y_{3}} \end{aligned}
+$$
+
+The Taylor series of central projection \(\pi_{y}\) is (3.3) where \(c_{21} \neq 0\) from criteria of the gulls series singularities which are \(a_{30}=0\) and \(a_{21} \neq 0\). Several coefficients of the 7-jet of \(\pi_{y}\) are expressed as follows:
+
+#### 3.3.1 Gulls
+
+Proof of 1 in Theorem 3.3 at gulls singularity. Since gulls type is 5 - \(\mathcal{A}\)-determined, we should show that equality (3.2) holds for \(k=5\). From criteria of gulls singularity, \(a_{40} \neq 0\) and in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{6} \mathcal{E}_{2}^{2}\). Thus, we know a monomial \(\binom{0}{x_{2}^{4}}=\frac{1}{d_{01}^{4}}\binom{0}{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{4}}\) in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{\mathrm{m}_{2}^{6}}{\mathrm{~m}_{2}^{5}}\). As same, a monomial \(\binom{x_{2}^{5}}{0}\) is in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{\mathrm{m}_{2}^{6}}{x_{2}^{4}+\mathrm{m}_{2}^{5}}\) since \(\binom{x_{2}^{5}}{0}=\frac{1}{d_{01}^{5}}\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{5} \boldsymbol{e}_{1}\). Using the following linearly independent elements of \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{5}+\mathrm{m}_{2}^{6}}{x_{2}^{4}+\mathrm{m}_{2}^{5}}\) :
+
+$$
+\begin{aligned} & t\binom{\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{2} \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{2} \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{3} \boldsymbol{e}_{1},}{x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}} \\ & =D^{t}\binom{x_{2} \boldsymbol{e}_{2}, x_{1} x_{2} \boldsymbol{e}_{2}, x_{2}^{2} \boldsymbol{e}_{1}, x_{2}^{2} \boldsymbol{e}_{2}, x_{1}^{2} x_{2} \boldsymbol{e}_{1}, x_{1}^{2} x_{2} \boldsymbol{e}_{2}, x_{1} x_{2}^{2} \boldsymbol{e}_{1}, x_{1} x_{2}^{2} \boldsymbol{e}_{2}, x_{2}^{3} \boldsymbol{e}_{1},}{x_{1}^{4} \boldsymbol{e}_{1}, x_{1}^{3} x_{2} \boldsymbol{e}_{1}, x_{1}^{2} x_{2}^{2} \boldsymbol{e}_{1}, x_{1} x_{2}^{3} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{1}} \end{aligned}
+$$
+
+where
+
+$$
+D:=\left(\begin{array}{cccccccccccccc} 0 & 0 & c_{02} / 2 & 0 & c_{21} / 2 & 0 & c_{12} / 2 & 0 & c_{03} / 6 & c_{40} / 24 & c_{31} / 6 & c_{22} / 4 & c_{13} / 6 & c_{50} / 120 \\ 0 & 0 & 0 & c_{02} / 2 & 0 & c_{21} / 2 & 0 & c_{12} / 2 & 0 & 0 & 0 & 0 & 0 & 0 \\ d_{01} & d_{11} & 0 & 0 & 0 & d_{21} / 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & d_{01}^{2} & 0 & 0 & 0 & 2 d_{01} d_{11} & 0 & 0 & 0 & 0 & d_{01} d_{21}+d_{11}^{2} & 0 & 0 \\ 0 & 0 & 0 & d_{01}^{2} & 0 & 0 & 0 & 2 d_{01} d_{11} & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01}^{3} & 0 & 0 & 0 & 3 d_{01}^{2} d_{11} & 0 \\ 0 & d_{11} & 0 & 0 & c_{21} & d_{21} & c_{12} / 2 & 0 & 0 & c_{40} / 6 & c_{31} / 2 & c_{22} / 2 & c_{13} / 6 & c_{50} / 24 \\ 0 & 0 & 0 & d_{11} & 0 & 0 & c_{21} & d_{21} & c_{12} / 2 & 0 & c_{40} / 6 & c_{31} / 2 & c_{22} / 2 & 0 \\ d_{01} & d_{11} & c_{02} & 0 & c_{21} / 2 & d_{21} / 2 & c_{12} & 0 & c_{03} / 2 & 0 & c_{31} / 6 & c_{22} / 2 & c_{13} / 2 & 0 \\ 0 & 0 & 0 & 0 & 0 & d_{11} & 0 & 0 & 0 & 0 & c_{21} & c_{12} / 2 & 0 & c_{40} / 6 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{11} & 0 & 0 & 0 & c_{21} & c_{12} / 2 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & c_{21} & 0 \\ 0 & d_{01} & 0 & 0 & 0 & d_{11} & c_{02} & 0 & 0 & 0 & c_{21} / 2 & c_{12} & c_{03} / 2 & 0 \\ 0 & 0 & 0 & d_{01} & 0 & 0 & 0 & d_{11} & c_{02} & 0 & 0 & c_{21} / 2 & c_{12} & 0 \end{array}\right) .
+$$
+
+The determinant of the matirx D is
+
+$$
+-\frac{a_{21}^{4} a_{40}\left(3 a_{21}^{2} a_{50} p_{1}+5 a_{12} a_{40}^{2} p_{1}-10 a_{21} a_{31} a_{40} p_{1}-5 a_{40}^{2} k_{2}+15 a_{21}^{2} a_{40}\right) p_{1}^{6} c^{26}}{23040 y_{3}^{8}}
+$$
+
+Our source code for computation of the determinant of D is available at [12]. Thus, we can get the monomials above at gulls type.
+
+We have no other way to generate two monomials \(\binom{x_{1} x_{2}}{0}\) and \(\binom{x_{1}^{3}}{0}\) which is to use pair of elements
+
+$$
+\left(\frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{2}}\right)=\left(\binom{x_{1} x_{2}}{0},\binom{x_{1}^{3}}{0}\right)\left(\begin{array}{cc} c_{21} & c_{02} \\ \frac{c_{40}}{6} & \frac{c_{21}}{2} \end{array}\right)
+$$
+
+A monomial \(\binom{0}{x_{1}^{3}}\) is in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2}+x_{2} \mathrm{~m}_{2}^{2}}{x_{2} \varepsilon_{1}}+\mathrm{m}_{2}^{4} \mathcal{E}_{2}^{2}\) from \(\frac{1}{d_{01}} x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{0}{x_{1}^{3}}\). In
+
+$$
+\frac{\partial \pi_{y}}{\partial y_{1}}=\binom{-\frac{c}{p_{1}} x_{1}-\frac{c}{p_{1}^{2}} x_{1}^{2}}{0},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}{ 0}=\binom{d_{01} x_{2}}{0} \quad \text { and } \quad \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{c_{02} x_{2}+\frac{c_{21}}{2} x_{1}^{2}}{0}
+$$
+
+in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2}^{2}+x_{2} \mathrm{~m}_{2}^{2}+\mathrm{m}_{2}^{4}}{\mathrm{~m}_{2}}\). This two elements are linearly independent to each other if and only if \(f\) is the 1-st order blue ridge point at the origin (that is, \(a_{40} k_{2}-3 a_{21}^{2} \neq 0\) ). Finally, we get remaining monomials \(\binom{x_{1}}{0},\binom{x_{2}}{0}\) and \(\binom{x_{1}^{2}}{0}\) by linearly independent elements
+
+#### 3.3.2 Ugly gulls
+
+Thus, if we know versality of this type, we check the equality (3.2) in the case of \(k=7\). The 4-jet of each derivative of central projection \(\pi_{y}\) is the same as the case of gulls singularity. If \(a_{40} k_{2}-3 a_{21}^{2}=0, \pi_{y}\) is not versal at the origin from the same reason in the gulls case. We assume that \(f\) is the 1-st order blue ridge at the origin. Since \(d_{01} \neq 0\) and \(\binom{0}{O_{7}}=\frac{1}{d_{01}} O_{7} \frac{\partial \pi_{y}}{\partial x_{2}}\) in \(T \mathcal{A}_{e} \pi_{y} / \mathrm{m}_{2}^{8} \mathcal{E}_{2}^{2}\), degree 7 monomials of the second 6 monomials \(\binom{0}{O_{6}}\) are in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{\mathrm{m}_{2}^{8}}{\mathrm{~m}_{2}^{7}}\) from the following linearly independent vectors
+
+$$
+O_{5} \frac{\partial \pi_{y}}{\partial x_{1}}=O_{5}\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{7}}{0}=\binom{d_{01}^{7} x_{2}^{7}}{0} \quad \text { and } \quad O_{6} \frac{\partial \pi_{y}}{\partial x_{2}}=O_{6}\binom{c_{02} x_{2}}{d_{01}} .
+$$
+
+In the same way, monomials \(\binom{x_{2}^{2} O_{4}}{0}\) and \(\binom{0}{x_{2} O_{4}}\) are in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\binom{x_{2} \mathrm{~m}_{2}^{6}+\mathrm{m}_{2}^{8}}{\mathrm{~m}_{2}^{6}}\) from the following linearly independent vectors
+
+$$
+x_{2} O_{3} \frac{\partial \pi_{y}}{\partial x_{1}}=x_{2} O_{3}\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{6}}{0}=\binom{d_{01}^{6} x_{2}^{6}}{0} \text { and } x_{2} O_{4} \frac{\partial \pi_{y}}{\partial x_{2}}=x_{2} O_{4}\binom{c_{02} x_{2}}{d_{01}} .
+$$
+
+Furthermore, we get (x 3 2 O 2 0) and (0 x 22 O 2) from the following linearly independent vectors in T A e π y modulo (x 2 2 m 4 2 + x 2 m 6 2 +m 8 2 x 2 m 4 2 +m 6 2) respectively. We know two elements (x 4 2 0) and (0 x 32) are in T A e π y modulo (x 3 2 m 2 2 + x 2 2 m 4 2 + x 2 m 6 2 +m 8 2 x 2 2 m 2 2 + x 2 m 4 2 +m 6 2) from
+
+$$
+x_{2}^{2} O_{1} \frac{\partial \pi_{y}}{\partial x_{1}}=x_{2}^{2} O_{1}\binom{c_{21} x_{1} x_{2}+c_{12} x_{2}^{2} / 2}{d_{11} x_{2}},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{5}}{0}=\binom{d_{01}^{5} x_{2}^{5}}{0} \text { and } x_{2}^{2} O_{2} \frac{\partial \pi_{y}}{\partial x_{2}}=x_{2}^{2} O_{2}\binom{c_{02} x_{2}}{d_{01}}
+$$
+
+$$
+\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{4}}{0}=\binom{d_{01}^{4} x_{2}^{4}}{0} \quad \text { and } \quad x_{2}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}=\binom{c_{02} x_{2}^{4}}{d_{01} x_{2}^{3}} .
+$$
+
+To show that \(\binom{0}{x_{2}}\) and remaining monomials whose degree is degree 2 or more except \(\binom{x_{1}^{2}}{0}\), \(\binom{0}{x_{1}^{2}},\binom{x_{1} x_{2}}{0},\binom{x_{1}^{3}}{0}\) and \(\binom{0}{x_{1}^{3}}\) are in (3.4), we consider the elements of (3.4) given by the following elemnts:
+
+$$
+\begin{gathered} t\left(\begin{array}{c} \frac{\partial \pi_{y}}{\partial y_{3}}+\frac{1}{\tan \theta} \frac{\partial \pi_{y}}{\partial y_{1}}+\frac{f_{3}(0)}{y_{3} p_{1} \sin \theta}\binom{\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle}{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}, \\ \left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{2},\left\langle\pi_{y}, \boldsymbol{e}_{1}\right\rangle\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{2} \boldsymbol{e}_{1},\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{3} \boldsymbol{e}_{1}, \\ x_{1} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}, \\ x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1} x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{4} \frac{\partial \pi_{y}}{\partial x_{1}}, x_{1}^{4} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{3} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{5} \frac{\partial \pi_{y}}{\partial x_{2}} \end{array}\right) \\ =\binom{\boldsymbol{d}}{D_{1}} t\left(\begin{array}{c} x_{2} \boldsymbol{e}_{2}, x_{1} x_{2} \boldsymbol{e}_{2}, x_{2}^{2} \boldsymbol{e}_{1}, x_{2}^{2} \boldsymbol{e}_{2}, x_{1}^{2} x_{2} \boldsymbol{e}_{1} \\ x_{1}^{2} x_{2} \boldsymbol{e}_{2}, x_{1} x_{2}^{2} \boldsymbol{e}_{1}, x_{1} x_{2}^{2} \boldsymbol{e}_{2}, x_{2}^{3} \boldsymbol{e}_{1} \\ x_{1}^{4} \boldsymbol{e}_{1}, x_{1}^{4} \boldsymbol{e}_{2}, x_{1}^{3} x_{2} \boldsymbol{e}_{1}, x_{1}^{3} x_{2} \boldsymbol{e}_{2}, x_{1}^{2} x_{2}^{2} \boldsymbol{e}_{1}, x_{1} x_{2}^{3} \boldsymbol{e}_{1} \\ x_{1}^{5} \boldsymbol{e}_{1}, x_{1}^{5} \boldsymbol{e}_{2}, x_{1}^{4} x_{2} \boldsymbol{e}_{1}, x_{1}^{3} x_{2}^{2} \boldsymbol{e}_{1}, x_{1}^{6} \boldsymbol{e}_{1}, x_{1}^{5} x_{2} \boldsymbol{e}_{1}, x_{1}^{7} \boldsymbol{e}_{1} \end{array}\right) \end{gathered}
+$$
+
+where \(D_{1}\) is the (21,22)-matrix expressed as follows:
+
+$$
+\beta_{22}:=d_{01} d_{21}+d_{11}^{2}, \quad \beta_{32}:=d_{01} d_{31}+3 d_{11} d_{21}
+$$
+
+$$
+\boldsymbol{d}:=\frac{c^{2}}{p_{1} y_{3}}\binom{0,-1,0,0,0,-\frac{2}{p_{1}}, \frac{k_{2}}{2 \sin \theta}, 0,0,0,0, \frac{a_{21}}{2 \sin \theta},-\frac{3}{p_{1}^{2}}, \frac{a_{12} p_{1}+2 k_{2}}{2 p_{1} \sin \theta}, \frac{a_{03}}{6 \sin \theta}, \frac{a_{40}}{24 \sin \theta}, 0,}{\frac{a_{31} p_{1}+6 a_{21}}{6 p_{1} \sin \theta}, \frac{a_{22} p_{1}^{2}+4 a_{12} p_{1}+6 k_{2}}{4 p_{1}^{2} \sin \theta}, \frac{a_{50} p_{1}+10 a_{40}}{120 p_{1} \sin \theta}, \frac{a_{41} p_{1}^{2}+8 a_{31} p_{1}+36 a_{21}}{24 p_{1}^{2} \sin \theta}, \frac{a_{60} p_{1}^{2}+12 a_{50} p_{1}+90 a_{40}}{720 p_{1}^{2} \sin \theta}} .
+$$
+
+The determinant of \(\binom{\boldsymbol{d}}{D_{1}}\) does not vanish from the non-degenerate condition of ugly gulls singularity. Our source code for Gauss elimination method of the determinant of \(\binom{\boldsymbol{d}}{D_{1}}\) is available at [12].
+
+The elements which generate remaining degree 1 to 3 monomials are nothing else the following eight elements:
+
+$$
+\begin{aligned} & t\left(\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{2}},\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}{ 0}, \frac{\partial \pi_{y}}{\partial x_{1}}, \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{3} \frac{\partial \pi_{y}}{\partial x_{2}}\right) \\ = & D_{2}^{t}\left(\binom{x_{1}}{0},\binom{0}{x_{1}},\binom{x_{2}}{0},\binom{x_{1}^{2}}{0},\binom{0}{x_{1}^{2}},\binom{x_{1} x_{2}}{0},\binom{x_{1}^{3}}{0},\binom{0}{x_{1}^{3}}\right) \end{aligned}
+$$
+
+$$
+D_{2}:=\left(\begin{array}{cccccccc} -\frac{c}{p_{1}} & 0 & 0 & -\frac{c}{p_{1}^{2}} & 0 & 0 & -\frac{c}{p_{1}^{3}} & 0 \\ 0 & -\frac{c}{p_{1}} & 0 & 0 & -\frac{c}{p_{1}^{2}} & 0 & 0 & -\frac{c}{p_{1}^{3}} \\ 0 & 0 & d_{01} & 0 & 0 & d_{11} & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & c_{21} & c_{40} / 6 & 0 \\ 0 & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{12} & c_{31} / 6 & d_{31} / 6 \\ 0 & d_{01} & 0 & 0 & d_{11} & c_{02} & c_{21} / 2 & d_{21} / 2 \\ 0 & 0 & 0 & 0 & d_{01} & 0 & 0 & d_{11} \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & d_{01} \end{array}\right)
+$$
+
+$$
+These are in (3.4) if and only if \( a_{40} k_{2}-3 a_{21}^{2} \neq 0 \).
+$$
+
+#### 3.3.3 Type
+
+Thus, we need to prove equality (3.2) where \(k=6\). We However, we can only choose the following elements in (3.4) modulo \(\mathrm{m}_{2}^{6} \mathcal{E}_{2}^{2}\) :
+
+$$
+\begin{aligned} t\left(\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{3}},\right. & \left.\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}{ 0}, \frac{\partial \pi_{y}}{\partial x_{1}}, \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1} \frac{\partial \pi_{y}}{\partial x_{2}}, x_{1}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}\right) \\ & =\left(\begin{array}{ccccccc} -\frac{c}{p_{1}} & 0 & -\frac{c}{p_{1}^{2}} & 0 & 0 & -\frac{c}{p_{1}^{3}} & -\frac{c}{p_{1}^{4}} \\ \frac{c \cos \theta}{y_{3}} & 0 & \frac{c \cos \theta}{p_{1} y_{3}} & 0 & 0 & \frac{c \cos \theta}{p_{1}^{2} y_{3}} & \frac{c \cos \theta}{p_{1}^{3} y_{3}} \\ 0 & d_{01} & 0 & 0 & d_{11} & 0 & 0 \\ 0 & 0 & 0 & 0 & c_{21} & 0 & c_{50} / 24 \\ 0 & c_{02} & c_{21} / 2 & d_{21} / 2 & c_{12} & c_{31} / 6 & c_{41} / 24 \\ 0 & 0 & 0 & d_{11} & c_{02} & c_{21} / 2 & c_{31} / 6 \\ 0 & 0 & 0 & d_{01} & 0 & 0 & c_{21} / 2 \end{array}\right)\left(\begin{array}{c} x_{1} \boldsymbol{e}_{1} \\ x_{2} \boldsymbol{e}_{1} \\ x_{1}^{2} \boldsymbol{e}_{1} \\ x_{1}^{2} \boldsymbol{e}_{2} \\ x_{1} x_{2} \boldsymbol{e}_{1} \\ x_{1}^{3} \boldsymbol{e}_{1} \\ x_{1}^{4} \boldsymbol{e}_{1} \end{array}\right)+\cdots \end{aligned}
+$$
+
+consider whether several seven elements in (3.4) modulo \(\mathrm{m}_{2}^{6} \mathcal{E}_{2}^{2}\) generate seven elements \(\binom{x_{1}}{0}\), to generate the monomials above. Since \(\frac{\partial \pi_{y}}{\partial y_{1}}\) and \(\frac{\partial \pi_{y}}{\partial y_{3}}\) are not linearly independent in this part, these elements cannot generate the seven elements and we know an unfolding \(\pi\) is not versal at the type 12 singularity.
+
+### 3.4 Parabolic surfaces so that π y has goose series singularities with A e -cod. π y ≤
+
+Thus, the cofficients of terms whose degree is upto 3 are expressed as the same in the case of lips/beaks. Several coefficients of the 5-jet of \(\pi_{y}\) are written as follows:
+
+$$
+\begin{aligned} & c_{40}=-\left(a_{40} p_{1}+4 a_{30}\right) \frac{c^{2}}{y_{3}}, d_{40}=0 \\ & c_{31}=-\left(a_{31} p_{1}+3 a_{21}\right) \frac{c^{2}}{y_{3}}, d_{31}=\left(6 \sin \theta+a_{30} p_{1}^{2} \cos \theta\right) \frac{c^{2}}{p_{1}^{2} y_{3}} \end{aligned}
+$$
+
+$$
+\begin{aligned} & c_{22}=-\left(a_{22} p_{1}^{2}+2 a_{12} p_{1}+2 k_{2}\right) \frac{c^{2}}{p_{1} y_{3}}, d_{22}=\left(2 a_{21} \cos \theta\right) \frac{c^{2}}{y_{3}}, \\ & c_{13}=-\left(a_{13} p_{1}+a_{03}\right) \frac{c^{2}}{y_{3}}, d_{13}=\left(3\left(a_{12} p_{1}+2 k_{2}\right) \cos \theta\right) \frac{c^{2}}{p_{1} y_{3}}, \\ & c_{04}=-p_{1}\left(a_{04}+6 k_{2}^{2} \frac{c}{y_{3}} \cos \theta\right) \frac{c^{2}}{y_{3}}, d_{04}=4 a_{03} \cos \theta \frac{c^{2}}{y_{3}}, \\ & c_{50}=-\left(a_{50} p_{1}^{2}+5 a_{40} p_{1}+20 a_{30}\right) \frac{c^{2}}{p_{1} y_{3}}, d_{50}=0, \\ & c_{41}=-\left(a_{41} p_{1}^{2}+4 a_{31} p_{1}+12 a_{21}\right) \frac{c^{2}}{p_{1} y_{3}}, d_{41}=\left\{24 \sin \theta+\left(a_{40} p_{1}+8 a_{30}\right) p_{1}^{2} \cos \theta\right\} \frac{c^{2}}{p_{1}^{3} y_{3}}, \\ & c_{32}=-\left\{\left(a_{32} p_{1}^{3}+3 a_{22} p_{1}^{2}+6 a_{12} p_{1}+6 k_{2}\right) \sin \theta+2 a_{30} k_{2} p_{1}^{2} \cos \theta\right\} \frac{c^{3}}{p_{1} y_{3}^{2}}, \\ & d_{32}=2\left(a_{31} p_{1}+6 a_{21}\right) \cos \theta \frac{c^{2}}{p_{1} y_{3}}, \\ & c_{23}=-\left\{\left(a_{23} p_{1}^{2}+2 a_{13} p_{1}+2 a_{03}\right) \sin \theta+6 a_{21} k_{2} p_{1} \cos \theta\right\} \frac{c^{3}}{y_{3}^{2}}, \\ & d_{23}=3\left(a_{22} p_{1}^{2}+4 a_{12} p_{1}+6 k_{2}\right) \cos \theta \frac{c^{2}}{p_{1}^{2} y_{3}}, \\ & c_{14}=-12 k_{2}\left(a_{12} p_{1}+k_{2}\right) \cos \theta \frac{c^{3}}{y_{3}^{2}}-\left(a_{14} p_{1}+a_{04}\right) \frac{c^{2}}{y_{3}}, d_{14}=4\left(a_{13} p_{1}+2 a_{03}\right) \cos \theta \frac{c^{2}}{p_{1} y_{3}}, \\ & c_{05}=-20 a_{03} k_{2} \cos \theta \frac{p_{1} c^{3}}{y_{3}^{2}}-a_{05} \frac{p_{1} c^{2}}{y_{3}} . \end{aligned}
+$$
+
+#### 3.4.1 Goose
+
+Proof of 1 in Theorem 3.4 at goose singularity. Since the goose singularity is 4A-determined, we should show equality (3.2) holds for k = 4. We consider whether all monomial bases of m 2 E 2 2 m 5 2 E 2 2 are in T A e π y modulo m 5 2 E 2 2. first, we assume that the surface f is not flat umbilic at the origin. Since d 01 = 0, (0 O 4) = 1 d 01 O 4 ∂π y ∂x 2 and (x 4 2 0) = 1 d 4 01 ( 〈 π y, e 2 〉 4 0), degree 4 monomials (0 O 4) and (x 4 2 0) are in T A e π y modulo m 5 2 E 2 2. Furthermore, (0 x 3 2) = 1 d 01 x 3 2 ∂π y ∂x 2 is contained in T A e π y modulo (x 4 2 +m 5 2 m 4 2). To show that other monomials except a monomial \(\binom{x_{1}}{0}\) are in (3.4) modulo \(\binom{x_{2}^{4}+\mathrm{m}_{2}^{5}}{x_{2}^{3}+\mathrm{m}_{2}^{4}}\), we consider the elements expressed as the following table:
+
+where \(\alpha_{30}:=-\frac{\left(6 \sin \theta+a_{30} p_{1}^{2} \cos \theta\right) c^{2}}{p_{1}^{2} y_{3}}, \quad \alpha_{21}:=-\frac{a_{21} c^{2} \cos \theta}{y_{3}}\) and \(\alpha_{12}:=-\frac{\left(a_{12} p_{1}+2 k_{2}\right) c^{2} \cos \theta}{p_{1} y_{3}}\). From Gauss elimination method of which our source code is available on Github [12], the con dition of fullrank of this matrix expressed as the table above is the same as criteria of goose singularity. Thus, they are in (3.4). The remaining monomial \(\binom{x_{1}}{0}\) is in (3.4) modulo \(\binom{x_{2}+\mathrm{m}_{2}^{2}}{\mathrm{~m}_{2}}\) since \(\binom{x_{1}}{0}=-\frac{p_{1}}{c} \frac{\partial \pi_{y}}{\partial y_{1}}\). Thus, \(\pi\) is a versal unfolding of the singularity of \(\pi_{y}\) if \(f(0)\) is not flat umbilic.
+
+Next, we consider in the case of flat umbilic, that is, \(k_{2}=0\). In this case, we have only
+
+$$
+\begin{gathered} t\left(\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle}{ 0}, \frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{3}}, \frac{\partial \pi_{y}}{\partial x_{1}}, \frac{\partial \pi_{y}}{\partial x_{2}}\right)=D^{t}\left(\binom{x_{1}}{0},\binom{x_{2}}{0},\binom{x_{1}^{2}}{0},\binom{x_{1} x_{2}}{0}\right) \\ D:=\left(\begin{array}{cccc} 0 & d_{01} & 0 & d_{11} \\ -\frac{c}{p_{1}} & 0 & -\frac{c}{p_{1}^{2}} & 0 \\ \frac{c}{p_{1} \tan \theta} & 0 & \frac{c}{p_{1}^{2} \tan \theta} & 0 \\ 0 & 0 & c_{30} / 2 & c_{21} \\ 0 & 0 & c_{21} / 2 & c_{12} \end{array}\right) \end{gathered}
+$$
+
+From criteria of goose singularity and non linearly independency of \(\frac{\partial \pi_{y}}{\partial y_{1}}\) and \(\frac{\partial \pi_{y}}{\partial y_{3}}\) in this part, the rank of the above matrix is less than 4.
+
+Therefore, we get criteria of versality of π
+
+#### 3.4.2 Ugly goose
+
+Proof of 1 in Theorem 3.4 at ugly goose singularity. From assumption and criteria, \(a_{30} \neq 0\). The ugly goose singularity is 5 - \(\mathcal{A}\)-deternined. We should show equality (3.2) holds for \(k=5\). The
+
+$$
+\binom{0}{O_{5}}=\frac{1}{d_{01}} O_{5} \frac{\partial \pi_{y}}{\partial x_{2}},\binom{0}{x_{2}^{4}+\frac{2 d_{01}^{3} d_{11}}{d_{01}^{4}} x_{1} x_{2}^{4}}=\frac{1}{d_{01}^{4}}\binom{0}{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{4}},\binom{x_{2}^{5}}{0}=\frac{1}{d_{01}^{5}}\binom{\left\langle\pi_{y}, \boldsymbol{e}_{2}\right\rangle^{5}}{0}
+$$
+
+in \(T \mathcal{A}_{e} \pi_{y}\) modulo \(\mathrm{m}_{2}^{6} \mathcal{E}_{2}^{2}\) and \(d_{01} \neq 0\), we get \(\binom{0}{O_{5}},\binom{0}{x_{2}^{4}}\) and \(\binom{x_{2}^{5}}{0}\). To show that the remaining monomials except \(\binom{x_{1}}{0}\) are in (3.4) modulo \(\binom{x_{2}^{5}+\mathrm{m}_{2}^{6}}{x_{2}^{4}+\mathrm{m}_{2}^{5}}\), we consider the elements in (3.4) expressed as the following table:
+
+x 1 e 2 x 2 e 1 x 2 e 2 x 2 1 e 1 x 2 1 e 2 x 1 x 2 e 1 x 1 x 2 e 2 x 2 2 e 1 x 2 2 e 2 ∂πy ∂y 2 − d 11 0 0 0 − d 21 / 2 0 0 0 − d 03 / 6 p 1 y 2 3 ⟨ d 02, e 1 ⟩ 0
+
+⟨ πy, e 2 ⟩ 2 e 1 0 0 0 0 0 0 0 d 2 01 0
+
+$$
+x_{1} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}
+$$
+
+0 0 0 0 0 0 d 01 0 0 0 0 0 0 0 0 0 0 d 01 0 0 0 0 0 0 0 0 0
+
+$$
+x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}
+$$
+
+0 0 0 0 0 0 0 0 0
+
+$$
+x_{1} x_{2}^{2} \frac{\partial \pi_{\underline{y}}}{\partial x_{1}}
+$$
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+$$
+x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{2}}
+$$
+
+0 0 0 0 0 0 0 0 0
+
+$$
+x_{1} x_{2}^{2} \frac{\partial \pi_{y}}{\partial x_{2}}
+$$
+
+From Gauss elimination method, we know that the matrix expressed as the table above is of fullrank from criteria of ugly goose singularity and the assumption \(k_{2} \neq 0\). Our source code is available on GitHub [12]. The degree 1 monomial (x 1 0) = -p 1 c ∂π y ∂y 1 is in (3.4). Therefore, if f (0) is not flat umbilic, π is versal unfolding of the singularity of π y.
+
+#### 3.4.3 Type
+
+Thus, we need to check equality (3.2) holds for \(k=5\).
+
+However, we can only choose the following elements in (3.4) to generate elements above in j 5 θ ( π y):
+
+$$
+t\left(\frac{\partial \pi_{y}}{\partial y_{1}}, \frac{\partial \pi_{y}}{\partial y_{3}}\right)=\left(\begin{array}{cc} -\frac{c}{p_{1}} & -\frac{c}{p_{1}^{2}} \\ \frac{c}{p_{1} \tan \theta} & \frac{c}{p_{1}^{2} \tan \theta} \end{array}\right) t\left(\binom{x_{1}}{0},\binom{x_{1}^{2}}{0}\right)+\cdots
+$$
+
+We consider whether two elements \(\binom{x_{1}}{0},\binom{x_{1}^{2}}{0}\) are generated by several elements in (3.4).
+
+Since \(\frac{\partial \pi_{y}}{\partial y_{1}}\) and \(\frac{\partial \pi_{y}}{\partial y_{3}}\) are not linearly independent, these elements cannot generates the seven elements and we know that an unfolding \(\pi\) is not versal at the type 16 singularity.
+
+## 4 Geometric conditions of singularities for versality
+
+Since a cone in \(\mathbb{R}^{3}\) is determined by its vertex, direction of central axis and angle, the moduli space of cones is of dimension six. Consider a cone which has a vertex \(y=\left(y_{1}, y_{2}, y_{3}\right)\) in \(\mathbb{R}^{3}\), a direction vector of central axis
+
+$$
+\begin{equation*} C_{y, \boldsymbol{d}, \theta}\left(z_{1}, z_{2}, z_{3}\right):=\langle\boldsymbol{d}, z-y\rangle^{2}-|z-y|^{2} \cos ^{2} \theta=0 \tag{4.1} \end{equation*}
+$$
+
+The contact between the cone (4.1) and the regular surface \(S\) parameterized by \(f\left(x_{1}, x_{2}\right)=\left(x_{1}, x_{2}, Q(x)\right)\) is measured by the \(\mathcal{K}\)-singularities of the function
+
+$$
+\begin{align*} C\left(x_{1}, x_{2}\right) & =C_{y, \boldsymbol{d}, \theta}\left(x_{1}, x_{2}, Q(x)\right) \tag{4.2}\\ & =\sum_{k \geq 2}^{m} C_{k}\left(x_{1}, x_{2}\right)+o\left(x_{1}, x_{2}\right)^{m+1} \text { where } C_{k}\left(x_{1}, x_{2}\right):=\sum_{i+j=k} \frac{c_{i j}}{i j} x_{1}^{i} x_{2}^{j} . \end{align*}
+$$
+
+We call \(C\left(x_{1}, x_{2}\right)\) the contact function with cones.
+
+According to [18], we define the notion of contact type. We recall that two map-germs \(f, g:\left(\mathbb{R}^{m}, 0\right) \rightarrow\left(\mathbb{R}^{n}, 0\right)\) are \(\mathcal{K}\)-equivalent if there are a diffeomorphism \(\varphi:\left(\mathbb{R}^{m}, 0\right) \rightarrow\left(\mathbb{R}^{m}, 0\right)\) and a smooth map \(A:\left(\mathbb{R}^{m}, 0\right) \rightarrow G L\left(\mathbb{R}^{n}\right)\) such that \(g(\varphi(x))=A(x) f(x)\). In this section, we consider the \(A_{k}\) (or \(A_{k}^{ \pm}\))-contact type which is a \(\mathcal{K}\)-modal \(x_{1}^{2} \pm x_{2}^{k+1}\). We introduce some results of \(A_{\leq 6}\)-contact of cones with regular surfaces at a parabolic point. Before stating the results, we need the following Lemma 4.1. In this section, we assume that the vertex of cones is not the origin in \(\mathbb{R}^{3}\).
+
+Lemma 4.1. One of generatrix is passing through the origin in \(\mathbb{R}^{3}\) if and only if the angle of cones \(\theta\) is equal to the angle between the position vector of the vertex \(y\) and the unit direction vector of the central axis \(\boldsymbol{d}\) of cones.
+
+This lemma is shown by checking the condition of \(C(0)=0\). Lemma 4.2. We assume that one of generatrix is passing through the origin in \(\mathbb{R}^{3}\). Then, the contact function \(C\left(x_{1}, x_{2}\right)\) with cones has critical point at 0 if and only if
+
+$$
+\begin{equation*} y_{3}=d_{1} y_{2}-d_{2} y_{1}=0 \tag{4.3} \end{equation*}
+$$
+
+This condition means that the vertex \(y\) is in the tangent plane of the regular surface \(S\) and the orthogonal projection of the direction of central axis \(\boldsymbol{d}\) belong to \(v=(0,0,1)\) is parallel to the The lemma above is proved by checking the rank of Jacobian matrix. Lemma 4.3. We consider a cone \(C_{y, d, \theta}\) whose vertex is satisfied (4.3) and is not origin in \(\mathbb{R}^{3}\). We measure contact between this cone with the regular surface \(S\) as follows:
+
+- The cone C y, d,θ has A 1-contact with S if and only if none of the following conditions hold.
+
+- (A 2 a) the origin is flat umbilic.
+
+- (\(A_{2}\) b) the origin is parabolic but not flat umbilic and the vertex y is contained in an asymptotic straight line of S at 0, that is, \(y_{2}=0\) as same \(d_{2}=0\).
+
+- Suppose that S is parabolic but not flat umbilic at the origin. The cone C y, d,θ has A 2-contact with S if and only if the condition (A 2 b) holds and none of the following conditions hold.
+
+- (\(D_{4}\) a) the vertex y is contained in the asymptotic straight line of S at x = 0 and
+
+$$
+d_{3}=-\frac{d_{1}}{k_{2} y_{1}}
+$$
+
+This is the condition in which the rank of the Hesse matrix is 0.
+
+- (\(A_{3}\) b) the vertex y is contained in the asymptotic straight line of S at x = 0, \(d_{3}\) = -\(d_{1}\) \(k_{2}\) \(y_{1}\) and the asymptotic straight line is 3-rd or higher order contact with S.
+
+The first item 1. in Lemma 4.3 is proved by checking the rank of Hesse matrix of \(C\left(x_{1}, x_{2}\right)\). To prove the second item 2. in Lemma 4.3, we use criteria of \(A_{3}\) and \(D_{4}\)-singularity type (for example, see Theorem 1.1. in [9]).
+
+Using criteria of \(A_{\leq 6}\) singularity (for example, see Theorem 1.2 to 1.4 in [9]), we have the following Theorem 4.4. The proof is similar to that of the item 2. in Lemma 4.3. See [13] also, which is available in [12].
+
+Theorem 4.4. Assume that the origin of the regular surface \(S\) has parabolic but not flat umbilic and the vertex of the cone \(y\) is contained in the asymptotic straight line of \(S\).
+
+- The cone C y, d,θ has A 3-contact with S if and only if S has the 3-rd or higher order contact with the asymptotic straight line at the origin and
+
+$$
+\begin{equation*} \left(k_{2} a_{40}-3 a_{21}^{2}\right) d_{3} y_{1}+a_{40} d_{1} \neq 0 \tag{4.4} \end{equation*}
+$$
+
+After this, we assume that both of \(a_{40}\) and \(k_{2} a_{40}-3 a_{21}^{2}\) do not vanish.
+
+- The cone C y, d,θ has A 4-contact with S if and only if S has the 3-rd order contact with the asymptotic straight line at the origin, (4.4) vanishes and
+
+$$
+\begin{equation*} \left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) y_{1}-5 a_{40}\left(k_{2} a_{40}-3 a_{21}^{2}\right) \neq 0 \tag{4.5} \end{equation*}
+$$
+
+- The cone C y, d,θ has A 5-contact with S if and only if S has the 3-rd order contact with the asymptotic straight line at the origin, both of (4.4) and (4.5) vanish and
+
+$$
+\begin{aligned} & A C_{5}:=\left(45 a_{21}^{3} a_{40} a_{60}-54 a_{21}^{3} a_{50}^{2}+180 a_{21}^{2} a_{31} a_{40} a_{50}-225 a_{21}^{2} a_{40}^{2} a_{41}-25 a_{03} a_{40}^{4}+225 a_{21} a_{22} a_{40}^{3}-\right. \\ & \left.150 a_{21} a_{31}^{2} a_{40}^{2}\right) y_{1}-270 a_{21}^{3} a_{40} a_{50}-450 a_{12} a_{21} a_{40}^{3}+900 a_{21}^{2} a_{31} a_{40}^{2} \end{aligned}
+$$
+
+- The cone C y, d,θ has A 6-contact with S if and only if S has the 3-rd order contact with the asymptotic straight line at the origin, (4.4), (4.5) and AC 5 vanish and
+
+$$
+\begin{aligned} & \left(\begin{array}{l} 225 a_{21}^{3} a_{40}^{2} a_{70}-945 a_{21}^{3} a_{40} a_{50} a_{60}+1575 a_{21}^{2} a_{31} a_{40}^{2} a_{60}-1575 a_{21}^{2} a_{40}^{3} a_{51} \\ +756 a_{21}^{3} a_{50}^{3}-3150 a_{21}^{2} a_{31} a_{40} a_{50}^{2}+3150 a_{21}^{2} a_{40}^{2} a_{41} a_{50}-1575 a_{21} a_{22} a_{40}^{3} a_{50} \\ +4200 a_{21} a_{31}^{2} a_{40}^{2} a_{50}-5250 a_{21} a_{31} a_{40}^{3} a_{41}-875 a_{13} a_{40}^{5}+2625 a_{21} a_{32} a_{40}^{4} \\ +2625 a_{22} a_{31} a_{40}^{4}-1750 a_{31}^{3} a_{40}^{3} \end{array}\right) y_{1}^{2} \\ & +210 a_{40}\left(3 a_{21} a_{50}-5 a_{31} a_{40}\right)\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) y_{1} \\ & -3150 a_{21} a_{40}^{2}\left(3 a_{21}^{2} a_{50}+5 a_{12} a_{40}^{2}-10 a_{21} a_{31} a_{40}\right) \end{aligned}
+$$
+
+Remark 4.5. Suppose that \(f(0)\) is not red subparabolic, that is, \(a_{21} \neq 0\).
+
+- The non degenerate condition of A 4-contact in Theorem 4. 4 means that criteria of gulls singularity type of the central projection π y.
+
+- It follows from 3 and 4 in Theorem 4.4 that the sum of the non degenerate conditions of A 5-contact and A 6-contact
+
+\begin{equation*} A C_{6}-70 a_{40} A C_{5} \tag{4.6} \end{equation*} is equal to the non degenerate condition of ugly gulls singularity of \(\pi_{y}\). We call (4.6) the \(u g\)-focal condition. Finally, we summarize geometric criteria of singularities of \(\pi_{y}\) for versality. Lemma 4.6. Suppose the regular surface \(S\) is parameterized by \(f\) as in (1.1) and a viewpoint \(y\) is in \(\boldsymbol{u}\)-axis, that is, \(y-f(0)=p_{1} \boldsymbol{u}\). Then, geometric criteria of \(\mathcal{A}_{e}\)-codimension \(\leq 3\) singularities of \(\pi_{y}\) are written as in table 3 if \(\pi\) is versal at \(x=0\).
+
+## Acknowledgement
+
+The author is very grateful to his advisor Toshizumi Fukui for a lot of instructions and encouragements. He also appreciates very much lots of advice from Yutaro Kabata and the referee's valuable comments.
+
+## References
+
+- V. I. Arnold. Indices of singular points of 1-forms on a manifold with boundary, convolution of invariants of reflection groups, and singular projections of smooth surfaces. Russian Math. Surveys, Vol. 34, No. 2, pp. 1-42, 1979.
+
+- V. I. Arnold. Singularities of Caustics and Wave Fronts. Mathematics and its Applications. Springer Netherlands, 2013.
+
+- G Bradski and A Kaehler. Learning OpenCV-computer vision with the OpenCV library: software that sees. O'Reilly, 2008.
+
+- J.W. Bruce. Seeing-the mathematical viewpoint. Math. Intelligencer, Vol. 6, No. 4, pp. 18-25, 1984.
+
+- J.W. Bruce and T.C. Wilkinson. Folding maps and focal sets, Vol. 1462, pp. 63-72. Springer Verlag, Germany, 1991.
+
+- H. S. M. Coxeter. Projective Geometry. Springer-Verlag New York, 2-find edition, 1987.
+
+- J. M. S. David. Projection-generic curves. J. London Math. Soc. (2), Vol. 27, No. 3, pp. 552-562, 1983.
+
+- J. L. Deolindo-Silva, Y. Kabata, and T. Ohmoto. Binary differential equations at parabolic and umbilical points for 2-parameter families of surfaces. Topology and its Applications, Vol. 234, pp. 457-473, 2018.
+
+- T. Fukui. Criteria of singularities and an application to differential geometry. In Geometry on Real Closed Field and its Application to Singularity Theory, Vol. 1764 of RIMS Kˆ okyˆ uroku, pp. 16-29. Research Institute for Mathematical Sciences Kyoto University, 9. 2011. (in Japanese).
+
+- T. Fukui and M. Hasegawa. Singularities of parallel surfaces. Tohoku Math. J. (2), Vol. 64, No. 3, pp. 387-408, 2012.
+
+- T. Fukui, M. Hasegawa, and K. Nakagawa. Contact of a regular surface in Euclidean 3-space with cylinders and cubic binary differential equations. J. Math. Soc. Japan, Vol. 69, No. 2, pp. 819-847, 2017.
+
+- S. Honda. Computation of versality of central projections at singularities, 2021. https: github.com Shuhei-singularity123 Computation-of-versality-of-central-projectionsat-singularities.
+
+- S. Honda. Singularity types of central projections and thier versality, March 2021. master thesis in English, Saitama university.
+
+- S. Izumiya, M. D. C. R. Fuster, M. A. S. Ruas, and F. Tari. Differential geometry from a singularity theory viewpoint. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2016.
+
+- Y. Kabata. Recognition of plane-to-plane map-germs. Topology and its Applications, Vol. 202, pp. 216-238, 2016.
+
+- J. N. Mather. Stability of C ∞ mappings. III. Finitely determined mapgerms. Inst. Hautes ´ Etudes Sci. Publ. Math., No. 35, pp. 279-308, 1968.
+
+- J. N. Mather. Stability of C ∞ mappings. II. Infinitesimal stability implies stability. Annals of Math., Vol. 89, No. 2, pp. 254-291, 1969.
+
+- J. Montaldi. On contact between submanifolds. Michigan Math. J., Vol. 33, No. 2, pp. 195-199, 1986.
+
+- O. A. Platonova. Projections of smooth surfaces. J. Soviet Math., Vol. 35, pp. 2796-2808, 1986.
+
+- I. R. Porteous. The normal singularities of surfaces in R 3. Singularities, Part 2 (Arcata, Calif., 1981), Proc. Sympos. Pure Math. 40, Amer. Math. Soc., Providence, RI, pp. 379-393, 1983.
+
+- J. H. Rieger. Families of maps from the plane to the plane. J. London Math. Soc. (2), Vol. 36, No. 2, pp. 351-369, 1987.
+
+- J. H. Rieger and M. A. S. Ruas. Classification of A-simple germs from k n to k 2. Compositio Math., Vol. 79, No. 1, pp. 99-108, 1991.
+
+- K. Saji. Criteria for singularities of smooth maps from the plane into the plane and their applications. Hiroshima Math. J., Vol. 40, No. 2, pp. 229-239, 2010.
+
+- H. Sano, Y. Kabata, J. L. Deolindo Silva, and T. Ohmoto. Classification of jets of surfaces in projective 3-space via central projection. Bull. Brazilian Math. Soc., Vol. 48, No. 4, pp. 623-639, 2017.
+
+- C. T. C. Wall. Geometric properties of generic differentiable manifolds. In Geometry and topology (Proc. III Latin Amer. School of Math., Inst. Mat. Pura Aplicada CNPq, Rio de Janeiro, 1976), pp. 707-774. Lecture Notes in Math., Vol. 597, 1977.
+
+- C. T. C. Wall. Finite Determinacy of Smooth Map-Germs. Bull. London Math. Soc., Vol. 13, No. 6, pp. 481-539, 1981.
+
+- H. Whitney. On singularities of mappings of Euclidean spaces. I. mappings of the plane into the plane. Annals of Math., Vol. 62, No. 3, pp. 374-410, 1955.

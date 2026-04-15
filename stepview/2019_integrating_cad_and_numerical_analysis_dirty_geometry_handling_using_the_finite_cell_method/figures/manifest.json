@@ -1,0 +1,814 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-1-p002.png",
+      "caption_text": "Fig. 1. Cad model of a screw with flaws. Free edges are highlighted in blue . (For interpretation of the references to color in this figure",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 443.61,
+        "width": 766.36,
+        "height": 382.66
+      },
+      "caption_bbox": {
+        "x0": 51.94,
+        "y0": 447.61,
+        "x1": 773.07,
+        "y1": 463.59,
+        "width": 721.13,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 5,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-2-p005.png",
+      "caption_text": "Fig. 2. Example topology with n = 5 vertices, m = 7 edges, and o = 3 faces.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 289.74,
+        "width": 358.19,
+        "height": 228.79
+      },
+      "caption_bbox": {
+        "x0": 215.74,
+        "y0": 293.74,
+        "x1": 621.25,
+        "y1": 305.73,
+        "width": 405.51,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-3-p006.png",
+      "caption_text": "Fig. 3. At each edge e; two boundary curves Cs, and C5, meet.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 391.51,
+        "y1": 255.77,
+        "width": 358.19,
+        "height": 194.82
+      },
+      "caption_bbox": {
+        "x0": 241.71,
+        "y0": 259.77,
+        "x1": 583.3,
+        "y1": 277.76,
+        "width": 341.59,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 7,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-4-p007.png",
+      "caption_text": "Fig. 4. Vertex with adjoined edges and faces: (a) It is possible to cycle through the faces, passing each adjoined edge once. Hence, all faces",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 301.73,
+        "width": 766.36,
+        "height": 240.78
+      },
+      "caption_bbox": {
+        "x0": 59.93,
+        "y0": 305.73,
+        "x1": 779.06,
+        "y1": 319.72,
+        "width": 719.14,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 7,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-5-p007.png",
+      "caption_text": "Fig. 5. Gaps between trimmed NURBS patches of the Utah teapot.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 323.72,
+        "x1": 799.68,
+        "y1": 519.54,
+        "width": 358.19,
+        "height": 195.82
+      },
+      "caption_bbox": {
+        "x0": 243.71,
+        "y0": 523.54,
+        "x1": 593.29,
+        "y1": 537.53,
+        "width": 349.58,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 8,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-6-p008.png",
+      "caption_text": "Fig. 6. Topological flaws.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 391.51,
+        "y1": 471.58,
+        "width": 358.19,
+        "height": 410.63
+      },
+      "caption_bbox": {
+        "x0": 345.59,
+        "y0": 475.58,
+        "x1": 481.42,
+        "y1": 491.57,
+        "width": 135.84,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 8,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-7-p008.png",
+      "caption_text": "Fig. 7. Geometrical flaws.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 495.57,
+        "x1": 391.51,
+        "y1": 759.33,
+        "width": 358.19,
+        "height": 263.76
+      },
+      "caption_bbox": {
+        "x0": 343.59,
+        "y0": 763.33,
+        "x1": 481.42,
+        "y1": 777.32,
+        "width": 137.83,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 9,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-8-p009.png",
+      "caption_text": "Fig. 8. Hybrid flaws which consist of topological and geometrical components.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 471.58,
+        "width": 358.19,
+        "height": 410.63
+      },
+      "caption_bbox": {
+        "x0": 211.75,
+        "y0": 475.58,
+        "x1": 625.25,
+        "y1": 491.57,
+        "width": 413.5,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 9,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-9-p009.png",
+      "caption_text": "Fig. 9. UML-diagram of a possible object-oriented B-Rep implementation.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 495.57,
+        "x1": 799.68,
+        "y1": 975.14,
+        "width": 358.19,
+        "height": 479.57
+      },
+      "caption_bbox": {
+        "x0": 225.73,
+        "y0": 979.14,
+        "x1": 613.26,
+        "y1": 993.13,
+        "width": 387.53,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 10,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-10-p010.png",
+      "caption_text": "Fig. 10. B-Rep sub-part wi, which corresponds to face fi and consists of the topology Tfi and the corresponding geometry Gfi.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 349.69,
+        "width": 766.36,
+        "height": 288.74
+      },
+      "caption_bbox": {
+        "x0": 71.91,
+        "y0": 353.69,
+        "x1": 757.09,
+        "y1": 369.68,
+        "width": 685.18,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 14,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-11-p014.png",
+      "caption_text": "Fig. 11. The concept of the Finite Cell Method [56].",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 391.51,
+        "y1": 241.78,
+        "width": 358.19,
+        "height": 180.83
+      },
+      "caption_bbox": {
+        "x0": 273.67,
+        "y0": 245.78,
+        "x1": 551.34,
+        "y1": 259.77,
+        "width": 277.67,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 17,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-12-p017.png",
+      "caption_text": "Fig. 12. Example of an STL model with typical flaws.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 393.65,
+        "width": 358.19,
+        "height": 332.7
+      },
+      "caption_bbox": {
+        "x0": 275.67,
+        "y0": 397.65,
+        "x1": 561.33,
+        "y1": 411.64,
+        "width": 285.66,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 17,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-13-p017.png",
+      "caption_text": "Fig. 13. Octree approximation of the embedded tetrahedral domain. The outer domain (blue) is separated by the cut leaves (red) from the",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 415.64,
+        "x1": 799.68,
+        "y1": 797.3,
+        "width": 766.36,
+        "height": 381.66
+      },
+      "caption_bbox": {
+        "x0": 59.93,
+        "y0": 801.3,
+        "x1": 779.06,
+        "y1": 815.28,
+        "width": 719.14,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 18,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-14-p018.png",
+      "caption_text": "Fig. 14. Multiple ray casting for different flaws (red: cut leafs, gray: inside, blue: outside). In these examples (d) and (f) would lead to",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 503.55,
+        "width": 766.36,
+        "height": 442.6
+      },
+      "caption_bbox": {
+        "x0": 51.94,
+        "y0": 507.55,
+        "x1": 773.07,
+        "y1": 521.54,
+        "width": 721.13,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 19,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-15-p019.png",
+      "caption_text": "Fig. 15. Parameter study on a unit cube: (a) Characteristic gap size \u00a7gap- (b) Reconstruction tree on the flawed geometry.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 405.64,
+        "width": 766.36,
+        "height": 344.69
+      },
+      "caption_bbox": {
+        "x0": 99.88,
+        "y0": 409.64,
+        "x1": 739.11,
+        "y1": 423.63,
+        "width": 639.23,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 19,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-16-p019.png",
+      "caption_text": "Fig. 16. Cut through two reconstruction trees for different gap sizes, consequently maximum subdivision depths and for different origin",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 427.63,
+        "x1": 799.68,
+        "y1": 731.35,
+        "width": 766.36,
+        "height": 303.73
+      },
+      "caption_bbox": {
+        "x0": 57.93,
+        "y0": 735.35,
+        "x1": 779.06,
+        "y1": 749.34,
+        "width": 721.13,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 20,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-17-p020.png",
+      "caption_text": "Fig. 17. Relative deviation of energies depending on the gap size for different positions of the cube.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 341.7,
+        "width": 766.36,
+        "height": 280.75
+      },
+      "caption_bbox": {
+        "x0": 151.82,
+        "y0": 345.7,
+        "x1": 675.19,
+        "y1": 359.68,
+        "width": 523.37,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 20,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-18-p020.png",
+      "caption_text": "Fig. 18. Principal stresses for the flawless model (a) and gap sizes of Egap = 2.5% (b) and Egap = 20% (c).",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 363.68,
+        "x1": 799.68,
+        "y1": 609.46,
+        "width": 766.36,
+        "height": 245.78
+      },
+      "caption_bbox": {
+        "x0": 129.84,
+        "y0": 613.46,
+        "x1": 697.16,
+        "y1": 629.45,
+        "width": 567.32,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-19",
+      "label": "19",
+      "page": 21,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-19-p021.png",
+      "caption_text": "Fig. 19. Thick-walled plate with circular hole under surface load.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 399.65,
+        "width": 358.19,
+        "height": 338.7
+      },
+      "caption_bbox": {
+        "x0": 247.7,
+        "y0": 403.65,
+        "x1": 589.29,
+        "y1": 417.63,
+        "width": 341.59,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-20",
+      "label": "20",
+      "page": 21,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-20-p021.png",
+      "caption_text": "Fig. 20. Flawed B-Rep model containing several gaps, intersections, offsets, and multiple entities.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 421.63,
+        "x1": 799.68,
+        "y1": 669.41,
+        "width": 766.36,
+        "height": 247.78
+      },
+      "caption_bbox": {
+        "x0": 165.8,
+        "y0": 673.41,
+        "x1": 673.19,
+        "y1": 689.39,
+        "width": 507.39,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-21",
+      "label": "21",
+      "page": 21,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-21-p021.png",
+      "caption_text": "Fig. 21. Flaw details: (a) gap (b) intersection (c) offset of the top surface.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 693.39,
+        "x1": 799.68,
+        "y1": 883.22,
+        "width": 358.19,
+        "height": 189.83
+      },
+      "caption_bbox": {
+        "x0": 225.73,
+        "y0": 887.22,
+        "x1": 613.26,
+        "y1": 901.21,
+        "width": 387.53,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-22",
+      "label": "22",
+      "page": 22,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-22-p022.png",
+      "caption_text": "Fig. 22. Approximation tree TRaco with subdivision depth max = 5.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 391.51,
+        "y1": 331.71,
+        "width": 358.19,
+        "height": 270.76
+      },
+      "caption_bbox": {
+        "x0": 233.72,
+        "y0": 335.71,
+        "x1": 593.29,
+        "y1": 353.69,
+        "width": 359.57,
+        "height": 17.98
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-23",
+      "label": "23",
+      "page": 22,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-23-p022.png",
+      "caption_text": "Fig. 23. Displacement and finite cell discretization.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 357.69,
+        "x1": 391.51,
+        "y1": 561.5,
+        "width": 358.19,
+        "height": 203.81
+      },
+      "caption_bbox": {
+        "x0": 279.66,
+        "y0": 565.5,
+        "x1": 545.35,
+        "y1": 579.49,
+        "width": 265.68,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-24",
+      "label": "24",
+      "page": 22,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-24-p022.png",
+      "caption_text": "Fig. 24. Strain energy norm for polynomial degrees p = 1...6.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 583.49,
+        "x1": 391.51,
+        "y1": 895.21,
+        "width": 358.19,
+        "height": 311.72
+      },
+      "caption_bbox": {
+        "x0": 249.7,
+        "y0": 899.21,
+        "x1": 575.31,
+        "y1": 913.2,
+        "width": 325.61,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-25",
+      "label": "25",
+      "page": 23,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-25-p023.png",
+      "caption_text": "Fig. 25. Cut through an octree approximation TRgeo, with (a) too small cut leaves (geo (black), so that all (non cut) leaves are marked as",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 291.74,
+        "width": 766.36,
+        "height": 230.79
+      },
+      "caption_bbox": {
+        "x0": 59.93,
+        "y0": 295.74,
+        "x1": 781.06,
+        "y1": 311.73,
+        "width": 721.13,
+        "height": 15.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-26",
+      "label": "26",
+      "page": 23,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-26-p023.png",
+      "caption_text": "Fig. 26. Finite cell mesh and displacement of the flawed and the valid model.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 315.73,
+        "x1": 799.68,
+        "y1": 617.45,
+        "width": 358.19,
+        "height": 301.73
+      },
+      "caption_bbox": {
+        "x0": 215.74,
+        "y0": 621.45,
+        "x1": 623.25,
+        "y1": 635.44,
+        "width": 407.51,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-27",
+      "label": "27",
+      "page": 24,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-27-p024.png",
+      "caption_text": "Fig. 27. Von Mises stresses around the flawed region.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 391.51,
+        "y1": 369.67,
+        "width": 358.19,
+        "height": 308.72
+      },
+      "caption_bbox": {
+        "x0": 271.67,
+        "y0": 373.67,
+        "x1": 553.34,
+        "y1": 387.66,
+        "width": 281.66,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-28",
+      "label": "28",
+      "page": 24,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-28-p024.png",
+      "caption_text": "Fig. 28. General electric design challenge for the optimal shape of a jet engine brake.",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 391.66,
+        "x1": 391.51,
+        "y1": 643.43,
+        "width": 358.19,
+        "height": 251.77
+      },
+      "caption_bbox": {
+        "x0": 187.77,
+        "y0": 647.43,
+        "x1": 637.24,
+        "y1": 659.42,
+        "width": 449.46,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-29",
+      "label": "29",
+      "page": 25,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-29-p025.png",
+      "caption_text": "Fig. 29. Blue lines denote open edges: In many cases the free edges are fairly close. As can be seen in the detailed views, however, some",
+      "figure_bbox": {
+        "x0": 33.32,
+        "y0": 60.95,
+        "x1": 799.68,
+        "y1": 535.53,
+        "width": 766.36,
+        "height": 474.58
+      },
+      "caption_bbox": {
+        "x0": 57.93,
+        "y0": 539.53,
+        "x1": 779.06,
+        "y1": 551.52,
+        "width": 721.13,
+        "height": 11.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-30",
+      "label": "30",
+      "page": 25,
+      "image_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/figures/figure-30-p025.png",
+      "caption_text": "Fig. 30. Temperature distribution in the bracket due to a point heat source.",
+      "figure_bbox": {
+        "x0": 441.49,
+        "y0": 555.52,
+        "x1": 799.68,
+        "y1": 975.14,
+        "width": 358.19,
+        "height": 419.62
+      },
+      "caption_bbox": {
+        "x0": 223.73,
+        "y0": 979.14,
+        "x1": 615.26,
+        "y1": 993.13,
+        "width": 391.53,
+        "height": 13.99
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

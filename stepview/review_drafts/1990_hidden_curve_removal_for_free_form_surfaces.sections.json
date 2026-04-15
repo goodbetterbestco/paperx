@@ -1,0 +1,322 @@
+{
+  "paper_id": "1990_hidden_curve_removal_for_free_form_surfaces",
+  "title": "Hidden Surface Removal Algorithms for Curved Surfaces",
+  "prelude_record_ids": [
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g001",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g002",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g003",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g004",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g005",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g006",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g007",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g008",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g009",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g010",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g011",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g012",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g013",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g014",
+    "1990_hidden_curve_removal_for_free_form_surfaces#p001-g015"
+  ],
+  "prelude_counts": {
+    "front_matter": 4,
+    "paragraph": 10,
+    "reference": 1
+  },
+  "sections": [
+    {
+      "title": "2 Background",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g016",
+      "label": "2",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g017"
+      ],
+      "counts": {
+        "paragraph": 1
+      },
+      "children": [
+        {
+          "title": "2.1 Triangulating Simple Polygons",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g018",
+          "label": "2.1",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g019",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g020",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g021"
+          ],
+          "counts": {
+            "paragraph": 2,
+            "caption": 1
+          },
+          "children": []
+        },
+        {
+          "title": "2.2 Partitioning a Simple Polygon using Non-Intersecting Chains",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g022",
+          "label": "2.2",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g023",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g024",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g025",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g026",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g027"
+          ],
+          "counts": {
+            "paragraph": 4,
+            "caption": 1
+          },
+          "children": []
+        },
+        {
+          "title": "2.3 Curve/Surface Intersection",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g028",
+          "label": "2.3",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g029",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g030",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g031"
+          ],
+          "counts": {
+            "paragraph": 3
+          },
+          "children": []
+        },
+        {
+          "title": "2.4 Power Iterations",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g032",
+          "label": "2.4",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g033",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g034"
+          ],
+          "counts": {
+            "paragraph": 2
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "3 Silhouettes",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g035",
+      "label": "3",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g036"
+      ],
+      "counts": {
+        "paragraph": 1
+      },
+      "children": [
+        {
+          "title": "3.1 Formulation of the Silhouette Curve",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g037",
+          "label": "3.1",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g038",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g039",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g040",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g041",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g042",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g043"
+          ],
+          "counts": {
+            "paragraph": 5,
+            "equation": 1
+          },
+          "children": []
+        },
+        {
+          "title": "3.2 Silhouette Computation",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g044",
+          "label": "3.2",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g045",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g046",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g047",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g048"
+          ],
+          "counts": {
+            "paragraph": 4
+          },
+          "children": []
+        },
+        {
+          "title": "3.3 Surface Partitioning based on Silhouettes",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g049",
+          "label": "3.3",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g050",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g051",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g052",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g053",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g054"
+          ],
+          "counts": {
+            "paragraph": 4,
+            "caption": 1
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "4 Visibility Curves",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g055",
+      "label": "4",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g056",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g057",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g058",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g059",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g060",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g061",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g062",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g063",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g064",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g065",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g066",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g067",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g068",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g069",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g070",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g071"
+      ],
+      "counts": {
+        "paragraph": 12,
+        "equation": 1,
+        "caption": 3
+      },
+      "children": []
+    },
+    {
+      "title": "5.1 Boundary Intersections",
+      "level": 2,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g072",
+      "label": "5.1",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g073",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g074",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g075",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g076",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g077",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g078",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g079",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g080",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g081",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g082",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g083"
+      ],
+      "counts": {
+        "paragraph": 8,
+        "caption": 2,
+        "heading": 1
+      },
+      "children": []
+    },
+    {
+      "title": "5.2 Tracing Visibility Curves",
+      "level": 2,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g084",
+      "label": "5.2",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g085",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g086",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g087",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g088",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g089",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g090",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g091",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g092",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g093",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g094"
+      ],
+      "counts": {
+        "paragraph": 8,
+        "caption": 2
+      },
+      "children": []
+    },
+    {
+      "title": "6 Visibility for complex scenes",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g095",
+      "label": "6",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g096",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g097",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g098",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g099",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g100",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g101",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g102",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g103",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g104",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g105"
+      ],
+      "counts": {
+        "paragraph": 7,
+        "equation": 2,
+        "caption": 1
+      },
+      "children": [
+        {
+          "title": "6.1 Implementation and Performance",
+          "level": 2,
+          "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g106",
+          "label": "6.1",
+          "record_ids": [
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g107",
+            "1990_hidden_curve_removal_for_free_form_surfaces#p002-g108"
+          ],
+          "counts": {
+            "paragraph": 2
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "8 Acknowledgement",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g109",
+      "label": "8",
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g110"
+      ],
+      "counts": {
+        "paragraph": 1
+      },
+      "children": []
+    },
+    {
+      "title": "References",
+      "level": 1,
+      "heading_id": "1990_hidden_curve_removal_for_free_form_surfaces#p002-g111",
+      "label": null,
+      "record_ids": [
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g112",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g113",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g114",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g115",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g116",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g117",
+        "1990_hidden_curve_removal_for_free_form_surfaces#p002-g118"
+      ],
+      "counts": {
+        "paragraph": 4,
+        "reference": 3
+      },
+      "children": []
+    }
+  ]
+}

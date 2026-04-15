@@ -1,0 +1,85 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 6,
+      "image_path": "docs/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/figures/figure-1-p006.png",
+      "caption_text": "Figure 1. (b), (c): the canonical cusp of AppCon \u00f0 j \u00de , i.e. the semicubic curve \u00f0 y 2 1 ; y 3 1 \u00de . (d), (e): the canonical crossings of AppCon \u00f0 j \u00de . (a)\u2013(e): compatibility conditions between f (de\ufb01ned in (3.1)) and d (de\ufb01ned in Section 3.1).",
+      "figure_bbox": {
+        "x0": 69.0,
+        "y0": 487.57,
+        "x1": 437.24,
+        "y1": 568.08,
+        "width": 368.24,
+        "height": 80.51
+      },
+      "caption_bbox": {
+        "x0": 73.7,
+        "y0": 570.79,
+        "x1": 432.34,
+        "y1": 603.41,
+        "width": 358.63,
+        "height": 32.61
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 9,
+      "image_path": "docs/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/figures/figure-2-p009.png",
+      "caption_text": "Figure 2. List of moves on the apparent contour",
+      "figure_bbox": {
+        "x0": 43.44,
+        "y0": 49.77,
+        "x1": 413.31,
+        "y1": 297.23,
+        "width": 369.87,
+        "height": 247.47
+      },
+      "caption_bbox": {
+        "x0": 130.56,
+        "y0": 301.29,
+        "x1": 327.15,
+        "y1": 310.76,
+        "width": 196.59,
+        "height": 9.46
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 17,
+      "image_path": "docs/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/figures/figure-3-p017.png",
+      "caption_text": "Figure 3. Each row represents the fold surfaces Y 1 near di\u00a4erent types of critical points for p : K, L, inverse of B, inverse of S, C, T. The second and third pictures on each row show the cutting with t \u00bc const (apparent contour) before and after the critical value.",
+      "figure_bbox": {
+        "x0": 42.82,
+        "y0": 49.92,
+        "x1": 414.26,
+        "y1": 576.99,
+        "width": 371.44,
+        "height": 527.07
+      },
+      "caption_bbox": {
+        "x0": 49.55,
+        "y0": 581.15,
+        "x1": 408.18,
+        "y1": 612.8,
+        "width": 358.63,
+        "height": 31.64
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

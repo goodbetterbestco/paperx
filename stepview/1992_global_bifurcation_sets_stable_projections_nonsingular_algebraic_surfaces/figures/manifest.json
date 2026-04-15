@@ -1,0 +1,166 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 3,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-1-p003.png",
+      "caption_text": "Fig. 1. The critical set (to the left) and the apparent contour (to the right).",
+      "figure_bbox": {
+        "x0": 135.84,
+        "y0": 50.47,
+        "x1": 504.91,
+        "y1": 153.41,
+        "width": 369.07,
+        "height": 102.94
+      },
+      "caption_bbox": {
+        "x0": 152.64,
+        "y0": 157.41,
+        "x1": 403.82,
+        "y1": 170.31,
+        "width": 251.18,
+        "height": 12.9
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-2-p004.png",
+      "caption_text": "Fig. 2. The view sphere of the toms.",
+      "figure_bbox": {
+        "x0": 22.2,
+        "y0": 40.9,
+        "x1": 260.85,
+        "y1": 237.03,
+        "width": 238.65,
+        "height": 196.13
+      },
+      "caption_bbox": {
+        "x0": 52.8,
+        "y0": 241.03,
+        "x1": 176.63,
+        "y1": 251.39,
+        "width": 123.83,
+        "height": 10.36
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 8,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-4-p008.png",
+      "caption_text": "Fig. 4. Identification of points on the unit sphere of Euler parameters.",
+      "figure_bbox": {
+        "x0": 294.15,
+        "y0": 40.9,
+        "x1": 532.8,
+        "y1": 255.73,
+        "width": 238.65,
+        "height": 214.83
+      },
+      "caption_bbox": {
+        "x0": 290.64,
+        "y0": 259.73,
+        "x1": 507.62,
+        "y1": 272.92,
+        "width": 216.98,
+        "height": 13.19
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 18,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-6-p018.png",
+      "caption_text": "Fig. 6 Menn's surface--parabolic curve (solid line) and flecnodal curve (dotted line).",
+      "figure_bbox": {
+        "x0": 294.15,
+        "y0": 40.9,
+        "x1": 532.8,
+        "y1": 360.31,
+        "width": 238.65,
+        "height": 319.41
+      },
+      "caption_bbox": {
+        "x0": 289.92,
+        "y0": 364.31,
+        "x1": 505.41,
+        "y1": 386.12,
+        "width": 215.49,
+        "height": 21.81
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 22,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-7-p022.png",
+      "caption_text": "Fig. 7. The 2-cells of the CAD in p2.",
+      "figure_bbox": {
+        "x0": 294.15,
+        "y0": 388.54,
+        "x1": 532.8,
+        "y1": 662.21,
+        "width": 238.65,
+        "height": 273.67
+      },
+      "caption_bbox": {
+        "x0": 214.8,
+        "y0": 666.21,
+        "x1": 340.76,
+        "y1": 679.11,
+        "width": 125.96,
+        "height": 12.9
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 23,
+      "image_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/figures/figure-8-p023.png",
+      "caption_text": "Fig. & The aparens consours corresponding to the connected components of PF \\ (8 U $).",
+      "figure_bbox": {
+        "x0": 123.6,
+        "y0": 50.21,
+        "x1": 505.28,
+        "y1": 320.0,
+        "width": 381.68,
+        "height": 269.79
+      },
+      "caption_bbox": {
+        "x0": 121.78,
+        "y0": 324.0,
+        "x1": 429.23,
+        "y1": 334.0,
+        "width": 307.45,
+        "height": 10.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1772 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p002-0009",
+      "kind": "display",
+      "display_latex": "\\mathbf{r}(t)=\\mathbf{o}+\\hat{\\mathbf{d}} * t",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 268.0,
+            "y0": 179.0,
+            "x1": 343.5,
+            "y1": 197.0,
+            "width": 75.5,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0011",
+      "kind": "display",
+      "display_latex": "\\mathbf{S}^{w}(u, v)=\\sum_{i=0}^{M-1} \\sum_{j=0}^{N-1} \\mathbf{P}_{i, j}^{w} B_{j, k_{u}}(u) B_{i, k_{v}}(v)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 214.0,
+            "y0": 216.5,
+            "x1": 396.5,
+            "y1": 255.0,
+            "width": 182.5,
+            "height": 38.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0015",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\tau_{u} & =\\left\\{u_{j}\\right\\}_{j=0}^{N-1+k_{u}} \\\\\n\\tau_{v} & =\\left\\{v_{i}\\right\\}_{i=0}^{M-1+k_{v}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 265.0,
+            "y0": 300.5,
+            "x1": 346.0,
+            "y1": 344.0,
+            "width": 81.0,
+            "height": 43.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0018",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& B_{j, k_{u}}(u) \\equiv\\left\\{\\begin{array}{cl}\n1 & \\text { if } k_{u}=1 \\text { and } u \\in\\left[u_{j}, u_{j+1}\\right) \\\\\n0 & \\text { if } k_{u}=1 \\text { and } u \\notin\\left[u_{j}, u_{j+1}\\right) \\\\\n\\frac{u-u_{j}}{u_{j+k_{u}-1}-u_{j}} B_{j, k_{u}-1}(u)+\\frac{u_{j+k_{u}}-u}{u_{j+k_{u}}-u_{j+1}} B_{j+1, k_{u}-1}(u) & \\text { otherwise }\n\\end{array}\\right. \\\\\n& B_{i, k_{v}}(v) \\equiv\\left\\{\\begin{array}{cl}\n1 & \\text { if } k_{v}=1 \\text { and } v \\in\\left[v_{i}, v_{i+1}\\right) \\\\\n0 & \\text { if } k_{v}=1 \\text { and } v \\notin\\left[v_{i}, v_{i+1}\\right) \\\\\n\\frac{v-v_{i}}{v_{i+k_{v}-1}-v_{i}} B_{i, k_{v}-1}(v)+\\frac{v_{i+k_{v}}-v}{v_{i+k_{v}}-v_{i+1}} B_{i+1, k_{v}-1}(v) & \\text { otherwise. }\n\\end{array}\\right.\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 89.0,
+            "y0": 363.0,
+            "x1": 518.0,
+            "y1": 455.0,
+            "width": 429.0,
+            "height": 92.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0025",
+      "kind": "display",
+      "display_latex": "\\mathbf{N}_{\\mathbf{1}}= \\begin{cases}\\left(\\hat{\\mathbf{d}}_{y},-\\hat{\\mathbf{d}}_{x}, 0\\right) & \\text { if }\\left|\\hat{\\mathbf{d}}_{x}\\right|>\\left|\\hat{\\mathbf{d}}_{y}\\right| \\text { and }\\left|\\hat{\\mathbf{d}}_{x}\\right|>\\left|\\hat{\\mathbf{d}}_{z}\\right| \\\\ \\left(0, \\hat{\\mathbf{d}}_{z},-\\hat{\\mathbf{d}}_{y}\\right) & \\text { otherwise. }\\end{cases}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 188.0,
+            "y0": 538.5,
+            "x1": 418.5,
+            "y1": 572.5,
+            "width": 230.5,
+            "height": 34.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0027",
+      "kind": "display",
+      "display_latex": "\\mathbf{N}_{\\mathbf{2}}=\\mathbf{N}_{\\mathbf{1}} \\times \\hat{\\mathbf{d}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 271.0,
+            "y0": 596.0,
+            "x1": 339.5,
+            "y1": 613.0,
+            "width": 68.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0029",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nd_{1} & =-\\mathbf{N}_{\\mathbf{1}} \\cdot \\mathbf{o} \\\\\nd_{2} & =-\\mathbf{N}_{\\mathbf{2}} \\cdot \\mathbf{o}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 265.5,
+            "y0": 638.5,
+            "x1": 346.0,
+            "y1": 669.0,
+            "width": 80.5,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p002-0031",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\mathbf{P}_{\\mathbf{1}} \\cdot(\\mathbf{S}(u, v), 1)=0 \\\\\n& \\mathbf{P}_{\\mathbf{2}} \\cdot(\\mathbf{S}(u, v), 1)=0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 251.0,
+            "y0": 693.5,
+            "x1": 360.0,
+            "y1": 726.0,
+            "width": 109.0,
+            "height": 32.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0034",
+      "kind": "display",
+      "display_latex": "n_{1}=C_{1} * \\max _{\\left[t_{i}, t_{i+1}\\right)}\\{\\text { curvature }(\\mathbf{c}(t))\\} * \\operatorname{arclen}(\\mathbf{c}(t))_{\\left[t_{i}, t_{i+1}\\right)}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 182.0,
+            "y0": 480.0,
+            "x1": 429.0,
+            "y1": 503.0,
+            "width": 247.0,
+            "height": 23.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0040",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nh & =r-d \\\\\n& =r-r \\cos \\frac{\\theta}{2} \\\\\n& \\approx r\\left(1-\\left(1-\\frac{\\theta^{2}}{8}\\right)\\right) \\\\\n& =\\frac{r \\theta^{2}}{8}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 252.5,
+            "y0": 576.0,
+            "x1": 359.0,
+            "y1": 667.5,
+            "width": 106.5,
+            "height": 91.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p003-0042",
+      "kind": "display",
+      "display_latex": "n_{2}=\\frac{2 \\pi}{\\sqrt{\\frac{8 h}{r}}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 226.5,
+            "y0": 690.5,
+            "x1": 295.0,
+            "y1": 729.5,
+            "width": 68.5,
+            "height": 39.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0003",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& =\\frac{2 \\pi \\sqrt{r}}{\\sqrt{8 h}} \\\\\n& \\approx C_{2} * \\sqrt{\\operatorname{arclen}(\\mathbf{c}(t))_{\\left[t_{i}, t_{i+1}\\right)}} .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 248.5,
+            "y0": 209.0,
+            "x1": 383.5,
+            "y1": 260.5,
+            "width": 135.0,
+            "height": 51.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0005",
+      "kind": "display",
+      "display_latex": "n=C * \\max _{\\left[t_{i}, t_{i+1}\\right)}\\{\\operatorname{curvature}(\\mathbf{c}(t))\\} * \\operatorname{arclen}(\\mathbf{c}(t))_{\\left[t_{i}, t_{i+1}\\right)}^{3 / 2}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 189.5,
+            "y0": 288.5,
+            "x1": 421.5,
+            "y1": 310.0,
+            "width": 232.0,
+            "height": 21.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0008",
+      "kind": "display",
+      "display_latex": "\\int_{t_{i}}^{t_{i+1}}\\left|\\mathbf{c}^{\\prime}(t)\\right| d t=\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\} *\\left(t_{i+1}-t_{i}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 200.5,
+            "y0": 351.5,
+            "x1": 411.5,
+            "y1": 379.5,
+            "width": 211.0,
+            "height": 28.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0010",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\operatorname{curvature}(\\mathbf{c}(t)) & =\\frac{\\left|\\mathbf{c}^{\\prime \\prime}(t) \\times \\mathbf{c}^{\\prime}(t)\\right|}{\\left|\\mathbf{c}^{\\prime}(t)\\right|^{3}} \\\\\n& =\\frac{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|\\left|\\mathbf{c}^{\\prime}(t)\\right||\\sin \\theta|}{\\left|\\mathbf{c}^{\\prime}(t)\\right|^{3}} \\\\\n& =\\frac{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right||\\sin \\theta|}{\\left|\\mathbf{c}^{\\prime}(t)\\right|^{2}} \\\\\n& \\leq \\frac{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|}{\\left|\\mathbf{c}^{\\prime}(t)\\right|^{2}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 216.5,
+            "y0": 416.5,
+            "x1": 395.5,
+            "y1": 528.5,
+            "width": 179.0,
+            "height": 112.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0015",
+      "kind": "display",
+      "display_latex": "\\max _{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\text { curvature }(\\mathbf{c}(t)\\} \\approx \\frac{\\max _{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|\\right\\}}{\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\}^{2}} .\\right.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 203.5,
+            "y0": 596.5,
+            "x1": 408.5,
+            "y1": 625.5,
+            "width": 205.0,
+            "height": 29.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0017",
+      "kind": "display",
+      "display_latex": "\\mathbf{c}^{\\prime}(t)=\\sum_{j=i-k+2}^{i} \\frac{(k-1)\\left(\\mathbf{P}_{\\mathbf{j}}-\\mathbf{P}_{\\mathbf{j}-\\mathbf{1}}\\right)}{t_{j+k-1}-t_{j}} B_{j, k-1}(t)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 208.5,
+            "y0": 657.0,
+            "x1": 403.0,
+            "y1": 690.0,
+            "width": 194.5,
+            "height": 33.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0004",
+      "kind": "display",
+      "display_latex": "\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\mathbf{c}^{\\prime}(t)\\right\\} \\approx \\frac{1}{k-1} \\sum_{j=i-k+2}^{i}(k-1) \\frac{\\left(\\mathbf{P}_{\\mathbf{j}}-\\mathbf{P}_{\\mathbf{j}-\\mathbf{1}}\\right)}{t_{j+k-1}-t_{j}}=\\frac{1}{k-1} \\sum_{j=i-k+2}^{i} \\mathbf{V}_{\\mathbf{j}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 141.5,
+            "y0": 96.5,
+            "x1": 469.0,
+            "y1": 134.5,
+            "width": 327.5,
+            "height": 38.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0006",
+      "kind": "display",
+      "display_latex": "\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\} \\approx \\frac{1}{k-1} \\sum_{j=i-k+2}^{i}\\left|\\mathbf{V}_{\\mathbf{j}}\\right|",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 214.5,
+            "y0": 161.0,
+            "x1": 396.5,
+            "y1": 199.0,
+            "width": 182.0,
+            "height": 38.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0008",
+      "kind": "display",
+      "display_latex": "\\mathbf{c}^{\\prime \\prime}(t)=\\sum_{j=i-k+3}^{i}(k-2) \\frac{\\left[\\mathbf{V}_{\\mathbf{j}}-\\mathbf{V}_{\\mathbf{j}-\\mathbf{1}}\\right]}{t_{j+k-2}-t_{j}} B_{j, k-2}(t)=\\sum_{j=i-k+3}^{i} \\mathbf{A}_{\\mathbf{j}} B_{j, k-2}(t)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 155.5,
+            "y0": 219.0,
+            "x1": 456.5,
+            "y1": 258.0,
+            "width": 301.0,
+            "height": 39.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0011",
+      "kind": "display",
+      "display_latex": "\\max _{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|\\right\\} \\approx \\max _{i-k+3 \\leq j \\leq i}\\left\\{\\left|\\mathbf{A}_{\\mathbf{j}}\\right|\\right\\}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 226.5,
+            "y0": 292.5,
+            "x1": 385.5,
+            "y1": 318.5,
+            "width": 159.0,
+            "height": 26.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0013",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nn & =C * \\frac{\\max _{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|\\right\\} *\\left[\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\} *\\left(t_{i+1}-t_{i}\\right)\\right]^{3 / 2}}{\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\}^{2}} \\\\\n& =C * \\frac{\\left.\\max _{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime \\prime}(t)\\right|\\right\\} *\\left(t_{i+1}-t_{i}\\right)\\right]^{3 / 2}}{\\operatorname{avg}_{\\left[t_{i}, t_{i+1}\\right)}\\left\\{\\left|\\mathbf{c}^{\\prime}(t)\\right|\\right\\}^{1 / 2}} \\\\\n& =C * \\frac{\\max _{i-k+3 \\leq j \\leq i}\\left\\{\\left|\\mathbf{A}_{\\mathbf{j}}\\right|\\right\\}\\left(t_{i+1}-t_{i}\\right)^{3 / 2}}{\\left(\\frac{1}{k-1} \\sum_{j=i-k+2}^{i}\\left|\\mathbf{V}_{\\mathbf{j}}\\right|\\right)^{1 / 2}}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 151.5,
+            "y0": 346.5,
+            "x1": 459.0,
+            "y1": 446.0,
+            "width": 307.5,
+            "height": 99.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0039",
+      "kind": "display",
+      "display_latex": "\\mathbf{F}(u, v)=\\binom{\\mathbf{N}_{\\mathbf{1}} \\cdot \\mathbf{S}(u, v)+d_{1}}{\\mathbf{N}_{\\mathbf{2}} \\cdot \\mathbf{S}(u, v)+d_{2}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 230.0,
+            "y0": 579.0,
+            "x1": 380.5,
+            "y1": 609.5,
+            "width": 150.5,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p006-0046",
+      "kind": "display",
+      "display_latex": "\\binom{u_{n+1}}{v_{n+1}}=\\binom{u_{n}}{v_{n}}-\\mathbf{J}^{-1}\\left(u_{n}, v_{n}\\right) * \\mathbf{F}\\left(u_{n}, v_{n}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 200.5,
+            "y0": 698.0,
+            "x1": 412.0,
+            "y1": 728.5,
+            "width": 211.5,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0002",
+      "kind": "display",
+      "display_latex": "\\mathbf{J}=\\left(\\mathbf{F}_{\\mathbf{u}}, \\mathbf{F}_{\\mathbf{v}}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 273.5,
+            "y0": 65.0,
+            "x1": 338.5,
+            "y1": 81.0,
+            "width": 65.0,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0004",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\mathbf{F}_{\\mathbf{u}}=\\binom{\\mathbf{N}_{\\mathbf{1}} \\cdot \\mathbf{S}_{\\mathbf{u}}(u, v)}{\\mathbf{N}_{\\mathbf{2}} \\cdot \\mathbf{S}_{\\mathbf{u}}(u, v)} \\\\\n& \\mathbf{F}_{\\mathbf{v}}=\\binom{\\mathbf{N}_{\\mathbf{1}} \\cdot \\mathbf{S}_{\\mathbf{v}}(u, v)}{\\mathbf{N}_{\\mathbf{2}} \\cdot \\mathbf{S}_{\\mathbf{v}}(u, v)} .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 239.5,
+            "y0": 102.0,
+            "x1": 372.0,
+            "y1": 161.0,
+            "width": 132.5,
+            "height": 59.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0006",
+      "kind": "display",
+      "display_latex": "\\mathbf{J}^{-1}=\\frac{\\operatorname{adj}(\\mathbf{J})}{\\operatorname{det}(\\mathbf{J})}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 271.0,
+            "y0": 184.0,
+            "x1": 340.5,
+            "y1": 213.5,
+            "width": 69.5,
+            "height": 29.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0008",
+      "kind": "display",
+      "display_latex": "\\mathbf{C}=\\left(\\begin{array}{ll}\nC_{11} & C_{12} \\\\\nC_{21} & C_{22}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 259.5,
+            "y0": 237.5,
+            "x1": 352.0,
+            "y1": 269.0,
+            "width": 92.5,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0011",
+      "kind": "display",
+      "display_latex": "\\operatorname{adj}(\\mathbf{J})=\\left(\\begin{array}{cc}\n\\mathbf{J}_{22} & -\\mathbf{J}_{12} \\\\\n-\\mathbf{J}_{21} & \\mathbf{J}_{11}\n\\end{array}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 240.5,
+            "y0": 303.0,
+            "x1": 372.0,
+            "y1": 334.5,
+            "width": 131.5,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0014",
+      "kind": "display",
+      "display_latex": "\\left\\|\\mathbf{F}\\left(u_{n}, v_{n}\\right)\\right\\|<\\epsilon",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 268.5,
+            "y0": 372.5,
+            "x1": 344.0,
+            "y1": 390.0,
+            "width": 75.5,
+            "height": 17.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0018",
+      "kind": "display",
+      "display_latex": "\\left\\|\\mathbf{F}\\left(u_{n+1}, v_{n+1}\\right)\\right\\|>\\left\\|\\mathbf{F}\\left(u_{n}, v_{n}\\right)\\right\\|",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 233.5,
+            "y0": 441.0,
+            "x1": 379.5,
+            "y1": 459.0,
+            "width": 146.0,
+            "height": 18.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0020",
+      "kind": "display",
+      "display_latex": "u \\notin\\left[u_{k_{u}-1}, u_{N}\\right), v \\notin\\left[v_{k_{v}-1}, v_{M}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 231.5,
+            "y0": 486.5,
+            "x1": 379.5,
+            "y1": 503.5,
+            "width": 148.0,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0022",
+      "kind": "display",
+      "display_latex": "\\text { iter }>\\text { MAXITER. }",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 258.5,
+            "y0": 532.0,
+            "x1": 353.5,
+            "y1": 547.5,
+            "width": 95.0,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0028",
+      "kind": "display",
+      "display_latex": "|\\operatorname{det}(\\mathbf{J})|<\\epsilon",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 275.5,
+            "y0": 622.0,
+            "x1": 337.0,
+            "y1": 639.0,
+            "width": 61.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p007-0030",
+      "kind": "display",
+      "display_latex": "\\binom{u_{k+1}}{v_{k+1}}=\\binom{u_{k}}{v_{k}}+.1 *\\binom{\\operatorname{drand} 48() *\\left(u_{0}-u_{k}\\right)}{\\operatorname{drand} 48() *\\left(v_{0}-v_{k}\\right)}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 184.0,
+            "y0": 663.5,
+            "x1": 429.0,
+            "y1": 695.5,
+            "width": 245.0,
+            "height": 32.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0005",
+      "kind": "display",
+      "display_latex": "t=(\\mathbf{P}-\\mathbf{o}) \\cdot \\hat{\\mathbf{d}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 271.0,
+            "y0": 262.5,
+            "x1": 339.5,
+            "y1": 276.5,
+            "width": 68.5,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0022",
+      "kind": "display",
+      "display_latex": "N_{i, k}(t)=\\left\\{\\begin{array}{cl}\n1 & \\text { if } k=1 \\text { and } t \\in\\left[t_{i}, t_{i+1}\\right) \\\\\n0 & \\text { if } k=1 \\text { and } t \\notin\\left[t_{i}, t_{i+1}\\right) \\\\\n\\frac{t-t_{i}}{t_{i+k-1}-t_{i}} N_{i, k-1}(t)+\\frac{t_{i+k}-t}{t_{i+k}-t_{i+1}} N_{i+1, k-1}(t) & \\text { otherwise. }\n\\end{array}\\right.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 127.5,
+            "y0": 500.5,
+            "x1": 478.5,
+            "y1": 541.0,
+            "width": 351.0,
+            "height": 40.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0026",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nN_{\\mu, 2}\\left(t_{*}\\right) & =\\frac{t_{*}-t_{\\mu}}{t_{\\mu+k-1}-t_{\\mu}} N_{\\mu, 1}\\left(t_{*}\\right)+\\frac{t_{i+k}-t_{*}}{t_{\\mu+k}-t_{\\mu+1}} N_{\\mu+1,1}\\left(t_{*}\\right) \\\\\n& =0 * 1+\\frac{t_{i+k}-t_{*}}{t_{\\mu+k}-t_{\\mu+1}} * 0 \\\\\n& =0\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 172.0,
+            "y0": 584.0,
+            "x1": 439.5,
+            "y1": 650.5,
+            "width": 267.5,
+            "height": 66.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p008-0028",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nN_{\\mu-1,2}\\left(t_{*}\\right) & =\\frac{t_{*}-t_{\\mu-1}}{t_{\\mu+k-2}-t_{\\mu-1}} N_{\\mu-1,1}\\left(t_{*}\\right)+\\frac{t_{\\mu+k-1}-t_{*}}{t_{\\mu+k-1}-t_{\\mu}} N_{\\mu, 1}\\left(t_{*}\\right) \\\\\n& =0 * 0+1 * 1 \\\\\n& =1\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 162.0,
+            "y0": 669.5,
+            "x1": 450.0,
+            "y1": 724.0,
+            "width": 288.0,
+            "height": 54.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0002",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\nN_{\\mu-1,3}\\left(t_{*}\\right) & =\\frac{t_{*}-t_{\\mu-1}}{(\\cdots)} * 1+(\\cdots) * 0 \\\\\n& =0 \\\\\nN_{\\mu-2,3}\\left(t_{*}\\right) & =(\\cdots) * 0+\\frac{t_{\\mu-2+k}-t_{*}}{t_{\\mu-2+k}-t_{\\mu-1}} * 1 \\\\\n& =1\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 204.0,
+            "y0": 70.0,
+            "x1": 408.5,
+            "y1": 155.5,
+            "width": 204.5,
+            "height": 85.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0004",
+      "kind": "display",
+      "display_latex": "\\mathbf{c}\\left(t_{*}\\right)=\\frac{\\sum_{i} N_{i, k}\\left(t_{*}\\right) \\omega_{i} \\mathbf{D}_{\\mathbf{i}}}{\\sum_{i} N_{i, k}\\left(t_{*}\\right) \\omega_{i}}=\\frac{\\omega_{\\mu-k+1} \\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}}{\\omega_{\\mu-k+1}}=\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 180.5,
+            "y0": 174.5,
+            "x1": 432.0,
+            "y1": 206.0,
+            "width": 251.5,
+            "height": 31.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0007",
+      "kind": "display",
+      "display_latex": "\\mathbf{c}(t)=\\frac{\\sum_{i} N_{i, k}(t) \\omega_{i} \\mathbf{D}_{\\mathbf{i}}}{\\sum_{i} N_{i, k}(t) \\omega_{i}}=\\frac{\\sum_{i} N_{i, k}(t) \\mathbf{D}_{\\mathbf{i}}^{\\omega}}{\\sum_{i} N_{i, k}(t) \\omega_{i}}=\\frac{\\mathbf{D}(t)}{\\omega(t)},",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 195.5,
+            "y0": 232.5,
+            "x1": 416.5,
+            "y1": 265.5,
+            "width": 221.0,
+            "height": 33.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0009",
+      "kind": "display",
+      "display_latex": "\\mathbf{c}^{\\prime}(t)=\\frac{\\omega(t)\\left(\\mathbf{D}^{\\omega}\\right)^{\\prime}(t)-\\mathbf{D}^{\\omega}(t) \\omega^{\\prime}(t)}{\\omega(t)^{2}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 226.5,
+            "y0": 279.5,
+            "x1": 385.0,
+            "y1": 310.5,
+            "width": 158.5,
+            "height": 31.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0012",
+      "kind": "display",
+      "display_latex": "N_{i, k}^{\\prime}(t)=(k-1)\\left[\\frac{N_{i, k-1}(t)}{t_{i+k-1}-t_{i}}-\\frac{N_{i+1, k-1}(t)}{t_{i+k}-t_{i+1}}\\right]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 200.5,
+            "y0": 338.0,
+            "x1": 411.5,
+            "y1": 370.5,
+            "width": 211.0,
+            "height": 32.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0014",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\left(\\mathbf{D}^{\\omega}\\right)^{\\prime}\\left(t_{*}\\right) & =\\sum_{i} N_{i, k}^{\\prime}\\left(t_{*}\\right) \\mathbf{D}_{\\mathbf{i}}^{\\omega} \\\\\n& =(k-1) \\sum_{i} \\mathbf{D}_{\\mathbf{i}}^{\\omega}\\left(\\frac{N_{i, k-1}\\left(t_{*}\\right)}{t_{i+k-1}-t_{i}}-\\frac{N_{i+1, k-1}\\left(t_{*}\\right)}{t_{i+k}-t_{i+1}}\\right) \\\\\n& =(k-1)\\left[\\sum_{i} \\mathbf{D}_{\\mathbf{i}}^{\\omega} \\frac{N_{i, k-1}\\left(t_{*}\\right)}{t_{i+k-1}-t_{i}}-\\sum_{i} \\mathbf{D}_{\\mathbf{i}}^{\\omega} \\frac{N_{i+1, k-1}\\left(t_{*}\\right)}{t_{i+k}-t_{i+1}}\\right] .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 154.0,
+            "y0": 395.0,
+            "x1": 458.5,
+            "y1": 491.5,
+            "width": 304.5,
+            "height": 96.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0016",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\left(\\mathbf{D}^{\\omega}\\right)^{\\prime}\\left(t_{*}\\right)=(k-1)\\left[\\frac{\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{2}}^{\\omega}}{t_{\\mu+1}-t_{\\mu-k+2}}-\\frac{\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}^{\\omega}}{t_{\\mu+1}-t_{\\mu-k+2}}\\right] \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 183.0,
+            "y0": 506.0,
+            "x1": 429.5,
+            "y1": 540.0,
+            "width": 246.5,
+            "height": 34.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0019",
+      "kind": "display",
+      "display_latex": "\\omega^{\\prime}\\left(t_{*}\\right)=(k-1)\\left[\\frac{\\omega_{\\mu-k+2}}{t_{\\mu+1}-t_{\\mu-k+2}}-\\frac{\\omega_{\\mu-k+1}}{t_{\\mu+1}-t_{\\mu-k+2}}\\right]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 179.5,
+            "y0": 553.0,
+            "x1": 412.5,
+            "y1": 586.5,
+            "width": 233.0,
+            "height": 33.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0021",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\mathbf{c}^{\\prime}\\left(t_{*}\\right) & =(k-1)\\left[\\frac{\\frac{\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{2}}^{\\omega}-\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}^{\\omega}}{t_{\\mu+1}-t_{\\mu-k+2}} \\omega_{\\mu-k+1}-\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}^{\\omega} \\frac{\\omega_{\\mu-k+2}-\\omega_{\\mu-k+1}}{t_{\\mu+1}-t_{\\mu-k+2}}}{\\omega_{\\mu-k+1}^{2}}\\right] \\\\\n& =\\frac{k-1}{\\left(t_{\\mu+1}-t_{\\mu-k+2}\\right) \\omega_{\\mu-k+1}}\\left[\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{2}}^{\\omega}-\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}^{\\omega} \\frac{\\omega_{\\mu-k+2}}{\\omega_{\\mu-k+1}}\\right] \\\\\n& =\\frac{k-1}{\\left(t_{\\mu+1}-t_{\\mu-k+2}\\right) \\omega_{\\mu-k+1}}\\left[\\omega_{\\mu-k+2} \\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{2}}-\\omega_{\\mu-k+1} \\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}} \\frac{\\omega_{\\mu-k+2}}{\\omega_{\\mu-k+1}}\\right] \\\\\n& =\\frac{(k-1) \\omega_{\\mu-k+2}}{\\left(t_{\\mu+1}-t_{*}\\right) \\omega_{\\mu-k+1}}\\left[\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{2}}-\\mathbf{D}_{\\mu-\\mathbf{k}+\\mathbf{1}}\\right]\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 126.0,
+            "y0": 600.0,
+            "x1": 483.0,
+            "y1": 729.5,
+            "width": 357.0,
+            "height": 129.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0003",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\mathbf{S}\\left(u_{*}, v_{*}\\right) & =\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}} \\\\\n\\mathbf{S}_{\\mathbf{u}}\\left(u_{*}, v_{*}\\right) & =\\frac{\\left(k_{u}-1\\right) \\omega_{\\mu_{u}-k_{u}+2, \\mu_{v}-k_{v}+1}}{\\left(u_{\\mu_{u}+1}-u_{*}\\right) \\omega_{\\mu_{u}}-k_{u}+1, \\mu_{v}-k_{v}+1}\\left[\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{2}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}}-\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}}\\right] \\\\\n\\mathbf{S}_{\\mathbf{v}}\\left(u_{*}, v_{*}\\right) & =\\frac{\\left(k_{v}-1\\right) \\omega_{\\mu_{u}}-k_{u}+1, \\mu_{v}-k_{v}+2}{\\left(v_{\\mu_{v}+1}-v_{*}\\right) \\omega_{\\mu_{u}-k_{u}+1, \\mu_{v}-k_{v}+1}}\\left[\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{2}}-\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}}\\right]\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 106.0,
+            "y0": 86.5,
+            "x1": 505.5,
+            "y1": 161.0,
+            "width": 399.5,
+            "height": 74.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0005",
+      "kind": "display",
+      "display_latex": "\\mathbf{n}\\left(u_{*}, v_{*}\\right)=\\mathbf{S}_{\\mathbf{u}}\\left(u_{*}, v_{*}\\right) \\times \\mathbf{S}_{\\mathbf{v}}\\left(u_{*}, v_{*}\\right)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 226.0,
+            "y0": 187.0,
+            "x1": 385.5,
+            "y1": 203.5,
+            "width": 159.5,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0015",
+      "kind": "display",
+      "display_latex": "\\mathbf{D}^{\\omega}=\\mathbf{A} \\mathbf{P}^{\\mathbf{w}}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 276.0,
+            "y0": 354.0,
+            "x1": 335.5,
+            "y1": 370.0,
+            "width": 59.5,
+            "height": 16.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0019",
+      "kind": "display",
+      "display_latex": "\\begin{array}{ccc} \n& & \\alpha_{\\mu^{\\prime}, 0}^{\\prime} \\\\\n& \\alpha_{\\mu^{\\prime}-1,1}^{\\prime} & \\alpha_{\\mu^{\\prime}, 1}^{\\prime} \\\\\n& \\vdots & \\vdots \\\\\n\\alpha_{\\mu^{\\prime}-\\nu, \\nu}^{\\prime} & \\cdots & \\alpha_{\\mu^{\\prime}, \\nu}^{\\prime}\n\\end{array}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 251.0,
+            "y0": 424.5,
+            "x1": 360.0,
+            "y1": 486.5,
+            "width": 109.0,
+            "height": 62.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0021",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n\\alpha_{j, 1}^{\\prime} & =\\delta_{j, \\mu^{\\prime}} \\\\\n\\alpha_{j, p+1}^{\\prime} & =\\gamma_{j, p} \\alpha_{j, p}^{\\prime}+\\left(1-\\gamma_{j+1, p}\\right) \\alpha_{j+1, p}^{\\prime} \\\\\n\\gamma_{j, p} & = \\begin{cases}\\left(t_{*}-\\tau_{\\mu^{\\prime}-p+j-(k-1-\\nu)}\\right) / d, & \\text { if } d=\\tau_{\\mu^{\\prime}+1+j}-\\tau_{\\mu^{\\prime}-p+j-(k-1-\\nu)}>0 \\\\\n\\text { arbitrary } & \\text { otherwise. }\\end{cases}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 125.0,
+            "y0": 511.0,
+            "x1": 481.0,
+            "y1": 572.5,
+            "width": 356.0,
+            "height": 61.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0005",
+      "kind": "display",
+      "display_latex": "\\alpha_{j, \\nu}^{\\prime}=\\left(1-\\gamma_{\\mu^{\\prime}, 0}\\right) l_{j, \\nu}+\\gamma_{\\mu^{\\prime}, 0} r_{j, \\nu}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 237.5,
+            "y0": 355.0,
+            "x1": 374.5,
+            "y1": 370.5,
+            "width": 137.0,
+            "height": 15.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0012",
+      "kind": "display",
+      "display_latex": "\\mathbf{D}^{\\omega}=\\mathbf{A}_{\\mathbf{u}} \\mathbf{P}^{\\mathbf{w}} \\mathbf{A}_{\\mathbf{v}}^{\\mathbf{T}} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 267.5,
+            "y0": 458.0,
+            "x1": 344.5,
+            "y1": 472.0,
+            "width": 77.0,
+            "height": 14.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p011-0014",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\left(\\begin{array}{ll}\n\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}} & \\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{1}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{2}}^{\\omega} \\\\\n\\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{2}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{1}}^{\\omega} & \\mathbf{D}_{\\mu_{\\mathbf{u}}-\\mathbf{k}_{\\mathbf{u}}+\\mathbf{2}, \\mu_{\\mathbf{v}}-\\mathbf{k}_{\\mathbf{v}}+\\mathbf{2}}^{\\omega}\n\\end{array}\\right)= \\\\\n& \\binom{\\left(\\mathbf{A}_{\\mathbf{u}}\\right)_{\\mu_{u}+k_{u}+1,\\left[\\mu_{u}^{\\prime}-\\nu_{u} \\ldots \\mu_{u}^{\\prime}\\right]}^{\\mathbf{A}_{\\mathbf{u}}}}{\\left(\\mathbf{A}_{\\mathbf{u}}\\right)_{\\mu_{u}+k_{u}+2,\\left[\\mu_{u}^{\\prime}-\\nu_{u} \\ldots \\mu_{u}^{\\prime}\\right]}} \\mathbf{P}_{\\left[\\mu_{\\mathbf{u}}^{\\prime}-\\nu_{\\mathbf{u}} \\ldots \\mu_{\\mathbf{u}}^{\\prime}\\right]\\left[\\mu_{\\mathbf{v}}^{\\prime}-\\nu_{\\mathbf{v}} \\ldots \\mu_{\\mathbf{v}}^{\\prime}\\right]}\\binom{\\left(\\mathbf{A}_{\\mathbf{v}}\\right)_{\\mu_{v}+k_{v}+1,\\left[\\mu_{v}^{\\prime}-\\nu_{v} \\ldots \\mu_{v}^{\\prime}\\right]}}{\\left(\\mathbf{A}_{\\mathbf{v}}\\right)_{\\mu_{v}+k_{v}+2,\\left[\\mu_{v}^{\\prime}-\\nu_{v} \\ldots \\mu_{v}^{\\prime}\\right]}}^{T}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 122.0,
+            "y0": 498.0,
+            "x1": 492.0,
+            "y1": 556.5,
+            "width": 370.0,
+            "height": 58.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p012-0005",
+      "kind": "display",
+      "display_latex": "A=\\frac{1}{2} \\sum_{i=0}^{n} u_{i} v_{(i+1) \\bmod n}-u_{(i+1) \\bmod n} v_{i} .",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 12,
+          "bbox": {
+            "x0": 216.5,
+            "y0": 219.0,
+            "x1": 395.5,
+            "y1": 249.5,
+            "width": 179.0,
+            "height": 30.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

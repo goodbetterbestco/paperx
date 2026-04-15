@@ -1,0 +1,101 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-0001",
+      "kind": "display",
+      "display_latex": "g ( u ) = ( c -f ( u )) · n ( u ) (1)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 125.5,
+            "y0": 543.98,
+            "x1": 292.81,
+            "y1": 551.99,
+            "width": 167.31,
+            "height": 8.01
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(1)"
+    },
+    {
+      "id": "docling-eq-0002",
+      "kind": "display",
+      "display_latex": "n F · ( c -p ) = det( r -p , q -p , c -p ) = -r w q v c u (2)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 94.68,
+            "y0": 512.23,
+            "x1": 292.81,
+            "y1": 533.82,
+            "width": 198.13,
+            "height": 21.59
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(2)"
+    },
+    {
+      "id": "docling-eq-0003",
+      "kind": "display",
+      "display_latex": "sgn( n F · v ) = -sgn( ar w q v ) = sgn( a 2 r 2 u g ( r )) = sgn( g ( r )) (3)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 323.54,
+            "y0": 388.63,
+            "x1": 555.83,
+            "y1": 408.24,
+            "width": 232.29,
+            "height": 19.61
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": "(3)"
+    }
+  ]
+}

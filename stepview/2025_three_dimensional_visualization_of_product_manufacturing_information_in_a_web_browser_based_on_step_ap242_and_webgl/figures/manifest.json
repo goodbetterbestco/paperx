@@ -1,0 +1,545 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 7,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-2-p007.png",
+      "caption_text": "Figure 2. The content of a three-dimensional linear size annotation.",
+      "figure_bbox": {
+        "x0": 159.78,
+        "y0": 526.8,
+        "x1": 556.49,
+        "y1": 748.52,
+        "width": 396.71,
+        "height": 221.72
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 750.85,
+        "x1": 432.35,
+        "y1": 759.9,
+        "width": 265.96,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 8,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-4-p008.png",
+      "caption_text": "Figure 4. Sample of three-dimensional dimension annotation.",
+      "figure_bbox": {
+        "x0": 164.9,
+        "y0": 491.72,
+        "x1": 561.83,
+        "y1": 653.03,
+        "width": 396.93,
+        "height": 161.31
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 657.03,
+        "x1": 410.18,
+        "y1": 666.08,
+        "width": 243.79,
+        "height": 9.05
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-5",
+      "label": "5",
+      "page": 9,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-5-p009.png",
+      "caption_text": "Figure 5. The entity reference relationship of a three-dimensional linear size in an example part.",
+      "figure_bbox": {
+        "x0": 74.56,
+        "y0": 65.71,
+        "x1": 520.04,
+        "y1": 174.28,
+        "width": 445.48,
+        "height": 108.58
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 177.86,
+        "x1": 545.23,
+        "y1": 186.91,
+        "width": 378.84,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-6",
+      "label": "6",
+      "page": 9,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-6-p009.png",
+      "caption_text": "Figure 6. An algorithm for automatically extracting three-dimensional linear size information.",
+      "figure_bbox": {
+        "x0": 160.51,
+        "y0": 441.42,
+        "x1": 514.55,
+        "y1": 764.68,
+        "width": 354.04,
+        "height": 323.26
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 767.77,
+        "x1": 538.89,
+        "y1": 776.83,
+        "width": 372.5,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-7",
+      "label": "7",
+      "page": 10,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-7-p010.png",
+      "caption_text": "Figure 7. Plus/minus deviation entity-attribute relationship in a STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 159.7,
+        "y0": 510.61,
+        "x1": 522.55,
+        "y1": 643.49,
+        "width": 362.86,
+        "height": 132.88
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 646.22,
+        "x1": 488.93,
+        "y1": 655.27,
+        "width": 322.54,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-8",
+      "label": "8",
+      "page": 11,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-8-p011.png",
+      "caption_text": "Figure 8. An algorithm to automatically extract dimensional tolerancing in a STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 32.21,
+        "y0": 197.94,
+        "x1": 561.39,
+        "y1": 480.15,
+        "width": 529.18,
+        "height": 282.22
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 484.44,
+        "x1": 537.2,
+        "y1": 493.5,
+        "width": 370.8,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-9",
+      "label": "9",
+      "page": 13,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-9-p013.png",
+      "caption_text": "Figure 9. Part of a STEP AP242 sample file including a straightness tolerance.",
+      "figure_bbox": {
+        "x0": 59.47,
+        "y0": 147.11,
+        "x1": 535.73,
+        "y1": 241.53,
+        "width": 476.26,
+        "height": 94.42
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 246.01,
+        "x1": 472.14,
+        "y1": 255.06,
+        "width": 305.74,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-10",
+      "label": "10",
+      "page": 13,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-10-p013.png",
+      "caption_text": "Figure 10. The entity-attribute relationship of a geometry tolerance without a modifier or datum reference in a STEP AP242 file illustrated using a straightness tolerance as an example.",
+      "figure_bbox": {
+        "x0": 60.82,
+        "y0": 409.37,
+        "x1": 533.78,
+        "y1": 462.5,
+        "width": 472.96,
+        "height": 53.14
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 467.39,
+        "x1": 559.27,
+        "y1": 489.33,
+        "width": 392.88,
+        "height": 21.94
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-11",
+      "label": "11",
+      "page": 14,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-11-p014.png",
+      "caption_text": "Figure 11. An algorithm to automatically extract geometry tolerance information in a STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 157.32,
+        "y0": 550.61,
+        "x1": 490.25,
+        "y1": 639.86,
+        "width": 332.92,
+        "height": 89.25
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 644.61,
+        "x1": 559.28,
+        "y1": 653.58,
+        "width": 392.88,
+        "height": 8.96
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-12",
+      "label": "12",
+      "page": 15,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-12-p015.png",
+      "caption_text": "Figure 12. Link to the PMI graphical presentation and semantic representation.",
+      "figure_bbox": {
+        "x0": 49.83,
+        "y0": 64.14,
+        "x1": 543.85,
+        "y1": 280.0,
+        "width": 494.02,
+        "height": 215.86
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 284.42,
+        "x1": 478.92,
+        "y1": 293.47,
+        "width": 312.52,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-13",
+      "label": "13",
+      "page": 15,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-13-p015.png",
+      "caption_text": "Figure 13. The boundary representation model in STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 158.54,
+        "y0": 504.45,
+        "x1": 424.38,
+        "y1": 768.16,
+        "width": 265.85,
+        "height": 263.71
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 770.09,
+        "x1": 430.34,
+        "y1": 779.14,
+        "width": 263.94,
+        "height": 9.05
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1",
+        "image_xref_742"
+      ]
+    },
+    {
+      "figure_id": "figure-14",
+      "label": "14",
+      "page": 16,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-14-p016.png",
+      "caption_text": "Figure 14. Automatic extraction algorithm for associated object information.",
+      "figure_bbox": {
+        "x0": 159.57,
+        "y0": 318.61,
+        "x1": 455.41,
+        "y1": 488.93,
+        "width": 295.84,
+        "height": 170.32
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 491.12,
+        "x1": 468.14,
+        "y1": 500.17,
+        "width": 301.74,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-15",
+      "label": "15",
+      "page": 17,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-15-p017.png",
+      "caption_text": "Figure 15. The three-dimensional dimension annotations graphical presentation algorithm in a web browser.",
+      "figure_bbox": {
+        "x0": 273.82,
+        "y0": 377.91,
+        "x1": 321.86,
+        "y1": 417.07,
+        "width": 48.04,
+        "height": 39.16
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 421.54,
+        "x1": 559.28,
+        "y1": 443.48,
+        "width": 392.88,
+        "height": 21.94
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-16",
+      "label": "16",
+      "page": 18,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-16-p018.png",
+      "caption_text": "Figure 16. Default position of three-dimensional dimension annotation text.",
+      "figure_bbox": {
+        "x0": 159.13,
+        "y0": 105.63,
+        "x1": 506.69,
+        "y1": 305.89,
+        "width": 347.56,
+        "height": 200.26
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 310.03,
+        "x1": 466.5,
+        "y1": 319.08,
+        "width": 300.1,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-17",
+      "label": "17",
+      "page": 18,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-17-p018.png",
+      "caption_text": "Figure 17. The three-dimensional dimension annotations semantic representation algorithm in a web browser.",
+      "figure_bbox": {
+        "x0": 241.12,
+        "y0": 668.48,
+        "x1": 443.12,
+        "y1": 714.48,
+        "width": 202.0,
+        "height": 46.0
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 717.5,
+        "x1": 559.27,
+        "y1": 739.44,
+        "width": 392.88,
+        "height": 21.94
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-18",
+      "label": "18",
+      "page": 20,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-p020.png",
+      "caption_text": "Figure 18. Cont.",
+      "figure_bbox": {
+        "x0": 166.1,
+        "y0": 161.27,
+        "x1": 559.69,
+        "y1": 719.71,
+        "width": 393.6,
+        "height": 558.44
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 723.71,
+        "x1": 229.2,
+        "y1": 732.74,
+        "width": 62.81,
+        "height": 9.04
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-18-2",
+      "label": "18",
+      "page": 21,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-2-p021.png",
+      "caption_text": "Figure 18. Demonstration of three-dimensional annotation within a web browser: ( a ) 3D dimension annotation ( b ) 3D dimensional tolerancing annotation ( c ) datum symbol annotation ( d ) 3D geometri- cal tolerance annotation ( e ) left associated surface of a 3D linear size ( f ) right associated surface of a 3D linear size.",
+      "figure_bbox": {
+        "x0": 161.41,
+        "y0": 252.29,
+        "x1": 460.07,
+        "y1": 444.31,
+        "width": 298.66,
+        "height": 192.03
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 637.94,
+        "x1": 560.76,
+        "y1": 685.44,
+        "width": 394.37,
+        "height": 47.51
+      },
+      "link_mode": "visual_blocks",
+      "sources": [
+        "block_type_1"
+      ]
+    },
+    {
+      "figure_id": "figure-a1",
+      "label": "A1",
+      "page": 24,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a1-p024.png",
+      "caption_text": "Figure A1. Product manufacturing information appears disorganized in the Open Cascade CAD Assistant. The correct model is shown in Figure 18 .",
+      "figure_bbox": {
+        "x0": 166.39,
+        "y0": 495.29,
+        "x1": 559.27,
+        "y1": 749.11,
+        "width": 392.88,
+        "height": 253.82
+      },
+      "caption_bbox": {
+        "x0": 166.04,
+        "y0": 753.11,
+        "x1": 559.28,
+        "y1": 775.05,
+        "width": 393.23,
+        "height": 21.94
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-a3",
+      "label": "A3",
+      "page": 26,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a3-p026.png",
+      "caption_text": "Figure A3. The dimensional tolerancing class entity-attribute relationship in a STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 160.03,
+        "y0": 397.52,
+        "x1": 470.87,
+        "y1": 524.22,
+        "width": 310.84,
+        "height": 126.7
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 527.64,
+        "x1": 542.78,
+        "y1": 536.69,
+        "width": 376.38,
+        "height": 9.05
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    },
+    {
+      "figure_id": "figure-a5",
+      "label": "A5",
+      "page": 27,
+      "image_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a5-p027.png",
+      "caption_text": "Figure A5. The entity-attribute relationship of a geometry tolerance with one or more reference datum in a STEP AP242 file.",
+      "figure_bbox": {
+        "x0": 88.48,
+        "y0": 253.61,
+        "x1": 478.46,
+        "y1": 346.17,
+        "width": 389.98,
+        "height": 92.56
+      },
+      "caption_bbox": {
+        "x0": 166.39,
+        "y0": 349.45,
+        "x1": 559.28,
+        "y1": 371.38,
+        "width": 392.88,
+        "height": 21.94
+      },
+      "link_mode": "drawing_fallback",
+      "sources": [
+        "drawing_rects"
+      ]
+    }
+  ]
+}

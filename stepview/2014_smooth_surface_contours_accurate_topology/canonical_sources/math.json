@@ -1,0 +1,98 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p006-0025",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\ng(\\mathbf{u})=(\\mathbf{c}-\\mathbf{f}(\\mathbf{u})) \\cdot \\mathbf{n}(\\mathbf{u}) \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 124.5,
+            "y0": 542.0,
+            "x1": 221.0,
+            "y1": 554.0,
+            "width": 96.5,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0023",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\n\\mathbf{n}_{F} \\cdot(\\mathbf{c}-\\mathbf{p}) & =\\operatorname{det}(\\mathbf{r}-\\mathbf{p}, \\mathbf{q}-\\mathbf{p}, \\mathbf{c}-\\mathbf{p}) \\\\\n& =-r_{w} q_{v} c_{u} \\tag{2}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 93.0,
+            "y0": 510.0,
+            "x1": 253.0,
+            "y1": 535.0,
+            "width": 160.0,
+            "height": 25.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p009-0072",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n\\operatorname{sgn}\\left(\\mathbf{n}_{F} \\cdot \\mathbf{v}\\right)=-\\operatorname{sgn}\\left(a r_{w} q_{v}\\right)=\\operatorname{sgn}\\left(a^{2} r_{u}^{2} g(\\mathbf{r})\\right)=\\operatorname{sgn}(g(\\mathbf{r})) \\tag{3}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 9,
+          "bbox": {
+            "x0": 322.5,
+            "y0": 387.5,
+            "x1": 550.0,
+            "y1": 400.5,
+            "width": 227.5,
+            "height": 13.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

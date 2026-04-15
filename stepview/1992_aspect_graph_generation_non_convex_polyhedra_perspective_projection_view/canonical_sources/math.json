@@ -1,0 +1,377 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-p003-0067",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nR_{\\mathrm{CF}}=\\bigcup_{i=1}^{n}\\left(\\left(\\bigcap_{j=1}^{m i} R_{\\mathrm{IF}}(j)\\right) \\cap R_{\\mathrm{IF}}\\right) \\tag{1}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 487.0,
+            "y0": 558.5,
+            "x1": 668.0,
+            "y1": 597.5,
+            "width": 181.0,
+            "height": 39.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p004-0059",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n(a-b) \\cdot(c-d) \\neq 0 . \\tag{2}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 492.5,
+            "y0": 773.0,
+            "x1": 596.5,
+            "y1": 788.0,
+            "width": 104.0,
+            "height": 15.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0005",
+      "kind": "display",
+      "display_latex": "\\begin{array}{ll}\n(\\mathrm{a}-\\mathrm{c}) \\cdot \\vec{n}_{3} \\leq 0, & (\\mathrm{a}-\\mathrm{d}) \\cdot \\vec{n}_{4} \\leq 0 \\\\\n(\\mathrm{~b}-\\mathrm{c}) \\cdot \\vec{n}_{3} \\leq 0, & (\\mathrm{~b}-\\mathrm{d}) \\cdot \\vec{n}_{4} \\leq 0\n\\end{array}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 140.0,
+            "y0": 110.5,
+            "x1": 323.5,
+            "y1": 158.5,
+            "width": 183.5,
+            "height": 48.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0007",
+      "kind": "display",
+      "display_latex": "\\begin{array}{ll}\n(\\mathrm{c}-\\mathrm{a}) \\cdot \\vec{n}_{1} \\leq 0, & (\\mathrm{c}-\\mathrm{b}) \\cdot \\vec{n}_{2} \\leq 0, \\\\\n(\\mathrm{~d}-\\mathrm{a}) \\cdot \\vec{n}_{1} \\leq 0, & (\\mathrm{~d}-\\mathrm{b}) \\cdot \\vec{n}_{2} \\leq 0 \\tag{3}\n\\end{array}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 140.5,
+            "y0": 174.5,
+            "x1": 323.5,
+            "y1": 219.0,
+            "width": 183.0,
+            "height": 44.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0032",
+      "kind": "display",
+      "display_latex": "(v-a) \\cdot n_{1}>0 \\quad \\text { and } \\quad(v-a) \\cdot n_{2}<0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 132.0,
+            "y0": 629.0,
+            "x1": 333.0,
+            "y1": 645.5,
+            "width": 201.0,
+            "height": 16.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0034",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n(v-a) \\cdot n_{1}<0 \\quad \\text { and } \\quad(v-a) \\cdot n_{2}>0 . \\tag{4}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 130.0,
+            "y0": 673.5,
+            "x1": 336.0,
+            "y1": 692.0,
+            "width": 206.0,
+            "height": 18.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0038",
+      "kind": "display",
+      "display_latex": "\\begin{align*}\n& {[(c-b) \\times(d-b)] \\cdot(v-a)<0} \\\\\n& {[(c-a) \\times(d-a)] \\cdot(v-a)<0} \\\\\n& {[(a-c) \\times(b-c)] \\cdot(v-a)>0} \\\\\n& {[(a-d) \\times(b \\times d)] \\cdot(v-a)>0} \\tag{5}\n\\end{align*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 144.5,
+            "y0": 735.5,
+            "x1": 321.5,
+            "y1": 831.0,
+            "width": 177.0,
+            "height": 95.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0045",
+      "kind": "display",
+      "display_latex": "\\begin{array}{ll}\nP_{1}=P_{a}+t_{1} \\times\\left|P_{c}-P_{a}\\right|, & P_{2}=P_{b}+t_{2} \\times\\left|P_{c}-P_{b}\\right| \\\\\nP_{3}=P_{a}+t_{3} \\times\\left|P_{d}-P_{a}\\right|, & P_{4}=P_{d}+t_{4} \\times\\left|P_{d}-P_{b}\\right| \\tag{6}\n\\end{array}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 402.5,
+            "y0": 160.5,
+            "x1": 694.5,
+            "y1": 205.0,
+            "width": 292.0,
+            "height": 44.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0063",
+      "kind": "display",
+      "display_latex": "(\\mathrm{v}-\\mathrm{c}) \\cdot n_{3}>0 \\quad \\text { and } \\quad(\\mathrm{v}-\\mathrm{c}) \\cdot n_{4}<0",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 447.0,
+            "y0": 523.5,
+            "x1": 646.5,
+            "y1": 542.5,
+            "width": 199.5,
+            "height": 19.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0065",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n(\\mathrm{v}-\\mathrm{c}) \\cdot n_{3}<0 \\quad \\text { and } \\quad(\\mathrm{v}-\\mathrm{c}) \\cdot n_{4}>0 . \\tag{7}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 445.5,
+            "y0": 573.5,
+            "x1": 647.5,
+            "y1": 590.5,
+            "width": 202.0,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p005-0069",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\n(\\mathrm{v}-\\mathrm{c}) \\cdot n_{3}>0 \\quad \\text { and } \\quad(\\mathrm{v}-\\mathrm{c}) \\cdot n_{4}>0 . \\tag{8}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 447.0,
+            "y0": 641.0,
+            "x1": 649.5,
+            "y1": 658.0,
+            "width": 202.5,
+            "height": 17.0
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p013-0058",
+      "kind": "display",
+      "display_latex": "\\begin{equation*}\nR_{E E E}=\\bigcap_{i=1}^{i=N} R_{E E_{i}}, \\quad N=2 \\text { or } 3 \\tag{9}\n\\end{equation*}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 464.0,
+            "y0": 1000.0,
+            "x1": 637.0,
+            "y1": 1039.5,
+            "width": 173.0,
+            "height": 39.5
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ]
+}

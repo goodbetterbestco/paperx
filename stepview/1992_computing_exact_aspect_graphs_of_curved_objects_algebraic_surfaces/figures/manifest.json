@@ -1,0 +1,139 @@
+{
+  "records": [
+    {
+      "figure_id": "figure-1",
+      "label": "1",
+      "page": 2,
+      "image_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-1-p002.png",
+      "caption_text": "Fig. 1. Visual events, a. Local events. From top to bottom: swallowtail, beak-to-beak, lip. b. Multilocal events. From top to bottom: triple point, tangent crossing, and cusp crossing.",
+      "figure_bbox": {
+        "x0": 52.8,
+        "y0": 288.46,
+        "x1": 420.35,
+        "y1": 427.25,
+        "width": 367.55,
+        "height": 138.79
+      },
+      "caption_bbox": {
+        "x0": 53.52,
+        "y0": 431.25,
+        "x1": 419.18,
+        "y1": 454.38,
+        "width": 365.66,
+        "height": 23.13
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-2",
+      "label": "2",
+      "page": 4,
+      "image_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-2-p004.png",
+      "caption_text": "Fig. 2. An example of curve tracing in ~2. This curve has two extremal points El, E~, and four regular branches with sample points $1 to $4; note that E2 is singular.",
+      "figure_bbox": {
+        "x0": 52.32,
+        "y0": 199.59,
+        "x1": 419.97,
+        "y1": 344.46,
+        "width": 367.65,
+        "height": 144.87
+      },
+      "caption_bbox": {
+        "x0": 53.28,
+        "y0": 348.46,
+        "x1": 419.57,
+        "y1": 371.27,
+        "width": 366.29,
+        "height": 22.81
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-3",
+      "label": "3",
+      "page": 6,
+      "image_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-3-p006.png",
+      "caption_text": "Fig. 3. An example of cell decomposition. Two curves are shown, with their extremal points Ei and their intersection points Is; the shaded rectangle delimited by I1 and I2 is divided into five regions with sample points $1 to $5; the region corresponding to $3 is shown in a darker shade.",
+      "figure_bbox": {
+        "x0": 53.76,
+        "y0": 99.71,
+        "x1": 421.01,
+        "y1": 188.21,
+        "width": 367.25,
+        "height": 88.51
+      },
+      "caption_bbox": {
+        "x0": 53.76,
+        "y0": 192.21,
+        "x1": 421.17,
+        "y1": 226.14,
+        "width": 367.41,
+        "height": 33.93
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4",
+      "label": "4",
+      "page": 7,
+      "image_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-p007.png",
+      "caption_text": "Figure 4.a shows an object bounded by a complex parametric surface, and its (partial)",
+      "figure_bbox": {
+        "x0": 51.6,
+        "y0": 38.2,
+        "x1": 422.25,
+        "y1": 158.0,
+        "width": 370.65,
+        "height": 119.8
+      },
+      "caption_bbox": {
+        "x0": 66.0,
+        "y0": 162.0,
+        "x1": 420.0,
+        "y1": 174.0,
+        "width": 354.0,
+        "height": 12.0
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    },
+    {
+      "figure_id": "figure-4-2",
+      "label": "4",
+      "page": 8,
+      "image_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-2-p008.png",
+      "caption_text": "Fig. 4. A few objects and their aspect graphs: a. A parametric surface, b. A bean-shaped implicit surface, c. A squash-shaped implicit surface, d. A \"dimpled\" implicit surface.",
+      "figure_bbox": {
+        "x0": 18.72,
+        "y0": 38.2,
+        "x1": 449.28,
+        "y1": 584.01,
+        "width": 430.56,
+        "height": 545.81
+      },
+      "caption_bbox": {
+        "x0": 54.0,
+        "y0": 588.01,
+        "x1": 420.39,
+        "y1": 610.42,
+        "width": 366.39,
+        "height": 22.41
+      },
+      "link_mode": "column_gap_fallback",
+      "sources": [
+        "heuristic_scope"
+      ]
+    }
+  ]
+}
