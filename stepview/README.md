@@ -213,7 +213,7 @@ Single-paper loop:
 
 ```bash
 python3 -m venv .venv-kernel-tools
-.venv-kernel-tools/bin/python -m pip install -r paper_pipeline/requirements.txt
+.venv-kernel-tools/bin/python -m pip install -r requirements.txt
 .venv-kernel-tools/bin/python -m paper_pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math
 python3 -m paper_pipeline.cli.audit_corpus --top 12
 ```

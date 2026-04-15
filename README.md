@@ -31,7 +31,7 @@ method.
 ```bash
 python3 -m venv .venv-paperx
 . .venv-paperx/bin/activate
-python -m pip install -r paper_pipeline/requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 This is enough for audit, review, and most local corpus work.

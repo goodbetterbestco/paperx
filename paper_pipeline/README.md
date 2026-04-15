@@ -66,7 +66,7 @@ now compatibility shims rather than the preferred engine boundary.
 Minimal Python bootstrap for audit/review work:
 
 - `python3 -m venv .venv-paperx`
-- `.venv-paperx/bin/python -m pip install -r paper_pipeline/requirements.txt`
+- `.venv-paperx/bin/python -m pip install -r requirements.txt`
 
 That is enough for:
 
