@@ -747,71 +747,11 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Fig. 1. Given (a) a smooth 3D surface S and a camera viewpoint, our method produces (b) a triangle mesh M where the occluding contour of the mesh accurately approximates the occluding contour of the smooth surface. Standard algorithms may then be used to extract (c) the view map of occluding contours, and to (d) stylize them. (Fertility courtesy UU from AIM@SHAPE-VISIONAIR Shape Repository). (a) (b) (c) (d) This paper proposes a method for computing the visible occluding contours of subdivision surfaces. The paper first introduces new theory for contour visibility of smooth surfaces. Necessary and sufficient conditions are introduced for when a sampled occluding contour is valid, that is, when it may be assigned consistent visibility. Previous methods do not guarantee these conditions, which helps explain why smooth contour visibility has been such a challenging problem in the past. The paper then proposes an algorithm that, given a subdivision surface, finds sampled contours satisfying these conditions, and then generates a new triangle mesh matching the given occluding contours. The contours of the output triangle mesh may then be rendered with standard non-photorealistic rendering algorithms, using the mesh for visibility computation. The method can be applied to any triangle mesh, by treating it as the base mesh of a subdivision surface. CCS Concepts: · Computing methodologies → Computer GraphicsNon-photorealistic rendering ; Visibility ; Shape analysis."
+            "text": "This paper proposes a method for computing the visible occluding contours of subdivision surfaces. The paper first introduces new theory for contour visibility of smooth surfaces. Necessary and sufficient conditions are introduced for when a sampled occluding contour is valid, that is, when it may be assigned consistent visibility. Previous methods do not guarantee these conditions, which helps explain why smooth contour visibility has been such a challenging problem in the past. The paper then proposes an algorithm that, given a subdivision surface, finds sampled contours satisfying these conditions, and then generates a new triangle mesh matching the given occluding contours. The contours of the output triangle mesh may then be rendered with standard non-photorealistic rendering algorithms, using the mesh for visibility computation. The method can be applied to any triangle mesh, by treating it as the base mesh of a subdivision surface."
           }
         ]
       },
       "source_spans": [
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 51.81,
-            "y0": 280.24,
-            "x1": 561.07,
-            "y1": 309.42,
-            "width": 509.26,
-            "height": 29.18
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 112.33,
-            "y0": 261.07,
-            "x1": 121.67,
-            "y1": 265.16,
-            "width": 9.34,
-            "height": 4.09
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 247.06,
-            "y0": 261.07,
-            "x1": 256.93,
-            "y1": 265.16,
-            "width": 9.87,
-            "height": 4.09
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 382.48,
-            "y0": 261.07,
-            "x1": 391.51,
-            "y1": 265.16,
-            "width": 9.03,
-            "height": 4.09
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 490.13,
-            "y0": 261.07,
-            "x1": 499.86,
-            "y1": 265.16,
-            "width": 9.73,
-            "height": 4.09
-          },
-          "engine": "docling"
-        },
         {
           "page": 1,
           "bbox": {
@@ -823,25 +763,13 @@
             "height": 123.19
           },
           "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 51.81,
-            "y0": 455.23,
-            "x1": 295.48,
-            "y1": 472.6,
-            "width": 243.67,
-            "height": 17.37
-          },
-          "engine": "docling"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

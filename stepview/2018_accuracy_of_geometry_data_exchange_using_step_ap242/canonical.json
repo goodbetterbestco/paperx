@@ -315,7 +315,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. systems as well as to choose the optimal product matches, product analysis methods are needed. Indeed, most of the known methods aim to analyze a product or one product family on the physical level. Different product families, however, may differ largely in terms of the number and nature of components. This fact impedes an efficient comparison and choice of appropriate product family combinations for the production This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data. Abstract In today's business environment, the trend towards more product variety and customization is unbroken. Due to this development, the need of agile and reconfigurable production systems emerged to cope with various products and product families. To design and optimize production Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. system. A new methodology is proposed to analyze existing products in view of their functional and physical architecture. The aim is to cluster © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0). © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0). these products in new assembly oriented product families for the optimization of existing assembly lines and the creation of future reconfigurable assembly systems. Based on Datum Flow Chain, the physical structure of the products is analyzed. Functional subassemblies are identified, and a functional analysis is performed. Moreover, a hybrid functional and physical architecture graph (HyFPAG) is the output which depicts the Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. (https: creativecommons.org licenses by-nc-nd 4.0) example of a nail-clipper is used to explain the proposed methodology. An industrial case study on two product families of steering columns of similarity between product families by providing design support to both, production system planners and product designers. An illustrative Keywords: MBD;STEP AP242;Manufacturing Keywords: MBD;STEP AP242;Manufacturing thyssenkrupp Presta France is then carried out to give a first industrial evaluation of the proposed approach. © 2017 The Authors. Published by Elsevier B.V. Peer-review under responsibility of the scientific committee of the 28th CIRP Design Conference 2018. of the product range and characteristics manufactured and or assembled in this system. In this context, the main challenge in modelling and analysis is now not only to cope with single products, a limited product range or existing product families, but also to be able to analyze and to compare products to define 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division. 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division. new product families. It can be observed that classical existing product families are regrouped in function of clients or features. However, assembly oriented product families are hardly to find. On the product family level, products differ mainly in two main characteristics: (i) the number of components and (ii) the type of components (e.g. mechanical, electrical, electronical). One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be Classical methodologies considering mainly single products Keywords: Assembly; Design method; Family identification 1. Introduction Due to the fast development in the domain of communication and an ongoing trend of digitization and digitalization, manufacturing enterprises are facing important challenges in today's market environments: a continuing tendency towards reduction of product development times and shortened product lifecycles. In addition, there is an increasing demand of customization, being at the same time in a global competition with competitors all over the world. This trend, which is inducing the development from macro to micro A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]. A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]. markets, results in diminished lot sizes due to augmenting 2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license product varieties (high-volume to low-volume production) [1]. or solitary, already existing product families analyze the (https: creativecommons.org licenses by-nc-nd 4.0). 2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license To cope with this augmenting variety as well as to be able to product structure on a physical level (components level) which (https: creativecommons.org licenses by-nc-nd 4.0). Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. identify possible optimization potentials in the existing causes technologies and systems in innovation era'. difficulties regarding comparison of different an efficient product families. production system, it is important to have a precise knowledge definition and Addressing this"
+            "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data."
           }
         ]
       },
@@ -323,453 +323,105 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 38.35,
-            "y0": 290.6,
-            "x1": 74.1,
-            "y1": 301.17,
-            "width": 35.75,
-            "height": 10.57
+            "x0": 36.99,
+            "y0": 312.96,
+            "x1": 558.79,
+            "y1": 324.96,
+            "width": 521.8,
+            "height": 12.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 38.35,
-            "y0": 312.68,
-            "x1": 559.66,
-            "y1": 334.2,
-            "width": 521.31,
-            "height": 21.52
+            "x0": 36.99,
+            "y0": 324.46,
+            "x1": 466.32,
+            "y1": 335.96,
+            "width": 429.34,
+            "height": 11.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 34.89,
-            "y0": 376.72,
-            "x1": 559.25,
-            "y1": 406.92,
-            "width": 524.36,
-            "height": 30.2
+            "x0": 36.99,
+            "y0": 335.46,
+            "x1": 558.79,
+            "y1": 346.45,
+            "width": 521.8,
+            "height": 11.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 34.89,
-            "y0": 332.62,
-            "x1": 559.66,
-            "y1": 378.25,
-            "width": 524.77,
-            "height": 45.63
+            "x0": 36.99,
+            "y0": 345.95,
+            "x1": 558.79,
+            "y1": 358.45,
+            "width": 521.8,
+            "height": 12.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 34.89,
-            "y0": 400.66,
-            "x1": 555.43,
-            "y1": 422.31,
-            "width": 520.54,
-            "height": 21.65
+            "x0": 36.99,
+            "y0": 357.95,
+            "x1": 558.29,
+            "y1": 368.95,
+            "width": 521.3,
+            "height": 11.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 34.89,
-            "y0": 420.85,
-            "x1": 559.14,
-            "y1": 451.18,
-            "width": 524.25,
-            "height": 30.33
+            "x0": 36.99,
+            "y0": 368.45,
+            "x1": 106.96,
+            "y1": 379.45,
+            "width": 69.97,
+            "height": 11.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 38.55,
-            "y0": 417.39,
-            "x1": 229.34,
-            "y1": 425.16,
-            "width": 190.79,
-            "height": 7.77
+            "x0": 36.99,
+            "y0": 379.45,
+            "x1": 558.29,
+            "y1": 391.45,
+            "width": 521.3,
+            "height": 12.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 34.89,
-            "y0": 465.11,
-            "x1": 557.75,
-            "y1": 473.24,
-            "width": 522.86,
-            "height": 8.13
+            "x0": 36.99,
+            "y0": 390.45,
+            "x1": 385.85,
+            "y1": 401.95,
+            "width": 348.87,
+            "height": 11.5
           },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 476.21,
-            "x1": 426.17,
-            "y1": 484.34,
-            "width": 391.28,
-            "height": 8.13
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 487.18,
-            "x1": 214.57,
-            "y1": 495.31,
-            "width": 179.68,
-            "height": 8.13
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 497.82,
-            "x1": 561.02,
-            "y1": 619.97,
-            "width": 526.13,
-            "height": 122.15
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 304.5,
-            "y0": 623.04,
-            "x1": 561.02,
-            "y1": 692.33,
-            "width": 256.52,
-            "height": 69.29
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 316.45,
-            "y0": 695.4,
-            "x1": 558.69,
-            "y1": 704.39,
-            "width": 242.24,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 520.27,
-            "x1": 292.67,
-            "y1": 692.3,
-            "width": 257.78,
-            "height": 172.03
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 695.37,
-            "x1": 69.1,
-            "y1": 704.36,
-            "width": 34.21,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 118.27,
-            "y0": 695.37,
-            "x1": 222.85,
-            "y1": 704.36,
-            "width": 104.58,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 240.84,
-            "y0": 695.37,
-            "x1": 288.04,
-            "y1": 704.36,
-            "width": 47.2,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 708.36,
-            "x1": 464.66,
-            "y1": 716.14,
-            "width": 426.31,
-            "height": 7.78
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 304.5,
-            "y0": 707.46,
-            "x1": 315.44,
-            "y1": 716.45,
-            "width": 10.94,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 357.8,
-            "y0": 707.46,
-            "x1": 556.06,
-            "y1": 716.45,
-            "width": 198.26,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 718.44,
-            "x1": 546.73,
-            "y1": 726.22,
-            "width": 508.38,
-            "height": 7.78
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 711.2,
-            "x1": 464.66,
-            "y1": 718.97,
-            "width": 426.31,
-            "height": 7.77
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 719.49,
-            "x1": 287.99,
-            "y1": 728.48,
-            "width": 253.1,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 721.28,
-            "x1": 546.73,
-            "y1": 729.05,
-            "width": 508.38,
-            "height": 7.77
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 729.06,
-            "x1": 559.3,
-            "y1": 736.01,
-            "width": 520.95,
-            "height": 6.95
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 731.9,
-            "x1": 559.3,
-            "y1": 738.84,
-            "width": 520.95,
-            "height": 6.94
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.89,
-            "y0": 731.55,
-            "x1": 68.5,
-            "y1": 740.54,
-            "width": 33.61,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 114.72,
-            "y0": 731.55,
-            "x1": 167.98,
-            "y1": 740.54,
-            "width": 53.26,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 220.22,
-            "y0": 731.55,
-            "x1": 228.0,
-            "y1": 740.54,
-            "width": 7.78,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 255.91,
-            "y0": 731.55,
-            "x1": 287.8,
-            "y1": 740.54,
-            "width": 31.89,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 38.35,
-            "y0": 741.98,
-            "x1": 331.55,
-            "y1": 748.92,
-            "width": 293.2,
-            "height": 6.94
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 338.56,
-            "y0": 731.58,
-            "x1": 384.47,
-            "y1": 740.57,
-            "width": 45.91,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 304.5,
-            "y0": 743.64,
-            "x1": 406.03,
-            "y1": 752.63,
-            "width": 101.53,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 453.65,
-            "y0": 731.58,
-            "x1": 487.06,
-            "y1": 740.57,
-            "width": 33.41,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 34.88,
-            "y0": 743.61,
-            "x1": 287.86,
-            "y1": 752.6,
-            "width": 252.98,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 541.85,
-            "y0": 731.58,
-            "x1": 556.37,
-            "y1": 740.57,
-            "width": 14.52,
-            "height": 8.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 489.64,
-            "y0": 743.64,
-            "x1": 558.4,
-            "y1": 752.63,
-            "width": 68.76,
-            "height": 8.99
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

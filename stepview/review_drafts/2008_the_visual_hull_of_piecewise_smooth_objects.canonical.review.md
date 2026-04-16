@@ -6,7 +6,7 @@ Andrea Bottino, Aldo Laurentini, Dipartimento di Automatica ed Informatica, Poli
 
 ## Abstract
 
-Keywords: Computer vision; Shape-from-silhouettes; Visual hull; Piecewise smooth objects; CAD objects URL: www.polito.it cgvg (A. Bottino). ScienceDirect Computer Vision and Image Understanding www.elsevier.com locate cviu
+The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled surfaces that are possible boundaries of the visual hull of these objects is derived. The construction of the visual hull is simplified by a detailed analysis that allows pruning and trimming many surfaces not relevant for a particular object. An algorithm for computing the visual hull is presented, together with several examples constructed with a commercial CAD package. The theory developed includes as particular cases the previous approaches to the computation of the visual hull.
 
 ## Introduction
 
@@ -16,7 +16,7 @@ In this paper we present the theory of the visual hull of general objects with p
 
 ## 2 Determining the VH's boundary surfaces
 
-![Figure 1. The object O, the convex hull CH(O) where the concavity is filled](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-1-p002.png)
+![Figure 1. The object O, the convex hull CH(O) where the concavity is filled](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-1-p002.png)
 
 *Figure 1. The object O, the convex hull CH(O) where the concavity is filled: The object O, the convex hull CH(O) where the concavity is filled with soft material, VH(O) obtained scraping off the filling with a ruler grazing the object.*
 
@@ -24,19 +24,19 @@ In this paper we present the theory of the visual hull of general objects with p
 
 ### 2.2 Lines making two contacts
 
-![Figure II. VC or VF with concave vertices.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-2-2-p007.png)
+![Figure II. VC or VF with concave vertices.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-2-2-p007.png)
 
 *Figure II. VC or VF with concave vertices.: Fig. II. VC or VF with concave vertices.*
 
-![Figure 3. The VE triple point.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-3-p003.png)
+![Figure 3. The VE triple point.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-3-p003.png)
 
 *Figure 3. The VE triple point.: The VE triple point.*
 
-![Figure 5. Vertex crossing.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-5-p003.png)
+![Figure 5. Vertex crossing.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-5-p003.png)
 
 *Figure 5. Vertex crossing.: Vertex crossing.*
 
-![Figure 4. The VE tangent crossing.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-4-p003.png)
+![Figure 4. The VE tangent crossing.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-4-p003.png)
 
 *Figure 4. The VE tangent crossing.: The VE tangent crossing.*
 
@@ -58,15 +58,15 @@ Consider the line L, making two contacts with S at \(\mathbf{p}_{1}\) and \(\mat
 
 Consider first the cases, shown in Fig. 8, where the internal sides of the contour generators lie on the same side of the common tangent T. The internal sides (projections of the surface of the object near the contour generators) are
 
-![Figure 6. Active segments of lines making three contacts.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-6-p004.png)
+![Figure 6. Active segments of lines making three contacts.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-6-p004.png)
 
 *Figure 6. Active segments of lines making three contacts.: Active segments of lines making three contacts.*
 
-![Figure 7. The line to be analyzed and a compatible rotation.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-7-p005.png)
+![Figure 7. The line to be analyzed and a compatible rotation.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-7-p005.png)
 
 *Figure 7. The line to be analyzed and a compatible rotation.: The line to be analyzed and a compatible rotation.*
 
-![Figure 8. Cases of tangent crossing where the external sides of the contour generators lie on the same side of T.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-8-p005.png)
+![Figure 8. Cases of tangent crossing where the external sides of the contour generators lie on the same side of T.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-8-p005.png)
 
 *Figure 8. Cases of tangent crossing where the external sides of the contour generators lie on the same side of T.: Cases of tangent crossing where the external sides of the contour generators lie on the same side of T.*
 
@@ -86,13 +86,13 @@ $$
 \left|\mathbf{p}_{1} \mathbf{p}_{\mathrm{M}}\right| /\left|\mathbf{p}_{\mathrm{M}} \mathbf{p}_{2}\right|=r_{1} / r_{2}
 $$
 
-![Figure 9. Cases of tangent crossing where the external sides of the contour generators lie on opposite side of T.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-9-p006.png)
+![Figure 9. Cases of tangent crossing where the external sides of the contour generators lie on opposite side of T.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-9-p006.png)
 
 *Figure 9. Cases of tangent crossing where the external sides of the contour generators lie on opposite side of T.: Cases of tangent crossing where the external sides of the contour generators lie on opposite side of T.*
 
 #### 3.2.2 Active surfaces VF and VC
 
-![Figure 10. VC or VF sub-cases (convex vertex projection). The figure shows](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-10-p006.png)
+![Figure 10. VC or VF sub-cases (convex vertex projection). The figure shows](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-10-p006.png)
 
 *Figure 10. VC or VF sub-cases (convex vertex projection). The figure shows: VC or VF sub-cases (convex vertex projection). The figure shows that the interior segment is not active.*
 
@@ -106,11 +106,11 @@ Vertices where more than three creases meet do not affect the previous analysis 
 
 Mostly, CAD objects produce multiple contacts at coplanar edges. These cases can be decomposed into multiple cases of two contacts. Each case supplies active segments: the overall active segments can be obtained by OR-ing the active segments of each case. The example in Fig. 12 refers to a case of three coplanar edges, and shows a section made with a plane passing trough L and skew with respect to the plane containing the edges. Thicker lines mark active segments. Concluding, in this section we have studied the nine types of surfaces in relation with the shape of \(\mathbf{O}\) at the
 
-![Figure 11. Observe that, as soon as the line passing through](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-11-p009.png)
+![Figure 11. Observe that, as soon as the line passing through](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-11-p009.png)
 
 *Figure 11. Observe that, as soon as the line passing through: Observe that, as soon as the line passing through*
 
-![Figure II. VC or VF with concave vertices.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-2-2-p007.png)
+![Figure II. VC or VF with concave vertices.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-2-2-p007.png)
 
 *Figure II. VC or VF with concave vertices.: Fig. II. VC or VF with concave vertices.*
 
@@ -130,7 +130,7 @@ In this section we will discuss an output-sensitive algo rithm for constructing 
 
 - Selecting the cells of the partition which belong to VH.
 
-![Figure 12. Decomposing multiple contacts.](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-12-p007.png)
+![Figure 12. Decomposing multiple contacts.](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-12-p007.png)
 
 *Figure 12. Decomposing multiple contacts.: Decomposing multiple contacts. VC or VF with concave vertices.*
 
@@ -140,7 +140,7 @@ Another important pruning of the cells candidate to belong to \(\mathbf{V H}(\ma
 
 Theorem. Only the cells of the partition of \(\operatorname{CH}(O)-O\) that are contiguous to \(\boldsymbol{O}\) are candidate to belong to the portion of VH connected with \(\boldsymbol{O}\).
 
-![Figure 13. A connected object that generates an unconnected VH. (a) A side](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-13-p008.png)
+![Figure 13. A connected object that generates an unconnected VH. (a) A side](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-13-p008.png)
 
 *Figure 13. A connected object that generates an unconnected VH. (a) A side: A connected object that generates an unconnected VH. (a) A side view, (b) top view and (c) an axonometric view of the object. (d) The visual*
 
@@ -156,7 +156,7 @@ At the end of this pruning operations, only \(\mu\) candidate cell are left, con
 
 The examples presented in this section, concerning rela tively simple objects and active surfaces, are produced by lines making two contacts with the objects and have been constructed using the commercial modeler CATIA \({ }^{\text {™ }}\). In
 
-![Figure 14. Example 1. The object (a), the VH-active patches (b) and (c), the two cells formed by these patches (d) and (e), the VH (f).](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-14-p009.png)
+![Figure 14. Example 1. The object (a), the VH-active patches (b) and (c), the two cells formed by these patches (d) and (e), the VH (f).](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-14-p009.png)
 
 *Figure 14. Example 1. The object (a), the VH-active patches (b) and (c), the two cells formed by these patches (d) and (e), the VH (f).: Example 1. The object (a), the VH-active patches (b) and (c), the two cells formed by these patches (d) and (e), the VH (f).*
 
@@ -164,7 +164,7 @@ Example 1. Consider the object in Fig. 14(a). In all, there are five VH-active p
 
 Example 2. The object is shown in Fig. 15(a). The VH-ac tive patches are six. Three planar patches, \(\mathrm{P}_{1}, \mathrm{P}_{2}\) and \(\mathrm{P}_{3}\) are shown in Fig. 15(b). The vertical edges also produce active surfaces (not shown in the figure) that lie outside the con vex hull and are not VH-active.
 
-![Figure 11. Observe that, as soon as the line passing through](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-11-p009.png)
+![Figure 11. Observe that, as soon as the line passing through](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-11-p009.png)
 
 *Figure 11. Observe that, as soon as the line passing through: Observe that, as soon as the line passing through*
 
@@ -172,11 +172,11 @@ Lines making contact at the semi-circles \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}
 
 ## 6 Summary
 
-![Figure 15. Example 2. The object (a). Three planar VH-active surfaces (b).](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-15-p009.png)
+![Figure 15. Example 2. The object (a). Three planar VH-active surfaces (b).](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-15-p009.png)
 
 *Figure 15. Example 2. The object (a). Three planar VH-active surfaces (b).: Example 2. The object (a). Three planar VH-active surfaces (b). P4 is VH-active, but not Ps (c). Two other curved symmetrical VHACTIVE patches (d) and (e). The resulting VH (f).*
 
-![Figure 16. Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e).](/Users/evanthayer/Projects/stepview/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-16-p010.png)
+![Figure 16. Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e).](/Users/evanthayer/Projects/paperx/docs/2008_the_visual_hull_of_piecewise_smooth_objects/figures/figure-16-p010.png)
 
 *Figure 16. Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e).: Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e).*
 

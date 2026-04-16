@@ -8,7 +8,7 @@ Technion - Israel Institute of Technology Utah, Salt Lake City, USA May 17 - 19,
 
 ## Abstract
 
-PDF Download 218013.218073.pdf 07 April 2026 Total Citations: 22 Total Downloads: 497 May 17-19, 1995 . . Published: 01 December 1995 SIGGRAPH Citation in BibTeX format 3SOLID95: Third ACM SIGGRAPH Symposium on Solid Modeling &amp; Applications Conference Sponsors: SIGGRAPH
+The need to compute visibility and accessibility of surfaces occurs in a broad range of applications from computer aided design and manufacturing to computer graphics and vision. Surface-surface intersection is an essential task in modeling systems that support boolean operations. Recently, Gauss maps and visibility sets were shown [3, 4, 20, 21] to be helpful in robustly solving the above problems. This paper presents a symbolic based method to both compute and exploit the Gauss map of a freeform surface or a model consisting of several, possibly trimmed, freeform surfaces. Unlike other approaches to the computation of the Gauss map, the method presented here can be made arbitrarily precise for piecewise polynomial and rational surfaces. The Gauss map is then employed to compute the set of views from which a freeform surface is completely locally visible.
 
 ## 1 Introduction
 
@@ -24,7 +24,7 @@ Definition 2 Given a unit direction vector \(\vec{v}\), we say that a point \(p 
 
 Denote by \(\operatorname{Int}(S)\) the interior of \(S\). Then, definition 3 Given a unit direction vector \(\vec{v}\), we say that a point \(p \in \operatorname{Int}(S)\) has local neighborhood visibility from
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-1-p003.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-1-p003.png)
 
 *Figure 1: A surface can be locally visible, yet can hide itself globally by looping around itself.*
 
@@ -74,7 +74,7 @@ let \(q \in \mathcal{R}^{3} .\|q\| \neq 0\). Let \(L\) be a ray from the origin 
 
 In the ensuing discussion and unless stated otherwise, \(\mathcal{O}\) is assumed to be the center of the central projection. Let \(P\) be an arbitrary plane that does not contain \(\mathcal{O}\), and \(q_{p}\) be the intersection point of \(L\) with \(P\). definition \(7 q\) is said to be centrally projected onto a plane \(P\) using \(L\). and that \(q_{p}\) is its projected point. [n definition 7, we notice that the perspective projection, (Ised in computer graphics, is a special case of a central projection onto a plane.
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-2-p004.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-2-p004.png)
 
 *Figure 2: This simple bicubic surface is used throughout Figure ~: This simple bicnbic surface is used throughc)ut this paper as an example.*
 
@@ -116,15 +116,15 @@ $$
 
 \(\mathcal{H}\) holds all vectors in \(S^{2}\) that have a nonnegative inner product with \(\vec{\alpha}\) (definition 5). For \(S(u, v)\) to be visible from
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-3-p005.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-3-p005.png)
 
 *Figure 3: Central view extrema occur along boundaries and central silhouettes. Two-dimensional (a) and three-dimensional (b) cases are considered. The central silhouette set of fi.(u, v) (for the surface S(u, v) in Figure 2, in (b)) is equal to the zero set of (~,(u, v), fi(u, v)). At (UO,VO)we find such a central silhouette point.*
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-4-p005.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-4-p005.png)
 
 *Figure 4: The silhouette set in the central projection of Af~(u, v) can be extremely complex. On the left, is a bicubic surface, with its complex normal surface, ~., in the middle. The boundaries and central silhouette set of ~~ are projected on S2, on the right.*
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-5-p006.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-5-p006.png)
 
 *Figure 5: Each vector, ~ is associated with a hemisphere H={3 I 11311=1)(P!+ 20}.*
 
@@ -142,7 +142,7 @@ Corollary 2 Suppose the Gauss map of \(S\) is two isolated points on \(S^{2}\). 
 
 Given \(\mathcal{G}_{\text {, }}\), for any two vectors \(\overrightarrow{\alpha_{1}}, \overrightarrow{\alpha_{2}} \in \mathcal{G}_{\text {s }}\), one can in clude a great circle segment between them, selecting the smaller one ( \(\overrightarrow{\alpha_{1}}\) and \(\overrightarrow{\alpha_{1}}\) have at least two such segments, one that is greater then or equal to 180 degrees and one that is less than or equal to that), without affecting \(\mathcal{V}_{s}\). Much like a planar convex hull, in which for each two points in the convex hull, the line segment between the two points is also in the convex hull, for each two points in a central convex hull on \(S^{2}\), the great circle segment between them is also contained in the central convex hull:
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-6-p006.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-6-p006.png)
 
 *Figure 6: Central convex hull (dashed) of the silhouette and boundary curves of Af, in Figure 4.*
 
@@ -150,7 +150,7 @@ Deflnition 10 The central convex hull, \(\mathrm{CH} \subset S^{2}\), of some se
 
 The edges of \(\mathcal{C} \mathcal{H}\) are great circle segments, seen as straight lines from the origin. For any two points in \(\mathcal{C} \mathcal{H}\), the great circle segment on \(S^{2}\) between them is completely in \(\mathcal{C H}\). Specifically, for any two points in \(\mathcal{G}_{s}\), one can add the great circle segment between them having no affect on the visibility set. Applying Corollary 2 allows one to employ the The convex hull must be computed centrally. That is, edges of the convex hull are great circle segments on \(S^{2}\) (see Figures 6 and 8). Optimal planar convex hull algorithms have been known for sometime [1,14]. We cannot use planar convex hull algorithms directly, since we are interested in the central convex hull. A central projection from \(S^{2}\) onto a plane (definition 7) that maps great circles to straight lines is first employed. Then, we apply the planar convex hull algorithm to the two dimensional planar set only to centrally project the edges of the convex hull back onto \(S^{2}\) as great circles. \(\mathcal{G}\), and \(\mathcal{V}\), are required to strictly fit into a hemisphere so that the mapping to a plane is homeomorphic, a require ment equivalent to the constraint for the surface to be visible in the local from at least one direction. Satisfying this re quirement always allows one to uniquely project great circle
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-7-p007.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-7-p007.png)
 
 *Figure 7: Let G, be a great circle segment. Then, the boundary of V, (dotted) is the boundary of the intersection of the two Fijrure 7: Let G, be a meat circle segment. Then, the boundary of V. (dotted) is the boundary of the intersection of the two he~ispheres ~sociate~ with the en~vectors of ~s.*
 
@@ -190,7 +190,7 @@ $$
 
 algorithm 2
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-8-p008.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces/figures/figure-8-p008.png)
 
 *Figure 8: Convex hull (dashed) is computed for the projected great circles as lines in the plane Z = 1, using central (of surface in figure 2) projection*
 

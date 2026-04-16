@@ -6,7 +6,7 @@ AT&T Bell Laboratories Murray Hill, New Jersey 07974
 
 ## Abstract
 
-PDF Download 73833.73838.pdf 07 April 2026 Total Citations: 2 Total Downloads: 577 Published: 05 June 1989 Citation in BibTeX format Conference Sponsors: SIGACT SIGGRAPH
+Paint one side of a rubber disk black and the other side white: stretch the disk any way you wish in three-dimensional space, subject to the condition that from any point in space, if you look down you see either the white side of the disk or nothing at all. Now make the stretched disk transparent but color its boundary black; project its boundary into a plane that lies below the disk. The resulting curve is self-overlapping. We show how to test whether a given curve is self-overlapping, and how to count how many essentially different stretchings of the disk could give rise to the same curve.
 
 ## Acknowledgments
 

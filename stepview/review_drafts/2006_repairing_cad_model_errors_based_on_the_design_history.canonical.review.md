@@ -8,7 +8,7 @@ b Department of Mechanical Engineering, Korea Advanced Institute of Science and 
 
 ## Abstract
 
-Keywords: Boundary representation; CAD model; Correction; Design history; Interoperability www.elsevier.com locate cad
+For users of CAD data, few things are as frustrating as receiving unusable, poor quality data. Users often waste time fixing or rebuilding such data from scratch on the basis of paper drawings. While previous studies use the boundary representation (B-Rep) of CAD models, we propose an approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule-based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models without translating them to a B-Rep shape, and it also preserves parametric information.
 
 ## Introduction
 
@@ -70,7 +70,7 @@ We conducted a six-month case study to better understand the nature of CAD model
 
 Table 1 shows that the tiny faces cause \(29 \%\) of errors and that the other errors are caused by narrow steps ( \(17 \%\) ), narrow spaces \((16 \%)\), and narrow regions \((11 \%)\). Besides those four error types, we included non-tangent faces ( \(5 \%\) ) and sharp face angles ( \(3 \%\) ), both of which may significantly increase the lead times if transferred to downstream stages. Table 1 also shows
 
-![Figure 1. Representation of the B-Rep data and the design history.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-1-p004.png)
+![Figure 1. Representation of the B-Rep data and the design history.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-1-p004.png)
 
 *Figure 1. Representation of the B-Rep data and the design history.: representation of the B-Rep data and the design history.*
 
@@ -82,13 +82,13 @@ We used the B-Rep data to check the CAD model errors. A CAD model error is consi
 
 Most commercial CAD systems used in product development have data structures that include the design history as well as the B-Rep data. Those systems are called feature-based
 
-![Figure 2. Design history schema with the feature and reference command groups.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-2-p004.png)
+![Figure 2. Design history schema with the feature and reference command groups.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-2-p004.png)
 
 *Figure 2. Design history schema with the feature and reference command groups.: Design history schema with the feature and reference command groups.*
 
 <xs: element name="Pad"> - <xs: complexType> - <xs: sequence> - <xs: element name="profile_curves" maxOccurs="unbounded"> - <xs: complexType> use="required" > use="required" > < xs: complexType> < xs: element> <xs: element name="second_length" type="xs:double" > <xs: element name="reference_plane" type="xs:string" > exs: element name="own_direction" type="direction" minOccurs="0" > < xs: sequence> <xs: attribute name="result_solid" type="xs:string" use="required" > < xs: complexType> < xs: element>
 
-![Figure 3. A ﬂow chart of the design history extraction.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-3-p005.png)
+![Figure 3. A ﬂow chart of the design history extraction.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-3-p005.png)
 
 *Figure 3. A ﬂow chart of the design history extraction.: A ﬂow chart of the design history extraction. A flow chart of the design history extraction.*
 
@@ -102,13 +102,13 @@ The design history refers to the chronological order in which features were crea
 
 The design history schema of Fig. 2, which we formatted with Altova's commercial XML editor XMLSpy, is represented as an XML schema. The schema consists of two groups: the feature command group, FeatureCmds, in which each of the geometric features is defined; and the reference command group, ReferenceElems, in which the reference elements such as constraints or reference planes are represented. In FeatureCmds, 20 feature commands are defined on the basis of the core commands of the macro-parametric methodology [20-22], and each command includes the parameters for feature instantiation. In ReferenceElems, eight reference elements are used to define the reference data, such as the reference plane, the axis, and the local coordinates; and the reference data are used to generate a 3D solid. As shown in Fig. 2, the root node in the design history schema, HistorySchema, must have one or more body nodes, and each
 
-![Figure 4. XML schema deﬁnition of the Pad feature command.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-4-p005.png)
+![Figure 4. XML schema deﬁnition of the Pad feature command.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-4-p005.png)
 
 *Figure 4. XML schema deﬁnition of the Pad feature command.: XML schema deﬁnition of the Pad feature command. XML schema definition of the Pad feature command.*
 
 <profile_curves profile_name="Sketch.1" parent_name="PartBody" > <first_limit_type>Dimension< first_limit_type> <first_length>30.000c first_length> <second_limit_type>Dimension< second_limit_type> <second_length>5.000k second_length> creference_plane>xy plane< reference_plane> < Pad> - <Fillet result_solid="Fillet.1"> <targets>Edges< targets> fillet_type>Constant< fillet_type> cradius> 2.000< radius> <propagation_type>Tangency< propagation_type> <target_edges target_name="Edge.5" parent_name="Pad.1" > < Fillet> < Body> < HistorySchema> x F2.3 F2.5 F2.6 F2.1 F2.71 F2.2 F3.5 F3.3 F3.1 F3.4 C3 F4.7 F4.3 F4.11 F4.10
 
-![Figure 5. Example of a design history ﬁle extracted from a CAD model.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-5-p006.png)
+![Figure 5. Example of a design history ﬁle extracted from a CAD model.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-5-p006.png)
 
 *Figure 5. Example of a design history ﬁle extracted from a CAD model.: Example of a design history ﬁle extracted from a CAD model. Example of a design history file extracted from a CAD model.*
 
@@ -130,7 +130,7 @@ Fig. 3 shows how to extract and structuralize the design history from a 3D CAD m
 
 In the case of the profile_curves element, when a parameter of a feature command refers to the parameter of another feature in the design history, the string-typed identification name is used as a value of the parameter. The name of the referred
 
-![Figure 6. Persistent naming method based on faces.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-6-p006.png)
+![Figure 6. Persistent naming method based on faces.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-6-p006.png)
 
 *Figure 6. Persistent naming method based on faces.: Persistent naming method based on faces.*
 
@@ -160,11 +160,11 @@ To generate each feature in the design history, we referenced the topological en
 
 In Fig. 6, the label F2.6, which is one of faces that was generated from the Fillet command, is a new face. This label was referred to the labels F1.1 and F1.5 of the previous resultant model, which was generated from the previous feature command Pad. The F2.2 label was modified from the F1. 1 label of Pad.1, and the F2.3 label is the same face entity as the F1.3 label of Pad.1. In addition, the F3.1 label, which was generated from the Pocket command, was made by the
 
-![Figure 7. Relation between the command patterns and the types of CAD model errors.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-7-p007.png)
+![Figure 7. Relation between the command patterns and the types of CAD model errors.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-7-p007.png)
 
 *Figure 7. Relation between the command patterns and the types of CAD model errors.: Relation between the command patterns and the types of CAD model errors.*
 
-![Figure 8. The command patterns that occur in narrow spaces.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-8-p008.png)
+![Figure 8. The command patterns that occur in narrow spaces.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-8-p008.png)
 
 *Figure 8. The command patterns that occur in narrow spaces.: The command patterns that occur in narrow spaces.*
 
@@ -178,11 +178,11 @@ To correct CAD model errors with the aid of the extracted design history, we fir
 
 Fig. 7 shows the feature command patterns for the root causes of the errors identified in the case study that we referred to in Section 3.1. With the assistance of a design expert, we conducted the case study for 6 months to find the root causes of the errors in terms of the design history. From the patterns, we interpreted the relationship between six types of errors; 13 features of the root causes, which directly affect these types of errors; and 20 subordinate features, which are coupled with those features of the root causes. first, we mathematically computed the topological and geometric elements to check the location of the errors in the resultant solid shape that is instantiated by a feature command
 
-![Figure 9. Example of the narrow space in the design history.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-9-p008.png)
+![Figure 9. Example of the narrow space in the design history.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-9-p008.png)
 
 *Figure 9. Example of the narrow space in the design history.: Example of the narrow space in the design history.*
 
-![Figure 10. Parametric data analysis for maintaining the dependencies of parameters and constraints.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-10-p009.png)
+![Figure 10. Parametric data analysis for maintaining the dependencies of parameters and constraints.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-10-p009.png)
 
 *Figure 10. Parametric data analysis for maintaining the dependencies of parameters and constraints.: Parametric data analysis for maintaining the dependencies of parameters and constraints.*
 
@@ -198,7 +198,7 @@ The knowledge base is a set of rules and facts that can generate a new design hi
 
 Fig. 11 shows the functional configuration and rule reasoning process as an IDEF0 diagram. The input data needed
 
-![Figure 11. Functional diagram of the rule reasoning process (IDEF0 diagram).](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-11-p009.png)
+![Figure 11. Functional diagram of the rule reasoning process (IDEF0 diagram).](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-11-p009.png)
 
 *Figure 11. Functional diagram of the rule reasoning process (IDEF0 diagram).: Functional diagram of the rule reasoning process (IDEF0 diagram).*
 
@@ -210,7 +210,7 @@ The output rules in the post-processing module create a new design history that 
 
 ### 3.6 Correcting CAD model errors
 
-![Figure 12. Process for checking the location of errors in feature commands.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-12-p010.png)
+![Figure 12. Process for checking the location of errors in feature commands.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-12-p010.png)
 
 *Figure 12. Process for checking the location of errors in feature commands.: Process for checking the location of errors in feature commands.*
 
@@ -220,7 +220,7 @@ Fig. 13 shows the error correction process of the implemented design history-bas
 
 After checking the locations of errors in the feature commands of the model, as shown in Fig. 12, the result and the design history information extracted from the model are transferred to the knowledge base. In accordance with the rules of the knowledge base, three analyses, as mentioned in Sections 3.4 and 3.5, are executed in the expert system: an interdependency analysis of the feature commands, an analysis of the feature command patterns, and an analysis of the parametric data. Through the reasoning of the expert system, the design history is reconstructed in the CAD system and,
 
-![Figure 13. Correction process.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-13-p010.png)
+![Figure 13. Correction process.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-13-p010.png)
 
 *Figure 13. Correction process.: Correction process.*
 
@@ -242,7 +242,7 @@ The knowledge reasoning module then executes backward chain reasoning with the r
 
 The topological naming and name matching module, which is used for assigning names to topological entities and for matching entities of the previous model with entities of the repaired model, is connected to the design history extraction module and the history reconstruction module.
 
-![Figure 14. The structure of the CAD model correction system.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-14-p011.png)
+![Figure 14. The structure of the CAD model correction system.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-14-p011.png)
 
 *Figure 14. The structure of the CAD model correction system.: The structure of the CAD model correction system.*
 
@@ -256,13 +256,13 @@ The CAD model correction system can be applied to tiny faces, narrow regions, no
 
 While modeling the left part of the crankshaft, the designer revolved the profile of the crank \(360^{\circ}\) around the axis of the shaft and then removed the swept volume (refer to part B in the design history of Fig. 16). Although the lower end of the crank was created in the proper shape, the upper end of the crank caused a tiny face near the trajectory of the profile. This tiny face was caused by the difference between the axis of the crank and the axis of the shaft.
 
-![Figure 15. Q-Raider’s main window and control panel.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-15-p011.png)
+![Figure 15. Q-Raider’s main window and control panel.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-15-p011.png)
 
 *Figure 15. Q-Raider’s main window and control panel.: Q-Raider’s main window and control panel.*
 
 - <Body body_name="Body.1"> + ‹Pad result_solid="Pad.3"> + <Pattern result_solid="CircPattern.1'> < Body> + Body body name="Body.3"> + ‹Body body_name= Body.25 <Body body_name="Body.4"> - <Shaft result_solid="Shaft.3"> < Shaft> s Body2.- + <Pad result_solid="Pad.1"> «Body body name= Clutchdisk's - <Pad result_solid="Pad.2"> parent_name="Clutchdisk" > <profile_curves profile_name="Sketch.2" cfirst_length>10.000c first_length> csecond_length>0.000c second_length> < Pad> - <Boolean_Op result_solid="Remove.3"> <boolean_type>Remove< boolean_type> < Boolean_Op> s Body?.. - ¿Body body_name="Crankshäft"5 ‹ReferenceElems + <Shaft result_solid="Shaft.1"> + <Pad result_solid="Pad.1"> + <Shaft result_solid="Shaft.2"> + <Hole result_solid="Hole.1'> + cHole result_solid= Hole.2 > + <Pocket result_solid="Pocket.2"> + <Pocket result_solid="Pocket.1"> - <Boolean_Op result_solid="Remove.1"> ‹boolean_type>Remove< boolean_type> < Boolean_Op> + <Fillet result_solid="Fillet.1"> + <Bool_Op result_solid="Remove.2"> --- s Body?. Tiny face Narrow step Profile
 
-![Figure 16. Example of a correction to a crankshaft model.](/Users/evanthayer/Projects/stepview/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-16-p012.png)
+![Figure 16. Example of a correction to a crankshaft model.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-16-p012.png)
 
 *Figure 16. Example of a correction to a crankshaft model.: Example of a correction to a crankshaft model.*
 

@@ -328,7 +328,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Generated abstract from paper content. This panel paper examines why aspect graphs, despite their elegant description of stable views, were not yet practical for computer vision systems. The critiques emphasize unresolved problems of scale, explosive graph size, indexing and matching, unreliable contour extraction, and the gap between topological definitions of aspect and features that can actually be recovered from images. The responses argue that broader, task-dependent notions of aspect, better feature selection, and viewer-centered representations organized around recoverable features may retain the value of precomputed views. Taken together, the discussion reframes aspect graphs less as a finished recognition solution than as a starting point for more usable appearance-based models."
+            "text": "[Generated abstract from paper content.] This panel paper examines why aspect graphs, despite their theoretical appeal as representations of stable views, had not yet become practical tools for computer vision. The discussion highlights unresolved problems of graph size, indexing and matching, unreliable contour extraction, and the mismatch between topological aspect definitions and features that can actually be recovered from images. Taken together, the responses argue for broader, task-dependent notions of aspect and suggest that viewer-centered representations organized around recoverable features may preserve the main benefits of precomputed views."
           }
         ]
       },
@@ -337,7 +337,7 @@
       "review": {
         "status": "edited",
         "risk": "medium",
-        "notes": "Generated abstract from paper content; original abstract missing from source."
+        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF."
       }
     },
     {

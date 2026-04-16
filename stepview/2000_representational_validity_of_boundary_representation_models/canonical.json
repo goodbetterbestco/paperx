@@ -505,7 +505,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Keywords: Solid modeling; Manifold boundary representation; Ideal model validity; Sufficient conditions; Rectification www.elsevier.com locate cad"
+            "text": "Validity is an important property of solid modeling representations. It ensures that representations always describe physically realizable solids, instead of nonsense objects. This paper surveys and supplements the mathematical theory of ideal boundary representation (B-rep) of solids. In particular, it presents a complete set of conditions on representational nodes of a typical B-rep data structure and proves their sufficiency for model validity. Such conditions are useful in invalid model rectification procedures."
           }
         ]
       },
@@ -513,33 +513,21 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 57.88,
-            "y0": 465.2,
-            "x1": 615.2,
-            "y1": 478.53,
-            "width": 557.32,
-            "height": 13.33
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 643.32,
-            "y0": 158.93,
-            "x1": 782.23,
-            "y1": 168.86,
-            "width": 138.91,
-            "height": 9.93
+            "x0": 56.21,
+            "y0": 379.11,
+            "x1": 783.89,
+            "y1": 453.69,
+            "width": 727.68,
+            "height": 74.58
           },
           "engine": "docling"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

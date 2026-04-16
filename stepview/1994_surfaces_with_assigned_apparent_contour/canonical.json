@@ -637,77 +637,16 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze 4 e série , tome 21, n o 3 (1994), p. 311-341 < http: www.numdam.org item?id=ASNSP_1994_4_21_3_311_0 > ©Scuola Normale Superiore, Pisa, 1994, tous droits réservés. L'accès aux archives de la revue « Annali della Scuola Normale Superiore di Pisa, Classe di Scienze » ( http: www.sns.it it edizioni riviste annaliscienze ) implique l'accord avec les conditions générales d'utilisation ( http: www.numdam.org conditions ). Toute utilisation commerciale ou impression systématique est constitutive d'une infraction pénale. Toute copie ou impression de ce fichier doit contenir la présente mention de copyright. Article numérisé dans le cadre du programme Numérisation de documents anciens mathématiques http: www.numdam.org"
+            "text": "[Generated abstract from introduction.] This paper studies when a curve with cusps and normal crossings on a surface can be realized as the apparent contour of a smooth surface under a generic map. The author reduces the problem to constructing local excellent extensions near the critical set together with immersive extensions of the resulting boundary curves, extending Blank's word method to curves with cusps and crossings. A combinatorial algorithm based on minimal assemblages is then used to classify excellent extensions up to right equivalence and to derive necessary and sufficient conditions for realizing prescribed contours as apparent contours of embedded generic surfaces in line bundles."
           }
         ]
       },
-      "source_spans": [
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 81.35,
-            "y0": 332.14,
-            "x1": 499.75,
-            "y1": 356.91,
-            "width": 418.4,
-            "height": 24.77
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 81.35,
-            "y0": 365.88,
-            "x1": 343.39,
-            "y1": 374.43,
-            "width": 262.04,
-            "height": 8.55
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 104.59,
-            "y0": 539.42,
-            "x1": 351.24,
-            "y1": 547.97,
-            "width": 246.65,
-            "height": 8.55
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 104.59,
-            "y0": 555.36,
-            "x1": 453.26,
-            "y1": 611.73,
-            "width": 348.67,
-            "height": 56.37
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 193.91,
-            "y0": 714.41,
-            "x1": 387.19,
-            "y1": 744.04,
-            "width": 193.28,
-            "height": 29.63
-          },
-          "engine": "docling"
-        }
-      ],
+      "source_spans": [],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Generated abstract from introduction; original abstract unavailable in source PDF."
       }
     },
     {

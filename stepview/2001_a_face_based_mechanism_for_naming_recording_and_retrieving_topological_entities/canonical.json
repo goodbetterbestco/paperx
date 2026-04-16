@@ -1138,7 +1138,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Keywords: Topological name; Design history; Feature and history based design www.elsevier.com locate cad"
+            "text": "One of the principal tasks of history based parametric modeling is to maintain the design history of parts. When some constraints or definitions of a feature on the part are modified, it should be guaranteed that its design history could be replayed automatically and correctly. Thus the users can get the desired part expediently, quickly and unambiguously. Topological naming mechanism is one of the main important technologies to fulfill this task. In order to solve this problem, this paper first analyzes the design history of parts, then presents a face based mechanism for naming, recording and retrieving topological entity, and finally proposes a method named parametric space information to solve ambiguity when recording and retrieving entities. This mechanism, which provides a solid basis for replaying the design history precisely, has been implemented in InteSolid, a history and feature based modeling system."
           }
         ]
       },
@@ -1146,33 +1146,21 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 56.23,
-            "y0": 526.46,
-            "x1": 428.31,
-            "y1": 538.18,
-            "width": 372.08,
-            "height": 11.72
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 641.63,
-            "y0": 158.93,
-            "x1": 778.89,
-            "y1": 168.86,
-            "width": 137.26,
-            "height": 9.93
+            "x0": 54.57,
+            "y0": 407.21,
+            "x1": 780.54,
+            "y1": 514.87,
+            "width": 725.97,
+            "height": 107.66
           },
           "engine": "docling"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

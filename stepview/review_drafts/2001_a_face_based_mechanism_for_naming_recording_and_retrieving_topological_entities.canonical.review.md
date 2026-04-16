@@ -8,7 +8,7 @@ precisely, has been implemented in InteSolid, a history and feature based modeli
 
 ## Abstract
 
-Keywords: Topological name; Design history; Feature and history based design www.elsevier.com locate cad
+One of the principal tasks of history based parametric modeling is to maintain the design history of parts. When some constraints or definitions of a feature on the part are modified, it should be guaranteed that its design history could be replayed automatically and correctly. Thus the users can get the desired part expediently, quickly and unambiguously. Topological naming mechanism is one of the main important technologies to fulfill this task. In order to solve this problem, this paper first analyzes the design history of parts, then presents a face based mechanism for naming, recording and retrieving topological entity, and finally proposes a method named parametric space information to solve ambiguity when recording and retrieving entities. This mechanism, which provides a solid basis for replaying the design history precisely, has been implemented in InteSolid, a history and feature based modeling system.
 
 ## Introduction
 
@@ -20,7 +20,7 @@ as operation object of a feature, i.e. the removed face of a shelling feature; a
 
 When some of the dimension values, constraint relations or feature definitions of features in a part are modified, if all the referenced topological entities can be retrieved or identified from the records, it should be reconstructed automatically
 
-![Figure 1. CSG Tree-like structure of the design history of a part.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-1-p002.png)
+![Figure 1. CSG Tree-like structure of the design history of a part.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-1-p002.png)
 
 *Figure 1. CSG Tree-like structure of the design history of a part.: CSG Tree-like structure of the design history of a part.*
 
@@ -40,7 +40,7 @@ However, they did not consider many phenomena that happen to topological entitie
 
 Exploring the design history of parts is helpful to under stand the idea of setting up the mechanism for naming, recording and retrieving topological entities. In a feature based modeling system it's usual to design a base feature first, and then attach the other features to the previously designed features. There are a part body and an original feature body at every design stage. Generally, with the current feature defined, a design stage, \(S_{i}\), is defined. \(\operatorname{PB}\left(S_{i}\right)\) specifies the part body in stage \(S_{i}\), and \(\operatorname{PFB}\left(S_{i}\right)\) the body of the original feature in stage \(S_{i}\). If the Boolean opera tor between \(\mathrm{PB}\left(S_{i}\right)\) and \(\mathrm{PFB}\left(S_{i}\right),\left\langle\mathrm{OP}_{i}\right\rangle\), is regular, the part
 
-![Figure 2. The adjacent faces of an edge.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-2-p003.png)
+![Figure 2. The adjacent faces of an edge.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-2-p003.png)
 
 *Figure 2. The adjacent faces of an edge.: The adjacent faces of an edge.*
 
@@ -48,7 +48,7 @@ Exploring the design history of parts is helpful to under stand the idea of sett
 
 ### 3.2 Feature face set
 
-![Figure 3. The feature face set of feature.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-3-p003.png)
+![Figure 3. The feature face set of feature.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-3-p003.png)
 
 *Figure 3. The feature face set of feature.: The feature face set of feature.*
 
@@ -92,7 +92,7 @@ It can be concluded from these characteristics that no topological face without 
 
 - Retrieve topological entity from real name.
 
-![Figure 4. Brief diagram of mechanism for naming, recording and retrieving](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-4-p004.png)
+![Figure 4. Brief diagram of mechanism for naming, recording and retrieving](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-4-p004.png)
 
 *Figure 4. Brief diagram of mechanism for naming, recording and retrieving: Brief diagram of mechanism for naming, recording and retrieving topological entities.*
 
@@ -104,11 +104,11 @@ It can be concluded from these characteristics that no topological face without 
 
 - any topological face in part body has a corresponding source in one of the original features. Thus, attaching
 
-![Figure 5. Dependency between original names and feature faces.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-5-p004.png)
+![Figure 5. Dependency between original names and feature faces.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-5-p004.png)
 
 *Figure 5. Dependency between original names and feature faces.: Dependency between original names and feature faces.*
 
-![Figure 6. Typical sweep feature.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-6-p004.png)
+![Figure 6. Typical sweep feature.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-6-p004.png)
 
 *Figure 6. Typical sweep feature.: Typical sweep feature.*
 
@@ -124,7 +124,7 @@ The contexts of original names for the faces in a feature are decided by the fea
 
 - profile based feature, whose shape is mainly decided by one or more profiles, i.e. Extrude, Revolve and Sweep;
 
-![Figure 7. Name chamfer feature.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-7-p005.png)
+![Figure 7. Name chamfer feature.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-7-p005.png)
 
 *Figure 7. Name chamfer feature.: Name chamfer feature.*
 
@@ -170,7 +170,7 @@ where FeatID \({ }_{\text {FF1 }}\) is the identity of the feature which has a f
 
 \begin{aligned} \mathrm{ON}(F)= & {\left[\text { FeatID, } \text { FeatID }{ }_{\mathrm{P}}, \text { ID }_{\text {element }}, \text { FeatID }_{\text {path }},\right.} \\ & \text { ID } \left._{\text {trajectory }}, \text { InsNum }\right], \end{aligned}
 
-![Figure 8. Name linear patter feature.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-8-p006.png)
+![Figure 8. Name linear patter feature.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-8-p006.png)
 
 *Figure 8. Name linear patter feature.: Name linear patter feature. Name linear pattern feature.*
 
@@ -232,7 +232,7 @@ Summarizing the above naming ideas and the research on the generations of form f
 
 After naming topological faces is finished, a Boolean operation will be executed between the body of the original feature and the part body. Because of the Boolean operation, the topological faces in the two bodies will be deleted, merged, split or still kept. Therefore, there should be some specific methods to handle the topological names
 
-![Figure 9. Propagation of splitting topological name.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-9-p007.png)
+![Figure 9. Propagation of splitting topological name.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-9-p007.png)
 
 *Figure 9. Propagation of splitting topological name.: Propagation of splitting topological name.*
 
@@ -246,7 +246,7 @@ $$
 \mathrm{RN}(F)=[\mathrm{ON}(F), \mathrm{PSI}],
 $$
 
-![Figure 10. Propagation of merging topological name.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-10-p007.png)
+![Figure 10. Propagation of merging topological name.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-10-p007.png)
 
 *Figure 10. Propagation of merging topological name.: Propagation of merging topological name.*
 
@@ -276,17 +276,17 @@ Generally speaking, it's enough to record a topological face with the real name 
 
 Geometrically two intersected faces can express an edge in 3D space. We can take this into the consideration of record ing a topological edge. It is natural to record a topological edge through recording its adjacent topological faces. If face \(F_{1}\) and face \(F_{2}\) are the adjacent faces of an edge E, the real name for this topological edge is expressed by
 
-![Figure 11. Hierarchical structure of names.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-11-p008.png)
+![Figure 11. Hierarchical structure of names.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-11-p008.png)
 
 *Figure 11. Hierarchical structure of names.: Hierarchical structure of names.*
 
 #### 5.1.3 Record topological vertex
 
-![Figure 12. Symmetric topological face.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-12-p008.png)
+![Figure 12. Symmetric topological face.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-12-p008.png)
 
 *Figure 12. Symmetric topological face.: Symmetric topological face.*
 
-![Figure 13. Symmetric edges.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-13-p008.png)
+![Figure 13. Symmetric edges.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-13-p008.png)
 
 *Figure 13. Symmetric edges.: Symmetric edges.*
 
@@ -316,7 +316,7 @@ The main cause of ambiguity is the topological symmetric situation, which is bro
 
 - 12 and 14 are weekly symmetric to each other,
 
-![Figure 14. Symmetric vertices.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-14-p009.png)
+![Figure 14. Symmetric vertices.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-14-p009.png)
 
 *Figure 14. Symmetric vertices.: Symmetric vertices.*
 
@@ -324,7 +324,7 @@ The main cause of ambiguity is the topological symmetric situation, which is bro
 
 Ambiguity will happen during recording and retrieving a topological entity when the number of entities obtained through a topological name is greater than two. Sometimes in the actual part design process, ambiguity is acceptable. For example, ambiguity is acceptable for the sketching plane because all the ambiguous faces are coplanar. This is also true for selecting the axis when creating a Revolve feature, because all the ambiguous edges are collinear. However, retrieving the unambiguous entity is the usual case. Therefore a mechanism that can solve ambiguity should be supplied. A topological face on a solid may be split into two or more faces during the process of a Boolean operation. The parametric space expressions of the faces before and after splitting are the same only with some changes to the valid definition space area. It can be illustrated by the trimming operation between two surfaces, \(\mathrm{P}(u, v)\) and \(\mathrm{Q}(u, v)\) in Fig. 16. Suppose that the two side parts of surface \(\mathrm{P}(u, v)\) and the middle part of surface \(\mathrm{Q}(s, t)\) are kept after trimming, the valid definition areas of surface \(\mathrm{P}(u, v)\) are covered by the two outer loops, and that of \(\mathrm{Q}(s, t)\) the middle loop. Before merging operation, their valid definition areas are the corresponding rectangles, which are defined by \(0 \leq u \leq 1,0 \leq v \leq 1\) and \(0 \leq s \leq 1,0 \leq t \leq 1\), respectively. In addition, the shapes of curves and surface will not be changed when scaling, rotating and displacing them [8].
 
-![Figure 16. The variation of parametric space.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-16-p010.png)
+![Figure 16. The variation of parametric space.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-16-p010.png)
 
 *Figure 16. The variation of parametric space.: The variation of parametric space.*
 
@@ -334,11 +334,11 @@ Ambiguity will happen during recording and retrieving a topological entity when 
 
 - at last sort all the entities according to the u and v values.
 
-![Figure 17. Select feature point.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-17-p010.png)
+![Figure 17. Select feature point.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-17-p010.png)
 
 *Figure 17. Select feature point.: Select feature point.*
 
-![Figure 18. Obtain parametric space information.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-18-p010.png)
+![Figure 18. Obtain parametric space information.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-18-p010.png)
 
 *Figure 18. Obtain parametric space information.: Obtain parametric space information.*
 
@@ -354,7 +354,7 @@ In fact case 3 and case 2 are the same because if Area A and Area B are exchange
 
 As to case 1, any two points in area A and area B can be treated as feature points. In order to regularize the algorithm, the left points of area A and Area B are selected as feature points. As to case 2, it is more complicated. As depicted in Fig. 17(b), line s1 intersects with area B and the intersecting points are point \(\mathrm{p} 1_{\mathrm{B}}\) and point \(\mathrm{p} 2_{\mathrm{B}}\). The top point of area A is point \(\mathrm{p}_{\mathrm{A}}\). point \(\mathrm{p}_{\mathrm{A}}\) can be selected as the feature point of area A and point \(\mathrm{P}_{\mathrm{B}}\) the feature point of area B. If there are intersected points in both \(u\) and \(v\) direc tions, select the point in \(u\) direction as the feature point. If there are more intersected points in \(u\) or \(v\) direction, select the point whose \(u\) or \(v\) value is smallest as the feature point. The most important of all, the feature points of two topolo gical entities that may generate ambiguity must be different. The principle of selecting feature points is valid not only to topological faces, but also to topological edge and topological vertices. As to a vertex, the feature point is the corresponding point in the parametric space. It can be concluded that the parametric space information of a topological entity is related to one of the adjacent faces
 
-![Figure 19. Distinguish ambiguous faces.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-19-p011.png)
+![Figure 19. Distinguish ambiguous faces.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-19-p011.png)
 
 *Figure 19. Distinguish ambiguous faces.: Distinguish ambiguous faces.*
 
@@ -364,11 +364,11 @@ $$
 
 ### 6.3 Distinguish ambiguous faces
 
-![Figure 20. Distinguish weakly symmetric edges.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-20-p011.png)
+![Figure 20. Distinguish weakly symmetric edges.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-20-p011.png)
 
 *Figure 20. Distinguish weakly symmetric edges.: Distinguish weakly symmetric edges.*
 
-![Figure 21. Distinguish strongly symmetric edges.](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-21-p011.png)
+![Figure 21. Distinguish strongly symmetric edges.](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-21-p011.png)
 
 *Figure 21. Distinguish strongly symmetric edges.: Distinguish strongly symmetric edges.*
 
@@ -390,7 +390,7 @@ Similar to distinguishing ambiguous edges, moderately and faintly symmetric vert
 
 - If d, and are moderately symmetric to each other, e1 and ez are moderately symmetric to each other.
 
-![Figure 15. Shape, size, location and gesture of the original feature body have](/Users/evanthayer/Projects/stepview/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-15-p009.png)
+![Figure 15. Shape, size, location and gesture of the original feature body have](/Users/evanthayer/Projects/paperx/docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/figures/figure-15-p009.png)
 
 *Figure 15. Shape, size, location and gesture of the original feature body have: Shape, size, location and gesture of the original feature body have effect on topological symmetry.*
 

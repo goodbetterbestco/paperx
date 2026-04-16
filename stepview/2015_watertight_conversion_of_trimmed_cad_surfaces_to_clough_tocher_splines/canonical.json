@@ -916,7 +916,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": " 2015 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license (http: creativecommons.org licenses by 4.0)."
+            "text": "The boundary representations (B-reps) that are used to represent shape in Computer-Aided Design systems create unavoidable gaps at the face boundaries of a model. Although these inconsistencies can be kept below the scale that is important for visualisation and manufacture, they cause problems for many downstream tasks, making it difficult to use CAD models directly for simulation or advanced geometric analysis, for example. Motivated by this need for watertight models, we address the problem of converting B-rep models to a collection of cubic C^1 Clough-Tocher splines. These splines allow a watertight join between B-rep faces, provide a homogeneous representation of shape, and also support local adaptivity. We perform a comparative study of the most prominent Clough-Tocher constructions and include some novel variants. Our criteria include visual fairness, invariance to affine reparameterisations, polynomial precision and approximation error. The constructions are tested on both synthetic data and CAD models that have been triangulated. Our results show that no construction is optimal in every scenario, with surface quality depending heavily on the triangulation and parameterisation that are used."
           }
         ]
       },
@@ -924,21 +924,189 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 205.57,
-            "y0": 424.85,
-            "x1": 503.31,
-            "y1": 443.89,
-            "width": 297.74,
-            "height": 19.04
+            "x0": 193.91,
+            "y0": 281.88,
+            "x1": 504.27,
+            "y1": 291.87,
+            "width": 310.36,
+            "height": 10.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 291.37,
+            "x1": 504.27,
+            "y1": 302.37,
+            "width": 310.36,
+            "height": 11.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 300.37,
+            "x1": 504.27,
+            "y1": 311.36,
+            "width": 310.36,
+            "height": 11.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 310.86,
+            "x1": 504.27,
+            "y1": 320.86,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 320.36,
+            "x1": 504.27,
+            "y1": 330.36,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 329.36,
+            "x1": 504.27,
+            "y1": 339.35,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 338.85,
+            "x1": 504.27,
+            "y1": 349.85,
+            "width": 310.36,
+            "height": 11.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 349.35,
+            "x1": 504.27,
+            "y1": 359.34,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 358.34,
+            "x1": 248.89,
+            "y1": 368.34,
+            "width": 54.97,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 367.84,
+            "x1": 504.27,
+            "y1": 377.84,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 377.34,
+            "x1": 504.27,
+            "y1": 386.83,
+            "width": 310.36,
+            "height": 9.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 386.83,
+            "x1": 504.27,
+            "y1": 397.33,
+            "width": 310.36,
+            "height": 10.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 396.83,
+            "x1": 504.27,
+            "y1": 406.82,
+            "width": 310.36,
+            "height": 10.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 406.32,
+            "x1": 504.27,
+            "y1": 416.82,
+            "width": 310.36,
+            "height": 10.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 193.91,
+            "y0": 415.82,
+            "x1": 414.31,
+            "y1": 425.81,
+            "width": 220.4,
+            "height": 10.0
+          },
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

@@ -8,17 +8,17 @@ NAFISEH IZADYAR, University of Victoria, Canada MICHAEL TAO, New York University
 
 ## Abstract
 
-Fig. 1. Selection of models from the ABC [Koch et al. 2019] and Fusion360 [Willis et al. 2021] datasets meshed with our method; each B-Rep face is shown with a different color, illustrating preserved patch boundaries across complex models. Parametric boundary representation models (B-Reps) are the de facto standard in CAD, graphics, and robotics, yet converting them into valid meshes remains fragile. The difficulty originates from the unavoidable approximation of high-order surface and curve intersections to low-order primitives: the resulting geometric realization often fails to respect the exact topology encoded in the B-Rep, producing meshes with incorrect or missing adjacencies. Existing meshing pipelines address these inconsistencies through heuristic feature-merging and repair strategies that offer no topological guarantees and frequently fail on complex models. We propose a fundamentally different approach: the B-Rep topology is treated as an invariant of the meshing process. Our algorithm enforces the exact B-Rep topology while allowing a single user-defined tolerance to control the deviation of the mesh from the underlying parametric surfaces. Consequently, for any admissible tolerance, the output mesh is topologically correct; only its geometric fidelity degrades as the tolerance increases. This decoupling eliminates the need for post-hoc repairs and yields robust meshes even when the underlying geometry is inconsistent or highly approximated. Weevaluate our method on thousands of real-world CAD models from the ABC and Fusion 360 repositories, including instances that fail with standard meshing tools. The results demonstrate that topological guarantees at the algorithmic level enable reliable mesh generation suitable for downstream applications.
+Parametric boundary representation models (B-Reps) are the de facto standard in CAD, graphics, and robotics, yet converting them into valid meshes remains fragile. The difficulty originates from the unavoidable approximation of high-order surface and curve intersections to low-order primitives: the resulting geometric realization often fails to respect the exact topology encoded in the B-Rep, producing meshes with incorrect or missing adjacencies. Existing meshing pipelines address these inconsistencies through heuristic feature-merging and repair strategies that offer no topological guarantees and frequently fail on complex models. We propose a fundamentally different approach: the B-Rep topology is treated as an invariant of the meshing process. Our algorithm enforces the exact B-Rep topology while allowing a single user-defined tolerance to control the deviation of the mesh from the underlying parametric surfaces. Consequently, for any admissible tolerance, the output mesh is topologically correct; only its geometric fidelity degrades as the tolerance increases. This decoupling eliminates the need for post-hoc repairs and yields robust meshes even when the underlying geometry is inconsistent or highly approximated. We evaluate our method on thousands of real-world CAD models from the ABC and Fusion 360 repositories, including instances that fail with standard meshing tools. The results demonstrate that topological guarantees at the algorithmic level enable reliable mesh generation suitable for downstream applications.
 
 ## Introduction
 
 Parametric models encoded as boundary representations (B-Reps) are the dominant representation in computer-aided design, manufacturing, and simulation. A B-Rep describes a shape through parametric primitives (patches, curves, and points) to encode geometry together with a discrete combinatorial structure, i.e., the B-Rep's topology. Patches are bounded by curves that are themselves bounded by points. The topology of a B-Rep is defined by an
 
-![Figure 2. Inconsistency between curves (black) and the 2D trimming curves lifted with the parameterization (red). Since our method relies only on the 3D curves (black), it successfully generates a mesh despite these inconsistencies.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-2-p002.png)
+![Figure 2. Inconsistency between curves (black) and the 2D trimming curves lifted with the parameterization (red). Since our method relies only on the 3D curves (black), it successfully generates a mesh despite these inconsistencies.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-2-p002.png)
 
 *Figure 2. Inconsistency between curves (black) and the 2D trimming curves lifted with the parameterization (red). Since our method relies only on the 3D curves (black), it successfully generates a mesh despite these inconsistencies.: Inconsistency between curves (black) and the 2D trimming curves lifted with the parameterization (red). Since our method relies only on the 3D curves (black), it successfully generates a mesh despite these inconsistencies.*
 
-![Figure 3. Parametric domain of a patch with its 2D trimming curves. Although all curves are intended to form simple loops, approximation errors cause unintended intersections and artifacts.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-3-p002.png)
+![Figure 3. Parametric domain of a patch with its 2D trimming curves. Although all curves are intended to form simple loops, approximation errors cause unintended intersections and artifacts.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-3-p002.png)
 
 *Figure 3. Parametric domain of a patch with its 2D trimming curves. Although all curves are intended to form simple loops, approximation errors cause unintended intersections and artifacts.: Parametric domain of a patch with its 2D trimming curves. Although all curves are intended to form simple loops, approximation errors cause unintended intersections and artifacts.*
 
@@ -53,7 +53,7 @@ Repair. Stitching per-patch meshes involves 'repairing' the mesh between trims, 
 
 Bottom-up methods. The open source softwares GMsh [Geuzaine and Remacle 2009] and OCCT [Open Cascade SAS 2011], and the method from Li et al. [2025] implement bottom-up approaches for triangulating or quadrangulating [Reberol et al. 2021] B-Reps. That is, they linearize the boundary curves between patches and then triangulate each patch to match those linearized boundaries, triv ially guaranteeing that the boundaries between curves conform to one another. This triangulation process requires using the para metric trims as the boundary of a \(2 D\) triangulation algorithm like constrained Delaunay triangulation [Paul Chew 1989; Shewchuk 1996] or advancing front methods [Liu et al. 2024; Lo 1985; Peraire et al. 1987], but because the parametric trim curves are truncated these boundaries can be difficult to mesh due to unfortunate fea tures like self-intersections or poor sampling (Figure 3), resulting in challenges during triangulation. Although our approach prioritizes
 
-![Figure 4. A B-Rep contains topology, a combinatorial structure in which faces are bounded by loops of edges and edges by vertices, and geometry, which embeds these entities as 3D surfaces, curves, and points.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-4-p004.png)
+![Figure 4. A B-Rep contains topology, a combinatorial structure in which faces are bounded by loops of edges and edges by vertices, and geometry, which embeds these entities as 3D surfaces, curves, and points.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-4-p004.png)
 
 *Figure 4. A B-Rep contains topology, a combinatorial structure in which faces are bounded by loops of edges and edges by vertices, and geometry, which embeds these entities as 3D surfaces, curves, and points.: A B-Rep contains topology, a combinatorial structure in which faces are bounded by loops of edges and edges by vertices, and geometry, which embeds these entities as 3D surfaces, curves, and points.*
 
@@ -61,15 +61,15 @@ Bottom-up methods. The open source softwares GMsh [Geuzaine and Remacle 2009] an
 
 A \(b\)-edge is an oriented topological entity defined by an ordered pair of b-vertices \(\left(v_{1}^{b}, v_{2}^{b}\right)\) and incident to one or more b-faces. A \(b\)-face has a unique outer b-loop \(\ell_{O}^{b}\) and may contain a collection of \(k\) inner b-loops \(\left(\ell_{1}^{b}, \ldots, \ell_{k}^{b}\right)\) representing holes. Each \(b\)-loop is a closed sequence of oriented b-edges \(\left(e_{1}^{b}, \ldots, e_{n}^{b}\right)\). For instance, a cube has 8 b-vertices, 12 b-edges, and 6 b-faces, all connected to obtain the correct topology (Figure 6).
 
-![Figure 5. Overview of the topological entities and their relationships.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-5-p004.png)
+![Figure 5. Overview of the topological entities and their relationships.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-5-p004.png)
 
 *Figure 5. Overview of the topological entities and their relationships.: Overview of the topological entities and their relationships.*
 
-![Figure 6. B-Rep topology of a cube. The same b-vertices and b-edges are shown with the same color, highlighting the correspondence between b-vertices, b-edges, b-loops, and b-faces.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-6-p004.png)
+![Figure 6. B-Rep topology of a cube. The same b-vertices and b-edges are shown with the same color, highlighting the correspondence between b-vertices, b-edges, b-loops, and b-faces.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-6-p004.png)
 
 *Figure 6. B-Rep topology of a cube. The same b-vertices and b-edges are shown with the same color, highlighting the correspondence between b-vertices, b-edges, b-loops, and b-faces.: B-Rep topology of a cube. The same b-vertices and b-edges are shown with the same color, highlighting the correspondence between b-vertices, b-edges, b-loops, and b-faces.*
 
-![Figure 7. Overview of the geometrical entities.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-7-p004.png)
+![Figure 7. Overview of the geometrical entities.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-7-p004.png)
 
 *Figure 7. Overview of the geometrical entities.: Overview of the geometrical entities.*
 
@@ -109,7 +109,7 @@ The core idea of our algorithm is to embed the boundary of a disk onto a disk, w
 
 Yunran Zhou, Daniel Lint, Natisen Izadyar, Michael lao, Daniele ranozzo, and leseo schne
 
-![Figure 8. Overview of our five-stage algorithm](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-8-p006.png)
+![Figure 8. Overview of our five-stage algorithm](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-8-p006.png)
 
 *Figure 8. Overview of our five-stage algorithm: we start by sampling every primitive, snapping curves to vertices, and embedding them on face meshes. We then stitch the trimmed meshes to obtain a topologically valid surface mesh, which we finally remesh to improve element quality.*
 
@@ -152,7 +152,7 @@ Output: Mesh 𝑀 𝑘 with all loops embedded as mesh edge chains
 
 - 13: return 𝑀 𝑘
 
-![Figure 9. Overview of our tracing algorithm](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-9-p006.png)
+![Figure 9. Overview of our tracing algorithm](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-9-p006.png)
 
 *Figure 9. Overview of our tracing algorithm: we start by projecting two points, trace an edge chain on the mesh using Dijkstra’s algorithm, and repeat this process for each successive vertex.*
 
@@ -162,7 +162,7 @@ algorithm 2 EmbedLoop
 Input: Mesh 𝑀 (topological disk); b-loop ℓ = { 𝑒 𝑏 𝑖 } 𝑛 𝑖 = 1 Output: Mesh 𝑀 with ℓ embedded as a simple cycle 1: Initialize forbidden edge set F ← 𝜕𝑀 2: Initialize embedded cycle Γ ←∅ 3: for 𝑖 ← 1 to 𝑛 do 4: Let 𝑒 𝑏 𝑖 = ( 𝑣 𝑏 𝑎 , 𝑣 𝑏 𝑏 ) with sampled points { 𝑣 𝑒 𝑖,𝑗 } 𝑚 𝑗 = 1 5: Project 𝑣 𝑏 𝑎 onto 𝑀 and denote the mesh vertex by 𝑠 6: for 𝑗 ← 2 to 𝑚 do 7: Project 𝑣 𝑒 𝑖,𝑗 into 𝑀 ; call it 𝑒 8: 𝜋 ← shortest path from 𝑠 to 𝑒 on the edge graph of 𝑀 avoiding F 9: Γ ← Γ ∪ 𝜋 10: F ← F ∪ 𝜋 11: Enforce a simplicial embedding of F by local refinement [Zint et al. 2025] 12: 𝑠 ← 𝑒 13: end for 14: end for 15: Cut 𝑀 along Γ , yielding components ( 𝑀 1 , 𝑀 2 ) 16: if KeepDisk then 17: 𝑀 ← disk component among { 𝑀 1 , 𝑀 2 } 18: else 19: 𝑀 ← complementary component 20: end if 21: return 𝑀
 ```
 
-![Figure 10. Overview of snapping](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-10-p007.png)
+![Figure 10. Overview of snapping](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-10-p007.png)
 
 *Figure 10. Overview of snapping: after we embed the b-edge ( 𝑣 𝑘 , 𝑣 𝑙 ) onto the surface mesh, we snap its vertices to the target curve, and distribute the resulting snapping displacement over the mesh (green arrows), leading to a surface that conforms to the b-edge geometry.*
 
@@ -180,7 +180,7 @@ After all loops have been embedded, we restore the original B-Rep topology, whic
 
 The result of the previous stage is a collection of trimmed meshes, one per b-face, whose boundaries are topologically consistent but discretized with different numbers of vertices. Additionally, every boundary edge \(e_{e}^{j}\) is associated with an input b-edge \(e_{j}^{b}\), and its endpoints have a corresponding parametric value. That is, for the edge \(e_{e}^{j}=\left\{v_{k}, v_{l}\right\}\), the two vertices \(v_{k}\) and \(v_{l}\) have the associated parameters \(t_{k}\) and \(t_{l}\) on the curve attached to the b-edge \(e_{j}^{b}\). If \(v_{k}\) is
 
-![Figure 11. After embedding, a b-edge has a different number of vertices on the two sides. We refine it (red) to obtain a conforming mesh.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-11-p007.png)
+![Figure 11. After embedding, a b-edge has a different number of vertices on the two sides. We refine it (red) to obtain a conforming mesh.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-11-p007.png)
 
 *Figure 11. After embedding, a b-edge has a different number of vertices on the two sides. We refine it (red) to obtain a conforming mesh.: After embedding, a b-edge has a different number of vertices on the two sides. We refine it (red) to obtain a conforming mesh.*
 
@@ -194,7 +194,7 @@ The result of the previous stages is a mesh whose topology exactly matches the i
 
 Topology Preservation. To preserve our topological guarantees, we restrict remeshing operations to prevent any changes in mesh
 
-![Figure 12. Example of a mesh before (left) and after remeshing (right).](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-12-p008.png)
+![Figure 12. Example of a mesh before (left) and after remeshing (right).](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-12-p008.png)
 
 *Figure 12. Example of a mesh before (left) and after remeshing (right).: Example of a mesh before (left) and after remeshing (right).*
 
@@ -214,7 +214,7 @@ Fold-overs. We prevent fold-overs by rejecting an edge flip if it increases the 
 
 The previously described algorithm produces a mesh with the same topology as the input B-Rep; however, the embedding procedure, the subsequent projections, and stitching may deviate significantly from the B-Rep geometry. To improve both runtime and geometric accuracy, we introduce several heuristic accelerations (Section 5.2). These heuristics do not affect correctness: if either heuristic fails its validation checks, we automatically revert to the topology-preserving
 
-![Figure 13. Handling periodic patches. We first stitch the mesh (double lines) to form a conforming periodic surface. We then trace b-edges as usual, while avoiding tracing repeated b-edges (orange) more than once.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-13-p008.png)
+![Figure 13. Handling periodic patches. We first stitch the mesh (double lines) to form a conforming periodic surface. We then trace b-edges as usual, while avoiding tracing repeated b-edges (orange) more than once.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-13-p008.png)
 
 *Figure 13. Handling periodic patches. We first stitch the mesh (double lines) to form a conforming periodic surface. We then trace b-edges as usual, while avoiding tracing repeated b-edges (orange) more than once.: Handling periodic patches. We first stitch the mesh (double lines) to form a conforming periodic surface. We then trace b-edges as usual, while avoiding tracing repeated b-edges (orange) more than once.*
 
@@ -228,7 +228,7 @@ Outer loop tracing. In our experience, most outer loops coincide with the bounda
 
 Periodic patches. Since we rely on closest-point projection, when two regions of \(M_{k}\) are close in \(\mathbb{R}^{3}\) but far apart along the surface or not adjacent in the mesh connectivity, as is common for periodic b-faces, the projection may alternate between geometrically nearby but topologically distant locations, producing a "zig-zag" (Figure 16, bottom). Additionally, repeatedly tracing identical b-edges can lead to unnecessary mesh refinement and poor geometric quality. We therefore devise a heuristic that avoids retracing vertices and edges that have already been embedded. If the parametric surface asso ciated with the b-face is periodic, we first modify the topology of
 
-![Figure 14. Average runtime distribution of the individual stages for the two datasets.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-14-p009.png)
+![Figure 14. Average runtime distribution of the individual stages for the two datasets.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-14-p009.png)
 
 *Figure 14. Average runtime distribution of the individual stages for the two datasets.: Average runtime distribution of the individual stages for the two datasets.*
 
@@ -246,7 +246,7 @@ We evaluate our method on real-world CAD data drawn from two datasets: one chunk
 
 Only 317 (i.e., around 3%) models did not terminate within the imposed time and memory limits. In all such cases, increasing the available resources allowed the computation to complete successfully, indicating that failures are due to resource limits rather than algorithmic breakdowns.
 
-![Figure 15. Histogram of the geometric error relative to the bounding box diagonal.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-15-p009.png)
+![Figure 15. Histogram of the geometric error relative to the bounding box diagonal.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-15-p009.png)
 
 *Figure 15. Histogram of the geometric error relative to the bounding box diagonal.: Histogram of the geometric error relative to the bounding box diagonal.*
 
@@ -266,7 +266,7 @@ Topology. Our method robustly handles non-manifold loop configurations commonly 
 
 Geometry. In the evaluated datasets, we encounter models whose parametric domains have extremely small area (below \(10^{-14}\) ) or are degenerate. Such cases are particularly challenging for meth ods that rely on geometric tolerances or robust inversion of the parameterization. Our method remains robust for these cases. To avoid numerical issues during initial surface sampling, we pad the
 
-![Figure 16. Example of a B-Rep model run with and without heuristics. Both meshes are topologically valid; however, using the full pipeline yields a more geometrically accurate model.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-16-p010.png)
+![Figure 16. Example of a B-Rep model run with and without heuristics. Both meshes are topologically valid; however, using the full pipeline yields a more geometrically accurate model.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-16-p010.png)
 
 *Figure 16. Example of a B-Rep model run with and without heuristics. Both meshes are topologically valid; however, using the full pipeline yields a more geometrically accurate model.: Example of a B-Rep model run with and without heuristics. Both meshes are topologically valid; however, using the full pipeline yields a more geometrically accurate model.*
 
@@ -291,15 +291,15 @@ These properties lead to higher computational cost than competing methods: we be
 
 There are two main avenues of work that we believe are interesting: (1) we wonder if similar topology first approaches could also be applied to the CAD kernel itself, where the current numerical methods used to compute intersections and trims could be complemented by a stronger topological prior (for example, the genus of the intersection between two patches has to be 1) to obtain more
 
-![Figure 17. A large B-Rep model with fine details is correctly meshed by our method.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-17-p011.png)
+![Figure 17. A large B-Rep model with fine details is correctly meshed by our method.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-17-p011.png)
 
 *Figure 17. A large B-Rep model with fine details is correctly meshed by our method.: A large B-Rep model with fine details is correctly meshed by our method.*
 
-![Figure 18. B-Rep with non-manifold b-loops successfully meshed by our method.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-18-p011.png)
+![Figure 18. B-Rep with non-manifold b-loops successfully meshed by our method.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-18-p011.png)
 
 *Figure 18. B-Rep with non-manifold b-loops successfully meshed by our method.: B-Rep with non-manifold b-loops successfully meshed by our method.*
 
-![Figure 19. B-Rep with extremely small parametric domains (close-up) suc- cessfully meshed by our method. Although several patches have nearly degenerate parameterizations, the resulting surface mesh remains valid and topologically correct.](/Users/evanthayer/Projects/stepview/docs/2026_topology_first_brep_meshing/figures/figure-19-p011.png)
+![Figure 19. B-Rep with extremely small parametric domains (close-up) suc- cessfully meshed by our method. Although several patches have nearly degenerate parameterizations, the resulting surface mesh remains valid and topologically correct.](/Users/evanthayer/Projects/paperx/docs/2026_topology_first_brep_meshing/figures/figure-19-p011.png)
 
 *Figure 19. B-Rep with extremely small parametric domains (close-up) suc- cessfully meshed by our method. Although several patches have nearly degenerate parameterizations, the resulting surface mesh remains valid and topologically correct.: B-Rep with extremely small parametric domains (close-up) successfully meshed by our method. Although several patches have nearly degenerate parameterizations, the resulting surface mesh remains valid and topologically correct.*
 

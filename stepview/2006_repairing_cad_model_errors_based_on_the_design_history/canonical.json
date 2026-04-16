@@ -669,7 +669,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Keywords: Boundary representation; CAD model; Correction; Design history; Interoperability www.elsevier.com locate cad"
+            "text": "For users of CAD data, few things are as frustrating as receiving unusable, poor quality data. Users often waste time fixing or rebuilding such data from scratch on the basis of paper drawings. While previous studies use the boundary representation (B-Rep) of CAD models, we propose an approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule-based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models without translating them to a B-Rep shape, and it also preserves parametric information."
           }
         ]
       },
@@ -678,32 +678,20 @@
           "page": 1,
           "bbox": {
             "x0": 42.52,
-            "y0": 373.56,
-            "x1": 346.69,
-            "y1": 380.51,
-            "width": 304.17,
-            "height": 6.95
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 468.17,
-            "y0": 112.89,
-            "x1": 562.56,
-            "y1": 119.84,
-            "width": 94.39,
-            "height": 6.95
+            "y0": 283.89,
+            "x1": 562.53,
+            "y1": 359.52,
+            "width": 520.01,
+            "height": 75.63
           },
           "engine": "docling"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

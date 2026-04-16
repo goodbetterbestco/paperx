@@ -6,7 +6,7 @@
 
 ## Abstract
 
-Annali della Scuola Normale Superiore di Pisa, Classe di Scienze 4 e série , tome 21, n o 3 (1994), p. 311-341 < http: www.numdam.org item?id=ASNSP_1994_4_21_3_311_0 > ©Scuola Normale Superiore, Pisa, 1994, tous droits réservés. L'accès aux archives de la revue « Annali della Scuola Normale Superiore di Pisa, Classe di Scienze » ( http: www.sns.it it edizioni riviste annaliscienze ) implique l'accord avec les conditions générales d'utilisation ( http: www.numdam.org conditions ). Toute utilisation commerciale ou impression systématique est constitutive d'une infraction pénale. Toute copie ou impression de ce fichier doit contenir la présente mention de copyright. Article numérisé dans le cadre du programme Numérisation de documents anciens mathématiques http: www.numdam.org
+[Generated abstract from introduction.] This paper studies when a curve with cusps and normal crossings on a surface can be realized as the apparent contour of a smooth surface under a generic map. The author reduces the problem to constructing local excellent extensions near the critical set together with immersive extensions of the resulting boundary curves, extending Blank's word method to curves with cusps and crossings. A combinatorial algorithm based on minimal assemblages is then used to classify excellent extensions up to right equivalence and to derive necessary and sufficient conditions for realizing prescribed contours as apparent contours of embedded generic surfaces in line bundles.
 
 ## Introduction
 
@@ -84,7 +84,7 @@ We say that R is a system of segments if the following holds as well:
 Given a set of segments for the \( k \)-curve \( f \), fix a neighborhood \( U_{\infty} \) of the point \( \infty \) such that \( U_{\infty} \cap \Gamma=\varnothing \). For each \( r \in R \) fix an orientable neighborhood
 ```
 
-![Figure I](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-1-p005.png)
+![Figure I](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-1-p005.png)
 
 *Figure I: Fig. I*
 
@@ -182,15 +182,15 @@ Now we prove a lemma, we will use in § 1. Let us give one more definition:
 
 Definition 0.21. We say that a generic \(k\)-curve has a curl if there exist \(t_{0}, t_{1} \in \mathbf{S}^{1}\) such that \(f\left(t_{0}\right)=f\left(t_{1}\right)\) and \(\left.f\right|_{\left[t_{0}, t_{1}\right]}\) bounds a disk \(D \subset \mathbf{N}\) such that
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-4-p009.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-4-p009.png)
 
 *Figure 4: *
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-2-p009.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-2-p009.png)
 
 *Figure 2: LEMMA 0.22. Suppose the k-curve f has a positive curl, then for every word w defined by a reduced system of segments.~m(w) _ 0.*
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-3-p009.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-3-p009.png)
 
 *Figure 3: *
 
@@ -210,11 +210,11 @@ PROOF. Take the folding side of the map (see Fig. 4 and [18]). D Local extension
 
 Definition 1.4. We call D-deformation of the first kind of f the generic 2-curve D = fn II fD,2 obtained by doubling f and deforming its cusps as suggested in Fig. 5. Fix a point per which is neither a crossing nor a cusp, and call D-deformation of the second kind the generic 1-curve f ** obtained by modifying In in a neighborhood of p as suggested in Fig. 6.
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-5-p010.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-5-p010.png)
 
 *Figure 5: *
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-6-p010.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-6-p010.png)
 
 *Figure 6: *
 
@@ -236,15 +236,15 @@ Proposition 1.11. Let \(f: \coprod_{h=1}^{k} \mathbf{S}^{1} \rightarrow \mathbf{
 
 Proof. If \(F \stackrel{r}{\sim} G\) they obviously induce the same deformation pair. Suppose \(F\) and \(G\) induce the same pair. Clearly it is enough to prove the thesis for a CN 1-curve. Let \(S\) be the domain of \(F\) and \(G\). By the previous lemma we can take finite open covers, \(\left\{U_{i}\right\}_{i=1, \ldots, n},\left\{V_{i}\right\}_{i=1, \ldots, n}\) of \(\mathbf{S}^{1}\) and diffeomorphisms \(\Phi_{i}: U_{i} \rightarrow V_{i}\) such that \(\left.F\right|_{U_{i}}=\left.G\right|_{V_{i}} \circ \Phi_{i}\). Lifting all maps to the universal covering of \(S\), we see that the condition that \(F\) and \(G\) induce the same deformation set, implies that all uniquely determined diffeomorphisms are orientation-preserving [resp. reversing]. To conclude the proof it is enough to choose all the other ones to be orientation-preserving [resp. reversing] and paste them together. Q Rotation number. Let \(f: \coprod_{h=1}^{k} \mathbf{S}^{1} \rightarrow \mathbf{N}\) be a sided \(\mathrm{CN} k\)-curve, and let \(X\) be a vector field on \(\mathbf{N}\) with no zeros on \(\Gamma\). Denote by \(f^{*}\) the generic \(k\)-curve obtained by deforming all cusps in the way suggested in Fig. 7. With the just introduced notations, \(f^{*}=\coprod_{h=1}^{k}\left(f_{h}\right)_{c, 1}^{*}\). Since a deformation of \(f\) has a side, canonically induced by the side of \(f\) (Fig. 8), we can give the following: number \(R_{X}(f)=R_{X}\left(f^{*}\right)\), where \(f^{*}\) is endowed with the side induced by \(f\).
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-7-p012.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-7-p012.png)
 
 *Figure 7: *
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-8-p012.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-8-p012.png)
 
 *Figure 8: *
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-9-p012.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-9-p012.png)
 
 *Figure 9: *
 
@@ -290,7 +290,7 @@ We say that \(R\) is a system of segments for \(f\) if the following holds as we
 
 Definition 1.19. Suppose \(f\) is sided, and let \(r \in R\). We say \(p \in R \cap \Gamma\) is positive if and only if either \(p\) is not a cusp and \(r\) crosses \(\Gamma\) from the left to the right or \(p\) is a positive cusp; otherwise we say \(p\) is negative.
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-10-p014.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-10-p014.png)
 
 *Figure 10: *
 
@@ -310,7 +310,7 @@ Proposition 1.26. Let \(R\) be a system of segments for \(f ;\) then \(R\) is a 
 
 Proof. Clearly, \(R\) is a set of segment for \(f_{(D, H)}\) (the deformation can be done in such a way that \(R\) is a set of segments for \(f_{(D, H)}\) ). Each connected components of \(\mathbf{N}-\Gamma_{(D, H)}\) either is essentially a component of \(\mathbf{N}-\Gamma\) or is generated by the deformation. At least one segment starts from each component of the first kind. The new ones are bounded by either the curl around some cusp or by parallel branches of \(\Gamma_{(D, H)}\). In the first case the segment which starts from the corresponding cusp, starts from the new component, in the second case, it is easily seen that the new component is not negative (see Fig. 11), hence condition (5') holds.
 
-![Figure 11](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-11-p015.png)
+![Figure 11](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-11-p015.png)
 
 *Figure 11: *
 
@@ -466,11 +466,11 @@ Let \(\varphi: M \rightarrow U\) be a diffeomorphism such that \(\varphi(\{y=0\}
 
 LEMMA 2.17. Let t E [0, 1) be a cusp point (with the just said notations, either t = ti or t = BJ) and let Dj¡(t), Dj3(t) be the three components having (t, 0) in their closure. Let Dj¡(t) be the one opposed to the edge starting at (t, 0) (see Fig. 12); then: either Ci(j2(f)) or -
 
-![Figure 12](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-12-p025.png)
+![Figure 12](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-12-p025.png)
 
 *Figure 12: *
 
-![Figure 13](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-13-p025.png)
+![Figure 13](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-13-p025.png)
 
 *Figure 13: *
 
@@ -506,15 +506,15 @@ Lemma 2.19. The mapping \(\left(F, h_{1}\right): S^{\prime} \cup \bigcup_{\bar{t
 
 Proof. By the way we extended \(h_{1}\), the map is clearly an immersion. By contradiction, let \(x_{1}, x_{2} \in S^{\prime} \cup \bigcup_{\tilde{t}}[\bar{t}-\delta, \bar{t}+\delta] \times[-1,1]\) be such that \(F\left(x_{1}\right)=F\left(x_{2}\right)\) \([\bar{t}-\delta, \bar{t}+\delta] \times[-1,1]\) is injective and (2.3), we have that \(x_{1} \in[\bar{t}-\delta, \bar{t}+\delta] \times[-1,1]\) and \(x_{2} \in S^{\prime}\). Furthermore \(h_{1}\) assumes constant value in a neighborhood of \(x_{1}\); let \(C_{i}\) be the component of \(S^{\prime}-H(F)\) containing it, this means that \(F\left(C_{i}\right)\) contains the cusp corresponding to \((\bar{t}, 0)\), hence \(F\left(C_{i}\right) \cap F\left(D_{j_{l}(\bar{t})}\right) \neq \varnothing\) for all \(l=1,2,3\). Use twice (A) and get either \(i<m(\bar{t})=\min _{l} i\left(j_{l}(\bar{t})\right)\) or \(i>M(\bar{t})=\max _{l} i\left(j_{l}(\bar{t})\right)\). Using (2.2) and the fact that \(h_{1}\left(x_{2}\right)=i\), we get a contradiction.
 
-![Figure 14](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-14-p026.png)
+![Figure 14](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-14-p026.png)
 
 *Figure 14: *
 
-![Figure 15](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-15-p026.png)
+![Figure 15](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-15-p026.png)
 
 *Figure 15: *
 
-![Figure 16](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-16-p026.png)
+![Figure 16](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-16-p026.png)
 
 *Figure 16: *
 
@@ -594,7 +594,7 @@ $$
 \forall t \neq 1 \quad \begin{cases}\gamma_{1}^{\prime}(t) \in C_{1}^{\prime}, & \gamma_{1}^{\prime \prime}(t) \in C_{2}^{\prime}, \tag{2}\\ \gamma_{2}^{\prime}(t) \in C_{3}^{\prime}, & \gamma_{2}^{\prime \prime}(t) \in C_{4}^{\prime} ;\end{cases}
 $$
 
-![Figure 17](/Users/evanthayer/Projects/stepview/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-17-p030.png)
+![Figure 17](/Users/evanthayer/Projects/paperx/docs/1994_surfaces_with_assigned_apparent_contour/figures/figure-17-p030.png)
 
 *Figure 17: *
 

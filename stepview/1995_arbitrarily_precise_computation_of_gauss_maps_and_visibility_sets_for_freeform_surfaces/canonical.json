@@ -448,125 +448,257 @@
         "spans": [
           {
             "kind": "text",
-            "text": "PDF Download 218013.218073.pdf 07 April 2026 Total Citations: 22 Total Downloads: 497 May 17-19, 1995 . . Published: 01 December 1995 SIGGRAPH Citation in BibTeX format 3SOLID95: Third ACM SIGGRAPH Symposium on Solid Modeling &amp; Applications Conference Sponsors: SIGGRAPH"
+            "text": "The need to compute visibility and accessibility of surfaces occurs in a broad range of applications from computer aided design and manufacturing to computer graphics and vision. Surface-surface intersection is an essential task in modeling systems that support boolean operations. Recently, Gauss maps and visibility sets were shown [3, 4, 20, 21] to be helpful in robustly solving the above problems. This paper presents a symbolic based method to both compute and exploit the Gauss map of a freeform surface or a model consisting of several, possibly trimmed, freeform surfaces. Unlike other approaches to the computation of the Gauss map, the method presented here can be made arbitrarily precise for piecewise polynomial and rational surfaces. The Gauss map is then employed to compute the set of views from which a freeform surface is completely locally visible."
           }
         ]
       },
       "source_spans": [
         {
-          "page": 1,
+          "page": 2,
           "bbox": {
-            "x0": 494.12,
-            "y0": 69.87,
-            "x1": 549.29,
-            "y1": 102.59,
-            "width": 55.17,
-            "height": 32.72
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 463.5,
-            "y0": 175.0,
-            "x1": 516.0,
-            "y1": 183.0,
-            "width": 52.5,
-            "height": 8.0
+            "x0": 72.5,
+            "y0": 313.0,
+            "x1": 268.0,
+            "y1": 323.5,
+            "width": 195.5,
+            "height": 10.5
           },
           "engine": "mathpix"
         },
         {
-          "page": 1,
+          "page": 2,
           "bbox": {
-            "x0": 494.12,
-            "y0": 106.1,
-            "x1": 494.12,
-            "y1": 106.1,
-            "width": 0.0,
-            "height": 0.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 494.12,
-            "y0": 111.1,
-            "x1": 494.12,
-            "y1": 111.1,
-            "width": 0.0,
-            "height": 0.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 463.7,
-            "y0": 114.88,
-            "x1": 549.56,
-            "y1": 120.68,
-            "width": 85.86,
-            "height": 5.8
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 463.5,
-            "y0": 211.0,
-            "x1": 498.0,
-            "y1": 218.0,
-            "width": 34.5,
-            "height": 7.0
+            "x0": 72.5,
+            "y0": 323.0,
+            "x1": 268.0,
+            "y1": 333.5,
+            "width": 195.5,
+            "height": 10.5
           },
           "engine": "mathpix"
         },
         {
-          "page": 1,
+          "page": 2,
           "bbox": {
-            "x0": 463.7,
-            "y0": 133.16,
-            "x1": 544.21,
-            "y1": 138.77,
-            "width": 80.51,
-            "height": 5.61
+            "x0": 72.5,
+            "y0": 333.0,
+            "x1": 269.0,
+            "y1": 343.5,
+            "width": 196.5,
+            "height": 10.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
-          "page": 1,
+          "page": 2,
           "bbox": {
-            "x0": 463.7,
-            "y0": 151.44,
-            "x1": 571.15,
-            "y1": 173.8,
-            "width": 107.45,
-            "height": 22.36
+            "x0": 72.5,
+            "y0": 342.5,
+            "x1": 269.0,
+            "y1": 353.0,
+            "width": 196.5,
+            "height": 10.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
-          "page": 1,
+          "page": 2,
           "bbox": {
-            "x0": 463.7,
-            "y0": 203.84,
-            "x1": 531.53,
-            "y1": 217.92,
-            "width": 67.83,
-            "height": 14.08
+            "x0": 72.5,
+            "y0": 352.5,
+            "x1": 269.5,
+            "y1": 362.0,
+            "width": 197.0,
+            "height": 9.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 362.5,
+            "x1": 268.0,
+            "y1": 373.0,
+            "width": 195.5,
+            "height": 10.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 372.5,
+            "x1": 269.5,
+            "y1": 383.0,
+            "width": 197.0,
+            "height": 10.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 382.0,
+            "x1": 269.5,
+            "y1": 394.0,
+            "width": 197.0,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 392.5,
+            "x1": 170.5,
+            "y1": 403.5,
+            "width": 98.0,
+            "height": 11.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 405.5,
+            "x1": 269.5,
+            "y1": 417.5,
+            "width": 197.0,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 415.5,
+            "x1": 270.5,
+            "y1": 427.0,
+            "width": 198.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 426.5,
+            "x1": 269.5,
+            "y1": 436.0,
+            "width": 197.0,
+            "height": 9.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 435.0,
+            "x1": 269.5,
+            "y1": 447.0,
+            "width": 197.0,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 445.5,
+            "x1": 269.5,
+            "y1": 457.0,
+            "width": 197.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 455.0,
+            "x1": 269.5,
+            "y1": 466.5,
+            "width": 197.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 465.0,
+            "x1": 269.5,
+            "y1": 476.5,
+            "width": 197.0,
+            "height": 11.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 476.0,
+            "x1": 161.0,
+            "y1": 485.0,
+            "width": 88.5,
+            "height": 9.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 488.0,
+            "x1": 270.0,
+            "y1": 500.0,
+            "width": 197.5,
+            "height": 12.0
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 498.0,
+            "x1": 269.5,
+            "y1": 508.5,
+            "width": 197.0,
+            "height": 10.5
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 72.5,
+            "y0": 508.5,
+            "x1": 161.5,
+            "y1": 519.5,
+            "width": 89.0,
+            "height": 11.0
+          },
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

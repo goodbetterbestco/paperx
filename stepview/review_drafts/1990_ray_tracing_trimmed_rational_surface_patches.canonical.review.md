@@ -7,7 +7,7 @@ Tomoyuki Nishita*, Thomas W. Sederberg, Masanori Kakimoto, tional Geometry, Obje
 
 ## Abstract
 
-Numerical solutions to the ray patch intersection problem include those developed by Toth [18], Sweeney and Bartels [17), and This paper presents a new algorithm for computing the points at which a ray intersects Joy and Bhetanabhotla [4]. Toth's algorithm is based on interval , rational Bezier surface patch, and also an algorithm for determining it an interser ion point lies within a region trimmed by piecewise Bézier curves. Both algorithm cial preprocessing. Categories and Subject Descriptors: I.3.3 [ Computer Graphics): Picture Image Generation; I.3.5 [Computer Graphics): Computational Geometry and Object Modeling; 1.3.7 [Computer Graphics]: Three-Dimensional Graphics and Realism. General Terms: Algorithms Additional Key Words and Phrases: Computer graphics, ray trac- ing, visible surface algorithms, parametric surfaces. 1 INTRODUCTION The history, theory and capabilities of ray tracing are well docu- surface patches. Specifically, we present an algorithm for computing all points at which a ray intersects a rational Bézier surface patch of any degree. We also describe an algorithm for determining if a mented [3], [5]. This paper deals with the ray tracing of parametric point lies within a trimmed region of the patch. We define a trimmed curves in the parameter plane of the patch. region to be an area bounded by piecewise (possibly rational) Bézier 1.1 Ray-Patch Algorithms Solutions to the ray patch intersection problem can be categorized roughly as being based on subdivision, algebraic or numerical techniques. Subdivision approaches are described by Whitted [19], Rogers [10] and Woodward (20]. These algorithms harness the convex hull hull of the control points, it does not intersect the patch. Through property of Bézier surfaces: if the ray does not intersect the convex recursively subdividing the patch and checking convex hulls, the intersection points can be computed at a linear convergence rate, amounting to a binary search. Whitted's algorithm operates in three dimensions, whereas Rogers and Woodward map the problem to two dimensions. which bounds on the surface and its first derivatives can be obtained. Newton iteration. It works robustly on any parametric surface for Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19]) trol mesh using the Oslo algorithm until the mesh closely approxi- based on the convex hull property (that is, subdivision based algorithms) perform a linearly converging binary search. Bézier clipping uses the convex hull property in a more powerful manner, by determining parameter ranges which are guaranteed to not include models, rendering can be performed using conventional construc- points of intersection. Variations of this concept have proven profitable in algorithms for algebraic curve intersection( 12] and planar parametric curve intersection[15]. Bézier clipping has the flavor of a geometrically based interval Newton method, and thus might be categorized as partly a subdivision based algorithm and partly a numerical method. 1.2 Trimmed Patch Algorithms Previous approaches to the rendering of trimmed patches include adaptive forward differencing [16] and polygonization [9]. Neither of these approaches adapts directly to ray tracing (unless one were to polygonize the patch[9] and then ray trace the polygons). If trimming is caused by a boolean operation involving solid geometric tive solid geometry methods[11]. Our algorithm renders trimmed patches defined in a boundary representation, by determining if a point on the patch lies inside or outside a trimmed region. One contribution of this paper is a fast, robust algorithm (based on Bézier clipping) for determining if a ray intersects a collection of trimming curves an even or odd number of times. 1.3 Paper Overview Section 2 introduces Bézier clipping and applies it to the problem of point classification for trimmed patches. Section 3 describes our ray patch intersection algorithm, and performance comparisons are presented in section 4.
+This paper presents a new algorithm for computing the points at which a ray intersects a rational Bézier surface patch, and also an algorithm for determining if an intersection point lies within a region trimmed by piecewise Bézier curves. Both algorithms are based on a recent innovation known as Bézier clipping, described herein. The intersection algorithm is faster than previous methods for which published performance data allow reliable comparison. It robustly finds all intersections without requiring special preprocessing.
 
 ## Introduction
 
@@ -67,31 +67,31 @@ $$
 \begin{equation*} \mathbf{C}(u)=\frac{\sum_{i=0}^{n} w_{i} \mathbf{C}_{i} B_{i}^{n}(u)}{\sum_{i=0}^{n} w_{i} B_{i}^{n}(u)} \tag{5} \end{equation*}
 $$
 
-![Figure 1. Inminico raica](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1-p003.png)
+![Figure 1. Inminico raica](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1-p003.png)
 
 *Figure 1. Inminico raica: Figure 1. Inminico raica Trimmed Patch*
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2-p003.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2-p003.png)
 
 *Figure 2: Trimming curves*
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-3-p003.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-3-p003.png)
 
 *Figure 3: Quadrants*
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-4-p003.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-4-p003.png)
 
 *Figure 4: Bézier curve/line intersection*
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-5-p003.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-5-p003.png)
 
 *Figure 5: Explicit Bézier curve*
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-6-p003.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-6-p003.png)
 
 *Figure 6: Bézier clips per classification*
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-7-p003.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-7-p003.png)
 
 *Figure 7: Sample trimmed patch*
 
@@ -175,7 +175,7 @@ $$
 \begin{equation*} \mathbf{P}_{i j}=\left(x_{i j}, y_{i j}\right)=\left(d_{i j}^{1}, d_{i j}^{2}\right) \tag{11} \end{equation*}
 $$
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-8-p005.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-8-p005.png)
 
 *Figure 8: Projected patch P*
 
@@ -211,7 +211,7 @@ The \(D_{i_{j}}\) are shown in Figure 10. Likewise, the distance \(D(s, t)\) fro
 
 The function \(d(s, t)\) can be represented, in an ( \(s, t, d\) ) coor dinate system, as an explicit (or so-called non-parametric) surface
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-9-p005.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-9-p005.png)
 
 *Figure 9: Line L,*
 
@@ -219,7 +219,7 @@ $$
 \begin{equation*} \mathbf{P}(s, t)=\sum_{i=0}^{n} \sum_{j=0}^{m} B_{i}^{n}(s) B_{j}^{m}(t) \mathbf{P}_{i j} \tag{12} \end{equation*}
 $$
 
-![Figure 10.](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-2-p006.png)
+![Figure 10.](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-2-p006.png)
 
 *Figure 10.: Figure 10.*
 
@@ -233,25 +233,25 @@ $$
 
 Dopie i ca. Compare in eure it, in onton poin Figure 10.
 
-![Figure 10.](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-2-p006.png)
+![Figure 10.](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-10-2-p006.png)
 
 *Figure 10.: Figure 10.*
 
-![Figure I1](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-i1-p006.png)
+![Figure I1](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-i1-p006.png)
 
 *Figure I1: Top view of D (s,t) parch.*
 
-![Figure 12](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-12-p006.png)
+![Figure 12](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-12-p006.png)
 
 *Figure 12: Side view of D(s. t) patch. Top view of D(s, t) patch.*
 
 bounds the projection of the \(\mathbf{D}(s, t)\) patch. In this example, that convex hull intersects the \(s\) axis at points \(s_{\min }=2 / 5\) and \(s_{\max }=2 / 3\). We conclude that \(d(s, t) \neq 0\), and therefore \(\mathbf{P}(s, t) \neq \mathbf{0}\), for \(s<2 / 5\) and \(s>2 / 3\). The de Casteljau subdivision algorithm is applied to clip away those regions, leaving the two dimensional patch in Figure 13. This process of identifying values \(s_{\text {min }}\) and \(s_{\text {max }}\) which bound the solution set, and then subdividing off the regions \(s<s_{\text {min }}\) and \(s>s_{\max }\) will be referred to as Bézier clipping in \(s\). In an obviously similar manner, we define the process of Bézier clipping in \(t\).
 
-![Figure 13](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-13-p006.png)
+![Figure 13](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-13-p006.png)
 
 *Figure 13: first clip in s.*
 
-![Figure 14](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-14-p006.png)
+![Figure 14](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-14-p006.png)
 
 *Figure 14: Iterating to the solution.*
 
@@ -263,7 +263,7 @@ If a Bézier trim calculation determines \(s_{\text {min }}>1, s_{\text {max }}<
 
 ### 3.4 Multiple intersections
 
-![Figure 15](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-15-p007.png)
+![Figure 15](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-15-p007.png)
 
 *Figure 15: Patch domain-two intersections*
 
@@ -277,7 +277,7 @@ Bézier clipping can be used to advantage in a preprocessing step applied at the
 
 To avoid potential infinite loops due to numerical roundoff, make the adjustment \(s_{\min }=0.99 * s_{\min }\) and \(s_{\max }=0.99 * s_{\max }+0.01\) and similarly for t in computing values at which to Bézier clip. Other than the ray patch intersection algorithm, all of the other implementation details are standard. Antialiasing was performed using adaptive supersampling [5], and Murakami's voxel partitioning [8] was implemented. Shadows, reflection and refraction are dealt with in the conventional manner, using our ray-patch intersection algorithm.
 
-![Figure 16](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-16-p007.png)
+![Figure 16](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-16-p007.png)
 
 *Figure 16: Trimming to the Scan Line.*
 
@@ -293,19 +293,19 @@ It is difficult to derive precise quantitative comparisons between various ray/p
 
 It is difficult to make quantitative comparisons with the other published algorithms. Newton [17] and quasi-Newton [4] itera-
 
-![Figure 2U](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2u-p008.png)
+![Figure 2U](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-2u-p008.png)
 
 *Figure 2U: leapot encased in deformed glass cube: 39 patches, 21.3*
 
-![Figure 19](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-19-p008.png)
+![Figure 19](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-19-p008.png)
 
 *Figure 19: Chain on patch-work quilt: 4024 patches. 18 back Modified teapot: 2304 patches, 64% background, 4.0 subdivisions ray, 12.5 cpu min. (8.6 min. primary rays only) background, 5.6 subdivisions ray, 29.0 cpu min. (17.6 min. primary rays only)*
 
-![Figure 1X](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1x-p008.png)
+![Figure 1X](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-1x-p008.png)
 
 *Figure 1X: Modihed teapor: 2504 parches, 64% backeround. 4.0 Newell's teapot: 33 patches, 65% background, 5.2 subdivisions ray, 6.7 cpu min. (3.9 min. primary rays only)*
 
-![Figure 21](/Users/evanthayer/Projects/stepview/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-21-p008.png)
+![Figure 21](/Users/evanthayer/Projects/paperx/docs/1990_ray_tracing_trimmed_rational_surface_patches/figures/figure-21-p008.png)
 
 *Figure 21: House of mirrors Teapot encased in deformed glass cube: 39 patches, 21.3 cpu min on SUN SPAR Cstation I*
 

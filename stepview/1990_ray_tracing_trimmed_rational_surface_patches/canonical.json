@@ -733,7 +733,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Numerical solutions to the ray patch intersection problem include those developed by Toth [18], Sweeney and Bartels [17), and This paper presents a new algorithm for computing the points at which a ray intersects Joy and Bhetanabhotla [4]. Toth's algorithm is based on interval , rational Bezier surface patch, and also an algorithm for determining it an interser ion point lies within a region trimmed by piecewise Bézier curves. Both algorithm cial preprocessing. Categories and Subject Descriptors: I.3.3 [ Computer Graphics): Picture Image Generation; I.3.5 [Computer Graphics): Computational Geometry and Object Modeling; 1.3.7 [Computer Graphics]: Three-Dimensional Graphics and Realism. General Terms: Algorithms Additional Key Words and Phrases: Computer graphics, ray trac- ing, visible surface algorithms, parametric surfaces. 1 INTRODUCTION The history, theory and capabilities of ray tracing are well docu- surface patches. Specifically, we present an algorithm for computing all points at which a ray intersects a rational Bézier surface patch of any degree. We also describe an algorithm for determining if a mented [3], [5]. This paper deals with the ray tracing of parametric point lies within a trimmed region of the patch. We define a trimmed curves in the parameter plane of the patch. region to be an area bounded by piecewise (possibly rational) Bézier 1.1 Ray-Patch Algorithms Solutions to the ray patch intersection problem can be categorized roughly as being based on subdivision, algebraic or numerical techniques. Subdivision approaches are described by Whitted [19], Rogers [10] and Woodward (20]. These algorithms harness the convex hull hull of the control points, it does not intersect the patch. Through property of Bézier surfaces: if the ray does not intersect the convex recursively subdividing the patch and checking convex hulls, the intersection points can be computed at a linear convergence rate, amounting to a binary search. Whitted's algorithm operates in three dimensions, whereas Rogers and Woodward map the problem to two dimensions. which bounds on the surface and its first derivatives can be obtained. Newton iteration. It works robustly on any parametric surface for Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19]) trol mesh using the Oslo algorithm until the mesh closely approxi- based on the convex hull property (that is, subdivision based algorithms) perform a linearly converging binary search. Bézier clipping uses the convex hull property in a more powerful manner, by determining parameter ranges which are guaranteed to not include models, rendering can be performed using conventional construc- points of intersection. Variations of this concept have proven profitable in algorithms for algebraic curve intersection( 12] and planar parametric curve intersection[15]. Bézier clipping has the flavor of a geometrically based interval Newton method, and thus might be categorized as partly a subdivision based algorithm and partly a numerical method. 1.2 Trimmed Patch Algorithms Previous approaches to the rendering of trimmed patches include adaptive forward differencing [16] and polygonization [9]. Neither of these approaches adapts directly to ray tracing (unless one were to polygonize the patch[9] and then ray trace the polygons). If trimming is caused by a boolean operation involving solid geometric tive solid geometry methods[11]. Our algorithm renders trimmed patches defined in a boundary representation, by determining if a point on the patch lies inside or outside a trimmed region. One contribution of this paper is a fast, robust algorithm (based on Bézier clipping) for determining if a ray intersects a collection of trimming curves an even or odd number of times. 1.3 Paper Overview Section 2 introduces Bézier clipping and applies it to the problem of point classification for trimmed patches. Section 3 describes our ray patch intersection algorithm, and performance comparisons are presented in section 4."
+            "text": "This paper presents a new algorithm for computing the points at which a ray intersects a rational Bézier surface patch, and also an algorithm for determining if an intersection point lies within a region trimmed by piecewise Bézier curves. Both algorithms are based on a recent innovation known as Bézier clipping, described herein. The intersection algorithm is faster than previous methods for which published performance data allow reliable comparison. It robustly finds all intersections without requiring special preprocessing."
           }
         ]
       },
@@ -741,261 +741,93 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 274.68,
-            "y0": 143.0,
-            "x1": 516.43,
-            "y1": 164.0,
-            "width": 241.75,
-            "height": 21.0
+            "x0": 39.5,
+            "y0": 242.0,
+            "x1": 283.0,
+            "y1": 252.0,
+            "width": 243.5,
+            "height": 10.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 9.41,
-            "y0": 164.67,
-            "x1": 252.1,
-            "y1": 174.33,
-            "width": 242.69,
-            "height": 9.66
+            "x0": 39.5,
+            "y0": 251.5,
+            "x1": 282.0,
+            "y1": 261.0,
+            "width": 242.5,
+            "height": 9.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 274.68,
-            "y0": 162.94,
-            "x1": 516.43,
-            "y1": 173.33,
-            "width": 241.75,
-            "height": 10.39
+            "x0": 39.5,
+            "y0": 262.0,
+            "x1": 282.0,
+            "y1": 271.5,
+            "width": 242.5,
+            "height": 9.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 13.17,
-            "y0": 176.0,
-            "x1": 247.4,
-            "y1": 183.67,
-            "width": 234.23,
-            "height": 7.67
+            "x0": 39.0,
+            "y0": 271.0,
+            "x1": 282.0,
+            "y1": 281.0,
+            "width": 243.0,
+            "height": 10.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 10.35,
-            "y0": 225.0,
-            "x1": 63.97,
-            "y1": 232.67,
-            "width": 53.62,
-            "height": 7.67
+            "x0": 39.0,
+            "y0": 281.5,
+            "x1": 282.0,
+            "y1": 291.5,
+            "width": 243.0,
+            "height": 10.0
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 9.41,
-            "y0": 239.23,
-            "x1": 253.04,
-            "y1": 309.0,
-            "width": 243.63,
-            "height": 69.77
+            "x0": 39.0,
+            "y0": 291.5,
+            "x1": 282.0,
+            "y1": 302.0,
+            "width": 243.0,
+            "height": 10.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 9.41,
-            "y0": 308.93,
-            "x1": 253.04,
-            "y1": 362.67,
-            "width": 243.63,
-            "height": 53.74
+            "x0": 39.0,
+            "y0": 301.5,
+            "x1": 94.0,
+            "y1": 311.0,
+            "width": 55.0,
+            "height": 9.5
           },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 10.31,
-            "y0": 361.63,
-            "x1": 253.08,
-            "y1": 373.36,
-            "width": 242.77,
-            "height": 11.73
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 11.29,
-            "y0": 421.95,
-            "x1": 165.56,
-            "y1": 431.37,
-            "width": 154.27,
-            "height": 9.42
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 10.35,
-            "y0": 411.59,
-            "x1": 253.04,
-            "y1": 422.0,
-            "width": 242.69,
-            "height": 10.41
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 10.3,
-            "y0": 445.5,
-            "x1": 253.09,
-            "y1": 510.49,
-            "width": 242.79,
-            "height": 64.99
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 10.32,
-            "y0": 519.88,
-            "x1": 253.08,
-            "y1": 531.59,
-            "width": 242.76,
-            "height": 11.71
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 10.35,
-            "y0": 510.33,
-            "x1": 253.04,
-            "y1": 521.0,
-            "width": 242.69,
-            "height": 10.67
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 12.23,
-            "y0": 570.67,
-            "x1": 72.43,
-            "y1": 578.33,
-            "width": 60.2,
-            "height": 7.66
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 274.68,
-            "y0": 183.66,
-            "x1": 515.49,
-            "y1": 193.08,
-            "width": 240.81,
-            "height": 9.42
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 274.68,
-            "y0": 173.3,
-            "x1": 516.43,
-            "y1": 183.67,
-            "width": 241.75,
-            "height": 10.37
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 274.68,
-            "y0": 193.0,
-            "x1": 516.43,
-            "y1": 204.38,
-            "width": 241.75,
-            "height": 11.38
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 273.74,
-            "y0": 203.33,
-            "x1": 515.49,
-            "y1": 213.0,
-            "width": 241.75,
-            "height": 9.67
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 275.62,
-            "y0": 520.85,
-            "x1": 518.31,
-            "y1": 531.33,
-            "width": 242.69,
-            "height": 10.48
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 275.62,
-            "y0": 530.27,
-            "x1": 517.37,
-            "y1": 541.67,
-            "width": 241.75,
-            "height": 11.4
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 275.62,
-            "y0": 540.63,
-            "x1": 518.31,
-            "y1": 639.67,
-            "width": 242.69,
-            "height": 99.04
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

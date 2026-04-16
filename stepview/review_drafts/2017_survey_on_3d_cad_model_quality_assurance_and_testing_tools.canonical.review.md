@@ -6,7 +6,7 @@ González-Lluch C., Company P., Contero M., Camba J.D., Plumed R.
 
 ## Abstract
 
-González-Lluch C., Company P., Contero M., Camba J.D., & Plumed, R. (2016). A Survey on 3D CAD model quality assurance and testing tools. Computer-Aided Design . © 2016. This manuscript version is made available under the CC-BY-NC-ND 4.0 license http: creativecommons.org licenses by-nc-nd 4.0 Title: A Survey on 3D CAD Model Quality Assurance and Testing Tools
+[Generated abstract from introduction.] This survey examines model quality testing for 3D CAD models used in downstream CAD/CAM/CAE workflows, where hidden defects can obstruct simplification, interoperability, and reuse. It introduces a taxonomy that organizes quality issues across representation types and across morphologic, syntactic, and semantic levels, then applies that framework to classify existing commercial quality assurance and testing tools. The survey identifies which problem classes are already addressed reasonably well and argues that many higher-level, design-intent-related quality issues remain open research and industrial challenges.
 
 ## 1 Introduction
 
@@ -86,7 +86,7 @@ In order to understand CAD model quality issues, Pratt [23] emphasized the impor
 
 The taxonomy presented in this paper defines a 'frame' with three levels of CAD quality for each type of representation, and then identifies the artifacts that may hinder simplification, interoperability, or reuse of the model. The general levels of our taxonomy are shown in Fig.1. In the next sections, we argue that each semantic level can be mapped (to a certain extent) to a particular type of change: morphologic to simplification, syntactic to interoperability, and semantic to reuse.
 
-![Figure 1. General levels of CAD Model Quality](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-1-p008.png)
+![Figure 1. General levels of CAD Model Quality](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-1-p008.png)
 
 *Figure 1. General levels of CAD Model Quality: General levels of CAD Model Quality*
 
@@ -134,7 +134,7 @@ Gaps
 
 Dangling elements
 
-![Figure 2 Morphologic errors in explicit models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-2-p011.png)
+![Figure 2 Morphologic errors in explicit models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-2-p011.png)
 
 *Figure 2 Morphologic errors in explicit models: Morphologic errors in explicit models*
 
@@ -172,7 +172,7 @@ Commercially protected Geometrical accuracy problem
 
 Disintegration Sectoral standardization
 
-![Figure 3 Syntactic errors in explicit models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-3-p014.png)
+![Figure 3 Syntactic errors in explicit models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-3-p014.png)
 
 *Figure 3 Syntactic errors in explicit models: Syntactic errors in explicit models*
 
@@ -200,7 +200,7 @@ Defeaturing a B-Rep model produces a 'wound', or hole that needs to be covered b
 
 Missing symmetries Missing regularities Semantic errors in explicit models are summarized in Fig. 4. Horizontal boxes describe the realm of the errors. Vertical boxes identify common errors linked to those realms.
 
-![Figure 4 Semantic errors in explicit models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-4-p016.png)
+![Figure 4 Semantic errors in explicit models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-4-p016.png)
 
 *Figure 4 Semantic errors in explicit models: Semantic errors in explicit models*
 
@@ -226,7 +226,7 @@ Atomic elements-constraining (Abnormal size)
 
 Aggregates
 
-![Figure 5 Morphologic errors in procedural models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-5-p018.png)
+![Figure 5 Morphologic errors in procedural models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-5-p018.png)
 
 *Figure 5 Morphologic errors in procedural models: Morphologic errors in procedural models*
 
@@ -254,7 +254,7 @@ An interesting new technique to tackle the mapping type problem is the applicati
 
 Syntactic errors in procedural models are summarized in Fig. 6. Horizontal boxes describe the realm of the errors. Vertical boxes describe common errors linked to those realms.
 
-![Figure 6 Syntactic errors in procedural models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-6-p020.png)
+![Figure 6 Syntactic errors in procedural models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-6-p020.png)
 
 *Figure 6 Syntactic errors in procedural models: Syntactic errors in procedural models*
 
@@ -282,7 +282,7 @@ Similar tools such as a consistency checker between the declared typology of the
 
 Wrong labels Wrong sequences Semantic errors in procedural models are summarized in Fig. 7.
 
-![Figure 7 Semantic errors in procedural models](/Users/evanthayer/Projects/stepview/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-7-p022.png)
+![Figure 7 Semantic errors in procedural models](/Users/evanthayer/Projects/paperx/docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/figures/figure-7-p022.png)
 
 *Figure 7 Semantic errors in procedural models: Semantic errors in procedural models*
 

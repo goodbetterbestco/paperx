@@ -598,7 +598,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Keywords: Computer vision; Shape-from-silhouettes; Visual hull; Piecewise smooth objects; CAD objects URL: www.polito.it cgvg (A. Bottino). ScienceDirect Computer Vision and Image Understanding www.elsevier.com locate cviu"
+            "text": "The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled surfaces that are possible boundaries of the visual hull of these objects is derived. The construction of the visual hull is simplified by a detailed analysis that allows pruning and trimming many surfaces not relevant for a particular object. An algorithm for computing the visual hull is presented, together with several examples constructed with a commercial CAD package. The theory developed includes as particular cases the previous approaches to the computation of the visual hull."
           }
         ]
       },
@@ -606,57 +606,21 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 57.88,
-            "y0": 549.51,
-            "x1": 580.47,
-            "y1": 561.22,
-            "width": 522.59,
-            "height": 11.71
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 74.42,
-            "y0": 1018.04,
-            "x1": 266.26,
-            "y1": 1029.74,
-            "width": 191.84,
-            "height": 11.7
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 358.87,
-            "y0": 96.02,
-            "x1": 512.67,
-            "y1": 119.2,
-            "width": 153.8,
-            "height": 23.18
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 687.89,
-            "y0": 89.31,
-            "x1": 805.39,
-            "y1": 129.13,
-            "width": 117.5,
-            "height": 39.82
+            "x0": 56.23,
+            "y0": 423.81,
+            "x1": 808.69,
+            "y1": 531.51,
+            "width": 752.46,
+            "height": 107.7
           },
           "engine": "docling"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "unreviewed",
+        "status": "edited",
         "risk": "medium",
-        "notes": ""
+        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
       }
     },
     {

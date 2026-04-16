@@ -6,7 +6,7 @@ T. Sakkalis, G. Shen, N.M. Patrikalakis*
 
 ## Abstract
 
-Keywords: Solid modeling; Manifold boundary representation; Ideal model validity; Sufficient conditions; Rectification www.elsevier.com locate cad
+Validity is an important property of solid modeling representations. It ensures that representations always describe physically realizable solids, instead of nonsense objects. This paper surveys and supplements the mathematical theory of ideal boundary representation (B-rep) of solids. In particular, it presents a complete set of conditions on representational nodes of a typical B-rep data structure and proves their sufficiency for model validity. Such conditions are useful in invalid model rectification procedures.
 
 ## Introduction
 
@@ -22,7 +22,7 @@ The paper is organized as follows: Section 2 briefly reviews prior research on m
 
 Fundamental concepts and definitions of solid modeling can be found in Requicha [1], Mäntyla [2], Hoffmann [3], Braid [4], and the literature cited therein. A historical
 
-![Figure 1. Two valid solids.](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-1-p002.png)
+![Figure 1. Two valid solids.](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-1-p002.png)
 
 *Figure 1. Two valid solids.: Two valid solids.*
 
@@ -30,7 +30,7 @@ overview of solid modeling developments can be found in Braid [5] and Voelcker a
 
 A solid modeler is designed to model a set of mathema tical solids, which form the modeling space \(\mathscr{M}\) of the mode ler. Each element in \(\mathscr{M}\) is an abstraction of a real solid. A modeler consists of representations and a representation scheme. A representation is a finite symbol structure constructed from an alphabet according to syntactical rules. All syntactically correct representations form the representation space \(\mathscr{R}\). A representation scheme is defined as a relation \(s: \mathscr{M} \rightarrow \mathscr{R}\), whose domain \(\mathscr{D} \subset \mathscr{M}\) and whose range \(\mathscr{V} \subset \mathscr{R}\). A valid representation is a representation in \(\mathscr{V}\), see Requicha [1] and Mäntylä [2]. Manifold B-rep models real solids whose mathematical abstractions are \(r\)-sets with 2-manifold boundary [1,2]. An \(r\)-set is a bounded, regular and semianalytic subset in \(\mathbb{R}^{3}\). Almost all man-made solids can be represented by such mathematical descriptions. B-rep uses a collection of two dimensional entities, called faces, properly connected and consistently oriented, to define solid boundaries. Each face is bounded by loops and is embedded on a surface. Each loop is a string of edges, properly connected and consis tently oriented to form a simple closed curve with orienta tion. Each edge is a simple open or closed curve, and embedded on a curve and bounded by two vertices. In addi tion, a shell is defined as a collection of faces whose union is a connected 2-manifold without boundary. See Fig. 5 for the diagram of such a hierarchical structure. Adjacency and incidence relations of these topological entities are referred
 
-![Figure 3. Three valid faces.](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-3-p002.png)
+![Figure 3. Three valid faces.](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-3-p002.png)
 
 *Figure 3. Three valid faces.: Three valid faces.*
 
@@ -40,11 +40,11 @@ A solid modeler is designed to model a set of mathema tical solids, which form t
 
 - Each edge is shared by exactly two faces.
 
-![Figure 2. Two invalid solids.](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-2-p002.png)
+![Figure 2. Two invalid solids.](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-2-p002.png)
 
 *Figure 2. Two invalid solids.: Two invalid solids.*
 
-![Figure 4. Two invalid faces.](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-4-p003.png)
+![Figure 4. Two invalid faces.](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-4-p003.png)
 
 *Figure 4. Two invalid faces.: Two invalid faces.*
 
@@ -66,7 +66,7 @@ A widely accepted definition of solid was given by Requicha [1]: "a solid, denot
 
 Let \(p \in \mathbb{R}^{n}\) and let \(r>0\). The open ball \(B(p, r)\) of radius \(r\) centered at \(p\) is defined as the set of points \(x \in \mathbb{R}^{n}\) whose distance from \(p\) is less than \(r\). Such an open ball is also called a neighborhood of \(p\). An open halfspace \(\mathbb{R}^{n+}\) is defined as \(\mathbb{R}^{n+}=\left\{\left(x_{1}, x_{2}, \ldots, x_{n}\right) \in \mathbb{R}^{n} \mid x_{i} \geq 0\right\}\) for some \(i\), \(1 \leq i \leq n\). A subset \(A\) of \(\mathbb{R}^{n}\) is open if for every point \(a \in A\)
 
-![Figure 5. Graph representation of the data structure.](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-5-p003.png)
+![Figure 5. Graph representation of the data structure.](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-5-p003.png)
 
 *Figure 5. Graph representation of the data structure.: Graph representation of the data structure.*
 
@@ -106,7 +106,7 @@ Definition 4.3. A face \(f\) of a solid \(S\) is a non-void subset of \(\partial
 
 - fis a subset of one, and only one, AS surface.
 
-![Figure s](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-s-2-p005.png)
+![Figure s](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-s-2-p005.png)
 
 *Figure s: Figs. 3 and 4 illustrate several valid and invalid faces.*
 
@@ -132,7 +132,7 @@ The following remark describes the topology of Bd(f).
 Remark 4.3. Let \( x \in \operatorname{Bd}(f) \), and let \( \Delta_{i} \) be an open disk so that \( x \in \partial \Delta_{i} \). Then, we may choose \( r>0 \) so that F1. \( c_{i}=\overline{B(x, r)} \cap \partial \Delta_{i} \) is a simple curve. Moreover, if \( x \in \partial \Delta_{j}, j \neq i \), then \( c_{i} \cap c_{j}=\{X\} \). F2. \( f \cap B(x, r) \) is equal to precisely \( m \) half open disks \( D_{X}^{i}(f) \) if and only if \( x \in \cap_{i=1}^{m} \partial \Delta_{i} \). In addition, \( \Delta_{X}^{i}=\overline{\Delta_{i}} \cap B(x, r) \) is a half open disk, for each \( i \). Moreover,
 ```
 
-![Figure s](/Users/evanthayer/Projects/stepview/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-s-2-p005.png)
+![Figure s](/Users/evanthayer/Projects/paperx/docs/2000_representational_validity_of_boundary_representation_models/figures/figure-s-2-p005.png)
 
 *Figure s: Figs. 3 and 4 illustrate several valid and invalid faces.*
 
