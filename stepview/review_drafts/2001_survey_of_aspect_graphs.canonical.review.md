@@ -7,7 +7,7 @@ Department of Computer and Information
 
 ## Abstract
 
-[missing from original]
+Generated abstract from paper content. This survey reviews the theory and computation of aspect graphs for three-dimensional polyhedral scenes, with an emphasis on stable opaque views, viewpoint space partitions, and the relation between transparent and opaque image structure. It summarizes complexity results and algorithms for general polyhedra, convex and non-convex scenes, and polyhedral terrains, comparing the costs of constructing viewpoint partitions and storing or reconstructing views. The survey also covers approximations and alternatives such as silhouette-based, weighted, finite-resolution, and scale-space aspect graphs, as well as related structures including visibility complexes and uniform viewpoint tessellations. The paper's goal is to clarify the state of the field and the tradeoffs that determine when aspect-graph methods are practical.
 
 ## A Survey of Aspect Graphs
 
@@ -17,7 +17,7 @@ This survey is submitted as one of the requirements for the Ph.D. degree in Comp
 
 One approach to recognizing three-dimensional objects by computer is to obtain a series of two-dimensional views of a known object (Fig 1), maintain them in some convenient representation in storage, and then match one or more two-dimensional views of an unknown object against the stored views of the known object, thereby reducing the threedimensional matching problem to a series of two-dimensional ones.
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-1-p004.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-1-p004.png)
 
 *Figure 1: Fig 1. A series of two-dimensional views of a known (L-shaped) object. (From [28])*
 
@@ -35,7 +35,7 @@ In most research the viewpoint space is modeled in one of two ways. In the ortho
 
 In this model all lines of sight emanating from a given viewpoint are parallel and oriented in a direction opposite to that defined by the viewpoint. Any line of sight that meets an object terminates there, and is thus a ray (all other lines of sight are complete lines). The visible features of the objects (vertices, edges or portions of edges, faces or portions of faces) with respect to a given viewpoint are those encountered by this collection of rays. An object feature which is not visible from the viewpoint and for which the volume immediately in front of the feature (with respect to the viewpoint) is exterior to the object itself is said to be occluded from that viewpoint. Thus, while convex objects possess invisible features, they have no occluded features. An occluded feature \(f_{1}\) is said to be (partially) occluded by a feature \(f_{2}\) (with respect to a given viewpoint) if some line of sight meeting \(f_{2}\) can be extended to a complete line intersecting \(f_{1}\).
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-2-p006.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-2-p006.png)
 
 *Figure 2: Fig 2. A point ( , ) on S 2 representing a viewpoint in the orthographic model. (From [25])*
 
@@ -55,7 +55,7 @@ The opaque image of an object with respect to a given viewpoint is the projectio
 
 Opaque and transparent images are composed of three types of features, vertices, edges and \(T\)-junctions. Object vertices project to image vertices, and portions of object edges project to image edges. An additional set of vertices, referred to as \(T\)-junctions, arises due to the intersections of the projections of non-adjacent object edges. T-junctions are but one instance where image features intersect due to the alignment of the object features that project to them along an extended sight line emanating from the viewpoint. We will have occasion to speak more about this in section 3.1. In general, T-junctions involving two edges appear T-shaped in the opaque view, since the face adjacent to one of the object edges occludes a portion of the other object edge (Fig 3). Since object faces do not occlude in the transparent view, T-junctions involving two edges are in this case X-shaped in appearance.
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-3-p008.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-3-p008.png)
 
 *Figure 3: Fig 3. An opaque image showing (a) a vertex, (b) an edge and (c) a T-junction. (From [28])*
 
@@ -69,7 +69,7 @@ To compute the aspect graph it is first necessary to partition the viewpoint spa
 
 The viewpoints within the full-dimensional cells of the VSP, termed non-critical regions, are called general viewpoints. These are viewpoints for which any infinitesimal movement in viewpoint space leads to a viewpoint with an isomorphic opaque view. It is in this sense that the views associated with non-critical regions are considered stable ; there exists a volume of viewpoint space for each such view from which that view persists (up to isomorphism) as the viewpoint is varied. In the orthographic model noncritical regions are two-dimensional cells and are bounded by one-dimensional curves. In the perspective model non-critical regions are three-dimensional cells and are bounded by two-dimensional surfaces. These curves and surfaces, termed actual critical regions, consist of viewpoints for which there exists some infinitesimal movement in viewpoint space leading to a viewpoint with a non-isomorphic opaque view. The viewpoints at these critical curves and surfaces are called accidental viewpoints. Views associated with actual critical regions are considered unstable. Because they are associated with regions in viewpoint space which are infinitesimally small they are considered insignificant for image matching, and thus are not stored in the aspect graph.
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-4-p010.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-4-p010.png)
 
 *Figure 4: Fig 4. One hemisphere of S 2, showing a VSP (solid lines), the corresponding aspect graph (dashed lines) and selected opaque views of an object for several regions in the VSP in the orthographic model. (From [18])*
 
@@ -87,7 +87,7 @@ Following this, several algorithms are delineated for computing the potential cr
 
 We begin by describing how to find the set of potential critical regions induced by an object or collection of objects, since the algorithms to be described require that these be determined before the actual critical regions can be computed. Potential critical regions, occurring at viewpoints for which there is a qualitative (topological) structural change in the LISG of the transparent view as the viewpoint moves infinitesimally in some direction, are induced by two kinds of critical events. An EV-event occurs when an image vertex intersects an image edge. This happens when the corresponding object vertex and non-adjacent object edge are aligned along an extended sight line from the viewpoint. An EEE-event occurs when three image edges (or, equivalently, an image edge and a T-junction formed by two other image edges) intersect at a point. Such an event happens when the three corresponding pairwise non-adjacent object edges are aligned along an extended sight line from the viewpoint (Fig 5).
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-5-p011.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-5-p011.png)
 
 *Figure 5: Fig 5. An EV-event (top row) and an EEE-event (bottom row). (From [17])*
 
@@ -97,7 +97,7 @@ To determine the potential critical regions induced by EV-events [25], consider 
 
 This region is bounded by the lines passing through \(v\) and either endpoint of \(e\). All viewpoints between \(v\) and \(e\) are discarded, as no extended sight line emanating from such viewpoints (recall that these are rays in the perspective model) can pass through both features simultaneously. This region is a potential critical surface in the perspective model. This surface intersects the sphere at infinity along two diametrically opposite arcs of a great circle, yielding two potential critical curves in the orthographic model (Fig 6).
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-6-p012.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-6-p012.png)
 
 *Figure 6: Fig 6. The potential critical region induced in R 3 by a vertex v and an edge e (excluding the region between the features) and (at the bottom of the diagram) its intersection with a portion of the sphere at infinity. (From [14])*
 
@@ -107,11 +107,11 @@ To determine the potential critical regions induced by EEE-events [25], consider
 
 As \(q\) is allowed to vary among all points on \(e_{1}\), these lines of intersection sweep out a quadric surface, the nature of which depends on the relative orientation of the three edges. For example, if the edges are skew to each other then the induced quadric surface is a portion of a hyperboloid of one sheet [18]. As in the case of EV-events, however, viewpoints on this surface lying between any two of the edges are discarded, as no extended sight line emanating from such viewpoints can pass through all three features simultaneously. This quadric surface constitutes a potential critical surface in the perspective model. The intersection of this surface with the sphere at infinity yields a potential critical curve in the orthographic model (Fig 8).
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-7-p013.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-7-p013.png)
 
 *Figure 7: Fig 7. An extended sight line passing through q and points on e 2 and e 3. (From [18])*
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-8-p013.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-8-p013.png)
 
 *Figure 8: Fig 8. The potential critical region induced in R 3 by three edges e 1, e 2 and e 3 (excluding the region between the features) and (at the bottom of the diagram) its intersection with a portion of the sphere at infinity. (From [14])*
 
@@ -121,7 +121,7 @@ We note that each potential critical region is an algebraic surface patch of con
 
 The actual critical regions of the VSP are composed of viewpoints for which there is a qualitative structural change in the LISG of the opaque view as the viewpoint moves infinitesimally in some direction. Equivalently, these regions consist of the set of accidental viewpoints for which there exists at least one critical event such that the object features associated with that event are not occluded by any other object features (Fig 9). Therefore the actual critical regions of the VSP are contained within potential critical regions, and the arrangement of potential critical regions is a refinement of the VSP.
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-9-p014.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-9-p014.png)
 
 *Figure 9: Fig 9. The occlusion of an edge that would have been involved in an EV-event by an object face. (From [17])*
 
@@ -135,7 +135,7 @@ Yet another equivalent formulation is that actual critical regions are made up o
 
 We note here that, in three dimensions, actual critical regions are not necessarily bounded by a constant number of surface patches. Thus, while potential critical regions are wellbehaved, actual critical regions may not necessarily be so. It is not true, for example, that any pair of actual critical regions intersects in at most a constant number of algebraic curves. However, because actual critical regions lie on potential critical regions, which are indeed well-behaved, these intersections consist of a collection of curve segments that lie on a constant number of algebraic curves. In two dimensions each actual critical region is a curve (bounded by two points) lying on a well-behaved (potential critical) curve and thus is well-behaved.
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-10-p015.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-10-p015.png)
 
 *Figure 10: Fig 10. Accidental viewpoint belonging to actual critical regions. In each case the event shown (an EV-event in (a) and an EEE-event in (b)) is visible in the opaque view. (From [27])*
 
@@ -145,7 +145,7 @@ In the orthographic model, pruning of a potential critical curve amounts to iden
 
 Practically, all such points can be identified by first finding all event occlusion endpoints (EOE points) on the potential critical curve. EOE points are those viewpoints for which the extended sight line associated with the critical event is tangent to some edge adjacent to an object face before intersecting at least one of the features involved in the event. The object face is not adjacent to any of the features defining the event. This extended sight line thus intersects four object edges (note that, for EV-events, we regard the intersection of the extended sight line and the vertex associated with the event as an intersection with each of the edges adjacent to that vertex), is tangent to the object at the three edges closest to the viewpoint, and may penetrate the object only at or beyond the fourth edge (Fig 11). We will have more to say about lines with these properties in section 4.4, which deals with polyhedral terrains.
 
-![Figure 11](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-11-p016.png)
+![Figure 11](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-11-p016.png)
 
 *Figure 11: Fig 11. An extended sight line intersecting four object edges (a) and its associated EOE point on (a small portion of) the sphere at infinity (b). (From [14])*
 
@@ -175,11 +175,11 @@ A lower bound on the worst-case complexity of the VSP for a polyhedron of comple
 
 In the non-convex case, a polyhedron of complexity \(\Theta(n)\) can be constructed [25] consisting of two grids of \(\Theta(n)\) by \(\Theta(n)\) 'strips' (of negligible thickness), behind, and slightly skew to, two sets of \(\Theta(n)\) parallel rectangular faces with a narrow gap between each pair of consecutive faces (Fig 13). Since the strips are arbitrarily thin, we may consider each of the \(\Theta\left(n^{2}\right)\) junctions of the grids at which two edges appear to overlap to be pseudo-vertices. These pseudo-vertices along with the edges of the rectangular faces induce \(\Theta\left(n^{3}\right)\) nearly planar actual critical regions. The grids and rectangular faces on the actual critical regions are met at a distinct point along the line. The grids and faces on the right are positioned so that the same is true as the viewpoint moves along a vertical line. Thus a 'grid' of \(\Theta\left(n^{3}\right)\) by \(\Theta\left(n^{3}\right)\) nearly planar actual critical regions is induced in some region of viewpoint space. This therefore yields a VSP with complexity \(\Omega\left(n^{6}\right)\). In the perspective model, a third set of grids and faces must be added, and the three sets positioned orthogonally to each other to create a region of viewpoint space with a grid containing \(\Theta\left(n^{3}\right)\) by \(\Theta\left(n^{3}\right)\) by \(\Theta\left(n^{3}\right)\) nearly planar actual critical regions. Thus a VSP of complexity \(\Omega\left(n^{9}\right)\) is constructed. Note that by extending imaginary prisms (with total complexity \(\mathrm{O}(n)\) ) of negligible thickness between the various strips and rectangular faces one may construct a single connected polyhedral object. With care, the addition of these prisms will not lower the worst-case complexities just presented. So assuming that the scene consists of a single, non-convex, connected polyhedron does not affect the worst case complexity of the induced VSP (which, because of the previous upper bound results, are tight): \(\Theta\left(n^{6}\right)\) in the orthographic model and \(\Theta\left(n^{9}\right)\) in the perspective model.
 
-![Figure 12](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-12-p020.png)
+![Figure 12](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-12-p020.png)
 
 *Figure 12: Fig 12. A convex polyhedron (with (n) faces in each ‘orthogonal’ band) which induces a VSP with complexity (n 2) in the orthographic model and (n 3) in the perspective model. (From [25])*
 
-![Figure 13](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-13-p020.png)
+![Figure 13](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-13-p020.png)
 
 *Figure 13: Fig 13. A non-convex polyhedron (with (n) faces in total) which induces a VSP with complexity (n 6) in the orthographic model. (From [25])*
 
@@ -215,11 +215,11 @@ A naïve approach to storing the set of views would be to maintain them all inde
 
 A data structure is proposed in [17] to eliminate such redundancies. However, it allows only the retrieval of the set of individual features existing in any particular view rather than the actual reproduction of that entire view. Here, the views are computed along a spanning path as in [18]. In addition, each visit to a segment is considered to be a step in time. Features existing in the new view that did not exist in the old view are thought of as having been created at that time and features existing in the old view that will not exist in the new view are thought of as having been deleted at that time. Thus, with every feature existing in any view there is associated a time interval, \(\left[t_{i}, t_{j}\right]\), denoting that the feature was created in the view computed at time \(t_{i}\), existed at all views computed from times \(t_{i}\) to \(t_{j-1}\), and then was finally deleted at time \(t_{j}\). Also, with each view is associated the time of its calculation. Thus to retrieve the view that was calculated at time \(t\), it is only necessary to determine all features whose existence intervals contain \(t\). A data structure to handle such queries efficiently is a priority search tree. A collection of \(k\) intervals may be stored in such a tree with size \(\mathrm{O}(k)\), and the tree may be built, assuming the intervals are already sorted by their left endpoints (as these time intervals are), in time \(\mathrm{O}(k)\). Since, as we have seen, the number of features created and deleted in total is \(\mathrm{O}\left(n^{6}\right)\) (at most \(\mathrm{O}(n)\) features are created or deleted at each of the \(\mathrm{O}\left(n^{5}\right)\) segments associated with EV-events and at most \(\mathrm{O}(1)\) features are created or deleted at each of the \(\mathrm{O}\left(n^{6}\right)\) segments associated with EEE-events), \(k\) is \(\mathrm{O}\left(n^{6}\right)\). Thus, the size of the tree is \(\mathrm{O}\left(n^{6}\right)\). Using this method, therefore, allows the complexity of the aspect graph to be maintained at \(\mathrm{O}\left(n^{6}\right)\), the same as that of its dual, the VSP.
 
-![Figure 14](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-14-p025.png)
+![Figure 14](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-14-p025.png)
 
 *Figure 14: (a to b) two T-junctions disappear, (b to a) two T-junctions appear and (c) a T-junction moves from one edge to another. (From [18])*
 
-![Figure 15](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-15-p026.png)
+![Figure 15](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-15-p026.png)
 
 *Figure 15: Fig 15. An EV-event requiring the updating of O(n) edges (adjacent to the vertex) in the view. (From [18])*
 
@@ -235,7 +235,7 @@ As \(t\) is allowed to vary the shapes and positions of \(Q_{i}(t)\) and \(Q_{j}
 
 A bound on the number of intersections of distinct polygon edge pairs generated in the manner described (we emphasize that we are not interested in the total number of intersections among polygon pairs, but only the number of distinct edge pairs that have intersection) determines a bound on the number of distinct edge triples giving rise to these intersections. A consequence of the above analysis is that this, in turn, provides a bound on the number of such triples that induce all extended sight lines associated with EEE-events. This, finally, yields a bound on the number of actual critical regions in the VSP, from which a bound on its complexity can be directly obtained.
 
-![Figure 16](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-16-p028.png)
+![Figure 16](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-16-p028.png)
 
 *Figure 16: Fig 16. The silhouettes Q i (t) and Q j (t) (cast by P i and P j, respectively) at t = 0.*
 
@@ -255,13 +255,13 @@ $$
 
 triples in total. Since this, as mentioned earlier, is a bound on the number of actual critical regions (which represents an improvement over the naïve bound because \(k<n\) ) it has been shown that the complexity of the VSP in the orthographic model is \(\mathrm{O}\left(\left(n^{2} k\right)^{2}\right)=\mathrm{O}\left(n^{4} k^{2}\right)\), while in the perspective model it is \(\mathrm{O}\left(\left(n^{2} k\right)^{3}\right)=\mathrm{O}\left(n^{6} k^{3}\right)\).
 
-![Figure 17](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-17-p030.png)
+![Figure 17](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-17-p030.png)
 
 *Figure 17: Fig 17. The planar region swept out by rays from e l through v, as t varies.*
 
 Recently [4], a lower bound construction has been discovered which establishes that the above bounds are in fact tight in the worst case; \(\Theta\left(n^{4} k^{2}\right)\) in the orthographic model and \(\Theta\left(n^{6} k^{3}\right)\) in the perspective model. This construction consists of \(\Theta(k)\) long, narrow, convex polyhedra ('needles') each with constant complexity lying above a single, nearly flat, convex polyhedron ('fan') with \(\Theta(n)\) coplanar edges. The fan, in turn lies above a nearly flat convex polyhedron ('drum') with \(\Theta(n)\) horizontal, parallel edges (Fig 18). The polyhedra are positioned so that their edges are all arbitrarily close to the hyperbolic paraboloid \(y=x_{z}\). Thus the needle edges lie arbitrarily close to the line \(y=x\) in the parabola \(y=x^{2}\) in the plane \(x=z\). Moreover, the vertices of the fan are positioned so that each fan edge crosses this parabola at exactly two points.
 
-![Figure 18](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-18-p031.png)
+![Figure 18](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-18-p031.png)
 
 *Figure 18: Fig 18. (a) A portion of the lower bound construction for Θ(k) convex polyhedra with Θ(n) total edges. (b) The same construction as viewed from the plane z = +∞ near the z-axis. (From [4])*
 
@@ -327,13 +327,13 @@ An analysis of the complexity of the VSP for a terrain \(\sigma\) (with \(n\) ed
 
 In this section, we denote by \(F^{*}\) the orthogonal projection of any feature \(F\) onto the \(x_{y}\) plane. We will assume that the flight path \(f\) coincides with the positive \(z\)-axis and that the origin lies on the terrain itself. Since \(f\) is vertical, all points \(f(t), 0 \leq t \leq+\infty\), project to a single point \(f^{*}\) (i.e. the origin). It is therefore possible to obtain a partial order for all edges \(e\) of \(\sigma\) by defining \(e_{i}<e_{j}\) whenever there exists a ray emanating from \(f^{*}\) that intersects \(e_{i}{ }^{*}\) before intersecting \(e_{j}{ }^{*}\). Note that for this to be a partial order, it may be necessary, by cutting the edges into no more than \(2 n\) sub-edges, to ensure the existence of some angular orientation \(\theta_{i}\) about \(f\) which is not crossed by any edge. Otherwise, a cycle (where edges \(e_{1}, e_{2}, \ldots, e_{k}\) exist such that \(e_{1}<e_{2}, e_{2}<e_{3}, \ldots, e_{k-1}<e_{k}\) and \(e_{k}<e_{1}\) ) could potentially occur (Fig 19). (We note that the ability to assign a partial order in this way is peculiar to polyhedral terrains and that for more general polyhedral scenes such a partial order often cannot be found. We shall see that this basic property of terrains permits the development of a large body of unique results.) Once a partial order is obtained, it can be completed to a total order by a topological sort.
 
-![Figure 19](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-19-p038.png)
+![Figure 19](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-19-p038.png)
 
 *Figure 19: Fig 19. A cycle in the edge ordering. (From [12])*
 
 As in the case of \(k\) disjoint convex polyhedra (section 3.6) the analysis considered here seeks to bound the number of distinct edge triples associated with EEE-events that can induce actual critical regions. Every such edge triple is associated with extended sight lines (emanating from a viewpoint on \(f\) ) that intersect each edge, are tangent to the terrain at those edges (with the possible exception of the edge furthest from the viewpoint) and do not intersect any other feature of the terrain anywhere between the viewpoint and the furthest edge. The analysis proceeds as follows. Select an edge \(e\) of \(\sigma\). For each edge \(e_{i}<e\) let \(g_{i}(\theta)\) be the (partially defined, well-behaved, univariate) function whose value is the azimuth \(\varphi\) of the ray at orientation \(\theta\) passing through the \(z\)-axis and \(e_{i}\), and terminating at \(e\), if such a ray exists (note that this ray need not lie wholly above \(\sigma\) ). If, for a segment \(s, I(s)\) denotes the angular interval of directions of all rays in the \(x_{y}\)-plane emanating from \(f^{*}\) and meeting \(s^{*}\), then \(g_{i}\) will be defined over the connected interval \(I(e) \cap I\left(e_{i}\right)\). Also, define \(\varphi_{0}(\theta)\) to be the (partially defined, well-behaved, univariate) function whose value is the azimuth \(\varphi\) of the ray at orientation \(\theta\) passing through \(f^{*}\) and \(e\) (if such a ray exists). This function will be defined over the connected interval \(I(e)\). Note that if one of the functions \(g_{i}\) (say \(g_{j}\) ) attains the maximum value for all \(g_{i}\) and \(\varphi_{0}\) at \(\theta_{0}\), then there exists a ray emanating from some point on \(f\), tangent to \(\sigma\) at \(e_{j}\) and terminating at \(e\) without passing through any other feature of \(\sigma\) (Fig 20).
 
-![Figure 20](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-20-p039.png)
+![Figure 20](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-20-p039.png)
 
 *Figure 20: Fig 20. The ray with azimuth g j ( ë 0) passing through the positive z-axis, e j and e and tangent to (shown in cross-section) at e j. (From [12])*
 
@@ -347,17 +347,17 @@ If the entire preceding argument is applied to each of the \(n\) edges \(e\) of 
 
 It is unknown whether the above bound is tight. However, it can be shown [12] that this complexity is at least \(\Omega\left(n \lambda_{3}(n)\right)=\Omega\left(n^{2} \alpha(n)\right)\), as follows. The upper rim, or horizon, of a collection of edges (with respect to a given viewpoint) consists of a set of segments each belonging to one of the edges such that no extended sight line emanating from the viewpoint and passing through one of these segments passes below any other edge in the collection (Fig 21). The complexity of the upper rim of a collection of \(n\) edges is equal to the complexity of the upper envelope of \(n\) line segments corresponding to those edges, and, since the existence of a such a collection having an upper envelope with complexity \(\Theta\left(\lambda_{3}(n)\right)\) can be demonstrated, is thus \(\Omega\left(\lambda_{3}(n)\right)=\Omega(n \alpha(n))\) in the worst case. A terrain may be constructed by positioning \(n\) edges in distinct vertical planes which are arbitrarily close to each other and far away from \(f\), and by then dropping a steep wedge down from each of these edges to meet the \(x_{y}\)-plane. The upper rim of these edges will contain \(\Omega(n \alpha(n))\) breakpoints as seen from all viewpoints on some contiguous portion of \(f\). In fact they will appear as vertices from these viewpoints due to the proximity of the wedges to each other. A hill with \(n\) horizontal edges is placed behind the wedges and can be positioned so that the (nearly-planar) actual critical regions induced by each pseudo vertex and hill edge intersect \(f\) at distinct points (Fig 22). There will be \(\Omega\left(n^{2} \alpha(n)\right)\) such regions. Thus the complexity of the VSP in this example is \(\Omega\left(n^{2} \alpha(n)\right)=\Omega\left(n \lambda_{3}(n)\right)\).
 
-![Figure 21](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-21-p041.png)
+![Figure 21](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-21-p041.png)
 
 *Figure 21: Fig 21. The upper rim (dashed lines) of a set of edges. (From [12])*
 
-![Figure 22](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-22-p041.png)
+![Figure 22](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-22-p041.png)
 
 *Figure 22: Fig 22. A terrain with n edges inducing a VSP with complexity) 3 (n)) when the viewpoint space is a vertical flight path. (From [12])*
 
 An algorithm for discovering all \(\mathrm{O}\left(n \lambda_{4}(n)\right)\) actual critical regions on vertical flight path \(f\) is found in [9]. This algorithm makes use of a skewed projection, discussed in section 3.7. A special property of terrains under skewed projections is as follows. For a fixed edge \(e\), the skewed projection \(s p_{e}(\sigma)\) of a terrain \(\sigma\) (i.e. the collection of skewed projections of all faces of \(\sigma\) ) is the entire area under a curve, rather than a general curved polygon. This can be seen by noting that if a line with endpoints \(e\left(u_{0}\right)\) and \(f\left(t_{0}\right)\) intersects \(\sigma\), then all lines with endpoints \(e\left(u_{0}\right)\) and \(f(t)\), for \(0 \leq t \leq t_{0}\), will also intersect \(\sigma\) (i.e. if \(\left(u_{0}, t_{0}\right) € s p_{e}(\sigma)\), then all points \(\left(u_{0}, t\right) € s p_{e}(\sigma)\), for \(0 \leq t \leq t_{0}\) )(Fig 23).
 
-![Figure 23](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-23-p042.png)
+![Figure 23](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-23-p042.png)
 
 *Figure 23: Fig 23. If a line segment with endpoints e (u 0) and f (t 0) passes through 3 (shown in cross-section), so will a line segment with endpoints e (u 0) and f (t) for 0 t 4 t 0. (shown in cross-section), so will a line segment with endpoints e (u 0) and f (t) for 0 t t 0.*
 
@@ -369,7 +369,7 @@ We begin this section with a construction demonstrating that the upper bound on 
 
 The flight path \(f\) is chosen so that both rows of peaks lie between \(f\) and the hill. By choosing a hill edge and pairs of non-parallel edges from the two rows of peaks, it is not difficult to select \(\Omega\left(n^{3}\right)\) triples of skew edges whose associated EEE-events induce actual critical regions that intersect \(f\) at \(\Omega\left(n^{3}\right)\) distinct points. This implies that the number of actual critical regions induced by the arbitrary flight path \(f\) is indeed \(\Omega\left(n^{3}\right)\).
 
-![Figure 24](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-24-p043.png)
+![Figure 24](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-24-p043.png)
 
 *Figure 24: Fig 24. A terrain inducing A n 3) actual critical regions on the arbitrary flight path f. (From [12]) Fig 24. A terrain inducing n 3) actual critical regions on the arbitrary flight path f. (From [12])*
 
@@ -415,7 +415,7 @@ Repeating the above argument for all \(\mathrm{O}\left(n^{2}\right)\) pairs of e
 
 The foregoing argument made use of a result stating that the complexity of the lower envelope of \(O(n)\) well-behaved (section 3.1) d-dimensional surface patches in (d +1)dimensional space is \(O(nd+)\) (in that argument d = 3). When d = 2 this result yields a complexity of \(O(n2+)\). However, as shown in [21], when the relative interiors of any triple of a collection of well-behaved two-dimensional surface patches are known to intersect in at most two points, this bound can be improved to \(O(n22c(logn)\) 1 2) for some constant c depending on the degree and shape of the surfaces. This result is important for terrains in the orthographic model because, as also shown in [21], each extended sight line (a ray in this context) incident to a fixed terrain edge, tangent to three other edges, and otherwise lying wholly above the terrain (and therefore associated with a constant number of event occlusion endpoints, section 3.2) corresponds to a vertex in the lower envelope of a collection of two-dimensional surface patches (in a three-dimensional space) with the properties just stated. Thus an immediate bound of \(O(nn22c(logn)\) 1 2) = \(O(n32c(logn)\) 1 2) is obtained for the number of rays incident to a terrain edge, tangent to three other edges and otherwise lying wholly above the terrain. As we shall see shortly, this result yields an improved bound for the complexity of the VSP induced by a terrain in the orthographic case. first, however, we sketch the analysis of [21] showing how the bound on the number of rays incident to a fixed edge and tangent to three other edges is obtained. Many of the ideas presented here are similar to those found in the previous proof.
 
-![Figure 25](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-25-p048.png)
+![Figure 25](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-25-p048.png)
 
 *Figure 25: Fig 25. One of the rays associated with the intersection (not on the lower envelope) of the graphs of four functions F i will pass below an edge, and thus penetrate a feature, of g (shown in cross-section).*
 
@@ -431,21 +431,21 @@ A worst-case lower bound on the complexity of the VSP in the orthographic model 
 
 Also, a collection of \(n\) pyramids is placed arbitrarily close to a second hill with \(n\) faces and a set of \(n\) prisms with nearly vertical sides is placed in front of and far away from both of these. Because the pyramids are arbitrarily close to the hill, each alignment of a pyramid edge and a hill edge may be thought of as a pseudo-vertex (Fig 27). The prisms are arranged so that the actual critical regions induced by each pseudo-vertex and prism edge are nearly vertical planes and parallel to one another. Any line on the sphere at infinity parallel to the equator (in the same region containing the meridians mentioned above), will intersect these regions at \(\Omega\left(n^{3}\right)\) distinct viewpoints (Fig 28).
 
-![Figure 26](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-26-p050.png)
+![Figure 26](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-26-p050.png)
 
 *Figure 26: Fig 26. The first part of the construction. (From [7])*
 
-![Figure 27](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-27-p050.png)
+![Figure 27](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-27-p050.png)
 
 *Figure 27: Fig 27. The second part of the construction. (From [7])*
 
-![Figure 28](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-28-p051.png)
+![Figure 28](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-28-p051.png)
 
 *Figure 28: Fig 28. An alignment of a pseudo-vertex (formed by a hill edge and pyramid edge) and a prism edge as seen from a viewpoint in (some region of) the sphere at infinity. (From [7])*
 
 Thus the entire construction consists of a terrain with \(\mathrm{O}(n)\) edges inducing a grid of \(\Omega\left(n^{2} \alpha(n)\right)\) by \(\Omega\left(n^{3}\right)\) actual critical regions in a particular region of the sphere at infinity (Fig 29). This immediately implies that the complexity of the VSP in the orthographic model for this terrain is \(\Omega\left(n^{5} \alpha(n)\right)\).
 
-![Figure 29](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-29-p051.png)
+![Figure 29](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-29-p051.png)
 
 *Figure 29: Fig 29. The complete construction. (From [7])*
 
@@ -481,7 +481,7 @@ Recall (section 3.6) that, in the case of convex polyhedra, the total number of 
 
 The analysis, as in section 3.6, derives a bound on the number of distinct edge triples that may participate in EEE-events such that each edge belongs to a distinct polyhedron. Note however that here we are concerned exclusively with silhouette edges (in fact, to be more precise, silhouette arrangement edges). Recall that the complexity of a polyhedron \(P\) (the number of its vertices, edges and faces) is denoted by \(|P|\). Assume, without loss of generality, that \(f\) coincides with the positive \(z\)-axis. Consider two polyhedra \(P_{i}\) and \(P_{j}\). We imagine a half-plane with boundary \(f\) sweeping about \(f\) with longitude \(\theta\) (denoted by \(\gamma(\theta)\) ), for \(0 \leq \theta \leq 2 \pi\), and consider the slope of the outer lower bi tangent line to \(P_{i}\) and \(P_{j}\) passing through \(f\) and coplanar with (and lying on) \(\gamma(\theta)\). For each interval of \(\theta\) for which the lower outer bi-tangent line is determined by exactly one edge of \(P_{i}\) and one edge of \(P_{j}\), the function \(\varphi_{i_{j}}(\theta)\) representing this slope will be continuous and well-behaved. These intervals start or terminate at values of \(\theta\) for which one of the edges of \(P_{i}\left(P_{j}\right)\) determining the bi-tangent line is replaced by another edge of \(P_{i}\left(P_{j}\right.\), respectively), or when the bi-tangent line becomes coplanar with a face of \(P_{i}\) or \(P_{j}\) (so that it is determined by three edges in total). The first event clearly occurs \(\mathrm{O}\left(\left|P_{i}\right|+\left|P_{j}\right|\right)\) times as the sweep proceeds. The second event is also seen to occur \(\mathrm{O}\left(\left|P_{i}\right|+\left|P_{j}\right|\right)\) times during the sweep by noting that when the bi-tangent line is coplanar with a face of \(P_{i}\left(P_{j}\right)\) there are at most two possible ways it may also be tangent to \(P_{j}\) ( \(P_{i}\), respectively). (Note that the planar region swept out by all rays emanating from \(f\) and coplanar with the face of one polyhedron intersects the other polyhedron, if at all, in a convex polygon, and that only at most two rays in this collection are tangent to that polygon (Fig 30)). This analysis shows that the domain of \(\varphi_{i_{j}}(\theta)\) consists of \(\mathrm{O}\left(\left|P_{i}\right|+\left|P_{j}\right|\right)\) intervals on each of which the function is well-behaved and continuous.
 
-![Figure 30](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-30-p055.png)
+![Figure 30](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-30-p055.png)
 
 *Figure 30: Fig 30. At most two rays originating on f and coplanar with a facet of P are tangent to Q (the diagram shows the slice of P and Q in the plane of the facet of P). (From [32])*
 
@@ -503,11 +503,11 @@ Since we are dealing with a terrain and a vertical flight path, a partial order 
 
 A lower bound construction may be obtained [32] by considering a terrain consisting of \(\Theta(k)\) mountains ('peaks') in front of (with respect to all viewpoints on a vertical flight path \(f\) ) a single mountain ('drum') with \(\Theta(n)\) horizontal edges (Fig 32). As the viewpoint moves along \(f\), each time it crosses a plane containing one of the facets of the drum, one drum edge adjacent to the facet will replace the other drum edge adjacent to the facet on the union-of-silhouettes (at the instant of crossing the two facets will be coplanar with the viewpoint). Each time this occurs there will be an alignment along an extended sight line from that viewpoint of the two drum edges and a point on each of the \(\Theta(k)\) peak edges. Each such alignment corresponds to an EEE-event. Furthermore, each alignment will occur on the union-of-silhouettes as seen from that viewpoint. Since \(\Theta(n)\) planes may be crossed there can, therefore, be as many as \(\Theta(k_{n})\) EEE-events involving edges on the union-of-silhouettes. Thus the worst-case lower bound complexity of the induced VSP is \(\Omega(k_{n})\). As we have seen, this bound is nearly tight.
 
-![Figure 31](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-31-p058.png)
+![Figure 31](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-31-p058.png)
 
 *Figure 31: Fig 31. Two possible ways an EEE-event involving silhouette edges from three distinct mountains may occur. (From [32])*
 
-![Figure 32](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-32-p058.png)
+![Figure 32](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-32-p058.png)
 
 *Figure 32: Fig 32. The lower bound construction for a terrain with  k) mountains with total complexity | n). (From [32])*
 
@@ -533,7 +533,7 @@ Once the finite-resolution potential critical curves are calculated, standard al
 
 A supplementary pruning step is required to solve this problem. This step involves computing the infinite-resolution opaque view at each cell in the arrangement, and repeatedly merging all feature pairs in each view which are separated by a distance less than the threshold (a detailed catalog of merge steps and the order in which they are to be applied is supplied in [28]). This repeated merging of opaque image features may simplify the images to the point where they become identical in adjacent cells. When all merging steps are complete the final finite-resolution opaque view at each cell has been determined, and those potential critical regions found to separate cells with identical finite-resolution opaque views are removed from the arrangement.
 
-![Figure 33](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-33-p061.png)
+![Figure 33](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-33-p061.png)
 
 *Figure 33: Fig 33. Both configurations (a) and (b) lead to an identical finite-resolution opaque view (c). (From [28])*
 
@@ -577,15 +577,15 @@ Similar to the silhouette arrangement computation, the silhouette map with respe
 
 In a similar fashion, the entire opaque image with respect to a viewpoint can be found by taking the intersection of the two-dimensional set with the volumes enclosed by the surfaces of the 3d visibility complex, taking care to follow the correct branch at each such intersection point.
 
-![Figure 34](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-34-p065.png)
+![Figure 34](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-34-p065.png)
 
 *Figure 34: Fig 34. A set of collinear maximal line segments in R 3.*
 
-![Figure 35](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-35-p066.png)
+![Figure 35](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-35-p066.png)
 
 *Figure 35: Fig 35. The mapping of segments on a one-dimensional slice in the dual space (b) for the given configuration of objects (a). The mapping is locally one-dimensional for all but a finite set of points (at which as many as n +1 branches may occur). (From [26])*
 
-![Figure 36](/Users/evanthayer/Projects/stepview/docs/2001_survey_of_aspect_graphs/figures/figure-36-p066.png)
+![Figure 36](/Users/evanthayer/Projects/paperx/docs/2001_survey_of_aspect_graphs/figures/figure-36-p066.png)
 
 *Figure 36: Fig 36. The mapping of segments on a two-dimensional slice in the dual space (c) for the given configuration of objects (a). In (b) the mapping is ‘exploded’ so that the various surfaces in (b) are more easily seen. (From [13])*
 

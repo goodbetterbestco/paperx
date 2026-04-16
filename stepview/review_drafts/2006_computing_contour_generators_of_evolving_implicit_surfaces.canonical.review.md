@@ -8,7 +8,7 @@ University of Groningen
 
 ## Abstract
 
-[missing from original]
+Generated abstract from paper content. This paper develops a framework and algorithms for computing contour generators and apparent contours of implicit surfaces, including surfaces or viewpoints that evolve over time. For generic static and time-dependent cases, it derives local normal forms and algebraic conditions for regular points, folds, cusps, and the principal topology-changing bifurcations of contours, including lips, beak-to-beak, and swallowtail events. Building on these characterizations, the authors use interval analysis and adaptive tracing to compute an initial contour generator with topological guarantees. The approach is intended as a robust foundation for maintaining correct contour topology during deformation or viewpoint change.
 
 ## 1 Introduction
 
@@ -16,7 +16,7 @@ An important visibility feature of a smooth object seen under parallel projectio
 
 The contour generator and the apparent contour play an important role in computer graphics and computer vision. Rendering a polyhedral model of a smooth surface yields a jaggy outline, unless the triangulation of the surface is finer in a neighbourhood of the contour generator. This observation has led to techniques for view-dependent meshing and view-dependent refinement techniques, cf. [1]. ∗ email: { simon|gert } @cs.rug.nl
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-1-p003.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-1-p003.png)
 
 *Figure 1: A smooth surface (left), its apparent contour under parallel projection along the z direction (middle), and its contour generator, seen from a diﬀerent position (right). For generic surfaces (or, generic parallel projections) the contour generator is a smooth, possibly disconnected curve on the surface, whereas the apparent contour may have isolated cusp points. different position (right). For generic surfaces (or, generic parallel projections) the contour generator is a smooth, possibly disconnected curve on the surface, whereas the apparent contour may have isolated cusp points.*
 
@@ -116,7 +116,7 @@ $$
 
 This being a system of two equations in three unknowns, we expect that the regular points of the
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-2-p006.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-2-p006.png)
 
 *Figure 2: (a) A local model of the surface at a fold point is x + z 2 = 0. Both the contour generator Γ, and the visible contour γ , are regular at the fold point, and its projection onto the image plane, respectively. (b) A local model at a cusp point is x + yz + z 3 = 0. Here the contour generator is regular, but the apparent contour has a regular cusp.*
 
@@ -180,7 +180,7 @@ $$
 
 Here the contour generator is defined by \(x=2 z^{3},-y^{2}+3 z^{2}=-t\). See also Figure 3.
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-3-p008.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-3-p008.png)
 
 *Figure 3: The beak-to-beak bifurcation. With respect to the local model (14) the bifurcation corresponds to t < 0 (left), t = 0 (middle), and t > 0 (right).*
 
@@ -194,7 +194,7 @@ $$
 
 Here the contour generator is defined by \(x=2 z^{3}, y^{2}+3 z^{2}=-t\). In particular, for \(t>0\) the surface
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-4-p009.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-4-p009.png)
 
 *Figure 4: The lips bifurcation. Left: t < 0. Middle: t = 0. Right: t > 0.*
 
@@ -208,7 +208,7 @@ $$
 
 Here the apparent contour is parametrized as \(z \mapsto\left(t z^{2}+z^{4},-2 t z-4 z^{3}\right)\). See also Figure 5.
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-5-p009.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-5-p009.png)
 
 *Figure 5: The swallowtail bifurcation. Left: t < 0. Middle: t = 0. Right: t > 0.*
 
@@ -394,7 +394,7 @@ with \(R(x, y, z)=R_{4}(\varphi(x, y), z)\). In other words: \(G\) is a local mo
 
 If we allow the direction of projection to change over time, or, equivalently, fix the direction of projection and allow the surface to depend on time, the implicit function, defining the surface, depends on four variables \((x, y, z, t)\), where \(t\) corresponds to time. In this situation, we expect one of the conditions (10) and (11) to be violated at isolated values of \((x, y, z, t)\). See also the description of evolving contours in Section 2. In this section, we derive approximate local models for these degenerate situations, cf Figures 4, 3 and 5. As said before, we consider a smooth function \(F: \mathbb{R}^{3} \times \mathbb{R} \rightarrow \mathbb{R}\), which defines a time-dependent
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-6-p014.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-6-p014.png)
 
 *Figure 6: A beak-to-beak bifurcation. Top row: a sequence of views of a smooth surface. Middle row: the corresponding apparent contours. Bottom row: blow up of the apparent contour near the bifurcation event.*
 
@@ -520,7 +520,7 @@ $$
 \begin{equation*} \left(u_{x}^{0}, u_{y}^{0}\right)=\frac{6}{F_{z z z}^{0}}\left(F_{x}^{0}, F_{y}^{0}\right) \neq(0,0), \tag{34} \end{equation*}
 $$
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-7-p017.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-7-p017.png)
 
 *Figure 7: A swallowtail bifurcation. Top row: a sequence of views of a smooth surface. Middle row: the corresponding apparent contours. Bottom row: blow up of the apparent contour near the bifurcation event.*
 
@@ -762,13 +762,13 @@ $$
 
 The interval condition \(I>\frac{1}{2} \sqrt{2}\) implies that the angle between \(N\left(p^{i}\right)\) and \(N(x)\) is at most \(\frac{\pi}{4}\). The contour generator lies in a cone \(C\) around \(N(x)\) (fig. 10) with top angle \(\frac{\pi}{2}\), for if it leaves the cone at point \(a\), then \(\left\langle N\left(p^{i}\right), N(a)\right\rangle\) would be smaller than \(\frac{1}{2} \sqrt{2}\). It can only leave the sphere in \(S \cap C\). In this part of the sphere the contour generator can't re-enter \(S\), because that would require an entry point \(b\) where \(\left\langle N\left(p^{i}\right), N(b)\right\rangle<\frac{1}{2} \sqrt{2}\). Therefore, there is only a single connected component of the contour generator within sphere \(S\).
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-8-p023.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-8-p023.png)
 
 *Figure 8: Left: N (p i) is a tangent to the intersection of F = 0 and F z = 0. Right: a ﬁxed step size can miss part of the contour generator. fixed step size can miss part of the contour generator.*
 
 Lemma 8.1. If \(I>\frac{1}{2} \sqrt{2}\), (i.e. \(\forall i \in I: i>\frac{1}{2} \sqrt{2}\) ), then the part of the contour generator within \(S\) consists of a single component (fig. 9).
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-9-p023.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-9-p023.png)
 
 *Figure 9: The sphere containing the line segment, and its bounding box.*
 
@@ -786,7 +786,7 @@ $$
 
 Since \(s, t \in B\) this contradicts the interval test. Therefore, within box \(B\) each plane perpendicular to \(N\left(p^{i}\right)\) contains at most one point of the contour generator.
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-10-p024.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-10-p024.png)
 
 *Figure 10: The contour generator lies within a cone.*
 
@@ -798,7 +798,7 @@ $$
 
 Since \(p^{i}\) is in general close to, but not on the contour generator, in practice we take a slightly larger bound. Also, \(\Delta\) should be slightly larger than \(\left\|p^{i+1}-p^{i}\right\|\), to prevent \(p^{i+1}\) from being too close to other parts of the contour generator outside \(S\).
 
-![Figure 11](/Users/evanthayer/Projects/stepview/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-11-p024.png)
+![Figure 11](/Users/evanthayer/Projects/paperx/docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/figures/figure-11-p024.png)
 
 *Figure 11: Contour generator of a sphere and of 8 metaballs (see appendix D) near the vertices of a cube. The small squares indicate the initial points. The dots on the sphere show the dynamic step size. Note that the metaballs are close to a singularity under motion of the viewpoint. The sizes of the eight components range from 439 to 879 segments.*
 

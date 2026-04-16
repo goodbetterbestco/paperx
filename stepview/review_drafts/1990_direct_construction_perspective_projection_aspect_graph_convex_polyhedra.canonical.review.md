@@ -8,7 +8,7 @@ Department of Computer Science and Engineering, University of South Florida
 
 ## Abstract
 
-[missing from original]
+Generated abstract from paper content. This paper presents an exact algorithm for constructing the perspective-projection aspect graph of a convex polyhedron directly from its boundary-surface representation. The method builds a parcellation graph of viewpoint space, evaluates boundary points against the supporting planes of the object, and uses the resulting evaluation matrix to identify valid viewpoint cells and their adjacency through visual events. The resulting aspect graph is exact, has worst-case time and space complexity Theta(N^4) in the number of faces, and was implemented for model-based object recognition experiments.
 
 ## Introduction
 
@@ -46,7 +46,7 @@ The origin of the model coordinate system is assumed to be inside the object and
 
 For a convex polyhedron with \(N\) faces, there are \(N\) planes involved in the parcellation of viewpoint space. There are \(2^{N}\) possible definitions for a cell of viewpoint space in terms of its inside/outside relation to each of the \(N\) planes. We
 
-![Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.](/Users/evanthayer/Projects/stepview/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-2-p008.png)
+![Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.](/Users/evanthayer/Projects/paperx/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-2-p008.png)
 
 *Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.: For simplicity, the parcellation graph is shown without auxiliary points.*
 
@@ -98,7 +98,7 @@ $$
 
 into the parcellation graph with the original planes as mentioned previously. Fig. 3. For simplicity, the parcellation graph is shown without auxiliary points.
 
-![Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.](/Users/evanthayer/Projects/stepview/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-2-p008.png)
+![Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.](/Users/evanthayer/Projects/paperx/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-3-2-p008.png)
 
 *Figure 3. For simplicity, the parcellation graph is shown without auxiliary points.: For simplicity, the parcellation graph is shown without auxiliary points.*
 
@@ -108,7 +108,7 @@ The next step aids in the determination of which cell identification numbers are
 
 As long as the object is of finite size and exists as a closed solid there must be at least one intersection point in the parcellation which lies on the boundary of each cell. This suggests that the points listed in the parcellation graph can be used to identify valid cell numbers. Validating cell numbers by using the boundary points requires that the cell boundary be treated, in essence, as part of its interior. In this can be written as relaxed interpretation of the cell numbers, a bit value of 1 indicates a point to the greater than three, this results in the identification of cells which do not actually exist, because in these cases space cannot be physically divided into 2M volumes sharing a common boundary point. Objects such as the example truncated wedge (Fig. 3) do not encounter this problem, since all the intersection points are defined
 
-![FIG. 4. Parcellation graph for the truncated wedge.](/Users/evanthayer/Projects/stepview/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-4-p010.png)
+![FIG. 4. Parcellation graph for the truncated wedge.](/Users/evanthayer/Projects/paperx/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-4-p010.png)
 
 *FIG. 4. Parcellation graph for the truncated wedge.: Parcellation graph for the truncated wedge.*
 
@@ -116,7 +116,7 @@ by exactly three planes. However, Fig. 5 depicts an object for which the problem
 
 A practical solution is found in the following way. The invalid cells are degenerate in the sense that their boundaries do not enclose a volume of space which satisfies the relationships specified by the cell number. Another way of saying this is that they can be viewed as cells which have boundaries completely comprised of dangling lines and planes. Dangling lines touch a cell boundary at only a single point. Dangling planes touch a cell boundary at a single point or along a single line. The simplest 3D volume of space has a boundary comprised of three planes which meet at one point. It has only one real 3D corner, and thus only one intersection point from the parcellation graph will satisfy the constraints imposed
 
-![FiG. 5. A four-sided pyramid.](/Users/evanthayer/Projects/stepview/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-5-p010.png)
+![FiG. 5. A four-sided pyramid.](/Users/evanthayer/Projects/paperx/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-5-p010.png)
 
 *FiG. 5. A four-sided pyramid.: A four-sided pyramid.*
 
@@ -144,7 +144,7 @@ The set of points known to lie on the boundary of a cell can be used in the foll
 
 Creation of an explicit aspect graph structure is a relatively simple task. first, for each cell number generated, a node is allocated and given the cell number and the cell boundary description as attributes. The 1 bits in the cell number indicate the object faces which are visible in the aspect. The cell boundary description was determined explicitly in the preceding process. Establishing links between nodes where a visual event is defined by the appearance or disappearance of a single face can be done in any of several ways. Perhaps the most elegant alternative is to generate the links between nodes at the same time that the cell numbers are generated. first, note that there is a link between nodes of the aspect graph if and only if their cell numbers differ in exactly one bit
 
-![FIG. 6. Depiction of pattern of cell number generation. (Points of intersection in the row sets input](/Users/evanthayer/Projects/stepview/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-6-p014.png)
+![FIG. 6. Depiction of pattern of cell number generation. (Points of intersection in the row sets input](/Users/evanthayer/Projects/paperx/docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/figures/figure-6-p014.png)
 
 *FIG. 6. Depiction of pattern of cell number generation. (Points of intersection in the row sets input: Depiction of pattern of cell number generation. (Points of intersection in the row sets input to the first three levels of calls are shown. Auxiliary points in these row sets are not shown).*
 

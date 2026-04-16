@@ -8,7 +8,7 @@ New York International Business Machines Corporation Yorktown Heights, New York
 
 ## Abstract
 
-[missing from original]
+Generated abstract from paper content. This paper introduces the notion of quantitative invisibility for line drawings of solid objects, measuring at each point on a material line how many surfaces obscure it rather than treating a line as simply visible or hidden. For assemblies of planar surfaces bounded by straight segments, the author derives efficient tests for detecting when a line passes behind contour edges and whether the visibility count should increase or decrease, using implied vorticity and related point-in-boundary predicates. The method is intended to bridge fast but limited surface-visibility schemes and expensive point-sampling methods, and the reported implementation produces practical hidden-line renderings for fairly complex scenes.
 
 ## Introduction
 
@@ -20,13 +20,13 @@ The author has developed a scheme for the perspec- tive rendering of assemblies 
 
 Quantitative The rationale behind the scheme to be presented in this paper is that there ought to be a visibility determination scheme which would be midway in characteristics between the surface visibility and the point visibility schemes. Obviously the scheme should be based upon determining the change in visibility on a curve. The fundamental notion of quantitative invisibility that it is not sufficient to specify a curve invisible or visible, but that the total number of visible faces that hide a point on the curve should be measured and when no surface hides points on the curve, the curve is rendered. This notion is useful because techniques developed for detecting changes in quantitative invisibility along a line are more economical than measuring quantitative invisibility at a point. gorithms for detecting changes in quantitative invisibility have only been developed for straight lines planes but the strategy should be applicable to higher order curves and surfaces. Procedures for line visibility determination have been implemented, and calculation times of about 10 to 20 times the wire frame and exvisiin orthoests is usefuldirectly pletely enclosed by flat surfaces, assign to every surface a material vector which points into the volume or into the material of the object. When the angle between a material vector and the line of sight to the origin of that vector is less than 90 ° then the surface associated with that material vector can never be seen and the surface must be invisible. Lines which are the intersection of two invisible surfaces are obviously invisible. Surfaces whose material vectors form angles of greater than 90 ° with the local line of sight may be completely or partially visible or even completely invisible. define a contour line as being a line along which the line of sight is tangent to the surface. For polyhedra, given a specific viewpoint, a contour line is a material line which is the intersection of two surfaces, only one of which is invisible. For a given viewpoint, the quantitative invisibility of a material line can change only when it passes behind a contour line. Figure 1A illustrates the variation in quantitative invisibility as a line passes behind two overlap- calculation time resulted. define a material line as having specific end points and that this line does not pierce any bounded surface with the surface boundary. From a practical viewpoint, only material lines are manufactured and since we are interested in rendering real objects only material lines need be dealt with. When a volume is corninvisibility ping surfaces. Figure 1B illustrates how quantitative invisibility varies as a line pases behind a solid. Notice that quantitative invisibility can change as it crosses a hidden contour line which is a concave corner. Only surfaces that are viewed from the spatial side should affect the measurement of quantitative invisibility.
 
-![Figure 1 - Changes in quantitative invisibility](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-1-p002.png)
+![Figure 1 - Changes in quantitative invisibility](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-1-p002.png)
 
 *Figure 1 - Changes in quantitative invisibility: Figure 1-Changes in quantitative invisibility*
 
 There are two basic mathematical procedures re quired in order to utilize the notion of quantitative invisibility: detecting when a material line passes be hind a contour line, and determining whether the ma terial line is going behind or coming from behind the visible surface of which the contour line is a boundary. Economic techniques developed for these two pro cedures make use of a property of closed plane bound aries which can be called implied vorticity. This prop erty is a consequence of the order in which the vertex points of a plane bounded by line segments are entered and stored. From the order in which vertex points are stored it can be determined whether a point coplaner with the bounding line segments is on the interior or exterior side of the line. Referring to Figure 2, where the vertex points \(P_{n}\) are entered in a counterclockwise manner, when point A or B are on the interior side of
 
-![Figure 2 - A bounded plane and two points](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-2-p003.png)
+![Figure 2 - A bounded plane and two points](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-2-p003.png)
 
 *Figure 2 - A bounded plane and two points: Figure 2-A bounded plane and two points*
 
@@ -40,7 +40,7 @@ $$
 
 where \(\mathrm{a}, \mathrm{b}, \mathrm{c}\), are the direction cosines of a line perpen dicular to the plane of the triangle ( \(\mathrm{P}_{\mathrm{i}}, \mathrm{P}_{\mathrm{i}+1}, \mathrm{O}\) ). At least one of the equations (1) can be used for any plane since \(a^{2}+b^{2}+c^{2}=1\). In the usual application of the ma tion of rotation it is essential. Since the sign of a ma trix is changed if any two rows are interchanged, a change in the order in which the points are entered in the matrix equations (1) will change th sign of the matrix. For example, the matrix \(\mathrm{A} / \mathrm{a}\) is positive when evaluated for a triangle in the first quadrant which is not perpendicular to the \(\mathrm{x}=0\) plane when the points are entered in a counterclockwise sense, and the ma trix is negative if the points are entered in a clockwise sense. This is illustrated for a simple triangle in Fig
 
-![Figure 3 -Sign change of area with direction](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-3-p004.png)
+![Figure 3 -Sign change of area with direction](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-3-p004.png)
 
 *Figure 3 -Sign change of area with direction: Figure 3-Sign change of area with direction*
 
@@ -50,7 +50,7 @@ $$
 
 The sweep plane of a line to be drawn is the plane which contains this line and the viewpoint. This plane is bounded by a triangle whose vertex points are the eye of the observer and the end points of the line to be drawn. The line to be drawn passes behind a contour line for a specific viewpoint when (i) the piercing point of the contour line in the sweep plane lies within the limits of the contour line and (ii) the piercing point lies within the triangular boundary of the sweep plane. Condition (i) can easily be determined by a distance test or evaluation of the parametric variable of the piercing point when all line equations are in parametric form. Condition (ii) can be determined by a tri-sense test of the three vertex points of the sweep line about the piercing point. Referring to Figure 4, contour line 1 satisfies both conditions on sweep plane SP~, contour line 2 fails condition (i) and contour line 3 fails condition (ii).
 
-![Figure 4- Determining when a line to be drawn passes behind a contour line](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-4-p004.png)
+![Figure 4- Determining when a line to be drawn passes behind a contour line](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-4-p004.png)
 
 *Figure 4- Determining when a line to be drawn passes behind a contour line: Figure 4-Determining when a line to be drawn passes behind a contour line*
 
@@ -64,7 +64,7 @@ After determining that a line to be drawn has passed behind a contour line, it i
 
 - determine the sense (CL J) of implied vorticity of the contour line (CL) about the projected point (J). When the sense (CL J) agrees with the sense of implied vorticity of the surface (S) then the line (P1P2) is coming out from behind surface (S) and the count of quantitative invisibility is to be decreased by one. When the sense (CL J) disagrees with the sense of implied vorticity of the surface (S) then the line (P~P2) is go-
 
-![Figure 5 - Determining the change of quantitative invisibility](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-5-p005.png)
+![Figure 5 - Determining the change of quantitative invisibility](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-5-p005.png)
 
 *Figure 5 - Determining the change of quantitative invisibility: Figure 5-Determining the change of quantitative invisibility*
 
@@ -76,7 +76,7 @@ Initial measurement A bounded surface hides a point when the line of sight to th
 
 - ii) within a surface boundary as detected by Rutledge's scheme.
 
-![Figure 6- Singularities](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-6-p005.png)
+![Figure 6- Singularities](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-6-p005.png)
 
 *Figure 6- Singularities: Figure 6-Singularities*
 
@@ -92,15 +92,15 @@ What these rules essentially detect is the instance when an internal corner line
 
 All of the procedures discussed in this paper have been reduced to practice. Coding has been in Fortran IV and is executed on an IBM 7094 with graphic output on an IBM 1627 (CalComp) plotter. Figures 7 thru 12 are examples of the graphic output. When appropriate, the captions specify calculation time and the number of surfaces and surface boundary lines in a scene. All computer generated pictures in this article were rendered under the control of the same computer program.
 
-![Figure 7- Assembly of two objects, 32 surfaces, 84 lines, 7094 calculation time per view](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-7-p006.png)
+![Figure 7- Assembly of two objects, 32 surfaces, 84 lines, 7094 calculation time per view](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-7-p006.png)
 
 *Figure 7- Assembly of two objects, 32 surfaces, 84 lines, 7094 calculation time per view: about 6.5 seconds*
 
-![Figure 8- Assembly of three machine parts 41 surfaces 104 lines 7094 calculation time per view](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-8-p006.png)
+![Figure 8- Assembly of three machine parts 41 surfaces 104 lines 7094 calculation time per view](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-8-p006.png)
 
 *Figure 8- Assembly of three machine parts 41 surfaces 104 lines 7094 calculation time per view: about 9.3 seconds*
 
-![Figure 9 - Assembly of a transonic aircraft from five components each of which may be altered independently, 143 surfaces, 226 lines 7094 calculation lime per view](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-9-p006.png)
+![Figure 9 - Assembly of a transonic aircraft from five components each of which may be altered independently, 143 surfaces, 226 lines 7094 calculation lime per view](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-9-p006.png)
 
 *Figure 9 - Assembly of a transonic aircraft from five components each of which may be altered independently, 143 surfaces, 226 lines 7094 calculation lime per view: about 41.5 seconds*
 
@@ -108,7 +108,7 @@ All of the procedures discussed in this paper have been reduced to practice. Cod
 
 The author is grateful to Dr. J. D. Rutledge for many helpful discussions, and to P. Loutrel for a helpful conversation. J.A. Dobbs, L. E. Harrington, Mr. & Mrs. E. P. McGilton, S. L. Tramaglini, and R. M. Warner among others were especially helpful with plotter output problems and the maintenance of a high computer thruput which contributed significantly to this project. The author is deeply indebted to J. P. Gilvey and F. L. Graner for their continuing encouragement and support of this work.
 
-![Figure 11 - A perspective view of the aircraft flying over an object which in general layout approximates an Essex class (CVS) air- craft carrier 190 surfaces 402 lines 7094 calculation time](/Users/evanthayer/Projects/stepview/docs/1967_quantitative_invisibility/figures/figure-11-p007.png)
+![Figure 11 - A perspective view of the aircraft flying over an object which in general layout approximates an Essex class (CVS) air- craft carrier 190 surfaces 402 lines 7094 calculation time](/Users/evanthayer/Projects/paperx/docs/1967_quantitative_invisibility/figures/figure-11-p007.png)
 
 *Figure 11 - A perspective view of the aircraft flying over an object which in general layout approximates an Essex class (CVS) air- craft carrier 190 surfaces 402 lines 7094 calculation time: about 84.6 seconds*
 
