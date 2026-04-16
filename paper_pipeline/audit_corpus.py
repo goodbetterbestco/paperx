@@ -11,6 +11,7 @@ from typing import Any
 from paper_pipeline.corpus_layout import display_path
 from paper_pipeline.formula_diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
 from paper_pipeline.math_review_policy import math_text_looks_suspicious
+from paper_pipeline.policies.abstract_quality import abstract_quality_flags
 from paper_pipeline.policies.completeness import (
     block_text as completeness_block_text,
     document_expects_figures,
@@ -460,6 +461,9 @@ def audit_document(path: Path) -> dict[str, Any]:
         )
         if block_id
     }
+    abstract_block_id = str(document.get("front_matter", {}).get("abstract_block_id") or "")
+    abstract_text = _block_text(block_by_id.get(abstract_block_id, {})) if abstract_block_id else ""
+    abstract_flags = set(abstract_quality_flags(abstract_text))
     body_block_types = {"paragraph", "list_item", "code", "display_equation_ref", "equation_group_ref", "figure_ref", "algorithm"}
     unassigned_body_blocks = [
         block
@@ -568,8 +572,18 @@ def audit_document(path: Path) -> dict[str, Any]:
         issues.append(_issue("validation_errors", "validation errors", len(validation_errors), validation_errors))
     if not document.get("front_matter", {}).get("authors"):
         issues.append(_issue("missing_authors", "missing authors", 1, ["front_matter.authors is empty"]))
-    if not document.get("front_matter", {}).get("abstract_block_id"):
-        issues.append(_issue("missing_abstract", "missing abstract", 1, ["front_matter.abstract_block_id is empty"]))
+    if not abstract_block_id or "missing" in abstract_flags:
+        details = ["front_matter.abstract_block_id is empty"] if not abstract_block_id else ["abstract uses missing placeholder"]
+        issues.append(_issue("missing_abstract", "missing abstract", 1, details))
+    elif abstract_flags:
+        issues.append(
+            _issue(
+                "bad_abstract",
+                "bad abstract",
+                1,
+                [f"{','.join(sorted(abstract_flags))}: {_snippet(abstract_text)}"],
+            )
+        )
     if len(sections) <= 1:
         issues.append(_issue("weak_sections", "weak section structure", 1, [f"only {len(sections)} sections"]))
     if not references and document_expects_references(document):
@@ -689,8 +703,10 @@ def audit_document(path: Path) -> dict[str, Any]:
     expects_references = document_expects_references(document)
     if not document.get("front_matter", {}).get("authors"):
         score += 6.0
-    if not document.get("front_matter", {}).get("abstract_block_id"):
+    if not abstract_block_id or "missing" in abstract_flags:
         score += 6.0
+    elif abstract_flags:
+        score += 8.0
     if len(sections) <= 1:
         score += 4.0
     if not references and expects_references:

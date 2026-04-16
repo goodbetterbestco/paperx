@@ -19,6 +19,7 @@ from paper_pipeline.math_review_policy import (
 )
 from paper_pipeline.normalize_prose import decode_ocr_codepoint_tokens, normalize_prose_text
 from paper_pipeline.normalize_references import normalize_reference_text
+from paper_pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
 from paper_pipeline.staleness_policy import build_metadata_for_paper
 from paper_pipeline.text_utils import (
     SectionNode,
@@ -90,17 +91,28 @@ AUTHOR_AFFILIATION_INDEX_RE = re.compile(r"\b\d+\b")
 ABSTRACT_LEAD_RE = re.compile(r"^\s*abstract\b[\s:.-]*", re.IGNORECASE)
 ABSTRACT_MARKER_ONLY_RE = re.compile(r"^\s*abstract\b[\s:.-]*$", re.IGNORECASE)
 TITLE_PAGE_METADATA_RE = re.compile(
-    r"\b(?:received:|accepted:|published online:|open access publication|open access order|the original version of this article was revised|the author\(s\))\b",
+    r"\b(?:received:|accepted:|published online:|open access publication|open access order|"
+    r"the original version of this article was revised|the author\(s\)|accepted manuscript|"
+    r"manuscript version|archive ouverte)\b",
     re.IGNORECASE,
 )
 AUTHOR_NOTE_RE = re.compile(r"\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b", re.IGNORECASE)
 PREPRINT_MARKER_RE = re.compile(r"^\s*preprint\b[\s:.-]*", re.IGNORECASE)
 INTRO_MARKER_RE = re.compile(r"^(?:[0-9O](?:\.[0-9O]+)*)?\.?\s*introduction\b", re.IGNORECASE)
 FRONT_MATTER_METADATA_RE = re.compile(
-    r"\b(?:technical report|deliverable|available online|article history|published online|project funded|information society technologies|revised\b|accepted\b|idealibrary|doi\b|dol:|ecg-tr-|ist-\d{2,}|effective computational geometry|keywords?:|corresponding author|current address)\b",
+    r"\b(?:technical report|deliverable|available online|article history|published online|"
+    r"project funded|information society technologies|revised\b|accepted\b|idealibrary|doi\b|dol:|"
+    r"ecg-tr-|ist-\d{2,}|effective computational geometry|keywords?:|corresponding author|"
+    r"current address|creativecommons|creative commons|licensed under|this manuscript version is made available|"
+    r"numdam|cedram|archive ouverte)\b",
     re.IGNORECASE,
 )
 ABBREVIATED_VENUE_LINE_RE = re.compile(r"(?:\b[A-Za-z]{2,}\.\s*){3,}")
+KEYWORDS_LEAD_RE = re.compile(r"^\s*keywords?:\s", re.IGNORECASE)
+TRAILING_ABSTRACT_BOILERPLATE_RE = re.compile(
+    r"\s+©\s*\d{4}.*?\ball rights reserved\.?$",
+    re.IGNORECASE,
+)
 CITATION_YEAR_RE = re.compile(r"\(\s*(?:18|19|20)\d{2}[a-z]?\s*\)\.")
 CITATION_AUTHOR_SPLIT_RE = re.compile(
     r"(?<=\.)\s*,\s+(?=[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'`.-]*(?:[- ][A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ'`.-]*)*(?:\s+[A-Z](?:\.[A-Z])*\.?|,\s*[A-Z](?:\.[A-Z])*\.?))"
@@ -1634,6 +1646,46 @@ def _looks_like_intro_marker(text: str) -> bool:
     return normalize_title_key(cleaned) in {"introduction", "1introduction"}
 
 
+def _looks_like_body_section_marker(text: str) -> bool:
+    cleaned = clean_heading_title(_clean_text(text))
+    if not cleaned or ABSTRACT_MARKER_ONLY_RE.fullmatch(cleaned) or ABSTRACT_LEAD_RE.match(cleaned):
+        return False
+    if _looks_like_intro_marker(cleaned):
+        return True
+    title_key = normalize_title_key(cleaned)
+    if title_key in {
+        "background",
+        "preliminaries",
+        "methods",
+        "results",
+        "discussion",
+        "conclusion",
+        "conclusions",
+        "references",
+    }:
+        return True
+    parsed = parse_heading_label(cleaned)
+    if parsed is None:
+        return False
+    _, title = parsed
+    normalized_title = normalize_title_key(title)
+    return bool(normalized_title and normalized_title not in {"abstract", "keywords"})
+
+
+def _strip_trailing_abstract_boilerplate(text: str) -> str:
+    return compact_text(TRAILING_ABSTRACT_BOILERPLATE_RE.sub("", _clean_text(text)))
+
+
+def _normalize_abstract_candidate_text(records: list[dict[str, Any]]) -> str:
+    text = _clean_text(" ".join(str(record.get("text", "")) for record in records))
+    text = PREPRINT_MARKER_RE.sub("", ABSTRACT_LEAD_RE.sub("", text)).strip()
+    return _strip_trailing_abstract_boilerplate(text)
+
+
+def _abstract_text_is_usable(text: str) -> bool:
+    return not abstract_quality_flags(text)
+
+
 def _looks_like_page_one_front_matter_tail(record: dict[str, Any]) -> bool:
     if int(record.get("page", 0) or 0) != 1:
         return False
@@ -1895,7 +1947,7 @@ def _build_affiliations_for_authors(author_count: int, affiliation_lines: list[s
     return affiliations, [["aff-1"] for _ in range(author_count)]
 
 
-FRONT_MATTER_MISSING_PLACEHOLDER = "[missing from original]"
+FRONT_MATTER_MISSING_PLACEHOLDER = MISSING_ABSTRACT_PLACEHOLDER
 
 
 def _missing_front_matter_author() -> dict[str, Any]:
@@ -2002,7 +2054,11 @@ def _build_front_matter(
     blocks: list[dict[str, Any]],
     next_block_index: int,
 ) -> tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]:
-    def collect_abstract_and_funding_records(candidate_records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    def collect_abstract_and_funding_records(
+        candidate_records: list[dict[str, Any]],
+        *,
+        allow_fallback: bool,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         if any(normalize_title_key(str(record.get("text", ""))) == "participants" for record in candidate_records[:12]):
             return [], []
         abstract_records: list[dict[str, Any]] = []
@@ -2022,16 +2078,21 @@ def _build_front_matter(
                 if stripped_text:
                     inline_abstract_record = _clone_record_with_text(record, stripped_text)
                 break
-            if _looks_like_intro_marker(text):
+            if _looks_like_body_section_marker(text):
                 break
 
         if abstract_anchor_index is not None:
             if inline_abstract_record is not None:
                 abstract_records.append(inline_abstract_record)
+            total_words = _record_word_count(inline_abstract_record or {})
             for record in candidate_records[abstract_anchor_index + 1 :]:
                 text = _clean_text(str(record.get("text", "")))
-                if not text or _looks_like_intro_marker(text):
+                if not text or _looks_like_body_section_marker(text):
                     break
+                if KEYWORDS_LEAD_RE.match(text):
+                    if abstract_records:
+                        break
+                    continue
                 if _looks_like_author_line(text) or _looks_like_affiliation(text):
                     continue
                 if _looks_like_front_matter_metadata(text) or AUTHOR_NOTE_RE.search(text):
@@ -2040,14 +2101,31 @@ def _build_front_matter(
                     funding_records.append(record)
                     continue
                 abstract_records.append(record)
+                total_words += _record_word_count(record)
+                if len(abstract_records) >= 6 or total_words >= 360:
+                    break
+            if abstract_records and not _abstract_text_is_usable(_normalize_abstract_candidate_text(abstract_records)):
+                return [], funding_records
             return abstract_records, funding_records
 
+        if not allow_fallback:
+            return [], funding_records
+        body_boundary_seen = any(_looks_like_body_section_marker(str(record.get("text", ""))) for record in candidate_records)
+
         started_abstract = False
+        start_page: int | None = None
+        total_words = 0
         for record in candidate_records:
             text = _clean_text(str(record.get("text", "")))
-            if not text or _looks_like_intro_marker(text):
+            if not text or _looks_like_body_section_marker(text):
                 break
+            if KEYWORDS_LEAD_RE.match(text):
+                if started_abstract:
+                    break
+                continue
             if _looks_like_front_matter_metadata(text) or AUTHOR_NOTE_RE.search(text):
+                if started_abstract:
+                    break
                 continue
             if FUNDING_RE.search(text):
                 funding_records.append(record)
@@ -2058,10 +2136,22 @@ def _build_front_matter(
                 continue
             if _looks_like_author_line(text) or _looks_like_affiliation(text):
                 continue
-            if not started_abstract and _record_word_count(record) < 12:
+            if not started_abstract and _record_word_count(record) < 14:
                 continue
+            if started_abstract and not body_boundary_seen:
+                break
+            record_page = int(record.get("page", 0) or 0)
             started_abstract = True
+            if start_page is None:
+                start_page = record_page
+            elif start_page and record_page and record_page != start_page:
+                break
             abstract_records.append(record)
+            total_words += _record_word_count(record)
+            if len(abstract_records) >= 3 or total_words >= 260:
+                break
+        if abstract_records and not _abstract_text_is_usable(_normalize_abstract_candidate_text(abstract_records)):
+            return [], funding_records
         return abstract_records, funding_records
 
     leading_front_records, remainder = _split_leading_front_matter_records(prelude)
@@ -2240,10 +2330,13 @@ def _build_front_matter(
     for author, affiliation_ids in zip(authors, author_affiliation_ids):
         author["affiliation_ids"] = affiliation_ids or author.get("affiliation_ids", ["aff-1"])
 
-    abstract_records, funding_records = collect_abstract_and_funding_records(content_records)
+    abstract_records, funding_records = collect_abstract_and_funding_records(content_records, allow_fallback=False)
     if not abstract_records:
         page_one_content_records = page_one_clean_records[page_one_content_start_index:]
-        page_one_abstract_records, page_one_funding_records = collect_abstract_and_funding_records(page_one_content_records)
+        page_one_abstract_records, page_one_funding_records = collect_abstract_and_funding_records(
+            page_one_content_records,
+            allow_fallback=True,
+        )
         if page_one_abstract_records:
             abstract_records = page_one_abstract_records
         if page_one_funding_records:
@@ -2251,10 +2344,8 @@ def _build_front_matter(
 
     abstract_block_id: str | None = None
     if abstract_records:
-        abstract_text = _clean_text(" ".join(str(record["text"]) for record in abstract_records))
-        abstract_text = ABSTRACT_LEAD_RE.sub("", abstract_text)
-        abstract_text = PREPRINT_MARKER_RE.sub("", abstract_text)
-        if abstract_text:
+        abstract_text = _normalize_abstract_candidate_text(abstract_records)
+        if abstract_text and _abstract_text_is_usable(abstract_text):
             abstract_block_id = f"blk-front-abstract-{next_block_index}"
             blocks.append(
                 {
@@ -2348,12 +2439,7 @@ def _front_block_text(blocks: list[dict[str, Any]], block_id: str | None) -> str
 
 
 def _abstract_text_looks_like_metadata(text: str) -> bool:
-    cleaned = _clean_text(text)
-    if not cleaned:
-        return True
-    if _looks_like_front_matter_metadata(cleaned) or cleaned.startswith("@"):
-        return True
-    return False
+    return bool(abstract_quality_flags(text))
 
 
 def _leading_abstract_text(node: SectionNode) -> tuple[str, list[dict[str, Any]]]:
@@ -2364,8 +2450,7 @@ def _leading_abstract_text(node: SectionNode) -> tuple[str, list[dict[str, Any]]
         and not _looks_like_front_matter_metadata(str(record.get("text", "")))
         and not AUTHOR_NOTE_RE.search(str(record.get("text", "")))
     ]
-    text = _clean_text(" ".join(str(record.get("text", "")) for record in records))
-    text = PREPRINT_MARKER_RE.sub("", ABSTRACT_LEAD_RE.sub("", text)).strip()
+    text = _normalize_abstract_candidate_text(records)
     return text, records
 
 

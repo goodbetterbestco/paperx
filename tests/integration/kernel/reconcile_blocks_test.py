@@ -3450,6 +3450,64 @@ class ReconcileBlocksTest(unittest.TestCase):
         self.assertEqual(next_block_index, 2)
         self.assertEqual(remainder, [])
 
+    def test_front_matter_does_not_infer_abstract_from_page_two_body_without_anchor(self) -> None:
+        prelude = [
+            _record(record_type="front_matter", text="Synthetic Test Paper", page=1, y0=80.0, height=16.0, width=320.0),
+            _record(record_type="front_matter", text="Alice Example", page=1, y0=115.0, height=12.0, width=160.0),
+            _record(record_type="front_matter", text="Example Institute", page=1, y0=130.0, height=12.0, width=180.0),
+            _record(record_type="heading", text="1. Introduction", page=2, y0=90.0, height=12.0, width=120.0),
+            _record(
+                record_type="paragraph",
+                text="This introductory paragraph should remain body text instead of becoming a synthetic abstract.",
+                page=2,
+                y0=115.0,
+                height=24.0,
+                width=420.0,
+            ),
+        ]
+        page_one_records = prelude[:3]
+
+        front_matter, blocks, _, remaining = _build_front_matter(
+            "synthetic_test_paper",
+            prelude,
+            page_one_records,
+            [],
+            1,
+        )
+
+        abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
+        self.assertEqual(abstract_block["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(len(remaining), 1)
+        self.assertIn("introductory paragraph", remaining[0]["text"])
+
+    def test_front_matter_discards_accepted_manuscript_boilerplate_without_anchor(self) -> None:
+        prelude = [
+            _record(record_type="front_matter", text="Synthetic Test Paper", page=1, y0=70.0, height=16.0, width=320.0),
+            _record(record_type="front_matter", text="This is the accepted manuscript version of the following article:", page=1, y0=95.0, height=12.0, width=420.0),
+            _record(
+                record_type="front_matter",
+                text="This manuscript version is made available under the CC-BY-NC-ND 4.0 license.",
+                page=1,
+                y0=110.0,
+                height=12.0,
+                width=420.0,
+            ),
+            _record(record_type="front_matter", text="1. Introduction", page=1, y0=150.0, height=12.0, width=120.0),
+            _record(record_type="paragraph", text="Body paragraph.", page=2, y0=100.0, height=20.0, width=320.0),
+        ]
+
+        front_matter, blocks, _, remaining = _build_front_matter(
+            "synthetic_test_paper",
+            prelude,
+            prelude,
+            [],
+            1,
+        )
+
+        abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
+        self.assertEqual(abstract_block["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(len(remaining), 1)
+
     def test_front_matter_participants_page_uses_missing_abstract_placeholder(self) -> None:
         prelude = [
             _record(record_type="front_matter", text="Workshop Panel Report", page=1, y0=60.0, height=14.0, width=180.0),

@@ -13,7 +13,7 @@ from paper_pipeline.external_sources import external_layout_path, external_math_
 from paper_pipeline.extract_layout import extract_layout
 from paper_pipeline.math_review_policy import review_for_math_entry
 from paper_pipeline.runtime_paths import ensure_repo_tmp_dir, runtime_env
-from paper_pipeline.text_utils import compact_text
+from paper_pipeline.text_utils import clean_heading_title, compact_text, normalize_title_key, parse_heading_label
 from paper_pipeline.types import default_formula_conversion, default_review
 
 DOCS_DIR = CORPUS_DIR
@@ -22,6 +22,7 @@ SLASH_RUN_RE = re.compile(r"/+")
 SPACE_RE = re.compile(r"\s+")
 REF_RE = re.compile(r"^[A-Z][A-Za-z0-9.-]{1,16}\]")
 TAG_NUMBER_RE = re.compile(r"\((\d+)\)\s*$")
+ABSTRACT_LEAD_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
 
 
 def _paper_pdf_path(paper_id: str) -> Path:
@@ -133,17 +134,61 @@ def _is_reference_text(text: str, page: int, page_count: int) -> bool:
     return page >= max(2, page_count - 3) and bool(REF_RE.match(text))
 
 
-def _looks_like_title_page_front_matter(page: int, label: str, text: str, seen_abstract: bool) -> bool:
+def _looks_like_abstract_marker(text: str) -> bool:
+    return bool(ABSTRACT_LEAD_RE.match(clean_heading_title(text)))
+
+
+def _looks_like_page_one_body_heading(label: str, text: str) -> bool:
+    if label != "section_header":
+        return False
+    cleaned = clean_heading_title(text)
+    if not cleaned or _looks_like_abstract_marker(cleaned):
+        return False
+    title_key = normalize_title_key(cleaned)
+    if title_key in {
+        "introduction",
+        "background",
+        "preliminaries",
+        "methods",
+        "results",
+        "discussion",
+        "conclusion",
+        "conclusions",
+        "references",
+    }:
+        return True
+    parsed = parse_heading_label(cleaned)
+    if parsed is None:
+        return False
+    _, title = parsed
+    normalized_title = normalize_title_key(title)
+    return bool(normalized_title and normalized_title not in {"abstract", "keywords"})
+
+
+def _looks_like_title_page_front_matter(
+    page: int,
+    label: str,
+    text: str,
+    seen_abstract: bool,
+    seen_body_heading: bool,
+) -> bool:
     if page != 1:
         return False
     if label in {"page_footer", "page_header", "formula", "caption"}:
         return False
-    if seen_abstract:
+    if seen_abstract or seen_body_heading:
         return False
     return True
 
 
-def _layout_role_for_docling_item(page: int, page_count: int, label: str, text: str, seen_abstract: bool) -> str | None:
+def _layout_role_for_docling_item(
+    page: int,
+    page_count: int,
+    label: str,
+    text: str,
+    seen_abstract: bool,
+    seen_body_heading: bool,
+) -> str | None:
     if label in {"page_footer", "page_header"}:
         return None
     if label == "footnote":
@@ -151,11 +196,11 @@ def _layout_role_for_docling_item(page: int, page_count: int, label: str, text: 
     if label == "caption":
         return "caption"
     if label == "section_header":
-        if _looks_like_title_page_front_matter(page, label, text, seen_abstract):
+        if _looks_like_title_page_front_matter(page, label, text, seen_abstract, seen_body_heading):
             return "front_matter"
         return "heading"
     if label in {"text", "list_item", "code"}:
-        if _looks_like_title_page_front_matter(page, label, text, seen_abstract):
+        if _looks_like_title_page_front_matter(page, label, text, seen_abstract, seen_body_heading):
             return "front_matter"
         if _is_reference_text(text, page, page_count):
             return "reference"
@@ -185,6 +230,7 @@ def docling_json_to_external_sources(docling_document: dict[str, Any], paper_id:
     order_by_page: dict[int, int] = {}
     math_index = 1
     seen_abstract = False
+    seen_body_heading = False
 
     for item in docling_document.get("texts", []):
         label = str(item.get("label", ""))
@@ -222,10 +268,19 @@ def docling_json_to_external_sources(docling_document: dict[str, Any], paper_id:
         text_value = text or orig
         if not text_value:
             continue
-        if text_value.lower().startswith("abstract "):
+        if _looks_like_abstract_marker(text_value):
             seen_abstract = True
+        if _looks_like_page_one_body_heading(label, text_value):
+            seen_body_heading = True
 
-        role = _layout_role_for_docling_item(page, page_count, label, text_value, seen_abstract)
+        role = _layout_role_for_docling_item(
+            page,
+            page_count,
+            label,
+            text_value,
+            seen_abstract,
+            seen_body_heading,
+        )
         if role is None:
             continue
         order_by_page[page] = order_by_page.get(page, 0) + 1

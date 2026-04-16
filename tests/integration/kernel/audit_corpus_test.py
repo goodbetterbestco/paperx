@@ -318,6 +318,131 @@ class AuditCorpusTest(unittest.TestCase):
         issue_counts = {issue["key"]: issue["count"] for issue in result["issues"]}
         self.assertNotIn("missing_figures", issue_counts)
 
+    def test_audit_document_treats_placeholder_abstract_as_missing(self) -> None:
+        document = {
+            "schema_version": "1.0",
+            "paper_id": "test_kernel_paper",
+            "title": "Synthetic Test Paper",
+            "source": {},
+            "build": {},
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [
+                {
+                    "id": "sec-1",
+                    "label": "1",
+                    "title": "Introduction",
+                    "level": 1,
+                    "block_ids": ["blk-paragraph-1"],
+                    "children": [],
+                    "source_spans": [],
+                }
+            ],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                    "source_spans": [],
+                    "review": _review(),
+                },
+                {
+                    "id": "blk-paragraph-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "Body paragraph."}]},
+                    "source_spans": [],
+                    "review": _review(),
+                },
+            ],
+            "math": [],
+            "figures": [],
+            "references": [],
+            "styles": {
+                "document_style": {},
+                "category_styles": {},
+                "block_styles": {},
+            },
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "canonical.json"
+            path.write_text(json.dumps(document), encoding="utf-8")
+            result = audit_document(path)
+
+        issue_counts = {issue["key"]: issue["count"] for issue in result["issues"]}
+        self.assertEqual(issue_counts["missing_abstract"], 1)
+
+    def test_audit_document_flags_boilerplate_abstract_text(self) -> None:
+        document = {
+            "schema_version": "1.0",
+            "paper_id": "test_kernel_paper",
+            "title": "Synthetic Test Paper",
+            "source": {},
+            "build": {},
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [
+                {
+                    "id": "sec-1",
+                    "label": "1",
+                    "title": "Introduction",
+                    "level": 1,
+                    "block_ids": ["blk-paragraph-1"],
+                    "children": [],
+                    "source_spans": [],
+                }
+            ],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {
+                        "spans": [
+                            {
+                                "kind": "text",
+                                "text": "This is the accepted manuscript version of the following article: available online at example.com.",
+                            }
+                        ]
+                    },
+                    "source_spans": [],
+                    "review": _review(),
+                },
+                {
+                    "id": "blk-paragraph-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "Body paragraph."}]},
+                    "source_spans": [],
+                    "review": _review(),
+                },
+            ],
+            "math": [],
+            "figures": [],
+            "references": [],
+            "styles": {
+                "document_style": {},
+                "category_styles": {},
+                "block_styles": {},
+            },
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "canonical.json"
+            path.write_text(json.dumps(document), encoding="utf-8")
+            result = audit_document(path)
+
+        issue_counts = {issue["key"]: issue["count"] for issue in result["issues"]}
+        self.assertEqual(issue_counts["bad_abstract"], 1)
+
     def test_audit_document_does_not_flag_missing_references_without_citation_cues(self) -> None:
         document = {
             "schema_version": "1.0",

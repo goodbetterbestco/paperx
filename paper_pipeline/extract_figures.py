@@ -7,7 +7,6 @@ from typing import Any
 from paper_pipeline.corpus_layout import CORPUS_DIR, figure_manifest_path, paper_pdf_path
 DOCS_DIR = CORPUS_DIR
 
-from paper_pipeline.figure_linking import build_manifest_from_pdf_path, process_paper
 from paper_pipeline.policies.figure_caption import apply_figure_caption_policy
 from paper_pipeline.types import default_review
 
@@ -20,6 +19,8 @@ def ensure_figure_manifest(paper_id: str) -> Path:
     manifest_path = _figure_manifest_path(paper_id)
     if manifest_path.exists():
         return manifest_path
+
+    from paper_pipeline.figure_linking import build_manifest_from_pdf_path, process_paper
 
     pdf_path = paper_pdf_path(paper_id)
     manifest = build_manifest_from_pdf_path(pdf_path.resolve())

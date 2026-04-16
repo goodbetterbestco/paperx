@@ -6,6 +6,7 @@ import argparse
 from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
 import json
 import os
+import re
 import time
 import traceback
 from datetime import datetime, timezone
@@ -26,7 +27,12 @@ from paper_pipeline.corpus_metadata import discover_paper_pdf_paths, paper_id_fr
 from paper_pipeline.docling_adapter import docling_json_to_external_sources, run_docling
 from paper_pipeline.external_sources import external_layout_path, external_math_path
 from paper_pipeline.mathpix_adapter import mathpix_pages_to_external_sources, run_mathpix
-from paper_pipeline.policies.completeness import document_expects_figures, document_expects_references
+from paper_pipeline.policies.abstract_quality import abstract_quality_flags, abstract_quality_rank
+from paper_pipeline.policies.completeness import (
+    block_text as completeness_block_text,
+    document_expects_figures,
+    document_expects_references,
+)
 from paper_pipeline.reconcile_blocks import reconcile_paper
 from paper_pipeline.render_review_from_canonical import render_document
 from paper_pipeline.runtime_paths import ENGINE_ROOT, ensure_repo_tmp_dir, runtime_env
@@ -47,6 +53,21 @@ DOCS_DIR = CORPUS_DIR
 LEXICON_PATH = CORPUS_LEXICON_PATH
 ENV_LOCAL_PATH = ENGINE_ROOT / ".env.local"
 PER_PAPER_SOURCE_WORKERS = 2
+ABSTRACT_PAGE_MARKER_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
+INTRO_PAGE_MARKER_RE = re.compile(r"^\s*(?:\d+|[IVX]+)(?:\.\d+)*\.?\s*introduction\b", re.IGNORECASE)
+LAYOUT_METADATA_RE = re.compile(
+    r"\b(?:accepted manuscript|manuscript version|creative commons|creativecommons|"
+    r"this manuscript version is made available|available online|article history|doi\b)\b",
+    re.IGNORECASE,
+)
+ANOMALY_WEIGHTS = {
+    "bad_abstract": 5,
+    "missing_authors": 4,
+    "missing_abstract": 2,
+    "weak_sections": 2,
+    "missing_references": 1,
+    "missing_figures": 1,
+}
 
 
 def _now_iso() -> str:
@@ -210,13 +231,82 @@ def _build_extraction_sources_for_paper(
     return docling_sources, mathpix_sources, timings
 
 
+def _layout_blocks_by_page(layout: dict[str, Any] | None) -> dict[int, list[dict[str, Any]]]:
+    by_page: dict[int, list[dict[str, Any]]] = {}
+    if not layout:
+        return by_page
+    for block in layout.get("blocks", []):
+        page = int(block.get("page", 0) or 0)
+        if page <= 0:
+            continue
+        by_page.setdefault(page, []).append(block)
+    for blocks in by_page.values():
+        blocks.sort(key=lambda block: (int(block.get("order", 0) or 0), str(block.get("id", ""))))
+    return by_page
+
+
+def _page_one_layout_score(blocks: list[dict[str, Any]]) -> int:
+    if not blocks:
+        return -10
+    texts = [str(block.get("text", "")).strip() for block in blocks if str(block.get("text", "")).strip()]
+    marker_score = 0
+    if any(ABSTRACT_PAGE_MARKER_RE.match(text) for text in texts):
+        marker_score += 8
+    if any(INTRO_PAGE_MARKER_RE.match(text) for text in texts):
+        marker_score += 4
+    marker_score -= sum(3 for text in texts if LAYOUT_METADATA_RE.search(text))
+    return marker_score
+
+
+def _compose_layout_sources(
+    docling_sources: dict[str, Any] | None,
+    mathpix_sources: dict[str, Any] | None,
+) -> dict[str, Any]:
+    docling_layout = (docling_sources or {}).get("layout") or {}
+    mathpix_layout = (mathpix_sources or {}).get("layout") or {}
+    if not docling_layout and not mathpix_layout:
+        return {"engine": "none", "blocks": []}
+    if not docling_layout:
+        return dict(mathpix_layout)
+    if not mathpix_layout:
+        return dict(docling_layout)
+
+    docling_pages = _layout_blocks_by_page(docling_layout)
+    mathpix_pages = _layout_blocks_by_page(mathpix_layout)
+    blocks: list[dict[str, Any]] = []
+    page_sources: dict[str, str] = {}
+    for page in sorted(set(docling_pages) | set(mathpix_pages)):
+        docling_blocks = docling_pages.get(page, [])
+        mathpix_blocks = mathpix_pages.get(page, [])
+        chosen_blocks = docling_blocks
+        chosen_engine = str(docling_layout.get("engine", "docling"))
+        if page == 1 and mathpix_blocks:
+            if _page_one_layout_score(mathpix_blocks) > _page_one_layout_score(docling_blocks):
+                chosen_blocks = mathpix_blocks
+                chosen_engine = str(mathpix_layout.get("engine", "mathpix"))
+        elif not chosen_blocks and mathpix_blocks:
+            chosen_blocks = mathpix_blocks
+            chosen_engine = str(mathpix_layout.get("engine", "mathpix"))
+        blocks.extend(chosen_blocks)
+        page_sources[str(page)] = chosen_engine
+
+    return {
+        "engine": "composed",
+        "pdf_path": docling_layout.get("pdf_path") or mathpix_layout.get("pdf_path"),
+        "page_count": docling_layout.get("page_count") or mathpix_layout.get("page_count"),
+        "page_sizes_pt": docling_layout.get("page_sizes_pt") or mathpix_layout.get("page_sizes_pt"),
+        "blocks": blocks,
+        "page_sources": page_sources,
+    }
+
+
 def _compose_external_sources(
     paper_id: str,
     *,
     docling_sources: dict[str, Any] | None,
     mathpix_sources: dict[str, Any] | None,
 ) -> dict[str, Any]:
-    final_layout = (docling_sources or mathpix_sources or {}).get("layout", {"engine": "none", "blocks": []})
+    final_layout = _compose_layout_sources(docling_sources, mathpix_sources)
     final_math = {}
     if mathpix_sources and mathpix_sources.get("math", {}).get("entries"):
         final_math = mathpix_sources["math"]
@@ -264,13 +354,26 @@ def _load_json_if_exists(path: Path) -> dict[str, Any] | None:
     return None
 
 
+def _document_abstract_text(document: dict[str, Any]) -> str:
+    abstract_id = str(document.get("front_matter", {}).get("abstract_block_id") or "")
+    if not abstract_id:
+        return ""
+    for block in document.get("blocks", []):
+        if str(block.get("id", "")) == abstract_id:
+            return completeness_block_text(block)
+    return ""
+
+
 def _anomaly_flags(document: dict[str, Any]) -> list[str]:
     flags: list[str] = []
     front_matter = document.get("front_matter", {})
     if not front_matter.get("authors"):
         flags.append("missing_authors")
-    if not front_matter.get("abstract_block_id"):
+    abstract_flags = set(abstract_quality_flags(_document_abstract_text(document)))
+    if not front_matter.get("abstract_block_id") or "missing" in abstract_flags:
         flags.append("missing_abstract")
+    elif abstract_flags:
+        flags.append("bad_abstract")
     if len(document.get("sections", [])) <= 1:
         flags.append("weak_sections")
     if len(document.get("references", [])) == 0 and document_expects_references(document):
@@ -278,6 +381,20 @@ def _anomaly_flags(document: dict[str, Any]) -> list[str]:
     if len(document.get("figures", [])) == 0 and document_expects_figures(document.get("blocks", [])):
         flags.append("missing_figures")
     return flags
+
+
+def _document_quality_key(document: dict[str, Any], mode_index: int) -> tuple[int, int, int, int, int, int]:
+    anomalies = _anomaly_flags(document)
+    weighted = sum(ANOMALY_WEIGHTS.get(flag, 1) for flag in anomalies)
+    abstract_rank = abstract_quality_rank(_document_abstract_text(document))
+    return (
+        weighted,
+        abstract_rank,
+        len(anomalies),
+        -len(document.get("sections", [])),
+        -len(document.get("references", [])),
+        mode_index,
+    )
 
 
 def _desired_flags_from_composed_sources(composed_sources: dict[str, Any]) -> dict[str, bool]:
@@ -314,10 +431,13 @@ def _desired_flags_for_existing_paper(
 
 def _build_paper(paper_id: str) -> dict[str, Any]:
     attempts: list[dict[str, Any]] = []
-    for config in (
+    candidates: list[dict[str, Any]] = []
+    for mode_index, config in enumerate(
+        (
         {"use_external_layout": True, "use_external_math": True, "text_engine": "native", "label": "hybrid"},
         {"use_external_layout": True, "use_external_math": False, "text_engine": "native", "label": "layout_only"},
         {"use_external_layout": False, "use_external_math": False, "text_engine": "native", "label": "native"},
+        )
     ):
         try:
             document = reconcile_paper(
@@ -326,13 +446,26 @@ def _build_paper(paper_id: str) -> dict[str, Any]:
                 use_external_layout=bool(config["use_external_layout"]),
                 use_external_math=bool(config["use_external_math"]),
             )
-            outputs = _write_canonical_outputs(paper_id, document)
-            return {
-                "mode": config["label"],
-                "document": document,
-                "outputs": outputs,
-                "attempts": attempts,
-            }
+            validate_canonical(document)
+            anomalies = _anomaly_flags(document)
+            quality_key = _document_quality_key(document, mode_index)
+            candidates.append(
+                {
+                    "mode": config["label"],
+                    "document": document,
+                    "anomalies": anomalies,
+                    "quality_key": quality_key,
+                }
+            )
+            attempts.append(
+                {
+                    "mode": config["label"],
+                    "anomalies": anomalies,
+                    "quality_key": list(quality_key),
+                }
+            )
+            if not anomalies:
+                break
         except Exception as exc:  # pragma: no cover - batch resilience
             attempts.append(
                 {
@@ -341,7 +474,18 @@ def _build_paper(paper_id: str) -> dict[str, Any]:
                     "traceback": traceback.format_exc(limit=12),
                 }
             )
-    raise RuntimeError(f"All build attempts failed for {paper_id}")
+    if not candidates:
+        raise RuntimeError(f"All build attempts failed for {paper_id}")
+
+    best_candidate = min(candidates, key=lambda candidate: candidate["quality_key"])
+    outputs = _write_canonical_outputs(paper_id, best_candidate["document"])
+    return {
+        "mode": best_candidate["mode"],
+        "document": best_candidate["document"],
+        "outputs": outputs,
+        "attempts": attempts,
+        "anomalies": list(best_candidate["anomalies"]),
+    }
 
 
 def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
@@ -414,7 +558,7 @@ def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
         build_result = _build_paper(paper_id)
         timings["build_seconds"] = round(time.perf_counter() - build_started, 3)
         document = build_result["document"]
-        anomalies = _anomaly_flags(document)
+        anomalies = list(build_result.get("anomalies", _anomaly_flags(document)))
         timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
         paper_status.update(
             {
@@ -484,15 +628,16 @@ def _summarize_round(round_status: dict[str, Any]) -> dict[str, Any]:
 
 
 def _render_final_report(status: dict[str, Any]) -> str:
+    round_names = sorted(status.get("rounds", {}).keys())
     lines = [
-        "# Canonical Corpus Two-Round Report",
+        "# Canonical Corpus Report",
         "",
         f"- Started: {status.get('started_at', '')}",
         f"- Updated: {status.get('updated_at', '')}",
         f"- Papers targeted: {len(status.get('papers', []))}",
         "",
     ]
-    for round_name in sorted(status.get("rounds", {}).keys()):
+    for round_name in round_names:
         round_status = status["rounds"][round_name]
         summary = _summarize_round(round_status)
         lines.extend(
@@ -519,11 +664,16 @@ def _render_final_report(status: dict[str, Any]) -> str:
 
     lines.append("## Paper Status")
     lines.append("")
-    lines.append("| Paper | Round 1 | Round 2 |")
-    lines.append("| --- | --- | --- |")
+    if round_names:
+        header = ["Paper", *[round_name.replace("_", " ").title() for round_name in round_names]]
+        lines.append("| " + " | ".join(header) + " |")
+        lines.append("| " + " | ".join(["---"] * len(header)) + " |")
+    else:
+        lines.append("| Paper | Status |")
+        lines.append("| --- | --- |")
     for paper_id in status.get("papers", []):
         row = [paper_id]
-        for round_name in ("round_1", "round_2"):
+        for round_name in round_names:
             paper_status = status.get("rounds", {}).get(round_name, {}).get("papers", {}).get(paper_id, {})
             if paper_status.get("status") == "ok":
                 metrics = paper_status.get("metrics", {})
@@ -540,7 +690,9 @@ def _render_final_report(status: dict[str, Any]) -> str:
             else:
                 cell = "not-run"
             row.append(cell)
-        lines.append(f"| {row[0]} | {row[1]} | {row[2]} |")
+        if len(row) == 1:
+            row.append("not-run")
+        lines.append("| " + " | ".join(row) + " |")
     lines.append("")
 
     lines.append("## Notes")
@@ -609,7 +761,7 @@ def _process_round(
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run canonical extraction across the corpus for one or two rounds."
+        description="Run canonical extraction across the corpus. By default this runs one round; round 2 is opt-in."
     )
     parser.add_argument(
         "--start-round",
@@ -622,8 +774,8 @@ def _parse_args() -> argparse.Namespace:
         "--end-round",
         type=int,
         choices=(1, 2),
-        default=2,
-        help="Round number to end on. Defaults to 2.",
+        default=1,
+        help="Round number to end on. Defaults to 1.",
     )
     parser.add_argument(
         "--stop-after-round",
@@ -649,7 +801,7 @@ def _parse_args() -> argparse.Namespace:
 def run_rounds(
     *,
     start_round: int = 1,
-    end_round: int = 2,
+    end_round: int = 1,
     stop_after_round: int | None = None,
     max_workers: int = 1,
     force_rebuild: bool = False,

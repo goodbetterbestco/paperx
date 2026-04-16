@@ -1,6 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
@@ -8,6 +9,8 @@ if str(ROOT) not in sys.path:
 
 from paper_pipeline.run_corpus_rounds import (
     _anomaly_flags,
+    _build_paper,
+    _compose_external_sources,
     _desired_flags_for_existing_paper,
     _render_final_report,
     _summarize_round,
@@ -49,6 +52,183 @@ class RunCorpusRoundsTest(unittest.TestCase):
         }
 
         self.assertEqual(_anomaly_flags(document), ["weak_sections"])
+
+    def test_anomaly_flags_treat_missing_placeholder_as_missing_abstract(self) -> None:
+        document = {
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [{"id": "sec-1"}, {"id": "sec-2"}],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                }
+            ],
+            "references": [],
+            "figures": [],
+        }
+
+        self.assertEqual(_anomaly_flags(document), ["missing_abstract"])
+
+    def test_compose_external_sources_prefers_mathpix_page_one_when_it_scores_better(self) -> None:
+        captured: dict[str, dict] = {}
+
+        def capture(path: Path, payload: dict) -> None:
+            captured[path.name] = payload
+
+        docling_sources = {
+            "layout": {
+                "engine": "docling",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 2,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "d1", "page": 1, "order": 1, "role": "front_matter", "text": "This is the accepted manuscript version of the following article:", "bbox": {}, "meta": {}},
+                    {"id": "d2", "page": 2, "order": 1, "role": "paragraph", "text": "Page two body.", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "docling", "entries": []},
+        }
+        mathpix_sources = {
+            "layout": {
+                "engine": "mathpix",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 2,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "m1", "page": 1, "order": 1, "role": "paragraph", "text": "Abstract", "bbox": {}, "meta": {}},
+                    {"id": "m2", "page": 1, "order": 2, "role": "paragraph", "text": "A real abstract paragraph.", "bbox": {}, "meta": {}},
+                    {"id": "m3", "page": 1, "order": 3, "role": "paragraph", "text": "1. Introduction", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "mathpix", "entries": [{"id": "math-1"}]},
+        }
+
+        with (
+            patch("paper_pipeline.run_corpus_rounds._write_json", side_effect=capture),
+            patch("paper_pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("paper_pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
+        ):
+            summary = _compose_external_sources(
+                "synthetic_test_paper",
+                docling_sources=docling_sources,
+                mathpix_sources=mathpix_sources,
+            )
+
+        self.assertEqual(summary["layout_engine"], "composed")
+        self.assertEqual(summary["math_engine"], "mathpix")
+        layout_blocks = captured["layout.json"]["blocks"]
+        page_one_texts = [block["text"] for block in layout_blocks if block["page"] == 1]
+        page_two_texts = [block["text"] for block in layout_blocks if block["page"] == 2]
+        self.assertEqual(page_one_texts, ["Abstract", "A real abstract paragraph.", "1. Introduction"])
+        self.assertEqual(page_two_texts, ["Page two body."])
+
+    def test_compose_external_sources_keeps_docling_page_one_on_score_tie(self) -> None:
+        captured: dict[str, dict] = {}
+
+        def capture(path: Path, payload: dict) -> None:
+            captured[path.name] = payload
+
+        docling_sources = {
+            "layout": {
+                "engine": "docling",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "d1", "page": 1, "order": 1, "role": "front_matter", "text": "Synthetic Title", "bbox": {}, "meta": {}},
+                    {"id": "d2", "page": 1, "order": 2, "role": "front_matter", "text": "Alice Example", "bbox": {}, "meta": {}},
+                    {"id": "d3", "page": 1, "order": 3, "role": "front_matter", "text": "A coherent abstract paragraph.", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "docling", "entries": []},
+        }
+        mathpix_sources = {
+            "layout": {
+                "engine": "mathpix",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "m1", "page": 1, "order": 1, "role": "paragraph", "text": "Synthetic", "bbox": {}, "meta": {}},
+                    {"id": "m2", "page": 1, "order": 2, "role": "paragraph", "text": "Title", "bbox": {}, "meta": {}},
+                    {"id": "m3", "page": 1, "order": 3, "role": "paragraph", "text": "A coherent", "bbox": {}, "meta": {}},
+                    {"id": "m4", "page": 1, "order": 4, "role": "paragraph", "text": "summary paragraph.", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "mathpix", "entries": []},
+        }
+
+        with (
+            patch("paper_pipeline.run_corpus_rounds._write_json", side_effect=capture),
+            patch("paper_pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("paper_pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
+        ):
+            _compose_external_sources(
+                "synthetic_test_paper",
+                docling_sources=docling_sources,
+                mathpix_sources=mathpix_sources,
+            )
+
+        layout_blocks = captured["layout.json"]["blocks"]
+        self.assertEqual([block["id"] for block in layout_blocks], ["d1", "d2", "d3"])
+
+    def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
+        bad_document = {
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [{"id": "sec-1"}, {"id": "sec-2"}],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "This is the accepted manuscript version of the following article:"}]},
+                }
+            ],
+            "references": [{"id": "ref-1"}],
+            "figures": [],
+        }
+        good_document = {
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [{"id": "sec-1"}, {"id": "sec-2"}],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "A short and valid abstract about the paper."}]},
+                }
+            ],
+            "references": [{"id": "ref-1"}],
+            "figures": [],
+        }
+
+        with (
+            patch("paper_pipeline.run_corpus_rounds.reconcile_paper", side_effect=[bad_document, good_document]),
+            patch("paper_pipeline.run_corpus_rounds.validate_canonical"),
+            patch("paper_pipeline.run_corpus_rounds._write_canonical_outputs", return_value={"canonical_path": "/tmp/canonical.json"}),
+        ):
+            result = _build_paper("synthetic_test_paper")
+
+        self.assertEqual(result["mode"], "layout_only")
+        self.assertEqual(result["document"], good_document)
+        self.assertEqual(result["anomalies"], [])
 
     def test_round_summary_counts_prebuild_staleness(self) -> None:
         round_status = {
@@ -115,6 +295,34 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertIn("`pipeline_fingerprint_changed`: 1", report)
         self.assertIn("stale-before-build", report)
         self.assertIn("fresh-skip", report)
+
+    def test_final_report_uses_only_present_round_columns(self) -> None:
+        status = {
+            "started_at": "2026-04-14T00:00:00Z",
+            "updated_at": "2026-04-14T00:05:00Z",
+            "papers": ["paper-a"],
+            "rounds": {
+                "round_1": {
+                    "started_at": "2026-04-14T00:00:00Z",
+                    "completed_at": "2026-04-14T00:05:00Z",
+                    "papers": {
+                        "paper-a": {
+                            "status": "ok",
+                            "metrics": {"sections": 4, "references": 3, "figures": 2},
+                            "anomalies": [],
+                            "prebuild_staleness": {"stale": False, "reasons": []},
+                        }
+                    },
+                }
+            },
+            "notes": [],
+        }
+
+        report = _render_final_report(status)
+
+        self.assertIn("# Canonical Corpus Report", report)
+        self.assertIn("| Paper | Round 1 |", report)
+        self.assertNotIn("| Paper | Round 1 | Round 2 |", report)
 
     def test_existing_paper_flags_keep_required_external_sources(self) -> None:
         document = {

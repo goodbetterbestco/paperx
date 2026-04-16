@@ -3,7 +3,10 @@ from __future__ import annotations
 import re
 from typing import Any
 
-import fitz  # type: ignore
+try:
+    import fitz  # type: ignore
+except ModuleNotFoundError:  # pragma: no cover
+    fitz = None  # type: ignore
 
 from paper_pipeline.corpus_layout import CORPUS_DIR, display_path, paper_pdf_path
 from paper_pipeline.figure_labels import caption_label
@@ -15,6 +18,12 @@ DOCS_DIR = CORPUS_DIR
 
 REFERENCE_RE = re.compile(r"^[A-Z][A-Za-z0-9.-]{1,16}\]")
 PAGE_NUMBER_RE = re.compile(r"^\d{1,3}$")
+
+
+def _require_fitz() -> Any:
+    if fitz is None:  # pragma: no cover
+        raise RuntimeError("PyMuPDF is required for layout extraction.")
+    return fitz
 
 
 def _rect_dict(rect: fitz.Rect) -> dict[str, float]:
@@ -87,22 +96,23 @@ def _block_text(block: dict[str, Any]) -> tuple[str, dict[str, Any]]:
 
 
 def extract_layout(paper_id: str) -> dict[str, Any]:
+    fitz_module = _require_fitz()
     pdf_path = paper_pdf_path(paper_id)
-    doc = fitz.open(pdf_path)
+    doc = fitz_module.open(pdf_path)
     blocks: list[LayoutBlock] = []
     page_sizes: list[dict[str, float]] = []
 
     for page_index in range(doc.page_count):
         page_num = page_index + 1
         page = doc.load_page(page_index)
-        page_rect = fitz.Rect(page.rect)
+        page_rect = fitz_module.Rect(page.rect)
         page_sizes.append({"page": page_num, "width": round(page_rect.width, 2), "height": round(page_rect.height, 2)})
 
         order = 0
         for block in page.get_text("dict")["blocks"]:
             if block.get("type") != 0:
                 continue
-            rect = fitz.Rect(block["bbox"])
+            rect = fitz_module.Rect(block["bbox"])
             text, meta = _block_text(block)
             if not text:
                 continue

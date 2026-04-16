@@ -24,8 +24,8 @@ def parse_args() -> argparse.Namespace:
         "--end-round",
         type=int,
         choices=(1, 2),
-        default=2,
-        help="Round number to end on. Defaults to 2.",
+        default=1,
+        help="Round number to end on. Defaults to 1.",
     )
     parser.add_argument(
         "--stop-after-round",
