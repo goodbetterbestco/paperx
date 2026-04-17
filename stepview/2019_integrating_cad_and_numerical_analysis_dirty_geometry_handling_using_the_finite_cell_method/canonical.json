@@ -149,8 +149,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:16:27Z",
-    "updated_at": "2026-04-17T04:16:27Z",
+    "created_at": "2026-04-17T05:30:29Z",
+    "updated_at": "2026-04-17T05:30:29Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -175,23 +175,23 @@
       "external_layout": {
         "path": "stepview/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 339342,
-        "modified_at": "2026-04-17T04:16:18Z",
-        "sha256": "6100c2ecf09c49b59afda3b7fb224141881150356d841a66080304f8ee3a2616"
+        "size_bytes": 339344,
+        "modified_at": "2026-04-17T05:30:20Z",
+        "sha256": "1bdefe2b9e83e93d98668185f7e83df504049315fc464fb09e0c7b4180e068cb"
       },
       "external_math": {
         "path": "stepview/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 31607,
-        "modified_at": "2026-04-17T04:16:18Z",
+        "modified_at": "2026-04-17T05:30:20Z",
         "sha256": "4c1fb16648175ed1f7acad7b6c55caa13e514a8724895c4e0b4cacf2727e0592"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -204,7 +204,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -1184,7 +1184,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "This paper proposes a computational methodology for the integration of Computer Aided Design (CAD) and the Finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account the boundary of the physical domain. The true geometry is captured by a precise numerical integration of elements cut by the boundary. Thus, an effective Point Membership Classification algorithm that determines the inside-outside state of an integration point with respect to the physical domain is a core operation in FCM. To treat also \"dirty geometries\", i.e. imprecise or flawed"
+            "text": "This paper proposes a computational methodology for the integration of Computer Aided Design (CAD) and the Finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account the boundary of the physical domain. The true geometry is captured by a precise numerical integration of elements cut by the boundary. Thus, an effective Point Membership Classification algorithm that determines the inside-outside state of an integration"
           }
         ]
       },
@@ -1229,6 +1229,18 @@
           "page": 1,
           "bbox": {
             "x0": 58.74,
+            "y0": 550.06,
+            "x1": 778.58,
+            "y1": 565.9,
+            "width": 719.84,
+            "height": 15.84
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 58.74,
             "y0": 566.76,
             "x1": 778.58,
             "y1": 582.89,
@@ -1246,18 +1258,6 @@
             "y1": 599.88,
             "width": 719.84,
             "height": 16.13
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 58.74,
-            "y0": 601.61,
-            "x1": 778.58,
-            "y1": 616.59,
-            "width": 719.84,
-            "height": 14.98
           },
           "engine": "composed"
         }
@@ -19245,16 +19245,16 @@
     {
       "id": "math-inline-117",
       "kind": "inline",
-      "display_latex": "\\varepsilon_{\\text {gap }}^{i}=\\frac{1.6}{2^{n_{\\text {max }}^{i}}}",
+      "display_latex": "\\varepsilon_{\\text {gap }}^{i}=\\frac{1.6}{2^{n_{\\text {max }}}}",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "relation",
         "role": "assertion",
         "kind": "inline",
-        "normalized_latex": "\\varepsilon_{ gap }^{i}=\\frac{1.6}{2^{n_{ max }^{i}}}",
+        "normalized_latex": "\\varepsilon_{ gap }^{i}=\\frac{1.6}{2^{n_{ max }}}",
         "symbols": [
           "varepsilon_{ gap }^{i}",
-          "n_{ max }^{i}"
+          "n_{ max }"
         ],
         "operators": [
           "eq",
@@ -19265,12 +19265,12 @@
             "lhs": "\\varepsilon_{ gap }^{i}",
             "operator": "eq",
             "operator_token": "=",
-            "rhs": "\\frac{1.6}{2^{n_{ max }^{i}}}"
+            "rhs": "\\frac{1.6}{2^{n_{ max }}}"
           }
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msubsup><mi>&#x003B5;</mi><mrow><mtext>gap&#x000A0;</mtext></mrow><mrow><mi>i</mi></mrow></msubsup><mo>&#x0003D;</mo><mfrac><mrow><mn>1.6</mn></mrow><mrow><msup><mn>2</mn><mrow><msubsup><mi>n</mi><mrow><mtext>max&#x000A0;</mtext></mrow><mrow><mi>i</mi></mrow></msubsup></mrow></msup></mrow></mfrac></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msubsup><mi>&#x003B5;</mi><mrow><mtext>gap&#x000A0;</mtext></mrow><mrow><mi>i</mi></mrow></msubsup><mo>&#x0003D;</mo><mfrac><mrow><mn>1.6</mn></mrow><mrow><msup><mn>2</mn><mrow><msub><mi>n</mi><mrow><mtext>max&#x000A0;</mtext></mrow></msub></mrow></msup></mrow></mfrac></mrow></math>"
       },
       "conversion": {
         "status": "converted",

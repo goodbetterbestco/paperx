@@ -39,8 +39,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:40:55Z",
-    "updated_at": "2026-04-17T04:40:55Z",
+    "created_at": "2026-04-17T05:28:47Z",
+    "updated_at": "2026-04-17T05:28:47Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -65,23 +65,23 @@
       "external_layout": {
         "path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 102185,
-        "modified_at": "2026-04-17T04:14:06Z",
-        "sha256": "459e9e22823055a28ef4905e24f7f653dc7894a1e3a48d7984d530bf7fc16834"
+        "size_bytes": 102184,
+        "modified_at": "2026-04-17T05:28:46Z",
+        "sha256": "f557e911540cf0923b0b7f370a6587c2af74f12e4e422aed8ef964d3b9dd7196"
       },
       "external_math": {
         "path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 43,
-        "modified_at": "2026-04-17T04:14:06Z",
+        "modified_at": "2026-04-17T05:28:46Z",
         "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "31d5355ca1f9d22126e9f39387fe1e7e16c3b1c5cec44dd6d0b6b8e3d8d07fe1",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -94,7 +94,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },

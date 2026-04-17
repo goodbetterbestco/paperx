@@ -69,8 +69,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:12:28Z",
-    "updated_at": "2026-04-17T04:12:28Z",
+    "created_at": "2026-04-17T05:27:33Z",
+    "updated_at": "2026-04-17T05:27:33Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -96,22 +96,22 @@
         "path": "stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 219325,
-        "modified_at": "2026-04-17T04:12:24Z",
+        "modified_at": "2026-04-17T05:27:22Z",
         "sha256": "41bf374e84dfdd4819c2c7d9931740ff7dd0809a19db42b20c996628efd91572"
       },
       "external_math": {
         "path": "stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 3852,
-        "modified_at": "2026-04-17T04:12:24Z",
+        "modified_at": "2026-04-17T05:27:22Z",
         "sha256": "f9811510aebd1e81acf99e9ccabe6dd6f3651956bb3d87657bfc960ed9edd99b"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -124,7 +124,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },

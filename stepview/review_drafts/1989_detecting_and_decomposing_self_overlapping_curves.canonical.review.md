@@ -1,6 +1,6 @@
 # Detecting and Decomposing Self-Overlapping Curves
 
-P. W. SHOR, Nokia Bell Labs, United States, C. J. V AN WYK, Open Access Support provided by
+P. W. SHOR, Nokia Bell Labs, United States, C. J. VAN WYK, Open Access Support provided by
 
 AT&T Bell Laboratories Murray Hill, New Jersey 07974
 

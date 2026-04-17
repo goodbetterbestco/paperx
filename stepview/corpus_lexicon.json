@@ -7,7 +7,7 @@
   "terms": [
     {
       "canonical": "Computer",
-      "count": 276,
+      "count": 278,
       "papers": [
         "1990_curve_intersection_using_bezier_clipping",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
@@ -80,7 +80,7 @@
     },
     {
       "canonical": "Figure",
-      "count": 207,
+      "count": 213,
       "papers": [
         "1967_quantitative_invisibility",
         "1984_occluding_contour_tell_us_about_solid_shape",
@@ -103,13 +103,14 @@
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
     {
       "canonical": "curves",
-      "count": 192,
+      "count": 193,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
         "1989_detecting_and_decomposing_self_overlapping_curves",
@@ -151,7 +152,7 @@
     },
     {
       "canonical": "mesh",
-      "count": 189,
+      "count": 190,
       "papers": [
         "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
         "2014_locally_injective_parametrization_fixed_boundaries",
@@ -361,25 +362,6 @@
       "variants": []
     },
     {
-      "canonical": "https",
-      "count": 119,
-      "papers": [
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "edges",
       "count": 118,
       "papers": [
@@ -401,6 +383,25 @@
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "https",
+      "count": 118,
+      "papers": [
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
@@ -439,7 +440,7 @@
     },
     {
       "canonical": "University",
-      "count": 113,
+      "count": 114,
       "papers": [
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
@@ -525,7 +526,7 @@
     },
     {
       "canonical": "intersection",
-      "count": 108,
+      "count": 107,
       "papers": [
         "1990_curve_intersection_using_bezier_clipping",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
@@ -583,6 +584,57 @@
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "right",
+      "count": 104,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_detecting_weakly_simple_polygons",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "left",
+      "count": 103,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
@@ -701,44 +753,8 @@
       "variants": []
     },
     {
-      "canonical": "representation",
-      "count": 99,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_boundary_representation_model_rectification",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2016_recognizing_weakly_simple_polygons",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Press",
-      "count": 98,
+      "count": 99,
       "papers": [
         "1990_curve_intersection_using_bezier_clipping",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
@@ -777,6 +793,42 @@
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "representation",
+      "count": 99,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_boundary_representation_model_rectification",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -926,57 +978,6 @@
       "variants": []
     },
     {
-      "canonical": "right",
-      "count": 94,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_detecting_weakly_simple_polygons",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2016_recognizing_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "left",
-      "count": 93,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2016_recognizing_weakly_simple_polygons",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Conference",
       "count": 89,
       "papers": [
@@ -1110,6 +1111,39 @@
         "2014_smooth_surface_contours_accurate_topology",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "triangles",
+      "count": 85,
+      "papers": [
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "triangle",
+      "count": 84,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
@@ -1256,23 +1290,6 @@
       "variants": []
     },
     {
-      "canonical": "triangles",
-      "count": 80,
-      "papers": [
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "algorithms",
       "count": 79,
       "papers": [
@@ -1300,22 +1317,6 @@
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "triangle",
-      "count": 79,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -1366,6 +1367,24 @@
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "NURBS",
+      "count": 76,
+      "papers": [
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -1425,17 +1444,25 @@
       "variants": []
     },
     {
-      "canonical": "NURBS",
-      "count": 74,
+      "canonical": "vertices",
+      "count": 73,
       "papers": [
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
         "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_detecting_weakly_simple_polygons",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
@@ -1487,32 +1514,6 @@
         "2023_algebraic_smooth_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "vertices",
-      "count": 71,
-      "papers": [
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2016_recognizing_weakly_simple_polygons",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -1862,7 +1863,7 @@
     },
     {
       "canonical": "same",
-      "count": 58,
+      "count": 59,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
@@ -1991,6 +1992,31 @@
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "convex",
+      "count": 55,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2001_boundary_representation_model_rectification",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -2158,6 +2184,32 @@
       "variants": []
     },
     {
+      "canonical": "region",
+      "count": 52,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_survey_of_aspect_graphs",
+        "2009_self_overlapping_curves_revisited",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "views",
       "count": 52,
       "papers": [
@@ -2184,24 +2236,20 @@
       "variants": []
     },
     {
-      "canonical": "region",
+      "canonical": "regions",
       "count": 51,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_visibility_occlusion_and_the_aspect_graph",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_the_visibility_complex",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
         "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
         "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
         "2001_survey_of_aspect_graphs",
-        "2009_self_overlapping_curves_revisited",
         "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
@@ -2295,28 +2343,6 @@
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "regions",
-      "count": 49,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -2431,24 +2457,28 @@
       "variants": []
     },
     {
-      "canonical": "Journal",
+      "canonical": "segments",
       "count": 47,
       "papers": [
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1993_the_visibility_complex",
+        "1994_surfaces_with_assigned_apparent_contour",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_boundary_representation_model_rectification",
         "2001_survey_of_aspect_graphs",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2009_self_overlapping_curves_revisited",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_smooth_surface_contours_accurate_topology",
         "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -2513,52 +2543,24 @@
       "variants": []
     },
     {
-      "canonical": "convex",
-      "count": 45,
+      "canonical": "Journal",
+      "count": 46,
       "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_the_visibility_complex",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
         "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2001_boundary_representation_model_rectification",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
         "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "segments",
-      "count": 45,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_curve_intersection_using_bezier_clipping",
-        "1993_the_visibility_complex",
-        "1994_surfaces_with_assigned_apparent_contour",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_boundary_representation_model_rectification",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2009_self_overlapping_curves_revisited",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_smooth_surface_contours_accurate_topology",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2015_correct_resolution_trimmed_spline_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review",
+        "2015_detecting_weakly_simple_polygons",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours"
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -2612,22 +2614,6 @@
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "tessellation",
-      "count": 44,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -2771,23 +2757,8 @@
       "variants": []
     },
     {
-      "canonical": "apparent",
-      "count": 42,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "volume",
-      "count": 42,
+      "count": 43,
       "papers": [
         "1990_hidden_curve_removal_for_free_form_surfaces",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
@@ -2801,6 +2772,21 @@
         "2019_line_drawings_from_3d_models",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "apparent",
+      "count": 42,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -2879,6 +2865,45 @@
       "variants": []
     },
     {
+      "canonical": "definition",
+      "count": 40,
+      "papers": [
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_cad_and_the_product_master_model",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "visual",
+      "count": 40,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "planar",
       "count": 39,
       "papers": [
@@ -2927,26 +2952,6 @@
       "variants": []
     },
     {
-      "canonical": "visual",
-      "count": 39,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "color",
       "count": 38,
       "papers": [
@@ -2982,6 +2987,26 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "results",
+      "count": 38,
+      "papers": [
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -3033,25 +3058,6 @@
       "variants": []
     },
     {
-      "canonical": "definition",
-      "count": 37,
-      "papers": [
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_cad_and_the_product_master_model",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Forum",
       "count": 37,
       "papers": [
@@ -3071,6 +3077,37 @@
       "variants": []
     },
     {
+      "canonical": "isogeometric",
+      "count": 37,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "original",
+      "count": 37,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
+        "2001_survey_of_aspect_graphs",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "product",
       "count": 37,
       "papers": [
@@ -3082,24 +3119,6 @@
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
         "2018_trimming_in_isogeometric_analysis_review",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Robust",
-      "count": 37,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "2001_boundary_representation_model_rectification",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -3153,6 +3172,22 @@
       "variants": []
     },
     {
+      "canonical": "tessellation",
+      "count": 37,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "applications",
       "count": 36,
       "papers": [
@@ -3194,6 +3229,29 @@
       "variants": []
     },
     {
+      "canonical": "computation",
+      "count": 36,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1998_cad_and_the_product_master_model",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_boundary_representation_model_rectification",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Contour",
       "count": 36,
       "papers": [
@@ -3220,16 +3278,6 @@
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "isogeometric",
-      "count": 36,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -3292,33 +3340,36 @@
       "variants": []
     },
     {
-      "canonical": "Comput-Aided",
+      "canonical": "complex",
       "count": 35,
       "papers": [
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
     {
-      "canonical": "computation",
+      "canonical": "Comput-Aided",
       "count": 35,
       "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1998_cad_and_the_product_master_model",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_boundary_representation_model_rectification",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
       ],
       "variants": []
     },
@@ -3362,26 +3413,6 @@
       "variants": []
     },
     {
-      "canonical": "original",
-      "count": 35,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
-        "2001_survey_of_aspect_graphs",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "polygons",
       "count": 35,
       "papers": [
@@ -3418,26 +3449,6 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_trimming_in_isogeometric_analysis_review",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "segment",
-      "count": 35,
-      "papers": [
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1993_the_visibility_complex",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2001_survey_of_aspect_graphs",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -3484,31 +3495,6 @@
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "2006_computing_contour_generators_of_evolving_implicit_surfaces"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "complex",
-      "count": 34,
-      "papers": [
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
-        "1993_the_visibility_complex",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -3562,22 +3548,22 @@
       "variants": []
     },
     {
-      "canonical": "results",
+      "canonical": "segment",
       "count": 34,
       "papers": [
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2001_survey_of_aspect_graphs",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
         "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -3599,6 +3585,30 @@
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "time",
+      "count": 34,
+      "papers": [
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_detecting_weakly_simple_polygons",
+        "2016_recognizing_weakly_simple_polygons",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -3756,29 +3766,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "time",
-      "count": 33,
-      "papers": [
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2016_recognizing_weakly_simple_polygons",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -4235,6 +4222,25 @@
       "variants": []
     },
     {
+      "canonical": "Visualization",
+      "count": 30,
+      "papers": [
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_boundary_representation_model_rectification",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "back-facing",
       "count": 29,
       "papers": [
@@ -4262,6 +4268,28 @@
         "2023_algebraic_smooth_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "construction",
+      "count": 29,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_survey_of_aspect_graphs",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -4342,6 +4370,22 @@
       "variants": []
     },
     {
+      "canonical": "refinement",
+      "count": 29,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "research",
       "count": 29,
       "papers": [
@@ -4412,27 +4456,6 @@
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "construction",
-      "count": 28,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_survey_of_aspect_graphs",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -4558,22 +4581,6 @@
       "variants": []
     },
     {
-      "canonical": "refinement",
-      "count": 28,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Research",
       "count": 28,
       "papers": [
@@ -4618,6 +4625,24 @@
       "variants": []
     },
     {
+      "canonical": "test",
+      "count": 28,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "type",
       "count": 28,
       "papers": [
@@ -4628,25 +4653,6 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Visualization",
-      "count": 28,
-      "papers": [
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_boundary_representation_model_rectification",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -4772,6 +4778,22 @@
       "variants": []
     },
     {
+      "canonical": "quality",
+      "count": 27,
+      "papers": [
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_detecting_weakly_simple_polygons",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Recognition",
       "count": 27,
       "papers": [
@@ -4787,6 +4809,24 @@
         "2004_the_visual_hull_of_smooth_curved_objects",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2022_versality_of_central_projections_of_regular_surfaces",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Robust",
+      "count": 27,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "2001_boundary_representation_model_rectification",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -4985,22 +5025,6 @@
       "variants": []
     },
     {
-      "canonical": "quality",
-      "count": 26,
-      "papers": [
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "radial",
       "count": 26,
       "papers": [
@@ -5097,6 +5121,25 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "information",
+      "count": 25,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1998_cad_and_the_product_master_model",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -5224,24 +5267,6 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "test",
-      "count": 25,
-      "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -5398,6 +5423,20 @@
       "variants": []
     },
     {
+      "canonical": "hull",
+      "count": 24,
+      "papers": [
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2016_recognizing_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "indicated",
       "count": 24,
       "papers": [
@@ -5407,24 +5446,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "information",
-      "count": 24,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1998_cad_and_the_product_master_model",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
       ],
       "variants": []
     },
@@ -5553,6 +5574,27 @@
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Society",
+      "count": 24,
+      "papers": [
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2009_self_overlapping_curves_revisited",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_detecting_weakly_simple_polygons",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -5741,26 +5783,6 @@
       "variants": []
     },
     {
-      "canonical": "Society",
-      "count": 23,
-      "papers": [
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2009_self_overlapping_curves_revisited",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_detecting_weakly_simple_polygons",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "thesis",
       "count": 23,
       "papers": [
@@ -5825,6 +5847,69 @@
         "2008_the_visual_hull_of_piecewise_smooth_objects",
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_algebraic_smooth_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "arbitrary",
+      "count": 22,
+      "papers": [
+        "2001_boundary_representation_model_rectification",
+        "2001_survey_of_aspect_graphs",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "B-rep",
+      "count": 22,
+      "papers": [
+        "2001_boundary_representation_model_rectification",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "bounding",
+      "count": 22,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2009_self_overlapping_curves_revisited",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "critical",
+      "count": 22,
+      "papers": [
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -6045,39 +6130,6 @@
       "variants": []
     },
     {
-      "canonical": "arbitrary",
-      "count": 21,
-      "papers": [
-        "2001_boundary_representation_model_rectification",
-        "2001_survey_of_aspect_graphs",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "B-rep",
-      "count": 21,
-      "papers": [
-        "2001_boundary_representation_model_rectification",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "basis",
       "count": 21,
       "papers": [
@@ -6105,20 +6157,6 @@
         "2015_correct_resolution_trimmed_spline_surfaces",
         "2016_recognizing_weakly_simple_polygons",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "bounding",
-      "count": 21,
-      "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2009_self_overlapping_curves_revisited",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -6192,20 +6230,6 @@
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "hull",
-      "count": 21,
-      "papers": [
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2016_recognizing_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -6346,6 +6370,29 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Table",
+      "count": 21,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -6766,28 +6813,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Table",
-      "count": 20,
-      "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
       ],
       "variants": []
     },
@@ -7239,6 +7264,28 @@
       "variants": []
     },
     {
+      "canonical": "Conclusion",
+      "count": 18,
+      "papers": [
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "constraints",
       "count": 18,
       "papers": [
@@ -7250,22 +7297,6 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "critical",
-      "count": 18,
-      "papers": [
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -7321,6 +7352,15 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "lambda",
+      "count": 18,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -7460,28 +7500,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Conclusion",
-      "count": 17,
-      "papers": [
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1993_the_visibility_complex",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2016_recognizing_weakly_simple_polygons",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2019_line_drawings_from_3d_models",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -7682,6 +7700,25 @@
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "obtained",
+      "count": 17,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_the_visibility_complex",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -7928,6 +7965,17 @@
       "variants": []
     },
     {
+      "canonical": "Delta",
+      "count": 16,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "depth",
       "count": 16,
       "papers": [
@@ -7935,6 +7983,22 @@
         "2010_two_fast_methods_for_high_quality_line_visibility",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "detection",
+      "count": 16,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -8064,24 +8128,6 @@
       "variants": []
     },
     {
-      "canonical": "obtained",
-      "count": 16,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_the_visibility_complex",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "order",
       "count": 16,
       "papers": [
@@ -8100,6 +8146,20 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Piegl",
+      "count": 16,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -8231,6 +8291,22 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "values",
+      "count": 16,
+      "papers": [
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -8385,21 +8461,6 @@
         "2016_recognizing_weakly_simple_polygons",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "detection",
-      "count": 15,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
       ],
       "variants": []
     },
@@ -8740,22 +8801,6 @@
       "variants": []
     },
     {
-      "canonical": "values",
-      "count": 15,
-      "papers": [
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "vector",
       "count": 15,
       "papers": [
@@ -8881,6 +8926,24 @@
         "2015_detecting_weakly_simple_polygons",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "closed",
+      "count": 14,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2009_self_overlapping_curves_revisited",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -9145,20 +9208,6 @@
       "variants": []
     },
     {
-      "canonical": "Piegl",
-      "count": 14,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "properties",
       "count": 14,
       "papers": [
@@ -9372,20 +9421,6 @@
       "variants": []
     },
     {
-      "canonical": "April",
-      "count": 13,
-      "papers": [
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "August",
       "count": 13,
       "papers": [
@@ -9453,19 +9488,17 @@
       "variants": []
     },
     {
-      "canonical": "closed",
+      "canonical": "Comparison",
       "count": 13,
       "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
         "1990_curve_intersection_using_bezier_clipping",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
         "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2009_self_overlapping_curves_revisited",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models"
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -9511,6 +9544,19 @@
       "variants": []
     },
     {
+      "canonical": "continuous",
+      "count": 13,
+      "papers": [
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "corresponds",
       "count": 13,
       "papers": [
@@ -9524,6 +9570,18 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "dataset",
+      "count": 13,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -9654,6 +9712,22 @@
         "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "images",
+      "count": 13,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -9828,6 +9902,19 @@
       "variants": []
     },
     {
+      "canonical": "refined",
+      "count": 13,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "removed",
       "count": 13,
       "papers": [
@@ -9934,6 +10021,19 @@
       "variants": []
     },
     {
+      "canonical": "Step",
+      "count": 13,
+      "papers": [
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2023_algebraic_smooth_occluding_contours",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Stylized",
       "count": 13,
       "papers": [
@@ -10018,6 +10118,21 @@
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Appendix",
+      "count": 12,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -10124,20 +10239,6 @@
       "variants": []
     },
     {
-      "canonical": "Comparison",
-      "count": 12,
-      "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Constructing",
       "count": 12,
       "papers": [
@@ -10150,18 +10251,6 @@
         "2008_the_visual_hull_of_piecewise_smooth_objects",
         "2015_detecting_weakly_simple_polygons",
         "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "continuous",
-      "count": 12,
-      "papers": [
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -10265,6 +10354,21 @@
       "variants": []
     },
     {
+      "canonical": "evaluation",
+      "count": 12,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_boundary_representation_model_rectification",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Gigus",
       "count": 12,
       "papers": [
@@ -10306,21 +10410,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "images",
-      "count": 12,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -10570,6 +10659,18 @@
       "variants": []
     },
     {
+      "canonical": "satisfy",
+      "count": 12,
+      "papers": [
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2016_recognizing_weakly_simple_polygons",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "scale",
       "count": 12,
       "papers": [
@@ -10747,6 +10848,16 @@
       "variants": []
     },
     {
+      "canonical": "Accessed",
+      "count": 11,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "accurate",
       "count": 11,
       "papers": [
@@ -10803,6 +10914,19 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "April",
+      "count": 11,
+      "papers": [
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -10932,18 +11056,6 @@
       "variants": []
     },
     {
-      "canonical": "dataset",
-      "count": 11,
-      "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Delaunay",
       "count": 11,
       "papers": [
@@ -11004,16 +11116,15 @@
       "variants": []
     },
     {
-      "canonical": "evaluation",
+      "canonical": "every",
       "count": 11,
       "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_boundary_representation_model_rectification",
+        "1994_surfaces_with_assigned_apparent_contour",
         "2014_smooth_surface_contours_accurate_topology",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
+        "2015_detecting_weakly_simple_polygons",
         "2019_line_drawings_from_3d_models",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -11180,12 +11291,13 @@
       "variants": []
     },
     {
-      "canonical": "jcde",
+      "canonical": "interval",
       "count": 11,
       "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_boundary_representation_model_rectification",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -11392,19 +11504,6 @@
       "variants": []
     },
     {
-      "canonical": "refined",
-      "count": 11,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Riesenfeld",
       "count": 11,
       "papers": [
@@ -11413,17 +11512,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "satisfy",
-      "count": 11,
-      "papers": [
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons",
-        "2016_recognizing_weakly_simple_polygons",
-        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -11611,19 +11699,6 @@
       "variants": []
     },
     {
-      "canonical": "1467-8659",
-      "count": 10,
-      "papers": [
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "27th",
       "count": 10,
       "papers": [
@@ -11633,16 +11708,6 @@
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Accessed",
-      "count": 10,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -11667,21 +11732,6 @@
         "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2014_smooth_surface_contours_accurate_topology",
         "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Appendix",
-      "count": 10,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -11856,6 +11906,29 @@
       "variants": []
     },
     {
+      "canonical": "contact",
+      "count": 10,
+      "papers": [
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "contained",
+      "count": 10,
+      "papers": [
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Control",
       "count": 10,
       "papers": [
@@ -12026,6 +12099,19 @@
       "variants": []
     },
     {
+      "canonical": "display",
+      "count": 10,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "distance",
       "count": 10,
       "papers": [
@@ -12107,19 +12193,6 @@
       "papers": [
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "2001_survey_of_aspect_graphs"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "every",
-      "count": 10,
-      "papers": [
-        "1994_surfaces_with_assigned_apparent_contour",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_detecting_weakly_simple_polygons",
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -12279,17 +12352,6 @@
       "papers": [
         "2014_smooth_surface_contours_accurate_topology",
         "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "interval",
-      "count": 10,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_boundary_representation_model_rectification",
-        "2018_trimming_in_isogeometric_analysis_review",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -12561,6 +12623,20 @@
       "variants": []
     },
     {
+      "canonical": "Proof",
+      "count": 10,
+      "papers": [
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_boundary_representation_model_rectification",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_detecting_weakly_simple_polygons",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Real-time",
       "count": 10,
       "papers": [
@@ -12706,18 +12782,6 @@
       "variants": []
     },
     {
-      "canonical": "Step",
-      "count": 10,
-      "papers": [
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2023_algebraic_smooth_occluding_contours",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "steps",
       "count": 10,
       "papers": [
@@ -12768,6 +12832,18 @@
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2018_trimming_in_isogeometric_analysis_review",
         "2022_versality_of_central_projections_of_regular_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Tiller",
+      "count": 10,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -12831,6 +12907,18 @@
         "2009_self_overlapping_curves_revisited",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2022_versality_of_central_projections_of_regular_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "1467-8659",
+      "count": 9,
+      "papers": [
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -12982,6 +13070,19 @@
       "variants": []
     },
     {
+      "canonical": "consists",
+      "count": 9,
+      "papers": [
+        "2009_self_overlapping_curves_revisited",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "conversion",
       "count": 9,
       "papers": [
@@ -13081,18 +13182,6 @@
       "variants": []
     },
     {
-      "canonical": "display",
-      "count": 9,
-      "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Dissertation",
       "count": 9,
       "papers": [
@@ -13184,6 +13273,21 @@
       "papers": [
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Evaluation",
+      "count": 9,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -13401,6 +13505,16 @@
         "2008_the_visual_hull_of_piecewise_smooth_objects",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "jcde",
+      "count": 9,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -14034,6 +14148,19 @@
       "variants": []
     },
     {
+      "canonical": "total",
+      "count": 9,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "TVCG",
       "count": 9,
       "papers": [
@@ -14430,18 +14557,6 @@
       "variants": []
     },
     {
-      "canonical": "consists",
-      "count": 8,
-      "papers": [
-        "2009_self_overlapping_curves_revisited",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "constraint",
       "count": 8,
       "papers": [
@@ -14449,18 +14564,6 @@
         "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "contact",
-      "count": 8,
-      "papers": [
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2022_versality_of_central_projections_of_regular_surfaces"
       ],
       "variants": []
     },
@@ -14476,16 +14579,6 @@
       "variants": []
     },
     {
-      "canonical": "Delta",
-      "count": 8,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Digital",
       "count": 8,
       "papers": [
@@ -14495,6 +14588,15 @@
         "2019_line_drawings_from_3d_models",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Distribution",
+      "count": 8,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -14554,20 +14656,6 @@
         "2015_detecting_weakly_simple_polygons",
         "2016_recognizing_weakly_simple_polygons",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Evaluation",
-      "count": 8,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -15052,6 +15140,19 @@
       "variants": []
     },
     {
+      "canonical": "Oxford",
+      "count": 8,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Parameterization",
       "count": 8,
       "papers": [
@@ -15120,20 +15221,6 @@
         "2000_representational_validity_of_boundary_representation_models",
         "2001_survey_of_aspect_graphs",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Proof",
-      "count": 8,
-      "papers": [
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_boundary_representation_model_rectification",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_detecting_weakly_simple_polygons",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -15235,6 +15322,17 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2022_versality_of_central_projections_of_regular_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "seconds",
+      "count": 8,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -15365,36 +15463,12 @@
       "variants": []
     },
     {
-      "canonical": "Tiller",
-      "count": 8,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "tolerancing",
       "count": 8,
       "papers": [
         "1998_cad_and_the_product_master_model",
         "2018_trimming_in_isogeometric_analysis_review",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "total",
-      "count": 8,
-      "papers": [
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -15416,6 +15490,16 @@
       "papers": [
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "11111467-8659",
+      "count": 7,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -15930,6 +16014,15 @@
       "variants": []
     },
     {
+      "canonical": "disjoint",
+      "count": 7,
+      "papers": [
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "disk",
       "count": 7,
       "papers": [
@@ -15951,6 +16044,20 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "distribution",
+      "count": 7,
+      "papers": [
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -16197,6 +16304,16 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "hulls",
+      "count": 7,
+      "papers": [
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -16601,18 +16718,6 @@
       "variants": []
     },
     {
-      "canonical": "Oxford",
-      "count": 7,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Parametrization",
       "count": 7,
       "papers": [
@@ -16905,16 +17010,6 @@
       "variants": []
     },
     {
-      "canonical": "seconds",
-      "count": 7,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Segments",
       "count": 7,
       "papers": [
@@ -17141,6 +17236,18 @@
       "variants": []
     },
     {
+      "canonical": "times",
+      "count": 7,
+      "papers": [
+        "1990_curve_intersection_using_bezier_clipping",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "trace",
       "count": 7,
       "papers": [
@@ -17292,15 +17399,6 @@
         "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
         "2016_recognizing_weakly_simple_polygons",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "11111467-8659",
-      "count": 6,
-      "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -17635,16 +17733,6 @@
       "variants": []
     },
     {
-      "canonical": "contained",
-      "count": 6,
-      "papers": [
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "ConTesse",
       "count": 6,
       "papers": [
@@ -17815,19 +17903,6 @@
         "2001_curve_evaluation_and_interrogation_on_surfaces",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "distribution",
-      "count": 6,
-      "papers": [
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -19294,13 +19369,14 @@
       "variants": []
     },
     {
-      "canonical": "times",
+      "canonical": "Time",
       "count": 6,
       "papers": [
-        "1990_curve_intersection_using_bezier_clipping",
-        "2014_locally_injective_parametrization_fixed_boundaries",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2015_detecting_weakly_simple_polygons",
         "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -20288,15 +20364,6 @@
       "variants": []
     },
     {
-      "canonical": "disjoint",
-      "count": 5,
-      "papers": [
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "dissertation",
       "count": 5,
       "papers": [
@@ -20305,15 +20372,6 @@
         "2000_partitioning_trimmed_spline_surfaces_visibility",
         "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Distribution",
-      "count": 5,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -20501,6 +20559,17 @@
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Figures",
+      "count": 5,
+      "papers": [
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -20998,6 +21067,17 @@
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Lemma",
+      "count": 5,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2015_detecting_weakly_simple_polygons",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -21541,6 +21621,15 @@
       "variants": []
     },
     {
+      "canonical": "prime",
+      "count": 5,
+      "papers": [
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "profiles",
       "count": 5,
       "papers": [
@@ -21570,6 +21659,16 @@
         "2008_the_visual_hull_of_piecewise_smooth_objects",
         "2022_versality_of_central_projections_of_regular_surfaces",
         "2023_algebraic_smooth_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "property",
+      "count": 5,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -21763,6 +21862,17 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "running",
+      "count": 5,
+      "papers": [
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -22073,6 +22183,17 @@
       "variants": []
     },
     {
+      "canonical": "technology",
+      "count": 5,
+      "papers": [
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Texas",
       "count": 5,
       "papers": [
@@ -22080,18 +22201,6 @@
         "2001_boundary_representation_model_rectification",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Time",
-      "count": 5,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -22131,6 +22240,16 @@
         "1998_cad_and_the_product_master_model",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "translation",
+      "count": 5,
+      "papers": [
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2015_detecting_weakly_simple_polygons",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -22215,6 +22334,15 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Vertices",
+      "count": 5,
+      "papers": [
+        "2015_detecting_weakly_simple_polygons",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -22358,6 +22486,17 @@
       "variants": []
     },
     {
+      "canonical": "1-14",
+      "count": 4,
+      "papers": [
+        "1991_on_surfaces_and_their_contours",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "1-60",
       "count": 4,
       "papers": [
@@ -22375,6 +22514,17 @@
         "2015_detecting_weakly_simple_polygons",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "151-160",
+      "count": 4,
+      "papers": [
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -22439,6 +22589,17 @@
         "1991_on_surfaces_and_their_contours",
         "2009_self_overlapping_curves_revisited",
         "2014_locally_injective_parametrization_fixed_boundaries"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "285-307",
+      "count": 4,
+      "papers": [
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -23143,6 +23304,16 @@
       "variants": []
     },
     {
+      "canonical": "combinations",
+      "count": 4,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Combinatorial",
       "count": 4,
       "papers": [
@@ -23582,6 +23753,16 @@
       "variants": []
     },
     {
+      "canonical": "determination",
+      "count": 4,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Determination",
       "count": 4,
       "papers": [
@@ -23656,6 +23837,17 @@
         "2014_smooth_surface_contours_accurate_topology",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "distributed",
+      "count": 4,
+      "papers": [
+        "2000_representational_validity_of_boundary_representation_models",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -24688,17 +24880,6 @@
       "variants": []
     },
     {
-      "canonical": "Lemma",
-      "count": 4,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2015_detecting_weakly_simple_polygons",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "length",
       "count": 4,
       "papers": [
@@ -24855,6 +25036,14 @@
         "1991_on_surfaces_and_their_contours",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "2022_versality_of_central_projections_of_regular_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "mathrm-C",
+      "count": 4,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -25122,6 +25311,17 @@
       "variants": []
     },
     {
+      "canonical": "page",
+      "count": 4,
+      "papers": [
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2009_self_overlapping_curves_revisited",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "pairs",
       "count": 4,
       "papers": [
@@ -25377,6 +25577,17 @@
       "variants": []
     },
     {
+      "canonical": "provided",
+      "count": 4,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Pure",
       "count": 4,
       "papers": [
@@ -25562,33 +25773,12 @@
       "variants": []
     },
     {
-      "canonical": "running",
-      "count": 4,
-      "papers": [
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Ryan",
       "count": 4,
       "papers": [
         "2014_smooth_surface_contours_accurate_topology",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "S0010-4485",
-      "count": 4,
-      "papers": [
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -26182,16 +26372,6 @@
       "variants": []
     },
     {
-      "canonical": "technology",
-      "count": 4,
-      "papers": [
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "tell",
       "count": 4,
       "papers": [
@@ -26199,6 +26379,16 @@
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2014_smooth_surface_contours_accurate_topology",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "terms",
+      "count": 4,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -26299,15 +26489,6 @@
       "papers": [
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "translation",
-      "count": 4,
-      "papers": [
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2015_detecting_weakly_simple_polygons"
       ],
       "variants": []
     },
@@ -26597,21 +26778,12 @@
       "variants": []
     },
     {
-      "canonical": "0167-8396",
+      "canonical": "1-12",
       "count": 3,
       "papers": [
         "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "1-14",
-      "count": 3,
-      "papers": [
-        "1991_on_surfaces_and_their_contours",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space"
       ],
       "variants": []
     },
@@ -26621,6 +26793,16 @@
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "1-16",
+      "count": 3,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2023_algebraic_smooth_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -26711,12 +26893,22 @@
       "variants": []
     },
     {
-      "canonical": "151-160",
+      "canonical": "1309-1331",
       "count": 3,
       "papers": [
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review"
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "156-166",
+      "count": 3,
+      "papers": [
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -26775,16 +26967,6 @@
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "285-307",
-      "count": 3,
-      "papers": [
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -26874,6 +27056,16 @@
         "2014_smooth_surface_contours_accurate_topology",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "437-444",
+      "count": 3,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -27035,10 +27227,11 @@
       "variants": []
     },
     {
-      "canonical": "academic",
+      "canonical": "Access",
       "count": 3,
       "papers": [
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -28010,6 +28203,15 @@
       "variants": []
     },
     {
+      "canonical": "commercial",
+      "count": 3,
+      "papers": [
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "compared",
       "count": 3,
       "papers": [
@@ -28497,16 +28699,6 @@
       "variants": []
     },
     {
-      "canonical": "determination",
-      "count": 3,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "determines",
       "count": 3,
       "papers": [
@@ -28570,16 +28762,6 @@
       "papers": [
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "distributed",
-      "count": 3,
-      "papers": [
-        "2000_representational_validity_of_boundary_representation_models",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -28904,16 +29086,6 @@
       "papers": [
         "2000_representational_validity_of_boundary_representation_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Figures",
-      "count": 3,
-      "papers": [
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -29538,15 +29710,6 @@
       "variants": []
     },
     {
-      "canonical": "hulls",
-      "count": 3,
-      "papers": [
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "hyperplanes",
       "count": 3,
       "papers": [
@@ -29610,6 +29773,15 @@
       "papers": [
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "implies",
+      "count": 3,
+      "papers": [
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -30729,16 +30901,6 @@
       "variants": []
     },
     {
-      "canonical": "page",
-      "count": 3,
-      "papers": [
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2009_self_overlapping_curves_revisited",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Parabolic",
       "count": 3,
       "papers": [
@@ -30783,6 +30945,16 @@
         "1990_visibility_occlusion_and_the_aspect_graph",
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2015_correct_resolution_trimmed_spline_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "partitioned",
+      "count": 3,
+      "papers": [
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -31198,32 +31370,12 @@
       "variants": []
     },
     {
-      "canonical": "property",
-      "count": 3,
-      "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "protocol",
       "count": 3,
       "papers": [
         "1998_cad_and_the_product_master_model",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "provided",
-      "count": 3,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent"
       ],
       "variants": []
     },
@@ -31427,6 +31579,16 @@
       "variants": []
     },
     {
+      "canonical": "reproduction",
+      "count": 3,
+      "papers": [
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "requiring",
       "count": 3,
       "papers": [
@@ -31505,6 +31667,24 @@
       "papers": [
         "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "S0010-4485",
+      "count": 3,
+      "papers": [
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "scaled",
+      "count": 3,
+      "papers": [
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -32234,6 +32414,15 @@
       "variants": []
     },
     {
+      "canonical": "take",
+      "count": 3,
+      "papers": [
+        "2023_algebraic_smooth_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Tampa",
       "count": 3,
       "papers": [
@@ -32277,15 +32466,6 @@
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "terms",
-      "count": 3,
-      "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent"
       ],
       "variants": []
     },
@@ -32788,37 +32968,10 @@
       "variants": []
     },
     {
-      "canonical": "00085-7",
-      "count": 2,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "0010-4485",
-      "count": 2,
-      "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "0097-8493",
       "count": 2,
       "papers": [
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "1-12",
-      "count": 2,
-      "papers": [
-        "2019_line_drawings_from_3d_models",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -32828,15 +32981,6 @@
       "papers": [
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "1-16",
-      "count": 2,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -33043,6 +33187,15 @@
       "variants": []
     },
     {
+      "canonical": "111-118",
+      "count": 2,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "1127-1137",
       "count": 2,
       "papers": [
@@ -33075,6 +33228,15 @@
       "papers": [
         "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "12-20",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -33128,15 +33290,6 @@
       "papers": [
         "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "1309-1331",
-      "count": 2,
-      "papers": [
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -33243,15 +33396,6 @@
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "156-166",
-      "count": 2,
-      "papers": [
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
       ],
       "variants": []
     },
@@ -33459,15 +33603,6 @@
       "papers": [
         "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "2-dimensional",
-      "count": 2,
-      "papers": [
-        "2015_detecting_weakly_simple_polygons",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -33726,6 +33861,15 @@
       "papers": [
         "2015_correct_resolution_trimmed_spline_surfaces",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "296-313",
+      "count": 2,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -34022,6 +34166,15 @@
       "variants": []
     },
     {
+      "canonical": "41-52",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "421-427",
       "count": 2,
       "papers": [
@@ -34036,15 +34189,6 @@
       "papers": [
         "1991_on_surfaces_and_their_contours",
         "1994_surfaces_with_assigned_apparent_contour"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "437-444",
-      "count": 2,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -34129,6 +34273,15 @@
       "variants": []
     },
     {
+      "canonical": "49-59",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "49-69",
       "count": 2,
       "papers": [
@@ -34205,6 +34358,15 @@
       "papers": [
         "2004_the_visual_hull_of_smooth_curved_objects",
         "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "548-585",
+      "count": 2,
+      "papers": [
+        "2015_detecting_weakly_simple_polygons",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -34443,6 +34605,15 @@
       "variants": []
     },
     {
+      "canonical": "89-95",
+      "count": 2,
+      "papers": [
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "9-10",
       "count": 2,
       "papers": [
@@ -34500,15 +34671,6 @@
       "papers": [
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Access",
-      "count": 2,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces"
       ],
       "variants": []
     },
@@ -34599,6 +34761,15 @@
       "papers": [
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2015_detecting_weakly_simple_polygons"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Additional",
+      "count": 2,
+      "papers": [
+        "2009_self_overlapping_curves_revisited",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -34746,6 +34917,15 @@
       "variants": []
     },
     {
+      "canonical": "appendix",
+      "count": 2,
+      "papers": [
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "approximates",
       "count": 2,
       "papers": [
@@ -34877,6 +35057,15 @@
       "papers": [
         "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Author",
+      "count": 2,
+      "papers": [
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -35693,15 +35882,6 @@
       "variants": []
     },
     {
-      "canonical": "combinations",
-      "count": 2,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Combining",
       "count": 2,
       "papers": [
@@ -35968,6 +36148,15 @@
       "papers": [
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Creative",
+      "count": 2,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -37412,6 +37601,14 @@
       "variants": []
     },
     {
+      "canonical": "hat-M",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Hautes",
       "count": 2,
       "papers": [
@@ -38075,6 +38272,15 @@
       "variants": []
     },
     {
+      "canonical": "journals",
+      "count": 2,
+      "papers": [
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Karsch",
       "count": 2,
       "papers": [
@@ -38584,6 +38790,14 @@
       "variants": []
     },
     {
+      "canonical": "mathrm-L",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "matrices",
       "count": 2,
       "papers": [
@@ -38760,6 +38974,15 @@
       "papers": [
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "metrics",
+      "count": 2,
+      "papers": [
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -39020,6 +39243,14 @@
       "variants": []
     },
     {
+      "canonical": "Non-intersection",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "non-manifold",
       "count": 2,
       "papers": [
@@ -39242,6 +39473,14 @@
       "variants": []
     },
     {
+      "canonical": "operatorname-conv",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Optica",
       "count": 2,
       "papers": [
@@ -39381,15 +39620,6 @@
       "papers": [
         "1990_visibility_occlusion_and_the_aspect_graph",
         "2001_survey_of_aspect_graphs"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "partitioned",
-      "count": 2,
-      "papers": [
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -39830,6 +40060,15 @@
       "variants": []
     },
     {
+      "canonical": "preimage",
+      "count": 2,
+      "papers": [
+        "2019_line_drawings_from_3d_models",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "present",
       "count": 2,
       "papers": [
@@ -39964,6 +40203,15 @@
       "variants": []
     },
     {
+      "canonical": "properly",
+      "count": 2,
+      "papers": [
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Property",
       "count": 2,
       "papers": [
@@ -40036,15 +40284,6 @@
       "variants": []
     },
     {
-      "canonical": "puter",
-      "count": 2,
-      "papers": [
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Pérez",
       "count": 2,
       "papers": [
@@ -40058,6 +40297,14 @@
       "count": 2,
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "qj-1",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -40154,6 +40401,14 @@
       "count": 2,
       "papers": [
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "re-use",
+      "count": 2,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -40306,15 +40561,6 @@
       "papers": [
         "2000_representational_validity_of_boundary_representation_models",
         "2001_boundary_representation_model_rectification"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "reproduction",
-      "count": 2,
-      "papers": [
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
       ],
       "variants": []
     },
@@ -40597,10 +40843,10 @@
       "variants": []
     },
     {
-      "canonical": "scaled",
+      "canonical": "satisfies",
       "count": 2,
       "papers": [
-        "2015_correct_resolution_trimmed_spline_surfaces",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -41136,6 +41382,15 @@
       "papers": [
         "1990_ray_tracing_trimmed_rational_surface_patches",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "strategies",
+      "count": 2,
+      "papers": [
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -41784,6 +42039,15 @@
       "papers": [
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Tutorial",
+      "count": 2,
+      "papers": [
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -42534,6 +42798,22 @@
       "variants": []
     },
     {
+      "canonical": "00085-7",
+      "count": 1,
+      "papers": [
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "0010-4485",
+      "count": 1,
+      "papers": [
+        "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "0018-9340",
       "count": 1,
       "papers": [
@@ -42551,6 +42831,14 @@
     },
     {
       "canonical": "0167-7055",
+      "count": 1,
+      "papers": [
+        "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "0167-8396",
       "count": 1,
       "papers": [
         "2019_line_drawings_from_3d_models"
@@ -42754,6 +43042,14 @@
       "count": 1,
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "1-49",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -43398,14 +43694,6 @@
       "variants": []
     },
     {
-      "canonical": "111-118",
-      "count": 1,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "111-134",
       "count": 1,
       "papers": [
@@ -43498,6 +43786,14 @@
       "count": 1,
       "papers": [
         "1989_detecting_and_decomposing_self_overlapping_curves"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "1143-1165",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -43618,14 +43914,6 @@
       "count": 1,
       "papers": [
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "12-20",
-      "count": 1,
-      "papers": [
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -43998,6 +44286,14 @@
       "variants": []
     },
     {
+      "canonical": "1359-1376",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "136-144",
       "count": 1,
       "papers": [
@@ -44050,6 +44346,14 @@
       "count": 1,
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "1393-1406",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -44318,6 +44622,14 @@
       "variants": []
     },
     {
+      "canonical": "150-159",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "151-170",
       "count": 1,
       "papers": [
@@ -44330,6 +44642,14 @@
       "count": 1,
       "papers": [
         "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "151010-5-00",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -44606,6 +44926,14 @@
       "variants": []
     },
     {
+      "canonical": "167-174",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "167-178",
       "count": 1,
       "papers": [
@@ -44738,6 +45066,14 @@
       "count": 1,
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "172-181",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -45006,6 +45342,14 @@
       "variants": []
     },
     {
+      "canonical": "1870-1878",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "188-203",
       "count": 1,
       "papers": [
@@ -45058,6 +45402,14 @@
       "count": 1,
       "papers": [
         "2001_curve_evaluation_and_interrogation_on_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "19-29",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -45190,6 +45542,14 @@
       "variants": []
     },
     {
+      "canonical": "1965-1990",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "1967-68",
       "count": 1,
       "papers": [
@@ -45262,10 +45622,10 @@
       "variants": []
     },
     {
-      "canonical": "2-continuous",
+      "canonical": "2-dimensional",
       "count": 1,
       "papers": [
-        "2026_robust_tessellation_without_self_intersections"
+        "2015_detecting_weakly_simple_polygons"
       ],
       "variants": []
     },
@@ -45306,6 +45666,14 @@
       "count": 1,
       "papers": [
         "2018_accuracy_of_geometry_data_exchange_using_step_ap242"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "20-27",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -45506,6 +45874,14 @@
       "count": 1,
       "papers": [
         "1990_visibility_occlusion_and_the_aspect_graph"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "21-32",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -46142,6 +46518,14 @@
       "variants": []
     },
     {
+      "canonical": "2525-20-20-15-Frequency",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "253-60",
       "count": 1,
       "papers": [
@@ -46314,6 +46698,14 @@
       "count": 1,
       "papers": [
         "2000_partitioning_trimmed_spline_surfaces_visibility"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "268-275",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -46786,14 +47178,6 @@
       "count": 1,
       "papers": [
         "1990_ray_tracing_trimmed_rational_surface_patches"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "296-313",
-      "count": 1,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -48006,14 +48390,6 @@
       "variants": []
     },
     {
-      "canonical": "41-52",
-      "count": 1,
-      "papers": [
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "41-55",
       "count": 1,
       "papers": [
@@ -48526,14 +48902,6 @@
       "variants": []
     },
     {
-      "canonical": "49-59",
-      "count": 1,
-      "papers": [
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "494-498",
       "count": 1,
       "papers": [
@@ -48698,6 +49066,14 @@
       "count": 1,
       "papers": [
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "51-76",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -48890,14 +49266,6 @@
       "count": 1,
       "papers": [
         "1990_ray_tracing_trimmed_rational_surface_patches"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "548-585",
-      "count": 1,
-      "papers": [
-        "2015_detecting_weakly_simple_polygons"
       ],
       "variants": []
     },
@@ -50222,14 +50590,6 @@
       "variants": []
     },
     {
-      "canonical": "89-95",
-      "count": 1,
-      "papers": [
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "89-98",
       "count": 1,
       "papers": [
@@ -50290,30 +50650,6 @@
       "count": 1,
       "papers": [
         "1990_visibility_occlusion_and_the_aspect_graph"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "90005-1",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "90010-6",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "90011-X",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -50530,6 +50866,14 @@
       "count": 1,
       "papers": [
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "9601-9611",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -50894,14 +51238,6 @@
       "variants": []
     },
     {
-      "canonical": "AID-NME470",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "AID-NME552",
       "count": 1,
       "papers": [
@@ -51034,6 +51370,14 @@
       "count": 1,
       "papers": [
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Attribution-NonCommercial",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -51282,6 +51626,14 @@
       "count": 1,
       "papers": [
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "by-nc",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -53838,6 +54190,14 @@
       "variants": []
     },
     {
+      "canonical": "mathrm-M",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "mathrm-N",
       "count": 1,
       "papers": [
@@ -53858,6 +54218,14 @@
       "count": 1,
       "papers": [
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "mathrm-S",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -54198,6 +54566,14 @@
       "variants": []
     },
     {
+      "canonical": "non-commercial",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "non-disk",
       "count": 1,
       "papers": [
@@ -54231,14 +54607,6 @@
     },
     {
       "canonical": "non-intersection",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Non-intersection",
       "count": 1,
       "papers": [
         "2026_robust_tessellation_without_self_intersections"
@@ -54658,6 +55026,14 @@
       "count": 1,
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "pi-1",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -55126,14 +55502,6 @@
       "variants": []
     },
     {
-      "canonical": "s00371-010-0416-3",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "s00466-0070173-y",
       "count": 1,
       "papers": [
@@ -55226,22 +55594,6 @@
       "count": 1,
       "papers": [
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "s11390-009-9206-7",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "s11831-017-9220-9",
-      "count": 1,
-      "papers": [
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -55542,6 +55894,14 @@
       "variants": []
     },
     {
+      "canonical": "site-for",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Skorkovská",
       "count": 1,
       "papers": [
@@ -55770,6 +56130,14 @@
       "count": 1,
       "papers": [
         "2001_curve_evaluation_and_interrogation_on_surfaces"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Surface-surfaceintersection",
+      "count": 1,
+      "papers": [
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -56527,6 +56895,13 @@
       ]
     },
     {
+      "canonical": "A Tutorial",
+      "count": 1,
+      "papers": [
+        "2019_line_drawings_from_3d_models"
+      ]
+    },
+    {
       "canonical": "Aaron Hertzmann",
       "count": 1,
       "papers": [
@@ -56632,7 +57007,7 @@
       ]
     },
     {
-      "canonical": "C. J. V AN WYK",
+      "canonical": "C. J. VAN WYK",
       "count": 1,
       "papers": [
         "1989_detecting_and_decomposing_self_overlapping_curves"
@@ -57705,7 +58080,6 @@
     "AFIPS",
     "AG",
     "AI",
-    "AID",
     "AIM",
     "ALLIEZ",
     "AN",
@@ -57730,7 +58104,12 @@
     "BR",
     "BS",
     "BV",
+    "C1",
+    "C2",
+    "C3",
     "C3D",
+    "C4",
+    "C5",
     "CA",
     "CAD",
     "CADIQ",
@@ -58035,6 +58414,7 @@
     "USA",
     "UT",
     "UU",
+    "VAN",
     "VC",
     "VE",
     "VF",

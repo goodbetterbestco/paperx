@@ -59,8 +59,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T00:44:55Z",
-    "updated_at": "2026-04-17T00:44:55Z",
+    "created_at": "2026-04-17T05:24:44Z",
+    "updated_at": "2026-04-17T05:24:44Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -79,29 +79,29 @@
         "path": "stepview/1984_occluding_contour_tell_us_about_solid_shape/1984_occluding_contour_tell_us_about_solid_shape.pdf",
         "exists": true,
         "size_bytes": 2413565,
-        "modified_at": "2026-04-13T16:18:56Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "e3485a265e1c360f274f8ab9e030730a31b562a3689e54ddd8b663c9ea0fa7e6"
       },
       "external_layout": {
         "path": "stepview/1984_occluding_contour_tell_us_about_solid_shape/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 96357,
-        "modified_at": "2026-04-17T00:44:54Z",
-        "sha256": "776876f0b924d24b3569578c5172f5153586d6f81ff69236fc1f68f0d5131adb"
+        "size_bytes": 97097,
+        "modified_at": "2026-04-17T05:24:43Z",
+        "sha256": "a3e919eb104e0cc15794faba13e2abe64bab0be3279ad4c45cd5770e7aee73c8"
       },
       "external_math": {
         "path": "stepview/1984_occluding_contour_tell_us_about_solid_shape/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 11317,
-        "modified_at": "2026-04-17T00:44:54Z",
-        "sha256": "26693734260b7687bb8fb7d769b2c8edf3a1c3301a037ab25ce8f6934344e39c"
+        "size_bytes": 11071,
+        "modified_at": "2026-04-17T05:24:43Z",
+        "sha256": "27f93c17954e8f5ed74169c21fa53f471bbb83e7d3474b61e250058a13d53ca6"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -114,7 +114,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -855,18 +855,18 @@
       "id": "blk-display_equation_ref-0011",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p002-0052"
+        "math_id": "mathpix-eq-p002-0053"
       },
       "source_spans": [
         {
           "page": 2,
           "bbox": {
-            "x0": 48.5,
-            "y0": 654.5,
-            "x1": 99.0,
-            "y1": 670.0,
-            "width": 50.5,
-            "height": 15.5
+            "x0": 50.68,
+            "y0": 656.45,
+            "x1": 96.76,
+            "y1": 667.68,
+            "width": 46.08,
+            "height": 11.23
           },
           "engine": "mathpix"
         }
@@ -936,12 +936,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 73.5,
-            "y0": 96.0,
-            "x1": 120.5,
-            "y1": 108.5,
-            "width": 47.0,
-            "height": 12.5
+            "x0": 73.43,
+            "y0": 96.16,
+            "x1": 120.37,
+            "y1": 108.54,
+            "width": 46.94,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -1011,12 +1011,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 74.0,
-            "y0": 142.5,
-            "x1": 122.0,
-            "y1": 154.5,
-            "width": 48.0,
-            "height": 12.0
+            "x0": 74.01,
+            "y0": 142.52,
+            "x1": 122.1,
+            "y1": 154.9,
+            "width": 48.09,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -1051,7 +1051,7 @@
           },
           {
             "kind": "text",
-            "text": " note another important relation (Appendix II). If the projection is from a finite distance "
+            "text": ", I note another important relation (Appendix II). If the projection is from a finite distance "
           },
           {
             "kind": "inline_math_ref",
@@ -1094,12 +1094,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 74.0,
-            "y0": 211.5,
-            "x1": 158.5,
-            "y1": 236.0,
-            "width": 84.5,
-            "height": 24.5
+            "x0": 74.01,
+            "y0": 211.62,
+            "x1": 159.25,
+            "y1": 235.8,
+            "width": 85.24,
+            "height": 24.19
           },
           "engine": "mathpix"
         }
@@ -1278,18 +1278,18 @@
       "id": "blk-display_equation_ref-0021",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p004-0011"
+        "math_id": "mathpix-eq-p004-0012"
       },
       "source_spans": [
         {
           "page": 4,
           "bbox": {
-            "x0": 48.5,
-            "y0": 176.0,
-            "x1": 104.5,
-            "y1": 202.5,
-            "width": 56.0,
-            "height": 26.5
+            "x0": 48.08,
+            "y0": 175.66,
+            "x1": 104.79,
+            "y1": 203.89,
+            "width": 56.71,
+            "height": 28.22
           },
           "engine": "mathpix"
         }
@@ -2468,18 +2468,18 @@
       "id": "blk-display_equation_ref-0056",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0023"
+        "math_id": "mathpix-eq-p009-0025"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 304.5,
-            "x1": 344.0,
-            "y1": 320.5,
-            "width": 270.0,
-            "height": 16.0
+            "x0": 72.55,
+            "y0": 303.81,
+            "x1": 344.3,
+            "y1": 321.09,
+            "width": 271.76,
+            "height": 17.28
           },
           "engine": "mathpix"
         }
@@ -2527,18 +2527,18 @@
       "id": "blk-display_equation_ref-0058",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0026"
+        "math_id": "mathpix-eq-p009-0028"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 339.5,
-            "x1": 303.5,
-            "y1": 365.0,
-            "width": 229.5,
-            "height": 25.5
+            "x0": 72.55,
+            "y0": 338.37,
+            "x1": 303.71,
+            "y1": 366.59,
+            "width": 231.17,
+            "height": 28.22
           },
           "engine": "mathpix"
         }
@@ -2642,18 +2642,18 @@
       "id": "blk-display_equation_ref-0061",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0033"
+        "math_id": "mathpix-eq-p009-0035"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 432.5,
-            "x1": 187.5,
-            "y1": 458.0,
-            "width": 113.0,
-            "height": 25.5
+            "x0": 72.55,
+            "y0": 431.38,
+            "x1": 188.56,
+            "y1": 459.03,
+            "width": 116.02,
+            "height": 27.65
           },
           "engine": "mathpix"
         }
@@ -2701,18 +2701,18 @@
       "id": "blk-display_equation_ref-0063",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0038"
+        "math_id": "mathpix-eq-p009-0040"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 501.5,
-            "x1": 139.0,
-            "y1": 528.0,
-            "width": 64.5,
-            "height": 26.5
+            "x0": 72.55,
+            "y0": 500.5,
+            "x1": 140.48,
+            "y1": 529.3,
+            "width": 67.94,
+            "height": 28.8
           },
           "engine": "mathpix"
         }
@@ -2760,18 +2760,18 @@
       "id": "blk-display_equation_ref-0065",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0042"
+        "math_id": "mathpix-eq-p009-0044"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 73.5,
-            "y0": 561.0,
-            "x1": 159.5,
-            "y1": 577.0,
-            "width": 86.0,
-            "height": 16.0
+            "x0": 72.55,
+            "y0": 560.11,
+            "x1": 161.5,
+            "y1": 578.54,
+            "width": 88.95,
+            "height": 18.43
           },
           "engine": "mathpix"
         }
@@ -2819,18 +2819,18 @@
       "id": "blk-display_equation_ref-0067",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0045"
+        "math_id": "mathpix-eq-p009-0047"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 597.5,
-            "x1": 109.5,
-            "y1": 611.5,
-            "width": 35.5,
-            "height": 14.0
+            "x0": 72.55,
+            "y0": 595.82,
+            "x1": 111.41,
+            "y1": 613.67,
+            "width": 38.86,
+            "height": 17.85
           },
           "engine": "mathpix"
         }
@@ -2878,18 +2878,18 @@
       "id": "blk-display_equation_ref-0069",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p009-0048"
+        "math_id": "mathpix-eq-p009-0050"
       },
       "source_spans": [
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 629.5,
-            "x1": 323.5,
-            "y1": 657.0,
-            "width": 249.0,
-            "height": 27.5
+            "x0": 73.41,
+            "y0": 628.07,
+            "x1": 325.3,
+            "y1": 658.88,
+            "width": 251.89,
+            "height": 30.81
           },
           "engine": "mathpix"
         }
@@ -2996,7 +2996,7 @@
           },
           {
             "kind": "text",
-            "text": ", the semitop angle of this osculating cone varies. This always occurs in a neat, predictable manner, however, A useful theorem, originally due to Mannheim but first well described by Blaschke (1916), states: all osculating cones envelop a sphere. This sphere may be called the 'Mannheim sphere'. When Q is at infinity "
+            "text": ", the semitop angle of this osculating cone varies. This always occurs in a neat, predictable manner, however, A useful theorem, originally due to Mannheim but first well described by Blaschke (1916), states: all osculating cones envelop a sphere. This sphere may be called the 'Mannheim sphere'. When Q is at infinity ( "
           },
           {
             "kind": "inline_math_ref",
@@ -3004,7 +3004,7 @@
           },
           {
             "kind": "text",
-            "text": " the cone degenerates into a cylinder with radius "
+            "text": " ) the cone degenerates into a cylinder with radius "
           },
           {
             "kind": "inline_math_ref",
@@ -3073,18 +3073,18 @@
       "id": "blk-display_equation_ref-0072",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p010-0019"
+        "math_id": "mathpix-eq-p010-0020"
       },
       "source_spans": [
         {
           "page": 10,
           "bbox": {
-            "x0": 44.5,
-            "y0": 257.0,
-            "x1": 129.0,
-            "y1": 283.0,
-            "width": 84.5,
-            "height": 26.0
+            "x0": 45.48,
+            "y0": 257.45,
+            "x1": 128.68,
+            "y1": 282.79,
+            "width": 83.2,
+            "height": 25.34
           },
           "engine": "mathpix"
         }
@@ -3164,18 +3164,18 @@
       "id": "blk-display_equation_ref-0075",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p010-0025"
+        "math_id": "mathpix-eq-p010-0026"
       },
       "source_spans": [
         {
           "page": 10,
           "bbox": {
-            "x0": 45.0,
-            "y0": 352.5,
-            "x1": 102.0,
-            "y1": 365.0,
-            "width": 57.0,
-            "height": 12.5
+            "x0": 45.48,
+            "y0": 352.48,
+            "x1": 102.2,
+            "y1": 364.86,
+            "width": 56.71,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -3191,18 +3191,18 @@
       "id": "blk-display_equation_ref-0076",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p010-0027"
+        "math_id": "mathpix-eq-p010-0028"
       },
       "source_spans": [
         {
           "page": 10,
           "bbox": {
-            "x0": 44.5,
-            "y0": 387.0,
-            "x1": 99.0,
-            "y1": 400.5,
-            "width": 54.5,
-            "height": 13.5
+            "x0": 44.91,
+            "y0": 387.04,
+            "x1": 99.03,
+            "y1": 400.57,
+            "width": 54.12,
+            "height": 13.53
           },
           "engine": "mathpix"
         }
@@ -3336,10 +3336,10 @@
     {
       "id": "math-inline-2",
       "kind": "inline",
-      "display_latex": "\\boldsymbol{\\xi}",
+      "display_latex": "\\xi",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">&#x003BE;</mi></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x003BE;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -3630,10 +3630,10 @@
     {
       "id": "math-inline-9",
       "kind": "inline",
-      "display_latex": "\\boldsymbol{\\xi}",
+      "display_latex": "\\xi",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi mathvariant=\"bold-italic\">&#x003BE;</mi></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x003BE;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -3712,17 +3712,19 @@
       }
     },
     {
-      "id": "mathpix-eq-p002-0052",
+      "id": "mathpix-eq-p002-0053",
       "kind": "display",
-      "display_latex": "K_{\\mathrm{r}}=1 / r_{\\mathrm{r}},",
+      "display_latex": "\\boldsymbol{K}_{\\mathbf{r}}=1 / r_{\\mathbf{r}},",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "relation",
         "role": "assertion",
         "kind": "display",
-        "normalized_latex": "K_{r}=1 / r_{r},",
+        "normalized_latex": "\\boldsymbol{K}_{r}=1 / r_{r},",
         "symbols": [
-          "K_{r}",
+          "boldsymbol",
+          "K",
+          "r",
           "r_{r}"
         ],
         "operators": [
@@ -3731,7 +3733,7 @@
         ],
         "relations": [
           {
-            "lhs": "K_{r}",
+            "lhs": "\\boldsymbol{K}_{r}",
             "operator": "eq",
             "operator_token": "=",
             "rhs": "1 / r_{r},"
@@ -3739,7 +3741,7 @@
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><mo>&#x0003D;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>r</mi><mrow><mi>&#x00072;</mi></mrow></msub><mo>&#x0002C;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mrow><mi mathvariant=\"bold-italic\">K</mi></mrow><mrow><mi>&#x1D42B;</mi></mrow></msub><mo>&#x0003D;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>r</mi><mrow><mi>&#x1D42B;</mi></mrow></msub><mo>&#x0002C;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -3749,12 +3751,12 @@
         {
           "page": 2,
           "bbox": {
-            "x0": 48.5,
-            "y0": 654.5,
-            "x1": 99.0,
-            "y1": 670.0,
-            "width": 50.5,
-            "height": 15.5
+            "x0": 50.68,
+            "y0": 656.45,
+            "x1": 96.76,
+            "y1": 667.68,
+            "width": 46.08,
+            "height": 11.23
           },
           "engine": "mathpix"
         }
@@ -3779,10 +3781,10 @@
     {
       "id": "math-inline-11",
       "kind": "inline",
-      "display_latex": "r_{\\mathrm{r}}",
+      "display_latex": "r_{\\mathbf{r}}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>r</mi><mrow><mi>&#x00072;</mi></mrow></msub></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>r</mi><mrow><mi>&#x1D42B;</mi></mrow></msub></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -3898,12 +3900,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 73.5,
-            "y0": 96.0,
-            "x1": 120.5,
-            "y1": 108.5,
-            "width": 47.0,
-            "height": 12.5
+            "x0": 73.43,
+            "y0": 96.16,
+            "x1": 120.37,
+            "y1": 108.54,
+            "width": 46.94,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -4047,12 +4049,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 74.0,
-            "y0": 142.5,
-            "x1": 122.0,
-            "y1": 154.5,
-            "width": 48.0,
-            "height": 12.0
+            "x0": 74.01,
+            "y0": 142.52,
+            "x1": 122.1,
+            "y1": 154.9,
+            "width": 48.09,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -4119,10 +4121,10 @@
     {
       "id": "math-inline-16",
       "kind": "inline",
-      "display_latex": "K, I",
+      "display_latex": "K",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>K</mi><mo>&#x0002C;</mo><mi>I</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>K</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -4216,12 +4218,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 74.0,
-            "y0": 211.5,
-            "x1": 158.5,
-            "y1": 236.0,
-            "width": 84.5,
-            "height": 24.5
+            "x0": 74.01,
+            "y0": 211.62,
+            "x1": 159.25,
+            "y1": 235.8,
+            "width": 85.24,
+            "height": 24.19
           },
           "engine": "mathpix"
         }
@@ -4247,10 +4249,10 @@
     {
       "id": "math-inline-18",
       "kind": "inline",
-      "display_latex": "K_{\\text {app }}",
+      "display_latex": "K_{\\mathrm{app}}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mtext>app&#x000A0;</mtext></mrow></msub></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mrow><mi mathvariant=\"normal\">a</mi><mi mathvariant=\"normal\">p</mi><mi mathvariant=\"normal\">p</mi></mrow></mrow></msub></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -4313,10 +4315,10 @@
     {
       "id": "math-inline-19",
       "kind": "inline",
-      "display_latex": "\\arctan \\left(1 / K_{\\text {app }}\\right)",
+      "display_latex": "\\arctan \\left(1 / K_{\\mathrm{app}}\\right)",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>arctan</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>K</mi><mrow><mtext>app&#x000A0;</mtext></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>arctan</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>K</mi><mrow><mrow><mi mathvariant=\"normal\">a</mi><mi mathvariant=\"normal\">p</mi><mi mathvariant=\"normal\">p</mi></mrow></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -4382,7 +4384,7 @@
       "display_latex": "\\arctan \\left(1 / K_{\\text {app }}\\right) \\times 180 / \\pi",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>arctan</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>K</mi><mrow><mtext>app&#x000A0;</mtext></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x000D7;</mo><mn>180</mn><mo>&#x0002F;</mo><mi>&#x003C0;</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>arctan</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>1</mn><mo>&#x0002F;</mo><msub><mi>K</mi><mrow><mtext>app&#x000A0;</mtext></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mi>&#x000D7;</mi><mn>180</mn><mo>&#x0002F;</mo><mi>&#x003C0;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -4445,7 +4447,7 @@
     {
       "id": "math-inline-21",
       "kind": "inline",
-      "display_latex": "90 \\mathrm{deg}\\left(K_{\\mathrm{app}}=0\\right)",
+      "display_latex": "90 \\operatorname{deg}\\left(K_{\\mathrm{app}}=0\\right)",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "mapping",
@@ -4469,7 +4471,7 @@
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>90</mn><mrow><mi mathvariant=\"normal\">d</mi><mi mathvariant=\"normal\">e</mi><mi mathvariant=\"normal\">g</mi></mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>K</mi><mrow><mrow><mi mathvariant=\"normal\">a</mi><mi mathvariant=\"normal\">p</mi><mi mathvariant=\"normal\">p</mi></mrow></mrow></msub><mo>&#x0003D;</mo><mn>0</mn><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>90</mn><mo>deg</mo><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>K</mi><mrow><mrow><mi mathvariant=\"normal\">a</mi><mi mathvariant=\"normal\">p</mi><mi mathvariant=\"normal\">p</mi></mrow></mrow></msub><mo>&#x0003D;</mo><mn>0</mn><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -4702,7 +4704,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0011",
+      "id": "mathpix-eq-p004-0012",
       "kind": "display",
       "display_latex": "K_{\\mathrm{app}}=\\frac{d K}{K_{\\mathrm{r}}}",
       "semantic_expr": {
@@ -4740,12 +4742,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 48.5,
-            "y0": 176.0,
-            "x1": 104.5,
-            "y1": 202.5,
-            "width": 56.0,
-            "height": 26.5
+            "x0": 48.08,
+            "y0": 175.66,
+            "x1": 104.79,
+            "y1": 203.89,
+            "width": 56.71,
+            "height": 28.22
           },
           "engine": "mathpix"
         }
@@ -5645,9 +5647,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0023",
+      "id": "mathpix-eq-p009-0025",
       "kind": "display",
-      "display_latex": "\\begin{equation*} z(x, y)=\\frac{1}{2}\\left(a x^{2}+2 b x y+c y^{2}\\right)+(\\text { third-order and higher terms }) . \\tag{A1} \\end{equation*}",
+      "display_latex": "z(x, y)=\\frac{1}{2}\\left(a x^{2}+2 b x y+c y^{2}\\right)+(\\text { third-order and higher terms }) .",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "mapping",
@@ -5692,7 +5694,7 @@
         }
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi>z</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mi>a</mi><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mn>2</mn><mi>b</mi><mi>x</mi><mi>y</mi><mo>&#x0002B;</mo><mi>c</mi><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mtext>&#x000A0;third-order&#x000A0;and&#x000A0;higher&#x000A0;terms&#x000A0;</mtext><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0002E;</mo><mtext>(A1)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>z</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mi>a</mi><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mn>2</mn><mi>b</mi><mi>x</mi><mi>y</mi><mo>&#x0002B;</mo><mi>c</mi><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mtext>&#x000A0;third-order&#x000A0;and&#x000A0;higher&#x000A0;terms&#x000A0;</mtext><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0002E;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5702,12 +5704,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 304.5,
-            "x1": 344.0,
-            "y1": 320.5,
-            "width": 270.0,
-            "height": 16.0
+            "x0": 72.55,
+            "y0": 303.81,
+            "x1": 344.3,
+            "y1": 321.09,
+            "width": 271.76,
+            "height": 17.28
           },
           "engine": "mathpix"
         }
@@ -5730,12 +5732,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0026",
+      "id": "mathpix-eq-p009-0028",
       "kind": "display",
-      "display_latex": "\\begin{equation*} \\frac{\\partial z}{\\partial x}=a x+b y+(\\text { second-order and higher terms })=0, \\tag{A2} \\end{equation*}",
+      "display_latex": "\\frac{\\partial z}{\\partial x}=a x+b y+(\\text { second-order and higher terms })=0,",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mfrac><mrow><mo>&#x02202;</mo><mi>z</mi></mrow><mrow><mo>&#x02202;</mo><mi>x</mi></mrow></mfrac><mo>&#x0003D;</mo><mi>a</mi><mi>x</mi><mo>&#x0002B;</mo><mi>b</mi><mi>y</mi><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mtext>&#x000A0;second-order&#x000A0;and&#x000A0;higher&#x000A0;terms&#x000A0;</mtext><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0003D;</mo><mn>0</mn><mo>&#x0002C;</mo><mtext>(A2)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mfrac><mrow><mo>&#x02202;</mo><mi>z</mi></mrow><mrow><mo>&#x02202;</mo><mi>x</mi></mrow></mfrac><mo>&#x0003D;</mo><mi>a</mi><mi>x</mi><mo>&#x0002B;</mo><mi>b</mi><mi>y</mi><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mtext>&#x000A0;second-order&#x000A0;and&#x000A0;higher&#x000A0;terms&#x000A0;</mtext><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0003D;</mo><mn>0</mn><mo>&#x0002C;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5745,12 +5747,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 339.5,
-            "x1": 303.5,
-            "y1": 365.0,
-            "width": 229.5,
-            "height": 25.5
+            "x0": 72.55,
+            "y0": 338.37,
+            "x1": 303.71,
+            "y1": 366.59,
+            "width": 231.17,
+            "height": 28.22
           },
           "engine": "mathpix"
         }
@@ -5925,12 +5927,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0033",
+      "id": "mathpix-eq-p009-0035",
       "kind": "display",
-      "display_latex": "\\begin{equation*} z=\\frac{1}{2} \\frac{a c-b^{2}}{a} y^{2}=\\frac{1}{2} K_{\\mathrm{t}} y^{2} \\tag{A3} \\end{equation*}",
+      "display_latex": "z=\\frac{1}{2} \\frac{a c-b^{2}}{a} y^{2}=\\frac{1}{2} K_{\\mathrm{t}} y^{2}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi>z</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mfrac><mrow><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>a</mi></mrow></mfrac><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mtext>(A3)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>z</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mfrac><mrow><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>a</mi></mrow></mfrac><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5940,12 +5942,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 432.5,
-            "x1": 187.5,
-            "y1": 458.0,
-            "width": 113.0,
-            "height": 25.5
+            "x0": 72.55,
+            "y0": 431.38,
+            "x1": 188.56,
+            "y1": 459.03,
+            "width": 116.02,
+            "height": 27.65
           },
           "engine": "mathpix"
         }
@@ -5969,9 +5971,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0038",
+      "id": "mathpix-eq-p009-0040",
       "kind": "display",
-      "display_latex": "\\begin{equation*} K_{\\mathrm{t}}=\\frac{a c-b^{2}}{a} \\tag{A4} \\end{equation*}",
+      "display_latex": "K_{\\mathrm{t}}=\\frac{a c-b^{2}}{a}",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "relation",
@@ -5999,7 +6001,7 @@
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>a</mi></mrow></mfrac><mtext>(A4)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>a</mi></mrow></mfrac></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6009,12 +6011,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 501.5,
-            "x1": 139.0,
-            "y1": 528.0,
-            "width": 64.5,
-            "height": 26.5
+            "x0": 72.55,
+            "y0": 500.5,
+            "x1": 140.48,
+            "y1": 529.3,
+            "width": 67.94,
+            "height": 28.8
           },
           "engine": "mathpix"
         }
@@ -6037,12 +6039,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0042",
+      "id": "mathpix-eq-p009-0044",
       "kind": "display",
-      "display_latex": "\\begin{equation*} z=\\frac{1}{2} a x^{2}=\\frac{1}{2} K_{\\mathrm{r}} x^{2} \\tag{A5} \\end{equation*}",
+      "display_latex": "z=\\frac{1}{2} a x^{2}=\\frac{1}{2} K_{\\mathrm{r}} x^{2}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi>z</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>a</mi><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mtext>(A5)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>z</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>a</mi><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6052,12 +6054,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 73.5,
-            "y0": 561.0,
-            "x1": 159.5,
-            "y1": 577.0,
-            "width": 86.0,
-            "height": 16.0
+            "x0": 72.55,
+            "y0": 560.11,
+            "x1": 161.5,
+            "y1": 578.54,
+            "width": 88.95,
+            "height": 18.43
           },
           "engine": "mathpix"
         }
@@ -6081,15 +6083,15 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0045",
+      "id": "mathpix-eq-p009-0047",
       "kind": "display",
-      "display_latex": "\\begin{equation*} K_{\\mathrm{r}}=a . \\tag{A6} \\end{equation*}",
+      "display_latex": "K_{\\mathrm{r}}=a",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "relation",
         "role": "assertion",
         "kind": "display",
-        "normalized_latex": "K_{r}=a .",
+        "normalized_latex": "K_{r}=a",
         "symbols": [
           "K_{r}",
           "a"
@@ -6102,12 +6104,12 @@
             "lhs": "K_{r}",
             "operator": "eq",
             "operator_token": "=",
-            "rhs": "a ."
+            "rhs": "a"
           }
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><mo>&#x0003D;</mo><mi>a</mi><mo>&#x0002E;</mo><mtext>(A6)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><mo>&#x0003D;</mo><mi>a</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6117,12 +6119,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.0,
-            "y0": 597.5,
-            "x1": 109.5,
-            "y1": 611.5,
-            "width": 35.5,
-            "height": 14.0
+            "x0": 72.55,
+            "y0": 595.82,
+            "x1": 111.41,
+            "y1": 613.67,
+            "width": 38.86,
+            "height": 17.85
           },
           "engine": "mathpix"
         }
@@ -6145,12 +6147,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p009-0048",
+      "id": "mathpix-eq-p009-0050",
       "kind": "display",
-      "display_latex": "\\begin{equation*} K_{\\mathrm{r}} K_{\\mathrm{t}}=a c-b^{2}=\\frac{\\left(\\partial^{2} z / \\partial x^{2}\\right)\\left(\\partial^{2} z / \\partial y^{2}\\right)-\\left(\\partial^{2} z / \\partial x \\partial y\\right)^{2}}{1+(\\partial z / \\partial x)^{2}+(\\partial z / \\partial y)^{2}}=K, \\tag{A7} \\end{equation*}",
+      "display_latex": "K_{\\mathrm{r}} K_{\\mathrm{t}}=a c-b^{2}=\\frac{\\left(\\partial^{2} z / \\partial x^{2}\\right)\\left(\\partial^{2} z / \\partial y^{2}\\right)-\\left(\\partial^{2} z / \\partial x \\partial y\\right)^{2}}{1+(\\partial z / \\partial x)^{2}+(\\partial z / \\partial y)^{2}}=K",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><mo>&#x0003D;</mo><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x02212;</mo><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>x</mi><mo>&#x02202;</mo><mi>y</mi><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mo>&#x02202;</mo><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>x</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mo>&#x02202;</mo><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>y</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>&#x0003D;</mo><mi>K</mi><mo>&#x0002C;</mo><mtext>(A7)</mtext></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>K</mi><mrow><mi>&#x00072;</mi></mrow></msub><msub><mi>K</mi><mrow><mi>&#x00074;</mi></mrow></msub><mo>&#x0003D;</mo><mi>a</mi><mi>c</mi><mo>&#x02212;</mo><msup><mi>b</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><msup><mi>x</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><msup><mi>y</mi><mrow><mn>2</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x02212;</mo><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msup><mo>&#x02202;</mo><mrow><mn>2</mn></mrow></msup><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>x</mi><mo>&#x02202;</mo><mi>y</mi><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mo>&#x02202;</mo><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>x</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mo>&#x02202;</mo><mi>z</mi><mo>&#x0002F;</mo><mo>&#x02202;</mo><mi>y</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>&#x0003D;</mo><mi>K</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6160,12 +6162,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 74.5,
-            "y0": 629.5,
-            "x1": 323.5,
-            "y1": 657.0,
-            "width": 249.0,
-            "height": 27.5
+            "x0": 73.41,
+            "y0": 628.07,
+            "x1": 325.3,
+            "y1": 658.88,
+            "width": 251.89,
+            "height": 30.81
           },
           "engine": "mathpix"
         }
@@ -6610,10 +6612,10 @@
     {
       "id": "math-inline-51",
       "kind": "inline",
-      "display_latex": "(d \\rightarrow \\infty)",
+      "display_latex": "d \\rightarrow \\infty",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mi>d</mi><mo>&#x02192;</mo><mo>&#x0221E;</mo><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>d</mi><mo>&#x02192;</mo><mo>&#x0221E;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6830,7 +6832,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p010-0019",
+      "id": "mathpix-eq-p010-0020",
       "kind": "display",
       "display_latex": "\\alpha=\\arctan \\left(\\frac{1}{d K_{\\mathrm{t}}}\\right) .",
       "semantic_expr": {
@@ -6868,12 +6870,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 44.5,
-            "y0": 257.0,
-            "x1": 129.0,
-            "y1": 283.0,
-            "width": 84.5,
-            "height": 26.0
+            "x0": 45.48,
+            "y0": 257.45,
+            "x1": 128.68,
+            "y1": 282.79,
+            "width": 83.2,
+            "height": 25.34
           },
           "engine": "mathpix"
         }
@@ -6896,7 +6898,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p010-0025",
+      "id": "mathpix-eq-p010-0026",
       "kind": "display",
       "display_latex": "K_{\\mathrm{app}}=\\cot \\alpha .",
       "semantic_expr": {
@@ -6933,12 +6935,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 45.0,
-            "y0": 352.5,
-            "x1": 102.0,
-            "y1": 365.0,
-            "width": 57.0,
-            "height": 12.5
+            "x0": 45.48,
+            "y0": 352.48,
+            "x1": 102.2,
+            "y1": 364.86,
+            "width": 56.71,
+            "height": 12.38
           },
           "engine": "mathpix"
         }
@@ -6961,7 +6963,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p010-0027",
+      "id": "mathpix-eq-p010-0028",
       "kind": "display",
       "display_latex": "K_{\\mathrm{app}}=d K_{\\mathrm{t}},",
       "semantic_expr": {
@@ -6998,12 +7000,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 44.5,
-            "y0": 387.0,
-            "x1": 99.0,
-            "y1": 400.5,
-            "width": 54.5,
-            "height": 13.5
+            "x0": 44.91,
+            "y0": 387.04,
+            "x1": 99.03,
+            "y1": 400.57,
+            "width": 54.12,
+            "height": 13.53
           },
           "engine": "mathpix"
         }

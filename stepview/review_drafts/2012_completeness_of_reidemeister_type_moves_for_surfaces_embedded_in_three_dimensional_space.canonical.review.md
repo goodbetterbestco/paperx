@@ -6,7 +6,7 @@
 
 ## Abstract
 
-In this paper we are concerned with labelled apparent contours, namely with appar- ent contours of generic orthogonal projections of embedded surfaces in \(\mathbb{R}^{3}\), endowed with a suitable information on the relative depth. We give a proof of the following theorem: there exists a finite set of elementary moves (i.e. local topological changes) on labelled apparent contours such that two generic embeddings in \(\mathbb{R}^{3}\) of a closed surface are isotopic if and only if their apparent contours can be connected using only smooth planar isotopies and a finite sequence of moves. This result, that can be obtained as a by-product of general results on knotted surfaces and singularity theory, is obtained here with a direct and rather elementary proof. Key words: Isotopic embedded surfaces, apparent contours, completeness, Reidemeister moves.
+In this paper we are concerned with labelled apparent contours, namely with appar- ent contours of generic orthogonal projections of embedded surfaces in \(\mathbb{R}^{3}\), endowed with a suitable information on the relative depth. We give a proof of the following theorem: there exists a finite set of elementary moves (i.e. local topological changes) on labelled apparent contours such that two generic embeddings in \(\mathbb{R}^{3}\) of a closed surface are isotopic if and only if their apparent contours can be connected using only smooth planar isotopies and a finite sequence of moves. This result, that can be obtained as a by-product of general results on knotted surfaces and singularity theory, is obtained here with a direct and rather elementary proof.
 
 ## 2010 Mathematics Subject Classification:
 

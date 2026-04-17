@@ -184,8 +184,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:36:21Z",
-    "updated_at": "2026-04-17T04:36:21Z",
+    "created_at": "2026-04-17T05:27:34Z",
+    "updated_at": "2026-04-17T05:27:34Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -211,22 +211,22 @@
         "path": "stepview/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 312890,
-        "modified_at": "2026-04-17T04:08:50Z",
+        "modified_at": "2026-04-17T05:27:22Z",
         "sha256": "c41887dd322b2dc21379d4fb6a6644bea90ffd323003867d6a483f2a94d7a096"
       },
       "external_math": {
         "path": "stepview/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 8498,
-        "modified_at": "2026-04-17T04:08:50Z",
-        "sha256": "6d9a64b13c2e844a4cca484cf912057727293d9c665eeda273ad7065fdb3e50b"
+        "modified_at": "2026-04-17T05:27:22Z",
+        "sha256": "eacd3fc4260b090c85cf0da9913d61fc06be712de8cab44b41f87c7a4c8847f2"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "5c48815cc52f9cd72e3f7f53863aadf0d48ae338bf185a745c39bee946fe879f",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -239,7 +239,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -7458,9 +7458,9 @@
           "bbox": {
             "x0": 187.78,
             "y0": 159.26,
-            "x1": 317.38,
+            "x1": 316.8,
             "y1": 175.97,
-            "width": 129.6,
+            "width": 129.02,
             "height": 16.7
           },
           "engine": "mathpix"
@@ -42260,9 +42260,9 @@
           "bbox": {
             "x0": 187.78,
             "y0": 159.26,
-            "x1": 317.38,
+            "x1": 316.8,
             "y1": 175.97,
-            "width": 129.6,
+            "width": 129.02,
             "height": 16.7
           },
           "engine": "mathpix"

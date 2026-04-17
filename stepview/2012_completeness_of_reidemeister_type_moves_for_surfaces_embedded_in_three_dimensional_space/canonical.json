@@ -109,8 +109,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:13:24Z",
-    "updated_at": "2026-04-17T04:13:24Z",
+    "created_at": "2026-04-17T05:28:13Z",
+    "updated_at": "2026-04-17T05:28:13Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -136,22 +136,22 @@
         "path": "stepview/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 166668,
-        "modified_at": "2026-04-17T04:13:24Z",
+        "modified_at": "2026-04-17T05:28:04Z",
         "sha256": "c71fec0deb4b079de846dd286e59f169bfcadd4df9f047b5ff7e7beb873fd305"
       },
       "external_math": {
         "path": "stepview/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 19340,
-        "modified_at": "2026-04-17T04:13:24Z",
+        "modified_at": "2026-04-17T05:28:04Z",
         "sha256": "4a476763e201cc9dbe7d1819eadb7295114f3311ed99d1fe9dae06528f4c5bb0"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -164,7 +164,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -711,7 +711,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "In this paper we are concerned with labelled apparent contours, namely with appar- ent contours of generic orthogonal projections of embedded surfaces in \\(\\mathbb{R}^{3}\\), endowed with a suitable information on the relative depth. We give a proof of the following theorem: there exists a finite set of elementary moves (i.e. local topological changes) on labelled apparent contours such that two generic embeddings in \\(\\mathbb{R}^{3}\\) of a closed surface are isotopic if and only if their apparent contours can be connected using only smooth planar isotopies and a finite sequence of moves. This result, that can be obtained as a by-product of general results on knotted surfaces and singularity theory, is obtained here with a direct and rather elementary proof. Key words: Isotopic embedded surfaces, apparent contours, completeness, Reidemeister moves."
+            "text": "In this paper we are concerned with labelled apparent contours, namely with appar- ent contours of generic orthogonal projections of embedded surfaces in \\(\\mathbb{R}^{3}\\), endowed with a suitable information on the relative depth. We give a proof of the following theorem: there exists a finite set of elementary moves (i.e. local topological changes) on labelled apparent contours such that two generic embeddings in \\(\\mathbb{R}^{3}\\) of a closed surface are isotopic if and only if their apparent contours can be connected using only smooth planar isotopies and a finite sequence of moves. This result, that can be obtained as a by-product of general results on knotted surfaces and singularity theory, is obtained here with a direct and rather elementary proof."
           }
         ]
       },
@@ -725,18 +725,6 @@
             "y1": 262.92,
             "width": 358.65,
             "height": 80.78
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 49.55,
-            "y0": 279.32,
-            "x1": 406.09,
-            "y1": 286.84,
-            "width": 356.54,
-            "height": 7.52
           },
           "engine": "composed"
         }

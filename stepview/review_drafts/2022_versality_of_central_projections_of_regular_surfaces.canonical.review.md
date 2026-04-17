@@ -6,61 +6,7 @@ Shuhei Honda
 
 ## Abstract
 
-We discuss singularities of central projections of a regular surface in \(\mathbb{R}^{3}\). We describe We discuss singularities of central projections of a regular surface in \(\mathbb{R}^{3}\). We describe criteria of singularity types of central projections of a given surface in terms of its Monge normal form and discuss their geometric meaning, which is often not clearly understood. We consider all possible central projections of a fixed surface as a central projection unfolding and discuss their \(\mathcal{A}\)-versality. We obtain geometric criteria of versality for central projection unfoldings. We also observe that geometric meaning of criteria of singularity types of central
-
-## Introduction
-
-The central projection of a point \(z\) from the center \(y(\neq z)\) onto a plane \(H\) in 3-dimensional Euclidean space \(\mathbb{R}^{3}\), that does not contains \(y\), is the intersection of the line \(\mathcal{L}\) containing \(y\) and \(z\) with the plane \(H\). The center \(y=\left(y_{1}, y_{2}, y_{3}\right)\) of this projection in often called a viewpoint and the line \(\mathcal{L}\) is called viewline. We are going to investigate central projections regarding centers \(y\) as parameters.
-
-Historically speaking, central projections (perspective projections) have been used since the ancient Greece. For star charts Thales of Miletus used the gnomonic projection, which is the central projection of the sphere from the center onto a plane tangent to the sphere. In the Renaissance period, there was interest in central projections as the drawing in perspective. G. Desargues (see, for instance, [6, Theorem 2.32]) gave a mathematical comprehension to the central projections.
-
-Nowadays, computer vision (for instance, [3]) motivates to study singularities of central projection. One good example is to analyze view of pinhole camera model, which is also a central projection. To understand the shape of a surface in \(\mathbb{R}^{3}\), it is important to analyze its contours by central projections. The key step is understanding the distribution of singularities of central projections, which often have geometric meaning. Our main results contribute to give criteria for distribution of singularities in generic context. The theory of singularities enables us to analyze more complex image in computer vision. In this paper, we investigate singularities of central projections of regular surfaces in \(\mathbb{R}^{3}\) changing center as parameter. Let us prepare several notation. Let \(S\) be a surface parameterized by \(f(x): U \rightarrow \mathbb{R}^{3}\). Here \(U\) is an open set of \(\mathbb{R}^{2}\) containig the origin. We are interestrd in local behavior of \(S\) at \(f(0)\), and we express \(f\) as in the following form:
-
-$$
-f=\left(f_{1}(x), f_{2}(x), f_{3}(x)\right): U \rightarrow \mathbb{R}^{3}:\left(x_{1}, x_{2}\right) \mapsto f(0)+x_{1} \boldsymbol{u}+x_{2} \boldsymbol{v}+Q(x) \boldsymbol{w}
-$$
-
-where \(\{\boldsymbol{u}, \boldsymbol{v}, \boldsymbol{w}\}\) is an orthonormal frame of \(\mathbb{R}^{3}\). Here, \(Q(x)\) denotes a \(C^{\infty}\)-function whose \(k\)-th Taylor polynomial is
-
-$$
-\sum_{l \geq 2}^{k} H_{l}\left(x_{1}, x_{2}\right), H_{l}\left(x_{1}, x_{2}\right):=\sum_{i+j=l} \frac{a_{i j}}{i!j!} x_{1}{ }^{i} x_{2}{ }^{j},
-$$
-
-for any \(k\) at the origin. We call the expression ([L.1) Monge normal form for \(\{\boldsymbol{u}, \boldsymbol{v}, \boldsymbol{w}\}\). We can fix \(H\) to be the \(z_{1} z_{2}\)-plane, since we can send \(H\) to the \(z_{1} z_{2}\)-plane by certain rotation and translation. In the rest of this paper, we fix \(H\) to be the \(z_{1} z_{2}\)-plane. We denote Euclidean inner product by \(\langle\),\(\rangle. Then, a restriction of a central projection to S\) is written as follows:
-
-$$
-\pi: U \times \mathbb{R}^{3} \longrightarrow \mathbb{R}^{2}:\left(x_{1}, x_{2}, y\right) \mapsto \pi_{y}\left(x_{1}, x_{2}\right)
-$$
-
-where
-
-$$
-\begin{gathered} \pi_{y}\left(x_{1}, x_{2}\right):=\binom{\left\langle t(x, y) f(x)+(1-t(x, y)) y, \boldsymbol{e}_{1}\right\rangle}{\left\langle t(x, y) f(x)+(1-t(x, y)) y, \boldsymbol{e}_{2}\right\rangle}, \\ t(x, y):=\frac{y_{3}}{y_{3}-\left\langle f(x), \boldsymbol{e}_{3}\right\rangle} \text { and } \boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \boldsymbol{e}_{3}: \text { the standard basis of } \mathbb{R}^{3} . \end{gathered}
-$$
-
-\frac{1}{y_{3}-f_{3}(x)}\left(y_{3}\binom{f_{1}(x)}{f_{2}(x)}-f_{3}(x)\binom{y_{1}}{y_{2}}\right).
-
-We regard \(\pi\) as an unfolding of \(\pi_{y}\) with parameters \(y\). We call \(\pi\) a central projection unfolding. Our main result for versality of \(\pi\) is the following Theorem:
-
-Theorem 1.1. Let \(S\) be a regular surface parameterized by \(f\) as in (आ.1). Then, the criteria of the family \(\pi\) to be a versal unfolding of the singularities of \(\mathcal{A}_{e}\)-codim. \(\leq 3\) of \(\pi_{y}\) are given as in Table 11.
-
-$$
-\begin{gathered} 2 a_{31} k_{1}-3 a_{21}^{2} \neq 0 \text { and } \\ \left(a_{60} k_{1}-3 a_{21} a_{50}\right) p_{1}-18 a_{50} k_{1} \neq 0 \end{gathered}
-$$
-
-We quickly review the history of mathematical research on central projection from singularity theory viewpoint (cf. [4]). C. T. C. Wall [25] started to consider central projections from a perspective of singularity theory and stated a general transversality theorem due to his student J. M. S. David. He considered 'generic' projections including central projections in [7].
-
-J. H. Rieger and M. A. S. Ruas [21, 22] classified all corank one map germs with \(\mathcal{A}_{e}\)-codimension \(\leq 3\). Criteria of singularities of \(\pi_{y}\) have been given by O. A. Platnova [19] and V. I. Arnold [1, 2]. O. A. Platnova recognized that asymptotic straight lines appear as a set of viewpoints \(y\) so that \(\pi_{y}\) is not fold. She states the following paragragh ([19], p. 2798):
-
-The only exclusions concern some points on isolated asymptotic lines in a hyperbolic domain with fourth order contact (no more than two on a line) and on asymptotic lines passing through parabolic points of the surface (not more than one on a line).
-
-The asymptotic line here is that we call asymptotic straight line (in §2, definition 2.5). She called the excluded points " \(h\)-focal" (" \(h\) " for "hyperbolic") and " \(p\)-focal" (" \(p\) " for "parabolic") respectively. Since she mentioned " \(p\)-focal" in [19, Table 1], the author believes that she was aware of the following treatment: Once we fix \(f, \pi_{y}\) has the same type \(\Sigma\) of singularity for a viewpoint \(y\) on an asymptotic straight line except several points \(y\). We call such a point \(\Sigma\)-focal point.
-
-Y. Kabata [15] has written criteria of singularities of \(\mathcal{A}_{e}\)-codimension \(\leq 4\) from plane-to-plane map-germs and applied them to central projections of regular surfaces in the projective space \(\mathbb{P}^{3}\). He also gave the conditions of \(\Sigma\)-focal point in terms of the coefficients of the Monge normal form \(f\). We recall these results in our terminology for criteria of singularity types of a central projection \(\pi_{y}\) in §3. As an applications of singularities of \(\pi_{y}\), H. Sano, Y. Kabata and J. L. Deolindo Silva and T. Ohmoto [24] classified regular surfaces on \(\mathbb{P}^{3}\) by using the classification of singularities of central projections of them. And related to bifurcations, they have determined local topological types of binary differential equations of asymptotic curves at parabolic point in \(\mathbb{P}^{3}([8])\). From these, we are motivated to investigate certain criteria of versality of central projection unfoldings.
-
-Versality for several geometric unfoldings are already investigated in [I0] and [I4]. T. Fukui and M. Hasegawa show ( \(\mathcal{K}\) )-versality of distance squared unfoldings ([III]). In [I4], criteria of \(\mathcal{A}\)-versality of orthogonal projection unfoldings are given. Both of them are concerned with geometric interpretation of conditions of versality. In this article, we show criteria of \(\mathcal{A}\)-versality of the central projection in §4. The key step is to compute the \(\mathcal{A}_{e}\)-tangent space. The computation is often complicated and we completed them using the aid of computer. The source code of Maxima scripts are available at https://github.com/Shuhei-singularity123/Versality_ of_central_projection_of_regular_surface.
-
-In §5 we show an application of our criteria of versality of \(\pi\) to geometric interpretations of singularities of \(\pi_{y}\). Versal gulls series singularity of central projections is related to contact type with a cone. J. Montaldi [18] defines the notion of contact between two submanifolds and established the relation to \(\mathcal{K}\)-equivalence which is introduced by J. Mather ([16, §2]). For criteria of contact types of a surface, for instance, T. Fukui, M. Hasegawa, and K. Nakagawa [11] investigated contact type of a regular surface with right circular cylinders in \(\mathbb{R}^{3}\).
+We discuss singularities of central projections of a regular surface in \(\mathbb{R}^{3}\). We describe We discuss singularities of central projections of a regular surface in \(\mathbb{R}^{3}\). We describe criteria of singularity types of central projections of a given surface in terms of its Monge criteria of singularity types of central projections of a given surface in terms of its Monge normal form and discuss their geometric meaning, which is often not clearly understood. We consider all possible central projections of a fixed surface as a central projection unfolding and discuss their \(\mathcal{A}\)-versality. We obtain geometric criteria of versality for central projection
 
 ## 2 Preliminary
 

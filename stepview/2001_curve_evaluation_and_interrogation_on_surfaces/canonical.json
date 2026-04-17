@@ -79,8 +79,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:12:11Z",
-    "updated_at": "2026-04-17T04:12:11Z",
+    "created_at": "2026-04-17T05:27:31Z",
+    "updated_at": "2026-04-17T05:27:31Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -106,22 +106,22 @@
         "path": "stepview/2001_curve_evaluation_and_interrogation_on_surfaces/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 109324,
-        "modified_at": "2026-04-17T04:12:11Z",
+        "modified_at": "2026-04-17T05:27:22Z",
         "sha256": "96df3a722bc6a5b4b220d8a081f12ec83ff78bba7324b08b2645e06d007748d0"
       },
       "external_math": {
         "path": "stepview/2001_curve_evaluation_and_interrogation_on_surfaces/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 12853,
-        "modified_at": "2026-04-17T04:12:11Z",
+        "modified_at": "2026-04-17T05:27:22Z",
         "sha256": "91f55fc12b6821c4a52b606043b5de102c7c522e92aad560c429c53ecb1e1571"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -134,7 +134,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -624,7 +624,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "This paper presents a coherent computational framework to efficiently, and more so robustly, evaluate, interrogate, and compute a whole variety of characteristic curves on freeform parametric rational surfaces represented as (piecewise) polynomial or rational functions. These characteristic curves are expressed as zero sets of bivariate rational functions and include silhouette curves and isoclines from a prescribed viewing direction and or point, reflection lines and reflection ovals, and highlight lines. This zero set formulation allows for a better treatment of singular cases while these characteristic curves are crucial for various applications, from visualization through interrogation to design and manufacturing. c 2001 Academic Press Key Words: silhouettes; isoclines; isophotes; highlight lines; reflection lines."
+            "text": "This paper presents a coherent computational framework to efficiently, and more so robustly, evaluate, interrogate, and compute a whole variety of characteristic curves on freeform parametric rational surfaces represented as (piecewise) polynomial or rational functions. These characteristic curves are expressed as zero sets of bivariate rational functions and include silhouette curves and isoclines from a prescribed viewing direction and or point, reflection lines and reflection ovals, and highlight lines. This zero set formulation allows for a better treatment of singular cases while these characteristic curves are crucial for various applications, from visualization through interrogation to design and manufacturing. c 2001 Academic Press"
           }
         ]
       },
@@ -638,18 +638,6 @@
             "y1": 322.76,
             "width": 298.89,
             "height": 103.43
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 56.57,
-            "y0": 326.93,
-            "x1": 329.05,
-            "y1": 334.75,
-            "width": 272.48,
-            "height": 7.82
           },
           "engine": "composed"
         }

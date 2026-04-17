@@ -169,8 +169,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:09:25Z",
-    "updated_at": "2026-04-17T04:09:25Z",
+    "created_at": "2026-04-17T05:27:22Z",
+    "updated_at": "2026-04-17T05:27:22Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -196,22 +196,22 @@
         "path": "stepview/1998_cad_and_the_product_master_model/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 220761,
-        "modified_at": "2026-04-17T04:09:23Z",
-        "sha256": "7c0fb4d922caa37f1bb14560b2b8f82303e66878c042316d5540bce9cb415773"
+        "modified_at": "2026-04-17T05:26:54Z",
+        "sha256": "79e755b96ee2d740339e7586fadf8519def143397e91759e69aafebef0324d66"
       },
       "external_math": {
         "path": "stepview/1998_cad_and_the_product_master_model/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 753,
-        "modified_at": "2026-04-17T04:09:23Z",
+        "modified_at": "2026-04-17T05:26:54Z",
         "sha256": "34aa78a6885c0772be2012c1e623615da688e598e6980fe7b968de9d730f7be1"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -224,7 +224,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -262,25 +262,12 @@
   },
   "sections": [
     {
-      "id": "sec-1",
-      "label": "1",
-      "title": "Introduction",
-      "level": 1,
-      "block_ids": [
-        "blk-paragraph-0002",
-        "blk-paragraph-0003",
-        "blk-figure-0004"
-      ],
-      "children": [],
-      "source_spans": []
-    },
-    {
       "id": "sec-2",
       "label": "2",
       "title": "2 Literature Synopsis",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0005"
+        "blk-paragraph-0002"
       ],
       "children": [],
       "source_spans": [
@@ -304,52 +291,55 @@
       "title": "3 Net Shape Element Associativity",
       "level": 1,
       "block_ids": [
+        "blk-paragraph-0003",
+        "blk-paragraph-0004",
+        "blk-figure-0005",
         "blk-paragraph-0006",
         "blk-paragraph-0007",
-        "blk-figure-0008",
+        "blk-paragraph-0008",
         "blk-paragraph-0009",
-        "blk-paragraph-0010",
-        "blk-paragraph-0011",
-        "blk-paragraph-0012",
-        "blk-figure-0013",
-        "blk-list_item-0014",
-        "blk-figure-0015",
-        "blk-paragraph-0016",
-        "blk-figure-0017",
-        "blk-list_item-0018",
-        "blk-figure-0019",
-        "blk-list_item-0020",
-        "blk-figure-0021",
-        "blk-list_item-0022",
-        "blk-paragraph-0023",
-        "blk-display_equation_ref-0024",
-        "blk-paragraph-0025",
-        "blk-figure-0026",
+        "blk-figure-0010",
+        "blk-list_item-0011",
+        "blk-figure-0012",
+        "blk-paragraph-0013",
+        "blk-figure-0014",
+        "blk-list_item-0015",
+        "blk-figure-0016",
+        "blk-list_item-0017",
+        "blk-figure-0018",
+        "blk-list_item-0019",
+        "blk-paragraph-0020",
+        "blk-display_equation_ref-0021",
+        "blk-paragraph-0022",
+        "blk-figure-0023",
+        "blk-figure-0024",
+        "blk-figure-0025",
+        "blk-paragraph-0026",
         "blk-figure-0027",
-        "blk-figure-0028",
+        "blk-paragraph-0028",
         "blk-paragraph-0029",
-        "blk-figure-0030",
-        "blk-paragraph-0031",
+        "blk-paragraph-0030",
+        "blk-figure-0031",
         "blk-paragraph-0032",
-        "blk-paragraph-0033",
-        "blk-figure-0034",
+        "blk-figure-0033",
+        "blk-paragraph-0034",
         "blk-paragraph-0035",
-        "blk-figure-0036",
+        "blk-paragraph-0036",
         "blk-paragraph-0037",
-        "blk-paragraph-0038",
+        "blk-list_item-0038",
         "blk-paragraph-0039",
         "blk-paragraph-0040",
-        "blk-list_item-0041",
+        "blk-paragraph-0041",
         "blk-paragraph-0042",
         "blk-paragraph-0043",
         "blk-paragraph-0044",
         "blk-paragraph-0045",
         "blk-paragraph-0046",
         "blk-paragraph-0047",
-        "blk-paragraph-0048",
+        "blk-list_item-0048",
         "blk-paragraph-0049",
         "blk-paragraph-0050",
-        "blk-list_item-0051",
+        "blk-paragraph-0051",
         "blk-paragraph-0052",
         "blk-paragraph-0053",
         "blk-paragraph-0054",
@@ -357,10 +347,7 @@
         "blk-paragraph-0056",
         "blk-paragraph-0057",
         "blk-paragraph-0058",
-        "blk-paragraph-0059",
-        "blk-paragraph-0060",
-        "blk-paragraph-0061",
-        "blk-paragraph-0062"
+        "blk-paragraph-0059"
       ],
       "children": [],
       "source_spans": [
@@ -384,7 +371,7 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0063"
+        "blk-reference-0060"
       ],
       "children": [],
       "source_spans": []
@@ -398,7 +385,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "We develop an architecture for a product master model that federates CAD systems with downstream application processes for different feature CAD systems with downstream application processes for different feature views that are part of the design process. The architecture addresses espe- cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial CAD systems (and of downstream applications) to maintain proprietary"
+            "text": "We develop an architecture for a product master model that federates CAD systems with downstream application processes for different feature CAD systems with downstream application processes for different feature views that are part of the design process. The architecture addresses espe- views that are part of the design process. The architecture addresses espe- cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial"
           }
         ]
       },
@@ -443,6 +430,18 @@
           "page": 1,
           "bbox": {
             "x0": 132.77,
+            "y0": 390.76,
+            "x1": 458.49,
+            "y1": 403.15,
+            "width": 325.72,
+            "height": 12.38
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 132.77,
             "y0": 402.57,
             "x1": 458.49,
             "y1": 414.95,
@@ -462,18 +461,6 @@
             "height": 12.67
           },
           "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 132.77,
-            "y0": 426.18,
-            "x1": 458.49,
-            "y1": 438.85,
-            "width": 325.72,
-            "height": 12.67
-          },
-          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -485,109 +472,6 @@
     },
     {
       "id": "blk-paragraph-0002",
-      "type": "paragraph",
-      "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "and by the requirement of protecting the proprietariness of certain data and methods of commercial CAD systems and of other software components. In this paper, we develop a plausible organization for a product master model and address some of the delicate questions of coordinating the CAD system with other software components that take care of downstream information processing. In two case studies, we consider geometric dimensioning and tolerance analysis programs and process planners for numerically controlled machining. These are only some of the many application domains involved in product design, manage ment, and information processing, yet they already span a very broad subject area with a rich literature exploring many details. To focus our investigation, we concentrate on the following question: Assuming that the data in the master model originates from different domain-specific programs, how can this information be kept consistent and how is it maintained under design changes ? In our view, the CAD system is one of the clients of the master model, with the primary charge of creating and maintaining the net shape information. Thus, our focus includes the following important special case: How can we establish and maintain a persistent association between the geometry data contributed by the CAD system and data origi nating from other application programs ? To investigate the focus questions, we explore some of the detail information needed by the applications mentioned above. In the case studies, we trace the implications of editing a design with the intent of maximizing the preservation and maintaining consistency of the information in the master model. This ex ploration is pursued to the extent necessary to make progress on the consistency question. We do not seek to break new ground in feature recognition, process planning, or any other application domain. We develop our approach based on the following concept: The master model is an object-oriented repository that provides essential mechanisms for main taining the integrity and consistency of the deposited information structures. It has several clients, one of which is the CAD system by which the net shape has 2"
-          }
-        ]
-      },
-      "source_spans": [
-        {
-          "page": 2,
-          "bbox": {
-            "x0": 107.04,
-            "y0": 1.3,
-            "x1": 484.07,
-            "y1": 436.9,
-            "width": 377.03,
-            "height": 435.6
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 2,
-          "bbox": {
-            "x0": 107.04,
-            "y0": 159.46,
-            "x1": 484.07,
-            "y1": 608.26,
-            "width": 377.03,
-            "height": 448.8
-          },
-          "engine": "composed"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0003",
-      "type": "paragraph",
-      "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "Master Model Server System GD&T View CAD Figure 1: Master model architecture with client views been designed and which must be used to change net shape. of the information structures in the master model. The clients of the master model, in addition to the CAD system, are domain specific application subsystems, dealing for instance with manufacturing process planning, geometric dimensioning and tolerancing, cost estimation, performance evaluation, and so on. Each client has a view of the product model. We assume that each client deposits some of the product information it pro cesses, in the master model. In addition, the client subsystem would maintain, at its option, a private data repository for all information that is either to be kept private from the master model, or else is irrelevant to any other application view. When a change is made, a change protocol is followed to ensure that infor mation structures maintain consistency. Here, we assume that this protocol is supported by the clients. The change protocol is, in e ect, a blackboard archi tecture that posts, in a standard way, which information has changed and how. It is up to the clients to process this change information and to re-associate, adjust, change, etc., all domain-specific information they own. We believe that many of the needed adjustments and changes can be automated, but we allow that in certain circumstances user intervention may be required. Overall, the architecture we are proposing is shown in Figure 1. The master 3"
-          }
-        ]
-      },
-      "source_spans": [
-        {
-          "page": 3,
-          "bbox": {
-            "x0": 107.04,
-            "y0": 150.82,
-            "x1": 484.32,
-            "y1": 777.46,
-            "width": 377.28,
-            "height": 626.64
-          },
-          "engine": "composed"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-figure-0004",
-      "type": "figure_ref",
-      "content": {
-        "figure_id": "fig-1"
-      },
-      "source_spans": [
-        {
-          "page": 3,
-          "bbox": {
-            "x0": 165.72,
-            "y0": 382.0,
-            "x1": 427.28,
-            "y1": 394.0,
-            "width": 261.56,
-            "height": 12.0
-          },
-          "engine": "local_figure_linker"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0005",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -631,7 +515,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0006",
+      "id": "blk-paragraph-0003",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -711,7 +595,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0007",
+      "id": "blk-paragraph-0004",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -743,7 +627,7 @@
       }
     },
     {
-      "id": "blk-figure-0008",
+      "id": "blk-figure-0005",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-2"
@@ -770,7 +654,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0009",
+      "id": "blk-paragraph-0006",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -862,7 +746,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0010",
+      "id": "blk-paragraph-0007",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -918,7 +802,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0011",
+      "id": "blk-paragraph-0008",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -962,7 +846,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0012",
+      "id": "blk-paragraph-0009",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1066,7 +950,7 @@
       }
     },
     {
-      "id": "blk-figure-0013",
+      "id": "blk-figure-0010",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -1093,7 +977,7 @@
       }
     },
     {
-      "id": "blk-list_item-0014",
+      "id": "blk-list_item-0011",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1144,7 +1028,7 @@
       }
     },
     {
-      "id": "blk-figure-0015",
+      "id": "blk-figure-0012",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -1171,7 +1055,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0016",
+      "id": "blk-paragraph-0013",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1227,7 +1111,7 @@
       }
     },
     {
-      "id": "blk-figure-0017",
+      "id": "blk-figure-0014",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-5"
@@ -1254,7 +1138,7 @@
       }
     },
     {
-      "id": "blk-list_item-0018",
+      "id": "blk-list_item-0015",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1289,7 +1173,7 @@
       }
     },
     {
-      "id": "blk-figure-0019",
+      "id": "blk-figure-0016",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-6"
@@ -1316,7 +1200,7 @@
       }
     },
     {
-      "id": "blk-list_item-0020",
+      "id": "blk-list_item-0017",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1351,7 +1235,7 @@
       }
     },
     {
-      "id": "blk-figure-0021",
+      "id": "blk-figure-0018",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-7"
@@ -1378,7 +1262,7 @@
       }
     },
     {
-      "id": "blk-list_item-0022",
+      "id": "blk-list_item-0019",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1413,7 +1297,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0023",
+      "id": "blk-paragraph-0020",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1589,7 +1473,7 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0024",
+      "id": "blk-display_equation_ref-0021",
       "type": "display_equation_ref",
       "content": {
         "math_id": "mathpix-eq-p024-0013"
@@ -1616,7 +1500,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0025",
+      "id": "blk-paragraph-0022",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1720,7 +1604,7 @@
       }
     },
     {
-      "id": "blk-figure-0026",
+      "id": "blk-figure-0023",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-8"
@@ -1747,7 +1631,7 @@
       }
     },
     {
-      "id": "blk-figure-0027",
+      "id": "blk-figure-0024",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-9"
@@ -1774,7 +1658,7 @@
       }
     },
     {
-      "id": "blk-figure-0028",
+      "id": "blk-figure-0025",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-10"
@@ -1801,7 +1685,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0029",
+      "id": "blk-paragraph-0026",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1833,7 +1717,7 @@
       }
     },
     {
-      "id": "blk-figure-0030",
+      "id": "blk-figure-0027",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-11"
@@ -1860,7 +1744,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0031",
+      "id": "blk-paragraph-0028",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1892,7 +1776,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0032",
+      "id": "blk-paragraph-0029",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1924,7 +1808,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0033",
+      "id": "blk-paragraph-0030",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1956,7 +1840,7 @@
       }
     },
     {
-      "id": "blk-figure-0034",
+      "id": "blk-figure-0031",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-12"
@@ -1983,7 +1867,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0035",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2015,7 +1899,7 @@
       }
     },
     {
-      "id": "blk-figure-0036",
+      "id": "blk-figure-0033",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-13"
@@ -2042,7 +1926,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0037",
+      "id": "blk-paragraph-0034",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2086,7 +1970,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0038",
+      "id": "blk-paragraph-0035",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2118,7 +2002,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0039",
+      "id": "blk-paragraph-0036",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2150,7 +2034,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0040",
+      "id": "blk-paragraph-0037",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2194,7 +2078,7 @@
       }
     },
     {
-      "id": "blk-list_item-0041",
+      "id": "blk-list_item-0038",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2229,7 +2113,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0042",
+      "id": "blk-paragraph-0039",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2297,7 +2181,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0043",
+      "id": "blk-paragraph-0040",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2341,7 +2225,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0044",
+      "id": "blk-paragraph-0041",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2373,7 +2257,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0045",
+      "id": "blk-paragraph-0042",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2429,7 +2313,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0046",
+      "id": "blk-paragraph-0043",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2473,7 +2357,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0047",
+      "id": "blk-paragraph-0044",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2565,7 +2449,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0048",
+      "id": "blk-paragraph-0045",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2621,7 +2505,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0049",
+      "id": "blk-paragraph-0046",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2653,7 +2537,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0050",
+      "id": "blk-paragraph-0047",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2685,7 +2569,7 @@
       }
     },
     {
-      "id": "blk-list_item-0051",
+      "id": "blk-list_item-0048",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2732,7 +2616,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0052",
+      "id": "blk-paragraph-0049",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2788,7 +2672,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0053",
+      "id": "blk-paragraph-0050",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2820,7 +2704,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0054",
+      "id": "blk-paragraph-0051",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2852,7 +2736,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0055",
+      "id": "blk-paragraph-0052",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2932,7 +2816,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0056",
+      "id": "blk-paragraph-0053",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3000,7 +2884,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0057",
+      "id": "blk-paragraph-0054",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3044,7 +2928,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0058",
+      "id": "blk-paragraph-0055",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3100,7 +2984,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0059",
+      "id": "blk-paragraph-0056",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3132,7 +3016,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0060",
+      "id": "blk-paragraph-0057",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3188,7 +3072,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0061",
+      "id": "blk-paragraph-0058",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3268,7 +3152,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0062",
+      "id": "blk-paragraph-0059",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3300,7 +3184,7 @@
       }
     },
     {
-      "id": "blk-reference-0063",
+      "id": "blk-reference-0060",
       "type": "reference",
       "content": {
         "reference_id": "ref-001"

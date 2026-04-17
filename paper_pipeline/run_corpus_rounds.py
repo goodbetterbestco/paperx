@@ -8,6 +8,7 @@ import json
 import os
 import re
 import socket
+import sys
 from threading import Event, Thread
 import time
 import traceback
@@ -188,6 +189,15 @@ def _mathpix_round_poll_seconds() -> float:
     return _float_env("STEPVIEW_MATHPIX_ROUND_POLL_SECONDS", 30.0)
 
 
+def _docling_device() -> str | None:
+    configured = os.environ.get("STEPVIEW_DOCLING_DEVICE", "").strip().lower()
+    if configured in {"auto", "cpu", "mps", "cuda", "xpu"}:
+        return configured
+    if sys.platform == "darwin":
+        return "mps"
+    return None
+
+
 def _snapshot_external_source(path: Path, snapshot_name: str) -> Path | None:
     if not path.exists():
         return None
@@ -197,7 +207,7 @@ def _snapshot_external_source(path: Path, snapshot_name: str) -> Path | None:
 
 
 def _build_docling_sources(paper_id: str) -> dict[str, Any]:
-    docling_json_path = run_docling(paper_id)
+    docling_json_path = run_docling(paper_id, device=_docling_device())
     docling_document = json.loads(docling_json_path.read_text(encoding="utf-8"))
     layout, math = docling_json_to_external_sources(docling_document, paper_id)
     sources_dir = external_layout_path(paper_id).parent

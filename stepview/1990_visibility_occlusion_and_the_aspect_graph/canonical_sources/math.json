@@ -1,10 +1,10 @@
 {
-  "engine": "docling",
+  "engine": "mathpix",
   "entries": [
     {
-      "id": "docling-eq-0001",
+      "id": "mathpix-eq-p024-0010",
       "kind": "display",
-      "display_latex": "p = p11+t(p12-P11), 0≤t≤1 (1)",
+      "display_latex": "\\mathbf{p}=\\mathbf{p}_{11}+t\\left(\\mathbf{p}_{12}-\\mathbf{p}_{11}\\right), 0 \\leq t \\leq 1",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,46 +15,14 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 209.38,
-            "y0": 246.35,
-            "x1": 505.04,
-            "y1": 262.47,
-            "width": 295.66,
-            "height": 16.12
+            "x0": 206.72,
+            "y0": 245.09,
+            "x1": 370.54,
+            "y1": 265.54,
+            "width": 163.82,
+            "height": 20.45
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(1)"
-    },
-    {
-      "id": "docling-eq-0002",
-      "kind": "display",
-      "display_latex": "(p-p21) × (P21-P22) (p-p31) × (P31-P32)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 24,
-          "bbox": {
-            "x0": 246.19,
-            "y0": 368.33,
-            "x1": 353.18,
-            "y1": 397.15,
-            "width": 106.99,
-            "height": 28.82
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -65,9 +33,9 @@
       }
     },
     {
-      "id": "docling-eq-0003",
+      "id": "mathpix-eq-p024-0017",
       "kind": "display",
-      "display_latex": "d = [(p-p21)x (P21-P22)]×[(p-p31)×(P31-P32)] (2)",
+      "display_latex": "\\begin{aligned}\n& \\left(\\mathbf{p}-\\mathbf{p}_{21}\\right) \\times\\left(\\mathbf{p}_{21}-\\mathbf{p}_{22}\\right) \\\\\n& \\left(\\mathbf{p}-\\mathbf{p}_{31}\\right) \\times\\left(\\mathbf{p}_{31}-\\mathbf{p}_{32}\\right)\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -78,110 +46,14 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 176.02,
-            "y0": 437.44,
-            "x1": 507.34,
-            "y1": 452.41,
-            "width": 331.32,
-            "height": 14.97
+            "x0": 245.01,
+            "y0": 365.18,
+            "x1": 354.99,
+            "y1": 399.74,
+            "width": 109.98,
+            "height": 34.56
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(2)"
-    },
-    {
-      "id": "docling-eq-0004",
-      "kind": "display",
-      "display_latex": "0 = tan-1 (dx dz) (3)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 24,
-          "bbox": {
-            "x0": 248.49,
-            "y0": 556.0,
-            "x1": 508.49,
-            "y1": 571.0,
-            "width": 260.0,
-            "height": 15.0
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(3)"
-    },
-    {
-      "id": "docling-eq-0005",
-      "kind": "display",
-      "display_latex": "*=-sin-1(dy Nd,?+dy?+dz?) (4)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 24,
-          "bbox": {
-            "x0": 211.68,
-            "y0": 582.49,
-            "x1": 508.49,
-            "y1": 600.91,
-            "width": 296.81,
-            "height": 18.42
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(4)"
-    },
-    {
-      "id": "docling-eq-0006",
-      "kind": "display",
-      "display_latex": "cos e 0 sin e 7r1 0",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 199.77,
-            "y0": 167.21,
-            "x1": 334.05,
-            "y1": 187.75,
-            "width": 134.28,
-            "height": 20.54
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -192,9 +64,9 @@
       }
     },
     {
-      "id": "docling-eq-0007",
+      "id": "mathpix-eq-p024-0019",
       "kind": "display",
-      "display_latex": "[x0,y0,z0] -sino 0 cos o O sin ¢ cos $ [xo cos e- zo sin 0, (5)",
+      "display_latex": "\\mathbf{d}=\\left[\\left(\\mathbf{p}-\\mathbf{p}_{21}\\right) \\times\\left(\\mathbf{p}_{21}-\\mathbf{p}_{22}\\right)\\right] \\times\\left[\\left(\\mathbf{p}-\\mathbf{p}_{31}\\right) \\times\\left(\\mathbf{p}_{31}-\\mathbf{p}_{32}\\right)\\right]",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -203,48 +75,16 @@
       },
       "source_spans": [
         {
-          "page": 30,
+          "page": 24,
           "bbox": {
-            "x0": 138.05,
-            "y0": 193.4,
-            "x1": 507.34,
-            "y1": 259.01,
-            "width": 369.29,
-            "height": 65.61
+            "x0": 173.32,
+            "y0": 436.32,
+            "x1": 433.59,
+            "y1": 455.9,
+            "width": 260.27,
+            "height": 19.58
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(5)"
-    },
-    {
-      "id": "docling-eq-0008",
-      "kind": "display",
-      "display_latex": "*o sin 0 sin $ + yo cos $ + zo cos 0 sin q, xo sin 0 cos $ - yo sin $ + z0 cos 9 cos $l",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 216.28,
-            "y0": 260.0,
-            "x1": 418.76,
-            "y1": 289.0,
-            "width": 202.48,
-            "height": 29.0
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -255,9 +95,40 @@
       }
     },
     {
-      "id": "docling-eq-0009",
+      "id": "mathpix-eq-p024-0026",
       "kind": "display",
-      "display_latex": "u= x0 cos A - zo sin A (6)",
+      "display_latex": "\\begin{gathered}\n\\theta=\\tan ^{-1}\\left(d_{x} / d_{z}\\right) \\\\\n\\phi=-\\sin ^{-1}\\left(d_{y} / \\sqrt{d_{x}^{2}+d_{y}^{2}+d_{z}^{2}}\\right)\n\\end{gathered}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 24,
+          "bbox": {
+            "x0": 209.6,
+            "y0": 554.98,
+            "x1": 381.77,
+            "y1": 604.51,
+            "width": 172.17,
+            "height": 49.54
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p030-0006",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n{\\left[\\mathrm{x}_{0}, \\mathrm{y}_{0}, \\mathrm{z}_{0}\\right]\\left[\\begin{array}{ccc}\n\\cos \\theta & 0 & \\sin \\theta \\\\\n0 & 1 & 0 \\\\\n-\\sin \\theta & 0 & \\cos \\theta\n\\end{array}\\right]\\left[\\begin{array}{ccc}\n1 & 0 & 0 \\\\\n0 & \\cos \\phi & -\\sin \\phi \\\\\n0 & \\sin \\phi & \\cos \\phi\n\\end{array}\\right]=} \\\\\n{\\left[\\mathrm{x}_{0} \\cos \\theta-\\mathrm{z}_{0} \\sin \\theta\\right.} \\\\\n\\mathrm{x}_{0} \\sin \\theta \\sin \\phi+\\mathrm{y}_{0} \\cos \\phi+\\mathrm{z}_{0} \\cos \\theta \\sin \\phi \\\\\n\\left.\\mathrm{x}_{0} \\sin \\theta \\cos \\phi-\\mathrm{y}_{0} \\sin \\phi+\\mathrm{z}_{0} \\cos \\theta \\cos \\phi\\right]\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -268,14 +139,14 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 213.98,
-            "y0": 328.08,
-            "x1": 508.49,
-            "y1": 345.35,
-            "width": 294.51,
-            "height": 17.27
+            "x0": 136.18,
+            "y0": 164.45,
+            "x1": 421.79,
+            "y1": 291.46,
+            "width": 285.61,
+            "height": 127.01
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -283,13 +154,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(6)"
+      }
     },
     {
-      "id": "docling-eq-0010",
+      "id": "mathpix-eq-p030-0009",
       "kind": "display",
-      "display_latex": "v = x0 sin 0 sin $ + yo cos $ + zo cos 0 sin d (7)",
+      "display_latex": "\\begin{aligned}\n& u=x_{0} \\cos \\theta-z_{0} \\sin \\theta \\\\\n& v=x_{0} \\sin \\theta \\sin \\phi+y_{0} \\cos \\phi+z_{0} \\cos \\theta \\sin \\phi\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -300,14 +170,14 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 212.83,
-            "y0": 344.2,
-            "x1": 508.49,
-            "y1": 361.47,
-            "width": 295.66,
-            "height": 17.27
+            "x0": 211.61,
+            "y0": 328.03,
+            "x1": 433.02,
+            "y1": 363.17,
+            "width": 221.4,
+            "height": 35.14
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -315,13 +185,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(7)"
+      }
     },
     {
-      "id": "docling-eq-0011",
+      "id": "mathpix-eq-p030-0019",
       "kind": "display",
-      "display_latex": "y(s) = y1 + b1 s Z(S) = Z1 + C1 S (8)",
+      "display_latex": "\\begin{aligned}\n& \\mathrm{x}(s)=\\mathrm{x}_{1}+\\mathrm{a}_{1} s \\\\\n& \\mathrm{y}(s)=\\mathrm{y}_{1}+\\mathrm{b}_{1} s \\\\\n& \\mathrm{z}(s)=\\mathrm{z}_{1}+\\mathrm{c}_{1} s\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -332,14 +201,14 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 250.8,
-            "y0": 523.78,
-            "x1": 509.64,
-            "y1": 556.47,
-            "width": 258.84,
-            "height": 32.69
+            "x0": 248.75,
+            "y0": 508.61,
+            "x1": 330.81,
+            "y1": 558.72,
+            "width": 82.05,
+            "height": 50.11
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -347,13 +216,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(8)"
+      }
     },
     {
-      "id": "docling-eq-0012",
+      "id": "mathpix-eq-p030-0022",
       "kind": "display",
-      "display_latex": "(9)",
+      "display_latex": "\\begin{gathered}\n\\mathrm{u}=\\left(\\mathrm{x}_{1}+\\mathrm{a}_{1} s\\right) \\cos \\theta-\\left(\\mathrm{z}_{1}+\\mathrm{c}_{1} s\\right) \\sin \\theta \\\\\n\\mathrm{v}=\\left(\\mathrm{x}_{1}+\\mathrm{a}_{1} s\\right) \\sin \\theta \\sin \\phi+\\left(\\mathrm{y}_{1}+\\mathrm{b}_{1} s\\right) \\cos \\phi+\\left(\\mathrm{z}_{1}+\\mathrm{c}_{1} s\\right) \\cos \\theta \\sin \\phi\n\\end{gathered}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -364,14 +232,14 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 490.09,
-            "y0": 594.0,
-            "x1": 509.64,
-            "y1": 607.81,
-            "width": 19.55,
-            "height": 13.81
+            "x0": 102.78,
+            "y0": 594.72,
+            "x1": 444.25,
+            "y1": 631.87,
+            "width": 341.46,
+            "height": 37.15
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -379,45 +247,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(9)"
+      }
     },
     {
-      "id": "docling-eq-0013",
+      "id": "mathpix-eq-p036-0016",
       "kind": "display",
-      "display_latex": "U = (X1 + a1 S) cos 0 - (z1 + C1 S) sin e V = (*1 + a1 S) sin 0 sin ф + (V1 + b1 s) cos Ø + (Z1 + C1 S) cos 0 sin ¢ (10)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 104.69,
-            "y0": 597.18,
-            "x1": 510.79,
-            "y1": 629.69,
-            "width": 406.1,
-            "height": 32.51
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(10)"
-    },
-    {
-      "id": "docling-eq-0014",
-      "kind": "display",
-      "display_latex": "u= (x1 + S a1) cos 0 - (z1 + S C1) sin e (11)",
+      "display_latex": "\\begin{aligned}\n& \\mathrm{u}=\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right) \\cos \\theta-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right) \\sin \\theta \\\\\n& \\mathrm{v}=\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right) \\sin \\theta \\sin \\phi+ \\\\\n& \\quad\\left(\\mathrm{y}_{1}+s \\mathrm{~b}_{1}\\right) \\cos \\phi+\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right) \\cos \\theta \\sin \\phi\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -428,14 +263,14 @@
         {
           "page": 36,
           "bbox": {
-            "x0": 174.87,
-            "y0": 366.07,
-            "x1": 506.19,
-            "y1": 382.33,
-            "width": 331.32,
-            "height": 16.26
+            "x0": 171.88,
+            "y0": 366.34,
+            "x1": 413.73,
+            "y1": 428.83,
+            "width": 241.84,
+            "height": 62.5
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -443,45 +278,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(11)"
+      }
     },
     {
-      "id": "docling-eq-0015",
+      "id": "mathpix-eq-p037-0002",
       "kind": "display",
-      "display_latex": "v = (x1 + S a1) sin 0 sin $ + (y1 + s b1) cos $ + (21 + S C1) cos 0 sin $ (12)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 36,
-          "bbox": {
-            "x0": 174.87,
-            "y0": 393.7,
-            "x1": 507.34,
-            "y1": 426.0,
-            "width": 332.47,
-            "height": 32.3
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(12)"
-    },
-    {
-      "id": "docling-eq-0016",
-      "kind": "display",
-      "display_latex": "(x2 + 52 a2) - (x1 +S a1) V: = (22 + S2 C2) - (z1 + 8 C1) (13)",
+      "display_latex": "\\frac{\\mathrm{v}_{\\mathrm{x}}}{\\mathrm{v}_{\\mathrm{z}}}=\\frac{\\left(\\mathrm{x}_{2}+s_{2} \\mathrm{a}_{2}\\right)-\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right)}{\\left(\\mathrm{z}_{2}+s_{2} \\mathrm{c}_{2}\\right)-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right)}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -492,14 +294,14 @@
         {
           "page": 37,
           "bbox": {
-            "x0": 250.42,
-            "y0": 102.33,
-            "x1": 546.46,
-            "y1": 136.09,
-            "width": 296.04,
-            "height": 33.76
+            "x0": 249.91,
+            "y0": 99.07,
+            "x1": 401.35,
+            "y1": 130.46,
+            "width": 151.44,
+            "height": 31.39
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -507,13 +309,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(13)"
+      }
     },
     {
-      "id": "docling-eq-0017",
+      "id": "mathpix-eq-p037-0005",
       "kind": "display",
-      "display_latex": "(14)",
+      "display_latex": "\\frac{\\mathrm{v}_{\\mathrm{y}}}{\\mathrm{v}_{\\mathrm{z}}}=\\frac{\\left(\\mathrm{y}_{2}+s_{2} \\mathrm{~b}_{2}\\right)-\\left(\\mathrm{y}_{1}+s \\mathrm{~b}_{1}\\right)}{\\left(\\mathrm{z}_{2}+s_{2} \\mathrm{c}_{2}\\right)-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right)}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -524,14 +325,14 @@
         {
           "page": 37,
           "bbox": {
-            "x0": 522.3,
-            "y0": 173.83,
-            "x1": 546.46,
-            "y1": 186.49,
-            "width": 24.16,
-            "height": 12.66
+            "x0": 249.91,
+            "y0": 164.45,
+            "x1": 405.09,
+            "y1": 196.7,
+            "width": 155.18,
+            "height": 32.26
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -539,13 +340,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(14)"
+      }
     },
     {
-      "id": "docling-eq-0018",
+      "id": "mathpix-eq-p037-0008",
       "kind": "display",
-      "display_latex": "s = V. [P2-P1) xa2! V. (a1 xa2) (15)",
+      "display_latex": "s=\\frac{\\mathbf{V} \\cdot\\left[\\left(\\mathbf{p}_{2}-\\mathbf{p}_{1}\\right) \\times \\mathbf{a}_{2}\\right]}{\\mathbf{V} \\cdot\\left(\\mathbf{a}_{1} \\times \\mathbf{a}_{2}\\right)}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -556,46 +356,14 @@
         {
           "page": 37,
           "bbox": {
-            "x0": 251.95,
-            "y0": 237.0,
-            "x1": 546.46,
-            "y1": 267.33,
-            "width": 294.51,
-            "height": 30.33
+            "x0": 249.91,
+            "y0": 233.86,
+            "x1": 371.69,
+            "y1": 269.28,
+            "width": 121.79,
+            "height": 35.42
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(15)"
-    },
-    {
-      "id": "docling-eq-0019",
-      "kind": "display",
-      "display_latex": "(P1 + 881 - P2) X 82",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 38,
-          "bbox": {
-            "x0": 245.04,
-            "y0": 140.33,
-            "x1": 353.18,
-            "y1": 154.33,
-            "width": 108.14,
-            "height": 14.0
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -606,9 +374,9 @@
       }
     },
     {
-      "id": "docling-eq-0020",
+      "id": "mathpix-eq-p038-0004",
       "kind": "display",
-      "display_latex": "(P1 +S 21 - P3) Xa3",
+      "display_latex": "\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -619,14 +387,14 @@
         {
           "page": 38,
           "bbox": {
-            "x0": 245.04,
-            "y0": 185.33,
-            "x1": 352.03,
-            "y1": 198.0,
-            "width": 106.99,
-            "height": 12.67
+            "x0": 246.16,
+            "y0": 138.53,
+            "x1": 353.27,
+            "y1": 152.93,
+            "width": 107.1,
+            "height": 14.4
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -637,9 +405,9 @@
       }
     },
     {
-      "id": "docling-eq-0021",
+      "id": "mathpix-eq-p038-0006",
       "kind": "display",
-      "display_latex": "V' = ((P1 + S 81 - P2) X 22) X ((PI + S 81- P3)X P3)Xa3) (16)",
+      "display_latex": "\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -650,46 +418,14 @@
         {
           "page": 38,
           "bbox": {
-            "x0": 136.9,
-            "y0": 239.25,
-            "x1": 505.14,
-            "y1": 254.41,
-            "width": 368.24,
-            "height": 15.16
+            "x0": 246.16,
+            "y0": 183.74,
+            "x1": 351.83,
+            "y1": 197.28,
+            "width": 105.66,
+            "height": 13.54
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(16)"
-    },
-    {
-      "id": "docling-eq-0022",
-      "kind": "display",
-      "display_latex": "(p1 +s P1- P2)xa2",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 38,
-          "bbox": {
-            "x0": 247.34,
-            "y0": 674.58,
-            "x1": 355.49,
-            "y1": 687.33,
-            "width": 108.15,
-            "height": 12.75
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -700,9 +436,9 @@
       }
     },
     {
-      "id": "docling-eq-0023",
+      "id": "mathpix-eq-p038-0008",
       "kind": "display",
-      "display_latex": "(P1 +S PI- P3)Xa3",
+      "display_latex": "\\mathbf{V}^{\\prime}=\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}\\right) \\times\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}\\right)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -713,14 +449,14 @@
         {
           "page": 38,
           "bbox": {
-            "x0": 247.34,
-            "y0": 690.67,
-            "x1": 355.49,
-            "y1": 703.36,
-            "width": 108.15,
-            "height": 12.69
+            "x0": 136.18,
+            "y0": 239.33,
+            "x1": 399.04,
+            "y1": 254.3,
+            "width": 262.86,
+            "height": 14.98
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -731,9 +467,9 @@
       }
     },
     {
-      "id": "docling-eq-0024",
+      "id": "mathpix-eq-p038-0025",
       "kind": "display",
-      "display_latex": "(P1 + S P1 - P4) ×24",
+      "display_latex": "\\begin{aligned}\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2} \\\\\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3} \\\\\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{4}\\right) \\times \\mathbf{a}_{4}\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -744,14 +480,14 @@
         {
           "page": 38,
           "bbox": {
-            "x0": 248.49,
-            "y0": 705.66,
-            "x1": 356.64,
-            "y1": 719.48,
-            "width": 108.15,
-            "height": 13.82
+            "x0": 247.31,
+            "y0": 671.9,
+            "x1": 358.74,
+            "y1": 721.44,
+            "width": 111.42,
+            "height": 49.54
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -762,9 +498,71 @@
       }
     },
     {
-      "id": "docling-eq-0025",
+      "id": "mathpix-eq-p041-0016",
       "kind": "display",
-      "display_latex": "V = p1+s a1+r [(p1 + Sa1-p2)xa2)x((p1+sa1 - P3)xa] (17)",
+      "display_latex": "\\mathbf{V}^{\\prime}=\\mathbf{a} s^{2}+\\mathbf{b} s+\\mathbf{c}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 41,
+          "bbox": {
+            "x0": 252.5,
+            "y0": 332.35,
+            "x1": 348.37,
+            "y1": 347.62,
+            "width": 95.87,
+            "height": 15.26
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p041-0018",
+      "kind": "display",
+      "display_latex": "\\mathbf{a}_{1} s_{1}^{2}+\\mathbf{b}_{1} s_{1}+\\mathbf{c}_{1}=\\mathbf{a}_{2} s_{2}^{2}+\\mathbf{b}_{2} s_{2}+\\mathbf{c}_{2}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 41,
+          "bbox": {
+            "x0": 217.66,
+            "y0": 387.94,
+            "x1": 424.96,
+            "y1": 404.06,
+            "width": 207.3,
+            "height": 16.13
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p043-0030",
+      "kind": "display",
+      "display_latex": "\\mathbf{V}=\\mathbf{p}_{1}+s \\mathbf{a}_{1}+r\\left[\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}\\right) \\times\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}\\right]",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -775,110 +573,14 @@
         {
           "page": 43,
           "bbox": {
-            "x0": 144.96,
-            "y0": 603.13,
-            "x1": 548.8,
-            "y1": 618.33,
-            "width": 403.84,
-            "height": 15.2
+            "x0": 143.38,
+            "y0": 602.78,
+            "x1": 469.58,
+            "y1": 620.64,
+            "width": 326.2,
+            "height": 17.86
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(17)"
-    },
-    {
-      "id": "docling-eq-0026",
-      "kind": "display",
-      "display_latex": "u = f (x0 cos 9 - zo sin e) r - (xo sin 0 cos $ - yo sin $ + Zo cos 0 cos 4) (18)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 46,
-          "bbox": {
-            "x0": 141.5,
-            "y0": 630.84,
-            "x1": 508.58,
-            "y1": 662.0,
-            "width": 367.08,
-            "height": 31.16
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(18)"
-    },
-    {
-      "id": "docling-eq-0027",
-      "kind": "display",
-      "display_latex": "f (*0 sin 0 sin $ + yo cos $ + Z0 cos 0 sin $) V = r - (x0 sin e cos $ - yo sin $ + Zo cos A cos $) (19)",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 46,
-          "bbox": {
-            "x0": 140.35,
-            "y0": 675.41,
-            "x1": 509.71,
-            "y1": 708.0,
-            "width": 369.36,
-            "height": 32.59
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "equation_number": "(19)"
-    },
-    {
-      "id": "docling-eq-0028",
-      "kind": "display",
-      "display_latex": "V= a1+ sa2+r[s? az+sa4+as]",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 48,
-          "bbox": {
-            "x0": 174.87,
-            "y0": 478.88,
-            "x1": 361.24,
-            "y1": 494.0,
-            "width": 186.37,
-            "height": 15.12
-          },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -889,9 +591,71 @@
       }
     },
     {
-      "id": "docling-eq-0029",
+      "id": "mathpix-eq-p046-0026",
       "kind": "display",
-      "display_latex": "a1 + 81a2 + r1[ s12 a3 + 8124+ a5] = a6 + s2a7+r2[s2? a8 + 52 ag + a10] (20)",
+      "display_latex": "\\left[\\frac{f}{d} p_{x}, \\frac{f}{d} p_{y}\\right]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 46,
+          "bbox": {
+            "x0": 248.75,
+            "y0": 524.74,
+            "x1": 318.43,
+            "y1": 557.57,
+            "width": 69.67,
+            "height": 32.83
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p046-0030",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& u=\\frac{f\\left(x_{0} \\cos \\theta-z_{0} \\sin \\theta\\right)}{r-\\left(x_{0} \\sin \\theta \\cos \\phi-y_{0} \\sin \\phi+z_{0} \\cos \\theta \\cos \\phi\\right)} \\\\\n& v=\\frac{f\\left(x_{0} \\sin \\theta \\sin \\phi+y_{0} \\cos \\phi+z_{0} \\cos \\theta \\sin \\phi\\right)}{r-\\left(x_{0} \\sin \\theta \\cos \\phi-y_{0} \\sin \\phi+z_{0} \\cos \\theta \\cos \\phi\\right)}\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 46,
+          "bbox": {
+            "x0": 136.76,
+            "y0": 626.11,
+            "x1": 398.47,
+            "y1": 711.65,
+            "width": 261.71,
+            "height": 85.54
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p048-0023",
+      "kind": "display",
+      "display_latex": "\\mathbf{V}=\\mathbf{a}_{1}+s \\mathbf{a}_{2}+r\\left[s^{2} \\mathbf{a}_{3}+s \\mathbf{a}_{4}+\\mathbf{a}_{5}\\right]",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -902,14 +666,14 @@
         {
           "page": 48,
           "bbox": {
-            "x0": 81.61,
-            "y0": 533.23,
-            "x1": 506.26,
-            "y1": 550.34,
-            "width": 424.65,
-            "height": 17.11
+            "x0": 171.31,
+            "y0": 475.2,
+            "x1": 363.63,
+            "y1": 497.38,
+            "width": 192.32,
+            "height": 22.18
           },
-          "engine": "docling"
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -917,8 +681,38 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p048-0025",
+      "kind": "display",
+      "display_latex": "\\mathbf{a}_{1}+s_{1} \\mathbf{a}_{2}+r_{1}\\left[s_{1}^{2} \\mathbf{a}_{3}+s_{1} \\mathbf{a}_{4}+\\mathbf{a}_{5}\\right]=\\mathbf{a}_{6}+s_{2} \\mathbf{a}_{7}+r_{2}\\left[s_{2}^{2} \\mathbf{a}_{8}+s_{2} \\mathbf{a}_{9}+\\mathbf{a}_{10}\\right]",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
       },
-      "equation_number": "(20)"
+      "source_spans": [
+        {
+          "page": 48,
+          "bbox": {
+            "x0": 78.02,
+            "y0": 530.78,
+            "x1": 476.2,
+            "y1": 553.82,
+            "width": 398.18,
+            "height": 23.04
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
     }
   ]
 }

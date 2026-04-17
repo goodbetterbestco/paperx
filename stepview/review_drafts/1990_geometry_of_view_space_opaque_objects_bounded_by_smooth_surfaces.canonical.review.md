@@ -477,7 +477,7 @@ $$
 $$
 
 $$
-T \mathscr{A}_{\mathrm{e}} \cdot(x, Z(x, y))+\mathbb{R}\left\{\binom{0}{2 y}\binom{-2 y}{0}\binom{0}{2 P(x, y)}\right\}=E_{n, p} .
+T \mathscr{A}_{\mathrm{e}} \cdot(x, Z(x, y))+\mathbb{R}\left\{\binom{0}{2 y}\binom{-2 y}{0}\binom{0}{2 P(x, y)}\right\}=E_{n . p} .
 $$
 
 Again using the results of [18], it can be shown that this condition is satisfied for \(Z(t, x, y)=x^{2}+y^{3} \pm x^{4} y+t x^{2} y\) and \(x y^{2}+y^{4}+x^{3} y+t x^{2} y\)-hence the cor-

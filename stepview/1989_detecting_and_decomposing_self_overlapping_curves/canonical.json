@@ -49,12 +49,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:52:52Z",
-    "updated_at": "2026-04-17T04:52:52Z",
+    "created_at": "2026-04-17T05:24:41Z",
+    "updated_at": "2026-04-17T05:24:41Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "docling+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -75,15 +75,15 @@
       "external_layout": {
         "path": "stepview/1989_detecting_and_decomposing_self_overlapping_curves/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 119390,
-        "modified_at": "2026-04-17T04:48:43Z",
-        "sha256": "8a1f5119de69cf8e57847e6a07a457fa6f6c4bd8ba3b53f7f15f74a9e9573061"
+        "size_bytes": 113396,
+        "modified_at": "2026-04-17T05:24:40Z",
+        "sha256": "5a0a06f4dfe4cf4b93f826c0ffff407f66c5a26e01d9aa090bed1da7723e8a9d"
       },
       "external_math": {
         "path": "stepview/1989_detecting_and_decomposing_self_overlapping_curves/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 43,
-        "modified_at": "2026-04-17T04:48:43Z",
+        "modified_at": "2026-04-17T05:24:40Z",
         "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
       }
     },
@@ -130,7 +130,7 @@
         ]
       },
       {
-        "name": "C. J. V AN WYK",
+        "name": "C. J. VAN WYK",
         "affiliation_ids": [
           "aff-1"
         ]
@@ -179,7 +179,7 @@
             "width": 95.07,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -210,7 +210,7 @@
             "width": 61.47,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -238,7 +238,7 @@
             "width": 410.7,
             "height": 85.55
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -270,7 +270,7 @@
             "width": 247.95,
             "height": 88.55
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -297,7 +297,7 @@
             "width": 247.95,
             "height": 22.38
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -324,7 +324,7 @@
             "width": 247.47,
             "height": 44.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -351,7 +351,7 @@
             "width": 246.27,
             "height": 44.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -378,7 +378,7 @@
             "width": 245.79,
             "height": 22.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -405,7 +405,7 @@
             "width": 247.47,
             "height": 33.59
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -432,7 +432,7 @@
             "width": 247.48,
             "height": 34.14
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -459,7 +459,7 @@
             "width": 246.75,
             "height": 32.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -486,7 +486,7 @@
             "width": 247.23,
             "height": 22.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -498,7 +498,7 @@
             "width": 83.08,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -510,7 +510,7 @@
             "width": 244.12,
             "height": 22.07
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -522,7 +522,7 @@
             "width": 246.04,
             "height": 55.19
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -534,7 +534,7 @@
             "width": 245.8,
             "height": 43.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -546,7 +546,7 @@
             "width": 246.28,
             "height": 34.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -558,7 +558,7 @@
             "width": 247.96,
             "height": 78.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -570,7 +570,7 @@
             "width": 247.0,
             "height": 44.87
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -582,7 +582,7 @@
             "width": 246.04,
             "height": 55.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -594,7 +594,7 @@
             "width": 171.4,
             "height": 11.27
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -606,7 +606,7 @@
             "width": 246.76,
             "height": 33.35
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -618,7 +618,7 @@
             "width": 15.06,
             "height": 13.18
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -630,7 +630,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -642,7 +642,7 @@
             "width": 25.2,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -654,7 +654,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -666,7 +666,7 @@
             "width": 25.92,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -690,7 +690,7 @@
             "width": 14.22,
             "height": 12.11
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -702,7 +702,7 @@
             "width": 25.68,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -714,7 +714,7 @@
             "width": 4.67,
             "height": 6.46
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -726,7 +726,7 @@
             "width": 6.48,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -750,7 +750,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -762,7 +762,7 @@
             "width": 6.0,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -774,7 +774,7 @@
             "width": 7.07,
             "height": 6.46
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -786,7 +786,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -798,7 +798,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -810,7 +810,7 @@
             "width": 4.56,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -822,7 +822,7 @@
             "width": 4.32,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -834,7 +834,7 @@
             "width": 6.48,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -846,7 +846,7 @@
             "width": 9.36,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -858,7 +858,7 @@
             "width": 26.16,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -870,7 +870,7 @@
             "width": 6.9,
             "height": 8.06
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -882,7 +882,7 @@
             "width": 6.91,
             "height": 8.06
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -894,7 +894,7 @@
             "width": 12.65,
             "height": 18.42
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -906,7 +906,7 @@
             "width": 13.8,
             "height": 11.51
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -918,7 +918,7 @@
             "width": 25.31,
             "height": 9.21
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -930,7 +930,7 @@
             "width": 24.16,
             "height": 11.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -942,7 +942,7 @@
             "width": 24.16,
             "height": 11.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -954,7 +954,7 @@
             "width": 17.26,
             "height": 9.21
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -966,7 +966,7 @@
             "width": 24.15,
             "height": 11.51
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -978,7 +978,7 @@
             "width": 23.0,
             "height": 11.52
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -990,7 +990,7 @@
             "width": 32.73,
             "height": 20.15
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1026,7 +1026,7 @@
             "width": 164.29,
             "height": 80.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1038,7 +1038,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1050,7 +1050,7 @@
             "width": 14.22,
             "height": 12.11
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1062,7 +1062,7 @@
             "width": 25.44,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1074,7 +1074,7 @@
             "width": 6.99,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1086,7 +1086,7 @@
             "width": 7.2,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1098,7 +1098,7 @@
             "width": 7.16,
             "height": 7.81
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1110,7 +1110,7 @@
             "width": 13.71,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1122,7 +1122,7 @@
             "width": 5.24,
             "height": 7.81
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1134,7 +1134,7 @@
             "width": 25.92,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1146,7 +1146,7 @@
             "width": 25.44,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1158,7 +1158,7 @@
             "width": 27.12,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1170,7 +1170,7 @@
             "width": 27.65,
             "height": 11.53
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1194,7 +1194,7 @@
             "width": 11.52,
             "height": 10.37
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1218,7 +1218,7 @@
             "width": 31.25,
             "height": 11.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1230,7 +1230,7 @@
             "width": 24.19,
             "height": 14.99
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1254,7 +1254,7 @@
             "width": 21.89,
             "height": 8.1
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1266,7 +1266,7 @@
             "width": 24.19,
             "height": 11.53
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -1278,7 +1278,7 @@
             "width": 27.64,
             "height": 13.99
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1620,7 +1620,7 @@
             "width": 247.95,
             "height": 22.38
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1645,7 +1645,7 @@
             "width": 247.47,
             "height": 44.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1670,7 +1670,7 @@
             "width": 246.27,
             "height": 44.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1695,7 +1695,7 @@
             "width": 245.79,
             "height": 22.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1720,7 +1720,7 @@
             "width": 247.47,
             "height": 33.59
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1745,7 +1745,7 @@
             "width": 247.48,
             "height": 34.14
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1770,7 +1770,7 @@
             "width": 246.75,
             "height": 32.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1795,7 +1795,7 @@
             "width": 247.23,
             "height": 22.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1807,7 +1807,7 @@
             "width": 83.08,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1819,7 +1819,7 @@
             "width": 244.12,
             "height": 22.07
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1831,7 +1831,7 @@
             "width": 246.04,
             "height": 55.19
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1843,7 +1843,7 @@
             "width": 245.8,
             "height": 43.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1855,7 +1855,7 @@
             "width": 246.28,
             "height": 34.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1867,7 +1867,7 @@
             "width": 247.96,
             "height": 78.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1879,7 +1879,7 @@
             "width": 247.0,
             "height": 44.87
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1891,7 +1891,7 @@
             "width": 246.04,
             "height": 55.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1903,7 +1903,7 @@
             "width": 171.4,
             "height": 11.27
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1915,7 +1915,7 @@
             "width": 246.76,
             "height": 33.35
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1927,7 +1927,7 @@
             "width": 15.06,
             "height": 13.18
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1939,7 +1939,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1951,7 +1951,7 @@
             "width": 25.2,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1963,7 +1963,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1975,7 +1975,7 @@
             "width": 25.92,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -1999,7 +1999,7 @@
             "width": 14.22,
             "height": 12.11
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2011,7 +2011,7 @@
             "width": 25.68,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2023,7 +2023,7 @@
             "width": 4.67,
             "height": 6.46
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2035,7 +2035,7 @@
             "width": 6.48,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2059,7 +2059,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2071,7 +2071,7 @@
             "width": 6.0,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2083,7 +2083,7 @@
             "width": 7.07,
             "height": 6.46
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2095,7 +2095,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2107,7 +2107,7 @@
             "width": 6.24,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2119,7 +2119,7 @@
             "width": 4.56,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2131,7 +2131,7 @@
             "width": 4.32,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2143,7 +2143,7 @@
             "width": 6.48,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2155,7 +2155,7 @@
             "width": 9.36,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2167,7 +2167,7 @@
             "width": 26.16,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2179,7 +2179,7 @@
             "width": 6.9,
             "height": 8.06
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2191,7 +2191,7 @@
             "width": 6.91,
             "height": 8.06
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2203,7 +2203,7 @@
             "width": 12.65,
             "height": 18.42
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2215,7 +2215,7 @@
             "width": 13.8,
             "height": 11.51
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2227,7 +2227,7 @@
             "width": 25.31,
             "height": 9.21
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2239,7 +2239,7 @@
             "width": 24.16,
             "height": 11.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2251,7 +2251,7 @@
             "width": 24.16,
             "height": 11.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2263,7 +2263,7 @@
             "width": 17.26,
             "height": 9.21
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2275,7 +2275,7 @@
             "width": 24.15,
             "height": 11.51
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2287,7 +2287,7 @@
             "width": 23.0,
             "height": 11.52
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2299,7 +2299,7 @@
             "width": 32.73,
             "height": 20.15
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -2335,7 +2335,7 @@
             "width": 164.29,
             "height": 80.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2347,7 +2347,7 @@
             "width": 11.52,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2359,7 +2359,7 @@
             "width": 14.22,
             "height": 12.11
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2371,7 +2371,7 @@
             "width": 25.44,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2383,7 +2383,7 @@
             "width": 6.99,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2395,7 +2395,7 @@
             "width": 7.2,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2407,7 +2407,7 @@
             "width": 7.16,
             "height": 7.81
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2419,7 +2419,7 @@
             "width": 13.71,
             "height": 11.03
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2431,7 +2431,7 @@
             "width": 5.24,
             "height": 7.81
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2443,7 +2443,7 @@
             "width": 25.92,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2455,7 +2455,7 @@
             "width": 25.44,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2467,7 +2467,7 @@
             "width": 27.12,
             "height": 9.95
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2479,7 +2479,7 @@
             "width": 27.65,
             "height": 11.53
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2503,7 +2503,7 @@
             "width": 11.52,
             "height": 10.37
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2527,7 +2527,7 @@
             "width": 31.25,
             "height": 11.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2539,7 +2539,7 @@
             "width": 24.19,
             "height": 14.99
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2563,7 +2563,7 @@
             "width": 21.89,
             "height": 8.1
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2575,7 +2575,7 @@
             "width": 24.19,
             "height": 11.53
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -2587,7 +2587,7 @@
             "width": 27.64,
             "height": 13.99
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

@@ -396,15 +396,13 @@ Let us consider the local approximation \(2 \mathrm{z}=k_{1}\left(\mathbf{p}^{*}
 
 \(\left.y^{2}\right)\) ) is easily found as the vector product of the tangent vectors along the principal directions \(\mathbf{t}_{1}\) and
 
-\left.\mathbf{n}=\mathbf{t}_{1} \times \mathbf{t}_{2}=\left(\begin{array}{lll} 0 & 1 & k_{1}\left(\mathbf{p}^{*}\right) x \end{array}\right) \times\left(\begin{array}{lll} 1 & 0 & k_{2}\left(\mathbf{p}^{*}\right) y \end{array}\right)\right)=\left(\begin{array}{ll} -k_{1}\left(\mathbf{p}^{*}\right) x & -k_{2}\left(\mathbf{p}^{*}\right) y \end{array}\right.
-
 Let us rotate L about \(\mathbf{p}^{\prime}\) of an infinitesimal angle in such a way that the rotated line is tangent to S at a point \(\mathbf{p}\). The rotated line \(\mathbf{p_{p}}^{\prime}\) must be normal to \(\mathbf{n}(\mathbf{p})\). Hence their dot product must be 0 :
 
 $$
-\mathbf{n}(\mathbf{p}) \bullet \mathbf{p} \mathbf{p}^{\prime}=\left(-k_{1}\left(\mathbf{p}^{*}\right) x-k_{2}\left(\mathbf{p}^{*}\right) y \quad 1\right) \bullet\left(X^{\prime}-x \quad Y^{\prime}-y \quad-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)\right)=0
+\mathbf{n}(\mathbf{p}) \bullet \mathbf{p} \mathbf{p}^{\prime}=\left(\begin{array}{llll} -k_{1}\left(\mathbf{p}^{*}\right) x & -k_{2}\left(\mathbf{p}^{*}\right) y & 1 \end{array}\right) \bullet\left(X^{\prime}-x \quad Y^{\prime}-y \quad-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)\right)=0
 $$
 
-k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right. k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right.
+k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right.
 
 Neglecting second order terms, we obtain
 

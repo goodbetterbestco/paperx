@@ -89,8 +89,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:15:51Z",
-    "updated_at": "2026-04-17T04:15:51Z",
+    "created_at": "2026-04-17T05:29:35Z",
+    "updated_at": "2026-04-17T05:29:35Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -116,22 +116,22 @@
         "path": "stepview/2023_contesse_occluding_contours/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 297863,
-        "modified_at": "2026-04-17T04:15:45Z",
+        "modified_at": "2026-04-17T05:29:32Z",
         "sha256": "1a14888fd5e25388e55ab6e55e87b1e167b901c7e20372ef7c2175293efe4488"
       },
       "external_math": {
         "path": "stepview/2023_contesse_occluding_contours/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 2972,
-        "modified_at": "2026-04-17T04:15:45Z",
+        "modified_at": "2026-04-17T05:29:32Z",
         "sha256": "45664c87c5cfe42e7761284f24028c15e965d3df9149504276249cefa0215e6b"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -144,7 +144,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },

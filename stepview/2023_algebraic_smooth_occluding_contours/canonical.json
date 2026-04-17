@@ -59,8 +59,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:16:33Z",
-    "updated_at": "2026-04-17T04:16:33Z",
+    "created_at": "2026-04-17T05:29:49Z",
+    "updated_at": "2026-04-17T05:29:49Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -86,22 +86,22 @@
         "path": "stepview/2023_algebraic_smooth_occluding_contours/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 199837,
-        "modified_at": "2026-04-17T04:16:25Z",
+        "modified_at": "2026-04-17T05:29:44Z",
         "sha256": "9bc1c09f5f638f258df3c707ce93ce24d571df7cfd1776c196fa52a1cb55adbd"
       },
       "external_math": {
         "path": "stepview/2023_algebraic_smooth_occluding_contours/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 11022,
-        "modified_at": "2026-04-17T04:16:26Z",
-        "sha256": "c4b9efd0dd3a8c3f12dfa6bb59ba8470d94a1af8e925af6152ee728060a96dbe"
+        "size_bytes": 11021,
+        "modified_at": "2026-04-17T05:29:44Z",
+        "sha256": "7e79c5a0a7ffae216e31b07712fba04a9183e94be419bf772e3897895dc0e575"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -114,7 +114,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -627,7 +627,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Computing occluding contours is a key step in 3D non-photorealistic rendering, but producing smooth contours with consistent visi- bility has been a notoriously-challenging open problem. This pa- per describes the first general-purpose smooth surface construc- tion for which the occluding contours can be computed in closed form. Given an input mesh and camera viewpoint, we show how to approximate the mesh with a \\(G^{1}\\) piecewise-quadratic surface, for which the occluding contours are piecewise-rational curves in image-space. We show that this method produces smooth contours with consistent visibility much more efficiently than the state-of- the-art. · Computingmethodologies → Non-photorealistic rendering ; Visibility ; Parametric curve and surface models . © 2023 Copyright held by the owner author(s). Publication rights licensed to ACM. ACM ISBN 979-8-4007-0159-7 23 08...$15.00 KEYWORDS contours, non-photorealistic rendering, piecewise-quadratic surface, visibility Figure 1: Our method takes a triangle mesh, and renders smooth occluding contours for a given camera viewpoint. For each view,"
+            "text": "Computing occluding contours is a key step in 3D non-photorealistic rendering, but producing smooth contours with consistent visi- bility has been a notoriously-challenging open problem. This pa- per describes the first general-purpose smooth surface construc- tion for which the occluding contours can be computed in closed form. Given an input mesh and camera viewpoint, we show how to approximate the mesh with a \\(G^{1}\\) piecewise-quadratic surface, for which the occluding contours are piecewise-rational curves in image-space. We show that this method produces smooth contours with consistent visibility much more efficiently than the state-of- the-art. · Computingmethodologies → Non-photorealistic rendering ; Visibility ; Parametric curve and surface models ."
           }
         ]
       },
@@ -2421,9 +2421,9 @@
             "x0": 402.05,
             "y0": 282.24,
             "x1": 474.05,
-            "y1": 299.52,
+            "y1": 300.1,
             "width": 72.0,
-            "height": 17.28
+            "height": 17.86
           },
           "engine": "mathpix"
         }
@@ -9065,9 +9065,9 @@
             "x0": 402.05,
             "y0": 282.24,
             "x1": 474.05,
-            "y1": 299.52,
+            "y1": 300.1,
             "width": 72.0,
-            "height": 17.28
+            "height": 17.86
           },
           "engine": "mathpix"
         }

@@ -379,7 +379,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "f18be69bb9db4b6a8eca788a7d0de65d",
+        "parent_id": "ef078795d9ee468295c9bab165601ff3",
         "children_ids": null
       }
     },
@@ -400,9 +400,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.0696535812481041,
-        "confidence_rate": 0.8146961238765592,
-        "parent_id": "f18be69bb9db4b6a8eca788a7d0de65d",
+        "confidence": 0.07062262475473678,
+        "confidence_rate": 0.8155624457339347,
+        "parent_id": "ef078795d9ee468295c9bab165601ff3",
         "children_ids": null
       }
     },
@@ -423,8 +423,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.49747617952925793,
-        "confidence_rate": 0.9826962692031702,
+        "confidence": 0.4938207941404471,
+        "confidence_rate": 0.9825151015596435,
         "parent_id": null,
         "children_ids": null
       }
@@ -448,7 +448,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "547ad731951b49c28f9c8ae6cb5491a5",
+        "parent_id": "a247186d87234fe3a66c1c917134a893",
         "children_ids": null
       }
     },
@@ -471,7 +471,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "99ab4e3e6f694531954efb259f0265f5",
+        "parent_id": "fd96bed01bbb48c5a1872fcf17189a37",
         "children_ids": null
       }
     },
@@ -494,7 +494,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7433d07a4133492da7e027c8a35bba70",
+        "parent_id": "97839fcb2e3f4461a6e3877b39bfd889",
         "children_ids": null
       }
     },
@@ -517,7 +517,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7433d07a4133492da7e027c8a35bba70",
+        "parent_id": "97839fcb2e3f4461a6e3877b39bfd889",
         "children_ids": null
       }
     },
@@ -540,7 +540,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c2bbd45b49484df29ed04472c5980338",
+        "parent_id": "0cfc6de9a2174bdca28d50167d65a263",
         "children_ids": null
       }
     },
@@ -563,7 +563,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b7428bdf7c3e4db29398245c561a7986",
+        "parent_id": "e4eb5cf23f464d11a030ac9e94837d81",
         "children_ids": null
       }
     },
@@ -586,7 +586,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b7428bdf7c3e4db29398245c561a7986",
+        "parent_id": "e4eb5cf23f464d11a030ac9e94837d81",
         "children_ids": null
       }
     },
@@ -609,7 +609,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b7428bdf7c3e4db29398245c561a7986",
+        "parent_id": "e4eb5cf23f464d11a030ac9e94837d81",
         "children_ids": null
       }
     },
@@ -655,7 +655,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7bab5fb61af84fe29df7928b1ef0c1b2",
+        "parent_id": "72cf8f365a0a4713946ded70e2770437",
         "children_ids": null
       }
     },
@@ -678,7 +678,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7bab5fb61af84fe29df7928b1ef0c1b2",
+        "parent_id": "72cf8f365a0a4713946ded70e2770437",
         "children_ids": null
       }
     },
@@ -701,7 +701,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "119d48c73e384b08bec3a0a019b7130c",
+        "parent_id": "0cfa0ad6066c4ff09e99b95f8fbbbed6",
         "children_ids": null
       }
     },
@@ -724,7 +724,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9951193332672119,
         "confidence_rate": 0.9997282249329221,
-        "parent_id": "d126676068ca41e0b8752a108c0aa4fa",
+        "parent_id": "f10c0b8b6cee4d3ba14611bd473c42de",
         "children_ids": null
       }
     },
@@ -747,7 +747,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "d126676068ca41e0b8752a108c0aa4fa",
+        "parent_id": "f10c0b8b6cee4d3ba14611bd473c42de",
         "children_ids": null
       }
     },
@@ -770,7 +770,7 @@
         "mathpix_subtype": "",
         "confidence": 0.998046875,
         "confidence_rate": 0.9998850045633173,
-        "parent_id": "8dfa1b87935941a894cb6628a2ad8477",
+        "parent_id": "e5243b55d9a541969181c0ad0ddc0483",
         "children_ids": null
       }
     },
@@ -793,7 +793,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8dfa1b87935941a894cb6628a2ad8477",
+        "parent_id": "e5243b55d9a541969181c0ad0ddc0483",
         "children_ids": null
       }
     },
@@ -814,9 +814,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.9819860109128058,
-        "confidence_rate": 0.9995672789784861,
-        "parent_id": "cfa639ec352d4eb28c0c29bbd9365656",
+        "confidence": 0.9814993974287063,
+        "confidence_rate": 0.9995554826558181,
+        "parent_id": "172e7faa777e45b282f6ec87a4821bf6",
         "children_ids": null
       }
     },
@@ -839,7 +839,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "cfa639ec352d4eb28c0c29bbd9365656",
+        "parent_id": "172e7faa777e45b282f6ec87a4821bf6",
         "children_ids": null
       }
     },
@@ -860,9 +860,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.97705078125,
-        "confidence_rate": 0.999577968142769,
-        "parent_id": "9b39ca0bf3e44542be0ea3eba1110ec7",
+        "confidence": 0.9765625,
+        "confidence_rate": 0.9995688833826265,
+        "parent_id": "3107923a1eee4948918335db0b1b9cc0",
         "children_ids": null
       }
     },
@@ -885,7 +885,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9b39ca0bf3e44542be0ea3eba1110ec7",
+        "parent_id": "3107923a1eee4948918335db0b1b9cc0",
         "children_ids": null
       }
     },
@@ -908,7 +908,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9936552047729492,
         "confidence_rate": 0.9999035651200345,
-        "parent_id": "89dbb29144374532939c5815cbac85f6",
+        "parent_id": "01aa8306cd38458cbd540b6d0dd51e22",
         "children_ids": null
       }
     },
@@ -931,7 +931,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "89dbb29144374532939c5815cbac85f6",
+        "parent_id": "01aa8306cd38458cbd540b6d0dd51e22",
         "children_ids": null
       }
     },
@@ -954,7 +954,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99609375,
         "confidence_rate": 0.9998695451992631,
-        "parent_id": "0c82d129b701407680dc6917ca70f0a7",
+        "parent_id": "08b5475c34cf4bf4a4de6b4087a8cd38",
         "children_ids": null
       }
     },
@@ -977,7 +977,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "0c82d129b701407680dc6917ca70f0a7",
+        "parent_id": "08b5475c34cf4bf4a4de6b4087a8cd38",
         "children_ids": null
       }
     },
@@ -998,9 +998,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.7600742834620178,
-        "confidence_rate": 0.9955127355467497,
-        "parent_id": "9721dcbf2ead475c92ecd82be608298f",
+        "confidence": 0.7653326590079814,
+        "confidence_rate": 0.9956252579826125,
+        "parent_id": "917e09539fac4430b2dc505d5a2bc99f",
         "children_ids": null
       }
     },
@@ -1023,7 +1023,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9721dcbf2ead475c92ecd82be608298f",
+        "parent_id": "917e09539fac4430b2dc505d5a2bc99f",
         "children_ids": null
       }
     },
@@ -1046,7 +1046,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99609375,
         "confidence_rate": 0.9999347704721859,
-        "parent_id": "168b40585d2f4fd2baab5bc1191cf1fc",
+        "parent_id": "613fec4b8ed94139a5fcf2864aafaed7",
         "children_ids": null
       }
     },
@@ -1069,7 +1069,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "168b40585d2f4fd2baab5bc1191cf1fc",
+        "parent_id": "613fec4b8ed94139a5fcf2864aafaed7",
         "children_ids": null
       }
     },
@@ -1092,7 +1092,7 @@
         "mathpix_subtype": "",
         "confidence": 0.76611328125,
         "confidence_rate": 0.9893995754005397,
-        "parent_id": "14f714a29d1845c4a30ab29b793a27d2",
+        "parent_id": "17a3fb7115bc4b9bbffee469c16a35bf",
         "children_ids": null
       }
     },
@@ -1115,7 +1115,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "14f714a29d1845c4a30ab29b793a27d2",
+        "parent_id": "17a3fb7115bc4b9bbffee469c16a35bf",
         "children_ids": null
       }
     },
@@ -1136,9 +1136,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.7385649990428734,
-        "confidence_rate": 0.9856728546930921,
-        "parent_id": "20481d186c084b199e3466a95a1538c0",
+        "confidence": 0.7389295424777416,
+        "confidence_rate": 0.9856960164769686,
+        "parent_id": "49a7ff3b15dc45278a654ae247866d8d",
         "children_ids": null
       }
     },
@@ -1161,7 +1161,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "20481d186c084b199e3466a95a1538c0",
+        "parent_id": "49a7ff3b15dc45278a654ae247866d8d",
         "children_ids": null
       }
     },
@@ -1184,7 +1184,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9960954189300537,
         "confidence_rate": 0.9998738071937027,
-        "parent_id": "9e1b71fb73a843819d2b8a417e874cbb",
+        "parent_id": "fa8dad242c4c4c3490ce7bfdd7d9320d",
         "children_ids": null
       }
     },
@@ -1207,7 +1207,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9e1b71fb73a843819d2b8a417e874cbb",
+        "parent_id": "fa8dad242c4c4c3490ce7bfdd7d9320d",
         "children_ids": null
       }
     },
@@ -1228,9 +1228,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.8906034028318572,
-        "confidence_rate": 0.9973092993422602,
-        "parent_id": "406ae0cf6ccb49da9fd41099798a5121",
+        "confidence": 0.8910384802147746,
+        "confidence_rate": 0.9973206269963248,
+        "parent_id": "fd3ee4e339b44ba2815461c06ec4a762",
         "children_ids": null
       }
     },
@@ -1253,7 +1253,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "406ae0cf6ccb49da9fd41099798a5121",
+        "parent_id": "fd3ee4e339b44ba2815461c06ec4a762",
         "children_ids": null
       }
     },
@@ -1276,7 +1276,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9873411655426025,
         "confidence_rate": 0.999655744670443,
-        "parent_id": "fa15c694104942128995cb3320017e97",
+        "parent_id": "941e1a7c65b240ad94e860beacc00e1e",
         "children_ids": null
       }
     },
@@ -1299,7 +1299,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "fa15c694104942128995cb3320017e97",
+        "parent_id": "941e1a7c65b240ad94e860beacc00e1e",
         "children_ids": null
       }
     },
@@ -1322,7 +1322,7 @@
         "mathpix_subtype": "",
         "confidence": 0.8895793068745661,
         "confidence_rate": 0.9961073754178945,
-        "parent_id": "a1a5edcef24d41d1889edfde4a06083a",
+        "parent_id": "d487416b64c645a495a214045f2511ec",
         "children_ids": null
       }
     },
@@ -1345,7 +1345,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a1a5edcef24d41d1889edfde4a06083a",
+        "parent_id": "d487416b64c645a495a214045f2511ec",
         "children_ids": null
       }
     },
@@ -1366,9 +1366,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.5442553900303754,
-        "confidence_rate": 0.9805675289932377,
-        "parent_id": "a9258b50053a498e911d82e2b17eaf1f",
+        "confidence": 0.5369597413704508,
+        "confidence_rate": 0.980140743481126,
+        "parent_id": "123905b55d814bf98191c4cdf74b67ee",
         "children_ids": null
       }
     },
@@ -1391,7 +1391,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a9258b50053a498e911d82e2b17eaf1f",
+        "parent_id": "123905b55d814bf98191c4cdf74b67ee",
         "children_ids": null
       }
     },
@@ -1414,7 +1414,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9111759662628174,
         "confidence_rate": 0.9965607705921748,
-        "parent_id": "caa0d272d47947d8966419eac31f4aea",
+        "parent_id": "09deb52b1baf4df9b4cb73779f0ae894",
         "children_ids": null
       }
     },
@@ -1437,7 +1437,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "caa0d272d47947d8966419eac31f4aea",
+        "parent_id": "09deb52b1baf4df9b4cb73779f0ae894",
         "children_ids": null
       }
     },
@@ -1460,7 +1460,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9926791191101074,
         "confidence_rate": 0.9997174318510937,
-        "parent_id": "bcc05ade1d524c00a06510d274ca8962",
+        "parent_id": "21c010ee62bf491db251e438bbadd114",
         "children_ids": null
       }
     },
@@ -1483,7 +1483,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "bcc05ade1d524c00a06510d274ca8962",
+        "parent_id": "21c010ee62bf491db251e438bbadd114",
         "children_ids": null
       }
     },
@@ -1506,7 +1506,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "82b79e590ccd4f88899718e791a9809b",
+        "parent_id": "aaac9de65a8045deb7337f6745721dd6",
         "children_ids": null
       }
     },
@@ -1529,7 +1529,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "82b79e590ccd4f88899718e791a9809b",
+        "parent_id": "aaac9de65a8045deb7337f6745721dd6",
         "children_ids": null
       }
     },
@@ -1552,7 +1552,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999755802732609,
-        "parent_id": "35997aa3358a4d3e9875119277f76ffd",
+        "parent_id": "584be31a98bf41f5b1e4b6a6f22baca8",
         "children_ids": null
       }
     },
@@ -1575,7 +1575,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "35997aa3358a4d3e9875119277f76ffd",
+        "parent_id": "584be31a98bf41f5b1e4b6a6f22baca8",
         "children_ids": null
       }
     },
@@ -1596,9 +1596,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.8844754756651407,
-        "confidence_rate": 0.9969356922906212,
-        "parent_id": "c8e25f316b324251a642503a1fcdead0",
+        "confidence": 0.8826850394795838,
+        "confidence_rate": 0.9968851902246556,
+        "parent_id": "54f482902c4b4be4b91a57f1f259284e",
         "children_ids": null
       }
     },
@@ -1621,7 +1621,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c8e25f316b324251a642503a1fcdead0",
+        "parent_id": "54f482902c4b4be4b91a57f1f259284e",
         "children_ids": null
       }
     },
@@ -1644,7 +1644,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999883714843234,
-        "parent_id": "e2674358157b4f78b7695ad50914ef3c",
+        "parent_id": "7e63e4c7d3a544e4bef10d26ae29326d",
         "children_ids": null
       }
     },
@@ -1667,7 +1667,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "e2674358157b4f78b7695ad50914ef3c",
+        "parent_id": "7e63e4c7d3a544e4bef10d26ae29326d",
         "children_ids": null
       }
     },
@@ -1690,7 +1690,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99853515625,
         "confidence_rate": 0.9999592808934205,
-        "parent_id": "43759fff6c604d6c8c4102ea2fb6806b",
+        "parent_id": "e18ddb5c1b904e9eb5e2b6f03f8635fd",
         "children_ids": null
       }
     },
@@ -1713,7 +1713,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "43759fff6c604d6c8c4102ea2fb6806b",
+        "parent_id": "e18ddb5c1b904e9eb5e2b6f03f8635fd",
         "children_ids": null
       }
     },
@@ -1736,7 +1736,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99365234375,
         "confidence_rate": 0.9998070523052042,
-        "parent_id": "1786a0c9e15c415a84c96adff650749a",
+        "parent_id": "42a11bd3861945c69e98251b7705efe4",
         "children_ids": null
       }
     },
@@ -1759,7 +1759,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "1786a0c9e15c415a84c96adff650749a",
+        "parent_id": "42a11bd3861945c69e98251b7705efe4",
         "children_ids": null
       }
     },
@@ -1782,7 +1782,7 @@
         "mathpix_subtype": "",
         "confidence": 0.7006121455387178,
         "confidence_rate": 0.9906805182757836,
-        "parent_id": "f0b01e9e8d164268a384131d1baa8bbd",
+        "parent_id": "f70f836463914cdbb230538b0011c7f6",
         "children_ids": null
       }
     },
@@ -1805,7 +1805,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "f0b01e9e8d164268a384131d1baa8bbd",
+        "parent_id": "f70f836463914cdbb230538b0011c7f6",
         "children_ids": null
       }
     },
@@ -1827,8 +1827,8 @@
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.9999694679771172,
-        "parent_id": "4be9419e7eb6464d9e35517e6fe3f033",
+        "confidence_rate": 0.999969467977117,
+        "parent_id": "101aec435a2a4d80a4937435716217a0",
         "children_ids": null
       }
     },
@@ -1851,7 +1851,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "4be9419e7eb6464d9e35517e6fe3f033",
+        "parent_id": "101aec435a2a4d80a4937435716217a0",
         "children_ids": null
       }
     },
@@ -1874,7 +1874,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9970715045928955,
         "confidence_rate": 0.9999053982866409,
-        "parent_id": "9936026ebaad40409dffdb449379d451",
+        "parent_id": "45834e9e381249c6a9199cde5018a430",
         "children_ids": null
       }
     },
@@ -1897,7 +1897,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9936026ebaad40409dffdb449379d451",
+        "parent_id": "45834e9e381249c6a9199cde5018a430",
         "children_ids": null
       }
     },
@@ -1920,7 +1920,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9965856060155147,
         "confidence_rate": 0.9998820677707545,
-        "parent_id": "fdfe4408f9f34958be9ff6a59dfa6eda",
+        "parent_id": "df748b5918db47d6861f8613e813a379",
         "children_ids": null
       }
     },
@@ -1943,7 +1943,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "fdfe4408f9f34958be9ff6a59dfa6eda",
+        "parent_id": "df748b5918db47d6861f8613e813a379",
         "children_ids": null
       }
     },
@@ -1964,9 +1964,9 @@
       "meta": {
         "mathpix_type": "table_of_contents_item",
         "mathpix_subtype": "",
-        "confidence": 0.9401099681854248,
-        "confidence_rate": 0.9961475383985715,
-        "parent_id": "f76a511b0c994ad49972dc79576ab165",
+        "confidence": 0.9415388107299805,
+        "confidence_rate": 0.9962420968136787,
+        "parent_id": "7c4e0f0df3674b939a97739d9eda172f",
         "children_ids": null
       }
     },
@@ -1989,7 +1989,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "f76a511b0c994ad49972dc79576ab165",
+        "parent_id": "7c4e0f0df3674b939a97739d9eda172f",
         "children_ids": null
       }
     },
@@ -2012,7 +2012,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a7089b35bc864143808d2f2205c4b1d7",
+        "parent_id": "1df539842e8241019c44e06751720b60",
         "children_ids": null
       }
     },
@@ -2104,7 +2104,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ac4e9099a1ea4afa9a63bfeed9374296",
+        "parent_id": "891205bd0f7549dfa4e0df2b944dca7b",
         "children_ids": null
       }
     },
@@ -3070,7 +3070,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "d4c75056dad54dff8a252939c3dc1fa5",
+        "parent_id": "554a4c697481424482a4eb393dc7048c",
         "children_ids": null
       }
     },
@@ -3735,8 +3735,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9975600242614746,
-        "confidence_rate": 0.9999737319866198,
+        "confidence": 0.9980478286743164,
+        "confidence_rate": 0.9999789886154126,
         "parent_id": null,
         "children_ids": null
       }
@@ -3781,8 +3781,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.5013700432800532,
-        "confidence_rate": 0.9943568773172297,
+        "confidence": 0.4978550206694218,
+        "confidence_rate": 0.9942995361512486,
         "parent_id": null,
         "children_ids": null
       }
@@ -6635,7 +6635,7 @@
         "mathpix_subtype": "",
         "confidence": 0.4392385482788086,
         "confidence_rate": 0.9928715062947218,
-        "parent_id": "aa38faed9daf49f494f59428b4652792",
+        "parent_id": "b4cc277724ce4d68ae7d8accbc5293b8",
         "children_ids": null
       }
     },
@@ -6658,7 +6658,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "aa38faed9daf49f494f59428b4652792",
+        "parent_id": "b4cc277724ce4d68ae7d8accbc5293b8",
         "children_ids": null
       }
     },
@@ -6681,7 +6681,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "aa38faed9daf49f494f59428b4652792",
+        "parent_id": "b4cc277724ce4d68ae7d8accbc5293b8",
         "children_ids": null
       }
     },
@@ -6934,7 +6934,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9917135238647461,
         "confidence_rate": 0.9997970693778203,
-        "parent_id": "a96c76e6de0745969092601200afbd1c",
+        "parent_id": "0d62e93d1da94709ae92f82ec1263787",
         "children_ids": null
       }
     },
@@ -7302,7 +7302,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c20ac3492b3d4b2b8dee1ade36bf8060",
+        "parent_id": "f5f17e61a5b840ae9c4d9b540c554ad2",
         "children_ids": null
       }
     },
@@ -7992,7 +7992,7 @@
         "mathpix_subtype": "",
         "confidence": 0.3337203989972295,
         "confidence_rate": 0.9913958766893644,
-        "parent_id": "8db6419d1305452e81a8b45eeba51500",
+        "parent_id": "7d9a1dda0acd481bae7adca845bacc31",
         "children_ids": null
       }
     },
@@ -8015,7 +8015,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8db6419d1305452e81a8b45eeba51500",
+        "parent_id": "7d9a1dda0acd481bae7adca845bacc31",
         "children_ids": null
       }
     },
@@ -8038,7 +8038,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8db6419d1305452e81a8b45eeba51500",
+        "parent_id": "7d9a1dda0acd481bae7adca845bacc31",
         "children_ids": null
       }
     },
@@ -8542,8 +8542,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.8473162651062012,
-        "confidence_rate": 0.9985348685177705,
+        "confidence": 0.8390235900878906,
+        "confidence_rate": 0.9984479626841112,
         "parent_id": null,
         "children_ids": null
       }
@@ -8565,9 +8565,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5083822981009689,
-        "confidence_rate": 0.9956166379606667,
-        "parent_id": "7e2c2962af3740c98330835189a0b33d",
+        "confidence": 0.5011307078705158,
+        "confidence_rate": 0.9955237605777624,
+        "parent_id": "0119a5050ba9409e992ba3dc1efe1514",
         "children_ids": null
       }
     },
@@ -8590,7 +8590,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7e2c2962af3740c98330835189a0b33d",
+        "parent_id": "0119a5050ba9409e992ba3dc1efe1514",
         "children_ids": null
       }
     },
@@ -8613,7 +8613,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "7e2c2962af3740c98330835189a0b33d",
+        "parent_id": "0119a5050ba9409e992ba3dc1efe1514",
         "children_ids": null
       }
     },
@@ -8797,7 +8797,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "d55dee105d7046598b881a4c000bc311",
+        "parent_id": "af0222ad42064d27968cb5328692e5b3",
         "children_ids": null
       }
     },
@@ -8981,7 +8981,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5132fbf55a904cf8b1f51559bf377953",
+        "parent_id": "b5d5e7ef918c45de9e5c973bcbf8e0b8",
         "children_ids": null
       }
     },
@@ -9004,7 +9004,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5132fbf55a904cf8b1f51559bf377953",
+        "parent_id": "b5d5e7ef918c45de9e5c973bcbf8e0b8",
         "children_ids": null
       }
     },
@@ -9441,7 +9441,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ac64dfadae174d018224e837d0d1698e",
+        "parent_id": "62e3d04987ff459f8ec6ebf8a91e0d33",
         "children_ids": null
       }
     },
@@ -9464,7 +9464,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ac64dfadae174d018224e837d0d1698e",
+        "parent_id": "62e3d04987ff459f8ec6ebf8a91e0d33",
         "children_ids": null
       }
     },
@@ -10223,7 +10223,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999953485775026,
-        "parent_id": "abe85828f76248efacff22823ef3a476",
+        "parent_id": "c8786379efa14f4d919f9a40b332d7d2",
         "children_ids": null
       }
     },
@@ -10246,7 +10246,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "abe85828f76248efacff22823ef3a476",
+        "parent_id": "c8786379efa14f4d919f9a40b332d7d2",
         "children_ids": null
       }
     },
@@ -12339,7 +12339,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "baf4e198b3a143b1a338a41e2114a0b3",
+        "parent_id": "d6da645a177c466e97d537bd79896d9d",
         "children_ids": null
       }
     },
@@ -12452,8 +12452,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9747961940088317,
-        "confidence_rate": 0.9997890564532045,
+        "confidence": 0.9752782890602703,
+        "confidence_rate": 0.9997931418606334,
         "parent_id": null,
         "children_ids": null
       }
@@ -13811,7 +13811,7 @@
         "mathpix_subtype": "",
         "confidence": 0.967573330359528,
         "confidence_rate": 0.9997003715948579,
-        "parent_id": "801533ab647f4a8cbfd36fa23845c258",
+        "parent_id": "f33d87d02df44480aa2e10675ecef371",
         "children_ids": null
       }
     },
@@ -13834,7 +13834,7 @@
         "mathpix_subtype": "",
         "confidence": 0.7487797737121582,
         "confidence_rate": 0.9977245583748768,
-        "parent_id": "801533ab647f4a8cbfd36fa23845c258",
+        "parent_id": "f33d87d02df44480aa2e10675ecef371",
         "children_ids": null
       }
     },
@@ -13857,7 +13857,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9593550302088261,
         "confidence_rate": 0.9996158695021972,
-        "parent_id": "55ed77103bd74a79b0c35a582eb60556",
+        "parent_id": "c01ea4a1ed80467fa5cd242752d48596",
         "children_ids": null
       }
     },
@@ -13880,7 +13880,7 @@
         "mathpix_subtype": "",
         "confidence": 0.8091097336659914,
         "confidence_rate": 0.9966957721096715,
-        "parent_id": "55ed77103bd74a79b0c35a582eb60556",
+        "parent_id": "c01ea4a1ed80467fa5cd242752d48596",
         "children_ids": null
       }
     },
@@ -14224,7 +14224,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077526,
+        "confidence_rate": 0.9999949125077527,
         "parent_id": null,
         "children_ids": null
       }
@@ -14499,8 +14499,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.90966796875,
-        "confidence_rate": 0.9978505947514448,
+        "confidence": 0.90478515625,
+        "confidence_rate": 0.9977285436729896,
         "parent_id": null,
         "children_ids": null
       }
@@ -14524,7 +14524,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "89cc40c885e748d9baf3749601d6ce92",
+        "parent_id": "fadef54f01274f08af8091bafa5ef5af",
         "children_ids": null
       }
     },
@@ -14706,8 +14706,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.70263671875,
-        "confidence_rate": 0.9959047424935615,
+        "confidence": 0.67626953125,
+        "confidence_rate": 0.9954619147918433,
         "parent_id": null,
         "children_ids": null
       }
@@ -14729,8 +14729,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99951171875,
-        "confidence_rate": 0.999995211771286,
+        "confidence": 1,
+        "confidence_rate": 1,
         "parent_id": null,
         "children_ids": null
       }
@@ -15810,8 +15810,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9541237354278564,
-        "confidence_rate": 0.9995611999061854,
+        "confidence": 0.9526596069335938,
+        "confidence_rate": 0.9995468539196143,
         "parent_id": null,
         "children_ids": null
       }
@@ -16570,7 +16570,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99755859375,
-        "confidence_rate": 0.9999755563853323,
+        "confidence_rate": 0.9999755563853322,
         "parent_id": null,
         "children_ids": null
       }
@@ -16638,8 +16638,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9990234375,
-        "confidence_rate": 0.9999903263869102,
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999854860688677,
         "parent_id": null,
         "children_ids": null
       }
@@ -16709,7 +16709,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "2f97140802e948f6a17a992c1f1b6409",
+        "parent_id": "6f79aa9023f8455dae4396175b5e8737",
         "children_ids": null
       }
     },
@@ -17443,8 +17443,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9791069030761719,
-        "confidence_rate": 0.9997888778272551,
+        "confidence": 0.9795887470245361,
+        "confidence_rate": 0.9997937968499243,
         "parent_id": null,
         "children_ids": null
       }
@@ -18181,7 +18181,7 @@
         "mathpix_subtype": "",
         "confidence": 0.7823326587677002,
         "confidence_rate": 0.9975962736464041,
-        "parent_id": "d494036267cc45518fc367883a819091",
+        "parent_id": "f9253edf901d493dad48f5ce63c8c670",
         "children_ids": null
       }
     },
@@ -18204,7 +18204,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999935736983052,
-        "parent_id": "d494036267cc45518fc367883a819091",
+        "parent_id": "f9253edf901d493dad48f5ce63c8c670",
         "children_ids": null
       }
     },
@@ -18227,7 +18227,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "361a3457109c4f54ba930f47f4b23053",
+        "parent_id": "83a6327c09624545a31c15e4dea1af83",
         "children_ids": null
       }
     },
@@ -18250,7 +18250,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "361a3457109c4f54ba930f47f4b23053",
+        "parent_id": "83a6327c09624545a31c15e4dea1af83",
         "children_ids": null
       }
     },
@@ -18388,7 +18388,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b0151ead4ed542b0a741a1ab6eb5d4a7",
+        "parent_id": "48612fd3c1f447c0ac8527073549488e",
         "children_ids": null
       }
     },
@@ -18777,8 +18777,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99951171875,
-        "confidence_rate": 0.9999964863335247,
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.9999929709624892,
         "parent_id": null,
         "children_ids": null
       }
@@ -18984,8 +18984,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9980478286743164,
-        "confidence_rate": 0.9999823958369762,
+        "confidence": 0.9985356330871582,
+        "confidence_rate": 0.9999867979236713,
         "parent_id": null,
         "children_ids": null
       }
@@ -19169,7 +19169,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.9999905142231668,
+        "confidence_rate": 0.9999905142231666,
         "parent_id": null,
         "children_ids": null
       }
@@ -21238,9 +21238,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8897020816802979,
-        "confidence_rate": 0.9990100783301303,
-        "parent_id": "b1ab09dfb8cb41cc9d63991ce9a693a9",
+        "confidence": 0.8921944840112701,
+        "confidence_rate": 0.9990337625425251,
+        "parent_id": "0ea041b2d90b43158cf986abe6f8a563",
         "children_ids": null
       }
     },
@@ -21263,7 +21263,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b1ab09dfb8cb41cc9d63991ce9a693a9",
+        "parent_id": "0ea041b2d90b43158cf986abe6f8a563",
         "children_ids": null
       }
     },
@@ -21606,8 +21606,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99951171875,
-        "confidence_rate": 0.9999961543341811,
+        "confidence": 1,
+        "confidence_rate": 1,
         "parent_id": null,
         "children_ids": null
       }
@@ -21677,7 +21677,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999767431038692,
-        "parent_id": "55173f7bd2c84487b7bbf794927190a1",
+        "parent_id": "363756ae26d644a6bab1bb73cf882f68",
         "children_ids": null
       }
     },
@@ -22825,8 +22825,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9541015625,
-        "confidence_rate": 0.9995255150929107,
+        "confidence": 0.95263671875,
+        "confidence_rate": 0.9995100024563469,
         "parent_id": null,
         "children_ids": null
       }
@@ -23254,16 +23254,16 @@
       "bbox": {
         "x0": 87.84,
         "y0": 424.51,
-        "x1": 523.58,
+        "x1": 524.16,
         "y1": 438.62,
-        "width": 435.74,
+        "width": 436.32,
         "height": 14.11
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.45905208587646484,
-        "confidence_rate": 0.9913862946187794,
+        "confidence": 0.9762167930603027,
+        "confidence_rate": 0.9997325847263095,
         "parent_id": null,
         "children_ids": null
       }
@@ -23309,7 +23309,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.998046875,
-        "confidence_rate": 0.9999800508639275,
+        "confidence_rate": 0.9999800508639274,
         "parent_id": null,
         "children_ids": null
       }
@@ -23354,8 +23354,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.91748046875,
-        "confidence_rate": 0.9991304390273945,
+        "confidence": 0.91943359375,
+        "confidence_rate": 0.9991519006730124,
         "parent_id": null,
         "children_ids": null
       }
@@ -23401,7 +23401,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.9999905142231668,
+        "confidence_rate": 0.9999905142231666,
         "parent_id": null,
         "children_ids": null
       }
@@ -23515,8 +23515,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.76025390625,
-        "confidence_rate": 0.9971488346650634,
+        "confidence": 0.7548828125,
+        "confidence_rate": 0.997075194383481,
         "parent_id": null,
         "children_ids": null
       }
@@ -23700,7 +23700,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99853515625,
-        "confidence_rate": 0.9999844052526367,
+        "confidence_rate": 0.9999844052526365,
         "parent_id": null,
         "children_ids": null
       }
@@ -23769,7 +23769,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99560546875,
-        "confidence_rate": 0.9999521292373096,
+        "confidence_rate": 0.9999521292373095,
         "parent_id": null,
         "children_ids": null
       }
@@ -23837,8 +23837,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6630365923407098,
-        "confidence_rate": 0.9969151057021145,
+        "confidence": 0.6699178808863331,
+        "confidence_rate": 0.996992500487381,
         "parent_id": null,
         "children_ids": null
       }
@@ -24044,8 +24044,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.94140625,
-        "confidence_rate": 0.9993578603983531,
+        "confidence": 0.93994140625,
+        "confidence_rate": 0.9993413049132448,
         "parent_id": null,
         "children_ids": null
       }
@@ -24067,8 +24067,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7875563466876656,
-        "confidence_rate": 0.9983655812325588,
+        "confidence": 0.7879479709276893,
+        "confidence_rate": 0.9983689807514264,
         "parent_id": null,
         "children_ids": null
       }
@@ -24228,8 +24228,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99853515625,
-        "confidence_rate": 0.9999847301407262,
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.999989822555459,
         "parent_id": null,
         "children_ids": null
       }
@@ -24368,7 +24368,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "2524d8be86e044fb878f49c0d0b4af3a",
+        "parent_id": "60092427ee2d4e21a2420fc35b58d52f",
         "children_ids": null
       }
     },
@@ -25654,8 +25654,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9145922660827637,
-        "confidence_rate": 0.9991419363871232,
+        "confidence": 0.9121520519256592,
+        "confidence_rate": 0.9991162697659094,
         "parent_id": null,
         "children_ids": null
       }
@@ -25677,8 +25677,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9795200824737549,
-        "confidence_rate": 0.9997726353125113,
+        "confidence": 0.9785449504852295,
+        "confidence_rate": 0.9997616926299819,
         "parent_id": null,
         "children_ids": null
       }
@@ -25700,8 +25700,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.642578125,
-        "confidence_rate": 0.9960589749259469,
+        "confidence": 0.640625,
+        "confidence_rate": 0.9960319025676118,
         "parent_id": null,
         "children_ids": null
       }
@@ -25816,7 +25816,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9956073760986328,
-        "confidence_rate": 0.9999603404277297,
+        "confidence_rate": 0.9999603404277296,
         "parent_id": null,
         "children_ids": null
       }
@@ -26001,7 +26001,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999886419133848,
-        "parent_id": "3f0d5d45e6b244d09ae36d20bc9ed299",
+        "parent_id": "07a7bc8b49d5492097851f8926ae13c7",
         "children_ids": null
       }
     },
@@ -26230,7 +26230,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999948042635181,
+        "confidence_rate": 0.999994804263518,
         "parent_id": null,
         "children_ids": null
       }
@@ -26530,7 +26530,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "218bd6ea6bd64f9d9b3f22f73a13dce1",
+        "parent_id": "fbbaf067a2544551beb184752605a29b",
         "children_ids": null
       }
     },
@@ -26574,8 +26574,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5692678856430575,
-        "confidence_rate": 0.9943817998989748,
+        "confidence": 0.5843898260500282,
+        "confidence_rate": 0.9946425326079629,
         "parent_id": null,
         "children_ids": null
       }
@@ -26643,8 +26643,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.2668604105008615,
-        "confidence_rate": 0.9855880524348701,
+        "confidence": 0.2717222492459525,
+        "confidence_rate": 0.9857836156180402,
         "parent_id": null,
         "children_ids": null
       }
@@ -26850,8 +26850,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8477303981781006,
-        "confidence_rate": 0.9982253118889063,
+        "confidence": 0.8516347408294678,
+        "confidence_rate": 0.9982746347588226,
         "parent_id": null,
         "children_ids": null
       }
@@ -26896,8 +26896,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4348606706615171,
-        "confidence_rate": 0.9933603040688487,
+        "confidence": 0.4289295269823148,
+        "confidence_rate": 0.9932511751315499,
         "parent_id": null,
         "children_ids": null
       }
@@ -26965,8 +26965,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.97265625,
-        "confidence_rate": 0.9997433241689637,
+        "confidence": 0.97216796875,
+        "confidence_rate": 0.9997386759835224,
         "parent_id": null,
         "children_ids": null
       }
@@ -27312,7 +27312,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "2a7d5edfb73f492787b6c60734d3b0e3",
+        "parent_id": "8689743fd40c4c89adfa408fbb0d144e",
         "children_ids": null
       }
     },
@@ -27495,7 +27495,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999953038523913,
+        "confidence_rate": 0.9999953038523912,
         "parent_id": null,
         "children_ids": null
       }
@@ -27518,7 +27518,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9970722198486328,
-        "confidence_rate": 0.999972851530715,
+        "confidence_rate": 0.9999728515307149,
         "parent_id": null,
         "children_ids": null
       }
@@ -27563,8 +27563,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9752509283362087,
-        "confidence_rate": 0.9998087169328156,
+        "confidence": 0.9747740330167289,
+        "confidence_rate": 0.9998049839352542,
         "parent_id": null,
         "children_ids": null
       }
@@ -27632,8 +27632,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9719508430818885,
-        "confidence_rate": 0.9998326607747611,
+        "confidence": 0.972428460203796,
+        "confidence_rate": 0.9998355501764851,
         "parent_id": null,
         "children_ids": null
       }
@@ -28209,7 +28209,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
         "confidence_rate": 0.9999928159107482,
-        "parent_id": "b1287affe8a4468d99ab1aa3129355a4",
+        "parent_id": "9c944ecd4cd148ab843e02359a490096",
         "children_ids": null
       }
     },
@@ -28232,7 +28232,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9892861729022115,
         "confidence_rate": 0.9998342962934751,
-        "parent_id": "b1287affe8a4468d99ab1aa3129355a4",
+        "parent_id": "9c944ecd4cd148ab843e02359a490096",
         "children_ids": null
       }
     },
@@ -28277,7 +28277,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9975595474243164,
-        "confidence_rate": 0.9999783769122432,
+        "confidence_rate": 0.9999783769122433,
         "parent_id": null,
         "children_ids": null
       }
@@ -28345,8 +28345,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9892628192901611,
-        "confidence_rate": 0.9999100437112637,
+        "confidence": 0.9887747764587402,
+        "confidence_rate": 0.999905931909273,
         "parent_id": null,
         "children_ids": null
       }
@@ -28437,8 +28437,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5189681427796511,
-        "confidence_rate": 0.9951170888709249,
+        "confidence": 0.5052684723856338,
+        "confidence_rate": 0.9949184374152209,
         "parent_id": null,
         "children_ids": null
       }
@@ -28736,8 +28736,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9951171875,
-        "confidence_rate": 0.9999559039238216,
+        "confidence": 0.99560546875,
+        "confidence_rate": 0.9999603231692639,
         "parent_id": null,
         "children_ids": null
       }
@@ -28828,8 +28828,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.98681640625,
-        "confidence_rate": 0.9998855990550133,
+        "confidence": 0.98583984375,
+        "confidence_rate": 0.9998770647308961,
         "parent_id": null,
         "children_ids": null
       }
@@ -29081,8 +29081,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.621391773223877,
-        "confidence_rate": 0.9961703075230753,
+        "confidence": 0.6252694129943848,
+        "confidence_rate": 0.9962202848726284,
         "parent_id": null,
         "children_ids": null
       }
@@ -29334,8 +29334,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.966796875,
-        "confidence_rate": 0.9996589787420752,
+        "confidence": 0.96728515625,
+        "confidence_rate": 0.9996640772482132,
         "parent_id": null,
         "children_ids": null
       }
@@ -29450,7 +29450,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077527,
+        "confidence_rate": 0.9999949125077526,
         "parent_id": null,
         "children_ids": null
       }
@@ -29565,7 +29565,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999948042635181,
+        "confidence_rate": 0.999994804263518,
         "parent_id": null,
         "children_ids": null
       }
@@ -29587,8 +29587,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9302096366882324,
-        "confidence_rate": 0.9993303603972291,
+        "confidence": 0.9287455081939697,
+        "confidence_rate": 0.9993157849286127,
         "parent_id": null,
         "children_ids": null
       }
@@ -29656,9 +29656,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8316421508789062,
-        "confidence_rate": 0.9984255737217509,
-        "parent_id": "a456a99d480c4b89b6919fd187f61f41",
+        "confidence": 0.83551025390625,
+        "confidence_rate": 0.9984651734268724,
+        "parent_id": "d2ec84bbaf3440e49143f1f538e6f728",
         "children_ids": null
       }
     },
@@ -29681,7 +29681,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a456a99d480c4b89b6919fd187f61f41",
+        "parent_id": "d2ec84bbaf3440e49143f1f538e6f728",
         "children_ids": null
       }
     },
@@ -29863,8 +29863,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.37105197870342777,
-        "confidence_rate": 0.9927367037952719,
+        "confidence": 0.3644363232691806,
+        "confidence_rate": 0.9926053915391503,
         "parent_id": null,
         "children_ids": null
       }
@@ -29886,9 +29886,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8327770958975327,
-        "confidence_rate": 0.9987388010525563,
-        "parent_id": "8dd52f638400449fbdbd3433bda08c60",
+        "confidence": 0.8355270477827199,
+        "confidence_rate": 0.9987615085415895,
+        "parent_id": "88c75f24213446c9b3dbb652d5b85625",
         "children_ids": null
       }
     },
@@ -29911,7 +29911,7 @@
         "mathpix_subtype": "",
         "confidence": 0.998046875,
         "confidence_rate": 0.9999782776266475,
-        "parent_id": "8dd52f638400449fbdbd3433bda08c60",
+        "parent_id": "88c75f24213446c9b3dbb652d5b85625",
         "children_ids": null
       }
     },
@@ -30093,8 +30093,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.489928807830438,
-        "confidence_rate": 0.9940221807992224,
+        "confidence": 0.4901720694033429,
+        "confidence_rate": 0.9940263273096039,
         "parent_id": null,
         "children_ids": null
       }
@@ -30139,8 +30139,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1,
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999954355197808,
         "parent_id": null,
         "children_ids": null
       }
@@ -30164,7 +30164,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ff796b4b80614b48b5c5bdfad0833a50",
+        "parent_id": "1ef9dde2e4614fa290410dd691daf32b",
         "children_ids": null
       }
     },
@@ -31059,8 +31059,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.98388671875,
-        "confidence_rate": 0.9998154203121701,
+        "confidence": 0.982421875,
+        "confidence_rate": 0.9997984924083397,
         "parent_id": null,
         "children_ids": null
       }
@@ -31174,8 +31174,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9521715641021729,
-        "confidence_rate": 0.9995333465734111,
+        "confidence": 0.9526596069335938,
+        "confidence_rate": 0.9995382245588798,
         "parent_id": null,
         "children_ids": null
       }
@@ -32395,7 +32395,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5b9e8eaf50e74b2cadcf453f2bf54ae7",
+        "parent_id": "32c4dd447c434dbb9345086c2ebee32f",
         "children_ids": null
       }
     },
@@ -32807,8 +32807,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.995610237121582,
-        "confidence_rate": 0.9999639397798773,
+        "confidence": 0.9951229095458984,
+        "confidence_rate": 0.9999599268499125,
         "parent_id": null,
         "children_ids": null
       }
@@ -33129,8 +33129,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8146438496187329,
-        "confidence_rate": 0.9986250785845908,
+        "confidence": 0.8185943984426558,
+        "confidence_rate": 0.998657502240695,
         "parent_id": null,
         "children_ids": null
       }
@@ -33152,8 +33152,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8207802916709948,
-        "confidence_rate": 0.9986388594968042,
+        "confidence": 0.8222330001518283,
+        "confidence_rate": 0.9986510384682266,
         "parent_id": null,
         "children_ids": null
       }
@@ -33221,8 +33221,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5884318351745605,
-        "confidence_rate": 0.996399055557376,
+        "confidence": 0.5923094749450684,
+        "confidence_rate": 0.9964435770724436,
         "parent_id": null,
         "children_ids": null
       }
@@ -33244,8 +33244,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7240406232457602,
-        "confidence_rate": 0.9972672342218655,
+        "confidence": 0.7221226348398112,
+        "confidence_rate": 0.9972448169083233,
         "parent_id": null,
         "children_ids": null
       }
@@ -33313,8 +33313,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7850856619685374,
-        "confidence_rate": 0.9975086503938195,
+        "confidence": 0.7875223027567699,
+        "confidence_rate": 0.9975405182798748,
         "parent_id": null,
         "children_ids": null
       }
@@ -33474,8 +33474,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999730830463522,
+        "confidence": 0.99658203125,
+        "confidence_rate": 0.9999685892699369,
         "parent_id": null,
         "children_ids": null
       }
@@ -33589,8 +33589,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9956090442137793,
-        "confidence_rate": 0.9999555502369526,
+        "confidence": 0.9960954189300537,
+        "confidence_rate": 0.9999604833682,
         "parent_id": null,
         "children_ids": null
       }
@@ -33704,8 +33704,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7629261016845703,
-        "confidence_rate": 0.9973506324060046,
+        "confidence": 0.7600307464599609,
+        "confidence_rate": 0.9973134545470271,
         "parent_id": null,
         "children_ids": null
       }
@@ -33727,8 +33727,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7241756916046143,
-        "confidence_rate": 0.9971227076480597,
+        "confidence": 0.7270781993865967,
+        "confidence_rate": 0.9971583198567443,
         "parent_id": null,
         "children_ids": null
       }
@@ -33819,8 +33819,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9028586696731509,
-        "confidence_rate": 0.9989577960252186,
+        "confidence": 0.9033065162354887,
+        "confidence_rate": 0.9989628510576501,
         "parent_id": null,
         "children_ids": null
       }
@@ -34118,8 +34118,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9292337894439697,
-        "confidence_rate": 0.9994904429604549,
+        "confidence": 0.9282653331756592,
+        "confidence_rate": 0.9994832053365215,
         "parent_id": null,
         "children_ids": null
       }
@@ -34142,7 +34142,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9868476268602535,
-        "confidence_rate": 0.9999140320620311,
+        "confidence_rate": 0.999914032062031,
         "parent_id": null,
         "children_ids": null
       }
@@ -34210,8 +34210,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8376923558613556,
-        "confidence_rate": 0.9979427659543522,
+        "confidence": 0.8363107995706839,
+        "confidence_rate": 0.9979236125744867,
         "parent_id": null,
         "children_ids": null
       }
@@ -34279,8 +34279,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99267578125,
-        "confidence_rate": 0.9999032787234483,
+        "confidence": 0.9921875,
+        "confidence_rate": 0.9998968056214717,
         "parent_id": null,
         "children_ids": null
       }
@@ -34325,8 +34325,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9050781736550562,
-        "confidence_rate": 0.9990321777754996,
+        "confidence": 0.9055227110684427,
+        "confidence_rate": 0.9990369405375161,
         "parent_id": null,
         "children_ids": null
       }
@@ -34371,8 +34371,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.83056640625,
-        "confidence_rate": 0.9981815828396284,
+        "confidence": 0.826171875,
+        "confidence_rate": 0.9981296684501557,
         "parent_id": null,
         "children_ids": null
       }
@@ -34417,8 +34417,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8254492282867432,
-        "confidence_rate": 0.9984541998389145,
+        "confidence": 0.8210611343383789,
+        "confidence_rate": 0.9984112818264541,
         "parent_id": null,
         "children_ids": null
       }
@@ -34601,8 +34601,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6430995464324951,
-        "confidence_rate": 0.9970807213842052,
+        "confidence": 0.6362736225128174,
+        "confidence_rate": 0.9970102624047773,
         "parent_id": null,
         "children_ids": null
       }
@@ -34764,7 +34764,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99169921875,
         "confidence_rate": 0.9999213670108015,
-        "parent_id": "326208bda55d44b8936462c2f229f00e",
+        "parent_id": "de82f255be944f10b1400bd69ca9ea1a",
         "children_ids": null
       }
     },
@@ -34785,9 +34785,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6721621305689345,
-        "confidence_rate": 0.9967222785221831,
-        "parent_id": "326208bda55d44b8936462c2f229f00e",
+        "confidence": 0.6755301584243264,
+        "confidence_rate": 0.9967634516249417,
+        "parent_id": "de82f255be944f10b1400bd69ca9ea1a",
         "children_ids": null
       }
     },
@@ -34809,7 +34809,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9965856064809486,
-        "confidence_rate": 0.999966468838034,
+        "confidence_rate": 0.9999664688380339,
         "parent_id": null,
         "children_ids": null
       }
@@ -34831,8 +34831,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5729594244621694,
-        "confidence_rate": 0.9945546800194817,
+        "confidence": 0.5732441955478862,
+        "confidence_rate": 0.994559525018254,
         "parent_id": null,
         "children_ids": null
       }
@@ -34854,8 +34854,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9073827331134448,
-        "confidence_rate": 0.9990835245515005,
+        "confidence": 0.9093215851072769,
+        "confidence_rate": 0.9991036428327067,
         "parent_id": null,
         "children_ids": null
       }
@@ -34970,7 +34970,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.992196798324585,
-        "confidence_rate": 0.9999239465236182,
+        "confidence_rate": 0.999923946523618,
         "parent_id": null,
         "children_ids": null
       }
@@ -35085,7 +35085,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077527,
+        "confidence_rate": 0.9999949125077526,
         "parent_id": null,
         "children_ids": null
       }
@@ -35199,8 +35199,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5656416416168213,
-        "confidence_rate": 0.994374353416047,
+        "confidence": 0.5636894702911377,
+        "confidence_rate": 0.994340316659144,
         "parent_id": null,
         "children_ids": null
       }
@@ -35360,8 +35360,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9883038997650146,
-        "confidence_rate": 0.999908802316317,
+        "confidence": 0.9878129959106445,
+        "confidence_rate": 0.9999049512263883,
         "parent_id": null,
         "children_ids": null
       }
@@ -35383,8 +35383,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.970717191696167,
-        "confidence_rate": 0.9997460142444297,
+        "confidence": 0.9697411060333252,
+        "confidence_rate": 0.9997374178644372,
         "parent_id": null,
         "children_ids": null
       }
@@ -35489,11 +35489,11 @@
       "text": "edge of \\(\\sigma\\), tangent to three other edges of \\(\\sigma\\) and otherwise lying wholly above \\(\\sigma\\).",
       "bbox": {
         "x0": 87.84,
-        "y0": 240.77,
+        "y0": 240.19,
         "x1": 473.47,
         "y1": 255.46,
         "width": 385.63,
-        "height": 14.69
+        "height": 15.26
       },
       "meta": {
         "mathpix_type": "text",
@@ -35705,8 +35705,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8955585956573486,
-        "confidence_rate": 0.9991249257504357,
+        "confidence": 0.898486852645874,
+        "confidence_rate": 0.9991508115153936,
         "parent_id": null,
         "children_ids": null
       }
@@ -36604,7 +36604,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a6b51e99f6f84b9db69f1a76c3ec5ac7",
+        "parent_id": "0a5b4ade7b7748eaae8d751fd069c57e",
         "children_ids": null
       }
     },
@@ -36627,7 +36627,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a6b51e99f6f84b9db69f1a76c3ec5ac7",
+        "parent_id": "0a5b4ade7b7748eaae8d751fd069c57e",
         "children_ids": null
       }
     },
@@ -36741,7 +36741,7 @@
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999902320377447,
+        "confidence_rate": 0.9999902320377446,
         "parent_id": null,
         "children_ids": null
       }
@@ -36765,7 +36765,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "34d96b89ba7d484bbf65d9f7bed90492",
+        "parent_id": "993c40d14c034b42bd6d20fa7d009b76",
         "children_ids": null
       }
     },
@@ -37016,8 +37016,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.96630859375,
-        "confidence_rate": 0.9997322855250669,
+        "confidence": 0.96533203125,
+        "confidence_rate": 0.9997243882770411,
         "parent_id": null,
         "children_ids": null
       }
@@ -37109,7 +37109,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.998535871389322,
-        "confidence_rate": 0.9999895343298061,
+        "confidence_rate": 0.999989534329806,
         "parent_id": null,
         "children_ids": null
       }
@@ -37132,7 +37132,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9970703125,
-        "confidence_rate": 0.9999794828158315,
+        "confidence_rate": 0.9999794828158314,
         "parent_id": null,
         "children_ids": null
       }
@@ -37615,7 +37615,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077527,
+        "confidence_rate": 0.9999949125077526,
         "parent_id": null,
         "children_ids": null
       }
@@ -38212,8 +38212,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9629592895507812,
-        "confidence_rate": 0.9995985471709156,
+        "confidence": 0.9639339447021484,
+        "confidence_rate": 0.9996093049708414,
         "parent_id": null,
         "children_ids": null
       }
@@ -38789,7 +38789,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "78cfd88f8d1347159a547a65eac23544",
+        "parent_id": "85a3bec5ed5b4fe8ab3cb9573de822e4",
         "children_ids": null
       }
     },
@@ -38996,7 +38996,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999755802732609,
-        "parent_id": "7df5cd6770c947df94a9b557f65c2edc",
+        "parent_id": "480565a5c6894add833f85d73fea03f3",
         "children_ids": null
       }
     },
@@ -39468,11 +39468,11 @@
       "text": "the definition of an image (see section 2). Previously an image consisted of the",
       "bbox": {
         "x0": 87.84,
-        "y0": 453.6,
+        "y0": 454.18,
         "x1": 522.72,
         "y1": 467.14,
         "width": 434.88,
-        "height": 13.54
+        "height": 12.96
       },
       "meta": {
         "mathpix_type": "text",
@@ -39524,7 +39524,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077527,
+        "confidence_rate": 0.9999949125077526,
         "parent_id": null,
         "children_ids": null
       }
@@ -39615,8 +39615,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99755859375,
-        "confidence_rate": 0.9999739961748949,
+        "confidence": 0.998046875,
+        "confidence_rate": 0.9999792019733479,
         "parent_id": null,
         "children_ids": null
       }
@@ -40445,7 +40445,7 @@
         "mathpix_subtype": "",
         "confidence": 0.36210815263530094,
         "confidence_rate": 0.9911289474224295,
-        "parent_id": "28e10fa3cbcc460bac37c44d69c63f8d",
+        "parent_id": "4f7415cfe83e430ea3091b003526d997",
         "children_ids": null
       }
     },
@@ -40468,7 +40468,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99853515625,
         "confidence_rate": 0.9999844052526365,
-        "parent_id": "28e10fa3cbcc460bac37c44d69c63f8d",
+        "parent_id": "4f7415cfe83e430ea3091b003526d997",
         "children_ids": null
       }
     },
@@ -40535,8 +40535,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.970703125,
-        "confidence_rate": 0.9997542897045891,
+        "confidence": 0.97021484375,
+        "confidence_rate": 0.9997501325145804,
         "parent_id": null,
         "children_ids": null
       }
@@ -40605,7 +40605,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.89111328125,
-        "confidence_rate": 0.9991526847616454,
+        "confidence_rate": 0.9991526847616455,
         "parent_id": null,
         "children_ids": null
       }
@@ -40674,7 +40674,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999953038523913,
+        "confidence_rate": 0.9999953038523912,
         "parent_id": null,
         "children_ids": null
       }
@@ -40719,8 +40719,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9907269477844238,
-        "confidence_rate": 0.9999343943026995,
+        "confidence": 0.9912149906158447,
+        "confidence_rate": 0.9999378623174066,
         "parent_id": null,
         "children_ids": null
       }
@@ -40743,7 +40743,7 @@
         "mathpix_type": "math",
         "mathpix_subtype": "",
         "confidence": 0.9921972721349448,
-        "confidence_rate": 0.999948124998345,
+        "confidence_rate": 0.9999481249983448,
         "parent_id": null,
         "children_ids": null
       }
@@ -41056,9 +41056,9 @@
       "bbox": {
         "x0": 87.84,
         "y0": 461.66,
-        "x1": 524.16,
+        "x1": 523.58,
         "y1": 475.78,
-        "width": 436.32,
+        "width": 435.74,
         "height": 14.11
       },
       "meta": {
@@ -41823,8 +41823,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9990234375,
-        "confidence_rate": 0.9999925982118795,
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999963000030714,
         "parent_id": null,
         "children_ids": null
       }
@@ -42168,8 +42168,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9584143161773682,
-        "confidence_rate": 0.9996629527326266,
+        "confidence": 0.9593760967254639,
+        "confidence_rate": 0.9996709104710435,
         "parent_id": null,
         "children_ids": null
       }
@@ -42283,8 +42283,8 @@
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999735680300983,
+        "confidence": 0.99658203125,
+        "confidence_rate": 0.9999691552203086,
         "parent_id": null,
         "children_ids": null
       }
@@ -42352,8 +42352,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.785123348236084,
-        "confidence_rate": 0.9974832302842933,
+        "confidence": 0.7903611660003662,
+        "confidence_rate": 0.9975523206118095,
         "parent_id": null,
         "children_ids": null
       }
@@ -42607,7 +42607,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999951160069457,
-        "parent_id": "4629ced2840c42ac8cb1ae5b2b42128e",
+        "parent_id": "54cdfb7a77e4439a97b074a105d061a8",
         "children_ids": null
       }
     },
@@ -42630,7 +42630,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "4629ced2840c42ac8cb1ae5b2b42128e",
+        "parent_id": "54cdfb7a77e4439a97b074a105d061a8",
         "children_ids": null
       }
     },
@@ -42651,9 +42651,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9781915966789315,
-        "confidence_rate": 0.9998192809094507,
-        "parent_id": "6ec7b9c48206430d990657ed90172961",
+        "confidence": 0.9791539101040952,
+        "confidence_rate": 0.9998273391923351,
+        "parent_id": "0ddc243684594e16a4ba860f32908b5c",
         "children_ids": null
       }
     },
@@ -42676,7 +42676,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "6ec7b9c48206430d990657ed90172961",
+        "parent_id": "0ddc243684594e16a4ba860f32908b5c",
         "children_ids": null
       }
     },
@@ -43019,8 +43019,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.92919921875,
-        "confidence_rate": 0.9992021432520598,
+        "confidence": 0.92724609375,
+        "confidence_rate": 0.9991792904952617,
         "parent_id": null,
         "children_ids": null
       }
@@ -43111,8 +43111,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.751953125,
-        "confidence_rate": 0.9972886225298043,
+        "confidence": 0.74609375,
+        "confidence_rate": 0.9972143251516002,
         "parent_id": null,
         "children_ids": null
       }
@@ -43295,9 +43295,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9814541339874268,
-        "confidence_rate": 0.9995321095727603,
-        "parent_id": "8c323118561d4d57b00571fedec0a71a",
+        "confidence": 0.9829182624816895,
+        "confidence_rate": 0.9995693599175948,
+        "parent_id": "52fee9f40cd94fc68ba4abbdb51f33bf",
         "children_ids": null
       }
     },
@@ -43481,7 +43481,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "0d8cb8e217eb49dc94ff0b6f8a3b41d7",
+        "parent_id": "c38c9bd453784d4b8d39a3677213b0b6",
         "children_ids": null
       }
     },
@@ -44700,7 +44700,7 @@
         "mathpix_subtype": "",
         "confidence": 0.87890625,
         "confidence_rate": 0.9987100622630835,
-        "parent_id": "168bfb0b27544480845da3cd97c74df9",
+        "parent_id": "744143c0757f4e05998ac9706d96101c",
         "children_ids": null
       }
     },
@@ -44723,7 +44723,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "168bfb0b27544480845da3cd97c74df9",
+        "parent_id": "744143c0757f4e05998ac9706d96101c",
         "children_ids": null
       }
     },
@@ -45321,7 +45321,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99658203125,
         "confidence_rate": 0.9999048983182974,
-        "parent_id": "62ffdb12ce174075b809094a125a2fd0",
+        "parent_id": "41e6b6f0977c4b158c6b39eaf1e308dc",
         "children_ids": null
       }
     },
@@ -46471,7 +46471,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ad305234682b4334bc3c769591ac736e",
+        "parent_id": "a0b66dbd1ded4aad8edff1650bd3e289",
         "children_ids": null
       }
     },
@@ -47023,7 +47023,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5afa46a544eb417a9aa766877f00598a",
+        "parent_id": "3146364605cf444bb00c2547bc9b3f53",
         "children_ids": null
       }
     },
@@ -47276,7 +47276,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ab083559b6a045bd95fabb174823fed6",
+        "parent_id": "79f4e96fb8c746fe8db814e0039381c0",
         "children_ids": null
       }
     },
@@ -48079,8 +48079,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.75634765625,
-        "confidence_rate": 0.9972389262629228,
+        "confidence": 0.7578125,
+        "confidence_rate": 0.9972580305848663,
         "parent_id": null,
         "children_ids": null
       }
@@ -48309,8 +48309,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9912109375,
-        "confidence_rate": 0.9999019168757579,
+        "confidence": 0.99169921875,
+        "confidence_rate": 0.9999073884600578,
         "parent_id": null,
         "children_ids": null
       }
@@ -48539,8 +48539,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.8701837062835693,
-        "confidence_rate": 0.9981957733049456,
+        "confidence": 0.867774486541748,
+        "confidence_rate": 0.9981598327693529,
         "parent_id": null,
         "children_ids": null
       }
@@ -48587,7 +48587,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a315c8520e974d15a4076d1240b9cd17",
+        "parent_id": "a1fd5d6e48d94f1bacb431b2eeeb87e9",
         "children_ids": null
       }
     },
@@ -48610,7 +48610,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999954777833909,
-        "parent_id": "a315c8520e974d15a4076d1240b9cd17",
+        "parent_id": "a1fd5d6e48d94f1bacb431b2eeeb87e9",
         "children_ids": null
       }
     },
@@ -48633,7 +48633,7 @@
         "mathpix_subtype": "",
         "confidence": 0.888671875,
         "confidence_rate": 0.9981858444026103,
-        "parent_id": "a315c8520e974d15a4076d1240b9cd17",
+        "parent_id": "a1fd5d6e48d94f1bacb431b2eeeb87e9",
         "children_ids": null
       }
     },
@@ -48656,7 +48656,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "78e9602b470146f1a7bf7e113ffc4711",
+        "parent_id": "df22032d3a2d4ec68cdf8efe0083b39f",
         "children_ids": null
       }
     },
@@ -48679,7 +48679,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "78e9602b470146f1a7bf7e113ffc4711",
+        "parent_id": "df22032d3a2d4ec68cdf8efe0083b39f",
         "children_ids": null
       }
     },
@@ -48702,7 +48702,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "78e9602b470146f1a7bf7e113ffc4711",
+        "parent_id": "df22032d3a2d4ec68cdf8efe0083b39f",
         "children_ids": null
       }
     },
@@ -48725,7 +48725,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9c8528b839d24ddbb47ec62be6bcf71d",
+        "parent_id": "08bc87bf4d484705a6d191acbe76a506",
         "children_ids": null
       }
     },
@@ -49737,7 +49737,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "bd00331cd1cd4588842bf326e0abbf86",
+        "parent_id": "fc50549096d644ee9549de8c195973f4",
         "children_ids": null
       }
     },
@@ -49897,7 +49897,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999948042635181,
+        "confidence_rate": 0.999994804263518,
         "parent_id": null,
         "children_ids": null
       }
@@ -50496,7 +50496,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3d92de290fb04525a2043046456be9f6",
+        "parent_id": "186a6af022b74707b283a29cacd02d17",
         "children_ids": null
       }
     },
@@ -50540,8 +50540,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9786467627884576,
-        "confidence_rate": 0.9997043654088921,
+        "confidence": 0.9786491155705335,
+        "confidence_rate": 0.9997043983322371,
         "parent_id": null,
         "children_ids": null
       }
@@ -50678,8 +50678,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6784908771514893,
-        "confidence_rate": 0.9953375987335241,
+        "confidence": 0.681926965713501,
+        "confidence_rate": 0.9953981786237598,
         "parent_id": null,
         "children_ids": null
       }
@@ -50954,8 +50954,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9360968916444108,
-        "confidence_rate": 0.9991199036302199,
+        "confidence": 0.9346334780566394,
+        "confidence_rate": 0.9990990617071652,
         "parent_id": null,
         "children_ids": null
       }
@@ -51023,8 +51023,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999348024046826,
+        "confidence": 0.99658203125,
+        "confidence_rate": 0.9999239179310639,
         "parent_id": null,
         "children_ids": null
       }
@@ -51069,8 +51069,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9985356330871582,
-        "confidence_rate": 0.99997069162658,
+        "confidence": 0.9980475902557373,
+        "confidence_rate": 0.9999609144002498,
         "parent_id": null,
         "children_ids": null
       }
@@ -51115,8 +51115,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.87939453125,
-        "confidence_rate": 0.9987283177791155,
+        "confidence": 0.8837890625,
+        "confidence_rate": 0.9987776104809432,
         "parent_id": null,
         "children_ids": null
       }
@@ -52035,8 +52035,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9814453125,
-        "confidence_rate": 0.999354381428786,
+        "confidence": 0.98193359375,
+        "confidence_rate": 0.9993715218377117,
         "parent_id": null,
         "children_ids": null
       }
@@ -52058,8 +52058,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.999963778588915,
+        "confidence": 0.99755859375,
+        "confidence_rate": 0.9999698227844552,
         "parent_id": null,
         "children_ids": null
       }
@@ -52151,7 +52151,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999831587453291,
+        "confidence_rate": 0.999983158745329,
         "parent_id": null,
         "children_ids": null
       }

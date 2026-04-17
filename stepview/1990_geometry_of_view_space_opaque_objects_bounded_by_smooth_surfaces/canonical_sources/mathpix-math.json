@@ -1151,7 +1151,7 @@
     {
       "id": "mathpix-eq-p039-0004",
       "kind": "display",
-      "display_latex": "T \\mathscr{A}_{\\mathrm{e}} \\cdot(x, Z(x, y))+\\mathbb{R}\\left\\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)}\\right\\}=E_{n, p} .",
+      "display_latex": "T \\mathscr{A}_{\\mathrm{e}} \\cdot(x, Z(x, y))+\\mathbb{R}\\left\\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)}\\right\\}=E_{n . p} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {

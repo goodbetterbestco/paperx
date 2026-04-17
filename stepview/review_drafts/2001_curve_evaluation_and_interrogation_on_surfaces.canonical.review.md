@@ -6,7 +6,7 @@ Gershon Elber
 
 ## Abstract
 
-This paper presents a coherent computational framework to efficiently, and more so robustly, evaluate, interrogate, and compute a whole variety of characteristic curves on freeform parametric rational surfaces represented as (piecewise) polynomial or rational functions. These characteristic curves are expressed as zero sets of bivariate rational functions and include silhouette curves and isoclines from a prescribed viewing direction and or point, reflection lines and reflection ovals, and highlight lines. This zero set formulation allows for a better treatment of singular cases while these characteristic curves are crucial for various applications, from visualization through interrogation to design and manufacturing. c 2001 Academic Press Key Words: silhouettes; isoclines; isophotes; highlight lines; reflection lines.
+This paper presents a coherent computational framework to efficiently, and more so robustly, evaluate, interrogate, and compute a whole variety of characteristic curves on freeform parametric rational surfaces represented as (piecewise) polynomial or rational functions. These characteristic curves are expressed as zero sets of bivariate rational functions and include silhouette curves and isoclines from a prescribed viewing direction and or point, reflection lines and reflection ovals, and highlight lines. This zero set formulation allows for a better treatment of singular cases while these characteristic curves are crucial for various applications, from visualization through interrogation to design and manufacturing. c 2001 Academic Press
 
 ## 1 INTRODUCTION
 

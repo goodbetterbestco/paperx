@@ -2824,25 +2824,6 @@
       "page": 7,
       "order": 22,
       "role": "paragraph",
-      "text": "Iz",
-      "bbox": {
-        "x0": 110.44,
-        "y0": 567.52,
-        "x1": 120.79,
-        "y1": 580.19,
-        "width": 10.35,
-        "height": 12.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Iz"
-      }
-    },
-    {
-      "id": "#/texts/153",
-      "page": 7,
-      "order": 23,
-      "role": "paragraph",
       "text": "92",
       "bbox": {
         "x0": 154.15,
@@ -2858,9 +2839,9 @@
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/153",
       "page": 7,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "A2",
       "bbox": {
@@ -2877,28 +2858,28 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/154",
       "page": 7,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
-      "text": "FIG. 1",
+      "text": "FIG.1",
       "bbox": {
         "x0": 186.36,
-        "y0": 358.0,
+        "y0": 358.01,
         "x1": 211.67,
-        "y1": 367.33,
+        "y1": 367.22,
         "width": 25.31,
-        "height": 9.33
+        "height": 9.21
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "FIG. 1"
+        "docling_orig": "FIG.1"
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/155",
       "page": 7,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "g (41)",
       "bbox": {
@@ -2915,11 +2896,11 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/156",
       "page": 7,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
-      "text": "8 (41)",
+      "text": "g (41)",
       "bbox": {
         "x0": 189.81,
         "y0": 658.33,
@@ -2930,13 +2911,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "8 (41)"
+        "docling_orig": "g (41)"
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/157",
       "page": 7,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -2953,9 +2934,9 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/158",
       "page": 7,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "19 (фл)",
       "bbox": {
@@ -2972,9 +2953,9 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/159",
       "page": 7,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "g (ф)",
       "bbox": {
@@ -2991,11 +2972,11 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/160",
       "page": 7,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
-      "text": "139(42)",
+      "text": "39(42)",
       "bbox": {
         "x0": 254.55,
         "y0": 596.04,
@@ -3006,13 +2987,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "139(42)"
+        "docling_orig": "39(42)"
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/161",
       "page": 7,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "- 8 (ф2)",
       "bbox": {
@@ -3029,7 +3010,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/163",
       "page": 8,
       "order": 1,
       "role": "paragraph",
@@ -3048,7 +3029,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/164",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -3067,7 +3048,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/165",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -3086,7 +3067,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/166",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -3105,7 +3086,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/167",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -3124,7 +3105,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/168",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -3143,7 +3124,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/169",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -3162,7 +3143,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/170",
       "page": 8,
       "order": 8,
       "role": "paragraph",
@@ -3181,7 +3162,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/171",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -3200,7 +3181,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/172",
       "page": 8,
       "order": 10,
       "role": "caption",
@@ -3219,7 +3200,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/173",
       "page": 8,
       "order": 11,
       "role": "paragraph",
@@ -3238,7 +3219,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/174",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -3257,7 +3238,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/175",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -3276,7 +3257,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/176",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -3295,7 +3276,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/177",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -3314,7 +3295,7 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/178",
       "page": 8,
       "order": 16,
       "role": "paragraph",
@@ -3333,7 +3314,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/179",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -3352,7 +3333,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/180",
       "page": 8,
       "order": 18,
       "role": "paragraph",
@@ -3371,7 +3352,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/181",
       "page": 8,
       "order": 19,
       "role": "paragraph",
@@ -3390,7 +3371,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/182",
       "page": 8,
       "order": 20,
       "role": "paragraph",

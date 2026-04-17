@@ -164,8 +164,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:41:01Z",
-    "updated_at": "2026-04-17T04:41:01Z",
+    "created_at": "2026-04-17T05:29:28Z",
+    "updated_at": "2026-04-17T05:29:28Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -191,22 +191,22 @@
         "path": "stepview/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 417136,
-        "modified_at": "2026-04-17T04:15:19Z",
+        "modified_at": "2026-04-17T05:29:26Z",
         "sha256": "ad22eb524f5ae64ea439c6b23bbc56086bfcb8c64b65034f4815dd87653b5f38"
       },
       "external_math": {
         "path": "stepview/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 43,
-        "modified_at": "2026-04-17T04:15:19Z",
+        "modified_at": "2026-04-17T05:29:26Z",
         "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "31d5355ca1f9d22126e9f39387fe1e7e16c3b1c5cec44dd6d0b6b8e3d8d07fe1",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -219,7 +219,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },

@@ -129,8 +129,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:36:19Z",
-    "updated_at": "2026-04-17T04:36:19Z",
+    "created_at": "2026-04-17T05:26:16Z",
+    "updated_at": "2026-04-17T05:26:16Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -156,22 +156,22 @@
         "path": "stepview/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 318443,
-        "modified_at": "2026-04-17T04:03:06Z",
+        "modified_at": "2026-04-17T05:25:58Z",
         "sha256": "7573c3dea8ae59ee6d159611d4b644f4bcfcbf2c1e39c5bae56b23ac642f3e9b"
       },
       "external_math": {
         "path": "stepview/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 49977,
-        "modified_at": "2026-04-17T04:03:06Z",
+        "modified_at": "2026-04-17T05:25:58Z",
         "sha256": "776468b01841047018039216c163c7e5445543d117e4b9e31100760d5c2a28b1"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "5c48815cc52f9cd72e3f7f53863aadf0d48ae338bf185a745c39bee946fe879f",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -184,7 +184,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },

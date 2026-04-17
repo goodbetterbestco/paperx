@@ -15,6 +15,7 @@ from paper_pipeline.run_corpus_rounds import (
     _assert_mathpix_dns_available,
     _build_paper,
     _compose_external_sources,
+    _docling_device,
     _desired_flags_for_existing_paper,
     _mathpix_submit_workers,
     _process_round,
@@ -26,6 +27,18 @@ from paper_pipeline.run_corpus_rounds import (
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
+    def test_docling_device_defaults_to_mps_on_macos(self) -> None:
+        with (
+            patch.dict(os.environ, {}, clear=False),
+            patch("paper_pipeline.run_corpus_rounds.sys.platform", "darwin"),
+        ):
+            os.environ.pop("STEPVIEW_DOCLING_DEVICE", None)
+            self.assertEqual(_docling_device(), "mps")
+
+    def test_docling_device_honors_override(self) -> None:
+        with patch.dict(os.environ, {"STEPVIEW_DOCLING_DEVICE": "cpu"}, clear=False):
+            self.assertEqual(_docling_device(), "cpu")
+
     def test_mathpix_dns_preflight_resolves_host(self) -> None:
         with patch("paper_pipeline.run_corpus_rounds.socket.getaddrinfo", return_value=[object()]):
             _assert_mathpix_dns_available()

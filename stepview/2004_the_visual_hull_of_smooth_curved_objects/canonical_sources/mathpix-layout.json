@@ -174,7 +174,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "0e8cb80438754907a5f6e2ac88803604",
+        "parent_id": "962406c7e733477e8366e6c0a7293379",
         "children_ids": null
       }
     },
@@ -197,7 +197,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999907849387211,
-        "parent_id": "73b497af1ad34e30a5e05727f6c9f2e1",
+        "parent_id": "d4cbe7fc93c145cebb6351b240867025",
         "children_ids": null
       }
     },
@@ -220,7 +220,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "73b497af1ad34e30a5e05727f6c9f2e1",
+        "parent_id": "d4cbe7fc93c145cebb6351b240867025",
         "children_ids": null
       }
     },
@@ -243,7 +243,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "73b497af1ad34e30a5e05727f6c9f2e1",
+        "parent_id": "d4cbe7fc93c145cebb6351b240867025",
         "children_ids": null
       }
     },
@@ -264,9 +264,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99853515625,
-        "confidence_rate": 0.9999718096726914,
-        "parent_id": "73b497af1ad34e30a5e05727f6c9f2e1",
+        "confidence": 0.998046875,
+        "confidence_rate": 0.9999624038829863,
+        "parent_id": "d4cbe7fc93c145cebb6351b240867025",
         "children_ids": null
       }
     },
@@ -289,7 +289,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -312,7 +312,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -335,7 +335,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -358,7 +358,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -381,7 +381,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -404,7 +404,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -427,7 +427,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9931640625,
         "confidence_rate": 0.9999358954234694,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -450,7 +450,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -473,7 +473,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "009f765a689d46148af9721500cf1b84",
+        "parent_id": "0394d8b5278449808d1d16036b5c20a8",
         "children_ids": null
       }
     },
@@ -542,7 +542,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8a13be70dae845a79ed58c478a6426fa",
+        "parent_id": "72d38896ce54464c840ef659b97fab23",
         "children_ids": null
       }
     },
@@ -955,7 +955,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077526,
+        "confidence_rate": 0.9999949125077527,
         "parent_id": null,
         "children_ids": null
       }
@@ -1347,7 +1347,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "4a67cadd142a4c2aa1ae554d70839d3e",
+        "parent_id": "01788d570b334b26b7a71b24d659fc80",
         "children_ids": null
       }
     },
@@ -1897,8 +1897,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.28260457401059363,
-        "confidence_rate": 0.990949787396572,
+        "confidence": 0.28450345522868536,
+        "confidence_rate": 0.9909975305314281,
         "parent_id": null,
         "children_ids": null
       }
@@ -2037,7 +2037,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "f54c754ec75f41a1975bff3a1942ec1f",
+        "parent_id": "c8adf67b7462415192469d8ef7c681a5",
         "children_ids": null
       }
     },
@@ -2081,8 +2081,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.93115234375,
-        "confidence_rate": 0.9993208747047196,
+        "confidence": 0.93212890625,
+        "confidence_rate": 0.9993308510045534,
         "parent_id": null,
         "children_ids": null
       }
@@ -2635,7 +2635,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5ef6d0d6126a42c0b0c795e6169ee42e",
+        "parent_id": "ca114937164a413faeace5633ff63f68",
         "children_ids": null
       }
     },
@@ -2980,7 +2980,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b269fed4fb2a44b48a074a1ad7ffb4f7",
+        "parent_id": "bd67eb59b1a84a8d9fb4dfa8daecfc22",
         "children_ids": null
       }
     },
@@ -3003,7 +3003,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b269fed4fb2a44b48a074a1ad7ffb4f7",
+        "parent_id": "bd67eb59b1a84a8d9fb4dfa8daecfc22",
         "children_ids": null
       }
     },
@@ -3254,8 +3254,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4280553017863864,
-        "confidence_rate": 0.9941653440924536,
+        "confidence": 0.43140079400737497,
+        "confidence_rate": 0.9942187231367471,
         "parent_id": null,
         "children_ids": null
       }
@@ -3277,8 +3277,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.3830596285099716,
-        "confidence_rate": 0.9932176816544983,
+        "confidence": 0.40106899243730176,
+        "confidence_rate": 0.9935413599144243,
         "parent_id": null,
         "children_ids": null
       }
@@ -3300,8 +3300,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4579508149149022,
-        "confidence_rate": 0.9940559537816769,
+        "confidence": 0.4655784813266256,
+        "confidence_rate": 0.9941813105544999,
         "parent_id": null,
         "children_ids": null
       }
@@ -3323,8 +3323,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.2641976541504516,
-        "confidence_rate": 0.9880801002377253,
+        "confidence": 0.26162457136399864,
+        "confidence_rate": 0.9879929841605966,
         "parent_id": null,
         "children_ids": null
       }
@@ -3415,8 +3415,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9653487205505371,
-        "confidence_rate": 0.999701181312193,
+        "confidence": 0.965836763381958,
+        "confidence_rate": 0.9997054633754905,
         "parent_id": null,
         "children_ids": null
       }
@@ -3530,8 +3530,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8336367812007666,
-        "confidence_rate": 0.9924471056449665,
+        "confidence": 0.8263282896950841,
+        "confidence_rate": 0.9920830413760678,
         "parent_id": null,
         "children_ids": null
       }
@@ -3553,8 +3553,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9951212396845222,
-        "confidence_rate": 0.999962949926391,
+        "confidence": 0.9956090442137793,
+        "confidence_rate": 0.9999666624924816,
         "parent_id": null,
         "children_ids": null
       }
@@ -3599,8 +3599,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970724582672119,
-        "confidence_rate": 0.9999751542462456,
+        "confidence": 0.9965848922729492,
+        "confidence_rate": 0.9999710092972021,
         "parent_id": null,
         "children_ids": null
       }
@@ -3714,8 +3714,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.43066204249470275,
-        "confidence_rate": 0.9931743636361651,
+        "confidence": 0.41982870320680377,
+        "confidence_rate": 0.9929686696233979,
         "parent_id": null,
         "children_ids": null
       }
@@ -3806,8 +3806,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.7747005017372949,
-        "confidence_rate": 0.9975003961499401,
+        "confidence": 0.7684725051202215,
+        "confidence_rate": 0.9974214625655023,
         "parent_id": null,
         "children_ids": null
       }
@@ -3852,8 +3852,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9555878639221191,
-        "confidence_rate": 0.999554721091905,
+        "confidence": 0.95607590675354,
+        "confidence_rate": 0.9995597247073401,
         "parent_id": null,
         "children_ids": null
       }
@@ -3967,8 +3967,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9283896809389502,
-        "confidence_rate": 0.9994768712490871,
+        "confidence": 0.9288432176663264,
+        "confidence_rate": 0.9994803088958565,
         "parent_id": null,
         "children_ids": null
       }
@@ -3990,8 +3990,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7310875866205787,
-        "confidence_rate": 0.9978715064966936,
+        "confidence": 0.7364023409348761,
+        "confidence_rate": 0.9979206773726974,
         "parent_id": null,
         "children_ids": null
       }
@@ -4036,8 +4036,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.9538759828760327,
-        "confidence_rate": 0.9996528425306815,
+        "confidence": 0.9543444877792134,
+        "confidence_rate": 0.999656451861379,
         "parent_id": null,
         "children_ids": null
       }
@@ -4107,7 +4107,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99755859375,
         "confidence_rate": 0.9999356759809369,
-        "parent_id": "f1cfe75e523746f1999950900d0be9d0",
+        "parent_id": "2ffcdaffc2964af2a2006e9d939117c7",
         "children_ids": null
       }
     },
@@ -4174,8 +4174,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.41369654476663875,
-        "confidence_rate": 0.9926717952192784,
+        "confidence": 0.4120344883269142,
+        "confidence_rate": 0.9926384944018269,
         "parent_id": null,
         "children_ids": null
       }
@@ -4289,8 +4289,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9931671619415283,
-        "confidence_rate": 0.999947260707836,
+        "confidence": 0.9931700215674937,
+        "confidence_rate": 0.9999472828550959,
         "parent_id": null,
         "children_ids": null
       }
@@ -4312,8 +4312,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9258172512054443,
-        "confidence_rate": 0.999368409236464,
+        "confidence": 0.9277694225311279,
+        "confidence_rate": 0.9993856638295805,
         "parent_id": null,
         "children_ids": null
       }
@@ -4358,8 +4358,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9600174427032471,
-        "confidence_rate": 0.9996571694923949,
+        "confidence": 0.9614801406860352,
+        "confidence_rate": 0.9996699589404167,
         "parent_id": null,
         "children_ids": null
       }
@@ -4404,8 +4404,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.34122624976032884,
-        "confidence_rate": 0.9933024695272491,
+        "confidence": 0.35843870662420657,
+        "confidence_rate": 0.9936080310724076,
         "parent_id": null,
         "children_ids": null
       }
@@ -4611,8 +4611,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7017784251365811,
-        "confidence_rate": 0.9975091807827693,
+        "confidence": 0.6886656102724373,
+        "confidence_rate": 0.9973766902028502,
         "parent_id": null,
         "children_ids": null
       }
@@ -5050,7 +5050,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "b4196919df8640da8c1fc31856e06a41",
+        "parent_id": "adc1669f6ad34c8b84fac41068e35255",
         "children_ids": null
       }
     },
@@ -5186,8 +5186,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9493141174316406,
-        "confidence_rate": 0.999174697308606,
+        "confidence": 0.9502887725830078,
+        "confidence_rate": 0.9991909723690358,
         "parent_id": null,
         "children_ids": null
       }
@@ -5209,8 +5209,8 @@
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.6837851368659232,
-        "confidence_rate": 0.9992400658201558,
+        "confidence": 0.6791126975034363,
+        "confidence_rate": 0.99922636303253,
         "parent_id": null,
         "children_ids": null
       }
@@ -5255,8 +5255,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9643726348876953,
-        "confidence_rate": 0.9996610153341802,
+        "confidence": 0.9638845920562744,
+        "confidence_rate": 0.9996562860988414,
         "parent_id": null,
         "children_ids": null
       }
@@ -5418,7 +5418,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "fc1fdd652b4a4c399070bac4153cc562",
+        "parent_id": "a185d6ccd5f243e9ab76a0150965bdbf",
         "children_ids": null
       }
     },
@@ -5462,8 +5462,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7515668962150812,
-        "confidence_rate": 0.9976029191370409,
+        "confidence": 0.754113869741559,
+        "confidence_rate": 0.997631281268231,
         "parent_id": null,
         "children_ids": null
       }
@@ -5740,7 +5740,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "bf5f7ee1f80b4e21830149667acb6764",
+        "parent_id": "160f0afd5b9a42fb9b169c9e18a2b905",
         "children_ids": null
       }
     },
@@ -6568,7 +6568,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9453635215759277,
         "confidence_rate": 0.9991860452592556,
-        "parent_id": "3e739ab683c84beea1a2240048908b1c",
+        "parent_id": "9135705ffb5f403cbb2da5d753bfd622",
         "children_ids": null
       }
     },
@@ -7051,7 +7051,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5ea6332768c945238376743e40910621",
+        "parent_id": "e47fd546b46d4b8a9266a0c97d299d67",
         "children_ids": null
       }
     },
@@ -7073,7 +7073,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.970703125,
-        "confidence_rate": 0.9997368965740363,
+        "confidence_rate": 0.9997368965740362,
         "parent_id": null,
         "children_ids": null
       }
@@ -7095,8 +7095,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7588863574151219,
-        "confidence_rate": 0.9984064546304879,
+        "confidence": 0.7530412763567256,
+        "confidence_rate": 0.9983618332230471,
         "parent_id": null,
         "children_ids": null
       }
@@ -7189,7 +7189,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "db0a5d63c1164082ba51207f71db6515",
+        "parent_id": "899e939811c14c26816adc7dffe3fd37",
         "children_ids": null
       }
     },
@@ -7327,7 +7327,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "6261962c5fb3405b9b2a5cf5110bf486",
+        "parent_id": "dbfaf9df2a9a406b8f9c52538d963539",
         "children_ids": null
       }
     },
@@ -7371,8 +7371,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9756090585142374,
-        "confidence_rate": 0.9997670712112412,
+        "confidence": 0.9751212539849803,
+        "confidence_rate": 0.999762354160594,
         "parent_id": null,
         "children_ids": null
       }
@@ -7394,8 +7394,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.89599609375,
-        "confidence_rate": 0.9989546493726973,
+        "confidence": 0.90185546875,
+        "confidence_rate": 0.9990166646869653,
         "parent_id": null,
         "children_ids": null
       }
@@ -7488,7 +7488,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "a2e72deaf159487186b497cb06d8e1ef",
+        "parent_id": "5b37dd0bd67242cd94dd667c752a5b5b",
         "children_ids": null
       }
     },
@@ -7603,7 +7603,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "58e4e66f9fef45cbb601ece6403bd2a9",
+        "parent_id": "64f3c3bbdbbf4c1bad9fd5816b34e031",
         "children_ids": null
       }
     },
@@ -7695,7 +7695,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "55ea66ac418a48dda82eb0852c28ccfd",
+        "parent_id": "ca7ce62824664f5f9763f34e8d119469",
         "children_ids": null
       }
     },
@@ -7923,8 +7923,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8635784452781081,
-        "confidence_rate": 0.9989529018773465,
+        "confidence": 0.8625060855410993,
+        "confidence_rate": 0.9989440359628107,
         "parent_id": null,
         "children_ids": null
       }
@@ -7946,8 +7946,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9652279608417302,
-        "confidence_rate": 0.9997169122633829,
+        "confidence": 0.966179397655651,
+        "confidence_rate": 0.9997247918754807,
         "parent_id": null,
         "children_ids": null
       }
@@ -7969,8 +7969,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9985356330871582,
-        "confidence_rate": 0.9999903589928831,
+        "confidence": 0.9980475902557373,
+        "confidence_rate": 0.999987142726204,
         "parent_id": null,
         "children_ids": null
       }
@@ -8385,7 +8385,7 @@
         "mathpix_subtype": "",
         "confidence": 0.822402502483266,
         "confidence_rate": 0.9978536765282745,
-        "parent_id": "f1ea0f687ee7484ca816582edbac6cf3",
+        "parent_id": "cb4fa225d88d4588a76d8dfc2233092a",
         "children_ids": null
       }
     },
@@ -8649,11 +8649,11 @@
       "role": "caption",
       "text": "Fig. 15",
       "bbox": {
-        "x0": 275.61,
+        "x0": 276.19,
         "y0": 294.58,
         "x1": 319.1,
         "y1": 305.82,
-        "width": 43.49,
+        "width": 42.91,
         "height": 11.23
       },
       "meta": {
@@ -8673,11 +8673,11 @@
       "text": "As before, the condition for a line passing through a point \\(\\mathbf{p}\\) of this segment to be a visual line",
       "bbox": {
         "x0": 82.94,
-        "y0": 317.62,
-        "x1": 539.99,
+        "y0": 318.49,
+        "x1": 539.42,
         "y1": 332.31,
-        "width": 457.05,
-        "height": 14.69
+        "width": 456.47,
+        "height": 13.82
       },
       "meta": {
         "mathpix_type": "text",
@@ -8697,10 +8697,10 @@
       "bbox": {
         "x0": 55.3,
         "y0": 346.13,
-        "x1": 113.18,
-        "y1": 359.09,
-        "width": 57.89,
-        "height": 12.96
+        "x1": 112.61,
+        "y1": 358.51,
+        "width": 57.31,
+        "height": 12.38
       },
       "meta": {
         "mathpix_type": "text",
@@ -8718,18 +8718,18 @@
       "role": "paragraph",
       "text": "\\[\n\\begin{aligned}\n& \\left|\\mathbf{p}_{1}^{\\prime \\prime} \\mathbf{p}\\right|_{\\mathrm{P}}<d_{1} \\\\\n& \\left|\\mathbf{p} \\mathbf{p}_{2}^{\\prime \\prime}\\right|_{\\mathrm{P}}>d_{2}\n\\end{aligned}\n\\]",
       "bbox": {
-        "x0": 82.37,
-        "y0": 372.33,
-        "x1": 148.03,
-        "y1": 419.56,
-        "width": 65.66,
-        "height": 47.23
+        "x0": 82.94,
+        "y0": 373.77,
+        "x1": 146.59,
+        "y1": 418.98,
+        "width": 63.65,
+        "height": 45.21
       },
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.9834344184491783,
-        "confidence_rate": 0.9998184477306856,
+        "confidence": 0.8692042827606201,
+        "confidence_rate": 0.9984774960198852,
         "parent_id": null,
         "children_ids": null
       }
@@ -8742,11 +8742,11 @@
       "text": "that is",
       "bbox": {
         "x0": 84.09,
-        "y0": 431.65,
-        "x1": 115.2,
+        "y0": 432.81,
+        "x1": 114.33,
         "y1": 442.6,
-        "width": 31.1,
-        "height": 10.94
+        "width": 30.24,
+        "height": 9.79
       },
       "meta": {
         "mathpix_type": "text",
@@ -8789,16 +8789,16 @@
       "bbox": {
         "x0": 84.09,
         "y0": 488.1,
-        "x1": 539.99,
-        "y1": 503.36,
-        "width": 455.9,
-        "height": 15.26
+        "x1": 539.42,
+        "y1": 503.07,
+        "width": 455.32,
+        "height": 14.97
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9882969781768338,
-        "confidence_rate": 0.9999140763836036,
+        "confidence": 0.9839155502883159,
+        "confidence_rate": 0.9998816478181093,
         "parent_id": null,
         "children_ids": null
       }
@@ -8811,17 +8811,17 @@
       "text": "for points near \\(\\mathbf{p}_{2 \\text {. The external segment is divided into one locally active part } \\mathbf{p}_{2} \\mathbf{p}^{*} \\text { and an inactive }}\\)",
       "bbox": {
         "x0": 55.3,
-        "y0": 516.32,
-        "x1": 539.42,
-        "y1": 530.71,
-        "width": 484.12,
-        "height": 14.4
+        "y0": 517.18,
+        "x1": 538.84,
+        "y1": 529.56,
+        "width": 483.55,
+        "height": 12.38
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9553424154489474,
-        "confidence_rate": 0.9996805723386735,
+        "confidence": 0.9586478569142256,
+        "confidence_rate": 0.999704718640873,
         "parent_id": null,
         "children_ids": null
       }
@@ -8835,16 +8835,16 @@
       "bbox": {
         "x0": 55.3,
         "y0": 544.54,
-        "x1": 226.94,
-        "y1": 559.22,
-        "width": 171.65,
-        "height": 14.69
+        "x1": 225.79,
+        "y1": 558.36,
+        "width": 170.49,
+        "height": 13.82
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9732050662860274,
-        "confidence_rate": 0.9995947021212825,
+        "confidence": 0.8789651393890381,
+        "confidence_rate": 0.9980763296229536,
         "parent_id": null,
         "children_ids": null
       }
@@ -8857,11 +8857,11 @@
       "text": "\\[\n\\left|\\mathbf{p}_{1} \\mathbf{p}^{*}\\right| /\\left|\\mathbf{p}_{2} \\mathbf{p}^{*}\\right|=r_{1} / r_{2}\n\\]",
       "bbox": {
         "x0": 84.09,
-        "y0": 573.62,
+        "y0": 575.06,
         "x1": 190.08,
         "y1": 588.88,
         "width": 105.98,
-        "height": 15.26
+        "height": 13.82
       },
       "meta": {
         "mathpix_type": "math",
@@ -8879,18 +8879,18 @@
       "role": "paragraph",
       "text": "If \\(r_{1} \\leq r_{2}\\), that is \\(1 \\geq r_{1} / r_{2}\\), no \\(\\mathbf{p}\\) can satisfy (*) and the complete external segment is locally",
       "bbox": {
-        "x0": 82.94,
+        "x0": 84.09,
         "y0": 603.86,
         "x1": 528.18,
         "y1": 617.68,
-        "width": 445.24,
+        "width": 444.09,
         "height": 13.82
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9819791136542335,
-        "confidence_rate": 0.9998691794926765,
+        "confidence": 0.9912221396807581,
+        "confidence_rate": 0.9999365731433884,
         "parent_id": null,
         "children_ids": null
       }
@@ -8925,12 +8925,12 @@
       "role": "paragraph",
       "text": "Now let us consider the external segment starting at \\(\\mathbf{p}_{1}\\), the hyperbolic point (Fig.16).",
       "bbox": {
-        "x0": 83.52,
-        "y0": 659.72,
-        "x1": 493.34,
-        "y1": 674.12,
-        "width": 409.82,
-        "height": 14.4
+        "x0": 84.09,
+        "y0": 660.58,
+        "x1": 492.76,
+        "y1": 672.97,
+        "width": 408.67,
+        "height": 12.38
       },
       "meta": {
         "mathpix_type": "text",
@@ -9004,8 +9004,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9585930645835106,
-        "confidence_rate": 0.9997181155553816,
+        "confidence": 0.9581247729056486,
+        "confidence_rate": 0.9997148588846198,
         "parent_id": null,
         "children_ids": null
       }
@@ -9050,8 +9050,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970715045928955,
-        "confidence_rate": 0.9999792002741904,
+        "confidence": 0.9975595474243164,
+        "confidence_rate": 0.9999826708215426,
         "parent_id": null,
         "children_ids": null
       }
@@ -9098,7 +9098,7 @@
         "mathpix_subtype": "",
         "confidence": 0.98486328125,
         "confidence_rate": 0.9997175871414805,
-        "parent_id": "d4dbbd69e4b94b0ca2ba696d992a232a",
+        "parent_id": "32a9f2ab05e045fc91a9204f8c4ce506",
         "children_ids": null
       }
     },
@@ -9119,8 +9119,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9863510131835938,
-        "confidence_rate": 0.99992147170872,
+        "confidence": 0.9858636856079102,
+        "confidence_rate": 0.9999186479730987,
         "parent_id": null,
         "children_ids": null
       }
@@ -9142,8 +9142,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9737340342560401,
-        "confidence_rate": 0.9997936873468226,
+        "confidence": 0.9742201720664525,
+        "confidence_rate": 0.9997975557540182,
         "parent_id": null,
         "children_ids": null
       }
@@ -9165,8 +9165,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.9814624786376953,
-        "confidence_rate": 0.9997437110039715,
+        "confidence": 0.9819502830505371,
+        "confidence_rate": 0.9997505160555096,
         "parent_id": null,
         "children_ids": null
       }
@@ -9396,7 +9396,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.9999905142231668,
+        "confidence_rate": 0.9999905142231666,
         "parent_id": null,
         "children_ids": null
       }
@@ -9464,8 +9464,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5617372989654541,
-        "confidence_rate": 0.9954691851879639,
+        "confidence": 0.5539286136627197,
+        "confidence_rate": 0.9953594663979711,
         "parent_id": null,
         "children_ids": null
       }
@@ -9533,8 +9533,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99267578125,
-        "confidence_rate": 0.9999387421052494,
+        "confidence": 0.9931640625,
+        "confidence_rate": 0.999942839887444,
         "parent_id": null,
         "children_ids": null
       }
@@ -9556,8 +9556,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.880119800567627,
-        "confidence_rate": 0.998870574177851,
+        "confidence": 0.8873975276947021,
+        "confidence_rate": 0.9989433707850295,
         "parent_id": null,
         "children_ids": null
       }
@@ -9671,8 +9671,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.6503740462940186,
-        "confidence_rate": 0.9930851854411122,
+        "confidence": 0.6536469566635787,
+        "confidence_rate": 0.9931655922503019,
         "parent_id": null,
         "children_ids": null
       }
@@ -9696,7 +9696,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "04a9a967e1e748e097ad473ee7f1596a",
+        "parent_id": "36c57dc470bc40e2a2a21cc86d6cc0af",
         "children_ids": null
       }
     },
@@ -10064,7 +10064,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ccb3258b06f242488d03f4b3f280009a",
+        "parent_id": "535c678d31c045069957b78dfa0e589f",
         "children_ids": null
       }
     },
@@ -10340,7 +10340,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "0a8012b6a6db4187ab2f2de7a07a3a21",
+        "parent_id": "74ce7466a7414d758913a96dd68fae9e",
         "children_ids": null
       }
     },
@@ -10407,8 +10407,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7484464254230261,
-        "confidence_rate": 0.9976277718499813,
+        "confidence": 0.7524848054163158,
+        "confidence_rate": 0.9976717762099586,
         "parent_id": null,
         "children_ids": null
       }
@@ -10593,7 +10593,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5fe022ff1a374ac293d2ee783951284c",
+        "parent_id": "f9c540bf0d9e4e4089241b1cf97b5671",
         "children_ids": null
       }
     },
@@ -10637,8 +10637,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9213653702368478,
-        "confidence_rate": 0.9994850470297867,
+        "confidence": 0.9179625372030769,
+        "confidence_rate": 0.9994617882945674,
         "parent_id": null,
         "children_ids": null
       }
@@ -10660,8 +10660,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5969748015410244,
-        "confidence_rate": 0.9942203580582817,
+        "confidence": 0.6015812128368421,
+        "confidence_rate": 0.994306229333116,
         "parent_id": null,
         "children_ids": null
       }
@@ -10763,20 +10763,20 @@
       "page": 26,
       "order": 6,
       "role": "paragraph",
-      "text": "\\[\n\\left.\\mathbf{n}=\\mathbf{t}_{1} \\times \\mathbf{t}_{2}=\\left(\\begin{array}{lll}\n0 & 1 & k_{1}\\left(\\mathbf{p}^{*}\\right) x\n\\end{array}\\right) \\times\\left(\\begin{array}{lll}\n1 & 0 & k_{2}\\left(\\mathbf{p}^{*}\\right) y\n\\end{array}\\right)\\right)=\\left(\\begin{array}{ll}\n-k_{1}\\left(\\mathbf{p}^{*}\\right) x & -k_{2}\\left(\\mathbf{p}^{*}\\right) y\n\\end{array}\\right.\n\\]",
+      "text": "\\(\\left.\\mathbf{n}=\\mathbf{t}_{1} \\times \\mathbf{t}_{2}=\\left(\\begin{array}{lll}0 & 1 & k_{1}\\left(\\mathbf{p}^{*}\\right) x\\end{array}\\right) \\times\\left(\\begin{array}{lll}1 & 0 & k_{2}\\left(\\mathbf{p}^{*}\\right) y\\end{array}\\right)\\right)=\\left(\\begin{array}{lll}-k_{1}\\left(\\mathbf{p}^{*}\\right) x & -k_{2}\\left(\\mathbf{p}^{*}\\right) y & 1\\end{array}\\right)\\)",
       "bbox": {
         "x0": 82.94,
         "y0": 398.54,
-        "x1": 441.5,
+        "x1": 444.67,
         "y1": 414.95,
-        "width": 358.56,
+        "width": 361.72,
         "height": 16.41
       },
       "meta": {
-        "mathpix_type": "math",
+        "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.35007196472491314,
-        "confidence_rate": 0.9942494741327638,
+        "confidence": 0.9661910381798106,
+        "confidence_rate": 0.9998170715088238,
         "parent_id": null,
         "children_ids": null
       }
@@ -10790,10 +10790,10 @@
       "bbox": {
         "x0": 82.94,
         "y0": 427.62,
-        "x1": 540.86,
-        "y1": 443.46,
-        "width": 457.91,
-        "height": 15.84
+        "x1": 539.99,
+        "y1": 444.04,
+        "width": 457.05,
+        "height": 16.41
       },
       "meta": {
         "mathpix_type": "text",
@@ -10832,20 +10832,20 @@
       "page": 26,
       "order": 9,
       "role": "paragraph",
-      "text": "\\[\n\\mathbf{n}(\\mathbf{p}) \\bullet \\mathbf{p} \\mathbf{p}^{\\prime}=\\left(-k_{1}\\left(\\mathbf{p}^{*}\\right) x-k_{2}\\left(\\mathbf{p}^{*}\\right) y \\quad 1\\right) \\bullet\\left(X^{\\prime}-x \\quad Y^{\\prime}-y \\quad-1 / 2\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}\\right)\\right)=0\n\\]",
+      "text": "\\[\n\\mathbf{n}(\\mathbf{p}) \\bullet \\mathbf{p} \\mathbf{p}^{\\prime}=\\left(\\begin{array}{llll}\n-k_{1}\\left(\\mathbf{p}^{*}\\right) x & -k_{2}\\left(\\mathbf{p}^{*}\\right) y & 1\n\\end{array}\\right) \\bullet\\left(X^{\\prime}-x \\quad Y^{\\prime}-y \\quad-1 / 2\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}\\right)\\right)=0\n\\]",
       "bbox": {
-        "x0": 81.5,
-        "y0": 480.9,
-        "x1": 496.79,
-        "y1": 500.48,
-        "width": 415.29,
-        "height": 19.58
+        "x0": 80.93,
+        "y0": 480.32,
+        "x1": 497.37,
+        "y1": 501.92,
+        "width": 416.44,
+        "height": 21.6
       },
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.8401397889210421,
-        "confidence_rate": 0.9990433864972134,
+        "confidence": 0.9416871938820536,
+        "confidence_rate": 0.9996950610947205,
         "parent_id": null,
         "children_ids": null
       }
@@ -10880,18 +10880,18 @@
       "role": "paragraph",
       "text": "\\[\nk_{1}\\left(\\mathbf{p}^{*}\\right) X^{\\prime} x+\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}-k_{2}\\left(\\mathbf{p}^{*}\\right) Y^{\\prime} y+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}-1 / 2\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}\\right)=0\\right.\n\\]",
       "bbox": {
-        "x0": 82.94,
-        "y0": 537.34,
-        "x1": 429.69,
-        "y1": 555.77,
-        "width": 346.75,
-        "height": 18.43
+        "x0": 81.5,
+        "y0": 535.32,
+        "x1": 430.84,
+        "y1": 557.21,
+        "width": 349.34,
+        "height": 21.89
       },
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999858262481066,
+        "confidence": 1,
+        "confidence_rate": 1,
         "parent_id": null,
         "children_ids": null
       }
@@ -10901,37 +10901,14 @@
       "page": 26,
       "order": 12,
       "role": "paragraph",
-      "text": "\\(k_{1}\\left(\\mathbf{p}^{*}\\right) X^{\\prime} x+\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}-k_{2}\\left(\\mathbf{p}^{*}\\right) Y^{\\prime} y+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}-1 / 2\\left(k_{1}\\left(\\mathbf{p}^{*}\\right) x^{2}+k_{2}\\left(\\mathbf{p}^{*}\\right) y^{2}\\right)=0\\right.\\)",
-      "bbox": {
-        "x0": 82.37,
-        "y0": 536.76,
-        "x1": 429.69,
-        "y1": 557.21,
-        "width": 347.32,
-        "height": 20.45
-      },
-      "meta": {
-        "mathpix_type": "math",
-        "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999858262481066,
-        "parent_id": null,
-        "children_ids": null
-      }
-    },
-    {
-      "id": "mathpix-p026-b0013",
-      "page": 26,
-      "order": 13,
-      "role": "paragraph",
       "text": "Neglecting second order terms, we obtain",
       "bbox": {
         "x0": 82.94,
         "y0": 567.0,
         "x1": 286.27,
-        "y1": 583.41,
+        "y1": 582.83,
         "width": 203.33,
-        "height": 16.41
+        "height": 15.84
       },
       "meta": {
         "mathpix_type": "text",
@@ -10943,18 +10920,18 @@
       }
     },
     {
-      "id": "mathpix-p026-b0014",
+      "id": "mathpix-p026-b0013",
       "page": 26,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "\\[\nx / y=-\\left(k_{2}\\left(\\mathbf{p}^{*}\\right) / k_{1}\\left(\\mathbf{p}^{*}\\right)\\right) Y^{\\prime} / X^{\\prime}\n\\]",
       "bbox": {
-        "x0": 82.37,
-        "y0": 594.64,
-        "x1": 217.73,
-        "y1": 611.05,
-        "width": 135.36,
-        "height": 16.41
+        "x0": 81.5,
+        "y0": 593.49,
+        "x1": 218.3,
+        "y1": 612.49,
+        "width": 136.8,
+        "height": 19.01
       },
       "meta": {
         "mathpix_type": "math",
@@ -10966,9 +10943,9 @@
       }
     },
     {
-      "id": "mathpix-p026-b0015",
+      "id": "mathpix-p026-b0014",
       "page": 26,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "This means that the curve formed by tangency points \\(\\mathbf{p}\\) can be obtained by intersecting the",
       "bbox": {
@@ -10989,9 +10966,9 @@
       }
     },
     {
-      "id": "mathpix-p026-b0016",
+      "id": "mathpix-p026-b0015",
       "page": 26,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "surface S with a plane passing through the axis Z and forming with the principal directions Y an",
       "bbox": {
@@ -11012,9 +10989,9 @@
       }
     },
     {
-      "id": "mathpix-p026-b0017",
+      "id": "mathpix-p026-b0016",
       "page": 26,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "angle whose tangent is given by the above formula. Observe that neglecting second order terms",
       "bbox": {
@@ -11035,9 +11012,9 @@
       }
     },
     {
-      "id": "mathpix-p026-b0018",
+      "id": "mathpix-p026-b0017",
       "page": 26,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "means assuming that the line, rotated by an infinitesimal angle about a point \\(\\mathbf{p}^{\\prime}\\) lying at a finite",
       "bbox": {
@@ -11058,32 +11035,32 @@
       }
     },
     {
-      "id": "mathpix-p026-b0019",
+      "id": "mathpix-p026-b0018",
       "page": 26,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "distance from \\(\\mathbf{p}\\), is parallel to L . Then the curve formed by the tangency point is arbitrarily near,",
       "bbox": {
         "x0": 53.86,
         "y0": 732.86,
-        "x1": 539.99,
+        "x1": 539.42,
         "y1": 749.28,
-        "width": 486.14,
+        "width": 485.56,
         "height": 16.41
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9245040416717529,
-        "confidence_rate": 0.9993349851490466,
+        "confidence": 0.7996928691864014,
+        "confidence_rate": 0.9981074918819852,
         "parent_id": null,
         "children_ids": null
       }
     },
     {
-      "id": "mathpix-p026-b0020",
+      "id": "mathpix-p026-b0019",
       "page": 26,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "approaching \\(\\mathbf{p}^{*}\\), to the contour generator for viewlines parallel to L .",
       "bbox": {
@@ -11191,7 +11168,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "5e76c17b24a2482f81d26b0731d04991",
+        "parent_id": "b50f9f3a309e47439d141a67b83d29e1",
         "children_ids": null
       }
     },
@@ -11672,8 +11649,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.978515625,
-        "confidence_rate": 0.998449879540129,
+        "confidence": 0.97900390625,
+        "confidence_rate": 0.9984854590465929,
         "parent_id": null,
         "children_ids": null
       }
@@ -11764,8 +11741,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.95263671875,
-        "confidence_rate": 0.9995050037190993,
+        "confidence": 0.9521484375,
+        "confidence_rate": 0.9994997748012857,
         "parent_id": null,
         "children_ids": null
       }
@@ -11787,8 +11764,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.91259765625,
-        "confidence_rate": 0.9977717501766901,
+        "confidence": 0.90869140625,
+        "confidence_rate": 0.9976673655733478,
         "parent_id": null,
         "children_ids": null
       }
@@ -11902,8 +11879,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.98291015625,
-        "confidence_rate": 0.9998310185875988,
+        "confidence": 0.982421875,
+        "confidence_rate": 0.9998261479087347,
         "parent_id": null,
         "children_ids": null
       }
@@ -11995,7 +11972,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999949125077527,
+        "confidence_rate": 0.9999949125077526,
         "parent_id": null,
         "children_ids": null
       }
@@ -12132,8 +12109,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.994140625,
-        "confidence_rate": 0.9999226791935,
+        "confidence": 0.99365234375,
+        "confidence_rate": 0.999916215506397,
         "parent_id": null,
         "children_ids": null
       }

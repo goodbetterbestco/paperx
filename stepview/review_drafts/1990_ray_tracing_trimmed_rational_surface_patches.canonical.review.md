@@ -2,7 +2,7 @@
 
 Tomoyuki Nishita*, Thomas W. Sederberg, Masanori Kakimoto
 
-Tomoyuki Nishita*, Thomas W. Sederberg \(^{\dagger}\) and Masanori Kakimoto \({ }^{\ddagger}\) *Fukuyama University \({ }^{\dagger}\) Brigham Young University \({ }^{\ddagger}\) Fujitsu Laboratories LTD Abstract
+Tomoyuki Nishita*, Thomas W. Sederberg \(^{\dagger}\) and Masanori Kakimoto \({ }^{\ddagger}\) *Fukuyama University \({ }^{\dagger}\) Brigham Young University \({ }^{\ddagger}\) Fujitsu Laboratories LTD
 
 \({ }^{\dagger}\) Brigham Young University
 

@@ -209,8 +209,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:36:14Z",
-    "updated_at": "2026-04-17T04:36:14Z",
+    "created_at": "2026-04-17T05:27:03Z",
+    "updated_at": "2026-04-17T05:27:03Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -236,22 +236,22 @@
         "path": "stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 262170,
-        "modified_at": "2026-04-17T03:59:37Z",
+        "modified_at": "2026-04-17T05:26:35Z",
         "sha256": "cf067c2c51a3d5709448770842a110c28d750af1021a2788f5242ff19afe44c5"
       },
       "external_math": {
         "path": "stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 31434,
-        "modified_at": "2026-04-17T03:59:37Z",
-        "sha256": "d4fbc847ec820ba6ad1698dd975d2cb35bfd4a731c402d28ed84a205a10bc2d0"
+        "size_bytes": 31435,
+        "modified_at": "2026-04-17T05:26:35Z",
+        "sha256": "ef47e307ded593e6912bba7aee9ac547649cf4fd779483de462fe925cf699629"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "5c48815cc52f9cd72e3f7f53863aadf0d48ae338bf185a745c39bee946fe879f",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -264,7 +264,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "023ca4dd09b39b5a1b68e480b7424b897992ee0619f12db851365ea445632c2f"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -25655,13 +25655,13 @@
     {
       "id": "mathpix-eq-p039-0004",
       "kind": "display",
-      "display_latex": "T \\mathscr{A}_{\\mathrm{e}} \\cdot(x, Z(x, y))+\\mathbb{R}\\left\\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)}\\right\\}=E_{n, p} .",
+      "display_latex": "T \\mathscr{A}_{\\mathrm{e}} \\cdot(x, Z(x, y))+\\mathbb{R}\\left\\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)}\\right\\}=E_{n . p} .",
       "semantic_expr": {
         "schema_version": "formula_semantic_expr/v1",
         "category": "complexity_or_class",
         "role": "assertion",
         "kind": "display",
-        "normalized_latex": "T \\mathscr{A}_{e} \\cdot(x, Z(x, y))+R \\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)} \\}=E_{n, p} .",
+        "normalized_latex": "T \\mathscr{A}_{e} \\cdot(x, Z(x, y))+R \\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)} \\}=E_{n . p} .",
         "symbols": [
           "T",
           "mathscr",
@@ -25673,7 +25673,7 @@
           "R",
           "binom",
           "P",
-          "E_{n, p}"
+          "E_{n . p}"
         ],
         "operators": [
           "eq",
@@ -25683,12 +25683,12 @@
         "notations": [
           {
             "kind": "notation",
-            "value": "T \\mathscr{A}_{e} \\cdot(x, Z(x, y))+R \\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)} \\}=E_{n, p} ."
+            "value": "T \\mathscr{A}_{e} \\cdot(x, Z(x, y))+R \\{\\binom{0}{2 y}\\binom{-2 y}{0}\\binom{0}{2 P(x, y)} \\}=E_{n . p} ."
           }
         ]
       },
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>T</mi><msub><mrow><mi mathvariant=\"script\">A</mi></mrow><mrow><mi>&#x00065;</mi></mrow></msub><mi>&#x000B7;</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>Z</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0002B;</mo><mi>&#x0211D;</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mi>y</mi></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mo>&#x02212;</mo><mn>2</mn><mi>y</mi></mrow><mrow><mn>0</mn></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mi>P</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow><mo>&#x0003D;</mo><msub><mi>E</mi><mrow><mi>n</mi><mo>&#x0002C;</mo><mi>p</mi></mrow></msub><mo>&#x0002E;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>T</mi><msub><mrow><mi mathvariant=\"script\">A</mi></mrow><mrow><mi>&#x00065;</mi></mrow></msub><mi>&#x000B7;</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>Z</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0002B;</mo><mi>&#x0211D;</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x0007B;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mi>y</mi></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mo>&#x02212;</mo><mn>2</mn><mi>y</mi></mrow><mrow><mn>0</mn></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00028;</mo><mfrac linethickness=\"0\"><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mi>P</mi><mo stretchy=\"false\">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></mfrac><mo minsize=\"2.047em\" maxsize=\"2.047em\">&#x00029;</mo><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x0007D;</mo></mrow><mo>&#x0003D;</mo><msub><mi>E</mi><mrow><mi>n</mi><mo>&#x0002E;</mo><mi>p</mi></mrow></msub><mo>&#x0002E;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",

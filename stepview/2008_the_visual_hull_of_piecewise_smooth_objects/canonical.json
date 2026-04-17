@@ -69,8 +69,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:12:50Z",
-    "updated_at": "2026-04-17T04:12:50Z",
+    "created_at": "2026-04-17T05:28:41Z",
+    "updated_at": "2026-04-17T05:28:41Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -95,23 +95,23 @@
       "external_layout": {
         "path": "stepview/2008_the_visual_hull_of_piecewise_smooth_objects/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 228842,
-        "modified_at": "2026-04-17T04:12:45Z",
-        "sha256": "348f7f6f1e16027be47641dd40fecd120ad79cdf7e186aac7e15f273264bf75d"
+        "size_bytes": 228843,
+        "modified_at": "2026-04-17T05:28:28Z",
+        "sha256": "6cade2b6fb6b1dea5b7d48c6361997bd3d2e8f215d866980cef4bd442c2346d0"
       },
       "external_math": {
         "path": "stepview/2008_the_visual_hull_of_piecewise_smooth_objects/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 4097,
-        "modified_at": "2026-04-17T04:12:45Z",
+        "modified_at": "2026-04-17T05:28:28Z",
         "sha256": "a981ce2f7b0306a63ccca08f95290ea301b8da3b5b06ab4a05a6add1a346387a"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -124,7 +124,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -639,7 +639,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled sur- faces that are possible boundaries of the visual hull of these objects is derived. The construction of the visual hull is simplified by a detailed analysis that allows pruning and trimming many surfaces not relevant for a particular object. An algorithm for computing the visual hull is presented, together with several examples constructed with a commercial CAD package. The theory developed includes as particular cases the previous approaches to the computation of the visual hull."
+            "text": "The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled sur- visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled sur- faces that are possible boundaries of the visual hull of these objects is derived. The construction of the visual hull is simplified by a detailed analysis that allows pruning and trimming many surfaces not relevant for a particular object. An algorithm for computing the visual hull is presented, together with several examples constructed with a commercial CAD package. The theory developed includes"
           }
         ]
       },
@@ -667,6 +667,18 @@
             "height": 16.13
           },
           "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 57.02,
+            "y0": 437.74,
+            "x1": 808.92,
+            "y1": 453.87,
+            "width": 751.9,
+            "height": 16.13
+          },
+          "engine": "mathpix"
         },
         {
           "page": 1,
@@ -701,18 +713,6 @@
             "y1": 501.1,
             "width": 751.9,
             "height": 15.26
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 57.02,
-            "y0": 501.97,
-            "x1": 515.19,
-            "y1": 516.94,
-            "width": 458.17,
-            "height": 14.98
           },
           "engine": "composed"
         }

@@ -99,8 +99,8 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-17T04:12:27Z",
-    "updated_at": "2026-04-17T04:12:27Z",
+    "created_at": "2026-04-17T05:28:14Z",
+    "updated_at": "2026-04-17T05:28:14Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
@@ -126,22 +126,22 @@
         "path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/layout.json",
         "exists": true,
         "size_bytes": 307792,
-        "modified_at": "2026-04-17T04:12:22Z",
+        "modified_at": "2026-04-17T05:28:05Z",
         "sha256": "49112cfd274d2594ef085afba6c7a298364eead8b4f6019114bb044c0bf87450"
       },
       "external_math": {
         "path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 2676,
-        "modified_at": "2026-04-17T04:12:22Z",
+        "modified_at": "2026-04-17T05:28:05Z",
         "sha256": "d2acea9e26f31726430839c329eb24c4dd892c6f49674d92b9fbf9534ed7ee9e"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
         "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
         "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
         "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
@@ -154,7 +154,7 @@
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       },
       "compatibility": {
-        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
       }
     }
   },
@@ -1266,7 +1266,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Modern CAD systems generate feature-based product shape models with parameterization and constraints. Until recently, standards for CAD data exchange among different CAD systems were restricted to the exchange of pure shape information. These standards ignored the construction history, parameters, constraints, features and other elements of 'design intent' present in the model to be transferred. This paper suggests an implementational foundation for CAD data exchange with preservation of design intent, based on the use of newly published parts of the International Standard ISO 10303 (STEP). Case studies are presented which employ a hypothetical STEP application protocol (AP) using Parts 55, 108 and 111 of ISO 10303. A prototype translator based on this AP has been implemented and tested. The paper reports on the experience gained in 'intelligent' data exchange. Key words: Data exchange, design intent, CAD models, STEP, construction history, parameterization, constraints."
+            "text": "Modern CAD systems generate feature-based product shape models with parameterization and constraints. Until recently, standards for CAD data exchange among different CAD systems were restricted to the exchange of pure shape information. These standards ignored the construction history, parameters, constraints, features and other elements of 'design intent' present in the model to be transferred. This paper suggests an implementational foundation for CAD data exchange with preservation of design intent, based on the use of newly published parts of the International Standard ISO 10303 (STEP). Case studies are presented which employ a hypothetical STEP application protocol (AP) using Parts 55, 108 and 111 of ISO 10303. A prototype translator based on this AP has been implemented and tested. The paper reports on the experience gained in 'intelligent' data exchange."
           }
         ]
       },
@@ -1280,18 +1280,6 @@
             "y1": 327.89,
             "width": 539.69,
             "height": 74.6
-          },
-          "engine": "composed"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 36.0,
-            "y0": 341.87,
-            "x1": 496.66,
-            "y1": 350.04,
-            "width": 460.66,
-            "height": 8.17
           },
           "engine": "composed"
         }

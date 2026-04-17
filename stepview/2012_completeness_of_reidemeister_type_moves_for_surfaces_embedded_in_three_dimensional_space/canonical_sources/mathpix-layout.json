@@ -193,7 +193,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
         "confidence_rate": 0.9999901309613475,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -216,7 +216,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -239,7 +239,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99755859375,
         "confidence_rate": 0.9999771554820448,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -262,7 +262,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99755859375,
         "confidence_rate": 0.9999757983983905,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -285,7 +285,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999958610212935,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -308,7 +308,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -331,7 +331,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999954355197808,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -354,7 +354,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "708d683ba6d5471ebcc10b6a53a8279e",
+        "parent_id": "e004b26b98d44904a910acef6f24a272",
         "children_ids": null
       }
     },
@@ -423,7 +423,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "31bb67fba1ff4c058457e5d8866dd428",
+        "parent_id": "78b649fc471e4ea9b68310da8b32cd6b",
         "children_ids": null
       }
     },
@@ -1065,8 +1065,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.33191176581758436,
-        "confidence_rate": 0.9904555263943942,
+        "confidence": 0.332169535658793,
+        "confidence_rate": 0.9904622125961083,
         "parent_id": null,
         "children_ids": null
       }
@@ -1755,8 +1755,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8940620580688119,
-        "confidence_rate": 0.9988579986005441,
+        "confidence": 0.8945029170718044,
+        "confidence_rate": 0.9988630232268194,
         "parent_id": null,
         "children_ids": null
       }
@@ -1778,8 +1778,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6253652572631836,
-        "confidence_rate": 0.9956629564375402,
+        "confidence": 0.629267692565918,
+        "confidence_rate": 0.9957203088275746,
         "parent_id": null,
         "children_ids": null
       }
@@ -1847,8 +1847,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6625273893844781,
-        "confidence_rate": 0.9963633245367963,
+        "confidence": 0.6639251264928842,
+        "confidence_rate": 0.9963819071712342,
         "parent_id": null,
         "children_ids": null
       }
@@ -1962,8 +1962,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9965863204565721,
-        "confidence_rate": 0.9999680423850331,
+        "confidence": 0.9960992303683724,
+        "confidence_rate": 0.9999634735878883,
         "parent_id": null,
         "children_ids": null
       }
@@ -1985,8 +1985,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9960954189300537,
-        "confidence_rate": 0.9999676680941942,
+        "confidence": 0.9965834617614746,
+        "confidence_rate": 0.9999717162022016,
         "parent_id": null,
         "children_ids": null
       }
@@ -2146,8 +2146,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970715045928955,
-        "confidence_rate": 0.9999744977874488,
+        "confidence": 0.9965834617614746,
+        "confidence_rate": 0.9999702405477526,
         "parent_id": null,
         "children_ids": null
       }
@@ -2366,19 +2366,19 @@
       "role": "paragraph",
       "text": "2. Stable maps and their singularities",
       "bbox": {
-        "x0": 128.13,
-        "y0": 330.5,
-        "x1": 329.4,
+        "x0": 128.71,
+        "y0": 331.36,
+        "x1": 328.82,
         "y1": 342.02,
-        "width": 201.27,
-        "height": 11.52
+        "width": 200.11,
+        "height": 10.65
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "fd2b5c9557744d83bad37793834f3324",
+        "parent_id": "9bc2cfd7d37445abadeccb8a54412c04",
         "children_ids": null
       }
     },
@@ -2447,7 +2447,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999847376009057,
-        "parent_id": "ced370fe05cf4009a2088eaf82eed995",
+        "parent_id": "776538144e984e6c998c6936eb47eb78",
         "children_ids": null
       }
     },
@@ -2574,17 +2574,17 @@
       "text": "(briefly, equivalent) if there exist two diffeomorphisms \\(\\phi: \\mathscr{X} \\rightarrow \\mathscr{X}\\) and \\(\\psi: \\mathscr{Y} \\rightarrow \\mathscr{Y}\\)",
       "bbox": {
         "x0": 48.95,
-        "y0": 485.96,
-        "x1": 409.73,
+        "y0": 486.54,
+        "x1": 409.15,
         "y1": 498.92,
-        "width": 360.78,
-        "height": 12.96
+        "width": 360.2,
+        "height": 12.38
       },
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99951171875,
-        "confidence_rate": 0.9999946329759618,
+        "confidence": 0.9970724578015506,
+        "confidence_rate": 0.9999677825428174,
         "parent_id": null,
         "children_ids": null
       }
@@ -2629,8 +2629,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9926822170382366,
-        "confidence_rate": 0.9999201696074966,
+        "confidence": 0.9926791191101074,
+        "confidence_rate": 0.9999201356887912,
         "parent_id": null,
         "children_ids": null
       }
@@ -2815,7 +2815,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9873627450848815,
         "confidence_rate": 0.9997600705954701,
-        "parent_id": "577de1795b154a999d0d3d0e361b9f29",
+        "parent_id": "e02114521b3a4a09962c9b4456e4d55e",
         "children_ids": null
       }
     },
@@ -4287,7 +4287,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8a8d862eae964d649b94b6bd6a0e2be6",
+        "parent_id": "d179fdceb91e44b984fdf46b5432f4f4",
         "children_ids": null
       }
     },
@@ -4931,7 +4931,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
         "confidence_rate": 0.9999767374218201,
-        "parent_id": "d7a770d654f8452b87e1754a688d98e7",
+        "parent_id": "36eec2714afe4841831b8c6757561ffc",
         "children_ids": null
       }
     },
@@ -5115,7 +5115,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9936552047729492,
         "confidence_rate": 0.9999077577475188,
-        "parent_id": "b06accaecb4b402db920b75e96942a1b",
+        "parent_id": "f644a0820dc840b5a9ba7bf50229890b",
         "children_ids": null
       }
     },
@@ -5207,7 +5207,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9093990019278442,
         "confidence_rate": 0.9992281733359578,
-        "parent_id": "c65ec1a39f2a4395a1fd86cbd68e28b5",
+        "parent_id": "dfb3847d19684a698cfa3dd2a5593fe3",
         "children_ids": null
       }
     },
@@ -5230,7 +5230,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9432895493261189,
         "confidence_rate": 0.999398304882574,
-        "parent_id": "c65ec1a39f2a4395a1fd86cbd68e28b5",
+        "parent_id": "dfb3847d19684a698cfa3dd2a5593fe3",
         "children_ids": null
       }
     },
@@ -5253,7 +5253,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c65ec1a39f2a4395a1fd86cbd68e28b5",
+        "parent_id": "dfb3847d19684a698cfa3dd2a5593fe3",
         "children_ids": null
       }
     },
@@ -5920,7 +5920,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c44b320d0ebb4e23a5e71a51afb6a1ce",
+        "parent_id": "1933b62def224bb1bfa225d041b8b459",
         "children_ids": null
       }
     },
@@ -6286,8 +6286,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9111328125,
-        "confidence_rate": 0.9981024840995908,
+        "confidence": 0.90966796875,
+        "confidence_rate": 0.998069709991121,
         "parent_id": null,
         "children_ids": null
       }
@@ -6608,8 +6608,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.96484375,
-        "confidence_rate": 0.9996067904276871,
+        "confidence": 0.9638671875,
+        "confidence_rate": 0.9995956667519158,
         "parent_id": null,
         "children_ids": null
       }
@@ -6999,8 +6999,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9755859375,
-        "confidence_rate": 0.9997254040755763,
+        "confidence": 0.97607421875,
+        "confidence_rate": 0.999730962289815,
         "parent_id": null,
         "children_ids": null
       }
@@ -7114,8 +7114,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.95849609375,
-        "confidence_rate": 0.9995538912005243,
+        "confidence": 0.9580078125,
+        "confidence_rate": 0.999548529879802,
         "parent_id": null,
         "children_ids": null
       }
@@ -7599,7 +7599,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "0dac7b753d0b48eb886af2c1be121ea3",
+        "parent_id": "a9ad642878b044c29772c175022a9218",
         "children_ids": null
       }
     },
@@ -8151,7 +8151,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9756488800048828,
         "confidence_rate": 0.9991785871647302,
-        "parent_id": "747c5867ea9b4968a0bd7c4e49d461b6",
+        "parent_id": "168dfb529e2b48d4b57d1199a642f5c5",
         "children_ids": null
       }
     },
@@ -8496,7 +8496,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99853515625,
         "confidence_rate": 0.9999624130735217,
-        "parent_id": "82d6c037ae264d22a74d9b3dffc4aca7",
+        "parent_id": "d222cab55e8847bd9b0de85c9c639e59",
         "children_ids": null
       }
     },
@@ -8655,8 +8655,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.23856273980345577,
-        "confidence_rate": 0.9877214954861553,
+        "confidence": 0.23528864106629044,
+        "confidence_rate": 0.9876038332288147,
         "parent_id": null,
         "children_ids": null
       }
@@ -8701,8 +8701,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8333207429386675,
-        "confidence_rate": 0.9986502697405605,
+        "confidence": 0.835726403282024,
+        "confidence_rate": 0.9986715943110642,
         "parent_id": null,
         "children_ids": null
       }
@@ -8816,8 +8816,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5038848090916872,
-        "confidence_rate": 0.9944877678447522,
+        "confidence": 0.5036380486562848,
+        "confidence_rate": 0.9944838393377899,
         "parent_id": null,
         "children_ids": null
       }
@@ -8840,7 +8840,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9936552047729492,
-        "confidence_rate": 0.999934383503505,
+        "confidence_rate": 0.9999343835035049,
         "parent_id": null,
         "children_ids": null
       }
@@ -8862,8 +8862,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9960954189300537,
-        "confidence_rate": 0.999963776361206,
+        "confidence": 0.9956073760986328,
+        "confidence_rate": 0.999959238795397,
         "parent_id": null,
         "children_ids": null
       }
@@ -8931,8 +8931,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9664921760559082,
-        "confidence_rate": 0.9997418357884689,
+        "confidence": 0.9669771194458008,
+        "confidence_rate": 0.9997456350442182,
         "parent_id": null,
         "children_ids": null
       }
@@ -9000,8 +9000,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.81298828125,
-        "confidence_rate": 0.9984561289391759,
+        "confidence": 0.81396484375,
+        "confidence_rate": 0.9984650739564785,
         "parent_id": null,
         "children_ids": null
       }
@@ -9092,8 +9092,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.845703125,
-        "confidence_rate": 0.9962827727907222,
+        "confidence": 0.84814453125,
+        "confidence_rate": 0.9963465962027903,
         "parent_id": null,
         "children_ids": null
       }
@@ -9116,7 +9116,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9970715045928955,
-        "confidence_rate": 0.9999614113782458,
+        "confidence_rate": 0.9999614113782457,
         "parent_id": null,
         "children_ids": null
       }
@@ -9138,8 +9138,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4260523816238216,
-        "confidence_rate": 0.9927342762446366,
+        "confidence": 0.41695623108863994,
+        "confidence_rate": 0.9925511799393643,
         "parent_id": null,
         "children_ids": null
       }
@@ -9185,7 +9185,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.9999905142231668,
+        "confidence_rate": 0.9999905142231666,
         "parent_id": null,
         "children_ids": null
       }
@@ -9230,8 +9230,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9931640625,
-        "confidence_rate": 0.9999270302203931,
+        "confidence": 0.99365234375,
+        "confidence_rate": 0.9999322588021694,
         "parent_id": null,
         "children_ids": null
       }
@@ -9253,8 +9253,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.737687349319458,
-        "confidence_rate": 0.9968358997863063,
+        "confidence": 0.7391500473022461,
+        "confidence_rate": 0.9968564685901629,
         "parent_id": null,
         "children_ids": null
       }
@@ -9299,8 +9299,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.66552734375,
-        "confidence_rate": 0.9953307561839518,
+        "confidence": 0.6689453125,
+        "confidence_rate": 0.9953893632945946,
         "parent_id": null,
         "children_ids": null
       }
@@ -9323,7 +9323,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
-        "confidence_rate": 0.999911182158372,
+        "confidence_rate": 0.9999111821583719,
         "parent_id": null,
         "children_ids": null
       }
@@ -9968,7 +9968,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9941432476043701,
         "confidence_rate": 0.9997974698075021,
-        "parent_id": "b8ae1f50f2484cd393cc82ee9494c52a",
+        "parent_id": "4dda2551cb644c20b5ba9794b0dab420",
         "children_ids": null
       }
     },
@@ -10083,7 +10083,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "d9176c1ac8314977b69e0a4fab598152",
+        "parent_id": "a473b3b3d3a348bb8c3931b22ecf4a0b",
         "children_ids": null
       }
     },
@@ -10449,8 +10449,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6154165064217523,
-        "confidence_rate": 0.9958944171949294,
+        "confidence": 0.6076716404641047,
+        "confidence_rate": 0.9957875363364063,
         "parent_id": null,
         "children_ids": null
       }
@@ -10702,8 +10702,8 @@
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.8320760726928711,
-        "confidence_rate": 0.9980668035747677,
+        "confidence": 0.8287131786346436,
+        "confidence_rate": 0.9980242578429211,
         "parent_id": null,
         "children_ids": null
       }
@@ -10725,8 +10725,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9839697617497678,
-        "confidence_rate": 0.999875699169595,
+        "confidence": 0.9844520998682726,
+        "confidence_rate": 0.9998794685232747,
         "parent_id": null,
         "children_ids": null
       }
@@ -10794,8 +10794,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9980475902557373,
-        "confidence_rate": 0.9999817355109043,
+        "confidence": 0.9985356330871582,
+        "confidence_rate": 0.9999863043914873,
         "parent_id": null,
         "children_ids": null
       }
@@ -10978,8 +10978,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9907309989212081,
-        "confidence_rate": 0.9999315300972941,
+        "confidence": 0.9917030334472656,
+        "confidence_rate": 0.9999387402738129,
         "parent_id": null,
         "children_ids": null
       }
@@ -11001,8 +11001,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9946362947812304,
-        "confidence_rate": 0.9999482884377605,
+        "confidence": 0.9941489668563008,
+        "confidence_rate": 0.9999435764235839,
         "parent_id": null,
         "children_ids": null
       }
@@ -11162,8 +11162,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5927734375,
-        "confidence_rate": 0.9956151624811266,
+        "confidence": 0.5966796875,
+        "confidence_rate": 0.9956701166679723,
         "parent_id": null,
         "children_ids": null
       }
@@ -11254,8 +11254,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9327449798583984,
-        "confidence_rate": 0.9992435096638309,
+        "confidence": 0.9371309280395508,
+        "confidence_rate": 0.9992944634058288,
         "parent_id": null,
         "children_ids": null
       }
@@ -11323,8 +11323,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.90283203125,
-        "confidence_rate": 0.9987230815204277,
+        "confidence": 0.9013671875,
+        "confidence_rate": 0.998702809940621,
         "parent_id": null,
         "children_ids": null
       }
@@ -11415,8 +11415,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9892675853334367,
-        "confidence_rate": 0.9998651288153793,
+        "confidence": 0.9897553898626938,
+        "confidence_rate": 0.9998712901921956,
         "parent_id": null,
         "children_ids": null
       }
@@ -11507,8 +11507,8 @@
       "meta": {
         "mathpix_type": "math",
         "mathpix_subtype": "",
-        "confidence": 0.9482421875,
-        "confidence_rate": 0.9987648253799709,
+        "confidence": 0.94873046875,
+        "confidence_rate": 0.9987767827691675,
         "parent_id": null,
         "children_ids": null
       }
@@ -11599,8 +11599,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9776115417480469,
-        "confidence_rate": 0.9997960308547387,
+        "confidence": 0.978090763092041,
+        "confidence_rate": 0.9998004450627823,
         "parent_id": null,
         "children_ids": null
       }
@@ -11622,8 +11622,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.947265625,
-        "confidence_rate": 0.9995409889871074,
+        "confidence": 0.94677734375,
+        "confidence_rate": 0.99953662153775,
         "parent_id": null,
         "children_ids": null
       }
@@ -11691,8 +11691,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8947102399542928,
-        "confidence_rate": 0.9987071693640908,
+        "confidence": 0.8942681894404814,
+        "confidence_rate": 0.998701430376726,
         "parent_id": null,
         "children_ids": null
       }
@@ -11898,8 +11898,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9970703125,
-        "confidence_rate": 0.9999738040267385,
+        "confidence": 0.99755859375,
+        "confidence_rate": 0.9999781753154675,
         "parent_id": null,
         "children_ids": null
       }
@@ -12220,8 +12220,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.998046875,
-        "confidence_rate": 0.9999794208976915,
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999845694066055,
         "parent_id": null,
         "children_ids": null
       }
@@ -12473,8 +12473,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9897634881800741,
-        "confidence_rate": 0.9999408680401848,
+        "confidence": 0.9892761600224276,
+        "confidence_rate": 0.9999380378118758,
         "parent_id": null,
         "children_ids": null
       }
@@ -12521,7 +12521,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "145cc7f87cd742158e44392cce1d6adc",
+        "parent_id": "ad0f60811973461aaca36290622989cb",
         "children_ids": null
       }
     },
@@ -12542,8 +12542,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9629926029592752,
-        "confidence_rate": 0.9997031184996087,
+        "confidence": 0.9639663062989712,
+        "confidence_rate": 0.999711073739718,
         "parent_id": null,
         "children_ids": null
       }
@@ -12588,8 +12588,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5563921518154746,
-        "confidence_rate": 0.995908519411072,
+        "confidence": 0.5491285467003901,
+        "confidence_rate": 0.9958170059357557,
         "parent_id": null,
         "children_ids": null
       }
@@ -12657,8 +12657,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9761600494384766,
-        "confidence_rate": 0.9997258475760464,
+        "confidence": 0.9756739139556885,
+        "confidence_rate": 0.9997201885528452,
         "parent_id": null,
         "children_ids": null
       }
@@ -12795,8 +12795,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9810455626704971,
-        "confidence_rate": 0.9998142272057924,
+        "confidence": 0.9805601368601703,
+        "confidence_rate": 0.9998094229934086,
         "parent_id": null,
         "children_ids": null
       }
@@ -13163,8 +13163,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9921875,
-        "confidence_rate": 0.9999147517049183,
+        "confidence": 0.99267578125,
+        "confidence_rate": 0.999920099142993,
         "parent_id": null,
         "children_ids": null
       }
@@ -13232,8 +13232,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.97607421875,
-        "confidence_rate": 0.9997082756723612,
+        "confidence": 0.9755859375,
+        "confidence_rate": 0.9997022488312478,
         "parent_id": null,
         "children_ids": null
       }
@@ -13531,8 +13531,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5656416416168213,
-        "confidence_rate": 0.9929901836498825,
+        "confidence": 0.576866626739502,
+        "confidence_rate": 0.9932311092830985,
         "parent_id": null,
         "children_ids": null
       }
@@ -13554,8 +13554,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.714864612129781,
-        "confidence_rate": 0.9962773672649974,
+        "confidence": 0.7062063993312502,
+        "confidence_rate": 0.9961424845809845,
         "parent_id": null,
         "children_ids": null
       }
@@ -13577,8 +13577,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.29503420824068627,
-        "confidence_rate": 0.9870981646389222,
+        "confidence": 0.2934109504366944,
+        "confidence_rate": 0.9870402307945296,
         "parent_id": null,
         "children_ids": null
       }
@@ -13647,7 +13647,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.8350412845611572,
-        "confidence_rate": 0.9973129581774441,
+        "confidence_rate": 0.9973129581774443,
         "parent_id": null,
         "children_ids": null
       }
@@ -13671,7 +13671,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999953485775026,
-        "parent_id": "1915bda19a8648be8bd015dc743236d3",
+        "parent_id": "7871e93ac3494aa6aea88376816a0bad",
         "children_ids": null
       }
     },
@@ -13694,7 +13694,7 @@
         "mathpix_subtype": "",
         "confidence": 0.982946858741343,
         "confidence_rate": 0.9998554707766172,
-        "parent_id": "1915bda19a8648be8bd015dc743236d3",
+        "parent_id": "7871e93ac3494aa6aea88376816a0bad",
         "children_ids": null
       }
     },
@@ -13717,7 +13717,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.999994804263518,
-        "parent_id": "1915bda19a8648be8bd015dc743236d3",
+        "parent_id": "7871e93ac3494aa6aea88376816a0bad",
         "children_ids": null
       }
     },
@@ -13740,7 +13740,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "ff8079862e9949fea56c10e89f70b64e",
+        "parent_id": "323d720e612f44f697c79c72eb4c89f6",
         "children_ids": null
       }
     },
@@ -15003,8 +15003,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1,
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999945123690109,
         "parent_id": null,
         "children_ids": null
       }
@@ -15164,8 +15164,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9892578125,
-        "confidence_rate": 0.9998138052441409,
+        "confidence": 0.98974609375,
+        "confidence_rate": 0.999822311655558,
         "parent_id": null,
         "children_ids": null
       }

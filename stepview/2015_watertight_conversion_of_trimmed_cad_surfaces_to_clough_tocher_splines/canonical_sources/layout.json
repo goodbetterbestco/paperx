@@ -109,7 +109,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "80c4ed8c3ca442099c2f2a8a90ad5ca3",
+        "parent_id": "250576b8cc77424091dd01949a4bb329",
         "children_ids": null
       }
     },
@@ -132,7 +132,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99755859375,
         "confidence_rate": 0.9999538804721838,
-        "parent_id": "1dde6be87d9445629d1fff81254cd7ff",
+        "parent_id": "8500b3a7befd4e57a256f48ed8603afe",
         "children_ids": null
       }
     },
@@ -155,7 +155,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "1dde6be87d9445629d1fff81254cd7ff",
+        "parent_id": "8500b3a7befd4e57a256f48ed8603afe",
         "children_ids": null
       }
     },
@@ -178,7 +178,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999651148586358,
-        "parent_id": "9ab984ab8c1d4b96a2bc5e66687ca367",
+        "parent_id": "a9bf7a60322c407982b2013898a84544",
         "children_ids": null
       }
     },
@@ -201,7 +201,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9748484102596657,
         "confidence_rate": 0.9996198738076365,
-        "parent_id": "221afee7ddb043e2bc4471cafe0b2b9a",
+        "parent_id": "cd83d36b13824887a282e0736a1cc2c0",
         "children_ids": null
       }
     },
@@ -222,9 +222,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9083428456763672,
-        "confidence_rate": 0.9991992092350052,
-        "parent_id": "221afee7ddb043e2bc4471cafe0b2b9a",
+        "confidence": 0.9078875359792864,
+        "confidence_rate": 0.999195034432871,
+        "parent_id": "cd83d36b13824887a282e0736a1cc2c0",
         "children_ids": null
       }
     },
@@ -245,9 +245,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.966796875,
-        "confidence_rate": 0.9997764033956806,
-        "parent_id": "221afee7ddb043e2bc4471cafe0b2b9a",
+        "confidence": 0.9677734375,
+        "confidence_rate": 0.9997830879574986,
+        "parent_id": "cd83d36b13824887a282e0736a1cc2c0",
         "children_ids": null
       }
     },
@@ -270,7 +270,7 @@
         "mathpix_subtype": "",
         "confidence": 0.9990234375,
         "confidence_rate": 0.9999425287310763,
-        "parent_id": "600f3ada273543e7be33920023207e60",
+        "parent_id": "bcdf9f0614c444c19dfcb08eb3555615",
         "children_ids": null
       }
     },
@@ -293,7 +293,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "8f970d2977ca4e1bbaee9c382c7bd2eb",
+        "parent_id": "7fd94381abf841a5937fe67fc57e6d0a",
         "children_ids": null
       }
     },
@@ -315,8 +315,8 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999831587453291,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "confidence_rate": 0.999983158745329,
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -339,7 +339,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -362,7 +362,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -385,7 +385,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "31410528794a4fb3a061ef7659214528",
+        "parent_id": "cac9fe9195754bd09acad263fc5149ff",
         "children_ids": null
       }
     },
@@ -408,7 +408,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -431,7 +431,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -454,7 +454,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -477,7 +477,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999812155418875,
-        "parent_id": "3059a9f050a34a9f8004783bc9fe7d2a",
+        "parent_id": "cec6b432ed6e4a2bbdc6f5a746533236",
         "children_ids": null
       }
     },
@@ -500,7 +500,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -522,8 +522,8 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.998046875,
-        "confidence_rate": 0.999977783941828,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "confidence_rate": 0.9999777839418279,
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -546,7 +546,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999947483955305,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -569,7 +569,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -592,7 +592,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -615,7 +615,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -638,7 +638,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -661,7 +661,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -684,7 +684,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -707,7 +707,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -730,7 +730,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -753,7 +753,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -776,7 +776,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -799,7 +799,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -822,7 +822,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -845,7 +845,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "640606313b784661a3faa8ca01fcae14",
+        "parent_id": "c81c6a637e43436abac84a1ae86f6ffe",
         "children_ids": null
       }
     },
@@ -868,7 +868,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99853515625,
         "confidence_rate": 0.9999845694066055,
-        "parent_id": "9efa53bf6a9f4d80ba32bbfc113fb8ad",
+        "parent_id": "8223a30c5bfb42538b372b7bf4e812be",
         "children_ids": null
       }
     },
@@ -891,7 +891,7 @@
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
         "confidence_rate": 0.9999924861744118,
-        "parent_id": "9efa53bf6a9f4d80ba32bbfc113fb8ad",
+        "parent_id": "8223a30c5bfb42538b372b7bf4e812be",
         "children_ids": null
       }
     },
@@ -914,7 +914,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "9b15bcae7b944224b74c86ae5b0f8089",
+        "parent_id": "8a1d084915a642c3b9aada0861e621e9",
         "children_ids": null
       }
     },
@@ -1004,8 +1004,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7490234375,
-        "confidence_rate": 0.9977271144506904,
+        "confidence": 0.74609375,
+        "confidence_rate": 0.9976963266994665,
         "parent_id": null,
         "children_ids": null
       }
@@ -1188,9 +1188,9 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4206336620145521,
-        "confidence_rate": 0.9877048819192287,
-        "parent_id": "c697101c38fa4bccad6c71c6ba144502",
+        "confidence": 0.41908110915528596,
+        "confidence_rate": 0.9876527068802107,
+        "parent_id": "c31de052a9bc4f679b7b278e0970e388",
         "children_ids": null
       }
     },
@@ -1213,7 +1213,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c697101c38fa4bccad6c71c6ba144502",
+        "parent_id": "c31de052a9bc4f679b7b278e0970e388",
         "children_ids": null
       }
     },
@@ -1236,7 +1236,7 @@
         "mathpix_subtype": "",
         "confidence": 1,
         "confidence_rate": 1,
-        "parent_id": "c697101c38fa4bccad6c71c6ba144502",
+        "parent_id": "c31de052a9bc4f679b7b278e0970e388",
         "children_ids": null
       }
     },

@@ -28,15 +28,15 @@ The rim is not a plane curve, it is also not everywhere perpendicular to the vis
 
 Even in the absence of a metric or a coordinate system, it makes sense to speak of the convexities and concavities (and thus inflections) of the contour. Marr (1982) notes these features as the only ones that are straightforwardly available, rightly I think. However, he adds (\(p_{221}\)): "In general, of course, points of inflexion in a contour need have no significance for the surface". This is just not true. Marr illustrates his contention with a snake whose body varies in distance from the vantage point, then notes that convexities belong to near, concavities to far parts (see figure 3, upper part). Whereas this is a valid observation, the conclusion is wrong: the convex parts of the contour bound synclastic surface patches, the concave parts anticlastic surface patches (to be defined below). The confusion probably arises because the rim (called "contour generator" by Marr) moves over the body when you move the vantage point. Thus the simile with a bent wire that can be viewed from different positions is wrong because the space curve itself changes when the observer moves.
 
-Consider the facts about the curvature of the contour. first, consider the case of a distant vantage point. Suppose one views a rim point R from a direction \(\boldsymbol{\xi}\). The following are constructed: the normal plane \(\boldsymbol{\nu}\), defined by the normal to the surface at R and the visual direction \(\xi\), and the plane of projection \(\pi\) perpendicular to \(\xi\). Then two curves defined through these entities may be regarded: the curve \(\lambda\) in which the normal plane cuts the surface, and the curve \(\mu\) along which the cylinder of tangent rays parallel to \(\boldsymbol{\xi}\) cuts the plane of projection \(\pi\) (figure 1).
+Consider the facts about the curvature of the contour. first, consider the case of a distant vantage point. Suppose one views a rim point R from a direction \(\xi\). The following are constructed: the normal plane \(\boldsymbol{\nu}\), defined by the normal to the surface at R and the visual direction \(\xi\), and the plane of projection \(\pi\) perpendicular to \(\xi\). Then two curves defined through these entities may be regarded: the curve \(\lambda\) in which the normal plane cuts the surface, and the curve \(\mu\) along which the cylinder of tangent rays parallel to \(\xi\) cuts the plane of projection \(\pi\) (figure 1).
 
 The radii of curvature of these curves at R or its projection may be measured. The curvature
 
 $$
-K_{\mathrm{r}}=1 / r_{\mathrm{r}},
+\boldsymbol{K}_{\mathbf{r}}=1 / r_{\mathbf{r}},
 $$
 
-where \(r_{\mathrm{r}}\) is the radius of curvature of \(\lambda\), is the radial curvature of the surface, the curvature along the line of sight;
+where \(r_{\mathbf{r}}\) is the radius of curvature of \(\lambda\), is the radial curvature of the surface, the curvature along the line of sight;
 
 $$
 K_{\mathrm{t}}=1 / r_{\mathrm{t}},
@@ -48,13 +48,13 @@ $$
 K_{\mathrm{r}} K_{\mathrm{t}}=K,
 $$
 
-where \(K\) denotes the Gaussian curvature of the surface. Before entering into a discussion on the definition and importance of \(K, I\) note another important relation (Appendix II). If the projection is from a finite distance \(d\), the apparent curvature of the contour can be found from the simple relation:
+where \(K\) denotes the Gaussian curvature of the surface. Before entering into a discussion on the definition and importance of \(K\), I note another important relation (Appendix II). If the projection is from a finite distance \(d\), the apparent curvature of the contour can be found from the simple relation:
 
 $$
 K_{\mathrm{app}}=d K_{\mathrm{t}}=\frac{d K}{K_{\mathrm{r}}} .
 $$
 
-The meaning of \(K_{\text {app }}\) is that \(\arctan \left(1 / K_{\text {app }}\right)\), expressed in radians, denotes the radius of the apparent curvature of the contour in the optic array. (The radius of apparent curvature of the contour is \(\arctan \left(1 / K_{\text {app }}\right) \times 180 / \pi\) deg visual angle.) Thus, the horizon has a radius of \(90 \mathrm{deg}\left(K_{\mathrm{app}}=0\right)\), whereas the apparent curvature of the moon's disc is 230, which is merely the reciprocal of its radius (0.25 deg) in radians. It may be noted that the apparent curvature of the contour only vanishes at places The implications of the above rule are the following. Whenever \(K>0\) the surface is either a concavity (like the inside of an eggshell) or a convexity (like the outside of an eggshell). Whenever \(K<0\) the surface is saddle-shaped. For concavities and convexities the surface is curved in the same sense for all directions, hence the term synclastic. For a saddle shape, the surface is curved one way for some directions and the opposite way for other directions: hence the term anticlastic. For a saddle shape there exist two directions for which a cut through the surface does reveal zero curvature: these are the asymptotic directions. When the Gaussian curvature vanishes mathematical description of solid shape and are also recognized in artistic practice (Koenderink and van Doom 1980, 1982, 1984). In the literature on differential geometry the reader will often find the terms elliptic, hyperbolic, and parabolic for synclastic, anticlastic, and monoclastic regions, respectively. I prefer the latter, more descriptive, terms which also have been in continued use in the mathematical literature on the study of surfaces in three-dimensional space.
+The meaning of \(K_{\mathrm{app}}\) is that \(\arctan \left(1 / K_{\mathrm{app}}\right)\), expressed in radians, denotes the radius of the apparent curvature of the contour in the optic array. (The radius of apparent curvature of the contour is \(\arctan \left(1 / K_{\text {app }}\right) \times 180 / \pi\) deg visual angle.) Thus, the horizon has a radius of \(90 \operatorname{deg}\left(K_{\mathrm{app}}=0\right)\), whereas the apparent curvature of the moon's disc is 230, which is merely the reciprocal of its radius (0.25 deg) in radians. It may be noted that the apparent curvature of the contour only vanishes at places The implications of the above rule are the following. Whenever \(K>0\) the surface is either a concavity (like the inside of an eggshell) or a convexity (like the outside of an eggshell). Whenever \(K<0\) the surface is saddle-shaped. For concavities and convexities the surface is curved in the same sense for all directions, hence the term synclastic. For a saddle shape, the surface is curved one way for some directions and the opposite way for other directions: hence the term anticlastic. For a saddle shape there exist two directions for which a cut through the surface does reveal zero curvature: these are the asymptotic directions. When the Gaussian curvature vanishes mathematical description of solid shape and are also recognized in artistic practice (Koenderink and van Doom 1980, 1982, 1984). In the literature on differential geometry the reader will often find the terms elliptic, hyperbolic, and parabolic for synclastic, anticlastic, and monoclastic regions, respectively. I prefer the latter, more descriptive, terms which also have been in continued use in the mathematical literature on the study of surfaces in three-dimensional space.
 
 ![Figure 1](/Users/evanthayer/Projects/paperx/docs/1984_occluding_contour_tell_us_about_solid_shape/figures/figure-1-p003.png)
 
@@ -131,13 +131,13 @@ The theorem about the relation between the radial and the projected curvatures i
 Consider first the case of a distant (effectively infinitely distant) vantage point, that is, parallel projection. Let the direction of sight be the \(x\) direction. Consider a point P on the rim, and the \(z\) direction in the direction of the normal. Then the \(x-y\) plane is the tangent plane at P. Let P be the origin of the Cartesian coordinate system, then one has as description of the surface near P :
 
 $$
-\begin{equation*} z(x, y)=\frac{1}{2}\left(a x^{2}+2 b x y+c y^{2}\right)+(\text { third-order and higher terms }) . \tag{A1} \end{equation*}
+z(x, y)=\frac{1}{2}\left(a x^{2}+2 b x y+c y^{2}\right)+(\text { third-order and higher terms }) .
 $$
 
 The locus of the rim is defined through the condition
 
 $$
-\begin{equation*} \frac{\partial z}{\partial x}=a x+b y+(\text { second-order and higher terms })=0, \tag{A2} \end{equation*}
+\frac{\partial z}{\partial x}=a x+b y+(\text { second-order and higher terms })=0,
 $$
 
 because the \(x\) direction grazes the surface at the rim. Note that the rim runs in the direction that makes an angle \(\varphi=\arctan (-a / b)\) with the positive \(x\) direction.
@@ -145,38 +145,38 @@ because the \(x\) direction grazes the surface at the rim. Note that the rim run
 When x is eliminated from equations (Al) and (A2), one obtains
 
 $$
-\begin{equation*} z=\frac{1}{2} \frac{a c-b^{2}}{a} y^{2}=\frac{1}{2} K_{\mathrm{t}} y^{2} \tag{A3} \end{equation*}
+z=\frac{1}{2} \frac{a c-b^{2}}{a} y^{2}=\frac{1}{2} K_{\mathrm{t}} y^{2}
 $$
 
 (neglecting third-order and higher terms), which is the analytical expression that describes the projection of the rim on the y-z plane, in other words, the contour. The curvature of the projection is thus
 
 $$
-\begin{equation*} K_{\mathrm{t}}=\frac{a c-b^{2}}{a} \tag{A4} \end{equation*}
+K_{\mathrm{t}}=\frac{a c-b^{2}}{a}
 $$
 
 The normal plane through the line of sight is the x-z plane. The surface meets this plane in the curve
 
 $$
-\begin{equation*} z=\frac{1}{2} a x^{2}=\frac{1}{2} K_{\mathrm{r}} x^{2} \tag{A5} \end{equation*}
+z=\frac{1}{2} a x^{2}=\frac{1}{2} K_{\mathrm{r}} x^{2}
 $$
 
 Thus the radial curvature is
 
 $$
-\begin{equation*} K_{\mathrm{r}}=a . \tag{A6} \end{equation*}
+K_{\mathrm{r}}=a
 $$
 
 From equations (A4) and (A6) one obtains immediately the important result
 
 $$
-\begin{equation*} K_{\mathrm{r}} K_{\mathrm{t}}=a c-b^{2}=\frac{\left(\partial^{2} z / \partial x^{2}\right)\left(\partial^{2} z / \partial y^{2}\right)-\left(\partial^{2} z / \partial x \partial y\right)^{2}}{1+(\partial z / \partial x)^{2}+(\partial z / \partial y)^{2}}=K, \tag{A7} \end{equation*}
+K_{\mathrm{r}} K_{\mathrm{t}}=a c-b^{2}=\frac{\left(\partial^{2} z / \partial x^{2}\right)\left(\partial^{2} z / \partial y^{2}\right)-\left(\partial^{2} z / \partial x \partial y\right)^{2}}{1+(\partial z / \partial x)^{2}+(\partial z / \partial y)^{2}}=K
 $$
 
 as \(\partial z / \partial x=\partial z / \partial y=0\) in P and \(\partial^{2} z / \partial x^{2}=a, \partial^{2} z / \partial y^{2}=c\), and \(\partial^{2} z / \partial x \partial y=b\).
 
 ## 2 The apparent curvature
 
-Let \(\xi\) be a tangent ray through P, and let Q be any point on \(\xi\). Let the distance PQ be \(d\). From Q other tangent rays may be drawn; these rays are the generators of a cone with vertex Q that touches the surface along the rim. Consider the second-order osculating cone, the second-order cone that approximates the real one most closely. When one lets Q range over \(\xi\), the semitop angle of this osculating cone varies. This always occurs in a neat, predictable manner, however, A useful theorem, originally due to Mannheim but first well described by Blaschke (1916), states: all osculating cones envelop a sphere. This sphere may be called the 'Mannheim sphere'. When Q is at infinity \((d \rightarrow \infty)\) the cone degenerates into a cylinder with radius \(K_{\mathrm{t}}^{-1}\). This must also be the radius of the Mannheim sphere, for a cylinder touches a sphere along a great circle. Consider figure A1. The Mannheim sphere at P is drawn, with radius \(R_{\mathrm{t}}=K_{\mathrm{t}}^{-1}\). The sphere obviously touches the tangent plane, thus the normal to the sphere is the
+Let \(\xi\) be a tangent ray through P, and let Q be any point on \(\xi\). Let the distance PQ be \(d\). From Q other tangent rays may be drawn; these rays are the generators of a cone with vertex Q that touches the surface along the rim. Consider the second-order osculating cone, the second-order cone that approximates the real one most closely. When one lets Q range over \(\xi\), the semitop angle of this osculating cone varies. This always occurs in a neat, predictable manner, however, A useful theorem, originally due to Mannheim but first well described by Blaschke (1916), states: all osculating cones envelop a sphere. This sphere may be called the 'Mannheim sphere'. When Q is at infinity ( \(d \rightarrow \infty\) ) the cone degenerates into a cylinder with radius \(K_{\mathrm{t}}^{-1}\). This must also be the radius of the Mannheim sphere, for a cylinder touches a sphere along a great circle. Consider figure A1. The Mannheim sphere at P is drawn, with radius \(R_{\mathrm{t}}=K_{\mathrm{t}}^{-1}\). The sphere obviously touches the tangent plane, thus the normal to the sphere is the
 
 $$
 \alpha=\arctan \left(\frac{1}{d K_{\mathrm{t}}}\right) .

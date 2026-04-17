@@ -2,7 +2,7 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p028-0010",
+      "id": "mathpix-eq-p024-0010",
       "kind": "display",
       "display_latex": "\\mathbf{p}=\\mathbf{p}_{11}+t\\left(\\mathbf{p}_{12}-\\mathbf{p}_{11}\\right), 0 \\leq t \\leq 1",
       "semantic_expr": null,
@@ -13,7 +13,7 @@
       },
       "source_spans": [
         {
-          "page": 28,
+          "page": 24,
           "bbox": {
             "x0": 206.72,
             "y0": 245.09,
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p028-0017",
+      "id": "mathpix-eq-p024-0017",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& \\left(\\mathbf{p}-\\mathbf{p}_{21}\\right) \\times\\left(\\mathbf{p}_{21}-\\mathbf{p}_{22}\\right) \\\\\n& \\left(\\mathbf{p}-\\mathbf{p}_{31}\\right) \\times\\left(\\mathbf{p}_{31}-\\mathbf{p}_{32}\\right)\n\\end{aligned}",
       "semantic_expr": null,
@@ -44,7 +44,7 @@
       },
       "source_spans": [
         {
-          "page": 28,
+          "page": 24,
           "bbox": {
             "x0": 245.01,
             "y0": 365.18,
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p028-0019",
+      "id": "mathpix-eq-p024-0019",
       "kind": "display",
       "display_latex": "\\mathbf{d}=\\left[\\left(\\mathbf{p}-\\mathbf{p}_{21}\\right) \\times\\left(\\mathbf{p}_{21}-\\mathbf{p}_{22}\\right)\\right] \\times\\left[\\left(\\mathbf{p}-\\mathbf{p}_{31}\\right) \\times\\left(\\mathbf{p}_{31}-\\mathbf{p}_{32}\\right)\\right]",
       "semantic_expr": null,
@@ -75,7 +75,7 @@
       },
       "source_spans": [
         {
-          "page": 28,
+          "page": 24,
           "bbox": {
             "x0": 173.32,
             "y0": 436.32,
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p028-0026",
+      "id": "mathpix-eq-p024-0026",
       "kind": "display",
       "display_latex": "\\begin{gathered}\n\\theta=\\tan ^{-1}\\left(d_{x} / d_{z}\\right) \\\\\n\\phi=-\\sin ^{-1}\\left(d_{y} / \\sqrt{d_{x}^{2}+d_{y}^{2}+d_{z}^{2}}\\right)\n\\end{gathered}",
       "semantic_expr": null,
@@ -106,7 +106,7 @@
       },
       "source_spans": [
         {
-          "page": 28,
+          "page": 24,
           "bbox": {
             "x0": 209.6,
             "y0": 554.98,
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p034-0006",
+      "id": "mathpix-eq-p030-0006",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n{\\left[\\mathrm{x}_{0}, \\mathrm{y}_{0}, \\mathrm{z}_{0}\\right]\\left[\\begin{array}{ccc}\n\\cos \\theta & 0 & \\sin \\theta \\\\\n0 & 1 & 0 \\\\\n-\\sin \\theta & 0 & \\cos \\theta\n\\end{array}\\right]\\left[\\begin{array}{ccc}\n1 & 0 & 0 \\\\\n0 & \\cos \\phi & -\\sin \\phi \\\\\n0 & \\sin \\phi & \\cos \\phi\n\\end{array}\\right]=} \\\\\n{\\left[\\mathrm{x}_{0} \\cos \\theta-\\mathrm{z}_{0} \\sin \\theta\\right.} \\\\\n\\mathrm{x}_{0} \\sin \\theta \\sin \\phi+\\mathrm{y}_{0} \\cos \\phi+\\mathrm{z}_{0} \\cos \\theta \\sin \\phi \\\\\n\\left.\\mathrm{x}_{0} \\sin \\theta \\cos \\phi-\\mathrm{y}_{0} \\sin \\phi+\\mathrm{z}_{0} \\cos \\theta \\cos \\phi\\right]\n\\end{aligned}",
       "semantic_expr": null,
@@ -137,7 +137,7 @@
       },
       "source_spans": [
         {
-          "page": 34,
+          "page": 30,
           "bbox": {
             "x0": 136.18,
             "y0": 164.45,
@@ -157,7 +157,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p034-0009",
+      "id": "mathpix-eq-p030-0009",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& u=x_{0} \\cos \\theta-z_{0} \\sin \\theta \\\\\n& v=x_{0} \\sin \\theta \\sin \\phi+y_{0} \\cos \\phi+z_{0} \\cos \\theta \\sin \\phi\n\\end{aligned}",
       "semantic_expr": null,
@@ -168,7 +168,7 @@
       },
       "source_spans": [
         {
-          "page": 34,
+          "page": 30,
           "bbox": {
             "x0": 211.61,
             "y0": 328.03,
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p034-0019",
+      "id": "mathpix-eq-p030-0019",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& \\mathrm{x}(s)=\\mathrm{x}_{1}+\\mathrm{a}_{1} s \\\\\n& \\mathrm{y}(s)=\\mathrm{y}_{1}+\\mathrm{b}_{1} s \\\\\n& \\mathrm{z}(s)=\\mathrm{z}_{1}+\\mathrm{c}_{1} s\n\\end{aligned}",
       "semantic_expr": null,
@@ -199,7 +199,7 @@
       },
       "source_spans": [
         {
-          "page": 34,
+          "page": 30,
           "bbox": {
             "x0": 248.75,
             "y0": 508.61,
@@ -219,7 +219,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p034-0022",
+      "id": "mathpix-eq-p030-0022",
       "kind": "display",
       "display_latex": "\\begin{gathered}\n\\mathrm{u}=\\left(\\mathrm{x}_{1}+\\mathrm{a}_{1} s\\right) \\cos \\theta-\\left(\\mathrm{z}_{1}+\\mathrm{c}_{1} s\\right) \\sin \\theta \\\\\n\\mathrm{v}=\\left(\\mathrm{x}_{1}+\\mathrm{a}_{1} s\\right) \\sin \\theta \\sin \\phi+\\left(\\mathrm{y}_{1}+\\mathrm{b}_{1} s\\right) \\cos \\phi+\\left(\\mathrm{z}_{1}+\\mathrm{c}_{1} s\\right) \\cos \\theta \\sin \\phi\n\\end{gathered}",
       "semantic_expr": null,
@@ -230,7 +230,7 @@
       },
       "source_spans": [
         {
-          "page": 34,
+          "page": 30,
           "bbox": {
             "x0": 102.78,
             "y0": 594.72,
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p040-0016",
+      "id": "mathpix-eq-p036-0016",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& \\mathrm{u}=\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right) \\cos \\theta-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right) \\sin \\theta \\\\\n& \\mathrm{v}=\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right) \\sin \\theta \\sin \\phi+ \\\\\n& \\quad\\left(\\mathrm{y}_{1}+s \\mathrm{~b}_{1}\\right) \\cos \\phi+\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right) \\cos \\theta \\sin \\phi\n\\end{aligned}",
       "semantic_expr": null,
@@ -261,7 +261,7 @@
       },
       "source_spans": [
         {
-          "page": 40,
+          "page": 36,
           "bbox": {
             "x0": 171.88,
             "y0": 366.34,
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p041-0002",
+      "id": "mathpix-eq-p037-0002",
       "kind": "display",
       "display_latex": "\\frac{\\mathrm{v}_{\\mathrm{x}}}{\\mathrm{v}_{\\mathrm{z}}}=\\frac{\\left(\\mathrm{x}_{2}+s_{2} \\mathrm{a}_{2}\\right)-\\left(\\mathrm{x}_{1}+s \\mathrm{a}_{1}\\right)}{\\left(\\mathrm{z}_{2}+s_{2} \\mathrm{c}_{2}\\right)-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right)}",
       "semantic_expr": null,
@@ -292,7 +292,7 @@
       },
       "source_spans": [
         {
-          "page": 41,
+          "page": 37,
           "bbox": {
             "x0": 249.91,
             "y0": 99.07,
@@ -312,7 +312,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p041-0005",
+      "id": "mathpix-eq-p037-0005",
       "kind": "display",
       "display_latex": "\\frac{\\mathrm{v}_{\\mathrm{y}}}{\\mathrm{v}_{\\mathrm{z}}}=\\frac{\\left(\\mathrm{y}_{2}+s_{2} \\mathrm{~b}_{2}\\right)-\\left(\\mathrm{y}_{1}+s \\mathrm{~b}_{1}\\right)}{\\left(\\mathrm{z}_{2}+s_{2} \\mathrm{c}_{2}\\right)-\\left(\\mathrm{z}_{1}+s \\mathrm{c}_{1}\\right)}",
       "semantic_expr": null,
@@ -323,7 +323,7 @@
       },
       "source_spans": [
         {
-          "page": 41,
+          "page": 37,
           "bbox": {
             "x0": 249.91,
             "y0": 164.45,
@@ -343,7 +343,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p041-0008",
+      "id": "mathpix-eq-p037-0008",
       "kind": "display",
       "display_latex": "s=\\frac{\\mathbf{V} \\cdot\\left[\\left(\\mathbf{p}_{2}-\\mathbf{p}_{1}\\right) \\times \\mathbf{a}_{2}\\right]}{\\mathbf{V} \\cdot\\left(\\mathbf{a}_{1} \\times \\mathbf{a}_{2}\\right)}",
       "semantic_expr": null,
@@ -354,7 +354,7 @@
       },
       "source_spans": [
         {
-          "page": 41,
+          "page": 37,
           "bbox": {
             "x0": 249.91,
             "y0": 233.86,
@@ -374,7 +374,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p042-0004",
+      "id": "mathpix-eq-p038-0004",
       "kind": "display",
       "display_latex": "\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}",
       "semantic_expr": null,
@@ -385,7 +385,7 @@
       },
       "source_spans": [
         {
-          "page": 42,
+          "page": 38,
           "bbox": {
             "x0": 246.16,
             "y0": 138.53,
@@ -405,7 +405,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p042-0006",
+      "id": "mathpix-eq-p038-0006",
       "kind": "display",
       "display_latex": "\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}",
       "semantic_expr": null,
@@ -416,7 +416,7 @@
       },
       "source_spans": [
         {
-          "page": 42,
+          "page": 38,
           "bbox": {
             "x0": 246.16,
             "y0": 183.74,
@@ -436,7 +436,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p042-0008",
+      "id": "mathpix-eq-p038-0008",
       "kind": "display",
       "display_latex": "\\mathbf{V}^{\\prime}=\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}\\right) \\times\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}\\right)",
       "semantic_expr": null,
@@ -447,7 +447,7 @@
       },
       "source_spans": [
         {
-          "page": 42,
+          "page": 38,
           "bbox": {
             "x0": 136.18,
             "y0": 239.33,
@@ -467,7 +467,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p042-0025",
+      "id": "mathpix-eq-p038-0025",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2} \\\\\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3} \\\\\n& \\left(\\mathbf{p}_{1}+s \\mathbf{p}_{1}-\\mathbf{p}_{4}\\right) \\times \\mathbf{a}_{4}\n\\end{aligned}",
       "semantic_expr": null,
@@ -478,7 +478,7 @@
       },
       "source_spans": [
         {
-          "page": 42,
+          "page": 38,
           "bbox": {
             "x0": 247.31,
             "y0": 671.9,
@@ -498,7 +498,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p045-0016",
+      "id": "mathpix-eq-p041-0016",
       "kind": "display",
       "display_latex": "\\mathbf{V}^{\\prime}=\\mathbf{a} s^{2}+\\mathbf{b} s+\\mathbf{c}",
       "semantic_expr": null,
@@ -509,7 +509,7 @@
       },
       "source_spans": [
         {
-          "page": 45,
+          "page": 41,
           "bbox": {
             "x0": 252.5,
             "y0": 332.35,
@@ -529,7 +529,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p045-0018",
+      "id": "mathpix-eq-p041-0018",
       "kind": "display",
       "display_latex": "\\mathbf{a}_{1} s_{1}^{2}+\\mathbf{b}_{1} s_{1}+\\mathbf{c}_{1}=\\mathbf{a}_{2} s_{2}^{2}+\\mathbf{b}_{2} s_{2}+\\mathbf{c}_{2}",
       "semantic_expr": null,
@@ -540,7 +540,7 @@
       },
       "source_spans": [
         {
-          "page": 45,
+          "page": 41,
           "bbox": {
             "x0": 217.66,
             "y0": 387.94,
@@ -560,7 +560,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p047-0030",
+      "id": "mathpix-eq-p043-0030",
       "kind": "display",
       "display_latex": "\\mathbf{V}=\\mathbf{p}_{1}+s \\mathbf{a}_{1}+r\\left[\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{2}\\right) \\times \\mathbf{a}_{2}\\right) \\times\\left(\\left(\\mathbf{p}_{1}+s \\mathbf{a}_{1}-\\mathbf{p}_{3}\\right) \\times \\mathbf{a}_{3}\\right]",
       "semantic_expr": null,
@@ -571,7 +571,7 @@
       },
       "source_spans": [
         {
-          "page": 47,
+          "page": 43,
           "bbox": {
             "x0": 143.38,
             "y0": 602.78,
@@ -591,7 +591,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p050-0026",
+      "id": "mathpix-eq-p046-0026",
       "kind": "display",
       "display_latex": "\\left[\\frac{f}{d} p_{x}, \\frac{f}{d} p_{y}\\right]",
       "semantic_expr": null,
@@ -602,7 +602,7 @@
       },
       "source_spans": [
         {
-          "page": 50,
+          "page": 46,
           "bbox": {
             "x0": 248.75,
             "y0": 524.74,
@@ -622,7 +622,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p050-0030",
+      "id": "mathpix-eq-p046-0030",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& u=\\frac{f\\left(x_{0} \\cos \\theta-z_{0} \\sin \\theta\\right)}{r-\\left(x_{0} \\sin \\theta \\cos \\phi-y_{0} \\sin \\phi+z_{0} \\cos \\theta \\cos \\phi\\right)} \\\\\n& v=\\frac{f\\left(x_{0} \\sin \\theta \\sin \\phi+y_{0} \\cos \\phi+z_{0} \\cos \\theta \\sin \\phi\\right)}{r-\\left(x_{0} \\sin \\theta \\cos \\phi-y_{0} \\sin \\phi+z_{0} \\cos \\theta \\cos \\phi\\right)}\n\\end{aligned}",
       "semantic_expr": null,
@@ -633,7 +633,7 @@
       },
       "source_spans": [
         {
-          "page": 50,
+          "page": 46,
           "bbox": {
             "x0": 136.76,
             "y0": 626.11,
@@ -653,7 +653,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p052-0023",
+      "id": "mathpix-eq-p048-0023",
       "kind": "display",
       "display_latex": "\\mathbf{V}=\\mathbf{a}_{1}+s \\mathbf{a}_{2}+r\\left[s^{2} \\mathbf{a}_{3}+s \\mathbf{a}_{4}+\\mathbf{a}_{5}\\right]",
       "semantic_expr": null,
@@ -664,7 +664,7 @@
       },
       "source_spans": [
         {
-          "page": 52,
+          "page": 48,
           "bbox": {
             "x0": 171.31,
             "y0": 475.2,
@@ -684,7 +684,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p052-0025",
+      "id": "mathpix-eq-p048-0025",
       "kind": "display",
       "display_latex": "\\mathbf{a}_{1}+s_{1} \\mathbf{a}_{2}+r_{1}\\left[s_{1}^{2} \\mathbf{a}_{3}+s_{1} \\mathbf{a}_{4}+\\mathbf{a}_{5}\\right]=\\mathbf{a}_{6}+s_{2} \\mathbf{a}_{7}+r_{2}\\left[s_{2}^{2} \\mathbf{a}_{8}+s_{2} \\mathbf{a}_{9}+\\mathbf{a}_{10}\\right]",
       "semantic_expr": null,
@@ -695,7 +695,7 @@
       },
       "source_spans": [
         {
-          "page": 52,
+          "page": 48,
           "bbox": {
             "x0": 78.02,
             "y0": 530.78,
