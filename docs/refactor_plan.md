@@ -262,12 +262,21 @@ Recently reduced:
 - extracted record/text cleaning helpers now live in `pipeline/reconcile/text_cleaning.py`
 - extracted reference-runtime helper composition now lives in `pipeline/reconcile/reference_runtime.py`
 - extracted front-matter candidate/recovery helpers now live in `pipeline/reconcile/front_matter_runtime.py`
+- extracted text normalization/reference runtime helper composition now lives in `pipeline/reconcile/text_runtime.py`
+- extracted math policy/demotion runtime helper composition now lives in `pipeline/reconcile/math_runtime.py`
+- extracted record/postprocess runtime helper composition now lives in `pipeline/reconcile/record_runtime.py`
+- extracted runtime dependency bundle assembly now lives in `pipeline/reconcile/runtime_deps.py`
 - extracted shared reconcile utility support now lives in `pipeline/reconcile/runtime_support.py`
 - extracted coordinator-stage binding factories now live in `pipeline/reconcile/stage_runtime.py`
 - `pipeline/reconcile/stage_runtime.py` now also covers record-normalization and postprocess binding factories that were previously inlined inside `reconcile_paper_state`
 - `pipeline/reconcile/stage_runtime.py` now also covers layout-bound text normalization and math-entry policy/demotion bindings that were previously local to `reconcile_paper_state`
 - `pipeline/reconcile/stage_runtime.py` now also covers the remaining lambda-style binders for layout-bound loaders, section helpers, and block-assembly support wiring
 - `pipeline/reconcile/stage_runtime.py` now also owns the binding-and-dispatch executor that composes those factories and calls `run_paper_pipeline(...)`
+- the stage-runtime executor now accepts typed runtime objects (`ReconcileRuntimeInputs` and `ReconcileRuntimeDeps`) instead of a giant flat keyword surface, reducing the new refactor debt introduced during extraction
+- `ReconcileRuntimeDeps` is now grouped into `ReconcileLoaderDeps`, `ReconcileBindingDeps`, and `ReconcileAssemblyDeps`, which makes the stage-runtime boundary more explicit
+- `run_reconcile_pipeline(...)` is now a thin orchestrator over a dedicated `build_reconcile_runtime_kwargs(...)` helper instead of a long local rebinding/unpacking block
+- the grouped runtime helper construction has now moved into `pipeline/reconcile/runtime_builders.py`, leaving `pipeline/reconcile/stage_runtime.py` as the typed boundary plus executor entrypoint
+- front-matter runtime builder construction has now been pulled back into `pipeline/reconcile/front_matter_runtime.py`, so `runtime_builders.py` is already starting to decompose by domain instead of becoming a new generic monolith
 
 Interpretation:
 
@@ -289,6 +298,28 @@ Interpretation:
 - `reconcile_paper_state` is now a minimal facade: runtime-config selection plus delegation into `pipeline/reconcile/stage_runtime.py`, with the root `run_paper_pipeline` symbol still passed through as the compatibility/patch seam
 - `pipeline/reconcile_blocks.py` now imports the stage-runtime executor directly rather than the full factory toolbox, which is a better match for its compatibility-facade role
 - stale root-only imports from earlier extraction phases have been trimmed from `pipeline/reconcile_blocks.py`, reducing facade noise without changing the test-facing helper surface
+- the patch-sensitive dependency bundle construction in `reconcile_blocks.py` now lives behind dedicated root-local helper builders instead of one giant inline call site
+- the root binding dependency seam is now decomposed into smaller concern-grouped helper builders, which keeps the patch surface local while making the remaining debt easier to target
+- the stage-runtime kwargs seam is now decomposed into grouped helper builders for text, math, front-matter, record/postprocess, and loader runtime wiring
+- the runtime dependency bundle assembly has now also moved into `pipeline/reconcile/runtime_deps.py`, leaving the root file with a single compact runtime-deps handoff instead of multiple local packaging helpers
+- the remaining front-matter/reference root helper names are now mostly direct bound facades over extracted runtime helpers rather than hand-written pass-through wrapper defs, which trims facade debt without changing the test-facing symbol surface
+- the screening and paragraph/postprocess helper names at the root are now also mostly direct bound facades over extracted helpers, further shrinking facade-only code while keeping the stable test-facing symbol surface intact
+- the screening runtime binding layer for OCR/noise and figure-debris heuristics now lives in `pipeline/reconcile/screening_runtime.py`, so those root helper names are no longer responsible for binding that domain-specific dependency set inline
+- the text-repair runtime binding layer for pdftotext and Mathpix hint helpers now lives in `pipeline/reconcile/text_repairs_runtime.py`, so the root file no longer owns that dependency wiring inline either
+- the front-matter parsing/policy runtime binding layer now lives in `pipeline/reconcile/front_matter_parsing_runtime.py`, leaving the root file with the same test-facing helper names but far less inline front-matter dependency wiring
+- the layout-record and figure-caption runtime binding layer now lives in `pipeline/reconcile/layout_records_runtime.py`, so the remaining caption/layout glue at the root is mostly stable helper names rather than inline dependency assembly
+- the heading-promotion binding layer now lives in `pipeline/reconcile/heading_promotion_runtime.py`, with `pipeline/reconcile_blocks.py` keeping the same `_decode/_normalize/_split` helper names while shedding their inline dependency wiring
+- the reference helper binding layer now lives in `pipeline/reconcile/reference_binding_runtime.py`, moving the root `_make_reference_entry`, `_looks_like_reference_text`, `_is_reference_start`, and related reference closures out without changing their test-facing names
+- the math-fragment binding layer now lives in `pipeline/reconcile/math_fragments_runtime.py`, so `_looks_like_math_fragment`, `_math_signal_count`, `_strong_operator_count`, and `_merge_math_fragment_records` stay test-stable while leaving the root file
+- the external-math injection binding now lives in `pipeline/reconcile/external_math_binding_runtime.py`, keeping `_inject_external_math_records` stable at the root while moving its leading-display-echo dependency wiring out
+- the section-filter binding layer now lives in `pipeline/reconcile/section_filter_binding_runtime.py`, moving the paragraph-merge/running-header/table-heading closure setup out while preserving the same root helper names for tests and remaining compatibility callers
+- the remaining block-builder helper binding layer now lives in `pipeline/reconcile/block_builder_binding_runtime.py`, so `_list_item_marker`, `_looks_like_real_code_record`, `_match_external_math_entry`, and the rect helpers no longer need inline root partials
+- the shared text/runtime support binding layer now lives in `pipeline/reconcile/support_binding_runtime.py`, moving the root `_clean_text`, `_block_source_spans`, `_normalize_paragraph_text`, `_record_analysis_text`, `_word_count`, `_mathish_ratio`, and related support closures out while keeping the same compatibility names
+- the math-entry policy binding layer now lives in `pipeline/reconcile/math_entry_binding_runtime.py`, so the root `_math_entry_*`, `_should_demote_*`, `_should_drop_*`, and `_paragraph_block_from_graphic_math_entry` helpers keep their compatibility names without owning the inline dependency wiring
+- `pipeline/reconcile/stage_runtime.py` has now shrunk to a small boundary module while `pipeline/reconcile/runtime_builders.py` absorbs the runtime helper-construction implementation
+- `pipeline/reconcile/runtime_builders.py` is no longer absorbing all domains indiscriminately; front-matter builder logic has already moved into the front-matter runtime module, which is the right direction for the next semantic splits
+- the remaining runtime-builder helper families have now also been pulled into dedicated domain modules for text, math, and record/postprocess wiring, leaving `pipeline/reconcile/runtime_builders.py` as a small composition-root plus loader helper module
+- the main reconcile tech debt is now narrower and clearer: the remaining debt is no longer concentrated in one obvious mechanical block, and the next work should prefer smaller semantic seams over more large-scale coordinator reshaping
 
 ## Current Refactor Rules
 
@@ -394,6 +425,15 @@ Recommended next extractions from `reconcile_blocks.py`:
   - `stage_runtime.py` now also owns the former inline lambda binders used by `reconcile_paper_state`
   - `stage_runtime.py` now also owns the former factory-composition and dispatch body of `reconcile_paper_state`
   - `stage_runtime.py` now also owns layout merge, mathpix repair, heading-promotion, and postprocess block-binding factories
+  - `stage_runtime.py` now groups runtime deps into loader, binding, and assembly bundles instead of a single flat dependency object
+  - `run_reconcile_pipeline(...)` now delegates runtime-prep assembly to `build_reconcile_runtime_kwargs(...)` instead of locally unpacking every grouped dependency
+  - grouped runtime helper-construction code now lives in `pipeline/reconcile/runtime_builders.py`, reducing `stage_runtime.py` to the typed surface and executor
+  - front-matter runtime builder helpers now live in `pipeline/reconcile/front_matter_runtime.py` instead of the generic runtime-builders module
+  - text normalization/reference runtime builder helpers now live in `pipeline/reconcile/text_runtime.py`
+  - math policy/demotion runtime builder helpers now live in `pipeline/reconcile/math_runtime.py`
+  - record/postprocess runtime builder helpers now live in `pipeline/reconcile/record_runtime.py`
+  - runtime dependency bundle assembly now lives in `pipeline/reconcile/runtime_deps.py`
+  - `reconcile_blocks.py` now assembles those grouped runtime deps through root-local helper builders rather than one large inline nested constructor
   - root `_clean_text`/`_normalize_paragraph_text`/front-matter/reference helper names remain stable for tests
 
 - title/author/affiliation detection helpers
