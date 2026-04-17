@@ -915,9 +915,12 @@ def _process_round(
     )
     papers = status.get("papers", [])
 
-    pending_papers = [
-        paper_id for paper_id in papers if round_status["papers"].get(paper_id, {}).get("status") != "ok"
-    ]
+    if force_rebuild:
+        pending_papers = list(papers)
+    else:
+        pending_papers = [
+            paper_id for paper_id in papers if round_status["papers"].get(paper_id, {}).get("status") != "ok"
+        ]
     next_index = 0
     active_jobs: dict[Future[dict[str, Any]], str] = {}
     use_round_mathpix = bool(_mathpix_credentials_available() and len(pending_papers) > 1)

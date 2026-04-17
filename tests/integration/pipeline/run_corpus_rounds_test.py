@@ -14,6 +14,7 @@ from paper_pipeline.run_corpus_rounds import (
     _compose_external_sources,
     _desired_flags_for_existing_paper,
     _mathpix_submit_workers,
+    _process_round,
     _preserve_existing_generated_abstract,
     _preserve_existing_generated_abstract_file,
     _render_final_report,
@@ -383,6 +384,42 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(summary["fresh_skip_count"], 1)
         self.assertEqual(summary["stale_reasons"]["pipeline_fingerprint_changed"], 1)
         self.assertEqual(summary["stale_reasons"]["pdf_input_changed"], 1)
+
+    def test_process_round_force_rebuild_requeues_ok_papers(self) -> None:
+        status = {
+            "papers": ["paper-a", "paper-b"],
+            "rounds": {
+                "round_1": {
+                    "started_at": "2026-04-14T00:00:00Z",
+                    "completed_at": "2026-04-14T00:05:00Z",
+                    "papers": {
+                        "paper-a": {"status": "ok", "completed_at": "2026-04-14T00:01:00Z"},
+                        "paper-b": {"status": "ok", "completed_at": "2026-04-14T00:02:00Z"},
+                    },
+                }
+            },
+        }
+
+        def fake_run_paper_job(paper_id: str, *, force_rebuild: bool, prefetched_mathpix_future=None) -> dict:
+            return {
+                "status": "ok",
+                "completed_at": "2026-04-14T00:10:00Z",
+                "forced_rebuild": force_rebuild,
+                "paper_id": paper_id,
+            }
+
+        with (
+            patch("paper_pipeline.run_corpus_rounds._mathpix_credentials_available", return_value=False),
+            patch("paper_pipeline.run_corpus_rounds._run_paper_job", side_effect=fake_run_paper_job),
+            patch("paper_pipeline.run_corpus_rounds._save_status"),
+        ):
+            _process_round(status, 1, max_workers=2, force_rebuild=True)
+
+        round_status = status["rounds"]["round_1"]["papers"]
+        self.assertTrue(round_status["paper-a"]["forced_rebuild"])
+        self.assertTrue(round_status["paper-b"]["forced_rebuild"])
+        self.assertEqual(round_status["paper-a"]["paper_id"], "paper-a")
+        self.assertEqual(round_status["paper-b"]["paper_id"], "paper-b")
 
     def test_final_report_mentions_stale_reasons(self) -> None:
         status = {
