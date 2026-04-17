@@ -73,7 +73,7 @@ Full source regeneration still expects additional tools and credentials:
 
 Figure regeneration now also lives under this package:
 
-- `pipeline.figure_linking`
+- `pipeline.figures.linking` (with `pipeline.figure_linking` kept as a compatibility shim)
 - `pipeline.vision_ocr.js`
 
 Corpus-specific figure expectations now live with the corpus itself at

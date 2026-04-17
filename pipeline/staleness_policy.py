@@ -6,9 +6,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from pipeline.corpus_layout import CORPUS_DIR, paper_pdf_path
-from pipeline.pipeline_identity import PIPELINE_COMPONENTS
-from pipeline.external_sources import external_layout_path, external_math_path
+from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, current_layout, paper_pdf_path
+from pipeline.pipeline_identity import LEGACY_PIPELINE_COMPONENTS, PIPELINE_COMPONENTS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,12 +62,16 @@ def _combined_pipeline_hash(modules: dict[str, str]) -> str:
     return combined.hexdigest()
 
 
-def _stable_pipeline_modules() -> dict[str, str]:
+def _component_modules(components: tuple[tuple[str, Path], ...]) -> dict[str, str]:
     modules: dict[str, str] = {}
-    for component_id, path in PIPELINE_COMPONENTS:
+    for component_id, path in components:
         fingerprint = fingerprint_path(path)
         modules[component_id] = str(fingerprint.get("sha256", "missing"))
     return modules
+
+
+def _stable_pipeline_modules() -> dict[str, str]:
+    return _component_modules(PIPELINE_COMPONENTS)
 
 
 def _legacy_pipeline_fingerprint() -> str:
@@ -80,6 +83,10 @@ def _legacy_pipeline_fingerprint() -> str:
     return _combined_pipeline_hash(legacy_modules)
 
 
+def _paper_pipeline_fingerprint() -> str:
+    return _combined_pipeline_hash(_component_modules(LEGACY_PIPELINE_COMPONENTS))
+
+
 def pipeline_fingerprint() -> dict[str, Any]:
     modules = _stable_pipeline_modules()
     return {
@@ -88,6 +95,7 @@ def pipeline_fingerprint() -> dict[str, Any]:
         "modules": modules,
         "compatibility": {
             "legacy_path_fingerprint": _legacy_pipeline_fingerprint(),
+            "paper_pipeline_fingerprint": _paper_pipeline_fingerprint(),
         },
     }
 
@@ -98,15 +106,17 @@ def build_input_fingerprints(
     pdf_path: str | Path | None = None,
     use_external_layout: bool,
     use_external_math: bool,
+    layout: ProjectLayout | None = None,
 ) -> dict[str, Any]:
+    active_layout = layout or current_layout()
     resolved_pdf_path = pdf_path or paper_pdf_path(paper_id)
     inputs: dict[str, Any] = {
         "pdf": fingerprint_path(resolved_pdf_path),
     }
     if use_external_layout:
-        inputs["external_layout"] = fingerprint_path(external_layout_path(paper_id))
+        inputs["external_layout"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "layout.json")
     if use_external_math:
-        inputs["external_math"] = fingerprint_path(external_math_path(paper_id))
+        inputs["external_math"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "math.json")
     return inputs
 
 

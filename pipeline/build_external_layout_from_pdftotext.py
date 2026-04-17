@@ -7,12 +7,12 @@ import json
 from pathlib import Path
 import sys
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.external_sources import external_layout_path
-from pipeline.pdftotext_overlay import overlay_pdftotext_onto_layout
+from pipeline.cli.external_source_build import build_pdftotext_external_layout
+from pipeline.corpus_layout import current_layout
 
 
 def parse_args() -> argparse.Namespace:
@@ -24,14 +24,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    payload, summary = overlay_pdftotext_onto_layout(args.paper_id)
-    destination = external_layout_path(args.paper_id)
+    build = build_pdftotext_external_layout(args.paper_id, layout=current_layout())
     if args.dry_run:
-        print(json.dumps(summary, indent=2))
+        print(json.dumps(build.summary, indent=2))
         return 0
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps({"path": str(destination), **summary}, indent=2))
+    outputs = build.write()
+    print(json.dumps({"path": outputs["layout_path"], **build.summary}, indent=2))
     return 0
 
 

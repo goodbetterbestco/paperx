@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Callable, Pattern
 
-from pipeline.extract_math import looks_like_prose_math_fragment, looks_like_prose_paragraph
+from pipeline.math.extract import looks_like_prose_math_fragment, looks_like_prose_paragraph
 
 
 def suppress_graphic_display_math_blocks(

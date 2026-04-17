@@ -9,21 +9,21 @@ from datetime import datetime, timezone
 from typing import Any
 
 from pipeline.corpus_layout import display_path
-from pipeline.formula_diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
-from pipeline.math_review_policy import math_text_looks_suspicious
+from pipeline.math.diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
+from pipeline.math.review_policy import math_text_looks_suspicious
 from pipeline.policies.abstract_quality import abstract_quality_flags
 from pipeline.policies.completeness import (
     block_text as completeness_block_text,
     document_expects_figures,
     document_expects_references,
 )
+from pipeline.output.validation import CanonicalValidationError, validate_canonical
 from pipeline.runtime_paths import ensure_repo_tmp_dir
 from pipeline.text_utils import (
     DOCS_DIR,
     clean_heading_title,
     compact_text,
 )
-from pipeline.validate_canonical import CanonicalValidationError, validate_canonical
 
 
 OUTPUT_DIR = ensure_repo_tmp_dir() / "canonical_corpus_audit"

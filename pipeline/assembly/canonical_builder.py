@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from pipeline.compile_formulas import compile_formulas
-from pipeline.document_policy import apply_document_policy
-from pipeline.formula_semantic_ir import annotate_formula_semantic_expr
-from pipeline.formula_semantic_policy import annotate_formula_classifications
+from pipeline.math.compile import compile_formulas
+from pipeline.text.document_policy import apply_document_policy
+from pipeline.math.semantic_ir import annotate_formula_semantic_expr
+from pipeline.math.semantic_policy import annotate_formula_classifications
 from pipeline.staleness_policy import build_metadata_for_paper
 
 

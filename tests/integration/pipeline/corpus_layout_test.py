@@ -28,10 +28,15 @@ class CorpusLayoutTest(unittest.TestCase):
             importlib.reload(corpus_layout)
 
             preparation = corpus_layout.prepare_project_inputs()
+            layout = corpus_layout.current_layout()
 
             self.assertTrue(corpus_layout.PROJECT_MODE)
             self.assertEqual(corpus_layout.SOURCE_DIR, project_dir / "source")
             self.assertEqual(corpus_layout.CORPUS_DIR, project_dir / "corpus")
+            self.assertEqual(layout.mode, "project")
+            self.assertEqual(layout.project_dir, project_dir)
+            self.assertEqual(layout.source_root, project_dir / "source")
+            self.assertEqual(layout.corpus_root, project_dir / "corpus")
             self.assertEqual(
                 preparation["paper_ids"],
                 ["alpha_paper", "beta_paper"],
@@ -47,7 +52,19 @@ class CorpusLayoutTest(unittest.TestCase):
                 project_dir / "source" / "alpha_paper.pdf",
             )
             self.assertEqual(
+                corpus_layout.paper_pdf_path("alpha_paper", layout=layout),
+                project_dir / "source" / "alpha_paper.pdf",
+            )
+            self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper"),
+                project_dir / "alpha_paper.canonical.review.md",
+            )
+            self.assertEqual(
+                corpus_layout.review_draft_path("alpha_paper", layout=layout),
+                project_dir / "alpha_paper.canonical.review.md",
+            )
+            self.assertEqual(
+                layout.review_draft_path("alpha_paper"),
                 project_dir / "alpha_paper.canonical.review.md",
             )
 

@@ -5,12 +5,17 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import sys
 
-from pipeline.corpus_layout import CORPUS_DIR
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from pipeline.cli.paper_build import build_paper
+from pipeline.corpus_layout import CORPUS_DIR, current_layout
 from pipeline.output_artifacts import build_summary, write_canonical_outputs
-from pipeline.reconcile_blocks import reconcile_paper
-from pipeline.render_review_from_canonical import render_document
-from pipeline.validate_canonical import CanonicalValidationError, validate_canonical
+from pipeline.output.review_renderer import render_document
+from pipeline.output.validation import CanonicalValidationError, validate_canonical
 
 
 def parse_args() -> argparse.Namespace:
@@ -40,13 +45,15 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-
-    document = reconcile_paper(
+    build = build_paper(
         args.paper_id,
         text_engine=args.text_engine,
         use_external_layout=args.use_external_layout,
         use_external_math=args.use_external_math,
+        include_review=True,
+        layout=current_layout(),
     )
+    document = build.document
     try:
         validate_canonical(document)
     except CanonicalValidationError as exc:
@@ -68,7 +75,7 @@ def main() -> int:
         )
         return 0
 
-    outputs = write_canonical_outputs(args.paper_id, document, include_review=True)
+    outputs = write_canonical_outputs(args.paper_id, document, include_review=True, layout=build.layout)
     canonical_exists = Path(outputs["canonical_path"]).exists()
     review_exists = Path(outputs["review_path"]).exists()
     print(

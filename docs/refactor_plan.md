@@ -1,299 +1,462 @@
 # Pipeline Refactor Plan
 
-Date: 2026-04-16
+Date: 2026-04-17
 
-Goal: make the ingestion pipeline light, decoupled, and debuggable enough that a broken paper can be diagnosed from stage artifacts instead of from cross-reading large heuristic files.
+Status: active, mid-refactor
 
-## Root-Level Repository Structure
+Current naming note:
 
-The repo should treat the engine and corpora as separate first-class concerns at the root.
+- `pipeline/` is the current engine package.
+- `paper_pipeline` is an older name and is not the target architecture.
+- Legacy `PAPER_PIPELINE_*` environment variables are still accepted as compatibility seams during migration.
 
-Target shape:
+## Goal
 
-- `pipeline/`
-  Engine code only.
-- `corpus/`
-  Root container for corpora.
-- `corpus/<name>/`
-  One checked-in corpus, such as `corpus/stepview/`.
-- `tests/`
-  Unit, stage, and replay regression tests.
-- `docs/`
-  Architecture, refactor plans, operational notes.
-- `tmp/`
-  Local generated output and replay/debug artifacts.
+Make the ingestion pipeline light, decoupled, and debuggable enough that a broken paper can be diagnosed from stage artifacts and narrow helper modules instead of by cross-reading large heuristic files.
 
-Implications:
+The practical target is not novelty in architecture. It is a standard, boring shape where:
 
-- No corpus should live at the repo root as a special case.
-- No engine module should hardcode `stepview/`.
-- The engine should default to `corpus/<corpus-name>/`, with environment overrides only as compatibility seams.
+- config and path resolution are explicit
+- source acquisition is grouped by extractor family
+- orchestration is thin
+- document-quality heuristics are pure and testable
+- assembly is separate from selection and cleanup
+- root-level files become wrappers or small coordinators instead of implementation homes
 
-## Refactor Objectives
+## Verified Current Status
 
-- Split extraction, selection, assembly, and orchestration into separate layers.
-- Replace hidden fallback behavior with explicit failure modes.
-- Emit debug artifacts at each stage.
-- Reduce cross-file and cross-stage coupling.
-- Make title and abstract extraction independently testable.
-- Shrink `pipeline/reconcile_blocks.py` dramatically by moving policy clusters into dedicated modules.
+The repo is no longer at the "single large pipeline file plus scripts" stage.
 
-## Guiding Rules
+Already in place:
 
-- Each stage has one job.
-- Each stage reads a small number of inputs and writes one explicit output artifact.
-- Downstream stages must not silently reinterpret upstream failure.
-- Heuristics belong in named policy modules, not interleaved conditionals in orchestration code.
-- A paper should fail cleanly rather than succeed with invented metadata.
+- `PipelineConfig` exists in `pipeline/config.py`
+- `ProjectLayout` exists in `pipeline/corpus_layout.py`
+- `PaperState` exists in `pipeline/state.py`
+- slim CLI entrypoints live under `pipeline/cli/`
+- real implementation families now live under package directories instead of only at `pipeline/` root
+- many former root implementation modules are now compatibility wrappers
 
-## Desired Layering
+Current implementation package families:
 
-### 1. Inputs
+- `pipeline/assembly/`
+- `pipeline/cli/`
+- `pipeline/corpus/`
+- `pipeline/figures/`
+- `pipeline/math/`
+- `pipeline/orchestrator/`
+- `pipeline/output/`
+- `pipeline/policies/`
+- `pipeline/reconcile/`
+- `pipeline/selectors/`
+- `pipeline/sources/`
+- `pipeline/text/`
 
-Responsibility:
+Current compatibility pattern:
 
-- discover papers
-- resolve corpus paths
-- locate PDFs and precomputed source artifacts
-- load checked-in manual overrides
+- keep public root import paths stable when tests or scripts patch them
+- move real implementation into a package family
+- leave a root wrapper or facade in place until downstream usage no longer depends on it
 
-Planned modules:
+Current verification baseline:
 
-- `pipeline/inputs/paper_locator.py`
-- `pipeline/inputs/artifact_store.py`
-- `pipeline/inputs/corpus_config.py`
+- full integration suite passes
+- latest result: `python3 -m unittest discover -s tests/integration/pipeline -p '*_test.py'`
+- result: `Ran 352 tests in 2.149s OK`
 
-### 2. Raw Extraction
+## Repository Boundary Status
 
-Responsibility:
+This area is improved but not fully finished.
 
-- run Docling, Mathpix, and pdftotext
-- normalize raw tool output into typed extractor payloads
-- never decide semantic meaning
+What is true today:
 
-Planned modules:
+- `ProjectLayout` resolves corpora under `corpus/<name>/` when that location exists
+- project-mode builds are explicit through `PIPELINE_PROJECT_DIR`
+- the engine no longer has to assume a single checked-in corpus shape
 
-- `pipeline/extractors/docling.py`
-- `pipeline/extractors/mathpix.py`
-- `pipeline/extractors/pdftotext.py`
-- `pipeline/extractors/types.py`
+What is intentionally still present as migration compatibility:
 
-### 3. Structural Reconstruction
+- legacy `PAPER_PIPELINE_*` env var names
+- legacy root-level corpus fallback
+- temporary fallback to `docs/` when the new corpus home is not present
 
-Responsibility:
+Implication:
 
-- convert raw extractor output into normalized page/block/span records
-- expose candidate structural evidence without semantic commitment
+- the repository boundary cleanup is substantially underway, but not complete until the engine no longer needs the legacy root/docs fallbacks
 
-Planned modules:
+## Current Package Shape
 
-- `pipeline/structure/layout_records.py`
-- `pipeline/structure/page_model.py`
-- `pipeline/structure/figure_records.py`
-- `pipeline/structure/heading_records.py`
+### Core Runtime
 
-### 4. Semantic Selection
+- `pipeline/config.py`
+  Defines `PipelineConfig`
+- `pipeline/corpus_layout.py`
+  Defines `ProjectLayout` and current corpus/project path resolution
+- `pipeline/state.py`
+  Defines `PaperState`
 
-Responsibility:
+### CLI
 
-- choose title, authors, affiliations, abstract, references, and sections
-- emit both decisions and evidence
+- `pipeline/cli/paper_build.py`
+- `pipeline/cli/external_source_build.py`
+- `pipeline/cli/run_corpus_rounds.py`
+- `pipeline/cli/run_project.py`
+- other thin command wrappers
 
-Planned modules:
+### Corpus
 
-- `pipeline/selectors/title_selector.py`
-- `pipeline/selectors/front_matter_selector.py`
-- `pipeline/selectors/abstract_selector.py`
-- `pipeline/selectors/reference_selector.py`
-- `pipeline/selectors/section_selector.py`
+- `pipeline/corpus/metadata.py`
+- `pipeline/corpus/lexicon.py`
+- `pipeline/corpus/lexicon_builder.py`
 
-### 5. Assembly
+Root wrappers still exist for compatibility:
 
-Responsibility:
+- `pipeline/corpus_metadata.py`
+- `pipeline/lexicon.py`
+- `pipeline/build_corpus_lexicon.py`
 
-- build canonical output from already-selected pieces
-- validate required fields
-- never invent missing identity metadata
+### Math
 
-Planned modules:
+- `pipeline/math/extract.py`
+- `pipeline/math/review_policy.py`
+- `pipeline/math/diagnostics.py`
+- `pipeline/math/semantic_ir.py`
+- `pipeline/math/semantic_policy.py`
+- `pipeline/math/mathml.py`
+- `pipeline/math/compile.py`
 
-- `pipeline/assembly/canonical_builder.py`
-- `pipeline/assembly/validation.py`
+Root wrappers still exist for compatibility:
 
-### 6. Orchestration
+- `pipeline/extract_math.py`
+- `pipeline/math_review_policy.py`
+- `pipeline/formula_diagnostics.py`
+- `pipeline/formula_semantic_ir.py`
+- `pipeline/formula_semantic_policy.py`
+- `pipeline/mathml_compiler.py`
+- `pipeline/compile_formulas.py`
 
-Responsibility:
+### Sources
 
-- scheduling
-- concurrency
-- retries
-- status files
-- force rebuild behavior
-- stage execution order
+- `pipeline/sources/layout.py`
+- `pipeline/sources/pdftotext.py`
+- `pipeline/sources/figures.py`
+- `pipeline/sources/external.py`
+- `pipeline/sources/docling.py`
+- `pipeline/sources/mathpix.py`
 
-Planned modules:
+Root wrappers still exist for compatibility:
 
-- `pipeline/orchestrator/run_corpus.py`
-- `pipeline/orchestrator/status.py`
-- `pipeline/orchestrator/work_queue.py`
+- `pipeline/extract_layout.py`
+- `pipeline/extract_pdftotext.py`
+- `pipeline/extract_figures.py`
+- `pipeline/external_sources.py`
+- `pipeline/docling_adapter.py`
+- `pipeline/mathpix_adapter.py`
 
-## High-Risk Hotspots To Dismantle
+### Text
 
-### `pipeline/reconcile_blocks.py`
+- `pipeline/text/prose.py`
+- `pipeline/text/references.py`
+- `pipeline/text/document_policy.py`
 
-Current problem:
+Root wrappers still exist for compatibility:
 
-- too many responsibilities in one file
-- extraction cleanup, front matter recovery, title heuristics, abstract heuristics, math suppression, reference extraction, paragraph merging, and assembly all coexist
+- `pipeline/normalize_prose.py`
+- `pipeline/normalize_references.py`
+- `pipeline/document_policy.py`
 
-Decomposition target:
+### Figures
 
-- `pipeline/reconcile/record_cleanup.py`
-- `pipeline/reconcile/front_matter_candidates.py`
-- `pipeline/reconcile/title_detection.py`
-- `pipeline/reconcile/author_affiliation_detection.py`
-- `pipeline/reconcile/abstract_detection.py`
-- `pipeline/reconcile/reference_detection.py`
-- `pipeline/reconcile/block_merging.py`
-- `pipeline/reconcile/math_suppression.py`
-- `pipeline/reconcile/document_assembly.py`
+- `pipeline/figures/labels.py`
+- `pipeline/figures/linking.py`
 
-### `pipeline/run_corpus_rounds.py`
+Root wrappers still exist for compatibility:
 
-Current problem:
+- `pipeline/figure_labels.py`
+- `pipeline/figure_linking.py`
 
-- orchestration file still knows too much about document quality and preservation details
+### Orchestrator
 
-Decomposition target:
+Already extracted:
 
-- keep only scheduling and state transitions in `run_corpus.py`
-- move paper build execution into a small `paper_job.py`
-- move status rendering into `status.py`
-- move abstract preservation and reuse policies into selector or assembly code
+- `pipeline/orchestrator/resolve_sources.py`
+- `pipeline/orchestrator/normalize_records.py`
+- `pipeline/orchestrator/assemble_document.py`
+- `pipeline/orchestrator/paper_reconciler.py`
+- `pipeline/orchestrator/layout_merge.py`
+- `pipeline/orchestrator/round_build.py`
+- `pipeline/orchestrator/round_document.py`
+- `pipeline/orchestrator/round_reporting.py`
+- `pipeline/orchestrator/source_composition.py`
 
-## Stage Artifacts To Emit
+Important current boundary:
 
-For each paper, persist stage outputs under a debug path, ideally inside `canonical_sources/debug/` or another stable per-paper location:
+- `pipeline/run_corpus_rounds.py` is still the stable patch/import surface for the round runner
+- pure helper logic has been moved out, but patch-sensitive coordination remains there intentionally
 
-- `stage-01-raw-docling.json`
-- `stage-01-raw-mathpix.json`
-- `stage-01-raw-pdftotext.json`
-- `stage-02-records.json`
-- `stage-03-front-matter-candidates.json`
-- `stage-04-title-decision.json`
-- `stage-05-abstract-decision.json`
-- `stage-06-reference-decision.json`
-- `stage-07-canonical-draft.json`
+## What Has Been Completed
 
-Each decision artifact should include:
+### 1. Standard runtime objects exist
 
-- selected candidate
-- rejected candidates
-- evidence used
-- confidence or score
-- failure reason when no selection is made
+This is no longer conceptual work.
 
-## Immediate Refactor Sequence
+- `PipelineConfig` is the explicit runtime config object
+- `ProjectLayout` is the explicit path/layout object
+- `PaperState` is the explicit per-paper working state object
 
-### Phase 1. Repository Boundary Cleanup
+### 2. CLI entrypoints were slimmed into a standard pattern
 
-Tasks:
+The repo now has a usable split between:
 
-- make `corpus/` the repo-root home for corpora
-- remove root-level corpus special cases
-- update docs and path resolution to use `corpus/<name>/`
+- implementation helpers in `pipeline/cli/*_build.py`
+- command entrypoints in `pipeline/cli/*.py`
+- compatibility scripts at `pipeline/*.py`
+
+### 3. Large root implementation clusters have been relocated
+
+Completed family moves:
+
+- corpus helpers moved under `pipeline/corpus/`
+- math helpers moved under `pipeline/math/`
+- source adapters and extractors moved under `pipeline/sources/`
+- prose/reference/document policy moved under `pipeline/text/`
+- figure caption and linking logic moved under `pipeline/figures/`
+- round-runner pure logic moved under `pipeline/orchestrator/`
+
+### 4. Output handling is no longer only implicit
+
+There is now a distinct `pipeline/output/` family and more explicit output-side helpers than before, even though some output wrappers still remain at the root.
+
+### 5. The refactor has stayed behavior-safe
+
+The working pattern so far has been:
+
+- move pure implementation first
+- preserve root import paths as wrappers where patch seams matter
+- only switch internal imports directly to packaged modules when test seams are not relying on the root names
+
+That pattern has worked and should continue.
+
+## Remaining Root-Level Hotspots
+
+Largest remaining root files at the time of this update:
+
+- `pipeline/reconcile_blocks.py` — 1846 lines
+- `pipeline/audit_corpus.py` — 954 lines
+- `pipeline/run_corpus_rounds.py` — 951 lines
+- `pipeline/mathpix_adapter.py` — 382 lines
+- `pipeline/text_utils.py` — 305 lines
+- `pipeline/corpus_layout.py` — 279 lines
+- `pipeline/staleness_policy.py` — 261 lines
+
+Interpretation:
+
+- `run_corpus_rounds.py` has already been materially reduced and is no longer the worst root orchestrator
+- `reconcile_blocks.py` is still the dominant monolith
+- `audit_corpus.py` is now the best next large refactor target before attempting another high-coupling `reconcile_blocks.py` slice
+
+## Current Refactor Rules
+
+These rules now reflect what is actually working in the repo.
+
+- Preserve patch seams at the root when tests depend on them.
+- Prefer moving pure helpers before moving orchestration.
+- Do not create a new top-level package family unless it clearly groups multiple related modules.
+- Prefer package families over a flat `pipeline/` root whenever two or more files clearly belong together.
+- Keep the `pipeline/` root as a boundary layer, not the long-term home of most implementation.
+- Do not force the tests to relearn import paths unless there is a strong reason.
+
+## Immediate Next Plan
+
+### Phase A. Finish the low-risk root cleanup
+
+Next target:
+
+- `pipeline/audit_corpus.py`
+
+Plan:
+
+- move corpus-audit scanning and report-rendering helpers out of the root file
+- keep `pipeline/audit_corpus.py` as the stable entrypoint and compatibility surface
+- avoid inventing a one-off top-level category just for one file
+
+Preferred destination:
+
+- use `pipeline/corpus/` and `pipeline/output/` for the extracted helpers rather than adding a brand-new root category unless the audit split clearly grows into a real family
 
 Success criteria:
 
-- engine code resolves default corpus paths under `corpus/`
-- `stepview` is only one corpus, not a structural exception
+- `audit_corpus.py` becomes a small coordinator or wrapper
+- pure audit/report logic becomes testable without loading the full command path
 
-### Phase 2. Observability First
+### Phase B. Keep reducing shared root utilities
 
-Tasks:
+Next likely targets after `audit_corpus.py`:
 
-- add structured title and abstract decision artifacts without changing selection logic too much
-- make failed title and abstract selection explicit in artifacts
+- `pipeline/text_utils.py`
+- `pipeline/corpus_layout.py`
+- `pipeline/staleness_policy.py`
 
-Success criteria:
+Plan:
 
-- one broken abstract can be diagnosed from one artifact file
-
-### Phase 3. Extract Abstract Selection
-
-Tasks:
-
-- move abstract logic out of `reconcile_blocks.py`
-- create `selectors/abstract_selector.py`
-- add replay tests for known broken papers
+- move pure text/heading helpers into the existing `pipeline/text/` family where appropriate
+- keep `ProjectLayout` in `pipeline/corpus_layout.py` for now, but consider pulling pure path helpers into `pipeline/corpus/` if that reduces coupling without hiding the main boundary object
+- keep `staleness_policy.py` centralized unless it naturally splits into fingerprinting vs policy helpers
 
 Success criteria:
 
-- abstract fixes do not require editing front matter or reference code
+- fewer medium-sized general-purpose root files
+- cleaner separation between boundary objects and helper logic
 
-### Phase 4. Extract Title and Front Matter
+### Phase C. Continue adapter normalization
 
-Tasks:
+Targets:
 
-- move title, author, and affiliation logic into dedicated selector modules
-- keep hard failure on missing recoverable title
+- `pipeline/mathpix_adapter.py`
+- `pipeline/docling_adapter.py`
 
-Success criteria:
+Plan:
 
-- title changes do not affect abstract behavior
-
-### Phase 5. Extract Block Merging and Math Suppression
-
-Tasks:
-
-- separate prose cleanup / block merging from semantic selection
-- isolate display-math suppression rules
+- keep the root adapters only as patch-friendly compatibility surfaces
+- move any remaining implementation detail that can safely move into `pipeline/sources/mathpix.py` and `pipeline/sources/docling.py`
+- preserve current monkeypatch seams where tests rely on root-local symbols
 
 Success criteria:
 
-- paragraph merge bugs can be debugged without touching title or abstract code
+- root adapters become visibly wrapper-shaped
+- implementation stays in `pipeline/sources/`
 
-### Phase 6. Simplify Orchestrator
+### Phase D. Resume dismantling `reconcile_blocks.py`
 
-Tasks:
+This remains the highest-value but highest-risk refactor area.
 
-- reduce `run_corpus_rounds.py` to scheduling and stage orchestration
-- move stage-specific preservation rules outward to selectors or assembly
+Already extracted around it:
+
+- orchestration helpers under `pipeline/orchestrator/`
+- assembly helpers under `pipeline/assembly/`
+- multiple reconcile helpers under `pipeline/reconcile/`
+- text/math/source helpers in their own families
+
+Recommended next extractions from `reconcile_blocks.py`:
+
+- front-matter candidate and recovery logic
+- title/author/affiliation detection helpers
+- reference extraction and cleanup helpers
+- additional record cleanup and paragraph/section support that can move without destabilizing the full build path
+
+Preferred destination:
+
+- `pipeline/reconcile/`
+- `pipeline/assembly/`
+- `pipeline/selectors/` when the logic is truly semantic selection rather than cleanup
 
 Success criteria:
 
-- scheduling changes do not require editing extraction internals
+- `reconcile_blocks.py` becomes a thin coordinator over package helpers
+- title/front-matter/reference fixes become local edits instead of monolith surgery
 
-## Testing Strategy
+## Planned End-State Shape
 
-Three layers of tests:
+This is the target shape from here, adjusted to what now already exists.
 
-### Policy Tests
+### Boundary Objects
 
-- small pure-function tests
-- title scoring
-- caption contamination rejection
-- abstract boundary rejection
-- page-number/taxonomy/noise stripping
+- `pipeline/config.py`
+- `pipeline/corpus_layout.py`
+- `pipeline/state.py`
 
-### Stage Tests
+### Source Acquisition
 
-- feed normalized records into selectors
-- assert structured decisions
+- `pipeline/sources/*`
+- `pipeline/figures/*`
+- `pipeline/cli/external_source_build.py`
 
-### Replay Regression Tests
+### Record Normalization And Document Build
 
-- maintain a curated hard-paper set
-- verify exact decisions for title, abstract, references, and front matter
+- `pipeline/orchestrator/*`
+- `pipeline/reconcile/*`
+- `pipeline/assembly/*`
+- `pipeline/text/*`
+- `pipeline/math/*`
 
-Seed replay set:
+### Corpus-Level Logic
 
-- the eight currently scoped abstract-failure papers
+- `pipeline/corpus/*`
+
+### Output And Reporting
+
+- `pipeline/output/*`
+- thin root/report wrappers only where compatibility still matters
+
+## Stage Boundary Intent
+
+The stage boundary we should continue converging toward is:
+
+### 1. Config And Layout
+
+Owned by:
+
+- `PipelineConfig`
+- `ProjectLayout`
+- `PaperState`
+
+Responsibility:
+
+- resolve what build we are doing
+- resolve where inputs and outputs live
+- hold explicit per-paper pipeline state
+
+### 2. Source Acquisition And Composition
+
+Owned by:
+
+- `pipeline/sources/*`
+- `pipeline/figures/*`
+- `pipeline/orchestrator/source_composition.py`
+
+Responsibility:
+
+- acquire source artifacts
+- normalize extractor payloads
+- compose external layout/math sources without semantic document decisions
+
+### 3. Record Normalization And Selection
+
+Owned by:
+
+- `pipeline/orchestrator/*`
+- `pipeline/reconcile/*`
+- `pipeline/selectors/*`
+
+Responsibility:
+
+- convert source artifacts into normalized records
+- identify front matter, sections, references, math, and figures
+- keep policy logic grouped and testable
+
+### 4. Assembly And Outputs
+
+Owned by:
+
+- `pipeline/assembly/*`
+- `pipeline/output/*`
+
+Responsibility:
+
+- assemble canonical outputs from already-normalized state
+- write stable artifacts, reviews, and reports
+
+## Explicit Non-Goals Right Now
+
+- do not rename everything at once
+- do not remove root compatibility wrappers prematurely
+- do not force a perfect package taxonomy before the file families are clear
+- do not attack `reconcile_blocks.py` and another high-coupling root monolith in the same pass unless the extracted seam is obviously pure
 
 ## Expected End State
 
-- `reconcile_blocks.py` shrinks from a monolith into a thin coordinator or disappears entirely
-- a paper can be replayed stage by stage
-- a failed paper yields explicit structured reasons
-- title and abstract debugging become local tasks, not repo-wide surgery
-- new corpora can be added under `corpus/` without code changes
+- the `pipeline/` root mostly contains boundary objects, compatibility wrappers, and a small number of true coordinators
+- implementation lives in package families instead of dozens of unrelated root files
+- `run_corpus_rounds.py` and similar command files become thin
+- `reconcile_blocks.py` shrinks dramatically or disappears behind explicit stage helpers
+- the corpus home is cleanly `corpus/<name>/` without special-case fallbacks
+- a broken paper can be debugged by stage and helper family instead of by reading monoliths

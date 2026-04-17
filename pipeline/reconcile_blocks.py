@@ -41,20 +41,21 @@ from pipeline.assembly.section_support import (
     normalize_section_title as assemble_normalize_section_title,
     section_id as assemble_section_id,
 )
+from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.corpus_layout import CORPUS_DIR
-from pipeline.compile_formulas import compile_formulas
-from pipeline.external_sources import load_external_layout, load_external_math, load_mathpix_layout
-from pipeline.figure_labels import caption_label
-from pipeline.formula_semantic_policy import annotate_formula_classifications
-from pipeline.formula_semantic_ir import annotate_formula_semantic_expr
-from pipeline.math_review_policy import (
+from pipeline.math.compile import compile_formulas
+from pipeline.sources.external import load_external_layout, load_external_math, load_mathpix_layout
+from pipeline.figures.labels import caption_label
+from pipeline.math.semantic_policy import annotate_formula_classifications
+from pipeline.math.semantic_ir import annotate_formula_semantic_expr
+from pipeline.math.review_policy import (
     review_for_algorithm_block_text,
     review_for_math_entry,
     review_for_math_ref_block,
 )
 from pipeline.normalize_prose import decode_ocr_codepoint_tokens, normalize_prose_text
 from pipeline.normalize_references import normalize_reference_text
-from pipeline.orchestrator.paper_reconciler import reconcile_paper_document
+from pipeline.orchestrator.paper_reconciler import run_paper_pipeline
 from pipeline.orchestrator.layout_merge import merge_native_and_external_layout as orchestrate_merge_native_and_external_layout
 from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
 from pipeline.reconcile.block_merging import (
@@ -206,16 +207,17 @@ from pipeline.text_utils import (
     normalize_title_key,
     parse_heading_label,
 )
+from pipeline.state import PaperState
 from pipeline.types import LayoutBlock, default_review
-from pipeline.extract_figures import extract_figures
-from pipeline.extract_layout import extract_layout
-from pipeline.extract_pdftotext import (
+from pipeline.sources.figures import extract_figures
+from pipeline.sources.layout import extract_layout
+from pipeline.sources.pdftotext import (
     bbox_to_line_window,
     extract_pdftotext_pages,
     pdftotext_available,
     slice_page_text,
 )
-from pipeline.extract_math import (
+from pipeline.math.extract import (
     INLINE_MATH_RE,
     build_block_math_entry,
     classify_math_block,
@@ -1433,7 +1435,7 @@ def _is_short_ocr_fragment(record: dict[str, Any]) -> bool:
     )
 
 
-def reconcile_paper(
+def reconcile_paper_state(
     paper_id: str,
     *,
     text_engine: str = "native",
@@ -1441,22 +1443,120 @@ def reconcile_paper(
     use_external_math: bool = False,
     layout_output: dict[str, Any] | None = None,
     figures: list[dict[str, Any]] | None = None,
-) -> dict[str, Any]:
-    return reconcile_paper_document(
+    config: PipelineConfig | None = None,
+    state: PaperState | None = None,
+) -> PaperState:
+    runtime_config = config or build_pipeline_config(
+        text_engine=text_engine,
+        use_external_layout=use_external_layout,
+        use_external_math=use_external_math,
+        include_review=False,
+    )
+
+    def normalize_prose_text_for_layout(text: str) -> tuple[str, Any]:
+        return normalize_prose_text(text, layout=runtime_config.layout)
+
+    def normalize_reference_text_for_layout(text: str) -> tuple[str, Any]:
+        return normalize_reference_text(text, layout=runtime_config.layout)
+
+    def normalize_paragraph_text(text: str) -> str:
+        normalized = _strip_known_running_header_text(text)
+        if not normalized:
+            return normalized
+        normalized = LEADING_NEGATIONSLASH_ARTIFACT_RE.sub("", normalized)
+        normalized = LEADING_OCR_MARKER_RE.sub("", normalized)
+        normalized = LEADING_PUNCT_ARTIFACT_RE.sub("", normalized)
+        normalized = LEADING_VAR_ARTIFACT_RE.sub("", normalized)
+        normalized = TRAILING_NUMERIC_ARTIFACT_RE.sub(".", normalized)
+        normalized, _ = normalize_prose_text_for_layout(normalized)
+        return _clean_text(normalized)
+
+    def normalize_figure_caption_text(text: str) -> str:
+        return reconcile_normalize_figure_caption_text(
+            text,
+            clean_text=_clean_text,
+            normalize_prose_text=normalize_prose_text_for_layout,
+        )
+
+    def make_reference_entry(record: dict[str, Any], index: int) -> dict[str, Any]:
+        return reconcile_make_reference_entry(
+            record,
+            index,
+            clean_text=_clean_text,
+            normalize_reference_text=normalize_reference_text_for_layout,
+            block_source_spans=_block_source_spans,
+            default_review=default_review,
+        )
+
+    def math_entry_looks_like_prose(entry: dict[str, Any]) -> bool:
+        return reconcile_math_entry_looks_like_prose(
+            entry,
+            normalize_paragraph_text=normalize_paragraph_text,
+            looks_like_prose_paragraph=looks_like_prose_paragraph,
+            looks_like_prose_math_fragment=looks_like_prose_math_fragment,
+            word_count=_word_count,
+        )
+
+    def should_demote_prose_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
+        return reconcile_should_demote_prose_math_entry_to_paragraph(
+            entry,
+            normalize_paragraph_text=normalize_paragraph_text,
+            word_count=_word_count,
+            strong_operator_count=_strong_operator_count,
+            mathish_ratio=_mathish_ratio,
+            math_entry_looks_like_prose=math_entry_looks_like_prose,
+            math_entry_semantic_policy=_math_entry_semantic_policy,
+            looks_like_prose_paragraph=looks_like_prose_paragraph,
+        )
+
+    def should_demote_graphic_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
+        return reconcile_should_demote_graphic_math_entry_to_paragraph(
+            entry,
+            should_demote_prose_math_entry_to_paragraph=should_demote_prose_math_entry_to_paragraph,
+        )
+
+    def should_drop_display_math_artifact(entry: dict[str, Any]) -> bool:
+        return reconcile_should_drop_display_math_artifact(
+            entry,
+            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
+            group_entry_items_are_graphic_only=_group_entry_items_are_graphic_only,
+            math_entry_semantic_policy=_math_entry_semantic_policy,
+            math_entry_category=_math_entry_category,
+        )
+
+    def paragraph_block_from_graphic_math_entry(
+        block: dict[str, Any],
+        math_entry: dict[str, Any],
+        counters: dict[str, int],
+    ) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+        return reconcile_paragraph_block_from_graphic_math_entry(
+            block,
+            math_entry,
+            counters,
+            normalize_paragraph_text=normalize_paragraph_text,
+            split_inline_math=split_inline_math,
+            repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
+            extract_general_inline_math_spans=extract_general_inline_math_spans,
+            merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
+            normalize_inline_math_spans=normalize_inline_math_spans,
+            default_review=default_review,
+        )
+
+    return run_paper_pipeline(
         paper_id,
         text_engine=text_engine,
         use_external_layout=use_external_layout,
         use_external_math=use_external_math,
         layout_output=layout_output,
         figures=figures,
-        extract_layout=extract_layout,
-        load_external_layout=load_external_layout,
+        extract_layout=lambda target_paper_id: extract_layout(target_paper_id, layout=runtime_config.layout),
+        load_external_layout=lambda target_paper_id: load_external_layout(target_paper_id, layout=runtime_config.layout),
         merge_native_and_external_layout=_merge_native_and_external_layout,
-        load_external_math=load_external_math,
+        load_external_math=lambda target_paper_id: load_external_math(target_paper_id, layout=runtime_config.layout),
         external_math_by_page=reconcile_external_math_by_page,
-        load_mathpix_layout=load_mathpix_layout,
-        extract_figures=extract_figures,
-        normalize_figure_caption_text=_normalize_figure_caption_text,
+        load_mathpix_layout=lambda target_paper_id: load_mathpix_layout(target_paper_id, layout=runtime_config.layout),
+        extract_figures=lambda target_paper_id: extract_figures(target_paper_id, layout=runtime_config.layout),
+        normalize_figure_caption_text=normalize_figure_caption_text,
         merge_layout_and_figure_records=lambda layout_blocks, figures: reconcile_merge_layout_and_figure_records(
             layout_blocks,
             figures,
@@ -1483,7 +1583,7 @@ def reconcile_paper(
         ),
         pdftotext_available=pdftotext_available,
         repair_record_text_with_pdftotext=_repair_record_text_with_pdftotext,
-        extract_pdftotext_pages=extract_pdftotext_pages,
+        extract_pdftotext_pages=lambda target_paper_id: extract_pdftotext_pages(target_paper_id, layout=runtime_config.layout),
         page_height_map=_page_height_map,
         promote_heading_like_records=lambda records: reconcile_promote_heading_like_records(
             records,
@@ -1624,11 +1724,11 @@ def reconcile_paper(
             block_source_spans=_block_source_spans,
             caption_label=caption_label,
             default_review=default_review,
-            make_reference_entry=_make_reference_entry,
+            make_reference_entry=make_reference_entry,
             looks_like_real_code_record=_looks_like_real_code_record,
             split_code_lines=_split_code_lines,
             list_item_marker=_list_item_marker,
-            normalize_paragraph_text=_normalize_paragraph_text,
+            normalize_paragraph_text=normalize_paragraph_text,
             split_inline_math=split_inline_math,
             repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
             extract_general_inline_math_spans=extract_general_inline_math_spans,
@@ -1685,9 +1785,9 @@ def reconcile_paper(
             compiled_math,
             sections,
             counters,
-            should_demote_graphic_math_entry_to_paragraph=_should_demote_graphic_math_entry_to_paragraph,
-            paragraph_block_from_graphic_math_entry=_paragraph_block_from_graphic_math_entry,
-            should_drop_display_math_artifact=_should_drop_display_math_artifact,
+            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
+            paragraph_block_from_graphic_math_entry=paragraph_block_from_graphic_math_entry,
+            should_drop_display_math_artifact=should_drop_display_math_artifact,
         ),
         suppress_running_header_blocks=lambda blocks, sections: reconcile_suppress_running_header_blocks(
             blocks,
@@ -1715,4 +1815,32 @@ def reconcile_paper(
         ),
         now_iso=_now_iso,
         build_canonical_document=build_canonical_document,
+        config=runtime_config,
+        state=state,
     )
+
+
+def reconcile_paper(
+    paper_id: str,
+    *,
+    text_engine: str = "native",
+    use_external_layout: bool = False,
+    use_external_math: bool = False,
+    layout_output: dict[str, Any] | None = None,
+    figures: list[dict[str, Any]] | None = None,
+    config: PipelineConfig | None = None,
+    state: PaperState | None = None,
+) -> dict[str, Any]:
+    paper_state = reconcile_paper_state(
+        paper_id,
+        text_engine=text_engine,
+        use_external_layout=use_external_layout,
+        use_external_math=use_external_math,
+        layout_output=layout_output,
+        figures=figures,
+        config=config,
+        state=state,
+    )
+    if paper_state.document is None:
+        raise RuntimeError(f"Pipeline did not materialize a canonical document for {paper_id}")
+    return paper_state.document

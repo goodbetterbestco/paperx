@@ -3,9 +3,10 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pipeline.extract_layout import extract_layout
-from pipeline.extract_math import INLINE_MATH_RE, classify_math_block
-from pipeline.extract_pdftotext import bbox_to_line_window, extract_pdftotext_pages, slice_page_text
+from pipeline.corpus_layout import ProjectLayout
+from pipeline.sources.layout import extract_layout
+from pipeline.math.extract import INLINE_MATH_RE, classify_math_block
+from pipeline.sources.pdftotext import bbox_to_line_window, extract_pdftotext_pages, slice_page_text
 from pipeline.text_utils import compact_text
 from pipeline.types import LayoutBlock
 
@@ -95,19 +96,23 @@ def is_better_candidate(block: LayoutBlock, candidate_text: str) -> bool:
     return True
 
 
-def overlay_pdftotext_onto_layout(paper_id: str) -> tuple[dict[str, Any], dict[str, int]]:
-    layout = extract_layout(paper_id)
-    page_lines_by_page = extract_pdftotext_pages(paper_id)
+def overlay_pdftotext_onto_layout(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+) -> tuple[dict[str, Any], dict[str, int]]:
+    native_layout = extract_layout(paper_id, layout=layout)
+    page_lines_by_page = extract_pdftotext_pages(paper_id, layout=layout)
     page_heights = {
         int(page_info["page"]): float(page_info["height"])
-        for page_info in layout.get("page_sizes_pt", [])
+        for page_info in native_layout.get("page_sizes_pt", [])
     }
 
     repaired_blocks: list[LayoutBlock] = []
     changed = 0
     skipped = 0
 
-    for block in layout["blocks"]:
+    for block in native_layout["blocks"]:
         if should_skip_repair(block):
             repaired_blocks.append(block)
             skipped += 1
@@ -139,9 +144,9 @@ def overlay_pdftotext_onto_layout(paper_id: str) -> tuple[dict[str, Any], dict[s
 
     overlay = {
         "engine": "pdftotext_overlay",
-        "pdf_path": layout["pdf_path"],
-        "page_count": layout["page_count"],
-        "page_sizes_pt": layout["page_sizes_pt"],
+        "pdf_path": native_layout["pdf_path"],
+        "page_count": native_layout["page_count"],
+        "page_sizes_pt": native_layout["page_sizes_pt"],
         "blocks": [
             {
                 "id": block.id,

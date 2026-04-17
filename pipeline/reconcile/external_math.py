@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from pipeline.extract_math import looks_like_prose_math_fragment
+from pipeline.math.extract import looks_like_prose_math_fragment
 from pipeline.types import LayoutBlock
 
 

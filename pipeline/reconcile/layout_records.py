@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Callable
 
-from pipeline.figure_labels import caption_label
+from pipeline.figures.labels import caption_label
 from pipeline.types import LayoutBlock
 
 

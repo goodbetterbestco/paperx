@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from pipeline.corpus_layout import current_layout
 from pipeline.run_corpus_rounds import (
     _MathpixRoundCoordinator,
     _anomaly_flags,
@@ -337,6 +338,44 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(result["document"], good_document)
         self.assertEqual(result["anomalies"], [])
 
+    def test_build_paper_threads_explicit_layout_into_pipeline_config(self) -> None:
+        good_document = {
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [{"name": "Alice Example", "affiliation_ids": ["aff-1"]}],
+                "affiliations": [{"id": "aff-1", "department": "", "institution": "Test Lab", "address": ""}],
+                "abstract_block_id": "blk-abstract-1",
+                "funding_block_id": None,
+            },
+            "sections": [{"id": "sec-1"}, {"id": "sec-2"}],
+            "blocks": [
+                {
+                    "id": "blk-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "A short and valid abstract about the paper."}]},
+                }
+            ],
+            "references": [{"id": "ref-1"}],
+            "figures": [],
+        }
+        captured_configs = []
+        layout = current_layout()
+
+        def fake_reconcile_paper(_paper_id: str, **kwargs: object) -> dict:
+            captured_configs.append(kwargs["config"])
+            return good_document
+
+        with (
+            patch("pipeline.run_corpus_rounds.reconcile_paper", side_effect=fake_reconcile_paper),
+            patch("pipeline.run_corpus_rounds.validate_canonical"),
+        ):
+            result = _build_paper("synthetic_test_paper", layout=layout)
+
+        self.assertEqual(result["mode"], "hybrid")
+        self.assertIs(captured_configs[0].layout, layout)
+        self.assertTrue(captured_configs[0].use_external_layout)
+        self.assertTrue(captured_configs[0].use_external_math)
+
     def test_preserve_existing_generated_abstract_copies_prior_generated_text(self) -> None:
         existing_document = {
             "front_matter": {
@@ -520,6 +559,38 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertIsNotNone(status["rounds"]["round_1"]["completed_at"])
         self.assertTrue(status["rounds"]["round_1"]["force_rebuild"])
 
+    def test_process_round_forwards_explicit_layout_to_jobs(self) -> None:
+        status = {
+            "papers": ["paper-a"],
+            "rounds": {},
+        }
+        captured_layouts = []
+        layout = current_layout()
+
+        def fake_run_paper_job(
+            paper_id: str,
+            *,
+            force_rebuild: bool,
+            prefetched_mathpix_future=None,
+            layout=None,
+        ) -> dict:
+            captured_layouts.append(layout)
+            return {
+                "status": "completed",
+                "completed_at": "2026-04-14T00:10:00Z",
+                "forced_rebuild": force_rebuild,
+                "paper_id": paper_id,
+            }
+
+        with (
+            patch("pipeline.run_corpus_rounds._mathpix_credentials_available", return_value=False),
+            patch("pipeline.run_corpus_rounds._run_paper_job", side_effect=fake_run_paper_job),
+            patch("pipeline.run_corpus_rounds._save_status"),
+        ):
+            _process_round(status, 1, max_workers=1, force_rebuild=False, layout=layout)
+
+        self.assertEqual(captured_layouts, [layout])
+
     def test_final_report_mentions_running_papers(self) -> None:
         status = {
             "started_at": "2026-04-14T00:00:00Z",
@@ -603,6 +674,36 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertIn("submitted", phases)
         self.assertIn("polling", phases)
         self.assertIn("completed", phases)
+
+    def test_mathpix_round_coordinator_forwards_explicit_layout(self) -> None:
+        forwarded_layouts: list[tuple[str, object]] = []
+        layout = current_layout()
+
+        def fake_submit_mathpix_pdf(paper_id: str, *, layout=None, **kwargs: object) -> str:
+            forwarded_layouts.append(("submit", layout))
+            return "pdf-123"
+
+        def fake_download_mathpix_pdf(paper_id: str, pdf_id: str, *, layout=None, **kwargs: object) -> dict[str, object]:
+            forwarded_layouts.append(("download", layout))
+            return {"pdf_id": pdf_id, "pages": []}
+
+        with (
+            patch("pipeline.run_corpus_rounds.submit_mathpix_pdf", side_effect=fake_submit_mathpix_pdf),
+            patch("pipeline.run_corpus_rounds.fetch_mathpix_pdf_status", return_value={"status": "completed"}),
+            patch("pipeline.run_corpus_rounds.download_mathpix_pdf", side_effect=fake_download_mathpix_pdf),
+        ):
+            coordinator = _MathpixRoundCoordinator(
+                ["paper-a"],
+                submit_workers=1,
+                poll_seconds=1.0,
+                layout=layout,
+            )
+            coordinator.start()
+            coordinator.future_for("paper-a").result(timeout=3)
+            coordinator.close()
+
+        self.assertIn(("submit", layout), forwarded_layouts)
+        self.assertIn(("download", layout), forwarded_layouts)
 
     def test_final_report_mentions_stale_reasons(self) -> None:
         status = {
