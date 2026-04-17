@@ -1,3 +1,4 @@
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -12,12 +13,18 @@ from paper_pipeline.run_corpus_rounds import (
     _build_paper,
     _compose_external_sources,
     _desired_flags_for_existing_paper,
+    _mathpix_page_workers_per_paper,
+    _preserve_existing_generated_abstract,
     _render_final_report,
     _summarize_round,
 )
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
+    def test_mathpix_page_workers_default_to_one(self) -> None:
+        with patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(_mathpix_page_workers_per_paper(), 1)
+
     def test_anomaly_flags_require_reference_and_figure_expectation(self) -> None:
         document = {
             "front_matter": {
@@ -222,13 +229,67 @@ class RunCorpusRoundsTest(unittest.TestCase):
         with (
             patch("paper_pipeline.run_corpus_rounds.reconcile_paper", side_effect=[bad_document, good_document]),
             patch("paper_pipeline.run_corpus_rounds.validate_canonical"),
-            patch("paper_pipeline.run_corpus_rounds._write_canonical_outputs", return_value={"canonical_path": "/tmp/canonical.json"}),
         ):
             result = _build_paper("synthetic_test_paper")
 
         self.assertEqual(result["mode"], "layout_only")
         self.assertEqual(result["document"], good_document)
         self.assertEqual(result["anomalies"], [])
+
+    def test_preserve_existing_generated_abstract_copies_prior_generated_text(self) -> None:
+        existing_document = {
+            "front_matter": {
+                "abstract_block_id": "blk-abstract-old",
+            },
+            "blocks": [
+                {
+                    "id": "blk-abstract-old",
+                    "type": "paragraph",
+                    "content": {
+                        "spans": [
+                            {
+                                "kind": "text",
+                                "text": "[Generated abstract from paper content.] A preserved generated abstract.",
+                            }
+                        ]
+                    },
+                    "source_spans": [],
+                    "alternates": [],
+                    "review": {
+                        "status": "edited",
+                        "risk": "low",
+                        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF.",
+                    },
+                }
+            ],
+        }
+        new_document = {
+            "front_matter": {
+                "abstract_block_id": "blk-abstract-new",
+            },
+            "blocks": [
+                {
+                    "id": "blk-abstract-new",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                    "source_spans": [],
+                    "alternates": [],
+                    "review": {"status": "edited", "risk": "low", "notes": "[missing from original]"},
+                }
+            ],
+        }
+
+        preserved = _preserve_existing_generated_abstract(existing_document, new_document)
+
+        self.assertTrue(preserved)
+        self.assertEqual(
+            new_document["blocks"][0]["content"]["spans"][0]["text"],
+            "[Generated abstract from paper content.] A preserved generated abstract.",
+        )
+        self.assertEqual(
+            new_document["blocks"][0]["review"]["notes"],
+            "Generated abstract from paper content; original abstract unavailable in source PDF.",
+        )
 
     def test_round_summary_counts_prebuild_staleness(self) -> None:
         round_status = {

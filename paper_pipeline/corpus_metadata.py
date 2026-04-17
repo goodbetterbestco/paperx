@@ -6,7 +6,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from paper_pipeline.corpus_layout import CORPUS_DIR, PROJECT_MODE, SOURCE_DIR, normalize_paper_id, paper_pdf_path
+from paper_pipeline.corpus_layout import CORPUS_DIR, PROJECT_MODE, SOURCE_DIR, corpus_paper_id, normalize_paper_id, paper_pdf_path
 
 
 PAPER_DIR_RE = re.compile(r"^(?:kernel_)?\d{4}_.+")
@@ -14,11 +14,11 @@ FIGURE_EXPECTATIONS_PATH = CORPUS_DIR / "figure_expectations.json"
 
 
 def paper_dir_name_from_paper_id(paper_id: str) -> str:
-    return paper_id.removeprefix("kernel_")
+    return corpus_paper_id(paper_id)
 
 
 def paper_id_from_dir_name(dir_name: str) -> str:
-    return dir_name if dir_name.startswith("kernel_") else f"kernel_{dir_name}"
+    return corpus_paper_id(dir_name)
 
 
 def is_paper_dir(path: Path) -> bool:
@@ -27,14 +27,14 @@ def is_paper_dir(path: Path) -> bool:
 
 def paper_id_from_pdf_path(pdf_path: Path) -> str:
     if PROJECT_MODE and pdf_path.parent.resolve() == SOURCE_DIR.resolve():
-        return normalize_paper_id(pdf_path.stem)
+        return corpus_paper_id(pdf_path.stem)
     if PAPER_DIR_RE.match(pdf_path.parent.name):
         return paper_id_from_dir_name(pdf_path.parent.name)
-    return normalize_paper_id(pdf_path.stem)
+    return corpus_paper_id(pdf_path.stem)
 
 
 def canonical_pdf_filename(paper_id: str) -> str:
-    return f"{paper_id.removeprefix('kernel_')}.pdf"
+    return f"{corpus_paper_id(paper_id)}.pdf"
 
 
 def discover_paper_pdf_paths() -> list[Path]:

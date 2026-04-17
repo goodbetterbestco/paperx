@@ -53,18 +53,23 @@ def normalize_paper_id(value: str) -> str:
     return normalized or "paper"
 
 
+def corpus_paper_id(paper_id: str) -> str:
+    return normalize_paper_id(paper_id.removeprefix("kernel_"))
+
+
 def project_root() -> Path:
     return PROJECT_DIR if PROJECT_DIR is not None else CORPUS_DIR
 
 
 def paper_dir(paper_id: str) -> Path:
-    return CORPUS_DIR / paper_id
+    return CORPUS_DIR / corpus_paper_id(paper_id)
 
 
 def paper_pdf_path(paper_id: str) -> Path:
+    canonical_paper_id = corpus_paper_id(paper_id)
     if PROJECT_MODE:
-        return SOURCE_DIR / f"{paper_id}.pdf"
-    return paper_dir(paper_id) / f"{paper_id}.pdf"
+        return SOURCE_DIR / f"{canonical_paper_id}.pdf"
+    return paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
 
 
 def canonical_path(paper_id: str) -> Path:
@@ -84,7 +89,7 @@ def figure_manifest_path(paper_id: str) -> Path:
 
 
 def review_draft_path(paper_id: str) -> Path:
-    return REVIEW_DRAFTS_DIR / f"{paper_id}.canonical.review.md"
+    return REVIEW_DRAFTS_DIR / f"{corpus_paper_id(paper_id)}.canonical.review.md"
 
 
 def project_report_path() -> Path:

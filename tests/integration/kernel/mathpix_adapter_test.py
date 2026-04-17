@@ -4,12 +4,13 @@ import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib import error
 
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.mathpix_adapter import run_mathpix
+from paper_pipeline.mathpix_adapter import call_mathpix_on_page_image, run_mathpix
 
 
 class _FakeDoc:
@@ -26,6 +27,22 @@ class _FakeDoc:
 class _FakeFitz:
     def open(self, path: Path) -> _FakeDoc:
         return _FakeDoc(page_count=3)
+
+
+class _FakeMathpixResponse:
+    def __init__(self, payload: dict[str, object]) -> None:
+        self._payload = payload
+
+    def __enter__(self) -> "_FakeMathpixResponse":
+        return self
+
+    def __exit__(self, exc_type, exc, tb) -> bool:
+        return False
+
+    def read(self) -> bytes:
+        import json
+
+        return json.dumps(self._payload).encode("utf-8")
 
 
 class MathpixAdapterTest(unittest.TestCase):
@@ -61,6 +78,95 @@ class MathpixAdapterTest(unittest.TestCase):
             [payload["response"]["page_number"] for payload in payloads],
             [1, 2, 3],
         )
+
+    def test_call_mathpix_retries_connection_reset_then_succeeds(self) -> None:
+        with (
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch(
+                "paper_pipeline.mathpix_adapter.request.urlopen",
+                side_effect=[
+                    ConnectionResetError(54, "Connection reset by peer"),
+                    _FakeMathpixResponse({"ok": True}),
+                ],
+            ) as urlopen_mock,
+        ):
+            payload = call_mathpix_on_page_image(b"image-bytes", app_id="id", app_key="key")
+
+        self.assertEqual(payload, {"ok": True})
+        self.assertEqual(urlopen_mock.call_count, 2)
+        self.assertEqual(sleep_mock.call_count, 1)
+        self.assertEqual(sleep_mock.call_args.args[0], 0.25)
+
+    def test_call_mathpix_uses_multipart_file_upload_shape(self) -> None:
+        captured: dict[str, object] = {}
+
+        def fake_urlopen(req, timeout: int = 180):
+            captured["timeout"] = timeout
+            captured["headers"] = dict(req.header_items())
+            captured["body"] = req.data
+            return _FakeMathpixResponse({"ok": True})
+
+        with (
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=1),
+            patch("paper_pipeline.mathpix_adapter.request.urlopen", side_effect=fake_urlopen),
+        ):
+            payload = call_mathpix_on_page_image(b"PNGDATA", app_id="id", app_key="key")
+
+        self.assertEqual(payload, {"ok": True})
+        headers = {str(key).lower(): str(value) for key, value in dict(captured["headers"]).items()}
+        self.assertIn("multipart/form-data; boundary=", headers["content-type"])
+        self.assertEqual(headers["connection"], "close")
+        self.assertEqual(headers["accept"], "application/json")
+        body_text = bytes(captured["body"]).decode("latin1")
+        self.assertIn('name="file"; filename="page.png"', body_text)
+        self.assertIn("Content-Type: image/png", body_text)
+        self.assertIn('name="options_json"', body_text)
+        self.assertIn('"formats":["text","data"]', body_text)
+        self.assertIn('"include_line_data":true', body_text)
+        self.assertNotIn("data:image/png;base64", body_text)
+        self.assertIn("PNGDATA", body_text)
+
+    def test_call_mathpix_retries_broken_pipe_urlerror_then_succeeds(self) -> None:
+        with (
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch(
+                "paper_pipeline.mathpix_adapter.request.urlopen",
+                side_effect=[
+                    error.URLError(BrokenPipeError(32, "Broken pipe")),
+                    _FakeMathpixResponse({"ok": True}),
+                ],
+            ) as urlopen_mock,
+        ):
+            payload = call_mathpix_on_page_image(b"image-bytes", app_id="id", app_key="key")
+
+        self.assertEqual(payload, {"ok": True})
+        self.assertEqual(urlopen_mock.call_count, 2)
+        self.assertEqual(sleep_mock.call_count, 1)
+        self.assertEqual(sleep_mock.call_args.args[0], 0.25)
+
+    def test_call_mathpix_raises_after_retry_budget_exhausted(self) -> None:
+        with (
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch(
+                "paper_pipeline.mathpix_adapter.request.urlopen",
+                side_effect=[
+                    ConnectionResetError(54, "Connection reset by peer"),
+                    ConnectionResetError(54, "Connection reset by peer"),
+                    ConnectionResetError(54, "Connection reset by peer"),
+                ],
+            ) as urlopen_mock,
+        ):
+            with self.assertRaisesRegex(RuntimeError, r"Mathpix request failed after 3 attempts"):
+                call_mathpix_on_page_image(b"image-bytes", app_id="id", app_key="key")
+
+        self.assertEqual(urlopen_mock.call_count, 3)
+        self.assertEqual(sleep_mock.call_count, 2)
 
 
 if __name__ == "__main__":

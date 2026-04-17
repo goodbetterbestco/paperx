@@ -68,6 +68,7 @@ ANOMALY_WEIGHTS = {
     "missing_references": 1,
     "missing_figures": 1,
 }
+GENERATED_ABSTRACT_NOTE_PREFIX = "Generated abstract from "
 
 
 def _now_iso() -> str:
@@ -197,7 +198,7 @@ def _timed_call(label: str, fn: Any, /, *args: Any, **kwargs: Any) -> tuple[str,
 
 
 def _mathpix_page_workers_per_paper() -> int:
-    return _int_env("STEPVIEW_MATHPIX_PAGE_WORKERS", 2)
+    return _int_env("STEPVIEW_MATHPIX_PAGE_WORKERS", 1)
 
 
 def _build_extraction_sources_for_paper(
@@ -364,6 +365,60 @@ def _document_abstract_text(document: dict[str, Any]) -> str:
     return ""
 
 
+def _document_abstract_block(document: dict[str, Any]) -> dict[str, Any] | None:
+    abstract_id = str(document.get("front_matter", {}).get("abstract_block_id") or "")
+    if not abstract_id:
+        return None
+    for block in document.get("blocks", []):
+        if str(block.get("id", "")) == abstract_id:
+            return block
+    return None
+
+
+def _document_has_generated_abstract(document: dict[str, Any] | None) -> bool:
+    if not isinstance(document, dict):
+        return False
+    abstract_block = _document_abstract_block(document)
+    if not abstract_block:
+        return False
+    review = abstract_block.get("review", {})
+    notes = str(review.get("notes", "")) if isinstance(review, dict) else ""
+    text = completeness_block_text(abstract_block)
+    return notes.startswith(GENERATED_ABSTRACT_NOTE_PREFIX) or text.startswith("[Generated abstract from ")
+
+
+def _preserve_existing_generated_abstract(existing_document: dict[str, Any] | None, new_document: dict[str, Any]) -> bool:
+    if not _document_has_generated_abstract(existing_document):
+        return False
+    existing_block = _document_abstract_block(existing_document or {})
+    if not existing_block:
+        return False
+
+    target_id = str(new_document.get("front_matter", {}).get("abstract_block_id") or "")
+    if not target_id:
+        return False
+
+    blocks = list(new_document.get("blocks", []))
+    for block in blocks:
+        if str(block.get("id", "")) != target_id:
+            continue
+        block["type"] = str(existing_block.get("type", block.get("type", "paragraph")))
+        block["content"] = dict(existing_block.get("content", {}))
+        block["source_spans"] = list(existing_block.get("source_spans", []))
+        block["alternates"] = list(existing_block.get("alternates", []))
+        block["review"] = dict(existing_block.get("review", {}))
+        new_document["blocks"] = blocks
+        return True
+
+    preserved_block = {
+        **existing_block,
+        "id": target_id,
+    }
+    blocks.append(preserved_block)
+    new_document["blocks"] = blocks
+    return True
+
+
 def _anomaly_flags(document: dict[str, Any]) -> list[str]:
     flags: list[str] = []
     front_matter = document.get("front_matter", {})
@@ -478,11 +533,9 @@ def _build_paper(paper_id: str) -> dict[str, Any]:
         raise RuntimeError(f"All build attempts failed for {paper_id}")
 
     best_candidate = min(candidates, key=lambda candidate: candidate["quality_key"])
-    outputs = _write_canonical_outputs(paper_id, best_candidate["document"])
     return {
         "mode": best_candidate["mode"],
         "document": best_candidate["document"],
-        "outputs": outputs,
         "attempts": attempts,
         "anomalies": list(best_candidate["anomalies"]),
     }
@@ -558,14 +611,16 @@ def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
         build_result = _build_paper(paper_id)
         timings["build_seconds"] = round(time.perf_counter() - build_started, 3)
         document = build_result["document"]
-        anomalies = list(build_result.get("anomalies", _anomaly_flags(document)))
+        preserved_generated_abstract = _preserve_existing_generated_abstract(existing_document, document)
+        outputs = _write_canonical_outputs(paper_id, document)
+        anomalies = _anomaly_flags(document)
         timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
         paper_status.update(
             {
                 "status": "ok",
                 "completed_at": _now_iso(),
                 "mode": build_result["mode"],
-                "metrics": build_result["outputs"],
+                "metrics": outputs,
                 "build_sources": document.get("build", {}).get("sources", {}),
                 "anomalies": anomalies,
                 "docling": {
@@ -581,6 +636,7 @@ def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
                 "prebuild_staleness": prebuild_staleness,
                 "skipped_fresh": False,
                 "forced_rebuild": bool(force_rebuild),
+                "preserved_generated_abstract": preserved_generated_abstract,
                 "timings": timings,
             }
         )
@@ -818,7 +874,7 @@ def run_rounds(
     status["papers"] = _paper_ids()
     status["notes"] = [
         "Round processing uses Docling for layout, Mathpix for math when credentials are available, and lexicon refresh at round boundaries.",
-        f"Corpus temp and cache paths are redirected into {TMP_DIR}.",
+        f"Corpus temp paths are redirected into {TMP_DIR}.",
         f"Configured worker concurrency: {max_workers}.",
         "Fresh canonicals are skipped when source inputs, build flags, and pipeline fingerprints still match.",
         f"Per-paper source overlap is enabled with Mathpix page workers set to {_mathpix_page_workers_per_paper()}.",

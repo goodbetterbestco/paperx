@@ -20,7 +20,6 @@ def runtime_env(*, extra: dict[str, str] | None = None) -> dict[str, str]:
     env.setdefault("TMPDIR", str(tmp_dir))
     env.setdefault("TMP", str(tmp_dir))
     env.setdefault("TEMP", str(tmp_dir))
-    env.setdefault("XDG_CACHE_HOME", str(tmp_dir / "xdg-cache"))
     env.setdefault("DATALAB_CACHE_DIR", str(tmp_dir / "datalab-cache"))
     if extra:
         env.update(extra)

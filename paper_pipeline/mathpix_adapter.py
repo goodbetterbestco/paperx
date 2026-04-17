@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-import base64
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import http.client
 import json
 import os
 from pathlib import Path
+import socket
 from threading import BoundedSemaphore, Lock
+import time
 from typing import Any
-from urllib import request
+from urllib import error, request
+import uuid
 
 from paper_pipeline.corpus_layout import CORPUS_DIR, canonical_sources_dir, display_path, paper_pdf_path
 from paper_pipeline.math_review_policy import review_for_math_entry
@@ -18,6 +21,7 @@ MATHPIX_TEXT_ENDPOINT = "https://api.mathpix.com/v3/text"
 _MATHPIX_REQUEST_SEMAPHORE: BoundedSemaphore | None = None
 _MATHPIX_REQUEST_LIMIT: int | None = None
 _MATHPIX_REQUEST_LOCK = Lock()
+_RETRYABLE_SOCKET_ERRNOS = {32, 54, 60, 104, 110}
 
 
 def _load_fitz() -> Any:
@@ -46,14 +50,50 @@ def _int_env(name: str, default: int) -> int:
         return default
 
 
+def _float_env(name: str, default: float) -> float:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        return max(0.0, float(raw))
+    except ValueError:
+        return default
+
+
 def _mathpix_request_semaphore() -> BoundedSemaphore:
     global _MATHPIX_REQUEST_SEMAPHORE, _MATHPIX_REQUEST_LIMIT
-    limit = _int_env("STEPVIEW_MATHPIX_REQUEST_LIMIT", 12)
+    limit = _int_env("STEPVIEW_MATHPIX_REQUEST_LIMIT", 1)
     with _MATHPIX_REQUEST_LOCK:
         if _MATHPIX_REQUEST_SEMAPHORE is None or _MATHPIX_REQUEST_LIMIT != limit:
             _MATHPIX_REQUEST_SEMAPHORE = BoundedSemaphore(limit)
             _MATHPIX_REQUEST_LIMIT = limit
     return _MATHPIX_REQUEST_SEMAPHORE
+
+
+def _mathpix_retry_attempts() -> int:
+    return _int_env("STEPVIEW_MATHPIX_RETRY_ATTEMPTS", 4)
+
+
+def _mathpix_retry_backoff_seconds(retry_index: int) -> float:
+    base_seconds = _float_env("STEPVIEW_MATHPIX_RETRY_BASE_SECONDS", 1.0)
+    max_seconds = _float_env("STEPVIEW_MATHPIX_RETRY_MAX_SECONDS", 8.0)
+    return min(max_seconds, base_seconds * (2 ** max(0, retry_index - 1)))
+
+
+def _retryable_socket_error(exc: BaseException) -> bool:
+    if isinstance(exc, error.URLError) and isinstance(exc.reason, BaseException):
+        return _retryable_socket_error(exc.reason)
+    if isinstance(exc, (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, socket.timeout, TimeoutError)):
+        return True
+    if isinstance(exc, OSError):
+        return exc.errno in _RETRYABLE_SOCKET_ERRNOS
+    if isinstance(exc, http.client.RemoteDisconnected):
+        return True
+    return False
+
+
+def _sleep(seconds: float) -> None:
+    time.sleep(seconds)
 
 
 def _bbox_from_cnt(cnt: list[list[float]], *, page_width_pt: float, page_height_pt: float, image_width: int, image_height: int) -> dict[str, float]:
@@ -254,12 +294,38 @@ def _render_page_png_bytes(pdf_path: Path, page_number: int, *, scale: float) ->
         return png_bytes, int(pixmap.width), int(pixmap.height), float(page.rect.width), float(page.rect.height)
 
 
-def _mathpix_headers(app_id: str, app_key: str) -> dict[str, str]:
+def _mathpix_headers(app_id: str, app_key: str, *, content_type: str) -> dict[str, str]:
     return {
         "app_id": app_id,
         "app_key": app_key,
-        "Content-Type": "application/json",
+        "Content-Type": content_type,
+        "Accept": "application/json",
+        # Fresh connections reduce the chance of carrying a bad socket across requests.
+        "Connection": "close",
     }
+
+
+def _multipart_form_payload(
+    *,
+    image_bytes: bytes,
+    filename: str,
+    options_json: str,
+) -> tuple[bytes, str]:
+    boundary = f"----MathpixBoundary{uuid.uuid4().hex}"
+    boundary_bytes = boundary.encode("ascii")
+    chunks = [
+        b"--" + boundary_bytes + b"\r\n",
+        b'Content-Disposition: form-data; name="file"; filename="' + filename.encode("utf-8") + b'"\r\n',
+        b"Content-Type: image/png\r\n\r\n",
+        image_bytes,
+        b"\r\n",
+        b"--" + boundary_bytes + b"\r\n",
+        b'Content-Disposition: form-data; name="options_json"\r\n\r\n',
+        options_json.encode("utf-8"),
+        b"\r\n",
+        b"--" + boundary_bytes + b"--\r\n",
+    ]
+    return b"".join(chunks), boundary
 
 
 def call_mathpix_on_page_image(
@@ -270,21 +336,40 @@ def call_mathpix_on_page_image(
     endpoint: str = MATHPIX_TEXT_ENDPOINT,
     timeout_seconds: int = 180,
 ) -> dict[str, Any]:
-    payload = {
-        "src": "data:image/png;base64," + base64.b64encode(image_bytes).decode("ascii"),
+    options = {
         "formats": ["text", "data"],
         "data_options": {"include_latex": True},
         "include_line_data": True,
         "include_equation_tags": True,
     }
+    options_json = json.dumps(options, separators=(",", ":"))
+    payload, boundary = _multipart_form_payload(
+        image_bytes=image_bytes,
+        filename="page.png",
+        options_json=options_json,
+    )
     req = request.Request(
         endpoint,
-        data=json.dumps(payload).encode("utf-8"),
-        headers=_mathpix_headers(app_id, app_key),
+        data=payload,
+        headers=_mathpix_headers(app_id, app_key, content_type=f"multipart/form-data; boundary={boundary}"),
         method="POST",
     )
-    with request.urlopen(req, timeout=timeout_seconds) as response:
-        return json.loads(response.read().decode("utf-8"))
+    max_attempts = _mathpix_retry_attempts()
+    last_error: BaseException | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with request.urlopen(req, timeout=timeout_seconds) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as exc:
+            if not _retryable_socket_error(exc) or attempt >= max_attempts:
+                if _retryable_socket_error(exc) and max_attempts > 1:
+                    raise RuntimeError(f"Mathpix request failed after {max_attempts} attempts: {exc}") from exc
+                raise
+            last_error = exc
+            _sleep(_mathpix_retry_backoff_seconds(attempt))
+    if last_error is not None:  # pragma: no cover - loop always returns or raises
+        raise RuntimeError(f"Mathpix request failed after {max_attempts} attempts: {last_error}") from last_error
+    raise RuntimeError("Mathpix request did not produce a response.")  # pragma: no cover
 
 
 def _mathpix_page_payload(
