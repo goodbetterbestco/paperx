@@ -10,6 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from paper_pipeline.run_corpus_rounds import (
+    _MathpixRoundCoordinator,
     _anomaly_flags,
     _assert_mathpix_dns_available,
     _build_paper,
@@ -398,6 +399,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         summary = _summarize_round(round_status)
 
         self.assertEqual(summary["success_count"], 2)
+        self.assertEqual(summary["queued_count"], 0)
         self.assertEqual(summary["running_count"], 0)
         self.assertEqual(summary["stale_before_build_count"], 1)
         self.assertEqual(summary["fresh_skip_count"], 1)
@@ -473,6 +475,59 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         self.assertIn("- Running: 1", report)
         self.assertIn("running (started 2026-04-14T00:01:00Z)", report)
+
+    def test_final_report_mentions_queued_mathpix_phase(self) -> None:
+        status = {
+            "started_at": "2026-04-14T00:00:00Z",
+            "updated_at": "2026-04-14T00:05:00Z",
+            "papers": ["paper-a"],
+            "rounds": {
+                "round_1": {
+                    "started_at": "2026-04-14T00:00:00Z",
+                    "completed_at": None,
+                    "papers": {
+                        "paper-a": {
+                            "status": "queued",
+                            "mathpix": {"phase": "submitted"},
+                        }
+                    },
+                }
+            },
+            "notes": [],
+        }
+
+        report = _render_final_report(status)
+
+        self.assertIn("- Queued: 1", report)
+        self.assertIn("queued (mathpix submitted)", report)
+
+    def test_mathpix_round_coordinator_publishes_phase_updates(self) -> None:
+        events: list[tuple[str, dict[str, object]]] = []
+
+        def callback(paper_id: str, payload: dict[str, object]) -> None:
+            events.append((paper_id, payload))
+
+        with (
+            patch("paper_pipeline.run_corpus_rounds.submit_mathpix_pdf", return_value="pdf-123"),
+            patch("paper_pipeline.run_corpus_rounds.fetch_mathpix_pdf_status", return_value={"status": "completed"}),
+            patch("paper_pipeline.run_corpus_rounds.download_mathpix_pdf", return_value={"pdf_id": "pdf-123", "pages": []}),
+        ):
+            coordinator = _MathpixRoundCoordinator(
+                ["paper-a"],
+                submit_workers=1,
+                poll_seconds=1.0,
+                status_callback=callback,
+            )
+            coordinator.start()
+            result = coordinator.future_for("paper-a").result(timeout=3)
+            coordinator.close()
+
+        self.assertEqual(result["pdf_id"], "pdf-123")
+        phases = [payload["mathpix"]["phase"] for _, payload in events if "mathpix" in payload]
+        self.assertIn("submit_queued", phases)
+        self.assertIn("submitted", phases)
+        self.assertIn("polling", phases)
+        self.assertIn("completed", phases)
 
     def test_final_report_mentions_stale_reasons(self) -> None:
         status = {

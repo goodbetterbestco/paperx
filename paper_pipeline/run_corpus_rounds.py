@@ -13,7 +13,7 @@ import time
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import urlparse
 from paper_pipeline.build_canonical import build_summary
 from paper_pipeline.build_corpus_lexicon import _build_lexicon
@@ -252,13 +252,21 @@ def _timed_call(label: str, fn: Any, /, *args: Any, **kwargs: Any) -> tuple[str,
 
 
 class _MathpixRoundCoordinator:
-    def __init__(self, paper_ids: list[str], *, submit_workers: int, poll_seconds: float) -> None:
+    def __init__(
+        self,
+        paper_ids: list[str],
+        *,
+        submit_workers: int,
+        poll_seconds: float,
+        status_callback: Callable[[str, dict[str, Any]], None] | None = None,
+    ) -> None:
         self._paper_ids = list(paper_ids)
         self._submit_workers = max(1, submit_workers)
         self._poll_seconds = max(1.0, poll_seconds)
         self._futures = {paper_id: Future() for paper_id in self._paper_ids}
         self._thread = Thread(target=self._run, name="mathpix-round-coordinator", daemon=True)
         self._stop = Event()
+        self._status_callback = status_callback
 
     def start(self) -> None:
         self._thread.start()
@@ -270,6 +278,10 @@ class _MathpixRoundCoordinator:
         self._stop.set()
         self._thread.join()
 
+    def _publish(self, paper_id: str, payload: dict[str, Any]) -> None:
+        if self._status_callback is not None:
+            self._status_callback(paper_id, payload)
+
     def _run(self) -> None:
         submit_started: dict[str, float] = {}
         submitted_jobs: dict[str, str] = {}
@@ -278,6 +290,15 @@ class _MathpixRoundCoordinator:
         with ThreadPoolExecutor(max_workers=self._submit_workers) as executor:
             for paper_id in self._paper_ids:
                 submit_started[paper_id] = time.perf_counter()
+                self._publish(
+                    paper_id,
+                    {
+                        "mathpix": {
+                            "phase": "submit_queued",
+                            "submit_queued_at": _now_iso(),
+                        }
+                    },
+                )
                 pending_submissions[executor.submit(submit_mathpix_pdf, paper_id)] = paper_id
 
             next_poll_at = time.monotonic() + self._poll_seconds
@@ -290,8 +311,29 @@ class _MathpixRoundCoordinator:
                     paper_id = pending_submissions.pop(future)
                     paper_future = self._futures[paper_id]
                     try:
-                        submitted_jobs[paper_id] = future.result()
+                        pdf_id = future.result()
+                        submitted_jobs[paper_id] = pdf_id
+                        self._publish(
+                            paper_id,
+                            {
+                                "mathpix": {
+                                    "phase": "submitted",
+                                    "submit_completed_at": _now_iso(),
+                                    "pdf_id": pdf_id,
+                                }
+                            },
+                        )
                     except Exception as exc:  # pragma: no cover - defensive
+                        self._publish(
+                            paper_id,
+                            {
+                                "mathpix": {
+                                    "phase": "submit_failed",
+                                    "failed_at": _now_iso(),
+                                    "error": str(exc),
+                                }
+                            },
+                        )
                         if not paper_future.done():
                             paper_future.set_exception(exc)
 
@@ -305,14 +347,48 @@ class _MathpixRoundCoordinator:
                         try:
                             status = fetch_mathpix_pdf_status(pdf_id)
                             state = str(status.get("status", "")).strip().lower()
+                            self._publish(
+                                paper_id,
+                                {
+                                    "mathpix": {
+                                        "phase": "polling",
+                                        "last_polled_at": _now_iso(),
+                                        "pdf_id": pdf_id,
+                                        "remote_status": state or "unknown",
+                                    }
+                                },
+                            )
                             if state == "completed":
                                 result = download_mathpix_pdf(paper_id, pdf_id)
                                 result["elapsed_seconds"] = round(time.perf_counter() - submit_started[paper_id], 3)
+                                self._publish(
+                                    paper_id,
+                                    {
+                                        "mathpix": {
+                                            "phase": "completed",
+                                            "completed_at": _now_iso(),
+                                            "pdf_id": pdf_id,
+                                            "remote_status": state,
+                                            "elapsed_seconds": result["elapsed_seconds"],
+                                        }
+                                    },
+                                )
                                 paper_future.set_result(result)
                                 submitted_jobs.pop(paper_id, None)
                             elif state == "error" or status.get("error"):
                                 raise RuntimeError(f"Mathpix PDF {pdf_id} failed: {status}")
                         except Exception as exc:  # pragma: no cover - defensive
+                            self._publish(
+                                paper_id,
+                                {
+                                    "mathpix": {
+                                        "phase": "failed",
+                                        "failed_at": _now_iso(),
+                                        "pdf_id": pdf_id,
+                                        "error": str(exc),
+                                    }
+                                },
+                            )
                             if not paper_future.done():
                                 paper_future.set_exception(exc)
                             submitted_jobs.pop(paper_id, None)
@@ -321,6 +397,15 @@ class _MathpixRoundCoordinator:
             if self._stop.is_set():
                 for paper_id, paper_future in self._futures.items():
                     if not paper_future.done():
+                        self._publish(
+                            paper_id,
+                            {
+                                "mathpix": {
+                                    "phase": "stopped",
+                                    "stopped_at": _now_iso(),
+                                }
+                            },
+                        )
                         paper_future.set_exception(RuntimeError(f"Mathpix round coordinator stopped before {paper_id} completed."))
 
 
@@ -819,6 +904,7 @@ def _summarize_round(round_status: dict[str, Any]) -> dict[str, Any]:
     success_results = [item for item in paper_results.values() if item.get("status") == "completed"]
     failed_results = [item for item in paper_results.values() if item.get("status") == "failed"]
     running_results = [item for item in paper_results.values() if item.get("status") == "running"]
+    queued_results = [item for item in paper_results.values() if item.get("status") == "queued"]
     anomalies: dict[str, int] = {}
     stale_reasons: dict[str, int] = {}
     stale_before_build_count = 0
@@ -838,6 +924,7 @@ def _summarize_round(round_status: dict[str, Any]) -> dict[str, Any]:
         "success_count": len(success_results),
         "failure_count": len(failed_results),
         "running_count": len(running_results),
+        "queued_count": len(queued_results),
         "anomalies": anomalies,
         "stale_before_build_count": stale_before_build_count,
         "stale_reasons": stale_reasons,
@@ -865,6 +952,7 @@ def _render_final_report(status: dict[str, Any]) -> str:
                 f"- Started: {round_status.get('started_at', '')}",
                 f"- Completed: {round_status.get('completed_at', '')}",
                 f"- Successes: {summary['success_count']}",
+                f"- Queued: {summary['queued_count']}",
                 f"- Running: {summary['running_count']}",
                 f"- Failures: {summary['failure_count']}",
                 f"- Stale before rebuild: {summary['stale_before_build_count']}",
@@ -906,6 +994,12 @@ def _render_final_report(status: dict[str, Any]) -> str:
                     cell += " fresh-skip"
             elif paper_status.get("status") == "running":
                 cell = f"running (started {paper_status.get('started_at', '')})"
+            elif paper_status.get("status") == "queued":
+                mathpix_phase = str(((paper_status.get("mathpix") or {}).get("phase") or "")).strip()
+                if mathpix_phase:
+                    cell = f"queued (mathpix {mathpix_phase})"
+                else:
+                    cell = "queued"
             elif paper_status:
                 cell = "failed"
             else:
@@ -947,6 +1041,19 @@ def _process_round(
         )
     papers = status.get("papers", [])
 
+    def update_paper_status(paper_id: str, payload: dict[str, Any]) -> None:
+        paper_status = round_status.setdefault("papers", {}).setdefault(paper_id, {"status": "queued"})
+        for key, value in payload.items():
+            if key == "mathpix" and isinstance(value, dict):
+                existing = paper_status.setdefault("mathpix", {})
+                if isinstance(existing, dict):
+                    existing.update(value)
+                else:
+                    paper_status["mathpix"] = dict(value)
+            else:
+                paper_status[key] = value
+        _save_status(status)
+
     if force_rebuild:
         pending_papers = list(papers)
     else:
@@ -963,6 +1070,7 @@ def _process_round(
             pending_papers,
             submit_workers=_mathpix_submit_workers(),
             poll_seconds=_mathpix_round_poll_seconds(),
+            status_callback=update_paper_status,
         )
         mathpix_coordinator.start()
 
@@ -971,10 +1079,11 @@ def _process_round(
         while next_index < len(pending_papers) and len(active_jobs) < max_workers:
             paper_id = pending_papers[next_index]
             next_index += 1
-            round_status["papers"][paper_id] = {
+            paper_status = round_status["papers"].setdefault(paper_id, {})
+            paper_status.update({
                 "started_at": _now_iso(),
                 "status": "running",
-            }
+            })
             submit_kwargs: dict[str, Any] = {"force_rebuild": force_rebuild}
             if mathpix_coordinator is not None:
                 submit_kwargs["prefetched_mathpix_future"] = mathpix_coordinator.future_for(paper_id)
