@@ -1,34 +1,18 @@
 from __future__ import annotations
 
 import re
-from dataclasses import replace
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from pipeline.assembly.canonical_builder import build_canonical_document
 from pipeline.assembly.abstract_recovery import (
-    abstract_text_is_recoverable as assemble_abstract_text_is_recoverable,
-    first_root_indicates_missing_intro as assemble_first_root_indicates_missing_intro,
-    leading_abstract_text as assemble_leading_abstract_text,
-    opening_abstract_candidate_records as assemble_opening_abstract_candidate_records,
     recover_missing_front_matter_abstract as assemble_recover_missing_front_matter_abstract,
-    replace_front_matter_abstract_text as assemble_replace_front_matter_abstract_text,
-    should_replace_front_matter_abstract as assemble_should_replace_front_matter_abstract,
-    split_late_prelude_for_missing_intro as assemble_split_late_prelude_for_missing_intro,
 )
 from pipeline.assembly.front_matter_builder import build_front_matter as assemble_front_matter
 from pipeline.assembly.front_matter_support import (
-    abstract_text_looks_like_metadata as assemble_abstract_text_looks_like_metadata,
-    clone_record_with_text as assemble_clone_record_with_text,
-    dedupe_text_lines as assemble_dedupe_text_lines,
     front_block_text as assemble_front_block_text,
-    matches_title_line as assemble_matches_title_line,
     missing_front_matter_affiliation as assemble_missing_front_matter_affiliation,
     missing_front_matter_author as assemble_missing_front_matter_author,
-    record_width as assemble_record_width,
-    record_word_count as assemble_record_word_count,
-    title_lookup_keys as assemble_title_lookup_keys,
 )
 from pipeline.assembly.record_block_builder import (
     build_blocks_for_record as assemble_blocks_for_record,
@@ -103,14 +87,40 @@ from pipeline.reconcile.screening import (
     looks_like_table_marker_cloud as reconcile_looks_like_table_marker_cloud,
     looks_like_vertical_label_cloud as reconcile_looks_like_vertical_label_cloud,
 )
-from pipeline.reconcile.references import (
-    extract_reference_records_from_tail_section as reconcile_extract_reference_records_from_tail_section,
-    is_reference_start as reconcile_is_reference_start,
-    looks_like_reference_text as reconcile_looks_like_reference_text,
-    make_reference_entry as reconcile_make_reference_entry,
-    merge_reference_records as reconcile_merge_reference_records,
-    reference_records_from_mathpix_layout as reconcile_reference_records_from_mathpix_layout,
-    split_trailing_reference_records as reconcile_split_trailing_reference_records,
+from pipeline.reconcile.reference_runtime import (
+    extract_reference_records_from_tail_section as reconcile_extract_reference_records_from_tail_section_runtime,
+    is_reference_start as reconcile_is_reference_start_runtime,
+    looks_like_reference_text as reconcile_looks_like_reference_text_runtime,
+    make_reference_entry as reconcile_make_reference_entry_runtime,
+    merge_reference_records as reconcile_merge_reference_records_runtime,
+    reference_records_from_mathpix_layout as reconcile_reference_records_from_mathpix_layout_runtime,
+    split_trailing_reference_records as reconcile_split_trailing_reference_records_runtime,
+)
+from pipeline.reconcile.front_matter_runtime import (
+    abstract_text_is_recoverable as reconcile_abstract_text_is_recoverable_runtime,
+    abstract_text_looks_like_metadata as reconcile_abstract_text_looks_like_metadata_runtime,
+    clone_record_with_text as reconcile_clone_record_with_text_runtime,
+    dedupe_text_lines as reconcile_dedupe_text_lines_runtime,
+    first_root_indicates_missing_intro as reconcile_first_root_indicates_missing_intro_runtime,
+    leading_abstract_text as reconcile_leading_abstract_text_runtime,
+    matches_title_line as reconcile_matches_title_line_runtime,
+    opening_abstract_candidate_records as reconcile_opening_abstract_candidate_records_runtime,
+    record_width as reconcile_record_width_runtime,
+    record_word_count as reconcile_record_word_count_runtime,
+    replace_front_matter_abstract_text as reconcile_replace_front_matter_abstract_text_runtime,
+    should_replace_front_matter_abstract as reconcile_should_replace_front_matter_abstract_runtime,
+    split_late_prelude_for_missing_intro as reconcile_split_late_prelude_for_missing_intro_runtime,
+    title_lookup_keys as reconcile_title_lookup_keys_runtime,
+)
+from pipeline.reconcile.runtime_support import (
+    block_source_spans as reconcile_block_source_spans_runtime,
+    mathish_ratio as reconcile_mathish_ratio_runtime,
+    normalize_formula_display_text as reconcile_normalize_formula_display_text_runtime,
+    now_iso as reconcile_now_iso_runtime,
+    page_height_map as reconcile_page_height_map_runtime,
+)
+from pipeline.reconcile.stage_runtime import (
+    run_reconcile_pipeline as reconcile_run_reconcile_pipeline_runtime,
 )
 from pipeline.reconcile.layout_records import (
     absorb_figure_caption_continuations as reconcile_absorb_figure_caption_continuations,
@@ -142,6 +152,15 @@ from pipeline.reconcile.text_repairs import (
     repair_record_text_with_pdftotext as reconcile_repair_record_text_with_pdftotext,
     should_skip_pdftotext_repair as reconcile_should_skip_pdftotext_repair,
     token_subsequence_index as reconcile_token_subsequence_index,
+)
+from pipeline.reconcile.text_cleaning import (
+    clean_record as reconcile_clean_record,
+    clean_text as reconcile_clean_text,
+    is_pdftotext_candidate_better as reconcile_is_pdftotext_candidate_better,
+    normalize_paragraph_text as reconcile_normalize_paragraph_text,
+    record_analysis_text as reconcile_record_analysis_text,
+    strip_known_running_header_text as reconcile_strip_known_running_header_text,
+    word_count as reconcile_word_count,
 )
 from pipeline.reconcile.heading_promotion import (
     decode_control_heading_label as reconcile_decode_control_heading_label,
@@ -193,7 +212,6 @@ from pipeline.reconcile.front_matter_policies import (
 )
 from pipeline.reconcile.section_preparation import (
     attach_orphan_numbered_roots,
-    flatten_sections,
     prepare_section_nodes,
 )
 from pipeline.selectors.abstract_selector import build_abstract_decision
@@ -365,41 +383,48 @@ TRUNCATED_PROSE_LEAD_STOPWORDS = {
 
 
 def _now_iso() -> str:
-    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    return reconcile_now_iso_runtime()
 
 
 def _clean_text(text: str) -> str:
-    return compact_text(CONTROL_CHAR_RE.sub(" ", text.replace("\u0000", " ")))
+    return reconcile_clean_text(
+        text,
+        control_char_re=CONTROL_CHAR_RE,
+        compact_text=compact_text,
+    )
 
 
 def _strip_known_running_header_text(text: str) -> str:
-    return _clean_text(PROCEDIA_RUNNING_HEADER_RE.sub(" ", text))
+    return reconcile_strip_known_running_header_text(
+        text,
+        procedia_running_header_re=PROCEDIA_RUNNING_HEADER_RE,
+        clean_text=_clean_text,
+    )
 
 
 def _block_source_spans(record: dict[str, Any]) -> list[dict[str, Any]]:
-    spans = record.get("source_spans")
-    if isinstance(spans, list):
-        return spans
-    return []
+    return reconcile_block_source_spans_runtime(record)
 
 
 def _clean_record(record: dict[str, Any]) -> dict[str, Any]:
-    cleaned = dict(record)
-    cleaned["text"] = _strip_known_running_header_text(str(record.get("text", "")))
-    return cleaned
+    return reconcile_clean_record(
+        record,
+        strip_known_running_header_text=_strip_known_running_header_text,
+    )
 
 
 def _normalize_paragraph_text(text: str) -> str:
-    normalized = _strip_known_running_header_text(text)
-    if not normalized:
-        return normalized
-    normalized = LEADING_NEGATIONSLASH_ARTIFACT_RE.sub("", normalized)
-    normalized = LEADING_OCR_MARKER_RE.sub("", normalized)
-    normalized = LEADING_PUNCT_ARTIFACT_RE.sub("", normalized)
-    normalized = LEADING_VAR_ARTIFACT_RE.sub("", normalized)
-    normalized = TRAILING_NUMERIC_ARTIFACT_RE.sub(".", normalized)
-    normalized, _ = normalize_prose_text(normalized)
-    return _clean_text(normalized)
+    return reconcile_normalize_paragraph_text(
+        text,
+        strip_known_running_header_text=_strip_known_running_header_text,
+        leading_negationslash_artifact_re=LEADING_NEGATIONSLASH_ARTIFACT_RE,
+        leading_ocr_marker_re=LEADING_OCR_MARKER_RE,
+        leading_punct_artifact_re=LEADING_PUNCT_ARTIFACT_RE,
+        leading_var_artifact_re=LEADING_VAR_ARTIFACT_RE,
+        trailing_numeric_artifact_re=TRAILING_NUMERIC_ARTIFACT_RE,
+        normalize_prose_text=normalize_prose_text,
+        clean_text=_clean_text,
+    )
 
 
 def _math_entry_semantic_policy(entry: dict[str, Any]) -> str:
@@ -477,9 +502,11 @@ def _paragraph_block_from_graphic_math_entry(
 
 
 def _normalize_formula_display_text(text: str) -> str:
-    normalized = _clean_text(text)
-    normalized, _ = decode_ocr_codepoint_tokens(normalized)
-    return _clean_text(normalized)
+    return reconcile_normalize_formula_display_text_runtime(
+        text,
+        clean_text=_clean_text,
+        decode_ocr_codepoint_tokens=decode_ocr_codepoint_tokens,
+    )
 
 
 def _normalize_figure_caption_text(text: str) -> str:
@@ -491,59 +518,36 @@ def _normalize_figure_caption_text(text: str) -> str:
 
 
 def _mathish_ratio(text: str) -> float:
-    if not text:
-        return 0.0
-    word_count = max(_word_count(text), 1)
-    symbol_count = _math_signal_count(text)
-    return symbol_count / word_count
+    return reconcile_mathish_ratio_runtime(
+        text,
+        word_count=_word_count,
+        math_signal_count=_math_signal_count,
+    )
 
 
 def _record_analysis_text(record: dict[str, Any]) -> str:
-    meta = record.get("meta", {})
-    if isinstance(meta, dict):
-        native_text = _clean_text(str(meta.get("native_text", "")))
-        if native_text:
-            return native_text
-    return _clean_text(str(record.get("text", "")))
+    return reconcile_record_analysis_text(
+        record,
+        clean_text=_clean_text,
+    )
 
 
 def _word_count(text: str) -> int:
-    return len(SHORT_WORD_RE.findall(text))
+    return reconcile_word_count(text, short_word_re=SHORT_WORD_RE)
 
 
 def _page_height_map(layout: dict[str, Any]) -> dict[int, float]:
-    return {
-        int(page_info["page"]): float(page_info["height"])
-        for page_info in layout.get("page_sizes_pt", [])
-    }
+    return reconcile_page_height_map_runtime(layout)
 
 
 def _is_pdftotext_candidate_better(original_text: str, candidate_text: str, record_type: str) -> bool:
-    original = _clean_text(original_text)
-    candidate = _clean_text(candidate_text)
-    if not candidate or candidate == original:
-        return False
-    if record_type in {"heading", "caption", "page_number"}:
-        return False
-
-    candidate_words = _word_count(candidate)
-    original_words = _word_count(original)
-    if candidate_words == 0:
-        return False
-    if record_type in {"front_matter", "paragraph", "reference", "footnote"} and candidate_words < 4:
-        return False
-    if "Figure " in candidate and record_type == "paragraph":
-        return False
-    if candidate.strip().isdigit():
-        return False
-
-    if original_words == 0:
-        return True
-    if candidate_words < max(3, int(original_words * 0.5)):
-        return False
-    if candidate_words > max(12, int(original_words * 2.25)):
-        return False
-    return True
+    return reconcile_is_pdftotext_candidate_better(
+        original_text,
+        candidate_text,
+        record_type,
+        clean_text=_clean_text,
+        word_count=_word_count,
+    )
 
 
 def _should_skip_pdftotext_repair(record: dict[str, Any]) -> bool:
@@ -720,7 +724,7 @@ def _strip_caption_label_prefix(text: str, figure: dict[str, Any] | None = None)
 
 
 def _append_figure_caption_fragment(figure: dict[str, Any], fragment: str) -> None:
-    reconcile_append_figure_caption_fragment(
+    return reconcile_append_figure_caption_fragment(
         figure,
         fragment,
         clean_text=_clean_text,
@@ -1082,7 +1086,7 @@ def _strip_author_prefix_from_affiliation_line(text: str, authors: list[dict[str
 
 
 def _title_lookup_keys(title: str) -> list[str]:
-    return assemble_title_lookup_keys(
+    return reconcile_title_lookup_keys_runtime(
         title,
         clean_text=_clean_text,
         normalize_title_key=normalize_title_key,
@@ -1090,7 +1094,7 @@ def _title_lookup_keys(title: str) -> list[str]:
 
 
 def _matches_title_line(text: str, title: str) -> bool:
-    return assemble_matches_title_line(
+    return reconcile_matches_title_line_runtime(
         text,
         title,
         clean_text=_clean_text,
@@ -1102,7 +1106,7 @@ def _matches_title_line(text: str, title: str) -> bool:
 
 
 def _dedupe_text_lines(lines: list[str]) -> list[str]:
-    return assemble_dedupe_text_lines(
+    return reconcile_dedupe_text_lines_runtime(
         lines,
         clean_text=_clean_text,
         normalize_title_key=normalize_title_key,
@@ -1110,11 +1114,11 @@ def _dedupe_text_lines(lines: list[str]) -> list[str]:
 
 
 def _clone_record_with_text(record: dict[str, Any], text: str) -> dict[str, Any]:
-    return assemble_clone_record_with_text(record, text, clean_text=_clean_text)
+    return reconcile_clone_record_with_text_runtime(record, text, clean_text=_clean_text)
 
 
 def _record_word_count(record: dict[str, Any]) -> int:
-    return assemble_record_word_count(
+    return reconcile_record_word_count_runtime(
         record,
         clean_text=_clean_text,
         short_word_re=SHORT_WORD_RE,
@@ -1122,25 +1126,25 @@ def _record_word_count(record: dict[str, Any]) -> int:
 
 
 def _record_width(record: dict[str, Any]) -> float:
-    return assemble_record_width(record, block_source_spans=_block_source_spans)
+    return reconcile_record_width_runtime(record, block_source_spans=_block_source_spans)
 
 
 def _abstract_text_looks_like_metadata(text: str) -> bool:
-    return assemble_abstract_text_looks_like_metadata(
+    return reconcile_abstract_text_looks_like_metadata_runtime(
         text,
         abstract_quality_flags=abstract_quality_flags,
     )
 
 
 def _should_replace_front_matter_abstract(text: str) -> bool:
-    return assemble_should_replace_front_matter_abstract(
+    return reconcile_should_replace_front_matter_abstract_runtime(
         text,
         abstract_quality_flags=abstract_quality_flags,
     )
 
 
 def _leading_abstract_text(node: SectionNode) -> tuple[str, list[dict[str, Any]]]:
-    return assemble_leading_abstract_text(
+    return reconcile_leading_abstract_text_runtime(
         node,
         clean_text=_clean_text,
         looks_like_front_matter_metadata=_looks_like_front_matter_metadata,
@@ -1155,7 +1159,7 @@ def _leading_abstract_text(node: SectionNode) -> tuple[str, list[dict[str, Any]]
 
 
 def _opening_abstract_candidate_records(prelude: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    return assemble_opening_abstract_candidate_records(
+    return reconcile_opening_abstract_candidate_records_runtime(
         prelude,
         clean_text=_clean_text,
         abstract_lead_re=ABSTRACT_LEAD_RE,
@@ -1167,7 +1171,7 @@ def _opening_abstract_candidate_records(prelude: list[dict[str, Any]]) -> list[d
 
 
 def _abstract_text_is_recoverable(text: str) -> bool:
-    return assemble_abstract_text_is_recoverable(
+    return reconcile_abstract_text_is_recoverable_runtime(
         text,
         abstract_quality_flags=abstract_quality_flags,
     )
@@ -1179,7 +1183,7 @@ def _replace_front_matter_abstract_text(
     abstract_text: str,
     abstract_records: list[dict[str, Any]],
 ) -> bool:
-    return assemble_replace_front_matter_abstract_text(
+    return reconcile_replace_front_matter_abstract_text_runtime(
         front_matter,
         blocks,
         abstract_text,
@@ -1189,15 +1193,12 @@ def _replace_front_matter_abstract_text(
 
 
 def _first_root_indicates_missing_intro(roots: list[Any]) -> bool:
-    return assemble_first_root_indicates_missing_intro(
+    return reconcile_first_root_indicates_missing_intro_runtime(
         roots,
-        normalize_section_title=lambda title: assemble_normalize_section_title(
-            title,
-            clean_text=_clean_text,
-            clean_heading_title=clean_heading_title,
-            parse_heading_label=parse_heading_label,
-            normalize_title_key=normalize_title_key,
-        ),
+        clean_text=_clean_text,
+        clean_heading_title=clean_heading_title,
+        parse_heading_label=parse_heading_label,
+        normalize_title_key=normalize_title_key,
     )
 
 
@@ -1205,7 +1206,7 @@ def _split_late_prelude_for_missing_intro(
     prelude: list[dict[str, Any]],
     roots: list[Any],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    return assemble_split_late_prelude_for_missing_intro(
+    return reconcile_split_late_prelude_for_missing_intro_runtime(
         prelude,
         roots,
         first_root_indicates_missing_intro=_first_root_indicates_missing_intro,
@@ -1213,7 +1214,7 @@ def _split_late_prelude_for_missing_intro(
 
 
 def _make_reference_entry(record: dict[str, Any], index: int) -> dict[str, Any]:
-    return reconcile_make_reference_entry(
+    return reconcile_make_reference_entry_runtime(
         record,
         index,
         clean_text=_clean_text,
@@ -1224,7 +1225,7 @@ def _make_reference_entry(record: dict[str, Any], index: int) -> dict[str, Any]:
 
 
 def _is_reference_start(record: dict[str, Any]) -> bool:
-    return reconcile_is_reference_start(
+    return reconcile_is_reference_start_runtime(
         record,
         clean_text=_clean_text,
         block_source_spans=_block_source_spans,
@@ -1234,7 +1235,7 @@ def _is_reference_start(record: dict[str, Any]) -> bool:
 
 
 def _merge_reference_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    return reconcile_merge_reference_records(
+    return reconcile_merge_reference_records_runtime(
         records,
         clean_text=_clean_text,
         block_source_spans=_block_source_spans,
@@ -1243,7 +1244,7 @@ def _merge_reference_records(records: list[dict[str, Any]]) -> list[dict[str, An
 
 
 def _looks_like_reference_text(text: str) -> bool:
-    return reconcile_looks_like_reference_text(
+    return reconcile_looks_like_reference_text_runtime(
         text,
         clean_text=_clean_text,
         reference_year_re=REFERENCE_YEAR_RE,
@@ -1254,7 +1255,7 @@ def _looks_like_reference_text(text: str) -> bool:
 
 
 def _split_trailing_reference_records(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    return reconcile_split_trailing_reference_records(
+    return reconcile_split_trailing_reference_records_runtime(
         records,
         looks_like_reference_text=_looks_like_reference_text,
         merge_reference_records=_merge_reference_records,
@@ -1262,7 +1263,7 @@ def _split_trailing_reference_records(records: list[dict[str, Any]]) -> tuple[li
 
 
 def _extract_reference_records_from_tail_section(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    return reconcile_extract_reference_records_from_tail_section(
+    return reconcile_extract_reference_records_from_tail_section_runtime(
         records,
         clean_text=_clean_text,
         about_author_re=ABOUT_AUTHOR_RE,
@@ -1272,7 +1273,7 @@ def _extract_reference_records_from_tail_section(records: list[dict[str, Any]]) 
 
 
 def _reference_records_from_mathpix_layout(layout: dict[str, Any] | None) -> list[dict[str, Any]]:
-    return reconcile_reference_records_from_mathpix_layout(
+    return reconcile_reference_records_from_mathpix_layout_runtime(
         layout,
         mathpix_text_blocks_by_page=_mathpix_text_blocks_by_page,
         clean_text=_clean_text,
@@ -1452,367 +1453,174 @@ def reconcile_paper_state(
         use_external_math=use_external_math,
         include_review=False,
     )
-
-    def normalize_prose_text_for_layout(text: str) -> tuple[str, Any]:
-        return normalize_prose_text(text, layout=runtime_config.layout)
-
-    def normalize_reference_text_for_layout(text: str) -> tuple[str, Any]:
-        return normalize_reference_text(text, layout=runtime_config.layout)
-
-    def normalize_paragraph_text(text: str) -> str:
-        normalized = _strip_known_running_header_text(text)
-        if not normalized:
-            return normalized
-        normalized = LEADING_NEGATIONSLASH_ARTIFACT_RE.sub("", normalized)
-        normalized = LEADING_OCR_MARKER_RE.sub("", normalized)
-        normalized = LEADING_PUNCT_ARTIFACT_RE.sub("", normalized)
-        normalized = LEADING_VAR_ARTIFACT_RE.sub("", normalized)
-        normalized = TRAILING_NUMERIC_ARTIFACT_RE.sub(".", normalized)
-        normalized, _ = normalize_prose_text_for_layout(normalized)
-        return _clean_text(normalized)
-
-    def normalize_figure_caption_text(text: str) -> str:
-        return reconcile_normalize_figure_caption_text(
-            text,
-            clean_text=_clean_text,
-            normalize_prose_text=normalize_prose_text_for_layout,
-        )
-
-    def make_reference_entry(record: dict[str, Any], index: int) -> dict[str, Any]:
-        return reconcile_make_reference_entry(
-            record,
-            index,
-            clean_text=_clean_text,
-            normalize_reference_text=normalize_reference_text_for_layout,
-            block_source_spans=_block_source_spans,
-            default_review=default_review,
-        )
-
-    def math_entry_looks_like_prose(entry: dict[str, Any]) -> bool:
-        return reconcile_math_entry_looks_like_prose(
-            entry,
-            normalize_paragraph_text=normalize_paragraph_text,
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-            looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-            word_count=_word_count,
-        )
-
-    def should_demote_prose_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
-        return reconcile_should_demote_prose_math_entry_to_paragraph(
-            entry,
-            normalize_paragraph_text=normalize_paragraph_text,
-            word_count=_word_count,
-            strong_operator_count=_strong_operator_count,
-            mathish_ratio=_mathish_ratio,
-            math_entry_looks_like_prose=math_entry_looks_like_prose,
-            math_entry_semantic_policy=_math_entry_semantic_policy,
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-        )
-
-    def should_demote_graphic_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
-        return reconcile_should_demote_graphic_math_entry_to_paragraph(
-            entry,
-            should_demote_prose_math_entry_to_paragraph=should_demote_prose_math_entry_to_paragraph,
-        )
-
-    def should_drop_display_math_artifact(entry: dict[str, Any]) -> bool:
-        return reconcile_should_drop_display_math_artifact(
-            entry,
-            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
-            group_entry_items_are_graphic_only=_group_entry_items_are_graphic_only,
-            math_entry_semantic_policy=_math_entry_semantic_policy,
-            math_entry_category=_math_entry_category,
-        )
-
-    def paragraph_block_from_graphic_math_entry(
-        block: dict[str, Any],
-        math_entry: dict[str, Any],
-        counters: dict[str, int],
-    ) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
-        return reconcile_paragraph_block_from_graphic_math_entry(
-            block,
-            math_entry,
-            counters,
-            normalize_paragraph_text=normalize_paragraph_text,
-            split_inline_math=split_inline_math,
-            repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
-            extract_general_inline_math_spans=extract_general_inline_math_spans,
-            merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
-            normalize_inline_math_spans=normalize_inline_math_spans,
-            default_review=default_review,
-        )
-
-    return run_paper_pipeline(
+    return reconcile_run_reconcile_pipeline_runtime(
         paper_id,
         text_engine=text_engine,
         use_external_layout=use_external_layout,
         use_external_math=use_external_math,
         layout_output=layout_output,
         figures=figures,
-        extract_layout=lambda target_paper_id: extract_layout(target_paper_id, layout=runtime_config.layout),
-        load_external_layout=lambda target_paper_id: load_external_layout(target_paper_id, layout=runtime_config.layout),
+        runtime_layout=runtime_config.layout,
+        run_paper_pipeline_impl=run_paper_pipeline,
+        extract_layout=extract_layout,
+        load_external_layout=load_external_layout,
         merge_native_and_external_layout=_merge_native_and_external_layout,
-        load_external_math=lambda target_paper_id: load_external_math(target_paper_id, layout=runtime_config.layout),
+        load_external_math=load_external_math,
         external_math_by_page=reconcile_external_math_by_page,
-        load_mathpix_layout=lambda target_paper_id: load_mathpix_layout(target_paper_id, layout=runtime_config.layout),
-        extract_figures=lambda target_paper_id: extract_figures(target_paper_id, layout=runtime_config.layout),
-        normalize_figure_caption_text=normalize_figure_caption_text,
-        merge_layout_and_figure_records=lambda layout_blocks, figures: reconcile_merge_layout_and_figure_records(
-            layout_blocks,
-            figures,
-            layout_record=_layout_record,
-            absorb_figure_caption_continuations=_absorb_figure_caption_continuations,
-            figure_label_token=_figure_label_token,
-            synthetic_caption_record=_synthetic_caption_record,
-        ),
+        load_mathpix_layout=load_mathpix_layout,
+        extract_figures=extract_figures,
+        normalize_prose_text_impl=normalize_prose_text,
+        normalize_reference_text_impl=normalize_reference_text,
+        normalize_paragraph_text_impl=reconcile_normalize_paragraph_text,
+        normalize_figure_caption_text_impl=reconcile_normalize_figure_caption_text,
+        strip_known_running_header_text=_strip_known_running_header_text,
+        clean_text=_clean_text,
+        block_source_spans=_block_source_spans,
+        default_review=default_review,
+        make_reference_entry_impl=reconcile_make_reference_entry_runtime,
+        leading_negationslash_artifact_re=LEADING_NEGATIONSLASH_ARTIFACT_RE,
+        leading_ocr_marker_re=LEADING_OCR_MARKER_RE,
+        leading_punct_artifact_re=LEADING_PUNCT_ARTIFACT_RE,
+        leading_var_artifact_re=LEADING_VAR_ARTIFACT_RE,
+        trailing_numeric_artifact_re=TRAILING_NUMERIC_ARTIFACT_RE,
+        math_entry_looks_like_prose_impl=reconcile_math_entry_looks_like_prose,
+        should_demote_prose_math_entry_to_paragraph_impl=reconcile_should_demote_prose_math_entry_to_paragraph,
+        should_demote_graphic_math_entry_to_paragraph_impl=reconcile_should_demote_graphic_math_entry_to_paragraph,
+        should_drop_display_math_artifact_impl=reconcile_should_drop_display_math_artifact,
+        group_entry_items_are_graphic_only=_group_entry_items_are_graphic_only,
+        math_entry_semantic_policy=_math_entry_semantic_policy,
+        math_entry_category=_math_entry_category,
+        looks_like_prose_paragraph=looks_like_prose_paragraph,
+        looks_like_prose_math_fragment=looks_like_prose_math_fragment,
+        word_count=_word_count,
+        strong_operator_count=_strong_operator_count,
+        mathish_ratio=_mathish_ratio,
+        paragraph_block_from_graphic_math_entry_impl=reconcile_paragraph_block_from_graphic_math_entry,
+        split_inline_math=split_inline_math,
+        repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
+        extract_general_inline_math_spans=extract_general_inline_math_spans,
+        merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
+        normalize_inline_math_spans=normalize_inline_math_spans,
+        build_front_matter_impl=assemble_front_matter,
+        split_leading_front_matter_records=_split_leading_front_matter_records,
+        clean_record=_clean_record,
+        record_word_count=_record_word_count,
+        record_width=_record_width,
+        abstract_marker_only_re=ABSTRACT_MARKER_ONLY_RE,
+        abstract_lead_re=ABSTRACT_LEAD_RE,
+        looks_like_front_matter_metadata=_looks_like_front_matter_metadata,
+        author_note_re=AUTHOR_NOTE_RE,
+        looks_like_affiliation=_looks_like_affiliation,
+        looks_like_intro_marker=_looks_like_intro_marker,
+        looks_like_author_line=_looks_like_author_line,
+        looks_like_contact_name=_looks_like_contact_name,
+        matches_title_line=_matches_title_line,
+        looks_like_affiliation_continuation=_looks_like_affiliation_continuation,
+        funding_re=FUNDING_RE,
+        dedupe_text_lines=_dedupe_text_lines,
+        filter_front_matter_authors=_filter_front_matter_authors,
+        parse_authors=_parse_authors,
+        parse_authors_from_citation_line=_parse_authors_from_citation_line,
+        normalize_author_line=_normalize_author_line,
+        missing_front_matter_author=_missing_front_matter_author,
+        build_affiliations_for_authors=_build_affiliations_for_authors,
+        missing_front_matter_affiliation=_missing_front_matter_affiliation,
+        strip_author_prefix_from_affiliation_line=_strip_author_prefix_from_affiliation_line,
+        normalize_title_key=normalize_title_key,
+        clone_record_with_text=_clone_record_with_text,
+        looks_like_body_section_marker=_looks_like_body_section_marker,
+        preprint_marker_re=PREPRINT_MARKER_RE,
+        keywords_lead_re=KEYWORDS_LEAD_RE,
+        abstract_text_is_usable=_abstract_text_is_usable,
+        normalize_abstract_candidate_text=_normalize_abstract_candidate_text,
+        front_matter_missing_placeholder=FRONT_MATTER_MISSING_PLACEHOLDER,
+        normalize_section_title_impl=assemble_normalize_section_title,
+        clean_heading_title=clean_heading_title,
+        parse_heading_label=parse_heading_label,
+        front_block_text_impl=assemble_front_block_text,
+        recover_missing_front_matter_abstract_impl=assemble_recover_missing_front_matter_abstract,
+        abstract_quality_flags=abstract_quality_flags,
+        leading_abstract_text=_leading_abstract_text,
+        abstract_text_is_recoverable=_abstract_text_is_recoverable,
+        replace_front_matter_abstract_text=_replace_front_matter_abstract_text,
+        opening_abstract_candidate_records=_opening_abstract_candidate_records,
+        build_blocks_for_record_impl=assemble_blocks_for_record,
+        record_analysis_text=_record_analysis_text,
+        is_short_ocr_fragment=_is_short_ocr_fragment,
+        caption_label=caption_label,
+        looks_like_real_code_record=_looks_like_real_code_record,
+        split_code_lines=_split_code_lines,
+        list_item_marker=_list_item_marker,
+        review_for_math_entry=review_for_math_entry,
+        review_for_math_ref_block=review_for_math_ref_block,
+        match_external_math_entry_impl=reconcile_match_external_math_entry,
+        build_block_math_entry=build_block_math_entry,
+        normalize_formula_display_text=_normalize_formula_display_text,
+        classify_math_block=classify_math_block,
+        review_for_algorithm_block_text=review_for_algorithm_block_text,
+        overlapping_external_math_entries_impl=reconcile_overlapping_external_math_entries,
+        trim_embedded_display_math_from_paragraph_impl=reconcile_trim_embedded_display_math_from_paragraph,
+        display_math_prose_cue_re=DISPLAY_MATH_PROSE_CUE_RE,
+        display_math_resume_re=DISPLAY_MATH_RESUME_RE,
+        display_math_start_re=DISPLAY_MATH_START_RE,
+        looks_like_display_math_echo_impl=reconcile_looks_like_display_math_echo,
+        short_word_re=SHORT_WORD_RE,
+        merge_layout_and_figure_records_impl=reconcile_merge_layout_and_figure_records,
+        layout_record=_layout_record,
+        absorb_figure_caption_continuations=_absorb_figure_caption_continuations,
+        figure_label_token=_figure_label_token,
+        synthetic_caption_record=_synthetic_caption_record,
         inject_external_math_records=_inject_external_math_records,
-        mark_records_with_external_math_overlap=lambda record_batch, overlap_map: reconcile_mark_records_with_external_math_overlap(
-            record_batch,
-            overlap_map,
-            block_source_spans=_block_source_spans,
-        ),
-        repair_record_text_with_mathpix_hints=lambda records, mathpix_layout: reconcile_repair_record_text_with_mathpix_hints(
-            records,
-            mathpix_layout,
-            mathpix_text_blocks_by_page=_mathpix_text_blocks_by_page,
-            is_short_ocr_fragment=_is_short_ocr_fragment,
-            mathpix_text_hint_candidate=_mathpix_text_hint_candidate,
-            is_mathpix_text_hint_better=_is_mathpix_text_hint_better,
-            mathpix_prose_lead_repair_candidate=_mathpix_prose_lead_repair_candidate,
-            clean_text=_clean_text,
-        ),
+        mark_records_with_external_math_overlap_impl=reconcile_mark_records_with_external_math_overlap,
+        repair_record_text_with_mathpix_hints_impl=reconcile_repair_record_text_with_mathpix_hints,
+        mathpix_text_blocks_by_page=_mathpix_text_blocks_by_page,
+        mathpix_text_hint_candidate=_mathpix_text_hint_candidate,
+        is_mathpix_text_hint_better=_is_mathpix_text_hint_better,
+        mathpix_prose_lead_repair_candidate=_mathpix_prose_lead_repair_candidate,
         pdftotext_available=pdftotext_available,
         repair_record_text_with_pdftotext=_repair_record_text_with_pdftotext,
-        extract_pdftotext_pages=lambda target_paper_id: extract_pdftotext_pages(target_paper_id, layout=runtime_config.layout),
+        extract_pdftotext_pages=extract_pdftotext_pages,
         page_height_map=_page_height_map,
-        promote_heading_like_records=lambda records: reconcile_promote_heading_like_records(
-            records,
-            clean_text=_clean_text,
-            block_source_spans=_block_source_spans,
-            abstract_marker_only_re=ABSTRACT_MARKER_ONLY_RE,
-            parse_heading_label=parse_heading_label,
-            clean_heading_title=clean_heading_title,
-            looks_like_bad_heading=looks_like_bad_heading,
-            collapse_ocr_split_caps=collapse_ocr_split_caps,
-            decode_control_heading_label=_decode_control_heading_label,
-            normalize_decoded_heading_title=_normalize_decoded_heading_title,
-            split_embedded_heading_paragraph=_split_embedded_heading_paragraph,
-            short_word_re=SHORT_WORD_RE,
-        ),
+        promote_heading_like_records_impl=reconcile_promote_heading_like_records,
+        looks_like_bad_heading=looks_like_bad_heading,
+        collapse_ocr_split_caps=collapse_ocr_split_caps,
+        decode_control_heading_label=_decode_control_heading_label,
+        normalize_decoded_heading_title=_normalize_decoded_heading_title,
+        split_embedded_heading_paragraph=_split_embedded_heading_paragraph,
         merge_math_fragment_records=_merge_math_fragment_records,
         page_one_front_matter_records=_page_one_front_matter_records,
         is_title_page_metadata_record=_is_title_page_metadata_record,
         build_section_tree=build_section_tree,
-        build_front_matter=lambda paper_id, prelude, page_one_records, blocks, next_block_index: assemble_front_matter(
-            paper_id,
-            prelude,
-            page_one_records,
-            blocks,
-            next_block_index,
-            split_leading_front_matter_records=_split_leading_front_matter_records,
-            clean_record=_clean_record,
-            clean_text=_clean_text,
-            record_word_count=_record_word_count,
-            record_width=_record_width,
-            abstract_marker_only_re=ABSTRACT_MARKER_ONLY_RE,
-            abstract_lead_re=ABSTRACT_LEAD_RE,
-            looks_like_front_matter_metadata=_looks_like_front_matter_metadata,
-            author_note_re=AUTHOR_NOTE_RE,
-            looks_like_affiliation=_looks_like_affiliation,
-            looks_like_intro_marker=_looks_like_intro_marker,
-            looks_like_author_line=_looks_like_author_line,
-            looks_like_contact_name=_looks_like_contact_name,
-            matches_title_line=_matches_title_line,
-            looks_like_affiliation_continuation=_looks_like_affiliation_continuation,
-            funding_re=FUNDING_RE,
-            dedupe_text_lines=_dedupe_text_lines,
-            filter_front_matter_authors=_filter_front_matter_authors,
-            parse_authors=_parse_authors,
-            parse_authors_from_citation_line=_parse_authors_from_citation_line,
-            normalize_author_line=_normalize_author_line,
-            missing_front_matter_author=_missing_front_matter_author,
-            build_affiliations_for_authors=_build_affiliations_for_authors,
-            missing_front_matter_affiliation=_missing_front_matter_affiliation,
-            strip_author_prefix_from_affiliation_line=_strip_author_prefix_from_affiliation_line,
-            normalize_title_key=normalize_title_key,
-            clone_record_with_text=_clone_record_with_text,
-            looks_like_body_section_marker=_looks_like_body_section_marker,
-            preprint_marker_re=PREPRINT_MARKER_RE,
-            keywords_lead_re=KEYWORDS_LEAD_RE,
-            abstract_text_is_usable=_abstract_text_is_usable,
-            normalize_abstract_candidate_text=_normalize_abstract_candidate_text,
-            default_review=default_review,
-            block_source_spans=_block_source_spans,
-            front_matter_missing_placeholder=FRONT_MATTER_MISSING_PLACEHOLDER,
-        ),
         attach_orphan_numbered_roots=attach_orphan_numbered_roots,
         split_late_prelude_for_missing_intro=_split_late_prelude_for_missing_intro,
-        normalize_section_title=lambda title: assemble_normalize_section_title(
-            title,
-            clean_text=_clean_text,
-            clean_heading_title=clean_heading_title,
-            parse_heading_label=parse_heading_label,
-            normalize_title_key=normalize_title_key,
-        ),
-        leading_abstract_text=_leading_abstract_text,
-        front_block_text=lambda blocks, block_id: assemble_front_block_text(blocks, block_id, clean_text=_clean_text),
-        default_review=default_review,
-        block_source_spans=_block_source_spans,
         build_abstract_decision=build_abstract_decision,
         should_replace_front_matter_abstract=_should_replace_front_matter_abstract,
-        recover_missing_front_matter_abstract=lambda front_matter, blocks, prelude, ordered_roots: assemble_recover_missing_front_matter_abstract(
-            front_matter,
-            blocks,
-            prelude,
-            ordered_roots,
-            front_block_text=lambda block_list, block_id: assemble_front_block_text(block_list, block_id, clean_text=_clean_text),
-            abstract_quality_flags=abstract_quality_flags,
-            normalize_section_title=lambda title: assemble_normalize_section_title(
-                title,
-                clean_text=_clean_text,
-                clean_heading_title=clean_heading_title,
-                parse_heading_label=parse_heading_label,
-                normalize_title_key=normalize_title_key,
-            ),
-            leading_abstract_text=_leading_abstract_text,
-            abstract_text_is_recoverable=_abstract_text_is_recoverable,
-            replace_front_matter_abstract_text=_replace_front_matter_abstract_text,
-            opening_abstract_candidate_records=_opening_abstract_candidate_records,
-            normalize_abstract_candidate_text=_normalize_abstract_candidate_text,
-        ),
         section_node_type=SectionNode,
-        figure_label_token=_figure_label_token,
         prepare_section_nodes=prepare_section_nodes,
         split_trailing_reference_records=_split_trailing_reference_records,
         extract_reference_records_from_tail_section=_extract_reference_records_from_tail_section,
         reference_records_from_mathpix_layout=_reference_records_from_mathpix_layout,
         materialize_sections=materialize_sections,
-        section_id_for=lambda node, fallback_index: assemble_section_id(
-            node,
-            fallback_index,
-            normalize_title_key=normalize_title_key,
-        ),
+        section_id_impl=assemble_section_id,
         merge_reference_records=_merge_reference_records,
         is_figure_debris=_is_figure_debris,
         looks_like_running_header_record=_looks_like_running_header_record,
         looks_like_table_body_debris=_looks_like_table_body_debris,
-        is_short_ocr_fragment=_is_short_ocr_fragment,
         suppress_embedded_table_headings=_suppress_embedded_table_headings,
-        merge_code_records=lambda record_batch: reconcile_merge_code_records(
-            record_batch,
-            block_source_spans=_block_source_spans,
-            clean_text=_clean_text,
-        ),
-        merge_paragraph_records=lambda record_batch: reconcile_merge_paragraph_records(
-            record_batch,
-            clean_text=_clean_text,
-            block_source_spans=_block_source_spans,
-            should_merge_paragraph_records=_should_merge_paragraph_records,
-            table_caption_re=TABLE_CAPTION_RE,
-        ),
-        build_blocks_for_record=lambda record, layout_by_id, figures_by_label, external_math_by_page, external_math_overlap_by_page, references_section, counters: assemble_blocks_for_record(
-            record,
-            layout_by_id,
-            figures_by_label,
-            external_math_by_page,
-            external_math_overlap_by_page,
-            references_section,
-            counters,
-            clean_record=_clean_record,
-            record_analysis_text=_record_analysis_text,
-            is_short_ocr_fragment=_is_short_ocr_fragment,
-            block_source_spans=_block_source_spans,
-            caption_label=caption_label,
-            default_review=default_review,
-            make_reference_entry=make_reference_entry,
-            looks_like_real_code_record=_looks_like_real_code_record,
-            split_code_lines=_split_code_lines,
-            list_item_marker=_list_item_marker,
-            normalize_paragraph_text=normalize_paragraph_text,
-            split_inline_math=split_inline_math,
-            repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
-            extract_general_inline_math_spans=extract_general_inline_math_spans,
-            merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
-            normalize_inline_math_spans=normalize_inline_math_spans,
-            review_for_math_entry=review_for_math_entry,
-            review_for_math_ref_block=review_for_math_ref_block,
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-            looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-            match_external_math_entry=lambda record_item, external_math_map: reconcile_match_external_math_entry(
-                record_item,
-                external_math_map,
-                block_source_spans=_block_source_spans,
-                clean_text=_clean_text,
-            ),
-            build_block_math_entry=build_block_math_entry,
-            normalize_formula_display_text=_normalize_formula_display_text,
-            classify_math_block=classify_math_block,
-            review_for_algorithm_block_text=review_for_algorithm_block_text,
-            overlapping_external_math_entries=lambda record_item, overlap_map: reconcile_overlapping_external_math_entries(
-                record_item,
-                overlap_map,
-                block_source_spans=_block_source_spans,
-            ),
-            trim_embedded_display_math_from_paragraph=lambda text_value, record_item, overlapping_math: reconcile_trim_embedded_display_math_from_paragraph(
-                text_value,
-                record_item,
-                overlapping_math,
-                block_source_spans=_block_source_spans,
-                clean_text=_clean_text,
-                display_math_prose_cue_re=DISPLAY_MATH_PROSE_CUE_RE,
-                display_math_resume_re=DISPLAY_MATH_RESUME_RE,
-                display_math_start_re=DISPLAY_MATH_START_RE,
-                mathish_ratio=_mathish_ratio,
-                strong_operator_count=_strong_operator_count,
-            ),
-            looks_like_display_math_echo=lambda record_item, text_value, overlapping_math: reconcile_looks_like_display_math_echo(
-                record_item,
-                text_value,
-                overlapping_math,
-                block_source_spans=_block_source_spans,
-                clean_text=_clean_text,
-                mathish_ratio=_mathish_ratio,
-                strong_operator_count=_strong_operator_count,
-                short_word_re=SHORT_WORD_RE,
-            ),
-        ),
-        clean_text=_clean_text,
+        should_merge_paragraph_records=_should_merge_paragraph_records,
+        table_caption_re=TABLE_CAPTION_RE,
+        merge_code_records_impl=reconcile_merge_code_records,
+        merge_paragraph_records_impl=reconcile_merge_paragraph_records,
         compile_formulas=compile_formulas,
         annotate_formula_classifications=annotate_formula_classifications,
         annotate_formula_semantic_expr=annotate_formula_semantic_expr,
-        suppress_graphic_display_math_blocks=lambda blocks, compiled_math, sections, counters: reconcile_suppress_graphic_display_math_blocks(
-            blocks,
-            compiled_math,
-            sections,
-            counters,
-            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
-            paragraph_block_from_graphic_math_entry=paragraph_block_from_graphic_math_entry,
-            should_drop_display_math_artifact=should_drop_display_math_artifact,
-        ),
-        suppress_running_header_blocks=lambda blocks, sections: reconcile_suppress_running_header_blocks(
-            blocks,
-            sections,
-            block_source_spans=_block_source_spans,
-            compact_text=compact_text,
-            running_header_text_re=RUNNING_HEADER_TEXT_RE,
-            short_word_re=SHORT_WORD_RE,
-            strip_known_running_header_text=_strip_known_running_header_text,
-        ),
-        normalize_footnote_blocks=lambda blocks, sections: reconcile_normalize_footnote_blocks(
-            blocks,
-            sections,
-            block_source_spans=_block_source_spans,
-            short_word_re=SHORT_WORD_RE,
-            starts_like_sentence=_starts_like_sentence,
-            strip_known_running_header_text=_strip_known_running_header_text,
-        ),
-        merge_paragraph_blocks=lambda blocks, sections: reconcile_merge_paragraph_blocks(
-            blocks,
-            sections,
-            block_source_spans=_block_source_spans,
-            should_merge_paragraph_records=_should_merge_paragraph_records,
-            strip_known_running_header_text=_strip_known_running_header_text,
-        ),
+        suppress_graphic_display_math_blocks_impl=reconcile_suppress_graphic_display_math_blocks,
+        suppress_running_header_blocks_impl=reconcile_suppress_running_header_blocks,
+        compact_text=compact_text,
+        running_header_text_re=RUNNING_HEADER_TEXT_RE,
+        normalize_footnote_blocks_impl=reconcile_normalize_footnote_blocks,
+        starts_like_sentence=_starts_like_sentence,
+        merge_paragraph_blocks_impl=reconcile_merge_paragraph_blocks,
         now_iso=_now_iso,
         build_canonical_document=build_canonical_document,
         config=runtime_config,

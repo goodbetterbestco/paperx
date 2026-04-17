@@ -241,18 +241,54 @@ That pattern has worked and should continue.
 Largest remaining root files at the time of this update:
 
 - `pipeline/reconcile_blocks.py` — 1846 lines
-- `pipeline/audit_corpus.py` — 954 lines
-- `pipeline/run_corpus_rounds.py` — 951 lines
-- `pipeline/mathpix_adapter.py` — 382 lines
-- `pipeline/text_utils.py` — 305 lines
-- `pipeline/corpus_layout.py` — 279 lines
-- `pipeline/staleness_policy.py` — 261 lines
+
+Recently reduced:
+
+- `pipeline/audit_corpus.py` — now a 59-line compatibility wrapper
+- extracted audit implementation now lives in `pipeline/corpus/audit.py`
+- extracted audit markdown rendering now lives in `pipeline/output/audit_report.py`
+- `pipeline/text_utils.py` — now a 34-line compatibility wrapper
+- extracted heading/section helpers now live in `pipeline/text/headings.py`
+- `pipeline/corpus_layout.py` — now a 169-line boundary object module
+- extracted path/config-prep helpers now live in `pipeline/corpus/paths.py`
+- `pipeline.corpus` now uses lazy exports so submodules can be reused without package-init cycles
+- `pipeline/staleness_policy.py` — now a 117-line policy wrapper/coordinator
+- extracted fingerprinting/build metadata helpers now live in `pipeline/output/fingerprints.py`
+- `pipeline/mathpix_adapter.py` — now a 308-line compatibility adapter over `pipeline/sources/mathpix.py`
+- the root Mathpix adapter keeps test-facing patch seams while delegating implementation to `pipeline/sources/mathpix.py`
+- `pipeline/run_corpus_rounds.py` — now an 894-line coordinator
+- extracted runtime/status/env helpers now live in `pipeline/orchestrator/round_runtime.py`
+- `pipeline/reconcile_blocks.py` — first narrow extractions are underway
+- extracted record/text cleaning helpers now live in `pipeline/reconcile/text_cleaning.py`
+- extracted reference-runtime helper composition now lives in `pipeline/reconcile/reference_runtime.py`
+- extracted front-matter candidate/recovery helpers now live in `pipeline/reconcile/front_matter_runtime.py`
+- extracted shared reconcile utility support now lives in `pipeline/reconcile/runtime_support.py`
+- extracted coordinator-stage binding factories now live in `pipeline/reconcile/stage_runtime.py`
+- `pipeline/reconcile/stage_runtime.py` now also covers record-normalization and postprocess binding factories that were previously inlined inside `reconcile_paper_state`
+- `pipeline/reconcile/stage_runtime.py` now also covers layout-bound text normalization and math-entry policy/demotion bindings that were previously local to `reconcile_paper_state`
+- `pipeline/reconcile/stage_runtime.py` now also covers the remaining lambda-style binders for layout-bound loaders, section helpers, and block-assembly support wiring
+- `pipeline/reconcile/stage_runtime.py` now also owns the binding-and-dispatch executor that composes those factories and calls `run_paper_pipeline(...)`
 
 Interpretation:
 
 - `run_corpus_rounds.py` has already been materially reduced and is no longer the worst root orchestrator
 - `reconcile_blocks.py` is still the dominant monolith
-- `audit_corpus.py` is now the best next large refactor target before attempting another high-coupling `reconcile_blocks.py` slice
+- `audit_corpus.py` has been converted into the intended wrapper shape without changing the CLI/import surface
+- `text_utils.py` has also been converted into the intended wrapper shape
+- `corpus_layout.py` now better matches the intended boundary-object role
+- `staleness_policy.py` now matches the natural split between fingerprint/build metadata helpers and staleness policy logic
+- `mathpix_adapter.py` now better matches the compatibility-adapter role, although its patch-sensitive seams still justify some root-local code
+- `run_corpus_rounds.py` now looks much more like an intentional coordinator after peeling off runtime/status/env helpers
+- `reconcile_blocks.py` is now the clear next target and the only remaining root monolith that still needs substantive dismantling
+- the first `reconcile_blocks.py` seam is now proven: narrow helper extraction with root compatibility wrappers keeps the integration suite stable
+- the private helper surface inside `reconcile_blocks.py` is now wrapper-shaped end to end; the next reductions should target larger coordinator-stage boundaries rather than more utility peeling
+- the first coordinator-stage split is now in place: front-matter build, abstract recovery, and block-assembly binding moved behind `pipeline/reconcile/stage_runtime.py`
+- that coordinator-stage extraction has now expanded to absorb normalization/postprocess binding closures as well, further reducing the inline orchestration burden inside `reconcile_paper_state`
+- `reconcile_paper_state` no longer carries nested helper `def`s; it is now primarily factory composition plus the final `run_paper_pipeline(...)` orchestration call
+- `reconcile_paper_state` now also carries zero inline lambdas; the root entrypoint is effectively a declarative coordinator over stage-runtime factories and `run_paper_pipeline(...)`
+- `reconcile_paper_state` is now a minimal facade: runtime-config selection plus delegation into `pipeline/reconcile/stage_runtime.py`, with the root `run_paper_pipeline` symbol still passed through as the compatibility/patch seam
+- `pipeline/reconcile_blocks.py` now imports the stage-runtime executor directly rather than the full factory toolbox, which is a better match for its compatibility-facade role
+- stale root-only imports from earlier extraction phases have been trimmed from `pipeline/reconcile_blocks.py`, reducing facade noise without changing the test-facing helper surface
 
 ## Current Refactor Rules
 
@@ -269,43 +305,45 @@ These rules now reflect what is actually working in the repo.
 
 ### Phase A. Finish the low-risk root cleanup
 
-Next target:
+Completed:
 
-- `pipeline/audit_corpus.py`
+- `pipeline/audit_corpus.py` was reduced to a thin coordinator/wrapper
+- audit scanning and heuristics moved to `pipeline/corpus/audit.py`
+- audit markdown rendering moved to `pipeline/output/audit_report.py`
+- the root CLI/import surface stayed stable for tests and scripts
 
-Plan:
+Result:
 
-- move corpus-audit scanning and report-rendering helpers out of the root file
-- keep `pipeline/audit_corpus.py` as the stable entrypoint and compatibility surface
-- avoid inventing a one-off top-level category just for one file
-
-Preferred destination:
-
-- use `pipeline/corpus/` and `pipeline/output/` for the extracted helpers rather than adding a brand-new root category unless the audit split clearly grows into a real family
-
-Success criteria:
-
-- `audit_corpus.py` becomes a small coordinator or wrapper
-- pure audit/report logic becomes testable without loading the full command path
+- the root now matches the intended boundary-layer shape
+- pure audit/report logic is isolated from the command path
 
 ### Phase B. Keep reducing shared root utilities
 
-Next likely targets after `audit_corpus.py`:
+Completed:
 
-- `pipeline/text_utils.py`
-- `pipeline/corpus_layout.py`
-- `pipeline/staleness_policy.py`
+- `pipeline/text_utils.py` was reduced to a thin compatibility wrapper
+- heading parsing, section-tree construction, and text cleanup helpers moved to `pipeline/text/headings.py`
+- root imports for `SectionNode`, `compact_text`, `clean_heading_title`, and related helpers stayed stable
+- `pipeline/corpus_layout.py` kept `ProjectLayout` at the root while moving path/config-prep helpers to `pipeline/corpus/paths.py`
+- root imports for `prepare_project_inputs`, `display_path`, `normalize_paper_id`, and related helpers stayed stable
+- `pipeline.corpus` package exports were made lazy so layout helpers can live under the corpus family without circular imports
+- `pipeline/staleness_policy.py` stayed centralized while fingerprint/build metadata helpers moved to `pipeline/output/fingerprints.py`
+- root imports for `fingerprint_path`, `pipeline_fingerprint`, `build_input_fingerprints`, and `build_metadata_for_paper` stayed stable
+
+Next likely targets after `corpus_layout.py`:
+
+- `pipeline/reconcile_blocks.py`
+- `pipeline/docling_adapter.py` only if a cleaner compatibility seam appears
 
 Plan:
 
-- move pure text/heading helpers into the existing `pipeline/text/` family where appropriate
-- keep `ProjectLayout` in `pipeline/corpus_layout.py` for now, but consider pulling pure path helpers into `pipeline/corpus/` if that reduces coupling without hiding the main boundary object
-- keep `staleness_policy.py` centralized unless it naturally splits into fingerprinting vs policy helpers
+- keep root adapters as compatibility surfaces while continuing to move implementation into `pipeline/sources/`
 
 Success criteria:
 
 - fewer medium-sized general-purpose root files
 - cleaner separation between boundary objects and helper logic
+- after this pass, the remaining prep work is considered sufficient to begin narrow `reconcile_blocks.py` extractions
 
 ### Phase C. Continue adapter normalization
 
@@ -314,7 +352,12 @@ Targets:
 - `pipeline/mathpix_adapter.py`
 - `pipeline/docling_adapter.py`
 
-Plan:
+Completed so far:
+
+- `pipeline/mathpix_adapter.py` now delegates through `pipeline/sources/mathpix.py` while preserving root-local monkeypatch seams used by tests
+- `pipeline/docling_adapter.py` is already essentially wrapper-shaped and does not currently need the same kind of extraction work
+
+Ongoing intent:
 
 - keep the root adapters only as patch-friendly compatibility surfaces
 - move any remaining implementation detail that can safely move into `pipeline/sources/mathpix.py` and `pipeline/sources/docling.py`
@@ -338,7 +381,21 @@ Already extracted around it:
 
 Recommended next extractions from `reconcile_blocks.py`:
 
-- front-matter candidate and recovery logic
+- most non-`reconcile_blocks` root modules are now either boundary objects, compatibility wrappers, or intentional coordinators
+- `reconcile_blocks.py` helper wrappers are now consistently shaped around `pipeline/reconcile/*` and `pipeline/assembly/*`
+- the next high-value work should therefore move coordinator-stage chunks, not more leaf utilities, unless a new patch-sensitive seam appears
+- first completed narrow seams:
+  - record/text cleaning helpers moved to `pipeline/reconcile/text_cleaning.py`
+  - reference-runtime helper composition moved to `pipeline/reconcile/reference_runtime.py`
+  - front-matter candidate/recovery helper composition moved to `pipeline/reconcile/front_matter_runtime.py`
+  - shared helper utilities moved to `pipeline/reconcile/runtime_support.py`
+  - coordinator-stage binding factories moved to `pipeline/reconcile/stage_runtime.py`
+  - `stage_runtime.py` now also owns layout-bound normalization and math-entry policy factories
+  - `stage_runtime.py` now also owns the former inline lambda binders used by `reconcile_paper_state`
+  - `stage_runtime.py` now also owns the former factory-composition and dispatch body of `reconcile_paper_state`
+  - `stage_runtime.py` now also owns layout merge, mathpix repair, heading-promotion, and postprocess block-binding factories
+  - root `_clean_text`/`_normalize_paragraph_text`/front-matter/reference helper names remain stable for tests
+
 - title/author/affiliation detection helpers
 - reference extraction and cleanup helpers
 - additional record cleanup and paragraph/section support that can move without destabilizing the full build path

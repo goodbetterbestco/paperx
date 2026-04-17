@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
-from dataclasses import dataclass
 import json
 import os
 import socket
@@ -12,12 +11,10 @@ import sys
 from threading import Event, Thread
 import time
 import traceback
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
 
-from pipeline.corpus.lexicon_builder import _build_lexicon
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import (
     CORPUS_DIR,
@@ -44,6 +41,22 @@ from pipeline.orchestrator.round_reporting import (
     render_final_report as _render_final_report,
     summarize_round as _summarize_round,
 )
+from pipeline.orchestrator.round_runtime import (
+    ENV_LOCAL_PATH,
+    RoundRuntime,
+    TMP_DIR,
+    build_round_runtime as _build_round_runtime_impl,
+    configure_runtime_environment as _configure_runtime_environment_impl,
+    float_env as _float_env_impl,
+    int_env as _int_env_impl,
+    load_status as _load_status_impl,
+    now_iso as _now_iso_impl,
+    paper_ids as _paper_ids_impl,
+    rebuild_lexicon as _rebuild_lexicon_impl,
+    read_env_local as _read_env_local_impl,
+    save_status as _save_status_impl,
+    write_json as _write_json_impl,
+)
 from pipeline.orchestrator.source_composition import (
     compose_layout_sources as _compose_layout_sources,
     layout_blocks_by_page as _layout_blocks_by_page,
@@ -62,39 +75,12 @@ from pipeline.sources.mathpix import (
 from pipeline.output_artifacts import write_canonical_outputs
 from pipeline.output.validation import validate_canonical
 from pipeline.reconcile_blocks import reconcile_paper
-from pipeline.runtime_paths import ENGINE_ROOT, ensure_repo_tmp_dir, runtime_env
+from pipeline.runtime_paths import ENGINE_ROOT
 from pipeline.staleness_policy import detect_canonical_staleness
 
 
-TMP_DIR = ensure_repo_tmp_dir()
-
-
-@dataclass(frozen=True)
-class RoundRuntime:
-    layout: ProjectLayout
-    batch_dir: Path
-    status_path: Path
-    report_path: Path
-    lexicon_path: Path
-
-
 def _build_round_runtime(layout: ProjectLayout | None = None) -> RoundRuntime:
-    active_layout = layout or current_layout()
-    if active_layout.project_mode:
-        batch_dir = active_layout.project_status_path().parent
-        status_path = active_layout.project_status_path()
-        report_path = active_layout.project_report_path()
-    else:
-        batch_dir = TMP_DIR / "canonical_corpus_rounds"
-        status_path = batch_dir / "status.json"
-        report_path = batch_dir / "final_summary.md"
-    return RoundRuntime(
-        layout=active_layout,
-        batch_dir=batch_dir,
-        status_path=status_path,
-        report_path=report_path,
-        lexicon_path=active_layout.corpus_lexicon_path,
-    )
+    return _build_round_runtime_impl(layout)
 
 
 DEFAULT_RUNTIME = _build_round_runtime()
@@ -103,90 +89,47 @@ STATUS_PATH = DEFAULT_RUNTIME.status_path
 REPORT_PATH = DEFAULT_RUNTIME.report_path
 DOCS_DIR = CORPUS_DIR
 LEXICON_PATH = DEFAULT_RUNTIME.lexicon_path
-ENV_LOCAL_PATH = ENGINE_ROOT / ".env.local"
 PER_PAPER_SOURCE_WORKERS = 2
 
 
 def _now_iso() -> str:
-    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    return _now_iso_impl()
 
 
 def _read_env_local() -> dict[str, str]:
-    if not ENV_LOCAL_PATH.exists():
-        return {}
-    loaded: dict[str, str] = {}
-    for raw_line in ENV_LOCAL_PATH.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        key = key.strip()
-        value = value.strip()
-        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
-            value = value[1:-1]
-        loaded[key] = value
-    return loaded
+    return _read_env_local_impl()
 
 
 def _configure_runtime_environment() -> None:
-    env = runtime_env()
-    os.environ.update(env)
-    os.environ.update(_read_env_local())
+    _configure_runtime_environment_impl()
 
 
 def _int_env(name: str, default: int) -> int:
-    raw = os.environ.get(name, "").strip()
-    if not raw:
-        return default
-    try:
-        return max(1, int(raw))
-    except ValueError:
-        return default
+    return _int_env_impl(name, default)
 
 
 def _float_env(name: str, default: float) -> float:
-    raw = os.environ.get(name, "").strip()
-    if not raw:
-        return default
-    try:
-        return max(0.0, float(raw))
-    except ValueError:
-        return default
+    return _float_env_impl(name, default)
 
 
 def _paper_ids(*, layout: ProjectLayout | None = None) -> list[str]:
-    return [paper_id_from_pdf_path(path, layout=layout) for path in discover_paper_pdf_paths(layout=layout)]
+    return _paper_ids_impl(layout=layout)
 
 
 def _write_json(path: Path, payload: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    _write_json_impl(path, payload)
 
 
 def _load_status(runtime: RoundRuntime | None = None) -> dict[str, Any]:
-    active_runtime = runtime or DEFAULT_RUNTIME
-    if active_runtime.status_path.exists():
-        return json.loads(active_runtime.status_path.read_text(encoding="utf-8"))
-    return {
-        "started_at": _now_iso(),
-        "updated_at": _now_iso(),
-        "papers": _paper_ids(layout=active_runtime.layout),
-        "rounds": {},
-        "notes": [],
-    }
+    return _load_status_impl(runtime or DEFAULT_RUNTIME)
 
 
 def _save_status(status: dict[str, Any], runtime: RoundRuntime | None = None) -> None:
-    active_runtime = runtime or DEFAULT_RUNTIME
-    status["updated_at"] = _now_iso()
-    _write_json(active_runtime.status_path, status)
+    _save_status_impl(status, runtime or DEFAULT_RUNTIME)
 
 
 def _rebuild_lexicon(runtime: RoundRuntime | None = None) -> dict[str, Any]:
-    active_runtime = runtime or DEFAULT_RUNTIME
-    lexicon = _build_lexicon(layout=active_runtime.layout)
-    _write_json(active_runtime.lexicon_path, lexicon)
-    return lexicon
+    return _rebuild_lexicon_impl(runtime or DEFAULT_RUNTIME)
 
 
 def _mathpix_credentials_available() -> bool:

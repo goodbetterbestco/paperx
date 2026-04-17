@@ -1,79 +1,87 @@
 from __future__ import annotations
 
-import json
 import os
 from pathlib import Path
 import subprocess
-import time
 from typing import Any
-from urllib import error, parse, request
+from urllib import request
 
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, paper_pdf_path
-from pipeline.sources.mathpix import (
-    MATHPIX_PDF_ENDPOINT,
-    _MATHPIX_REQUEST_LIMIT,
-    _MATHPIX_REQUEST_LOCK,
-    _MATHPIX_REQUEST_SEMAPHORE,
-    _RETRYABLE_SOCKET_ERRNOS,
-    _bbox_from_cnt,
-    _clean_latex,
-    _load_fitz,
-    _math_entry_from_line,
-    _mathpix_headers,
-    _mathpix_http_error_message,
-    _mathpix_pdf_page_ranges,
-    _mathpix_pdf_poll_seconds,
-    _mathpix_pdf_wait_timeout_seconds,
-    _mathpix_request_semaphore,
-    _mathpix_retry_attempts,
-    _mathpix_retry_backoff_seconds,
-    _multipart_form_payload,
-    _output_dir,
-    _pdf_page_sizes_pt,
-    _render_page_png_bytes,
-    _retryable_socket_error,
-    _role_for_line,
-    _sleep,
-    fetch_mathpix_pdf_status,
-    mathpix_pages_to_external_sources,
-    write_external_sources,
-)
+from pipeline.sources import mathpix as _mathpix
+
 
 DOCS_DIR = CORPUS_DIR
+MATHPIX_PDF_ENDPOINT = _mathpix.MATHPIX_PDF_ENDPOINT
+_MATHPIX_REQUEST_SEMAPHORE = _mathpix._MATHPIX_REQUEST_SEMAPHORE
+_MATHPIX_REQUEST_LIMIT = _mathpix._MATHPIX_REQUEST_LIMIT
+_MATHPIX_REQUEST_LOCK = _mathpix._MATHPIX_REQUEST_LOCK
+_RETRYABLE_SOCKET_ERRNOS = _mathpix._RETRYABLE_SOCKET_ERRNOS
+_bbox_from_cnt = _mathpix._bbox_from_cnt
+_clean_latex = _mathpix._clean_latex
+_load_fitz = _mathpix._load_fitz
+_math_entry_from_line = _mathpix._math_entry_from_line
+_mathpix_headers = _mathpix._mathpix_headers
+_mathpix_http_error_message = _mathpix._mathpix_http_error_message
+_mathpix_pdf_page_ranges = _mathpix._mathpix_pdf_page_ranges
+_mathpix_pdf_poll_seconds = _mathpix._mathpix_pdf_poll_seconds
+_mathpix_pdf_wait_timeout_seconds = _mathpix._mathpix_pdf_wait_timeout_seconds
+_mathpix_request_semaphore = _mathpix._mathpix_request_semaphore
+_mathpix_retry_attempts = _mathpix._mathpix_retry_attempts
+_mathpix_retry_backoff_seconds = _mathpix._mathpix_retry_backoff_seconds
+_multipart_form_payload = _mathpix._multipart_form_payload
+_output_dir = _mathpix._output_dir
+_pdf_page_sizes_pt = _mathpix._pdf_page_sizes_pt
+_render_page_png_bytes = _mathpix._render_page_png_bytes
+_retryable_socket_error = _mathpix._retryable_socket_error
+_role_for_line = _mathpix._role_for_line
+_sleep = _mathpix._sleep
+fetch_mathpix_pdf_status = _mathpix.fetch_mathpix_pdf_status
+mathpix_pages_to_external_sources = _mathpix.mathpix_pages_to_external_sources
+write_external_sources = _mathpix.write_external_sources
+
+_SOURCE_MATHPIX_REQUEST_BYTES = _mathpix._mathpix_request_bytes
+_SOURCE_MATHPIX_REQUEST_JSON = _mathpix._mathpix_request_json
+_SOURCE_CALL_MATHPIX_ON_PAGE_IMAGE = _mathpix.call_mathpix_on_page_image
+_SOURCE_MATHPIX_PDF_SUBMIT = _mathpix._mathpix_pdf_submit
+_SOURCE_MATHPIX_PDF_STATUS = _mathpix._mathpix_pdf_status
+_SOURCE_MATHPIX_PDF_WAIT_FOR_COMPLETION = _mathpix._mathpix_pdf_wait_for_completion
+_SOURCE_MATHPIX_PDF_DOWNLOAD_LINES = _mathpix._mathpix_pdf_download_lines
+_SOURCE_MATHPIX_PDF_LINES_TO_PAGE_PAYLOADS = _mathpix._mathpix_pdf_lines_to_page_payloads
 
 
 def _paper_pdf_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
     return paper_pdf_path(paper_id, layout=layout)
 
 
+def _sync_mathpix_compat() -> None:
+    _mathpix.request = request
+    _mathpix.subprocess = subprocess
+    _mathpix._sleep = _sleep
+    _mathpix._paper_pdf_path = _paper_pdf_path
+    _mathpix._pdf_page_sizes_pt = _pdf_page_sizes_pt
+    _mathpix._mathpix_request_semaphore = _mathpix_request_semaphore
+    _mathpix._mathpix_retry_attempts = _mathpix_retry_attempts
+    _mathpix._mathpix_retry_backoff_seconds = _mathpix_retry_backoff_seconds
+    _mathpix._retryable_socket_error = _retryable_socket_error
+    _mathpix._mathpix_headers = _mathpix_headers
+    _mathpix._mathpix_http_error_message = _mathpix_http_error_message
+    _mathpix._multipart_form_payload = _multipart_form_payload
+    _mathpix._mathpix_request_bytes = _mathpix_request_bytes
+    _mathpix._mathpix_request_json = _mathpix_request_json
+    _mathpix._mathpix_pdf_page_ranges = _mathpix_pdf_page_ranges
+    _mathpix._mathpix_pdf_status = _mathpix_pdf_status
+    _mathpix._mathpix_pdf_poll_seconds = _mathpix_pdf_poll_seconds
+    _mathpix._mathpix_pdf_wait_timeout_seconds = _mathpix_pdf_wait_timeout_seconds
+
+
 def _mathpix_request_bytes(req: request.Request, *, timeout_seconds: int = 180) -> bytes:
-    max_attempts = _mathpix_retry_attempts()
-    last_error: BaseException | None = None
-    for attempt in range(1, max_attempts + 1):
-        try:
-            with request.urlopen(req, timeout=timeout_seconds) as response:
-                return response.read()
-        except error.HTTPError as exc:
-            raise RuntimeError(_mathpix_http_error_message(exc)) from exc
-        except Exception as exc:
-            retryable = _retryable_socket_error(exc)
-            if not retryable or attempt >= max_attempts:
-                if retryable and max_attempts > 1:
-                    raise RuntimeError(f"Mathpix request failed after {max_attempts} attempts: {exc}") from exc
-                raise
-            last_error = exc
-            _sleep(_mathpix_retry_backoff_seconds(attempt))
-    if last_error is not None:  # pragma: no cover - loop always returns or raises
-        raise RuntimeError(f"Mathpix request failed after {max_attempts} attempts: {last_error}") from last_error
-    raise RuntimeError("Mathpix request did not produce a response.")  # pragma: no cover
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_REQUEST_BYTES(req, timeout_seconds=timeout_seconds)
 
 
 def _mathpix_request_json(req: request.Request, *, timeout_seconds: int = 180) -> dict[str, Any]:
-    payload = _mathpix_request_bytes(req, timeout_seconds=timeout_seconds)
-    decoded = json.loads(payload.decode("utf-8"))
-    if not isinstance(decoded, dict):
-        raise RuntimeError("Mathpix returned a non-object JSON payload.")
-    return decoded
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_REQUEST_JSON(req, timeout_seconds=timeout_seconds)
 
 
 def call_mathpix_on_page_image(
@@ -83,26 +91,13 @@ def call_mathpix_on_page_image(
     app_key: str,
     endpoint: str = "https://api.mathpix.com/v3/text",
 ) -> dict[str, Any]:
-    options = {
-        "formats": ["text", "data"],
-        "data_options": {"include_latex": True},
-        "include_line_data": True,
-        "include_equation_tags": True,
-    }
-    options_json = json.dumps(options, separators=(",", ":"))
-    payload, boundary = _multipart_form_payload(
-        file_bytes=image_bytes,
-        filename="page.png",
-        file_content_type="image/png",
-        options_json=options_json,
+    _sync_mathpix_compat()
+    return _SOURCE_CALL_MATHPIX_ON_PAGE_IMAGE(
+        image_bytes,
+        app_id=app_id,
+        app_key=app_key,
+        endpoint=endpoint,
     )
-    req = request.Request(
-        endpoint,
-        data=payload,
-        headers=_mathpix_headers(app_id, app_key, content_type=f"multipart/form-data; boundary={boundary}"),
-        method="POST",
-    )
-    return _mathpix_request_json(req)
 
 
 def _mathpix_pdf_submit(
@@ -113,52 +108,14 @@ def _mathpix_pdf_submit(
     endpoint: str = MATHPIX_PDF_ENDPOINT,
     page_ranges: str | None = None,
 ) -> str:
-    options: dict[str, Any] = {
-        "include_equation_tags": True,
-        "include_page_info": True,
-    }
-    if page_ranges:
-        options["page_ranges"] = page_ranges
-    options_json = json.dumps(options, separators=(",", ":"))
-    command = [
-        "curl",
-        "-sS",
-        "-X",
-        "POST",
-        endpoint.rstrip("/"),
-        "-H",
-        f"app_id: {app_id}",
-        "-H",
-        f"app_key: {app_key}",
-        "-F",
-        f"file=@{pdf_path}",
-        "-F",
-        f"options_json={options_json}",
-    ]
-    max_attempts = _mathpix_retry_attempts()
-    last_error: BaseException | None = None
-    for attempt in range(1, max_attempts + 1):
-        try:
-            with _mathpix_request_semaphore():
-                completed = subprocess.run(command, check=True, capture_output=True, text=True)
-            response = json.loads(completed.stdout)
-            if not isinstance(response, dict):
-                raise RuntimeError("Mathpix PDF submission returned a non-object JSON payload.")
-            pdf_id = str(response.get("pdf_id", "")).strip()
-            if not pdf_id:
-                raise RuntimeError(f"Mathpix PDF submission did not return a pdf_id: {response}")
-            return pdf_id
-        except subprocess.CalledProcessError as exc:
-            message = (exc.stderr or exc.stdout or str(exc)).strip()
-            if attempt >= max_attempts:
-                raise RuntimeError(f"Mathpix PDF submission failed after {max_attempts} attempts: {message}") from exc
-            last_error = exc
-            _sleep(_mathpix_retry_backoff_seconds(attempt))
-        except FileNotFoundError as exc:
-            raise RuntimeError("curl is required for Mathpix PDF submission.") from exc
-    if last_error is not None:  # pragma: no cover - loop always returns or raises
-        raise RuntimeError(f"Mathpix PDF submission failed after {max_attempts} attempts: {last_error}") from last_error
-    raise RuntimeError("Mathpix PDF submission did not produce a response.")  # pragma: no cover
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_PDF_SUBMIT(
+        pdf_path,
+        app_id=app_id,
+        app_key=app_key,
+        endpoint=endpoint,
+        page_ranges=page_ranges,
+    )
 
 
 def _mathpix_pdf_status(
@@ -168,13 +125,13 @@ def _mathpix_pdf_status(
     app_key: str,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
 ) -> dict[str, Any]:
-    req = request.Request(
-        f"{endpoint.rstrip('/')}/{parse.quote(pdf_id, safe='')}",
-        headers=_mathpix_headers(app_id, app_key),
-        method="GET",
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_PDF_STATUS(
+        pdf_id,
+        app_id=app_id,
+        app_key=app_key,
+        endpoint=endpoint,
     )
-    with _mathpix_request_semaphore():
-        return _mathpix_request_json(req)
 
 
 def _mathpix_pdf_wait_for_completion(
@@ -184,22 +141,13 @@ def _mathpix_pdf_wait_for_completion(
     app_key: str,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
 ) -> dict[str, Any]:
-    timeout_seconds = _mathpix_pdf_wait_timeout_seconds()
-    deadline = time.monotonic() + timeout_seconds
-    last_status = "received"
-    while True:
-        response = _mathpix_pdf_status(pdf_id, app_id=app_id, app_key=app_key, endpoint=endpoint)
-        last_status = str(response.get("status", "")).strip().lower() or "unknown"
-        if last_status == "completed":
-            return response
-        if last_status == "error" or response.get("error"):
-            raise RuntimeError(f"Mathpix PDF {pdf_id} failed: {response}")
-        if time.monotonic() >= deadline:
-            raise RuntimeError(
-                f"Mathpix PDF {pdf_id} did not complete within {timeout_seconds} seconds "
-                f"(last status: {last_status})."
-            )
-        _sleep(_mathpix_pdf_poll_seconds())
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_PDF_WAIT_FOR_COMPLETION(
+        pdf_id,
+        app_id=app_id,
+        app_key=app_key,
+        endpoint=endpoint,
+    )
 
 
 def _mathpix_pdf_download_lines(
@@ -209,17 +157,13 @@ def _mathpix_pdf_download_lines(
     app_key: str,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
 ) -> dict[str, Any]:
-    req = request.Request(
-        f"{endpoint.rstrip('/')}/{parse.quote(pdf_id, safe='')}.lines.json",
-        headers=_mathpix_headers(app_id, app_key),
-        method="GET",
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_PDF_DOWNLOAD_LINES(
+        pdf_id,
+        app_id=app_id,
+        app_key=app_key,
+        endpoint=endpoint,
     )
-    with _mathpix_request_semaphore():
-        response = _mathpix_request_json(req)
-    pages = response.get("pages")
-    if not isinstance(pages, list):
-        raise RuntimeError(f"Mathpix PDF lines download did not include pages: {response}")
-    return response
 
 
 def _mathpix_pdf_lines_to_page_payloads(
@@ -228,26 +172,8 @@ def _mathpix_pdf_lines_to_page_payloads(
     *,
     layout: ProjectLayout | None = None,
 ) -> list[dict[str, Any]]:
-    pdf_path = _paper_pdf_path(paper_id, layout=layout)
-    page_sizes_pt = _pdf_page_sizes_pt(pdf_path)
-    payloads: list[dict[str, Any]] = []
-    for page_data in list(lines_payload.get("pages") or []):
-        page_number = int(page_data.get("page", 0) or 0)
-        if page_number < 1 or page_number > len(page_sizes_pt):
-            raise RuntimeError(f"Mathpix lines payload referenced out-of-range page {page_number} for {paper_id}.")
-        page_width_pt, page_height_pt = page_sizes_pt[page_number - 1]
-        payloads.append(
-            {
-                "page": page_number,
-                "page_width_pt": page_width_pt,
-                "page_height_pt": page_height_pt,
-                "image_width": int(page_data.get("page_width", 0) or 0),
-                "image_height": int(page_data.get("page_height", 0) or 0),
-                "response": {"line_data": list(page_data.get("lines") or [])},
-            }
-        )
-    payloads.sort(key=lambda payload: int(payload["page"]))
-    return payloads
+    _sync_mathpix_compat()
+    return _SOURCE_MATHPIX_PDF_LINES_TO_PAGE_PAYLOADS(lines_payload, paper_id, layout=layout)
 
 
 def submit_mathpix_pdf(
