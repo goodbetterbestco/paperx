@@ -7,12 +7,14 @@ from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
 import json
 import os
 import re
+import socket
 from threading import Event, Thread
 import time
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 from paper_pipeline.build_canonical import build_summary
 from paper_pipeline.build_corpus_lexicon import _build_lexicon
 from paper_pipeline.corpus_layout import (
@@ -29,6 +31,7 @@ from paper_pipeline.corpus_metadata import discover_paper_pdf_paths, paper_id_fr
 from paper_pipeline.docling_adapter import docling_json_to_external_sources, run_docling
 from paper_pipeline.external_sources import external_layout_path, external_math_path
 from paper_pipeline.mathpix_adapter import (
+    MATHPIX_PDF_ENDPOINT,
     download_mathpix_pdf,
     fetch_mathpix_pdf_status,
     mathpix_pages_to_external_sources,
@@ -160,6 +163,21 @@ def _rebuild_lexicon() -> dict[str, Any]:
 
 def _mathpix_credentials_available() -> bool:
     return bool(os.environ.get("MATHPIX_APP_ID") and os.environ.get("MATHPIX_APP_KEY"))
+
+
+def _assert_mathpix_dns_available(endpoint: str = MATHPIX_PDF_ENDPOINT) -> None:
+    host = urlparse(endpoint).hostname or ""
+    if not host:
+        raise SystemExit(f"Mathpix DNS preflight failed: could not determine hostname from endpoint {endpoint!r}.")
+    try:
+        socket.getaddrinfo(host, 443)
+    except OSError as exc:
+        raise SystemExit(
+            "Mathpix DNS preflight failed for "
+            f"{host}: {exc}. This usually means the corpus pipeline is running inside a "
+            "sandboxed environment without external DNS/network access. Rerun the corpus "
+            "outside the sandbox or with escalated network access."
+        ) from exc
 
 
 def _mathpix_submit_workers() -> int:
@@ -1044,6 +1062,8 @@ def run_rounds(
         raise SystemExit("--max-workers must be at least 1")
 
     _configure_runtime_environment()
+    if _mathpix_credentials_available():
+        _assert_mathpix_dns_available()
     BATCH_DIR.mkdir(parents=True, exist_ok=True)
 
     status = _load_status()

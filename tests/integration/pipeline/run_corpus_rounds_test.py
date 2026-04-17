@@ -1,4 +1,5 @@
 import os
+import socket
 import sys
 import unittest
 from pathlib import Path
@@ -10,6 +11,7 @@ if str(ROOT) not in sys.path:
 
 from paper_pipeline.run_corpus_rounds import (
     _anomaly_flags,
+    _assert_mathpix_dns_available,
     _build_paper,
     _compose_external_sources,
     _desired_flags_for_existing_paper,
@@ -23,6 +25,22 @@ from paper_pipeline.run_corpus_rounds import (
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
+    def test_mathpix_dns_preflight_resolves_host(self) -> None:
+        with patch("paper_pipeline.run_corpus_rounds.socket.getaddrinfo", return_value=[object()]):
+            _assert_mathpix_dns_available()
+
+    def test_mathpix_dns_preflight_fails_with_sandbox_guidance(self) -> None:
+        with patch(
+            "paper_pipeline.run_corpus_rounds.socket.getaddrinfo",
+            side_effect=socket.gaierror(8, "nodename nor servname provided, or not known"),
+        ):
+            with self.assertRaises(SystemExit) as ctx:
+                _assert_mathpix_dns_available()
+        message = str(ctx.exception)
+        self.assertIn("Mathpix DNS preflight failed for api.mathpix.com", message)
+        self.assertIn("sandboxed environment", message)
+        self.assertIn("escalated network access", message)
+
     def test_mathpix_submit_workers_defaults_to_twenty(self) -> None:
         with patch.dict(os.environ, {}, clear=False):
             os.environ.pop("STEPVIEW_MATHPIX_SUBMIT_WORKERS", None)
