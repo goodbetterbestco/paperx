@@ -4,7 +4,7 @@
     {
       "id": "mathpix-eq-p005-0016",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{M}=\\left\\{m \\mid m \\text { is a valid model and has topological structure } G\\left(m_{o}\\right)\\right\\} . \\tag{1}\n\\end{equation*}",
+      "display_latex": "\\mathcal{M}=\\left\\{m \\mid m \\text { is a valid model and has topological structure } G\\left(m_{o}\\right)\\right\\}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 99.5,
-            "y0": 372.0,
-            "x1": 565.0,
-            "y1": 393.5,
-            "width": 465.5,
-            "height": 21.5
+            "x0": 97.05,
+            "y0": 368.34,
+            "x1": 566.76,
+            "y1": 395.99,
+            "width": 469.71,
+            "height": 27.65
           },
           "engine": "mathpix"
         }
@@ -33,9 +33,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p011-0026",
+      "id": "mathpix-eq-p011-0027",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\phi_{e}\\left(e_{i_{k}}^{n}, e_{i_{k}}^{\\prime}\\right)=\\operatorname{length}\\left(\\left(e_{i_{k}}^{n} \\cup e_{i_{k}}^{\\prime}\\right)-\\left(e_{i_{k}}^{n} \\cap e_{i_{k}}^{\\prime}\\right)\\right), \\quad e_{i_{k}}^{n}, e_{i_{k}}^{\\prime} \\subseteq C_{i} . \\tag{2}\n\\end{equation*}",
+      "display_latex": "\\phi_{e}\\left(e_{i_{k}}^{n}, e_{i_{k}}^{\\prime}\\right)=\\operatorname{length}\\left(\\left(e_{i_{k}}^{n} \\cup e_{i_{k}}^{\\prime}\\right)-\\left(e_{i_{k}}^{n} \\cap e_{i_{k}}^{\\prime}\\right)\\right), \\quad e_{i_{k}}^{n}, e_{i_{k}}^{\\prime} \\subseteq C_{i} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -47,11 +47,11 @@
           "page": 11,
           "bbox": {
             "x0": 117.5,
-            "y0": 642.5,
-            "x1": 549.0,
-            "y1": 673.5,
-            "width": 431.5,
-            "height": 31.0
+            "y0": 642.51,
+            "x1": 548.91,
+            "y1": 673.61,
+            "width": 431.41,
+            "height": 31.1
           },
           "engine": "mathpix"
         }
@@ -64,9 +64,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p011-0030",
+      "id": "mathpix-eq-p011-0031",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\phi_{e}\\left(e_{i_{k}}^{n}, e_{i_{k}}^{\\prime}\\right)=\\left|v_{i 1}^{\\prime} v_{i 1}^{\\prime \\prime}\\right|+\\left|v_{i 2}^{\\prime} v_{i 2}^{\\prime \\prime}\\right|, \\tag{3}\n\\end{equation*}",
+      "display_latex": "\\phi_{e}\\left(e_{i_{k}}^{n}, e_{i_{k}}^{\\prime}\\right)=\\left|v_{i 1}^{\\prime} v_{i 1}^{\\prime \\prime}\\right|+\\left|v_{i 2}^{\\prime} v_{i 2}^{\\prime \\prime}\\right|,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 11,
           "bbox": {
-            "x0": 218.0,
-            "y0": 751.0,
-            "x1": 447.5,
-            "y1": 782.0,
-            "width": 229.5,
-            "height": 31.0
+            "x0": 218.01,
+            "y0": 751.08,
+            "x1": 447.54,
+            "y1": 782.18,
+            "width": 229.53,
+            "height": 31.1
           },
           "engine": "mathpix"
         }
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p011-0039",
+      "id": "mathpix-eq-p011-0040",
       "kind": "display",
       "display_latex": "\\begin{aligned}\ne_{i_{k}, 1}^{n} \\cap e_{i_{k}}^{\\prime} & \\neq \\emptyset, \\\\\ne_{i_{k}, 2}^{n} \\cap e_{i_{k}}^{\\prime} & =\\emptyset, \\\\\n\\phi_{e}\\left(e_{i_{k}, 1}^{n}, e_{i_{k}}^{\\prime}\\right) & >\\phi_{e}\\left(e_{i_{k}, 2}^{n}, e_{i_{k}}^{\\prime}\\right) .\n\\end{aligned}",
       "semantic_expr": null,
@@ -108,12 +108,12 @@
         {
           "page": 11,
           "bbox": {
-            "x0": 229.5,
-            "y0": 972.5,
-            "x1": 435.0,
-            "y1": 1072.5,
-            "width": 205.5,
-            "height": 100.0
+            "x0": 229.53,
+            "y0": 972.54,
+            "x1": 435.15,
+            "y1": 1072.19,
+            "width": 205.62,
+            "height": 99.64
           },
           "engine": "mathpix"
         }
@@ -128,7 +128,7 @@
     {
       "id": "mathpix-eq-p013-0010",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\left\\{S_{i j_{l}}\\right\\}_{1 \\leq i \\leq N, 1 \\leq l \\leq L_{i}} \\tag{4}\n\\end{equation*}",
+      "display_latex": "\\left\\{S_{i j_{l}}\\right\\}_{1 \\leq i \\leq N, 1 \\leq l \\leq L_{i}}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 268.5,
-            "y0": 249.0,
-            "x1": 398.0,
-            "y1": 282.0,
-            "width": 129.5,
-            "height": 33.0
+            "x0": 268.69,
+            "y0": 249.11,
+            "x1": 399.44,
+            "y1": 281.94,
+            "width": 130.75,
+            "height": 32.83
           },
           "engine": "mathpix"
         }
@@ -157,9 +157,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p013-0040",
+      "id": "mathpix-eq-p013-0041",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{S}_{1}=\\left\\{S_{i 1} \\mid \\text { there exists } e_{i_{k}}^{\\prime \\prime}=S_{i 1}, 0 \\leq i \\leq N\\right\\} . \\tag{5}\n\\end{equation*}",
+      "display_latex": "\\mathcal{S}_{1}=\\left\\{S_{i 1} \\mid \\text { there exists } e_{i_{k}}^{\\prime \\prime}=S_{i 1}, 0 \\leq i \\leq N\\right\\} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +170,12 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 173.5,
-            "y0": 1023.5,
-            "x1": 492.0,
-            "y1": 1052.0,
-            "width": 318.5,
-            "height": 28.5
+            "x0": 172.51,
+            "y0": 1023.23,
+            "x1": 492.17,
+            "y1": 1051.74,
+            "width": 319.67,
+            "height": 28.51
           },
           "engine": "mathpix"
         }
@@ -188,9 +188,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0021",
+      "id": "mathpix-eq-p014-0022",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\left\\{P_{i j}\\right\\}_{1 \\leq i \\leq N, 1 \\leq j \\leq N_{i}}, \\tag{6}\n\\end{equation*}",
+      "display_latex": "\\left\\{P_{i j}\\right\\}_{1 \\leq i \\leq N, 1 \\leq j \\leq N_{i}},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -201,12 +201,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 268.5,
-            "y0": 813.5,
-            "x1": 396.0,
-            "y1": 835.5,
-            "width": 127.5,
-            "height": 22.0
+            "x0": 267.83,
+            "y0": 813.28,
+            "x1": 395.99,
+            "y1": 835.46,
+            "width": 128.16,
+            "height": 22.18
           },
           "engine": "mathpix"
         }
@@ -221,7 +221,7 @@
     {
       "id": "mathpix-eq-p015-0003",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\phi_{f}\\left(F_{i}^{\\prime}, F_{i}^{\\prime \\prime}\\right)=\\operatorname{area}\\left(\\left(F_{i}^{\\prime} \\cup F_{i}^{\\prime \\prime}\\right)-\\left(F_{i}^{\\prime} \\cap F_{i}^{\\prime \\prime}\\right)\\right), \\quad F_{i}^{\\prime}, F_{i}^{\\prime \\prime} \\subseteq R_{i} . \\tag{7}\n\\end{equation*}",
+      "display_latex": "\\phi_{f}\\left(F_{i}^{\\prime}, F_{i}^{\\prime \\prime}\\right)=\\operatorname{area}\\left(\\left(F_{i}^{\\prime} \\cup F_{i}^{\\prime \\prime}\\right)-\\left(F_{i}^{\\prime} \\cap F_{i}^{\\prime \\prime}\\right)\\right), \\quad F_{i}^{\\prime}, F_{i}^{\\prime \\prime} \\subseteq R_{i} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -232,12 +232,12 @@
         {
           "page": 15,
           "bbox": {
-            "x0": 123.5,
-            "y0": 66.0,
-            "x1": 542.0,
-            "y1": 91.5,
-            "width": 418.5,
-            "height": 25.5
+            "x0": 121.82,
+            "y0": 65.09,
+            "x1": 543.72,
+            "y1": 93.31,
+            "width": 421.9,
+            "height": 28.22
           },
           "engine": "mathpix"
         }
@@ -252,7 +252,7 @@
     {
       "id": "mathpix-eq-p015-0016",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\left\\{P_{i j_{k}}\\right\\}_{1 \\leq i \\leq N, 1 \\leq k \\leq K_{i}} \\tag{8}\n\\end{equation*}",
+      "display_latex": "\\left\\{P_{i j_{k}}\\right\\}_{1 \\leq i \\leq N, 1 \\leq k \\leq K_{i}}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -263,12 +263,12 @@
         {
           "page": 15,
           "bbox": {
-            "x0": 268.0,
-            "y0": 390.0,
-            "x1": 399.5,
-            "y1": 417.5,
-            "width": 131.5,
-            "height": 27.5
+            "x0": 265.24,
+            "y0": 387.06,
+            "x1": 401.46,
+            "y1": 419.03,
+            "width": 136.22,
+            "height": 31.97
           },
           "engine": "mathpix"
         }
@@ -283,7 +283,7 @@
     {
       "id": "mathpix-eq-p015-0031",
       "kind": "display",
-      "display_latex": "\\begin{align*}\n\\left\\{P_{i j}\\right\\}= & \\{\\text { patches generated from curve segments }\\} \\\\\n& \\cup\\{\\text { patches from the two planes }\\} \\tag{9}\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\n\\left\\{P_{i j}\\right\\}= & \\{\\text { patches generated from curve segments }\\} \\\\\n& \\cup\\{\\text { patches from the two planes }\\}\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -294,12 +294,12 @@
         {
           "page": 15,
           "bbox": {
-            "x0": 162.0,
+            "x0": 160.99,
             "y0": 786.5,
-            "x1": 506.5,
-            "y1": 842.0,
-            "width": 344.5,
-            "height": 55.5
+            "x1": 506.29,
+            "y1": 841.79,
+            "width": 345.3,
+            "height": 55.29
           },
           "engine": "mathpix"
         }

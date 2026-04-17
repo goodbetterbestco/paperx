@@ -2432,10 +2432,10 @@
       "text": "XUXX",
       "bbox": {
         "x0": 327.63,
-        "y0": 99.6,
-        "x1": 471.76,
-        "y1": 135.57,
-        "width": 144.13,
+        "y0": 99.58,
+        "x1": 472.78,
+        "y1": 135.55,
+        "width": 145.15,
         "height": 35.97
       },
       "meta": {
@@ -2450,11 +2450,11 @@
       "role": "paragraph",
       "text": "X",
       "bbox": {
-        "x0": 468.21,
+        "x0": 467.14,
         "y0": 102.98,
         "x1": 500.36,
         "y1": 130.87,
-        "width": 32.15,
+        "width": 33.22,
         "height": 27.89
       },
       "meta": {
@@ -5640,25 +5640,6 @@
       "page": 22,
       "order": 26,
       "role": "paragraph",
-      "text": "C1,4",
-      "bbox": {
-        "x0": 309.64,
-        "y0": 474.12,
-        "x1": 326.79,
-        "y1": 488.07,
-        "width": 17.15,
-        "height": 13.95
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C1,4"
-      }
-    },
-    {
-      "id": "#/texts/424",
-      "page": 22,
-      "order": 27,
-      "role": "paragraph",
       "text": "05",
       "bbox": {
         "x0": 191.79,
@@ -5674,9 +5655,9 @@
       }
     },
     {
-      "id": "#/texts/425",
+      "id": "#/texts/424",
       "page": 22,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "Co,3",
       "bbox": {
@@ -5693,9 +5674,9 @@
       }
     },
     {
-      "id": "#/texts/426",
+      "id": "#/texts/425",
       "page": 22,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "Co,2",
       "bbox": {
@@ -5709,6 +5690,25 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "Co,2"
+      }
+    },
+    {
+      "id": "#/texts/426",
+      "page": 22,
+      "order": 29,
+      "role": "paragraph",
+      "text": "C1,4",
+      "bbox": {
+        "x0": 309.64,
+        "y0": 474.12,
+        "x1": 326.79,
+        "y1": 488.07,
+        "width": 17.15,
+        "height": 13.95
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C1,4"
       }
     },
     {

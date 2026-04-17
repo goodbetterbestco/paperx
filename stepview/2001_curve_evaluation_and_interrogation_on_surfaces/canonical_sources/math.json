@@ -2,9 +2,9 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p003-0006",
+      "id": "mathpix-eq-p003-0007",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nn(u, v)=\\frac{\\partial S}{\\partial u} \\times \\frac{\\partial S}{\\partial v} \\tag{1}\n\\end{equation*}",
+      "display_latex": "n(u, v)=\\frac{\\partial S}{\\partial u} \\times \\frac{\\partial S}{\\partial v}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 155.0,
-            "y0": 97.0,
-            "x1": 238.0,
-            "y1": 122.5,
-            "width": 83.0,
-            "height": 25.5
+            "x0": 154.61,
+            "y0": 97.05,
+            "x1": 238.1,
+            "y1": 122.4,
+            "width": 83.49,
+            "height": 25.34
           },
           "engine": "mathpix"
         }
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p003-0012",
+      "id": "mathpix-eq-p003-0013",
       "kind": "display",
       "display_latex": "\\left(S\\left(u_{0}, v_{0}\\right)+\\lambda_{0} n\\left(u_{0}, v_{0}\\right)\\right) \\cap \\mathcal{L} \\neq \\emptyset,",
       "semantic_expr": null,
@@ -46,12 +46,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 125.0,
-            "y0": 195.0,
-            "x1": 268.5,
-            "y1": 209.0,
-            "width": 143.5,
-            "height": 14.0
+            "x0": 124.95,
+            "y0": 194.97,
+            "x1": 268.33,
+            "y1": 209.09,
+            "width": 143.38,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -64,9 +64,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p003-0017",
+      "id": "mathpix-eq-p003-0018",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{H}=\\left\\{\\left(u_{0}, v_{0}\\right) \\mid\\left\\langle\\left(L_{0}-L_{1}\\right) \\times n\\left(u_{0}, v_{0}\\right), L_{0}-S\\left(u_{0}, v_{0}\\right)\\right\\rangle=0\\right\\}, \\tag{2}\n\\end{equation*}",
+      "display_latex": "\\mathcal{H}=\\left\\{\\left(u_{0}, v_{0}\\right) \\mid\\left\\langle\\left(L_{0}-L_{1}\\right) \\times n\\left(u_{0}, v_{0}\\right), L_{0}-S\\left(u_{0}, v_{0}\\right)\\right\\rangle=0\\right\\},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 71.0,
-            "y0": 285.0,
-            "x1": 322.0,
-            "y1": 300.0,
-            "width": 251.0,
-            "height": 15.0
+            "x0": 69.67,
+            "y0": 284.54,
+            "x1": 322.46,
+            "y1": 299.52,
+            "width": 252.79,
+            "height": 14.98
           },
           "engine": "mathpix"
         }
@@ -95,9 +95,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p005-0009",
+      "id": "mathpix-eq-p005-0010",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\cos (\\theta)=\\frac{\\langle\\mathbf{V}, n(u, v)\\rangle}{\\|n(u, v)\\|} \\tag{3}\n\\end{equation*}",
+      "display_latex": "\\cos (\\theta)=\\frac{\\langle\\mathbf{V}, n(u, v)\\rangle}{\\|n(u, v)\\|}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -108,12 +108,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 151.0,
-            "y0": 146.5,
-            "x1": 242.5,
-            "y1": 174.0,
-            "width": 91.5,
-            "height": 27.5
+            "x0": 151.15,
+            "y0": 146.88,
+            "x1": 241.27,
+            "y1": 173.66,
+            "width": 90.12,
+            "height": 26.78
           },
           "engine": "mathpix"
         }
@@ -126,9 +126,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p005-0013",
+      "id": "mathpix-eq-p005-0014",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\cos ^{2}(\\theta)\\langle n(u, v), n(u, v)\\rangle=\\langle\\mathbf{V}, n(u, v)\\rangle^{2} \\tag{4}\n\\end{equation*}",
+      "display_latex": "\\cos ^{2}(\\theta)\\langle n(u, v), n(u, v)\\rangle=\\langle\\mathbf{V}, n(u, v)\\rangle^{2} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 112.5,
-            "y0": 215.5,
-            "x1": 281.0,
-            "y1": 232.5,
-            "width": 168.5,
-            "height": 17.0
+            "x0": 113.15,
+            "y0": 215.71,
+            "x1": 280.14,
+            "y1": 231.84,
+            "width": 166.99,
+            "height": 16.13
           },
           "engine": "mathpix"
         }
@@ -157,9 +157,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p005-0022",
+      "id": "mathpix-eq-p005-0023",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{F}_{i}(u, v)=\\cos ^{2}(\\theta)\\langle n(u, v), n(u, v)\\rangle-\\langle\\mathbf{V}, n(u, v)\\rangle^{2}=0 . \\tag{5}\n\\end{equation*}",
+      "display_latex": "\\mathcal{F}_{i}(u, v)=\\cos ^{2}(\\theta)\\langle n(u, v), n(u, v)\\rangle-\\langle\\mathbf{V}, n(u, v)\\rangle^{2}=0 .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +170,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 81.5,
-            "y0": 342.5,
-            "x1": 311.5,
-            "y1": 357.5,
-            "width": 230.0,
-            "height": 15.0
+            "x0": 81.19,
+            "y0": 342.43,
+            "x1": 311.52,
+            "y1": 357.4,
+            "width": 230.33,
+            "height": 14.98
           },
           "engine": "mathpix"
         }
@@ -188,9 +188,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p008-0014",
+      "id": "mathpix-eq-p008-0015",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nr(u, v)=2 n(u, v)-\\mathbf{V} \\frac{\\langle n(u, v), n(u, v)\\rangle}{\\langle n(u, v), \\mathbf{V}\\rangle} . \\tag{6}\n\\end{equation*}",
+      "display_latex": "r(u, v)=2 n(u, v)-\\mathbf{V} \\frac{\\langle n(u, v), n(u, v)\\rangle}{\\langle n(u, v), \\mathbf{V}\\rangle} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -201,12 +201,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 112.5,
-            "y0": 367.0,
-            "x1": 280.0,
-            "y1": 392.5,
-            "width": 167.5,
-            "height": 25.5
+            "x0": 111.42,
+            "y0": 365.76,
+            "x1": 279.85,
+            "y1": 392.25,
+            "width": 168.43,
+            "height": 26.5
           },
           "engine": "mathpix"
         }
@@ -219,9 +219,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p008-0020",
+      "id": "mathpix-eq-p008-0021",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathbf{r}(u, v)=2 n(u, v)\\langle n(u, v), \\mathbf{V}\\rangle-\\mathbf{V}\\langle n(u, v), n(u, v)\\rangle, \\tag{7}\n\\end{equation*}",
+      "display_latex": "\\mathbf{r}(u, v)=2 n(u, v)\\langle n(u, v), \\mathbf{V}\\rangle-\\mathbf{V}\\langle n(u, v), n(u, v)\\rangle,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -232,12 +232,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 89.5,
-            "y0": 465.0,
-            "x1": 301.5,
-            "y1": 476.5,
-            "width": 212.0,
-            "height": 11.5
+            "x0": 89.54,
+            "y0": 463.67,
+            "x1": 301.73,
+            "y1": 476.35,
+            "width": 212.19,
+            "height": 12.67
           },
           "engine": "mathpix"
         }
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p008-0025",
+      "id": "mathpix-eq-p008-0026",
       "kind": "display",
       "display_latex": "\\mathcal{L}=P_{l}+\\mathbf{v}_{l} t, \\quad t \\in \\mathbb{R} .",
       "semantic_expr": null,
@@ -263,12 +263,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 144.0,
-            "y0": 539.0,
-            "x1": 248.5,
-            "y1": 550.0,
-            "width": 104.5,
-            "height": 11.0
+            "x0": 143.67,
+            "y0": 538.27,
+            "x1": 248.47,
+            "y1": 549.79,
+            "width": 104.8,
+            "height": 11.52
           },
           "engine": "mathpix"
         }
@@ -281,9 +281,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p008-0028",
+      "id": "mathpix-eq-p008-0029",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\left\\langle S(u, v)-P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=0, \\tag{8}\n\\end{equation*}",
+      "display_latex": "\\left\\langle S(u, v)-P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=0,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -294,12 +294,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 131.5,
-            "y0": 599.5,
-            "x1": 261.0,
-            "y1": 611.0,
-            "width": 129.5,
-            "height": 11.5
+            "x0": 130.71,
+            "y0": 599.32,
+            "x1": 260.85,
+            "y1": 611.13,
+            "width": 130.14,
+            "height": 11.81
           },
           "engine": "mathpix"
         }
@@ -314,7 +314,7 @@
     {
       "id": "mathpix-eq-p009-0004",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\left\\langle S(u, v), \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=\\left\\langle P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle \\tag{9}\n\\end{equation*}",
+      "display_latex": "\\left\\langle S(u, v), \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=\\left\\langle P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -325,12 +325,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 112.5,
-            "y0": 72.0,
-            "x1": 282.0,
-            "y1": 84.0,
-            "width": 169.5,
-            "height": 12.0
+            "x0": 110.85,
+            "y0": 69.7,
+            "x1": 282.44,
+            "y1": 84.96,
+            "width": 171.6,
+            "height": 15.26
           },
           "engine": "mathpix"
         }
@@ -345,7 +345,7 @@
     {
       "id": "mathpix-eq-p009-0007",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{F}_{r_{l}}(u, v)=\\left\\langle S(u, v), \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle-\\left\\langle P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=0 . \\tag{10}\n\\end{equation*}",
+      "display_latex": "\\mathcal{F}_{r_{l}}(u, v)=\\left\\langle S(u, v), \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle-\\left\\langle P_{l}, \\mathbf{v}_{l} \\times \\mathbf{r}(u, v)\\right\\rangle=0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -356,12 +356,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 77.0,
-            "y0": 132.0,
-            "x1": 316.0,
-            "y1": 144.5,
-            "width": 239.0,
-            "height": 12.5
+            "x0": 75.43,
+            "y0": 130.17,
+            "x1": 317.28,
+            "y1": 145.44,
+            "width": 241.85,
+            "height": 15.26
           },
           "engine": "mathpix"
         }
@@ -387,12 +387,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 16.5,
-            "y0": 41.5,
-            "x1": 72.5,
-            "y1": 52.5,
-            "width": 56.0,
-            "height": 11.0
+            "x0": 15.55,
+            "y0": 40.03,
+            "x1": 72.84,
+            "y1": 53.57,
+            "width": 57.29,
+            "height": 13.54
           },
           "engine": "mathpix"
         }
@@ -407,7 +407,7 @@
     {
       "id": "mathpix-eq-p010-0004",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\cos (\\alpha)=\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle}{\\left\\|P_{\\mathcal{S}}-S(u, v)\\right\\|\\|\\mathbf{r}(u, v)\\|} \\tag{11}\n\\end{equation*}",
+      "display_latex": "\\cos (\\alpha)=\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle}{\\left\\|P_{\\mathcal{S}}-S(u, v)\\right\\|\\|\\mathbf{r}(u, v)\\|}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -418,12 +418,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 122.0,
-            "y0": 59.5,
-            "x1": 269.5,
-            "y1": 86.0,
-            "width": 147.5,
-            "height": 26.5
+            "x0": 121.79,
+            "y0": 59.33,
+            "x1": 269.77,
+            "y1": 86.11,
+            "width": 147.99,
+            "height": 26.78
           },
           "engine": "mathpix"
         }
@@ -438,7 +438,7 @@
     {
       "id": "mathpix-eq-p010-0007",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\cos ^{2}(\\alpha)=\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle^{2}}{\\left\\langle P_{\\mathcal{S}}-S(u, v), P_{\\mathcal{S}}-S(u, v)\\right\\rangle\\langle\\mathbf{r}(u, v), \\mathbf{r}(u, v)\\rangle} \\tag{12}\n\\end{equation*}",
+      "display_latex": "\\cos ^{2}(\\alpha)=\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle^{2}}{\\left\\langle P_{\\mathcal{S}}-S(u, v), P_{\\mathcal{S}}-S(u, v)\\right\\rangle\\langle\\mathbf{r}(u, v), \\mathbf{r}(u, v)\\rangle}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -449,12 +449,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 80.0,
-            "y0": 112.5,
-            "x1": 311.0,
-            "y1": 139.0,
-            "width": 231.0,
-            "height": 26.5
+            "x0": 80.33,
+            "y0": 111.45,
+            "x1": 310.95,
+            "y1": 140.25,
+            "width": 230.62,
+            "height": 28.8
           },
           "engine": "mathpix"
         }
@@ -469,7 +469,7 @@
     {
       "id": "mathpix-eq-p010-0010",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{F}_{r_{o}}(u, v)=\\cos ^{2}(\\alpha)-\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle^{2}}{\\left\\langle P_{\\mathcal{S}}-S(u, v), P_{\\mathcal{S}}-S(u, v)\\right\\rangle\\langle\\mathbf{r}(u, v), \\mathbf{r}(u, v)\\rangle}=0 . \\tag{13}\n\\end{equation*}",
+      "display_latex": "\\mathcal{F}_{r_{o}}(u, v)=\\cos ^{2}(\\alpha)-\\frac{\\left\\langle P_{\\mathcal{S}}-S(u, v), \\mathbf{r}(u, v)\\right\\rangle^{2}}{\\left\\langle P_{\\mathcal{S}}-S(u, v), P_{\\mathcal{S}}-S(u, v)\\right\\rangle\\langle\\mathbf{r}(u, v), \\mathbf{r}(u, v)\\rangle}=0 .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -480,74 +480,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 38.0,
-            "y0": 161.5,
-            "x1": 338.0,
-            "y1": 188.5,
-            "width": 300.0,
-            "height": 27.0
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p013-0010",
-      "kind": "display",
-      "display_latex": "\\begin{array}{llllll}\n0 & 0 & 0 & 1 & 1 & 1\n\\end{array}",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 74.0,
-            "y0": 172.0,
-            "x1": 130.0,
-            "y1": 182.0,
-            "width": 56.0,
-            "height": 10.0
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p013-0012",
-      "kind": "display",
-      "display_latex": "000012333",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 74.0,
-            "y0": 198.0,
-            "x1": 150.5,
-            "y1": 208.0,
-            "width": 76.5,
-            "height": 10.0
+            "x0": 36.56,
+            "y0": 160.41,
+            "x1": 338.01,
+            "y1": 189.21,
+            "width": 301.44,
+            "height": 28.8
           },
           "engine": "mathpix"
         }

@@ -1,30 +1,17 @@
 # 2015 watertight conversion of trimmed cad surfaces to clough tocher splines
 
-Jiří Kosinka, Thomas J. Cashman
+Clough-Tocher splines CrossMark Jiří Kosinka, Thomas J. Cashman, Jiří Kosinka, ARTICLE INFO, Received April
 
-\( { }^{\mathrm{a}} \) Computer Laboratory
-University of Cambridge
-15 J/J Thomson Avenue, Cambridge CB3 OFD, United Kingdom
-
-\( { }^{\mathrm{b}} \) TranscenData Europe Ltd
-4 Carisbrooke Court
-Anderson Road, Buckingway Business Park, Swavesey, Cambridge, CB24 4UQ, United Kingdom
+\({ }^{\mathrm{a}}\) Computer Laboratory, University of Cambridge, 15 JJ Thomson Avenue, Cambridge CB3 0FD, United Kingdom
+\({ }^{\mathrm{b}}\) TranscenData Europe Ltd, 4 Carisbrooke Court, Anderson Road, Buckingway Business Park, Swavesey, Cambridge, CB24 4UQ, United Kingdom
 
 ## Abstract
 
-The boundary representations (B-reps) that are used to represent shape in Computer-Aided Design systems create unavoidable gaps at the face boundaries of a model. Although these inconsistencies can be kept below the scale that is important for visualisation and manufacture, they cause problems for many downstream tasks, making it difficult to use CAD models directly for simulation or advanced geometric analysis, for example. Motivated by this need for watertight models, we address the problem of converting B-rep models to a collection of cubic C^1 Clough-Tocher splines. These splines allow a watertight join between B-rep faces, provide a homogeneous representation of shape, and also support local adaptivity. We perform a comparative study of the most prominent Clough-Tocher constructions and include some novel variants. Our criteria include visual fairness, invariance to affine reparameterisations, polynomial precision and approximation error. The constructions are tested on both synthetic data and CAD models that have been triangulated. Our results show that no construction is optimal in every scenario, with surface quality depending heavily on the triangulation and parameterisation that are used.
+The boundary representations (B-reps) that are used to represent shape in Computer- Aided Design systems create unavoidable gaps at the face boundaries of a model. Although these inconsistencies can be kept below the scale that is important for visualisation and manufacture, they cause problems for many downstream tasks, making it difficult to use CAD models directly for simulation or advanced geometric analysis, for example. Motivated by this need for watertight models, we address the problem of converting B-rep models
 
-## Introduction
+## 1 Introduction
 
-The common representation of shape available to all Computer-Aided Design systems, and therefore the standard form for exchanging CAD models between systems, is a B-rep (boundary representation); (Stroud, 2006). In this paradigm, a connected wireframe of edges and vertices describes the global topology and sharp features of a model. Faces are bounded by a collection of edges and have their internal geometry provided by a smooth 2-manifold surface: usually one of the natural quadrics or a non-uniform rational B-spline (NURBS) surface (Piegl and Tiller, 1997) for more general freeform shapes. The embedding surface typically extends beyond the bounding edges and the portion that is meaningful is therefore a 'trimmed' region of the whole. This representation of shape has been successful in realising the broad range of applications that CAD systems support today, for example in visualisation and manufacturing.
-
-However, when we are interested in the region of space bounded (or excluded) by a shape, for example when performing an engineering simulation (Cottrell et al., 2009; Jaxon and Qian, 2014) or computing a medial axis transform (Bucklow, 2014), our task is often made difficult by the deficiencies of such a B-rep. For example, the intersection curve of two a b s t r a \(c_{t}\)
-
-The boundary representations (B-reps) that are used to represent shape in ComputerAided Design systems create unavoidable gaps at the face boundaries of a model. Although these inconsistencies can be kept below the scale that is important for visualisation and manufacture, they cause problems for many downstream tasks, making it difficult to use CAD models directly for simulation or advanced geometric analysis, for example. Motivated by this need for watertight models, we address the problem of converting B-rep models to a collection of cubic \(C_{1}\) Clough-Tocher splines. These splines allow a watertight join between B-rep faces, provide a homogeneous representation of shape, and also support local adaptivity.
-
-We perform a comparative study of the most prominent Clough-Tocher constructions and include some novel variants. Our criteria include visual fairness, invariance to affine reparameterisations, polynomial precision and approximation error. The constructions are tested on both synthetic data and CAD models that have been triangulated. Our results show that no construction is optimal in every scenario, with surface quality depending heavily on the triangulation and parameterisation that are used.
-
-NURBS surfaces is not, in general, a NURBS curve, leading to unavoidable gaps in trimmed NURBS models (Skytt and Vuong, 2013). Although the gaps can be made arbitrarily small, the result is still a discontinuous representation of shape. This is a significant barrier for the direct use of CAD models in most types of engineering simulation, which require at least continuity of position. Additionally, it is often desirable in downstream applications (such as slicing for 3D printing) that all surfaces use the same representation, continuity, and degree. This simplifies interrogation considerably, and allows for algorithms that use data-level parallelism (e.g. on a GPU) to improve performance.
+The common representation of shape available to all Computer-Aided Design systems, and therefore the standard form for exchanging CAD models between systems, is a B-rep (boundary representation); (Stroud, 2006). In this paradigm, a connected wireframe of edges and vertices describes the global topology and sharp features of a model. Faces are bounded by a collection of edges and have their internal geometry provided by a smooth 2-manifold surface: usually one of the natural quadrics or a non-uniform rational B-spline (NURBS) surface (Piegl and Tiller, 1997) for more general freeform shapes. The embedding surface typically extends beyond the bounding edges and the portion that is meaningful is therefore a "trimmed" region of the whole. This representation of shape has been successful in realising the broad range of applications that CAD systems support today, for example in visualisation and manufacturing. However, when we are interested in the region of space bounded (or excluded) by a shape, for example when performing an engineering simulation (Cottrell et al., 2009; Jaxon and Qian, 2014) or computing a medial axis transform (Bucklow, 2014), our task is often made difficult by the deficiencies of such a B-rep. For example, the intersection curve of two NURBS surfaces is not, in general, a NURBS curve, leading to unavoidable gaps in trimmed NURBS models (Skytt and Vuong, 2013). Although the gaps can be made arbitrarily small, the result is still a discontinuous representation of shape. This is a significant barrier for the direct use of CAD models in most types of engineering simulation, which require at least continuity of position. Additionally, it is often desirable in downstream applications (such as slicing for 3D printing) that all surfaces use the same representation, continuity, and degree. This simplifies interrogation considerably, and allows for algorithms that use data-level parallelism (e.g. on a GPU) to improve performance.
 
 There is therefore a need to convert B-reps, and particularly the trimmed surfaces that they comprise, into a form that removes the gaps between adjacent faces and allows for a homogeneous representation of shape. This paper investigates the performance of cubic \(C^{1}\) Clough-Tocher splines for this purpose. These splines give a way of smoothly interpolating surface samples with gradients and can therefore
 
@@ -45,39 +32,39 @@ We start by introducing our notation and some basic concepts including Bézier t
 A point \(P\) in a triangle \(\mathcal{T}\left(U_{0}, U_{1}, U_{2}\right)\) with vertices \(U_{0}, U_{1}, U_{2}\) is uniquely given by its barycentric coordinates \(\boldsymbol{\tau}=\) ( \(\tau_{0}, \tau_{1}, \tau_{2}\) ) as the convex combination
 
 $$
-\begin{equation*} P=\sum_{i=0}^{2} \tau_{i} U_{i} ; \quad \tau_{0}+\tau_{1}+\tau_{2}=1, \tau_{i} \geq 0 \tag{1} \end{equation*}
+P=\sum_{i=0}^{2} \tau_{i} U_{i} ; \quad \tau_{0}+\tau_{1}+\tau_{2}=1, \tau_{i} \geq 0
 $$
 
 We assume that T is non-degenerate. Then the barycentric coordinates can be determined using ratios of signed triangle areas as
 
 $$
-\begin{equation*} \tau_{i}=\frac{\mathcal{A}\left(U_{i+1}, U_{i+2}, P\right)}{\mathcal{A}\left(U_{0}, U_{1}, U_{2}\right)} \tag{2} \end{equation*}
+\tau_{i}=\frac{\mathcal{A}\left(U_{i+1}, U_{i+2}, P\right)}{\mathcal{A}\left(U_{0}, U_{1}, U_{2}\right)}
 $$
 
 with the index i treated modulo 3.
 
 $$
-Any polynomial \( p \) of total degree at most \( d \) defined on \( \mathcal{T} \) can be expressed in the Berstein-Bézier form
+Any polynomial \(p\) of total degree at most \(d\) defined on \(\mathcal{T}\) can be expressed in the Berstein-Bézier form
 $$
 
 $$
-\begin{equation*} p(\boldsymbol{\tau})=\sum_{|\mathbf{i}|=d} P_{\mathbf{i}} B_{\mathbf{i}}^{d}(\boldsymbol{\tau}) \tag{3} \end{equation*}
+p(\boldsymbol{\tau})=\sum_{|\mathbf{i}|=d} P_{\mathbf{i}} B_{\mathbf{i}}^{d}(\boldsymbol{\tau})
 $$
 
 where
 
 $$
-\begin{equation*} B_{\mathbf{i}}^{d}(\boldsymbol{\tau})=\frac{d!}{i!j!k!} \tau_{1}^{i} \tau_{2}^{j} \tau_{3}^{k} \tag{4} \end{equation*}
+B_{\mathbf{i}}^{d}(\boldsymbol{\tau})=\frac{d!}{i!j!k!} \tau_{1}^{i} \tau_{2}^{j} \tau_{3}^{k}
 $$
 
 with \(\mathbf{i}=(i, j, k),|\mathbf{i}|=i+j+k\), and \(i, j, k \geq 0\). These polynomials span the linear space denoted by \(\Pi_{d}\). In the cubic case, the Bézier ordinates \(P_{\mathbf{i}}\), associated with the barycentric coordinates \(\mathbf{i} / 3\), are shown in Fig. 1, left. Moving from the above functional setting to the parametric one, a Bézier patch is given by
 
 $$
-\begin{equation*} \mathbf{p}(\boldsymbol{\tau})=\sum_{|\mathbf{i}|=d} \mathbf{P}_{\mathbf{i}} B_{\mathbf{i}}^{d}(\boldsymbol{\tau}) \tag{5} \end{equation*}
+\mathbf{p}(\boldsymbol{\tau})=\sum_{|\mathbf{i}|=d} \mathbf{P}_{\mathbf{i}} B_{\mathbf{i}}^{d}(\boldsymbol{\tau})
 $$
 
 $$
-with control points \( \mathbf{P}_{\mathbf{i}} \in \mathbb{R}^{3} \) forming a triangular control net.
+with control points \(\mathbf{P}_{\mathbf{i}} \in \mathbb{R}^{3}\) forming a triangular control net.
 $$
 
 ![Figure 1. Left](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-1-p003.png)
@@ -89,46 +76,46 @@ $$
 With the notation in Fig. 1, right, \(C^{1}\) continuity conditions between \(\mathcal{T}\) and \(\overline{\mathcal{T}}\) are, on top of trivial \(C^{0}\) conditions, given by
 
 $$
-\begin{align*} \mathbf{T}_{13} & =\tau_{0} \mathbf{T}_{10}+\tau_{1} \mathbf{V}_{1}+\tau_{2} \mathbf{T}_{12}, \\ \overline{\mathbf{Q}} & =\tau_{0} \mathbf{T}_{01}+\tau_{1} \mathbf{T}_{10}+\tau_{2} \mathbf{Q} . \tag{6}\\ \mathbf{T}_{03} & =\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02}, \end{align*}
+\begin{aligned} \mathbf{T}_{13} & =\tau_{0} \mathbf{T}_{10}+\tau_{1} \mathbf{V}_{1}+\tau_{2} \mathbf{T}_{12} \\ \overline{\mathbf{Q}} & =\tau_{0} \mathbf{T}_{01}+\tau_{1} \mathbf{T}_{10}+\tau_{2} \mathbf{Q} \\ \mathbf{T}_{03} & =\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02} \end{aligned}
 $$
 
 where ( \(\tau_{0}, \tau_{1}, \tau_{2}\) ) are the barycentric coordinates of \(U_{3}\) with respect to \(\mathcal{T}\left(U_{0}, U_{1}, U_{2}\right)\), i.e., \(U_{3}=\tau_{0} U_{0}+\tau_{1} U_{1}+\tau_{2} U_{2}\);
 
 $$
-\begin{align*} \tau_{0} \mathbf{Q}+\tau_{1} \mathbf{T}_{12}+\tau_{2} \mathbf{T}_{21} & =\bar{\tau}_{0} \mathbf{T}_{13}+\bar{\tau}_{1} \overline{\mathbf{Q}}+\bar{\tau}_{2} \mathbf{T}_{31} \\ \tau_{0} \mathbf{T}_{02}+\tau_{1} \mathbf{Q}+\tau_{2} \mathbf{T}_{20} & =\bar{\tau}_{0} \overline{\mathbf{Q}}+\bar{\tau}_{1} \mathbf{T}_{03}+\bar{\tau}_{2} \mathbf{T}_{30} \tag{7} \end{align*}
+\begin{aligned} & \tau_{0} \mathbf{Q}+\tau_{1} \mathbf{T}_{12}+\tau_{2} \mathbf{T}_{21}=\bar{\tau}_{0} \mathbf{T}_{13}+\bar{\tau}_{1} \overline{\mathbf{Q}}+\bar{\tau}_{2} \mathbf{T}_{31} \\ & \tau_{0} \mathbf{T}_{02}+\tau_{1} \mathbf{Q}+\tau_{2} \mathbf{T}_{20}=\bar{\tau}_{0} \overline{\mathbf{Q}}+\bar{\tau}_{1} \mathbf{T}_{03}+\bar{\tau}_{2} \mathbf{T}_{30} \end{aligned}
 $$
 
 where ( ¯ τ 0, ¯ τ 1, ¯ τ 2) are the barycentric coordinates of U 2 with respect to ¯ \(T(U1,U0,U3)\), i.e., U 2 = ¯ τ 0 U 1 + ¯ τ 1 U 0 + ¯ τ 2 U 3. The triangles involved are dark-shaded in Fig. 1, right. In the context of cubic splines, these \(C^{2}\) conditions cannot be, in general, satisfied, as the cubic construction does not provide enough degrees of freedom. Nevertheless, these conditions can be used to minimise \(C^{2}\) discontinuities between neighbouring triangles, as we shall see in Section 3.3.
 
 ### 2.3 Clough-Tocher spline space
 
-Let \(\Delta\) be a conforming triangulation of a domain \(\Omega \subset \mathbb{R}^{2}\) with one or more polygonal boundary loops and let \(n_{v}\), \(n_{e}\), and \(n_{t}\) be the number of vertices, edges, and triangles of \(\Delta\), respectively. Additionally, let \(\mathcal{E}\) denote the set of edges in △ and let the vertices \(U_{i}\) of \(\Delta\) have Cartesian coordinates (also called parameter values) given by \(\left(u_{i}, v_{i}\right)\).
+Let \(\triangle\) be a conforming triangulation of a domain \(\Omega \subset \mathbb{R}^{2}\) with one or more polygonal boundary loops and let \(n_{v}\), \(n_{e}\), and \(n_{t}\) be the number of vertices, edges, and triangles of △ , respectively. Additionally, let \(\mathcal{E}\) denote the set of edges in △ and let the vertices \(U_{i}\) of \(\Delta\) have Cartesian coordinates (also called parameter values) given by ( \(u_{i}, v_{i}\) ).
 
 $$
-The cubic \( C^{1} \) spline space defined on \( \Delta^{\star} \) is called the Clough-Tocher spline space
+The cubic \(C^{1}\) spline space defined on \(\Delta^{\star}\) is called the Clough-Tocher spline space
 $$
 
 $$
-\begin{equation*} \mathcal{S}_{3}^{1}\left(\Delta^{\star}\right)=\left\{s \in C^{1}(\Omega):\left.s\right|_{\mathcal{T}^{\star}} \in \Pi_{3}, \mathcal{T}^{\star} \in \Delta^{\star}\right\} \tag{8} \end{equation*}
+\mathcal{S}_{3}^{1}\left(\Delta^{\star}\right)=\left\{s \in C^{1}(\Omega):\left.s\right|_{\mathcal{T}^{\star}} \in \Pi_{3}, \mathcal{T}^{\star} \in \Delta^{\star}\right\} .
 $$
 
 ```text
-In the Clough-Tocher construction, each of the triangles in , which we call macro-triangles, is partitioned into three micro-triangles (Clough and Tocher, 1965);
-see Fig. 2. For each triangle \( \mathcal{T} \in \Delta \), a split point \( Z \) is chosen and connected to the three vertices of \( \mathcal{T} \) by new edges, giving rise to the Clough-Tocher refinement of \( \Delta \), denoted by \( \Delta^{\star} \).
+In the Clough-Tocher construction, each of the triangles in △ , which we call macro-triangles, is partitioned into three micro-triangles (Clough and Tocher, 1965);
+see Fig. 2. For each triangle \(\mathcal{T} \in \Delta\), a split point \(Z\) is chosen and connected to the three vertices of \(\mathcal{T}\) by new edges, giving rise to the Clough-Tocher refinement of , denoted by \(\Delta^{\star}\).
 ```
 
-The three degrees of freedom corresponding to each vertex in \(\Delta\) are typically fixed by assigning the position and gradient at each vertex \(U_{i}, i=1, \ldots, n_{v}\). That is, in the parametric setting,
+The three degrees of freedom corresponding to each vertex in △ are typically fixed by assigning the position and gradient at each vertex \(U_{i}, i=1, \ldots, n_{v}\). That is, in the parametric setting,
 
 $$
-\begin{equation*} \mathbf{s}\left(U_{i}\right)=\mathbf{f}_{i} \quad \text { and } \quad \nabla \mathbf{s}\left(U_{i}\right)=\nabla \mathbf{f}_{i}=\left(\mathbf{f}_{i}^{u}, \mathbf{f}_{i}^{v}\right), \tag{9} \end{equation*}
+\mathbf{s}\left(U_{i}\right)=\mathbf{f}_{i} \quad \text { and } \quad \nabla \mathbf{s}\left(U_{i}\right)=\nabla \mathbf{f}_{i}=\left(\mathbf{f}_{i}^{u}, \mathbf{f}_{i}^{v}\right),
 $$
 
-Its dimension is equal to \(3 n_{v}+n_{e}\). Note that the dimension of the space \(\mathcal{S}_{3}^{1}(\Delta)\) over a general triangulation \(\Delta\) is still an open question, so the extra freedom granted by a Clough-Tocher refinement is useful to construct \(C^{1}\) cubic splines in practice. We will call the restriction \(\left.s\right|_{\mathcal{T}}\) the macro-patch over \(\mathcal{T}\).
+Its dimension is equal to \(3 n_{v}+n_{e}\). Note that the dimension of the space \(\mathcal{S}_{3}^{1}(\triangle)\) over a general triangulation \(\triangle\) is still an open question, so the extra freedom granted by a Clough-Tocher refinement is useful to construct \(C^{1}\) cubic splines in practice. We will call the restriction \(\left.s\right|_{\mathcal{T}}\) the macro-patch over \(\mathcal{T}\).
 
-sampled at the vertices of \(\Delta\) from a parametric surface \(\mathbf{f}\) defined over \(\Omega\). This leaves a degree of freedom left for each edge in \(\Delta\). This degree of freedom can be used to force the directional derivative of the spline \(s\) along an edge \(\varepsilon\) to be linear, instead of the general quadratic. More precisely, the reduced Clough-Tocher spline space is defined as (Speleers, 2010)
+sampled at the vertices of △ from a parametric surface \(\mathbf{f}\) defined over \(\Omega\). This leaves a degree of freedom left for each edge in \(\Delta\). This degree of freedom can be used to force the directional derivative of the spline \(s\) along an edge \(\varepsilon\) to be linear, instead of the general quadratic. More precisely, the reduced Clough-Tocher spline space is defined as (Speleers, 2010)
 
 $$
-\begin{equation*} \hat{\mathcal{S}}_{3}^{1}\left(\Delta^{\star}\right)=\left\{s \in \mathcal{S}_{3}^{1}\left(\Delta^{\star}\right):\left.\frac{\partial s}{\partial v_{\varepsilon}}\right|_{\varepsilon} \in \Pi_{1}, \varepsilon \in \mathcal{E}\right\} \tag{10} \end{equation*}
+\hat{\mathcal{S}}_{3}^{1}\left(\Delta^{\star}\right)=\left\{s \in \mathcal{S}_{3}^{1}\left(\Delta^{\star}\right):\left.\frac{\partial s}{\partial v_{\varepsilon}}\right|_{\varepsilon} \in \Pi_{1}, \varepsilon \in \mathcal{E}\right\}
 $$
 
 ![Figure 2. Left](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-2-p004.png)
@@ -141,16 +128,16 @@ A discussion on choosing the split point \(Z\) can be found in Schumaker and Spe
 
 ## 3 Cubic C 1 Clough-Tocher spline constructions
 
-An excellent survey of various \(C^{1}\) cubic Clough-Tocher spline constructions was conducted by Kashyap (1996). That survey also included a new construction and a discussion of iterative methods. We now briefly recall the most prominent \(C^{1}\) cubic constructions and their novel variants, and, for convenience, provide formulas for computing all the necessary Bézier ordinates (control points). From the discussion of \(C^{1}\) continuity conditions (see Section 2.2 and Farin, 1985, 1986), one obtains the following three-step procedure for computing the control points of micro-triangles (see Fig. 2, right) from the input data (9), applied to each \(\mathcal{T} \in \Delta\). The triple ( \(\tau_{0}, \tau_{1}, \tau_{2}\) ) provides the barycentric coordinates of the split point \(Z\) in \(\mathcal{T}\left(U_{0}, U_{1}, U_{2}\right)\).
+An excellent survey of various \(C^{1}\) cubic Clough-Tocher spline constructions was conducted by Kashyap (1996). That survey also included a new construction and a discussion of iterative methods. We now briefly recall the most prominent \(C^{1}\) cubic constructions and their novel variants, and, for convenience, provide formulas for computing all the necessary Bézier ordinates (control points). From the discussion of \(C^{1}\) continuity conditions (see Section 2.2 and Farin, 1985, 1986), one obtains the following three-step procedure for computing the control points of micro-triangles (see Fig. 2, right) from the input data (9), applied to each \(\mathcal{T} \in \triangle\). The triple ( \(\tau_{0}, \tau_{1}, \tau_{2}\) ) provides the barycentric coordinates of the split point \(Z\) in \(\mathcal{T}\left(U_{0}, U_{1}, U_{2}\right)\).
 
 $$
-\begin{equation*} \mathbf{V}_{0}=\mathbf{f}_{0}, \quad \mathbf{T}_{01}=\mathbf{V}_{0}+\frac{1}{3} \nabla \mathbf{f}_{i} \cdot\left(U_{1}-U_{0}\right) \tag{11} \end{equation*}
+\mathbf{V}_{0}=\mathbf{f}_{0}, \quad \mathbf{T}_{01}=\mathbf{V}_{0}+\frac{1}{3} \nabla \mathbf{f}_{i} \cdot\left(U_{1}-U_{0}\right)
 $$
 
 and similarly for the remaining control points along the edges of T. Then compute
 
 $$
-\begin{equation*} \mathbf{I}_{01}=\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02} \tag{12} \end{equation*}
+\mathbf{I}_{01}=\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02}
 $$
 
 and similarly for \(\mathbf{I}_{11}\) and \(\mathbf{I}_{21}\).
@@ -158,11 +145,11 @@ and similarly for \(\mathbf{I}_{11}\) and \(\mathbf{I}_{21}\).
 Step 2. Compute \(\mathbf{C}_{0}, \mathbf{C}_{1}\), and \(\mathbf{C}_{2}\) by one of the constructions detailed below.
 
 $$
-\begin{equation*} \mathbf{I}_{02}=\tau_{0} \mathbf{I}_{01}+\tau_{1} \mathbf{C}_{2}+\tau_{2} \mathbf{C}_{1} \tag{13} \end{equation*}
+\mathbf{I}_{02}=\tau_{0} \mathbf{I}_{01}+\tau_{1} \mathbf{C}_{2}+\tau_{2} \mathbf{C}_{1}
 $$
 
 $$
-\begin{equation*} \mathbf{S}=\tau_{0} \mathbf{I}_{02}+\tau_{1} \mathbf{I}_{12}+\tau_{2} \mathbf{I}_{22} . \tag{14} \end{equation*}
+\mathbf{S}=\tau_{0} \mathbf{I}_{02}+\tau_{1} \mathbf{I}_{12}+\tau_{2} \mathbf{I}_{22} .
 $$
 
 The first step ensures interpolation of the input data. For given split points, the second step fixes the only degree of freedom in the construction, i.e., it computes the central control point of each micro-triangle. The construction is finalised in the third step, which computes all the remaining control points to assure global \(C^{1}\) continuity.
@@ -174,13 +161,13 @@ We now move on to particular constructions and show how to perform Step 2 for ea
 The original construction of Clough and Tocher (1965) fixes the extra degree of freedom per edge in △ by requiring that the normal derivative at each edge be linear. Thus, this construction yields splines from the reduced space \(\hat{\mathcal{S}}_{3}^{1}\), see (10), by choosing \(v_{\varepsilon} \perp \varepsilon\). We will refer to this construction as \(\mathrm{CT}_{\mathrm{o}}\), where the 'o' stands for 'orthogonal'. A formula for computing \(\mathbf{C}_{2}\) based on a general direction \(v_{\varepsilon}\), derived from the linear derivative requirement of \(\hat{\mathcal{S}}_{3}^{1}\), is given in Section 2.3 of Speleers (2010):
 
 $$
-\begin{equation*} \mathbf{C}_{2}=\lambda_{0} \mathbf{T}_{01}+\lambda_{1} \mathbf{T}_{10}+\frac{1}{2}\left(\mathbf{I}_{01}+\mathbf{I}_{11}-\lambda_{0}\left(\mathbf{V}_{0}+\mathbf{T}_{10}\right)-\lambda_{1}\left(\mathbf{V}_{1}+\mathbf{T}_{01}\right)\right) \tag{15} \end{equation*}
+\mathbf{C}_{2}=\lambda_{0} \mathbf{T}_{01}+\lambda_{1} \mathbf{T}_{10}+\frac{1}{2}\left(\mathbf{I}_{01}+\mathbf{I}_{11}-\lambda_{0}\left(\mathbf{V}_{0}+\mathbf{T}_{10}\right)-\lambda_{1}\left(\mathbf{V}_{1}+\mathbf{T}_{01}\right)\right)
 $$
 
 with ( \(\lambda_{0}, \lambda_{1}, 0\) ) the barycentric coordinates of the projection of \(Z\) onto the edge \(\varepsilon=U_{0} U_{1}\) in the direction of \(v_{\varepsilon}\). In the special case of \(v_{\varepsilon} \perp \varepsilon, \lambda_{0}\) and \(\lambda_{1}\) are computed by orthogonal projection as
 
 $$
-\begin{equation*} \lambda_{1}=\frac{\left(Z-U_{0}\right) \cdot\left(U_{1}-U_{0}\right)}{\left\|U_{1}-U_{0}\right\|} \quad \text { and } \quad \lambda_{0}=1-\lambda_{1} . \tag{16} \end{equation*}
+\lambda_{1}=\frac{\left(Z-U_{0}\right) \cdot\left(U_{1}-U_{0}\right)}{\left\|U_{1}-U_{0}\right\|} \quad \text { and } \quad \lambda_{0}=1-\lambda_{1}
 $$
 
 Clough and Tocher (1965) mention several variants of this construction and note that the original 3-split into microtriangles was suggested by T.K. Hsieh.
@@ -194,23 +181,23 @@ On the other hand, the extra degree of freedom per edge is not used in an optima
 The idea developed here was mentioned by Farin (1985) and later also by Schumaker and Speleers (2010) and Speleers (2010). Instead of using the perpendicular direction, i.e., \(v_{\varepsilon} \perp \varepsilon\), we set \(v_{\varepsilon}\) to be parallel to the line connecting \(Z\) and \(\bar{Z}\) in the neighbouring triangle \(\overline{\mathcal{T}}\). In this case, \(\lambda_{0}\) and \(\lambda_{1}\) in (15) need to be set to
 
 $$
-\begin{equation*} \lambda_{1}=\frac{\left(Z-U_{0}\right) \times(\bar{Z}-Z)}{\left(U_{1}-U_{0}\right) \times(\bar{Z}-Z)} \quad \text { and } \quad \lambda_{0}=1-\lambda_{1} \tag{17} \end{equation*}
+\lambda_{1}=\frac{\left(Z-U_{0}\right) \times(\bar{Z}-Z)}{\left(U_{1}-U_{0}\right) \times(\bar{Z}-Z)} \quad \text { and } \quad \lambda_{0}=1-\lambda_{1}
 $$
 
-where × denotes the planar cross-product of two vectors. This formula is easily derived by intersecting the line \(Z \bar{Z}\) with the edge \(U_{0} U_{1}\). This construction is invariant to affine reparameterisations, hence we denote it by \(\mathrm{CT}_{\mathrm{i}}\), where the ' i ' stands for 'invari ant'. On the other hand, it requires the positions of split points from adjacent macro-triangles and thus it is a less local
+where × denotes the planar cross-product of two vectors. This formula is easily derived by intersecting the line \(Z \bar{Z}\) with the edge \(U_{0} U_{1}\). This construction is invariant to affine reparameterisations, hence we denote it by \(\mathrm{CT}_{\mathrm{i}}\), where the ' i ' stands for 'invariant'. On the other hand, it requires the positions of split points from adjacent macro-triangles and thus it is a less local
 
 ### 3.3 Fa : Farin's construction
 
-Farin (1985) describes a construction that has quadratic precision and minimises the \(C^{2}\) discontinuity between micro triangles along edges of macro-triangles. We abbreviate this construction by Fa. first, set \(\mathbf{Q}\) of the macro-patch corresponding to \(\mathcal{T}\) to guarantee quadratic precision (see Fig. 1, right):
+Farin (1985) describes a construction that has quadratic precision and minimises the \(C^{2}\) discontinuity between microtriangles along edges of macro-triangles. We abbreviate this construction by Fa. first, set \(\mathbf{Q}\) of the macro-patch corresponding to \(\mathcal{T}\) to guarantee quadratic precision (see Fig. 1, right):
 
 $$
-\begin{equation*} \mathbf{Q}=\frac{\mathbf{T}_{01}+\mathbf{T}_{10}+\mathbf{T}_{12}+\mathbf{T}_{21}+\mathbf{T}_{20}+\mathbf{T}_{02}}{4}-\frac{\mathbf{V}_{0}+\mathbf{V}_{1}+\mathbf{V}_{2}}{6} . \tag{18} \end{equation*}
+\mathbf{Q}=\frac{\mathbf{T}_{01}+\mathbf{T}_{10}+\mathbf{T}_{12}+\mathbf{T}_{21}+\mathbf{T}_{20}+\mathbf{T}_{02}}{4}-\frac{\mathbf{V}_{0}+\mathbf{V}_{1}+\mathbf{V}_{2}}{6} .
 $$
 
 All the other control points of the macro-patch are computed from the input data at vertices of \(\mathcal{T}\) via (11). The macro-patch is then subdivided into three micro-patches according to the split point \(Z\), e.g. using the de-Casteljau algorithm (Böhm et al., 1984). This gives initial positions of all micro-triangle control points
 
 $$
-\begin{align*} \mathbf{I}_{01} & =\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02} \\ \mathbf{C}_{2} & =\tau_{0} \mathbf{T}_{01}+\tau_{1} \mathbf{T}_{10}+\tau_{2} \mathbf{Q} \tag{19}\\ \mathbf{I}_{02} & =\tau_{0} \mathbf{I}_{01}+\tau_{1} \mathbf{C}_{2}+\tau_{2} \mathbf{C}_{1} \\ \mathbf{S} & =\tau_{0} \mathbf{I}_{02}+\tau_{1} \mathbf{I}_{12}+\tau_{2} \mathbf{I}_{22} \end{align*}
+\begin{aligned} \mathbf{I}_{01} & =\tau_{0} \mathbf{V}_{0}+\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{02}, \\ \mathbf{C}_{2} & =\tau_{0} \mathbf{T}_{01}+\tau_{1} \mathbf{T}_{10}+\tau_{2} \mathbf{Q}, \\ \mathbf{I}_{02} & =\tau_{0} \mathbf{I}_{01}+\tau_{1} \mathbf{C}_{2}+\tau_{2} \mathbf{C}_{1}, \\ \mathbf{S} & =\tau_{0} \mathbf{I}_{02}+\tau_{1} \mathbf{I}_{12}+\tau_{2} \mathbf{I}_{22}, \end{aligned}
 $$
 
 ![Figure 3. Left](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-3-p006.png)
@@ -219,10 +206,10 @@ $$
 
 and similarly for the remaining points. Note that \(\mathbf{S}\) is actually not needed in the construction because it is later replaced in Step 3.
 
-By formulating a constrained minimisation problem using (7), one obtains, e.g. by the standard Lagrange multipliers method, \begin{align*} & \overline{\mathbf{C}}_{2}=\frac{\tau_{0}\left(2 \tau_{1} \mathbf{R}_{1}+2 \tau_{2} \mathbf{R}_{2}+a_{12} \mathbf{R}_{3}-2 \tau_{0}\left(\bar{\tau}_{2} \mathbf{R}_{1}+\bar{\tau}_{1} \mathbf{R}_{2}\right)+a_{11} \mathbf{R}_{3}\right.}{a_{11}+2 \tau_{0} a_{12}+\tau_{0}^{2} a_{22}} \tag{20}\\ & \mathbf{C}_{2}=\frac{\overline{\mathbf{C}}_{2}-\mathbf{R}_{3}}{\tau 0} \end{align*} where
+By formulating a constrained minimisation problem using (7), one obtains, e.g. by the standard Lagrange multipliers method, \begin{aligned} & \overline{\mathbf{C}}_{2}=\frac{\tau_{0}\left(2 \tau_{1} \mathbf{R}_{1}+2 \tau_{2} \mathbf{R}_{2}+a_{12} \mathbf{R}_{3}-2 \tau_{0}\left(\bar{\tau}_{2} \mathbf{R}_{1}+\bar{\tau}_{1} \mathbf{R}_{2}\right)+a_{11} \mathbf{R}_{3}\right.}{a_{11}+2 \tau_{0} a_{12}+\tau_{0}^{2} a_{22}} \\ & \mathbf{C}_{2}=\frac{\overline{\mathbf{C}}_{2}-\mathbf{R}_{3}}{\tau 0} \end{aligned} where
 
 $$
-\begin{align*} \mathbf{R}_{1} & =\bar{\tau}_{0} \overline{\mathbf{I}}_{12}+\bar{\tau}_{1} \overline{\mathbf{I}}_{11}-\tau_{0} \mathbf{I}_{12}-\tau_{2} \mathbf{I}_{11}, \\ \mathbf{R}_{2} & =\bar{\tau}_{0} \overline{\mathbf{I}}_{02}+\bar{\tau}_{2} \overline{\mathbf{I}}_{01}-\tau_{0} \mathbf{I}_{02}-\tau_{1} \mathbf{I}_{01}, \\ \mathbf{R}_{3} & =\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{10}, \tag{21}\\ a_{11} & =2\left(\tau_{1}^{2}+\tau_{2}^{2}\right), \\ a_{12} & =-2\left(\tau_{1} \bar{\tau}_{2}+\bar{\tau}_{1} \tau_{2}\right), \\ a_{22} & =2\left(\bar{\tau}_{1}^{2}+\bar{\tau}_{2}^{2}\right) . \end{align*}
+\begin{aligned} \mathbf{R}_{1} & =\bar{\tau}_{0} \overline{\mathbf{I}}_{12}+\bar{\tau}_{1} \overline{\mathbf{I}}_{11}-\tau_{0} \mathbf{I}_{12}-\tau_{2} \mathbf{I}_{11}, \\ \mathbf{R}_{2} & =\bar{\tau}_{0} \overline{\mathbf{I}}_{02}+\bar{\tau}_{2} \overline{\mathbf{I}}_{01}-\tau_{0} \mathbf{I}_{02}-\tau_{1} \mathbf{I}_{01}, \\ \mathbf{R}_{3} & =\tau_{1} \mathbf{T}_{01}+\tau_{2} \mathbf{T}_{10}, \\ a_{11} & =2\left(\tau_{1}^{2}+\tau_{2}^{2}\right), \\ a_{12} & =-2\left(\tau_{1} \bar{\tau}_{2}+\bar{\tau}_{1} \tau_{2}\right), \\ a_{22} & =2\left(\bar{\tau}_{1}^{2}+\bar{\tau}_{2}^{2}\right) . \end{aligned}
 $$
 
 The barycentric coordinates involved in (20)-(21) are defined by \(\bar{Z}=\tau_{0} Z+\tau_{1} U_{0}+\tau_{2} U_{1}\) and \(Z=\bar{\tau}_{0} \bar{Z}+\bar{\tau}_{1} U_{1}+\bar{\tau}_{2} U_{0}\). Note
@@ -230,43 +217,43 @@ The barycentric coordinates involved in (20)-(21) are defined by \(\bar{Z}=\tau_
 ### 3.4 FO : Foley-Opitz construction
 
 ```text
-The method of Foley and Opitz (1992) constructs a hybrid cubic patch with additional control points that allow for crossboundary derivative control. Mann (1998) described how that construction can be modified to fi t into the Clough-Tocher framework. We refer to this construction by FO . First, repeat the following procedure three times, once for each edge of \( \mathcal{T} \) : set \( \mathbf{Q} \) in the macro-patch corresponding to \( \mathcal{T} \) to guarantee cubic precision across the edge \( U_{0} U_{1} \) :
+The method of Foley and Opitz (1992) constructs a hybrid cubic patch with additional control points that allow for crossboundary derivative control. Mann (1998) described how that construction can be modified to fi t into the Clough-Tocher framework. We refer to this construction by FO . First, repeat the following procedure three times, once for each edge of \(\mathcal{T}\) : set \(\mathbf{Q}\) in the macro-patch corresponding to \(\mathcal{T}\) to guarantee cubic precision across the edge \(U_{0} U_{1}\) :
 ```
 
 $$
-\begin{align*} \mathbf{Q}= & \left(\mathbf{T}_{30}-\tau_{1}^{2} \mathbf{V}_{0}-2 \tau_{1} \tau_{2} \mathbf{T}_{01}-2 \tau_{0} \tau_{1} \mathbf{T}_{02}-\tau_{2}^{2} \mathbf{T}_{10}-\tau_{0}^{2} \mathbf{T}_{20}+\mathbf{T}_{31}-\tau_{1}^{2} \mathbf{T}_{01}\right. \\ & \left.-2 \tau_{1} \tau_{2} \mathbf{T}_{10}-2 \tau_{0} \tau_{2} \mathbf{T}_{12}-\tau_{2}^{2} \mathbf{V}_{1}-\tau_{0}^{2} \mathbf{T}_{21}\right) /\left(2 \tau_{0}\left(\tau_{1}+\tau_{2}\right)\right) \tag{22} \end{align*}
+\begin{aligned} \mathbf{Q}= & \left(\mathbf{T}_{30}-\tau_{1}^{2} \mathbf{V}_{0}-2 \tau_{1} \tau_{2} \mathbf{T}_{01}-2 \tau_{0} \tau_{1} \mathbf{T}_{02}-\tau_{2}^{2} \mathbf{T}_{10}-\tau_{0}^{2} \mathbf{T}_{20}+\mathbf{T}_{31}-\tau_{1}^{2} \mathbf{T}_{01}\right. \\ & \left.-2 \tau_{1} \tau_{2} \mathbf{T}_{10}-2 \tau_{0} \tau_{2} \mathbf{T}_{12}-\tau_{2}^{2} \mathbf{V}_{1}-\tau_{0}^{2} \mathbf{T}_{21}\right) /\left(2 \tau_{0}\left(\tau_{1}+\tau_{2}\right)\right) \end{aligned}
 $$
 
 Similarly to Farin's method (Section 3.3), the macro-patch is then subdivided into micro-patches via (19), but only \(\mathbf{C}_{2}\) is actually required. The other two applications result in \(\mathbf{C}_{0}\) and \(\mathbf{C}_{1}\). As shown in Mann (1998), this construction has cubic precision in the sense that if the positions and gradients at the 6 vertices shown in Fig. 3, left, are sampled from a common cubic, the three micro-triangles corresponding to T describe patches of the same cubic. Additionally, it is, by construction, invariant to affine reparameterisations.
 
 ### 3.5 Ka : Kashyap's construction
 
-Farin's method described in Section 3.3 minimises the \(C^{2}\) discontinuity between micro-triangles along edges of macro triangles. To achieve cubic precision, Farin's minimisation can be used to minimise the \(C^{2}\) discontinuity of macro-patches, which are in turn used to obtain \(\mathbf{C}_{0}, \mathbf{C}_{1}\), and \(\mathbf{C}_{2}\). As in the case of FO, this procedure is applied three times.
+Farin's method described in Section 3.3 minimises the \(C^{2}\) discontinuity between micro-triangles along edges of macrotriangles. To achieve cubic precision, Farin's minimisation can be used to minimise the \(C^{2}\) discontinuity of macro-patches, which are in turn used to obtain \(\mathbf{C}_{0}, \mathbf{C}_{1}\), and \(\mathbf{C}_{2}\). As in the case of FO, this procedure is applied three times.
 
 first, fit a macro-patch over \(\mathcal{T}\) that minimises the \(C^{2}\) discontinuity across the edge given by \(U_{0} U_{1}\). This is done using the same equations (18)-(21) as in Farin's method, with the following modifications:
 
 $$
-\begin{align*} & \mathbf{R}_{1}=\bar{\tau}_{0} \overline{\mathbf{T}}_{21}+\bar{\tau}_{1} \overline{\mathbf{T}}_{12}-\tau_{0} \mathbf{T}_{21}-\tau_{2} \mathbf{T}_{12} \\ & \mathbf{R}_{2}=\bar{\tau}_{0} \overline{\mathbf{T}}_{20}+\bar{\tau}_{2} \overline{\mathbf{T}}_{02}-\tau_{0} \mathbf{T}_{20}-\tau_{1} \mathbf{T}_{02} \tag{23} \end{align*}
+\begin{aligned} & \mathbf{R}_{1}=\bar{\tau}_{0} \overline{\mathbf{T}}_{21}+\bar{\tau}_{1} \overline{\mathbf{T}}_{12}-\tau_{0} \mathbf{T}_{21}-\tau_{2} \mathbf{T}_{12} \\ & \mathbf{R}_{2}=\bar{\tau}_{0} \overline{\mathbf{T}}_{20}+\bar{\tau}_{2} \overline{\mathbf{T}}_{02}-\tau_{0} \mathbf{T}_{20}-\tau_{1} \mathbf{T}_{02} \end{aligned}
 $$
 
 and the barycentric coordinates involved are defined by \(U_{3}=\tau_{0} U_{2}+\tau_{1} U_{0}+\tau_{2} U_{1}\) and \(U_{2}=\bar{\tau}_{0} U_{3}+\bar{\tau}_{1} U_{1}+\bar{\tau}_{2} U_{0}\). Note that This construction, which we denote by Ka, first appeared in Kashyap (1996) and is based on the 18-point interpolant introduced there. It was later rediscovered in the presented form in Mann (1998, 1999). It has cubic precision in the same sense as FO of Section 3.4; see Fig. 3, left.
 
 ### 3.6 MG : mid-edge gradients
 
-However, if we want to convert a given surface into a Clough-Tocher spline, we can fix the extra degree of freedom per edge in △ by reading extra data off the given surface. Given the role of the control points computed in Step 2, it is natural to try to use them to fit the gradients at mid-points of edges in \(\Delta\). However, as only one degree of freedom is available per edge, the mid-edge gradient needs to be projected in a certain direction \(v_{\varepsilon}\) not parallel to \(\varepsilon\).
+However, if we want to convert a given surface into a Clough-Tocher spline, we can fix the extra degree of freedom per edge in △ by reading extra data off the given surface. Given the role of the control points computed in Step 2, it is natural to try to use them to fit the gradients at mid-points of edges in △ . However, as only one degree of freedom is available per edge, the mid-edge gradient needs to be projected in a certain direction \(v_{\varepsilon}\) not parallel to \(\varepsilon\).
 
 Turning back to (5) with \(d=3\), the gradient of the patch at \(\left(U_{0}+U_{1}\right) / 2\) is given by
 
 $$
-\begin{align*} \nabla \mathbf{p}\left(\frac{1}{2}, \frac{1}{2}, 0\right)= & \frac{3}{4 \mathcal{A}\left(U_{0}, U_{1}, U_{2}\right)}\left(\left(v_{1}-v_{2}, u_{2}-u_{1}\right) \mathbf{P}_{3,0,0}+\left(2 v_{1}-v_{0}-v_{2}, u_{0}-2 u_{1}+u_{2}\right) \mathbf{P}_{2,1,0}\right. \\ & +\left(v_{1}+v_{2}-2 v_{0}, 2 u_{0}-u_{1}-u_{2}\right) \mathbf{P}_{1,2,0}+\left(v_{2}-v_{0}, u_{0}-u_{2}\right) \mathbf{P}_{0,3,0} \\ & \left.+\left(v_{0}-v_{1}, u_{1}-u_{0}\right)\left(\mathbf{P}_{2,0,1}+2 \mathbf{P}_{1,1,1}+\mathbf{P}_{0,2,1}\right)\right) \tag{24} \end{align*}
+\begin{aligned} \nabla \mathbf{p}\left(\frac{1}{2}, \frac{1}{2}, 0\right)= & \frac{3}{4 \mathcal{A}\left(U_{0}, U_{1}, U_{2}\right)}\left(\left(v_{1}-v_{2}, u_{2}-u_{1}\right) \mathbf{P}_{3,0,0}+\left(2 v_{1}-v_{0}-v_{2}, u_{0}-2 u_{1}+u_{2}\right) \mathbf{P}_{2,1,0}\right. \\ & +\left(v_{1}+v_{2}-2 v_{0}, 2 u_{0}-u_{1}-u_{2}\right) \mathbf{P}_{1,2,0}+\left(v_{2}-v_{0}, u_{0}-u_{2}\right) \mathbf{P}_{0,3,0} \\ & \left.+\left(v_{0}-v_{1}, u_{1}-u_{0}\right)\left(\mathbf{P}_{2,0,1}+2 \mathbf{P}_{1,1,1}+\mathbf{P}_{0,2,1}\right)\right) \end{aligned}
 $$
 
-There are two obvious options available. One is to set \(v_{\varepsilon} \perp \varepsilon\), leading to a construction denoted by \(\mathrm{MG}_{0}\). This was investigated e.g. in Schmidt et al. (2001), Bastian and Schmidt (2001). Similarly to the original Clough-Tocher construction, this ensures complete locality, but does not provide invariance to affine reparameterisations. The other option is to set \(v_{\varepsilon}=Z \bar{Z}\), cf. Section 3.2, leading to a construction \(\mathrm{MG}_{\mathrm{i}}\) that is invariant to affine reparameterisations.
+There are two obvious options available. One is to set \(v_{\varepsilon} \perp \varepsilon\), leading to a construction denoted by \(\mathrm{MG}_{\mathrm{o}}\). This was investigated e.g. in Schmidt et al. (2001), Bastian and Schmidt (2001). Similarly to the original Clough-Tocher construction, this ensures complete locality, but does not provide invariance to affine reparameterisations. The other option is to set \(v_{\varepsilon}=Z \bar{Z}\), cf. Section 3.2, leading to a construction \(\mathrm{MG}_{\mathrm{i}}\) that is invariant to affine reparameterisations.
 
 with \(\mathcal{A}\left(U_{0}, U_{1}, U_{2}\right)\) again equal to the area of \(\mathcal{T}\). The central control point \(\mathbf{P}_{1,1,1}\) is then easily computed from the linear equation
 
 $$
-\begin{equation*} \nabla \mathbf{p}\left(\frac{1}{2}, \frac{1}{2}, 0\right) \cdot v_{\varepsilon}=\mathbf{g}_{\varepsilon} \cdot v_{\varepsilon} \tag{25} \end{equation*}
+\nabla \mathbf{p}\left(\frac{1}{2}, \frac{1}{2}, 0\right) \cdot v_{\varepsilon}=\mathbf{g}_{\varepsilon} \cdot v_{\varepsilon}
 $$
 
 where \(\mathbf{g}_{\varepsilon}\) is the mid-edge gradient sampled from the input surface. This covers both options mentioned above. \(\mathbf{P}_{1,1,1}\), computed three times, once for each edge of \(\mathcal{T}\), yields the control points \(\mathbf{C}_{0}, \mathbf{C}_{1}\), and \(\mathbf{C}_{2}\) in Step 2. Input data for cubic reproduction over a macro-triangle are shown in Fig. 3, right. A more general treatment of cross-boundary derivatives for triangular patches can be found in Foley et al. (1993).
@@ -275,7 +262,7 @@ where \(\mathbf{g}_{\varepsilon}\) is the mid-edge gradient sampled from the inp
 
 We now turn our attention to the iterative method described in Farin and Kashyap (1992) and Kashyap (1996), which is based on Farin's construction in Section 3.3. Although using Farin's method in Step 2 minimises the \(C^{2}\) discontinuity between adjacent patches, Step 3 subsequently changes the positions of some of the control points involved in the \(C^{2}\) conditions (7) to achieve global \(C^{1}\) continuity. Thus, Step 2 can be performed again, then Step 3, and so on.
 
-This gives an iterative process. It weakens the locality of the construction, but typically produces results of better visual quality; see Section 5. We note that this iterative procedure, one step of which is denoted by IM, can be applied to any of the Clough-Tocher variants described above. A second procedure, presented in Section 4.2.2 of Kashyap (1996), minimises the \(C^{2}\) discontinuities within macro patches. The result is a single cubic patch over each macro-triangle, but with only \(C^{0}\) continuity between adjacent macro-patches. While it was suggested in Kashyap (1996) that this procedure can be used in combination with the former iterative method, we did not observe any significant improvement in any of our experiments based on this combination. The adjustment of control points when followed by a step of IM is so small that one cannot observe any visual difference (not even using reflection lines or curvature plots). We thus do not include this second iterative procedure in our study in Section 5.
+This gives an iterative process. It weakens the locality of the construction, but typically produces results of better visual quality; see Section 5. We note that this iterative procedure, one step of which is denoted by IM, can be applied to any of the Clough-Tocher variants described above. A second procedure, presented in Section 4.2.2 of Kashyap (1996), minimises the \(C^{2}\) discontinuities within macropatches. The result is a single cubic patch over each macro-triangle, but with only \(C^{0}\) continuity between adjacent macro-patches. While it was suggested in Kashyap (1996) that this procedure can be used in combination with the former iterative method, we did not observe any significant improvement in any of our experiments based on this combination. The adjustment of control points when followed by a step of IM is so small that one cannot observe any visual difference (not even using reflection lines or curvature plots). We thus do not include this second iterative procedure in our study in Section 5.
 
 ![Figure 4. Triangulations shown in parameter space. Left](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-4-p008.png)
 
@@ -285,7 +272,7 @@ This gives an iterative process. It weakens the locality of the construction, bu
 
 So far, we have not considered triangles whose edges are boundary edges of \(\Omega\). Note that only triangles with at least one edge on the boundary of \(\Omega\) are considered as boundary triangles. From the set of constructions detailed above, only \(\mathrm{CT}_{\mathrm{o}}\) and \(\mathrm{MG}_{\mathrm{o}}\), due to their complete locality per triangle, need no modification near boundaries. All the other constructions cannot be used over boundary triangles in the form they are defined.
 
-If \(\mathcal{T}\) is a boundary triangle then its neighbour across its boundary edge \(\varepsilon\) is not available. In that case, we first consider two options based on (15). One is to use (16), i.e., the perpendicular direction, to compute \(\mathbf{C}_{2}\). The other is to use the edge midpoint ( \(\lambda_{0}=\lambda_{1}=1 / 2\) ), which does not preclude invariance to affine reparameterisa If mid-edge gradients are known on boundary edges (i.e., not necessarily on all edges), one can use (25) with either \(v_{\varepsilon} \perp \varepsilon\) or \(v_{\varepsilon}\) in the direction given by \(Z\), the split point of \(\mathcal{T}\), and the boundary edge midpoint. Again, only the second choice may lead to invariance to affine reparameterisations.
+If \(\mathcal{T}\) is a boundary triangle then its neighbour across its boundary edge \(\varepsilon\) is not available. In that case, we first consider two options based on (15). One is to use (16), i.e., the perpendicular direction, to compute \(\mathbf{C}_{2}\). The other is to use the edge midpoint ( \(\lambda_{0}=\lambda_{1}=1 / 2\) ), which does not preclude invariance to affine reparameterisaIf mid-edge gradients are known on boundary edges (i.e., not necessarily on all edges), one can use (25) with either \(v_{\varepsilon} \perp \varepsilon\) or \(v_{\varepsilon}\) in the direction given by \(Z\), the split point of \(\mathcal{T}\), and the boundary edge midpoint. Again, only the second choice may lead to invariance to affine reparameterisations.
 
 While it is likely that the degree of freedom per boundary edge can be put to a better use in some of the constructions, we do not investigate this any further.
 
@@ -293,17 +280,17 @@ While it is likely that the degree of freedom per boundary edge can be put to a 
 
 Before we can compare the above variants of the original Clough-Tocher construction, we need to generate suitable input data. We therefore turn to the problem of generating triangulations with the necessary gradient information from trimmed surfaces appearing in CAD models. While there are many suitable triangulation algorithms (Piegl and Richard, 1995; Piegl and Tiller, 1998; Kumar et al., 2001), the examples in this paper used the CADfix product (TranscenData, 2015) to import CAD models and generate the required data.
 
-CADfix performs the triangulation in the parameter space of each surface, using an incremental constrained Delaunay triangulation (CDT) algorithm similar to the approach described by Kallmann et al. (2004). For NURBS surfaces, the param eter space is naturally given by the rectangle in \(\mathbb{R}^{2}\) that is the tensor product of the spline domains in each parametric direction. For other surface types, a parameterisation is constructed that ensures that the edges bounding each face project to closed loops in parameter space. The input to the triangulation algorithm also includes a maximum permissible error between the surface and its meshed representation, and a flag that indicates whether there are constraints on the aspect ratio of the constructed triangles; see Fig. 4.
+CADfix performs the triangulation in the parameter space of each surface, using an incremental constrained Delaunay triangulation (CDT) algorithm similar to the approach described by Kallmann et al. (2004). For NURBS surfaces, the parameter space is naturally given by the rectangle in \(\mathbb{R}^{2}\) that is the tensor product of the spline domains in each parametric direction. For other surface types, a parameterisation is constructed that ensures that the edges bounding each face project to closed loops in parameter space. The input to the triangulation algorithm also includes a maximum permissible error between the surface and its meshed representation, and a flag that indicates whether there are constraints on the aspect ratio of the constructed triangles; see Fig. 4.
 
 Given this input, the triangulation algorithm starts by polygonising each boundary edge, beginning with a small number of samples and adaptively adding samples in any spans where the current representation exceeds the permissible error. The representation of each edge constructed in this stage is a \(C^{1}\) cubic spline with derivatives that are also sampled from the edge. Each sample of a boundary loop corresponds to a parameter-space node in \(\mathbb{R}^{2}\), and every pair of adjacent samples has a constrained segment added in the CDT algorithm. The output of this stage is therefore a triangulation of the face which satisfies the error bound on the edges but may be a very poor representation of the internal surface geometry. Note that this edge-first triangulation strategy guarantees that adjacent surfaces share the same boundary vertices and thus makes it possible to produce watertight models.
 
 The second stage of the algorithm iteratively refines the triangulation by examining the error at triangle centroids and triangle edge midpoints, until all triangles have an error that lies below the given bound. For all the examples in this paper, Property comparison. See Section 5.1 for a detailed explanation of the meanings of the rows. In each row, best ranked constructions are highlighted in grey. All criteria apply to all three split point options, with the exception of invariance to affine reparameterisations in the second row. In the third row, data required from edge-adjacent triangles are listed; the index ranges in { 4, 5, 6 ; see Fig. 3, left.
 
-error was estimated with respect to the \(\mathrm{CT}_{\mathrm{o}}\) construction (with BARY), and the same triangulation and input data are fixed for any comparisons between constructions. Note that this error estimate, while being relatively cheap to compute, does not provide an upper bound. An upper bound on the error could be obtained, if needed, by using local convex hulls provided by the Bézier control nets of Clough-Tocher micro-patches; cf. (5).
+error was estimated with respect to the CTo construction (with Bary), and the same triangulation and input data are fixed for any comparisons between constructions. Note that this error estimate, while being relatively cheap to compute, does not provide an upper bound. An upper bound on the error could be obtained, if needed, by using local convex hulls provided by the Bézier control nets of Clough-Tocher micro-patches; cf. (5).
 
 ```text
 If required, the constraints on triangle aspect ratio are also satisfied in this second stage by inserting additional samples that are purely to split triangles with a high aspect ratio;
-see Fig. 4, right. Unfortunately, at the end of this process, there can still be a mismatch between the \( C^{1} \) cubic splines constructed for each edge and the boundaries of the Clough-Tocher spline surface constructed for each face. An example is shown in Fig. 18. This is a necessary consequence of the geometry of the trimming curves, the image of which is generally not a cubic spline in the spline surface;
+see Fig. 4, right. Unfortunately, at the end of this process, there can still be a mismatch between the \(C^{1}\) cubic splines constructed for each edge and the boundaries of the Clough-Tocher spline surface constructed for each face. An example is shown in Fig. 18. This is a necessary consequence of the geometry of the trimming curves, the image of which is generally not a cubic spline in the spline surface;
 generically, only straight edges in parameter space map to cubic curves on Clough-Tocher splines.
 ```
 
@@ -348,22 +335,22 @@ The errors presented throughout the paper were, unless specified otherwise, comp
 Our first example is Farin's cubic function (Farin, 1985, Section 6)
 
 $$
-\begin{equation*} c(x, y)=(x-0.3)^{3}+x(y-0.3)^{2}-0.1 x, \tag{26} \end{equation*}
+c(x, y)=(x-0.3)^{3}+x(y-0.3)^{2}-0.1 x,
 $$
 
-which we used to test polynomial precision of Clough-Tocher spline variants. The general setup is described in Fig. 5. Reflec tion lines, and Gaussian and mean curvature plots are shown in Fig. 6. The results are in accord with the expected respective quadratic and cubic precision shown in Table 1. While barycentres were used as split points in Fig. 6, we emphasise that the split point does not influence the precision of a particular construction. Additionally, running the iterative algorithm IM on the three constructions with only quadratic precision (first three columns) will force them to converge to the input cubic. Applying IM to any of the cubic precision constructions will not modify the reproduced cubic (which already minimises \(C^{2}\) discontinuities).
+which we used to test polynomial precision of Clough-Tocher spline variants. The general setup is described in Fig. 5. Reflection lines, and Gaussian and mean curvature plots are shown in Fig. 6. The results are in accord with the expected respective quadratic and cubic precision shown in Table 1. While barycentres were used as split points in Fig. 6, we emphasise that the split point does not influence the precision of a particular construction. Additionally, running the iterative algorithm IM on the three constructions with only quadratic precision (first three columns) will force them to converge to the input cubic. Applying IM to any of the cubic precision constructions will not modify the reproduced cubic (which already minimises \(C^{2}\) discontinuities).
 
 Our second example is one of the Franke bivariate test functions (Franke, 1979):
 
 $$
-\begin{equation*} f(x, y)=\frac{3}{4} \mathrm{e}^{-\frac{1}{4}(9 x-2)^{2}-\frac{1}{4}(9 y-2)^{2}}+\frac{3}{4} \mathrm{e}^{-\frac{1}{49}(9 x+1)^{2}-\frac{1}{10}(9 y+1)^{2}}+\frac{1}{2} \mathrm{e}^{-\frac{1}{4}(9 x-7)^{2}-\frac{1}{4}(9 y-3)^{2}}-\frac{1}{5} \mathrm{e}^{-(9 x-4)^{2}-(9 y-7)^{2}} . \tag{27} \end{equation*}
+f(x, y)=\frac{3}{4} \mathrm{e}^{-\frac{1}{4}(9 x-2)^{2}-\frac{1}{4}(9 y-2)^{2}}+\frac{3}{4} \mathrm{e}^{-\frac{1}{49}(9 x+1)^{2}-\frac{1}{10}(9 y+1)^{2}}+\frac{1}{2} \mathrm{e}^{-\frac{1}{4}(9 x-7)^{2}-\frac{1}{4}(9 y-3)^{2}}-\frac{1}{5} \mathrm{e}^{-(9 x-4)^{2}-(9 y-7)^{2}} .
 $$
 
 Maximum errors are summarised in Table 2, computed as function value differences. As all error plots over the whole spline look very similar across all constructions, we show only one of them, for Ka with barycentres, in Fig. 7. Constructions that need special treatment over boundary triangles were modified by using edge perpendiculars as described in Section 3.8. Using edge midpoints gave nearly identical results.
 
-Shaded renderings and mean curvature plots on the whole domain, and reflection lines on a subpatch are shown in Fig. 8; all seven constructions are included. The split point has negligible influence on the resulting shape and thus results using Bary only are shown. The influence of split points is discussed further in Section 5.3. Gaussian curvature plots are not shown as they did not provide sufficient visual differences. Observe that while both \(\mathrm{MG}_{\mathrm{o}}\) and \(\mathrm{MG}_{\mathrm{i}}\) give the smallest maximum errors (Table 2), they lead to visually poor results (Fig. 8). On the other hand, fairest shapes were achieved by Fa, FO, and Ka. These results can be further improved by applying IM several times.
+Shaded renderings and mean curvature plots on the whole domain, and reflection lines on a subpatch are shown in Fig. 8; all seven constructions are included. The split point has negligible influence on the resulting shape and thus results using Bary only are shown. The influence of split points is discussed further in Section 5.3. Gaussian curvature plots are not shown as they did not provide sufficient visual differences. Observe that while both \(\mathrm{MG}_{\circ}\) and \(\mathrm{MG}_{\mathrm{i}}\) give the smallest maximum errors (Table 2), they lead to visually poor results (Fig. 8). On the other hand, fairest shapes were achieved by Fa, FO, and Ka. These results can be further improved by applying IM several times.
 
-As our next example, we consider a simple sine wave and data sampled from it using a sparse triangulation. As can be observed in Fig. 9, best results with \(\mathrm{CT}_{0}\) are achieved when the 2D and 3D triangulation 'agree' as much as possible (i.e., when the parameterisation is close to isometric). The example shows that while CT. can produce worse results than its invariant modification CT i in some extreme situations, proper scaling in parameter space leads to better shapes using the original Clough-Tocher construction \(\mathrm{CT}_{\mathrm{o}}\). We obtained similar results for \(\mathrm{MG}_{\mathrm{o}}\) when compared with its invariant counterpart One approach to quantifying fairness of Clough-Tocher splines is to consider the maximum magnitude of the differ ences of the right-hand and left-hand sides in (7), i.e., the maximum magnitude of this \(C^{2}\) discontinuity measure across edges between microand macro-patches. This measure is included in Fig. 9. Note how the \(C^{2}\) discontinuity values closely correspond to the visual comparison using reflection lines and the significant improvement after affine reparameterisation.
+As our next example, we consider a simple sine wave and data sampled from it using a sparse triangulation. As can be observed in Fig. 9, best results with CTo are achieved when the 2D and 3D triangulation 'agree' as much as possible (i.e., when the parameterisation is close to isometric). The example shows that while CTo can produce worse results than its invariant modification CT i in some extreme situations, proper scaling in parameter space leads to better shapes using the original Clough-Tocher construction \(\mathrm{CT}_{\mathrm{o}}\). We obtained similar results for \(\mathrm{MG}_{\mathrm{o}}\) when compared with its invariant counterpart One approach to quantifying fairness of Clough-Tocher splines is to consider the maximum magnitude of the differences of the right-hand and left-hand sides in (7), i.e., the maximum magnitude of this \(C^{2}\) discontinuity measure across edges between microand macro-patches. This measure is included in Fig. 9. Note how the \(C^{2}\) discontinuity values closely correspond to the visual comparison using reflection lines and the significant improvement after affine reparameterisation.
 
 Our next test case is the sphere. We use the rational quartic Bézier triangle representation (Farin et al., 1987) of one of its octants and a tessellation of its equilateral parametric triangle into \(4^{l}\) macro-triangles, where \(l\) denotes the tessellation
 
@@ -377,7 +364,7 @@ Our next test case is the sphere. We use the rational quartic Bézier triangle r
 
 level. Convergence results for Gaussian and mean curvature, and approximation error are reported in Fig. 10 for levels \(l \in[1, \ldots, 5]\), i.e., over regular triangulations with 4 to 1024 triangles. The case with \(l=0\), i.e., with only one macro-triangle, is not included, as a single triangle gives no information on the fairness between macro-patches. A visual comparison of Clough-Tocher approximations of an octant of the unit sphere for l = 2, in terms of their fairness and approximation error, is shown in Fig. 11. FO produced indistinguishable results from those generated by Ka. KaG denotes the variant of Ka where mid-edge gradients (Section 3.8) are used at boundary edges (both projection options gave indistinguishable results); the improvement over Ka is significant along boundary edges and it compares favourably even to MGo, which relies on mid-edge gradients at all edges. We observed this behaviour across all tessellation levels; see Fig. 10. Note that the error plots (on logarithmic scale) exhibit the expected convergence rates, i.e., cubic for CTo, FO, and Ka, which possess quadratic precision (in the case of Ka, this is due to boundary effects), and quartic for MGo and KaG, which have cubic precision over the entire triangulation.
 
-Fa, while superior to \(\mathrm{CT}_{\mathrm{o}}\), produced worse results than \(\mathrm{FO}, \mathrm{Ka}\), and KaG, both visually and error-wise, and is therefore not included. Only barycentres were considered in all constructions because other split points gave (nearly) the same results due to symmetry. For the same reason, \(\mathrm{CT}_{\mathrm{i}}\) and \(\mathrm{MG}_{\mathrm{i}}\) are not shown as they are indistinguishable from their included counterparts \(\mathrm{CT}_{\mathrm{o}}\) and \(\mathrm{MG}_{\mathrm{o}}\), respectively.
+Fa, while superior to \(\mathrm{CT}_{\mathrm{o}}\), produced worse results than FO, Ka, and KaG, both visually and error-wise, and is therefore not included. Only barycentres were considered in all constructions because other split points gave (nearly) the same results due to symmetry. For the same reason, \(\mathrm{CT}_{\mathrm{i}}\) and \(\mathrm{MG}_{\mathrm{i}}\) are not shown as they are indistinguishable from their included counterparts \(\mathrm{CT}_{\mathrm{o}}\) and \(\mathrm{MG}_{\mathrm{o}}\), respectively.
 
 ![Figure 10. Octant of a sphere](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-10-p013.png)
 
@@ -393,7 +380,7 @@ Fa, while superior to \(\mathrm{CT}_{\mathrm{o}}\), produced worse results than 
 
 ### 5.3 CAD models
 
-Our first CAD model example is the car front wing model shown in Fig. 12. We used only one of its trimmed NURBS patches in our tests. We consider two triangulations, \(\Delta_{C}\) and \(\Delta_{Q}\), both of which are shown in parameter space in Fig. 4. The corresponding spline approximations with reflection lines are shown in Fig. 13. While the triangulation \(\Delta_{C}\) may seem inferior because it contains skinny triangles, it leads to superior results in terms of lateral artifacts when compared to \(\Delta_{Q}\). These artifacts are caused by the well-known 'dinosaur back' effect, which arises in nearly all spline approximations when control meshes are not aligned with features on a model (Farin et al., 2002; Augsdörfer et al., 2011). Additionally, once a triangulation has been fixed, the macro-edges of all macro-patches in 3D are uniquely determined and shared by all Clough-Tocher variants. On the other hand, skinny triangles may give rise to foldovers in the resulting spline; see Fig. 14, top row. However, in our tests it was possible to avoid foldovers by using Inc2
+Our first CAD model example is the car front wing model shown in Fig. 12. We used only one of its trimmed NURBS patches in our tests. We consider two triangulations, \(\Delta_{C}\) and \(\Delta_{Q}\), both of which are shown in parameter space in Fig. 4. The corresponding spline approximations with reflection lines are shown in Fig. 13. While the triangulation \(\Delta_{c}\) may seem inferior because it contains skinny triangles, it leads to superior results in terms of lateral artifacts when compared to \(\Delta_{Q}\). These artifacts are caused by the well-known 'dinosaur back' effect, which arises in nearly all spline approximations when control meshes are not aligned with features on a model (Farin et al., 2002; Augsdörfer et al., 2011). Additionally, once a triangulation has been fixed, the macro-edges of all macro-patches in 3D are uniquely determined and shared by all Clough-Tocher variants. On the other hand, skinny triangles may give rise to foldovers in the resulting spline; see Fig. 14, top row. However, in our tests it was possible to avoid foldovers by using Inc2
 
 ![Figure 13. Spline approximations of the car front wing model shown with reﬂection lines. Top row](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-13-p014.png)
 
@@ -407,7 +394,7 @@ Our first CAD model example is the car front wing model shown in Fig. 12. We use
 
 *Figure 15. C 2 discontinuity graphs for the car front wing model. Solid lines represent C 2 discontinuities across macro-edges and dashed lines correspond to C 2 discontinuities across micro-edges. The two graphs on the left are for △ C , the two on the right for △ Q . The horizontal axes in all four graphs state the number of steps of IM applied. FO with mid-edge gradients at boundary edges produced nearly indistinguishable results from those shown for KaG .: C 2 discontinuity graphs for the car front wing model. Solid lines represent C 2 discontinuities across macro-edges and dashed lines correspond to C 2 discontinuities across micro-edges. The two graphs on the left are for △ C, the two on the right for △ Q. The horizontal axes in all four graphs state the number of steps of IM applied. FO with mid-edge gradients at boundary edges produced nearly indistinguishable results from those shown for KaG. triangle C, the two on the right for triangle Q. The horizontal axes in all four graphs state the number of steps of IM applied. FO with mid-edge gradients at boundary edges produced nearly indistinguishable results from those shown for KaG.*
 
-or Inc 3. Additionally, Inc 2 or Inc 3 help to improve the quality of the results over Bary in macro-patches corresponding to skinny triangles (Fig. 14, bottom row). We gathered \(C^{2}\) discontinuity data of the constructions and also after several applications of IM. The results are sum marised in Fig. 15, including mean and maximal \(C^{2}\) discontinuities. Observe that while the iterative procedure IM reduces \(C^{2}\) discontinuities across macro-edges, it is not necessarily the case for micro-edges. Additionally, the maximal \(C^{2}\) disconti nuities across micro-edges are typically greater than those across macro-edges. Errors for all Clough-Tocher spline variants considered in this paper are reported in Table 3 for \(\Delta_{C}\) and \(\Delta_{Q}\).
+or Inc 3. Additionally, Inc 2 or Inc 3 help to improve the quality of the results over Bary in macro-patches corresponding to skinny triangles (Fig. 14, bottom row). We gathered \(C^{2}\) discontinuity data of the constructions and also after several applications of IM. The results are summarised in Fig. 15, including mean and maximal \(C^{2}\) discontinuities. Observe that while the iterative procedure IM reduces \(C^{2}\) discontinuities across macro-edges, it is not necessarily the case for micro-edges. Additionally, the maximal \(C^{2}\) discontinuities across micro-edges are typically greater than those across macro-edges. Errors for all Clough-Tocher spline variants considered in this paper are reported in Table 3 for \(\triangle_{C}\) and \(\triangle_{Q}\).
 
 ![Figure 16. Split point illustration. Six pairs of triangles, two for each split point type, are shown. In each pair, the left triangle is T in parameter space given by U i and the right triangle is the corresponding triangle in 3D given by f i . Split points Z are shown in red and their corresponding points in 3D using the same barycentric coordinates are shown in blue. In general, the position of the blue point depends on the shape of the macro-patch, but we assume ﬂat 3D triangles for the sake of this illustration. (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)](/Users/evanthayer/Projects/paperx/docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/figures/figure-16-p015.png)
 
@@ -523,7 +510,7 @@ This research was supported by the engineering and Physical Sciences Research Co
 
 - Piegl, L.A., Tiller, W., 1998. Geometry-based triangulation of trimmed NURBS surfaces. Comput. Aided Des. 30 (1), 11-18.
 
-- Schmidt, J., Bastian, M., Mulansky, B., 2001. Nonnegative volume matching by cubic C \(-}^-1} \) splines on Clough-Tocher splits. SIAM J. Numer. Anal. 39 (2),
+- Schmidt, J., Bastian, M., Mulansky, B., 2001. Nonnegative volume matching by cubic \(C^-1}\) splines on Clough-Tocher splits. SIAM J. Numer. Anal. 39 (2),
 
 - Schumaker, L.L., Speleers, H., 2010. Nonnegativity preserving macro-element interpolation of scattered data. Comput. Aided Geom. Des. 27 (3), 245-261.
 

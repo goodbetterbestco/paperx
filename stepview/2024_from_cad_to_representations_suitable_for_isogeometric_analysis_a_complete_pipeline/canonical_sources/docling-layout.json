@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline.pdf",
+  "pdf_path": "stepview/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline.pdf",
   "page_count": 19,
   "page_sizes_pt": [
     {
@@ -199,7 +199,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 51.02,
@@ -218,7 +218,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Next generation CAD CAE systems shall integrate design and analysis procedures as a means to simplify workflows, boost performance, and speed up time to market. In the present paper we demonstrate a proof of concept of such a unification using subdivision surfaces and the enabling technology of isogeometric analysis. In particular, we present a complete pipeline to convert CAD models into smooth G 1 spline representations, which are suitable for isogeometric analysis. Starting from a CAD boundary representation of a mechanical object, we perform an automatic control cage extraction by means of quadrangular faces, such that its limit Catmull-Clark subdivision surface approximates accurately the input model. We then compute a basis of the G 1 spline space over the quad mesh in order to carry out least squares fitting over a point cloud, acquired by sampling the original CAD geometry. The resulting surface is a collection of Bézier patches with G 1 regularity. Finally, we use the basis functions to perform isogeometric analysis simulations of realistic PDEs on the reconstructed G 1 model. The quality of the construction is demonstrated via several numerical examples performed on a collection of CAD objects presenting various challenging realistic shapes.",
       "bbox": {
         "x0": 51.02,
@@ -237,7 +237,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords CAD models · Point cloud fitting · Geometrically smooth surfaces · Spline basis · Isogeometric analysis",
       "bbox": {
         "x0": 51.02,
@@ -256,7 +256,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 51.02,
@@ -275,7 +275,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Shape modeling and analysis are crucial operations which directly impact engineering and industrial processes in many sectors of our society. The last several decades have witnessed the development of many powerful tools for",
       "bbox": {
         "x0": 51.02,
@@ -313,7 +313,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Angelos Mantzaflaris angelos.mantzaflaris@inria.fr",
       "bbox": {
         "x0": 65.19,
@@ -332,7 +332,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Bernard Mourrain bernard.mourrain@inria.fr",
       "bbox": {
         "x0": 65.19,
@@ -351,7 +351,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Sam Whyman sam.whyman@iti-global.com",
       "bbox": {
         "x0": 65.19,
@@ -370,7 +370,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Mark Gammon mark.gammon@iti-global.com",
       "bbox": {
         "x0": 65.19,
@@ -427,7 +427,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "3 Department of Mathematics and Informatics 'U. Dini', University of Florence, Florence, Italy",
       "bbox": {
         "x0": 51.02,
@@ -446,7 +446,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "computer-aided design (CAD), computer-aided engineering (CAE), and computer-aided manufacturing (CAM). These tools assist in handling the complex computations required to convert from the digital model of a shape to its actual production. Such computations can include digital shape description, model reparation, meshing, numerical simulations, and optimization. Currently, they require specific engineering efforts, are time consuming, and prone to errors and approximations [1, 2, Chapter 1]. This explains why alternative approaches are under investigation.",
       "bbox": {
         "x0": 306.14,
@@ -465,7 +465,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The boundary representation (B-rep) is used widely in solid modeling applications due to its flexibility and precision when representing manufacturable geometry in mechanical CAD (MCAD) processes. B-rep models consist of a set of topological entities with the following hierarchical relationship: vertices; edges bound by vertices; and faces bound by edges. The valence (i.e., number of incident edges) of the vertices can vary, and may not be considered to be regular (i.e., valence of 4). The topological entities are associated with corresponding geometric information. For instance, each topological edge has a spline curve associated with it. Similarly, each topological face has a parametric surface associated with it (herein referred to as the",
       "bbox": {
         "x0": 306.15,
@@ -1131,25 +1131,6 @@
       "page": 5,
       "order": 1,
       "role": "paragraph",
-      "text": "·--",
-      "bbox": {
-        "x0": 13.33,
-        "y0": 160.0,
-        "x1": 23.33,
-        "y1": 162.67,
-        "width": 10.0,
-        "height": 2.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "·--"
-      }
-    },
-    {
-      "id": "#/texts/65",
-      "page": 5,
-      "order": 2,
-      "role": "paragraph",
       "text": "·",
       "bbox": {
         "x0": 143.81,
@@ -1165,9 +1146,9 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/65",
       "page": 5,
-      "order": 3,
+      "order": 2,
       "role": "caption",
       "text": "Fig. 4 Schematic of a cubic B-spline with knot vector [0, 0, 0, 0, 1, 2, 3, 4,...]. The slope control point is shown in red, and all other control points in blue. The location of the red point influences the shape of the spline only within the first two knot spans. (Color figure online)",
       "bbox": {
@@ -1184,9 +1165,9 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/66",
       "page": 5,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -1203,9 +1184,9 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/67",
       "page": 5,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "3D location of the limit surface corresponding to the boundary of the B-rep faces is influenced only by the control points associated with the MCAD edges. Therefore, neighboring control cages sharing the same boundary control points will maintain at least C 0 -continuity between their limit surfaces, regardless of the positions of the interior control points, or the slope control points.",
       "bbox": {
@@ -1222,9 +1203,9 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/68",
       "page": 5,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "The use of Bézier edge conditions imposes strict topological requirements upon the control cage. Namely, no new EV may be placed on a B-rep face boundary (where one was not already present in the B-rep topology, such as in Fig. 11), nor within the first two layers of control cage faces, due to the tensor product nature of the limit surface within these regions.",
       "bbox": {
@@ -1241,9 +1222,9 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/69",
       "page": 5,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "These topological constraints, to which engineeringgrade subdivision surfaces must adhere, pose challenges when generating a suitable control cage. Each MCAD vertex must be treated as a corner, i.e., it must be associated with a 2-valent control cage vertex (such as in Fig. 5). The",
       "bbox": {
@@ -1260,9 +1241,9 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/70",
       "page": 5,
-      "order": 8,
+      "order": 7,
       "role": "caption",
       "text": "Fig. 5 a schematic showing the application of Bézier edge conditions to a subdivision surface. The red lines represent the rows of control points which approximate the MCAD edges as cubic B-splines. The blue dashed lines represent the rows of slope control points. Shaded patches are defined using the tensor product of the bound-",
       "bbox": {
@@ -1279,9 +1260,9 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/71",
       "page": 5,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "introduction of any new EV, where one was not already present in the B-rep topology, is restricted solely to the interior of the control cage. Meeting these requirements through traditional quad-dominant meshing techniques is challenging, and therefore we present a novel automatic approach referred to as SubD layering , which is tailored to satisfying the prescribed topological constraints.",
       "bbox": {
@@ -1298,9 +1279,9 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/72",
       "page": 5,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "The process involves partitioning an MCAD face into regions of structured and unstructured mesh. The structured regions form a boundary layer from which new EVs are fully excluded. These are formed by constructing 4-sided blocks around each MCAD vertex (referred to as corner blocks), and then connecting these to form 4-sided edge blocks associated with each MCAD edge. The remaining interior region constitutes a block with topology identical to the original MCAD face, and this is filled with unstructured mesh. This process is illustrated in Fig. 6.",
       "bbox": {
@@ -1317,9 +1298,9 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/73",
       "page": 5,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "The size and positions of the corner blocks are determined using the two-dimensional medial axis [11] as a guide to ensure that the blocks do not intersect. The construction of the medial axis follows the work in [52]: the algorithm starts with a Delaunay mesh of the domain and discovers triangles that are representative of medial vertices and edges, while it refines triangles which are not isomorphic to the medial circle. The resulting representation is reduced to a topology of minimum size. A snapshot of a computed SubD layering and the medial axis for a face from the Car model is given in Fig. 7.",
       "bbox": {
@@ -1336,9 +1317,9 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/74",
       "page": 5,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "Once the domain partitioning has been completed, we generate a coarse mesh of the layer faces. The boundary layer (consisting of the corner and edge blocks) is meshed",
       "bbox": {
@@ -1355,9 +1336,9 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/75",
       "page": 5,
-      "order": 13,
+      "order": 12,
       "role": "caption",
       "text": "ary B-splines, and the unshaded patches are the usual regular bicubic B-spline patches. b 3D control cage with vectors pointing to the implied positions of the slope control points. Each boundary control point stores one vector, whereas the corners store three. (Color figure online)",
       "bbox": {
@@ -1374,7 +1355,7 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/78",
       "page": 6,
       "order": 1,
       "role": "caption",
@@ -1393,7 +1374,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/79",
       "page": 6,
       "order": 2,
       "role": "paragraph",
@@ -1412,7 +1393,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/80",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -1431,7 +1412,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/81",
       "page": 6,
       "order": 4,
       "role": "paragraph",
@@ -1450,7 +1431,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/82",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -1469,7 +1450,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/83",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -1488,7 +1469,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/84",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -1507,7 +1488,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/85",
       "page": 6,
       "order": 8,
       "role": "caption",
@@ -1526,7 +1507,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/86",
       "page": 6,
       "order": 9,
       "role": "paragraph",
@@ -1545,7 +1526,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/87",
       "page": 6,
       "order": 10,
       "role": "paragraph",
@@ -1564,7 +1545,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/90",
       "page": 7,
       "order": 1,
       "role": "paragraph",
@@ -1583,7 +1564,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/91",
       "page": 7,
       "order": 2,
       "role": "caption",
@@ -1602,7 +1583,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/92",
       "page": 7,
       "order": 3,
       "role": "paragraph",
@@ -1621,7 +1602,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/93",
       "page": 7,
       "order": 4,
       "role": "paragraph",
@@ -1640,7 +1621,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/94",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -1659,7 +1640,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/95",
       "page": 7,
       "order": 6,
       "role": "caption",
@@ -1678,7 +1659,7 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/96",
       "page": 7,
       "order": 7,
       "role": "paragraph",
@@ -1697,7 +1678,7 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/97",
       "page": 7,
       "order": 8,
       "role": "paragraph",
@@ -1716,7 +1697,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/98",
       "page": 7,
       "order": 9,
       "role": "heading",
@@ -1735,7 +1716,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/99",
       "page": 7,
       "order": 10,
       "role": "paragraph",
@@ -1754,7 +1735,7 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/100",
       "page": 7,
       "order": 11,
       "role": "caption",
@@ -1773,7 +1754,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/101",
       "page": 7,
       "order": 12,
       "role": "paragraph",
@@ -1792,7 +1773,7 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/102",
       "page": 7,
       "order": 13,
       "role": "paragraph",
@@ -1811,7 +1792,7 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/105",
       "page": 8,
       "order": 1,
       "role": "caption",
@@ -1830,7 +1811,7 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/106",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -1849,7 +1830,7 @@
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/108",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -1868,7 +1849,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/110",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -1887,7 +1868,7 @@
       }
     },
     {
-      "id": "#/texts/112",
+      "id": "#/texts/111",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -1906,7 +1887,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/113",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -1925,7 +1906,7 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/114",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -1944,7 +1925,7 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/115",
       "page": 8,
       "order": 8,
       "role": "paragraph",
@@ -1963,7 +1944,7 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/117",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -1982,7 +1963,7 @@
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/118",
       "page": 8,
       "order": 10,
       "role": "paragraph",
@@ -2001,7 +1982,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/121",
       "page": 9,
       "order": 1,
       "role": "caption",
@@ -2020,7 +2001,7 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/122",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -2039,7 +2020,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/123",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -2058,7 +2039,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/124",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -2077,7 +2058,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/125",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -2096,7 +2077,7 @@
       }
     },
     {
-      "id": "#/texts/127",
+      "id": "#/texts/126",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -2115,7 +2096,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/127",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -2134,7 +2115,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/128",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -2153,7 +2134,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/129",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -2172,7 +2153,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/130",
       "page": 9,
       "order": 10,
       "role": "paragraph",
@@ -2191,7 +2172,7 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/131",
       "page": 9,
       "order": 11,
       "role": "paragraph",
@@ -2210,7 +2191,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/132",
       "page": 9,
       "order": 12,
       "role": "paragraph",
@@ -2229,7 +2210,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/133",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -2248,7 +2229,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/134",
       "page": 9,
       "order": 14,
       "role": "paragraph",
@@ -2267,7 +2248,7 @@
       }
     },
     {
-      "id": "#/texts/136",
+      "id": "#/texts/135",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -2286,7 +2267,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/136",
       "page": 9,
       "order": 16,
       "role": "paragraph",
@@ -2305,7 +2286,7 @@
       }
     },
     {
-      "id": "#/texts/138",
+      "id": "#/texts/137",
       "page": 9,
       "order": 17,
       "role": "paragraph",
@@ -2324,18 +2305,18 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/138",
       "page": 9,
       "order": 18,
       "role": "paragraph",
       "text": "2.0000",
       "bbox": {
-        "x0": 349.68,
-        "y0": 123.76,
-        "x1": 365.69,
-        "y1": 127.84,
-        "width": 16.01,
-        "height": 4.08
+        "x0": 349.69,
+        "y0": 123.81,
+        "x1": 365.68,
+        "y1": 127.8,
+        "width": 15.99,
+        "height": 3.99
       },
       "meta": {
         "docling_label": "text",
@@ -2343,7 +2324,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/139",
       "page": 9,
       "order": 19,
       "role": "paragraph",
@@ -2362,7 +2343,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/140",
       "page": 9,
       "order": 20,
       "role": "paragraph",
@@ -2381,7 +2362,7 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/141",
       "page": 9,
       "order": 21,
       "role": "paragraph",
@@ -2400,7 +2381,7 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/142",
       "page": 9,
       "order": 22,
       "role": "paragraph",
@@ -2419,7 +2400,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/143",
       "page": 9,
       "order": 23,
       "role": "paragraph",
@@ -2438,7 +2419,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/144",
       "page": 9,
       "order": 24,
       "role": "caption",
@@ -2457,7 +2438,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/145",
       "page": 9,
       "order": 25,
       "role": "heading",
@@ -2476,7 +2457,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/146",
       "page": 9,
       "order": 26,
       "role": "paragraph",
@@ -2495,7 +2476,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/147",
       "page": 9,
       "order": 27,
       "role": "heading",
@@ -2514,7 +2495,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/148",
       "page": 9,
       "order": 28,
       "role": "paragraph",
@@ -2533,7 +2514,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/149",
       "page": 9,
       "order": 29,
       "role": "paragraph",
@@ -2552,7 +2533,7 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/150",
       "page": 9,
       "order": 30,
       "role": "paragraph",
@@ -2571,7 +2552,7 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/154",
       "page": 10,
       "order": 1,
       "role": "paragraph",
@@ -2590,7 +2571,7 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/155",
       "page": 10,
       "order": 2,
       "role": "caption",
@@ -2609,7 +2590,7 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/156",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -2628,7 +2609,7 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/157",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -2647,7 +2628,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/158",
       "page": 10,
       "order": 5,
       "role": "paragraph",
@@ -2666,7 +2647,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/159",
       "page": 10,
       "order": 6,
       "role": "paragraph",
@@ -2685,7 +2666,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/163",
       "page": 10,
       "order": 7,
       "role": "paragraph",
@@ -2704,7 +2685,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/164",
       "page": 10,
       "order": 8,
       "role": "paragraph",
@@ -2723,7 +2704,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/166",
       "page": 10,
       "order": 9,
       "role": "paragraph",
@@ -2742,7 +2723,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/168",
       "page": 10,
       "order": 10,
       "role": "paragraph",
@@ -2761,7 +2742,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/169",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -2780,7 +2761,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/171",
       "page": 10,
       "order": 12,
       "role": "paragraph",
@@ -2799,7 +2780,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/173",
       "page": 10,
       "order": 13,
       "role": "paragraph",
@@ -2818,7 +2799,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/174",
       "page": 10,
       "order": 14,
       "role": "heading",
@@ -2837,7 +2818,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/175",
       "page": 10,
       "order": 15,
       "role": "paragraph",
@@ -2856,7 +2837,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/176",
       "page": 10,
       "order": 16,
       "role": "paragraph",
@@ -2875,7 +2856,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/179",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -2894,7 +2875,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/180",
       "page": 11,
       "order": 2,
       "role": "heading",
@@ -2913,7 +2894,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/181",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -2932,7 +2913,7 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/183",
       "page": 11,
       "order": 4,
       "role": "paragraph",
@@ -2951,7 +2932,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/185",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -2970,7 +2951,7 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/187",
       "page": 11,
       "order": 6,
       "role": "paragraph",
@@ -2989,7 +2970,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/188",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -3008,7 +2989,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/190",
       "page": 11,
       "order": 8,
       "role": "paragraph",
@@ -3027,7 +3008,7 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/191",
       "page": 11,
       "order": 9,
       "role": "heading",
@@ -3046,7 +3027,7 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/192",
       "page": 11,
       "order": 10,
       "role": "paragraph",
@@ -3065,7 +3046,7 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/194",
       "page": 11,
       "order": 11,
       "role": "paragraph",
@@ -3084,7 +3065,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/198",
       "page": 12,
       "order": 1,
       "role": "paragraph",
@@ -3103,7 +3084,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/200",
       "page": 12,
       "order": 2,
       "role": "paragraph",
@@ -3122,7 +3103,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/202",
       "page": 12,
       "order": 3,
       "role": "paragraph",
@@ -3141,7 +3122,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/204",
       "page": 12,
       "order": 4,
       "role": "paragraph",
@@ -3160,7 +3141,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/206",
       "page": 12,
       "order": 5,
       "role": "paragraph",
@@ -3179,7 +3160,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/207",
       "page": 12,
       "order": 6,
       "role": "paragraph",
@@ -3198,7 +3179,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/208",
       "page": 12,
       "order": 7,
       "role": "paragraph",
@@ -3217,7 +3198,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/210",
       "page": 12,
       "order": 8,
       "role": "paragraph",
@@ -3236,7 +3217,7 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/212",
       "page": 12,
       "order": 9,
       "role": "paragraph",
@@ -3255,7 +3236,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/214",
       "page": 12,
       "order": 10,
       "role": "paragraph",
@@ -3274,7 +3255,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/216",
       "page": 12,
       "order": 11,
       "role": "paragraph",
@@ -3293,7 +3274,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/219",
       "page": 12,
       "order": 12,
       "role": "paragraph",
@@ -3312,7 +3293,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/220",
       "page": 12,
       "order": 13,
       "role": "paragraph",
@@ -3331,7 +3312,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/221",
       "page": 12,
       "order": 14,
       "role": "paragraph",
@@ -3350,7 +3331,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/224",
       "page": 13,
       "order": 1,
       "role": "caption",
@@ -3369,7 +3350,7 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/225",
       "page": 13,
       "order": 2,
       "role": "paragraph",
@@ -3388,7 +3369,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/226",
       "page": 13,
       "order": 3,
       "role": "paragraph",
@@ -3407,18 +3388,18 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/227",
       "page": 13,
       "order": 4,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
         "x0": 89.73,
-        "y0": 204.04,
+        "y0": 203.3,
         "x1": 100.02,
         "y1": 212.11,
         "width": 10.29,
-        "height": 8.07
+        "height": 8.81
       },
       "meta": {
         "docling_label": "text",
@@ -3426,7 +3407,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/228",
       "page": 13,
       "order": 5,
       "role": "paragraph",
@@ -3445,7 +3426,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/229",
       "page": 13,
       "order": 6,
       "role": "paragraph",
@@ -3464,7 +3445,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/230",
       "page": 13,
       "order": 7,
       "role": "paragraph",
@@ -3483,7 +3464,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/231",
       "page": 13,
       "order": 8,
       "role": "paragraph",
@@ -3502,28 +3483,9 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/232",
       "page": 13,
       "order": 9,
-      "role": "paragraph",
-      "text": "0.004",
-      "bbox": {
-        "x0": 483.2,
-        "y0": 146.79,
-        "x1": 491.29,
-        "y1": 150.46,
-        "width": 8.09,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.004"
-      }
-    },
-    {
-      "id": "#/texts/234",
-      "page": 13,
-      "order": 10,
       "role": "paragraph",
       "text": "0.00+00",
       "bbox": {
@@ -3540,9 +3502,9 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/233",
       "page": 13,
-      "order": 11,
+      "order": 10,
       "role": "caption",
       "text": "Table 1 Fitting errors, spline space and MCAD model features for the experiments in Figs. 15, 16, 17, 18",
       "bbox": {
@@ -3559,9 +3521,9 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/234",
       "page": 13,
-      "order": 12,
+      "order": 11,
       "role": "caption",
       "text": "Table 2 Comprehensive elapsed time for each step of the procedure",
       "bbox": {
@@ -3578,9 +3540,9 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/235",
       "page": 13,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "color. f error color plot representing the u1D4C1 2 distance between the point cloud and the resulting surface. g -h reflection lines around two EVs of different valences pointed out in ( e )",
       "bbox": {
@@ -3597,9 +3559,9 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/236",
       "page": 13,
-      "order": 14,
+      "order": 13,
       "role": "heading",
       "text": "6 Experimentation",
       "bbox": {
@@ -3616,9 +3578,9 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/237",
       "page": 13,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Here we report the numerical experiments to demonstrate the quality of our construction. First we present the least squares fitting procedure to reconstruct a G 1 surface from an MCAD point cloud, then we will use the previous result as the geometric domain over which to solve the heat and biharmonic equations using geometrically smooth basis functions in the IGA environment. The proposed functions will lead to optimal convergence rates in isogeometric analysis (equal to 5 for an elliptic problem in the energy norm) when inserting knots uniformly inside each patch. We emphasize that the basis functions are biquintic polynomials on every patch of",
       "bbox": {
@@ -3635,7 +3597,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/240",
       "page": 14,
       "order": 1,
       "role": "caption",
@@ -3654,7 +3616,7 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/241",
       "page": 14,
       "order": 2,
       "role": "paragraph",
@@ -3673,7 +3635,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/242",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -3692,18 +3654,18 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/243",
       "page": 14,
       "order": 4,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
         "x0": 81.64,
-        "y0": 181.14,
+        "y0": 181.87,
         "x1": 91.93,
         "y1": 187.74,
         "width": 10.29,
-        "height": 6.6
+        "height": 5.87
       },
       "meta": {
         "docling_label": "text",
@@ -3711,7 +3673,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/244",
       "page": 14,
       "order": 5,
       "role": "paragraph",
@@ -3730,7 +3692,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/245",
       "page": 14,
       "order": 6,
       "role": "paragraph",
@@ -3749,7 +3711,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/246",
       "page": 14,
       "order": 7,
       "role": "paragraph",
@@ -3768,7 +3730,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/247",
       "page": 14,
       "order": 8,
       "role": "paragraph",
@@ -3787,7 +3749,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/248",
       "page": 14,
       "order": 9,
       "role": "paragraph",
@@ -3806,7 +3768,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/249",
       "page": 14,
       "order": 10,
       "role": "paragraph",
@@ -3825,7 +3787,7 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/250",
       "page": 14,
       "order": 11,
       "role": "paragraph",
@@ -3844,7 +3806,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/251",
       "page": 14,
       "order": 12,
       "role": "paragraph",
@@ -3863,7 +3825,7 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/252",
       "page": 14,
       "order": 13,
       "role": "paragraph",
@@ -3882,7 +3844,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/253",
       "page": 14,
       "order": 14,
       "role": "paragraph",
@@ -3901,7 +3863,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/254",
       "page": 14,
       "order": 15,
       "role": "paragraph",
@@ -3920,7 +3882,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/255",
       "page": 14,
       "order": 16,
       "role": "paragraph",
@@ -3939,7 +3901,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/256",
       "page": 14,
       "order": 17,
       "role": "paragraph",
@@ -3958,7 +3920,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/257",
       "page": 14,
       "order": 18,
       "role": "paragraph",
@@ -3977,18 +3939,18 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/258",
       "page": 14,
       "order": 19,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
         "x0": 130.91,
-        "y0": 124.79,
-        "x1": 140.47,
+        "y0": 124.06,
+        "x1": 141.21,
         "y1": 132.13,
-        "width": 9.56,
-        "height": 7.34
+        "width": 10.3,
+        "height": 8.07
       },
       "meta": {
         "docling_label": "text",
@@ -3996,7 +3958,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/259",
       "page": 14,
       "order": 20,
       "role": "paragraph",
@@ -4015,7 +3977,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/260",
       "page": 14,
       "order": 21,
       "role": "paragraph",
@@ -4034,7 +3996,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/261",
       "page": 14,
       "order": 22,
       "role": "paragraph",
@@ -4053,7 +4015,7 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/262",
       "page": 14,
       "order": 23,
       "role": "paragraph",
@@ -4072,7 +4034,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/263",
       "page": 14,
       "order": 24,
       "role": "paragraph",
@@ -4091,7 +4053,7 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/264",
       "page": 14,
       "order": 25,
       "role": "paragraph",
@@ -4099,9 +4061,9 @@
       "bbox": {
         "x0": 366.26,
         "y0": 180.58,
-        "x1": 380.97,
+        "x1": 380.24,
         "y1": 184.98,
-        "width": 14.71,
+        "width": 13.98,
         "height": 4.4
       },
       "meta": {
@@ -4110,7 +4072,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/265",
       "page": 14,
       "order": 26,
       "role": "paragraph",
@@ -4129,7 +4091,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/266",
       "page": 14,
       "order": 27,
       "role": "paragraph",
@@ -4148,7 +4110,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/267",
       "page": 14,
       "order": 28,
       "role": "paragraph",
@@ -4167,7 +4129,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/268",
       "page": 14,
       "order": 29,
       "role": "paragraph",
@@ -4186,7 +4148,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/269",
       "page": 14,
       "order": 30,
       "role": "caption",
@@ -4205,7 +4167,7 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/270",
       "page": 14,
       "order": 31,
       "role": "paragraph",
@@ -4224,7 +4186,7 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/271",
       "page": 14,
       "order": 32,
       "role": "paragraph",
@@ -4243,7 +4205,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/274",
       "page": 15,
       "order": 1,
       "role": "paragraph",
@@ -4262,7 +4224,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/275",
       "page": 15,
       "order": 2,
       "role": "paragraph",
@@ -4270,9 +4232,9 @@
       "bbox": {
         "x0": 159.6,
         "y0": 20.58,
-        "x1": 164.01,
+        "x1": 164.74,
         "y1": 24.25,
-        "width": 4.41,
+        "width": 5.14,
         "height": 3.67
       },
       "meta": {
@@ -4281,7 +4243,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/276",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -4300,7 +4262,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/277",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -4319,7 +4281,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/278",
       "page": 15,
       "order": 5,
       "role": "paragraph",
@@ -4338,7 +4300,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/279",
       "page": 15,
       "order": 6,
       "role": "paragraph",
@@ -4357,7 +4319,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/280",
       "page": 15,
       "order": 7,
       "role": "paragraph",
@@ -4376,7 +4338,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/281",
       "page": 15,
       "order": 8,
       "role": "paragraph",
@@ -4395,7 +4357,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/282",
       "page": 15,
       "order": 9,
       "role": "paragraph",
@@ -4414,7 +4376,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/283",
       "page": 15,
       "order": 10,
       "role": "paragraph",
@@ -4433,7 +4395,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/284",
       "page": 15,
       "order": 11,
       "role": "caption",
@@ -4452,170 +4414,18 @@
       }
     },
     {
-      "id": "#/texts/287",
+      "id": "#/texts/285",
       "page": 15,
       "order": 12,
-      "role": "paragraph",
-      "text": "(e)",
-      "bbox": {
-        "x0": 233.14,
-        "y0": 209.3,
-        "x1": 243.44,
-        "y1": 215.91,
-        "width": 10.3,
-        "height": 6.61
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "(e)"
-      }
-    },
-    {
-      "id": "#/texts/288",
-      "page": 15,
-      "order": 13,
-      "role": "paragraph",
-      "text": "2.90-03",
-      "bbox": {
-        "x0": 345.67,
-        "y0": 145.41,
-        "x1": 359.64,
-        "y1": 149.82,
-        "width": 13.97,
-        "height": 4.41
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "2.90-03"
-      }
-    },
-    {
-      "id": "#/texts/289",
-      "page": 15,
-      "order": 14,
-      "role": "paragraph",
-      "text": "0.0025",
-      "bbox": {
-        "x0": 347.87,
-        "y0": 157.16,
-        "x1": 359.64,
-        "y1": 160.83,
-        "width": 11.77,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.0025"
-      }
-    },
-    {
-      "id": "#/texts/290",
-      "page": 15,
-      "order": 15,
-      "role": "paragraph",
-      "text": "0.002 -",
-      "bbox": {
-        "x0": 349.35,
-        "y0": 169.64,
-        "x1": 361.11,
-        "y1": 173.42,
-        "width": 11.76,
-        "height": 3.78
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.002 -"
-      }
-    },
-    {
-      "id": "#/texts/291",
-      "page": 15,
-      "order": 16,
-      "role": "paragraph",
-      "text": "0.0015",
-      "bbox": {
-        "x0": 347.88,
-        "y0": 182.13,
-        "x1": 362.58,
-        "y1": 186.54,
-        "width": 14.7,
-        "height": 4.41
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.0015"
-      }
-    },
-    {
-      "id": "#/texts/292",
-      "page": 15,
-      "order": 17,
-      "role": "paragraph",
-      "text": "0.001",
-      "bbox": {
-        "x0": 349.35,
-        "y0": 195.35,
-        "x1": 359.64,
-        "y1": 199.02,
-        "width": 10.29,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.001"
-      }
-    },
-    {
-      "id": "#/texts/293",
-      "page": 15,
-      "order": 18,
-      "role": "paragraph",
-      "text": "0.0005",
-      "bbox": {
-        "x0": 347.88,
-        "y0": 208.57,
-        "x1": 360.38,
-        "y1": 212.24,
-        "width": 12.5,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.0005"
-      }
-    },
-    {
-      "id": "#/texts/294",
-      "page": 15,
-      "order": 19,
-      "role": "paragraph",
-      "text": "0.0e+00",
-      "bbox": {
-        "x0": 344.93,
-        "y0": 221.05,
-        "x1": 359.64,
-        "y1": 224.72,
-        "width": 14.71,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0.0e+00"
-      }
-    },
-    {
-      "id": "#/texts/295",
-      "page": 15,
-      "order": 20,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
         "x0": 388.33,
         "y0": 66.83,
         "x1": 398.62,
-        "y1": 74.91,
+        "y1": 74.18,
         "width": 10.29,
-        "height": 8.08
+        "height": 7.35
       },
       "meta": {
         "docling_label": "text",
@@ -4623,9 +4433,9 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/286",
       "page": 15,
-      "order": 21,
+      "order": 13,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
@@ -4642,9 +4452,142 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/287",
       "page": 15,
-      "order": 22,
+      "order": 14,
+      "role": "paragraph",
+      "text": "2.90-03",
+      "bbox": {
+        "x0": 345.67,
+        "y0": 145.41,
+        "x1": 359.64,
+        "y1": 149.82,
+        "width": 13.97,
+        "height": 4.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2.90-03"
+      }
+    },
+    {
+      "id": "#/texts/288",
+      "page": 15,
+      "order": 15,
+      "role": "paragraph",
+      "text": "0.0025",
+      "bbox": {
+        "x0": 347.87,
+        "y0": 157.16,
+        "x1": 359.64,
+        "y1": 160.83,
+        "width": 11.77,
+        "height": 3.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.0025"
+      }
+    },
+    {
+      "id": "#/texts/289",
+      "page": 15,
+      "order": 16,
+      "role": "paragraph",
+      "text": "0.002 -",
+      "bbox": {
+        "x0": 349.35,
+        "y0": 169.64,
+        "x1": 361.11,
+        "y1": 173.42,
+        "width": 11.76,
+        "height": 3.78
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.002 -"
+      }
+    },
+    {
+      "id": "#/texts/290",
+      "page": 15,
+      "order": 17,
+      "role": "paragraph",
+      "text": "0.0015",
+      "bbox": {
+        "x0": 347.88,
+        "y0": 182.13,
+        "x1": 362.58,
+        "y1": 186.54,
+        "width": 14.7,
+        "height": 4.41
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.0015"
+      }
+    },
+    {
+      "id": "#/texts/291",
+      "page": 15,
+      "order": 18,
+      "role": "paragraph",
+      "text": "0.001",
+      "bbox": {
+        "x0": 349.35,
+        "y0": 195.35,
+        "x1": 359.64,
+        "y1": 199.02,
+        "width": 10.29,
+        "height": 3.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.001"
+      }
+    },
+    {
+      "id": "#/texts/292",
+      "page": 15,
+      "order": 19,
+      "role": "paragraph",
+      "text": "0.0005",
+      "bbox": {
+        "x0": 347.88,
+        "y0": 208.57,
+        "x1": 360.38,
+        "y1": 212.24,
+        "width": 12.5,
+        "height": 3.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.0005"
+      }
+    },
+    {
+      "id": "#/texts/293",
+      "page": 15,
+      "order": 20,
+      "role": "paragraph",
+      "text": "0.0e+00",
+      "bbox": {
+        "x0": 344.93,
+        "y0": 221.05,
+        "x1": 359.64,
+        "y1": 224.72,
+        "width": 14.71,
+        "height": 3.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0.0e+00"
+      }
+    },
+    {
+      "id": "#/texts/294",
+      "page": 15,
+      "order": 21,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -4661,9 +4604,9 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/295",
       "page": 15,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "0.0e+00",
       "bbox": {
@@ -4680,9 +4623,9 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/296",
       "page": 15,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "8.0e+01",
       "bbox": {
@@ -4699,28 +4642,9 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/297",
       "page": 15,
-      "order": 25,
-      "role": "paragraph",
-      "text": "70",
-      "bbox": {
-        "x0": 232.41,
-        "y0": 115.38,
-        "x1": 237.56,
-        "y1": 119.05,
-        "width": 5.15,
-        "height": 3.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "70"
-      }
-    },
-    {
-      "id": "#/texts/301",
-      "page": 15,
-      "order": 26,
+      "order": 24,
       "role": "paragraph",
       "text": "60",
       "bbox": {
@@ -4737,9 +4661,9 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/298",
       "page": 15,
-      "order": 27,
+      "order": 25,
       "role": "paragraph",
       "text": "50",
       "bbox": {
@@ -4756,9 +4680,28 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/299",
       "page": 15,
-      "order": 28,
+      "order": 26,
+      "role": "paragraph",
+      "text": "40",
+      "bbox": {
+        "x0": 233.14,
+        "y0": 143.3,
+        "x1": 237.56,
+        "y1": 146.97,
+        "width": 4.42,
+        "height": 3.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "40"
+      }
+    },
+    {
+      "id": "#/texts/300",
+      "page": 15,
+      "order": 27,
       "role": "paragraph",
       "text": "30",
       "bbox": {
@@ -4775,9 +4718,9 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/301",
       "page": 15,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "20",
       "bbox": {
@@ -4794,9 +4737,9 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/302",
       "page": 15,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -4813,9 +4756,9 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/303",
       "page": 15,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
       "text": "0.0e+00",
       "bbox": {
@@ -4832,9 +4775,9 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/304",
       "page": 15,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -4851,9 +4794,9 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/305",
       "page": 15,
-      "order": 33,
+      "order": 32,
       "role": "paragraph",
       "text": "0.0e+00",
       "bbox": {
@@ -4870,9 +4813,9 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/306",
       "page": 15,
-      "order": 34,
+      "order": 33,
       "role": "paragraph",
       "text": "8.0e+01",
       "bbox": {
@@ -4889,18 +4832,18 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/307",
       "page": 15,
-      "order": 35,
+      "order": 34,
       "role": "paragraph",
       "text": "70",
       "bbox": {
-        "x0": 396.42,
+        "x0": 395.68,
         "y0": 114.64,
         "x1": 400.83,
-        "y1": 119.05,
-        "width": 4.41,
-        "height": 4.41
+        "y1": 119.78,
+        "width": 5.15,
+        "height": 5.14
       },
       "meta": {
         "docling_label": "text",
@@ -4908,9 +4851,9 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/308",
       "page": 15,
-      "order": 36,
+      "order": 35,
       "role": "paragraph",
       "text": "60",
       "bbox": {
@@ -4927,9 +4870,9 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/309",
       "page": 15,
-      "order": 37,
+      "order": 36,
       "role": "paragraph",
       "text": "50",
       "bbox": {
@@ -4946,9 +4889,9 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/310",
       "page": 15,
-      "order": 38,
+      "order": 37,
       "role": "paragraph",
       "text": "40",
       "bbox": {
@@ -4965,9 +4908,9 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/311",
       "page": 15,
-      "order": 39,
+      "order": 38,
       "role": "paragraph",
       "text": "30",
       "bbox": {
@@ -4984,9 +4927,9 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/312",
       "page": 15,
-      "order": 40,
+      "order": 39,
       "role": "paragraph",
       "text": "0.0e+00",
       "bbox": {
@@ -5003,9 +4946,9 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/313",
       "page": 15,
-      "order": 41,
+      "order": 40,
       "role": "paragraph",
       "text": "30",
       "bbox": {
@@ -5022,9 +4965,9 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/314",
       "page": 15,
-      "order": 42,
+      "order": 41,
       "role": "paragraph",
       "text": "20",
       "bbox": {
@@ -5041,9 +4984,9 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/315",
       "page": 15,
-      "order": 43,
+      "order": 42,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -5060,9 +5003,9 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/316",
       "page": 15,
-      "order": 44,
+      "order": 43,
       "role": "paragraph",
       "text": "0.0e+00",
       "bbox": {
@@ -5079,9 +5022,9 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/317",
       "page": 15,
-      "order": 45,
+      "order": 44,
       "role": "caption",
       "text": "Fig. 19 Solution for the biharmonic equation on the Car model at the instants from T = 0, 0.1, 0.2, 0.3 and T = 0.4 minutes",
       "bbox": {
@@ -5098,9 +5041,9 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/318",
       "page": 15,
-      "order": 46,
+      "order": 45,
       "role": "paragraph",
       "text": "The CAD models used for the numerical investigation are standard target examples for this type of problem. These are: Car model, 1 Dream Chaser shuttle model, 2 KCS hull model 3 and the NASA CRM. 4 These are standard open domain models that originate from industrial cases.",
       "bbox": {
@@ -5117,9 +5060,9 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/319",
       "page": 15,
-      "order": 47,
+      "order": 46,
       "role": "paragraph",
       "text": "All of them present special features and sharp edges which are a notable characteristic to be recovered in the",
       "bbox": {
@@ -5136,9 +5079,9 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/320",
       "page": 15,
-      "order": 48,
+      "order": 47,
       "role": "footnote",
       "text": "1 https: drexel. edu",
       "bbox": {
@@ -5155,9 +5098,9 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/321",
       "page": 15,
-      "order": 49,
+      "order": 48,
       "role": "footnote",
       "text": "2 https: www. sierr aspace. com dream- chaser- space plane",
       "bbox": {
@@ -5174,9 +5117,9 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/322",
       "page": 15,
-      "order": 50,
+      "order": 49,
       "role": "footnote",
       "text": "3 http: www. simma n2008. dk kcs conta iner. html",
       "bbox": {
@@ -5193,9 +5136,9 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/323",
       "page": 15,
-      "order": 51,
+      "order": 50,
       "role": "footnote",
       "text": "4 https: commo nrese archm odel. larc. nasa. gov",
       "bbox": {
@@ -5212,9 +5155,9 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/324",
       "page": 15,
-      "order": 52,
+      "order": 51,
       "role": "paragraph",
       "text": "fitted surface. The samplings of the original models are obtained following the procedure explained in Sect. 3. In order to obtain a precise result, the target point clouds contain large amounts of data. For the same reason, the control cage obtained from the MCAD (Sect. 2) presents a significant quantity of faces. The models are represented in their original scale, i.e., 1 unit = 1 m. All of the numerical experiments have been performed on three different machines: the first has been devoted to the control cage generation and the MCAD sampling using the software CADfix [61] (C); the second ran the bases computation using Julia language (J) and consequent spline fitting using the G+Smo library",
       "bbox": {
@@ -5231,28 +5174,9 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/327",
       "page": 16,
       "order": 1,
-      "role": "paragraph",
-      "text": "420+01",
-      "bbox": {
-        "x0": 158.86,
-        "y0": 11.74,
-        "x1": 166.22,
-        "y1": 13.94,
-        "width": 7.36,
-        "height": 2.2
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "420+01"
-      }
-    },
-    {
-      "id": "#/texts/331",
-      "page": 16,
-      "order": 2,
       "role": "paragraph",
       "text": "2.0e+02",
       "bbox": {
@@ -5269,9 +5193,9 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/328",
       "page": 16,
-      "order": 3,
+      "order": 2,
       "role": "paragraph",
       "text": "180",
       "bbox": {
@@ -5288,7 +5212,26 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/329",
+      "page": 16,
+      "order": 3,
+      "role": "paragraph",
+      "text": "20.",
+      "bbox": {
+        "x0": 163.27,
+        "y0": 28.6,
+        "x1": 167.69,
+        "y1": 33.0,
+        "width": 4.42,
+        "height": 4.4
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "20."
+      }
+    },
+    {
+      "id": "#/texts/330",
       "page": 16,
       "order": 4,
       "role": "paragraph",
@@ -5307,7 +5250,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/331",
       "page": 16,
       "order": 5,
       "role": "paragraph",
@@ -5326,7 +5269,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/332",
       "page": 16,
       "order": 6,
       "role": "paragraph",
@@ -5345,7 +5288,7 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/333",
       "page": 16,
       "order": 7,
       "role": "paragraph",
@@ -5364,18 +5307,18 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/334",
       "page": 16,
       "order": 8,
       "role": "paragraph",
       "text": "2.0e+02",
       "bbox": {
-        "x0": 311.09,
-        "y0": 11.71,
-        "x1": 326.56,
-        "y1": 16.22,
-        "width": 15.47,
-        "height": 4.51
+        "x0": 311.07,
+        "y0": 11.66,
+        "x1": 326.58,
+        "y1": 16.28,
+        "width": 15.51,
+        "height": 4.62
       },
       "meta": {
         "docling_label": "text",
@@ -5383,7 +5326,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/335",
       "page": 16,
       "order": 9,
       "role": "paragraph",
@@ -5402,7 +5345,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/336",
       "page": 16,
       "order": 10,
       "role": "paragraph",
@@ -5421,17 +5364,17 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/337",
       "page": 16,
       "order": 11,
       "role": "paragraph",
       "text": "140",
       "bbox": {
-        "x0": 319.19,
+        "x0": 319.93,
         "y0": 37.48,
         "x1": 327.28,
         "y1": 41.89,
-        "width": 8.09,
+        "width": 7.35,
         "height": 4.41
       },
       "meta": {
@@ -5440,7 +5383,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/338",
       "page": 16,
       "order": 12,
       "role": "paragraph",
@@ -5459,18 +5402,18 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/339",
       "page": 16,
       "order": 13,
       "role": "paragraph",
       "text": "100",
       "bbox": {
-        "x0": 319.19,
+        "x0": 318.46,
         "y0": 55.12,
         "x1": 327.28,
-        "y1": 58.8,
-        "width": 8.09,
-        "height": 3.68
+        "y1": 59.53,
+        "width": 8.82,
+        "height": 4.41
       },
       "meta": {
         "docling_label": "text",
@@ -5478,7 +5421,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/340",
       "page": 16,
       "order": 14,
       "role": "paragraph",
@@ -5497,7 +5440,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/341",
       "page": 16,
       "order": 15,
       "role": "paragraph",
@@ -5516,7 +5459,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/342",
       "page": 16,
       "order": 16,
       "role": "paragraph",
@@ -5535,7 +5478,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/343",
       "page": 16,
       "order": 17,
       "role": "paragraph",
@@ -5554,7 +5497,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/344",
       "page": 16,
       "order": 18,
       "role": "paragraph",
@@ -5573,7 +5516,7 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/345",
       "page": 16,
       "order": 19,
       "role": "paragraph",
@@ -5592,7 +5535,7 @@
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/346",
       "page": 16,
       "order": 20,
       "role": "paragraph",
@@ -5611,7 +5554,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/347",
       "page": 16,
       "order": 21,
       "role": "paragraph",
@@ -5630,7 +5573,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/348",
       "page": 16,
       "order": 22,
       "role": "paragraph",
@@ -5649,7 +5592,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/349",
       "page": 16,
       "order": 23,
       "role": "paragraph",
@@ -5668,7 +5611,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/350",
       "page": 16,
       "order": 24,
       "role": "paragraph",
@@ -5687,7 +5630,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/351",
       "page": 16,
       "order": 25,
       "role": "paragraph",
@@ -5706,7 +5649,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/352",
       "page": 16,
       "order": 26,
       "role": "paragraph",
@@ -5725,7 +5668,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/353",
       "page": 16,
       "order": 27,
       "role": "paragraph",
@@ -5744,7 +5687,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/354",
       "page": 16,
       "order": 28,
       "role": "paragraph",
@@ -5763,7 +5706,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/355",
       "page": 16,
       "order": 29,
       "role": "paragraph",
@@ -5782,7 +5725,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/356",
       "page": 16,
       "order": 30,
       "role": "paragraph",
@@ -5801,7 +5744,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/357",
       "page": 16,
       "order": 31,
       "role": "paragraph",
@@ -5820,7 +5763,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/358",
       "page": 16,
       "order": 32,
       "role": "paragraph",
@@ -5839,7 +5782,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/359",
       "page": 16,
       "order": 33,
       "role": "paragraph",
@@ -5858,7 +5801,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/360",
       "page": 16,
       "order": 34,
       "role": "paragraph",
@@ -5877,7 +5820,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/361",
       "page": 16,
       "order": 35,
       "role": "paragraph",
@@ -5896,7 +5839,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/362",
       "page": 16,
       "order": 36,
       "role": "paragraph",
@@ -5915,7 +5858,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/363",
       "page": 16,
       "order": 37,
       "role": "paragraph",
@@ -5934,7 +5877,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/364",
       "page": 16,
       "order": 38,
       "role": "paragraph",
@@ -5953,7 +5896,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/365",
       "page": 16,
       "order": 39,
       "role": "paragraph",
@@ -5972,7 +5915,7 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/366",
       "page": 16,
       "order": 40,
       "role": "paragraph",
@@ -5991,7 +5934,7 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/367",
       "page": 16,
       "order": 41,
       "role": "paragraph",
@@ -6010,7 +5953,7 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/368",
       "page": 16,
       "order": 42,
       "role": "paragraph",
@@ -6029,7 +5972,7 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/369",
       "page": 16,
       "order": 43,
       "role": "paragraph",
@@ -6048,7 +5991,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/370",
       "page": 16,
       "order": 44,
       "role": "paragraph",
@@ -6067,7 +6010,7 @@
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/371",
       "page": 16,
       "order": 45,
       "role": "paragraph",
@@ -6086,7 +6029,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/372",
       "page": 16,
       "order": 46,
       "role": "paragraph",
@@ -6105,7 +6048,7 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/373",
       "page": 16,
       "order": 47,
       "role": "paragraph",
@@ -6124,7 +6067,7 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/374",
       "page": 16,
       "order": 48,
       "role": "paragraph",
@@ -6143,7 +6086,7 @@
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/375",
       "page": 16,
       "order": 49,
       "role": "paragraph",
@@ -6162,7 +6105,7 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/376",
       "page": 16,
       "order": 50,
       "role": "paragraph",
@@ -6181,7 +6124,7 @@
       }
     },
     {
-      "id": "#/texts/380",
+      "id": "#/texts/377",
       "page": 16,
       "order": 51,
       "role": "paragraph",
@@ -6200,7 +6143,7 @@
       }
     },
     {
-      "id": "#/texts/381",
+      "id": "#/texts/378",
       "page": 16,
       "order": 52,
       "role": "paragraph",
@@ -6219,7 +6162,7 @@
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/379",
       "page": 16,
       "order": 53,
       "role": "paragraph",
@@ -6238,7 +6181,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/380",
       "page": 16,
       "order": 54,
       "role": "paragraph",
@@ -6257,7 +6200,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/381",
       "page": 16,
       "order": 55,
       "role": "caption",
@@ -6276,7 +6219,7 @@
       }
     },
     {
-      "id": "#/texts/385",
+      "id": "#/texts/382",
       "page": 16,
       "order": 56,
       "role": "caption",
@@ -6295,7 +6238,7 @@
       }
     },
     {
-      "id": "#/texts/386",
+      "id": "#/texts/383",
       "page": 16,
       "order": 57,
       "role": "caption",
@@ -6314,7 +6257,7 @@
       }
     },
     {
-      "id": "#/texts/387",
+      "id": "#/texts/384",
       "page": 16,
       "order": 58,
       "role": "paragraph",
@@ -6333,7 +6276,7 @@
       }
     },
     {
-      "id": "#/texts/388",
+      "id": "#/texts/385",
       "page": 16,
       "order": 59,
       "role": "paragraph",
@@ -6352,7 +6295,7 @@
       }
     },
     {
-      "id": "#/texts/389",
+      "id": "#/texts/386",
       "page": 16,
       "order": 60,
       "role": "paragraph",
@@ -6371,7 +6314,7 @@
       }
     },
     {
-      "id": "#/texts/392",
+      "id": "#/texts/389",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -6390,7 +6333,7 @@
       }
     },
     {
-      "id": "#/texts/393",
+      "id": "#/texts/390",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -6409,7 +6352,7 @@
       }
     },
     {
-      "id": "#/texts/394",
+      "id": "#/texts/391",
       "page": 17,
       "order": 3,
       "role": "paragraph",
@@ -6428,7 +6371,7 @@
       }
     },
     {
-      "id": "#/texts/395",
+      "id": "#/texts/392",
       "page": 17,
       "order": 4,
       "role": "heading",
@@ -6447,7 +6390,7 @@
       }
     },
     {
-      "id": "#/texts/396",
+      "id": "#/texts/393",
       "page": 17,
       "order": 5,
       "role": "paragraph",
@@ -6466,7 +6409,7 @@
       }
     },
     {
-      "id": "#/texts/397",
+      "id": "#/texts/394",
       "page": 17,
       "order": 6,
       "role": "paragraph",
@@ -6485,7 +6428,7 @@
       }
     },
     {
-      "id": "#/texts/398",
+      "id": "#/texts/395",
       "page": 17,
       "order": 7,
       "role": "paragraph",
@@ -6504,7 +6447,7 @@
       }
     },
     {
-      "id": "#/texts/399",
+      "id": "#/texts/396",
       "page": 17,
       "order": 8,
       "role": "paragraph",
@@ -6523,7 +6466,7 @@
       }
     },
     {
-      "id": "#/texts/402",
+      "id": "#/texts/399",
       "page": 18,
       "order": 1,
       "role": "paragraph",
@@ -6542,7 +6485,7 @@
       }
     },
     {
-      "id": "#/texts/403",
+      "id": "#/texts/400",
       "page": 18,
       "order": 2,
       "role": "paragraph",
@@ -6561,7 +6504,7 @@
       }
     },
     {
-      "id": "#/texts/404",
+      "id": "#/texts/401",
       "page": 18,
       "order": 3,
       "role": "paragraph",
@@ -6580,7 +6523,7 @@
       }
     },
     {
-      "id": "#/texts/405",
+      "id": "#/texts/402",
       "page": 18,
       "order": 4,
       "role": "heading",
@@ -6599,7 +6542,7 @@
       }
     },
     {
-      "id": "#/texts/406",
+      "id": "#/texts/403",
       "page": 18,
       "order": 5,
       "role": "list_item",
@@ -6618,7 +6561,7 @@
       }
     },
     {
-      "id": "#/texts/407",
+      "id": "#/texts/404",
       "page": 18,
       "order": 6,
       "role": "list_item",
@@ -6637,7 +6580,7 @@
       }
     },
     {
-      "id": "#/texts/408",
+      "id": "#/texts/405",
       "page": 18,
       "order": 7,
       "role": "list_item",
@@ -6656,7 +6599,7 @@
       }
     },
     {
-      "id": "#/texts/409",
+      "id": "#/texts/406",
       "page": 18,
       "order": 8,
       "role": "list_item",
@@ -6675,7 +6618,7 @@
       }
     },
     {
-      "id": "#/texts/410",
+      "id": "#/texts/407",
       "page": 18,
       "order": 9,
       "role": "list_item",
@@ -6694,7 +6637,7 @@
       }
     },
     {
-      "id": "#/texts/411",
+      "id": "#/texts/408",
       "page": 18,
       "order": 10,
       "role": "list_item",
@@ -6713,7 +6656,7 @@
       }
     },
     {
-      "id": "#/texts/412",
+      "id": "#/texts/409",
       "page": 18,
       "order": 11,
       "role": "list_item",
@@ -6732,7 +6675,7 @@
       }
     },
     {
-      "id": "#/texts/413",
+      "id": "#/texts/410",
       "page": 18,
       "order": 12,
       "role": "list_item",
@@ -6751,7 +6694,7 @@
       }
     },
     {
-      "id": "#/texts/414",
+      "id": "#/texts/411",
       "page": 18,
       "order": 13,
       "role": "list_item",
@@ -6770,7 +6713,7 @@
       }
     },
     {
-      "id": "#/texts/415",
+      "id": "#/texts/412",
       "page": 18,
       "order": 14,
       "role": "list_item",
@@ -6789,7 +6732,7 @@
       }
     },
     {
-      "id": "#/texts/416",
+      "id": "#/texts/413",
       "page": 18,
       "order": 15,
       "role": "list_item",
@@ -6808,7 +6751,7 @@
       }
     },
     {
-      "id": "#/texts/417",
+      "id": "#/texts/414",
       "page": 18,
       "order": 16,
       "role": "list_item",
@@ -6827,7 +6770,7 @@
       }
     },
     {
-      "id": "#/texts/418",
+      "id": "#/texts/415",
       "page": 18,
       "order": 17,
       "role": "list_item",
@@ -6846,7 +6789,7 @@
       }
     },
     {
-      "id": "#/texts/419",
+      "id": "#/texts/416",
       "page": 18,
       "order": 18,
       "role": "list_item",
@@ -6865,7 +6808,7 @@
       }
     },
     {
-      "id": "#/texts/420",
+      "id": "#/texts/417",
       "page": 18,
       "order": 19,
       "role": "list_item",
@@ -6884,7 +6827,7 @@
       }
     },
     {
-      "id": "#/texts/421",
+      "id": "#/texts/418",
       "page": 18,
       "order": 20,
       "role": "list_item",
@@ -6903,7 +6846,7 @@
       }
     },
     {
-      "id": "#/texts/422",
+      "id": "#/texts/419",
       "page": 18,
       "order": 21,
       "role": "list_item",
@@ -6922,7 +6865,7 @@
       }
     },
     {
-      "id": "#/texts/423",
+      "id": "#/texts/420",
       "page": 18,
       "order": 22,
       "role": "list_item",
@@ -6941,7 +6884,7 @@
       }
     },
     {
-      "id": "#/texts/424",
+      "id": "#/texts/421",
       "page": 18,
       "order": 23,
       "role": "list_item",
@@ -6960,7 +6903,7 @@
       }
     },
     {
-      "id": "#/texts/425",
+      "id": "#/texts/422",
       "page": 18,
       "order": 24,
       "role": "list_item",
@@ -6979,7 +6922,7 @@
       }
     },
     {
-      "id": "#/texts/426",
+      "id": "#/texts/423",
       "page": 18,
       "order": 25,
       "role": "list_item",
@@ -6998,7 +6941,7 @@
       }
     },
     {
-      "id": "#/texts/427",
+      "id": "#/texts/424",
       "page": 18,
       "order": 26,
       "role": "list_item",
@@ -7017,7 +6960,7 @@
       }
     },
     {
-      "id": "#/texts/428",
+      "id": "#/texts/425",
       "page": 18,
       "order": 27,
       "role": "list_item",
@@ -7036,7 +6979,7 @@
       }
     },
     {
-      "id": "#/texts/429",
+      "id": "#/texts/426",
       "page": 18,
       "order": 28,
       "role": "list_item",
@@ -7055,7 +6998,7 @@
       }
     },
     {
-      "id": "#/texts/430",
+      "id": "#/texts/427",
       "page": 18,
       "order": 29,
       "role": "list_item",
@@ -7074,7 +7017,7 @@
       }
     },
     {
-      "id": "#/texts/431",
+      "id": "#/texts/428",
       "page": 18,
       "order": 30,
       "role": "list_item",
@@ -7093,7 +7036,7 @@
       }
     },
     {
-      "id": "#/texts/432",
+      "id": "#/texts/429",
       "page": 18,
       "order": 31,
       "role": "list_item",
@@ -7112,7 +7055,7 @@
       }
     },
     {
-      "id": "#/texts/433",
+      "id": "#/texts/430",
       "page": 18,
       "order": 32,
       "role": "list_item",
@@ -7131,7 +7074,7 @@
       }
     },
     {
-      "id": "#/texts/434",
+      "id": "#/texts/431",
       "page": 18,
       "order": 33,
       "role": "list_item",
@@ -7150,7 +7093,7 @@
       }
     },
     {
-      "id": "#/texts/435",
+      "id": "#/texts/432",
       "page": 18,
       "order": 34,
       "role": "list_item",
@@ -7169,7 +7112,7 @@
       }
     },
     {
-      "id": "#/texts/436",
+      "id": "#/texts/433",
       "page": 18,
       "order": 35,
       "role": "list_item",
@@ -7188,7 +7131,7 @@
       }
     },
     {
-      "id": "#/texts/437",
+      "id": "#/texts/434",
       "page": 18,
       "order": 36,
       "role": "list_item",
@@ -7207,7 +7150,7 @@
       }
     },
     {
-      "id": "#/texts/440",
+      "id": "#/texts/437",
       "page": 19,
       "order": 1,
       "role": "list_item",
@@ -7226,7 +7169,7 @@
       }
     },
     {
-      "id": "#/texts/441",
+      "id": "#/texts/438",
       "page": 19,
       "order": 2,
       "role": "list_item",
@@ -7245,7 +7188,7 @@
       }
     },
     {
-      "id": "#/texts/442",
+      "id": "#/texts/439",
       "page": 19,
       "order": 3,
       "role": "list_item",
@@ -7264,7 +7207,7 @@
       }
     },
     {
-      "id": "#/texts/443",
+      "id": "#/texts/440",
       "page": 19,
       "order": 4,
       "role": "list_item",
@@ -7283,7 +7226,7 @@
       }
     },
     {
-      "id": "#/texts/444",
+      "id": "#/texts/441",
       "page": 19,
       "order": 5,
       "role": "list_item",
@@ -7302,7 +7245,7 @@
       }
     },
     {
-      "id": "#/texts/445",
+      "id": "#/texts/442",
       "page": 19,
       "order": 6,
       "role": "list_item",
@@ -7321,7 +7264,7 @@
       }
     },
     {
-      "id": "#/texts/446",
+      "id": "#/texts/443",
       "page": 19,
       "order": 7,
       "role": "list_item",
@@ -7340,7 +7283,7 @@
       }
     },
     {
-      "id": "#/texts/447",
+      "id": "#/texts/444",
       "page": 19,
       "order": 8,
       "role": "list_item",
@@ -7359,7 +7302,7 @@
       }
     },
     {
-      "id": "#/texts/448",
+      "id": "#/texts/445",
       "page": 19,
       "order": 9,
       "role": "list_item",
@@ -7378,7 +7321,7 @@
       }
     },
     {
-      "id": "#/texts/449",
+      "id": "#/texts/446",
       "page": 19,
       "order": 10,
       "role": "list_item",
@@ -7397,7 +7340,7 @@
       }
     },
     {
-      "id": "#/texts/450",
+      "id": "#/texts/447",
       "page": 19,
       "order": 11,
       "role": "list_item",
@@ -7416,7 +7359,7 @@
       }
     },
     {
-      "id": "#/texts/451",
+      "id": "#/texts/448",
       "page": 19,
       "order": 12,
       "role": "list_item",
@@ -7435,7 +7378,7 @@
       }
     },
     {
-      "id": "#/texts/452",
+      "id": "#/texts/449",
       "page": 19,
       "order": 13,
       "role": "list_item",
@@ -7454,7 +7397,7 @@
       }
     },
     {
-      "id": "#/texts/453",
+      "id": "#/texts/450",
       "page": 19,
       "order": 14,
       "role": "list_item",
@@ -7473,7 +7416,7 @@
       }
     },
     {
-      "id": "#/texts/454",
+      "id": "#/texts/451",
       "page": 19,
       "order": 15,
       "role": "list_item",
@@ -7492,7 +7435,7 @@
       }
     },
     {
-      "id": "#/texts/455",
+      "id": "#/texts/452",
       "page": 19,
       "order": 16,
       "role": "list_item",
@@ -7511,7 +7454,7 @@
       }
     },
     {
-      "id": "#/texts/456",
+      "id": "#/texts/453",
       "page": 19,
       "order": 17,
       "role": "list_item",
@@ -7530,7 +7473,7 @@
       }
     },
     {
-      "id": "#/texts/457",
+      "id": "#/texts/454",
       "page": 19,
       "order": 18,
       "role": "list_item",
@@ -7549,7 +7492,7 @@
       }
     },
     {
-      "id": "#/texts/458",
+      "id": "#/texts/455",
       "page": 19,
       "order": 19,
       "role": "list_item",
@@ -7568,7 +7511,7 @@
       }
     },
     {
-      "id": "#/texts/459",
+      "id": "#/texts/456",
       "page": 19,
       "order": 20,
       "role": "list_item",
@@ -7587,7 +7530,7 @@
       }
     },
     {
-      "id": "#/texts/460",
+      "id": "#/texts/457",
       "page": 19,
       "order": 21,
       "role": "list_item",
@@ -7606,7 +7549,7 @@
       }
     },
     {
-      "id": "#/texts/461",
+      "id": "#/texts/458",
       "page": 19,
       "order": 22,
       "role": "list_item",
@@ -7625,7 +7568,7 @@
       }
     },
     {
-      "id": "#/texts/462",
+      "id": "#/texts/459",
       "page": 19,
       "order": 23,
       "role": "list_item",
@@ -7644,7 +7587,7 @@
       }
     },
     {
-      "id": "#/texts/463",
+      "id": "#/texts/460",
       "page": 19,
       "order": 24,
       "role": "list_item",
@@ -7663,7 +7606,7 @@
       }
     },
     {
-      "id": "#/texts/464",
+      "id": "#/texts/461",
       "page": 19,
       "order": 25,
       "role": "list_item",
@@ -7682,7 +7625,7 @@
       }
     },
     {
-      "id": "#/texts/465",
+      "id": "#/texts/462",
       "page": 19,
       "order": 26,
       "role": "list_item",
@@ -7701,7 +7644,7 @@
       }
     },
     {
-      "id": "#/texts/466",
+      "id": "#/texts/463",
       "page": 19,
       "order": 27,
       "role": "list_item",
@@ -7720,7 +7663,7 @@
       }
     },
     {
-      "id": "#/texts/467",
+      "id": "#/texts/464",
       "page": 19,
       "order": 28,
       "role": "list_item",
@@ -7739,7 +7682,7 @@
       }
     },
     {
-      "id": "#/texts/468",
+      "id": "#/texts/465",
       "page": 19,
       "order": 29,
       "role": "list_item",
@@ -7758,7 +7701,7 @@
       }
     },
     {
-      "id": "#/texts/469",
+      "id": "#/texts/466",
       "page": 19,
       "order": 30,
       "role": "list_item",
@@ -7777,7 +7720,7 @@
       }
     },
     {
-      "id": "#/texts/470",
+      "id": "#/texts/467",
       "page": 19,
       "order": 31,
       "role": "list_item",
@@ -7796,7 +7739,7 @@
       }
     },
     {
-      "id": "#/texts/471",
+      "id": "#/texts/468",
       "page": 19,
       "order": 32,
       "role": "paragraph",

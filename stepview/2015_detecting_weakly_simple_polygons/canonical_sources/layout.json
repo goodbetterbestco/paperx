@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2015_detecting_weakly_simple_polygons/2015_detecting_weakly_simple_polygons.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2015_detecting_weakly_simple_polygons/2015_detecting_weakly_simple_polygons.pdf",
   "page_count": 25,
   "page_sizes_pt": [
     {
@@ -495,7 +495,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 284.11,
@@ -514,7 +514,7 @@
       "id": "#/texts/21",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A closed curve in the plane is weakly simple if it is the limit (in the Fréchet metric) of a sequence of simple closed curves. We describe an algorithm to determine whether a closed walk of length n in a simple plane graph is weakly simple in O ( n log n ) time, improving an earlier O ( n 3 ) -time algorithm of Cortese et al. [ Discrete Math. 2009 ] . As an immediate corollary, we obtain the first efficient algorithm to determine whether an arbitrary n -vertex polygon is weakly simple; our algorithm runs in O ( n 2 log n ) time. We also describe algorithms that detect weak simplicity in O ( n log n ) time for two interesting classes of polygons. Finally, we discuss subtle errors in several previously published definitions of weak simplicity.",
       "bbox": {
         "x0": 98.86,
@@ -24298,5 +24298,32 @@
         "docling_orig": "Finally, perhaps the most immediate open question is how to improve the O ( n 2 log n ) running time of 2 our algorithm for arbitrary polygons with both spurs and forks. A direct generalization of bar expansion 3 seems unlikely; Lemma C.3 does not generalize to polygons with spurs. Nevertheless, we conjecture that 4 the quadratic blowup from subdividing edges at forks can be avoided, and that the running time can be 5 improved to O ( n log n ) . 6"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling"
+  }
 }

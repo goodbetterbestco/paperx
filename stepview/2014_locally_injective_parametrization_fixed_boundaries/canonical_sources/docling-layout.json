@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2014_locally_injective_parametrization_fixed_boundaries/2014_locally_injective_parametrization_fixed_boundaries.pdf",
+  "pdf_path": "stepview/2014_locally_injective_parametrization_fixed_boundaries/2014_locally_injective_parametrization_fixed_boundaries.pdf",
   "page_count": 12,
   "page_sizes_pt": [
     {
@@ -69,7 +69,7 @@
       "id": "#/texts/0",
       "page": 1,
       "order": 1,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 54.0,
@@ -88,7 +88,7 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We present an algorithm for mapping a triangle mesh, which is homeomorphic to a disk, to a planar domain with arbitrary fixed boundaries. The algorithm is guaranteed to produce a globally bijective map when the boundary is fixed to a shape that does not self-intersect. Obtaining a one-to-one map is of paramount importance for many graphics applications such as texture mapping. However, for other applications, such as quadrangulation, remeshing, and planar deformations, global bijectively may be unnecessarily constraining and requires significant increase on map distortion. For that reason, our algorithm allows the fixed boundary to intersect itself, and is guaranteed to produce a map that is injective locally (if such a map exists). We also extend the basic ideas of the algorithm to support the computation of discrete approximation for extremal quasiconformal maps. The algorithm is conceptually simple and fast. We demonstrate the superior robustness of our algorithm in various settings and configurations in which state-of-the-art algorithms fail to produce injective maps.",
       "bbox": {
         "x0": 54.0,
@@ -107,7 +107,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "CR Categories: I.3.5 [Computer Graphics]: Computational Geometry and Object Modeling-Geometric algorithms, languages, and systems",
       "bbox": {
         "x0": 54.0,
@@ -126,7 +126,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: parametrization, conformal mapping, bijective mapping, quasiconformal, deformation, quadrangulation, remeshing",
       "bbox": {
         "x0": 54.0,
@@ -145,7 +145,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Links: DL PDF",
       "bbox": {
         "x0": 54.0,
@@ -164,7 +164,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 54.0,
@@ -183,7 +183,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computing a surface-to-plane map is one of the most fundamental tasks in geometry processing. Many computer graphics and geometry processing applications rely heavily on solving the mapping problem. Among the most important applications are: texture mapping, image and shape deformation-and-animation, finding correspondence between shapes for comparison and analysis, remeshing, mesh improvement-and-fairing, morphing, and image retargeting.",
       "bbox": {
         "x0": 54.0,
@@ -202,7 +202,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Given a triangle mesh, the goal is to find a piecewise-linear map (parametrization) to a planar domain, satisfying different types of boundary constraints. Among the typical ones are position, orientation (alignment) and curvature constraints. Depending on the application, different properties of the map are important: smoothness, amount of metric or angle distortion, and the ability to handle general boundary conditions. One of the most important properties that is often required but seldom guaranteed is injectivity.",
       "bbox": {
         "x0": 54.0,
@@ -221,7 +221,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In the smooth setting, a map with strictly positive Jacobian is locally injective. If in addition, the image of the boundary does not intersect itself, the map will be a global bijection. In the discrete setting, a piecewise-linear map of a triangle mesh will be a global bijection if two conditions hold: (1) the orientations of all the triangles in the",
       "bbox": {
         "x0": 54.0,
@@ -240,7 +240,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Locally Injective Parametrization with Arbitrary Fixed Boundaries",
       "bbox": {
         "x0": 102.03,
@@ -259,7 +259,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Ofir Weber Bar Ilan University, Israel",
       "bbox": {
         "x0": 179.01,
@@ -278,7 +278,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Denis Zorin New York University, USA",
       "bbox": {
         "x0": 324.15,
@@ -297,7 +297,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "image are positive (i.e. no flipped triangles) and (2) the boundary does not intersect itself. However, in contrast to the smooth setting, (1) alone is not sufficient for local injectivity. A counter example is shown in Figure 1a. A piecewise-linear map is locally injective only if the sum of (unsigned) triangle angles around each internal vertex is precisely 2 p .",
       "bbox": {
         "x0": 317.95,
@@ -335,7 +335,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "(a)",
       "bbox": {
         "x0": 364.97,
@@ -354,7 +354,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "(b)",
       "bbox": {
         "x0": 496.67,
@@ -373,7 +373,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Even in the smooth setting, a locally injective map does not always exist, if the boundary is allowed to intersect itself. For example, there is no smooth (or discrete) locally injective map that can satisfy the boundary configuration of Figure 1a. A self-intersecting curve is called self-overlapping , if there exists a locally injective map with this curve as its boundary (more details in Section 3.1). Another difficulty that distinguishes the discrete setting from the smooth one is illustrated in Figure 1b. Here, the boundary is a simple curve, hence, it is obvious that a smooth bijective map exists. However, for this particular coarse discretization, there is only one degree of freedom that corresponds to the position of the center vertex. Regardless of how we choose to set this degree of freedom, at least one of the triangles will have negative orientation, meaning that a discrete injective solution does not exist.",
       "bbox": {
         "x0": 317.96,
@@ -392,7 +392,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Few existing algorithms guarantee global or local injectivity. Most importantly, the classic algorithm of Tutte computes a globally bijective map from a 3-connected mesh to a planar polygon with a convex boundary, and requires only a single linear solve.",
       "bbox": {
         "x0": 317.96,
@@ -411,7 +411,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Several existing algorithms for free-boundary parametrization with no constraints provide local injectivity guarantees, typically conditional on convergence (we discuss these algorithms in greater detail in Section 2). Fixing the entire boundary position makes the problem more difficult.",
       "bbox": {
         "x0": 317.96,
@@ -430,7 +430,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We propose an algorithm for mesh parametrization problems with arbitrary fi xed boundaries, which guarantees that the resulting map is locally injective. The only restriction is that the boundary will be a self-overlapping polygon (otherwise, a solution does not even exist in the smooth setting). To handle connectivity problems similar to Figure 1b we relax the original problem by allowing mesh refinement. The amount of refinement needed by our algorithm is bounded; although the worst-case bound is quadratic in the number of mesh vertices, the observed number of added vertices is very small. It is important to note that even though the algorithm may change the connectivity of the input mesh, the actual shape of the mesh is never altered.",
       "bbox": {
         "x0": 317.96,
@@ -449,7 +449,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The main idea of our algorithm is quite simple. First, we construct a triangulation (denoted as target mesh) of the user prescribed fixed boundary polygon. Then, we compute two globally bijective maps of the source and target meshes into an intermediate convex domain. Finally, the source-to-target map is obtained by composing the first map with the inverse of the second one.",
       "bbox": {
         "x0": 317.96,
@@ -3359,12 +3359,12 @@
       "role": "paragraph",
       "text": "2.32 sec",
       "bbox": {
-        "x0": 99.94,
-        "y0": -0.27,
+        "x0": 99.95,
+        "y0": -0.23,
         "x1": 125.39,
-        "y1": 6.25,
-        "width": 25.45,
-        "height": 6.52
+        "y1": 6.22,
+        "width": 25.44,
+        "height": 6.45
       },
       "meta": {
         "docling_label": "text",
@@ -6738,6 +6738,25 @@
       "id": "#/texts/351",
       "page": 8,
       "order": 2,
+      "role": "paragraph",
+      "text": "ATTOI Ionn",
+      "bbox": {
+        "x0": 166.45,
+        "y0": -0.0,
+        "x1": 211.06,
+        "y1": 2.66,
+        "width": 44.61,
+        "height": 2.66
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "ATTOI Ionn"
+      }
+    },
+    {
+      "id": "#/texts/352",
+      "page": 8,
+      "order": 3,
       "role": "caption",
       "text": "Figure 16: Parametrization of the hand and bull models with sphere topology. (left) [Springborn et al. 2008]. (right) Our dual harmonic map. We fix the boundary of the dual harmonic maps based on the result of [Springborn et al. 2008], such that both methods have identical boundary. The discrete conformal maps and the dual harmonic maps are remarkably similar and possess low amount of conformal distortion. No refinement was needed for the dual harmonic maps.",
       "bbox": {
@@ -6754,9 +6773,9 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/353",
       "page": 8,
-      "order": 3,
+      "order": 4,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -6773,9 +6792,9 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/354",
       "page": 8,
-      "order": 4,
+      "order": 5,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -6792,9 +6811,9 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/355",
       "page": 8,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -6811,9 +6830,9 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/356",
       "page": 8,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -6830,9 +6849,9 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/357",
       "page": 8,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "[Springborn et al. 2008]",
       "bbox": {
@@ -6849,9 +6868,9 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/358",
       "page": 8,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "dual harmonic",
       "bbox": {
@@ -6868,9 +6887,9 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/359",
       "page": 8,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "S'0'",
       "bbox": {
@@ -6887,9 +6906,9 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/360",
       "page": 8,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "cian matrix can be computed from the edge lengths only, so one can compute harmonic maps on M glyph[lscript] .",
       "bbox": {
@@ -6906,9 +6925,9 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/361",
       "page": 8,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "If T is locally injective, then glyph[lscript] is a flat metric, and by solving for a dual harmonic map h on M glyph[lscript] with boundary conditions h ( v ) = T ( v ) for vertices v ∈ ¶ M we obtain the map T itself.",
       "bbox": {
@@ -6925,9 +6944,9 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/362",
       "page": 8,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "Indeed, the Laplacian matrix L glyph[lscript] we construct on M , is identical to the matrix LT we would obtain from the mesh T ( M ) , thus, the values of the first harmonic map in a dual harmonic map satisfy the same equations whether the domain is M glyph[lscript] or T ( M ) . If on T ( M ) we specify identity boundary conditions hT ( v ) = v , and solve for a dual harmonic map hT : T ( M ) → R 2 , then, by the reproduction property, the whole of hT is identity. The values of h with the same boundary conditions, i.e. h ( v ) = T ( v ) for any v ∈ ¶ M glyph[lscript] , and the same intermediate domain, will be the same at vertices of M glyph[lscript] as at corresponding vertices of T ( M ) , i.e. h ( v ) = T ( v ) .",
       "bbox": {
@@ -6944,9 +6963,9 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/363",
       "page": 8,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "Obviously, reproducing an already injective map T is not very useful. However, suppose T has some desired properties but is almost injective, as it is often the case. Then the metric glyph[lscript] is no longer flat (vertices shared by triangles with opposite orientation may have nonzero curvature) and the dual harmonic map h = h [ T ] will be different from T . However one can expect to have only a small difference, between these maps, while h [ T ] is guaranteed to be injective",
       "bbox": {
@@ -6963,9 +6982,9 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/364",
       "page": 8,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "(in contrast to T ). The nonlinear operator P : T → h [ T ] can be viewed as a projection from the space of all maps T : M → R 2 with self-overlapping boundary, to the space of locally injective maps.",
       "bbox": {
@@ -6982,9 +7001,9 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/365",
       "page": 8,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "Figure 17 shows the result of our algorithm with a metric obtained from running the Mixed-Integer (MI) algorithm [Bommes et al. 2009] with sharp features alignment. The parametrization of MI contained flipped triangles around two of the cones, even after running many iterations of the stiffening procedure (as described in MI). The mesh is cut into a topological disk where the image of the boundary forms a weakly self-overlapping polygon with prescribed singularities (Section 3.2).",
       "bbox": {
@@ -7001,9 +7020,9 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/366",
       "page": 8,
-      "order": 16,
+      "order": 17,
       "role": "caption",
       "text": "Figure 17: The beetle model mapped using our algorithm to create a seamless global parametrization with alignment to sharp borders. 10 new vertices were added. The weakly self-overlapping polygon and the singularities were created by the Mixed-Integer algorithm.",
       "bbox": {
@@ -7020,9 +7039,9 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/367",
       "page": 8,
-      "order": 17,
+      "order": 18,
       "role": "heading",
       "text": "5.3 Extremal quasiconformal maps",
       "bbox": {
@@ -7039,9 +7058,9 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/368",
       "page": 8,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "We consider one example of ensuring injectivity of a map using the approach of Section 5.2 in greater detail, as in this case, using dual harmonic maps makes it possible to guarantee injectivity simultaneously with improving robustness of a mapping algorithm.",
       "bbox": {
@@ -7058,9 +7077,9 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/369",
       "page": 8,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "A natural extension to the space of conformal maps is the richer space of quasiconformal maps of bounded conformal distortion, i.e., orientation-preserving maps for which at any point x , K ( x ) = s 1 s 2 < K , where s 1 ≥ s 2 are singular values of the Jacobian at x , and K is a constant bound. Unlike conformal maps, these maps allow prescribing all boundary values, for a sufficiently high allowed conformal distortion K . The extremal map f M : M → R 2 is a bounded distortion map with minimal K , for a given boundary conditions.",
       "bbox": {
@@ -7077,9 +7096,9 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/370",
       "page": 8,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "Recently, [Weber et al. 2012] presented an algorithm for computing piecewise linear approximations of extremal quasiconformal maps for genus-zero surfaces with boundaries. The core idea is based on the fact that in all practically relevant cases, the extremal map is unique, and it has an explicit characterization of a Teichm¨ uller map. A Teichm¨ uller map f has a constant distortion K ( x ) = K for all points; it turns out that under weak conditions on the domains, the only such maps are extremal maps.",
       "bbox": {
@@ -7096,9 +7115,9 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/371",
       "page": 8,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "Computing Teichm¨ uller maps. To explain our algorithm we need to introduce more explicit notation for Teichm¨ uller maps. It is convenient to use complex notation: let z ∈ C be the coordinate in the tangent plane of M at a point x (in the discrete case, on a triangle). The values of the map in the plane can also be viewed as complex numbers. Viewing the Jacobian of the map as a pair of complex functions fx ( z ) , fy ( z ) , we can introduce complex derivatives f z = 1 2 ( fx -i fy ) and f ¯ z = 1 2 ( fx + i fy ) . An important quantity associated with a Teichm¨ uller map is a quadratic differential , which is an analytic complex function f ( z ) . The map f satisfies",
       "bbox": {
@@ -7115,7 +7134,7 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/373",
       "page": 9,
       "order": 1,
       "role": "paragraph",
@@ -7134,7 +7153,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/374",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -7153,7 +7172,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/376",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -7172,7 +7191,7 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/377",
       "page": 9,
       "order": 4,
       "role": "list_item",
@@ -7191,7 +7210,7 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/378",
       "page": 9,
       "order": 5,
       "role": "list_item",
@@ -7210,7 +7229,7 @@
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/379",
       "page": 9,
       "order": 6,
       "role": "list_item",
@@ -7229,7 +7248,7 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/380",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -7248,7 +7267,7 @@
       }
     },
     {
-      "id": "#/texts/380",
+      "id": "#/texts/381",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -7267,7 +7286,7 @@
       }
     },
     {
-      "id": "#/texts/381",
+      "id": "#/texts/382",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -7286,7 +7305,7 @@
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/383",
       "page": 9,
       "order": 10,
       "role": "paragraph",
@@ -7305,7 +7324,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/384",
       "page": 9,
       "order": 11,
       "role": "paragraph",
@@ -7324,7 +7343,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/385",
       "page": 9,
       "order": 12,
       "role": "paragraph",
@@ -7343,7 +7362,7 @@
       }
     },
     {
-      "id": "#/texts/385",
+      "id": "#/texts/386",
       "page": 9,
       "order": 13,
       "role": "caption",
@@ -7362,7 +7381,7 @@
       }
     },
     {
-      "id": "#/texts/386",
+      "id": "#/texts/387",
       "page": 9,
       "order": 14,
       "role": "paragraph",
@@ -7381,7 +7400,7 @@
       }
     },
     {
-      "id": "#/texts/387",
+      "id": "#/texts/388",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -7400,7 +7419,7 @@
       }
     },
     {
-      "id": "#/texts/388",
+      "id": "#/texts/389",
       "page": 9,
       "order": 16,
       "role": "paragraph",
@@ -7419,7 +7438,7 @@
       }
     },
     {
-      "id": "#/texts/389",
+      "id": "#/texts/390",
       "page": 9,
       "order": 17,
       "role": "paragraph",
@@ -7438,7 +7457,7 @@
       }
     },
     {
-      "id": "#/texts/390",
+      "id": "#/texts/391",
       "page": 9,
       "order": 18,
       "role": "paragraph",
@@ -7457,7 +7476,7 @@
       }
     },
     {
-      "id": "#/texts/391",
+      "id": "#/texts/392",
       "page": 9,
       "order": 19,
       "role": "paragraph",
@@ -7476,7 +7495,7 @@
       }
     },
     {
-      "id": "#/texts/392",
+      "id": "#/texts/393",
       "page": 9,
       "order": 20,
       "role": "paragraph",
@@ -7495,7 +7514,7 @@
       }
     },
     {
-      "id": "#/texts/393",
+      "id": "#/texts/394",
       "page": 9,
       "order": 21,
       "role": "paragraph",
@@ -7514,7 +7533,7 @@
       }
     },
     {
-      "id": "#/texts/394",
+      "id": "#/texts/395",
       "page": 9,
       "order": 22,
       "role": "paragraph",
@@ -7533,7 +7552,7 @@
       }
     },
     {
-      "id": "#/texts/395",
+      "id": "#/texts/396",
       "page": 9,
       "order": 23,
       "role": "paragraph",
@@ -7552,7 +7571,7 @@
       }
     },
     {
-      "id": "#/texts/396",
+      "id": "#/texts/397",
       "page": 9,
       "order": 24,
       "role": "paragraph",
@@ -7571,7 +7590,7 @@
       }
     },
     {
-      "id": "#/texts/397",
+      "id": "#/texts/398",
       "page": 10,
       "order": 1,
       "role": "paragraph",
@@ -7590,7 +7609,7 @@
       }
     },
     {
-      "id": "#/texts/398",
+      "id": "#/texts/399",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -7609,7 +7628,7 @@
       }
     },
     {
-      "id": "#/texts/399",
+      "id": "#/texts/400",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -7628,7 +7647,7 @@
       }
     },
     {
-      "id": "#/texts/400",
+      "id": "#/texts/401",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -7647,7 +7666,7 @@
       }
     },
     {
-      "id": "#/texts/401",
+      "id": "#/texts/402",
       "page": 10,
       "order": 5,
       "role": "paragraph",
@@ -7666,7 +7685,7 @@
       }
     },
     {
-      "id": "#/texts/402",
+      "id": "#/texts/403",
       "page": 10,
       "order": 6,
       "role": "paragraph",
@@ -7685,7 +7704,7 @@
       }
     },
     {
-      "id": "#/texts/403",
+      "id": "#/texts/404",
       "page": 10,
       "order": 7,
       "role": "paragraph",
@@ -7704,7 +7723,7 @@
       }
     },
     {
-      "id": "#/texts/404",
+      "id": "#/texts/405",
       "page": 10,
       "order": 8,
       "role": "paragraph",
@@ -7723,7 +7742,7 @@
       }
     },
     {
-      "id": "#/texts/405",
+      "id": "#/texts/406",
       "page": 10,
       "order": 9,
       "role": "paragraph",
@@ -7742,7 +7761,7 @@
       }
     },
     {
-      "id": "#/texts/406",
+      "id": "#/texts/407",
       "page": 10,
       "order": 10,
       "role": "paragraph",
@@ -7761,7 +7780,7 @@
       }
     },
     {
-      "id": "#/texts/407",
+      "id": "#/texts/408",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -7780,7 +7799,7 @@
       }
     },
     {
-      "id": "#/texts/408",
+      "id": "#/texts/409",
       "page": 10,
       "order": 12,
       "role": "paragraph",
@@ -7799,26 +7818,26 @@
       }
     },
     {
-      "id": "#/texts/409",
+      "id": "#/texts/410",
       "page": 10,
       "order": 13,
       "role": "paragraph",
-      "text": "0.2",
+      "text": "-0.2",
       "bbox": {
-        "x0": 17.78,
+        "x0": 17.12,
         "y0": 85.33,
         "x1": 25.68,
         "y1": 89.33,
-        "width": 7.9,
+        "width": 8.56,
         "height": 4.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "0.2"
+        "docling_orig": "-0.2"
       }
     },
     {
-      "id": "#/texts/410",
+      "id": "#/texts/411",
       "page": 10,
       "order": 14,
       "role": "paragraph",
@@ -7837,7 +7856,7 @@
       }
     },
     {
-      "id": "#/texts/411",
+      "id": "#/texts/412",
       "page": 10,
       "order": 15,
       "role": "paragraph",
@@ -7856,7 +7875,7 @@
       }
     },
     {
-      "id": "#/texts/412",
+      "id": "#/texts/413",
       "page": 10,
       "order": 16,
       "role": "paragraph",
@@ -7875,7 +7894,7 @@
       }
     },
     {
-      "id": "#/texts/413",
+      "id": "#/texts/414",
       "page": 10,
       "order": 17,
       "role": "paragraph",
@@ -7894,7 +7913,7 @@
       }
     },
     {
-      "id": "#/texts/414",
+      "id": "#/texts/415",
       "page": 10,
       "order": 18,
       "role": "paragraph",
@@ -7913,7 +7932,7 @@
       }
     },
     {
-      "id": "#/texts/415",
+      "id": "#/texts/416",
       "page": 10,
       "order": 19,
       "role": "caption",
@@ -7932,7 +7951,7 @@
       }
     },
     {
-      "id": "#/texts/416",
+      "id": "#/texts/417",
       "page": 10,
       "order": 20,
       "role": "paragraph",
@@ -7951,7 +7970,7 @@
       }
     },
     {
-      "id": "#/texts/417",
+      "id": "#/texts/418",
       "page": 10,
       "order": 21,
       "role": "paragraph",
@@ -7970,7 +7989,7 @@
       }
     },
     {
-      "id": "#/texts/418",
+      "id": "#/texts/419",
       "page": 10,
       "order": 22,
       "role": "paragraph",
@@ -7989,7 +8008,7 @@
       }
     },
     {
-      "id": "#/texts/419",
+      "id": "#/texts/420",
       "page": 10,
       "order": 23,
       "role": "paragraph",
@@ -8008,7 +8027,7 @@
       }
     },
     {
-      "id": "#/texts/420",
+      "id": "#/texts/421",
       "page": 10,
       "order": 24,
       "role": "paragraph",
@@ -8027,7 +8046,7 @@
       }
     },
     {
-      "id": "#/texts/421",
+      "id": "#/texts/422",
       "page": 10,
       "order": 25,
       "role": "paragraph",
@@ -8046,7 +8065,7 @@
       }
     },
     {
-      "id": "#/texts/422",
+      "id": "#/texts/423",
       "page": 10,
       "order": 26,
       "role": "paragraph",
@@ -8065,7 +8084,7 @@
       }
     },
     {
-      "id": "#/texts/423",
+      "id": "#/texts/424",
       "page": 10,
       "order": 27,
       "role": "paragraph",
@@ -8084,7 +8103,7 @@
       }
     },
     {
-      "id": "#/texts/424",
+      "id": "#/texts/425",
       "page": 10,
       "order": 28,
       "role": "paragraph",
@@ -8103,7 +8122,7 @@
       }
     },
     {
-      "id": "#/texts/425",
+      "id": "#/texts/426",
       "page": 10,
       "order": 29,
       "role": "paragraph",
@@ -8122,7 +8141,7 @@
       }
     },
     {
-      "id": "#/texts/426",
+      "id": "#/texts/427",
       "page": 10,
       "order": 30,
       "role": "paragraph",
@@ -8141,7 +8160,7 @@
       }
     },
     {
-      "id": "#/texts/427",
+      "id": "#/texts/428",
       "page": 10,
       "order": 31,
       "role": "paragraph",
@@ -8160,7 +8179,7 @@
       }
     },
     {
-      "id": "#/texts/428",
+      "id": "#/texts/429",
       "page": 10,
       "order": 32,
       "role": "paragraph",
@@ -8179,7 +8198,7 @@
       }
     },
     {
-      "id": "#/texts/429",
+      "id": "#/texts/430",
       "page": 10,
       "order": 33,
       "role": "paragraph",
@@ -8198,7 +8217,7 @@
       }
     },
     {
-      "id": "#/texts/430",
+      "id": "#/texts/431",
       "page": 10,
       "order": 34,
       "role": "paragraph",
@@ -8217,7 +8236,7 @@
       }
     },
     {
-      "id": "#/texts/431",
+      "id": "#/texts/432",
       "page": 10,
       "order": 35,
       "role": "paragraph",
@@ -8236,7 +8255,7 @@
       }
     },
     {
-      "id": "#/texts/432",
+      "id": "#/texts/433",
       "page": 10,
       "order": 36,
       "role": "paragraph",
@@ -8255,7 +8274,7 @@
       }
     },
     {
-      "id": "#/texts/433",
+      "id": "#/texts/434",
       "page": 10,
       "order": 37,
       "role": "paragraph",
@@ -8274,7 +8293,7 @@
       }
     },
     {
-      "id": "#/texts/434",
+      "id": "#/texts/435",
       "page": 10,
       "order": 38,
       "role": "paragraph",
@@ -8293,7 +8312,7 @@
       }
     },
     {
-      "id": "#/texts/435",
+      "id": "#/texts/436",
       "page": 10,
       "order": 39,
       "role": "paragraph",
@@ -8312,7 +8331,7 @@
       }
     },
     {
-      "id": "#/texts/436",
+      "id": "#/texts/437",
       "page": 10,
       "order": 40,
       "role": "paragraph",
@@ -8331,7 +8350,7 @@
       }
     },
     {
-      "id": "#/texts/437",
+      "id": "#/texts/438",
       "page": 10,
       "order": 41,
       "role": "paragraph",
@@ -8350,7 +8369,7 @@
       }
     },
     {
-      "id": "#/texts/438",
+      "id": "#/texts/439",
       "page": 10,
       "order": 42,
       "role": "paragraph",
@@ -8369,7 +8388,7 @@
       }
     },
     {
-      "id": "#/texts/439",
+      "id": "#/texts/440",
       "page": 10,
       "order": 43,
       "role": "heading",
@@ -8388,7 +8407,7 @@
       }
     },
     {
-      "id": "#/texts/440",
+      "id": "#/texts/441",
       "page": 10,
       "order": 44,
       "role": "paragraph",
@@ -8407,7 +8426,7 @@
       }
     },
     {
-      "id": "#/texts/441",
+      "id": "#/texts/442",
       "page": 10,
       "order": 45,
       "role": "caption",
@@ -8426,7 +8445,7 @@
       }
     },
     {
-      "id": "#/texts/442",
+      "id": "#/texts/443",
       "page": 10,
       "order": 46,
       "role": "paragraph",
@@ -8445,7 +8464,7 @@
       }
     },
     {
-      "id": "#/texts/443",
+      "id": "#/texts/444",
       "page": 10,
       "order": 47,
       "role": "paragraph",
@@ -8464,7 +8483,7 @@
       }
     },
     {
-      "id": "#/texts/444",
+      "id": "#/texts/445",
       "page": 10,
       "order": 48,
       "role": "caption",
@@ -8483,7 +8502,7 @@
       }
     },
     {
-      "id": "#/texts/445",
+      "id": "#/texts/446",
       "page": 10,
       "order": 49,
       "role": "paragraph",
@@ -8502,7 +8521,7 @@
       }
     },
     {
-      "id": "#/texts/446",
+      "id": "#/texts/447",
       "page": 10,
       "order": 50,
       "role": "paragraph",
@@ -8521,7 +8540,7 @@
       }
     },
     {
-      "id": "#/texts/447",
+      "id": "#/texts/448",
       "page": 10,
       "order": 51,
       "role": "paragraph",
@@ -8540,7 +8559,7 @@
       }
     },
     {
-      "id": "#/texts/448",
+      "id": "#/texts/449",
       "page": 10,
       "order": 52,
       "role": "paragraph",
@@ -8559,7 +8578,7 @@
       }
     },
     {
-      "id": "#/texts/449",
+      "id": "#/texts/450",
       "page": 10,
       "order": 53,
       "role": "paragraph",
@@ -8578,7 +8597,7 @@
       }
     },
     {
-      "id": "#/texts/450",
+      "id": "#/texts/451",
       "page": 10,
       "order": 54,
       "role": "paragraph",
@@ -8597,7 +8616,7 @@
       }
     },
     {
-      "id": "#/texts/451",
+      "id": "#/texts/452",
       "page": 10,
       "order": 55,
       "role": "paragraph",
@@ -8616,7 +8635,7 @@
       }
     },
     {
-      "id": "#/texts/452",
+      "id": "#/texts/453",
       "page": 10,
       "order": 56,
       "role": "paragraph",
@@ -8635,7 +8654,7 @@
       }
     },
     {
-      "id": "#/texts/453",
+      "id": "#/texts/454",
       "page": 10,
       "order": 57,
       "role": "paragraph",
@@ -8654,7 +8673,7 @@
       }
     },
     {
-      "id": "#/texts/454",
+      "id": "#/texts/455",
       "page": 10,
       "order": 58,
       "role": "paragraph",
@@ -8673,7 +8692,7 @@
       }
     },
     {
-      "id": "#/texts/455",
+      "id": "#/texts/456",
       "page": 10,
       "order": 59,
       "role": "paragraph",
@@ -8692,7 +8711,7 @@
       }
     },
     {
-      "id": "#/texts/456",
+      "id": "#/texts/457",
       "page": 10,
       "order": 60,
       "role": "paragraph",
@@ -8711,7 +8730,7 @@
       }
     },
     {
-      "id": "#/texts/457",
+      "id": "#/texts/458",
       "page": 10,
       "order": 61,
       "role": "paragraph",
@@ -8730,7 +8749,7 @@
       }
     },
     {
-      "id": "#/texts/458",
+      "id": "#/texts/459",
       "page": 10,
       "order": 62,
       "role": "paragraph",
@@ -8749,7 +8768,7 @@
       }
     },
     {
-      "id": "#/texts/459",
+      "id": "#/texts/460",
       "page": 10,
       "order": 63,
       "role": "paragraph",
@@ -8768,7 +8787,7 @@
       }
     },
     {
-      "id": "#/texts/460",
+      "id": "#/texts/461",
       "page": 10,
       "order": 64,
       "role": "paragraph",
@@ -8787,7 +8806,7 @@
       }
     },
     {
-      "id": "#/texts/461",
+      "id": "#/texts/462",
       "page": 10,
       "order": 65,
       "role": "paragraph",
@@ -8806,7 +8825,7 @@
       }
     },
     {
-      "id": "#/texts/462",
+      "id": "#/texts/463",
       "page": 10,
       "order": 66,
       "role": "paragraph",
@@ -8825,7 +8844,7 @@
       }
     },
     {
-      "id": "#/texts/463",
+      "id": "#/texts/464",
       "page": 10,
       "order": 67,
       "role": "paragraph",
@@ -8844,7 +8863,7 @@
       }
     },
     {
-      "id": "#/texts/464",
+      "id": "#/texts/465",
       "page": 10,
       "order": 68,
       "role": "paragraph",
@@ -8863,7 +8882,7 @@
       }
     },
     {
-      "id": "#/texts/465",
+      "id": "#/texts/466",
       "page": 10,
       "order": 69,
       "role": "paragraph",
@@ -8882,7 +8901,7 @@
       }
     },
     {
-      "id": "#/texts/466",
+      "id": "#/texts/467",
       "page": 10,
       "order": 70,
       "role": "paragraph",
@@ -8901,7 +8920,7 @@
       }
     },
     {
-      "id": "#/texts/467",
+      "id": "#/texts/468",
       "page": 10,
       "order": 71,
       "role": "paragraph",
@@ -8920,7 +8939,7 @@
       }
     },
     {
-      "id": "#/texts/468",
+      "id": "#/texts/469",
       "page": 10,
       "order": 72,
       "role": "paragraph",
@@ -8939,7 +8958,7 @@
       }
     },
     {
-      "id": "#/texts/469",
+      "id": "#/texts/470",
       "page": 10,
       "order": 73,
       "role": "caption",
@@ -8958,7 +8977,7 @@
       }
     },
     {
-      "id": "#/texts/470",
+      "id": "#/texts/471",
       "page": 10,
       "order": 74,
       "role": "paragraph",
@@ -8977,7 +8996,7 @@
       }
     },
     {
-      "id": "#/texts/471",
+      "id": "#/texts/472",
       "page": 10,
       "order": 75,
       "role": "paragraph",
@@ -8996,7 +9015,7 @@
       }
     },
     {
-      "id": "#/texts/472",
+      "id": "#/texts/473",
       "page": 10,
       "order": 76,
       "role": "paragraph",
@@ -9015,7 +9034,7 @@
       }
     },
     {
-      "id": "#/texts/473",
+      "id": "#/texts/474",
       "page": 10,
       "order": 77,
       "role": "paragraph",
@@ -9034,7 +9053,7 @@
       }
     },
     {
-      "id": "#/texts/474",
+      "id": "#/texts/475",
       "page": 10,
       "order": 78,
       "role": "paragraph",
@@ -9053,7 +9072,7 @@
       }
     },
     {
-      "id": "#/texts/475",
+      "id": "#/texts/476",
       "page": 10,
       "order": 79,
       "role": "paragraph",
@@ -9072,7 +9091,7 @@
       }
     },
     {
-      "id": "#/texts/476",
+      "id": "#/texts/477",
       "page": 10,
       "order": 80,
       "role": "heading",
@@ -9091,11 +9110,11 @@
       }
     },
     {
-      "id": "#/texts/477",
+      "id": "#/texts/478",
       "page": 10,
       "order": 81,
       "role": "paragraph",
-      "text": "This research was supported by grant number 2012264 from the United States-Israel Binational Science Foundation (BSF). We source",
+      "text": "This research was supported by grant number 2012264 from the United States-Israel Binational Science Foundation (BSF). We",
       "bbox": {
         "x0": 317.95,
         "y0": 704.5,
@@ -9106,13 +9125,51 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "This research was supported by grant number 2012264 from the United States-Israel Binational Science Foundation (BSF). We source"
+        "docling_orig": "This research was supported by grant number 2012264 from the United States-Israel Binational Science Foundation (BSF). We"
       }
     },
     {
-      "id": "#/texts/478",
+      "id": "#/texts/479",
       "page": 11,
       "order": 1,
+      "role": "paragraph",
+      "text": "000",
+      "bbox": {
+        "x0": 25.9,
+        "y0": 13.98,
+        "x1": 183.46,
+        "y1": 73.11,
+        "width": 157.56,
+        "height": 59.13
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "000"
+      }
+    },
+    {
+      "id": "#/texts/480",
+      "page": 11,
+      "order": 2,
+      "role": "paragraph",
+      "text": "source",
+      "bbox": {
+        "x0": 20.61,
+        "y0": 83.69,
+        "x1": 45.3,
+        "y1": 89.24,
+        "width": 24.69,
+        "height": 5.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "source"
+      }
+    },
+    {
+      "id": "#/texts/481",
+      "page": 11,
+      "order": 3,
       "role": "caption",
       "text": "Figure 22: Image deformation. The thickness of the doughnut is changed by scaling its inner boundary. A single straight cut is made, connecting the inner and outer boundaries. ARAP produced a map with 1,802 flipped triangles out of 12,720. [Xu et al. 2011] produced a bijective map, but the conformal distortion is high and is mostly concentrated near the inner boundary. Our dual harmonic map (Section 5.1) produced a bijective map, with overall low distortion, without any mesh refinement.",
       "bbox": {
@@ -9129,9 +9186,9 @@
       }
     },
     {
-      "id": "#/texts/479",
+      "id": "#/texts/482",
       "page": 11,
-      "order": 2,
+      "order": 4,
       "role": "paragraph",
       "text": "source",
       "bbox": {
@@ -9148,9 +9205,9 @@
       }
     },
     {
-      "id": "#/texts/480",
+      "id": "#/texts/483",
       "page": 11,
-      "order": 3,
+      "order": 5,
       "role": "paragraph",
       "text": "ARAP",
       "bbox": {
@@ -9167,9 +9224,9 @@
       }
     },
     {
-      "id": "#/texts/481",
+      "id": "#/texts/484",
       "page": 11,
-      "order": 4,
+      "order": 6,
       "role": "paragraph",
       "text": "[Xu et al. 2011]",
       "bbox": {
@@ -9186,9 +9243,9 @@
       }
     },
     {
-      "id": "#/texts/482",
+      "id": "#/texts/485",
       "page": 11,
-      "order": 5,
+      "order": 7,
       "role": "paragraph",
       "text": "dual harmonic",
       "bbox": {
@@ -9205,9 +9262,9 @@
       }
     },
     {
-      "id": "#/texts/483",
+      "id": "#/texts/486",
       "page": 11,
-      "order": 6,
+      "order": 8,
       "role": "paragraph",
       "text": "1.0",
       "bbox": {
@@ -9224,9 +9281,9 @@
       }
     },
     {
-      "id": "#/texts/484",
+      "id": "#/texts/487",
       "page": 11,
-      "order": 7,
+      "order": 9,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -9243,9 +9300,9 @@
       }
     },
     {
-      "id": "#/texts/485",
+      "id": "#/texts/488",
       "page": 11,
-      "order": 8,
+      "order": 10,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -9262,9 +9319,9 @@
       }
     },
     {
-      "id": "#/texts/486",
+      "id": "#/texts/489",
       "page": 11,
-      "order": 9,
+      "order": 11,
       "role": "paragraph",
       "text": "1.0",
       "bbox": {
@@ -9281,9 +9338,9 @@
       }
     },
     {
-      "id": "#/texts/487",
+      "id": "#/texts/490",
       "page": 11,
-      "order": 10,
+      "order": 12,
       "role": "paragraph",
       "text": "ARAD",
       "bbox": {
@@ -9300,9 +9357,9 @@
       }
     },
     {
-      "id": "#/texts/488",
+      "id": "#/texts/491",
       "page": 11,
-      "order": 11,
+      "order": 13,
       "role": "paragraph",
       "text": "gratefully acknowledge the support of NVIDIA Corporation with the donation of the Quadro k6000 GPU used for this research.",
       "bbox": {
@@ -9319,9 +9376,9 @@
       }
     },
     {
-      "id": "#/texts/489",
+      "id": "#/texts/492",
       "page": 11,
-      "order": 12,
+      "order": 14,
       "role": "heading",
       "text": "References",
       "bbox": {
@@ -9338,9 +9395,9 @@
       }
     },
     {
-      "id": "#/texts/490",
+      "id": "#/texts/493",
       "page": 11,
-      "order": 13,
+      "order": 15,
       "role": "list_item",
       "text": "AHLFORS, L. 1966. Lectures on quasiconformal mappings , vol. 38. Amer. Mathematical Society.",
       "bbox": {
@@ -9357,9 +9414,9 @@
       }
     },
     {
-      "id": "#/texts/491",
+      "id": "#/texts/494",
       "page": 11,
-      "order": 14,
+      "order": 16,
       "role": "list_item",
       "text": "BEN-CHEN, M., GOTSMAN, C., AND BUNIN, G. 2008. Conformal Flattening by Curvature Prescription and Metric Scaling. In Computer Graphics Forum , vol. 27, Blackwell Synergy, 449458.",
       "bbox": {
@@ -9376,9 +9433,9 @@
       }
     },
     {
-      "id": "#/texts/492",
+      "id": "#/texts/495",
       "page": 11,
-      "order": 15,
+      "order": 17,
       "role": "list_item",
       "text": "BOMMES, D., ZIMMER, H., AND KOBBELT, L. 2009. Mixedinteger quadrangulation. ACM Trans. Graph. 28 , 3, 77.",
       "bbox": {
@@ -9395,9 +9452,9 @@
       }
     },
     {
-      "id": "#/texts/493",
+      "id": "#/texts/496",
       "page": 11,
-      "order": 16,
+      "order": 18,
       "role": "list_item",
       "text": "BOMMES, D., CAMPEN, M., EBKE, H.-C., ALLIEZ, P., KOBBELT, L., ET AL. 2013. Integer-grid maps for reliable quad meshing. ACM Trans. Graph. 32 , 4.",
       "bbox": {
@@ -9414,9 +9471,9 @@
       }
     },
     {
-      "id": "#/texts/494",
+      "id": "#/texts/497",
       "page": 11,
-      "order": 17,
+      "order": 19,
       "role": "list_item",
       "text": "DUREN, P. L., BOLLOBAS, B., FULTON, W., KATOK, A., KIRWAN, F., AND SARNAK, P. 2004. Harmonic mappings in the plane , vol. 156. Cambridge University Press Cambridge.",
       "bbox": {
@@ -9433,9 +9490,9 @@
       }
     },
     {
-      "id": "#/texts/495",
+      "id": "#/texts/498",
       "page": 11,
-      "order": 18,
+      "order": 20,
       "role": "list_item",
       "text": "EBERLY, D. 1998. Triangulation by ear clipping. Geometric Tools, LLC. http: www. geometrictools. com .",
       "bbox": {
@@ -9452,9 +9509,9 @@
       }
     },
     {
-      "id": "#/texts/496",
+      "id": "#/texts/499",
       "page": 11,
-      "order": 19,
+      "order": 21,
       "role": "list_item",
       "text": "FLOATER, M. 1997. Parametrization and smooth approximation of surface triangulations* 1. Computer Aided Geometric Design 14 , 3, 231-250.",
       "bbox": {
@@ -9471,9 +9528,9 @@
       }
     },
     {
-      "id": "#/texts/497",
+      "id": "#/texts/500",
       "page": 11,
-      "order": 20,
+      "order": 22,
       "role": "list_item",
       "text": "FLOATER, M. S. 2003. Mean value coordinates. Computer Aided Geometric Design 20 , 1, 19-27.",
       "bbox": {
@@ -9490,9 +9547,9 @@
       }
     },
     {
-      "id": "#/texts/498",
+      "id": "#/texts/501",
       "page": 11,
-      "order": 21,
+      "order": 23,
       "role": "list_item",
       "text": "GARDINER, F., AND LAKIC, N. 2000. Quasiconformal Teichm¨ uller theory , vol. 76 of Mathematical Surveys and Monographs . American Mathematical Society.",
       "bbox": {
@@ -9509,9 +9566,9 @@
       }
     },
     {
-      "id": "#/texts/499",
+      "id": "#/texts/502",
       "page": 11,
-      "order": 22,
+      "order": 24,
       "role": "list_item",
       "text": "HORMANN, K., AND GREINER, G. 2000. Mips: An efficient global parametrization method. Curve and Surface Design: Saint-Malo 99 , 153.",
       "bbox": {
@@ -9528,9 +9585,9 @@
       }
     },
     {
-      "id": "#/texts/500",
+      "id": "#/texts/503",
       "page": 11,
-      "order": 23,
+      "order": 25,
       "role": "list_item",
       "text": "HORMANN, K., L´ EVY, B., AND SHEFFER, A. 2007. Mesh parameterization: Theory and practice. SIGGRAPH Course Notes .",
       "bbox": {
@@ -9547,9 +9604,9 @@
       }
     },
     {
-      "id": "#/texts/501",
+      "id": "#/texts/504",
       "page": 11,
-      "order": 24,
+      "order": 26,
       "role": "list_item",
       "text": "K¨ ALBERER, F., NIESER, M., AND POLTHIER, K. 2007. QuadCover: Surface Parameterization using Branched Coverings. Computer Graphics Forum 26 , 3, 375-384.",
       "bbox": {
@@ -9566,9 +9623,9 @@
       }
     },
     {
-      "id": "#/texts/502",
+      "id": "#/texts/505",
       "page": 11,
-      "order": 25,
+      "order": 27,
       "role": "list_item",
       "text": "KANAI, T., SUZUKI, H., AND KIMURA, F. 1997. 3d geometric metamorphosis based on harmonic map. pg , 97.",
       "bbox": {
@@ -9585,9 +9642,9 @@
       }
     },
     {
-      "id": "#/texts/503",
+      "id": "#/texts/506",
       "page": 11,
-      "order": 26,
+      "order": 28,
       "role": "list_item",
       "text": "KHAREVYCH, L., SPRINGBORN, B., AND SCHR ¨ ODER, P. 2006. Discrete conformal mappings via circle patterns. ACM Trans. Graph. 25 , 2, 412-438.",
       "bbox": {
@@ -9604,9 +9661,9 @@
       }
     },
     {
-      "id": "#/texts/504",
+      "id": "#/texts/507",
       "page": 11,
-      "order": 27,
+      "order": 29,
       "role": "list_item",
       "text": "L´ EVY, B., PETITJEAN, S., RAY, N., AND MAILLOT, J. 2002. Least squares conformal maps for automatic texture atlas generation. In ACM Transactions on Graphics (TOG) , vol. 21, ACM, 362-371.",
       "bbox": {
@@ -9623,9 +9680,9 @@
       }
     },
     {
-      "id": "#/texts/505",
+      "id": "#/texts/508",
       "page": 11,
-      "order": 28,
+      "order": 30,
       "role": "list_item",
       "text": "LIPMAN, Y., AND FUNKHOUSER, T. 2009. M¨ obius voting for surface correspondence. In ACM Transactions on Graphics (TOG) , vol. 28, ACM, 72.",
       "bbox": {
@@ -9642,9 +9699,9 @@
       }
     },
     {
-      "id": "#/texts/506",
+      "id": "#/texts/509",
       "page": 11,
-      "order": 29,
+      "order": 31,
       "role": "list_item",
       "text": "LIPMAN, Y. 2012. Bounded distortion mapping spaces for triangular meshes. ACM Transactions on Graphics (TOG) 31 , 4, 108.",
       "bbox": {
@@ -9661,9 +9718,9 @@
       }
     },
     {
-      "id": "#/texts/507",
+      "id": "#/texts/510",
       "page": 11,
-      "order": 30,
+      "order": 32,
       "role": "list_item",
       "text": "LIU, L., ZHANG, L., XU, Y., GOTSMAN, C., AND GORTLER, S. 2008. A local global approach to mesh parameterization. In Computer Graphics Forum , vol. 27, Wiley Online Library, 1495-1504.",
       "bbox": {
@@ -9680,9 +9737,9 @@
       }
     },
     {
-      "id": "#/texts/508",
+      "id": "#/texts/511",
       "page": 11,
-      "order": 31,
+      "order": 33,
       "role": "list_item",
       "text": "MARX, M. 1974. Extensions of normal immersions of s 1 into r 2. Transactions of the American Mathematical Society 187 , 309-326.",
       "bbox": {
@@ -9699,9 +9756,9 @@
       }
     },
     {
-      "id": "#/texts/509",
+      "id": "#/texts/512",
       "page": 11,
-      "order": 32,
+      "order": 34,
       "role": "list_item",
       "text": "PINKALL, U., AND POLTHIER, K. 1993. Computing discrete minimal surfaces and their conjugates. Experimental mathematics 2 , 1, 15-36.",
       "bbox": {
@@ -9718,9 +9775,9 @@
       }
     },
     {
-      "id": "#/texts/510",
+      "id": "#/texts/513",
       "page": 11,
-      "order": 33,
+      "order": 35,
       "role": "list_item",
       "text": "SCHNEIDER, T., HORMANN, K., AND FLOATER, M. S. 2013. Bijective composite mean value mappings. In Computer Graphics Forum , vol. 32, Wiley Online Library, 137-146.",
       "bbox": {
@@ -9737,9 +9794,9 @@
       }
     },
     {
-      "id": "#/texts/511",
+      "id": "#/texts/514",
       "page": 11,
-      "order": 34,
+      "order": 36,
       "role": "list_item",
       "text": "SCH¨ ULLER, C., KAVAN, L., PANOZZO, D., AND SORKINEHORNUNG, O. 2013. Locally injective mappings. In Computer Graphics Forum , vol. 32, Wiley Online Library, 125-135.",
       "bbox": {
@@ -9756,9 +9813,9 @@
       }
     },
     {
-      "id": "#/texts/512",
+      "id": "#/texts/515",
       "page": 11,
-      "order": 35,
+      "order": 37,
       "role": "list_item",
       "text": "SHEFFER, A., AND DE STURLER, E. 2001. Parameterization of Faceted Surfaces for Meshing using Angle-Based Flattening. Engineering with Computers 17 , 3, 326-337.",
       "bbox": {
@@ -9775,9 +9832,9 @@
       }
     },
     {
-      "id": "#/texts/513",
+      "id": "#/texts/516",
       "page": 11,
-      "order": 36,
+      "order": 38,
       "role": "list_item",
       "text": "SHEFFER, A., L´ EVY, B., MOGILNITSKY, M., AND BOGOMYAKOV, A. 2005. ABF++: fast and robust angle based flattening. ACM Trans. Graph. 24 , 2, 311-330.",
       "bbox": {
@@ -9794,9 +9851,9 @@
       }
     },
     {
-      "id": "#/texts/514",
+      "id": "#/texts/517",
       "page": 11,
-      "order": 37,
+      "order": 39,
       "role": "list_item",
       "text": "SHEFFER, A., PRAUN, E., AND ROSE, K. 2006. Mesh parameterization methods and their applications. Foundations and Trends R © in Computer Graphics and Vision 2 , 2, 171.",
       "bbox": {
@@ -9813,9 +9870,9 @@
       }
     },
     {
-      "id": "#/texts/515",
+      "id": "#/texts/518",
       "page": 11,
-      "order": 38,
+      "order": 40,
       "role": "list_item",
       "text": "SHEWCHUK, J. 1996. Robust adaptive floating-point geometric predicates. In Proceedings of the twelfth annual symposium on Computational geometry , ACM, 141-150.",
       "bbox": {
@@ -9832,9 +9889,9 @@
       }
     },
     {
-      "id": "#/texts/516",
+      "id": "#/texts/519",
       "page": 11,
-      "order": 39,
+      "order": 41,
       "role": "list_item",
       "text": "SHEWCHUK, J. R. 2005. Triangle: A two-dimensional quality mesh generator and delaunay triangulator. Computer Science Division, University of California at Berkeley, Berkeley, California , 94720-1776.",
       "bbox": {
@@ -9851,9 +9908,9 @@
       }
     },
     {
-      "id": "#/texts/517",
+      "id": "#/texts/520",
       "page": 11,
-      "order": 40,
+      "order": 42,
       "role": "list_item",
       "text": "SHOR, P., AND VAN WYK, C. 1992. Detecting and decomposing self-overlapping curves. Computational Geometry 2 , 1, 31-50.",
       "bbox": {
@@ -9870,9 +9927,9 @@
       }
     },
     {
-      "id": "#/texts/518",
+      "id": "#/texts/521",
       "page": 11,
-      "order": 41,
+      "order": 43,
       "role": "list_item",
       "text": "SPRINGBORN, B., SCHR ¨ ODER, P., AND PINKALL, U. 2008. Conformal equivalence of triangle meshes.",
       "bbox": {
@@ -9889,9 +9946,9 @@
       }
     },
     {
-      "id": "#/texts/519",
+      "id": "#/texts/522",
       "page": 11,
-      "order": 42,
+      "order": 44,
       "role": "list_item",
       "text": "TUTTE, W. 1963. How to draw a graph. Proc. London Math. Soc 13 , 3, 743-768.",
       "bbox": {
@@ -9908,9 +9965,9 @@
       }
     },
     {
-      "id": "#/texts/520",
+      "id": "#/texts/523",
       "page": 11,
-      "order": 43,
+      "order": 45,
       "role": "list_item",
       "text": "WEBER, O., MYLES, A., AND ZORIN, D. 2012. Computing extremal quasiconformal maps. In Computer Graphics Forum , vol. 31, Wiley Online Library, 1679-1689.",
       "bbox": {
@@ -9927,9 +9984,9 @@
       }
     },
     {
-      "id": "#/texts/521",
+      "id": "#/texts/524",
       "page": 11,
-      "order": 44,
+      "order": 46,
       "role": "list_item",
       "text": "WEIN, R., BERBERICH, E., FOGEL, E., HALPERIN, D., HEMMER, M., SALZMAN, O., AND ZUKERMAN, B. 2013. 2D arrangements. In CGAL User and Reference Manual , 4.3 ed. CGAL Editorial Board.",
       "bbox": {
@@ -9946,9 +10003,9 @@
       }
     },
     {
-      "id": "#/texts/522",
+      "id": "#/texts/525",
       "page": 11,
-      "order": 45,
+      "order": 47,
       "role": "list_item",
       "text": "WHITNEY, H. 1937. On regular closed curves in the plane. Compositio Math 4 , 276-284.",
       "bbox": {
@@ -9965,9 +10022,9 @@
       }
     },
     {
-      "id": "#/texts/523",
+      "id": "#/texts/526",
       "page": 11,
-      "order": 46,
+      "order": 48,
       "role": "list_item",
       "text": "XU, Y., CHEN, R., GOTSMAN, C., AND LIU, L. 2011. Embedding a triangular graph within a given boundary. Computer Aided Geometric Design 28 , 6, 349-356.",
       "bbox": {
@@ -9984,7 +10041,7 @@
       }
     },
     {
-      "id": "#/texts/524",
+      "id": "#/texts/527",
       "page": 12,
       "order": 1,
       "role": "heading",
@@ -10003,7 +10060,7 @@
       }
     },
     {
-      "id": "#/texts/525",
+      "id": "#/texts/528",
       "page": 12,
       "order": 2,
       "role": "heading",
@@ -10022,7 +10079,7 @@
       }
     },
     {
-      "id": "#/texts/526",
+      "id": "#/texts/529",
       "page": 12,
       "order": 3,
       "role": "paragraph",
@@ -10041,7 +10098,7 @@
       }
     },
     {
-      "id": "#/texts/527",
+      "id": "#/texts/530",
       "page": 12,
       "order": 4,
       "role": "paragraph",
@@ -10060,7 +10117,7 @@
       }
     },
     {
-      "id": "#/texts/528",
+      "id": "#/texts/531",
       "page": 12,
       "order": 5,
       "role": "paragraph",
@@ -10079,7 +10136,7 @@
       }
     },
     {
-      "id": "#/texts/529",
+      "id": "#/texts/532",
       "page": 12,
       "order": 6,
       "role": "paragraph",
@@ -10098,7 +10155,7 @@
       }
     },
     {
-      "id": "#/texts/530",
+      "id": "#/texts/533",
       "page": 12,
       "order": 7,
       "role": "paragraph",
@@ -10117,7 +10174,7 @@
       }
     },
     {
-      "id": "#/texts/531",
+      "id": "#/texts/534",
       "page": 12,
       "order": 8,
       "role": "paragraph",
@@ -10136,7 +10193,7 @@
       }
     },
     {
-      "id": "#/texts/532",
+      "id": "#/texts/535",
       "page": 12,
       "order": 9,
       "role": "heading",
@@ -10155,7 +10212,7 @@
       }
     },
     {
-      "id": "#/texts/533",
+      "id": "#/texts/536",
       "page": 12,
       "order": 10,
       "role": "paragraph",
@@ -10174,7 +10231,7 @@
       }
     },
     {
-      "id": "#/texts/534",
+      "id": "#/texts/537",
       "page": 12,
       "order": 11,
       "role": "paragraph",
@@ -10193,7 +10250,7 @@
       }
     },
     {
-      "id": "#/texts/535",
+      "id": "#/texts/538",
       "page": 12,
       "order": 12,
       "role": "caption",
@@ -10212,7 +10269,7 @@
       }
     },
     {
-      "id": "#/texts/536",
+      "id": "#/texts/539",
       "page": 12,
       "order": 13,
       "role": "paragraph",
@@ -10231,7 +10288,7 @@
       }
     },
     {
-      "id": "#/texts/537",
+      "id": "#/texts/540",
       "page": 12,
       "order": 14,
       "role": "paragraph",
@@ -10250,7 +10307,7 @@
       }
     },
     {
-      "id": "#/texts/538",
+      "id": "#/texts/541",
       "page": 12,
       "order": 15,
       "role": "paragraph",
@@ -10269,7 +10326,7 @@
       }
     },
     {
-      "id": "#/texts/539",
+      "id": "#/texts/542",
       "page": 12,
       "order": 16,
       "role": "paragraph",
@@ -10288,7 +10345,7 @@
       }
     },
     {
-      "id": "#/texts/540",
+      "id": "#/texts/543",
       "page": 12,
       "order": 17,
       "role": "paragraph",
@@ -10307,7 +10364,7 @@
       }
     },
     {
-      "id": "#/texts/541",
+      "id": "#/texts/544",
       "page": 12,
       "order": 18,
       "role": "paragraph",
@@ -10326,7 +10383,7 @@
       }
     },
     {
-      "id": "#/texts/542",
+      "id": "#/texts/545",
       "page": 12,
       "order": 19,
       "role": "paragraph",
@@ -10345,7 +10402,7 @@
       }
     },
     {
-      "id": "#/texts/543",
+      "id": "#/texts/546",
       "page": 12,
       "order": 20,
       "role": "paragraph",
@@ -10364,7 +10421,7 @@
       }
     },
     {
-      "id": "#/texts/544",
+      "id": "#/texts/547",
       "page": 12,
       "order": 21,
       "role": "paragraph",
@@ -10383,7 +10440,7 @@
       }
     },
     {
-      "id": "#/texts/545",
+      "id": "#/texts/548",
       "page": 12,
       "order": 22,
       "role": "paragraph",
@@ -10402,7 +10459,7 @@
       }
     },
     {
-      "id": "#/texts/546",
+      "id": "#/texts/549",
       "page": 12,
       "order": 23,
       "role": "paragraph",
@@ -10421,7 +10478,7 @@
       }
     },
     {
-      "id": "#/texts/547",
+      "id": "#/texts/550",
       "page": 12,
       "order": 24,
       "role": "paragraph",
@@ -10440,7 +10497,7 @@
       }
     },
     {
-      "id": "#/texts/548",
+      "id": "#/texts/551",
       "page": 12,
       "order": 25,
       "role": "paragraph",
@@ -10459,7 +10516,7 @@
       }
     },
     {
-      "id": "#/texts/549",
+      "id": "#/texts/552",
       "page": 12,
       "order": 26,
       "role": "paragraph",
@@ -10478,7 +10535,7 @@
       }
     },
     {
-      "id": "#/texts/550",
+      "id": "#/texts/553",
       "page": 12,
       "order": 27,
       "role": "paragraph",
@@ -10497,7 +10554,7 @@
       }
     },
     {
-      "id": "#/texts/551",
+      "id": "#/texts/554",
       "page": 12,
       "order": 28,
       "role": "paragraph",
@@ -10516,7 +10573,7 @@
       }
     },
     {
-      "id": "#/texts/552",
+      "id": "#/texts/555",
       "page": 12,
       "order": 29,
       "role": "paragraph",
@@ -10535,7 +10592,7 @@
       }
     },
     {
-      "id": "#/texts/553",
+      "id": "#/texts/556",
       "page": 12,
       "order": 30,
       "role": "paragraph",
@@ -10554,7 +10611,7 @@
       }
     },
     {
-      "id": "#/texts/554",
+      "id": "#/texts/557",
       "page": 12,
       "order": 31,
       "role": "paragraph",
@@ -10573,7 +10630,7 @@
       }
     },
     {
-      "id": "#/texts/555",
+      "id": "#/texts/558",
       "page": 12,
       "order": 32,
       "role": "paragraph",
@@ -10592,7 +10649,7 @@
       }
     },
     {
-      "id": "#/texts/556",
+      "id": "#/texts/559",
       "page": 12,
       "order": 33,
       "role": "paragraph",
@@ -10611,7 +10668,7 @@
       }
     },
     {
-      "id": "#/texts/557",
+      "id": "#/texts/560",
       "page": 12,
       "order": 34,
       "role": "paragraph",
@@ -10630,7 +10687,7 @@
       }
     },
     {
-      "id": "#/texts/558",
+      "id": "#/texts/561",
       "page": 12,
       "order": 35,
       "role": "paragraph",
@@ -10649,7 +10706,7 @@
       }
     },
     {
-      "id": "#/texts/559",
+      "id": "#/texts/562",
       "page": 12,
       "order": 36,
       "role": "paragraph",
@@ -10668,7 +10725,7 @@
       }
     },
     {
-      "id": "#/texts/560",
+      "id": "#/texts/563",
       "page": 12,
       "order": 37,
       "role": "paragraph",
@@ -10687,7 +10744,7 @@
       }
     },
     {
-      "id": "#/texts/561",
+      "id": "#/texts/564",
       "page": 12,
       "order": 38,
       "role": "paragraph",
@@ -10706,7 +10763,7 @@
       }
     },
     {
-      "id": "#/texts/562",
+      "id": "#/texts/565",
       "page": 12,
       "order": 39,
       "role": "paragraph",
@@ -10725,7 +10782,7 @@
       }
     },
     {
-      "id": "#/texts/563",
+      "id": "#/texts/566",
       "page": 12,
       "order": 40,
       "role": "paragraph",
@@ -10744,7 +10801,7 @@
       }
     },
     {
-      "id": "#/texts/564",
+      "id": "#/texts/567",
       "page": 12,
       "order": 41,
       "role": "paragraph",
@@ -10763,7 +10820,7 @@
       }
     },
     {
-      "id": "#/texts/565",
+      "id": "#/texts/568",
       "page": 12,
       "order": 42,
       "role": "paragraph",
@@ -10782,7 +10839,7 @@
       }
     },
     {
-      "id": "#/texts/566",
+      "id": "#/texts/569",
       "page": 12,
       "order": 43,
       "role": "paragraph",
@@ -10801,7 +10858,7 @@
       }
     },
     {
-      "id": "#/texts/567",
+      "id": "#/texts/570",
       "page": 12,
       "order": 44,
       "role": "paragraph",
@@ -10820,7 +10877,7 @@
       }
     },
     {
-      "id": "#/texts/568",
+      "id": "#/texts/571",
       "page": 12,
       "order": 45,
       "role": "paragraph",
@@ -10839,7 +10896,7 @@
       }
     },
     {
-      "id": "#/texts/569",
+      "id": "#/texts/572",
       "page": 12,
       "order": 46,
       "role": "paragraph",
@@ -10858,7 +10915,7 @@
       }
     },
     {
-      "id": "#/texts/570",
+      "id": "#/texts/573",
       "page": 12,
       "order": 47,
       "role": "paragraph",
@@ -10877,7 +10934,7 @@
       }
     },
     {
-      "id": "#/texts/571",
+      "id": "#/texts/574",
       "page": 12,
       "order": 48,
       "role": "paragraph",
@@ -10896,7 +10953,7 @@
       }
     },
     {
-      "id": "#/texts/572",
+      "id": "#/texts/575",
       "page": 12,
       "order": 49,
       "role": "paragraph",
@@ -10915,7 +10972,7 @@
       }
     },
     {
-      "id": "#/texts/573",
+      "id": "#/texts/576",
       "page": 12,
       "order": 50,
       "role": "list_item",
@@ -10934,7 +10991,7 @@
       }
     },
     {
-      "id": "#/texts/574",
+      "id": "#/texts/577",
       "page": 12,
       "order": 51,
       "role": "list_item",
@@ -10953,7 +11010,7 @@
       }
     },
     {
-      "id": "#/texts/575",
+      "id": "#/texts/578",
       "page": 12,
       "order": 52,
       "role": "list_item",
@@ -10972,7 +11029,7 @@
       }
     },
     {
-      "id": "#/texts/576",
+      "id": "#/texts/579",
       "page": 12,
       "order": 53,
       "role": "paragraph",
@@ -10991,7 +11048,7 @@
       }
     },
     {
-      "id": "#/texts/577",
+      "id": "#/texts/580",
       "page": 12,
       "order": 54,
       "role": "heading",
@@ -11010,7 +11067,7 @@
       }
     },
     {
-      "id": "#/texts/578",
+      "id": "#/texts/581",
       "page": 12,
       "order": 55,
       "role": "paragraph",
@@ -11029,7 +11086,7 @@
       }
     },
     {
-      "id": "#/texts/579",
+      "id": "#/texts/582",
       "page": 12,
       "order": 56,
       "role": "list_item",
@@ -11048,7 +11105,7 @@
       }
     },
     {
-      "id": "#/texts/580",
+      "id": "#/texts/583",
       "page": 12,
       "order": 57,
       "role": "list_item",
@@ -11067,7 +11124,7 @@
       }
     },
     {
-      "id": "#/texts/581",
+      "id": "#/texts/584",
       "page": 12,
       "order": 58,
       "role": "list_item",
@@ -11086,7 +11143,7 @@
       }
     },
     {
-      "id": "#/texts/582",
+      "id": "#/texts/585",
       "page": 12,
       "order": 59,
       "role": "paragraph",

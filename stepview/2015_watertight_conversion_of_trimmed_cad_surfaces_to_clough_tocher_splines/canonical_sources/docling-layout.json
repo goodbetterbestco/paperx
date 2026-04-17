@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines.pdf",
+  "pdf_path": "stepview/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines/2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines.pdf",
   "page_count": 17,
   "page_sizes_pt": [
     {
@@ -303,7 +303,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 36.86,
@@ -322,7 +322,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The common representation of shape available to all Computer-Aided Design systems, and therefore the standard form for exchanging CAD models between systems, is a B-rep (boundary representation); (Stroud, 2006). In this paradigm, a connected wireframe of edges and vertices describes the global topology and sharp features of a model. Faces are bounded by a collection of edges and have their internal geometry provided by a smooth 2-manifold surface: usually one of the natural quadrics or a non-uniform rational B-spline (NURBS) surface (Piegl and Tiller, 1997) for more general freeform shapes. The embedding surface typically extends beyond the bounding edges and the portion that is meaningful is therefore a 'trimmed' region of the whole. This representation of shape has been successful in realising the broad range of applications that CAD systems support today, for example in visualisation and manufacturing.",
       "bbox": {
         "x0": 36.86,
@@ -341,7 +341,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "However, when we are interested in the region of space bounded (or excluded) by a shape, for example when performing an engineering simulation (Cottrell et al., 2009; Jaxon and Qian, 2014) or computing a medial axis transform (Bucklow, 2014), our task is often made difficult by the deficiencies of such a B-rep. For example, the intersection curve of two",
       "bbox": {
         "x0": 36.86,
@@ -398,7 +398,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "heading",
       "text": "a b s t r a c t",
       "bbox": {
         "x0": 195.59,
@@ -417,7 +417,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The boundary representations (B-reps) that are used to represent shape in ComputerAided Design systems create unavoidable gaps at the face boundaries of a model. Although these inconsistencies can be kept below the scale that is important for visualisation and manufacture, they cause problems for many downstream tasks, making it difficult to use CAD models directly for simulation or advanced geometric analysis, for example. Motivated by this need for watertight models, we address the problem of converting B-rep models to a collection of cubic C 1 Clough-Tocher splines. These splines allow a watertight join between B-rep faces, provide a homogeneous representation of shape, and also support local adaptivity.",
       "bbox": {
         "x0": 195.6,
@@ -436,7 +436,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We perform a comparative study of the most prominent Clough-Tocher constructions and include some novel variants. Our criteria include visual fairness, invariance to affine reparameterisations, polynomial precision and approximation error. The constructions are tested on both synthetic data and CAD models that have been triangulated. Our results show that no construction is optimal in every scenario, with surface quality depending heavily on the triangulation and parameterisation that are used.",
       "bbox": {
         "x0": 195.6,
@@ -455,7 +455,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": " 2015 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license (http: creativecommons.org licenses by 4.0).",
       "bbox": {
         "x0": 205.57,
@@ -2130,12 +2130,12 @@
       "role": "paragraph",
       "text": "DQ",
       "bbox": {
-        "x0": 407.29,
+        "x0": 407.37,
         "y0": 168.05,
         "x1": 422.24,
-        "y1": 178.94,
-        "width": 14.95,
-        "height": 10.89
+        "y1": 178.69,
+        "width": 14.87,
+        "height": 10.64
       },
       "meta": {
         "docling_label": "text",
@@ -3230,7 +3230,7 @@
       "page": 12,
       "order": 8,
       "role": "paragraph",
-      "text": "CTo(",
+      "text": "CTol",
       "bbox": {
         "x0": 296.67,
         "y0": 54.0,
@@ -3241,7 +3241,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "CTo("
+        "docling_orig": "CTol"
       }
     },
     {
@@ -3631,12 +3631,12 @@
       "role": "paragraph",
       "text": "LALA",
       "bbox": {
-        "x0": 68.52,
-        "y0": 110.21,
-        "x1": 95.53,
-        "y1": 126.48,
-        "width": 27.01,
-        "height": 16.27
+        "x0": 68.35,
+        "y0": 110.81,
+        "x1": 94.64,
+        "y1": 126.32,
+        "width": 26.29,
+        "height": 15.51
       },
       "meta": {
         "docling_label": "text",
@@ -3650,11 +3650,11 @@
       "role": "paragraph",
       "text": "CT.",
       "bbox": {
-        "x0": 90.75,
+        "x0": 91.45,
         "y0": 135.39,
         "x1": 104.12,
         "y1": 140.3,
-        "width": 13.37,
+        "width": 12.67,
         "height": 4.91
       },
       "meta": {
@@ -3994,9 +3994,9 @@
       "bbox": {
         "x0": 53.33,
         "y0": 96.0,
-        "x1": 67.33,
+        "x1": 68.0,
         "y1": 104.67,
-        "width": 14.0,
+        "width": 14.67,
         "height": 8.67
       },
       "meta": {

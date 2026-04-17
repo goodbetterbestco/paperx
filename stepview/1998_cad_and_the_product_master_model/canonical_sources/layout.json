@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
   "page_count": 32,
   "page_sizes_pt": [
     {
@@ -166,60 +166,624 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/1",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "y",
-      "bbox": {
-        "x0": 348.48,
-        "y0": 4.18,
-        "x1": 352.56,
-        "y1": 304.18,
-        "width": 4.08,
-        "height": 300.0
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "y"
-      }
-    },
-    {
-      "id": "#/texts/2",
+      "id": "mathpix-p001-b0002",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
-      "text": "atics",
+      "role": "paragraph",
+      "text": "CAD and the Product Master Model",
       "bbox": {
-        "x0": 404.4,
-        "y0": 24.1,
-        "x1": 427.92,
-        "y1": 324.1,
-        "width": 23.52,
-        "height": 300.0
+        "x0": 167.04,
+        "y0": 151.18,
+        "x1": 424.22,
+        "y1": 169.03,
+        "width": 257.18,
+        "height": 17.85
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "atics"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "c3ecd61550c24feebdcb357654aee34f",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/3",
+      "id": "mathpix-p001-b0004",
       "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "Robert Joan-Arinyo Departament de Llenguatges i Sistemes Inform Universitat Polit ecnica de Catalunya October 7, 1 9 9 7 Abstract We develop an architecture for a product master model that federates CAD systems with downstream application processes for di erent feature views that are part of the design process. The architecture addresses espe cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial CAD systems (and of downstream applications) to maintain proprietary information that must not be disclosed in the master model. Two case studies consider the requirements on the master model archi tecture, for geometric dimensioning and tolerancing, and for manufacturing process planning using NC machining. We discuss how to reconcile the as sociated feature views and how to update them under net shape redesign. The case studies indicate that many design changes that arise from these downstream views can be formalized by a well-de ned problem on dimen sional and geometric constraints. Supported in part by ONR Contract N 0 0 0 1 4- 9 6- 1- 0 6 3 5 and by NSF Grants CDA 9 2- 2 3 5 0 2 and CCR 9 5- 0 5 7 4 5. y While on leave in the Department of Computer Sciences, Purdue University. Supported in part by ONR Contract N 0 0 0 1 4- 9 6- 1- 0 6 3 5. 1",
+      "order": 4,
+      "role": "paragraph",
+      "text": "Christoph M. Hoffmann *",
       "bbox": {
-        "x0": 134.4,
-        "y0": 64.9,
-        "x1": 457.43,
-        "y1": 530.98,
-        "width": 323.03,
-        "height": 466.08
+        "x0": 230.4,
+        "y0": 185.45,
+        "x1": 363.74,
+        "y1": 200.71,
+        "width": 133.34,
+        "height": 15.26
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Robert Joan-Arinyo Departament de Llenguatges i Sistemes Inform Universitat Polit ecnica de Catalunya October 7, 1 9 9 7 Abstract We develop an architecture for a product master model that federates CAD systems with downstream application processes for di erent feature views that are part of the design process. The architecture addresses espe cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial CAD systems (and of downstream applications) to maintain proprietary information that must not be disclosed in the master model. Two case studies consider the requirements on the master model archi tecture, for geometric dimensioning and tolerancing, and for manufacturing process planning using NC machining. We discuss how to reconcile the as sociated feature views and how to update them under net shape redesign. The case studies indicate that many design changes that arise from these downstream views can be formalized by a well-de ned problem on dimen sional and geometric constraints. Supported in part by ONR Contract N 0 0 0 1 4- 9 6- 1- 0 6 3 5 and by NSF Grants CDA 9 2- 2 3 5 0 2 and CCR 9 5- 0 5 7 4 5. y While on leave in the Department of Computer Sciences, Purdue University. Supported in part by ONR Contract N 0 0 0 1 4- 9 6- 1- 0 6 3 5. 1"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0005",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Department of Computer Sciences",
+      "bbox": {
+        "x0": 206.49,
+        "y0": 201.29,
+        "x1": 384.76,
+        "y1": 216.55,
+        "width": 178.27,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0006",
+      "page": 1,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Purdue University",
+      "bbox": {
+        "x0": 245.95,
+        "y0": 216.55,
+        "x1": 344.16,
+        "y1": 232.1,
+        "width": 98.21,
+        "height": 15.55
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0007",
+      "page": 1,
+      "order": 7,
+      "role": "paragraph",
+      "text": "Robert Joan-Arinyo \\({ }^{\\dagger}\\)",
+      "bbox": {
+        "x0": 240.76,
+        "y0": 236.7,
+        "x1": 353.37,
+        "y1": 253.12,
+        "width": 112.61,
+        "height": 16.41
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9858584403991699,
+        "confidence_rate": 0.9995406699030459,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0008",
+      "page": 1,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Departament de Llenguatges i Sistemes Informàtics",
+      "bbox": {
+        "x0": 161.85,
+        "y0": 253.12,
+        "x1": 428.83,
+        "y1": 268.96,
+        "width": 266.97,
+        "height": 15.84
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.998046875,
+        "confidence_rate": 0.999964454543831,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0009",
+      "page": 1,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Universitat Politècnica de Catalunya",
+      "bbox": {
+        "x0": 199.87,
+        "y0": 268.96,
+        "x1": 391.39,
+        "y1": 283.64,
+        "width": 191.52,
+        "height": 14.69
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4d19adff229d47519cc3c4ec3aab29be",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0010",
+      "page": 1,
+      "order": 10,
+      "role": "paragraph",
+      "text": "October 7, 1997",
+      "bbox": {
+        "x0": 254.01,
+        "y0": 294.58,
+        "x1": 337.53,
+        "y1": 308.41,
+        "width": 83.52,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0012",
+      "page": 1,
+      "order": 12,
+      "role": "paragraph",
+      "text": "Abstract",
+      "bbox": {
+        "x0": 272.44,
+        "y0": 347.86,
+        "x1": 319.1,
+        "y1": 359.95,
+        "width": 46.66,
+        "height": 12.09
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0013",
+      "page": 1,
+      "order": 13,
+      "role": "paragraph",
+      "text": "We develop an architecture for a product master model that federates",
+      "bbox": {
+        "x0": 147.45,
+        "y0": 365.71,
+        "x1": 458.49,
+        "y1": 379.53,
+        "width": 311.04,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0014",
+      "page": 1,
+      "order": 14,
+      "role": "paragraph",
+      "text": "CAD systems with downstream application processes for different feature",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 377.52,
+        "x1": 458.49,
+        "y1": 391.34,
+        "width": 325.72,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0015",
+      "page": 1,
+      "order": 15,
+      "role": "paragraph",
+      "text": "views that are part of the design process. The architecture addresses espe-",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 390.76,
+        "x1": 458.49,
+        "y1": 403.15,
+        "width": 325.72,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0016",
+      "page": 1,
+      "order": 16,
+      "role": "paragraph",
+      "text": "cially the need to make persistent associations of design information with",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 402.57,
+        "x1": 458.49,
+        "y1": 414.95,
+        "width": 325.72,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0017",
+      "page": 1,
+      "order": 17,
+      "role": "paragraph",
+      "text": "net shape elements. Moreover, the design respects the need of commercial",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 414.38,
+        "x1": 458.49,
+        "y1": 427.05,
+        "width": 325.72,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0018",
+      "page": 1,
+      "order": 18,
+      "role": "paragraph",
+      "text": "CAD systems (and of downstream applications) to maintain proprietary",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 426.18,
+        "x1": 458.49,
+        "y1": 438.85,
+        "width": 325.72,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0019",
+      "page": 1,
+      "order": 19,
+      "role": "paragraph",
+      "text": "information that must not be disclosed in the master model.",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 437.99,
+        "x1": 399.45,
+        "y1": 450.66,
+        "width": 266.68,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0020",
+      "page": 1,
+      "order": 20,
+      "role": "paragraph",
+      "text": "Two case studies consider the requirements on the master model archi-",
+      "bbox": {
+        "x0": 147.45,
+        "y0": 450.08,
+        "x1": 458.49,
+        "y1": 462.47,
+        "width": 311.04,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0021",
+      "page": 1,
+      "order": 21,
+      "role": "paragraph",
+      "text": "tecture, for geometric dimensioning and tolerancing, and for manufacturing",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 461.89,
+        "x1": 458.49,
+        "y1": 475.71,
+        "width": 325.72,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0022",
+      "page": 1,
+      "order": 22,
+      "role": "paragraph",
+      "text": "process planning using NC machining. We discuss how to reconcile the as-",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 474.27,
+        "x1": 458.49,
+        "y1": 487.52,
+        "width": 325.72,
+        "height": 13.25
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "sociated feature views and how to update them under net shape redesign.",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 486.08,
+        "x1": 458.49,
+        "y1": 498.75,
+        "width": 325.72,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999935736983052,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0024",
+      "page": 1,
+      "order": 24,
+      "role": "paragraph",
+      "text": "The case studies indicate that many design changes that arise from these",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 497.31,
+        "x1": 458.49,
+        "y1": 511.13,
+        "width": 325.72,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0025",
+      "page": 1,
+      "order": 25,
+      "role": "paragraph",
+      "text": "downstream views can be formalized by a well-defined problem on dimen-",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 509.12,
+        "x1": 458.49,
+        "y1": 522.94,
+        "width": 325.72,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0026",
+      "page": 1,
+      "order": 26,
+      "role": "paragraph",
+      "text": "sional and geometric constraints.",
+      "bbox": {
+        "x0": 132.77,
+        "y0": 521.79,
+        "x1": 278.2,
+        "y1": 534.74,
+        "width": 145.44,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8658d7359a6a48528ae58b382b8af008",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "*Supported in part by ONR Contract N00014-96-1-0635 and by NSF Grants CDA 92-23502",
+      "bbox": {
+        "x0": 118.37,
+        "y0": 645.9,
+        "x1": 484.99,
+        "y1": 658.57,
+        "width": 366.62,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999943862169285,
+        "parent_id": "ac2868bc71d4403da71cda6424779cc9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "and CCR 95-05745.",
+      "bbox": {
+        "x0": 105.41,
+        "y0": 656.55,
+        "x1": 186.05,
+        "y1": 667.78,
+        "width": 80.64,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ac2868bc71d4403da71cda6424779cc9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "\\({ }^{\\dagger}\\) While on leave in the Department of Computer Sciences, Purdue University. Supported",
+      "bbox": {
+        "x0": 118.37,
+        "y0": 666.92,
+        "x1": 484.99,
+        "y1": 680.17,
+        "width": 366.62,
+        "height": 13.25
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ac2868bc71d4403da71cda6424779cc9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "in part by ONR Contract N00014-96-1-0635.",
+      "bbox": {
+        "x0": 105.41,
+        "y0": 678.73,
+        "x1": 287.42,
+        "y1": 691.4,
+        "width": 182.01,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ac2868bc71d4403da71cda6424779cc9",
+        "children_ids": null
       }
     },
     {
@@ -4345,5 +4909,39 @@
         "docling_orig": "2 0, chapter 1 8, pages 1 { 1 1. Elsevier [ 2 6] J.J. Shah, M. M antyl a, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 2 0. Elsevier Sci ence B.V., 1 9 9 4. [ 2 7] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 3 3: 1 0 5 { 1 2 4, 1 9 9 0. [ 2 8] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1 9 9 0. [ 2 9] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. M antyl a, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 2 0, chapter 5, pages 8 3 { 1 0 6. Elsevier Science B.V., 1 9 9 4. [ 3 0] ANSI Standard Y 1 4. 5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1 9 9 4. [ 3 1] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press, 1 9 8 9."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling",
+    "28": "docling",
+    "29": "docling",
+    "30": "docling",
+    "31": "docling",
+    "32": "docling"
+  }
 }

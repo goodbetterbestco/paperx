@@ -2024,12 +2024,12 @@
       "role": "paragraph",
       "text": "Sphere",
       "bbox": {
-        "x0": 361.77,
-        "y0": 536.32,
-        "x1": 400.53,
-        "y1": 550.43,
-        "width": 38.76,
-        "height": 14.11
+        "x0": 361.79,
+        "y0": 536.39,
+        "x1": 400.51,
+        "y1": 550.36,
+        "width": 38.72,
+        "height": 13.97
       },
       "meta": {
         "docling_label": "text",
@@ -3618,18 +3618,18 @@
       "page": 10,
       "order": 11,
       "role": "paragraph",
-      "text": "13 2.",
+      "text": "3 г.",
       "bbox": {
-        "x0": 333.05,
+        "x0": 334.26,
         "y0": 235.88,
         "x1": 363.11,
         "y1": 245.67,
-        "width": 30.06,
+        "width": 28.85,
         "height": 9.79
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "13 2."
+        "docling_orig": "3 г."
       }
     },
     {
@@ -3656,7 +3656,7 @@
       "page": 10,
       "order": 13,
       "role": "paragraph",
-      "text": "x6",
+      "text": "х6",
       "bbox": {
         "x0": 503.79,
         "y0": 286.43,
@@ -3667,7 +3667,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "x6"
+        "docling_orig": "х6"
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2015_correct_resolution_trimmed_spline_surfaces/2015_correct_resolution_trimmed_spline_surfaces.pdf",
+  "pdf_path": "stepview/2015_correct_resolution_trimmed_spline_surfaces/2015_correct_resolution_trimmed_spline_surfaces.pdf",
   "page_count": 9,
   "page_sizes_pt": [
     {
@@ -54,7 +54,7 @@
       "id": "#/texts/0",
       "page": 1,
       "order": 1,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 37.61,
@@ -73,7 +73,7 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Current strategies for real-time rendering of trimmed spline surfaces re-approximate the data, pre-process extensively or introduce visual artifacts. This paper presents a new approach to rendering trimmed spline surfaces that guarantees visual accuracy efficiently, even under interactive adjustment of trim curves and spline surfaces. The technique achieves robustness and speed by discretizing at a near-minimal correct resolution based on a tight, low-cost estimate of adaptive domain griding. The algorithm is highly parallel, with each trim curve writing itself into a slim lookup table. Each surface fragment then makes its trim decision robustly by comparing its parameters against the sorted table entries. Adding the table-and-test to the rendering pass of a modern graphics pipeline achieves anti-aliased sub-pixel accuracy at high render-speed, while using little additional memory and fragment shader effort, even during interactive trim manipulation.",
       "bbox": {
         "x0": 37.61,
@@ -92,7 +92,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: trimming, spline, accurate, real-time, scan density",
       "bbox": {
         "x0": 37.61,
@@ -111,7 +111,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 37.61,
@@ -130,7 +130,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A standard approach to designing geometry in computer aided design, is to 'overfit', i.e. create spline surfaces that are larger than needed and subsequently trim the surfaces back to match functional constraints or join to other surfaces (see Fig. 1). This approach persists both for historical reasons and for design simplicity: for historical reasons in that overfitting and trimming pre-dates alternative approaches such as subdivision surfaces [1, 2] and finite geometrically-smooth patch complexes (see e.g. [3, 4]); for practical reasons, in that it is often more convenient to control the shape of a signature piece in isolation than when constraints have to be taken into consideration. For example, a car's dashboard can be prepared in one piece without consideration of cut-outs for instrumentation and the steering column.",
       "bbox": {
         "x0": 37.61,
@@ -168,7 +168,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The prevailing practice in computer aided design environments is to generate and display a fixed-resolution triangulation",
       "bbox": {
         "x0": 37.61,
@@ -206,7 +206,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Correct resolution rendering of trimmed spline surfaces",
       "bbox": {
         "x0": 138.34,
@@ -225,7 +225,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Ruijin Wu a , Jorg Peters a a University of Florida",
       "bbox": {
         "x0": 249.0,
@@ -244,7 +244,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "on the CPU and transfer it to the GPU. This process interrupts the design process and can yield unsatisfactory results as closeups reveal a jagged or otherwise incorrect approximation. Conversely, an overly fine triangulation wastes resources: there is no need to highly resolve a complex trim curve when the corresponding surface measures only a few pixels on the screen.",
       "bbox": {
         "x0": 306.6,
@@ -263,7 +263,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The computer graphics community has developed a number of clever techniques, reviewed in Section 2, to deliver real-time display of trimmed spline surfaces. The present paper advances the state-of-the-art by carefully predicting how fine an evaluation of the trim curves results in correct trim decisions at screen resolution . This tight prediction makes it possible to construct, as a prelude to each modified view or model rendering pass, a slim and adaptive trim-query acceleration table that supports a light-weight per-fragment trim test. This simple add-on to any rendering pass is efficient enough to allow interactive trimcurve editing.",
       "bbox": {
         "x0": 306.6,
@@ -282,7 +282,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Overview. Section 2 reviews existing techniques for fast rendering of trimmed spline surfaces. Section 3 reviews basic concepts and establishes notation. Section 4 explains how correct resolution can be determined. Section 5 explains how to build and use the trim-query acceleration table. Section 6 measures the performance of a full implementation.",
       "bbox": {
         "x0": 306.6,
@@ -301,7 +301,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "heading",
       "text": "2. Real-time rendering of trimmed surfaces and related techniques",
       "bbox": {
         "x0": 306.6,
@@ -320,7 +320,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The trim decision is to determine to which side, of a set of trim curves, lies the uv -pre-image of a pixel. The underlying challenge is the same as when determining the fill region of a planar decal [5] - except that in planar filling, the accuracy of rendering is measured in the uv -plane, while for trimmed",
       "bbox": {
         "x0": 306.6,

@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space/2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space.pdf",
   "page_count": 20,
   "page_sizes_pt": [
     {
@@ -128,7 +128,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Abstract. - In this paper we are concerned with labelled apparent contours, namely with apparent contours of generic orthogonal projections of embedded surfaces in R 3 , endowed with a suitable information on the relative depth. We give a proof of the following theorem: there exists a finite set of elementary moves (i.e. local topological changes) on labelled apparent contours such that two generic embeddings in R 3 of a closed surface are isotopic if and only if their apparent contours can be connected using only smooth planar isotopies and a finite sequence of moves. This result, that can be obtained as a by-product of general results on knotted surfaces and singularity theory, is obtained here with a direct and rather elementary proof.",
       "bbox": {
         "x0": 49.55,
@@ -147,7 +147,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Key words: Isotopic embedded surfaces, apparent contours, completeness, Reidemeister moves.",
       "bbox": {
         "x0": 49.55,
@@ -166,7 +166,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "2010 Mathematics Subject Classification:",
       "bbox": {
         "x0": 49.55,
@@ -185,7 +185,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Primary 57R45; Secondary 57R52, 57R40.",
       "bbox": {
         "x0": 234.71,
@@ -204,7 +204,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 187.03,
@@ -223,7 +223,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In knot theory it is well known that two link diagrams represent ambient isotopic knots or links, if and only if they are related by a finite number of local Reidemeister moves or their inverses. The diagram of a link is simply the orthogonal projection of the image of the link onto some plane, together with the knowledge of which strand goes over at each crossing. Up to a small perturbation of the link, transversal crossings are the only possible singularities of the diagram.",
       "bbox": {
         "x0": 49.55,
@@ -242,7 +242,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A similar question can be formulated for two-dimensional smooth closed (i.e. compact without boundary) manifolds M embedded in R 3 , that is, understanding when two embedded surfaces can be deformed into each other by a smooth path of embeddings.",
       "bbox": {
         "x0": 49.55,
@@ -261,7 +261,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In analogy with the link diagram, we can rely on the apparent contour AppCon ð j Þ of j : ¼ p e : M ! R 2 , i.e. the image of the singular points of a generic orthogonal projection p : R 3 ! R 2 of an embedding e : M ! R 3 . The apparent contour carries a natural orientation and leads to a graph similar to a link diagram, with possibly the addition of cusps (see e.g. [25]). If we also add a so-called Hu¤man labelling (see [15], [26], [7], [3]) which is a nonnegative integer attached to each arc, giving information about the relative depth of the corresponding fold with respect to the remaining preimages of the arc, an apparent contour provides complete information on the 3D embedding (up to compactly supported deformations of R 3 in the projection direction) [3]. In",
       "bbox": {
         "x0": 49.55,
@@ -3848,5 +3848,26 @@
         "docling_orig": "Maurizio Paolini Dipartimento di Matematica Universita ` Cattolica ''Sacro Cuore'' via Trieste 17, 25121 Brescia, Italy E-mail: paolini@dmf.unicatt.it"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling"
+  }
 }

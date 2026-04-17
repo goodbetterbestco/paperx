@@ -163,7 +163,7 @@ def _mathpix_credentials_available() -> bool:
 
 
 def _mathpix_submit_workers() -> int:
-    return _int_env("STEPVIEW_MATHPIX_SUBMIT_WORKERS", 10)
+    return _int_env("STEPVIEW_MATHPIX_SUBMIT_WORKERS", 20)
 
 
 def _mathpix_round_poll_seconds() -> float:

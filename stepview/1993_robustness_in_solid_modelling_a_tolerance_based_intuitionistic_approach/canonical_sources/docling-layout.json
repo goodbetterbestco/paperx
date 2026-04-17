@@ -1409,6 +1409,25 @@
       "page": 10,
       "order": 3,
       "role": "paragraph",
+      "text": "A2",
+      "bbox": {
+        "x0": 424.42,
+        "y0": 353.92,
+        "x1": 440.14,
+        "y1": 366.28,
+        "width": 15.72,
+        "height": 12.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A2"
+      }
+    },
+    {
+      "id": "#/texts/76",
+      "page": 10,
+      "order": 4,
+      "role": "paragraph",
       "text": "9999....................",
       "bbox": {
         "x0": 208.9,
@@ -1424,9 +1443,9 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/77",
       "page": 10,
-      "order": 4,
+      "order": 5,
       "role": "paragraph",
       "text": "9000000.000.........0",
       "bbox": {
@@ -1443,11 +1462,11 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/78",
       "page": 10,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
-      "text": "... ..",
+      "text": ".....",
       "bbox": {
         "x0": 334.24,
         "y0": 499.28,
@@ -1458,11 +1477,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "... .."
+        "docling_orig": "....."
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 11,
       "order": 1,
       "role": "caption",
@@ -1481,7 +1500,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/81",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -1500,7 +1519,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -1519,26 +1538,26 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 11,
       "order": 4,
       "role": "paragraph",
-      "text": "---------",
+      "text": "----------",
       "bbox": {
         "x0": 315.95,
         "y0": 251.85,
-        "x1": 390.43,
+        "x1": 398.33,
         "y1": 259.75,
-        "width": 74.48,
+        "width": 82.38,
         "height": 7.9
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "---------"
+        "docling_orig": "----------"
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -1557,7 +1576,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 11,
       "order": 6,
       "role": "list_item",
@@ -1576,7 +1595,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 11,
       "order": 7,
       "role": "list_item",
@@ -1595,7 +1614,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 11,
       "order": 8,
       "role": "list_item",
@@ -1614,7 +1633,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 11,
       "order": 9,
       "role": "paragraph",
@@ -1633,28 +1652,9 @@
       }
     },
     {
-      "id": "#/texts/89",
-      "page": 12,
-      "order": 1,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 7.89,
-        "y0": 37.22,
-        "x1": 13.52,
-        "y1": 43.99,
-        "width": 5.63,
-        "height": 6.77
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
-      }
-    },
-    {
       "id": "#/texts/90",
       "page": 12,
-      "order": 2,
+      "order": 1,
       "role": "heading",
       "text": "3 .2 R o b u s t n e s s a n d P r o p e r t i e s",
       "bbox": {
@@ -1673,7 +1673,7 @@
     {
       "id": "#/texts/91",
       "page": 12,
-      "order": 3,
+      "order": 2,
       "role": "paragraph",
       "text": "The tolerance updating rules, applied after the computation of any relation, ensure that there is always an approximated model for the representation of all the objects presented such that all the previously detected relations as well as the newly detected relation hold, as long as no ambiguity has been found. In other words, the algorithm is robust if it terminates normally (without ambiguity).",
       "bbox": {
@@ -1692,7 +1692,7 @@
     {
       "id": "#/texts/92",
       "page": 12,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "In [5] we proved that the following and other properties are guaranteed by the robustness method introduced in section 3.1.",
       "bbox": {
@@ -1711,7 +1711,7 @@
     {
       "id": "#/texts/93",
       "page": 12,
-      "order": 5,
+      "order": 4,
       "role": "list_item",
       "text": "The coincidence relation is an equivalence relation.",
       "bbox": {
@@ -1730,7 +1730,7 @@
     {
       "id": "#/texts/94",
       "page": 12,
-      "order": 6,
+      "order": 5,
       "role": "list_item",
       "text": "the incidence relation has transitivity, i. e. if A C B and B C C, then A d C .",
       "bbox": {
@@ -1749,7 +1749,7 @@
     {
       "id": "#/texts/95",
       "page": 12,
-      "order": 7,
+      "order": 6,
       "role": "list_item",
       "text": "If A = B and A ± C , then B ± C.",
       "bbox": {
@@ -1768,7 +1768,7 @@
     {
       "id": "#/texts/96",
       "page": 12,
-      "order": 8,
+      "order": 7,
       "role": "list_item",
       "text": "If A C B and B ^ C , then A ^ C.",
       "bbox": {
@@ -1787,7 +1787,7 @@
     {
       "id": "#/texts/97",
       "page": 12,
-      "order": 9,
+      "order": 8,
       "role": "list_item",
       "text": "If A C B and A = C, then C C B.",
       "bbox": {
@@ -1806,7 +1806,7 @@
     {
       "id": "#/texts/98",
       "page": 12,
-      "order": 10,
+      "order": 9,
       "role": "list_item",
       "text": "If A C B and B = C, then A C C.",
       "bbox": {
@@ -1825,7 +1825,7 @@
     {
       "id": "#/texts/99",
       "page": 12,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "In [5] additional rules are provided to preserve the properties such as two lines only intersect at one point, which is not automatically guaranteed by the approximated model method.",
       "bbox": {
@@ -1844,7 +1844,7 @@
     {
       "id": "#/texts/100",
       "page": 12,
-      "order": 12,
+      "order": 11,
       "role": "heading",
       "text": "3.3 A m b ig u i t y H a n d lin g",
       "bbox": {
@@ -1863,7 +1863,7 @@
     {
       "id": "#/texts/101",
       "page": 12,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "As indicated in section 3.1, if any e region becomes empty (e < 0) or any 6 region grows out of its A region (6 > A ), an ambiguity is detected. In this case we can no longer guarantee the the relations are consistent with each other, i.e. the existence of a model, is not guaranteed. The algorithm cannot continue before the ambiguity being solved.",
       "bbox": {
@@ -2739,43 +2739,24 @@
       "page": 18,
       "order": 9,
       "role": "paragraph",
-      "text": "______",
+      "text": "_____-",
       "bbox": {
-        "x0": 387.59,
-        "y0": 248.58,
-        "x1": 470.12,
-        "y1": 279.04,
-        "width": 82.53,
-        "height": 30.46
+        "x0": 390.41,
+        "y0": 243.76,
+        "x1": 470.31,
+        "y1": 280.3,
+        "width": 79.9,
+        "height": 36.54
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "______"
+        "docling_orig": "_____-"
       }
     },
     {
       "id": "#/texts/156",
       "page": 18,
       "order": 10,
-      "role": "paragraph",
-      "text": "Le",
-      "bbox": {
-        "x0": 464.2,
-        "y0": 254.58,
-        "x1": 486.74,
-        "y1": 280.49,
-        "width": 22.54,
-        "height": 25.91
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Le"
-      }
-    },
-    {
-      "id": "#/texts/157",
-      "page": 18,
-      "order": 11,
       "role": "paragraph",
       "text": "e: approximation error",
       "bbox": {
@@ -2792,9 +2773,9 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/157",
       "page": 18,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "of the intersection point, the approximation error must be subtracted from £ and A to guarantee that the point is incident on the two curves.",
       "bbox": {
@@ -2811,9 +2792,9 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/158",
       "page": 18,
-      "order": 13,
+      "order": 12,
       "role": "heading",
       "text": "4.2.2 Inside O utside O n Tests",
       "bbox": {
@@ -2830,9 +2811,9 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/159",
       "page": 18,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "The inside outside on test for a solid, which is a key operation for a volume-based repre­ sentation, can be done entirely with the half space representation and is redefined for our representation, based on tolerance regions e, 8 and A.",
       "bbox": {
@@ -2849,9 +2830,9 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/160",
       "page": 18,
-      "order": 15,
+      "order": 14,
       "role": "heading",
       "text": "Definition 1 (inside outside a regularized solid)",
       "bbox": {
@@ -2868,9 +2849,9 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/161",
       "page": 18,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "A point P is inside a solid iff P is inside one of the GCBs of the solid or P is on the boundary of more than one GCB and the two implicit surfaces in the two different GCBs on",
       "bbox": {
@@ -2887,7 +2868,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/163",
       "page": 19,
       "order": 1,
       "role": "paragraph",
@@ -2906,7 +2887,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/164",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -2925,7 +2906,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/165",
       "page": 19,
       "order": 3,
       "role": "paragraph",
@@ -2944,7 +2925,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/166",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -2963,7 +2944,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/167",
       "page": 19,
       "order": 5,
       "role": "paragraph",
@@ -2982,7 +2963,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/168",
       "page": 19,
       "order": 6,
       "role": "paragraph",
@@ -3001,7 +2982,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/169",
       "page": 19,
       "order": 7,
       "role": "paragraph",
@@ -3020,7 +3001,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/170",
       "page": 19,
       "order": 8,
       "role": "paragraph",
@@ -3039,7 +3020,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/171",
       "page": 19,
       "order": 9,
       "role": "paragraph",
@@ -3058,7 +3039,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/172",
       "page": 19,
       "order": 10,
       "role": "paragraph",
@@ -3077,7 +3058,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/173",
       "page": 19,
       "order": 11,
       "role": "heading",
@@ -3096,7 +3077,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/174",
       "page": 19,
       "order": 12,
       "role": "paragraph",
@@ -3115,7 +3096,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/175",
       "page": 19,
       "order": 13,
       "role": "list_item",
@@ -3134,7 +3115,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/176",
       "page": 19,
       "order": 14,
       "role": "list_item",
@@ -3153,7 +3134,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/177",
       "page": 19,
       "order": 15,
       "role": "list_item",
@@ -3172,7 +3153,7 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/178",
       "page": 19,
       "order": 16,
       "role": "list_item",
@@ -3191,7 +3172,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/180",
       "page": 20,
       "order": 1,
       "role": "paragraph",
@@ -3210,7 +3191,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/181",
       "page": 20,
       "order": 2,
       "role": "paragraph",
@@ -3229,7 +3210,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/182",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -3248,7 +3229,7 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/183",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -3267,7 +3248,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/184",
       "page": 20,
       "order": 5,
       "role": "heading",
@@ -3286,7 +3267,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/185",
       "page": 20,
       "order": 6,
       "role": "paragraph",
@@ -3305,7 +3286,7 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/186",
       "page": 20,
       "order": 7,
       "role": "paragraph",
@@ -3324,7 +3305,7 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/187",
       "page": 20,
       "order": 8,
       "role": "paragraph",
@@ -3343,7 +3324,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/188",
       "page": 20,
       "order": 9,
       "role": "list_item",
@@ -3362,7 +3343,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/190",
       "page": 21,
       "order": 1,
       "role": "paragraph",
@@ -3381,7 +3362,7 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/191",
       "page": 21,
       "order": 2,
       "role": "heading",
@@ -3400,7 +3381,7 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/192",
       "page": 21,
       "order": 3,
       "role": "paragraph",
@@ -3419,7 +3400,7 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/193",
       "page": 21,
       "order": 4,
       "role": "heading",
@@ -3438,7 +3419,7 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/194",
       "page": 21,
       "order": 5,
       "role": "list_item",
@@ -3457,7 +3438,7 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/195",
       "page": 21,
       "order": 6,
       "role": "list_item",
@@ -3476,7 +3457,7 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/196",
       "page": 21,
       "order": 7,
       "role": "list_item",
@@ -3495,7 +3476,7 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/197",
       "page": 21,
       "order": 8,
       "role": "list_item",
@@ -3514,7 +3495,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/198",
       "page": 21,
       "order": 9,
       "role": "list_item",
@@ -3533,7 +3514,7 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/199",
       "page": 21,
       "order": 10,
       "role": "list_item",
@@ -3552,7 +3533,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/200",
       "page": 21,
       "order": 11,
       "role": "paragraph",
@@ -3571,7 +3552,7 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/201",
       "page": 21,
       "order": 12,
       "role": "paragraph",
@@ -3590,7 +3571,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/203",
       "page": 22,
       "order": 1,
       "role": "paragraph",
@@ -3609,7 +3590,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/204",
       "page": 22,
       "order": 2,
       "role": "list_item",
@@ -3628,7 +3609,7 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/205",
       "page": 22,
       "order": 3,
       "role": "list_item",
@@ -3647,7 +3628,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/206",
       "page": 22,
       "order": 4,
       "role": "list_item",
@@ -3666,7 +3647,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/207",
       "page": 22,
       "order": 5,
       "role": "list_item",
@@ -3685,7 +3666,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/208",
       "page": 22,
       "order": 6,
       "role": "list_item",
@@ -3704,7 +3685,7 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/209",
       "page": 22,
       "order": 7,
       "role": "list_item",
@@ -3723,7 +3704,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/210",
       "page": 22,
       "order": 8,
       "role": "list_item",
@@ -3742,7 +3723,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/211",
       "page": 22,
       "order": 9,
       "role": "list_item",
@@ -3761,7 +3742,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/213",
       "page": 23,
       "order": 1,
       "role": "list_item",
@@ -3780,7 +3761,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/214",
       "page": 23,
       "order": 2,
       "role": "list_item",
@@ -3799,7 +3780,7 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/215",
       "page": 23,
       "order": 3,
       "role": "list_item",
@@ -3818,7 +3799,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/216",
       "page": 23,
       "order": 4,
       "role": "list_item",
@@ -3837,7 +3818,7 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/217",
       "page": 23,
       "order": 5,
       "role": "list_item",
@@ -3856,7 +3837,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/218",
       "page": 23,
       "order": 6,
       "role": "list_item",
@@ -3875,7 +3856,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/219",
       "page": 23,
       "order": 7,
       "role": "list_item",
@@ -3894,7 +3875,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/220",
       "page": 23,
       "order": 8,
       "role": "list_item",
@@ -3913,7 +3894,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/221",
       "page": 23,
       "order": 9,
       "role": "list_item",
@@ -3932,7 +3913,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/222",
       "page": 23,
       "order": 10,
       "role": "list_item",
@@ -3951,7 +3932,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/224",
       "page": 24,
       "order": 1,
       "role": "list_item",
@@ -3970,7 +3951,7 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/225",
       "page": 24,
       "order": 2,
       "role": "list_item",
@@ -3989,7 +3970,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/226",
       "page": 24,
       "order": 3,
       "role": "list_item",
@@ -4008,7 +3989,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/227",
       "page": 24,
       "order": 4,
       "role": "list_item",
@@ -4027,7 +4008,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/228",
       "page": 24,
       "order": 5,
       "role": "list_item",
@@ -4046,7 +4027,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/229",
       "page": 24,
       "order": 6,
       "role": "list_item",
@@ -4065,7 +4046,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/230",
       "page": 24,
       "order": 7,
       "role": "list_item",
@@ -4084,7 +4065,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/231",
       "page": 24,
       "order": 8,
       "role": "list_item",
@@ -4103,7 +4084,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/232",
       "page": 24,
       "order": 9,
       "role": "list_item",
@@ -4122,7 +4103,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/233",
       "page": 24,
       "order": 10,
       "role": "list_item",
@@ -4141,18 +4122,18 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/235",
       "page": 25,
       "order": 1,
       "role": "caption",
       "text": "Rotation Angle: 1.2 (in radians)",
       "bbox": {
-        "x0": 203.05,
-        "y0": 538.0,
-        "x1": 370.4,
-        "y1": 551.44,
-        "width": 167.35,
-        "height": 13.44
+        "x0": 202.94,
+        "y0": 536.85,
+        "x1": 370.56,
+        "y1": 552.41,
+        "width": 167.62,
+        "height": 15.56
       },
       "meta": {
         "docling_label": "caption",
@@ -4160,7 +4141,7 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/236",
       "page": 26,
       "order": 1,
       "role": "caption",
@@ -4179,7 +4160,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/237",
       "page": 27,
       "order": 1,
       "role": "caption",
@@ -4198,7 +4179,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/238",
       "page": 28,
       "order": 1,
       "role": "caption",
@@ -4217,7 +4198,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/239",
       "page": 28,
       "order": 2,
       "role": "paragraph",
@@ -4236,7 +4217,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/240",
       "page": 29,
       "order": 1,
       "role": "caption",

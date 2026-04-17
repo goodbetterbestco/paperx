@@ -4,7 +4,7 @@
     {
       "id": "mathpix-eq-p004-0033",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nR_{X}\\left(\\left.F\\right|_{\\partial S}\\right)=\\chi(S)-\\beta \\chi(\\mathbf{N}) . \\tag{0.1}\n\\end{equation*}",
+      "display_latex": "R_{X}\\left(\\left.F\\right|_{\\partial S}\\right)=\\chi(S)-\\beta \\chi(\\mathbf{N})",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 183.5,
-            "y0": 472.0,
-            "x1": 300.0,
-            "y1": 488.0,
-            "width": 116.5,
-            "height": 16.0
+            "x0": 181.69,
+            "y0": 470.7,
+            "x1": 300.61,
+            "y1": 489.42,
+            "width": 118.92,
+            "height": 18.71
           },
           "engine": "mathpix"
         }
@@ -35,7 +35,7 @@
     {
       "id": "mathpix-eq-p007-0033",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nR_{X}(f) \\geq 2 l(\\mathbf{q})-k-h(\\mathbf{q})-\\beta \\chi(\\mathbf{N}) . \\tag{0.2}\n\\end{equation*}",
+      "display_latex": "R_{X}(f) \\geq 2 l(\\mathbf{A})-k-h(\\mathbf{A})-\\beta \\chi(\\mathbf{N}) .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,12 +46,12 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 157.5,
-            "y0": 546.5,
-            "x1": 316.0,
-            "y1": 562.0,
-            "width": 158.5,
-            "height": 15.5
+            "x0": 156.64,
+            "y0": 545.54,
+            "x1": 318.18,
+            "y1": 563.1,
+            "width": 161.54,
+            "height": 17.56
           },
           "engine": "mathpix"
         }
@@ -66,7 +66,7 @@
     {
       "id": "mathpix-eq-p012-0032",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n2 R_{X}\\left(\\left.F\\right|_{\\Sigma}\\right)-c=\\chi(S)-\\beta \\chi(\\mathbf{N}) ; \\tag{1.1}\n\\end{equation*}",
+      "display_latex": "2 R_{X}\\left(\\left.F\\right|_{\\Sigma}\\right)-c=\\chi(S)-\\beta \\chi(\\mathbf{N}) ;",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 12,
           "bbox": {
-            "x0": 173.0,
-            "y0": 585.5,
-            "x1": 304.5,
-            "y1": 598.5,
-            "width": 131.5,
-            "height": 13.0
+            "x0": 172.2,
+            "y0": 585.57,
+            "x1": 305.53,
+            "y1": 599.68,
+            "width": 133.33,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -97,7 +97,7 @@
     {
       "id": "mathpix-eq-p016-0006",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n2 R_{X}(f)-c_{-}+c_{+} \\geq 2 l(\\mathbf{A})-k_{H}-h(\\mathbf{A})-\\beta \\chi(\\mathbf{N}) . \\tag{1.2}\n\\end{equation*}",
+      "display_latex": "2 R_{X}(f)-c_{-}+c_{+} \\geq 2 l(\\mathbf{A})-k_{H}-h(\\mathbf{A})-\\beta \\chi(\\mathbf{N}) .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -108,12 +108,43 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 132.0,
-            "y0": 117.5,
-            "x1": 343.0,
-            "y1": 133.5,
-            "width": 211.0,
-            "height": 16.0
+            "x0": 131.88,
+            "y0": 118.04,
+            "x1": 343.24,
+            "y1": 133.87,
+            "width": 211.36,
+            "height": 15.83
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p022-0014",
+      "kind": "display",
+      "display_latex": "\\begin{array}{ll}\n\\forall x \\in C_{1}, y \\in C_{2} & F(x)=F(y) \\Rightarrow h(x)<h(y) ; \\\\\n\\forall x \\in C_{1}, y \\in C_{2} & F(x)=F(y) \\Rightarrow h(x)>h(y) .\n\\end{array}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 22,
+          "bbox": {
+            "x0": 87.54,
+            "y0": 204.98,
+            "x1": 294.3,
+            "y1": 237.51,
+            "width": 206.76,
+            "height": 32.53
           },
           "engine": "mathpix"
         }
@@ -128,7 +159,7 @@
     {
       "id": "mathpix-eq-p024-0012",
       "kind": "display",
-      "display_latex": "h_{1}: x \\longmapsto \\begin{cases}s & \\text { if } x \\in C_{s}^{*}  \\tag{2.1}\\\\ s(\\ell)+(t(\\ell)-s(\\ell)) \\psi\\left(\\varphi_{r(\\ell)}(F(x))\\right) & \\text { if } x \\in U_{\\ell}\\end{cases}",
+      "display_latex": "h_{1}: x \\longmapsto \\begin{cases}s & \\text { if } x \\in C_{s}^{*} \\\\ s(\\ell)+(t(\\ell)-s(\\ell)) \\psi\\left(\\varphi_{r(\\ell)}(F(x))\\right) & \\text { if } x \\in U_{\\ell}\\end{cases}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +170,12 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 113.0,
-            "y0": 191.5,
-            "x1": 359.0,
-            "y1": 222.5,
-            "width": 246.0,
-            "height": 31.0
+            "x0": 112.59,
+            "y0": 190.91,
+            "x1": 359.09,
+            "y1": 223.45,
+            "width": 246.49,
+            "height": 32.54
           },
           "engine": "mathpix"
         }
@@ -159,7 +190,7 @@
     {
       "id": "mathpix-eq-p024-0032",
       "kind": "display",
-      "display_latex": "M= \\begin{cases}\\mathbb{R} \\times[-1,1] /{ }_{(x, y)=(x+1, y)} & \\text { if } U \\text { is orientable } \\\\ \\mathbb{R} \\times[-1,1] /{ }_{(x, y)=(x+1,-y)} & \\text { if } U \\text { is non-orientable }\\end{cases}",
+      "display_latex": "M= \\begin{cases}\\mathbb{R} \\times[-1,1] /(x, y)=(x+1, y) & \\text { if } U \\text { is orientable, } \\\\ \\mathbb{R} \\times[-1,1] /(x, y)=(x+1,-y) & \\text { if } U \\text { is non-orientable. }\\end{cases}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +201,43 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 113.5,
-            "y0": 501.5,
-            "x1": 359.5,
-            "y1": 533.5,
-            "width": 246.0,
-            "height": 32.0
+            "x0": 112.59,
+            "y0": 501.33,
+            "x1": 361.68,
+            "y1": 534.16,
+            "width": 249.09,
+            "height": 32.83
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p025-0032",
+      "kind": "display",
+      "display_latex": "m(\\bar{t}) \\leq h_{1}(t, y) \\leq M(\\bar{t}) \\quad \\forall(t, y) \\in[\\bar{t}-\\delta, \\bar{t}+\\delta] \\times[-1,1] ;",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 25,
+          "bbox": {
+            "x0": 116.91,
+            "y0": 535.3,
+            "x1": 360.24,
+            "y1": 550.56,
+            "width": 243.33,
+            "height": 15.26
           },
           "engine": "mathpix"
         }
@@ -190,7 +252,7 @@
     {
       "id": "mathpix-eq-p025-0035",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nm(\\bar{t}) \\leq h_{1}(t, y) \\leq M(\\bar{t}) \\quad \\forall(t, y) \\in[\\bar{t}-\\delta, \\bar{t}+\\delta] \\times[-1,1] ; \\tag{2.2}\n\\end{equation*}",
+      "display_latex": "F\\left(\\left[\\bar{t}_{1}-\\delta, \\bar{t}_{1}+\\delta\\right] \\times[-1,1]\\right) \\cap F\\left(\\left[\\bar{t}_{2}-\\delta, \\bar{t}_{2}+\\delta\\right] \\times[-1,1]\\right)=\\varnothing .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -201,12 +263,12 @@
         {
           "page": 25,
           "bbox": {
-            "x0": 118.0,
-            "y0": 536.5,
-            "x1": 359.0,
-            "y1": 549.5,
-            "width": 241.0,
-            "height": 13.0
+            "x0": 106.55,
+            "y0": 583.67,
+            "x1": 370.89,
+            "y1": 598.65,
+            "width": 264.35,
+            "height": 14.97
           },
           "engine": "mathpix"
         }
@@ -219,40 +281,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p025-0038",
+      "id": "mathpix-eq-p028-0028",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nF\\left(\\left[\\bar{t}_{1}-\\delta, \\bar{t}_{1}+\\delta\\right] \\times[-1,1]\\right) \\cap F\\left(\\left[\\bar{t}_{2}-\\delta, \\bar{t}_{2}+\\delta\\right] \\times[-1,1]\\right)=\\varnothing . \\tag{2.3}\n\\end{equation*}",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 25,
-          "bbox": {
-            "x0": 107.5,
-            "y0": 584.0,
-            "x1": 370.0,
-            "y1": 597.5,
-            "width": 262.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p028-0029",
-      "kind": "display",
-      "display_latex": "\\begin{equation*}\nh\\left(x_{1}\\right)=\\rho_{i} h\\left(x_{2}\\right) \\text { if } F\\left(\\xi\\left(x_{1}\\right)\\right)=F\\left(\\xi\\left(x_{2}\\right)\\right) \\in \\omega_{i} \\quad \\forall x_{1}, x_{2} \\text { s.t. } \\xi\\left(x_{1}\\right)=\\xi\\left(x_{2}\\right) \\tag{2.4}\n\\end{equation*}",
+      "display_latex": "h\\left(x_{1}\\right)=\\rho_{i} h\\left(x_{2}\\right) \\text { if } F\\left(\\xi\\left(x_{1}\\right)\\right)=F\\left(\\xi\\left(x_{2}\\right)\\right) \\in \\omega_{i} \\quad \\forall x_{1}, x_{2} \\text { s.t. } \\xi\\left(x_{1}\\right)=\\xi\\left(x_{2}\\right)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -263,12 +294,43 @@
         {
           "page": 28,
           "bbox": {
-            "x0": 111.5,
-            "y0": 471.5,
-            "x1": 411.0,
-            "y1": 484.5,
-            "width": 299.5,
-            "height": 13.0
+            "x0": 109.14,
+            "y0": 469.94,
+            "x1": 413.22,
+            "y1": 486.93,
+            "width": 304.09,
+            "height": 16.99
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p029-0021",
+      "kind": "display",
+      "display_latex": "\\begin{aligned}\n& \\forall x \\in C_{1}^{\\prime}, y \\in C_{2}^{\\prime} \\quad \\text { if } \\quad F(x)=F(y) \\quad \\text { then } \\quad h(x)<h(y) ; \\\\\n& \\forall x \\in C_{1}^{\\prime}, y \\in C_{2}^{\\prime} \\quad \\text { if } \\quad F(x)=F(y) \\quad \\text { then } \\quad h(x)>h(y) .\n\\end{aligned}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 29,
+          "bbox": {
+            "x0": 81.49,
+            "y0": 325.67,
+            "x1": 328.85,
+            "y1": 357.92,
+            "width": 247.36,
+            "height": 32.25
           },
           "engine": "mathpix"
         }
@@ -294,12 +356,12 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 141.0,
-            "y0": 219.0,
-            "x1": 325.0,
-            "y1": 251.0,
-            "width": 184.0,
-            "height": 32.0
+            "x0": 141.1,
+            "y0": 219.13,
+            "x1": 325.11,
+            "y1": 250.81,
+            "width": 184.01,
+            "height": 31.68
           },
           "engine": "mathpix"
         }
@@ -314,7 +376,7 @@
     {
       "id": "mathpix-eq-p030-0018",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\gamma_{i}^{\\prime}(1)=x_{i}^{\\prime} \\text { and } \\gamma_{i}^{\\prime \\prime}(1)=x_{i}^{\\prime \\prime} \\quad i=1,2 ; \\tag{1}\n\\end{equation*}",
+      "display_latex": "\\begin{aligned}\n& \\gamma_{i}^{\\prime}(1)=x_{i}^{\\prime} \\text { and } \\gamma_{i}^{\\prime \\prime}(1)=x_{i}^{\\prime \\prime} \\quad i=1,2 ; \\\\\n& \\forall t \\neq 1 \\quad \\begin{cases}\\gamma_{1}^{\\prime}(t) \\in C_{1}^{\\prime}, & \\gamma_{1}^{\\prime \\prime}(t) \\in C_{2}^{\\prime} \\\\\n\\gamma_{2}^{\\prime}(t) \\in C_{3}^{\\prime}, & \\gamma_{2}^{\\prime \\prime}(t) \\in C_{4}^{\\prime}\\end{cases} \\\\\n& \\forall t \\quad\\left\\{\\begin{array}{l}\nF^{\\prime}\\left(\\gamma_{1}^{\\prime}(t)\\right)=F^{\\prime}\\left(\\gamma_{2}^{\\prime}(t)\\right), \\\\\nF^{\\prime}\\left(\\gamma_{1}^{\\prime \\prime}(t)\\right)=F^{\\prime}\\left(\\gamma_{2}^{\\prime \\prime}(t)\\right) .\n\\end{array}\\right.\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -325,43 +387,12 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 157.5,
-            "y0": 289.5,
-            "x1": 308.0,
-            "y1": 304.5,
-            "width": 150.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p030-0020",
-      "kind": "display",
-      "display_latex": "\\forall t \\neq 1 \\quad \\begin{cases}\\gamma_{1}^{\\prime}(t) \\in C_{1}^{\\prime}, & \\gamma_{1}^{\\prime \\prime}(t) \\in C_{2}^{\\prime},  \\tag{2}\\\\ \\gamma_{2}^{\\prime}(t) \\in C_{3}^{\\prime}, & \\gamma_{2}^{\\prime \\prime}(t) \\in C_{4}^{\\prime} ;\\end{cases}",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 157.0,
-            "y0": 311.0,
-            "x1": 306.0,
-            "y1": 341.0,
-            "width": 149.0,
-            "height": 30.0
+            "x0": 154.92,
+            "y0": 288.53,
+            "x1": 309.27,
+            "y1": 379.24,
+            "width": 154.35,
+            "height": 90.71
           },
           "engine": "mathpix"
         }
@@ -376,7 +407,7 @@
     {
       "id": "mathpix-eq-p031-0004",
       "kind": "display",
-      "display_latex": "g_{i}(t)=\\left\\{\\begin{array}{ll}\nh\\left(\\gamma_{i}^{\\prime}(t)\\right) & \\text { if } t \\in[0,1] \\\\\n\\rho(\\omega) h\\left(\\gamma_{i}^{\\prime \\prime}(t)\\right) & \\text { if } t \\in[1,2]\n\\end{array} \\quad i=1,2 .\\right.",
+      "display_latex": "g_{i}(t)=\\left\\{\\begin{array}{ll}\nh\\left(\\gamma_{i}^{\\prime}(t)\\right) & \\text { if } t \\in[0,1] \\\\\n\\rho(\\omega) h\\left(\\gamma_{i}^{\\prime \\prime}(t)\\right) & \\text { if } t \\in[1,2]\n\\end{array} \\quad i=1,2\\right.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -387,12 +418,12 @@
         {
           "page": 31,
           "bbox": {
-            "x0": 133.0,
-            "y0": 83.5,
-            "x1": 343.5,
-            "y1": 116.5,
-            "width": 210.5,
-            "height": 33.0
+            "x0": 132.75,
+            "y0": 83.49,
+            "x1": 343.24,
+            "y1": 117.46,
+            "width": 210.49,
+            "height": 33.97
           },
           "engine": "mathpix"
         }

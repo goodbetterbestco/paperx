@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1991_on_surfaces_and_their_contours/1991_on_surfaces_and_their_contours.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1991_on_surfaces_and_their_contours/1991_on_surfaces_and_their_contours.pdf",
   "page_count": 27,
   "page_sizes_pt": [
     {
@@ -141,212 +141,624 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/1",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "ON SURFACES AND THEIR CONTOURS",
-      "bbox": {
-        "x0": 135.84,
-        "y0": 174.73,
-        "x1": 315.66,
-        "y1": 183.24,
-        "width": 179.82,
-        "height": 8.51
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "ON SURFACES AND THEIR CONTOURS"
-      }
-    },
-    {
-      "id": "#/texts/2",
-      "page": 1,
-      "order": 2,
-      "role": "front_matter",
-      "text": "Roberto Pignoni",
-      "bbox": {
-        "x0": 194.16,
-        "y0": 198.25,
-        "x1": 269.15,
-        "y1": 206.76,
-        "width": 74.99,
-        "height": 8.51
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Roberto Pignoni"
-      }
-    },
-    {
-      "id": "#/texts/3",
-      "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "We prove two theorems concerning the global behaviour of a smooth compact surface S, without boundary, embedded in a real projective space or mapped to a plane. Our starting point is an analysis of the orientability properties of the normal bundle of a singular projective curve. Then we see how an excellent projection from S to the Euclidean plane gives rise to integral relations linking the singularities of the apparent contour. Finally, given an embedding of S in RP n, we look at the discriminant ,4* of a net of hyperplanes that intersects S in a generic way, obtaining a characterization of ,4* in terms of mod.2 cohomology invariants.",
-      "bbox": {
-        "x0": 71.04,
-        "y0": 235.69,
-        "x1": 402.93,
-        "y1": 320.04,
-        "width": 331.89,
-        "height": 84.35
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "We prove two theorems concerning the global behaviour of a smooth compact surface S, without boundary, embedded in a real projective space or mapped to a plane. Our starting point is an analysis of the orientability properties of the normal bundle of a singular projective curve. Then we see how an excellent projection from S to the Euclidean plane gives rise to integral relations linking the singularities of the apparent contour. Finally, given an embedding of S in RP n, we look at the discriminant ,4* of a net of hyperplanes that intersects S in a generic way, obtaining a characterization of ,4* in terms of mod.2 cohomology invariants."
-      }
-    },
-    {
-      "id": "#/texts/4",
-      "page": 1,
-      "order": 4,
-      "role": "front_matter",
-      "text": "O. Introduction",
-      "bbox": {
-        "x0": 87.36,
-        "y0": 359.61,
-        "x1": 164.42,
-        "y1": 368.34,
-        "width": 77.06,
-        "height": 8.73
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "O. Introduction"
-      }
-    },
-    {
-      "id": "#/texts/5",
-      "page": 1,
-      "order": 5,
-      "role": "front_matter",
-      "text": "In this paper we undertake a study of surfaces, developed from a global point of view by considering apparent contours and their duals. Our aim is to illustrate the interrelation between some features of these curves and the topology of the surface to which they belong. We are led, in this way, into a region that has been depicted as \"a mixture of integral and mod.2 phenomena\" [K].",
-      "bbox": {
-        "x0": 65.76,
-        "y0": 383.29,
-        "x1": 408.75,
-        "y1": 448.44,
-        "width": 342.99,
-        "height": 65.15
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "In this paper we undertake a study of surfaces, developed from a global point of view by considering apparent contours and their duals. Our aim is to illustrate the interrelation between some features of these curves and the topology of the surface to which they belong. We are led, in this way, into a region that has been depicted as \"a mixture of integral and mod.2 phenomena\" [K]."
-      }
-    },
-    {
-      "id": "#/texts/6",
+      "id": "mathpix-p001-b0006",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
-      "text": "The three sections of this article are meant to unfold different aspects of the subject. Section 1 concerns general properties of curves with cusps and double points in a real projective plane. Some very appropriate remarks of the referee (unknown to us, but whose qualified criticism has been of great help in smoothing the style and improving the structure of this paper) have stimulated us to redesign this part. We have introduced a new and simple presentation of a few basic topological facts concerning singular projective curves. It may be of interest that the present approach leads to a straightforward proof of a slight refinement (Proposition 3) of a celebrated theorem of M6bius [M6]. Our argument is essentially topological (a discussion of related aspects can be found in [Po]).",
+      "role": "paragraph",
+      "text": "ON SURFACES AND THEIR CONTOURS",
       "bbox": {
-        "x0": 65.76,
-        "y0": 454.57,
-        "x1": 414.71,
-        "y1": 576.84,
-        "width": 348.95,
-        "height": 122.27
+        "x0": 134.78,
+        "y0": 173.09,
+        "x1": 325.44,
+        "y1": 182.3,
+        "width": 190.66,
+        "height": 9.22
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "The three sections of this article are meant to unfold different aspects of the subject. Section 1 concerns general properties of curves with cusps and double points in a real projective plane. Some very appropriate remarks of the referee (unknown to us, but whose qualified criticism has been of great help in smoothing the style and improving the structure of this paper) have stimulated us to redesign this part. We have introduced a new and simple presentation of a few basic topological facts concerning singular projective curves. It may be of interest that the present approach leads to a straightforward proof of a slight refinement (Proposition 3) of a celebrated theorem of M6bius [M6]. Our argument is essentially topological (a discussion of related aspects can be found in [Po])."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "6323d319409d4dada65f5ab871fd1b36",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/7",
-      "page": 1,
-      "order": 7,
-      "role": "front_matter",
-      "text": "In Section 2 we apply to apparent contours our results on singular projective curves, making use of some Morse theoretical instruments introduced by Banchoff and Kuiper",
-      "bbox": {
-        "x0": 66.24,
-        "y0": 582.49,
-        "x1": 411.39,
-        "y1": 605.4,
-        "width": 345.15,
-        "height": 22.91
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "In Section 2 we apply to apparent contours our results on singular projective curves, making use of some Morse theoretical instruments introduced by Banchoff and Kuiper"
-      }
-    },
-    {
-      "id": "#/texts/8",
+      "id": "mathpix-p001-b0008",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
-      "text": "manuscripta",
+      "role": "paragraph",
+      "text": "Roberto Pignoni",
       "bbox": {
-        "x0": 328.56,
-        "y0": 35.91,
-        "x1": 403.24,
-        "y1": 45.54,
-        "width": 74.68,
-        "height": 9.63
+        "x0": 193.54,
+        "y0": 196.7,
+        "x1": 263.52,
+        "y1": 206.78,
+        "width": 69.98,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "manuscripta"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "90e8d89db8d54cc09a32dffd412ee0db",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0009",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
-      "text": "mathematica",
+      "role": "paragraph",
+      "text": "We prove two theorems concerning the global behaviour of a smooth compact",
       "bbox": {
-        "x0": 328.56,
-        "y0": 45.51,
-        "x1": 403.24,
-        "y1": 55.14,
-        "width": 74.68,
-        "height": 9.63
+        "x0": 91.87,
+        "y0": 234.14,
+        "x1": 398.02,
+        "y1": 244.8,
+        "width": 306.14,
+        "height": 10.66
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "mathematica"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999937384747559,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
+      "id": "mathpix-p001-b0010",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
-      "text": "9 Sprmger-Verlag",
+      "role": "paragraph",
+      "text": "surface \\(S\\), without boundary, embedded in a real projective space or mapped to a",
       "bbox": {
-        "x0": 328.08,
-        "y0": 55.32,
-        "x1": 386.16,
-        "y1": 62.04,
-        "width": 58.08,
-        "height": 6.72
+        "x0": 70.56,
+        "y0": 243.65,
+        "x1": 398.02,
+        "y1": 253.73,
+        "width": 327.46,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "9 Sprmger-Verlag"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/11",
+      "id": "mathpix-p001-b0011",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
-      "text": "1991",
+      "role": "paragraph",
+      "text": "plane. Our starting point is an analysis of the orientability properties of the normal",
       "bbox": {
-        "x0": 380.64,
-        "y0": 55.32,
-        "x1": 396.32,
-        "y1": 62.04,
-        "width": 15.68,
-        "height": 6.72
+        "x0": 70.56,
+        "y0": 253.15,
+        "x1": 398.02,
+        "y1": 263.52,
+        "width": 327.46,
+        "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "1991"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0012",
+      "page": 1,
+      "order": 12,
+      "role": "paragraph",
+      "text": "bundle of a singular projective curve. Then we see how an excellent projection from \\(S\\)",
+      "bbox": {
+        "x0": 70.56,
+        "y0": 262.94,
+        "x1": 398.02,
+        "y1": 273.02,
+        "width": 327.46,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0013",
+      "page": 1,
+      "order": 13,
+      "role": "paragraph",
+      "text": "to the Euclidean plane gives rise to integral relations linking the singularities of the",
+      "bbox": {
+        "x0": 70.56,
+        "y0": 271.87,
+        "x1": 398.02,
+        "y1": 282.82,
+        "width": 327.46,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0014",
+      "page": 1,
+      "order": 14,
+      "role": "paragraph",
+      "text": "apparent contour. Finally, given an embedding of \\(S\\) in \\(\\mathrm{RP}^{\\mathrm{n}}\\), we look at the",
+      "bbox": {
+        "x0": 70.56,
+        "y0": 283.1,
+        "x1": 398.02,
+        "y1": 295.49,
+        "width": 327.46,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.8731698989868164,
+        "confidence_rate": 0.998617027322261,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0015",
+      "page": 1,
+      "order": 15,
+      "role": "paragraph",
+      "text": "discriminant \\(\\Delta^{*}\\) of a net of hyperplanes that intersects \\(S\\) in a generic way, obtaining a",
+      "bbox": {
+        "x0": 70.56,
+        "y0": 297.22,
+        "x1": 398.02,
+        "y1": 308.45,
+        "width": 327.46,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999953485775026,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0016",
+      "page": 1,
+      "order": 16,
+      "role": "paragraph",
+      "text": "characterization of \\(\\Delta^{*}\\) in terms of mod. 2 cohomology invariants.",
+      "bbox": {
+        "x0": 70.56,
+        "y0": 309.89,
+        "x1": 313.06,
+        "y1": 321.12,
+        "width": 242.5,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999940439141021,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0018",
+      "page": 1,
+      "order": 18,
+      "role": "paragraph",
+      "text": "0. Introduction",
+      "bbox": {
+        "x0": 86.69,
+        "y0": 357.98,
+        "x1": 157.54,
+        "y1": 368.06,
+        "width": 70.85,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "c65e934ab91c492f80927ee52a04a16c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0019",
+      "page": 1,
+      "order": 19,
+      "role": "paragraph",
+      "text": "In this paper we undertake a study of surfaces, developed from a global point of",
+      "bbox": {
+        "x0": 86.69,
+        "y0": 381.6,
+        "x1": 404.64,
+        "y1": 392.83,
+        "width": 317.95,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0020",
+      "page": 1,
+      "order": 20,
+      "role": "paragraph",
+      "text": "view by considering apparent contours and their duals. Our aim is to illustrate the",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 395.42,
+        "x1": 403.49,
+        "y1": 406.66,
+        "width": 338.4,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0021",
+      "page": 1,
+      "order": 21,
+      "role": "paragraph",
+      "text": "interrelation between some features of these curves and the topology of the surface to",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 409.25,
+        "x1": 404.06,
+        "y1": 421.63,
+        "width": 338.98,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0022",
+      "page": 1,
+      "order": 22,
+      "role": "paragraph",
+      "text": "which they belong. We are led, in this way, into a region that has been depicted as \"a",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 424.22,
+        "x1": 404.06,
+        "y1": 435.46,
+        "width": 338.98,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "mixture of integral and mod. 2 phenomena\" \\([\\mathrm{K}]\\).",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 438.05,
+        "x1": 245.38,
+        "y1": 449.28,
+        "width": 180.29,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.7438011761205416,
+        "confidence_rate": 0.9951595966883634,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0024",
+      "page": 1,
+      "order": 24,
+      "role": "paragraph",
+      "text": "The three sections of this article are meant to unfold different aspects of the subject.",
+      "bbox": {
+        "x0": 86.11,
+        "y0": 452.16,
+        "x1": 403.49,
+        "y1": 464.26,
+        "width": 317.38,
+        "height": 12.1
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0025",
+      "page": 1,
+      "order": 25,
+      "role": "paragraph",
+      "text": "Section 1 concerns general properties of curves with cusps and double points in a",
+      "bbox": {
+        "x0": 86.69,
+        "y0": 467.14,
+        "x1": 404.06,
+        "y1": 479.23,
+        "width": 317.38,
+        "height": 12.1
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0026",
+      "page": 1,
+      "order": 26,
+      "role": "paragraph",
+      "text": "real projective plane. Some very appropriate remarks of the referee (unknown to us, but",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 480.96,
+        "x1": 404.06,
+        "y1": 492.77,
+        "width": 338.98,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0027",
+      "page": 1,
+      "order": 27,
+      "role": "paragraph",
+      "text": "whose qualified criticism has been of great help in smoothing the style and improving the",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 494.78,
+        "x1": 403.49,
+        "y1": 507.17,
+        "width": 338.4,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "structure of this paper) have stimulated us to redesign this part. We have introduced a new",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 509.18,
+        "x1": 403.49,
+        "y1": 520.99,
+        "width": 338.4,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "and simple presentation of a few basic topological facts concerning singular projective",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 523.58,
+        "x1": 403.49,
+        "y1": 534.82,
+        "width": 338.4,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999946913130248,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "curves. It may be of interest that the present approach leads to a straightforward proof of a",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 537.7,
+        "x1": 403.49,
+        "y1": 549.79,
+        "width": 338.4,
+        "height": 12.1
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "slight refinement (Proposition 3) of a celebrated theorem of Möbius [Mö]. Our argument",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 551.52,
+        "x1": 403.49,
+        "y1": 563.9,
+        "width": 338.4,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0032",
+      "page": 1,
+      "order": 32,
+      "role": "paragraph",
+      "text": "is essentially topological (a discussion of related aspects can be found in [Po]).",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 565.34,
+        "x1": 359.71,
+        "y1": 578.3,
+        "width": 294.62,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9960954189300537,
+        "confidence_rate": 0.9999550329208464,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0033",
+      "page": 1,
+      "order": 33,
+      "role": "paragraph",
+      "text": "In Section 2 we apply to apparent contours our results on singular projective curves,",
+      "bbox": {
+        "x0": 86.11,
+        "y0": 580.32,
+        "x1": 403.49,
+        "y1": 592.7,
+        "width": 317.38,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0034",
+      "page": 1,
+      "order": 34,
+      "role": "paragraph",
+      "text": "making use of some Morse theoretical instruments introduced by Banchoff and Kuiper",
+      "bbox": {
+        "x0": 65.09,
+        "y0": 594.72,
+        "x1": 403.49,
+        "y1": 606.53,
+        "width": 338.4,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
@@ -3892,9 +4304,9 @@
       "bbox": {
         "x0": 237.48,
         "y0": 531.89,
-        "x1": 250.39,
+        "x1": 249.4,
         "y1": 542.83,
-        "width": 12.91,
+        "width": 11.92,
         "height": 10.94
       },
       "meta": {
@@ -5954,5 +6366,34 @@
         "docling_orig": "(Received March 16, 1990; in revised form March 22, 1991)"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling"
+  }
 }

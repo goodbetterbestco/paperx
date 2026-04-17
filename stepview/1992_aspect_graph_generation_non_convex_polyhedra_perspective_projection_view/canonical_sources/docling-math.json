@@ -35,7 +35,7 @@
     {
       "id": "docling-eq-0002",
       "kind": "display",
-      "display_latex": "(a - b) (c- d) ‡ 0. (2)",
+      "display_latex": "(a - b) (c - d) # 0. (2)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,11 +46,11 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 491.89,
+            "x0": 490.23,
             "y0": 773.67,
             "x1": 695.6,
             "y1": 788.72,
-            "width": 203.71,
+            "width": 205.37,
             "height": 15.05
           },
           "engine": "docling"
@@ -67,7 +67,7 @@
     {
       "id": "docling-eq-0003",
       "kind": "display",
-      "display_latex": "(a - c) 73 ≤ 0, (a - d) n4 ≤ 0, (c -a) n, ≤ 0, (c-b) i, ≤ 0, (d - a) i, ≤ 0, (d-b) n, ≤0 (3)",
+      "display_latex": "(a - c) 73 ≤ 0, (a - d) n4 ≤ 0, (c -a) n, ≤ 0, (c-b) i, ≤ 0, (d - a) i, ≤0, (d-b) n2≤0 (3)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -80,9 +80,9 @@
           "bbox": {
             "x0": 142.43,
             "y0": 115.99,
-            "x1": 382.58,
+            "x1": 384.23,
             "y1": 217.06,
-            "width": 240.15,
+            "width": 241.8,
             "height": 101.07
           },
           "engine": "docling"
@@ -99,7 +99,7 @@
     {
       "id": "docling-eq-0004",
       "kind": "display",
-      "display_latex": "(v - a)n, >0 and (v- a) n2<0 or (v - a)n, <0 and (v - a) n2> 0. (4)",
+      "display_latex": "(v - a) n, >0 and (v- a) n2<0 or (v - a)n, <0 and (v - a) n2> 0. (4)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -194,7 +194,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "(V - c) n3>0 and (v - c) n4<0 (V - C) n3<0 and (v- c) ns> 0. (7)",
+      "display_latex": "(V - c) n3>0 and (v - c) n4<0 (v - c)n, <0 and (v-c)ns> 0. (7)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -208,9 +208,9 @@
             "x0": 447.17,
             "y0": 526.92,
             "x1": 697.25,
-            "y1": 590.0,
+            "y1": 591.67,
             "width": 250.08,
-            "height": 63.08
+            "height": 64.75
           },
           "engine": "docling"
         }
@@ -258,7 +258,7 @@
     {
       "id": "docling-eq-0009",
       "kind": "display",
-      "display_latex": "REEE = i= N A REED N = 2 or 3 (9)",
+      "display_latex": "i= N REEE = A REED N = 2 or 3 (9)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {

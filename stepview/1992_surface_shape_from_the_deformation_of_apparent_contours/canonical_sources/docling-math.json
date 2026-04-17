@@ -4,7 +4,7 @@
     {
       "id": "docling-eq-0001",
       "kind": "display",
-      "display_latex": "Is ·n = 0 (1)",
+      "display_latex": "Is ·n= 0 (1)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -17,9 +17,9 @@
           "bbox": {
             "x0": 306.66,
             "y0": 526.79,
-            "x1": 487.48,
+            "x1": 486.26,
             "y1": 539.07,
-            "width": 180.82,
+            "width": 179.6,
             "height": 12.28
           },
           "engine": "docling"
@@ -100,7 +100,7 @@
     {
       "id": "docling-eq-0004",
       "kind": "display",
-      "display_latex": "G = I's't's Is 'I, r,. r, (4)",
+      "display_latex": "G = 's't's Is 'I, r,. r, (4)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -164,7 +164,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "I(Ts) = Ils (6)",
+      "display_latex": "I(Ts) = 1Is (6)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -178,9 +178,9 @@
             "x0": 77.75,
             "y0": 530.51,
             "x1": 261.46,
-            "y1": 545.76,
+            "y1": 545.82,
             "width": 183.71,
-            "height": 15.25
+            "height": 15.31
           },
           "engine": "docling"
         }
@@ -196,7 +196,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "L(,) = n, (7)",
+      "display_latex": "(7)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -207,12 +207,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 79.33,
+            "x0": 245.57,
             "y0": 547.63,
             "x1": 261.46,
-            "y1": 562.62,
-            "width": 182.13,
-            "height": 14.99
+            "y1": 559.85,
+            "width": 15.89,
+            "height": 12.22
           },
           "engine": "docling"
         }
@@ -290,7 +290,7 @@
     {
       "id": "docling-eq-0010",
       "kind": "display",
-      "display_latex": "r(s, t) = (t) + N(s, 1) Q(s, 1) (10)",
+      "display_latex": "r(s, t) = v(t) + N(s, 1) Q(s, 1) (10)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -322,7 +322,7 @@
     {
       "id": "docling-eq-0011",
       "kind": "display",
-      "display_latex": "Q . n = 0 (11)",
+      "display_latex": "Q . n = o (11)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -400,9 +400,9 @@
             "x0": 69.64,
             "y0": 338.53,
             "x1": 254.13,
-            "y1": 354.53,
+            "y1": 355.86,
             "width": 184.49,
-            "height": 16.0
+            "height": 17.33
           },
           "engine": "docling"
         }
@@ -747,11 +747,11 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 316.68,
+            "x0": 312.92,
             "y0": 295.57,
             "x1": 499.7,
             "y1": 323.93,
-            "width": 183.02,
+            "width": 186.78,
             "height": 28.36
           },
           "engine": "docling"
@@ -767,7 +767,7 @@
     {
       "id": "docling-eq-0025",
       "kind": "display",
-      "display_latex": "sin? 0 (23)",
+      "display_latex": "Як° sin? 0 (23)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -779,11 +779,11 @@
           "page": 6,
           "bbox": {
             "x0": 342.09,
-            "y0": 367.94,
+            "y0": 360.6,
             "x1": 498.48,
             "y1": 382.61,
             "width": 156.39,
-            "height": 14.67
+            "height": 22.01
           },
           "engine": "docling"
         }
@@ -831,7 +831,7 @@
     {
       "id": "docling-eq-0027",
       "kind": "display",
-      "display_latex": "r,^ Q= 0 (25)",
+      "display_latex": "r, 1Q = 0 (25)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -845,9 +845,9 @@
             "x0": 78.1,
             "y0": 188.25,
             "x1": 260.24,
-            "y1": 200.95,
+            "y1": 200.93,
             "width": 182.14,
-            "height": 12.7
+            "height": 12.68
           },
           "engine": "docling"
         }
@@ -877,9 +877,9 @@
             "x0": 239.47,
             "y0": 387.5,
             "x1": 259.01,
-            "y1": 398.5,
+            "y1": 397.27,
             "width": 19.54,
-            "height": 11.0
+            "height": 9.77
           },
           "engine": "docling"
         }
@@ -959,7 +959,7 @@
     {
       "id": "docling-eq-0031",
       "kind": "display",
-      "display_latex": "к' = \"#' n (29) r, r,",
+      "display_latex": "(29) r, r,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -970,12 +970,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 316.68,
-            "y0": 246.36,
+            "x0": 340.87,
+            "y0": 253.03,
             "x1": 498.48,
             "y1": 268.92,
-            "width": 181.8,
-            "height": 22.56
+            "width": 157.61,
+            "height": 15.89
           },
           "engine": "docling"
         }
@@ -1022,7 +1022,7 @@
     {
       "id": "docling-eq-0033",
       "kind": "display",
-      "display_latex": "к' = (31)",
+      "display_latex": "1=2, A,+0.0) (31)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1033,12 +1033,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 311.55,
+            "x0": 310.33,
             "y0": 370.38,
             "x1": 497.26,
-            "y1": 382.61,
-            "width": 185.71,
-            "height": 12.23
+            "y1": 389.94,
+            "width": 186.93,
+            "height": 19.56
           },
           "engine": "docling"
         }
@@ -1054,7 +1054,7 @@
     {
       "id": "docling-eq-0034",
       "kind": "display",
-      "display_latex": "^ = - V ·n (32) 01'n",
+      "display_latex": "(32) e.'n",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1065,12 +1065,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 72.08,
-            "y0": 142.94,
+            "x0": 107.52,
+            "y0": 147.91,
             "x1": 255.35,
-            "y1": 165.02,
-            "width": 183.27,
-            "height": 22.08
+            "y1": 166.24,
+            "width": 147.83,
+            "height": 18.33
           },
           "engine": "docling"
         }
@@ -1149,7 +1149,7 @@
     {
       "id": "docling-eq-0037",
       "kind": "display",
-      "display_latex": "(35)",
+      "display_latex": "· = [5 i] (35)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1160,12 +1160,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 230.91,
-            "y0": 477.95,
+            "x0": 68.12,
+            "y0": 469.81,
             "x1": 252.91,
-            "y1": 491.4,
-            "width": 22.0,
-            "height": 13.45
+            "y1": 498.31,
+            "width": 184.79,
+            "height": 28.5
           },
           "engine": "docling"
         }
@@ -1181,7 +1181,7 @@
     {
       "id": "docling-eq-0038",
       "kind": "display",
-      "display_latex": "Is ·n=-r·n, =-|r,Q.n, = 0",
+      "display_latex": "Is 'n=-r·n, =-|r,Q.n, = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1244,7 +1244,7 @@
     {
       "id": "docling-eq-0040",
       "kind": "display",
-      "display_latex": "K° = KP sin' 0 (37)",
+      "display_latex": "K° = KP sin? 0 (37)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1255,12 +1255,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 307.44,
-            "y0": 257.92,
+            "x0": 307.47,
+            "y0": 258.06,
             "x1": 492.37,
-            "y1": 282.14,
-            "width": 184.93,
-            "height": 24.22
+            "y1": 281.87,
+            "width": 184.9,
+            "height": 23.81
           },
           "engine": "docling"
         }
@@ -1308,7 +1308,7 @@
     {
       "id": "docling-eq-0042",
       "kind": "display",
-      "display_latex": "(39)",
+      "display_latex": "(81D+(8.0(81) (39)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1319,12 +1319,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 466.71,
-            "y0": 657.64,
+            "x0": 310.33,
+            "y0": 650.31,
             "x1": 486.26,
-            "y1": 668.64,
-            "width": 19.55,
-            "height": 11.0
+            "y1": 669.87,
+            "width": 175.93,
+            "height": 19.56
           },
           "engine": "docling"
         }
@@ -1499,7 +1499,7 @@
     {
       "id": "docling-eq-0048",
       "kind": "display",
-      "display_latex": "Q( · n(\") = (x(1))2 x(i) + 810) \" X(i) (45)",
+      "display_latex": "Q( · n(\") = x(i) + 810) \" X(i) (45)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1531,7 +1531,7 @@
     {
       "id": "docling-eq-0049",
       "kind": "display",
-      "display_latex": "AR =. KE1 (46)",
+      "display_latex": "1 AR =. KE1 (46)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1595,7 +1595,7 @@
     {
       "id": "docling-eq-0051",
       "kind": "display",
-      "display_latex": "AR = AR + perror (48)",
+      "display_latex": "AR = AŘ + Rerror (48)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1606,11 +1606,11 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 303.0,
+            "x0": 301.78,
             "y0": 515.8,
             "x1": 486.26,
             "y1": 529.29,
-            "width": 183.26,
+            "width": 184.48,
             "height": 13.49
           },
           "engine": "docling"
@@ -1640,9 +1640,9 @@
           "bbox": {
             "x0": 354.31,
             "y0": 563.52,
-            "x1": 486.26,
+            "x1": 485.04,
             "y1": 584.3,
-            "width": 131.95,
+            "width": 130.73,
             "height": 20.78
           },
           "engine": "docling"
@@ -1957,12 +1957,12 @@
         {
           "page": 17,
           "bbox": {
-            "x0": 305.3,
-            "y0": 612.0,
+            "x0": 305.31,
+            "y0": 612.03,
             "x1": 485.04,
-            "y1": 634.83,
-            "width": 179.74,
-            "height": 22.83
+            "y1": 634.8,
+            "width": 179.73,
+            "height": 22.77
           },
           "engine": "docling"
         }
@@ -2074,7 +2074,7 @@
     {
       "id": "docling-eq-0066",
       "kind": "display",
-      "display_latex": "к к' K= sin? o",
+      "display_latex": "к к' K = sin? o",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2201,7 +2201,7 @@
     {
       "id": "docling-eq-0070",
       "kind": "display",
-      "display_latex": "Or = ai 25 2Q = дт д5 + 2%5, 3( at (65) + (66)",
+      "display_latex": "Õn = дt2",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2212,12 +2212,43 @@
         {
           "page": 29,
           "bbox": {
-            "x0": 43.98,
-            "y0": 430.16,
+            "x0": 45.21,
+            "y0": 431.5,
+            "x1": 87.97,
+            "y1": 447.39,
+            "width": 42.76,
+            "height": 15.89
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0071",
+      "kind": "display",
+      "display_latex": "25 2Q = дт д5 + 2951, 3(20 (65) + (66)",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 29,
+          "bbox": {
+            "x0": 58.64,
+            "y0": 435.17,
             "x1": 249.24,
-            "y1": 513.46,
-            "width": 205.26,
-            "height": 83.3
+            "y1": 514.62,
+            "width": 190.6,
+            "height": 79.45
           },
           "engine": "docling"
         }
@@ -2231,9 +2262,9 @@
       "equation_number": "(66)"
     },
     {
-      "id": "docling-eq-0071",
+      "id": "docling-eq-0072",
       "kind": "display",
-      "display_latex": "0x'=- (35l) 2 2ã · n dil= (67)",
+      "display_latex": "0x'== (35l) 2 2ã · n dil= (67)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2244,12 +2275,12 @@
         {
           "page": 29,
           "bbox": {
-            "x0": 29.24,
-            "y0": 515.59,
+            "x0": 29.2,
+            "y0": 515.45,
             "x1": 246.8,
             "y1": 583.08,
-            "width": 217.56,
-            "height": 67.49
+            "width": 217.6,
+            "height": 67.63
           },
           "engine": "docling"
         }
@@ -2263,7 +2294,7 @@
       "equation_number": "(67)"
     },
     {
-      "id": "docling-eq-0072",
+      "id": "docling-eq-0073",
       "kind": "display",
       "display_latex": "Ř =Õ* (68)",
       "semantic_expr": null,
@@ -2295,7 +2326,7 @@
       "equation_number": "(68)"
     },
     {
-      "id": "docling-eq-0073",
+      "id": "docling-eq-0074",
       "kind": "display",
       "display_latex": "Ř, = Õ* (69)",
       "semantic_expr": null,
@@ -2327,9 +2358,9 @@
       "equation_number": "(69)"
     },
     {
-      "id": "docling-eq-0074",
+      "id": "docling-eq-0075",
       "kind": "display",
-      "display_latex": "ē.. aõ = | aõ 12 (70)",
+      "display_latex": "= | aõ 12 (70)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2341,11 +2372,11 @@
           "page": 29,
           "bbox": {
             "x0": 328.66,
-            "y0": 231.03,
+            "y0": 251.81,
             "x1": 491.15,
             "y1": 272.59,
             "width": 162.49,
-            "height": 41.56
+            "height": 20.78
           },
           "engine": "docling"
         }
@@ -2359,9 +2390,9 @@
       "equation_number": "(70)"
     },
     {
-      "id": "docling-eq-0075",
+      "id": "docling-eq-0076",
       "kind": "display",
-      "display_latex": "0(2 = 0 Q) = @ +10 1(2) = x 111) = 1 + 41 Q12). n= 0 Q(1)· ·n = 4Q · n",
+      "display_latex": "0(2 = 0 Q\"' = Q+10 1(2) = x 111) = 1 + 41 Q12). n= 0 Q(1)· ·n = 4Q · n",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2374,9 +2405,9 @@
           "bbox": {
             "x0": 306.66,
             "y0": 510.8,
-            "x1": 393.41,
+            "x1": 393.42,
             "y1": 619.75,
-            "width": 86.75,
+            "width": 86.76,
             "height": 108.95
           },
           "engine": "docling"
@@ -2390,7 +2421,7 @@
       }
     },
     {
-      "id": "docling-eq-0076",
+      "id": "docling-eq-0077",
       "kind": "display",
       "display_latex": "1 (71)",
       "semantic_expr": null,
@@ -2422,7 +2453,7 @@
       "equation_number": "(71)"
     },
     {
-      "id": "docling-eq-0077",
+      "id": "docling-eq-0078",
       "kind": "display",
       "display_latex": "AR = AR + Rerror (72)",
       "semantic_expr": null,
@@ -2435,11 +2466,11 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 78.19,
+            "x0": 79.41,
             "y0": 128.28,
             "x1": 261.46,
             "y1": 139.35,
-            "width": 183.27,
+            "width": 182.05,
             "height": 11.07
           },
           "engine": "docling"
@@ -2454,7 +2485,7 @@
       "equation_number": "(72)"
     },
     {
-      "id": "docling-eq-0078",
+      "id": "docling-eq-0079",
       "kind": "display",
       "display_latex": "Rerror = RAN + RAQ + R\" (73)",
       "semantic_expr": null,
@@ -2486,7 +2517,7 @@
       "equation_number": "(73)"
     },
     {
-      "id": "docling-eq-0079",
+      "id": "docling-eq-0080",
       "kind": "display",
       "display_latex": "3 4U · Q U · n + AU, · n (U · 1)? (U · n) (Un)",
       "semantic_expr": null,
@@ -2499,11 +2530,11 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 106.29,
+            "x0": 107.52,
             "y0": 238.24,
             "x1": 243.13,
             "y1": 293.37,
-            "width": 136.84,
+            "width": 135.61,
             "height": 55.13
           },
           "engine": "docling"
@@ -2517,9 +2548,9 @@
       }
     },
     {
-      "id": "docling-eq-0080",
+      "id": "docling-eq-0081",
       "kind": "display",
-      "display_latex": "RAR = - 21(U · 8) _ 13(2, 1 8) · n U · n (U · 1)? (U · n)2 R\" = 8 ·n X-U, X|U|2 (U · 1)? (U. n). U · n 12+2100·0 (U · n)?",
+      "display_latex": "RAR = - 21(U · 8) _ 13(2, 1 8) · n U · n (U · 1)? (U · n)2 R\" = 8 ·n X-U, X|U|2 (U · 1)? (U. n). U · n 12 + 2NU · 0 (U · n)?",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -2530,11 +2561,11 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 283.45,
+            "x0": 284.67,
             "y0": 75.64,
             "x1": 448.39,
             "y1": 259.23,
-            "width": 164.94,
+            "width": 163.72,
             "height": 183.59
           },
           "engine": "docling"

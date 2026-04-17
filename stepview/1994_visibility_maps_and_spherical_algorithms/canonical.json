@@ -3,7 +3,7 @@
   "paper_id": "1994_visibility_maps_and_spherical_algorithms",
   "title": "Visibility Maps and Spherical Algorithms",
   "source": {
-    "pdf_path": "docs/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
+    "pdf_path": "stepview/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
     "page_count": 11,
     "page_sizes_pt": [
       {
@@ -64,12 +64,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:00:38Z",
-    "updated_at": "2026-04-15T17:00:38Z",
+    "created_at": "2026-04-17T04:05:24Z",
+    "updated_at": "2026-04-17T04:05:24Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "mathpix+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -81,42 +81,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
+        "path": "stepview/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
         "exists": true,
         "size_bytes": 932340,
-        "modified_at": "2026-04-13T16:18:56Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "15fa3c830f0346fdc35c509d026430b7de93eb0f6197347220b58c20eca8d056"
       },
       "external_layout": {
-        "path": "docs/1994_visibility_maps_and_spherical_algorithms/canonical_sources/layout.json",
+        "path": "stepview/1994_visibility_maps_and_spherical_algorithms/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 159888,
-        "modified_at": "2026-04-15T17:00:36Z",
-        "sha256": "830fdfe9282dcffaf7003b4e5efcffb27b885eda58014ee0af030e980849fc63"
+        "size_bytes": 160141,
+        "modified_at": "2026-04-17T04:05:22Z",
+        "sha256": "cfe47f155c3e81e0837b6865d0883585856f7df07cd55a458d4514239674b0d0"
       },
       "external_math": {
-        "path": "docs/1994_visibility_maps_and_spherical_algorithms/canonical_sources/math.json",
+        "path": "stepview/1994_visibility_maps_and_spherical_algorithms/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 1435,
-        "modified_at": "2026-04-15T17:00:36Z",
-        "sha256": "60c295b716e71fbf637e91ca0ce90bb9c167f6c4687e014f3aed1e0a821bdf80"
+        "size_bytes": 2191,
+        "modified_at": "2026-04-17T04:05:22Z",
+        "sha256": "ec8632fed6cb11768299d7e86a85f59124ff29fb67083cc365691102490846e7"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
       }
     }
   },
@@ -223,7 +226,7 @@
             "width": 96.33,
             "height": 9.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -234,7 +237,28 @@
       "level": 1,
       "block_ids": [
         "blk-reference-0005",
-        "blk-reference-0006"
+        "blk-reference-0006",
+        "blk-reference-0007",
+        "blk-reference-0008",
+        "blk-reference-0009",
+        "blk-reference-0010",
+        "blk-reference-0011",
+        "blk-reference-0012",
+        "blk-reference-0013",
+        "blk-reference-0014",
+        "blk-reference-0015",
+        "blk-reference-0016",
+        "blk-reference-0017",
+        "blk-reference-0018",
+        "blk-reference-0019",
+        "blk-reference-0020",
+        "blk-reference-0021",
+        "blk-reference-0022",
+        "blk-reference-0023",
+        "blk-reference-0024",
+        "blk-reference-0025",
+        "blk-reference-0026",
+        "blk-reference-0027"
       ],
       "children": [],
       "source_spans": [
@@ -248,7 +272,7 @@
             "width": 61.36,
             "height": 9.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -261,7 +285,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "By the extraction of ideas from computer vision, geometrical design and complexity analysis, a structure called visibility emerges. The paper describes a way in which a 3D workpiece is mapped onto the unit sphere, and its visibility is determined. For applications, manufacturing machines are classified by their degrees of freedom into point, line and surface visible processes. Algorithms for optimal workpiece orientation are then formulated as simple intersections on the sphere."
+            "text": "By the extraction of ideas from computer vision, geometrical design and complexity analysis, a structure called visibility emerges. The paper describes a way in which a 3D workpiece is mapped onto the unit sphere, and its visibility is determined. For applications, manufacturing machines are classified by their degrees of freedom into point, line and surface visible processes. Algorithms for optimal workpiece orientation are then formulated as simple intersections on the sphere. algorithms"
           }
         ]
       },
@@ -276,14 +300,26 @@
             "width": 253.66,
             "height": 86.24
           },
-          "engine": "docling"
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 55.58,
+            "y0": 142.27,
+            "x1": 226.37,
+            "y1": 177.98,
+            "width": 170.78,
+            "height": 35.71
+          },
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "edited",
+        "status": "unreviewed",
         "risk": "medium",
-        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
+        "notes": ""
       }
     },
     {
@@ -308,7 +344,7 @@
             "width": 251.46,
             "height": 69.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -340,7 +376,7 @@
             "width": 250.31,
             "height": 105.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -372,7 +408,7 @@
             "width": 244.43,
             "height": 33.1
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -399,7 +435,7 @@
             "width": 237.5,
             "height": 16.73
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -426,8 +462,23 @@
             "width": 238.48,
             "height": 16.97
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0007",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-003"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -438,8 +489,23 @@
             "width": 241.32,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0008",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-004"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -450,8 +516,23 @@
             "width": 241.92,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0009",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-005"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -462,8 +543,23 @@
             "width": 238.92,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0010",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-006"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -474,8 +570,23 @@
             "width": 246.23,
             "height": 16.73
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0011",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-007"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -486,8 +597,23 @@
             "width": 239.88,
             "height": 34.73
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0012",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-008"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -498,8 +624,23 @@
             "width": 240.49,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0013",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-009"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -510,8 +651,23 @@
             "width": 235.57,
             "height": 16.25
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0014",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-010"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -522,8 +678,23 @@
             "width": 243.96,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0015",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-011"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -534,8 +705,23 @@
             "width": 246.57,
             "height": 43.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0016",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-012"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -546,8 +732,23 @@
             "width": 247.66,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0017",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-013"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -558,8 +759,23 @@
             "width": 249.37,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0018",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-014"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -570,8 +786,23 @@
             "width": 247.01,
             "height": 25.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0019",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-015"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -582,8 +813,23 @@
             "width": 251.71,
             "height": 43.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0020",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-016"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -594,8 +840,23 @@
             "width": 244.24,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0021",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-017"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -606,8 +867,23 @@
             "width": 244.18,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0022",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-018"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -618,8 +894,23 @@
             "width": 244.2,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0023",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-019"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -630,8 +921,23 @@
             "width": 243.61,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0024",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-020"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -642,8 +948,23 @@
             "width": 243.72,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0025",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-021"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -654,8 +975,23 @@
             "width": 240.92,
             "height": 16.25
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0026",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-022"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -666,8 +1002,23 @@
             "width": 241.4,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0027",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-023"
+      },
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -678,7 +1029,7 @@
             "width": 241.81,
             "height": 16.49
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 11,
@@ -690,7 +1041,7 @@
             "width": 145.68,
             "height": 96.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1214,7 +1565,7 @@
             "width": 237.5,
             "height": 16.73
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1226,8 +1577,8 @@
     },
     {
       "id": "ref-002",
-      "raw_text": "2 B~zier, P Numerical Control: Mathematics and Applications John Wiley, UK (1972) 3 do Carmo, M P Differential Geometry of Curves and Surfaces Prentice-Hall (1976) 4 Hilbert, D and Cohn-Vossen, S Geometry and the Imagination Chelsea Publishing, USA (1983) 5 Faux, I D and Pratt, M J Computational Geometry for Design and Manufacture Halsted Press, USA (1979) 6 Farouki, R T 'The approximation of non-degenerate surfaces' Comput. Aided Geom. Des. Vol 2 No 1 (1985) pp 257-279 7 Chen, Y J and Ravani, B 'Offset surface generation and contouring in computer aided design' ASME Trans. J. Mechanisms, Transmission & Automat. Des. Vol 109 (Mar 1987) pp 133-142 8 Sripradisvarakul, T and Jain, R 'Generating aspect graph for curved objects' Proc. 1EEE Wkshp. Interpretation of 3D Scenes Austin, TX, USA (27-29 Nov 1989) pp 109 115 9 Horn, B K 'Extended Gaussian image' Proc. 1EEE Vol 72 No 12 (1984) pp 1671-1686 10 Chen, L L and Woo, T C 'Computational geometry on the sphere with application to automated machining' ASME Trans. J. Mech. Des. Vol 114 (Jun 1992) pp 288-295 11 Gan, J G, Woo, T C and Tang, K 'Spherical maps: their construction, properties, and approximation' ASME Trans. J. Mech. Des. (to appear) (also available as Technical Report 91-3 Dep. Industrial & Operations Engineering, University of Michigan, USA (Feb 1991)) 12 Chen, L L 'Visibility algorithm for mold and die design' PhD Dissertation Dep. Industrial & Operations Engineering, University of Michigan, USA (1991) 13 Tang, K and Woo, T C 'Algorithmic aspects of alternating sum of volumes. Part I: Data structure and difference operation' Comput.-Aided Des. Vol 23 No 5 (1991) pp 357-366 14 Megiddo, N and Tamir, A 'On the complexity of locating linear facilities in the plane' Oper. Res. Lett. Vol 1 No 5 (1982) pp 194-197 15 Chen, L L, Chou, S Y and Woo, T C 'Separating and intersecting spherical polygons for computing visibility on 3-, 4-, and 5-axis machines' ACM Trans. Graph. (to appear) (also available as Technical Report 91-9 Dep. Industrial & Operations Engineering, University of Michigan, USA (Mar 1991)) 16 Tang, K, Woo, T C and Gan, J 'Maximum intersection of spherical polygons and workpiece orientation for 4- and 5-axis machining' ASME Trans. J. Mech. Des. Vol 114 (Aug 1992) pp 271-276 17 Gan, J G 'Spherical algorithms for setup orientations for workpieces with sculptured surfaces' PhD Dissertation Dep. Industrial & Operations Engineering, University of Michigan, USA (1990) 18 Spyridi, A J and Requicha, A A G 'Accessibility analysis for the automatic inspection of parts' Proc. 1EEE Int. Conf. Robotics & Automation Cincinnati, OH, USA (13-18 May 1990) pp 1284-1289 19 Requicha, A A G 'Computing global accessibility directions for the faces of a solid' SlAM Conf. Geometric Design Tempe, AZ, USA (4-8 Nov 1991) 20 Minsky, M and Papert, S Perceptions: An Introduction to Computational Geometry MIT Press (1972) 21 Preparata, F P and Shamos, M I Computational Geometry - An Introduction Springer-Verlag (1985) 22 Forrest, A R 'Computational geometry' Proc. Roy. Soc. Vol 321 Ser. 4 (1971) pp 187-195 23 Shamos, M I 'Computational geometry' PhD Dissertation Dep. Computer Science, Yale University, USA (1978) Tony C Woo is a professor of industrial and operations engineering and a professor of mechanical engineering and applied mechanics. His research interest is in the development of efficient data structures and algorithms for de.zion and manufacturing. He has been a Fulbright Scholar at the NTH, Trondheim, Norway, and has served at the US National Science Foundation, Washington DC, USA.",
-      "text": "2 B~zier, P Numerical Control: Mathematics and Applications John Wiley, UK (1972) 3 do Carmo, M P Differential Geometry of curves and Surfaces Prentice-Hall (1976) 4 Hilbert, D and Cohn-Vossen, S Geometry and the Imagination Chelsea Publishing, USA (1983) 5 Faux, I D and Pratt, M J computational Geometry for Design and Manufacture Halsted Press, USA (1979) 6 Farouki, R T 'The approximation of non-degenerate surfaces' Comput. Aided Geom. Des. Vol 2 No 1 (1985) pp 257-2797 Chen, Y J and Ravani, B 'Offset surface generation and contouring in computer aided design' ASME Trans. J. Mechanisms, Transmission & Automat. Des. Vol 109 (Mar 1987) pp 133-1428 Sripradisvarakul, T and Jain, R 'Generating aspect graph for curved objects' Proc. 1EEE Wkshp. Interpretation of 3D Scenes Austin, TX, USA (27-29 Nov 1989) pp 1091159 Horn, B K 'Extended Gaussian image' Proc. 1EEE Vol 72 No 12 (1984) pp 1671-168610 Chen, L L and Woo, T C 'computational geometry on the sphere with application to automated machining' ASME Trans. J. Mech. Des. Vol 114 (Jun 1992) pp 288-29511 Gan, J G, Woo, T C and Tang, K 'Spherical maps: their construction, properties, and approximation' ASME Trans. J. Mech. Des. (to appear) (also available as Technical Report 91-3 Dep. Industrial & Operations engineering, University of Michigan, USA (Feb 1991)) 12 Chen, L L 'visibility algorithm for mold and die design' PhD Dissertation Dep. Industrial & Operations engineering, University of Michigan, USA (1991) 13 Tang, K and Woo, T C 'Algorithmic aspects of alternating sum of volumes. Part I: Data structure and difference operation' Comput.-Aided Des. Vol 23 No 5 (1991) pp 357-36614 Megiddo, N and Tamir, A 'On the complexity of locating linear facilities in the plane' Oper. Res. Lett. Vol 1 No 5 (1982) pp 194-19715 Chen, L L, Chou, S Y and Woo, T C 'Separating and intersecting spherical polygons for computing visibility on 3-, 4-, and 5-axis machines' ACM Trans. Graph. (to appear) (also available as Technical Report 91-9 Dep. Industrial & Operations engineering, University of Michigan, USA (Mar 1991)) 16 Tang, K, Woo, T C and Gan, J 'Maximum intersection of spherical polygons and workpiece orientation for 4-and 5-axis machining' ASME Trans. J. Mech. Des. Vol 114 (Aug 1992) pp 271-27617 Gan, J G 'Spherical algorithms for setup orientations for workpieces with sculptured surfaces' PhD Dissertation Dep. Industrial & Operations engineering, University of Michigan, USA (1990) 18 Spyridi, A J and Requicha, A A G 'Accessibility analysis for the automatic inspection of parts' Proc. 1EEE Int. Conf. Robotics & Automation Cincinnati, OH, USA (13-18 May 1990) pp 1284-128919 Requicha, A A G 'Computing global accessibility directions for the faces of a solid' SlAM Conf. Geometric Design Tempe, AZ, USA (4-8 Nov 1991) 20 Minsky, M and Papert, S Perceptions: An Introduction to computational Geometry MIT Press (1972) 21 Preparata, F P and Shamos, M I computational Geometry-An Introduction Springer-Verlag (1985) 22 Forrest, A R 'computational geometry' Proc. Roy. Soc. Vol 321 Ser. 4 (1971) pp 187-19523 Shamos, M I 'computational geometry' PhD Dissertation Dep. Computer Science, Yale University, USA (1978) Tony C Woo is a professor of industrial and operations engineering and a professor of mechanical engineering and applied mechanics. His research interest is in the development of efficient data structures and algorithms for de.zion and manufacturing. He has been a Fulbright Scholar at the NTH, Trondheim, Norway, and has served at the US National Science Foundation, Washington DC, USA.",
+      "raw_text": "2 B~zier, P Numerical Control: Mathematics and Applications John Wiley, UK (1972)",
+      "text": "2 B~zier, P Numerical Control: Mathematics and Applications John Wiley, UK (1972)",
       "source_spans": [
         {
           "page": 11,
@@ -1239,8 +1590,21 @@
             "width": 238.48,
             "height": 16.97
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-003",
+      "raw_text": "3 do Carmo, M P Differential Geometry of Curves and Surfaces Prentice-Hall (1976)",
+      "text": "3 do Carmo, M P Differential Geometry of curves and Surfaces Prentice-Hall (1976)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1251,8 +1615,21 @@
             "width": 241.32,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-004",
+      "raw_text": "4 Hilbert, D and Cohn-Vossen, S Geometry and the Imagination Chelsea Publishing, USA (1983)",
+      "text": "4 Hilbert, D and Cohn-Vossen, S Geometry and the Imagination Chelsea Publishing, USA (1983)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1263,8 +1640,21 @@
             "width": 241.92,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-005",
+      "raw_text": "5 Faux, I D and Pratt, M J Computational Geometry for Design and Manufacture Halsted Press, USA (1979)",
+      "text": "5 Faux, I D and Pratt, M J computational Geometry for Design and Manufacture Halsted Press, USA (1979)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1275,8 +1665,21 @@
             "width": 238.92,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-006",
+      "raw_text": "6 Farouki, R T 'The approximation of non-degenerate surfaces' Comput. Aided Geom. Des. Vol 2 No 1 (1985) pp 257-279",
+      "text": "6 Farouki, R T 'The approximation of non-degenerate surfaces' Comput. Aided Geom. Des. Vol 2 No 1 (1985) pp 257-279",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1287,8 +1690,21 @@
             "width": 246.23,
             "height": 16.73
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-007",
+      "raw_text": "7 Chen, Y J and Ravani, B 'Offset surface generation and contouring in computer aided design' ASME Trans. J. Mechanisms, Transmission & Automat. Des. Vol 109 (Mar 1987) pp 133-142",
+      "text": "7 Chen, Y J and Ravani, B 'Offset surface generation and contouring in computer aided design' ASME Trans. J. Mechanisms, Transmission & Automat. Des. Vol 109 (Mar 1987) pp 133-142",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1299,8 +1715,21 @@
             "width": 239.88,
             "height": 34.73
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-008",
+      "raw_text": "8 Sripradisvarakul, T and Jain, R 'Generating aspect graph for curved objects' Proc. 1EEE Wkshp. Interpretation of 3D Scenes Austin, TX, USA (27-29 Nov 1989) pp 109 115",
+      "text": "8 Sripradisvarakul, T and Jain, R 'Generating aspect graph for curved objects' Proc. 1EEE Wkshp. Interpretation of 3D Scenes Austin, TX, USA (27-29 Nov 1989) pp 109115",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1311,8 +1740,21 @@
             "width": 240.49,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-009",
+      "raw_text": "9 Horn, B K 'Extended Gaussian image' Proc. 1EEE Vol 72 No 12 (1984) pp 1671-1686",
+      "text": "9 Horn, B K 'Extended Gaussian image' Proc. 1EEE Vol 72 No 12 (1984) pp 1671-1686",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1323,8 +1765,21 @@
             "width": 235.57,
             "height": 16.25
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-010",
+      "raw_text": "10 Chen, L L and Woo, T C 'Computational geometry on the sphere with application to automated machining' ASME Trans. J. Mech. Des. Vol 114 (Jun 1992) pp 288-295",
+      "text": "10 Chen, L L and Woo, T C 'computational geometry on the sphere with application to automated machining' ASME Trans. J. Mech. Des. Vol 114 (Jun 1992) pp 288-295",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1335,8 +1790,21 @@
             "width": 243.96,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-011",
+      "raw_text": "11 Gan, J G, Woo, T C and Tang, K 'Spherical maps: their construction, properties, and approximation' ASME Trans. J. Mech. Des. (to appear) (also available as Technical Report 91-3 Dep. Industrial & Operations Engineering, University of Michigan, USA (Feb 1991))",
+      "text": "11 Gan, J G, Woo, T C and Tang, K 'Spherical maps: their construction, properties, and approximation' ASME Trans. J. Mech. Des. (to appear) (also available as Technical Report 91-3 Dep. Industrial & Operations engineering, University of Michigan, USA (Feb 1991))",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1347,8 +1815,21 @@
             "width": 246.57,
             "height": 43.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-012",
+      "raw_text": "12 Chen, L L 'Visibility algorithm for mold and die design' PhD Dissertation Dep. Industrial & Operations Engineering, University of Michigan, USA (1991)",
+      "text": "12 Chen, L L 'visibility algorithm for mold and die design' PhD Dissertation Dep. Industrial & Operations engineering, University of Michigan, USA (1991)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1359,8 +1840,21 @@
             "width": 247.66,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-013",
+      "raw_text": "13 Tang, K and Woo, T C 'Algorithmic aspects of alternating sum of volumes. Part I: Data structure and difference operation' Comput.-Aided Des. Vol 23 No 5 (1991) pp 357-366",
+      "text": "13 Tang, K and Woo, T C 'Algorithmic aspects of alternating sum of volumes. Part I: Data structure and difference operation' Comput.-Aided Des. Vol 23 No 5 (1991) pp 357-366",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1371,8 +1865,21 @@
             "width": 249.37,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-014",
+      "raw_text": "14 Megiddo, N and Tamir, A 'On the complexity of locating linear facilities in the plane' Oper. Res. Lett. Vol 1 No 5 (1982) pp 194-197",
+      "text": "14 Megiddo, N and Tamir, A 'On the complexity of locating linear facilities in the plane' Oper. Res. Lett. Vol 1 No 5 (1982) pp 194-197",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1383,8 +1890,21 @@
             "width": 247.01,
             "height": 25.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-015",
+      "raw_text": "15 Chen, L L, Chou, S Y and Woo, T C 'Separating and intersecting spherical polygons for computing visibility on 3-, 4-, and 5-axis machines' ACM Trans. Graph. (to appear) (also available as Technical Report 91-9 Dep. Industrial & Operations Engineering, University of Michigan, USA (Mar 1991))",
+      "text": "15 Chen, L L, Chou, S Y and Woo, T C 'Separating and intersecting spherical polygons for computing visibility on 3-, 4-, and 5-axis machines' ACM Trans. Graph. (to appear) (also available as Technical Report 91-9 Dep. Industrial & Operations engineering, University of Michigan, USA (Mar 1991))",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1395,8 +1915,21 @@
             "width": 251.71,
             "height": 43.37
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-016",
+      "raw_text": "16 Tang, K, Woo, T C and Gan, J 'Maximum intersection of spherical polygons and workpiece orientation for 4- and 5-axis machining' ASME Trans. J. Mech. Des. Vol 114 (Aug 1992) pp 271-276",
+      "text": "16 Tang, K, Woo, T C and Gan, J 'Maximum intersection of spherical polygons and workpiece orientation for 4-and 5-axis machining' ASME Trans. J. Mech. Des. Vol 114 (Aug 1992) pp 271-276",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1407,8 +1940,21 @@
             "width": 244.24,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-017",
+      "raw_text": "17 Gan, J G 'Spherical algorithms for setup orientations for workpieces with sculptured surfaces' PhD Dissertation Dep. Industrial & Operations Engineering, University of Michigan, USA (1990)",
+      "text": "17 Gan, J G 'Spherical algorithms for setup orientations for workpieces with sculptured surfaces' PhD Dissertation Dep. Industrial & Operations engineering, University of Michigan, USA (1990)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1419,8 +1965,21 @@
             "width": 244.18,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-018",
+      "raw_text": "18 Spyridi, A J and Requicha, A A G 'Accessibility analysis for the automatic inspection of parts' Proc. 1EEE Int. Conf. Robotics & Automation Cincinnati, OH, USA (13-18 May 1990) pp 1284-1289",
+      "text": "18 Spyridi, A J and Requicha, A A G 'Accessibility analysis for the automatic inspection of parts' Proc. 1EEE Int. Conf. Robotics & Automation Cincinnati, OH, USA (13-18 May 1990) pp 1284-1289",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1431,8 +1990,21 @@
             "width": 244.2,
             "height": 34.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-019",
+      "raw_text": "19 Requicha, A A G 'Computing global accessibility directions for the faces of a solid' SlAM Conf. Geometric Design Tempe, AZ, USA (4-8 Nov 1991)",
+      "text": "19 Requicha, A A G 'Computing global accessibility directions for the faces of a solid' SlAM Conf. Geometric Design Tempe, AZ, USA (4-8 Nov 1991)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1443,8 +2015,21 @@
             "width": 243.61,
             "height": 25.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-020",
+      "raw_text": "20 Minsky, M and Papert, S Perceptions: An Introduction to Computational Geometry MIT Press (1972)",
+      "text": "20 Minsky, M and Papert, S Perceptions: An Introduction to computational Geometry MIT Press (1972)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1455,8 +2040,21 @@
             "width": 243.72,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-021",
+      "raw_text": "21 Preparata, F P and Shamos, M I Computational Geometry - An Introduction Springer-Verlag (1985)",
+      "text": "21 Preparata, F P and Shamos, M I computational Geometry-An Introduction Springer-Verlag (1985)",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1467,8 +2065,21 @@
             "width": 240.92,
             "height": 16.25
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-022",
+      "raw_text": "22 Forrest, A R 'Computational geometry' Proc. Roy. Soc. Vol 321 Ser. 4 (1971) pp 187-195",
+      "text": "22 Forrest, A R 'computational geometry' Proc. Roy. Soc. Vol 321 Ser. 4 (1971) pp 187-195",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1479,8 +2090,21 @@
             "width": 241.4,
             "height": 16.49
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-023",
+      "raw_text": "23 Shamos, M I 'Computational geometry' PhD Dissertation Dep. Computer Science, Yale University, USA (1978) Tony C Woo is a professor of industrial and operations engineering and a professor of mechanical engineering and applied mechanics. His research interest is in the development of efficient data structures and algorithms for de.zion and manufacturing. He has been a Fulbright Scholar at the NTH, Trondheim, Norway, and has served at the US National Science Foundation, Washington DC, USA.",
+      "text": "23 Shamos, M I 'computational geometry' PhD Dissertation Dep. Computer Science, Yale University, USA (1978) Tony C Woo is a professor of industrial and operations engineering and a professor of mechanical engineering and applied mechanics. His research interest is in the development of efficient data structures and algorithms for de.zion and manufacturing. He has been a Fulbright Scholar at the NTH, Trondheim, Norway, and has served at the US National Science Foundation, Washington DC, USA.",
+      "source_spans": [
         {
           "page": 11,
           "bbox": {
@@ -1491,7 +2115,7 @@
             "width": 241.81,
             "height": 16.49
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 11,
@@ -1503,7 +2127,7 @@
             "width": 145.68,
             "height": 96.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

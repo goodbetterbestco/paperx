@@ -2,24 +2,17 @@
 
 Yazhou Chen, Hongxing Wang, Lin Wang, Songqin Xu, Longxing Liao, Jingyu Mo, Xiaochuan Lin, Featured Application
 
+applied sciences
 School of Marine Equipment and Mechanical Engineering, Jimei University, Xiamen 361021, China; (Y.C.); (H.W.); (L.L.); (J.M.); (X.L.)
 School of Computer Engineering, Jimei University, Xiamen 361021, China
 
 ## Abstract
 
-Commercial computer-aided design (CAD) software is often expensive. This paper examines the use of product manufacturing information (PMI) web visualization to address the challenges faced by production site personnel and external partners collaborating on product development. These individuals need to be able to view or query PMI in modelbased definition models without having to install professional CAD software. A detailed analysis of the relationships between PMI entity attributes in standard for the exchange of product model data (STEP) AP242 files was conducted. An algorithm for the automatic parsing and mapping of PMI semantics to a web browser is presented. Using linear sizes as an example, this paper introduces a prototype system with the following features: PMI web visualization; automatic linkage of PMI to associated geometry; browser-native rendering without the need for dedicated applications; and integration of graphical presentation and semantic representation. The effectiveness and feasibility of the prototype system are validated through case studies. However, the system has limitations when handling large assemblies with compound tolerances, curved dimension placements, and overlapping annotations, which presents areas for future research. Keywords: model-based definition; STEP AP242; product manufacturing information; semantic extracting; WebGL-based rendering; PMI web visualization Academic Editor: Pedro Couto
+Commercial computer-aided design (CAD) software is often expensive. This paper examines the use of product manufacturing information (PMI) web visualization to address the challenges faced by production site personnel and external partners collaborating on product development. These individuals need to be able to view or query PMI in modelbased definition models without having to install professional CAD software. A detailed analysis of the relationships between PMI entity attributes in standard for the exchange of product model data (STEP) AP242 files was conducted. An algorithm for the automatic parsing and mapping of PMI semantics to a web browser is presented. Using linear sizes as an example, this paper introduces a prototype system with the following features: PMI web visualization; automatic linkage of PMI to associated geometry; browser-native rendering without the need for dedicated applications; and integration of graphical presentation and semantic representation. The effectiveness and feasibility of the prototype system are validated through case studies. However, the system has limitations when handling large assemblies with compound tolerances, curved dimension placements, and overlapping annotations, which presents areas for future research.
 
-## Introduction
+## 1 Introduction
 
-Model-based definition (MBD) is an innovative approach of managing engineering and business processes. It utilizes the three-dimensional (3D) digital models as the sole source of information for design, manufacturing, assembly, inspection, and maintenance throughout the entire product lifecycle [1]. MBD facilitates the seamless and rapid flow of product information, enabling efficient, real-time data sharing, and ensuring safe and reliable traceability. This approach shortens the product research and development cycle, improves product quality, and reduces time-to-market [2,3]. Although MBD offers significant benefits,
-
-Received: 2 August 2025
-
-Published: 9 October 2025
-
-Copyright: ©2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https: creativecommons.org licenses by 4.0).
-
-numerous challenges remain in adapting to the new demands of smart manufacturing and Industry 4.0 [4-6].
+Model-based definition (MBD) is an innovative approach of managing engineering and business processes. It utilizes the three-dimensional (3D) digital models as the sole source of information for design, manufacturing, assembly, inspection, and maintenance throughout the entire product lifecycle [1]. MBD facilitates the seamless and rapid flow of product information, enabling efficient, real-time data sharing, and ensuring safe and reliable traceability. This approach shortens the product research and development cycle, improves product quality, and reduces time-to-market [2,3]. Although MBD offers significant benefits, numerous challenges remain in adapting to the new demands of smart manufacturing and Industry 4.0 [4-6].
 
 The number of people who only need to view information is ten times greater than those who create it [7]. Commercial computer-aided design (CAD) software is expensive, making it unaffordable for all departments within an enterprise, especially those that only need to browse or query an MBD model and do not require editing or modification capabilities. To implement MBD, a comprehensive infrastructure of low-end viewers (LEVs) is deployed on the shop floor to access MBD models that were previously provided in paper form [1-3]. However, accessing MBD models using LEVs without installing professional CAD software remains a challenge (Figure 1).
 
@@ -99,7 +92,7 @@ This section will focus on how to extract geometrical dimensioning and toleranci
 
 For example, using the part depicted in Figure 4, the process of extracting information for a linear size of '48' (in millimeters) is as follows. The entity reference relationship is illustrated in Figure 5, and a portion of the STEP AP242 file is provided in Appendix B.
 
-![Figure 4. Sample of three-dimensional dimension annotation.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-4-p008.png)
+![Figure 4. Sample of three-dimensional dimension annotation.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-4-p008.png)
 
 *Figure 4. Sample of three-dimensional dimension annotation.: Figure 4. Sample of three-dimensional dimension annotation. Figure 3. Dimension entity-attribute relationship in a STEP AP242 file.*
 
@@ -107,7 +100,7 @@ Step 3: Search for the entity 'SHAPE_DIMENSION_REPRESENTATION' and identify the 
 
 Step 4: If a part contains multiple 3D linear sizes, several 'DIMENSION_CHARACTE-RISTIC_REPRESENTATION' entities will appear in the STEP AP242 file. Since each 3D dimension annotation has a unique identifier, the annotation information can be parsed by iterating through Steps 1-3 (Figure 6).
 
-![Figure 6. An algorithm for automatically extracting three-dimensional linear size information.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-6-p009.png)
+![Figure 6. An algorithm for automatically extracting three-dimensional linear size information.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-6-p009.png)
 
 *Figure 6. An algorithm for automatically extracting three-dimensional linear size information.: Figure 6. An algorithm for automatically extracting three-dimensional linear size information.*
 
@@ -125,13 +118,13 @@ STEP AP242 files present DT information in four styles: nominal size, plus minus
 
 - Tolerance class (Table 2). Detailed explanations can be found in Appendix C.
 
-![Figure 7. Plus/minus deviation entity-attribute relationship in a STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-7-p010.png)
+![Figure 7. Plus/minus deviation entity-attribute relationship in a STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-7-p010.png)
 
 *Figure 7. Plus/minus deviation entity-attribute relationship in a STEP AP242 file.: Figure 7. Plus/minus deviation entity-attribute relationship in a STEP AP242 file. Table 2. Types of dimensional tolerancing.*
 
 Due to the variety of presentation styles for DTs in STEP AP242 files, an algorithm was designed to automatically extract different types of DT data (Figure 8). Unlike previous tools, this algorithm can extract all the structural DT information, forming the basis for achieving PMI SR within a web browser.
 
-![Figure 8. An algorithm to automatically extract dimensional tolerancing in a STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-8-p011.png)
+![Figure 8. An algorithm to automatically extract dimensional tolerancing in a STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-8-p011.png)
 
 *Figure 8. An algorithm to automatically extract dimensional tolerancing in a STEP AP242 file.: Figure 8. An algorithm to automatically extract dimensional tolerancing in a STEP AP242 file.*
 
@@ -147,13 +140,13 @@ AGTWithout a Modifier or Datum Reference AGTwith One or More AGTwith One or More
 
 'STRAIGHTNESS_TOLERANCE' and so on 'GEOMETRIC_TOLERANCE_WITH_MODIFIERS' 'GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE' (1) A GT without a modifier or datum reference In an FCF, tolerances such as straightness, flatness, roundness, and cylindricity typically do not have a modifier or datum reference. The same extraction method can be applied to these GTs in a STEP AP242 file. Figure 9, for example, illustrates a portion of a STEP AP242 file for a part with a straightness tolerance.
 
-![Figure 9. Part of a STEP AP242 sample file including a straightness tolerance.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-9-p013.png)
+![Figure 9. Part of a STEP AP242 sample file including a straightness tolerance.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-9-p013.png)
 
 *Figure 9. Part of a STEP AP242 sample file including a straightness tolerance.: Figure 9. Part of a STEP AP242 sample file including a straightness tolerance.*
 
 In this file, the entity 'LENGTH_MEASURE_WITH_UNIT' references the entity 'LENGTH_MEASURE', which specifies the GT value. The example value is '0.01' (in millimeters). The entity 'STRAIGHTNESS_TOLERANCE' is named after its tolerance type and contains four attributes: 'name', 'description', 'magnitude', and 'TOLER-ANCED_SHAPE_ASPECT'. The 'name' is a user-defined identifier, 'description' denotes the tolerance type, 'magnitude' is a tolerance value that can be parsed through entity '#24' in this example, and 'TOLERANCED_SHAPE_ASPECT' represents the geometric feature associated with this tolerance, which can be parsed through entity '#142' in this example. Figure 10 depicts the entity-attribute relationship of a GT without a modifier or a datum reference in a STEP AP242 file.
 
-![Figure 10. The entity-attribute relationship of a geometry tolerance without a modifier or datum reference in a STEP AP242 file illustrated using a straightness tolerance as an example.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-10-p013.png)
+![Figure 10. The entity-attribute relationship of a geometry tolerance without a modifier or datum reference in a STEP AP242 file illustrated using a straightness tolerance as an example.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-10-p013.png)
 
 *Figure 10. The entity-attribute relationship of a geometry tolerance without a modifier or datum reference in a STEP AP242 file illustrated using a straightness tolerance as an example.: Figure 10. The entity-attribute relationship of a geometry tolerance without a modifier or datum reference in a STEP AP242 file illustrated using a straightness tolerance as an example.*
 
@@ -167,7 +160,7 @@ As there are different types of GT in a STEP AP242 file, an algorithm has been d
 
 In an MBD model, information about an object associated with a PMI feature is crucial, as it represents the design, manufacturing, or assembly intent. Therefore, this information must be extracted and transmitted accurately downstream. STEP AP242 supports both PMI GP and SR [15,24]. PMI GP relates to the style, position, and organization of displayed elements. PMI SR, on the other hand, outlines the relationships among dimensions, tolerances, datums, and measured GEs. Sections 3.2.1-3.2.3 cover the extraction of PMI style, position, and organization of displayed elements. The process of extracting PMI-associated objects is discussed below.
 
-![Figure 11. An algorithm to automatically extract geometry tolerance information in a STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-11-p014.png)
+![Figure 11. An algorithm to automatically extract geometry tolerance information in a STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-11-p014.png)
 
 *Figure 11. An algorithm to automatically extract geometry tolerance information in a STEP AP242 file.: Figure 11. An algorithm to automatically extract geometry tolerance information in a STEP AP242 file.*
 
@@ -177,19 +170,19 @@ store it into the array
 
 In a STEP AP242 file, the PMI GP and SR are linked through an entity called 'DRAFT-ING_MODEL_ITEM_ASSOCIATION'. Byfollowingthepath'DIMENSIONAL_LOCATION' → 'SHAPE_ASPECT' → 'GEOMETRIC_ITEM_SPECIFIC_USAGE' → 'ADVANCED_FACE', one can determine the objects associated with a PMI feature (Figure 12). To parse the 'ADVANCED_FACE' entity, the representation method of geometric and topological information within a STEP AP242 file must be analyzed.
 
-![Figure 12. Link to the PMI graphical presentation and semantic representation.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-12-p015.png)
+![Figure 12. Link to the PMI graphical presentation and semantic representation.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-12-p015.png)
 
 *Figure 12. Link to the PMI graphical presentation and semantic representation.: Figure 12. Link to the PMI graphical presentation and semantic representation.*
 
 In a STEP AP242 file, the boundary representation method (B-rep) is used to organize a CAD model into bodies, shells, surfaces, loops, edges, and points (Figure 13) [24]. A body consists of a shell, and its entity name is 'CLOSED_SHELL', which represents all the surfaces within a CAD model. Each surface is identified by the entity 'ADVANCED_FACE', which includes an outer boundary and one or more inner boundaries. The boundary is represented by the entity 'FACE_BOUND' and consists of an edge loop, identified by the entity 'EDGE_LOOP'. An edge loop consists of one or more oriented edges, identified by the entity 'ORIENTED_EDGE'. The 'ORIENTED_EDGE' entity refers to the 'EDGE_CURVE' and 'VERTEX_POINT' entities, which describe the start and endpoints of an edge. The elements of an edge are represented by entities such as 'LINE' and 'CIRCLE'. The entity 'LINE' is defined by one 'VECTOR' entity and two 'CARTESIAN_POINT' entities. The entity 'VECTOR' is defined by the entities 'DIRECTION' and 'LENGTH'. All 'CARTE-SIAN_POINT' entities are modeled in a Cartesian coordinate system. Based on this structure, the vector and position of a surface associated with a PMI feature can be determined.
 
-![Figure 13. The boundary representation model in STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-13-p015.png)
+![Figure 13. The boundary representation model in STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-13-p015.png)
 
 *Figure 13. The boundary representation model in STEP AP242 file.: Figure 13. The boundary representation model in STEP AP242 file.*
 
 An algorithm has been designed to automatically extract the object information associated with a PMI feature in a STEP AP242 file (Figure 14). Integration of PMI GP and SR is achieved through entity 'DRAFTING_MODEL_ITEM_ASSOCIATION'. This algorithm enables the transfer of PMI semantics from a STEP AP242 file to a web browser. Consequently, automatic linking of PMI to the relevant geometry can be established in the web browser. Appendix D provides a detailed explanation of how to extract the associated object information using dimension '48' (in millimeters) in Figure 4 as an example.
 
-![Figure 14. Automatic extraction algorithm for associated object information.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-14-p016.png)
+![Figure 14. Automatic extraction algorithm for associated object information.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-14-p016.png)
 
 *Figure 14. Automatic extraction algorithm for associated object information.: Figure 14. Automatic extraction algorithm for associated object information.*
 
@@ -213,13 +206,13 @@ Step 6: Invoke the TextGeometry() function in Three.js and reference ISO 16792 t
 
 Step 8: Invoke the Mesh() function in Three.js to process the 3D annotation text;
 
-![Figure 15. The three-dimensional dimension annotations graphical presentation algorithm in a web browser.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-15-p017.png)
+![Figure 15. The three-dimensional dimension annotations graphical presentation algorithm in a web browser.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-15-p017.png)
 
 *Figure 15. The three-dimensional dimension annotations graphical presentation algorithm in a web browser.: Figure 15. The three-dimensional dimension annotations graphical presentation algorithm in a web browser.*
 
 Step 1: Import the MBD model into the web browser using the stpLoader.js plug-in. Obtain the number of 3D linear sizes in the STEP AP242 instance file; Step 2: Use the algorithm described in Sections 3.2.1 and 3.2.2 to parse the imported STEP AP242 file. For each size, obtain the following information: annotation plane, dimension value, dimension type, DT identification, DT type, DT upper limit, DT lower limit, and other relevant parameters; Step 3: In the web browser, define the variables that represent the structural information of a specific size. Based on the parsing results of the STEP AP242 file, assign values to the corresponding variables; Step 4: Using the data obtained through the entity 'ANNOTATION_PLANE' in the STEP AP242 file, create a 3DAP on the webpage; Step 5: Adjust the position and direction of the text for the 3D dimension on the webpage. Upon testing, it was founded that the default position of a 3D dimension annotation text on the webpage is at the coordinate origin ( \(0,0,0\) ). The default writing direction vector is \((1,0,0)\), which aligns with the \(X\)-axis. The default normal vector is \((0,0,-1)\), which is perpendicular to the XOY plane (Figure 16). Therefore, adjustments to their position and direction are necessary. Data obtained from the STEP AP242 file is used to invoke the refresh function in Three.js, dynamically adjusting the position and direction of the 3D dimension annotation text; Step 6: Invoke the TextGeometry() function in Three.js and reference ISO 16792 to set the font style 'font', font size 'size', text thickness 'height', text weight, and other attributes of the 3D annotation text; Step 7: Repeat the process for other sizes by cycling through Steps 2 to 6;
 
-![Figure 16. Default position of three-dimensional dimension annotation text.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-16-p018.png)
+![Figure 16. Default position of three-dimensional dimension annotation text.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-16-p018.png)
 
 *Figure 16. Default position of three-dimensional dimension annotation text.: Figure 16. Default position of three-dimensional dimension annotation text.*
 
@@ -227,7 +220,7 @@ Step 1: Import the MBD model into the web browser using the stpLoader.js plug-in
 
 According to Section 2.2, PMI within an MBD model encompasses both GP and SR [15]. Therefore, integrating GP and SR of PMI in a web browser is crucial. In our implementation, 'DRAUGHTING_MODEL_ITEM_ASSOCIATION' links PMI GP to SR. While Section 4.1 addresses the functionality of PMI GP on a webpage, this section will examine the functionality of PMI SR on a webpage (Figure 17).
 
-![Figure 17. The three-dimensional dimension annotations semantic representation algorithm in a web browser.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-17-p018.png)
+![Figure 17. The three-dimensional dimension annotations semantic representation algorithm in a web browser.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-17-p018.png)
 
 *Figure 17. The three-dimensional dimension annotations semantic representation algorithm in a web browser.: Figure 17. The three-dimensional dimension annotations semantic representation algorithm in a web browser. Step 8: Invoke the Mesh() function in Three.js to process the 3D annotation text; Step 9: The end.*
 
@@ -243,7 +236,7 @@ Step 6: Filter out another plane in the MBD model displayed on the webpage. Ensu
 
 In this paper, we use WebGL texture technology to highlight PMI-related objects on a webpage, utilizing the information about these objects extracted in Section 3.2.4. WebGL texture technology maps images onto the surface of a 3D model, providing color and other striking visual effects. This technology can be used to assign different colors to various 3D annotation objects on a webpage, achieving the SR of PMI within a 3D model. Since WebGL supports up to 255 × 255 × 255 colors, equating to over 16 million colors, it would be impractical for an MBD model to encompass more than 16 million 3D annotations. Therefore, color differentiation is a viable method. This section further explores linear size annotations as an example and proposes an algorithm (Figure 17). The primary steps are outlined below:
 
-Step 1: In the STEP AP242 file, define \(i\) as a specific size and \(j\) as the corresponding size displayed on the webpage; Step 2: define Step_Face1 \([i]\) and Step_Face2 \([i]\), which represents the two surfaces associated with \(i\), respectively; Step 3: Use the algorithm proposed in Section 3.2.4 to parse the STEP AP242 file and obtain the vertex coordinates and normal vectors of Step_Face1 \([i]\) and Step_Face2 \([i]\); Step 4: define Web_Face1 \([j]\) and Web_Face2 \([j]\), which represents the two surfaces associated with \(j\) respectively on the webpage; Step 5: Filter out a plane in the MBD model displayed on the webpage. Ensure that the position and normal vector of this plane match those of the Step _ Face 1 [i] . Set this plane as one of the associated planes of size j ; Step 6: Filter out another plane from the MBD model displayed on the webpage. Ensure that the vertex coordinates and normal vector of this plane match those of the Step _ Face 2 [i] . Set this plane as another associated plane of size j ; Step 7: When size j is selected, the Web _ Face 1 [j] and Web _ Face 2 [j] will be set to the same color via WebGL textures, indicating that these two faces form a related pair; Step 8: Perform similar operations for other sizes.
+Step 1: In the STEP AP242 file, define \(i\) as a specific size and \(j\) as the corresponding size displayed on the webpage; Step 2: define Step_Face1 \([i]\) and Step_Face2 \([i]\), which represents the two surfaces associated with \(i\), respectively; Step 3: Use the algorithm proposed in Section 3.2.4 to parse the STEP AP242 file and obtain the vertex coordinates and normal vectors of Step _ Face 1 [i] and Step _ Face 2 [i] ; Step 4: define Web _ Face 1 [j] and Web _ Face 2 [j] , which represents the two surfaces associated with j respectively on the webpage; Step 5: Filter out a plane in the MBD model displayed on the webpage. Ensure that the position and normal vector of this plane match those of the Step _ Face 1 [i] . Set this plane as one of the associated planes of size j ; Step 6: Filter out another plane from the MBD model displayed on the webpage. Ensure that the vertex coordinates and normal vector of this plane match those of the Step_Face2 \([i]\). Set this plane as another associated plane of size \(j\); Step 7: When size j is selected, the Web _ Face 1 [j] and Web _ Face 2 [j] will be set to the same color via WebGL textures, indicating that these two faces form a related pair; Step 8: Perform similar operations for other sizes.
 
 ### 4.3 Prototype System Development and Case Verification
 
@@ -259,17 +252,17 @@ The prototype system comprises three main modules: the basic environment module,
 
 Model the part depicted in Figure 4 as an MBD model using NX 1847, and then export it as a STEP AP242 file. Next, use the developed prototype system in a web browser to parse the file. Figure 18a-d show examples of 3D dimension annotation, 3D DT, 3D datum symbol (DS), and 3D GT within a web browser, respectively. Additionally Figure 18e,f show the PMI SR results for 3D-annotated associated objects using WebGL texture technology.
 
-![Figure 18. Demonstration of three-dimensional annotation within a web browser](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-2-p021.png)
+![Figure 18. Demonstration of three-dimensional annotation within a web browser](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-2-p021.png)
 
 *Figure 18. Demonstration of three-dimensional annotation within a web browser: (a) 3D dimension annotation (b) 3D dimensional tolerancing annotation (c) datum symbol annotation (d) 3D geometrical tolerance annotation (e) left associated surface of a 3D linear size (f) right associated surface of a 3D linear size.*
 
-![Figure 18. Demonstration of three-dimensional annotation within a web browser](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-2-p021.png)
+![Figure 18. Demonstration of three-dimensional annotation within a web browser](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-18-2-p021.png)
 
 *Figure 18. Demonstration of three-dimensional annotation within a web browser: (a) 3D dimension annotation (b) 3D dimensional tolerancing annotation (c) datum symbol annotation (d) 3D geometrical tolerance annotation (e) left associated surface of a 3D linear size (f) right associated surface of a 3D linear size.*
 
 ### 4.4 Analysis and Benchmarking of Prototype System Performance
 
-We conducted benchmark tests to assess the performance of our developed system. Using a Lenovo Legion Y7000 PG0 laptop (CPU: Intel \({ }^{®}\) Core™ i5-9300H @ 2.40 GHz ; GPU: NVIDIA GeForce GTX 1650; RAM: 8 GB), we performed 100 tests and found that the median parsing and rendering time in the web browser was 1.12 s, with the 95th percentile time being 1.52 s. Setting the timestamp at the start of the model loading process as 0, we observed frame rates of 12, 52, and 60 frames per second (FPS) at 22.073, 23.189, and 23.839 s, respectively, while orbiting the model. After 23.839 s, the frame rate consistently remained above 60 FPS during further model orbiting. Additionally, we were able to visualize form, direction, position, and runout tolerances on the web pages (Table 4), and there were no missing or misaligned 3D annotations, incorrect parameter values, or errors associated with PMI objects. While the original MBD model in Figure 18 is consistent with the one in Appendix A Figure A1, the case in Figure 18 demonstrates better linkage and semantic clarity.
+We conducted benchmark tests to assess the performance of our developed system. Using a Lenovo Legion Y7000 PG0 laptop (CPU: Intel \({ }^{\circledR}\) Core™ i5-9300H @ 2.40 GHz ; GPU: NVIDIA GeForce GTX 1650; RAM: 8 GB), we performed 100 tests and found that the median parsing and rendering time in the web browser was 1.12 s, with the 95th percentile time being 1.52 s. Setting the timestamp at the start of the model loading process as 0, we observed frame rates of 12, 52, and 60 frames per second (FPS) at 22.073, 23.189, and 23.839 s, respectively, while orbiting the model. After 23.839 s, the frame rate consistently remained above 60 FPS during further model orbiting. Additionally, we were able to visualize form, direction, position, and runout tolerances on the web pages (Table 4), and there were no missing or misaligned 3D annotations, incorrect parameter values, or errors associated with PMI objects. While the original MBD model in Figure 18 is consistent with the one in Appendix A Figure A1, the case in Figure 18 demonstrates better linkage and semantic clarity.
 
 Note: Y for Support, X for not.
 
@@ -321,7 +314,7 @@ coordinate measuring machine
 
 FCF feature control frame FPS frames per second GD&T geometrical dimensioning and tolerancing GP graphical presentation LEVs low-end viewers MBD model-based definition national institute of standards and technology product manufacturing information quality information framework standard for the exchange of product model data
 
-![Figure A1. Product manufacturing information appears disorganized in the Open Cascade CAD Assistant. The correct model is shown in Figure 18 .](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a1-p024.png)
+![Figure A1. Product manufacturing information appears disorganized in the Open Cascade CAD Assistant. The correct model is shown in Figure 18 .](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a1-p024.png)
 
 *Figure A1. Product manufacturing information appears disorganized in the Open Cascade CAD Assistant. The correct model is shown in Figure 18 .: Figure A1. Product manufacturing information appears disorganized in the Open Cascade CAD Assistant. The correct model is shown in Figure 18.*
 
@@ -339,7 +332,7 @@ There are three 'MEASURE_REPRESENTATION_ITEM' attributes referenced from the 'SH
 
 (2) Detailed entity-attribute relationships of Tolerance class In a STEP AP242 file, the tolerance class is specified by the entity identifier 'LIM-ITS_AND_FITS', which contains three attributes: 'FORM_VARIANCE', 'ZONE_VARIANCE', and 'GRADE'. 'FORM_VARIANCE' represents the tolerance code; 'ZONE_VARIANCE' the tolerance fit type; and 'GRADE' the grade of the tolerance. Entity 'LIMITS_AND_FITS' is referenced from entity 'PLUS_MINUS_TOLERANCE', which points to entity 'DIMEN-SIONAL_SIZE'. This links the nominal dimension with the tolerance class. Figure A3 illustrates the entity-attribute relationship of the tolerance class in a STEP AP242 file.
 
-![Figure A3. The dimensional tolerancing class entity-attribute relationship in a STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a3-p026.png)
+![Figure A3. The dimensional tolerancing class entity-attribute relationship in a STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a3-p026.png)
 
 *Figure A3. The dimensional tolerancing class entity-attribute relationship in a STEP AP242 file.: Figure A3. The dimensional tolerancing class entity-attribute relationship in a STEP AP242 file. Figure A2. Dimension value range entity-attribute relationship in a STEP AP242 file.*
 
@@ -349,13 +342,13 @@ In an FCF, if a GT has one or more modifiers, there will be one GT entity and on
 
 (4) Detailed entity-attribute relationships of a GT with one or more datum A GT, such as position, concentricity, parallelism, perpendicularity, or symmetry, may have one or more datums (no more than three) that are used to specify the tolerance measuring position. For example, in a STEP AP242 file with a datum, the entity 'GEOMETRIC_TOLERANCE' represents objects associated with a GT, 'GEOMET-RIC_TOLERANCE_WITH_DATUM_REFERENCE' represents datums referenced by a GT, 'GEOMETRIC_TOLERANCE_WITH_MODIFIERS' represents modifiers attached to a GT, and 'POSITION_TOLERANCE' represents the GT type. Through the entity 'GEOMET-RIC_TOLERANCE_WITH_DATUM_REFERENCE', the entities 'DATUM_SYSTEM' and 'DATUM_REFERENCE_COMPARTMENT' can be identified. By traversing the 'DATUM'attribute of 'DATUM_REFERENCE_COMPARTMENT', certain DSs can be obtained (Figure A5).
 
-![Figure A5. The entity-attribute relationship of a geometry tolerance with one or more reference datum in a STEP AP242 file.](/Users/evanthayer/Projects/stepview/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a5-p027.png)
+![Figure A5. The entity-attribute relationship of a geometry tolerance with one or more reference datum in a STEP AP242 file.](/Users/evanthayer/Projects/paperx/docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/figures/figure-a5-p027.png)
 
 *Figure A5. The entity-attribute relationship of a geometry tolerance with one or more reference datum in a STEP AP242 file.: Figure A5. The entity-attribute relationship of a geometry tolerance with one or more reference datum in a STEP AP242 file.*
 
 Appendix D
 
-The data line "ADVANCED_FACE (", \#462, \#514, F.)" can be used to determine the data lines "\#462=FACE_BOUND(,\#410,.T.)" and "\#514=PLANE(,\#572)". Identifier "\#462" describes the boundary of the surface, and identifier "\#514" shows that the surface type is a plane. Through "\#514" the data line "\#572=AXIS2_PLACEMENT_3D(", \#816, \#657, \#658)" can be determined. This data line specifies the position and orientation of a surface in 3D space based on a point and two coordinate axes. The data line "\#816=CARTE SIAN_POINT("'', \((0,0,28)\) )" represents the origin of the local coordinate system for this plane. The data lines "\#657=DIRECTION("", \((0,1,0)\) )" and "\#658=DIRECTION("", \((0,0,1)\) )" represent the \(Z\)-axis and \(X\)-axis directions of this local coordinate system, respectively. Thus, the position and normal vector of a 3D linear-size-associated surface can be determined.
+The data line "ADVANCED_FACE (", \#462, \#514, F.)" can be used to determine the data lines "\#462=FACE_BOUND(,\#410,.T.)" and "\#514=PLANE(,\#572)". Identifier "\#462" describes the boundary of the surface, and identifier "\#514" shows that the surface type is a plane. Through "\#514" the data line "\#572=AXIS2_PLACEMENT_3D(", \#816, \#657, \#658)" can be determined. This data line specifies the position and orientation of a surface in 3D space based on a point and two coordinate axes. The data line "\#816=CARTE-SIAN_POINT("", \((0,0,28)\) )" represents the origin of the local coordinate system for this plane. The data lines "\#657=DIRECTION("", \((0,1,0)\) )" and "\#658=DIRECTION("", \((0,0,1)\) )" represent the \(Z\)-axis and \(X\)-axis directions of this local coordinate system, respectively. Thus, the position and normal vector of a 3D linear-size-associated surface can be determined.
 
 Furthermore, using the data line '#462=FACE_BOUND(',#410,.T.)' yields the data line '#410=EDGE_LOOP ('',(#182,#183, #184,#185,#186,#187,#188,#189,#190,#191))', which represents the oriented edges of a surface. Taking the data line '#182=ORIENTED_EDGE ('',*,*,#276,.T.)' as an example, the data line '#276=EDGE_CURVE('',#327,#326,#366,.T.)' can be determined. This data line describes the start point, end point, and type of the edge. Through the data line '#327=VERTEX_POINT ('',#805)', the start coordinate '#805=CARTE-SIAN_POINT('',(0.,0.,3.99999999999999))' can be determined. Through the data line '#326=VERTEX_POINT ('',#803)', the end point coordinate '#803=CARTESIAN_POINT ('',(0.,0.,2.))' can be established. Through the data line '#366=LINE('',#804,#388)', the type of this edge, which is a line, can be determined. Searching for the entity 'ANNOTA-TION_PLANE' yields the data line '#23=ANNOTATION_PLANE('PMI PLANE', (#557), #525,(#25))'. Thus, the position and normal vector of a 3D linear size subordinate annotated plane can be determined.
 

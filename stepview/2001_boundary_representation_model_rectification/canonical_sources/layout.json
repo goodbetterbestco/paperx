@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2001_boundary_representation_model_rectification/2001_boundary_representation_model_rectification.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2001_boundary_representation_model_rectification/2001_boundary_representation_model_rectification.pdf",
   "page_count": 19,
   "page_sizes_pt": [
     {
@@ -166,9 +166,9 @@
       "bbox": {
         "x0": 119.23,
         "y0": 317.86,
-        "x1": 549.77,
+        "x1": 548.12,
         "y1": 332.9,
-        "width": 430.54,
+        "width": 428.89,
         "height": 15.04
       },
       "meta": {
@@ -218,7 +218,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 253.36,
@@ -237,42 +237,23 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
-      "text": "Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical biguities arise. This is especially true for manifold boundary representation (B-rep) as conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those defects are topological and geometric errors, and visually appear as gaps, dangling faces, artifacts. However, such realization often fails whenever models contradict rules and amits validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient representational features that do not conform to constraints set by modeling schemes. Such internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then",
+      "role": "paragraph",
+      "text": "Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical artifacts. However, such realization often fails whenever models contradict rules and ambiguities arise. This is especially true for manifold boundary representation (B-rep) as its validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those representational features that do not conform to constraints set by modeling schemes. Such defects are topological and geometric errors, and visually appear as gaps, dangling faces, internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then",
       "bbox": {
-        "x0": 24.84,
+        "x0": 23.18,
         "y0": 650.48,
-        "x1": 642.5,
-        "y1": 824.45,
-        "width": 617.66,
-        "height": 173.97
+        "x1": 644.16,
+        "y1": 1024.77,
+        "width": 620.98,
+        "height": 374.29
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical biguities arise. This is especially true for manifold boundary representation (B-rep) as conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those defects are topological and geometric errors, and visually appear as gaps, dangling faces, artifacts. However, such realization often fails whenever models contradict rules and amits validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient representational features that do not conform to constraints set by modeling schemes. Such internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then"
+        "docling_orig": "Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical artifacts. However, such realization often fails whenever models contradict rules and ambiguities arise. This is especially true for manifold boundary representation (B-rep) as its validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those representational features that do not conform to constraints set by modeling schemes. Such defects are topological and geometric errors, and visually appear as gaps, dangling faces, internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then"
       }
     },
     {
-      "id": "#/texts/10",
-      "page": 1,
-      "order": 9,
-      "role": "front_matter",
-      "text": "A-",
-      "bbox": {
-        "x0": 36.43,
-        "y0": 1066.16,
-        "x1": 69.55,
-        "y1": 1090.99,
-        "width": 33.12,
-        "height": 24.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "A-"
-      }
-    },
-    {
-      "id": "#/texts/17",
+      "id": "#/texts/16",
       "page": 2,
       "order": 1,
       "role": "paragraph",
@@ -281,9 +262,9 @@
         "x0": 21.53,
         "y0": 69.53,
         "x1": 640.85,
-        "y1": 173.95,
+        "y1": 174.24,
         "width": 619.32,
-        "height": 104.42
+        "height": 104.71
       },
       "meta": {
         "docling_label": "text",
@@ -291,7 +272,7 @@
       }
     },
     {
-      "id": "#/texts/18",
+      "id": "#/texts/17",
       "page": 2,
       "order": 2,
       "role": "paragraph",
@@ -310,11 +291,11 @@
       }
     },
     {
-      "id": "#/texts/19",
+      "id": "#/texts/18",
       "page": 2,
       "order": 3,
       "role": "paragraph",
-      "text": "A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides R3 into convex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from -1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model.",
+      "text": "A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides R° into convex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from -1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model.",
       "bbox": {
         "x0": 21.46,
         "y0": 446.87,
@@ -325,11 +306,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides R3 into convex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from -1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model."
+        "docling_orig": "A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides R° into convex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from -1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model."
       }
     },
     {
-      "id": "#/texts/20",
+      "id": "#/texts/19",
       "page": 2,
       "order": 4,
       "role": "paragraph",
@@ -348,7 +329,7 @@
       }
     },
     {
-      "id": "#/texts/21",
+      "id": "#/texts/20",
       "page": 2,
       "order": 5,
       "role": "paragraph",
@@ -367,7 +348,7 @@
       }
     },
     {
-      "id": "#/texts/22",
+      "id": "#/texts/21",
       "page": 2,
       "order": 6,
       "role": "paragraph",
@@ -386,7 +367,7 @@
       }
     },
     {
-      "id": "#/texts/25",
+      "id": "#/texts/24",
       "page": 3,
       "order": 1,
       "role": "paragraph",
@@ -405,7 +386,7 @@
       }
     },
     {
-      "id": "#/texts/26",
+      "id": "#/texts/25",
       "page": 3,
       "order": 2,
       "role": "paragraph",
@@ -424,7 +405,7 @@
       }
     },
     {
-      "id": "#/texts/27",
+      "id": "#/texts/26",
       "page": 3,
       "order": 3,
       "role": "heading",
@@ -443,7 +424,7 @@
       }
     },
     {
-      "id": "#/texts/28",
+      "id": "#/texts/27",
       "page": 3,
       "order": 4,
       "role": "paragraph",
@@ -462,7 +443,7 @@
       }
     },
     {
-      "id": "#/texts/29",
+      "id": "#/texts/28",
       "page": 3,
       "order": 5,
       "role": "paragraph",
@@ -481,7 +462,7 @@
       }
     },
     {
-      "id": "#/texts/30",
+      "id": "#/texts/29",
       "page": 3,
       "order": 6,
       "role": "paragraph",
@@ -500,7 +481,7 @@
       }
     },
     {
-      "id": "#/texts/33",
+      "id": "#/texts/32",
       "page": 4,
       "order": 1,
       "role": "paragraph",
@@ -519,18 +500,18 @@
       }
     },
     {
-      "id": "#/texts/34",
+      "id": "#/texts/33",
       "page": 4,
       "order": 2,
       "role": "paragraph",
       "text": "To answer such questions, we need to classify the information in a boundary representation: those initialized or selected by the designer and those induced by the system. In a solid modeling system, the only entities the designer can directly manipulate are the underlying surfaces. All others, topological information and individual topological and geometric entities, are computed by the system. For this reason, we opt to believe that surfaces are the basic information to be used in a rectification method. Another reason for such a hypothesis is that surfaces are specifically designed to fulfill certain performance requirements and functionalities, and therefore, should not be subjected to any modification without the designer's permission. In addition to the above, another piece of information that can be used in the rectification process is the genus of the intended solid boundary. Genus captures the designer's intent and can be computed using the well-known Euler's formula [22].",
       "bbox": {
-        "x0": 23.18,
+        "x0": 22.96,
         "y0": 201.94,
         "x1": 640.85,
-        "y1": 463.55,
-        "width": 617.67,
-        "height": 261.61
+        "y1": 464.05,
+        "width": 617.89,
+        "height": 262.11
       },
       "meta": {
         "docling_label": "text",
@@ -538,7 +519,7 @@
       }
     },
     {
-      "id": "#/texts/35",
+      "id": "#/texts/34",
       "page": 4,
       "order": 3,
       "role": "paragraph",
@@ -557,7 +538,7 @@
       }
     },
     {
-      "id": "#/texts/36",
+      "id": "#/texts/35",
       "page": 4,
       "order": 4,
       "role": "paragraph",
@@ -576,7 +557,7 @@
       }
     },
     {
-      "id": "#/texts/37",
+      "id": "#/texts/36",
       "page": 4,
       "order": 5,
       "role": "caption",
@@ -595,18 +576,18 @@
       }
     },
     {
-      "id": "#/texts/38",
+      "id": "#/texts/37",
       "page": 4,
       "order": 6,
       "role": "paragraph",
       "text": "Model",
       "bbox": {
-        "x0": 491.81,
-        "y0": 784.72,
-        "x1": 539.84,
-        "y1": 797.96,
-        "width": 48.03,
-        "height": 13.24
+        "x0": 491.8,
+        "y0": 784.67,
+        "x1": 539.85,
+        "y1": 798.01,
+        "width": 48.05,
+        "height": 13.34
       },
       "meta": {
         "docling_label": "text",
@@ -614,26 +595,26 @@
       }
     },
     {
-      "id": "#/texts/39",
+      "id": "#/texts/38",
       "page": 4,
       "order": 7,
       "role": "paragraph",
-      "text": "• ••",
+      "text": "•••",
       "bbox": {
-        "x0": 379.21,
+        "x0": 380.87,
         "y0": 837.69,
         "x1": 405.71,
-        "y1": 847.75,
-        "width": 26.5,
-        "height": 10.06
+        "y1": 847.63,
+        "width": 24.84,
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "• ••"
+        "docling_orig": "•••"
       }
     },
     {
-      "id": "#/texts/40",
+      "id": "#/texts/39",
       "page": 4,
       "order": 8,
       "role": "paragraph",
@@ -642,9 +623,9 @@
         "x0": 423.92,
         "y0": 837.69,
         "x1": 435.51,
-        "y1": 850.94,
+        "y1": 849.28,
         "width": 11.59,
-        "height": 13.25
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -652,7 +633,7 @@
       }
     },
     {
-      "id": "#/texts/41",
+      "id": "#/texts/40",
       "page": 4,
       "order": 9,
       "role": "paragraph",
@@ -671,18 +652,18 @@
       }
     },
     {
-      "id": "#/texts/42",
+      "id": "#/texts/41",
       "page": 4,
       "order": 10,
       "role": "paragraph",
       "text": "Surface",
       "bbox": {
-        "x0": 125.82,
-        "y0": 888.86,
-        "x1": 190.46,
-        "y1": 900.76,
-        "width": 64.64,
-        "height": 11.9
+        "x0": 125.85,
+        "y0": 889.02,
+        "x1": 190.43,
+        "y1": 900.6,
+        "width": 64.58,
+        "height": 11.58
       },
       "meta": {
         "docling_label": "text",
@@ -690,7 +671,7 @@
       }
     },
     {
-      "id": "#/texts/43",
+      "id": "#/texts/42",
       "page": 4,
       "order": 11,
       "role": "paragraph",
@@ -709,28 +690,9 @@
       }
     },
     {
-      "id": "#/texts/44",
+      "id": "#/texts/43",
       "page": 4,
       "order": 12,
-      "role": "paragraph",
-      "text": "•••",
-      "bbox": {
-        "x0": 336.16,
-        "y0": 892.33,
-        "x1": 361.0,
-        "y1": 900.6,
-        "width": 24.84,
-        "height": 8.27
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "•••"
-      }
-    },
-    {
-      "id": "#/texts/45",
-      "page": 4,
-      "order": 13,
       "role": "paragraph",
       "text": "Face",
       "bbox": {
@@ -747,9 +709,9 @@
       }
     },
     {
-      "id": "#/texts/46",
+      "id": "#/texts/44",
       "page": 4,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "•••",
       "bbox": {
@@ -766,9 +728,9 @@
       }
     },
     {
-      "id": "#/texts/47",
+      "id": "#/texts/45",
       "page": 4,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Loop",
       "bbox": {
@@ -785,9 +747,9 @@
       }
     },
     {
-      "id": "#/texts/48",
+      "id": "#/texts/46",
       "page": 4,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "Curve",
       "bbox": {
@@ -804,18 +766,18 @@
       }
     },
     {
-      "id": "#/texts/49",
+      "id": "#/texts/47",
       "page": 4,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "...",
       "bbox": {
         "x0": 339.47,
-        "y0": 998.28,
-        "x1": 362.65,
-        "y1": 1006.56,
-        "width": 23.18,
-        "height": 8.28
+        "y0": 999.94,
+        "x1": 361.0,
+        "y1": 1004.9,
+        "width": 21.53,
+        "height": 4.96
       },
       "meta": {
         "docling_label": "text",
@@ -823,9 +785,9 @@
       }
     },
     {
-      "id": "#/texts/50",
+      "id": "#/texts/48",
       "page": 4,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "E",
       "bbox": {
@@ -842,18 +804,18 @@
       }
     },
     {
-      "id": "#/texts/51",
+      "id": "#/texts/49",
       "page": 4,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "Edge",
       "bbox": {
-        "x0": 498.34,
-        "y0": 998.0,
-        "x1": 538.28,
-        "y1": 1013.46,
-        "width": 39.94,
-        "height": 15.46
+        "x0": 498.39,
+        "y0": 998.16,
+        "x1": 538.23,
+        "y1": 1013.3,
+        "width": 39.84,
+        "height": 15.14
       },
       "meta": {
         "docling_label": "text",
@@ -861,9 +823,9 @@
       }
     },
     {
-      "id": "#/texts/52",
+      "id": "#/texts/50",
       "page": 4,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "Point",
       "bbox": {
@@ -880,9 +842,9 @@
       }
     },
     {
-      "id": "#/texts/53",
+      "id": "#/texts/51",
       "page": 4,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "Vertex",
       "bbox": {
@@ -899,17 +861,17 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/54",
       "page": 5,
       "order": 1,
       "role": "paragraph",
       "text": "in Fig. 1, is a graph that describes adjacency and incidence relations' (represented by arcs) between topological entities (represented by nodes). In typical implementations topological relations more detailed than those implied in Fig. 1 (e.g., adjacency relations between a face and all its neighboring faces) are explicitly stored. The geometric representation includes points, curve, and surface equations, which are associated with appropriate topological entities. A model, thus, is an instance of the data structure, and is valid if it describes a solid boundary. In addition, a face is valid if it describes a set homeomorphic to a closed disk minus k mutually disjoint open disks, and has no handles. Also, see [5] for validity of other topological nodes.",
       "bbox": {
-        "x0": 23.11,
+        "x0": 23.1,
         "y0": 68.6,
         "x1": 642.57,
         "y1": 268.25,
-        "width": 619.46,
+        "width": 619.47,
         "height": 199.65
       },
       "meta": {
@@ -918,7 +880,7 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/55",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -937,11 +899,11 @@
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "#/texts/57",
       "page": 5,
       "order": 3,
       "role": "paragraph",
-      "text": "For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any mi, mz € M, Mi is homeomorphic to Mz. Therefore, in case that the geometric representation of mo is inconsistent with G(mo), if a reconstructed model mn has topological structure G(mo), mn is topologically equivalent to the model incorporating the design intent. If G(mn) is different from G(mo), the topological equivalence between mn and mo can be imposed by requiring that the genus of a Mn is equal to that of a M, where model m e M. We simply denote this by g(m,) = g(m.), because both genuses can be computed by applying Euler's formula to G(m,) and G(m.), respectively.",
+      "text": "For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any mi, mz E M, Mi is homeomorphic to M2. Therefore, in case that the geometric representation of mo is inconsistent with G(mo), if a reconstructed model mn has topological structure G(mo), mn is topologically equivalent to the model incorporating the design intent. If G(mn) is different from G(mo), the topological equivalence between mn and mo can be imposed by requiring that the genus of a M, is equal to that of a M, where model m e M. We simply denote this by g(m,) = g(m.), because both genuses can be computed by applying Euler's formula to G(m,) and G(m.), respectively.",
       "bbox": {
         "x0": 23.18,
         "y0": 408.88,
@@ -952,11 +914,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any mi, mz € M, Mi is homeomorphic to Mz. Therefore, in case that the geometric representation of mo is inconsistent with G(mo), if a reconstructed model mn has topological structure G(mo), mn is topologically equivalent to the model incorporating the design intent. If G(mn) is different from G(mo), the topological equivalence between mn and mo can be imposed by requiring that the genus of a Mn is equal to that of a M, where model m e M. We simply denote this by g(m,) = g(m.), because both genuses can be computed by applying Euler's formula to G(m,) and G(m.), respectively."
+        "docling_orig": "For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any mi, mz E M, Mi is homeomorphic to M2. Therefore, in case that the geometric representation of mo is inconsistent with G(mo), if a reconstructed model mn has topological structure G(mo), mn is topologically equivalent to the model incorporating the design intent. If G(mn) is different from G(mo), the topological equivalence between mn and mo can be imposed by requiring that the genus of a M, is equal to that of a M, where model m e M. We simply denote this by g(m,) = g(m.), because both genuses can be computed by applying Euler's formula to G(m,) and G(m.), respectively."
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/58",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -965,9 +927,9 @@
         "x0": 23.18,
         "y0": 609.16,
         "x1": 642.5,
-        "y1": 801.34,
+        "y1": 801.43,
         "width": 619.32,
-        "height": 192.18
+        "height": 192.27
       },
       "meta": {
         "docling_label": "text",
@@ -975,7 +937,7 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/59",
       "page": 5,
       "order": 5,
       "role": "paragraph",
@@ -994,7 +956,7 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/60",
       "page": 5,
       "order": 6,
       "role": "footnote",
@@ -1013,7 +975,7 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/61",
       "page": 5,
       "order": 7,
       "role": "footnote",
@@ -1032,7 +994,7 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/64",
       "page": 6,
       "order": 1,
       "role": "caption",
@@ -1051,7 +1013,7 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/65",
       "page": 6,
       "order": 2,
       "role": "paragraph",
@@ -1070,7 +1032,7 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/66",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -1089,7 +1051,7 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/67",
       "page": 6,
       "order": 4,
       "role": "paragraph",
@@ -1108,7 +1070,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/68",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -1127,7 +1089,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/69",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -1146,7 +1108,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/70",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -1165,7 +1127,7 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/71",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -1184,7 +1146,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/72",
       "page": 6,
       "order": 9,
       "role": "paragraph",
@@ -1203,7 +1165,7 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/73",
       "page": 6,
       "order": 10,
       "role": "paragraph",
@@ -1222,7 +1184,7 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/74",
       "page": 6,
       "order": 11,
       "role": "paragraph",
@@ -1241,11 +1203,11 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/75",
       "page": 6,
       "order": 12,
       "role": "paragraph",
-      "text": "and ¢ (Mó, aMn) ≤E",
+      "text": "and $ (Mó, aMn) ≤E",
       "bbox": {
         "x0": 175.53,
         "y0": 354.23,
@@ -1256,11 +1218,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "and ¢ (Mó, aMn) ≤E"
+        "docling_orig": "and $ (Mó, aMn) ≤E"
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/76",
       "page": 6,
       "order": 13,
       "role": "paragraph",
@@ -1268,9 +1230,9 @@
       "bbox": {
         "x0": 205.34,
         "y0": 435.4,
-        "x1": 225.21,
+        "x1": 223.55,
         "y1": 443.68,
-        "width": 19.87,
+        "width": 18.21,
         "height": 8.28
       },
       "meta": {
@@ -1279,18 +1241,18 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/77",
       "page": 6,
       "order": 14,
       "role": "paragraph",
       "text": "exist?",
       "bbox": {
-        "x0": 228.5,
-        "y0": 432.01,
-        "x1": 281.53,
-        "y1": 443.77,
-        "width": 53.03,
-        "height": 11.76
+        "x0": 228.34,
+        "y0": 431.18,
+        "x1": 281.69,
+        "y1": 444.59,
+        "width": 53.35,
+        "height": 13.41
       },
       "meta": {
         "docling_label": "text",
@@ -1298,7 +1260,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/78",
       "page": 6,
       "order": 15,
       "role": "paragraph",
@@ -1317,7 +1279,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/79",
       "page": 6,
       "order": 16,
       "role": "paragraph",
@@ -1336,7 +1298,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/80",
       "page": 6,
       "order": 17,
       "role": "paragraph",
@@ -1355,7 +1317,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/81",
       "page": 6,
       "order": 18,
       "role": "paragraph",
@@ -1374,7 +1336,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/82",
       "page": 6,
       "order": 19,
       "role": "paragraph",
@@ -1393,7 +1355,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/83",
       "page": 6,
       "order": 20,
       "role": "paragraph",
@@ -1412,7 +1374,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/84",
       "page": 6,
       "order": 21,
       "role": "paragraph",
@@ -1431,7 +1393,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/85",
       "page": 6,
       "order": 22,
       "role": "paragraph",
@@ -1450,7 +1412,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/86",
       "page": 6,
       "order": 23,
       "role": "paragraph",
@@ -1469,7 +1431,7 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/87",
       "page": 6,
       "order": 24,
       "role": "paragraph",
@@ -1488,7 +1450,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/88",
       "page": 6,
       "order": 25,
       "role": "paragraph",
@@ -1507,45 +1469,45 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/89",
       "page": 6,
       "order": 26,
       "role": "list_item",
-      "text": "Find a new model mn, such that mn has topological structure G(mo), i.e., G(Mn) ~ G(mo) and $ (aM,, a Mn) ≤ E.",
+      "text": "Find a new model mn, such that mn has topological structure G(mo), i.e., G(Mn) ~ G(m.)' and (aM\", aM,) ≤ 8.",
       "bbox": {
-        "x0": 24.31,
+        "x0": 24.84,
         "y0": 812.76,
         "x1": 640.85,
-        "y1": 858.15,
-        "width": 616.54,
-        "height": 45.39
+        "y1": 852.75,
+        "width": 616.01,
+        "height": 39.99
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "1. Find a new model mn, such that mn has topological structure G(mo), i.e., G(Mn) ~ G(mo) and $ (aM,, a Mn) ≤ E."
+        "docling_orig": "1. Find a new model mn, such that mn has topological structure G(mo), i.e., G(Mn) ~ G(m.)' and (aM\", aM,) ≤ 8."
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/90",
       "page": 6,
       "order": 27,
       "role": "list_item",
-      "text": "If there exists a number of such new models, select the one with the minimal value.",
+      "text": "If there exists a number of such new models, select the one with the minimal · value.",
       "bbox": {
-        "x0": 57.96,
+        "x0": 59.61,
         "y0": 855.75,
         "x1": 642.5,
-        "y1": 874.12,
-        "width": 584.54,
-        "height": 18.37
+        "y1": 872.46,
+        "width": 582.89,
+        "height": 16.71
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "2. If there exists a number of such new models, select the one with the minimal value."
+        "docling_orig": "2. If there exists a number of such new models, select the one with the minimal · value."
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/91",
       "page": 6,
       "order": 28,
       "role": "list_item",
@@ -1564,7 +1526,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/92",
       "page": 6,
       "order": 29,
       "role": "list_item",
@@ -1583,7 +1545,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/93",
       "page": 6,
       "order": 30,
       "role": "list_item",
@@ -1602,7 +1564,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/94",
       "page": 6,
       "order": 31,
       "role": "footnote",
@@ -1621,7 +1583,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/97",
       "page": 7,
       "order": 1,
       "role": "paragraph",
@@ -1630,9 +1592,9 @@
         "x0": 24.84,
         "y0": 69.53,
         "x1": 642.5,
-        "y1": 111.08,
+        "y1": 111.14,
         "width": 617.66,
-        "height": 41.55
+        "height": 41.61
       },
       "meta": {
         "docling_label": "text",
@@ -1640,7 +1602,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/98",
       "page": 7,
       "order": 2,
       "role": "paragraph",
@@ -1649,9 +1611,9 @@
         "x0": 23.18,
         "y0": 124.16,
         "x1": 642.5,
-        "y1": 205.28,
+        "y1": 205.81,
         "width": 619.32,
-        "height": 81.12
+        "height": 81.65
       },
       "meta": {
         "docling_label": "text",
@@ -1659,18 +1621,18 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/99",
       "page": 7,
       "order": 3,
       "role": "heading",
       "text": "3. PROBLEM COMPLEXITY",
       "bbox": {
-        "x0": 215.0,
-        "y0": 239.88,
-        "x1": 448.91,
-        "y1": 264.93,
-        "width": 233.91,
-        "height": 25.05
+        "x0": 215.27,
+        "y0": 241.6,
+        "x1": 448.76,
+        "y1": 261.59,
+        "width": 233.49,
+        "height": 19.99
       },
       "meta": {
         "docling_label": "section_header",
@@ -1678,7 +1640,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/100",
       "page": 7,
       "order": 4,
       "role": "heading",
@@ -1697,7 +1659,7 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/101",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -1716,7 +1678,7 @@
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/102",
       "page": 7,
       "order": 6,
       "role": "paragraph",
@@ -1735,7 +1697,7 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/103",
       "page": 7,
       "order": 7,
       "role": "paragraph",
@@ -1743,9 +1705,9 @@
       "bbox": {
         "x0": 23.18,
         "y0": 557.84,
-        "x1": 642.5,
+        "x1": 644.16,
         "y1": 798.1,
-        "width": 619.32,
+        "width": 620.98,
         "height": 240.26
       },
       "meta": {
@@ -1754,7 +1716,7 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/104",
       "page": 7,
       "order": 8,
       "role": "paragraph",
@@ -1773,7 +1735,7 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/105",
       "page": 7,
       "order": 9,
       "role": "paragraph",
@@ -1792,7 +1754,7 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/106",
       "page": 7,
       "order": 10,
       "role": "caption",
@@ -1800,9 +1762,9 @@
       "bbox": {
         "x0": 125.85,
         "y0": 1092.65,
-        "x1": 539.84,
+        "x1": 541.49,
         "y1": 1107.68,
-        "width": 413.99,
+        "width": 415.64,
         "height": 15.03
       },
       "meta": {
@@ -1811,7 +1773,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/109",
       "page": 8,
       "order": 1,
       "role": "caption",
@@ -1830,7 +1792,7 @@
       }
     },
     {
-      "id": "#/texts/112",
+      "id": "#/texts/110",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -1849,7 +1811,7 @@
       }
     },
     {
-      "id": "#/texts/113",
+      "id": "#/texts/111",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -1868,7 +1830,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/112",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -1887,7 +1849,7 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/113",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -1906,7 +1868,7 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/114",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -1925,7 +1887,7 @@
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/115",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -1944,18 +1906,18 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/116",
       "page": 8,
       "order": 8,
       "role": "paragraph",
       "text": "S14",
       "bbox": {
-        "x0": 374.24,
-        "y0": 182.11,
-        "x1": 399.08,
-        "y1": 193.7,
-        "width": 24.84,
-        "height": 11.59
+        "x0": 374.19,
+        "y0": 182.0,
+        "x1": 399.13,
+        "y1": 193.81,
+        "width": 24.94,
+        "height": 11.81
       },
       "meta": {
         "docling_label": "text",
@@ -1963,7 +1925,7 @@
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/117",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -1982,7 +1944,7 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/118",
       "page": 8,
       "order": 10,
       "role": "paragraph",
@@ -2001,7 +1963,7 @@
       }
     },
     {
-      "id": "#/texts/121",
+      "id": "#/texts/119",
       "page": 8,
       "order": 11,
       "role": "paragraph",
@@ -2020,7 +1982,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/120",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -2039,7 +2001,7 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/121",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -2058,7 +2020,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/122",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -2077,7 +2039,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/123",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -2096,7 +2058,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/124",
       "page": 8,
       "order": 16,
       "role": "paragraph",
@@ -2115,7 +2077,7 @@
       }
     },
     {
-      "id": "#/texts/127",
+      "id": "#/texts/125",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -2134,7 +2096,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/126",
       "page": 8,
       "order": 18,
       "role": "paragraph",
@@ -2153,7 +2115,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/127",
       "page": 8,
       "order": 19,
       "role": "paragraph",
@@ -2172,7 +2134,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/128",
       "page": 8,
       "order": 20,
       "role": "paragraph",
@@ -2191,7 +2153,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/129",
       "page": 8,
       "order": 21,
       "role": "paragraph",
@@ -2210,7 +2172,7 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/130",
       "page": 8,
       "order": 22,
       "role": "paragraph",
@@ -2229,7 +2191,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/131",
       "page": 8,
       "order": 23,
       "role": "heading",
@@ -2248,7 +2210,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/132",
       "page": 8,
       "order": 24,
       "role": "paragraph",
@@ -2267,7 +2229,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/133",
       "page": 8,
       "order": 25,
       "role": "paragraph",
@@ -2286,7 +2248,7 @@
       }
     },
     {
-      "id": "#/texts/136",
+      "id": "#/texts/134",
       "page": 8,
       "order": 26,
       "role": "paragraph",
@@ -2305,7 +2267,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/135",
       "page": 8,
       "order": 27,
       "role": "paragraph",
@@ -2324,7 +2286,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/138",
       "page": 9,
       "order": 1,
       "role": "caption",
@@ -2343,7 +2305,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/139",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -2351,9 +2313,9 @@
       "bbox": {
         "x0": 255.01,
         "y0": 104.3,
-        "x1": 274.89,
+        "x1": 276.54,
         "y1": 119.2,
-        "width": 19.88,
+        "width": 21.53,
         "height": 14.9
       },
       "meta": {
@@ -2362,7 +2324,7 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/140",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -2381,7 +2343,7 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/141",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -2400,7 +2362,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/142",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -2419,7 +2381,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/143",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -2438,7 +2400,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/144",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -2457,7 +2419,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/145",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -2476,7 +2438,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/146",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -2495,7 +2457,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/147",
       "page": 9,
       "order": 10,
       "role": "paragraph",
@@ -2514,7 +2476,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/148",
       "page": 9,
       "order": 11,
       "role": "paragraph",
@@ -2533,7 +2495,7 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/149",
       "page": 9,
       "order": 12,
       "role": "paragraph",
@@ -2552,7 +2514,7 @@
       }
     },
     {
-      "id": "#/texts/152",
+      "id": "#/texts/150",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -2571,26 +2533,26 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/151",
       "page": 9,
       "order": 14,
       "role": "caption",
-      "text": "FIG. 6. Creation of e by vertex perturbation.",
+      "text": "FIG. 6. Creation of e, by vertex perturbation.",
       "bbox": {
         "x0": 202.02,
         "y0": 1092.65,
         "x1": 465.32,
-        "y1": 1111.01,
+        "y1": 1112.67,
         "width": 263.3,
-        "height": 18.36
+        "height": 20.02
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "FIG. 6. Creation of e by vertex perturbation."
+        "docling_orig": "FIG. 6. Creation of e, by vertex perturbation."
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/152",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -2609,7 +2571,7 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/153",
       "page": 9,
       "order": 16,
       "role": "paragraph",
@@ -2628,7 +2590,7 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/154",
       "page": 9,
       "order": 17,
       "role": "paragraph",
@@ -2647,7 +2609,7 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/155",
       "page": 9,
       "order": 18,
       "role": "paragraph",
@@ -2666,18 +2628,18 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/156",
       "page": 9,
       "order": 19,
       "role": "paragraph",
       "text": "ei",
       "bbox": {
         "x0": 453.73,
-        "y0": 898.95,
+        "y0": 897.29,
         "x1": 470.29,
         "y1": 907.23,
         "width": 16.56,
-        "height": 8.28
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -2685,7 +2647,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/157",
       "page": 9,
       "order": 20,
       "role": "paragraph",
@@ -2704,7 +2666,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/158",
       "page": 9,
       "order": 21,
       "role": "paragraph",
@@ -2723,7 +2685,7 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/159",
       "page": 9,
       "order": 22,
       "role": "paragraph",
@@ -2742,7 +2704,7 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/160",
       "page": 9,
       "order": 23,
       "role": "paragraph",
@@ -2761,7 +2723,7 @@
       }
     },
     {
-      "id": "#/texts/163",
+      "id": "#/texts/161",
       "page": 9,
       "order": 24,
       "role": "paragraph",
@@ -2780,28 +2742,9 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/162",
       "page": 9,
       "order": 25,
-      "role": "paragraph",
-      "text": "Co",
-      "bbox": {
-        "x0": 263.29,
-        "y0": 1008.21,
-        "x1": 281.51,
-        "y1": 1023.11,
-        "width": 18.22,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Co"
-      }
-    },
-    {
-      "id": "#/texts/165",
-      "page": 9,
-      "order": 26,
       "role": "paragraph",
       "text": "C2",
       "bbox": {
@@ -2818,9 +2761,9 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/163",
       "page": 9,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "Vi2",
       "bbox": {
@@ -2837,9 +2780,9 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/164",
       "page": 9,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "Co",
       "bbox": {
@@ -2856,9 +2799,9 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/165",
       "page": 9,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -2875,7 +2818,26 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/166",
+      "page": 9,
+      "order": 29,
+      "role": "paragraph",
+      "text": "Co",
+      "bbox": {
+        "x0": 263.29,
+        "y0": 1008.21,
+        "x1": 281.51,
+        "y1": 1023.11,
+        "width": 18.22,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Co"
+      }
+    },
+    {
+      "id": "#/texts/167",
       "page": 9,
       "order": 30,
       "role": "paragraph",
@@ -2894,7 +2856,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/170",
       "page": 10,
       "order": 1,
       "role": "caption",
@@ -2913,7 +2875,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/171",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -2932,18 +2894,18 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/172",
       "page": 10,
       "order": 3,
       "role": "paragraph",
       "text": "C1 C2",
       "bbox": {
         "x0": 235.09,
-        "y0": 115.74,
+        "y0": 115.75,
         "x1": 278.25,
-        "y1": 132.59,
+        "y1": 132.58,
         "width": 43.16,
-        "height": 16.85
+        "height": 16.83
       },
       "meta": {
         "docling_label": "text",
@@ -2951,7 +2913,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/173",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -2970,47 +2932,9 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/174",
       "page": 10,
       "order": 5,
-      "role": "paragraph",
-      "text": "- -e!",
-      "bbox": {
-        "x0": 311.32,
-        "y0": 158.93,
-        "x1": 349.4,
-        "y1": 172.28,
-        "width": 38.08,
-        "height": 13.35
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "- -e!"
-      }
-    },
-    {
-      "id": "#/texts/177",
-      "page": 10,
-      "order": 6,
-      "role": "paragraph",
-      "text": "C8",
-      "bbox": {
-        "x0": 491.81,
-        "y0": 170.52,
-        "x1": 511.69,
-        "y1": 185.42,
-        "width": 19.88,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C8"
-      }
-    },
-    {
-      "id": "#/texts/178",
-      "page": 10,
-      "order": 7,
       "role": "paragraph",
       "text": "Cs",
       "bbox": {
@@ -3027,9 +2951,9 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/175",
       "page": 10,
-      "order": 8,
+      "order": 6,
       "role": "paragraph",
       "text": "el'",
       "bbox": {
@@ -3046,9 +2970,9 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/176",
       "page": 10,
-      "order": 9,
+      "order": 7,
       "role": "paragraph",
       "text": "e!'",
       "bbox": {
@@ -3065,9 +2989,9 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/177",
       "page": 10,
-      "order": 10,
+      "order": 8,
       "role": "paragraph",
       "text": "Сь",
       "bbox": {
@@ -3084,9 +3008,9 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/178",
       "page": 10,
-      "order": 11,
+      "order": 9,
       "role": "paragraph",
       "text": "el",
       "bbox": {
@@ -3103,9 +3027,9 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/179",
       "page": 10,
-      "order": 12,
+      "order": 10,
       "role": "paragraph",
       "text": "e!",
       "bbox": {
@@ -3122,9 +3046,9 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/180",
       "page": 10,
-      "order": 13,
+      "order": 11,
       "role": "paragraph",
       "text": "e!",
       "bbox": {
@@ -3141,9 +3065,9 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/181",
       "page": 10,
-      "order": 14,
+      "order": 12,
       "role": "paragraph",
       "text": "C10",
       "bbox": {
@@ -3160,9 +3084,9 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/182",
       "page": 10,
-      "order": 15,
+      "order": 13,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -3179,9 +3103,9 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/183",
       "page": 10,
-      "order": 16,
+      "order": 14,
       "role": "paragraph",
       "text": "e!",
       "bbox": {
@@ -3198,28 +3122,28 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/184",
       "page": 10,
-      "order": 17,
+      "order": 15,
       "role": "paragraph",
-      "text": "e\"",
+      "text": "e!",
       "bbox": {
         "x0": 404.05,
         "y0": 291.37,
         "x1": 425.58,
-        "y1": 306.27,
+        "y1": 307.93,
         "width": 21.53,
-        "height": 14.9
+        "height": 16.56
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "e\""
+        "docling_orig": "e!"
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/185",
       "page": 10,
-      "order": 18,
+      "order": 16,
       "role": "paragraph",
       "text": ", eld",
       "bbox": {
@@ -3236,9 +3160,9 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/186",
       "page": 10,
-      "order": 19,
+      "order": 17,
       "role": "paragraph",
       "text": "gap",
       "bbox": {
@@ -3255,9 +3179,9 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/187",
       "page": 10,
-      "order": 20,
+      "order": 18,
       "role": "paragraph",
       "text": "e1",
       "bbox": {
@@ -3274,9 +3198,9 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/188",
       "page": 10,
-      "order": 21,
+      "order": 19,
       "role": "paragraph",
       "text": "I S11",
       "bbox": {
@@ -3293,9 +3217,9 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/189",
       "page": 10,
-      "order": 22,
+      "order": 20,
       "role": "paragraph",
       "text": "S12",
       "bbox": {
@@ -3312,56 +3236,37 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/190",
       "page": 10,
-      "order": 23,
+      "order": 21,
       "role": "paragraph",
-      "text": "$13",
+      "text": "813",
       "bbox": {
-        "x0": 251.7,
+        "x0": 250.05,
         "y0": 491.69,
         "x1": 274.89,
-        "y1": 503.28,
-        "width": 23.19,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "$13"
-      }
-    },
-    {
-      "id": "#/texts/195",
-      "page": 10,
-      "order": 24,
-      "role": "paragraph",
-      "text": "•",
-      "bbox": {
-        "x0": 233.49,
-        "y0": 541.36,
-        "x1": 246.74,
-        "y1": 554.6,
-        "width": 13.25,
+        "y1": 504.93,
+        "width": 24.84,
         "height": 13.24
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "•"
+        "docling_orig": "813"
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/191",
       "page": 10,
-      "order": 25,
+      "order": 22,
       "role": "paragraph",
       "text": "S14",
       "bbox": {
-        "x0": 251.67,
-        "y0": 542.93,
-        "x1": 274.92,
-        "y1": 553.03,
-        "width": 23.25,
-        "height": 10.1
+        "x0": 251.7,
+        "y0": 543.01,
+        "x1": 274.89,
+        "y1": 552.94,
+        "width": 23.19,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -3369,85 +3274,9 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/192",
       "page": 10,
-      "order": 26,
-      "role": "paragraph",
-      "text": "e11",
-      "bbox": {
-        "x0": 377.55,
-        "y0": 547.98,
-        "x1": 402.39,
-        "y1": 559.57,
-        "width": 24.84,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "e11"
-      }
-    },
-    {
-      "id": "#/texts/198",
-      "page": 10,
-      "order": 27,
-      "role": "paragraph",
-      "text": "573\\7",
-      "bbox": {
-        "x0": 356.03,
-        "y0": 604.27,
-        "x1": 402.39,
-        "y1": 620.82,
-        "width": 46.36,
-        "height": 16.55
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "573\\7"
-      }
-    },
-    {
-      "id": "#/texts/199",
-      "page": 10,
-      "order": 28,
-      "role": "paragraph",
-      "text": "S75",
-      "bbox": {
-        "x0": 405.71,
-        "y0": 605.92,
-        "x1": 432.2,
-        "y1": 615.85,
-        "width": 26.49,
-        "height": 9.93
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "S75"
-      }
-    },
-    {
-      "id": "#/texts/200",
-      "page": 10,
-      "order": 29,
-      "role": "paragraph",
-      "text": "S74",
-      "bbox": {
-        "x0": 380.87,
-        "y0": 624.13,
-        "x1": 404.05,
-        "y1": 635.72,
-        "width": 23.18,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "S74"
-      }
-    },
-    {
-      "id": "#/texts/201",
-      "page": 10,
-      "order": 30,
+      "order": 23,
       "role": "paragraph",
       "text": "S71",
       "bbox": {
@@ -3464,9 +3293,9 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/193",
       "page": 10,
-      "order": 31,
+      "order": 24,
       "role": "paragraph",
       "text": "S72",
       "bbox": {
@@ -3483,9 +3312,85 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/194",
       "page": 10,
-      "order": 32,
+      "order": 25,
+      "role": "paragraph",
+      "text": "e11",
+      "bbox": {
+        "x0": 377.55,
+        "y0": 547.98,
+        "x1": 402.39,
+        "y1": 559.57,
+        "width": 24.84,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e11"
+      }
+    },
+    {
+      "id": "#/texts/195",
+      "page": 10,
+      "order": 26,
+      "role": "paragraph",
+      "text": "57317",
+      "bbox": {
+        "x0": 356.03,
+        "y0": 604.27,
+        "x1": 402.39,
+        "y1": 620.82,
+        "width": 46.36,
+        "height": 16.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "57317"
+      }
+    },
+    {
+      "id": "#/texts/196",
+      "page": 10,
+      "order": 27,
+      "role": "paragraph",
+      "text": "S75",
+      "bbox": {
+        "x0": 404.05,
+        "y0": 605.92,
+        "x1": 432.2,
+        "y1": 615.85,
+        "width": 28.15,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "S75"
+      }
+    },
+    {
+      "id": "#/texts/197",
+      "page": 10,
+      "order": 28,
+      "role": "paragraph",
+      "text": "S74",
+      "bbox": {
+        "x0": 380.87,
+        "y0": 624.13,
+        "x1": 404.05,
+        "y1": 635.72,
+        "width": 23.18,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "S74"
+      }
+    },
+    {
+      "id": "#/texts/198",
+      "page": 10,
+      "order": 29,
       "role": "paragraph",
       "text": "S76",
       "bbox": {
@@ -3502,18 +3407,18 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/199",
       "page": 10,
-      "order": 33,
+      "order": 30,
       "role": "paragraph",
       "text": ", S15",
       "bbox": {
         "x0": 243.42,
         "y0": 637.38,
-        "x1": 274.89,
-        "y1": 650.62,
-        "width": 31.47,
-        "height": 13.24
+        "x1": 276.54,
+        "y1": 648.97,
+        "width": 33.12,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -3521,9 +3426,9 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/200",
       "page": 10,
-      "order": 34,
+      "order": 31,
       "role": "paragraph",
       "text": "e7",
       "bbox": {
@@ -3540,9 +3445,9 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/201",
       "page": 10,
-      "order": 35,
+      "order": 32,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
@@ -3559,9 +3464,9 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/202",
       "page": 10,
-      "order": 36,
+      "order": 33,
       "role": "paragraph",
       "text": "The collection of such rectified edges, however, may not form a valid face boundary, as there may exist open loops and or dangling curve segments. For example, in Fig. 7a (where the rectified edges are thick lines), a dangling curve segment Siz and a gap between e\" and eg exist. The final act of face reconstruction is to trim away dangling curve segments and fill gaps with curve segments from (Si), so that the selected curve segments form a valid face boundary. See Fig. 7b. This trimming and gap-filling process should create a face boundary that satisfies the topological and geometric requirements stated in the problem statement.",
       "bbox": {
@@ -3578,26 +3483,26 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/203",
       "page": 10,
-      "order": 37,
+      "order": 34,
       "role": "paragraph",
-      "text": "Assume that, in the final reconstructed face boundary, the selected curve segments from C, are S, = (SighsiL, A new edge el, is created by stringing curve segments in S;. The process starts with an arbitrary curve segment Sij, € Si, and searches for its adjacent curve segments in S;. If, at one endpoint, exactly one adjacent curve segment Sij is found, then Sij is selected and the search marches on at the other endpoint of Siz; otherwise, the process terminates and resumes at the other endpoint of Si. Note that there may be more than one",
+      "text": "Assume that, in the final reconstructed face boundary, the selected curve segments from C, are S, = (SighsiL, A new edge el, is created by stringing curve segments in S;. The process starts with an arbitrary curve segment Sij, € Si, and searches for its adjacent curve segments in S;. If, at one endpoint, exactly one adjacent curve segment Sij is found, then Sij is selected and the search marches on at the other endpoint of Siz; otherwise, the process terminates and resumes at the other endpoint of Sij. Note that there may be more than one",
       "bbox": {
-        "x0": 18.22,
+        "x0": 19.87,
         "y0": 980.05,
         "x1": 640.85,
         "y1": 1109.34,
-        "width": 622.63,
+        "width": 620.98,
         "height": 129.29
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Assume that, in the final reconstructed face boundary, the selected curve segments from C, are S, = (SighsiL, A new edge el, is created by stringing curve segments in S;. The process starts with an arbitrary curve segment Sij, € Si, and searches for its adjacent curve segments in S;. If, at one endpoint, exactly one adjacent curve segment Sij is found, then Sij is selected and the search marches on at the other endpoint of Siz; otherwise, the process terminates and resumes at the other endpoint of Si. Note that there may be more than one"
+        "docling_orig": "Assume that, in the final reconstructed face boundary, the selected curve segments from C, are S, = (SighsiL, A new edge el, is created by stringing curve segments in S;. The process starts with an arbitrary curve segment Sij, € Si, and searches for its adjacent curve segments in S;. If, at one endpoint, exactly one adjacent curve segment Sij is found, then Sij is selected and the search marches on at the other endpoint of Siz; otherwise, the process terminates and resumes at the other endpoint of Sij. Note that there may be more than one"
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/206",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -3616,26 +3521,26 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/207",
       "page": 11,
       "order": 2,
       "role": "paragraph",
-      "text": "In summary, an edge ei, in the original model, shared by faces fo and f;, is first rectified by projecting its vertices onto C; = Rn R;, which is the exact underlying curve of node ex· This produces ej, and achieves a consistent adjacency relation between fo and f; but may not do so at the vertices. Edge ej, is then rectified by perturbing its vertices to their closest intersection points on C;, such that the resulting edge ej, consists of curve segments in (Sig). Note that node e, has the same symbolic information as node ei, and could be geometrically consistent with all adjacency and incidence relations in which it is involved, if other topological entities are appropriately constructed. Typically, the geometric change between ej, and ej, is minimal. Since such edges may not form a valid face boundary, additional curve segments from (Si) are added to fill gaps and dangling curve segments are trimmed away. In the rectified face boundary, a new edge e, consists of curve segments from C;.",
+      "text": "In summary, an edge ei, in the original model, shared by faces fo and f;, is first rectified by projecting its vertices onto C; = Rn R;, which is the exact underlying curve of node ex· This produces ej, and achieves a consistent adjacency relation between fo and f; but may not do so at the vertices. Edge ej, is then rectified by perturbing its vertices to their closest intersection points on C;, such that the resulting edge ej, consists of curve segments in (Sig). Note that node e, has the same symbolic information as node ei, and could be geometrically consistent with all adjacency and incidence relations in which it is involved, if other topological entities are appropriately constructed. Typically, the geometric change between ej, and ej, is minimal. Since such edges may not form a valid face boundary, additional curve segments from (Si) are added to fill gaps and dangling curve segments are trimmed away. In the rectified face boundary, a new edge e, consists of curve segments from Cj.",
       "bbox": {
         "x0": 23.18,
         "y0": 114.23,
         "x1": 644.16,
-        "y1": 375.89,
+        "y1": 376.29,
         "width": 620.98,
-        "height": 261.66
+        "height": 262.06
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "In summary, an edge ei, in the original model, shared by faces fo and f;, is first rectified by projecting its vertices onto C; = Rn R;, which is the exact underlying curve of node ex· This produces ej, and achieves a consistent adjacency relation between fo and f; but may not do so at the vertices. Edge ej, is then rectified by perturbing its vertices to their closest intersection points on C;, such that the resulting edge ej, consists of curve segments in (Sig). Note that node e, has the same symbolic information as node ei, and could be geometrically consistent with all adjacency and incidence relations in which it is involved, if other topological entities are appropriately constructed. Typically, the geometric change between ej, and ej, is minimal. Since such edges may not form a valid face boundary, additional curve segments from (Si) are added to fill gaps and dangling curve segments are trimmed away. In the rectified face boundary, a new edge e, consists of curve segments from C;."
+        "docling_orig": "In summary, an edge ei, in the original model, shared by faces fo and f;, is first rectified by projecting its vertices onto C; = Rn R;, which is the exact underlying curve of node ex· This produces ej, and achieves a consistent adjacency relation between fo and f; but may not do so at the vertices. Edge ej, is then rectified by perturbing its vertices to their closest intersection points on C;, such that the resulting edge ej, consists of curve segments in (Sig). Note that node e, has the same symbolic information as node ei, and could be geometrically consistent with all adjacency and incidence relations in which it is involved, if other topological entities are appropriately constructed. Typically, the geometric change between ej, and ej, is minimal. Since such edges may not form a valid face boundary, additional curve segments from (Si) are added to fill gaps and dangling curve segments are trimmed away. In the rectified face boundary, a new edge e, consists of curve segments from Cj."
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/208",
       "page": 11,
       "order": 3,
       "role": "heading",
@@ -3654,7 +3559,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/209",
       "page": 11,
       "order": 4,
       "role": "paragraph",
@@ -3673,7 +3578,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/210",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -3692,7 +3597,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/212",
       "page": 11,
       "order": 6,
       "role": "paragraph",
@@ -3711,7 +3616,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/214",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -3730,7 +3635,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/217",
       "page": 11,
       "order": 8,
       "role": "paragraph",
@@ -3749,7 +3654,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/220",
       "page": 12,
       "order": 1,
       "role": "list_item",
@@ -3768,7 +3673,7 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/221",
       "page": 12,
       "order": 2,
       "role": "paragraph",
@@ -3787,7 +3692,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/222",
       "page": 12,
       "order": 3,
       "role": "caption",
@@ -3806,7 +3711,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/223",
       "page": 12,
       "order": 4,
       "role": "paragraph",
@@ -3825,7 +3730,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/224",
       "page": 12,
       "order": 5,
       "role": "paragraph",
@@ -3844,7 +3749,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/225",
       "page": 12,
       "order": 6,
       "role": "paragraph",
@@ -3863,7 +3768,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/226",
       "page": 12,
       "order": 7,
       "role": "paragraph",
@@ -3882,7 +3787,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/227",
       "page": 12,
       "order": 8,
       "role": "paragraph",
@@ -3901,7 +3806,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/228",
       "page": 12,
       "order": 9,
       "role": "paragraph",
@@ -3920,7 +3825,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/229",
       "page": 12,
       "order": 10,
       "role": "paragraph",
@@ -3939,7 +3844,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/230",
       "page": 12,
       "order": 11,
       "role": "paragraph",
@@ -3958,26 +3863,26 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/231",
       "page": 12,
       "order": 12,
       "role": "paragraph",
-      "text": "e2",
+      "text": "ei",
       "bbox": {
-        "x0": 283.17,
-        "y0": 872.46,
+        "x0": 281.51,
+        "y0": 867.49,
         "x1": 298.07,
-        "y1": 882.39,
-        "width": 14.9,
-        "height": 9.93
+        "y1": 884.05,
+        "width": 16.56,
+        "height": 16.56
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "e2"
+        "docling_orig": "ei"
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/232",
       "page": 12,
       "order": 13,
       "role": "paragraph",
@@ -3996,7 +3901,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/235",
       "page": 13,
       "order": 1,
       "role": "paragraph",
@@ -4015,7 +3920,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/236",
       "page": 13,
       "order": 2,
       "role": "paragraph",
@@ -4034,7 +3939,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/237",
       "page": 13,
       "order": 3,
       "role": "paragraph",
@@ -4053,7 +3958,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/239",
       "page": 13,
       "order": 4,
       "role": "paragraph",
@@ -4072,7 +3977,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/240",
       "page": 13,
       "order": 5,
       "role": "list_item",
@@ -4091,7 +3996,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/241",
       "page": 13,
       "order": 6,
       "role": "list_item",
@@ -4110,7 +4015,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/242",
       "page": 13,
       "order": 7,
       "role": "list_item",
@@ -4129,7 +4034,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/243",
       "page": 13,
       "order": 8,
       "role": "list_item",
@@ -4148,7 +4053,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/244",
       "page": 13,
       "order": 9,
       "role": "paragraph",
@@ -4167,11 +4072,11 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/245",
       "page": 13,
       "order": 10,
       "role": "paragraph",
-      "text": "Rural postman problem*: Let graph G = (V, E). Each e e E has length (e) e Zo. Let E'S E. Find the circuit in G that includes each arc in E' and that has the shortest total length.",
+      "text": "Rural postman problem: Let graph G = (V, E). Each e e E has length (e) e Zo. Let E'S E. Find the circuit in G that includes each arc in E' and that has the shortest total length.",
       "bbox": {
         "x0": 26.5,
         "y0": 682.08,
@@ -4182,11 +4087,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Rural postman problem*: Let graph G = (V, E). Each e e E has length (e) e Zo. Let E'S E. Find the circuit in G that includes each arc in E' and that has the shortest total length."
+        "docling_orig": "Rural postman problem: Let graph G = (V, E). Each e e E has length (e) e Zo. Let E'S E. Find the circuit in G that includes each arc in E' and that has the shortest total length."
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/246",
       "page": 13,
       "order": 11,
       "role": "paragraph",
@@ -4194,9 +4099,9 @@
       "bbox": {
         "x0": 41.4,
         "y0": 740.02,
-        "x1": 322.91,
+        "x1": 321.25,
         "y1": 758.23,
-        "width": 281.51,
+        "width": 279.85,
         "height": 18.21
       },
       "meta": {
@@ -4205,7 +4110,7 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/247",
       "page": 13,
       "order": 12,
       "role": "paragraph",
@@ -4224,17 +4129,17 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/249",
       "page": 13,
       "order": 13,
       "role": "footnote",
       "text": "\" Here we give the rural postman search problem because the FR problem is also a search problem. In [25], the rural postman decision problem is given.",
       "bbox": {
-        "x0": 19.87,
+        "x0": 21.53,
         "y0": 1071.08,
         "x1": 642.57,
         "y1": 1107.68,
-        "width": 622.7,
+        "width": 621.04,
         "height": 36.6
       },
       "meta": {
@@ -4243,7 +4148,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/252",
       "page": 14,
       "order": 1,
       "role": "caption",
@@ -4262,7 +4167,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/253",
       "page": 14,
       "order": 2,
       "role": "paragraph",
@@ -4281,7 +4186,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/254",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -4300,7 +4205,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/255",
       "page": 14,
       "order": 4,
       "role": "paragraph",
@@ -4309,9 +4214,9 @@
         "x0": 306.35,
         "y0": 109.26,
         "x1": 341.12,
-        "y1": 120.85,
+        "y1": 119.2,
         "width": 34.77,
-        "height": 11.59
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -4319,7 +4224,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/256",
       "page": 14,
       "order": 5,
       "role": "paragraph",
@@ -4338,18 +4243,18 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/257",
       "page": 14,
       "order": 6,
       "role": "paragraph",
       "text": "S10,1",
       "bbox": {
-        "x0": 370.86,
-        "y0": 130.58,
-        "x1": 404.12,
-        "y1": 142.58,
-        "width": 33.26,
-        "height": 12.0
+        "x0": 370.92,
+        "y0": 130.75,
+        "x1": 404.06,
+        "y1": 142.41,
+        "width": 33.14,
+        "height": 11.66
       },
       "meta": {
         "docling_label": "text",
@@ -4357,7 +4262,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/258",
       "page": 14,
       "order": 7,
       "role": "paragraph",
@@ -4376,7 +4281,7 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/259",
       "page": 14,
       "order": 8,
       "role": "paragraph",
@@ -4395,7 +4300,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/260",
       "page": 14,
       "order": 9,
       "role": "paragraph",
@@ -4414,7 +4319,7 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/261",
       "page": 14,
       "order": 10,
       "role": "paragraph",
@@ -4433,7 +4338,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/262",
       "page": 14,
       "order": 11,
       "role": "paragraph",
@@ -4452,7 +4357,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/263",
       "page": 14,
       "order": 12,
       "role": "paragraph",
@@ -4471,7 +4376,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/264",
       "page": 14,
       "order": 13,
       "role": "paragraph",
@@ -4490,7 +4395,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/265",
       "page": 14,
       "order": 14,
       "role": "paragraph",
@@ -4509,7 +4414,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/266",
       "page": 14,
       "order": 15,
       "role": "paragraph",
@@ -4528,11 +4433,11 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/267",
       "page": 14,
       "order": 16,
       "role": "paragraph",
-      "text": "Then, if all the curve segments in S, are selected, L de for the edges of the first category reaches its minimum. This means that a valid face boundary that includes all the curve segments in Si will be selected over any choice that does not.",
+      "text": "Then, if all the curve segments in S, are selected, Le for the edges of the first category reaches its minimum. This means that a valid face boundary that includes all the curve segments in Si will be selected over any choice that does not.",
       "bbox": {
         "x0": 21.53,
         "y0": 387.39,
@@ -4543,11 +4448,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Then, if all the curve segments in S, are selected, L de for the edges of the first category reaches its minimum. This means that a valid face boundary that includes all the curve segments in Si will be selected over any choice that does not."
+        "docling_orig": "Then, if all the curve segments in S, are selected, Le for the edges of the first category reaches its minimum. This means that a valid face boundary that includes all the curve segments in Si will be selected over any choice that does not."
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/268",
       "page": 14,
       "order": 17,
       "role": "paragraph",
@@ -4566,7 +4471,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/269",
       "page": 14,
       "order": 18,
       "role": "paragraph",
@@ -4585,7 +4490,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/270",
       "page": 14,
       "order": 19,
       "role": "heading",
@@ -4604,7 +4509,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/271",
       "page": 14,
       "order": 20,
       "role": "paragraph",
@@ -4623,7 +4528,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/272",
       "page": 14,
       "order": 21,
       "role": "paragraph",
@@ -4642,7 +4547,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/274",
       "page": 14,
       "order": 22,
       "role": "paragraph",
@@ -4661,7 +4566,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/275",
       "page": 14,
       "order": 23,
       "role": "footnote",
@@ -4680,7 +4585,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/279",
       "page": 15,
       "order": 1,
       "role": "paragraph",
@@ -4699,7 +4604,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/280",
       "page": 15,
       "order": 2,
       "role": "paragraph",
@@ -4718,7 +4623,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/281",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -4737,7 +4642,7 @@
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/283",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -4745,9 +4650,9 @@
       "bbox": {
         "x0": 24.84,
         "y0": 435.4,
-        "x1": 549.77,
+        "x1": 551.43,
         "y1": 453.61,
-        "width": 524.93,
+        "width": 526.59,
         "height": 18.21
       },
       "meta": {
@@ -4756,7 +4661,7 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/284",
       "page": 15,
       "order": 5,
       "role": "list_item",
@@ -4775,7 +4680,7 @@
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/285",
       "page": 15,
       "order": 6,
       "role": "list_item",
@@ -4794,7 +4699,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/286",
       "page": 15,
       "order": 7,
       "role": "list_item",
@@ -4813,7 +4718,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/287",
       "page": 15,
       "order": 8,
       "role": "list_item",
@@ -4832,7 +4737,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/288",
       "page": 15,
       "order": 9,
       "role": "paragraph",
@@ -4851,7 +4756,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/289",
       "page": 15,
       "order": 10,
       "role": "paragraph",
@@ -4870,7 +4775,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/290",
       "page": 15,
       "order": 11,
       "role": "paragraph",
@@ -4889,7 +4794,7 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/292",
       "page": 15,
       "order": 12,
       "role": "paragraph",
@@ -4908,7 +4813,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/293",
       "page": 15,
       "order": 13,
       "role": "paragraph",
@@ -4927,7 +4832,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/296",
       "page": 16,
       "order": 1,
       "role": "caption",
@@ -4946,18 +4851,18 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/297",
       "page": 16,
       "order": 2,
       "role": "paragraph",
       "text": "geometric",
       "bbox": {
-        "x0": 382.31,
-        "y0": 128.29,
-        "x1": 477.11,
-        "y1": 142.89,
-        "width": 94.8,
-        "height": 14.6
+        "x0": 382.33,
+        "y0": 128.45,
+        "x1": 477.09,
+        "y1": 142.73,
+        "width": 94.76,
+        "height": 14.28
       },
       "meta": {
         "docling_label": "text",
@@ -4965,7 +4870,7 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/298",
       "page": 16,
       "order": 3,
       "role": "paragraph",
@@ -4984,9 +4889,28 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/299",
       "page": 16,
       "order": 4,
+      "role": "paragraph",
+      "text": "£í",
+      "bbox": {
+        "x0": 523.28,
+        "y0": 125.82,
+        "x1": 541.49,
+        "y1": 142.37,
+        "width": 18.21,
+        "height": 16.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "£í"
+      }
+    },
+    {
+      "id": "#/texts/300",
+      "page": 16,
+      "order": 5,
       "role": "paragraph",
       "text": "R",
       "bbox": {
@@ -5003,9 +4927,9 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/301",
       "page": 16,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "eí",
       "bbox": {
@@ -5022,9 +4946,9 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/302",
       "page": 16,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "es",
       "bbox": {
@@ -5041,18 +4965,18 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/303",
       "page": 16,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "sweeping",
       "bbox": {
-        "x0": 261.64,
-        "y0": 236.74,
-        "x1": 347.75,
-        "y1": 254.95,
-        "width": 86.11,
-        "height": 18.21
+        "x0": 261.55,
+        "y0": 236.32,
+        "x1": 347.83,
+        "y1": 255.37,
+        "width": 86.28,
+        "height": 19.05
       },
       "meta": {
         "docling_label": "text",
@@ -5060,9 +4984,28 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/304",
       "page": 16,
-      "order": 8,
+      "order": 9,
+      "role": "paragraph",
+      "text": "{f1",
+      "bbox": {
+        "x0": 523.28,
+        "y0": 241.71,
+        "x1": 541.49,
+        "y1": 254.95,
+        "width": 18.21,
+        "height": 13.24
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "{f1"
+      }
+    },
+    {
+      "id": "#/texts/305",
+      "page": 16,
+      "order": 10,
       "role": "paragraph",
       "text": "fz",
       "bbox": {
@@ -5079,9 +5022,9 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/306",
       "page": 16,
-      "order": 9,
+      "order": 11,
       "role": "paragraph",
       "text": "f3",
       "bbox": {
@@ -5098,9 +5041,9 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/307",
       "page": 16,
-      "order": 10,
+      "order": 12,
       "role": "paragraph",
       "text": "topological",
       "bbox": {
@@ -5117,9 +5060,9 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/308",
       "page": 16,
-      "order": 11,
+      "order": 13,
       "role": "paragraph",
       "text": "structure",
       "bbox": {
@@ -5136,28 +5079,9 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/309",
       "page": 16,
-      "order": 12,
-      "role": "paragraph",
-      "text": "V1",
-      "bbox": {
-        "x0": 559.71,
-        "y0": 299.65,
-        "x1": 577.92,
-        "y1": 311.24,
-        "width": 18.21,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "V1"
-      }
-    },
-    {
-      "id": "#/texts/313",
-      "page": 16,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "e2",
       "bbox": {
@@ -5174,9 +5098,9 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/310",
       "page": 16,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "FR problem",
       "bbox": {
@@ -5193,17 +5117,17 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/311",
       "page": 16,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "e1",
       "bbox": {
         "x0": 546.46,
         "y0": 334.42,
-        "x1": 561.36,
+        "x1": 563.02,
         "y1": 342.69,
-        "width": 14.9,
+        "width": 16.56,
         "height": 8.27
       },
       "meta": {
@@ -5212,9 +5136,9 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/312",
       "page": 16,
-      "order": 16,
+      "order": 17,
       "role": "paragraph",
       "text": "BR problem",
       "bbox": {
@@ -5231,9 +5155,9 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/313",
       "page": 16,
-      "order": 17,
+      "order": 18,
       "role": "heading",
       "text": "4. CONCLUSIONS",
       "bbox": {
@@ -5250,9 +5174,9 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/314",
       "page": 16,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "The BR problem is, in certain ways, similar to the gap boundary matching problem studied by Barequet and Sharir [9], which is also shown to be an NP-hard (global search) problem. However, they are quite different in nature as the former reconstructs a boundary from a set of surfaces and involves complex topological constraints, whereas the latter matches boundaries of a set of surface patches. Theoretically, of course, all NP-complete problems are equivalent, but their specifics can vary significantly.",
       "bbox": {
@@ -5269,9 +5193,9 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/315",
       "page": 16,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "The understanding of the NP-hardness of a problem helps design algorithms to efficiently and properly solve the problem. In a recent paper [29], we propose model rectification algorithms that approximate the process of finding the optimal solutions described here. To achieve numerical robustness in a floating point environment, interval model representation proves to be a powerful tool [16, 17]. We further study some key topological issues of interval solid models in [28], and develop interval geometric and numerical methods useful in model rectification in [30]. All these are summarized in a review paper [31].",
       "bbox": {
@@ -5288,9 +5212,9 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/316",
       "page": 16,
-      "order": 20,
+      "order": 21,
       "role": "heading",
       "text": "APPENDIX: SHORT REVIEW OF NP-COMPLETENESS",
       "bbox": {
@@ -5307,9 +5231,9 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/317",
       "page": 16,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "This Appendix provides a brief introduction to the theory of NP-completeness. For details, see [25]. A decision problem is a problem whose answer is yes or no. A problem is said to belong to the class P if it can be solved by a polynomial time DTM program. DTM is the abbreviation for deterministic one-tape Turing machine, a simplified computing model. If the problem can be solved by a polynomial time NDTM program, it belongs to the class NP. NDTM, nondeterministic one-tape Turing machine, has the exact same structure as that of DTM, except that it has a guessing module. A NDTM program has two distinct stages: guessing and checking. For example, the traveling salesman problem is given as:",
       "bbox": {
@@ -5326,7 +5250,7 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/320",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -5345,7 +5269,7 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/321",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -5364,11 +5288,11 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/322",
       "page": 17,
       "order": 3,
       "role": "paragraph",
-      "text": "It is observed that class(P) ≤ class(NP). It is also an unproven conjecture that P‡ NP. For a problem in NP, there exists a polynomial p such that the problem can be solved by a deterministic algorithm having time complexity O(2p()), where n is the length of the input string. A decision problem I is NP-complete if e NP and, for all other decision problems П' NP, there is a polynomial transformation from ' to . A polynomial transformation is a mapping f such that",
+      "text": "It is observed that class(P) ≤ class(NP). It is also an unproven conjecture that P# NP. For a problem in NP, there exists a polynomial p such that the problem can be solved by a deterministic algorithm having time complexity O(2p()), where n is the length of the input string. A decision problem I is NP-complete if e NP and, for all other decision problems П' NP, there is a polynomial transformation from ' to . A polynomial transformation is a mapping f such that",
       "bbox": {
         "x0": 23.18,
         "y0": 225.15,
@@ -5379,11 +5303,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "It is observed that class(P) ≤ class(NP). It is also an unproven conjecture that P‡ NP. For a problem in NP, there exists a polynomial p such that the problem can be solved by a deterministic algorithm having time complexity O(2p()), where n is the length of the input string. A decision problem I is NP-complete if e NP and, for all other decision problems П' NP, there is a polynomial transformation from ' to . A polynomial transformation is a mapping f such that"
+        "docling_orig": "It is observed that class(P) ≤ class(NP). It is also an unproven conjecture that P# NP. For a problem in NP, there exists a polynomial p such that the problem can be solved by a deterministic algorithm having time complexity O(2p()), where n is the length of the input string. A decision problem I is NP-complete if e NP and, for all other decision problems П' NP, there is a polynomial transformation from ' to . A polynomial transformation is a mapping f such that"
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/323",
       "page": 17,
       "order": 4,
       "role": "list_item",
@@ -5402,7 +5326,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/324",
       "page": 17,
       "order": 5,
       "role": "list_item",
@@ -5421,7 +5345,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/325",
       "page": 17,
       "order": 6,
       "role": "paragraph",
@@ -5440,7 +5364,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/326",
       "page": 17,
       "order": 7,
       "role": "list_item",
@@ -5459,7 +5383,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/327",
       "page": 17,
       "order": 8,
       "role": "list_item",
@@ -5478,7 +5402,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/328",
       "page": 17,
       "order": 9,
       "role": "list_item",
@@ -5497,7 +5421,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/329",
       "page": 17,
       "order": 10,
       "role": "list_item",
@@ -5516,7 +5440,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/330",
       "page": 17,
       "order": 11,
       "role": "paragraph",
@@ -5535,7 +5459,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/331",
       "page": 17,
       "order": 12,
       "role": "paragraph",
@@ -5554,7 +5478,7 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/332",
       "page": 17,
       "order": 13,
       "role": "heading",
@@ -5573,7 +5497,7 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/333",
       "page": 17,
       "order": 14,
       "role": "paragraph",
@@ -5592,7 +5516,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/334",
       "page": 17,
       "order": 15,
       "role": "paragraph",
@@ -5611,7 +5535,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/335",
       "page": 17,
       "order": 16,
       "role": "heading",
@@ -5630,7 +5554,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/336",
       "page": 17,
       "order": 17,
       "role": "list_item",
@@ -5649,7 +5573,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/337",
       "page": 17,
       "order": 18,
       "role": "list_item",
@@ -5668,7 +5592,7 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/338",
       "page": 17,
       "order": 19,
       "role": "list_item",
@@ -5687,7 +5611,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/339",
       "page": 17,
       "order": 20,
       "role": "list_item",
@@ -5706,7 +5630,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/342",
       "page": 18,
       "order": 1,
       "role": "list_item",
@@ -5725,7 +5649,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/343",
       "page": 18,
       "order": 2,
       "role": "list_item",
@@ -5744,7 +5668,7 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/344",
       "page": 18,
       "order": 3,
       "role": "list_item",
@@ -5763,7 +5687,7 @@
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/345",
       "page": 18,
       "order": 4,
       "role": "list_item",
@@ -5782,7 +5706,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/346",
       "page": 18,
       "order": 5,
       "role": "list_item",
@@ -5801,7 +5725,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/347",
       "page": 18,
       "order": 6,
       "role": "list_item",
@@ -5820,7 +5744,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/348",
       "page": 18,
       "order": 7,
       "role": "list_item",
@@ -5839,7 +5763,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/349",
       "page": 18,
       "order": 8,
       "role": "list_item",
@@ -5858,7 +5782,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/350",
       "page": 18,
       "order": 9,
       "role": "list_item",
@@ -5877,7 +5801,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/351",
       "page": 18,
       "order": 10,
       "role": "list_item",
@@ -5886,9 +5810,9 @@
         "x0": 24.84,
         "y0": 440.2,
         "x1": 642.5,
-        "y1": 471.82,
+        "y1": 472.11,
         "width": 617.66,
-        "height": 31.62
+        "height": 31.91
       },
       "meta": {
         "docling_label": "list_item",
@@ -5896,7 +5820,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/352",
       "page": 18,
       "order": 11,
       "role": "list_item",
@@ -5915,7 +5839,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/353",
       "page": 18,
       "order": 12,
       "role": "list_item",
@@ -5934,7 +5858,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/354",
       "page": 18,
       "order": 13,
       "role": "list_item",
@@ -5953,7 +5877,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/355",
       "page": 18,
       "order": 14,
       "role": "list_item",
@@ -5972,7 +5896,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/356",
       "page": 18,
       "order": 15,
       "role": "list_item",
@@ -5991,7 +5915,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/357",
       "page": 18,
       "order": 16,
       "role": "list_item",
@@ -6010,7 +5934,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/358",
       "page": 18,
       "order": 17,
       "role": "list_item",
@@ -6029,7 +5953,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/359",
       "page": 18,
       "order": 18,
       "role": "list_item",
@@ -6048,7 +5972,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/360",
       "page": 18,
       "order": 19,
       "role": "list_item",
@@ -6067,7 +5991,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/361",
       "page": 18,
       "order": 20,
       "role": "list_item",
@@ -6086,7 +6010,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/362",
       "page": 18,
       "order": 21,
       "role": "list_item",
@@ -6105,7 +6029,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/363",
       "page": 18,
       "order": 22,
       "role": "list_item",
@@ -6124,7 +6048,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/364",
       "page": 18,
       "order": 23,
       "role": "list_item",
@@ -6143,7 +6067,7 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/365",
       "page": 18,
       "order": 24,
       "role": "list_item",
@@ -6162,7 +6086,7 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/366",
       "page": 18,
       "order": 25,
       "role": "list_item",
@@ -6181,7 +6105,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/369",
       "page": 19,
       "order": 1,
       "role": "list_item",
@@ -6200,7 +6124,7 @@
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/370",
       "page": 19,
       "order": 2,
       "role": "list_item",
@@ -6219,7 +6143,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/371",
       "page": 19,
       "order": 3,
       "role": "list_item",
@@ -6237,5 +6161,26 @@
         "docling_orig": "31. N. M. Patrikalakis, T. Sakkalis, and G. Shen, Boundary representation models: Validity and rectification, Invited paper in Proceedings of the 9th IMA Conference on the Mathematics of Surfaces, University of Cambridge, Cambridge, UK, September 2000 (R. Cipolla and R. Martin, Eds.), pp. 389-409, Springer-Verlag, London, 2000."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling"
+  }
 }

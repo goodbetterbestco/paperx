@@ -8,7 +8,7 @@ from paper_pipeline.text_utils import compact_text
 MISSING_ABSTRACT_PLACEHOLDER = "[missing from original]"
 WORD_RE = re.compile(r"[A-Za-z0-9]+")
 ABSTRACT_ONLY_RE = re.compile(r"^\s*abstract\b[\s:.-]*$", re.IGNORECASE)
-KEYWORDS_RE = re.compile(r"(?:^|\s)keywords?:\s", re.IGNORECASE)
+KEYWORDS_RE = re.compile(r"(?:^|\s)key\s*words?:\s", re.IGNORECASE)
 SECTION_MARKER_RE = re.compile(
     r"^\s*(?:\d+|[IVX]+)(?:\.\d+)*\.?\s+"
     r"(?:introduction|background|preliminaries|methods?|results?|discussion|conclusions?|references)\b",

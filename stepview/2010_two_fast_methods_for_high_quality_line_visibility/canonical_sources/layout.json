@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2010_two_fast_methods_for_high_quality_line_visibility/2010_two_fast_methods_for_high_quality_line_visibility.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2010_two_fast_methods_for_high_quality_line_visibility/2010_two_fast_methods_for_high_quality_line_visibility.pdf",
   "page_count": 11,
   "page_sizes_pt": [
     {
@@ -61,174 +61,1958 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/2",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "Two Fast Methods for High-Quality Line Visibility",
-      "bbox": {
-        "x0": 51.4,
-        "y0": 55.73,
-        "x1": 560.59,
-        "y1": 77.85,
-        "width": 509.19,
-        "height": 22.12
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Two Fast Methods for High-Quality Line Visibility"
-      }
-    },
-    {
-      "id": "#/texts/3",
-      "page": 1,
-      "order": 2,
-      "role": "front_matter",
-      "text": "Forrester Cole and Adam Finkelstein",
-      "bbox": {
-        "x0": 217.05,
-        "y0": 93.29,
-        "x1": 394.95,
-        "y1": 103.43,
-        "width": 177.9,
-        "height": 10.14
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Forrester Cole and Adam Finkelstein"
-      }
-    },
-    {
-      "id": "#/texts/4",
-      "page": 1,
-      "order": 3,
-      "role": "paragraph",
-      "text": "Abstract -Lines drawn over or in place of shaded 3D models can often provide greater comprehensibility and stylistic freedom than shading alone. A substantial challenge for making stylized line drawings from 3D models is the visibility computation. Current algorithms for computing line visibility in models of moderate complexity are either too slow for interactive rendering, or too brittle for coherent animation. We introduce two methods that exploit graphics hardware to provide fast and robust line visibility. First we present a simple shader that performs a visibility test for high-quality, simple lines drawn with the conventional implementation. Next we offer a full optimized pipeline that supports line visibility and a broad range of stylization options.",
-      "bbox": {
-        "x0": 70.81,
-        "y0": 122.76,
-        "x1": 541.17,
-        "y1": 181.77,
-        "width": 470.36,
-        "height": 59.01
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Abstract -Lines drawn over or in place of shaded 3D models can often provide greater comprehensibility and stylistic freedom than shading alone. A substantial challenge for making stylized line drawings from 3D models is the visibility computation. Current algorithms for computing line visibility in models of moderate complexity are either too slow for interactive rendering, or too brittle for coherent animation. We introduce two methods that exploit graphics hardware to provide fast and robust line visibility. First we present a simple shader that performs a visibility test for high-quality, simple lines drawn with the conventional implementation. Next we offer a full optimized pipeline that supports line visibility and a broad range of stylization options."
-      }
-    },
-    {
-      "id": "#/texts/5",
+      "id": "mathpix-p001-b0004",
       "page": 1,
       "order": 4,
       "role": "paragraph",
-      "text": "F",
+      "text": "Two Fast Methods for High-Quality Line Visibility",
       "bbox": {
-        "x0": 301.65,
-        "y0": 192.41,
-        "x1": 310.34,
-        "y1": 200.17,
-        "width": 8.69,
-        "height": 7.76
+        "x0": 49.54,
+        "y0": 52.7,
+        "x1": 562.46,
+        "y1": 79.78,
+        "width": 512.93,
+        "height": 27.07
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "F"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8e4740a6aff1428cb0d619db6c0f7752",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/6",
-      "page": 1,
-      "order": 5,
-      "role": "paragraph",
-      "text": "PREPRINT 1 INTRODUCTION Stylized lines play a role in many applications of nonphotorealistic rendering (NPR) for 3D models. Lines can be used alone to depict shape, or in conjunction with polygons to emphasize features such as silhouettes, creases, and material boundaries. While graphics libraries such as OpenGL provide basic line drawing capabilities, their stylization options are limited. Desire to include effects such as texture, varying thickness, or wavy paths has lead to techniques that draw lines using textured triangle strips ( strokes ), for example those of Markosian, et al. [1]. Stroke-based techniques provide a broad range of stylizations, as each stroke can be arbitrarily shaped and textured. A major difficulty in drawing strokes is visibility computation. Conventional, per-fragment depth testing is insufficient for drawing broad strokes, because the strokes are partially occluded by the model itself (Figure 2). Techniques such as the item buffer introduced by Northrup and Markosian [2] can be used to compute visibility of lines prior to rendering strokes, but are much slower than conventional OpenGL rendering and are vulnerable to aliasing artifacts. While techniques exist to reduce these artifacts [3], they induce an even greater loss in performance. This paper presents two methods that exploit graphics hardware to draw strokes efficiently and with high-quality visibility testing: 1) Spine test shader. This simple method can be used in a conventional line drawing pipeline with minimal modification, but supports a limited range of stylization. datastructure (the segment atlas ), while the spine test method does not. The spine test method is a single-pass approach that computes stroke visibility at the same time as the final stroke color. The segment atlas method, by contrast, computes and stores the visibility information for all strokes prior to rendering. Computing visibility prior to rendering provides the option to filter or otherwise manipulate the visibility values, allowing effects such as overshoot, haloing, and detail elision. An additional benefit is the ability to properly parameterize strokes with multiple segments, such as curved strokes (e.g., the top of the clevis shape in Figure 1 left). This article expands on an earlier paper by the same authors [4] that introduced the segment atlas method. The spine test method is introduced for the first time in this article, and offers a simpler, more conventional alternative to the segment atlas method. This article also expands upon the description of the segment atlas in [4], adding implementation improvements, further discussion of stylization effects, and a comparison to the spine test method. Applications for these approaches include any context where interactive rendering of high-quality lines from 3D models is appropriate, including games, design and architectural modeling, medical and scientific visualization and interactive illustrations. 2 BACKGROUND AND RELATED WORK",
-      "bbox": {
-        "x0": 48.96,
-        "y0": 165.07,
-        "x1": 563.04,
-        "y1": 642.4,
-        "width": 514.08,
-        "height": 477.33
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "PREPRINT 1 INTRODUCTION Stylized lines play a role in many applications of nonphotorealistic rendering (NPR) for 3D models. Lines can be used alone to depict shape, or in conjunction with polygons to emphasize features such as silhouettes, creases, and material boundaries. While graphics libraries such as OpenGL provide basic line drawing capabilities, their stylization options are limited. Desire to include effects such as texture, varying thickness, or wavy paths has lead to techniques that draw lines using textured triangle strips ( strokes ), for example those of Markosian, et al. [1]. Stroke-based techniques provide a broad range of stylizations, as each stroke can be arbitrarily shaped and textured. A major difficulty in drawing strokes is visibility computation. Conventional, per-fragment depth testing is insufficient for drawing broad strokes, because the strokes are partially occluded by the model itself (Figure 2). Techniques such as the item buffer introduced by Northrup and Markosian [2] can be used to compute visibility of lines prior to rendering strokes, but are much slower than conventional OpenGL rendering and are vulnerable to aliasing artifacts. While techniques exist to reduce these artifacts [3], they induce an even greater loss in performance. This paper presents two methods that exploit graphics hardware to draw strokes efficiently and with high-quality visibility testing: 1) Spine test shader. This simple method can be used in a conventional line drawing pipeline with minimal modification, but supports a limited range of stylization. datastructure (the segment atlas ), while the spine test method does not. The spine test method is a single-pass approach that computes stroke visibility at the same time as the final stroke color. The segment atlas method, by contrast, computes and stores the visibility information for all strokes prior to rendering. Computing visibility prior to rendering provides the option to filter or otherwise manipulate the visibility values, allowing effects such as overshoot, haloing, and detail elision. An additional benefit is the ability to properly parameterize strokes with multiple segments, such as curved strokes (e.g., the top of the clevis shape in Figure 1 left). This article expands on an earlier paper by the same authors [4] that introduced the segment atlas method. The spine test method is introduced for the first time in this article, and offers a simpler, more conventional alternative to the segment atlas method. This article also expands upon the description of the segment atlas in [4], adding implementation improvements, further discussion of stylization effects, and a comparison to the spine test method. Applications for these approaches include any context where interactive rendering of high-quality lines from 3D models is appropriate, including games, design and architectural modeling, medical and scientific visualization and interactive illustrations. 2 BACKGROUND AND RELATED WORK"
-      }
-    },
-    {
-      "id": "#/texts/7",
+      "id": "mathpix-p001-b0006",
       "page": 1,
       "order": 6,
-      "role": "list_item",
-      "text": "Segment atlas. This method carries a higher implementation cost that the spine test shader, but provides stored visibility values can be used for stylization, as well as to properly handle curved strokes.",
-      "bbox": {
-        "x0": 58.92,
-        "y0": 616.81,
-        "x1": 300.03,
-        "y1": 661.62,
-        "width": 241.11,
-        "height": 44.81
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "2) Segment atlas. This method carries a higher implementation cost that the spine test shader, but provides stored visibility values can be used for stylization, as well as to properly handle curved strokes."
-      }
-    },
-    {
-      "id": "#/texts/8",
-      "page": 1,
-      "order": 7,
       "role": "paragraph",
-      "text": "Both methods rely on a conventional depth buffer to determine visibility, but provide support for supersampling in both the depth buffer and the lines themselves (Figure 5). Both methods provide a similar level of visibility quality and speed.",
+      "text": "Forrester Cole and Adam Finkelstein",
       "bbox": {
-        "x0": 48.96,
-        "y0": 673.78,
-        "x1": 300.03,
-        "y1": 718.19,
-        "width": 251.07,
-        "height": 44.41
+        "x0": 215.42,
+        "y0": 90.43,
+        "x1": 396.58,
+        "y1": 103.39,
+        "width": 181.15,
+        "height": 12.96
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Both methods rely on a conventional depth buffer to determine visibility, but provide support for supersampling in both the depth buffer and the lines themselves (Figure 5). Both methods provide a similar level of visibility quality and speed."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "605fb733d02f42f19a8fa18eb13af80a",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0008",
       "page": 1,
       "order": 8,
       "role": "paragraph",
-      "text": "The major difference between the methods is that the segment atlas method stores visibility information in an intermediate",
+      "text": "Abstract-Lines drawn over or in place of shaded 3D models can often provide greater comprehensibility and stylistic freedom than",
       "bbox": {
-        "x0": 48.96,
-        "y0": 728.1,
-        "x1": 300.03,
-        "y1": 748.6,
-        "width": 251.07,
-        "height": 20.5
+        "x0": 69.41,
+        "y0": 120.67,
+        "x1": 542.59,
+        "y1": 131.9,
+        "width": 473.18,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "The major difference between the methods is that the segment atlas method stores visibility information in an intermediate"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999963278225461,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
+      "id": "mathpix-p001-b0009",
       "page": 1,
       "order": 9,
       "role": "paragraph",
-      "text": "The most straightforward way to augment a shaded model with lines using the conventional rendering pipeline is to draw the polygons slightly offset from the camera and then to draw line primitives, clipped against the model via the z -buffer. This is by far the most common approach, used by programs ranging from CAD and architectural modeling to 3D animation software, because it leverages the highly-optimized pipeline implemented by graphics cards and imposes little overhead over drawing the shaded polygons alone. Unfortunately, hardware accelerated line primitives are usually rasterized with a specialized approach such as described by Wu [5], and allow only minimal stylistic control (color, fixed width, and in some implementations screen-space dash patterns).",
+      "text": "shading alone. A substantial challenge for making stylized line drawings from 3D models is the visibility computation. Current algorithms",
       "bbox": {
-        "x0": 311.97,
-        "y0": 596.59,
-        "x1": 563.04,
-        "y1": 748.6,
-        "width": 251.07,
-        "height": 152.01
+        "x0": 69.41,
+        "y0": 131.04,
+        "x1": 542.59,
+        "y1": 141.7,
+        "width": 473.18,
+        "height": 10.66
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "The most straightforward way to augment a shaded model with lines using the conventional rendering pipeline is to draw the polygons slightly offset from the camera and then to draw line primitives, clipped against the model via the z -buffer. This is by far the most common approach, used by programs ranging from CAD and architectural modeling to 3D animation software, because it leverages the highly-optimized pipeline implemented by graphics cards and imposes little overhead over drawing the shaded polygons alone. Unfortunately, hardware accelerated line primitives are usually rasterized with a specialized approach such as described by Wu [5], and allow only minimal stylistic control (color, fixed width, and in some implementations screen-space dash patterns)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0010",
+      "page": 1,
+      "order": 10,
+      "role": "paragraph",
+      "text": "for computing line visibility in models of moderate complexity are either too slow for interactive rendering, or too brittle for coherent",
+      "bbox": {
+        "x0": 69.41,
+        "y0": 141.12,
+        "x1": 542.59,
+        "y1": 152.35,
+        "width": 473.18,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0011",
+      "page": 1,
+      "order": 11,
+      "role": "paragraph",
+      "text": "animation. We introduce two methods that exploit graphics hardware to provide fast and robust line visibility. First we present a simple",
+      "bbox": {
+        "x0": 69.41,
+        "y0": 151.49,
+        "x1": 542.59,
+        "y1": 162.72,
+        "width": 473.18,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0012",
+      "page": 1,
+      "order": 12,
+      "role": "paragraph",
+      "text": "shader that performs a visibility test for high-quality, simple lines drawn with the conventional implementation. Next we offer a full",
+      "bbox": {
+        "x0": 69.41,
+        "y0": 162.14,
+        "x1": 542.59,
+        "y1": 172.51,
+        "width": 473.18,
+        "height": 10.37
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0013",
+      "page": 1,
+      "order": 13,
+      "role": "paragraph",
+      "text": "optimized pipeline that supports line visibility and a broad range of stylization options.",
+      "bbox": {
+        "x0": 69.41,
+        "y0": 171.94,
+        "x1": 371.81,
+        "y1": 183.74,
+        "width": 302.4,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4f3b3c36accd4e8da1d839569666be9a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0016",
+      "page": 1,
+      "order": 16,
+      "role": "paragraph",
+      "text": "1 Introduction",
+      "bbox": {
+        "x0": 48.38,
+        "y0": 233.86,
+        "x1": 150.34,
+        "y1": 246.82,
+        "width": 101.95,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9697265625,
+        "confidence_rate": 0.998293616333456,
+        "parent_id": "6391bf8e14504d3cb46c80708e37e41f",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0017",
+      "page": 1,
+      "order": 17,
+      "role": "paragraph",
+      "text": "Stylized lines play a role in many applications of non-",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 258.62,
+        "x1": 301.25,
+        "y1": 270.43,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.999991860024828,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0018",
+      "page": 1,
+      "order": 18,
+      "role": "paragraph",
+      "text": "photorealistic rendering (NPR) for 3D models. Lines can be",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 270.43,
+        "x1": 301.25,
+        "y1": 282.82,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0019",
+      "page": 1,
+      "order": 19,
+      "role": "paragraph",
+      "text": "used alone to depict shape, or in conjunction with polygons to",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 282.24,
+        "x1": 301.25,
+        "y1": 295.2,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0020",
+      "page": 1,
+      "order": 20,
+      "role": "paragraph",
+      "text": "emphasize features such as silhouettes, creases, and material",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 294.62,
+        "x1": 301.25,
+        "y1": 306.14,
+        "width": 253.73,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0021",
+      "page": 1,
+      "order": 21,
+      "role": "paragraph",
+      "text": "boundaries. While graphics libraries such as OpenGL provide",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 305.57,
+        "x1": 301.25,
+        "y1": 318.53,
+        "width": 253.73,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0022",
+      "page": 1,
+      "order": 22,
+      "role": "paragraph",
+      "text": "basic line drawing capabilities, their stylization options are",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 317.95,
+        "x1": 301.25,
+        "y1": 330.34,
+        "width": 253.73,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "limited. Desire to include effects such as texture, varying",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 330.34,
+        "x1": 301.25,
+        "y1": 342.14,
+        "width": 253.73,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0024",
+      "page": 1,
+      "order": 24,
+      "role": "paragraph",
+      "text": "thickness, or wavy paths has lead to techniques that draw lines",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 342.14,
+        "x1": 301.25,
+        "y1": 354.53,
+        "width": 253.73,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999928176655267,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0025",
+      "page": 1,
+      "order": 25,
+      "role": "paragraph",
+      "text": "using textured triangle strips (strokes), for example those of",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 353.95,
+        "x1": 302.69,
+        "y1": 366.91,
+        "width": 255.17,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0026",
+      "page": 1,
+      "order": 26,
+      "role": "paragraph",
+      "text": "Markosian, et al. [1]. Stroke-based techniques provide a broad",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 366.34,
+        "x1": 301.25,
+        "y1": 378.14,
+        "width": 253.73,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0027",
+      "page": 1,
+      "order": 27,
+      "role": "paragraph",
+      "text": "range of stylizations, as each stroke can be arbitrarily shaped",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 377.57,
+        "x1": 301.25,
+        "y1": 390.53,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "and textured.",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 389.95,
+        "x1": 102.82,
+        "y1": 401.47,
+        "width": 55.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "A major difficulty in drawing strokes is visibility computa-",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 408.38,
+        "x1": 301.25,
+        "y1": 421.34,
+        "width": 253.73,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "tion. Conventional, per-fragment depth testing is insufficient",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 420.77,
+        "x1": 301.25,
+        "y1": 432.58,
+        "width": 253.73,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "for drawing broad strokes, because the strokes are partially",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 432.0,
+        "x1": 301.25,
+        "y1": 444.96,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0032",
+      "page": 1,
+      "order": 32,
+      "role": "paragraph",
+      "text": "occluded by the model itself (Figure 2). Techniques such as the",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 444.38,
+        "x1": 301.25,
+        "y1": 455.9,
+        "width": 253.73,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0033",
+      "page": 1,
+      "order": 33,
+      "role": "paragraph",
+      "text": "item buffer introduced by Northrup and Markosian [2] can be",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 456.77,
+        "x1": 301.25,
+        "y1": 468.29,
+        "width": 253.73,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999847376009057,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0034",
+      "page": 1,
+      "order": 34,
+      "role": "paragraph",
+      "text": "used to compute visibility of lines prior to rendering strokes,",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 467.71,
+        "x1": 300.67,
+        "y1": 480.67,
+        "width": 253.15,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0035",
+      "page": 1,
+      "order": 35,
+      "role": "paragraph",
+      "text": "but are much slower than conventional OpenGL rendering and",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 480.1,
+        "x1": 301.25,
+        "y1": 492.48,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999922476411908,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0036",
+      "page": 1,
+      "order": 36,
+      "role": "paragraph",
+      "text": "are vulnerable to aliasing artifacts. While techniques exist to",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 492.48,
+        "x1": 301.25,
+        "y1": 504.29,
+        "width": 253.73,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0037",
+      "page": 1,
+      "order": 37,
+      "role": "paragraph",
+      "text": "reduce these artifacts [3], they induce an even greater loss in",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 503.71,
+        "x1": 301.25,
+        "y1": 516.67,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0038",
+      "page": 1,
+      "order": 38,
+      "role": "paragraph",
+      "text": "performance.",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 516.1,
+        "x1": 101.95,
+        "y1": 528.48,
+        "width": 55.01,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0039",
+      "page": 1,
+      "order": 39,
+      "role": "paragraph",
+      "text": "This paper presents two methods that exploit graphics hard-",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 534.53,
+        "x1": 300.67,
+        "y1": 546.91,
+        "width": 253.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0040",
+      "page": 1,
+      "order": 40,
+      "role": "paragraph",
+      "text": "ware to draw strokes efficiently and with high-quality visibility",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 545.76,
+        "x1": 301.25,
+        "y1": 558.72,
+        "width": 253.73,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0041",
+      "page": 1,
+      "order": 41,
+      "role": "paragraph",
+      "text": "testing:",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 558.14,
+        "x1": 79.78,
+        "y1": 571.1,
+        "width": 32.26,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0042",
+      "page": 1,
+      "order": 42,
+      "role": "paragraph",
+      "text": "1) Spine test shader. This simple method can be used",
+      "bbox": {
+        "x0": 58.18,
+        "y0": 579.17,
+        "x1": 301.25,
+        "y1": 591.55,
+        "width": 243.07,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0043",
+      "page": 1,
+      "order": 43,
+      "role": "paragraph",
+      "text": "in a conventional line drawing pipeline with minimal",
+      "bbox": {
+        "x0": 71.71,
+        "y0": 590.98,
+        "x1": 301.25,
+        "y1": 603.36,
+        "width": 229.54,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0044",
+      "page": 1,
+      "order": 44,
+      "role": "paragraph",
+      "text": "modification, but supports a limited range of stylization.",
+      "bbox": {
+        "x0": 71.71,
+        "y0": 602.78,
+        "x1": 300.67,
+        "y1": 615.74,
+        "width": 228.96,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0045",
+      "page": 1,
+      "order": 45,
+      "role": "paragraph",
+      "text": "2) Segment atlas. This method carries a higher implemen-",
+      "bbox": {
+        "x0": 57.6,
+        "y0": 615.17,
+        "x1": 301.25,
+        "y1": 626.69,
+        "width": 243.65,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0046",
+      "page": 1,
+      "order": 46,
+      "role": "paragraph",
+      "text": "tation cost that the spine test shader, but provides stored",
+      "bbox": {
+        "x0": 71.71,
+        "y0": 626.69,
+        "x1": 301.25,
+        "y1": 639.07,
+        "width": 229.54,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0047",
+      "page": 1,
+      "order": 47,
+      "role": "paragraph",
+      "text": "visibility values can be used for stylization, as well as",
+      "bbox": {
+        "x0": 71.71,
+        "y0": 638.5,
+        "x1": 301.25,
+        "y1": 650.88,
+        "width": 229.54,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0048",
+      "page": 1,
+      "order": 48,
+      "role": "paragraph",
+      "text": "to properly handle curved strokes.",
+      "bbox": {
+        "x0": 71.71,
+        "y0": 650.88,
+        "x1": 213.41,
+        "y1": 663.84,
+        "width": 141.7,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0049",
+      "page": 1,
+      "order": 49,
+      "role": "paragraph",
+      "text": "Both methods rely on a conventional depth buffer to determine",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 671.9,
+        "x1": 301.25,
+        "y1": 683.71,
+        "width": 253.73,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0050",
+      "page": 1,
+      "order": 50,
+      "role": "paragraph",
+      "text": "visibility, but provide support for supersampling in both the",
+      "bbox": {
+        "x0": 48.38,
+        "y0": 683.14,
+        "x1": 301.25,
+        "y1": 696.1,
+        "width": 252.86,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0051",
+      "page": 1,
+      "order": 51,
+      "role": "paragraph",
+      "text": "depth buffer and the lines themselves (Figure 5). Both methods",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 695.52,
+        "x1": 301.25,
+        "y1": 708.48,
+        "width": 253.73,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0052",
+      "page": 1,
+      "order": 52,
+      "role": "paragraph",
+      "text": "provide a similar level of visibility quality and speed.",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 707.9,
+        "x1": 270.43,
+        "y1": 719.71,
+        "width": 222.91,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999919934665097,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0053",
+      "page": 1,
+      "order": 53,
+      "role": "paragraph",
+      "text": "The major difference between the methods is that the segment",
+      "bbox": {
+        "x0": 46.94,
+        "y0": 725.76,
+        "x1": 301.25,
+        "y1": 738.14,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0054",
+      "page": 1,
+      "order": 54,
+      "role": "paragraph",
+      "text": "atlas method stores visibility information in an intermediate",
+      "bbox": {
+        "x0": 47.52,
+        "y0": 738.14,
+        "x1": 301.25,
+        "y1": 750.53,
+        "width": 253.73,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "380490b8291443ccbf82c4eb3e3626bb",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0056",
+      "page": 1,
+      "order": 56,
+      "role": "paragraph",
+      "text": "datastructure (the segment atlas), while the spine test method",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 235.87,
+        "x1": 565.06,
+        "y1": 248.26,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0057",
+      "page": 1,
+      "order": 57,
+      "role": "paragraph",
+      "text": "does not. The spine test method is a single-pass approach",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 247.39,
+        "x1": 565.06,
+        "y1": 260.35,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0058",
+      "page": 1,
+      "order": 58,
+      "role": "paragraph",
+      "text": "that computes stroke visibility at the same time as the final",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 259.78,
+        "x1": 565.06,
+        "y1": 271.58,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0059",
+      "page": 1,
+      "order": 59,
+      "role": "paragraph",
+      "text": "stroke color. The segment atlas method, by contrast, computes",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 271.01,
+        "x1": 565.06,
+        "y1": 283.97,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0060",
+      "page": 1,
+      "order": 60,
+      "role": "paragraph",
+      "text": "and stores the visibility information for all strokes prior to",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 283.39,
+        "x1": 565.06,
+        "y1": 295.2,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0061",
+      "page": 1,
+      "order": 61,
+      "role": "paragraph",
+      "text": "rendering. Computing visibility prior to rendering provides the",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 295.78,
+        "x1": 565.06,
+        "y1": 307.58,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0062",
+      "page": 1,
+      "order": 62,
+      "role": "paragraph",
+      "text": "option to filter or otherwise manipulate the visibility values,",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 307.58,
+        "x1": 565.06,
+        "y1": 319.97,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0063",
+      "page": 1,
+      "order": 63,
+      "role": "paragraph",
+      "text": "allowing effects such as overshoot, haloing, and detail elision.",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 319.39,
+        "x1": 565.06,
+        "y1": 332.35,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0064",
+      "page": 1,
+      "order": 64,
+      "role": "paragraph",
+      "text": "An additional benefit is the ability to properly parameterize",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 331.78,
+        "x1": 565.06,
+        "y1": 343.3,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0065",
+      "page": 1,
+      "order": 65,
+      "role": "paragraph",
+      "text": "strokes with multiple segments, such as curved strokes (e.g.,",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 343.3,
+        "x1": 565.06,
+        "y1": 355.68,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0066",
+      "page": 1,
+      "order": 66,
+      "role": "paragraph",
+      "text": "the top of the clevis shape in Figure 1 left).",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 355.1,
+        "x1": 493.06,
+        "y1": 367.49,
+        "width": 182.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0067",
+      "page": 1,
+      "order": 67,
+      "role": "paragraph",
+      "text": "This article expands on an earlier paper by the same authors [4]",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 374.98,
+        "x1": 563.62,
+        "y1": 386.78,
+        "width": 252.86,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0068",
+      "page": 1,
+      "order": 68,
+      "role": "paragraph",
+      "text": "that introduced the segment atlas method. The spine test",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 387.36,
+        "x1": 565.06,
+        "y1": 399.17,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0069",
+      "page": 1,
+      "order": 69,
+      "role": "paragraph",
+      "text": "method is introduced for the first time in this article, and offers",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 398.59,
+        "x1": 565.06,
+        "y1": 410.11,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0070",
+      "page": 1,
+      "order": 70,
+      "role": "paragraph",
+      "text": "a simpler, more conventional alternative to the segment atlas",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 410.98,
+        "x1": 565.06,
+        "y1": 422.5,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0071",
+      "page": 1,
+      "order": 71,
+      "role": "paragraph",
+      "text": "method. This article also expands upon the description of the",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 422.5,
+        "x1": 565.06,
+        "y1": 434.88,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0072",
+      "page": 1,
+      "order": 72,
+      "role": "paragraph",
+      "text": "segment atlas in [4], adding implementation improvements,",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 434.3,
+        "x1": 565.06,
+        "y1": 447.26,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0073",
+      "page": 1,
+      "order": 73,
+      "role": "paragraph",
+      "text": "further discussion of stylization effects, and a comparison to",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 446.69,
+        "x1": 565.06,
+        "y1": 458.5,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0074",
+      "page": 1,
+      "order": 74,
+      "role": "paragraph",
+      "text": "the spine test method.",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 459.07,
+        "x1": 402.91,
+        "y1": 470.88,
+        "width": 92.16,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0075",
+      "page": 1,
+      "order": 75,
+      "role": "paragraph",
+      "text": "Applications for these approaches include any context where",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 478.37,
+        "x1": 565.06,
+        "y1": 490.75,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0076",
+      "page": 1,
+      "order": 76,
+      "role": "paragraph",
+      "text": "interactive rendering of high-quality lines from 3D mod-",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 490.18,
+        "x1": 565.06,
+        "y1": 501.7,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0077",
+      "page": 1,
+      "order": 77,
+      "role": "paragraph",
+      "text": "els is appropriate, including games, design and architectural",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 502.56,
+        "x1": 565.06,
+        "y1": 514.08,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0078",
+      "page": 1,
+      "order": 78,
+      "role": "paragraph",
+      "text": "modeling, medical and scientific visualization and interactive",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 513.5,
+        "x1": 565.06,
+        "y1": 525.89,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0079",
+      "page": 1,
+      "order": 79,
+      "role": "paragraph",
+      "text": "illustrations.",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 525.89,
+        "x1": 362.02,
+        "y1": 536.54,
+        "width": 51.26,
+        "height": 10.66
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0081",
+      "page": 1,
+      "order": 81,
+      "role": "paragraph",
+      "text": "2 Background and Related Work",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 566.21,
+        "x1": 526.46,
+        "y1": 578.59,
+        "width": 215.71,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "f6515e066aeb455bb8d414e0dc152d61",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0082",
+      "page": 1,
+      "order": 82,
+      "role": "paragraph",
+      "text": "The most straightforward way to augment a shaded model with",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 594.72,
+        "x1": 565.06,
+        "y1": 606.24,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0083",
+      "page": 1,
+      "order": 83,
+      "role": "paragraph",
+      "text": "lines using the conventional rendering pipeline is to draw the",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 606.24,
+        "x1": 565.06,
+        "y1": 619.49,
+        "width": 254.3,
+        "height": 13.25
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0084",
+      "page": 1,
+      "order": 84,
+      "role": "paragraph",
+      "text": "polygons slightly offset from the camera and then to draw",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 618.62,
+        "x1": 565.06,
+        "y1": 630.43,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0085",
+      "page": 1,
+      "order": 85,
+      "role": "paragraph",
+      "text": "line primitives, clipped against the model via the \\(z\\)-buffer.",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 629.86,
+        "x1": 565.06,
+        "y1": 642.24,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0086",
+      "page": 1,
+      "order": 86,
+      "role": "paragraph",
+      "text": "This is by far the most common approach, used by programs",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 642.24,
+        "x1": 565.06,
+        "y1": 654.62,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.999992122603638,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0087",
+      "page": 1,
+      "order": 87,
+      "role": "paragraph",
+      "text": "ranging from CAD and architectural modeling to 3D animation",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 654.62,
+        "x1": 565.06,
+        "y1": 666.43,
+        "width": 254.3,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0088",
+      "page": 1,
+      "order": 88,
+      "role": "paragraph",
+      "text": "software, because it leverages the highly-optimized pipeline",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 665.86,
+        "x1": 565.06,
+        "y1": 678.82,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0089",
+      "page": 1,
+      "order": 89,
+      "role": "paragraph",
+      "text": "implemented by graphics cards and imposes little overhead",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 678.24,
+        "x1": 565.06,
+        "y1": 690.62,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0090",
+      "page": 1,
+      "order": 90,
+      "role": "paragraph",
+      "text": "over drawing the shaded polygons alone. Unfortunately, hard-",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 690.62,
+        "x1": 565.06,
+        "y1": 702.14,
+        "width": 254.3,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0091",
+      "page": 1,
+      "order": 91,
+      "role": "paragraph",
+      "text": "ware accelerated line primitives are usually rasterized with a",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 701.57,
+        "x1": 565.06,
+        "y1": 714.53,
+        "width": 254.3,
+        "height": 12.96
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0092",
+      "page": 1,
+      "order": 92,
+      "role": "paragraph",
+      "text": "specialized approach such as described by Wu [5], and allow",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 713.95,
+        "x1": 565.06,
+        "y1": 726.34,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99658203125,
+        "confidence_rate": 0.9999465041911151,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0093",
+      "page": 1,
+      "order": 93,
+      "role": "paragraph",
+      "text": "only minimal stylistic control (color, fixed width, and in some",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 725.76,
+        "x1": 565.06,
+        "y1": 738.14,
+        "width": 254.3,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0094",
+      "page": 1,
+      "order": 94,
+      "role": "paragraph",
+      "text": "implementations screen-space dash patterns).",
+      "bbox": {
+        "x0": 310.75,
+        "y0": 738.14,
+        "x1": 496.22,
+        "y1": 750.53,
+        "width": 185.47,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "83cbff5e60254aa79fe2c377d5a60b7c",
+        "children_ids": null
       }
     },
     {
@@ -4221,5 +6005,18 @@
         "docling_orig": "[6] R. Raskar and M. Cohen, 'Image precision silhouette edges,' in Proceedings of SI3D 1999 , pp. 135-140, 1999."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling"
+  }
 }

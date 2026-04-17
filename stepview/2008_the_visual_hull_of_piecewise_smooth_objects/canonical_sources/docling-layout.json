@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2008_the_visual_hull_of_piecewise_smooth_objects/2008_the_visual_hull_of_piecewise_smooth_objects.pdf",
+  "pdf_path": "stepview/2008_the_visual_hull_of_piecewise_smooth_objects/2008_the_visual_hull_of_piecewise_smooth_objects.pdf",
   "page_count": 12,
   "page_sizes_pt": [
     {
@@ -88,15 +88,15 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
-        "x0": 57.88,
+        "x0": 56.23,
         "y0": 392.36,
         "x1": 105.84,
-        "y1": 403.95,
-        "width": 47.96,
-        "height": 11.59
+        "y1": 405.6,
+        "width": 49.61,
+        "height": 13.24
       },
       "meta": {
         "docling_label": "section_header",
@@ -107,7 +107,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The visual hull summarizes the relations between an object and its silhouettes and shadows. This paper develops the theory of the visual hull of general piecewise smooth objects, as those used in CAD applications. A complete catalogue of the nine types of ruled surfaces that are possible boundaries of the visual hull of these objects is derived. The construction of the visual hull is simplified by a detailed analysis that allows pruning and trimming many surfaces not relevant for a particular object. An algorithm for computing the visual hull is presented, together with several examples constructed with a commercial CAD package. The theory developed includes as particular cases the previous approaches to the computation of the visual hull. © 2006 Elsevier Inc. All rights reserved",
       "bbox": {
         "x0": 56.23,
@@ -126,7 +126,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: Computer vision; Shape-from-silhouettes; Visual hull; Piecewise smooth objects; CAD objects",
       "bbox": {
         "x0": 57.88,
@@ -145,15 +145,15 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
-        "x0": 57.76,
-        "y0": 618.41,
-        "x1": 148.96,
-        "y1": 634.82,
-        "width": 91.2,
-        "height": 16.41
+        "x0": 57.88,
+        "y0": 619.15,
+        "x1": 148.84,
+        "y1": 634.15,
+        "width": 90.96,
+        "height": 15.0
       },
       "meta": {
         "docling_label": "section_header",
@@ -164,7 +164,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Reconstructing 3D shapes is a fundamental research topic. Many techniques have been proposed for this purpose, depending first on the sensors used. Active 3D scanning is currently a leading technology. However, 3D scanners are expensive and affected by several limitations. In a number of practical applications, as those involving motion analysis, traditional computer vision techniques based on 2D images captured by inexpensive cameras are preferable or required",
       "bbox": {
         "x0": 54.57,
@@ -183,7 +183,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Many computer vision algorithms for reconstructing or recognizing 3D objects are based on the object silhouette, which is the image area bounded by the contours that occlude the background. Silhouettes are often easy to extract from 2D images. In addition, the main silhouettebased reconstruction approach, volume intersection (VI), does not require solving the difficult and time-consuming problem of finding correspondences between various",
       "bbox": {
         "x0": 56.23,
@@ -259,14 +259,14 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "images. Since the introduction of the idea by Baumgart [4], many shape-from-silhouettes algorithms have been proposed, such as [2,10,15,33-35,50]. Some of these algorithms (for instance [35]) produce a textured object. Silhouettes have been also used for extracting shape and orientation of rotating objects ([36,51,52]). Recent algorithms refine the reconstruction combining silhouettes and other shape cues ([11,14,19,27), as the photometric constraints introduced by Seitz and Dyer [46]. Generating silhouettes is also relevant to computer graphics: a survey of techniques for producing them can be found in [26].",
       "bbox": {
-        "x0": 443.15,
+        "x0": 441.56,
         "y0": 617.49,
         "x1": 808.75,
         "y1": 806.24,
-        "width": 365.6,
+        "width": 367.19,
         "height": 188.75
       },
       "meta": {
@@ -278,7 +278,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The visual hull VH(O) [30] of an object O summarizes all the properties of O concerning its silhouettes (or shadows produced by point light sources). It is the largest object that produces the same silhouettes as O observed from viewpoints outside the convex hull of O. It is also the closest approximation of O that can be determined from its silhouettes using viewpoints outside the convex hull. Details can be found in [30] The visual hull also allows making inferences about the true shape of an object [31], constructing next-best-view VI algorithms [8], and understanding the capabilities of tactile robotic probes [6]. In the current shape-from-silhouette literature, the term visual hull (sometimes inferred",
       "bbox": {
         "x0": 443.21,
@@ -297,7 +297,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Available online at www.sciencedirect.com",
       "bbox": {
         "x0": 287.76,
@@ -316,7 +316,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ScienceDirect",
       "bbox": {
         "x0": 358.87,
@@ -335,7 +335,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer Vision and Image Understanding 110 (2008) 7-18",
       "bbox": {
         "x0": 259.64,
@@ -354,7 +354,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "heading",
       "text": "The visual hull of piecewise smooth objects",
       "bbox": {
         "x0": 201.76,
@@ -373,7 +373,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Andrea Bottino *, Aldo Laurentini",
       "bbox": {
         "x0": 291.06,
@@ -392,7 +392,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Dipartimento di Automatica ed Informatica, Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 Torino, Italy",
       "bbox": {
         "x0": 148.84,
@@ -411,7 +411,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received 19 May 2006; accepted 18 December 2006 Available online 31 December 2006",
       "bbox": {
         "x0": 304.29,
@@ -430,14 +430,14 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer Vision and Image Understanding www.elsevier.com locate cviu",
       "bbox": {
-        "x0": 687.89,
+        "x0": 687.9,
         "y0": 89.31,
         "x1": 805.39,
         "y1": 129.13,
-        "width": 117.5,
+        "width": 117.49,
         "height": 39.82
       },
       "meta": {
@@ -491,11 +491,11 @@
       "text": "However, most of the objects to be dealt with in vision problems do not fall in these simple categories. A much more general category, enclosing polyhedra, solid of revolutions and smooth surface objects as particular cases, is that of piecewise smooth objects. These are also the objects produced by CAD volume or surface modeling packages.",
       "bbox": {
         "x0": 41.34,
-        "y0": 179.76,
+        "y0": 183.61,
         "x1": 406.83,
         "y1": 283.25,
         "width": 365.49,
-        "height": 103.49
+        "height": 99.64
       },
       "meta": {
         "docling_label": "text",
@@ -509,11 +509,11 @@
       "role": "paragraph",
       "text": "In this paper we present the theory of the visual hull of general objects with piecewise smooth surfaces. The paper makes use of some of the results presented in our previous paper [5], concerning the case of smooth curved objects. However, the case of piecewise smooth objects requires a more complex analysis. In fact, for generic objects it can be shown that the surfaces relevant to the visual hull are those produced by particular lines making two or three contact with the object. The types of surfaces are two for smooth objects, but we will see that they are nine for piecewise smooth objects. Since constructing the visual hull requires to construct an arrangement with these surfaces, to reduce their number and extension is of paramount importance. Therefore, a part of the paper is devoted to finding rules for pruning and trimming these surfaces. For this purpose, the techniques used in [5] for smooth surfaces, based on the principal curvatures, are not sufficient, and new more general techniques have been used. Finally, a new output-sensitive algorithm for computing the visual hull will be presented and its complexity analyzed. The algorithm only determines the part of the visual hull connected to the object, but it will be shown that only very unlikely objects have visual hulls with unconnected parts.",
       "bbox": {
-        "x0": 42.86,
+        "x0": 42.94,
         "y0": 286.25,
         "x1": 408.48,
         "y1": 680.47,
-        "width": 365.62,
+        "width": 365.54,
         "height": 394.22
       },
       "meta": {
@@ -607,9 +607,9 @@
         "x0": 428.33,
         "y0": 423.81,
         "x1": 795.46,
-        "y1": 559.88,
+        "y1": 559.89,
         "width": 367.13,
-        "height": 136.07
+        "height": 136.08
       },
       "meta": {
         "docling_label": "text",
@@ -832,11 +832,11 @@
       "role": "paragraph",
       "text": "The above statements hold for any kind of generic object. If we consider piecewise smooth objects, there are three possible contact points: fold points (where the surface is smooth), crease (or edge) points and vertices, where (for generic objects) three or more creases meet (Fig. 2).",
       "bbox": {
-        "x0": 56.23,
+        "x0": 56.16,
         "y0": 97.64,
-        "x1": 421.71,
+        "x1": 421.76,
         "y1": 180.61,
-        "width": 365.48,
+        "width": 365.6,
         "height": 82.97
       },
       "meta": {
@@ -891,9 +891,9 @@
       "bbox": {
         "x0": 57.88,
         "y0": 321.17,
-        "x1": 421.71,
+        "x1": 420.06,
         "y1": 370.89,
-        "width": 363.83,
+        "width": 362.18,
         "height": 49.72
       },
       "meta": {
@@ -905,6 +905,25 @@
       "id": "#/texts/48",
       "page": 3,
       "order": 5,
+      "role": "paragraph",
+      "text": "It is immediate to verify that these cases correspond to the four cases of the visual event triple point (VEs 3, 9, 13, 14 of Rieger's catalogue) (Fig. 3).",
+      "bbox": {
+        "x0": 54.57,
+        "y0": 370.84,
+        "x1": 421.71,
+        "y1": 422.21,
+        "width": 367.14,
+        "height": 51.37
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "It is immediate to verify that these cases correspond to the four cases of the visual event triple point (VEs 3, 9, 13, 14 of Rieger's catalogue) (Fig. 3)."
+      }
+    },
+    {
+      "id": "#/texts/49",
+      "page": 3,
+      "order": 6,
       "role": "paragraph",
       "text": "The equations that determine the ruled surfaces can be found in the Appendix for parametric patches, a rather general case including NURBS",
       "bbox": {
@@ -918,25 +937,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "The equations that determine the ruled surfaces can be found in the Appendix for parametric patches, a rather general case including NURBS"
-      }
-    },
-    {
-      "id": "#/texts/49",
-      "page": 3,
-      "order": 6,
-      "role": "paragraph",
-      "text": "It is immediate to verify that these cases correspond to the four cases of the visual event triple point (VEs 3, 9, 13, 14 of Rieger's catalogue) (Fig. 3).",
-      "bbox": {
-        "x0": 54.57,
-        "y0": 370.84,
-        "x1": 421.71,
-        "y1": 423.88,
-        "width": 367.14,
-        "height": 53.04
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "It is immediate to verify that these cases correspond to the four cases of the visual event triple point (VEs 3, 9, 13, 14 of Rieger's catalogue) (Fig. 3)."
       }
     },
     {
@@ -1019,25 +1019,6 @@
       "id": "#/texts/54",
       "page": 3,
       "order": 11,
-      "role": "paragraph",
-      "text": "C",
-      "bbox": {
-        "x0": 251.37,
-        "y0": 816.17,
-        "x1": 264.6,
-        "y1": 827.76,
-        "width": 13.23,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C"
-      }
-    },
-    {
-      "id": "#/texts/55",
-      "page": 3,
-      "order": 12,
       "role": "caption",
       "text": "Fig. 2. Possible contact points of a line with a piecewise smooth surface.",
       "bbox": {
@@ -1054,9 +1035,9 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/55",
       "page": 3,
-      "order": 13,
+      "order": 12,
       "role": "caption",
       "text": "Fig. 3. The VE triple point.",
       "bbox": {
@@ -1073,9 +1054,9 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/56",
       "page": 3,
-      "order": 14,
+      "order": 13,
       "role": "caption",
       "text": "Fig. 5. Vertex crossing.",
       "bbox": {
@@ -1092,9 +1073,9 @@
       }
     },
     {
-      "id": "#/texts/58",
+      "id": "#/texts/57",
       "page": 3,
-      "order": 15,
+      "order": 14,
       "role": "caption",
       "text": "Fig. 4. The VE tangent crossing.",
       "bbox": {
@@ -1111,18 +1092,18 @@
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "#/texts/58",
       "page": 3,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "Finally, we consider the cases VF and VC involving a vertex and a fold or crease, respectively. These cases correspond directly to the surfaces generated by the two cases of the VE vertex crossing (Fig. 5), VEs 17 and 18 of Rieger's catalogue.",
       "bbox": {
         "x0": 443.21,
         "y0": 286.25,
         "x1": 808.69,
-        "y1": 369.5,
+        "y1": 369.97,
         "width": 365.48,
-        "height": 83.25
+        "height": 83.72
       },
       "meta": {
         "docling_label": "text",
@@ -1130,18 +1111,18 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/59",
       "page": 3,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "The equations that characterize these five ruled surfaces can also be found in the Appendix for parametric patches.",
       "bbox": {
         "x0": 441.56,
-        "y0": 370.84,
+        "y0": 372.49,
         "x1": 808.69,
         "y1": 407.26,
         "width": 367.13,
-        "height": 36.42
+        "height": 34.77
       },
       "meta": {
         "docling_label": "text",
@@ -1149,9 +1130,9 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/60",
       "page": 3,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "Adding up, we have shown that a necessary condition for a point to lie on S\"vH is to belong to one of nine types of ruled surfaces, corresponding to nine particular visual events of the AG.",
       "bbox": {
@@ -1168,9 +1149,9 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/61",
       "page": 3,
-      "order": 19,
+      "order": 18,
       "role": "heading",
       "text": "3. Pruning and trimming the boundary surfaces",
       "bbox": {
@@ -1187,17 +1168,17 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/62",
       "page": 3,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "Computing the VH of a piecewise smooth object does not appear much different from computing its perspective aspect graph: both require constructing a partition of the 3D space with ruled VE surfaces (actually, only nine types of surfaces are required by the VH, when the surfaces corresponding to Rieger's catalogue are 19). Each cell of the partition on one hand corresponds to an aspect if we consider the AG, on the other hand belongs entirely or does not belong at all to the VH.",
       "bbox": {
-        "x0": 444.86,
+        "x0": 443.21,
         "y0": 526.46,
         "x1": 808.69,
         "y1": 680.47,
-        "width": 363.83,
+        "width": 365.48,
         "height": 154.01
       },
       "meta": {
@@ -1206,9 +1187,9 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/63",
       "page": 3,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "However, this kind of approach to constructing the VH appears prohibitively expensive, since the number of aspects, or cells of the partition for the AG is O(n's J's) according to Petitjean, where n is the number of patches and d their degree [40].",
       "bbox": {
@@ -1225,18 +1206,18 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/64",
       "page": 3,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "Fortunately, the construction of the VH does not involve such an overwhelming computation, since, for a specific object, a great deal of pruning and trimming of the relevant surfaces can be done before constructing the partition.",
       "bbox": {
         "x0": 444.71,
         "y0": 768.11,
-        "x1": 808.83,
-        "y1": 852.84,
-        "width": 364.12,
-        "height": 84.73
+        "x1": 808.81,
+        "y1": 852.7,
+        "width": 364.1,
+        "height": 84.59
       },
       "meta": {
         "docling_label": "text",
@@ -1244,9 +1225,9 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/65",
       "page": 3,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "Many surfaces and patches can be discarded or trimmed by investigating whether free lines, compatible with the geometry of the surface near the contact points, pass through points of the VE surface. A free line is a straight line not intersecting O. No point of a free line can belong to VH [30]. This analysis, which will be presented in the next sub-sections, extends the analysis presented in [5] for smooth objects only. The segments of lines and surfaces surviving these pruning and trimming operations, related to the shape of the object near the contact points, will be called locally active or simply active.",
       "bbox": {
@@ -1263,9 +1244,9 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/66",
       "page": 3,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "Two other pruning and trimming operations must be performed. All the surfaces where the generating line",
       "bbox": {
@@ -1282,7 +1263,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/69",
       "page": 4,
       "order": 1,
       "role": "paragraph",
@@ -1301,7 +1282,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/70",
       "page": 4,
       "order": 2,
       "role": "paragraph",
@@ -1320,7 +1301,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/71",
       "page": 4,
       "order": 3,
       "role": "heading",
@@ -1339,17 +1320,17 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/72",
       "page": 4,
       "order": 4,
       "role": "paragraph",
       "text": "The analysis performed in [5], referring to the case of smooth surfaces, that is to the case FFF, also holds if one or more contour generators are creases, that is also for cases FFC, FCC, and CCC. Here, we only report the results of this analysis. Three different spatial arrangements of the contours, shown in Fig. 6(a-c), are possible.",
       "bbox": {
-        "x0": 42.89,
+        "x0": 42.9,
         "y0": 355.9,
         "x1": 408.48,
         "y1": 458.58,
-        "width": 365.59,
+        "width": 365.58,
         "height": 102.68
       },
       "meta": {
@@ -1358,11 +1339,11 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/73",
       "page": 4,
       "order": 5,
       "role": "paragraph",
-      "text": "For each case the figure shows the projection along L of the contour generators and a 3D view. In the projection the arrow, pointing outside the object, marks the limb (or crease) Ez covered by the others. In the 3D views only the infinitesimal segments marked with a thicker line belong to S. The origami-like structure clarifies the 3D position of the contour generators and shows the active segments. Case (a) does not produce active surfaces; case (b) generates one internal active patch; in case (c) the two external patches are active. In the figure, the active segments originating active patches are highlighted with solid red lines.",
+      "text": "For each case the figure shows the projection along L of the contour generators and a 3D view. In the projection the arrow, pointing outside the object, marks the limb (or crease) E covered by the others. In the 3D views only the infinitesimal segments marked with a thicker line belong to S. The origami-like structure clarifies the 3D position of the contour generators and shows the active segments. Case (a) does not produce active surfaces; case (b) generates one internal active patch; in case (c) the two external patches are active. In the figure, the active segments originating active patches are highlighted with solid red lines.",
       "bbox": {
         "x0": 41.34,
         "y0": 460.2,
@@ -1373,11 +1354,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "For each case the figure shows the projection along L of the contour generators and a 3D view. In the projection the arrow, pointing outside the object, marks the limb (or crease) Ez covered by the others. In the 3D views only the infinitesimal segments marked with a thicker line belong to S. The origami-like structure clarifies the 3D position of the contour generators and shows the active segments. Case (a) does not produce active surfaces; case (b) generates one internal active patch; in case (c) the two external patches are active. In the figure, the active segments originating active patches are highlighted with solid red lines."
+        "docling_orig": "For each case the figure shows the projection along L of the contour generators and a 3D view. In the projection the arrow, pointing outside the object, marks the limb (or crease) E covered by the others. In the 3D views only the infinitesimal segments marked with a thicker line belong to S. The origami-like structure clarifies the 3D position of the contour generators and shows the active segments. Case (a) does not produce active surfaces; case (b) generates one internal active patch; in case (c) the two external patches are active. In the figure, the active segments originating active patches are highlighted with solid red lines."
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/74",
       "page": 4,
       "order": 6,
       "role": "heading",
@@ -1396,7 +1377,7 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/75",
       "page": 4,
       "order": 7,
       "role": "paragraph",
@@ -1415,7 +1396,7 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/76",
       "page": 4,
       "order": 8,
       "role": "heading",
@@ -1434,7 +1415,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/77",
       "page": 4,
       "order": 9,
       "role": "paragraph",
@@ -1453,26 +1434,26 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/78",
       "page": 4,
       "order": 10,
       "role": "paragraph",
-      "text": "Consider the line L, making two contacts with S at pi and p2, a point p of this line, and an infinitesimal rotation of L about p. If such rotation is possible without intersecting the object near pı and p2, the rotated line L' is a free line and the point does not belong to an active surface. A rotation of this kind will also be said compatible (with the surface at the contact points). Let C, and C2 be infinitesimal segments of the contour generators near pı and p2, which can be approximated with a segment of the osculating circles. Also let Pci and Pcz be the osculating planes, and p\" and pź the intersections of the rotated line L' with these planes (Fig. 7). It is clear that L' is a free line if both p\"' and p'\" lie on the external sides of the corresponding contour generators C, and C2, as in the case shown in the figure. In most cases, it is convenient to perform this analysis in a plane P normal to L, where we project orthographically all the relevant entities, as shown in Fig. 7.",
+      "text": "Consider the line L, making two contacts with S at pi and p2, a point p of this line, and an infinitesimal rotation of L about p. If such rotation is possible without intersecting the object near pı and p2, the rotated line L' is a free line and the point does not belong to an active surface. A rotation of this kind will also be said compatible (with the surface at the contact points). Let C, and C2 be infinitesimal segments of the contour generators near pı and p2, which can be approximated with a segment of the osculating circles. Also let Pci and Pcz be the osculating planes, and p\" and p\" the intersections of the rotated line L' with these planes (Fig. 7). It is clear that L' is a free line if both p\"' and p'\" lie on the external sides of the corresponding contour generators C, and C2, as in the case shown in the figure. In most cases, it is convenient to perform this analysis in a plane P normal to L, where we project orthographically all the relevant entities, as shown in Fig. 7.",
       "bbox": {
-        "x0": 428.2,
+        "x0": 428.33,
         "y0": 291.25,
-        "x1": 793.98,
+        "x1": 793.81,
         "y1": 581.16,
-        "width": 365.78,
+        "width": 365.48,
         "height": 289.91
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Consider the line L, making two contacts with S at pi and p2, a point p of this line, and an infinitesimal rotation of L about p. If such rotation is possible without intersecting the object near pı and p2, the rotated line L' is a free line and the point does not belong to an active surface. A rotation of this kind will also be said compatible (with the surface at the contact points). Let C, and C2 be infinitesimal segments of the contour generators near pı and p2, which can be approximated with a segment of the osculating circles. Also let Pci and Pcz be the osculating planes, and p\" and pź the intersections of the rotated line L' with these planes (Fig. 7). It is clear that L' is a free line if both p\"' and p'\" lie on the external sides of the corresponding contour generators C, and C2, as in the case shown in the figure. In most cases, it is convenient to perform this analysis in a plane P normal to L, where we project orthographically all the relevant entities, as shown in Fig. 7."
+        "docling_orig": "Consider the line L, making two contacts with S at pi and p2, a point p of this line, and an infinitesimal rotation of L about p. If such rotation is possible without intersecting the object near pı and p2, the rotated line L' is a free line and the point does not belong to an active surface. A rotation of this kind will also be said compatible (with the surface at the contact points). Let C, and C2 be infinitesimal segments of the contour generators near pı and p2, which can be approximated with a segment of the osculating circles. Also let Pci and Pcz be the osculating planes, and p\" and p\" the intersections of the rotated line L' with these planes (Fig. 7). It is clear that L' is a free line if both p\"' and p'\" lie on the external sides of the corresponding contour generators C, and C2, as in the case shown in the figure. In most cases, it is convenient to perform this analysis in a plane P normal to L, where we project orthographically all the relevant entities, as shown in Fig. 7."
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/79",
       "page": 4,
       "order": 11,
       "role": "paragraph",
@@ -1491,7 +1472,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/80",
       "page": 4,
       "order": 12,
       "role": "paragraph",
@@ -1510,7 +1491,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/81",
       "page": 4,
       "order": 13,
       "role": "caption",
@@ -1529,7 +1510,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/82",
       "page": 4,
       "order": 14,
       "role": "paragraph",
@@ -1548,7 +1529,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/83",
       "page": 4,
       "order": 15,
       "role": "paragraph",
@@ -1567,7 +1548,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/84",
       "page": 4,
       "order": 16,
       "role": "paragraph",
@@ -1586,7 +1567,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/85",
       "page": 4,
       "order": 17,
       "role": "paragraph",
@@ -1605,7 +1586,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/86",
       "page": 4,
       "order": 18,
       "role": "paragraph",
@@ -1624,17 +1605,17 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/87",
       "page": 4,
       "order": 19,
       "role": "paragraph",
       "text": "E,",
       "bbox": {
-        "x0": 471.32,
+        "x0": 469.67,
         "y0": 812.86,
         "x1": 486.21,
         "y1": 831.07,
-        "width": 14.89,
+        "width": 16.54,
         "height": 18.21
       },
       "meta": {
@@ -1643,7 +1624,7 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/88",
       "page": 4,
       "order": 20,
       "role": "paragraph",
@@ -1662,7 +1643,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/89",
       "page": 4,
       "order": 21,
       "role": "paragraph",
@@ -1681,7 +1662,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/90",
       "page": 4,
       "order": 22,
       "role": "paragraph",
@@ -1689,9 +1670,9 @@
       "bbox": {
         "x0": 570.55,
         "y0": 887.36,
-        "x1": 585.44,
+        "x1": 587.09,
         "y1": 903.92,
-        "width": 14.89,
+        "width": 16.54,
         "height": 16.56
       },
       "meta": {
@@ -1700,7 +1681,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/91",
       "page": 4,
       "order": 23,
       "role": "paragraph",
@@ -1719,18 +1700,18 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/92",
       "page": 4,
       "order": 24,
       "role": "paragraph",
       "text": "P2",
       "bbox": {
         "x0": 562.28,
-        "y0": 950.27,
+        "y0": 948.61,
         "x1": 578.82,
         "y1": 965.17,
         "width": 16.54,
-        "height": 14.9
+        "height": 16.56
       },
       "meta": {
         "docling_label": "text",
@@ -1738,7 +1719,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/93",
       "page": 4,
       "order": 25,
       "role": "paragraph",
@@ -1757,7 +1738,64 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/94",
+      "page": 4,
+      "order": 26,
+      "role": "paragraph",
+      "text": "P,",
+      "bbox": {
+        "x0": 219.95,
+        "y0": 986.69,
+        "x1": 236.49,
+        "y1": 1001.59,
+        "width": 16.54,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P,"
+      }
+    },
+    {
+      "id": "#/texts/95",
+      "page": 4,
+      "order": 27,
+      "role": "paragraph",
+      "text": "L",
+      "bbox": {
+        "x0": 355.56,
+        "y0": 1036.36,
+        "x1": 365.48,
+        "y1": 1047.95,
+        "width": 9.92,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L"
+      }
+    },
+    {
+      "id": "#/texts/96",
+      "page": 4,
+      "order": 28,
+      "role": "paragraph",
+      "text": "L",
+      "bbox": {
+        "x0": 497.79,
+        "y0": 1038.01,
+        "x1": 507.71,
+        "y1": 1047.95,
+        "width": 9.92,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L"
+      }
+    },
+    {
+      "id": "#/texts/99",
       "page": 5,
       "order": 1,
       "role": "caption",
@@ -1776,28 +1814,9 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/100",
       "page": 5,
       "order": 2,
-      "role": "paragraph",
-      "text": "P\"",
-      "bbox": {
-        "x0": 317.52,
-        "y0": 165.55,
-        "x1": 337.37,
-        "y1": 182.11,
-        "width": 19.85,
-        "height": 16.56
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "P\""
-      }
-    },
-    {
-      "id": "#/texts/99",
-      "page": 5,
-      "order": 3,
       "role": "paragraph",
       "text": "L",
       "bbox": {
@@ -1814,18 +1833,18 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 5,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "T",
       "bbox": {
-        "x0": 582.13,
+        "x0": 583.78,
         "y0": 185.42,
         "x1": 593.7,
-        "y1": 198.66,
-        "width": 11.57,
-        "height": 13.24
+        "y1": 197.01,
+        "width": 9.92,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -1833,17 +1852,17 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 5,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "P,",
       "bbox": {
-        "x0": 426.67,
+        "x0": 425.02,
         "y0": 211.91,
         "x1": 438.25,
         "y1": 223.5,
-        "width": 11.58,
+        "width": 13.23,
         "height": 11.59
       },
       "meta": {
@@ -1852,17 +1871,17 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 5,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "C,",
       "bbox": {
-        "x0": 253.03,
+        "x0": 251.37,
         "y0": 248.33,
-        "x1": 266.26,
+        "x1": 267.91,
         "y1": 264.88,
-        "width": 13.23,
+        "width": 16.54,
         "height": 16.55
       },
       "meta": {
@@ -1871,28 +1890,28 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 5,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
-      "text": "P.",
+      "text": "p.",
       "bbox": {
-        "x0": 446.52,
+        "x0": 444.86,
         "y0": 211.91,
         "x1": 458.09,
         "y1": 221.84,
-        "width": 11.57,
+        "width": 13.23,
         "height": 9.93
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "P."
+        "docling_orig": "p."
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 5,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "C,",
       "bbox": {
@@ -1909,9 +1928,9 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 5,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "Pcz",
       "bbox": {
@@ -1928,9 +1947,9 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 5,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "Pa",
       "bbox": {
@@ -1947,9 +1966,9 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/108",
       "page": 5,
-      "order": 11,
+      "order": 10,
       "role": "caption",
       "text": "Fig. 8. Cases of tangent crossing where the external sides of the contour generators lie on the same side of T.",
       "bbox": {
@@ -1966,18 +1985,18 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 5,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "a",
       "bbox": {
-        "x0": 272.87,
+        "x0": 276.18,
         "y0": 392.36,
         "x1": 284.45,
-        "y1": 405.6,
-        "width": 11.58,
-        "height": 13.24
+        "y1": 403.95,
+        "width": 8.27,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -1985,28 +2004,9 @@
       }
     },
     {
-      "id": "#/texts/109",
-      "page": 5,
-      "order": 13,
-      "role": "paragraph",
-      "text": "p\"",
-      "bbox": {
-        "x0": 206.72,
-        "y0": 402.29,
-        "x1": 221.61,
-        "y1": 417.19,
-        "width": 14.89,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "p\""
-      }
-    },
-    {
       "id": "#/texts/110",
       "page": 5,
-      "order": 14,
+      "order": 12,
       "role": "paragraph",
       "text": "P'",
       "bbox": {
@@ -2025,7 +2025,7 @@
     {
       "id": "#/texts/111",
       "page": 5,
-      "order": 15,
+      "order": 13,
       "role": "paragraph",
       "text": "T",
       "bbox": {
@@ -2044,7 +2044,7 @@
     {
       "id": "#/texts/112",
       "page": 5,
-      "order": 16,
+      "order": 14,
       "role": "paragraph",
       "text": "C2",
       "bbox": {
@@ -2063,34 +2063,15 @@
     {
       "id": "#/texts/113",
       "page": 5,
-      "order": 17,
-      "role": "paragraph",
-      "text": "Ci",
-      "bbox": {
-        "x0": 314.22,
-        "y0": 493.35,
-        "x1": 325.79,
-        "y1": 504.93,
-        "width": 11.57,
-        "height": 11.58
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Ci"
-      }
-    },
-    {
-      "id": "#/texts/114",
-      "page": 5,
-      "order": 18,
+      "order": 15,
       "role": "paragraph",
       "text": "C2",
       "bbox": {
-        "x0": 472.98,
+        "x0": 474.63,
         "y0": 498.31,
         "x1": 497.79,
         "y1": 513.21,
-        "width": 24.81,
+        "width": 23.16,
         "height": 14.9
       },
       "meta": {
@@ -2099,9 +2080,28 @@
       }
     },
     {
+      "id": "#/texts/114",
+      "page": 5,
+      "order": 16,
+      "role": "paragraph",
+      "text": "C",
+      "bbox": {
+        "x0": 466.36,
+        "y0": 528.11,
+        "x1": 476.29,
+        "y1": 538.05,
+        "width": 9.93,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C"
+      }
+    },
+    {
       "id": "#/texts/115",
       "page": 5,
-      "order": 19,
+      "order": 17,
       "role": "paragraph",
       "text": "light and dark gray. The dark gray surface containing pı is closer to plane P.",
       "bbox": {
@@ -2120,7 +2120,7 @@
     {
       "id": "#/texts/116",
       "page": 5,
-      "order": 20,
+      "order": 18,
       "role": "paragraph",
       "text": "Observe first that in all these cases only the internal patch is candidate to be active, since it is easy to see that a small rotation of L about any point of the external infinite segments in the plane normal to T produces a free line.",
       "bbox": {
@@ -2139,16 +2139,16 @@
     {
       "id": "#/texts/117",
       "page": 5,
-      "order": 21,
+      "order": 19,
       "role": "paragraph",
       "text": "Case (a), where both the centers of curvature lie on the internal side, is not active, and the corresponding surface can be totally discarded. This is easily seen, since the line L can be rotated about any point of the interior segment in the plane containing L and T without intersecting the object. In Fig. 8(a) both p\" and pź lie on the external sides of C, and C2.",
       "bbox": {
-        "x0": 56.23,
+        "x0": 54.57,
         "y0": 698.63,
         "x1": 421.71,
-        "y1": 818.23,
-        "width": 365.48,
-        "height": 119.6
+        "y1": 819.21,
+        "width": 367.14,
+        "height": 120.58
       },
       "meta": {
         "docling_label": "text",
@@ -2158,7 +2158,7 @@
     {
       "id": "#/texts/118",
       "page": 5,
-      "order": 22,
+      "order": 20,
       "role": "paragraph",
       "text": "Similar arguments show that also case (b) is not active. On the contrary, the figure shows that no rotation such that both p\" and p' lie on the external sides of C, and C is possible in cases (c) and (d), and therefore the internal patches are active.",
       "bbox": {
@@ -2177,7 +2177,7 @@
     {
       "id": "#/texts/119",
       "page": 5,
-      "order": 23,
+      "order": 21,
       "role": "paragraph",
       "text": "Case (e) is more complex, and its analysis requires the values of the radii of curvature ry and r2 of (the projections) of C, and C2. It has been shown in [5] for the case FF that the internal segment of the 3D line L consists of an inactive segment pı Pm starting at the point pi of the contour generator where the center of curvature lies on the external side, and an active segment pMP2 ending at the other point, such that:",
       "bbox": {
@@ -2196,7 +2196,7 @@
     {
       "id": "#/texts/121",
       "page": 5,
-      "order": 24,
+      "order": 22,
       "role": "paragraph",
       "text": "The proof reported in [5] is only based on the osculating circles of the contour generators, and then also holds for CC and CF.",
       "bbox": {
@@ -2215,7 +2215,7 @@
     {
       "id": "#/texts/122",
       "page": 5,
-      "order": 25,
+      "order": 23,
       "role": "paragraph",
       "text": "In the Appendix it is shown how the parametric equation of the contour generator at a fold point can be obtained as shown in the Appendix. For creases, the contour generator is known a priori. The computation of the radii of curvature of the projections of the osculating circles requires the radii of curvatures of the 3D contour generators and the angles between the osculating planes and P. For brevity we omit the details, which can be found in books on differential geometry (see for instance [20], pp. 173-176)).",
       "bbox": {
@@ -2234,7 +2234,7 @@
     {
       "id": "#/texts/123",
       "page": 5,
-      "order": 26,
+      "order": 24,
       "role": "paragraph",
       "text": "Consider now the cases where the external sides of the contour generators lie on opposite sides of T (Fig. 9).",
       "bbox": {
@@ -2253,7 +2253,7 @@
     {
       "id": "#/texts/124",
       "page": 5,
-      "order": 27,
+      "order": 25,
       "role": "paragraph",
       "text": "In all these cases, only the external segments are candidate to be active (free lines are obtained with small rotations about any point of the internal segment in the plane normal to T). It is easy to see that cases (a) and (b) are not active. The compatible rotations shown in the figure are assumed about a point of the external segment crossing P. Similar arguments hold for the other external segment, not shown in the figure. The analysis of the figure (we omit the details) also shows that cases (c) and (d) generate two active external infinite patches.",
       "bbox": {
@@ -2272,16 +2272,16 @@
     {
       "id": "#/texts/125",
       "page": 5,
-      "order": 28,
+      "order": 26,
       "role": "paragraph",
       "text": "The case (e) requires a more complex analysis [5], whose results are as follows. Consider the external segment starting at pi, which is the point of the contour generator Ci with the center of curvature on the internal side, and",
       "bbox": {
-        "x0": 444.86,
+        "x0": 444.81,
         "y0": 1008.21,
         "x1": 808.69,
-        "y1": 1076.09,
-        "width": 363.83,
-        "height": 67.88
+        "y1": 1076.31,
+        "width": 363.88,
+        "height": 68.1
       },
       "meta": {
         "docling_label": "text",
@@ -2369,33 +2369,14 @@
       "page": 6,
       "order": 5,
       "role": "paragraph",
-      "text": "p\"",
-      "bbox": {
-        "x0": 226.57,
-        "y0": 115.89,
-        "x1": 243.1,
-        "y1": 130.79,
-        "width": 16.53,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "p\""
-      }
-    },
-    {
-      "id": "#/texts/133",
-      "page": 6,
-      "order": 6,
-      "role": "paragraph",
       "text": "C2",
       "bbox": {
         "x0": 304.29,
         "y0": 115.89,
         "x1": 319.18,
-        "y1": 127.48,
+        "y1": 129.13,
         "width": 14.89,
-        "height": 11.59
+        "height": 13.24
       },
       "meta": {
         "docling_label": "text",
@@ -2403,18 +2384,18 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/133",
       "page": 6,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "p\"",
       "bbox": {
         "x0": 375.41,
-        "y0": 125.82,
+        "y0": 124.16,
         "x1": 391.94,
         "y1": 140.72,
         "width": 16.53,
-        "height": 14.9
+        "height": 16.56
       },
       "meta": {
         "docling_label": "text",
@@ -2422,9 +2403,9 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/134",
       "page": 6,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "2",
       "bbox": {
@@ -2438,6 +2419,25 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/135",
+      "page": 6,
+      "order": 8,
+      "role": "paragraph",
+      "text": "L.C=",
+      "bbox": {
+        "x0": 472.98,
+        "y0": 119.2,
+        "x1": 506.05,
+        "y1": 142.37,
+        "width": 33.07,
+        "height": 23.17
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L.C="
       }
     },
     {
@@ -2507,9 +2507,9 @@
         "x0": 289.41,
         "y0": 183.76,
         "x1": 300.99,
-        "y1": 197.01,
+        "y1": 198.66,
         "width": 11.58,
-        "height": 13.25
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -2562,11 +2562,11 @@
       "text": "assume r2 > r1, as in Fig. 9(e). The external segment is divided into one active part pip and an inactive part PM∞. The point pm is such that |p2pм| |p.PM| =r2 r1.",
       "bbox": {
         "x0": 43.0,
-        "y0": 296.25,
+        "y0": 297.91,
         "x1": 406.83,
         "y1": 347.66,
         "width": 363.83,
-        "height": 51.41
+        "height": 49.75
       },
       "meta": {
         "docling_label": "text",
@@ -2578,7 +2578,7 @@
       "page": 6,
       "order": 16,
       "role": "paragraph",
-      "text": "If r2 < r1, the whole external segment is active. Now consider the external segment starting at p2, and assume r2 ≥ r1, as in Fig. 9(e). In this case the external segment is totally inactive. If r2 < r1, the segment pzPm' is inactive. The remaining segment P'oo is active. The position of PM' is such that |p2pm p.pm'|=r2 r1.",
+      "text": "If r2 ≤ r1, the whole external segment is active. Now consider the external segment starting at p2, and assume r2 ≥ r1, as in Fig. 9(e). In this case the external segment is totally inactive. If r2 < r1, the segment pzPm' is inactive. The remaining segment Pm'∞ is active. The position of PM' is such that |p2pm p.pm'|=r2 r1.",
       "bbox": {
         "x0": 39.69,
         "y0": 349.23,
@@ -2589,7 +2589,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "If r2 < r1, the whole external segment is active. Now consider the external segment starting at p2, and assume r2 ≥ r1, as in Fig. 9(e). In this case the external segment is totally inactive. If r2 < r1, the segment pzPm' is inactive. The remaining segment P'oo is active. The position of PM' is such that |p2pm p.pm'|=r2 r1."
+        "docling_orig": "If r2 ≤ r1, the whole external segment is active. Now consider the external segment starting at p2, and assume r2 ≥ r1, as in Fig. 9(e). In this case the external segment is totally inactive. If r2 < r1, the segment pzPm' is inactive. The remaining segment Pm'∞ is active. The position of PM' is such that |p2pm p.pm'|=r2 r1."
       }
     },
     {
@@ -2638,11 +2638,11 @@
       "text": "These surfaces are cones with vertex in V. Also in this case it is useful to analyze the orthographic projections of the vertex V (and of two infinitesimal segments of the creases meeting at the vertex and the contour generator For C onto a plane normal to L, for understanding if compatible rotations of L are possible. Various cases arise.",
       "bbox": {
         "x0": 42.85,
-        "y0": 543.01,
+        "y0": 541.36,
         "x1": 406.95,
         "y1": 644.14,
         "width": 364.1,
-        "height": 101.13
+        "height": 102.78
       },
       "meta": {
         "docling_label": "text",
@@ -2730,18 +2730,18 @@
       "page": 6,
       "order": 24,
       "role": "paragraph",
-      "text": "b",
+      "text": "a",
       "bbox": {
-        "x0": 168.68,
-        "y0": 941.99,
-        "x1": 180.26,
-        "y1": 955.24,
-        "width": 11.58,
-        "height": 13.25
+        "x0": 52.92,
+        "y0": 943.65,
+        "x1": 62.84,
+        "y1": 953.58,
+        "width": 9.92,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "b"
+        "docling_orig": "a"
       }
     },
     {
@@ -2749,18 +2749,18 @@
       "page": 6,
       "order": 25,
       "role": "paragraph",
-      "text": "p'",
+      "text": "b",
       "bbox": {
-        "x0": 137.26,
-        "y0": 1019.8,
-        "x1": 147.19,
-        "y1": 1029.74,
-        "width": 9.93,
-        "height": 9.94
+        "x0": 170.34,
+        "y0": 941.99,
+        "x1": 180.26,
+        "y1": 953.58,
+        "width": 9.92,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "p'"
+        "docling_orig": "b"
       }
     },
     {
@@ -2828,11 +2828,11 @@
       "text": "Also for cases (e) and (f) there are two possible types of intersection with O of a plane rotating about L, as shown in the figure. The analysis of the rotations in these planes, whose details we omit, show that case (e) is inactive, and that in case (f) the external segments are active. Also observe that case (f) can be seen as a limit situation of sub-case (d) in Fig. 9 for a vanishing radius of curvature of one contour generator.",
       "bbox": {
         "x0": 429.98,
-        "y0": 451.87,
-        "x1": 795.46,
+        "y0": 448.44,
+        "x1": 795.58,
         "y1": 587.83,
-        "width": 365.48,
-        "height": 135.96
+        "width": 365.6,
+        "height": 139.39
       },
       "meta": {
         "docling_label": "text",
@@ -2979,12 +2979,12 @@
       "role": "paragraph",
       "text": "P",
       "bbox": {
-        "x0": 266.26,
+        "x0": 262.95,
         "y0": 110.92,
         "x1": 274.53,
-        "y1": 122.51,
-        "width": 8.27,
-        "height": 11.59
+        "y1": 124.16,
+        "width": 11.58,
+        "height": 13.24
       },
       "meta": {
         "docling_label": "text",
@@ -3015,18 +3015,18 @@
       "page": 7,
       "order": 5,
       "role": "paragraph",
-      "text": "P,",
+      "text": "C",
       "bbox": {
-        "x0": 593.7,
-        "y0": 109.26,
-        "x1": 606.93,
-        "y1": 125.82,
-        "width": 13.23,
-        "height": 16.56
+        "x0": 370.44,
+        "y0": 135.75,
+        "x1": 383.68,
+        "y1": 149.0,
+        "width": 13.24,
+        "height": 13.25
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "P,"
+        "docling_orig": "C"
       }
     },
     {
@@ -3036,12 +3036,12 @@
       "role": "paragraph",
       "text": "P,",
       "bbox": {
-        "x0": 221.61,
-        "y0": 198.66,
-        "x1": 236.49,
-        "y1": 215.22,
-        "width": 14.88,
-        "height": 16.56
+        "x0": 380.37,
+        "y0": 193.7,
+        "x1": 400.21,
+        "y1": 211.91,
+        "width": 19.84,
+        "height": 18.21
       },
       "meta": {
         "docling_label": "text",
@@ -3052,44 +3052,6 @@
       "id": "#/texts/170",
       "page": 7,
       "order": 7,
-      "role": "paragraph",
-      "text": "(d) Li",
-      "bbox": {
-        "x0": 205.68,
-        "y0": 238.96,
-        "x1": 273.69,
-        "y1": 260.74,
-        "width": 68.01,
-        "height": 21.78
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "(d) Li"
-      }
-    },
-    {
-      "id": "#/texts/171",
-      "page": 7,
-      "order": 8,
-      "role": "paragraph",
-      "text": "P,",
-      "bbox": {
-        "x0": 380.37,
-        "y0": 193.7,
-        "x1": 400.21,
-        "y1": 213.56,
-        "width": 19.84,
-        "height": 19.86
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "P,"
-      }
-    },
-    {
-      "id": "#/texts/172",
-      "page": 7,
-      "order": 9,
       "role": "paragraph",
       "text": "P,",
       "bbox": {
@@ -3106,9 +3068,66 @@
       }
     },
     {
+      "id": "#/texts/171",
+      "page": 7,
+      "order": 8,
+      "role": "paragraph",
+      "text": "P,",
+      "bbox": {
+        "x0": 593.7,
+        "y0": 109.26,
+        "x1": 606.93,
+        "y1": 125.82,
+        "width": 13.23,
+        "height": 16.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P,"
+      }
+    },
+    {
+      "id": "#/texts/172",
+      "page": 7,
+      "order": 9,
+      "role": "paragraph",
+      "text": "P,",
+      "bbox": {
+        "x0": 221.61,
+        "y0": 198.66,
+        "x1": 236.49,
+        "y1": 215.22,
+        "width": 14.88,
+        "height": 16.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P,"
+      }
+    },
+    {
       "id": "#/texts/173",
       "page": 7,
       "order": 10,
+      "role": "paragraph",
+      "text": "(d) Li",
+      "bbox": {
+        "x0": 205.68,
+        "y0": 238.96,
+        "x1": 273.69,
+        "y1": 260.74,
+        "width": 68.01,
+        "height": 21.78
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(d) Li"
+      }
+    },
+    {
+      "id": "#/texts/174",
+      "page": 7,
+      "order": 11,
       "role": "paragraph",
       "text": "Lị",
       "bbox": {
@@ -3125,9 +3144,9 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/175",
       "page": 7,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "P,",
       "bbox": {
@@ -3144,9 +3163,9 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/176",
       "page": 7,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "(d,)",
       "bbox": {
@@ -3163,34 +3182,15 @@
       }
     },
     {
-      "id": "#/texts/176",
-      "page": 7,
-      "order": 13,
-      "role": "paragraph",
-      "text": "(e,)",
-      "bbox": {
-        "x0": 206.72,
-        "y0": 327.79,
-        "x1": 231.53,
-        "y1": 346.0,
-        "width": 24.81,
-        "height": 18.21
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "(e,)"
-      }
-    },
-    {
       "id": "#/texts/177",
       "page": 7,
       "order": 14,
       "role": "paragraph",
       "text": "(e,)",
       "bbox": {
-        "x0": 456.44,
+        "x0": 206.72,
         "y0": 329.45,
-        "x1": 479.59,
+        "x1": 229.87,
         "y1": 346.0,
         "width": 23.15,
         "height": 16.55
@@ -3205,18 +3205,18 @@
       "page": 7,
       "order": 15,
       "role": "paragraph",
-      "text": "L",
+      "text": "Li",
       "bbox": {
-        "x0": 472.98,
-        "y0": 395.67,
-        "x1": 489.52,
-        "y1": 410.57,
-        "width": 16.54,
-        "height": 14.9
+        "x0": 241.45,
+        "y0": 341.04,
+        "x1": 261.3,
+        "y1": 357.59,
+        "width": 19.85,
+        "height": 16.55
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "L"
+        "docling_orig": "Li"
       }
     },
     {
@@ -3243,6 +3243,25 @@
       "page": 7,
       "order": 17,
       "role": "paragraph",
+      "text": "(e,)",
+      "bbox": {
+        "x0": 456.44,
+        "y0": 327.79,
+        "x1": 479.59,
+        "y1": 346.0,
+        "width": 23.15,
+        "height": 18.21
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(e,)"
+      }
+    },
+    {
+      "id": "#/texts/181",
+      "page": 7,
+      "order": 18,
+      "role": "paragraph",
       "text": "(f)",
       "bbox": {
         "x0": 456.44,
@@ -3258,9 +3277,28 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/182",
       "page": 7,
-      "order": 18,
+      "order": 19,
+      "role": "paragraph",
+      "text": "L",
+      "bbox": {
+        "x0": 472.98,
+        "y0": 395.67,
+        "x1": 489.52,
+        "y1": 410.57,
+        "width": 16.54,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L"
+      }
+    },
+    {
+      "id": "#/texts/183",
+      "page": 7,
+      "order": 20,
       "role": "paragraph",
       "text": "L",
       "bbox": {
@@ -3277,9 +3315,9 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/184",
       "page": 7,
-      "order": 19,
+      "order": 21,
       "role": "paragraph",
       "text": "L",
       "bbox": {
@@ -3296,9 +3334,9 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/185",
       "page": 7,
-      "order": 20,
+      "order": 22,
       "role": "paragraph",
       "text": "contact point, shown that in several cases they are not active, and found the active patches in the remaining cases.",
       "bbox": {
@@ -3315,9 +3353,9 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/186",
       "page": 7,
-      "order": 21,
+      "order": 23,
       "role": "heading",
       "text": "4. Constructing the VH",
       "bbox": {
@@ -3334,9 +3372,9 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/187",
       "page": 7,
-      "order": 22,
+      "order": 24,
       "role": "paragraph",
       "text": "In this section we will discuss an output-sensitive algorithm for constructing VH(O), and its computational complexity. For this purpose, we assume that the surface of O consists of n algebraic patches of bounded degree. In addition, we assume a model of computation in which primitive operations involving a constant number of surfaces bounded degree can be performed in constant time [24]. The algorithm proposed finds the part of VH(O) connected with O. As it will be explained in the following, parts of VH not connected to the object require rather uncommon objects.",
       "bbox": {
@@ -3353,9 +3391,9 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/188",
       "page": 7,
-      "order": 23,
+      "order": 25,
       "role": "paragraph",
       "text": "The algorithm consists of the following steps:",
       "bbox": {
@@ -3372,9 +3410,9 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/189",
       "page": 7,
-      "order": 24,
+      "order": 26,
       "role": "list_item",
       "text": "Computing the locally active patches,",
       "bbox": {
@@ -3391,18 +3429,18 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/190",
       "page": 7,
-      "order": 25,
+      "order": 27,
       "role": "paragraph",
       "text": "In principle, most of the algorithm can be constructed combining existing software. Computing the parametric equations of the potential boundary surfaces can be performed using elimination techniques ([25,41]), implemented in several packages, starting from the equations reported in Appendix. Due to the lines making three contacts, the potentially active surfaces are O(n), and have bounded degree. Details on the degrees of the various kinds of active surfaces in relation with the degree of the patches can be found in [40]. For bounded degree patches, each surface can be computed in constant time, and then all the surfaces in O(n) time. Finding the active parts requires selecting the patches that satisfy the conditions detailed in Section 3, which involves O(n°) surface intersections, and requires O(n°) time. Symbolic and numerical algorithms for intersecting surfaces are described in the literature, see for instance [23,25,37,41] and implemented in a number of mathematical and CAD packages. At the end of Step 1, we obtain 2 locally active patches.",
       "bbox": {
         "x0": 441.56,
         "y0": 551.17,
         "x1": 808.82,
-        "y1": 879.18,
+        "y1": 877.43,
         "width": 367.26,
-        "height": 328.01
+        "height": 326.26
       },
       "meta": {
         "docling_label": "text",
@@ -3410,18 +3448,18 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/191",
       "page": 7,
-      "order": 26,
+      "order": 28,
       "role": "list_item",
       "text": "Computing the VH-active patches,",
       "bbox": {
         "x0": 67.8,
         "y0": 880.74,
         "x1": 309.26,
-        "y1": 895.74,
+        "y1": 897.4,
         "width": 241.46,
-        "height": 15.0
+        "height": 16.66
       },
       "meta": {
         "docling_label": "list_item",
@@ -3429,18 +3467,18 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/192",
       "page": 7,
-      "order": 27,
+      "order": 29,
       "role": "list_item",
       "text": "Constructing a partition of CH(O)-O formed by the VH-active patches and the surface patches of O such that each of the partition belongs entirely or not to he visual hull,",
       "bbox": {
         "x0": 67.8,
         "y0": 898.95,
         "x1": 421.71,
-        "y1": 966.9,
+        "y1": 967.04,
         "width": 353.91,
-        "height": 67.95
+        "height": 68.09
       },
       "meta": {
         "docling_label": "list_item",
@@ -3448,9 +3486,9 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/193",
       "page": 7,
-      "order": 28,
+      "order": 30,
       "role": "list_item",
       "text": "Selecting the cells of the partition which belong to VH.",
       "bbox": {
@@ -3467,17 +3505,17 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/194",
       "page": 7,
-      "order": 29,
+      "order": 31,
       "role": "paragraph",
       "text": "Step 2, that is computing the VH active patches, requires computing the convex hull and intersecting the locally active patches with the surface of the convex hull. One difficulty is that algorithms for computing the convex hull, to the authors' knowledge, exist only for polyhedra. A theoretical convex hull algorithm for smooth objects is described in [47]. This step, whose purpose is to trim the",
       "bbox": {
         "x0": 443.21,
         "y0": 879.08,
-        "x1": 808.82,
+        "x1": 808.81,
         "y1": 998.37,
-        "width": 365.61,
+        "width": 365.6,
         "height": 119.29
       },
       "meta": {
@@ -3486,9 +3524,9 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/195",
       "page": 7,
-      "order": 30,
+      "order": 32,
       "role": "caption",
       "text": "Fig. 12. Decomposing multiple contacts.",
       "bbox": {
@@ -3505,9 +3543,9 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/196",
       "page": 7,
-      "order": 31,
+      "order": 33,
       "role": "paragraph",
       "text": "+",
       "bbox": {
@@ -3524,30 +3562,30 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/197",
       "page": 7,
-      "order": 32,
+      "order": 34,
       "role": "paragraph",
-      "text": "-+-",
+      "text": "• + -",
       "bbox": {
-        "x0": 529.21,
-        "y0": 1023.11,
-        "x1": 572.21,
-        "y1": 1042.98,
-        "width": 43.0,
-        "height": 19.87
+        "x0": 535.82,
+        "y0": 1023.03,
+        "x1": 570.55,
+        "y1": 1043.03,
+        "width": 34.73,
+        "height": 20.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "-+-"
+        "docling_orig": "• + -"
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/200",
       "page": 8,
       "order": 1,
       "role": "paragraph",
-      "text": "patches in order to reduce the computations of the following steps, could be approximated intersecting in O(2) time the locally active patches with the surface of some simple boundary solid.",
+      "text": "patches in order to reduce the computations of the following steps, could be approximated intersecting in O(2) time the locally active patches with the surface of some simple boundary solid",
       "bbox": {
         "x0": 42.95,
         "y0": 97.64,
@@ -3558,11 +3596,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "patches in order to reduce the computations of the following steps, could be approximated intersecting in O(2) time the locally active patches with the surface of some simple boundary solid."
+        "docling_orig": "patches in order to reduce the computations of the following steps, could be approximated intersecting in O(2) time the locally active patches with the surface of some simple boundary solid"
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/201",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -3581,7 +3619,7 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/202",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -3589,9 +3627,9 @@
       "bbox": {
         "x0": 43.0,
         "y0": 561.17,
-        "x1": 406.83,
+        "x1": 406.87,
         "y1": 731.79,
-        "width": 363.83,
+        "width": 363.87,
         "height": 170.62
       },
       "meta": {
@@ -3600,7 +3638,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/203",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -3619,7 +3657,7 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/204",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -3638,7 +3676,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/205",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -3657,7 +3695,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/206",
       "page": 8,
       "order": 7,
       "role": "caption",
@@ -3676,7 +3714,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/207",
       "page": 8,
       "order": 8,
       "role": "paragraph",
@@ -3695,7 +3733,7 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/208",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -3714,7 +3752,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/209",
       "page": 8,
       "order": 10,
       "role": "paragraph",
@@ -3733,7 +3771,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/210",
       "page": 8,
       "order": 11,
       "role": "paragraph",
@@ -3752,7 +3790,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/211",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -3771,7 +3809,7 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/212",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -3790,7 +3828,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/213",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -3809,7 +3847,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/214",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -3828,18 +3866,18 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/215",
       "page": 8,
       "order": 16,
       "role": "heading",
       "text": "5. Examples",
       "bbox": {
-        "x0": 428.29,
-        "y0": 966.67,
-        "x1": 506.09,
-        "y1": 983.53,
-        "width": 77.8,
-        "height": 16.86
+        "x0": 428.25,
+        "y0": 966.46,
+        "x1": 506.13,
+        "y1": 983.74,
+        "width": 77.88,
+        "height": 17.28
       },
       "meta": {
         "docling_label": "section_header",
@@ -3847,7 +3885,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/216",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -3866,7 +3904,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/219",
       "page": 9,
       "order": 1,
       "role": "caption",
@@ -3874,9 +3912,9 @@
       "bbox": {
         "x0": 104.19,
         "y0": 345.9,
-        "x1": 760.74,
+        "x1": 760.73,
         "y1": 359.25,
-        "width": 656.55,
+        "width": 656.54,
         "height": 13.35
       },
       "meta": {
@@ -3885,7 +3923,7 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/220",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -3904,7 +3942,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/221",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -3923,7 +3961,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/222",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -3942,7 +3980,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/223",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -3961,7 +3999,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/224",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -3980,7 +4018,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/225",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -3999,7 +4037,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/226",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -4018,7 +4056,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/227",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -4026,9 +4064,9 @@
       "bbox": {
         "x0": 603.63,
         "y0": 165.55,
-        "x1": 613.55,
+        "x1": 611.9,
         "y1": 175.49,
-        "width": 9.92,
+        "width": 8.27,
         "height": 9.94
       },
       "meta": {
@@ -4037,47 +4075,9 @@
       }
     },
     {
-      "id": "#/texts/226",
-      "page": 9,
-      "order": 10,
-      "role": "paragraph",
-      "text": "d",
-      "bbox": {
-        "x0": 211.68,
-        "y0": 231.77,
-        "x1": 224.91,
-        "y1": 246.67,
-        "width": 13.23,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "d"
-      }
-    },
-    {
-      "id": "#/texts/227",
-      "page": 9,
-      "order": 11,
-      "role": "paragraph",
-      "text": "e",
-      "bbox": {
-        "x0": 352.25,
-        "y0": 235.08,
-        "x1": 362.18,
-        "y1": 245.02,
-        "width": 9.93,
-        "height": 9.94
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "e"
-      }
-    },
-    {
       "id": "#/texts/228",
       "page": 9,
-      "order": 12,
+      "order": 10,
       "role": "paragraph",
       "text": "C",
       "bbox": {
@@ -4096,6 +4096,44 @@
     {
       "id": "#/texts/229",
       "page": 9,
+      "order": 11,
+      "role": "paragraph",
+      "text": "d",
+      "bbox": {
+        "x0": 211.68,
+        "y0": 231.77,
+        "x1": 224.91,
+        "y1": 246.67,
+        "width": 13.23,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "d"
+      }
+    },
+    {
+      "id": "#/texts/230",
+      "page": 9,
+      "order": 12,
+      "role": "paragraph",
+      "text": "e",
+      "bbox": {
+        "x0": 352.25,
+        "y0": 235.08,
+        "x1": 362.18,
+        "y1": 245.02,
+        "width": 9.93,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e"
+      }
+    },
+    {
+      "id": "#/texts/231",
+      "page": 9,
       "order": 13,
       "role": "paragraph",
       "text": "f",
@@ -4113,7 +4151,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/232",
       "page": 9,
       "order": 14,
       "role": "paragraph",
@@ -4132,7 +4170,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/233",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -4151,17 +4189,17 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/234",
       "page": 9,
       "order": 16,
       "role": "paragraph",
       "text": "Then, all the lines passing through Vi and making contact with C between V5 and V4 are not active. Patch P4 is planar and is generated by the lines making contact at Vs and L2 (case (c) of Fig. 8). Patch Ps is symmetric to P3.",
       "bbox": {
-        "x0": 56.18,
+        "x0": 56.17,
         "y0": 758.11,
         "x1": 421.77,
         "y1": 826.11,
-        "width": 365.59,
+        "width": 365.6,
         "height": 68.0
       },
       "meta": {
@@ -4170,18 +4208,18 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/235",
       "page": 9,
       "order": 17,
       "role": "paragraph",
       "text": "The five patches produce a partition with two cells, shown in Fig. 14(d) and (e). Only the second cell is contiguous to the object, and belongs to the VH, shown in Fig. 14(f).",
       "bbox": {
-        "x0": 56.1,
+        "x0": 56.08,
         "y0": 826.09,
         "x1": 421.71,
-        "y1": 894.55,
-        "width": 365.61,
-        "height": 68.46
+        "y1": 894.65,
+        "width": 365.63,
+        "height": 68.56
       },
       "meta": {
         "docling_label": "text",
@@ -4189,7 +4227,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/236",
       "page": 9,
       "order": 18,
       "role": "paragraph",
@@ -4208,26 +4246,26 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/237",
       "page": 9,
       "order": 19,
       "role": "paragraph",
-      "text": "Lines making contact at the semi-circles C, and C produce a conical surface whose internal part is divided into an active patch P4 and an inactive patch Ps. This is an instance of case (e) in Fig. 8. Two other relevant patches exist, P6 and P, in Fig. 15(d) and (e), generated by the lines passing through the vertices V, and V2 and crease G,. These are instances of case (d) in Fig. 9.",
+      "text": "Lines making contact at the semi-circles C, and C2 produce a conical surface whose internal part is divided into an active patch P4 and an inactive patch Ps. This is an instance of case (e) in Fig. 8. Two other relevant patches exist, P6 and P, in Fig. 15(d) and (e), generated by the lines passing through the vertices V, and V2 and crease G,. These are instances of case (d) in Fig. 9.",
       "bbox": {
         "x0": 56.23,
         "y0": 990.0,
-        "x1": 420.06,
+        "x1": 421.71,
         "y1": 1076.09,
-        "width": 363.83,
+        "width": 365.48,
         "height": 86.09
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Lines making contact at the semi-circles C, and C produce a conical surface whose internal part is divided into an active patch P4 and an inactive patch Ps. This is an instance of case (e) in Fig. 8. Two other relevant patches exist, P6 and P, in Fig. 15(d) and (e), generated by the lines passing through the vertices V, and V2 and crease G,. These are instances of case (d) in Fig. 9."
+        "docling_orig": "Lines making contact at the semi-circles C, and C2 produce a conical surface whose internal part is divided into an active patch P4 and an inactive patch Ps. This is an instance of case (e) in Fig. 8. Two other relevant patches exist, P6 and P, in Fig. 15(d) and (e), generated by the lines passing through the vertices V, and V2 and crease G,. These are instances of case (d) in Fig. 9."
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/238",
       "page": 9,
       "order": 20,
       "role": "paragraph",
@@ -4246,11 +4284,11 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/239",
       "page": 9,
       "order": 21,
       "role": "paragraph",
-      "text": "Example 3. In this case, a more complex partition is formed by 10 VH-active surfaces. The object is shown in Fig. 16(a). There are two VH-active surfaces as the cylindrical surface Pi, formed by the lines touching at C, and C2, Fig. 16(b), four planar surfaces as P2, Fig. 16(c), and four curved patches as P3, due to the lines touching at Ci and C3, Fig. 16(d). Discarding the cells not connected to the object, the visual hull shown in (e) is obtained.",
+      "text": "Example 3. In this case, a more complex partition is formed by 10 VH-active surfaces. The object is shown in Fig. 16(a). There are two VH-active surfaces as the cylindrical surface Pi, formed by the lines touching at Cy and C2, Fig. 16(b), four planar surfaces as P2, Fig. 16(c), and four curved patches as P3, due to the lines touching at Ci and C3, Fig. 16(d). Discarding the cells not connected to the object, the visual hull shown in (e) is obtained.",
       "bbox": {
         "x0": 443.21,
         "y0": 516.52,
@@ -4261,11 +4299,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Example 3. In this case, a more complex partition is formed by 10 VH-active surfaces. The object is shown in Fig. 16(a). There are two VH-active surfaces as the cylindrical surface Pi, formed by the lines touching at C, and C2, Fig. 16(b), four planar surfaces as P2, Fig. 16(c), and four curved patches as P3, due to the lines touching at Ci and C3, Fig. 16(d). Discarding the cells not connected to the object, the visual hull shown in (e) is obtained."
+        "docling_orig": "Example 3. In this case, a more complex partition is formed by 10 VH-active surfaces. The object is shown in Fig. 16(a). There are two VH-active surfaces as the cylindrical surface Pi, formed by the lines touching at Cy and C2, Fig. 16(b), four planar surfaces as P2, Fig. 16(c), and four curved patches as P3, due to the lines touching at Ci and C3, Fig. 16(d). Discarding the cells not connected to the object, the visual hull shown in (e) is obtained."
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/240",
       "page": 9,
       "order": 22,
       "role": "heading",
@@ -4284,7 +4322,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/241",
       "page": 9,
       "order": 23,
       "role": "paragraph",
@@ -4303,7 +4341,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/242",
       "page": 9,
       "order": 24,
       "role": "caption",
@@ -4322,7 +4360,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/243",
       "page": 9,
       "order": 25,
       "role": "paragraph",
@@ -4341,26 +4379,26 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/244",
       "page": 9,
       "order": 26,
       "role": "paragraph",
-      "text": "bp.-",
+      "text": "bP.-",
       "bbox": {
         "x0": 565.59,
         "y0": 776.44,
-        "x1": 603.63,
+        "x1": 601.97,
         "y1": 797.96,
-        "width": 38.04,
+        "width": 36.38,
         "height": 21.52
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "bp.-"
+        "docling_orig": "bP.-"
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/245",
       "page": 9,
       "order": 27,
       "role": "paragraph",
@@ -4379,7 +4417,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/246",
       "page": 9,
       "order": 28,
       "role": "paragraph",
@@ -4398,7 +4436,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/247",
       "page": 9,
       "order": 29,
       "role": "paragraph",
@@ -4417,28 +4455,9 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/248",
       "page": 9,
       "order": 30,
-      "role": "paragraph",
-      "text": "P,",
-      "bbox": {
-        "x0": 608.59,
-        "y0": 841.01,
-        "x1": 621.82,
-        "y1": 855.91,
-        "width": 13.23,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "P,"
-      }
-    },
-    {
-      "id": "#/texts/247",
-      "page": 9,
-      "order": 31,
       "role": "paragraph",
       "text": "d",
       "bbox": {
@@ -4455,9 +4474,9 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/249",
       "page": 9,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "e",
       "bbox": {
@@ -4474,9 +4493,9 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/250",
       "page": 9,
-      "order": 33,
+      "order": 32,
       "role": "paragraph",
       "text": "f",
       "bbox": {
@@ -4493,7 +4512,26 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/251",
+      "page": 9,
+      "order": 33,
+      "role": "paragraph",
+      "text": "P.",
+      "bbox": {
+        "x0": 484.56,
+        "y0": 973.45,
+        "x1": 497.79,
+        "y1": 988.35,
+        "width": 13.23,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P."
+      }
+    },
+    {
+      "id": "#/texts/252",
       "page": 9,
       "order": 34,
       "role": "paragraph",
@@ -4512,26 +4550,26 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/255",
       "page": 10,
       "order": 1,
       "role": "caption",
-      "text": "Fig. 16. Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e).",
+      "text": "Fig. 16. Example 3. The object (a), three types of VH-active surfaces (b d), the visual hull (e).",
       "bbox": {
-        "x0": 181.91,
+        "x0": 180.26,
         "y0": 392.22,
         "x1": 653.24,
-        "y1": 405.6,
-        "width": 471.33,
-        "height": 13.38
+        "y1": 407.26,
+        "width": 472.98,
+        "height": 15.04
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "Fig. 16. Example 3. The object (a), three types of VH-active surfaces (b-d), the visual hull (e)."
+        "docling_orig": "Fig. 16. Example 3. The object (a), three types of VH-active surfaces (b d), the visual hull (e)."
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/256",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -4550,17 +4588,17 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/257",
       "page": 10,
       "order": 3,
       "role": "paragraph",
       "text": "b",
       "bbox": {
-        "x0": 343.98,
+        "x0": 345.64,
         "y0": 99.33,
         "x1": 357.21,
         "y1": 114.23,
-        "width": 13.23,
+        "width": 11.57,
         "height": 14.9
       },
       "meta": {
@@ -4569,7 +4607,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/258",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -4588,7 +4626,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/259",
       "page": 10,
       "order": 5,
       "role": "paragraph",
@@ -4596,9 +4634,9 @@
       "bbox": {
         "x0": 262.95,
         "y0": 246.67,
-        "x1": 274.53,
+        "x1": 276.18,
         "y1": 261.57,
-        "width": 11.58,
+        "width": 13.23,
         "height": 14.9
       },
       "meta": {
@@ -4607,7 +4645,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/260",
       "page": 10,
       "order": 6,
       "role": "paragraph",
@@ -4626,7 +4664,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/261",
       "page": 10,
       "order": 7,
       "role": "heading",
@@ -4645,7 +4683,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/262",
       "page": 10,
       "order": 8,
       "role": "paragraph",
@@ -4664,7 +4702,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/263",
       "page": 10,
       "order": 9,
       "role": "paragraph",
@@ -4683,7 +4721,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/264",
       "page": 10,
       "order": 10,
       "role": "heading",
@@ -4702,7 +4740,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/265",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -4721,7 +4759,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/267",
       "page": 10,
       "order": 12,
       "role": "paragraph",
@@ -4740,11 +4778,11 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/269",
       "page": 10,
       "order": 13,
       "role": "paragraph",
-      "text": "where · is the dot product, and × the vector product. Eliminating v between this scalar equation and p(u,v) supplies the parametric equation c(u) of the contour generator, which allows writing the surface equation (A.1).",
+      "text": "where · is the dot product, and x the vector product. Eliminating v between this scalar equation and p(u,v) supplies the parametric equation c(u) of the contour generator, which allows writing the surface equation (A.1).",
       "bbox": {
         "x0": 429.98,
         "y0": 632.41,
@@ -4755,11 +4793,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "where · is the dot product, and × the vector product. Eliminating v between this scalar equation and p(u,v) supplies the parametric equation c(u) of the contour generator, which allows writing the surface equation (A.1)."
+        "docling_orig": "where · is the dot product, and x the vector product. Eliminating v between this scalar equation and p(u,v) supplies the parametric equation c(u) of the contour generator, which allows writing the surface equation (A.1)."
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/270",
       "page": 10,
       "order": 14,
       "role": "paragraph",
@@ -4778,18 +4816,18 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/271",
       "page": 10,
       "order": 15,
       "role": "paragraph",
       "text": "The tangents at the two contour generators must be coplanar.",
       "bbox": {
-        "x0": 429.92,
+        "x0": 428.25,
         "y0": 718.46,
         "x1": 793.81,
-        "y1": 750.26,
-        "width": 363.89,
-        "height": 31.8
+        "y1": 751.92,
+        "width": 365.56,
+        "height": 33.46
       },
       "meta": {
         "docling_label": "text",
@@ -4797,26 +4835,26 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/272",
       "page": 10,
       "order": 16,
       "role": "paragraph",
-      "text": "In the case CC, let e (u1) and c2(u2) be the equations of the creases. The co-planarity condition can be written as",
+      "text": "In the case CC, let c,(u1) and c2(u2) be the equations of the creases. The co-planarity condition can be written as",
       "bbox": {
         "x0": 431.63,
-        "y0": 750.12,
-        "x1": 795.59,
+        "y0": 751.34,
+        "x1": 795.55,
         "y1": 783.1,
-        "width": 363.96,
-        "height": 32.98
+        "width": 363.92,
+        "height": 31.76
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "In the case CC, let e (u1) and c2(u2) be the equations of the creases. The co-planarity condition can be written as"
+        "docling_orig": "In the case CC, let c,(u1) and c2(u2) be the equations of the creases. The co-planarity condition can be written as"
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/274",
       "page": 10,
       "order": 17,
       "role": "paragraph",
@@ -4835,7 +4873,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/276",
       "page": 10,
       "order": 18,
       "role": "paragraph",
@@ -4843,9 +4881,9 @@
       "bbox": {
         "x0": 429.98,
         "y0": 912.07,
-        "x1": 674.74,
+        "x1": 676.39,
         "y1": 927.09,
-        "width": 244.76,
+        "width": 246.41,
         "height": 15.02
       },
       "meta": {
@@ -4854,7 +4892,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/278",
       "page": 10,
       "order": 19,
       "role": "paragraph",
@@ -4873,7 +4911,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/279",
       "page": 10,
       "order": 20,
       "role": "paragraph",
@@ -4892,11 +4930,11 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/285",
       "page": 11,
       "order": 1,
       "role": "paragraph",
-      "text": "This makes three scalar equations in u1, 01, U2 and vz. Eliminating v1, U2 and v2 between these equations and pı(41,01) supplies the parametric equation c,(u1) of the first contour generator. A similar technique leads to c2(u1), which allows to write the Eq. (A.2) of the surface.",
+      "text": "This makes three scalar equations in u1, 01, U2 and vz. Eliminating v1, U2 and v2 between these equations and pı(41,01) supplies the parametric equation c(ul) of the first contour generator. A similar technique leads to c2(u1), which allows to write the Eq. (A.2) of the surface.",
       "bbox": {
         "x0": 56.23,
         "y0": 167.21,
@@ -4907,11 +4945,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "This makes three scalar equations in u1, 01, U2 and vz. Eliminating v1, U2 and v2 between these equations and pı(41,01) supplies the parametric equation c,(u1) of the first contour generator. A similar technique leads to c2(u1), which allows to write the Eq. (A.2) of the surface."
+        "docling_orig": "This makes three scalar equations in u1, 01, U2 and vz. Eliminating v1, U2 and v2 between these equations and pı(41,01) supplies the parametric equation c(ul) of the first contour generator. A similar technique leads to c2(u1), which allows to write the Eq. (A.2) of the surface."
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/286",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -4930,7 +4968,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/287",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -4949,26 +4987,26 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/291",
       "page": 11,
       "order": 4,
       "role": "paragraph",
-      "text": "In this case, we have four scalar equations and five parameters u1, v1, U2, U2, U3. Several other equivalent systems can be written. By elimination we can find ci(u3) (or cz(u3)), which allows to write the surface equation (A.2). For brevity, we omit the equations for the other three cases.",
+      "text": "In this case, we have four scalar equations and five parameters u1, v1, U2, U2, U3. Several other equivalent systems can be written. By elimination we can find ci(u3) (or c(uz)), which allows to write the surface equation (A.2). For brevity, we omit the equations for the other three cases.",
       "bbox": {
         "x0": 56.23,
-        "y0": 414.13,
+        "y0": 414.31,
         "x1": 421.71,
         "y1": 499.97,
         "width": 365.48,
-        "height": 85.84
+        "height": 85.66
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "In this case, we have four scalar equations and five parameters u1, v1, U2, U2, U3. Several other equivalent systems can be written. By elimination we can find ci(u3) (or cz(u3)), which allows to write the surface equation (A.2). For brevity, we omit the equations for the other three cases."
+        "docling_orig": "In this case, we have four scalar equations and five parameters u1, v1, U2, U2, U3. Several other equivalent systems can be written. By elimination we can find ci(u3) (or c(uz)), which allows to write the surface equation (A.2). For brevity, we omit the equations for the other three cases."
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/292",
       "page": 11,
       "order": 5,
       "role": "heading",
@@ -4987,7 +5025,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/293",
       "page": 11,
       "order": 6,
       "role": "list_item",
@@ -5006,7 +5044,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/294",
       "page": 11,
       "order": 7,
       "role": "list_item",
@@ -5025,7 +5063,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/295",
       "page": 11,
       "order": 8,
       "role": "list_item",
@@ -5044,7 +5082,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/296",
       "page": 11,
       "order": 9,
       "role": "list_item",
@@ -5063,7 +5101,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/297",
       "page": 11,
       "order": 10,
       "role": "list_item",
@@ -5082,26 +5120,26 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/298",
       "page": 11,
       "order": 11,
       "role": "list_item",
-      "text": "A. Bottino, A. Laurentini, Relating visual hull and tactile probing capabilities, in: Proceedings of SCI 2004, 18-21 July 2004, Orlando, Florida (USA), 2004.",
+      "text": "A. Bottino, A. Laurentini, Relating visual hull and tactile probing",
       "bbox": {
         "x0": 62.84,
         "y0": 768.11,
         "x1": 421.71,
-        "y1": 809.55,
+        "y1": 781.44,
         "width": 358.87,
-        "height": 41.44
+        "height": 13.33
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[6] A. Bottino, A. Laurentini, Relating visual hull and tactile probing capabilities, in: Proceedings of SCI 2004, 18-21 July 2004, Orlando, Florida (USA), 2004."
+        "docling_orig": "[6] A. Bottino, A. Laurentini, Relating visual hull and tactile probing"
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/299",
       "page": 11,
       "order": 12,
       "role": "list_item",
@@ -5120,7 +5158,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/300",
       "page": 11,
       "order": 13,
       "role": "list_item",
@@ -5139,7 +5177,7 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/301",
       "page": 11,
       "order": 14,
       "role": "list_item",
@@ -5158,7 +5196,7 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/302",
       "page": 11,
       "order": 15,
       "role": "list_item",
@@ -5177,7 +5215,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/303",
       "page": 11,
       "order": 16,
       "role": "list_item",
@@ -5196,7 +5234,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/304",
       "page": 11,
       "order": 17,
       "role": "list_item",
@@ -5215,11 +5253,11 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/305",
       "page": 11,
       "order": 18,
       "role": "list_item",
-      "text": "B. Chazelle, H. Edelsbrunner, L.J. Guibas, M. Sharir, A singlyexponential stratification scheme for rea semi-algebraic varieties and its applications, Theoret. Comput. Sci. 84 (1991) 77-105.",
+      "text": "B. Chazelle, H. Edelsbrunner, L.J. Guibas, M. Sharir, A singlyexponential stratification scheme for rea semi-algebraic varieties and its applications, Theoret. Comput. Sci. 84(1991) 77-105.",
       "bbox": {
         "x0": 57.88,
         "y0": 998.28,
@@ -5230,11 +5268,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[13] B. Chazelle, H. Edelsbrunner, L.J. Guibas, M. Sharir, A singlyexponential stratification scheme for rea semi-algebraic varieties and its applications, Theoret. Comput. Sci. 84 (1991) 77-105."
+        "docling_orig": "[13] B. Chazelle, H. Edelsbrunner, L.J. Guibas, M. Sharir, A singlyexponential stratification scheme for rea semi-algebraic varieties and its applications, Theoret. Comput. Sci. 84(1991) 77-105."
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/306",
       "page": 11,
       "order": 19,
       "role": "list_item",
@@ -5253,26 +5291,26 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/307",
       "page": 11,
       "order": 20,
       "role": "list_item",
-      "text": "shape-from-silhouette with stereo, IEEE Proc. CVPR 03 (2003) 1063-",
+      "text": "shape-from-silhouette with stereo, IEEE Proc. CVPR '03 (2003) 10631069.",
       "bbox": {
         "x0": 466.36,
         "y0": 97.64,
         "x1": 808.69,
-        "y1": 109.3,
+        "y1": 122.51,
         "width": 342.33,
-        "height": 11.66
+        "height": 24.87
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "shape-from-silhouette with stereo, IEEE Proc. CVPR 03 (2003) 1063-"
+        "docling_orig": "shape-from-silhouette with stereo, IEEE Proc. CVPR '03 (2003) 10631069."
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/308",
       "page": 11,
       "order": 21,
       "role": "list_item",
@@ -5291,7 +5329,7 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/309",
       "page": 11,
       "order": 22,
       "role": "list_item",
@@ -5310,26 +5348,26 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/310",
       "page": 11,
       "order": 23,
       "role": "list_item",
-      "text": "D.W. Eggert, K.W. Bowyer, C.R. Dyer, H.I. Christensen, D.B Goldof, The scale space aspect graph, Trans. PAMI 15 (11) (1993)",
+      "text": "D.W. Eggert, K.W. Bowyer, C.R. Dyer, H.I. Christensen, D.B Goldof, The scale space aspect graph, Trans. PAMI 15 (11) (1993) 1114 1139.",
       "bbox": {
         "x0": 444.86,
         "y0": 196.94,
         "x1": 808.69,
-        "y1": 223.6,
+        "y1": 236.74,
         "width": 363.83,
-        "height": 26.66
+        "height": 39.8
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[17] D.W. Eggert, K.W. Bowyer, C.R. Dyer, H.I. Christensen, D.B Goldof, The scale space aspect graph, Trans. PAMI 15 (11) (1993)"
+        "docling_orig": "[17] D.W. Eggert, K.W. Bowyer, C.R. Dyer, H.I. Christensen, D.B Goldof, The scale space aspect graph, Trans. PAMI 15 (11) (1993) 1114 1139."
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/311",
       "page": 11,
       "order": 24,
       "role": "list_item",
@@ -5348,7 +5386,7 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/312",
       "page": 11,
       "order": 25,
       "role": "list_item",
@@ -5367,26 +5405,26 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/313",
       "page": 11,
       "order": 26,
       "role": "list_item",
-      "text": "and surfaces for CADG: a pratical guide, Academic Press, New York, 1997.",
+      "text": "G. Farin, Curves and surfaces for CADG: a practical guide, Academic Press, New York, 1997.",
       "bbox": {
-        "x0": 468.02,
+        "x0": 444.86,
         "y0": 297.91,
         "x1": 808.69,
         "y1": 324.57,
-        "width": 340.67,
+        "width": 363.83,
         "height": 26.66
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "and surfaces for CADG: a pratical guide, Academic Press, New York, 1997."
+        "docling_orig": "[20] G. Farin, Curves and surfaces for CADG: a practical guide, Academic Press, New York, 1997."
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/314",
       "page": 11,
       "order": 27,
       "role": "list_item",
@@ -5405,64 +5443,64 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/315",
       "page": 11,
       "order": 28,
       "role": "list_item",
-      "text": "Z. Gigus, J. Canny, R. Seidel, Efficiently computing and repreaspect graphs of polyhedral objects, Trans. PAMI 13",
+      "text": "Z. Gigus, J. Canny, R. Seidel, Efficiently computing and repreaspect graphs of polyhedral objects, Trans. PAMI 13 (1991) 542-551.",
       "bbox": {
         "x0": 444.86,
         "y0": 369.18,
         "x1": 808.69,
-        "y1": 397.33,
+        "y1": 410.57,
         "width": 363.83,
-        "height": 28.15
+        "height": 41.39
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[22] Z. Gigus, J. Canny, R. Seidel, Efficiently computing and repreaspect graphs of polyhedral objects, Trans. PAMI 13"
-      }
-    },
-    {
-      "id": "#/texts/314",
-      "page": 11,
-      "order": 29,
-      "role": "list_item",
-      "text": "R.N. Goldman, T.W. Sederberg, Some applications of resultants to problems in computational geometry, The Visual Computer 1 (1985)",
-      "bbox": {
-        "x0": 444.86,
-        "y0": 412.21,
-        "x1": 808.69,
-        "y1": 440.37,
-        "width": 363.83,
-        "height": 28.16
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "[23] R.N. Goldman, T.W. Sederberg, Some applications of resultants to problems in computational geometry, The Visual Computer 1 (1985)"
-      }
-    },
-    {
-      "id": "#/texts/315",
-      "page": 11,
-      "order": 30,
-      "role": "list_item",
-      "text": "D. Halperin, Arrangements, in: J. Goodman, J. O'Rourke (Eds.), Handbook of Discrete and Computational Geometry, CRC Press",
-      "bbox": {
-        "x0": 443.21,
-        "y0": 455.2,
-        "x1": 808.69,
-        "y1": 483.53,
-        "width": 365.48,
-        "height": 28.33
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "[24] D. Halperin, Arrangements, in: J. Goodman, J. O'Rourke (Eds.), Handbook of Discrete and Computational Geometry, CRC Press"
+        "docling_orig": "[22] Z. Gigus, J. Canny, R. Seidel, Efficiently computing and repreaspect graphs of polyhedral objects, Trans. PAMI 13 (1991) 542-551."
       }
     },
     {
       "id": "#/texts/316",
+      "page": 11,
+      "order": 29,
+      "role": "list_item",
+      "text": "R.N. Goldman, T.W. Sederberg, Some applications of resultants to problems in computational geometry, The Visual Computer 1(1985) 101-107.",
+      "bbox": {
+        "x0": 444.86,
+        "y0": 412.21,
+        "x1": 808.69,
+        "y1": 453.71,
+        "width": 363.83,
+        "height": 41.5
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[23] R.N. Goldman, T.W. Sederberg, Some applications of resultants to problems in computational geometry, The Visual Computer 1(1985) 101-107."
+      }
+    },
+    {
+      "id": "#/texts/317",
+      "page": 11,
+      "order": 30,
+      "role": "list_item",
+      "text": "D. Halperin, Arrangements, in: J. Goodman, J. O'Rourke (Eds.), Handbook of Discrete and Computational Geometry, CRC Press LLC, Boca Raton, FL, 2004.",
+      "bbox": {
+        "x0": 443.21,
+        "y0": 455.2,
+        "x1": 808.69,
+        "y1": 496.66,
+        "width": 365.48,
+        "height": 41.46
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[24] D. Halperin, Arrangements, in: J. Goodman, J. O'Rourke (Eds.), Handbook of Discrete and Computational Geometry, CRC Press LLC, Boca Raton, FL, 2004."
+      }
+    },
+    {
+      "id": "#/texts/318",
       "page": 11,
       "order": 31,
       "role": "list_item",
@@ -5481,7 +5519,7 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/319",
       "page": 11,
       "order": 32,
       "role": "list_item",
@@ -5500,7 +5538,7 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/320",
       "page": 11,
       "order": 33,
       "role": "list_item",
@@ -5519,7 +5557,7 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/321",
       "page": 11,
       "order": 34,
       "role": "list_item",
@@ -5538,7 +5576,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/322",
       "page": 11,
       "order": 35,
       "role": "list_item",
@@ -5557,7 +5595,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/323",
       "page": 11,
       "order": 36,
       "role": "list_item",
@@ -5576,7 +5614,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/324",
       "page": 11,
       "order": 37,
       "role": "list_item",
@@ -5595,7 +5633,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/325",
       "page": 11,
       "order": 38,
       "role": "list_item",
@@ -5614,7 +5652,7 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/326",
       "page": 11,
       "order": 39,
       "role": "list_item",
@@ -5633,7 +5671,7 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/327",
       "page": 11,
       "order": 40,
       "role": "list_item",
@@ -5652,7 +5690,7 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/328",
       "page": 11,
       "order": 41,
       "role": "list_item",
@@ -5671,7 +5709,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/329",
       "page": 11,
       "order": 42,
       "role": "list_item",
@@ -5690,7 +5728,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/330",
       "page": 11,
       "order": 43,
       "role": "list_item",
@@ -5709,7 +5747,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/331",
       "page": 11,
       "order": 44,
       "role": "list_item",
@@ -5728,9 +5766,28 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/332",
       "page": 11,
       "order": 45,
+      "role": "list_item",
+      "text": "The enumerative geometry of projective algebra riaces and the complexity of aspect graphs. Int. J. Comput. V",
+      "bbox": {
+        "x0": 477.94,
+        "y0": 988.35,
+        "x1": 797.12,
+        "y1": 1011.52,
+        "width": 319.18,
+        "height": 23.17
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "The enumerative geometry of projective algebra riaces and the complexity of aspect graphs. Int. J. Comput. V"
+      }
+    },
+    {
+      "id": "#/texts/333",
+      "page": 11,
+      "order": 46,
       "role": "list_item",
       "text": "S. Petitjean, Algebraic geometry and computer vision: polynomial systems, real and complex roots, J. Math. Imaging Vis. 10 (1999) 132.",
       "bbox": {
@@ -5747,26 +5804,26 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/336",
       "page": 12,
       "order": 1,
       "role": "list_item",
-      "text": "J. Ponce, J. Kriegman, Computing exact aspect graph of curved objects: parametric patches, in: Proc. AAAI Conf., July 1990, Boston, 1990, pp. 1074-1079.",
+      "text": "J. Ponce, J. Kriegman, Computing exact aspect graph of curved objects: parametric patches, in: Proc. AAAI Conf., July 1990, Boston,",
       "bbox": {
         "x0": 43.0,
         "y0": 97.64,
         "x1": 406.83,
-        "y1": 137.41,
+        "y1": 124.3,
         "width": 363.83,
-        "height": 39.77
+        "height": 26.66
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[42] J. Ponce, J. Kriegman, Computing exact aspect graph of curved objects: parametric patches, in: Proc. AAAI Conf., July 1990, Boston, 1990, pp. 1074-1079."
+        "docling_orig": "[42] J. Ponce, J. Kriegman, Computing exact aspect graph of curved objects: parametric patches, in: Proc. AAAI Conf., July 1990, Boston,"
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/337",
       "page": 12,
       "order": 2,
       "role": "list_item",
@@ -5785,11 +5842,11 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/338",
       "page": 12,
       "order": 3,
       "role": "list_item",
-      "text": "mout. Geom. (1998) 205-229.",
+      "text": "mout. Geom. l (1998) 205-229.",
       "bbox": {
         "x0": 64.5,
         "y0": 185.28,
@@ -5800,32 +5857,13 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "mout. Geom. (1998) 205-229."
+        "docling_orig": "mout. Geom. l (1998) 205-229."
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/339",
       "page": 12,
       "order": 4,
-      "role": "list_item",
-      "text": "1. Rege moth complesty acd, Colos Trans Roy. e Loid of",
-      "bbox": {
-        "x0": 41.34,
-        "y0": 208.6,
-        "x1": 410.14,
-        "y1": 240.05,
-        "width": 368.8,
-        "height": 31.45
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "(45) 1. Rege moth complesty acd, Colos Trans Roy. e Loid of"
-      }
-    },
-    {
-      "id": "#/texts/337",
-      "page": 12,
-      "order": 5,
       "role": "list_item",
       "text": "S. Seitz, C. Dyer, Photorealistic scene reconstruction by voxel coloring, Int. J. Comp. Vis. 35 (1999) 151-173.",
       "bbox": {
@@ -5842,9 +5880,9 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/340",
       "page": 12,
-      "order": 6,
+      "order": 5,
       "role": "list_item",
       "text": "J.-K. Seong, G. Elber, J.K. Jhonston, M.-S. Kim, The convex hull of freeform surfaces, Computing 72 (2004) 171-183.",
       "bbox": {
@@ -5861,9 +5899,9 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/341",
       "page": 12,
-      "order": 7,
+      "order": 6,
       "role": "list_item",
       "text": "I. Shimshoni, J. Ponce, Finite resolution aspect graphs of polyhedral objects, IEEE Trans. Pattern Anal. Machine Intell. 19 (4) (1997) 315-",
       "bbox": {
@@ -5880,28 +5918,28 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/342",
       "page": 12,
-      "order": 8,
+      "order": 7,
       "role": "list_item",
-      "text": "(49 E Shine a Ci an pera meno quadre Compact for",
+      "text": "amputine a cell in an arrangemento quadrics, Con pup. Geom.",
       "bbox": {
-        "x0": 428.33,
-        "y0": 138.96,
-        "x1": 797.12,
-        "y1": 168.95,
-        "width": 368.79,
-        "height": 29.99
+        "x0": 463.06,
+        "y0": 142.29,
+        "x1": 782.23,
+        "y1": 165.62,
+        "width": 319.17,
+        "height": 23.33
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "(49 E Shine a Ci an pera meno quadre Compact for"
+        "docling_orig": "amputine a cell in an arrangemento quadrics, Con pup. Geom."
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/343",
       "page": 12,
-      "order": 9,
+      "order": 8,
       "role": "list_item",
       "text": "S. Sullivan, J. Ponce, Automatic construction and estimation from photographs using triangular splines, IEEE Trans.",
       "bbox": {
@@ -5918,9 +5956,9 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/344",
       "page": 12,
-      "order": 10,
+      "order": 9,
       "role": "list_item",
       "text": "13 (3) (2004) 381-389.",
       "bbox": {
@@ -5937,9 +5975,9 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/345",
       "page": 12,
-      "order": 11,
+      "order": 10,
       "role": "list_item",
       "text": "Y. Zheng, Acquiring 3D models from sequences of contours, IEEE Trans. PAMI 16 (2) (1994) 163-178.",
       "bbox": {

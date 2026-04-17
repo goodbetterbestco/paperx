@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
   "page_count": 16,
   "page_sizes_pt": [
     {
@@ -86,364 +86,923 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/0",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "Recognizing Weakly Simple Polygons ∗",
-      "bbox": {
-        "x0": 90.71,
-        "y0": 69.52,
-        "x1": 389.48,
-        "y1": 92.58,
-        "width": 298.77,
-        "height": 23.06
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Recognizing Weakly Simple Polygons ∗"
-      }
-    },
-    {
-      "id": "#/texts/1",
+      "id": "mathpix-p001-b0002",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
-      "text": "Hugo A. Akitaya 1 , Greg Aloupis 1 , Jeff Erickson 2 , and Csaba D. Tóth 3",
+      "role": "paragraph",
+      "text": "Recognizing Weakly Simple Polygons*",
       "bbox": {
-        "x0": 90.71,
-        "y0": 108.21,
-        "x1": 406.62,
-        "y1": 134.41,
-        "width": 315.91,
-        "height": 26.2
+        "x0": 90.72,
+        "y0": 74.86,
+        "x1": 390.23,
+        "y1": 94.15,
+        "width": 299.51,
+        "height": 19.29
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Hugo A. Akitaya 1 , Greg Aloupis 1 , Jeff Erickson 2 , and Csaba D. Tóth 3"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "99e2bfe92ec84e388af85a66b4f4bc43",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/2",
-      "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "1 Department of Computer Science, Tufts University, Medford, MA, USA",
-      "bbox": {
-        "x0": 90.71,
-        "y0": 150.38,
-        "x1": 456.01,
-        "y1": 158.83,
-        "width": 365.3,
-        "height": 8.45
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "1 Department of Computer Science, Tufts University, Medford, MA, USA"
-      }
-    },
-    {
-      "id": "#/texts/3",
+      "id": "mathpix-p001-b0004",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
-      "text": "2 Department of Computer Science, University of Illinois, Urbana-Champaign, IL, USA",
+      "role": "paragraph",
+      "text": "Hugo A. Akitaya \\({ }^{1}\\), Greg Aloupis \\({ }^{1}\\), Jeff Erickson \\({ }^{2}\\), and",
       "bbox": {
-        "x0": 90.71,
-        "y0": 162.34,
-        "x1": 477.88,
-        "y1": 182.75,
-        "width": 387.17,
-        "height": 20.41
+        "x0": 89.56,
+        "y0": 107.97,
+        "x1": 407.22,
+        "y1": 121.79,
+        "width": 317.65,
+        "height": 13.82
       },
       "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "2 Department of Computer Science, University of Illinois, Urbana-Champaign, IL, USA"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.93212890625,
+        "confidence_rate": 0.9992445418202475,
+        "parent_id": "98744b5ff4a14b45b50d1485244b9c04",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/4",
+      "id": "mathpix-p001-b0005",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
-      "text": "3 Department of Mathematics, California State University Northridge, Los Angeles, CA, USA",
+      "role": "paragraph",
+      "text": "Csaba D. Tóth \\({ }^{3}\\)",
       "bbox": {
-        "x0": 90.71,
-        "y0": 186.26,
-        "x1": 460.1,
-        "y1": 206.67,
-        "width": 369.39,
-        "height": 20.41
+        "x0": 90.14,
+        "y0": 120.93,
+        "x1": 182.87,
+        "y1": 133.6,
+        "width": 92.73,
+        "height": 12.67
       },
       "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "3 Department of Mathematics, California State University Northridge, Los Angeles, CA, USA"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.98828125,
+        "confidence_rate": 0.9995635043381828,
+        "parent_id": "98744b5ff4a14b45b50d1485244b9c04",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/5",
+      "id": "mathpix-p001-b0006",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
-      "text": "Abstract",
+      "role": "paragraph",
+      "text": "1 Department of Computer Science, Tufts University, Medford, MA, USA",
       "bbox": {
-        "x0": 114.8,
-        "y0": 234.23,
-        "x1": 155.71,
-        "y1": 243.52,
-        "width": 40.91,
-        "height": 9.29
+        "x0": 89.56,
+        "y0": 148.57,
+        "x1": 457.33,
+        "y1": 159.8,
+        "width": 367.76,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Abstract"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/6",
+      "id": "mathpix-p001-b0007",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
-      "text": "We present an O ( n log n )-time algorithm that determines whether a given planar n -gon is weakly simple. This improves upon an O ( n 2 log n )-time algorithm by Chang, Erickson, and Xu [4]. Weakly simple polygons are required as input for several geometric algorithms. As such, how to recognize simple or weakly simple polygons is a fundamental question.",
+      "role": "paragraph",
+      "text": "2 Department of Computer Science, University of Illinois, Urbana-Champaign,",
       "bbox": {
-        "x0": 90.23,
-        "y0": 250.31,
-        "x1": 489.4,
-        "y1": 296.03,
-        "width": 399.17,
-        "height": 45.72
+        "x0": 89.56,
+        "y0": 160.37,
+        "x1": 478.35,
+        "y1": 171.6,
+        "width": 388.79,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "We present an O ( n log n )-time algorithm that determines whether a given planar n -gon is weakly simple. This improves upon an O ( n 2 log n )-time algorithm by Chang, Erickson, and Xu [4]. Weakly simple polygons are required as input for several geometric algorithms. As such, how to recognize simple or weakly simple polygons is a fundamental question."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/7",
+      "id": "mathpix-p001-b0008",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
-      "text": "1998 ACM Subject Classification I.3.5 Computational Geometry and Object Modeling",
+      "role": "paragraph",
+      "text": "IL, USA",
       "bbox": {
-        "x0": 90.45,
-        "y0": 312.54,
-        "x1": 456.49,
-        "y1": 320.95,
-        "width": 366.04,
-        "height": 8.41
+        "x0": 109.15,
+        "y0": 172.47,
+        "x1": 152.06,
+        "y1": 183.41,
+        "width": 42.91,
+        "height": 10.94
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "1998 ACM Subject Classification I.3.5 Computational Geometry and Object Modeling"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/8",
+      "id": "mathpix-p001-b0009",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
-      "text": "Keywords and phrases weakly simple polygon, crossing",
+      "role": "paragraph",
+      "text": "3 Department of Mathematics, California State University Northridge, Los",
       "bbox": {
-        "x0": 90.71,
-        "y0": 337.46,
-        "x1": 323.57,
-        "y1": 345.86,
-        "width": 232.86,
-        "height": 8.4
+        "x0": 89.56,
+        "y0": 184.85,
+        "x1": 461.07,
+        "y1": 195.21,
+        "width": 371.51,
+        "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Keywords and phrases weakly simple polygon, crossing"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0010",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
-      "text": "Digital Object Identifier 10.4230 LIPIcs.SoCG.2016.8",
+      "role": "paragraph",
+      "text": "Angeles, CA, USA",
       "bbox": {
-        "x0": 90.71,
-        "y0": 362.87,
-        "x1": 317.88,
-        "y1": 371.28,
-        "width": 227.17,
-        "height": 8.41
+        "x0": 109.15,
+        "y0": 197.23,
+        "x1": 200.73,
+        "y1": 207.31,
+        "width": 91.58,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Digital Object Identifier 10.4230 LIPIcs.SoCG.2016.8"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
-      "page": 1,
-      "order": 11,
-      "role": "front_matter",
-      "text": "1 Introduction",
-      "bbox": {
-        "x0": 95.67,
-        "y0": 390.15,
-        "x1": 187.68,
-        "y1": 400.77,
-        "width": 92.01,
-        "height": 10.62
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "1 Introduction"
-      }
-    },
-    {
-      "id": "#/texts/11",
+      "id": "mathpix-p001-b0012",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
-      "text": "A polygon is simple if it has distinct vertices and interior-disjoint edges that do not pass through vertices. Geometric algorithms are often designed for simple polygons, but many also work for degenerate polygons that do not 'self-cross.' A polygon with at least three vertices is weakly simple if for every ε > 0, the vertices can be perturbed by at most ε to obtain a simple polygon. Such polygons arise naturally in numerous applications, e.g., for modeling planar networks or as the geodesic hull of points within a simple polygon (Fig. 1).",
+      "role": "paragraph",
+      "text": "Abstract",
       "bbox": {
-        "x0": 90.33,
-        "y0": 414.42,
-        "x1": 489.43,
-        "y1": 487.97,
-        "width": 399.1,
-        "height": 73.55
+        "x0": 113.76,
+        "y0": 232.93,
+        "x1": 157.24,
+        "y1": 242.72,
+        "width": 43.49,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "A polygon is simple if it has distinct vertices and interior-disjoint edges that do not pass through vertices. Geometric algorithms are often designed for simple polygons, but many also work for degenerate polygons that do not 'self-cross.' A polygon with at least three vertices is weakly simple if for every ε > 0, the vertices can be perturbed by at most ε to obtain a simple polygon. Such polygons arise naturally in numerous applications, e.g., for modeling planar networks or as the geodesic hull of points within a simple polygon (Fig. 1)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "a70d0d09b26248dda3ef3d3938d51f07",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/12",
+      "id": "mathpix-p001-b0013",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
-      "text": "Several definitions have been proposed for weakly simple polygons, each formalizing the intuition that a weakly simple polygon does not cross itself. Some of these definitions were unnecessarily restrictive or incorrect; see [4] for a detailed discussion. Ribó Mor [7] proved that a weakly simple polygon with at least three vertices can be perturbed into a simple polygon continuously while preserving the lengths of its edges, and maintaining that no two edges properly cross. Chang et al. [4] gave an equivalent definition for simple polygons in terms of the Fréchet distance (see Section 2), in which a polygon is perturbed into a simple closed curve. The latter definition is particularly useful for recognizing weakly simple polygons. Apart from perturbing vertices, it allows transforming edges into polylines (by subdividing the edges with Steiner points which may be perturbed). The perturbation of a vertex incurs only local changes, and need not affect the neighborhood of adjacent vertices.",
+      "role": "paragraph",
+      "text": "We present an \\(O(n \\log n)\\)-time algorithm that determines whether a given planar \\(n\\)-gon is weakly",
       "bbox": {
-        "x0": 90.45,
-        "y0": 492.14,
-        "x1": 488.64,
-        "y1": 630.45,
-        "width": 398.19,
-        "height": 138.31
+        "x0": 89.56,
+        "y0": 248.48,
+        "x1": 488.72,
+        "y1": 259.71,
+        "width": 399.15,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Several definitions have been proposed for weakly simple polygons, each formalizing the intuition that a weakly simple polygon does not cross itself. Some of these definitions were unnecessarily restrictive or incorrect; see [4] for a detailed discussion. Ribó Mor [7] proved that a weakly simple polygon with at least three vertices can be perturbed into a simple polygon continuously while preserving the lengths of its edges, and maintaining that no two edges properly cross. Chang et al. [4] gave an equivalent definition for simple polygons in terms of the Fréchet distance (see Section 2), in which a polygon is perturbed into a simple closed curve. The latter definition is particularly useful for recognizing weakly simple polygons. Apart from perturbing vertices, it allows transforming edges into polylines (by subdividing the edges with Steiner points which may be perturbed). The perturbation of a vertex incurs only local changes, and need not affect the neighborhood of adjacent vertices."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999909555872323,
+        "parent_id": "a70d0d09b26248dda3ef3d3938d51f07",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/13",
+      "id": "mathpix-p001-b0014",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
-      "text": "It is easy to decide whether an n -gon is simple in O ( n log n ) time by a sweepline algorithm [8]. Chazelle's triangulation algorithm recognizes simple polygons in O ( n ) time, because it only produces a triangulation if the input is simple [5]. Recognizing weakly simple polygons is more subtle. Cortese et al. [6] achieved this in O ( n 3 )-time. Chang et al. [4] improved this to O ( n 2 log n ) in general; and to O ( n log n ) for several special cases. They",
+      "role": "paragraph",
+      "text": "simple. This improves upon an \\(O\\left(n^{2} \\log n\\right)\\)-time algorithm by Chang, Erickson, and Xu [4].",
       "bbox": {
-        "x0": 90.71,
-        "y0": 634.61,
-        "x1": 489.22,
-        "y1": 695.21,
-        "width": 398.51,
-        "height": 60.6
+        "x0": 89.56,
+        "y0": 260.57,
+        "x1": 490.16,
+        "y1": 272.95,
+        "width": 400.59,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "It is easy to decide whether an n -gon is simple in O ( n log n ) time by a sweepline algorithm [8]. Chazelle's triangulation algorithm recognizes simple polygons in O ( n ) time, because it only produces a triangulation if the input is simple [5]. Recognizing weakly simple polygons is more subtle. Cortese et al. [6] achieved this in O ( n 3 )-time. Chang et al. [4] improved this to O ( n 2 log n ) in general; and to O ( n log n ) for several special cases. They"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.5053433302091435,
+        "confidence_rate": 0.9938700614340223,
+        "parent_id": "a70d0d09b26248dda3ef3d3938d51f07",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/14",
+      "id": "mathpix-p001-b0015",
       "page": 1,
       "order": 15,
-      "role": "footnote",
-      "text": "∗ This work was partially supported by the NSF grants CCF-1408763, CCF-1422311, and CCF-1423615.",
+      "role": "paragraph",
+      "text": "Weakly simple polygons are required as input for several geometric algorithms. As such, how to",
       "bbox": {
-        "x0": 89.98,
-        "y0": 720.78,
-        "x1": 487.56,
-        "y1": 729.58,
-        "width": 397.58,
-        "height": 8.8
+        "x0": 89.56,
+        "y0": 273.53,
+        "x1": 488.72,
+        "y1": 284.76,
+        "width": 399.15,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "footnote",
-        "docling_orig": "∗ This work was partially supported by the NSF grants CCF-1408763, CCF-1422311, and CCF-1423615."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "a70d0d09b26248dda3ef3d3938d51f07",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/15",
+      "id": "mathpix-p001-b0016",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
-      "text": "© Hugo A. Akitaya, Greg Aloupis, Jeff Erickson, and Csaba D. Tóth;",
+      "role": "paragraph",
+      "text": "recognize simple or weakly simple polygons is a fundamental question.",
       "bbox": {
-        "x0": 134.27,
-        "y0": 739.61,
-        "x1": 375.25,
-        "y1": 745.76,
-        "width": 240.98,
-        "height": 6.15
+        "x0": 89.56,
+        "y0": 286.2,
+        "x1": 382.16,
+        "y1": 296.56,
+        "width": 292.6,
+        "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "© Hugo A. Akitaya, Greg Aloupis, Jeff Erickson, and Csaba D. Tóth;"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99658203125,
+        "confidence_rate": 0.9999537331872399,
+        "parent_id": "a70d0d09b26248dda3ef3d3938d51f07",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/16",
+      "id": "mathpix-p001-b0017",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
-      "text": "licensed under Creative Commons License CC-BY",
+      "role": "paragraph",
+      "text": "1998 ACM Subject Classification I.3.5 Computational Geometry and Object Modeling",
       "bbox": {
-        "x0": 134.27,
-        "y0": 747.58,
-        "x1": 308.99,
-        "y1": 753.73,
-        "width": 174.72,
-        "height": 6.15
+        "x0": 90.14,
+        "y0": 311.25,
+        "x1": 458.48,
+        "y1": 321.61,
+        "width": 368.34,
+        "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "licensed under Creative Commons License CC-BY"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999883714843234,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/17",
+      "id": "mathpix-p001-b0018",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
-      "text": "Editors: Sándor Fekete and Anna Lubiw; Article No. 8; pp. 8:1-8:16",
+      "role": "paragraph",
+      "text": "Keywords and phrases weakly simple polygon, crossing",
       "bbox": {
-        "x0": 90.71,
-        "y0": 763.52,
-        "x1": 326.55,
-        "y1": 769.67,
-        "width": 235.84,
-        "height": 6.15
+        "x0": 90.72,
+        "y0": 336.01,
+        "x1": 324.28,
+        "y1": 346.66,
+        "width": 233.56,
+        "height": 10.65
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Editors: Sándor Fekete and Anna Lubiw; Article No. 8; pp. 8:1-8:16"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999828632872524,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/18",
+      "id": "mathpix-p001-b0019",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
-      "text": "Leibniz International Proceedings in Informatics",
+      "role": "paragraph",
+      "text": "Digital Object Identifier 10.4230/LIPIcs.SoCG.2016.8",
       "bbox": {
-        "x0": 158.44,
-        "y0": 771.49,
-        "x1": 327.21,
-        "y1": 777.64,
-        "width": 168.77,
-        "height": 6.15
+        "x0": 90.72,
+        "y0": 361.06,
+        "x1": 319.09,
+        "y1": 372.29,
+        "width": 228.38,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Leibniz International Proceedings in Informatics"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9917268283161125,
+        "confidence_rate": 0.9998542635275885,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0021",
+      "page": 1,
+      "order": 21,
+      "role": "paragraph",
+      "text": "1 Introduction",
+      "bbox": {
+        "x0": 94.75,
+        "y0": 388.12,
+        "x1": 188.92,
+        "y1": 400.5,
+        "width": 94.17,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "928d9647be0a4cd7b6893b17a61450b5",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0022",
+      "page": 1,
+      "order": 22,
+      "role": "paragraph",
+      "text": "A polygon is simple if it has distinct vertices and interior-disjoint edges that do not pass",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 413.17,
+        "x1": 488.72,
+        "y1": 424.11,
+        "width": 399.15,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999949649559944,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "through vertices. Geometric algorithms are often designed for simple polygons, but many",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 425.55,
+        "x1": 488.72,
+        "y1": 437.36,
+        "width": 399.15,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0024",
+      "page": 1,
+      "order": 24,
+      "role": "paragraph",
+      "text": "also work for degenerate polygons that do not \"self-cross.\" A polygon with at least three",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 437.93,
+        "x1": 488.72,
+        "y1": 450.6,
+        "width": 399.15,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0025",
+      "page": 1,
+      "order": 25,
+      "role": "paragraph",
+      "text": "vertices is weakly simple if for every \\(\\varepsilon>0\\), the vertices can be perturbed by at most \\(\\varepsilon\\) to",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 451.18,
+        "x1": 488.72,
+        "y1": 463.56,
+        "width": 399.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9873106479644775,
+        "confidence_rate": 0.99987356690928,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0026",
+      "page": 1,
+      "order": 26,
+      "role": "paragraph",
+      "text": "obtain a simple polygon. Such polygons arise naturally in numerous applications, e.g., for",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 464.42,
+        "x1": 488.72,
+        "y1": 476.23,
+        "width": 399.15,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0027",
+      "page": 1,
+      "order": 27,
+      "role": "paragraph",
+      "text": "modeling planar networks or as the geodesic hull of points within a simple polygon (Fig. 1).",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 477.38,
+        "x1": 490.16,
+        "y1": 488.61,
+        "width": 400.59,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.9999899274770393,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "Several definitions have been proposed for weakly simple polygons, each formalizing the",
+      "bbox": {
+        "x0": 103.96,
+        "y0": 490.62,
+        "x1": 488.72,
+        "y1": 501.85,
+        "width": 384.76,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "intuition that a weakly simple polygon does not cross itself. Some of these definitions were",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 503.87,
+        "x1": 488.72,
+        "y1": 515.1,
+        "width": 399.15,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "unnecessarily restrictive or incorrect; see [4] for a detailed discussion. Ribó Mor [7] proved",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 515.67,
+        "x1": 488.72,
+        "y1": 528.05,
+        "width": 399.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "that a weakly simple polygon with at least three vertices can be perturbed into a simple",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 528.92,
+        "x1": 488.72,
+        "y1": 540.72,
+        "width": 399.15,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0032",
+      "page": 1,
+      "order": 32,
+      "role": "paragraph",
+      "text": "polygon continuously while preserving the lengths of its edges, and maintaining that no",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 541.87,
+        "x1": 488.72,
+        "y1": 553.68,
+        "width": 399.15,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0033",
+      "page": 1,
+      "order": 33,
+      "role": "paragraph",
+      "text": "two edges properly cross. Chang et al. [4] gave an equivalent definition for simple polygons",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 555.12,
+        "x1": 488.72,
+        "y1": 566.35,
+        "width": 399.15,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0034",
+      "page": 1,
+      "order": 34,
+      "role": "paragraph",
+      "text": "in terms of the Fréchet distance (see Section 2), in which a polygon is perturbed into a",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 568.36,
+        "x1": 488.72,
+        "y1": 579.59,
+        "width": 399.15,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0035",
+      "page": 1,
+      "order": 35,
+      "role": "paragraph",
+      "text": "simple closed curve. The latter definition is particularly useful for recognizing weakly simple",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 581.32,
+        "x1": 488.72,
+        "y1": 592.55,
+        "width": 399.15,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0036",
+      "page": 1,
+      "order": 36,
+      "role": "paragraph",
+      "text": "polygons. Apart from perturbing vertices, it allows transforming edges into polylines (by",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 593.99,
+        "x1": 488.72,
+        "y1": 605.79,
+        "width": 399.15,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0037",
+      "page": 1,
+      "order": 37,
+      "role": "paragraph",
+      "text": "subdividing the edges with Steiner points which may be perturbed). The perturbation of a",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 606.37,
+        "x1": 488.72,
+        "y1": 619.04,
+        "width": 399.15,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0038",
+      "page": 1,
+      "order": 38,
+      "role": "paragraph",
+      "text": "vertex incurs only local changes, and need not affect the neighborhood of adjacent vertices.",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 619.61,
+        "x1": 488.72,
+        "y1": 631.99,
+        "width": 399.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0039",
+      "page": 1,
+      "order": 39,
+      "role": "paragraph",
+      "text": "It is easy to decide whether an \\(n\\)-gon is simple in \\(O(n \\log n)\\) time by a sweepline al-",
+      "bbox": {
+        "x0": 103.96,
+        "y0": 632.86,
+        "x1": 490.16,
+        "y1": 644.66,
+        "width": 386.2,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9965863202240256,
+        "confidence_rate": 0.9999651075508482,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0040",
+      "page": 1,
+      "order": 40,
+      "role": "paragraph",
+      "text": "gorithm [8]. Chazelle's triangulation algorithm recognizes simple polygons in \\(O(n)\\) time,",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 645.81,
+        "x1": 490.16,
+        "y1": 658.48,
+        "width": 400.59,
+        "height": 12.67
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0041",
+      "page": 1,
+      "order": 41,
+      "role": "paragraph",
+      "text": "because it only produces a triangulation if the input is simple [5]. Recognizing weakly simple",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 659.06,
+        "x1": 488.72,
+        "y1": 670.29,
+        "width": 399.15,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0042",
+      "page": 1,
+      "order": 42,
+      "role": "paragraph",
+      "text": "polygons is more subtle. Cortese et al. [6] achieved this in \\(O\\left(n^{3}\\right)\\)-time. Chang et al. [4]",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 670.86,
+        "x1": 488.72,
+        "y1": 683.24,
+        "width": 399.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9975602623308077,
+        "confidence_rate": 0.9999767362831882,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0043",
+      "page": 1,
+      "order": 43,
+      "role": "paragraph",
+      "text": "improved this to \\(O\\left(n^{2} \\log n\\right)\\) in general; and to \\(O(n \\log n)\\) for several special cases. They",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 684.11,
+        "x1": 488.72,
+        "y1": 696.49,
+        "width": 399.15,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0045",
+      "page": 1,
+      "order": 45,
+      "role": "paragraph",
+      "text": "* This work was partially supported by the NSF grants CCF-1408763, CCF-1422311, and CCF-1423615.",
+      "bbox": {
+        "x0": 89.56,
+        "y0": 719.52,
+        "x1": 487.57,
+        "y1": 731.04,
+        "width": 398.0,
+        "height": 11.52
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "0fd763896d8b45629f4f83f4e667f40e",
+        "children_ids": null
       }
     },
     {
@@ -8730,5 +9289,23 @@
         "docling_orig": "8 Michael Ian Shamos and Dan Hoey. Geometric intersection problems. In Proc. 17th IEEE Sympos. Foundations of Computer Science , pages 208-215, 1976."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling"
+  }
 }

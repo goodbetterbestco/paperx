@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1994_visibility_maps_and_spherical_algorithms/1994_visibility_maps_and_spherical_algorithms.pdf",
   "page_count": 11,
   "page_sizes_pt": [
     {
@@ -2024,12 +2024,12 @@
       "role": "paragraph",
       "text": "Sphere",
       "bbox": {
-        "x0": 361.77,
-        "y0": 536.32,
-        "x1": 400.53,
-        "y1": 550.43,
-        "width": 38.76,
-        "height": 14.11
+        "x0": 361.79,
+        "y0": 536.39,
+        "x1": 400.51,
+        "y1": 550.36,
+        "width": 38.72,
+        "height": 13.97
       },
       "meta": {
         "docling_label": "text",
@@ -3618,18 +3618,18 @@
       "page": 10,
       "order": 11,
       "role": "paragraph",
-      "text": "13 2.",
+      "text": "3 г.",
       "bbox": {
-        "x0": 333.05,
+        "x0": 334.26,
         "y0": 235.88,
         "x1": 363.11,
         "y1": 245.67,
-        "width": 30.06,
+        "width": 28.85,
         "height": 9.79
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "13 2."
+        "docling_orig": "3 г."
       }
     },
     {
@@ -3656,7 +3656,7 @@
       "page": 10,
       "order": 13,
       "role": "paragraph",
-      "text": "x6",
+      "text": "х6",
       "bbox": {
         "x0": 503.79,
         "y0": 286.43,
@@ -3667,7 +3667,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "x6"
+        "docling_orig": "х6"
       }
     },
     {
@@ -4411,5 +4411,18 @@
         "docling_orig": "Tony C Woo is a professor of industrial and operations engineering and a professor of mechanical engineering and applied mechanics. His research interest is in the development of efficient data structures and algorithms for de.zion and manufacturing. He has been a Fulbright Scholar at the NTH, Trondheim, Norway, and has served at the US National Science Foundation, Washington DC, USA."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling"
+  }
 }

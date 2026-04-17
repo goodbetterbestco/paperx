@@ -4,7 +4,7 @@
     {
       "id": "mathpix-eq-p006-0023",
       "kind": "display",
-      "display_latex": "a i+b j+c k=\\left|\\begin{array}{ccc}\ni & j & k  \\tag{1}\\\\\n\\left(x_{1}-x_{0}\\right) & \\left(y_{1}-y_{0}\\right) & \\left(z_{1}-z_{0}\\right) \\\\\n\\left(x_{2}-x_{1}\\right) & \\left(y_{2}-y_{1}\\right) & \\left(z_{2}-z_{1}\\right)\n\\end{array}\\right| .",
+      "display_latex": "a i+b j+c k=\\left|\\begin{array}{ccc}\ni & j & k \\\\\n\\left(x_{1}-x_{0}\\right) & \\left(y_{1}-y_{0}\\right) & \\left(z_{1}-z_{0}\\right) \\\\\n\\left(x_{2}-x_{1}\\right) & \\left(y_{2}-y_{1}\\right) & \\left(z_{2}-z_{1}\\right)\n\\end{array}\\right| .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 183.5,
-            "y0": 523.0,
-            "x1": 579.5,
-            "y1": 609.5,
-            "width": 396.0,
-            "height": 86.5
+            "x0": 185.13,
+            "y0": 525.01,
+            "x1": 577.28,
+            "y1": 608.52,
+            "width": 392.15,
+            "height": 83.52
           },
           "engine": "mathpix"
         }
@@ -35,7 +35,7 @@
     {
       "id": "mathpix-eq-p006-0030",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\na\\left(x-x_{0}\\right)+b\\left(y-y_{0}\\right)+c\\left(z-z_{0}\\right)=0 \\tag{2}\n\\end{equation*}",
+      "display_latex": "a\\left(x-x_{0}\\right)+b\\left(y-y_{0}\\right)+c\\left(z-z_{0}\\right)=0,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,12 +46,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 224.0,
-            "y0": 738.5,
-            "x1": 538.5,
-            "y1": 766.0,
-            "width": 314.5,
-            "height": 27.5
+            "x0": 226.02,
+            "y0": 738.69,
+            "x1": 537.26,
+            "y1": 765.19,
+            "width": 311.24,
+            "height": 26.5
           },
           "engine": "mathpix"
         }
@@ -66,7 +66,7 @@
     {
       "id": "mathpix-eq-p006-0034",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\na x+b y+c z+d=0 \\tag{3}\n\\end{equation*}",
+      "display_latex": "a x+b y+c z+d=0,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 295.5,
-            "y0": 835.5,
-            "x1": 468.0,
-            "y1": 860.5,
-            "width": 172.5,
-            "height": 25.0
+            "x0": 296.27,
+            "y0": 836.32,
+            "x1": 467.0,
+            "y1": 859.65,
+            "width": 170.74,
+            "height": 23.33
           },
           "engine": "mathpix"
         }
@@ -97,7 +97,7 @@
     {
       "id": "mathpix-eq-p006-0037",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nd=-a x_{0}-b y_{0}-c z_{0} \\tag{4}\n\\end{equation*}",
+      "display_latex": "d=-a x_{0}-b y_{0}-c z_{0} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -108,12 +108,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 293.5,
-            "y0": 911.0,
-            "x1": 470.5,
-            "y1": 938.0,
-            "width": 177.0,
-            "height": 27.0
+            "x0": 293.68,
+            "y0": 911.2,
+            "x1": 470.75,
+            "y1": 937.12,
+            "width": 177.07,
+            "height": 25.92
           },
           "engine": "mathpix"
         }
@@ -126,9 +126,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p007-0167",
+      "id": "mathpix-eq-p007-0204",
       "kind": "display",
-      "display_latex": "\\begin{align*}\n& x=a t+d \\\\\n& y=b t+e, \\text { and }  \\tag{5}\\\\\n& z=c t+f\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\n& x=a t+d \\\\\n& y=b t+e, \\text { and } \\\\\n& z=c t+f\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 320.5,
-            "y0": 838.0,
-            "x1": 444.0,
-            "y1": 915.5,
-            "width": 123.5,
-            "height": 77.5
+            "x0": 320.17,
+            "y0": 840.07,
+            "x1": 443.97,
+            "y1": 914.66,
+            "width": 123.81,
+            "height": 74.59
           },
           "engine": "mathpix"
         }
@@ -159,7 +159,7 @@
     {
       "id": "mathpix-eq-p008-0006",
       "kind": "display",
-      "display_latex": "\\begin{align*}\nL_{1} \\rightarrow \\quad x & =a_{1} t+d_{1} \\\\\ny & =b_{1} t+e_{1}  \\tag{6}\\\\\nz & =c_{1} t+f_{1}\n\\end{aligned} \\quad \\begin{aligned}\nL_{2} \\rightarrow \\quad x & =a_{2} s+d_{2} \\\\\ny & =b_{2} s+e_{2} \\\\\nz & =c_{2} s+f_{2}\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\nL_{1} \\rightarrow \\quad x & =a_{1} t+d_{1} \\\\\ny & =b_{1} t+e_{1} \\\\\nz & =c_{1} t+f_{1}\n\\end{aligned} \\quad \\begin{aligned}\nL_{2} \\rightarrow \\quad x & =a_{2} s+d_{2} \\\\\ny & =b_{2} s+e_{2} \\\\\nz & =c_{2} s+f_{2}\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +170,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 204.0,
-            "y0": 181.5,
-            "x1": 558.0,
-            "y1": 265.0,
-            "width": 354.0,
-            "height": 83.5
+            "x0": 206.44,
+            "y0": 183.45,
+            "x1": 555.97,
+            "y1": 262.65,
+            "width": 349.53,
+            "height": 79.2
           },
           "engine": "mathpix"
         }
@@ -190,7 +190,7 @@
     {
       "id": "mathpix-eq-p008-0009",
       "kind": "display",
-      "display_latex": "\\begin{align*}\na_{1} t+d_{1} & =a_{2} s+d_{2} \\\\\nb_{1} t+e_{1} & =b_{2} s+e_{2}  \\tag{7}\\\\\nc_{1} t+f_{1} & =c_{2} s+f_{2}\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\n& a_{1} t+d_{1}=a_{2} s+d_{2} \\\\\n& b_{1} t+e_{1}=b_{2} s+e_{2} \\\\\n& c_{1} t+f_{1}=c_{2} s+f_{2}\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -201,12 +201,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 301.0,
-            "y0": 311.5,
-            "x1": 460.0,
-            "y1": 396.0,
-            "width": 159.0,
-            "height": 84.5
+            "x0": 304.33,
+            "y0": 313.33,
+            "x1": 457.21,
+            "y1": 394.26,
+            "width": 152.88,
+            "height": 80.93
           },
           "engine": "mathpix"
         }
@@ -221,7 +221,7 @@
     {
       "id": "mathpix-eq-p008-0014",
       "kind": "display",
-      "display_latex": "\\left|\\begin{array}{cc:c}\na_{1} & -a_{2} & \\left(d_{2}-d_{1}\\right)  \\tag{8}\\\\\nb_{1} & -b_{2} & \\left(e_{2}-e_{1}\\right) \\\\\nc_{1} & -c_{2} & \\left(f_{2}-f_{1}\\right)\n\\end{array}\\right|",
+      "display_latex": "\\left|\\begin{array}{ll:l}\na_{1} & -a_{2} & \\left(d_{2}-d_{1}\\right) \\\\\nb_{1} & -b_{2} & \\left(e_{2}-e_{1}\\right) \\\\\nc_{1} & -c_{2} & \\left(f_{2}-f_{1}\\right)\n\\end{array}\\right| .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -232,12 +232,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 284.5,
-            "y0": 482.5,
-            "x1": 478.5,
-            "y1": 574.0,
-            "width": 194.0,
-            "height": 91.5
+            "x0": 288.21,
+            "y0": 486.7,
+            "x1": 474.2,
+            "y1": 570.51,
+            "width": 186.0,
+            "height": 83.81
           },
           "engine": "mathpix"
         }
@@ -250,9 +250,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p011-0027",
+      "id": "mathpix-eq-p011-0028",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nE_{i, j}=a_{j} x_{i}+b_{j} y_{i}+c_{j} z_{i}+d_{j} \\tag{9}\n\\end{equation*}",
+      "display_latex": "E_{i, j}=a_{j} x_{i}+b_{j} y_{i}+c_{j} z_{i}+d_{j}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -263,12 +263,12 @@
         {
           "page": 11,
           "bbox": {
-            "x0": 267.0,
-            "y0": 624.0,
-            "x1": 495.5,
-            "y1": 656.0,
-            "width": 228.5,
-            "height": 32.0
+            "x0": 266.9,
+            "y0": 623.79,
+            "x1": 495.51,
+            "y1": 655.75,
+            "width": 228.61,
+            "height": 31.97
           },
           "engine": "mathpix"
         }
@@ -294,12 +294,12 @@
         {
           "page": 15,
           "bbox": {
-            "x0": 293.5,
+            "x0": 293.68,
             "y0": 424.5,
-            "x1": 470.5,
-            "y1": 453.0,
-            "width": 177.0,
-            "height": 28.5
+            "x1": 470.75,
+            "y1": 453.01,
+            "width": 177.07,
+            "height": 28.51
           },
           "engine": "mathpix"
         }

@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1990_ray_tracing_trimmed_rational_surface_patches/1990_ray_tracing_trimmed_rational_surface_patches.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1990_ray_tracing_trimmed_rational_surface_patches/1990_ray_tracing_trimmed_rational_surface_patches.pdf",
   "page_count": 9,
   "page_sizes_pt": [
     {
@@ -51,516 +51,2027 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/0",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "Abstract",
-      "bbox": {
-        "x0": 10.34,
-        "y0": 145.01,
-        "x1": 42.34,
-        "y1": 153.56,
-        "width": 32.0,
-        "height": 8.55
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Abstract"
-      }
-    },
-    {
-      "id": "#/texts/1",
+      "id": "mathpix-p001-b0002",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Ray Tracing Trimmed Rational Surface Patches",
       "bbox": {
-        "x0": 95.95,
-        "y0": 27.31,
-        "x1": 426.13,
-        "y1": 44.33,
-        "width": 330.18,
-        "height": 17.02
+        "x0": 124.99,
+        "y0": 103.95,
+        "x1": 455.32,
+        "y1": 122.96,
+        "width": 330.33,
+        "height": 19.01
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Ray Tracing Trimmed Rational Surface Patches"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ba6fbb3e01f3493aa5bf94748f942a1a",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/2",
-      "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "Tomoyuki Nishita*",
-      "bbox": {
-        "x0": 79.02,
-        "y0": 65.93,
-        "x1": 180.61,
-        "y1": 80.06,
-        "width": 101.59,
-        "height": 14.13
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Tomoyuki Nishita*"
-      }
-    },
-    {
-      "id": "#/texts/3",
+      "id": "mathpix-p001-b0004",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
-      "text": ", Thomas W. Sederberg* and Masanori Kakimoto‡",
+      "role": "paragraph",
+      "text": "Tomoyuki Nishita*, Thomas W. Sederberg \\(^{\\dagger}\\) and Masanori Kakimoto \\({ }^{\\ddagger}\\)",
       "bbox": {
-        "x0": 176.66,
-        "y0": 61.13,
-        "x1": 442.33,
-        "y1": 81.78,
-        "width": 265.67,
-        "height": 20.65
+        "x0": 108.0,
+        "y0": 140.81,
+        "x1": 471.74,
+        "y1": 158.67,
+        "width": 363.74,
+        "height": 17.85
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": ", Thomas W. Sederberg* and Masanori Kakimoto‡"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.5788332773620668,
+        "confidence_rate": 0.9938756756288695,
+        "parent_id": "ad46e41669e441ce8ba35c7b2f5c7a7f",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/4",
+      "id": "mathpix-p001-b0005",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "*Fukuyama University",
       "bbox": {
-        "x0": 208.83,
-        "y0": 85.67,
-        "x1": 309.48,
-        "y1": 97.01,
-        "width": 100.65,
-        "height": 11.34
+        "x0": 240.76,
+        "y0": 161.83,
+        "x1": 340.7,
+        "y1": 175.66,
+        "width": 99.93,
+        "height": 13.82
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "*Fukuyama University"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ad46e41669e441ce8ba35c7b2f5c7a7f",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/5",
+      "id": "mathpix-p001-b0006",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
-      "text": "† Brigham Young University #Fujitsu Laboratories LTD",
+      "role": "paragraph",
+      "text": "\\({ }^{\\dagger}\\) Brigham Young University",
       "bbox": {
-        "x0": 199.42,
-        "y0": 100.67,
-        "x1": 321.71,
-        "y1": 132.0,
-        "width": 122.29,
-        "height": 31.33
+        "x0": 228.96,
+        "y0": 177.67,
+        "x1": 351.93,
+        "y1": 193.51,
+        "width": 122.97,
+        "height": 15.84
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "† Brigham Young University #Fujitsu Laboratories LTD"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999603813880137,
+        "parent_id": "ad46e41669e441ce8ba35c7b2f5c7a7f",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/6",
+      "id": "mathpix-p001-b0007",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
-      "text": "Numerical solutions to the ray patch intersection problem include those developed by Toth [18], Sweeney and Bartels [17), and",
+      "role": "paragraph",
+      "text": "\\({ }^{\\ddagger}\\) Fujitsu Laboratories LTD",
       "bbox": {
-        "x0": 274.68,
-        "y0": 143.0,
-        "x1": 516.43,
-        "y1": 164.0,
-        "width": 241.75,
-        "height": 21.0
+        "x0": 231.55,
+        "y0": 196.1,
+        "x1": 349.92,
+        "y1": 211.08,
+        "width": 118.37,
+        "height": 14.97
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Numerical solutions to the ray patch intersection problem include those developed by Toth [18], Sweeney and Bartels [17), and"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ad46e41669e441ce8ba35c7b2f5c7a7f",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/7",
-      "page": 1,
-      "order": 8,
-      "role": "front_matter",
-      "text": "This paper presents a new algorithm for computing the points at which a ray intersects",
-      "bbox": {
-        "x0": 9.41,
-        "y0": 164.67,
-        "x1": 252.1,
-        "y1": 174.33,
-        "width": 242.69,
-        "height": 9.66
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "This paper presents a new algorithm for computing the points at which a ray intersects"
-      }
-    },
-    {
-      "id": "#/texts/8",
-      "page": 1,
-      "order": 9,
-      "role": "front_matter",
-      "text": "Joy and Bhetanabhotla [4]. Toth's algorithm is based on interval",
-      "bbox": {
-        "x0": 274.68,
-        "y0": 162.94,
-        "x1": 516.43,
-        "y1": 173.33,
-        "width": 241.75,
-        "height": 10.39
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Joy and Bhetanabhotla [4]. Toth's algorithm is based on interval"
-      }
-    },
-    {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0010",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
-      "text": ", rational Bezier surface patch, and also an algorithm for determining it an interser ion point lies within a region trimmed by piecewise Bézier curves. Both algorithm",
+      "role": "paragraph",
+      "text": "Abstract",
       "bbox": {
-        "x0": 13.17,
-        "y0": 176.0,
-        "x1": 247.4,
-        "y1": 183.67,
-        "width": 234.23,
-        "height": 7.67
+        "x0": 39.46,
+        "y0": 222.31,
+        "x1": 71.71,
+        "y1": 230.95,
+        "width": 32.26,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": ", rational Bezier surface patch, and also an algorithm for determining it an interser ion point lies within a region trimmed by piecewise Bézier curves. Both algorithm"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
+      "id": "mathpix-p001-b0011",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
-      "text": "cial preprocessing.",
+      "role": "paragraph",
+      "text": "This paper presents a new algorithm for computing the points at which a ray intersects",
       "bbox": {
-        "x0": 10.35,
-        "y0": 225.0,
-        "x1": 63.97,
-        "y1": 232.67,
-        "width": 53.62,
-        "height": 7.67
+        "x0": 39.46,
+        "y0": 242.18,
+        "x1": 282.24,
+        "y1": 251.97,
+        "width": 242.78,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "cial preprocessing."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/11",
+      "id": "mathpix-p001-b0012",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
-      "text": "Categories and Subject Descriptors: I.3.3 [ Computer Graphics): Picture Image Generation; I.3.5 [Computer Graphics): Computational Geometry and Object Modeling; 1.3.7 [Computer Graphics]: Three-Dimensional Graphics and Realism. General Terms: Algorithms Additional Key Words and Phrases: Computer graphics, ray trac-",
+      "role": "paragraph",
+      "text": "a rational Bézier surface patch, and also an algorithm for determining if an intersec-",
       "bbox": {
-        "x0": 9.41,
-        "y0": 239.23,
-        "x1": 253.04,
-        "y1": 309.0,
-        "width": 243.63,
-        "height": 69.77
+        "x0": 39.46,
+        "y0": 252.54,
+        "x1": 282.24,
+        "y1": 261.18,
+        "width": 242.78,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Categories and Subject Descriptors: I.3.3 [ Computer Graphics): Picture Image Generation; I.3.5 [Computer Graphics): Computational Geometry and Object Modeling; 1.3.7 [Computer Graphics]: Three-Dimensional Graphics and Realism. General Terms: Algorithms Additional Key Words and Phrases: Computer graphics, ray trac-"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/12",
+      "id": "mathpix-p001-b0013",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
-      "text": "ing, visible surface algorithms, parametric surfaces. 1 INTRODUCTION The history, theory and capabilities of ray tracing are well docu- surface patches. Specifically, we present an algorithm for computing all points at which a ray intersects a rational Bézier surface patch of any degree. We also describe an algorithm for determining if a",
+      "role": "paragraph",
+      "text": "tion point lies within a region trimmed by piecewise Bézier curves. Both algorithms",
       "bbox": {
-        "x0": 9.41,
-        "y0": 308.93,
-        "x1": 253.04,
-        "y1": 362.67,
-        "width": 243.63,
-        "height": 53.74
+        "x0": 39.46,
+        "y0": 261.76,
+        "x1": 282.24,
+        "y1": 270.97,
+        "width": 242.78,
+        "height": 9.21
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "ing, visible surface algorithms, parametric surfaces. 1 INTRODUCTION The history, theory and capabilities of ray tracing are well docu- surface patches. Specifically, we present an algorithm for computing all points at which a ray intersects a rational Bézier surface patch of any degree. We also describe an algorithm for determining if a"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9308545589447021,
+        "confidence_rate": 0.9991952427082706,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/13",
+      "id": "mathpix-p001-b0014",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
-      "text": "mented [3], [5]. This paper deals with the ray tracing of parametric point lies within a trimmed region of the patch. We define a trimmed",
+      "role": "paragraph",
+      "text": "are based on a recent innovation known as Bézier clipping, described herein. The in-",
       "bbox": {
-        "x0": 10.31,
-        "y0": 361.63,
-        "x1": 253.08,
-        "y1": 373.36,
-        "width": 242.77,
-        "height": 11.73
+        "x0": 39.46,
+        "y0": 272.41,
+        "x1": 280.8,
+        "y1": 280.76,
+        "width": 241.34,
+        "height": 8.35
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "mented [3], [5]. This paper deals with the ray tracing of parametric point lies within a trimmed region of the patch. We define a trimmed"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9500950933936902,
+        "confidence_rate": 0.999431348398221,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/14",
+      "id": "mathpix-p001-b0015",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
-      "text": "curves in the parameter plane of the patch.",
+      "role": "paragraph",
+      "text": "tersection algorithm is faster than previous methods for which published performance",
       "bbox": {
-        "x0": 11.29,
-        "y0": 421.95,
-        "x1": 165.56,
-        "y1": 431.37,
-        "width": 154.27,
-        "height": 9.42
+        "x0": 39.46,
+        "y0": 281.63,
+        "x1": 281.66,
+        "y1": 291.42,
+        "width": 242.2,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "curves in the parameter plane of the patch."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9956073760986328,
+        "confidence_rate": 0.9999505371804127,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/15",
+      "id": "mathpix-p001-b0016",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
-      "text": "region to be an area bounded by piecewise (possibly rational) Bézier",
+      "role": "paragraph",
+      "text": "data allow reliable comparison. It robustly finds all intersections without requining spe-",
       "bbox": {
-        "x0": 10.35,
-        "y0": 411.59,
-        "x1": 253.04,
-        "y1": 422.0,
-        "width": 242.69,
-        "height": 10.41
+        "x0": 39.46,
+        "y0": 291.99,
+        "x1": 281.66,
+        "y1": 300.63,
+        "width": 242.2,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "region to be an area bounded by piecewise (possibly rational) Bézier"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9169235229492188,
+        "confidence_rate": 0.9990874565224694,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/16",
+      "id": "mathpix-p001-b0017",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
-      "text": "1.1 Ray-Patch Algorithms Solutions to the ray patch intersection problem can be categorized roughly as being based on subdivision, algebraic or numerical techniques. Subdivision approaches are described by Whitted [19], Rogers [10] and Woodward (20]. These algorithms harness the convex hull",
+      "role": "paragraph",
+      "text": "cial preprocessing.",
       "bbox": {
-        "x0": 10.3,
-        "y0": 445.5,
-        "x1": 253.09,
-        "y1": 510.49,
-        "width": 242.79,
-        "height": 64.99
+        "x0": 39.46,
+        "y0": 302.65,
+        "x1": 92.73,
+        "y1": 311.29,
+        "width": 53.28,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "1.1 Ray-Patch Algorithms Solutions to the ray patch intersection problem can be categorized roughly as being based on subdivision, algebraic or numerical techniques. Subdivision approaches are described by Whitted [19], Rogers [10] and Woodward (20]. These algorithms harness the convex hull"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1db5c0f36b88481b9570ee5a89bfa9cc",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/17",
+      "id": "mathpix-p001-b0018",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
-      "text": "hull of the control points, it does not intersect the patch. Through",
+      "role": "paragraph",
+      "text": "Categories and Subject Descriptors: I.3.3 [ Computer Graphics]:",
       "bbox": {
-        "x0": 10.32,
-        "y0": 519.88,
-        "x1": 253.08,
-        "y1": 531.59,
-        "width": 242.76,
-        "height": 11.71
+        "x0": 39.46,
+        "y0": 315.61,
+        "x1": 280.8,
+        "y1": 326.84,
+        "width": 241.34,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "hull of the control points, it does not intersect the patch. Through"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/18",
+      "id": "mathpix-p001-b0019",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
-      "text": "property of Bézier surfaces: if the ray does not intersect the convex recursively subdividing the patch and checking convex hulls, the intersection points can be computed at a linear convergence rate, amounting to a binary search. Whitted's algorithm operates in three dimensions, whereas Rogers and Woodward map the problem to",
+      "role": "paragraph",
+      "text": "Picture/Image Generation; I.3.5 [Computer Graphics]: Computa-",
       "bbox": {
-        "x0": 10.35,
-        "y0": 510.33,
-        "x1": 253.04,
-        "y1": 521.0,
-        "width": 242.69,
-        "height": 10.67
+        "x0": 39.46,
+        "y0": 326.26,
+        "x1": 280.8,
+        "y1": 337.49,
+        "width": 241.34,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "property of Bézier surfaces: if the ray does not intersect the convex recursively subdividing the patch and checking convex hulls, the intersection points can be computed at a linear convergence rate, amounting to a binary search. Whitted's algorithm operates in three dimensions, whereas Rogers and Woodward map the problem to"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/19",
+      "id": "mathpix-p001-b0020",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
-      "text": "two dimensions.",
+      "role": "paragraph",
+      "text": "tional Geometry and Object Modeling; I.3.7 [Computer Graphics]:",
       "bbox": {
-        "x0": 12.23,
-        "y0": 570.67,
-        "x1": 72.43,
-        "y1": 578.33,
-        "width": 60.2,
-        "height": 7.66
+        "x0": 39.46,
+        "y0": 336.92,
+        "x1": 280.8,
+        "y1": 347.86,
+        "width": 241.34,
+        "height": 10.94
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "two dimensions."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.978515625,
+        "confidence_rate": 0.9996806609414184,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/20",
+      "id": "mathpix-p001-b0021",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
-      "text": "which bounds on the surface and its first derivatives can be obtained.",
+      "role": "paragraph",
+      "text": "Three-Dimensional Graphics and Realism.",
       "bbox": {
-        "x0": 274.68,
-        "y0": 183.66,
-        "x1": 515.49,
-        "y1": 193.08,
-        "width": 240.81,
-        "height": 9.42
+        "x0": 39.46,
+        "y0": 347.28,
+        "x1": 195.26,
+        "y1": 357.07,
+        "width": 155.81,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "which bounds on the surface and its first derivatives can be obtained."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.9999777947999976,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/21",
+      "id": "mathpix-p001-b0022",
       "page": 1,
       "order": 22,
-      "role": "front_matter",
-      "text": "Newton iteration. It works robustly on any parametric surface for",
+      "role": "paragraph",
+      "text": "General Terms: Algorithms",
       "bbox": {
-        "x0": 274.68,
-        "y0": 173.3,
-        "x1": 516.43,
-        "y1": 183.67,
-        "width": 241.75,
+        "x0": 39.46,
+        "y0": 361.68,
+        "x1": 141.41,
+        "y1": 371.76,
+        "width": 101.95,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "Additional Key Words and Phrases: Computer graphics, ray trac-",
+      "bbox": {
+        "x0": 39.46,
+        "y0": 376.37,
+        "x1": 282.24,
+        "y1": 386.73,
+        "width": 242.78,
         "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Newton iteration. It works robustly on any parametric surface for"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/22",
-      "page": 1,
-      "order": 23,
-      "role": "front_matter",
-      "text": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19])",
-      "bbox": {
-        "x0": 274.68,
-        "y0": 193.0,
-        "x1": 516.43,
-        "y1": 204.38,
-        "width": 241.75,
-        "height": 11.38
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19])"
-      }
-    },
-    {
-      "id": "#/texts/23",
+      "id": "mathpix-p001-b0024",
       "page": 1,
       "order": 24,
-      "role": "front_matter",
-      "text": "trol mesh using the Oslo algorithm until the mesh closely approxi- based on the convex hull property (that is, subdivision based algorithms) perform a linearly converging binary search. Bézier clipping uses the convex hull property in a more powerful manner, by determining parameter ranges which are guaranteed to not include",
+      "role": "paragraph",
+      "text": "ing, visible surface algorithms, parametric surfaces.",
       "bbox": {
-        "x0": 273.74,
-        "y0": 203.33,
-        "x1": 515.49,
-        "y1": 213.0,
-        "width": 241.75,
-        "height": 9.67
+        "x0": 39.46,
+        "y0": 386.73,
+        "x1": 228.38,
+        "y1": 396.52,
+        "width": 188.93,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "trol mesh using the Oslo algorithm until the mesh closely approxi- based on the convex hull property (that is, subdivision based algorithms) perform a linearly converging binary search. Bézier clipping uses the convex hull property in a more powerful manner, by determining parameter ranges which are guaranteed to not include"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/24",
-      "page": 1,
-      "order": 25,
-      "role": "front_matter",
-      "text": "models, rendering can be performed using conventional construc- points of intersection. Variations of this concept have proven profitable in algorithms for algebraic curve intersection( 12] and planar parametric curve intersection[15]. Bézier clipping has the flavor of a geometrically based interval Newton method, and thus might be categorized as partly a subdivision based algorithm and partly a numerical method. 1.2 Trimmed Patch Algorithms Previous approaches to the rendering of trimmed patches include adaptive forward differencing [16] and polygonization [9]. Neither of these approaches adapts directly to ray tracing (unless one were to polygonize the patch[9] and then ray trace the polygons). If trimming is caused by a boolean operation involving solid geometric",
-      "bbox": {
-        "x0": 275.62,
-        "y0": 520.85,
-        "x1": 518.31,
-        "y1": 531.33,
-        "width": 242.69,
-        "height": 10.48
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "models, rendering can be performed using conventional construc- points of intersection. Variations of this concept have proven profitable in algorithms for algebraic curve intersection( 12] and planar parametric curve intersection[15]. Bézier clipping has the flavor of a geometrically based interval Newton method, and thus might be categorized as partly a subdivision based algorithm and partly a numerical method. 1.2 Trimmed Patch Algorithms Previous approaches to the rendering of trimmed patches include adaptive forward differencing [16] and polygonization [9]. Neither of these approaches adapts directly to ray tracing (unless one were to polygonize the patch[9] and then ray trace the polygons). If trimming is caused by a boolean operation involving solid geometric"
-      }
-    },
-    {
-      "id": "#/texts/25",
+      "id": "mathpix-p001-b0026",
       "page": 1,
       "order": 26,
-      "role": "front_matter",
-      "text": "tive solid geometry methods[11]. Our algorithm renders trimmed",
+      "role": "paragraph",
+      "text": "1 INTRODUCTION",
       "bbox": {
-        "x0": 275.62,
-        "y0": 530.27,
-        "x1": 517.37,
-        "y1": 541.67,
-        "width": 241.75,
-        "height": 11.4
+        "x0": 40.9,
+        "y0": 410.35,
+        "x1": 122.97,
+        "y1": 418.98,
+        "width": 82.08,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "tive solid geometry methods[11]. Our algorithm renders trimmed"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "a52f75ae921d455aa9209f7a219aad0e",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/26",
+      "id": "mathpix-p001-b0027",
       "page": 1,
       "order": 27,
-      "role": "front_matter",
-      "text": "patches defined in a boundary representation, by determining if a point on the patch lies inside or outside a trimmed region. One contribution of this paper is a fast, robust algorithm (based on Bézier clipping) for determining if a ray intersects a collection of trimming curves an even or odd number of times. 1.3 Paper Overview Section 2 introduces Bézier clipping and applies it to the problem of point classification for trimmed patches. Section 3 describes our ray patch intersection algorithm, and performance comparisons are presented in section 4.",
+      "role": "paragraph",
+      "text": "The history, theory and capabilities of ray tracing are well docu-",
       "bbox": {
-        "x0": 275.62,
-        "y0": 540.63,
-        "x1": 518.31,
-        "y1": 639.67,
-        "width": 242.69,
-        "height": 99.04
+        "x0": 39.46,
+        "y0": 429.64,
+        "x1": 282.24,
+        "y1": 440.01,
+        "width": 242.78,
+        "height": 10.37
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "patches defined in a boundary representation, by determining if a point on the patch lies inside or outside a trimmed region. One contribution of this paper is a fast, robust algorithm (based on Bézier clipping) for determining if a ray intersects a collection of trimming curves an even or odd number of times. 1.3 Paper Overview Section 2 introduces Bézier clipping and applies it to the problem of point classification for trimmed patches. Section 3 describes our ray patch intersection algorithm, and performance comparisons are presented in section 4."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "mented [3], [5]. This paper deals with the ray tracing of parametric",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 439.43,
+        "x1": 282.81,
+        "y1": 450.66,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "surface patches. Specifically, we present an algorithm for comput-",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 450.08,
+        "x1": 282.81,
+        "y1": 459.87,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "ing all points at which a ray intersects a rational Bézier surface patch",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 459.01,
+        "x1": 282.81,
+        "y1": 470.24,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "of any degree. We also describe an algorithm for determining if a",
+      "bbox": {
+        "x0": 39.46,
+        "y0": 469.67,
+        "x1": 282.81,
+        "y1": 479.46,
+        "width": 243.36,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99267578125,
+        "confidence_rate": 0.9998949887636223,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0032",
+      "page": 1,
+      "order": 32,
+      "role": "paragraph",
+      "text": "point lies within a trimmed region of the patch. We define a trimmed",
+      "bbox": {
+        "x0": 39.46,
+        "y0": 478.88,
+        "x1": 282.81,
+        "y1": 490.11,
+        "width": 243.36,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9975602623308077,
+        "confidence_rate": 0.9999665386601347,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0033",
+      "page": 1,
+      "order": 33,
+      "role": "paragraph",
+      "text": "region to be an area bounded by piecewise (possibly rational) Bézier",
+      "bbox": {
+        "x0": 39.46,
+        "y0": 489.53,
+        "x1": 282.81,
+        "y1": 500.48,
+        "width": 243.36,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0034",
+      "page": 1,
+      "order": 34,
+      "role": "paragraph",
+      "text": "curves in the parameter plane of the patch.",
+      "bbox": {
+        "x0": 39.46,
+        "y0": 499.9,
+        "x1": 195.26,
+        "y1": 509.69,
+        "width": 155.81,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0036",
+      "page": 1,
+      "order": 36,
+      "role": "paragraph",
+      "text": "1.1 Ray-Patch Algorithms",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 522.36,
+        "x1": 142.85,
+        "y1": 532.73,
+        "width": 101.95,
+        "height": 10.37
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "dbb0dea9d20242f99db9e1632569dee1",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0037",
+      "page": 1,
+      "order": 37,
+      "role": "paragraph",
+      "text": "Solutions to the ray/patch intersection problem can be categorized",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 538.2,
+        "x1": 282.81,
+        "y1": 549.14,
+        "width": 242.78,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0038",
+      "page": 1,
+      "order": 38,
+      "role": "paragraph",
+      "text": "roughly as being based on subdivision, algebraic or numerical tech-",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 548.57,
+        "x1": 282.24,
+        "y1": 558.36,
+        "width": 242.2,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0039",
+      "page": 1,
+      "order": 39,
+      "role": "paragraph",
+      "text": "niques.",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 559.22,
+        "x1": 67.68,
+        "y1": 569.01,
+        "width": 26.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0040",
+      "page": 1,
+      "order": 40,
+      "role": "paragraph",
+      "text": "Subdivision approaches are described by Whitted [19], Rogers",
+      "bbox": {
+        "x0": 53.86,
+        "y0": 568.44,
+        "x1": 283.68,
+        "y1": 578.23,
+        "width": 229.82,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0041",
+      "page": 1,
+      "order": 41,
+      "role": "paragraph",
+      "text": "[10] and Woodward [20]. These algorithms harness the convex hull",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 577.65,
+        "x1": 283.68,
+        "y1": 588.88,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9975600242614746,
+        "confidence_rate": 0.9999645954480556,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0042",
+      "page": 1,
+      "order": 42,
+      "role": "paragraph",
+      "text": "property of Bézier Surfaces: if the ray does not intersect the convex",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 588.02,
+        "x1": 283.68,
+        "y1": 599.25,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.931251049041748,
+        "confidence_rate": 0.9990507657041623,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0043",
+      "page": 1,
+      "order": 43,
+      "role": "paragraph",
+      "text": "hull of the control points, it does not intersect the patch. Through",
+      "bbox": {
+        "x0": 40.03,
+        "y0": 598.67,
+        "x1": 283.68,
+        "y1": 608.46,
+        "width": 243.64,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999933096045985,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0044",
+      "page": 1,
+      "order": 44,
+      "role": "paragraph",
+      "text": "recursively subdividing the patch and checking convex hulls, the",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 607.89,
+        "x1": 283.68,
+        "y1": 619.12,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0045",
+      "page": 1,
+      "order": 45,
+      "role": "paragraph",
+      "text": "intersection points can be computed at a linear convergence rate,",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 618.25,
+        "x1": 283.68,
+        "y1": 628.33,
+        "width": 242.78,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0046",
+      "page": 1,
+      "order": 46,
+      "role": "paragraph",
+      "text": "amounting to a binary search. Whitted's algorithm operates in three",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 627.47,
+        "x1": 283.68,
+        "y1": 638.7,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0047",
+      "page": 1,
+      "order": 47,
+      "role": "paragraph",
+      "text": "dimensions, whereas Rogers and Woodward map the problem to",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 638.12,
+        "x1": 283.68,
+        "y1": 647.91,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0048",
+      "page": 1,
+      "order": 48,
+      "role": "paragraph",
+      "text": "two dimensions.",
+      "bbox": {
+        "x0": 40.9,
+        "y0": 648.49,
+        "x1": 101.95,
+        "y1": 657.13,
+        "width": 61.06,
+        "height": 8.64
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "1ee75d48d2ad4388bfc914fa22676657",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0050",
+      "page": 1,
+      "order": 50,
+      "role": "paragraph",
+      "text": "Numerical solutions to the ray/patch intersection problem in-",
+      "bbox": {
+        "x0": 317.08,
+        "y0": 221.15,
+        "x1": 546.62,
+        "y1": 232.1,
+        "width": 229.53,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0051",
+      "page": 1,
+      "order": 51,
+      "role": "paragraph",
+      "text": "clude those developed by Toth [18], Sweeney and Bartels [17], and",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 231.52,
+        "x1": 546.62,
+        "y1": 241.31,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0052",
+      "page": 1,
+      "order": 52,
+      "role": "paragraph",
+      "text": "Joy and Bhetanabhotla [4]. Toth's algorithm is based on interval",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 240.74,
+        "x1": 546.62,
+        "y1": 251.97,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0053",
+      "page": 1,
+      "order": 53,
+      "role": "paragraph",
+      "text": "Newton iteration. It works robustly on any parametric surface for",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 251.39,
+        "x1": 546.62,
+        "y1": 261.18,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0054",
+      "page": 1,
+      "order": 54,
+      "role": "paragraph",
+      "text": "which bounds on the surface and its first derivatives can be obtained.",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 260.61,
+        "x1": 546.62,
+        "y1": 270.4,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0055",
+      "page": 1,
+      "order": 55,
+      "role": "paragraph",
+      "text": "Sweeney and Bartels ray trace B-spline surfaces by refining the con-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 270.97,
+        "x1": 546.62,
+        "y1": 281.63,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0056",
+      "page": 1,
+      "order": 56,
+      "role": "paragraph",
+      "text": "trol mesh using the Oslo algorithm until the mesh closely approxi-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 280.76,
+        "x1": 546.62,
+        "y1": 291.42,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0057",
+      "page": 1,
+      "order": 57,
+      "role": "paragraph",
+      "text": "mates the surface. The ray intersection is then computed by inter-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 290.84,
+        "x1": 546.04,
+        "y1": 302.07,
+        "width": 242.2,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0058",
+      "page": 1,
+      "order": 58,
+      "role": "paragraph",
+      "text": "secting the control mesh with the ray, and using that intersection",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 301.21,
+        "x1": 546.62,
+        "y1": 311.86,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0059",
+      "page": 1,
+      "order": 59,
+      "role": "paragraph",
+      "text": "point as a starting point for Newton iteration. Joy and Bhetanab-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 310.42,
+        "x1": 546.62,
+        "y1": 321.65,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0060",
+      "page": 1,
+      "order": 60,
+      "role": "paragraph",
+      "text": "hotla's algorithm uses quasi-Newton optimization to compute the",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 321.08,
+        "x1": 546.62,
+        "y1": 330.87,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0061",
+      "page": 1,
+      "order": 61,
+      "role": "paragraph",
+      "text": "point(s) on the patch nearest the ray, including intersection points.",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 330.29,
+        "x1": 544.6,
+        "y1": 341.52,
+        "width": 240.76,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0062",
+      "page": 1,
+      "order": 62,
+      "role": "paragraph",
+      "text": "Kajiya[6] devised an intersection algorithm based on algebraic",
+      "bbox": {
+        "x0": 317.66,
+        "y0": 340.66,
+        "x1": 546.62,
+        "y1": 351.31,
+        "width": 228.96,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999927104668955,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0063",
+      "page": 1,
+      "order": 63,
+      "role": "paragraph",
+      "text": "techniques (ie., resultants). Kajiya's algorithm reduces the problem",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 349.87,
+        "x1": 546.62,
+        "y1": 361.1,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0064",
+      "page": 1,
+      "order": 64,
+      "role": "paragraph",
+      "text": "of intersecting a bicubic patch with a ray into one of finding the real",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 360.53,
+        "x1": 546.62,
+        "y1": 370.89,
+        "width": 242.78,
+        "height": 10.37
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0065",
+      "page": 1,
+      "order": 65,
+      "role": "paragraph",
+      "text": "roots of a degree 18 univariate polynomial.",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 370.89,
+        "x1": 461.08,
+        "y1": 380.97,
+        "width": 157.25,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0066",
+      "page": 1,
+      "order": 66,
+      "role": "paragraph",
+      "text": "Our ray/patch intersection algorithm is based on the convex",
+      "bbox": {
+        "x0": 318.52,
+        "y0": 380.11,
+        "x1": 546.62,
+        "y1": 391.34,
+        "width": 228.09,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9975595474243164,
+        "confidence_rate": 0.999961822051704,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0067",
+      "page": 1,
+      "order": 67,
+      "role": "paragraph",
+      "text": "hull property of Bézier curves and surfaces using a technique we",
+      "bbox": {
+        "x0": 304.7,
+        "y0": 390.76,
+        "x1": 546.62,
+        "y1": 400.55,
+        "width": 241.92,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0068",
+      "page": 1,
+      "order": 68,
+      "role": "paragraph",
+      "text": "refer to as Bézier clipping. Traditionally, intersection algorithms",
+      "bbox": {
+        "x0": 304.7,
+        "y0": 399.98,
+        "x1": 546.62,
+        "y1": 411.21,
+        "width": 241.92,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0069",
+      "page": 1,
+      "order": 69,
+      "role": "paragraph",
+      "text": "(such as curve/curve [13], surface/surface [7], or ray/surface [19])",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 410.35,
+        "x1": 546.62,
+        "y1": 421.58,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999799191374794,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0070",
+      "page": 1,
+      "order": 70,
+      "role": "paragraph",
+      "text": "based on the convex hull property (that is, subdivision based algo-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 419.56,
+        "x1": 546.62,
+        "y1": 430.79,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0071",
+      "page": 1,
+      "order": 71,
+      "role": "paragraph",
+      "text": "rithms) perform a linearly converging binary search. Bézier clip-",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 430.21,
+        "x1": 546.62,
+        "y1": 440.87,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0072",
+      "page": 1,
+      "order": 72,
+      "role": "paragraph",
+      "text": "ping uses the convex hull property in a more powerful manner, by",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 440.01,
+        "x1": 546.62,
+        "y1": 450.66,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0073",
+      "page": 1,
+      "order": 73,
+      "role": "paragraph",
+      "text": "determining parameter ranges which are guaranteed to not include",
+      "bbox": {
+        "x0": 304.7,
+        "y0": 450.08,
+        "x1": 548.06,
+        "y1": 461.03,
+        "width": 243.36,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0074",
+      "page": 1,
+      "order": 74,
+      "role": "paragraph",
+      "text": "points of intersection. Variations of this concept have proven prof-",
+      "bbox": {
+        "x0": 304.7,
+        "y0": 460.45,
+        "x1": 548.06,
+        "y1": 470.24,
+        "width": 243.36,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0075",
+      "page": 1,
+      "order": 75,
+      "role": "paragraph",
+      "text": "itable in algorithms for algebraic curve intersection[12] and planar",
+      "bbox": {
+        "x0": 304.7,
+        "y0": 469.67,
+        "x1": 548.06,
+        "y1": 480.9,
+        "width": 243.36,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0076",
+      "page": 1,
+      "order": 76,
+      "role": "paragraph",
+      "text": "parametric curve intersection[15]. Bézier clipping has the flavor",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 480.32,
+        "x1": 548.06,
+        "y1": 490.11,
+        "width": 244.22,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999793534852197,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0077",
+      "page": 1,
+      "order": 77,
+      "role": "paragraph",
+      "text": "of a geometrically based interval Newton method, and thus might",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 489.53,
+        "x1": 548.06,
+        "y1": 500.48,
+        "width": 244.22,
+        "height": 10.94
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0078",
+      "page": 1,
+      "order": 78,
+      "role": "paragraph",
+      "text": "be categorized as partly a subdivision based algorithm and partly a",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 499.9,
+        "x1": 548.06,
+        "y1": 511.13,
+        "width": 244.22,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999932166827553,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0079",
+      "page": 1,
+      "order": 79,
+      "role": "paragraph",
+      "text": "numerical method.",
+      "bbox": {
+        "x0": 303.84,
+        "y0": 510.56,
+        "x1": 374.39,
+        "y1": 518.91,
+        "width": 70.56,
+        "height": 8.35
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0081",
+      "page": 1,
+      "order": 81,
+      "role": "paragraph",
+      "text": "1.2 Trimmed Patch Algorithms",
+      "bbox": {
+        "x0": 306.72,
+        "y0": 532.73,
+        "x1": 425.66,
+        "y1": 542.81,
+        "width": 118.94,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "a68d9c07e2434b14aec9fc046c99efa4",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0082",
+      "page": 1,
+      "order": 82,
+      "role": "paragraph",
+      "text": "Previous approaches to the rendering of trimmed patches include",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 548.57,
+        "x1": 548.06,
+        "y1": 559.22,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0083",
+      "page": 1,
+      "order": 83,
+      "role": "paragraph",
+      "text": "adaptive forward differencing [16] and polygonization [9]. Neither",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 558.36,
+        "x1": 548.06,
+        "y1": 569.01,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0084",
+      "page": 1,
+      "order": 84,
+      "role": "paragraph",
+      "text": "of these approaches adapts directly to ray tracing (unless one were",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 568.44,
+        "x1": 548.06,
+        "y1": 579.67,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0085",
+      "page": 1,
+      "order": 85,
+      "role": "paragraph",
+      "text": "to polygonize the patch[9] and then ray trace the polygons). If trim-",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 578.8,
+        "x1": 548.06,
+        "y1": 589.46,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.7216796875,
+        "confidence_rate": 0.9956019446981303,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0086",
+      "page": 1,
+      "order": 86,
+      "role": "paragraph",
+      "text": "ming is caused by a boolean operation involving solid geometric",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 588.02,
+        "x1": 548.06,
+        "y1": 599.25,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0087",
+      "page": 1,
+      "order": 87,
+      "role": "paragraph",
+      "text": "models, rendering can be performed using conventional construc-",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 598.67,
+        "x1": 548.06,
+        "y1": 609.04,
+        "width": 242.78,
+        "height": 10.37
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0088",
+      "page": 1,
+      "order": 88,
+      "role": "paragraph",
+      "text": "tive solid geometry methods[11]. Our algorithm renders trimmed",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 608.46,
+        "x1": 548.06,
+        "y1": 619.12,
+        "width": 242.78,
+        "height": 10.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0089",
+      "page": 1,
+      "order": 89,
+      "role": "paragraph",
+      "text": "patches defined in a boundary representation, by determining if a",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 618.25,
+        "x1": 548.06,
+        "y1": 629.48,
+        "width": 242.78,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0090",
+      "page": 1,
+      "order": 90,
+      "role": "paragraph",
+      "text": "point on the patch lies inside or outside a trimmed region. One con-",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 628.91,
+        "x1": 548.06,
+        "y1": 638.7,
+        "width": 242.78,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0091",
+      "page": 1,
+      "order": 91,
+      "role": "paragraph",
+      "text": "tribution of this paper is a fast, robust algorithm (based on Bézier",
+      "bbox": {
+        "x0": 305.85,
+        "y0": 638.12,
+        "x1": 548.06,
+        "y1": 649.35,
+        "width": 242.2,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0092",
+      "page": 1,
+      "order": 92,
+      "role": "paragraph",
+      "text": "clipping) for determining if a ray intersects a collection of trimming",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 647.63,
+        "x1": 548.06,
+        "y1": 659.43,
+        "width": 242.78,
+        "height": 11.81
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0093",
+      "page": 1,
+      "order": 93,
+      "role": "paragraph",
+      "text": "curves an even or odd number of times.",
+      "bbox": {
+        "x0": 305.28,
+        "y0": 657.7,
+        "x1": 450.71,
+        "y1": 667.78,
+        "width": 145.44,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0095",
+      "page": 1,
+      "order": 95,
+      "role": "paragraph",
+      "text": "1.3 Paper Overview",
+      "bbox": {
+        "x0": 306.72,
+        "y0": 681.61,
+        "x1": 386.2,
+        "y1": 691.4,
+        "width": 79.49,
+        "height": 9.79
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9641075134277344,
+        "confidence_rate": 0.9984120246848942,
+        "parent_id": "f3bde8097bee47f3b1a4b46451d2df94",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0096",
+      "page": 1,
+      "order": 96,
+      "role": "paragraph",
+      "text": "Section 2 introduces Bézier clipping and applies it to the problem",
+      "bbox": {
+        "x0": 305.85,
+        "y0": 697.16,
+        "x1": 548.06,
+        "y1": 707.23,
+        "width": 242.2,
+        "height": 10.08
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0097",
+      "page": 1,
+      "order": 97,
+      "role": "paragraph",
+      "text": "of point classification for trimmed patches. Section 3 describes our",
+      "bbox": {
+        "x0": 305.85,
+        "y0": 706.37,
+        "x1": 548.06,
+        "y1": 717.6,
+        "width": 242.2,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "ed5f424d7bb94218a23990215d73c24b",
+        "children_ids": null
       }
     },
     {
@@ -630,9 +2141,9 @@
         "x0": 39.09,
         "y0": 217.84,
         "x1": 283.45,
-        "y1": 257.01,
+        "y1": 255.78,
         "width": 244.36,
-        "height": 39.17
+        "height": 37.94
       },
       "meta": {
         "docling_label": "text",
@@ -720,7 +2231,7 @@
       "page": 2,
       "order": 9,
       "role": "list_item",
-      "text": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, I&II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R.",
+      "text": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, 1& II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R.",
       "bbox": {
         "x0": 62.31,
         "y0": 536.0,
@@ -731,7 +2242,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, I&II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R."
+        "docling_orig": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, 1& II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R."
       }
     },
     {
@@ -782,9 +2293,9 @@
         "x0": 37.87,
         "y0": 711.0,
         "x1": 283.45,
-        "y1": 770.27,
+        "y1": 770.47,
         "width": 245.58,
-        "height": 59.27
+        "height": 59.47
       },
       "meta": {
         "docling_label": "text",
@@ -834,7 +2345,7 @@
       "page": 2,
       "order": 15,
       "role": "paragraph",
-      "text": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1 u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation",
+      "text": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation",
       "bbox": {
         "x0": 303.0,
         "y0": 219.0,
@@ -845,7 +2356,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1 u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation"
+        "docling_orig": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation"
       }
     },
     {
@@ -910,7 +2421,7 @@
       "page": 2,
       "order": 19,
       "role": "paragraph",
-      "text": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S н=0 (0 = „( „ 1 = „, horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4",
+      "text": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S 0=0 00(00 = 1(1 = 4 + 4] = 4, the horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4",
       "bbox": {
         "x0": 304.22,
         "y0": 447.92,
@@ -921,7 +2432,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S н=0 (0 = „( „ 1 = „, horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4"
+        "docling_orig": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S 0=0 00(00 = 1(1 = 4 + 4] = 4, the horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4"
       }
     },
     {
@@ -929,7 +2440,7 @@
       "page": 2,
       "order": 20,
       "role": "paragraph",
-      "text": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = 4. Since D(u) lies inside the convex hull of its control points, we conclude that",
+      "text": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = . Since D(u) lies inside the convex hull of its control points, we conclude that",
       "bbox": {
         "x0": 303.0,
         "y0": 496.88,
@@ -940,7 +2451,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = 4. Since D(u) lies inside the convex hull of its control points, we conclude that"
+        "docling_orig": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = . Since D(u) lies inside the convex hull of its control points, we conclude that"
       }
     },
     {
@@ -970,11 +2481,11 @@
       "text": "For rational Bézier trimming curves",
       "bbox": {
         "x0": 304.22,
-        "y0": 635.17,
+        "y0": 636.33,
         "x1": 437.39,
         "y1": 647.41,
         "width": 133.17,
-        "height": 12.24
+        "height": 11.08
       },
       "meta": {
         "docling_label": "text",
@@ -982,7 +2493,26 @@
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "#/texts/54",
+      "page": 2,
+      "order": 23,
+      "role": "paragraph",
+      "text": "with control point coordinates C; = (si, ti) and weights wi, th values of d; must be modified as follows. Substituting equation . into equation 2 and clearing the denominator yields:",
+      "bbox": {
+        "x0": 304.22,
+        "y0": 689.0,
+        "x1": 546.13,
+        "y1": 718.39,
+        "width": 241.91,
+        "height": 29.39
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "with control point coordinates C; = (si, ti) and weights wi, th values of d; must be modified as follows. Substituting equation . into equation 2 and clearing the denominator yields:"
+      }
+    },
+    {
+      "id": "#/texts/56",
       "page": 3,
       "order": 1,
       "role": "caption",
@@ -1001,7 +2531,7 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/57",
       "page": 3,
       "order": 2,
       "role": "caption",
@@ -1020,7 +2550,7 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/58",
       "page": 3,
       "order": 3,
       "role": "paragraph",
@@ -1039,7 +2569,7 @@
       }
     },
     {
-      "id": "#/texts/58",
+      "id": "#/texts/59",
       "page": 3,
       "order": 4,
       "role": "paragraph",
@@ -1058,7 +2588,7 @@
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "#/texts/60",
       "page": 3,
       "order": 5,
       "role": "paragraph",
@@ -1077,7 +2607,7 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/61",
       "page": 3,
       "order": 6,
       "role": "paragraph",
@@ -1096,7 +2626,7 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/62",
       "page": 3,
       "order": 7,
       "role": "paragraph",
@@ -1115,7 +2645,7 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/63",
       "page": 3,
       "order": 8,
       "role": "paragraph",
@@ -1134,7 +2664,7 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/64",
       "page": 3,
       "order": 9,
       "role": "caption",
@@ -1153,7 +2683,7 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/65",
       "page": 3,
       "order": 10,
       "role": "paragraph",
@@ -1172,7 +2702,7 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/66",
       "page": 3,
       "order": 11,
       "role": "paragraph",
@@ -1191,7 +2721,7 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/67",
       "page": 3,
       "order": 12,
       "role": "paragraph",
@@ -1210,7 +2740,7 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/68",
       "page": 3,
       "order": 13,
       "role": "paragraph",
@@ -1229,7 +2759,7 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/69",
       "page": 3,
       "order": 14,
       "role": "caption",
@@ -1248,7 +2778,7 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/70",
       "page": 3,
       "order": 15,
       "role": "paragraph",
@@ -1267,7 +2797,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/71",
       "page": 3,
       "order": 16,
       "role": "paragraph",
@@ -1286,7 +2816,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/72",
       "page": 3,
       "order": 17,
       "role": "paragraph",
@@ -1305,7 +2835,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/73",
       "page": 3,
       "order": 18,
       "role": "paragraph",
@@ -1324,18 +2854,18 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/74",
       "page": 3,
       "order": 19,
       "role": "paragraph",
       "text": "Umin",
       "bbox": {
         "x0": 357.98,
-        "y0": 194.59,
+        "y0": 195.81,
         "x1": 375.08,
         "y1": 201.93,
         "width": 17.1,
-        "height": 7.34
+        "height": 6.12
       },
       "meta": {
         "docling_label": "text",
@@ -1343,7 +2873,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/75",
       "page": 3,
       "order": 20,
       "role": "paragraph",
@@ -1362,26 +2892,26 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/76",
       "page": 3,
       "order": 21,
       "role": "paragraph",
-      "text": "(0,-4)",
+      "text": "(0, -4)",
       "bbox": {
-        "x0": 309.09,
-        "y0": 237.38,
-        "x1": 350.66,
-        "y1": 253.38,
-        "width": 41.57,
-        "height": 16.0
+        "x0": 307.85,
+        "y0": 237.34,
+        "x1": 349.46,
+        "y1": 253.42,
+        "width": 41.61,
+        "height": 16.08
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(0,-4)"
+        "docling_orig": "(0, -4)"
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/77",
       "page": 3,
       "order": 22,
       "role": "caption",
@@ -1400,7 +2930,7 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/78",
       "page": 3,
       "order": 23,
       "role": "caption",
@@ -1419,7 +2949,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/79",
       "page": 3,
       "order": 24,
       "role": "paragraph",
@@ -1438,7 +2968,7 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 3,
       "order": 25,
       "role": "caption",
@@ -1457,7 +2987,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/81",
       "page": 4,
       "order": 1,
       "role": "heading",
@@ -1476,26 +3006,26 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 4,
       "order": 2,
       "role": "paragraph",
-      "text": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3,, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case.",
+      "text": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3x, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case.",
       "bbox": {
-        "x0": 35.35,
+        "x0": 35.43,
         "y0": 124.67,
         "x1": 281.01,
         "y1": 224.0,
-        "width": 245.66,
+        "width": 245.58,
         "height": 99.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3,, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case."
+        "docling_orig": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3x, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case."
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 4,
       "order": 3,
       "role": "paragraph",
@@ -1514,7 +3044,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 4,
       "order": 4,
       "role": "paragraph",
@@ -1533,7 +3063,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 4,
       "order": 5,
       "role": "heading",
@@ -1552,7 +3082,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 4,
       "order": 6,
       "role": "paragraph",
@@ -1561,9 +3091,9 @@
         "x0": 35.43,
         "y0": 394.0,
         "x1": 193.04,
-        "y1": 415.0,
+        "y1": 413.67,
         "width": 157.61,
-        "height": 21.0
+        "height": 19.67
       },
       "meta": {
         "docling_label": "text",
@@ -1571,7 +3101,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 4,
       "order": 7,
       "role": "paragraph",
@@ -1590,7 +3120,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 4,
       "order": 8,
       "role": "paragraph",
@@ -1609,7 +3139,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 4,
       "order": 9,
       "role": "paragraph",
@@ -1628,18 +3158,18 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/90",
       "page": 4,
       "order": 10,
       "role": "paragraph",
       "text": "POP a curve;",
       "bbox": {
-        "x0": 50.08,
-        "y0": 444.18,
+        "x0": 51.3,
+        "y0": 444.19,
         "x1": 98.97,
         "y1": 452.89,
-        "width": 48.89,
-        "height": 8.71
+        "width": 47.67,
+        "height": 8.7
       },
       "meta": {
         "docling_label": "text",
@@ -1647,7 +3177,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/91",
       "page": 4,
       "order": 11,
       "role": "paragraph",
@@ -1666,7 +3196,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 4,
       "order": 12,
       "role": "paragraph",
@@ -1685,7 +3215,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 4,
       "order": 13,
       "role": "paragraph",
@@ -1704,7 +3234,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 4,
       "order": 14,
       "role": "heading",
@@ -1723,7 +3253,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 4,
       "order": 15,
       "role": "list_item",
@@ -1742,7 +3272,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/96",
       "page": 4,
       "order": 16,
       "role": "list_item",
@@ -1761,7 +3291,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/97",
       "page": 4,
       "order": 17,
       "role": "paragraph",
@@ -1780,7 +3310,7 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/98",
       "page": 4,
       "order": 18,
       "role": "paragraph",
@@ -1799,7 +3329,7 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/99",
       "page": 4,
       "order": 19,
       "role": "paragraph",
@@ -1818,7 +3348,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 4,
       "order": 20,
       "role": "paragraph",
@@ -1837,7 +3367,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 4,
       "order": 21,
       "role": "paragraph",
@@ -1856,7 +3386,7 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 4,
       "order": 22,
       "role": "paragraph",
@@ -1875,7 +3405,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 4,
       "order": 23,
       "role": "heading",
@@ -1894,11 +3424,11 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 4,
       "order": 24,
       "role": "paragraph",
-      "text": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve.",
+      "text": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision. Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve.",
       "bbox": {
         "x0": 35.35,
         "y0": 665.67,
@@ -1909,11 +3439,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve."
+        "docling_orig": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision. Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve."
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 4,
       "order": 25,
       "role": "heading",
@@ -1932,7 +3462,7 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 4,
       "order": 26,
       "role": "paragraph",
@@ -1951,7 +3481,7 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 4,
       "order": 27,
       "role": "heading",
@@ -1959,9 +3489,9 @@
       "bbox": {
         "x0": 301.78,
         "y0": 219.0,
-        "x1": 432.51,
+        "x1": 433.73,
         "y1": 229.0,
-        "width": 130.73,
+        "width": 131.95,
         "height": 10.0
       },
       "meta": {
@@ -1970,7 +3500,7 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/108",
       "page": 4,
       "order": 28,
       "role": "paragraph",
@@ -1989,26 +3519,26 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 4,
       "order": 29,
       "role": "paragraph",
-      "text": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect the ray.",
+      "text": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect",
       "bbox": {
         "x0": 303.0,
         "y0": 379.33,
         "x1": 546.13,
-        "y1": 408.76,
+        "y1": 400.33,
         "width": 243.13,
-        "height": 29.43
+        "height": 21.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect the ray."
+        "docling_orig": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect"
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/110",
       "page": 4,
       "order": 30,
       "role": "paragraph",
@@ -2027,7 +3557,7 @@
       }
     },
     {
-      "id": "#/texts/110",
+      "id": "#/texts/111",
       "page": 4,
       "order": 31,
       "role": "heading",
@@ -2046,7 +3576,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/112",
       "page": 4,
       "order": 32,
       "role": "paragraph",
@@ -2065,7 +3595,7 @@
       }
     },
     {
-      "id": "#/texts/113",
+      "id": "#/texts/114",
       "page": 4,
       "order": 33,
       "role": "paragraph",
@@ -2084,7 +3614,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/115",
       "page": 4,
       "order": 34,
       "role": "paragraph",
@@ -2103,26 +3633,26 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/117",
       "page": 4,
       "order": 35,
       "role": "paragraph",
-      "text": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, parallel",
+      "text": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, paralle]",
       "bbox": {
         "x0": 299.33,
         "y0": 583.67,
         "x1": 546.13,
-        "y1": 614.6,
+        "y1": 614.37,
         "width": 246.8,
-        "height": 30.93
+        "height": 30.7
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, parallel"
+        "docling_orig": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, paralle]"
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/118",
       "page": 4,
       "order": 36,
       "role": "paragraph",
@@ -2141,26 +3671,26 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/121",
       "page": 4,
       "order": 37,
       "role": "paragraph",
-      "text": "Note that of, is related to the distance from control point P; to plane k:",
+      "text": "Note that di, is related to the distance from control point P, to plane k:",
       "bbox": {
         "x0": 300.55,
-        "y0": 725.67,
-        "x1": 546.13,
-        "y1": 749.0,
-        "width": 245.58,
-        "height": 23.33
+        "y0": 725.61,
+        "x1": 546.18,
+        "y1": 747.76,
+        "width": 245.63,
+        "height": 22.15
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Note that of, is related to the distance from control point P; to plane k:"
+        "docling_orig": "Note that di, is related to the distance from control point P, to plane k:"
       }
     },
     {
-      "id": "#/texts/121",
+      "id": "#/texts/122",
       "page": 4,
       "order": 38,
       "role": "paragraph",
@@ -2179,7 +3709,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/123",
       "page": 4,
       "order": 39,
       "role": "paragraph",
@@ -2198,7 +3728,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/125",
       "page": 5,
       "order": 1,
       "role": "paragraph",
@@ -2217,7 +3747,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/127",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -2236,7 +3766,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/129",
       "page": 5,
       "order": 3,
       "role": "caption",
@@ -2255,7 +3785,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/130",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -2274,7 +3804,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/131",
       "page": 5,
       "order": 5,
       "role": "paragraph",
@@ -2293,7 +3823,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/132",
       "page": 5,
       "order": 6,
       "role": "paragraph",
@@ -2312,7 +3842,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/134",
       "page": 5,
       "order": 7,
       "role": "paragraph",
@@ -2331,7 +3861,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/135",
       "page": 5,
       "order": 8,
       "role": "heading",
@@ -2350,7 +3880,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/136",
       "page": 5,
       "order": 9,
       "role": "paragraph",
@@ -2369,7 +3899,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/138",
       "page": 5,
       "order": 10,
       "role": "paragraph",
@@ -2388,7 +3918,7 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/140",
       "page": 5,
       "order": 11,
       "role": "paragraph",
@@ -2407,7 +3937,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/142",
       "page": 5,
       "order": 12,
       "role": "paragraph",
@@ -2426,18 +3956,18 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/144",
       "page": 5,
       "order": 13,
       "role": "paragraph",
       "text": "The function d(s, t) can be represented, in an (s, t, d) coordinate system, as an explicit (or so-called non-parametric) surface",
       "bbox": {
-        "x0": 39.1,
+        "x0": 39.09,
         "y0": 746.54,
-        "x1": 278.56,
-        "y1": 765.0,
-        "width": 239.46,
-        "height": 18.46
+        "x1": 278.57,
+        "y1": 765.11,
+        "width": 239.48,
+        "height": 18.57
       },
       "meta": {
         "docling_label": "text",
@@ -2445,7 +3975,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/145",
       "page": 5,
       "order": 14,
       "role": "caption",
@@ -2464,7 +3994,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/146",
       "page": 5,
       "order": 15,
       "role": "paragraph",
@@ -2483,7 +4013,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/147",
       "page": 5,
       "order": 16,
       "role": "paragraph",
@@ -2502,28 +4032,9 @@
       }
     },
     {
-      "id": "#/texts/147",
-      "page": 5,
-      "order": 17,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 524.14,
-        "y0": 244.77,
-        "x1": 536.36,
-        "y1": 250.89,
-        "width": 12.22,
-        "height": 6.12
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
-      }
-    },
-    {
       "id": "#/texts/148",
       "page": 5,
-      "order": 18,
+      "order": 17,
       "role": "caption",
       "text": "Figure 10: Control point distances",
       "bbox": {
@@ -2542,7 +4053,7 @@
     {
       "id": "#/texts/149",
       "page": 5,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "TO",
       "bbox": {
@@ -2582,7 +4093,7 @@
       "page": 6,
       "order": 2,
       "role": "paragraph",
-      "text": "Dopie i ca. Compare in eure it, in onton poin Figure 10.",
+      "text": "Dopic i ca Compare is igure it, in onton poin Figure 10.",
       "bbox": {
         "x0": 41.54,
         "y0": 167.67,
@@ -2593,7 +4104,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Dopie i ca. Compare in eure it, in onton poin Figure 10."
+        "docling_orig": "Dopic i ca Compare is igure it, in onton poin Figure 10."
       }
     },
     {
@@ -2660,12 +4171,12 @@
       "role": "paragraph",
       "text": "-8",
       "bbox": {
-        "x0": 48.87,
+        "x0": 50.09,
         "y0": 294.94,
         "x1": 69.64,
-        "y1": 310.85,
-        "width": 20.77,
-        "height": 15.91
+        "y1": 309.63,
+        "width": 19.55,
+        "height": 14.69
       },
       "meta": {
         "docling_label": "text",
@@ -2867,6 +4378,25 @@
       "page": 6,
       "order": 17,
       "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 272.45,
+        "y0": 517.68,
+        "x1": 282.23,
+        "y1": 527.47,
+        "width": 9.78,
+        "height": 9.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/168",
+      "page": 6,
+      "order": 18,
+      "role": "paragraph",
       "text": "Smat",
       "bbox": {
         "x0": 196.7,
@@ -2879,25 +4409,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "Smat"
-      }
-    },
-    {
-      "id": "#/texts/168",
-      "page": 6,
-      "order": 18,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 262.68,
-        "y0": 529.92,
-        "x1": 268.79,
-        "y1": 537.26,
-        "width": 6.11,
-        "height": 7.34
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
       }
     },
     {
@@ -2926,11 +4437,11 @@
       "role": "paragraph",
       "text": "bounds the projection of the D (s, t) patch. In this example, that convex hull intersects the s axis at points Smin = 2 5 and Smor = 2 3. We conclude that d(s, t) # 0, and therefore P (s, t) # 0, for s < 2 5 and s > 2 3. The de Casteljau subdivision algorithm is applied to clip away those regions, leaving the two dimensional patch in Figure 13.",
       "bbox": {
-        "x0": 43.98,
+        "x0": 43.9,
         "y0": 668.22,
-        "x1": 284.67,
+        "x1": 284.75,
         "y1": 728.33,
-        "width": 240.69,
+        "width": 240.85,
         "height": 60.11
       },
       "meta": {
@@ -3019,7 +4530,7 @@
       "page": 6,
       "order": 25,
       "role": "paragraph",
-      "text": "panch i case ye sale one to sance are to contine 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed.",
+      "text": "panch i case ye sale one to sance are too contin 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10. Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed.",
       "bbox": {
         "x0": 304.22,
         "y0": 536.0,
@@ -3030,7 +4541,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "panch i case ye sale one to sance are to contine 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed."
+        "docling_orig": "panch i case ye sale one to sance are too contin 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10. Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed."
       }
     },
     {
@@ -3076,7 +4587,7 @@
       "page": 6,
       "order": 28,
       "role": "paragraph",
-      "text": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = 0, OF tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries.",
+      "text": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = O, Or tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries.",
       "bbox": {
         "x0": 306.66,
         "y0": 712.27,
@@ -3087,7 +4598,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = 0, OF tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries."
+        "docling_orig": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = O, Or tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries."
       }
     },
     {
@@ -3269,11 +4780,11 @@
       "text": "1",
       "bbox": {
         "x0": 213.81,
-        "y0": 430.79,
-        "x1": 224.8,
+        "y0": 429.57,
+        "x1": 226.03,
         "y1": 446.7,
-        "width": 10.99,
-        "height": 15.91
+        "width": 12.22,
+        "height": 17.13
       },
       "meta": {
         "docling_label": "text",
@@ -3782,11 +5293,11 @@
       "text": "This algorithm works on patches of arbitrary degree. However, since de Casteljau subdivision is an O(n) operation for surface patches, execution speed suffers as patch degree increases. A sample bicubic patch containing a silhouette curve took 50 cpu seconds to render with 11.4 subdivisions per pixel. After elevating that same patch to degree four, the rendering took 94 cpu seconds with 11.2 subdivisions per pixel. The subdivisions per pixel tends to decrease with degree because the control polygon approximates the patch more closely as degree elevation is applied. Table 2 tallies the execution speed for patches elevated up to degree eight.",
       "bbox": {
         "x0": 36.61,
-        "y0": 171.33,
+        "y0": 170.0,
         "x1": 281.01,
         "y1": 270.47,
         "width": 244.4,
-        "height": 99.14
+        "height": 100.47
       },
       "meta": {
         "docling_label": "text",
@@ -3950,7 +5461,7 @@
       "page": 9,
       "order": 12,
       "role": "list_item",
-      "text": "Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics,16 ,3 (July 1982), 245-254.",
+      "text": "Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics, 16 ,3 (July 1982), 245-254.",
       "bbox": {
         "x0": 48.87,
         "y0": 674.33,
@@ -3961,7 +5472,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "6. Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics,16 ,3 (July 1982), 245-254."
+        "docling_orig": "6. Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics, 16 ,3 (July 1982), 245-254."
       }
     },
     {
@@ -4031,9 +5542,9 @@
         "x0": 309.11,
         "y0": 157.88,
         "x1": 544.91,
-        "y1": 178.68,
+        "y1": 177.46,
         "width": 235.8,
-        "height": 20.8
+        "height": 19.58
       },
       "meta": {
         "docling_label": "list_item",
@@ -4230,5 +5741,16 @@
         "docling_orig": "20. Woodward, Charles. Ray Tracing Parametric Surfaces by Subdivision in Viewing Plane. in W. Strasser and H.-P. Seidel, editors, Theory and Practice of Geometric Modeling, Springer-Verlag, 1989, 273-290."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling"
+  }
 }

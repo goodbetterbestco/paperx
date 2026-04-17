@@ -1,16 +1,16 @@
 # 2006 repairing cad model errors based on the design history
 
-Jeongsam Yang a, Soonhung Han b
+Jeongsam Yang, Soonhung Han
 
-© 2006 Elsevier Ltd. All rights reserved.
-a Division of Industrial and Information Systems Engineering, Ajou University, San 5, Wonchun-dong, Yeongtong-gu, Suwon, Kyungki-do 443-749, South Korea
-b Department of Mechanical Engineering, Korea Advanced Institute of Science and Technology, 373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea 0010-4485//\$ - see front matter © 2006 Elsevier Ltd. All rights reserved.
+\({ }^{\mathrm{b}}\) Department of Mechanical Engineering
+Korea Advanced Institute of Science and Technology
+373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea
 
 ## Abstract
 
-For users of CAD data, few things are as frustrating as receiving unusable, poor quality data. Users often waste time fixing or rebuilding such data from scratch on the basis of paper drawings. While previous studies use the boundary representation (B-Rep) of CAD models, we propose an approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule-based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models without translating them to a B-Rep shape, and it also preserves parametric information.
+approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule- based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models
 
-## Introduction
+## 1 Introduction
 
 Because of competition in the market, the lead time for designing and manufacturing products is decreasing, whereas the complexity of products is increasing. Furthermore, as the globalization of companies continues, the development of products surmounts the limitations of geographical boundaries and is enhanced by collaborative design in a distributed environment where there are frequent exchanges of product data for common parts and components.
 
@@ -18,11 +18,23 @@ When developing products, designers and engineers often encounter poor quality p
 
 Tel.: \(C^{82}\) 42 862 9226; fax: \(C^{82}\) 42 862 9224.
 
-average of 4.9 h solving each poor-quality problem. As for the cost of imperfect interoperability, the members of the US automotive supply chain reportedly spend at least $1 billion a year [1]. Similarly, in the Japanese automotive industry, which has as many as 250,000 product data exchanges a year, the cost of these exchanges is approximately $68 million a year, and 1.5 h of lead time are lost whenever one item of poor quality or unusable data needs to be repaired or replaced [2].
+average of 4.9 h solving each poor-quality problem. As for the cost of imperfect interoperability, the members of the US automotive supply chain reportedly spend at least \(\$ 1\) billion a year [1]. Similarly, in the Japanese automotive industry, which has as many as 250,000 product data exchanges a year, the cost of these exchanges is approximately \(\$ 68\) million a year, and 1.5 h of lead time are lost whenever one item of poor quality or unusable data needs to be repaired or replaced [2].
 
 Previous studies on poor-quality CAD models have focused on the boundary representation (B-Rep) of 3D shapes [3-8]. They corrected errors by mathematically analyzing the topological and geometric elements of the B-Rep model. Most commercial applications use the B-Rep data to analyze and correct CAD model errors. However, although the B-Rep approach is effective for locating errors with the maximum or minimum tolerance as defined by the designer, an unstable topological structure can unintentionally distort a repaired B-Rep shape or cause the shape to collapse. As a result, only limited types of errors can be corrected, and automation of the correction process is difficult. Designers are therefore reluctant to correct errors with commercial applications that are based on the B-Rep approach.
 
-To repair errors, we now propose a method that can reconstruct the design history of a CAD model. The design history refers to the chronological order in which a designer created the various features of a 3D shape. In a CAD system, there are different ways of defining a shape. Thus, the design includes the geometry-controlling parameters, the geometric design features, the feature information, the design history tree, the parameterization data, and the constraints. We therefore analyzed several 3D parametric models from automotive companies to define the relationship between the various feature commands, as well as the relationship between the parametric data of each feature. We also defined a design history schema in order to structure the design history information extracted from a 3D model created in a commercial CAD system. We then used the schema to repair the CAD model through the rule reasoning of the design history. Finally, to verify the proposed method, we developed a CAD model correction system called Q-Raider, which can repair the following six types of CAD model errors: tiny faces, narrow regions, non-tangent faces, narrow steps, sharp face angles, and narrow spaces.
+To repair errors, we now propose a method that can reconstruct the design history of a CAD model. The design history refers to the chronological order in which a designer created the various features of a 3D shape. In a CAD system, there are different ways of defining a shape. Thus, the design includes the geometry-controlling parameters, the geometric
+
+Computer-Aided Design 38 (2006) 627-640
+
+Repairing CAD model errors based on the design history
+
+$$
+Jeongsam Yang \({ }^{\mathrm{a}, *}\), Soonhung Han \({ }^{\mathrm{b}, 1}\)
+$$
+
+- a Division of Industrial and Information Systems engineering, Ajou University, San 5, Wonchun-dong, Yeongtong-gu, Suwon, Kyungki-do 443-749, South Korea
+
+\({ }^{\mathrm{b}}\) Department of Mechanical engineering, Korea Advanced Institute of Science and Technology, 373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea design features, the feature information, the design history tree, the parameterization data, and the constraints. We therefore analyzed several 3D parametric models from automotive companies to define the relationship between the various feature commands, as well as the relationship between the parametric data of each feature. We also defined a design history schema in order to structure the design history information extracted from a 3D model created in a commercial CAD system. We then used the schema to repair the CAD model through the rule reasoning of the design history. Finally, to verify the proposed method, we developed a CAD model correction system called Q-Raider, which can repair the following six types of CAD model errors: tiny faces, narrow regions, non-tangent faces, narrow steps, sharp face angles, and narrow spaces.
 
 ## 2 Related works
 
@@ -32,7 +44,7 @@ Previous studies on correcting CAD model errors can be classified into an exact 
 
 The faceted B-Rep approach, which approximates the exact B-Rep model in terms of a polyhedron, corrects errors faster than the exact B-Rep approach. Barequet et al. [5] proposed a geometric hashing algorithm that sequentially reconfigures polygons after dividing the trimmed surface of a complex 3D shape into unordered lists of polygons. The hashing algorithm corrects errors by stitching the small gaps between the polygons.
 
-The boundary curve-based approach can only be used for 3D shapes made of surfaces. Steinbrenner et al. [6] checked and corrected the gaps or overlaps between adjacent curves in a 3D shape that consisted of curved surfaces with various degrees. This method checks and corrects the gaps or overlaps through an edge-splitting and merging process after the boundary curve has been divided into small edge curves. To correct the \(\mathrm{G}^{1}\) discontinuity on surfaces (that is, the non tangent angle between adjacent surface patches), Volpin et al. [7] simplified the original free-form surface model: they first divided the regions on the basis of curvature variation; next, they generated a boundary-conforming finite element quad rilateral mesh of the regions; and, finally, they fitted a smooth surface over the quadrilateral mesh.
+The boundary curve-based approach can only be used for 3D shapes made of surfaces. Steinbrenner et al. [6] checked and corrected the gaps or overlaps between adjacent curves in a 3D shape that consisted of curved surfaces with various degrees. This method checks and corrects the gaps or overlaps through an edge-splitting and merging process after the boundary curve has been divided into small edge curves. To correct the \(\mathrm{G}^{1}\) discontinuity on surfaces (that is, the nontangent angle between adjacent surface patches), Volpin et al. [7] simplified the original free-form surface model: they first divided the regions on the basis of curvature variation; next, they generated a boundary-conforming finite element quadrilateral mesh of the regions; and, finally, they fitted a smooth surface over the quadrilateral mesh.
 
 Most studies discuss the B-Rep shape of CAD models and a B-Rep correction can be applied to a limited number of error types such as gaps and overlaps. Moreover, there is inevitably a loss of data when the shape is being simplified by the B-Rep approach.
 
@@ -48,7 +60,7 @@ Mun et al. [10] proposed a disambiguation method based on object space informati
 
 Capoyleas et al. [11] proposed a topological naming method that exploits feature-specific information such as the profile and path of extrusions. To solve the ambiguity problem, Capoyleas et al. used information on either the local orientation of adjacent topological entities, such as the edge or the face, or on the feature orientation, such as the extrusion path or rotational axis.
 
-Vergeest et al. [25] endeavored to anticipate the feasibility of interoperability in an approach that systematically analyzes and models the requirements of a shared infrastructure. An inherent incompatibility between different CAx models exists in CAD translations due to system-specific modeling function alities. For example, the hole creation command of Pro/E cannot be directly translated to CATIA because Pro/E provides more diverse ways to generate hole features than CATIA. Such incompatible modeling commands can be mapped through \(1: N\) or \(N: 1\) mappings.
+Vergeest et al. [25] endeavored to anticipate the feasibility of interoperability in an approach that systematically analyzes and models the requirements of a shared infrastructure. An inherent incompatibility between different CAx models exists in CAD translations due to system-specific modeling functionalities. For example, the hole creation command of Pro/E cannot be directly translated to CATIA because Pro/E provides more diverse ways to generate hole features than CATIA. Such incompatible modeling commands can be mapped through \(1: N\) or \(N: 1\) mappings.
 
 The geometric naming method identifies selected entities by comparing geometric coordinates. While this method raises no problems of ambiguity, it does have problems with matching names. To resolve the naming problem that occurs whenever CAD models are exchanged, Ranger [12], who is a member of the STEP parametrics group, proposed a method of transferring the explicit geometry of a referenced topology. The commercial CAD system SolidWorks, on the other hand, persistently names topological entities by using the entity types and 3D coordinates of the referenced entities [13].
 
@@ -86,7 +98,7 @@ Most commercial CAD systems used in product development have data structures tha
 
 *Figure 2. Design history schema with the feature and reference command groups.: Design history schema with the feature and reference command groups.*
 
-<xs: element name="Pad"> - <xs: complexType> - <xs: sequence> - <xs: element name="profile_curves" maxOccurs="unbounded"> - <xs: complexType> use="required" > use="required" > < xs: complexType> < xs: element> <xs: element name="second_length" type="xs:double" > <xs: element name="reference_plane" type="xs:string" > exs: element name="own_direction" type="direction" minOccurs="0" > < xs: sequence> <xs: attribute name="result_solid" type="xs:string" use="required" > < xs: complexType> < xs: element>
+<xs: element name="Pad"> - <xs: complexType> - <xs: sequence› - <xs: element name="profile_curves" maxOccurs="unbounded"> - <xs: complexType> use="required" > use="required" > < xs: complexType> < xs: element> <xs: element name="second_length" type="xs:double" > <xs: element name="reference_plane" type="xs:string" > exs: element name="own_direction" type="direction" minOccurs="0" > < xs: sequence> <xs: attribute name="result_solid" type="xs:string" use="required" > < xs: complexType> < xs: element>
 
 ![Figure 3. A ﬂow chart of the design history extraction.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-3-p005.png)
 
@@ -105,6 +117,8 @@ The design history schema of Fig. 2, which we formatted with Altova's commercial
 ![Figure 4. XML schema deﬁnition of the Pad feature command.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-4-p005.png)
 
 *Figure 4. XML schema deﬁnition of the Pad feature command.: XML schema deﬁnition of the Pad feature command. XML schema definition of the Pad feature command.*
+
+F4. 1 4.2
 
 <profile_curves profile_name="Sketch.1" parent_name="PartBody" > <first_limit_type>Dimension< first_limit_type> <first_length>30.000c first_length> <second_limit_type>Dimension< second_limit_type> <second_length>5.000k second_length> creference_plane>xy plane< reference_plane> < Pad> - <Fillet result_solid="Fillet.1"> <targets>Edges< targets> fillet_type>Constant< fillet_type> cradius> 2.000< radius> <propagation_type>Tangency< propagation_type> <target_edges target_name="Edge.5" parent_name="Pad.1" > < Fillet> < Body> < HistorySchema> x F2.3 F2.5 F2.6 F2.1 F2.71 F2.2 F3.5 F3.3 F3.1 F3.4 C3 F4.7 F4.3 F4.11 F4.10
 
@@ -170,7 +184,7 @@ In Fig. 6, the label F2.6, which is one of faces that was generated from the Fil
 
 lateral curve C1; the label was then deleted after the Pocket command had been generated.
 
-There are two solutions for the name-matching problem: a global matching method and a local matching method [16]. To find the topological entity of a new model that corresponds to a selected topological entity of an old model (1: \(N\) comparison), the local matching method compares all the topological entities of the new model with the selected topological entity of the old model. In contrast, the global matching method saves the history of the topological evolution of both the old and new models and compares the evolution history of the old model with that of the new model ( \(N: N\) comparison). To identify a topological entity in the previous model and to find the same entity in the repaired model, we used the global matching
+There are two solutions for the name-matching problem: a global matching method and a local matching method [16]. To find the topological entity of a new model that corresponds to a selected topological entity of an old model ( \(1: N\) comparison), the local matching method compares all the topological entities of the new model with the selected topological entity of the old model. In contrast, the global matching method saves the history of the topological evolution of both the old and new models and compares the evolution history of the old model with that of the new model ( \(N: N\) comparison). To identify a topological entity in the previous model and to find the same entity in the repaired model, we used the global matching
 
 ### 3.4 Interpretation of the design history
 
@@ -260,7 +274,7 @@ While modeling the left part of the crankshaft, the designer revolved the profil
 
 *Figure 15. Q-Raider’s main window and control panel.: Q-Raider’s main window and control panel.*
 
-- <Body body_name="Body.1"> + ‹Pad result_solid="Pad.3"> + <Pattern result_solid="CircPattern.1'> < Body> + Body body name="Body.3"> + ‹Body body_name= Body.25 <Body body_name="Body.4"> - <Shaft result_solid="Shaft.3"> < Shaft> s Body2.- + <Pad result_solid="Pad.1"> «Body body name= Clutchdisk's - <Pad result_solid="Pad.2"> parent_name="Clutchdisk" > <profile_curves profile_name="Sketch.2" cfirst_length>10.000c first_length> csecond_length>0.000c second_length> < Pad> - <Boolean_Op result_solid="Remove.3"> <boolean_type>Remove< boolean_type> < Boolean_Op> s Body?.. - ¿Body body_name="Crankshäft"5 ‹ReferenceElems + <Shaft result_solid="Shaft.1"> + <Pad result_solid="Pad.1"> + <Shaft result_solid="Shaft.2"> + <Hole result_solid="Hole.1'> + cHole result_solid= Hole.2 > + <Pocket result_solid="Pocket.2"> + <Pocket result_solid="Pocket.1"> - <Boolean_Op result_solid="Remove.1"> ‹boolean_type>Remove< boolean_type> < Boolean_Op> + <Fillet result_solid="Fillet.1"> + <Bool_Op result_solid="Remove.2"> --- s Body?. Tiny face Narrow step Profile
+- <Body body_name="Body.1"> + ‹Pad result_solid="Pad.3"> + <Pattern result_solid="CircPattern.1'> < Body> + Body body name="Body.3"> ‹Body body_name="Body.255 <Body body_name="Body.4"> - <Shaft result_solid="Shaft.3"> < Shaft> s Body2.- + <Pad result_solid="Pad.1"> -Body body nameClutchdisk"s - <Pad result_solid="Pad.2"> parent_name="Clutchdisk" > <profile_curves profile_name="Sketch.2" cfirst_length>10.000c first_length> csecond_length>0.000c second_length> < Pad> - <Boolean_Op result_solid="Remove.3"> <boolean_type>Remove< boolean_type> < Boolean_Op> s Body?.. - ¿Body body_name="Crankshäft"5 ‹ReferenceElems + <Shaft result_solid="Shaft.1"> + <Pad result_solid="Pad.1"> + <Shaft result_solid="Shaft.2"> + <Hole result_solid="Hole.1'> + cHole result_solid= Hole.2 > + <Pocket result_solid="Pocket.2"> + <Pocket result_solid="Pocket.1"> - <Boolean_Op result_solid="Remove.1"> ‹boolean_type>Remove< boolean_type> < Boolean_Op> + <Fillet result_solid="Fillet.1"> + <Bool_Op result_solid="Remove.2"> --- s Body?. Tiny face Narrow step Profile
 
 ![Figure 16. Example of a correction to a crankshaft model.](/Users/evanthayer/Projects/paperx/docs/2006_repairing_cad_model_errors_based_on_the_design_history/figures/figure-16-p012.png)
 
@@ -284,7 +298,49 @@ This work was supported by the Korea Research Foundation Grant (KRF-2005-M1-1030
 
 ## References
 
-- Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-final report: RTI project number 7007-03, Research Triangle Institute; 1999. Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003. Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18. Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66. Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8. Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25. Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22. Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98. Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25. Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26. ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002. SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002. Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30. Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003. Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002. Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52. Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83. ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard). Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org. Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9. Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html. Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.
+- Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-final report: RTI project number 7007-03, Research Triangle Institute; 1999.
+
+- Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003.
+
+- Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18.
+
+- Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66.
+
+- Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8.
+
+- Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25.
+
+- Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22.
+
+- Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98.
+
+- Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25.
+
+- Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26.
+
+- ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002.
+
+- SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002.
+
+- Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30.
+
+- Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003.
+
+- Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002.
+
+- Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52.
+
+- Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83.
+
+- ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard).
+
+- Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org.
+
+- Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9.
+
+- Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html.
+
+- Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.
 
 - ]l
 

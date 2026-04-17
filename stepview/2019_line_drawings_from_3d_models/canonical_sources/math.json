@@ -2,7 +2,7 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p017-0026",
+      "id": "mathpix-eq-p017-0027",
       "kind": "display",
       "display_latex": "S_{x}=\\left[\\begin{array}{ccc}\n-1 & 0 & 1 \\\\\n-2 & 0 & 2 \\\\\n-1 & 0 & 1\n\\end{array}\\right] \\quad S_{y}=\\left[\\begin{array}{ccc}\n-1 & -2 & -1 \\\\\n0 & 0 & 0 \\\\\n1 & 2 & 1\n\\end{array}\\right]",
       "semantic_expr": null,
@@ -15,12 +15,12 @@
         {
           "page": 17,
           "bbox": {
-            "x0": 175.5,
-            "y0": 612.5,
-            "x1": 434.5,
-            "y1": 665.0,
-            "width": 259.0,
-            "height": 52.5
+            "x0": 175.68,
+            "y0": 612.58,
+            "x1": 434.3,
+            "y1": 665.28,
+            "width": 258.62,
+            "height": 52.7
           },
           "engine": "mathpix"
         }
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p017-0028",
+      "id": "mathpix-eq-p017-0029",
       "kind": "display",
       "display_latex": "G(x, y)=\\sqrt{\\left(D(x, y) \\otimes S_{x}\\right)^{2}+\\left(D(x, y) \\otimes S_{y}\\right)^{2}}",
       "semantic_expr": null,
@@ -46,12 +46,12 @@
         {
           "page": 17,
           "bbox": {
-            "x0": 194.5,
-            "y0": 700.5,
-            "x1": 417.5,
-            "y1": 730.5,
-            "width": 223.0,
-            "height": 30.0
+            "x0": 194.4,
+            "y0": 700.42,
+            "x1": 417.6,
+            "y1": 730.66,
+            "width": 223.2,
+            "height": 30.24
           },
           "engine": "mathpix"
         }
@@ -77,12 +77,12 @@
         {
           "page": 19,
           "bbox": {
-            "x0": 218.0,
-            "y0": 132.5,
-            "x1": 394.0,
-            "y1": 175.5,
-            "width": 176.0,
-            "height": 43.0
+            "x0": 216.58,
+            "y0": 132.48,
+            "x1": 394.27,
+            "y1": 176.26,
+            "width": 177.7,
+            "height": 43.78
           },
           "engine": "mathpix"
         }
@@ -108,12 +108,12 @@
         {
           "page": 19,
           "bbox": {
-            "x0": 231.0,
-            "y0": 404.5,
-            "x1": 379.5,
-            "y1": 453.5,
-            "width": 148.5,
-            "height": 49.0
+            "x0": 230.11,
+            "y0": 404.64,
+            "x1": 380.45,
+            "y1": 454.18,
+            "width": 150.34,
+            "height": 49.54
           },
           "engine": "mathpix"
         }
@@ -126,9 +126,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p028-0036",
+      "id": "mathpix-eq-p028-0039",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\ng(\\mathbf{s})=\\mathbf{v} \\cdot \\mathbf{s}=v_{x} s_{1}+v_{y} s_{2}+v_{z} s_{3}=0 \\tag{3.1}\n\\end{equation*}",
+      "display_latex": "g(\\mathbf{s})=\\mathbf{v} \\cdot \\mathbf{s}=v_{x} s_{1}+v_{y} s_{2}+v_{z} s_{3}=0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 28,
           "bbox": {
-            "x0": 219.0,
-            "y0": 705.0,
-            "x1": 393.0,
-            "y1": 722.0,
-            "width": 174.0,
-            "height": 17.0
+            "x0": 218.3,
+            "y0": 704.16,
+            "x1": 392.83,
+            "y1": 722.02,
+            "width": 174.53,
+            "height": 17.86
           },
           "engine": "mathpix"
         }
@@ -170,12 +170,12 @@
         {
           "page": 30,
           "bbox": {
-            "x0": 241.5,
-            "y0": 428.0,
-            "x1": 370.0,
-            "y1": 443.5,
-            "width": 128.5,
-            "height": 15.5
+            "x0": 241.34,
+            "y0": 428.26,
+            "x1": 369.5,
+            "y1": 442.37,
+            "width": 128.16,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p044-0025",
+      "id": "mathpix-eq-p044-0026",
       "kind": "display",
       "display_latex": "\\mathbf{n}_{1}= \\pm \\frac{(\\mathbf{b}-\\mathbf{a}) \\times(\\mathbf{c}-\\mathbf{a})}{\\|(\\mathbf{b}-\\mathbf{a}) \\times(\\mathbf{c}-\\mathbf{a})\\|}",
       "semantic_expr": null,
@@ -201,12 +201,12 @@
         {
           "page": 44,
           "bbox": {
-            "x0": 235.0,
-            "y0": 490.0,
-            "x1": 377.0,
-            "y1": 526.5,
-            "width": 142.0,
-            "height": 36.5
+            "x0": 235.01,
+            "y0": 490.75,
+            "x1": 375.55,
+            "y1": 525.89,
+            "width": 140.54,
+            "height": 35.14
           },
           "engine": "mathpix"
         }
@@ -219,7 +219,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p053-0012",
+      "id": "mathpix-eq-p053-0013",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& \\hat{\\mathbf{n}}_{i}=\\frac{\\sum_{j \\in N(i)} A_{j} \\mathbf{n}_{j}}{\\sum_{j \\in N(i)} A_{j}} \\\\\n& \\mathbf{n}_{i}=\\hat{\\mathbf{n}}_{i} /\\left\\|\\hat{\\mathbf{n}}_{i}\\right\\|\n\\end{aligned}",
       "semantic_expr": null,
@@ -232,12 +232,12 @@
         {
           "page": 53,
           "bbox": {
-            "x0": 259.5,
-            "y0": 390.0,
-            "x1": 352.0,
-            "y1": 445.0,
-            "width": 92.5,
-            "height": 55.0
+            "x0": 258.62,
+            "y0": 389.95,
+            "x1": 351.94,
+            "y1": 444.96,
+            "width": 93.31,
+            "height": 55.01
           },
           "engine": "mathpix"
         }
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p053-0016",
+      "id": "mathpix-eq-p053-0017",
       "kind": "display",
       "display_latex": "g\\left(\\mathbf{p}_{i}\\right)=\\left(\\mathbf{p}_{i}-\\mathbf{c}\\right) \\cdot \\mathbf{n}_{i} .",
       "semantic_expr": null,
@@ -263,12 +263,12 @@
         {
           "page": 53,
           "bbox": {
-            "x0": 256.0,
-            "y0": 520.0,
-            "x1": 354.5,
-            "y1": 535.0,
-            "width": 98.5,
-            "height": 15.0
+            "x0": 254.88,
+            "y0": 518.4,
+            "x1": 355.1,
+            "y1": 536.54,
+            "width": 100.22,
+            "height": 18.14
           },
           "engine": "mathpix"
         }
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p053-0026",
+      "id": "mathpix-eq-p053-0027",
       "kind": "display",
       "display_latex": "g(t)=(1-t) g\\left(\\mathbf{p}_{i}\\right)+\\operatorname{tg}\\left(\\mathbf{p}_{j}\\right) .",
       "semantic_expr": null,
@@ -294,12 +294,12 @@
         {
           "page": 53,
           "bbox": {
-            "x0": 236.5,
-            "y0": 709.5,
-            "x1": 375.0,
-            "y1": 726.0,
-            "width": 138.5,
-            "height": 16.5
+            "x0": 235.01,
+            "y0": 709.06,
+            "x1": 375.55,
+            "y1": 726.34,
+            "width": 140.54,
+            "height": 17.28
           },
           "engine": "mathpix"
         }
@@ -314,7 +314,7 @@
     {
       "id": "mathpix-eq-p054-0017",
       "kind": "display",
-      "display_latex": "\\begin{align*}\nt & =\\frac{g\\left(\\mathbf{p}_{i}\\right)}{g\\left(\\mathbf{p}_{i}\\right)-g\\left(\\mathbf{p}_{j}\\right)}, \\\\\n\\mathbf{p}(t) & =(1-t) \\mathbf{p}_{i}+t \\mathbf{p}_{j}=\\frac{g\\left(\\mathbf{p}_{i}\\right) \\mathbf{p}_{i}-g\\left(\\mathbf{p}_{j}\\right) \\mathbf{p}_{j}}{g\\left(\\mathbf{p}_{i}\\right)-g\\left(\\mathbf{p}_{j}\\right)} . \\tag{6.1}\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\nt & =\\frac{g\\left(\\mathbf{p}_{i}\\right)}{g\\left(\\mathbf{p}_{i}\\right)-g\\left(\\mathbf{p}_{j}\\right)}, \\\\\n\\mathbf{p}(t) & =(1-t) \\mathbf{p}_{i}+t \\mathbf{p}_{j}=\\frac{g\\left(\\mathbf{p}_{i}\\right) \\mathbf{p}_{i}-g\\left(\\mathbf{p}_{j}\\right) \\mathbf{p}_{j}}{g\\left(\\mathbf{p}_{i}\\right)-g\\left(\\mathbf{p}_{j}\\right)} .\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -325,12 +325,12 @@
         {
           "page": 54,
           "bbox": {
-            "x0": 199.0,
-            "y0": 600.0,
-            "x1": 411.5,
-            "y1": 667.0,
-            "width": 212.5,
-            "height": 67.0
+            "x0": 198.72,
+            "y0": 599.62,
+            "x1": 412.13,
+            "y1": 667.58,
+            "width": 213.41,
+            "height": 67.97
           },
           "engine": "mathpix"
         }
@@ -343,7 +343,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p059-0020",
+      "id": "mathpix-eq-p059-0022",
       "kind": "display",
       "display_latex": "\\mathbf{p}(\\mathbf{u})=\\left[\\begin{array}{l}\nf_{x}(u, v) \\\\\nf_{y}(u, v) \\\\\nf_{z}(u, v)\n\\end{array}\\right]",
       "semantic_expr": null,
@@ -356,12 +356,12 @@
         {
           "page": 59,
           "bbox": {
-            "x0": 253.5,
-            "y0": 560.5,
-            "x1": 354.5,
-            "y1": 610.5,
-            "width": 101.0,
-            "height": 50.0
+            "x0": 253.73,
+            "y0": 560.45,
+            "x1": 354.53,
+            "y1": 609.41,
+            "width": 100.8,
+            "height": 48.96
           },
           "engine": "mathpix"
         }
@@ -374,9 +374,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p059-0026",
+      "id": "mathpix-eq-p059-0028",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathbf{p}(u, v)=\\frac{\\sum_{i=0}^{n} \\sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j} \\mathbf{p}_{i, j}}{\\sum_{i=0}^{n} \\sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j}}, \\tag{7.1}\n\\end{equation*}",
+      "display_latex": "\\mathbf{p}(u, v)=\\frac{\\sum_{i=0}^{n} \\sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j} \\mathbf{p}_{i, j}}{\\sum_{i=0}^{n} \\sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j}},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -387,12 +387,12 @@
         {
           "page": 59,
           "bbox": {
-            "x0": 205.5,
-            "y0": 688.5,
-            "x1": 405.5,
+            "x0": 205.34,
+            "y0": 688.61,
+            "x1": 405.22,
             "y1": 729.5,
-            "width": 200.0,
-            "height": 41.0
+            "width": 199.87,
+            "height": 40.9
           },
           "engine": "mathpix"
         }
@@ -418,12 +418,12 @@
         {
           "page": 60,
           "bbox": {
-            "x0": 128.5,
-            "y0": 412.0,
-            "x1": 482.5,
-            "y1": 448.0,
-            "width": 354.0,
-            "height": 36.0
+            "x0": 128.74,
+            "y0": 412.13,
+            "x1": 482.69,
+            "y1": 447.84,
+            "width": 353.95,
+            "height": 35.71
           },
           "engine": "mathpix"
         }
@@ -449,12 +449,12 @@
         {
           "page": 60,
           "bbox": {
-            "x0": 253.5,
-            "y0": 484.0,
-            "x1": 358.5,
-            "y1": 500.5,
-            "width": 105.0,
-            "height": 16.5
+            "x0": 253.15,
+            "y0": 483.84,
+            "x1": 358.27,
+            "y1": 500.54,
+            "width": 105.12,
+            "height": 16.7
           },
           "engine": "mathpix"
         }
@@ -467,7 +467,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p061-0017",
+      "id": "mathpix-eq-p061-0018",
       "kind": "display",
       "display_latex": "g(\\mathbf{u})=(\\mathbf{p}(\\mathbf{u})-\\mathbf{c}) \\cdot \\mathbf{n}(\\mathbf{u}) .",
       "semantic_expr": null,
@@ -480,12 +480,12 @@
         {
           "page": 61,
           "bbox": {
-            "x0": 245.0,
-            "y0": 495.0,
-            "x1": 365.5,
-            "y1": 510.5,
-            "width": 120.5,
-            "height": 15.5
+            "x0": 245.09,
+            "y0": 495.07,
+            "x1": 365.76,
+            "y1": 510.34,
+            "width": 120.67,
+            "height": 15.26
           },
           "engine": "mathpix"
         }
@@ -511,12 +511,12 @@
         {
           "page": 65,
           "bbox": {
-            "x0": 263.0,
-            "y0": 397.0,
-            "x1": 348.5,
-            "y1": 429.0,
-            "width": 85.5,
-            "height": 32.0
+            "x0": 262.94,
+            "y0": 397.15,
+            "x1": 348.48,
+            "y1": 428.26,
+            "width": 85.54,
+            "height": 31.1
           },
           "engine": "mathpix"
         }
@@ -529,9 +529,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p072-0009",
+      "id": "mathpix-eq-p072-0011",
       "kind": "display",
-      "display_latex": "\\mathscr{S}=\\left\\{\\mathbf{p} \\in \\mathbb{R}^{3} \\mid f(\\mathbf{p})=\\rho\\right\\},",
+      "display_latex": "\\mathscr{S}=\\left\\{\\mathbf{p} \\in \\mathbb{R}^{3} \\mid f(\\mathbf{p})=\\rho\\right\\}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -542,43 +542,12 @@
         {
           "page": 72,
           "bbox": {
-            "x0": 240.0,
-            "y0": 383.5,
-            "x1": 370.5,
-            "y1": 404.5,
-            "width": 130.5,
-            "height": 21.0
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p072-0016",
-      "kind": "display",
-      "display_latex": "\\mathbf{n}=\\frac{\\nabla f(\\mathbf{p})}{\\|\\nabla f(\\mathbf{p})\\|},",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 72,
-          "bbox": {
-            "x0": 267.5,
-            "y0": 512.5,
-            "x1": 344.0,
-            "y1": 547.5,
-            "width": 76.5,
-            "height": 35.0
+            "x0": 239.33,
+            "y0": 382.46,
+            "x1": 371.81,
+            "y1": 405.22,
+            "width": 132.48,
+            "height": 22.75
           },
           "engine": "mathpix"
         }
@@ -593,7 +562,7 @@
     {
       "id": "mathpix-eq-p072-0018",
       "kind": "display",
-      "display_latex": "\\nabla f(\\mathbf{p})=\\left(\\left.\\frac{\\partial f}{\\partial x}\\right|_{\\mathbf{p}},\\left.\\frac{\\partial f}{\\partial y}\\right|_{\\mathbf{p}},\\left.\\frac{\\partial f}{\\partial z}\\right|_{\\mathbf{p}}\\right)^{\\top}",
+      "display_latex": "\\mathbf{n}=\\frac{\\nabla f(\\mathbf{p})}{\\|\\nabla f(\\mathbf{p})\\|},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -604,12 +573,12 @@
         {
           "page": 72,
           "bbox": {
-            "x0": 218.0,
-            "y0": 562.0,
-            "x1": 394.0,
-            "y1": 607.0,
-            "width": 176.0,
-            "height": 45.0
+            "x0": 266.11,
+            "y0": 511.2,
+            "x1": 344.74,
+            "y1": 548.35,
+            "width": 78.62,
+            "height": 37.15
           },
           "engine": "mathpix"
         }
@@ -624,6 +593,37 @@
     {
       "id": "mathpix-eq-p072-0020",
       "kind": "display",
+      "display_latex": "\\nabla f(\\mathbf{p})=\\left(\\left.\\frac{\\partial f}{\\partial x}\\right|_{\\mathbf{p}},\\left.\\frac{\\partial f}{\\partial y}\\right|_{\\mathbf{p}},\\left.\\frac{\\partial f}{\\partial z}\\right|_{\\mathbf{p}}\\right)^{\\top}",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 72,
+          "bbox": {
+            "x0": 216.58,
+            "y0": 561.31,
+            "x1": 394.85,
+            "y1": 607.68,
+            "width": 178.27,
+            "height": 46.37
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p072-0022",
+      "kind": "display",
       "display_latex": "\\kappa_{\\mathbf{n}}(\\mathbf{t})=\\frac{\\mathbf{t}^{\\top}(\\nabla \\mathbf{n}) \\mathbf{t}}{\\|\\mathbf{t}\\|^{2}}",
       "semantic_expr": null,
       "compiled_targets": {},
@@ -635,12 +635,12 @@
         {
           "page": 72,
           "bbox": {
-            "x0": 262.5,
-            "y0": 630.5,
-            "x1": 350.0,
-            "y1": 669.0,
-            "width": 87.5,
-            "height": 38.5
+            "x0": 261.22,
+            "y0": 629.86,
+            "x1": 350.78,
+            "y1": 669.6,
+            "width": 89.57,
+            "height": 39.74
           },
           "engine": "mathpix"
         }
@@ -653,9 +653,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p073-0006",
+      "id": "mathpix-eq-p073-0007",
       "kind": "display",
-      "display_latex": "\\begin{aligned}\n(f(\\mathbf{p})-\\mathbf{c}) \\cdot \\mathbf{n} & =0 \\\\\n\\Leftrightarrow \\quad(f(\\mathbf{p})-\\mathbf{c}) \\cdot \\nabla f(\\mathbf{p}) & =0,\n\\end{aligned}",
+      "display_latex": "\\begin{aligned}\n(f(\\mathbf{p})-\\mathbf{c}) \\cdot \\mathbf{n} & =0 \\\\\n\\Leftrightarrow \\quad(f(\\mathbf{p})-\\mathbf{c}) \\cdot \\nabla f(\\mathbf{p}) & =0\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -666,12 +666,12 @@
         {
           "page": 73,
           "bbox": {
-            "x0": 234.0,
-            "y0": 177.0,
-            "x1": 377.5,
-            "y1": 214.5,
-            "width": 143.5,
-            "height": 37.5
+            "x0": 233.28,
+            "y0": 176.83,
+            "x1": 377.57,
+            "y1": 214.85,
+            "width": 144.29,
+            "height": 38.02
           },
           "engine": "mathpix"
         }
@@ -684,9 +684,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p073-0018",
+      "id": "mathpix-eq-p073-0020",
       "kind": "display",
-      "display_latex": "\\left\\{\\begin{align*}\nf(c(t)) & =0  \\tag{8.1}\\\\\n\\mathbf{v}^{\\top} \\nabla f(c(t)) & =0 .^{1}\n\\end{align*}\\right.",
+      "display_latex": "\\left\\{\\begin{aligned}\nf(c(t)) & =0 \\\\\n\\mathbf{v}^{\\top} \\nabla f(c(t)) & =0 .^{1}\n\\end{aligned}\\right.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -697,12 +697,12 @@
         {
           "page": 73,
           "bbox": {
-            "x0": 253.5,
-            "y0": 422.0,
-            "x1": 356.0,
-            "y1": 464.5,
-            "width": 102.5,
-            "height": 42.5
+            "x0": 253.73,
+            "y0": 421.34,
+            "x1": 355.68,
+            "y1": 464.54,
+            "width": 101.95,
+            "height": 43.2
           },
           "engine": "mathpix"
         }
@@ -715,7 +715,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p073-0022",
+      "id": "mathpix-eq-p073-0024",
       "kind": "display",
       "display_latex": "\\left\\{\\begin{aligned}\n\\nabla f(c(t)) \\cdot \\mathbf{w} & =0 \\\\\n\\mathbf{v}^{\\top} \\mathrm{H} f(c(t)) \\mathbf{w} & =0\n\\end{aligned}\\right.",
       "semantic_expr": null,
@@ -728,12 +728,12 @@
         {
           "page": 73,
           "bbox": {
-            "x0": 253.0,
-            "y0": 498.5,
-            "x1": 358.5,
-            "y1": 542.0,
-            "width": 105.5,
-            "height": 43.5
+            "x0": 252.58,
+            "y0": 498.82,
+            "x1": 358.27,
+            "y1": 541.44,
+            "width": 105.7,
+            "height": 42.62
           },
           "engine": "mathpix"
         }
@@ -746,7 +746,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p073-0025",
+      "id": "mathpix-eq-p073-0027",
       "kind": "display",
       "display_latex": "\\mathbf{w} \\propto \\nabla f(c(t)) \\times \\mathbf{v}^{\\top} \\mathrm{H} f",
       "semantic_expr": null,
@@ -759,12 +759,12 @@
         {
           "page": 73,
           "bbox": {
-            "x0": 247.5,
-            "y0": 581.5,
-            "x1": 364.0,
-            "y1": 602.0,
-            "width": 116.5,
-            "height": 20.5
+            "x0": 247.39,
+            "y0": 580.32,
+            "x1": 363.74,
+            "y1": 601.92,
+            "width": 116.35,
+            "height": 21.6
           },
           "engine": "mathpix"
         }
@@ -777,7 +777,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p073-0029",
+      "id": "mathpix-eq-p073-0031",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n\\mathbf{p}_{i+1} & =\\mathbf{p}_{i}+\\varepsilon F\\left(\\mathbf{p}_{i}\\right), \\\\\n\\text { with } F(\\mathbf{p}) & =\\nabla f(\\mathbf{p}) \\times \\mathbf{v}^{\\top} \\mathrm{H} f(\\mathbf{p}) .\n\\end{aligned}",
       "semantic_expr": null,
@@ -790,12 +790,12 @@
         {
           "page": 73,
           "bbox": {
-            "x0": 223.0,
-            "y0": 667.0,
-            "x1": 388.0,
-            "y1": 705.0,
-            "width": 165.0,
-            "height": 38.0
+            "x0": 222.62,
+            "y0": 665.86,
+            "x1": 387.94,
+            "y1": 704.16,
+            "width": 165.31,
+            "height": 38.3
           },
           "engine": "mathpix"
         }
@@ -821,12 +821,12 @@
         {
           "page": 74,
           "bbox": {
-            "x0": 234.0,
-            "y0": 344.5,
-            "x1": 377.5,
-            "y1": 380.0,
-            "width": 143.5,
-            "height": 35.5
+            "x0": 233.86,
+            "y0": 344.16,
+            "x1": 377.57,
+            "y1": 380.45,
+            "width": 143.71,
+            "height": 36.29
           },
           "engine": "mathpix"
         }
@@ -841,7 +841,7 @@
     {
       "id": "mathpix-eq-p074-0019",
       "kind": "display",
-      "display_latex": "F_{\\text {contour }}(\\mathbf{p})=\\frac{-(\\mathbf{v} \\cdot \\nabla f(\\mathbf{p})) \\mathbf{v}^{\\top} \\mathrm{H} f(\\mathbf{p})}{\\left\\|\\nabla f(\\mathbf{p})^{2}\\right\\|} .",
+      "display_latex": "F_{\\mathrm{contour}}(\\mathbf{p})=\\frac{-(\\mathbf{v} \\cdot \\nabla f(\\mathbf{p})) \\mathbf{v}^{\\top} \\mathrm{H} f(\\mathbf{p})}{\\left\\|\\nabla f(\\mathbf{p})^{2}\\right\\|}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -852,12 +852,12 @@
         {
           "page": 74,
           "bbox": {
-            "x0": 213.5,
-            "y0": 431.5,
-            "x1": 398.0,
-            "y1": 469.0,
-            "width": 184.5,
-            "height": 37.5
+            "x0": 212.83,
+            "y0": 430.56,
+            "x1": 397.73,
+            "y1": 469.15,
+            "width": 184.9,
+            "height": 38.59
           },
           "engine": "mathpix"
         }
@@ -883,12 +883,12 @@
         {
           "page": 74,
           "bbox": {
-            "x0": 155.5,
-            "y0": 492.0,
-            "x1": 455.0,
-            "y1": 563.0,
-            "width": 299.5,
-            "height": 71.0
+            "x0": 154.66,
+            "y0": 491.33,
+            "x1": 454.75,
+            "y1": 563.33,
+            "width": 300.1,
+            "height": 72.0
           },
           "engine": "mathpix"
         }
@@ -903,7 +903,7 @@
     {
       "id": "mathpix-eq-p074-0030",
       "kind": "display",
-      "display_latex": "F(\\mathbf{p})=\\frac{\\nabla f(\\mathbf{p}) \\times(\\mathbf{v} \\times \\nabla f(\\mathbf{p}))}{\\|\\nabla f(\\mathbf{p})\\|^{2}},",
+      "display_latex": "F(\\mathbf{p})=\\frac{\\nabla f(\\mathbf{p}) \\times(\\mathbf{v} \\times \\nabla f(\\mathbf{p}))}{\\|\\nabla f(\\mathbf{p})\\|^{2}}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -914,12 +914,12 @@
         {
           "page": 74,
           "bbox": {
-            "x0": 228.5,
-            "y0": 692.0,
-            "x1": 383.0,
-            "y1": 730.5,
-            "width": 154.5,
-            "height": 38.5
+            "x0": 227.81,
+            "y0": 691.78,
+            "x1": 383.04,
+            "y1": 730.66,
+            "width": 155.23,
+            "height": 38.88
           },
           "engine": "mathpix"
         }
@@ -932,7 +932,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p077-0017",
+      "id": "mathpix-eq-p077-0018",
       "kind": "display",
       "display_latex": "\\mathbf{p} \\leftarrow \\mathbf{p}+\\frac{(f(\\mathbf{p})-\\rho) \\nabla f(\\mathbf{p})}{\\|\\nabla f(\\mathbf{p})\\|} .",
       "semantic_expr": null,
@@ -945,12 +945,12 @@
         {
           "page": 77,
           "bbox": {
-            "x0": 238.0,
-            "y0": 460.5,
-            "x1": 373.0,
-            "y1": 492.0,
-            "width": 135.0,
-            "height": 31.5
+            "x0": 238.18,
+            "y0": 460.22,
+            "x1": 372.38,
+            "y1": 491.9,
+            "width": 134.21,
+            "height": 31.68
           },
           "engine": "mathpix"
         }
@@ -963,9 +963,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p078-0039",
+      "id": "mathpix-eq-p078-0040",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nv_{i j k}=f\\left(\\mathbf{p}_{i j k}\\right)=f\\left(x_{i}, y_{j}, z_{k}\\right) \\tag{8.2}\n\\end{equation*}",
+      "display_latex": "v_{i j k}=f\\left(\\mathbf{p}_{i j k}\\right)=f\\left(x_{i}, y_{j}, z_{k}\\right)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -976,12 +976,12 @@
         {
           "page": 78,
           "bbox": {
-            "x0": 235.0,
-            "y0": 708.5,
-            "x1": 377.0,
-            "y1": 728.5,
-            "width": 142.0,
-            "height": 20.0
+            "x0": 235.01,
+            "y0": 707.9,
+            "x1": 376.7,
+            "y1": 726.91,
+            "width": 141.7,
+            "height": 19.01
           },
           "engine": "mathpix"
         }
@@ -994,9 +994,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p079-0023",
+      "id": "mathpix-eq-p079-0024",
       "kind": "display",
-      "display_latex": "\\left\\{\\begin{array}{c}\nf\\left(\\mathbf{p}_{i j k}\\right)-\\rho=0 \\\\\n\\nabla f\\left(\\mathbf{p}_{i j k}\\right) \\cdot \\mathbf{v}=0\n\\end{array}\\right.",
+      "display_latex": "\\left\\{\\begin{array}{l}\nf\\left(\\mathbf{p}_{i j k}\\right)-\\rho=0 \\\\\n\\nabla f\\left(\\mathbf{p}_{i j k}\\right) \\cdot \\mathbf{v}=0\n\\end{array}\\right.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1007,12 +1007,12 @@
         {
           "page": 79,
           "bbox": {
-            "x0": 261.0,
-            "y0": 550.5,
-            "x1": 350.0,
-            "y1": 591.0,
-            "width": 89.0,
-            "height": 40.5
+            "x0": 262.37,
+            "y0": 551.23,
+            "x1": 350.21,
+            "y1": 590.4,
+            "width": 87.84,
+            "height": 39.17
           },
           "engine": "mathpix"
         }
@@ -1038,12 +1038,12 @@
         {
           "page": 80,
           "bbox": {
-            "x0": 188.0,
-            "y0": 175.0,
+            "x0": 188.06,
+            "y0": 174.53,
             "x1": 422.5,
-            "y1": 208.5,
-            "width": 234.5,
-            "height": 33.5
+            "y1": 208.51,
+            "width": 234.43,
+            "height": 33.98
           },
           "engine": "mathpix"
         }
@@ -1058,7 +1058,7 @@
     {
       "id": "mathpix-eq-p080-0011",
       "kind": "display",
-      "display_latex": "\\left\\{\\begin{array}{l}\nD-\\rho=0 \\\\\n\\nabla D \\cdot \\mathbf{v}=0\n\\end{array}\\right.",
+      "display_latex": "\\left\\{\\begin{array}{c}\nD-\\rho=0 \\\\\n\\nabla D \\cdot \\mathbf{v}=0\n\\end{array}\\right.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1069,12 +1069,12 @@
         {
           "page": 80,
           "bbox": {
-            "x0": 272.0,
-            "y0": 259.5,
-            "x1": 339.5,
-            "y1": 302.5,
-            "width": 67.5,
-            "height": 43.0
+            "x0": 272.16,
+            "y0": 258.62,
+            "x1": 339.55,
+            "y1": 302.69,
+            "width": 67.39,
+            "height": 44.06
           },
           "engine": "mathpix"
         }
@@ -1089,7 +1089,7 @@
     {
       "id": "mathpix-eq-p082-0004",
       "kind": "display",
-      "display_latex": "\\nabla f\\left(\\mathbf{p}_{i j k}\\right)=\\nabla f\\left(x_{i}, y_{j}, z_{k}\\right) \\approx \\frac{1}{2}\\left[\\begin{array}{l}\nf\\left(x_{i+1}, y_{j}, z_{k}\\right)-f\\left(x_{i-1}, y_{j}, z_{k}\\right) \\\\\nf\\left(x_{i}, y_{j+1}, z_{k}\\right)-f\\left(x_{i}, y_{j-1}, z_{k}\\right) \\\\\nf\\left(x_{i}, y_{j}, z_{k+1}\\right)-f\\left(x_{i}, y_{j}, z_{k-1}\\right)\n\\end{array}\\right],",
+      "display_latex": "\\nabla f\\left(\\mathbf{p}_{i j k}\\right)=\\nabla f\\left(x_{i}, y_{j}, z_{k}\\right) \\approx \\frac{1}{2}\\left[\\begin{array}{l}\nf\\left(x_{i+1}, y_{j}, z_{k}\\right)-f\\left(x_{i-1}, y_{j}, z_{k}\\right) \\\\\nf\\left(x_{i}, y_{j+1}, z_{k}\\right)-f\\left(x_{i}, y_{j-1}, z_{k}\\right) \\\\\nf\\left(x_{i}, y_{j}, z_{k+1}\\right)-f\\left(x_{i}, y_{j}, z_{k-1}\\right)\n\\end{array}\\right]",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1100,12 +1100,12 @@
         {
           "page": 82,
           "bbox": {
-            "x0": 149.0,
-            "y0": 125.0,
-            "x1": 463.0,
-            "y1": 184.5,
-            "width": 314.0,
-            "height": 59.5
+            "x0": 146.59,
+            "y0": 123.84,
+            "x1": 463.97,
+            "y1": 184.9,
+            "width": 317.38,
+            "height": 61.06
           },
           "engine": "mathpix"
         }
@@ -1120,7 +1120,7 @@
     {
       "id": "mathpix-eq-p082-0013",
       "kind": "display",
-      "display_latex": "\\alpha_{i j k}^{\\prime}=\\alpha_{i j k}\\left(k_{s c}+k_{s s}\\left(1-\\left|\\nabla f\\left(\\mathbf{p}_{i j k}\\right) \\cdot \\mathbf{v}\\right|^{k_{s e}}\\right)\\right.",
+      "display_latex": "\\alpha_{i j k}^{\\prime}=\\alpha_{i j k}\\left(k_{s c}+k_{s s}\\left(1-\\left|\\nabla f\\left(\\mathbf{p}_{i j k}\\right) \\cdot \\mathbf{v}\\right|^{k_{s e}}\\right),\\right.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1131,12 +1131,12 @@
         {
           "page": 82,
           "bbox": {
-            "x0": 203.0,
-            "y0": 310.5,
-            "x1": 409.0,
-            "y1": 334.5,
-            "width": 206.0,
-            "height": 24.0
+            "x0": 201.6,
+            "y0": 309.89,
+            "x1": 408.96,
+            "y1": 334.66,
+            "width": 207.36,
+            "height": 24.77
           },
           "engine": "mathpix"
         }
@@ -1162,12 +1162,12 @@
         {
           "page": 82,
           "bbox": {
-            "x0": 201.0,
-            "y0": 419.5,
-            "x1": 410.0,
-            "y1": 443.0,
-            "width": 209.0,
-            "height": 23.5
+            "x0": 200.45,
+            "y0": 418.18,
+            "x1": 409.54,
+            "y1": 442.94,
+            "width": 209.09,
+            "height": 24.77
           },
           "engine": "mathpix"
         }
@@ -1180,7 +1180,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p084-0016",
+      "id": "mathpix-eq-p084-0017",
       "kind": "display",
       "display_latex": "\\tilde{\\mathbf{n}}(u, v)=\\left(-\\kappa_{1} u,-\\kappa_{2} v, 1\\right)^{\\top}",
       "semantic_expr": null,
@@ -1193,12 +1193,12 @@
         {
           "page": 84,
           "bbox": {
-            "x0": 235.0,
-            "y0": 330.5,
-            "x1": 377.0,
-            "y1": 351.0,
-            "width": 142.0,
-            "height": 20.5
+            "x0": 235.01,
+            "y0": 329.18,
+            "x1": 376.7,
+            "y1": 350.78,
+            "width": 141.7,
+            "height": 21.6
           },
           "engine": "mathpix"
         }
@@ -1211,7 +1211,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p084-0019",
+      "id": "mathpix-eq-p084-0020",
       "kind": "display",
       "display_latex": "\\tilde{\\mathbf{v}}=\\left(\\mathbf{e}_{1} \\cdot \\mathbf{v}, \\mathbf{e}_{2} \\cdot \\mathbf{v}, \\mathbf{n} \\cdot \\mathbf{v}\\right)^{\\top}",
       "semantic_expr": null,
@@ -1224,12 +1224,12 @@
         {
           "page": 84,
           "bbox": {
-            "x0": 245.0,
-            "y0": 397.0,
-            "x1": 367.0,
-            "y1": 419.0,
-            "width": 122.0,
-            "height": 22.0
+            "x0": 243.65,
+            "y0": 396.58,
+            "x1": 366.91,
+            "y1": 418.75,
+            "width": 123.26,
+            "height": 22.18
           },
           "engine": "mathpix"
         }
@@ -1242,9 +1242,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p084-0022",
+      "id": "mathpix-eq-p084-0023",
       "kind": "display",
-      "display_latex": "\\tilde{\\mathbf{v}} \\cdot \\tilde{\\mathbf{n}}(u, v)=0 \\Leftrightarrow-\\kappa_{1}\\left(\\mathbf{e}_{1} \\cdot \\mathbf{v}\\right) u-\\kappa_{2}\\left(\\mathbf{e}_{2} \\cdot \\mathbf{v}\\right) v+\\mathbf{n} \\cdot \\mathbf{v}=0",
+      "display_latex": "\\tilde{\\mathbf{v}} \\cdot \\tilde{\\mathbf{n}}(u, v)=0 \\Leftrightarrow-\\kappa_{1}\\left(\\mathbf{e}_{\\mathbf{1}} \\cdot \\mathbf{v}\\right) u-\\kappa_{2}\\left(\\mathbf{e}_{2} \\cdot \\mathbf{v}\\right) v+\\mathbf{n} \\cdot \\mathbf{v}=0,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1255,12 +1255,12 @@
         {
           "page": 84,
           "bbox": {
-            "x0": 172.0,
-            "y0": 454.0,
-            "x1": 438.5,
-            "y1": 474.0,
-            "width": 266.5,
-            "height": 20.0
+            "x0": 171.94,
+            "y0": 453.6,
+            "x1": 438.62,
+            "y1": 474.05,
+            "width": 266.69,
+            "height": 20.45
           },
           "engine": "mathpix"
         }
@@ -1273,9 +1273,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p084-0024",
+      "id": "mathpix-eq-p084-0025",
       "kind": "display",
-      "display_latex": "\\mathbf{d}=-\\kappa_{2}\\left(\\mathbf{e}_{2} \\cdot \\mathbf{v}\\right) \\mathbf{e}_{1}+\\kappa_{1}\\left(\\mathbf{e}_{\\mathbf{1}} \\cdot \\mathbf{v}\\right) \\mathbf{e}_{2}",
+      "display_latex": "\\mathbf{d}=-\\kappa_{2}\\left(\\mathbf{e}_{2} \\cdot \\mathbf{v}\\right) \\mathbf{e}_{1}+\\kappa_{1}\\left(\\mathbf{e}_{1} \\cdot \\mathbf{v}\\right) \\mathbf{e}_{2}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1286,12 +1286,12 @@
         {
           "page": 84,
           "bbox": {
-            "x0": 224.5,
-            "y0": 501.0,
-            "x1": 386.5,
-            "y1": 521.5,
-            "width": 162.0,
-            "height": 20.5
+            "x0": 224.06,
+            "y0": 501.12,
+            "x1": 386.78,
+            "y1": 522.14,
+            "width": 162.72,
+            "height": 21.02
           },
           "engine": "mathpix"
         }
@@ -1304,9 +1304,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p084-0028",
+      "id": "mathpix-eq-p084-0029",
       "kind": "display",
-      "display_latex": "T=\\frac{(\\mathbf{n} \\cdot \\mathbf{v})^{2}}{\\sqrt{\\left(\\kappa_{1}\\left(\\mathbf{e}_{\\mathbf{1}} \\cdot \\mathbf{v}\\right)\\right)^{2}+\\left(\\kappa_{2}\\left(\\mathbf{e}_{\\mathbf{2}} \\cdot \\mathbf{v}\\right)\\right)^{2}}}",
+      "display_latex": "T=\\frac{(\\mathbf{n} \\cdot \\mathbf{v})^{2}}{\\sqrt{\\left(\\kappa_{1}\\left(\\mathbf{e}_{\\mathbf{1}} \\cdot \\mathbf{v}\\right)\\right)^{2}+\\left(\\kappa_{2}\\left(\\mathbf{e}_{2} \\cdot \\mathbf{v}\\right)\\right)^{2}}}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1317,12 +1317,12 @@
         {
           "page": 84,
           "bbox": {
-            "x0": 218.0,
-            "y0": 586.5,
-            "x1": 394.0,
-            "y1": 627.5,
-            "width": 176.0,
-            "height": 41.0
+            "x0": 216.0,
+            "y0": 586.08,
+            "x1": 394.27,
+            "y1": 627.55,
+            "width": 178.27,
+            "height": 41.47
           },
           "engine": "mathpix"
         }
@@ -1335,7 +1335,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p088-0028",
+      "id": "mathpix-eq-p088-0029",
       "kind": "display",
       "display_latex": "\\mathbf{r}_{i}=w_{i}\\left[\\begin{array}{cc}\n0 & -1 \\\\\n1 & 0\n\\end{array}\\right] \\frac{\\mathbf{v}_{i+1}-\\mathbf{v}_{i-1}}{\\left\\|\\mathbf{v}_{i+1}-\\mathbf{v}_{i-1}\\right\\|},",
       "semantic_expr": null,
@@ -1348,12 +1348,12 @@
         {
           "page": 88,
           "bbox": {
-            "x0": 228.5,
-            "y0": 639.0,
-            "x1": 383.0,
-            "y1": 672.5,
-            "width": 154.5,
-            "height": 33.5
+            "x0": 228.38,
+            "y0": 639.07,
+            "x1": 383.04,
+            "y1": 671.9,
+            "width": 154.66,
+            "height": 32.83
           },
           "engine": "mathpix"
         }
@@ -1379,12 +1379,12 @@
         {
           "page": 100,
           "bbox": {
-            "x0": 232.5,
-            "y0": 131.0,
-            "x1": 378.0,
-            "y1": 186.0,
-            "width": 145.5,
-            "height": 55.0
+            "x0": 231.55,
+            "y0": 131.04,
+            "x1": 379.3,
+            "y1": 186.91,
+            "width": 147.74,
+            "height": 55.87
           },
           "engine": "mathpix"
         }
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p100-0021",
+      "id": "mathpix-eq-p100-0022",
       "kind": "display",
       "display_latex": "\\frac{d^{2} c}{d t^{2}}=\\mathbf{t}^{\\prime}=-\\kappa \\mathbf{n}",
       "semantic_expr": null,
@@ -1410,12 +1410,12 @@
         {
           "page": 100,
           "bbox": {
-            "x0": 262.5,
-            "y0": 465.5,
-            "x1": 349.5,
-            "y1": 498.0,
-            "width": 87.0,
-            "height": 32.5
+            "x0": 261.22,
+            "y0": 463.97,
+            "x1": 349.63,
+            "y1": 499.39,
+            "width": 88.42,
+            "height": 35.42
           },
           "engine": "mathpix"
         }
@@ -1428,7 +1428,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p100-0035",
+      "id": "mathpix-eq-p100-0036",
       "kind": "display",
       "display_latex": "\\mathbf{t}^{\\prime}=-\\kappa \\mathbf{n}, \\quad \\mathbf{n}^{\\prime}=\\kappa \\mathbf{t}-\\tau \\mathbf{b}, \\quad \\mathbf{b}^{\\prime}=\\tau \\mathbf{n} .",
       "semantic_expr": null,
@@ -1441,12 +1441,12 @@
         {
           "page": 100,
           "bbox": {
-            "x0": 200.5,
-            "y0": 706.5,
-            "x1": 411.5,
-            "y1": 726.5,
-            "width": 211.0,
-            "height": 20.0
+            "x0": 199.87,
+            "y0": 705.89,
+            "x1": 411.55,
+            "y1": 726.34,
+            "width": 211.68,
+            "height": 20.45
           },
           "engine": "mathpix"
         }
@@ -1472,12 +1472,12 @@
         {
           "page": 102,
           "bbox": {
-            "x0": 272.0,
-            "y0": 267.5,
-            "x1": 339.5,
-            "y1": 299.0,
-            "width": 67.5,
-            "height": 31.5
+            "x0": 272.16,
+            "y0": 267.26,
+            "x1": 339.55,
+            "y1": 298.94,
+            "width": 67.39,
+            "height": 31.68
           },
           "engine": "mathpix"
         }
@@ -1503,12 +1503,12 @@
         {
           "page": 102,
           "bbox": {
-            "x0": 274.5,
-            "y0": 490.0,
-            "x1": 336.0,
-            "y1": 505.5,
-            "width": 61.5,
-            "height": 15.5
+            "x0": 274.75,
+            "y0": 490.18,
+            "x1": 336.1,
+            "y1": 504.29,
+            "width": 61.34,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -1534,12 +1534,12 @@
         {
           "page": 102,
           "bbox": {
-            "x0": 279.5,
-            "y0": 543.5,
-            "x1": 332.5,
-            "y1": 557.5,
-            "width": 53.0,
-            "height": 14.0
+            "x0": 279.65,
+            "y0": 544.61,
+            "x1": 330.91,
+            "y1": 557.57,
+            "width": 51.26,
+            "height": 12.96
           },
           "engine": "mathpix"
         }
@@ -1565,12 +1565,12 @@
         {
           "page": 102,
           "bbox": {
-            "x0": 271.0,
-            "y0": 594.5,
-            "x1": 339.5,
-            "y1": 621.0,
-            "width": 68.5,
-            "height": 26.5
+            "x0": 271.01,
+            "y0": 594.72,
+            "x1": 338.98,
+            "y1": 620.64,
+            "width": 67.97,
+            "height": 25.92
           },
           "engine": "mathpix"
         }
@@ -1585,7 +1585,7 @@
     {
       "id": "mathpix-eq-p103-0014",
       "kind": "display",
-      "display_latex": "\\mathbf{I}(\\mathbf{x}, \\mathbf{y})=\\mathbf{x} \\cdot \\mathbf{y}",
+      "display_latex": "\\mathbf{I}(\\mathbf{x}, \\mathbf{y})=\\mathbf{x} \\cdot \\mathbf{y} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1596,12 +1596,12 @@
         {
           "page": 103,
           "bbox": {
-            "x0": 268.5,
-            "y0": 292.0,
-            "x1": 342.0,
-            "y1": 310.0,
-            "width": 73.5,
-            "height": 18.0
+            "x0": 269.86,
+            "y0": 292.61,
+            "x1": 340.99,
+            "y1": 309.89,
+            "width": 71.14,
+            "height": 17.28
           },
           "engine": "mathpix"
         }
@@ -1627,12 +1627,12 @@
         {
           "page": 103,
           "bbox": {
-            "x0": 234.5,
-            "y0": 345.5,
-            "x1": 377.0,
-            "y1": 364.5,
-            "width": 142.5,
-            "height": 19.0
+            "x0": 235.01,
+            "y0": 345.31,
+            "x1": 374.98,
+            "y1": 363.17,
+            "width": 139.97,
+            "height": 17.86
           },
           "engine": "mathpix"
         }
@@ -1647,7 +1647,7 @@
     {
       "id": "mathpix-eq-p103-0018",
       "kind": "display",
-      "display_latex": "\\kappa_{n}=\\frac{\\mathbf{I}(\\mathbf{t}, \\mathbf{t})}{\\mathbf{I}(\\mathbf{t}, \\mathbf{t})}",
+      "display_latex": "\\kappa_{n}=\\frac{\\mathbf{I I}(\\mathbf{t}, \\mathbf{t})}{\\mathbf{I}(\\mathbf{t}, \\mathbf{t})}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1658,12 +1658,12 @@
         {
           "page": 103,
           "bbox": {
-            "x0": 272.0,
-            "y0": 395.0,
-            "x1": 341.0,
-            "y1": 431.5,
-            "width": 69.0,
-            "height": 36.5
+            "x0": 272.16,
+            "y0": 396.0,
+            "x1": 339.55,
+            "y1": 429.98,
+            "width": 67.39,
+            "height": 33.98
           },
           "engine": "mathpix"
         }
@@ -1678,7 +1678,7 @@
     {
       "id": "mathpix-eq-p103-0023",
       "kind": "display",
-      "display_latex": "\\mathbf{I I}(\\mathbf{x}, \\mathbf{y})=\\mathbf{x}^{\\top}\\left[\\begin{array}{cc}\n\\kappa_{1} & 0 \\\\\n0 & \\kappa_{2}\n\\end{array}\\right] \\mathbf{y}",
+      "display_latex": "\\mathbf{I I}(\\mathbf{x}, \\mathbf{y})=\\mathbf{x}^{\\top}\\left[\\begin{array}{cc}\n\\kappa_{1} & 0 \\\\\n0 & \\kappa_{2}\n\\end{array}\\right] \\mathbf{y} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1689,12 +1689,12 @@
         {
           "page": 103,
           "bbox": {
-            "x0": 236.5,
-            "y0": 495.0,
-            "x1": 374.5,
-            "y1": 531.5,
-            "width": 138.0,
-            "height": 36.5
+            "x0": 236.45,
+            "y0": 495.65,
+            "x1": 373.25,
+            "y1": 530.21,
+            "width": 136.8,
+            "height": 34.56
           },
           "engine": "mathpix"
         }
@@ -1709,7 +1709,7 @@
     {
       "id": "mathpix-eq-p103-0027",
       "kind": "display",
-      "display_latex": "\\kappa_{n}(\\theta)=\\kappa_{1} \\cos ^{2} \\theta+\\kappa_{2} \\sin ^{2} \\theta",
+      "display_latex": "\\kappa_{n}(\\theta)=\\kappa_{1} \\cos ^{2} \\theta+\\kappa_{2} \\sin ^{2} \\theta .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1720,12 +1720,12 @@
         {
           "page": 103,
           "bbox": {
-            "x0": 231.5,
-            "y0": 574.0,
-            "x1": 380.0,
-            "y1": 596.0,
-            "width": 148.5,
-            "height": 22.0
+            "x0": 232.7,
+            "y0": 574.27,
+            "x1": 379.3,
+            "y1": 594.72,
+            "width": 146.59,
+            "height": 20.45
           },
           "engine": "mathpix"
         }
@@ -1740,7 +1740,7 @@
     {
       "id": "mathpix-eq-p108-0009",
       "kind": "display",
-      "display_latex": "\\begin{aligned}\n\\operatorname{Orient3D}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d}) & =\\overrightarrow{\\mathbf{a d}} \\cdot(\\overrightarrow{\\mathbf{b d}} \\times \\overrightarrow{\\mathbf{c d}}) \\\\\n& =\\operatorname{det}(\\overrightarrow{\\mathbf{a d}}, \\overrightarrow{\\mathbf{b d}}, \\overrightarrow{\\mathbf{c d}}) \\\\\n& =\\left|\\begin{array}{lll}\na_{x}-d_{x} & a_{y}-d_{y} & a_{z}-d_{z} \\\\\nb_{x}-d_{x} & b_{y}-d_{y} & b_{z}-d_{z} \\\\\nc_{x}-d_{x} & c_{y}-d_{y} & c_{z}-d_{z}\n\\end{array}\\right| \\\\\n& =\\left|\\begin{array}{llll}\na_{x} & a_{y} & a_{z} & 1 \\\\\nb_{x} & b_{y} & b_{z} & 1 \\\\\nc_{x} & c_{y} & c_{z} & 1 \\\\\nd_{x} & d_{y} & d_{z} & 1\n\\end{array}\\right|\n\\end{aligned}",
+      "display_latex": "\\begin{aligned}\n\\operatorname{OrIENT3D}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d}) & =\\overrightarrow{\\mathbf{a d}} \\cdot(\\overrightarrow{\\mathbf{b d}} \\times \\overrightarrow{\\mathbf{c d}}) \\\\\n& =\\operatorname{det}(\\overrightarrow{\\mathbf{a d}}, \\overrightarrow{\\mathbf{b d}}, \\overrightarrow{\\mathbf{c d}}) \\\\\n& =\\left|\\begin{array}{lll}\na_{x}-d_{x} & a_{y}-d_{y} & a_{z}-d_{z} \\\\\nb_{x}-d_{x} & b_{y}-d_{y} & b_{z}-d_{z} \\\\\nc_{x}-d_{x} & c_{y}-d_{y} & c_{z}-d_{z}\n\\end{array}\\right| \\\\\n& =\\left|\\begin{array}{llll}\na_{x} & a_{y} & a_{z} & 1 \\\\\nb_{x} & b_{y} & b_{z} & 1 \\\\\nc_{x} & c_{y} & c_{z} & 1 \\\\\nd_{x} & d_{y} & d_{z} & 1\n\\end{array}\\right|\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1751,12 +1751,12 @@
         {
           "page": 108,
           "bbox": {
-            "x0": 174.5,
-            "y0": 205.5,
-            "x1": 437.0,
-            "y1": 357.5,
-            "width": 262.5,
-            "height": 152.0
+            "x0": 174.53,
+            "y0": 205.34,
+            "x1": 436.32,
+            "y1": 357.12,
+            "width": 261.79,
+            "height": 151.78
           },
           "engine": "mathpix"
         }
@@ -1782,12 +1782,12 @@
         {
           "page": 108,
           "bbox": {
-            "x0": 151.0,
-            "y0": 460.5,
-            "x1": 461.0,
-            "y1": 497.0,
-            "width": 310.0,
-            "height": 36.5
+            "x0": 150.91,
+            "y0": 460.22,
+            "x1": 461.09,
+            "y1": 496.22,
+            "width": 310.18,
+            "height": 36.0
           },
           "engine": "mathpix"
         }
@@ -1802,7 +1802,7 @@
     {
       "id": "mathpix-eq-p108-0021",
       "kind": "display",
-      "display_latex": "\\begin{aligned}\n\\operatorname{FrontSide}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d}) & =\\overrightarrow{\\mathbf{d} \\mathbf{a}} \\cdot \\mathbf{n} \\\\\n& =\\overrightarrow{\\mathbf{d} \\mathbf{a}} \\cdot(\\overrightarrow{\\mathbf{b a}} \\times \\overrightarrow{\\mathbf{c a}}) \\\\\n& =\\operatorname{det}(\\overrightarrow{\\mathbf{d a}}, \\overrightarrow{\\mathbf{b a}}, \\overrightarrow{\\mathbf{c a}}) \\\\\n& =\\operatorname{OrIEnt} 3 \\mathrm{D}(\\mathbf{d}, \\mathbf{b}, \\mathbf{c}, \\mathbf{a}) \\\\\n& =-\\operatorname{Orient} 3 \\mathrm{D}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d})\n\\end{aligned}",
+      "display_latex": "\\begin{aligned}\n\\operatorname{FrontSide}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d}) & =\\overrightarrow{\\mathbf{d a}} \\cdot \\mathbf{n} \\\\\n& =\\overrightarrow{\\mathbf{d a}} \\cdot(\\overrightarrow{\\mathbf{b a}} \\times \\overrightarrow{\\mathbf{c a}}) \\\\\n& =\\operatorname{det}(\\overrightarrow{\\mathbf{d a}}, \\overrightarrow{\\mathbf{b a}}, \\overrightarrow{\\mathbf{c a}}) \\\\\n& =\\operatorname{Orient} 3 \\mathrm{D}(\\mathbf{d}, \\mathbf{b}, \\mathbf{c}, \\mathbf{a}) \\\\\n& =-\\operatorname{Orient} 3 \\mathrm{D}(\\mathbf{a}, \\mathbf{b}, \\mathbf{c}, \\mathbf{d})\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1813,12 +1813,12 @@
         {
           "page": 108,
           "bbox": {
-            "x0": 184.5,
-            "y0": 569.0,
-            "x1": 427.0,
-            "y1": 666.0,
-            "width": 242.5,
-            "height": 97.0
+            "x0": 184.32,
+            "y0": 569.38,
+            "x1": 426.24,
+            "y1": 665.28,
+            "width": 241.92,
+            "height": 95.9
           },
           "engine": "mathpix"
         }

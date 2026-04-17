@@ -14,13 +14,13 @@ Computing the visible portions of curved surfaces from a given viewpoint is of g
 
 The problems of visibility and accessibility computations are fundamental for computer graphics, computer-aided design and manufacturing applications. In particular, hidden line and surface removal algorithms in computer graphics are related to visibility computations [FDHF 90, Hor 84, SSS 74, HG 77]. Similarly, accessibility computations in manufacturing applications are based on Gauss maps and visibility sets [Woo 94, CCW 93, GWT 94]. These problems have been extensively studied in computer graphics, computer-aided design, computational geometry and manufacturing literature. In this paper, we are dealing with algebraic surfaces and surfaces defined using rational splines [Far 93] that are differentiable.
 
-Given a viewpoint, the hidden surface removal problem deals with computation of the surface boundary visible from that viewpoint. Most of the earlier algorithms in the literature are for planar and polygonal primitives and hidden lines removal [FDHF90, Mul89, SSS74]. In computational geometry literature, many of the hidden surface algorithms simply calculate the entire arrangement of lines (projections of edges and vertices of the objects on the viewing plane). Output-sensitive hidden surface algorithms were developed for special input cases like \(c\)-oriented solids [GO87], axis parallel rectangles [PVY92] and polyhedral terrains [RS88]. Very few algorithms are able to cope with cycles (impossible to obtain an ordering among the faces without splitting some of them) efficiently. A randomized algorithm to generate the visibility map was given by Mulmuley [Mul89] for the general case. The algorithm maintains the trapezoidation of the visibility map and updates it by randomly adding one face at a time. The algorithm is (almost) output-sensitive. In [Mul91], the expected time was improved to \(O(n \log n+q)\), where \(q\) is the number of edges in the visibility map. Extensions of the hidden surface algorithm from planar to curved faces are described in [Mul90]. A survey of most of the recent results in computational geometry regarding object-space hidden surface removal is presented in [Dor94].
+Given a viewpoint, the hidden surface removal problem deals with computation of the surface boundary visible from that viewpoint. Most of the earlier algorithms in the literature are for planar and polygonal primitives and hidden lines removal [FDHF90, Mu189, SSS74]. In computational geometry literature, many of the hidden surface algorithms simply calculate the entire arrangement of lines (projections of edges and vertices of the objects on the viewing plane). Output-sensitive hidden surface algorithms were developed for special input cases like \(c\)-oriented solids [GO87], axisparallel rectangles [PVY92] and polyhedral terrains [RS88]. Very few algorithms are able to cope with cycles (impossible to obtain an ordering among the faces without splitting some of them) efficiently. A randomized algorithm to generate the visibility map was given by Mulmuley [Mul89] for the general case. The algorithm maintains the trapezoidation of the visibility map and updates it by randomly adding one face at a time. The algorithm is (almost) output-sensitive. In [Mu191], the expected time was improved to \(O(n \log n+q)\), where \(q\) is the number of edges in the visibility map. Extensions of the hidden surface algorithm from planar to curved faces are described in [Mu190]. A survey of most of the recent results in computational geometry regarding object-space hidden surface removal is presented in [Dor94].
 
 When dealing with curved surfaces, most hidden surface removal algorithms must be capable of manipulating semi-algebraic sets [Mul 90]. Results from elimination theory and algebraic decision procedures like Groebner bases are usually used for this purpose [Can 88]. Unfortunately, algorithms based entirely on symbolic manipulation require infinite precision to represent algebraic numbers. Bounds based on Gap theorems [Can 88] have been developed to approximate these numbers using finite precision. However, implementations of these algorithms are very non-trivial and applicability of these bounds in practical situations are still not clear.
 
 Given a model composed of algebraic or parametric surfaces, it can be polygonized and algorithms developed for polygonal models can then be applied. However, the accuracy of the overall algorithm is limited by the accuracy of the polygonal approximation. Other techniques for visibility computations are based on ray-tracing [FDHF 90]. Not only are the resulting algorithms slow but their accuracy is limited by the image-precision. These techniques are device resolution dependent and many applications in modeling and rendering desire a device-independent solution [TW 93]. Given a curved surface model and a viewpoint, the silhouettes on the model partition it into front facing and back facing regions (as shown in Fig. 1). The silhouettes are composed of points on surfaces where the normal vector is orthogonal to the viewing direction. The surfaces obtained after partitioning based on the silhouette computation need not be completely visible, as shown in Fig. 1. More recently, a hidden curve removal algorithm has been presented for parametric surfaces
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-1-p003.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-1-p003.png)
 
 *Figure 1: Local visibility Computations Based on silhouettes*
 
@@ -40,7 +40,7 @@ We represent trimmed surfaces as well as portions of surfaces obtained after vis
 
 To decompose a simple polygon into an optimal number of triangles we use Seidel's algorithm [Sei91]. It is an incremental randomized algorithm whose expected complexity is \(O\left(N \log ^{*} N\right)\),
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-2-p005.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-2-p005.png)
 
 *Figure 2: Three stages of Seidel's algorithm*
 
@@ -60,11 +60,11 @@ We use algorithms for partitioning a simple polygon based on non-intersecting ch
 
 - Find all the intersection points of each chain with the polygon and number them according to the order in which they occur. This problem can be solved in time \(O(Nlog2N)\) [CEGS 94], where N is the total number of segments in the polygon and chains. We associate three fields
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-3-p006.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-3-p006.png)
 
 *Figure 3: Partitioning a polygon with polygonal chains*
 
-with each intersection point-the chain corresponding to each intersection point (type), the number of the intersection point within the chain (rank), and whether the chain was coming in or going out of the polygon at this point (in_or_out). For example, the intersection point \(a_{1}\) in the figure has type \(=a\), rank \(=1\) and in_or_out \(=\) out as its three fields. The in_or_out field is actually unnecessary because rank has that information. However, we use it for ease of description.
+with each intersection point-the chain corresponding to each intersection point (type), the number of the intersection point within the chain (rank), and whether the chain was coming in or going out of the polygon at this point (in_or_out). For example, the intersection point \(a_{1}\) in the figure has type \(=a, r a n_{k}=1\) and in_or_out \(=\) out as its three fields. The in_or_out field is actually unnecessary because rank has that information. However, we use it for ease of description.
 
 - Given all the intersections, we traverse the polygon in some order starting from an arbitrary vertex. We use a stack as a data structure to compute the partitions. Let us assume that we start traversing the polygon from vertex \(v_{0}\) in an anticlockwise order for the example given in the figure. Given this traversal, we can order the intersection points around the polygon. In the example, the order would be \(a_{0}\), \(b_{3}\), \(b_{2}\), \(b_{1}\), \(c_{0}\), \(c_{1}\), \(b_{0}\), \(a_{3}\), \(a_{2}\), \(a_{1}\). As we proceed from vertex \(v_{i}\) to \(v_{i+1}\) in the polygon, we retrieve all the intersection points of the various chains with the edge (\(v_{i}\), \(v_{i+1}\)) in order. If q is an intersection point, and let p be the point on the top of the stack. To determine if q is pushed or p is popped, the following condition is checked.
 
@@ -81,16 +81,16 @@ If \(p\) is popped, then \(p\) and \(q\) form a partition of the polygon. The co
 
 Computing the intersection of curves and surfaces is needed to find whether a given surface is occluded. Basically we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects with any other surface. If the number of intersections is 0, the surface is visible, otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD 94].
 
-Given a surface \(\mathbf{F}(s, t)\), we compute its implicit representation using resultant methods [Dix08] and obtain a matrix formulation \(\mathbf{M}(x, y, z, w)\). We substitute the parametrization of the curve, say \(\mathbf{G}(u)=(\bar{X}(u), \bar{Y}(u), \bar{Z}(u), \bar{W}(u))\) of degree \(d\), and obtain a univariate matrix polynomial \(\mathbf{M}(u)\). The problem of intersection computation reduces to computing the roots of the non-linear matrix polynomial \(\mathrm{M}(u)\). The polynomial which are in Bernstein basis can be converted to the power basis by the transformation \(\bar{u}=\frac{u}{1-u}\). The resulting matrix \(\mathbf{M}(\bar{u})\) can be represented as
+Given a surface \(\mathbf{F}(s, t)\), we compute its implicit representation using resultant methods [Dix08] and obtain a matrix formulation \(\mathrm{M}(x, y, z, w)\). We substitute the parametrization of the curve, say \(\mathbf{G}(u)=(\bar{X}(u), \bar{Y}(u), \bar{Z}(u), \bar{W}(u))\) of degree \(d\), and obtain a univariate matrix polynomial \(\mathbf{M}(u)\). The problem of intersection computation reduces to computing the roots of the non-linear matrix polynomial \(\mathrm{M}(u)\). The polynomial which are in Bernstein basis can be converted to the power basis by the transformation \(\bar{u}=\frac{u}{1-u}\). The resulting matrix \(\mathbf{M}(\bar{u})\) can be represented as
 
 $$
-\begin{equation*} \mathbf{M}(\bar{u})=\bar{u}^{d} M_{d}+\bar{u}^{d-1} M_{d-1}+\ldots+\bar{u} M_{1}+M_{0} \tag{1} \end{equation*}
+\mathbf{M}(\bar{u})=\bar{u}^{d} M_{d}+\bar{u}^{d-1} M_{d-1}+\ldots+\bar{u} M_{1}+M_{0}
 $$
 
-where \(M_{i}\) 's are matrices of order \(2 m_{n}\) with numeric entries. Furthermore, the roots of the matrix polynomial, \(\mathbf{M}(u)\), have one-to-one correspondence with the eigendecomposition of
+where \(M_{i}\) 's are matrices of order \(2 m_{n}\) with numeric entries. Furthermore, the roots of the matrix polynomial, \(\mathrm{M}(u)\), have one-to-one correspondence with the eigendecomposition of
 
 $$
-C=\left[\begin{array}{ccccc} 0 & I_{n} & 0 & \ldots & 0 \tag{2}\\ \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & I_{n} \\ -\overline{\mathbf{M}}_{0} & -\overline{\mathbf{M}}_{1} & -\overline{\mathbf{M}}_{2} & \ldots & -\overline{\mathbf{M}}_{d-1} \end{array}\right]
+C=\left[\begin{array}{ccccc} 0 & I_{n} & 0 & \ldots & 0 \\ \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & I_{n} \\ -\overline{\mathrm{M}}_{0} & -\overline{\mathrm{M}}_{1} & -\overline{\mathrm{M}}_{2} & \ldots & -\overline{\mathrm{M}}_{d-1} \end{array}\right]
 $$
 
 where \(\overline{\mathbf{M}}_{i}=\mathbf{M}_{d}^{-1} \mathbf{M}_{i}\) [GLR82]. In case \(\mathbf{M}_{d}\) is singular or ill-conditioned, the intersection problem is reduced to a generalized eigenvalue problem [MD94]. Algorithms to compute all the eigenvalues are based on QR orthogonal transformations [GL89]. They compute all the real as well as complex eigenvalues. Algorithms to compute eigenvalues in a subset of the real or complex domain are presented in [MD94].
@@ -110,7 +110,7 @@ We use inverse power iterations to trace curves. We formulate the curve as the s
 The basic idea of power iterations can be used and modified to obtain the eigenvalue of a matrix \(A\) that is closest to a given guess \(s\). It actually corresponds to the largest eigenvalue of the matrix \((\mathbf{A}-s \mathbf{I})^{-1}\). Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector \(\mathbf{q}_{0}\), we generate a sequence of vectors \(\mathbf{q}_{k}\) as
 
 $$
-\text { Solve }(\mathbf{A}-s \mathbf{I}) \mathbf{z}_{k}=\mathbf{q}_{k-1} ; \quad \mathbf{q}_{k}=\mathbf{z}_{k} /\left\|\mathbf{z}_{k}\right\|_{\infty} ; \quad s_{k}=\mathbf{q}_{k}^{T} \mathbf{A} \mathbf{q}_{k} ;
+\text { Solve }(\mathbf{A}-s \mathbf{I}) \mathbf{z}_{k}=\mathbf{q}_{k-1} ; \quad \mathbf{q}_{k}=\mathbf{z}_{k} /\left\|\mathbf{z}_{k}\right\|_{\infty} ; \quad s_{k}=\mathbf{q}_{k}^{T} \mathbf{A} \mathbf{q}_{k}
 $$
 
 ## 3 Silhouettes
@@ -130,7 +130,7 @@ $$
 In the rest of the paper, we shall drop the \((s, t)\) suffixes from all the functions for more concise notation. The \(z\)-component of the normal at an arbitrary point on the surface is given by the determinant
 
 $$
-N_{z}=\left|\begin{array}{ll} \phi_{1_{s}} & \phi_{1_{t}} \tag{3}\\ \phi_{2_{s}} & \phi_{2_{t}} \end{array}\right|
+N_{z}=\left|\begin{array}{ll} \phi_{1_{s}} & \phi_{1_{t}} \\ \phi_{2_{s}} & \phi_{2_{t}} \end{array}\right|
 $$
 
 where \(\phi_{i_{s}}\) and \(\phi_{i_{t}}\) denote the partial derivatives of the appropriate function \(\phi_{i}\) with respect to \(s\) and \(t\).
@@ -142,20 +142,20 @@ $$
 On the silhouette curve, \(N_{z}=0\). Since \(W(s, t)>0\), we can express the plane curve representing the silhouette as the determinant
 
 $$
-N_{z}=\left|\begin{array}{cc} \left(W X_{s}-W_{s} X\right) & \left(W X_{t}-W_{t} X\right) \tag{4}\\ \left(W Y_{s}-W_{s} Y\right) & \left(W Y_{t}-W_{t} Y\right) \end{array}\right|=0
+N_{z}=\left|\begin{array}{cc} \left(W X_{s}-W_{s} X\right) & \left(W X_{t}-W_{t} X\right) \\ \left(W Y_{s}-W_{s} Y\right) & \left(W Y_{t}-W_{t} Y\right) \end{array}\right|=0
 $$
 
 Expanding the determinant and rearranging the terms, we can express it as the singular set of the matrix \(\mathbf{M}(s, t)\)
 
 $$
-\mathbf{M}(s, t)=\left(\begin{array}{ccc} X(s, t) & Y(s, t) & W(s, t) \tag{5}\\ X_{s}(s, t) & Y_{s}(s, t) & Z_{s}(s, t) \\ X_{t}(s, t) & Y_{t}(s, t) & Z_{t}(s, t) \end{array}\right)=0
+\mathbf{M}(s, t)=\left(\begin{array}{ccc} X(s, t) & Y(s, t) & W(s, t) \\ X_{s}(s, t) & Y_{s}(s, t) & Z_{s}(s, t) \\ X_{t}(s, t) & Y_{t}(s, t) & Z_{t}(s, t) \end{array}\right)=0
 $$
 
 The singular set of \(\mathbf{M}(s, t)\) are the values of \(s\) and \(t\) which make it singular.
 
 ## 3 2 Silhouette Computation
 
-Let us denote the projected silhouette curve corresponding to \(\operatorname{Det}(\mathbf{M}(s, t))\) by \(D(s, t)\). If the Bézier patch \(\mathbf{F}(s, t)\) is of degree \(m\) in \(s\) and \(n\) in \(t\), the curve \(D(s, t)\) has degree at most \(3(m+n)\). This is a high degree algebraic curve and can have a number of components (both open and closed) possibly with singularities. Our task is to evaluate this curve completely and efficiently inside our domain of interest.
+Let us denote the projected silhouette curve corresponding to \(\operatorname{Det}(\mathrm{M}(s, t))\) by \(D(s, t)\). If the Bézier patch \(\mathbf{F}(s, t)\) is of degree \(m\) in \(s\) and \(n\) in \(t\), the curve \(D(s, t)\) has degree at most \(3(m+n)\). This is a high degree algebraic curve and can have a number of components (both open and closed) possibly with singularities. Our task is to evaluate this curve completely and efficiently inside our domain of interest.
 
 Our approach is based on marching along the curve using local geometric properties of the curve. All marching methods require at least one point on every component of the curve inside the domain of interest. We adopt different methods to compute starting points on open (intersect the boundary of the domain) and closed components (or loops).
 
@@ -183,7 +183,7 @@ Lemma 1 Let \(\mathbf{C} \subset \Re^{3}\) be the set of silhouette curves on a 
 
 Proof: Let \(p, q\) and \(r\) be points on \(\mathbf{S}\). Consider the natural relation \(\Im\) induced by \(\mathbf{C}\) on \(\mathbf{S} . p \Im q\)
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-4-p011.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-4-p011.png)
 
 *Figure 4: silhouette curve on the patch and the domain*
 
@@ -218,28 +218,28 @@ where the \(\phi_{i}^{\prime} s\) were defined in the previous section. Intuitiv
 Proof: The Jacobian \(J(s, t)\) of \(M\) is given by
 
 $$
-J(s, t)=\left|\begin{array}{ll} \frac{\left(W X_{s}-W_{s} X\right)}{W^{2}} & \frac{\left(W X_{t}-W_{t} X\right)}{W^{2}} \tag{6}\\ \frac{\left(W Y_{s}-W_{s} Y\right)}{W^{2}} & \frac{\left(W Y_{t}-W_{t} Y\right)}{W^{2}} \end{array}\right|
+J(s, t)=\left|\begin{array}{cc} \frac{\left(W X_{s}-W_{s} X\right)}{W^{2}} & \frac{\left(W X_{t}-W_{t} X\right)}{W^{2}} \\ \frac{\left(W Y_{s}-W_{s} Y\right)}{W^{2}} & \frac{\left(W Y_{t}-W_{t} Y\right)}{W^{2}} \end{array}\right|
 $$
 
 However when \(J=0\), we get the same equation as eqn. 4. That is precisely the equation of the silhouette curve in the domain of the surface. Therefore, the silhouette curves are the only places on the surface where the Jacobian of \(M\) vanishes.
 
-After determining the silhouette curve we proved that it introduces a partition on the surface. Let us denote this set of regions obtained after partitioning as \(R\). Henceforth, we shall be considering a single element of this set \(\varphi \in R\). Because of the previous lemma, we can conclude that the interior of each \(\wp \in R\) have no vanishing Jacobians. This implies that we can apply the global inverse theorem on each of the regions in \(R\).
+After determining the silhouette curve we proved that it introduces a partition on the surface. Let us denote this set of regions obtained after partitioning as \(R\). Henceforth, we shall be considering a single element of this set \(\wp \in R\). Because of the previous lemma, we can conclude that the interior of each \(\wp \in R\) have no vanishing Jacobians. This implies that we can apply the global inverse theorem on each of the regions in \(R\).
 
-Consider a region \(\varphi \in R\). Let us denote the boundary of \(\varphi\) by \(\partial \varphi\) and the interior of \(\wp\), the open definition 1 Given a region \(\wp \in R\), the visibility curves on \(\wp, V(\wp)\), is defined as the locus of points,
+Consider a region \(\wp \in R\). Let us denote the boundary of \(\wp\) by \(\partial \wp\) and the interior of \(\wp\), the open definition 1 Given a region \(\wp \in R\), the visibility curves on \(\wp, V(\wp)\), is defined as the locus of points,
 
 $$
-V(\wp)=\left\{p_{i} \mid p_{i} \in \operatorname{int}(\wp), \exists p_{b} \in \partial \wp, M\left(p_{i}\right)=M\left(p_{b}\right)\right\}
+V(\wp)=\left\{p_{i} \mid p_{i} \in \operatorname{int}(\wp), \exists p_{b} \in \partial \wp, M\left(p_{i}\right)=M\left(p_{b}\right)\right\} .
 $$
 
 Lemma 3 The visibility curves on \(\wp, V(\wp)\) as defined above, indeed, form a set of curves with the property that each such curve ends in \(\partial \wp\).
 
 Proof: We shall prove both the parts by contradiction. Let us assume that there exists an isolated point \(p_{i} \in V(\wp)\). But by definition, there must be a point \(p_{b} \in \partial \wp\) such that \(M\left(p_{i}\right)=M\left(p_{b}\right)\). We know that \(\partial \wp\) is a continuous closed curve. Consider a small displacement, \(\delta \in \Re^{2}\), of \(p_{b}\) along \(\partial \wp\). Since \(M\) is a smooth map, there exists an \(\epsilon \in \Re^{2}\) such that \(M\left(p_{i}+\epsilon\right)=M\left(p_{b}+\delta\right)\). In fact, in the limit \(\delta\) going to zero, \(\epsilon \approx J^{-1}\left(p_{i}\right) J\left(p_{b}\right) \delta\), where \(J\) and \(J^{-1}\) are the Jacobian and the Jacobian inverse of \(M\) respectively. Further, we know that \(J^{-1}\left(p_{i}\right)\) exists because \(p_{i} \in \operatorname{int}(\wp)\).
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-5-p013.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-5-p013.png)
 
 *Figure 5: A helical patch with no silhouettes*
 
-Therefore, all visibility curves must either extend to the boundary of \(\varphi\) or end up as loops.
+Therefore, all visibility curves must either extend to the boundary of \(\wp\) or end up as loops.
 
 Let \(p_{b}\) be a point on the boundary, and let \(p_{i}\) be the corresponding point in the interior with the same projection. If \(p_{i}\) is a point on the loop, we can show that there exists a simple path between \(p_{i}\) and \(p_{b}\) which crosses a silhouette curve. Therefore, visibility curves cannot exist as loops.
 
@@ -249,21 +249,21 @@ Proof: We can prove this fact using the same argument as Lemma 1.
 
 Fig. 5 shows a helical patch with no silhouettes. Fig. 6 shows the visibility curves computed on the same patch. The visibility curves are also shown in the domain of the patch. The patch in Fig. 5 is deliberately transformed to provide a better view. Lemma 3 provides a constructive method to find all the visibility curves. Given the boundary representation of each region, we have to determine all the intersections among the various curves comprising the boundary projections (including self-intersections). We are assuming that the boundary curves are in general position so that their projections intersect only in discrete points. These points form the endpoints for all the visibility curves inside the region. Once all the endpoints are found, we use marching methods to trace all the curves. Details of the method are discussed in the next section.
 
-Given \(\wp \in R\), we can construct a partition of \(\wp\) induced by the visibility curves using Corollary 1. Let us denote the set of regions obtained after partitioning by \(K_{\wp}\). If \(k \in K_{\wp}, \partial k\) denotes the boundary of the region \(k\) and \(\operatorname{int}(k), k-\partial k\), is the interior of \(k\). Fig. 7 (a) shows the partition of
+Given \(\wp \in R\), we can construct a partition of \(\wp\) induced by the visibility curves using Corollary 1. Let us denote the set of regions obtained after partitioning by \(K_{\wp}\). If \(k \in K_{\wp}, \partial k\) denotes the boundary of the region \(k\) and \(\operatorname{int}(k), k-\partial k\), is the interior of \(k\). Fig. 7(a) shows the partition of
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-6-p014.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-6-p014.png)
 
 *Figure 6: visibility curves on the helical patch*
 
-the helical patch based on the visibility curves. In fig. 7(b), we see the image of \(K_{2}\) under \(M\). It is clear that the boundary of this region is not one-to-one (as seen in the case of points \(a\) and \(a /\) ). However, in the next lemma, we are going to argue that the interior of each region \(k \in K_{\wp}\) is one-to-one under the map \(M\).
+However, in the next lemma, we are going to argue that the interior of each region \(k \in K_{\wp}\) is one-to-one under the map \(M\).
 
-Lemma 4 Let \(k \in K_{\wp}\). Then \(\operatorname{int}(k)\) is one-to-one under the projection mapping \(M\).
+Lemma 4 Let \(k \in K_{\wp}\). Then int \((k)\) is one-to-one under the projection mapping \(M\).
 
 Since the Jacobian never vanishes in the interior of each region, we use the global inverse theorem to conclude that the entire region on and inside the closed curve \(C\) is one-to-one.
 
-Therefore, in order to construct \(C\) let us look at the generation of a visibility curve shown in fig. 8. Let \(b_{1}\) and \(b_{2}\) be the projection of two boundary curves of the region \(\wp\) intersecting at the point \(p. p\) splits the curve \(b_{1}\) into two parts: one that lies locally inside the region whose boundary is \(b_{2}\), and the other that lies outside. A similar observation holds for \(b_{2}\) as well. The curves that lie in the interior are marked darker in the figure. These are the curves that precisely become visibility curves when projected onto the other curve. These visibility curves partition the region locally near \(p\) into at least two regions \(K_{1}\) and \(K_{2}\) (by corollary 1). The boundary curve of region \(K_{2}\) is not one-to-one because there are two points (say \(a\) and \(b\) ) having the same projection point \(p\). However, locally near \(p\), it is the only point that violates the one-to-one property of \(K_{2}\). Therefore, by removing the points \(a\) and \(b\) from the boundary curve and closing the curve using interior points in the neighborhood of \(a\) and \(b\), we get rid of point \(p\). Extending this to all intersection points, we get a simple closed curve \(C\) which is one-to-one with the property that every interior point of the region lies either on or inside \(C\).
+Therefore, in order to construct \(C\) let us look at the generation of a visibility curve shown in fig. 8. Let \(b_{1}\) and \(b_{2}\) be the projection of two boundary curves of the region \(\wp\) intersecting at the point \(p\). \(p\) splits the curve \(b_{1}\) into two parts: one that lies locally inside the region whose boundary is \(b_{2}\), and the other that lies outside. A similar observation holds for \(b_{2}\) as well. The curves that lie in the interior are marked darker in the figure. These are the curves that precisely become visibility curves when projected onto the other curve. These visibility curves partition the region locally near \(p\) into at least two regions \(K_{1}\) and \(K_{2}\) (by corollary 1). The boundary curve of region \(K_{2}\) is not one-to-one because there are two points (say \(a\) and \(b\) ) having the same projection point \(p\). However, locally near \(p\), it is the only point that violates the one-to-one property of \(K_{2}\). Therefore, by removing the points \(a\) and \(b\) from the boundary curve and closing the curve using interior points in the neighborhood of \(a\) and \(b\), we get rid of point \(p\). Extending this to all intersection points, we get a simple closed curve \(C\) which is one-to-one with the property that every interior point of the region lies either on or inside \(C\).
 
-![Figure T](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-7-p015.png)
+![Figure T](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-7-p015.png)
 
 *Figure T: (a) Partitioning based on visibility curves (b) Image of region K2 under M*
 
@@ -283,7 +283,7 @@ $$
 \frac{X_{f}(u)}{W_{f}(u)}=\frac{X_{g}(v)}{W_{g}(v)}
 $$
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-8-p016.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-8-p016.png)
 
 *Figure 8: Generation of visibility curves near the boundaries*
 
@@ -299,7 +299,7 @@ $$
 
 2. Self-intersections on boundary curves: Consider a plane Bezier curve f = h \(X(s)\), \(Y(s)\), \(W(s)\) i of degree n. This curve self-intersects if there exist parameter values u and v, u = v, such that
 
-Since \(u=v\) is a trivial solution to the above pair of equations, we eliminate it by dividing each of the equations by the factor \((u-v)\). Thus the equations become
+Since \(u=v\) is a trivial solution to the above pair of equations, we eliminate it by dividing each of the equations by the factor ( \(u-v\) ). Thus the equations become
 
 $$
 \begin{gathered} \frac{(X(u) W(v)-X(v) W(u))}{(u-v)}=0 \\ \frac{(Y(u) W(v)-Y(v) W(u))}{(u-v)}=0 \end{gathered}
@@ -329,12 +329,12 @@ $$
 
 In this case, we use the approximated version of the boundary curves (as a piecewise linear chain) and apply a similar procedure as the previous case. The minimization equation in this case is
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-9-p018.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-9-p018.png)
 
 *Figure 9: Tracing of visibility curves*
 
 $$
-\begin{aligned} E(u, s, t)= & D^{2}(s, t)+ \\ & \left(X(s, t) W_{f}(u)-X_{f}(u) W(s, t)\right)^{2}+ \\ & \left(Y(s, t) W_{f}(u)-Y_{f}(u) W(s, t)\right)^{2} . \end{aligned}
+\begin{aligned} E(u, s, t)= & D^{2}(s, t)+ \\ & \left(X(s, t) W_{f}(u)-X_{f}(u) W(s, t)\right)^{2}+ \\ & \left(Y(s, t) W_{f}(u)-Y_{f}(u) W(s, t)\right)^{2} \end{aligned}
 $$
 
 Once all the intersection points are computed, we are ready to trace all the visibility curves.
@@ -358,13 +358,13 @@ int index_of_second_point;
 };
 ```
 
-Fig. 9 shows the tracing of a visibility curve in the domain of a region and in projection space. Points \(a\) and \(b\) have the same projection point \(p\). Let the curve \(b_{2}\) in fig. 9(b) correspond to the portion of the boundary from \(a\) to \(c\) (see fig. 9(a)). The boundary of the region on the domain is represented as a polygon (obtained after partitioning based on silhouettes). Let us assume that at an arbitrary step of the tracing method we are at point \(e\) on \(b_{2}\) and at \(f\) on the visibility curve. Both \(e\) and \(f\) have the same projection point \(p\) 1. Let the domain coordinates of \(f\) be ( \(f_{u}, f_{v}\) ). If we move from \(e\) to \(g\) on \(b_{2}\), the point \(f\) must move to a neighboring point, \(h\), on the visibility
+Fig. 9 shows the tracing of a visibility curve in the domain of a region and in projection space. Points \(a\) and \(b\) have the same projection point \(p\). Let the curve \(b_{2}\) in fig. 9 (b) correspond to the portion of the boundary from \(a\) to \(c\) (see fig. 9(a)). The boundary of the region on the domain is represented as a polygon (obtained after partitioning based on silhouettes). Let us assume that at an arbitrary step of the tracing method we are at point \(e\) on \(b_{2}\) and at \(f\) on the visibility curve. Both \(e\) and \(f\) have the same projection point \(p_{1}\). Let the domain coordinates of \(f\) be ( \(f_{u}, f_{v}\) ). If we move from \(e\) to \(g\) on \(b_{2}\), the point \(f\) must move to a neighboring point, \(h\), on the visibility
 
 $$
 \frac{X\left(h_{u}, h_{v}\right)}{W\left(h_{u}, h_{v}\right)}-x=0
 $$
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-10-p019.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-10-p019.png)
 
 *Figure 10: (a) Partitioning of patch in fig. 1 based on visibility curves (b) visibility curves in the domain*
 
@@ -372,7 +372,7 @@ $$
 \frac{Y\left(h_{u}, h_{v}\right)}{W\left(h_{u}, h_{v}\right)}-y=0 .
 $$
 
-Eliminating \(h_{v}\) from these two equations results in a matrix polynomial in \(h_{u}\). The singular set of this polynomial determines \(h_{u}\) and from the corresponding eigenvector, we can find \(h_{v}\). However, a lot of unnecessary work can be avoided by observing that ( \(h_{u}, h_{v}\) ) is in the neighborhood of ( \(f_{u}, f_{v}\) ).
+Eliminating \(h_{v}\) from these two equations results in a matrix polynomial in \(h_{u}\). The singular set of this polynomial determines \(h_{u}\) and from the corresponding eigenvector, we can find \(h_{v}\). However, a lot of unnecessary work can be avoided by observing that ( \(h_{u}, h_{v}\) ) is in the neighborhood of ( \(f_{u}, f_{v}\) ). Using \(f_{u}\) as a guess to \(h_{u}\) and building a corresponding eigenvector out of \(f_{u}\), we perform inverse power iterations (described in section 2) to obtain ( \(h_{u}, h_{v}\) ).
 
 It is possible to use Newton's method to solve the above set of equations. However, as we will see, this method has some problems. Let us assume that point b on the boundary is on a silhouette. We proved that a silhouette point is one where the Jacobian vanishes. Therefore, Newton's method does not perform well close to silhouette points. Inverse power iteration suffers from no such problem.
 
@@ -386,7 +386,7 @@ The first case occurs more often. For example, if we trace further from point \(
 
 The second case occurs when the visibility curve hits the boundary curve and then continues along it. This will not be detected in the previous case, and hence, has to be checked explicitly.
 
-![Figure 11](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-11-p020.png)
+![Figure 11](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-11-p020.png)
 
 *Figure 11: Partitioning of patch in fig.5 based on visibility curves*
 
@@ -398,7 +398,7 @@ In the previous sections, we looked at the visibility problem for a single patch
 
 Our final goal is to output trimmed patches of the scene that are visible from the given viewpoint. We shall assume for simplicity that the faces input to this algorithm are non-intersecting. If they are intersecting, we may have to compute all the pairwise surface intersections [KM 95] and split them into non-intersecting faces.
 
-The input to the algorithm is a set of \(n\) faces, each of whose boundaries is represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by \(H=\left\{h_{1}, h_{2}, \ldots, h_{n}\right\}\). Let \(V^{i}\) denote the collection of visible regions after adding i faces at random. The i faces already added are kept in the set Q. We want to compute \(V^{n}\). After i steps of the algorithm, we maintain \(V^{i}\). At the (i+1)st step, we pick a random face \(h_{i+1}\) from the set \(H \setminus Q\). For each face in \(V^{i}\), we find all the boundary intersections with the face \(h_{i+1}\) using the method described in the previous section. Let us consider a specific intersection point ( \(p, q\) ) such that \(p\) lies on the boundary of one of the faces in \(V^{i}\) and \(q\) lies on the boundary of \(h_{i+1}\). If the \(z\)-coordinate of \(p\) is less than that of \(q\) ( \(p\) lies in front of \(q\) ), then project the boundary curve on which \(p\) lies on \(h_{i+1}\), else the other way around. Tracing only one of the curves is sufficient because the faces are non-intersecting. Tracing is accomplished by inverse power iteration, which was described in both sections 2 and 5. The equations used to trace these curves is exactly the same as those used in section 5. In some sense, the projected curves are similar to our notion of visibility curves. We split it up this way so that the theoretical argument could be made much easier. We do tracing for all the intersection points. We partition appropriate faces by their projection curves and locate a point \(r\) inside each of the partitioned faces. Since all points inside one region is now entirely visible or not, we check only one point. We shoot a ray from the point \(r\) to \(-\infty\) in the \(z\)-direction and find the number of intersections with faces of \(V^{i} \cup\left\{h_{i+1}\right\}\). The curve/surface intersection method used is described in section 2. If the number of intersections is 0, this face is added, otherwise it is discarded. All the faces that were not partitioned in step ( \(i+1\) ) are retained in \(V^{i+1}\). After all the \(n\) faces are added, we obtain \(V^{n}\). We shall now provide the pseudocode for this algorithm. For ease of writing the pseudocode, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns 0 if there are no boundary curves between the two faces, otherwise, it returns 1. We also have another routine called partition_face that computes the partition of the face using the projected boundary curve.
+The input to the algorithm is a set of \(n\) faces, each of whose boundaries is represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by \(H=\left\{h_{1}, h_{2}, \ldots, h_{n}\right\}\). Let \(V^{i}\) denote the collection of visible regions after adding i faces at random. The i faces already added are kept in the set Q. We want to compute \(V^{n}\). After i steps of the algorithm, we maintain \(V^{i}\). At the (i+1)st step, we pick a random face \(h_{i+1}\) from the set \(H \setminus Q\). For each face in \(V^{i}\), we find all the boundary intersections with the face \(h_{i+1}\) using the method described in the previous section. Let us consider a specific intersection point ( \((p, q)\) ) such that \(p\) lies on the boundary of one of the faces in \(V^{i}\) and \(q\) lies on the boundary of \(h_{i+1}\). If the \(z\)-coordinate of \(p\) is less than that of \(q\) ( \(p\) lies in front of \(q\) ), then project the boundary curve on which \(p\) lies on \(h_{i+1}\), else the other way around. Tracing only one of the curves is sufficient because the faces are non-intersecting. Tracing is accomplished by inverse power iteration, which was described in both sections 2 and 5. The equations used to trace these curves is exactly the same as those used in section 5. In some sense, the projected curves are similar to our notion of visibility curves. We split it up this way so that the theoretical argument could be made much easier. We do tracing for all the intersection points. We partition appropriate faces by their projection curves and locate a point \(r\) inside each of the partitioned faces. Since all points inside one region is now entirely visible or not, we check only one point. We shoot a ray from the point \(r\) to \(-\infty\) in the \(z\)-direction and find the number of intersections with faces of \(V^{i} \cup\left\{h_{i+1}\right\}\). The curve/surface intersection method used is described in section 2. If the number of intersections is 0, this face is added, otherwise it is discarded. All the faces that were not partitioned in step ( \(i+1\) ) are retained in \(V^{i+1}\). After all the \(n\) faces are added, we obtain \(V^{n}\). We shall now provide the pseudocode for this algorithm. For ease of writing the pseudocode, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns 0 if there are no boundary curves between the two faces, otherwise, it returns 1. We also have another routine called partition_face that computes the partition of the face using the projected boundary curve.
 
 ```text
 Q = {};
@@ -427,7 +427,7 @@ for (i = 1; i <= n; i++) {
 output V^n;
 ```
 
-![Figure 12](/Users/evanthayer/Projects/stepview/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-12-p022.png)
+![Figure 12](/Users/evanthayer/Projects/paperx/docs/1990_hidden_curve_removal_for_free_form_surfaces/figures/figure-12-p022.png)
 
 *Figure 12: visibility computation on a set of faces*
 

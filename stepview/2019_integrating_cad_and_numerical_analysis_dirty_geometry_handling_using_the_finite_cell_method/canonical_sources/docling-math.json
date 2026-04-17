@@ -47,12 +47,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 96.0,
-            "y0": 388.83,
+            "x0": 96.03,
+            "y0": 388.95,
             "x1": 778.35,
-            "y1": 404.17,
-            "width": 682.35,
-            "height": 15.34
+            "y1": 404.04,
+            "width": 682.32,
+            "height": 15.09
           },
           "engine": "docling"
         }
@@ -68,7 +68,7 @@
     {
       "id": "docling-eq-0003",
       "kind": "display",
-      "display_latex": "V = {v¡ | i e e n)) (3)",
+      "display_latex": "V = {v¡ | i e {1,...,n)) (3)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -164,7 +164,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "Yi, Zi (9)",
+      "display_latex": "Vi, Zi (9)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -178,9 +178,9 @@
             "x0": 163.95,
             "y0": 932.06,
             "x1": 778.35,
-            "y1": 947.06,
+            "y1": 946.96,
             "width": 614.4,
-            "height": 15.0
+            "height": 14.9
           },
           "engine": "docling"
         }
@@ -196,7 +196,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "Ci(5) = y(5) e.g., C¡(5) = N;(5) · 2; (10)",
+      "display_latex": "Ci(5) = y(5) e.g., C¡(5) = N, (5) · 2j (10)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -210,9 +210,9 @@
             "x0": 96.05,
             "y0": 971.72,
             "x1": 778.35,
-            "y1": 993.38,
+            "y1": 995.04,
             "width": 682.3,
-            "height": 21.66
+            "height": 23.32
           },
           "engine": "docling"
         }
@@ -397,11 +397,11 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 89.32,
+            "x0": 89.33,
             "y0": 756.32,
             "x1": 773.38,
             "y1": 779.68,
-            "width": 684.06,
+            "width": 684.05,
             "height": 23.36
           },
           "engine": "docling"
@@ -704,7 +704,7 @@
     {
       "id": "docling-eq-0023",
       "kind": "display",
-      "display_latex": "Omove (Pi, G) →Ğ, where 0 < dist Pi, P; < 6, and , 75: C(5) = P, vČ\", (24) and = 0 VS*, 5g) at vi",
+      "display_latex": "Omove (Pi, G) →Ğ, where 0 < dist Pi, P; < 6, and , 75: C(5) = P, vČ\"; (24) and = 0 VS*, 5g) at vi",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -718,9 +718,9 @@
             "x0": 140.77,
             "y0": 716.79,
             "x1": 778.35,
-            "y1": 848.18,
+            "y1": 848.19,
             "width": 637.58,
-            "height": 131.39
+            "height": 131.4
           },
           "engine": "docling"
         }
@@ -767,7 +767,7 @@
     {
       "id": "docling-eq-0025",
       "kind": "display",
-      "display_latex": "Ointersec (S, (s) > S,(5), where = (5, n) : dist 5, (E), S,(n) = 0 ^ dist Sit, C > 0 (26)",
+      "display_latex": "intersect (S,* → 5.(t), where = (5, n) : dist 5, (E), S,(n) = 0 ^ dist Sit, C > 0 (26)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -779,11 +779,11 @@
           "page": 12,
           "bbox": {
             "x0": 134.14,
-            "y0": 122.51,
+            "y0": 120.85,
             "x1": 773.38,
             "y1": 175.62,
             "width": 639.24,
-            "height": 53.11
+            "height": 54.77
           },
           "engine": "docling"
         }
@@ -799,7 +799,7 @@
     {
       "id": "docling-eq-0026",
       "kind": "display",
-      "display_latex": "Oself Intersect (S; (E) → S;§), where (§,n) : dist (27)",
+      "display_latex": "Oself Intersect (S; (E) → S;§), where (§,n) : dist S; (5), Sin) = 0,5+1 (27)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -811,11 +811,11 @@
           "page": 12,
           "bbox": {
             "x0": 134.14,
-            "y0": 273.16,
+            "y0": 272.78,
             "x1": 773.38,
-            "y1": 294.68,
+            "y1": 296.76,
             "width": 639.24,
-            "height": 21.52
+            "height": 23.98
           },
           "engine": "docling"
         }
@@ -1055,7 +1055,7 @@
     {
       "id": "docling-eq-0034",
       "kind": "display",
-      "display_latex": "coli:= OdeepCopy Dextract (B, fi) B (T, Ğ) := Djoin B, coli",
+      "display_latex": "coti:= OdeepCopy Dexrract (B, fi) B (T, Ğ) := Djoin B, coli",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1066,12 +1066,12 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 139.11,
-            "y0": 446.87,
-            "x1": 354.4,
+            "x0": 140.77,
+            "y0": 448.54,
+            "x1": 352.98,
             "y1": 516.52,
-            "width": 215.29,
-            "height": 69.65
+            "width": 212.21,
+            "height": 67.98
           },
           "engine": "docling"
         }
@@ -1180,7 +1180,7 @@
     {
       "id": "docling-eq-0038",
       "kind": "display",
-      "display_latex": "Vx E Sphy a (x) = (38) 10-9 Vx Afict",
+      "display_latex": "Vx E Sphy a (x) = (38) 10-9 Vx Rfict",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1274,7 +1274,7 @@
     {
       "id": "docling-eq-0041",
       "kind": "display",
-      "display_latex": "Egap (41) 256 Adomain 128",
+      "display_latex": "Egap < (41) 256 Adomain 128",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1305,7 +1305,7 @@
     {
       "id": "docling-eq-0042",
       "kind": "display",
-      "display_latex": "—0.3 0.05 *о,в = -0.3J + B· L0.05. (42) -0.3 0.05",
+      "display_latex": "—0.3 0.05 *о,в = 0.3+ B. L0.05. (42) -0.3 0.05",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {

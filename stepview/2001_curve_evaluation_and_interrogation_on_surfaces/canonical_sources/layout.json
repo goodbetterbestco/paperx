@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2001_curve_evaluation_and_interrogation_on_surfaces/2001_curve_evaluation_and_interrogation_on_surfaces.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2001_curve_evaluation_and_interrogation_on_surfaces/2001_curve_evaluation_and_interrogation_on_surfaces.pdf",
   "page_count": 14,
   "page_sizes_pt": [
     {
@@ -193,7 +193,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 151.12,
@@ -212,7 +212,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Freeform surface design is a common tool nowadays in a whole spectrum of geometric applications. Proper design has many aspects and throughout the years, quite a few techniques have been proposed to evaluate the quality of the created surfaces. In this work, we consider one such class of surface quality evaluation scheme, a class that evaluates characteristic curves on the surfaces.",
       "bbox": {
         "x0": 17.72,
@@ -231,7 +231,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Many techniques that employ curves for surface interrogation were developed, most noticeably reflection lines. Reflection lines have a tradition in the car industry where the quality of the car has been examined in a room with parallel band lights. Simulating this technique with software was the aim of quite a few researchers looking for the simulation of the physical band lighting room [8] or via an approximation that uses a fixed set of curves on the surface [7], perhaps with the aid of intersecting S ( u ; v ) with a set of parallel planes. Another recent example is [6], where a preprocessing of the surface S ( u ; v ) into a triangular mesh and the careful enumeration of the expected reflection of each triangular node are employed toward a more efficient process.",
       "bbox": {
         "x0": 17.72,
@@ -1279,11 +1279,11 @@
       "role": "paragraph",
       "text": "n2 (U, 0)",
       "bbox": {
-        "x0": 152.64,
+        "x0": 152.65,
         "y0": 34.54,
-        "x1": 191.36,
+        "x1": 191.35,
         "y1": 47.97,
-        "width": 38.72,
+        "width": 38.7,
         "height": 13.43
       },
       "meta": {
@@ -2773,5 +2773,21 @@
         "docling_orig": "12. Y. Tokuyama and S. Bae, An approximation method for generating draft on a freeform surface, Visual Comput. 15 , 1999, 1-8."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling"
+  }
 }

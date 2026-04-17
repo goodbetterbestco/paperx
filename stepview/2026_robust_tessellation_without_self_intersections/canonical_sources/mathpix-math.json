@@ -2,9 +2,9 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p003-0069",
+      "id": "mathpix-eq-p003-0072",
       "kind": "display",
-      "display_latex": "\\begin{array}{ll}\n\\mathcal{S}=\\left\\{\\mathrm{s}_{0}, \\mathrm{~s}_{1}, \\ldots, \\mathrm{~s}_{n}\\right\\}, & 0=\\mathrm{s}_{0}<\\mathrm{s}_{1}<\\cdots<\\mathrm{s}_{n}=1 \\\\\n\\mathcal{T}=\\left\\{\\mathrm{t}_{0}, \\mathrm{t}_{1}, \\ldots, \\mathrm{t}_{m}\\right\\}, & 0=\\mathrm{t}_{0}<\\mathrm{t}_{1}<\\cdots<\\mathrm{t}_{m}=1\n\\end{array}",
+      "display_latex": "\\begin{array}{ll}\n\\mathcal{S}=\\left\\{\\mathrm{s}_{0}, \\mathrm{~s}_{1}, \\ldots, \\mathrm{~s}_{n}\\right\\}, & 0=\\mathrm{s}_{0}<\\mathrm{s}_{1}<\\cdots<\\mathrm{s}_{n}=1, \\\\\n\\mathcal{T}=\\left\\{t_{0}, \\mathrm{t}_{1}, \\ldots, \\mathrm{t}_{m}\\right\\}, & 0=\\mathrm{t}_{0}<\\mathrm{t}_{1}<\\cdots<\\mathrm{t}_{m}=1,\n\\end{array}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 339.87,
-            "y0": 721.3,
-            "x1": 515.3,
-            "y1": 746.3,
-            "width": 175.43,
-            "height": 24.99
+            "x0": 340.98,
+            "y0": 720.67,
+            "x1": 515.21,
+            "y1": 745.14,
+            "width": 174.23,
+            "height": 24.47
           },
           "engine": "mathpix"
         }
@@ -35,7 +35,7 @@
     {
       "id": "mathpix-eq-p004-0012",
       "kind": "display",
-      "display_latex": "\\operatorname{conv}\\left(\\left.C_{1}\\right|_{\\left.s_{i}, s_{i+1}\\right]}\\right) \\cap \\operatorname{conv}\\left(\\left.C_{2}\\right|_{\\left[t_{j}, t_{j+1}\\right]}\\right)=\\emptyset .",
+      "display_latex": "\\operatorname{conv}\\left(\\left.C_{1}\\right|_{\\left[\\mathrm{s}_{i}, \\mathrm{~s}_{\\mathrm{i}+1}\\right]}\\right) \\cap \\operatorname{conv}\\left(\\left.C_{2}\\right|_{\\left[\\mathrm{t}_{\\mathrm{j}}, \\mathrm{t}_{\\mathrm{j}+1}\\right]}\\right)=\\emptyset .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,12 +46,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 95.46,
-            "y0": 268.93,
-            "x1": 226.91,
-            "y1": 280.42,
-            "width": 131.45,
-            "height": 11.5
+            "x0": 94.75,
+            "y0": 267.77,
+            "x1": 228.09,
+            "y1": 281.88,
+            "width": 133.34,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -66,7 +66,7 @@
     {
       "id": "mathpix-eq-p004-0020",
       "kind": "display",
-      "display_latex": "L_{1}=\\bigcup_{i=0}^{n-1} \\overline{C_{1}\\left(s_{i}\\right) C_{1}\\left(s_{i+1}\\right)}, \\quad L_{2}=\\bigcup_{j=0}^{m-1} \\overline{C_{2}\\left(t_{j}\\right) C_{2}\\left(t_{j+1}\\right)}",
+      "display_latex": "L_{1}=\\bigcup_{i=0}^{n-1} \\overline{C_{1}\\left(s_{i}\\right) C_{1}\\left(s_{i+1}\\right)}, \\quad L_{2}=\\bigcup_{j=0}^{m-1} \\overline{C_{2}\\left(t_{j}\\right) C_{2}\\left(t_{j+1}\\right)} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 76.97,
-            "y0": 379.9,
-            "x1": 244.91,
-            "y1": 408.89,
-            "width": 167.94,
-            "height": 28.99
+            "x0": 76.89,
+            "y0": 379.48,
+            "x1": 245.08,
+            "y1": 408.85,
+            "width": 168.19,
+            "height": 29.37
           },
           "engine": "mathpix"
         }
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0068",
+      "id": "mathpix-eq-p004-0071",
       "kind": "display",
       "display_latex": "\\operatorname{sign}\\left(\\operatorname{det}\\left(\\mathbf{D}, \\mathbf{V}_{1}\\right)\\right) \\neq \\operatorname{sign}\\left(\\operatorname{det}\\left(\\mathbf{D}, \\mathbf{V}_{2}\\right)\\right),",
       "semantic_expr": null,
@@ -108,12 +108,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 357.86,
-            "y0": 463.37,
-            "x1": 487.81,
-            "y1": 474.87,
-            "width": 129.95,
-            "height": 11.5
+            "x0": 357.68,
+            "y0": 462.69,
+            "x1": 488.43,
+            "y1": 474.78,
+            "width": 130.75,
+            "height": 12.09
           },
           "engine": "mathpix"
         }
@@ -126,9 +126,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0077",
+      "id": "mathpix-eq-p004-0080",
       "kind": "display",
-      "display_latex": "\\mathbf{D}=\\frac{\\mathbf{T}_{1}}{\\left\\|\\mathbf{T}_{1}\\right\\|}+\\frac{\\mathbf{T}_{2}}{\\left\\|\\mathbf{T}_{2}\\right\\|},",
+      "display_latex": "\\mathrm{D}=\\frac{\\mathrm{T}_{1}}{\\left\\|\\mathrm{~T}_{1}\\right\\|}+\\frac{\\mathrm{T}_{2}}{\\left\\|\\mathrm{~T}_{2}\\right\\|},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 395.85,
-            "y0": 576.84,
-            "x1": 464.82,
-            "y1": 598.34,
-            "width": 68.97,
-            "height": 21.49
+            "x0": 395.99,
+            "y0": 577.0,
+            "x1": 465.1,
+            "y1": 598.3,
+            "width": 69.12,
+            "height": 21.31
           },
           "engine": "mathpix"
         }
@@ -159,7 +159,7 @@
     {
       "id": "mathpix-eq-p005-0014",
       "kind": "display",
-      "display_latex": "\\mathbf{D}=\\overrightarrow{C(0) C_{i}(t)}",
+      "display_latex": "\\mathbf{D}=\\overrightarrow{C(0) C_{i}(t)} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +170,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 148.44,
-            "y0": 472.87,
-            "x1": 200.92,
-            "y1": 488.37,
-            "width": 52.48,
-            "height": 15.5
+            "x0": 149.18,
+            "y0": 473.06,
+            "x1": 199.86,
+            "y1": 487.17,
+            "width": 50.69,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p005-0031",
+      "id": "mathpix-eq-p005-0032",
       "kind": "display",
       "display_latex": "\\left\\langle\\overrightarrow{\\mathrm{P}_{0} \\mathrm{P}_{1}}, \\mathbf{V}\\right\\rangle<\\left\\langle\\overrightarrow{\\mathrm{P}_{0} \\mathrm{P}_{2}}, \\mathbf{V}\\right\\rangle<\\cdots<\\left\\langle\\overrightarrow{\\mathrm{P}_{0} \\mathrm{P}_{n}}, \\mathbf{V}\\right\\rangle,",
       "semantic_expr": null,
@@ -201,12 +201,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 100.46,
-            "y0": 690.81,
-            "x1": 233.91,
-            "y1": 706.31,
-            "width": 133.45,
-            "height": 15.5
+            "x0": 100.8,
+            "y0": 691.88,
+            "x1": 232.98,
+            "y1": 704.55,
+            "width": 132.19,
+            "height": 12.67
           },
           "engine": "mathpix"
         }
@@ -219,9 +219,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p006-0033",
+      "id": "mathpix-eq-p006-0037",
       "kind": "display",
-      "display_latex": "\\mathrm{S}_{1}\\left(\\mathrm{C}_{1}\\left(\\mathrm{~S}_{\\mathrm{i}}\\right)\\right)=\\mathrm{S}_{2}\\left(\\mathrm{C}_{2}\\left(\\mathrm{t}_{i}\\right)\\right)=E\\left(\\xi_{\\mathrm{i}}\\right), \\quad \\forall i .",
+      "display_latex": "S_{1}\\left(C_{1}\\left(S_{i}\\right)\\right)=S_{2}\\left(C_{2}\\left(t_{i}\\right)\\right)=E\\left(\\xi_{i}\\right), \\quad \\forall i .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -232,12 +232,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 107.46,
-            "y0": 623.33,
-            "x1": 230.41,
-            "y1": 634.33,
-            "width": 122.95,
-            "height": 11.0
+            "x0": 107.71,
+            "y0": 622.78,
+            "x1": 230.39,
+            "y1": 633.72,
+            "width": 122.68,
+            "height": 10.94
           },
           "engine": "mathpix"
         }
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p006-0054",
+      "id": "mathpix-eq-p006-0059",
       "kind": "display",
       "display_latex": "\\begin{array}{cl}\n\\mathcal{R}_{1}=\\left\\{R_{1,1}, R_{1,2}, \\ldots, R_{1, n}\\right\\}, & R_{1, k} \\cap R_{1, l}=\\emptyset(\\forall k \\neq l), \\\\\n\\mathcal{R}_{2}=\\left\\{R_{2,1}, R_{2,2}, \\ldots, R_{2, m}\\right\\}, & R_{2, p} \\cap R_{2, q}=\\emptyset(\\forall p \\neq q),\n\\end{array}",
       "semantic_expr": null,
@@ -263,12 +263,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 326.38,
-            "y0": 523.36,
-            "x1": 516.3,
-            "y1": 548.35,
-            "width": 189.93,
-            "height": 24.99
+            "x0": 327.73,
+            "y0": 523.16,
+            "x1": 516.65,
+            "y1": 548.2,
+            "width": 188.92,
+            "height": 25.05
           },
           "engine": "mathpix"
         }
@@ -281,9 +281,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p006-0058",
+      "id": "mathpix-eq-p006-0063",
       "kind": "display",
-      "display_latex": "\\operatorname{conv}\\left(\\left.S_{1}\\right|_{R_{1, k}}\\right) \\cap \\operatorname{conv}\\left(\\left.S_{2}\\right|_{R_{2, p}}\\right)=\\emptyset .",
+      "display_latex": "\\operatorname{conv}\\left(\\left.S_{1}\\right|_{R_{1, k}}\\right) \\cap \\operatorname{conv}\\left(\\left.S_{2}\\right|_{2, p}\\right)=\\emptyset .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -294,12 +294,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 365.36,
-            "y0": 592.84,
-            "x1": 479.82,
-            "y1": 604.33,
-            "width": 114.46,
-            "height": 11.5
+            "x0": 365.46,
+            "y0": 592.83,
+            "x1": 479.79,
+            "y1": 604.35,
+            "width": 114.33,
+            "height": 11.52
           },
           "engine": "mathpix"
         }
@@ -312,7 +312,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p006-0069",
+      "id": "mathpix-eq-p006-0074",
       "kind": "display",
       "display_latex": "\\hat{M}_{1}=\\left\\{\\Delta\\left(S_{1}(P), S_{1}(Q), S_{1}(R)\\right) \\mid \\Delta(P, Q, R) \\in M_{1}\\right\\}",
       "semantic_expr": null,
@@ -325,12 +325,12 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 337.37,
-            "y0": 732.3,
-            "x1": 506.81,
-            "y1": 744.8,
-            "width": 169.44,
-            "height": 12.5
+            "x0": 338.1,
+            "y0": 732.19,
+            "x1": 506.86,
+            "y1": 745.14,
+            "width": 168.76,
+            "height": 12.96
           },
           "engine": "mathpix"
         }
@@ -356,12 +356,12 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 77.97,
-            "y0": 353.4,
-            "x1": 254.9,
-            "y1": 365.9,
-            "width": 176.93,
-            "height": 12.5
+            "x0": 78.33,
+            "y0": 352.13,
+            "x1": 254.87,
+            "y1": 365.95,
+            "width": 176.54,
+            "height": 13.82
           },
           "engine": "mathpix"
         }
@@ -387,12 +387,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 100.46,
-            "y0": 441.38,
-            "x1": 221.92,
-            "y1": 461.37,
-            "width": 121.45,
-            "height": 19.99
+            "x0": 100.22,
+            "y0": 441.39,
+            "x1": 222.04,
+            "y1": 461.54,
+            "width": 121.82,
+            "height": 20.15
           },
           "engine": "mathpix"
         }
@@ -418,12 +418,12 @@
         {
           "page": 8,
           "bbox": {
-            "x0": 84.47,
-            "y0": 496.36,
-            "x1": 237.91,
-            "y1": 517.86,
-            "width": 153.44,
-            "height": 21.49
+            "x0": 84.38,
+            "y0": 496.38,
+            "x1": 237.88,
+            "y1": 517.69,
+            "width": 153.5,
+            "height": 21.31
           },
           "engine": "mathpix"
         }
@@ -436,7 +436,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p015-0122",
+      "id": "mathpix-eq-p015-0123",
       "kind": "display",
       "display_latex": "\\left[s_{i}, s_{i+1}\\right]=\\bigcup_{k=0}^{p_{i}-1}\\left[s_{i, k}, s_{i, k+1}\\right]",
       "semantic_expr": null,
@@ -449,12 +449,12 @@
         {
           "page": 15,
           "bbox": {
-            "x0": 381.36,
-            "y0": 675.82,
-            "x1": 474.82,
-            "y1": 706.31,
-            "width": 93.46,
-            "height": 30.49
+            "x0": 382.16,
+            "y0": 676.04,
+            "x1": 473.74,
+            "y1": 705.41,
+            "width": 91.58,
+            "height": 29.37
           },
           "engine": "mathpix"
         }
@@ -469,7 +469,7 @@
     {
       "id": "mathpix-eq-p016-0005",
       "kind": "display",
-      "display_latex": "L_{1}^{\\prime}=\\bigcup_{i=0}^{n-1} \\bigcup_{k=0}^{p_{i}-1} \\overline{C_{1}\\left(s_{i, k}\\right) C_{1}\\left(s_{i, k+1}\\right)} .",
+      "display_latex": "L_{1}^{\\prime}=\\bigcup_{i=0}^{n-1} \\bigcup_{k=0}^{p_{i}-1} \\overline{\\mathrm{C}_{1}\\left(\\mathrm{~S}_{i, k}\\right) \\mathrm{C}_{1}\\left(\\mathrm{~S}_{i, k+1}\\right)}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -480,12 +480,12 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 109.46,
-            "y0": 63.98,
-            "x1": 211.92,
-            "y1": 92.47,
-            "width": 102.46,
-            "height": 28.49
+            "x0": 107.71,
+            "y0": 61.62,
+            "x1": 214.55,
+            "y1": 93.57,
+            "width": 106.84,
+            "height": 31.96
           },
           "engine": "mathpix"
         }
@@ -498,9 +498,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p016-0029",
+      "id": "mathpix-eq-p016-0030",
       "kind": "display",
-      "display_latex": "\\hat{\\Delta}_{1}=\\left\\{\\lambda_{1} A+\\lambda_{2} B+\\lambda_{3} C \\mid \\lambda_{1}, \\lambda_{2}, \\lambda_{3} \\geq 0, \\lambda_{1}+\\lambda_{2}+\\lambda_{3}=1\\right\\} .",
+      "display_latex": "\\hat{\\triangle}_{1}=\\left\\{\\lambda_{1} A+\\lambda_{2} B+\\lambda_{3} C \\mid \\lambda_{1}, \\lambda_{2}, \\lambda_{3} \\geq 0, \\lambda_{1}+\\lambda_{2}+\\lambda_{3}=1\\right\\}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -511,12 +511,12 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 321.38,
-            "y0": 88.48,
-            "x1": 523.8,
-            "y1": 100.47,
-            "width": 202.42,
-            "height": 12.0
+            "x0": 319.09,
+            "y0": 86.66,
+            "x1": 525.0,
+            "y1": 101.92,
+            "width": 205.91,
+            "height": 15.26
           },
           "engine": "mathpix"
         }
@@ -529,9 +529,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p016-0038",
+      "id": "mathpix-eq-p016-0039",
       "kind": "display",
-      "display_latex": "\\hat{\\Delta}_{1} \\cap \\hat{\\Delta}_{2}=\\emptyset .",
+      "display_latex": "\\hat{\\triangle}_{1} \\cap \\hat{\\triangle}_{2}=\\emptyset",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -542,12 +542,12 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 398.35,
-            "y0": 197.95,
-            "x1": 445.33,
-            "y1": 210.94,
-            "width": 46.98,
-            "height": 13.0
+            "x0": 397.43,
+            "y0": 196.65,
+            "x1": 448.11,
+            "y1": 211.34,
+            "width": 50.69,
+            "height": 14.68
           },
           "engine": "mathpix"
         }

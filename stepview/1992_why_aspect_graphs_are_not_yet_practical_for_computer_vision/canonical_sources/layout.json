@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision.pdf",
   "page_count": 8,
   "page_sizes_pt": [
     {
@@ -353,7 +353,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 124.56,
@@ -372,7 +372,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The uspecr ,vi-qh of an object is a graph structure in which",
       "bbox": {
         "x0": 41.28,
@@ -391,7 +391,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "each node represents a general view of the object as seen from some maximal, connected cell of viewpoint space.",
       "bbox": {
         "x0": 41.28,
@@ -410,7 +410,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "each arc represents an accidental uiew (or uisual eucnt ) which occurs on the boundary between two cells of general viewpoint.",
       "bbox": {
         "x0": 41.28,
@@ -429,7 +429,7 @@
       "id": "#/texts/21",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "there is a node for each possible general view of the object. and",
       "bbox": {
         "x0": 41.28,
@@ -448,7 +448,7 @@
       "id": "#/texts/22",
       "page": 1,
       "order": 22,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "there is an arc for each possible visual event.",
       "bbox": {
         "x0": 59.52,
@@ -467,7 +467,7 @@
       "id": "#/texts/23",
       "page": 1,
       "order": 23,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The aspect graph representation is often considered to have great potential for computer vision. In the last few years. algorithms have been developed to automatically compute the aspect graphs of polyhedra. general curved objects. and even objects with articulated connections between parts. However, much of the work in this area has a somewhat theoretical flavor and it is not clear that the aspect graph representation, at least as it is currently conceived. will find practical application.",
       "bbox": {
         "x0": 41.04,
@@ -486,7 +486,7 @@
       "id": "#/texts/24",
       "page": 1,
       "order": 24,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "For this panel discussion, several distinguished researchers have agreed to provide a critique of the aspect graph approach, and several other distinguished researchers who are working in the aspect graph area have agreed to respond to the critiques. It is hoped that this exchange will help to identify the volved in this area of research. essential issues in-",
       "bbox": {
         "x0": 308.88,
@@ -505,7 +505,7 @@
       "id": "#/texts/25",
       "page": 1,
       "order": 25,
-      "role": "front_matter",
+      "role": "heading",
       "text": "2 . CRITIQUES",
       "bbox": {
         "x0": 402.96,
@@ -524,7 +524,7 @@
       "id": "#/texts/26",
       "page": 1,
       "order": 26,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Olivier Faugeras, INRIA",
       "bbox": {
         "x0": 309.36,
@@ -543,7 +543,7 @@
       "id": "#/texts/27",
       "page": 1,
       "order": 27,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "I believe there are two important reasons that aspect graphs have not been heavily used so far in the computer vision community. The first reason is mostly mathematical but has incidences on the implementation. The second reason is mostly algorithmic but has a strong relationship to a yet unsolved problem in vision for which I believe some completely new ideas will be necessary. In what follows I consider only rigid objects.",
       "bbox": {
         "x0": 309.12,
@@ -562,7 +562,7 @@
       "id": "#/texts/28",
       "page": 1,
       "order": 28,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "As far as the first point goes, we know that the cells in viewpoint space that define the aspect graph of an object are separated by surfaces (or curves. if we stay on the Gaussian sphere) which signal a change in the topology of the silhouette of the object. Those visual events can in principle be computed from the equations defining the object, but mathematicians are presently in the blue for telling us at which scale on the silhouette the changes will happen. Some of them may happen at a large scale and some at a \"microscopic\" scale. but predicting the scale",
       "bbox": {
         "x0": 309.12,
@@ -2210,6 +2210,39 @@
         "docling_label": "text",
         "docling_orig": "Such a task-oriented vision framework determines the choice of vision modules and clarifies the assumptions and goals underlying each vision module. We have to promote this task-oriented vision framework to ensure the healthy development of the computer vision community."
       }
+    },
+    {
+      "id": "mathpix-p008-b0001",
+      "page": 8,
+      "order": 1,
+      "role": "paragraph",
+      "text": ".",
+      "bbox": {
+        "x0": 838.48,
+        "y0": 367.69,
+        "x1": 873.89,
+        "y1": 409.44,
+        "width": 35.42,
+        "height": 41.75
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.82958984375,
+        "confidence_rate": 0.9693424627989503,
+        "parent_id": null,
+        "children_ids": null
+      }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "mathpix"
+  }
 }

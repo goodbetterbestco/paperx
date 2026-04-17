@@ -1,6 +1,6 @@
 # Line Drawings from 3D Models
 
-A Tutorial, Pierre Bénard
+Pierre Bénard
 
 LaBRI (UMR 5800
 CNRS
@@ -8,21 +8,7 @@ Univ. Bordeaux) Inria Bordeaux Sud-Ouest
 
 ## Abstract
 
-This tutorial describes the geometry and algorithms for generating line drawings from 3D models, focusing on occluding contours. The geometry of occluding contours on meshes and on smooth surfaces is described in detail, together with algorithms for extracting contours, computing their visibility, and creating stylized renderings and animations. Exact methods and hardware-accelerated fast methods are both described, and the trade-offs between different methods are discussed. The tutorial brings together and organizes material that, at present, is scattered throughout the literature. It also includes some novel explanations, and implementation tips. A thorough survey of the field of non-photorealistic 3D rendering is also included, covering other kinds of line drawings and artistic shading.
-
-## Introduction
-
-Humans have been drawing pictures since the days of prehistoric cave painting. Various forms of line drawing have been developed since then, including Egyptian hieroglyphs, medieval etching, and industral-era printmaking. Nowadays, line drawing and outline drawing methods are used throughout cartoons and comics, architectural rendering, instructional tutorials, and many other settings. Drawing is the starting point for many kinds of tasks, for everyone from children making pictures to professional architects sketching ideas. Drawing seems to be fundamentally connected to how we represent the world visually.
-
-While most computer graphics focuses on realistic visual simulation, over the past few decades, line drawing algorithms have also matured. We now have the ability to automatically create reasonable line drawings from 3D geometry, much like photorealistic rendering. These algorithms provide deep insight into the geometry and topology of line drawings, which can be surprisingly subtle, given how simple line drawing might seem. Versions of these algorithms have been used throughout art, entertainment, and visualization. User evaluation has shown that these algorithms, indeed, accurately describe important aspects of how artists draw lines. This shows that these algorithms can contribute to a scientific understanding of art.
-
-This tutorial provides a detailed guide to the mathematical theory and computer algorithms for line drawing of 3D objects. We focus on the curves known as occluding contours or, simply, contours. These are the most important curves for line drawing of 3D surfaces. They have a rich theory around them, and, once one understands this theory, understanding how other curves operate is much simpler. We describe the different algorithms required to compute and render these curves, together with references to the literature. We also explain boundary curves and surface-surface intersection curves, since these are straightforward to include and often important. We also discuss open research problems in contour rendering.
-
-In addition, we survey of other topics in 3D non-photorealistic rendering, with extensive pointers to the literature, including: other types of curves, stroke rendering, and nonphotorealistic shading. We do not cover the complementary topic of image-based nonphotorealistic rendering; for a survey of image-based methods, we refer the reader to the book by Rosin and Collomosse (2013).
-
-The theory of line drawing is currently scattered about and incomplete in research papers. The algorithms for line drawing include many subtleties that are not described in the literature, and many pitfalls await the coder attempting them. There remain some important open problems, but these gaps are not obvious from the literature. This tutorial is meant to address these issues.
-
-We believe that these topics ought to be known by anyone interested in understanding the curves in visual representational art. It is one where computer graphics can make a unique contribution. Arguably, the algorithmic simulation of line drawing is a crucial step in understanding visual art.
+This tutorial describes the geometry and algorithms for generating line drawings from 3D models, focusing on occluding contours. The geometry of occluding contours on meshes and on smooth surfaces is described in detail, together with algorithms for extracting contours, computing their visibility, and creating stylized renderings and animations. Exact methods and hardware-accelerated fast methods are both described, and the trade-offs between different methods are discussed. The tutorial brings together and organizes material that, at present, is scattered throughout the literature. It also includes some novel explanations, and implementation tips.
 
 ### 1.1 Occluding contours
 
@@ -34,7 +20,7 @@ There are many different contour detection and rendering algorithms, and some si
 
 Note that, formally, the occluding contour and occluding contour generator are separate curves in 2D and 3D. However, we will frequently use the term 'contour' to refer to each of them, since the correct terms are very cumbersome, and the meaning of 'contour' is usually obvious from context.
 
-![Figure 1.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-1-p007.png)
+![Figure 1.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-1-p007.png)
 
 *Figure 1.1: Occluding contours — The occluding contours of the 3D model “Origins of the Pig” © Keenan Crane, shown in (a) with diffuse shading, are depicted in (b) composited with toon shading to produce a cel-like drawing. As illustrated in (c) from a side view, they delineate the frontier between the front and back parts of the surface when seen from the camera. These contour curves can be further process to produce stylized imagery, such as the calligraphic brush strokes in (d).*
 
@@ -48,11 +34,11 @@ Generally speaking, real-time image-based methods, especially based on graphics 
 
 ## 18 night passengers
 
-3D rendering and the lavail CLipper. A tourth flyisg boat (desigsated sa N-154) called are described in the next Chapter, and pointers to further reading are provided there. This chapter can also help build intuitions for all readers.
-
-![Figure 1.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-2-p008.png)
+![Figure 1.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-2-p008.png)
 
 *Figure 1.2: Artworks created by artists using Blender Freestyle — Each of these is a nonphotorealistic rendering, using the techniques described in this tutorial in different ways. (a) Buggy by Rylan Wright (b) Anime by mato.sus304 (c) Martin M-130 blueprint by LightBWK*
+
+are described in the next Chapter, and pointers to further reading are provided there. This chapter can also help build intuitions for all readers.
 
 The core chapters of the tutorial focus on contour detection and visibility on 3D models. We start with 3D mesh representations, and then apply the same ideas to different smooth surface representations in the subsequent chapters.
 
@@ -86,7 +72,7 @@ Wecan compare the generative theory to the world before and after Newtonian mech
 
 Two landmark studies validate and justify the use of line drawing algorithms developed in the non-photorealistic rendering literature. Cole et al. (2008) undertook a careful study of how artists depict 3D objects. They asked a collection of art students to illustrate several 3D models with line drawings, and compared how the artists' drawings related to the line
 
-![Figure 1.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-3-p011.png)
+![Figure 1.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-3-p011.png)
 
 *Figure 1.3: Correlation between hand-drawn lines and contours — A 3D model rendered from a given viewpoint and illumination (left) has been hand-drawn by ten artists (center). Observe how consistent the drawings are, especially near the contours of the shape. The contours (in red) and suggestive contours (in black) extracted from the 3D model are depicted in the right. Images taken from the “Javascript Drawing Viewer” 1 of Cole et al. (2008).*
 
@@ -104,7 +90,7 @@ Boundary curves are simply the boundaries of the surface. Closed surfaces do not
 
 Surface intersection curves occur when two different sections of surface intersect. These do not occur in the clean models often used in computer graphics research. However, in 1 http: gfx.cs.princeton.edu proj ld3d lineset viewer index.html
 
-![Figure 1.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-4-p012.png)
+![Figure 1.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-4-p012.png)
 
 *Figure 1.4: Surface-surface intersection curves (from Bénard et al. (2014)) — Professionallymodeled surfaces include many intersections between surface, such as this ice-skating character. Surface intersection curves are shown in green, occluding contours in red, and boundaries in blue. Observe how the ear muffs intersects the headband and the hoodie; the shoulder also happens to intersect the hoodie in this animation frame. (a,b) Original surface. (c) Cross-section from a different viewpoint. (“Red” character created at Pixar by Andrew Schmidt, Brian Tindall, Bernhard Haux and Paul Aichele, based on the original design of Teddy Newton.)*
 
@@ -116,7 +102,7 @@ Contour generalizations. Perhaps the next most significant set of curves are tho
 
 The abstracted shading method (Lee et al., 2007) demonstrated how these and lightingbased variants could be computed in image-space. Other variants based on image-space processing include Laplacian Lines (Zhang et al., 2009) and DoG lines (Zhang et al. Zhang, Xia, Ying, He, Mueller-Wittig, and Seah (2012); Zhang, Sun, and He (2014)). In addition to speed, image-space lines have the advantage that they automatically remove clutter as a function of image-space line density, although, like all image-based methods, they potentially lose some fine-scale precision and control.
 
-![Figure 1.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-5-p013.png)
+![Figure 1.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-5-p013.png)
 
 *Figure 1.5: Feature curve examples — From left to right, top to bottom: diffuse rendering of the 3D scanned David model by “Scan The World” (http://mmf.io/o/2052), occluding contours (OC), OC + suggestive contours (SC) (DeCarlo et al., 2004), OC + apparent ridges (Judd et al., 2007), OC + ridges & valleys (Rusinkiewicz, 2004), and OC + SC + principal highlights + toon shading (DeCarlo and Rusinkiewicz, 2007). Images generated with “qrtsc” (Cole et al., 2011).*
 
@@ -126,7 +112,7 @@ Surface features properties. Some intrinsic properties of the surface can be dra
 
 Hatching. Hatching strokes illustrate surface shape in line drawings. Winkenbach and Salesin (1994) use manually-authored hatching textures and orientations. For more automation, one can use the iso-parametric curves of parametric surfaces (Elber, 1995a; Winkenbach
 
-![Figure 1.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-1-6-p014.png)
+![Figure 1.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-1-6-p014.png)
 
 *Figure 1.6: Hatching — Left, 3D Cupid model and hatching result obtain with the automatic method of Hertzmann and Zorin (2000); right, shoulder blade model and user-edited result of Gerl and Isenberg (2013).*
 
@@ -138,7 +124,7 @@ Numerous algorithms have been developed to extract ridges and valleys from vario
 
 ### 1.6 Brief history of 3D Non-Photorealistic Rendering
 
-The earliest 3D computer graphics algorithms were hidden-line rendering algorithms (Roberts, 1963), including methods that we discuss in this tutorial (Appel, 1967; Weiss, 1966). While the mainstream of computer graphics focused on photorealistic imagery, a few works aimed at adding artistic stroke textures to architectural drawings and technical illustrations \({ }^{2}\), e.g., (Dooley and Cohen, 1990; Yessios, 1979); meanwhile a number of 2D computer paint programs were developed as well. Many of these papers argued for the potential virtues of hand-drawn styles in technical illustration.
+The earliest 3D computer graphics algorithms were hidden-line rendering algorithms (Roberts, 1963), including methods that we discuss in this tutorial (Appel, 1967; Weiss, 1966). While the mainstream of computer graphics focused on photorealistic imagery, a few works aimed at adding artistic stroke textures to architectural drawings and technical illustrations 2, e.g., (Dooley and Cohen, 1990; Yessios, 1979); meanwhile a number of 2D computer paint programs were developed as well. Many of these papers argued for the potential virtues of hand-drawn styles in technical illustration.
 
 In 1990, the flagship computer graphics conference SIGGRAPH held a session entitled 'Non Photo Realistic Rendering,' which seems to be the first usage of this term. In this session, two significant papers for the field were presented. Saito and Takahashi (1990) introduced depth-buffer based line enhancements (Chapter 2), which started to create cartoonlike renderings of smooth objects by emphasizing contours and other feature curves. Haeberli (1990) introduced a range of artistic 2D image-processing effects; these papers together demonstrated a significant step forward in the quality and generality of non-photorealistic effects.
 
@@ -166,39 +152,25 @@ These kinds of edges were used in the video game 'Borderlands'; some of the issu
 
 We now describe the depth edge detection algorithm in more detail. A standard choice from image processing is the Sobel filter, which computes approximate depth derivatives (2D gradients) by discrete convolution of the depth buffer D with the following kernels:
 
-$$
-S_{x}=\left[\begin{array}{ccc} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{array}\right] \quad S_{y}=\left[\begin{array}{ccc} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{array}\right]
-$$
-
 The edge image is then obtained by computing their magnitude:
 
 $$
-G(x, y)=\sqrt{\left(D(x, y) \otimes S_{x}\right)^{2}+\left(D(x, y) \otimes S_{y}\right)^{2}}
+(c) Image-space normals (a) linearized depth (a) depun + normais alsconunultes
 $$
 
-$$
-(c) Image-space normals (a) linearized depth (a) depin + normals alsconunultes
-$$
-
-![Figure 2.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-2-1-p018.png)
+![Figure 2.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-2-1-p018.png)
 
 *Figure 2.1: Image-space edges — The depth buffer of the scene (“Origins of the Pig” © Keenan Crane) is obtained by rasterization and linearized (a), depth discontinuities are then extracted by ﬁltering, here, with a Laplacian of Gaussian ﬁlter (b) ; normals discontinuities can also be considered (c) to extract creases; the ﬁnal edges can eventually be re-composited with the color buffer (f). Images computed with BlenderNPR Edge Node plugin (BlenderNPR, 2015a). The pupils are added separately, as materials on the surface. filtering, here, with a Laplacian of Gaussian filter (b) ; normals discontinuities can also be considered (c) to extract creases; the final edges can eventually be re-composited with the color buffer (f). Images computed with BlenderNPR Edge Node plugin (BlenderNPR, 2015a). The pupils are added separately, as materials on the surface.*
 
 and thresholding it by a user-defined threshold t :
 
-$$
-\operatorname{Edge}(x, y)= \begin{cases}1 & \text { if } G(x, y) \geq \tau \\ 0 & \text { if } G(x, y)<\tau\end{cases}
-$$
+The results are demonstrated in Figure 2.1. The 3 × 3 Sobel kernels are the most computationally efficient, but they tend to produce noisy results. As suggested by Hertzmann (1999), they can favorably be replaced by the 'optimal' 5 × 5 kernels of Farid and Simoncelli (1997). Alternatively, second-order derivatives can also be considered, using, for instance, the Laplacian-of-Gaussian filter, or the separable approximation provided by the Differenceof-Gaussians filter (Marr and Hildreth, 1980) and its artistic extensions (Winnemöller et al., 2012).
 
-The results are demonstrated in Figure 2.1. The \(3 \times 3\) Sobel kernels are the most computa tionally efficient, but they tend to produce noisy results. As suggested by Hertzmann (1999), they can favorably be replaced by the "optimal" \(5 \times 5\) kernels of Farid and Simoncelli (1997). Alternatively, second-order derivatives can also be considered, using, for instance, the Laplacian-of-Gaussian filter, or the separable approximation provided by the Differenceof-Gaussians filter (Marr and Hildreth, 1980) and its artistic extensions (Winnemöller et al., Note that the depth edge image contains not just contours, but also object boundaries. The normal edge image often includes contours and boundaries, as well as surface-intersection curves. Distinguishing these types of curves, if desired, would be difficult.
+Note that the depth edge image contains not just contours, but also object boundaries. The normal edge image often includes contours and boundaries, as well as surface-intersection curves. Distinguishing these types of curves, if desired, would be difficult.
 
-As noted by Deussen and Strothotte (2000), GPU depth buffers store non-linear depth values in screen-space, hence depth gradients for remote objects correspond to much larger differences in eye coordinates. If this effect is not desirable, the depth value \(d(d \in[0. .1])\) first needs to be linearized according to the camera near \(z_{0}\) and far \(z_{1}\) clipping plane distances:
+As noted by Deussen and Strothotte (2000), GPU depth buffers store non-linear depth values in screen-space, hence depth gradients for remote objects correspond to much larger differences in eye coordinates. If this effect is not desirable, the depth value d (d ∈ [0.. 1]) first needs to be linearized according to the camera near z 0 and far z 1 clipping plane distances:
 
-$$
-z=\frac{\frac{z_{0} z_{1}\left(d_{1}-d_{0}\right)}{z_{1}-z_{0}}}{d-\frac{\left(z_{1}+z_{0}\right)\left(d_{1}-d_{0}\right)}{2\left(z_{1}-z_{0}\right)}-\frac{d_{1}+d_{0}}{2}}
-$$
-
-where \(d_{0}\) and \(d_{1}\) are the minimal and maximal values represented in the depth buffer. Alternatively, with modern graphics hardware, the linear camera z-value can directly be written into an offscreen buffer.
+where d 0 and d 1 are the minimal and maximal values represented in the depth buffer. Alternatively, with modern graphics hardware, the linear camera z-value can directly be written into an offscreen buffer.
 
 ### 2.1 Discussion and extensions
 
@@ -206,7 +178,7 @@ Image-space algorithms only depend on the final image resolution, which is usual
 
 Additional buffers. One limitation of depth-buffer algorithms is that they cannot detect edges between objects that are close in depth, such as a foot contact on the ground. However, they can be easily extended to other line definitions by rendering and filtering a G-buffer containing, for instance, per-pixel object IDs and surface normals (Figure 2.1c). The former solves the depth ambiguity, whereas first-order normal discontinuities correspond to creases (Saito and Takahashi, 1990; Decaudin, 1996; Hertzmann, 1999; Nienhaus and
 
-![Figure 2.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-2-2-p020.png)
+![Figure 2.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-2-2-p020.png)
 
 *Figure 2.2: Region segmentation (Kolliopoulos et al., 2006) — Toon rendering of a forest scene with no segmentation (left) exhibiting cluttering in the background. With segmentation (right), many of the background trees are grouped together. Contours are only drawn near segment boundaries, resulting in a cleaner image.*
 
@@ -220,7 +192,7 @@ To create sketchy drawings, Curtis (1998) proposed particles that trace small li
 
 To produce lines of controllable thickness, Lee et al. (2007) proposed to fit a simple analytic profile (degree-2 polynomial) to every pixel of a luminance image, viewed as a height field. This profile locally describes the shape of the closest illumination ridge (or valley). The thickness and opacity of the lines can then be computed based on the distance to the ridge or valley line and its first principal curvature. Vergne et al. (2011) generalized this idea in two ways: first by fitting profiles to various surface features, and then by convolving these profiles with a brush footprint to produce various stylization effects (Figure 2.3). This method achieves real-time performance on the GPU and exhibits a natural coherence in
 
-![Figure 2.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-2-3-p021.png)
+![Figure 2.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-2-3-p021.png)
 
 *Figure 2.3: Implicit brushes (Vergne et al., 2011) — Surface feature proﬁles (left) are extracted in image-space and ﬁtted with polynomials; they are then convolved with a brush footprint (inset) to produce stylized lines (right). profiles (left) are extracted in image-space and fitted with polynomials; they are then convolved with a brush footprint (inset) to produce stylized lines (right).*
 
@@ -228,7 +200,7 @@ animation. However, it is limited to brush styles which are independent of the c
 
 Raytracing framework. With a raytracer, a G-buffer can still be computed by casting a ray per pixel and storing the relevant information (e.g., distance to the camera, normal, etc.) at the closest hit point (Leister, 1994; Bigler et al., 2006). To avoid explicitly storing this buffer and allow the user to control the line width, (Choudhury and Parker, 2009) developed a method inspired by cone-tracing. For each per-pixel ray, they sample a set of concentric 'probe' rays in an screen-space disc whose radius corresponds to the half line width, that hey call a ray stencil (Figure 2.4a). Then, they compute an edge strength metric based on the proportion of probe samples falling on the same primitive as the central ray. The final pixel color is modulated by this edge factor, producing naturally anti-aliased lines. Ogaki and Georgiev (2018) both simplify and extend this approach to better deal with line intersections, and allow line thickness and color variations. They also support drawing lines in specular reflections and refractions (Figure 2.4b), at the price of storing the tree of reflections and refractions events associated with every pixel ray.
 
-![Figure 2.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-2-4-p022.png)
+![Figure 2.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-2-4-p022.png)
 
 *Figure 2.4: Ray-traced feature lines — (a) Around a central ray (black dot) a stencil of rays (grey and white dots) is cast to estimate the foreign primitive area, i.e., the proportion of samples intersecting a different primitive than the central one (orange vs. green surfaces). (b) Image-space depth, ID and normals discontinuities extracted taking into account reﬂections and refractions. reflections and refractions.*
 
@@ -252,23 +224,23 @@ We further assume that the mesh is manifold, i.e., (1) each edge is incident to 
 
 ### 3.2 Camera viewing
 
-The polyhedral mesh will be projected by either orthographic (parallel) or perspective (central) projection. For orthographic projection in the view direction \(\mathbf{v}\), a given scene
+The polyhedral mesh will be projected by either orthographic (parallel) or perspective (central) projection. For orthographic projection in the view direction v, a given scene
 
-![Figure 3.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-1-p024.png)
+![Figure 3.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-1-p024.png)
 
 *Figure 3.1: Polygonal meshes — Since each face of a polygonal mesh is planar, its normal n can be computed as (p 3 − p 2) × (p 2 − p 1), where p 1:3 are any three vertices of the face.*
 
-![Figure 3.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-2-p024.png)
+![Figure 3.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-2-p024.png)
 
 *Figure 3.2: Projections — The triangular face formed by the vertices p 1, p 2 and p 3 is viewed (a) under orthographic projection along the view direction v, and (b) under perspective projection of center c.*
 
-point \(\mathbf{p}\) is projected to the image plane by intersecting the line that passes through \(\mathbf{p}\) in the direction \(\mathbf{v}\) - called the the visual ray-with the image plane (Figure 3.2a). The point \(\mathbf{p}\) is visible if the visual ray does not intersect any other surface point before reaching the image plane; otherwise it is invisible.
+point p is projected to the image plane by intersecting the line that passes through p in the direction v-called the the visual ray-with the image plane (Figure 3.2a). The point p is visible if the visual ray does not intersect any other surface point before reaching the image plane; otherwise it is invisible.
 
-For perspective projection, the camera is defined by the position of its center \(\mathbf{c}\) and an image plane (Figure 3.2b). In this case, the visual ray is the line from \(\mathbf{c}\) to the scene point \(\mathbf{p}\); the corresponding view direction ( \(\mathbf{c}-\mathbf{p}\) ) is not constant anymore; it depends on \(\mathbf{p}\). The projection of \(\mathbf{p}\) remains the intersection of the visual ray with the image plane.
+For perspective projection, the camera is defined by the position of its center c and an image plane (Figure 3.2b). In this case, the visual ray is the line from c to the scene point p ; the corresponding view direction (c-p) is not constant anymore; it depends on p. The projection of p remains the intersection of the visual ray with the image plane.
 
 The mesh boundary is the set of edges where each edge is adjacent to only one mesh face. A surface is closed if it has no boundary, otherwise it is open.
 
-![Figure 3.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-3-p025.png)
+![Figure 3.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-3-p025.png)
 
 *Figure 3.3: Contour renderings of a non-orientable surface, the Klein bottle, left by Hertzmann and Zorin (2000) and right by Kalnins et al. (2003). Right image generated with “Jot” (Kalnins et al., 2007).*
 
@@ -278,7 +250,7 @@ We assume that the mesh is orientable. Informally, this requires that all adjace
 
 More formally, orientability can be determined in a mesh data structure as follows. Each triangle in the data structure represents its vertices in a cyclic ordering. Two adjacent faces are consistent if the two vertices of their common edge are in opposite order.
 
-A face is front-facing if the camera position lies on the side of the face pointed to by the face's normal, i.e., \((\mathbf{c}-\mathbf{p}) \cdot \mathbf{n}>0\) (Figure 3.4). It is back-facing if the camera lies on the other side of this plane. In orthographic projection, a face is front-facing when \(\mathbf{v} \cdot \mathbf{n}<0\).
+A face is front-facing if the camera position lies on the side of the face pointed to by the face's normal, i.e., (c-p) · n > 0 (Figure 3.4). It is back-facing if the camera lies on the other side of this plane. In orthographic projection, a face is front-facing when v · n < 0.
 
 We assume that only front-faces may be visible; back-faces must always be invisible. This occurs in two ways. first, when a closed mesh with outward-facing normals is viewed from the outside, the back-faces must all be occluded by front-faces. Second, in a professional animation setting, objects are often modeled with open surfaces, but with the camera movements constrained so that only the front facing regions will be visible.
 
@@ -288,7 +260,7 @@ The general definition of occluding contours, for all surfaces, is as follows.
 
 Definition 3.4.1 (occluding contour generator). For a given viewpoint, the occluding contour generator is a curve on the surface that delineates the frontier between what is locally visible and invisible, that is, between frontand back-facing surface regions.
 
-![Figure 3.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-4-p026.png)
+![Figure 3.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-4-p026.png)
 
 *Figure 3.4: Front faces, back faces, and contour — The front faces are shown in yellow, and are visible to the camera. The back faces are in blue, and are not visible to the camera. The contour generator separates the front facing regions from the back-facing regions of the surface. The apparent contour is the visible projection of this curve onto the image plane.*
 
@@ -320,7 +292,7 @@ A simple fix to violations of generic position is to randomly add a tiny random 
 
 ### 3.6 Contours are sparse
 
-As noted by Markosian et al. (1997); Kettner and Welzl (1997); Sander et al. (2000); McGuire (2004), contour edges only represent a tiny percentage of the total number of mesh edges. For a reasonable polyhedral approximation of a smooth surface, Glisse (2006) showed that the contour length, averaged over all viewpoints, is in the order of \(\sqrt{n}\) where \(n\) is the number of faces in the mesh. In practice, for general man-made triangular meshes, McGuire (2004) measured empirically a trend closer to \(n^{0.8}\). For example, the Buddha model has over 1 million faces but only around 50 k contour edges on average from different views. Of these, a large fraction are surely concave, and thus can trivially be marked as always invisible, as discussed in Section 4.2.
+As noted by Markosian et al. (1997); Kettner and Welzl (1997); Sander et al. (2000); McGuire (2004), contour edges only represent a tiny percentage of the total number of mesh edges. For a reasonable polyhedral approximation of a smooth surface, Glisse (2006) showed that the contour length, averaged over all viewpoints, is in the order of √ n where n is the number of faces in the mesh. In practice, for general man-made triangular meshes, McGuire (2004) measured empirically a trend closer to \(n_{0}\). 8. For example, the Buddha model has over 1 million faces but only around 50k contour edges on average from different views. Of these, a large fraction are surely concave, and thus can trivially be marked as always invisible, as discussed in Section 4.2.
 
 Additionally, edges that are more convex are more likely to be contours than edges that are flatter (Markosian et al., 1997). For example, a nearly-flat edge only becomes a contour from a narrow range of camera positions, unlike a very sharply convex edge.
 
@@ -340,17 +312,13 @@ In many applications, parts of the 3D scene are static, or rigid. In such a case
 
 Orthographic dual space. For orthographic projection, Benichou and Elber (1999) and Gooch et al. (1999) proposed a dual space for fast contour detection. The dual space is a 3D coordinate system s =(\(s_{1}\), \(s_{2}\), \(s_{3}\)). Each mesh face is mapped to a single point s in the dual space, with coordinates given by the face normal: s i = n i =(nx, ny, nz). Likewise, the orientation function, based on view direction v =(vx, vy, vz), is mapped to a plane in the dual space:
 
-$$
-\begin{equation*} g(\mathbf{s})=\mathbf{v} \cdot \mathbf{s}=v_{x} s_{1}+v_{y} s_{2}+v_{z} s_{3}=0 \tag{3.1} \end{equation*}
-$$
-
 MESH CONTOURS: definition AND DETECTION
 
-![Figure 3.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-5-p029.png)
+![Figure 3.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-5-p029.png)
 
 *Figure 3.5: Results — Mesh contours extracted from a low-resolution torus (bottom left), the “Origins of the Pig” © Keenan Crane (top left), and the “Moebius Torus Knot” © Francisco Javier Ortiz Vázquez (right). Hidden contours are depicted with dotted lines (visibility algorithms are discussed in the next Chapter).*
 
-For front faces, \(g(\mathbf{s})>0\), and \(g(\mathbf{s})<0\) for back faces. A mesh edge between faces \((i, j)\) on the original surface corresponds in the dual space to a line segment \(\overline{\mathbf{n}_{i}} \mathbf{n}_{j}\). In the dual space, when the orientation plane intersects a line segment, this line segment must correspond to a contour edge on the original surface. Hence, contour detection is reduced to intersecting a plane with a set of line segments, which can be accelerated by standard geometric data structures, such as octrees or BSP trees.
+For front faces, \(g(s)>0\), and \(g(s)<0\) for back faces. A mesh edge between faces (i, j) on the original surface corresponds in the dual space to a line segment n i n j. In the dual space, when the orientation plane intersects a line segment, this line segment must correspond to a contour edge on the original surface. Hence, contour detection is reduced to intersecting a plane with a set of line segments, which can be accelerated by standard geometric datastructures, such as octrees or BSP trees.
 
 In implementation, the 3D space does not need to be represented; a 2D space is sufficient. Specifically, one can observe that the normals can be arbitrarily scaled without changing the results. Scaling each point to have unit norm projects the points onto the Gaussian sphere, and, within the Gaussian sphere, line segments become arcs (Figure 3.6a). For computation, all points can be projected onto a unit cube (Benichou and Elber, 1999), or a hierarchy of platonic solids (Gooch et al., 1999). Hence, arcs are transformed into line segments, reducing the 3D intersection test to a set of 2D intersection tests, that can be further accelerated with standard 2D data-structures.
 
@@ -358,27 +326,23 @@ Perspective dual space. The above approach can be generalized to perspective pro
 
 3D faces of the 4D hypercube
 
-![Figure 3.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-6-p030.png)
+![Figure 3.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-6-p030.png)
 
 *Figure 3.6: Dual spaces — Preprocessing by (a) projecting the normals of two adjacent faces onto the Gaussian sphere, or (b) constructing a representation of the mesh in 4D space based on the position and tangent planes of its vertices. At runtime, ﬁnding the contour edges consists in computing the intersection of the dual viewing plane (in blue) with (a) circular arcs or (b) the dual surface, which can be further accelerated by space-partitioning data-structures. finding the contour edges consists in computing the intersection of the dual viewing plane (in blue) with (a) circular arcs or (b) the dual surface, which can be further accelerated by space-partitioning data-structures.*
 
-A mesh face with position \(\mathbf{p}=\left(p_{x}, p_{y}, p_{z}\right)\) and normal \(\mathbf{n}=\left(n_{x}, n_{y}, n_{z}\right)\) is mapped to a dual point \(\mathbf{s}=\left(s_{1}, s_{2}, s_{3}, s_{4}\right)=\left(-n_{x},-n_{y},-n_{z}, \mathbf{p} \cdot \mathbf{n}\right)\). (Any point on the face may be used.) Given the camera center \(\mathbf{c}\), the orientation function is mapped to a dual hyperplane:
+A mesh face with position p =(px, py, pz) and normal n =(nx, ny, nz) is mapped to a dual point s =(\(s_{1}\), \(s_{2}\), \(s_{3}\), \(s_{4}\)) = ( -nx, -ny, -nz, p · n). (Any point on the face may be used.) Given the camera center c, the orientation function is mapped to a dual hyperplane:
 
-$$
-g(\mathbf{s})=\left(c_{x}, c_{y}, c_{z}, 1\right) \cdot s=0 .
-$$
+Hence, front-faces have \(g(s)>0\) and back-faces have \(g(s)<0\). A mesh edge between faces i and j corresponds to a dual line segment s i s j. Any line segment that intersects the dual hyperplane corresponds to a mesh contour. Hence, finding all contour edges reduces to a 4D hyperplane intersection with a set of line segments. Orthographic cameras can also be handled in this dual space with g (s) = [ -vx, -vy, -vz, 0] · s = 0.
 
-Hence, front-faces have \(g(\mathbf{s})>0\) and back-faces have \(g(\mathbf{s})<0\). A mesh edge between faces \(i\) and \(j\) corresponds to a dual line segment \(\overline{\mathbf{s}_{i} \mathbf{s}_{j}}\). Any line segment that intersects the dual hyperplane corresponds to a mesh contour. Hence, finding all contour edges reduces to a 4D hyperplane intersection with a set of line segments. Orthographic cameras can also be handled in this dual space with \(g(\mathbf{s})=\left[-v_{x},-v_{y},-v_{z}, 0\right] \cdot s=0\).
-
-As in the orthographic case, the dual points can be scaled arbitrarily without changing the results. Hence, a 3D space can be used. Hertzmann and Zorin (2000) normalize each dual point \(\mathbf{s}\) using the \(l_{\infty}\) norm-effectively projecting it on the surface of the unit hypercube. The surface of the unit hypercube can be represented as eight octrees. Each dual point is stored in one of the octrees. At runtime, the viewpoint is converted into a dual plane, and the dual plane is intersected with the eight octrees. The expected complexity is linear to the number of contour edges.
+As in the orthographic case, the dual points can be scaled arbitrarily without changing the results. Hence, a 3D space can be used. Hertzmann and Zorin (2000) normalize each dual point s using the l ¥ norm-effectively projecting it on the surface of the unit hypercube. The surface of the unit hypercube can be represented as eight octrees. Each dual point is stored in one of the octrees. At runtime, the viewpoint is converted into a dual plane, and the dual plane is intersected with the eight octrees. The expected complexity is linear to the number of contour edges.
 
 Animation. These data structures can further be exploited to accelerate detection during animation. In dual space representations, when the camera makes small moves, it is possible to only visit a small portion of the dual space. Pop et al. (2001) and Olson and Zhang (2006) describe incremental methods that are able to update an existing set of contour edges when the camera moves.
 
-![Figure 3.7](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-3-7-p031.png)
+![Figure 3.7](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-3-7-p031.png)
 
 *Figure 3.7: Spatial partitioning — (a) A given edge is on the contour generator if the viewpoint trajectory c (t) is inside the intersection (in grey) of one positive and one negative half-space deﬁned by the face supporting plane π 1 and π 2, i.e., during the time intervals [t 0, t 1] and [t 2, t 3] in this example. (b) The front and back-facing anchored cones are deﬁned by their center o f | b, an opposite normal n f = n b and a common half opening angle θ , here visualized in 2D for four oriented segments. defined by the face supporting plane p 1 and p 2, i.e., during the time intervals [t 0, t 1] and [t 2, t 3] in this example. (b) The front and back-facing anchored cones are defined by their center o f | b, an opposite normal n f = n b and a common half opening angle q, here visualized in 2D for four oriented segments.*
 
-If the viewpoint trajectory is known in advance and can be represented by a polynomial curve \(\mathbf{c}(t)\) of degree \(d\), Kim and Baek (2005) showed that there are at most \(d+1\) time intervals \(\left[t_{i}, t_{i+1}\right]\) at which an edge can be a contour. Those intervals can thus be pre-computed for each edge, by intersecting the polynomial curve with the supporting planes \(\pi_{1}\) and \(\pi_{2}\) of the edge's adjacent faces (Figure 3.7a), and stored in an array or a tree data-structure. At runtime, the contour edges can then easily be updated incrementally during the camera motion along the prescribed trajectory. The incremental update mechanism of Pop et al. (2001); Olson and Zhang (2006) is more computationally demanding, but it is not constrained to a fixed camera path.
+If the viewpoint trajectory is known in advance and can be represented by a polynomial curve c (t) of degree d, Kim and Baek (2005) showed that there are at most d + 1 timeintervals [t i, t i + 1] at which an edge can be a contour. Those intervals can thus be pre-computed for each edge, by intersecting the polynomial curve with the supporting planes \(p_{1}\) and \(p_{2}\) of the edge's adjacent faces (Figure 3.7a), and stored in an array or a tree data-structure. At runtime, the contour edges can then easily be updated incrementally during the camera motion along the prescribed trajectory. The incremental update mechanism of Pop et al. (2001); Olson and Zhang (2006) is more computationally demanding, but it is not constrained to a fixed camera path.
 
 Cone trees. Sander et al. (2000) proposed accelerating contour extraction using a forest of search trees constructed over the mesh edges. Taking inspiration from previous work on back-face culling, their key idea is to build, for each edge of the mesh, a hierarchy of face clusters. At runtime, clusters whose faces are all front-facing or all back-facing can be fully discarded. To conservatively decide in constant time whether a cluster is frontor back-facing, Sander et al. (2000) compute and store two open-ended anchored cones per cluster: one cone inside which any viewpoint would make the face cluster entirely frontfacing, and another cone making the cluster back-facing (Figure 3.7b). They demonstrated that, experimentally, this approach also has linear complexity with respect to the number of contour edges. However, their data structure construction can be extremely slow.
 
@@ -386,7 +350,7 @@ Cone trees. Sander et al. (2000) proposed accelerating contour extraction using 
 
 The above data structures are not useful for deforming meshes. The following randomized algorithm, proposed by Markosian et al. (1997), works for any mesh, though it is not guaranteed to detect all edges.
 
-The method first selects a few mesh edges at random. Because contours are sparse, the probability of finding a first contour edge is rather low. However, since mesh contours form continuous chains of edges on the surface, once a first contour edge has been found, spatial coherence can be leveraged to explore adjacent edges in an advancing front manner and trace the full contour loop. By further assigning to each edge a probability inversely proportional to the exterior dihedral angle \(\alpha\) (in radians) between its adjacent faces, the chance of finding contour edges is increased since, given a random view direction, the probability that an edge is a contour is \(\alpha / \pi\). Derivations for this probability can be found in McGuire (2004) (perspective case) and Elber and Cohen (2006) (orthographic case).
+The method first selects a few mesh edges at random. Because contours are sparse, the probability of finding a first contour edge is rather low. However, since mesh contours form continuous chains of edges on the surface, once a first contour edge has been found, spatial coherence can be leveraged to explore adjacent edges in an advancing front manner and trace the full contour loop. By further assigning to each edge a probability inversely proportional to the exterior dihedral angle a (in radians) between its adjacent faces, the chance of finding contour edges is increased since, given a random view direction, the probability that an edge is a contour is a p. Derivations for this probability can be found in McGuire (2004) (perspective case) and Elber and Cohen (2006) (orthographic case).
 
 In addition, for small viewpoint changes, Markosian et al. (1997) observed that temporal coherence can also be leveraged by re-seeding the search in the new frame from the previous frame's contour, and by searching for contour edges in its vicinity, moving towards (resp. away) from the camera if the edge is adjacent to back-faces (resp. front-faces).
 
@@ -402,11 +366,11 @@ It can be tempting to implement many of these algorithms with heuristics. Howeve
 
 ### 4.1 Ray tests
 
-For a perspective camera, a point \(\mathbf{p}\) on the surface is visible from the camera center \(\mathbf{c}\) if the line segment \(\overline{\mathbf{p c}}\) intersects the image plane and does not intersect any other surface point (Figure 4.1). Determining visibility this way is called a ray test, since it amounts to casting a ray from \(\mathbf{c}\) and checking if the tripling is the first object hit. (For an orthographic camera, the test involves a line segment from \(\mathbf{p}\) to the camera plane along the ray \(-\mathbf{v}\).) Ray tests can be accelerated by spatial subdivision data structures, such as a 3D grid or a bounding volume hierarchy (Pharr et al., 2016, Chapter 4).
+For a perspective camera, a point p on the surface is visible from the camera center c if the line segment pc intersects the image plane and does not intersect any other surface point (Figure 4.1). Determining visibility this way is called a ray test, since it amounts to casting a ray from c and checking if the tripling is the first object hit. (For an orthographic camera, the test involves a line segment from p to the camera plane along the ray-v.) Ray tests can be accelerated by spatial subdivision data structures, such as a 3D grid or a bounding volume hierarchy (Pharr et al., 2016, Chapter 4).
 
 In principle, the apparent contour could be rendered by separately testing the visibility of many points on the contour generator, and connecting the visible points. However, as noted by Appel (1967), this would be both computationally expensive, because it would require testing a large number of points between which the visibility does not change, and inaccurate, since it would miss the points where curves transition between visible and invisible. Instead, we will use techniques to propagate visibility on the surface.
 
-![Figure 4.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-1-p034.png)
+![Figure 4.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-1-p034.png)
 
 *Figure 4.1: visibility, ray tests, and convex/concave contours — A point is visible if the line segment from the camera to the point does not intersect any other surface point. Determining this is called a ray test. In the example here, the segment from p 1 to the camera c intersects another part of the surface, so p 1 is not visible. The segment from p 2 does not intersect the surface so it is visible. One can avoid computing one of these ray tests: p 1 lies on a concave contour point, so it must be invisible. The other point, p 2, is on a concave contour, so a ray test is necessary to determine if it is visible.*
 
@@ -414,13 +378,13 @@ In principle, the apparent contour could be rendered by separately testing the v
 
 We can classify mesh edges as to whether they are concave and convex, which provides an additional visibility constraint, and will be helpful for identifying singularities in the next section (Markosian et al., 1997). The content of this section is new for this tutorial, building on (Markosian et al., 1997; Koenderink, 1984).
 
-A mesh edge is concave if the angle between the front-facing sides of its two faces is less than \(\pi\). It is convex if the angle is greater than \(\pi\). (Note that this is the angle on the outside of the surface, and so it is different from the dihedral angle.) Equivalently, when the edge is convex, each face is on the back-facing side of the other face.
+A mesh edge is concave if the angle between the front-facing sides of its two faces is less than p. It is convex if the angle is greater than p. (Note that this is the angle on the outside of the surface, and so it is different from the dihedral angle.) Equivalently, when the edge is convex, each face is on the back-facing side of the other face.
 
 Contours on concave edges must always be invisible: if a concave edge is viewed at a grazing angle-where a contour appears-the edge is hidden inside the surface from that viewpoint. Only convex edges can produce visible contours. Figure 4.1 shows examples of convex concave edges, and how they can be invisible or visible. We provide a new, formal proof of this in Appendix B.
 
 As a result, ray tests are never necessary for contours on concave edges. Additionally, for static surfaces, concave edges can be omitted from any detection data structure (Section 3.7.2), if hidden lines will not be rendered. algorithms for determining whether an edge is convex or concave are given in Appendix C.
 
-![Figure 4.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-2-p035.png)
+![Figure 4.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-2-p035.png)
 
 *Figure 4.2: Singular points — From the camera viewpoint, 1 ⃝ T-junctions at image-space intersections, 2 ⃝ Y-junctions between a contour generator and two boundary edges, 3 ⃝ contour generator curtain folds, 4 ⃝ boundary curtain-folds. Contour generator edges are drawn in red, and boundaries in blue. Curtain folds are visualized in more detail in Figure 4.3.*
 
@@ -436,7 +400,7 @@ There are only a few different types of singular points:
 
 - 2 © curve visibility may change when two curves intersect on the 3D surface. For example, a contour generator may intersect a boundary curve (Figure 4.2 2 © ). This
 
-![Figure 4.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-3-p036.png)
+![Figure 4.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-3-p036.png)
 
 *Figure 4.3: Curtain folds — A vertex p is a curtain fold if (a) it connects a convex contour generator edge to a concave edge, or (b) the edge pe is occluded by a face of the one-ring neighborhood of p (here, the triangle pqr in brown). (The former case (a) is a special case of the latter (b).)*
 
@@ -448,7 +412,7 @@ intersection can only occur at a mesh vertex, producing a Y-junction in image sp
 
 The above four cases are the only kinds of singular points for any surface curves. In implementation, different types of curves are handled separately, e.g., intersections on the surface need to be implemented with different cases for different kinds of intersecting curve, and intersections at vertices are handled separately from intersections within faces.
 
-![Figure 4.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-4-p037.png)
+![Figure 4.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-4-p037.png)
 
 *Figure 4.4: Bifurcations in the contour generator occur when more than two contour generator curves meet at a vertex. Closeup view on the mesh contours extracted from the smooth surface shown in Figure 1.4. “Red” © Disney/Pixar*
 
@@ -466,7 +430,7 @@ The View Graph stores the complete topology and geometry of the curves, in both 
 
 The View Graph is built implicitly, in the algorithm described in the next section. Each edge on the surface is converted to a line segment data structure. Each line segment stores both the 2D and 3D positions of its endpoints, and the curve type (e.g., contour, boundary, etc.). The segment stores a pointer to the mesh face or edge that it lies on; each endpoint stores the vertex or edge it came from, if appropriate.
 
-![Figure 4.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-5-p038.png)
+![Figure 4.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-5-p038.png)
 
 *Figure 4.5: View Graph of Figure 1.1 — The View Graph structures the extracted contour curves by storing their topology and geometry. It serves as a support for both determining their visibility efﬁciently and generating stylized strokes. efficiently and generating stylized strokes.*
 
@@ -496,7 +460,7 @@ View Graph of the 'Angela' model
 
 (a) View Graph of a torus
 
-![Figure 4.7](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-7-p040.png)
+![Figure 4.7](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-7-p040.png)
 
 *Figure 4.7: The View Graph around a “ﬁshtail”, a common contour shape — Studying renderings like these, and how the 2D ﬁgure relates to the 3D drawing, is very helpful in understanding a speciﬁc rendering. (a) The “ﬁshtail” shape in image space includes two cusps, and a partiallyoccluded contour. (b) The overhead view shows the contour’s path over the surface. The contour separates front-facing and back-facing, and curtain fold cusps appear when the path switches direction. The curtain folds also separate convex from concave contours, which are always invisible. (c) A stylized rendering of this path produces this overlap drawing. This shape can occur at a large scale (e.g., a pair of hills or a puffy cloud), or at a subpixel level. In the latter case, we may wish to trim the extra bit of curve, as discussed in Section 9.3. The View Graph around a 'fishtail', a common contour shape-Studying renderings like these, and how the 2D figure relates to the 3D drawing, is very helpful in understanding a specific rendering. (a) The 'fishtail' shape in image space includes two cusps, and a partiallyoccluded contour. (b) The overhead view shows the contour's path over the surface. The contour separates front-facing and back-facing, and curtain fold cusps appear when the path switches direction. The curtain folds also separate convex from concave contours, which are always invisible. (c) A stylized rendering of this path produces this overlap drawing. This shape can occur at a large scale (e.g., a pair of hills or a puffy cloud), or at a subpixel level. In the latter case, we may wish to trim the extra bit of curve, as discussed in Section 9.3.*
 
@@ -510,7 +474,7 @@ The above algorithm assumes that all curves lie on edges. For curves within edge
 
 In the above computations, if invisible edges will never been drawn, then steps involving edges already known to be invisible can be skipped, to speed up computations. For example, concave contour edges can be omitted from the image-space intersection step. However, invisible edges are necessary for hidden-line rendering, and useful for QI propagation (described in the next Section); they are also very useful for visualization and debugging.
 
-Markosian et al. (1997) also point out that curves adjacent to the scene's bounding box in image space must be visible. This is only useful for situations such as viewing only a single object in isolation, as opposed to entering a full 3D environment. A simple way to use this observation is to find the contour or boundary points with the maximum and mininimum \(x\) and \(y\) values; those points must be visible.
+Markosian et al. (1997) also point out that curves adjacent to the scene's bounding box in image space must be visible. This is only useful for situations such as viewing only a single object in isolation, as opposed to entering a full 3D environment. A simple way to use this observation is to find the contour or boundary points with the maximum and mininimum x and y values; those points must be visible.
 
 visibility propagation. In the most basic version of the above algorithm, we perform a ray test for each edge that is not a concave contour. However, ray tests are computationally expensive, and we would like to perform as few of them as possible.
 
@@ -524,11 +488,11 @@ In practice, any of these tests can be corrupted by numerical errors. One heuris
 
 ### 4.7 Quantitative Invisibility
 
-We can propagate visibility information even further-and thus reduce the number of ray tests-by using the concept of Quantitative Invisibility (QI) (Appel, 1967; Markosian et al., 1997). The QI value of a point is the number of occluders of the point. A visible point has QI of zero (e.g., point \(\mathbf{p}_{2}\) in Figure 4.1). A point blocked by two surfaces has QI of two. In practice, the QI of a point \(\mathbf{p}\) can be computed by counting the number of mesh faces that intersect the line segment \(\overline{\mathbf{p c}}\), excluding the face containing \(\mathbf{p}\).
+We can propagate visibility information even further-and thus reduce the number of ray tests-by using the concept of Quantitative Invisibility (QI) (Appel, 1967; Markosian et al., 1997). The QI value of a point is the number of occluders of the point. A visible point has QI of zero (e.g., point \(p_{2}\) in Figure 4.1). A point blocked by two surfaces has QI of two. In practice, the QI of a point p can be computed by counting the number of mesh faces that intersect the line segment pc, excluding the face containing p.
 
 Each type of singularity in the View Graph imposes different constraints on the QI. QI values may be propagated over the surface by the following rules:
 
-![Figure 4.8](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-8-p042.png)
+![Figure 4.8](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-8-p042.png)
 
 *Figure 4.8: View Graph & QI propagation — QI values can be propagated at image-space intersections and curtain folds. 1 ⃝ T-junctions at image-space intersections, 2 ⃝ Y-junctions between a contour generator, two boundary edges, 3 ⃝ contour generator curtain folds, 4 ⃝ boundary curtain folds.*
 
@@ -546,24 +510,24 @@ Each type of singularity in the View Graph imposes different constraints on the 
 
 Hence, the resulting algorithm begins by first building the View Graph. The QI for most edges is initially marked as 'unknown,' though some edges can also be marked as 'invisible'
 
-![Figure 4.9](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-9-p043.png)
+![Figure 4.9](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-9-p043.png)
 
 *Figure 4.9: planar Map (from Eisemann et al. (2008)) — Starting from a 3D model (a), contours and isophotes are ﬁrst extracted (b) and their visibility is computed by constructing a planar Map (c) that yields a base vector depiction for stylization (d). Isophotes are curves with constant shading, i.e., (c − p) · n = α for some constant α . first extracted (b) and their visibility is computed by constructing a planar Map (c) that yields a base vector depiction for stylization (d). Isophotes are curves with constant shading, i.e., (c-p) · n = a for some constant a.*
 
 ```text
-( \( q>0 \) ), such as concave contours. A single ray test is performed at some edge with unknown QI. By propagating this value through the view map, the QI can be determined for every edge in this edge's connected component. Hence, at most one ray test is necessary for each connected component. It is possible to determine some connected components' visibility without any ray tests at all. Propagating lower-bounds on QI increases the number of cases where this works. For example, a concave edge has \( q>0 \);
-if it is the near edge at a curtain fold, then the far edge has \( q>1 \).
+( q > 0), such as concave contours. A single ray test is performed at some edge with unknown QI. By propagating this value through the view map, the QI can be determined for every edge in this edge's connected component. Hence, at most one ray test is necessary for each connected component. It is possible to determine some connected components' visibility without any ray tests at all. Propagating lower-bounds on QI increases the number of cases where this works. For example, a concave edge has q > 0;
+if it is the near edge at a curtain fold, then the far edge has q > 1.
 ```
 
 ### 4.8 Planar Maps
 
 The planar Map is a generalization of the View Graph that provides a more complete representation for artistic rendering: it represents not just the curves in a drawing, but also the regions between them. Given a planar Map, one could theoretically stylize regions, strokes and their relationships in a more coherent way.
 
-The planar Map is a concept originally from graph theory. Given a set of 2D curves \(\mathscr{C}\), the planar Map corresponds to the arrangement \(\mathscr{A}(\mathscr{C})\) of those curves, that is the partition of the plane into 0-, 1-and 2-dimensional cells (i.e., vertices, edges and faces) induced by the curves in \(\mathscr{C}\). This partitioning is coupled with an incidence graph which allows navigation between adjacent cells.
+The planar Map is a concept originally from graph theory. Given a set of 2D curves C, the planar Map corresponds to the arrangement \(A(C)\) of those curves, that is the partition of the plane into 0-, 1-and 2-dimensional cells (i.e., vertices, edges and faces) induced by the curves in C. This partitioning is coupled with an incidence graph which allows navigation between adjacent cells.
 
 Intuitively, the planar Map is constructed by the following procedure. Specifically, all mesh faces are projected into the image plane. Faces that are completely occluded are discarded; faces that are partially occluded are subdivided in their visible and invisible parts, and their image-space adjacency information is updated.
 
-If \(\mathscr{C}\) contains the projection into the image plane of the contour generator and boundary curves, then the planar Map \(\mathscr{A}(\mathscr{C})\) corresponds to a generalization of the view graph presented in Section 4.5, one that includes the 2D regions bordered by the curves. By only keeping the closest cells to the camera, visibility can be determined (Figure 6.7).
+If C contains the projection into the image plane of the contour generator and boundary curves, then the planar Map \(A(C)\) corresponds to a generalization of the view graph presented in Section 4.5, one that includes the 2D regions bordered by the curves. By only keeping the closest cells to the camera, visibility can be determined (Figure 6.7).
 
 Winkenbach and Salesin (1994) introduced the use of planar Maps for stylized rendering. They used a 3D BSP tree to compute the visibility of the mesh faces (Fuchs et al., 1980), and \(a \in D\) BSP tree to build a partition of the image plane according to the visible faces. From this 2D BSP tree, they construct the planar Map to have direct access to 2D adjacency information. They showed that this representation allows one not just to stylize contours, but to stylize the regions between the contours.
 
@@ -579,19 +543,15 @@ We begin with contour detection between two triangles glyph[triangle] abc and gl
 
 For each triangle, there are two possible normals. For the first triangle, the possible normals are
 
-$$
-\mathbf{n}_{1}= \pm \frac{(\mathbf{b}-\mathbf{a}) \times(\mathbf{c}-\mathbf{a})}{\|(\mathbf{b}-\mathbf{a}) \times(\mathbf{c}-\mathbf{a})\|}
-$$
-
 The possible normals for the second triangle are similarly plus or minus the face normal.
 
-In order to determine whether an edge is a contour, we must determine a locally consistent pair of normals, that is \(\hat{\mathbf{n}}_{1}\) which is either \(\mathbf{n}_{1}\) or \(-\mathbf{n}_{1}\), and \(\hat{\mathbf{n}}_{2}\) which is either \(\mathbf{n}_{2}\) or \(-\mathbf{n}_{2}\). Consistent and inconsistent cases are visualized in Figure 4.10. The pair of normals is consistent as long as both normals agree as to whether the edge is convex or concave; see Appendix B.
+In order to determine whether an edge is a contour, we must determine a locallyconsistent pair of normals, that is ˆ \(n_{1}\) which is either \(n_{1}\) or-\(n_{1}\), and ˆ \(n_{2}\) which is either \(n_{2}\) or-\(n_{2}\). Consistent and inconsistent cases are visualized in Figure 4.10. The pair of normals is consistent as long as both normals agree as to whether the edge is convex or concave; see Appendix B.
 
-Once we have computed the locally-oriented normals \(\hat{\mathbf{n}}_{1}\) and \(\hat{\mathbf{n}}_{2}\), we can use the local sign test to determine if the edge is a contour, checking if the sign of \((\mathbf{a}-\mathbf{c}) \cdot \hat{\mathbf{n}}_{1}\) is the same as the sign of \((\mathbf{a}-\mathbf{c}) \cdot \hat{\mathbf{n}}_{2}\).
+Once we have computed the locally-oriented normals ˆ \(n_{1}\) and ˆ \(n_{2}\), we can use the local sign test to determine if the edge is a contour, checking if the sign of (a-c) · ˆ \(n_{1}\) is the same as the sign of (a-c) · ˆ \(n_{2}\).
 
-These local orientations cannot be reused when looking at other faces; when determining whether \(\triangle \mathbf{a b c}\) has a contour with one of its other neighbors, a local pair of normals must be computed for this pair of edges.
+These local orientations cannot be reused when looking at other faces; when determining whether glyph[triangle] abc has a contour with one of its other neighbors, a local pair of normals must be computed for this pair of edges.
 
-![Figure 4.10](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-4-10-p045.png)
+![Figure 4.10](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-4-10-p045.png)
 
 *Figure 4.10: Valid/invalid conﬁgurations — Two adjacent triangles, shown in cross-section, with their assigned normals ˆn 1 and ˆn 2. The cross-section is some 3D plane perpendicular to the edge between the two triangles. (a) and (b) are valid conﬁgurations of the normals and (c) is invalid. Valid invalid configurations-Two adjacent triangles, shown in cross-section, with their assigned normals ˆ n 1 and ˆ n 2. The cross-section is some 3D plane perpendicular to the edge between the two triangles. (a) and (b) are valid configurations of the normals and (c) is invalid.*
 
@@ -607,7 +567,7 @@ The earliest hardware methods directly produce visible contours using two render
 
 The basic idea of these approaches is to render the geometry twice: first, to fill the depth buffer, and then second, using modified geometry, to make the contours emerge from the rasterization.
 
-![Figure 5.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-5-1-p046.png)
+![Figure 5.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-5-1-p046.png)
 
 *Figure 5.1: Two-pass hardware rendering — After a ﬁrst standard rendering pass, the scene is enlarged and only back-faces are rendered; the visible parts of the back-faces produce the black edges (left). The back-faces scaling factor and color allow to control the line width and color (right). Image computed with Blender Solidify modiﬁer (BlenderNPR, 2015b). Two-pass hardware rendering-After a first standard rendering pass, the scene is enlarged and only back-faces are rendered; the visible parts of the back-faces produce the black edges (left). The back-faces scaling factor and color allow to control the line width and color (right). Image computed with Blender Solidify modifier (BlenderNPR, 2015b).*
 
@@ -629,7 +589,7 @@ If the edges detected by the Geometry Shader are needed for a second rendering p
 
 In this section, we present three hardware-based visibility techniques. In each case, the 3D curves are first detected either on the CPU or the GPU. The first two visibility techniques
 
-![Figure 5.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-5-2-p048.png)
+![Figure 5.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-5-2-p048.png)
 
 *Figure 5.2: Buffer-based visibility — (a) Thick lines rendered with a simple depth test are irregularly occluded by the mesh geometry; (b) by ﬁrst computing an item buffer with thin lines, and then probing visibility in this buffer (black and white circles) along the clipped lines, thick or stylized lines are correctly rendered. (The black wireframe is depicted for illustration purposes.) first computing an item buffer with thin lines, and then probing visibility in this buffer (black and white circles) along the clipped lines, thick or stylized lines are correctly rendered. (The black wireframe is depicted for illustration purposes.)*
 
@@ -647,17 +607,17 @@ An alternative solution proposed by Northrup and Markosian (2000) is based on an
 
 ### 5.5 Segment Atlas
 
-Cole and Finkelstein (2010) circumvented the limitations of the item buffer by introducing a novel data-structure, called the segment atlas, that stores visibility samples along each line segment independently of their actual screen position. The segment atlas is created on the GPU in three steps (Figure 5.3). first, the input 3D lines are projected and clipped to the camera frustum with a dedicated fragment shader. For each 3D line \(\overline{\mathbf{p}_{i} \mathbf{q}_{i}}\), the position of its endpoints ( \(\mathbf{p}_{i}^{\prime}, \mathbf{q}_{i}^{\prime}\) ) in homogenous clip space are stored inside a GPU buffer along with a number \(l_{i}\) of visibility samples proportional to the screen space length of the line (potentially equal for maximum precision). During a second pass, a running sum turns the sample counts \(l_{i}\) into segment atlas offsets \(s_{i}\). In a third step, the sample positions \(\mathbf{v}_{j}\) are effectively created. Each clipped segment \(\overline{\mathbf{p}_{i}^{\prime} \mathbf{q}_{i}^{\prime}}\) is discretized by generating a line from \(s_{i}\) to \(s_{i}+l_{i}\) in a geometry shader and letting the rasterizer interpolate the endpoint positions. For each generated fragment, a shader performs the perspective division and viewport transformation to produce the screen-space coordinate \(\mathbf{v}_{j}\) of the sample. The depth buffer is then probed at this position and the returned value is compared with the sample own depth value; the partial visibility resulting from this test \(\alpha_{j}\) is written in the segment atlas, by construction, at the proper location. Finally, the line segments (or chains
+Cole and Finkelstein (2010) circumvented the limitations of the item buffer by introducing a novel data-structure, called the segment atlas, that stores visibility samples along each line segment independently of their actual screen position. The segment atlas is created on the GPU in three steps (Figure 5.3). first, the input 3D lines are projected and clipped to the camera frustum with a dedicated fragment shader. For each 3D line p i q i, the position of its endpoints (p ′ i, q ′ i) in homogenous clip space are stored inside a GPU buffer along with a number l i of visibility samples proportional to the screen space length of the line (potentially equal for maximum precision). During a second pass, a running sum turns the sample counts l i into segment atlas offsets si. In a third step, the sample positions \(v_{j}\) are effectively created. Each clipped segment p ′ i q ′ i is discretized by generating a line from si to si + l i in a geometry shader and letting the rasterizer interpolate the endpoint positions. For each generated fragment, a shader performs the perspective division and viewport transformation to produce the screen-space coordinate \(v_{j}\) of the sample. The depth buffer is then probed at this position and the returned value is compared with the sample own depth value; the partial visibility resulting from this test a j is written in the segment atlas, by construction, at the proper location. Finally, the line segments (or chains
 
-![Figure 5.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-5-3-p050.png)
+![Figure 5.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-5-3-p050.png)
 
 *Figure 5.3: Segment atlas — Each input 3D line p i q i is projected and clipped by a fragment shader, which also computes its associated number of visibility samples l i. These samples are then converted into segment atlas offsets s i by a running sum. The positions (p ′ i, q ′ i) are eventually interpolated and the resulting sample positions v j are used to compute the partial visibility a j at this location by reading the depth buffer. The clipped segments p ′ i q ′ i can then be rendered in screen-space leveraging partial visibility to modulate the style of the line. (The black wireframe is depicted for illustration purposes.)*
 
-![Figure 5.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-5-4-p050.png)
+![Figure 5.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-5-4-p050.png)
 
 *Figure 5.4: Stylized line renderings using the Segment Atlas algorithm (Cole and Finkelstein, 2010) — Hidden lines are included in these renderings. Images generated with “dpix” (Cole et al., 2010).*
 
-of segments with little modifications) can be rendered with arbitrary thickness and style using the fragment-level visibility information provided by the segment atlas (Figure 5.4). This method is up to \(4 \times\) slower than direct OpenGL rendering (Section 5.3.1) for small 3D models, but \(2 \times\) slower (or better) for complex meshes.
+of segments with little modifications) can be rendered with arbitrary thickness and style using the fragment-level visibility information provided by the segment atlas (Figure 5.4). This method is up to 4 × slower than direct OpenGL rendering (Section 5.3.1) for small 3D models, but 2 × slower (or better) for complex meshes.
 
 SMOOTH SURFACES AS MESHES
 
@@ -671,7 +631,7 @@ Unfortunately, for stylized curves, this strategy leads to numerous artifacts, a
 
 Sometimes one starts from a mesh that begins polyhedral, such as geometry from web repositories or range scanners. Nonetheless, the contours may be unexpectedly messy, because the underlying surface is smooth, even if the representation is not. This may surprise the practitioner who is used to using triangle meshes for smooth objects.
 
-![Figure 6.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-1-p051.png)
+![Figure 6.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-1-p051.png)
 
 *Figure 6.1: Mesh contours of a smooth surface (Bénard et al., 2014) — The original surface is shown in Figure 1.4. (a) Converting the surface to a triangle mesh and extracting contours produces overly complex topology, including many bifurcations not present in the smooth surface’s contours. (b-c) Connecting chains of edges that end at singularities produces many small chains, not directly suitable for stylization. Each chain is shown in a different color. “Red” © Disney/Pixar*
 
@@ -691,63 +651,49 @@ The Interpolated Contours approach (Hertzmann and Zorin, 2000) produces smooth c
 
 The general outline of the method is the same as for mesh contours: detect contours, detect singularities, and then compute visibility by ray tests and visibility propagation. The main difference is that Interpolated Contours pass within faces rather than on mesh edges.
 
-![Figure 6.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-2-p053.png)
+![Figure 6.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-2-p053.png)
 
 *Figure 6.2: Linear interpolation — The function g (p) is linearly interpolated along the oriented edges (p 3 − p 1) and (p 2 − p 3) of the triangle to ﬁnd the endpoints of the line segment approximating the contour generator within the face. find the endpoints of the line segment approximating the contour generator within the face.*
 
 #### 6.2.1 Contour definition and detection
 
-The approach is as follows. first, we assign a "fake" normal vector to each mesh vertex. As in Phong shading, this normal vector is a weighted average of the normals \(\mathbf{n}_{j}\) of the adjacent faces, weighted by triangle areas \(A_{j}\). This vector should be normalized to be a unit vector:
+The approach is as follows. first, we assign a 'fake' normal vector to each mesh vertex. As in Phong shading, this normal vector is a weighted average of the normals n j of the adjacent faces, weighted by triangle areas Aj. This vector should be normalized to be a unit vector:
 
-$$
-\begin{aligned} & \hat{\mathbf{n}}_{i}=\frac{\sum_{j \in N(i)} A_{j} \mathbf{n}_{j}}{\sum_{j \in N(i)} A_{j}} \\ & \mathbf{n}_{i}=\hat{\mathbf{n}}_{i} /\left\|\hat{\mathbf{n}}_{i}\right\| \end{aligned}
-$$
+with \(N(i)\) the one-ring face neighborhood of vertex i. One may also use the more robust weights of Max (1999).
 
-with \(N(i)\) the one-ring face neighborhood of vertex \(i\). One may also use the more robust weights of Max (1999).
+For a given camera center c, we define the orientation function g at a vertex i as:
 
-For a given camera center \(\mathbf{c}\), we define the orientation function \(g\) at a vertex \(i\) as:
+A vertex with \(g(p)>0\) is considered to be front-facing, and with \(g(p)<0\) is back-facing. The generic position assumption implies that we cannot have \(g(p)=0\) at a vertex.
 
-$$
-g\left(\mathbf{p}_{i}\right)=\left(\mathbf{p}_{i}-\mathbf{c}\right) \cdot \mathbf{n}_{i} .
-$$
-
-A vertex with \(g(\mathbf{p})>0\) is considered to be front-facing, and with \(g(\mathbf{p})<0\) is back-facing. The generic position assumption implies that we cannot have \(g(\mathbf{p})=0\) at a vertex.
-
-We then linearly interpolate \(g(\mathbf{p})\) within the face, which is equivalent to linearly interpo lating the normals within a face. This defines the orientation function over the entire surface as a piecewise linear function.
+We then linearly interpolate g (p) within the face, which is equivalent to linearly interpolating the normals within a face. This defines the orientation function over the entire surface as a piecewise linear function.
 
 A face in which the orientation function has opposite signs at two vertices contains a contour. This contour is a line segment within the face (Figure 6.2). The endpoints of the line segment are found as follows.
 
-On the edge between the vertex \(i\) and the vertex \(j\), the linear interpolation is:
+On the edge between the vertex i and the vertex j, the linear interpolation is:
 
-$$
-g(t)=(1-t) g\left(\mathbf{p}_{i}\right)+\operatorname{tg}\left(\mathbf{p}_{j}\right) .
-$$
-
-![Figure 6.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-3-p054.png)
+![Figure 6.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-3-p054.png)
 
 *Figure 6.3: Mesh vs. Interpolated Contours — Unlike mesh contours (a), the piecewise linear approximation of the contour generator (b) crosses back-faces of the polygonal mesh and may thus be hidden by front-faces closer to the camera.*
 
-![Figure 6.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-4-p054.png)
+![Figure 6.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-4-p054.png)
 
 *Figure 6.4: Interpolated Contours of a smooth surface (Bénard et al., 2014) — The original surface is shown in Figure 1.4. (a) Interpolated Contours are much smoother and have approximately correct topology (compared with Figure 6.1). (b) Chaining these curves gives much smoother, coherent curves. (c) visibility is not well-deﬁned for these curves, and gaps and other small errors may appear. “Red” © Disney/Pixar well-defined for these curves, and gaps and other small errors may appear. 'Red' Disney Pixar*
 
-A contour crosses this edge when the sign of \(g\left(\mathbf{p}_{i}\right)\) is opposite the sign of \(g\left(\mathbf{p}_{j}\right)\). Solving for \(g(t)=0\) gives the contour point position as (Figure 6.2):
-
-$$
-\begin{align*} t & =\frac{g\left(\mathbf{p}_{i}\right)}{g\left(\mathbf{p}_{i}\right)-g\left(\mathbf{p}_{j}\right)}, \\ \mathbf{p}(t) & =(1-t) \mathbf{p}_{i}+t \mathbf{p}_{j}=\frac{g\left(\mathbf{p}_{i}\right) \mathbf{p}_{i}-g\left(\mathbf{p}_{j}\right) \mathbf{p}_{j}}{g\left(\mathbf{p}_{i}\right)-g\left(\mathbf{p}_{j}\right)} . \tag{6.1} \end{align*}
-$$
+A contour crosses this edge when the sign of g (p i) is opposite the sign of g (p j). Solving for \(g(t)=0\) gives the contour point position as (Figure 6.2):
 
 As illustrated in Figures 6.3 and 6.4, these contours typically have much smoother and coherent topology than the mesh contours.
 
 #### 6.2.2 Fast detection for static surfaces
 
-The dual space data structures of Section 3.7.2 can be adapted to find Interpolated Contours on static meshes. For example, in the perspective dual space method of Hertzmann and Zorin (2000), each mesh vertex maps to a dual point \(\mathbf{s}=\left(s_{1}, s_{2}, s_{3}, s_{4}\right)=\left(-n_{x},-n_{y},-n_{z}, \mathbf{n} \cdot \mathbf{p}\right)\).
+The dual space data structures of Section 3.7.2 can be adapted to find Interpolated Contours on static meshes. For example, in the perspective dual space method of Hertzmann and Zorin (2000), each mesh vertex maps to a dual point s =(\(s_{1}\), \(s_{2}\), \(s_{3}\), \(s_{4}\)) = ( -nx, -ny, -nz, n · p). As before, the camera maps to dual plane g (s) = (cx, cy, cz, 1) · s = 0. A dual edge is drawn between each pair of adjacent vertices; a dual edge contains a contour point if the edge crosses the camera dual plane. Hence, finding all edges with contour points is again reduced to intersecting a plane with a set of line segments.
 
 #### 6.2.3 Singularities
 
 The singularities of Interpolated Contours are similar to those of mesh contours. However, they behave somewhat differently. Interpolated Contours cannot exhibit bifurcations. intersections on the surface lie within faces, since these contours lie within faces.
 
-Defining curtain folds for Interpolated Contours requires the theory for smooth contours, which we will describe in the next chapter. For now, we will simply assume that we have a way to compute a function \(\kappa_{r}\) at each mesh vertex. This function, called the radial curvature, will be defined later in Section 7.4. Linearly interpolating this function across each face gives a function \(\kappa_{r}(\mathbf{p})\) over the face, and a line segment with \(\kappa_{r}(\mathbf{p})=0\) can be computed by linear interpolation across the face edges, just as was done for the contour generator. For a mesh face that contains zero crossings in both \(g(\mathbf{p})\) and \(\kappa_{r}(\mathbf{p})\), the curtain fold lies at the intersection of these two line segments, if they intersect (Hertzmann and Zorin, 2000; DeCarlo et al., 2003). For methods to compute curvature from meshes, see (Váša et al., When detecting a curtain fold this way, there will often be a spurious image-space intersection between the contour and itself near the curtain fold, and one may need a heuristic to clean up this case. This can get tricky if other image-space intersections occur between these singularities.
+Defining curtain folds for Interpolated Contours requires the theory for smooth contours, which we will describe in the next chapter. For now, we will simply assume that we have a way to compute a function k r at each mesh vertex. This function, called the radial curvature, will be defined later in Section 7.4. Linearly interpolating this function across each face gives a function k r (p) over the face, and a line segment with k \(r(p)=0\) can be computed by linear interpolation across the face edges, just as was done for the contour generator. For a mesh face that contains zero crossings in both g (p) and k r (p), the curtain fold lies at the intersection of these two line segments, if they intersect (Hertzmann and Zorin, 2000; DeCarlo et al., 2003). For methods to compute curvature from meshes, see (Váša et al., 2016).
+
+When detecting a curtain fold this way, there will often be a spurious image-space intersection between the contour and itself near the curtain fold, and one may need a heuristic to clean up this case. This can get tricky if other image-space intersections occur between these singularities.
 
 #### 6.2.4 Visibility
 
@@ -755,11 +701,11 @@ For ray tests, we use the original triangle mesh to determine when the smooth co
 
 Unfortunately, the approximate contour generator is not the mesh contour generator. About half the segments of the approximate contour generator lie on back-faces of the triangle mesh (whatever the tessellation density of the mesh), and they are thus hidden by
 
-![Figure 6.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-5-p056.png)
+![Figure 6.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-5-p056.png)
 
 *Figure 6.5: Stylized interpolated contours of a smooth surface (Bénard et al., 2014) — The original smooth surface is shown in Figure 1.4. After visibility computation, the contours exhibit many breaks and gaps (red arrows) which lead to objectionable temporal artifacts after stylization. “Red” © Disney/Pixar*
 
-![Figure 6.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-6-6-p056.png)
+![Figure 6.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-6-6-p056.png)
 
 *Figure 6.6: An example of the problem with interpolated contour visibility (Bénard et al., 2014) — In image space, the interpolated contour lies within the mesh contour. This creates a “halo region” between the two contours in which the surface occludes other surfaces but the mesh is invisible. Ray tests to the rear surface in this region will say the rear surface is invisible. In other configurations, such as nearly-flat, bumpy surface, a surface can 'halo' other curves nearby on the same surface.*
 
@@ -783,75 +729,55 @@ In the previous chapters, we only considered polygonal meshes as input. We will 
 
 ### 7.1 Surface definition
 
-In the following, we will assume that all surfaces are at least \(C^{1}\) smooth everywhere, though it is conceptually straightforward to generalize to surfaces with creases, since they behave like mesh edges (Chapter 3). The theory in this chapter applies to any surface with a parametrization \(\mathbf{u}\), and a surface function with position \(\mathbf{p}(\mathbf{u})\) and normals \(\mathbf{n}(\mathbf{u})\), but the algorithms are designed for spline patches and subdivision surfaces. We briefly review these surfaces.
+In the following, we will assume that all surfaces are at least \(C_{1}\) smooth everywhere, though it is conceptually straightforward to generalize to surfaces with creases, since they behave like mesh edges (Chapter 3). The theory in this chapter applies to any surface with a parametrization u, and a surface function with position p (u) and normals n (u), but the algorithms are designed for spline patches and subdivision surfaces. We briefly review these surfaces.
 
-Spline patches. Spline patches (also called "freeform surfaces") are parametric functions from a 2D domain to a surface in 3D: \(f: \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}\). Specifically, each input coordinate
+Spline patches. Spline patches (also called 'freeform surfaces') are parametric functions from a 2D domain to a surface in 3D: f : \(R_{2}\) → \(R_{3}\). Specifically, each input coordinate u =(u, v) maps to a 3D point:
 
-$$
-\mathbf{p}(\mathbf{u})=\left[\begin{array}{l} f_{x}(u, v) \\ f_{y}(u, v) \\ f_{z}(u, v) \end{array}\right]
-$$
-
-on the surface. In a spline patch, these functions are defined as linear combinations of basis functions applied to control points. For example, in the nonuniform rational B-spline (NURBS) patch. The shape of such a patch is parameterized by a grid of \((m+1) \times(n+1)\) control points \(\mathbf{p}_{i, j} \in \mathbb{R}^{3}\) and their associated scalar weights \(w_{i, j} \in \mathbb{R}\). The 3D surface is then given by:
-
-$$
-\begin{equation*} \mathbf{p}(u, v)=\frac{\sum_{i=0}^{n} \sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j} \mathbf{p}_{i, j}}{\sum_{i=0}^{n} \sum_{i=0}^{m} N_{i}^{k}(u) N_{j}^{l}(v) w_{i, j}}, \tag{7.1} \end{equation*}
-$$
+on the surface. In a spline patch, these functions are defined as linear combinations of basis functions applied to control points. For example, in the nonuniform rational B-spline (NURBS) patch. The shape of such a patch is parameterized by a grid of (m + 1) × (n + 1) control points p i, j ∈ \(R_{3}\) and their associated scalar weights wi, j ∈ R. The 3D surface is then given by:
 
 PARAMETRIC SURFACES: CONTOURS AND visibility
 
-![Figure 7.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-1-p060.png)
+![Figure 7.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-1-p060.png)
 
 *Figure 7.1: Parametric surfaces — The map f from the parameter plane [0, 1] 2 or the control mesh surface | M | to R 3 deﬁnes the surface of a NURBS patch (a) or subdivision surface (b) respectively. defines the surface of a NURBS patch (a) or subdivision surface (b) respectively.*
 
-where \(N_{i}^{k}\) is the B-spline basis function of degree \(k\) for the \(i^{\text {th }}\) control point (Figure 7.1a). Details can be found in most computer graphics textbooks.
+where N k i is the B-spline basis function of degree k for the i th control point (Figure 7.1a). Details can be found in most computer graphics textbooks.
 
-Regardless of the specific type of surface used, the surface normal at a point \(\mathbf{p}\) can be computed as follows. The two 3D vectors:
+Regardless of the specific type of surface used, the surface normal at a point p can be computed as follows. The two 3D vectors:
 
-$$
-\mathbf{t}_{u}(\mathbf{u})=\left.\frac{\partial \mathbf{p}}{\partial u}\right|_{\mathbf{u}}=\left[\frac{\partial f_{x}}{\partial u}, \frac{\partial f_{y}}{\partial u}, \frac{\partial f_{z}}{\partial u}\right]^{\top} \quad \mathbf{t}_{v}(\mathbf{u})=\left.\frac{\partial \mathbf{p}}{\partial v}\right|_{\mathbf{u}}=\left[\frac{\partial f_{x}}{\partial v}, \frac{\partial f_{y}}{\partial v}, \frac{\partial f_{z}}{\partial v}\right]^{\top}
-$$
-
-are tangent vectors at \(\mathbf{p}\). A surface normal at that point is:
-
-$$
-\mathbf{n}(\mathbf{u})=\mathbf{t}_{u}(\mathbf{u}) \times \mathbf{t}_{v}(\mathbf{u}),
-$$
+are tangent vectors at p. A surface normal at that point is:
 
 Subdivision surfaces. Modeling surfaces of general topology is quite difficult with patches. Subdivision surfaces are a generalization of splines that are popular for modeling surfaces of arbitrary topology (Zorin and Schröder, 2000).
 
 A subdivision surface is defined by a polygonal mesh and a refinement scheme. The input polygonal mesh is called the control mesh. The corresponding smooth surface, called the limit surface, is defined from the control mesh by recursively applying the refinement scheme an infinite number of times.
 
-Since the control mesh must be a simple polyhedron, it may be deformed or even lifted to \(\mathbb{R}^{4}\) to remove all self-intersections.) In particular, let \(\mathbf{u} \in M\) be a point on the control mesh. Then the subdivision surface may be viewed as a function \(\mathbf{p}(\mathbf{u}): M \rightarrow \mathbb{R}^{3}\), defined by the subdivision scheme and the positions of the control vertices. The point \(\mathbf{u}\) is called the preimage of a point \(\mathbf{p}(\mathbf{u})\) on the surface. Analytic representations of \(\mathbf{p}(\mathbf{u})\)
+Since the control mesh must be a simple polyhedron, it may be deformed or even lifted to \(R_{4}\) to remove all self-intersections.) In particular, let u ∈ M be a point on the control mesh. Then the subdivision surface may be viewed as a function p (u) : M → \(R_{3}\), defined by the subdivision scheme and the positions of the control vertices. The point u is called the preimage of a point p (u) on the surface. Analytic representations of p (u)
 
 $$
 CONTOURS AND VISIBILITY ontour generator g (u) = 0 acing 8(u) > 0—
 $$
 
-![Figure 7.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-2-p061.png)
+![Figure 7.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-2-p061.png)
 
 *Figure 7.2: Smooth surface contour — The contour generator is the zero-set of the implicit orientation function g (u) and thus the boundary between the front-facing and back-facing parts of a surface, as seen from a camera center c. The apparent contour is the visible projection of the contour generator onto the image plane.*
 
-and its normals \(\mathbf{n}(\mathbf{u})\) have been derived for popular schemes, such as Loop (Loop, 1987; Stam, 1998b) and Catmull-Clark (Catmull and Clark, 1978; Stam, 1998a). The open source library "OpenSubdiv" (Nießner et al., 2012; Pixar, 2019) supports direct evaluation of limit positions, normals and curvatures for both Loop and Catmull-Clark surfaces.
+and its normals n (u) have been derived for popular schemes, such as Loop (Loop, 1987; Stam, 1998b) and Catmull-Clark (Catmull and Clark, 1978; Stam, 1998a). The open source library 'OpenSubdiv' (Nießner et al., 2012; Pixar, 2019) supports direct evaluation of limit positions, normals and curvatures for both Loop and Catmull-Clark surfaces.
 
 ### 7.2 Contour definition
 
-As before, we assume that the surface is oriented, in generic position, and that only front facing points may be visible. The surface is viewed from a camera center \(\mathbf{c}\). We define the orientation function (Figure 7.2):
+As before, we assume that the surface is oriented, in generic position, and that only frontfacing points may be visible. The surface is viewed from a camera center c. We define the orientation function (Figure 7.2):
 
-$$
-g(\mathbf{u})=(\mathbf{p}(\mathbf{u})-\mathbf{c}) \cdot \mathbf{n}(\mathbf{u}) .
-$$
+A point with \(g(u)>0\) is front-facing and a point with \(g(u)<0\) is back-facing, the contour is the boundary between these regions: \(g(u)=0\). More formally, following definition 3.4.1. The contour is defined by:
 
-A point with \(g(\mathbf{u})>0\) is front-facing and a point with \(g(\mathbf{u})<0\) is back-facing, the contour is the boundary between these regions: \(g(\mathbf{u})=0\). More formally, following definition 3.4.1. The contour is defined by:
+Definition 7.2.1 (parametric contour generator). The collection of all points p (u) for which the preimages u satisfy \(g(u)=0\) is called the contour generator (Marr, 1977). The visible projection of the contour generator onto the image plane is called the apparent contour, or, simply, contour.
 
-Definition 7.2.1 (parametric contour generator). The collection of all points \(\mathbf{p}(\mathbf{u})\) for which the preimages \(\mathbf{u}\) satisfy \(g(\mathbf{u})=0\) is called the contour generator (Marr, 1977). The visible projection of the contour generator onto the image plane is called the apparent contour, or, simply, contour.
+Interestingly, the smooth contour can also be interpreted in terms of shading, in two different ways. In the first way, we imagine photorealistic rendering of the surface with Lambertian shading (n · v), with white texture, against a white background. The black pixels of this rendering (n · v ≈ 0) are the contour (Figure 7.3). Generalizing this idea of finding the darkest pixels (not necessarily black) of the Lambertian image motivates contour generalizations like the Suggestive Contours (DeCarlo et al., 2003; Lee et al., 2007) and
 
-Interestingly, the smooth contour can also be interpreted in terms of shading, in two different ways. In the first way, we imagine photorealistic rendering of the surface with Lambertian shading ( \(\mathbf{n} \cdot \mathbf{v}\) ), with white texture, against a white background. The black pixels of this rendering ( \(\mathbf{n} \cdot \mathbf{v} \approx 0\) ) are the contour (Figure 7.3). Generalizing this idea of finding the darkest pixels (not necessarily black) of the Lambertian image motivates contour generalizations like the Suggestive Contours (DeCarlo et al., 2003; Lee et al., 2007) and
-
-![Figure 7.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-3-p062.png)
+![Figure 7.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-3-p062.png)
 
 *Figure 7.3: Shading interpretation of contours — (a) Lambertian shaded white object with light at viewpoint, so that shading is n · v. (b) Thresholded rendering, for visualization (c) The contours are the black points in the shading image, where n · v = 0. (d) Identifying dark ridges in the shading image produces the contours and Suggestive Contours (DeCarlo et al., 2003 ; Lee et al., 2007). Images generated with “qrtsc” (Cole et al., 2011).*
 
-![Figure 7.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-4-p062.png)
+![Figure 7.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-4-p062.png)
 
 *Figure 7.4: Rim lighting and rendering — (a) Photograph taken with rim lighting, i.e., a ring of lights perpendicular to the camera direction. Rim lighting approximates the occluding contour. (Photo by Flickr user japrea cba) (b) Rim light photograph inverted and converted to grayscale, with the background removed. (c) Computer-generated line drawing using contours, Suggestive Contours (DeCarlo et al., 2003) and isophote thickness (Goodwin et al., 2007). The stroke thickness varies in the same way as it would for contours produced by rim lighting.*
 
@@ -859,20 +785,20 @@ isophote stroke thickness (Goodwin et al., 2007). And, an inverse interpretation
 
 ### 7.3 Contour extraction
 
-Because the contour generator is an implicit polynomial function, we cannot directly compute it. Instead, we must numerically approximate it; existing methods approximate it by piecewise linear curves. While an early method proposed marching along the contour in parameter space (Hornung et al., 1985), more modern methods identify patches with sign changes of \(g(\mathbf{u})\) (Elber and Cohen, 1990; Gooch, 1998; Bénard et al., 2014), similar to the treatment of Interpolated Contours in Chapter 6.
+Because the contour generator is an implicit polynomial function, we cannot directly compute it. Instead, we must numerically approximate it; existing methods approximate it by piecewise linear curves. While an early method proposed marching along the contour in parameter space (Hornung et al., 1985), more modern methods identify patches with sign changes of g (u) (Elber and Cohen, 1990; Gooch, 1998; Bénard et al., 2014), similar to the treatment of Interpolated Contours in Chapter 6.
 
-Specifically, we first evaluate the orientation function \(g(\mathbf{u})\) at all control vertices (Fig ure 7.5). For a spline patch, these control vertices can be visualized on a regular grid; for a
+Specifically, we first evaluate the orientation function g (u) at all control vertices (Figure 7.5). For a spline patch, these control vertices can be visualized on a regular grid; for a
 
-![Figure 7.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-5-p063.png)
+![Figure 7.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-5-p063.png)
 
 *Figure 7.5: Orientation function evaluated at the control vertices — When g (u) has opposite signs (F and B) on both ends of a control polygon edge (a), a contour point must exist on that edge. When there is no sign change (F and F or B or B), there may be zero contour points, or a larger even number of contour points per edge (b).*
 
-subdivision surface, they live on the control polygon. We denote points with \(g(\mathbf{u})>0\) as F and \(g(\mathbf{u})<0\) as B.
+subdivision surface, they live on the control polygon. We denote points with \(g(u)>0\) as F and \(g(u)<0\) as B.
 
 For any edge on the control polygon with opposite signs on the edge (F and B), there must be a contour point somewhere on that edge (Figure 7.5a). For edges with the same sign (F and F or B or B), there might be contour points, in some even number, such as a small loop centered on this edge (Figure 7.5b). In the following algorithms, we generally assume that no small loops like this occur, and assume that no sign change indicates that there is no contour on the edge. (For the special case of rational splines under orthographic projection, Elber and Cohen (1990) showed a sign test that may be used to quickly identify that some patches cannot contain contours.)
 
 ```text
-For each edge that must contain a contour, the edge can be parameterized as a 1D function \( \mathbf{u}(t)=(1-t) \mathbf{u}_{0}+t\left(\mathbf{u}_{1}\right) \) where \( \mathbf{u}_{0} \) and \( \mathbf{u}_{1} \) are the preimages of the control points. The preimage and position of the contour may be found using a root-finding algorithm on \( g(\mathbf{u}(t))=0 \) (Elber and Cohen, 1990;
+For each edge that must contain a contour, the edge can be parameterized as a 1D function u ( t ) = ( 1 -t ) u 0 + t ( u 1 ) where u 0 and u 1 are the preimages of the control points. The preimage and position of the contour may be found using a root-finding algorithm on g ( u ( t )) = 0 (Elber and Cohen, 1990;
 Bénard et al., 2014), such as the secant method or bisection search. A simpler approach is to linearly interpolate to approximate the contour location (Gooch, 1998), similar to Equation 6.1.
 ```
 
@@ -882,33 +808,29 @@ The identified contour locations may be connected to produce a piecewise linear 
 
 We now discuss the curvature of 2D contours and 3D contour generators. This analysis is necessary to identify curtain folds, and also gives insight into the relationship between surface curvature and apparent contour curvature.
 
-In order to analyze image contours, it is useful to consider the following tangent direction at contour point \(\mathbf{p}\). The direction \(\mathbf{w}\) is defined as the (unnormalized) projection of the view
+In order to analyze image contours, it is useful to consider the following tangent direction at contour point p. The direction w is defined as the (unnormalized) projection of the view vector v = p-c onto the tangent plane at p. For contour points, w = v since v is already
 
-![Figure 7.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-6-p064.png)
+![Figure 7.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-6-p064.png)
 
 *Figure 7.6: Contour generator approximation — An input smooth torus represented as a CatmullClark subdivision surface is uniformly tessellated with one round of subdivision. With contourconsistent tessellation (b), the mesh contours of the polygonal mesh is both topologically equivalent to the smooth surface contour and at the boundary of visible and invisible. Interpolated contours (a) do not have this property, leading to problems with visibility.*
 
-![Figure 7.7](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-7-p064.png)
+![Figure 7.7](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-7-p064.png)
 
 *Figure 7.7: Radial curvature — (a) The radial curvature κ r (p) is the curvature of the radial curve at p ; (b) κ r is necessarily positive for visible contours (top) otherwise it would be locally occluded by the surface (bottom), and zero at curtain folds (c). k r (p) is the curvature of the radial curve at p ; (b) k r is necessarily positive for visible contours (top) otherwise it would be locally occluded by the surface (bottom), and zero at curtain folds (c).*
 
-in the tangent plane. The normal curvature along \(\mathbf{w}\) is called the radial curvature \(\kappa_{r}(\mathbf{p})\) (Figure 7.7a) (DeCarlo et al., 2003; Koenderink, 1984). (See Appendix A. 2 for the definition of normal curvature.)
+in the tangent plane. The normal curvature along w is called the radial curvature k r (p) (Figure 7.7a) (DeCarlo et al., 2003; Koenderink, 1984). (See Appendix A.2 for the definition of normal curvature.)
 
-Another way to state the definition is as follows. The radial curvature is based on the radial plane, the plane that contains the point \(\mathbf{p}\), the surface normal \(\mathbf{n}\), and the view vector \(\mathbf{v}\). The radial curve is the intersection of the surface with the radial plane. The radial curvature \(\kappa_{r}(\mathbf{p})\) is then defined as the curvature of the radial curve at \(\mathbf{p}\).
+Another way to state the definition is as follows. The radial curvature is based on the radial plane, the plane that contains the point p, the surface normal n, and the view vector v. The radial curve is the intersection of the surface with the radial plane. The radial curvature k r (p) is then defined as the curvature of the radial curve at p.
 
-A contour can only be visible when it has a positive radial curvature ( \(\kappa_{r}>0\) ) - otherwise the contour generator would locally lie in a surface concavity (Figure 7.7(b)). This exactly parallels the concepts of concave and convex contours on meshes: a contour with positive radial curvature is a convex contour (in the radial direction).
+Acontour can only be visible when it has a positive radial curvature (\(k_{r}>0\)) - otherwise the contour generator would locally lie in a surface concavity (Figure 7.7(b)). This exactly parallels the concepts of concave and convex contours on meshes: a contour with positive radial curvature is a convex contour (in the radial direction).
 
-The apparent curvature \(\kappa_{p}(\mathbf{p})\) of the contour curve is the curvature of the apparent contour at \(\mathbf{p}\). Under perspective projection, Koenderink (1984) demonstrated that the
+The apparent curvature k p (p) of the contour curve is the curvature of the apparent contour at p. Under perspective projection, Koenderink (1984) demonstrated that the
 
-![Figure 7.8](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-8-p065.png)
+![Figure 7.8](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-8-p065.png)
 
 *Figure 7.8: Relationship between the surface Gaussian curvature and the contour apparent curvature — Concave apparent contours originate from hyperbolic regions (in blue) and convex ones from elliptic regions (in red); their inﬂection coincides with parabolic points on the surface. Image generated with “qrtsc” (Cole et al., 2011). inflection coincides with parabolic points on the surface. Image generated with 'qrtsc' (Cole et al., 2011).*
 
-Gaussian curvature \(K\) of the surface at \(\mathbf{p}\) is related to the radial and apparent curvatures by:
-
-$$
-K=\frac{\kappa_{r}(\mathbf{p}) \kappa_{p}(\mathbf{p})}{\|\mathbf{p}-\mathbf{c}\|} .
-$$
+Gaussian curvature K of the surface at p is related to the radial and apparent curvatures by:
 
 The above observations allow us to relate the image-space curvature of the 2D contour with the corresponding 3D region. For visible contours, the sign of the apparent curvature is thus the same as the sign of the Gaussian curvature. If the surface is elliptical (K > 0), the fact that visible contours cannot have \(k_{r}<0\), implies that k p is necessarily positive, and thus the apparent contour displays a convexity. Conversely, if the surface is hyperbolic (K < 0), \(k_{p}<0\) and thus the apparent contour is concave. This leads to the following general rule illustrated in Figure 7.8: a convex apparent contour corresponds to a convex surface, a concave contour implies a saddle-shaped surface, and an inflection on the contour (\(k_{p}=0\)) implies a parabolic point on the surface (K = 0).
 
@@ -920,11 +842,11 @@ intersections. Image-space intersections and intersections on the surface create
 
 PARAMETRIC SurFacES: CONTOURS AND visibility
 
-![Figure 7.9](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-9-p066.png)
+![Figure 7.9](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-9-p066.png)
 
 *Figure 7.9: Contour generator curtain folds on a smooth surface — As shown on the top view, curtain folds are at the intersection of the contour generator and radial curvature zero-isocurve. At each curtain fold, the curve tangent is aligned with the view direction.*
 
-Finding intersections on the surface between boundaries and other curves typically involve root-finding along each boundary edge, e.g., for boundary-contour intersection, find the boundary edge point with \(g(\mathbf{p}(t))=0\).
+Finding intersections on the surface between boundaries and other curves typically involve root-finding along each boundary edge, e.g., for boundary-contour intersection, find the boundary edge point with g (p (t)) = 0.
 
 Image-space intersections involving contours are more difficult to find, because contours are implicitly defined. These intersections must be detected numerically, and there is no simple data-structure for accurately accelerating the search without the possibility of missing some intersections. There are two general strategies one can take. first, one can convert the contours into polylines, and compute the intersections of these polylines. This is simple but may often be incorrect in some cases. Second, one may use an adaptive subdivision approach, in which bounding boxes for each curve are subdivided until either an intersection is found or the absence of an intersection can be proven (Elber and Cohen, 1990).
 
@@ -932,9 +854,9 @@ Computing intersections between smooth surfaces is also difficult (e.g., (Hought
 
 Contour curtain fold definition. Koenderink (1984) demonstrated that the radial curvature vanishes at a curtain fold cusp (\(k_{r}=0\)), the contour transitioning from invisible to potentially visible. At a curtain fold, the 3D tangent of the contour generator exactly coincides with the view vector. As a result, the projection is not smooth (k p is infinite); hence, curtain folds correspond to cusps in the apparent contour (Figure 7.7c & Figure 7.9). It can be shown that these points are the only generic cusps of smooth surface contours. For this reason, many previous authors use the term cusp instead of curtain fold; we use the latter terminology to emphasize the correspondence with curtain folds on mesh contours.
 
-As with meshes, curtain folds occur at the transition from concave ( \(\kappa_{r}<0\) ) to convex \(\left(\kappa_{r}>0\right)\) contours: when the contour transitions from locally occluded (concavity) to locally
+As with meshes, curtain folds occur at the transition from concave (\(k_{r}<0\)) to convex (\(k_{r}>0\)) contours: when the contour transitions from locally occluded (concavity) to locally
 
-![Figure 7.10](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-10-p067.png)
+![Figure 7.10](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-10-p067.png)
 
 *Figure 7.10: Contour curtain fold detection on smooth surfaces — (a) Given a base mesh triangle, we wish to ﬁnd all points that satisfy both g (u) = 0 and κ r (u) = 0. (b) We ﬁnd triangles that contain sign changes of both functions between the vertices. (c) For each such triangle, we split the triangle into two, by bisecting the long edge, and recursing into each of these triangles. (d) When this process leads to a very small triangle with sign changes, a contour curtain fold is marked at the centroid of this triangle. find all points that satisfy both g (u) = 0 and k r (u) = 0. (b) We find triangles that contain sign changes of both functions between the vertices. (c) For each such triangle, we split the triangle into two, by bisecting the long edge, and recursing into each of these triangles. (d) When this process leads to a very small triangle with sign changes, a contour curtain fold is marked at the centroid of this triangle.*
 
@@ -942,9 +864,9 @@ visible (convexity). In the vicinity of curtain folds, the surface is necessaril
 
 For parametric surfaces, radial curvature can be computed directly from the definition.
 
-Contour curtain fold detection. Detecting curtain folds on smooth surface contours entails finding surface points where both \(g(\mathbf{u})=0\) and \(\kappa_{r}(\mathbf{u})=0\). The simplest approach is to perform linear interpolation within a face, as in Section 6.2.3. However, this may not be sufficiently accurate.
+Contour curtain fold detection. Detecting curtain folds on smooth surface contours entails finding surface points where both \(g(u)=0\) and k \(r(u)=0\). The simplest approach is to perform linear interpolation within a face, as in Section 6.2.3. However, this may not be sufficiently accurate.
 
-A more precise procedure is as follows (Bénard et al., 2014). The algorithm first searches for triangles where both the functions \(g(\mathbf{u})\) and \(\kappa_{r}(\mathbf{u})\) exhibit sign changes among the triangle vertices. When such a triangle is found, it is bisected along the edge that is longest in parameter (u) space (Figure 7.10). This sign-change test and splitting process is repeated in the two new triangles. When the recursion detects a very small triangle with sign crossings in both functions, the centroid of that triangle is a curtain fold preimage location. (Note that the triangle splitting is not applied to the surface; the new triangles are stored only during this recursion and new vertex locations are computed by exact evaluation of \(\mathbf{p}(\mathbf{u})\) ).
+A more precise procedure is as follows (Bénard et al., 2014). The algorithm first searches for triangles where both the functions g (u) and k r (u) exhibit sign changes among the triangle vertices. When such a triangle is found, it is bisected along the edge that is longest in parameter (u) space (Figure 7.10). This sign-change test and splitting process is repeated in the two new triangles. When the recursion detects a very small triangle with sign crossings in both functions, the centroid of that triangle is a curtain fold preimage location. (Note that the triangle splitting is not applied to the surface; the new triangles are stored only during this recursion and new vertex locations are computed by exact evaluation of p (u) ).
 
 Curtain folds on other curves. Other types of curves may also have curtain folds. In general, for all curves, a curtain fold occurs when the 3D tangent to the curve is aligned to the view vector. This implies that the surface is normal to the view vector. Hence, at a curtain fold, the curve also intersects a contour generator. Hence, curtain folds do not need to be specially handled for non-contour curves, because they will be detected as curve-contour intersections.
 
@@ -968,7 +890,7 @@ Winkenbach and Salesin (1996) used a planar Map for visibility computations and 
 
 PARAMETRIC SURFACES: CONTOURS AND visibility
 
-![Figure 7.11](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-11-p069.png)
+![Figure 7.11](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-11-p069.png)
 
 *Figure 7.11: Results of Elber and Cohen (1990)’s patch-based contour extraction algorithm — Images generated with the IRIT modeling environment (Elber, 2018).*
 
@@ -986,11 +908,11 @@ The algorithm creates a new mesh initialized by copying the smooth surface's con
 
 The method still does not have all the formal guarantees that one would like; in principle, there are a few ways we discuss where it could go wrong. These do not seem to be a problem
 
-![Figure 7.12](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-12-p070.png)
+![Figure 7.12](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-12-p070.png)
 
 *Figure 7.12: Contour-Consistent tessellation — Each vertex on the output triangle mesh produced by Bénard et al. (2014) corresponds to a preimage point u on the control mesh that maps to a point f (u) on the smooth surface. The orientation (frontor back-facing) of each face of the triangle mesh is consistent with the smooth surface orientation g (u).*
 
-![Figure 7.13](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-13-p070.png)
+![Figure 7.13](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-13-p070.png)
 
 *Figure 7.13: Contour-consistent contours of a smooth surface (Bénard et al., 2014) — Compare with the contours in Figures 6.1 and 6.4. (a) Contours computed with the contour-consistency algorithm correctly represent the contours of the original smooth surface. (b) Chaining these segments gives smooth, coherent curves. (c) visibility is well-deﬁned for these curves. “Red” © Disney/Pixar well-defined for these curves. 'Red' Disney Pixar*
 
@@ -998,7 +920,7 @@ in practice. However, it is complex to implement and the computation is slow. Im
 
 This method produces a triangle mesh whose contour edges are topologically equivalent and geometrically close to the contour generators of the smooth surface (Figure 7.6b & 7.13). Hence, it is the only current method that computes accurate contours and visibility for smooth surfaces, avoiding flickering artifacts when animated (Figure 7.14).
 
-![Figure 7.14](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-7-14-p071.png)
+![Figure 7.14](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-7-14-p071.png)
 
 *Figure 7.14: Contour-consistent contours stylized with tapered strokes (Bénard et al., 2014) — Compare with the contours in Figure 6.5. Contour-consistent contours do not suffer from breaks and gaps, producing more coherent animated strokes. “Red” © Disney/Pixar*
 
@@ -1008,73 +930,35 @@ We now survey contour extraction and visibility algorithms for implicit surfaces
 
 ### 8.1 Surface definition
 
-An implicit surface \(\mathscr{S}\) is defined as the isocontour of a scalar function \(f: \mathbb{R}^{3} \rightarrow \mathbb{R}\),
+An implicit surface S is defined as the isocontour of a scalar function f : \(R_{3}\) → R, where r ∈ R is a target isovalue. It is thus also called an isosurface. An implicit surface is well-defined if f does not have any singular points, i.e., its gradient f is defined and non-zero everywhere. The isosurface forms a 2D manifold, partitioning the space into itself and two connected open sets: the interior, where (f-r) < 0, and the exterior, where (f-r) > 0 by convention.
 
-$$
-\mathscr{S}=\left\{\mathbf{p} \in \mathbb{R}^{3} \mid f(\mathbf{p})=\rho\right\},
-$$
-
-where \(\rho \in \mathbb{R}\) is a target isovalue. It is thus also called an isosurface. An implicit surface is well-defined if \(f\) does not have any singular points, i.e., its gradient \(\nabla f\) is defined and non-zero everywhere. The isosurface forms a 2D manifold, partitioning the space into itself and two connected open sets: the interior, where \((f-\rho)<0\), and the exterior, where \((f-\rho)>0\) by convention.
-
-The surface normal at \(\mathbf{p}\) is the normalized gradient of \(f\) :
-
-$$
-\mathbf{n}=\frac{\nabla f(\mathbf{p})}{\|\nabla f(\mathbf{p})\|},
-$$
+The surface normal at p is the normalized gradient of f :
 
 where
 
-$$
-\nabla f(\mathbf{p})=\left(\left.\frac{\partial f}{\partial x}\right|_{\mathbf{p}},\left.\frac{\partial f}{\partial y}\right|_{\mathbf{p}},\left.\frac{\partial f}{\partial z}\right|_{\mathbf{p}}\right)^{\top}
-$$
+The normal curvature in any tangent space direction t is given by:
 
-The normal curvature in any tangent space direction \(\mathbf{t}\) is given by:
-
-$$
-\kappa_{\mathbf{n}}(\mathbf{t})=\frac{\mathbf{t}^{\top}(\nabla \mathbf{n}) \mathbf{t}}{\|\mathbf{t}\|^{2}}
-$$
-
-with \(\nabla \mathbf{n}\) the gradient of the normal, i.e., the projection of the normalized Hessian (matrix of second partial derivatives) \(\mathrm{H} f=\nabla^{2} f\) onto the tangent plane.
+with n the gradient of the normal, i.e., the projection of the normalized Hessian (matrix of second partial derivatives) \(H_{f}=2\) f onto the tangent plane.
 
 Many approaches have been taken to compute the contour generator.
 
 ### 8.2 Contour extraction
 
-The contour generator \(\mathscr{C}\) of an implicit surface \(\mathscr{S}\) seen from a camera center \(\mathbf{c}\) is defined as the set of points \(\mathbf{p}\) such that:
-
-$$
-\begin{aligned} (f(\mathbf{p})-\mathbf{c}) \cdot \mathbf{n} & =0 \\ \Leftrightarrow \quad(f(\mathbf{p})-\mathbf{c}) \cdot \nabla f(\mathbf{p}) & =0, \end{aligned}
-$$
+The contour generator C of an implicit surface S seen from a camera center c is defined as the set of points p such that:
 
 which is itself an implicit function.
 
 #### 8.2.1 Contour tracing
 
-The most basic contour tracing algorithm is the generic algorithm described by Dobkin et al. (1990) for tracing the contour of any smooth function from \(\mathbb{R}^{n}\) to \(\mathbb{R}^{k}(k<n)\). A drawback of this method is that it only extracts a fixed resolution piecewise-linear approximation of the contour. If the implicit function \(f\) is at twice continuous, we can directly work with the function \(f\) and trace an approximation of the contour based on its analytical tangent vector by numerical integration (Bremer and Hughes, 1998; Foster et al., 2005; Plantinga and Vegter, 2006).
+The most basic contour tracing algorithm is the generic algorithm described by Dobkin et al. (1990) for tracing the contour of any smooth function from R n to \(R_{k}(k<n)\). A drawback of this method is that it only extracts a fixed resolution piecewise-linear approximation of the contour. If the implicit function f is at twice continuous, we can directly work with the function f and trace an approximation of the contour based on its analytical tangent vector by numerical integration (Bremer and Hughes, 1998; Foster et al., 2005; Plantinga and Vegter, 2006).
 
-Assuming (for simplicity) an orthographic projection along the direction \(\mathbf{v}\), a parametric curve \(c: \mathbb{R} \rightarrow \mathbb{R}^{3}\) lies on the contour generator of an implicit surface \(\mathscr{S}\) if:
-
-$$
-\left\{\begin{align*} f(c(t)) & =0 \tag{8.1}\\ \mathbf{v}^{\top} \nabla f(c(t)) & =0 .^{1} \end{align*}\right.
-$$
+Assuming (for simplicity) an orthographic projection along the direction v, a parametric curve c : R → \(R_{3}\) lies on the contour generator of an implicit surface S if:
 
 Denoting w = c ′ (t) the tangent vector of the curve and differentiating each equation with respect to t, we get:
 
-$$
-\left\{\begin{aligned} \nabla f(c(t)) \cdot \mathbf{w} & =0 \\ \mathbf{v}^{\top} \mathrm{H} f(c(t)) \mathbf{w} & =0 \end{aligned}\right.
-$$
+This implies that w is proportional to the cross-product of the gradient at its basepoint and the product of the Hessian at the basepoint with the view direction, that is:
 
-This implies that \(\mathbf{w}\) is proportional to the cross-product of the gradient at its basepoint and the product of the Hessian at the basepoint with the view direction, that is:
-
-$$
-\mathbf{w} \propto \nabla f(c(t)) \times \mathbf{v}^{\top} \mathrm{H} f
-$$
-
-If we know a starting point \(\mathbf{p}_{0}\) on the contour generator, we can progressively trace the full curve by taking small steps in the direction of the tangent \(\mathbf{w}\). This corresponds to a numerical Euler integration scheme where, at each step:
-
-$$
-\begin{aligned} \mathbf{p}_{i+1} & =\mathbf{p}_{i}+\varepsilon F\left(\mathbf{p}_{i}\right), \\ \text { with } F(\mathbf{p}) & =\nabla f(\mathbf{p}) \times \mathbf{v}^{\top} \mathrm{H} f(\mathbf{p}) . \end{aligned}
-$$
+If we know a starting point \(p_{0}\) on the contour generator, we can progressively trace the full curve by taking small steps in the direction of the tangent w. This corresponds to a numerical Euler integration scheme where, at each step:
 
 Recalling that a · b = a glyph[latticetop] b.
 
@@ -1090,67 +974,57 @@ The full process can be summarized as follows:
 
 - If it stagnates, return to the starting point and trace in the opposite direction.
 
-Stabilized integration. Euler integration is known to be unstable, that is, the position \(\mathbf{p}\) might quickly leave the contour, even with a small step sizes, in critical configurations. To improve convergence, two correction terms can be added to the vector field \(F(\mathbf{p})\). The first correction enforces the computed position to lie on the implicit surface by pointing towards the surface at all point of space:
+Stabilized integration. Euler integration is known to be unstable, that is, the position p might quickly leave the contour, even with a small step sizes, in critical configurations. To improve convergence, two correction terms can be added to the vector field \(F(p)\). The first correction enforces the computed position to lie on the implicit surface by pointing towards the surface at all point of space:
 
-The second correction ensures that the integration follows the contour generator. In the same way as \(-f \nabla f\) tends to drive \(f\) to zero, \(-g \nabla g\) with \(g(\mathbf{p})=\mathbf{v} \cdot \nabla f(\mathbf{p})\) tends to drive \(g\) to zero, i.e., towards the contour generator, leading to:
-
-$$
-F_{\text {contour }}(\mathbf{p})=\frac{-(\mathbf{v} \cdot \nabla f(\mathbf{p})) \mathbf{v}^{\top} \mathrm{H} f(\mathbf{p})}{\left\|\nabla f(\mathbf{p})^{2}\right\|} .
-$$
+The second correction ensures that the integration follows the contour generator. In the same way as-f f tends to drive f to zero, -g g with g (p) = v · f (p) tends to drive g to zero, i.e., towards the contour generator, leading to:
 
 The final Euler step is simply the weighted sum of the vector fields:
 
-\begin{aligned} \mathbf{p}_{i+1}= & \mathbf{p}_{i}+\varepsilon\left(F\left(\mathbf{p}_{i}\right)+F_{\text {surface }}\left(\mathbf{p}_{i}\right)+k F_{\text {contour }}\left(\mathbf{p}_{i}\right)\right) \\ = & \left.\mathbf{p}_{i}+\frac{\varepsilon}{\left\|\nabla f\left(\mathbf{p}_{i}\right)\right\|^{2}}\left(\nabla f\left(\mathbf{p}_{i}\right) \times \mathbf{v}^{\top} \mathrm{H} f\left(\mathbf{p}_{i}\right)-f\left(\mathbf{p}_{i}\right) \nabla f\left(\mathbf{p}_{i}\right)\right)\right) \\ & \left.-k\left(\mathbf{v} \cdot \nabla f\left(\mathbf{p}_{i}\right)\right) \mathbf{v}^{\top} \mathrm{H} f\left(\mathbf{p}_{i}\right)\right) \end{aligned} with \(k\) a user-defined scalar value-Bremer and Hughes (1998) recommend choosing \(k=0.5\). With those correction terms, the vector field does not vanish at curtain folds anymore, which may prove problematic if the tracer overshoots.
+with k a user-defined scalar value-Bremer and Hughes (1998) recommend choosing k = 0. 5. With those correction terms, the vector field does not vanish at curtain folds anymore, which may prove problematic if the tracer overshoots.
 
 Finding starting points. different approaches have been proposed to find starting positions on the contour generator. Bremer and Hughes (1998) shoot random rays from the orthographic camera and, when an intersection is found, they march along the surface in a tangent direction whose image-space projection is in the same direction as that of the gradient, i.e.,
 
-$$
-F(\mathbf{p})=\frac{\nabla f(\mathbf{p}) \times(\mathbf{v} \times \nabla f(\mathbf{p}))}{\|\nabla f(\mathbf{p})\|^{2}},
-$$
-
-![Figure 8.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-1-p075.png)
+![Figure 8.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-1-p075.png)
 
 *Figure 8.1: Contour ﬁnding — To ﬁnd a starting position for tracing the occluding contour, Bremer and Hughes (1998) shoot random rays in the view direction v from the image plane (left), and march along the surface in the tangent direction aligned with the projection of the gradient (right) until v · ∇ f (p) changes sign. Contour finding-Tofind a starting position for tracing the occluding contour, Bremer and Hughes (1998) shoot random rays in the view direction v from the image plane (left), and march along the surface in the tangent direction aligned with the projection of the gradient (right) until v · f (p) changes sign.*
 
-![Figure 8.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-2-p075.png)
+![Figure 8.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-2-p075.png)
 
 *Figure 8.2: Implicit surface contour generator tracing — With a ﬁxed step size (a), the traced contour may jump to another component of the contour (left) or skip a part of it (right). (b) With a dynamic step size integration scheme, Plantinga and Vegter (2006) accurately trace the contour generator of a complex implicit tangle cube: x 4 − 5 x 2 + y 4 − 5 y 2 + z 4 − 5 z 2 + 10 = 0. The starting points are indicated by the black dots. fixed step size (a), the traced contour may jump to another component of the contour (left) or skip a part of it (right). (b) With a dynamic step size integration scheme, Plantinga and Vegter (2006) accurately trace the contour generator of a complex implicit tangle cube: x 4-5 x 2 + y 4-5 y 2 + z 4-5 z 2 + 10 = 0. The starting points are indicated by the black dots.*
 
-by Euler integration, until the sign of \(\mathbf{v} \cdot \nabla f(\mathbf{p})\) changes (Figure 8.1). The term \(F_{\text {surface }}\) can be added to the vector field to ensure that the integrated positions remain close to the surface.
+by Euler integration, until the sign of v · f (p) changes (Figure 8.1). The term F surface can be added to the vector field to ensure that the integrated positions remain close to the surface.
 
-Instead of casting rays each time the viewpoint changes, Foster et al. (2005) precompute a dense set of seed points using the surface-constrained "floater" particles of Witkin and Heckbert (1994), and select the points that are close enough to the contour generator, i.e., such as those where \(|\mathbf{v} \cdot \nabla f(\mathbf{p})|\) is below a threshold.
+Instead of casting rays each time the viewpoint changes, Foster et al. (2005) precompute a dense set of seed points using the surface-constrained 'floater' particles of Witkin and Heckbert (1994), and select the points that are close enough to the contour generator, i.e., such as those where | v · f (p) | is below a threshold.
 
-![Figure 8.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-3-p076.png)
+![Figure 8.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-3-p076.png)
 
 *Figure 8.3: Surface-surface intersection — The apparent contour (left) along the view direction v is the projection of the contour generator (in red), shown from a side-view (right), at the intersection of the implicit surface S (in yellow) and the implicit contour surface ∇ f · v = 0 (in green). Images generated with the “Wickbert” particles library (Stroila et al., 2011).*
 
 Tracing with interval arithmetic. The above methods are neither guaranteed to find all contour generators, nor to trace them with accurate topology. With the fixed step size e, the tracing may accidentally jump to another component of the contour generator or skip a part of it (Figure 8.2a).
 
-Plantinga and Vegter (2006) describe a method that does offer topological guarantees under orthographic projection. They provide a detailed theoretical analysis of the implicit surface contour. They then use this to derive an interval arithmetic algorithm to identify points on the contour, and then trace the contour generator with a dynamic step size. After each Euler integration step, they perform an interval test to check whether the segment \(\mathbf{p}_{i} \mathbf{p}_{i+1}\) is a good approximation of the contour generator (Figure 8.2b). They further show how to accurately evolve the contour over time.
+Plantinga and Vegter (2006) describe a method that does offer topological guarantees under orthographic projection. They provide a detailed theoretical analysis of the implicit surface contour. They then use this to derive an interval arithmetic algorithm to identify points on the contour, and then trace the contour generator with a dynamic step size. After each Euler integration step, they perform an interval test to check whether the segment p i p i + 1 is a good approximation of the contour generator (Figure 8.2b). They further show how to accurately evolve the contour over time.
 
 #### 8.2.2 Extraction as surface-surface intersection
 
-Equation 8.1 can be interpreted slightly differently: the contour generator can be viewed as the curve at the intersection of two implicit surfaces, the object surface \(\mathscr{S}\) and the contour surface (Figure 8.3) defined implicitly as the zero-set of \(\nabla f(\mathbf{p}) \cdot \mathbf{v}\). (Stroila et al. (2008) called it the "silhouette surface.") To delineate this intersection, Stroila et al. (2008) simultaneously constrain the 'floater' particles of Witkin and Heckbert (1994) to lie on the implicit surface S and on the contour surface. After optimization, the particles can be connected together to form closed loop on the implicit surface. The differential properties of the contour curve can be leveraged to properly select each particle neighbors, although this does not guarantee accurately tracing the contour, nor finding all contours.
+Equation 8.1 can be interpreted slightly differently: the contour generator can be viewed as the curve at the intersection of two implicit surfaces, the object surface S and the contour surface (Figure 8.3) defined implicitly as the zero-set of f (p) · v. (Stroila et al. (2008) called it the 'silhouette surface.') To delineate this intersection, Stroila et al. (2008) simultaneously constrain the 'floater' particles of Witkin and Heckbert (1994) to lie on the implicit surface S and on the contour surface. After optimization, the particles can be connected together to form closed loop on the implicit surface. The differential properties of the contour curve can be leveraged to properly select each particle neighbors, although this does not guarantee accurately tracing the contour, nor finding all contours.
 
-![Figure 8.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-4-p077.png)
+![Figure 8.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-4-p077.png)
 
 *Figure 8.4: Proxy-based method — The smooth surface occluding contour is approximated by computing the interpolated contours of on a coarse base mesh, projecting the vertices of this coarse contour onto the actual smooth surface and subdividing it. Images generated with “ShapeShop”(Schmidt, 2008).*
 
 #### 8.2.3 Extraction on a mesh
 
-A even simpler, but very approximate, approach consists in first extracting a polygonal mesh from the implicit surface, e.g., with the Marching Cubes algorithm (Lorensen and Cline, 1987) and its extensions (de Araújo et al., 2015), computing its interpolated contours (Section 6.2), and projecting those onto the implicit surface after view-dependent subdivi sion (Schmidt et al., 2007) (Figure 8.4). Since the implicit function \(f\) is defined everywhere in \(\mathbb{R}^{3}\), the projection of a point \(\mathbf{p}\) on the implicit surface \(f(\mathbf{p})=\rho\) can be computed by walking along the gradient of \(f\), updating \(\mathbf{p}\) with the following convergence iteration:
+A even simpler, but very approximate, approach consists in first extracting a polygonal mesh from the implicit surface, e.g., with the Marching Cubes algorithm (Lorensen and Cline, 1987) and its extensions (de Araújo et al., 2015), computing its interpolated contours (Section 6.2), and projecting those onto the implicit surface after view-dependent subdivision (Schmidt et al., 2007) (Figure 8.4). Since the implicit function f is defined everywhere in \(R_{3}\), the projection of a point p on the implicit surface f (p) = r can be computed by walking along the gradient of f, updating p with the following convergence iteration:
 
-\mathbf{p} \leftarrow \mathbf{p}+\frac{(f(\mathbf{p})-\rho) \nabla f(\mathbf{p})}{\|\nabla f(\mathbf{p})\|} .
-
-This scheme is a form of gradient descent on \((f(\mathbf{p})-\rho)^{2}\). It usually leads to the iso value after a few iterations if \(f\) is smooth enough, though it may get stuck when there are discontinuities.
+This scheme is a form of gradient descent on (f (p) -r) 2. It usually leads to the isovalue after a few iterations if f is smooth enough, though it may get stuck when there are discontinuities.
 
 ### 8.3 Visibility
 
 As with mesh contours, two families of approaches can be used to determine the visibility of the extracted contour generators. The first one is based on ray-casting and thus more accurate but only suitable for offline computation. The second one uses the depth buffer algorithm and is well suited for real-time applications, even though the implicit nature of the surface makes the creation of the depth buffer more complex.
 
-Ray-casting and propagation. The simplest, but most time-consuming, method consists in testing the visibility of every point \(\mathbf{p}_{i}\) on the discretized occluding contour by casting a ray from the camera towards \(\mathbf{p}_{i}\) and performing a ray-surface intersection test. Due to numerical issues, \(\mathbf{p}_{i}\) may not exactly lie on the implicit surface; therefore it may be locally occluded by the surface leading to a spurious ray intersection. To mitigate this problem, Bremer and Hughes (1998) discard surface intersections that are too close to \(\mathbf{p}_{i}\) which, in turn, may reveal contours that are barely obscured by nearby pieces of surface.
+Ray-casting and propagation. The simplest, but most time-consuming, method consists in testing the visibility of every point p i on the discretized occluding contour by casting a ray from the camera towards p i and performing a ray-surface intersection test. Due to numerical issues, p i may not exactly lie on the implicit surface; therefore it may be locally occluded by the surface leading to a spurious ray intersection. To mitigate this problem, Bremer and Hughes (1998) discard surface intersections that are too close to p i which, in turn, may reveal contours that are barely obscured by nearby pieces of surface.
 
-To reduce the number of ray tests, one can first check every \(n^{\text {th }}\) point for occlusion, and then refine by testing the intermediate points when the visibility changes between \(\mathbf{p}_{i}\) and \(\mathbf{p}_{i+n-1}\) (Bremer and Hughes, 1998; Foster et al., 2005). To reduce the number of tests even further, a view graph can be built and the visibility information can be propagated along the contour chains (Section 4.1). However the propagation rules slightly differ from those for polygonal meshes since implicit surfaces are closed by construction. To reduce the number of ray-tests further, Stroila et al. (2008) describe methods to propagate Quantitative Invisibility (Section 4.6) on contours of implicit surfaces.
+To reduce the number of ray tests, one can first check every n th point for occlusion, and then refine by testing the intermediate points when the visibility changes between p i and p i + n-1 (Bremer and Hughes, 1998; Foster et al., 2005). To reduce the number of tests even further, a view graph can be built and the visibility information can be propagated along the contour chains (Section 4.1). However the propagation rules slightly differ from those for polygonal meshes since implicit surfaces are closed by construction. To reduce the number of ray-tests further, Stroila et al. (2008) describe methods to propagate Quantitative Invisibility (Section 4.6) on contours of implicit surfaces.
 
 Depth buffer. The alternative solution is to render the 3D scene into a depth buffer, and then to use this buffer to determine the visibility of the apparent contour. Besides the problems mentioned in Section 5.3.1, an additional difficulty of such an approach is that, unlike polygonal meshes, implicit surfaces cannot be rasterized directly. One could again extract a polygonal mesh from the implicit surface, but a highly refined tessellation is required to avoid visual artifacts-otherwise the mesh contours will largely disagree with the smooth contours-which is computationally expensive.
 
@@ -1162,11 +1036,7 @@ On deforming surfaces, dynamically recomputing such particle distribution is too
 
 Volumetric data can be seen as a special case of implicit surfaces, one where the implicit function f is discretized on a regular 3D grid (voxel grid) into density values:
 
-$$
-\begin{equation*} v_{i j k}=f\left(\mathbf{p}_{i j k}\right)=f\left(x_{i}, y_{j}, z_{k}\right) \tag{8.2} \end{equation*}
-$$
-
-![Figure 8.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-5-p079.png)
+![Figure 8.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-5-p079.png)
 
 *Figure 8.5: Marching line algorithm — The intersections of the isosurface (left) and contour surface (center) with each face of every voxel are ﬁrst computed. The resulting segments are intersecting on the faces at contour points (right). first computed. The resulting segments are intersecting on the faces at contour points (right).*
 
@@ -1176,11 +1046,7 @@ There are two general approaches to contour visualization. The first entails def
 
 #### 8.4.1 Isosurface extraction
 
-To compute the contours corresponding to a given iso-value \(\rho\), we could first extract the corresponding iso-surface \(f\left(\mathbf{p}_{i j_{k}}\right)=\rho\) with, e.g., the Marching Cubes algorithm (Lorensen and Cline, 1987), compute its normals as \(\mathbf{n}=\nabla f\), and extract the surface Interpolated
-
-$$
-\left\{\begin{array}{c} f\left(\mathbf{p}_{i j k}\right)-\rho=0 \\ \nabla f\left(\mathbf{p}_{i j k}\right) \cdot \mathbf{v}=0 \end{array}\right.
-$$
+To compute the contours corresponding to a given iso-value r, we could first extract the corresponding iso-surface f (p i jk) = r with, e.g., the Marching Cubes algorithm (Lorensen and Cline, 1987), compute its normals as n = f, and extract the surface Interpolated Contours (Section 6.2). However, as discussed previously for implicit surfaces, occluding contours can be seen as the zero-set of two implicit functions:
 
 or, geometrically, as the intersection of two implicit surfaces.
 
@@ -1189,29 +1055,21 @@ The simplest solution to extract a piecewise linear approximation of the interse
 Burns et al., 2005). For each voxel, this method first computes the line segments at the intersection of both functions with the voxel faces, using linear interpolation of the density and gradient values at the voxel corners (Figure 8.5, left and center). It then finds the intersection points between these two set of lines on each face. These contour points are eventually connected to produce contour chains (Figure 8.5, right).
 ```
 
-The piecewise linear approximation of both the implicit functions and their intersection might be too crude. Assuming that the input scalar field is smooth enough, Schein and Elber (2004) use trivariate B-spline functions to model the volumetric data. The scalar values are used as control points of a trivariate tensor product B-spline function \(D: \mathbb{R}^{3} \rightarrow \mathbb{R}\) :
+The piecewise linear approximation of both the implicit functions and their intersection might be too crude. Assuming that the input scalar field is smooth enough, Schein and Elber (2004) use trivariate B-spline functions to model the volumetric data. The scalar values are used as control points of a trivariate tensor product B-spline function D : \(R_{3}\) → R :
 
-$$
-D(u, v, w)=\sum_{i} \sum_{j} \sum_{k} f\left(\mathbf{p}_{i j k}\right) N_{i}^{d}(u) N_{j}^{d}(v) N_{k}^{d}(w),
-$$
+where N d i (u), N d j (v) and N d k (u) are the B-spline basis functions of degree d that controls the smoothness of the representation. Extracting the contour then boils down to resolve the following system of equations:
 
-where \(N_{i}^{d}(u), N_{j}^{d}(v)\) and \(N_{k}^{d}(u)\) are the B-spline basis functions of degree \(d\) that controls the smoothness of the representation. Extracting the contour then boils down to resolve the following system of equations:
+The multidimensional Newton-Raphson solver of Elber and Kim (2001) can be used to solve this system to a desired accuracy starting from a dense set of seed points. If quadratic or higher basis functions are used, the gradient field of the trivariate B-spline function D is continuous, and thus the contours are smooth and continuous. In addition, since the solver can refine the data at any parametric location (u, v, w) and not just discrete grid points, the contour approximation is better adapted to the input data. However, with this method, the connectivity of the extracted contour points cannot be trivially inferred for the voxel grid anymore, limiting the rendering and stylization possibilities.
 
-$$
-\left\{\begin{array}{l} D-\rho=0 \\ \nabla D \cdot \mathbf{v}=0 \end{array}\right.
-$$
-
-The multidimensional Newton-Raphson solver of Elber and Kim (2001) can be used to solve this system to a desired accuracy starting from a dense set of seed points. If quadratic or higher basis functions are used, the gradient field of the trivariate B-spline function \(\nabla D\) is continuous, and thus the contours are smooth and continuous. In addition, since the solver can refine the data at any parametric location ( \(u, v, w\) ) and not just discrete grid points, the contour approximation is better adapted to the input data. However, with this method, the connectivity of the extracted contour points cannot be trivially inferred for the voxel grid anymore, limiting the rendering and stylization possibilities.
-
-Acceleration strategies. A naive implementation of the two previous approaches would have an \(O\left(n^{3}\right)\) complexity for a dataset of size \(n \times n \times n\) voxels. In practice, a typical isosurface will have surface area \(O\left(n^{2}\right)\) and thus its contour will have size \(O(n)\) edges (Section 3.6).
+Acceleration strategies. A naive implementation of the two previous approaches would have an \(O(n3)\) complexity for a dataset of size n × n × n voxels. In practice, a typical isosurface will have surface area \(O(n2)\) and thus its contour will have size \(O(n)\) edges (Section 3.6).
 
 To speed-up contour extraction in volumes, strategies similar to those used for mesh contours can be employed.
 
 Burns et al. (2005) adapt randomized search with temporal coherence (Section 3.7.3). They first test random voxels until a contour is found. Then, they move to the voxel adjacent to the face containing one of the intersection points and repeat until the initial voxel is reached, forming a contour loop. The random sampling strategy to find a starting voxel can be further improved by leveraging temporal coherence, i.e., searching nearby contourcontaining voxels from the previous frame, and by gradient descent, alternatively walking along the gradient of the isosurface and contour functions until a new contour-containing voxel is found.
 
-An acceleration data-structure can be built during a preprocessing step. Elber and Kim (2001) construct a 2D lookup table whose first dimension corresponds to isovalue ranges and second dimension corresponds to bounding cones covering the unit sphere. The trivariate B-spline function \(D\) is then clustered into "singletons" based on its isovalue and gradient, and stored them in the table. At runtime, given a view direction \(\mathbf{v}\) and isovalue \(\rho\), only the
+An acceleration data-structure can be built during a preprocessing step. Elber and Kim (2001) construct a 2D lookup table whose first dimension corresponds to isovalue ranges and second dimension corresponds to bounding cones covering the unit sphere. The trivariate B-spline function D is then clustered into 'singletons' based on its isovalue and gradient, and stored them in the table. At runtime, given a view direction v and isovalue r, only the
 
-![Figure 8.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-6-p081.png)
+![Figure 8.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-6-p081.png)
 
 *Figure 8.6: Direct volume rendering (Ikits et al., 2004) — The density value f of each voxel p i jk is mapped through a transfer function (top) into a color c and an opacity α ; those are then accumulated along each view ray to produce an image of the data. a ; those are then accumulated along each view ray to produce an image of the data.*
 
@@ -1223,25 +1081,13 @@ visibility. Finally, the visibility of the contour can be computed with respect 
 
 In this approach, we use conventional volume rendering, and modify the transfer function to visualize contours.
 
-In conventional volume visualization (Kaufman and Mueller, 2005), the initial density value \(v_{i j_{k}}=f\left(\mathbf{p}_{i j_{k}}\right)\) of each voxel \(\mathbf{p}_{i j_{k}}\) of the discrete volume is first mapped through a transfer function into a color value \(c_{i j_{k}}\) and an opacity \(\alpha_{i j_{k}}\). Rays are then cast from each pixel of the camera, along which colors and opacities are regularly sampled with appropriate interpolation (often tri-linear) in the voxel grid. Those samples are eventually composited in front-to-back order to yield a single color per pixel. For shading computation, a normal at each voxel is computed as the normalized gradient of \(f\), which is usually approximated with
+In conventional volume visualization (Kaufman and Mueller, 2005), the initial density value vi jk = f (p i jk) of each voxel p i jk of the discrete volume is first mapped through a transfer function into a color value ci jk and an opacity a i jk. Rays are then cast from each pixel of the camera, along which colors and opacities are regularly sampled with appropriate interpolation (often tri-linear) in the voxel grid. Those samples are eventually composited in front-to-back order to yield a single color per pixel. For shading computation, a normal at each voxel is computed as the normalized gradient of f, which is usually approximated with although more advanced gradient estimation operators have been proposed (Lichtenbelt et al., 1998). This approach is called the 'pre-classified model' since voxel densities are mapped to colors and opacities prior to interpolation. An alternative solution is the 'postclassified model' that interpolates the voxel densities before mapping the resulting values to colors and opacities, and thus tends to produce sharper results.
 
-$$
-\nabla f\left(\mathbf{p}_{i j k}\right)=\nabla f\left(x_{i}, y_{j}, z_{k}\right) \approx \frac{1}{2}\left[\begin{array}{l} f\left(x_{i+1}, y_{j}, z_{k}\right)-f\left(x_{i-1}, y_{j}, z_{k}\right) \\ f\left(x_{i}, y_{j+1}, z_{k}\right)-f\left(x_{i}, y_{j-1}, z_{k}\right) \\ f\left(x_{i}, y_{j}, z_{k+1}\right)-f\left(x_{i}, y_{j}, z_{k-1}\right) \end{array}\right],
-$$
+To enhance occluding contours, we can increase the opacity of voxels whose gradient is near perpendicular to the view direction v. Given input opacity a i jk, Ebert and Rheingans (2000) suggest using the following opacity transfer function:
 
-although more advanced gradient estimation operators have been proposed (Lichtenbelt et al., 1998). This approach is called the 'pre-classified model' since voxel densities are mapped to colors and opacities prior to interpolation. An alternative solution is the 'postclassified model' that interpolates the voxel densities before mapping the resulting values to colors and opacities, and thus tends to produce sharper results.
-
-To enhance occluding contours, we can increase the opacity of voxels whose gradient is near perpendicular to the view direction \(\mathbf{v}\). Given input opacity \(\alpha_{i j_{k}}\), Ebert and Rheingans (2000) suggest using the following opacity transfer function:
-
-\alpha_{i j k}^{\prime}=\alpha_{i j k}\left(k_{s c}+k_{s s}\left(1-\left|\nabla f\left(\mathbf{p}_{i j k}\right) \cdot \mathbf{v}\right|^{k_{s e}}\right)\right.
-
-where \(k_{s c}\) controls the scaling of non-contour regions, \(k_{s_{s}}\) controls the amount of contour enhancement, and \(k_{s e}\) controls the sharpness of the contour "curve".
+where ksc controls the scaling of non-contour regions, kss controls the amount of contour enhancement, and kse controls the sharpness of the contour 'curve'.
 
 When one wishes to only visualize data variations and ignore scalar values, voxel color can directly be defined based on the gradient magnitude. For instance, Csébfalvi et al. (2001) propose the following color transfer function:
-
-$$
-c_{i j k}=w\left(\left|\nabla f\left(\mathbf{p}_{i j k}\right)\right|\right)\left(1-\left|\nabla f\left(\mathbf{p}_{i j k}\right) \cdot \mathbf{v}\right|\right)^{k_{s e}}
-$$
 
 with w a windowing function selecting the range of interest in the gradients. Opacity modulations can also be computed with the same transfer function and combined with colors with standard front-to-back compositing (Figure 8.7a).
 
@@ -1253,55 +1099,35 @@ Graphics hardware acceleration. The above methods involve expensive ray marching
 
 - (b) Computer mouse visualized with the interactive technique of Lum and Ma (2002).
 
-![Figure 8.7](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-7-p083.png)
+![Figure 8.7](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-7-p083.png)
 
 *Figure 8.7: Contour enhanced direct volume rendering.*
 
-![Figure 8.8](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-8-p083.png)
+![Figure 8.8](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-8-p083.png)
 
 *Figure 8.8: Contour thickness variations in volume rendering — From left to right, apparent contours based solely on v · n, with controlled thickness using T = 1 and T = 2. 5. Images rendered with “miter” courtesy of Gordon Kindlmann, more information at http://www.sci.utah.edu/ ~gk/vis03/ .*
 
-Line thickness control. In the above methods, the thickness of the apparent contour varies in image-space (Figure 8.8 left). These thickness variations are related to the radial curvature \(\kappa_{r}\) of the selected iso-surfaces. For a given threshold on \(|\mathbf{n} \cdot \mathbf{v}|\), the resulting contour is thicker on areas of low radial curvatures since the normal is nearly perpendicular to the view direction in this large, almost flat region. Conversely, in areas of high curvature, the normal quickly changes resulting on a very thin contour.
+Line thickness control. In the above methods, the thickness of the apparent contour varies in image-space (Figure 8.8 left). These thickness variations are related to the radial curvature k r of the selected iso-surfaces. For a given threshold on | n · v | , the resulting contour is thicker on areas of low radial curvatures since the normal is nearly perpendicular to the view direction in this large, almost flat region. Conversely, in areas of high curvature, the normal quickly changes resulting on a very thin contour.
 
-To solve this problem, Kindlmann et al. (2003) derive a 2D transfer function that takes the radial curvature \(\kappa_{r}\) into account and guarantees that the apparent contour will approximately have a constant, controllable thickness \(T\) in image-space (Figure 8.8 right).
+To solve this problem, Kindlmann et al. (2003) derive a 2D transfer function that takes the radial curvature k r into account and guarantees that the apparent contour will approximately have a constant, controllable thickness T in image-space (Figure 8.8 right).
 
 To use this transfer function, we need to accurately estimate the curvature in the voxel grid and thus the Hessian of the 3D scalar field. Simply computing finite differences over the previously estimated normals would provide a very crude approximation. Instead, Kindlmann et al. (2003) use axis-aligned 1D continuous convolution filters for zero-, firstand second-derivative estimation. They show that the cubic B-spline and its derivatives provide a good tradeoff between accuracy and robustness to the noise.
 
 #### 8.4.3 Particle distribution
 
-The particle-based implicit surface visualization technique of Foster et al. (2005) can also be adapted to volumes (Busking et al., 2008). During a pre-process, particles are distributed on a given isosurface by sampling the volume data with linear interpolation on a user-defined grid and applying some relaxation steps (Meyer et al., 2005). At runtime, particles whose normal is almost orthogonal to the view direction are selected for rendering. From each of those, a short line segment is traced in a direction locally parallel to the contour. A linear approximation of this direction can be computed as follows. In the local coordinate system formed by the two principal directions \(\mathbf{e}_{1}\) and \(\mathbf{e}_{2}\) and the the normal \(\mathbf{n}\), the behavior of the normal can be linearly approximated by:
+The particle-based implicit surface visualization technique of Foster et al. (2005) can also be adapted to volumes (Busking et al., 2008). During a pre-process, particles are distributed on a given isosurface by sampling the volume data with linear interpolation on a user-defined grid and applying some relaxation steps (Meyer et al., 2005). At runtime, particles whose normal is almost orthogonal to the view direction are selected for rendering. From each of those, a short line segment is traced in a direction locally parallel to the contour. A linear approximation of this direction can be computed as follows. In the local coordinate system formed by the two principal directions e 1 and e 2 and the the normal n, the behavior of the normal can be linearly approximated by:
 
-$$
-\tilde{\mathbf{n}}(u, v)=\left(-\kappa_{1} u,-\kappa_{2} v, 1\right)^{\top}
-$$
-
-with \(\kappa_{1}\) and \(\kappa_{2}\) the principal curvatures in the corresponding principal directions. The view vector expressed in the same coordinate frame is:
-
-$$
-\tilde{\mathbf{v}}=\left(\mathbf{e}_{1} \cdot \mathbf{v}, \mathbf{e}_{2} \cdot \mathbf{v}, \mathbf{n} \cdot \mathbf{v}\right)^{\top}
-$$
+with k 1 and k 2 the principal curvatures in the corresponding principal directions. The view vector expressed in the same coordinate frame is:
 
 The contour lime in this frame can thus be defined as the set of parametric locations (u, v) such as:
 
-$$
-\tilde{\mathbf{v}} \cdot \tilde{\mathbf{n}}(u, v)=0 \Leftrightarrow-\kappa_{1}\left(\mathbf{e}_{1} \cdot \mathbf{v}\right) u-\kappa_{2}\left(\mathbf{e}_{2} \cdot \mathbf{v}\right) v+\mathbf{n} \cdot \mathbf{v}=0
-$$
-
 from which a parallel direction in world space can be derived:
-
-$$
-\mathbf{d}=-\kappa_{2}\left(\mathbf{e}_{2} \cdot \mathbf{v}\right) \mathbf{e}_{1}+\kappa_{1}\left(\mathbf{e}_{\mathbf{1}} \cdot \mathbf{v}\right) \mathbf{e}_{2}
-$$
 
 In addition, to avoid thickness variations of the apparent contour (Figure 8.9), Busking et al. (2008) use a thresholding function that depends on the image-space distance T of the particle to the contour line approximation, i.e., assuming orthogonal projection:
 
-$$
-T=\frac{(\mathbf{n} \cdot \mathbf{v})^{2}}{\sqrt{\left(\kappa_{1}\left(\mathbf{e}_{\mathbf{1}} \cdot \mathbf{v}\right)\right)^{2}+\left(\kappa_{2}\left(\mathbf{e}_{\mathbf{2}} \cdot \mathbf{v}\right)\right)^{2}}}
-$$
-
 Since principal curvature information is view-independent, it can be pre-computed for all particles.
 
-![Figure 8.9](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-8-9-p085.png)
+![Figure 8.9](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-8-9-p085.png)
 
 *Figure 8.9: Bonsai dataset (256 3 voxels) — Contours extracted with the marching line method of Burns et al. (2005) (a) and the particle system of Busking et al. (2008) without (b) and with (c) thickness control. Volumetric dataset courtesy of Stefan Roettger (2012).*
 
@@ -1315,7 +1141,7 @@ Together with the strokes, we usually wish to draw the model with shading or tex
 
 Finally, when rendering these models in animation, we often want to render strokes with coherent stylization over time. We survey coherent stylization in Section 9.5.
 
-![Figure 9.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-1-p086.png)
+![Figure 9.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-1-p086.png)
 
 *Figure 9.1: Stylized contour rendering pipeline — Starting from a 3D geometry, the contour line segments are ﬁrst extracted. Their visibility is then computed by building their View Graph; here the visible chains are shown, each with a separate color. Topological simpliﬁcation can be optionally applied for legibility or artistic purposes. Finally, each chain of the View Graph is rendered with stylized strokes. Images generated with Blender Freestyle. first extracted. Their visibility is then computed by building their View Graph; here the visible chains are shown, each with a separate color. Topological simplification can be optionally applied for legibility or artistic purposes. Finally, each chain of the View Graph is rendered with stylized strokes. Images generated with Blender Freestyle.*
 
@@ -1333,7 +1159,7 @@ The above process is repeated until all visible line segments have been added to
 
 Depending on the rendering style, we may wish to use different chaining rules. For example, a style that renders a single thick silhouette around the entire object would extract a silhouette chain that follows the image-space object boundary. To do this, at each singularity, the chain follows whichever outgoing edge is on the silhouette. Determining whether a mesh edge is a silhouette edge could be determined with a ray test. Sousa and Prusinkiewicz (2003) explored other chaining strategies, and Grabli et al. (2010) allow the user to programmatically define how edges should be chained together. With this approach,
 
-![Figure 9.2](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-2-p088.png)
+![Figure 9.2](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-2-p088.png)
 
 *Figure 9.2: Segment chaining at junctions — (a) At a T-junction, a foreground chain continues through the junction, whereas a background chains stops. (b) At a Y-junction, a silhouette chain crosses the junction, whereas a boundary chain stops.*
 
@@ -1346,20 +1172,16 @@ The topology of the View Graph also must be taken into account when smoothing cu
 ### 9.2 Stroke rendering
 
 ```text
-Once smooth strokes have been computed, they can be rendered. Strokes are typically parameterized with a skeletal stroke representation (Hsu and Lee, 1994). Skeletal strokes describe a parameterization of the region around the stroke. As illustrated in Figure 9.3, for each 2D vertex \( \mathbf{v}_{i} \) of the stroke path, a "rib" vector \( \mathbf{r}_{i} \) is constructed orthogonally to the direction defined by its previous \( \mathbf{v}_{i-1} \) and next \( \mathbf{v}_{i+1} \) vertices (if they exist):
+Once smooth strokes have been computed, they can be rendered. Strokes are typically parameterized with a skeletal stroke representation (Hsu and Lee, 1994). Skeletal strokes describe a parameterization of the region around the stroke. As illustrated in Figure 9.3, for each 2D vertex v i of the stroke path, a 'rib' vector r i is constructed orthogonally to the direction defined by its previous v i -1 and next v i + 1 vertices (if they exist):
 ```
 
-$$
-\mathbf{r}_{i}=w_{i}\left[\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right] \frac{\mathbf{v}_{i+1}-\mathbf{v}_{i-1}}{\left\|\mathbf{v}_{i+1}-\mathbf{v}_{i-1}\right\|},
-$$
+scaled by the half thickness of the stroke wi. Special treatments are required at places where the radius of curvature of the strokes is smaller than its half thickness, otherwise the ribs will cross each other producing folds, which is especially problematic at sharp corners since
 
-scaled by the half thickness of the stroke \(w_{i}\). Special treatments are required at places where the radius of curvature of the strokes is smaller than its half thickness, otherwise the ribs will cross each other producing folds, which is especially problematic at sharp corners since
-
-![Figure 9.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-3-p089.png)
+![Figure 9.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-3-p089.png)
 
 *Figure 9.3: Skeletal stroke — For each vertex v i of the stroke path, a rib vector r i is generated along the angle bisector to give breadth to the stroke (left). The skeletal stroke can then be rendered as a triangle strip (right).*
 
-![Figure 9.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-4-p089.png)
+![Figure 9.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-4-p089.png)
 
 *Figure 9.4: Stroke style — Various stroke styles applied to the contours of Figure 7.6b using Blender Freestyle. From left to right, top to bottom: calligraphy, sketchy overdraw, textured scribbles and guiding lines.*
 
@@ -1387,11 +1209,11 @@ In particular, we proposed the following topological simplifications (Figure 9.5
 
 Controlling image-based density. An artist drawing a small or distant object would draw only a few of its curves. However, directly computing all curves on a detailed surface from far away produces an overly-dense set of curves. Wilson and Ma (2004) propose a first method to omit excess curves from a drawing, based on the density of strokes in image space. Grabli et al. (2004) further distinguish between two kinds of line density measures: an a priori density and a casual density. The former estimates, at a given scale and for a given direction, the geometric complexity of the line drawing that would be created if all visible
 
-![Figure 9.5](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-5-p092.png)
+![Figure 9.5](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-5-p092.png)
 
 *Figure 9.5: Topological simpliﬁcation (Bénard et al., 2014) — Four cases are considered for simpliﬁcation (candidate chain depicted in grey): (a) junction to dead-end connection; (b) dead-end to dead-end connection; (c) small closed loop; (d) small overlapping pieces of curve between two junctions. Topological simplification (Bénard et al., 2014) - Four cases are considered for simplification (candidate chain depicted in grey): (a) junction to dead-end connection; (b) dead-end to dead-end connection; (c) small closed loop; (d) small overlapping pieces of curve between two junctions.*
 
-![Figure 9.6](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-6-p092.png)
+![Figure 9.6](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-6-p092.png)
 
 *Figure 9.6: Result of topological simpliﬁcation on Red (Bénard et al., 2014) — Closeup on Red’s shoulder and armpit, with genuine cusps, (a) before and (b) after topological simpliﬁcation. “Red” © Disney/Pixar Result of topological simplification on Red (Bénard et al., 2014) - Closeup on Red's shoulder and armpit, with genuine cusps, (a) before and (b) after topological simplification. 'Red' Disney Pixar*
 
@@ -1407,9 +1229,9 @@ In addition to line drawing, we usually wish to shade or texture the object. A t
 
 Once a shaded image has been rendered from the 3D scene, any of the methods in the book of Rosin and Collomosse (2013) may be applied as post-processes to stylize images as well. Nevertheless, more dedicated shading primitives will allow to produce more stylized results.
 
-Toon shading. A simple and popular shading algorithm is "toon shading". In toon shading, the shading is simply a function of the view vector and light direction: \(\mathbf{n} \cdot\) l. In its simplest form, the user specifies two colors: a light color and a dark color. For shading, points where the dot product is below a threshold get rendered with the dark color; other points get rendered with the light color (Figure 1.1b). This generalizes contour rendering, which discretizes \(\mathbf{n} \cdot \mathbf{v}\) into black at the contour and white everywhere else.
+Toon shading. Asimple and popular shading algorithm is 'toon shading'. In toon shading, the shading is simply a function of the view vector and light direction: n · l. In its simplest form, the user specifies two colors: a light color and a dark color. For shading, points where the dot product is below a threshold get rendered with the dark color; other points get rendered with the light color (Figure 1.1b). This generalizes contour rendering, which discretizes n · v into black at the contour and white everywhere else.
 
-Several generalizations of toon shading have been developed, typically mapping \(\mathbf{n}\) to color with a more complex function, e.g., (Lake et al., 2000; Sloan et al., 2001; Gooch, 1998; Barla et al., 2006; Mitchell et al., 2007; Eisemann et al., 2008; Vanderhaeghe et al., 2011).
+Several generalizations of toon shading have been developed, typically mapping n to color with a more complex function, e.g., (Lake et al., 2000; Sloan et al., 2001; Gooch, 1998; Barla et al., 2006; Mitchell et al., 2007; Eisemann et al., 2008; Vanderhaeghe et al., 2011).
 
 Hatching and texturing. Surface hatching (Figure 1.6) often involves drawing hatching curves (Winkenbach and Salesin, 1994, 1996; Hertzmann and Zorin, 2000; Singh and Schaefer, 2010; Kalogerakis et al., 2012; Gerl and Isenberg, 2013). These are curves on the surface, and their visibility is computed together with the other curves, using the algorithms described in this tutorial.
 
@@ -1421,7 +1243,7 @@ Two methods for stylizing objects and animations by example using the Image Anal
 
 To produce an animated line drawing, one can simply extract and stylize the contours at every frame independently. However, as first noted by Masuch et al. (1997), the coherence between frames largely depends on the chosen stroke style. A 'calm' style with only small
 
-![Figure 9.7](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-7-p094.png)
+![Figure 9.7](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-7-p094.png)
 
 *Figure 9.7: 2D curve tracking by active contours (Bénard et al., 2012) — The contour curves extracted from a galloping horse are tracked by active contours (left) ensuring a coherent parameterization of the strokes (right) during the animation.*
 
@@ -1431,19 +1253,19 @@ deviations from the base path leads to a rather smooth animation, whereas a 'wil
 
 The curve tracking method of Bénard et al. (2012) lifts this limitation. It uses active contours (a.k.a. snakes) that automatically update their position, arrangement and topology to match the contour animation (Figure 9.7). However, based on heuristics, this method cannot guarantee that the strokes are faithfully depicting the contours, especially at junctions.
 
-Since matching full curves would be impractical due to topological changes, they seek to find a mapping between the vertices of the strokes in frame \(f_{i}\) and \(f_{i+1}\) (Figure 9.8). This mapping aims at minimizing the distance between matched vertices, after moving the points in \(f_{i}\) to \(f_{i+1}\) according to the animation motion field. The mapping should also maximize the number of matched vertices, favor one-to-one matches, and maintain the spatial ordering of the vertices on the strokes as much as possible. These objectives can be expressed as a constrained optimization problem on a bipartite graph whose nodes on
+Since matching full curves would be impractical due to topological changes, they seek to find a mapping between the vertices of the strokes in frame f i and f i + 1 (Figure 9.8). This mapping aims at minimizing the distance between matched vertices, after moving the points in f i to f i + 1 according to the animation motion field. The mapping should also maximize the number of matched vertices, favor one-to-one matches, and maintain the spatial ordering of the vertices on the strokes as much as possible. These objectives can be expressed as a constrained optimization problem on a bipartite graph whose nodes on
 
-![Figure 9.8](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-8-p095.png)
+![Figure 9.8](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-8-p095.png)
 
 *Figure 9.8: 2D curve matching (Ben-Zvi et al., 2015) — Starting from the strokes at frame f i in blue and f i + 1 in red (a), point correspondences are computed (b) by a constrained optimization, from which consistent sub-strokes can be extracted (c).*
 
-![Figure 9.9](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-9-9-p095.png)
+![Figure 9.9](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-9-9-p095.png)
 
 *Figure 9.9: Parameterization propagation (Kalnins et al., 2003) — The strokes at frame f i (b) are sampled uniformly along their arc-length (c) and propagated by reprojection in the new camera (d) and local search in image-space (e). Coherently parameterized strokes are created by potentially splitting new contour curves and ﬁtting a continuous function to the samples balancing uniformity in 2D with coherence in 3D (f). fitting a continuous function to the samples balancing uniformity in 2D with coherence in 3D (f).*
 
 each side of the graph are the vertices in each frame and whose edges connect any pair of vertices from different frames. Coherent sub-strokes are eventually constructed from these point-wise correspondences by splitting inconsistent curves (Figure 9.8c). A major drawback of this method is the computation cost of the point-matching algorithm which does not scale well with the number of curves.
 
-Parameterization propagation. Another solution to these topological issues is to prop agate the parameterization of the strokes instead of their geometry. Building upon the work of Bourdev (1998), this is the key idea of Kalnins et al. (2003). They sample the parametrization of the strokes at frame \(f_{i}\) uniformly along their arc-length (Figure 9.9c), and reproject those samples in the camera of the next frame \(f_{i+1}\) following the 3D animation to approximate the contour motion (Figure 9.9d). Then, they locally search in image-space the location of the closest contour paths in the new view (Figure 9.9e). Samples from different brushes of frame \(f_{i}\) may end up on the same contour path in frame \(f_{i+1}\). In such a case, the contour path needs to be split into multiple strokes with consistent parameterization samples. Eventually, each stroke parameterization is computed by optimizing an energy function that balances the competing goals of uniform image-space arc-length parameter ization and coherence on the object surface. This method ensures a temporally coherent parameterization for contours with simple topology at interactive framerates. However, since more complex objects, such as the Stanford Bunny, generate contours made of many tiny fragments, topological simplification (Section 9.3) needs to be applied first, otherwise the strokes may get increasingly fragmented over time.
+Parameterization propagation. Another solution to these topological issues is to propagate the parameterization of the strokes instead of their geometry. Building upon the work of Bourdev (1998), this is the key idea of Kalnins et al. (2003). They sample the parametrization of the strokes at frame f i uniformly along their arc-length (Figure 9.9c), and reproject those samples in the camera of the next frame f i + 1 following the 3D animation to approximate the contour motion (Figure 9.9d). Then, they locally search in image-space the location of the closest contour paths in the new view (Figure 9.9e). Samples from different brushes of frame f i may end up on the same contour path in frame f i + 1. In such a case, the contour path needs to be split into multiple strokes with consistent parameterization samples. Eventually, each stroke parameterization is computed by optimizing an energy function that balances the competing goals of uniform image-space arc-length parameterization and coherence on the object surface. This method ensures a temporally coherent parameterization for contours with simple topology at interactive framerates. However, since more complex objects, such as the Stanford Bunny, generate contours made of many tiny fragments, topological simplification (Section 9.3) needs to be applied first, otherwise the strokes may get increasingly fragmented over time.
 
 Space-time parameterization. The above methods consider only two animation frames at a time. Buchholz et al. (2011) proposed considering the entire animation as a whole, building a space-time parameterization of the strokes over time (Figure 9.10). To do so, they build the space-time surface swept by the contours over time, taking into account merging and splitting events. This allows minimizing distortions and 'popping' artifacts over the whole sequence, rather than greedily processing each frame one-at-a-time. This comes however at the price of expensive computations (up to several minutes for few seconds of animation).
 
@@ -1485,75 +1307,51 @@ This chapter presents the fundamentals of differential geometry that are useful 
 
 ### A.1 Geometry of surfaces
 
-The geometry of a 3D surface can be described using a map \(f: M \subset \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}\) from a region \(M\) in the Euclidean plane \(\mathbb{R}^{2}\) to a subset \(f(M)\) of \(\mathbb{R}^{3}\). It is called a parametric surface if \(f\) is \(\mathbf{n} \cdot \mathbf{t}=0\), where \(\cdot\) is the canonical Euclidean dot product on \(\mathbb{R}^{3}\). Since the tangent plane at \(\mathbf{p}\) can be defined as a linear combination of the partial derivatives of the immersion \(f\), the unit surface normal \(\mathbf{n}\) at \(\mathbf{p}\) is defined as:
+The geometry of a 3D surface can be described using a map f : M ⊂ \(R_{2}\) → \(R_{3}\) from a region M in the Euclidean plane \(R_{2}\) to a subset f (M) of \(R_{3}\). It is called a parametric surface if f is an immersion, that is its partial derivatives ¶ f ¶ u and ¶ f ¶ v are injective at each point of M. In this case, f defines an immersed surface ; a surface where, for every point u of M, a definite 2-dimensional tangent plane is associated at p = f (u), or, simply, p (u) (Figure A.1).
 
-![Figure A.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
+Since the tangent plane at p can be defined as a linear combination of the partial derivatives of the immersion f, the unit surface normal n at p is defined as:
+
+![Figure A.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
 
 *Figure A.4: Surface categorization based on Gaussian curvature.*
 
-$$
-\mathbf{n}(\mathbf{u})=\frac{\left.\frac{\partial f}{\partial u}\right|_{\mathbf{x}=\mathbf{u}} \times\left.\frac{\partial f}{\partial v}\right|_{\mathbf{x}=\mathbf{u}}}{\left\|\left.\frac{\partial f}{\partial u}\right|_{\mathbf{x}=\mathbf{u}} \times\left.\frac{\partial f}{\partial v}\right|_{\mathbf{x}=\mathbf{u}}\right\|}
-$$
-
-Note that interchanging the two partial derivatives takes \(\mathbf{n}\) to \(-\mathbf{n}\). If we can choose a consistent direction for \(\mathbf{n}\) for all points \(\mathbf{p}, M\) is orientable. For orientable surfaces, \(\mathbf{n}\) can be seen as a continuous map, called the Gauss map, which associates each point of \(M\) with its unit normal, viewed as a point on the unit sphere \(S^{2}\).
+Note that interchanging the two partial derivatives takes n to-n. If we can choose a consistent direction for n for all points p, M is orientable. For orientable surfaces, n can be seen as a continuous map, called the Gauss map, which associates each point of M with its unit normal, viewed as a point on the unit sphere \(S_{2}\).
 
 ### A.2 Curvature
 
 Informally, the curvature describes how much a surface bends at a certain point and in a particular direction. For instance, an (infinite) cylinder curves around in a circle along one direction, and is completely flat along another direction. It is common to treat surface curvature in terms of 3D curves contained in the surface. We thus first need to define the curvature of a 3D curve.
 
-Curvature of a curve. Let \(c: I \subset \mathbb{R} \rightarrow \mathbb{R}^{3}\) be \(a_{3}\)-dimensional parametric curve with unit speed, i.e.,with arc-length or natural parameterization: \(\left\|\frac{d c}{d_{t}}\right\|=1\). The curvature of \(c\) is measured by the rate at which the unit tangent vector changes as we move along \(c\). This change is split into two pieces: the unit vector \(\mathbf{n}\), called the principal normal, which describes the direction of change, and a scalar \(\kappa \in \mathbb{R}\), called the curvature, which expresses the magnitude of change:
+Curvature of a curve. Let c : I ⊂ R → \(R_{3}\) be \(a_{3}\)-dimensional parametric curve with unit speed, i.e.,with arc-length or natural parameterization: ∥ ∥ dc dt ∥ ∥ = 1. The curvature of c is measured by the rate at which the unit tangent vector changes as we move along c. This change is split into two pieces: the unit vector n, called the principal normal, which describes the direction of change, and a scalar k ∈ R, called the curvature, which expresses the magnitude of change:
 
-$$
-\frac{d^{2} c}{d t^{2}}=\mathbf{t}^{\prime}=-\kappa \mathbf{n}
-$$
+Assuming that k is never zero, the plane spanned by t and n is the osculating plane. The vector b orthogonal to the osculating plane is called the binormal of the curve: b = t × n. The orthonormal coordinate frame made of t, n, b is called the Frenet frame (Figure A.2).
 
-Assuming that \(\kappa\) is never zero, the plane spanned by \(\mathbf{t}\) and \(\mathbf{n}\) is the osculating plane. The For any point \(\mathbf{p}=c(t)\), the circle \(S\) in the osculating plane with centre \(\mathbf{p}+\mathbf{n} / \kappa\) is called the osculating circle of \(c\) at \(\mathbf{p}\). This circle best approximates \(c\) at \(\mathbf{p}\), meaning that it has the same tangent direction \(\mathbf{t}\) and curvature vector \(\kappa \mathbf{n}\), or that their first and second derivatives agree. It corresponds to the circle passing through \(\mathbf{p}\) and two infinitely close points on \(c\), one approaching from the left and one from the right of \(\mathbf{p}\). The radius and center of the osculating circle are often referred to as the radius of curvature and center of curvature, respectively.
+For any point p = c (t), the circle S in the osculating plane with centre p + n k is called the osculating circle of c at p. This circle best approximates c at p, meaning that it has the same tangent direction t and curvature vector k n, or that their first and second derivatives agree. It corresponds to the circle passing through p and two infinitely close points on c, one approaching from the left and one from the right of p. The radius and center of the osculating circle are often referred to as the radius of curvature and center of curvature, respectively.
 
-The torsion \(\tau\) of \(c\) measures the tendency of the curve to leave its osculating plane, i.e., the way the normal and binormal twist around the curve. The Frenet-Serret formula describes how the \(\mathbf{t}, \mathbf{n}, \mathbf{b}\) frame changes along the curve:
+The torsion t of c measures the tendency of the curve to leave its osculating plane, i.e., the way the normal and binormal twist around the curve. The Frenet-Serret formula describes how the t, n, b frame changes along the curve:
 
-$$
-\mathbf{t}^{\prime}=-\kappa \mathbf{n}, \quad \mathbf{n}^{\prime}=\kappa \mathbf{t}-\tau \mathbf{b}, \quad \mathbf{b}^{\prime}=\tau \mathbf{n} .
-$$
-
-![Figure A.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
+![Figure A.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
 
 *Figure A.4: Surface categorization based on Gaussian curvature.*
 
-![Figure A.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
+![Figure A.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
 
 *Figure A.4: Surface categorization based on Gaussian curvature.*
 
-For our purpose, the important formula is the second one, which shows that we can get the curvature by extracting the tangential part of \(\mathbf{n}^{\prime}\).
+For our purpose, the important formula is the second one, which shows that we can get the curvature by extracting the tangential part of n ′ .
 
-Normal curvature of a surface. Going back to surfaces, consider the plane containing a given point \(\mathbf{p}\) on the surface \(f(M)\), a vector \(\mathbf{t}\) in the tangent plane at that point and the associated normal \(\mathbf{n}\). This plane intersects the surface in a curve, and the curvature \(\kappa_{n}\) of this curve is called the normal (or sectional) curvature in the direction \(\mathbf{t}\) (Figure A.3). Using the Frenet-Serret formula, we can get the normal curvature along \(\mathbf{t}\) by extracting the tangential
+Normal curvature of a surface. Going back to surfaces, consider the plane containing a given point p on the surface f (M), a vector t in the tangent plane at that point and the associated normal n. This plane intersects the surface in a curve, and the curvature k n of this curve is called the normal (or sectional) curvature in the direction t (Figure A.3). Using the Frenet-Serret formula, we can get the normal curvature along t by extracting the tangential
 
-![Figure A.4](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
+![Figure A.4](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-a-4-p102.png)
 
 *Figure A.4: Surface categorization based on Gaussian curvature.*
 
-$$
-\kappa_{n}(\mathbf{t})=\frac{\mathbf{t} \cdot \mathbf{n}^{\prime}}{\|\mathbf{t}\|^{2}} .
-$$
+This means that the normal curvature is a measure of how much the normal changes in the direction t. Note that it is signed, meaning that the surface can bend toward or away from the normal, but it is not affected by the length of t. Since n is a unit vector, its derivative n ′ is perpendicular to n, hence in the tangent plane of p. n ′ is also called the shape operator \(S(t)\).
 
-This means that the normal curvature is a measure of how much the normal changes in the direction \(\mathbf{t}\). Note that it is signed, meaning that the surface can bend toward or away from the normal, but it is not affected by the length of \(\mathbf{t}\). Since \(\mathbf{n}\) is a unit vector, its derivative \(\mathbf{n}^{\prime}\) is perpendicular to \(\mathbf{n}\), hence in the tangent plane of \(\mathbf{p} . \mathbf{n}^{\prime}\) is also called the shape operator \(S(\mathbf{t})\).
-
-Principal, Gaussian and Mean curvature. For a given point \(\mathbf{p}\), the unit vectors \(\mathbf{e}_{1}\) and \(\mathbf{e}_{2}\) along which the normal curvature is maximal and minimal, respectively, are called the principle directions at \(\mathbf{p}\); the associated curvature values \(\kappa_{1}\) and \(\kappa_{2}\) are called the principal
-
-$$
-S\left(\mathbf{e}_{\mathbf{i}}\right)=\kappa_{i} \mathbf{e}_{\mathbf{i}} .
-$$
+Principal, Gaussian and Mean curvature. For a given point p, the unit vectors \(e_{1}\) and \(e_{2}\) along which the normal curvature is maximal and minimal, respectively, are called the principle directions at p ; the associated curvature values \(k_{1}\) and \(k_{2}\) are called the principal curvatures. If \(k_{1}\) = \(k_{2}\), every direction is principal and the point is called an umbilic (Figure A.4a). Otherwise, there are two orthogonal principle directions (i.e., \(e_{1}\) · \(e_{2}=0\)). Principal directions and curvatures respectively corresponds to eigenvectors and eigenvalues of the shape operator:
 
 The Gaussian curvature K is equal to the product of the principal curvatures:
 
-$$
-K=\kappa_{1} \kappa_{2},
-$$
-
 and the mean curvature H is their average:
-
-$$
-H=\frac{\kappa_{1}+\kappa_{2}}{2} .
-$$
 
 Based on the sign of its Gaussian curvature, a surface point is called (Figure A.4):
 
@@ -1563,51 +1361,31 @@ Based on the sign of its Gaussian curvature, a surface point is called (Figure A
 
 - hyperbolic if K < 0, i.e., k 1 and k 2 have opposite signs.
 
-Surfaces with zero Gaussian curvature are called developable surfaces, because they can be flattened out into a plane without distortions. For example, a cylinder always has one of its principal curvature equal to zero. Surfaces with zero mean curvature are called minimal surfaces because they locally minimize surface area. Since \(\kappa_{1}=-\kappa_{2}\) on minimal surfaces, they tend to look like saddles, which is also a good example of surfaces with negative Gaussian surfaces. On the other hand, surfaces with positive Gaussian curvature tend to look like hemispheres.
+Surfaces with zero Gaussian curvature are called developable surfaces, because they can be flattened out into a plane without distortions. For example, a cylinder always has one of its principal curvature equal to zero. Surfaces with zero mean curvature are called minimal surfaces because they locally minimize surface area. Since k 1 = -k 2 on minimal surfaces, they tend to look like saddles, which is also a good example of surfaces with negative Gaussian surfaces. On the other hand, surfaces with positive Gaussian curvature tend to look like hemispheres.
 
-The fundamental forms. Even though they do not introduce new geometric ideas, the fundamental forms are important for historical reasons. The first fundamental form \(\mathbf{I}\) corresponds to the metric induced by the map \(f\), which measures the inner product between any two vectors \(\mathbf{x}, \mathbf{y}\) in the tangent plane at \(\mathbf{p}\) :
+The fundamental forms. Even though they do not introduce new geometric ideas, the fundamental forms are important for historical reasons. The first fundamental form I corresponds to the metric induced by the map f, which measures the inner product between any two vectors x, y in the tangent plane at p :
 
-$$
-\mathbf{I}(\mathbf{x}, \mathbf{y})=\mathbf{x} \cdot \mathbf{y}
-$$
+The second fundamental form II at p is a symmetric bilinear form specified by:
 
-The second fundamental form II at \(\mathbf{p}\) is a symmetric bilinear form specified by:
+With those notations, the normal curvature in the tangent direction t can be re-written as:
 
-$$
-\mathbf{I I}(\mathbf{x}, \mathbf{y})=S(\mathbf{x}) \cdot \mathbf{y}=S(\mathbf{y}) \cdot \mathbf{x}
-$$
+Principal coordinates. Using the principal directions e 1, e 2 as a local basis for the tangent plane at p leads to the principal coordinates. When the vectors x and y are expressed in principal coordinates, the second fundamental form corresponds to the following diagonal matrix:
 
-With those notations, the normal curvature in the tangent direction \(\mathbf{t}\) can be re-written as:
-
-$$
-\kappa_{n}=\frac{\mathbf{I}(\mathbf{t}, \mathbf{t})}{\mathbf{I}(\mathbf{t}, \mathbf{t})}
-$$
-
-Principal coordinates. Using the principal directions \(\mathbf{e}_{1}, \mathbf{e}_{2}\) as a local basis for the tangent plane at \(\mathbf{p}\) leads to the principal coordinates. When the vectors \(\mathbf{x}\) and \(\mathbf{y}\) are expressed in principal coordinates, the second fundamental form corresponds to the following diagonal matrix:
-
-$$
-\mathbf{I I}(\mathbf{x}, \mathbf{y})=\mathbf{x}^{\top}\left[\begin{array}{cc} \kappa_{1} & 0 \\ 0 & \kappa_{2} \end{array}\right] \mathbf{y}
-$$
-
-This leads to Euler formula stating that the normal curvature in the direction \([\cos \theta, \sin \theta]^{\top}\) expressed in principal coordinates, where \(\theta\) is the angle measured between this direction and \(\mathbf{e}_{1}\), is:
-
-$$
-\kappa_{n}(\theta)=\kappa_{1} \cos ^{2} \theta+\kappa_{2} \sin ^{2} \theta
-$$
+This leads to Euler formula stating that the normal curvature in the direction [cos q, sin q] glyph[latticetop] expressed in principal coordinates, where q is the angle measured between this direction and e 1, is:
 
 CONVEX AND CONCAVE CONTOURS
 
 We now show that concave contour edges cannot be visible.
 
-Any triangle lies in a supporting plane that cuts space into two half-spaces. The surface normal points to one of these half-spaces. We can say that a shape is in front of the face when it is in the half-space that the normal points to. For example, a face is front-facing when the camera \(\mathbf{c}\) is on the front side of the face. Likewise, a face is back-facing when the camera is in back of the face. definition B.0.1 (Concave/convex edge). A mesh edge on an orientable mesh is concave if each triangle is in front of the other. (That is, triangle \(A\) is in front of triangle \(B\) and vice-versa.) Otherwise, if they are each in back of the other, the face is convex.
+Any triangle lies in a supporting plane that cuts space into two half-spaces. The surface normal points to one of these half-spaces. We can say that a shape is in front of the face when it is in the half-space that the normal points to. For example, a face is front-facing when the camera c is on the front side of the face. Likewise, a face is back-facing when the camera is in back of the face. definition B.0.1 (Concave convex edge). A mesh edge on an orientable mesh is concave if each triangle is in front of the other. (That is, triangle A is in front of triangle B and vice-versa.) Otherwise, if they are each in back of the other, the face is convex.
 
-These cases are visualized in Figure B.1. It is easier to think about convexity in terms of the angle \(\theta\) between the two oriented faces: the edge is convex if \(\theta<\pi\), and concave
+These cases are visualized in Figure B.1. It is easier to think about convexity in terms of the angle q between the two oriented faces: the edge is convex if q < p, and concave otherwise. (If q = p, than the edge can never be a contour.) However, computing q is somewhat tricky.
 
-![Figure B.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
+![Figure B.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
 
 *Figure B.3: Counterexample for Markosian’s deﬁnition of front/back-facing edges — In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible. Counterexample for Markosian's definition of front back-facing edges-In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible.*
 
-![Figure B.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
+![Figure B.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
 
 *Figure B.3: Counterexample for Markosian’s deﬁnition of front/back-facing edges — In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible. Counterexample for Markosian's definition of front back-facing edges-In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible.*
 
@@ -1615,7 +1393,7 @@ Intuitively, concave edges should not be visible when they are contours, because
 
 Theorem B.0.1. On an orientable mesh where back-faces are never visible, a contour on a concave edge is never visible.
 
-Proof. The two faces on the edge divide 3D space into four quadrants (Figure B.1a) where the viewpoint \(\mathbf{c}\) can lie. For the edge to be a contour, the viewpoint must be in either quadrant II or IV; otherwise, both faces are either front-facing or back-facing. If the camera is in quadrant II, triangle \(\mathbf{t}_{2}\) is back-facing, and thus must be invisible. Moreover, \(\mathbf{t}_{2}\) occludes \(\mathbf{t}_{1}\), at least in the vicinity of the edge. Hence, the edge is invisible. The same reasoning directly applies to case IV.
+Proof. The two faces on the edge divide 3D space into four quadrants (Figure B.1a) where the viewpoint c can lie. For the edge to be a contour, the viewpoint must be in either quadrant II or IV; otherwise, both faces are either front-facing or back-facing. If the camera is in quadrant II, triangle \(t_{2}\) is back-facing, and thus must be invisible. Moreover, \(t_{2}\) occludes \(t_{1}\), at least in the vicinity of the edge. Hence, the edge is invisible. The same reasoning directly applies to case IV.
 
 Furthermore, a contour on a convex edge is, locally, visible. While a convex contour could be occluded by some other surface far away, it lies on a front-face and so may be visible and is not locally occluded.
 
@@ -1625,7 +1403,7 @@ Unfortunately, this definition does not always work. The distance between the ca
 
 That said, the definition only fails in extreme cases, and the definition is useful for intuition when looking at diagrams.
 
-![Figure B.3](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
+![Figure B.3](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-b-3-p106.png)
 
 *Figure B.3: Counterexample for Markosian’s deﬁnition of front/back-facing edges — In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible. Counterexample for Markosian's definition of front back-facing edges-In this example, the face nearest to the camera is t 2, which is back-facing. Therefore the contour edge between the triangles would be marked as back-facing and thus invisible. In fact, t 1 occludes t 2, even though t 2 is nearer to the camera. This is a convex edge, and thus potentially visible.*
 
@@ -1643,111 +1421,101 @@ Keeping track of pointers is also necessary for avoiding spurious intersections.
 
 ### C.2 Orientation test
 
-The orientation test is a useful building block of computational geometry. Many of the tests described here can be implemented in terms of the orientation test, and robust libraries exist for this test, such as the predicates of Shewchuk (1997) \({ }^{1}\).
+The orientation test is a useful building block of computational geometry. Many of the tests described here can be implemented in terms of the orientation test, and robust libraries exist for this test, such as the predicates of Shewchuk (1997) 1.
 
-In 3D, the orientation test determines whether a point \(\mathbf{d}\) lies to the left of, to the right of, or on the oriented plane defined by three other points \(\mathbf{a}, \mathbf{b}\) and \(\mathbf{c}\), appearing in counter clockwise order when viewed from above the plane (Figure C.1). Two points are thus on the 1 http: www.cs.cmu.edu ~quake robust.html opposite sides of a triangular face if the results of their orientation tests with the triangle's supporting plane have opposite signs.
+In 3D, the orientation test determines whether a point d lies to the left of, to the right of, or on the oriented plane defined by three other points a, b and c, appearing in counterclockwise order when viewed from above the plane (Figure C.1). Two points are thus on the 1 http: www.cs.cmu.edu ~quake robust.html opposite sides of a triangular face if the results of their orientation tests with the triangle's supporting plane have opposite signs.
 
-In any dimension, the orientation test can be implemented as a matrix determinant. In 3D, this is equivalent to the signed volume of the parallelepiped spanned by the vectors \(\overrightarrow{\mathbf{a d}}=(\mathbf{a}-\mathbf{d}), \overrightarrow{\mathbf{b d}}=(\mathbf{b}-\mathbf{d})\), and \(\overrightarrow{\mathbf{c d}}=(\mathbf{c}-\mathbf{d})\). That is, the side of the triangle \(\triangle \mathbf{a b c}\) that \(\mathbf{d}\) lies on is determined by the sign of the scalar triple product:
-
-$$
-\begin{aligned} \operatorname{Orient3D}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}) & =\overrightarrow{\mathbf{a d}} \cdot(\overrightarrow{\mathbf{b d}} \times \overrightarrow{\mathbf{c d}}) \\ & =\operatorname{det}(\overrightarrow{\mathbf{a d}}, \overrightarrow{\mathbf{b d}}, \overrightarrow{\mathbf{c d}}) \\ & =\left|\begin{array}{lll} a_{x}-d_{x} & a_{y}-d_{y} & a_{z}-d_{z} \\ b_{x}-d_{x} & b_{y}-d_{y} & b_{z}-d_{z} \\ c_{x}-d_{x} & c_{y}-d_{y} & c_{z}-d_{z} \end{array}\right| \\ & =\left|\begin{array}{llll} a_{x} & a_{y} & a_{z} & 1 \\ b_{x} & b_{y} & b_{z} & 1 \\ c_{x} & c_{y} & c_{z} & 1 \\ d_{x} & d_{y} & d_{z} & 1 \end{array}\right| \end{aligned}
-$$
+In any dimension, the orientation test can be implemented as a matrix determinant. In 3D, this is equivalent to the signed volume of the parallelepiped spanned by the vectors # ad =(a-d), # bd =(b-d), and # cd =(c-d). That is, the side of the triangle glyph[triangle] abc that d lies on is determined by the sign of the scalar triple product:
 
 ```text
 Highly-accurate libraries exist for these routines. The second determinant formula shows that swapping input parameters will flip the sign of the output, e.g., ORIENT3D ( a , b , c , d ) = -ORIENT3D ( b , a , c , d ) .
 ```
 
-The main use for orientation tests is to determine whether two points are on the same or the opposite side of a triangle. For this, we can define a function \(\operatorname{SameSide}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}, \mathbf{e})\) that returns true if \(\mathbf{d}\) and \(\mathbf{e}\) are on the same side of \(\triangle \mathbf{a b c}\), that is:
+The main use for orientation tests is to determine whether two points are on the same or the opposite side of a triangle. For this, we can define a function SAMESIDE (a, b, c, d, e) that returns true if d and e are on the same side of glyph[triangle] abc, that is:
 
-$$
-\begin{aligned} & \text { SAMESIDE }(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}, \mathbf{e}) \\ & =(\operatorname{ORIENT3D}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d})>0)==(\operatorname{ORIENT3D}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{e})>0) \end{aligned}
-$$
-
-In some cases, we also need to evaluate whether a point is on the front-facing side of a tri angle, or the back-facing side. For this, we can define a function FrontSide( \(\mathbf{a, b, c, d}\) ) that returns a positive value if \(\mathbf{d}\) is on the front side of \(\triangle \mathbf{a b c}\). The surface normal (unnormalized), is given by \(\mathbf{n}=\overrightarrow{\mathbf{b a}} \times \overrightarrow{\mathbf{c a}}\), and so:
-
-$$
-\begin{aligned} \operatorname{FrontSide}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}) & =\overrightarrow{\mathbf{d} \mathbf{a}} \cdot \mathbf{n} \\ & =\overrightarrow{\mathbf{d} \mathbf{a}} \cdot(\overrightarrow{\mathbf{b a}} \times \overrightarrow{\mathbf{c a}}) \\ & =\operatorname{det}(\overrightarrow{\mathbf{d a}}, \overrightarrow{\mathbf{b a}}, \overrightarrow{\mathbf{c a}}) \\ & =\operatorname{OrIEnt} 3 \mathrm{D}(\mathbf{d}, \mathbf{b}, \mathbf{c}, \mathbf{a}) \\ & =-\operatorname{Orient} 3 \mathrm{D}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}) \end{aligned}
-$$
+In some cases, we also need to evaluate whether a point is on the front-facing side of a triangle, or the back-facing side. For this, we can define a function FRONTSIDE (a, b, c, d) that returns a positive value if d is on the front side of glyph[triangle] abc. The surface normal (unnormalized), is given by n = # ba × # ca, and so:
 
 #### C.2.1 Applications of the orientation test
 
 Several of the tests used here can be implemented with the orientation test:
 
-![Figure C.1](/Users/evanthayer/Projects/stepview/docs/2019_line_drawings_from_3d_models/figures/figure-100-p109.png)
+![Figure C.1](/Users/evanthayer/Projects/paperx/docs/2019_line_drawings_from_3d_models/figures/figure-100-p109.png)
 
 *Figure C.1: 3D orientation and sidedness tests — The 3D orientation test (a) determines whether the point d is above, below or on the supporting plane of the oriented triangle △ abc, i.e., whether the signed volume of the parallelepiped spanned by the vectors # « ad, # « bd and #« cd is positive, negative or zero. Two points d and e are then on the opposite sides of the triangle △ abc if the their orientation tests have opposite signs (b). glyph[triangle] abc, i.e., whether the signed volume of the parallelepiped spanned by the vectors # ad, # bd and # cd is positive, negative or zero. Two points d and e are then on the opposite sides of the triangle glyph[triangle] abc if the their orientation tests have opposite signs (b).*
 
-Front-facing. Given camera position \(\mathbf{c}\), the face △ \(\mathbf{a b d}\) is front-facing if FrontSide( \(\mathbf{a, b, d, c})>0\).
+Front-facing. Given camera position c, the face glyph[triangle] abd is front-facing if FRONTSIDE (a, b, d, c) > 0.
 
-Concave edge. (Section 4.2). A mesh edge with vertices \(\mathbf{a}\) and \(\mathbf{b}\) with trian gles \(\triangle \mathbf{a b d}\) and \(\triangle \mathbf{b a e}\) is concave if: \(\operatorname{FrontSide}(\mathbf{a}, \mathbf{b}, \mathbf{d}, \mathbf{e})>0\), or, equivalently, if FrontSide( \(\mathbf{b}, \mathbf{a}, \mathbf{e}, \mathbf{d})>0\).
+Concave edge. (Section 4.2). A mesh edge with vertices a and b with triangles glyph[triangle] abd and glyph[triangle] bae is concave if: FRONTSIDE (a, b, d, e) > 0, or, equivalently, if FRONTSIDE (b, a, e, d) > 0.
 
 However, they can also be expressed in terms of 2D orientation tests. The 2D orientation test SAMESIDE2D is a 2D version of the one described above. Using image-space coordinates, two line segments ab and de intersect if not SAMESIDE2D (d, e, a, b) and not SAMESIDE2D (a, b, d, e).
 
-Alternately, one can test for intersection without computing the 2D projection at all. The problem is equivalent to testing whether the 3D triangles △ abc and △ cde intersect, where \(\mathbf{c}\) is the camera position, which amounts to two 3D SameSide tests.
+Alternately, one can test for intersection without computing the 2D projection at all. The problem is equivalent to testing whether the 3D triangles glyph[triangle] abc and glyph[triangle] cde intersect, where c is the camera position, which amounts to two 3D SAMESIDE tests.
 
-Overlap test for image-space intersection. (Section 4.3). Suppose we have determined that 3D segments ab and de intersect in image space, viewed from camera c. Suppose line segment ab is a contour or boundary, and it is in front of the other segment at this point. Let \(\triangle \mathbf{a b f}\) be an adjacent triangle on the mesh. We need to determine which side of de is occluded by the surface. This amounts to determining whether \(\operatorname{SameSide}(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}, \mathbf{f})\) is true.
+Overlap test for image-space intersection. (Section 4.3). Suppose we have determined that 3D segments ab and de intersect in image space, viewed from camera c. Suppose line segment ab is a contour or boundary, and it is in front of the other segment at this point. Let glyph[triangle] abf be an adjacent triangle on the mesh. We need to determine which side of de is occluded by the surface. This amounts to determining whether SAMESIDE (a, b, c, d, f) is true.
 
 Since there is no analogue of concave convex edges for mesh boundaries, a different test is required. It consists in checking whether faces adjacent to a boundary vertex overlap in image-space, which can be computed by checking whether any non-adjacent face of the one-ring neighborhood of the boundary vertex (brown triangles in Figure 4.3) occludes the boundary edge which is the farthest from the camera.
 
-This can be reduced to three clipping tests (Figure 4.3); the edge pe is occluded by the face \(\triangle \mathbf{p q_{r}}\) if and only if: (1) \(\mathbf{c}\) and \(\mathbf{e}\) are on opposite sides of this triangle, i.e., SameSide( \(\mathbf{p}, \mathbf{q}, \mathbf{r}, \mathbf{c}, \mathbf{e}\) ) is false, (2) e and \(\mathbf{r}\) are on the same side of the triangle \(\triangle \mathbf{c p_{q}}\), i.e., SameSide( \(\mathbf{c}, \mathbf{p}, \mathbf{q}, \mathbf{e}, \mathbf{r}\) ) is true, (3) \(\mathbf{e}\) and \(\mathbf{q}\) are on the same side of the triangle \(\triangle \mathbf{c p_{r}}\), i.e., SameSide( \(\mathbf{c}, \mathbf{p}, \mathbf{r}, \mathbf{e}, \mathbf{q}\) ) is true. (This same test can also be used to detect curtain folds on contours, but it a simpler test exists for that case.)
+This can be reduced to three clipping tests (Figure 4.3); the edge pe is occluded by the face glyph[triangle] pqr if and only if: (1) c and e are on opposite sides of this triangle, i.e., SAMESIDE (p, q, r, c, e) is false, (2) e and r are on the same side of the triangle glyph[triangle] cpq, i.e., SAMESIDE (c, p, q, e, r) is true, (3) e and q are on the same side of the triangle glyph[triangle] cpr, i.e., SAMESIDE (c, p, r, e, q) is true. (This same test can also be used to detect curtain folds on contours, but it a simpler test exists for that case.)
 
 It is possible, though unlikely, that a vertex has two boundary edges emerging from it, and both are locally-occluded. In this case, the above test produces a spurious curtain fold. These cases can be detected by performing the above local-overlap test on both boundary edges. This additional test is optional, since spurious curtain folds should not affect the final visibility results.
 
 BIBLIOGRAPHY
 
-- Agarwala, A. Hertzmann, D. H. Salesin, and S. M. Seitz. Keyframe-based tracking for rotoscoping and animation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, pages 584-591. ACM, 2004. doi:10.1145 1186562.1015764.
+## References
 
-- Appel. The notion of quantitative invisibility and the machine rendering of solids. In Proceedings of the 1967 22Nd National Conference, ACM '67, pages 387-393. ACM, 1967. doi:10.1145 800196.806007.
+- Agarwala, A. Hertzmann, D. H. Salesin, and S. M. Seitz. Keyframe-based tracking for rotoscoping and animation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, pages 584-591. ACM, 2004. doi:10.11451186562.1015764.
+
+- Appel. The notion of quantitative invisibility and the machine rendering of solids. In Proceedings of the 196722Nd National Conference, ACM '67, pages 387-393. ACM, 1967. doi:10.1145800196.806007.
 
 - Arnheim. Art and Visual Perception: A Psychology of the Creative Eye. University of California, 2nd edition, 1974.
 
-J. Asente. Folding avoidance in skeletal strokes. In Proceedings of the Seventh SketchBased Interfaces and Modeling Symposium, SBIM '10, pages 33-40. Eurographics Association, 2010. ISBN 978-3-905674-25-5.
+- J. Asente. Folding avoidance in skeletal strokes. In Proceedings of the Seventh SketchBased Interfaces and Modeling Symposium, SBIM '10, pages 33-40. Eurographics Association, 2010. ISBN 978-3-905674-25-5.
 
-- Barla, J. Thollot, and L. Markosian. X-toon: An extended toon shader. In Proceedings of the 4th International Symposium on Non-photorealistic Animation and Rendering, NPAR '06, pages 127-132, New York, NY, USA, 2006. ACM. ISBN 1-59593-357-3. doi:10.1145 1124728.1124749.
+- Barla, J. Thollot, and L. Markosian. X-toon: An extended toon shader. In Proceedings of the 4th International Symposium on Non-photorealistic Animation and Rendering, NPAR '06, pages 127-132, New York, NY, USA, 2006. ACM. ISBN 1-59593-357-3. doi:10.11451124728.1124749.
 
-V. Baxter, J. Wendt, and M. C. Lin. IMPaSTo: A realistic, interactive model for paint. In S. N. Spencer, editor, Proceedings of the International Symposium on Non-Photorealistic Animation and Rendering, NPAR, pages 45-56. ACM, June 2004. doi:10.1145 987657.987665.
+- V. Baxter, J. Wendt, and M. C. Lin. IMPaSTo: A realistic, interactive model for paint. In S. N. Spencer, editor, Proceedings of the International Symposium on Non-Photorealistic Animation and Rendering, NPAR, pages 45-56. ACM, June 2004. doi:10.1145987657.987665.
 
 - Ben-Zvi, J. Bento, M. Mahler, J. Hodgins, and A. Shamir. Line-drawing video stylization. Computer Graphics Forum, 2015. doi:10.1111 cgf.12729.
 
-- Bénard, F. Cole, A. Golovinskiy, and A. Finkelstein. Self-similar texture for coherent line stylization. In Proceedings of the 8th International Symposium on Non-Photorealistic Animation and Rendering, NPAR '10, pages 91-97. ACM, 2010. doi:10.1145 1809939.1809950.
+- Bénard, F. Cole, A. Golovinskiy, and A. Finkelstein. Self-similar texture for coherent line stylization. In Proceedings of the 8th International Symposium on Non-Photorealistic Animation and Rendering, NPAR '10, pages 91-97. ACM, 2010. doi:10.11451809939.1809950.
 
 - Bénard, A. Bousseau, and J. Thollot. State-of-the-art report on temporal coherence for stylized animations. Computer Graphics Forum, 30(8):2367-2386, 2011. doi:10.1111 j.14678659.2011.02075.x.
 
 - Bénard, J. Lu, F. Cole, A. Finkelstein, and J. Thollot. Active strokes: Coherent line stylization for animated 3d models. In Proceedings of the Symposium on Non-Photorealistic Animation and Rendering, NPAR '12, pages 37-46. Eurographics Association, 2012.
 
-- Bénard, F. Cole, M. Kass, I. Mordatch, J. Hegarty, M. S. Senn, K. Fleischer, D. Pesare, and K. Breeden. Stylizing animation by example. ACM Trans. Graph. , 32(4), July 2013. doi:10.1145 2461912.2461929.
+- Bénard, F. Cole, M. Kass, I. Mordatch, J. Hegarty, M. S. Senn, K. Fleischer, D. Pesare, and K. Breeden. Stylizing animation by example. ACM Trans. Graph., 32(4), July 2013. doi:10.11452461912.2461929.
 
-- Bénard, A. Hertzmann, and M. Kass. Computing smooth surface contours with accurate topology. ACM Trans. Graph. , 33(2):19:1-19:21, 2014. doi:10.1145 2558307.
+- Bénard, A. Hertzmann, and M. Kass. Computing smooth surface contours with accurate topology. ACM Trans. Graph., 33(2):19:1-19:21, 2014. doi:10.11452558307.
 
 - Benichou and G. Elber. Output sensitive extraction of silhouettes from polygonal geometry. In Computer Graphics and Applications, 1999. Proceedings. Seventh Pacific Conference on, pages 60-69, 1999. doi:10.1109 PCCGA.1999.803349.
 
 - Benthin, S. Woop, M. Nießner, K. Selgrad, and I. Wald. efficient ray tracing of subdivision surfaces using tessellation caching. In Proceedings of the 7th High-Performance Graphics Conference. ACM, 2015.
 
-L. Bentley and T. A. Ottmann. algorithms for reporting and counting geometric intersections. IEEE Transactions on Computers, C-28(9):643-647, 1979. ISSN 0018-9340. doi:10.1109 TC.1979.1675432.
+- L. Bentley and T. A. Ottmann. Algorithms for reporting and counting geometric intersections. IEEE Transactions on Computers, C-28(9):643-647, 1979. ISSN 0018-9340. doi:10.1109 TC.1979.1675432.
 
-- Bigler, J. Guilkey, C. Gribble, C. Hansen, and S. G. Parker. A Case Study: Visualizing Material point Method Data. In Eurographics IEEE VGTC Symposium on Visualization. The Eurographics Association, 2006. ISBN 3-905673-31-2. doi:10.2312 VisSym EuroVis06 299-306.
+- Bigler, J. Guilkey, C. Gribble, C. Hansen, and S. G. Parker. A Case Study: Visualizing Material point Method Data. In Eurographics IEEE VGTC Symposium on Visualization. The Eurographics Association, 2006. ISBN 3-905673-31-2. doi:10.2312 VisSym EuroVis06299-306.
 
-BlenderNPR. Edge node v1.2.4. http: blendernpr.org edge-node-v1-2-4-july-2015, 7 2015a. BlenderNPR. Solidify modifier contour outline. http: blendernpr.org solidify-modifier-contouroutline, 2 2015b.
+- BlenderNPR. Edge node v1.2.4. http: blendernpr.org edge-node-v1-2-4-july-2015, 72015a. BlenderNPR. Solidify modifier contour outline. http: blendernpr.org solidify-modifier-contouroutline, 22015b.
 
-F. Blinn. A scan line algorithm for displaying parametrically defined surfaces. In Proceedings of the 5th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '78, pages 27-. ACM, 1978. doi:10.1145 800248.807364.
+- F. Blinn. A scan line algorithm for displaying parametrically defined surfaces. In Proceedings of the 5th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '78, pages 27-. ACM, 1978. doi:10.1145800248.807364.
 
 - Bo, G. Luo, and K. Wang. A graph-based method for fitting planar b-spline curves with intersections. Journal of computational Design and engineering, 3(1):14-23, 2016. ISSN 2288-4300. doi:10.1016 j.jcde.2015.05.001.
 
 - Bourdev. Rendering nonphotorealistic strokes with temporal and arc-length coherence. Master's thesis, 1998. URL http: www.cs.brown.edu research graphics art bourdev-thesis.pdf.
 
-- Brabec and H.-P. Seidel. Shadow volumes on programmable graphics hardware. Computer Graphics Forum, 22(3):433-440, 2003. ISSN 1467-8659. doi:10.1111 1467-8659.00691.
+- Brabec and H.-P. Seidel. Shadow volumes on programmable graphics hardware. Computer Graphics Forum, 22(3):433-440, 2003. ISSN 1467-8659. doi:10.11111467-8659.00691.
 
 - Bremer and J. F. Hughes. Rapid approximate silhouette rendering of implicit surfaces. In Proceesings of Implicit Surfaces 98, 1998.
 
-- Breslav, K. Szerszen, L. Markosian, P. Barla, and J. Thollot. Dynamic 2d patterns for shading 3d scenes. ACM Trans. Graph. , 26(3), July 2007. ISSN 0730-0301. doi:10.1145 1276377.1276402.
+- Breslav, K. Szerszen, L. Markosian, P. Barla, and J. Thollot. Dynamic 2d patterns for shading 3d scenes. ACM Trans. Graph., 26(3), July 2007. ISSN 0730-0301. doi:10.11451276377.1276402.
 
-- Buchholz, N. Faraj, S. Paris, E. Eisemann, and T. Boubekeur. Spatio-temporal analysis for parameterizing animated lines. In Proceedings of the ACM SIGGRAPH Eurographics Symposium on Non-Photorealistic Animation and Rendering, NPAR '11, pages 85-92. ACM, 2011. doi:10.1145 2024676.2024690.
+- Buchholz, N. Faraj, S. Paris, E. Eisemann, and T. Boubekeur. Spatio-temporal analysis for parameterizing animated lines. In Proceedings of the ACM SIGGRAPH Eurographics Symposium on Non-Photorealistic Animation and Rendering, NPAR '11, pages 85-92. ACM, 2011. doi:10.11452024676.2024690.
 
-- Burns, J. Klawe, S. Rusinkiewicz, A. Finkelstein, and D. DeCarlo. Line drawings from volume data. ACM Trans. Graph. , 24(3):512-518, 2005. doi:10.1145 1073204.1073222.
+- Burns, J. Klawe, S. Rusinkiewicz, A. Finkelstein, and D. DeCarlo. Line drawings from volume data. ACM Trans. Graph., 24(3):512-518, 2005. doi:10.11451073204.1073222.
 
 - Busking, A. Vilanova, and J. J. van Wijk. Particle-based non-photorealistic volume visualization. The Visual Computer, 24(5):335-346, 2008. ISSN 1432-2315. doi:10.1007 s00371-007-0192-x.
 
-- Campagna, L. Kobbelt, and H.-P. Seidel. Directed edges-a scalable representation for triangle meshes. Journal of Graphics Tools, 3(4):1-11, 1998. doi:10.1080 10867651.1998.10487494.
+- Campagna, L. Kobbelt, and H.-P. Seidel. Directed edges-a scalable representation for triangle meshes. Journal of Graphics Tools, 3(4):1-11, 1998. doi:10.108010867651.1998.10487494.
 
 - Card and J. L. Mitchell. Non-photorealistic rendering with pixel and vertex shaders. In In Direct3D ShaderX, Wordware, pages 319-333. Wordware Publishing, Inc, 2002.
 
@@ -1755,23 +1523,23 @@ F. Blinn. A scan line algorithm for displaying parametrically defined surfaces. 
 
 - Cardona and S. Saito. Temporally coherent and artistically intended stylization of feature lines extracted from 3d models. Comput. Graph. Forum, 35(7):137-146, Oct. 2016. ISSN 0167-7055. doi:10.1111 cgf.13011.
 
-- Catmull and J. H. Clark. Recursively generated b-spline surfaces on arbitrary topological meshes. Computer-Aided Design, 10(6):350-355, 1978. ISSN 0010-4485. doi:10.1016 0010-4485(78)90110-0.
+- Catmull and J. H. Clark. Recursively generated b-spline surfaces on arbitrary topological meshes. Computer-Aided Design, 10(6):350-355, 1978. ISSN 0010-4485. doi:10.10160010-4485(78)90110-0.
 
 - Chen, Y. Zhang, H. Liu, and P. Xu. Real-time artistic silhouettes rendering for 3d models. In 8th International Symposium on computational Intelligence and Design, volume 1, pages 494-498, 2015a. doi:10.1109 ISCID.2015.201.
 
-- Chen, B. Kim, D. Ito, and H. Wang. Wetbrush: Gpu-based 3d painting simulation at the bristle level. ACM Trans. Graph. , 34(6):200:1-200:11, Oct. 2015b. ISSN 0730-0301. doi:10.1145 2816795.2818066.
+- Chen, B. Kim, D. Ito, and H. Wang. Wetbrush: Gpu-based 3d painting simulation at the bristle level. ACM Trans. Graph., 34(6):200:1-200:11, Oct. 2015b. ISSN 0730-0301. doi:10.11452816795.2818066.
 
-I. Choudhury and S. G. Parker. Ray tracing npr-style feature lines. In NPAR '09: Proceedings of the 7th International Symposium on Non-Photorealistic Animation and Rendering, pages 5-14. ACM, 2009. doi:10.1145 1572614.1572616.
+- I. Choudhury and S. G. Parker. Ray tracing npr-style feature lines. In NPAR '09: Proceedings of the 7th International Symposium on Non-Photorealistic Animation and Rendering, pages 5-14. ACM, 2009. doi:10.11451572614.1572616.
 
 - Cipolla and P. Giblin. Visual Motion of curves and Surfaces. Cambridge University Press, 2000. ISBN 0-521-63251-X.
 
-- Cole and A. Finkelstein. Partial visibility for stylized lines. In Proceedings of the 6th International Symposium on Non-photorealistic Animation and Rendering, NPAR '08, pages 9-13. ACM, 2008. ISBN 978-1-60558-150-7. doi:10.1145 1377980.1377985.
+- Cole and A. Finkelstein. Partial visibility for stylized lines. In Proceedings of the 6th International Symposium on Non-photorealistic Animation and Rendering, NPAR '08, pages 9-13. ACM, 2008. ISBN 978-1-60558-150-7. doi:10.11451377980.1377985.
 
 - Cole and A. Finkelstein. Two fast methods for high-quality line visibility. IEEE Transactions on Visualization and Computer Graphics, 16(5):707-717, 2010. doi:10.1109 TVCG.2009.102.
 
-- Cole, A. Golovinskiy, A. Limpaecher, H. S. Barros, A. Finkelstein, T. Funkhouser, and S. Rusinkiewicz. Where do people draw lines? ACM Trans. Graph. , 27(3):88:1-88:11, 2008. doi:10.1145 1360612.1360687.
+- Cole, A. Golovinskiy, A. Limpaecher, H. S. Barros, A. Finkelstein, T. Funkhouser, and S. Rusinkiewicz. Where do people draw lines? ACM Trans. Graph., 27(3):88:1-88:11, 2008. doi:10.11451360612.1360687.
 
-- Cole, K. Sanik, D. DeCarlo, A. Finkelstein, T. Funkhouser, S. Rusinkiewicz, and M. Singh. How well do line drawings depict shape? ACM Trans. Graph. , 28(3):28:1-28:9, 2009. doi:10.1145 1531326.1531334.
+- Cole, K. Sanik, D. DeCarlo, A. Finkelstein, T. Funkhouser, S. Rusinkiewicz, and M. Singh. How well do line drawings depict shape? ACM Trans. Graph., 28(3):28:1-28:9, 2009. doi:10.11451531326.1531334.
 
 - Cole, M. Burns, K. Morley, A. Finkelstein, and P. Bénard. dpix. https: gfx.cs. princeton.edu proj dpix, fork: https: github.com benardp dpix, 2010.
 
@@ -1779,55 +1547,55 @@ I. Choudhury and S. G. Parker. Ray tracing npr-style feature lines. In NPAR '09:
 
 - Crane, F. de Goes, M. Desbrun, and P. Schröder. Digital geometry processing with discrete exterior calculus. In ACM SIGGRAPH 2013 courses, SIGGRAPH '13. ACM, 2013. URL https: www.cs.cmu.edu ~kmcrane Projects DDG.
 
-- Csébfalvi, L. Mroz, H. Hauser, A. König, and E. Gröller. Fast visualization of object contours by non-photorealistic volume rendering. Computer Graphics Forum, 20(3): 452-460, 2001. doi:10.1111 1467-8659.00538.
+- Csébfalvi, L. Mroz, H. Hauser, A. König, and E. Gröller. Fast visualization of object contours by non-photorealistic volume rendering. Computer Graphics Forum, 20(3): 452-460, 2001. doi:10.11111467-8659.00538.
 
-J. Curtis. Loose and sketchy animation. In ACM SIGGRAPH 98 Electronic Art and Animation Catalog, SIGGRAPH '98, pages 145-. ACM, 1998. ISBN 1-58113-045-7. doi:10.1145 281388.281913.
+- J. Curtis. Loose and sketchy animation. In ACM SIGGRAPH 98 Electronic Art and Animation Catalog, SIGGRAPH '98, pages 145-. ACM, 1998. ISBN 1-58113-045-7. doi:10.1145281388.281913.
 
-J. Curtis, S. E. Anderson, J. E. Seims, K. W. Fleischer, and D. H. Salesin. Computergenerated watercolor. In Proceedings of the 24th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '97, pages 421-430. ACM, 1997. ISBN 0-89791-896-7. doi:10.1145 258734.258896.
+- J. Curtis, S. E. Anderson, J. E. Seims, K. W. Fleischer, and D. H. Salesin. Computergenerated watercolor. In Proceedings of the 24th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '97, pages 421-430. ACM, 1997. ISBN 0-89791-896-7. doi:10.1145258734.258896.
 
-R. de Araújo, D. S. Lopes, P. Jepp, J. A. Jorge, and B. Wyvill. A survey on implicit surface polygonization. ACM Comput. Surv. , 47(4):60:1-60:39, May 2015. ISSN 0360-0300. doi:10.1145 2732197.
+- R. de Araújo, D. S. Lopes, P. Jepp, J. A. Jorge, and B. Wyvill. A survey on implicit surface polygonization. ACM Comput. Surv., 47(4):60:1-60:39, May 2015. ISSN 0360-0300. doi:10.11452732197.
 
-- DeCarlo. Depicting 3d shape using lines. In Proc. SPIE, volume 8291, pages 8291-8291-16, 2012. doi:10.1117 12.916463. URL https: doi.org 10.1117 12.916463.
+- DeCarlo. Depicting 3d shape using lines. In Proc. SPIE, volume 8291, pages 8291-8291-16, 2012. doi:10.111712.916463. URL https: doi.org 10.111712.916463.
 
-- DeCarlo and S. Rusinkiewicz. Highlight lines for conveying shape. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 63-70. ACM, 2007. doi:10.1145 1274871.1274881.
+- DeCarlo and S. Rusinkiewicz. Highlight lines for conveying shape. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 63-70. ACM, 2007. doi:10.11451274871.1274881.
 
-- DeCarlo, A. Finkelstein, S. Rusinkiewicz, and A. Santella. Suggestive contours for conveying shape. ACMTrans. Graph. , 22(3):848-855, 2003. doi:10.1145 882262.882354.
+- DeCarlo, A. Finkelstein, S. Rusinkiewicz, and A. Santella. Suggestive contours for conveying shape. ACMTrans. Graph., 22(3):848-855, 2003. doi:10.1145882262.882354.
 
-- DeCarlo, A. Finkelstein, and S. Rusinkiewicz. Interactive rendering of suggestive contours with temporal coherence. In Proceedings of the 3rd International Symposium on Non-photorealistic Animation and Rendering, NPAR '04, pages 15-145. ACM, 2004. doi:10.1145 987657.987661.
+- DeCarlo, A. Finkelstein, and S. Rusinkiewicz. Interactive rendering of suggestive contours with temporal coherence. In Proceedings of the 3rd International Symposium on Non-photorealistic Animation and Rendering, NPAR '04, pages 15-145. ACM, 2004. doi:10.1145987657.987661.
 
 - Decaudin. Cartoon looking rendering of 3D scenes. Research Report 2919, INRIA, 1996. URL http: phildec.users.sf.net Research RR-2919.php.
 
-- Deussen and T. Strothotte. Computer-generated pen-and-ink illustration of trees. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 13-18. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145 344779.344792.
+- Deussen and T. Strothotte. Computer-generated pen-and-ink illustration of trees. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 13-18. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145344779.344792.
 
-P. Dobkin, A. R. Wilks, S. V. F. Levy, and W. P. Thurston. Contour tracing by piecewise linear approximations. ACM Trans. Graph. , 9(4):389-423, 1990. ISSN 0730-0301. doi:10.1145 88560.88575.
+- P. Dobkin, A. R. Wilks, S. V. F. Levy, and W. P. Thurston. Contour tracing by piecewise linear approximations. ACM Trans. Graph., 9(4):389-423, 1990. ISSN 0730-0301. doi:10.114588560.88575.
 
-- Dooley and M. F. Cohen. Automatic illustration of 3d geometric models: Lines. In Proceedings of the 1990 Symposium on Interactive 3D Graphics, I3D '90, pages 77-82. ACM, 1990. doi:10.1145 91385.91422.
+- Dooley and M. F. Cohen. Automatic illustration of 3d geometric models: Lines. In Proceedings of the 1990 Symposium on Interactive 3D Graphics, I3D '90, pages 77-82. ACM, 1990. doi:10.114591385.91422.
 
 - Ebert and P. Rheingans. Volume illustration: Non-photorealistic rendering of volume models. In Proceedings of the Conference on Visualization '00, VIS '00, pages 195-202. IEEE Computer Society Press, 2000. doi:10.1109 VISUAL.2000.885694.
 
 - Eisemann, H. Winnemöller, J. C. Hart, and D. Salesin. Stylized vector art from 3d models with region support. In Proceedings of the Nineteenth Eurographics Conference on Rendering, EGSR '08, pages 1199-1207. Eurographics Association, 2008. doi:10.1111 j.1467-8659.2008.01258.x.
 
-- Eisemann, S. Paris, and F. Durand. A visibility algorithm for converting 3d meshes into editable 2d vector graphics. ACM Trans. Graph. , 28(3):83:1-83:8, 2009. ISSN 0730-0301. doi:10.1145 1531326.1531389.
+- Eisemann, S. Paris, and F. Durand. A visibility algorithm for converting 3d meshes into editable 2d vector graphics. ACM Trans. Graph., 28(3):83:1-83:8, 2009. ISSN 0730-0301. doi:10.11451531326.1531389.
 
-- Elber. Line art rendering via a coverage of isoparametric curves. IEEE Transactions on Visualization and Computer Graphics, 1(3):231-239, 1995a. doi:10.1109 2945.466718.
+- Elber. Line art rendering via a coverage of isoparametric curves. IEEE Transactions on Visualization and Computer Graphics, 1(3):231-239, 1995a. doi:10.11092945.466718.
 
 - Elber. Line illustrations ∈ computer graphics. The Visual Computer, 11(6):290-296, 1995b. doi:10.1007 BF01898406.
 
-- Elber. Line art illustrations of parametric and implicit forms. IEEE Transactions on Visualization and Computer Graphics, 4(1):71-81, 1998. ISSN 1077-2626. doi:10.1109 2945.675655.
+- Elber. Line art illustrations of parametric and implicit forms. IEEE Transactions on Visualization and Computer Graphics, 4(1):71-81, 1998. ISSN 1077-2626. doi:10.11092945.675655.
 
-- Elber. The irit modeling environment. http: www.cs.technion.ac.il ~irit, 3 2018.
+- Elber. The irit modeling environment. http: www.cs.technion.ac.il ~irit, 32018.
 
-- Elber and E. Cohen. Hidden curve removal for free form surfaces. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 95-104. ACM, 1990. doi:10.1145 97879.97890.
+- Elber and E. Cohen. Hidden curve removal for free form surfaces. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 95-104. ACM, 1990. doi:10.114597879.97890.
 
 - Elber and E. Cohen. Probabilistic silhouette based importance toward line-art nonphotorealistic rendering. The Visual Computer, 22(9):793-804, 2006. ISSN 1432-2315. doi:10.1007 s00371-006-0065-8.
 
-- Elber and M.-S. Kim. Geometric constraint solver using multivariate rational spline functions. In Proceedings of the Sixth ACM Symposium on Solid Modeling and Applications, SMA '01, pages 1-10. ACM, 2001. ISBN 1-58113-366-9. doi:10.1145 376957.376958.
+- Elber and M.-S. Kim. Geometric constraint solver using multivariate rational spline functions. In Proceedings of the Sixth ACM Symposium on Solid Modeling and Applications, SMA '01, pages 1-10. ACM, 2001. ISBN 1-58113-366-9. doi:10.1145376957.376958.
 
-- Farid and E. P. Simoncelli. Optimally rotation-equivariant directional derivative kernels, pages 207-214. Springer Berlin Heidelberg, 1997. ISBN 978-3-540-69556-1. doi:10.1007 3-540-63460-6_119.
+- Farid and E. P. Simoncelli. Optimally rotation-equivariant directional derivative kernels, pages 207-214. Springer Berlin Heidelberg, 1997. ISBN 978-3-540-69556-1. doi:10.10073-540-63460-6_119.
 
-- J.-D. Favreau, F. Lafarge, and A. Bousseau. Fidelity vs. simplicity: A global approach to line drawing vectorization. ACM Trans. Graph. , 35(4):120:1-120:10, 2016. ISSN 0730-0301. doi:10.1145 2897824.2925946.
+- J.-D. Favreau, F. Lafarge, and A. Bousseau. Fidelity vs. simplicity: A global approach to line drawing vectorization. ACM Trans. Graph., 35(4):120:1-120:10, 2016. ISSN 0730-0301. doi:10.11452897824.2925946.
 
-- Fišer, O. Jamriška, M. Lukáˇ c, E. Shechtman, P. Asente, J. Lu, and D. Sýkora. Stylit: Illumination-guided example-based stylization of 3d renderings. ACM Trans. Graph. , 35 (4):92:1-92:11, July 2016. ISSN 0730-0301. doi:10.1145 2897824.2925948.
+- Fišer, O. Jamriška, M. Lukáˇ c, E. Shechtman, P. Asente, J. Lu, and D. Sýkora. Stylit: Illumination-guided example-based stylization of 3d renderings. ACM Trans. Graph., 35 (4):92:1-92:11, July 2016. ISSN 0730-0301. doi:10.11452897824.2925948.
 
 - Fogel, D. Halperin, and R. Wein. CGAL Arrangements and Their Applications: A Stepby-Step Guide. Springer Publishing Company, Incorporated, 2012. ISBN 3642172822.
 
@@ -1835,75 +1603,75 @@ P. Dobkin, A. R. Wilks, S. V. F. Levy, and W. P. Thurston. Contour tracing by pi
 
 - Foster, M. C. Sousa, F. F. Samavati, and B. Wyvill. Polygonal silhouette error correction: a reverse subdivision approach. International Journal of computational Science and engineering, 3(1):53-70, 2007. ISSN 1742-7185. doi:10.1504 IJCSE.2007.014465.
 
-- Fuchs, Z. M. Kedem, and B. F. Naylor. On visible surface generation by a priori tree structures. In Proceedings of the 7th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '80, pages 124-133. ACM, 1980. ISBN 0-89791021-4. doi:10.1145 800250.807481.
+- Fuchs, Z. M. Kedem, and B. F. Naylor. On visible surface generation by a priori tree structures. In Proceedings of the 7th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '80, pages 124-133. ACM, 1980. ISBN 0-89791021-4. doi:10.1145800250.807481.
 
-- Gangnet, J.-C. Hervé, T. Pudet, and J.-M. van Thong. Incremental computation of planar maps. In Proceedings of the 16th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '89, pages 345-354. ACM, 1989. ISBN 0-89791312-4. doi:10.1145 74333.74369.
+- Gangnet, J.-C. Hervé, T. Pudet, and J.-M. van Thong. Incremental computation of planar maps. In Proceedings of the 16th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '89, pages 345-354. ACM, 1989. ISBN 0-89791312-4. doi:10.114574333.74369.
 
 - Gerl and T. Isenberg. Interactive example-based hatching. Computers & Graphics, 37 (1-2):65-80, 2013. doi:10.1016 j.cag.2012.11.003.
 
-- Glisse. An upper bound on the average size of silhouettes. In Proceedings of the Twentysecond Annual Symposium on computational Geometry, SCG '06, pages 105-111. ACM, 2006. ISBN 1-59593-340-9. doi:10.1145 1137856.1137874.
+- Glisse. An upper bound on the average size of silhouettes. In Proceedings of the Twentysecond Annual Symposium on computational Geometry, SCG '06, pages 105-111. ACM, 2006. ISBN 1-59593-340-9. doi:10.11451137856.1137874.
 
-H. Gombrich. Art and Illusion: A Study in the Psychology of Pictorial representation. Princeton University Press, 2nd edition, 1961.
+- H. Gombrich. Art and Illusion: A Study in the Psychology of Pictorial representation. Princeton University Press, 2nd edition, 1961.
 
 - Gooch. Interactive non-photorealistic technical illustration. Master's thesis, Dept. of Computer Science, University of Utah, 1998.
 
-- Gooch, P.-P. J. Sloan, A. Gooch, P. Shirley, and R. Riesenfeld. Interactive technical illustration. In Proceedings of the 1999 Symposium on Interactive 3D Graphics, I3D '99, pages 31-38, New York, NY, USA, 1999. ACM. doi:10.1145 300523.300526.
+- Gooch, P.-P. J. Sloan, A. Gooch, P. Shirley, and R. Riesenfeld. Interactive technical illustration. In Proceedings of the 1999 Symposium on Interactive 3D Graphics, I3D '99, pages 31-38, New York, NY, USA, 1999. ACM. doi:10.1145300523.300526.
 
-- Goodwin, I. Vollick, and A. Hertzmann. Isophote distance: A shading approach to artistic stroke thickness. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 53-62. ACM, 2007. doi:10.1145 1274871.1274880.
+- Goodwin, I. Vollick, and A. Hertzmann. Isophote distance: A shading approach to artistic stroke thickness. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 53-62. ACM, 2007. doi:10.11451274871.1274880.
 
 - Grabli, F. Durand, and S. F. X. Density measure for line-drawing simplification. In Computer Graphics and Applications, 2004. PG 2004. Proceedings. 12th Pacific Conference on, pages 309-318, 2004. doi:10.1109 PCCGA.2004.1348362.
 
-- Grabli, E. Turquin, F. Durand, and F. X. Sillion. Programmable rendering of line drawing from 3d scenes. ACM Trans. Graph. , 29(2):18:1-18:20, 2010. doi:10.1145 1731047.1731056.
+- Grabli, E. Turquin, F. Durand, and F. X. Sillion. Programmable rendering of line drawing from 3d scenes. ACM Trans. Graph., 29(2):18:1-18:20, 2010. doi:10.11451731047.1731056.
 
-S. Haase and G. W. Meyer. Modeling pigmented materials for realistic image synthesis. ACM Trans. Graph. , 11(4):305-335, Oct. 1992. ISSN 0730-0301. doi:10.1145 146443.146452.
+- S. Haase and G. W. Meyer. Modeling pigmented materials for realistic image synthesis. ACM Trans. Graph., 11(4):305-335, Oct. 1992. ISSN 0730-0301. doi:10.1145146443.146452.
 
-- Haeberli. Paint by numbers: Abstract image representations. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 207-214. ACM, 1990. ISBN 0-89791-344-2. doi:10.1145 97879.97902.
+- Haeberli. Paint by numbers: Abstract image representations. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 207-214. ACM, 1990. ISBN 0-89791-344-2. doi:10.114597879.97902.
 
 - Hermosilla and P. P. Vázquez. Single pass gpu stylized edges. In IV Iberoamerican Symposium in Computer Graphics, pages 47-54, 2009.
 
 - Hertzmann. Introduction to 3D Non-Photorealistic Rendering: silhouettes and Outlines. In S. Green, editor, ACM SIGGRAPH 99 Course Notes. Course on Non-Photorelistic Rendering. ACM Press, 1999. URL http: mrl.nyu.edu publications npr-course1999.
 
-- Hertzmann. Non-photorealistic rendering and the science of art. In Proceedings of the 8th International Symposium on Non-Photorealistic Animation and Rendering, NPAR '10, pages 147-157. ACM, 2010. ISBN 978-1-4503-0125-1. doi:10.1145 1809939.1809957.
+- Hertzmann. Non-photorealistic rendering and the science of art. In Proceedings of the 8th International Symposium on Non-Photorealistic Animation and Rendering, NPAR '10, pages 147-157. ACM, 2010. ISBN 978-1-4503-0125-1. doi:10.11451809939.1809957.
 
-- Hertzmann and D. Zorin. Illustrating smooth surfaces. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 517-526. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145 344779.345074.
+- Hertzmann and D. Zorin. Illustrating smooth surfaces. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 517-526. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145344779.345074.
 
-- Hertzmann, C. E. Jacobs, N. Oliver, B. Curless, and D. H. Salesin. Image analogies. In Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '01, pages 327-340. ACM, 2001. ISBN 1-58113-374-X. doi:10.1145 383259.383295.
+- Hertzmann, C. E. Jacobs, N. Oliver, B. Curless, and D. H. Salesin. Image analogies. In Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '01, pages 327-340. ACM, 2001. ISBN 1-58113-374-X. doi:10.1145383259.383295.
 
 - Hertzmann, N. Oliver, B. Curless, and S. M. Seitz. curve analogies. In Proceedings of the 13th Eurographics Workshop on Rendering, EGRW '02, pages 233-246. Eurographics Association, 2002. ISBN 1-58113-534-3. URL http: dl.acm.org citation.cfm? id=581896.581926.
 
 - Hornung, W. Lellek, P. Rehwald, and W. Strasser. An area-oriented analytical visibility method for displaying parametrically defined tensor-product surfaces. Computer Aided Geometric Design, 2(1-3):197-205, 1985.
 
-G. Houghton, R. F. Emnett, J. D. Factor, and C. L. Sabharwal. Implementation of a divide-and-conquer method for intersection of parametric surfaces. Comput. Aided Geom. Des. , 2(1-3):173-183, Sept. 1985. ISSN 0167-8396. doi:10.1016 0167-8396(85)90022-6.
+- G. Houghton, R. F. Emnett, J. D. Factor, and C. L. Sabharwal. Implementation of a divide-and-conquer method for intersection of parametric surfaces. Comput. Aided Geom. Des., 2(1-3):173-183, Sept. 1985. ISSN 0167-8396. doi:10.10160167-8396(85)90022-6.
 
-C. Hsu and I. H. H. Lee. Drawing and animation using skeletal strokes. In Proceedings of the 21st Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '94, pages 109-118, New York, NY, USA, 1994. ACM. doi:10.1145 192161.192186.
+- C. Hsu and I. H. H. Lee. Drawing and animation using skeletal strokes. In Proceedings of the 21st Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '94, pages 109-118, New York, NY, USA, 1994. ACM. doi:10.1145192161.192186.
 
 - Ikits, J. Kniss, A. Lefohn, and C. Hansen. Chapter 39, Volume Rendering Techniques, pages 667-692. Addison Wesley, 2004.
 
 - Interrante, H. Fuchs, and S. Pizer. Enhancing transparent skin surfaces with ridge and valley lines. In Visualization, 1995. Visualization '95. Proceedings., IEEE Conference on, pages 52-59, 438, 1995. doi:10.1109 VISUAL.1995.480795.
 
-- Isenberg, N. Halper, and T. Strothotte. Stylizing silhouettes at interactive rates: From silhouette edges to silhouette strokes. In Computer Graphics Forum, volume 21, pages 249-258, 2002. doi:10.1111 1467-8659.00584.
+- Isenberg, N. Halper, and T. Strothotte. Stylizing silhouettes at interactive rates: From silhouette edges to silhouette strokes. In Computer Graphics Forum, volume 21, pages 249-258, 2002. doi:10.11111467-8659.00584.
 
 - Jeong, A. Ni, S. Lee, and L. Markosian. Detail control in line drawings of 3d meshes. The Visual Computer, 21(8):698-706, 2005. doi:10.1007 s00371-005-0323-1.
 
-- Judd, F. Durand, and E. Adelson. Apparent ridges for line drawing. ACM Trans. Graph. , 26(3), 2007. doi:10.1145 1276377.1276401.
+- Judd, F. Durand, and E. Adelson. Apparent ridges for line drawing. ACM Trans. Graph., 26(3), 2007. doi:10.11451276377.1276401.
 
-D. Kalnins, L. Markosian, B. J. Meier, M. A. Kowalski, J. C. Lee, P. L. Davidson, M. Webb, J. F. Hughes, and A. Finkelstein. Wysiwyg npr: Drawing strokes directly on 3d models. In Proceedings of the 29th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '02, pages 755-762. ACM, 2002. doi:10.1145 566570.566648.
+- D. Kalnins, L. Markosian, B. J. Meier, M. A. Kowalski, J. C. Lee, P. L. Davidson, M. Webb, J. F. Hughes, and A. Finkelstein. Wysiwyg npr: Drawing strokes directly on 3d models. In Proceedings of the 29th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '02, pages 755-762. ACM, 2002. doi:10.1145566570.566648.
 
-D. Kalnins, P. L. Davidson, L. Markosian, and A. Finkelstein. Coherent stylized silhouettes. ACM Trans. Graph. , 22(3):856-861, 2003. doi:10.1145 882262.882355.
+- D. Kalnins, P. L. Davidson, L. Markosian, and A. Finkelstein. Coherent stylized silhouettes. ACM Trans. Graph., 22(3):856-861, 2003. doi:10.1145882262.882355.
 
-D. Kalnins, P. L. Davidson, and D. M. Bourguignon. Jot. http: jot.cs.princeton. edu, fork: https: github.com benardp jot-lib, 2007.
+- D. Kalnins, P. L. Davidson, and D. M. Bourguignon. Jot. http: jot.cs.princeton. edu, fork: https: github.com benardp jot-lib, 2007.
 
 - Kalogerakis, D. Nowrouzezahrai, S. Breslav, and A. Hertzmann. Learning hatching for pen-and-ink illustration of surfaces. ACM Trans. Graphics, 31(1), 2012.
 
-- Kaplan. Hybrid quantitative invisibility. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 51-52. ACM, 2007. ISBN 978-1-59593-624-0. doi:10.1145 1274871.1274879.
+- Kaplan. Hybrid quantitative invisibility. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 51-52. ACM, 2007. ISBN 978-1-59593-624-0. doi:10.11451274871.1274879.
 
-- Karsch and J. C. Hart. Snaxels on a plane. In Proceedings of the ACM SIGGRAPH Eurographics Symposium on Non-Photorealistic Animation and Rendering, NPAR '11, pages 35-42. ACM, 2011. doi:10.1145 2024676.2024683.
+- Karsch and J. C. Hart. Snaxels on a plane. In Proceedings of the ACM SIGGRAPH Eurographics Symposium on Non-Photorealistic Animation and Rendering, NPAR '11, pages 35-42. ACM, 2011. doi:10.11452024676.2024683.
 
 - Kass, A. Witkin, and D. Terzopoulos. Snakes: Active contour models. International Journal of Computer Vision, 1(4):321-331, 1988. ISSN 1573-1405. doi:10.1007 BF00133570.
 
-- Kaufman and K. Mueller. Overview of Volume Rendering, volume 7, pages 127-174. Butterworth-Heinemann, 2005. ISBN 9780123875822. doi:10.1016 B978-0123875822 50009-5.
+- Kaufman and K. Mueller. Overview of Volume Rendering, volume 7, pages 127-174. Butterworth-Heinemann, 2005. ISBN 9780123875822. doi:10.1016 B978-012387582250009-5.
 
-- Kettner and E. Welzl. Contour Edge analysis for Polyhedron Projections, pages 379-394. Springer Berlin Heidelberg, 1997. ISBN 978-3-642-60607-6. doi:10.1007 978-3-64260607-6_25.
+- Kettner and E. Welzl. Contour Edge analysis for Polyhedron Projections, pages 379-394. Springer Berlin Heidelberg, 1997. ISBN 978-3-642-60607-6. doi:10.1007978-3-64260607-6_25.
 
 - K.-J. Kim and N. Baek. Fast extraction of polyhedral model silhouettes from moving viewpoint on curved trajectory. Computers & Graphics, 29(3):393-402, 2005. ISSN 0097-8493. doi:10.1016 j.cag.2005.03.009.
 
@@ -1911,27 +1679,27 @@ D. Kalnins, P. L. Davidson, and D. M. Bourguignon. Jot. http: jot.cs.princeton. 
 
 - Kirsanov, P. V. Sander, and S. J. Gortler. Simple silhouettes for complex surfaces. In Proceedings of the 2003 Eurographics ACM SIGGRAPH Symposium on Geometry Processing, SGP '03, pages 102-106. Eurographics Association, 2003. ISBN 1-58113687-0.
 
-W. Klein, W. Li, M. M. Kazhdan, W. T. Corrêa, A. Finkelstein, and T. A. Funkhouser. Non-photorealistic virtual environments. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 527-534. ACM Press Addison-Wesley Publishing Co., 2000. ISBN 1-58113-208-5. doi:10.1145 344779.345075.
+- W. Klein, W. Li, M. M. Kazhdan, W. T. Corrêa, A. Finkelstein, and T. A. Funkhouser. Non-photorealistic virtual environments. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 527-534. ACM Press Addison-Wesley Publishing Co., 2000. ISBN 1-58113-208-5. doi:10.1145344779.345075.
 
-P. Kobbelt, K. Daubert, and H.-P. Seidel. Ray tracing of subdivion surfaces. In Rendering Techniques, 1998.
+- P. Kobbelt, K. Daubert, and H.-P. Seidel. Ray tracing of subdivion surfaces. In Rendering Techniques, 1998.
 
-J. Koenderink. What does the occluding contour tell us about solid shape? Perception, 13 (3):321-330, 1984. doi:10.1068 p130321.
+- J. Koenderink. What does the occluding contour tell us about solid shape? Perception, 13 (3):321-330, 1984. doi:10.1068 p130321.
 
-J. Koenderink and A. J. van Doorn. The shape of smooth objects and the way contours end. Perception, 11(2):129-137, 1982. doi:10.1068 p110129.
+- J. Koenderink and A. J. van Doorn. The shape of smooth objects and the way contours end. Perception, 11(2):129-137, 1982. doi:10.1068 p110129.
 
-- Kolliopoulos, J. M. Wang, and A. Hertzmann. Segmentation-based 3d artistic rendering. In Proceedings of the 17th Eurographics Conference on Rendering Techniques, EGSR '06, pages 361-370. Eurographics Association, 2006. ISBN 3-905673-35-5. doi:10.2312 EGWR EGSR06 361-370.
+- Kolliopoulos, J. M. Wang, and A. Hertzmann. Segmentation-based 3d artistic rendering. In Proceedings of the 17th Eurographics Conference on Rendering Techniques, EGSR '06, pages 361-370. Eurographics Association, 2006. ISBN 3-905673-35-5. doi:10.2312 EGWR EGSR06361-370.
 
-- Kolomenkin, I. Shimshoni, and A. Tal. Demarcating curves for shape illustration. ACM Trans. Graph. , 27(5):157:1-157:9, 2008. doi:10.1145 1409060.1409110.
+- Kolomenkin, I. Shimshoni, and A. Tal. Demarcating curves for shape illustration. ACM Trans. Graph., 27(5):157:1-157:9, 2008. doi:10.11451409060.1409110.
 
 - Kubelka. New contributions to the optics of intensely light-scattering materials. part i. Josa, 38(5):448-457, 1948.
 
-- Lake, C. Marshall, M. Harris, and M. Blackstein. Stylized rendering techniques for scalable real-time 3d animation. In Proceedings of the 1st International Symposium on Non-photorealistic Animation and Rendering, NPAR '00, pages 13-20. ACM, 2000. doi:10.1145 340916.340918.
+- Lake, C. Marshall, M. Harris, and M. Blackstein. Stylized rendering techniques for scalable real-time 3d animation. In Proceedings of the 1st International Symposium on Non-photorealistic Animation and Rendering, NPAR '00, pages 13-20. ACM, 2000. doi:10.1145340916.340918.
 
 - Lang and M. Alexa. The markov pen: Online synthesis of free-hand drawing styles. In Proceedings of the Workshop on Non-Photorealistic Animation and Rendering, NPAR '15, pages 203-215. Eurographics Association, 2015.
 
 - Lawonn, I. Viola, B. Preim, and T. Isenberg. A survey of surface-based illustrative rendering for visualization. Computer Graphics Forum, 2018. ISSN 1467-8659. doi:10.1111 cgf.13322.
 
-- Lee, L. Markosian, S. Lee, and J. F. Hughes. Line drawings via abstracted shading. ACM Trans. Graph. , 26(3), 2007. doi:10.1145 1276377.1276400.
+- Lee, L. Markosian, S. Lee, and J. F. Hughes. Line drawings via abstracted shading. ACM Trans. Graph., 26(3), 2007. doi:10.11451276377.1276400.
 
 - Leister. Computer generated copper plates. In Computer Graphics Forum, volume 13, pages 69-77. Wiley Online Library, 1994.
 
@@ -1939,19 +1707,17 @@ J. Koenderink and A. J. van Doorn. The shape of smooth objects and the way conto
 
 - Loop. Smooth subdivision surfaces based on triangles. Master's thesis, Department of Mathematics, The University of Utah, January 1987.
 
-E. Lorensen and H. E. Cline. Marching cubes: A high resolution 3d surface construction algorithm. In Proceedings of the 14th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '87, pages 163-169. ACM, 1987. ISBN 0-89791227-6. doi:10.1145 37401.37422.
+- E. Lorensen and H. E. Cline. Marching cubes: A high resolution 3d surface construction algorithm. In Proceedings of the 14th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '87, pages 163-169. ACM, 1987. ISBN 0-89791227-6. doi:10.114537401.37422.
 
-- Lu, C. Barnes, S. DiVerdi, and A. Finkelstein. Realbrush: Painting with examples of physical media. ACM Trans. Graph. , 32(4):117:1-117:12, July 2013. ISSN 0730-0301. doi:10.1145 2461912.2461998.
+- Lu, C. Barnes, S. DiVerdi, and A. Finkelstein. Realbrush: Painting with examples of physical media. ACM Trans. Graph., 32(4):117:1-117:12, July 2013. ISSN 0730-0301. doi:10.11452461912.2461998.
 
-- Lu, C. Barnes, C. Wan, P. Asente, R. Mech, and A. Finkelstein. Decobrush: Drawing structured decorative patterns by example. ACM Trans. Graph. , 33(4):90:1-90:9, July 2014. ISSN 0730-0301. doi:10.1145 2601097.2601190.
+- Lu, C. Barnes, C. Wan, P. Asente, R. Mech, and A. Finkelstein. Decobrush: Drawing structured decorative patterns by example. ACM Trans. Graph., 33(4):90:1-90:9, July 2014. ISSN 0730-0301. doi:10.11452601097.2601190.
 
-B. Lum and K.-L. Ma. Hardware-accelerated parallel non-photorealistic volume rendering. In Proceedings of the 2nd International Symposium on Non-photorealistic Animation and Rendering, NPAR '02, pages 67-ff. ACM, 2002. doi:10.1145 508530.508542.
+- B. Lum and K.-L. Ma. Hardware-accelerated parallel non-photorealistic volume rendering. In Proceedings of the 2nd International Symposium on Non-photorealistic Animation and Rendering, NPAR '02, pages 67-ff. ACM, 2002. doi:10.1145508530.508542.
 
 - Mamassian and M. S. Landy. Observer biases in the 3d interpretation of line drawings. Vision Research, 38:2817-2832, 1998.
 
-- Markosian, M. A. Kowalski, D. Goldstein, S. J. Trychin, J. F. Hughes, and L. D. Bourdev. Real-time nonphotorealistic rendering. In Proceedings of the 24th Annual Conference on
-
-- Computer Graphics and Interactive Techniques, SIGGRAPH '97, pages 415-420. ACM Press Addison-Wesley Publishing Co., 1997. doi:10.1145 258734.258894.
+- Markosian, M. A. Kowalski, D. Goldstein, S. J. Trychin, J. F. Hughes, and L. D. Bourdev. Real-time nonphotorealistic rendering. In Proceedings of the 24th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '97, pages 415-420. ACM Press Addison-Wesley Publishing Co., 1997. doi:10.1145258734.258894.
 
 - Marr. analysis of occluding contour. Proceedings of the Royal Society of London B: Biological Sciences, 197(1129):441-475, 1977. ISSN 0080-4649. doi:10.1098 rspb.1977.0080.
 
@@ -1959,55 +1725,55 @@ B. Lum and K.-L. Ma. Hardware-accelerated parallel non-photorealistic volume ren
 
 - Masuch, S. Schlechtweg, and B. Schönwälder. dali! - drawing animated lines! In In Proceedings of Simulation und Animation '97, SCS Europe, pages 87-96, 1997.
 
-- Max. Weights for computing vertex normals from facet normals. Journal of Graphics Tools, 4(2):1-6, 1999. ISSN 1086-7651. doi:10.1080 10867651.1999.10487501.
+- Max. Weights for computing vertex normals from facet normals. Journal of Graphics Tools, 4(2):1-6, 1999. ISSN 1086-7651. doi:10.108010867651.1999.10487501.
 
 - McGuire. Observations on silhouette sizes. jgt, 9(1):1-12, 2004. URL http: www.cs. brown.edu research graphics games SilhouetteSize index.html.
 
-- McGuire and J. F. Hughes. Hardware-determined feature edges. In Proceedings of the 3rd International Symposium on Non-photorealistic Animation and Rendering, NPAR '04, pages 35-47. ACM, 2004. doi:10.1145 987657.987663.
+- McGuire and J. F. Hughes. Hardware-determined feature edges. In Proceedings of the 3rd International Symposium on Non-photorealistic Animation and Rendering, NPAR '04, pages 35-47. ACM, 2004. doi:10.1145987657.987663.
 
-J. Meier. Painterly rendering for animation. In Proceedings of the 23rd Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '96, pages 477-484. ACM, 1996. ISBN 0-89791-746-4. doi:10.1145 237170.237288.
+- J. Meier. Painterly rendering for animation. In Proceedings of the 23rd Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '96, pages 477-484. ACM, 1996. ISBN 0-89791-746-4. doi:10.1145237170.237288.
 
-D. Meyer, P. Georgel, and R. T. Whitaker. Robust particle systems for curvature dependent sampling of implicit surfaces. In Proceedings of the International Conference on Shape Modeling and Applications 2005, SMI '05, pages 124-133. IEEE Computer Society, 2005. ISBN 0-7695-2379-X. doi:10.1109 SMI.2005.41.
+- D. Meyer, P. Georgel, and R. T. Whitaker. Robust particle systems for curvature dependent sampling of implicit surfaces. In Proceedings of the International Conference on Shape Modeling and Applications 2005, SMI '05, pages 124-133. IEEE Computer Society, 2005. ISBN 0-7695-2379-X. doi:10.1109 SMI.2005.41.
 
-- Mitchell, M. Francke, and D. Eng. Illustrative rendering in team fortress 2. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 71-76, New York, NY, USA, 2007. ACM. ISBN 978-1-59593-6240. doi:10.1145 1274871.1274883. URL http: doi.acm.org 10.1145 1274871. 1274883.
+- Mitchell, M. Francke, and D. Eng. Illustrative rendering in team fortress 2. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 71-76, New York, NY, USA, 2007. ACM. ISBN 978-1-59593-6240. doi:10.11451274871.1274883. URL http: doi.acm.org 10.11451274871. 1274883.
 
 - Nagy, J. Schneider, and R. Westermann. Interactive volume illustration. In Vision, Modeling and Visualization 2002, Nov. 2002.
 
-- Ni, K. Jeong, S. Lee, and L. Markosian. Multi-scale line drawings from 3d meshes. In Proceedings of the 2006 Symposium on Interactive 3D Graphics and Games, I3D '06, pages 133-137. ACM, 2006. doi:10.1145 1111411.1111435.
+- Ni, K. Jeong, S. Lee, and L. Markosian. Multi-scale line drawings from 3d meshes. In Proceedings of the 2006 Symposium on Interactive 3D Graphics and Games, I3D '06, pages 133-137. ACM, 2006. doi:10.11451111411.1111435.
 
 - Nienhaus and J. Döllner. Blueprints: Illustrating architecture and technical parts using hardware-accelerated non-photorealistic rendering. In Proceedings of Graphics Interface 2004, GI '04, pages 49-56. Canadian Human-Computer Communications Society, 2004.
 
-- Nießner, C. Loop, M. Meyer, and T. Derose. Feature-adaptive gpu rendering of catmullclark subdivision surfaces. ACM Trans. Graph. , 31(1):6:1-6:11, Feb. 2012. ISSN 0730-0301. doi:10.1145 2077341.2077347.
+- Nießner, C. Loop, M. Meyer, and T. Derose. Feature-adaptive gpu rendering of catmullclark subdivision surfaces. ACM Trans. Graph., 31(1):6:1-6:11, Feb. 2012. ISSN 0730-0301. doi:10.11452077341.2077347.
 
-D. Northrup and L. Markosian. Artistic silhouettes: A hybrid approach. In Proceedings of the 1st International Symposium on Non-photorealistic Animation and Rendering, NPAR '00, pages 31-37. ACM, 2000. doi:10.1145 340916.340920.
+- D. Northrup and L. Markosian. Artistic silhouettes: A hybrid approach. In Proceedings of the 1st International Symposium on Non-photorealistic Animation and Rendering, NPAR '00, pages 31-37. ACM, 2000. doi:10.1145340916.340920.
 
 - O'Donovan and A. Hertzmann. Anipaint: interactive painterly animation from video. IEEE transactions on visualization and computer graphics, 18(3):475-87, mar 2012. ISSN 1941-0506. doi:10.1109 TVCG.2011.51.
 
-- Ogaki and I. Georgiev. Production ray tracing of feature lines. In SIGGRAPH Asia 2018 Technical Briefs, SA '18, pages 15:1-15:4. ACM, 2018. ISBN 978-1-4503-6062-3. doi:10.1145 3283254.3283273.
+- Ogaki and I. Georgiev. Production ray tracing of feature lines. In SIGGRAPH Asia 2018 Technical Briefs, SA '18, pages 15:1-15:4. ACM, 2018. ISBN 978-1-4503-6062-3. doi:10.11453283254.3283273.
 
-- Ohtake, A. Belyaev, and H.-P. Seidel. Ridge-valley lines on meshes via implicit surface fitting. ACM Trans. Graph. , 23(3):609-612, 2004. doi:10.1145 1015706.1015768.
+- Ohtake, A. Belyaev, and H.-P. Seidel. Ridge-valley lines on meshes via implicit surface fitting. ACM Trans. Graph., 23(3):609-612, 2004. doi:10.11451015706.1015768.
 
 - Olson and H. Zhang. silhouette extraction in hough space. Computer Graphics Forum, 25(3):273-282, 2006. doi:10.1111 j.1467-8659.2006.00946.x.
 
-- Pauly, R. Keiser, and M. Gross. Multi-scale feature extraction on point-sampled surfaces. Computer Graphics Forum, 22(3):281-289, 2003. doi:10.1111 1467-8659.00675.
+- Pauly, R. Keiser, and M. Gross. Multi-scale feature extraction on point-sampled surfaces. Computer Graphics Forum, 22(3):281-289, 2003. doi:10.11111467-8659.00675.
 
-- Pfister, M. Zwicker, J. van Baar, and M. Gross. Surfels: Surface elements as rendering primitives. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 335-342. ACM Press Addison-Wesley Publishing Co., 2000. ISBN 1-58113-208-5. doi:10.1145 344779.344936.
+- Pfister, M. Zwicker, J. van Baar, and M. Gross. Surfels: Surface elements as rendering primitives. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 335-342. ACM Press Addison-Wesley Publishing Co., 2000. ISBN 1-58113-208-5. doi:10.1145344779.344936.
 
 - Pharr, W. Jakob, and G. Humphreys. Physically Based Rendering: From Theory to Implementation. Morgan Kaufmann Publishers Inc., 3rd edition, 2016. ISBN 0128006455.
 
 - Pixar. Opensubdiv. http: graphics.pixar.com opensubdiv, 2019.
 
-- Plantinga and G. Vegter. Computing contour generators of evolving implicit surfaces. ACM Trans. Graph. , 25(4):1243-1280, 2006. doi:10.1145 1183287.1183288.
+- Plantinga and G. Vegter. Computing contour generators of evolving implicit surfaces. ACM Trans. Graph., 25(4):1243-1280, 2006. doi:10.11451183287.1183288.
 
-- Pop, C. Duncan, G. Barequet, M. Goodrich, W. Huang, and S. Kumar. efficient perspective-accurate silhouette computation and applications. In Proceedings of the Seventeenth Annual Symposium on computational Geometry, SCG '01, pages 60-68. ACM, 2001. doi:10.1145 378583.378618.
+- Pop, C. Duncan, G. Barequet, M. Goodrich, W. Huang, and S. Kumar. efficient perspective-accurate silhouette computation and applications. In Proceedings of the Seventeenth Annual Symposium on computational Geometry, SCG '01, pages 60-68. ACM, 2001. doi:10.1145378583.378618.
 
-- Praun, H. Hoppe, M. Webb, and A. Finkelstein. Real-time hatching. In Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '01, pages 581-, New York, NY, USA, 2001. ACM. ISBN 1-58113-374-X. doi:10.1145 383259.383328. URL http: doi.acm.org 10.1145 383259.383328.
+- Praun, H. Hoppe, M. Webb, and A. Finkelstein. Real-time hatching. In Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '01, pages 581-, New York, NY, USA, 2001. ACM. ISBN 1-58113-374-X. doi:10.1145383259.383328. URL http: doi.acm.org 10.1145383259.383328.
 
 - Preim and T. Strothotte. Tuning rendered line-drawings. In WSCG'95, pages 228-238, 1995.
 
-- Raskar. Hardware support for non-photorealistic rendering. In Proceedings of the ACM SIGGRAPH EUROGRAPHICS Workshop on Graphics Hardware, HWWS '01, pages 41-47. ACM, 2001. doi:10.1145 383507.383525.
+- Raskar. Hardware support for non-photorealistic rendering. In Proceedings of the ACM SIGGRAPH EUROGRAPHICS Workshop on Graphics Hardware, HWWS '01, pages 41-47. ACM, 2001. doi:10.1145383507.383525.
 
-- Raskar and M. Cohen. Image precision silhouette edges. In Proceedings of the 1999 Symposium on Interactive 3D Graphics, I3D '99, pages 135-140. ACM, 1999. doi:10.1145 300523.300539.
+- Raskar and M. Cohen. Image precision silhouette edges. In Proceedings of the 1999 Symposium on Interactive 3D Graphics, I3D '99, pages 135-140. ACM, 1999. doi:10.1145300523.300539.
 
 - Rideout. silhouette extraction, 2010. http: prideout.net blog ?p=54.
 
@@ -2017,39 +1783,39 @@ D. Northrup and L. Markosian. Artistic silhouettes: A hybrid approach. In Procee
 
 - Rosin and J. Collomosse. Image and Video-Based Artistic Stylisation. Springer, 2013.
 
-R. Rossignac and M. van Emmerik. Hidden contours on a frame-buffer. In Proceedings of the Seventh Eurographics Conference on Graphics Hardware, EGGH'92, pages 188-203. Eurographics Association, 1992. doi:10.2312 EGGH EGGH92 188-203.
+- R. Rossignac and M. van Emmerik. Hidden contours on a frame-buffer. In Proceedings of the Seventh Eurographics Conference on Graphics Hardware, EGGH'92, pages 188-203. Eurographics Association, 1992. doi:10.2312 EGGH EGGH92188-203.
 
 - Rusinkiewicz. Estimating curvatures and their derivatives on triangle meshes. In Proceedings of the 3D Data Processing, Visualization, and Transmission, 2Nd International Symposium, 3DPVT '04, pages 486-493. IEEE Computer Society, 2004. doi:10.1109 3DPVT.2004.54.
 
-- Rusinkiewicz, F. Cole, D. DeCarlo, and A. Finkelstein. Line drawings from 3d models. In ACM SIGGRAPH 2008 Classes, SIGGRAPH '08, pages 39:1-39:356, New York, NY, USA, 2008. ACM. doi:10.1145 1401132.1401188.
+- Rusinkiewicz, F. Cole, D. DeCarlo, and A. Finkelstein. Line drawings from 3d models. In ACM SIGGRAPH 2008 Classes, SIGGRAPH '08, pages 39:1-39:356, New York, NY, USA, 2008. ACM. doi:10.11451401132.1401188.
 
 - Sabiston. Waking life: Making of, 2001. URL http: www.flatblackfilms.com Flat_Black_Films Rotoshop.html.
 
-- Saito and T. Takahashi. Comprehensible rendering of 3-d shapes. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 197-206. ACM, 1990. doi:10.1145 97879.97901.
+- Saito and T. Takahashi. Comprehensible rendering of 3-d shapes. In Proceedings of the 17th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '90, pages 197-206. ACM, 1990. doi:10.114597879.97901.
 
-V. Sander, X. Gu, S. J. Gortler, H. Hoppe, and J. Snyder. silhouette clipping. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 327-334. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145 344779.344935.
+- V. Sander, X. Gu, S. J. Gortler, H. Hoppe, and J. Snyder. silhouette clipping. In Proceedings of the 27th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '00, pages 327-334. ACM Press Addison-Wesley Publishing Co., 2000. doi:10.1145344779.344935.
 
-V. Sander, D. Nehab, E. Chlamtac, and H. Hoppe. efficient traversal of mesh edges using adjacency primitives. ACM Trans. Graph. , 27(5):144:1-144:9, 2008. doi:10.1145 1409060.1409097.
+- V. Sander, D. Nehab, E. Chlamtac, and H. Hoppe. efficient traversal of mesh edges using adjacency primitives. ACM Trans. Graph., 27(5):144:1-144:9, 2008. doi:10.11451409060.1409097.
 
-- Schein and G. Elber. Adaptive extraction and visualization of silhouette curves from volumetric datasets. Vis. Comput. , 20(4):243-252, 2004. doi:10.1007 s00371-003-0230-2.
+- Schein and G. Elber. Adaptive extraction and visualization of silhouette curves from volumetric datasets. Vis. Comput., 20(4):243-252, 2004. doi:10.1007 s00371-003-0230-2.
 
 - Schmidt. Shapeshop. http: www.shapeshop3d.com, 2008.
 
-- Schmidt, T. Isenberg, P. Jepp, K. Singh, and B. Wyvill. Sketching, scaffolding, and inking: A visual history for interactive 3d modeling. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 23-32. ACM, 2007. ISBN 978-1-59593-624-0. doi:10.1145 1274871.1274875.
+- Schmidt, T. Isenberg, P. Jepp, K. Singh, and B. Wyvill. Sketching, scaffolding, and inking: A visual history for interactive 3d modeling. In Proceedings of the 5th International Symposium on Non-photorealistic Animation and Rendering, NPAR '07, pages 23-32. ACM, 2007. ISBN 978-1-59593-624-0. doi:10.11451274871.1274875.
 
-R. Shewchuk. Adaptive Precision floating-point Arithmetic and Fast Robust Geometric Predicates. Discrete & computational Geometry, 18(3):305-363, Oct. 1997.
+- R. Shewchuk. Adaptive Precision floating-point Arithmetic and Fast Robust Geometric Predicates. Discrete & computational Geometry, 18(3):305-363, Oct. 1997.
 
 - Singh and S. Schaefer. Suggestive hatching. In Proc. computational Aesthetics, 2010.
 
 - P.-P. J. Sloan, W. Martin, A. Gooch, and B. Gooch. The lit sphere: A model for capturing npr shading from art. In Proceedings of Graphics Interface 2001, GI '01, pages 143150. Canadian Information Processing Society, 2001. ISBN 0-9688808-0-0. URL http: dl.acm.org citation.cfm?id=780986.781004.
 
-C. Sousa and J. W. Buchanan. Computer-generated graphite pencil rendering of 3d polygonal models. Computer Graphics Forum, 18(3):195-208, 1999. doi:10.1111 14678659.00340.
+- C. Sousa and J. W. Buchanan. Computer-generated graphite pencil rendering of 3d polygonal models. Computer Graphics Forum, 18(3):195-208, 1999. doi:10.111114678659.00340.
 
-C. Sousa and P. Prusinkiewicz. A Few Good Lines: Suggestive Drawing of 3D Models. Computer Graphics Forum, 2003. doi:10.1111 1467-8659.00685.
+- C. Sousa and P. Prusinkiewicz. A Few Good Lines: Suggestive Drawing of 3D Models. Computer Graphics Forum, 2003. doi:10.11111467-8659.00685.
 
 - J.-F. St-Amour. The illustrative rendering of prince of persia. In ACM SIGGRAPH 2010 Courses, 2010. URL http: www.cs.williams.edu ~morgan SRG10.
 
-- Stam. Exact evaluation of catmull-clark subdivision surfaces at arbitrary parameter values. In Proceedings of the 25th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '98, pages 395-404. ACM, 1998a. ISBN 0-89791999-8. doi:10.1145 280814.280945.
+- Stam. Exact evaluation of catmull-clark subdivision surfaces at arbitrary parameter values. In Proceedings of the 25th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH '98, pages 395-404. ACM, 1998a. ISBN 0-89791999-8. doi:10.1145280814.280945.
 
 - Stam. Evaluation of loop subdivision surfaces, 1998b.
 
@@ -2057,13 +1823,11 @@ C. Sousa and P. Prusinkiewicz. A Few Good Lines: Suggestive Drawing of 3D Models
 
 - Stroila, E. Eisemann, and J. Hart. Clip art rendering of smooth isosurfaces. IEEE Transactions on Visualization and Computer Graphics, 14(1):135-145, 2008. doi:10.1109 TVCG.2007.1058.
 
-- Stroila, E. Bachta, W. Jarosz, W. Su, and J. Hart. Wickbert. fork: https: github. com benardp Wickbert, 11 2011.
+- Stroila, E. Bachta, W. Jarosz, W. Su, and J. Hart. Wickbert. fork: https: github. com benardp Wickbert, 112011.
 
-- Tejima, M. Fujita, and T. Matsuoka. Direct ray tracing of full-featured subdivision surfaces with Bezier clipping. Journal of Computer Graphics Techniques (JCGT), 4(1):69-83, March 2015. ISSN 2331-7418. URL http: jcgt.org published 0004 01 04.
+- Tejima, M. Fujita, and T. Matsuoka. Direct ray tracing of full-featured subdivision surfaces with Bezier clipping. Journal of Computer Graphics Techniques (JCGT), 4(1):69-83, March 2015. ISSN 2331-7418. URL http: jcgt.org published 00040104.
 
 - Thibault and S. Cavanaugh. Making concept art real for borderlands. In ACMSIGGRAPH 2010 Courses, 2010. URL http: www.cs.williams.edu ~morgan SRG10.
-
-## References
 
 - J.-P. Thirion and A. Gourdon. The 3d marching lines algorithm. Graphical Models and Image Processing, 58(6):503-509, 1996. doi:10.1006 gmip.1996.0042.
 

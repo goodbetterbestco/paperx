@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2004_the_visual_hull_of_smooth_curved_objects/2004_the_visual_hull_of_smooth_curved_objects.pdf",
+  "pdf_path": "stepview/2004_the_visual_hull_of_smooth_curved_objects/2004_the_visual_hull_of_smooth_curved_objects.pdf",
   "page_count": 30,
   "page_sizes_pt": [
     {
@@ -2439,25 +2439,6 @@
       "id": "#/texts/137",
       "page": 15,
       "order": 3,
-      "role": "paragraph",
-      "text": "11",
-      "bbox": {
-        "x0": 172.0,
-        "y0": 61.24,
-        "x1": 178.67,
-        "y1": 66.57,
-        "width": 6.67,
-        "height": 5.33
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "11"
-      }
-    },
-    {
-      "id": "#/texts/138",
-      "page": 15,
-      "order": 4,
       "role": "heading",
       "text": "The sub-case elliptic-elliptic",
       "bbox": {
@@ -2474,28 +2455,28 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/138",
       "page": 15,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
-      "text": "P2",
+      "text": "4n, =n,",
       "bbox": {
-        "x0": 196.0,
-        "y0": 85.88,
-        "x1": 206.67,
-        "y1": 96.53,
-        "width": 10.67,
-        "height": 10.65
+        "x0": 336.92,
+        "y0": 81.2,
+        "x1": 372.06,
+        "y1": 97.05,
+        "width": 35.14,
+        "height": 15.85
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "P2"
+        "docling_orig": "4n, =n,"
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/139",
       "page": 15,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "Let us consider a point p of the interior segment (Fig. 9). Clearly an infinitesimal rotation δα of L about p in the tangent plane P T generates a visual line L', since both p 1 ' and p 2 ' lie on the external side of C 1 and C 2 , as shown by their projections onto the plane P. Therefore, the interior segment is not locally active.",
       "bbox": {
@@ -2512,9 +2493,9 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/140",
       "page": 15,
-      "order": 7,
+      "order": 6,
       "role": "caption",
       "text": "Fig. 9",
       "bbox": {
@@ -2531,9 +2512,9 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/141",
       "page": 15,
-      "order": 8,
+      "order": 7,
       "role": "heading",
       "text": "The sub-case parabolic-elliptic",
       "bbox": {
@@ -2550,9 +2531,9 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/142",
       "page": 15,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "Also this case does not produce an active segment. A visual line through any point p of the interior segment can be obtained as follows (Fig.10). Perform first a rotation ∂α of L about p in the tangent plane P T , then a rotation ∂β in a plane normal to P T . This produces the visual line L', and also in this case the segment is not locally active.",
       "bbox": {
@@ -2569,7 +2550,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/144",
       "page": 16,
       "order": 1,
       "role": "paragraph",
@@ -2588,7 +2569,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/145",
       "page": 16,
       "order": 2,
       "role": "paragraph",
@@ -2607,7 +2588,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/146",
       "page": 16,
       "order": 3,
       "role": "paragraph",
@@ -2626,7 +2607,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/147",
       "page": 16,
       "order": 4,
       "role": "paragraph",
@@ -2645,7 +2626,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/148",
       "page": 16,
       "order": 5,
       "role": "heading",
@@ -2664,7 +2645,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/149",
       "page": 16,
       "order": 6,
       "role": "paragraph",
@@ -2683,7 +2664,7 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/150",
       "page": 16,
       "order": 7,
       "role": "caption",
@@ -2702,7 +2683,7 @@
       }
     },
     {
-      "id": "#/texts/152",
+      "id": "#/texts/151",
       "page": 16,
       "order": 8,
       "role": "paragraph",
@@ -2721,11 +2702,11 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/152",
       "page": 16,
       "order": 9,
       "role": "paragraph",
-      "text": "4n, =n,",
+      "text": "4 n, =n,",
       "bbox": {
         "x0": 344.4,
         "y0": 81.34,
@@ -2736,11 +2717,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "4n, =n,"
+        "docling_orig": "4 n, =n,"
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/153",
       "page": 16,
       "order": 10,
       "role": "paragraph",
@@ -2759,7 +2740,7 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/154",
       "page": 16,
       "order": 11,
       "role": "paragraph",
@@ -2778,7 +2759,7 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/155",
       "page": 16,
       "order": 12,
       "role": "paragraph",
@@ -2797,7 +2778,7 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/156",
       "page": 16,
       "order": 13,
       "role": "paragraph",
@@ -2816,7 +2797,7 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/157",
       "page": 16,
       "order": 14,
       "role": "paragraph",
@@ -2835,7 +2816,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/158",
       "page": 16,
       "order": 15,
       "role": "paragraph",
@@ -2854,7 +2835,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/159",
       "page": 16,
       "order": 16,
       "role": "paragraph",
@@ -2873,7 +2854,7 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/160",
       "page": 16,
       "order": 17,
       "role": "paragraph",
@@ -2892,7 +2873,7 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/161",
       "page": 16,
       "order": 18,
       "role": "paragraph",
@@ -2911,7 +2892,7 @@
       }
     },
     {
-      "id": "#/texts/163",
+      "id": "#/texts/162",
       "page": 16,
       "order": 19,
       "role": "caption",
@@ -2930,7 +2911,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/163",
       "page": 16,
       "order": 20,
       "role": "paragraph",
@@ -2949,7 +2930,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/164",
       "page": 16,
       "order": 21,
       "role": "paragraph",
@@ -2957,9 +2938,9 @@
       "bbox": {
         "x0": 117.24,
         "y0": 87.87,
-        "x1": 138.56,
+        "x1": 137.89,
         "y1": 103.85,
-        "width": 21.32,
+        "width": 20.65,
         "height": 15.98
       },
       "meta": {
@@ -2968,7 +2949,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/165",
       "page": 16,
       "order": 22,
       "role": "paragraph",
@@ -2987,7 +2968,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/166",
       "page": 16,
       "order": 23,
       "role": "paragraph",
@@ -3006,7 +2987,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/168",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -3025,7 +3006,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/169",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -3044,7 +3025,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/170",
       "page": 17,
       "order": 3,
       "role": "heading",
@@ -3063,7 +3044,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/171",
       "page": 17,
       "order": 4,
       "role": "paragraph",
@@ -3082,7 +3063,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/172",
       "page": 17,
       "order": 5,
       "role": "paragraph",
@@ -3101,7 +3082,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/173",
       "page": 17,
       "order": 6,
       "role": "paragraph",
@@ -3120,7 +3101,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/174",
       "page": 17,
       "order": 7,
       "role": "caption",
@@ -3139,7 +3120,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/175",
       "page": 17,
       "order": 8,
       "role": "heading",
@@ -3158,7 +3139,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/176",
       "page": 17,
       "order": 9,
       "role": "paragraph",
@@ -3177,7 +3158,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/177",
       "page": 17,
       "order": 10,
       "role": "caption",
@@ -3196,7 +3177,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/179",
       "page": 18,
       "order": 1,
       "role": "paragraph",
@@ -3215,7 +3196,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/180",
       "page": 18,
       "order": 2,
       "role": "paragraph",
@@ -3234,7 +3215,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/181",
       "page": 18,
       "order": 3,
       "role": "heading",
@@ -3253,7 +3234,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/182",
       "page": 18,
       "order": 4,
       "role": "paragraph",
@@ -3272,7 +3253,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/184",
       "page": 18,
       "order": 5,
       "role": "paragraph",
@@ -3291,7 +3272,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/185",
       "page": 18,
       "order": 6,
       "role": "caption",
@@ -3310,7 +3291,7 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/186",
       "page": 18,
       "order": 7,
       "role": "paragraph",
@@ -3329,7 +3310,7 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/187",
       "page": 18,
       "order": 8,
       "role": "paragraph",
@@ -3348,7 +3329,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/188",
       "page": 18,
       "order": 9,
       "role": "paragraph",
@@ -3367,7 +3348,7 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/189",
       "page": 18,
       "order": 10,
       "role": "paragraph",
@@ -3386,7 +3367,7 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/192",
       "page": 19,
       "order": 1,
       "role": "paragraph",
@@ -3405,7 +3386,7 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/194",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -3424,7 +3405,7 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/196",
       "page": 19,
       "order": 3,
       "role": "paragraph",
@@ -3443,7 +3424,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/198",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -3462,7 +3443,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/200",
       "page": 19,
       "order": 5,
       "role": "heading",
@@ -3481,7 +3462,7 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/201",
       "page": 19,
       "order": 6,
       "role": "paragraph",
@@ -3500,7 +3481,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/202",
       "page": 19,
       "order": 7,
       "role": "paragraph",
@@ -3519,7 +3500,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/203",
       "page": 19,
       "order": 8,
       "role": "paragraph",
@@ -3538,7 +3519,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/204",
       "page": 19,
       "order": 9,
       "role": "paragraph",
@@ -3557,7 +3538,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/206",
       "page": 20,
       "order": 1,
       "role": "paragraph",
@@ -3576,7 +3557,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/207",
       "page": 20,
       "order": 2,
       "role": "paragraph",
@@ -3595,7 +3576,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/208",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -3614,7 +3595,7 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/209",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -3633,7 +3614,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/210",
       "page": 20,
       "order": 5,
       "role": "paragraph",
@@ -3652,7 +3633,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/211",
       "page": 20,
       "order": 6,
       "role": "caption",
@@ -3671,7 +3652,7 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/212",
       "page": 20,
       "order": 7,
       "role": "paragraph",
@@ -3690,28 +3671,9 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/213",
       "page": 20,
       "order": 8,
-      "role": "paragraph",
-      "text": "\"p'\"",
-      "bbox": {
-        "x0": 321.56,
-        "y0": 122.03,
-        "x1": 347.9,
-        "y1": 137.45,
-        "width": 26.34,
-        "height": 15.42
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "\"p'\""
-      }
-    },
-    {
-      "id": "#/texts/215",
-      "page": 20,
-      "order": 9,
       "role": "paragraph",
       "text": "d2",
       "bbox": {
@@ -3728,9 +3690,9 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/214",
       "page": 20,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "n,",
       "bbox": {
@@ -3747,9 +3709,9 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/215",
       "page": 20,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "As before, the condition for a line passing through a point p of this segment to be a visual line is (Fig. 15)",
       "bbox": {
@@ -3766,9 +3728,9 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/216",
       "page": 20,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "| p 1' p | < d",
       "bbox": {
@@ -3785,9 +3747,9 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/218",
       "page": 20,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "Let us assume r 1 > r 2 , as in Fig. 15, so that 1 < r 1 r 2 . Clearly, the inequality (*) is not verified for points near p 2. The external segment is divided into one locally active part p 2 p * and an inactive part p * ∞ . The point p* is such that",
       "bbox": {
@@ -3804,9 +3766,9 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/220",
       "page": 20,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "If r 1 ≤ r 2 , that is 1 ≥ r 1 r 2 , no p can satisfy (*) and the complete external segment is locally active.",
       "bbox": {
@@ -3823,9 +3785,9 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/221",
       "page": 20,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Now let us consider the external segment starting at p 1, the hyperbolic point (Fig.16).",
       "bbox": {
@@ -3842,9 +3804,9 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/222",
       "page": 20,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "L'",
       "bbox": {
@@ -3861,9 +3823,9 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/223",
       "page": 20,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "P2",
       "bbox": {
@@ -3880,9 +3842,9 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/224",
       "page": 20,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "P'\"'",
       "bbox": {
@@ -3899,7 +3861,26 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/225",
+      "page": 20,
+      "order": 18,
+      "role": "paragraph",
+      "text": "P.-",
+      "bbox": {
+        "x0": 227.77,
+        "y0": 61.69,
+        "x1": 246.98,
+        "y1": 72.66,
+        "width": 19.21,
+        "height": 10.97
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P.-"
+      }
+    },
+    {
+      "id": "#/texts/226",
       "page": 20,
       "order": 19,
       "role": "paragraph",
@@ -3918,18 +3899,18 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/227",
       "page": 20,
       "order": 20,
       "role": "paragraph",
       "text": "L'",
       "bbox": {
-        "x0": 418.49,
+        "x0": 417.8,
         "y0": 80.2,
         "x1": 433.58,
-        "y1": 91.17,
-        "width": 15.09,
-        "height": 10.97
+        "y1": 91.85,
+        "width": 15.78,
+        "height": 11.65
       },
       "meta": {
         "docling_label": "text",
@@ -3937,7 +3918,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/229",
       "page": 21,
       "order": 1,
       "role": "paragraph",
@@ -3956,7 +3937,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/230",
       "page": 21,
       "order": 2,
       "role": "paragraph",
@@ -3975,7 +3956,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/231",
       "page": 21,
       "order": 3,
       "role": "paragraph",
@@ -3994,7 +3975,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/232",
       "page": 21,
       "order": 4,
       "role": "paragraph",
@@ -4013,7 +3994,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/233",
       "page": 21,
       "order": 5,
       "role": "paragraph",
@@ -4032,7 +4013,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/234",
       "page": 21,
       "order": 6,
       "role": "paragraph",
@@ -4051,7 +4032,7 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/235",
       "page": 21,
       "order": 7,
       "role": "paragraph",
@@ -4070,17 +4051,17 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/236",
       "page": 21,
       "order": 8,
       "role": "paragraph",
       "text": "dz",
       "bbox": {
-        "x0": 351.26,
+        "x0": 350.57,
         "y0": 120.64,
         "x1": 363.6,
         "y1": 131.61,
-        "width": 12.34,
+        "width": 13.03,
         "height": 10.97
       },
       "meta": {
@@ -4089,7 +4070,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/237",
       "page": 21,
       "order": 9,
       "role": "paragraph",
@@ -4108,7 +4089,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/238",
       "page": 21,
       "order": 10,
       "role": "caption",
@@ -4127,7 +4108,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/239",
       "page": 21,
       "order": 11,
       "role": "paragraph",
@@ -4146,7 +4127,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/240",
       "page": 21,
       "order": 12,
       "role": "heading",
@@ -4165,7 +4146,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/241",
       "page": 21,
       "order": 13,
       "role": "paragraph",
@@ -4184,7 +4165,7 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/242",
       "page": 21,
       "order": 14,
       "role": "paragraph",
@@ -4203,7 +4184,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/244",
       "page": 22,
       "order": 1,
       "role": "paragraph",
@@ -4222,7 +4203,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/245",
       "page": 22,
       "order": 2,
       "role": "paragraph",
@@ -4241,7 +4222,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/246",
       "page": 22,
       "order": 3,
       "role": "paragraph",
@@ -4260,7 +4241,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/247",
       "page": 22,
       "order": 4,
       "role": "paragraph",
@@ -4279,7 +4260,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/248",
       "page": 22,
       "order": 5,
       "role": "paragraph",
@@ -4298,7 +4279,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/249",
       "page": 22,
       "order": 6,
       "role": "paragraph",
@@ -4317,7 +4298,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/250",
       "page": 22,
       "order": 7,
       "role": "paragraph",
@@ -4336,7 +4317,7 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/251",
       "page": 22,
       "order": 8,
       "role": "paragraph",
@@ -4355,7 +4336,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/252",
       "page": 22,
       "order": 9,
       "role": "paragraph",
@@ -4374,7 +4355,7 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/253",
       "page": 22,
       "order": 10,
       "role": "paragraph",
@@ -4393,7 +4374,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/254",
       "page": 22,
       "order": 11,
       "role": "caption",
@@ -4412,7 +4393,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/255",
       "page": 22,
       "order": 12,
       "role": "paragraph",
@@ -4431,7 +4412,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/256",
       "page": 22,
       "order": 13,
       "role": "paragraph",
@@ -4450,7 +4431,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/257",
       "page": 22,
       "order": 14,
       "role": "paragraph",
@@ -4469,18 +4450,18 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/258",
       "page": 22,
       "order": 15,
       "role": "paragraph",
       "text": "EI",
       "bbox": {
-        "x0": 195.33,
+        "x0": 194.67,
         "y0": 204.0,
         "x1": 208.0,
-        "y1": 214.67,
-        "width": 12.67,
-        "height": 10.67
+        "y1": 215.33,
+        "width": 13.33,
+        "height": 11.33
       },
       "meta": {
         "docling_label": "text",
@@ -4488,7 +4469,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/259",
       "page": 22,
       "order": 16,
       "role": "paragraph",
@@ -4507,7 +4488,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/260",
       "page": 22,
       "order": 17,
       "role": "paragraph",
@@ -4526,7 +4507,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/261",
       "page": 22,
       "order": 18,
       "role": "paragraph",
@@ -4545,7 +4526,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/262",
       "page": 22,
       "order": 19,
       "role": "paragraph",
@@ -4564,7 +4545,7 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/263",
       "page": 22,
       "order": 20,
       "role": "paragraph",
@@ -4583,7 +4564,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/264",
       "page": 22,
       "order": 21,
       "role": "paragraph",
@@ -4602,7 +4583,7 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/265",
       "page": 22,
       "order": 22,
       "role": "paragraph",
@@ -4621,7 +4602,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/266",
       "page": 22,
       "order": 23,
       "role": "paragraph",
@@ -4640,7 +4621,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/267",
       "page": 22,
       "order": 24,
       "role": "paragraph",
@@ -4659,7 +4640,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/268",
       "page": 22,
       "order": 25,
       "role": "paragraph",
@@ -4667,9 +4648,9 @@
       "bbox": {
         "x0": 130.0,
         "y0": 174.0,
-        "x1": 142.67,
+        "x1": 143.33,
         "y1": 184.67,
-        "width": 12.67,
+        "width": 13.33,
         "height": 10.67
       },
       "meta": {
@@ -4678,7 +4659,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/269",
       "page": 22,
       "order": 26,
       "role": "paragraph",
@@ -4697,26 +4678,26 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/270",
       "page": 22,
       "order": 27,
       "role": "paragraph",
-      "text": "(c)",
+      "text": "(C)",
       "bbox": {
-        "x0": 222.67,
+        "x0": 222.0,
         "y0": 63.33,
         "x1": 236.0,
-        "y1": 72.0,
-        "width": 13.33,
-        "height": 8.67
+        "y1": 72.67,
+        "width": 14.0,
+        "height": 9.34
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(c)"
+        "docling_orig": "(C)"
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/272",
       "page": 23,
       "order": 1,
       "role": "paragraph",
@@ -4735,7 +4716,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/273",
       "page": 23,
       "order": 2,
       "role": "paragraph",
@@ -4754,7 +4735,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/274",
       "page": 23,
       "order": 3,
       "role": "paragraph",
@@ -4773,7 +4754,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/275",
       "page": 23,
       "order": 4,
       "role": "paragraph",
@@ -4792,7 +4773,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/276",
       "page": 23,
       "order": 5,
       "role": "paragraph",
@@ -4811,18 +4792,18 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/277",
       "page": 23,
       "order": 6,
       "role": "paragraph",
       "text": "PR",
       "bbox": {
-        "x0": 52.0,
+        "x0": 52.67,
         "y0": 11.31,
         "x1": 65.33,
-        "y1": 21.95,
-        "width": 13.33,
-        "height": 10.64
+        "y1": 21.29,
+        "width": 12.66,
+        "height": 9.98
       },
       "meta": {
         "docling_label": "text",
@@ -4830,7 +4811,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/278",
       "page": 23,
       "order": 7,
       "role": "paragraph",
@@ -4849,7 +4830,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/279",
       "page": 23,
       "order": 8,
       "role": "paragraph",
@@ -4868,7 +4849,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/280",
       "page": 23,
       "order": 9,
       "role": "paragraph",
@@ -4887,7 +4868,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/281",
       "page": 23,
       "order": 10,
       "role": "paragraph",
@@ -4906,7 +4887,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/282",
       "page": 23,
       "order": 11,
       "role": "paragraph",
@@ -4925,7 +4906,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/283",
       "page": 23,
       "order": 12,
       "role": "paragraph",
@@ -4944,7 +4925,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/284",
       "page": 23,
       "order": 13,
       "role": "paragraph",
@@ -4963,7 +4944,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/285",
       "page": 23,
       "order": 14,
       "role": "paragraph",
@@ -4982,7 +4963,7 @@
       }
     },
     {
-      "id": "#/texts/287",
+      "id": "#/texts/286",
       "page": 23,
       "order": 15,
       "role": "paragraph",
@@ -5001,9 +4982,28 @@
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/287",
       "page": 23,
       "order": 16,
+      "role": "paragraph",
+      "text": "p3",
+      "bbox": {
+        "x0": 212.0,
+        "y0": 21.94,
+        "x1": 226.0,
+        "y1": 35.23,
+        "width": 14.0,
+        "height": 13.29
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "p3"
+      }
+    },
+    {
+      "id": "#/texts/288",
+      "page": 23,
+      "order": 17,
       "role": "paragraph",
       "text": "p2",
       "bbox": {
@@ -5022,7 +5022,7 @@
     {
       "id": "#/texts/289",
       "page": 23,
-      "order": 17,
+      "order": 18,
       "role": "caption",
       "text": "Fig.18. Arrangement (a) does not yield active segments",
       "bbox": {
@@ -5041,7 +5041,7 @@
     {
       "id": "#/texts/290",
       "page": 23,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "D3",
       "bbox": {
@@ -5060,7 +5060,7 @@
     {
       "id": "#/texts/291",
       "page": 23,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "PR",
       "bbox": {
@@ -5079,7 +5079,7 @@
     {
       "id": "#/texts/292",
       "page": 23,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "The figure also shows, for case (a), the three possible intersections of P R and S. The first intersection shows that the exterior segments are inactive, since small rotations of L about any point of these segments produce visual lines as L' and L\". Intersections 2 and 3 show that also the interior segments are inactive. Concluding, case (a) does not produce active segments.",
       "bbox": {
@@ -5098,7 +5098,7 @@
     {
       "id": "#/texts/293",
       "page": 23,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "We omit for brevity a similar analysis for cases (b) and (c). The results obtained are summarized in Fig.19, where the locally active segments of tri-tangent lines are solid.",
       "bbox": {
@@ -5117,7 +5117,7 @@
     {
       "id": "#/texts/294",
       "page": 23,
-      "order": 22,
+      "order": 23,
       "role": "caption",
       "text": "Fig.19. The locally active segments of tri-tangent lines.",
       "bbox": {
@@ -5136,7 +5136,7 @@
     {
       "id": "#/texts/295",
       "page": 23,
-      "order": 23,
+      "order": 24,
       "role": "heading",
       "text": "4. AN ALGORITHM FOR COMPUTING THE VISUAL HULL",
       "bbox": {
@@ -5155,7 +5155,7 @@
     {
       "id": "#/texts/296",
       "page": 23,
-      "order": 24,
+      "order": 25,
       "role": "paragraph",
       "text": "Constructing an algorithm for computing the visual hull of a smooth curved object can be done by modifying the algorithm implemented by Kriegman, Petitjean and Ponce [28] for computing the aspect graph of smooth curved objects. The techniques described in [28] for solving the systems (1) and (2), or the equivalent systems for implicit surfaces, can be used for obtaining the pairs p 1 and p 2 for the visual event tangent crossing, and the triplets p 1 , p 2 and p 3 for the visual event triple point. The corresponding bi or tri-tangent lines passing through these points produces",
       "bbox": {
@@ -5404,18 +5404,18 @@
       "page": 26,
       "order": 1,
       "role": "paragraph",
-      "text": "n (p*)",
+      "text": "n(p*)",
       "bbox": {
-        "x0": 71.27,
-        "y0": 74.53,
+        "x0": 70.6,
+        "y0": 74.52,
         "x1": 100.73,
-        "y1": 87.47,
-        "width": 29.46,
-        "height": 12.94
+        "y1": 87.48,
+        "width": 30.13,
+        "height": 12.96
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "n (p*)"
+        "docling_orig": "n(p*)"
       }
     },
     {
@@ -5460,25 +5460,6 @@
       "id": "#/texts/315",
       "page": 26,
       "order": 4,
-      "role": "paragraph",
-      "text": "p'",
-      "bbox": {
-        "x0": 198.67,
-        "y0": 77.33,
-        "x1": 212.0,
-        "y1": 90.67,
-        "width": 13.33,
-        "height": 13.34
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "p'"
-      }
-    },
-    {
-      "id": "#/texts/316",
-      "page": 26,
-      "order": 5,
       "role": "caption",
       "text": "Fig. 21",
       "bbox": {
@@ -5495,9 +5476,9 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/316",
       "page": 26,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "A vector n ( p ) normal to the surface at a generic point p= ( x y z )= ( x y ½( k 1 ( p* ) x 2 + k 2 ( p* ) y 2 )) is easily found as the vector product of the tangent vectors along the principal directions t 1 and t 2 :",
       "bbox": {
@@ -5514,9 +5495,9 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/318",
       "page": 26,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "Let us rotate L about p' of an infinitesimal angle in such a way that the rotated line is tangent to S at a point p . The rotated line pp' must be normal to n ( p ). Hence their dot product must be 0:",
       "bbox": {
@@ -5533,9 +5514,9 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/320",
       "page": 26,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "and then",
       "bbox": {
@@ -5552,9 +5533,9 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/322",
       "page": 26,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "Neglecting second order terms, we obtain",
       "bbox": {
@@ -5571,9 +5552,9 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/324",
       "page": 26,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "This means that the curve formed by tangency points p can be obtained by intersecting the surface S with a plane passing through the axis Z and forming with the principal directions Y an angle whose tangent is given by the above formula. Observe that neglecting second order terms means assuming that the line, rotated by an infinitesimal angle about a point p' lying at a finite distance from p, is parallel to L. Then the curve formed by the tangency point is arbitrarily near, approaching p* , to the contour generator for viewlines parallel to L.",
       "bbox": {
@@ -5590,7 +5571,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/326",
       "page": 27,
       "order": 1,
       "role": "paragraph",
@@ -5609,7 +5590,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/327",
       "page": 27,
       "order": 2,
       "role": "heading",
@@ -5628,7 +5609,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/328",
       "page": 27,
       "order": 3,
       "role": "list_item",
@@ -5647,7 +5628,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/329",
       "page": 27,
       "order": 4,
       "role": "list_item",
@@ -5666,7 +5647,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/330",
       "page": 27,
       "order": 5,
       "role": "list_item",
@@ -5685,7 +5666,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/331",
       "page": 27,
       "order": 6,
       "role": "list_item",
@@ -5704,7 +5685,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/332",
       "page": 27,
       "order": 7,
       "role": "list_item",
@@ -5723,7 +5704,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/333",
       "page": 27,
       "order": 8,
       "role": "list_item",
@@ -5742,7 +5723,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/334",
       "page": 27,
       "order": 9,
       "role": "list_item",
@@ -5761,7 +5742,7 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/335",
       "page": 27,
       "order": 10,
       "role": "list_item",
@@ -5780,7 +5761,7 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/336",
       "page": 27,
       "order": 11,
       "role": "list_item",
@@ -5799,7 +5780,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/338",
       "page": 28,
       "order": 1,
       "role": "list_item",
@@ -5818,7 +5799,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/339",
       "page": 28,
       "order": 2,
       "role": "list_item",
@@ -5837,7 +5818,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/340",
       "page": 28,
       "order": 3,
       "role": "list_item",
@@ -5856,7 +5837,7 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/341",
       "page": 28,
       "order": 4,
       "role": "list_item",
@@ -5875,7 +5856,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/342",
       "page": 28,
       "order": 5,
       "role": "list_item",
@@ -5894,7 +5875,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/343",
       "page": 28,
       "order": 6,
       "role": "list_item",
@@ -5913,7 +5894,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/344",
       "page": 28,
       "order": 7,
       "role": "list_item",
@@ -5932,7 +5913,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/345",
       "page": 28,
       "order": 8,
       "role": "list_item",
@@ -5951,7 +5932,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/346",
       "page": 28,
       "order": 9,
       "role": "list_item",
@@ -5970,7 +5951,7 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/347",
       "page": 28,
       "order": 10,
       "role": "list_item",
@@ -5989,7 +5970,7 @@
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/348",
       "page": 28,
       "order": 11,
       "role": "list_item",
@@ -6008,7 +5989,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/349",
       "page": 28,
       "order": 12,
       "role": "list_item",
@@ -6027,7 +6008,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/351",
       "page": 29,
       "order": 1,
       "role": "list_item",
@@ -6046,7 +6027,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/352",
       "page": 29,
       "order": 2,
       "role": "list_item",
@@ -6065,7 +6046,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/353",
       "page": 29,
       "order": 3,
       "role": "list_item",
@@ -6084,7 +6065,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/354",
       "page": 29,
       "order": 4,
       "role": "list_item",
@@ -6103,7 +6084,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/355",
       "page": 29,
       "order": 5,
       "role": "list_item",
@@ -6122,7 +6103,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/356",
       "page": 29,
       "order": 6,
       "role": "list_item",
@@ -6141,7 +6122,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/357",
       "page": 29,
       "order": 7,
       "role": "list_item",
@@ -6160,7 +6141,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/358",
       "page": 29,
       "order": 8,
       "role": "list_item",
@@ -6179,7 +6160,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/359",
       "page": 29,
       "order": 9,
       "role": "list_item",
@@ -6198,7 +6179,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/360",
       "page": 29,
       "order": 10,
       "role": "list_item",
@@ -6217,7 +6198,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/361",
       "page": 29,
       "order": 11,
       "role": "list_item",
@@ -6236,7 +6217,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/362",
       "page": 29,
       "order": 12,
       "role": "list_item",
@@ -6255,7 +6236,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/363",
       "page": 29,
       "order": 13,
       "role": "list_item",
@@ -6274,7 +6255,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/365",
       "page": 30,
       "order": 1,
       "role": "list_item",
@@ -6293,7 +6274,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/366",
       "page": 30,
       "order": 2,
       "role": "list_item",

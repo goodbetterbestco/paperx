@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1990_hidden_curve_removal_for_free_form_surfaces/1990_hidden_curve_removal_for_free_form_surfaces.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1990_hidden_curve_removal_for_free_form_surfaces/1990_hidden_curve_removal_for_free_form_surfaces.pdf",
   "page_count": 25,
   "page_sizes_pt": [
     {
@@ -4082,5 +4082,32 @@
         "docling_orig": "[Woo 9 4] T. Woo. Visibility maps and spherical algorithms. Computer-Aided Design , 2 6( 1): 6 { 1 6, 1 9 9 4."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling"
+  }
 }

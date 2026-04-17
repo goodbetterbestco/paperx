@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl.pdf",
+  "pdf_path": "stepview/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl/2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl.pdf",
   "page_count": 31,
   "page_sizes_pt": [
     {
@@ -316,7 +316,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 166.0,
@@ -335,7 +335,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Commercial computer-aided design (CAD) software is often expensive. This paper examines the use of product manufacturing information (PMI) web visualization to address the challenges faced by production site personnel and external partners collaborating on product development. These individuals need to be able to view or query PMI in modelbased definition models without having to install professional CAD software. A detailed analysis of the relationships between PMI entity attributes in standard for the exchange of product model data (STEP) AP242 files was conducted. An algorithm for the automatic parsing and mapping of PMI semantics to a web browser is presented. Using linear sizes as an example, this paper introduces a prototype system with the following features: PMI web visualization; automatic linkage of PMI to associated geometry; browser-native rendering without the need for dedicated applications; and integration of graphical presentation and semantic representation. The effectiveness and feasibility of the prototype system are validated through case studies. However, the system has limitations when handling large assemblies with compound tolerances, curved dimension placements, and overlapping annotations, which presents areas for future research.",
       "bbox": {
         "x0": 165.97,
@@ -354,7 +354,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: model-based definition; STEP AP242; product manufacturing information; semantic extracting; WebGL-based rendering; PMI web visualization",
       "bbox": {
         "x0": 166.39,
@@ -373,7 +373,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 166.39,
@@ -392,7 +392,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Model-based definition (MBD) is an innovative approach of managing engineering and business processes. It utilizes the three-dimensional (3D) digital models as the sole source of information for design, manufacturing, assembly, inspection, and maintenance throughout the entire product lifecycle [1]. MBD facilitates the seamless and rapid flow of product information, enabling efficient, real-time data sharing, and ensuring safe and reliable traceability. This approach shortens the product research and development cycle, improves product quality, and reduces time-to-market [2,3]. Although MBD offers significant benefits,",
       "bbox": {
         "x0": 166.09,
@@ -411,7 +411,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Academic Editor: Pedro Couto",
       "bbox": {
         "x0": 35.72,
@@ -430,7 +430,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received: 2 August 2025",
       "bbox": {
         "x0": 35.72,
@@ -449,7 +449,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Revised: 7 October 2025",
       "bbox": {
         "x0": 35.72,
@@ -468,7 +468,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Accepted: 7 October 2025",
       "bbox": {
         "x0": 35.44,
@@ -487,7 +487,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Published: 9 October 2025",
       "bbox": {
         "x0": 35.72,
@@ -506,7 +506,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Citation: Chen, Y.; Wang, H.; Wang, L.; Xu, S.; Liao, L.; Mo, J.; Lin, X. Three-Dimensional Visualization of Product Manufacturing Information in a Web Browser Based on STEP AP242 and WebGL. Appl. Sci. 2025 , 15 , 10847. https: doi.org 10.3390 app151910847",
       "bbox": {
         "x0": 35.37,
@@ -525,7 +525,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Copyright: ©2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https: creativecommons.org licenses by 4.0).",
       "bbox": {
         "x0": 35.44,
@@ -3223,6 +3223,25 @@
       "id": "#/texts/181",
       "page": 10,
       "order": 9,
+      "role": "paragraph",
+      "text": "-",
+      "bbox": {
+        "x0": 324.5,
+        "y0": 24.75,
+        "x1": 333.54,
+        "y1": 36.0,
+        "width": 9.04,
+        "height": 11.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-"
+      }
+    },
+    {
+      "id": "#/texts/182",
+      "page": 10,
+      "order": 10,
       "role": "heading",
       "text": "3.2.2. Extracting DT Information",
       "bbox": {
@@ -3239,9 +3258,9 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/183",
       "page": 10,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "In an MBD model, 3D annotation tolerance comprises both DT and geometric tolerance (GT). This section will cover the process of extracting DT information, while Section 3.2.3 will detail the extraction of GT information.",
       "bbox": {
@@ -3258,9 +3277,9 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/184",
       "page": 10,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "STEP AP242 files present DT information in four styles: nominal size, plus minus deviation, value range, and tolerance class (Table 2) [15].",
       "bbox": {
@@ -3277,9 +3296,9 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/185",
       "page": 10,
-      "order": 12,
+      "order": 13,
       "role": "caption",
       "text": "Table 2. Types of dimensional tolerancing.",
       "bbox": {
@@ -3296,9 +3315,9 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/186",
       "page": 10,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "Type",
       "bbox": {
@@ -3315,9 +3334,9 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/187",
       "page": 10,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "Nominal Size",
       "bbox": {
@@ -3334,9 +3353,9 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/188",
       "page": 10,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "Plus Minus Deviation",
       "bbox": {
@@ -3353,9 +3372,9 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/189",
       "page": 10,
-      "order": 16,
+      "order": 17,
       "role": "paragraph",
       "text": "Value Range",
       "bbox": {
@@ -3372,9 +3391,9 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/190",
       "page": 10,
-      "order": 17,
+      "order": 18,
       "role": "paragraph",
       "text": "Tolerance Class",
       "bbox": {
@@ -3391,9 +3410,9 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/191",
       "page": 10,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "Related",
       "bbox": {
@@ -3410,9 +3429,9 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/192",
       "page": 10,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "entity",
       "bbox": {
@@ -3429,9 +3448,9 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/193",
       "page": 10,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "'MEASURE_REPRESENTA-",
       "bbox": {
@@ -3448,9 +3467,9 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/194",
       "page": 10,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "TION_ITEM'",
       "bbox": {
@@ -3467,9 +3486,9 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/195",
       "page": 10,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "'PLUS_MINUS_TOLERANCE'",
       "bbox": {
@@ -3486,9 +3505,9 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/196",
       "page": 10,
-      "order": 23,
+      "order": 24,
       "role": "paragraph",
       "text": "'UPPER_LIMIT',",
       "bbox": {
@@ -3505,9 +3524,9 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/197",
       "page": 10,
-      "order": 24,
+      "order": 25,
       "role": "paragraph",
       "text": "'NOMINAL_VALUE' and",
       "bbox": {
@@ -3524,9 +3543,9 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/198",
       "page": 10,
-      "order": 25,
+      "order": 26,
       "role": "paragraph",
       "text": "'LOWER_LIMIT'",
       "bbox": {
@@ -3543,9 +3562,9 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/199",
       "page": 10,
-      "order": 26,
+      "order": 27,
       "role": "paragraph",
       "text": "'LIMITS_AND_FITS'",
       "bbox": {
@@ -3562,9 +3581,9 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/200",
       "page": 10,
-      "order": 27,
+      "order": 28,
       "role": "paragraph",
       "text": "Example",
       "bbox": {
@@ -3581,9 +3600,9 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/201",
       "page": 10,
-      "order": 28,
+      "order": 29,
       "role": "list_item",
       "text": "Nominal size (Table 2). The nominal size is the size specified during the design stage and represents the ideal size that the designer aims to achieve. In a STEP AP242 file, the entity-attribute relationship for a nominal size can be referenced on the right side of Figure 3.",
       "bbox": {
@@ -3600,9 +3619,9 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/202",
       "page": 10,
-      "order": 29,
+      "order": 30,
       "role": "list_item",
       "text": "Plus minus deviation (Table 2). The plus minus deviation is defined by the entity 'PLUS_MINUS_TOLERANCE', which references the entities 'TOLERANCE_VALUE' and 'DIMENSIONAL_LOCATION' (Figure 7). The entity 'TOLERANCE_VALUE' has two attributes: 'UPPER_BOUND' and 'LOWER_BOUND', which specify the plus minus deviation values individually.",
       "bbox": {
@@ -3619,9 +3638,9 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/203",
       "page": 10,
-      "order": 30,
+      "order": 31,
       "role": "list_item",
       "text": "Value range (Table 2). Detailed explanations can be found in Appendix C.",
       "bbox": {
@@ -3638,9 +3657,9 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/204",
       "page": 10,
-      "order": 31,
+      "order": 32,
       "role": "list_item",
       "text": "Tolerance class (Table 2). Detailed explanations can be found in Appendix C.",
       "bbox": {
@@ -3657,9 +3676,9 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/205",
       "page": 10,
-      "order": 32,
+      "order": 33,
       "role": "caption",
       "text": "Figure 7. Plus minus deviation entity-attribute relationship in a STEP AP242 file.",
       "bbox": {
@@ -3676,9 +3695,9 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/206",
       "page": 10,
-      "order": 33,
+      "order": 34,
       "role": "paragraph",
       "text": "dimensional_location",
       "bbox": {
@@ -3695,9 +3714,9 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/207",
       "page": 10,
-      "order": 34,
+      "order": 35,
       "role": "paragraph",
       "text": "plus_minus_tolerance",
       "bbox": {
@@ -3714,9 +3733,9 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/208",
       "page": 10,
-      "order": 35,
+      "order": 36,
       "role": "paragraph",
       "text": "tolerance_value",
       "bbox": {
@@ -3733,9 +3752,9 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/209",
       "page": 10,
-      "order": 36,
+      "order": 37,
       "role": "paragraph",
       "text": "measure_with_unit",
       "bbox": {
@@ -3752,9 +3771,9 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/210",
       "page": 10,
-      "order": 37,
+      "order": 38,
       "role": "paragraph",
       "text": "measure_with_unit",
       "bbox": {
@@ -3771,9 +3790,9 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/211",
       "page": 10,
-      "order": 38,
+      "order": 39,
       "role": "paragraph",
       "text": "upper_bound",
       "bbox": {
@@ -3790,9 +3809,9 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/212",
       "page": 10,
-      "order": 39,
+      "order": 40,
       "role": "paragraph",
       "text": "lower_bound",
       "bbox": {
@@ -3809,9 +3828,9 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/213",
       "page": 10,
-      "order": 40,
+      "order": 41,
       "role": "paragraph",
       "text": "Due to the variety of presentation styles for DTs in STEP AP242 files, an algorithm was designed to automatically extract different types of DT data (Figure 8). Unlike previous tools, this algorithm can extract all the structural DT information, forming the basis for achieving PMI SR within a web browser.",
       "bbox": {
@@ -3828,26 +3847,26 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/214",
       "page": 10,
-      "order": 41,
+      "order": 42,
       "role": "paragraph",
-      "text": "L10E",
+      "text": "L1 0E",
       "bbox": {
-        "x0": 435.18,
-        "y0": 60.75,
-        "x1": 463.04,
-        "y1": 72.0,
-        "width": 27.86,
-        "height": 11.25
+        "x0": 434.3,
+        "y0": 60.41,
+        "x1": 463.17,
+        "y1": 72.34,
+        "width": 28.87,
+        "height": 11.93
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "L10E"
+        "docling_orig": "L1 0E"
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/217",
       "page": 11,
       "order": 1,
       "role": "caption",
@@ -3866,7 +3885,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/218",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -3885,7 +3904,7 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/219",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -3904,7 +3923,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/220",
       "page": 11,
       "order": 4,
       "role": "paragraph",
@@ -3923,7 +3942,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/221",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -3942,7 +3961,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/222",
       "page": 11,
       "order": 6,
       "role": "paragraph",
@@ -3961,7 +3980,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/223",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -3980,7 +3999,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/224",
       "page": 11,
       "order": 8,
       "role": "paragraph",
@@ -3999,7 +4018,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/225",
       "page": 11,
       "order": 9,
       "role": "paragraph",
@@ -4018,7 +4037,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/226",
       "page": 11,
       "order": 10,
       "role": "paragraph",
@@ -4037,7 +4056,7 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/227",
       "page": 11,
       "order": 11,
       "role": "paragraph",
@@ -4056,7 +4075,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/228",
       "page": 11,
       "order": 12,
       "role": "paragraph",
@@ -4075,7 +4094,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/229",
       "page": 11,
       "order": 13,
       "role": "paragraph",
@@ -4094,7 +4113,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/230",
       "page": 11,
       "order": 14,
       "role": "paragraph",
@@ -4113,7 +4132,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/231",
       "page": 11,
       "order": 15,
       "role": "paragraph",
@@ -4132,7 +4151,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/232",
       "page": 11,
       "order": 16,
       "role": "paragraph",
@@ -4151,7 +4170,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/233",
       "page": 11,
       "order": 17,
       "role": "paragraph",
@@ -4170,7 +4189,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/234",
       "page": 11,
       "order": 18,
       "role": "paragraph",
@@ -4189,7 +4208,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/235",
       "page": 11,
       "order": 19,
       "role": "paragraph",
@@ -4208,7 +4227,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/236",
       "page": 11,
       "order": 20,
       "role": "paragraph",
@@ -4227,7 +4246,7 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/237",
       "page": 11,
       "order": 21,
       "role": "paragraph",
@@ -4246,7 +4265,7 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/238",
       "page": 11,
       "order": 22,
       "role": "paragraph",
@@ -4265,7 +4284,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/239",
       "page": 11,
       "order": 23,
       "role": "paragraph",
@@ -4284,7 +4303,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/240",
       "page": 11,
       "order": 24,
       "role": "paragraph",
@@ -4303,7 +4322,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/241",
       "page": 11,
       "order": 25,
       "role": "paragraph",
@@ -4322,7 +4341,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/242",
       "page": 11,
       "order": 26,
       "role": "paragraph",
@@ -4341,7 +4360,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/243",
       "page": 11,
       "order": 27,
       "role": "paragraph",
@@ -4360,7 +4379,7 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/244",
       "page": 11,
       "order": 28,
       "role": "paragraph",
@@ -4379,7 +4398,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/245",
       "page": 11,
       "order": 29,
       "role": "paragraph",
@@ -4398,7 +4417,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/246",
       "page": 11,
       "order": 30,
       "role": "paragraph",
@@ -4417,7 +4436,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/247",
       "page": 11,
       "order": 31,
       "role": "paragraph",
@@ -4436,7 +4455,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/248",
       "page": 11,
       "order": 32,
       "role": "paragraph",
@@ -4455,7 +4474,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/249",
       "page": 11,
       "order": 33,
       "role": "paragraph",
@@ -4474,7 +4493,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/250",
       "page": 11,
       "order": 34,
       "role": "paragraph",
@@ -4493,7 +4512,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/251",
       "page": 11,
       "order": 35,
       "role": "paragraph",
@@ -4512,7 +4531,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/252",
       "page": 11,
       "order": 36,
       "role": "paragraph",
@@ -4531,7 +4550,7 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/253",
       "page": 11,
       "order": 37,
       "role": "paragraph",
@@ -4550,7 +4569,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/254",
       "page": 11,
       "order": 38,
       "role": "paragraph",
@@ -4569,7 +4588,7 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/255",
       "page": 11,
       "order": 39,
       "role": "paragraph",
@@ -4588,7 +4607,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/256",
       "page": 11,
       "order": 40,
       "role": "paragraph",
@@ -4607,7 +4626,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/257",
       "page": 11,
       "order": 41,
       "role": "paragraph",
@@ -4626,7 +4645,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/258",
       "page": 11,
       "order": 42,
       "role": "paragraph",
@@ -4645,7 +4664,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/259",
       "page": 11,
       "order": 43,
       "role": "paragraph",
@@ -4664,7 +4683,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/260",
       "page": 11,
       "order": 44,
       "role": "paragraph",
@@ -4683,7 +4702,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/261",
       "page": 11,
       "order": 45,
       "role": "paragraph",
@@ -4702,7 +4721,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/262",
       "page": 11,
       "order": 46,
       "role": "paragraph",
@@ -4721,7 +4740,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/263",
       "page": 11,
       "order": 47,
       "role": "paragraph",
@@ -4740,7 +4759,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/264",
       "page": 11,
       "order": 48,
       "role": "paragraph",
@@ -4759,7 +4778,7 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/265",
       "page": 11,
       "order": 49,
       "role": "paragraph",
@@ -4778,7 +4797,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/266",
       "page": 11,
       "order": 50,
       "role": "paragraph",
@@ -4797,7 +4816,7 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/267",
       "page": 11,
       "order": 51,
       "role": "paragraph",
@@ -4816,7 +4835,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/268",
       "page": 11,
       "order": 52,
       "role": "paragraph",
@@ -4835,7 +4854,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/269",
       "page": 11,
       "order": 53,
       "role": "paragraph",
@@ -4854,7 +4873,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/270",
       "page": 11,
       "order": 54,
       "role": "paragraph",
@@ -4873,7 +4892,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/271",
       "page": 11,
       "order": 55,
       "role": "paragraph",
@@ -4892,7 +4911,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/272",
       "page": 11,
       "order": 56,
       "role": "paragraph",
@@ -4911,7 +4930,7 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/273",
       "page": 11,
       "order": 57,
       "role": "paragraph",
@@ -4930,7 +4949,7 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/274",
       "page": 11,
       "order": 58,
       "role": "paragraph",
@@ -4949,7 +4968,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/275",
       "page": 11,
       "order": 59,
       "role": "paragraph",
@@ -4968,7 +4987,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/276",
       "page": 11,
       "order": 60,
       "role": "paragraph",
@@ -4987,7 +5006,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/277",
       "page": 11,
       "order": 61,
       "role": "paragraph",
@@ -5006,7 +5025,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/278",
       "page": 11,
       "order": 62,
       "role": "paragraph",
@@ -5025,7 +5044,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/279",
       "page": 11,
       "order": 63,
       "role": "paragraph",
@@ -5044,7 +5063,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/280",
       "page": 11,
       "order": 64,
       "role": "paragraph",
@@ -5063,7 +5082,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/281",
       "page": 11,
       "order": 65,
       "role": "paragraph",
@@ -5082,7 +5101,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/282",
       "page": 11,
       "order": 66,
       "role": "heading",
@@ -5101,7 +5120,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/283",
       "page": 11,
       "order": 67,
       "role": "paragraph",
@@ -5120,36 +5139,36 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/286",
       "page": 12,
       "order": 1,
       "role": "paragraph",
-      "text": "ФО.ІМ А В",
+      "text": "·ФО.ІМ А В",
       "bbox": {
-        "x0": 67.21,
+        "x0": 66.55,
         "y0": 15.34,
         "x1": 161.04,
         "y1": 26.67,
-        "width": 93.83,
+        "width": 94.49,
         "height": 11.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "ФО.ІМ А В"
+        "docling_orig": "·ФО.ІМ А В"
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/287",
       "page": 12,
       "order": 2,
       "role": "paragraph",
       "text": "-",
       "bbox": {
-        "x0": 58.51,
+        "x0": 57.84,
         "y0": 15.93,
-        "x1": 72.47,
+        "x1": 73.8,
         "y1": 27.21,
-        "width": 13.96,
+        "width": 15.96,
         "height": 11.28
       },
       "meta": {
@@ -5158,28 +5177,9 @@
       }
     },
     {
-      "id": "#/texts/287",
-      "page": 12,
-      "order": 3,
-      "role": "paragraph",
-      "text": "0 .I",
-      "bbox": {
-        "x0": 74.46,
-        "y0": 19.25,
-        "x1": 98.4,
-        "y1": 26.55,
-        "width": 23.94,
-        "height": 7.3
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0 .I"
-      }
-    },
-    {
       "id": "#/texts/288",
       "page": 12,
-      "order": 4,
+      "order": 3,
       "role": "caption",
       "text": "Table 3. Types of geometrical tolerance.",
       "bbox": {
@@ -5198,7 +5198,7 @@
     {
       "id": "#/texts/289",
       "page": 12,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "Type",
       "bbox": {
@@ -5217,7 +5217,7 @@
     {
       "id": "#/texts/290",
       "page": 12,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "AGTWithout a Modifier or Datum Reference",
       "bbox": {
@@ -5236,7 +5236,7 @@
     {
       "id": "#/texts/291",
       "page": 12,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "AGTwith One or More",
       "bbox": {
@@ -5255,7 +5255,7 @@
     {
       "id": "#/texts/292",
       "page": 12,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "Modifiers",
       "bbox": {
@@ -5274,7 +5274,7 @@
     {
       "id": "#/texts/293",
       "page": 12,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "AGTwith One or More Datum",
       "bbox": {
@@ -5293,7 +5293,7 @@
     {
       "id": "#/texts/294",
       "page": 12,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "Related",
       "bbox": {
@@ -5312,7 +5312,7 @@
     {
       "id": "#/texts/295",
       "page": 12,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "entity",
       "bbox": {
@@ -5331,7 +5331,7 @@
     {
       "id": "#/texts/296",
       "page": 12,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "'STRAIGHTNESS_TOLERANCE' and so on",
       "bbox": {
@@ -5350,7 +5350,7 @@
     {
       "id": "#/texts/297",
       "page": 12,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "'GEOMETRIC_TOLERANCE_WITH_MODIFIERS'",
       "bbox": {
@@ -5369,7 +5369,7 @@
     {
       "id": "#/texts/298",
       "page": 12,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "'GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE'",
       "bbox": {
@@ -5388,7 +5388,7 @@
     {
       "id": "#/texts/299",
       "page": 12,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Example",
       "bbox": {
@@ -5468,11 +5468,11 @@
       "role": "paragraph",
       "text": "tolerance for",
       "bbox": {
-        "x0": 389.64,
+        "x0": 388.95,
         "y0": 44.2,
         "x1": 456.89,
         "y1": 52.49,
-        "width": 67.25,
+        "width": 67.94,
         "height": 8.29
       },
       "meta": {
@@ -6798,12 +6798,12 @@
       "role": "paragraph",
       "text": "CLOSED_SHELL",
       "bbox": {
-        "x0": 93.43,
-        "y0": 18.79,
-        "x1": 155.77,
-        "y1": 30.18,
-        "width": 62.34,
-        "height": 11.39
+        "x0": 93.45,
+        "y0": 18.92,
+        "x1": 154.64,
+        "y1": 30.05,
+        "width": 61.19,
+        "height": 11.13
       },
       "meta": {
         "docling_label": "text",
@@ -9399,18 +9399,18 @@
       "page": 20,
       "order": 2,
       "role": "paragraph",
-      "text": "12_",
+      "text": "12.",
       "bbox": {
         "x0": 22.34,
         "y0": 151.61,
-        "x1": 43.08,
+        "x1": 42.28,
         "y1": 158.8,
-        "width": 20.74,
+        "width": 19.94,
         "height": 7.19
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "12_"
+        "docling_orig": "12."
       }
     },
     {
@@ -9418,18 +9418,18 @@
       "page": 20,
       "order": 3,
       "role": "paragraph",
-      "text": "10",
+      "text": "- EMBOSN",
       "bbox": {
-        "x0": 22.34,
-        "y0": 228.22,
-        "x1": 43.08,
-        "y1": 238.59,
-        "width": 20.74,
-        "height": 10.37
+        "x0": 11.17,
+        "y0": 189.12,
+        "x1": 39.88,
+        "y1": 193.22,
+        "width": 28.71,
+        "height": 4.1
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "10"
+        "docling_orig": "- EMBOSN"
       }
     },
     {
@@ -9437,13 +9437,32 @@
       "page": 20,
       "order": 4,
       "role": "paragraph",
+      "text": "10",
+      "bbox": {
+        "x0": 22.34,
+        "y0": 228.22,
+        "x1": 43.08,
+        "y1": 237.79,
+        "width": 20.74,
+        "height": 9.57
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "10"
+      }
+    },
+    {
+      "id": "#/texts/530",
+      "page": 20,
+      "order": 5,
+      "role": "paragraph",
       "text": "_12_",
       "bbox": {
-        "x0": 23.93,
+        "x0": 23.13,
         "y0": 335.94,
         "x1": 43.87,
         "y1": 341.53,
-        "width": 19.94,
+        "width": 20.74,
         "height": 5.59
       },
       "meta": {
@@ -9452,9 +9471,9 @@
       }
     },
     {
-      "id": "#/texts/530",
+      "id": "#/texts/531",
       "page": 20,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "* +",
       "bbox": {
@@ -9471,11 +9490,11 @@
       }
     },
     {
-      "id": "#/texts/531",
+      "id": "#/texts/532",
       "page": 20,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
-      "text": "· http localhost:63342 mode13.html inode|3.html?_Jt=IuOifg2ps9»s5bukllwgc0441>&_J_relvad-RELOAD_ON_SAVE",
+      "text": "· http localhost:63342 mode13.html mode|3.html?_Jt=IuOlfg2ps9s5bukUlwgc04441>&_J_relvad-RELOAD_ON_SAVE",
       "bbox": {
         "x0": 69.4,
         "y0": 196.21,
@@ -9486,26 +9505,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "· http localhost:63342 mode13.html inode|3.html?_Jt=IuOifg2ps9»s5bukllwgc0441>&_J_relvad-RELOAD_ON_SAVE"
-      }
-    },
-    {
-      "id": "#/texts/532",
-      "page": 20,
-      "order": 7,
-      "role": "paragraph",
-      "text": "26+0.05 -",
-      "bbox": {
-        "x0": 57.43,
-        "y0": 228.86,
-        "x1": 108.49,
-        "y1": 240.19,
-        "width": 51.06,
-        "height": 11.33
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "26+0.05 -"
+        "docling_orig": "· http localhost:63342 mode13.html mode|3.html?_Jt=IuOlfg2ps9s5bukUlwgc04441>&_J_relvad-RELOAD_ON_SAVE"
       }
     },
     {
@@ -9513,13 +9513,32 @@
       "page": 20,
       "order": 8,
       "role": "paragraph",
+      "text": "26+0.05 -",
+      "bbox": {
+        "x0": 57.43,
+        "y0": 228.86,
+        "x1": 107.69,
+        "y1": 239.52,
+        "width": 50.26,
+        "height": 10.66
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "26+0.05 -"
+      }
+    },
+    {
+      "id": "#/texts/534",
+      "page": 20,
+      "order": 9,
+      "role": "paragraph",
       "text": "48+0.05",
       "bbox": {
-        "x0": 90.94,
+        "x0": 91.73,
         "y0": 336.74,
         "x1": 126.03,
         "y1": 341.53,
-        "width": 35.09,
+        "width": 34.3,
         "height": 4.79
       },
       "meta": {
@@ -9528,18 +9547,18 @@
       }
     },
     {
-      "id": "#/texts/534",
+      "id": "#/texts/535",
       "page": 20,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "72+0.05",
       "bbox": {
         "x0": 90.14,
         "y0": 347.11,
         "x1": 125.24,
-        "y1": 352.7,
+        "y1": 351.9,
         "width": 35.1,
-        "height": 5.59
+        "height": 4.79
       },
       "meta": {
         "docling_label": "text",
@@ -9547,9 +9566,9 @@
       }
     },
     {
-      "id": "#/texts/535",
+      "id": "#/texts/536",
       "page": 20,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "· http localhost 63342 model3.html model3.html?_lit-iu0ifg2ps)ss5bukthvgco441s&__reload-RELOAD_ON_SAV",
       "bbox": {
@@ -9566,18 +9585,18 @@
       }
     },
     {
-      "id": "#/texts/536",
+      "id": "#/texts/537",
       "page": 20,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "26",
       "bbox": {
         "x0": 72.59,
         "y0": 47.08,
-        "x1": 86.95,
-        "y1": 52.67,
-        "width": 14.36,
-        "height": 5.59
+        "x1": 85.35,
+        "y1": 53.46,
+        "width": 12.76,
+        "height": 6.38
       },
       "meta": {
         "docling_label": "text",
@@ -9585,370 +9604,9 @@
       }
     },
     {
-      "id": "#/texts/537",
-      "page": 20,
-      "order": 12,
-      "role": "paragraph",
-      "text": "3x5x0 I2",
-      "bbox": {
-        "x0": 222.51,
-        "y0": 50.91,
-        "x1": 262.48,
-        "y1": 62.4,
-        "width": 39.97,
-        "height": 11.49
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "3x5x0 I2"
-      }
-    },
-    {
       "id": "#/texts/538",
       "page": 20,
       "order": 13,
-      "role": "paragraph",
-      "text": "__Ø8",
-      "bbox": {
-        "x0": 228.14,
-        "y0": 55.86,
-        "x1": 248.08,
-        "y1": 60.65,
-        "width": 19.94,
-        "height": 4.79
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "__Ø8"
-      }
-    },
-    {
-      "id": "#/texts/539",
-      "page": 20,
-      "order": 14,
-      "role": "heading",
-      "text": "4.3.3. Case Study",
-      "bbox": {
-        "x0": 166.39,
-        "y0": 75.05,
-        "x1": 241.54,
-        "y1": 84.5,
-        "width": 75.15,
-        "height": 9.45
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "4.3.3. Case Study"
-      }
-    },
-    {
-      "id": "#/texts/540",
-      "page": 20,
-      "order": 15,
-      "role": "paragraph",
-      "text": "Model the part depicted in Figure 4 as an MBD model using NX 1847, and then export it as a STEP AP242 file. Next, use the developed prototype system in a web browser to parse the file. Figure 18a-d show examples of 3D dimension annotation, 3D DT, 3D datum symbol (DS), and 3D GT within a web browser, respectively. Additionally Figure 18e,f show the PMI SR results for 3D-annotated associated objects using WebGL texture technology.",
-      "bbox": {
-        "x0": 166.09,
-        "y0": 91.97,
-        "x1": 559.69,
-        "y1": 157.12,
-        "width": 393.6,
-        "height": 65.15
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Model the part depicted in Figure 4 as an MBD model using NX 1847, and then export it as a STEP AP242 file. Next, use the developed prototype system in a web browser to parse the file. Figure 18a-d show examples of 3D dimension annotation, 3D DT, 3D datum symbol (DS), and 3D GT within a web browser, respectively. Additionally Figure 18e,f show the PMI SR results for 3D-annotated associated objects using WebGL texture technology."
-      }
-    },
-    {
-      "id": "#/texts/541",
-      "page": 20,
-      "order": 16,
-      "role": "caption",
-      "text": "Figure 18. Cont.",
-      "bbox": {
-        "x0": 166.39,
-        "y0": 724.08,
-        "x1": 229.2,
-        "y1": 732.56,
-        "width": 62.81,
-        "height": 8.48
-      },
-      "meta": {
-        "docling_label": "caption",
-        "docling_orig": "Figure 18. Cont."
-      }
-    },
-    {
-      "id": "#/texts/542",
-      "page": 20,
-      "order": 17,
-      "role": "paragraph",
-      "text": "(",
-      "bbox": {
-        "x0": 294.12,
-        "y0": 343.4,
-        "x1": 296.69,
-        "y1": 351.23,
-        "width": 2.57,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "("
-      }
-    },
-    {
-      "id": "#/texts/543",
-      "page": 20,
-      "order": 18,
-      "role": "paragraph",
-      "text": "a",
-      "bbox": {
-        "x0": 296.7,
-        "y0": 343.4,
-        "x1": 300.56,
-        "y1": 351.23,
-        "width": 3.86,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "a"
-      }
-    },
-    {
-      "id": "#/texts/544",
-      "page": 20,
-      "order": 19,
-      "role": "paragraph",
-      "text": ")",
-      "bbox": {
-        "x0": 300.54,
-        "y0": 343.4,
-        "x1": 305.01,
-        "y1": 351.23,
-        "width": 4.47,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": ")"
-      }
-    },
-    {
-      "id": "#/texts/545",
-      "page": 20,
-      "order": 20,
-      "role": "paragraph",
-      "text": "(",
-      "bbox": {
-        "x0": 293.65,
-        "y0": 527.92,
-        "x1": 296.22,
-        "y1": 535.76,
-        "width": 2.57,
-        "height": 7.84
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "("
-      }
-    },
-    {
-      "id": "#/texts/546",
-      "page": 20,
-      "order": 21,
-      "role": "paragraph",
-      "text": "b",
-      "bbox": {
-        "x0": 296.24,
-        "y0": 527.92,
-        "x1": 300.95,
-        "y1": 535.76,
-        "width": 4.71,
-        "height": 7.84
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "b"
-      }
-    },
-    {
-      "id": "#/texts/547",
-      "page": 20,
-      "order": 22,
-      "role": "paragraph",
-      "text": ")",
-      "bbox": {
-        "x0": 300.95,
-        "y0": 527.92,
-        "x1": 305.42,
-        "y1": 535.76,
-        "width": 4.47,
-        "height": 7.84
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": ")"
-      }
-    },
-    {
-      "id": "#/texts/548",
-      "page": 20,
-      "order": 23,
-      "role": "paragraph",
-      "text": "(",
-      "bbox": {
-        "x0": 294.3,
-        "y0": 705.29,
-        "x1": 296.87,
-        "y1": 713.12,
-        "width": 2.57,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "("
-      }
-    },
-    {
-      "id": "#/texts/549",
-      "page": 20,
-      "order": 24,
-      "role": "paragraph",
-      "text": "c",
-      "bbox": {
-        "x0": 296.89,
-        "y0": 705.29,
-        "x1": 300.31,
-        "y1": 713.12,
-        "width": 3.42,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "c"
-      }
-    },
-    {
-      "id": "#/texts/550",
-      "page": 20,
-      "order": 25,
-      "role": "paragraph",
-      "text": ")",
-      "bbox": {
-        "x0": 300.31,
-        "y0": 705.29,
-        "x1": 304.78,
-        "y1": 713.12,
-        "width": 4.47,
-        "height": 7.83
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": ")"
-      }
-    },
-    {
-      "id": "#/texts/551",
-      "page": 20,
-      "order": 26,
-      "role": "paragraph",
-      "text": "-3xM5x0.7-6H",
-      "bbox": {
-        "x0": 215.38,
-        "y0": 234.6,
-        "x1": 252.87,
-        "y1": 240.19,
-        "width": 37.49,
-        "height": 5.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-3xM5x0.7-6H"
-      }
-    },
-    {
-      "id": "#/texts/552",
-      "page": 20,
-      "order": 27,
-      "role": "paragraph",
-      "text": "108+02 J2",
-      "bbox": {
-        "x0": 224.15,
-        "y0": 240.19,
-        "x1": 264.83,
-        "y1": 246.57,
-        "width": 40.68,
-        "height": 6.38
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "108+02 J2"
-      }
-    },
-    {
-      "id": "#/texts/553",
-      "page": 20,
-      "order": 28,
-      "role": "paragraph",
-      "text": "18+0.05 18-005",
-      "bbox": {
-        "x0": 208.09,
-        "y0": 270.43,
-        "x1": 220.66,
-        "y1": 324.14,
-        "width": 12.57,
-        "height": 53.71
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "18+0.05 18-005"
-      }
-    },
-    {
-      "id": "#/texts/554",
-      "page": 20,
-      "order": 29,
-      "role": "paragraph",
-      "text": "L2xM5x0.7-6H",
-      "bbox": {
-        "x0": 178.68,
-        "y0": 337.54,
-        "x1": 222.55,
-        "y1": 346.32,
-        "width": 43.87,
-        "height": 8.78
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "L2xM5x0.7-6H"
-      }
-    },
-    {
-      "id": "#/texts/555",
-      "page": 20,
-      "order": 30,
-      "role": "paragraph",
-      "text": "_ 1010+0.2 J3",
-      "bbox": {
-        "x0": 185.06,
-        "y0": 344.72,
-        "x1": 235.32,
-        "y1": 354.45,
-        "width": 50.26,
-        "height": 9.73
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "_ 1010+0.2 J3"
-      }
-    },
-    {
-      "id": "#/texts/556",
-      "page": 20,
-      "order": 31,
       "role": "paragraph",
       "text": "48",
       "bbox": {
@@ -9965,9 +9623,9 @@
       }
     },
     {
-      "id": "#/texts/557",
+      "id": "#/texts/539",
       "page": 20,
-      "order": 32,
+      "order": 14,
       "role": "paragraph",
       "text": "72",
       "bbox": {
@@ -9984,18 +9642,18 @@
       }
     },
     {
-      "id": "#/texts/558",
+      "id": "#/texts/540",
       "page": 20,
-      "order": 33,
+      "order": 15,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
         "x0": 132.42,
         "y0": 180.34,
         "x1": 144.38,
-        "y1": 188.32,
+        "y1": 189.12,
         "width": 11.96,
-        "height": 7.98
+        "height": 8.78
       },
       "meta": {
         "docling_label": "text",
@@ -10003,9 +9661,9 @@
       }
     },
     {
-      "id": "#/texts/559",
+      "id": "#/texts/541",
       "page": 20,
-      "order": 34,
+      "order": 16,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
@@ -10022,9 +9680,9 @@
       }
     },
     {
-      "id": "#/texts/560",
+      "id": "#/texts/542",
       "page": 20,
-      "order": 35,
+      "order": 17,
       "role": "paragraph",
       "text": "· D http: localhost:03342 model3.html mode13.html?_|Jt= u01fg2ps9ss5bukthvgco441s&_J_reload=RELOAD_ON_SAVE",
       "bbox": {
@@ -10041,9 +9699,9 @@
       }
     },
     {
-      "id": "#/texts/561",
+      "id": "#/texts/543",
       "page": 20,
-      "order": 36,
+      "order": 18,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -10057,6 +9715,348 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "(c)"
+      }
+    },
+    {
+      "id": "#/texts/544",
+      "page": 20,
+      "order": 19,
+      "role": "paragraph",
+      "text": "__Ø8",
+      "bbox": {
+        "x0": 228.14,
+        "y0": 55.86,
+        "x1": 248.08,
+        "y1": 60.65,
+        "width": 19.94,
+        "height": 4.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "__Ø8"
+      }
+    },
+    {
+      "id": "#/texts/545",
+      "page": 20,
+      "order": 20,
+      "role": "heading",
+      "text": "4.3.3. Case Study",
+      "bbox": {
+        "x0": 166.39,
+        "y0": 75.05,
+        "x1": 241.54,
+        "y1": 84.5,
+        "width": 75.15,
+        "height": 9.45
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.3.3. Case Study"
+      }
+    },
+    {
+      "id": "#/texts/546",
+      "page": 20,
+      "order": 21,
+      "role": "paragraph",
+      "text": "Model the part depicted in Figure 4 as an MBD model using NX 1847, and then export it as a STEP AP242 file. Next, use the developed prototype system in a web browser to parse the file. Figure 18a-d show examples of 3D dimension annotation, 3D DT, 3D datum symbol (DS), and 3D GT within a web browser, respectively. Additionally Figure 18e,f show the PMI SR results for 3D-annotated associated objects using WebGL texture technology.",
+      "bbox": {
+        "x0": 166.09,
+        "y0": 91.97,
+        "x1": 559.69,
+        "y1": 157.12,
+        "width": 393.6,
+        "height": 65.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Model the part depicted in Figure 4 as an MBD model using NX 1847, and then export it as a STEP AP242 file. Next, use the developed prototype system in a web browser to parse the file. Figure 18a-d show examples of 3D dimension annotation, 3D DT, 3D datum symbol (DS), and 3D GT within a web browser, respectively. Additionally Figure 18e,f show the PMI SR results for 3D-annotated associated objects using WebGL texture technology."
+      }
+    },
+    {
+      "id": "#/texts/547",
+      "page": 20,
+      "order": 22,
+      "role": "caption",
+      "text": "Figure 18. Cont.",
+      "bbox": {
+        "x0": 166.39,
+        "y0": 724.08,
+        "x1": 229.2,
+        "y1": 732.56,
+        "width": 62.81,
+        "height": 8.48
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 18. Cont."
+      }
+    },
+    {
+      "id": "#/texts/548",
+      "page": 20,
+      "order": 23,
+      "role": "paragraph",
+      "text": "(",
+      "bbox": {
+        "x0": 294.12,
+        "y0": 343.4,
+        "x1": 296.69,
+        "y1": 351.23,
+        "width": 2.57,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "("
+      }
+    },
+    {
+      "id": "#/texts/549",
+      "page": 20,
+      "order": 24,
+      "role": "paragraph",
+      "text": "a",
+      "bbox": {
+        "x0": 296.7,
+        "y0": 343.4,
+        "x1": 300.56,
+        "y1": 351.23,
+        "width": 3.86,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "a"
+      }
+    },
+    {
+      "id": "#/texts/550",
+      "page": 20,
+      "order": 25,
+      "role": "paragraph",
+      "text": ")",
+      "bbox": {
+        "x0": 300.54,
+        "y0": 343.4,
+        "x1": 305.01,
+        "y1": 351.23,
+        "width": 4.47,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ")"
+      }
+    },
+    {
+      "id": "#/texts/551",
+      "page": 20,
+      "order": 26,
+      "role": "paragraph",
+      "text": "(",
+      "bbox": {
+        "x0": 293.65,
+        "y0": 527.92,
+        "x1": 296.22,
+        "y1": 535.76,
+        "width": 2.57,
+        "height": 7.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "("
+      }
+    },
+    {
+      "id": "#/texts/552",
+      "page": 20,
+      "order": 27,
+      "role": "paragraph",
+      "text": "b",
+      "bbox": {
+        "x0": 296.24,
+        "y0": 527.92,
+        "x1": 300.95,
+        "y1": 535.76,
+        "width": 4.71,
+        "height": 7.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "b"
+      }
+    },
+    {
+      "id": "#/texts/553",
+      "page": 20,
+      "order": 28,
+      "role": "paragraph",
+      "text": ")",
+      "bbox": {
+        "x0": 300.95,
+        "y0": 527.92,
+        "x1": 305.42,
+        "y1": 535.76,
+        "width": 4.47,
+        "height": 7.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ")"
+      }
+    },
+    {
+      "id": "#/texts/554",
+      "page": 20,
+      "order": 29,
+      "role": "paragraph",
+      "text": "(",
+      "bbox": {
+        "x0": 294.3,
+        "y0": 705.29,
+        "x1": 296.87,
+        "y1": 713.12,
+        "width": 2.57,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "("
+      }
+    },
+    {
+      "id": "#/texts/555",
+      "page": 20,
+      "order": 30,
+      "role": "paragraph",
+      "text": "c",
+      "bbox": {
+        "x0": 296.89,
+        "y0": 705.29,
+        "x1": 300.31,
+        "y1": 713.12,
+        "width": 3.42,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "c"
+      }
+    },
+    {
+      "id": "#/texts/556",
+      "page": 20,
+      "order": 31,
+      "role": "paragraph",
+      "text": ")",
+      "bbox": {
+        "x0": 300.31,
+        "y0": 705.29,
+        "x1": 304.78,
+        "y1": 713.12,
+        "width": 4.47,
+        "height": 7.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": ")"
+      }
+    },
+    {
+      "id": "#/texts/557",
+      "page": 20,
+      "order": 32,
+      "role": "paragraph",
+      "text": "-3xM5x0.7-6H",
+      "bbox": {
+        "x0": 215.38,
+        "y0": 234.6,
+        "x1": 252.87,
+        "y1": 240.19,
+        "width": 37.49,
+        "height": 5.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-3xM5x0.7-6H"
+      }
+    },
+    {
+      "id": "#/texts/558",
+      "page": 20,
+      "order": 33,
+      "role": "paragraph",
+      "text": "108+0.2 J2",
+      "bbox": {
+        "x0": 224.15,
+        "y0": 240.19,
+        "x1": 264.83,
+        "y1": 246.57,
+        "width": 40.68,
+        "height": 6.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "108+0.2 J2"
+      }
+    },
+    {
+      "id": "#/texts/559",
+      "page": 20,
+      "order": 34,
+      "role": "paragraph",
+      "text": "18+0.05 18-005",
+      "bbox": {
+        "x0": 208.09,
+        "y0": 270.43,
+        "x1": 220.67,
+        "y1": 324.15,
+        "width": 12.58,
+        "height": 53.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "18+0.05 18-005"
+      }
+    },
+    {
+      "id": "#/texts/560",
+      "page": 20,
+      "order": 35,
+      "role": "paragraph",
+      "text": "L2xM5x0.7-6H",
+      "bbox": {
+        "x0": 178.68,
+        "y0": 338.34,
+        "x1": 222.55,
+        "y1": 346.32,
+        "width": 43.87,
+        "height": 7.98
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L2xM5x0.7-6H"
+      }
+    },
+    {
+      "id": "#/texts/561",
+      "page": 20,
+      "order": 36,
+      "role": "paragraph",
+      "text": "_ 1010+0.2 J3",
+      "bbox": {
+        "x0": 185.06,
+        "y0": 344.72,
+        "x1": 235.32,
+        "y1": 354.45,
+        "width": 50.26,
+        "height": 9.73
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "_ 1010+0.2 J3"
       }
     },
     {
@@ -10083,7 +10083,140 @@
       "page": 21,
       "order": 2,
       "role": "paragraph",
-      "text": "localhostb3342 modes him modes himi? mauto ossssbukthyacosais& i relond=KElDAD ON SAV",
+      "text": "× +",
+      "bbox": {
+        "x0": 56.95,
+        "y0": 196.51,
+        "x1": 67.52,
+        "y1": 200.59,
+        "width": 10.57,
+        "height": 4.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "× +"
+      }
+    },
+    {
+      "id": "#/texts/566",
+      "page": 21,
+      "order": 3,
+      "role": "paragraph",
+      "text": "· · http: localhost 63342 model3.html",
+      "bbox": {
+        "x0": 69.96,
+        "y0": 203.85,
+        "x1": 126.09,
+        "y1": 206.3,
+        "width": 56.13,
+        "height": 2.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "· · http: localhost 63342 model3.html"
+      }
+    },
+    {
+      "id": "#/texts/567",
+      "page": 21,
+      "order": 4,
+      "role": "paragraph",
+      "text": "12",
+      "bbox": {
+        "x0": 61.83,
+        "y0": 338.39,
+        "x1": 79.72,
+        "y1": 349.81,
+        "width": 17.89,
+        "height": 11.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "12"
+      }
+    },
+    {
+      "id": "#/texts/568",
+      "page": 21,
+      "order": 5,
+      "role": "paragraph",
+      "text": "· g hto ocalhost 6112 model",
+      "bbox": {
+        "x0": 69.96,
+        "y0": 392.1,
+        "x1": 115.52,
+        "y1": 394.77,
+        "width": 45.56,
+        "height": 2.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "· g hto ocalhost 6112 model"
+      }
+    },
+    {
+      "id": "#/texts/569",
+      "page": 21,
+      "order": 6,
+      "role": "paragraph",
+      "text": "12_-",
+      "bbox": {
+        "x0": 45.26,
+        "y0": 495.43,
+        "x1": 80.4,
+        "y1": 512.51,
+        "width": 35.14,
+        "height": 17.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "12_-"
+      }
+    },
+    {
+      "id": "#/texts/570",
+      "page": 21,
+      "order": 7,
+      "role": "paragraph",
+      "text": "48",
+      "bbox": {
+        "x0": 113.08,
+        "y0": 511.26,
+        "x1": 127.72,
+        "y1": 518.6,
+        "width": 14.64,
+        "height": 7.34
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "48"
+      }
+    },
+    {
+      "id": "#/texts/571",
+      "page": 21,
+      "order": 8,
+      "role": "paragraph",
+      "text": "72÷0.05",
+      "bbox": {
+        "x0": 101.21,
+        "y0": 521.37,
+        "x1": 136.84,
+        "y1": 537.59,
+        "width": 35.63,
+        "height": 16.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "72÷0.05"
+      }
+    },
+    {
+      "id": "#/texts/572",
+      "page": 21,
+      "order": 9,
+      "role": "paragraph",
+      "text": "localhostb3342 modes him modes himi? mauto osss bukthyacosais& i relond=KElDAD ON SAV",
       "bbox": {
         "x0": 71.59,
         "y0": 18.66,
@@ -10094,21 +10227,21 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "localhostb3342 modes him modes himi? mauto ossssbukthyacosais& i relond=KElDAD ON SAV"
+        "docling_orig": "localhostb3342 modes him modes himi? mauto osss bukthyacosais& i relond=KElDAD ON SAV"
       }
     },
     {
-      "id": "#/texts/566",
+      "id": "#/texts/573",
       "page": 21,
-      "order": 3,
+      "order": 10,
       "role": "paragraph",
       "text": "To.01",
       "bbox": {
         "x0": 144.81,
         "y0": 60.34,
-        "x1": 160.26,
+        "x1": 159.45,
         "y1": 68.49,
-        "width": 15.45,
+        "width": 14.64,
         "height": 8.15
       },
       "meta": {
@@ -10117,9 +10250,9 @@
       }
     },
     {
-      "id": "#/texts/567",
+      "id": "#/texts/574",
       "page": 21,
-      "order": 4,
+      "order": 11,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
@@ -10136,18 +10269,18 @@
       }
     },
     {
-      "id": "#/texts/568",
+      "id": "#/texts/575",
       "page": 21,
-      "order": 5,
+      "order": 12,
       "role": "paragraph",
       "text": "1 0.01",
       "bbox": {
-        "x0": 132.93,
-        "y0": 224.57,
-        "x1": 158.31,
-        "y1": 237.76,
-        "width": 25.38,
-        "height": 13.19
+        "x0": 134.23,
+        "y0": 226.53,
+        "x1": 157.01,
+        "y1": 236.53,
+        "width": 22.78,
+        "height": 10.0
       },
       "meta": {
         "docling_label": "text",
@@ -10155,9 +10288,9 @@
       }
     },
     {
-      "id": "#/texts/569",
+      "id": "#/texts/576",
       "page": 21,
-      "order": 6,
+      "order": 13,
       "role": "paragraph",
       "text": "48",
       "bbox": {
@@ -10174,9 +10307,9 @@
       }
     },
     {
-      "id": "#/texts/570",
+      "id": "#/texts/577",
       "page": 21,
-      "order": 7,
+      "order": 14,
       "role": "paragraph",
       "text": "72+0.05",
       "bbox": {
@@ -10193,9 +10326,9 @@
       }
     },
     {
-      "id": "#/texts/571",
+      "id": "#/texts/578",
       "page": 21,
-      "order": 8,
+      "order": 15,
       "role": "paragraph",
       "text": "(e)",
       "bbox": {
@@ -10212,9 +10345,9 @@
       }
     },
     {
-      "id": "#/texts/572",
+      "id": "#/texts/579",
       "page": 21,
-      "order": 9,
+      "order": 16,
       "role": "caption",
       "text": "Figure 18. Demonstration of three-dimensional annotation within a web browser: ( a ) 3D dimension annotation ( b ) 3D dimensional tolerancing annotation ( c ) datum symbol annotation ( d ) 3D geometrical tolerance annotation ( e ) left associated surface of a 3D linear size ( f ) right associated surface of a 3D linear size.",
       "bbox": {
@@ -10231,9 +10364,9 @@
       }
     },
     {
-      "id": "#/texts/573",
+      "id": "#/texts/580",
       "page": 21,
-      "order": 10,
+      "order": 17,
       "role": "paragraph",
       "text": "(",
       "bbox": {
@@ -10250,9 +10383,9 @@
       }
     },
     {
-      "id": "#/texts/574",
+      "id": "#/texts/581",
       "page": 21,
-      "order": 11,
+      "order": 18,
       "role": "paragraph",
       "text": "d",
       "bbox": {
@@ -10269,9 +10402,9 @@
       }
     },
     {
-      "id": "#/texts/575",
+      "id": "#/texts/582",
       "page": 21,
-      "order": 12,
+      "order": 19,
       "role": "paragraph",
       "text": ")",
       "bbox": {
@@ -10288,9 +10421,9 @@
       }
     },
     {
-      "id": "#/texts/576",
+      "id": "#/texts/583",
       "page": 21,
-      "order": 13,
+      "order": 20,
       "role": "paragraph",
       "text": "(",
       "bbox": {
@@ -10307,9 +10440,9 @@
       }
     },
     {
-      "id": "#/texts/577",
+      "id": "#/texts/584",
       "page": 21,
-      "order": 14,
+      "order": 21,
       "role": "paragraph",
       "text": "e",
       "bbox": {
@@ -10326,9 +10459,9 @@
       }
     },
     {
-      "id": "#/texts/578",
+      "id": "#/texts/585",
       "page": 21,
-      "order": 15,
+      "order": 22,
       "role": "paragraph",
       "text": ")",
       "bbox": {
@@ -10345,9 +10478,9 @@
       }
     },
     {
-      "id": "#/texts/579",
+      "id": "#/texts/586",
       "page": 21,
-      "order": 16,
+      "order": 23,
       "role": "paragraph",
       "text": "(",
       "bbox": {
@@ -10364,9 +10497,9 @@
       }
     },
     {
-      "id": "#/texts/580",
+      "id": "#/texts/587",
       "page": 21,
-      "order": 17,
+      "order": 24,
       "role": "paragraph",
       "text": "f",
       "bbox": {
@@ -10383,9 +10516,9 @@
       }
     },
     {
-      "id": "#/texts/581",
+      "id": "#/texts/588",
       "page": 21,
-      "order": 18,
+      "order": 25,
       "role": "paragraph",
       "text": ")",
       "bbox": {
@@ -10402,155 +10535,22 @@
       }
     },
     {
-      "id": "#/texts/582",
-      "page": 21,
-      "order": 19,
-      "role": "paragraph",
-      "text": "balana REIGANON CAMI",
-      "bbox": {
-        "x0": 196.06,
-        "y0": 203.85,
-        "x1": 230.22,
-        "y1": 205.54,
-        "width": 34.16,
-        "height": 1.69
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "balana REIGANON CAMI"
-      }
-    },
-    {
-      "id": "#/texts/583",
-      "page": 21,
-      "order": 20,
-      "role": "paragraph",
-      "text": "3xM5x0.7",
-      "bbox": {
-        "x0": 207.68,
-        "y0": 210.11,
-        "x1": 232.52,
-        "y1": 219.24,
-        "width": 24.84,
-        "height": 9.13
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "3xM5x0.7"
-      }
-    },
-    {
-      "id": "#/texts/584",
-      "page": 21,
-      "order": 21,
-      "role": "paragraph",
-      "text": "02:02",
-      "bbox": {
-        "x0": 223.72,
-        "y0": 209.56,
-        "x1": 243.24,
-        "y1": 219.34,
-        "width": 19.52,
-        "height": 9.78
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "02:02"
-      }
-    },
-    {
-      "id": "#/texts/585",
-      "page": 21,
-      "order": 22,
-      "role": "paragraph",
-      "text": "Don A",
-      "bbox": {
-        "x0": 223.78,
-        "y0": 214.48,
-        "x1": 246.37,
-        "y1": 224.76,
-        "width": 22.59,
-        "height": 10.28
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Don A"
-      }
-    },
-    {
-      "id": "#/texts/586",
-      "page": 21,
-      "order": 23,
-      "role": "paragraph",
-      "text": "XMSx0.7.",
-      "bbox": {
-        "x0": 224.57,
-        "y0": 288.17,
-        "x1": 248.13,
-        "y1": 299.11,
-        "width": 23.56,
-        "height": 10.94
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "XMSx0.7."
-      }
-    },
-    {
-      "id": "#/texts/587",
-      "page": 21,
-      "order": 24,
-      "role": "paragraph",
-      "text": "1010+0.21",
-      "bbox": {
-        "x0": 231.88,
-        "y0": 289.53,
-        "x1": 261.89,
-        "y1": 300.67,
-        "width": 30.01,
-        "height": 11.14
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "1010+0.21"
-      }
-    },
-    {
-      "id": "#/texts/588",
-      "page": 21,
-      "order": 25,
-      "role": "paragraph",
-      "text": "- 3x1500 102, I",
-      "bbox": {
-        "x0": 228.16,
-        "y0": 439.95,
-        "x1": 273.65,
-        "y1": 461.62,
-        "width": 45.49,
-        "height": 21.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "- 3x1500 102, I"
-      }
-    },
-    {
       "id": "#/texts/589",
       "page": 21,
       "order": 26,
       "role": "paragraph",
-      "text": "| 08+0.2",
+      "text": "2AMS07",
       "bbox": {
-        "x0": 239.29,
-        "y0": 447.09,
-        "x1": 262.02,
-        "y1": 457.07,
-        "width": 22.73,
-        "height": 9.98
+        "x0": 222.27,
+        "y0": 128.05,
+        "x1": 248.13,
+        "y1": 137.9,
+        "width": 25.86,
+        "height": 9.85
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "| 08+0.2"
+        "docling_orig": "2AMS07"
       }
     },
     {
@@ -10558,24 +10558,157 @@
       "page": 21,
       "order": 27,
       "role": "paragraph",
-      "text": "-2xM5x0.7-6н",
+      "text": "Il reload-RELOAD ON SAVI",
       "bbox": {
-        "x0": 169.21,
-        "y0": 516.35,
-        "x1": 207.67,
-        "y1": 533.64,
-        "width": 38.46,
-        "height": 17.29
+        "x0": 195.24,
+        "y0": 203.85,
+        "x1": 231.04,
+        "y1": 206.3,
+        "width": 35.8,
+        "height": 2.45
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "-2xM5x0.7-6н"
+        "docling_orig": "Il reload-RELOAD ON SAVI"
       }
     },
     {
       "id": "#/texts/591",
       "page": 21,
       "order": 28,
+      "role": "paragraph",
+      "text": "3xM5*0310?",
+      "bbox": {
+        "x0": 208.26,
+        "y0": 211.19,
+        "x1": 243.24,
+        "y1": 218.53,
+        "width": 34.98,
+        "height": 7.34
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "3xM5*0310?"
+      }
+    },
+    {
+      "id": "#/texts/592",
+      "page": 21,
+      "order": 29,
+      "role": "paragraph",
+      "text": "XM5x0.7",
+      "bbox": {
+        "x0": 224.63,
+        "y0": 288.64,
+        "x1": 248.1,
+        "y1": 298.79,
+        "width": 23.47,
+        "height": 10.15
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "XM5x0.7"
+      }
+    },
+    {
+      "id": "#/texts/593",
+      "page": 21,
+      "order": 30,
+      "role": "paragraph",
+      "text": "1010×0.2",
+      "bbox": {
+        "x0": 231.88,
+        "y0": 289.72,
+        "x1": 260.95,
+        "y1": 300.67,
+        "width": 29.07,
+        "height": 10.95
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1010×0.2"
+      }
+    },
+    {
+      "id": "#/texts/594",
+      "page": 21,
+      "order": 31,
+      "role": "paragraph",
+      "text": "-3xM5x0.7-6H",
+      "bbox": {
+        "x0": 230.95,
+        "y0": 440.48,
+        "x1": 265.26,
+        "y1": 453.38,
+        "width": 34.31,
+        "height": 12.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-3xM5x0.7-6H"
+      }
+    },
+    {
+      "id": "#/texts/595",
+      "page": 21,
+      "order": 32,
+      "role": "paragraph",
+      "text": "08+0.2",
+      "bbox": {
+        "x0": 240.08,
+        "y0": 447.25,
+        "x1": 262.02,
+        "y1": 457.07,
+        "width": 21.94,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "08+0.2"
+      }
+    },
+    {
+      "id": "#/texts/596",
+      "page": 21,
+      "order": 33,
+      "role": "paragraph",
+      "text": "[a parall",
+      "bbox": {
+        "x0": 224.45,
+        "y0": 448.64,
+        "x1": 280.8,
+        "y1": 468.53,
+        "width": 56.35,
+        "height": 19.89
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "[a parall"
+      }
+    },
+    {
+      "id": "#/texts/597",
+      "page": 21,
+      "order": 34,
+      "role": "paragraph",
+      "text": "-2xM5x0.7-6H",
+      "bbox": {
+        "x0": 169.21,
+        "y0": 516.35,
+        "x1": 207.87,
+        "y1": 533.7,
+        "width": 38.66,
+        "height": 17.35
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-2xM5x0.7-6H"
+      }
+    },
+    {
+      "id": "#/texts/598",
+      "page": 21,
+      "order": 35,
       "role": "paragraph",
       "text": "J010*0.2 J",
       "bbox": {
@@ -10592,9 +10725,9 @@
       }
     },
     {
-      "id": "#/texts/592",
+      "id": "#/texts/599",
       "page": 21,
-      "order": 29,
+      "order": 36,
       "role": "heading",
       "text": "4.4. Analysis and Benchmarking of Prototype System Performance",
       "bbox": {
@@ -10611,9 +10744,9 @@
       }
     },
     {
-      "id": "#/texts/593",
+      "id": "#/texts/600",
       "page": 21,
-      "order": 30,
+      "order": 37,
       "role": "paragraph",
       "text": "We conducted benchmark tests to assess the performance of our developed system. Using a Lenovo Legion Y7000 PG0 laptop (CPU: Intel ® Core™ i5-9300H @ 2.40 GHz; GPU: NVIDIA GeForce GTX 1650; RAM: 8 GB), we performed 100 tests and found that the median parsing and rendering time in the web browser was 1.12 s, with the 95th percentile time being 1.52 s. Setting the timestamp at the start of the model loading process",
       "bbox": {
@@ -10627,139 +10760,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "We conducted benchmark tests to assess the performance of our developed system. Using a Lenovo Legion Y7000 PG0 laptop (CPU: Intel ® Core™ i5-9300H @ 2.40 GHz; GPU: NVIDIA GeForce GTX 1650; RAM: 8 GB), we performed 100 tests and found that the median parsing and rendering time in the web browser was 1.12 s, with the 95th percentile time being 1.52 s. Setting the timestamp at the start of the model loading process"
-      }
-    },
-    {
-      "id": "#/texts/594",
-      "page": 21,
-      "order": 31,
-      "role": "paragraph",
-      "text": "· · http: localhost 63342 model3.h",
-      "bbox": {
-        "x0": 69.96,
-        "y0": 203.85,
-        "x1": 123.65,
-        "y1": 206.3,
-        "width": 53.69,
-        "height": 2.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "· · http: localhost 63342 model3.h"
-      }
-    },
-    {
-      "id": "#/texts/595",
-      "page": 21,
-      "order": 32,
-      "role": "paragraph",
-      "text": "12.",
-      "bbox": {
-        "x0": 61.83,
-        "y0": 338.39,
-        "x1": 80.54,
-        "y1": 349.81,
-        "width": 18.71,
-        "height": 11.42
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "12."
-      }
-    },
-    {
-      "id": "#/texts/596",
-      "page": 21,
-      "order": 33,
-      "role": "paragraph",
-      "text": "· g hto ocalhost 6112 moden",
-      "bbox": {
-        "x0": 69.96,
-        "y0": 392.1,
-        "x1": 114.71,
-        "y1": 394.77,
-        "width": 44.75,
-        "height": 2.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "· g hto ocalhost 6112 moden"
-      }
-    },
-    {
-      "id": "#/texts/597",
-      "page": 21,
-      "order": 34,
-      "role": "paragraph",
-      "text": "129",
-      "bbox": {
-        "x0": 68.34,
-        "y0": 402.81,
-        "x1": 100.06,
-        "y1": 417.49,
-        "width": 31.72,
-        "height": 14.68
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "129"
-      }
-    },
-    {
-      "id": "#/texts/598",
-      "page": 21,
-      "order": 35,
-      "role": "paragraph",
-      "text": "12_—",
-      "bbox": {
-        "x0": 45.23,
-        "y0": 495.54,
-        "x1": 80.35,
-        "y1": 512.77,
-        "width": 35.12,
-        "height": 17.23
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "12_—"
-      }
-    },
-    {
-      "id": "#/texts/599",
-      "page": 21,
-      "order": 36,
-      "role": "paragraph",
-      "text": "48",
-      "bbox": {
-        "x0": 113.08,
-        "y0": 511.26,
-        "x1": 128.54,
-        "y1": 518.6,
-        "width": 15.46,
-        "height": 7.34
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "48"
-      }
-    },
-    {
-      "id": "#/texts/600",
-      "page": 21,
-      "order": 37,
-      "role": "paragraph",
-      "text": "72÷0.05",
-      "bbox": {
-        "x0": 101.23,
-        "y0": 521.41,
-        "x1": 136.07,
-        "y1": 537.29,
-        "width": 34.84,
-        "height": 15.88
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "72÷0.05"
       }
     },
     {
@@ -11187,12 +11187,12 @@
       "role": "paragraph",
       "text": "& example1.stp - CAD Assistant",
       "bbox": {
-        "x0": 9.92,
-        "y0": 8.95,
-        "x1": 49.37,
-        "y1": 13.84,
-        "width": 39.45,
-        "height": 4.89
+        "x0": 9.99,
+        "y0": 9.32,
+        "x1": 49.3,
+        "y1": 13.31,
+        "width": 39.31,
+        "height": 3.99
       },
       "meta": {
         "docling_label": "text",
@@ -11223,18 +11223,18 @@
       "page": 24,
       "order": 3,
       "role": "paragraph",
-      "text": "L040 G (2368.0)",
+      "text": "L049.G (2368.0)",
       "bbox": {
-        "x0": 45.3,
+        "x0": 45.97,
         "y0": 19.3,
         "x1": 77.94,
         "y1": 23.3,
-        "width": 32.64,
+        "width": 31.97,
         "height": 4.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "L040 G (2368.0)"
+        "docling_orig": "L049.G (2368.0)"
       }
     },
     {

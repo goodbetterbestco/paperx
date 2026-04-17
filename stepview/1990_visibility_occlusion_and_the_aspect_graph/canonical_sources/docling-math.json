@@ -194,7 +194,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "[×0,yo, z0] -sino 0 cos o O sin ¢ cos $ [xo cos e- zo sin 0, (5)",
+      "display_latex": "[x0,y0,z0] -sino 0 cos o O sin ¢ cos $ [xo cos e- zo sin 0, (5)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -206,11 +206,11 @@
           "page": 34,
           "bbox": {
             "x0": 138.05,
-            "y0": 192.24,
+            "y0": 193.4,
             "x1": 507.34,
             "y1": 259.01,
             "width": 369.29,
-            "height": 66.77
+            "height": 65.61
           },
           "engine": "docling"
         }
@@ -481,7 +481,7 @@
     {
       "id": "docling-eq-0016",
       "kind": "display",
-      "display_latex": "(×2 + 82 a2) - (x1 + S a1) V: = (22 + 52(2) - (21 + 8 C1) (13)",
+      "display_latex": "(x2 + 52 a2) - (x1 +S a1) V: = (22 + S2 C2) - (z1 + 8 C1) (13)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -764,38 +764,7 @@
     {
       "id": "docling-eq-0025",
       "kind": "display",
-      "display_latex": "V =as‹+bs+€",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 45,
-          "bbox": {
-            "x0": 253.08,
-            "y0": 332.57,
-            "x1": 347.45,
-            "y1": 347.76,
-            "width": 94.37,
-            "height": 15.19
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "docling-eq-0026",
-      "kind": "display",
-      "display_latex": "V = p1 +S a1 +r [(p1 +S S a1-p2)xa2)x((p1+sa1-P3)xaз] (17)",
+      "display_latex": "V = p1+s a1+r [(p1 + Sa1-p2)xa2)x((p1+sa1 - P3)xa] (17)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -807,11 +776,11 @@
           "page": 47,
           "bbox": {
             "x0": 144.96,
-            "y0": 604.28,
-            "x1": 547.64,
+            "y0": 603.13,
+            "x1": 548.8,
             "y1": 618.33,
-            "width": 402.68,
-            "height": 14.05
+            "width": 403.84,
+            "height": 15.2
           },
           "engine": "docling"
         }
@@ -825,7 +794,7 @@
       "equation_number": "(17)"
     },
     {
-      "id": "docling-eq-0027",
+      "id": "docling-eq-0026",
       "kind": "display",
       "display_latex": "u = f (x0 cos 9 - zo sin e) r - (xo sin 0 cos $ - yo sin $ + Zo cos 0 cos 4) (18)",
       "semantic_expr": null,
@@ -857,9 +826,9 @@
       "equation_number": "(18)"
     },
     {
-      "id": "docling-eq-0028",
+      "id": "docling-eq-0027",
       "kind": "display",
-      "display_latex": "f (*0 sin 0 sin $ + yo cos $ + Z0 cos 0 sin $) V = r - (xo sin e cos $ - yo sin $ + Zo cos A cos $) (19)",
+      "display_latex": "f (*0 sin 0 sin $ + yo cos $ + Z0 cos 0 sin $) V = r - (x0 sin e cos $ - yo sin $ + Zo cos A cos $) (19)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -889,7 +858,7 @@
       "equation_number": "(19)"
     },
     {
-      "id": "docling-eq-0029",
+      "id": "docling-eq-0028",
       "kind": "display",
       "display_latex": "V= a1+ sa2+r[s? az+sa4+as]",
       "semantic_expr": null,
@@ -920,7 +889,7 @@
       }
     },
     {
-      "id": "docling-eq-0030",
+      "id": "docling-eq-0029",
       "kind": "display",
       "display_latex": "a1 + 81a2 + r1[ s12 a3 + 8124+ a5] = a6 + s2a7+r2[s2? a8 + 52 ag + a10] (20)",
       "semantic_expr": null,

@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
+  "pdf_path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
   "page_count": 6,
   "page_sizes_pt": [
     {
@@ -1484,18 +1484,18 @@
       "page": 2,
       "order": 18,
       "role": "paragraph",
-      "text": "Ø20 н6",
+      "text": "Curve | Point | Topology | Filter",
       "bbox": {
-        "x0": 119.09,
-        "y0": 15.29,
-        "x1": 144.4,
-        "y1": 22.05,
-        "width": 25.31,
-        "height": 6.76
+        "x0": 51.94,
+        "y0": 27.95,
+        "x1": 115.19,
+        "y1": 32.6,
+        "width": 63.25,
+        "height": 4.65
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Ø20 н6"
+        "docling_orig": "Curve | Point | Topology | Filter"
       }
     },
     {
@@ -1503,13 +1503,32 @@
       "page": 2,
       "order": 19,
       "role": "paragraph",
+      "text": "Ø20 н6",
+      "bbox": {
+        "x0": 119.09,
+        "y0": 15.26,
+        "x1": 144.41,
+        "y1": 22.07,
+        "width": 25.32,
+        "height": 6.81
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ø20 н6"
+      }
+    },
+    {
+      "id": "#/texts/84",
+      "page": 2,
+      "order": 20,
+      "role": "paragraph",
       "text": "Misc",
       "bbox": {
-        "x0": 115.19,
+        "x0": 115.86,
         "y0": 27.95,
         "x1": 128.51,
         "y1": 31.94,
-        "width": 13.32,
+        "width": 12.65,
         "height": 3.99
       },
       "meta": {
@@ -1518,9 +1537,9 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 2,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "Model Surface",
       "bbox": {
@@ -1537,9 +1556,9 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 2,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "Spline B-Spline",
       "bbox": {
@@ -1556,9 +1575,9 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 2,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "Polyline",
       "bbox": {
@@ -1575,9 +1594,9 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 2,
-      "order": 23,
+      "order": 24,
       "role": "paragraph",
       "text": "Import as",
       "bbox": {
@@ -1591,25 +1610,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "Import as"
-      }
-    },
-    {
-      "id": "#/texts/88",
-      "page": 2,
-      "order": 24,
-      "role": "paragraph",
-      "text": "Curve | Point | Topology | Filter |",
-      "bbox": {
-        "x0": 51.94,
-        "y0": 27.95,
-        "x1": 115.86,
-        "y1": 32.6,
-        "width": 63.92,
-        "height": 4.65
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Curve | Point | Topology | Filter |"
       }
     },
     {
@@ -1640,9 +1640,9 @@
       "bbox": {
         "x0": 176.45,
         "y0": 27.95,
-        "x1": 239.7,
+        "x1": 239.04,
         "y1": 32.6,
-        "width": 63.25,
+        "width": 62.59,
         "height": 4.65
       },
       "meta": {
@@ -1866,12 +1866,12 @@
       "role": "paragraph",
       "text": "chord height",
       "bbox": {
-        "x0": 59.86,
-        "y0": 17.95,
-        "x1": 90.45,
-        "y1": 23.27,
-        "width": 30.59,
-        "height": 5.32
+        "x0": 59.82,
+        "y0": 17.12,
+        "x1": 90.48,
+        "y1": 23.44,
+        "width": 30.66,
+        "height": 6.32
       },
       "meta": {
         "docling_label": "text",
@@ -1885,12 +1885,12 @@
       "role": "paragraph",
       "text": "PTC Creo",
       "bbox": {
-        "x0": 49.3,
-        "y0": 22.55,
-        "x1": 73.36,
-        "y1": 28.78,
-        "width": 24.06,
-        "height": 6.23
+        "x0": 49.31,
+        "y0": 22.59,
+        "x1": 73.35,
+        "y1": 28.74,
+        "width": 24.04,
+        "height": 6.15
       },
       "meta": {
         "docling_label": "text",
@@ -2605,18 +2605,18 @@
       "page": 5,
       "order": 9,
       "role": "paragraph",
-      "text": "- Convex ||",
+      "text": "— Convex lI",
       "bbox": {
         "x0": 120.67,
         "y0": 13.31,
         "x1": 160.67,
-        "y1": 21.3,
+        "y1": 18.64,
         "width": 40.0,
-        "height": 7.99
+        "height": 5.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "- Convex ||"
+        "docling_orig": "— Convex lI"
       }
     },
     {
@@ -2626,11 +2626,11 @@
       "role": "paragraph",
       "text": "- Concave",
       "bbox": {
-        "x0": 161.33,
+        "x0": 162.0,
         "y0": 13.31,
         "x1": 195.33,
         "y1": 17.97,
-        "width": 34.0,
+        "width": 33.33,
         "height": 4.66
       },
       "meta": {
@@ -2642,6 +2642,25 @@
       "id": "#/texts/149",
       "page": 5,
       "order": 11,
+      "role": "paragraph",
+      "text": "·Convex — Concave",
+      "bbox": {
+        "x0": 110.53,
+        "y0": 18.64,
+        "x1": 182.44,
+        "y1": 26.63,
+        "width": 71.91,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "·Convex — Concave"
+      }
+    },
+    {
+      "id": "#/texts/150",
+      "page": 5,
+      "order": 12,
       "role": "paragraph",
       "text": "Convex-Concave",
       "bbox": {
@@ -2658,36 +2677,17 @@
       }
     },
     {
-      "id": "#/texts/150",
-      "page": 5,
-      "order": 12,
-      "role": "paragraph",
-      "text": "Convex — Concave",
-      "bbox": {
-        "x0": 111.2,
-        "y0": 18.64,
-        "x1": 182.44,
-        "y1": 26.63,
-        "width": 71.24,
-        "height": 7.99
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Convex — Concave"
-      }
-    },
-    {
       "id": "#/texts/151",
       "page": 5,
       "order": 13,
       "role": "paragraph",
       "text": "…Concave-Convex",
       "bbox": {
-        "x0": 195.09,
+        "x0": 194.43,
         "y0": 19.3,
-        "x1": 241.03,
+        "x1": 241.7,
         "y1": 25.3,
-        "width": 45.94,
+        "width": 47.27,
         "height": 6.0
       },
       "meta": {

@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/2000_practical_ray_tracing_trimmed_nurbs_surfaces.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2000_practical_ray_tracing_trimmed_nurbs_surfaces/2000_practical_ray_tracing_trimmed_nurbs_surfaces.pdf",
   "page_count": 17,
   "page_sizes_pt": [
     {
@@ -227,7 +227,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 54.0,
@@ -246,7 +246,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A system is presented for ray tracing trimmed NURBS surfaces. While approaches to components are drawn largely from existing literature, their combination within a single framework is novel. This paper also differs from prior work in that the details of an efficient implementation are fleshed out. Throughout, emphasis is placed on practical methods suitable to implementation in general ray tracing programs.",
       "bbox": {
         "x0": 54.0,
@@ -265,7 +265,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 54.0,
@@ -284,7 +284,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The modeling community has embraced trimmed NURBS as a primitive of choice. The result has been a rapid proliferation in the number of models utilizing this representation. At the same time, ray tracing has become a popular method for generating computer graphics images of geometric models. Surprisingly, most ray tracing programs do not support the direct use of untessellated trimmed NURBS surfaces. The direct use of untessellated NURBS is desirable because tessellated models increase memory use which can be detrimental to runtime efficiency on modern architectures. In addition, tessellating models can result in visual artifacts, particularly in models with transparent components.",
       "bbox": {
         "x0": 54.0,
@@ -303,7 +303,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Although several methods of generating ray-NURBS intersections have appeared in the literature [3, 5, 8, 14, 17, 25, 27, 28], widespread adoption into ray tracing programs has not occurred. We believe this lack of acceptance stems from both the intrinsic algebraic complexity of these methods, and from the lack of emphasis in the literature on clean and efficient implementation. Wepresent a new algorithm for ray-NURBS intersection that addresses these issues. The algorithm modifies approaches already in the literature to attain efficiency and ease of implementation.",
       "bbox": {
         "x0": 54.0,
@@ -322,7 +322,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Our approach is outlined in Figure 1. We create a set of boxes that bound the underlying surface over a given parametric range. The ray is tested for intersection with these boxes, and for a particular box that is hit, a parametric value within the box is used to initiate root finding. The key issues are determining which boxes to use, how to efficiently manage computing intersections with them, how to do the root finding, and how to efficiently evaluate the geometry for a given parametric value.",
       "bbox": {
         "x0": 54.0,
@@ -341,7 +341,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We use refinement to generate the bounding volume hierarchy, which results in a shallower tree depth than other subdivisionbased methods. We also use an efficient refinement-based point evaluation method to speed root-finding. These choices turn",
       "bbox": {
         "x0": 54.0,
@@ -379,7 +379,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "1",
       "bbox": {
         "x0": 388.15,
@@ -398,7 +398,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "5 4 3 2",
       "bbox": {
         "x0": 356.11,
@@ -5353,5 +5353,24 @@
         "docling_orig": "[28] Chang-Gui Yang. On speeding up ray tracing of B-spline surfaces. Computer Aided Design , 19(3), April 1987."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling"
+  }
 }

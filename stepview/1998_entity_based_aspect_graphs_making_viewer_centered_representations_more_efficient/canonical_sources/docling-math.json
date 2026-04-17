@@ -4,7 +4,7 @@
     {
       "id": "docling-eq-0001",
       "kind": "display",
-      "display_latex": "Add Va= Vin V and V\" = V2 - (Vin v3) to V3",
+      "display_latex": "Add Va= Vin V and V\" = V2 - (Vin v) to V3",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {

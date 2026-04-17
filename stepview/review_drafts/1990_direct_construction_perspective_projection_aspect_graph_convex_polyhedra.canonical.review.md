@@ -4,13 +4,12 @@ Graphof Convex Polyhedra*
 
 Department of Computer Science and Engineering, University of South Florida, Tampa, Florida 33620
 The aspect graph concept was first described by Koenderink and van Doorn as a possible mechanism in human vision and has subsequently become an active research topic in computer vision. This paper describes an algorithm for constructing the perspective projection aspect graph of convex polyhedra. In the perspective projection aspect graph, viewpoint space is modeled as all of 3D space surrounding the object. This makes the perspective projection aspect graph a more realistic representation than the orthographic projection aspect graph, in which viewpoint space is modeled by the Gaussian sphere. The algorithm uses an intermediate data structure which represents a complete parcellation of 3D space derived from the geometric definition of the object. All information necessary for identifying object aspects and corresponding viewing cells is obtained as a result of this parcellation. The resulting aspect graph structure has a node for each distinct aspect viewing cell. The upper bounds on the time complexity of the algorithm and the space complexity of the resulting data structure are O(N4), where N is the number of faces of the polyhedron. The algorithm has been implemented in C, runs on a SUN workstation, and can use PADL-2 files for its input description of objects. © 1990 Academic Press, Inc.
-Department of Computer Science and Engineering, University of South Florida
 
 ## Abstract
 
 [Generated abstract from paper content.] This paper presents an exact algorithm for constructing the perspective-projection aspect graph of a convex polyhedron directly from its boundary representation. The method builds a parcellation of viewpoint space, evaluates boundary points against the object's supporting planes, and uses the resulting evaluation matrix to identify valid cells and their adjacencies through visual events. The resulting aspect graph is exact, has worst-case time and space complexity Theta(N^4) in the number of faces, and is intended for model-based object recognition.
 
-## Introduction
+## 1 INTRODUCTION
 
 Koenderink and van Doorn first described a graph structure which they called the visual potential of an object [1]. Each node in this graph structure represents a different aspect of the object. An aspect is generally defined as the qualitative structure of the line drawing of an object, as seen from any point in some defined maximal, connected region of viewpoint space. For a given object, all of viewpoint space can be parcellated into such cells, so that there is a node in the aspect graph for each qualitatively different view of the object. Each arc between nodes of the graph represents a possible transition across the boundary between two cells of the parcellation. The change in aspect which occurs in crossing the boundary is termed a visual event. "Thus the visual potential represents in a concise way any visual experience an observer can obtain by looking at the object when traversing any orbit through space" [1]. Figure 1 shows the visual potential (aspect graph) of a tetrahedron. The term aspect graph has come to be used generically in the field of computer vision to refer to any graph based representation inspired by Koenderink and van Doorn's visual potential concept.
 
@@ -22,7 +21,7 @@ Within the class of orthographic projection aspect graphs, another important dis
 
 polyhedra. More recently, Stewman and Bowyer [19] and Plantinga and Dyer [15] outlined approaches for nonconvex polyhedra based on Edelsbrunner et al's [20] algorithm for constructing the geometric incidence lattice for an arrangement of planes. This paper gives an updated description of the first algorithm developed to construct the aspect graph of convex polyhedral objects [17]. To our knowledge, this is the only algorithm for the perspective projection aspect graph which has been implemented and used in object recognition experiments (21].
 
-We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent (2, 5, 6].
+We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent [2, 5, 6].
 
 The algorithm directly calculates the perspective projection aspect graph of a convex polyhedron from its boundary surface description. Each node of the graph has attributes defining the corresponding aspect of the object and the 3D cell of space from which the aspect is seen. Since we are dealing only with convex polyhedra and no self-occlusions occur for such objects, our definition of an aspect and a viewing cell can be quite simple. Each individual aspect can be completely determined by the set of visible faces of the object. Each individual viewing cell is the set of all viewpoints from which the set of visible faces is the same. For non-convex polyhedra or curved-surface objects, the definitions of aspect and viewing cell would be correspondingly more complex.
 
@@ -36,7 +35,9 @@ The algorithm operates in two major stages. In the first stage, an intermediate 
 
 A boundary surface representation is used to introduce each new object into the knowledge base of the recognition system. Figure 3 illustrates the form of the boundary surface representation; each object is specified by a sct of faces and each face is a planar polygon defined by a list of vertices given in counterclockwise order as they would appear from outside of the object.
 
-• - object model-finite cell F== Front R == Right L == Left B == Back T == Top b == bottom
+$$
+L - object model - finite cell R F== Front R == Right L == Left B == Back T == Top == bottom
+$$
 
 - (a) A truncated wedge and its six faces
 
@@ -57,7 +58,7 @@ assign each possible cell definition an \(N\)-bit identification number, where e
 As mentioned previously, the first step in creating the aspect graph is to generate the intermediate parcellation graph data structure. The parcellation graph is a three-level bidirected graph which summarizes the parcellation of space by the \(N\) planes in which faces of the object lie. At the graph's top level are \(N\) nodes, one for each plane. These planes will be referred to as the bounding planes of the object. At the second level of the parcellation graph are nodes for all of the lines of intersection between the bounding planes. Each line is linked to its defining planes. At the graph's third level are nodes for all of the points which result from intersections of lines in the second level. Each point is linked to its defining lines. The parcellation graph of an object contains all planes, lines, and points involved in the parcellation of viewpoint space. The lines and points corresponding to edges and vertices which are part of the object boundary generally form only a subset of the lines and points in the parcellation. The parcellation graph will contain additional lines and points whenever there are viewing cells of finite extent (as is the case with our example object). A straightforward approach is taken to construct the parcellation graph. first, nodes are allocated for all the bounding planes of the object. Each of these nodes is attributed with the planar equation. The first step in this process is to calculate the outward-directed surface normal for the plane. This is accomplished by taking the cross product between the direction vectors associated with the first and second line segments along the boundary of each face. Given \(V_{0}=\left[\begin{array}{lll}x_{0} & y_{0} & z_{0}\end{array}\right]\), \(V_{1}=\left[x_{1} y_{1} z_{1}\right]\), and \(V_{2}=\left[\begin{array}{lll}x_{2} & y_{2} & z_{2}\end{array}\right]\) as the first three vertices in the boundary list for a face, the surface normal for the plane containing the face is given by Eq. (1),
 
 $$
-a i+b j+c k=\left|\begin{array}{ccc} i & j & k \tag{1}\\ \left(x_{1}-x_{0}\right) & \left(y_{1}-y_{0}\right) & \left(z_{1}-z_{0}\right) \\ \left(x_{2}-x_{1}\right) & \left(y_{2}-y_{1}\right) & \left(z_{2}-z_{1}\right) \end{array}\right| .
+a i+b j+c k=\left|\begin{array}{ccc} i & j & k \\ \left(x_{1}-x_{0}\right) & \left(y_{1}-y_{0}\right) & \left(z_{1}-z_{0}\right) \\ \left(x_{2}-x_{1}\right) & \left(y_{2}-y_{1}\right) & \left(z_{2}-z_{1}\right) \end{array}\right| .
 $$
 
 The resulting surface normal will always be outward-directed, since the polygon bounding the face is convex and the vertices are assumed to be listed in counterclockwise order as the face appears from outside the object. Each surface normal is stored as a vector of the form [a b c].
@@ -65,11 +66,11 @@ The resulting surface normal will always be outward-directed, since the polygon 
 where \(a, b\), and \(c\) are the components of the normal vector obtained by using Eq. (1). A more useful form of the equation is
 
 $$
-\begin{equation*} a x+b y+c z+d=0 \tag{3} \end{equation*}
+a x+b y+c z+d=0,
 $$
 
 $$
-\begin{equation*} d=-a x_{0}-b y_{0}-c z_{0} \tag{4} \end{equation*}
+d=-a x_{0}-b y_{0}-c z_{0} .
 $$
 
 Each planar equation is stored as a vector of the form [a b c d]. Table 1 contains a summary of the planar equations for the bounding planes of the truncated wedge in Fig. 3. The lines of intersection resulting from the bounding planes occupy the nodes on the second level of the parcellation graph. Each pair of planes, \(F_{i}\) and \(F_{j}\) such that \(i \neq j\), forms a linear system \(\left[F_{i} F_{j}\right]^{\mathrm{T}}\) that has either a line of intersection as its solution or has no solution. A
@@ -77,23 +78,27 @@ Each planar equation is stored as a vector of the form [a b c d]. Table 1 contai
 The general form of the planar equation is where
 
 $$
-\begin{equation*} a\left(x-x_{0}\right)+b\left(y-y_{0}\right)+c\left(z-z_{0}\right)=0 \tag{2} \end{equation*}
+a\left(x-x_{0}\right)+b\left(y-y_{0}\right)+c\left(z-z_{0}\right)=0,
 $$
 
-Gauss-Jordan reduction is used to solve each linear system. If a solution exists, the coefficients of the parametric form of the line equation are stored in the form [a b c de f], where
+Gauss-Jordan reduction is used to solve each linear system. If a solution exists, the coefficients of the parametric form of the line equation are stored in the form \([a b\) \(c d e f\) ], where
 
 $$
-\begin{align*} & x=a t+d \\ & y=b t+e, \text { and } \tag{5}\\ & z=c t+f \end{align*}
+\begin{aligned} & x=a t+d \\ & y=b t+e, \text { and } \\ & z=c t+f \end{aligned}
 $$
 
-Table 2 contains the coefficients of the parametric line equations for all lines of intersection in the parcellation graph of the truncated wedge. These are determined from the plane equations listed in Table 1. Points resulting from intersections of three or more of the bounding planes fill the lowest level of the parcellation graph. These points of intersection are found by determining where lines of intersection cross in the parcellation. The point \(P=[x y_{z}]\) is the point of intersection between a pair of lines \(L_{i}\) and \(L_{j}\) for \(i \neq j\) if
+Table 2 contains the coefficients of the parametric line equations for all lines of intersection in the parcellation graph of the truncated wedge. These are determined from the plane equations listed in Table 1. Points resulting from intersections of three or more of the bounding planes fill the lowest level of the parcellation graph. These points of intersection are found by determining where lines of intersection cross in the parcellation. The point \(P=[x\) \(y_{z}]\) is the point of intersection between a pair of lines \(L_{i}\) and \(L_{j}\) for \(i \neq j\) if
 
 $$
-\begin{align*} a_{1} t+d_{1} & =a_{2} s+d_{2} \\ b_{1} t+e_{1} & =b_{2} s+e_{2} \tag{7}\\ c_{1} t+f_{1} & =c_{2} s+f_{2} \end{align*}
+\begin{aligned} L_{1} \rightarrow \quad x & =a_{1} t+d_{1} \\ y & =b_{1} t+e_{1} \\ z & =c_{1} t+f_{1} \end{aligned} \quad \begin{aligned} L_{2} \rightarrow \quad x & =a_{2} s+d_{2} \\ y & =b_{2} s+e_{2} \\ z & =c_{2} s+f_{2} \end{aligned}
 $$
 
 $$
-\left|\begin{array}{cc:c} a_{1} & -a_{2} & \left(d_{2}-d_{1}\right) \tag{8}\\ b_{1} & -b_{2} & \left(e_{2}-e_{1}\right) \\ c_{1} & -c_{2} & \left(f_{2}-f_{1}\right) \end{array}\right|
+\begin{aligned} & a_{1} t+d_{1}=a_{2} s+d_{2} \\ & b_{1} t+e_{1}=b_{2} s+e_{2} \\ & c_{1} t+f_{1}=c_{2} s+f_{2} \end{aligned}
+$$
+
+$$
+\left|\begin{array}{ll:l} a_{1} & -a_{2} & \left(d_{2}-d_{1}\right) \\ b_{1} & -b_{2} & \left(e_{2}-e_{1}\right) \\ c_{1} & -c_{2} & \left(f_{2}-f_{1}\right) \end{array}\right| .
 $$
 
 into the parcellation graph with the original planes as mentioned previously. Fig. 3. For simplicity, the parcellation graph is shown without auxiliary points.
@@ -112,6 +117,10 @@ As long as the object is of finite size and exists as a closed solid there must 
 
 *FIG. 4. Parcellation graph for the truncated wedge.: Parcellation graph for the truncated wedge.*
 
+Back Right Left-Object
+
+- Points
+
 by exactly three planes. However, Fig. 5 depicts an object for which the problem does arise. The top point of this four-sided pyramid represents the intersection of four planes. Sixteen cells would be validated by this boundary point, even though only 14 volumes of space are defined by the intersection of the four planes. (The two nonexistent viewing cells that would be validated by the point are ones in which one opposing pair of the four sides is visible but the other pair of sides is not.)
 
 A practical solution is found in the following way. The invalid cells are degenerate in the sense that their boundaries do not enclose a volume of space which satisfies the relationships specified by the cell number. Another way of saying this is that they can be viewed as cells which have boundaries completely comprised of dangling lines and planes. Dangling lines touch a cell boundary at only a single point. Dangling planes touch a cell boundary at a single point or along a single line. The simplest 3D volume of space has a boundary comprised of three planes which meet at one point. It has only one real 3D corner, and thus only one intersection point from the parcellation graph will satisfy the constraints imposed
@@ -120,14 +129,14 @@ A practical solution is found in the following way. The invalid cells are degene
 
 *FiG. 5. A four-sided pyramid.: A four-sided pyramid.*
 
-by the cell's identification number. If auxiliary points are added to the parcellation graph, one along each infinite extension of each line in the parcellation, the simplest region will be the same as that described above except that there will be four test points which satisfy the relaxed relationships in the cell number. All degenerate cells will have fewer than four points which satisfy the same relationships and thus can be easily identified and eliminated. Thus, the lowest level of the parcellation graph is augmented with the auxiliary points in order to obtain a sufficient set of test points for the construction of valid cell numbers. Auxiliary points are found by keeping track of the maximum ( \(t_{\text {max }}\) ) and mini mum ( \(t_{\text {min }}\) ) values of the parameter \(t\) for points of intersection along each line. Once all of the points of intersection have been entered into the parcellation graph, two extra points are found for each line by evaluating Eq. (5) for each line with the parameter \(t\) set at \(t_{\text {max }}+1\) and \(t_{\text {min }}-1\).
+by the cell's identification number. If auxiliary points are added to the parcellation graph, one along each infinite extension of each line in the parcellation, the simplest region will be the same as that described above except that there will be four test points which satisfy the relaxed relationships in the cell number. All degenerate cells will have fewer than four points which satisfy the same relationships and thus can be easily identified and eliminated. Thus, the lowest level of the parcellation graph is augmented with the auxiliary points in order to obtain a sufficient set of test points for the construction of valid cell numbers. Auxiliary points are found by keeping track of the maximum ( \(t_{\text {max }}\) ) and minimum ( \(t_{\text {min }}\) ) values of the parameter \(t\) for points of intersection along each line. Once all of the points of intersection have been entered into the parcellation graph, two extra points are found for each line by evaluating Eq. (5) for each line with the parameter \(t\) set at \(t_{\text {max }}+1\) and \(t_{\text {min }}-1\).
 
 ### 2.E Creation of the Evaluation Matrix
 
 The evaluation matrix is created to allow more efficient determination of valid cell numbers. During this process, the planar equations for all of the bounding planes of the object must be evaluated with the coordinates of each of the boundary points in the parcellation. Repeated evaluations are avoided by creating a matrix to hold all of the values. This evaluation matrix is \(M\) rows by \(N\) columns, where \(M\) is the total number of points from the bottom of the parcellation graph (intersection points and auxiliary points), and \(N\) is the number of bounding planes for the object. The value of each matrix entry \(E_{i, j}\) is determined by evaluating the planar equation indicated by the column with the point coordinates indicated by the row. See Eq. (9):
 
 $$
-\begin{equation*} E_{i, j}=a_{j} x_{i}+b_{j} y_{i}+c_{j} z_{i}+d_{j} \tag{9} \end{equation*}
+E_{i, j}=a_{j} x_{i}+b_{j} y_{i}+c_{j} z_{i}+d_{j}
 $$
 
 If the resulting value \(E_{i, j}\) is negative, then the boundary point \(P_{i}\) lies to the inside of the plane \(F_{j}\). If \(E_{i, j}\) is positive, then \(P_{i}\) lies to the outside of \(F_{j}\). If \(E_{i, j}\) is zero, then \(P_{i}\) lies on \(F_{j}\). Table 4 lists values in the evaluation matrix for the truncated wedge in Fig. 3. Rows for both intersection points and auxiliary points appear in the evaluation matrix.
@@ -164,7 +173,7 @@ one of which (in the case of convex polyhedra) would correspond to the object it
 
 ### 3.A Space Complexity
 
-It is easy to see that the upper bound on the space complexity of the parcellation graph data structure is \(\Theta\left(\mathbf{N}^{3}\right)\), reflecting \(\mathbf{N}\) nodes for planes in which faces of the object lie, \(\Theta\left(\mathbf{N}^{2}\right)\) nodes for lines of intersection defined by pairs of planes, \(\Theta\left(\mathbf{N}^{3}\right)\) nodes for points defined by triplets of planes, and a constant number of arcs touching a node of each type. (The number of arcs touching a node of each type can be increased if the arrangement is not simple, but there will be a correspond ing decrease in the number of nodes.) It is also easy to see that the upper bound on the space complexity of the evaluation matrix is \(\Theta\left(\mathbf{N}^{4}\right)\), reflecting \(\mathbf{N}\) columns for the planes in which faces of the object lie and \(\Theta\left(\mathbf{N}^{3}\right)\) rows for the points of intersection.
+It is easy to see that the upper bound on the space complexity of the parcellation graph data structure is \(\Theta\left(\mathbf{N}^{3}\right)\), reflecting \(\mathbf{N}\) nodes for planes in which faces of the object lie, \(\Theta\left(\mathbf{N}^{2}\right)\) nodes for lines of intersection defined by pairs of planes, \(\Theta\left(\mathbf{N}^{3}\right)\) nodes for points defined by triplets of planes, and a constant number of arcs touching a node of each type. (The number of arcs touching a node of each type can be increased if the arrangement is not simple, but there will be a corresponding decrease in the number of nodes.) It is also easy to see that the upper bound on the space complexity of the evaluation matrix is \(\Theta\left(\mathbf{N}^{4}\right)\), reflecting \(\mathbf{N}\) columns for the planes in which faces of the object lie and \(\Theta\left(\mathbf{N}^{3}\right)\) rows for the points of intersection.
 
 Lastly, the upper bound on the node complexity of the aspect graph itself, with one node for each cell of the parcellation, is clearly \(\Theta\left(\mathbf{N}^{3}\right)\). If each node is
 
@@ -182,7 +191,9 @@ The upper bound on the time complexity of creating the evaluation matrix is \(\T
 
 ## 4 CONCLUSIONS
 
-An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented The algorithm has an upper bound of \(\Theta\left(\mathbf{N}^{4}\right)\) for time complexity of execution and space complexity of the resulting data structure, where \(\mathbf{N}\) is the number of faces of the convex polyhedron. The algorithm has been implemented in C and runs on a SUN workstation. It has been used to generate object representations for use in a prototype object recognition system developed in our lab [21]. There is evidence that many of the concepts used in the algorithm are also applicable to non-convex polyhedra [19]. Our plans for continued research in this area include (1) development and implementation of algorithms for determining the "equivalent" nodes of an aspect graph, (2) development of a method of attaching relative probabilities to the nodes of an aspect graph, (3) development and implementation of algorithms to handle non-convex polyhedra and curved-surface objects, and (4) further exploration of the use of aspect graphs in object recognition.
+An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented.
+
+The algorithm has an upper bound of \(\Theta\left(\mathbf{N}^{4}\right)\) for time complexity of execution and space complexity of the resulting data structure, where \(\mathbf{N}\) is the number of faces of the convex polyhedron. The algorithm has been implemented in \(\mathbf{C}\) and runs on a SUN workstation. It has been used to generate object representations for use in a prototype object recognition system developed in our lab [21]. There is evidence that many of the concepts used in the algorithm are also applicable to non-convex polyhedra [19]. Our plans for continued research in this area include (1) development and implementation of algorithms for determining the "equivalent" nodes of an aspect graph, (2) development of a method of attaching relative probabilities to the nodes of an aspect graph, (3) development and implementation of algorithms to handle non-convex polyhedra and curved-surface objects, and (4) further exploration of the use of aspect graphs in object recognition.
 
 ## Acknowledgments
 

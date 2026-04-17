@@ -4,7 +4,7 @@
     {
       "id": "mathpix-eq-p010-0020",
       "kind": "display",
-      "display_latex": "\\chi_{\\gamma}(\\mathrm{p})=\\sum_{t \\in S(\\mathrm{p})} \\mathrm{i}(\\mathrm{t})",
+      "display_latex": "\\chi_{\\gamma}(p)=\\sum_{t \\in S(p)} i(t)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 207.5,
-            "y0": 353.0,
-            "x1": 280.5,
-            "y1": 380.0,
-            "width": 73.0,
-            "height": 27.0
+            "x0": 206.21,
+            "y0": 352.22,
+            "x1": 282.82,
+            "y1": 381.6,
+            "width": 76.61,
+            "height": 29.38
           },
           "engine": "mathpix"
         }
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0017",
+      "id": "mathpix-eq-p014-0018",
       "kind": "display",
       "display_latex": "\\chi(S)-m(p)=\\chi_{\\gamma}(p)",
       "semantic_expr": null,
@@ -46,12 +46,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 177.5,
-            "y0": 278.0,
-            "x1": 258.0,
-            "y1": 295.5,
-            "width": 80.5,
-            "height": 17.5
+            "x0": 178.56,
+            "y0": 279.07,
+            "x1": 258.05,
+            "y1": 295.49,
+            "width": 79.49,
+            "height": 16.42
           },
           "engine": "mathpix"
         }
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p017-0030",
+      "id": "mathpix-eq-p017-0031",
       "kind": "display",
       "display_latex": "g=\\varepsilon(S)\\left[1+\\frac{c}{2}-\\mu(A)-N(A)\\right]",
       "semantic_expr": null,
@@ -77,12 +77,12 @@
         {
           "page": 17,
           "bbox": {
-            "x0": 177.5,
-            "y0": 537.5,
-            "x1": 301.0,
-            "y1": 559.0,
-            "width": 123.5,
-            "height": 21.5
+            "x0": 177.41,
+            "y0": 537.7,
+            "x1": 300.96,
+            "y1": 558.43,
+            "width": 123.55,
+            "height": 20.74
           },
           "engine": "mathpix"
         }
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p019-0018",
+      "id": "mathpix-eq-p019-0019",
       "kind": "display",
       "display_latex": "2 \\rho\\left(\\gamma^{*}\\right)-c=\\chi(S)",
       "semantic_expr": null,
@@ -108,12 +108,12 @@
         {
           "page": 19,
           "bbox": {
-            "x0": 178.5,
-            "y0": 505.5,
-            "x1": 250.5,
-            "y1": 520.0,
-            "width": 72.0,
-            "height": 14.5
+            "x0": 178.56,
+            "y0": 505.44,
+            "x1": 251.71,
+            "y1": 519.84,
+            "width": 73.15,
+            "height": 14.4
           },
           "engine": "mathpix"
         }
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p019-0021",
+      "id": "mathpix-eq-p019-0022",
       "kind": "display",
       "display_latex": "\\rho\\left(\\gamma_{\\mathrm{i}}\\right)=\\mu\\left(a_{\\mathrm{i}}\\right)+\\sum \\eta(Q)",
       "semantic_expr": null,
@@ -139,12 +139,12 @@
         {
           "page": 19,
           "bbox": {
-            "x0": 178.5,
-            "y0": 575.0,
-            "x1": 272.0,
-            "y1": 591.5,
-            "width": 93.5,
-            "height": 16.5
+            "x0": 178.56,
+            "y0": 574.85,
+            "x1": 271.87,
+            "y1": 592.7,
+            "width": 93.31,
+            "height": 17.86
           },
           "engine": "mathpix"
         }
@@ -157,7 +157,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p020-0004",
+      "id": "mathpix-eq-p020-0005",
       "kind": "display",
       "display_latex": "2 \\mu(A)+2 N(A)-\\chi(S)=c",
       "semantic_expr": null,
@@ -170,12 +170,12 @@
         {
           "page": 20,
           "bbox": {
-            "x0": 169.0,
-            "y0": 90.5,
-            "x1": 289.5,
-            "y1": 104.0,
-            "width": 120.5,
-            "height": 13.5
+            "x0": 168.77,
+            "y0": 90.72,
+            "x1": 290.3,
+            "y1": 104.83,
+            "width": 121.54,
+            "height": 14.11
           },
           "engine": "mathpix"
         }
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p020-0026",
+      "id": "mathpix-eq-p020-0028",
       "kind": "display",
       "display_latex": "g\\left(x_{1}, \\ldots, x_{\\mathrm{m}}\\right)= \\pm x_{1}^{2} \\pm \\ldots \\pm x_{\\mathrm{m}-1}^{2} \\pm x_{\\mathrm{m}}^{\\mathrm{k}+1}",
       "semantic_expr": null,
@@ -201,12 +201,12 @@
         {
           "page": 20,
           "bbox": {
-            "x0": 152.5,
-            "y0": 425.5,
-            "x1": 314.0,
-            "y1": 447.5,
-            "width": 161.5,
-            "height": 22.0
+            "x0": 152.93,
+            "y0": 425.95,
+            "x1": 314.21,
+            "y1": 447.26,
+            "width": 161.28,
+            "height": 21.31
           },
           "engine": "mathpix"
         }
@@ -219,7 +219,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p022-0019",
+      "id": "mathpix-eq-p022-0020",
       "kind": "display",
       "display_latex": "\\left\\langle\\mu, \\Delta^{*}\\right\\rangle=\\langle\\sigma, \\varphi(S)\\rangle+w_{2}(S)",
       "semantic_expr": null,
@@ -232,12 +232,12 @@
         {
           "page": 22,
           "bbox": {
-            "x0": 160.5,
-            "y0": 323.0,
-            "x1": 291.0,
-            "y1": 339.5,
-            "width": 130.5,
-            "height": 16.5
+            "x0": 160.7,
+            "y0": 322.85,
+            "x1": 291.17,
+            "y1": 339.26,
+            "width": 130.46,
+            "height": 16.42
           },
           "engine": "mathpix"
         }
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p022-0031",
+      "id": "mathpix-eq-p022-0032",
       "kind": "display",
       "display_latex": "\\chi_{\\gamma}+m=\\chi(S)",
       "semantic_expr": null,
@@ -263,12 +263,12 @@
         {
           "page": 22,
           "bbox": {
-            "x0": 180.5,
-            "y0": 505.5,
-            "x1": 246.5,
-            "y1": 522.0,
-            "width": 66.0,
-            "height": 16.5
+            "x0": 181.15,
+            "y0": 505.44,
+            "x1": 246.24,
+            "y1": 522.14,
+            "width": 65.09,
+            "height": 16.7
           },
           "engine": "mathpix"
         }
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p022-0034",
+      "id": "mathpix-eq-p022-0035",
       "kind": "display",
       "display_latex": "\\alpha_{p}=\\chi(S)+m(p) \\quad(\\bmod .2)",
       "semantic_expr": null,
@@ -294,12 +294,12 @@
         {
           "page": 22,
           "bbox": {
-            "x0": 155.0,
-            "y0": 549.5,
-            "x1": 279.5,
-            "y1": 567.5,
-            "width": 124.5,
-            "height": 18.0
+            "x0": 156.1,
+            "y0": 550.37,
+            "x1": 279.36,
+            "y1": 567.07,
+            "width": 123.26,
+            "height": 16.7
           },
           "engine": "mathpix"
         }
@@ -312,7 +312,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p023-0002",
+      "id": "mathpix-eq-p023-0003",
       "kind": "display",
       "display_latex": "m_{r}=\\chi(S)+m(p) \\quad(\\bmod .2)",
       "semantic_expr": null,
@@ -325,12 +325,12 @@
         {
           "page": 23,
           "bbox": {
-            "x0": 159.0,
-            "y0": 60.0,
-            "x1": 283.0,
-            "y1": 74.5,
-            "width": 124.0,
-            "height": 14.5
+            "x0": 159.26,
+            "y0": 59.9,
+            "x1": 286.85,
+            "y1": 75.46,
+            "width": 127.58,
+            "height": 15.55
           },
           "engine": "mathpix"
         }
@@ -343,7 +343,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p023-0021",
+      "id": "mathpix-eq-p023-0022",
       "kind": "display",
       "display_latex": "c^{*}=d^{*}(f)+\\chi^{*}(S)",
       "semantic_expr": null,
@@ -356,12 +356,12 @@
         {
           "page": 23,
           "bbox": {
-            "x0": 187.0,
-            "y0": 352.5,
-            "x1": 271.0,
-            "y1": 368.5,
-            "width": 84.0,
-            "height": 16.0
+            "x0": 186.91,
+            "y0": 352.8,
+            "x1": 271.87,
+            "y1": 369.22,
+            "width": 84.96,
+            "height": 16.42
           },
           "engine": "mathpix"
         }

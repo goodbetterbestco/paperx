@@ -2,7 +2,7 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p013-0020",
+      "id": "mathpix-eq-p013-0022",
       "kind": "display",
       "display_latex": "\\begin{aligned}\n& F^{+}=\\{p: f(p)>0.0\\} \\\\\n& F^{0}=\\{p: f(p)=0.0\\} \\\\\n& F^{-}=\\{p: f(p)<0.0\\}\n\\end{aligned}",
       "semantic_expr": null,
@@ -15,11 +15,11 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 243.46,
-            "y0": 601.96,
-            "x1": 362.44,
-            "y1": 690.96,
-            "width": 118.98,
+            "x0": 243.31,
+            "y0": 601.87,
+            "x1": 362.52,
+            "y1": 690.86,
+            "width": 119.21,
             "height": 88.99
           },
           "engine": "mathpix"
@@ -46,12 +46,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 278.31,
-            "y0": 173.48,
-            "x1": 328.77,
-            "y1": 205.47,
-            "width": 50.47,
-            "height": 32.0
+            "x0": 277.6,
+            "y0": 173.32,
+            "x1": 330.3,
+            "y1": 206.71,
+            "width": 52.7,
+            "height": 33.4
           },
           "engine": "mathpix"
         }

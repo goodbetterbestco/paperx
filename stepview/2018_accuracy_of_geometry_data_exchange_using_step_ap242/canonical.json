@@ -3,7 +3,7 @@
   "paper_id": "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
   "title": "2018 accuracy of geometry data exchange using step ap242",
   "source": {
-    "pdf_path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
+    "pdf_path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
     "page_count": 6,
     "page_sizes_pt": [
       {
@@ -39,12 +39,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:05:26Z",
-    "updated_at": "2026-04-15T17:05:26Z",
+    "created_at": "2026-04-17T04:40:55Z",
+    "updated_at": "2026-04-17T04:40:55Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "docling+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -56,42 +56,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
+        "path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
         "exists": true,
         "size_bytes": 806524,
-        "modified_at": "2026-04-13T16:18:57Z",
+        "modified_at": "2026-04-17T03:17:22Z",
         "sha256": "142526f3134dfb1df9c4a40e83ec340ff6b73476c326befd7f60a43985c91c3d"
       },
       "external_layout": {
-        "path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/layout.json",
+        "path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 117759,
-        "modified_at": "2026-04-15T17:05:26Z",
-        "sha256": "dbdccccffb0d1e7efc4593fb2f866dcaf49808abecb7ad507dd630f32ceeabd6"
+        "size_bytes": 102185,
+        "modified_at": "2026-04-17T04:14:06Z",
+        "sha256": "459e9e22823055a28ef4905e24f7f653dc7894a1e3a48d7984d530bf7fc16834"
       },
       "external_math": {
-        "path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/math.json",
+        "path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 43,
-        "modified_at": "2026-04-15T17:05:26Z",
+        "modified_at": "2026-04-17T04:14:06Z",
         "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "31d5355ca1f9d22126e9f39387fe1e7e16c3b1c5cec44dd6d0b6b8e3d8d07fe1",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "07d9b89c366a7c943aa5c78c4aa4a6dc7508176b3e8a6f82a9a7b8b5af61a68e"
       }
     }
   },
@@ -133,24 +136,12 @@
         "affiliation_ids": [
           "aff-1"
         ]
-      },
-      {
-        "name": "Belgium",
-        "affiliation_ids": [
-          "aff-1"
-        ]
-      },
-      {
-        "name": "6th CIRP Global Web Conference",
-        "affiliation_ids": [
-          "aff-1"
-        ]
       }
     ],
     "affiliations": [
       {
         "id": "aff-1",
-        "department": "\\( { }^{b} \\) Staffordshire University",
+        "department": "\\({ }^{b}\\) Staffordshire University",
         "institution": "College Rd",
         "address": "Stoke-on-Trent ST4 2DE, The UK"
       }
@@ -167,16 +158,53 @@
     {
       "id": "sec-1",
       "label": "1",
-      "title": "Introduction",
+      "title": "1 Introduction",
+      "level": 1,
+      "block_ids": [],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 38.01,
+            "y0": 495.81,
+            "x1": 103.39,
+            "y1": 505.88,
+            "width": 65.37,
+            "height": 10.08
+          },
+          "engine": "composed"
+        }
+      ]
+    },
+    {
+      "id": "sec-A",
+      "label": "A",
+      "title": "A new methodology for communicating engineering",
       "level": 1,
       "block_ids": [
         "blk-paragraph-0002",
-        "blk-figure-0003",
+        "blk-paragraph-0003",
         "blk-paragraph-0004",
-        "blk-paragraph-0005"
+        "blk-figure-0005",
+        "blk-paragraph-0006",
+        "blk-paragraph-0007"
       ],
       "children": [],
-      "source_spans": []
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 48.67,
+            "y0": 519.7,
+            "x1": 291.45,
+            "y1": 532.08,
+            "width": 242.78,
+            "height": 12.38
+          },
+          "engine": "composed"
+        }
+      ]
     },
     {
       "id": "sec-2",
@@ -184,23 +212,23 @@
       "title": "2 Methodology",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0006",
-        "blk-list_item-0007",
-        "blk-list_item-0008",
+        "blk-paragraph-0008",
         "blk-list_item-0009",
         "blk-list_item-0010",
-        "blk-paragraph-0011",
-        "blk-figure-0013",
-        "blk-paragraph-0014",
-        "blk-paragraph-0015",
+        "blk-list_item-0011",
+        "blk-list_item-0012",
+        "blk-paragraph-0013",
+        "blk-figure-0015",
         "blk-paragraph-0016",
         "blk-paragraph-0017",
-        "blk-figure-0018",
+        "blk-paragraph-0018",
         "blk-paragraph-0019",
-        "blk-paragraph-0020",
-        "blk-figure-0021",
+        "blk-figure-0020",
+        "blk-paragraph-0021",
         "blk-paragraph-0022",
-        "blk-figure-0023"
+        "blk-figure-0023",
+        "blk-paragraph-0024",
+        "blk-figure-0025"
       ],
       "children": [],
       "source_spans": [
@@ -214,7 +242,7 @@
             "width": 68.99,
             "height": 8.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -224,15 +252,15 @@
       "title": "3 Results",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0024",
-        "blk-paragraph-0025",
         "blk-paragraph-0026",
+        "blk-paragraph-0027",
         "blk-paragraph-0028",
-        "blk-paragraph-0029",
         "blk-paragraph-0030",
-        "blk-figure-0034",
-        "blk-paragraph-0035",
-        "blk-figure-0036"
+        "blk-paragraph-0031",
+        "blk-paragraph-0032",
+        "blk-figure-0036",
+        "blk-paragraph-0037",
+        "blk-figure-0038"
       ],
       "children": [],
       "source_spans": [
@@ -246,7 +274,7 @@
             "width": 43.9,
             "height": 8.57
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -256,13 +284,13 @@
       "title": "4 Conclusion",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0037",
-        "blk-paragraph-0038",
         "blk-paragraph-0039",
         "blk-paragraph-0040",
         "blk-paragraph-0041",
         "blk-paragraph-0042",
-        "blk-paragraph-0043"
+        "blk-paragraph-0043",
+        "blk-paragraph-0044",
+        "blk-paragraph-0045"
       ],
       "children": [],
       "source_spans": [
@@ -276,7 +304,7 @@
             "width": 60.58,
             "height": 8.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -286,9 +314,16 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0044",
-        "blk-reference-0045",
-        "blk-reference-0046"
+        "blk-reference-0046",
+        "blk-reference-0047",
+        "blk-reference-0048",
+        "blk-reference-0049",
+        "blk-reference-0050",
+        "blk-reference-0051",
+        "blk-reference-0052",
+        "blk-reference-0053",
+        "blk-reference-0054",
+        "blk-reference-0055"
       ],
       "children": [],
       "source_spans": [
@@ -302,7 +337,7 @@
             "width": 49.19,
             "height": 8.57
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -315,7 +350,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data."
+            "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data."
           }
         ]
       },
@@ -323,105 +358,153 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 312.96,
-            "x1": 558.79,
-            "y1": 324.96,
-            "width": 521.8,
-            "height": 12.0
+            "x0": 36.86,
+            "y0": 314.41,
+            "x1": 558.41,
+            "y1": 324.2,
+            "width": 521.55,
+            "height": 9.79
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 324.46,
-            "x1": 466.32,
-            "y1": 335.96,
-            "width": 429.34,
-            "height": 11.5
+            "x0": 36.86,
+            "y0": 324.78,
+            "x1": 466.54,
+            "y1": 334.86,
+            "width": 429.68,
+            "height": 10.08
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 335.46,
-            "x1": 558.79,
-            "y1": 346.45,
-            "width": 521.8,
-            "height": 11.0
+            "x0": 36.86,
+            "y0": 335.43,
+            "x1": 558.41,
+            "y1": 346.66,
+            "width": 521.55,
+            "height": 11.23
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 345.95,
-            "x1": 558.79,
-            "y1": 358.45,
-            "width": 521.8,
-            "height": 12.5
+            "x0": 36.86,
+            "y0": 346.08,
+            "x1": 558.41,
+            "y1": 357.03,
+            "width": 521.55,
+            "height": 10.94
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 357.95,
-            "x1": 558.29,
-            "y1": 368.95,
-            "width": 521.3,
-            "height": 11.0
+            "x0": 36.86,
+            "y0": 357.03,
+            "x1": 558.41,
+            "y1": 369.12,
+            "width": 521.55,
+            "height": 12.09
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 368.45,
-            "x1": 106.96,
-            "y1": 379.45,
-            "width": 69.97,
-            "height": 11.0
+            "x0": 36.86,
+            "y0": 368.25,
+            "x1": 107.13,
+            "y1": 378.33,
+            "width": 70.27,
+            "height": 10.08
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 379.45,
-            "x1": 558.29,
-            "y1": 391.45,
-            "width": 521.3,
-            "height": 12.0
+            "x0": 36.86,
+            "y0": 379.48,
+            "x1": 558.41,
+            "y1": 390.71,
+            "width": 521.55,
+            "height": 11.23
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 36.99,
-            "y0": 390.45,
-            "x1": 385.85,
-            "y1": 401.95,
-            "width": 348.87,
-            "height": 11.5
+            "x0": 36.86,
+            "y0": 390.71,
+            "x1": 386.2,
+            "y1": 401.94,
+            "width": 349.33,
+            "height": 11.23
           },
-          "engine": "mathpix"
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 405.11,
+            "x1": 444.08,
+            "y1": 416.34,
+            "width": 406.64,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 424.98,
+            "x1": 536.24,
+            "y1": 436.2,
+            "width": 498.8,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 435.34,
+            "x1": 284.82,
+            "y1": 446.57,
+            "width": 247.38,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 39.45,
+            "y0": 453.77,
+            "x1": 191.51,
+            "y1": 463.56,
+            "width": 152.06,
+            "height": 9.79
+          },
+          "engine": "composed"
         }
       ],
       "alternates": [],
       "review": {
         "status": "edited",
-        "risk": "medium",
-        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
+        "risk": "low",
+        "notes": "[missing from original]"
       }
     },
     {
@@ -431,22 +514,174 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Boundary changed to respectively 40.1 and 65.05 as defined by the specified asymmetric dimensional tolerance, 20 needs to be changed to 20.0065 as defined by the specified ISO fitting. As currently most CAM systems can't apply the information contained within the PMI data to the CAD model automatically these adjustments need to be applied manually. This must be repeated with every modification to the original CAD model."
+            "text": "information called Model Based definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the \"traditional way\" [1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD\\&"
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-1"
+          },
+          {
+            "kind": "text",
+            "text": " directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]."
           }
         ]
       },
       "source_spans": [
         {
-          "page": 2,
+          "page": 1,
           "bbox": {
-            "x0": 15.14,
-            "y0": 67.73,
-            "x1": 32.8,
-            "y1": 72.73,
-            "width": 17.66,
-            "height": 5.0
+            "x0": 37.44,
+            "y0": 531.51,
+            "x1": 291.45,
+            "y1": 543.89,
+            "width": 254.01,
+            "height": 12.38
           },
-          "engine": "docling"
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 543.89,
+            "x1": 291.45,
+            "y1": 555.69,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 555.69,
+            "x1": 291.45,
+            "y1": 567.5,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 566.92,
+            "x1": 291.45,
+            "y1": 579.59,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 580.17,
+            "x1": 291.45,
+            "y1": 591.4,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 591.97,
+            "x1": 291.45,
+            "y1": 603.2,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 603.78,
+            "x1": 291.45,
+            "y1": 616.16,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 615.58,
+            "x1": 291.45,
+            "y1": 628.25,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 627.39,
+            "x1": 291.45,
+            "y1": 640.06,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 639.19,
+            "x1": 291.45,
+            "y1": 651.86,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 651.28,
+            "x1": 291.45,
+            "y1": 663.67,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 663.67,
+            "x1": 291.45,
+            "y1": 675.47,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 675.47,
+            "x1": 291.45,
+            "y1": 687.27,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -457,7 +692,227 @@
       }
     },
     {
-      "id": "blk-figure-0003",
+      "id": "blk-paragraph-0003",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 495.81,
+            "x1": 559.85,
+            "y1": 507.03,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 507.9,
+            "x1": 559.85,
+            "y1": 519.7,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 519.7,
+            "x1": 559.85,
+            "y1": 532.08,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 531.51,
+            "x1": 559.85,
+            "y1": 543.89,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 543.89,
+            "x1": 559.85,
+            "y1": 555.69,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 556.56,
+            "x1": 559.85,
+            "y1": 567.5,
+            "width": 254.58,
+            "height": 10.94
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 568.36,
+            "x1": 559.85,
+            "y1": 579.59,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 580.17,
+            "x1": 559.85,
+            "y1": 591.4,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 591.97,
+            "x1": 559.85,
+            "y1": 603.78,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 603.78,
+            "x1": 475.76,
+            "y1": 616.16,
+            "width": 170.49,
+            "height": 12.38
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0004",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen Boundary changed to respectively 40.1 and 65.05 as defined by the specified asymmetric dimensional tolerance, 20 needs to be changed to 20.0065 as defined by the specified ISO fitting. As currently most CAM systems can't apply the information contained within the PMI data to the CAD model automatically these adjustments need to be applied manually. This must be repeated with every modification to the original CAD model."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 317.08,
+            "y0": 628.25,
+            "x1": 559.85,
+            "y1": 640.06,
+            "width": 242.78,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 640.06,
+            "x1": 559.85,
+            "y1": 651.86,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 651.28,
+            "x1": 559.85,
+            "y1": 663.67,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 305.27,
+            "y0": 664.24,
+            "x1": 559.85,
+            "y1": 675.47,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 15.14,
+            "y0": 67.73,
+            "x1": 32.8,
+            "y1": 72.73,
+            "width": 17.66,
+            "height": 5.0
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0005",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1"
@@ -473,7 +928,7 @@
             "width": 146.61,
             "height": 17.41
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -484,7 +939,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0004",
+      "id": "blk-paragraph-0006",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -505,7 +960,7 @@
             "width": 254.32,
             "height": 128.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -516,7 +971,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0005",
+      "id": "blk-paragraph-0007",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -537,7 +992,7 @@
             "width": 254.3,
             "height": 92.62
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -548,7 +1003,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0006",
+      "id": "blk-paragraph-0008",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -569,7 +1024,7 @@
             "width": 254.03,
             "height": 32.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -580,7 +1035,7 @@
       }
     },
     {
-      "id": "blk-list_item-0007",
+      "id": "blk-list_item-0009",
       "type": "list_item",
       "content": {
         "spans": [
@@ -604,7 +1059,7 @@
             "width": 171.23,
             "height": 8.91
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -615,7 +1070,7 @@
       }
     },
     {
-      "id": "blk-list_item-0008",
+      "id": "blk-list_item-0010",
       "type": "list_item",
       "content": {
         "spans": [
@@ -639,7 +1094,7 @@
             "width": 208.55,
             "height": 8.91
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -650,7 +1105,7 @@
       }
     },
     {
-      "id": "blk-list_item-0009",
+      "id": "blk-list_item-0011",
       "type": "list_item",
       "content": {
         "spans": [
@@ -674,7 +1129,7 @@
             "width": 203.63,
             "height": 8.91
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -685,7 +1140,7 @@
       }
     },
     {
-      "id": "blk-list_item-0010",
+      "id": "blk-list_item-0012",
       "type": "list_item",
       "content": {
         "spans": [
@@ -709,7 +1164,7 @@
             "width": 224.16,
             "height": 20.92
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -720,7 +1175,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0011",
+      "id": "blk-paragraph-0013",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -749,7 +1204,7 @@
             "width": 254.32,
             "height": 116.63
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -761,7 +1216,7 @@
             "width": 254.17,
             "height": 56.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -772,7 +1227,7 @@
       }
     },
     {
-      "id": "blk-figure-0013",
+      "id": "blk-figure-0015",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-2"
@@ -788,7 +1243,7 @@
             "width": 204.6,
             "height": 8.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -799,7 +1254,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0014",
+      "id": "blk-paragraph-0016",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -820,7 +1275,7 @@
             "width": 254.3,
             "height": 116.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -831,7 +1286,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0015",
+      "id": "blk-paragraph-0017",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -852,7 +1307,7 @@
             "width": 254.32,
             "height": 104.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -863,7 +1318,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0016",
+      "id": "blk-paragraph-0018",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -884,7 +1339,7 @@
             "width": 254.26,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -895,7 +1350,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0017",
+      "id": "blk-paragraph-0019",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -916,7 +1371,7 @@
             "width": 254.3,
             "height": 104.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -927,7 +1382,7 @@
       }
     },
     {
-      "id": "blk-figure-0018",
+      "id": "blk-figure-0020",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -943,7 +1398,7 @@
             "width": 107.39,
             "height": 8.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -954,7 +1409,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0019",
+      "id": "blk-paragraph-0021",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -975,7 +1430,7 @@
             "width": 18.67,
             "height": 5.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -986,7 +1441,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0020",
+      "id": "blk-paragraph-0022",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1007,7 +1462,7 @@
             "width": 254.34,
             "height": 212.67
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1018,7 +1473,7 @@
       }
     },
     {
-      "id": "blk-figure-0021",
+      "id": "blk-figure-0023",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -1034,7 +1489,7 @@
             "width": 67.41,
             "height": 8.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1045,7 +1500,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0022",
+      "id": "blk-paragraph-0024",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1066,7 +1521,7 @@
             "width": 254.29,
             "height": 140.62
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1077,7 +1532,7 @@
       }
     },
     {
-      "id": "blk-figure-0023",
+      "id": "blk-figure-0025",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-5"
@@ -1093,7 +1548,7 @@
             "width": 82.05,
             "height": 8.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1104,7 +1559,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0024",
+      "id": "blk-paragraph-0026",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1125,7 +1580,7 @@
             "width": 254.15,
             "height": 68.62
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1136,7 +1591,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0025",
+      "id": "blk-paragraph-0027",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1157,7 +1612,7 @@
             "width": 238.76,
             "height": 20.89
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1168,7 +1623,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0026",
+      "id": "blk-paragraph-0028",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1197,7 +1652,7 @@
             "width": 217.89,
             "height": 20.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -1209,7 +1664,7 @@
             "width": 222.81,
             "height": 20.91
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1220,7 +1675,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0028",
+      "id": "blk-paragraph-0030",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1241,7 +1696,7 @@
             "width": 223.19,
             "height": 20.89
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1252,7 +1707,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0029",
+      "id": "blk-paragraph-0031",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1273,7 +1728,7 @@
             "width": 238.76,
             "height": 20.91
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1284,7 +1739,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0030",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1321,7 +1776,7 @@
             "width": 217.9,
             "height": 20.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1333,7 +1788,7 @@
             "width": 222.84,
             "height": 20.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1345,7 +1800,7 @@
             "width": 248.25,
             "height": 32.91
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1357,7 +1812,7 @@
             "width": 252.93,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1368,7 +1823,7 @@
       }
     },
     {
-      "id": "blk-figure-0034",
+      "id": "blk-figure-0036",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-6"
@@ -1384,7 +1839,7 @@
             "width": 236.38,
             "height": 6.94
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1395,7 +1850,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0035",
+      "id": "blk-paragraph-0037",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1416,7 +1871,7 @@
             "width": 226.32,
             "height": 32.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1428,7 +1883,7 @@
             "width": 252.82,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1439,7 +1894,7 @@
       }
     },
     {
-      "id": "blk-figure-0036",
+      "id": "blk-figure-0038",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-7"
@@ -1455,7 +1910,7 @@
             "width": 242.4,
             "height": 6.94
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1466,7 +1921,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0037",
+      "id": "blk-paragraph-0039",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1487,7 +1942,7 @@
             "width": 252.7,
             "height": 20.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1499,7 +1954,7 @@
             "width": 144.31,
             "height": 6.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1511,7 +1966,7 @@
             "width": 252.98,
             "height": 104.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1522,7 +1977,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0038",
+      "id": "blk-paragraph-0040",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1543,7 +1998,7 @@
             "width": 252.81,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1554,7 +2009,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0039",
+      "id": "blk-paragraph-0041",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1575,7 +2030,7 @@
             "width": 252.92,
             "height": 92.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1586,7 +2041,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0040",
+      "id": "blk-paragraph-0042",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1607,7 +2062,7 @@
             "width": 252.98,
             "height": 68.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1618,7 +2073,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0041",
+      "id": "blk-paragraph-0043",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1639,7 +2094,7 @@
             "width": 252.87,
             "height": 32.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1650,7 +2105,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0042",
+      "id": "blk-paragraph-0044",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1671,7 +2126,7 @@
             "width": 252.96,
             "height": 32.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1682,7 +2137,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0043",
+      "id": "blk-paragraph-0045",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1703,7 +2158,7 @@
             "width": 252.92,
             "height": 80.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1714,7 +2169,7 @@
       }
     },
     {
-      "id": "blk-reference-0044",
+      "id": "blk-reference-0046",
       "type": "reference",
       "content": {
         "reference_id": "ref-001"
@@ -1730,7 +2185,7 @@
             "width": 252.48,
             "height": 56.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1741,7 +2196,7 @@
       }
     },
     {
-      "id": "blk-reference-0045",
+      "id": "blk-reference-0047",
       "type": "reference",
       "content": {
         "reference_id": "ref-002"
@@ -1757,7 +2212,7 @@
             "width": 250.25,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1768,7 +2223,7 @@
       }
     },
     {
-      "id": "blk-reference-0046",
+      "id": "blk-reference-0048",
       "type": "reference",
       "content": {
         "reference_id": "ref-003"
@@ -1784,8 +2239,23 @@
             "width": 250.44,
             "height": 44.62
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0049",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-004"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1796,7 +2266,7 @@
             "width": 245.85,
             "height": 32.63
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1808,8 +2278,23 @@
             "width": 233.44,
             "height": 20.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0050",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-005"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1820,8 +2305,23 @@
             "width": 237.73,
             "height": 20.6
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0051",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-006"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1832,8 +2332,23 @@
             "width": 248.76,
             "height": 32.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0052",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-007"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1844,8 +2359,23 @@
             "width": 246.31,
             "height": 44.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0053",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-008"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1856,8 +2386,23 @@
             "width": 223.67,
             "height": 20.64
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0054",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-009"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1868,8 +2413,23 @@
             "width": 248.66,
             "height": 44.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0055",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-010"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1880,7 +2440,7 @@
             "width": 238.11,
             "height": 32.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1891,7 +2451,194 @@
       }
     }
   ],
-  "math": [],
+  "math": [
+    {
+      "id": "math-inline-1",
+      "kind": "inline",
+      "display_latex": "T(GeometricDimensioningandTolerancing)",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>T</mi><mo stretchy=\"false\">&#x00028;</mo><mi>G</mi><mi>e</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>t</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>D</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>s</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>T</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>n</mi><mi>c</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 37.44,
+            "y0": 531.51,
+            "x1": 291.45,
+            "y1": 543.89,
+            "width": 254.01,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 543.89,
+            "x1": 291.45,
+            "y1": 555.69,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 555.69,
+            "x1": 291.45,
+            "y1": 567.5,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 566.92,
+            "x1": 291.45,
+            "y1": 579.59,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 580.17,
+            "x1": 291.45,
+            "y1": 591.4,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 591.97,
+            "x1": 291.45,
+            "y1": 603.2,
+            "width": 254.58,
+            "height": 11.23
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 603.78,
+            "x1": 291.45,
+            "y1": 616.16,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 615.58,
+            "x1": 291.45,
+            "y1": 628.25,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 627.39,
+            "x1": 291.45,
+            "y1": 640.06,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 639.19,
+            "x1": 291.45,
+            "y1": 651.86,
+            "width": 254.58,
+            "height": 12.67
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 651.28,
+            "x1": 291.45,
+            "y1": 663.67,
+            "width": 254.58,
+            "height": 12.38
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 663.67,
+            "x1": 291.45,
+            "y1": 675.47,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.86,
+            "y0": 675.47,
+            "x1": 291.45,
+            "y1": 687.27,
+            "width": 254.58,
+            "height": 11.8
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_mapping_reference"
+        ]
+      }
+    }
+  ],
   "figures": [
     {
       "id": "fig-2",
@@ -2177,7 +2924,7 @@
             "width": 252.48,
             "height": 56.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2202,7 +2949,7 @@
             "width": 250.25,
             "height": 44.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2214,8 +2961,8 @@
     },
     {
       "id": "ref-003",
-      "raw_text": "Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1 - Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997. Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49. Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24. Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39. Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001. Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67. Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89. Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.",
-      "text": "Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1-Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997. Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49. Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24. Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39. Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001. Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67. Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89. Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.",
+      "raw_text": "Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1 - Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997.",
+      "text": "Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1-Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997.",
       "source_spans": [
         {
           "page": 6,
@@ -2227,8 +2974,21 @@
             "width": 250.44,
             "height": 44.62
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-004",
+      "raw_text": "Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49.",
+      "text": "Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2239,7 +2999,7 @@
             "width": 245.85,
             "height": 32.63
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -2251,8 +3011,21 @@
             "width": 233.44,
             "height": 20.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-005",
+      "raw_text": "Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24.",
+      "text": "Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2263,8 +3036,21 @@
             "width": 237.73,
             "height": 20.6
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-006",
+      "raw_text": "Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39.",
+      "text": "Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2275,8 +3061,21 @@
             "width": 248.76,
             "height": 32.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-007",
+      "raw_text": "Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001.",
+      "text": "Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2287,8 +3086,21 @@
             "width": 246.31,
             "height": 44.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-008",
+      "raw_text": "Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67.",
+      "text": "Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2299,8 +3111,21 @@
             "width": 223.67,
             "height": 20.64
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-009",
+      "raw_text": "Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89.",
+      "text": "Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2311,8 +3136,21 @@
             "width": 248.66,
             "height": 44.61
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-010",
+      "raw_text": "Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.",
+      "text": "Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -2323,7 +3161,7 @@
             "width": 238.11,
             "height": 32.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

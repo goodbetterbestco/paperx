@@ -4,7 +4,7 @@
     {
       "id": "docling-eq-0001",
       "kind": "display",
-      "display_latex": "i (x, y, z, W): Det (M (x, y, z, w)) = 0} (1)",
+      "display_latex": "1(x, y, z, W): Det (M (x, y, z, w)) = 0} (1)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -99,37 +99,6 @@
     {
       "id": "docling-eq-0004",
       "kind": "display",
-      "display_latex": "Solve(A-s)Zk= 94-1: qk =z |zx|lo; sk=qfAqk·",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 8,
-          "bbox": {
-            "x0": 231.22,
-            "y0": 1421.03,
-            "x1": 979.65,
-            "y1": 1463.72,
-            "width": 748.43,
-            "height": 42.69
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "docling-eq-0005",
-      "kind": "display",
       "display_latex": "F(s, t) = (X(s, t), Y (s, t), Z(s, t), W(s, t)) X (s, t) di (s, t) = W(s, t) Y (s, t) Z(s, t) $2 (s, t) = W(s, t)' Ф3 (s, t) = W(s, t)",
       "semantic_expr": null,
       "compiled_targets": {},
@@ -159,7 +128,7 @@
       }
     },
     {
-      "id": "docling-eq-0006",
+      "id": "docling-eq-0005",
       "kind": "display",
       "display_latex": "PIs PL (4)",
       "semantic_expr": null,
@@ -191,7 +160,7 @@
       "equation_number": "(4)"
     },
     {
-      "id": "docling-eq-0007",
+      "id": "docling-eq-0006",
       "kind": "display",
       "display_latex": "(WXs - WX)",
       "semantic_expr": null,
@@ -222,7 +191,7 @@
       }
     },
     {
-      "id": "docling-eq-0008",
+      "id": "docling-eq-0007",
       "kind": "display",
       "display_latex": "W2 _ (WX, - W,X) $1, = W2 (WYs -WY) Фг, = W2 (WY, - WY) $2. = W2 - ·",
       "semantic_expr": null,
@@ -253,7 +222,7 @@
       }
     },
     {
-      "id": "docling-eq-0009",
+      "id": "docling-eq-0008",
       "kind": "display",
       "display_latex": "(WXs-WsX) (WX,-WX) N, = = 0. (WYs-WsY (WY+-WY| (5)",
       "semantic_expr": null,
@@ -285,7 +254,7 @@
       "equation_number": "(5)"
     },
     {
-      "id": "docling-eq-0010",
+      "id": "docling-eq-0009",
       "kind": "display",
       "display_latex": "M(s, t) = X (s, t) Y (s, t) W(s, t) Xs (s, t) Ys (s, t) Ws (s, t) X,(s, t) Yi(s, t) Wi(s, t) = 0. (6)",
       "semantic_expr": null,
@@ -299,11 +268,11 @@
           "page": 10,
           "bbox": {
             "x0": 304.24,
-            "y0": 1123.91,
+            "y0": 1123.9,
             "x1": 1174.36,
             "y1": 1256.61,
             "width": 870.12,
-            "height": 132.7
+            "height": 132.71
           },
           "engine": "docling"
         }
@@ -317,7 +286,7 @@
       "equation_number": "(6)"
     },
     {
-      "id": "docling-eq-0011",
+      "id": "docling-eq-0010",
       "kind": "display",
       "display_latex": "M (s, t) = (Øi(s, t), 2(s, t)),",
       "semantic_expr": null,
@@ -348,7 +317,7 @@
       }
     },
     {
-      "id": "docling-eq-0012",
+      "id": "docling-eq-0011",
       "kind": "display",
       "display_latex": "(WXs- Ws X) W2 (WX. - WIX) W2 J(s, t) = (7) (WYs- WsY) W2",
       "semantic_expr": null,
@@ -361,11 +330,11 @@
         {
           "page": 13,
           "bbox": {
-            "x0": 383.25,
+            "x0": 383.34,
             "y0": 1430.02,
             "x1": 1174.36,
             "y1": 1533.86,
-            "width": 791.11,
+            "width": 791.02,
             "height": 103.84
           },
           "engine": "docling"
@@ -379,7 +348,7 @@
       }
     },
     {
-      "id": "docling-eq-0013",
+      "id": "docling-eq-0012",
       "kind": "display",
       "display_latex": "V(p) = {Pi| p; € int(p), Эрь єдр, M(pi) = M(рь)}.",
       "semantic_expr": null,
@@ -410,9 +379,9 @@
       }
     },
     {
-      "id": "docling-eq-0014",
+      "id": "docling-eq-0013",
       "kind": "display",
-      "display_latex": "X r (u) V () = WL) Wg (v) Y r (u) W, (u) = Wg (0)'",
+      "display_latex": "W() = W0) Wg (v) Y r (u) W, (u) = Wg (0) '",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -441,7 +410,7 @@
       }
     },
     {
-      "id": "docling-eq-0015",
+      "id": "docling-eq-0014",
       "kind": "display",
       "display_latex": "X (u) X(v)",
       "semantic_expr": null,
@@ -472,7 +441,7 @@
       }
     },
     {
-      "id": "docling-eq-0016",
+      "id": "docling-eq-0015",
       "kind": "display",
       "display_latex": "= W(u) W(v) Y (u) Y(v) - = W(u) W(v)",
       "semantic_expr": null,
@@ -503,7 +472,7 @@
       }
     },
     {
-      "id": "docling-eq-0017",
+      "id": "docling-eq-0016",
       "kind": "display",
       "display_latex": "(X(u) W(v) - X(v) W(u)) - = 0 (1 - v) (Y (u) W(v) - Y (v) W(u)) = 0. (1 - v)",
       "semantic_expr": null,
@@ -534,9 +503,9 @@
       }
     },
     {
-      "id": "docling-eq-0018",
+      "id": "docling-eq-0017",
       "kind": "display",
-      "display_latex": "D(s, t) = 0 D (u, v) = 0 X (s, t) _X (U, v) = W(s, t) W(u, v) Y (s, t) Y (u, U)",
+      "display_latex": "D(s, t) = 0 D (u, v) = 0 X (s, t) _X (u, v) W(s, t) = W(u, v) Y (s, t) Y (u, U)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -549,9 +518,9 @@
           "bbox": {
             "x0": 483.37,
             "y0": 1012.41,
-            "x1": 727.13,
+            "x1": 730.92,
             "y1": 1241.79,
-            "width": 243.76,
+            "width": 247.55,
             "height": 229.38
           },
           "engine": "docling"
@@ -565,9 +534,9 @@
       }
     },
     {
-      "id": "docling-eq-0019",
+      "id": "docling-eq-0018",
       "kind": "display",
-      "display_latex": "W(s, t) ) = W(u, v)'",
+      "display_latex": "W(s, t)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -579,11 +548,11 @@
           "page": 17,
           "bbox": {
             "x0": 483.74,
-            "y0": 1236.56,
-            "x1": 739.28,
+            "y0": 1250.26,
+            "x1": 575.01,
             "y1": 1283.81,
-            "width": 255.54,
-            "height": 47.25
+            "width": 91.27,
+            "height": 33.55
           },
           "engine": "docling"
         }
@@ -596,7 +565,7 @@
       }
     },
     {
-      "id": "docling-eq-0020",
+      "id": "docling-eq-0019",
       "kind": "display",
       "display_latex": "E(u, v, s, t) = D°(s, t) + D° (u, u) + (X(s, t) W(u, v) - X (u, v) W(s, t)) + (Y (s, t) W(u, v) - Y (u, v) W(s, t))?.",
       "semantic_expr": null,
@@ -627,9 +596,9 @@
       }
     },
     {
-      "id": "docling-eq-0021",
+      "id": "docling-eq-0020",
       "kind": "display",
-      "display_latex": "D(s, t) = 0 X(s, t) X,(u) = W(s, t) Wf (u) Y (s, t) Y r (u) - = W(s, t) Wf(u)",
+      "display_latex": "D(s, t) = 0 X(s, t) X,(u) = W(s, t) Wf (u) Y (s, t) Y + (u) - = W(s, t) Wf(u)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -658,7 +627,7 @@
       }
     },
     {
-      "id": "docling-eq-0022",
+      "id": "docling-eq-0021",
       "kind": "display",
       "display_latex": "E(u, s, t) = D° (s, t) + (X(s, t) W, (u) - X, (u) W(s, t))? + (Y (s, t) W, (1) - Yr (u) W(s, t)) 2.",
       "semantic_expr": null,
@@ -689,9 +658,9 @@
       }
     },
     {
-      "id": "docling-eq-0023",
+      "id": "docling-eq-0022",
       "kind": "display",
-      "display_latex": "X (hu, hu) - x= 0 W(hu, hu) Y (hu, hu) - - y = 0.",
+      "display_latex": "X (hu, hu) - x= 0 W(hi, hu) Y (hu, hu) - - y = 0.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -702,11 +671,11 @@
         {
           "page": 19,
           "bbox": {
-            "x0": 483.74,
+            "x0": 483.7,
             "y0": 834.44,
             "x1": 742.34,
             "y1": 978.86,
-            "width": 258.6,
+            "width": 258.64,
             "height": 144.42
           },
           "engine": "docling"

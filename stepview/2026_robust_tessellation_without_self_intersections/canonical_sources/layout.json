@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2026_robust_tessellation_without_self_intersections/2026_robust_tessellation_without_self_intersections.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2026_robust_tessellation_without_self_intersections/2026_robust_tessellation_without_self_intersections.pdf",
   "page_count": 20,
   "page_sizes_pt": [
     {
@@ -185,7 +185,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 48.26,
@@ -204,7 +204,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The tessellation of Computer-Aided Design (CAD) models into high-quality triangular meshes is a fundamental preprocessing step for downstream applications in visualization, numerical simulation, and digital manufacturing. While modern boundary representation models are typically geometrically valid and free of self-intersections, their tessellation frequently introduces artificial geometric artifacts-including self-intersections and gaps-particularly in regions containing narrow features or high-curvature surfaces. This paper presents a robust, general framework for watertight B-rep tessellation with three key contributions. First, we introduce mathematically rigorous definitions of critical points and critical regions that characterize local geometric behavior; our analysis proves that sampling constrained to these regions guarantees intersection-free refinement under arbitrary resolution. Second, we develop an accelerated spatial indexing structure using a novel parallel hexahedron bounding volume hierarchy, which dynamically adapts to geometric complexity while minimizing the number of required critical regions. Third, we propose an improved constrained Delaunay triangulation algorithm that, when guided by critical regions, simultaneously enforces watertightness and optimal element quality across surface patch boundaries. Comprehensive experimental evaluations against state-of-the-art geometric kernels (NetGen, Gmsh, and Open CASCADE) demonstrate our method's superior performance in generating intersection-free meshes with enhanced geometric fidelity and computational efficiency.",
       "bbox": {
         "x0": 48.26,
@@ -223,7 +223,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords:",
       "bbox": {
         "x0": 48.26,
@@ -242,7 +242,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "CAD models, mesh generation, self-intersection, watertightness",
       "bbox": {
         "x0": 91.68,
@@ -261,7 +261,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 48.26,
@@ -280,7 +280,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer-Aided Design (CAD) systems form the backbone of modern engineering workflows, enabling the creation, analysis, and optimization of complex geometric models. These models - typically represented as boundary representation (Brep) solids -serve as fundamental inputs for downstream Computer-Aided Engineering (CAE) and Manufacturing (CAM) processes (Gong & Feng, 2015 ; Zhang et al. , 2015 ). The standard processing pipeline involves geometric validation, simplification, and tessellation into meshes suitable for simulations and manufacturing operations. The generation of watertight, intersection-free triangle meshes represents not merely a geometric transformation but a critical prerequisite for reliable digital modeling, with applications spanning structural analysis, biomedical modeling (Cha et al. , 2020 ), motion capture (Endo et al. , 2014 ), and performance prediction (Park & Kang, 2024 ).",
       "bbox": {
         "x0": 48.26,
@@ -299,7 +299,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Figure 1 illustrates the topological hierarchy of a B-rep model. A body represents a volumetric solid bounded by shells - connected collections of faces . Each face comprises a trimmed parametric surface (typically NURBS) bounded by oriented loops (one outer, potentially multiple inner). These loops consist of edges (curve segments between vertices) with corresponding trims in the parameter domain. The geometric mapping S establishes a bijection between parameter-space trims and R 3 edges, forming a watertight manifold representation.",
       "bbox": {
         "x0": 48.26,
@@ -318,7 +318,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received: July 19, 2025. Revised: December 10, 2025. Accepted: December 11, 2025",
       "bbox": {
         "x0": 48.26,
@@ -337,7 +337,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "© The Author(s) 2025. Published by Oxford University Press on behalf of the Society for Computational Design and Engineering. This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https: creativecommons.org licenses by-nc 4.0), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact reprints@oup.com for reprints and translation rights for reprints. All other permissions can be obtained through our RightsLink service via the Permissions link on the article page on our site-for further information please contact journals.permissions@oup.com",
       "bbox": {
         "x0": 48.26,
@@ -356,7 +356,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "While mesh generation has been extensively studied -including Delaunay refinement (Cheng et al. , 2013 ), advancingfront methods (Schöberl, 1997 ), and quad-dominant approaches (Bommes et al. , 2013 ) - existing techniques primarily focus on element quality metrics (aspect ratios, angle bounds) and feature alignment. Crucially, they often neglect explicit prevention of selfintersections, which can cause catastrophic CAE failures (nonphysical element penetration, stress singularities) and CAM errors (erroneous toolpaths, collisions). These issues frequently originate from challenging geometric features in CAD models (Samareh, 2005 ), such as knife edges, micro cuts (Gu et al. , 2001 ), or near intersecting loops.",
       "bbox": {
         "x0": 309.51,
@@ -375,7 +375,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Although robust methods exist for continuous-level intersection problems (Marussig & Hughes, 2018 ; Patrikalakis, 1993 ) and spline self-intersections (Li et al. , 2025 ), the discrete analog, guaranteeing intersection-free piecewise-linear approximations, remains understudied as shown in Figure 2 . Our work bridges this gap through four key contributions:",
       "bbox": {
         "x0": 309.51,
@@ -394,7 +394,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Our contributions are summarized as follows:",
       "bbox": {
         "x0": 319.47,
@@ -413,7 +413,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "Critical region framework: We introduce mathematically rigorous critical points and regions that characterize local geometric behavior, proving that refinement within nonoverlapping critical regions guarantees intersection-free tessellation.",
       "bbox": {
         "x0": 319.47,
@@ -432,7 +432,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "Parallel hexahedron BVH: Our novel surface-aware bounding volume hierarchy (BVH), constructed from local",
       "bbox": {
         "x0": 319.47,
@@ -451,7 +451,7 @@
       "id": "#/texts/21",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "*",
       "bbox": {
         "x0": 357.34,
@@ -547,44 +547,6 @@
       "page": 2,
       "order": 5,
       "role": "paragraph",
-      "text": "«dee1",
-      "bbox": {
-        "x0": 98.31,
-        "y0": 50.12,
-        "x1": 111.41,
-        "y1": 63.92,
-        "width": 13.1,
-        "height": 13.8
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "«dee1"
-      }
-    },
-    {
-      "id": "#/texts/30",
-      "page": 2,
-      "order": 6,
-      "role": "paragraph",
-      "text": "vertex 4",
-      "bbox": {
-        "x0": 110.64,
-        "y0": 74.6,
-        "x1": 131.13,
-        "y1": 80.11,
-        "width": 20.49,
-        "height": 5.51
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "vertex 4"
-      }
-    },
-    {
-      "id": "#/texts/31",
-      "page": 2,
-      "order": 7,
-      "role": "paragraph",
       "text": "face 3",
       "bbox": {
         "x0": 133.26,
@@ -600,9 +562,9 @@
       }
     },
     {
-      "id": "#/texts/32",
+      "id": "#/texts/30",
       "page": 2,
-      "order": 8,
+      "order": 6,
       "role": "paragraph",
       "text": "face 1-",
       "bbox": {
@@ -619,9 +581,9 @@
       }
     },
     {
-      "id": "#/texts/33",
+      "id": "#/texts/31",
       "page": 2,
-      "order": 9,
+      "order": 7,
       "role": "paragraph",
       "text": "vertex2 edie 2",
       "bbox": {
@@ -638,18 +600,18 @@
       }
     },
     {
-      "id": "#/texts/34",
+      "id": "#/texts/32",
       "page": 2,
-      "order": 10,
+      "order": 8,
       "role": "paragraph",
       "text": "vertex 3",
       "bbox": {
-        "x0": 93.19,
+        "x0": 92.45,
         "y0": 108.13,
-        "x1": 112.89,
-        "y1": 113.39,
-        "width": 19.7,
-        "height": 5.26
+        "x1": 112.9,
+        "y1": 114.12,
+        "width": 20.45,
+        "height": 5.99
       },
       "meta": {
         "docling_label": "text",
@@ -657,9 +619,9 @@
       }
     },
     {
-      "id": "#/texts/35",
+      "id": "#/texts/33",
       "page": 2,
-      "order": 11,
+      "order": 9,
       "role": "paragraph",
       "text": "face 2",
       "bbox": {
@@ -676,17 +638,17 @@
       }
     },
     {
-      "id": "#/texts/36",
+      "id": "#/texts/34",
       "page": 2,
-      "order": 12,
+      "order": 10,
       "role": "paragraph",
       "text": "DD]",
       "bbox": {
         "x0": 221.28,
         "y0": 51.83,
-        "x1": 421.67,
+        "x1": 419.59,
         "y1": 105.72,
-        "width": 200.39,
+        "width": 198.31,
         "height": 53.89
       },
       "meta": {
@@ -695,9 +657,9 @@
       }
     },
     {
-      "id": "#/texts/37",
+      "id": "#/texts/35",
       "page": 2,
-      "order": 13,
+      "order": 11,
       "role": "paragraph",
       "text": "Trim",
       "bbox": {
@@ -714,28 +676,28 @@
       }
     },
     {
-      "id": "#/texts/38",
+      "id": "#/texts/36",
       "page": 2,
-      "order": 14,
+      "order": 12,
       "role": "paragraph",
-      "text": "DD",
+      "text": ") D",
       "bbox": {
         "x0": 233.8,
-        "y0": 128.52,
-        "x1": 342.35,
-        "y1": 186.57,
-        "width": 108.55,
-        "height": 58.05
+        "y0": 130.45,
+        "x1": 340.26,
+        "y1": 186.69,
+        "width": 106.46,
+        "height": 56.24
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "DD"
+        "docling_orig": ") D"
       }
     },
     {
-      "id": "#/texts/39",
+      "id": "#/texts/37",
       "page": 2,
-      "order": 15,
+      "order": 13,
       "role": "caption",
       "text": "Figure 2: Continuous, non-intersecting spline geometries (left and middle: curves in R 2 ; right: surfaces in R 3 ) and their tessellated approximations (polylines and meshes) exhibiting unintended intersections.",
       "bbox": {
@@ -752,9 +714,9 @@
       }
     },
     {
-      "id": "#/texts/40",
+      "id": "#/texts/38",
       "page": 2,
-      "order": 16,
+      "order": 14,
       "role": "paragraph",
       "text": "partial derivatives, provides tight geometric approximation while minimizing subdivision requirements and accelerating critical region identification.",
       "bbox": {
@@ -771,9 +733,9 @@
       }
     },
     {
-      "id": "#/texts/41",
+      "id": "#/texts/39",
       "page": 2,
-      "order": 17,
+      "order": 15,
       "role": "list_item",
       "text": "Enhanced CDT algorithm: We develop a constrained Delaunay triangulation (CDT) method that leverages critical regions to simultaneously enforce watertightness and optimal element quality across patch boundaries, maintaining exact R 2 -toR 3 correspondence.",
       "bbox": {
@@ -790,9 +752,9 @@
       }
     },
     {
-      "id": "#/texts/42",
+      "id": "#/texts/40",
       "page": 2,
-      "order": 18,
+      "order": 16,
       "role": "list_item",
       "text": "Comprehensive validation: Extensive experiments against NetGen, Gmsh, and OpenCASCADE demonstrate our method's superior performance in generating high-quality, watertight meshes for complex models with challenging geometric features.",
       "bbox": {
@@ -809,9 +771,9 @@
       }
     },
     {
-      "id": "#/texts/43",
+      "id": "#/texts/41",
       "page": 2,
-      "order": 19,
+      "order": 17,
       "role": "paragraph",
       "text": "The paper proceeds as follows: Section 2 reviews related work; Sections 3 and 4 present our theoretical foundations and algorithms in R 2 and R 3 ; Section 5 details experimental results; and Section 6 concludes with future directions.",
       "bbox": {
@@ -828,9 +790,9 @@
       }
     },
     {
-      "id": "#/texts/44",
+      "id": "#/texts/42",
       "page": 2,
-      "order": 20,
+      "order": 18,
       "role": "heading",
       "text": "2. Related Work",
       "bbox": {
@@ -847,9 +809,9 @@
       }
     },
     {
-      "id": "#/texts/45",
+      "id": "#/texts/43",
       "page": 2,
-      "order": 21,
+      "order": 19,
       "role": "heading",
       "text": "2.1. B-rep self-intersection",
       "bbox": {
@@ -866,9 +828,9 @@
       }
     },
     {
-      "id": "#/texts/46",
+      "id": "#/texts/44",
       "page": 2,
-      "order": 22,
+      "order": 20,
       "role": "paragraph",
       "text": "Unwanted model self-intersections can significantly degrade the visual fidelity of rendered models and introduce severe complications in downstream CAX (Computer-Aided Technologies) processes such as simulation, manufacturing, and analysis. NURBS surface-surface intersection and self-intersection problems are traditionally addressed using several classes of methods (Marussig & Hughes, 2018 ). Analytic methods attempt to compute intersection curves exactly by solving systems of equations derived from the parametric representations (Sederberg, 1983 ; Barto ˇ n, 2011 ). Lattice evaluation methods discretize the domains and evaluate proximity at grid points (Lien et al. , 1987 ; Rossignac & Requicha, 1987 ). Subdivision methods iteratively refine surface patches while tracking potential intersections (Lin et al. , 2013 ; Park et al. , 2020 ). Marching methods construct approximate intersection curves incrementally based on local surface approximations (Bajaj et al. , 1988 ). Accurate detection and handling of surface intersections play a critical role in maintaining model quality and reliability throughout the CAD pipeline.",
       "bbox": {
@@ -885,9 +847,9 @@
       }
     },
     {
-      "id": "#/texts/47",
+      "id": "#/texts/45",
       "page": 2,
-      "order": 23,
+      "order": 21,
       "role": "heading",
       "text": "2.2. Mesh generation",
       "bbox": {
@@ -904,9 +866,9 @@
       }
     },
     {
-      "id": "#/texts/48",
+      "id": "#/texts/46",
       "page": 2,
-      "order": 24,
+      "order": 22,
       "role": "paragraph",
       "text": "Mesh generation from CAD B-rep models, particularly for surface triangulations and quadrilateral meshes, has been a significant area of research in computational geometry and CAD. Surface mesh generation encompasses three principal paradigms: direct, parametric, and hybrid methods (Owen, 1998 ).",
       "bbox": {
@@ -923,9 +885,9 @@
       }
     },
     {
-      "id": "#/texts/49",
+      "id": "#/texts/47",
       "page": 2,
-      "order": 25,
+      "order": 23,
       "role": "paragraph",
       "text": "Direct methods construct meshes entirely in R 3 , without reference to the underlying surface parametrization. Classical examples include Delaunay triangulation and its refinement variants (Cheng et al. , 2013 ; Ruppert, 1995 ), advancing-front techniques (Cuillière, 1998 ; Schöberl, 1997 ), and octree-based subdivision (Shostko et al. , 1999 ; Yerry & Shephard, 1984 ), all of which excel in automation and robustness. However, these approaches often require excessive refinement to conform to intricate trimming curves and may produce poorly shaped elements in regions of high curvature.",
       "bbox": {
@@ -942,9 +904,9 @@
       }
     },
     {
-      "id": "#/texts/50",
+      "id": "#/texts/48",
       "page": 2,
-      "order": 26,
+      "order": 24,
       "role": "paragraph",
       "text": "Parametric methods (Cripps & Parwana, 2011 ; Sheng & Hirsch, 1992 ) leverage the bijective mapping S : Omega1 ⊂ R 2 → R 3 of NURBS or spline patches. A high-quality two-dimensional mesh-often",
       "bbox": {
@@ -961,9 +923,9 @@
       }
     },
     {
-      "id": "#/texts/51",
+      "id": "#/texts/49",
       "page": 2,
-      "order": 27,
+      "order": 25,
       "role": "paragraph",
       "text": "Body",
       "bbox": {
@@ -980,9 +942,9 @@
       }
     },
     {
-      "id": "#/texts/52",
+      "id": "#/texts/50",
       "page": 2,
-      "order": 28,
+      "order": 26,
       "role": "paragraph",
       "text": "Shell",
       "bbox": {
@@ -999,9 +961,9 @@
       }
     },
     {
-      "id": "#/texts/53",
+      "id": "#/texts/51",
       "page": 2,
-      "order": 29,
+      "order": 27,
       "role": "paragraph",
       "text": "Face",
       "bbox": {
@@ -1018,9 +980,9 @@
       }
     },
     {
-      "id": "#/texts/54",
+      "id": "#/texts/52",
       "page": 2,
-      "order": 30,
+      "order": 28,
       "role": "paragraph",
       "text": "Loop",
       "bbox": {
@@ -1037,9 +999,9 @@
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "#/texts/53",
       "page": 2,
-      "order": 31,
+      "order": 29,
       "role": "paragraph",
       "text": "Edge",
       "bbox": {
@@ -1056,9 +1018,9 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/54",
       "page": 2,
-      "order": 32,
+      "order": 30,
       "role": "paragraph",
       "text": "Vertex",
       "bbox": {
@@ -1075,7 +1037,7 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/58",
       "page": 3,
       "order": 1,
       "role": "paragraph",
@@ -1094,7 +1056,7 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/59",
       "page": 3,
       "order": 2,
       "role": "paragraph",
@@ -1113,7 +1075,7 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/60",
       "page": 3,
       "order": 3,
       "role": "paragraph",
@@ -1132,7 +1094,7 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/61",
       "page": 3,
       "order": 4,
       "role": "paragraph",
@@ -1151,18 +1113,18 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/62",
       "page": 3,
       "order": 5,
       "role": "paragraph",
       "text": "AABB",
       "bbox": {
         "x0": 218.75,
-        "y0": 23.93,
+        "y0": 23.21,
         "x1": 249.27,
         "y1": 33.36,
         "width": 30.52,
-        "height": 9.43
+        "height": 10.15
       },
       "meta": {
         "docling_label": "text",
@@ -1170,7 +1132,7 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/63",
       "page": 3,
       "order": 6,
       "role": "paragraph",
@@ -1189,7 +1151,7 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/64",
       "page": 3,
       "order": 7,
       "role": "paragraph",
@@ -1208,7 +1170,7 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/65",
       "page": 3,
       "order": 8,
       "role": "caption",
@@ -1227,7 +1189,7 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/66",
       "page": 3,
       "order": 9,
       "role": "paragraph",
@@ -1246,18 +1208,18 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/67",
       "page": 3,
       "order": 10,
       "role": "paragraph",
       "text": "C (t1)",
       "bbox": {
         "x0": 246.51,
-        "y0": 61.91,
+        "y0": 61.92,
         "x1": 275.44,
         "y1": 72.58,
         "width": 28.93,
-        "height": 10.67
+        "height": 10.66
       },
       "meta": {
         "docling_label": "text",
@@ -1265,7 +1227,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/68",
       "page": 3,
       "order": 11,
       "role": "paragraph",
@@ -1284,7 +1246,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/69",
       "page": 3,
       "order": 12,
       "role": "caption",
@@ -1303,7 +1265,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/70",
       "page": 3,
       "order": 13,
       "role": "paragraph",
@@ -1322,7 +1284,7 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/71",
       "page": 3,
       "order": 14,
       "role": "heading",
@@ -1341,7 +1303,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/72",
       "page": 3,
       "order": 15,
       "role": "paragraph",
@@ -1360,7 +1322,7 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/73",
       "page": 3,
       "order": 16,
       "role": "paragraph",
@@ -1379,7 +1341,7 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/74",
       "page": 3,
       "order": 17,
       "role": "heading",
@@ -1398,7 +1360,7 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/75",
       "page": 3,
       "order": 18,
       "role": "paragraph",
@@ -1417,7 +1379,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/76",
       "page": 3,
       "order": 19,
       "role": "list_item",
@@ -1436,7 +1398,7 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/77",
       "page": 3,
       "order": 20,
       "role": "list_item",
@@ -1455,7 +1417,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/78",
       "page": 3,
       "order": 21,
       "role": "list_item",
@@ -1474,7 +1436,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/79",
       "page": 3,
       "order": 22,
       "role": "heading",
@@ -1493,7 +1455,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/80",
       "page": 3,
       "order": 23,
       "role": "paragraph",
@@ -1512,7 +1474,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/81",
       "page": 3,
       "order": 24,
       "role": "paragraph",
@@ -1531,7 +1493,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/82",
       "page": 3,
       "order": 25,
       "role": "paragraph",
@@ -1550,7 +1512,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/83",
       "page": 3,
       "order": 26,
       "role": "paragraph",
@@ -1569,7 +1531,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/86",
       "page": 3,
       "order": 27,
       "role": "paragraph",
@@ -1588,7 +1550,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/90",
       "page": 4,
       "order": 1,
       "role": "paragraph",
@@ -1607,7 +1569,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/91",
       "page": 4,
       "order": 2,
       "role": "paragraph",
@@ -1626,7 +1588,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/92",
       "page": 4,
       "order": 3,
       "role": "paragraph",
@@ -1634,9 +1596,9 @@
       "bbox": {
         "x0": 38.59,
         "y0": 101.97,
-        "x1": 59.71,
+        "x1": 60.44,
         "y1": 114.35,
-        "width": 21.12,
+        "width": 21.85,
         "height": 12.38
       },
       "meta": {
@@ -1645,7 +1607,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/93",
       "page": 4,
       "order": 4,
       "role": "paragraph",
@@ -1664,750 +1626,9 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/94",
       "page": 4,
       "order": 5,
-      "role": "paragraph",
-      "text": "D",
-      "bbox": {
-        "x0": 210.45,
-        "y0": 40.79,
-        "x1": 217.0,
-        "y1": 47.35,
-        "width": 6.55,
-        "height": 6.56
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "D"
-      }
-    },
-    {
-      "id": "#/texts/97",
-      "page": 4,
-      "order": 6,
-      "role": "caption",
-      "text": "Figure 5: Sampling at a shared endpoint C (0) of curves C 1 and C 2 using the separation vector D . (A), (B), and (C) represent the cases of opposite curvature directions, same curvature direction with different tangents, and identical curvature and tangent, respectively. T denotes the common tangent direction ( T = T 1 = T 2 ).",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 181.95,
-        "x1": 528.41,
-        "y1": 211.54,
-        "width": 485.76,
-        "height": 29.59
-      },
-      "meta": {
-        "docling_label": "caption",
-        "docling_orig": "Figure 5: Sampling at a shared endpoint C (0) of curves C 1 and C 2 using the separation vector D . (A), (B), and (C) represent the cases of opposite curvature directions, same curvature direction with different tangents, and identical curvature and tangent, respectively. T denotes the common tangent direction ( T = T 1 = T 2 )."
-      }
-    },
-    {
-      "id": "#/texts/98",
-      "page": 4,
-      "order": 7,
-      "role": "paragraph",
-      "text": "A",
-      "bbox": {
-        "x0": 55.47,
-        "y0": 53.54,
-        "x1": 62.69,
-        "y1": 62.79,
-        "width": 7.22,
-        "height": 9.25
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "A"
-      }
-    },
-    {
-      "id": "#/texts/99",
-      "page": 4,
-      "order": 8,
-      "role": "paragraph",
-      "text": "B",
-      "bbox": {
-        "x0": 332.51,
-        "y0": 53.54,
-        "x1": 339.73,
-        "y1": 62.79,
-        "width": 7.22,
-        "height": 9.25
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "B"
-      }
-    },
-    {
-      "id": "#/texts/100",
-      "page": 4,
-      "order": 9,
-      "role": "paragraph",
-      "text": "C",
-      "bbox": {
-        "x0": 440.82,
-        "y0": 53.54,
-        "x1": 448.04,
-        "y1": 62.79,
-        "width": 7.22,
-        "height": 9.25
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C"
-      }
-    },
-    {
-      "id": "#/texts/101",
-      "page": 4,
-      "order": 10,
-      "role": "paragraph",
-      "text": "C (SI)",
-      "bbox": {
-        "x0": 77.92,
-        "y0": 68.34,
-        "x1": 107.77,
-        "y1": 81.0,
-        "width": 29.85,
-        "height": 12.66
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C (SI)"
-      }
-    },
-    {
-      "id": "#/texts/102",
-      "page": 4,
-      "order": 11,
-      "role": "paragraph",
-      "text": "C(O)",
-      "bbox": {
-        "x0": 156.56,
-        "y0": 92.95,
-        "x1": 181.61,
-        "y1": 107.41,
-        "width": 25.05,
-        "height": 14.46
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C(O)"
-      }
-    },
-    {
-      "id": "#/texts/103",
-      "page": 4,
-      "order": 12,
-      "role": "paragraph",
-      "text": "C¡(S1) :",
-      "bbox": {
-        "x0": 201.25,
-        "y0": 76.92,
-        "x1": 239.14,
-        "y1": 90.88,
-        "width": 37.89,
-        "height": 13.96
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C¡(S1) :"
-      }
-    },
-    {
-      "id": "#/texts/104",
-      "page": 4,
-      "order": 13,
-      "role": "paragraph",
-      "text": "T2",
-      "bbox": {
-        "x0": 225.74,
-        "y0": 102.7,
-        "x1": 241.76,
-        "y1": 114.35,
-        "width": 16.02,
-        "height": 11.65
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "T2"
-      }
-    },
-    {
-      "id": "#/texts/105",
-      "page": 4,
-      "order": 14,
-      "role": "paragraph",
-      "text": "C,(t,)",
-      "bbox": {
-        "x0": 273.07,
-        "y0": 61.18,
-        "x1": 300.75,
-        "y1": 73.56,
-        "width": 27.68,
-        "height": 12.38
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C,(t,)"
-      }
-    },
-    {
-      "id": "#/texts/106",
-      "page": 4,
-      "order": 15,
-      "role": "paragraph",
-      "text": "C(O)",
-      "bbox": {
-        "x0": 286.18,
-        "y0": 101.97,
-        "x1": 308.03,
-        "y1": 115.81,
-        "width": 21.85,
-        "height": 13.84
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C(O)"
-      }
-    },
-    {
-      "id": "#/texts/107",
-      "page": 4,
-      "order": 16,
-      "role": "paragraph",
-      "text": "(sce,).",
-      "bbox": {
-        "x0": 391.04,
-        "y0": 49.53,
-        "x1": 422.35,
-        "y1": 72.11,
-        "width": 31.31,
-        "height": 22.58
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "(sce,)."
-      }
-    },
-    {
-      "id": "#/texts/108",
-      "page": 4,
-      "order": 17,
-      "role": "paragraph",
-      "text": "C(O)",
-      "bbox": {
-        "x0": 402.69,
-        "y0": 103.43,
-        "x1": 424.54,
-        "y1": 114.35,
-        "width": 21.85,
-        "height": 10.92
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C(O)"
-      }
-    },
-    {
-      "id": "#/texts/109",
-      "page": 4,
-      "order": 18,
-      "role": "paragraph",
-      "text": "are called critical points for the pair ( C 1 , C 2 ) if, for every i ∈ { 0 , 1 , . . . , n -1 } and j ∈ { 0 , 1 , . . . , m -1 } , the convex hulls of the corresponding curve subsegments are disjoint:",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 223.69,
-        "x1": 286.55,
-        "y1": 253.79,
-        "width": 243.9,
-        "height": 30.1
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "are called critical points for the pair ( C 1 , C 2 ) if, for every i ∈ { 0 , 1 , . . . , n -1 } and j ∈ { 0 , 1 , . . . , m -1 } , the convex hulls of the corresponding curve subsegments are disjoint:"
-      }
-    },
-    {
-      "id": "#/texts/111",
-      "page": 4,
-      "order": 19,
-      "role": "paragraph",
-      "text": "Lemma 1 (Non-Intersection via Critical Points). Let C 1 and C 2 be two non-intersecting NURBS curves. If S and T are critical points for ( C 1 , C 2 ) as per Definition 1 , then the polylines obtained by connecting consecutive points in S and T are guaranteed to be nonintersecting. Furthermore, this non-intersection property is preserved under any refinement of the critical points.",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 293.26,
-        "x1": 286.26,
-        "y1": 355.71,
-        "width": 243.61,
-        "height": 62.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Lemma 1 (Non-Intersection via Critical Points). Let C 1 and C 2 be two non-intersecting NURBS curves. If S and T are critical points for ( C 1 , C 2 ) as per Definition 1 , then the polylines obtained by connecting consecutive points in S and T are guaranteed to be nonintersecting. Furthermore, this non-intersection property is preserved under any refinement of the critical points."
-      }
-    },
-    {
-      "id": "#/texts/112",
-      "page": 4,
-      "order": 20,
-      "role": "paragraph",
-      "text": "Formally, define the polylines:",
-      "bbox": {
-        "x0": 52.61,
-        "y0": 359.26,
-        "x1": 164.41,
-        "y1": 366.71,
-        "width": 111.8,
-        "height": 7.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Formally, define the polylines:"
-      }
-    },
-    {
-      "id": "#/texts/114",
-      "page": 4,
-      "order": 21,
-      "role": "paragraph",
-      "text": "Then:",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 423.21,
-        "x1": 64.14,
-        "y1": 430.66,
-        "width": 21.49,
-        "height": 7.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Then:"
-      }
-    },
-    {
-      "id": "#/texts/115",
-      "page": 4,
-      "order": 22,
-      "role": "list_item",
-      "text": "L 1 ∩ L 2 = ∅ .",
-      "bbox": {
-        "x0": 52.61,
-        "y0": 447.21,
-        "x1": 108.39,
-        "y1": 460.86,
-        "width": 55.78,
-        "height": 13.65
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "(1) L 1 ∩ L 2 = ∅ ."
-      }
-    },
-    {
-      "id": "#/texts/116",
-      "page": 4,
-      "order": 23,
-      "role": "list_item",
-      "text": "For any refinement S ′ ⊇ S and T ′ ⊇ T , the corresponding refined polylines L ′ 1 and L ′ 2 also satisfy L ′ 1 ∩ L ′ 2 = ∅ .",
-      "bbox": {
-        "x0": 52.61,
-        "y0": 457.23,
-        "x1": 286.1,
-        "y1": 482.86,
-        "width": 233.49,
-        "height": 25.63
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "(2) For any refinement S ′ ⊇ S and T ′ ⊇ T , the corresponding refined polylines L ′ 1 and L ′ 2 also satisfy L ′ 1 ∩ L ′ 2 = ∅ ."
-      }
-    },
-    {
-      "id": "#/texts/117",
-      "page": 4,
-      "order": 24,
-      "role": "paragraph",
-      "text": "The detailed proof of Lemma 1 is presented in Appendix A . To compute critical points for inter-curve tessellation, we first construct oriented bounding boxes (OBBs) for each curve segment as shown in Figure 3 . For every pair of non-adjacent curves, we check OBB intersections. If detected, the corresponding segments are subdivided at midpoints. This process iterates recursively: new OBBs are computed for subdivided segments, and intersection checks continue until all OBBs from different curves are disjoint. The resulting subdivision points become the critical points, ensuring the final tessellation avoids artificial intersections.",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 490.15,
-        "x1": 286.44,
-        "y1": 596.6,
-        "width": 243.79,
-        "height": 106.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "The detailed proof of Lemma 1 is presented in Appendix A . To compute critical points for inter-curve tessellation, we first construct oriented bounding boxes (OBBs) for each curve segment as shown in Figure 3 . For every pair of non-adjacent curves, we check OBB intersections. If detected, the corresponding segments are subdivided at midpoints. This process iterates recursively: new OBBs are computed for subdivided segments, and intersection checks continue until all OBBs from different curves are disjoint. The resulting subdivision points become the critical points, ensuring the final tessellation avoids artificial intersections."
-      }
-    },
-    {
-      "id": "#/texts/118",
-      "page": 4,
-      "order": 25,
-      "role": "heading",
-      "text": "3.2. Endpoint-adjacent tessellation",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 610.82,
-        "x1": 215.81,
-        "y1": 620.37,
-        "width": 173.16,
-        "height": 9.55
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "3.2. Endpoint-adjacent tessellation"
-      }
-    },
-    {
-      "id": "#/texts/119",
-      "page": 4,
-      "order": 26,
-      "role": "paragraph",
-      "text": "When two curves share a common endpoint and exhibit similar tangents, naive tessellation may introduce artificial intersections near the junction. This issue arises when the tessellated polylines fail to preserve the original angular ordering of the curves -e.g., reversing their relative orientation, as illustrated in the left of Figure 2 .",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 625.37,
-        "x1": 286.19,
-        "y1": 687.82,
-        "width": 243.54,
-        "height": 62.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "When two curves share a common endpoint and exhibit similar tangents, naive tessellation may introduce artificial intersections near the junction. This issue arises when the tessellated polylines fail to preserve the original angular ordering of the curves -e.g., reversing their relative orientation, as illustrated in the left of Figure 2 ."
-      }
-    },
-    {
-      "id": "#/texts/120",
-      "page": 4,
-      "order": 27,
-      "role": "paragraph",
-      "text": "To address this, we introduce the concept of angular monotonicity and separation vector , which guides the placement of the first sampling points on each curve. The separation vector ensures that the piecewise-linear approximations initiate from directions that preserve the original orientation and avoid crossing.",
-      "bbox": {
-        "x0": 42.65,
-        "y0": 691.37,
-        "x1": 286.19,
-        "y1": 742.82,
-        "width": 243.54,
-        "height": 51.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "To address this, we introduce the concept of angular monotonicity and separation vector , which guides the placement of the first sampling points on each curve. The separation vector ensures that the piecewise-linear approximations initiate from directions that preserve the original orientation and avoid crossing."
-      }
-    },
-    {
-      "id": "#/texts/121",
-      "page": 4,
-      "order": 28,
-      "role": "heading",
-      "text": "3.2.1. Angular monotonicity",
-      "bbox": {
-        "x0": 303.9,
-        "y0": 223.76,
-        "x1": 421.13,
-        "y1": 232.49,
-        "width": 117.23,
-        "height": 8.73
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "3.2.1. Angular monotonicity"
-      }
-    },
-    {
-      "id": "#/texts/122",
-      "page": 4,
-      "order": 29,
-      "role": "paragraph",
-      "text": "We require that each curve involved satisfy the Angular Monotonicity condition: that is, any straight line through the endpoint intersects the control polygon in at most one location (excluding the endpoint). This condition guarantees that as the curve parameter increases, the angle between the position vector - - - - - → C (0) C ( t ) and the initial tangent vector T = C ′ (0) increases monotonically. Thus, the curve's sampled direction evolves in a single rotational direction and avoids reversal, as shown in Figure 4 .",
-      "bbox": {
-        "x0": 303.9,
-        "y0": 237.79,
-        "x1": 547.69,
-        "y1": 323.46,
-        "width": 243.79,
-        "height": 85.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "We require that each curve involved satisfy the Angular Monotonicity condition: that is, any straight line through the endpoint intersects the control polygon in at most one location (excluding the endpoint). This condition guarantees that as the curve parameter increases, the angle between the position vector - - - - - → C (0) C ( t ) and the initial tangent vector T = C ′ (0) increases monotonically. Thus, the curve's sampled direction evolves in a single rotational direction and avoids reversal, as shown in Figure 4 ."
-      }
-    },
-    {
-      "id": "#/texts/123",
-      "page": 4,
-      "order": 30,
-      "role": "paragraph",
-      "text": "Importantly, this condition can be efficiently verified via the control polygon alone, without evaluating the spline curve geometry, making it well-suited for engineering applications. If the condition is not satisfied, we recursively subdivide the curve until it holds on each local segment.",
-      "bbox": {
-        "x0": 303.9,
-        "y0": 327.01,
-        "x1": 547.42,
-        "y1": 378.46,
-        "width": 243.52,
-        "height": 51.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Importantly, this condition can be efficiently verified via the control polygon alone, without evaluating the spline curve geometry, making it well-suited for engineering applications. If the condition is not satisfied, we recursively subdivide the curve until it holds on each local segment."
-      }
-    },
-    {
-      "id": "#/texts/124",
-      "page": 4,
-      "order": 31,
-      "role": "heading",
-      "text": "3.2.2. Separation vector",
-      "bbox": {
-        "x0": 303.9,
-        "y0": 389.9,
-        "x1": 402.99,
-        "y1": 398.63,
-        "width": 99.09,
-        "height": 8.73
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "3.2.2. Separation vector"
-      }
-    },
-    {
-      "id": "#/texts/125",
-      "page": 4,
-      "order": 32,
-      "role": "paragraph",
-      "text": "Let C 1 and C 2 be two NURBS curves with shared endpoint C 1 (0) = C 2 (0) , which we denote by C (0) , and initial tangents T 1 = C ′ 1 (0) , T 2 = C ′ 2 (0) . We define a vector D ∈ R 2 , the separation vector , such that the vectors from the common endpoint to the first sampling points V 1 = - - - - - - - → C (0) C 1 ( s 1 ) , V 2 = -- - - - - - → C 2 (0) C 2 ( t 1 ) satisfy",
-      "bbox": {
-        "x0": 303.52,
-        "y0": 403.27,
-        "x1": 547.8,
-        "y1": 462.12,
-        "width": 244.28,
-        "height": 58.85
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Let C 1 and C 2 be two NURBS curves with shared endpoint C 1 (0) = C 2 (0) , which we denote by C (0) , and initial tangents T 1 = C ′ 1 (0) , T 2 = C ′ 2 (0) . We define a vector D ∈ R 2 , the separation vector , such that the vectors from the common endpoint to the first sampling points V 1 = - - - - - - - → C (0) C 1 ( s 1 ) , V 2 = -- - - - - - → C 2 (0) C 2 ( t 1 ) satisfy"
-      }
-    },
-    {
-      "id": "#/texts/127",
-      "page": 4,
-      "order": 33,
-      "role": "paragraph",
-      "text": "negationslash where det ( a , b ) = ax by -ay bx , whose sign indicates their relative orientation. This condition ensures that the first tessellation segments lie on opposite sides of D , thereby preventing intersection and preserving angular separation.",
-      "bbox": {
-        "x0": 418.94,
-        "y0": 464.88,
-        "x1": 418.94,
-        "y1": 478.53,
-        "width": 0.0,
-        "height": 13.65
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "negationslash where det ( a , b ) = ax by -ay bx , whose sign indicates their relative orientation. This condition ensures that the first tessellation segments lie on opposite sides of D , thereby preventing intersection and preserving angular separation."
-      }
-    },
-    {
-      "id": "#/texts/128",
-      "page": 4,
-      "order": 34,
-      "role": "paragraph",
-      "text": "The separation vector D is computed according to the local geometry at C (0) , with three cases shown in Figure 5 :",
-      "bbox": {
-        "x0": 303.9,
-        "y0": 525.94,
-        "x1": 547.41,
-        "y1": 544.39,
-        "width": 243.51,
-        "height": 18.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "The separation vector D is computed according to the local geometry at C (0) , with three cases shown in Figure 5 :"
-      }
-    },
-    {
-      "id": "#/texts/129",
-      "page": 4,
-      "order": 35,
-      "role": "list_item",
-      "text": "a114 Case 1: Opposing curvature directions. If the two curves bend in opposite directions near C (0) , we define:",
-      "bbox": {
-        "x0": 311.87,
-        "y0": 553.43,
-        "x1": 547.37,
-        "y1": 571.87,
-        "width": 235.5,
-        "height": 18.44
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "a114 Case 1: Opposing curvature directions. If the two curves bend in opposite directions near C (0) , we define:"
-      }
-    },
-    {
-      "id": "#/texts/131",
-      "page": 4,
-      "order": 36,
-      "role": "paragraph",
-      "text": "i.e., the average of the normalized tangents. This vector bisects the angle between the curves and separates their initial sampling directions.",
-      "bbox": {
-        "x0": 320.09,
-        "y0": 603.38,
-        "x1": 547.4,
-        "y1": 632.82,
-        "width": 227.31,
-        "height": 29.44
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "i.e., the average of the normalized tangents. This vector bisects the angle between the curves and separates their initial sampling directions."
-      }
-    },
-    {
-      "id": "#/texts/132",
-      "page": 4,
-      "order": 37,
-      "role": "list_item",
-      "text": "a114 Case 2: Same curvature, distinct tangents. When the curves bend in the same direction but have different tangents, we use the same bisector formulation. The sign of angular deviation between the tangents determines which side each curve samples from.",
-      "bbox": {
-        "x0": 311.87,
-        "y0": 636.37,
-        "x1": 547.4,
-        "y1": 687.82,
-        "width": 235.53,
-        "height": 51.45
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "a114 Case 2: Same curvature, distinct tangents. When the curves bend in the same direction but have different tangents, we use the same bisector formulation. The sign of angular deviation between the tangents determines which side each curve samples from."
-      }
-    },
-    {
-      "id": "#/texts/133",
-      "page": 4,
-      "order": 38,
-      "role": "list_item",
-      "text": "a114 Case 3: Identical curvature and tangent. When the two curves share both tangent and curvature direction at C (0) , we select the curve Ci with the smaller n th-order derivative (i.e., less curved).We then locate a nearby point Ci ( t ) on this flatter curve guided by the target maximum mesh edge length from",
-      "bbox": {
-        "x0": 311.87,
-        "y0": 691.37,
-        "x1": 547.68,
-        "y1": 742.82,
-        "width": 235.81,
-        "height": 51.45
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "a114 Case 3: Identical curvature and tangent. When the two curves share both tangent and curvature direction at C (0) , we select the curve Ci with the smaller n th-order derivative (i.e., less curved).We then locate a nearby point Ci ( t ) on this flatter curve guided by the target maximum mesh edge length from"
-      }
-    },
-    {
-      "id": "#/texts/134",
-      "page": 4,
-      "order": 39,
-      "role": "paragraph",
-      "text": "|",
-      "bbox": {
-        "x0": 64.3,
-        "y0": 26.27,
-        "x1": 66.04,
-        "y1": 33.72,
-        "width": 1.74,
-        "height": 7.45
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "|"
-      }
-    },
-    {
-      "id": "#/texts/135",
-      "page": 4,
-      "order": 40,
-      "role": "paragraph",
-      "text": "TA",
-      "bbox": {
-        "x0": 144.18,
-        "y0": 39.33,
-        "x1": 163.12,
-        "y1": 55.36,
-        "width": 18.94,
-        "height": 16.03
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "TA"
-      }
-    },
-    {
-      "id": "#/texts/136",
-      "page": 4,
-      "order": 41,
-      "role": "paragraph",
-      "text": "C,(t,)",
-      "bbox": {
-        "x0": 176.22,
-        "y0": 46.62,
-        "x1": 202.44,
-        "y1": 59.73,
-        "width": 26.22,
-        "height": 13.11
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C,(t,)"
-      }
-    },
-    {
-      "id": "#/texts/137",
-      "page": 4,
-      "order": 42,
-      "role": "paragraph",
-      "text": "B",
-      "bbox": {
-        "x0": 288.37,
-        "y0": 2.92,
-        "x1": 296.38,
-        "y1": 11.66,
-        "width": 8.01,
-        "height": 8.74
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "B"
-      }
-    },
-    {
-      "id": "#/texts/138",
-      "page": 4,
-      "order": 43,
-      "role": "paragraph",
-      "text": "TzA",
-      "bbox": {
-        "x0": 284.33,
-        "y0": 35.83,
-        "x1": 307.0,
-        "y1": 51.42,
-        "width": 22.67,
-        "height": 15.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "TzA"
-      }
-    },
-    {
-      "id": "#/texts/139",
-      "page": 4,
-      "order": 44,
       "role": "paragraph",
       "text": "D",
       "bbox": {
@@ -2424,7 +1645,748 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/95",
+      "page": 4,
+      "order": 6,
+      "role": "paragraph",
+      "text": "D",
+      "bbox": {
+        "x0": 427.45,
+        "y0": 27.68,
+        "x1": 435.46,
+        "y1": 36.42,
+        "width": 8.01,
+        "height": 8.74
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "D"
+      }
+    },
+    {
+      "id": "#/texts/96",
+      "page": 4,
+      "order": 7,
+      "role": "caption",
+      "text": "Figure 5: Sampling at a shared endpoint C (0) of curves C 1 and C 2 using the separation vector D . (A), (B), and (C) represent the cases of opposite curvature directions, same curvature direction with different tangents, and identical curvature and tangent, respectively. T denotes the common tangent direction ( T = T 1 = T 2 ).",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 181.95,
+        "x1": 528.41,
+        "y1": 211.54,
+        "width": 485.76,
+        "height": 29.59
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 5: Sampling at a shared endpoint C (0) of curves C 1 and C 2 using the separation vector D . (A), (B), and (C) represent the cases of opposite curvature directions, same curvature direction with different tangents, and identical curvature and tangent, respectively. T denotes the common tangent direction ( T = T 1 = T 2 )."
+      }
+    },
+    {
+      "id": "#/texts/97",
+      "page": 4,
+      "order": 8,
+      "role": "paragraph",
+      "text": "A",
+      "bbox": {
+        "x0": 55.47,
+        "y0": 53.54,
+        "x1": 62.69,
+        "y1": 62.79,
+        "width": 7.22,
+        "height": 9.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A"
+      }
+    },
+    {
+      "id": "#/texts/98",
+      "page": 4,
+      "order": 9,
+      "role": "paragraph",
+      "text": "B",
+      "bbox": {
+        "x0": 332.51,
+        "y0": 53.54,
+        "x1": 339.73,
+        "y1": 62.79,
+        "width": 7.22,
+        "height": 9.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "B"
+      }
+    },
+    {
+      "id": "#/texts/99",
+      "page": 4,
+      "order": 10,
+      "role": "paragraph",
+      "text": "C",
+      "bbox": {
+        "x0": 440.82,
+        "y0": 53.54,
+        "x1": 448.04,
+        "y1": 62.79,
+        "width": 7.22,
+        "height": 9.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C"
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 4,
+      "order": 11,
+      "role": "paragraph",
+      "text": "C(SI)",
+      "bbox": {
+        "x0": 77.92,
+        "y0": 68.47,
+        "x1": 107.77,
+        "y1": 80.85,
+        "width": 29.85,
+        "height": 12.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C(SI)"
+      }
+    },
+    {
+      "id": "#/texts/101",
+      "page": 4,
+      "order": 12,
+      "role": "paragraph",
+      "text": "C(O)",
+      "bbox": {
+        "x0": 156.56,
+        "y0": 92.95,
+        "x1": 181.61,
+        "y1": 107.41,
+        "width": 25.05,
+        "height": 14.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C(O)"
+      }
+    },
+    {
+      "id": "#/texts/102",
+      "page": 4,
+      "order": 13,
+      "role": "paragraph",
+      "text": "C(sJ) :",
+      "bbox": {
+        "x0": 201.33,
+        "y0": 77.84,
+        "x1": 238.89,
+        "y1": 90.49,
+        "width": 37.56,
+        "height": 12.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C(sJ) :"
+      }
+    },
+    {
+      "id": "#/texts/103",
+      "page": 4,
+      "order": 14,
+      "role": "paragraph",
+      "text": "T2",
+      "bbox": {
+        "x0": 225.74,
+        "y0": 102.7,
+        "x1": 241.76,
+        "y1": 114.35,
+        "width": 16.02,
+        "height": 11.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "T2"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 4,
+      "order": 15,
+      "role": "paragraph",
+      "text": "C,(t,)",
+      "bbox": {
+        "x0": 273.07,
+        "y0": 61.18,
+        "x1": 300.75,
+        "y1": 73.56,
+        "width": 27.68,
+        "height": 12.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C,(t,)"
+      }
+    },
+    {
+      "id": "#/texts/105",
+      "page": 4,
+      "order": 16,
+      "role": "paragraph",
+      "text": "C(O)",
+      "bbox": {
+        "x0": 286.18,
+        "y0": 101.97,
+        "x1": 308.03,
+        "y1": 115.81,
+        "width": 21.85,
+        "height": 13.84
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C(O)"
+      }
+    },
+    {
+      "id": "#/texts/106",
+      "page": 4,
+      "order": 17,
+      "role": "paragraph",
+      "text": "(sce,).",
+      "bbox": {
+        "x0": 391.04,
+        "y0": 49.53,
+        "x1": 422.35,
+        "y1": 72.11,
+        "width": 31.31,
+        "height": 22.58
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(sce,)."
+      }
+    },
+    {
+      "id": "#/texts/107",
+      "page": 4,
+      "order": 18,
+      "role": "paragraph",
+      "text": "C(O)",
+      "bbox": {
+        "x0": 402.69,
+        "y0": 103.43,
+        "x1": 424.54,
+        "y1": 114.35,
+        "width": 21.85,
+        "height": 10.92
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C(O)"
+      }
+    },
+    {
+      "id": "#/texts/108",
+      "page": 4,
+      "order": 19,
+      "role": "paragraph",
+      "text": "are called critical points for the pair ( C 1 , C 2 ) if, for every i ∈ { 0 , 1 , . . . , n -1 } and j ∈ { 0 , 1 , . . . , m -1 } , the convex hulls of the corresponding curve subsegments are disjoint:",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 223.69,
+        "x1": 286.55,
+        "y1": 253.79,
+        "width": 243.9,
+        "height": 30.1
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "are called critical points for the pair ( C 1 , C 2 ) if, for every i ∈ { 0 , 1 , . . . , n -1 } and j ∈ { 0 , 1 , . . . , m -1 } , the convex hulls of the corresponding curve subsegments are disjoint:"
+      }
+    },
+    {
+      "id": "#/texts/110",
+      "page": 4,
+      "order": 20,
+      "role": "paragraph",
+      "text": "Lemma 1 (Non-Intersection via Critical Points). Let C 1 and C 2 be two non-intersecting NURBS curves. If S and T are critical points for ( C 1 , C 2 ) as per Definition 1 , then the polylines obtained by connecting consecutive points in S and T are guaranteed to be nonintersecting. Furthermore, this non-intersection property is preserved under any refinement of the critical points.",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 293.26,
+        "x1": 286.26,
+        "y1": 355.71,
+        "width": 243.61,
+        "height": 62.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Lemma 1 (Non-Intersection via Critical Points). Let C 1 and C 2 be two non-intersecting NURBS curves. If S and T are critical points for ( C 1 , C 2 ) as per Definition 1 , then the polylines obtained by connecting consecutive points in S and T are guaranteed to be nonintersecting. Furthermore, this non-intersection property is preserved under any refinement of the critical points."
+      }
+    },
+    {
+      "id": "#/texts/111",
+      "page": 4,
+      "order": 21,
+      "role": "paragraph",
+      "text": "Formally, define the polylines:",
+      "bbox": {
+        "x0": 52.61,
+        "y0": 359.26,
+        "x1": 164.41,
+        "y1": 366.71,
+        "width": 111.8,
+        "height": 7.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Formally, define the polylines:"
+      }
+    },
+    {
+      "id": "#/texts/113",
+      "page": 4,
+      "order": 22,
+      "role": "paragraph",
+      "text": "Then:",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 423.21,
+        "x1": 64.14,
+        "y1": 430.66,
+        "width": 21.49,
+        "height": 7.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Then:"
+      }
+    },
+    {
+      "id": "#/texts/114",
+      "page": 4,
+      "order": 23,
+      "role": "list_item",
+      "text": "L 1 ∩ L 2 = ∅ .",
+      "bbox": {
+        "x0": 52.61,
+        "y0": 447.21,
+        "x1": 108.39,
+        "y1": 460.86,
+        "width": 55.78,
+        "height": 13.65
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(1) L 1 ∩ L 2 = ∅ ."
+      }
+    },
+    {
+      "id": "#/texts/115",
+      "page": 4,
+      "order": 24,
+      "role": "list_item",
+      "text": "For any refinement S ′ ⊇ S and T ′ ⊇ T , the corresponding refined polylines L ′ 1 and L ′ 2 also satisfy L ′ 1 ∩ L ′ 2 = ∅ .",
+      "bbox": {
+        "x0": 52.61,
+        "y0": 457.23,
+        "x1": 286.1,
+        "y1": 482.86,
+        "width": 233.49,
+        "height": 25.63
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(2) For any refinement S ′ ⊇ S and T ′ ⊇ T , the corresponding refined polylines L ′ 1 and L ′ 2 also satisfy L ′ 1 ∩ L ′ 2 = ∅ ."
+      }
+    },
+    {
+      "id": "#/texts/116",
+      "page": 4,
+      "order": 25,
+      "role": "paragraph",
+      "text": "The detailed proof of Lemma 1 is presented in Appendix A . To compute critical points for inter-curve tessellation, we first construct oriented bounding boxes (OBBs) for each curve segment as shown in Figure 3 . For every pair of non-adjacent curves, we check OBB intersections. If detected, the corresponding segments are subdivided at midpoints. This process iterates recursively: new OBBs are computed for subdivided segments, and intersection checks continue until all OBBs from different curves are disjoint. The resulting subdivision points become the critical points, ensuring the final tessellation avoids artificial intersections.",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 490.15,
+        "x1": 286.44,
+        "y1": 596.6,
+        "width": 243.79,
+        "height": 106.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The detailed proof of Lemma 1 is presented in Appendix A . To compute critical points for inter-curve tessellation, we first construct oriented bounding boxes (OBBs) for each curve segment as shown in Figure 3 . For every pair of non-adjacent curves, we check OBB intersections. If detected, the corresponding segments are subdivided at midpoints. This process iterates recursively: new OBBs are computed for subdivided segments, and intersection checks continue until all OBBs from different curves are disjoint. The resulting subdivision points become the critical points, ensuring the final tessellation avoids artificial intersections."
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 4,
+      "order": 26,
+      "role": "heading",
+      "text": "3.2. Endpoint-adjacent tessellation",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 610.82,
+        "x1": 215.81,
+        "y1": 620.37,
+        "width": 173.16,
+        "height": 9.55
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3.2. Endpoint-adjacent tessellation"
+      }
+    },
+    {
+      "id": "#/texts/118",
+      "page": 4,
+      "order": 27,
+      "role": "paragraph",
+      "text": "When two curves share a common endpoint and exhibit similar tangents, naive tessellation may introduce artificial intersections near the junction. This issue arises when the tessellated polylines fail to preserve the original angular ordering of the curves -e.g., reversing their relative orientation, as illustrated in the left of Figure 2 .",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 625.37,
+        "x1": 286.19,
+        "y1": 687.82,
+        "width": 243.54,
+        "height": 62.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "When two curves share a common endpoint and exhibit similar tangents, naive tessellation may introduce artificial intersections near the junction. This issue arises when the tessellated polylines fail to preserve the original angular ordering of the curves -e.g., reversing their relative orientation, as illustrated in the left of Figure 2 ."
+      }
+    },
+    {
+      "id": "#/texts/119",
+      "page": 4,
+      "order": 28,
+      "role": "paragraph",
+      "text": "To address this, we introduce the concept of angular monotonicity and separation vector , which guides the placement of the first sampling points on each curve. The separation vector ensures that the piecewise-linear approximations initiate from directions that preserve the original orientation and avoid crossing.",
+      "bbox": {
+        "x0": 42.65,
+        "y0": 691.37,
+        "x1": 286.19,
+        "y1": 742.82,
+        "width": 243.54,
+        "height": 51.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "To address this, we introduce the concept of angular monotonicity and separation vector , which guides the placement of the first sampling points on each curve. The separation vector ensures that the piecewise-linear approximations initiate from directions that preserve the original orientation and avoid crossing."
+      }
+    },
+    {
+      "id": "#/texts/120",
+      "page": 4,
+      "order": 29,
+      "role": "heading",
+      "text": "3.2.1. Angular monotonicity",
+      "bbox": {
+        "x0": 303.9,
+        "y0": 223.76,
+        "x1": 421.13,
+        "y1": 232.49,
+        "width": 117.23,
+        "height": 8.73
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3.2.1. Angular monotonicity"
+      }
+    },
+    {
+      "id": "#/texts/121",
+      "page": 4,
+      "order": 30,
+      "role": "paragraph",
+      "text": "We require that each curve involved satisfy the Angular Monotonicity condition: that is, any straight line through the endpoint intersects the control polygon in at most one location (excluding the endpoint). This condition guarantees that as the curve parameter increases, the angle between the position vector - - - - - → C (0) C ( t ) and the initial tangent vector T = C ′ (0) increases monotonically. Thus, the curve's sampled direction evolves in a single rotational direction and avoids reversal, as shown in Figure 4 .",
+      "bbox": {
+        "x0": 303.9,
+        "y0": 237.79,
+        "x1": 547.69,
+        "y1": 323.46,
+        "width": 243.79,
+        "height": 85.67
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We require that each curve involved satisfy the Angular Monotonicity condition: that is, any straight line through the endpoint intersects the control polygon in at most one location (excluding the endpoint). This condition guarantees that as the curve parameter increases, the angle between the position vector - - - - - → C (0) C ( t ) and the initial tangent vector T = C ′ (0) increases monotonically. Thus, the curve's sampled direction evolves in a single rotational direction and avoids reversal, as shown in Figure 4 ."
+      }
+    },
+    {
+      "id": "#/texts/122",
+      "page": 4,
+      "order": 31,
+      "role": "paragraph",
+      "text": "Importantly, this condition can be efficiently verified via the control polygon alone, without evaluating the spline curve geometry, making it well-suited for engineering applications. If the condition is not satisfied, we recursively subdivide the curve until it holds on each local segment.",
+      "bbox": {
+        "x0": 303.9,
+        "y0": 327.01,
+        "x1": 547.42,
+        "y1": 378.46,
+        "width": 243.52,
+        "height": 51.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Importantly, this condition can be efficiently verified via the control polygon alone, without evaluating the spline curve geometry, making it well-suited for engineering applications. If the condition is not satisfied, we recursively subdivide the curve until it holds on each local segment."
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 4,
+      "order": 32,
+      "role": "heading",
+      "text": "3.2.2. Separation vector",
+      "bbox": {
+        "x0": 303.9,
+        "y0": 389.9,
+        "x1": 402.99,
+        "y1": 398.63,
+        "width": 99.09,
+        "height": 8.73
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3.2.2. Separation vector"
+      }
+    },
+    {
+      "id": "#/texts/124",
+      "page": 4,
+      "order": 33,
+      "role": "paragraph",
+      "text": "Let C 1 and C 2 be two NURBS curves with shared endpoint C 1 (0) = C 2 (0) , which we denote by C (0) , and initial tangents T 1 = C ′ 1 (0) , T 2 = C ′ 2 (0) . We define a vector D ∈ R 2 , the separation vector , such that the vectors from the common endpoint to the first sampling points V 1 = - - - - - - - → C (0) C 1 ( s 1 ) , V 2 = -- - - - - - → C 2 (0) C 2 ( t 1 ) satisfy",
+      "bbox": {
+        "x0": 303.52,
+        "y0": 403.27,
+        "x1": 547.8,
+        "y1": 462.12,
+        "width": 244.28,
+        "height": 58.85
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Let C 1 and C 2 be two NURBS curves with shared endpoint C 1 (0) = C 2 (0) , which we denote by C (0) , and initial tangents T 1 = C ′ 1 (0) , T 2 = C ′ 2 (0) . We define a vector D ∈ R 2 , the separation vector , such that the vectors from the common endpoint to the first sampling points V 1 = - - - - - - - → C (0) C 1 ( s 1 ) , V 2 = -- - - - - - → C 2 (0) C 2 ( t 1 ) satisfy"
+      }
+    },
+    {
+      "id": "#/texts/126",
+      "page": 4,
+      "order": 34,
+      "role": "paragraph",
+      "text": "negationslash where det ( a , b ) = ax by -ay bx , whose sign indicates their relative orientation. This condition ensures that the first tessellation segments lie on opposite sides of D , thereby preventing intersection and preserving angular separation.",
+      "bbox": {
+        "x0": 418.94,
+        "y0": 464.88,
+        "x1": 418.94,
+        "y1": 478.53,
+        "width": 0.0,
+        "height": 13.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "negationslash where det ( a , b ) = ax by -ay bx , whose sign indicates their relative orientation. This condition ensures that the first tessellation segments lie on opposite sides of D , thereby preventing intersection and preserving angular separation."
+      }
+    },
+    {
+      "id": "#/texts/127",
+      "page": 4,
+      "order": 35,
+      "role": "paragraph",
+      "text": "The separation vector D is computed according to the local geometry at C (0) , with three cases shown in Figure 5 :",
+      "bbox": {
+        "x0": 303.9,
+        "y0": 525.94,
+        "x1": 547.41,
+        "y1": 544.39,
+        "width": 243.51,
+        "height": 18.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The separation vector D is computed according to the local geometry at C (0) , with three cases shown in Figure 5 :"
+      }
+    },
+    {
+      "id": "#/texts/128",
+      "page": 4,
+      "order": 36,
+      "role": "list_item",
+      "text": "a114 Case 1: Opposing curvature directions. If the two curves bend in opposite directions near C (0) , we define:",
+      "bbox": {
+        "x0": 311.87,
+        "y0": 553.43,
+        "x1": 547.37,
+        "y1": 571.87,
+        "width": 235.5,
+        "height": 18.44
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "a114 Case 1: Opposing curvature directions. If the two curves bend in opposite directions near C (0) , we define:"
+      }
+    },
+    {
+      "id": "#/texts/130",
+      "page": 4,
+      "order": 37,
+      "role": "paragraph",
+      "text": "i.e., the average of the normalized tangents. This vector bisects the angle between the curves and separates their initial sampling directions.",
+      "bbox": {
+        "x0": 320.09,
+        "y0": 603.38,
+        "x1": 547.4,
+        "y1": 632.82,
+        "width": 227.31,
+        "height": 29.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "i.e., the average of the normalized tangents. This vector bisects the angle between the curves and separates their initial sampling directions."
+      }
+    },
+    {
+      "id": "#/texts/131",
+      "page": 4,
+      "order": 38,
+      "role": "list_item",
+      "text": "a114 Case 2: Same curvature, distinct tangents. When the curves bend in the same direction but have different tangents, we use the same bisector formulation. The sign of angular deviation between the tangents determines which side each curve samples from.",
+      "bbox": {
+        "x0": 311.87,
+        "y0": 636.37,
+        "x1": 547.4,
+        "y1": 687.82,
+        "width": 235.53,
+        "height": 51.45
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "a114 Case 2: Same curvature, distinct tangents. When the curves bend in the same direction but have different tangents, we use the same bisector formulation. The sign of angular deviation between the tangents determines which side each curve samples from."
+      }
+    },
+    {
+      "id": "#/texts/132",
+      "page": 4,
+      "order": 39,
+      "role": "list_item",
+      "text": "a114 Case 3: Identical curvature and tangent. When the two curves share both tangent and curvature direction at C (0) , we select the curve Ci with the smaller n th-order derivative (i.e., less curved).We then locate a nearby point Ci ( t ) on this flatter curve guided by the target maximum mesh edge length from",
+      "bbox": {
+        "x0": 311.87,
+        "y0": 691.37,
+        "x1": 547.68,
+        "y1": 742.82,
+        "width": 235.81,
+        "height": 51.45
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "a114 Case 3: Identical curvature and tangent. When the two curves share both tangent and curvature direction at C (0) , we select the curve Ci with the smaller n th-order derivative (i.e., less curved).We then locate a nearby point Ci ( t ) on this flatter curve guided by the target maximum mesh edge length from"
+      }
+    },
+    {
+      "id": "#/texts/133",
+      "page": 4,
+      "order": 40,
+      "role": "paragraph",
+      "text": "|",
+      "bbox": {
+        "x0": 64.3,
+        "y0": 26.27,
+        "x1": 66.04,
+        "y1": 33.72,
+        "width": 1.74,
+        "height": 7.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "|"
+      }
+    },
+    {
+      "id": "#/texts/134",
+      "page": 4,
+      "order": 41,
+      "role": "paragraph",
+      "text": "TA",
+      "bbox": {
+        "x0": 144.18,
+        "y0": 39.33,
+        "x1": 163.12,
+        "y1": 55.36,
+        "width": 18.94,
+        "height": 16.03
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "TA"
+      }
+    },
+    {
+      "id": "#/texts/135",
+      "page": 4,
+      "order": 42,
+      "role": "paragraph",
+      "text": "C,(t,)",
+      "bbox": {
+        "x0": 176.22,
+        "y0": 46.62,
+        "x1": 202.44,
+        "y1": 59.73,
+        "width": 26.22,
+        "height": 13.11
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C,(t,)"
+      }
+    },
+    {
+      "id": "#/texts/136",
+      "page": 4,
+      "order": 43,
+      "role": "paragraph",
+      "text": "B",
+      "bbox": {
+        "x0": 288.37,
+        "y0": 2.92,
+        "x1": 296.38,
+        "y1": 11.66,
+        "width": 8.01,
+        "height": 8.74
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "B"
+      }
+    },
+    {
+      "id": "#/texts/137",
+      "page": 4,
+      "order": 44,
+      "role": "paragraph",
+      "text": "T2A",
+      "bbox": {
+        "x0": 284.33,
+        "y0": 35.83,
+        "x1": 307.0,
+        "y1": 51.42,
+        "width": 22.67,
+        "height": 15.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "T2A"
+      }
+    },
+    {
+      "id": "#/texts/138",
       "page": 4,
       "order": 45,
       "role": "paragraph",
@@ -2443,7 +2405,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/139",
       "page": 4,
       "order": 46,
       "role": "paragraph",
@@ -2462,26 +2424,7 @@
       }
     },
     {
-      "id": "#/texts/142",
-      "page": 4,
-      "order": 47,
-      "role": "paragraph",
-      "text": "D",
-      "bbox": {
-        "x0": 427.45,
-        "y0": 27.68,
-        "x1": 435.46,
-        "y1": 36.42,
-        "width": 8.01,
-        "height": 8.74
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "D"
-      }
-    },
-    {
-      "id": "#/texts/146",
+      "id": "#/texts/143",
       "page": 5,
       "order": 1,
       "role": "paragraph",
@@ -2500,7 +2443,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/144",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -2519,7 +2462,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/145",
       "page": 5,
       "order": 3,
       "role": "paragraph",
@@ -2538,7 +2481,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/146",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -2557,7 +2500,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/147",
       "page": 5,
       "order": 5,
       "role": "caption",
@@ -2576,36 +2519,36 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/148",
       "page": 5,
       "order": 6,
       "role": "paragraph",
-      "text": "••",
+      "text": "•••",
       "bbox": {
-        "x0": 380.09,
+        "x0": 379.36,
         "y0": 68.37,
         "x1": 394.62,
-        "y1": 72.73,
-        "width": 14.53,
-        "height": 4.36
+        "y1": 73.46,
+        "width": 15.26,
+        "height": 5.09
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "••"
+        "docling_orig": "•••"
       }
     },
     {
-      "id": "#/texts/152",
+      "id": "#/texts/149",
       "page": 5,
       "order": 7,
       "role": "paragraph",
       "text": "Boundary Tessellation",
       "bbox": {
-        "x0": 106.1,
+        "x0": 105.38,
         "y0": 90.19,
         "x1": 195.49,
         "y1": 99.67,
-        "width": 89.39,
+        "width": 90.11,
         "height": 9.48
       },
       "meta": {
@@ -2614,7 +2557,7 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/150",
       "page": 5,
       "order": 8,
       "role": "paragraph",
@@ -2633,7 +2576,7 @@
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/151",
       "page": 5,
       "order": 9,
       "role": "paragraph",
@@ -2652,18 +2595,18 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/152",
       "page": 5,
       "order": 10,
       "role": "paragraph",
       "text": "3D Mapping",
       "bbox": {
-        "x0": 429.45,
-        "y0": 89.17,
-        "x1": 481.16,
-        "y1": 99.93,
-        "width": 51.71,
-        "height": 10.76
+        "x0": 429.48,
+        "y0": 89.33,
+        "x1": 481.13,
+        "y1": 99.77,
+        "width": 51.65,
+        "height": 10.44
       },
       "meta": {
         "docling_label": "text",
@@ -2671,7 +2614,7 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/153",
       "page": 5,
       "order": 11,
       "role": "paragraph",
@@ -2690,7 +2633,7 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/154",
       "page": 5,
       "order": 12,
       "role": "paragraph",
@@ -2709,7 +2652,7 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/155",
       "page": 5,
       "order": 13,
       "role": "paragraph",
@@ -2728,7 +2671,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/156",
       "page": 5,
       "order": 14,
       "role": "paragraph",
@@ -2747,7 +2690,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/157",
       "page": 5,
       "order": 15,
       "role": "paragraph",
@@ -2766,7 +2709,7 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/158",
       "page": 5,
       "order": 16,
       "role": "paragraph",
@@ -2785,7 +2728,7 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/159",
       "page": 5,
       "order": 17,
       "role": "paragraph",
@@ -2804,7 +2747,7 @@
       }
     },
     {
-      "id": "#/texts/163",
+      "id": "#/texts/160",
       "page": 5,
       "order": 18,
       "role": "paragraph",
@@ -2823,7 +2766,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/161",
       "page": 5,
       "order": 19,
       "role": "paragraph",
@@ -2842,18 +2785,18 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/162",
       "page": 5,
       "order": 20,
       "role": "paragraph",
       "text": "Mapping",
       "bbox": {
         "x0": 234.0,
-        "y0": 207.95,
-        "x1": 260.92,
-        "y1": 215.33,
-        "width": 26.92,
-        "height": 7.38
+        "y0": 207.97,
+        "x1": 260.91,
+        "y1": 215.31,
+        "width": 26.91,
+        "height": 7.34
       },
       "meta": {
         "docling_label": "text",
@@ -2861,7 +2804,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/163",
       "page": 5,
       "order": 21,
       "role": "paragraph",
@@ -2880,18 +2823,18 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/164",
       "page": 5,
       "order": 22,
       "role": "paragraph",
       "text": "Tessellation",
       "bbox": {
-        "x0": 289.24,
-        "y0": 208.0,
-        "x1": 323.4,
-        "y1": 214.55,
-        "width": 34.16,
-        "height": 6.55
+        "x0": 289.23,
+        "y0": 207.95,
+        "x1": 323.41,
+        "y1": 214.61,
+        "width": 34.18,
+        "height": 6.66
       },
       "meta": {
         "docling_label": "text",
@@ -2899,7 +2842,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/165",
       "page": 5,
       "order": 23,
       "role": "paragraph",
@@ -2918,7 +2861,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/166",
       "page": 5,
       "order": 24,
       "role": "paragraph",
@@ -2937,7 +2880,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/167",
       "page": 5,
       "order": 25,
       "role": "paragraph",
@@ -2956,7 +2899,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/168",
       "page": 5,
       "order": 26,
       "role": "caption",
@@ -2975,7 +2918,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/169",
       "page": 5,
       "order": 27,
       "role": "paragraph",
@@ -2994,7 +2937,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/171",
       "page": 5,
       "order": 28,
       "role": "paragraph",
@@ -3013,7 +2956,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/172",
       "page": 5,
       "order": 29,
       "role": "paragraph",
@@ -3032,7 +2975,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/173",
       "page": 5,
       "order": 30,
       "role": "heading",
@@ -3051,7 +2994,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/174",
       "page": 5,
       "order": 31,
       "role": "paragraph",
@@ -3070,7 +3013,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/175",
       "page": 5,
       "order": 32,
       "role": "paragraph",
@@ -3089,7 +3032,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/177",
       "page": 5,
       "order": 33,
       "role": "paragraph",
@@ -3108,7 +3051,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/178",
       "page": 5,
       "order": 34,
       "role": "paragraph",
@@ -3127,7 +3070,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/179",
       "page": 5,
       "order": 35,
       "role": "paragraph",
@@ -3146,7 +3089,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/180",
       "page": 5,
       "order": 36,
       "role": "heading",
@@ -3165,7 +3108,7 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/181",
       "page": 5,
       "order": 37,
       "role": "paragraph",
@@ -3184,7 +3127,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/182",
       "page": 5,
       "order": 38,
       "role": "heading",
@@ -3203,7 +3146,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/183",
       "page": 5,
       "order": 39,
       "role": "paragraph",
@@ -3222,7 +3165,7 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/187",
       "page": 6,
       "order": 1,
       "role": "paragraph",
@@ -3241,7 +3184,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/188",
       "page": 6,
       "order": 2,
       "role": "paragraph",
@@ -3260,7 +3203,7 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/189",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -3279,7 +3222,7 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/190",
       "page": 6,
       "order": 4,
       "role": "caption",
@@ -3298,7 +3241,7 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/191",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -3317,7 +3260,7 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/192",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -3336,7 +3279,7 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/193",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -3355,7 +3298,7 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/194",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -3374,7 +3317,7 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/195",
       "page": 6,
       "order": 9,
       "role": "caption",
@@ -3393,7 +3336,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/196",
       "page": 6,
       "order": 10,
       "role": "list_item",
@@ -3412,7 +3355,7 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/197",
       "page": 6,
       "order": 11,
       "role": "list_item",
@@ -3431,7 +3374,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/198",
       "page": 6,
       "order": 12,
       "role": "list_item",
@@ -3450,7 +3393,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/200",
       "page": 6,
       "order": 13,
       "role": "paragraph",
@@ -3469,7 +3412,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/201",
       "page": 6,
       "order": 14,
       "role": "paragraph",
@@ -3488,7 +3431,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/202",
       "page": 6,
       "order": 15,
       "role": "heading",
@@ -3507,7 +3450,7 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/203",
       "page": 6,
       "order": 16,
       "role": "paragraph",
@@ -3526,7 +3469,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/204",
       "page": 6,
       "order": 17,
       "role": "paragraph",
@@ -3545,7 +3488,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/205",
       "page": 6,
       "order": 18,
       "role": "paragraph",
@@ -3564,7 +3507,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/206",
       "page": 6,
       "order": 19,
       "role": "paragraph",
@@ -3583,7 +3526,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/209",
       "page": 6,
       "order": 20,
       "role": "paragraph",
@@ -3602,7 +3545,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/211",
       "page": 6,
       "order": 21,
       "role": "paragraph",
@@ -3621,7 +3564,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/212",
       "page": 6,
       "order": 22,
       "role": "paragraph",
@@ -3640,7 +3583,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/217",
       "page": 7,
       "order": 1,
       "role": "paragraph",
@@ -3659,7 +3602,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/218",
       "page": 7,
       "order": 2,
       "role": "paragraph",
@@ -3678,7 +3621,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/219",
       "page": 7,
       "order": 3,
       "role": "caption",
@@ -3697,7 +3640,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/220",
       "page": 7,
       "order": 4,
       "role": "paragraph",
@@ -3716,7 +3659,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/221",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -3735,7 +3678,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/222",
       "page": 7,
       "order": 6,
       "role": "paragraph",
@@ -3754,18 +3697,18 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/223",
       "page": 7,
       "order": 7,
       "role": "paragraph",
       "text": "Are Length Discretization*",
       "bbox": {
         "x0": 264.67,
-        "y0": 262.36,
-        "x1": 371.33,
+        "y0": 261.7,
+        "x1": 372.0,
         "y1": 272.35,
-        "width": 106.66,
-        "height": 9.99
+        "width": 107.33,
+        "height": 10.65
       },
       "meta": {
         "docling_label": "text",
@@ -3773,7 +3716,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/225",
       "page": 7,
       "order": 8,
       "role": "paragraph",
@@ -3792,7 +3735,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/226",
       "page": 7,
       "order": 9,
       "role": "paragraph",
@@ -3811,7 +3754,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/227",
       "page": 7,
       "order": 10,
       "role": "paragraph",
@@ -3830,7 +3773,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/228",
       "page": 7,
       "order": 11,
       "role": "paragraph",
@@ -3849,7 +3792,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/229",
       "page": 7,
       "order": 12,
       "role": "paragraph",
@@ -3868,7 +3811,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/230",
       "page": 7,
       "order": 13,
       "role": "paragraph",
@@ -3887,7 +3830,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/231",
       "page": 7,
       "order": 14,
       "role": "heading",
@@ -3906,7 +3849,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/232",
       "page": 7,
       "order": 15,
       "role": "paragraph",
@@ -3925,7 +3868,7 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/233",
       "page": 7,
       "order": 16,
       "role": "code",
@@ -3944,7 +3887,7 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/234",
       "page": 7,
       "order": 17,
       "role": "paragraph",
@@ -3963,7 +3906,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/235",
       "page": 7,
       "order": 18,
       "role": "paragraph",
@@ -3982,7 +3925,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/239",
       "page": 8,
       "order": 1,
       "role": "paragraph",
@@ -4001,7 +3944,7 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/240",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -4020,7 +3963,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/241",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -4039,7 +3982,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/242",
       "page": 8,
       "order": 4,
       "role": "caption",
@@ -4058,7 +4001,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/243",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -4077,7 +4020,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/244",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -4096,18 +4039,18 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/245",
       "page": 8,
       "order": 7,
       "role": "paragraph",
       "text": "Ours Discretization",
       "bbox": {
         "x0": 279.33,
-        "y0": 131.85,
+        "y0": 131.18,
         "x1": 355.33,
         "y1": 139.18,
         "width": 76.0,
-        "height": 7.33
+        "height": 8.0
       },
       "meta": {
         "docling_label": "text",
@@ -4115,26 +4058,26 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/246",
       "page": 8,
       "order": 8,
       "role": "paragraph",
-      "text": "Are Length Discretization*",
+      "text": "Arc Length Discretization*",
       "bbox": {
         "x0": 264.67,
-        "y0": 267.03,
-        "x1": 371.33,
+        "y0": 267.69,
+        "x1": 370.67,
         "y1": 277.68,
-        "width": 106.66,
-        "height": 10.65
+        "width": 106.0,
+        "height": 9.99
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Are Length Discretization*"
+        "docling_orig": "Arc Length Discretization*"
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/247",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -4153,7 +4096,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/248",
       "page": 8,
       "order": 10,
       "role": "paragraph",
@@ -4172,7 +4115,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/250",
       "page": 8,
       "order": 11,
       "role": "paragraph",
@@ -4191,7 +4134,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/252",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -4210,7 +4153,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/253",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -4229,7 +4172,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/254",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -4248,7 +4191,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/255",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -4267,7 +4210,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/256",
       "page": 8,
       "order": 16,
       "role": "heading",
@@ -4286,7 +4229,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/257",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -4305,7 +4248,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/258",
       "page": 8,
       "order": 18,
       "role": "list_item",
@@ -4324,7 +4267,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/259",
       "page": 8,
       "order": 19,
       "role": "list_item",
@@ -4343,7 +4286,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/260",
       "page": 8,
       "order": 20,
       "role": "paragraph",
@@ -4362,7 +4305,7 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/261",
       "page": 8,
       "order": 21,
       "role": "paragraph",
@@ -4381,7 +4324,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/265",
       "page": 9,
       "order": 1,
       "role": "paragraph",
@@ -4400,7 +4343,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/266",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -4419,7 +4362,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/267",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -4438,7 +4381,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/268",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -4457,7 +4400,7 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/269",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -4476,7 +4419,7 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/270",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -4495,7 +4438,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/271",
       "page": 9,
       "order": 7,
       "role": "caption",
@@ -4514,7 +4457,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/272",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -4533,7 +4476,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/273",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -4552,7 +4495,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/274",
       "page": 9,
       "order": 10,
       "role": "caption",
@@ -4571,7 +4514,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/275",
       "page": 9,
       "order": 11,
       "role": "heading",
@@ -4590,7 +4533,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/276",
       "page": 9,
       "order": 12,
       "role": "paragraph",
@@ -4609,7 +4552,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/277",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -4628,7 +4571,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/278",
       "page": 9,
       "order": 14,
       "role": "paragraph",
@@ -4647,7 +4590,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/279",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -4666,7 +4609,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/280",
       "page": 9,
       "order": 16,
       "role": "paragraph",
@@ -4685,7 +4628,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/281",
       "page": 9,
       "order": 17,
       "role": "paragraph",
@@ -4704,7 +4647,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/282",
       "page": 9,
       "order": 18,
       "role": "paragraph",
@@ -4723,7 +4666,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/283",
       "page": 9,
       "order": 19,
       "role": "paragraph",
@@ -4742,7 +4685,7 @@
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/287",
       "page": 10,
       "order": 1,
       "role": "paragraph",
@@ -4761,7 +4704,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/288",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -4780,7 +4723,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/289",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -4799,7 +4742,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/290",
       "page": 10,
       "order": 4,
       "role": "caption",
@@ -4818,7 +4761,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/291",
       "page": 10,
       "order": 5,
       "role": "paragraph",
@@ -4837,18 +4780,18 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/292",
       "page": 10,
       "order": 6,
       "role": "paragraph",
       "text": "Mobius Ring",
       "bbox": {
         "x0": 149.17,
-        "y0": 186.49,
+        "y0": 186.5,
         "x1": 206.96,
         "y1": 197.71,
         "width": 57.79,
-        "height": 11.22
+        "height": 11.21
       },
       "meta": {
         "docling_label": "text",
@@ -4856,7 +4799,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/293",
       "page": 10,
       "order": 7,
       "role": "paragraph",
@@ -4875,7 +4818,7 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/294",
       "page": 10,
       "order": 8,
       "role": "paragraph",
@@ -4894,7 +4837,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/295",
       "page": 10,
       "order": 9,
       "role": "paragraph",
@@ -4913,7 +4856,7 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/296",
       "page": 10,
       "order": 10,
       "role": "paragraph",
@@ -4932,7 +4875,7 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/297",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -4951,7 +4894,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/298",
       "page": 10,
       "order": 12,
       "role": "paragraph",
@@ -4970,7 +4913,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/299",
       "page": 10,
       "order": 13,
       "role": "paragraph",
@@ -4989,7 +4932,7 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/300",
       "page": 10,
       "order": 14,
       "role": "list_item",
@@ -5008,7 +4951,7 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/301",
       "page": 10,
       "order": 15,
       "role": "list_item",
@@ -5027,7 +4970,7 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/302",
       "page": 10,
       "order": 16,
       "role": "list_item",
@@ -5046,7 +4989,7 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/303",
       "page": 10,
       "order": 17,
       "role": "list_item",
@@ -5065,7 +5008,7 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/304",
       "page": 10,
       "order": 18,
       "role": "list_item",
@@ -5084,7 +5027,7 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/305",
       "page": 10,
       "order": 19,
       "role": "list_item",
@@ -5103,7 +5046,7 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/306",
       "page": 10,
       "order": 20,
       "role": "list_item",
@@ -5122,7 +5065,7 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/307",
       "page": 10,
       "order": 21,
       "role": "list_item",
@@ -5141,7 +5084,7 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/308",
       "page": 10,
       "order": 22,
       "role": "paragraph",
@@ -5160,7 +5103,7 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/309",
       "page": 10,
       "order": 23,
       "role": "paragraph",
@@ -5179,7 +5122,7 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/310",
       "page": 10,
       "order": 24,
       "role": "paragraph",
@@ -5198,7 +5141,7 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/311",
       "page": 10,
       "order": 25,
       "role": "paragraph",
@@ -5217,7 +5160,7 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/312",
       "page": 10,
       "order": 26,
       "role": "paragraph",
@@ -5236,7 +5179,7 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/313",
       "page": 10,
       "order": 27,
       "role": "paragraph",
@@ -5255,7 +5198,7 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/314",
       "page": 10,
       "order": 28,
       "role": "paragraph",
@@ -5274,7 +5217,7 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/315",
       "page": 10,
       "order": 29,
       "role": "paragraph",
@@ -5293,7 +5236,7 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/316",
       "page": 10,
       "order": 30,
       "role": "paragraph",
@@ -5312,7 +5255,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/317",
       "page": 10,
       "order": 31,
       "role": "paragraph",
@@ -5331,7 +5274,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/318",
       "page": 10,
       "order": 32,
       "role": "paragraph",
@@ -5350,7 +5293,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/319",
       "page": 10,
       "order": 33,
       "role": "paragraph",
@@ -5369,7 +5312,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/320",
       "page": 10,
       "order": 34,
       "role": "paragraph",
@@ -5388,7 +5331,7 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/321",
       "page": 10,
       "order": 35,
       "role": "list_item",
@@ -5407,7 +5350,7 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/322",
       "page": 10,
       "order": 36,
       "role": "list_item",
@@ -5426,7 +5369,7 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/323",
       "page": 10,
       "order": 37,
       "role": "list_item",
@@ -5445,7 +5388,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/324",
       "page": 10,
       "order": 38,
       "role": "list_item",
@@ -5464,7 +5407,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/325",
       "page": 10,
       "order": 39,
       "role": "list_item",
@@ -5483,7 +5426,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/326",
       "page": 10,
       "order": 40,
       "role": "paragraph",
@@ -5502,7 +5445,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/327",
       "page": 10,
       "order": 41,
       "role": "paragraph",
@@ -5521,7 +5464,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/328",
       "page": 10,
       "order": 42,
       "role": "heading",
@@ -5540,7 +5483,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/329",
       "page": 10,
       "order": 43,
       "role": "list_item",
@@ -5559,7 +5502,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/330",
       "page": 10,
       "order": 44,
       "role": "paragraph",
@@ -5578,7 +5521,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/331",
       "page": 10,
       "order": 45,
       "role": "list_item",
@@ -5597,7 +5540,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/332",
       "page": 10,
       "order": 46,
       "role": "paragraph",
@@ -5616,7 +5559,7 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/333",
       "page": 10,
       "order": 47,
       "role": "paragraph",
@@ -5635,7 +5578,7 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/334",
       "page": 10,
       "order": 48,
       "role": "list_item",
@@ -5654,7 +5597,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/335",
       "page": 10,
       "order": 49,
       "role": "list_item",
@@ -5673,7 +5616,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/336",
       "page": 10,
       "order": 50,
       "role": "list_item",
@@ -5692,7 +5635,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/337",
       "page": 10,
       "order": 51,
       "role": "list_item",
@@ -5711,7 +5654,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/338",
       "page": 10,
       "order": 52,
       "role": "paragraph",
@@ -5730,7 +5673,7 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/339",
       "page": 10,
       "order": 53,
       "role": "heading",
@@ -5749,7 +5692,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/340",
       "page": 10,
       "order": 54,
       "role": "paragraph",
@@ -5768,7 +5711,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/341",
       "page": 10,
       "order": 55,
       "role": "heading",
@@ -5787,7 +5730,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/342",
       "page": 10,
       "order": 56,
       "role": "paragraph",
@@ -5806,7 +5749,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/343",
       "page": 10,
       "order": 57,
       "role": "paragraph",
@@ -5825,7 +5768,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/344",
       "page": 10,
       "order": 58,
       "role": "paragraph",
@@ -5844,7 +5787,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/348",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -5863,7 +5806,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/349",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -5871,9 +5814,9 @@
       "bbox": {
         "x0": 9.64,
         "y0": 118.61,
-        "x1": 78.6,
+        "x1": 79.34,
         "y1": 127.5,
-        "width": 68.96,
+        "width": 69.7,
         "height": 8.89
       },
       "meta": {
@@ -5882,7 +5825,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/350",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -5901,7 +5844,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/351",
       "page": 11,
       "order": 4,
       "role": "paragraph",
@@ -5920,7 +5863,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/352",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -5939,7 +5882,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/353",
       "page": 11,
       "order": 6,
       "role": "paragraph",
@@ -5958,7 +5901,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/354",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -5977,7 +5920,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/355",
       "page": 11,
       "order": 8,
       "role": "caption",
@@ -5996,7 +5939,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/356",
       "page": 11,
       "order": 9,
       "role": "paragraph",
@@ -6015,7 +5958,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/357",
       "page": 11,
       "order": 10,
       "role": "paragraph",
@@ -6024,9 +5967,9 @@
         "x0": 116.42,
         "y0": 296.52,
         "x1": 128.29,
-        "y1": 305.41,
+        "y1": 304.67,
         "width": 11.87,
-        "height": 8.89
+        "height": 8.15
       },
       "meta": {
         "docling_label": "text",
@@ -6034,7 +5977,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/358",
       "page": 11,
       "order": 11,
       "role": "paragraph",
@@ -6053,7 +5996,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/359",
       "page": 11,
       "order": 12,
       "role": "paragraph",
@@ -6061,9 +6004,9 @@
       "bbox": {
         "x0": 232.79,
         "y0": 128.18,
-        "x1": 264.77,
+        "x1": 264.8,
         "y1": 136.28,
-        "width": 31.98,
+        "width": 32.01,
         "height": 8.1
       },
       "meta": {
@@ -6072,7 +6015,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/360",
       "page": 11,
       "order": 13,
       "role": "paragraph",
@@ -6091,7 +6034,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/361",
       "page": 11,
       "order": 14,
       "role": "paragraph",
@@ -6110,7 +6053,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/362",
       "page": 11,
       "order": 15,
       "role": "paragraph",
@@ -6129,7 +6072,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/363",
       "page": 11,
       "order": 16,
       "role": "paragraph",
@@ -6148,7 +6091,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/364",
       "page": 11,
       "order": 17,
       "role": "heading",
@@ -6167,7 +6110,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/365",
       "page": 11,
       "order": 18,
       "role": "paragraph",
@@ -6186,7 +6129,7 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/366",
       "page": 11,
       "order": 19,
       "role": "paragraph",
@@ -6205,7 +6148,7 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/367",
       "page": 11,
       "order": 20,
       "role": "paragraph",
@@ -6224,18 +6167,18 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/368",
       "page": 11,
       "order": 21,
       "role": "paragraph",
       "text": "Gmsh",
       "bbox": {
-        "x0": 191.27,
-        "y0": 9.51,
-        "x1": 219.54,
-        "y1": 19.41,
-        "width": 28.27,
-        "height": 9.9
+        "x0": 191.18,
+        "y0": 9.24,
+        "x1": 219.63,
+        "y1": 19.68,
+        "width": 28.45,
+        "height": 10.44
       },
       "meta": {
         "docling_label": "text",
@@ -6243,7 +6186,7 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/369",
       "page": 11,
       "order": 22,
       "role": "paragraph",
@@ -6262,7 +6205,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/370",
       "page": 11,
       "order": 23,
       "role": "paragraph",
@@ -6281,7 +6224,7 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/374",
       "page": 12,
       "order": 1,
       "role": "paragraph",
@@ -6300,7 +6243,7 @@
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/375",
       "page": 12,
       "order": 2,
       "role": "paragraph",
@@ -6319,7 +6262,7 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/376",
       "page": 12,
       "order": 3,
       "role": "paragraph",
@@ -6338,7 +6281,7 @@
       }
     },
     {
-      "id": "#/texts/380",
+      "id": "#/texts/377",
       "page": 12,
       "order": 4,
       "role": "caption",
@@ -6357,7 +6300,7 @@
       }
     },
     {
-      "id": "#/texts/381",
+      "id": "#/texts/378",
       "page": 12,
       "order": 5,
       "role": "caption",
@@ -6376,7 +6319,7 @@
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/379",
       "page": 12,
       "order": 6,
       "role": "caption",
@@ -6395,7 +6338,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/380",
       "page": 12,
       "order": 7,
       "role": "paragraph",
@@ -6414,7 +6357,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/381",
       "page": 12,
       "order": 8,
       "role": "heading",
@@ -6433,7 +6376,7 @@
       }
     },
     {
-      "id": "#/texts/385",
+      "id": "#/texts/382",
       "page": 12,
       "order": 9,
       "role": "paragraph",
@@ -6452,7 +6395,7 @@
       }
     },
     {
-      "id": "#/texts/386",
+      "id": "#/texts/383",
       "page": 12,
       "order": 10,
       "role": "paragraph",
@@ -6471,7 +6414,7 @@
       }
     },
     {
-      "id": "#/texts/387",
+      "id": "#/texts/384",
       "page": 12,
       "order": 11,
       "role": "heading",
@@ -6490,7 +6433,7 @@
       }
     },
     {
-      "id": "#/texts/388",
+      "id": "#/texts/385",
       "page": 12,
       "order": 12,
       "role": "paragraph",
@@ -6509,7 +6452,7 @@
       }
     },
     {
-      "id": "#/texts/389",
+      "id": "#/texts/386",
       "page": 12,
       "order": 13,
       "role": "paragraph",
@@ -6528,18 +6471,18 @@
       }
     },
     {
-      "id": "#/texts/390",
+      "id": "#/texts/387",
       "page": 12,
       "order": 14,
       "role": "paragraph",
       "text": "Gmsh",
       "bbox": {
-        "x0": 183.2,
+        "x0": 182.53,
         "y0": 10.67,
         "x1": 207.85,
-        "y1": 19.34,
-        "width": 24.65,
-        "height": 8.67
+        "y1": 20.0,
+        "width": 25.32,
+        "height": 9.33
       },
       "meta": {
         "docling_label": "text",
@@ -6547,7 +6490,7 @@
       }
     },
     {
-      "id": "#/texts/391",
+      "id": "#/texts/388",
       "page": 12,
       "order": 15,
       "role": "paragraph",
@@ -6566,7 +6509,7 @@
       }
     },
     {
-      "id": "#/texts/392",
+      "id": "#/texts/389",
       "page": 12,
       "order": 16,
       "role": "paragraph",
@@ -6585,7 +6528,7 @@
       }
     },
     {
-      "id": "#/texts/396",
+      "id": "#/texts/393",
       "page": 13,
       "order": 1,
       "role": "paragraph",
@@ -6604,7 +6547,7 @@
       }
     },
     {
-      "id": "#/texts/397",
+      "id": "#/texts/394",
       "page": 13,
       "order": 2,
       "role": "caption",
@@ -6623,7 +6566,7 @@
       }
     },
     {
-      "id": "#/texts/398",
+      "id": "#/texts/395",
       "page": 13,
       "order": 3,
       "role": "caption",
@@ -6642,7 +6585,7 @@
       }
     },
     {
-      "id": "#/texts/399",
+      "id": "#/texts/396",
       "page": 13,
       "order": 4,
       "role": "paragraph",
@@ -6661,7 +6604,7 @@
       }
     },
     {
-      "id": "#/texts/400",
+      "id": "#/texts/397",
       "page": 13,
       "order": 5,
       "role": "paragraph",
@@ -6680,7 +6623,7 @@
       }
     },
     {
-      "id": "#/texts/401",
+      "id": "#/texts/398",
       "page": 13,
       "order": 6,
       "role": "paragraph",
@@ -6699,7 +6642,7 @@
       }
     },
     {
-      "id": "#/texts/402",
+      "id": "#/texts/399",
       "page": 13,
       "order": 7,
       "role": "paragraph",
@@ -6718,7 +6661,7 @@
       }
     },
     {
-      "id": "#/texts/403",
+      "id": "#/texts/400",
       "page": 13,
       "order": 8,
       "role": "paragraph",
@@ -6737,7 +6680,7 @@
       }
     },
     {
-      "id": "#/texts/407",
+      "id": "#/texts/404",
       "page": 14,
       "order": 1,
       "role": "paragraph",
@@ -6756,7 +6699,7 @@
       }
     },
     {
-      "id": "#/texts/408",
+      "id": "#/texts/405",
       "page": 14,
       "order": 2,
       "role": "paragraph",
@@ -6775,7 +6718,7 @@
       }
     },
     {
-      "id": "#/texts/409",
+      "id": "#/texts/406",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -6794,7 +6737,7 @@
       }
     },
     {
-      "id": "#/texts/410",
+      "id": "#/texts/407",
       "page": 14,
       "order": 4,
       "role": "paragraph",
@@ -6813,7 +6756,7 @@
       }
     },
     {
-      "id": "#/texts/411",
+      "id": "#/texts/408",
       "page": 14,
       "order": 5,
       "role": "heading",
@@ -6832,7 +6775,7 @@
       }
     },
     {
-      "id": "#/texts/412",
+      "id": "#/texts/409",
       "page": 14,
       "order": 6,
       "role": "paragraph",
@@ -6851,7 +6794,7 @@
       }
     },
     {
-      "id": "#/texts/413",
+      "id": "#/texts/410",
       "page": 14,
       "order": 7,
       "role": "paragraph",
@@ -6870,7 +6813,7 @@
       }
     },
     {
-      "id": "#/texts/414",
+      "id": "#/texts/411",
       "page": 14,
       "order": 8,
       "role": "heading",
@@ -6889,7 +6832,7 @@
       }
     },
     {
-      "id": "#/texts/415",
+      "id": "#/texts/412",
       "page": 14,
       "order": 9,
       "role": "paragraph",
@@ -6908,7 +6851,7 @@
       }
     },
     {
-      "id": "#/texts/416",
+      "id": "#/texts/413",
       "page": 14,
       "order": 10,
       "role": "heading",
@@ -6927,7 +6870,7 @@
       }
     },
     {
-      "id": "#/texts/417",
+      "id": "#/texts/414",
       "page": 14,
       "order": 11,
       "role": "paragraph",
@@ -6946,7 +6889,7 @@
       }
     },
     {
-      "id": "#/texts/418",
+      "id": "#/texts/415",
       "page": 14,
       "order": 12,
       "role": "heading",
@@ -6965,7 +6908,7 @@
       }
     },
     {
-      "id": "#/texts/419",
+      "id": "#/texts/416",
       "page": 14,
       "order": 13,
       "role": "paragraph",
@@ -6984,7 +6927,7 @@
       }
     },
     {
-      "id": "#/texts/420",
+      "id": "#/texts/417",
       "page": 14,
       "order": 14,
       "role": "heading",
@@ -7003,7 +6946,7 @@
       }
     },
     {
-      "id": "#/texts/421",
+      "id": "#/texts/418",
       "page": 14,
       "order": 15,
       "role": "paragraph",
@@ -7022,7 +6965,7 @@
       }
     },
     {
-      "id": "#/texts/422",
+      "id": "#/texts/419",
       "page": 14,
       "order": 16,
       "role": "heading",
@@ -7041,7 +6984,7 @@
       }
     },
     {
-      "id": "#/texts/423",
+      "id": "#/texts/420",
       "page": 14,
       "order": 17,
       "role": "paragraph",
@@ -7060,7 +7003,7 @@
       }
     },
     {
-      "id": "#/texts/424",
+      "id": "#/texts/421",
       "page": 14,
       "order": 18,
       "role": "paragraph",
@@ -7079,7 +7022,7 @@
       }
     },
     {
-      "id": "#/texts/425",
+      "id": "#/texts/422",
       "page": 14,
       "order": 19,
       "role": "paragraph",
@@ -7098,7 +7041,7 @@
       }
     },
     {
-      "id": "#/texts/426",
+      "id": "#/texts/423",
       "page": 14,
       "order": 20,
       "role": "paragraph",
@@ -7117,7 +7060,7 @@
       }
     },
     {
-      "id": "#/texts/427",
+      "id": "#/texts/424",
       "page": 14,
       "order": 21,
       "role": "paragraph",
@@ -7136,7 +7079,7 @@
       }
     },
     {
-      "id": "#/texts/428",
+      "id": "#/texts/425",
       "page": 14,
       "order": 22,
       "role": "paragraph",
@@ -7155,7 +7098,7 @@
       }
     },
     {
-      "id": "#/texts/429",
+      "id": "#/texts/426",
       "page": 14,
       "order": 23,
       "role": "paragraph",
@@ -7174,7 +7117,7 @@
       }
     },
     {
-      "id": "#/texts/430",
+      "id": "#/texts/427",
       "page": 14,
       "order": 24,
       "role": "paragraph",
@@ -7193,7 +7136,7 @@
       }
     },
     {
-      "id": "#/texts/431",
+      "id": "#/texts/428",
       "page": 14,
       "order": 25,
       "role": "paragraph",
@@ -7212,7 +7155,7 @@
       }
     },
     {
-      "id": "#/texts/432",
+      "id": "#/texts/429",
       "page": 14,
       "order": 26,
       "role": "paragraph",
@@ -7231,7 +7174,7 @@
       }
     },
     {
-      "id": "#/texts/433",
+      "id": "#/texts/430",
       "page": 14,
       "order": 27,
       "role": "paragraph",
@@ -7250,7 +7193,7 @@
       }
     },
     {
-      "id": "#/texts/434",
+      "id": "#/texts/431",
       "page": 14,
       "order": 28,
       "role": "paragraph",
@@ -7269,7 +7212,7 @@
       }
     },
     {
-      "id": "#/texts/435",
+      "id": "#/texts/432",
       "page": 14,
       "order": 29,
       "role": "paragraph",
@@ -7288,7 +7231,7 @@
       }
     },
     {
-      "id": "#/texts/436",
+      "id": "#/texts/433",
       "page": 14,
       "order": 30,
       "role": "paragraph",
@@ -7307,7 +7250,7 @@
       }
     },
     {
-      "id": "#/texts/440",
+      "id": "#/texts/437",
       "page": 15,
       "order": 1,
       "role": "paragraph",
@@ -7326,7 +7269,7 @@
       }
     },
     {
-      "id": "#/texts/441",
+      "id": "#/texts/438",
       "page": 15,
       "order": 2,
       "role": "paragraph",
@@ -7345,7 +7288,7 @@
       }
     },
     {
-      "id": "#/texts/442",
+      "id": "#/texts/439",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -7364,7 +7307,7 @@
       }
     },
     {
-      "id": "#/texts/443",
+      "id": "#/texts/440",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -7383,7 +7326,7 @@
       }
     },
     {
-      "id": "#/texts/444",
+      "id": "#/texts/441",
       "page": 15,
       "order": 5,
       "role": "paragraph",
@@ -7402,7 +7345,7 @@
       }
     },
     {
-      "id": "#/texts/445",
+      "id": "#/texts/442",
       "page": 15,
       "order": 6,
       "role": "paragraph",
@@ -7421,7 +7364,7 @@
       }
     },
     {
-      "id": "#/texts/446",
+      "id": "#/texts/443",
       "page": 15,
       "order": 7,
       "role": "paragraph",
@@ -7440,7 +7383,7 @@
       }
     },
     {
-      "id": "#/texts/447",
+      "id": "#/texts/444",
       "page": 15,
       "order": 8,
       "role": "paragraph",
@@ -7459,7 +7402,7 @@
       }
     },
     {
-      "id": "#/texts/448",
+      "id": "#/texts/445",
       "page": 15,
       "order": 9,
       "role": "list_item",
@@ -7478,7 +7421,7 @@
       }
     },
     {
-      "id": "#/texts/449",
+      "id": "#/texts/446",
       "page": 15,
       "order": 10,
       "role": "list_item",
@@ -7497,7 +7440,7 @@
       }
     },
     {
-      "id": "#/texts/450",
+      "id": "#/texts/447",
       "page": 15,
       "order": 11,
       "role": "paragraph",
@@ -7516,7 +7459,7 @@
       }
     },
     {
-      "id": "#/texts/451",
+      "id": "#/texts/448",
       "page": 15,
       "order": 12,
       "role": "paragraph",
@@ -7535,7 +7478,7 @@
       }
     },
     {
-      "id": "#/texts/452",
+      "id": "#/texts/449",
       "page": 15,
       "order": 13,
       "role": "paragraph",
@@ -7554,7 +7497,7 @@
       }
     },
     {
-      "id": "#/texts/453",
+      "id": "#/texts/450",
       "page": 15,
       "order": 14,
       "role": "paragraph",
@@ -7573,7 +7516,7 @@
       }
     },
     {
-      "id": "#/texts/454",
+      "id": "#/texts/451",
       "page": 15,
       "order": 15,
       "role": "paragraph",
@@ -7592,7 +7535,7 @@
       }
     },
     {
-      "id": "#/texts/455",
+      "id": "#/texts/452",
       "page": 15,
       "order": 16,
       "role": "paragraph",
@@ -7611,7 +7554,7 @@
       }
     },
     {
-      "id": "#/texts/456",
+      "id": "#/texts/453",
       "page": 15,
       "order": 17,
       "role": "paragraph",
@@ -7630,7 +7573,7 @@
       }
     },
     {
-      "id": "#/texts/457",
+      "id": "#/texts/454",
       "page": 15,
       "order": 18,
       "role": "paragraph",
@@ -7649,7 +7592,7 @@
       }
     },
     {
-      "id": "#/texts/458",
+      "id": "#/texts/455",
       "page": 15,
       "order": 19,
       "role": "paragraph",
@@ -7668,7 +7611,7 @@
       }
     },
     {
-      "id": "#/texts/459",
+      "id": "#/texts/456",
       "page": 15,
       "order": 20,
       "role": "paragraph",
@@ -7687,7 +7630,7 @@
       }
     },
     {
-      "id": "#/texts/460",
+      "id": "#/texts/457",
       "page": 15,
       "order": 21,
       "role": "list_item",
@@ -7706,7 +7649,7 @@
       }
     },
     {
-      "id": "#/texts/461",
+      "id": "#/texts/458",
       "page": 15,
       "order": 22,
       "role": "paragraph",
@@ -7725,7 +7668,7 @@
       }
     },
     {
-      "id": "#/texts/462",
+      "id": "#/texts/459",
       "page": 15,
       "order": 23,
       "role": "paragraph",
@@ -7744,7 +7687,7 @@
       }
     },
     {
-      "id": "#/texts/463",
+      "id": "#/texts/460",
       "page": 15,
       "order": 24,
       "role": "paragraph",
@@ -7763,7 +7706,7 @@
       }
     },
     {
-      "id": "#/texts/464",
+      "id": "#/texts/461",
       "page": 15,
       "order": 25,
       "role": "paragraph",
@@ -7782,7 +7725,7 @@
       }
     },
     {
-      "id": "#/texts/465",
+      "id": "#/texts/462",
       "page": 15,
       "order": 26,
       "role": "paragraph",
@@ -7801,7 +7744,7 @@
       }
     },
     {
-      "id": "#/texts/466",
+      "id": "#/texts/463",
       "page": 15,
       "order": 27,
       "role": "paragraph",
@@ -7820,7 +7763,7 @@
       }
     },
     {
-      "id": "#/texts/467",
+      "id": "#/texts/464",
       "page": 15,
       "order": 28,
       "role": "paragraph",
@@ -7839,7 +7782,7 @@
       }
     },
     {
-      "id": "#/texts/468",
+      "id": "#/texts/465",
       "page": 15,
       "order": 29,
       "role": "paragraph",
@@ -7858,7 +7801,7 @@
       }
     },
     {
-      "id": "#/texts/469",
+      "id": "#/texts/466",
       "page": 15,
       "order": 30,
       "role": "paragraph",
@@ -7877,7 +7820,7 @@
       }
     },
     {
-      "id": "#/texts/470",
+      "id": "#/texts/467",
       "page": 15,
       "order": 31,
       "role": "paragraph",
@@ -7896,7 +7839,7 @@
       }
     },
     {
-      "id": "#/texts/471",
+      "id": "#/texts/468",
       "page": 15,
       "order": 32,
       "role": "paragraph",
@@ -7915,7 +7858,7 @@
       }
     },
     {
-      "id": "#/texts/472",
+      "id": "#/texts/469",
       "page": 15,
       "order": 33,
       "role": "heading",
@@ -7934,7 +7877,7 @@
       }
     },
     {
-      "id": "#/texts/473",
+      "id": "#/texts/470",
       "page": 15,
       "order": 34,
       "role": "paragraph",
@@ -7953,7 +7896,7 @@
       }
     },
     {
-      "id": "#/texts/474",
+      "id": "#/texts/471",
       "page": 15,
       "order": 35,
       "role": "paragraph",
@@ -7972,7 +7915,7 @@
       }
     },
     {
-      "id": "#/texts/475",
+      "id": "#/texts/472",
       "page": 15,
       "order": 36,
       "role": "paragraph",
@@ -7991,7 +7934,7 @@
       }
     },
     {
-      "id": "#/texts/476",
+      "id": "#/texts/473",
       "page": 15,
       "order": 37,
       "role": "paragraph",
@@ -8010,7 +7953,7 @@
       }
     },
     {
-      "id": "#/texts/477",
+      "id": "#/texts/474",
       "page": 15,
       "order": 38,
       "role": "paragraph",
@@ -8029,7 +7972,7 @@
       }
     },
     {
-      "id": "#/texts/479",
+      "id": "#/texts/476",
       "page": 15,
       "order": 39,
       "role": "paragraph",
@@ -8048,7 +7991,7 @@
       }
     },
     {
-      "id": "#/texts/483",
+      "id": "#/texts/480",
       "page": 16,
       "order": 1,
       "role": "paragraph",
@@ -8067,7 +8010,7 @@
       }
     },
     {
-      "id": "#/texts/484",
+      "id": "#/texts/481",
       "page": 16,
       "order": 2,
       "role": "paragraph",
@@ -8086,7 +8029,7 @@
       }
     },
     {
-      "id": "#/texts/486",
+      "id": "#/texts/483",
       "page": 16,
       "order": 3,
       "role": "paragraph",
@@ -8105,7 +8048,7 @@
       }
     },
     {
-      "id": "#/texts/487",
+      "id": "#/texts/484",
       "page": 16,
       "order": 4,
       "role": "paragraph",
@@ -8124,7 +8067,7 @@
       }
     },
     {
-      "id": "#/texts/488",
+      "id": "#/texts/485",
       "page": 16,
       "order": 5,
       "role": "paragraph",
@@ -8143,7 +8086,7 @@
       }
     },
     {
-      "id": "#/texts/489",
+      "id": "#/texts/486",
       "page": 16,
       "order": 6,
       "role": "heading",
@@ -8162,7 +8105,7 @@
       }
     },
     {
-      "id": "#/texts/490",
+      "id": "#/texts/487",
       "page": 16,
       "order": 7,
       "role": "paragraph",
@@ -8181,7 +8124,7 @@
       }
     },
     {
-      "id": "#/texts/491",
+      "id": "#/texts/488",
       "page": 16,
       "order": 8,
       "role": "paragraph",
@@ -8200,7 +8143,7 @@
       }
     },
     {
-      "id": "#/texts/493",
+      "id": "#/texts/490",
       "page": 16,
       "order": 9,
       "role": "paragraph",
@@ -8219,7 +8162,7 @@
       }
     },
     {
-      "id": "#/texts/494",
+      "id": "#/texts/491",
       "page": 16,
       "order": 10,
       "role": "paragraph",
@@ -8238,7 +8181,7 @@
       }
     },
     {
-      "id": "#/texts/495",
+      "id": "#/texts/492",
       "page": 16,
       "order": 11,
       "role": "paragraph",
@@ -8257,7 +8200,7 @@
       }
     },
     {
-      "id": "#/texts/497",
+      "id": "#/texts/494",
       "page": 16,
       "order": 12,
       "role": "paragraph",
@@ -8276,7 +8219,7 @@
       }
     },
     {
-      "id": "#/texts/498",
+      "id": "#/texts/495",
       "page": 16,
       "order": 13,
       "role": "heading",
@@ -8295,7 +8238,7 @@
       }
     },
     {
-      "id": "#/texts/499",
+      "id": "#/texts/496",
       "page": 16,
       "order": 14,
       "role": "paragraph",
@@ -8314,7 +8257,7 @@
       }
     },
     {
-      "id": "#/texts/503",
+      "id": "#/texts/500",
       "page": 17,
       "order": 1,
       "role": "caption",
@@ -8333,7 +8276,7 @@
       }
     },
     {
-      "id": "#/texts/504",
+      "id": "#/texts/501",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -8352,7 +8295,7 @@
       }
     },
     {
-      "id": "#/texts/508",
+      "id": "#/texts/505",
       "page": 18,
       "order": 1,
       "role": "paragraph",
@@ -8371,7 +8314,7 @@
       }
     },
     {
-      "id": "#/texts/509",
+      "id": "#/texts/506",
       "page": 18,
       "order": 2,
       "role": "caption",
@@ -8390,7 +8333,7 @@
       }
     },
     {
-      "id": "#/texts/513",
+      "id": "#/texts/510",
       "page": 19,
       "order": 1,
       "role": "paragraph",
@@ -8409,7 +8352,7 @@
       }
     },
     {
-      "id": "#/texts/514",
+      "id": "#/texts/511",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -8428,18 +8371,18 @@
       }
     },
     {
-      "id": "#/texts/515",
+      "id": "#/texts/512",
       "page": 19,
       "order": 3,
       "role": "paragraph",
       "text": "20 -",
       "bbox": {
-        "x0": 19.62,
-        "y0": 60.2,
-        "x1": 36.34,
-        "y1": 68.93,
-        "width": 16.72,
-        "height": 8.73
+        "x0": 19.11,
+        "y0": 59.8,
+        "x1": 36.8,
+        "y1": 69.32,
+        "width": 17.69,
+        "height": 9.52
       },
       "meta": {
         "docling_label": "text",
@@ -8447,7 +8390,7 @@
       }
     },
     {
-      "id": "#/texts/516",
+      "id": "#/texts/513",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -8466,18 +8409,18 @@
       }
     },
     {
-      "id": "#/texts/517",
+      "id": "#/texts/514",
       "page": 19,
       "order": 5,
       "role": "paragraph",
       "text": "15 -",
       "bbox": {
-        "x0": 20.35,
-        "y0": 112.43,
-        "x1": 34.88,
-        "y1": 119.68,
-        "width": 14.53,
-        "height": 7.25
+        "x0": 20.13,
+        "y0": 112.68,
+        "x1": 35.07,
+        "y1": 119.72,
+        "width": 14.94,
+        "height": 7.04
       },
       "meta": {
         "docling_label": "text",
@@ -8485,7 +8428,7 @@
       }
     },
     {
-      "id": "#/texts/518",
+      "id": "#/texts/515",
       "page": 19,
       "order": 6,
       "role": "paragraph",
@@ -8504,7 +8447,7 @@
       }
     },
     {
-      "id": "#/texts/519",
+      "id": "#/texts/516",
       "page": 19,
       "order": 7,
       "role": "paragraph",
@@ -8523,7 +8466,7 @@
       }
     },
     {
-      "id": "#/texts/520",
+      "id": "#/texts/517",
       "page": 19,
       "order": 8,
       "role": "paragraph",
@@ -8542,26 +8485,26 @@
       }
     },
     {
-      "id": "#/texts/521",
+      "id": "#/texts/518",
       "page": 19,
       "order": 9,
       "role": "paragraph",
-      "text": "10 -",
+      "text": "10",
       "bbox": {
         "x0": 19.62,
-        "y0": 164.49,
-        "x1": 34.16,
+        "y0": 164.65,
+        "x1": 31.98,
         "y1": 171.18,
-        "width": 14.54,
-        "height": 6.69
+        "width": 12.36,
+        "height": 6.53
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "10 -"
+        "docling_orig": "10"
       }
     },
     {
-      "id": "#/texts/522",
+      "id": "#/texts/519",
       "page": 19,
       "order": 10,
       "role": "paragraph",
@@ -8580,7 +8523,7 @@
       }
     },
     {
-      "id": "#/texts/523",
+      "id": "#/texts/520",
       "page": 19,
       "order": 11,
       "role": "paragraph",
@@ -8599,9 +8542,28 @@
       }
     },
     {
-      "id": "#/texts/524",
+      "id": "#/texts/521",
       "page": 19,
       "order": 12,
+      "role": "paragraph",
+      "text": "0",
+      "bbox": {
+        "x0": 23.98,
+        "y0": 266.59,
+        "x1": 29.8,
+        "y1": 273.85,
+        "width": 5.82,
+        "height": 7.26
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0"
+      }
+    },
+    {
+      "id": "#/texts/522",
+      "page": 19,
+      "order": 13,
       "role": "paragraph",
       "text": "0.50",
       "bbox": {
@@ -8618,9 +8580,9 @@
       }
     },
     {
-      "id": "#/texts/525",
+      "id": "#/texts/523",
       "page": 19,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "|",
       "bbox": {
@@ -8637,9 +8599,9 @@
       }
     },
     {
-      "id": "#/texts/526",
+      "id": "#/texts/524",
       "page": 19,
-      "order": 14,
+      "order": 15,
       "role": "caption",
       "text": "Figure C3: Distribution of running times for test cases.",
       "bbox": {
@@ -8656,9 +8618,9 @@
       }
     },
     {
-      "id": "#/texts/527",
+      "id": "#/texts/525",
       "page": 19,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "2",
       "bbox": {
@@ -8675,18 +8637,18 @@
       }
     },
     {
-      "id": "#/texts/528",
+      "id": "#/texts/526",
       "page": 19,
-      "order": 16,
+      "order": 17,
       "role": "paragraph",
       "text": "6",
       "bbox": {
         "x0": 207.12,
-        "y0": 273.44,
+        "y0": 272.72,
         "x1": 211.48,
         "y1": 279.97,
         "width": 4.36,
-        "height": 6.53
+        "height": 7.25
       },
       "meta": {
         "docling_label": "text",
@@ -8694,17 +8656,17 @@
       }
     },
     {
-      "id": "#/texts/529",
+      "id": "#/texts/527",
       "page": 19,
-      "order": 17,
+      "order": 18,
       "role": "paragraph",
       "text": "8",
       "bbox": {
-        "x0": 259.45,
+        "x0": 260.17,
         "y0": 274.89,
-        "x1": 264.53,
+        "x1": 265.26,
         "y1": 281.42,
-        "width": 5.08,
+        "width": 5.09,
         "height": 6.53
       },
       "meta": {
@@ -8713,9 +8675,9 @@
       }
     },
     {
-      "id": "#/texts/530",
+      "id": "#/texts/528",
       "page": 19,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "Time (seconds)",
       "bbox": {
@@ -8732,9 +8694,9 @@
       }
     },
     {
-      "id": "#/texts/531",
+      "id": "#/texts/529",
       "page": 19,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -8751,9 +8713,9 @@
       }
     },
     {
-      "id": "#/texts/532",
+      "id": "#/texts/530",
       "page": 19,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "12",
       "bbox": {
@@ -8770,9 +8732,9 @@
       }
     },
     {
-      "id": "#/texts/533",
+      "id": "#/texts/531",
       "page": 19,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "14",
       "bbox": {
@@ -8789,9 +8751,9 @@
       }
     },
     {
-      "id": "#/texts/534",
+      "id": "#/texts/532",
       "page": 19,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "16",
       "bbox": {
@@ -8808,9 +8770,9 @@
       }
     },
     {
-      "id": "#/texts/535",
+      "id": "#/texts/533",
       "page": 19,
-      "order": 23,
+      "order": 24,
       "role": "paragraph",
       "text": "0.55",
       "bbox": {
@@ -8827,9 +8789,9 @@
       }
     },
     {
-      "id": "#/texts/536",
+      "id": "#/texts/534",
       "page": 19,
-      "order": 24,
+      "order": 25,
       "role": "paragraph",
       "text": "0.60",
       "bbox": {
@@ -8846,18 +8808,18 @@
       }
     },
     {
-      "id": "#/texts/537",
+      "id": "#/texts/535",
       "page": 19,
-      "order": 25,
+      "order": 26,
       "role": "paragraph",
       "text": "0.65",
       "bbox": {
-        "x0": 203.49,
+        "x0": 202.76,
         "y0": 269.5,
         "x1": 220.2,
-        "y1": 281.84,
-        "width": 16.71,
-        "height": 12.34
+        "y1": 282.57,
+        "width": 17.44,
+        "height": 13.07
       },
       "meta": {
         "docling_label": "text",
@@ -8865,9 +8827,9 @@
       }
     },
     {
-      "id": "#/texts/538",
+      "id": "#/texts/536",
       "page": 19,
-      "order": 26,
+      "order": 27,
       "role": "paragraph",
       "text": "0.70",
       "bbox": {
@@ -8884,18 +8846,18 @@
       }
     },
     {
-      "id": "#/texts/539",
+      "id": "#/texts/537",
       "page": 19,
-      "order": 27,
+      "order": 28,
       "role": "paragraph",
       "text": "Scaled Jacobian",
       "bbox": {
         "x0": 234.01,
         "y0": 283.3,
         "x1": 288.52,
-        "y1": 291.34,
+        "y1": 290.67,
         "width": 54.51,
-        "height": 8.04
+        "height": 7.37
       },
       "meta": {
         "docling_label": "text",
@@ -8903,9 +8865,9 @@
       }
     },
     {
-      "id": "#/texts/540",
+      "id": "#/texts/538",
       "page": 19,
-      "order": 28,
+      "order": 29,
       "role": "paragraph",
       "text": "0.75",
       "bbox": {
@@ -8922,9 +8884,9 @@
       }
     },
     {
-      "id": "#/texts/541",
+      "id": "#/texts/539",
       "page": 19,
-      "order": 29,
+      "order": 30,
       "role": "paragraph",
       "text": "0.80",
       "bbox": {
@@ -8941,9 +8903,9 @@
       }
     },
     {
-      "id": "#/texts/542",
+      "id": "#/texts/540",
       "page": 19,
-      "order": 30,
+      "order": 31,
       "role": "paragraph",
       "text": "0.85",
       "bbox": {
@@ -8960,18 +8922,18 @@
       }
     },
     {
-      "id": "#/texts/543",
+      "id": "#/texts/541",
       "page": 19,
-      "order": 31,
+      "order": 32,
       "role": "paragraph",
       "text": "0.90",
       "bbox": {
-        "x0": 470.2,
+        "x0": 469.48,
         "y0": 270.22,
         "x1": 487.65,
-        "y1": 281.84,
-        "width": 17.45,
-        "height": 11.62
+        "y1": 282.57,
+        "width": 18.17,
+        "height": 12.35
       },
       "meta": {
         "docling_label": "text",
@@ -8979,9 +8941,9 @@
       }
     },
     {
-      "id": "#/texts/544",
+      "id": "#/texts/542",
       "page": 19,
-      "order": 32,
+      "order": 33,
       "role": "caption",
       "text": "Figure C4: Distribution of scaled Jacobian values for test cases.",
       "bbox": {
@@ -8998,11 +8960,11 @@
       }
     },
     {
-      "id": "#/texts/547",
+      "id": "#/texts/545",
       "page": 20,
       "order": 1,
       "role": "paragraph",
-      "text": "25 -",
+      "text": "25-",
       "bbox": {
         "x0": 16.75,
         "y0": 19.65,
@@ -9013,11 +8975,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "25 -"
+        "docling_orig": "25-"
       }
     },
     {
-      "id": "#/texts/548",
+      "id": "#/texts/546",
       "page": 20,
       "order": 2,
       "role": "paragraph",
@@ -9036,7 +8998,7 @@
       }
     },
     {
-      "id": "#/texts/549",
+      "id": "#/texts/547",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -9044,9 +9006,9 @@
       "bbox": {
         "x0": 16.75,
         "y0": 120.8,
-        "x1": 30.58,
+        "x1": 29.86,
         "y1": 127.35,
-        "width": 13.83,
+        "width": 13.11,
         "height": 6.55
       },
       "meta": {
@@ -9055,7 +9017,7 @@
       }
     },
     {
-      "id": "#/texts/550",
+      "id": "#/texts/548",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -9074,7 +9036,7 @@
       }
     },
     {
-      "id": "#/texts/551",
+      "id": "#/texts/549",
       "page": 20,
       "order": 5,
       "role": "paragraph",
@@ -9083,9 +9045,9 @@
         "x0": 18.2,
         "y0": 169.56,
         "x1": 33.5,
-        "y1": 177.0,
+        "y1": 177.67,
         "width": 15.3,
-        "height": 7.44
+        "height": 8.11
       },
       "meta": {
         "docling_label": "text",
@@ -9093,18 +9055,18 @@
       }
     },
     {
-      "id": "#/texts/552",
+      "id": "#/texts/550",
       "page": 20,
       "order": 6,
       "role": "paragraph",
       "text": "5-",
       "bbox": {
         "x0": 22.57,
-        "y0": 219.04,
+        "y0": 219.77,
         "x1": 33.5,
         "y1": 227.05,
         "width": 10.93,
-        "height": 8.01
+        "height": 7.28
       },
       "meta": {
         "docling_label": "text",
@@ -9112,7 +9074,7 @@
       }
     },
     {
-      "id": "#/texts/553",
+      "id": "#/texts/551",
       "page": 20,
       "order": 7,
       "role": "caption",
@@ -9131,7 +9093,7 @@
       }
     },
     {
-      "id": "#/texts/554",
+      "id": "#/texts/552",
       "page": 20,
       "order": 8,
       "role": "paragraph",
@@ -9150,7 +9112,7 @@
       }
     },
     {
-      "id": "#/texts/555",
+      "id": "#/texts/553",
       "page": 20,
       "order": 9,
       "role": "paragraph",
@@ -9169,7 +9131,7 @@
       }
     },
     {
-      "id": "#/texts/556",
+      "id": "#/texts/554",
       "page": 20,
       "order": 10,
       "role": "paragraph",
@@ -9188,7 +9150,7 @@
       }
     },
     {
-      "id": "#/texts/557",
+      "id": "#/texts/555",
       "page": 20,
       "order": 11,
       "role": "paragraph",
@@ -9207,7 +9169,7 @@
       }
     },
     {
-      "id": "#/texts/558",
+      "id": "#/texts/556",
       "page": 20,
       "order": 12,
       "role": "paragraph",
@@ -9226,7 +9188,7 @@
       }
     },
     {
-      "id": "#/texts/559",
+      "id": "#/texts/557",
       "page": 20,
       "order": 13,
       "role": "footnote",
@@ -9244,5 +9206,27 @@
         "docling_orig": "© The Author(s) 2025. Published by Oxford University Press on behalf of the Society for Computational Design and Engineering. This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License ( https: creativecommons.org licenses by-nc 4.0 ), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact reprints@oup.com for reprints and translation rights for reprints. All other permissions can be obtained through our RightsLink service via the Permissions link on the article page on our site-for further information please contact journals.permissions@oup.com"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling"
+  }
 }

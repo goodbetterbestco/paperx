@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
+  "pdf_path": "stepview/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
   "page_count": 16,
   "page_sizes_pt": [
     {
@@ -184,7 +184,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 114.8,
@@ -203,7 +203,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We present an O ( n log n )-time algorithm that determines whether a given planar n -gon is weakly simple. This improves upon an O ( n 2 log n )-time algorithm by Chang, Erickson, and Xu [4]. Weakly simple polygons are required as input for several geometric algorithms. As such, how to recognize simple or weakly simple polygons is a fundamental question.",
       "bbox": {
         "x0": 90.23,
@@ -222,7 +222,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "1998 ACM Subject Classification I.3.5 Computational Geometry and Object Modeling",
       "bbox": {
         "x0": 90.45,
@@ -241,7 +241,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords and phrases weakly simple polygon, crossing",
       "bbox": {
         "x0": 90.71,
@@ -260,7 +260,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Digital Object Identifier 10.4230 LIPIcs.SoCG.2016.8",
       "bbox": {
         "x0": 90.71,
@@ -279,7 +279,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 95.67,
@@ -298,7 +298,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A polygon is simple if it has distinct vertices and interior-disjoint edges that do not pass through vertices. Geometric algorithms are often designed for simple polygons, but many also work for degenerate polygons that do not 'self-cross.' A polygon with at least three vertices is weakly simple if for every ε > 0, the vertices can be perturbed by at most ε to obtain a simple polygon. Such polygons arise naturally in numerous applications, e.g., for modeling planar networks or as the geodesic hull of points within a simple polygon (Fig. 1).",
       "bbox": {
         "x0": 90.33,
@@ -317,7 +317,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Several definitions have been proposed for weakly simple polygons, each formalizing the intuition that a weakly simple polygon does not cross itself. Some of these definitions were unnecessarily restrictive or incorrect; see [4] for a detailed discussion. Ribó Mor [7] proved that a weakly simple polygon with at least three vertices can be perturbed into a simple polygon continuously while preserving the lengths of its edges, and maintaining that no two edges properly cross. Chang et al. [4] gave an equivalent definition for simple polygons in terms of the Fréchet distance (see Section 2), in which a polygon is perturbed into a simple closed curve. The latter definition is particularly useful for recognizing weakly simple polygons. Apart from perturbing vertices, it allows transforming edges into polylines (by subdividing the edges with Steiner points which may be perturbed). The perturbation of a vertex incurs only local changes, and need not affect the neighborhood of adjacent vertices.",
       "bbox": {
         "x0": 90.45,
@@ -336,7 +336,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "It is easy to decide whether an n -gon is simple in O ( n log n ) time by a sweepline algorithm [8]. Chazelle's triangulation algorithm recognizes simple polygons in O ( n ) time, because it only produces a triangulation if the input is simple [5]. Recognizing weakly simple polygons is more subtle. Cortese et al. [6] achieved this in O ( n 3 )-time. Chang et al. [4] improved this to O ( n 2 log n ) in general; and to O ( n log n ) for several special cases. They",
       "bbox": {
         "x0": 90.71,
@@ -374,7 +374,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "© Hugo A. Akitaya, Greg Aloupis, Jeff Erickson, and Csaba D. Tóth;",
       "bbox": {
         "x0": 134.27,
@@ -393,7 +393,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "licensed under Creative Commons License CC-BY",
       "bbox": {
         "x0": 134.27,
@@ -412,7 +412,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Editors: Sándor Fekete and Anna Lubiw; Article No. 8; pp. 8:1-8:16",
       "bbox": {
         "x0": 90.71,
@@ -431,7 +431,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Leibniz International Proceedings in Informatics",
       "bbox": {
         "x0": 158.44,

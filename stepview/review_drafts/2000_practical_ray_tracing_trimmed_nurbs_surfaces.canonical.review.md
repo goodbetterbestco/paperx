@@ -1,14 +1,16 @@
 # Practical Ray Tracing of Trimmed NURBS Surfaces
 
-William Martin, Elaine Cohen, Russell Fish, Peter Shirley
+William Martin, Elaine Cohen, Russell Fish, William Martin Elaine Cohen, Russell Fish Peter Shirley, Peter Shirley
 
-Computer Science Department 50 S. Central Campus Drive University of Utah Salt Lake City, UT 84112 [ wmartin | cohen | fish | shirley ]
+Computer Science Department
+S. Central Campus Drive
+Computer Science Department 50 S. Central Campus Drive University of Utah Salt Lake City, UT 84112 [ wmartin | cohen | fish | shirley ] University of Utah
 
 ## Abstract
 
 A system is presented for ray tracing trimmed NURBS surfaces. While approaches to components are drawn largely from existing literature, their combination within a single framework is novel. This paper also differs from prior work in that the details of an efficient implementation are fleshed out. Throughout, emphasis is placed on practical methods suitable to implementation in general ray tracing programs.
 
-## Introduction
+## 1 Introduction
 
 The modeling community has embraced trimmed NURBS as a primitive of choice. The result has been a rapid proliferation in the number of models utilizing this representation. At the same time, ray tracing has become a popular method for generating computer graphics images of geometric models. Surprisingly, most ray tracing programs do not support the direct use of untessellated trimmed NURBS surfaces. The direct use of untessellated NURBS is desirable because tessellated models increase memory use which can be detrimental to runtime efficiency on modern architectures. In addition, tessellating models can result in visual artifacts, particularly in models with transparent components.
 
@@ -16,15 +18,11 @@ Although several methods of generating ray-NURBS intersections have appeared in 
 
 Our approach is outlined in Figure 1. We create a set of boxes that bound the underlying surface over a given parametric range. The ray is tested for intersection with these boxes, and for a particular box that is hit, a parametric value within the box is used to initiate root finding. The key issues are determining which boxes to use, how to efficiently manage computing intersections with them, how to do the root finding, and how to efficiently evaluate the geometry for a given parametric value.
 
-We use refinement to generate the bounding volume hierarchy, which results in a shallower tree depth than other subdivisionbased methods. We also use an efficient refinement-based point evaluation method to speed root-finding. These choices turn
+We use refinement to generate the bounding volume hierarchy, which results in a shallower tree depth than other subdivisionbased methods. We also use an efficient refinement-based point evaluation method to speed root-finding. These choices turn out to be both reasonable to implement and efficient.
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-1-p001.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-1-p001.png)
 
 *Figure 1: The basic method we use to ﬁnd the intersection of a ray and a parametric object shown in a 2D example. Left: The ray is tested against a series of axis-aligned bounding boxes. Right: For each box hit an initial guess is generated in the parametric interval the box bounds. Root ﬁnding is then iteratively applied until a convergence or a divergence criterion is met. find the intersection of a ray and a parametric object shown in a 2D example. Left: The ray is tested against a series of axis-aligned bounding boxes. Right: For each box hit an initial guess is generated in the parametric interval the box bounds. Root finding is then iteratively applied until a convergence or a divergence criterion is met.*
-
-1
-
-5 4 3 2 out to be both reasonable to implement and efficient.
 
 In Section 2 we present the bulk of our method, in particular how to create a hierarchy of bounding boxes and how to perform root finding within a single box to compute an intersection with an untrimmed NURBS surface. In Section 3 we describe how to extend the method to trimmed NURBS surfaces. Finally in Section 4 we show some results from our implementation of the algorithm.
 
@@ -49,7 +47,7 @@ $$
 $$
 
 $$
-\begin{aligned} & B_{j, k_{u}}(u) \equiv\left\{\begin{array}{cl} 1 & \text { if } k_{u}=1 \text { and } u \in\left[u_{j}, u_{j+1}\right) \\ 0 & \text { if } k_{u}=1 \text { and } u \notin\left[u_{j}, u_{j+1}\right) \\ \frac{u-u_{j}}{u_{j+k_{u}-1}-u_{j}} B_{j, k_{u}-1}(u)+\frac{u_{j+k_{u}}-u}{u_{j+k_{u}}-u_{j+1}} B_{j+1, k_{u}-1}(u) & \text { otherwise } \end{array}\right. \\ & B_{i, k_{v}}(v) \equiv\left\{\begin{array}{cl} 1 & \text { if } k_{v}=1 \text { and } v \in\left[v_{i}, v_{i+1}\right) \\ 0 & \text { if } k_{v}=1 \text { and } v \notin\left[v_{i}, v_{i+1}\right) \\ \frac{v-v_{i}}{v_{i+k_{v}-1}-v_{i}} B_{i, k_{v}-1}(v)+\frac{v_{i+k_{v}}-v}{v_{i+k_{v}}-v_{i+1}} B_{i+1, k_{v}-1}(v) & \text { otherwise. } \end{array}\right. \end{aligned}
+\begin{aligned} B_{j, k_{u}}(u) & \equiv\left\{\begin{array}{cl} 1 & \text { if } k_{u}=1 \text { and } u \in\left[u_{j}, u_{j+1}\right) \\ 0 & \text { if } k_{u}=1 \text { and } u \notin\left[u_{j}, u_{j+1}\right) \\ \frac{u-u_{j}}{u_{j+k_{u}-1}-u_{j}} B_{j, k_{u}-1}(u)+\frac{u_{j+k_{u}}-u}{u_{j+k_{u}}-u_{j+1}} B_{j+1, k_{u}-1}(u) & \text { otherwise } \\ 1 & \text { if } k_{v}=1 \text { and } v \in\left[v_{i}, v_{i+1}\right) \\ 0 & \text { if } k_{v}=1 \text { and } v \notin\left[v_{i}, v_{i+1}\right) \end{array}\right. \\ B_{i, k_{v}}(v) & \text { otherwise. } \end{aligned}
 $$
 
 Such a surface \(\mathbf{S}\) is defined over the domain \(\left[u_{k_{u}-1}, u_{N}\right) \times\left[v_{k_{v}-1}, v_{M}\right)\). Each non-empty subinterval \(\left[u_{j}, u_{j+1}\right) \times\left[v_{i}, v_{i+1}\right)\) corresponds to a surface patch.
@@ -57,7 +55,7 @@ Such a surface \(\mathbf{S}\) is defined over the domain \(\left[u_{k_{u}-1}, u_
 In this discussion, we assume that the reader has a basic familiarity with B-Splines. For further introduction, please refer to [2, 7, 10, 20]. [2, 7, 10, 20]. Following the development by Kajiya [12], we rewrite the ray \(\mathbf{r}\) as the intersection of two planes, \(\left\{\mathbf{p} \mid \mathbf{P}_{\mathbf{1}} \cdot(\mathbf{p}, 1)=0\right\}\) and
 
 $$
-\mathbf{N}_{\mathbf{1}}= \begin{cases}\left(\hat{\mathbf{d}}_{y},-\hat{\mathbf{d}}_{x}, 0\right) & \text { if }\left|\hat{\mathbf{d}}_{x}\right|>\left|\hat{\mathbf{d}}_{y}\right| \text { and }\left|\hat{\mathbf{d}}_{x}\right|>\left|\hat{\mathbf{d}}_{z}\right| \\ \left(0, \hat{\mathbf{d}}_{z},-\hat{\mathbf{d}}_{y}\right) & \text { otherwise. }\end{cases}
+\mathbf{N}_{\mathbf{1}}= \begin{cases}\left(\hat{\mathbf{d}}_{y},-\hat{\mathbf{d}}_{x}, 0\right) & \text { if }\left|\hat{\mathbf{d}}_{x}\right|>\left|\hat{\mathbf{d}}_{y}\right| \text { and }\left|\hat{\mathbf{d}}_{x}\right|>\left|\hat{\mathbf{d}}_{z}\right| \\ \left(0, \hat{\mathbf{d}}_{z},-\hat{\mathbf{d}}_{y}\right) & \text { otherwise } .\end{cases}
 $$
 
 Thus, \(\mathbf{N}_{\mathbf{1}}\) is always perpendicular to the ray direction \(\hat{\mathbf{d}}\), as desired. \(\mathbf{N}_{\mathbf{2}}\) is simply
@@ -69,11 +67,11 @@ $$
 Since both planes contain the origin \(\mathbf{o}\), it must be the case that \(\mathbf{P}_{\mathbf{1}} \cdot(\mathbf{o}, 1)=\mathbf{P}_{\mathbf{2}} \cdot(\mathbf{o}, 1)=0\). Thus,
 
 $$
-\begin{aligned} d_{1} & =-\mathbf{N}_{\mathbf{1}} \cdot \mathbf{o} \\ d_{2} & =-\mathbf{N}_{\mathbf{2}} \cdot \mathbf{o} \end{aligned}
+\begin{aligned} d_{1} & =-\mathbf{N}_{\mathbf{1}} \cdot \mathbf{o} \\ d_{2} & =-\mathbf{N}_{\mathbf{2}} \cdot \mathbf{o} . \end{aligned}
 $$
 
 $$
-An intersection point on the surface \( \mathbf{S} \) must satisfy the conditions
+An intersection point on the surface \(\mathbf{S}\) must satisfy the conditions
 $$
 
 $$
@@ -99,13 +97,13 @@ The second approach we have considered is curvature-based refinement of the knot
 Suppose we have a B-spline curve \(\mathbf{c}(t)\). An oracle for determining the extent to which the span \(\left[t_{i}, t_{i+1}\right)\) should be refined is given by the product of its maximum curvature and its length over that span. Long curve segments should be divided in order to ensure that the initial guess for the numerical solver is reasonably close to the actual root. High curvature regions should be split to avoid multiple roots. As we are utilizing maximum curvature as a measure of flatness, our heuristic will be overly conservative for curves other than circles. The heuristic value for the number of knots to add to the current span is given by
 
 $$
-n_{1}=C_{1} * \max _{\left[t_{i}, t_{i+1}\right)}\{\text { curvature }(\mathbf{c}(t))\} * \operatorname{arclen}(\mathbf{c}(t))_{\left[t_{i}, t_{i+1}\right)}
+n_{1}=C_{1} * \max _{\left[t_{i}, t_{i+1}\right)}\{\operatorname{curvature}(\mathbf{c}(t))\} * \operatorname{arclen}(\mathbf{c}(t))_{\left[t_{i}, t_{i+1}\right)}
 $$
 
 We also choose to bound the deviation of the curve from its linear approximation. This notion will imbue our heuristic with scale dependence. Thus, for example, large circles will be broken into more pieces than small circles. Erring again on the conservative side, suppose our curve span is a circle with radius \(r\), which we are approximating with linear segments. A measure of the accuracy of the approximation can be phrased in terms of a chord height \(h\) which gives the maximum deviation of the facets from the circle. Observing Figure 2, it can be seen that
 
 $$
-\begin{aligned} h & =r-d \\ & =r-r \cos \frac{\theta}{2} \\ & \approx r\left(1-\left(1-\frac{\theta^{2}}{8}\right)\right) \\ & =\frac{r \theta^{2}}{8} \end{aligned}
+\begin{aligned} h & =r-d \\ & =r-r \cos \frac{\theta}{2} \\ & \approx r\left(1-\left(1-\frac{\theta^{2}}{8}\right)\right) \\ & =\frac{r \theta^{2}}{8} . \end{aligned}
 $$
 
 Thus, we have
@@ -118,7 +116,7 @@ $$
 \begin{aligned} \operatorname{curvature}(\mathbf{c}(t)) & =\frac{\left|\mathbf{c}^{\prime \prime}(t) \times \mathbf{c}^{\prime}(t)\right|}{\left|\mathbf{c}^{\prime}(t)\right|^{3}} \\ & =\frac{\left|\mathbf{c}^{\prime \prime}(t)\right|\left|\mathbf{c}^{\prime}(t)\right||\sin \theta|}{\left|\mathbf{c}^{\prime}(t)\right|^{3}} \\ & =\frac{\left|\mathbf{c}^{\prime \prime}(t)\right||\sin \theta|}{\left|\mathbf{c}^{\prime}(t)\right|^{2}} \\ & \leq \frac{\left|\mathbf{c}^{\prime \prime}(t)\right|}{\left|\mathbf{c}^{\prime}(t)\right|^{2}} \end{aligned}
 $$
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-2-p004.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-2-p004.png)
 
 *Figure 2: Illustration of the chord height tolerance heuristic.*
 
@@ -163,7 +161,7 @@ $$
 $$
 
 $$
-The second derivative over \( \left[t_{i}, t_{i+1}\right) \) is given by
+The second derivative over \(\left[t_{i}, t_{i+1}\right)\) is given by
 $$
 
 $$
@@ -196,7 +194,7 @@ A point which we do not wish to sweep under the carpet is that the selection of 
 
 We build a bounding volume hierarchy using the points of the refined control mesh we found in the previous section. The root and internal nodes of the tree will contain simple primitives which bound portions of the underlying surface. The leaves of the tree are special objects, which we call interval objects, are used to provide an initial guess (in our case, the midpoint of the bracketing parametric interval) to the Newton iteration. We will now examine the specifics in more detail.
 
-The convex hull property of B-spline surfaces guarantees that the surface is contained in the convex hull of its control mesh. As a result, any convex objects which bound the mesh will bound the underlying surface. We can actually make a stronger claim; because we closed the knot intervals in the last section [made the multiplicity of the internal knots \(k-1\) ], each non empty interval \(\left[u_{i}, u_{i+1}\right) \times\left[v_{j}, v_{j+1}\right)\) corresponds to a surface patch which is completely contained in the convex hull of its corresponding mesh points. Thus, if we produce bounding volumes for each of these intervals, we will have completely enclosed the surface. We form the tree by sorting the volumes according to the axis direction which has greatest extent across the bounding volumes, splitting the data in half, and repeating the process.
+The convex hull property of B-spline surfaces guarantees that the surface is contained in the convex hull of its control mesh. As a result, any convex objects which bound the mesh will bound the underlying surface. We can actually make a stronger claim; because we closed the knot intervals in the last section [made the multiplicity of the internal knots \(k-1\) ], each nonempty interval \(\left[u_{i}, u_{i+1}\right) \times\left[v_{j}, v_{j+1}\right)\) corresponds to a surface patch which is completely contained in the convex hull of its corresponding mesh points. Thus, if we produce bounding volumes for each of these intervals, we will have completely enclosed the surface. We form the tree by sorting the volumes according to the axis direction which has greatest extent across the bounding volumes, splitting the data in half, and repeating the process.
 
 There remains the dilemma of which primitive to use as a bounding volume. Many different objects have been tried including spheres [8], axis-aligned boxes [8, 25, 28], oriented boxes [8], and parallelepipeds [3]. There is generally a tradeoff between speed of intersection and tightness of fit. The analysis is further complicated by the fact that bounding volume performance depends on the type of scene being rendered.
 
@@ -211,7 +209,7 @@ A simple ray-box intersection routine is intuitive, and so we omit its discussio
 Given a ray as the intersection of planes \(\mathbf{P}_{\mathbf{1}}=\left(\mathbf{N}_{\mathbf{1}}, d_{1}\right)\) and \(\mathbf{P}_{\mathbf{2}}=\left(\mathbf{N}_{\mathbf{2}}, d_{2}\right)\), our task is to solve for the roots ( \(u_{*}, v_{*}\) ) of
 
 $$
-\mathbf{F}(u, v)=\binom{\mathbf{N}_{\mathbf{1}} \cdot \mathbf{S}(u, v)+d_{1}}{\mathbf{N}_{\mathbf{2}} \cdot \mathbf{S}(u, v)+d_{2}} .
+\mathbf{F}(u, v)=\binom{\mathbf{N}_{\mathbf{1}} \cdot \mathbf{S}(u, v)+d_{1}}{\mathbf{N}_{\mathbf{2}} \cdot \mathbf{S}(u, v)+d_{2}}
 $$
 
 A variety of numerical methods can be applied to the problem. An excellent reference for these techniques is [21, pp 347393]. We use Newton's method for several reasons. first, it converges quadratically if the initial guess is close, which we ensure by constructing a bounding volume hierarchy. Furthermore, the surface derivatives exist and are calculated at cost comparable to that of surface evaluation. This means that there is likely little computational advantage to utilizing approximate derivative methods such as Broyden.
@@ -265,7 +263,7 @@ $$
 $$
 
 $$
-\mathbf{c}^{\prime}(t)=\frac{\omega(t)\left(\mathbf{D}^{\omega}\right)^{\prime}(t)-\mathbf{D}^{\omega}(t) \omega^{\prime}(t)}{\omega(t)^{2}}
+\mathbf{c}^{\prime}(t)=\frac{\omega(t)\left(\mathbf{D}^{\omega}\right)^{\prime}(t)-\mathbf{D}^{\omega}(t) \omega^{\prime}(t)}{\omega(t)^{2}} .
 $$
 
 By the preceding analysis \(\mathbf{D}^{\omega}\left(t_{*}\right)=\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}\). Likewise, \(\omega\left(t_{*}\right)=\omega_{\mu-k+1}\). The derivative of the B-Spline basis function is given by
@@ -283,7 +281,7 @@ $$
 Therefore,
 
 $$
-\begin{equation*} \left(\mathbf{D}^{\omega}\right)^{\prime}\left(t_{*}\right)=(k-1)\left[\frac{\mathbf{D}_{\mu-\mathbf{k}+\mathbf{2}}^{\omega}}{t_{\mu+1}-t_{\mu-k+2}}-\frac{\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}}{t_{\mu+1}-t_{\mu-k+2}}\right] \tag{1} \end{equation*}
+\left(\mathbf{D}^{\omega}\right)^{\prime}\left(t_{*}\right)=(k-1)\left[\frac{\mathbf{D}_{\mu-\mathbf{k}+\mathbf{2}}^{\omega}}{t_{\mu+1}-t_{\mu-k+2}}-\frac{\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}}{t_{\mu+1}-t_{\mu-k+2}}\right]
 $$
 
 $$
@@ -291,7 +289,7 @@ $$
 $$
 
 $$
-Plugging in for \( \mathbf{c}^{\prime}(t) \)
+Plugging in for \(\mathbf{c}^{\prime}(t)\)
 $$
 
 $$
@@ -301,16 +299,16 @@ $$
 The result for surface evaluation follows directly from the curve derivation, due to the independence of the parameters in the tensor product, so we shall simply state the results:
 
 $$
-\begin{aligned} \mathbf{S}\left(u_{*}, v_{*}\right) & =\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}} \\ \mathbf{S}_{\mathbf{u}}\left(u_{*}, v_{*}\right) & =\frac{\left(k_{u}-1\right) \omega_{\mu_{u}-k_{u}+2, \mu_{v}-k_{v}+1}}{\left(u_{\mu_{u}+1}-u_{*}\right) \omega_{\mu_{u}}-k_{u}+1, \mu_{v}-k_{v}+1}\left[\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}-\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}\right] \\ \mathbf{S}_{\mathbf{v}}\left(u_{*}, v_{*}\right) & =\frac{\left(k_{v}-1\right) \omega_{\mu_{u}}-k_{u}+1, \mu_{v}-k_{v}+2}{\left(v_{\mu_{v}+1}-v_{*}\right) \omega_{\mu_{u}-k_{u}+1, \mu_{v}-k_{v}+1}}\left[\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}-\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}\right] \end{aligned}
+\begin{aligned} \mathbf{S}\left(u_{*}, v_{*}\right) & =\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}} \\ \mathbf{S}_{\mathbf{u}}\left(u_{*}, v_{*}\right) & =\frac{\left(k_{u}-1\right) \omega_{\mu_{u}-k_{u}+2, \mu_{v}-k_{v}+1}}{\left(u_{\mu_{u}+1}-u_{*}\right) \omega_{\mu_{u}-k_{u}+1, \mu_{v}-k_{v}+1}}\left[\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}-\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}\right] \\ \mathbf{S}_{\mathbf{v}}\left(u_{*}, v_{*}\right) & =\frac{\left(k_{v}-1\right) \omega_{\mu_{u}}-k_{u}+1, \mu_{v}-k_{v}+2}{\left(v_{\mu_{v}+1}-v_{*}\right) \omega_{\mu_{u}-k_{u}+1, \mu_{v}-k_{v}+1}}\left[\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}-\mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}\right] \end{aligned}
 $$
 
 The normal \(\mathbf{n}(u, v)\) is given by the cross product of the first order partials:
 
 $$
-\mathbf{n}\left(u_{*}, v_{*}\right)=\mathbf{S}_{\mathbf{u}}\left(u_{*}, v_{*}\right) \times \mathbf{S}_{\mathbf{v}}\left(u_{*}, v_{*}\right)
+\mathbf{n}\left(u_{*}, v_{*}\right)=\mathbf{S}_{\mathbf{u}}\left(u_{*}, v_{*}\right) \times \mathbf{S}_{\mathbf{v}}\left(u_{*}, v_{*}\right) .
 $$
 
-If the surface is not regular (i.e, \(\mathbf{S}_{\mathbf{u}} \times \mathbf{S}_{\mathbf{v}}=0\) ), then our computation may erroneously generate a zero surface normal. We
+If the surface is not regular (i.e., \(\mathbf{S}_{\mathbf{u}} \times \mathbf{S}_{\mathbf{v}}=0\) ), then our computation may erroneously generate a zero surface normal. We
 
 ### 2.5 Partial Refinement
 
@@ -319,13 +317,13 @@ We still need to explain how to calculate the points in the refined mesh so that
 Earlier we proposed to evaluate the curve \(\mathbf{c}\) at \(t_{*}\) by stacking \(k-1 t_{*}\)-valued knots in its knot vector \(\tau\) to generate the refined knot vector \(\mathbf{t}\). The B-Spline basis transformation defined by this refinement yields a matrix \(\mathbf{A}\) which can be used to calculate the refined control polygon \(\mathbf{D}^{\omega}\) from the original polygon \(\mathbf{P}^{\mathbf{w}}\) :
 
 $$
-\mathbf{D}^{\omega}=\mathbf{A} \mathbf{P}^{\mathbf{w}}
+\mathbf{D}^{\omega}=\mathbf{A} \mathbf{P}^{\mathbf{w}} .
 $$
 
 We are not interested in calculating the full alpha matrix \(\mathbf{A}\), but merely rows \(\mu-k+2\) and \(\mu-k+1\), as these are used to generate the points \(\mathbf{D}_{\mu-\mathbf{k}+\mathbf{2}}^{\omega}\) and \(\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}\) which are required for point and derivative evaluation. Suppose \(t_{*} \in\left[\tau_{\mu^{\prime}}, \tau_{\mu^{\prime}+1}\right)\). We can generate the refinement for row \(\mu+k-1\) using a triangular scheme
 
 $$
-\begin{array}{ccc} & & \alpha_{\mu^{\prime}, 0}^{\prime} \\ & \alpha_{\mu^{\prime}-1,1}^{\prime} & \alpha_{\mu^{\prime}, 1}^{\prime} \\ & \vdots & \vdots \\ \alpha_{\mu^{\prime}-\nu, \nu}^{\prime} & \cdots & \alpha_{\mu^{\prime}, \nu}^{\prime} \end{array}
+\begin{array}{lcc} & & \alpha_{\mu^{\prime}, 0}^{\prime} \\ & \alpha_{\mu^{\prime}-1,1}^{\prime} & \alpha_{\mu^{\prime}, 1}^{\prime} \\ & \vdots & \vdots \\ \alpha_{\mu^{\prime}-\nu, \nu}^{\prime} & \cdots & \alpha_{\mu^{\prime}, \nu}^{\prime} \end{array}
 $$
 
 where ν is the number of knots we are inserting and
@@ -336,13 +334,13 @@ $$
 
 \(\mathbf{A}_{\mu-k+1, j}=\alpha_{j, \nu}^{\prime}\) for \(j=\mu^{\prime}-\nu, \cdots, \mu^{\prime}\) and \(\mathbf{A}_{i, j}=0\) otherwise. If \(n\) knots exist in the original knot vector \(\tau\) with value \(t_{*}\), then \(\nu=\max \{k-1-n, 1\}-\) that is to say, we always insert at least 1 knot. The quantity \(\nu\) is used in the triangular scheme above to allow one to skip those basis functions which are trivially 0 or 1 due to repeated knots. As a result of this triangular scheme, we generate basis functions in place and avoid redundant computation of \(\alpha^{\prime}\) values for subsequent levels.
 
-The procedure of knot insertion we propose is analogous to B´ ezier subdivision. In Figure 4 a B´ ezier curve has been subdivided at t = . 5, generating a refined polygon { p i } from the original polygon { P i. Recall that a B´ ezier curve is simply a B-Spline curve with open end conditions, in this case, with knot vector τ = { 0, 0, 0, 0, 1, 1, 1, 1. The refined knot vector is then t = { 0, 0, 0, 0, . 5, . 5, . 5, 1, 1, 1, 1. According to our definitions, µ = 6, µ ′ = 3. Thus, the point on the surface should be indexed µ -k +1 = 6-4 + 1 = 3, which agrees with the figure. We observe that \(p_{3}\) is a convex blend of \(p_{2}\) and \(p_{4}\). Likewise, in the refinement scheme we propose, the point on the curve \(\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}\) will be a convex blend of the points \(\mathbf{D}_{\mu-\mathbf{k}}^{\omega}\) and \(\mathbf{D}_{\mu-\mathbf{k}+\mathbf{2}}^{\omega}\). The blend factor will be \(\gamma_{\mu^{\prime}, 0}\). The dependency graph shown in Figure 5 will help to clarify. The factor \(\gamma_{\mu^{\prime}, 0}\) is introduced at the first level of the recurrence. The leaf terms can be written as
+The procedure of knot insertion we propose is analogous to B´ ezier subdivision. In Figure 4 a B´ ezier curve has been subdivided at t = . 5, generating a refined polygon { p i } from the original polygon { P i. Recall that a B´ ezier curve is simply a B-Spline curve with open end conditions, in this case, with knot vector τ = { 0, 0, 0, 0, 1, 1, 1, 1. The refined knot vector is then t = { 0, 0, 0, 0, . 5, . 5, . 5, 1, 1, 1, 1. According to our definitions, µ = 6, µ ′ = 3. Thus, the point on the surface should be indexed µ -k +1 = 6-4 + 1 = 3, which agrees with the figure. We observe that \(p_{3}\) is a convex blend of \(p_{2}\) and \(p_{4}\). Likewise, in the refinement scheme we propose, the point on the curve \(\mathbf{D}_{\mu-\mathbf{k}+\mathbf{1}}^{\omega}\) will be a convex blend of the points \(\mathbf{D}_{\mu-\mathbf{k}}^{\omega}\) and \(\mathbf{D}_{\mu-\mathbf{k + 2}}^{\omega}\). The blend factor will be \(\gamma_{\mu^{\prime}, 0}\). The dependency graph shown in Figure 5 will help to clarify. The factor \(\gamma_{\mu^{\prime}, 0}\) is introduced at the first level of the recurrence. The leaf terms can be written as
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-4-p011.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-4-p011.png)
 
 *Figure 4: Original mesh and reﬁned mesh which results from B´ezier subdivision. Original mesh and refined mesh which results from B´ ezier subdivision.*
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-5-p011.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-5-p011.png)
 
 *Figure 5: Graph showing how the factor γ µ ′ , 0 propagates through the recurrence.*
 
@@ -359,7 +357,7 @@ $$
 To produce the desired points we only need to evaluate
 
 $$
-\begin{aligned} & \left(\begin{array}{ll} \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}} & \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}^{\omega} \\ \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}^{\omega} & \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}^{\omega} \end{array}\right)= \\ & \binom{\left(\mathbf{A}_{\mathbf{u}}\right)_{\mu_{u}+k_{u}+1,\left[\mu_{u}^{\prime}-\nu_{u} \ldots \mu_{u}^{\prime}\right]}^{\mathbf{A}_{\mathbf{u}}}}{\left(\mathbf{A}_{\mathbf{u}}\right)_{\mu_{u}+k_{u}+2,\left[\mu_{u}^{\prime}-\nu_{u} \ldots \mu_{u}^{\prime}\right]}} \mathbf{P}_{\left[\mu_{\mathbf{u}}^{\prime}-\nu_{\mathbf{u}} \ldots \mu_{\mathbf{u}}^{\prime}\right]\left[\mu_{\mathbf{v}}^{\prime}-\nu_{\mathbf{v}} \ldots \mu_{\mathbf{v}}^{\prime}\right]}\binom{\left(\mathbf{A}_{\mathbf{v}}\right)_{\mu_{v}+k_{v}+1,\left[\mu_{v}^{\prime}-\nu_{v} \ldots \mu_{v}^{\prime}\right]}}{\left(\mathbf{A}_{\mathbf{v}}\right)_{\mu_{v}+k_{v}+2,\left[\mu_{v}^{\prime}-\nu_{v} \ldots \mu_{v}^{\prime}\right]}}^{T} \end{aligned}
+\begin{aligned} & \left(\begin{array}{ll} \mathbf{D}_{\mu_{\mathbf{u}}}^{\omega}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1} & \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{1}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}^{\omega} \\ \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{1}}^{\omega} & \mathbf{D}_{\mu_{\mathbf{u}}-\mathbf{k}_{\mathbf{u}}+\mathbf{2}, \mu_{\mathbf{v}}-\mathbf{k}_{\mathbf{v}}+\mathbf{2}}^{\omega} \end{array}\right)= \\ & \binom{\left(\mathbf{A}_{\mathbf{u}}\right)_{\mu_{u}+k_{u}+1,\left[\mu_{u}^{\prime}-\nu_{u} \ldots \mu_{u}^{\prime}\right]}^{\omega}}{\left(\mathbf{A}_{\mathbf{u}}\right)_{\mu_{u}+k_{u}+2,\left[\mu_{u}^{\prime}-\nu_{u} \ldots \mu_{u}^{\prime}\right]}} \mathbf{P}_{\left[\mu_{\mathbf{u}}^{\prime}-\nu_{\mathbf{u}} \ldots \mu_{\mathbf{u}}^{\prime}\right]\left[\mu_{\mathbf{v}}^{\prime}-\nu_{\mathbf{v}} \ldots \mu_{\mathbf{v}}^{\prime}\right]}\binom{\left(\mathbf{A}_{\mathbf{v}}\right)_{\mu_{v}+k_{v}+1,\left[\mu_{v}^{\prime}-\nu_{v} \ldots \mu_{v}^{\prime}\right]}}{\left(\mathbf{A}_{\mathbf{v}}\right)_{\mu_{v}+k_{v}+2,\left[\mu_{v}^{\prime}-\nu_{v} \ldots \mu_{v}^{\prime}\right]}}^{T} \end{aligned}
 $$
 
 This can be made quite efficient. We have been able to calculate approximately 150K surface evaluations (with derivative) per second on a 300MHz MIPS R12K using this approach.
@@ -377,7 +375,7 @@ $$
 $$
 
 $$
-The adjoint \( \operatorname{adj}(\mathbf{J}) \) is equal to the transpose of the cofactor matrix
+The adjoint \(\operatorname{adj}(\mathbf{J})\) is equal to the transpose of the cofactor matrix
 $$
 
 $$
@@ -399,7 +397,7 @@ $$
 then we report a hit. Otherwise, we continue the iteration. The other three criteria are failure criteria, meaning that if they are met, we terminate the iteration and report a miss. We do not allow the new ( \(u_{*}, v_{*}\) ) estimate to take us farther from the root than the previous one:
 
 $$
-\left\|\mathbf{F}\left(u_{n+1}, v_{n+1}\right)\right\|>\left\|\mathbf{F}\left(u_{n}, v_{n}\right)\right\|
+\left\|\mathbf{F}\left(u_{n+1}, v_{n+1}\right)\right\|>\left\|\mathbf{F}\left(u_{n}, v_{n}\right)\right\| .
 $$
 
 We also do not allow the iteration to take us outside the parametric domain of the surface:
@@ -434,7 +432,7 @@ $$
 \begin{aligned} N_{\mu-1,2}\left(t_{*}\right) & =\frac{t_{*}-t_{\mu-1}}{t_{\mu+k-2}-t_{\mu-1}} N_{\mu-1,1}\left(t_{*}\right)+\frac{t_{\mu+k-1}-t_{*}}{t_{\mu+k-1}-t_{\mu}} N_{\mu, 1}\left(t_{*}\right) \\ & =0 * 0+1 * 1 \\ & =1 \end{aligned}
 $$
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-3-p008.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-3-p008.png)
 
 *Figure 3: Failure to adjust tolerances may result in surface acne.*
 
@@ -452,7 +450,7 @@ Trimming curves are a common method for overcoming the topologically rectangular
 
 A trimming curve is a closed, oriented curve which lies on a NURBS surface. For our purposes, the curve will consist of piecewise linear segments in parametric space \(\left\{\mathbf{p}_{\mathbf{i}}=\left(u_{i}, v_{i}\right)\right\}\). (In principle, there is no reason one could not extend our
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-6-p012.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-6-p012.png)
 
 *Figure 6: Invalid trimming curves: a curve which is not closed, curves which cross, and curves with conﬂicting orientation. conflicting orientation.*
 
@@ -478,7 +476,7 @@ For each trim curve, and for each trim list, we store a bounding box which we wi
 
 Once the trim hierarchy is created, we perform a quick pass through the surface patches, removing those patches which are completely trimmed away. This is an optimization step which reduces the size of the BVH and the number of patches which must be examined by the intersection routines. The procedure below can be used by encoding the parametric boundary of the patch to be tested as the trimming curve crv.
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-7-p013.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-7-p013.png)
 
 *Figure 7: A set of trimming curves and the resulting hierarchy.*
 
@@ -508,15 +506,15 @@ Source code and other material related to the system which we have described can
 
 Thanks to Michael Stark for substantial help analyzing the numerical properties of the algorithm. Thanks also to Brian Smits for helpful discussions, feedback, and encouragement, to Steve Parker for invaluable aid with parallelization and some of the nastier debugging, and to Amy Gooch for comments on the final draft. This work was supported in part by NSF grant 9720192 (CISE New Technologies), DARPA grant F33615-96-C-5621, and the NSF Science and Technology Center for Computer Graphics and Scientific Visualization (ASC-89-20219). All opinions, findings, conclusions or recommendations expressed in this document are those of the authors and do not necessarily reflect the views of the sponsoring agencies.
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-8-p015.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-8-p015.png)
 
 *Figure 8: Statistics for our technique. “Light BV intersections” are generated by casting shadow rays and are treated (and measured) separately from ordinary BV intersections. “NURBS tests” gives the number of numerical NURBS surface intersections performed. “Total NURBS time”and “Avg time per NURBS” give the total and mean time spent on numerical surface intersections, respectively. “NURBS hits” denotes the number of numerical intersections which yielded a hit. “Reported hits” gives the number of successful numerical hits which were not eliminated by trimming curves or by comparison with the previous closest hit along the ray.*
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-9-p016.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-9-p016.png)
 
 *Figure 9: A scene containing NURBS primitives. All of the objects on the table are spline models which have been ray traced using the method presented in this paper.*
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-10-p016.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/2000_practical_ray_tracing_trimmed_nurbs_surfaces/figures/figure-10-p016.png)
 
 *Figure 10: Mechanical parts produced by the Alpha 1 [11] modeling system (crank, Crank1A, and allblade).*
 

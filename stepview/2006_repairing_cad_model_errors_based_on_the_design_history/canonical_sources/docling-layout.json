@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
+  "pdf_path": "stepview/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
   "page_count": 14,
   "page_sizes_pt": [
     {
@@ -79,7 +79,7 @@
       "id": "#/texts/0",
       "page": 1,
       "order": 1,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 42.52,
@@ -98,7 +98,7 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "For users of CAD data, few things are as frustrating as receiving unusable, poor quality data. Users often waste time fixing or rebuilding such data from scratch on the basis of paper drawings. While previous studies use the boundary representation (B-Rep) of CAD models, we propose an approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rulebased reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models without translating them to a B-Rep shape, and it also preserves parametric information. q 2006 Elsevier Ltd. All rights reserved.",
       "bbox": {
         "x0": 42.52,
@@ -117,7 +117,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: Boundary representation; CAD model; Correction; Design history; Interoperability",
       "bbox": {
         "x0": 42.52,
@@ -136,7 +136,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 42.52,
@@ -155,7 +155,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Because of competition in the market, the lead time for designing and manufacturing products is decreasing, whereas the complexity of products is increasing. Furthermore, as the globalization of companies continues, the development of products surmounts the limitations of geographical boundaries and is enhanced by collaborative design in a distributed environment where there are frequent exchanges of product data for common parts and components.",
       "bbox": {
         "x0": 42.52,
@@ -174,7 +174,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "When developing products, designers and engineers often encounter poor quality product data, and they waste considerable time and money overcoming this problem. One company, for instance, reported that it spent as much as 50% of its time repairing product models in downstream functions, such as rapid prototyping, finite element analysis, and CNC programming. The company had to deal with poor quality CAD data that were not properly modeled for use in these downstream functions. In another example, an original equipment manufacturer estimated that, within the company and between the company and its suppliers, it had as many as 453,000 exchanges of product data each year, and that it spent an",
       "bbox": {
         "x0": 42.52,
@@ -212,7 +212,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "E-mail addresses:",
       "bbox": {
         "x0": 54.48,
@@ -231,7 +231,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "jyang@ajou.ac.kr (J. Yang), shhan@kaist.ac.kr (S. Han).",
       "bbox": {
         "x0": 113.5,
@@ -269,7 +269,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "average of 4.9 h solving each poor-quality problem. As for the cost of imperfect interoperability, the members of the US automotive supply chain reportedly spend at least $1 billion a year [1]. Similarly, in the Japanese automotive industry, which has as many as 250,000 product data exchanges a year, the cost of these exchanges is approximately $68 million a year, and 1.5 h of lead time are lost whenever one item of poor quality or unusable data needs to be repaired or replaced [2].",
       "bbox": {
         "x0": 311.53,
@@ -288,7 +288,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Previous studies on poor-quality CAD models have focused on the boundary representation (B-Rep) of 3D shapes [3-8]. They corrected errors by mathematically analyzing the topological and geometric elements of the B-Rep model. Most commercial applications use the B-Rep data to analyze and correct CAD model errors. However, although the B-Rep approach is effective for locating errors with the maximum or minimum tolerance as defined by the designer, an unstable topological structure can unintentionally distort a repaired B-Rep shape or cause the shape to collapse. As a result, only limited types of errors can be corrected, and automation of the correction process is difficult. Designers are therefore reluctant to correct errors with commercial applications that are based on the B-Rep approach.",
       "bbox": {
         "x0": 311.53,
@@ -307,7 +307,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "To repair errors, we now propose a method that can reconstruct the design history of a CAD model. The design history refers to the chronological order in which a designer created the various features of a 3D shape. In a CAD system, there are different ways of defining a shape. Thus, the design includes the geometry-controlling parameters, the geometric",
       "bbox": {
         "x0": 311.53,
@@ -326,7 +326,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer-Aided Design 38 (2006) 627-640",
       "bbox": {
         "x0": 231.02,
@@ -345,7 +345,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "www.elsevier.com locate cad",
       "bbox": {
         "x0": 468.17,
@@ -364,7 +364,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Repairing CAD model errors based on the design history",
       "bbox": {
         "x0": 105.96,
@@ -383,7 +383,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Jeongsam Yang a, *, Soonhung Han b,1",
       "bbox": {
         "x0": 202.11,
@@ -402,7 +402,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "a Division of Industrial and Information Systems Engineering, Ajou University, San 5, Wonchun-dong, Yeongtong-gu, Suwon, Kyungki-do 443-749, South Korea",
       "bbox": {
         "x0": 43.31,
@@ -421,7 +421,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "b Department of Mechanical Engineering, Korea Advanced Institute of Science and Technology, 373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea",
       "bbox": {
         "x0": 42.52,
@@ -440,7 +440,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received 27 April 2005; accepted 25 February 2006",
       "bbox": {
         "x0": 217.59,
@@ -975,11 +975,11 @@
       "role": "paragraph",
       "text": "H",
       "bbox": {
-        "x0": 148.47,
+        "x0": 147.8,
         "y0": 16.0,
         "x1": 160.45,
         "y1": 22.67,
-        "width": 11.98,
+        "width": 12.65,
         "height": 6.67
       },
       "meta": {
@@ -1049,18 +1049,18 @@
       "page": 4,
       "order": 6,
       "role": "paragraph",
-      "text": "Groove #",
+      "text": "Groove E",
       "bbox": {
-        "x0": 145.15,
-        "y0": 49.8,
-        "x1": 183.85,
-        "y1": 59.45,
-        "width": 38.7,
-        "height": 9.65
+        "x0": 145.08,
+        "y0": 49.51,
+        "x1": 183.93,
+        "y1": 60.41,
+        "width": 38.85,
+        "height": 10.9
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Groove #"
+        "docling_orig": "Groove E"
       }
     },
     {
@@ -1182,18 +1182,18 @@
       "page": 4,
       "order": 13,
       "role": "paragraph",
-      "text": "Body tp",
+      "text": "Body E",
       "bbox": {
         "x0": 30.59,
-        "y0": 117.69,
-        "x1": 94.61,
+        "y0": 117.02,
+        "x1": 94.62,
         "y1": 130.79,
-        "width": 64.02,
-        "height": 13.1
+        "width": 64.03,
+        "height": 13.77
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Body tp"
+        "docling_orig": "Body E"
       }
     },
     {
@@ -1258,18 +1258,18 @@
       "page": 4,
       "order": 17,
       "role": "paragraph",
-      "text": "Slot",
+      "text": "Slot $",
       "bbox": {
-        "x0": 143.19,
+        "x0": 143.86,
         "y0": 103.92,
         "x1": 173.82,
-        "y1": 115.91,
-        "width": 30.63,
-        "height": 11.99
+        "y1": 115.25,
+        "width": 29.96,
+        "height": 11.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Slot"
+        "docling_orig": "Slot $"
       }
     },
     {
@@ -1315,18 +1315,18 @@
       "page": 4,
       "order": 20,
       "role": "paragraph",
-      "text": "Boolean-Op $",
+      "text": "Boolean-Op E",
       "bbox": {
-        "x0": 142.47,
-        "y0": 158.93,
-        "x1": 203.18,
-        "y1": 171.49,
-        "width": 60.71,
-        "height": 12.56
+        "x0": 142.48,
+        "y0": 159.0,
+        "x1": 203.17,
+        "y1": 171.42,
+        "width": 60.69,
+        "height": 12.42
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Boolean-Op $"
+        "docling_orig": "Boolean-Op E"
       }
     },
     {
@@ -1355,11 +1355,11 @@
       "role": "paragraph",
       "text": "Sweep #",
       "bbox": {
-        "x0": 145.19,
+        "x0": 144.52,
         "y0": 215.17,
         "x1": 182.48,
         "y1": 225.16,
-        "width": 37.29,
+        "width": 37.96,
         "height": 9.99
       },
       "meta": {
@@ -1505,18 +1505,18 @@
       "page": 4,
       "order": 30,
       "role": "paragraph",
-      "text": "Shell #",
+      "text": "Shell",
       "bbox": {
-        "x0": 143.82,
-        "y0": 307.64,
-        "x1": 175.86,
-        "y1": 317.22,
-        "width": 32.04,
-        "height": 9.58
+        "x0": 143.83,
+        "y0": 307.7,
+        "x1": 175.84,
+        "y1": 317.16,
+        "width": 32.01,
+        "height": 9.46
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Shell #"
+        "docling_orig": "Shell"
       }
     },
     {
@@ -1526,12 +1526,12 @@
       "role": "paragraph",
       "text": "Fillet Đ",
       "bbox": {
-        "x0": 143.78,
-        "y0": 326.16,
-        "x1": 175.23,
-        "y1": 336.01,
-        "width": 31.45,
-        "height": 9.85
+        "x0": 144.52,
+        "y0": 326.42,
+        "x1": 175.16,
+        "y1": 335.75,
+        "width": 30.64,
+        "height": 9.33
       },
       "meta": {
         "docling_label": "text",
@@ -1545,12 +1545,12 @@
       "role": "paragraph",
       "text": "Chamfer E",
       "bbox": {
-        "x0": 143.14,
-        "y0": 344.17,
-        "x1": 189.2,
-        "y1": 355.3,
-        "width": 46.06,
-        "height": 11.13
+        "x0": 143.15,
+        "y0": 344.23,
+        "x1": 189.18,
+        "y1": 355.24,
+        "width": 46.03,
+        "height": 11.01
       },
       "meta": {
         "docling_label": "text",
@@ -1562,18 +1562,18 @@
       "page": 4,
       "order": 33,
       "role": "paragraph",
-      "text": "Trim_Body Đ",
+      "text": "Trim_Body E",
       "bbox": {
-        "x0": 144.48,
+        "x0": 145.15,
         "y0": 362.84,
         "x1": 197.17,
         "y1": 372.61,
-        "width": 52.69,
+        "width": 52.02,
         "height": 9.77
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Trim_Body Đ"
+        "docling_orig": "Trim_Body E"
       }
     },
     {
@@ -1660,11 +1660,11 @@
       "text": "Reference_Point E",
       "bbox": {
         "x0": 213.61,
-        "y0": 363.63,
+        "y0": 363.66,
         "x1": 290.05,
-        "y1": 377.27,
+        "y1": 377.24,
         "width": 76.44,
-        "height": 13.64
+        "height": 13.58
       },
       "meta": {
         "docling_label": "text",
@@ -1695,18 +1695,18 @@
       "page": 4,
       "order": 40,
       "role": "paragraph",
-      "text": "Reference_3PointsPlane #",
+      "text": "Reference PointsPlane #",
       "bbox": {
-        "x0": 214.45,
+        "x0": 215.12,
         "y0": 404.36,
         "x1": 321.01,
         "y1": 413.69,
-        "width": 106.56,
+        "width": 105.89,
         "height": 9.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Reference_3PointsPlane #"
+        "docling_orig": "Reference PointsPlane #"
       }
     },
     {
@@ -1735,12 +1735,12 @@
       "role": "paragraph",
       "text": "own_direction profile_curves[0]",
       "bbox": {
-        "x0": 81.81,
-        "y0": 20.27,
-        "x1": 121.25,
-        "y1": 28.38,
-        "width": 39.44,
-        "height": 8.11
+        "x0": 81.79,
+        "y0": 20.15,
+        "x1": 121.28,
+        "y1": 28.47,
+        "width": 39.49,
+        "height": 8.32
       },
       "meta": {
         "docling_label": "text",
@@ -1790,7 +1790,7 @@
       "page": 5,
       "order": 4,
       "role": "paragraph",
-      "text": "- <xs: sequence>",
+      "text": "- <xs: sequence›",
       "bbox": {
         "x0": 41.94,
         "y0": 94.0,
@@ -1801,7 +1801,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "- <xs: sequence>"
+        "docling_orig": "- <xs: sequence›"
       }
     },
     {
@@ -1944,12 +1944,12 @@
       "role": "paragraph",
       "text": "<xs: element name=\"second_length\" type=\"xs:double\" >",
       "bbox": {
-        "x0": 52.55,
-        "y0": 179.38,
-        "x1": 213.12,
-        "y1": 189.37,
-        "width": 160.57,
-        "height": 9.99
+        "x0": 52.6,
+        "y0": 180.67,
+        "x1": 213.05,
+        "y1": 188.0,
+        "width": 160.45,
+        "height": 7.33
       },
       "meta": {
         "docling_label": "text",
@@ -2041,9 +2041,9 @@
       "bbox": {
         "x0": 47.27,
         "y0": 215.33,
-        "x1": 189.75,
+        "x1": 190.42,
         "y1": 222.0,
-        "width": 142.48,
+        "width": 143.15,
         "height": 6.67
       },
       "meta": {
@@ -2058,12 +2058,12 @@
       "role": "paragraph",
       "text": "use=\"required\" >",
       "bbox": {
-        "x0": 53.26,
-        "y0": 222.0,
+        "x0": 52.6,
+        "y0": 222.67,
         "x1": 103.2,
         "y1": 228.0,
-        "width": 49.94,
-        "height": 6.0
+        "width": 50.6,
+        "height": 5.33
       },
       "meta": {
         "docling_label": "text",
@@ -2096,11 +2096,11 @@
       "role": "paragraph",
       "text": "< xs: element>",
       "bbox": {
-        "x0": 36.62,
+        "x0": 37.28,
         "y0": 236.0,
         "x1": 75.9,
         "y1": 241.33,
-        "width": 39.28,
+        "width": 38.62,
         "height": 5.33
       },
       "meta": {
@@ -2686,11 +2686,11 @@
       "text": "first_length &",
       "bbox": {
         "x0": 202.38,
-        "y0": 9.25,
+        "y0": 9.24,
         "x1": 240.37,
-        "y1": 16.75,
+        "y1": 16.76,
         "width": 37.99,
-        "height": 7.5
+        "height": 7.52
       },
       "meta": {
         "docling_label": "text",
@@ -2704,12 +2704,12 @@
       "role": "paragraph",
       "text": "first_limit_type",
       "bbox": {
-        "x0": 202.37,
-        "y0": 17.18,
-        "x1": 245.04,
-        "y1": 25.49,
-        "width": 42.67,
-        "height": 8.31
+        "x0": 202.4,
+        "y0": 17.33,
+        "x1": 245.01,
+        "y1": 25.33,
+        "width": 42.61,
+        "height": 8.0
       },
       "meta": {
         "docling_label": "text",
@@ -2987,18 +2987,18 @@
       "page": 6,
       "order": 15,
       "role": "paragraph",
-      "text": "F4.1F4.2",
+      "text": "F4. 1 4.2",
       "bbox": {
-        "x0": 11.4,
-        "y0": 284.14,
-        "x1": 41.37,
-        "y1": 304.11,
-        "width": 29.97,
-        "height": 19.97
+        "x0": 11.41,
+        "y0": 283.99,
+        "x1": 41.34,
+        "y1": 304.21,
+        "width": 29.93,
+        "height": 20.22
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F4.1F4.2"
+        "docling_orig": "F4. 1 4.2"
       }
     },
     {
@@ -7245,11 +7245,11 @@
       "role": "paragraph",
       "text": "<Body body_name=\"PartBody\">",
       "bbox": {
-        "x0": 18.65,
+        "x0": 19.31,
         "y0": 109.22,
         "x1": 146.51,
         "y1": 119.21,
-        "width": 127.86,
+        "width": 127.2,
         "height": 9.99
       },
       "meta": {
@@ -7300,18 +7300,18 @@
       "page": 8,
       "order": 25,
       "role": "paragraph",
-      "text": "cangle> 2.000< angle>",
+      "text": "<angle>2.000c angle>",
       "bbox": {
-        "x0": 34.63,
+        "x0": 35.3,
         "y0": 160.5,
         "x1": 125.2,
         "y1": 168.49,
-        "width": 90.57,
+        "width": 89.9,
         "height": 7.99
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "cangle> 2.000< angle>"
+        "docling_orig": "<angle>2.000c angle>"
       }
     },
     {
@@ -9903,7 +9903,7 @@
       "page": 11,
       "order": 8,
       "role": "paragraph",
-      "text": "· 2x plane",
+      "text": "Ex plane",
       "bbox": {
         "x0": 17.98,
         "y0": 115.81,
@@ -9914,7 +9914,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "· 2x plane"
+        "docling_orig": "Ex plane"
       }
     },
     {
@@ -9981,12 +9981,12 @@
       "role": "paragraph",
       "text": "Q-Raider",
       "bbox": {
-        "x0": 107.84,
-        "y0": 19.25,
-        "x1": 141.83,
-        "y1": 26.75,
-        "width": 33.99,
-        "height": 7.5
+        "x0": 107.81,
+        "y0": 19.11,
+        "x1": 141.86,
+        "y1": 26.89,
+        "width": 34.05,
+        "height": 7.78
       },
       "meta": {
         "docling_label": "text",
@@ -9997,6 +9997,25 @@
       "id": "#/texts/543",
       "page": 11,
       "order": 13,
+      "role": "paragraph",
+      "text": "Rules:",
+      "bbox": {
+        "x0": 131.81,
+        "y0": 27.24,
+        "x1": 146.49,
+        "y1": 32.67,
+        "width": 14.68,
+        "height": 5.43
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Rules:"
+      }
+    },
+    {
+      "id": "#/texts/544",
+      "page": 11,
+      "order": 14,
       "role": "paragraph",
       "text": "Criteria: Porsche criterion",
       "bbox": {
@@ -10013,30 +10032,11 @@
       }
     },
     {
-      "id": "#/texts/544",
-      "page": 11,
-      "order": 14,
-      "role": "paragraph",
-      "text": "Rules:",
-      "bbox": {
-        "x0": 131.83,
-        "y0": 27.29,
-        "x1": 146.47,
-        "y1": 32.61,
-        "width": 14.64,
-        "height": 5.32
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Rules:"
-      }
-    },
-    {
       "id": "#/texts/545",
       "page": 11,
       "order": 15,
       "role": "paragraph",
-      "text": "Rule_for_0-Raider.T",
+      "text": "Rule_for_0-Raider_T",
       "bbox": {
         "x0": 149.14,
         "y0": 27.95,
@@ -10047,7 +10047,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Rule_for_0-Raider.T"
+        "docling_orig": "Rule_for_0-Raider_T"
       }
     },
     {
@@ -10171,12 +10171,12 @@
       "role": "paragraph",
       "text": "Command",
       "bbox": {
-        "x0": 119.8,
-        "y0": 58.45,
-        "x1": 148.51,
-        "y1": 64.88,
-        "width": 28.71,
-        "height": 6.43
+        "x0": 119.81,
+        "y0": 58.52,
+        "x1": 148.5,
+        "y1": 64.81,
+        "width": 28.69,
+        "height": 6.29
       },
       "meta": {
         "docling_label": "text",
@@ -10572,9 +10572,9 @@
       "bbox": {
         "x0": 227.03,
         "y0": 22.63,
-        "x1": 238.35,
+        "x1": 237.69,
         "y1": 26.62,
-        "width": 11.32,
+        "width": 10.66,
         "height": 3.99
       },
       "meta": {
@@ -10722,12 +10722,12 @@
       "role": "paragraph",
       "text": "- <Body body_name=\"Body.1\">",
       "bbox": {
-        "x0": 14.25,
+        "x0": 13.41,
         "y0": 118.25,
         "x1": 115.64,
-        "y1": 124.96,
-        "width": 101.39,
-        "height": 6.71
+        "y1": 125.93,
+        "width": 102.23,
+        "height": 7.68
       },
       "meta": {
         "docling_label": "text",
@@ -10815,18 +10815,18 @@
       "page": 12,
       "order": 6,
       "role": "paragraph",
-      "text": "+ ‹Body body_name= Body.25",
+      "text": "‹Body body_name=\"Body.255",
       "bbox": {
-        "x0": 11.73,
+        "x0": 16.76,
         "y0": 147.58,
         "x1": 116.48,
         "y1": 159.35,
-        "width": 104.75,
+        "width": 99.72,
         "height": 11.77
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "+ ‹Body body_name= Body.25"
+        "docling_orig": "‹Body body_name=\"Body.255"
       }
     },
     {
@@ -10894,11 +10894,11 @@
       "text": "s Body2.-",
       "bbox": {
         "x0": 19.25,
-        "y0": 225.53,
-        "x1": 51.97,
-        "y1": 234.89,
-        "width": 32.72,
-        "height": 9.36
+        "y0": 225.51,
+        "x1": 51.98,
+        "y1": 234.92,
+        "width": 32.73,
+        "height": 9.41
       },
       "meta": {
         "docling_label": "text",
@@ -10929,18 +10929,18 @@
       "page": 12,
       "order": 12,
       "role": "paragraph",
-      "text": "«Body body name= Clutchdisk's",
+      "text": "-Body body name- Clutchdisk\"s",
       "bbox": {
-        "x0": 8.38,
+        "x0": 9.22,
         "y0": 229.79,
         "x1": 127.37,
         "y1": 241.53,
-        "width": 118.99,
+        "width": 118.15,
         "height": 11.74
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "«Body body name= Clutchdisk's"
+        "docling_orig": "-Body body name- Clutchdisk\"s"
       }
     },
     {
@@ -11444,12 +11444,12 @@
       "role": "paragraph",
       "text": "Narrow step",
       "bbox": {
-        "x0": 308.21,
-        "y0": 28.49,
-        "x1": 358.02,
-        "y1": 37.84,
-        "width": 49.81,
-        "height": 9.35
+        "x0": 308.18,
+        "y0": 28.37,
+        "x1": 358.04,
+        "y1": 37.96,
+        "width": 49.86,
+        "height": 9.59
       },
       "meta": {
         "docling_label": "text",
@@ -11463,12 +11463,12 @@
       "role": "paragraph",
       "text": "Profile",
       "bbox": {
-        "x0": 234.63,
-        "y0": 36.06,
-        "x1": 262.29,
-        "y1": 45.29,
-        "width": 27.66,
-        "height": 9.23
+        "x0": 234.54,
+        "y0": 35.77,
+        "x1": 262.38,
+        "y1": 45.58,
+        "width": 27.84,
+        "height": 9.81
       },
       "meta": {
         "docling_label": "text",
@@ -11558,12 +11558,12 @@
       "role": "paragraph",
       "text": "<axis name=\"Curve.1\" super_type=\"Body.4\" >",
       "bbox": {
-        "x0": 31.84,
+        "x0": 32.68,
         "y0": 207.88,
         "x1": 185.19,
-        "y1": 217.21,
-        "width": 153.35,
-        "height": 9.33
+        "y1": 216.37,
+        "width": 152.51,
+        "height": 8.49
       },
       "meta": {
         "docling_label": "text",
@@ -12069,18 +12069,18 @@
       "page": 12,
       "order": 72,
       "role": "paragraph",
-      "text": "-Body body name clutchdises",
+      "text": "* Body body name clutchdisk",
       "bbox": {
-        "x0": 268.15,
-        "y0": 274.17,
-        "x1": 377.09,
-        "y1": 290.18,
-        "width": 108.94,
-        "height": 16.01
+        "x0": 267.66,
+        "y0": 273.23,
+        "x1": 377.58,
+        "y1": 293.81,
+        "width": 109.92,
+        "height": 20.58
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "-Body body name clutchdises"
+        "docling_orig": "* Body body name clutchdisk"
       }
     },
     {
@@ -12109,11 +12109,11 @@
       "role": "paragraph",
       "text": "- <Boolean_Op result_solid=\"Remove.3\">",
       "bbox": {
-        "x0": 268.99,
+        "x0": 269.83,
         "y0": 298.49,
         "x1": 403.07,
         "y1": 306.16,
-        "width": 134.08,
+        "width": 133.24,
         "height": 7.67
       },
       "meta": {
@@ -12145,18 +12145,18 @@
       "page": 12,
       "order": 76,
       "role": "paragraph",
-      "text": "‹second_operand> Body.1< second_operand>",
+      "text": "<second_operand›Body.1< second_operand>",
       "bbox": {
-        "x0": 280.72,
+        "x0": 281.56,
         "y0": 315.34,
         "x1": 430.72,
-        "y1": 323.81,
-        "width": 150.0,
-        "height": 8.47
+        "y1": 322.89,
+        "width": 149.16,
+        "height": 7.55
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "‹second_operand> Body.1< second_operand>"
+        "docling_orig": "<second_operand›Body.1< second_operand>"
       }
     },
     {
@@ -12221,18 +12221,18 @@
       "page": 12,
       "order": 80,
       "role": "paragraph",
-      "text": "parent_name=\"Clutchdisk\">",
+      "text": "parent_name=\"Clutchdisk\" >",
       "bbox": {
-        "x0": 288.26,
-        "y0": 347.21,
+        "x0": 289.1,
+        "y0": 347.13,
         "x1": 389.66,
-        "y1": 355.59,
-        "width": 101.4,
-        "height": 8.38
+        "y1": 354.8,
+        "width": 100.56,
+        "height": 7.67
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "parent_name=\"Clutchdisk\">"
+        "docling_orig": "parent_name=\"Clutchdisk\" >"
       }
     },
     {
@@ -12261,11 +12261,11 @@
       "role": "paragraph",
       "text": "<first_length>-10.000c first_length>",
       "bbox": {
-        "x0": 281.56,
+        "x0": 280.72,
         "y0": 363.14,
         "x1": 402.23,
         "y1": 371.53,
-        "width": 120.67,
+        "width": 121.51,
         "height": 8.39
       },
       "meta": {
@@ -12454,9 +12454,9 @@
         "x0": 266.48,
         "y0": 444.41,
         "x1": 373.74,
-        "y1": 453.74,
+        "y1": 452.88,
         "width": 107.26,
-        "height": 9.33
+        "height": 8.47
       },
       "meta": {
         "docling_label": "text",

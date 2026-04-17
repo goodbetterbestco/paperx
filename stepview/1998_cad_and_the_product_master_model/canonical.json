@@ -3,7 +3,7 @@
   "paper_id": "1998_cad_and_the_product_master_model",
   "title": "1998 cad and the product master model",
   "source": {
-    "pdf_path": "docs/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
+    "pdf_path": "stepview/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
     "page_count": 32,
     "page_sizes_pt": [
       {
@@ -169,12 +169,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:02:14Z",
-    "updated_at": "2026-04-15T17:02:14Z",
+    "created_at": "2026-04-17T04:09:25Z",
+    "updated_at": "2026-04-17T04:09:25Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "mathpix+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -186,42 +186,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
+        "path": "stepview/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
         "exists": true,
         "size_bytes": 267231,
-        "modified_at": "2026-04-13T16:18:56Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "34360ebd82efb69ab270561487b85c2ad975b0928a286f48490155ef6831d1df"
       },
       "external_layout": {
-        "path": "docs/1998_cad_and_the_product_master_model/canonical_sources/layout.json",
+        "path": "stepview/1998_cad_and_the_product_master_model/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 208373,
-        "modified_at": "2026-04-15T17:02:01Z",
-        "sha256": "c42713d2bcbf8199e0c20f8e1dec1dbc0d6edd76528e7dbbd4f681c2e934816b"
+        "size_bytes": 220761,
+        "modified_at": "2026-04-17T04:09:23Z",
+        "sha256": "7c0fb4d922caa37f1bb14560b2b8f82303e66878c042316d5540bce9cb415773"
       },
       "external_math": {
-        "path": "docs/1998_cad_and_the_product_master_model/canonical_sources/math.json",
+        "path": "stepview/1998_cad_and_the_product_master_model/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 748,
-        "modified_at": "2026-04-15T17:02:01Z",
-        "sha256": "b1eb19c03af79c7ae7c68c53295558ab8d11c4726bc64c2d8939635fd91988c5"
+        "size_bytes": 753,
+        "modified_at": "2026-04-17T04:09:23Z",
+        "sha256": "34aa78a6885c0772be2012c1e623615da688e598e6980fe7b968de9d730f7be1"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
       }
     }
   },
@@ -250,7 +253,7 @@
       }
     ],
     "abstract_block_id": "blk-front-abstract-1",
-    "funding_block_id": "blk-front-funding-2"
+    "funding_block_id": null
   },
   "styles": {
     "document_style": {},
@@ -264,9 +267,9 @@
       "title": "Introduction",
       "level": 1,
       "block_ids": [
+        "blk-paragraph-0002",
         "blk-paragraph-0003",
-        "blk-paragraph-0004",
-        "blk-figure-0005"
+        "blk-figure-0004"
       ],
       "children": [],
       "source_spans": []
@@ -277,7 +280,7 @@
       "title": "2 Literature Synopsis",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0006"
+        "blk-paragraph-0005"
       ],
       "children": [],
       "source_spans": [
@@ -291,7 +294,7 @@
             "width": 377.03,
             "height": 405.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -301,52 +304,54 @@
       "title": "3 Net Shape Element Associativity",
       "level": 1,
       "block_ids": [
+        "blk-paragraph-0006",
         "blk-paragraph-0007",
-        "blk-paragraph-0008",
-        "blk-figure-0009",
+        "blk-figure-0008",
+        "blk-paragraph-0009",
         "blk-paragraph-0010",
         "blk-paragraph-0011",
         "blk-paragraph-0012",
-        "blk-paragraph-0013",
-        "blk-figure-0014",
-        "blk-list_item-0015",
-        "blk-figure-0016",
-        "blk-paragraph-0017",
-        "blk-figure-0018",
-        "blk-list_item-0019",
-        "blk-figure-0020",
-        "blk-list_item-0021",
-        "blk-figure-0022",
-        "blk-list_item-0023",
-        "blk-paragraph-0024",
-        "blk-display_equation_ref-0025",
-        "blk-paragraph-0026",
+        "blk-figure-0013",
+        "blk-list_item-0014",
+        "blk-figure-0015",
+        "blk-paragraph-0016",
+        "blk-figure-0017",
+        "blk-list_item-0018",
+        "blk-figure-0019",
+        "blk-list_item-0020",
+        "blk-figure-0021",
+        "blk-list_item-0022",
+        "blk-paragraph-0023",
+        "blk-display_equation_ref-0024",
+        "blk-paragraph-0025",
+        "blk-figure-0026",
         "blk-figure-0027",
         "blk-figure-0028",
-        "blk-figure-0029",
-        "blk-paragraph-0030",
-        "blk-figure-0031",
+        "blk-paragraph-0029",
+        "blk-figure-0030",
+        "blk-paragraph-0031",
         "blk-paragraph-0032",
         "blk-paragraph-0033",
-        "blk-paragraph-0034",
-        "blk-figure-0035",
-        "blk-paragraph-0036",
-        "blk-figure-0037",
+        "blk-figure-0034",
+        "blk-paragraph-0035",
+        "blk-figure-0036",
+        "blk-paragraph-0037",
         "blk-paragraph-0038",
         "blk-paragraph-0039",
         "blk-paragraph-0040",
-        "blk-paragraph-0041",
-        "blk-list_item-0042",
+        "blk-list_item-0041",
+        "blk-paragraph-0042",
         "blk-paragraph-0043",
+        "blk-paragraph-0044",
         "blk-paragraph-0045",
         "blk-paragraph-0046",
         "blk-paragraph-0047",
         "blk-paragraph-0048",
         "blk-paragraph-0049",
         "blk-paragraph-0050",
-        "blk-paragraph-0051",
+        "blk-list_item-0051",
         "blk-paragraph-0052",
-        "blk-list_item-0053",
+        "blk-paragraph-0053",
         "blk-paragraph-0054",
         "blk-paragraph-0055",
         "blk-paragraph-0056",
@@ -355,12 +360,7 @@
         "blk-paragraph-0059",
         "blk-paragraph-0060",
         "blk-paragraph-0061",
-        "blk-paragraph-0062",
-        "blk-paragraph-0063",
-        "blk-paragraph-0064",
-        "blk-paragraph-0065",
-        "blk-paragraph-0066",
-        "blk-list_item-0067"
+        "blk-paragraph-0062"
       ],
       "children": [],
       "source_spans": [
@@ -374,7 +374,7 @@
             "width": 377.04,
             "height": 405.84
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -384,7 +384,7 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0068"
+        "blk-reference-0063"
       ],
       "children": [],
       "source_spans": []
@@ -398,7 +398,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "We develop an architecture for a product master model that federates CAD systems with downstream application processes for different feature views that are part of the design process. The architecture addresses espe cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial CAD systems (and of downstream applications) to maintain proprietary information that must not be disclosed in the master model. Two case studies consider the requirements on the master model archi tecture, for geometric dimensioning and tolerancing, and for manufacturing process planning using NC machining. We discuss how to reconcile the as sociated feature views and how to update them under net shape redesign. The case studies indicate that many design changes that arise from these downstream views can be formalized by a well-defined problem on dimen sional and geometric constraints. and CCR 95-05745. in part by ONR Contract N00014-96-1-0635."
+            "text": "We develop an architecture for a product master model that federates CAD systems with downstream application processes for different feature CAD systems with downstream application processes for different feature views that are part of the design process. The architecture addresses espe- cially the need to make persistent associations of design information with net shape elements. Moreover, the design respects the need of commercial CAD systems (and of downstream applications) to maintain proprietary"
           }
         ]
       },
@@ -406,194 +406,74 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 148.5,
-            "y0": 366.5,
-            "x1": 458.5,
-            "y1": 378.0,
-            "width": 310.0,
-            "height": 11.5
+            "x0": 147.45,
+            "y0": 365.71,
+            "x1": 458.49,
+            "y1": 379.53,
+            "width": 311.04,
+            "height": 13.82
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 133.0,
-            "y0": 379.0,
-            "x1": 458.5,
-            "y1": 390.0,
-            "width": 325.5,
-            "height": 11.0
+            "x0": 132.77,
+            "y0": 377.52,
+            "x1": 458.49,
+            "y1": 391.34,
+            "width": 325.72,
+            "height": 13.82
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 133.0,
-            "y0": 390.5,
-            "x1": 458.5,
-            "y1": 402.5,
-            "width": 325.5,
-            "height": 12.0
+            "x0": 132.77,
+            "y0": 390.76,
+            "x1": 458.49,
+            "y1": 403.15,
+            "width": 325.72,
+            "height": 12.38
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 133.0,
-            "y0": 402.5,
-            "x1": 458.5,
-            "y1": 415.0,
-            "width": 325.5,
-            "height": 12.5
+            "x0": 132.77,
+            "y0": 402.57,
+            "x1": 458.49,
+            "y1": 414.95,
+            "width": 325.72,
+            "height": 12.38
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 133.0,
-            "y0": 414.5,
-            "x1": 458.5,
-            "y1": 427.0,
-            "width": 325.5,
-            "height": 12.5
+            "x0": 132.77,
+            "y0": 414.38,
+            "x1": 458.49,
+            "y1": 427.05,
+            "width": 325.72,
+            "height": 12.67
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 133.0,
-            "y0": 426.5,
-            "x1": 458.5,
-            "y1": 439.0,
-            "width": 325.5,
-            "height": 12.5
+            "x0": 132.77,
+            "y0": 426.18,
+            "x1": 458.49,
+            "y1": 438.85,
+            "width": 325.72,
+            "height": 12.67
           },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 438.0,
-            "x1": 399.5,
-            "y1": 449.5,
-            "width": 266.5,
-            "height": 11.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 148.0,
-            "y0": 450.0,
-            "x1": 458.5,
-            "y1": 462.5,
-            "width": 310.5,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 462.0,
-            "x1": 458.5,
-            "y1": 474.5,
-            "width": 325.5,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 475.0,
-            "x1": 458.5,
-            "y1": 486.0,
-            "width": 325.5,
-            "height": 11.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 486.0,
-            "x1": 458.5,
-            "y1": 498.0,
-            "width": 325.5,
-            "height": 12.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 498.5,
-            "x1": 458.5,
-            "y1": 510.0,
-            "width": 325.5,
-            "height": 11.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 510.5,
-            "x1": 458.5,
-            "y1": 521.5,
-            "width": 325.5,
-            "height": 11.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 133.0,
-            "y0": 522.5,
-            "x1": 278.5,
-            "y1": 534.0,
-            "width": 145.5,
-            "height": 11.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 658.0,
-            "x1": 186.0,
-            "y1": 667.5,
-            "width": 80.0,
-            "height": 9.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 105.0,
-            "y0": 680.0,
-            "x1": 287.5,
-            "y1": 691.5,
-            "width": 182.5,
-            "height": 11.5
-          },
-          "engine": "mathpix"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -604,34 +484,7 @@
       }
     },
     {
-      "id": "blk-front-funding-2",
-      "type": "footnote",
-      "content": {
-        "text": "*Supported in part by ONR Contract N00014-96-1-0635 and by NSF Grants CDA 92-23502"
-      },
-      "source_spans": [
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 118.5,
-            "y0": 646.0,
-            "x1": 485.5,
-            "y1": 658.5,
-            "width": 367.0,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0003",
+      "id": "blk-paragraph-0002",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -652,7 +505,7 @@
             "width": 377.03,
             "height": 435.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -664,7 +517,7 @@
             "width": 377.03,
             "height": 448.8
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -675,7 +528,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0004",
+      "id": "blk-paragraph-0003",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -696,7 +549,7 @@
             "width": 377.28,
             "height": 626.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -707,7 +560,7 @@
       }
     },
     {
-      "id": "blk-figure-0005",
+      "id": "blk-figure-0004",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1"
@@ -734,7 +587,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0006",
+      "id": "blk-paragraph-0005",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -755,7 +608,7 @@
             "width": 377.03,
             "height": 405.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -767,7 +620,7 @@
             "width": 377.04,
             "height": 557.28
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -778,7 +631,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0007",
+      "id": "blk-paragraph-0006",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -799,7 +652,7 @@
             "width": 377.04,
             "height": 405.84
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -811,7 +664,7 @@
             "width": 363.84,
             "height": 356.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -823,7 +676,7 @@
             "width": 377.03,
             "height": 369.84
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -835,7 +688,7 @@
             "width": 377.27,
             "height": 557.52
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 7,
@@ -847,7 +700,7 @@
             "width": 377.27,
             "height": 485.28
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -858,13 +711,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0008",
+      "id": "blk-paragraph-0007",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "After the net shape has been edited in the CAD system, the master model receives the new net shape, its identification in the CAD system's private repos itory, and the change protocol establishing the connection between the elements of the old and the new net shape. The master model now calls on each applica tion client and requests an update of the information that was associated with the old net shape. How the reassociation should be done depends very much on the application domain; see also Sections 4.1, 4.2, and 6. We consider as a simple example an association of textual notes with some of the net shape elements. Assume that there is an annotation program that is a client of the master model. The annotator can read the net shape from the master model and display it visually. It also has an interface that permits selecting net shape elements and associating new text with that element, or editing such text. Each annotation can be put into the master model and is associated with the respective net shape element by referencing the identifier of"
+            "text": "After the net shape has been edited in the CAD system, the master model receives the new net shape, its identification in the CAD system's private repository, and the change protocol establishing the connection between the elements of the old and the new net shape. The master model now calls on each application client and requests an update of the information that was associated with the old net shape. How the reassociation should be done depends very much on the application domain; see also Sections 4.1, 4.2, and 6. We consider as a simple example an association of textual notes with some of the net shape elements. Assume that there is an annotation program that is a client of the master model. The annotator can read the net shape from the master model and display it visually. It also has an interface that permits selecting net shape elements and associating new text with that element, or editing such text. Each annotation can be put into the master model and is associated with the respective net shape element by referencing the identifier of"
           }
         ]
       },
@@ -879,7 +732,7 @@
             "width": 377.03,
             "height": 481.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -890,7 +743,7 @@
       }
     },
     {
-      "id": "blk-figure-0009",
+      "id": "blk-figure-0008",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-2"
@@ -917,7 +770,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0010",
+      "id": "blk-paragraph-0009",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -939,7 +792,7 @@
           },
           {
             "kind": "text",
-            "text": ". There may be several events impacting the same shape element. Ordered by dependency, the sum total of the changes becomes a directed acyclic graph in which the nodes are shape elements and the edges are events. The roots of the graph are the shape elements from the change list given to the CAD system by the master model, and the leaves and interior nodes are shape elements in the new net shape. Additional roots of the graph may be old net shape elements not on the change list, involved in a merge, and newly created net shape elements, also involved in the merge. The graph can be reduced in many cases. For instance, a face may be moved several times during an editing sequence, resulting in a chain of \"move\" events. Such a chain can (and should) be combined into a single move event. We assume that such reductions are carried out when constructing the graph. In many cases, the depth of the graph will be one. In particular, if the edit results in no topology change, then the (reduced) graph must have depth 1 and the possible events are restricted to (1) and (5). 3.3 Shape-Dependent Association Updates After the net shape has been edited in the CAD system, the master model receives the new net shape, its identification in the CAD system's private repos (2) delete notify user (3) join concatenate notes, attach to new element (4) split attach note to each descendant (5) change re-attach note to the changed element (6) new do nothing More complicated rules might be appropriate, depending on the subject matter of the notes. They are under the control of the annotation program. Considering a more complicated scenario, assume that it is possible for the user to supply some change action with each note. For instance, the user might attach the note \\do not delete\" to a face and stipulate the action notify user with event (2). This simple mechanism would alert designers to a net shape change that might violate some design assumptions. 3. 4 Discussion Traditionally, once a CAD system emits a standard Brep of a design, for in stance in IGES or in STEP, the connection of the shape elements with the CAD model is lost. The CAD model, stored in proprietary format, can be edited conveniently, the standard Brep model cannot. Therefore, any associations that are made by downstream processes with elements of the CAD model are lost as soon as the CAD model is edited and a new net shape is emitted in standard Brep. Complicated geometric matching algorithms would be needed to achieve a measure of \\external\" associativity between downstream information and net shape, and such algorithms would fail when the topology of the net shape has changed appreciably. The change protocol establishes a mechanism for preserving downstream associations. By factoring the work of re-association between the CAD system and the downstream programs, the CAD system is not burdened with having to understand the nature of the associated information and how it should be treated under edits. Each downstream program, now in control of the re-association, can imple ment its own re-association semantics. This is appropriate because the down stream program has intimate knowledge of the application domain. On part of 9 If the information is interrelated, or if re-association cannot be carried out by a sequence of atomic actions at each node, then the change protocol graph has to be understood in a deeper way, and/or its complexity has to be restricted. For example, we might have to require that any path in the graph have length 1, that is, each shape element undergoes a single event. For edits that do not change the topology, this property can be guaranteed. Conversely, if the graph has depth 1, then the possible topology changes are especially easy to understand. This argues that if major design revisions would be carried out by a sequence of smaller shape edits, then the downstream re-association work is made easier, albeit carried out in several phases. Many CAD systems offer mechanisms for association through programming interfaces that allow users to attach information with internal structures. More over, geometry kernels such as ACIS provide a call-back mechanism by which a user-provided routine can be called as the CAD system edit proceeds. "
+            "text": ". There may be several events impacting the same shape element. Ordered by dependency, the sum total of the changes becomes a directed acyclic graph in which the nodes are shape elements and the edges are events. The roots of the graph are the shape elements from the change list given to the CAD system by the master model, and the leaves and interior nodes are shape elements in the new net shape. Additional roots of the graph may be old net shape elements not on the change list, involved in a merge, and newly created net shape elements, also involved in the merge. The graph can be reduced in many cases. For instance, a face may be moved several times during an editing sequence, resulting in a chain of \"move\" events. Such a chain can (and should) be combined into a single move event. We assume that such reductions are carried out when constructing the graph. In many cases, the depth of the graph will be one. In particular, if the edit results in no topology change, then the (reduced) graph must have depth 1 and the possible events are restricted to (1) and (5). 3.3 Shape-Dependent Association Updates After the net shape has been edited in the CAD system, the master model receives the new net shape, its identification in the CAD system's private repos- (2) delete notify user (3) join concatenate notes, attach to new element (4) split attach note to each descendant (5) change re-attach note to the changed element (6) new do nothing More complicated rules might be appropriate, depending on the subject matter of the notes. They are under the control of the annotation program. Considering a more complicated scenario, assume that it is possible for the user to supply some change action with each note. For instance, the user might attach the note \\do not delete\" to a face and stipulate the action notify user with event (2). This simple mechanism would alert designers to a net shape change that might violate some design assumptions. 3. 4 Discussion Traditionally, once a CAD system emits a standard Brep of a design, for in stance in IGES or in STEP, the connection of the shape elements with the CAD model is lost. The CAD model, stored in proprietary format, can be edited conveniently, the standard Brep model cannot. Therefore, any associations that are made by downstream processes with elements of the CAD model are lost as soon as the CAD model is edited and a new net shape is emitted in standard Brep. Complicated geometric matching algorithms would be needed to achieve a measure of \\external\" associativity between downstream information and net shape, and such algorithms would fail when the topology of the net shape has changed appreciably. The change protocol establishes a mechanism for preserving downstream associations. By factoring the work of re-association between the CAD system and the downstream programs, the CAD system is not burdened with having to understand the nature of the associated information and how it should be treated under edits. Each downstream program, now in control of the re-association, can imple ment its own re-association semantics. This is appropriate because the down stream program has intimate knowledge of the application domain. On part of 9 If the information is interrelated, or if re-association cannot be carried out by a sequence of atomic actions at each node, then the change protocol graph has to be understood in a deeper way, and/or its complexity has to be restricted. For example, we might have to require that any path in the graph have length 1, that is, each shape element undergoes a single event. For edits that do not change the topology, this property can be guaranteed. Conversely, if the graph has depth 1, then the possible topology changes are especially easy to understand. This argues that if major design revisions would be carried out by a sequence of smaller shape edits, then the downstream re-association work is made easier, albeit carried out in several phases. Many CAD systems offer mechanisms for association through programming interfaces that allow users to attach information with internal structures. Moreover, geometry kernels such as ACIS provide a call-back mechanism by which a user-provided routine can be called as the CAD system edit proceeds. "
           },
           {
             "kind": "inline_math_ref",
@@ -947,7 +800,7 @@
           },
           {
             "kind": "text",
-            "text": " Since these mechanisms are specific to the CAD system, the various downstream pro grams have to be customized to conform to the particular conventions of each CAD system. This means that there would have to be a different customization for different CAD systems, a burden that is eliminated if our change protocol is implemented and the standardized representation of the net shape is CAD system neutral."
+            "text": " Since these mechanisms are specific to the CAD system, the various downstream programs have to be customized to conform to the particular conventions of each CAD system. This means that there would have to be a different customization for different CAD systems, a burden that is eliminated if our change protocol is implemented and the standardized representation of the net shape is CAD system neutral."
           }
         ]
       },
@@ -962,7 +815,7 @@
             "width": 377.03,
             "height": 580.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -974,7 +827,7 @@
             "width": 377.27,
             "height": 402.24
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -986,7 +839,7 @@
             "width": 377.28,
             "height": 560.16
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 10,
@@ -998,7 +851,7 @@
             "width": 377.04,
             "height": 489.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1009,7 +862,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0011",
+      "id": "blk-paragraph-0010",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1030,7 +883,7 @@
             "width": 377.27,
             "height": 552.48
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -1042,7 +895,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -1054,7 +907,7 @@
             "width": 377.04,
             "height": 434.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1065,7 +918,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0012",
+      "id": "blk-paragraph-0011",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1086,7 +939,7 @@
             "width": 103.44,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1098,7 +951,7 @@
             "width": 377.04,
             "height": 538.32
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1109,7 +962,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0013",
+      "id": "blk-paragraph-0012",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1130,7 +983,7 @@
             "width": 116.16,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1142,7 +995,7 @@
             "width": 89.28,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1154,7 +1007,7 @@
             "width": 299.76,
             "height": 327.12
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1166,7 +1019,7 @@
             "width": 95.04,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1178,7 +1031,7 @@
             "width": 77.28,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -1190,7 +1043,7 @@
             "width": 278.88,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -1202,7 +1055,7 @@
             "width": 377.27,
             "height": 619.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1213,7 +1066,7 @@
       }
     },
     {
-      "id": "blk-figure-0014",
+      "id": "blk-figure-0013",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -1240,7 +1093,7 @@
       }
     },
     {
-      "id": "blk-list_item-0015",
+      "id": "blk-list_item-0014",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1280,7 +1133,7 @@
             "width": 377.04,
             "height": 703.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1291,7 +1144,7 @@
       }
     },
     {
-      "id": "blk-figure-0016",
+      "id": "blk-figure-0015",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -1318,7 +1171,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0017",
+      "id": "blk-paragraph-0016",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1339,7 +1192,7 @@
             "width": 377.28,
             "height": 773.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 17,
@@ -1351,7 +1204,7 @@
             "width": 377.04,
             "height": 423.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 17,
@@ -1363,7 +1216,7 @@
             "width": 377.04,
             "height": 620.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1374,7 +1227,7 @@
       }
     },
     {
-      "id": "blk-figure-0018",
+      "id": "blk-figure-0017",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-5"
@@ -1401,7 +1254,7 @@
       }
     },
     {
-      "id": "blk-list_item-0019",
+      "id": "blk-list_item-0018",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1425,7 +1278,7 @@
             "width": 377.03,
             "height": 345.36
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1436,7 +1289,7 @@
       }
     },
     {
-      "id": "blk-figure-0020",
+      "id": "blk-figure-0019",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-6"
@@ -1463,7 +1316,7 @@
       }
     },
     {
-      "id": "blk-list_item-0021",
+      "id": "blk-list_item-0020",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1487,7 +1340,7 @@
             "width": 363.84,
             "height": 430.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1498,7 +1351,7 @@
       }
     },
     {
-      "id": "blk-figure-0022",
+      "id": "blk-figure-0021",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-7"
@@ -1525,7 +1378,7 @@
       }
     },
     {
-      "id": "blk-list_item-0023",
+      "id": "blk-list_item-0022",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1549,7 +1402,7 @@
             "width": 377.04,
             "height": 430.8
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1560,13 +1413,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0024",
+      "id": "blk-paragraph-0023",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "of a set of parameters. For example, an open slot can be represented by a numerical parameter that de nes the slot depth; by a pro le, consisting of a set of 1-dimensional geometric elements; and by a trajectory for the sweep, again a set of 1-dimensional geometric elements. If the slot is not open, then appropriate end conditions must be defined as well. Replicated features can be defined generically by describing the element feature plus the set of parameters that define the pattern; rectangular, circular, etc. When representing these features, we do not want to duplicate information already present in the master model. first, consider machining and transition features. If such a feature coincides with a design feature, we simply identify the design feature in the net shape in the way the CAD system has done. If the machining feature includes several design features, the machining feature is represented by a list of design feature identi ers, one for each component design feature. Finally, if the machining fea ture is composed of geometric elements identi ed individually on the net shape, and the elements do not comprise complete design features, then the machining representation should include the identi ers of these geometric elements plus the identi ers of fully included design features. Since replicated features are composed from machining features, the same rationale applies to the description of their components. Therefore, a replicate feature will be represented as a list of machining features plus the information de ning the pattern. 2 0 a combination of both. While design feature information originates in the CAD model, some of the machining feature information could have been derived by other clients of the master model. The deposited information includes a standard description of the net shape plus all information on design features, parameters, and constraints that the CAD system discloses. This information must be appropriately associ ated in the master model, and must be made persistent and consistent with all feature views supported by the master model. We already discussed how to persistently identify elements of the net shape and how to publish their metamorphosis under CAD system edits of the net shape, in the change protocol. Thus, associations of surface nish are easy to maintain persistently. Moreover, maintaining the information associated with machining features that correspond to one or more design features is straight forward. Finally, the maintenance of tolerance feature information has been discussed before in Section 4. 1. It remains to explain the persistent maintenance of machining features that are composed of several net shape elements that do not comprise entire design features. To do so, we need to consider the nature of the changes that arise from the manufacturing process planning work. These changes apply to all machining features whether they correspond to one or more design features or not. When a manufacturing method is assigned to a machining feature, two di er ent outcomes are possible: the method can be completed successfully or it fails. Some factors that a ect the assignment process are material properties, geo metric structure of the part, dimensioning and tolerancing values, and available tools. Examples of outputs generated by a manufacturing process assignment that fails are: the stock cannot be prepared the part cannot be clamped in a setup an entry face of a machining feature cannot be accessed the machining tool cannot perform as required the machining tool is not available 2 1 of a machining feature cannot be accessed. The process planner will report the machining feature that cannot be manufactured as well as those part geometries that preclude access to the entry face. Consider now the situation where the assignment of a manufacturing method fails because a nominal dimension requires a tool for machining that is not available. For example, a slot may have been designed with a width smaller than the smallest mill available. The process planner will generate a report describing the machining feature and the range of nominal values for which tools are available. Here, the required geometry changes are driven by changing the respective parameter that is already present in the master model. Most likely, there will be no fundamental change of the topology, implying that the change protocol is a graph of depth 1. Finally consider the case where the assignment fails because tolerancing requirements are too tight and the available machine cannot perform the op eration. For example, a surface nish may require a high speed mill, but the machine does not have the sufficient horse power to cut the material at that speed. The process planner will report on the performing range of the available tool (given the material and tolerance stipulated). Here, the required changes do not a ect the shape of the part. Hence, editing is reduced to updating tolerance speci cations already defined in the master model. They have to be coordinated with the GD&T view, and the CAD model should update its internal model if some of the tolerances originated from CAD model speci cations. In summary, the information to record the shape of the manufacturing fea tures can be obtained by referring to design features, or else be built up by mappings from net shape and attributes on net shape elements. In the latter case, the structuring information such as parameters and dimensions may be in con ict with the design view parameters and dimensions. They are valuated ini tially as driven dimensions. This feature information is supplemented by GD&T features, and by surface nish and material attributes. The changes to net shape that arise out of the machining and process plan ning view either are major design revisions, and then they should not be au tomated, or else they are changes of feature parameters that imply minimal topology changes. Where the parameters are in con ict with the design param 2 2 change may be dimensions that are driven by design parameters and dimen sional constraints. We abstract the situation in the following constraint schema reconciliation problem. 5.1 Problem Formulation Given a spatial arrangement of net shape elements "
+            "text": "of a set of parameters. For example, an open slot can be represented by a numerical parameter that de nes the slot depth; by a pro le, consisting of a set of 1-dimensional geometric elements; and by a trajectory for the sweep, again a set of 1-dimensional geometric elements. If the slot is not open, then appropriate end conditions must be defined as well. Replicated features can be defined generically by describing the element feature plus the set of parameters that define the pattern; rectangular, circular, etc. When representing these features, we do not want to duplicate information already present in the master model. first, consider machining and transition features. If such a feature coincides with a design feature, we simply identify the design feature in the net shape in the way the CAD system has done. If the machining feature includes several design features, the machining feature is represented by a list of design feature identi ers, one for each component design feature. Finally, if the machining fea ture is composed of geometric elements identi ed individually on the net shape, and the elements do not comprise complete design features, then the machining representation should include the identi ers of these geometric elements plus the identi ers of fully included design features. Since replicated features are composed from machining features, the same rationale applies to the description of their components. Therefore, a replicate feature will be represented as a list of machining features plus the information de ning the pattern. 2 0 a combination of both. While design feature information originates in the CAD model, some of the machining feature information could have been derived by other clients of the master model. The deposited information includes a standard description of the net shape plus all information on design features, parameters, and constraints that the CAD system discloses. This information must be appropriately associ ated in the master model, and must be made persistent and consistent with all feature views supported by the master model. We already discussed how to persistently identify elements of the net shape and how to publish their metamorphosis under CAD system edits of the net shape, in the change protocol. Thus, associations of surface nish are easy to maintain persistently. Moreover, maintaining the information associated with machining features that correspond to one or more design features is straight forward. Finally, the maintenance of tolerance feature information has been discussed before in Section 4. 1. It remains to explain the persistent maintenance of machining features that are composed of several net shape elements that do not comprise entire design features. To do so, we need to consider the nature of the changes that arise from the manufacturing process planning work. These changes apply to all machining features whether they correspond to one or more design features or not. When a manufacturing method is assigned to a machining feature, two di er ent outcomes are possible: the method can be completed successfully or it fails. Some factors that a ect the assignment process are material properties, geo metric structure of the part, dimensioning and tolerancing values, and available tools. Examples of outputs generated by a manufacturing process assignment that fails are: the stock cannot be prepared the part cannot be clamped in a setup an entry face of a machining feature cannot be accessed the machining tool cannot perform as required the machining tool is not available 2 1 of a machining feature cannot be accessed. The process planner will report the machining feature that cannot be manufactured as well as those part geometries that preclude access to the entry face. Consider now the situation where the assignment of a manufacturing method fails because a nominal dimension requires a tool for machining that is not available. For example, a slot may have been designed with a width smaller than the smallest mill available. The process planner will generate a report describing the machining feature and the range of nominal values for which tools are available. Here, the required geometry changes are driven by changing the respective parameter that is already present in the master model. Most likely, there will be no fundamental change of the topology, implying that the change protocol is a graph of depth 1. Finally consider the case where the assignment fails because tolerancing requirements are too tight and the available machine cannot perform the op eration. For example, a surface nish may require a high speed mill, but the machine does not have the sufficient horse power to cut the material at that speed. The process planner will report on the performing range of the available tool (given the material and tolerance stipulated). Here, the required changes do not a ect the shape of the part. Hence, editing is reduced to updating tolerance speci cations already defined in the master model. They have to be coordinated with the GD&T view, and the CAD model should update its internal model if some of the tolerances originated from CAD model speci cations. In summary, the information to record the shape of the manufacturing fea tures can be obtained by referring to design features, or else be built up by mappings from net shape and attributes on net shape elements. In the latter case, the structuring information such as parameters and dimensions may be in con ict with the design view parameters and dimensions. They are valuated ini tially as driven dimensions. This feature information is supplemented by GD&T features, and by surface nish and material attributes. The changes to net shape that arise out of the machining and process plan ning view either are major design revisions, and then they should not be au tomated, or else they are changes of feature parameters that imply minimal topology changes. Where the parameters are in con ict with the design param 2 2 change may be dimensions that are driven by design parameters and dimensional constraints. We abstract the situation in the following constraint schema reconciliation problem. 5.1 Problem Formulation Given a spatial arrangement of net shape elements "
           },
           {
             "kind": "inline_math_ref",
@@ -1574,7 +1427,7 @@
           },
           {
             "kind": "text",
-            "text": ", consider a set of con straints "
+            "text": ", consider a set of constraints "
           },
           {
             "kind": "inline_math_ref",
@@ -1582,7 +1435,7 @@
           },
           {
             "kind": "text",
-            "text": " on them, such as dimensional constraints, constraints of angle, tan gency, perpendicularity, and so on. We consider a maximal subset of constraints "
+            "text": " on them, such as dimensional constraints, constraints of angle, tangency, perpendicularity, and so on. We consider a maximal subset of constraints "
           },
           {
             "kind": "inline_math_ref",
@@ -1653,7 +1506,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -1665,7 +1518,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -1677,7 +1530,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -1689,7 +1542,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -1701,7 +1554,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -1713,7 +1566,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -1725,7 +1578,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1736,21 +1589,21 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0025",
+      "id": "blk-display_equation_ref-0024",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p024-0012"
+        "math_id": "mathpix-eq-p024-0013"
       },
       "source_spans": [
         {
           "page": 24,
           "bbox": {
-            "x0": 243.5,
-            "y0": 383.0,
-            "x1": 348.0,
-            "y1": 396.5,
-            "width": 104.5,
-            "height": 13.5
+            "x0": 243.36,
+            "y0": 382.99,
+            "x1": 347.9,
+            "y1": 396.52,
+            "width": 104.54,
+            "height": 13.53
           },
           "engine": "mathpix"
         }
@@ -1763,7 +1616,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0026",
+      "id": "blk-paragraph-0025",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1856,7 +1709,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1867,7 +1720,7 @@
       }
     },
     {
-      "id": "blk-figure-0027",
+      "id": "blk-figure-0026",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-8"
@@ -1894,7 +1747,7 @@
       }
     },
     {
-      "id": "blk-figure-0028",
+      "id": "blk-figure-0027",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-9"
@@ -1921,7 +1774,7 @@
       }
     },
     {
-      "id": "blk-figure-0029",
+      "id": "blk-figure-0028",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-10"
@@ -1948,7 +1801,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0030",
+      "id": "blk-paragraph-0029",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1969,7 +1822,7 @@
             "width": 377.27,
             "height": 568.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1980,7 +1833,7 @@
       }
     },
     {
-      "id": "blk-figure-0031",
+      "id": "blk-figure-0030",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-11"
@@ -2007,13 +1860,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0032",
+      "id": "blk-paragraph-0031",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "particular, is created and edited by the CAD system. The change protocol is a mechanism to account for the fact that shape information changes a ect the information that is processed and maintained by other application domains, in particular the shape aspect of the domain-specific features downstream applica tions may work with. Clearly, information that has been created and is owned by a client with one view can a ect many other clients, including the CAD system. For example, assume that the net shape was prepared by the CAD system using some dimen sional constraint that, after analyzing geometric dimensioning and tolerancing information in the GD&T view has to be changed. Then the change, required by the GD&T view, a ects the CAD view. Potentially many other application views are a ected as well. The dimension changes may be indirect, since there is no guarantee that the shape design is dimensioned in a way fully compatible with the GD&T view. This cross-dependency of information between views requires explicit proto cols that ensure that information is added to the master model in an orderly manner and is updated maintaining consistency of and between all views. In many cases, the protocols mirror the organizational structures now in place in corporations for carrying out to design changes. In terms of relational data base design, transaction serializability is an approximate counterpart to such protocols. We restrict to three views: the CAD design view, the GD&T view, and the manufacturing view. For the manufacturing view we assume that the NC machining discussed in Section 4. 2 is carried out on stock that comes from casting, forming, or is from externally manufactured supply. If the stock has shape that is functionally dependent on the net shape, for example in the case of casting, the relationship between net shape and intermediate shapes should be formalized. For example, the functional dependency in the case of machining from cast stock could include the following rules: 1. The volume to be removed by machining must exceed a minimum thickness condition. That is, we need to enlarge the net shape by a particular o set from the machined surfaces.."
+            "text": "particular, is created and edited by the CAD system. The change protocol is a mechanism to account for the fact that shape information changes a ect the information that is processed and maintained by other application domains, in particular the shape aspect of the domain-specific features downstream applica tions may work with. Clearly, information that has been created and is owned by a client with one view can a ect many other clients, including the CAD system. For example, assume that the net shape was prepared by the CAD system using some dimen sional constraint that, after analyzing geometric dimensioning and tolerancing information in the GD&T view has to be changed. Then the change, required by the GD&T view, a ects the CAD view. Potentially many other application views are a ected as well. The dimension changes may be indirect, since there is no guarantee that the shape design is dimensioned in a way fully compatible with the GD&T view. This cross-dependency of information between views requires explicit proto cols that ensure that information is added to the master model in an orderly manner and is updated maintaining consistency of and between all views. In many cases, the protocols mirror the organizational structures now in place in corporations for carrying out to design changes. In terms of relational data base design, transaction serializability is an approximate counterpart to such protocols. We restrict to three views: the CAD design view, the GD&T view, and the manufacturing view. For the manufacturing view we assume that the NC machining discussed in Section 4. 2 is carried out on stock that comes from"
           }
         ]
       },
@@ -2028,19 +1881,7 @@
             "width": 377.03,
             "height": 381.12
           },
-          "engine": "docling"
-        },
-        {
-          "page": 27,
-          "bbox": {
-            "x0": 107.04,
-            "y0": 333.94,
-            "x1": 484.31,
-            "y1": 777.46,
-            "width": 377.27,
-            "height": 443.52
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2051,7 +1892,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0033",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2072,7 +1913,7 @@
             "width": 377.27,
             "height": 587.28
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2083,7 +1924,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0034",
+      "id": "blk-paragraph-0033",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2104,7 +1945,7 @@
             "width": 377.04,
             "height": 460.8
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2115,7 +1956,7 @@
       }
     },
     {
-      "id": "blk-figure-0035",
+      "id": "blk-figure-0034",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-12"
@@ -2142,7 +1983,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0036",
+      "id": "blk-paragraph-0035",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2163,7 +2004,7 @@
             "width": 377.28,
             "height": 470.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2174,7 +2015,7 @@
       }
     },
     {
-      "id": "blk-figure-0037",
+      "id": "blk-figure-0036",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-13"
@@ -2201,7 +2042,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0038",
+      "id": "blk-paragraph-0037",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2222,7 +2063,7 @@
             "width": 377.04,
             "height": 566.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2234,7 +2075,7 @@
             "width": 67.44,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2245,7 +2086,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0039",
+      "id": "blk-paragraph-0038",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2266,7 +2107,7 @@
             "width": 281.51,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2277,7 +2118,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0040",
+      "id": "blk-paragraph-0039",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2298,7 +2139,7 @@
             "width": 128.4,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2309,13 +2150,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0041",
+      "id": "blk-paragraph-0040",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "In V. Srinivasan and H.B. Voelcker, editors, Dimensional Toland M.J. Wozny, editors, Product Modeling for Computer Integrated Design erancing and Metrology, volume CRTD-2 7, pages 2 4 9 { 2 5 8, Dearborn, MI, and Manufacture, pages 2 0 3 { 2 1 2, London, UK, 1 9 9 7. Chapman and Hall. June 17-1 9 1 9 9 3. ASME."
+            "text": "In V. Srinivasan and H.B. Voelcker, editors, Dimensional Toland M.J. Wozny, editors, Product Modeling for Computer Integrated Design June 1 7-1 9 1 9 9 3. ASME."
           }
         ]
       },
@@ -2330,19 +2171,7 @@
             "width": 300.72,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 32.98,
-            "x1": 484.08,
-            "y1": 332.98,
-            "width": 354.72,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2354,7 +2183,7 @@
             "width": 118.56,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2365,7 +2194,7 @@
       }
     },
     {
-      "id": "blk-list_item-0042",
+      "id": "blk-list_item-0041",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2389,7 +2218,75 @@
             "width": 249.36,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0042",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "J.J. Cunningham and J.R. Dixon. Designing with features. The origin of a multiple-view modeling system. In 1 6th ASME International Computers ing Conference and Exhibition, volume I. Fudos and C.M. Ho mann. A graph-constructive approach to solving sys-"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 68.98,
+            "x1": 293.52,
+            "y1": 368.98,
+            "width": 164.16,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 300.0,
+            "y0": 68.98,
+            "x1": 484.08,
+            "y1": 368.98,
+            "width": 184.08,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 96.1,
+            "x1": 318.72,
+            "y1": 396.1,
+            "width": 189.36,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 407.38,
+            "x1": 484.07,
+            "y1": 707.38,
+            "width": 354.71,
+            "height": 300.0
+          },
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2406,91 +2303,11 @@
         "spans": [
           {
             "kind": "text",
-            "text": "J.J. Cunningham and J.R. Dixon. Designing with features. The origin of a multiple-view modeling system. In 1 6th ASME International Computers June 17-19 1993. ASME. [4] J.J. Cunningham and J.R. Dixon. Designing with features. The origin of features. In V.A. Tipnis and E.M. Patton, editors, Computers in engineering Conference and Exhibition, volume 1, pages 237-243, San Francisco, 1988. ASME. ing Conference and Exhibition, volume 1, pages 2 3 7 { 2 4 3, San Francisco, I. Fudos and C.M. Ho mann. A graph-constructive approach to solving sys-"
-          },
-          {
-            "kind": "text",
-            "text": " "
-          },
-          {
-            "kind": "text",
-            "text": "1 9 8 8. ASME. tems of geometric constraints. ACM Transactions on Graphics, 1 6(2): 1 7 9 {"
+            "text": "1 9 8 8. ASME. K.J. de Kraker, M. Dohem, and W.F. Bronsvoort."
           }
         ]
       },
       "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 68.98,
-            "x1": 293.52,
-            "y1": 368.98,
-            "width": 164.16,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 300.0,
-            "y0": 68.98,
-            "x1": 484.08,
-            "y1": 368.98,
-            "width": 184.08,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 82.42,
-            "x1": 484.32,
-            "y1": 382.42,
-            "width": 354.96,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 96.1,
-            "x1": 318.72,
-            "y1": 396.1,
-            "width": 189.36,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 323.76,
-            "y0": 96.1,
-            "x1": 332.4,
-            "y1": 396.1,
-            "width": 8.64,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 407.38,
-            "x1": 484.07,
-            "y1": 707.38,
-            "width": 354.71,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
         {
           "page": 30,
           "bbox": {
@@ -2501,40 +2318,8 @@
             "width": 63.36,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 420.82,
-            "x1": 484.8,
-            "y1": 720.82,
-            "width": 355.44,
-            "height": 300.0
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0045",
-      "type": "paragraph",
-      "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "K.J. de Kraker, M. Dohem, and W.F. Bronsvoort."
-          }
-        ]
-      },
-      "source_spans": [
         {
           "page": 30,
           "bbox": {
@@ -2545,7 +2330,7 @@
             "width": 247.44,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2556,7 +2341,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0046",
+      "id": "blk-paragraph-0044",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2577,7 +2362,7 @@
             "width": 53.52,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2588,13 +2373,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0047",
+      "id": "blk-paragraph-0045",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "conversion. opening a view. In M. Pratt, R.D. Siriram, and M.J. Wozny, editors, Product Modeling for Computer Integrated Design and Manufacture, pages 2 0 3 { 2 1 2, London, UK, 1 9 9 7. Chapman and Hall. Feature validation in Springer Verlag, Heidelberg, 1 9 9 7. views in feature modeling."
+            "text": "conversion. opening a view. In M. Pratt, R.D. Siriram, and M.J. Wozny, editors, Product Modeling for Computer Integrated Design and Manufacture, Feature validation in views in feature modeling."
           }
         ]
       },
@@ -2609,19 +2394,7 @@
             "width": 354.48,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 172.66,
-            "x1": 391.92,
-            "y1": 472.66,
-            "width": 262.56,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2633,19 +2406,7 @@
             "width": 99.84,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 222.34,
-            "x1": 293.04,
-            "y1": 522.34,
-            "width": 163.68,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2657,7 +2418,7 @@
             "width": 127.92,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2668,13 +2429,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0048",
+      "id": "blk-paragraph-0046",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Applications, pages 1 2 3 { 1 3 0. ACM Press, 1 9 9 7. K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort."
+            "text": "K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort."
           }
         ]
       },
@@ -2689,19 +2450,7 @@
             "width": 248.88,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 272.02,
-            "x1": 355.68,
-            "y1": 572.02,
-            "width": 226.32,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2713,7 +2462,7 @@
             "width": 249.6,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2724,7 +2473,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0049",
+      "id": "blk-paragraph-0047",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2745,7 +2494,7 @@
             "width": 62.16,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2757,7 +2506,7 @@
             "width": 354.72,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2769,7 +2518,7 @@
             "width": 100.07,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2781,7 +2530,7 @@
             "width": 218.63,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 30,
@@ -2793,7 +2542,7 @@
             "width": 99.6,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -2805,7 +2554,7 @@
             "width": 57.36,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2816,7 +2565,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0050",
+      "id": "blk-paragraph-0048",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2837,7 +2586,7 @@
             "width": 184.56,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -2849,7 +2598,7 @@
             "width": 44.16,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -2861,7 +2610,7 @@
             "width": 105.36,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2872,7 +2621,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0051",
+      "id": "blk-paragraph-0049",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2893,7 +2642,7 @@
             "width": 98.15,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2904,13 +2653,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0052",
+      "id": "blk-paragraph-0050",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "CAD Systems Development. Tools and Methods, Berlin, 1 9 7 7. Springer-Verlag."
+            "text": "CAD Systems Development. Tools and"
           }
         ]
       },
@@ -2925,19 +2674,7 @@
             "width": 186.72,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 322.66,
-            "x1": 316.08,
-            "y1": 622.66,
-            "width": 186.72,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2948,7 +2685,7 @@
       }
     },
     {
-      "id": "blk-list_item-0053",
+      "id": "blk-list_item-0051",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2972,7 +2709,7 @@
             "width": 354.95,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -2984,7 +2721,7 @@
             "width": 132.0,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2995,7 +2732,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0054",
+      "id": "blk-paragraph-0052",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3016,7 +2753,7 @@
             "width": 165.84,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3028,7 +2765,7 @@
             "width": 26.64,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3040,7 +2777,7 @@
             "width": 354.71,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3051,7 +2788,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0055",
+      "id": "blk-paragraph-0053",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3072,7 +2809,7 @@
             "width": 175.92,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3083,29 +2820,17 @@
       }
     },
     {
-      "id": "blk-paragraph-0056",
+      "id": "blk-paragraph-0054",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "Technology, 2 0, chapter 4, pages 6 5 { 8 0. Elsevier Science B.V., 1 9 9 4."
+            "text": "Science B.V., 1 9 9 4."
           }
         ]
       },
       "source_spans": [
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 385.06,
-            "x1": 358.55,
-            "y1": 685.06,
-            "width": 229.19,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
         {
           "page": 31,
           "bbox": {
@@ -3116,7 +2841,7 @@
             "width": 92.16,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3127,13 +2852,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0057",
+      "id": "blk-paragraph-0055",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "geometric constraint solving. Journal of Symbolic Computation, 2 3: 2 8 7 {"
+            "text": "geometric constraint solving. Journal of Symbolic Computation, 2 3: 2 8 7 { F.-L. Krause, E. Rieger, and A. Ulbrich. Feature processing as kernel for"
           }
         ]
       },
@@ -3148,7 +2873,7 @@
             "width": 139.44,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3160,7 +2885,7 @@
             "width": 166.08,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3172,60 +2897,8 @@
             "width": 36.24,
             "height": 300.0
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0058",
-      "type": "paragraph",
-      "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "O.I. Semenkov. An experimental CAD CAM system. In D. McPherson, editor, 3rd Inrtenational IFIP IFAC Conference on Programming Languages"
-          }
-        ]
-      },
-      "source_spans": [
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 406.9,
-            "x1": 483.83,
-            "y1": 706.9,
-            "width": 354.47,
-            "height": 300.0
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-paragraph-0059",
-      "type": "paragraph",
-      "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "F.-L. Krause, E. Rieger, and A. Ulbrich. Machine Tools, pages Feature processing as kernel for"
-          }
-        ]
-      },
-      "source_spans": [
+          "engine": "composed"
+        },
         {
           "page": 31,
           "bbox": {
@@ -3236,19 +2909,7 @@
             "width": 195.6,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 148.56,
-            "y0": 434.02,
-            "x1": 222.72,
-            "y1": 734.02,
-            "width": 74.16,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3260,7 +2921,7 @@
             "width": 152.63,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3271,7 +2932,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0060",
+      "id": "blk-paragraph-0056",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3292,7 +2953,7 @@
             "width": 41.76,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3304,7 +2965,7 @@
             "width": 37.92,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3316,7 +2977,7 @@
             "width": 44.16,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3328,7 +2989,7 @@
             "width": 53.04,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3339,7 +3000,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0061",
+      "id": "blk-paragraph-0057",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3360,7 +3021,7 @@
             "width": 354.96,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3372,7 +3033,7 @@
             "width": 169.68,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3383,29 +3044,17 @@
       }
     },
     {
-      "id": "blk-paragraph-0062",
+      "id": "blk-paragraph-0058",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "CAD CAM Systems, volume II, pages 6 9 3 { 7 1 6, Valenciennes, France, May definition and recognition of volume features a, and D.S. Nau, editors, and P. Brunet,"
+            "text": "definition and recognition of volume features a, and D.S. Nau, editors, and P. Brunet,"
           }
         ]
       },
       "source_spans": [
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 153.94,
-            "x1": 484.31,
-            "y1": 453.94,
-            "width": 354.95,
-            "height": 300.0
-          },
-          "engine": "docling"
-        },
         {
           "page": 31,
           "bbox": {
@@ -3416,7 +3065,7 @@
             "width": 216.95,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3428,7 +3077,7 @@
             "width": 8.64,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3440,7 +3089,7 @@
             "width": 35.28,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3451,7 +3100,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0063",
+      "id": "blk-paragraph-0059",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3472,7 +3121,7 @@
             "width": 20.88,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3483,7 +3132,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0064",
+      "id": "blk-paragraph-0060",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3504,7 +3153,7 @@
             "width": 53.52,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3516,7 +3165,7 @@
             "width": 205.44,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3528,7 +3177,7 @@
             "width": 79.2,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3539,13 +3188,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0065",
+      "id": "blk-paragraph-0061",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "1 9 9 4. IFIP. Shape Classi cation in Computer Aided Design. J.D. Meadows. Geometric Dimensioning and Tolerancing. Marcel Dekker, M.E. Newell and D.C. Evans. Modeling by computer. In J.J. Allan, editor, IFIP Working Conference on Computer-Aided Design Systems, pages 2 9 1 { 2 9 7, Austin, TX, USA, 1 2-1 4 February 1 9 7 6. IFIP, North-Holland Pu. Co."
+            "text": "1 9 9 4. IFIP. Shape Classi cation in Computer Aided Design. J.D. Meadows. Geometric Dimensioning and Tolerancing. Marcel Dekker, M.E. Newell and D.C. Evans. Modeling by computer. In J.J. Allan, editor, 2 9 7, Austin, TX, USA, 1 2-1 4 February 1 9 7 6. IFIP, North-Holland Pu. Co."
           }
         ]
       },
@@ -3560,7 +3209,7 @@
             "width": 53.04,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3572,7 +3221,7 @@
             "width": 235.2,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3584,7 +3233,7 @@
             "width": 354.96,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3596,19 +3245,7 @@
             "width": 354.71,
             "height": 300.0
           },
-          "engine": "docling"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.36,
-            "y0": 273.7,
-            "x1": 484.32,
-            "y1": 573.7,
-            "width": 354.96,
-            "height": 300.0
-          },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 31,
@@ -3620,7 +3257,7 @@
             "width": 354.95,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3631,7 +3268,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0066",
+      "id": "blk-paragraph-0062",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3652,7 +3289,7 @@
             "width": 91.91,
             "height": 300.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3663,20 +3300,180 @@
       }
     },
     {
-      "id": "blk-list_item-0067",
-      "type": "list_item",
+      "id": "blk-reference-0063",
+      "type": "reference",
       "content": {
-        "spans": [
-          {
-            "kind": "text",
-            "text": "2 0, chapter 1 8, pages 1 { 1 1. Elsevier [2 6] J.J. Shah, M. M antyl a, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20. Elsevier Sci ence B.V., 1 9 9 4. [2 7] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 33: 1 0 5 { 1 2 4, 1 9 9 0. [2 8] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1 9 9 0. [2 9] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. M antyl a, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 20, chapter 5, pages 8 3 { 1 0 6. Elsevier Science B.V., 1 9 9 4. [3 0] ANSI Standard Y 1 4. 5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1 9 9 4. [3 1] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press, 1 9 8 9."
-          }
-        ],
-        "marker": null,
-        "ordered": false,
-        "depth": 1
+        "reference_id": "ref-001"
       },
       "source_spans": [
+        {
+          "page": 27,
+          "bbox": {
+            "x0": 107.04,
+            "y0": 333.94,
+            "x1": 484.31,
+            "y1": 777.46,
+            "width": 377.27,
+            "height": 443.52
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 32.98,
+            "x1": 484.08,
+            "y1": 332.98,
+            "width": 354.72,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 82.42,
+            "x1": 484.32,
+            "y1": 382.42,
+            "width": 354.96,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 323.76,
+            "y0": 96.1,
+            "x1": 332.4,
+            "y1": 396.1,
+            "width": 8.64,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 420.82,
+            "x1": 484.8,
+            "y1": 720.82,
+            "width": 355.44,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 172.66,
+            "x1": 391.92,
+            "y1": 472.66,
+            "width": 262.56,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 222.34,
+            "x1": 293.04,
+            "y1": 522.34,
+            "width": 163.68,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 30,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 272.02,
+            "x1": 355.68,
+            "y1": 572.02,
+            "width": 226.32,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 322.66,
+            "x1": 316.08,
+            "y1": 622.66,
+            "width": 186.72,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 385.06,
+            "x1": 358.55,
+            "y1": 685.06,
+            "width": 229.19,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 406.9,
+            "x1": 483.83,
+            "y1": 706.9,
+            "width": 354.47,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 148.56,
+            "y0": 434.02,
+            "x1": 222.72,
+            "y1": 734.02,
+            "width": 74.16,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 153.94,
+            "x1": 484.31,
+            "y1": 453.94,
+            "width": 354.95,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 31,
+          "bbox": {
+            "x0": 129.36,
+            "y0": 273.7,
+            "x1": 484.32,
+            "y1": 573.7,
+            "width": 354.96,
+            "height": 300.0
+          },
+          "engine": "composed"
+        },
         {
           "page": 32,
           "bbox": {
@@ -3687,1162 +3484,7 @@
             "width": 377.52,
             "height": 547.92
           },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "blk-reference-0068",
-      "type": "reference",
-      "content": {
-        "reference_id": "ref-001"
-      },
-      "source_spans": [
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 111.0,
-            "y0": 135.5,
-            "x1": 487.0,
-            "y1": 150.5,
-            "width": 376.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 150.0,
-            "x1": 423.0,
-            "y1": 164.0,
-            "width": 294.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 172.5,
-            "x1": 485.5,
-            "y1": 187.0,
-            "width": 373.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 187.0,
-            "x1": 486.0,
-            "y1": 200.5,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 200.0,
-            "x1": 485.0,
-            "y1": 214.0,
-            "width": 356.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 213.0,
-            "x1": 412.5,
-            "y1": 227.0,
-            "width": 285.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 235.5,
-            "x1": 485.5,
-            "y1": 250.5,
-            "width": 373.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 250.0,
-            "x1": 486.0,
-            "y1": 264.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 263.0,
-            "x1": 485.5,
-            "y1": 277.0,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 277.0,
-            "x1": 249.5,
-            "y1": 290.0,
-            "width": 122.0,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 298.5,
-            "x1": 486.0,
-            "y1": 314.0,
-            "width": 374.0,
-            "height": 15.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 313.0,
-            "x1": 486.0,
-            "y1": 327.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 326.5,
-            "x1": 485.5,
-            "y1": 340.0,
-            "width": 357.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 339.5,
-            "x1": 194.0,
-            "y1": 353.0,
-            "width": 65.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 362.0,
-            "x1": 486.0,
-            "y1": 377.0,
-            "width": 374.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 376.5,
-            "x1": 485.0,
-            "y1": 390.0,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 389.5,
-            "x1": 485.5,
-            "y1": 403.0,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 402.5,
-            "x1": 392.5,
-            "y1": 416.5,
-            "width": 265.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 425.0,
-            "x1": 485.5,
-            "y1": 440.0,
-            "width": 373.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 439.5,
-            "x1": 485.5,
-            "y1": 453.0,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 452.5,
-            "x1": 294.0,
-            "y1": 466.5,
-            "width": 166.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 475.0,
-            "x1": 485.5,
-            "y1": 490.0,
-            "width": 373.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 488.0,
-            "x1": 486.0,
-            "y1": 502.5,
-            "width": 358.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 502.5,
-            "x1": 357.0,
-            "y1": 516.5,
-            "width": 229.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 525.0,
-            "x1": 486.0,
-            "y1": 538.5,
-            "width": 374.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 538.0,
-            "x1": 485.0,
-            "y1": 552.0,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 552.5,
-            "x1": 486.0,
-            "y1": 566.5,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 565.5,
-            "x1": 481.0,
-            "y1": 579.5,
-            "width": 353.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 588.0,
-            "x1": 485.0,
-            "y1": 602.0,
-            "width": 373.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 601.0,
-            "x1": 485.5,
-            "y1": 615.0,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 613.5,
-            "x1": 475.5,
-            "y1": 629.5,
-            "width": 348.0,
-            "height": 16.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 637.5,
-            "x1": 485.5,
-            "y1": 652.0,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 651.0,
-            "x1": 486.0,
-            "y1": 665.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 664.5,
-            "x1": 207.0,
-            "y1": 678.0,
-            "width": 79.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 112.0,
-            "x1": 486.0,
-            "y1": 127.0,
-            "width": 380.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 126.5,
-            "x1": 486.0,
-            "y1": 140.0,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 139.5,
-            "x1": 486.0,
-            "y1": 153.5,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 152.5,
-            "x1": 321.5,
-            "y1": 166.5,
-            "width": 194.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 175.0,
-            "x1": 485.0,
-            "y1": 189.0,
-            "width": 379.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 188.0,
-            "x1": 486.0,
-            "y1": 202.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 202.0,
-            "x1": 486.0,
-            "y1": 216.5,
-            "width": 358.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 216.0,
-            "x1": 329.5,
-            "y1": 229.5,
-            "width": 202.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 237.0,
-            "x1": 485.5,
-            "y1": 251.5,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 251.5,
-            "x1": 236.0,
-            "y1": 264.0,
-            "width": 108.5,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 272.5,
-            "x1": 486.0,
-            "y1": 287.5,
-            "width": 380.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 287.0,
-            "x1": 296.5,
-            "y1": 299.5,
-            "width": 169.0,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 308.0,
-            "x1": 486.0,
-            "y1": 321.5,
-            "width": 380.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 321.5,
-            "x1": 486.0,
-            "y1": 335.5,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 356.5,
-            "x1": 486.0,
-            "y1": 371.0,
-            "width": 380.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 371.0,
-            "x1": 487.0,
-            "y1": 385.0,
-            "width": 359.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 384.0,
-            "x1": 486.0,
-            "y1": 398.0,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 398.0,
-            "x1": 183.5,
-            "y1": 411.0,
-            "width": 54.5,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 419.5,
-            "x1": 485.5,
-            "y1": 433.5,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 433.0,
-            "x1": 335.5,
-            "y1": 446.5,
-            "width": 208.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 455.0,
-            "x1": 485.5,
-            "y1": 469.0,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 469.0,
-            "x1": 234.0,
-            "y1": 482.0,
-            "width": 106.5,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 490.5,
-            "x1": 485.5,
-            "y1": 504.5,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 504.0,
-            "x1": 486.0,
-            "y1": 517.5,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 517.5,
-            "x1": 486.0,
-            "y1": 531.0,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 539.5,
-            "x1": 486.0,
-            "y1": 553.0,
-            "width": 380.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 553.0,
-            "x1": 317.0,
-            "y1": 566.5,
-            "width": 188.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 575.0,
-            "x1": 485.5,
-            "y1": 588.5,
-            "width": 379.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 588.0,
-            "x1": 485.5,
-            "y1": 602.0,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 602.0,
-            "x1": 485.5,
-            "y1": 615.5,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 615.5,
-            "x1": 456.0,
-            "y1": 629.0,
-            "width": 328.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 637.0,
-            "x1": 485.0,
-            "y1": 651.0,
-            "width": 379.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 651.0,
-            "x1": 486.0,
-            "y1": 665.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.0,
-            "y0": 664.5,
-            "x1": 485.5,
-            "y1": 678.0,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 677.5,
-            "x1": 300.5,
-            "y1": 691.5,
-            "width": 173.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 112.0,
-            "x1": 486.0,
-            "y1": 127.0,
-            "width": 380.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 126.5,
-            "x1": 485.0,
-            "y1": 140.0,
-            "width": 356.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 139.5,
-            "x1": 290.0,
-            "y1": 153.5,
-            "width": 161.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 162.0,
-            "x1": 486.0,
-            "y1": 176.5,
-            "width": 380.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 175.5,
-            "x1": 340.0,
-            "y1": 190.0,
-            "width": 212.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 198.0,
-            "x1": 486.0,
-            "y1": 212.5,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 212.0,
-            "x1": 486.0,
-            "y1": 225.5,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 225.0,
-            "x1": 485.5,
-            "y1": 240.0,
-            "width": 357.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 239.0,
-            "x1": 396.5,
-            "y1": 253.5,
-            "width": 269.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 260.5,
-            "x1": 487.0,
-            "y1": 275.5,
-            "width": 380.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 275.0,
-            "x1": 485.5,
-            "y1": 289.0,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 288.0,
-            "x1": 208.5,
-            "y1": 302.0,
-            "width": 81.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 310.5,
-            "x1": 485.5,
-            "y1": 325.0,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 325.0,
-            "x1": 395.5,
-            "y1": 339.0,
-            "width": 268.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 346.0,
-            "x1": 487.0,
-            "y1": 361.0,
-            "width": 380.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 360.5,
-            "x1": 486.0,
-            "y1": 374.5,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 373.5,
-            "x1": 427.0,
-            "y1": 388.0,
-            "width": 298.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 396.0,
-            "x1": 486.0,
-            "y1": 411.0,
-            "width": 379.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 410.5,
-            "x1": 485.5,
-            "y1": 424.5,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 423.5,
-            "x1": 486.0,
-            "y1": 437.5,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 437.5,
-            "x1": 486.0,
-            "y1": 451.5,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 451.5,
-            "x1": 264.0,
-            "y1": 464.0,
-            "width": 135.0,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 472.5,
-            "x1": 485.0,
-            "y1": 487.5,
-            "width": 378.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 487.0,
-            "x1": 266.0,
-            "y1": 500.5,
-            "width": 137.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 509.0,
-            "x1": 487.0,
-            "y1": 524.5,
-            "width": 380.5,
-            "height": 15.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 523.5,
-            "x1": 485.5,
-            "y1": 537.5,
-            "width": 356.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4877,7 +3519,7 @@
             "width": 377.03,
             "height": 580.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -4889,7 +3531,7 @@
             "width": 377.27,
             "height": 402.24
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -4901,7 +3543,7 @@
             "width": 377.28,
             "height": 560.16
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 10,
@@ -4913,7 +3555,7 @@
             "width": 377.04,
             "height": 489.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4955,7 +3597,7 @@
             "width": 377.03,
             "height": 580.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -4967,7 +3609,7 @@
             "width": 377.27,
             "height": 402.24
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -4979,7 +3621,7 @@
             "width": 377.28,
             "height": 560.16
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 10,
@@ -4991,7 +3633,7 @@
             "width": 377.04,
             "height": 489.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5033,7 +3675,7 @@
             "width": 377.03,
             "height": 580.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -5045,7 +3687,7 @@
             "width": 377.27,
             "height": 402.24
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -5057,7 +3699,7 @@
             "width": 377.28,
             "height": 560.16
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 10,
@@ -5069,7 +3711,7 @@
             "width": 377.04,
             "height": 489.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5111,7 +3753,7 @@
             "width": 377.04,
             "height": 703.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5153,7 +3795,7 @@
             "width": 377.04,
             "height": 703.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5195,7 +3837,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5207,7 +3849,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5219,7 +3861,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5231,7 +3873,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5243,7 +3885,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5255,7 +3897,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5267,7 +3909,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5309,7 +3951,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5321,7 +3963,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5333,7 +3975,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5345,7 +3987,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5357,7 +3999,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5369,7 +4011,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5381,7 +4023,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5423,7 +4065,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5435,7 +4077,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5447,7 +4089,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5459,7 +4101,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5471,7 +4113,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5483,7 +4125,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5495,7 +4137,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5538,7 +4180,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5550,7 +4192,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5562,7 +4204,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5574,7 +4216,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5586,7 +4228,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5598,7 +4240,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5610,7 +4252,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5652,7 +4294,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5664,7 +4306,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5676,7 +4318,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5688,7 +4330,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5700,7 +4342,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5712,7 +4354,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5724,7 +4366,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5766,7 +4408,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5778,7 +4420,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5790,7 +4432,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5802,7 +4444,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5814,7 +4456,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5826,7 +4468,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5838,7 +4480,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5880,7 +4522,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -5892,7 +4534,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5904,7 +4546,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -5916,7 +4558,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -5928,7 +4570,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5940,7 +4582,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -5952,7 +4594,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5995,7 +4637,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -6007,7 +4649,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -6019,7 +4661,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -6031,7 +4673,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -6043,7 +4685,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -6055,7 +4697,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -6067,7 +4709,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6109,7 +4751,7 @@
             "width": 377.28,
             "height": 530.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 20,
@@ -6121,7 +4763,7 @@
             "width": 377.03,
             "height": 380.88
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -6133,7 +4775,7 @@
             "width": 377.04,
             "height": 421.92
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 21,
@@ -6145,7 +4787,7 @@
             "width": 277.43,
             "height": 403.44
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 22,
@@ -6157,7 +4799,7 @@
             "width": 377.27,
             "height": 503.28
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -6169,7 +4811,7 @@
             "width": 377.03,
             "height": 471.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 23,
@@ -6181,7 +4823,7 @@
             "width": 377.03,
             "height": 422.4
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6201,7 +4843,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p024-0012",
+      "id": "mathpix-eq-p024-0013",
       "kind": "display",
       "display_latex": "C_{0}^{\\prime}=\\{h, k, m, n, b, f\\}",
       "semantic_expr": {
@@ -6243,12 +4885,12 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 243.5,
-            "y0": 383.0,
-            "x1": 348.0,
-            "y1": 396.5,
-            "width": 104.5,
-            "height": 13.5
+            "x0": 243.36,
+            "y0": 382.99,
+            "x1": 347.9,
+            "y1": 396.52,
+            "width": 104.54,
+            "height": 13.53
           },
           "engine": "mathpix"
         }
@@ -6293,7 +4935,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6335,7 +4977,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6377,7 +5019,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6419,7 +5061,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6461,7 +5103,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6503,7 +5145,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6545,7 +5187,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6587,7 +5229,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6629,7 +5271,7 @@
             "width": 377.04,
             "height": 754.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7148,1148 +5790,188 @@
   "references": [
     {
       "id": "ref-001",
-      "raw_text": "[1] ISO/DIS 10303-224. Industrial automation systems and integration Product data representation and exchange - Part 224, 1997. [2] W.F. Bronsvoort and F.W. Jansen. Multi-view feature modelling for design and assembly. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 14, pages 315-330. Elsevier Science B.V., 1994. [3] C. W. Brown. Feature-based tolerancing for intelligent inspection process definition. In V. Srinivasan and H.B. Voelcker, editors, Dimensional Tol erancing and Metrology, volume CRTD-27, pages 249-258, Dearborn, MI, June 17-19 1993. ASME. [4] J.J. Cunningham and J.R. Dixon. Designing with features. The origin of features. In V.A. Tipnis and E.M. Patton, editors, Computers in Engineer ing Conference and Exhibition, volume 1, pages 237-243, San Francisco, 1988. ASME. [5] K.J. de Kraker, M. Dohem, and W.F. Bronsvoort. Multiple-way feature conversion. opening a view. In M. Pratt, R.D. Siriram, and M.J. Wozny, ed itors, Product Modeling for Computer Integrated Design and Manufacture, pages 203-212, London, UK, 1997. Chapman and Hall. [6] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Feature validation and conversion. In D. Roller and P. Brunet, editors, CAD Systems Development. Springer Verlag, Heidelberg, 1997. [7] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Maintaining multiple views in feature modeling. In Fourth Symposium on Solid Modeling and Applications, pages 123-130. ACM Press, 1997. [8] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Multiple-way feature conversion to support concurrent engineering. In M. Pratt, R.D. Siriram, and M.J. Wozny, editors, Product Modeling for Computer Integrated Design and Manufacture, pages 203-212, London, UK, 1997. Chapman and Hall. [9] M. Dohmen, K.J. de Kraker, and W.F. Bronsvoort. Feature validation in a multiple-view modeling system. In 16th ASME International Computers in Engineering Conference, Irvin, NY, USA, 19-22 August 1996. ASME. [10] I. Fudos and C.M. Hoffmann. A graph-constructive approach to solving sys tems of geometric constraints. ACM Transactions on Graphics, 16(2):179 216, April 1997. [11] J. Guildford and J. Turner. Advanced tolerance analysis and synthesis for geometric tolerances. In V. Srinivasan and H.B. Voelcker, editors, Di mensional Tolerancing and Metrology, volume CRTD-27, pages 187-198, Dearborn, MI, June 17-19 1993. ASME. [12] S.K. Gupta, W.C. Regli, and D.S. Nau. Manufacturing feature instances: Which one to recognize? In C. Hoffmann and J. Rossignac, editors, Third Symposium o Solid Modeling and Applications, pages 141-152, Salt Lake City, Utah, May 17-19 1995. ACM Press. [13] G. Henzold. Handbook of Geometrical Tolerancing. John Wiley \\& Sons, Chichester, UK, 1995. [14] C. M. Hoffmann. Geometric and Solid Modeling: An Introduction. Morgan Kaufmann, San Mateo, Cal., 1989. [15] C.M. Hoffmann and R. Joan-Arinyo. Symbolic constraints in constructive geometric constraint solving. Journal of Symbolic Computation, 23:287 [16] F.-L. Krause, E. Rieger, and A. Ulbrich. Feature processing as kernel for integrated CAE systems. In Feature Modeling and Recongition in Advanced CAD/CAM Systems, volume II, pages 693-716, Valenciennes, France, May 1994. IFIP. [17] L.K. Kyprianou. Shape Classification in Computer Aided Design. PhD thesis, University of Cambridge, UK, 1980. [18] J.D. Meadows. Geometric Dimensioning and Tolerancing. Marcel Dekker, Inc., New York, 1995. [19] M.E. Newell and D.C. Evans. Modeling by computer. In J.J. Allan, editor, IFIP Working Conference on Computer-Aided Design Systems, pages 291 297, Austin, TX, USA, 12-14 February 1976. IFIP, North-Holland Pu. Co. [20] D. Roller and P. Brunet, editors. CAD Systems Development. Tools and Methods, Berlin, 1977. Springer-Verlag. [21] H. Sakurai and C.-W Chin. Definition and recognition of volume features for process planning. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 4, pages 65-80. Elsevier Science B.V., 1994. [22] O.I. Semenkov. An experimental CAD/CAM system. In D. McPherson, ed itor, 3rd Inrtenational IFIP/IFAC Conference on Programming Languages for Machine Tools, pages 397-403, Stirling, Scotland, 15-18 June 1976. IFIP/IFAC, North-Holland Pu. Co. [23] J. Shah, D. Hsiao, and L. Leonard. A Systematic Approach per Design Manufacturing Mapping, volume Geometric Modeling for Product Realiza tion, chapter B-8. Elsevier, 1993. [24] J.J. Shah. Feature transformations between application specific feature spaces. Computer Aided Design, 5(6), 1989. [25] J.J. Shah, M. Mäntylä, and D. Nau. Introduction to feature based man ufacturing. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 18, pages 1-11. Elsevier Science B.V., 1994. [26] J.J. Shah, M. Mäntylä, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20. Elsevier Sci ence B.V., 1994. [27] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 33:105-124, 1990. [28] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1990. [29] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 20, chapter 5, pages 83-106. Elsevier Science B.V., 1994. [30] ANSI Standard Y14.5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1994. [31] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press,",
-      "text": "[1] ISO/DIS 10303-224. Industrial automation systems and integration Product data representation and exchange-Part 224, 1997. [2] W.F. Bronsvoort and F.W. Jansen. Multi-view feature modelling for design and assembly. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 14, pages 315-330. Elsevier Science B.V., 1994. [3] C. W. Brown. Feature-based tolerancing for intelligent inspection process definition. In V. Srinivasan and H.B. Voelcker, editors, Dimensional Tol erancing and Metrology, volume CRTD-27, pages 249-258, Dearborn, MI, June 17-191993. ASME. [4] J.J. Cunningham and J.R. Dixon. Designing with features. The origin of features. In V.A. Tipnis and E.M. Patton, editors, Computers in engineering Conference and Exhibition, volume 1, pages 237-243, San Francisco, 1988. ASME. [5] K.J. de Kraker, M. Dohem, and W.F. Bronsvoort. Multiple-way feature conversion. opening a view. In M. Pratt, R.D. Siriram, and M.J. Wozny, ed itors, Product Modeling for Computer Integrated Design and Manufacture, pages 203-212, London, UK, 1997. Chapman and Hall. [6] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Feature validation and conversion. In D. Roller and P. Brunet, editors, CAD Systems Development. Springer Verlag, Heidelberg, 1997. [7] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Maintaining multiple views in feature modeling. In Fourth Symposium on Solid Modeling and Applications, pages 123-130. ACM Press, 1997. [8] K.J. de Kraker, M. Dohmen, and W.F. Bronsvoort. Multiple-way feature conversion to support concurrent engineering. In M. Pratt, R.D. Siriram, and M.J. Wozny, editors, Product Modeling for Computer Integrated Design and Manufacture, pages 203-212, London, UK, 1997. Chapman and Hall. [9] M. Dohmen, K.J. de Kraker, and W.F. Bronsvoort. Feature validation in a multiple-view modeling system. In 16th ASME International Computers in engineering Conference, Irvin, NY, USA, 19-22 August 1996. ASME. [10] I. Fudos and C.M. Hoffmann. A graph-constructive approach to solving sys tems of geometric constraints. ACM Transactions on Graphics, 16(2):179216, April 1997. [11] J. Guildford and J. Turner. Advanced tolerance analysis and synthesis for geometric tolerances. In V. Srinivasan and H.B. Voelcker, editors, Di mensional Tolerancing and Metrology, volume CRTD-27, pages 187-198, Dearborn, MI, June 17-191993. ASME. [12] S.K. Gupta, W.C. Regli, and D.S. Nau. Manufacturing feature instances: Which one to recognize? In C. Hoffmann and J. Rossignac, editors, Third Symposium o Solid Modeling and Applications, pages 141-152, Salt Lake City, Utah, May 17-191995. ACM Press. [13] G. Henzold. Handbook of Geometrical Tolerancing. John Wiley \\& Sons, Chichester, UK, 1995. [14] C. M. Hoffmann. Geometric and Solid Modeling: An Introduction. Morgan Kaufmann, San Mateo, Cal., 1989. [15] C.M. Hoffmann and R. Joan-Arinyo. Symbolic constraints in constructive geometric constraint solving. Journal of Symbolic Computation, 23:287 [16] F.-L. Krause, E. Rieger, and A. Ulbrich. Feature processing as kernel for integrated CAE systems. In Feature Modeling and Recongition in Advanced CAD/CAM Systems, volume II, pages 693-716, Valenciennes, France, May 1994. IFIP. [17] L.K. Kyprianou. Shape Classification in Computer Aided Design. PhD thesis, University of Cambridge, UK, 1980. [18] J.D. Meadows. Geometric Dimensioning and Tolerancing. Marcel Dekker, Inc., New York, 1995. [19] M.E. Newell and D.C. Evans. Modeling by computer. In J.J. Allan, editor, IFIP Working Conference on Computer-Aided Design Systems, pages 291297, Austin, TX, USA, 12-14 February 1976. IFIP, North-Holland Pu. Co. [20] D. Roller and P. Brunet, editors. CAD Systems Development. Tools and Methods, Berlin, 1977. Springer-Verlag. [21] H. Sakurai and C.-W Chin. definition and recognition of volume features for process planning. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 4, pages 65-80. Elsevier Science B.V., 1994. [22] O.I. Semenkov. An experimental CAD/CAM system. In D. McPherson, ed itor, 3rd Inrtenational IFIP/IFAC Conference on Programming Languages for Machine Tools, pages 397-403, Stirling, Scotland, 15-18 June 1976. IFIP/IFAC, North-Holland Pu. Co. [23] J. Shah, D. Hsiao, and L. Leonard. A Systematic Approach per Design Manufacturing Mapping, volume Geometric Modeling for Product Realiza tion, chapter B-8. Elsevier, 1993. [24] J.J. Shah. Feature transformations between application specific feature spaces. Computer Aided Design, 5(6), 1989. [25] J.J. Shah, M. Mäntylä, and D. Nau. Introduction to feature based man ufacturing. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20, chapter 18, pages 1-11. Elsevier Science B.V., 1994. [26] J.J. Shah, M. Mäntylä, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20. Elsevier Sci ence B.V., 1994. [27] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 33:105-124, 1990. [28] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1990. [29] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. Mäntylä, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 20, chapter 5, pages 83-106. Elsevier Science B.V., 1994. [30] ANSI Standard Y14.5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1994. [31] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press,",
+      "raw_text": "casting, forming, or is from externally manufactured supply. If the stock has shape that is functionally dependent on the net shape, for example in the case of casting, the relationship between net shape and intermediate shapes should be formalized. For example, the functional dependency in the case of machining from cast stock could include the following rules: 1. The volume to be removed by machining must exceed a minimum thickness condition. That is, we need to enlarge the net shape by a particular o set from the machined surfaces. 2 7 erancing and Metrology, volume CRTD- 2 7, pages 2 4 9 { 2 5 8, Dearborn, MI, and Manufacture, pages 2 0 3 { 2 1 2, London, UK, 1 9 9 7. Chapman and Hall. June 17-19 1993. ASME. [4] J.J. Cunningham and J.R. Dixon. Designing with features. The origin of features. In V.A. Tipnis and E.M. Patton, editors, Computers in Engineer- ing Conference and Exhibition, volume 1, pages 237-243, San Francisco, 1988. ASME. 1, pages 2 3 7 { 2 4 3, San Francisco, tems of geometric constraints. ACM Transactions on Graphics, 1 6( 2): 1 7 9 { pages 2 0 3 { 2 1 2, London, UK, 1 9 9 7. Chapman and Hall. Springer Verlag, Heidelberg, 1 9 9 7. Applications, pages 1 2 3 { 1 3 0. ACM Press, 1 9 9 7. Methods, Berlin, 1 9 7 7. Springer-Verlag. Technology, 2 0, chapter 4, pages 6 5 { 8 0. Elsevier O.I. Semenkov. An experimental CAD CAM system. In D. McPherson, ed- itor, 3rd Inrtenational IFIP IFAC Conference on Programming Languages Machine Tools, pages CAD CAM Systems, volume II, pages 6 9 3 { 7 1 6, Valenciennes, France, May IFIP Working Conference on Computer-Aided Design Systems, pages 2 9 1 { 2 0, chapter 1 8, pages 1 { 1 1. Elsevier [ 2 6] J.J. Shah, M. M antyl a, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 2 0. Elsevier Sci ence B.V., 1 9 9 4. [ 2 7] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 3 3: 1 0 5 { 1 2 4, 1 9 9 0. [ 2 8] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1 9 9 0. [ 2 9] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. M antyl a, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 2 0, chapter 5, pages 8 3 { 1 0 6. Elsevier Science B.V., 1 9 9 4. [ 3 0] ANSI Standard Y 1 4. 5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1 9 9 4. [ 3 1] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press, 1 9 8 9.",
+      "text": "casting, forming, or is from externally manufactured supply. If the stock has shape that is functionally dependent on the net shape, for example in the case of casting, the relationship between net shape and intermediate shapes should be formalized. For example, the functional dependency in the case of machining from cast stock could include the following rules: 1. The volume to be removed by machining must exceed a minimum thickness condition. That is, we need to enlarge the net shape by a particular o set from the machined surfaces. 27 erancing and Metrology, volume CRTD-27, pages 249-258, Dearborn, MI, and Manufacture, pages 203-212, London, UK, 1997. Chapman and Hall. June 17-191993. ASME. [4] J.J. Cunningham and J.R. Dixon. Designing with features. The origin of features. In V.A. Tipnis and E.M. Patton, editors, Computers in engineering Conference and Exhibition, volume 1, pages 237-243, San Francisco, 1988. ASME. 1, pages 237-243, San Francisco, tems of geometric constraints. ACM Transactions on Graphics, 16(2): 179-pages 203-212, London, UK, 1997. Chapman and Hall. Springer Verlag, Heidelberg, 1997. Applications, pages 123-130. ACM Press, 1997. Methods, Berlin, 1977. Springer-Verlag. Technology, 20, chapter 4, pages 65-80. Elsevier O.I. Semenkov. An experimental CAD CAM system. In D. McPherson, editor, 3rd Inrtenational IFIP IFAC Conference on Programming Languages Machine Tools, pages CAD CAM Systems, volume II, pages 693-716, Valenciennes, France, May IFIP Working Conference on Computer-Aided Design Systems, pages 291-20, chapter 18, pages 1-11. Elsevier [26] J.J. Shah, M. M antyl a, and D.S. Nau, editors. Advances in Feature Based Manufacturing, Manufacturing Research and Technology, 20. Elsevier Sci ence B.V., 1994. [27] V. Srinivasan and R. Jayaraman. Geometric tolerancing II: Conditional tolerances. IBM J. of Res. and Dev., 33: 105-124, 1990. [28] J.H. Vanderbrande. Automatic Recognition of Machinable Features in Solid Modeling. PhD thesis, Computer Science Dept. and Institute for Robotics and Intelligent Systems, University Southern California, 1990. [29] J.H. Vanderbrande and A.A.G. Requicha. Geometric computation for the recognition of spatially interacting machining features. In J.J. Shah, M. M antyl a, and D.S. Nau, editors, Advances in Feature Based Manufactur ing, Manufacturing Research and Technology, 20, chapter 5, pages 83-106. Elsevier Science B.V., 1994. [30] ANSI Standard Y 14. 5M. Dimensioning and Tolerancing. Am. Soc. of Mech. Engr., New York, NY, 1994. [31] C. Zozaya-Gorostiza, C. Hendrickson, and D.R. Rehak. Knowledge-Based Process Planning for Construction and Manufacturing. Academic Press, 1989.",
       "source_spans": [
         {
-          "page": 30,
+          "page": 27,
           "bbox": {
-            "x0": 111.0,
-            "y0": 135.5,
-            "x1": 487.0,
-            "y1": 150.5,
-            "width": 376.0,
-            "height": 15.0
+            "x0": 107.04,
+            "y0": 333.94,
+            "x1": 484.31,
+            "y1": 777.46,
+            "width": 377.27,
+            "height": 443.52
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 128.5,
-            "y0": 150.0,
-            "x1": 423.0,
-            "y1": 164.0,
-            "width": 294.5,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 32.98,
+            "x1": 484.08,
+            "y1": 332.98,
+            "width": 354.72,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 112.0,
-            "y0": 172.5,
-            "x1": 485.5,
-            "y1": 187.0,
-            "width": 373.5,
-            "height": 14.5
+            "x0": 129.36,
+            "y0": 82.42,
+            "x1": 484.32,
+            "y1": 382.42,
+            "width": 354.96,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 127.5,
-            "y0": 187.0,
-            "x1": 486.0,
-            "y1": 200.5,
-            "width": 358.5,
-            "height": 13.5
+            "x0": 323.76,
+            "y0": 96.1,
+            "x1": 332.4,
+            "y1": 396.1,
+            "width": 8.64,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 128.5,
-            "y0": 200.0,
-            "x1": 485.0,
-            "y1": 214.0,
-            "width": 356.5,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 420.82,
+            "x1": 484.8,
+            "y1": 720.82,
+            "width": 355.44,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 127.5,
-            "y0": 213.0,
-            "x1": 412.5,
-            "y1": 227.0,
-            "width": 285.0,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 172.66,
+            "x1": 391.92,
+            "y1": 472.66,
+            "width": 262.56,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 112.0,
-            "y0": 235.5,
-            "x1": 485.5,
-            "y1": 250.5,
-            "width": 373.5,
-            "height": 15.0
+            "x0": 129.36,
+            "y0": 222.34,
+            "x1": 293.04,
+            "y1": 522.34,
+            "width": 163.68,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 30,
           "bbox": {
-            "x0": 127.5,
-            "y0": 250.0,
-            "x1": 486.0,
-            "y1": 264.0,
-            "width": 358.5,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 272.02,
+            "x1": 355.68,
+            "y1": 572.02,
+            "width": 226.32,
+            "height": 300.0
           },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 263.0,
-            "x1": 485.5,
-            "y1": 277.0,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 277.0,
-            "x1": 249.5,
-            "y1": 290.0,
-            "width": 122.0,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 298.5,
-            "x1": 486.0,
-            "y1": 314.0,
-            "width": 374.0,
-            "height": 15.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 313.0,
-            "x1": 486.0,
-            "y1": 327.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 326.5,
-            "x1": 485.5,
-            "y1": 340.0,
-            "width": 357.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 339.5,
-            "x1": 194.0,
-            "y1": 353.0,
-            "width": 65.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 362.0,
-            "x1": 486.0,
-            "y1": 377.0,
-            "width": 374.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 376.5,
-            "x1": 485.0,
-            "y1": 390.0,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 389.5,
-            "x1": 485.5,
-            "y1": 403.0,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 402.5,
-            "x1": 392.5,
-            "y1": 416.5,
-            "width": 265.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 425.0,
-            "x1": 485.5,
-            "y1": 440.0,
-            "width": 373.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 439.5,
-            "x1": 485.5,
-            "y1": 453.0,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 452.5,
-            "x1": 294.0,
-            "y1": 466.5,
-            "width": 166.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 475.0,
-            "x1": 485.5,
-            "y1": 490.0,
-            "width": 373.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 488.0,
-            "x1": 486.0,
-            "y1": 502.5,
-            "width": 358.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 502.5,
-            "x1": 357.0,
-            "y1": 516.5,
-            "width": 229.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 525.0,
-            "x1": 486.0,
-            "y1": 538.5,
-            "width": 374.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 538.0,
-            "x1": 485.0,
-            "y1": 552.0,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 552.5,
-            "x1": 486.0,
-            "y1": 566.5,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 565.5,
-            "x1": 481.0,
-            "y1": 579.5,
-            "width": 353.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 112.0,
-            "y0": 588.0,
-            "x1": 485.0,
-            "y1": 602.0,
-            "width": 373.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 601.0,
-            "x1": 485.5,
-            "y1": 615.0,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 613.5,
-            "x1": 475.5,
-            "y1": 629.5,
-            "width": 348.0,
-            "height": 16.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 637.5,
-            "x1": 485.5,
-            "y1": 652.0,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 651.0,
-            "x1": 486.0,
-            "y1": 665.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 30,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 664.5,
-            "x1": 207.0,
-            "y1": 678.0,
-            "width": 79.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 106.0,
-            "y0": 112.0,
-            "x1": 486.0,
-            "y1": 127.0,
-            "width": 380.0,
-            "height": 15.0
+            "x0": 129.36,
+            "y0": 322.66,
+            "x1": 316.08,
+            "y1": 622.66,
+            "width": 186.72,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 127.5,
-            "y0": 126.5,
-            "x1": 486.0,
-            "y1": 140.0,
-            "width": 358.5,
-            "height": 13.5
+            "x0": 129.36,
+            "y0": 385.06,
+            "x1": 358.55,
+            "y1": 685.06,
+            "width": 229.19,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 127.5,
-            "y0": 139.5,
-            "x1": 486.0,
-            "y1": 153.5,
-            "width": 358.5,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 406.9,
+            "x1": 483.83,
+            "y1": 706.9,
+            "width": 354.47,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 127.5,
-            "y0": 152.5,
-            "x1": 321.5,
-            "y1": 166.5,
-            "width": 194.0,
-            "height": 14.0
+            "x0": 148.56,
+            "y0": 434.02,
+            "x1": 222.72,
+            "y1": 734.02,
+            "width": 74.16,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 106.0,
-            "y0": 175.0,
-            "x1": 485.0,
-            "y1": 189.0,
-            "width": 379.0,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 153.94,
+            "x1": 484.31,
+            "y1": 453.94,
+            "width": 354.95,
+            "height": 300.0
           },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 31,
           "bbox": {
-            "x0": 127.5,
-            "y0": 188.0,
-            "x1": 486.0,
-            "y1": 202.0,
-            "width": 358.5,
-            "height": 14.0
+            "x0": 129.36,
+            "y0": 273.7,
+            "x1": 484.32,
+            "y1": 573.7,
+            "width": 354.96,
+            "height": 300.0
           },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 202.0,
-            "x1": 486.0,
-            "y1": 216.5,
-            "width": 358.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 216.0,
-            "x1": 329.5,
-            "y1": 229.5,
-            "width": 202.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 237.0,
-            "x1": 485.5,
-            "y1": 251.5,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 251.5,
-            "x1": 236.0,
-            "y1": 264.0,
-            "width": 108.5,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 272.5,
-            "x1": 486.0,
-            "y1": 287.5,
-            "width": 380.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 287.0,
-            "x1": 296.5,
-            "y1": 299.5,
-            "width": 169.0,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 308.0,
-            "x1": 486.0,
-            "y1": 321.5,
-            "width": 380.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 321.5,
-            "x1": 486.0,
-            "y1": 335.5,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 356.5,
-            "x1": 486.0,
-            "y1": 371.0,
-            "width": 380.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 371.0,
-            "x1": 487.0,
-            "y1": 385.0,
-            "width": 359.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 384.0,
-            "x1": 486.0,
-            "y1": 398.0,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 398.0,
-            "x1": 183.5,
-            "y1": 411.0,
-            "width": 54.5,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 419.5,
-            "x1": 485.5,
-            "y1": 433.5,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 433.0,
-            "x1": 335.5,
-            "y1": 446.5,
-            "width": 208.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 455.0,
-            "x1": 485.5,
-            "y1": 469.0,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 469.0,
-            "x1": 234.0,
-            "y1": 482.0,
-            "width": 106.5,
-            "height": 13.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 490.5,
-            "x1": 485.5,
-            "y1": 504.5,
-            "width": 379.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 504.0,
-            "x1": 486.0,
-            "y1": 517.5,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 517.5,
-            "x1": 486.0,
-            "y1": 531.0,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 539.5,
-            "x1": 486.0,
-            "y1": 553.0,
-            "width": 380.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 553.0,
-            "x1": 317.0,
-            "y1": 566.5,
-            "width": 188.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 575.0,
-            "x1": 485.5,
-            "y1": 588.5,
-            "width": 379.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 588.0,
-            "x1": 485.5,
-            "y1": 602.0,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 602.0,
-            "x1": 485.5,
-            "y1": 615.5,
-            "width": 358.0,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 615.5,
-            "x1": 456.0,
-            "y1": 629.0,
-            "width": 328.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 637.0,
-            "x1": 485.0,
-            "y1": 651.0,
-            "width": 379.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 651.0,
-            "x1": 486.0,
-            "y1": 665.0,
-            "width": 358.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.0,
-            "y0": 664.5,
-            "x1": 485.5,
-            "y1": 678.0,
-            "width": 358.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 31,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 677.5,
-            "x1": 300.5,
-            "y1": 691.5,
-            "width": 173.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
+          "engine": "composed"
         },
         {
           "page": 32,
           "bbox": {
-            "x0": 106.0,
-            "y0": 112.0,
-            "x1": 486.0,
-            "y1": 127.0,
-            "width": 380.0,
-            "height": 15.0
+            "x0": 107.04,
+            "y0": 58.18,
+            "x1": 484.56,
+            "y1": 606.1,
+            "width": 377.52,
+            "height": 547.92
           },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 126.5,
-            "x1": 485.0,
-            "y1": 140.0,
-            "width": 356.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 139.5,
-            "x1": 290.0,
-            "y1": 153.5,
-            "width": 161.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 162.0,
-            "x1": 486.0,
-            "y1": 176.5,
-            "width": 380.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 175.5,
-            "x1": 340.0,
-            "y1": 190.0,
-            "width": 212.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 198.0,
-            "x1": 486.0,
-            "y1": 212.5,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 212.0,
-            "x1": 486.0,
-            "y1": 225.5,
-            "width": 357.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 225.0,
-            "x1": 485.5,
-            "y1": 240.0,
-            "width": 357.0,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 239.0,
-            "x1": 396.5,
-            "y1": 253.5,
-            "width": 269.0,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 260.5,
-            "x1": 487.0,
-            "y1": 275.5,
-            "width": 380.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 275.0,
-            "x1": 485.5,
-            "y1": 289.0,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 288.0,
-            "x1": 208.5,
-            "y1": 302.0,
-            "width": 81.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.0,
-            "y0": 310.5,
-            "x1": 485.5,
-            "y1": 325.0,
-            "width": 379.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 325.0,
-            "x1": 395.5,
-            "y1": 339.0,
-            "width": 268.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 346.0,
-            "x1": 487.0,
-            "y1": 361.0,
-            "width": 380.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 360.5,
-            "x1": 486.0,
-            "y1": 374.5,
-            "width": 357.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 373.5,
-            "x1": 427.0,
-            "y1": 388.0,
-            "width": 298.5,
-            "height": 14.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 396.0,
-            "x1": 486.0,
-            "y1": 411.0,
-            "width": 379.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 127.5,
-            "y0": 410.5,
-            "x1": 485.5,
-            "y1": 424.5,
-            "width": 358.0,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 423.5,
-            "x1": 486.0,
-            "y1": 437.5,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 437.5,
-            "x1": 486.0,
-            "y1": 451.5,
-            "width": 357.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 451.5,
-            "x1": 264.0,
-            "y1": 464.0,
-            "width": 135.0,
-            "height": 12.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 472.5,
-            "x1": 485.0,
-            "y1": 487.5,
-            "width": 378.5,
-            "height": 15.0
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 128.5,
-            "y0": 487.0,
-            "x1": 266.0,
-            "y1": 500.5,
-            "width": 137.5,
-            "height": 13.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 106.5,
-            "y0": 509.0,
-            "x1": 487.0,
-            "y1": 524.5,
-            "width": 380.5,
-            "height": 15.5
-          },
-          "engine": "mathpix"
-        },
-        {
-          "page": 32,
-          "bbox": {
-            "x0": 129.0,
-            "y0": 523.5,
-            "x1": 485.5,
-            "y1": 537.5,
-            "width": 356.5,
-            "height": 14.0
-          },
-          "engine": "mathpix"
+          "engine": "composed"
         }
       ],
       "alternates": [],

@@ -3,7 +3,7 @@
   "paper_id": "1995_introducing_the_reduced_aspect_graph",
   "title": "Introducing the Reduced Aspect Graph",
   "source": {
-    "pdf_path": "docs/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
+    "pdf_path": "stepview/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
     "page_count": 6,
     "page_sizes_pt": [
       {
@@ -39,12 +39,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:00:36Z",
-    "updated_at": "2026-04-15T17:00:36Z",
+    "created_at": "2026-04-17T04:08:20Z",
+    "updated_at": "2026-04-17T04:08:20Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "docling+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -56,42 +56,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
+        "path": "stepview/1995_introducing_the_reduced_aspect_graph/1995_introducing_the_reduced_aspect_graph.pdf",
         "exists": true,
         "size_bytes": 7545096,
-        "modified_at": "2026-04-13T16:18:56Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "22af620907f2b9625ab08c75d6393f5ee2b6fdb8cdef32cfd9f1d16f448ce2f7"
       },
       "external_layout": {
-        "path": "docs/1995_introducing_the_reduced_aspect_graph/canonical_sources/layout.json",
+        "path": "stepview/1995_introducing_the_reduced_aspect_graph/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 79629,
-        "modified_at": "2026-04-15T17:00:34Z",
-        "sha256": "81c7ba4e5e1549d3d9bcc6e9221b962c54b3ea3db1cbf95d700c2d9e4a4c5724"
+        "size_bytes": 80090,
+        "modified_at": "2026-04-17T04:08:19Z",
+        "sha256": "a9b2a828509863c41794c655703dc37cb8ad350f383fe156e16c7876bd43fe5a"
       },
       "external_math": {
-        "path": "docs/1995_introducing_the_reduced_aspect_graph/canonical_sources/math.json",
+        "path": "stepview/1995_introducing_the_reduced_aspect_graph/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 2152,
-        "modified_at": "2026-04-15T17:00:34Z",
-        "sha256": "56191f39df2fe956088e53ae6f1f81c33c70c36f1b89dd07ba4eb389d7dd6ed3"
+        "size_bytes": 2154,
+        "modified_at": "2026-04-17T04:08:19Z",
+        "sha256": "a994db524b6783272c736c1b30a2254d21bae0bcd8bf215714ffabc7852de724"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
       }
     }
   },
@@ -118,12 +121,6 @@
       },
       {
         "name": "Corso Duca degli Abruzzi , Torino",
-        "affiliation_ids": [
-          "aff-1"
-        ]
-      },
-      {
-        "name": "Italy",
         "affiliation_ids": [
           "aff-1"
         ]
@@ -161,17 +158,35 @@
     {
       "id": "sec-1",
       "label": "1",
-      "title": "Introduction",
+      "title": "1 Introduction",
       "level": 1,
       "block_ids": [
         "blk-paragraph-0002",
         "blk-paragraph-0003",
         "blk-paragraph-0004",
-        "blk-display_equation_ref-0005",
-        "blk-paragraph-0006"
+        "blk-paragraph-0005",
+        "blk-paragraph-0006",
+        "blk-paragraph-0007",
+        "blk-paragraph-0009",
+        "blk-paragraph-0010",
+        "blk-display_equation_ref-0011",
+        "blk-paragraph-0012"
       ],
       "children": [],
-      "source_spans": []
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 56.01,
+            "y0": 653.29,
+            "x1": 150.27,
+            "y1": 670.94,
+            "width": 94.26,
+            "height": 17.65
+          },
+          "engine": "composed"
+        }
+      ]
     },
     {
       "id": "sec-2",
@@ -179,12 +194,12 @@
       "title": "2 Recognition through topological matching of multiple views",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0007",
-        "blk-figure-0008",
-        "blk-figure-0009",
-        "blk-list_item-0010",
-        "blk-figure-0011",
-        "blk-list_item-0012"
+        "blk-paragraph-0013",
+        "blk-figure-0014",
+        "blk-figure-0015",
+        "blk-list_item-0016",
+        "blk-figure-0017",
+        "blk-list_item-0018"
       ],
       "children": [],
       "source_spans": [
@@ -198,7 +213,7 @@
             "width": 290.45,
             "height": 34.72
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -208,15 +223,15 @@
       "title": "3 The reduced aspect graph",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0013",
-        "blk-list_item-0014",
-        "blk-list_item-0015",
-        "blk-paragraph-0016",
-        "blk-figure-0017",
-        "blk-figure-0018",
-        "blk-figure-0019",
-        "blk-paragraph-0020",
-        "blk-paragraph-0021"
+        "blk-paragraph-0019",
+        "blk-list_item-0020",
+        "blk-list_item-0021",
+        "blk-paragraph-0022",
+        "blk-figure-0023",
+        "blk-figure-0024",
+        "blk-figure-0025",
+        "blk-paragraph-0026",
+        "blk-paragraph-0027"
       ],
       "children": [],
       "source_spans": [
@@ -230,7 +245,7 @@
             "width": 173.28,
             "height": 16.51
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -240,12 +255,12 @@
       "title": "4 The discriminating power of AG and RAG",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0022",
-        "blk-figure-0023",
-        "blk-figure-0024",
-        "blk-paragraph-0025",
-        "blk-paragraph-0026",
-        "blk-paragraph-0027"
+        "blk-paragraph-0028",
+        "blk-figure-0029",
+        "blk-figure-0030",
+        "blk-paragraph-0031",
+        "blk-paragraph-0032",
+        "blk-paragraph-0033"
       ],
       "children": [],
       "source_spans": [
@@ -253,13 +268,13 @@
           "page": 4,
           "bbox": {
             "x0": 419.18,
-            "y0": 686.88,
+            "y0": 685.23,
             "x1": 693.13,
             "y1": 703.4,
             "width": 273.95,
-            "height": 16.52
+            "height": 18.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -269,10 +284,10 @@
       "title": "5 Discussion",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0028",
-        "blk-paragraph-0029",
-        "blk-paragraph-0030",
-        "blk-paragraph-0031"
+        "blk-paragraph-0034",
+        "blk-paragraph-0035",
+        "blk-paragraph-0036",
+        "blk-paragraph-0037"
       ],
       "children": [],
       "source_spans": [
@@ -286,7 +301,7 @@
             "width": 85.81,
             "height": 15.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -296,7 +311,9 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0032"
+        "blk-reference-0038",
+        "blk-reference-0039",
+        "blk-reference-0040"
       ],
       "children": [],
       "source_spans": [
@@ -310,7 +327,7 @@
             "width": 71.04,
             "height": 15.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -323,7 +340,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "Aspect graphs (AGs) have been proposed as viewer centered representations of 3D objects, suitable for recognizing objects from single or multiple views. Many algorithms for computing the AGs of various categories of objects have been presented; however, very few AG-based recognition applications have been developed. One reason for the limited practical use of AGs is the impressive growth of the information stored as the complexity of the object increases. This may imply comparing the views of the unknown object with a very high number of stored views, and therefore a time-consuming recognition process. The purpose of this paper is to introduce a new kind of aspect graph representation, the reduced aspect graph (RAG). RAGs are suitable for topological object recognition from single or multiple views, and require less information to be stored. Therefore, the matching process is shortened. Keywords: Line drawings; Aspect graphs; Topological matching; Reduced aspect graph"
+            "text": "Aspect graphs (AGs) have been proposed as viewer centered representations of 3D objects, suitable for recognizing objects from single or multiple views. Many algorithms for computing the AGs of various categories of objects have been presented; however, very few AG-based recognition applications have been developed. One reason for the limited practical use of AGs is"
           }
         ]
       },
@@ -331,26 +348,38 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 56.11,
-            "y0": 437.56,
-            "x1": 750.89,
-            "y1": 571.33,
-            "width": 694.78,
-            "height": 133.77
+            "x0": 67.37,
+            "y0": 436.55,
+            "x1": 749.71,
+            "y1": 451.81,
+            "width": 682.34,
+            "height": 15.26
           },
-          "engine": "docling"
+          "engine": "mathpix"
         },
         {
           "page": 1,
           "bbox": {
-            "x0": 57.76,
-            "y0": 591.0,
-            "x1": 496.74,
-            "y1": 604.33,
-            "width": 438.98,
-            "height": 13.33
+            "x0": 55.85,
+            "y0": 452.67,
+            "x1": 749.71,
+            "y1": 469.37,
+            "width": 693.85,
+            "height": 16.7
           },
-          "engine": "docling"
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 55.85,
+            "y0": 470.24,
+            "x1": 749.71,
+            "y1": 485.5,
+            "width": 693.85,
+            "height": 15.26
+          },
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
@@ -382,7 +411,7 @@
             "width": 331.71,
             "height": 107.48
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -414,7 +443,7 @@
             "width": 333.36,
             "height": 200.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -431,7 +460,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "According to recent research, human perception may involve an AG-like internal representation of objects. References to neurophysiological work on this subject, as well as other topics concerning AGs, can be found in a recent paper by Seibert and Waxman (1992). Each aspect of an object corresponds to a characteristic zone of the viewing space. The graph structure of the AG is the dual graph of the partition into characteristic zones of the viewing space. If parallel aspects, obtained from parallel projections of the object, are considered, the viewing space consists of ideal points. In this case, a useful representation of the viewing space is the Gaussian sphere. algorithms for computing the partition of the viewing space under parallel or perspective projection have been given for polygons, convex and general polyhedra, solids of revolution and other curved objects. For further details on this matter, the interested reader is referred to the above cited paper by Seibert and Waxman (1992), the survey paper by Bowyer and Dyer (1990) and the work by Gigus et al. (1991). Although the bibliography on AGs today includes dozens of papers, relatively little work has been reported on AG-based recognition algorithms. In particular, very little work fully exploits the information stored, i.e. aspects and transitions. This information suggests a multiple views recognition approach, where we match a sequence of aspects and transitions of the unknown object to the stored information. An important drawback of the AG approach is the number of aspects and transitions that must be stored, even for relatively simple objects. Let us consider for instance polyhedral convex objects with n faces. If the planes supporting the faces are in general position (i.e., the intersection of each triplet of planes is a point, and all these points are different), the number of perspective aspects is"
+            "text": "According to recent research, human perception may involve an AG-like internal representation of objects. References to neurophysiological work on this subject, as well as other topics concerning AGs, can be found in a recent paper by Seibert and Waxman (1992). Each aspect of an object corresponds to a characteristic zone of the viewing space. The graph structure of the AG is the dual graph of the partition into characteristic zones of the viewing space. If parallel aspects, obtained from parallel projections of the object, are considered, the viewing space consists of ideal points. In this case, a useful representation of the viewing space is the Gaussian sphere. algorithms for"
           }
         ]
       },
@@ -446,7 +475,7 @@
             "width": 331.71,
             "height": 110.62
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 1,
@@ -458,7 +487,187 @@
             "width": 331.71,
             "height": 143.73
           },
-          "engine": "docling"
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0005",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Pattern Recognition Letters 16 (1995) 43-48"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 287.15,
+            "y0": 158.51,
+            "x1": 521.5,
+            "y1": 171.72,
+            "width": 234.35,
+            "height": 13.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0006",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Introducing the reduced aspect graph"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 211.24,
+            "y0": 247.67,
+            "x1": 594.11,
+            "y1": 274.09,
+            "width": 382.87,
+            "height": 26.42
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0007",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Aldo Laurentini"
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "Dipartimento di Automatica e Informatica, Politecnico di Torino, Corso Duca degli Abruzzi 24, 10125 Torino, Italy"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 341.61,
+            "y0": 292.26,
+            "x1": 465.39,
+            "y1": 308.77,
+            "width": 123.78,
+            "height": 16.51
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 113.87,
+            "y0": 318.67,
+            "x1": 694.78,
+            "y1": 332.0,
+            "width": 580.91,
+            "height": 13.33
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0009",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Received 27 September 1993"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 328.41,
+            "y0": 343.33,
+            "x1": 478.59,
+            "y1": 355.0,
+            "width": 150.18,
+            "height": 11.67
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0010",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Pattern Recognition Letters computing the partition of the viewing space under parallel or perspective projection have been given for polygons, convex and general polyhedra, solids of revolution and other curved objects. For further details on this matter, the interested reader is referred to the above cited paper by Seibert and Waxman (1992), the survey paper by Bowyer and Dyer (1990) and the work by Gigus et al. (1991). Although the bibliography on AGs today includes dozens of papers, relatively little work has been reported on AG-based recognition algorithms. In particular, very little work fully exploits the information stored, i.e. aspects and transitions. This information suggests a multiple views recognition approach, where we match a sequence of aspects and transitions of the unknown object to the stored information. An important drawback of the AG approach is the number of aspects and transitions that must be stored, even for relatively simple objects. Let us consider for instance polyhedral convex objects with n faces. If the planes supporting the faces are in general position (i.e., the intersection of each triplet of planes is a point, and all these points are different), the number of perspective aspects is"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 618.87,
+            "y0": 105.67,
+            "x1": 750.89,
+            "y1": 146.95,
+            "width": 132.02,
+            "height": 41.28
+          },
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -470,19 +679,19 @@
             "width": 333.58,
             "height": 147.04
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
           "bbox": {
             "x0": 54.46,
             "y0": 259.23,
-            "x1": 386.26,
+            "x1": 386.17,
             "y1": 406.33,
-            "width": 331.8,
+            "width": 331.71,
             "height": 147.1
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -494,7 +703,7 @@
             "width": 331.71,
             "height": 148.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -505,7 +714,7 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0005",
+      "id": "blk-display_equation_ref-0011",
       "type": "display_equation_ref",
       "content": {
         "math_id": "docling-eq-0001"
@@ -532,7 +741,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0006",
+      "id": "blk-paragraph-0012",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -557,7 +766,7 @@
             "width": 201.34,
             "height": 13.34
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -569,7 +778,7 @@
             "width": 333.43,
             "height": 256.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -580,7 +789,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0007",
+      "id": "blk-paragraph-0013",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -601,7 +810,7 @@
             "width": 331.71,
             "height": 259.04
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -612,7 +821,7 @@
       }
     },
     {
-      "id": "blk-figure-0008",
+      "id": "blk-figure-0014",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1-2"
@@ -639,7 +848,7 @@
       }
     },
     {
-      "id": "blk-figure-0009",
+      "id": "blk-figure-0015",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1-2"
@@ -655,7 +864,7 @@
             "width": 552.86,
             "height": 13.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -666,7 +875,7 @@
       }
     },
     {
-      "id": "blk-list_item-0010",
+      "id": "blk-list_item-0016",
       "type": "list_item",
       "content": {
         "spans": [
@@ -683,14 +892,14 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 54.36,
+            "x0": 54.46,
             "y0": 752.93,
             "x1": 386.17,
-            "y1": 809.42,
-            "width": 331.81,
-            "height": 56.49
+            "y1": 809.07,
+            "width": 331.71,
+            "height": 56.14
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -701,7 +910,7 @@
       }
     },
     {
-      "id": "blk-figure-0011",
+      "id": "blk-figure-0017",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-2"
@@ -717,7 +926,7 @@
             "width": 330.06,
             "height": 28.12
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -728,13 +937,13 @@
       }
     },
     {
-      "id": "blk-list_item-0012",
+      "id": "blk-list_item-0018",
       "type": "list_item",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "(ii) transitions are possible between the pairs of aspects [ (a)(b)] and "
+            "text": "(ii) transitions are possible between the pairs of aspects [ (a) (b)] and "
           },
           {
             "kind": "inline_math_ref",
@@ -760,7 +969,7 @@
             "width": 333.36,
             "height": 36.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -771,7 +980,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0013",
+      "id": "blk-paragraph-0019",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -792,7 +1001,7 @@
             "width": 333.36,
             "height": 297.21
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 3,
@@ -804,7 +1013,7 @@
             "width": 331.71,
             "height": 34.82
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -815,7 +1024,7 @@
       }
     },
     {
-      "id": "blk-list_item-0014",
+      "id": "blk-list_item-0020",
       "type": "list_item",
       "content": {
         "spans": [
@@ -839,7 +1048,7 @@
             "width": 330.06,
             "height": 36.47
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -850,7 +1059,7 @@
       }
     },
     {
-      "id": "blk-list_item-0015",
+      "id": "blk-list_item-0021",
       "type": "list_item",
       "content": {
         "spans": [
@@ -870,11 +1079,11 @@
             "x0": 419.18,
             "y0": 873.33,
             "x1": 749.24,
-            "y1": 944.47,
+            "y1": 946.12,
             "width": 330.06,
-            "height": 71.14
+            "height": 72.79
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -885,7 +1094,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0016",
+      "id": "blk-paragraph-0022",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -906,7 +1115,7 @@
             "width": 330.06,
             "height": 53.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -917,7 +1126,7 @@
       }
     },
     {
-      "id": "blk-figure-0017",
+      "id": "blk-figure-0023",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -933,7 +1142,7 @@
             "width": 518.19,
             "height": 13.37
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -944,7 +1153,7 @@
       }
     },
     {
-      "id": "blk-figure-0018",
+      "id": "blk-figure-0024",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -960,7 +1169,7 @@
             "width": 331.73,
             "height": 59.52
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -971,7 +1180,7 @@
       }
     },
     {
-      "id": "blk-figure-0019",
+      "id": "blk-figure-0025",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-s"
@@ -987,7 +1196,7 @@
             "width": 219.49,
             "height": 13.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -998,7 +1207,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0020",
+      "id": "blk-paragraph-0026",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1019,7 +1228,7 @@
             "width": 330.13,
             "height": 73.05
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -1031,7 +1240,7 @@
             "width": 331.71,
             "height": 108.98
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -1043,7 +1252,7 @@
             "width": 333.36,
             "height": 89.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1054,7 +1263,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0021",
+      "id": "blk-paragraph-0027",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1075,7 +1284,7 @@
             "width": 333.36,
             "height": 201.67
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1086,7 +1295,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0022",
+      "id": "blk-paragraph-0028",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1156,7 +1365,7 @@
           },
           {
             "kind": "text",
-            "text": " is shown in Fig. 6(b). In this figure, the section of the un bounded characteristic zone "
+            "text": " is shown in Fig. 6(b). In this figure, the section of the unbounded characteristic zone "
           },
           {
             "kind": "inline_math_ref",
@@ -1187,7 +1396,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -1199,7 +1408,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -1211,7 +1420,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1222,7 +1431,7 @@
       }
     },
     {
-      "id": "blk-figure-0023",
+      "id": "blk-figure-0029",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-6"
@@ -1238,7 +1447,7 @@
             "width": 693.13,
             "height": 46.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1249,7 +1458,7 @@
       }
     },
     {
-      "id": "blk-figure-0024",
+      "id": "blk-figure-0030",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-7"
@@ -1265,7 +1474,7 @@
             "width": 174.93,
             "height": 13.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1276,7 +1485,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0025",
+      "id": "blk-paragraph-0031",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1297,7 +1506,7 @@
             "width": 333.36,
             "height": 72.8
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1308,7 +1517,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0026",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1426,7 +1635,7 @@
           },
           {
             "kind": "text",
-            "text": " have only one aspect with five faces, adja cent to three aspects in one case and to four aspects in the other, their AGs are different. Let us derive the RAGs of both "
+            "text": " have only one aspect with five faces, adjacent to three aspects in one case and to four aspects in the other, their AGs are different. Let us derive the RAGs of both "
           },
           {
             "kind": "inline_math_ref",
@@ -1457,7 +1666,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1469,7 +1678,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1480,13 +1689,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0027",
+      "id": "blk-paragraph-0033",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "In conclusion, we have shown that two polyhedra having different AGs could have the same RAG, and therefore the AG could have a greater capability than the RAG for discriminating objects topologically. However, it should be observed that this capability cannot be exploited under our recognition paradigm, consisting of : (i) extracting a sequence of aspects and transitions from an image of the object in relative motion with respect to the viewpoint; (ii) topologi cally matching this sequence to the stored informa tion. In the example presented, for telling "
+            "text": "In conclusion, we have shown that two polyhedra having different AGs could have the same RAG, and therefore the AG could have a greater capability than the RAG for discriminating objects topologically. However, it should be observed that this capability cannot be exploited under our recognition paradigm, consisting of : (i) extracting a sequence of aspects and transitions from an image of the object in relative motion with respect to the viewpoint; (ii) topologically matching this sequence to the stored information. In the example presented, for telling "
           },
           {
             "kind": "inline_math_ref",
@@ -1502,7 +1711,7 @@
           },
           {
             "kind": "text",
-            "text": ", we should be able to explore the full AG of the un known object. In particular, we should be able to find how many topologically equivalent aspects are adja cent to the aspect with five faces. For performing such tasks the viewpoint should be driven by some active algorithm based on metric properties of the object, in contrast with the simple topological approach assumed."
+            "text": ", we should be able to explore the full AG of the unknown object. In particular, we should be able to find how many topologically equivalent aspects are adjacent to the aspect with five faces. For performing such tasks the viewpoint should be driven by some active algorithm based on metric properties of the object, in contrast with the simple topological approach assumed."
           }
         ]
       },
@@ -1512,12 +1721,12 @@
           "bbox": {
             "x0": 419.18,
             "y0": 519.91,
-            "x1": 749.24,
+            "x1": 749.31,
             "y1": 870.63,
-            "width": 330.06,
+            "width": 330.13,
             "height": 350.72
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1528,7 +1737,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0028",
+      "id": "blk-paragraph-0034",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1549,7 +1758,7 @@
             "width": 331.71,
             "height": 53.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1561,7 +1770,7 @@
             "width": 331.71,
             "height": 69.37
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1572,7 +1781,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0029",
+      "id": "blk-paragraph-0035",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1593,7 +1802,7 @@
             "width": 330.06,
             "height": 185.05
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1604,7 +1813,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0030",
+      "id": "blk-paragraph-0036",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1634,7 +1843,7 @@
           },
           {
             "kind": "text",
-            "text": " compari sons for the perpective RAG of a non-convex poly hedron. Thus it should be only considered an ideal procedure, and in practice more efficient algorithms are needed. A possible approach consists of modify ing an algorithm for computing the full AG, like the algorithm of Gigus et al. (1991) for computing the parallel AG of general polyhedra. Each new aspect generated by this algorithm should be compared with the previously generated aspects; many comparisons could be pruned using some suitable data organization."
+            "text": " comparisons for the perpective RAG of a non-convex polyhedron. Thus it should be only considered an ideal procedure, and in practice more efficient algorithms are needed. A possible approach consists of modifying an algorithm for computing the full AG, like the algorithm of Gigus et al. (1991) for computing the parallel AG of general polyhedra. Each new aspect generated by this algorithm should be compared with the previously generated aspects; many comparisons could be pruned using some suitable data organization."
           }
         ]
       },
@@ -1644,12 +1853,12 @@
           "bbox": {
             "x0": 54.46,
             "y0": 371.51,
-            "x1": 387.82,
-            "y1": 647.49,
-            "width": 333.36,
-            "height": 275.98
+            "x1": 387.89,
+            "y1": 647.48,
+            "width": 333.43,
+            "height": 275.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1660,7 +1869,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0031",
+      "id": "blk-paragraph-0037",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1681,7 +1890,7 @@
             "width": 331.71,
             "height": 52.84
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1692,7 +1901,7 @@
       }
     },
     {
-      "id": "blk-reference-0032",
+      "id": "blk-reference-0038",
       "type": "reference",
       "content": {
         "reference_id": "ref-001"
@@ -1708,7 +1917,7 @@
             "width": 328.41,
             "height": 29.82
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1720,7 +1929,7 @@
             "width": 328.41,
             "height": 44.72
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1732,7 +1941,7 @@
             "width": 330.06,
             "height": 43.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1744,7 +1953,7 @@
             "width": 330.06,
             "height": 44.7
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1756,7 +1965,7 @@
             "width": 328.41,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1768,8 +1977,23 @@
             "width": 311.91,
             "height": 13.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0039",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-002"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1780,7 +2004,7 @@
             "width": 328.41,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1792,7 +2016,7 @@
             "width": 330.06,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -1804,8 +2028,23 @@
             "width": 328.41,
             "height": 42.93
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0040",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-003"
+      },
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -1816,19 +2055,19 @@
             "width": 328.41,
             "height": 30.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
           "bbox": {
             "x0": 420.83,
-            "y0": 655.51,
+            "y0": 657.0,
             "x1": 749.24,
             "y1": 701.74,
             "width": 328.41,
-            "height": 46.23
+            "height": 44.74
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1907,7 +2146,7 @@
             "width": 201.34,
             "height": 13.34
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 2,
@@ -1919,7 +2158,7 @@
             "width": 333.43,
             "height": 256.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1962,7 +2201,7 @@
             "width": 333.36,
             "height": 36.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2004,7 +2243,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2016,7 +2255,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2028,7 +2267,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2070,7 +2309,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2082,7 +2321,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2094,7 +2333,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2136,7 +2375,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2148,7 +2387,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2160,7 +2399,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2202,7 +2441,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2214,7 +2453,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2226,7 +2465,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2268,7 +2507,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2280,7 +2519,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2292,7 +2531,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2334,7 +2573,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2346,7 +2585,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2358,7 +2597,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2400,7 +2639,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2412,7 +2651,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2424,7 +2663,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2466,7 +2705,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2478,7 +2717,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2490,7 +2729,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2532,7 +2771,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2544,7 +2783,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2556,7 +2795,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2598,7 +2837,7 @@
             "width": 331.71,
             "height": 127.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2610,7 +2849,7 @@
             "width": 331.71,
             "height": 36.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 4,
@@ -2622,7 +2861,7 @@
             "width": 328.41,
             "height": 109.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2664,7 +2903,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2676,7 +2915,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2718,7 +2957,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2730,7 +2969,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2772,7 +3011,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2784,7 +3023,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2826,7 +3065,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2838,7 +3077,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2880,7 +3119,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2892,7 +3131,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2934,7 +3173,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2946,7 +3185,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2988,7 +3227,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3000,7 +3239,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3042,7 +3281,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3054,7 +3293,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3096,7 +3335,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3108,7 +3347,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3150,7 +3389,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3162,7 +3401,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3204,7 +3443,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3216,7 +3455,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3258,7 +3497,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3270,7 +3509,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3312,7 +3551,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3324,7 +3563,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3366,7 +3605,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3378,7 +3617,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3420,7 +3659,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3432,7 +3671,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3474,7 +3713,7 @@
             "width": 333.47,
             "height": 181.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -3486,7 +3725,7 @@
             "width": 330.06,
             "height": 33.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3523,12 +3762,12 @@
           "bbox": {
             "x0": 419.18,
             "y0": 519.91,
-            "x1": 749.24,
+            "x1": 749.31,
             "y1": 870.63,
-            "width": 330.06,
+            "width": 330.13,
             "height": 350.72
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3565,12 +3804,12 @@
           "bbox": {
             "x0": 419.18,
             "y0": 519.91,
-            "x1": 749.24,
+            "x1": 749.31,
             "y1": 870.63,
-            "width": 330.06,
+            "width": 330.13,
             "height": 350.72
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3607,12 +3846,12 @@
           "bbox": {
             "x0": 54.46,
             "y0": 371.51,
-            "x1": 387.82,
-            "y1": 647.49,
-            "width": 333.36,
-            "height": 275.98
+            "x1": 387.89,
+            "y1": 647.48,
+            "width": 333.43,
+            "height": 275.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3649,12 +3888,12 @@
           "bbox": {
             "x0": 54.46,
             "y0": 371.51,
-            "x1": 387.82,
-            "y1": 647.49,
-            "width": 333.36,
-            "height": 275.98
+            "x1": 387.89,
+            "y1": 647.48,
+            "width": 333.43,
+            "height": 275.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3691,12 +3930,12 @@
           "bbox": {
             "x0": 54.46,
             "y0": 371.51,
-            "x1": 387.82,
-            "y1": 647.49,
-            "width": 333.36,
-            "height": 275.98
+            "x1": 387.89,
+            "y1": 647.48,
+            "width": 333.43,
+            "height": 275.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3948,7 +4187,7 @@
     {
       "id": "fig-6",
       "label": "Figure 6. An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec",
-      "caption": "An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec intersection of the planes supporting the side faces fi and fz. In (c) the section of the esahedron P', obtained from P by displacing plane po supporting face f6, is shown.",
+      "caption": "An esahedron P (a), and its section (b) made with the plane p normal to the back face f4 and passing through line L, the intersec intersection of the planes supporting the side faces f; and 3. In (c) the section of the esahedron P', obtained from P by displacing plane po supporting face f6, is shown.",
       "image_path": "docs/1995_introducing_the_reduced_aspect_graph/figures/figure-6-p005.png",
       "page": 5,
       "bbox": {
@@ -4025,8 +4264,8 @@
   "references": [
     {
       "id": "ref-001",
-      "raw_text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York. Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"Efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell. Plantinga, W.H. and C.R. Dyer (1990). Visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
-      "text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York. Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell. Plantinga, W.H. and C.R. Dyer (1990). visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
+      "raw_text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York.",
+      "text": "Besi, P.J. and R.C. Jain (1985). Three dimensional object recognition. ACM Comput. Surveys 17, 75-145. Bowyer, K.W. and C.R. Dyer (1990). Aspect graphs: an introduction and survey of recent results. Internat. J. Imaging System and Technology 2, 315-328. Chakravarty, J. and H. Freeman (1982). Characteristic views as basis for three-dimensional object recognition. Proc. Soc. of Photo-Opt. Instr. Eng. Conf. on Robot Vision, Bellingham, WA, Gigus, Z., J.F. Canny and R. Seidel (1991). Efficently computing and representing aspect graphs of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 13, 442-451. Gigus, Z. and J. Malik (1990). Computing the aspect graph for line drawings of polyhedral objects. IEEE Trans. Pattern Anal. Machine Intell. 12, 113-122 Gruenbaum, B. (1967). Convex Polytopes. Wiley, New York.",
       "source_spans": [
         {
           "page": 6,
@@ -4038,7 +4277,7 @@
             "width": 328.41,
             "height": 29.82
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4050,7 +4289,7 @@
             "width": 328.41,
             "height": 44.72
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4062,7 +4301,7 @@
             "width": 330.06,
             "height": 43.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4074,7 +4313,7 @@
             "width": 330.06,
             "height": 44.7
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4086,7 +4325,7 @@
             "width": 328.41,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4098,8 +4337,21 @@
             "width": 311.91,
             "height": 13.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-002",
+      "raw_text": "Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"Efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell.",
+      "text": "Koenderink, J.J. and A.J. van Doorn (1979). The internal representation of solid shapes with respect to vision. Biol. Cybern. 32, 211-216. Laurentini, A. (1990). Equivalent aspects of convex polyhedra. Proc. Bilkent. I. Conf. New Trends Comm. Control Signal Proc.. Elsevier, Amsterdam, 1750-1756. Laurentini, A. (1993). Comments on \"efficiently computing and representing AG's of polyhedral objects\". To appear in IEEE Trans. Pattern Anal. Machine Intell.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -4110,7 +4362,7 @@
             "width": 328.41,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4122,7 +4374,7 @@
             "width": 330.06,
             "height": 44.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -4134,8 +4386,21 @@
             "width": 328.41,
             "height": 42.93
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-003",
+      "raw_text": "Plantinga, W.H. and C.R. Dyer (1990). Visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
+      "text": "Plantinga, W.H. and C.R. Dyer (1990). visibility, occlusion and the aspect graph. Internat. J. Comput. Vision 5, 137-160. Seibert, M. and A.M. Waxman (1992). Adaptive 3-D object recognition from multiple views. IEEE Trans. Pattern Anal. Machine Intell. 14, 107-124.",
+      "source_spans": [
         {
           "page": 6,
           "bbox": {
@@ -4146,19 +4411,19 @@
             "width": 328.41,
             "height": 30.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
           "bbox": {
             "x0": 420.83,
-            "y0": 655.51,
+            "y0": 657.0,
             "x1": 749.24,
             "y1": 701.74,
             "width": 328.41,
-            "height": 46.23
+            "height": 44.74
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

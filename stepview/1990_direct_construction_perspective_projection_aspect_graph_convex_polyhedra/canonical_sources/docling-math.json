@@ -4,7 +4,7 @@
     {
       "id": "docling-eq-0001",
       "kind": "display",
-      "display_latex": "ai + bj + ck = k (x, - x0) (11 -yo) (21-20 (12-y1) (22-21) (1)",
+      "display_latex": "ai + bj + ck = k (x, - x0) (11-10) (21-20) (12-y1) (22-21) (1)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,11 +15,11 @@
         {
           "page": 6,
           "bbox": {
-            "x0": 187.04,
+            "x0": 187.11,
             "y0": 531.42,
             "x1": 682.21,
             "y1": 602.61,
-            "width": 495.17,
+            "width": 495.1,
             "height": 71.19
           },
           "engine": "docling"
@@ -143,11 +143,11 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 322.7,
+            "x0": 322.89,
             "y0": 842.19,
             "x1": 683.86,
             "y1": 912.5,
-            "width": 361.16,
+            "width": 360.97,
             "height": 70.31
           },
           "engine": "docling"
@@ -164,7 +164,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "L1 → L2 → * = ast + di y = bit + er * = azs + dz y = bas + ez (6)",
+      "display_latex": "L1 → L2 → * = aft + di y = bit + er * = azs + dz y = bas + ez (6)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -176,11 +176,11 @@
           "page": 8,
           "bbox": {
             "x0": 208.64,
-            "y0": 187.43,
+            "y0": 188.07,
             "x1": 682.21,
             "y1": 235.08,
             "width": 473.57,
-            "height": 47.65
+            "height": 47.01
           },
           "engine": "docling"
         }
@@ -258,7 +258,7 @@
     {
       "id": "docling-eq-0009",
       "kind": "display",
-      "display_latex": "a1 b - a2: (dz- d) - b2: (e2 - e,) -Cz: (12-fI)",
+      "display_latex": "a1 b - a2: (dz- d) - b2: (e2 -er)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -272,9 +272,9 @@
             "x0": 294.74,
             "y0": 489.47,
             "x1": 460.43,
-            "y1": 564.53,
+            "y1": 542.04,
             "width": 165.69,
-            "height": 75.06
+            "height": 52.57
           },
           "engine": "docling"
         }

@@ -1,12 +1,18 @@
 # A Review of Trimming in Isogeometric Analysis
 
-Benjamin Marussig, Thomas J. R. Hughes
+ORIGINAL PAPER, Benjamin Marussig (D) •Thomas J. R. Hughes
 
 [missing from original]
 
 ## Abstract
 
 We review the treatment of trimmed geometries in the context of design, data exchange, and computational simulation. Such models are omnipresent in current engineering modeling and play a key role for the integration of design and analysis. The problems induced by trimming are often underestimated due to the conceptional simplicity of the procedure. In this work, several challenges and pitfalls are described.
+
+## A Review of Trimming in Isogeometric Analysis: Challenges, Data Exchange and Simulation Aspects
+
+Benjamin Marussig \({ }^{\mathbf{1}}\) (D) •Thomas J. R. Hughes \({ }^{\mathbf{1}}\)
+
+Abstract We review the treatment of trimmed geometries in the context of design, data exchange, and computational simulation. Such models are omnipresent in current engineering modeling and play a key role for the integration of design and analysis. The problems induced by trimming are often underestimated due to the conceptional simplicity of the procedure. In this work, several challenges and pitfalls are described.
 
 ## 1 Introduction
 
@@ -16,13 +22,13 @@ Once upon a time, the original vision of CAD was the holistic treatment of the e
 
 Isogeometric analysis [66, 140] provides an alternative to the conventional analysis methodology that converts CAD models for use in FEA. The key idea is to perform numerical simulations based on CAGD technologies. Besides the fact that this synthesis offers several computational benefits, such as high continuity [67, 68, 187], the long term goal of isogeometric analysis is to enhance the overall engineering product development process by closing the gap between design and analysis. An invaluable byproduct of this effort is the initiation of a dialog between these two communities which had drifted apart.
 
-![Figure 1 Model of a half of a torus](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-1-p002.png)
+![Figure 1 Model of a half of a torus](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-1-p002.png)
 
 *Figure 1 Model of a half of a torus: an initial non-trimmed torus and surface defined in the xy-plane, b resulting trimmed object, c closeup showing the deviation from the visualization mesh (blue background) and the computed intersection curve C Trimmed (yellow) of the objects, and d closeup illustrating the difference of the original inner circle of the torus C Torus (red) to the intersection curve computed. The images c and d are captured in top view. (Color figure online)*
 
 and limitations. Due to the capability of current CAD systems it may seem that design models are ideal creations, but this notion is simply not true. There are several open issues that need to be solved. Compact overviews are given in the independent compilations of Kasik et al. [151] and Piegl [228]. In these papers, robustness and interoperability issues are identified as crucial CAD problems. Although trimmed geometries are not explicitly mentioned in these papers, they play a central role in both cases.
 
-The most common description of CAGD models is the boundary representation (B-Rep) where an object is represented by its boundary surfaces rather than a volume discretization. These surfaces are usually constructed independently from each other and often only certain regions of a surface are supposed to be part of the actual object. Trimming allows a modeler to cut away the superfluous surface areas. To be precise, the visualization of the surfaces is adapted while their parameterization and mathematical description remain unchanged. This procedure is very convenient and inevitable in many operations such as surface-to-surface intersection. However, the main problem is that trimming cannot practically be performed exactly within CAGD applications. Thus, the final object possesses small gaps and overlaps between its surfaces. Figure 1 illustrates some inaccuracies of a model defined by a torus inter sected by a plane. Note that the discrepancy between the computed intersection \(\boldsymbol{C}_{\text {Trimmed }}\) and the related exact solu tion \(\boldsymbol{C}_{\text {Torus }}\) is scarcely visible. The imperfections of trimmed geometries are usually very well hidden from the user, but they surface as soon as a design model is applied to down stream applications. To use the words of Piegl [228]:
+The most common description of CAGD models is the boundary representation (B-Rep) where an object is represented by its boundary surfaces rather than a volume discretization. These surfaces are usually constructed independently from each other and often only certain regions of a surface are supposed to be part of the actual object. Trimming allows a modeler to cut away the superfluous surface areas. To be precise, the visualization of the surfaces is adapted while their parameterization and mathematical description remain unchanged. This procedure is very convenient and inevitable in many operations such as surface-to-surface intersection. However, the main problem is that trimming cannot practically be performed exactly within CAGD applications. Thus, the final object possesses small gaps and overlaps between its surfaces. Figure 1 illustrates some inaccuracies of a model defined by a torus intersected by a plane. Note that the discrepancy between the computed intersection \(\boldsymbol{C}_{\text {Trimmed }}\) and the related exact solution \(\boldsymbol{C}_{\text {Torus }}\) is scarcely visible. The imperfections of trimmed geometries are usually very well hidden from the user, but they surface as soon as a design model is applied to downstream applications. To use the words of Piegl [228]:
 
 While one can cheat the eye in computer graphics and animation, the milling machine is not as forgiving. Numerical simulation of practical trimmed models is more than the analysis of a specific type of a CAGD representation. It rather addresses the core issue of the interoperability between design and analysis, namely the appropriate treatment of the deficiencies of design models. To be clear, this problem is not restricted to isogeometric analysis, but manifests itself as complications during the meshing process in the case of conventional analysis methodology. In fact, geometry repair and corrections of design models are mandatory tasks, before actual mesh generation can be applied [86, 114]. Isogeometric analysis of trimmed geometries tackles these issues directly at the source, i.e., the design model. Thus, many pitfalls that may occur in a meshing process can be circumvented [61].
 
@@ -39,26 +45,34 @@ B-splines and their rational counterpart NURBS provide the basis for the geometr
 B-splines \(B_{i, p}\) consist of piecewise polynomial segments which are connected by a certain smoothness. They are defined recursively for a fixed polynomial degree \(p\) by a strictly convex combination of B-splines of the previous degree, \(p-1\), given by
 
 $$
-\begin{align*} B_{i, p}(u)= & \frac{u-u_{i}}{u_{i+p}-u_{i}} B_{i, p-1}(u) \\ & +\frac{u_{i+p+1}-u}{u_{i+p+1}-u_{i+1}} B_{i+1, p-1}(u) \tag{1} \end{align*}
+\begin{aligned} B_{i, p}(u)= & \frac{u-u_{i}}{u_{i+p}-u_{i}} B_{i, p-1}(u) \\ & +\frac{u_{i+p+1}-u}{u_{i+p+1}-u_{i+1}} B_{i+1, p-1}(u), \end{aligned}
 $$
 
-![Figure 2 Non-vanishing B-splines B i , p of knot span s for different degrees p = { 0, 1, 2 } which are based on a knot vector with equally spaced knots](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-2-p003.png)
+$$
+\Xi=\left\{u_{0}=\cdots=u_{p}, u_{p+1}=\cdots=u_{2 p+1}\right\},
+$$
+
+![Figure 2 Non-vanishing B-splines B i , p of knot span s for different degrees p = { 0, 1, 2 } which are based on a knot vector with equally spaced knots](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-2-p003.png)
 
 *Figure 2 Non-vanishing B-splines B i , p of knot span s for different degrees p = { 0, 1, 2 } which are based on a knot vector with equally spaced knots: Non-vanishing B-splines B i, p of knot span s for different degrees p = { 0, 1, 2 } which are based on a knot vector with equally spaced knots*
 
-![Figure 3 Polynomial segments  s of a quadratic B-spline due to differ- ent knot vectors 훯 . Note the different continuity C between the seg- ments based on the knot multiplicity](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-3-p003.png)
+![Figure 3 Polynomial segments  s of a quadratic B-spline due to differ- ent knot vectors 훯 . Note the different continuity C between the seg- ments based on the knot multiplicity](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-3-p003.png)
 
 *Figure 3 Polynomial segments  s of a quadratic B-spline due to differ- ent knot vectors 훯 . Note the different continuity C between the seg- ments based on the knot multiplicity: Polynomial segments  s of a quadratic B-spline due to different knot vectors 훯 . Note the different continuity C between the segments based on the knot multiplicity*
 
-The essential element for this construction is the knot vec tor \(\Xi\) characterized as a non-decreasing sequence of coor dinates \(u_{i} \leqslant u_{i+1}\). The parameters \(u_{i}\) are termed knots and the half-open interval \(\left[u_{i}, u_{i+1}\right)\) is called \(i\) th knot span. Each knot span has \(p+1\) non-vanishing B-splines as illustrated in Fig. 2. Each basis function is entirely defined by \(p+2\) knots and its support, \(\operatorname{supp}\left\{B_{i, p}\right\}=\left\{u_{i}, \ldots, u_{i+p+1}\right\}\), is local. Within each non-zero knot span \(s, u_{s}<u_{s+1}\), of its support, \(B_{i, p}\) is described by a polynomial segment \(B_{i}^{s}\). Each knot value indicates a location within the parameter space which is not \(C^{\infty}\)-continuous, i.e., where two adjacent \(\mathcal{B}_{i}^{s}\) join. Suc cessive knots may share the same value, which is indicated by the knot multiplicity \(m\), i.e., \(u_{i}=u_{i+1}=\cdots=u_{i+m-1}\). In general, the continuity between adjacent segments is \(C^{p-m}\).
+$$
+B_{i, 0}(u)=\left\{\begin{array}{l} 1 \text { if } u_{i} \leq u<u_{i+1}, \\ 0 \text { otherwise } . \end{array}\right.
+$$
+
+The essential element for this construction is the knot vector \(\Xi\) characterized as a non-decreasing sequence of coordinates \(u_{i} \leqslant u_{i+1}\). The parameters \(u_{i}\) are termed knots and the half-open interval [ \(u_{i}, u_{i+1}\) ) is called \(i\) th knot span. Each knot span has \(p+1\) non-vanishing B-splines as illustrated in Fig. 2. Each basis function is entirely defined by \(p+2\) knots and its support, \(\operatorname{supp}\left\{B_{i, p}\right\}=\left\{u_{i}, \ldots, u_{i+p+1}\right\}\), is local. Within each non-zero knot span \(s, u_{s}<u_{s+1}\), of its support, \(B_{i, p}\) is described by a polynomial segment \(\mathcal{B}_{i}^{s}\). Each knot value indicates a location within the parameter space which is not \(C^{\infty}\)-continuous, i.e., where two adjacent \(\mathcal{B}_{i}^{s}\) join. Successive knots may share the same value, which is indicated by the knot multiplicity \(m\), i.e., \(u_{i}=u_{i+1}=\cdots=u_{i+m-1}\). In general, the continuity between adjacent segments is \(C^{p-m}\).
 
 is a special form of such a knot vector since it yields the classical p th-degree Bernstein polynomials. To be precise, Bernstein polynomials are usually defined over the interval
 
 $$
-\begin{aligned} a_{0,0} & =1 \\ a_{k, 0} & =\frac{a_{k-1,0}}{u_{i+p-k+1}-u_{i}}, \\ a_{k, \ell} & =\frac{a_{k-1, \ell}-a_{k-1, \ell-1}}{u_{i+p+\ell-k+1}-u_{i+\ell}} \quad \ell=1, \ldots, k-1, \\ a_{k, k} & =\frac{-a_{k-1, k-1}}{u_{i+p+1}-u_{i+k}} . \end{aligned}
+\begin{aligned} a_{0,0} & =1, \\ a_{k, 0} & =\frac{a_{k-1,0}}{u_{i+p-k+1}-u_{i}}, \\ a_{k, \ell} & =\frac{a_{k-1, \ell}-a_{k-1, \ell-1}}{u_{i+p+\ell-k+1}-u_{i+\ell}} \quad \ell=1, \ldots, k-1, \\ a_{k, k} & =\frac{-a_{k-1, k-1}}{u_{i+p+1}-u_{i+k}} . \end{aligned}
 $$
 
-![Figure 4 B-spline basis specified by an open knot vector, i.e., 훯 = { 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4 }](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-4-p004.png)
+![Figure 4 B-spline basis specified by an open knot vector, i.e., 훯 = { 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4 }](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-4-p004.png)
 
 *Figure 4 B-spline basis specified by an open knot vector, i.e., 훯 = { 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4 }: B-spline basis specified by an open knot vector, i.e., 훯 = { 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4 }*
 
@@ -69,11 +83,11 @@ As a whole, B-splines based on a common knot vector 𝛯 form a partition of uni
 and they are linearly independent, i.e.,
 
 $$
-\begin{equation*} \sum_{i=0}^{I-1} B_{i, p}(u) c_{i}=0 \tag{5} \end{equation*}
+\sum_{i=0}^{I-1} B_{i, p}(u) c_{i}=0,
 $$
 
 $$
-\begin{equation*} \mathcal{X}(u):=\boldsymbol{C}(u)=\sum_{i=0}^{I-1} B_{i, p}(u) \boldsymbol{c}_{i}, \tag{9} \end{equation*}
+\mathcal{X}(u):=\boldsymbol{C}(u)=\sum_{i=0}^{I-1} B_{i, p}(u) c_{i},
 $$
 
 is satisfied if and only if \(c_{i}=0, i=0, \ldots, I-1\). Due to the latter property, every piecewise polynomial \(f_{p, \Xi}\) of degree \(p\) over a knot sequence \(\Xi\) can be uniquely described by a linear combination of the corresponding \(B_{i, p}\). Hence, they form a basis of the space \(\mathbb{S}_{p, \Xi}\) collecting all such functions
@@ -83,169 +97,163 @@ An example of a cubic B-spline basis defined by an open knot vector is shown in 
 The first derivative of B-splines are computed by a linear combination of B-splines of the previous degree
 
 $$
-\begin{align*} B_{i, p}^{\prime}(u)= & \frac{p}{u_{i+p}-u_{i}} B_{i, p-1}(u) \\ & -\frac{p}{u_{i+p+1}-u_{i+1}} B_{i+1, p-1}(u) \tag{7} \end{align*}
+\begin{aligned} B_{i, p}^{\prime}(u)= & \frac{p}{u_{i+p}-u_{i}} B_{i, p-1}(u) \\ & -\frac{p}{u_{i+p+1}-u_{i+1}} B_{i+1, p-1}(u) . \end{aligned}
 $$
 
 For the computation of the k th derivative, this is generalized to
 
 $$
-\begin{equation*} B_{i, p}^{(k)}(u)=\frac{p!}{(p-k)!} \sum_{\ell=0}^{k} a_{k, \ell} B_{i+\ell, p-k}(u), \tag{8} \end{equation*}
+B_{i, p}^{(k)}(u)=\frac{p!}{(p-k)!} \sum_{\ell=0}^{k} a_{k, \ell} B_{i+\ell, p-k}(u),
 $$
 
 Remark 1 The knot differences of the denominators involved in the recursive formulae (1), (7) and (8) can become zero. In such a case the quotient is defined to be zero.
 
 ### 2.2 Curves
 
-B-spline curves of degree \(p\) are defined by basis functions \(B_{i, p}\) due to a knot vector \(\Xi\) with corresponding coefficients in model space \({ }^{1} \boldsymbol{c}_{i}\) which denote control points. The geo metrical mapping \(\mathcal{X}\) from parameter space to model space is given by
-
 $$
-\begin{equation*} \sum_{i=0}^{I-1} B_{i, p}(u)=1, \quad u \in\left[u_{0}, u_{I+p}\right], \tag{4} \end{equation*}
+\sum_{i=0}^{I-1} B_{i, p}(u)=1, \quad u \in\left[u_{0}, u_{I+p}\right],
 $$
 
-with I representing the total number of basis functions. The derivative is
+B-spline curves of degree \(p\) are defined by basis functions \(B_{i, p}\) due to a knot vector \(\Xi\) with corresponding coefficients in model space \({ }^{1} \boldsymbol{c}_{i}\) which denote control points. The geometrical mapping \(\mathcal{X}\) from parameter space to model space is given by with I representing the total number of basis functions. The derivative is
 
 $$
-\begin{equation*} \mathbb{S}_{p, \Xi}=\sum_{i=0}^{I-1} B_{i, p} c_{i}, \quad c_{i} \in \mathbb{R} \tag{6} \end{equation*}
+\mathbb{S}_{p, \Xi}=\sum_{i=0}^{I-1} B_{i, p} c_{i}, \quad c_{i} \in \mathbb{R} .
 $$
 
 $$
-\begin{equation*} \mathbf{J}_{\mathcal{X}}(u):=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) \boldsymbol{c}_{i} . \tag{10} \end{equation*}
+\mathbf{J}_{\mathcal{X}}(u):=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) \boldsymbol{c}_{i} .
 $$
 
-In general, control points \(\boldsymbol{c}_{i}\) are not interpolatory, i.e., they do not lie on the curve. The connection of \(\boldsymbol{c}_{i}\) by straight lines is called the control polygon and it provides an approximation of the actual curve. An important property of a B-spline curve is that it is contained within the convex hull of its control polygon. In particular, a polynomial seg ment related to a non-zero knot span \(s\), i.e., \(u \in\left[u_{s}, u_{s+1}\right)\), is in the convex hull of the control points \(\boldsymbol{c}_{s-p}, \ldots, \boldsymbol{c}_{s}\). The continuity of the whole piecewise polynomial curve \(\boldsymbol{C}(u)\) is inherited from its underlying basis functions, i.e., the continuity at knots is determined by the knot multiplicity, and the position of its control points. These relationships are illustrated in Fig. 5. Note that the interpolatory B-spline \(B_{4,2}\) of Fig. 5a corresponds to the kink at \(\boldsymbol{c}_{4}\) in Fig. 5b and that the second polynomial segment lies within the con vex hull of \(\boldsymbol{c}_{1}\) to \(\boldsymbol{c}_{3}\). If the curve consists of a single poly nomial segment, i.e., the associated \(\Xi\) is of form (3), the curve is referred to as Bézier curve. A polynomial segment of a B-spline curve is termed a Bézier segment, if it can be
+In general, control points \(\boldsymbol{c}_{i}\) are not interpolatory, i.e., they do not lie on the curve. The connection of \(\boldsymbol{c}_{i}\) by straight lines is called the control polygon and it provides an approximation of the actual curve. An important property of a B-spline curve is that it is contained within the convex hull of its control polygon. In particular, a polynomial segment related to a non-zero knot span \(s\), i.e., \(u \in\left[u_{s}, u_{s+1}\right)\), is in the convex hull of the control points \(\boldsymbol{c}_{s-p}, \ldots, \boldsymbol{c}_{s}\). The continuity of the whole piecewise polynomial curve \(\boldsymbol{C}(u)\) is inherited from its underlying basis functions, i.e., the continuity at knots is determined by the knot multiplicity, and the position of its control points. These relationships are illustrated in Fig. 5. Note that the interpolatory B-spline \(B_{4,2}\) of Fig. 5a corresponds to the kink at \(\boldsymbol{c}_{4}\) in Fig. 5b and that the second polynomial segment lies within the convex hull of \(\boldsymbol{c}_{1}\) to \(\boldsymbol{c}_{3}\). If the curve consists of a single polynomial segment, i.e., the associated \(\Xi\) is of form (3), the curve is referred to as Bézier curve. A polynomial segment of a B-spline curve is termed a Bézier segment, if it can be
 
 The model space is also referred to as physical space.
 
-![Figure 5 Example of a B-spline curve](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-5-p005.png)
+![Figure 5 Example of a B-spline curve](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-5-p005.png)
 
 *Figure 5 Example of a B-spline curve: a B-splines based on 훯 = { 0, 0, 0, 1, 2, 3, 3, 4, 4, 4 } and b a corresponding piecewise polynomial curve. In b, circles denote control points and the dotted lines indicate the convex hull of the dashed curve segment u ∈[1, 2)*
 
-represented by a Bézier curve. In Fig. 5b, this is the case for the segment \(u \in[3,4]\) defined by the control points \(\boldsymbol{c}_{4}\) to \(\boldsymbol{c}_{6}\). B-spline curves can be generalized to represent rational functions such as conic sections. For this purpose, weights \(w_{i}\) are associated with the control points such that where \(d\) denotes the spatial dimension of the model space. The homogeneous coordinates \(\boldsymbol{c}_{i}^{h}\) specify a B-spline curve \(\boldsymbol{C}^{h}(u)\) in a projective space \(\mathbb{R}^{d+1}\). In order to obtain a curve in \(\mathbb{R}^{d}\), the geometrical mapping (9) is extended by a per spective mapping \(\mathcal{P}\) with the center at the origin of \(\mathbb{R}^{d+1}\). This projection is given by
+represented by a Bézier curve. In Fig. 5b, this is the case for the segment \(u \in[3,4]\) defined by the control points \(\boldsymbol{c}_{4}\) to \(\boldsymbol{c}_{6}\). B-spline curves can be generalized to represent rational functions such as conic sections. For this purpose, weights \(w_{i}\) are associated with the control points such that where \(d\) denotes the spatial dimension of the model space. The homogeneous coordinates \(\boldsymbol{c}_{i}^{h}\) specify a B-spline curve \(\boldsymbol{C}^{h}(u)\) in a projective space \(\mathbb{R}^{d+1}\). In order to obtain a curve in \(\mathbb{R}^{d}\), the geometrical mapping (9) is extended by a perspective mapping \(\mathcal{P}\) with the center at the origin of \(\mathbb{R}^{d+1}\). This projection is given by
 
 $$
-\begin{equation*} \boldsymbol{C}(u)=\mathcal{P}\left(\boldsymbol{C}^{h}(u)\right)=\frac{\boldsymbol{C}^{w}(u)}{w(u)}, \tag{12} \end{equation*}
+\boldsymbol{C}(u)=\mathcal{P}\left(\boldsymbol{C}^{h}(u)\right)=\frac{\boldsymbol{C}^{w}(u)}{w(u)},
 $$
 
 $$
-\begin{equation*} \frac{\partial C^{w}(u)}{\partial u}=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) c_{i}^{w} . \tag{16} \end{equation*}
+\frac{\partial \boldsymbol{C}^{w}(u)}{\partial u}=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) \boldsymbol{c}_{i}^{w} .
 $$
 
 where \(\boldsymbol{C}^{w}=\left(\boldsymbol{C}_{1}^{h}, \ldots, \boldsymbol{C}_{d}^{h}\right)^{\top}\) are the homogeneous vector components of the curve and the weighting function is determined by
 
-The application of Eq. (12) is illustrated in Fig. 6. The pro jection \(\boldsymbol{C}(u)\) is denoted as a non-uniform rational B-spline (NURBS) curve. The term rational indicates that the result ing curves are piecewise rational polynomials, whereas the term non-uniform emphasizes that the knot values can be distributed arbitrarily.
+The application of Eq. (12) is illustrated in Fig. 6. The projection \(\boldsymbol{C}(u)\) is denoted as a non-uniform rational B-spline (NURBS) curve. The term rational indicates that the resulting curves are piecewise rational polynomials, whereas the term non-uniform emphasizes that the knot values can be distributed arbitrarily.
 
-![Figure 6 Perspective mapping  of a quadratic B-spline curve C h ( u ) in homogeneous form ℝ 3 to a circular arc C ( u ) in model space ℝ 2 . The mapping is indicated by dashed lines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-6-p005.png)
+![Figure 6 Perspective mapping  of a quadratic B-spline curve C h ( u ) in homogeneous form ℝ 3 to a circular arc C ( u ) in model space ℝ 2 . The mapping is indicated by dashed lines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-6-p005.png)
 
 *Figure 6 Perspective mapping  of a quadratic B-spline curve C h ( u ) in homogeneous form ℝ 3 to a circular arc C ( u ) in model space ℝ 2 . The mapping is indicated by dashed lines: Perspective mapping  of a quadratic B-spline curve C h (u) in homogeneous form ℝ 3 to a circular arc C (u) in model space ℝ 2. The mapping is indicated by dashed lines*
 
 The derivative of the NURBS geometrical mapping is defined by
 
 $$
-\begin{equation*} \mathbf{J}_{\mathcal{X}}(u):=\frac{w(u) \frac{\partial C^{w}(u)}{\partial u}-\frac{\partial w(u)}{\partial u} C^{w}(u)}{(w(u))^{2}}, \tag{14} \end{equation*}
+\mathbf{J}_{\mathcal{X}}(u):=\frac{w(u) \frac{\partial C^{w}(u)}{\partial u}-\frac{\partial w(u)}{\partial u} \boldsymbol{C}^{w}(u)}{(w(u))^{2}},
 $$
 
 $$
-\begin{equation*} \boldsymbol{c}_{i}^{h}=\left(w_{i} \boldsymbol{c}_{i}, w_{i}\right)^{\top}=\left(\boldsymbol{c}_{i}^{w}, w_{i}\right)^{\top} \in \mathbb{R}^{d+1}, \tag{11} \end{equation*}
+\boldsymbol{c}_{i}^{h}=\left(w_{i} \boldsymbol{c}_{i}, w_{i}\right)^{\top}=\left(\boldsymbol{c}_{i}^{w}, w_{i}\right)^{\top} \in \mathbb{R}^{d+1},
 $$
 
 $$
-\begin{equation*} \frac{\partial w(u)}{\partial u}=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) w_{i}, \tag{15} \end{equation*}
+\frac{\partial w(u)}{\partial u}=\sum_{i=0}^{I-1} B_{i, p}^{\prime}(u) w_{i},
 $$
 
 Another way to represent NURBS curves is
 
 $$
-\begin{equation*} C(u)=\sum_{i=0}^{I-1} R_{i, p}(u) c_{i}, \tag{17} \end{equation*}
+\boldsymbol{C}(u)=\sum_{i=0}^{I-1} R_{i, p}(u) \boldsymbol{c}_{i},
 $$
 
 $$
-\begin{equation*} w(u)=\sum_{i=0}^{I-1} B_{i, p}(u) w_{i} . \tag{13} \end{equation*}
+w(u)=\sum_{i=0}^{I-1} B_{i, p}(u) w_{i} .
 $$
 
 $$
-\begin{equation*} R_{i, p}(u)=\frac{w_{i} B_{i, p}(u)}{w(u)} . \tag{18} \end{equation*}
+R_{i, p}(u)=\frac{w_{i} B_{i, p}(u)}{w(u)} .
 $$
 
-Since the weights \(w_{i}\) are now associated with B-splines \(B_{i, p}\) the mapping (17) employs control points \(\boldsymbol{c}_{i}\) of the model space. In gen eral, NURBS curves degenerate to B-spline curves, if all weights are equal. Hence, they are a generalization of them.
+Since the weights \(w_{i}\) are now associated with B-splines \(B_{i, p}\) the mapping (17) employs control points \(\boldsymbol{c}_{i}\) of the model space. In general, NURBS curves degenerate to B-spline curves, if all weights are equal. Hence, they are a generalization of them.
 
 ### 2.3 Spline Interpolation
 
-Since condition (21) guarantees that \(\mathbf{A}_{u}\) does not become singular, it is expected that the corresponding condition number gets large if \(\bar{u}\) approaches the limits of its allowed range. Non-uniformity of \(\bar{u}\) is another reason for an increas ing condition number. In fact, it gets arbitrary large if two interpolation sites approach each other, while the others are fixed. Several authors [11, 34, 184] recommend to interpo late at the Greville abscissae \(u^{g}\) which are obtained by the following knot average
+Since condition (21) guarantees that \(\mathbf{A}_{u}\) does not become singular, it is expected that the corresponding condition number gets large if \(\bar{u}\) approaches the limits of its allowed range. Non-uniformity of \(\bar{u}\) is another reason for an increasing condition number. In fact, it gets arbitrary large if two interpolation sites approach each other, while the others are fixed. Several authors [11, 34, 184] recommend to interpolate at the Greville abscissae \(u^{g}\) which are obtained by the following knot average
 
 These abscissae are well known in CAGD and used for different purposes, e.g., to generate a linear geometrical mapping [83]. The most important feature of this approach is that it induces a stable interpolation scheme for moderate degrees p.
 
 ### 2.4 Tensor Product Surfaces
 
-Tensor product surfaces allow an extremely efficient evalu ation of patches. They play an important role in CAGD. In particular, B-spline and NURBS patches are very common. Bivariate basis functions for B-spline patches are obtained by the tensor product of univariate B-splines which are defined by separate knot vectors \(\Xi_{I}\) and \(\Xi_{J}\). These knot vec tors determine the parameterization in the directions \(u\) and \(v\), respectively. Moreover, they span the bivariate basis of a
+Tensor product surfaces allow an extremely efficient evaluation of patches. They play an important role in CAGD. In particular, B-spline and NURBS patches are very common. Bivariate basis functions for B-spline patches are obtained by the tensor product of univariate B-splines which are defined by separate knot vectors \(\Xi_{I}\) and \(\Xi_{J}\). These knot vectors determine the parameterization in the directions \(u\) and \(v\), respectively. Moreover, they span the bivariate basis of a
 
 $$
-\begin{equation*} \frac{\partial^{k+l}}{\partial^{k} u \partial^{l} v} \boldsymbol{S}(u, v)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}^{(k)}(u) B_{j, q}^{(l)}(v) \boldsymbol{c}_{i, j} . \tag{24} \end{equation*}
+\frac{\partial^{k+l}}{\partial^{k} u \partial^{l} v} \boldsymbol{S}(u, v)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}^{(k)}(u) B_{j, q}^{(l)}(v) \boldsymbol{c}_{i, j} .
 $$
 
-![Figure 7 A bivariate basis determined by 훯 I = { 1, 1, 1, 2, 3, 4, 4, 4 } and 훯 J = { 1, 1, 1, 2.5, 2.5, 4, 4, 4 } for u and v , respectively](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-7-p006.png)
+![Figure 7 A bivariate basis determined by 훯 I = { 1, 1, 1, 2, 3, 4, 4, 4 } and 훯 J = { 1, 1, 1, 2.5, 2.5, 4, 4, 4 } for u and v , respectively](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-7-p006.png)
 
 *Figure 7 A bivariate basis determined by 훯 I = { 1, 1, 1, 2, 3, 4, 4, 4 } and 훯 J = { 1, 1, 1, 2.5, 2.5, 4, 4, 4 } for u and v , respectively: a shows the bivariate basis spanned by 훯 I and 훯 J, whereas b illustrates the construction of a corresponding bivariate B-spline*
 
 $$
-\begin{equation*} f\left(\bar{u}_{j}\right)=\sum_{i=0}^{I-1} B_{i, p}\left(\bar{u}_{j}\right) c_{i}, \quad j=0, \ldots, I-1 \tag{19} \end{equation*}
+f\left(\bar{u}_{j}\right)=\sum_{i=0}^{I-1} B_{i, p}\left(\bar{u}_{j}\right) c_{i}, \quad j=0, \ldots, I-1 .
 $$
 
 $$
-\begin{equation*} B_{i, p}\left(\bar{u}_{i}\right) \neq 0, \quad i=0, \ldots, I-1 . \tag{21} \end{equation*}
+B_{i, p}\left(\bar{u}_{i}\right) \neq 0, \quad i=0, \ldots, I-1 .
 $$
 
 $$
-\begin{equation*} \mathbf{A}_{u}[j, i]=B_{i, p}\left(\bar{u}_{j}\right), \quad i, j=0, \ldots, I-1 \tag{20} \end{equation*}
+\mathbf{A}_{u}[j, i]=B_{i, p}\left(\bar{u}_{j}\right), \quad i, j=0, \ldots, I-1
 $$
 
 patch. Combined with a bidirectional grid of control points \(\boldsymbol{c}_{i, j}\) the geometrical mapping \(\mathcal{X}\) is determined by
 
 $$
-\begin{equation*} u_{i}^{g}=\frac{u_{i+1}+u_{i+2}+\cdots+u_{i+p}}{p} . \tag{22} \end{equation*}
+u_{i}^{g}=\frac{u_{i+1}+u_{i+2}+\cdots+u_{i+p}}{p} .
 $$
 
 $$
-\begin{equation*} \mathcal{X}(u, v):=\boldsymbol{S}(u, v)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}(u) B_{j, q}(v) \boldsymbol{c}_{i, j} . \tag{23} \end{equation*}
+\mathcal{X}(u, v):=\boldsymbol{S}(u, v)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}(u) B_{j, q}(v) \boldsymbol{c}_{i, j} .
 $$
 
-The polynomial degrees are denoted by \(p\) and \(q\), respec tively for each parametric direction. The Jacobian of the mapping (23) is computed by substituting the occurring univariate B-splines by their first derivatives, alternately for each direction. In general, derivatives of B-spline patches are specified by
+The polynomial degrees are denoted by \(p\) and \(q\), respectively for each parametric direction. The Jacobian of the mapping (23) is computed by substituting the occurring univariate B-splines by their first derivatives, alternately for each direction. In general, derivatives of B-spline patches are specified by
 
 The efficiency of tensor product surfaces stems from the fact that their evaluation can be performed by a successive evaluation of curves [62]. Suppose the parametric value \(v^{\text {iso }}\) is fixed, the surface equation yields
 
 $$
-\begin{align*} \boldsymbol{S}\left(u, v^{i s o}\right) & =\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}(u) B_{j, q}\left(v^{i s o}\right) \boldsymbol{c}_{i, j} \\ & =\sum_{i=0}^{I-1} B_{i, p}(u)\left(\sum_{j=0}^{J-1} B_{j, q}\left(v^{i s o}\right) \boldsymbol{c}_{i, j}\right) \tag{25}\\ & =\sum_{i=0}^{I-1} B_{i, p}(u) \tilde{\boldsymbol{c}}_{i}=\boldsymbol{C}^{i s o}(u) \end{align*}
+\begin{aligned} \boldsymbol{S}\left(u, v^{i s o}\right) & =\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, p}(u) B_{j, q}\left(v^{i s o}\right) \boldsymbol{c}_{i, j} \\ & =\sum_{i=0}^{I-1} B_{i, p}(u)\left(\sum_{j=0}^{J-1} B_{j, q}\left(v^{i s o}\right) \boldsymbol{c}_{i, j}\right) \\ & =\sum_{i=0}^{I-1} B_{i, p}(u) \tilde{\boldsymbol{c}}_{i}=\boldsymbol{C}^{i s o}(u), \end{aligned}
 $$
 
-with \(\boldsymbol{C}^{\text {iso }}(u)\) denoting an isocurve of the surface defined by new control points \(\tilde{\boldsymbol{c}}_{i}\). Hence, a surface can be evaluated by \(I+1\) or \(J+1\) curve evaluations, depending which paramet ric direction is evaluated first.
+with \(\boldsymbol{C}^{\text {iso }}(u)\) denoting an isocurve of the surface defined by new control points \(\tilde{\boldsymbol{c}}_{i}\). Hence, a surface can be evaluated by \(I+1\) or \(J+1\) curve evaluations, depending which parametric direction is evaluated first.
 
 The tensor product nature of the patches is illustrated in Fig. 7 by means of a bivariate basis. Note that the univariate knot values propagate through the whole parameter space. If both knot vectors of the resulting patch are of form (3), it is referred to as Bézier surface. NURBS surfaces are derived analogous to curves by the introduction of weights.
 
 ### 2.5 Constructing Patches by Boundary Curves
 
-The most basic surface construction scheme is to connect two curves \(\boldsymbol{C}_{i}\) with \(i=1,2\) by a linear interpolation. The resulting surfaces are termed ruled surfaces and they are defined as where \(u, v \in[0,1]\). If \(\boldsymbol{C}_{i}\) have the same degree and knot vector, it is straightforward to represent \(\boldsymbol{S}^{r}\) as a single ten sor product surface. In this case the connection lines on \(\boldsymbol{S}^{r}\) associate points of equal parameter value. Alternatively, the ruling (26) could also be performed according to relative arc length. This yields a different geometry which cannot be converted to a NURBS patch [230].
+The most basic surface construction scheme is to connect two curves \(\boldsymbol{C}_{i}\) with \(i=1,2\) by a linear interpolation. The resulting surfaces are termed ruled surfaces and they are defined as where \(u, v \in[0,1]\). If \(\boldsymbol{C}_{i}\) have the same degree and knot vector, it is straightforward to represent \(\boldsymbol{S}^{r}\) as a single tensor product surface. In this case the connection lines on \(\boldsymbol{S}^{r}\) associate points of equal parameter value. Alternatively, the ruling (26) could also be performed according to relative arc length. This yields a different geometry which cannot be converted to a NURBS patch [230].
 
-The construction of Coons patches is another very com mon procedure. Thereby, a surface \(\boldsymbol{S}^{c}\) is sought to fit four boundary curves \(\boldsymbol{C}_{i}(u)\) and \(\boldsymbol{C}_{j}(v)\) with \(i=1,2\) and \(j=3,4\).
-
-$$
-\begin{align*} & \boldsymbol{S}^{c}(0,0)=\boldsymbol{C}_{1}(u=0)=\boldsymbol{C}_{3}(v=0) \tag{27}\\ & \boldsymbol{S}^{c}(1,0)=\boldsymbol{C}_{1}(u=1)=\boldsymbol{C}_{4}(v=0) \tag{28}\\ & \boldsymbol{S}^{c}(0,1)=\boldsymbol{C}_{2}(u=0)=\boldsymbol{C}_{3}(v=1) \tag{29}\\ & \boldsymbol{S}^{c}(1,1)=\boldsymbol{C}_{2}(u=1)=\boldsymbol{C}_{4}(v=1) \tag{30} \end{align*}
-$$
+The construction of Coons patches is another very common procedure. Thereby, a surface \(\boldsymbol{S}^{c}\) is sought to fit four boundary curves \(\boldsymbol{C}_{i}(u)\) and \(\boldsymbol{C}_{j}(v)\) with \(i=1,2\) and \(j=3,4\).
 
 $$
-\begin{align*} \boldsymbol{S}^{r}(u, v) & =(1-v) \boldsymbol{C}_{1}(u)+v \boldsymbol{C}_{2}(u) \\ & =(1-v) \boldsymbol{S}^{r}(u, 0)+v \boldsymbol{S}^{r}(u, 1) \tag{26} \end{align*}
+\begin{aligned} \boldsymbol{S}^{r}(u, v) & =(1-v) \boldsymbol{C}_{1}(u)+v \boldsymbol{C}_{2}(u) \\ & =(1-v) \boldsymbol{S}^{r}(u, 0)+v \boldsymbol{S}^{r}(u, 1) \end{aligned}
 $$
 
-![Figure 8 Components of a bilinear Coons patch due to the boundary curves C i ( u ) and C j ( v ) highlighted by thick lines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-8-p007.png)
+![Figure 8 Components of a bilinear Coons patch due to the boundary curves C i ( u ) and C j ( v ) highlighted by thick lines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-8-p007.png)
 
 *Figure 8 Components of a bilinear Coons patch due to the boundary curves C i ( u ) and C j ( v ) highlighted by thick lines: Components of a bilinear Coons patch due to the boundary curves C i (u) and C j (v) highlighted by thick lines*
 
-![Figure 9 Tensor product representation of triangular patches](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-9-p008.png)
+![Figure 9 Tensor product representation of triangular patches](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-9-p008.png)
 
 *Figure 9 Tensor product representation of triangular patches: a an angle between adjacent edges has 180 ◦ and b a side shrinks to a point. Circles mark the corner points of the resulting patch*
 
 Using a bilinear interpolation a Coons patch is given by
 
 $$
-\begin{equation*} \boldsymbol{S}^{c}(u, v)=\boldsymbol{S}_{u}^{r}(u, v)+\boldsymbol{S}_{v}^{r}(u, v)-\boldsymbol{S}_{c}^{r}(u, v), \tag{31} \end{equation*}
+\boldsymbol{S}^{c}(u, v)=\boldsymbol{S}_{u}^{r}(u, v)+\boldsymbol{S}_{v}^{r}(u, v)-\boldsymbol{S}_{c}^{r}(u, v),
 $$
 
 where \(\boldsymbol{S}_{u}^{r}\) and \(\boldsymbol{S}_{v}^{r}\) are ruled surfaces based on \(\boldsymbol{C}_{i}(u)\) and \(\boldsymbol{C}_{j}(v)\), respectively, and \(\boldsymbol{S}_{c}^{r}\) is the bilinear interpolant to the four corner points
@@ -253,28 +261,32 @@ where \(\boldsymbol{S}_{u}^{r}\) and \(\boldsymbol{S}_{v}^{r}\) are ruled surfac
 These various parts of a Coons patch are visualized in Fig. 8. Equation (31) can be generalized by using two arbitrary smooth interpolation functions \(f_{0}(s)\) and \(f_{1}(s)\) fulfilling
 
 $$
-\begin{equation*} f_{k}(\ell)=\delta_{k \ell}, \quad k, \ell=0,1, \tag{33} \end{equation*}
+f_{k}(\ell)=\delta_{k \ell}, \quad k, \ell=0,1,
+$$
+
+$$
+\(f_{k}(\ell)=\delta_{k \ell}, \quad k, \ell=0,1\),
 $$
 
 The corresponding Coons patch can be expressed in matrix form as
 
 $$
-\begin{gather*} \boldsymbol{S}^{c}(u, v)= \\ -\left[\begin{array}{c} -1 \\ f_{0}(u) \\ f_{1}(u) \end{array}\right]^{\top}\left[\begin{array}{ccc} \mathbf{0} & \boldsymbol{S}^{c}(u, 0) & \boldsymbol{S}^{c}(u, 1) \\ \boldsymbol{S}^{c}(0, v) & \boldsymbol{S}^{c}(0,0) & \boldsymbol{S}^{c}(0,1) \\ \boldsymbol{S}^{c}(1, v) & \boldsymbol{S}^{c}(1,0) & \boldsymbol{S}^{c}(1,1) \end{array}\right]\left[\begin{array}{c} -1 \\ f_{0}(v) \\ f_{1}(v) \end{array}\right], \tag{35} \end{gather*}
+\begin{gathered} \boldsymbol{S}^{c}(u, v)= \\ -\left[\begin{array}{c} -1 \\ f_{0}(u) \\ f_{1}(u) \end{array}\right]^{\top}\left[\begin{array}{ccc} \mathbf{0} & \boldsymbol{S}^{c}(u, 0) & \boldsymbol{S}^{c}(u, 1) \\ \boldsymbol{S}^{c}(0, v) & \boldsymbol{S}^{c}(0,0) & \boldsymbol{S}^{c}(0,1) \\ \boldsymbol{S}^{c}(1, v) & \boldsymbol{S}^{c}(1,0) & \boldsymbol{S}^{c}(1,1) \end{array}\right]\left[\begin{array}{c} -1 \\ f_{0}(v) \\ f_{1}(v) \end{array}\right], \end{gathered}
 $$
 
 $$
-\boldsymbol{S}^{\triangle(r, s, t)}=\sum_{\substack{i+j+k=p \\ i, j, k \geqslant 0}} B_{i, j, k, p}(r, s, t) \boldsymbol{c}_{i, j, k},
+\boldsymbol{S}^{\triangle}(r, s, t)=\sum_{\substack{i+j+k=p \\ i, j, k \geqslant 0}} B_{i, j, k, p}(r, s, t) \boldsymbol{c}_{i, j, k},
 $$
 
-with \(\mathbf{0} \in \mathbb{R}^{d}\) denoting the zero vector. Various functions may be used to specify \(f_{k}\) such as Hermite polynomials or trigonometric functions. In case of Bernstein polynomials, the surfaces \(\boldsymbol{S}_{u}^{r}, \boldsymbol{S}_{v}^{r}\), and \(\boldsymbol{S}_{c}^{r}\) are in Bézier or B-spline form and the resulting Coons patch can be represented as a sin gle NURBS surface.
+with \(\mathbf{0} \in \mathbb{R}^{d}\) denoting the zero vector. Various functions may be used to specify \(f_{k}\) such as Hermite polynomials or trigonometric functions. In case of Bernstein polynomials, the surfaces \(\boldsymbol{S}_{u}^{r}, \boldsymbol{S}_{v}^{r}\), and \(\boldsymbol{S}_{c}^{r}\) are in Bézier or B-spline form and the resulting Coons patch can be represented as a single NURBS surface.
 
 $$
-\begin{equation*} B_{i, j, k, p}(r, s, t)=\frac{p!}{i!j!k!} r^{i} s^{j} t^{k}, \tag{37} \end{equation*}
+B_{i, j, k, p}(r, s, t)=\frac{p!}{i!j!k!} r^{i} s^{j} t^{k}
 $$
 
 Finally, Gordon surfaces are a further generalization of Coons patches, where the surface \(\boldsymbol{S}_{u}^{r}\) and \(\boldsymbol{S}_{v}^{r}\) interpolate sets of isocurves rather than boundary curves. Gordon surfaces are also referred to as transfinite interpolation [103]. The term indicates that these surfaces interpolate an infinite number of points, i.e., the boundary curves and isocurves.
 
-![Figure 10 Triangular Bézier patch of degree p = 3](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-10-p008.png)
+![Figure 10 Triangular Bézier patch of degree p = 3](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-10-p008.png)
 
 *Figure 10 Triangular Bézier patch of degree p = 3: a the general structure of the control grid and b a corresponding surface*
 
@@ -283,28 +295,28 @@ Based on this definition, ruled surfaces, Coons patches, and Gordon surfaces may
 ### 2.6 Representation of Triangles
 
 $$
-\boldsymbol{S}_{c}^{r}(u, v)=\left[\begin{array}{l} 1 \tag{32}\\ u \end{array}\right]^{\top}\left[\begin{array}{lll} \boldsymbol{S}^{c}(0,0) & \boldsymbol{S}^{c}(0,1) \\ \boldsymbol{S}^{c}(1,0) & \boldsymbol{S}^{c}(1,1) \end{array}\right]\left[\begin{array}{l} 1 \\ v \end{array}\right] .
+\boldsymbol{S}_{c}^{r}(u, v)=\left[\begin{array}{l} 1 \\ u \end{array}\right]^{\top}\left[\begin{array}{l} \boldsymbol{S}^{c}(0,0) \\ \boldsymbol{S}^{c}(1,0) \\ \boldsymbol{S}^{c}(1,1) \end{array}\right]\left[\begin{array}{l} 1 \\ v \end{array}\right] .
 $$
 
 Triangular patches may be represented by tensor product surfaces despite their four-sided nature. Therefore, either a side or a point is degenerated as shown in Fig. 9. Such degenerated patches are often used since it is convenient to use only one surface representation. However, it is apparent that this can lead to a distorted parameterization. In addition, the enforcement of continuity between adjacent surfaces is difficult in this case.
 
-An alternative is to use triangular patches. A point on such surfaces is defined by barycentric coordinates, i.e., \((r, s, t)\) with \(r+s+t=1\). We will focus on triangular Bézier patches \(\boldsymbol{S}^{\triangle}\) which are specified as
+An alternative is to use triangular patches. A point on such surfaces is defined by barycentric coordinates, i.e., ( \(r, s, t\) ) with \(r+s+t=1\). We will focus on triangular Bézier patches \(\boldsymbol{S}\) which are specified as
 
 $$
-\begin{equation*} f_{0}(s)+f_{1}(s)=1, \quad s \in[0,1], \quad s=u, v . \tag{34} \end{equation*}
+f_{0}(s)+f_{1}(s)=1, \quad s \in[0,1], \quad s=u, v .
 $$
 
 representing linearly independent bivariate Bernstein polynomials of degree \(p\). The related control points \(\boldsymbol{c}_{i, j, k}\) form a triangular array as shown in Fig. 10 for the cubic case. The resulting patch fulfills the convex hull property and its boundaries are Bézier curves. Rational triangular Bézier patches may be defined again by the introduction of weights. Despite the potential of triangular patches, there are currently no commercial CAD applications that admit the use of splines on triangulations.
 
 ### 2.7 Trimmed Surfaces
 
-In order to represent arbitrary surface boundaries when using tensor product surfaces, patches can be modified by trimming procedures. For this purpose, curves are defined within the parameter space of a surface \(\boldsymbol{S}(u, v)\). These trim ming curves \(\boldsymbol{C}^{t}(\tilde{u})\) are usually B-spline or NURBS curves. They are given by
+In order to represent arbitrary surface boundaries when using tensor product surfaces, patches can be modified by trimming procedures. For this purpose, curves are defined within the parameter space of a surface \(\boldsymbol{S}(u, v)\). These trimming curves \(\boldsymbol{C}^{t}(\tilde{u})\) are usually B-spline or NURBS curves. They are given by
 
 $$
-\boldsymbol{C}^{t}(\tilde{u})=\left[\begin{array}{c} u(\tilde{u}) \tag{38}\\ v(\tilde{u}) \end{array}\right]=\sum_{i=0}^{I-1} R_{i, p}(\tilde{u}) \boldsymbol{c}_{i}^{t},
+\boldsymbol{C}^{t}(\tilde{u})=\left[\begin{array}{c} u(\tilde{u}) \\ v(\tilde{u}) \end{array}\right]=\sum_{i=0}^{I-1} R_{i, p}(\tilde{u}) \boldsymbol{c}_{i}^{t},
 $$
 
-where \(\boldsymbol{c}_{i}^{t} \in \mathbb{R}^{2}\) are the control points of the trimming curve given in the parameter space of the trimmed surface. Con nected trimming curves are ordered such that they form a closed directed loop. Loops also include the boundary of the original patch if it is intersected by trimming curves. These loops divide the resulting trimmed patch into distinct parts where the curves' directions determine which parts are visible. In other words, trimming procedures are used to define visible areas \(\mathcal{A}^{\mathrm{v}}\) over surfaces independent of the underlying parameter space.
+where \(\boldsymbol{c}_{i}^{t} \in \mathbb{R}^{2}\) are the control points of the trimming curve given in the parameter space of the trimmed surface. Connected trimming curves are ordered such that they form a closed directed loop. Loops also include the boundary of the original patch if it is intersected by trimming curves. These loops divide the resulting trimmed patch into distinct parts where the curves' directions determine which parts are visible. In other words, trimming procedures are used to define visible areas \(\mathcal{A}^{\mathrm{v}}\) over surfaces independent of the underlying parameter space.
 
 As a result, surfaces with non-rectangular topologies can be represented in a very simple way. An example of a trimmed patch is shown in Fig. 11. It is emphasized that the mathematical description, i.e., the tensor product basis and the related control grid, of the original patch does not change and is never updated to reflect the trimmed boundary represented by the independent trimming curves. Trimmed surfaces should be considered as an 'engineering' extension of tensor product patches [83]. On the one hand, they permit a convenient way to define arbitrary surface topologies and provide a means for visually displaying them in graphics systems. On the other hand, they do not offer a canonical solution to related problems such as a smooth connection of two adjacent patches along a trimming curve, although the graphics system leads the user to incorrectly believe so. In fact, enormous effort has been and is still devoted to resolve the shortcomings of trimming procedures as discussed later on in Sect. 3.
 
@@ -313,7 +325,7 @@ As a result, surfaces with non-rectangular topologies can be represented in a ve
 Most CAGD objects are geometrically represented by their boundary only. In other words, these models consist of several boundary patches 𝛾 where \(\Gamma\) denotes the entire boundary of the object. If \(\Gamma\) is a curve, several patches may be needed to represent
 
 $$
-\begin{equation*} \Gamma=\bigcup_{i=1}^{I} \gamma_{i}, \tag{39} \end{equation*}
+\Gamma=\bigcup_{i=1}^{I} \gamma_{i},
 $$
 
 - (a) Regular B-spline patch
@@ -324,7 +336,7 @@ distinct sections with different polynomial degrees. This is not a critical issu
 
 - (b) Components
 
-![Figure 12 Different perspectives of a CAGD solid model](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-12-p010.png)
+![Figure 12 Different perspectives of a CAGD solid model](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-12-p010.png)
 
 *Figure 12 Different perspectives of a CAGD solid model: a visible part of the object and its topological entities (to be precise, the related geometric objects, i.e., points, curves, and surfaces, are displayed), b the geometric segments of the B-Rep and c the underlying mathematical parameterization of each surface. In c, dashed lines mark the boundary of the visible area and gray lines indicate the underlying tensor product basis. Note that the parameterization along common edges does not match*
 
@@ -348,25 +360,29 @@ The motivation for this section is twofold: First of all, it provides an overvie
 
 Trimming is closely related to the problem of surface-tosurface intersection. In general, the intersection of two parametric surfaces
 
-![Figure 13 Cubic curves with different genus. Note the double point in case of the genus 0 curve](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-13-p011.png)
+![Figure 13 Cubic curves with different genus. Note the double point in case of the genus 0 curve](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-13-p011.png)
 
 *Figure 13 Cubic curves with different genus. Note the double point in case of the genus 0 curve: Cubic curves with different genus. Note the double point in case of the genus 0 curve*
 
-$$
-\begin{align*} & \boldsymbol{S}_{1}(u, v)=\left(x_{1}(u, v), y_{1}(u, v), z_{1}(u, v)\right), \tag{40}\\ & \boldsymbol{S}_{2}(s, t)=\left(x_{2}(s, t), y_{2}(s, t), z_{2}(s, t)\right), \tag{41} \end{align*}
-$$
+leads to a system of three nonlinear equations, i.e., the three coordinate differences of \(\boldsymbol{S}_{1}\) and \(\boldsymbol{S}_{2}\), with four unknowns \(u, v, s, t\) [62]. If surfaces intersect, the solution usually yields curves, but also subsurfaces or points may occur. The computation of intersections is one of many "geometric interrogation" techniques, or processes, employed in all types of modeling. The development of a good surface intersection scheme is far from trivial since the method has to balance three contradictory goals: accuracy, efficiency, and robustness. The surveys [219, 220] and the textbooks [4, 130, 221] provide detailed information on various approaches. Surface intersection algorithms can be broadly classified into four main categories: (i) analytic methods, (ii) lattice evaluation, (iii) subdivision methods, and (iv) marching methods.
 
-leads to a system of three nonlinear equations, i.e., the three coordinate differences of \(\boldsymbol{S}_{1}\) and \(\boldsymbol{S}_{2}\), with four unknowns \(u, v, s, t\) [62]. If surfaces intersect, the solution usually yields curves, but also subsurfaces or points may occur. The computation of intersections is one of many "geomet ric interrogation" techniques, or processes, employed in all types of modeling. The development of a good surface intersection scheme is far from trivial since the method has to balance three contradictory goals: accuracy, efficiency, and robustness. The surveys [219, 220] and the text books [4, 130, 221] provide detailed information on various approaches. Surface intersection algorithms can be broadly classified into four main categories: (i) analytic methods, (ii) lattice evaluation, (iii) subdivision methods, and (iv) marching methods.
+$$
+\boldsymbol{S}_{2}(s, t)=\left(x_{2}(s, t), y_{2}(s, t), z_{2}(s, t)\right),
+$$
 
 #### 3.1.1 Analytic Methods
 
 The intersection of two surfaces may be solved analytically, i.e., an explicit representation of the intersection curve is obtained. Early solid modeling systems used analytic methods to obtain exact parametric representations of the intersection of quadratic surfaces [40]. The intersection problem always has a simple solution when both surfaces are given as functions in implicit form [130]. The good news is that parametric surfaces can always be represented implicitly [265], but the main problem is that the algebraic complexity of the intersection increases rapidly with the degree of the surfaces. This is often illustrated by a popular example of the intersection of two bicubic patches which has an algebraic degree of 324 as shown by Sederberg [265, 266]. In addition, the intersection of two bicubic patches has a
 
-![Figure 14 Intersection points based on line-to-surface computations](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-14-p011.png)
+![Figure 14 Intersection points based on line-to-surface computations](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-14-p011.png)
 
 *Figure 14 Intersection points based on line-to-surface computations: intersection points based on line-to-surface computations*
 
-genus \({ }^{2}\) of 433 and only curves of genus 0, i.e., all degree two curves, cubic curves with one double point, quartic curves with three double points or one triple point, etc., can be expressed parametrically using rational polynomi als [152]. Figure 13 illustrates two examples of implicit cubic curves with different genus. The complexity of sur face intersection curves has also been discussed in the study of Farouki and Hinds [88]. It is argued that the deri vation of an implicit representation is not practical and an approximation scheme may be preferred. In general, ana lytic methods have been restricted to low degree intersections, which yield exact results very fast.
+$$
+\boldsymbol{S}_{1}(u, v)=\left(x_{1}(u, v), y_{1}(u, v), z_{1}(u, v)\right),
+$$
+
+genus \({ }^{2}\) of 433 and only curves of genus 0, i.e., all degree two curves, cubic curves with one double point, quartic curves with three double points or one triple point, etc., can be expressed parametrically using rational polynomials [152]. Figure 13 illustrates two examples of implicit cubic curves with different genus. The complexity of surface intersection curves has also been discussed in the study of Farouki and Hinds [88]. It is argued that the derivation of an implicit representation is not practical and an approximation scheme may be preferred. In general, analytic methods have been restricted to low degree intersections, which yield exact results very fast.
 
 #### 3.1.2 Lattice Evaluation
 
@@ -374,7 +390,7 @@ The basic idea of this technique is to reduce the dimensionality of surface inte
 
 2 The genus g of a plane algebraic curve is specified by the degree p of the curve and the number I and multiplicity m of its singular points: g = 1 2 (\(p_{2}\)-3 p + 2 -∑ \(I_{i}=1\) mi (mi-1) ).
 
-![Figure 15 Determination of an intersection region of two curves by means of a divide-and-conquer scheme that uses axis-aligned bound- ing boxes](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-15-p012.png)
+![Figure 15 Determination of an intersection region of two curves by means of a divide-and-conquer scheme that uses axis-aligned bound- ing boxes](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-15-p012.png)
 
 *Figure 15 Determination of an intersection region of two curves by means of a divide-and-conquer scheme that uses axis-aligned bound- ing boxes: Determination of an intersection region of two curves by means of a divide-and-conquer scheme that uses axis-aligned bounding boxes*
 
@@ -388,7 +404,7 @@ An important advantage of subdivision methods is that they do not require starti
 
 #### 3.1.4 Marching Methods
 
-Marching methods \({ }^{3}\) derive an intersection curve by step ping piecewise along the curve, e.g., [14, 20, 84]. Such methods usually consist of a search, a marching, and a sorting phase. The first phase detects an appropriate start ing point on the intersecting curve. Often, this is performed by a subdivision or lattice approach. In the marching phase, a point sequence along the intersection curve is developed starting from the points determined in the previous phase. The direction and the length of the next step are defined by the local differential geometry. Finally, the individual points and segments of the intersection curve are sorted and merged to disjoint pieces and curve loops.
+Marching methods \({ }^{3}\) derive an intersection curve by stepping piecewise along the curve, e.g., [14, 20, 84]. Such methods usually consist of a search, a marching, and a sorting phase. The first phase detects an appropriate starting point on the intersecting curve. Often, this is performed by a subdivision or lattice approach. In the marching phase, a point sequence along the intersection curve is developed starting from the points determined in the previous phase. The direction and the length of the next step are defined by the local differential geometry. Finally, the individual points and segments of the intersection curve are sorted and merged to disjoint pieces and curve loops.
 
 According to Hoschek and Lasser [130], all marching methods share some common problems: (i) determination of good starting points, (ii) detection of all branches of the intersecting curve, (iii) avoiding of multiple detections of a intersection segment, (iv) correct behavior at self-intersections and singularities, (v) proper choice of the direction and length of the subsequent step, and (vi) a robust automatic stopping criterion.
 
@@ -406,7 +422,7 @@ One of the elementary surface intersection schemes has been proposed by Houghton
 
 applied to any surface representation, in contrast to earlier techniques that utilize properties of certain surface types, e.g., [46, 111, 165, 180, 224, 256].
 
-Barnhill et al. [19] presented another general procedure to compute the intersection of two rectangular \(C^{1}\) patches. It relies on a combination of subdivision and a marching scheme. It does not assume a special structure of the inter secting surfaces and special cases are considered, e.g., infi finite plane intersections, creases, and self-intersection. The algorithm has been enhanced in [20], including the uti lization of the divide-and-conquer concept presented by Houghton et al. [133].
+Barnhill et al. [19] presented another general procedure to compute the intersection of two rectangular \(C^{1}\) patches. It relies on a combination of subdivision and a marching scheme. It does not assume a special structure of the intersecting surfaces and special cases are considered, e.g., infinite plane intersections, creases, and self-intersection. The algorithm has been enhanced in [20], including the utilization of the divide-and-conquer concept presented by Houghton et al. [133].
 
 Another combination of a divide-and-conquer subdivision with an iterative marching approach has been developed by Kriezis et al. [169]. The method enables intersecting algebraic surfaces of any degree with rational biquadratic and bicubic patches.
 
@@ -416,15 +432,15 @@ Krishnan and Manocha [170] developed an approach for NURBS surfaces that combine
 
 Various techniques for the computation of approximate solutions to the surface-to-surface intersection problem have been outlined so far. It remains to discuss the actual representation of the result.
 
-In general, three distinct representations of an intersection are obtained. On the one hand, the intersection curve in model space is computed. This may seem to be the main objective of the whole procedure at first glance, yet it is just a part of the overall solution process. The intersection curve has to be represented in each parameter space of the trimmed patches. These curves are referred to as trimming curves in the following and are needed to determine which surface points are visible. intersection and trimming curves can be defined by any kind of representation, but usually low-degree B-splines are used. They are constructed based on a set of sampling points that result from the surface-to-surface intersection algorithm applied [207]. Subsequently, an interpola tion scheme or another curve-fitting technique is used to generate a continuous approximation of the intersection in model space \(\hat{\boldsymbol{C}}\). In general, this curve does not lie on either of the intersecting surfaces. A trimming curve \(\boldsymbol{C}^{t}\) is obtained based on the sampling points given in the corre sponding parameter space [240]. The related curve \(\tilde{\boldsymbol{C}}^{t}\) in the model space is obtained by evaluating the equation of the surface \(\boldsymbol{S}\) along its \(\boldsymbol{C}^{t}\). Alternatively, \(\tilde{\boldsymbol{C}}^{t}\) may be represented
+In general, three distinct representations of an intersection are obtained. On the one hand, the intersection curve in model space is computed. This may seem to be the main objective of the whole procedure at first glance, yet it is just a part of the overall solution process. The intersection curve has to be represented in each parameter space of the trimmed patches. These curves are referred to as trimming curves in the following and are needed to determine which surface points are visible. intersection and trimming curves can be defined by any kind of representation, but usually low-degree B-splines are used. They are constructed based on a set of sampling points that result from the surface-to-surface intersection algorithm applied [207]. Subsequently, an interpolation scheme or another curve-fitting technique is used to generate a continuous approximation of the intersection in model space \(\hat{\boldsymbol{C}}\). In general, this curve does not lie on either of the intersecting surfaces. A trimming curve \(\boldsymbol{C}^{t}\) is obtained based on the sampling points given in the corresponding parameter space [240]. The related curve \(\tilde{\boldsymbol{C}}^{t}\) in the model space is obtained by evaluating the equation of the surface \(\boldsymbol{S}\) along its \(\boldsymbol{C}^{t}\). Alternatively, \(\tilde{\boldsymbol{C}}^{t}\) may be represented
 
-It is emphasized that \(\tilde{\boldsymbol{C}}^{t}\) does not coincide with the intersection curve in model space \(\hat{\boldsymbol{C}}\), regardless of its representation. In addition, all procedures related to trimming curves are performed for each patch separately. Hence, the images of these curves \(\tilde{\boldsymbol{C}}_{i}^{t}\) do not coincide, neither with each other, nor with \(\hat{\boldsymbol{C}}\). As a consequence, gaps and overlaps may occur between intersecting patches. There is no connec tion between these three representations of the intersection; although the sample points provide some information dur ing the construction, this data is only stored temporarily during the approximation procedure and never retained in memory for further use. These various approximations of a surface-to-surface intersection are summarized in Fig. 16.
+It is emphasized that \(\tilde{\boldsymbol{C}}^{t}\) does not coincide with the intersection curve in model space \(\hat{\boldsymbol{C}}\), regardless of its representation. In addition, all procedures related to trimming curves are performed for each patch separately. Hence, the images of these curves \(\tilde{\boldsymbol{C}}_{i}^{t}\) do not coincide, neither with each other, nor with \(\hat{\boldsymbol{C}}\). As a consequence, gaps and overlaps may occur between intersecting patches. There is no connection between these three representations of the intersection; although the sample points provide some information during the construction, this data is only stored temporarily during the approximation procedure and never retained in memory for further use. These various approximations of a surface-to-surface intersection are summarized in Fig. 16.
 
 Currently, the most common geometric modeling kernels are ACIS, C3D, and Parasolid. They provide software components for the representation and manipulation of objects, and form the geometric core of many CAD applications. All of them use splines for the description of trimming curves [43, 65, 282]. Yet, the representation of the intersection curve in model space varies: ACIS defines it by a three-dimensional B-spline curve, Parasolid uses a set of sorted intersection points that can be interpreted as a linear approximation, and in C3D the intersection curve is not stored at all. In C3D, trimming curves are computed such that they have the same radius and derivatives at the same parametric values. However, this is only satisfied at the intersection point used for the construction, for more details see [102].
 
 4 A multi-affine and totally symmetric mapping is called a blossom (or polar form). Blossoms can be used to define spline algorithms in an elegant way. For details see [236].
 
-![Figure 16 Independent curve interpolation of an ordered point set to obtain approximations of the intersection of two patches S 1 ( u , v ) and S 2 ( s , t ) . The set of sampling points depends on the surface-to-surface intersection algorithm applied. The subsequent interpolation of these points is performed in a the model space and the parameter space of b S 1 ( u , v ) and c S 2 ( s , t ) leading to the curves ̂ C , C t 1 , and C t 2 , respectively. The point data is usually discarded once the curves are constructed](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-16-p014.png)
+![Figure 16 Independent curve interpolation of an ordered point set to obtain approximations of the intersection of two patches S 1 ( u , v ) and S 2 ( s , t ) . The set of sampling points depends on the surface-to-surface intersection algorithm applied. The subsequent interpolation of these points is performed in a the model space and the parameter space of b S 1 ( u , v ) and c S 2 ( s , t ) leading to the curves ̂ C , C t 1 , and C t 2 , respectively. The point data is usually discarded once the curves are constructed](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-16-p014.png)
 
 *Figure 16 Independent curve interpolation of an ordered point set to obtain approximations of the intersection of two patches S 1 ( u , v ) and S 2 ( s , t ) . The set of sampling points depends on the surface-to-surface intersection algorithm applied. The subsequent interpolation of these points is performed in a the model space and the parameter space of b S 1 ( u , v ) and c S 2 ( s , t ) leading to the curves ̂ C , C t 1 , and C t 2 , respectively. The point data is usually discarded once the curves are constructed: Independent curve interpolation of an ordered point set to obtain approximations of the intersection of two patches S 1 (u, v) and S 2 (s, t). The set of sampling points depends on the surface-to-surface intersection algorithm applied. The subsequent interpolation of these points is performed in a the model space and the parameter space of b S 1 (u, v) and c S 2 (s, t) leading to the curves ̂ C, C t 1, and C t 2, respectively. The point data is usually discarded once the curves are constructed*
 
@@ -434,15 +450,15 @@ Solid modeling is concerned with the use of unambiguous representations of three
 
 #### 3.2.1 Formulation of Trimmed Solid Models
 
-It took some time to develop a rigorous way to represent trimmed free-form models. There are three broad catego ries for representing geometric objects: (i) decomposition, (ii) boundary, and (iii) constructive representations. Popu lar examples of decomposition representations are voxel models where a solid is approximated by identical cubic cells. Advantages and limitations of this approach are dis cussed in [153]. A B-Rep \({ }^{5}\) (B-Rep) defines an object by its bounded geometry, along with an associated topologi cal structure of corresponding entities, such as faces, edges, and vertices. The benefits of storing an object's shape by means of its boundary were already elaborated in the seminal work of Braid [36]. Most B-Reps consist of sev eral surface patches and additional information is stored to efficiently identify the various components and their rela tion to each other [241]. Various data structures for B-Reps have been used, e.g., [21, 73, 106], to find a compromise between storage requirements and response to topological questions. The best known constructive representation is so-called constructive solid geometry (CSG) [241]. Simple
+It took some time to develop a rigorous way to represent trimmed free-form models. There are three broad categories for representing geometric objects: (i) decomposition, (ii) boundary, and (iii) constructive representations. Popular examples of decomposition representations are voxel models where a solid is approximated by identical cubic cells. Advantages and limitations of this approach are discussed in [153]. A B-Rep \({ }^{5}\) (B-Rep) defines an object by its bounded geometry, along with an associated topological structure of corresponding entities, such as faces, edges, and vertices. The benefits of storing an object's shape by means of its boundary were already elaborated in the seminal work of Braid [36]. Most B-Reps consist of several surface patches and additional information is stored to efficiently identify the various components and their relation to each other [241]. Various data structures for B-Reps have been used, e.g., [21, 73, 106], to find a compromise between storage requirements and response to topological questions. The best known constructive representation is so-called constructive solid geometry (CSG) [241]. Simple
 
 5 B-Rep models with free-form surfaces are also referred to as sculptured models.
 
-![Figure 18 Representation of the object shown in Figure 12 a by means of a CSG tree](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-18-p015.png)
+![Figure 18 Representation of the object shown in Figure 12 a by means of a CSG tree](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-18-p015.png)
 
 *Figure 18 Representation of the object shown in Figure 12 a by means of a CSG tree: the object is specified by a composition of simple solids using Boolean operations, i.e., union (U) and difference (−)*
 
-![Figure 17 An early sketch of a trimmed surface (reprinted from [ 29 ], with permission from Elsevier)](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-17-p015.png)
+![Figure 17 An early sketch of a trimmed surface (reprinted from [ 29 ], with permission from Elsevier)](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-17-p015.png)
 
 *Figure 17 An early sketch of a trimmed surface (reprinted from [ 29 ], with permission from Elsevier): An early sketch of a trimmed surface (reprinted from [29], with permission from Elsevier)*
 
@@ -468,7 +484,7 @@ Several robustness issues arise in case of imprecise geometric operations. As a 
 
 The key issue is that numerical errors may cause misjudgment as pointed out in [291]. Since the geometrical decisions are based on approximate data and arithmetic operations of limited precision, there is an interval of uncertainty in which the numerical data cannot yield further information [122]. Of course, the situation gets even
 
-![Figure 19 Example of an incorrect topology](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-19-p016.png)
+![Figure 19 Example of an incorrect topology](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-19-p016.png)
 
 *Figure 19 Example of an incorrect topology: a two intersection points x i are close together which may lead to b an incorrect topological placement along the vertical line due to numerical approximation errors (re-execution of the original example [204])*
 
@@ -476,9 +492,9 @@ more delicate if trimmed free-form surfaces are involved where approximation err
 
 There is a large amount of research that addresses the issue of accurate and robust solid modeling. The various concepts are outlined in the following subsections. The approaches are based on tolerances, interval arithmetic, and exact arithmetic.
 
-3.2.2.1 Tolerances Often, tolerances are used to assess the quality of operations like the computation of an intersection [19, 130]. Several authors have suggested to use adaptive tolerances where each element of the model is associated with its own tolerance, e.g., [143, 271]. In addi tion, tolerances may be dynamically updated [82]. Robust ness of topology decisions may be improved by choosing the related precision higher than the one for the input data [291]. Another strategy is to adjust the data in order to obtain topologically consistent functions [204]. There are various other approaches that improve the application of tolerance and the interested reader is referred to the review of Hong and Chang [128] for a comprehensive discussion. In fact, all common CAD software tools are based on a user-defined tolerance that determines the accuracy of the geometrical operations performed. For example, the default tolerance values of ACIS are \(10^{-6}\) for the comparison of points and \(10^{-3}\) for the difference of an approximate curve or surface to its exact counterpart [65]. Unfortunately, tolerances cannot guarantee robust algorithms since they do not deal with the inherent problem of limited-precision arithmetic.
+3.2.2.1 Tolerances Often, tolerances are used to assess the quality of operations like the computation of an intersection [19, 130]. Several authors have suggested to use adaptive tolerances where each element of the model is associated with its own tolerance, e.g., [143, 271]. In addition, tolerances may be dynamically updated [82]. Robustness of topology decisions may be improved by choosing the related precision higher than the one for the input data [291]. Another strategy is to adjust the data in order to obtain topologically consistent functions [204]. There are various other approaches that improve the application of tolerance and the interested reader is referred to the review of Hong and Chang [128] for a comprehensive discussion. In fact, all common CAD software tools are based on a user-defined tolerance that determines the accuracy of the geometrical operations performed. For example, the default tolerance values of ACIS are \(10^{-6}\) for the comparison of points and \(10^{-3}\) for the difference of an approximate curve or surface to its exact counterpart [65]. Unfortunately, tolerances cannot guarantee robust algorithms since they do not deal with the inherent problem of limited-precision arithmetic.
 
-![Figure 20 Four splines representing a quadrilateral](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-20-p017.png)
+![Figure 20 Four splines representing a quadrilateral](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-20-p017.png)
 
 *Figure 20 Four splines representing a quadrilateral: a ideal mathematical object, b floating point model with approximation errors, and c interval arithmetic based representation*
 
@@ -511,12 +527,12 @@ Early on, trimmed surfaces had been rendered using the de Boor [33], Oslo [60], 
 The rendering of trimmed NURBS surfaces can also be carried out using a combination of subdivision and adaptive forward differencing [185, 275]. This method allows fast sampling of a large number of points, but suffers from error propagation. The main drawback in rendering transparent objects is the redundant pixel painting in adaptive forward differencing. Furthermore, the overall performance of the algorithm obtained is rather slow [191].
 
 $$
-\begin{equation*} \sup _{(u, v) \in T}\|\boldsymbol{S}(u, v)-\boldsymbol{T}(u, v)\| \leq \frac{2}{9} \lambda^{2}\left(M_{1}+2 M_{2}+M_{3}\right) \tag{42} \end{equation*}
+\sup _{(u, v) \in T}\|\boldsymbol{S}(u, v)-\boldsymbol{T}(u, v)\| \leq \frac{2}{9} \lambda^{2}\left(M_{1}+2 M_{2}+M_{3}\right),
 $$
 
 Rockwood et al. [249] presented a scheme enabling rendering of trimmed surfaces in real-time. Firstly, the surface is tessellated, i.e., approximated by linear triangles or other polygons. Therefore, all surfaces are subdivided into individual Bézier patches. A trimmed Bézier patch may be subdivided further to obtain monotone regions that have convex boundaries in the parameter space [165]. Each patch is tessellated into a grid of rectangles which are connected to the region boundaries by triangles. The actual rendering is performed on the approximate mesh. This idea has been adapted and enhanced by several other authors, e.g., [2, 176, 191].
 
-176, 191]. The triangulation of trimmed surfaces by a restricted Delaunay triangulation has been proposed by Sheng and Hirsch [279]. The basic idea of this technique is to compute the approximation mesh in the parameter space. Although it has been developed for stereolithography \({ }^{6}\) applications, the suitability for rendering is emphasized. Stereolithography was also the motivation in [74] where trimmed surfaces are triangulated by an adaptive subdivision scheme. In contrast to the approach by Rockwood et al. [249], both algorithms contain strategies to avoid cracks between patches. A gen eral discussion on how to avoid edge gaps in case of an adaptive subdivision is given by Dehaemer and Zyda [69].
+176, 191]. The triangulation of trimmed surfaces by a restricted Delaunay triangulation has been proposed by Sheng and Hirsch [279]. The basic idea of this technique is to compute the approximation mesh in the parameter space. Although it has been developed for stereolithography \({ }^{6}\) applications, the suitability for rendering is emphasized. Stereolithography was also the motivation in [74] where trimmed surfaces are triangulated by an adaptive subdivision scheme. In contrast to the approach by Rockwood et al. [249], both algorithms contain strategies to avoid cracks between patches. A general discussion on how to avoid edge gaps in case of an adaptive subdivision is given by Dehaemer and Zyda [69].
 
 According to Vigo and Brunet [300], the main drawback of the approaches previously mentioned [249, 279] is that
 
@@ -524,35 +540,19 @@ According to Vigo and Brunet [300], the main drawback of the approaches previous
 
 the resulting elements may be odd-shaped, especially near the boundary. They suggested to overcome this issues by a piecewise linear approximation of trimmed surfaces using a triangular mesh that is based on a max-min angle criterion. The algorithm is designed so that the resulting mesh can be used for stereolithography, FEA, and rendering. The mesh obtained consists of shape-regular elements and has no cracks between patches.
 
-The determination of a proper step size of a tessellation is of course an important issue. The elements should not be too small in order to avoid oversampling of the surface, nor too big, since this would decrease the quality of the ren dering [1]. Lane and Carpenter [178] presented a formula for calculating the upper bound of the distance between a right triangle interpolating a surface. Later, the bound was improved by Filip et al. [89]. Based on this work, Sheng and Hirsch [279] derived the following formula for arbi trary triangles: the approximation error can be estimated by the difference of a parametric surface \(\boldsymbol{S}(u, v)\) to a linear triangle \(\boldsymbol{T}(u, v)\) where \(T\) is the correspond region in the parameter space, \(\lambda\) denotes the maximal edge length of \(\boldsymbol{T}(u, v)\), and \(M_{i}\) are specified by
+The determination of a proper step size of a tessellation is of course an important issue. The elements should not be too small in order to avoid oversampling of the surface, nor too big, since this would decrease the quality of the rendering [1]. Lane and Carpenter [178] presented a formula for calculating the upper bound of the distance between a right triangle interpolating a surface. Later, the bound was improved by Filip et al. [89]. Based on this work, Sheng and Hirsch [279] derived the following formula for arbitrary triangles: the approximation error can be estimated by the difference of a parametric surface \(\boldsymbol{S}(u, v)\) to a linear triangle \(\boldsymbol{T}(u, v)\) where \(T\) is the correspond region in the parameter space, \(\lambda\) denotes the maximal edge length of \(\boldsymbol{T}(u, v)\), and \(M_{i}\) are specified by
 
-$$
-\begin{equation*} M_{1}=\sup _{(u, v) \in T}\left\|\frac{\partial^{2} \boldsymbol{S}(u, v)}{\partial^{2} u}\right\|, \tag{43} \end{equation*}
-$$
-
-$$
-\begin{equation*} M_{2}=\sup _{(u, v) \in T}\left\|\frac{\partial^{2} \boldsymbol{S}(u, v)}{\partial u \partial v}\right\|, \tag{44} \end{equation*}
-$$
-
-$$
-\begin{equation*} M_{3}=\sup _{(u, v) \in T}\left\|\frac{\partial^{2} \boldsymbol{S}(u, v)}{\partial^{2} v}\right\| \tag{45} \end{equation*}
-$$
-
-Hence, the upper bounds of second derivatives of the sur face are required. Once these bounds are determined, \(\lambda\) can be computed for a given tolerance \(\varepsilon\) by
-
-$$
-\begin{equation*} \lambda=3\left(\frac{\varepsilon}{2\left(M_{1}+2 M_{2}+M_{3}\right)}\right)^{1 / 2} \tag{46} \end{equation*}
-$$
+Hence, the upper bounds of second derivatives of the surface are required. Once these bounds are determined, \(\lambda\) can be computed for a given tolerance \(\varepsilon\) by
 
 The bounds on the second derivatives for a B-spline surface (43)-(45) can be computed by constrained optimization [89] or conversion to a Chebyshev basis [279]. Piegl and Richard [229] use the fact that the derivative of a B-spline is again a B-spline to define the upper approximation bounds by computing the maxima of the control points of the differentiated surfaces. They address the treatment
 
-![Figure 21 Rays spawned from an eye-point in order to get a pixel-wise image of an object](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-21-p019.png)
+![Figure 21 Rays spawned from an eye-point in order to get a pixel-wise image of an object](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-21-p019.png)
 
 *Figure 21 Rays spawned from an eye-point in order to get a pixel-wise image of an object: Rays spawned from an eye-point in order to get a pixel-wise image of an object*
 
 of rational surfaces by means of homogeneous coordinates and adjustment of the tolerance due to the perspective mapping (12).
 
-A few years later, Piegl and Tiller [231] proposed a tri angulation scheme which is geometry-based, i.e., the pro cedure is based on the geometry rather than the param eterization. The trimming curves are polygonized in the model space by cubic Bézier curves and the surface itself is subdivided by its control net. The main advantage of this approach is that the trimmed NURBS surface is not required to have more than \(C^{0}\)-continuity, in contrast to the previous methods that assumed that the surfaces are \(C^{2}\)-continuous in order to estimate a step length in the parameter space [89]. Elber [79] proposed two alternative approaches that are also independent of the parameteriza tion: one based on an intermediate linear surface fit and another based on global normal curvature. In general, tes sellations do not require an element connectivity or shape regular elements. However, several authors have presented the construction of conforming meshes for trimmed patches that yield triangles with good aspect ratios [55,57,58].
+A few years later, Piegl and Tiller [231] proposed a triangulation scheme which is geometry-based, i.e., the procedure is based on the geometry rather than the parameterization. The trimming curves are polygonized in the model space by cubic Bézier curves and the surface itself is subdivided by its control net. The main advantage of this approach is that the trimmed NURBS surface is not required to have more than \(C^{0}\)-continuity, in contrast to the previous methods that assumed that the surfaces are \(C^{2}\)-continuous in order to estimate a step length in the parameter space [89]. Elber [79] proposed two alternative approaches that are also independent of the parameterization: one based on an intermediate linear surface fit and another based on global normal curvature. In general, tessellations do not require an element connectivity or shape regular elements. However, several authors have presented the construction of conforming meshes for trimmed patches that yield triangles with good aspect ratios [55,57,58].
 
 Irregular meshes are also an issue regarding hardware implementation on the graphical processing unit (GPU). Moreton [206] presented tessellation of polynomial surfaces for hardware rendering using forward differences and dividing the work of tessellation between CPU and GPU. To avoid gaps along shared boundaries of patches due to the different floating point engines, all boundary curves of the patches are calculated on the GPU. In order to enable GPU based tessellation, Guthe et al. [108] presented a trim texture scheme which can be parallelized. In this approach, the visible domain is specified based on a texture-map of black and white pixels, hence the trimming task is performed on pixel-level.
 
@@ -574,17 +574,17 @@ Solid models with trimmed surfaces suffer from robustness issues that may lead t
 
 The treatment of trimmed surfaces in the early automotive industry was discussed by Sarraga and Waters [257], in which a repatching method is proposed. To be precise, the intersection curves are used as edges of new regular patches approximating the original surface. As pointed out by Sarraga and Waters, repatching has several distinct disadvantages for modeling, but it is applied as a compromise between the complexity of free-form surfaces and the requirements of solid modeling. The common aim of the subsequent approaches is to improve this compromise. Besides the desire for an unambiguous and robust solid model, exchange of geometric data between dissimilar CAD software has been a motivation for this remodeling concept. Various constructions for the repatching procedure have been proposed. Hoschek and Schneider [131] convert trimmed rational Bézier patches into a set of bicubic and biquintic Bézier patches. The segmentation is based on arguments related to the curvature of the surface and conditions on the geometrical continuity. The procedure combines some of Hoschek's previous works, i.e., [129, 132], and consists of four steps: (i) determination of new geometrically oriented boundary curves, (ii) approximation of these curves, (iii) fitting of the interior of each patch using geometric continuity conditions for the boundary and corner points, and (iv) approximation of the intersection curves of trimmed surfaces. The use of ruled surfaces [110], Coons patches [41, 301], and Clough-Tocher
 
-![Figure 22 Generalized Voronoi diagram for five trimming curves (re- execution of the original figure of [ 110 ])](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-22-p020.png)
+![Figure 22 Generalized Voronoi diagram for five trimming curves (re- execution of the original figure of [ 110 ])](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-22-p020.png)
 
 *Figure 22 Generalized Voronoi diagram for five trimming curves (re- execution of the original figure of [ 110 ]): Generalized Voronoi diagram for five trimming curves (reexecution of the original figure of [110])*
 
-splines \({ }^{7}\) [167] have also been suggested to remodel trimmed surfaces. Another concept is based on clipping isoparamet ric curves of a B-spline surface [9]. Later, this approach has been adapted for the design of aircraft fuselages and wings Generalized Voronoi diagrams may be used to obtain a proper decomposition of the trimmed domain with multiple trimming curves [110, 142]. Thereby, the parameter space is partitioned into convex polygons such that each polygon contains exactly one trimming curve as illustrated in Fig. 22. Details on Voronoi diagrams can be found in the survey of Aurenhammer [10].
+splines \({ }^{7}\) [167] have also been suggested to remodel trimmed surfaces. Another concept is based on clipping isoparametric curves of a B-spline surface [9]. Later, this approach has been adapted for the design of aircraft fuselages and wings Generalized Voronoi diagrams may be used to obtain a proper decomposition of the trimmed domain with multiple trimming curves [110, 142]. Thereby, the parameter space is partitioned into convex polygons such that each polygon contains exactly one trimming curve as illustrated in Fig. 22. Details on Voronoi diagrams can be found in the survey of Aurenhammer [10].
 
 Another strategy to remodel trimmed models is local perturbation. In contrast to repatching, the control points of the original surfaces are modified in order to obtain an unambiguous configurations along the intersection curves. Hu and Sun [137] proposed to close gaps between trimmed B-spline surface by an algorithm that moves one of the patches towards the trimming curve defined by the other one. This approach modifies the control point of the patch near the trimming curve using singular value decomposition. It can be used to improve the accuracy of small gaps, but yields bad-shaped surfaces if the gaps are too large. Moreover, this approach does not produce an exact topological consistency. Song et al. [285] defines the differences of corresponding trimming curves by means of a so-called error curve in model space. It is specified so that its coefficients depend linearly upon the control points of the intersecting surfaces. The perturbation is carried out by setting all coefficients of this curve to zero. This is found by solving a linear system of equations and results in an adaptation of the control points. A complement to this work was presented by Farouki et al. [87]. They propose
 
 7 Clough-Tocher is a splitting scheme to construct \(C^{1}\)-continuous splines over triangulations.
 
-![Figure 23 Chaikin’s corner-cutting algorithm](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-23-p021.png)
+![Figure 23 Chaikin’s corner-cutting algorithm](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-23-p021.png)
 
 *Figure 23 Chaikin’s corner-cutting algorithm: construction of a quadratic B-spline curve by a subdivision of the control polygon*
 
@@ -594,7 +594,7 @@ to remodel trimmed surface by a hybrid collection of tensor product patches and 
 
 The basic concept of subdivision approaches goes back to the 1970s. Chaikin developed an elegant algorithm to draw a curve by cutting the corners of a linear polygon [54]. The basic steps of the procedure are shown in Fig. 23. Later, it was shown that this cutting algorithm converges to a quadratic B-spline curve and the initial polygon is equivalent to its control polygon [246]. This idea of sequential subdivision of a control polygon was generalized by Doo and Sabin [75] as well as Catmull and Clark [53] to compute bi-quadratic and bi-cubic B-spline surfaces, respectively. Since then, a vast number of different subdivision schemes emerged for various surface types, such as triangular splines [190] and NURBS patches [51], for instance. The final objects of subdivision schemes are referred to as limit curves or surfaces. The distinguishing feature of these approaches is that they can be applied to arbitrary control polygons which are not restricted to a regular grid structure. The smoothness between the resulting surfaces is controlled by the subdivision scheme.
 
-![Figure 24 An example of a parameter space with T-junctions which are highlighted by circles](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-24-p021.png)
+![Figure 24 An example of a parameter space with T-junctions which are highlighted by circles](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-24-p021.png)
 
 *Figure 24 An example of a parameter space with T-junctions which are highlighted by circles: An example of a parameter space with T-junctions which are highlighted by circles*
 
@@ -606,11 +606,11 @@ Subdivision models possess a greater flexibility due to their inherent topologic
 
 T-splines were introduced by Sederberg et al. [270] in 2003. They are generalizations of B-splines that allow T-junctions in the parameter space and the control net of
 
-![Figure 25 Various types of bounding boxes for the same curve. The orientation of the enclosing region is indicated by arrows](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-25-p022.png)
+![Figure 25 Various types of bounding boxes for the same curve. The orientation of the enclosing region is indicated by arrows](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-25-p022.png)
 
 *Figure 25 Various types of bounding boxes for the same curve. The orientation of the enclosing region is indicated by arrows: Various types of bounding boxes for the same curve. The orientation of the enclosing region is indicated by arrows*
 
-a surface as illustrated in Fig. 24. In a subsequent paper [268], the related ability of local refinement is used to close gaps between trimmed surfaces by converting them to a single watertight T-spline model. The resulting T-spline representation can be converted to a collection of NURBS surfaces again, without introducing an approximation error. On the other hand, conversion to the T-spline representation includes some perturbation in the vicinity of the intersection. It is argued that the approximation error can be made arbitrarily small, and the perturbation can be con fined to an arbitrarily narrow neighborhood of the trimming curve. The conversion is performed such that \(C^{2}\)-continuity is obtained between the intersecting surfaces. These papers are focused on cubic splines since they are the most impor tant ones in CAGD. However, the T-spline concept is not restricted to the cubic case.
+a surface as illustrated in Fig. 24. In a subsequent paper [268], the related ability of local refinement is used to close gaps between trimmed surfaces by converting them to a single watertight T-spline model. The resulting T-spline representation can be converted to a collection of NURBS surfaces again, without introducing an approximation error. On the other hand, conversion to the T-spline representation includes some perturbation in the vicinity of the intersection. It is argued that the approximation error can be made arbitrarily small, and the perturbation can be confined to an arbitrarily narrow neighborhood of the trimming curve. The conversion is performed such that \(C^{2}\)-continuity is obtained between the intersecting surfaces. These papers are focused on cubic splines since they are the most important ones in CAGD. However, the T-spline concept is not restricted to the cubic case.
 
 ### 3.5 Auxiliary Techniques
 
@@ -619,46 +619,46 @@ Techniques and strategies frequently used in the context of trimming are outline
 #### 3.5.1 Bounding Boxes
 
 $$
-\begin{equation*} d_{\min }=\min \left\{0, \frac{d_{1}}{2}\right\} \quad \text { and } \quad d_{\max }=\max \left\{0, \frac{d_{1}}{2}\right\}, \tag{47} \end{equation*}
+d_{\min }=\min \left\{0, \frac{d_{1}}{2}\right\} \quad \text { and } \quad d_{\max }=\max \left\{0, \frac{d_{1}}{2}\right\},
 $$
 
 Bounding boxes are often applied to significantly accelerate geometrical computations. The basic idea is to use rough approximations of objects in order to get a fast indicator if two regions are well separated or not. Hence, involved operations have to be carried out only if necessary. These approximations may be refined adaptively as in divide-and-conquer based surface intersection approaches introduced in Sect. 3.1.3.
 
 The simplest and perhaps most common approach is to embed objects into min-max boxes where the corner points of the object define an axis-parallel box. The axis aligned setting is not mandatory but allows the most efficient evaluation of the distance between two boxes [116]. Some authors suggest to use oriented bounding boxes to
 
-![Figure 26 Construction of axis-parallel bounding boxes by a the end- points and b the control points of a spline](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-26-p022.png)
+![Figure 26 Construction of axis-parallel bounding boxes by a the end- points and b the control points of a spline](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-26-p022.png)
 
 *Figure 26 Construction of axis-parallel bounding boxes by a the end- points and b the control points of a spline: Construction of axis-parallel bounding boxes by a the endpoints and b the control points of a spline*
 
 improve the geometry approximation, e.g., [15, 20, 133]. In this case, the bounding box is rotated such that it is aligned with the connection of the corner points of the surface it encloses. An object can also be bounded by a combination of slaps, also known as fat lines, with different orientations [154]. Slaps denote regions between two parallel planes which are specified by their normal vector. This concept includes conventional bounding boxes, simply by using two orthogonal slaps. Figure 25 summarizes these various bounding box types.
 
-Bounding boxes constructed by corner points do not guarantee the enclosing of the whole spline, especially if a spline is highly curved. The convex hull property of the control points can be used in order to get a proper approximation. Consequently, the area of the bounding box increases since it is computed based on the control polygon rather than the actual geometry, as illustrated in Fig. 26. Sederberg and Nishita [269] proposed an optimized bound for planar quadratic and cubic Bézier curves. They sug gested defining the bounding region by lines parallel to the connection \(\ell\) of the first and last control point. They are determined by the minimal and maximal distance \(d_{i}\) of the other control points \(\boldsymbol{c}_{i}\) perpendicular to \(\ell\). The tighter bound is determined in the quadratic case by while for the cubic splines it is with the scaling factor 𝛼 given by (49) d max = 𝛼 ⋅ max { 0, d 1, d 2,
+Bounding boxes constructed by corner points do not guarantee the enclosing of the whole spline, especially if a spline is highly curved. The convex hull property of the control points can be used in order to get a proper approximation. Consequently, the area of the bounding box increases since it is computed based on the control polygon rather than the actual geometry, as illustrated in Fig. 26. Sederberg and Nishita [269] proposed an optimized bound for planar quadratic and cubic Bézier curves. They suggested defining the bounding region by lines parallel to the connection \(\ell\) of the first and last control point. They are determined by the minimal and maximal distance \(d_{i}\) of the other control points \(\boldsymbol{c}_{i}\) perpendicular to \(\ell\). The tighter bound is determined in the quadratic case by while for the cubic splines it is with the scaling factor 𝛼 given by (49) d max = 𝛼 ⋅ max { 0, d 1, d 2,
 
 $$
-\begin{equation*} d_{\min }=\alpha \cdot \min \left\{0, d_{1}, d_{2}\right\}, \tag{48} \end{equation*}
-$$
-
-$$
-\begin{equation*} d_{\max }=\alpha \cdot \max \left\{0, d_{1}, d_{2}\right\}, \tag{49} \end{equation*}
+d_{\min }=\alpha \cdot \min \left\{0, d_{1}, d_{2}\right\},
 $$
 
 $$
-\alpha=\left\{\begin{array}{l} \frac{3}{4} \text { if } d_{1} d_{2}>0, \tag{50}\\ \frac{4}{9} \text { otherwise } . \end{array}\right.
+d_{\max }=\alpha \cdot \max \left\{0, d_{1}, d_{2}\right\},
 $$
 
-![Figure 27 Tighter bounds for bounding boxes for quadratic and cubic B-spline curves. The original bounding boxes are shown by dotted lines whereas dashed lines mark the improved ones](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-27-p023.png)
+$$
+\alpha=\left\{\begin{array}{l} \frac{3}{4} \text { if } d_{1} d_{2}>0, \\ \frac{4}{9} \text { otherwise } . \end{array}\right.
+$$
+
+![Figure 27 Tighter bounds for bounding boxes for quadratic and cubic B-spline curves. The original bounding boxes are shown by dotted lines whereas dashed lines mark the improved ones](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-27-p023.png)
 
 *Figure 27 Tighter bounds for bounding boxes for quadratic and cubic B-spline curves. The original bounding boxes are shown by dotted lines whereas dashed lines mark the improved ones: Tighter bounds for bounding boxes for quadratic and cubic B-spline curves. The original bounding boxes are shown by dotted lines whereas dashed lines mark the improved ones*
 
-![Figure 28 Definition of axis-parallel bounding boxes based on mono- tonic regions. The white points mark the characteristic points consid- ered](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-28-p023.png)
+![Figure 28 Definition of axis-parallel bounding boxes based on mono- tonic regions. The white points mark the characteristic points consid- ered](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-28-p023.png)
 
 *Figure 28 Definition of axis-parallel bounding boxes based on mono- tonic regions. The white points mark the characteristic points consid- ered: definition of axis-parallel bounding boxes based on monotonic regions. The white points mark the characteristic points considered*
 
 are oriented according to the locations of the first and last control point.
 
-Another way to assure that a curve lies within its bounding box is to subdivide it into monotonic regions. The essential idea is that if a domain of any continuously differentiable function \(f\) is subdivided at its characteris tic values, the range of \(f\) on each of the subintervals can be simply found by evaluating \(f\) at the endpoints of that subinterval [165, 208]. The set of characteristic points may include zeros of the first or second derivatives of \(f\), start and end points of open curves, and singular points such as cusps or self-intersections. Figure 28 shows an example of a B-spline curve that has been divided into monotonic regions and the corresponding bounding boxes. In order to detect these points, a preprocessing step is required. Despite this additional effort, monotonic regions have
+Another way to assure that a curve lies within its bounding box is to subdivide it into monotonic regions. The essential idea is that if a domain of any continuously differentiable function \(f\) is subdivided at its characteristic values, the range of \(f\) on each of the subintervals can be simply found by evaluating \(f\) at the endpoints of that subinterval [165, 208]. The set of characteristic points may include zeros of the first or second derivatives of \(f\), start and end points of open curves, and singular points such as cusps or self-intersections. Figure 28 shows an example of a B-spline curve that has been divided into monotonic regions and the corresponding bounding boxes. In order to detect these points, a preprocessing step is required. Despite this additional effort, monotonic regions have
 
-![Figure 29 Classification of interior and exterior points by counting intersections of the trimming curve with a ray](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-29-p023.png)
+![Figure 29 Classification of interior and exterior points by counting intersections of the trimming curve with a ray](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-29-p023.png)
 
 *Figure 29 Classification of interior and exterior points by counting intersections of the trimming curve with a ray: Classification of interior and exterior points by counting intersections of the trimming curve with a ray*
 
@@ -666,11 +666,11 @@ been used in several application like intersecting planer curves [156, 157] and 
 
 #### 3.5.2 Point Classification
 
-One of the most fundamental operations in the context of trimmed surfaces is the determination if a point \(\boldsymbol{x}\) of a patch is inside or outside the visible domain. This can be done by counting the number of intersections of a ray emanat ing from \(\boldsymbol{x}\) with the trimming curves and the boundary of the patch. If the number is odd \(\boldsymbol{x}\) is inside and otherwise it is outside of the visible area. The direction of the ray can be chosen arbitrary. This rule is based on the Jordan curve theorem, that is, every simple closed planar curve sepa rates the plane into a bounded interior and an unbounded exterior region [109]. Hence, the intersection is determined in the parameter space of the patch, in contrast to the ray tracing approach for rendering outlined in Sect. 3.3.2. Fur thermore, if a trimming curve is not closed, it is associated to the visible part of the patch boundary to obtain a closed loop as illustrated in Fig. 29. Another possibility is to con nect open trimming curves with the non-visible boundary of the patch and intersect only with the trimming curves. It should be noted that in the latter case, the even-odd rule turns upside down, i.e., \(\boldsymbol{x}\) is inside the visible domain if the number of intersections is even.
+One of the most fundamental operations in the context of trimmed surfaces is the determination if a point \(\boldsymbol{x}\) of a patch is inside or outside the visible domain. This can be done by counting the number of intersections of a ray emanating from \(\boldsymbol{x}\) with the trimming curves and the boundary of the patch. If the number is odd \(\boldsymbol{x}\) is inside and otherwise it is outside of the visible area. The direction of the ray can be chosen arbitrary. This rule is based on the Jordan curve theorem, that is, every simple closed planar curve separates the plane into a bounded interior and an unbounded exterior region [109]. Hence, the intersection is determined in the parameter space of the patch, in contrast to the ray tracing approach for rendering outlined in Sect. 3.3.2. Furthermore, if a trimming curve is not closed, it is associated to the visible part of the patch boundary to obtain a closed loop as illustrated in Fig. 29. Another possibility is to connect open trimming curves with the non-visible boundary of the patch and intersect only with the trimming curves. It should be noted that in the latter case, the even-odd rule turns upside down, i.e., \(\boldsymbol{x}\) is inside the visible domain if the number of intersections is even.
 
 Despite its conceptional simplicity, the implementation of the corresponding algorithm is not trivial [77]. For example, ambiguous cases may occur like tangency between the ray and the curve. Nishita et al. [214] proposed the following procedure: the ray is chosen such that it intersects perpendicularly with the closest boundary of the patch. As a consequence, the parameter space is divided into four quadrants which meet at the origin of the ray as
 
-![Figure 30 Specification of quadrants for the point classification proce- dure of Nishita et al. [ 214 ]](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-30-p024.png)
+![Figure 30 Specification of quadrants for the point classification proce- dure of Nishita et al. [ 214 ]](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-30-p024.png)
 
 *Figure 30 Specification of quadrants for the point classification proce- dure of Nishita et al. [ 214 ]: Specification of quadrants for the point classification procedure of Nishita et al. [214]*
 
@@ -682,23 +682,15 @@ Tangency between the ray and the trimming curve do not pose any problem for thes
 
 In particular, the ray is defined implicitly by
 
-$$
-\begin{equation*} a x+b y+c=0 \quad \text { with } \quad a^{2}+b^{2}=1 . \tag{51} \end{equation*}
-$$
-
 The coordinates are denoted by \(x\) and \(y\) in order to emphasize that this approach is applicable for any plane
 
-![Figure 31 Bézier clipping](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-31-p024.png)
+![Figure 31 Bézier clipping](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-31-p024.png)
 
 *Figure 31 Bézier clipping: a intersection of a ray 퓁 with a Bézier curve C (u) and b the corresponding non-parametric Bézier curve which is used to determine the parameter range [u max, u min] that contains the intersection of C (u) and 퓁*
 
 coordinate system. The distance \(d(u)\) of a point on the Bézier curve \(\boldsymbol{C}(u)\) to the ray \(\ell\) is given by
 
-$$
-\begin{equation*} d(u)=\sum_{i=0}^{p} d_{i} B_{i, p} \quad \text { with } \quad d_{i}=a x_{i}+b y_{i}+c . \tag{52} \end{equation*}
-$$
-
-The coefficients \(d_{i}\) are the distances of the control points \(\boldsymbol{c}_{i}\) of the Bézier curve to the ray and \(B_{i, p}\) are Bernstein polyno mials of degree \(p\). Equation (52) can be represented as a non-parametric Bézier curve \(\tilde{\boldsymbol{C}}(u, d(u))\) where the values \(d_{i}\) are related to their corresponding Greville abscissae, The roots of \(\tilde{\boldsymbol{C}}(u, d(u))\) are equivalent to the paramet ric values \(u\) at which \(\ell\) intersects \(\boldsymbol{C}(u)\). Hence, the convex hull of \(\tilde{\boldsymbol{C}}(u, d(u))\) can be used to identify regions where the objects do not intersect. To be precise, the minimal and maximal parametric values, i.e., \(u_{\text {min }}\) and \(u_{\text {max }}\), of the intersections of the convex hull with the \(u\)-axis splits the parameter space into three regions of which only one, i.e., \(u_{\text {min }} \leqslant u \leqslant u_{\text {max }}\), has to be considered for the intersection with the ray. This region is extracted as a Bézier curve by means of knot insertion and the procedure is repeated until a certain tolerance is reached.
+The coefficients \(d_{i}\) are the distances of the control points \(\boldsymbol{c}_{i}\) of the Bézier curve to the ray and \(B_{i, p}\) are Bernstein polynomials of degree \(p\). Equation (52) can be represented as a non-parametric Bézier curve \(\tilde{\boldsymbol{C}}(u, d(u))\) where the values \(d_{i}\) are related to their corresponding Greville abscissae, The roots of \(\tilde{\boldsymbol{C}}(u, d(u))\) are equivalent to the parametric values \(u\) at which \(\ell\) intersects \(\boldsymbol{C}(u)\). Hence, the convex hull of \(\tilde{\boldsymbol{C}}(u, d(u))\) can be used to identify regions where the objects do not intersect. To be precise, the minimal and maximal parametric values, i.e., \(u_{\text {min }}\) and \(u_{\text {max }}\), of the intersections of the convex hull with the \(u\)-axis splits the parameter space into three regions of which only one, i.e., \(u_{\text {min }} \leqslant u \leqslant u_{\text {max }}\), has to be considered for the intersection with the ray. This region is extracted as a Bézier curve by means of knot insertion and the procedure is repeated until a certain tolerance is reached.
 
 This technique can also be utilized to determine the intersection of two Bézier curves by iteratively clipping both objects [269]. Sherbrooke and Patrikalakis [280] developed a generalization of Bézier clipping that allows computing the roots of an n-dimensional system. The socalled Projected-Polyhedron method subdivides an object into Bézier segments and generates each side of its bounding boxes by projecting the control points onto different planes. Thus, only the convex hull of two-dimensional point sets has to be computed.
 
@@ -728,7 +720,7 @@ In case of a single system standardization the same native format is used for al
 
 The basic idea of point-to-point translation is to convert a native format of a system directly to a native format of another one. This concept works reasonably well for unambiguous data exchange tasks. Unfortunately, it is not always clear how a given information should be translated so that it is properly interpreted in another native format. In addition, a high degree of vendor cooperation is necessary in order to develop a direct translator. Similar to the previous strategy, direct translators have to be rewritten for each new system or perhaps even for new versions of the same software.
 
-Neutral format translation is based on a common neutral format for the exchange of (geometric) data. This approach enables an independent development of various tools work ing on the same model. The minimization of dependencies simplifies the maintenance of each software and eventu ally leads to robust implementations since a clean code is designed to do one thing well, as noted by Stroustrup \({ }^{9}\) [196]. Further, vendors are more willing to develop transla tors for neutral formats since it does not require the disclo sure of proprietary code. This is beneficial since interpreta tion errors of the native format are most likely minimized when the conversion is provided by vendors themselves. An additional advantage of neutral formats is that they are ideally suited for long term storage of data. However, there
+Neutral format translation is based on a common neutral format for the exchange of (geometric) data. This approach enables an independent development of various tools working on the same model. The minimization of dependencies simplifies the maintenance of each software and eventually leads to robust implementations since a clean code is designed to do one thing well, as noted by Stroustrup \({ }^{9}\) [196]. Further, vendors are more willing to develop translators for neutral formats since it does not require the disclosure of proprietary code. This is beneficial since interpretation errors of the native format are most likely minimized when the conversion is provided by vendors themselves. An additional advantage of neutral formats is that they are ideally suited for long term storage of data. However, there
 
 9 Bjarne Stroustrup is the inventor of the programming language C++.
 
@@ -772,7 +764,7 @@ STEP is the informal term for the standard officially denoted as ISO 10303. It i
 
 The most fundamental components of STEP are the integrated resources. They contain generic information such
 
-![Figure 33 Design model with the same geometry but different topol- ogy](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-33-p028.png)
+![Figure 33 Design model with the same geometry but different topol- ogy](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-33-p028.png)
 
 *Figure 33 Design model with the same geometry but different topol- ogy: a two independent trimmed surfaces and b connected surfaces by a Boolean operation. In a, the isocurves of the separated surfaces are displayed in black and red, respectively. (Color figure online) Table 2 Entity types of the IGES example*
 
@@ -784,7 +776,7 @@ One of the advantages of STEP is that it is more than just a specification for e
 
 #### 4.2.3 Comparative Example
 
-In order to demonstrate the representation of trimmed geometries in IGES and STEP, an example of two inter secting planes is considered. A square \([0,5]^{2}\) within the \(x_{y}\) plane is perpendicularly intersected along its diagonal by another plane surface as illustrated in Fig. 33. Thereby, the perpendicular patch is also trimmed into two halves by the square.
+In order to demonstrate the representation of trimmed geometries in IGES and STEP, an example of two intersecting planes is considered. A square \([0,5]^{2}\) within the \(x_{y}\) - plane is perpendicularly intersected along its diagonal by another plane surface as illustrated in Fig. 33. Thereby, the perpendicular patch is also trimmed into two halves by the square.
 
 The model investigated has been constructed using the software Rhinoceros and the intersection has been computed in two different ways: using (i) the trim-command and (ii) the Boolean-command, respectively. Both schemes lead to the same geometry, yet the topology varies as indicated by the different highlighting of Fig. 33a and b. To be precise, the trim-command produces a surface model that consists of two independent trimmed surfaces, while the Boolean-command results in a solid model where the patches are connected. Both models have been exported to neutral exchange formats. The corresponding IGES and STEP files are provided in the Appendix. In the following, certain aspects of the exported files are discussed.
 
@@ -794,11 +786,11 @@ The model investigated has been constructed using the software Rhinoceros and th
 
 13 http: www.steptools.com library standard, September 2016 14 http: www.steptools.com sc4 archive, September 2016.
 
-![Figure 34 Entity connection of the exchange formats. Pointers are indicated by arrows . The examples have been extracted from Files 1 and 3 of the Appendix, respectively](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-34-p029.png)
+![Figure 34 Entity connection of the exchange formats. Pointers are indicated by arrows . The examples have been extracted from Files 1 and 3 of the Appendix, respectively](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-34-p029.png)
 
 *Figure 34 Entity connection of the exchange formats. Pointers are indicated by arrows . The examples have been extracted from Files 1 and 3 of the Appendix, respectively: Entity connection of the exchange formats. Pointers are indicated by arrows. The examples have been extracted from Files 1 and 3 of the Appendix, respectively*
 
-![Figure 35 Descriptions of the surface model’s regular square patch. The B-spline surface data has been extracted from Files 1 and 3 of the Appen- dix, respectively](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-35-p029.png)
+![Figure 35 Descriptions of the surface model’s regular square patch. The B-spline surface data has been extracted from Files 1 and 3 of the Appen- dix, respectively](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-35-p029.png)
 
 *Figure 35 Descriptions of the surface model’s regular square patch. The B-spline surface data has been extracted from Files 1 and 3 of the Appen- dix, respectively: Descriptions of the surface model’s regular square patch. The B-spline surface data has been extracted from Files 1 and 3 of the Appendix, respectively*
 
@@ -816,7 +808,7 @@ STEP files are easy to read since the language used is based on an English-like 
 
 4.2.3.2 Surfaces representation Both exchange formats provide the fundamental informations of B-spline patches, i.e., degree, knot vectors, and control points, together with auxiliary information. In case of IGES, a sequence of numbers separated by commas is used, while STEP additionally groups associated components using brackets. In Fig. 35, the representations of the regular square patch are compared. Note that knot vectors are specified by knot values with their multiplicity and that coordinates of control points are stored
 
-![Figure 36 Graph related to a trimmed surface in STEP. Entities that provide geometrical information are highlighted in gray . Intermediate nodes may be skipped which is indicated by dashed lines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-36-p030.png)
+![Figure 36 Graph related to a trimmed surface in STEP. Entities that provide geometrical information are highlighted in gray . Intermediate nodes may be skipped which is indicated by dashed lines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-36-p030.png)
 
 *Figure 36 Graph related to a trimmed surface in STEP. Entities that provide geometrical information are highlighted in gray . Intermediate nodes may be skipped which is indicated by dashed lines: Graph related to a trimmed surface in STEP. Entities that provide geometrical information are highlighted in gray. Intermediate nodes may be skipped which is indicated by dashed lines*
 
@@ -828,11 +820,11 @@ In case of STEP, the trimmed surface data is not coalesced in a single object, b
 
 4.2.3.3 Topology So far, the specification of certain parts of a model has been addressed. Here, the differences between the exchange formats regarding an object's topological information is examined by comparing the output for the surface model and solid model shown in Fig. 33. The former is defined by two independent surfaces, while the latter is a single coherent manifold.
 
-In the following the square patch in the \(x_{y}\)-plane is denoted by \(\boldsymbol{S}\) □ and the perpendicular patch is referred to as \(\boldsymbol{S}^{\perp}\). The corresponding edges of the model are labeled \(\boldsymbol{e}_{i}^{\square}\) with \(i=\{1, \ldots, 3\}\) and \(\boldsymbol{e}_{j}^{\perp}\) with \(j=\{1, \ldots, 4\}\), respectively.
+In the following the square patch in the \(x_{y}\)-plane is denoted by \(\boldsymbol{S}^{\square}\) and the perpendicular patch is referred to as \(\boldsymbol{S}^{\perp}\). The corresponding edges of the model are labeled \(\boldsymbol{e}_{i}^{\square}\) with \(i=\{1, \ldots, 3\}\) and \(\boldsymbol{e}_{j}^{\perp}\) with \(j=\{1, \ldots, 4\}\), respectively.
 
 The topology due to the STEP and IGES formats is compared in Fig. 37. To be precise, the provided edge loop data is shown. Further details are neglected for the sake of brevity, but the entire files can be found in the Appendix.
 
-Comparing Fig. 37a and b shows that IGES yields the same output for both models. In other words, the different topologies of them are not recognized. Note that the only values that differ are the sequence numbers of the entities which are completely independent from the actual object. In fact, the topological connection of \(\boldsymbol{S}^{\square}\) and \(\boldsymbol{S}^{\perp}\) is lost in case of the solid model, despite the simplicity of the exam ple. That the solid model has been properly constructed is proven by the STEP output shown in Fig. 37d where the edges \(\boldsymbol{e}_{1}^{\perp}\) and \(\boldsymbol{e}_{3}^{\square}\) are joined in a single reference, i.e., \#48.
+Comparing Fig. 37a and b shows that IGES yields the same output for both models. In other words, the different topologies of them are not recognized. Note that the only values that differ are the sequence numbers of the entities which are completely independent from the actual object. In fact, the topological connection of \(\boldsymbol{S}^{\square}\) and \(\boldsymbol{S}^{\perp}\) is lost in case of the solid model, despite the simplicity of the example. That the solid model has been properly constructed is proven by the STEP output shown in Fig. 37d where the edges \(\boldsymbol{e}_{1}^{\perp}\) and \(\boldsymbol{e}_{3}^{\square}\) are joined in a single reference, i.e., \#48.
 
 The STEP data related to the surface model is illustrated in Fig. 37c.
 
@@ -858,7 +850,7 @@ Theoretically, the broad scope and modular structure of STEP provides coverage o
 
 Isogeometric analysis of trimmed NURBS is an important research area, simply due to the omnipresence of such geometry representations. Integration of design and analysis can only be achieved if the simulation is able to cope with CAGD models that are actually used in the design process. Moreover, sound treatment of trimmed solid models is also an essential step for the derivation of volumetric representations.
 
-Current attempts to integrate trimmed geometries into isogeometric analysis may be classified as global and local approaches. The latter uses the parameter space of the trimmed patch as background parameterization and the trimming curves determine the domain of interest, i.e., \(\mathcal{A}^{\mathrm{v}}\), for the analysis. Knot spans that are cut by trimming curves require special attention during the simulation. In that sense, local approaches are closely related to fictitious domain methods, \({ }^{16}\) see e.g., [124, 239, 252, 259]. Conse quently, similar tasks have to be undertaken: (i) detection of trimmed elements, (ii) application of special integra tion schemes in these elements, and (iii) stabilization of the trimmed basis. CAGD models are not modified but the analysis has to deal with all the related robustness issues pointed out in Sect. 3.2.2. Global reconstruction, on the other hand, substitutes a trimmed surface by one or sev eral regular patches which can be analyzed with regular integration rules. In other words, it is endeavored to fix the design model, before it is used in the downstream applica tion, e.g., the simulation. These approaches are similar to remodeling schemes in CAGD presented in Sect. 3.4.1. Isogeometric analysis of subdivision surfaces, e.g., [59, 248, 309], and T-splines, e.g., [22, 262, 263, 321], may be included into the class of global reconstruction techniques. However, the discussion of the analysis of these representations is beyond the scope of this review.
+Current attempts to integrate trimmed geometries into isogeometric analysis may be classified as global and local approaches. The latter uses the parameter space of the trimmed patch as background parameterization and the trimming curves determine the domain of interest, i.e., \(\mathcal{A}^{\mathrm{v}}\), for the analysis. Knot spans that are cut by trimming curves require special attention during the simulation. In that sense, local approaches are closely related to fictitious domain methods, \({ }^{16}\) see e.g., [124, 239, 252, 259]. Consequently, similar tasks have to be undertaken: (i) detection of trimmed elements, (ii) application of special integration schemes in these elements, and (iii) stabilization of the trimmed basis. CAGD models are not modified but the analysis has to deal with all the related robustness issues pointed out in Sect. 3.2.2. Global reconstruction, on the other hand, substitutes a trimmed surface by one or several regular patches which can be analyzed with regular integration rules. In other words, it is endeavored to fix the design model, before it is used in the downstream application, e.g., the simulation. These approaches are similar to remodeling schemes in CAGD presented in Sect. 3.4.1. Isogeometric analysis of subdivision surfaces, e.g., [59, 248, 309], and T-splines, e.g., [22, 262, 263, 321], may be included into the class of global reconstruction techniques. However, the discussion of the analysis of these representations is beyond the scope of this review.
 
 Coupling of multiple patches is another issue that has to be addressed. Adjacent patches usually have nonmatching parameterizations and a robust treatment of tolerances is required to link the degrees of freedom along an intersection due to the gaps between trimmed surfaces and the missing link between their trimming curves. Local
 
@@ -874,7 +866,7 @@ The overview begins with a short historical note, which, to the best of the auth
 
 It is fascinating that the analysis of trimmed patches goes back to the genesis of trimmed patch formulations. In fact, Casale et al. [48, 50] presented an analysis of such geometries a few years after they had suggested one of the first trimmed solid model formulations [47, 49]. In particular, trimmed patch boundary elements had been proposed.
 
-The basic idea of their approach is to employ the trimmed patch for the geometrical representation and to define an independent Lagrange interpolation over the tensor product surface for the description of the physical variables. This additional basis does not take the trimming curves into account. Thus, the nodes of the Lagrange inter polation may lie inside or outside the trimmed domain. This is emphasized by using the term virtual nodes. The analysis is performed by means of a collocated boundary ele ment formulation, see e.g., [96], where all Lagrange nodes contribute to the system matrix. If a node is outside of the trimmed domain, the jump term coefficient \({ }^{17}\) of the bound ary integral equation is set to 1 since the node is not part of the object's boundary. Numerical integration is performed
+The basic idea of their approach is to employ the trimmed patch for the geometrical representation and to define an independent Lagrange interpolation over the tensor product surface for the description of the physical variables. This additional basis does not take the trimming curves into account. Thus, the nodes of the Lagrange interpolation may lie inside or outside the trimmed domain. This is emphasized by using the term virtual nodes. The analysis is performed by means of a collocated boundary element formulation, see e.g., [96], where all Lagrange nodes contribute to the system matrix. If a node is outside of the trimmed domain, the jump term coefficient \({ }^{17}\) of the boundary integral equation is set to 1 since the node is not part of the object's boundary. Numerical integration is performed
 
 17 Usually, the jump term coefficient depends on the geometric angle of the boundary at the point considered, see e.g., [96].
 
@@ -892,102 +884,72 @@ Trimming curves \(\boldsymbol{C}^{t}\) may be used to define a mapping \(\mathca
 
 The following assumptions are made for the sake of notational simplicity. Firstly, the regular basis functions are defined over a unit square, i.e., \(s, t \in[0,1]\). In addition, it is assumed that both trimming curves are specified within the same parameter range \(\tilde{u} \in[a, b]\). Based on that, the intrinsic coordinate \(\tilde{u}\) can be linked to the boundaries of the
 
-These equations traverse the interval of \(\tilde{u}\) in opposite direc tions, e.g., \(f(0)=g(1)=a\), since one of the trimming curves has to be evaluated in reverse order. Finally, \(\mathcal{X}_{t}\) is determined by
+$$
+\tilde{u}=f(s)=a+s(b-a),
+$$
 
-![Figure 38 Double mapping scheme to fit a regular tensor product sur- face to a trimmed patch. The first mapping  t specifies the transfor- mation to the valid area  v of the trimmed parameter space, while the geometric mapping is denoted by  . The trimming curves C t i ( ̃ u ) , i = { 1, 2 } , are illustrated by thick lines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-38-p033.png)
+$$
+\tilde{u}=g(s)=b+s(a-b) .
+$$
+
+These equations traverse the interval of \(\tilde{u}\) in opposite directions, e.g., \(f(0)=g(1)=a\), since one of the trimming curves has to be evaluated in reverse order. Finally, \(\mathcal{X}_{t}\) is determined by
+
+![Figure 38 Double mapping scheme to fit a regular tensor product sur- face to a trimmed patch. The first mapping  t specifies the transfor- mation to the valid area  v of the trimmed parameter space, while the geometric mapping is denoted by  . The trimming curves C t i ( ̃ u ) , i = { 1, 2 } , are illustrated by thick lines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-38-p033.png)
 
 *Figure 38 Double mapping scheme to fit a regular tensor product sur- face to a trimmed patch. The first mapping  t specifies the transfor- mation to the valid area  v of the trimmed parameter space, while the geometric mapping is denoted by  . The trimming curves C t i ( ̃ u ) , i = { 1, 2 } , are illustrated by thick lines: Double mapping scheme to fit a regular tensor product surface to a trimmed patch. The first mapping  t specifies the transformation to the valid area  v of the trimmed parameter space, while the geometric mapping is denoted by  . The trimming curves C t i ( ̃ u), i = { 1, 2, are illustrated by thick lines*
 
 From a CAGD point of view, the mapping (55) is equivalent to the one of a ruled surface (26). The main difference is that the ruled surface is defined in the parameter space in this case. The geometric mapping  , however, is still performed by the trimmed patch. Figure 38 summarizes the concept of the double mapping approach.
 
-The main advantage of this approach is its simplicity and ease of implementation. However, there are various restric tions: First of all, the assumption that \(\mathcal{A}^{\mathrm{v}}\) is governed by two opposing trimming curves limits the application to very specific trimming situations. Furthermore, the four-sided nature of \(\mathcal{A}^{\mathrm{v}}\) is implied. Consequently, trimmed patches with more complex topology have to be decomposed by an additional preprocessing step. There is no control over the quality of the parameterization due to the mapping \(\mathcal{X}_{t}\). Ele ments may become very distorted depending on the posi tion of the trimming curves \(\boldsymbol{C}_{i}^{t}\). Such a situation occurs for a triangular-shaped \(\mathcal{A}^{\mathrm{v}}\), see Fig. 9. Since the parameteri zation is completely independent of the basis functions of the trimmed parameter space, the double mapping method works well for Bézier patches. An integration issue arises as soon as B-spline patches are considered. The problem is depicted in Fig. 39. Note that the parameter lines of the geom etry representation propagate through the elements defined by the mapped regular parameterization. Thus, integration
+The main advantage of this approach is its simplicity and ease of implementation. However, there are various restrictions: First of all, the assumption that \(\mathcal{A}^{\mathrm{v}}\) is governed by two opposing trimming curves limits the application to very specific trimming situations. Furthermore, the four-sided nature of \(\mathcal{A}^{\mathrm{v}}\) is implied. Consequently, trimmed patches with more complex topology have to be decomposed by an additional preprocessing step. There is no control over the quality of the parameterization due to the mapping \(\mathcal{X}_{t}\). Elements may become very distorted depending on the position of the trimming curves \(\boldsymbol{C}_{i}^{t}\). Such a situation occurs for a triangular-shaped \(\mathcal{A}^{\mathrm{v}}\), see Fig. 9. Since the parameterization is completely independent of the basis functions of the trimmed parameter space, the double mapping method works well for Bézier patches. An integration issue arises as soon as B-spline patches are considered. The problem is depicted in Fig. 39. Note that the parameter lines of the geometry representation propagate through the elements defined by the mapped regular parameterization. Thus, integration
 
-![Figure 39 Double mapping method for a B-spline patch. The dotted lines indicate parameter curves that are not C ∞ -continuity within  v](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-39-p033.png)
+![Figure 39 Double mapping method for a B-spline patch. The dotted lines indicate parameter curves that are not C ∞ -continuity within  v](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-39-p033.png)
 
 *Figure 39 Double mapping method for a B-spline patch. The dotted lines indicate parameter curves that are not C ∞ -continuity within  v: Double mapping method for a B-spline patch. The dotted lines indicate parameter curves that are not C ∞ -continuity within  v*
 
-of the regular elements is not performed over a \(C^{\infty}\)-continu ous region. In order to get a proper distribution of quad rature points, the elements must be subdivided along the non-smooth edges. The specification of such regions is not straightforward. To conclude, the double mapping method is a simple solution for (Bézier) patches which had been trimmed during the design process, at least for ones that can be represented by a regular patch.
+of the regular elements is not performed over a \(C^{\infty}\)-continuous region. In order to get a proper distribution of quadrature points, the elements must be subdivided along the non-smooth edges. The specification of such regions is not straightforward. To conclude, the double mapping method is a simple solution for (Bézier) patches which had been trimmed during the design process, at least for ones that can be represented by a regular patch.
 
 #### 5.2.2 Reconstruction by Coons Patches
 
-$$
-\begin{equation*} \boldsymbol{S}^{\mathcal{A}^{v}}(s, t)=(1-t) \boldsymbol{C}_{1}^{t}(f(s))+t \boldsymbol{C}_{2}^{t}(g(s)) . \tag{55} \end{equation*}
-$$
+A natural extension of the previous method is to define the mapping \(\mathcal{X}_{t}\) to a trimmed parameter space by means of Coons patches. In contrast to the ruled surface interpolation (55), \(\mathcal{X}_{t}\) takes four boundary curves into account. Randrianarivony [237, 238] developed such an approach, which has been applied to wavelet Galerkin BEM in collaboration with Harbrecht [113]. Although they do not focus on isogeometric analysis per se, most of their techniques can be directly utilized: (i) decomposition of \(\mathcal{A}^{\mathrm{v}}\) into several four-sided patches, (ii) identification if \(\mathcal{X}_{t}\) is a diffeomorphism, \({ }^{18}\) and (iii) construction of matching parameterizations of adjacent patches.
 
-A natural extension of the previous method is to define the mapping \(\mathcal{X}_{t}\) to a trimmed parameter space by means of Coons patches. In contrast to the ruled surface interpola tion (55), \(\mathcal{X}_{t}\) takes four boundary curves into account. Ran drianarivony [237, 238] developed such an approach, which has been applied to wavelet Galerkin BEM in collabora tion with Harbrecht [113]. Although they do not focus on isogeometric analysis per se, most of their techniques can be directly utilized: (i) decomposition of \(\mathcal{A}^{\mathrm{v}}\) into several four-sided patches, (ii) identification if \(\mathcal{X}_{t}\) is a diffeomor phism, \({ }^{18}\) and (iii) construction of matching parameteriza tions of adjacent patches.
-
-The first step of the decomposition procedure is to sub stitute the trimming curves \(\boldsymbol{C}^{t}\) of each patch by a linear approximation \(\boldsymbol{C}^{l}\). The vertices \(\boldsymbol{x}\) of \(\boldsymbol{C}^{l}\) are located along \(\boldsymbol{C}^{t}\) as illustrated in Fig. 40a. \(\boldsymbol{C}^{l}\) should be as coarse as pos sible since the number of vertices determines the number of patches that decompose \(\mathcal{A}^{\mathrm{v}}\). As initial approximation, the endpoints of the trimming curves may be used. How ever, \(\boldsymbol{C}^{l}\) has to be fine enough to resolve the topology of the trimmed patch, e.g., lines of exterior loops may not inter sect ones of interior loops. In order to get a single polygon representing \(\mathcal{A}^{\mathrm{v}}\), interior loops are connected to exterior
+The first step of the decomposition procedure is to substitute the trimming curves \(\boldsymbol{C}^{t}\) of each patch by a linear approximation \(\boldsymbol{C}^{l}\). The vertices \(\boldsymbol{x}\) of \(\boldsymbol{C}^{l}\) are located along \(\boldsymbol{C}^{t}\) as illustrated in Fig. 40a. \(\boldsymbol{C}^{l}\) should be as coarse as possible since the number of vertices determines the number of patches that decompose \(\mathcal{A}^{\mathrm{v}}\). As initial approximation, the endpoints of the trimming curves may be used. However, \(\boldsymbol{C}^{l}\) has to be fine enough to resolve the topology of the trimmed patch, e.g., lines of exterior loops may not intersect ones of interior loops. In order to get a single polygon representing \(\mathcal{A}^{\mathrm{v}}\), interior loops are connected to exterior
 
 18 A diffeomorphism is a C ∞ mapping with a C ∞ inverse.
 
-![Figure 40 Decomposing of a trimmed domain  v into b regular four- sided patches  i . In a , the trimming curves are continuous whereas the linear approximation is illustrated by dashed lines . Further, vertex x 0 and x 4 are connected by a double edge](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-40-p034.png)
+![Figure 40 Decomposing of a trimmed domain  v into b regular four- sided patches  i . In a , the trimming curves are continuous whereas the linear approximation is illustrated by dashed lines . Further, vertex x 0 and x 4 are connected by a double edge](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-40-p034.png)
 
 *Figure 40 Decomposing of a trimmed domain  v into b regular four- sided patches  i . In a , the trimming curves are continuous whereas the linear approximation is illustrated by dashed lines . Further, vertex x 0 and x 4 are connected by a double edge: Decomposing of a trimmed domain  v into b regular foursided patches  i. In a, the trimming curves are continuous whereas the linear approximation is illustrated by dashed lines. Further, vertex x 0 and x 4 are connected by a double edge*
 
-$$
-\begin{equation*} \boldsymbol{C}_{j}(v)=\sum_{k=0}^{p} B_{k, p}(v) \boldsymbol{c}_{k}^{j}, \quad j=3,4, \quad v \in[0,1] . \tag{57} \end{equation*}
-$$
-
-Therefore, it is important that the total number of vertices \(\boldsymbol{x}\) is even. In the next step, the straight boundary curves of \(\boldsymbol{C}^{l}\) are replaced by the complementary portions of \(\boldsymbol{C}^{t}\). An example of a decomposition is shown in Fig. 40b. Due to this procedure, the following problems may arise. The most obvious one is that the curved bound ary may intersect an internal edge. In addition, sharp cor ners become degenerated points if the corresponding \(\boldsymbol{x}\) is smoother than \(C^{0}\). As a result, no diffeomorphism for this region can be found [237]. Finally, it is not assured that a Coons patch interpolation is regular. Such problems arise particularly in case of non-convex domains. An example of a non-regular Coons patch where the parametric lines of the surface overspill is shown in Fig. 41. A remedy to the men tioned issues is local refinement of \(\boldsymbol{C}^{l}\) or the affected \(\mathcal{R}_{i}\). The detection of the first two problems is straightforward, but determination of a Coons patch's regularity requires a more detailed discussion.
+Therefore, it is important that the total number of vertices \(\boldsymbol{x}\) is even. In the next step, the straight boundary curves of \(\boldsymbol{C}^{l}\) are replaced by the complementary portions of \(\boldsymbol{C}^{t}\). An example of a decomposition is shown in Fig. 40b. Due to this procedure, the following problems may arise. The most obvious one is that the curved boundary may intersect an internal edge. In addition, sharp corners become degenerated points if the corresponding \(\boldsymbol{x}\) is smoother than \(C^{0}\). As a result, no diffeomorphism for this region can be found [237]. Finally, it is not assured that a Coons patch interpolation is regular. Such problems arise particularly in case of non-convex domains. An example of a non-regular Coons patch where the parametric lines of the surface overspill is shown in Fig. 41. A remedy to the mentioned issues is local refinement of \(\boldsymbol{C}^{l}\) or the affected \(\mathcal{R}_{i}\). The detection of the first two problems is straightforward, but determination of a Coons patch's regularity requires a more detailed discussion.
 
 The following identification procedure assumes that the Coons patch interpolation (35) is planar and described by boundary curves given in Bézier form, i.e.,
 
-![Figure 41 Example of a planar non-regular Coons patch where iso- curves overlap](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-41-p034.png)
+![Figure 41 Example of a planar non-regular Coons patch where iso- curves overlap](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-41-p034.png)
 
 *Figure 41 Example of a planar non-regular Coons patch where iso- curves overlap: Example of a planar non-regular Coons patch where isocurves overlap (a) Approximation of the trimmed domain*
 
 The interpolation function \(f_{1}\) is also described as a Bézier polynomial
 
 $$
-\begin{equation*} f_{1}(s)=\sum_{k=0}^{p} B_{k, p}(s) \psi_{k}=1-f_{0}(s), \quad s \in[0,1] \tag{58} \end{equation*}
+For the determination of the regularity, the factors \(\mu, \tau\), and \(\alpha\) are specified by
 $$
 
-$$
-For the determination of the regularity, the factors \( \mu, \tau \), and \( \alpha \) are specified by
-$$
+The indices \(i\) and \(j\) are defined as above and the factors in Eqs. (60) and (61) are determined by with \(\hat{c}=\left(\boldsymbol{c}_{0}^{2}-\boldsymbol{c}_{p}^{2}+\boldsymbol{c}_{p}^{1}-\boldsymbol{c}_{0}^{1}\right)\). Finally, the constant \(\boldsymbol{\beta}\) is defined such that
 
 $$
-\begin{align*} \mu & :=\max \left\{\left|f_{1}^{\prime}(s)\right|: s \in[0,1]\right\}, \tag{59}\\ \tau & :=\min \left\{\tau_{k \ell}^{i j}\right\}, \quad k, \ell=0, \ldots, p \tag{60}\\ \alpha & :=\max \left\{\alpha_{1}, \alpha_{2}\right\} . \tag{61} \end{align*}
+\boldsymbol{C}_{i}(u)=\sum_{k=0}^{p} B_{k, p}(u) \boldsymbol{c}_{k}^{i}, \quad i=1,2, \quad u \in[0,1],
 $$
 
-The indices \(i\) and \(j\) are defined as above and the factors in Eqs. (60) and (61) are determined by
-
-$$
-\begin{align*} & \tau_{k \ell}^{i j}:=p^{2} \operatorname{det}\left[\boldsymbol{c}_{k+1}^{i}-\boldsymbol{c}_{k}^{i}, \boldsymbol{c}_{\ell+1}^{j}-\boldsymbol{c}_{\ell}^{j}\right] \tag{62}\\ & \alpha_{1}:=\max _{k=0, \ldots, p}\left\{\mu\left\|\left(\boldsymbol{c}_{k}^{4}-\boldsymbol{c}_{k}^{3}\right)+\psi_{k} \hat{c}+\left(\boldsymbol{c}_{0}^{1}-\boldsymbol{c}_{p}^{1}\right)\right\|\right\}, \tag{63}\\ & \alpha_{2}:=\max _{k=0, \ldots, p}\left\{\mu\left\|\left(\boldsymbol{c}_{k}^{2}-\boldsymbol{c}_{k}^{1}\right)+\psi_{k} \hat{c}+\left(\boldsymbol{c}_{0}^{1}-\boldsymbol{c}_{0}^{2}\right)\right\|\right\}, \tag{64} \end{align*}
-$$
-
-with \(\hat{c}=\left(c_{0}^{2}-c_{p}^{2}+c_{p}^{1}-c_{0}^{1}\right)\). Finally, the constant \(\beta\) is defined such that
-
-$$
-\begin{equation*} \boldsymbol{C}_{i}(u)=\sum_{k=0}^{p} B_{k, p}(u) \boldsymbol{c}_{k}^{i}, \quad i=1,2, \quad u \in[0,1], \tag{56} \end{equation*}
-$$
-
-$$
-\begin{equation*} p\left\|\psi_{k}\left(\boldsymbol{c}_{\ell+1}^{2}-\boldsymbol{c}_{\ell}^{2}+\boldsymbol{c}_{\ell}^{1}-\boldsymbol{c}_{\ell+1}^{1}\right)+\left(\boldsymbol{c}_{\ell+1}^{1}-\boldsymbol{c}_{\ell}^{1}\right)\right\| \leq \beta, \tag{65} \end{equation*}
-$$
-
-![Figure 42 Converting a pair of odd faces to even ones. Circles indicate the initial vertices of the faces and crosses mark those vertices that had been added to obtain faces with an even number of vertices](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-42-p035.png)
+![Figure 42 Converting a pair of odd faces to even ones. Circles indicate the initial vertices of the faces and crosses mark those vertices that had been added to obtain faces with an even number of vertices](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-42-p035.png)
 
 *Figure 42 Converting a pair of odd faces to even ones. Circles indicate the initial vertices of the faces and crosses mark those vertices that had been added to obtain faces with an even number of vertices: Converting a pair of odd faces to even ones. Circles indicate the initial vertices of the faces and crosses mark those vertices that had been added to obtain faces with an even number of vertices*
 
-$$
-\begin{equation*} p\left\|\psi_{k}\left(c_{\ell+1}^{4}-c_{\ell}^{4}+c_{\ell}^{3}-c_{\ell+1}^{3}\right)+\left(c_{\ell+1}^{3}-c_{\ell}^{3}\right)\right\| \leq \beta, \tag{66} \end{equation*}
-$$
-
-$$
-\begin{equation*} \mathcal{X}_{i}\left(\boldsymbol{x}_{k}^{i}\right)=\mathcal{X}_{j}\left(\boldsymbol{x}_{\ell}^{j}\right), \tag{71} \end{equation*}
-$$
-
 for all \(\ell=0, \ldots, p-1\) and \(k=0, \ldots, p\). Based on these definitions, the Coons patch mapping is regular if
 
-These are only sufficient conditions. If they are not ful filled a subdivision procedure is employed. Therefore, another sufficient condition is derived. Assuming that a Coons patch is represented as Bézier surface with control points \(\boldsymbol{c}_{i, j}^{C}\), the Jacobian can also be described as a Bézier function of degree \(2 p\) with the control points
+These are only sufficient conditions. If they are not fulfilled a subdivision procedure is employed. Therefore, another sufficient condition is derived. Assuming that a Coons patch is represented as Bézier surface with control points \(\boldsymbol{c}_{i, j}^{C}\), the Jacobian can also be described as a Bézier function of degree \(2 p\) with the control points
 
 $$
-\begin{equation*} c_{m, n}^{J}=\sum_{\substack{i+k=m \\ j+\ell=n}} C(i, j, k, \ell) \frac{\binom{p}{i}\binom{p}{k}}{\binom{2 p}{i+k}} \frac{\binom{p}{j}\binom{p}{\ell}}{\binom{2 p}{j+\ell}}, \tag{68} \end{equation*}
-$$
-
-$$
-\begin{equation*} \hat{\boldsymbol{C}}_{i}^{t}:=\overline{\boldsymbol{C}}_{i}^{t} \circ \phi_{i}, \quad \phi_{i}=\left(\lambda_{i}\right)^{-1}, \tag{72} \end{equation*}
+c_{m, n}^{J}=\sum_{\substack{i+k=m \\ j+\ell=n}} C(i, j, k, \ell) \frac{\binom{p}{i}\binom{p}{k}}{\binom{2 p}{i+k}} \frac{\binom{p}{j}\binom{p}{\ell}}{\binom{2 p}{j+\ell}},
 $$
 
 $$
@@ -996,30 +958,14 @@ $$
 
 where
 
-$$
-\begin{equation*} D(i, j, k, \ell):=p^{2} \operatorname{det}\left[\boldsymbol{c}_{i+1, j}^{C}-\boldsymbol{c}_{i, j}^{C}, \boldsymbol{c}_{k, \ell+1}^{C}-\boldsymbol{c}_{k, \ell}^{C}\right] . \tag{70} \end{equation*}
-$$
-
-If the coefficients \(\boldsymbol{c}_{m, n}^{J}\) have the same sign the Coons patch mapping is a diffeomorphism. In case of unequal signs, the patch is adaptively subdivided and for each sub-patch the coefficients \(\boldsymbol{c}_{m, n}^{J_{\text {sub }}}\) are computed. The procedure stops as soon as the signs of \(\boldsymbol{c}_{m, n}^{J_{\text {sub }}}\) do not change within every sub-patch.
+If the coefficients \(\boldsymbol{c}_{m, n}^{J}\) have the same sign the Coons patch mapping is a diffeomorphism. In case of unequal signs, the patch is adaptively subdivided and for each sub-patch the coefficients \(\boldsymbol{c}_{m, n}^{J_{s u b}}\) are computed. The procedure stops as soon as the signs of \(\boldsymbol{c}_{m, n}^{J_{\text {sub }}}\) do not change within every sub-patch.
 
 The overall Coons patch is not regular, if it consists of subpatches with different signs. It is emphasized that the subdivision is only performed to determine the regularity of the mapping. The corresponding proofs and more information can be found in [113, 237].
 
-In case of multiple patches, a matching parameterization between adjacent surfaces is sought. The connectivity is described by a graph. During the decomposition procedure, the polygon vertices of the adjacent patches \(\boldsymbol{S}_{i}\) and \(\boldsymbol{S}_{j}\) are computed so that where \(\boldsymbol{x}_{k}^{i}\) and \(\boldsymbol{x}_{\ell}^{j}\) are the vertices along the common edge and \(\mathcal{X}\) denotes the geometrical mapping (23). If a vertex \(\boldsymbol{x}_{k}^{i}\) is added to obtain an even-numbered approximation \(\boldsymbol{C}^{l}\), a corresponding \(\boldsymbol{x}_{\ell}^{j}\) needs to be added in the adjacent patch. Thus, odd faces can be converted to even ones only in pairs as illustrated in Fig. 42. It should be noted that the inserted vertices propagate through faces which are even already. In order to minimize the affected faces, the shortest path connecting two faces is computed by the application of Dijkstra's algorithm [72] to the connectivity graph. In addi tion to matching vertices, trimming curves \(\boldsymbol{C}^{t} \in[a, b]\) are parameterized by means of the chord length of the corre sponding intersection curve in model space. The trimming curve segment of quadrilaterals \(\mathcal{R}_{i}\) is initially defined by \(\overline{\boldsymbol{C}}_{i}^{t}\left(t \cdot a_{i}+(1-t) b_{i}\right) \in\left[a_{i}, b_{i}\right] \subset[a, b]\). The new representation \(\hat{\boldsymbol{C}}_{i}^{t}\) is given by
+In case of multiple patches, a matching parameterization between adjacent surfaces is sought. The connectivity is described by a graph. During the decomposition procedure, the polygon vertices of the adjacent patches \(\boldsymbol{S}_{i}\) and \(\boldsymbol{S}_{j}\) are computed so that where \(\boldsymbol{x}_{k}^{i}\) and \(\boldsymbol{x}_{\ell}^{j}\) are the vertices along the common edge and \(\mathcal{X}\) denotes the geometrical mapping (23). If a vertex \(\boldsymbol{x}_{k}^{i}\) is added to obtain an even-numbered approximation \(\boldsymbol{C}^{l}\), a corresponding \(\boldsymbol{x}_{\ell}^{j}\) needs to be added in the adjacent patch. Thus, odd faces can be converted to even ones only in pairs as illustrated in Fig. 42. It should be noted that the inserted vertices propagate through faces which are even already. In order to minimize the affected faces, the shortest path connecting two faces is computed by the application of Dijkstra's algorithm [72] to the connectivity graph. In addition to matching vertices, trimming curves \(\boldsymbol{C}^{t} \in[a, b]\) are parameterized by means of the chord length of the corresponding intersection curve in model space. The trimming curve segment of quadrilaterals \(\mathcal{R}_{i}\) is initially defined by \(\overline{\boldsymbol{C}}_{i}^{t}\left(t \cdot a_{i}+(1-t) b_{i}\right) \in\left[a_{i}, b_{i}\right] \subset[a, b]\). The new representation \(\hat{\boldsymbol{C}}_{i}^{t}\) is given by with \(\phi_{i}\) denoting the inverse of the length function
 
 $$
-\begin{equation*} 2 \alpha \beta+\alpha^{2}<\tau \quad \text { and } \quad \tau>0 . \tag{67} \end{equation*}
-$$
-
-$$
-with \( \phi_{i} \) denoting the inverse of the length function
-$$
-
-$$
-\begin{align*} C(i, j, k, \ell):= & \frac{\ell}{p}\left[\frac{i}{p} D(i-1, j, k, \ell-1)\right. \\ & \left.+\left(1-\frac{i}{p}\right) D(i, j, k, \ell-1)\right] \\ & +\left(1-\frac{\ell}{p}\right)\left[\frac{i}{p} D(i-1, j, k, \ell)\right. \tag{69}\\ & \left.+\left(1-\frac{i}{p}\right) D(i, j, k, \ell)\right] \end{align*}
-$$
-
-$$
-\begin{equation*} \lambda_{i}(t):=\int_{a}^{t}\left\|\frac{d\left(\mathcal{X} \circ \overline{\boldsymbol{C}}_{i}^{t}\right)}{d t}(\theta)\right\| \mathrm{d} \theta . \tag{73} \end{equation*}
+\begin{aligned} C(i, j, k, \ell):= & \frac{\ell}{p}\left[\frac{i}{p} D(i-1, j, k, \ell-1)\right. \\ & \left.+\left(1-\frac{i}{p}\right) D(i, j, k, \ell-1)\right] \\ & +\left(1-\frac{\ell}{p}\right)\left[\frac{i}{p} D(i-1, j, k, \ell)\right. \\ & \left.+\left(1-\frac{i}{p}\right) D(i, j, k, \ell)\right] \end{aligned}
 $$
 
 Hence, the images of the trimming curve \(\hat{\boldsymbol{C}}^{t}\) of adjacent patches match at the same parametric values, i.e., the same chord length. This procedure is applied before the Coons patch construction. For details on the computation of the reparameterization the interested reader is referred to [238].
@@ -1028,49 +974,49 @@ In contrast to the approach described in the previous subsection, this reconstru
 
 #### 5.2.3 Reconstruction by Isocurves
 
-Recently, Urick [298] presented a reconstruction approach based on isocurves (25). In contrast to the previous schemes, the trimmed patch is replaced by a new parameterization and a new set of control points. The overall procedure consists of several steps including (i) topology detection, (ii) parameter space analysis and determination of knot vector superset, (iii) reparameterization of trimmed parameter spaces, (iv) computation of corresponding control points, and (v) the treatment of multiple trimming curves. In order to identify the topology of the trimmed domain \(\mathcal{A}^{\mathrm{v}}\), characteristic points \(\boldsymbol{x}\) of the trimming curves \(\boldsymbol{C}^{t}\) are determined. The points considered are summarized in Table 3. They represent characteristic points commonly used in surface-to-surface intersection schemes (i.e., types 0,2, and 3) [221], along with an additional point previously not utilized (type 1). The main purpose of this classification is to detect portions \(\gamma\) of a trimming curve that are asso ciated to either the \(u\)-direction, i.e., \(\gamma^{u}\), or the \(v\)-direction, i.e., \(\gamma^{v}\), of the parameter space. With this in mind, the most significant points are those of types 0 and 1, because they indicate a possible transition from \(\gamma^{u}\) to \(\gamma^{v}\). Each \(\gamma\) together with its opposing edge of the parameter space specifies a four-sided regions \(\mathcal{R}\). An example of a segmentation of \(\mathcal{A}^{\mathrm{v}}\) is illustrated in Fig. 43. Note that not every characteristic point of type 1, i.e., \(\boldsymbol{x}^{1}\), yields a new portion. Hence, the sequence of characteristic points has to be examined rather than the classification of individual points. Once all reconstruction regions \(\mathcal{R}\) are detected, the parameterization of adjacent patches is aligned. The fol lowing knot cross-seeding procedure establishes a oneto-one relation of points along the intersection curve \(\hat{\boldsymbol{C}}(s)\) in model space and the related trimming curves of the
+Recently, Urick [298] presented a reconstruction approach based on isocurves (25). In contrast to the previous schemes, the trimmed patch is replaced by a new parameterization and a new set of control points. The overall procedure consists of several steps including (i) topology detection, (ii) parameter space analysis and determination of knot vector superset, (iii) reparameterization of trimmed parameter spaces, (iv) computation of corresponding control points, and (v) the treatment of multiple trimming curves. In order to identify the topology of the trimmed domain \(\mathcal{A}^{\mathrm{v}}\), characteristic points \(\boldsymbol{x}\) of the trimming curves \(\boldsymbol{C}^{t}\) are determined. The points considered are summarized in Table 3. They represent characteristic points commonly used in surface-to-surface intersection schemes (i.e., types 0, 2, and 3) [221], along with an additional point previously not utilized (type 1). The main purpose of this classification is to detect portions \(\gamma\) of a trimming curve that are associated to either the \(u\)-direction, i.e., \(\gamma^{u}\), or the \(v\)-direction, i.e., \(\gamma^{v}\), of the parameter space. With this in mind, the most significant points are those of types 0 and 1, because they indicate a possible transition from \(\gamma^{u}\) to \(\gamma^{v}\). Each \(\gamma\) together with its opposing edge of the parameter space specifies a four-sided regions \(\mathcal{R}\). An example of a segmentation of \(\mathcal{A}^{\mathrm{v}}\) is illustrated in Fig. 43. Note that not every characteristic point of type 1, i.e., \(\boldsymbol{x}^{1}\), yields a new portion. Hence, the sequence of characteristic points has to be examined rather than the classification of individual points. Once all reconstruction regions \(\mathcal{R}\) are detected, the parameterization of adjacent patches is aligned. The following knot cross-seeding procedure establishes a oneto-one relation of points along the intersection curve \(\hat{\boldsymbol{C}}(s)\) in model space and the related trimming curves of the
 
-![Figure 43 Determination of the trimming curve portions 훾 u and 훾 v which are associated to the parametric direction u and v , respectively. The boundary of the related regions  i within the trimmed domain are indicated by dashed lines . Characteristic points x are marked by crosses which correspond to the sloped of the curve. The point type is denoted by the related superscript](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-43-p036.png)
+![Figure 43 Determination of the trimming curve portions 훾 u and 훾 v which are associated to the parametric direction u and v , respectively. The boundary of the related regions  i within the trimmed domain are indicated by dashed lines . Characteristic points x are marked by crosses which correspond to the sloped of the curve. The point type is denoted by the related superscript](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-43-p036.png)
 
 *Figure 43 Determination of the trimming curve portions 훾 u and 훾 v which are associated to the parametric direction u and v , respectively. The boundary of the related regions  i within the trimmed domain are indicated by dashed lines . Characteristic points x are marked by crosses which correspond to the sloped of the curve. The point type is denoted by the related superscript: Determination of the trimming curve portions 훾 u and 훾 v which are associated to the parametric direction u and v, respectively. The boundary of the related regions  i within the trimmed domain are indicated by dashed lines. Characteristic points x are marked by crosses which correspond to the sloped of the curve. The point type is denoted by the related superscript*
 
-surfaces \(\boldsymbol{S}_{i}(u, v)\). Firstly, \(\hat{\boldsymbol{C}}(s)\) is refined so that it is defined by Bézier segments, i.e., the multiplicity of all knots is equal to the curve's degree. Furthermore, each \(\boldsymbol{S}_{i}(u, v)\) is subjected to knot insertion in the \(u\)-direction and \(v\)-direction at their characteristic points \(\boldsymbol{x}\) of \(\gamma^{u}\) and \(\gamma^{v}\) portions, respec tively. Thus, the knot vectors of the surfaces incorporate the locations of all \(\boldsymbol{x}\). In the next step, the knot information is exchanged across the different objects involved in order to define a knot vector superset. During this process, new Bézier segments are introduced to \(\hat{\boldsymbol{C}}(s)\). In particular, knots are added at the parametric values \(\hat{s}\) that correspond to the knots of \(S_{i}(u, v)\). The values \(\hat{s}\) are determined by minimiz ing the distance of \(\hat{\boldsymbol{C}}(s)\) to isocurves \(\boldsymbol{C}^{\text {iso }}(u)\) and \(\boldsymbol{C}^{\text {iso }}(v)\) of each \(\boldsymbol{S}_{i}(u, v)\) and the fixed parameters of these isocurves are determined by the knot values of the surfaces. As a result, the refined intersection curve and its superset knot vector reflect the knots and topological characteristics of itself, the related surfaces, and their trimming curves. Finally, this information is passed on to the surfaces, i.e., all \(\boldsymbol{S}_{i}(u, v)\) are refined at the interior knots of \(\hat{\boldsymbol{C}}(s)\) including the knots of the adjacent \(\boldsymbol{S}_{j}(u, v), j \neq i\). This is done by minimizing the distance between the points of \(\hat{\boldsymbol{C}}(s)\) and \(\boldsymbol{S}_{i}(u, v)\). The exchange of knot data is necessary in order to guarantee that patches are connected along their intersection after the reconstruction. Reparameterization is required to obtain a conforming basis for each four-sided region \(\mathcal{R}\). Suppose \(\mathcal{R}\) is related to a \(\gamma^{\nu}\)-portion \({ }^{19}\) of a trimming curve, then it is described by a set of isocurves \(\left\{\boldsymbol{C}_{k}^{\text {iso }}(u)\right\}_{k=1}^{K}\) along fixed parameter values
+surfaces \(\boldsymbol{S}_{i}(u, v)\). Firstly, \(\hat{\boldsymbol{C}}(s)\) is refined so that it is defined by Bézier segments, i.e., the multiplicity of all knots is equal to the curve's degree. Furthermore, each \(\boldsymbol{S}_{i}(u, v)\) is subjected to knot insertion in the \(u\)-direction and \(v\)-direction at their characteristic points \(\boldsymbol{x}\) of \(\gamma^{u}\) and \(\gamma^{v}\) portions, respectively. Thus, the knot vectors of the surfaces incorporate the locations of all \(\boldsymbol{x}\). In the next step, the knot information is exchanged across the different objects involved in order to define a knot vector superset. During this process, new Bézier segments are introduced to \(\hat{\boldsymbol{C}}(s)\). In particular, knots are added at the parametric values \(\hat{s}\) that correspond to the knots of \(\boldsymbol{S}_{i}(u, v)\). The values \(\hat{s}\) are determined by minimizing the distance of \(\hat{\boldsymbol{C}}(s)\) to isocurves \(\boldsymbol{C}^{i s o}(u)\) and \(\boldsymbol{C}^{i s o}(v)\) of each \(\boldsymbol{S}_{i}(u, v)\) and the fixed parameters of these isocurves are determined by the knot values of the surfaces. As a result, the refined intersection curve and its superset knot vector reflect the knots and topological characteristics of itself, the related surfaces, and their trimming curves. Finally, this information is passed on to the surfaces, i.e., all \(\boldsymbol{S}_{i}(u, v)\) are refined at the interior knots of \(\hat{\boldsymbol{C}}(s)\) including the knots of the adjacent \(\boldsymbol{S}_{j}(u, v), j \neq i\). This is done by minimizing the distance between the points of \(\hat{\boldsymbol{C}}(s)\) and \(\boldsymbol{S}_{i}(u, v)\). The exchange of knot data is necessary in order to guarantee that patches are connected along their intersection after the reconstruction. Reparameterization is required to obtain a conforming basis for each four-sided region \(\mathcal{R}\). Suppose \(\mathcal{R}\) is related to a \(\gamma^{\nu}\)-portion \({ }^{19}\) of a trimming curve, then it is described by a set of isocurves \(\left\{\boldsymbol{C}_{k}^{i s o}(u)\right\}_{k=1}^{K}\) along fixed parameter values
 
 19 Regions related to a 𝛾 u-portion are treated in an analogous manner.
 
-Thus, the reparameterized region \(\tilde{\mathcal{R}}\) will be conformal with \(\hat{\boldsymbol{C}}(s)\) and the reparameter ized counterpart of an adjacent surface will be conformal as well. Due to the cross-seeding process, \(\gamma^{v}\) is linked to at least one Bézier segment of \(\hat{\boldsymbol{C}}(s)\). The positions \(s_{k}^{\text {iso }}\) of the isocurves \(\boldsymbol{C}_{k}^{i s o}(u)\) are determined by the endpoints and Greville abscissae of these Bézier segments. The corre sponding parametric values in the \(u\)-direction are labeled \(\hat{u}_{k}\) and represent the locations where the distance of \(\boldsymbol{C}_{k}^{i s o}(u)\) is minimal to \(\hat{\boldsymbol{C}}(s)\). Knot insertion at \(\hat{u}_{k}\) is applied to extract the part of \(\boldsymbol{C}_{k}^{i s o}(u)\) that is within the domain of interest, i.e., the current four-sided region \(\mathcal{R}\). The values \(\hat{u}_{k}\) vary for each \(\boldsymbol{C}_{k}^{i s o}(u)\) since they are distributed close to the trimming curves. In other words, parameter intervals of the isocurves within \(\mathcal{R}\) do not match in general. To overcome this issue, all \(\boldsymbol{C}_{k}^{i s o}(u)\) are reparameterized to be specified by the same basis.
+Thus, the reparameterized region \(\tilde{\mathcal{R}}\) will be conformal with \(\hat{\boldsymbol{C}}(s)\) and the reparameterized counterpart of an adjacent surface will be conformal as well. Due to the cross-seeding process, \(\gamma^{v}\) is linked to at least one Bézier segment of \(\hat{\boldsymbol{C}}(s)\). The positions \(s_{k}^{i s o}\) of the isocurves \(\boldsymbol{C}_{k}^{\text {iso }}(u)\) are determined by the endpoints and Greville abscissae of these Bézier segments. The corresponding parametric values in the \(u\)-direction are labeled \(\hat{u}_{k}\) and represent the locations where the distance of \(\boldsymbol{C}_{k}^{i s o}(u)\) is minimal to \(\hat{\boldsymbol{C}}(s)\). Knot insertion at \(\hat{u}_{k}\) is applied to extract the part of \(\boldsymbol{C}_{k}^{i s o}(u)\) that is within the domain of interest, i.e., the current four-sided region \(\mathcal{R}\). The values \(\hat{u}_{k}\) vary for each \(\boldsymbol{C}_{k}^{i s o}(u)\) since they are distributed close to the trimming curves. In other words, parameter intervals of the isocurves within \(\mathcal{R}\) do not match in general. To overcome this issue, all \(\boldsymbol{C}_{k}^{i s o}(u)\) are reparameterized to be specified by the same basis.
 
 The simplest way to establish the reparameterization is to use a linear coordinate transformation so that all isocurves are defined over a common range, combined with a subsequent accumulation of the shifted interior knots of each knot vector. However, this technique yields a large number of basis function since interior knots of isocurves with different initial intervals do not coincide after the transformation. Furthermore, the size of the resulting knot spans may vary excessively because the alteration of shifted interior knots can be arbitrarily small.
 
-Hence, a nonlinear reparameterization is preferred. A set of functions \(\left\{f_{k}(\tilde{u})\right\}_{k=1}^{K}\) is sought that maps the correspond
+Hence, a nonlinear reparameterization is preferred. A set of functions \(\left\{f_{k}(\tilde{u})\right\}_{k=1}^{K}\) is sought that maps the correspond-
 
 Note that the linear coordinate transformation is a special case of this formulation where the degree of the function is set to q = 1. The composite of an isocurve \(C^{iso}\) k (u) and its f k ( ̃ u) determines the reparameterization
 
 $$
-\begin{equation*} f(\tilde{u}, s)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, \tilde{p}}(\tilde{u}) B_{j, p_{s}}(s) c_{i, j}, \tag{76} \end{equation*}
+\boldsymbol{C}_{k}^{i s o}(\tilde{u})=\boldsymbol{C}_{k}^{i s o}\left(f_{k}(\tilde{u})\right), \quad \tilde{u} \in[c, d] .
+$$
+
+$$
+f(\tilde{u}, s)=\sum_{i=0}^{I-1} \sum_{j=0}^{J-1} B_{i, \tilde{p}}(\tilde{u}) B_{j, p_{s}}(s) c_{i, j},
 $$
 
 The degree of the resulting curve is given by ̃ p = pq where p refers to the original degree of the isocurve. If the longest isocurve is taken as target parameterization, it can be adjusted by using conventional degree elevation to ̃ p. The other curves are subjected to a nonlinear reparameterization based on their f k ( ̃ u). For technical details on nonlinear reparameterization of curves the interested reader is referred to the textbook [230].
 
-![Figure 44 Reparameterization of a trimmed parameter space of a bicu- bic Bézier patch](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-44-p037.png)
+![Figure 44 Reparameterization of a trimmed parameter space of a bicu- bic Bézier patch](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-44-p037.png)
 
 *Figure 44 Reparameterization of a trimmed parameter space of a bicu- bic Bézier patch: a surface f ( ̃ u, s) that reparameterizes the trimmed parameter space u to a regular one ̃ u indicated by the vertical and plane grid, respectively. Lines on the surface mark the associated isocurve along s iso k. b Profile of the isocurves f k ( ̃ u)*
 
 $$
-\begin{equation*} f_{k}(\tilde{u})=\sum_{i=0}^{I-1} B_{i, q}(\tilde{u}) c_{i}^{k}, \quad q>1, \quad k=1, \ldots, K . \tag{74} \end{equation*}
+f_{k}(\tilde{u})=\sum_{i=0}^{I-1} B_{i, q}(\tilde{u}) c_{i}^{k}, \quad q>1, \quad k=1, \ldots, K .
 $$
 
-It remains to find a way to coordinate the individual \(f_{k}(\tilde{u})\) to obtain a global reparameterization for the whole reconstruction domain \(\mathcal{R}\) that yields a new valid tensor product parameter space \(\tilde{\mathcal{R}}\). The key idea is to represent the global transformation as a spline surface \(f(\tilde{u}, s)\). This sur face includes all \(f_{k}(\tilde{u})\) as isocurves, i.e., \(f\left(\tilde{u}, s_{k}^{i s o}\right)=f_{k}(\tilde{u})\). The bivariate reparameterization is given by with the degree \(p_{s}\) of the intersection curve segment and a grid of scalar control coefficients \(c_{i, j}\). If the degree in the \(v\) -direction of the trimmed surface varies from \(p_{s}\), the degree of the segment may be adjusted by means of degree eleva tion. Equation (76) can be represented as a non-parametric
+It remains to find a way to coordinate the individual \(f_{k}(\tilde{u})\) to obtain a global reparameterization for the whole reconstruction domain \(\mathcal{R}\) that yields a new valid tensor product parameter space \(\tilde{\mathcal{R}}\). The key idea is to represent the global transformation as a spline surface \(f(\tilde{u}, s)\). This surface includes all \(f_{k}(\tilde{u})\) as isocurves, i.e., \(f\left(\tilde{u}, s_{k}^{i s o}\right)=f_{k}(\tilde{u})\). The bivariate reparameterization is given by with the degree \(p_{s}\) of the intersection curve segment and a grid of scalar control coefficients \(c_{i, j}\). If the degree in the \(v\) -direction of the trimmed surface varies from \(p_{s}\), the degree of the segment may be adjusted by means of degree elevation. Equation (76) can be represented as a non-parametric
 
 - (c) Further reconstruction regions after basis update
 
 surface by linking the coefficients \(c_{i, j}\) to their Greville abscissae (22).
 
 The corresponding control points are defined as
-
-$$
-c_{i, j}=\left[\begin{array}{c} \left(\tilde{u}_{i+1}+\tilde{u}_{i+2}+\cdots+\tilde{u}_{i+\tilde{p}}\right) / \tilde{p} \tag{77}\\ \left(s_{j+1}+s_{j+2}+\cdots+s_{j+p_{s}}\right) / p_{s} \\ c_{i, j} \end{array}\right] .
-$$
 
 The coefficients \(c_{i, j}\) can be defined by the user as long as the following restrictions are met:
 
@@ -1080,21 +1026,17 @@ The coefficients \(c_{i, j}\) can be defined by the user as long as the followin
 
 - (iii) Each knot value \(u_{i}\) of the initial knot vectors must be mapped to a distinct ̃ \(u_{i}\) ∈ ̃ 𝛯 for all isocurves, i.e., \(u_{i}\) = f ( ̃ \(u_{i}\), s iso k), k = 1, … , K.
 
-An illustration of such a bivariate reparameterization func tion \(f(\tilde{u}, s)\) is provided in Fig. 44a and the corresponding isocurves are shown in Fig. 44b. It should be noted that the parameter space spanned by the \(\tilde{u}\)-axis and \(s\)-axis is defined by straight parameter lines only, in contrast to the original basis spanned by the \(u\)-axis and \(s\)-axis. It is emphasized that
-
-$$
-\begin{equation*} \tilde{\boldsymbol{c}}_{i}^{k}=\sum_{j=0}^{J-1} B_{j, q}\left(s_{k}^{i s o}\right) \boldsymbol{c}_{i, j}, \quad k=1, \ldots, K . \tag{78} \end{equation*}
-$$
+An illustration of such a bivariate reparameterization function \(f(\tilde{u}, s)\) is provided in Fig. 44a and the corresponding isocurves are shown in Fig. 44b. It should be noted that the parameter space spanned by the \(\tilde{u}\)-axis and \(s\)-axis is defined by straight parameter lines only, in contrast to the original basis spanned by the \(u\)-axis and \(s\)-axis. It is emphasized that
 
 - (a) Topology detection and characteristic points
 
 - (b) first two reconstruction regions
 
-the graphs in Fig. 44b intersect at the common interior knots ̃ \(u_{i}\) = \(u_{i}\) = { 1 3, 2 3. The final step of the reconstruction scheme is to determine the control points of the reparameterized regions \(\tilde{\mathcal{R}}\). Therefore, we recall the specification of the control points \(\tilde{\boldsymbol{c}}_{i}^{k}\) of isocurves \(\boldsymbol{C}_{k}^{i s o}(u)\) as a weighted combination of surface control points \(\boldsymbol{c}_{i, j}\)
+the graphs in Fig. 44b intersect at the common interior knots ̃ \(u_{i}\) = \(u_{i}\) = { 1 3, 2 3. The final step of the reconstruction scheme is to determine the control points of the reparameterized regions \(\tilde{\mathcal{R}}\). Therefore, we recall the specification of the control points \(\tilde{\boldsymbol{c}}_{i}^{k}\) of isocurves \(\boldsymbol{C}_{k}^{\text {iso }}(u)\) as a weighted combination of surface control points \(\boldsymbol{c}_{i, j}\)
 
-Isocurves have been introduced at the Greville abscissae of the Bézier segments along the reconstruction boundary \(\gamma^{\nu}\). Hence, the number of isocurves is equal to the number of unknowns, i.e., \(J=K\), and the control points \(\boldsymbol{c}_{i, j}\) can be It is quite astonishing that the procedure described remains the same when multiple trimming curves are involved. Instead of assessing the topology of all trimming curves at once, the trimming curve or more precisely each \(\gamma\) is processed successively and independently of each other. In fact, it does not matter if the portions \(\gamma\) originate from one or several trimming curves. After each reparameteri zation the parameter space is updated and the next region is addressed. The iterative evolution of the reconstructed regions \(\tilde{\mathcal{R}}\) is displayed in Fig. 45. To be clear, the regions \(\mathcal{R}_{0}\) and \(\mathcal{R}_{1}\) shown in Fig. 45b and the regions \(\mathcal{R}_{2}\) and \(\mathcal{R}_{3}\) displayed in Fig. 45c are not constructed at the same time.
+Isocurves have been introduced at the Greville abscissae of the Bézier segments along the reconstruction boundary \(\gamma^{\nu}\). Hence, the number of isocurves is equal to the number of unknowns, i.e., \(J=K\), and the control points \(\boldsymbol{c}_{i, j}\) can be It is quite astonishing that the procedure described remains the same when multiple trimming curves are involved. Instead of assessing the topology of all trimming curves at once, the trimming curve or more precisely each \(\gamma\) is processed successively and independently of each other. In fact, it does not matter if the portions \(\gamma\) originate from one or several trimming curves. After each reparameterization the parameter space is updated and the next region is addressed. The iterative evolution of the reconstructed regions \(\tilde{\mathcal{R}}\) is displayed in Fig. 45. To be clear, the regions \(\mathcal{R}_{0}\) and \(\mathcal{R}_{1}\) shown in Fig. 45b and the regions \(\mathcal{R}_{2}\) and \(\mathcal{R}_{3}\) displayed in Fig. 45c are not constructed at the same time.
 
-The final outcome of the reconstruction is a new set of patches with aligned parameter spaces that share the control point of their intersection curves. Thus, the reconstructed object is watertight. It is emphasized that this holds true even for non-manifolds. These benefits come at the price of an alteration of the initial geometry and an increase of the degrees of freedom. Since the concept has been pre sented just recently, there are several open research topics to explore. For instance, an estimation of the geometrical error introduced with respect to the degree of the reparam eterization function and the number of isocurves would be of great interest. This could be the basis for an optimization procedure for the definition of the reparameterization func tion. Another topic might be the quality of the resulting ele ments in model space, especially at the transitions from \(\gamma^{u}\) to \(\gamma^{v}\) regions.
+The final outcome of the reconstruction is a new set of patches with aligned parameter spaces that share the control point of their intersection curves. Thus, the reconstructed object is watertight. It is emphasized that this holds true even for non-manifolds. These benefits come at the price of an alteration of the initial geometry and an increase of the degrees of freedom. Since the concept has been presented just recently, there are several open research topics to explore. For instance, an estimation of the geometrical error introduced with respect to the degree of the reparameterization function and the number of isocurves would be of great interest. This could be the basis for an optimization procedure for the definition of the reparameterization function. Another topic might be the quality of the resulting elements in model space, especially at the transitions from \(\gamma^{u}\) to \(\gamma^{v}\) regions.
 
 We close the discussion of the isocurve reconstruction approach with some application remarks. Firstly, the concept can also be applied locally. In this paper it is focused on the tensor product case where refinement propagates Lu through the whole domain for the sake of simplicity. A locally reconstructed parameter space may be represented by any local basis like T-splines, hierarchical B-splines, or LR-splines. Secondly, the degree of the resulting patches may become large, depending on the degree of the reparameterization function. It might be beneficial to apply a degree reduction technique after the reconstruction, but this introduces additional approximation errors. Finally, the intersection curves should have a good parameterization since they play an essential role during the reconstruction. Therefore, it might be advisable to reparameterize the intersection curve, e.g., by its chord length, at the beginning of the overall procedure.
 
@@ -1102,51 +1044,69 @@ We close the discussion of the isocurve reconstruction approach with some applic
 
 Another recent attempt has been proposed by Xia and Qian [314]. They employ triangular Bézier patches (36) to convert trimmed models to watertight representations. The convergence behavior of these splines has been assessed by these authors and co-workers in [315]. The conversion involves the following steps: (i) subdivision of all surfaces into tensor product Bézier patches, (ii) exact representation of non-trimmed patches by two Bézier triangles, (iii) knot cross-seeding between adjacent patches, (iv) approximation of the region along the trimming curve using Bézier triangles, and (v) substitution of the resulting control points of the approximate trimming curve by corresponding control points of the intersection curve in model space.
 
-The first step can be easily accomplished by means of knot insertion. The second one is performed following Goldman and Filip [100]. In particular, a non-trimmed ten sor product patch with control points \(\boldsymbol{c}_{m, n}^{\square}\) can be converted to two triangular Bézier patches by where \(i+j+k=p+q\) and \(\binom{\alpha}{\beta}\) are binomial coefficients defined as
+The first step can be easily accomplished by means of knot insertion. The second one is performed following Goldman and Filip [100]. In particular, a non-trimmed tensor product patch with control points \(\boldsymbol{c}_{m, n}^{\square}\) can be converted to two triangular Bézier patches by where \(i+j+k=p+q\) and \(\binom{\alpha}{\beta}\) are binomial coefficients defined as
 
-Equation (79) yields the control points \(\boldsymbol{c}_{i, j, k}^{\Delta}\) of one triangu lar patch using \(c_{m, n}^{\square}: 0 \leqslant m \leqslant p ; 0 \leqslant n \leqslant q\). The control points of the other triangular patch are obtained by revers ing the order of the original control points,
+Equation (79) yields the control points \(\boldsymbol{c}_{i, j, k}^{\triangle}\) of one triangular patch using \(c_{m, n}^{\square}: 0 \leqslant m \leqslant p ; 0 \leqslant n \leqslant q\). The control points of the other triangular patch are obtained by reversing the order of the original control points,
 
-![Figure 46 Generation of conforming triangulations along the intersec- tion of two patches](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-46-p039.png)
+![Figure 46 Generation of conforming triangulations along the intersec- tion of two patches](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-46-p039.png)
 
 *Figure 46 Generation of conforming triangulations along the intersec- tion of two patches: a definition of Bézier segments of the intersection curve ̂ C ( ̃ x) and the trimming curves C t 1 ( ̃ u) and C t 2 ( ̃ s). b Closest point projection to find corresponding points on the other curves. c Addition of Bézier segments due to the exchanged points and specification of associated triangular regions. Segments are marked by crosses, black points, and white points based on their origin. The offset between ̂ C ( ̃ x) and the images  ◦ C t 1 ( ̃ u) and  ◦ C t 2 ( ̃ s) shall emphasize that they do not coincide in model space. In b, arrows indicate the projections performed (a) Initial setting (b) Knot cross-seeding*
 
 $$
-\begin{align*} \boldsymbol{c}_{i, j, k}^{\triangle}= & \frac{1}{\binom{p+q}{q}} \sum_{m=0}^{i} \sum_{n=\max \{0, j-p+m\}}^{\min \{j, q-i+m\}} \boldsymbol{c}_{m, n}^{\square}\binom{i}{m}\binom{j}{n} \tag{79}\\ & \times\binom{ p+q-i-j}{p+n-m-j} \end{align*}
+\begin{aligned} \boldsymbol{c}_{i, j, k}^{\triangle}= & \frac{1}{\binom{p+q}{q}} \sum_{m=0}^{i} \sum_{n=\max \{0, j-p+m\}}^{\min \{j, q-i+m\}} \boldsymbol{c}_{m, n}^{\square}\binom{i}{m}\binom{j}{n} \\ & \times\binom{ p+q-i-j}{p+n-m-j} \end{aligned}
 $$
 
-i.e., \(c_{p-m, q-n}^{\square}: 0 \leqslant m \leqslant p ; 0 \leqslant n \leqslant q\). The degree of the resulting patches is determined by \(p+q\). It is emphasized that this transformation does not introduce an approxima tion error.
+i.e., \(\boldsymbol{c}_{p-m, q-n}^{\square}: 0 \leqslant m \leqslant p ; 0 \leqslant n \leqslant q\). The degree of the resulting patches is determined by \(p+q\). It is emphasized that this transformation does not introduce an approximation error.
 
-$$
-\begin{equation*} \binom{\alpha}{\beta}:=\frac{\alpha!}{(\alpha-\beta)!\beta!} . \tag{80} \end{equation*}
-$$
+Next, the relationship of adjacent patches along the intersection is established. This is done similar to the knot cross-seeding procedure described in the previous subsection. Hence, we adopt this term here as well. Figure 46 summarizes the basic procedure. Firstly, the intersection curve \(\hat{\boldsymbol{C}}(\tilde{x})\) in model space and the trimming curves \(\boldsymbol{C}_{1}^{t}(\tilde{u})\) and \(\boldsymbol{C}_{2}^{t}(\tilde{s})\) are subdivided into Bézier segments at their knot values and intersections with the trimmed parameter space. Then, the endpoints of these segments are projected to the other curves and the corresponding parametric values are computed. In other words, the trimming curve are refined based on the knot information of the other trimming curve and the intersection curve in model space. Consequently, the resulting Bézier segments of a curve have corresponding counterparts in the other curves. However, the distinct segments do not coincide in model space. At this point, the purpose of the knot cross-seeding is to obtain an aligned triangulation along the intersection. Triangular patches are specified within each trimmed surface so that one of their boundaries represents a Bézier segment.
 
-Next, the relationship of adjacent patches along the intersection is established. This is done similar to the knot cross-seeding procedure described in the previous subsec tion. Hence, we adopt this term here as well. Figure 46 summarizes the basic procedure. Firstly, the intersection curve \(\hat{\boldsymbol{C}}(\tilde{x})\) in model space and the trimming curves \(\boldsymbol{C}_{1}^{t}(\tilde{u})\) and \(\boldsymbol{C}_{2}^{t}(\tilde{s})\) are subdivided into Bézier segments at their knot values and intersections with the trimmed parameter space. Then, the endpoints of these segments are projected to the other curves and the corresponding parametric values are computed. In other words, the trimming curve are refined based on the knot information of the other trimming curve and the intersection curve in model space. Consequently, the resulting Bézier segments of a curve have correspond ing counterparts in the other curves. However, the distinct segments do not coincide in model space. At this point, the purpose of the knot cross-seeding is to obtain an aligned triangulation along the intersection. Triangular patches are specified within each trimmed surface so that one of their boundaries represents a Bézier segment.
+The construction of these triangular Bézier patches which are arbitrarily located within the trimmed surface is performed accordingly to Lasser [182]. In general, a Bézier triangle \(T\) of degree \(\tilde{p}\) in a tensor product basis of a surface \(\boldsymbol{R}(u, v)\) of degrees \(p\) and \(q\) yields a triangular patch \(\boldsymbol{S}^{\triangle}(r, s, t)\) of degree \(\tilde{p}(p+q)\). Xia and Qian [314] focus on the linear case, i.e., \(\tilde{p}=1\), meaning that the trimming curve where the control points of the surface \(\boldsymbol{R}(u, v)\) are used as initial values \(\boldsymbol{R}_{i, j}^{0,0}\). The construction in the \(v\)-direction is performed in an analogous manner. The superscripts \(a\) and \(b\) denote distinct steps of the recurrence relation in the \(u\) -direction and \(v\)-direction, respectively. Note that Eq. (82) is an adaptation of the de Casteljau algorithm that allows employing new parameter values \(u_{\mathbf{I}_{a}^{u}}\) in every iteration.
 
-The construction of these triangular Bézier patches which are arbitrarily located within the trimmed surface is performed accordingly to Lasser [182]. In general, a Bézier triangle \(T\) of degree \(\tilde{p}\) in a tensor product basis of a sur face \(\boldsymbol{R}(u, v)\) of degrees \(p\) and \(q\) yields a triangular patch \(\boldsymbol{S}^{\triangle}(r, s, t)\) of degree \(\tilde{p}(p+q)\). Xia and Qian [314] focus on the linear case, i.e., \(\tilde{p}=1\), meaning that the trimming curve where the control points of the surface \(\boldsymbol{R}(u, v)\) are used as initial values \(\boldsymbol{R}_{i, j}^{0,0}\). The construction in the \(v\)-direction is performed in an analogous manner. The superscripts \(a\) and \(b\) denote distinct steps of the recurrence relation in the \(u\) -direction and \(v\)-direction, respectively. Note that Eq. (82) is an adaptation of the de Casteljau algorithm that allows employing new parameter values \(u_{\mathbf{I}_{a}^{u}}\) in every iteration.
+Likewise, the index tuples are given by \(\mathbf{I}^{v}=\mathbf{I}_{1}^{v}+\cdots+\mathbf{I}_{b}^{v}\) and \(\mathbf{I}^{u}=\mathbf{I}_{1}^{u}+\cdots+\mathbf{I}_{\alpha}^{u}\) with \(\alpha\) referring to the related super-
 
-Likewise, the index tuples are given by \(\mathbf{I}^{v}=\mathbf{I}_{1}^{v}+\cdots+\mathbf{I}_{b}^{v}\) and \(\mathbf{I}^{u}=\mathbf{I}_{1}^{u}+\cdots+\mathbf{I}_{\alpha}^{u}\) with \(\alpha\) referring to the related super
-
-![Figure 47 Illustration of the most common valid cutting patterns of a single knot span. The actual element type is determined by the direc- tion of the trimming curve. The crosses highlight the intersection points of the trimming curve with the element](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-47-p040.png)
+![Figure 47 Illustration of the most common valid cutting patterns of a single knot span. The actual element type is determined by the direc- tion of the trimming curve. The crosses highlight the intersection points of the trimming curve with the element](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-47-p040.png)
 
 *Figure 47 Illustration of the most common valid cutting patterns of a single knot span. The actual element type is determined by the direc- tion of the trimming curve. The crosses highlight the intersection points of the trimming curve with the element: Illustration of the most common valid cutting patterns of a single knot span. The actual element type is determined by the direction of the trimming curve. The crosses highlight the intersection points of the trimming curve with the element*
+
+$$
+\mathbf{I}^{u}=\mathbf{I}_{1}^{u}+\cdots+\mathbf{I}_{q}^{u} \quad \text { and } \quad \mathbf{I}^{v}=\mathbf{I}_{1}^{v}+\cdots+\mathbf{I}_{p}^{v},
+$$
 
 where each of these index triples consists of
 
 $$
-\begin{equation*} \boldsymbol{S}^{\triangle}(r, s, t)=\sum_{|\mathbf{I}|=p+q} B_{\mathbf{I}, p+q}(r, s, t) c_{\mathbf{I}}^{\triangle} \tag{81} \end{equation*}
+\boldsymbol{S}^{\triangle}(r, s, t)=\sum_{|\mathbf{I}|=p+q} B_{\mathbf{I}, p+q}(r, s, t) c_{\mathbf{I}}^{\triangle},
 $$
 
 $$
-\begin{align*} \boldsymbol{R}_{i, j}^{a, b}\left(u_{\mathbf{I}^{u}}^{a}, v_{\mathbf{I}^{v}}^{b}\right)= & \left(1-u_{\mathbf{I}_{a}^{u}}\right) \boldsymbol{R}_{i, j}^{a-1, b}\left(u_{\mathbf{I}^{u}}^{a-1}, v_{\mathbf{I}^{v}}^{b}\right) \tag{82}\\ & +u_{\mathbf{I}^{a} a} \boldsymbol{R}_{i+1, j}^{a-1, b}\left(u_{\mathbf{I}^{u}}^{a-1}, v_{\mathbf{I}^{v}}^{b}\right) \end{align*}
+\mathbf{I}_{\beta}^{\alpha}=\left(i_{\beta}^{\alpha}, j_{\beta}^{\alpha}, k_{\beta}^{\alpha}\right) \quad \text { with } \quad i_{\beta}^{\alpha}, j_{\beta}^{\alpha}, k_{\beta}^{\alpha} \in\{0,1\},
 $$
 
-This procedure is applied to cover the valid area of every trimmed Bézier surface by a set of triangular Bézier patches. Each Bézier segment of a trimming curve is represented by an edge of such a triangular patch. Finally, those edges are replaced by the corresponding Bézier segment of the intersection curve in model space. Since this substitution is carried out for all patches, a seamless join between adjacent surfaces is obtained. The approximation error introduced may be controlled by refining the patches along the trimming curves. | | | | | | It is worth noting that Xia and Qian [314] use their reconstruction procedure as an intermediate step in order to set up a volumetric parameterization of B-Rep models. The watertight triangular Bézier surface representation provides the starting point for a construction of volumetric Bézier tetrahedra.
-
 $$
-\begin{equation*} \boldsymbol{c}_{\mathbf{I}}^{\Delta}=\sum_{\mathbf{I}^{u}+\mathbf{I}^{v}=\mathbf{I}} \frac{1}{\binom{p+q}{\mathbf{I}}} \boldsymbol{R}_{0,0}^{p, q}\left(u_{\mathbf{I}^{u}}^{p}, v_{\mathbf{I}^{v}}^{q}\right) \tag{83} \end{equation*}
+\begin{aligned} \boldsymbol{R}_{i, j}^{a, b}\left(u_{\mathbf{I}^{u}}^{a}, v_{\mathbf{I}^{v}}^{b}\right)= & \left(1-u_{\mathbf{I}_{a}^{u}}\right) \boldsymbol{R}_{i, j}^{a-1, b}\left(u_{\mathbf{I}^{u}}^{a-1}, v_{\mathbf{I}^{v}}^{b}\right) \\ & +u_{\mathbf{I}^{a} a} \boldsymbol{R}_{i+1, j}^{a-1, b}\left(u_{\mathbf{I}^{u}}^{a-1}, v_{\mathbf{I}^{v}}^{b}\right), \end{aligned}
 $$
 
-![Figure 48 Trimmed parameter space and corresponding element types](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-48-p041.png)
+$$
+\left|\mathbf{I}^{u}\right|=\left|\mathbf{I}_{1}^{u}\right|+\cdots+\left|\mathbf{I}_{p}^{u}\right|=p,
+$$
+
+$$
+\left|\mathbf{I}^{v}\right|=\left|\mathbf{I}_{1}^{v}\right|+\cdots+\left|\mathbf{I}_{q}^{v}\right|=q,
+$$
+
+This procedure is applied to cover the valid area of every trimmed Bézier surface by a set of triangular Bézier patches. Each Bézier segment of a trimming curve is represented by an edge of such a triangular patch. Finally, those edges are replaced by the corresponding Bézier segment of the intersection curve in model space. Since this substitution is carried out for all patches, a seamless join between adjacent surfaces is obtained. The approximation error introduced may be controlled by refining the patches along the trimming curves. | | | | | |
+
+$$
+|\mathbf{I}|=\left|\mathbf{I}^{u}\right|+\left|\mathbf{I}^{v}\right|=p+q .
+$$
+
+It is worth noting that Xia and Qian [314] use their reconstruction procedure as an intermediate step in order to set up a volumetric parameterization of B-Rep models. The watertight triangular Bézier surface representation provides the starting point for a construction of volumetric Bézier tetrahedra.
+
+$$
+\boldsymbol{c}_{\mathbf{I}}^{\triangle}=\sum_{\mathbf{I}^{u}+\mathbf{I}^{v}=\mathbf{I}} \frac{1}{\binom{p+q}{\mathbf{I}}} \boldsymbol{R}_{0,0}^{p, q}\left(u_{\mathbf{I}^{u}}^{p}, v_{\mathbf{I}^{v}}^{q}\right),
+$$
+
+![Figure 48 Trimmed parameter space and corresponding element types](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-48-p041.png)
 
 *Figure 48 Trimmed parameter space and corresponding element types: 1 labels untrimmed knot spans whereas − 1 denotes knot spans which are outside of the computational domain. In case of trimmed knot spans the element type indicates the number of interior edges, i.e., 3, 4, or 5. The question mark indicates a special case. The intersections of the trimming curve with the parameter lines are highlighted by crosses*
 
@@ -1158,7 +1118,7 @@ Local techniques employ a completely different philosophy than their global coun
 
 Before the actual analysis can be performed, the various element types and their position within the trimmed basis need to be identified. Interior elements are defined by nonzero knot spans that are completely within the valid domain and can be treated as in regular isogeometric analysis. Exterior ones, on the other hand, can be ignored since their entire support is outside of the domain of interest. Cut elements require special attention. One of the advantages of local approaches is that the cutting patterns of these elements are relatively simple compared to the complexity of the overall trimming curve. Figure 47 depicts topological cases of cut elements that are usually considered, e.g., [160, 161, 199, 202, 260]. It should be pointed out that other cases may exits as well, e.g., an element containing more than one trimming curve. These situations occur especially
 
-![Figure 49 Detection of cut elements according to Kim et al. [ 160 , 161 ]](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-49-p041.png)
+![Figure 49 Detection of cut elements according to Kim et al. [ 160 , 161 ]](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-49-p041.png)
 
 *Figure 49 Detection of cut elements according to Kim et al. [ 160 , 161 ]: a first assessment based on the inscribed and circumscribed circles of the element and if necessary, b further comparison of the signed distance of the element corners*
 
@@ -1168,7 +1128,7 @@ Considering the situations shown in Fig. 47, cut elements have either 3, 4, or 5
 
 The portions of the trimming curve which are within each element have to be determined in order to get a proper description of cut knot spans. In particular, the intersections of the parameter grid with the trimming curve \(\boldsymbol{C}^{t}(\tilde{u})\) are required, together with the corresponding parametric values \(\tilde{u}^{+}\). The overall element detection task consists of the classification of knot span with respect to the trimming
 
-![Figure 50 Starting point for the separation of interior and exterior ele- ments following the procedure of Schmidt et al. [ 260 ]. White knot spans are not classified yet. The arrow indicates the direction of the trimming curve](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-50-p042.png)
+![Figure 50 Starting point for the separation of interior and exterior ele- ments following the procedure of Schmidt et al. [ 260 ]. White knot spans are not classified yet. The arrow indicates the direction of the trimming curve](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-50-p042.png)
 
 *Figure 50 Starting point for the separation of interior and exterior ele- ments following the procedure of Schmidt et al. [ 260 ]. White knot spans are not classified yet. The arrow indicates the direction of the trimming curve: Starting point for the separation of interior and exterior elements following the procedure of Schmidt et al. [260]. White knot spans are not classified yet. The arrow indicates the direction of the trimming curve*
 
@@ -1198,133 +1158,95 @@ The first point addresses the detection of exterior elements based on their rela
 
 The other note is concerned with the calculation of the signed distance to trimming curves. The shortest distance \(d_{t}\) of a test point \(\boldsymbol{x}_{t}\) to a trimming curve \(\boldsymbol{C}^{t}(\tilde{u})\) is defined as
 
-![Figure 51 Determination of the correct sign in case of multiple trim- ming curves C t i ( ̃ u ) which describe an acute angle. The area which returns ambiguous signs is indicated in gray . (Courtesy of Jakob W. Steidl)](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-51-p043.png)
+![Figure 51 Determination of the correct sign in case of multiple trim- ming curves C t i ( ̃ u ) which describe an acute angle. The area which returns ambiguous signs is indicated in gray . (Courtesy of Jakob W. Steidl)](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-51-p043.png)
 
 *Figure 51 Determination of the correct sign in case of multiple trim- ming curves C t i ( ̃ u ) which describe an acute angle. The area which returns ambiguous signs is indicated in gray . (Courtesy of Jakob W. Steidl): Determination of the correct sign in case of multiple trimming curves C t i ( ̃ u) which describe an acute angle. The area which returns ambiguous signs is indicated in gray. (Courtesy of Jakob W. Steidl)*
 
-A Newton-Raphson iteration scheme is employed to determine the parametric values \(\tilde{u}^{*}\) [192, 230]. The correspond ing sign \(s\) indicates on which side of \(\boldsymbol{C}^{t}(\tilde{u})\) the point \(\boldsymbol{x}_{t}\) is located. It can be computed by the cross product of the tan gent vector \(\boldsymbol{t}=\left(t_{u}, t_{v}\right)^{\top}\) at the projected point \(\boldsymbol{x}_{p}=\boldsymbol{C}^{t}\left(\tilde{u}^{*}\right)\)
+A Newton-Raphson iteration scheme is employed to determine the parametric values \(\tilde{u}^{*}\) [192, 230]. The corresponding sign \(s\) indicates on which side of \(\boldsymbol{C}^{t}(\tilde{u})\) the point \(\boldsymbol{x}_{t}\) is located. It can be computed by the cross product of the tangent vector \(\boldsymbol{t}=\left(t_{u}, t_{v}\right)^{\top}\) at the projected point \(\boldsymbol{x}_{p}=\boldsymbol{C}^{t}\left(\tilde{u}^{*}\right)\)
 
 In case of non-smooth trimming curves, more than one minimum might exist as pointed out in [287]. From a practical point of view this is only relevant if these minima have different signs. Such cases appear in the vicinity of sharp corners as shown in Fig. 51. The correct sign can be determined by the projected distance calculated by the dot product
 
 $$
-s=\left\{\begin{array}{r} 1 \text { if } \kappa_{1}>\kappa_{2}, \tag{93}\\ -1 \text { otherwise, } \end{array}\right.
+s=\operatorname{sign}\left\{\min \left\{e_{1}, e_{2}\right\}\right\} .
 $$
 
 $$
-\begin{equation*} G(u, v):=\sqrt{\operatorname{det}\left(\mathbf{J}_{\mathcal{X}}^{\mathrm{T}}(u, v) \mathbf{J}_{\mathcal{X}}(u, v)\right)}, \tag{96} \end{equation*}
+s=\left\{\begin{array}{r} 1 \text { if } \kappa_{1}>\kappa_{2}, \\ -1 \text { otherwise, } \end{array}\right.
+$$
+
+$$
+G(u, v):=\sqrt{\operatorname{det}\left(\mathbf{J}_{\mathcal{X}}^{\top}(u, v) \mathbf{J}_{\mathcal{X}}(u, v)\right)},
 $$
 
 where \(\kappa_{1}\) denotes the curvature of the curve that ends at the corner.
 
 $$
-\begin{equation*} J_{\hat{\tau}}\left(\xi_{g}, \eta_{g}\right)=\operatorname{det}\left(\mathbf{J}\left(\xi_{g}, \eta_{g}\right)\right), \tag{97} \end{equation*}
+J_{\hat{\tau}}\left(\xi_{g}, \eta_{g}\right)=\operatorname{det}\left(\mathbf{J}\left(\xi_{g}, \eta_{g}\right)\right),
 $$
 
 #### 5.3.2 Integration
 
-Various strategies to integrate cut elements \(\tilde{\tau} \in \mathcal{A}^{\mathrm{v}}\) are out lined in this subsection. In general, numerical integration is performed using conventional Gauss-Legendre quadrature. The integral over each \(\tilde{\tau}\)
+Various strategies to integrate cut elements \(\tilde{\tau} \in \mathcal{A}^{\mathrm{v}}\) are outlined in this subsection. In general, numerical integration is performed using conventional Gauss-Legendre quadrature. The integral over each \(\tilde{\tau}\)
 
 $$
-\begin{equation*} d_{t}=\min \left\{\left\|\boldsymbol{C}^{t}(\tilde{u})-\boldsymbol{x}_{t}\right\|\right\}=\left\|\boldsymbol{C}^{t}\left(\tilde{u}^{*}\right)-\boldsymbol{x}_{t}\right\| . \tag{89} \end{equation*}
+d_{t}=\min \left\{\left\|\boldsymbol{C}^{t}(\tilde{u})-\boldsymbol{x}_{t}\right\|\right\}=\left\|\boldsymbol{C}^{t}\left(\tilde{u}^{*}\right)-\boldsymbol{x}_{t}\right\| .
 $$
 
-![Figure 52 Distribution of quadrature points indicated by black points over a regular patch](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-52-p043.png)
+![Figure 52 Distribution of quadrature points indicated by black points over a regular patch](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-52-p043.png)
 
 *Figure 52 Distribution of quadrature points indicated by black points over a regular patch: Distribution of quadrature points indicated by black points over a regular patch*
 
 $$
-\begin{equation*} I_{\tilde{\tau}}=\int_{\Omega_{\tilde{v}}} f(\boldsymbol{x}) \mathrm{d} \Omega_{\tilde{\tau}} \tag{94} \end{equation*}
+I_{\tilde{\tau}}=\int_{\Omega_{\tilde{\tau}}} f(\boldsymbol{x}) \mathrm{d} \Omega_{\tilde{\tau}}
 $$
 
 is substituted by a weighted sum of point evaluations
 
 $$
-\begin{equation*} s=t_{u} d_{v}-t_{v} d_{u} . \tag{90} \end{equation*}
+s=t_{u} d_{v}-t_{v} d_{u} .
 $$
 
 $$
-\begin{equation*} I_{\tilde{\tau}} \approx \sum_{g=1}^{n} f\left(\boldsymbol{y}_{g}\right) G\left(u_{g}, v_{g}\right) J_{\hat{\tau}}\left(\xi_{g}, \eta_{g}\right) w_{g} . \tag{95} \end{equation*}
+I_{\tilde{\tau}} \approx \sum_{g=1}^{n} f\left(\boldsymbol{y}_{g}\right) G\left(u_{g}, v_{g}\right) J_{\tilde{\tau}}\left(\xi_{g}, \eta_{g}\right) w_{g} .
 $$
 
-The related quadrature points \(\boldsymbol{y}\) and the correspond ing weights \(w\) are specified in the reference element \(\grave{\tau}=[-1,1]^{2}\). The coordinates for the pointwise evalu ation of the integrand \(f\) are determined by the inte gral transformation \(\mathcal{X}_{r}(\xi, \eta): \mathbb{R}^{2} \mapsto \mathbb{R}^{2}\) from \(\grave{\tau}\) to \(\tilde{\tau}\) and the geometrical mapping \(\mathcal{X}(u, v): \mathbb{R}^{2} \mapsto \mathbb{R}^{3}\), i.e., \(\boldsymbol{y}_{g}=\mathcal{X}\left(u_{g}, v_{g}\right)=\mathcal{X}\left(\mathcal{X}_{r}\left(\xi_{g}, \eta_{g}\right)\right)\) as illustrated in
+The related quadrature points \(\boldsymbol{y}\) and the corresponding weights \(w\) are specified in the reference element \(\grave{\tau}=[-1,1]^{2}\). The coordinates for the pointwise evaluation of the integrand \(f\) are determined by the integral transformation \(\mathcal{X}_{r}(\xi, \eta): \mathbb{R}^{2} \mapsto \mathbb{R}^{2}\) from \(\grave{\tau}\) to \(\tilde{\tau}\) and the geometrical mapping \(\mathcal{X}(u, v): \mathbb{R}^{2} \mapsto \mathbb{R}^{3}\), i.e., \(\quad \boldsymbol{y}_{g}=\mathcal{X}\left(u_{g}, v_{g}\right)=\mathcal{X}\left(\mathcal{X}_{r}\left(\xi_{g}, \eta_{g}\right)\right)\) as illustrated in
 
 $$
-\begin{align*} & e_{i}=v \cdot \boldsymbol{t}_{i}, \quad i=1,2 \tag{91}\\ & s=\operatorname{sign}\left\{\min \left\{e_{1}, e_{2}\right\}\right\} \tag{92} \end{align*}
+e_{i}=\boldsymbol{v} \cdot \boldsymbol{t}_{i}, \quad i=1,2,
 $$
 
-is evaluated with respect to the reference coordinates \(\xi_{g}\) and \(\eta_{g}\) of the integration point \(\boldsymbol{y}_{g}\). The definition of the inte gral transformation \(\mathcal{X}_{r}\) and the related \(J_{\tilde{\tau}}\) is straightforward in case of regular elements. However, the domain of cut elements is more complex and thus, the definition of \(\mathcal{X}_{r}\) is more involved.
+is evaluated with respect to the reference coordinates \(\xi_{g}\) and \(\eta_{g}\) of the integration point \(\boldsymbol{y}_{g}\). The definition of the integral transformation \(\mathcal{X}_{r}\) and the related \(J_{\hat{\tau}}\) is straightforward in case of regular elements. However, the domain of cut elements is more complex and thus, the definition of \(\mathcal{X}_{r}\) is more involved.
 
 Numerical integration of cut elements is required in various simulation schemes. Besides the analysis of trimmed geometries, it is also needed in the context of fictitious domain methods and the extended finite element method. There are numerous approaches and a vast body of literature proposing strategies to specify a proper integration of 𝜏 ̃ . It may be performed so that the trimming curve is taken into account in an exact or approximate manner. In this paper, the main focus is on techniques presented in the context of trimmed NURBS objects. They can be broadly classified into the following categories: (i) local reconstruction, (ii) approximate treatment, and (iii) exact treatment. The former is performed in model space, while the others operate in the parameter space in general.
 
-5.3.2.1 Local Reconstruction Schmidt et al. [260] sug gested to perform the adjustment of the integration region by a local reconstruction of the trimmed patch. Therefore, each cut element in the model space \(\tau\) is remodeled as a single reconstruction patch \(\hat{\tau}\). In particular, \(\hat{\tau}\) is specified as a Bézier patch with degrees \(\hat{p} \geqslant p\) and \(\hat{q} \geqslant q\), where \(p\) and \(q\) refer to the degrees of the origin surface. The key idea is to represent \(\hat{\tau}\) in terms of the original control points of \(\tau\). A transformation matrix \(\mathbf{T}\) provides the relationship between the control points of the original and reconstructed patch. It can be computed by means of a least squares approximation where the system of equations is given by
+5.3.2.1 Local Reconstruction Schmidt et al. [260] suggested to perform the adjustment of the integration region by a local reconstruction of the trimmed patch. Therefore, each cut element in the model space \(\tau\) is remodeled as a single reconstruction patch \(\hat{\tau}\). In particular, \(\hat{\tau}\) is specified as a Bézier patch with degrees \(\hat{p} \geqslant p\) and \(\hat{q} \geqslant q\), where \(p\) and \(q\) refer to the degrees of the origin surface. The key idea is to represent \(\hat{\tau}\) in terms of the original control points of \(\tau\). A transformation matrix \(\mathbf{T}\) provides the relationship between the control points of the original and reconstructed patch. It can be computed by means of a least squares approximation where the system of equations is given by
 
-This equation consists of representing the (unknown) control points of \(\hat{\tau}\), the (known) control points of \(\tau\), and a set of sampling points \(\boldsymbol{x}^{s}\) interpo lated by both patches. The total number of control points involved is determined by the number of non-zero basis
+This equation consists of representing the (unknown) control points of \(\hat{\tau}\), the (known) control points of \(\tau\), and a set of sampling points \(\boldsymbol{x}^{s}\) interpolated by both patches. The total number of control points involved is determined by the number of non-zero basis
 
-![Figure 53 Approximation of the cut element by a polytope ̃𝜌 . The con- trol points of the trimming curve are marked by circles](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-53-p044.png)
+![Figure 53 Approximation of the cut element by a polytope ̃𝜌 . The con- trol points of the trimming curve are marked by circles](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-53-p044.png)
 
 *Figure 53 Approximation of the cut element by a polytope ̃𝜌 . The con- trol points of the trimming curve are marked by circles: Approximation of the cut element by a polytope ̃𝜌 . The control points of the trimming curve are marked by circles*
 
-$$
-\mathbf{B}=\left[\begin{array}{ccc} B_{0, p}\left(u_{0}^{s}\right) B_{0, q}\left(v_{0}^{s}\right) & \cdots & B_{p, p}\left(u_{0}^{s}\right) B_{q, q}\left(v_{0}^{s}\right) \tag{101}\\ \vdots & \ddots & \vdots \\ B_{0, p}\left(u_{l}^{s}\right) B_{0, q}\left(v_{l}^{s}\right) & \cdots & B_{p, p}\left(u_{l}^{s}\right) B_{q, q}\left(v_{l}^{s}\right) \end{array}\right],
-$$
-
 Note that a correlation between the parametric values has to be established so that \(\boldsymbol{x}_{i}^{s}=\tau\left(u_{i}^{s}, v_{i}^{s}\right)=\hat{\tau}\left(\hat{u}_{i}^{s}, \hat{v}_{i}^{s}\right), i=0, \ldots, l\).
 
-$$
-\begin{equation*} \hat{\mathbf{B}}^{\top} \hat{\mathbf{B}} \hat{\mathbf{P}}=\hat{\mathbf{B}}^{\top} \mathbf{S}=\hat{\mathbf{B}}^{\top} \mathbf{B P} \tag{102} \end{equation*}
-$$
-
-which yields the definition of the transformation matrix
-
-$$
-\begin{equation*} \hat{\mathbf{B}} \hat{\mathbf{P}}=\mathbf{S}=\mathbf{B P} \tag{98} \end{equation*}
-$$
-
-$$
-\begin{equation*} \mathbf{T}=\left(\hat{\mathbf{B}}^{\mathrm{T}} \hat{\mathbf{B}}\right)^{-1} \hat{\mathbf{B}}^{\mathrm{T}} \mathbf{B} \tag{103} \end{equation*}
-$$
-
-and the relation between the control points
-
-$$
-\hat{\mathbf{P}}=\left[\begin{array}{c} \hat{c}_{0} \tag{99}\\ \vdots \\ \hat{c}_{\hat{n}-1} \end{array}\right], \quad \mathbf{P}=\left[\begin{array}{c} \boldsymbol{c}_{0} \\ \vdots \\ \boldsymbol{c}_{n-1} \end{array}\right], \quad \text { and } \quad \mathbf{S}=\left[\begin{array}{c} \boldsymbol{x}_{0}^{s} \\ \vdots \\ \boldsymbol{x}_{l}^{s} \end{array}\right]
-$$
-
-$$
-\begin{equation*} \hat{\mathbf{P}}=\mathbf{T P} . \tag{104} \end{equation*}
-$$
-
-As a result, numerical integration can be performed based on the regular reconstruction patch \(\hat{\tau}\) and the sim ple mapping of the regular integration can be applied. The values obtained are distributed to the control points of the original patch using the transformation matrix \(\mathbf{T}\). For more details, the interested reader is referred to [260].
+which yields the definition of the transformation matrix and the relation between the control points As a result, numerical integration can be performed based on the regular reconstruction patch \(\hat{\tau}\) and the simple mapping of the regular integration can be applied. The values obtained are distributed to the control points of the original patch using the transformation matrix \(\mathbf{T}\). For more details, the interested reader is referred to [260].
 
 This procedure can be directly applied to cut elements of types 3 and 4 as specified in Sect. 5.3.1. Type 5 elements may be subdivided into two four-sided regions. A drawback of the local reconstruction scheme is that it introduces an additional approximation error since the system of equations (102) cannot be solved exactly. Moreover, the stability of the computation of the transformation matrix might be affected if only a very small region of a cut element needs to be reconstructed.
 
-$$
-\hat{\mathbf{B}}=\left[\begin{array}{ccc} \hat{B}_{0, \hat{p}}\left(\hat{u}_{0}^{s}\right) \hat{B}_{0, \hat{q}}\left(\hat{v}_{0}^{s}\right) & \cdots & \hat{B}_{\hat{p}, \hat{p}}\left(\hat{u}_{0}^{s}\right) \hat{B}_{\hat{q}, \hat{q}}\left(\hat{v}_{0}^{s}\right) \tag{100}\\ \vdots & \ddots & \vdots \\ \hat{B}_{0, \hat{p}}\left(\hat{u}_{l}^{s}\right) \hat{B}_{0, \hat{q}}\left(\hat{v}_{l}^{s}\right) & \cdots & \hat{B}_{\hat{p}, \hat{p}}\left(\hat{u}_{l}^{s}\right) \hat{B}_{\hat{q}, \hat{q}}\left(\hat{v}_{l}^{s}\right) \end{array}\right]
-$$
-
 5.3.2.2 Approximated Trimming curve The following two schemes approximate the trimming curve \(\boldsymbol{C}^{t}\) in order to define proper integration points within the parameter space.
 
-$$
-\begin{equation*} \sum_{i=1}^{m} f_{j}\left(u_{i}, v_{i}\right) w_{i}=\int_{\Omega_{\tilde{p}}} f_{j}(u, v) \mathrm{d} \Omega_{\tilde{\rho}}, \quad j=1, \ldots, n \tag{105} \end{equation*}
-$$
-
-![Figure 54 Sub-cell structure of a single cut element](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-54-p045.png)
+![Figure 54 Sub-cell structure of a single cut element](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-54-p045.png)
 
 *Figure 54 Sub-cell structure of a single cut element: a conventional approach with quadrature points distributed within the valid (black points) and exterior (green points) domain and b reduced approach integrating over the whole element (orange points) and the valid domain (black points). The sub-cells are indicated by dashed lines. (Color figure online)*
 
-One uses a linear approximation of \(\boldsymbol{C}^{t}\) to set up a tailored integration rule, whereas the other applies an adaptive sub division to approximate the domain of the cut element.
+One uses a linear approximation of \(\boldsymbol{C}^{t}\) to set up a tailored integration rule, whereas the other applies an adaptive subdivision to approximate the domain of the cut element.
 
-A tailored integration rule can be established for each cut element \(\tilde{\tau}\) as proposed in [211, 305, 306]. The control polygon \({ }^{20}\) of \(\boldsymbol{C}^{t}\) is used to represent \(\tilde{\tau}\) by a polytope \(\tilde{\rho}\) as shown in Fig. 53. The integral over \(\tilde{\rho}\) can be reduced to a sum of line integrals over the edges of \(\tilde{\rho}\) using Lasserre's theorems [183]. Therefore, the integration domain \(\Omega_{\tilde{\rho}}\) has to be convex. Thus, a preprocessing step is applied to rep resent non-convex regions by a combination of convex ones. The line integrals provide reference solutions for the
+A tailored integration rule can be established for each cut element \(\tilde{\tau}\) as proposed in [211, 305, 306]. The control polygon \({ }^{20}\) of \(\boldsymbol{C}^{t}\) is used to represent \(\tilde{\tau}\) by a polytope \(\tilde{\rho}\) as shown in Fig. 53. The integral over \(\tilde{\rho}\) can be reduced to a sum of line integrals over the edges of \(\tilde{\rho}\) using Lasserre's theorems [183]. Therefore, the integration domain \(\Omega_{\tilde{\rho}}\) has to be convex. Thus, a preprocessing step is applied to represent non-convex regions by a combination of convex ones. The line integrals provide reference solutions for the 20 To be precise, it is suggested to use the control points of the intersection curves in the model space and to apply point inversion to determine their location in the parameter space. However, there is no particular reason why the control polygon of the trimming curve cannot be used directly.
 
-$$
-\begin{equation*} I^{c}=\sum_{i=1}^{I} I_{\tilde{\tau}_{i}^{\mathrm{V}}}^{\mathrm{V}}\left(\alpha^{\mathrm{v}}\right)+\sum_{j=1}^{J} I_{\tilde{\tau}_{j}^{\boxplus}}^{-}\left(\alpha^{-}\right) . \tag{106} \end{equation*}
-$$
+A completely different strategy for the integration of cut elements in based on adaptive subdivision. Researchers who developed the finite cell method applied this technique to trimmed geometries [107, 239, 253, 254]. The basic idea is to use a composed Gauss quadrature that aggregates integration points along the trimming curve. A cut element \(\tilde{\tau}\) is decomposed into axis-aligned sub-cells \(\tilde{\tau}^{\boxplus}\) based on a treestructure, i.e., a quadtree in two dimensions. Starting from the initial cut element, each sub-cell is further subdivided into equally spaced sub-cells if it contains the trimming curve as displayed in Fig. 54a. This recursive procedure is performed up to a user-defined maximal depth. Following the spirit of fictitious domain methods the integral \(I^{c}\) over the complete element is defined as
 
-20 To be precise, it is suggested to use the control points of the intersection curves in the model space and to apply point inversion to determine their location in the parameter space. However, there is no particular reason why the control polygon of the trimming curve cannot be used directly.
-
-A completely different strategy for the integration of cut elements in based on adaptive subdivision. Researchers who developed the finite cell method applied this technique to trimmed geometries [107, 239, 253, 254]. The basic idea is to use a composed Gauss quadrature that aggregates inte gration points along the trimming curve. A cut element \(\tilde{\tau}\) is decomposed into axis-aligned sub-cells \(\tilde{\tau}^{\boxplus}\) based on a tree structure, i.e., a quadtree in two dimensions. Starting from the initial cut element, each sub-cell is further subdivided into equally spaced sub-cells if it contains the trimming curve as displayed in Fig. 54a. This recursive procedure is performed up to a user-defined maximal depth. Following the spirit of fictitious domain methods the integral \(I^{c}\) over the complete element is defined as
-
-The factors \(I_{\tilde{\tau}_{i}^{\boxplus}}^{\mathrm{V}}\) and \(I_{\tilde{\tau}_{j}^{\boxplus}}^{-}\)are the integrals over the valid domain \(\mathcal{A}^{\mathrm{v}}\) and the complementary exterior domain \(\mathcal{A}^{-}\), respectively. Integration points in the interior of \(\mathcal{A}^{\mathrm{v}}\) are multiplied by \(\alpha^{\mathrm{v}}=1\), whereas exterior integration points are multiplied by a value that is almost zero, e.g., \(\alpha^{-}=10^{-14}\) as suggested in [253]. The integration pro cedure can be improved with respect to the number of quadrature points by where \(I_{\tilde{\tilde{\tau}}}^{-}\left(\alpha^{-}\right)\)represents the integral over the whole cut ele ment without taken the trimming curve into account. The integration over the valid domain is performed as before by the composite quadrature, yet with another weighting fac tor, i.e., \(\left(\alpha^{\mathrm{v}}-\alpha^{-}\right)\). Such an improved sub-cell integration is illustrated in Fig. 54b. The key features of this approach are its simplicity and generality. The definition of integral transformation \(\mathcal{X}_{r}\) and its Jacobian is straightforward, due to the axis-aligned shape of the sub-cells. Again, all cutting patterns (includ ing invalid ones) can be addressed with a single algorithm. Moreover, the algorithm can be easily extended to higher dimensions. The downside is that the trimming curve is only approximated. Consequently, the integration region is not represented exactly and an additional approxima tion error is introduced. In fact, the accuracy of the integral ceases at a certain threshold [173,175]. This threshold may be improved by the subdivision depth, but a fine resolution of sub-cells results in a vast number of quadrature points. Further, refined sub-cells do not converge to the trimming curve in contrast to the previous approach. One of the great successes of the finite cell method was the demonstrated ability to achieve higher rates of convergence for higher order elements and splines, and even exponential rates in the context of the \(p\)-method.
+The factors \(I_{\tilde{\tau}_{i}^{\boxplus} \boxplus}^{\vee}\) and \(I_{\tilde{\tau}_{j}^{\boxplus}}^{-}\)are the integrals over the valid domain \(\mathcal{A}^{\mathrm{v}}\) and the complementary exterior domain \(\mathcal{A}^{-}\), respectively. Integration points in the interior of \(\mathcal{A}^{\mathrm{v}}\) are multiplied by \(\alpha^{\mathrm{v}}=1\), whereas exterior integration points are multiplied by a value that is almost zero, e.g., \(\alpha^{-}=10^{-14}\) as suggested in [253]. The integration procedure can be improved with respect to the number of quadrature points by where \(I_{\tilde{\tau}}^{-}\left(\alpha^{-}\right)\)represents the integral over the whole cut element without taken the trimming curve into account. The integration over the valid domain is performed as before by the composite quadrature, yet with another weighting factor, i.e., \(\left(\alpha^{\mathrm{v}}-\alpha^{-}\right)\). Such an improved sub-cell integration is illustrated in Fig. 54b. The key features of this approach are its simplicity and generality. The definition of integral transformation \(\mathcal{X}_{r}\) and its Jacobian is straightforward, due to the axis-aligned shape of the sub-cells. Again, all cutting patterns (including invalid ones) can be addressed with a single algorithm. Moreover, the algorithm can be easily extended to higher dimensions. The downside is that the trimming curve is only approximated. Consequently, the integration region is not represented exactly and an additional approximation error is introduced. In fact, the accuracy of the integral ceases at a certain threshold [173,175]. This threshold may be improved by the subdivision depth, but a fine resolution of sub-cells results in a vast number of quadrature points. Further, refined sub-cells do not converge to the trimming curve in contrast to the previous approach. One of the great successes of the finite cell method was the demonstrated ability to achieve higher rates of convergence for higherorder elements and splines, and even exponential rates in the context of the \(p\)-method.
 
 ##### 5.3.2.3 Exact Trimming Curve
 
@@ -1333,22 +1255,18 @@ The following techniques focus on defining a proper mapping  r from the refer
 In contrast to the sub-cells of the previous scheme, the regions \(\tilde{\tau}^{\square}\) are not aligned with the axes of the parameter space and at least one \(\tilde{\tau}^{\square}\) has an edge which is described by the portion of the trimming curve \(\boldsymbol{C}^{t}\) within \(\tilde{\tau}\). the portion of the trimming curve \(\boldsymbol{C}^{t}\) within \(\tilde{\tau}\). There are various ways to specify \(\mathcal{X}_{r}\). Ruled surface (26) and Coons patch (35) interpolation may be applied, where the portion of the trimming curve within \(\tilde{\tau}\) is considered
 
 $$
-\begin{align*} \phi(\tilde{u}) & =\mathcal{X}_{s, t}^{-1} \cdot \boldsymbol{C}^{t}(\tilde{u}) \\ & =\left[\begin{array}{ll} x_{3}^{\Delta}-x_{2}^{\Delta} & x_{1}^{\Delta}-x_{2}^{\Delta} \end{array}\right]^{-1}\left(C^{t}(\tilde{u})-x_{2}^{\Delta}\right) \tag{111} \end{align*}
+\begin{aligned} \phi(\tilde{u}) & =\mathcal{X}_{s, t}^{-1} \cdot \boldsymbol{C}^{t}(\tilde{u}) \\ & =\left[\begin{array}{ll} x_{3}^{\Delta}-x_{2}^{\Delta} & x_{1}^{\Delta}-x_{2}^{\Delta} \end{array}\right]^{-1}\left(C^{t}(\tilde{u})-x_{2}^{\Delta}\right) . \end{aligned}
 $$
 
-for the construction [199, 307]. An example of local ruled surface mappings for various element types are shown in Fig. 55a. These methods may be interpreted as local coun terparts of the global reconstruction schemes presented in Sects. 5.2.1 and 5.2.2. It is worth noting that approaches based on the blending function method [95, 173, 174] can be included into this category, because this method also employs a transfinite mapping [103]. In the nested Jaco bian approach, integral transformation is also defined by a local NURBS surface combined with a nested subdivision [38, 227]. Thus, \(\mathcal{X}_{r}\) consists of the local surface mapping and an additional transformation to the subregion. A cor responding distribution of quadrature points is shown in Fig. 55b. In contrast to both previous references, i.e., [199, 307], type 5 elements are not decomposed into three trian gular ones, but a bisection of the knot span is performed. Recently, an adaptive Gaussian integration procedure has been proposed [37]. This variation of the nested Jacobian approach defines the local surface parameterization within the reference space instead of the trimmed parameter space as illustrated in Fig. 55c. Therefore, the trimming curve is transformed to the reference space by scaling and rota tion. The integration points and their weights are adapted by scaling the \(\eta\)-direction such that the points are located within the region described by the transformed trimming curve. The motivation for the adaptive Gaussian integration procedure is to treat the various cutting patterns by a single approach.
+for the construction [199, 307]. An example of local ruled surface mappings for various element types are shown in Fig. 55a. These methods may be interpreted as local counterparts of the global reconstruction schemes presented in Sects. 5.2.1 and 5.2.2. It is worth noting that approaches based on the blending function method [95, 173, 174] can be included into this category, because this method also employs a transfinite mapping [103]. In the nested Jacobian approach, integral transformation is also defined by a local NURBS surface combined with a nested subdivision [38, 227]. Thus, \(\mathcal{X}_{r}\) consists of the local surface mapping and an additional transformation to the subregion. A corresponding distribution of quadrature points is shown in Fig. 55b. In contrast to both previous references, i.e., [199, 307], type 5 elements are not decomposed into three triangular ones, but a bisection of the knot span is performed. Recently, an adaptive Gaussian integration procedure has been proposed [37]. This variation of the nested Jacobian approach defines the local surface parameterization within the reference space instead of the trimmed parameter space as illustrated in Fig. 55c. Therefore, the trimming curve is transformed to the reference space by scaling and rotation. The integration points and their weights are adapted by scaling the \(\eta\)-direction such that the points are located within the region described by the transformed trimming curve. The motivation for the adaptive Gaussian integration procedure is to treat the various cutting patterns by a single approach.
 
 Another very common strategy is to adopt the integration scheme developed in the context of the NURBS-enhanced finite element method [147, 148, 160, 161, 272, 273]. Using this scheme, every cut element is subdivided into a set of triangles. Those triangles that only consist of straight edges are subjected to conventional integration rules for linear triangles. The other triangles are treated by a series of mappings that take the curved edge into account
 
-Figure 55d displays the components of this series. Suppose the corner nodes of the triangle in the trimmed parameter space are labeled \(\boldsymbol{x}_{1}^{\Delta}\) to \(\boldsymbol{x}_{3}^{\Delta}\), where the beginning and the end of the trimming curve portion within the considered trian gle are denoted by \(\boldsymbol{x}_{2}^{\Delta}\) and \(\boldsymbol{x}_{3}^{\Delta}\), respectively. The transforma tion \(\mathcal{X}_{s, t}: \boldsymbol{x}(s, t) \mapsto \boldsymbol{x}(u, v)\) describes the mapping of a linear three node element
-
-$$
-\begin{equation*} \tilde{\tau}=\bigcup_{i=1}^{I} \tilde{\tau}_{i}^{\square} \tag{108} \end{equation*}
-$$
+Figure 55d displays the components of this series. Suppose the corner nodes of the triangle in the trimmed parameter space are labeled \(\boldsymbol{x}_{1}^{\Delta}\) to \(\boldsymbol{x}_{3}^{\Delta}\), where the beginning and the end of the trimming curve portion within the considered triangle are denoted by \(\boldsymbol{x}_{2}^{\Delta}\) and \(\boldsymbol{x}_{3}^{\Delta}\), respectively. The transformation \(\mathcal{X}_{s, t}: \boldsymbol{x}(s, t) \mapsto \boldsymbol{x}(u, v)\) describes the mapping of a linear three node element
 
 In order to address the curved edge, the trimming curve is transformed into the s, t-coordinate system by
 
-![Figure 55 Distribution of quadrature points due to various approaches which represent the trimming curve exactly. Dashed lines indicate a subdi- vision of a cut element into integration regions](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-55-p047.png)
+![Figure 55 Distribution of quadrature points due to various approaches which represent the trimming curve exactly. Dashed lines indicate a subdi- vision of a cut element into integration regions](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-55-p047.png)
 
 *Figure 55 Distribution of quadrature points due to various approaches which represent the trimming curve exactly. Dashed lines indicate a subdi- vision of a cut element into integration regions: Distribution of quadrature points due to various approaches which represent the trimming curve exactly. Dashed lines indicate a subdivision of a cut element into integration regions*
 
@@ -1358,47 +1276,47 @@ In order to address the curved edge, the trimming curve is transformed into the 
 
 - (b) Nested Jacobian approach
 
-The next mapping \(\mathcal{X}_{\tilde{u}, \zeta}: \boldsymbol{x}(\tilde{u}, \zeta) \mapsto \boldsymbol{x}(s, t)\) converts the tri angular domain into a rectangular one which possesses straight edges only. It is given by
+The next mapping \(\mathcal{X}_{\tilde{u}, \zeta}: \boldsymbol{x}(\tilde{u}, \zeta) \mapsto \boldsymbol{x}(s, t)\) converts the triangular domain into a rectangular one which possesses straight edges only. It is given by
 
-Finally, the transformation \(\mathcal{X}_{\xi, \eta}: \boldsymbol{x}(\xi, \eta) \mapsto \boldsymbol{x}(\tilde{u}, \zeta)\) of the reference space \([-1,1]^{2}\) to the rectangular region is per formed by
-
-$$
-\mathcal{X}_{\xi, \eta}:=\left\{\begin{array}{l} \tilde{u}=\frac{\xi}{2}\left(\tilde{u}_{e}-\tilde{u}_{b}\right)+\frac{1}{2}\left(\tilde{u}_{e}+\tilde{u}_{b}\right) \tag{113}\\ \zeta=\frac{\eta}{2}+\frac{1}{2} \end{array}\right.
-$$
+Finally, the transformation \(\mathcal{X}_{\xi, \eta}: \boldsymbol{x}(\xi, \eta) \mapsto \boldsymbol{x}(\tilde{u}, \zeta)\) of the reference space \([-1,1]^{2}\) to the rectangular region is performed by
 
 $$
-\mathbf{J}_{s, t}=\left[\begin{array}{cc} u_{3}^{\Delta}-u_{2}^{\Delta} & u_{3}^{\Delta}-v_{2}^{\Delta} \tag{115}\\ u_{1}^{\Delta}-u_{2}^{\Delta} & v_{1}^{\Delta}-v_{2}^{\Delta} \end{array}\right],
+\mathcal{X}_{\xi, \eta}:=\left\{\begin{array}{l} \tilde{u}=\frac{\xi}{2}\left(\tilde{u}_{e}-\tilde{u}_{b}\right)+\frac{1}{2}\left(\tilde{u}_{e}+\tilde{u}_{b}\right) \\ \zeta=\frac{\eta}{2}+\frac{1}{2}, \end{array}\right.
 $$
 
 $$
-\mathbf{J}_{\tilde{u}, \zeta}=\left[\begin{array}{cc} \frac{\partial \phi_{s}(\tilde{u})}{\partial \tilde{u}}(1-\varsigma) & \frac{\partial \phi_{t}(\tilde{u})}{\partial \tilde{u}}(1-\varsigma) \tag{116}\\ -\phi_{s}(\tilde{u}) & 1-\phi_{t}(\tilde{u}) \end{array}\right],
-$$
-
-where \(\tilde{u}_{b}\) and \(\tilde{u}_{e}\) are the parametric values of the beginning and the end of the trimming curve portion within the trian gle, i.e., \(\boldsymbol{C}^{t}\left(\tilde{u}_{b}\right)=\boldsymbol{x}_{2}^{\Delta}\) and \(\boldsymbol{C}^{t}\left(\tilde{u}_{e}\right)=\boldsymbol{x}_{3}^{\Delta}\). The Jacobian deter minant of the overall mapping \(\mathcal{X}_{r}\) is determined by
-
-$$
-\mathcal{X}_{\tilde{u}, \zeta}:=\left\{\begin{align*} s & =\phi_{s}(\tilde{u})(1-\zeta) \tag{112}\\ t & =\phi_{t}(\tilde{u})(1-\zeta)+\zeta . \end{align*}\right.
+\mathbf{J}_{s, t}=\left[\begin{array}{cc} u_{3}^{\Delta}-u_{2}^{\Delta} & u_{3}^{\Delta}-v_{2}^{\Delta} \\ u_{1}^{\Delta}-u_{2}^{\Delta} & v_{1}^{\Delta}-v_{2}^{\Delta} \end{array}\right],
 $$
 
 $$
-\begin{equation*} J_{\tilde{t}}=\operatorname{det}\left(\mathbf{J}_{s, t}\right) \operatorname{det}\left(\mathbf{J}_{\tilde{u}, \zeta}\right) \operatorname{det}\left(\mathbf{J}_{\xi, \eta}\right), \tag{114} \end{equation*}
+\mathbf{J}_{\tilde{u}, \zeta}=\left[\begin{array}{cc} \frac{\partial \phi_{s}(\tilde{u})}{\partial \tilde{u}}(1-\varsigma) & \frac{\partial \phi_{t}(\tilde{u})}{\partial \tilde{u}}(1-\varsigma) \\ -\phi_{s}(\tilde{u}) & 1-\phi_{t}(\tilde{u}) \end{array}\right],
 $$
 
-![Figure 56 Comparison of the distribution of Gauss points within a cut element of type 3 based on the NURBS enhanced FEM mapping ( circles ) and ruled surface parameterization ( crosses ). The trimming curve is described by either a a B-spline curve or b a NURBS curve](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-56-p048.png)
+where \(\tilde{u}_{b}\) and \(\tilde{u}_{e}\) are the parametric values of the beginning and the end of the trimming curve portion within the triangle, i.e., \(\boldsymbol{C}^{t}\left(\tilde{u}_{b}\right)=\boldsymbol{x}_{2}^{\Delta}\) and \(\boldsymbol{C}^{t}\left(\tilde{u}_{e}\right)=\boldsymbol{x}_{3}^{\Delta}\). The Jacobian determinant of the overall mapping \(\mathcal{X}_{r}\) is determined by
+
+$$
+\mathcal{X}_{\tilde{u}, \zeta}:=\left\{\begin{array}{l} s=\phi_{s}(\tilde{u})(1-\zeta), \\ t=\phi_{t}(\tilde{u})(1-\zeta)+\zeta . \end{array}\right.
+$$
+
+$$
+J_{\grave{\tau}}=\operatorname{det}\left(\mathbf{J}_{s, t}\right) \operatorname{det}\left(\mathbf{J}_{\tilde{u}, \zeta}\right) \operatorname{det}\left(\mathbf{J}_{\xi, \eta}\right),
+$$
+
+![Figure 56 Comparison of the distribution of Gauss points within a cut element of type 3 based on the NURBS enhanced FEM mapping ( circles ) and ruled surface parameterization ( crosses ). The trimming curve is described by either a a B-spline curve or b a NURBS curve](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-56-p048.png)
 
 *Figure 56 Comparison of the distribution of Gauss points within a cut element of type 3 based on the NURBS enhanced FEM mapping ( circles ) and ruled surface parameterization ( crosses ). The trimming curve is described by either a a B-spline curve or b a NURBS curve: Comparison of the distribution of Gauss points within a cut element of type 3 based on the NURBS enhanced FEM mapping (circles) and ruled surface parameterization (crosses). The trimming curve is described by either a a B-spline curve or b a NURBS curve*
 
 $$
-\mathbf{J}_{\xi, \eta}=\left[\begin{array}{cc} \frac{1}{2}\left(\tilde{u}_{e}-\tilde{u}_{b}\right) & 0 \tag{117}\\ 0 & \frac{1}{2} \end{array}\right] .
+\mathbf{J}_{\xi, \eta}=\left[\begin{array}{cc} \frac{1}{2}\left(\tilde{u}_{e}-\tilde{u}_{b}\right) & 0 \\ 0 & \frac{1}{2} \end{array}\right] .
 $$
 
-The coefficients \(u_{i}^{\Delta}\) and \(v_{i}^{\Delta}\) refer to the coordinates of the corner nodes \(\boldsymbol{x}_{i}^{\Delta}\) and the derivative of the transformed trim ming curve is calculated by
+The coefficients \(u_{i}^{\Delta}\) and \(v_{i}^{\Delta}\) refer to the coordinates of the corner nodes \(\boldsymbol{x}_{i}^{\Delta}\) and the derivative of the transformed trimming curve is calculated by
 
 $$
-\frac{\partial \phi(\tilde{u})}{\partial \tilde{u}}=\left[\begin{array}{ll} \boldsymbol{x}_{3}^{\Delta}-\boldsymbol{x}_{2}^{\Delta} & \boldsymbol{x}_{1}^{\Delta}-\boldsymbol{x}_{2}^{\Delta} \tag{118} \end{array}\right]^{-1}\left(\frac{\partial \boldsymbol{C}^{t}(\tilde{u})}{\partial \tilde{u}}\right) .
+\frac{\partial \phi(\tilde{u})}{\partial \tilde{u}}=\left[\begin{array}{ll} \boldsymbol{x}_{3}^{\Delta}-\boldsymbol{x}_{2}^{\Delta} & \boldsymbol{x}_{1}^{\Delta}-\boldsymbol{x}_{2}^{\Delta} \end{array}\right]^{-1}\left(\frac{\partial \boldsymbol{C}^{t}(\tilde{u})}{\partial \tilde{u}}\right) .
 $$
 
-The various integration schemes are summarized in Fig.55. Their common and most essential feature is that the integration region is exactly represented. The main dif ference between the strategies is the partitioning of a cut element \(\tilde{\tau}\) into integration regions \(\tilde{\tau}^{\square}\). In fact, the series of mappings (109) shown in Fig. 55d yields the same distri bution of quadrature points over a triangular element as a ruled surface interpolation (26) illustrated in Fig. 55a, if the trimming curve is a B-spline curve. In case of NURBS curves, on the other hand, different distributions are obtained. These two cases are compared in Fig. 56.
+The various integration schemes are summarized in Fig.55. Their common and most essential feature is that the integration region is exactly represented. The main difference between the strategies is the partitioning of a cut element \(\tilde{\tau}\) into integration regions \(\tilde{\tau}^{\square}\). In fact, the series of mappings (109) shown in Fig. 55d yields the same distribution of quadrature points over a triangular element as a ruled surface interpolation (26) illustrated in Fig. 55a, if the trimming curve is a B-spline curve. In case of NURBS curves, on the other hand, different distributions are obtained. These two cases are compared in Fig. 56.
 
 In general, it seems that good results can be obtained with either of these concepts, especially for moderate degrees. However, it has been demonstrated that the properties of coordinate mappings and the corresponding placement of interior nodes is crucial for the convergence behavior of conventional higher degree (p > 3) finite elements [216]. With this in mind, additional research might be useful to assess the quality of the mapping schemes presented with respect to their performance for higher degree.
 
@@ -1414,7 +1332,7 @@ The penalty method is easy to implement and avoids the problems mentioned above.
 
 Nitsche's method introduces a penalty term too, but it is considerably smaller than in the penalty method [80,
 
-![Figure 57 Closest point projections of a slave patch to a master patch. The lines on the surfaces represent the grid of the underlying param- eter space. The intersections of these lines with the trimming curves are illustrated by white and black dots for the slave and master patch, respectively. The projections themselves are indicated by arrows](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-57-p049.png)
+![Figure 57 Closest point projections of a slave patch to a master patch. The lines on the surfaces represent the grid of the underlying param- eter space. The intersections of these lines with the trimming curves are illustrated by white and black dots for the slave and master patch, respectively. The projections themselves are indicated by arrows](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-57-p049.png)
 
 *Figure 57 Closest point projections of a slave patch to a master patch. The lines on the surfaces represent the grid of the underlying param- eter space. The intersections of these lines with the trimming curves are illustrated by white and black dots for the slave and master patch, respectively. The projections themselves are indicated by arrows: Closest point projections of a slave patch to a master patch. The lines on the surfaces represent the grid of the underlying parameter space. The intersections of these lines with the trimming curves are illustrated by white and black dots for the slave and master patch, respectively. The projections themselves are indicated by arrows*
 
@@ -1424,19 +1342,15 @@ These techniques have been successfully applied to various isogeometric analysis
 
 5.3.3.2 Linking of Degrees of Freedom Breitenberger et al. [38] presented a procedure that is able to deal with complex design models and it has been discussed in more detail in the related thesis [37]. In addition to a weak coupling formulation, trimming curves of adjacent patches are connected by so-called edge elements that contain the required topological information. To be precise, the trimming curves are treated by a master-slave concept where points of the slave curve are mapped to the master curve. These points are the intersections of the slave trimming curve with the grid lines of its own parameter space. The mapping to the master curve is performed in model space by means of a point inversion algorithm [192, 230]. The algorithm is usually carried out by a Newton-Raphson scheme and provides the closest projection of a point to a curve as shown in Fig. 57. In addition, the related parametric values of the master curve are provided by the point inversion scheme. The accumulation of these values and the original grid intersections of the master curve define a set of integration regions. Within each region, quadrature points are specified and the corresponding points of the slave curve can again be computed by the point inversion algorithm. To sum up, the relation of two related trimming curves is established by an iterative procedure in model space which computes the shortest distance of a point defined by one curve to the other curve. This is indeed the same concept as for the knot cross-seeding procedures presented in Sect. 5.2 in the context of global approaches. In theory, this is a straightforward task, but its robust implementation is challenging and crucial for the overall performance of an analysis.
 
-$$
-\begin{equation*} d_{1}=\left|u_{T i p}(f)-u_{r e f}\right|, \tag{119} \end{equation*}
-$$
+In the following we would like to highlight the importance of a robust association of adjacent patches by showing an example presented in [37, 38]. The basic setting of the problem is shown in Fig. 58a. This benchmark for geometric nonlinear shell analysis describes a cantilever that is subjected to an end moment. If the maximal moment \(M_{\text {max }}\) is applied, the cantilever deforms to a closed circular ring. Figure 58b illustrates the numerical solution of this problem for various parameterizations. Note the different level of complexity along the edges of adjacent patches. It clearly demonstrates the vast diversity of situations that my occur in case of multipatch geometries even if they represent the same geometry.
 
-In the following we would like to highlight the impor tance of a robust association of adjacent patches by show ing an example presented in [37, 38]. The basic setting of the problem is shown in Fig. 58a. This benchmark for geo metric nonlinear shell analysis describes a cantilever that is subjected to an end moment. If the maximal moment \(M_{\text {max }}\) is applied, the cantilever deforms to a closed circular ring. Figure 58b illustrates the numerical solution of this problem for various parameterizations. Note the different level of complexity along the edges of adjacent patches. It clearly demonstrates the vast diversity of situations that my occur in case of multipatch geometries even if they repre sent the same geometry.
-
-Another important aspect studied by this example is the influence of the gap and overlap size between patches. Con sider the geometrical discretization illustrated in Fig. 59. A gap-overlap function \(f\) is introduced to specify a user defined inaccuracy along the curved intersection. Posi tive and negative values of \(f\) represent gaps and overlaps, respectively. The trimming curves are linked by the point inversion algorithm as described before. The resulting ver tical displacements at the cantilever's end \(u_{\text {Tip }}\) of representations with different \(f\) are related to a reference solution \(u_{\text {ref }}\) obtained with \(f=0\). The difference is calculated by and the related results are summarized in Fig. 60. Based on the corresponding graph, it can be concluded that small gaps which are within CAD tolerance, i.e., 0.001 units, barely influence the quality of the simulation. The different behavior of gaps and overlaps can be explained by the minimal distance computation: in contrast to gaps, the assignment of points of the slave curve to the master curve is not unique in case of overlaps. | |
+Another important aspect studied by this example is the influence of the gap and overlap size between patches. Consider the geometrical discretization illustrated in Fig. 59. A gap-overlap function \(f\) is introduced to specify a userdefined inaccuracy along the curved intersection. Positive and negative values of \(f\) represent gaps and overlaps, respectively. The trimming curves are linked by the point inversion algorithm as described before. The resulting vertical displacements at the cantilever's end \(u_{\text {Tip }}\) of representations with different \(f\) are related to a reference solution \(u_{\text {ref }}\) obtained with \(f=0\). The difference is calculated by and the related results are summarized in Fig. 60. Based on the corresponding graph, it can be concluded that small gaps which are within CAD tolerance, i.e., 0.001 units, barely influence the quality of the simulation. The different behavior of gaps and overlaps can be explained by the minimal distance computation: in contrast to gaps, the assignment of points of the slave curve to the master curve is not unique in case of overlaps. | |
 
 $$
 M = 0.7Mmax = Mmax M = 0.35Mmax
 $$
 
-![Figure 58 Different geometry models for analyzing a cantilever sub- jected to an end moment](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-58-p050.png)
+![Figure 58 Different geometry models for analyzing a cantilever sub- jected to an end moment](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-58-p050.png)
 
 *Figure 58 Different geometry models for analyzing a cantilever sub- jected to an end moment: a definition of the problem and b resulting solutions. In b, different gray scales indicate the distinct patches.*
 
@@ -1448,15 +1362,15 @@ Note the various complexities of the connection of adjacent patches. (Courtesy o
 
 The construction of smooth isogeometric spaces for trimmed models is an even more complicated open topic. In fact, smooth isogeometric spaces on unstructured geometries are a challenging and open problem in general [141, 296]. Locking effects may occur even for regular planar multipatch configurations [63, 150]. At this point, it should be noted that T-splines or subdivision surfaces provide geometric models which are globally smooth almost everywhere. Nevertheless, these representations seem to lack
 
-![Figure 59 Geometry representation and definition of the gap–overlap parameter f for the investigation of the effect of non-watertight geom- etries on numerical results. (Courtesy of Michael Breitenberger [ 37 , 38 ])](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-59-p051.png)
+![Figure 59 Geometry representation and definition of the gap–overlap parameter f for the investigation of the effect of non-watertight geom- etries on numerical results. (Courtesy of Michael Breitenberger [ 37 , 38 ])](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-59-p051.png)
 
 *Figure 59 Geometry representation and definition of the gap–overlap parameter f for the investigation of the effect of non-watertight geom- etries on numerical results. (Courtesy of Michael Breitenberger [ 37 , 38 ]): Geometry representation and definition of the gap–overlap parameter f for the investigation of the effect of non-watertight geometries on numerical results. (Courtesy of Michael Breitenberger [37, 38])*
 
 $$
-\begin{equation*} \mathbf{A}[i+j \cdot J, m+n \cdot J]=B_{i, p}\left(\bar{u}_{m}\right) B_{j, q}\left(\bar{v}_{n}\right), \tag{121} \end{equation*}
+\mathbf{A}[i+j \cdot J, m+n \cdot J]=B_{i, p}\left(\bar{u}_{m}\right) B_{j, q}\left(\bar{v}_{n}\right),
 $$
 
-![Figure 60 Comparison of the relative vertical displacement d 1 related to the gap–overlap parameter f . Gaps and overlaps are indicated by posi- tive and negative values, respectively. The gray area of the diagram indicates the default tolerance of the CAD software used. (Courtesy of Breitenberger [ 37 , 38 ])](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-60-p051.png)
+![Figure 60 Comparison of the relative vertical displacement d 1 related to the gap–overlap parameter f . Gaps and overlaps are indicated by posi- tive and negative values, respectively. The gray area of the diagram indicates the default tolerance of the CAD software used. (Courtesy of Breitenberger [ 37 , 38 ])](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-60-p051.png)
 
 *Figure 60 Comparison of the relative vertical displacement d 1 related to the gap–overlap parameter f . Gaps and overlaps are indicated by posi- tive and negative values, respectively. The gray area of the diagram indicates the default tolerance of the CAD software used. (Courtesy of Breitenberger [ 37 , 38 ]): Comparison of the relative vertical displacement d 1 related to the gap–overlap parameter f. Gaps and overlaps are indicated by positive and negative values, respectively. The gray area of the diagram indicates the default tolerance of the CAD software used. (Courtesy of Breitenberger [37, 38])*
 
@@ -1469,22 +1383,22 @@ A trimmed basis contains basis functions which are cut by the trimming curve and
 In order to emphasize this stability issue an interpolation problem is examined: a given function
 
 $$
-\begin{equation*} f(u, v)=\frac{1}{\sqrt{(-1.2-u)^{2}+(-1.2-v)^{2}}}, \tag{120} \end{equation*}
+f(u, v)=\frac{1}{\sqrt{(-1.2-u)^{2}+(-1.2-v)^{2}}},
 $$
 
-the total number of bivariate basis functions involved. The further components of the corresponding system of equa tions are the unknown coefficients \(c_{i, j}\) and the bivariate spline collocation matrix \(\mathbf{A}\). The matrix is defined by
+the total number of bivariate basis functions involved. The further components of the corresponding system of equations are the unknown coefficients \(c_{i, j}\) and the bivariate spline collocation matrix \(\mathbf{A}\). The matrix is defined by
 
-![Figure 61 Univariate basis trimmed at a parameter t . There are basis functions which are fully inside ( green ), partially inside ( blue ), and completely outside ( dotted ) of  v . The Greville abscissae of the con- sidered basis functions are marked by circles . (Color figure online)](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-61-p051.png)
+![Figure 61 Univariate basis trimmed at a parameter t . There are basis functions which are fully inside ( green ), partially inside ( blue ), and completely outside ( dotted ) of  v . The Greville abscissae of the con- sidered basis functions are marked by circles . (Color figure online)](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-61-p051.png)
 
 *Figure 61 Univariate basis trimmed at a parameter t . There are basis functions which are fully inside ( green ), partially inside ( blue ), and completely outside ( dotted ) of  v . The Greville abscissae of the con- sidered basis functions are marked by circles . (Color figure online): Univariate basis trimmed at a parameter t. There are basis functions which are fully inside (green), partially inside (blue), and completely outside (dotted) of  v. The Greville abscissae of the considered basis functions are marked by circles. (Color figure online)*
 
-with \(i, m=0, \ldots, I\) and \(j, n=0, \ldots, J\), where \(I\) and \(J\) are the number of basis functions in each parametric directions. The initial parameter space is given by an open knot vector with a uniform discretization from-1 to 1 in both direc tions, i.e., \(u, v \in[-1,1]\), and the knot span size is specified by \(h=0.125\). A trimming parameter \(t \in[0.5,1)\) deter mines the square domain \(\mathcal{A}^{\mathrm{v}} \in[-1, t]^{2}\) considered for the interpolation problem. The interpolation points \(\overline{\boldsymbol{x}}\) of cut basis functions may have to be shifted into \(\mathcal{A}^{\mathrm{v}}\). Exterior basis functions that are completely outside of \(\mathcal{A}^{\mathrm{v}}\) are not involved in the interpolation process. The quality and sta bility of the approximation \(\boldsymbol{S}_{h}\) are specified by the relative interpolation error measured in the \(L_{2}\)-norm \(\left\|\epsilon_{\text {rel }}\right\|_{L_{2}}\) as well as the condition number of the spline collocation matrix \(\kappa(\mathbf{A})\). The results are summarized in Fig. 62 for vari ous degree with \(p=q\).
+with \(i, m=0, \ldots, I\) and \(j, n=0, \ldots, J\), where \(I\) and \(J\) are the number of basis functions in each parametric directions. The initial parameter space is given by an open knot vector with a uniform discretization from-1 to 1 in both directions, i.e., \(u, v \in[-1,1]\), and the knot span size is specified by \(h=0.125\). A trimming parameter \(t \in[0.5,1)\) determines the square domain \(\mathcal{A}^{\mathrm{v}} \in[-1, t]^{2}\) considered for the interpolation problem. The interpolation points \(\overline{\boldsymbol{x}}\) of cut basis functions may have to be shifted into \(\mathcal{A}^{\mathrm{v}}\). Exterior basis functions that are completely outside of \(\mathcal{A}^{\mathrm{v}}\) are not involved in the interpolation process. The quality and stability of the approximation \(\boldsymbol{S}_{h}\) are specified by the relative interpolation error measured in the \(L_{2}\)-norm \(\left\|\epsilon_{\text {rel }}\right\|_{L_{2}}\) as well as the condition number of the spline collocation matrix \(\kappa(\mathbf{A})\). The results are summarized in Fig. 62 for various degree with \(p=q\).
 
-![Figure 62 Condition number 휅 ( 퐀 ) and relative interpolation error ‖‖ 휖 rel ‖‖ L 2 of the bivariate basis for several degrees p in both parametric directions related to the trimming parameter t . The subdivision of the horizontal axis corresponds to the knot values of the trimmed basis](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-62-p052.png)
+![Figure 62 Condition number 휅 ( 퐀 ) and relative interpolation error ‖‖ 휖 rel ‖‖ L 2 of the bivariate basis for several degrees p in both parametric directions related to the trimming parameter t . The subdivision of the horizontal axis corresponds to the knot values of the trimmed basis](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-62-p052.png)
 
 *Figure 62 Condition number 휅 ( 퐀 ) and relative interpolation error ‖‖ 휖 rel ‖‖ L 2 of the bivariate basis for several degrees p in both parametric directions related to the trimming parameter t . The subdivision of the horizontal axis corresponds to the knot values of the trimmed basis: Condition number 휅 ( 퐀 ) and relative interpolation error ‖‖ 휖 rel ‖‖ L 2 of the bivariate basis for several degrees p in both parametric directions related to the trimming parameter t. The subdivision of the horizontal axis corresponds to the knot values of the trimmed basis*
 
-It can be observed that the condition number of \(\mathbf{A}\) is considerably influenced by the trimming parameter \(t\). In particular, a peak is reached as soon as \(t\) approaches a knot value, i.e., a support of cut basis functions becomes very small. Furthermore, the approximation quality is affected. The peaks of the relative error \(\left\|\epsilon_{\text {rel }}\right\|_{L_{2}}\) near knot values are in fact disastrous. Hence, it is evident that the straightfor ward application of a trimmed basis negatively affects the condition number and subsequently the quality of the approximation.
+It can be observed that the condition number of \(\mathbf{A}\) is considerably influenced by the trimming parameter \(t\). In particular, a peak is reached as soon as \(t\) approaches a knot value, i.e., a support of cut basis functions becomes very small. Furthermore, the approximation quality is affected. The peaks of the relative error \(\left\|\epsilon_{\text {rel }}\right\|_{L_{2}}\) near knot values are in fact disastrous. Hence, it is evident that the straightforward application of a trimmed basis negatively affects the condition number and subsequently the quality of the approximation.
 
 The stability aspect of local approaches for the analysis of trimmed geometries has scarcely been considered in previous works. It is worth noting that Nitsche formulations may incorporate parameters which take cut elements into account, see e.g., [42, 80, 289]. A method-independent alternative that exploit the properties of B-splines is outlined in Sect. 6.
 
@@ -1500,25 +1414,21 @@ Local approaches focus on enhancing the analysis and thus, may seem more feasibl
 
 There are two reasons for presenting a distinct section on the stabilization of trimmed parameter spaces: first and foremost, we want to draw attention to this issue which has
 
-![Figure 63 Polynomial segments  s of a B-spline. The extensions of the segments are indicated by dashed lines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-63-p053.png)
+![Figure 63 Polynomial segments  s of a B-spline. The extensions of the segments are indicated by dashed lines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-63-p053.png)
 
 *Figure 63 Polynomial segments  s of a B-spline. The extensions of the segments are indicated by dashed lines: Polynomial segments  s of a B-spline. The extensions of the segments are indicated by dashed lines*
 
-been scarcely discussed so far, and, in addition, some of our recent research is focused on this topic allowing a more detailed observation of it. The general problem statement has already been given in Sect. 5.3.4, where it has been demonstrated that basis functions cut by a trimming curve can yield ill-conditioned system matrices. Further, Greville abscissae of such basis functions may be outside of the valid domain and thus, they cannot be applied to methods which employ these points like isogeometric collocation [11, 258]. In order to identify the troublesome components, we classify the basis functions of a trimmed parameter space as stable, degenerate, or exterior. The support of the latter is completely outside of the valid domain \(\mathcal{A}^{\mathrm{v}}\) and hence, it can be neglected for the analysis. The distinguish ing feature of the other types is that the Greville abscis sae of stable B-splines are within \(\mathcal{A}^{\mathrm{v}}\) whereas the Greville abscissae of degenerate ones are outside of \(\mathcal{A}^{\mathrm{v}}\).
+been scarcely discussed so far, and, in addition, some of our recent research is focused on this topic allowing a more detailed observation of it. The general problem statement has already been given in Sect. 5.3.4, where it has been demonstrated that basis functions cut by a trimming curve can yield ill-conditioned system matrices. Further, Greville abscissae of such basis functions may be outside of the valid domain and thus, they cannot be applied to methods which employ these points like isogeometric collocation [11, 258]. In order to identify the troublesome components, we classify the basis functions of a trimmed parameter space as stable, degenerate, or exterior. The support of the latter is completely outside of the valid domain \(\mathcal{A}^{\mathrm{v}}\) and hence, it can be neglected for the analysis. The distinguishing feature of the other types is that the Greville abscissae of stable B-splines are within \(\mathcal{A}^{\mathrm{v}}\) whereas the Greville abscissae of degenerate ones are outside of \(\mathcal{A}^{\mathrm{v}}\).
 
 The following stabilization scheme resolves the issues induced by degenerate basis functions in a simple and flexible manner. The concept is referred to as extended B-splines. Originally, these splines have been developed by Höllig and co-workers in the context of a B-spline based fictitious domain method [124-127]. Here, the main aspects of extended B-splines are outlined based on the findings provided in [199, 202].
 
 ### 6.1 Definition of Extended B-splines
 
-We start the description of extended B-splines by recalling two fundamental properties of conventional B-spline: (i) B-splines \(B_{i, p}\) are represented by a set of polynomial seg ments \(\mathcal{B}_{i}^{s}\) and (ii) B-splines form a basis of a space \(\mathbb{S}_{p, \Xi}\) which contains every piecewise polynomial \(f_{p, \Xi}\) of degree \(p\) over a knot sequence \(\Xi\). The former property is illustrated in Fig. 63. It should be noted that each polynomial seg ment \(\mathcal{B}^{s}\) may be extended beyond its associated knot span \(s\). With this in mind, it is straightforward to grasp the essen tial idea of extended B-splines, namely to re-established the stability of a trimmed basis by substituting degenerate, and therefore potentially unstable, B-splines by extensions of stable ones. These extensions can be exactly represented by the basis since they are within \(\mathbb{S}_{p, \Xi}\) by definition. The overall construction procedure of extended B-splines is summarized in Fig. 64. Firstly, it is deter mined if the Greville abscissae of non-exterior B-splines are located inside or outside of \(\mathcal{A}^{\mathrm{v}}\). In the latter case the basis function is labeled as degenerate and the corre sponding index is stored in the index-set J. Secondly, the polynomial segments of trimmed knot spans are replaced by the extensions of the polynomial segments of the clos est non-trimmed knot span that contains stable B-splines only. These extensions together with the polynomial seg ments of the non-trimmed knot spans form the extended
+We start the description of extended B-splines by recalling two fundamental properties of conventional B-spline: (i) B-splines \(B_{i, p}\) are represented by a set of polynomial segments \(\mathcal{B}_{i}^{s}\) and (ii) B-splines form a basis of a space \(\mathbb{S}_{p, \Xi}\) which contains every piecewise polynomial \(f_{p, \Xi}\) of degree \(p\) over a knot sequence \(\Xi\). The former property is illustrated in Fig. 63. It should be noted that each polynomial segment \(\mathcal{B}^{s}\) may be extended beyond its associated knot span \(s\). With this in mind, it is straightforward to grasp the essential idea of extended B-splines, namely to re-established the stability of a trimmed basis by substituting degenerate, and therefore potentially unstable, B-splines by extensions of stable ones. These extensions can be exactly represented by the basis since they are within \(\mathbb{S}_{p, \Xi}\) by definition. The overall construction procedure of extended B-splines is summarized in Fig. 64. Firstly, it is determined if the Greville abscissae of non-exterior B-splines are located inside or outside of \(\mathcal{A}^{\mathrm{v}}\). In the latter case the basis function is labeled as degenerate and the corresponding index is stored in the index-set J. Secondly, the polynomial segments of trimmed knot spans are replaced by the extensions of the polynomial segments of the closest non-trimmed knot span that contains stable B-splines only. These extensions together with the polynomial segments of the non-trimmed knot spans form the extended
 
-![Figure 64 Basic procedure to get from a conventional to d extended B-splines](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-64-p054.png)
+![Figure 64 Basic procedure to get from a conventional to d extended B-splines](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-64-p054.png)
 
 *Figure 64 Basic procedure to get from a conventional to d extended B-splines: b determination of degenerate B-splines and substitution of trimmed polynomial segments by c extensions of non-trimmed ones*
-
-$$
-\begin{equation*} f=\sum_{j=0}^{J-1} \lambda_{j, p}(f) B_{j, p}, \tag{123} \end{equation*}
-$$
 
 - (b)
 
@@ -1526,36 +1436,28 @@ $$
 
 B-spline basis. The final step is to represent the extended B-splines by a linear combination of the original B-splines. An extended B-spline is defined by
 
-![Figure 65 The construction of bivariate extrapolation weights e i , j for a biquadratic basis. Stable B-splines are marked by black and green circles . The shown values of e i , j are related to the degenerate basis function marked by the blue circle in the upper right corner of the parameter space. B-splines of the closest non-trimmed knot span are indicated by green circles . (Color figure online)](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-65-p054.png)
+![Figure 65 The construction of bivariate extrapolation weights e i , j for a biquadratic basis. Stable B-splines are marked by black and green circles . The shown values of e i , j are related to the degenerate basis function marked by the blue circle in the upper right corner of the parameter space. B-splines of the closest non-trimmed knot span are indicated by green circles . (Color figure online)](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-65-p054.png)
 
 *Figure 65 The construction of bivariate extrapolation weights e i , j for a biquadratic basis. Stable B-splines are marked by black and green circles . The shown values of e i , j are related to the degenerate basis function marked by the blue circle in the upper right corner of the parameter space. B-splines of the closest non-trimmed knot span are indicated by green circles . (Color figure online): The construction of bivariate extrapolation weights e i, j for a biquadratic basis. Stable B-splines are marked by black and green circles. The shown values of e i, j are related to the degenerate basis function marked by the blue circle in the upper right corner of the parameter space. B-splines of the closest non-trimmed knot span are indicated by green circles. (Color figure online)*
 
-Spline interpolation as described in Sect. 2.3 is not opti mal to compute \(e_{i, j}\) because the Greville abscissae of \(B_{j, p}\) are not located within the trimmed knot span in general. Hence, a quasi interpolation scheme is preferred which allows an explicit computation of B-spline coefficients. In particular, the so-called de Boor-Fix or dual functional \(\lambda_{j, p}\)
+Spline interpolation as described in Sect. 2.3 is not optimal to compute \(e_{i, j}\) because the Greville abscissae of \(B_{j, p}\) are not located within the trimmed knot span in general. Hence, a quasi interpolation scheme is preferred which allows an explicit computation of B-spline coefficients. In particular, the so-called de Boor-Fix or dual functional \(\lambda_{j, p}\)
 
-$$
-\begin{equation*} B_{i, p}^{e}=B_{i, p}+\sum_{j \in J_{i}} e_{i, j} B_{j, p}, \tag{122} \end{equation*}
-$$
-
-$$
-\begin{equation*} \lambda_{j, p}(f)=\frac{1}{p!} \sum_{k=0}^{p}(-1)^{k} \psi_{j, p}^{(p-k)}\left(\mu_{j}\right) f^{(k)}\left(\mu_{j}\right), \tag{124} \end{equation*}
-$$
-
-![Figure 66 Bivariate extended B-splines B e i , p with various cardinali- ties of the index-set 핁 i which indicates the number of related degen- erate B-splines. Note that a is in fact a conventional B-spline, i.e., B e i , p ≡ B i , p , since 핁 i is empty](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-66-p055.png)
+![Figure 66 Bivariate extended B-splines B e i , p with various cardinali- ties of the index-set 핁 i which indicates the number of related degen- erate B-splines. Note that a is in fact a conventional B-spline, i.e., B e i , p ≡ B i , p , since 핁 i is empty](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-66-p055.png)
 
 *Figure 66 Bivariate extended B-splines B e i , p with various cardinali- ties of the index-set 핁 i which indicates the number of related degen- erate B-splines. Note that a is in fact a conventional B-spline, i.e., B e i , p ≡ B i , p , since 핁 i is empty: Bivariate extended B-splines B e i, p with various cardinalities of the index-set 핁 i which indicates the number of related degenerate B-splines. Note that a is in fact a conventional B-spline, i.e., B e i, p ≡ B i, p, since 핁 i is empty*
 
 $$
-\begin{equation*} \psi_{j, p}(u)=\prod_{m=1}^{p}\left(u-u_{j+m}\right) . \tag{125} \end{equation*}
+\psi_{j, p}(u)=\prod_{m=1}^{p}\left(u-u_{j+m}\right) .
 $$
 
 $$
-\begin{equation*} e_{i, j}=\frac{1}{p!} \sum_{k=0}^{p}(-1)^{k}(p-k)!\beta_{p-k} k!\alpha_{k} \tag{128} \end{equation*}
+e_{i, j}=\frac{1}{p!} \sum_{k=0}^{p}(-1)^{k}(p-k)!\beta_{p-k} k!\alpha_{k} .
 $$
 
 The evaluation point \(\mu_{j}\) can be chosen arbitrarily within \(\left[u_{j}, u_{j+p+1}\right]\). Substituting \(f\) of Eq. (124) by \(\mathcal{B}_{i}^{s}\) yields the extrapolation weights
 
 $$
-\begin{equation*} \psi_{j, p}(u)=\sum_{k=0}^{p} \beta_{k} u^{k} \quad \text { and } \quad \mathcal{B}_{i}^{s}(u)=\sum_{k=0}^{p} \alpha_{k} u^{k}, \tag{127} \end{equation*}
+\psi_{j, p}(u)=\sum_{k=0}^{p} \beta_{k} u^{k} \quad \text { and } \quad \mathcal{B}_{i}^{s}(u)=\sum_{k=0}^{p} \alpha_{k} u^{k},
 $$
 
 expression (126) simplifies to
@@ -1566,15 +1468,15 @@ Bivariate extrapolation weights are simply obtained by the tensor product of the
 
 ### 6.2 Properties of Extended B-splines
 
-Extended B-splines inherit most essential properties of conventional B-splines [124, 125, 127]. They are linearly independent and polynomial precision is guaranteed. Thus, they form a basis for a spline space. Each knot span has exactly \(p+1\) non-vanishing basis functions which span the space of all polynomials of degree \(\leqslant p\) over \(\mathcal{A}^{\mathrm{v}}\). Further more, approximation estimates have the same convergence order as conventional B-splines. Extended B-splines have local support in the sense that only B-splines near the trim ming curve are subjected to the extension procedure. The actual size of the affected region depends on the fineness of the parameter space, the degree of its basis functions, and the number of degenerate \(B_{j, p}\) related to the stable \(B_{i, p}\). The latter is given by the cardinality of the corresponding index-set \(\# \mathbb{J}_{i}\). Figure 66 illustrates various examples of extended B-splines. The basis function shown in Fig. 66a is in fact a conventional B-spline since it is far away from the trimming curve.
+Extended B-splines inherit most essential properties of conventional B-splines [124, 125, 127]. They are linearly independent and polynomial precision is guaranteed. Thus, they form a basis for a spline space. Each knot span has exactly \(p+1\) non-vanishing basis functions which span the space of all polynomials of degree \(\leqslant p\) over \(\mathcal{A}^{\mathrm{v}}\). Furthermore, approximation estimates have the same convergence order as conventional B-splines. Extended B-splines have local support in the sense that only B-splines near the trimming curve are subjected to the extension procedure. The actual size of the affected region depends on the fineness of the parameter space, the degree of its basis functions, and the number of degenerate \(B_{j, p}\) related to the stable \(B_{i, p}\). The latter is given by the cardinality of the corresponding index-set \(\# J_{i}\). Figure 66 illustrates various examples of extended B-splines. The basis function shown in Fig. 66a is in fact a conventional B-spline since it is far away from the trimming curve.
 
 However, there are also some differences. It is important to note that the extrapolation weights may be negative, hence the evaluation of extended B-splines may lead to negative values. conventional B-splines, on the other hand, are strictly non-negative. This property is exploited in some contact formulations [295] and structural optimization [210], for instance. In such cases, the application
 
 $$
-\begin{equation*} e_{i, j}=\frac{1}{p!} \sum_{k=0}^{p}(-1)^{k} \psi_{j, p}^{(p-k)}\left(\mu_{j}\right) \mathcal{B}_{i}^{s^{(k)}}\left(\mu_{j}\right) . \tag{126} \end{equation*}
+e_{i, j}=\frac{1}{p!} \sum_{k=0}^{p}(-1)^{k} \psi_{j, p}^{(p-k)}\left(\mu_{j}\right) \mathcal{B}_{i}^{s^{(k)}}\left(\mu_{j}\right) .
 $$
 
-of extended B-splines requires further considerations. The main difference in favor of extended B-splines is the stabil ity of the corresponding basis. The condition number of a system is independent of the location of the trimming curve due to the substitution of B-splines with small support. Another benefit is that all Greville abscissae are located within \(\mathcal{A}^{\mathrm{v}}\) by construction.
+of extended B-splines requires further considerations. The main difference in favor of extended B-splines is the stability of the corresponding basis. The condition number of a system is independent of the location of the trimming curve due to the substitution of B-splines with small support. Another benefit is that all Greville abscissae are located within \(\mathcal{A}^{\mathrm{v}}\) by construction.
 
 ### 6.3 Assembling
 
@@ -1588,7 +1490,7 @@ for the representation of the geometry and the approximations of the physical fi
 
 In order to assess the approximation quality and stability of extended B-splines the same interpolation problem as in Sect. 5.3.4 is considered. Again, the relative interpolation
 
-![Figure 67 Spline interpolation problem with extended B-splines for several degrees p . The condition number 휅 ( 퐀 ) and the relative inter- polation error ‖ ‖ 휖 rel ‖ ‖ L 2 are related to the trimming parameter t . The labels of the horizontal axis indicate knots of the trimmed basis](/Users/evanthayer/Projects/stepview/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-67-p056.png)
+![Figure 67 Spline interpolation problem with extended B-splines for several degrees p . The condition number 휅 ( 퐀 ) and the relative inter- polation error ‖ ‖ 휖 rel ‖ ‖ L 2 are related to the trimming parameter t . The labels of the horizontal axis indicate knots of the trimmed basis](/Users/evanthayer/Projects/paperx/docs/2018_trimming_in_isogeometric_analysis_review/figures/figure-67-p056.png)
 
 *Figure 67 Spline interpolation problem with extended B-splines for several degrees p . The condition number 휅 ( 퐀 ) and the relative inter- polation error ‖ ‖ 휖 rel ‖ ‖ L 2 are related to the trimming parameter t . The labels of the horizontal axis indicate knots of the trimmed basis: Spline interpolation problem with extended B-splines for several degrees p. The condition number 휅 ( 퐀 ) and the relative interpolation error ‖ ‖ 휖 rel ‖ ‖ L 2 are related to the trimming parameter t. The labels of the horizontal axis indicate knots of the trimmed basis*
 
@@ -1598,7 +1500,7 @@ Comparing Figs. 62 and 67 shows the significant improvement of extended B-spline
 
 ### 6.6 Summary and Discussion
 
-The concept of extended B-splines substitutes unstable basis functions by extensions of stable ones. It is estab lished in a very flexible manner and requires only the pres ence of a sufficient number of stable basis functions. In general, this requirement is non-restrictive and can be ful filled by refinement of the basis. Still, it may be an issue if the design object contains very small fillets. Only B-splines close to the trimming curve are affected by the stabiliza tion procedure. The number of B-splines depends on the distance of the trimming curve to the knot span which pro vides the stable B-splines. This correlates with the degree \(p\) of the basis function since the size of its support extends over \(p+1\) knot spans.
+The concept of extended B-splines substitutes unstable basis functions by extensions of stable ones. It is established in a very flexible manner and requires only the presence of a sufficient number of stable basis functions. In general, this requirement is non-restrictive and can be fulfilled by refinement of the basis. Still, it may be an issue if the design object contains very small fillets. Only B-splines close to the trimming curve are affected by the stabilization procedure. The number of B-splines depends on the distance of the trimming curve to the knot span which provides the stable B-splines. This correlates with the degree \(p\) of the basis function since the size of its support extends over \(p+1\) knot spans.
 
 ## 7 Final Remarks and Conclusions
 
@@ -1637,6 +1539,12 @@ Appendix: Exchange Data File Examples The source files of the neutral exchange f
 It should be pointed out that the IGES examples, i.e., Files 1 and 2, provide the same information although the topological data of the two models was different before the extraction procedure. In particular, these files differ only in the representation of some floating point values, e.g., 0.0D0 and 8.881D-16, and the sequence of the numbering of a few parametric data entities, e.g., 0000029P of File 1 is equal to 0000037P of File 2. The corresponding STEP examples with the correct topology data are given in Files 3 and 4.
 
 The interested reader is referred to the homepage of STEP Tools, Inc. \({ }^{21}\) for further examples of STEP files covering various application protocols.
+
+,4.999999999999998D0,5.0D0,0.0D0,8.881784197001252D-16,
+
+$$
+0000019P
+$$
 
 21 http: www.steptools.com, 8 2016.
 
@@ -1712,7 +1620,43 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Baumgart BG (1972) Winged edge polyhedron representation. Technical report, DTIC Document
 
-- Bazilevs Y, Calo VM, Cottrell JA, Evans JA, Hughes TJR, Lipton S, Scott MA, Sederberg TW (2010) Isogeometric analysis using T-splines. Comput Methods Appl Mech Eng 199(5-8):229-263 Bazilevs Y, Hughes TJR (2007) Weak imposition of Dirichlet boundary conditions in fluid mechanics. Comput Fluids 36(1):12-26 Bazilevs Y, Michler C, Calo VM, Hughes TJR (2007) Weak Dirichlet boundary conditions for wall-bounded turbulent flows. Comput Methods Appl Mech Eng 196(49-52):4853-4862 Beer G, Marussig B, Zechner J (2015) A simple approach to the numerical simulation with trimmed CAD surfaces. Comput Methods Appl Mech Eng 285:776-790 Benouamer MO, Michelucci D, Peroche B (1994) Error-free boundary evaluation based on a lazy rational arithmetic-a detailed implementation. Comput Aided Des 26(6):403-416 Benthin C, Wald I, Slusallek P (2004) Interactive ray tracing of free-form surfaces. In: Proceedings of the 3rd international conference on computer graphics, virtual reality, visualisation and interaction in Africa. ACM, p 99-106 Bern M, Eppstein D, Gilbert J (1994) Provably good mesh generation. J Comput Syst Sci 48(3):384-409 Bézier P (1974) Mathematical and practical possibilities of UNISURF. In: Barnhill RE, Riesenfeld RF (eds) Computer aided geometric design. Academic, New York, pp 127-152 Biermann H, Kristjansson D, Zorin D (2001) Approximate Boolean operations on free-form solids. In: Proceedings of the 28th annual conference on computer graphics and interactive techniques, SIGGRAPH '01. ACM, p 185-194 Biswas A, Fenves SJ, Shapiro V, Sriram R (2008) representation of heterogeneous material properties in the Core Product Model. Eng Comput 24(1):43-58 Boehm W (1980) Inserting new knots into B-spline curves. Comput Aided Des 12(4):199-201 de Boor C (1972) On calculating with B-splines. J Approx Theory 6(1):50-62 de Boor C (2001) A practical guide to splines. In: Applied mathematical sciences, vol 27. Springer, New York 35. de Boor C, Fix GJ (1973) Spline approximation by quasiinterpolants. J Approx Theory 8(1):19-45 Braid IC (1974) Designing with volumes, 2nd edn. Cantab Press, Cambridge University, Cambridge Breitenberger M (2016) CAD-integrated design and analysis of shell structures. PhD Thesis, Technische Universität München Breitenberger M, Apostolatos A, Philipp B, Wüchner R, Bletzinger KU (2015) analysis in computer aided design: nonlinear isogeometric B-Rep analysis of shell structures. Comput Methods Appl Mech Eng 284:401-457 Brivadis E, Buffa A, Wohlmuth B, Wunderlich L (2015) Isogeometric mortar methods. Comput Methods Appl Mech Eng 284:292-319 Brown CM (1982) PADL-2: a technical summary. IEEE Comput Graph Appl 2(2):69-84 Brunnett G (1995) Geometric design with trimmed surfaces. In: Hagen H, Farin G, Noltemeierm H (eds) Geometric modelling: Dagstuhl 1993, computing Supplement 10. Springer, Berlin, pp 101-115 Burman E, Hansbo P (2012) Fictitious domain finite element methods using cut elements: II. A stabilized Nitsche method. Appl Numer Math 62(4):328-341 C3D Labs. C3D kernel documentation. http: c3d.ascon.net doc math class_mb_surface_intersection_curve.html#details. Accessed 19 Aug 2016 Campagna S, Slusallek P, Seidel HP (1997) Ray tracing of spline surfaces: Bézier clipping, Chebyshev boxing, and bounding volume hierarchy-a critical comparison with new results. Vis Comput 13(6):265-282
+- Bazilevs Y, Calo VM, Cottrell JA, Evans JA, Hughes TJR, Lipton S, Scott MA, Sederberg TW (2010) Isogeometric analysis using T-splines. Comput Methods Appl Mech Eng 199(5-8):229-263
+
+- Bazilevs Y, Hughes TJR (2007) Weak imposition of Dirichlet boundary conditions in fluid mechanics. Comput Fluids 36(1):12-26
+
+- Bazilevs Y, Michler C, Calo VM, Hughes TJR (2007) Weak Dirichlet boundary conditions for wall-bounded turbulent flows. Comput Methods Appl Mech Eng 196(49-52):4853-4862
+
+- Beer G, Marussig B, Zechner J (2015) A simple approach to the numerical simulation with trimmed CAD surfaces. Comput Methods Appl Mech Eng 285:776-790
+
+- Benouamer MO, Michelucci D, Peroche B (1994) Error-free boundary evaluation based on a lazy rational arithmetic-a detailed implementation. Comput Aided Des 26(6):403-416
+
+- Benthin C, Wald I, Slusallek P (2004) Interactive ray tracing of free-form surfaces. In: Proceedings of the 3rd international conference on computer graphics, virtual reality, visualisation and interaction in Africa. ACM, p 99-106
+
+- Bern M, Eppstein D, Gilbert J (1994) Provably good mesh generation. J Comput Syst Sci 48(3):384-409
+
+- Bézier P (1974) Mathematical and practical possibilities of UNISURF. In: Barnhill RE, Riesenfeld RF (eds) Computer aided geometric design. Academic, New York, pp 127-152
+
+- Biermann H, Kristjansson D, Zorin D (2001) Approximate Boolean operations on free-form solids. In: Proceedings of the 28th annual conference on computer graphics and interactive techniques, SIGGRAPH '01. ACM, p 185-194
+
+- Biswas A, Fenves SJ, Shapiro V, Sriram R (2008) representation of heterogeneous material properties in the Core Product Model. Eng Comput 24(1):43-58 Boehm W (1980) Inserting new knots into B-spline curves. Comput Aided Des 12(4):199-201 de Boor C (1972) On calculating with B-splines. J Approx Theory 6(1):50-62
+
+- de Boor C (2001) A practical guide to splines. In: Applied mathematical sciences, vol 27. Springer, New York 35. de Boor C, Fix GJ (1973) Spline approximation by quasiinterpolants. J Approx Theory 8(1):19-45
+
+- Braid IC (1974) Designing with volumes, 2nd edn. Cantab Press, Cambridge University, Cambridge
+
+- Breitenberger M (2016) CAD-integrated design and analysis of shell structures. PhD Thesis, Technische Universität München
+
+- Breitenberger M, Apostolatos A, Philipp B, Wüchner R, Bletzinger KU (2015) analysis in computer aided design: nonlinear isogeometric B-Rep analysis of shell structures. Comput Methods Appl Mech Eng 284:401-457
+
+- Brivadis E, Buffa A, Wohlmuth B, Wunderlich L (2015) Isogeometric mortar methods. Comput Methods Appl Mech Eng 284:292-319
+
+- Brown CM (1982) PADL-2: a technical summary. IEEE Comput Graph Appl 2(2):69-84
+
+- Brunnett G (1995) Geometric design with trimmed surfaces. In: Hagen H, Farin G, Noltemeierm H (eds) Geometric modelling: Dagstuhl 1993, computing Supplement 10. Springer, Berlin, pp 101-115
+
+- Burman E, Hansbo P (2012) Fictitious domain finite element methods using cut elements: II. A stabilized Nitsche method. Appl Numer Math 62(4):328-341 C3D Labs. C3D kernel documentation. http: c3d.ascon.net doc math class_mb_surface_intersection_curve.html#details. Accessed 19 Aug 2016
+
+- Campagna S, Slusallek P, Seidel HP (1997) Ray tracing of spline surfaces: Bézier clipping, Chebyshev boxing, and bounding volume hierarchy-a critical comparison with new results. Vis Comput 13(6):265-282
 
 - Campbell RJ, Flynn PJ (2001) A survey of free-form object representation and recognition techniques. Comput Vis Image Underst 81(2):166-210
 
@@ -1758,7 +1702,43 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Cottrell JA, Hughes TJR, Bazilevs Y (2009) Isogeometric analysis: toward integration of CAD and FEA. Wiley, Chichester
 
-- Cottrell JA, Hughes TJR, Reali A (2007) Studies of refinement and continuity in isogeometric structural analysis. Comput Methods Appl Mech Eng 196(41-44):4160-4183 Cottrell JA, Reali A, Bazilevs Y, Hughes TJR (2006) Isogeometric analysis of structural vibrations. Comput Methods Appl Mech Eng 195(41-43):5257-5296 Dehaemer MJ Jr, Zyda MJ (1991) Simplification of objects rendered by polygonal approximations. Comput Graph 15(2):175-184 DeRose T, Kass M, Truong T (1998) Subdivision surfaces in character animation. In: Proceedings of the 25th annual conference on computer graphics and interactive techniques. ACM, p 85-94 DeRose TD, Goldman RN, Hagen H, Mann S (1993) Functional composition algorithms via blossoming. ACM Trans Graph 12(2):113-135 Dijkstra EW (1959) A note on two problems m connexion with graphs. Numer Math 1:269-271 Dobkin DP, Laszlo MJ (1987) Primitives for the manipulation of three-dimensional subdivisions. In: Proceedings of the third annual symposium on computational geometry. ACM, New York, p 86-99 Dolenc A, Mäkelä I (1994) Optimized triangulation of parametric surfaces. In: Bowyer A (ed) Computer-aided surface geometry and design: the mathematics of surfaces IV, vol 48. Oxford University Press, Institute of Mathematics and Its Applications, p 169-183 Doo D, Sabin M (1978) Behaviour of recursive division surfaces near extraordinary points. Comput Aided Des 10(6):356-360 Duff T (1992) Interval arithmetic recursive subdivision for implicit functions and constructive solid geometry. SIGGRAPH Comput Graph 26(2):131-138 Edelsbrunner H, Mücke EP (1990) Simulation of simplicity: a technique to cope with degenerate cases in geometric algorithms. ACM Trans Graph 9(1):66-104 Efremov A, Havran V, Seidel HP (2005) Robust and numerically stable Bézier clipping method for ray tracing NURBS surfaces. In: Proceedings of the 21st spring conference on computer graphics. ACM, New York, p 127-135 Elber G (1996) Error bounded piecewise linear approximation of freeform surfaces. Comput Aided Des 28(1):51-57 Embar A, Dolbow J, Harari I (2010) Imposing Dirichlet boundary conditions with Nitsche's method and spline-based finite elements. Int J Numer Methods Eng 83(7):877-898 Evans JA, Hughes TJR (2013) Isogeometric divergence-conforming B-splines for the steady Navier-Stokes equations. Math Models Methods Appl Sci 23(8):1421-1478 Fang SF, Bruderlin B, Zhu XH (1993) Robustness in solid modeling: a tolerance-based intuitionistic approach. Comput Aided Des 25(9):567-576 Farin G (2002) curves and surfaces for CAGD: a practical guide, 5th edn. Morgan Kaufmann, San Francisco Farouki RT (1986) The characterization of parametric surface sections. Comput Vis Graph Image Process 33(2):209-236 Farouki RT (1987) Trimmed-surface algorithms for the evaluation and interrogation of solid boundary representations. IBM J Res Dev 31(3):314-334 Farouki RT (1999) Closing the gap between CAD model and downstream application. SIAM News 32(5):303-319 Farouki RT, Han CY, Hass J, Sederberg TW (2004) Topologically consistent trimmed surface approximations based on triangular patches. Comput Aided Geom Des 21(5):459-478 Farouki RT, Hinds JK (1985) A hierarchy of geometric forms. IEEE Comput Graph Appl 5(5):51-78 Filip D, Magedson R, Markot R (1986) Surface algorithms using bounds on derivatives. Comput Aided Geom Des 3(4):295-311 Flöry S, Hofer M (2008) Constrained curve fitting on manifolds. Comput Aided Des 40(1):25-34
+- Cottrell JA, Hughes TJR, Reali A (2007) Studies of refinement and continuity in isogeometric structural analysis. Comput Methods Appl Mech Eng 196(41-44):4160-4183
+
+- Cottrell JA, Reali A, Bazilevs Y, Hughes TJR (2006) Isogeometric analysis of structural vibrations. Comput Methods Appl Mech Eng 195(41-43):5257-5296
+
+- Dehaemer MJ Jr, Zyda MJ (1991) Simplification of objects rendered by polygonal approximations. Comput Graph 15(2):175-184
+
+- DeRose T, Kass M, Truong T (1998) Subdivision surfaces in character animation. In: Proceedings of the 25th annual conference on computer graphics and interactive techniques. ACM, p 85-94
+
+- DeRose TD, Goldman RN, Hagen H, Mann S (1993) Functional composition algorithms via blossoming. ACM Trans Graph 12(2):113-135 Dijkstra EW (1959) A note on two problems m connexion with graphs. Numer Math 1:269-271
+
+- Dobkin DP, Laszlo MJ (1987) Primitives for the manipulation of three-dimensional subdivisions. In: Proceedings of the third annual symposium on computational geometry. ACM, New York, p 86-99
+
+- Dolenc A, Mäkelä I (1994) Optimized triangulation of parametric surfaces. In: Bowyer A (ed) Computer-aided surface geometry and design: the mathematics of surfaces IV, vol 48. Oxford University Press, Institute of Mathematics and Its Applications, p 169-183
+
+- Doo D, Sabin M (1978) Behaviour of recursive division surfaces near extraordinary points. Comput Aided Des 10(6):356-360
+
+- Duff T (1992) Interval arithmetic recursive subdivision for implicit functions and constructive solid geometry. SIGGRAPH Comput Graph 26(2):131-138
+
+- Edelsbrunner H, Mücke EP (1990) Simulation of simplicity: a technique to cope with degenerate cases in geometric algorithms. ACM Trans Graph 9(1):66-104
+
+- Efremov A, Havran V, Seidel HP (2005) Robust and numerically stable Bézier clipping method for ray tracing NURBS surfaces. In: Proceedings of the 21st spring conference on computer graphics. ACM, New York, p 127-135 Elber G (1996) Error bounded piecewise linear approximation of freeform surfaces. Comput Aided Des 28(1):51-57
+
+- Embar A, Dolbow J, Harari I (2010) Imposing Dirichlet boundary conditions with Nitsche's method and spline-based finite elements. Int J Numer Methods Eng 83(7):877-898
+
+- Evans JA, Hughes TJR (2013) Isogeometric divergence-conforming B-splines for the steady Navier-Stokes equations. Math Models Methods Appl Sci 23(8):1421-1478
+
+- Fang SF, Bruderlin B, Zhu XH (1993) Robustness in solid modeling: a tolerance-based intuitionistic approach. Comput Aided Des 25(9):567-576
+
+- Farin G (2002) curves and surfaces for CAGD: a practical guide, 5th edn. Morgan Kaufmann, San Francisco Farouki RT (1986) The characterization of parametric surface sections. Comput Vis Graph Image Process 33(2):209-236 Farouki RT (1987) Trimmed-surface algorithms for the evaluation and interrogation of solid boundary representations. IBM J Res Dev 31(3):314-334 Farouki RT (1999) Closing the gap between CAD model and downstream application. SIAM News 32(5):303-319
+
+- Farouki RT, Han CY, Hass J, Sederberg TW (2004) Topologically consistent trimmed surface approximations based on triangular patches. Comput Aided Geom Des 21(5):459-478
+
+- Farouki RT, Hinds JK (1985) A hierarchy of geometric forms. IEEE Comput Graph Appl 5(5):51-78
+
+- Filip D, Magedson R, Markot R (1986) Surface algorithms using bounds on derivatives. Comput Aided Geom Des 3(4):295-311
+
+- Flöry S, Hofer M (2008) Constrained curve fitting on manifolds. Comput Aided Des 40(1):25-34
 
 - Foley T, Sugerman J (2005) KD-tree acceleration structures for a GPU raytracer. In: Proceedings of the conference on graphics hardware. ACM, New York, p 15-22
 
@@ -1804,7 +1784,49 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Hansbo P (2005) Nitsche's method for interface problems in computational mechanics. GAMM-Mitt 28(2):183-206
 
-- Harbrecht H, Randrianarivony M (2010) From computer aided design to wavelet BEM. Comput Vis Sci 13(2):69-82 Hardwick MF, Clay RL, Boggs PT, Walsh EJ, Larzelere AR, Altshuler A (2005) DART system analysis. Technical report SAND2005-4647. Sandia National Laboratories Hass J, Farouki RT, Han CY, Song X, Sederberg TW (2007) Guaranteed consistency of surface intersections and trimmed surfaces using a coupled topology resolution and domain decomposition scheme. Adv Comput Math 27(1):1-26 Havran V (2000) Heuristic ray shooting algorithms. PhD Thesis, Czech Technical University, Prague Hickey T, Ju Q, Van Emden MH (2001) Interval arithmetic: from principles to implementation. J ACM 48(5):1038-1068 Hiemstra RR, Calabrò F, Schillinger D, Hughes TJR (2016) Optimal and reduced quadrature rules for tensor product and hierarchically refined splines in isogeometric analysis. Comput Methods Appl Mech Eng. doi:10.1016 j.cma.2016.10.049 Hofer M, Pottmann H (2004) Energy-minimizing splines in manifolds. ACM Trans Graph 23(3):284-293 Hoffmann CM (1989) Geometric and solid modeling. Morgan Kaufmann, San Mateo Hoffmann CM (1989) The problems of accuracy and robustness in geometric computation. Computer 22(3):31-39 Hoffmann CM, Hopcroft JE, Karasick MS (1988) Towards implementing robust geometric computations. In: Proceedings of the symposium on computational geometry. ACM, p 106-117 Hoffmann CM, Hopcroft JE, Karasick MS (1989) Robust set operations on polyhedral solids. IEEE Comput Graph Appl 9(6):50-59 Höllig K (2003) Finite element methods with B-splines. In: Frontiers in applied mathematics, vol 26. SIAM, Philadelphia Höllig K, Reif U (2003) Nonuniform web-splines. Comput Aided Geom Des 20(5):277-294 Höllig K, Reif U, Wipper J (2001) B-spline approximation of Neumann problems. Mathematisches Institut A, University of Stuttgart Höllig K, Reif U, Wipper J (2002) Weighted extended B-spline approximation of Dirichlet problems. SIAM J Numer Anal 39(2):442-462 Hong YS, Chang TC (2002) A comprehensive review of tolerancing research. Int J Prod Res 40(11):2425-2459 Hoschek J (1987) Approximate conversion of spline curves. Comput Aided Geom Des 4(1-2):59-66 Hoschek J, Lasser D (1992) Grundlagen der geometrischen Datenverarbeitung. Vieweg+Teubner. English version 'Fundamentals of Computer Aided Geometric Design' translated by Schumaker LL Hoschek J, Schneider FJ (1990) Spline conversion for trimmed rational Bézier-and B-spline surfaces. Comput Aided Des 22(9):580-590 Hoschek J, Schneider FJ, Wassum P (1989) Optimal approximate conversion of spline surfaces. Comput Aided Geom Des 6(4):293-306 Houghton EG, Emnett RF, Factor JD, Sabharwal CL (1985) Implementation of a divide-and-conquer method for intersection of parametric surfaces. Comput Aided Geom Des 2(1):173-183 Hu CY, Maekawa T, Patrikalakis NM, Ye X (1997) Robust interval algorithm for surface intersections. Comput Aided Des 29(9):617-627 Hu CY, Patrikalakis NM, Ye X (1996) Robust interval solid modelling part I: representations. Comput Aided Des 28(10):807-817 Hu CY, Patrikalakis NM, Ye X (1996) Robust interval solid modelling part II: boundary evaluation. Comput Aided Des 28(10):819-830
+- Harbrecht H, Randrianarivony M (2010) From computer aided design to wavelet BEM. Comput Vis Sci 13(2):69-82
+
+- Hardwick MF, Clay RL, Boggs PT, Walsh EJ, Larzelere AR, Altshuler A (2005) DART system analysis. Technical report SAND2005-4647. Sandia National Laboratories
+
+- Hass J, Farouki RT, Han CY, Song X, Sederberg TW (2007) Guaranteed consistency of surface intersections and trimmed surfaces using a coupled topology resolution and domain decomposition scheme. Adv Comput Math 27(1):1-26
+
+- Havran V (2000) Heuristic ray shooting algorithms. PhD Thesis, Czech Technical University, Prague
+
+- Hickey T, Ju Q, Van Emden MH (2001) Interval arithmetic: from principles to implementation. J ACM 48(5):1038-1068
+
+- Hiemstra RR, Calabrò F, Schillinger D, Hughes TJR (2016) Optimal and reduced quadrature rules for tensor product and hierarchically refined splines in isogeometric analysis. Comput Methods Appl Mech Eng. doi:10.1016 j.cma.2016.10.049
+
+- Hofer M, Pottmann H (2004) Energy-minimizing splines in manifolds. ACM Trans Graph 23(3):284-293
+
+- Hoffmann CM (1989) Geometric and solid modeling. Morgan Kaufmann, San Mateo Hoffmann CM (1989) The problems of accuracy and robustness in geometric computation. Computer 22(3):31-39
+
+- Hoffmann CM, Hopcroft JE, Karasick MS (1988) Towards implementing robust geometric computations. In: Proceedings of the symposium on computational geometry. ACM, p 106-117
+
+- Hoffmann CM, Hopcroft JE, Karasick MS (1989) Robust set operations on polyhedral solids. IEEE Comput Graph Appl 9(6):50-59
+
+- Höllig K (2003) Finite element methods with B-splines. In: Frontiers in applied mathematics, vol 26. SIAM, Philadelphia
+
+- Höllig K, Reif U (2003) Nonuniform web-splines. Comput Aided Geom Des 20(5):277-294
+
+- Höllig K, Reif U, Wipper J (2001) B-spline approximation of Neumann problems. Mathematisches Institut A, University of Stuttgart
+
+- Höllig K, Reif U, Wipper J (2002) Weighted extended B-spline approximation of Dirichlet problems. SIAM J Numer Anal 39(2):442-462
+
+- Hong YS, Chang TC (2002) A comprehensive review of tolerancing research. Int J Prod Res 40(11):2425-2459 Hoschek J (1987) Approximate conversion of spline curves. Comput Aided Geom Des 4(1-2):59-66
+
+- Hoschek J, Lasser D (1992) Grundlagen der geometrischen Datenverarbeitung. Vieweg+Teubner. English version 'Fundamentals of Computer Aided Geometric Design' translated by Schumaker LL
+
+- Hoschek J, Schneider FJ (1990) Spline conversion for trimmed rational Bézier-and B-spline surfaces. Comput Aided Des 22(9):580-590
+
+- Hoschek J, Schneider FJ, Wassum P (1989) Optimal approximate conversion of spline surfaces. Comput Aided Geom Des 6(4):293-306
+
+- Houghton EG, Emnett RF, Factor JD, Sabharwal CL (1985) Implementation of a divide-and-conquer method for intersection of parametric surfaces. Comput Aided Geom Des 2(1):173-183
+
+- Hu CY, Maekawa T, Patrikalakis NM, Ye X (1997) Robust interval algorithm for surface intersections. Comput Aided Des 29(9):617-627
+
+- Hu CY, Patrikalakis NM, Ye X (1996) Robust interval solid modelling part I: representations. Comput Aided Des 28(10):807-817
+
+- Hu CY, Patrikalakis NM, Ye X (1996) Robust interval solid modelling part II: boundary evaluation. Comput Aided Des 28(10):819-830
 
 - Hu YP, Sun TC (1997) Moving a B-spline surface to a curvea trimmed surface matching algorithm. Comput Aided Des 29(6):449-455
 
@@ -1848,7 +1870,49 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Keyser J, Culver T, Manocha D, Krishnan S (2000) efficient and exact manipulation of algebraic points and curves. Comput Aided Des 32(11):649-662
 
-- Keyser J, Krishnan S, Manocha D (1999) efficient and accurate B-rep generation of low degree sculptured solids using exact arithmetic: I. representations. Comput Aided Geom Des 16(9):841-859 Keyser J, Krishnan S, Manocha D (1999) efficient and accurate B-rep generation of low degree sculptured solids using exact arithmetic: II. Computation. Comput Aided Geom Des 16(9):861-882 Kim HJ, Seo YD, Youn SK (2009) Isogeometric analysis for trimmed CAD surfaces. Comput Methods Appl Mech Eng 198(37-40):2982-2995 Kim HJ, Seo YD, Youn SK (2010) Isogeometric analysis with trimming technique for problems of arbitrary complex topology. Comput Methods Appl Mech Eng 199(45-48):2796-2812 Kim J, Pratt MJ, Iyer RG, Sriram RD (2008) Standardized data exchange of CAD models with design intent. Comput Aided Des 40(7):760-777 Kleiss SK, Pechstein C, Jüttler B, Tomar S (2012) IETI-isogeometric tearing and interconnecting. Comput Methods Appl Mech Eng 247-248:201-215 Kollmannsberger S, Özcan A, Baiges J, Ruess M, Rank E, Reali A (2015) Parameter-free, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches. Int J Numer Methods Eng 101(9):670-699 Koparkar PA, Mudur SP (1983) A new class of algorithms for the processing of parametric curves. Comput Aided Des 15(1):41-45 Korneev VG, Langer U (2004) Chapter 22: domain decomposition methods and preconditioning. In: Stein E, de Borst R, Hughes TJR (eds) Encyclopedia of computational mechanics. Fundamentals, vol 1. Wiley, Chichester, pp 617-647 Kosinka J, Cashman TJ (2015) Watertight conversion of trimmed CAD surfaces to Clough-Tocher splines. Comput Aided Geom 37:25-41 Kriezis GA, Patrikalakis NM, Wolter FE (1992) Topological and differential-equation methods for surface intersections. Comput Aided Des 24(1):41-55 Kriezis GA, Prakash PV, Patrikalakis NM (1990) Method for intersecting algebraic surfaces with rational polynomial patches. Comput Aided Des 22(10):645-654 Krishnan S, Manocha D (1997) An efficient surface intersection algorithm based on lower-dimensional formulation. ACM Trans Graph 16(1):74-106 Krishnan S, Manocha D, Gopi M, Culver T, Keyser J (2001) BOOLE: a boundary evaluation system for Boolean combinations of sculptured solids. Int J Comput Geom Appl 11(1):105-144 Krüger J, Westermann R (2003) Acceleration techniques for GPU-based volume rendering. In: Proceedings of the IEEE visualization. IEEE Computer Society, p 287-292 Kudela L (2013) Highly accurate subcell integration in the context of the finite cell method. Master's Thesis, Technical University Munich Kudela L, Zander N, Bog T, Kollmannsberger S, Rank E (2015) efficient and accurate numerical quadrature for immersed boundary methods. Adv Model Simul Eng Sci 2(1):1-22 Kudela L, Zander N, Kollmannsberger S, Rank E (2016) Smart octrees: accurately integrating discontinuous functions in 3D. Comput Methods Appl Mech Eng 306:406-426 Kumar S, Manocha D (1995) efficient rendering of trimmed NURBS surfaces. Comput Aided Des 27(7):509-521 LaCourse DE (1995) Handbook of solid modeling. McGrawHill, Inc., New York Lane JM, Carpenter L (1979) A generalized scan line algorithm for the computer display of parametrically defined surfaces. Comput Graph Image Process 11(3):290-297 Lane JM, Carpenter LC, Whitted T, Blinn JF (1980) Scan line methods for displaying parametrically defined surfaces. Commun ACM 23(1):23-34
+- Keyser J, Krishnan S, Manocha D (1999) efficient and accurate B-rep generation of low degree sculptured solids using exact arithmetic: I. representations. Comput Aided Geom Des 16(9):841-859
+
+- Keyser J, Krishnan S, Manocha D (1999) efficient and accurate B-rep generation of low degree sculptured solids using exact arithmetic: II. Computation. Comput Aided Geom Des 16(9):861-882
+
+- Kim HJ, Seo YD, Youn SK (2009) Isogeometric analysis for trimmed CAD surfaces. Comput Methods Appl Mech Eng 198(37-40):2982-2995
+
+- Kim HJ, Seo YD, Youn SK (2010) Isogeometric analysis with trimming technique for problems of arbitrary complex topology. Comput Methods Appl Mech Eng 199(45-48):2796-2812
+
+- Kim J, Pratt MJ, Iyer RG, Sriram RD (2008) Standardized data exchange of CAD models with design intent. Comput Aided Des 40(7):760-777
+
+- Kleiss SK, Pechstein C, Jüttler B, Tomar S (2012) IETI-isogeometric tearing and interconnecting. Comput Methods Appl Mech Eng 247-248:201-215
+
+- Kollmannsberger S, Özcan A, Baiges J, Ruess M, Rank E, Reali A (2015) Parameter-free, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches. Int J Numer Methods Eng 101(9):670-699
+
+- Koparkar PA, Mudur SP (1983) A new class of algorithms for the processing of parametric curves. Comput Aided Des 15(1):41-45
+
+- Korneev VG, Langer U (2004) Chapter 22: domain decomposition methods and preconditioning. In: Stein E, de Borst R, Hughes TJR (eds) Encyclopedia of computational mechanics. Fundamentals, vol 1. Wiley, Chichester, pp 617-647
+
+- Kosinka J, Cashman TJ (2015) Watertight conversion of trimmed CAD surfaces to Clough-Tocher splines. Comput Aided Geom 37:25-41
+
+- Kriezis GA, Patrikalakis NM, Wolter FE (1992) Topological and differential-equation methods for surface intersections. Comput Aided Des 24(1):41-55
+
+- Kriezis GA, Prakash PV, Patrikalakis NM (1990) Method for intersecting algebraic surfaces with rational polynomial patches. Comput Aided Des 22(10):645-654
+
+- Krishnan S, Manocha D (1997) An efficient surface intersection algorithm based on lower-dimensional formulation. ACM Trans Graph 16(1):74-106
+
+- Krishnan S, Manocha D, Gopi M, Culver T, Keyser J (2001) BOOLE: a boundary evaluation system for Boolean combinations of sculptured solids. Int J Comput Geom Appl 11(1):105-144
+
+- Krüger J, Westermann R (2003) Acceleration techniques for GPU-based volume rendering. In: Proceedings of the IEEE visualization. IEEE Computer Society, p 287-292
+
+- Kudela L (2013) Highly accurate subcell integration in the context of the finite cell method. Master's Thesis, Technical University Munich
+
+- Kudela L, Zander N, Bog T, Kollmannsberger S, Rank E (2015) efficient and accurate numerical quadrature for immersed boundary methods. Adv Model Simul Eng Sci 2(1):1-22
+
+- Kudela L, Zander N, Kollmannsberger S, Rank E (2016) Smart octrees: accurately integrating discontinuous functions in 3D. Comput Methods Appl Mech Eng 306:406-426
+
+- Kumar S, Manocha D (1995) efficient rendering of trimmed NURBS surfaces. Comput Aided Des 27(7):509-521
+
+- LaCourse DE (1995) Handbook of solid modeling. McGrawHill, Inc., New York
+
+- Lane JM, Carpenter L (1979) A generalized scan line algorithm for the computer display of parametrically defined surfaces. Comput Graph Image Process 11(3):290-297
+
+- Lane JM, Carpenter LC, Whitted T, Blinn JF (1980) Scan line methods for displaying parametrically defined surfaces. Commun ACM 23(1):23-34
 
 - Lane JM, Riesenfeld RF (1980) A theoretical development for the computer generation and display of piecewise polynomial surfaces. IEEE Trans Pattern Anal Mach Intell PAMI-2(1):35-46
 
@@ -1894,7 +1958,49 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Marussig B, Zechner J, Beer G, Fries TP (2015) Fast isogeometric boundary element method based on independent field approximation. Comput Methods Appl Mech Eng 284:458-488
 
-- Marussig B, Zechner J, Beer G, Fries TP (2016) Stable isogeometric analysis of trimmed geometries. Comput Methods Appl Mech Eng. doi:10.1016 j.cma.2016.07.040 Massarwi F, Elber G (2016) A B-spline based framework for volumetric object modeling. Comput Aided Des 78:36-47 Milenkovic VJ (1988) Verifiable implementations of geometric algorithms using finite precision arithmetic. Artif Intell 37(1):377-401 Miller JR (1986) Sculptured surfaces in solid models: issues and alternative approaches. IEEE Comput Graph Appl 6(12):37-48 Moreton H (2001) Watertight tessellation using forward differencing. In: Proceedings of the workshop on graphics hardware. ACM, p 25-32 Mortenson ME (1997) Geometric modeling, 2nd edn. Wiley, New York Mudur SP, Koparkar PA (1984) Interval methods for processing geometric objects. IEEE Comput Graph Appl 4(2):7-17 Nagel RN, Braithwaite WW, Kennicott PR (1980) Initial graphics exchange specification (IGES) version 1.0. NBSIR 80-1978 (R). National Bureau of Standards Nagy AP, Abdalla MM, Gurdal Z (2010) On the variational formulation of stress constraints in isogeometric design. Comput Methods Appl Mech Eng 199(41-44):2687-2696 Nagy AP, Benson DJ (2015) On the numerical integration of trimmed isogeometric elements. Comput Methods Appl Mech Eng 284:165-185 Nguyen T, Karčiauskas K, Peters J (2014) A comparative study of several classical, discrete differential and isogeometric methods for solving Poisson's equation on the disk. Axioms 3(2):280-299 Nguyen VP, Kerfriden P, Brino M, Bordas SPA, Bonisoli E (2014) Nitsche's method for two and three dimensional NURBS patch coupling. Comput Mech 53(6):1163-1182 Nishita T, Sederberg TW, Kakimoto M (1990) Ray tracing trimmed rational surface patches. SIGGRAPH Comput Graph 24(4):337-345 Nitsche J (1971) Über ein Variationsprinzip zur Lösung von Dirichlet-Problemen bei Verwendung von Teilräumen, die keinen Randbedingungen unterworfen sind. Abh Math Semin Univ Hambg 36(1):9-15 Omerović S, Fries TP (2016) Conformal higher-order remeshing schemes for implicitly defined interface problems. Int J Numer Methods Eng. doi:10.1002 nme.5301 Pabst HF, Springer JP, Schollmeyer A, Lenhardt R, Lessig C, Froehlich B (2006) Ray casting of trimmed NURBS surfaces on the GPU. In: IEEE symposium on interactive ray tracing, p 151-160 Parreira P (1988) On the accuracy of continuous and discontinuous boundary elements. Eng Anal 5(4):205-211 Patrikalakis NM (1993) Surface-to-surface intersections. IEEE Comput Graph Appl 13(1):89-95 Patrikalakis NM, Maekawa T (2002) Chapter 25: intersection problems. In: Handbook of computer aided geometric design. Elsevier, Amsterdam, p 623-650 Patrikalakis NM, Maekawa T (2009) Shape interrogation for computer aided design and manufacturing. Springer, Berlin Patrikalakis NM, Prakash PV (1990) Surface intersections for geometric modeling. J Mech Des 112(1):100-107 Patterson C, Sheikh M (1984) Interelement continuity in the boundary element method. In: Brebbia C (ed) Topics in boundary element research. Springer, New York, pp 123-141 Peng QS (1984) An algorithm for finding the intersection lines between two B-spline surfaces. Comput Aided Des 16(4):191-196 Peterson AF, Bibby MM (2009) An introduction to the locallycorrected Nyström method. Synth Lect Comput Electromagn 4(1):1-115 Pharr M, Kolb C, Gershbein R, Hanrahan P (1997) Rendering complex scenes with memory-coherent ray tracing. In:
+- Marussig B, Zechner J, Beer G, Fries TP (2016) Stable isogeometric analysis of trimmed geometries. Comput Methods Appl Mech Eng. doi:10.1016 j.cma.2016.07.040
+
+- Massarwi F, Elber G (2016) A B-spline based framework for volumetric object modeling. Comput Aided Des 78:36-47 Milenkovic VJ (1988) Verifiable implementations of geometric algorithms using finite precision arithmetic. Artif Intell 37(1):377-401
+
+- Miller JR (1986) Sculptured surfaces in solid models: issues and alternative approaches. IEEE Comput Graph Appl 6(12):37-48
+
+- Moreton H (2001) Watertight tessellation using forward differencing. In: Proceedings of the workshop on graphics hardware. ACM, p 25-32
+
+- Mortenson ME (1997) Geometric modeling, 2nd edn. Wiley, New York
+
+- Mudur SP, Koparkar PA (1984) Interval methods for processing geometric objects. IEEE Comput Graph Appl 4(2):7-17
+
+- Nagel RN, Braithwaite WW, Kennicott PR (1980) Initial graphics exchange specification (IGES) version 1.0. NBSIR 80-1978 (R). National Bureau of Standards
+
+- Nagy AP, Abdalla MM, Gurdal Z (2010) On the variational formulation of stress constraints in isogeometric design. Comput Methods Appl Mech Eng 199(41-44):2687-2696
+
+- Nagy AP, Benson DJ (2015) On the numerical integration of trimmed isogeometric elements. Comput Methods Appl Mech Eng 284:165-185
+
+- Nguyen T, Karčiauskas K, Peters J (2014) A comparative study of several classical, discrete differential and isogeometric methods for solving Poisson's equation on the disk. Axioms 3(2):280-299
+
+- Nguyen VP, Kerfriden P, Brino M, Bordas SPA, Bonisoli E (2014) Nitsche's method for two and three dimensional NURBS patch coupling. Comput Mech 53(6):1163-1182
+
+- Nishita T, Sederberg TW, Kakimoto M (1990) Ray tracing trimmed rational surface patches. SIGGRAPH Comput Graph 24(4):337-345
+
+- Nitsche J (1971) Über ein Variationsprinzip zur Lösung von Dirichlet-Problemen bei Verwendung von Teilräumen, die keinen Randbedingungen unterworfen sind. Abh Math Semin Univ Hambg 36(1):9-15
+
+- Omerović S, Fries TP (2016) Conformal higher-order remeshing schemes for implicitly defined interface problems. Int J Numer Methods Eng. doi:10.1002 nme.5301
+
+- Pabst HF, Springer JP, Schollmeyer A, Lenhardt R, Lessig C, Froehlich B (2006) Ray casting of trimmed NURBS surfaces on the GPU. In: IEEE symposium on interactive ray tracing, p 151-160 Parreira P (1988) On the accuracy of continuous and discontinuous boundary elements. Eng Anal 5(4):205-211
+
+- Patrikalakis NM (1993) Surface-to-surface intersections. IEEE Comput Graph Appl 13(1):89-95
+
+- Patrikalakis NM, Maekawa T (2002) Chapter 25: intersection problems. In: Handbook of computer aided geometric design. Elsevier, Amsterdam, p 623-650
+
+- Patrikalakis NM, Maekawa T (2009) Shape interrogation for computer aided design and manufacturing. Springer, Berlin
+
+- Patrikalakis NM, Prakash PV (1990) Surface intersections for geometric modeling. J Mech Des 112(1):100-107
+
+- Patterson C, Sheikh M (1984) Interelement continuity in the boundary element method. In: Brebbia C (ed) Topics in boundary element research. Springer, New York, pp 123-141 Peng QS (1984) An algorithm for finding the intersection lines between two B-spline surfaces. Comput Aided Des 16(4):191-196
+
+- Peterson AF, Bibby MM (2009) An introduction to the locallycorrected Nyström method. Synth Lect Comput Electromagn 4(1):1-115
+
+- Pharr M, Kolb C, Gershbein R, Hanrahan P (1997) Rendering complex scenes with memory-coherent ray tracing. In:
 
 - Proceedings of the conference on computer graphics and interactive techniques. ACM, p 101-108
 
@@ -1940,7 +2046,47 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Riesenfeld RF, Haimes R, Cohen E (2015) Initiating a CAD renaissance: multidisciplinary analysis driven design: framework for a new generation of advanced computational design, engineering and manufacturing environments. Comput Methods Appl Mech Eng 284:1054-1072
 
-- Riffnaller-Schiefer A, Augsdörfer UH, Fellner DW (2016) Isogeometric shell analysis with NURBS compatible subdivision surfaces. Appl Math Comput 272, Part 1:139-147 Rockwood A, Heaton K, Davis T (1989) Real-time rendering of trimmed surfaces. In: ACM SIGGRAPH computer graphics, vol 23. ACM, p 107-116 Rossignac JR, Requicha AAG (1987) Piecewise-circular curves for geometric modeling. IBM J Res Dev 31(3):296-313 Rossignac JR, Requicha AAG (1999) Solid modeling. Technical report Rüberg T, Cirak F (2012) Subdivision-stabilised immersed B-spline finite elements for moving boundary flows. Comput Methods Appl Mech Eng 209-212:266-283 Ruess M, Schillinger D, Bazilevs Y, Varduhn V, Rank E (2013) Weakly enforced essential boundary conditions for NURBSembedded and trimmed NURBS geometries on the basis of the finite cell method. Int J Numer Methods Eng 95(10):811-846 Ruess M, Schillinger D, Özcan AI, Rank E (2014) Weak coupling for isogeometric analysis of non-matching and trimmed multi-patch geometries. Comput Methods Appl Mech Eng 269:46-71 Salesin D, Stolfi J, Guibas L (1989) Epsilon geometry: building robust algorithms from imprecise computations. In: Proceedings of the symposium on computational geometry. ACM, p 208-217 Sarraga RF (1983) Algebraic methods for intersections of quadric surfaces in GMSOLID. Comput Vis Graph Image Process 22(2):222-238 Sarraga RF, Waters WC (1984) Free-form surfaces in GMSOLID: goals and issues. In: Pickett MS, Boyse 'JW (eds) Solid modeling by computers. Springer, New York, pp 187-209 Schillinger D, Evans JA, Reali A, Scott MA, Hughes TJR (2013) Isogeometric collocation: cost comparison with Galerkin methods and extension to adaptive hierarchical NURBS discretizations. Comput Methods Appl Mech Eng 267:170-232 Schillinger D, Ruess M (2015) The finite cell method: a review in the context of higher-order structural analysis of CAD and image-based geometric models. Arch Comput Methods Eng 22(3):391-455 Schmidt R, Wüchner R, Bletzinger KU (2012) Isogeometric analysis of trimmed NURBS geometries. Comput Methods Appl Mech Eng 241-244:93-111 Schollmeyer A, Fröhlich B (2009) Direct trimming of NURBS surfaces on the GPU. ACM Trans Graph 28(3):47:1-47:9 Scott MA (2011) T-splines as a design-through-analysis technology. PhD Thesis, University of Texas computational Science, engineering, and Mathematics Scott MA, Simpson RN, Evans JA, Lipton S, Bordas SPA, Hughes TJR, Sederberg TW (2013) Isogeometric boundary element analysis using unstructured T-splines. Comput Methods Appl Mech Eng 254:197-221 SCRA (2006) STEP application handbook ISO 10303 version 3 Sederberg TW (1983) Implicit and parametric curves and surfaces for computer aided geometric design. PhD Thesis, Purdue University Sederberg TW, Anderson DC, Goldman RN (1984) Implicit representation of parametric curves and surfaces. Comput Vis Graph Image Process 28(1):72-84 Sederberg TW, Christiansen HN, Katz S (1989) Improved test for closed loops in surface intersections. Comput Aided Des 21(8):505-508 Sederberg TW, Li X, Lin HW, Ipson H, Finnigan GT (2008) Watertight trimmed NURBS. ACM Trans Graph 27(3):79:1-79:8 Sederberg TW, Nishita T (1990) curve intersection using Bézier clipping. Comput Aided Des 22(9):538-549 Sederberg TW, Zheng J, Bakenov A, Nasri A (2003) T-splines and T-NURCCs. ACM Trans Graph 22(3):477-484
+- Riffnaller-Schiefer A, Augsdörfer UH, Fellner DW (2016) Isogeometric shell analysis with NURBS compatible subdivision surfaces. Appl Math Comput 272, Part 1:139-147
+
+- Rockwood A, Heaton K, Davis T (1989) Real-time rendering of trimmed surfaces. In: ACM SIGGRAPH computer graphics, vol 23. ACM, p 107-116
+
+- Rossignac JR, Requicha AAG (1987) Piecewise-circular curves for geometric modeling. IBM J Res Dev 31(3):296-313
+
+- Rossignac JR, Requicha AAG (1999) Solid modeling. Technical report
+
+- Rüberg T, Cirak F (2012) Subdivision-stabilised immersed B-spline finite elements for moving boundary flows. Comput Methods Appl Mech Eng 209-212:266-283
+
+- Ruess M, Schillinger D, Bazilevs Y, Varduhn V, Rank E (2013) Weakly enforced essential boundary conditions for NURBSembedded and trimmed NURBS geometries on the basis of the finite cell method. Int J Numer Methods Eng 95(10):811-846
+
+- Ruess M, Schillinger D, Özcan AI, Rank E (2014) Weak coupling for isogeometric analysis of non-matching and trimmed multi-patch geometries. Comput Methods Appl Mech Eng 269:46-71
+
+- Salesin D, Stolfi J, Guibas L (1989) Epsilon geometry: building robust algorithms from imprecise computations. In: Proceedings of the symposium on computational geometry. ACM, p 208-217 Sarraga RF (1983) Algebraic methods for intersections of quadric surfaces in GMSOLID. Comput Vis Graph Image Process 22(2):222-238
+
+- Sarraga RF, Waters WC (1984) Free-form surfaces in GMSOLID: goals and issues. In: Pickett MS, Boyse 'JW (eds) Solid modeling by computers. Springer, New York, pp 187-209
+
+- Schillinger D, Evans JA, Reali A, Scott MA, Hughes TJR (2013) Isogeometric collocation: cost comparison with Galerkin methods and extension to adaptive hierarchical NURBS discretizations. Comput Methods Appl Mech Eng 267:170-232
+
+- Schillinger D, Ruess M (2015) The finite cell method: a review in the context of higher-order structural analysis of CAD and image-based geometric models. Arch Comput Methods Eng 22(3):391-455
+
+- Schmidt R, Wüchner R, Bletzinger KU (2012) Isogeometric analysis of trimmed NURBS geometries. Comput Methods Appl Mech Eng 241-244:93-111
+
+- Schollmeyer A, Fröhlich B (2009) Direct trimming of NURBS surfaces on the GPU. ACM Trans Graph 28(3):47:1-47:9
+
+- Scott MA (2011) T-splines as a design-through-analysis technology. PhD Thesis, University of Texas computational Science, engineering, and Mathematics
+
+- Scott MA, Simpson RN, Evans JA, Lipton S, Bordas SPA, Hughes TJR, Sederberg TW (2013) Isogeometric boundary element analysis using unstructured T-splines. Comput Methods Appl Mech Eng 254:197-221 SCRA (2006) STEP application handbook ISO 10303 version 3
+
+- Sederberg TW (1983) Implicit and parametric curves and surfaces for computer aided geometric design. PhD Thesis, Purdue University
+
+- Sederberg TW, Anderson DC, Goldman RN (1984) Implicit representation of parametric curves and surfaces. Comput Vis Graph Image Process 28(1):72-84
+
+- Sederberg TW, Christiansen HN, Katz S (1989) Improved test for closed loops in surface intersections. Comput Aided Des 21(8):505-508
+
+- Sederberg TW, Li X, Lin HW, Ipson H, Finnigan GT (2008) Watertight trimmed NURBS. ACM Trans Graph 27(3):79:1-79:8
+
+- Sederberg TW, Nishita T (1990) curve intersection using Bézier clipping. Comput Aided Des 22(9):538-549
+
+- Sederberg TW, Zheng J, Bakenov A, Nasri A (2003) T-splines and T-NURCCs. ACM Trans Graph 22(3):477-484
 
 - Segal M (1990) Using tolerances to guarantee valid polyhedral modeling results. SIGGRAPH Comput Graph 24(4):105-114
 
@@ -1988,7 +2134,49 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Sweeney MAJ, Bartels RH (1986) Ray tracing free-form B-spline surfaces. IEEE Comput Graph Appl 6(2):41-49
 
-- Tassey G, Brunnermeier SB, Martin SA (1999) Interoperability cost analysis of the U.S. automotive supply chain. Technical report. Research Triangle Institute Temizer I, Wriggers P, Hughes TJR (2011) Contact treatment in isogeometric analysis with NURBS. Comput Methods Appl Mech Eng 200(9-12):1100-1112 Toshniwal D, Speleers H, Hughes TJR (2017) Smooth cubic spline spaces on unstructured quadrilateral meshes with particular emphasis on extraordinary points: design and analysis considerations. Technical report. ICES Reports Toth DL (1985) On ray tracing parametric surfaces. SIGGRAPH Comput Graph 19(3):171-179 Urick B (2016) Reconstruction of tensor product spline surfaces to integrate surface-surface intersection geometry and topology while maintaining inter-surface continuity. PhD Thesis, The University of Texas at Austin da Veiga LB, Buffa A, Sangalli G, Vázquez R (2014) Mathematical analysis of variational isogeometric methods. Acta Numer 23:157-287 Vigo M, Brunet P (1995) Piecewise linear approximation of trimmed surfaces. In: Hagen H, Farin G, Noltemeierm H (eds) Geometric modelling: Dagstuhl 1993, computing supplement 10. Springer, New York, pp 341-356 Vries-Baayens AE, Seebregts CH (1992) Chapter 7: exact conversion of a trimmed nonrational Bézier surface into composite or basic nonrational Bézier surfaces. In: Topics in surface modeling. SIAM, Philadelphia, p 115-144 Wald I, Slusallek P, Benthin C, Wagner M (2001) Interactive rendering with coherent ray tracing. Comput Graph Forum 20(3):153-165 Wang SW, Shih ZC, Chang RC (2000) An improved rendering technique for ray tracing Bézier and B-spline surfaces. J Vis Comput Animat 11(4):209-219 Wang X (2001) Geometric trimming and curvature continuous surface blending for aircraft fuselage and wing shapes. Master's Thesis, Virginia Polytechnic Institute and State University Wang Y, Benson DJ (2016) Geometrically constrained isogeometric parameterized level-set based topology optimization via trimmed elements. Front Mech Eng 1-16 Wang Y, Benson DJ, Nagy AP (2015) A multi-patch nonsingular isogeometric boundary element method using trimmed elements. Comput Mech 56(1):173-191 Wang YW, Huang ZD, Zheng Y, Zhang SG (2013) Isogeometric analysis for compound B-spline surfaces. Comput Methods Appl Mech Eng 261-262:1-15 Warren J, Weimer H (2001) Subdivision methods for geometric design: a constructive approach, 1st edn. Morgan Kaufmann Publishers, Inc., San Francisco Wei X, Zhang Y, Hughes TJR, Scott MA (2015) Truncated hierarchical Catmull-Clark subdivision with local refinement. Comput Methods Appl Mech Eng 291:1-20 Weiler KJ (1986) Topological structures for geometric modeling. PhD Thesis, Rensselaer Polytechnic Institute Whitted T (1980) An improved illumination model for shaded display. Commun ACM 23(6):343-349 Wriggers P, Zavarise G (2004) Chapter 6: computational contact mechanics. In: Stein E, de Borst R, Hughes TJR (eds) Encyclopedia of computational mechanics. Fundamentals, vol 2. Wiley, p 195-226 Wu R, Peters J (2015) Correct resolution rendering of trimmed spline surfaces. Comput Aided Des 58:123-131 Xia S, Qian X (2016) Isogeometric analysis with Bézier tetrahedra. Comput Methods Appl Mech Eng. doi:10.1016 j. cma.2016.09.045 Xia S, Wang X, Qian X (2015) Continuity and convergence in rational triangular Bézier spline based isogeometric analysis. Comput Methods Appl Mech Eng 297:292-324 Yang CG (1987) On speeding up ray tracing of B-spline surfaces. Comput Aided Des 19(3):122-130
+- Tassey G, Brunnermeier SB, Martin SA (1999) Interoperability cost analysis of the U.S. automotive supply chain. Technical report. Research Triangle Institute
+
+- Temizer I, Wriggers P, Hughes TJR (2011) Contact treatment in isogeometric analysis with NURBS. Comput Methods Appl Mech Eng 200(9-12):1100-1112
+
+- Toshniwal D, Speleers H, Hughes TJR (2017) Smooth cubic spline spaces on unstructured quadrilateral meshes with particular emphasis on extraordinary points: design and analysis considerations. Technical report. ICES Reports
+
+- Toth DL (1985) On ray tracing parametric surfaces. SIGGRAPH Comput Graph 19(3):171-179
+
+- Urick B (2016) Reconstruction of tensor product spline surfaces to integrate surface-surface intersection geometry and topology while maintaining inter-surface continuity. PhD Thesis, The University of Texas at Austin
+
+- da Veiga LB, Buffa A, Sangalli G, Vázquez R (2014) Mathematical analysis of variational isogeometric methods. Acta Numer 23:157-287
+
+- Vigo M, Brunet P (1995) Piecewise linear approximation of trimmed surfaces. In: Hagen H, Farin G, Noltemeierm H (eds) Geometric modelling: Dagstuhl 1993, computing supplement 10. Springer, New York, pp 341-356
+
+- Vries-Baayens AE, Seebregts CH (1992) Chapter 7: exact conversion of a trimmed nonrational Bézier surface into composite or basic nonrational Bézier surfaces. In: Topics in surface modeling. SIAM, Philadelphia, p 115-144
+
+- Wald I, Slusallek P, Benthin C, Wagner M (2001) Interactive rendering with coherent ray tracing. Comput Graph Forum 20(3):153-165
+
+- Wang SW, Shih ZC, Chang RC (2000) An improved rendering technique for ray tracing Bézier and B-spline surfaces. J Vis Comput Animat 11(4):209-219
+
+- Wang X (2001) Geometric trimming and curvature continuous surface blending for aircraft fuselage and wing shapes. Master's Thesis, Virginia Polytechnic Institute and State University
+
+- Wang Y, Benson DJ (2016) Geometrically constrained isogeometric parameterized level-set based topology optimization via trimmed elements. Front Mech Eng 1-16
+
+- Wang Y, Benson DJ, Nagy AP (2015) A multi-patch nonsingular isogeometric boundary element method using trimmed elements. Comput Mech 56(1):173-191
+
+- Wang YW, Huang ZD, Zheng Y, Zhang SG (2013) Isogeometric analysis for compound B-spline surfaces. Comput Methods Appl Mech Eng 261-262:1-15
+
+- Warren J, Weimer H (2001) Subdivision methods for geometric design: a constructive approach, 1st edn. Morgan Kaufmann Publishers, Inc., San Francisco
+
+- Wei X, Zhang Y, Hughes TJR, Scott MA (2015) Truncated hierarchical Catmull-Clark subdivision with local refinement. Comput Methods Appl Mech Eng 291:1-20
+
+- Weiler KJ (1986) Topological structures for geometric modeling. PhD Thesis, Rensselaer Polytechnic Institute
+
+- Whitted T (1980) An improved illumination model for shaded display. Commun ACM 23(6):343-349
+
+- Wriggers P, Zavarise G (2004) Chapter 6: computational contact mechanics. In: Stein E, de Borst R, Hughes TJR (eds) Encyclopedia of computational mechanics. Fundamentals, vol 2. Wiley, p 195-226
+
+- Wu R, Peters J (2015) Correct resolution rendering of trimmed spline surfaces. Comput Aided Des 58:123-131
+
+- Xia S, Qian X (2016) Isogeometric analysis with Bézier tetrahedra. Comput Methods Appl Mech Eng. doi:10.1016 j. cma.2016.09.045
+
+- Xia S, Wang X, Qian X (2015) Continuity and convergence in rational triangular Bézier spline based isogeometric analysis. Comput Methods Appl Mech Eng 297:292-324 Yang CG (1987) On speeding up ray tracing of B-spline surfaces. Comput Aided Des 19(3):122-130
 
 - Yang YJ, Cao S, Yong JH, Zhang H, Paul JC, Sun JG, Gu Hj (2008) Approximate computation of curves on B-spline surfaces. Comput Aided Des 40(2):223-234
 
@@ -1996,4 +2184,8 @@ ISO -10303-21; HEADER; * Generated by software containing ST-Developer * from ST
 
 - Zechner J, Marussig B, Beer G, Fries TP (2015) The isogeometric Nyström method. Comput Methods Appl Mech Eng 306:212-237
 
-- Zhang X (2005) Optimal geometric trimming of B-spline surfaces for aircraft design. PhD Thesis, Virginia Polytechnic Institute and State University Zhang YJ (2016) Geometric modeling and mesh generation from scanned images. CRC Press Zienkiewicz OC, Taylor RL, Zhu JZ (2013) Chapter 17: the finite element method: its basis and fundamentals. In: Automatic mesh generation, 7th edn. Butterworth-Heinemann, Oxford, p 573-640
+- Zhang X (2005) Optimal geometric trimming of B-spline surfaces for aircraft design. PhD Thesis, Virginia Polytechnic Institute and State University
+
+- Zhang YJ (2016) Geometric modeling and mesh generation from scanned images. CRC Press
+
+- Zienkiewicz OC, Taylor RL, Zhu JZ (2013) Chapter 17: the finite element method: its basis and fundamentals. In: Automatic mesh generation, 7th edn. Butterworth-Heinemann, Oxford, p 573-640

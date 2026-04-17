@@ -1,6 +1,6 @@
 # Computing Exact Aspect Graphs of Curved Objects: Algebraic Surfaces
 
-Jean Ponce x, Sylvain Petitjean, David J. Kriegman ~, Algebraic Surfaces*, Jean Ponce
+Jean Ponce x, Sylvain Petitjean, David J. Kriegman ~, Algebraic Surfaces*
 
 Dept. of Computer Science, University of Illinois, Urbana, IL 61801, USA
 Dept. of Electrical Engineering, Yale University, New Haven, CT 06520, USA
@@ -9,7 +9,7 @@ Dept. of Electrical Engineering, Yale University, New Haven, CT 06520, USA
 
 This paper presents an algorithm for computing the exact aspect graph of an opaque solid bounded by a smooth algebraic surface and observed under orthographic projection. The algorithm uses curve tracing, cell decomposition, and ray tracing to construct the regions of the view sphere delineated by visual events. It has been fully implemented, and examples are presented.
 
-## Introduction
+## 1 Introduction
 
 The aspect graph [25] is a qualitative, viewer-centered representation that enumerates all possible appearances of an object: The range of all possible viewpoints is partitioned into maximal regions such that the structure of the image contours, also called the aspect, is the same from every viewpoint in a region. The change in the aspect at the boundary between regions is named a visual event. The maximal regions and their boundaries are organized into a graph, whose nodes represent the regions with their associated aspects and whose ares correspond to the visual event boundaries between adjacent regions.
 
@@ -29,7 +29,7 @@ This algorithm is described in Sect. 3. It relies on a combination of symbolic a
 
 Let us start by reviewing some results from catastrophe theory [1]: From most viewpoints, the image contours of smooth surfaces are piecewise-smooth curves whose only singularities are cusps and t-junctions. The contour structure is in general stable with respect to viewpoint, i.e., it does not change when the camera position is submitted to a small perturbation. From some viewpoints, however, almost any perturbation of the viewpoint will alter the contour topology. A catalogue of these "visual events" has been established by Kergosien [22] for transparent generic smooth surfaces observed under orthographic projection (Fig. 1).
 
-![Figure 1. Visual events, a. Local events. From top to bottom](/Users/evanthayer/Projects/stepview/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-1-p002.png)
+![Figure 1. Visual events, a. Local events. From top to bottom](/Users/evanthayer/Projects/paperx/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-1-p002.png)
 
 *Figure 1. Visual events, a. Local events. From top to bottom: swallowtail, beak-to-beak, lip. b. Multilocal events. From top to bottom: triple point, tangent crossing, and cusp crossing.*
 
@@ -68,14 +68,14 @@ As shown in Sect. 2, a visual event corresponds in fact to two curves: a curve (
 For algebraic surfaces, the curve \(\Gamma\) is defined implicitly in \(\mathbb{R}^{n+1}\) by a system of \(n\) polynomial equations in \(n+1\) unknowns, with \(1 \leq n \leq 8\) (see Appendices A and B):
 
 $$
-\left\{\begin{array}{l} P_{1}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \tag{1}\\ P_{n}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \end{array}\right.
+\left\{\begin{array}{l} P_{1}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0, \\ \ldots \\ P_{n}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 . \end{array}\right.
 $$
 
 To trace a visual event, we first trace \(\Gamma\) in \(\mathbb{R}^{n+1}\). We then trace \(\Delta\) by mapping points of \(\Gamma\) onto points of \(\Delta\) : given a point on \(\Gamma\), the corresponding point on \(\Delta\) is an asymptotic direction for local events, or the direction of the line joining two surface points for multilocal events.
 
 The curve tracing algorithm is decomposed into the following steps (Fig. 2): 1.1. Compute all extremal points of \(\Gamma\) in some direction, say \(X_{0}\) (this includes all singular points). 1.2. Compute all intersections of \(\Gamma\) with the hyperplanes orthogonal to the \(X_{0}\) axis at the extremal points. 1.3. For each interval of the \(X_{0}\) axis delimited by these hyperplanes, intersect \(\Gamma\) and the hyperplane passing through the mid-point of the interval to obtain one sample for each real branch. 1.4. March numerically from the sample points found in step 1.3 to the intersection points found in step 1.2 by predicting new points through Taylor expansion and correcting them through Newton iterations.
 
-![Figure 2. An example of curve tracing in ~2. This curve has two extremal points El, E~, and four regular branches with sample points $1 to $4; note that E2 is singular.](/Users/evanthayer/Projects/stepview/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-2-p004.png)
+![Figure 2. An example of curve tracing in ~2. This curve has two extremal points El, E~, and four regular branches with sample points $1 to $4; note that E2 is singular.](/Users/evanthayer/Projects/paperx/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-2-p004.png)
 
 *Figure 2. An example of curve tracing in ~2. This curve has two extremal points El, E~, and four regular branches with sample points $1 to $4; note that E2 is singular.: An example of curve tracing in ~2. This curve has two extremal points El, E~, and four regular branches with sample points $1 to $4; note that E2 is singular.*
 
@@ -83,9 +83,9 @@ This algorithm overcomes the main difficulties of curve tracing, namely finding 
 
 Technical Details. We now detail the computations involved in the curve tracing algorithm. The casual reader may want to skip the rest of this section, at least on first reading, and jump ahead to Sect. 3.2.
 
-Step 1.1 requires the computation of the extrema of \(\Gamma\) in the \(X_{0}\) direction. As shown in Appendix C, these points are the solutions of the system of \(n+1\) polynomial equations in \(n+1\) unknowns obtained by adding the equation \(|J|=0\) to system (1). Here, \(J\) is the Jacobian matrix \(\left(\partial P_{i} / \partial X_{j}\right)\), with \(i, j=1, . ., n\). Steps 1.2 and 1.3 require computing the intersections of a curve with a hyperplane, and these points are once again the solutions of a system of polynomial equations. We use the homotopy continuation method, as described in Appendix D, to solve these equations.
+Step 1.1 requires the computation of the extrema of \(\Gamma\) in the \(X_{0}\) direction. As shown in Appendix C, these points are the solutions of the system of \(n+1\) polynomial equations in \(n+1\) unknowns obtained by adding the equation \(|J|=0\) to system (1). Here, \(J\) is the Jacobian matrix ( \(\partial P_{i} / \partial X_{j}\) ), with \(i, j=1, . ., n\). Steps 1.2 and 1.3 require computing the intersections of a curve with a hyperplane, and these points are once again the solutions of a system of polynomial equations. We use the homotopy continuation method, as described in Appendix D, to solve these equations.
 
-The curve is actually traced in step 1.4, using a classical prediction/correction ap proach based on a Taylor expansion of the \(P_{i}\) 's [4, 13]. As shown in Appendix C, this involves inverting the matrix J which is guaranteed to be nonsingular on extrema-free intervals. Note that all real branches can be traced in parallel. As shown in Appendix D, finding the extrema of the curve and its intersections with a family of hyperplanes is a parallel process too.
+The curve is actually traced in step 1.4, using a classical prediction/correction approach based on a Taylor expansion of the \(P_{i}\) 's [4, 13]. As shown in Appendix C, this involves inverting the matrix J which is guaranteed to be nonsingular on extrema-free intervals. Note that all real branches can be traced in parallel. As shown in Appendix D, finding the extrema of the curve and its intersections with a family of hyperplanes is a parallel process too.
 
 There is no conceptual difficulty in applying this algorithm to aspect graph construction, but there is a very practical problem: the visual events are defined by very high degree algebraic urves, and tracing them requires solving systems of equations that may have millions of roots. We will come back to this problem in Sect. 4.
 
@@ -97,7 +97,7 @@ All visual events of the transparent object are found in step 1 of the algorithm
 
 To construct the aspect graph regions delineated by the curves A on the view sphere, we refine the curve tracing algorithm into a cell decomposition algorithm whose output is a description of the regions, their boundary curves, and their adjacency relationships. Note that this refinement is only possible for curves drawn in two-dimensional spaces such as the sphere.
 
-The algorithm is divided into the following steps (Fig. 3): 3.1. Compute all extremal points of the curves in the \(X_{0}\) direction. 3.2. Compute all the intersection points be tween the curves. 3.3. Compute all intersections of the curves with the "vertical" lines orthogonal to the \(X_{0}\) axis at the extremal and intersection points. 3.4. For each interval of the \(X_{0}\) axis delimited by these lines, do the following: 3.4.1. Intersect the curves and the line passing through the mid-point of the interval to obtain a sample point on each real branch of each curve. 3.4.2. Sort the sample points in increasing \(X_{1}\) order. 3.4.3. March from the sample points to the intersection points found in step 3.3. 3.4.4. Two consecutive branches within an interval of \(X_{0}\) and the vertical segments joining their extremities bound a region.
+The algorithm is divided into the following steps (Fig. 3): 3.1. Compute all extremal points of the curves in the \(X_{0}\) direction. 3.2. Compute all the intersection points between the curves. 3.3. Compute all intersections of the curves with the "vertical" lines orthogonal to the \(X_{0}\) axis at the extremal and intersection points. 3.4. For each interval of the \(X_{0}\) axis delimited by these lines, do the following: 3.4.1. Intersect the curves and the line passing through the mid-point of the interval to obtain a sample point on each real branch of each curve. 3.4.2. Sort the sample points in increasing \(X_{1}\) order. 3.4.3. March from the sample points to the intersection points found in step 3.3. 3.4.4. Two consecutive branches within an interval of \(X_{0}\) and the vertical segments joining their extremities bound a region.
 
 A sample point can be found for each region as the mid-point of the sample points of the bounding curve branches. This point is used to construct a representative aspect in Sect. 3.4. Maximal regions are found by merging all regions adjacent along a vertical line segment (two regions are adjacent if they share a common boundary, i.e., a vertical line segment or a curve branch).
 
@@ -105,7 +105,7 @@ Technical Details. We now detail the computations involved in the cell decomposi
 
 In our application, the coordinates \(X_{0}, X_{1}\) define a parameterization of the view sphere, such as spherical angles. Also, the curve \(\Delta\) corresponding to a visual event is not explicitly defined by polynomial equations. As shown in Appendices A and B, it is actually possible to augment the polynomial equations defining \(\Gamma\) to construct a new algebraic curve \(\Omega\) defined in \(\mathbb{R}^{m+1}\), with \(m>n\), such that \(\Delta\) is the projection of \(\Omega\) onto
 
-![Figure 3. An example of cell decomposition. Two curves are shown, with their extremal points Ei and their intersection points Is; the shaded rectangle delimited by I1 and I2 is divided into five regions with sample points $1 to $5; the region corresponding to $3 is shown in a darker shade.](/Users/evanthayer/Projects/stepview/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-3-p006.png)
+![Figure 3. An example of cell decomposition. Two curves are shown, with their extremal points Ei and their intersection points Is; the shaded rectangle delimited by I1 and I2 is divided into five regions with sample points $1 to $5; the region corresponding to $3 is shown in a darker shade.](/Users/evanthayer/Projects/paperx/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-3-p006.png)
 
 *Figure 3. An example of cell decomposition. Two curves are shown, with their extremal points Ei and their intersection points Is; the shaded rectangle delimited by I1 and I2 is divided into five regions with sample points $1 to $5; the region corresponding to $3 is shown in a darker shade.: An example of cell decomposition. Two curves are shown, with their extremal points Ei and their intersection points Is; the shaded rectangle delimited by I1 and I2 is divided into five regions with sample points $1 to $5; the region corresponding to $3 is shown in a darker shade.*
 
@@ -121,7 +121,7 @@ This step involves determining the contour structure of a single view for each r
 
 The algorithm described in Sect. 3 has been fully implemented. Tracing the visual event curves (step 1) is by far the most expensive part of the algorithm. curve tracing and continuation are parallel processes that can be mapped onto medium-grained MIMD architectures. We have implemented continuation on networks of Sun SPARC Stations communicating via Ethernet, networks of INMOS Transputers, and Intel Hypercubes. In practice, this allows us to routinely solve systems with a few thousands of roots, a task
 
-![Figure 4. A few objects and their aspect graphs](/Users/evanthayer/Projects/stepview/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-2-p008.png)
+![Figure 4. A few objects and their aspect graphs](/Users/evanthayer/Projects/paperx/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-2-p008.png)
 
 *Figure 4. A few objects and their aspect graphs: a. A parametric surface, b. A bean-shaped implicit surface, c. A squash-shaped implicit surface, d. A "dimpled" implicit surface.*
 
@@ -135,7 +135,7 @@ On the other hand, aspect graphs of low-degree surfaces do not require tracing t
 
 We have presented a new algorithm for computing the exact aspect graph of curved objects and described its implementation. This algorithm is quite general: as noted in [27],
 
-![Figure 4. A few objects and their aspect graphs](/Users/evanthayer/Projects/stepview/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-2-p008.png)
+![Figure 4. A few objects and their aspect graphs](/Users/evanthayer/Projects/paperx/docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/figures/figure-4-2-p008.png)
 
 *Figure 4. A few objects and their aspect graphs: a. A parametric surface, b. A bean-shaped implicit surface, c. A squash-shaped implicit surface, d. A "dimpled" implicit surface.*
 
@@ -152,7 +152,7 @@ Appendix A: The Visual Events of Parametric Surfaces
 ## A parametric algebraic surface is represented by:
 
 $$
-\begin{equation*} \mathbf{X}(u, v)=(X(u, v), Y(u, v), Z(u, v))^{T}, \quad(u, v) \in I \times J \subset \mathbb{R}^{2} \tag{2} \end{equation*}
+\mathbf{X}(u, v)=(X(u, v), Y(u, v), Z(u, v))^{T}, \quad(u, v) \in I \times J \subset \mathbb{R}^{2},
 $$
 
 where \(X, Y, Z\) are (rational) polynomials in \(u, v\). These surfaces include Bézier patches and non-uniform rational B-splines (NURBS) for example.
@@ -168,7 +168,7 @@ Note: in this appendix, a \(u\) (resp. v) subscript is used to denote a partial 
 Consider a parametric surface \(\mathbf{X}(u, v)\) and define:
 
 $$
-\begin{equation*} \mathbf{N}=\mathbf{X}_{u} \times \mathbf{X}_{v}, \quad e=\left(\mathbf{X}_{u u} \cdot \mathbf{N}\right) /|\mathbf{N}|, \quad f=\left(\mathbf{X}_{u v} \cdot \mathbf{N}\right) /|\mathbf{N}|, \quad g=\left(\mathbf{X}_{v v} \cdot \mathbf{N}\right) /|\mathbf{N}|, \tag{3} \end{equation*}
+\mathbf{N}=\mathbf{X}_{u} \times \mathbf{X}_{v}, \quad e=\left(\mathbf{X}_{u u} \cdot \mathbf{N}\right) /|\mathbf{N}|, \quad f=\left(\mathbf{X}_{u v} \cdot \mathbf{N}\right) /|\mathbf{N}|, \quad g=\left(\mathbf{X}_{v v} \cdot \mathbf{N}\right) /|\mathbf{N}|,
 $$
 
 i.e., \(\mathbf{N}\) is the surface normal, and \(e, f, g\), are the coefficients of the second fundamental form in the coordinate system \(\left(\mathbf{X}_{u}, \mathbf{X}_{v}\right)\) [10].
@@ -178,17 +178,17 @@ i.e., \(\mathbf{N}\) is the surface normal, and \(e, f, g\), are the coefficient
 The parabolic curves of a parametric surface \(X(u,v)\) are given by:
 
 $$
-\begin{equation*} e g-f^{2}=0 \tag{5} \end{equation*}
+e g-f^{2}=0 .
 $$
 
 ```text
-For each point \( \mathbf{X}(u, v) \) along a parabolic curve, there is only one asymptotic direction, which is given by (4). In the language of Sect. 3, (4) defines the mapping from \( \Gamma \) (the parabolic curve) onto \( \Delta \) (the view sphere curve corresponding to beak-to-beak and lip events). Equivalently, \( \Delta \) is the projection of the curve \( \Omega \) obtained by adding to (5) the equations \( \mathbf{V} \times\left(u^{\prime} \mathbf{X}_{u}+v^{\prime} \mathbf{X}_{v}\right)=0 \) and (4).
+For each point \(\mathbf{X}(u, v)\) along a parabolic curve, there is only one asymptotic direction, which is given by (4). In the language of Sect. 3, (4) defines the mapping from \(\Gamma\) (the parabolic curve) onto \(\Delta\) (the view sphere curve corresponding to beak-to-beak and lip events). Equivalently, \(\Delta\) is the projection of the curve \(\Omega\) obtained by adding to (5) the equations \(\mathbf{V} \times\left(u^{\prime} \mathbf{X}_{u}+v^{\prime} \mathbf{X}_{v}\right)=0\) and (4).
 ```
 
 A.1.3 Flecnodal curves. As shown in [43, p.85], the flecnodal points are inflections of the asymptotic curves A, given by:
 
 $$
-\begin{equation*} \left(\mathbf{A}^{\prime} \times \mathbf{A}^{\prime \prime}\right) \cdot \mathbf{N}=0 \tag{6} \end{equation*}
+\left(\mathbf{A}^{\prime} \times \mathbf{A}^{\prime \prime}\right) \cdot \mathbf{N}=0,
 $$
 
 which can be seen as an equation in \(u, v, t\), or, equivalently, as an equation in \(u, v, u^{\prime}, v^{\prime}\), \(u^{\prime \prime}, v^{\prime \prime}\).
@@ -206,7 +206,7 @@ Multilocal events occur when the viewing direction \(\mathbf{V}\) has high order
 The triple point is conceptually the simplest of the multilocal events. It occurs when three contour fragments intersect at a single point. Let Xi = \(X(ui,vi)\), for i = 1, 2, 3, be the three corresponding surface points, and let Ni be the corresponding surface normals, we obtain the following equations:
 
 $$
-\left\{\begin{array}{l} \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \times\left(\mathbf{X}_{2}-\mathbf{X}_{3}\right)=0 \tag{7}\\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{3}=0 \\ \left(\mathbf{X}_{2}-\mathbf{X}_{3}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{3}-\mathbf{X}_{1}\right) \cdot \mathbf{N}_{2}=0 \end{array}\right.
+\left\{\begin{array}{l} \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \times\left(\mathbf{X}_{2}-\mathbf{X}_{3}\right)=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{3}=0 \\ \left(\mathbf{X}_{2}-\mathbf{X}_{3}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{3}-\mathbf{X}_{1}\right) \cdot \mathbf{N}_{2}=0 \end{array}\right.
 $$
 
 The first equation is a vector equation (or equivalently a set of two independent scalar equations) that expresses the fact that the three points are aligned with the viewing direction. The next three equations simply express the fact that the three points belong to the occluding contour. It follows that triple points are characterized by five equations in the six variables \(u_{i}, v_{i}, i=1,2,3\).
@@ -216,7 +216,7 @@ An explicit equation for the curve \(\Omega\) corresponding to a triple point ca
 - A.2.2 Tangent Crossings. A tangent crossing occurs when two occluding contour points Xl = \(X(ul,vl)\) and X2 = \(X(u2,v2)\) project to the same image point and have collinear surface normals N1 and N2. This can be rewritten as:
 
 $$
-\left\{\begin{array}{l} \mathbf{N}_{1} \times \mathbf{N}_{2}=\mathbf{0} \tag{8}\\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \end{array}\right.
+\left\{\begin{array}{l} \mathbf{N}_{1} \times \mathbf{N}_{2}=\mathbf{0} \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \end{array}\right.
 $$
 
 Again, remark that the first equation is a vector equation (or equivalently a set of two independent scalar equations). It follows that tangent crossings are characterized by three equations in the four variables \(u_{i}, v_{i}, i=1,2\).
@@ -224,15 +224,15 @@ Again, remark that the first equation is a vector equation (or equivalently a se
 - A.2.3 Cusp Crossings. A cusp crossing occurs when two occluding contour points XI and X~ project to the same image point and one of the points, say X1, is a cusp. This can be rewritten as:
 
 $$
-\left\{\begin{array}{l} \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \tag{9}\\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{2}=0 \\ e_{1} a^{2}+2 f_{1} a b+g_{1} b^{2}=0 \end{array}\right.
+\left\{\begin{array}{l} \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{2}=0 \\ e_{1} a^{2}+2 f_{1} a b+g_{1} b^{2}=0 \end{array}\right.
 $$
 
-where \(e_{1}, f_{1}, g_{1}\) are the values of the coefficients of the second fundamental form at \(\mathbf{X}_{1}\), and ( \(a, b\) ) are the coordinates of the viewing direction \(\mathbf{X}_{\mathbf{1}}-\mathbf{X}_{\mathbf{2}}\) in the basis \(\mathbf{X}_{u}\left(u_{1}, v_{1}\right)\), \(\mathbf{X}_{v}\left(u_{1}, v_{1}\right)\) of the tangent plane. Note that \(a, b\) can be computed from the dot products of \(\mathbf{X}_{1}-\mathbf{X}_{2}\) with \(\mathbf{X}_{u}\left(u_{1}, v_{1}\right)\) and \(\mathbf{X}_{v}\left(u_{1}, v_{1}\right)\). It follows that cusp crossings are characterized by three equations in the four variables \(u_{i}, v_{i}, i=1,2\).
+where \(e_{1}, f_{1}, g_{1}\) are the values of the coefficients of the second fundamental form at \(\mathbf{X}_{1}\), and ( \(a, b\) ) are the coordinates of the viewing direction \(\mathbf{X}_{\mathbf{1}}-\mathbf{X}_{\mathbf{2}}\) in the basis \(\mathbf{X}_{\mathbf{u}}\left(u_{1}, v_{1}\right)\), \(\mathbf{X}_{v}\left(u_{1}, v_{1}\right)\) of the tangent plane. Note that \(a, b\) can be computed from the dot products of \(\mathbf{X}_{1}-\mathbf{X}_{2}\) with \(\mathbf{X}_{u}\left(u_{1}, v_{1}\right)\) and \(\mathbf{X}_{v}\left(u_{1}, v_{1}\right)\). It follows that cusp crossings are characterized by three equations in the four variables \(u_{i}, v_{i}, i=1,2\).
 
 Appendix B: The Visual Events of Implicit Surfaces An implicit algebraic surface is represented by:
 
 $$
-\begin{equation*} F(X, Y, Z)=F(\mathbf{X})=0 \tag{10} \end{equation*}
+F(X, Y, Z)=F(\mathbf{X})=0
 $$
 
 where \(F\) is a polynomial in \(X, Y, Z\).
@@ -244,7 +244,7 @@ The asymptotic curves are the surface curves A(t) = X(u(t), v(t)) defined by the
 $$
 
 $$
-\begin{equation*} e u^{\prime 2}+2 f u^{\prime} v^{\prime}+g v^{\prime 2}=0 \tag{4} \end{equation*}
+e u^{\prime 2}+2 f u^{\prime} v^{\prime}+g v^{\prime 2}=0
 $$
 
 The asymptotic directions are given by \(u^{\prime} \mathbf{X}_{u}+v^{\prime} \mathbf{X}_{v}\), where \(u^{\prime}\) and \(v^{\prime}\) are solutions of the above equation. A contour cusp occurs when the viewing direction is an asymptotic direction.
@@ -258,7 +258,7 @@ Note: in this appendix, X, Y, Z subscripts denote partial derivatives with respe
 - B.I.1 Asymptotic Directions. An asymptotic direction V at a point X lies in the tangent plane and has second order contact with the surface. It is characterized by:
 
 $$
-\left\{\begin{array}{l} \nabla F(\mathbf{X}) \cdot \mathbf{V}=0 \tag{11}\\ \mathbf{V}^{T} H(\mathbf{X}) \mathbf{V}=0 \end{array}\right.
+\left\{\begin{array}{l} \nabla F(\mathbf{X}) \cdot \mathbf{V}=0 \\ \mathbf{V}^{T} H(\mathbf{X}) \mathbf{V}=0 \end{array}\right.
 $$
 
 where \(H(\mathbf{X})\) is the Hessian of \(F\) at \(\mathbf{X}\). Asymptotic directions are determined by solving this homogeneous system in \(\mathbf{V}\).
@@ -266,28 +266,28 @@ where \(H(\mathbf{X})\) is the Hessian of \(F\) at \(\mathbf{X}\). Asymptotic di
 - B.1.2 Parabolic curves. The parabolic curves of an implicit surface \(F(X)=0\) are given by:
 
 $$
-\begin{align*} & F_{X}^{2}\left(F_{Y Y} F_{Z Z}-F_{Y Z}^{2}\right)+F_{Y}^{2}\left(F_{X X} F_{Z Z}-F_{X Z}^{2}\right) \\ & \quad+F_{Z}^{2}\left(F_{X X} F_{Y Y}-F_{X Y}^{2}\right)+2 F_{X} F_{Y}\left(F_{X Z} F_{Y Z}-F_{Z Z} F_{X Y}\right) \tag{12}\\ & \quad+2 F_{Y} F_{Z}\left(F_{X Y} F_{X Z}-F_{X X} F_{Y Z}\right)+2 F_{X} F_{Z}\left(F_{X Y} F_{Y Z}-F_{Y Y} F_{X Z}\right)=0 \end{align*}
+\begin{aligned} & F_{X}^{2}\left(F_{Y Y} F_{Z Z}-F_{Y Z}^{2}\right)+F_{Y}^{2}\left(F_{X X} F_{Z Z}-F_{X Z}^{2}\right) \\ & \quad+F_{Z}^{2}\left(F_{X X} F_{Y Y}-F_{X Y}^{2}\right)+2 F_{X} F_{Y}\left(F_{X Z} F_{Y Z}-F_{Z Z} F_{X Y}\right) \\ & \quad+2 F_{Y} F_{Z}\left(F_{X Y} F_{X Z}-F_{X X} F_{Y Z}\right)+2 F_{X} F_{Z}\left(F_{X Y} F_{Y Z}-F_{Y Y} F_{X Z}\right)=0 \end{aligned}
 $$
 
 ```text
-plus the equation \( F(\mathbf{X})=0 \) itself. For each point \( \mathbf{X} \) along a parabolic curve, there is only one asymptotic direction, which is given by (11). It should be noted that one can directly characterize the beak-to-beak and lip events by adding to (12) the equations \( F(\mathbf{X})=0 \) and (11), and tracing the resulting curve \( \Omega \) in \( \mathbb{R}^{5} \);
-the projection of this curve onto \( \mathbb{R}^{2} \) defines the beak-to-beak and lip curves on the view sphere.
+plus the equation \(F(\mathbf{X})=0\) itself. For each point \(\mathbf{X}\) along a parabolic curve, there is only one asymptotic direction, which is given by (11). It should be noted that one can directly characterize the beak-to-beak and lip events by adding to (12) the equations \(F(\mathbf{X})=0\) and (11), and tracing the resulting curve \(\Omega\) in \(\mathbb{R}^{5}\);
+the projection of this curve onto \(\mathbb{R}^{2}\) defines the beak-to-beak and lip curves on the view sphere.
 ```
 
 - B.1.3 Flecnodal curves. A surface point X = (X, Y, Z) T on a flecnodal curve has third order contact with a line along an asymptotic direction V = (V1, Vu, V3) T [1]. This is characterized by:
 
 $$
-\left\{\begin{array}{l} \nabla F(\mathbf{X}) \cdot \mathbf{V}=0 \tag{13}\\ \mathbf{V}^{T} H(\mathbf{X}) \mathbf{V}=0 \\ \mathbf{V}^{T}\left(H_{X}(\mathbf{X}) V_{1}+H_{Y}(\mathbf{X}) V_{2}+H_{Z}(\mathbf{X}) V_{3}\right) \mathbf{V}=0 \end{array}\right.
+\left\{\begin{array}{l} \nabla F(\mathbf{X}) \cdot \mathbf{V}=0 \\ \mathbf{V}^{T} H(\mathbf{X}) \mathbf{V}=0 \\ \mathbf{V}^{T}\left(H_{X}(\mathbf{X}) V_{1}+H_{Y}(\mathbf{X}) V_{2}+H_{Z}(\mathbf{X}) V_{3}\right) \mathbf{V}=0 \end{array}\right.
 $$
 
-Since these three equations are homogeneous in the coordinates of \(\mathbf{V}\), these coordi nates can easily be eliminated to obtain a single equation in \(\mathbf{X}\). Along with \(F(\mathbf{X})=0\), this system defines the flecnodal curves. As before, explicit equations for \(\Omega\) can be con
+Since these three equations are homogeneous in the coordinates of \(\mathbf{V}\), these coordinates can easily be eliminated to obtain a single equation in \(\mathbf{X}\). Along with \(F(\mathbf{X})=0\), this system defines the flecnodal curves. As before, explicit equations for \(\Omega\) can be con-
 
 ### B.2 Multilocal Events
 
 - B.2.1 Triple Points. Let Xi, i = 1, 2, 3, be three points forming a triple point event. The corresponding equations are similar to the equations defining triple points of parametric surfaces:
 
 $$
-\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2,3 \tag{14}\\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \times\left(\mathbf{X}_{2}-\mathbf{X}_{3}\right)=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{3}=0 \\ \left(\mathbf{X}_{2}-\mathbf{X}_{3}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{3}-\mathbf{X}_{1}\right) \cdot \mathbf{N}_{2}=0 \end{array}\right.
+\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2,3 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \times\left(\mathbf{X}_{2}-\mathbf{X}_{3}\right)=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{3}=0 \\ \left(\mathbf{X}_{2}-\mathbf{X}_{3}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{3}-\mathbf{X}_{1}\right) \cdot \mathbf{N}_{2}=0 \end{array}\right.
 $$
 
 where \(\mathbf{N}_{i}=\nabla F\left(\mathbf{X}_{i}\right)\). It follows that triple points are characterized by eight equations in the nine variables \(X_{i}, Y_{i}, Z_{i}, i=1,2,3\).
@@ -295,7 +295,7 @@ where \(\mathbf{N}_{i}=\nabla F\left(\mathbf{X}_{i}\right)\). It follows that tr
 - B.2.2 Tangent Crossings. Again, the equations defining tangent crossings of implicit surfaces are similar to the corresponding equations for parametric surfaces:
 
 $$
-\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2 \tag{15}\\ \mathbf{N}_{1} \times \mathbf{N}_{2}=\mathbf{0} \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \end{array}\right.
+\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2 \\ \mathbf{N}_{1} \times \mathbf{N}_{2}=\mathbf{0} \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \end{array}\right.
 $$
 
 This is a system of five equations in the six variables \(X_{i}, Y_{i}, Z_{i}, i=1,2\).
@@ -303,29 +303,29 @@ This is a system of five equations in the six variables \(X_{i}, Y_{i}, Z_{i}, i
 - B.2.3 Cusp Crossings. Cusp crossings are characterized by:
 
 $$
-\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2 \tag{16}\\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{2}=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right)^{T} H\left(\mathbf{X}_{1}\right)\left(\mathbf{X}_{1}-\mathbf{X}_{2}\right)=0 \end{array}\right.
+\left\{\begin{array}{l} F\left(\mathbf{X}_{i}\right)=0, \quad i=1,2 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{1}=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right) \cdot \mathbf{N}_{2}=0 \\ \left(\mathbf{X}_{1}-\mathbf{X}_{2}\right)^{T} H\left(\mathbf{X}_{1}\right)\left(\mathbf{X}_{1}-\mathbf{X}_{2}\right)=0 \end{array}\right.
 $$
 
-where the last equation simply expresses the fact that the viewing direction is an asymp totic direction of the surface at \(\mathbf{X}_{1}\). This is again a system of five equations in the six
+where the last equation simply expresses the fact that the viewing direction is an asymptotic direction of the surface at \(\mathbf{X}_{1}\). This is again a system of five equations in the six
 
 Appendix C: Details of the curve Tracing algorithm c.1 Step 1.1: Finding the Extremal Points The extrema of \(\Gamma\) in the \(X_{0}\) direction are given by differentiating (1) and setting \(d X_{0}=0\) :
 
 $$
-\left\{\begin{array}{l} \left(\partial P_{1} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{1} / \partial X_{n}\right) d X_{n}=0 \tag{17}\\ \ldots \\ \left(\partial P_{n} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{n} / \partial X_{n}\right) d X_{n}=0 \end{array} \Leftrightarrow J\left(\begin{array}{l} d X_{1} \\ \ldots \\ d X_{n} \end{array}\right)=0\right.
+\left\{\begin{array}{l} \left(\partial P_{1} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{1} / \partial X_{n}\right) d X_{n}=0 \\ \ldots \\ \left(\partial P_{n} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{n} / \partial X_{n}\right) d X_{n}=0 \end{array} \Longleftrightarrow J\left(\begin{array}{l} d X_{1} \\ \ldots \\ d X_{n} \end{array}\right)=0\right.
 $$
 
-where \(J=\left(\partial P_{i} / \partial X_{j}\right)\), with \(i, j=1, . ., n\), is the Jacobian matrix. This system has non trivial solutions if and only if the determinant \(D\left(X_{0}, X_{1}, \ldots, X_{n}\right)=|J|\) of the Jacobian matrix vanishes. The extrema of \(\Gamma\) are therefore the solutions of:
+where \(J=\left(\partial P_{i} / \partial X_{j}\right)\), with \(i, j=1, . ., n\), is the Jacobian matrix. This system has nontrivial solutions if and only if the determinant \(D\left(X_{0}, X_{1}, \ldots, X_{n}\right)=|J|\) of the Jacobian matrix vanishes. The extrema of \(\Gamma\) are therefore the solutions of:
 
 $$
-\left\{\begin{array}{l} P_{1}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \tag{18}\\ \cdots \\ P_{n}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \\ D\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \end{array}\right.
+\left\{\begin{array}{l} P_{1}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \\ \ldots \\ P_{n}\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \\ D\left(X_{0}, X_{1}, \ldots, X_{n}\right)=0 \end{array}\right.
 $$
 
 ### C.2 Steps 1.2 and 1.3: Intersecting the Curve with Hyperplanes
 
-These steps correspond to finding all the intersections of \(\Gamma\) with some hyperplane \(X_{0}=\hat{X}_{0}\). These intersections are given by:
+These steps correspond to finding all the intersections of \(\Gamma\) with some hyperplane \(X_{0}=\) \(\hat{X}_{0}\). These intersections are given by:
 
 $$
-\left\{\begin{array}{l} P_{1}\left(\hat{X}_{0}, X_{1}, \ldots, X_{n}\right)=0 \tag{19}\\ \ldots \\ P_{n}\left(\hat{X}_{0}, X_{1}, \ldots, X_{n}\right)=0 \end{array}\right.
+\left\{\begin{array}{l} P_{1}\left(\hat{X}_{0}, X_{1}, \ldots, X_{n}\right)=0 \\ \ldots \\ P_{n}\left(\hat{X}_{0}, X_{1}, \ldots, X_{n}\right)=0 \end{array}\right.
 $$
 
 ### C.3 Step 1.4: Marching on Extrema-Free Intervals
@@ -333,7 +333,7 @@ $$
 To trace a curve on an extrema-free interval, we use a classical prediction/correction approach based on a first order Taylor expansion of the \(P_{i}\) 's (higher order expansions could also be used [4, 13]). By differentiating (1), we obtain:
 
 $$
-J\left(\begin{array}{c} d X_{1} \tag{20}\\ \ldots \\ d X_{n} \end{array}\right)=-d X_{0}\left(\begin{array}{c} \partial P_{1} / \partial X_{0} \\ \ldots \\ \partial P_{n} / \partial X_{0} \end{array}\right)
+J\left(\begin{array}{c} d X_{1} \\ \ldots \\ d X_{n} \end{array}\right)=-d X_{0}\left(\begin{array}{c} \partial P_{1} / \partial X_{0} \\ \ldots \\ \partial P_{n} / \partial X_{0} \end{array}\right)
 $$
 
 Given a step \(d X_{0}\) in the \(X_{0}\) direction, one can predict the remaining \(d X_{i}\) 's by solving this system of linear equations. This is only possible when the determinant of the Jacobian matrix \(J\) is non-zero, which is exactly equivalent to saying that the point \(\left(X_{0}, \ldots, X_{n}\right)^{T}\) is not an extremum in the \(X_{0}\) direction.
@@ -341,13 +341,13 @@ Given a step \(d X_{0}\) in the \(X_{0}\) direction, one can predict the remaini
 The correction step uses Newton iterations to converge back to the curve from the predicted point. We write once more a first order Taylor approximation of the \(P_{i}\) 's to compute the necessary correction \(\left(d X_{1}, \ldots, d X_{n}\right)^{T}\) for a fixed value of \(X_{0}\) :
 
 $$
-\left\{\begin{array}{l} P_{1}+\left(\partial P_{1} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{1} / \partial X_{n}\right) d X_{n}=0 \tag{21}\\ \ldots \\ P_{n}+\left(\partial P_{n} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{n} / \partial X_{n}\right) d X_{n}=0 \end{array} \Longleftrightarrow\left(\begin{array}{c} d X_{1} \\ d X_{2} \\ \ldots \\ d X_{n} \end{array}\right)=-J^{-1}\left(\begin{array}{c} P_{1} \\ \ldots \\ P_{n} \end{array}\right)\right.
+\left\{\begin{array}{l} P_{1}+\left(\partial P_{1} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{1} / \partial X_{n}\right) d X_{n}=0 \\ \ldots \\ P_{n}+\left(\partial P_{n} / \partial X_{1}\right) d X_{1}+\ldots+\left(\partial P_{n} / \partial X_{n}\right) d X_{n}=0 \end{array} \Longleftrightarrow\left(\begin{array}{c} d X_{1} \\ d X_{2} \\ \ldots \\ d X_{n} \end{array}\right)=-J^{-1}\left(\begin{array}{c} P_{1} \\ \ldots \\ P_{n} \end{array}\right)\right.
 $$
 
 Appendix D: Homotopy Continuation Consider a system of n polynomial equations Pi in n unknowns Xj, denoted by \(P(X)=0\), with P = (P1,...,Pn) T and X = (X1,...,Xn) T. To solve this system, we use the homotopy continuation method [30], itself a simple form of curve tracing. The principle of the method is as follows. Let \(Q(X)=0\) be another system of polynomial equations with the same total degree as \(P(X)=0\), but known solutions. A homotopy, parameterized by t E [0, 1], can be defined between the two systems by:
 
 $$
-\begin{equation*} (1-t) \mathbf{Q}(\mathbf{X})+t \mathbf{P}(\mathbf{X})=0 \tag{22} \end{equation*}
+(1-t) \mathbf{Q}(\mathbf{X})+t \mathbf{P}(\mathbf{X})=0
 $$
 
 The solutions of the target system are found by tracing the curve defined in ~n+l by these equations from t = 0 to t -- 1 according to step 1.4 of our curve tracing algorithm. In this case, however, the sample points are the known solutions of \(Q(X)=0\) at t = 0, which allows us to bypass step 1.3 of the algorithm. It can also be shown [30] that with an appropriate choice of Q, the curve has no extrema or singularities, which allows us to also bypass steps 1.1-1.2.

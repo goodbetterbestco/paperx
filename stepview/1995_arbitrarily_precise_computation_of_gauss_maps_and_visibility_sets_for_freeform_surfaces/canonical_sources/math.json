@@ -2,9 +2,9 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p003-0061",
+      "id": "mathpix-eq-p003-0062",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{N}_{s}(u, v)=\\frac{\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}}{\\left\\|\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}\\right\\|} . \\tag{1}\n\\end{equation*}",
+      "display_latex": "\\mathcal{N}_{s}(u, v)=\\frac{\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}}{\\left\\|\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}\\right\\|} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 373.0,
-            "y0": 183.5,
-            "x1": 503.0,
-            "y1": 213.5,
-            "width": 130.0,
-            "height": 30.0
+            "x0": 372.51,
+            "y0": 182.24,
+            "x1": 502.91,
+            "y1": 212.47,
+            "width": 130.41,
+            "height": 30.23
           },
           "engine": "mathpix"
         }
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p003-0075",
+      "id": "mathpix-eq-p003-0077",
       "kind": "display",
       "display_latex": "\\mathcal{V}_{s}=\\left\\{\\vec{\\alpha} \\mid\\left\\langle\\vec{\\alpha}, \\mathcal{N}_{s}(u, v)\\right\\rangle \\geq 0, \\forall u, v,\\|\\vec{\\alpha}\\|=1\\right\\} .",
       "semantic_expr": null,
@@ -46,12 +46,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 335.0,
-            "y0": 361.0,
-            "x1": 515.5,
-            "y1": 373.0,
-            "width": 180.5,
-            "height": 12.0
+            "x0": 335.37,
+            "y0": 360.75,
+            "x1": 515.29,
+            "y1": 372.55,
+            "width": 179.92,
+            "height": 11.8
           },
           "engine": "mathpix"
         }
@@ -64,9 +64,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p003-0088",
+      "id": "mathpix-eq-p003-0090",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\hat{\\mathcal{N}}_{s}(u, v)=\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v}, \\tag{2}\n\\end{equation*}",
+      "display_latex": "\\hat{\\mathcal{N}}_{s}(u, v)=\\frac{\\partial S(u, v)}{\\partial u} \\times \\frac{\\partial S(u, v)}{\\partial v},",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 372.0,
-            "y0": 505.0,
-            "x1": 504.0,
-            "y1": 527.5,
-            "width": 132.0,
-            "height": 22.5
+            "x0": 371.93,
+            "y0": 504.7,
+            "x1": 504.06,
+            "y1": 526.29,
+            "width": 132.13,
+            "height": 21.59
           },
           "engine": "mathpix"
         }
@@ -95,9 +95,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0050",
+      "id": "mathpix-eq-p004-0051",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{S}_{s}=\\left\\{(u, v) \\mid\\left\\langle S(u, v), \\dot{\\mathcal{N}}_{s}(u, v)\\right\\rangle=0\\right\\} . \\tag{3}\n\\end{equation*}",
+      "display_latex": "\\mathcal{S}_{s}=\\left\\{(u, v) \\mid\\left\\langle S(u, v), \\hat{\\mathcal{N}}_{s}(u, v)\\right\\rangle=0\\right\\} .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -108,12 +108,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 95.0,
-            "y0": 588.0,
-            "x1": 252.0,
-            "y1": 604.5,
-            "width": 157.0,
-            "height": 16.5
+            "x0": 95.04,
+            "y0": 588.01,
+            "x1": 253.44,
+            "y1": 604.71,
+            "width": 158.4,
+            "height": 16.7
           },
           "engine": "mathpix"
         }
@@ -126,9 +126,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0065",
+      "id": "mathpix-eq-p004-0066",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{S}=\\left\\{(u, v) \\mid\\left\\langle\\dot{\\mathcal{N}}_{s}(u, v), \\dot{\\mathcal{N}}_{s}^{2}(u, v)\\right\\rangle=0\\right\\} \\tag{4}\n\\end{equation*}",
+      "display_latex": "\\mathcal{S}=\\left\\{(u, v) \\mid\\left\\langle\\hat{\\mathcal{N}}_{*}(u, v), \\hat{\\mathcal{N}}_{*}^{2}(u, v)\\right\\rangle=0\\right\\}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +139,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 355.5,
-            "y0": 251.5,
-            "x1": 519.5,
-            "y1": 267.0,
-            "width": 164.0,
-            "height": 15.5
+            "x0": 355.1,
+            "y0": 250.23,
+            "x1": 520.99,
+            "y1": 268.09,
+            "width": 165.89,
+            "height": 17.85
           },
           "engine": "mathpix"
         }
@@ -157,9 +157,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p004-0103",
+      "id": "mathpix-eq-p004-0104",
       "kind": "display",
-      "display_latex": "\\mathcal{H}=\\{\\vec{\\beta} \\mid\\|\\vec{\\beta}\\|=1,\\langle\\vec{\\beta}, \\vec{\\alpha}\\rangle \\geq 0\\} .",
+      "display_latex": "\\mathcal{H}=\\{\\vec{\\beta} \\mid\\|\\vec{\\beta}\\|=1,\\langle\\vec{\\beta}, \\vec{\\alpha}\\rangle \\geq 0\\}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -170,12 +170,12 @@
         {
           "page": 4,
           "bbox": {
-            "x0": 368.5,
-            "y0": 651.0,
-            "x1": 504.0,
-            "y1": 666.5,
-            "width": 135.5,
-            "height": 15.5
+            "x0": 368.64,
+            "y0": 649.05,
+            "x1": 503.71,
+            "y1": 667.48,
+            "width": 135.07,
+            "height": 18.43
           },
           "engine": "mathpix"
         }
@@ -188,9 +188,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p007-0034",
+      "id": "mathpix-eq-p007-0061",
       "kind": "display",
-      "display_latex": "\\overline{\\mathcal{G}}_{s} \\Leftarrow \\mathcal{R}^{-1}\\left(\\overline{\\mathcal{G}}_{\\cdot}^{P}\\right) ;",
+      "display_latex": "\\mathcal{V}_{s}=\\bigcap_{f_{1} \\in \\mathcal{F}} \\mathcal{H}_{i}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -201,43 +201,12 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 88.5,
-            "y0": 623.0,
-            "x1": 166.0,
-            "y1": 642.5,
-            "width": 77.5,
-            "height": 19.5
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p007-0058",
-      "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathcal{V}_{s}=\\bigcap_{f_{1} \\in \\mathcal{F}} \\mathcal{H}_{i} \\tag{5}\n\\end{equation*}",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 7,
-          "bbox": {
-            "x0": 413.5,
-            "y0": 530.5,
-            "x1": 467.5,
-            "y1": 557.0,
-            "width": 54.0,
-            "height": 26.5
+            "x0": 413.67,
+            "y0": 530.61,
+            "x1": 467.22,
+            "y1": 555.95,
+            "width": 53.54,
+            "height": 25.34
           },
           "engine": "mathpix"
         }

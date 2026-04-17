@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2014_smooth_surface_contours_accurate_topology/2014_smooth_surface_contours_accurate_topology.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2014_smooth_surface_contours_accurate_topology/2014_smooth_surface_contours_accurate_topology.pdf",
   "page_count": 20,
   "page_sizes_pt": [
     {
@@ -432,7 +432,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 316.72,
@@ -451,7 +451,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computing the occluding contours 1 of 3D surfaces is one of the oldest problems in computer graphics. Contours were first used for hidden-line rendering, and then for non-photorealistic rendering. Stylizing contours is fundamental to 3D non-photorealistic rendering, because contours mimic many hand-drawn curves. Despite this long history, computing and rendering the contour for smooth surfaces with correct visibility remains an unsolved problem. The problem is surprisingly difficult to solve perfectly, and existing methods are prone to pathological visibility artifacts. For example, during an animation, outline curves may incorrectly appear and disappear, seemingly at random, and strokes may be arbitrarily broken into multiple segments. For high-quality animation, the artifacts are extremely objectionable; the animation of a cartoon character would be ruined by a stylized outline curve that randomly breaks into pieces. Likewise, in an industrial design rendering, small gaps in curves would distort the perceived object shape. Previous research has focused on applications that can tolerate imperfection, such as rendering very simple surfaces, curves without stylization, sketchy real-time rendering, and static imagery. Even for sketchy rendering, we argue that sketchiness should be controllable, instead of arising from unpredictable errors.",
       "bbox": {
         "x0": 316.72,
@@ -470,7 +470,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "This paper introduces a new method for computing topologically-accurate contours of smooth surfaces. Given a smooth surface and a camera viewpoint, the algorithm produces a triangle mesh, such that the contour generator of the mesh is topologically-equivalent and geometrically close to the smooth surface's contours. The visible contours of the mesh are mesh edges, and can be accurately computed by standard methods. The core of the approach is the notion of Contour Consistency, a way to prove topological equivalence between the contours of a smooth surface and a triangle mesh. In order to produce a Contour Consistent mesh, we define Radial Triangles, which ensure consistency near the contour. We introduce a tessellation algorithm that produces these triangles through a sequence of local mesh transformations. Our algorithm is not strictly guaranteed to produce a topologically-consistent mesh, as it can yield isolated inconsistencies in the mesh. However, these inconsistencies are identified, and our method can bypass them to produce correct curves. Numerical sampling is used to detect contours, so contours could hypothetically be missed, though this does not appear to be an issue in practice.",
       "bbox": {
         "x0": 316.72,
@@ -587,12 +587,12 @@
       "role": "paragraph",
       "text": "Surface intersection",
       "bbox": {
-        "x0": 59.36,
+        "x0": 58.61,
         "y0": 74.33,
         "x1": 111.97,
-        "y1": 79.67,
-        "width": 52.61,
-        "height": 5.34
+        "y1": 80.34,
+        "width": 53.36,
+        "height": 6.01
       },
       "meta": {
         "docling_label": "text",
@@ -2010,7 +2010,7 @@
       "page": 6,
       "order": 15,
       "role": "paragraph",
-      "text": "Rodilizion",
+      "text": "ilizion",
       "bbox": {
         "x0": 66.53,
         "y0": 102.35,
@@ -2021,7 +2021,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Rodilizion"
+        "docling_orig": "ilizion"
       }
     },
     {
@@ -7104,11 +7104,11 @@
       "role": "paragraph",
       "text": "Sequence",
       "bbox": {
-        "x0": 3.97,
+        "x0": 4.77,
         "y0": 238.31,
         "x1": 35.13,
         "y1": 246.41,
-        "width": 31.16,
+        "width": 30.36,
         "height": 8.1
       },
       "meta": {
@@ -7235,18 +7235,18 @@
       "page": 17,
       "order": 11,
       "role": "paragraph",
-      "text": "dead-end",
+      "text": "dead-end-",
       "bbox": {
-        "x0": 153.16,
-        "y0": 116.94,
-        "x1": 188.37,
-        "y1": 124.62,
-        "width": 35.21,
-        "height": 7.68
+        "x0": 153.18,
+        "y0": 117.03,
+        "x1": 189.15,
+        "y1": 124.54,
+        "width": 35.97,
+        "height": 7.51
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "dead-end"
+        "docling_orig": "dead-end-"
       }
     },
     {
@@ -7314,11 +7314,11 @@
       "text": "nplification. In both cases the contours are extracted from the optimized mesh generated by our algorithm (Section 6), even though radial triangles are not",
       "bbox": {
         "x0": 0.0,
-        "y0": 196.0,
+        "y0": 195.32,
         "x1": 494.74,
         "y1": 205.69,
         "width": 494.74,
-        "height": 9.69
+        "height": 10.37
       },
       "meta": {
         "docling_label": "text",
@@ -7387,7 +7387,7 @@
       "page": 17,
       "order": 19,
       "role": "paragraph",
-      "text": "faces",
+      "text": "faces faces",
       "bbox": {
         "x0": 74.18,
         "y0": 243.09,
@@ -7398,32 +7398,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "faces"
+        "docling_orig": "faces faces"
       }
     },
     {
       "id": "#/texts/432",
       "page": 17,
       "order": 20,
-      "role": "paragraph",
-      "text": "Time faces",
-      "bbox": {
-        "x0": 200.29,
-        "y0": 238.37,
-        "x1": 217.84,
-        "y1": 245.55,
-        "width": 17.55,
-        "height": 7.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Time faces"
-      }
-    },
-    {
-      "id": "#/texts/433",
-      "page": 17,
-      "order": 21,
       "role": "paragraph",
       "text": "faces",
       "bbox": {
@@ -7437,6 +7418,25 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "faces"
+      }
+    },
+    {
+      "id": "#/texts/433",
+      "page": 17,
+      "order": 21,
+      "role": "paragraph",
+      "text": "Time",
+      "bbox": {
+        "x0": 200.29,
+        "y0": 238.37,
+        "x1": 217.84,
+        "y1": 245.55,
+        "width": 17.55,
+        "height": 7.18
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Time"
       }
     },
     {
@@ -8089,25 +8089,6 @@
       "id": "#/texts/474",
       "page": 19,
       "order": 1,
-      "role": "paragraph",
-      "text": "()",
-      "bbox": {
-        "x0": 82.0,
-        "y0": -0.0,
-        "x1": 101.33,
-        "y1": 6.67,
-        "width": 19.33,
-        "height": 6.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "()"
-      }
-    },
-    {
-      "id": "#/texts/475",
-      "page": 19,
-      "order": 2,
       "role": "caption",
       "text": "Fig. 31. Stylization results on the walking man. Colors propagation and temporally coherent parameterization based on Kalnins et al. [2003]. (Also see the supplementary video.) Hank © Ryan Dale",
       "bbox": {
@@ -8124,9 +8105,9 @@
       }
     },
     {
-      "id": "#/texts/476",
+      "id": "#/texts/475",
       "page": 19,
-      "order": 3,
+      "order": 2,
       "role": "paragraph",
       "text": "stylization step, one that must take into account topology, imagespace density [Grabli et al. 2010], temporal coherence, and other stylistic factors. Third, space-time curve correspondence and parameterization [B´ enard et al. 2012; Buchholz et al. 2011; Kalnins et al. 2003] is necessary for temporal stylization. Finally, it is also necessary to combine contours with other types of curves, such as suggestive contours [DeCarlo et al. 2003], which must meet the contours at cusps in each frame. Contour Consistency provides the necessary foundation upon which principled solutions to each of the above problems can be built.",
       "bbox": {
@@ -8143,9 +8124,9 @@
       }
     },
     {
-      "id": "#/texts/477",
+      "id": "#/texts/476",
       "page": 19,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "Though we focus on contour computation, our approach can also be used to compute consistent Planar Maps, which are also important for stylization [Eisemann et al. 2008; Karsch and Hart 2011; Winkenbach and Salesin 1996]. Generalizing the above pipeline for computing and stylizing space-time Planar Maps is a more general open research problem, that could provide a very powerful tool for high-quality and general stylization.",
       "bbox": {
@@ -8162,9 +8143,9 @@
       }
     },
     {
-      "id": "#/texts/478",
+      "id": "#/texts/477",
       "page": 19,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "Even when our contours have correct visibility, we do not guarantee topological correctness of the 2D line drawing, because infinitesimal perturbations in contour positions can, in principle, change the projected topology and visibility. It may be possible to develop an approach that does provide this guarantee, by creating an image-space analogue to consistency. However, this would likely require a procedure for exact ray-tests on smooth surfaces, which might not be robust. For non-photorealistic animation, we do not believe that perfect topological accuracy in image-space is necessary, but it maybe useful in other domains.",
       "bbox": {
@@ -8181,9 +8162,9 @@
       }
     },
     {
-      "id": "#/texts/479",
+      "id": "#/texts/478",
       "page": 19,
-      "order": 6,
+      "order": 5,
       "role": "heading",
       "text": "ACKNOWLEDGMENTS",
       "bbox": {
@@ -8200,9 +8181,9 @@
       }
     },
     {
-      "id": "#/texts/480",
+      "id": "#/texts/479",
       "page": 19,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "This work was supported in part by NSERC and CIFAR. The animated character 'Red' was created by Andrew Schmidt, Brian Tindall, Bernhard Haux and Paul Aichele, based on the original design of Teddy Newton. Thanks to Chris Landreth for permission to use his 'Angela' character. Thanks to Kurt Fleischer and John Hancock for technical assistance, to Bardia Sadri and Vladlen Koltun for discussions. Thanks to the reviewers for their extremely diligent comments that significantly improved this paper.",
       "bbox": {
@@ -8219,9 +8200,9 @@
       }
     },
     {
-      "id": "#/texts/481",
+      "id": "#/texts/480",
       "page": 19,
-      "order": 8,
+      "order": 7,
       "role": "heading",
       "text": "REFERENCES",
       "bbox": {
@@ -8238,9 +8219,9 @@
       }
     },
     {
-      "id": "#/texts/482",
+      "id": "#/texts/481",
       "page": 19,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "APPEL, A. 1967. The notion of quantitative invisibility and the machine rendering of solids. In Proc. ACM . 387-393.",
       "bbox": {
@@ -8257,9 +8238,9 @@
       }
     },
     {
-      "id": "#/texts/483",
+      "id": "#/texts/482",
       "page": 19,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "·",
       "bbox": {
@@ -8276,9 +8257,9 @@
       }
     },
     {
-      "id": "#/texts/484",
+      "id": "#/texts/483",
       "page": 19,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "BANK, R. E. AND SMITH, R. K. 1997. Mesh smoothing using a posteriori error estimates. SIAM J. Numer. Anal. 34, 3, 979-997.",
       "bbox": {
@@ -8295,9 +8276,9 @@
       }
     },
     {
-      "id": "#/texts/485",
+      "id": "#/texts/484",
       "page": 19,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "B´ ENARD, P., LU, J., COLE, F., FINKELSTEIN, A., AND THOLLOT, J. 2012. Active Strokes: Coherent Line Stylization for Animated 3D Models. In Proc. NPAR . 37-46.",
       "bbox": {
@@ -8314,9 +8295,9 @@
       }
     },
     {
-      "id": "#/texts/486",
+      "id": "#/texts/485",
       "page": 19,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "BLINN, J. F. 1978. A scan line algorithm for displaying parametrically defined surfaces. Proc. SIGGRAPH 12, SI, 1-7.",
       "bbox": {
@@ -8333,9 +8314,9 @@
       }
     },
     {
-      "id": "#/texts/487",
+      "id": "#/texts/486",
       "page": 19,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "BUCHHOLZ, B., FARAJ, N., PARIS, S., EISEMANN, E., AND BOUBEKEUR, T. 2011. Spatio-Temporal Analysis for Parameterizing Animated Lines. In Proc. NPAR . 85-92.",
       "bbox": {
@@ -8352,9 +8333,9 @@
       }
     },
     {
-      "id": "#/texts/488",
+      "id": "#/texts/487",
       "page": 19,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "CATMULL, E. AND CLARK, J. 1978. Recursively generated B-spline surfaces on arbitrary topological meshes. Computer-Aided Design 10, 6.",
       "bbox": {
@@ -8371,9 +8352,9 @@
       }
     },
     {
-      "id": "#/texts/489",
+      "id": "#/texts/488",
       "page": 19,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "COLE, F. AND FINKELSTEIN, A. 2009. Two Fast Methods for HighQuality Line Visibility. IEEE TVCG 8, 1.",
       "bbox": {
@@ -8390,9 +8371,9 @@
       }
     },
     {
-      "id": "#/texts/490",
+      "id": "#/texts/489",
       "page": 19,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "DECARLO, D., FINKELSTEIN, A., RUSINKIEWICZ, S., AND SANTELLA, A. 2003. Suggestive Contours for Conveying Shape. ACM Trans. Graph. 22, 3, 848-855.",
       "bbox": {
@@ -8409,9 +8390,9 @@
       }
     },
     {
-      "id": "#/texts/491",
+      "id": "#/texts/490",
       "page": 19,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "EISEMANN, E., WINNEM¨ OLLER, H., HART, J. C., AND SALESIN, D. 2008. Stylized Vector Art from 3D Models with Region Support. In Proc. EGSR .",
       "bbox": {
@@ -8428,9 +8409,9 @@
       }
     },
     {
-      "id": "#/texts/492",
+      "id": "#/texts/491",
       "page": 19,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "ELBER, G. AND COHEN, E. 1990. Hidden Curve Removal for Free Form Surfaces. In Proc. SIGGRAPH . Vol. 24. 95-104.",
       "bbox": {
@@ -8447,9 +8428,9 @@
       }
     },
     {
-      "id": "#/texts/493",
+      "id": "#/texts/492",
       "page": 19,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "GOOCH, A. 1998. Interactive non-photorealistic technical illustration. M.S. thesis, University of Utah.",
       "bbox": {
@@ -8466,9 +8447,9 @@
       }
     },
     {
-      "id": "#/texts/494",
+      "id": "#/texts/493",
       "page": 19,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "GRABLI, S., TURQUIN, E., DURAND, F., AND SILLION, F. X. 2010. Programmable Rendering of Line Drawing from 3D Scenes. ACM Trans. Graphics 29, 2. Article 18.",
       "bbox": {
@@ -8485,9 +8466,9 @@
       }
     },
     {
-      "id": "#/texts/495",
+      "id": "#/texts/494",
       "page": 19,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "GUIGUE, P. AND DEVILLERS, O. 2003. Fast and Robust Triangle-Triangle Overlap Test using Orientation Predicates. J. Graphics Tools 8, 1, 25-42. HALSTEAD, M., KASS, M., AND DEROSE, T. 1993. Efficient, fair interpolation using Catmull-Clark surfaces. In Proc. SIGGRAPH . 35-44.",
       "bbox": {
@@ -8504,9 +8485,9 @@
       }
     },
     {
-      "id": "#/texts/496",
+      "id": "#/texts/495",
       "page": 19,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "HERTZMANN, A. 1999. Introduction to 3D Non-Photorealistic Rendering: Silhouettes and Outlines. In SIGGRAPH Course on NPR , S. Green, Ed.",
       "bbox": {
@@ -8523,9 +8504,9 @@
       }
     },
     {
-      "id": "#/texts/497",
+      "id": "#/texts/496",
       "page": 19,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "HERTZMANN, A. AND ZORIN, D. 2000. Illustrating Smooth Surfaces. In Proc. SIGGRAPH . 517-526.",
       "bbox": {
@@ -8542,9 +8523,9 @@
       }
     },
     {
-      "id": "#/texts/498",
+      "id": "#/texts/497",
       "page": 19,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "ISENBERG, T., HALPER, N., AND STROTHOTTE, T. 2002. Stylizing Silhouettes at Interactive Rates: From Silhouette Edges to Silhouette Strokes. In Proc. EG .",
       "bbox": {
@@ -8561,9 +8542,9 @@
       }
     },
     {
-      "id": "#/texts/499",
+      "id": "#/texts/498",
       "page": 19,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "KALNINS, R. D., DAVIDSON, P. L., MARKOSIAN, L., AND FINKELSTEIN, A. 2003. Coherent Stylized Silhouettes. ACM Trans. Graphics .",
       "bbox": {
@@ -8580,9 +8561,9 @@
       }
     },
     {
-      "id": "#/texts/500",
+      "id": "#/texts/499",
       "page": 19,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "KARSCH, K. AND HART, J. C. 2011. Snaxels on a Plane. In Proc. NPAR . KIRSANOV, D., SANDER, P., AND GORTLER, S. 2003. Simple Silhouettes for Complex Surfaces. In Proc. SGP .",
       "bbox": {
@@ -8599,9 +8580,9 @@
       }
     },
     {
-      "id": "#/texts/501",
+      "id": "#/texts/500",
       "page": 19,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "KOENDERINK, J. J. 1984. What does the occluding contour tell us about solid shape? Perception 13, 3, 321-330.",
       "bbox": {
@@ -8618,9 +8599,9 @@
       }
     },
     {
-      "id": "#/texts/502",
+      "id": "#/texts/501",
       "page": 19,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "MARKOSIAN, L., KOWALSKI, M. A., TRYCHIN, S. J., BOURDEV, L. D., GOLDSTEIN, D., AND HUGHES, J. F. 1997. Real-Time Nonphotorealistic Rendering. In Proc. SIGGRAPH . 415-420.",
       "bbox": {
@@ -8637,9 +8618,9 @@
       }
     },
     {
-      "id": "#/texts/503",
+      "id": "#/texts/502",
       "page": 19,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "NORTHRUP, J. D. AND MARKOSIAN, L. 2000. Artistic Silhouettes: A Hybrid Approach. In Proc. NPAR . 31-38.",
       "bbox": {
@@ -8656,9 +8637,9 @@
       }
     },
     {
-      "id": "#/texts/504",
+      "id": "#/texts/503",
       "page": 19,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
       "text": "PLANTINGA, S. AND VEGTER, G. 2006. Computing Contour Generators of Evolving Implicit Surfaces. ACM Trans. Graph. 25, 4, 1243-1280.",
       "bbox": {
@@ -8675,9 +8656,9 @@
       }
     },
     {
-      "id": "#/texts/505",
+      "id": "#/texts/504",
       "page": 19,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "RAY, N., LI, W. C., L ´ EVY, B., SHEFFER, A., AND ALLIEZ, P. 2006. Periodic global parameterization. ACM Trans. Graph. 25, 4, 1460-1485.",
       "bbox": {
@@ -8694,9 +8675,9 @@
       }
     },
     {
-      "id": "#/texts/506",
+      "id": "#/texts/505",
       "page": 19,
-      "order": 33,
+      "order": 32,
       "role": "paragraph",
       "text": "SAITO, T. AND TAKAHASHI, T. 1990. Comprehensible Rendering of 3-D Shapes. In Proc. SIGGRAPH . Vol. 24. 197-206.",
       "bbox": {
@@ -8713,9 +8694,9 @@
       }
     },
     {
-      "id": "#/texts/507",
+      "id": "#/texts/506",
       "page": 19,
-      "order": 34,
+      "order": 33,
       "role": "paragraph",
       "text": "STAM, J. 1998. Exact evaluation of catmull-clark subdivision surfaces at arbitrary parameter values. In Proc. SIGGRAPH . 395-404.",
       "bbox": {
@@ -8732,9 +8713,9 @@
       }
     },
     {
-      "id": "#/texts/508",
+      "id": "#/texts/507",
       "page": 19,
-      "order": 35,
+      "order": 34,
       "role": "paragraph",
       "text": "WINKENBACH, G. AND SALESIN, D. H. 1996. Rendering Parametric Surfaces in Pen and Ink. In Proc. SIGGRAPH . 469-476.",
       "bbox": {
@@ -8751,7 +8732,7 @@
       }
     },
     {
-      "id": "#/texts/512",
+      "id": "#/texts/511",
       "page": 20,
       "order": 1,
       "role": "paragraph",
@@ -8770,7 +8751,7 @@
       }
     },
     {
-      "id": "#/texts/513",
+      "id": "#/texts/512",
       "page": 20,
       "order": 2,
       "role": "caption",
@@ -8789,7 +8770,7 @@
       }
     },
     {
-      "id": "#/texts/514",
+      "id": "#/texts/513",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -8808,7 +8789,7 @@
       }
     },
     {
-      "id": "#/texts/515",
+      "id": "#/texts/514",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -8827,7 +8808,7 @@
       }
     },
     {
-      "id": "#/texts/516",
+      "id": "#/texts/515",
       "page": 20,
       "order": 5,
       "role": "paragraph",
@@ -8846,7 +8827,7 @@
       }
     },
     {
-      "id": "#/texts/517",
+      "id": "#/texts/516",
       "page": 20,
       "order": 6,
       "role": "paragraph",
@@ -8865,7 +8846,7 @@
       }
     },
     {
-      "id": "#/texts/518",
+      "id": "#/texts/517",
       "page": 20,
       "order": 7,
       "role": "paragraph",
@@ -8884,7 +8865,7 @@
       }
     },
     {
-      "id": "#/texts/519",
+      "id": "#/texts/518",
       "page": 20,
       "order": 8,
       "role": "heading",
@@ -8903,7 +8884,7 @@
       }
     },
     {
-      "id": "#/texts/520",
+      "id": "#/texts/519",
       "page": 20,
       "order": 9,
       "role": "paragraph",
@@ -8922,7 +8903,7 @@
       }
     },
     {
-      "id": "#/texts/521",
+      "id": "#/texts/520",
       "page": 20,
       "order": 10,
       "role": "paragraph",
@@ -8941,7 +8922,7 @@
       }
     },
     {
-      "id": "#/texts/522",
+      "id": "#/texts/521",
       "page": 20,
       "order": 11,
       "role": "heading",
@@ -8960,7 +8941,7 @@
       }
     },
     {
-      "id": "#/texts/523",
+      "id": "#/texts/522",
       "page": 20,
       "order": 12,
       "role": "heading",
@@ -8979,7 +8960,7 @@
       }
     },
     {
-      "id": "#/texts/524",
+      "id": "#/texts/523",
       "page": 20,
       "order": 13,
       "role": "paragraph",
@@ -8998,7 +8979,7 @@
       }
     },
     {
-      "id": "#/texts/525",
+      "id": "#/texts/524",
       "page": 20,
       "order": 14,
       "role": "heading",
@@ -9017,7 +8998,7 @@
       }
     },
     {
-      "id": "#/texts/526",
+      "id": "#/texts/525",
       "page": 20,
       "order": 15,
       "role": "paragraph",
@@ -9036,7 +9017,7 @@
       }
     },
     {
-      "id": "#/texts/527",
+      "id": "#/texts/526",
       "page": 20,
       "order": 16,
       "role": "paragraph",
@@ -9055,7 +9036,7 @@
       }
     },
     {
-      "id": "#/texts/528",
+      "id": "#/texts/527",
       "page": 20,
       "order": 17,
       "role": "paragraph",
@@ -9073,5 +9054,27 @@
         "docling_orig": "Our approach is based on constructing local charts . A vertex of the base mesh is defined as regular if it has four adjacent faces and"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling"
+  }
 }

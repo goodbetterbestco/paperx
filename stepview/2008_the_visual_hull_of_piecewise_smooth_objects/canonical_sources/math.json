@@ -2,40 +2,9 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p005-0034",
+      "id": "mathpix-eq-p010-0046",
       "kind": "display",
-      "display_latex": "\\left|\\mathbf{p}_{1} \\mathbf{p}_{\\mathrm{M}}\\right| /\\left|\\mathbf{p}_{\\mathrm{M}} \\mathbf{p}_{2}\\right|=r_{1} / r_{2}",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 5,
-          "bbox": {
-            "x0": 57.0,
-            "y0": 1055.5,
-            "x1": 189.5,
-            "y1": 1076.0,
-            "width": 132.5,
-            "height": 20.5
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p010-0044",
-      "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathbf{s}(u, v)=(\\mathbf{v}-\\mathbf{c}(u)) v \\tag{A.1}\n\\end{equation*}",
+      "display_latex": "\\mathbf{s}(u, v)=(\\mathbf{v}-\\mathbf{c}(u)) v",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,12 +15,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 430.5,
-            "y0": 516.0,
-            "x1": 554.5,
-            "y1": 533.0,
-            "width": 124.0,
-            "height": 17.0
+            "x0": 430.52,
+            "y0": 516.08,
+            "x1": 553.49,
+            "y1": 533.07,
+            "width": 122.97,
+            "height": 16.99
           },
           "engine": "mathpix"
         }
@@ -64,7 +33,7 @@
       }
     },
     {
-      "id": "mathpix-eq-p010-0048",
+      "id": "mathpix-eq-p010-0050",
       "kind": "display",
       "display_latex": "(\\mathbf{v}-\\mathbf{p}(u, v)) \\cdot \\mathbf{n}(u, v)=0 ; \\quad \\mathbf{n}(u, v)=\\mathbf{p}_{u}(u, v) \\times \\mathbf{p}_{v}(u, v)",
       "semantic_expr": null,
@@ -77,43 +46,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 430.5,
-            "y0": 596.0,
-            "x1": 761.0,
-            "y1": 615.0,
-            "width": 330.5,
-            "height": 19.0
-          },
-          "engine": "mathpix"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      }
-    },
-    {
-      "id": "mathpix-eq-p010-0058",
-      "kind": "display",
-      "display_latex": "\\left(\\left(\\mathbf{c}_{1}\\left(u_{1}\\right)-\\mathbf{c}_{2}\\left(u_{2}\\right)\\right) \\times \\mathbf{t}_{1}\\left(u_{1}\\right)\\right) \\cdot \\mathbf{t}_{2}\\left(u_{2}\\right)=0",
-      "semantic_expr": null,
-      "compiled_targets": {},
-      "conversion": {
-        "status": "unconverted",
-        "notes": ""
-      },
-      "source_spans": [
-        {
-          "page": 10,
-          "bbox": {
-            "x0": 430.5,
-            "y0": 795.5,
-            "x1": 664.5,
-            "y1": 814.0,
-            "width": 234.0,
-            "height": 18.5
+            "x0": 430.52,
+            "y0": 596.14,
+            "x1": 760.83,
+            "y1": 613.13,
+            "width": 330.31,
+            "height": 16.99
           },
           "engine": "mathpix"
         }
@@ -128,7 +66,7 @@
     {
       "id": "mathpix-eq-p010-0061",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\n\\mathbf{s}\\left(u_{1}, v\\right)=\\left(\\mathbf{c}_{1}\\left(u_{1}\\right)-\\mathbf{c}_{2}\\left(u_{1}\\right)\\right) v \\tag{A.2}\n\\end{equation*}",
+      "display_latex": "\\left(\\left(\\mathbf{c}_{1}\\left(u_{1}\\right)-\\mathbf{c}_{2}\\left(u_{2}\\right)\\right) \\times \\mathbf{t}_{1}\\left(u_{1}\\right)\\right) \\cdot \\mathbf{t}_{2}\\left(u_{2}\\right)=0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -139,12 +77,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 430.5,
-            "y0": 876.5,
-            "x1": 599.0,
-            "y1": 894.5,
-            "width": 168.5,
-            "height": 18.0
+            "x0": 430.52,
+            "y0": 795.43,
+            "x1": 664.65,
+            "y1": 814.15,
+            "width": 234.12,
+            "height": 18.72
           },
           "engine": "mathpix"
         }
@@ -159,6 +97,37 @@
     {
       "id": "mathpix-eq-p010-0064",
       "kind": "display",
+      "display_latex": "\\mathbf{s}\\left(u_{1}, v\\right)=\\left(\\mathbf{c}_{1}\\left(u_{1}\\right)-\\mathbf{c}_{2}\\left(u_{1}\\right)\\right) v",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 10,
+          "bbox": {
+            "x0": 430.52,
+            "y0": 876.35,
+            "x1": 598.7,
+            "y1": 894.21,
+            "width": 168.18,
+            "height": 17.86
+          },
+          "engine": "mathpix"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "mathpix-eq-p010-0067",
+      "kind": "display",
       "display_latex": "\\left(\\left(\\mathbf{c}_{1}\\left(u_{1}\\right)-\\mathbf{p}_{2}\\left(u_{2}, v_{2}\\right)\\right) \\times \\mathbf{t}\\left(u_{1}\\right)\\right) \\times \\mathbf{n}_{2}\\left(u_{2}, v_{2}\\right)=0",
       "semantic_expr": null,
       "compiled_targets": {},
@@ -170,12 +139,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 430.5,
-            "y0": 939.5,
-            "x1": 705.5,
-            "y1": 957.5,
-            "width": 275.0,
-            "height": 18.0
+            "x0": 430.52,
+            "y0": 939.71,
+            "x1": 705.54,
+            "y1": 956.7,
+            "width": 275.02,
+            "height": 16.99
           },
           "engine": "mathpix"
         }

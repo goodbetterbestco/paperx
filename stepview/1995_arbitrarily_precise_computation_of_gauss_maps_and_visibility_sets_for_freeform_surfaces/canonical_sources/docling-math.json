@@ -161,6 +161,37 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
+      "display_latex": "= (0 | 18|| = (5 0) = 01.",
+      "semantic_expr": null,
+      "compiled_targets": {},
+      "conversion": {
+        "status": "unconverted",
+        "notes": ""
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 378.5,
+            "y0": 652.39,
+            "x1": 505.42,
+            "y1": 665.15,
+            "width": 126.92,
+            "height": 12.76
+          },
+          "engine": "docling"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "docling-eq-0007",
+      "kind": "display",
       "display_latex": "(5) f teF",
       "semantic_expr": null,
       "compiled_targets": {},

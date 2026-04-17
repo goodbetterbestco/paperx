@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2023_algebraic_smooth_occluding_contours/2023_algebraic_smooth_occluding_contours.pdf",
+  "pdf_path": "stepview/2023_algebraic_smooth_occluding_contours/2023_algebraic_smooth_occluding_contours.pdf",
   "page_count": 10,
   "page_sizes_pt": [
     {
@@ -363,7 +363,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ABSTRACT",
       "bbox": {
         "x0": 53.8,
@@ -382,7 +382,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computing occluding contours is a key step in 3D non-photorealistic rendering, but producing smooth contours with consistent visibility has been a notoriously-challenging open problem. This paper describes the first general-purpose smooth surface construction for which the occluding contours can be computed in closed form. Given an input mesh and camera viewpoint, we show how to approximate the mesh with a 𝐺 1 piecewise-quadratic surface, for which the occluding contours are piecewise-rational curves in image-space. We show that this method produces smooth contours with consistent visibility much more efficiently than the state-ofthe-art.",
       "bbox": {
         "x0": 53.47,
@@ -401,7 +401,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "heading",
       "text": "CCS CONCEPTS",
       "bbox": {
         "x0": 53.8,
@@ -420,7 +420,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "· Computingmethodologies → Non-photorealistic rendering ; Visibility ; Parametric curve and surface models .",
       "bbox": {
         "x0": 53.48,
@@ -439,7 +439,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and or a fee. Request permissions from permissions@acm.org.",
       "bbox": {
         "x0": 53.8,
@@ -496,7 +496,7 @@
       "id": "#/texts/23",
       "page": 1,
       "order": 24,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "https: doi.org 10.1145 3588432.3591547",
       "bbox": {
         "x0": 53.8,
@@ -515,7 +515,7 @@
       "id": "#/texts/24",
       "page": 1,
       "order": 25,
-      "role": "front_matter",
+      "role": "heading",
       "text": "KEYWORDS",
       "bbox": {
         "x0": 317.95,
@@ -534,7 +534,7 @@
       "id": "#/texts/25",
       "page": 1,
       "order": 26,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "contours, non-photorealistic rendering, piecewise-quadratic surface, visibility",
       "bbox": {
         "x0": 317.95,
@@ -553,7 +553,7 @@
       "id": "#/texts/26",
       "page": 1,
       "order": 27,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ACMReference Format:",
       "bbox": {
         "x0": 317.66,
@@ -572,7 +572,7 @@
       "id": "#/texts/27",
       "page": 1,
       "order": 28,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Ryan Capouellez, Jiacheng Dai, Aaron Hertzmann, and Denis Zorin. 2023. Algebraic Smooth Occluding Contours. In Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Proceedings (SIGGRAPH '23 Conference Proceedings), August 6-10, 2023, Los Angeles, CA, USA. ACM,NewYork,NY,USA,10pages. https: doi.org 10.1145 3588432.3591547",
       "bbox": {
         "x0": 317.68,
@@ -591,7 +591,7 @@
       "id": "#/texts/28",
       "page": 1,
       "order": 29,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 INTRODUCTION",
       "bbox": {
         "x0": 317.95,
@@ -610,7 +610,7 @@
       "id": "#/texts/29",
       "page": 1,
       "order": 30,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computing occluding contour lines of 3D objects is a common step in 3D non-photorealistic rendering algorithms, whether for architectural drawings, cartoon stylization, or pen-and-ink illustration. Conceptually, the problem is deceptively simple: find the points of the surface where the dot product n · 𝜏 of the view direction 𝜏 and the normal vector n changes sign, and determine which of these points are visible [Bénard and Hertzmann 2019].",
       "bbox": {
         "x0": 317.95,
@@ -629,7 +629,7 @@
       "id": "#/texts/30",
       "page": 1,
       "order": 31,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "For triangle meshes, the exact occluding contours can easily be defined: they are a subset of the edges of the original mesh. However, when the mesh represents a smooth object, these contours usually have many spurious singularities, and do not produce the clean contour topology of a smooth surface (Figure 2). This makes them unsuitable for curve stylization, and noisy during animation, e.g., [Bénard et al. 2014]. This mismatch between mesh contours",
       "bbox": {
         "x0": 317.95,

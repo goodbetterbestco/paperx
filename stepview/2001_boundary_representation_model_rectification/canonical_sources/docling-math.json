@@ -80,11 +80,11 @@
           "page": 11,
           "bbox": {
             "x0": 619.32,
-            "y0": 758.23,
-            "x1": 640.85,
+            "y0": 756.57,
+            "x1": 642.5,
             "y1": 774.78,
-            "width": 21.53,
-            "height": 16.55
+            "width": 23.18,
+            "height": 18.21
           },
           "engine": "docling"
         }
@@ -163,7 +163,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "Si = (Sul there exists ek = Si1, 0 ≤ i ≤ N). (5)",
+      "display_latex": "Si = (Snl there exists ek = Si1, 0 ≤ i ≤ N). (5)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -195,7 +195,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "{Pijh≤ı≤N,1≤j≤N,, (6)",
+      "display_latex": "{Pyh≤ı≤N,1≤j≤N,› (6)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -206,12 +206,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 266.61,
-            "y0": 814.52,
+            "x0": 266.52,
+            "y0": 814.0,
             "x1": 639.19,
-            "y1": 836.04,
-            "width": 372.58,
-            "height": 21.52
+            "y1": 836.56,
+            "width": 372.67,
+            "height": 22.56
           },
           "engine": "docling"
         }

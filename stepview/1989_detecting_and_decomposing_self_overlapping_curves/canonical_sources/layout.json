@@ -1,5 +1,5 @@
 {
-  "engine": "composed",
+  "engine": "docling",
   "pdf_path": "stepview/1989_detecting_and_decomposing_self_overlapping_curves/1989_detecting_and_decomposing_self_overlapping_curves.pdf",
   "page_count": 8,
   "page_sizes_pt": [
@@ -46,150 +46,535 @@
   ],
   "blocks": [
     {
-      "id": "mathpix-p001-b0008",
+      "id": "#/texts/0",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 0.0,
+        "y0": 772.62,
+        "x1": 2.78,
+        "y1": 781.87,
+        "width": 2.78,
+        "height": 9.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/1",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 96.12,
+        "x1": 50.6,
+        "y1": 96.12,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/2",
+      "page": 1,
+      "order": 3,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 101.12,
+        "x1": 50.6,
+        "y1": 101.12,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/3",
+      "page": 1,
+      "order": 4,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 177.01,
+        "x1": 50.6,
+        "y1": 177.01,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/4",
+      "page": 1,
+      "order": 5,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 194.26,
+        "x1": 50.6,
+        "y1": 194.26,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/5",
+      "page": 1,
+      "order": 6,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 199.26,
+        "x1": 50.6,
+        "y1": 199.26,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/6",
+      "page": 1,
+      "order": 7,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 204.26,
+        "x1": 50.6,
+        "y1": 204.26,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "paragraph",
-      "text": "acm open>",
+      "role": "front_matter",
+      "text": ".",
       "bbox": {
-        "x0": 211.5,
-        "y0": 74.0,
-        "x1": 257.0,
-        "y1": 85.0,
-        "width": 45.5,
-        "height": 11.0
+        "x0": 50.6,
+        "y0": 221.14,
+        "x1": 50.6,
+        "y1": 221.14,
+        "width": 0.0,
+        "height": 0.0
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 0.673011064529419,
-        "confidence_rate": 0.9721110319607917
+        "docling_label": "text",
+        "docling_orig": "."
       }
     },
     {
-      "id": "mathpix-p001-b0016",
+      "id": "#/texts/8",
       "page": 1,
-      "order": 16,
-      "role": "paragraph",
+      "order": 9,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 50.6,
+        "y0": 238.02,
+        "x1": 50.6,
+        "y1": 238.02,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/9",
+      "page": 1,
+      "order": 10,
+      "role": "front_matter",
+      "text": "Latest updates: hps: dl.acm.org doi 10.1145 73833.73838",
+      "bbox": {
+        "x0": 70.25,
+        "y0": 105.77,
+        "x1": 306.11,
+        "y1": 114.1,
+        "width": 235.86,
+        "height": 8.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Latest updates: hps: dl.acm.org doi 10.1145 73833.73838"
+      }
+    },
+    {
+      "id": "#/texts/10",
+      "page": 1,
+      "order": 11,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 70.25,
+        "y0": 118.37,
+        "x1": 70.25,
+        "y1": 118.37,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/11",
+      "page": 1,
+      "order": 12,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 70.25,
+        "y0": 123.37,
+        "x1": 70.25,
+        "y1": 123.37,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/12",
+      "page": 1,
+      "order": 13,
+      "role": "front_matter",
       "text": "ARTICLE",
       "bbox": {
-        "x0": 48.5,
-        "y0": 127.5,
-        "x1": 82.5,
-        "y1": 135.5,
-        "width": 34.0,
-        "height": 8.0
+        "x0": 50.6,
+        "y0": 129.31,
+        "x1": 80.7,
+        "y1": 135.95,
+        "width": 30.1,
+        "height": 6.64
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "text",
+        "docling_orig": "ARTICLE"
       }
     },
     {
-      "id": "mathpix-p001-b0018",
+      "id": "#/texts/13",
       "page": 1,
-      "order": 18,
-      "role": "paragraph",
+      "order": 14,
+      "role": "front_matter",
       "text": "Detecting and decomposing self-overlapping curves",
       "bbox": {
-        "x0": 49.5,
-        "y0": 137.5,
-        "x1": 334.5,
-        "y1": 152.0,
-        "width": 285.0,
-        "height": 14.5
+        "x0": 50.6,
+        "y0": 140.09,
+        "x1": 332.84,
+        "y1": 149.86,
+        "width": 282.24,
+        "height": 9.77
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "section_header",
+        "docling_orig": "Detecting and decomposing self-overlapping curves"
       }
     },
     {
-      "id": "mathpix-p001-b0021",
+      "id": "#/texts/14",
       "page": 1,
-      "order": 21,
-      "role": "paragraph",
-      "text": "P. W. SHOR, Nokia Bell Labs, Murray, NJ, United States",
+      "order": 15,
+      "role": "front_matter",
+      "text": "P. W. SHOR , Nokia Bell Labs, Murray, NJ, United States",
       "bbox": {
-        "x0": 49.5,
-        "y0": 162.0,
-        "x1": 283.0,
-        "y1": 174.5,
-        "width": 233.5,
-        "height": 12.5
+        "x0": 50.6,
+        "y0": 164.42,
+        "x1": 280.91,
+        "y1": 172.74,
+        "width": 230.31,
+        "height": 8.32
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "text",
+        "docling_orig": "P. W. SHOR , Nokia Bell Labs, Murray, NJ, United States"
       }
     },
     {
-      "id": "mathpix-p001-b0023",
+      "id": "#/texts/15",
       "page": 1,
-      "order": 23,
-      "role": "paragraph",
-      "text": "C. J. VAN WYK, Nokia Bell Labs, Murray, NJ, United States",
+      "order": 16,
+      "role": "front_matter",
+      "text": "C. J. V AN WYK , Nokia Bell Labs, Murray, NJ, United States",
       "bbox": {
-        "x0": 49.5,
-        "y0": 179.5,
-        "x1": 297.5,
-        "y1": 191.0,
-        "width": 248.0,
-        "height": 11.5
+        "x0": 50.6,
+        "y0": 181.66,
+        "x1": 295.94,
+        "y1": 189.99,
+        "width": 245.34,
+        "height": 8.33
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "text",
+        "docling_orig": "C. J. V AN WYK , Nokia Bell Labs, Murray, NJ, United States"
       }
     },
     {
-      "id": "mathpix-p001-b0024",
+      "id": "#/texts/16",
       "page": 1,
-      "order": 24,
-      "role": "paragraph",
+      "order": 17,
+      "role": "front_matter",
       "text": "Open Access Support provided by:",
       "bbox": {
-        "x0": 49.5,
-        "y0": 206.5,
-        "x1": 200.0,
-        "y1": 218.5,
-        "width": 150.5,
-        "height": 12.0
+        "x0": 50.6,
+        "y0": 208.59,
+        "x1": 198.25,
+        "y1": 216.92,
+        "width": 147.65,
+        "height": 8.33
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "text",
+        "docling_orig": "Open Access Support provided by:"
       }
     },
     {
-      "id": "mathpix-p001-b0025",
+      "id": "#/texts/17",
       "page": 1,
-      "order": 25,
-      "role": "paragraph",
+      "order": 18,
+      "role": "front_matter",
       "text": "Nokia Bell Labs",
       "bbox": {
-        "x0": 49.5,
-        "y0": 224.0,
-        "x1": 122.0,
-        "y1": 233.5,
-        "width": 72.5,
-        "height": 9.5
+        "x0": 50.6,
+        "y0": 225.47,
+        "x1": 121.31,
+        "y1": 233.53,
+        "width": 70.71,
+        "height": 8.06
       },
       "meta": {
-        "mathpix_type": "text",
-        "mathpix_subtype": "",
-        "confidence": 1,
-        "confidence_rate": 1
+        "docling_label": "text",
+        "docling_orig": "Nokia Bell Labs"
+      }
+    },
+    {
+      "id": "#/texts/18",
+      "page": 1,
+      "order": 19,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 124.38,
+        "x1": 463.7,
+        "y1": 124.38,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/19",
+      "page": 1,
+      "order": 20,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 129.38,
+        "x1": 463.7,
+        "y1": 129.38,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/20",
+      "page": 1,
+      "order": 21,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 142.66,
+        "x1": 463.7,
+        "y1": 142.66,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/21",
+      "page": 1,
+      "order": 22,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 147.66,
+        "x1": 463.7,
+        "y1": 147.66,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/22",
+      "page": 1,
+      "order": 23,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 494.12,
+        "y0": 106.1,
+        "x1": 494.12,
+        "y1": 106.1,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/23",
+      "page": 1,
+      "order": 24,
+      "role": "front_matter",
+      "text": ".",
+      "bbox": {
+        "x0": 494.12,
+        "y0": 111.1,
+        "x1": 494.12,
+        "y1": 111.1,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "."
+      }
+    },
+    {
+      "id": "#/texts/24",
+      "page": 1,
+      "order": 25,
+      "role": "front_matter",
+      "text": "PDF Download 73833.73838.pdf 07 April 2026 Total Citations: 2 Total Downloads: 577",
+      "bbox": {
+        "x0": 494.12,
+        "y0": 69.87,
+        "x1": 549.29,
+        "y1": 102.59,
+        "width": 55.17,
+        "height": 32.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PDF Download 73833.73838.pdf 07 April 2026 Total Citations: 2 Total Downloads: 577"
+      }
+    },
+    {
+      "id": "#/texts/25",
+      "page": 1,
+      "order": 26,
+      "role": "front_matter",
+      "text": "Published: 05 June 1989",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 114.88,
+        "x1": 533.52,
+        "y1": 120.68,
+        "width": 69.82,
+        "height": 5.8
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Published: 05 June 1989"
+      }
+    },
+    {
+      "id": "#/texts/26",
+      "page": 1,
+      "order": 27,
+      "role": "front_matter",
+      "text": "Citation in BibTeX format",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 133.16,
+        "x1": 544.21,
+        "y1": 138.77,
+        "width": 80.51,
+        "height": 5.61
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Citation in BibTeX format"
+      }
+    },
+    {
+      "id": "#/texts/27",
+      "page": 1,
+      "order": 28,
+      "role": "front_matter",
+      "text": "Conference Sponsors: SIGACT SIGGRAPH",
+      "bbox": {
+        "x0": 463.7,
+        "y0": 151.44,
+        "x1": 531.53,
+        "y1": 173.8,
+        "width": 67.83,
+        "height": 22.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Conference Sponsors: SIGACT SIGGRAPH"
       }
     },
     {
@@ -2439,25 +2824,6 @@
       "page": 7,
       "order": 22,
       "role": "paragraph",
-      "text": "Iz",
-      "bbox": {
-        "x0": 110.44,
-        "y0": 567.52,
-        "x1": 120.79,
-        "y1": 580.19,
-        "width": 10.35,
-        "height": 12.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Iz"
-      }
-    },
-    {
-      "id": "#/texts/153",
-      "page": 7,
-      "order": 23,
-      "role": "paragraph",
       "text": "92",
       "bbox": {
         "x0": 154.15,
@@ -2473,9 +2839,9 @@
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/153",
       "page": 7,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "A2",
       "bbox": {
@@ -2492,28 +2858,28 @@
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/154",
       "page": 7,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
-      "text": "FIG. 1",
+      "text": "FIG.1",
       "bbox": {
         "x0": 186.36,
-        "y0": 358.0,
+        "y0": 358.01,
         "x1": 211.67,
-        "y1": 367.33,
+        "y1": 367.22,
         "width": 25.31,
-        "height": 9.33
+        "height": 9.21
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "FIG. 1"
+        "docling_orig": "FIG.1"
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/155",
       "page": 7,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "g (41)",
       "bbox": {
@@ -2530,11 +2896,11 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/156",
       "page": 7,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
-      "text": "8 (41)",
+      "text": "g (41)",
       "bbox": {
         "x0": 189.81,
         "y0": 658.33,
@@ -2545,13 +2911,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "8 (41)"
+        "docling_orig": "g (41)"
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/157",
       "page": 7,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -2568,9 +2934,9 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/158",
       "page": 7,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "19 (фл)",
       "bbox": {
@@ -2587,9 +2953,9 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/159",
       "page": 7,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "g (ф)",
       "bbox": {
@@ -2606,11 +2972,11 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/160",
       "page": 7,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
-      "text": "139(42)",
+      "text": "39(42)",
       "bbox": {
         "x0": 254.55,
         "y0": 596.04,
@@ -2621,13 +2987,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "139(42)"
+        "docling_orig": "39(42)"
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/161",
       "page": 7,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "- 8 (ф2)",
       "bbox": {
@@ -2644,7 +3010,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/163",
       "page": 8,
       "order": 1,
       "role": "paragraph",
@@ -2663,7 +3029,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/164",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -2682,7 +3048,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/165",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -2701,7 +3067,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/166",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -2720,7 +3086,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/167",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -2739,7 +3105,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/168",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -2758,7 +3124,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/169",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -2777,7 +3143,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/170",
       "page": 8,
       "order": 8,
       "role": "paragraph",
@@ -2796,7 +3162,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/171",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -2815,7 +3181,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/172",
       "page": 8,
       "order": 10,
       "role": "caption",
@@ -2834,7 +3200,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/173",
       "page": 8,
       "order": 11,
       "role": "paragraph",
@@ -2853,7 +3219,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/174",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -2872,7 +3238,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/175",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -2891,7 +3257,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/176",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -2910,7 +3276,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/177",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -2929,7 +3295,7 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/178",
       "page": 8,
       "order": 16,
       "role": "paragraph",
@@ -2948,7 +3314,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/179",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -2967,7 +3333,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/180",
       "page": 8,
       "order": 18,
       "role": "paragraph",
@@ -2986,7 +3352,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/181",
       "page": 8,
       "order": 19,
       "role": "paragraph",
@@ -3005,7 +3371,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/182",
       "page": 8,
       "order": 20,
       "role": "paragraph",
@@ -3023,15 +3389,5 @@
         "docling_orig": "g (Ng)"
       }
     }
-  ],
-  "page_sources": {
-    "1": "mathpix",
-    "2": "docling",
-    "3": "docling",
-    "4": "docling",
-    "5": "docling",
-    "6": "docling",
-    "7": "docling",
-    "8": "docling"
-  }
+  ]
 }

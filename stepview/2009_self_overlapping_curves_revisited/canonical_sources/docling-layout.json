@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2009_self_overlapping_curves_revisited/2009_self_overlapping_curves_revisited.pdf",
+  "pdf_path": "stepview/2009_self_overlapping_curves_revisited/2009_self_overlapping_curves_revisited.pdf",
   "page_count": 13,
   "page_sizes_pt": [
     {
@@ -150,7 +150,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Abstract. A surface embedded in space, in such a way that each point has a neighborhood within which the surface is a terrain, projects to an immersed surface in the plane, the boundary of which is a self-intersecting curve. Under what circumstances can we reverse these mappings algorithmically? Shor and van Wyk considered one such problem, determining whether a curve is the boundary of an immersed disk; they showed that the self-overlapping curves defined in this way can be recognized in polynomial time. We show that several related problems are more difficult: it is NP-complete to determine whether an immersed disk is the projection of a surface embedded in space, or whether a curve is the boundary of an immersed surface in the plane that is not constrained to be a disk. However, when a casing is supplied with a self-intersecting curve, describing which component of the curve lies above and which below at each crossing, we may determine in time linear in the number of crossings whether the cased curve forms the projected boundary of a surface in space. As a related result, we show that an immersed surface with a single boundary curve that crosses itself n times has at most 2 n 2 combinatorially distinct spatial embeddings, and we discuss the existence of fixed-parameter tractable algorithms for related problems.",
       "bbox": {
         "x0": 100.32,
@@ -169,7 +169,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 72.0,
@@ -188,7 +188,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In this paper we consider the algorithmic interplay between three types of topological object: self-crossing curves in the plane, two-dimensional surfaces mapped to the plane in a self-overlapping way, and threedimensional embeddings of surfaces that generalize the terrains familiar in computational geometry.",
       "bbox": {
         "x0": 72.0,
@@ -207,7 +207,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A surface or two-dimensional manifold with boundary is a compact Hausdorff topological space M such that every point p has a neighborhood homeomorphic to a closed disk. If this homeomorphism maps p to a boundary point of the disk, we call p a boundary point of M ; the set of boundary points is represented by ∂ M . An immersion or local homeomorphism is a continuous function i : M → T that, restricted to some neighborhood of every point, is a homeomorphism. We will here be concerned only with the case that T = R 2 , in which case we say that the surface M is immersed in the plane . If M is topologically a disk, we call i an immersed disk , but immersions of other types of manifold are also possible.",
       "bbox": {
         "x0": 72.0,
@@ -226,7 +226,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "An embedding of a surface M into some space S is a closed subspace of S that is the image of M under a one-to-one continuous function e : M ↦→ S , the inverse of which is also continuous. A terrain is a surface embedded in space R 3 such that every vertical line { ( x , y , z ) | x = c 1 , y = c 2 } intersects it at most once. We are interested here in a localized version of this property: an generalized terrain is a surface M embedded in space R 3 such that every point of M has a neighborhood the image of which is a terrain. Intuitively, such a surface is embedded in such a way that it has no vertical tangent lines, so that it has a consistent up-down orientation at every point. We will also call such a surface a embedded surface, when it does not introduce any confusion-see Figure 2 for an example. Intuitively, every generalized terrain can be constructed by gluing terrains along their boundaries. As with immersions, if M is topologically a disk, we call e ( M ) an embedded disk .",
       "bbox": {
         "x0": 72.0,
@@ -245,7 +245,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "If i is an immersion, i ( ∂ M ) is a curve in the plane, which we call the boundary of the immersion ; with a suitable general-position assumption on i , this curve intersects itself only at proper pairwise crossings [7]. And if e is an embedding of a generalized terrain, we may project it into the plane to form an immersion:",
       "bbox": {
         "x0": 72.0,

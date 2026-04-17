@@ -115,11 +115,11 @@
       "text": ", Thomas W. Sederberg* and Masanori Kakimoto‡",
       "bbox": {
         "x0": 176.66,
-        "y0": 61.13,
+        "y0": 61.12,
         "x1": 442.33,
-        "y1": 81.78,
+        "y1": 81.8,
         "width": 265.67,
-        "height": 20.65
+        "height": 20.68
       },
       "meta": {
         "docling_label": "text",
@@ -249,9 +249,9 @@
       "bbox": {
         "x0": 10.35,
         "y0": 225.0,
-        "x1": 63.97,
+        "x1": 64.91,
         "y1": 232.67,
-        "width": 53.62,
+        "width": 54.56,
         "height": 7.67
       },
       "meta": {
@@ -473,7 +473,7 @@
       "page": 1,
       "order": 23,
       "role": "paragraph",
-      "text": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19])",
+      "text": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface (19])",
       "bbox": {
         "x0": 274.68,
         "y0": 193.0,
@@ -484,7 +484,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface [19])"
+        "docling_orig": "Sweeney and Bartels ray trace B-spline surfaces by refining the con- mates the surface. The ray intersection is then computed by intersecting the control mesh with the ray, and using that intersection point as a starting point for Newton iteration. Joy and Bhetanabhotla's algorithm uses quasi-Newton optimization to compute the points) on the patch nearest the ray, including intersection points. Kajiya[6] devised an intersection algorithm based on algebraic techniques (ie., resultants). Kajiya's algorithm reduces the problem of intersecting a bicubic patch with a ray into one of finding the real roots of a degree 18 univariate polynomial. Our ray patch intersection algorithm is based on the convex hull property of Bézier curves and surfaces using a technique we refer to as Bézier clipping. Traditionally, intersection algorithms (such as curve curve [13], surface surface [7], or ray surface (19])"
       }
     },
     {
@@ -630,9 +630,9 @@
         "x0": 39.09,
         "y0": 217.84,
         "x1": 283.45,
-        "y1": 257.01,
+        "y1": 255.78,
         "width": 244.36,
-        "height": 39.17
+        "height": 37.94
       },
       "meta": {
         "docling_label": "text",
@@ -720,7 +720,7 @@
       "page": 2,
       "order": 9,
       "role": "list_item",
-      "text": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, I&II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R.",
+      "text": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, 1& II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R.",
       "bbox": {
         "x0": 62.31,
         "y0": 536.0,
@@ -731,7 +731,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, I&II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R."
+        "docling_orig": "CASE A: All control points lie on the same side of the line containing R (in quadrants I, II, III, IV, 1& II, or III&IV) or \"behind\" R ( in quadrants II&III). The convex hull property of Bézier curves guarantees zero intersections with R."
       }
     },
     {
@@ -782,9 +782,9 @@
         "x0": 37.87,
         "y0": 711.0,
         "x1": 283.45,
-        "y1": 770.27,
+        "y1": 770.47,
         "width": 245.58,
-        "height": 59.27
+        "height": 59.47
       },
       "meta": {
         "docling_label": "text",
@@ -834,7 +834,7 @@
       "page": 2,
       "order": 15,
       "role": "paragraph",
-      "text": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1 u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation",
+      "text": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation",
       "bbox": {
         "x0": 303.0,
         "y0": 219.0,
@@ -845,7 +845,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1 u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation"
+        "docling_orig": "C; = (si, ti) are the Bézier control points and B (4) = (:)(1u) \"-iy denote the Bernstein basis functions. L is defined by it normalized implicit equation"
       }
     },
     {
@@ -910,7 +910,7 @@
       "page": 2,
       "order": 19,
       "role": "paragraph",
-      "text": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S н=0 (0 = „( „ 1 = „, horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4",
+      "text": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S 0=0 00(00 = 1(1 = 4 + 4] = 4, the horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4",
       "bbox": {
         "x0": 304.22,
         "y0": 447.92,
@@ -921,7 +921,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S н=0 (0 = „( „ 1 = „, horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4"
+        "docling_orig": "The Bezier control points D; = (Vi, li) are evenly spaced in u; = =). Since S 0=0 00(00 = 1(1 = 4 + 4] = 4, the horizontal coordinate of any point D (u) is in fact equal to the parameter value u. Figure 5 shows the curve D (u) which corresponds to the intersection in Figure 4"
       }
     },
     {
@@ -929,7 +929,7 @@
       "page": 2,
       "order": 20,
       "role": "paragraph",
-      "text": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = 4. Since D(u) lies inside the convex hull of its control points, we conclude that",
+      "text": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = . Since D(u) lies inside the convex hull of its control points, we conclude that",
       "bbox": {
         "x0": 303.0,
         "y0": 496.88,
@@ -940,7 +940,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = 4. Since D(u) lies inside the convex hull of its control points, we conclude that"
+        "docling_orig": "Since D (u) crosses the u-axis at the same u values at which C (u) intersects L, we can apply the convex hull property of Bézier curves to identify ranges of u for which C does not intersect L. Referring again to Figure 5, the convex hull of the D; intersects the u axis at points u = Umin = | and u = Umaz = . Since D(u) lies inside the convex hull of its control points, we conclude that"
       }
     },
     {
@@ -970,11 +970,11 @@
       "text": "For rational Bézier trimming curves",
       "bbox": {
         "x0": 304.22,
-        "y0": 635.17,
+        "y0": 636.33,
         "x1": 437.39,
         "y1": 647.41,
         "width": 133.17,
-        "height": 12.24
+        "height": 11.08
       },
       "meta": {
         "docling_label": "text",
@@ -982,7 +982,26 @@
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "#/texts/54",
+      "page": 2,
+      "order": 23,
+      "role": "paragraph",
+      "text": "with control point coordinates C; = (si, ti) and weights wi, th values of d; must be modified as follows. Substituting equation . into equation 2 and clearing the denominator yields:",
+      "bbox": {
+        "x0": 304.22,
+        "y0": 689.0,
+        "x1": 546.13,
+        "y1": 718.39,
+        "width": 241.91,
+        "height": 29.39
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "with control point coordinates C; = (si, ti) and weights wi, th values of d; must be modified as follows. Substituting equation . into equation 2 and clearing the denominator yields:"
+      }
+    },
+    {
+      "id": "#/texts/56",
       "page": 3,
       "order": 1,
       "role": "caption",
@@ -1001,7 +1020,7 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/57",
       "page": 3,
       "order": 2,
       "role": "caption",
@@ -1020,7 +1039,7 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/58",
       "page": 3,
       "order": 3,
       "role": "paragraph",
@@ -1039,7 +1058,7 @@
       }
     },
     {
-      "id": "#/texts/58",
+      "id": "#/texts/59",
       "page": 3,
       "order": 4,
       "role": "paragraph",
@@ -1058,7 +1077,7 @@
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "#/texts/60",
       "page": 3,
       "order": 5,
       "role": "paragraph",
@@ -1077,7 +1096,7 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/61",
       "page": 3,
       "order": 6,
       "role": "paragraph",
@@ -1096,7 +1115,7 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/62",
       "page": 3,
       "order": 7,
       "role": "paragraph",
@@ -1115,7 +1134,7 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/63",
       "page": 3,
       "order": 8,
       "role": "paragraph",
@@ -1134,7 +1153,7 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/64",
       "page": 3,
       "order": 9,
       "role": "caption",
@@ -1153,7 +1172,7 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/65",
       "page": 3,
       "order": 10,
       "role": "paragraph",
@@ -1172,7 +1191,7 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/66",
       "page": 3,
       "order": 11,
       "role": "paragraph",
@@ -1191,7 +1210,7 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/67",
       "page": 3,
       "order": 12,
       "role": "paragraph",
@@ -1210,7 +1229,7 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/68",
       "page": 3,
       "order": 13,
       "role": "paragraph",
@@ -1229,7 +1248,7 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/69",
       "page": 3,
       "order": 14,
       "role": "caption",
@@ -1248,7 +1267,7 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/70",
       "page": 3,
       "order": 15,
       "role": "paragraph",
@@ -1267,7 +1286,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/71",
       "page": 3,
       "order": 16,
       "role": "paragraph",
@@ -1286,7 +1305,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/72",
       "page": 3,
       "order": 17,
       "role": "paragraph",
@@ -1305,7 +1324,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/73",
       "page": 3,
       "order": 18,
       "role": "paragraph",
@@ -1324,18 +1343,18 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/74",
       "page": 3,
       "order": 19,
       "role": "paragraph",
       "text": "Umin",
       "bbox": {
         "x0": 357.98,
-        "y0": 194.59,
+        "y0": 195.81,
         "x1": 375.08,
         "y1": 201.93,
         "width": 17.1,
-        "height": 7.34
+        "height": 6.12
       },
       "meta": {
         "docling_label": "text",
@@ -1343,7 +1362,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/75",
       "page": 3,
       "order": 20,
       "role": "paragraph",
@@ -1362,26 +1381,26 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/76",
       "page": 3,
       "order": 21,
       "role": "paragraph",
-      "text": "(0,-4)",
+      "text": "(0, -4)",
       "bbox": {
-        "x0": 309.09,
-        "y0": 237.38,
-        "x1": 350.66,
-        "y1": 253.38,
-        "width": 41.57,
-        "height": 16.0
+        "x0": 307.85,
+        "y0": 237.34,
+        "x1": 349.46,
+        "y1": 253.42,
+        "width": 41.61,
+        "height": 16.08
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(0,-4)"
+        "docling_orig": "(0, -4)"
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/77",
       "page": 3,
       "order": 22,
       "role": "caption",
@@ -1400,7 +1419,7 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/78",
       "page": 3,
       "order": 23,
       "role": "caption",
@@ -1419,7 +1438,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/79",
       "page": 3,
       "order": 24,
       "role": "paragraph",
@@ -1438,7 +1457,7 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 3,
       "order": 25,
       "role": "caption",
@@ -1457,7 +1476,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/81",
       "page": 4,
       "order": 1,
       "role": "heading",
@@ -1476,26 +1495,26 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 4,
       "order": 2,
       "role": "paragraph",
-      "text": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3,, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case.",
+      "text": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3x, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case.",
       "bbox": {
-        "x0": 35.35,
+        "x0": 35.43,
         "y0": 124.67,
         "x1": 281.01,
         "y1": 224.0,
-        "width": 245.66,
+        "width": 245.58,
         "height": 99.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3,, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case."
+        "docling_orig": "Returning to the problem of point classification, our goal is to subdivide a case C curve into three segments, such that segments 1 and 3 are assured to be case A or B. This can be accomplished by applying Bézier clipping against either the s quadrant axis (L = t-t, = 0) or the t quadrant axis (L = s - s, = 0) where the ray anchor S = (3x, tr). If a case C curve is Bézier clipped against the s quadrant axis, the resulting curve segments 1 and 3 must be case A and segment 2 could be any case. If a case C curve is Bézier clipped against the t quadrant axis, the resulting curve segments 1 and 3 must be case A or B and segment 2 could be any case."
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 4,
       "order": 3,
       "role": "paragraph",
@@ -1514,7 +1533,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 4,
       "order": 4,
       "role": "paragraph",
@@ -1533,7 +1552,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 4,
       "order": 5,
       "role": "heading",
@@ -1552,7 +1571,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 4,
       "order": 6,
       "role": "paragraph",
@@ -1561,9 +1580,9 @@
         "x0": 35.43,
         "y0": 394.0,
         "x1": 193.04,
-        "y1": 415.0,
+        "y1": 413.67,
         "width": 157.61,
-        "height": 21.0
+        "height": 19.67
       },
       "meta": {
         "docling_label": "text",
@@ -1571,7 +1590,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 4,
       "order": 7,
       "role": "paragraph",
@@ -1590,7 +1609,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 4,
       "order": 8,
       "role": "paragraph",
@@ -1609,7 +1628,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 4,
       "order": 9,
       "role": "paragraph",
@@ -1628,18 +1647,18 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/90",
       "page": 4,
       "order": 10,
       "role": "paragraph",
       "text": "POP a curve;",
       "bbox": {
-        "x0": 50.08,
-        "y0": 444.18,
+        "x0": 51.3,
+        "y0": 444.19,
         "x1": 98.97,
         "y1": 452.89,
-        "width": 48.89,
-        "height": 8.71
+        "width": 47.67,
+        "height": 8.7
       },
       "meta": {
         "docling_label": "text",
@@ -1647,7 +1666,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/91",
       "page": 4,
       "order": 11,
       "role": "paragraph",
@@ -1666,7 +1685,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 4,
       "order": 12,
       "role": "paragraph",
@@ -1685,7 +1704,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 4,
       "order": 13,
       "role": "paragraph",
@@ -1704,7 +1723,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 4,
       "order": 14,
       "role": "heading",
@@ -1723,7 +1742,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 4,
       "order": 15,
       "role": "list_item",
@@ -1742,7 +1761,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/96",
       "page": 4,
       "order": 16,
       "role": "list_item",
@@ -1761,7 +1780,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/97",
       "page": 4,
       "order": 17,
       "role": "paragraph",
@@ -1780,7 +1799,7 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/98",
       "page": 4,
       "order": 18,
       "role": "paragraph",
@@ -1799,7 +1818,7 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/99",
       "page": 4,
       "order": 19,
       "role": "paragraph",
@@ -1818,7 +1837,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 4,
       "order": 20,
       "role": "paragraph",
@@ -1837,7 +1856,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 4,
       "order": 21,
       "role": "paragraph",
@@ -1856,7 +1875,7 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 4,
       "order": 22,
       "role": "paragraph",
@@ -1875,7 +1894,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 4,
       "order": 23,
       "role": "heading",
@@ -1894,11 +1913,11 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 4,
       "order": 24,
       "role": "paragraph",
-      "text": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve.",
+      "text": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision. Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve.",
       "bbox": {
         "x0": 35.35,
         "y0": 665.67,
@@ -1909,11 +1928,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve."
+        "docling_orig": "A problem can arise when R happens to pass through an end control point shared by two trimming curves, because two intersections will be reported when one is often the correct answer. The solution we use is to perturb S away from R a sub-pixel distance < ON_TOL. For the same reason, it is important that dUmin) # 0 and dUmax) ‡ 0 (in equation 4 and Figure 5) to within floating point precision. Therefore, make the adjustment Umin = 0.99 * Umin and Umar = 0.99 * Imar + 0.01. Another reason for this adjustment is to avoid infinite loops. Bézier clipping a curve whose endpoint happens to lie on R (ie., do = 0) results in segments 1 and 2 having zero length, and segment 3 is simply the original curve."
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 4,
       "order": 25,
       "role": "heading",
@@ -1932,7 +1951,7 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 4,
       "order": 26,
       "role": "paragraph",
@@ -1951,7 +1970,7 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 4,
       "order": 27,
       "role": "heading",
@@ -1959,9 +1978,9 @@
       "bbox": {
         "x0": 301.78,
         "y0": 219.0,
-        "x1": 432.51,
+        "x1": 433.73,
         "y1": 229.0,
-        "width": 130.73,
+        "width": 131.95,
         "height": 10.0
       },
       "meta": {
@@ -1970,7 +1989,7 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/108",
       "page": 4,
       "order": 28,
       "role": "paragraph",
@@ -1989,26 +2008,26 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 4,
       "order": 29,
       "role": "paragraph",
-      "text": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect the ray.",
+      "text": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect",
       "bbox": {
         "x0": 303.0,
         "y0": 379.33,
         "x1": 546.13,
-        "y1": 408.76,
+        "y1": 400.33,
         "width": 243.13,
-        "height": 29.43
+        "height": 21.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect the ray."
+        "docling_orig": "Section 3.2 then shows how to apply Bézier clipping to iteratively clip away regions of the projected patch which don't intersect"
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/110",
       "page": 4,
       "order": 30,
       "role": "paragraph",
@@ -2027,7 +2046,7 @@
       }
     },
     {
-      "id": "#/texts/110",
+      "id": "#/texts/111",
       "page": 4,
       "order": 31,
       "role": "heading",
@@ -2046,7 +2065,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/112",
       "page": 4,
       "order": 32,
       "role": "paragraph",
@@ -2065,7 +2084,7 @@
       }
     },
     {
-      "id": "#/texts/113",
+      "id": "#/texts/114",
       "page": 4,
       "order": 33,
       "role": "paragraph",
@@ -2084,7 +2103,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/115",
       "page": 4,
       "order": 34,
       "role": "paragraph",
@@ -2103,26 +2122,26 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/117",
       "page": 4,
       "order": 35,
       "role": "paragraph",
-      "text": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, parallel",
+      "text": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, paralle]",
       "bbox": {
         "x0": 299.33,
         "y0": 583.67,
         "x1": 546.13,
-        "y1": 614.6,
+        "y1": 614.37,
         "width": 246.8,
-        "height": 30.93
+        "height": 30.7
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, parallel"
+        "docling_orig": "We assume that the plane equations are normalized: a3 + b3 + Ch = 1. In practice, it is best if the two planes are orthogonal. For primary rays, we use the scan plane and the plane containing the ray, paralle]"
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/118",
       "page": 4,
       "order": 36,
       "role": "paragraph",
@@ -2141,26 +2160,26 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/121",
       "page": 4,
       "order": 37,
       "role": "paragraph",
-      "text": "Note that of, is related to the distance from control point P; to plane k:",
+      "text": "Note that di, is related to the distance from control point P, to plane k:",
       "bbox": {
         "x0": 300.55,
-        "y0": 725.67,
-        "x1": 546.13,
-        "y1": 749.0,
-        "width": 245.58,
-        "height": 23.33
+        "y0": 725.61,
+        "x1": 546.18,
+        "y1": 747.76,
+        "width": 245.63,
+        "height": 22.15
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Note that of, is related to the distance from control point P; to plane k:"
+        "docling_orig": "Note that di, is related to the distance from control point P, to plane k:"
       }
     },
     {
-      "id": "#/texts/121",
+      "id": "#/texts/122",
       "page": 4,
       "order": 38,
       "role": "paragraph",
@@ -2179,7 +2198,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/123",
       "page": 4,
       "order": 39,
       "role": "paragraph",
@@ -2198,7 +2217,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/125",
       "page": 5,
       "order": 1,
       "role": "paragraph",
@@ -2217,7 +2236,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/127",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -2236,7 +2255,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/129",
       "page": 5,
       "order": 3,
       "role": "caption",
@@ -2255,7 +2274,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/130",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -2274,7 +2293,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/131",
       "page": 5,
       "order": 5,
       "role": "paragraph",
@@ -2293,7 +2312,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/132",
       "page": 5,
       "order": 6,
       "role": "paragraph",
@@ -2312,7 +2331,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/134",
       "page": 5,
       "order": 7,
       "role": "paragraph",
@@ -2331,7 +2350,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/135",
       "page": 5,
       "order": 8,
       "role": "heading",
@@ -2350,7 +2369,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/136",
       "page": 5,
       "order": 9,
       "role": "paragraph",
@@ -2369,7 +2388,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/138",
       "page": 5,
       "order": 10,
       "role": "paragraph",
@@ -2388,7 +2407,7 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/140",
       "page": 5,
       "order": 11,
       "role": "paragraph",
@@ -2407,7 +2426,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/142",
       "page": 5,
       "order": 12,
       "role": "paragraph",
@@ -2426,18 +2445,18 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/144",
       "page": 5,
       "order": 13,
       "role": "paragraph",
       "text": "The function d(s, t) can be represented, in an (s, t, d) coordinate system, as an explicit (or so-called non-parametric) surface",
       "bbox": {
-        "x0": 39.1,
+        "x0": 39.09,
         "y0": 746.54,
-        "x1": 278.56,
-        "y1": 765.0,
-        "width": 239.46,
-        "height": 18.46
+        "x1": 278.57,
+        "y1": 765.11,
+        "width": 239.48,
+        "height": 18.57
       },
       "meta": {
         "docling_label": "text",
@@ -2445,7 +2464,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/145",
       "page": 5,
       "order": 14,
       "role": "caption",
@@ -2464,7 +2483,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/146",
       "page": 5,
       "order": 15,
       "role": "paragraph",
@@ -2483,7 +2502,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/147",
       "page": 5,
       "order": 16,
       "role": "paragraph",
@@ -2502,28 +2521,9 @@
       }
     },
     {
-      "id": "#/texts/147",
-      "page": 5,
-      "order": 17,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 524.14,
-        "y0": 244.77,
-        "x1": 536.36,
-        "y1": 250.89,
-        "width": 12.22,
-        "height": 6.12
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
-      }
-    },
-    {
       "id": "#/texts/148",
       "page": 5,
-      "order": 18,
+      "order": 17,
       "role": "caption",
       "text": "Figure 10: Control point distances",
       "bbox": {
@@ -2542,7 +2542,7 @@
     {
       "id": "#/texts/149",
       "page": 5,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "TO",
       "bbox": {
@@ -2582,7 +2582,7 @@
       "page": 6,
       "order": 2,
       "role": "paragraph",
-      "text": "Dopie i ca. Compare in eure it, in onton poin Figure 10.",
+      "text": "Dopic i ca Compare is igure it, in onton poin Figure 10.",
       "bbox": {
         "x0": 41.54,
         "y0": 167.67,
@@ -2593,7 +2593,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Dopie i ca. Compare in eure it, in onton poin Figure 10."
+        "docling_orig": "Dopic i ca Compare is igure it, in onton poin Figure 10."
       }
     },
     {
@@ -2660,12 +2660,12 @@
       "role": "paragraph",
       "text": "-8",
       "bbox": {
-        "x0": 48.87,
+        "x0": 50.09,
         "y0": 294.94,
         "x1": 69.64,
-        "y1": 310.85,
-        "width": 20.77,
-        "height": 15.91
+        "y1": 309.63,
+        "width": 19.55,
+        "height": 14.69
       },
       "meta": {
         "docling_label": "text",
@@ -2867,6 +2867,25 @@
       "page": 6,
       "order": 17,
       "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 272.45,
+        "y0": 517.68,
+        "x1": 282.23,
+        "y1": 527.47,
+        "width": 9.78,
+        "height": 9.79
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/168",
+      "page": 6,
+      "order": 18,
+      "role": "paragraph",
       "text": "Smat",
       "bbox": {
         "x0": 196.7,
@@ -2879,25 +2898,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "Smat"
-      }
-    },
-    {
-      "id": "#/texts/168",
-      "page": 6,
-      "order": 18,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 262.68,
-        "y0": 529.92,
-        "x1": 268.79,
-        "y1": 537.26,
-        "width": 6.11,
-        "height": 7.34
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
       }
     },
     {
@@ -2926,11 +2926,11 @@
       "role": "paragraph",
       "text": "bounds the projection of the D (s, t) patch. In this example, that convex hull intersects the s axis at points Smin = 2 5 and Smor = 2 3. We conclude that d(s, t) # 0, and therefore P (s, t) # 0, for s < 2 5 and s > 2 3. The de Casteljau subdivision algorithm is applied to clip away those regions, leaving the two dimensional patch in Figure 13.",
       "bbox": {
-        "x0": 43.98,
+        "x0": 43.9,
         "y0": 668.22,
-        "x1": 284.67,
+        "x1": 284.75,
         "y1": 728.33,
-        "width": 240.69,
+        "width": 240.85,
         "height": 60.11
       },
       "meta": {
@@ -3019,7 +3019,7 @@
       "page": 6,
       "order": 25,
       "role": "paragraph",
-      "text": "panch i case ye sale one to sance are to contine 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed.",
+      "text": "panch i case ye sale one to sance are too contin 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10. Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed.",
       "bbox": {
         "x0": 304.22,
         "y0": 536.0,
@@ -3030,7 +3030,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "panch i case ye sale one to sance are to contine 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed."
+        "docling_orig": "panch i case ye sale one to sance are too contin 4. In practice one should pick a tolerance value which assures sub-pixel accuracy. This is done by finding a bound on the largest first derivative of screen space x or y with respect to parameter space s or t.) However, in computing tmin, tmar for the next t clip, it tums out that tmar - tmin < 10. Without subdividing in t, we then compute Smin, Smaz for an s clip, and discover that smar - Smin < 10-4 also. Thus, in the final step, we compute the intersection to within subdivisions are performed."
       }
     },
     {
@@ -3076,7 +3076,7 @@
       "page": 6,
       "order": 28,
       "role": "paragraph",
-      "text": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = 0, OF tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries.",
+      "text": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = O, Or tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries.",
       "bbox": {
         "x0": 306.66,
         "y0": 712.27,
@@ -3087,7 +3087,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = 0, OF tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries."
+        "docling_orig": "It is possible to have tmas - tmin < 10-4 and Smax - Smin< 10-4, and yet the ray does not intersect the patch. However, this can only occur if Smin = 0, Smas = 1, tmin = O, Or tmar = 1. Whenever the subpatch lies on the boundary of the original patch, even if the tolerance criteria is satisfied, an additional Bézier clip calculation should be performed to assure that the intersection does lie within the patch boundaries."
       }
     },
     {
@@ -3269,11 +3269,11 @@
       "text": "1",
       "bbox": {
         "x0": 213.81,
-        "y0": 430.79,
-        "x1": 224.8,
+        "y0": 429.57,
+        "x1": 226.03,
         "y1": 446.7,
-        "width": 10.99,
-        "height": 15.91
+        "width": 12.22,
+        "height": 17.13
       },
       "meta": {
         "docling_label": "text",
@@ -3782,11 +3782,11 @@
       "text": "This algorithm works on patches of arbitrary degree. However, since de Casteljau subdivision is an O(n) operation for surface patches, execution speed suffers as patch degree increases. A sample bicubic patch containing a silhouette curve took 50 cpu seconds to render with 11.4 subdivisions per pixel. After elevating that same patch to degree four, the rendering took 94 cpu seconds with 11.2 subdivisions per pixel. The subdivisions per pixel tends to decrease with degree because the control polygon approximates the patch more closely as degree elevation is applied. Table 2 tallies the execution speed for patches elevated up to degree eight.",
       "bbox": {
         "x0": 36.61,
-        "y0": 171.33,
+        "y0": 170.0,
         "x1": 281.01,
         "y1": 270.47,
         "width": 244.4,
-        "height": 99.14
+        "height": 100.47
       },
       "meta": {
         "docling_label": "text",
@@ -3950,7 +3950,7 @@
       "page": 9,
       "order": 12,
       "role": "list_item",
-      "text": "Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics,16 ,3 (July 1982), 245-254.",
+      "text": "Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics, 16 ,3 (July 1982), 245-254.",
       "bbox": {
         "x0": 48.87,
         "y0": 674.33,
@@ -3961,7 +3961,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "6. Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics,16 ,3 (July 1982), 245-254."
+        "docling_orig": "6. Kajiya, Jim. Ray tracing parametric patches. Proceedings of puter Graphics, 16 ,3 (July 1982), 245-254."
       }
     },
     {
@@ -4031,9 +4031,9 @@
         "x0": 309.11,
         "y0": 157.88,
         "x1": 544.91,
-        "y1": 178.68,
+        "y1": 177.46,
         "width": 235.8,
-        "height": 20.8
+        "height": 19.58
       },
       "meta": {
         "docling_label": "list_item",

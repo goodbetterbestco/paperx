@@ -2,20 +2,21 @@
 
 G. Shen, T. Sakkalis, N. M. Patrikalakis
 
-Massachusetts Institute of Technology, Cambridge, Massachusetts 02139-4307
-Massachusetts Institute of Technology, Cambridge, Massachusetts 02139-4307
+Massachusetts Institute of Technology
+Cambridge
+Massachusetts 02139-4307
 
 ## Abstract
 
-Defects in boundary representation models often lead to system errors in modeling software and associated applications. This paper analyzes the model rectification problem of manifold boundary models, and argues that a rectify-by-reconstruction approach is needed in order to reach the global optimal solution. The restricted face boundary reconstruction problem is shown to be NP-hard. Based on this, the solid boundary reconstruction problem is also shown to be NP-hard. © 2001 Academic Press Key Words: boundary reconstruction; NP-hardness; CAD model defects; robustness; data exchange. A-
+Defects in boundary representation models often lead to system errors in modeling software and associated applications. This paper analyzes the model rectification problem of manifold boundary models, and argues that a rectify-by-reconstruction approach is needed in order to reach the global optimal solution. The restricted face boundary reconstruction problem is shown to be NP-hard. Based on this, the solid boundary reconstruction problem is also shown to be NP-hard.
 
-## Introduction
+## 1 INTRODUCTION
 
-Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical biguities arise. This is especially true for manifold boundary representation (B-rep) as conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those defects are topological and geometric errors, and visually appear as gaps, dangling faces, artifacts. However, such realization often fails whenever models contradict rules and amits validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient representational features that do not conform to constraints set by modeling schemes. Such internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then fill holes with triangles. As pointed out in [7], topological ambiguities are resolved by intuitive heuristics. These algorithms [7, 8] use local topology (incidence and adjacency) to rectify defects and are successful in the majority of candidate models, but may create undesirable global topological and geometric changes. See also [9] for a critique of these methods.
+Model representations of products enable man-machine and machine-machine communication. With rules set by representation schemes, models can be realized as physical artifacts. However, such realization often fails whenever models contradict rules and ambiguities arise. This is especially true for manifold boundary representation (B-rep) as its validity is not self-guaranteed [1-4]. In an earlier paper, we have identified sufficient conditions for validity of manifold B-rep models [5]. Defects in B-rep models are those representational features that do not conform to constraints set by modeling schemes. Such defects are topological and geometric errors, and visually appear as gaps, dangling faces, internal walls, and inconsistent orientations. Defects may cause failures of modeling systems and applications because operations are typically designed with the assumption of model validity. Model rectification, a process that repairs defects, is essential to the success of design and manufacturing defect-free products in an integrated CAD CAM environment. Research on model rectification has been done mainly on triangulated models, specifically, STL models for rapid prototyping. STL models represent solids using oriented triangles [6]. Defects in STL models are gaps due to missing triangles, inconsistently oriented triangles, and inappropriate intersections in the interiors of triangles. Most algorithms [7, 8] identify erroneous triangle edges, string such edges to form hole boundaries, and then fill holes with triangles. As pointed out in [7], topological ambiguities are resolved by intuitive heuristics. These algorithms [7, 8] use local topology (incidence and adjacency) to rectify defects and are successful in the majority of candidate models, but may create undesirable global topological and geometric changes. See also [9] for a critique of these methods.
 
 Barequet and Sharir [9] developed a global gap-closing algorithm for polyhedral models, using a partial curve-matching technique. In their method, gap boundaries are discretized. Each match between any two parts of gap boundaries is given a score based on the closeness of their discrete points. They have shown that finding a consistent set of partial curve matches with maximum score, a subproblem of their repairing process, is NP-hard. Barquet and Kumar [10] developed a model repairing system using the algorithm in [9], but with a modified score that is the normalized gap area between two matched parts of gap boundaries. Visualization tools were also provided to enable the user to override unwanted modifications. The system was improved by Barequet et al. [11] in terms of efficiency, and extended to models with regular arrangement of entire NURBS surface patches. However, this extension does not handle trimmed patches with intersection curve boundaries and general B-rep models involving nonregular arrangement of surface patches.
 
-A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides \(\mathbf{R}^{3}\) into con vex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from-1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model.
+A different type of global algorithm is based on spatial subdivision. Murali and Funkhouser [12] developed an algorithm that handles defects such as intersecting and overlapping polygons and misoriented polygons. The algorithm follows three steps: spatial subdivision, solid region identification, and model output. It first subdivides \(\mathbf{R}^{3}\) into convex cells using planes on which polygons sit. A cell adjacency graph is then constructed. Each node is a convex cell, and each arc is a link between two cells sharing a polygon. Whether a cell is a part of the intended solid is determined by its solidity value, ranging from-1 to 1. The solidity value of a cell is computed based on how much area of the cell boundary is covered by original polygons as well as solidity values of neighboring cells. Boundary polygons of cells with positive solidity values are then output as the resulting solid boundary. A major advantage of this algorithm is that it always outputs a valid solid. One limitation is that it may mishandle missing polygons and add cells that do not belong to the model.
 
 Hamann and Jean [13] proposed a user-assisted gap-closing method for curved boundaries using bivariate scattered data approximation techniques to approximate missing data in gap areas.
 
@@ -37,17 +38,17 @@ In this context, model rectification becomes a model reconstruction problem. An 
 
 A typical data structure for B-rep models consists of a topological structure and a geometric representation. For a simplified version, see Fig. 1. The topological structure, shaded
 
-![FIG. 1. Data structure for B-rep models.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-1-p004.png)
+![FIG. 1. Data structure for B-rep models.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-1-p004.png)
 
 *FIG. 1. Data structure for B-rep models.: Data structure for B-rep models.*
 
-Loop Edge in Fig. 1, is a graph that describes adjacency and incidence relations \({ }^{1}\) (represented by arcs) between topological entities (represented by nodes). In typical implementations topological relations more detailed than those implied in Fig. 1 (e.g., adjacency relations between a face and all its neighboring faces) are explicitly stored. The geometric representation includes points, curve, and surface equations, which are associated with appropriate topological en tities. A model, thus, is an instance of the data structure, and is valid if it describes a solid boundary. In addition, a face is valid if it describes a set homeomorphic to a closed disk minus \(k\) mutually disjoint open disks, and has no handles. Also, see [5] for validity of other topological nodes. Let \(m_{o}\) be a model with topological structure \(G\left(m_{o}\right).^{2} G\left(m_{o}\right)\) is valid if it is possible to assign each topological entity (face, edge, vertex) a set of the corresponding dimension (surface, curve, point) whose interior is a manifold, such that the union of these manifolds bounds a solid. That is, if \(G\left(m_{o}\right)\) is valid, there exists a nonempty set
+Loop Edge in Fig. 1, is a graph that describes adjacency and incidence relations \({ }^{1}\) (represented by arcs) between topological entities (represented by nodes). In typical implementations topological relations more detailed than those implied in Fig. 1 (e.g., adjacency relations between a face and all its neighboring faces) are explicitly stored. The geometric representation includes points, curve, and surface equations, which are associated with appropriate topological entities. A model, thus, is an instance of the data structure, and is valid if it describes a solid boundary. In addition, a face is valid if it describes a set homeomorphic to a closed disk minus \(k\) mutually disjoint open disks, and has no handles. Also, see [5] for validity of other topological nodes. Let \(m_{o}\) be a model with topological structure \(G\left(m_{o}\right).^{2} G\left(m_{o}\right)\) is valid if it is possible to assign each topological entity (face, edge, vertex) a set of the corresponding dimension (surface, curve, point) whose interior is a manifold, such that the union of these manifolds bounds a solid. That is, if \(G\left(m_{0}\right)\) is valid, there exists a nonempty set
 
 $$
-\begin{equation*} \mathcal{M}=\left\{m \mid m \text { is a valid model and has topological structure } G\left(m_{o}\right)\right\} . \tag{1} \end{equation*}
+\mathcal{M}=\left\{m \mid m \text { is a valid model and has topological structure } G\left(m_{o}\right)\right\}
 $$
 
-For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any \(m_{1}, m_{2} \in \mathcal{M}, M_{1}\) is homeomorphic to \(M_{2}\). Therefore, in case that the geometric representation of \(m_{o}\) is inconsistent with \(G\left(m_{o}\right)\), if a reconstructed model \(m_{n}\) has topological structure \(G\left(m_{o}\right), m_{n}\) is topologically equivalent to the model incorporating the design intent. If \(G\left(m_{n}\right)\) is different from \(G\left(m_{o}\right)\), the topological equivalence between \(m_{n}\) and \(m_{o}\) can be imposed by requiring that the genus of \(\partial M_{n}\) is equal to that of \(\partial M\), where model \(m \in \mathcal{M}\). We simply denote this by \(g\left(m_{n}\right)=g\left(m_{0}\right)\), because both genuses can be computed by applying Euler's formula to \(G\left(m_{n}\right)\) and \(G\left(m_{o}\right)\), respectively.
+For simplicity, in the following analysis, we assume that models have only one shell. It will be clear at the end of this paper that the same result applies to models with multiple shells. With this assumption, for any \(m_{1}, m_{2} \in \mathcal{M}, M_{1}\) is homeomorphic to \(M_{2}\). Therefore, in case that the geometric representation of \(m_{o}\) is inconsistent with \(G\left(m_{o}\right)\), if a reconstructed model \(m_{n}\) has topological structure \(G\left(m_{0}\right), m_{n}\) is topologically equivalent to the model incorporating the design intent. If \(G\left(m_{n}\right)\) is different from \(G\left(m_{0}\right)\), the topological equivalence between \(m_{n}\) and \(m_{o}\) can be imposed by requiring that the genus of \(\partial M_{n}\) is equal to that of \(\partial M\), where model \(m \in \mathcal{M}\). We simply denote this by \(g\left(m_{n}\right)=g\left(m_{o}\right)\), because both genuses can be computed by applying Euler's formula to \(G\left(m_{n}\right)\) and \(G\left(m_{o}\right)\), respectively.
 
 Geometrically, two objects are close to each other if each one is in a neighborhood of the other. Some form of distance function could be used as a measure for this purpose, either the maximum distance or a well-defined average distance. An alternative, arguably more suitable for boundary rectification, is the boundary area change before and after rectification, because both the rectified and the original models use the same set of underlying surfaces. A correspondence can be established between a rectified face and an old face if they both have the same underlying surface, and the area difference between them measures the geometric change. No matter what measure is used, it should approach zero as the erroneous model becomes the exact model.
 
@@ -55,7 +56,7 @@ Since \(M_{o}\) and \(\partial M_{o}\) are not defined for a nonvalid model, we 
 
 ' Two topological entities of different dimensionalities have an incidence relation if one is a proper subset of the other. Two topological entities of same dimensionality have an adjacency relation if their intersection is a lower dimensional entity that has an incidence relation with each of them. 2 We denote models and face nodes by lowercase letters, and the point sets they represent by uppercase letters. For example, model m, represents solid Mo. The topological structure of a node is denoted by \(G(node)\).
 
-![FIG. 2. Flow chart of an ideal global reconstruction algorithm.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-2-p006.png)
+![FIG. 2. Flow chart of an ideal global reconstruction algorithm.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-2-p006.png)
 
 *FIG. 2. Flow chart of an ideal global reconstruction algorithm.: Flow chart of an ideal global reconstruction algorithm.*
 
@@ -66,16 +67,16 @@ minimal geometric change N construct in s.t. g (Mn.) = g (mo)
 $$
 
 $$
-and ¢ (Mó, aMn) ≤E Mn exist?
+and $ (Mó, aMn) ≤E Mn exist?
 $$
 
 return the one with minimal topological structure change
 
 return the one with minimal genus change
 
-- Find a new model mn, such that mn has topological structure \(G(mo)\), i.e., \(G(Mn)\) ~ \(G(mo)\) and $ (aM,, a Mn) ≤ E.
+- Find a new model mn, such that mn has topological structure \(G(mo)\), i.e., \(G(Mn)\) ~ \(G(m.)\)' and (aM", aM,) ≤ 8.
 
-- If there exists a number of such new models, select the one with the minimal value.
+- If there exists a number of such new models, select the one with the minimal · value.
 
 - Otherwise, find a new model mn, such that \(G(m)\) is different from \(G(mo)\) but g(mn) = g(mo), and (aM, a Mn) ≤ 8.
 
@@ -89,11 +90,11 @@ return the one with minimal genus change
 
 ### 3.1 Face Reconstruction Problem
 
-![FIG. 3. Two homeomorphic graphs with different geometric embeddings.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-3-p007.png)
+![FIG. 3. Two homeomorphic graphs with different geometric embeddings.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-3-p007.png)
 
 *FIG. 3. Two homeomorphic graphs with different geometric embeddings.: Two homeomorphic graphs with different geometric embeddings.*
 
-![FIG. 4. Curve segments from surface intersections.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-4-p008.png)
+![FIG. 4. Curve segments from surface intersections.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-4-p008.png)
 
 *FIG. 4. Curve segments from surface intersections.: curve segments from surface intersections.*
 
@@ -103,7 +104,7 @@ Let \(R\) be the underlying surface of face node \(f_{o}\), and \(\left\{R_{i}\r
 
 In the following description, for simplicity, we use a lowercase symbol to denote an edge or a vertex as a point set. Whenever the corresponding representational node is referred, the word node is used before the notation. For example, node \(e\) represents edge \(e\). For models and faces, the same notation scheme as in the previous section is used, i.e., lowercase symbols for nodes and uppercase symbols for point-sets. Let node \(e_{i_{k}}\) be an edge node in \(f_{o}\), also shared by face node \(f_{i}\) having \(R_{i}\) as its underlying surface. Then, to maintain geometric consistency of the adjacency relation between these two faces, \(e_{i_{k}}\) must be a subset of \(C_{i}\). This is rarely true as the underlying curve given in node \(e_{i_{k}}\) is often an approximation of the exact intersection curve \(C_{i}\). As a matter of fact, as illustrated in Fig. 5, \(e_{i_{k}}\) may be pathologically defined by a space curve (the broken line) and two points (the two circles) that may not be on the curve as they are supposed to be. Because the adjacency relation is symbolic and thus exact, the initial rectification of node \(e_{i_{k}}\) can be done by using \(C_{i}\) as the underlying curve and discarding the one given in the original model. Consequently, the vertices must be on \(C_{i}\). They also need to be
 
-![FIG. 5. Initial rectification of an edge on a face.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-5-p009.png)
+![FIG. 5. Initial rectification of an edge on a face.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-5-p009.png)
 
 *FIG. 5. Initial rectification of an edge on a face.: Initial rectification of an edge on a face.*
 
@@ -111,13 +112,13 @@ curve of node eik
 
 close to their original erroneous positions in order to reflect the design intent. Reasonable replacements of the original vertices \(v_{i_{1}}, v_{i_{2}}\), for instance, could be the projections \(v_{i_{1}}^{\prime}, v_{i_{2}}^{\prime}\) of \(v_{i_{1}}, v_{i_{2}}\) onto \(C_{i}\). See Fig. 5, where the new vertices are solid dots. Therefore, such a rectified edge, denoted by \(e_{i_{k}}^{\prime}\), is a subset of \(C_{i}\), bounded by \(v_{i_{1}}^{\prime}, v_{i_{2}}^{\prime}\) and oriented in the same way as \(e_{i_{k}}\) provided that the given underlying curve in node \(e_{i_{k}}\) and \(C_{i}\) are not far apart.
 
-However, as a face should be bounded by curve segments from \(\left\{S_{i_{j}}\right\}\), a rectified edge should consist of such curve segments. Edge \(e_{i_{k}}^{\prime}\) is not guaranteed to be so. See Fig. 6a. Further rectification of \(e_{i_{k}}\) selects some curve segments on \(C_{i}\) such that their union is a simple open or closed curve and an optimal approximation of \(e_{i_{k}}^{\prime}\). The union defines a new edge \(e_{i_{k}}^{\prime \prime}\), whose corresponding node has the same symbolic information as node \(e_{i_{k}}\), i.e., the same embedding surfaces, the same parent faces, and the same orientation, but has a consistent geometric representation while node \(e_{i_{k}}\) does not. Edge \(e_{i_{k}}^{\prime \prime}\) can be obtained by perturbing vertices \(v_{i_{1}}^{\prime}, v_{i_{2}}^{\prime}\) of \(e_{i_{k}}^{\prime}\) to the closest intersection points on \(C_{i}\). This vertex per turbation is also necessary in order to achieve geometric consistency at a vertex. A vertex is involved in various incidence and adjacency relations between its incident faces and edges, and therefore, needs to be positioned at the intersection point of those underlying surfaces.
+However, as a face should be bounded by curve segments from \(\left\{S_{i_{j}}\right\}\), a rectified edge should consist of such curve segments. Edge \(e_{i_{k}}^{\prime}\) is not guaranteed to be so. See Fig. 6a. Further rectification of \(e_{i_{k}}\) selects some curve segments on \(C_{i}\) such that their union is a simple open or closed curve and an optimal approximation of \(e_{i_{k}}^{\prime}\). The union defines a new edge \(e_{i_{k}}^{\prime \prime}\), whose corresponding node has the same symbolic information as node \(e_{i_{k}}\), i.e., the same embedding surfaces, the same parent faces, and the same orientation, but has a consistent geometric representation while node \(e_{i_{k}}\) does not. Edge \(e_{i_{k}}^{\prime \prime}\) can be obtained by perturbing vertices \(v_{i_{1}}^{\prime}, v_{i_{2}}^{\prime}\) of \(e_{i_{k}}^{\prime}\) to the closest intersection points on \(C_{i}\). This vertex perturbation is also necessary in order to achieve geometric consistency at a vertex. A vertex is involved in various incidence and adjacency relations between its incident faces and edges, and therefore, needs to be positioned at the intersection point of those underlying surfaces.
 
-![FIG. 6. Creation of e, by vertex perturbation.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-6-p009.png)
+![FIG. 6. Creation of e, by vertex perturbation.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-6-p009.png)
 
 *FIG. 6. Creation of e, by vertex perturbation.: Creation of e, by vertex perturbation.*
 
-![FIG. 7. Trimming of dangling curve segments (a) and gap filling (b).](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-7-p010.png)
+![FIG. 7. Trimming of dangling curve segments (a) and gap filling (b).](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-7-p010.png)
 
 *FIG. 7. Trimming of dangling curve segments (a) and gap filling (b).: Trimming of dangling curve segments (a) and gap filling (b).*
 
@@ -132,13 +133,13 @@ To mathematically formulate the FR problem, especially to quantify face geometri
 1. A new edge \(e_{i_{k}}^{n}\) belongs to the first category if it has a corresponding edge \(e_{i_{k}}\) in the original model; i.e., \(e_{i_{k}}^{n}\) is considered to be the rectified \(e_{i_{k}}\). Such a new edge node has the same symbolic information as node \(e_{i_{k}}\) and a geometry that is an optimal approximation of that of node \(e_{i_{k}}\). Because \(e_{i_{k}}\) is not well defined, the geometric change between \(e_{i_{k}}^{n}\) and \(e_{i_{k}}\) is measured by comparing \(e_{i_{k}}^{n}\) and \(e_{i_{k}}^{\prime}\), which is not only well defined but also symbolically the same as and geometrically close to \(e_{i_{k}}\). We define \(\phi_{e}:\left(C_{i} \times C_{i}\right) \rightarrow \mathbf{R}\), where
 
 $$
-\begin{equation*} \phi_{e}\left(e_{i_{k}}^{n}, e_{i_{k}}^{\prime}\right)=\operatorname{length}\left(\left(e_{i_{k}}^{n} \cup e_{i_{k}}^{\prime}\right)-\left(e_{i_{k}}^{n} \cap e_{i_{k}}^{\prime}\right)\right), \quad e_{i_{k}}^{n}, e_{i_{k}}^{\prime} \subseteq C_{i} . \tag{2} \end{equation*}
+\phi_{e}\left(e_{i_{k}}^{n}, e_{i_{k}}^{\prime}\right)=\operatorname{length}\left(\left(e_{i_{k}}^{n} \cup e_{i_{k}}^{\prime}\right)-\left(e_{i_{k}}^{n} \cap e_{i_{k}}^{\prime}\right)\right), \quad e_{i_{k}}^{n}, e_{i_{k}}^{\prime} \subseteq C_{i} .
 $$
 
 For example, in Fig. 6, if \(e_{i_{k}}^{n}=e_{i_{k}}^{\prime \prime}\), meaning that during the trimming-and-filling stage the edge is unchanged, then
 
 $$
-\begin{equation*} \phi_{e}\left(e_{i_{k}}^{n}, e_{i_{k}}^{\prime}\right)=\left|v_{i 1}^{\prime} v_{i 1}^{\prime \prime}\right|+\left|v_{i 2}^{\prime} v_{i 2}^{\prime \prime}\right|, \tag{3} \end{equation*}
+\phi_{e}\left(e_{i_{k}}^{n}, e_{i_{k}}^{\prime}\right)=\left|v_{i 1}^{\prime} v_{i 1}^{\prime \prime}\right|+\left|v_{i 2}^{\prime} v_{i 2}^{\prime \prime}\right|,
 $$
 
 where || denotes the length of a curve segment. If there exist more than one new edges on \(C_{i}\) that could belong to the first category, the one with the minimal \(\phi_{e}\) value is designated as the new edge in the first category; i.e., there is at most one corresponding new edge in the new boundary for each edge in the original model. In addition, \(e_{i_{k}}^{n} \cap e_{i_{k}}^{\prime} \neq \emptyset\), so that a new edge whose geometry is far away from \(e_{i_{k}}^{\prime}\) will not be taken as the corresponding new edge of \(e_{i_{k}}\). This could happen, for example, when two new edges \(e_{i_{k}, 1}^{n}, e_{i_{k}, 2}^{n}\) have the same symbolic information as \(e_{i_{k}}\) but
@@ -153,16 +154,16 @@ In Fig. 7b, all the new edges, except \(e_{11}^{n}\), belong to the first catego
 
 Because the edges in the original face node carry the design intent, geometric changes to them should be minimized, i.e., \(\sum \phi_{e}\) for the new edges of the first category should be minimal. If there exist more than one choices of new face boundary having the minimum, that with the shortest total length of the edges of the second category should be chosen, because any drastic change is not trustworthy. Figure 8a shows the curve segments and initially rectified edges. Note that the original face node has an inconsistent geometric representation. It can be seen in Fig. 8b that if all four edges represented by thick lines are
 
-![FIG. 8. Minimization of edge geometric change.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-8-p012.png)
+![FIG. 8. Minimization of edge geometric change.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-8-p012.png)
 
 *FIG. 8. Minimization of edge geometric change.: Minimization of edge geometric change.*
 
-selected in the final boundary, \(\sum \phi_{e}\) is the minimum. There exist five such loops. Figure 8 c shows the final face boundary that has the shortest gap-closing edge \(e_{5}^{n}\), and Fig. 8d shows the other four.
+selected in the final boundary, \(\sum \phi_{e}\) is the minimum. There exist five such loops. Figure 8c shows the final face boundary that has the shortest gap-closing edge \(e_{5}^{n}\), and Fig. 8d shows the other four.
 
 We now formulate the face reconstruction problem as a search problem: Face reconstruction \((F R)\) problem. Let \(f_{o}\) be a face node, whose geometric representation is inconsistent with its topological structure, in a B-rep model, and \(\left\{S_{i_{j}}\right\}\) be as above. Search for a subcollection
 
 $$
-\begin{equation*} \left\{S_{i j_{l}}\right\}_{1 \leq i \leq N, 1 \leq l \leq L_{i}} \tag{4} \end{equation*}
+\left\{S_{i j_{l}}\right\}_{1 \leq i \leq N, 1 \leq l \leq L_{i}}
 $$
 
 of \(\left\{S_{i_{j}}\right\}\), where \(L_{i}\) is the number of curve segments selected on \(C_{i}\), such that
@@ -184,25 +185,25 @@ THEOREM 3.1. FR problem is NP-hard.
 Proof. The basic idea of the proof is to consider the following instance of the restricted FR problem: The topological structure of \(f_{o}\) represents a closed disk, and there is only one curve segment on each \(C_{i}\) (see Fig. 9). The boundary of \(F_{o}\) is then a simple closed curve. The solution to the problem must be a circuit in graph \(G_{f}\) if condition (2) is to be satisfied. For each edge \(e_{i_{k}}\) of \(F_{o}\), we construct \(e_{i_{k}}^{\prime}, e_{i_{k}}^{\prime \prime}\) as above. Because there is only one
 
 $$
-\begin{equation*} \mathcal{S}_{1}=\left\{S_{i 1} \mid \text { there exists } e_{i_{k}}^{\prime \prime}=S_{i 1}, 0 \leq i \leq N\right\} . \tag{5} \end{equation*}
+\mathcal{S}_{1}=\left\{S_{i 1} \mid \text { there exists } e_{i_{k}}^{\prime \prime}=S_{i 1}, 0 \leq i \leq N\right\} .
 $$
 
 " Here we give the rural postman search problem because the FR problem is also a search problem. In [25], the rural postman decision problem is given.
 
-![FIG. 9. An instance of the restricted FR problem.](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-9-p014.png)
+![FIG. 9. An instance of the restricted FR problem.](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-9-p014.png)
 
 *FIG. 9. An instance of the restricted FR problem.: An instance of the restricted FR problem.*
 
 Then, if all the curve segments in \(\mathcal{S}_{1}\) are selected, \(\sum \phi_{e}\) for the edges of the first category reaches its minimum. This means that a valid face boundary that includes all the curve segments in \(\mathcal{S}_{1}\) will be selected over any choice that does not.
 
-The corresponding instance of the rural postman problem is as follows: Graph \(G_{f}\) with \(l(e)=\operatorname{length}\left(S_{i_{1}}\right)\) for each \(i\), and \(E^{\prime}=\mathcal{S}_{1}\). We prove that it can be reduced to the restricted FR problem at least in the abstract setting of graph theory. \({ }^{5}\) It can be observed that the solution to the restricted FR problem answers the rural post man problem; if the solution exists for the restricted FR problem and contains all the curve segments in \(\mathcal{S}_{1}\), it is the circuit with the shortest length and includes all the \(\operatorname{arcs}\) in \(E^{\prime}\), and therefore, is the solution to the rural postman problem; if the solution does not exist or it exists but does not contain all the edges in \(\mathcal{S}_{1}\), no solution exists for the rural postman problem.
+The corresponding instance of the rural postman problem is as follows: Graph \(G_{f}\) with \(l(e)=\operatorname{length}\left(S_{i_{1}}\right)\) for each \(i\), and \(E^{\prime}=\mathcal{S}_{1}\). We prove that it can be reduced to the restricted FR problem at least in the abstract setting of graph theory. \({ }^{5}\) It can be observed that the solution to the restricted FR problem answers the rural postman problem; if the solution exists for the restricted FR problem and contains all the curve segments in \(\mathcal{S}_{1}\), it is the circuit with the shortest length and includes all the arcs in \(E^{\prime}\), and therefore, is the solution to the rural postman problem; if the solution does not exist or it exists but does not contain all the edges in \(\mathcal{S}_{1}\), no solution exists for the rural postman problem.
 
 ### 3.2 Boundary Reconstruction Problem
 
 Now we formulate the BR problem and prove that it is also NP-hard. Let \(m_{o}\) be the given B-rep model. The underlying surfaces, \(\left\{R_{i}\right\}_{1 \leq i \leq N}\), are subdivided by surface intersections into a collection of patches
 
 $$
-\begin{equation*} \left\{P_{i j}\right\}_{1 \leq i \leq N, 1 \leq j \leq N_{i}}, \tag{6} \end{equation*}
+\left\{P_{i j}\right\}_{1 \leq i \leq N, 1 \leq j \leq N_{i}},
 $$
 
 where \(N_{i}\) is the number of patches on surface \(R_{i}\). For a face node \(f_{i}, F_{i}\) may not be well defined. Because the embedding information is symbolic and thus exact, the initial rectification of \(F_{i}\) can be done by trimming the underlying surface \(R_{i}\) of \(f_{i}\) using projections of the loops in \(f_{i}\) onto \(R_{i}\). Denote such a face by \(F_{i}^{\prime}\). As in face reconstruction, \(F_{i}^{\prime}\) is further rectified by selecting patches from \(\left\{P_{i_{j}}\right\}_{1 \leq j \leq N_{i}}\) to form a new geometry that is an optimal approximation of \(F_{i}^{\prime}\). Denote this new face by \(F_{i}^{\prime \prime}\). The difference between \(F_{i}^{\prime}\) and \(F_{i}^{\prime \prime}\) can be measured by function \(\phi_{f}:\left(R_{i} \times R_{i}\right) \rightarrow \mathbf{R}\), where
@@ -210,15 +211,15 @@ where \(N_{i}\) is the number of patches on surface \(R_{i}\). For a face node \
 5 Theoretically, it is possible to develop a linear algorithm to draw a planar graph on the plane. See [26, 27]. This establishes the argument that an abstract graph search problem could be converted to an instance of the geometric problem (FR problem).
 
 $$
-\begin{equation*} \phi_{f}\left(F_{i}^{\prime}, F_{i}^{\prime \prime}\right)=\operatorname{area}\left(\left(F_{i}^{\prime} \cup F_{i}^{\prime \prime}\right)-\left(F_{i}^{\prime} \cap F_{i}^{\prime \prime}\right)\right), \quad F_{i}^{\prime}, F_{i}^{\prime \prime} \subseteq R_{i} . \tag{7} \end{equation*}
+\phi_{f}\left(F_{i}^{\prime}, F_{i}^{\prime \prime}\right)=\operatorname{area}\left(\left(F_{i}^{\prime} \cup F_{i}^{\prime \prime}\right)-\left(F_{i}^{\prime} \cap F_{i}^{\prime \prime}\right)\right), \quad F_{i}^{\prime}, F_{i}^{\prime \prime} \subseteq R_{i} .
 $$
 
 Such rectified faces may not form a valid solid boundary due to the possible existence of dangling patches and holes. Therefore, a trimming-and-filling process follows. Similar to face reconstruction, in the new solid boundary, a new face \(F_{i}^{n}\) belongs to the first category if it has a corresponding old face, and to the second category if it does not. For the faces of the first category, \(\sum \phi_{f}\left(F_{i}^{n}, F_{i}^{\prime}\right)\) should be minimized. If there exist more than one valid boundaries having the minimum \(\sum \phi_{f}\), that with the minimal total area of the faces of the second category should be chosen.
 
-The boundary reconstruction problem can also be formulated as a search problem: Boundary reconstruction ( \(B R\) ) problem. Let \(m_{O}\) be a B-rep model whose geometric representation is inconsistent with its topological structure, and \(\left\{P_{i_{j}}\right\}\) be as above. Search for a subcollection
+The boundary reconstruction problem can also be formulated as a search problem: Boundary reconstruction ( \(B R\) ) problem. Let \(m_{0}\) be a B-rep model whose geometric representation is inconsistent with its topological structure, and \(\left\{P_{i_{j}}\right\}\) be as above. Search for a subcollection
 
 $$
-\begin{equation*} \left\{P_{i j_{k}}\right\}_{1 \leq i \leq N, 1 \leq k \leq K_{i}} \tag{8} \end{equation*}
+\left\{P_{i j_{k}}\right\}_{1 \leq i \leq N, 1 \leq k \leq K_{i}}
 $$
 
 of \(\left\{P_{i_{j}}\right\}\), where \(K_{i}\) is the number of patches selected on surface \(R_{i}\), such that
@@ -236,14 +237,14 @@ We now prove that the BR problem is NP-hard:
 THEOREM 3.2. BR problem is NP-hard. Proof. We prove the theorem by converting the restricted FR problem to the BR problem. Assume that in an instance of the restricted FR problem, the face node \(f_{o}\) has a plane as its underlying surface. Sweep the face along the normal direction to a parallel plane. The sweeping solid of \(F_{o}\) should be homeomorphic to a closed ball. The instance of the BR problem is a patch collection
 
 $$
-\begin{align*} \left\{P_{i j}\right\}= & \{\text { patches generated from curve segments }\} \\ & \cup\{\text { patches from the two planes }\} \tag{9} \end{align*}
+\begin{aligned} \left\{P_{i j}\right\}= & \{\text { patches generated from curve segments }\} \\ & \cup\{\text { patches from the two planes }\} \end{aligned}
 $$
 
 and a model \(m_{o}\) with its topological structure representing a sphere and \(\left\{F_{i}^{\prime}\right\}\) generated from \(\left\{e_{i_{k}}^{\prime}\right\}\). See Fig. 10 for an example. This conversion can be executed in polynomial time. If a subcollection of \(\left\{S_{i_{j}}\right\}\) is the solution to the restricted FR problem, then the patches generated from the curve segments in the subcollection, with additional patches from the two planes, is the solution to the BR problem. Conversely, if a subcollection of the patches is the solution to the BR problem, it must be bounded by two patches from the two planes and patches whose generating curve segments indeed form the solution to the restricted FR problem.
 
 For models with multiple shells, the same result holds, because the boundary reconstruction problem of models with one shell is a special case of that of models with multiple shells.
 
-![FIG. 10. Illustration of the proof of Theorem 3.2.(](/Users/evanthayer/Projects/stepview/docs/2001_boundary_representation_model_rectification/figures/figure-10-p016.png)
+![FIG. 10. Illustration of the proof of Theorem 3.2.(](/Users/evanthayer/Projects/paperx/docs/2001_boundary_representation_model_rectification/figures/figure-10-p016.png)
 
 *FIG. 10. Illustration of the proof of Theorem 3.2.(: Illustration of the proof of Theorem 3.2.(*
 

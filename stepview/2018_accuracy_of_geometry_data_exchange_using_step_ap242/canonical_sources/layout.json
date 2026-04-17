@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2018_accuracy_of_geometry_data_exchange_using_step_ap242/2018_accuracy_of_geometry_data_exchange_using_step_ap242.pdf",
   "page_count": 6,
   "page_sizes_pt": [
     {
@@ -36,1124 +36,1199 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/1",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "S",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "S"
-      }
-    },
-    {
-      "id": "#/texts/2",
+      "id": "mathpix-p001-b0002",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
-      "text": "c",
+      "role": "paragraph",
+      "text": "ELSEVIER",
       "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
+        "x0": 38.88,
+        "y0": 95.3,
+        "x1": 90.14,
+        "y1": 105.96,
+        "width": 51.26,
+        "height": 10.65
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "c"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "95fd9b2996b84738b9649df743ae85fe",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/3",
-      "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "i",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "i"
-      }
-    },
-    {
-      "id": "#/texts/4",
-      "page": 1,
-      "order": 4,
-      "role": "front_matter",
-      "text": "e",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "e"
-      }
-    },
-    {
-      "id": "#/texts/5",
-      "page": 1,
-      "order": 5,
-      "role": "front_matter",
-      "text": "n",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "n"
-      }
-    },
-    {
-      "id": "#/texts/6",
-      "page": 1,
-      "order": 6,
-      "role": "front_matter",
-      "text": "D",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "D"
-      }
-    },
-    {
-      "id": "#/texts/7",
-      "page": 1,
-      "order": 7,
-      "role": "front_matter",
-      "text": "r",
-      "bbox": {
-        "x0": 245.81,
-        "y0": 71.58,
-        "x1": 245.81,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "r"
-      }
-    },
-    {
-      "id": "#/texts/8",
-      "page": 1,
-      "order": 8,
-      "role": "front_matter",
-      "text": "t",
-      "bbox": {
-        "x0": 245.51,
-        "y0": 71.58,
-        "x1": 245.51,
-        "y1": 85.76,
-        "width": 0.0,
-        "height": 14.18
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "t"
-      }
-    },
-    {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0009",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
-      "text": "ScienceDirect",
+      "role": "paragraph",
+      "text": "6th CIRP Global Web Conference",
       "bbox": {
-        "x0": 222.4,
-        "y0": 64.9,
-        "x1": 313.82,
-        "y1": 80.46,
-        "width": 91.42,
-        "height": 15.56
+        "x0": 217.72,
+        "y0": 132.73,
+        "x1": 384.76,
+        "y1": 143.96,
+        "width": 167.03,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "ScienceDirect"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "511e8157cb6d454c982eef87d49a1fcf",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
+      "id": "mathpix-p001-b0010",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
-      "text": "Procedia CIRP 00 (2017) 000-000 Procedia CIRP 78 (2018) 219-224",
+      "role": "paragraph",
+      "text": "\"Envisaging the future manufacturing, design, technologies and systems in innovation era\"",
       "bbox": {
-        "x0": 212.15,
-        "y0": 93.66,
-        "x1": 354.03,
-        "y1": 103.04,
-        "width": 141.88,
-        "height": 9.38
+        "x0": 82.37,
+        "y0": 144.83,
+        "x1": 520.4,
+        "y1": 158.65,
+        "width": 438.03,
+        "height": 13.82
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Procedia CIRP 00 (2017) 000-000 Procedia CIRP 78 (2018) 219-224"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "511e8157cb6d454c982eef87d49a1fcf",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/11",
-      "page": 1,
-      "order": 11,
-      "role": "front_matter",
-      "text": "6th CIRP Global Web Conference 6th CIRP Global Web Conference",
-      "bbox": {
-        "x0": 219.0,
-        "y0": 131.86,
-        "x1": 389.66,
-        "y1": 145.06,
-        "width": 170.66,
-        "height": 13.2
-      },
-      "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "6th CIRP Global Web Conference 6th CIRP Global Web Conference"
-      }
-    },
-    {
-      "id": "#/texts/12",
+      "id": "mathpix-p001-b0012",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
-      "text": "www.elsevier.com locate procedia",
+      "role": "paragraph",
+      "text": "Accuracy of geometry data exchange using STEP AP242",
       "bbox": {
-        "x0": 437.51,
-        "y0": 106.8,
-        "x1": 555.05,
-        "y1": 114.06,
-        "width": 117.54,
-        "height": 7.26
+        "x0": 101.37,
+        "y0": 171.6,
+        "x1": 494.19,
+        "y1": 190.03,
+        "width": 392.82,
+        "height": 18.43
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "www.elsevier.com locate procedia"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b02e040005a740afb2a5c36a1050b8aa",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/13",
-      "page": 1,
-      "order": 13,
-      "role": "front_matter",
-      "text": "'Envisaging the future manufacturing, design, technologies and systems in innovation era' 'Envisaging the future manufacturing, design, technologies and systems in innovation era'",
-      "bbox": {
-        "x0": 83.01,
-        "y0": 143.49,
-        "x1": 522.65,
-        "y1": 157.09,
-        "width": 439.64,
-        "height": 13.6
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "'Envisaging the future manufacturing, design, technologies and systems in innovation era' 'Envisaging the future manufacturing, design, technologies and systems in innovation era'"
-      }
-    },
-    {
-      "id": "#/texts/14",
+      "id": "mathpix-p001-b0014",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
-      "text": "28th CIRP Design Conference, May 2018, Nantes, France Accuracy of geometry data exchange using STEP AP242 Accuracy of geometry data exchange using STEP AP242",
+      "role": "paragraph",
+      "text": "John Bijnens \\({ }^{\\mathrm{a}, \\mathrm{b} *}\\), Karel Kellens \\({ }^{\\mathrm{a}}\\), David Cheshire \\({ }^{\\mathrm{b}}\\)",
       "bbox": {
-        "x0": 103.05,
-        "y0": 164.81,
-        "x1": 497.03,
-        "y1": 188.56,
-        "width": 393.98,
-        "height": 23.75
+        "x0": 167.03,
+        "y0": 201.26,
+        "x1": 428.24,
+        "y1": 216.52,
+        "width": 261.21,
+        "height": 15.26
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "28th CIRP Design Conference, May 2018, Nantes, France Accuracy of geometry data exchange using STEP AP242 Accuracy of geometry data exchange using STEP AP242"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9965863202240256,
+        "confidence_rate": 0.999964747841218,
+        "parent_id": "17ffb05ba574402d9be03755f8b010ab",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/15",
+      "id": "mathpix-p001-b0015",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
-      "text": "A new methodology to analyze the functional and physical architecture of existing products for an assembly oriented product family identification",
+      "role": "paragraph",
+      "text": "\\({ }^{a}\\) KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus 8, 3590 Diepenbeek, Belgium",
       "bbox": {
-        "x0": 42.73,
-        "y0": 191.92,
-        "x1": 552.64,
-        "y1": 207.31,
-        "width": 509.91,
-        "height": 15.39
+        "x0": 130.17,
+        "y0": 224.87,
+        "x1": 465.1,
+        "y1": 234.95,
+        "width": 334.93,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "A new methodology to analyze the functional and physical architecture of existing products for an assembly oriented product family identification"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.991712564136833,
+        "confidence_rate": 0.9999243486109983,
+        "parent_id": "17ffb05ba574402d9be03755f8b010ab",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/16",
+      "id": "mathpix-p001-b0016",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
-      "text": "John Bijnens a,b *, Karel Kellens a , David Cheshire b John Bijnens a,b *, Karel Kellens a , David Cheshire b a KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus 8, 3590 Diepenbeek, Belgium b Staffordshire University, College Rd, Stoke-on-Trent ST4 2DE, The UK a KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus 8, 3590 Diepenbeek, Belgium b Staffordshire University, College Rd, Stoke-on-Trent ST4 2DE, The UK",
+      "role": "paragraph",
+      "text": "\\({ }^{b}\\) Staffordshire University, College Rd, Stoke-on-Trent ST4 2DE, The UK",
       "bbox": {
-        "x0": 168.69,
-        "y0": 200.04,
-        "x1": 426.92,
-        "y1": 215.7,
-        "width": 258.23,
-        "height": 15.66
+        "x0": 180.28,
+        "y0": 234.08,
+        "x1": 414.99,
+        "y1": 244.16,
+        "width": 234.71,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "John Bijnens a,b *, Karel Kellens a , David Cheshire b John Bijnens a,b *, Karel Kellens a , David Cheshire b a KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus 8, 3590 Diepenbeek, Belgium b Staffordshire University, College Rd, Stoke-on-Trent ST4 2DE, The UK a KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus 8, 3590 Diepenbeek, Belgium b Staffordshire University, College Rd, Stoke-on-Trent ST4 2DE, The UK"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.998046875,
+        "confidence_rate": 0.9999758640587357,
+        "parent_id": "17ffb05ba574402d9be03755f8b010ab",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/17",
+      "id": "mathpix-p001-b0017",
       "page": 1,
       "order": 17,
-      "role": "footnote",
-      "text": "* Corresponding author. Tel.: +32 11 18 03 00. E-mail address: john.bijnens@kuleuven.be * Corresponding author. Tel.: +32 11 18 03 00. E-mail address: john.bijnens@kuleuven.be",
+      "role": "paragraph",
+      "text": "* Corresponding author. Tel.: +32 111803 00. E-mail address: john.bijnens@kuleuven.be",
       "bbox": {
-        "x0": 38.34,
-        "y0": 249.95,
-        "x1": 332.75,
-        "y1": 259.73,
-        "width": 294.41,
-        "height": 9.78
+        "x0": 38.01,
+        "y0": 251.36,
+        "x1": 332.34,
+        "y1": 261.15,
+        "width": 294.33,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "footnote",
-        "docling_orig": "* Corresponding author. Tel.: +32 11 18 03 00. E-mail address: john.bijnens@kuleuven.be * Corresponding author. Tel.: +32 11 18 03 00. E-mail address: john.bijnens@kuleuven.be"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.8619537833504204,
+        "confidence_rate": 0.9984039242754882,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/18",
-      "page": 1,
-      "order": 18,
-      "role": "front_matter",
-      "text": "Paul Stief *, Jean-Yves Dantan, Alain Etienne, Ali Siadat",
-      "bbox": {
-        "x0": 145.22,
-        "y0": 242.88,
-        "x1": 449.2,
-        "y1": 254.59,
-        "width": 303.98,
-        "height": 11.71
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Paul Stief *, Jean-Yves Dantan, Alain Etienne, Ali Siadat"
-      }
-    },
-    {
-      "id": "#/texts/19",
+      "id": "mathpix-p001-b0019",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
-      "text": "École Nationale Supérieure d'Arts et Métiers, Arts et Métiers ParisTech, LCFC EA 4495, 4 Rue Augustin Fresnel, Metz 57078, France",
+      "role": "paragraph",
+      "text": "Abstract",
       "bbox": {
-        "x0": 77.93,
-        "y0": 265.48,
-        "x1": 514.76,
-        "y1": 272.77,
-        "width": 436.83,
-        "height": 7.29
+        "x0": 36.86,
+        "y0": 291.96,
+        "x1": 73.15,
+        "y1": 300.59,
+        "width": 36.29,
+        "height": 8.64
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "École Nationale Supérieure d'Arts et Métiers, Arts et Métiers ParisTech, LCFC EA 4495, 4 Rue Augustin Fresnel, Metz 57078, France"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/20",
+      "id": "mathpix-p001-b0020",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
-      "text": "* Corresponding author. Tel.: +33 3 87 37 54 30;",
+      "role": "paragraph",
+      "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information",
       "bbox": {
-        "x0": 34.89,
-        "y0": 291.65,
-        "x1": 195.89,
-        "y1": 298.91,
-        "width": 161.0,
-        "height": 7.26
+        "x0": 36.86,
+        "y0": 314.41,
+        "x1": 558.41,
+        "y1": 324.2,
+        "width": 521.55,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "* Corresponding author. Tel.: +33 3 87 37 54 30;"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/21",
+      "id": "mathpix-p001-b0021",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
-      "text": "E-mail address:",
+      "role": "paragraph",
+      "text": "directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data.",
       "bbox": {
-        "x0": 195.38,
-        "y0": 291.65,
-        "x1": 247.09,
-        "y1": 298.94,
-        "width": 51.71,
-        "height": 7.29
+        "x0": 36.86,
+        "y0": 324.78,
+        "x1": 466.54,
+        "y1": 334.86,
+        "width": 429.68,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "E-mail address:"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/22",
+      "id": "mathpix-p001-b0022",
       "page": 1,
       "order": 22,
-      "role": "front_matter",
-      "text": "paul.stief@ensam.eu",
+      "role": "paragraph",
+      "text": "Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This",
       "bbox": {
-        "x0": 246.99,
-        "y0": 291.65,
-        "x1": 316.23,
-        "y1": 298.91,
-        "width": 69.24,
-        "height": 7.26
+        "x0": 36.86,
+        "y0": 335.43,
+        "x1": 558.41,
+        "y1": 346.66,
+        "width": 521.55,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "paul.stief@ensam.eu"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/23",
+      "id": "mathpix-p001-b0023",
       "page": 1,
       "order": 23,
-      "role": "heading",
-      "text": "Abstract Abstract",
+      "role": "paragraph",
+      "text": "allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this",
       "bbox": {
-        "x0": 38.35,
-        "y0": 290.6,
-        "x1": 74.1,
-        "y1": 301.17,
-        "width": 35.75,
-        "height": 10.57
+        "x0": 36.86,
+        "y0": 346.08,
+        "x1": 558.41,
+        "y1": 357.03,
+        "width": 521.55,
+        "height": 10.94
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Abstract Abstract"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/24",
+      "id": "mathpix-p001-b0024",
       "page": 1,
       "order": 24,
       "role": "paragraph",
-      "text": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data.",
+      "text": "is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are",
       "bbox": {
-        "x0": 38.35,
-        "y0": 312.68,
-        "x1": 559.66,
-        "y1": 334.2,
-        "width": 521.31,
-        "height": 21.52
+        "x0": 36.86,
+        "y0": 357.03,
+        "x1": 558.41,
+        "y1": 369.12,
+        "width": 521.55,
+        "height": 12.09
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/25",
+      "id": "mathpix-p001-b0025",
       "page": 1,
       "order": 25,
       "role": "paragraph",
-      "text": "systems as well as to choose the optimal product matches, product analysis methods are needed. Indeed, most of the known methods aim to analyze a product or one product family on the physical level. Different product families, however, may differ largely in terms of the number and nature of components. This fact impedes an efficient comparison and choice of appropriate product family combinations for the production This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data.",
+      "text": "left out in the cold.",
       "bbox": {
-        "x0": 34.89,
-        "y0": 376.72,
-        "x1": 559.25,
-        "y1": 406.92,
-        "width": 524.36,
-        "height": 30.2
+        "x0": 36.86,
+        "y0": 368.25,
+        "x1": 107.13,
+        "y1": 378.33,
+        "width": 70.27,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "systems as well as to choose the optimal product matches, product analysis methods are needed. Indeed, most of the known methods aim to analyze a product or one product family on the physical level. Different product families, however, may differ largely in terms of the number and nature of components. This fact impedes an efficient comparison and choice of appropriate product family combinations for the production This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/26",
+      "id": "mathpix-p001-b0026",
       "page": 1,
       "order": 26,
       "role": "paragraph",
-      "text": "Abstract In today's business environment, the trend towards more product variety and customization is unbroken. Due to this development, the need of agile and reconfigurable production systems emerged to cope with various products and product families. To design and optimize production Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold.",
+      "text": "This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a",
       "bbox": {
-        "x0": 34.89,
-        "y0": 332.62,
-        "x1": 559.66,
-        "y1": 378.25,
-        "width": 524.77,
-        "height": 45.63
+        "x0": 36.86,
+        "y0": 379.48,
+        "x1": 558.41,
+        "y1": 390.71,
+        "width": 521.55,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Abstract In today's business environment, the trend towards more product variety and customization is unbroken. Due to this development, the need of agile and reconfigurable production systems emerged to cope with various products and product families. To design and optimize production Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999964608722185,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/27",
+      "id": "mathpix-p001-b0027",
       "page": 1,
       "order": 27,
       "role": "paragraph",
-      "text": "system. A new methodology is proposed to analyze existing products in view of their functional and physical architecture. The aim is to cluster © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0). © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0).",
+      "text": "preliminary research for a new project to automatically adjust the STEP file driven by PMI data.",
       "bbox": {
-        "x0": 34.89,
-        "y0": 400.66,
-        "x1": 555.43,
-        "y1": 422.31,
-        "width": 520.54,
-        "height": 21.65
+        "x0": 36.86,
+        "y0": 390.71,
+        "x1": 386.2,
+        "y1": 401.94,
+        "width": 349.33,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "system. A new methodology is proposed to analyze existing products in view of their functional and physical architecture. The aim is to cluster © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0). © 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (https: creativecommons.org licenses by-nc-nd 4.0)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "b76738af1b6248aa892bc9f69dc744ef",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/28",
+      "id": "mathpix-p001-b0028",
       "page": 1,
       "order": 28,
       "role": "paragraph",
-      "text": "these products in new assembly oriented product families for the optimization of existing assembly lines and the creation of future reconfigurable assembly systems. Based on Datum Flow Chain, the physical structure of the products is analyzed. Functional subassemblies are identified, and a functional analysis is performed. Moreover, a hybrid functional and physical architecture graph (HyFPAG) is the output which depicts the Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'.",
+      "text": "© 2018 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license",
       "bbox": {
-        "x0": 34.89,
-        "y0": 420.85,
-        "x1": 559.14,
-        "y1": 451.18,
-        "width": 524.25,
-        "height": 30.33
+        "x0": 37.44,
+        "y0": 405.11,
+        "x1": 444.08,
+        "y1": 416.34,
+        "width": 406.64,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "these products in new assembly oriented product families for the optimization of existing assembly lines and the creation of future reconfigurable assembly systems. Based on Datum Flow Chain, the physical structure of the products is analyzed. Functional subassemblies are identified, and a functional analysis is performed. Moreover, a hybrid functional and physical architecture graph (HyFPAG) is the output which depicts the Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'. Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.9999915040391533,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/29",
+      "id": "mathpix-p001-b0029",
       "page": 1,
       "order": 29,
       "role": "paragraph",
-      "text": "(https: creativecommons.org licenses by-nc-nd 4.0)",
+      "text": "(https://creativecommons.org/licenses/by-nc-nd/4.0/)",
       "bbox": {
-        "x0": 38.55,
-        "y0": 417.39,
-        "x1": 229.34,
-        "y1": 425.16,
-        "width": 190.79,
-        "height": 7.77
+        "x0": 37.44,
+        "y0": 415.76,
+        "x1": 230.97,
+        "y1": 426.99,
+        "width": 193.53,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "(https: creativecommons.org licenses by-nc-nd 4.0)"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/30",
+      "id": "mathpix-p001-b0030",
       "page": 1,
       "order": 30,
       "role": "paragraph",
-      "text": "example of a nail-clipper is used to explain the proposed methodology. An industrial case study on two product families of steering columns of similarity between product families by providing design support to both, production system planners and product designers. An illustrative Keywords: MBD;STEP AP242;Manufacturing Keywords: MBD;STEP AP242;Manufacturing",
+      "text": "Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference \"Envisaging the future",
       "bbox": {
-        "x0": 34.89,
-        "y0": 465.11,
-        "x1": 557.75,
-        "y1": 473.24,
-        "width": 522.86,
-        "height": 8.13
+        "x0": 37.44,
+        "y0": 424.98,
+        "x1": 536.24,
+        "y1": 436.2,
+        "width": 498.8,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "example of a nail-clipper is used to explain the proposed methodology. An industrial case study on two product families of steering columns of similarity between product families by providing design support to both, production system planners and product designers. An illustrative Keywords: MBD;STEP AP242;Manufacturing Keywords: MBD;STEP AP242;Manufacturing"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999965114310986,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/31",
+      "id": "mathpix-p001-b0031",
       "page": 1,
       "order": 31,
       "role": "paragraph",
-      "text": "thyssenkrupp Presta France is then carried out to give a first industrial evaluation of the proposed approach.",
+      "text": "manufacturing, design, technologies and systems in innovation era\".",
       "bbox": {
-        "x0": 34.89,
-        "y0": 476.21,
-        "x1": 426.17,
-        "y1": 484.34,
-        "width": 391.28,
-        "height": 8.13
+        "x0": 37.44,
+        "y0": 435.34,
+        "x1": 284.82,
+        "y1": 446.57,
+        "width": 247.38,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "thyssenkrupp Presta France is then carried out to give a first industrial evaluation of the proposed approach."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/32",
+      "id": "mathpix-p001-b0032",
       "page": 1,
       "order": 32,
       "role": "paragraph",
-      "text": "© 2017 The Authors. Published by Elsevier B.V.",
+      "text": "Keywords: MBD;STEP AP242;Manufacturing",
       "bbox": {
-        "x0": 34.89,
-        "y0": 487.18,
-        "x1": 214.57,
-        "y1": 495.31,
-        "width": 179.68,
-        "height": 8.13
+        "x0": 39.45,
+        "y0": 453.77,
+        "x1": 191.51,
+        "y1": 463.56,
+        "width": 152.06,
+        "height": 9.79
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "© 2017 The Authors. Published by Elsevier B.V."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.8994140625,
+        "confidence_rate": 0.9975376465931787,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/33",
-      "page": 1,
-      "order": 33,
-      "role": "paragraph",
-      "text": "Peer-review under responsibility of the scientific committee of the 28th CIRP Design Conference 2018. of the product range and characteristics manufactured and or assembled in this system. In this context, the main challenge in modelling and analysis is now not only to cope with single products, a limited product range or existing product families, but also to be able to analyze and to compare products to define 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division. 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division.",
-      "bbox": {
-        "x0": 34.89,
-        "y0": 497.82,
-        "x1": 561.02,
-        "y1": 619.97,
-        "width": 526.13,
-        "height": 122.15
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Peer-review under responsibility of the scientific committee of the 28th CIRP Design Conference 2018. of the product range and characteristics manufactured and or assembled in this system. In this context, the main challenge in modelling and analysis is now not only to cope with single products, a limited product range or existing product families, but also to be able to analyze and to compare products to define 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division. 1. Introduction PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division."
-      }
-    },
-    {
-      "id": "#/texts/34",
-      "page": 1,
-      "order": 34,
-      "role": "paragraph",
-      "text": "new product families. It can be observed that classical existing product families are regrouped in function of clients or features. However, assembly oriented product families are hardly to find. On the product family level, products differ mainly in two main characteristics: (i) the number of components and (ii) the type of components (e.g. mechanical, electrical, electronical). One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be",
-      "bbox": {
-        "x0": 304.5,
-        "y0": 623.04,
-        "x1": 561.02,
-        "y1": 692.33,
-        "width": 256.52,
-        "height": 69.29
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "new product families. It can be observed that classical existing product families are regrouped in function of clients or features. However, assembly oriented product families are hardly to find. On the product family level, products differ mainly in two main characteristics: (i) the number of components and (ii) the type of components (e.g. mechanical, electrical, electronical). One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen in Fig. 1. Here the nominal values of 40 and 65 need to be"
-      }
-    },
-    {
-      "id": "#/texts/35",
+      "id": "mathpix-p001-b0035",
       "page": 1,
       "order": 35,
       "role": "paragraph",
-      "text": "Classical methodologies considering mainly single products",
+      "text": "1. Introduction",
       "bbox": {
-        "x0": 316.45,
-        "y0": 695.4,
-        "x1": 558.69,
-        "y1": 704.39,
-        "width": 242.24,
-        "height": 8.99
+        "x0": 38.01,
+        "y0": 495.81,
+        "x1": 103.39,
+        "y1": 505.88,
+        "width": 65.37,
+        "height": 10.08
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Classical methodologies considering mainly single products"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "95e43b39731342d288047455507a3f63",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/36",
+      "id": "mathpix-p001-b0036",
       "page": 1,
       "order": 36,
       "role": "paragraph",
-      "text": "Keywords: Assembly; Design method; Family identification 1. Introduction Due to the fast development in the domain of communication and an ongoing trend of digitization and digitalization, manufacturing enterprises are facing important challenges in today's market environments: a continuing tendency towards reduction of product development times and shortened product lifecycles. In addition, there is an increasing demand of customization, being at the same time in a global competition with competitors all over the world. This trend, which is inducing the development from macro to micro A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]. A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4].",
+      "text": "A new methodology for communicating engineering",
       "bbox": {
-        "x0": 34.89,
-        "y0": 520.27,
-        "x1": 292.67,
-        "y1": 692.3,
-        "width": 257.78,
-        "height": 172.03
+        "x0": 48.67,
+        "y0": 519.7,
+        "x1": 291.45,
+        "y1": 532.08,
+        "width": 242.78,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Keywords: Assembly; Design method; Family identification 1. Introduction Due to the fast development in the domain of communication and an ongoing trend of digitization and digitalization, manufacturing enterprises are facing important challenges in today's market environments: a continuing tendency towards reduction of product development times and shortened product lifecycles. In addition, there is an increasing demand of customization, being at the same time in a global competition with competitors all over the world. This trend, which is inducing the development from macro to micro A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]. A new methodology for communicating engineering information called Model Based Definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the 'traditional way'[1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD&T (Geometric Dimensioning and Tolerancing) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4]."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/37",
+      "id": "mathpix-p001-b0037",
       "page": 1,
       "order": 37,
       "role": "paragraph",
-      "text": "markets, results in",
+      "text": "information called Model Based Definition (MBD) is gaining",
       "bbox": {
-        "x0": 34.89,
-        "y0": 695.37,
-        "x1": 69.1,
-        "y1": 704.36,
-        "width": 34.21,
-        "height": 8.99
+        "x0": 37.44,
+        "y0": 531.51,
+        "x1": 291.45,
+        "y1": 543.89,
+        "width": 254.01,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "markets, results in"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/38",
+      "id": "mathpix-p001-b0038",
       "page": 1,
       "order": 38,
       "role": "paragraph",
-      "text": "diminished lot sizes due to",
+      "text": "popularity[1]. Proponents claim applying MBD will lead to",
       "bbox": {
-        "x0": 118.27,
-        "y0": 695.37,
-        "x1": 222.85,
-        "y1": 704.36,
-        "width": 104.58,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 543.89,
+        "x1": 291.45,
+        "y1": 555.69,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "diminished lot sizes due to"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/39",
+      "id": "mathpix-p001-b0039",
       "page": 1,
       "order": 39,
       "role": "paragraph",
-      "text": "augmenting",
+      "text": "immense (time) benefits and greater accuracy when compared",
       "bbox": {
-        "x0": 240.84,
-        "y0": 695.37,
-        "x1": 288.04,
-        "y1": 704.36,
-        "width": 47.2,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 555.69,
+        "x1": 291.45,
+        "y1": 567.5,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "augmenting"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/40",
+      "id": "mathpix-p001-b0040",
       "page": 1,
       "order": 40,
       "role": "paragraph",
-      "text": "2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license product varieties (high-volume to low-volume production) [1].",
+      "text": "with the \"traditional way\" [1] not only because of the way data",
       "bbox": {
-        "x0": 38.35,
-        "y0": 708.36,
-        "x1": 464.66,
-        "y1": 716.14,
-        "width": 426.31,
-        "height": 7.78
+        "x0": 36.86,
+        "y0": 566.92,
+        "x1": 291.45,
+        "y1": 579.59,
+        "width": 254.58,
+        "height": 12.67
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license product varieties (high-volume to low-volume production) [1]."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.8724451065063477,
+        "confidence_rate": 0.9979953129266375,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/41",
+      "id": "mathpix-p001-b0041",
       "page": 1,
       "order": 41,
       "role": "paragraph",
-      "text": "or solitary,",
+      "text": "are handled within a CAD system but also because of the",
       "bbox": {
-        "x0": 304.5,
-        "y0": 707.46,
-        "x1": 315.44,
-        "y1": 716.45,
-        "width": 10.94,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 580.17,
+        "x1": 291.45,
+        "y1": 591.4,
+        "width": 254.58,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "or solitary,"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/42",
+      "id": "mathpix-p001-b0042",
       "page": 1,
       "order": 42,
       "role": "paragraph",
-      "text": "already existing product families analyze the",
+      "text": "implications for PDM and PLM systems[2]. This methodology",
       "bbox": {
-        "x0": 357.8,
-        "y0": 707.46,
-        "x1": 556.06,
-        "y1": 716.45,
-        "width": 198.26,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 591.97,
+        "x1": 291.45,
+        "y1": 603.2,
+        "width": 254.58,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "already existing product families analyze the"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/43",
+      "id": "mathpix-p001-b0043",
       "page": 1,
       "order": 43,
       "role": "paragraph",
-      "text": "(https: creativecommons.org licenses by-nc-nd 4.0).",
+      "text": "is all about adding the necessary manufacturing information",
       "bbox": {
-        "x0": 38.35,
-        "y0": 718.44,
-        "x1": 546.73,
-        "y1": 726.22,
-        "width": 508.38,
-        "height": 7.78
+        "x0": 36.86,
+        "y0": 603.78,
+        "x1": 291.45,
+        "y1": 616.16,
+        "width": 254.58,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "(https: creativecommons.org licenses by-nc-nd 4.0)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/44",
+      "id": "mathpix-p001-b0044",
       "page": 1,
       "order": 44,
       "role": "paragraph",
-      "text": "2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license",
+      "text": "like tolerances and GD\\&T (Geometric Dimensioning and",
       "bbox": {
-        "x0": 38.35,
-        "y0": 711.2,
-        "x1": 464.66,
-        "y1": 718.97,
-        "width": 426.31,
-        "height": 7.77
+        "x0": 36.86,
+        "y0": 615.58,
+        "x1": 291.45,
+        "y1": 628.25,
+        "width": 254.58,
+        "height": 12.67
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "2212-8271 © The Authors. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/45",
+      "id": "mathpix-p001-b0045",
       "page": 1,
       "order": 45,
       "role": "paragraph",
-      "text": "To cope with this augmenting variety as well as to be able to product structure on a physical level (components level) which",
+      "text": "Tolerancing) directly onto the 3D CAD model by means of 3D",
       "bbox": {
-        "x0": 34.89,
-        "y0": 719.49,
-        "x1": 287.99,
-        "y1": 728.48,
-        "width": 253.1,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 627.39,
+        "x1": 291.45,
+        "y1": 640.06,
+        "width": 254.58,
+        "height": 12.67
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "To cope with this augmenting variety as well as to be able to product structure on a physical level (components level) which"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/46",
+      "id": "mathpix-p001-b0046",
       "page": 1,
       "order": 46,
       "role": "paragraph",
-      "text": "(https: creativecommons.org licenses by-nc-nd 4.0).",
+      "text": "annotations, so-called PMI (Product Manufacturing",
       "bbox": {
-        "x0": 38.35,
-        "y0": 721.28,
-        "x1": 546.73,
-        "y1": 729.05,
-        "width": 508.38,
-        "height": 7.77
+        "x0": 36.86,
+        "y0": 639.19,
+        "x1": 291.45,
+        "y1": 651.86,
+        "width": 254.58,
+        "height": 12.67
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "(https: creativecommons.org licenses by-nc-nd 4.0)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/47",
+      "id": "mathpix-p001-b0047",
       "page": 1,
       "order": 47,
       "role": "paragraph",
-      "text": "Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design,",
+      "text": "Information) data. There are two kinds of PMI data, PMI",
       "bbox": {
-        "x0": 38.35,
-        "y0": 729.06,
-        "x1": 559.3,
-        "y1": 736.01,
-        "width": 520.95,
-        "height": 6.95
+        "x0": 36.86,
+        "y0": 651.28,
+        "x1": 291.45,
+        "y1": 663.67,
+        "width": 254.58,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design,"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/48",
+      "id": "mathpix-p001-b0048",
       "page": 1,
       "order": 48,
       "role": "paragraph",
-      "text": "Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'.",
+      "text": "presentation and PMI representation[3]. PMI presentation",
       "bbox": {
-        "x0": 38.35,
-        "y0": 731.9,
-        "x1": 559.3,
-        "y1": 738.84,
-        "width": 520.95,
-        "height": 6.94
+        "x0": 36.86,
+        "y0": 663.67,
+        "x1": 291.45,
+        "y1": 675.47,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Selection and peer-review under responsibility of the scientific committee of the 6th CIRP Global Web Conference 'Envisaging the future manufacturing, design, technologies and systems in innovation era'."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/49",
+      "id": "mathpix-p001-b0049",
       "page": 1,
       "order": 49,
       "role": "paragraph",
-      "text": "identify possible",
+      "text": "visualises the data graphically so it can be read by humans[4].",
       "bbox": {
-        "x0": 34.89,
-        "y0": 731.55,
-        "x1": 68.5,
-        "y1": 740.54,
-        "width": 33.61,
-        "height": 8.99
+        "x0": 36.86,
+        "y0": 675.47,
+        "x1": 291.45,
+        "y1": 687.27,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "identify possible"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999928176655268,
+        "parent_id": "75d645ab9a0e4ed1abb1cd7a1ebbb6bd",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/50",
-      "page": 1,
-      "order": 50,
-      "role": "paragraph",
-      "text": "optimization potentials",
-      "bbox": {
-        "x0": 114.72,
-        "y0": 731.55,
-        "x1": 167.98,
-        "y1": 740.54,
-        "width": 53.26,
-        "height": 8.99
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "optimization potentials"
-      }
-    },
-    {
-      "id": "#/texts/51",
+      "id": "mathpix-p001-b0051",
       "page": 1,
       "order": 51,
       "role": "paragraph",
-      "text": "in the",
+      "text": "PMI representation provides the data in a format that is readable",
       "bbox": {
-        "x0": 220.22,
-        "y0": 731.55,
-        "x1": 228.0,
-        "y1": 740.54,
-        "width": 7.78,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 495.81,
+        "x1": 559.85,
+        "y1": 507.03,
+        "width": 254.58,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "in the"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/52",
+      "id": "mathpix-p001-b0052",
       "page": 1,
       "order": 52,
       "role": "paragraph",
-      "text": "existing causes",
+      "text": "by machines[3]. This latter allows reuse of the CAD data by",
       "bbox": {
-        "x0": 255.91,
-        "y0": 731.55,
-        "x1": 287.8,
-        "y1": 740.54,
-        "width": 31.89,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 507.9,
+        "x1": 559.85,
+        "y1": 519.7,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "existing causes"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/53",
+      "id": "mathpix-p001-b0053",
       "page": 1,
       "order": 53,
       "role": "paragraph",
-      "text": "technologies and systems in innovation era'.",
+      "text": "other stakeholders. Reuse of the CAD data means it is possible",
       "bbox": {
-        "x0": 38.35,
-        "y0": 741.98,
-        "x1": 331.55,
-        "y1": 748.92,
-        "width": 293.2,
-        "height": 6.94
+        "x0": 305.27,
+        "y0": 519.7,
+        "x1": 559.85,
+        "y1": 532.08,
+        "width": 254.58,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "technologies and systems in innovation era'."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/54",
+      "id": "mathpix-p001-b0054",
       "page": 1,
       "order": 54,
       "role": "paragraph",
-      "text": "difficulties regarding",
+      "text": "to interrogate the model[5]. One stakeholder involved in the",
       "bbox": {
-        "x0": 338.56,
-        "y0": 731.58,
-        "x1": 384.47,
-        "y1": 740.57,
-        "width": 45.91,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 531.51,
+        "x1": 559.85,
+        "y1": 543.89,
+        "width": 254.58,
+        "height": 12.38
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "difficulties regarding"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "mathpix-p001-b0055",
       "page": 1,
       "order": 55,
       "role": "paragraph",
-      "text": "comparison of different an",
+      "text": "chain from design to production who benefits from this is",
       "bbox": {
-        "x0": 304.5,
-        "y0": 743.64,
-        "x1": 406.03,
-        "y1": 752.63,
-        "width": 101.53,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 543.89,
+        "x1": 559.85,
+        "y1": 555.69,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "comparison of different an"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "mathpix-p001-b0056",
       "page": 1,
       "order": 56,
       "role": "paragraph",
-      "text": "efficient product families.",
+      "text": "quality control. They can use it to speed-up measuring",
       "bbox": {
-        "x0": 453.65,
-        "y0": 731.58,
-        "x1": 487.06,
-        "y1": 740.57,
-        "width": 33.41,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 556.56,
+        "x1": 559.85,
+        "y1": 567.5,
+        "width": 254.58,
+        "height": 10.94
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "efficient product families."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "mathpix-p001-b0057",
       "page": 1,
       "order": 57,
       "role": "paragraph",
-      "text": "production system, it is important to have a precise knowledge definition",
+      "text": "procedures[6]. However, one kind of stakeholder is left out in",
       "bbox": {
-        "x0": 34.88,
-        "y0": 743.61,
-        "x1": 287.86,
-        "y1": 752.6,
-        "width": 252.98,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 568.36,
+        "x1": 559.85,
+        "y1": 579.59,
+        "width": 254.58,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "production system, it is important to have a precise knowledge definition"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/58",
+      "id": "mathpix-p001-b0058",
       "page": 1,
       "order": 58,
       "role": "paragraph",
-      "text": "and",
+      "text": "the cold, namely the one that needs to modify CAD geometry",
       "bbox": {
-        "x0": 541.85,
-        "y0": 731.58,
-        "x1": 556.37,
-        "y1": 740.57,
-        "width": 14.52,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 580.17,
+        "x1": 559.85,
+        "y1": 591.4,
+        "width": 254.58,
+        "height": 11.23
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "and"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "mathpix-p001-b0059",
       "page": 1,
       "order": 59,
       "role": "paragraph",
-      "text": "Addressing this",
+      "text": "conform the attached PMI data[7]. An example of such a",
       "bbox": {
-        "x0": 489.64,
-        "y0": 743.64,
-        "x1": 558.4,
-        "y1": 752.63,
-        "width": 68.76,
-        "height": 8.99
+        "x0": 305.27,
+        "y0": 591.97,
+        "x1": 559.85,
+        "y1": 603.78,
+        "width": 254.58,
+        "height": 11.8
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Addressing this"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0060",
+      "page": 1,
+      "order": 60,
+      "role": "paragraph",
+      "text": "stakeholder is the manufacturing division.",
+      "bbox": {
+        "x0": 305.27,
+        "y0": 603.78,
+        "x1": 475.76,
+        "y1": 616.16,
+        "width": 170.49,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0061",
+      "page": 1,
+      "order": 61,
+      "role": "paragraph",
+      "text": "One of the things CNC programmers need to do to generate",
+      "bbox": {
+        "x0": 317.08,
+        "y0": 628.25,
+        "x1": 559.85,
+        "y1": 640.06,
+        "width": 242.78,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0062",
+      "page": 1,
+      "order": 62,
+      "role": "paragraph",
+      "text": "suitable tool paths is adjusting the nominal values of a CAD",
+      "bbox": {
+        "x0": 305.27,
+        "y0": 640.06,
+        "x1": 559.85,
+        "y1": 651.86,
+        "width": 254.58,
+        "height": 11.8
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99853515625,
+        "confidence_rate": 0.9999774476745767,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0063",
+      "page": 1,
+      "order": 63,
+      "role": "paragraph",
+      "text": "model, so they correspond with the middle of the tolerance",
+      "bbox": {
+        "x0": 305.27,
+        "y0": 651.28,
+        "x1": 559.85,
+        "y1": 663.67,
+        "width": 254.58,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0064",
+      "page": 1,
+      "order": 64,
+      "role": "paragraph",
+      "text": "fields specified by the designer. An example of this can be seen",
+      "bbox": {
+        "x0": 305.27,
+        "y0": 664.24,
+        "x1": 559.85,
+        "y1": 675.47,
+        "width": 254.58,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999929217569623,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0065",
+      "page": 1,
+      "order": 65,
+      "role": "paragraph",
+      "text": "in Fig. 1. Here the nominal values of 40 and 65 need to be",
+      "bbox": {
+        "x0": 305.85,
+        "y0": 676.05,
+        "x1": 559.85,
+        "y1": 687.27,
+        "width": 254.01,
+        "height": 11.23
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "8c03353e259e492aab5b623c775b48c8",
+        "children_ids": null
       }
     },
     {
@@ -1484,18 +1559,18 @@
       "page": 2,
       "order": 18,
       "role": "paragraph",
-      "text": "Ø20 н6",
+      "text": "Curve | Point | Topology | Filter",
       "bbox": {
-        "x0": 119.09,
-        "y0": 15.29,
-        "x1": 144.4,
-        "y1": 22.05,
-        "width": 25.31,
-        "height": 6.76
+        "x0": 51.94,
+        "y0": 27.95,
+        "x1": 115.19,
+        "y1": 32.6,
+        "width": 63.25,
+        "height": 4.65
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Ø20 н6"
+        "docling_orig": "Curve | Point | Topology | Filter"
       }
     },
     {
@@ -1503,13 +1578,32 @@
       "page": 2,
       "order": 19,
       "role": "paragraph",
+      "text": "Ø20 н6",
+      "bbox": {
+        "x0": 119.09,
+        "y0": 15.26,
+        "x1": 144.41,
+        "y1": 22.07,
+        "width": 25.32,
+        "height": 6.81
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ø20 н6"
+      }
+    },
+    {
+      "id": "#/texts/84",
+      "page": 2,
+      "order": 20,
+      "role": "paragraph",
       "text": "Misc",
       "bbox": {
-        "x0": 115.19,
+        "x0": 115.86,
         "y0": 27.95,
         "x1": 128.51,
         "y1": 31.94,
-        "width": 13.32,
+        "width": 12.65,
         "height": 3.99
       },
       "meta": {
@@ -1518,9 +1612,9 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 2,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "Model Surface",
       "bbox": {
@@ -1537,9 +1631,9 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 2,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "Spline B-Spline",
       "bbox": {
@@ -1556,9 +1650,9 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 2,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "Polyline",
       "bbox": {
@@ -1575,9 +1669,9 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 2,
-      "order": 23,
+      "order": 24,
       "role": "paragraph",
       "text": "Import as",
       "bbox": {
@@ -1591,25 +1685,6 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "Import as"
-      }
-    },
-    {
-      "id": "#/texts/88",
-      "page": 2,
-      "order": 24,
-      "role": "paragraph",
-      "text": "Curve | Point | Topology | Filter |",
-      "bbox": {
-        "x0": 51.94,
-        "y0": 27.95,
-        "x1": 115.86,
-        "y1": 32.6,
-        "width": 63.92,
-        "height": 4.65
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Curve | Point | Topology | Filter |"
       }
     },
     {
@@ -1640,9 +1715,9 @@
       "bbox": {
         "x0": 176.45,
         "y0": 27.95,
-        "x1": 239.7,
+        "x1": 239.04,
         "y1": 32.6,
-        "width": 63.25,
+        "width": 62.59,
         "height": 4.65
       },
       "meta": {
@@ -1866,12 +1941,12 @@
       "role": "paragraph",
       "text": "chord height",
       "bbox": {
-        "x0": 59.86,
-        "y0": 17.95,
-        "x1": 90.45,
-        "y1": 23.27,
-        "width": 30.59,
-        "height": 5.32
+        "x0": 59.82,
+        "y0": 17.12,
+        "x1": 90.48,
+        "y1": 23.44,
+        "width": 30.66,
+        "height": 6.32
       },
       "meta": {
         "docling_label": "text",
@@ -1885,12 +1960,12 @@
       "role": "paragraph",
       "text": "PTC Creo",
       "bbox": {
-        "x0": 49.3,
-        "y0": 22.55,
-        "x1": 73.36,
-        "y1": 28.78,
-        "width": 24.06,
-        "height": 6.23
+        "x0": 49.31,
+        "y0": 22.59,
+        "x1": 73.35,
+        "y1": 28.74,
+        "width": 24.04,
+        "height": 6.15
       },
       "meta": {
         "docling_label": "text",
@@ -2605,18 +2680,18 @@
       "page": 5,
       "order": 9,
       "role": "paragraph",
-      "text": "- Convex ||",
+      "text": "— Convex lI",
       "bbox": {
         "x0": 120.67,
         "y0": 13.31,
         "x1": 160.67,
-        "y1": 21.3,
+        "y1": 18.64,
         "width": 40.0,
-        "height": 7.99
+        "height": 5.33
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "- Convex ||"
+        "docling_orig": "— Convex lI"
       }
     },
     {
@@ -2626,11 +2701,11 @@
       "role": "paragraph",
       "text": "- Concave",
       "bbox": {
-        "x0": 161.33,
+        "x0": 162.0,
         "y0": 13.31,
         "x1": 195.33,
         "y1": 17.97,
-        "width": 34.0,
+        "width": 33.33,
         "height": 4.66
       },
       "meta": {
@@ -2642,6 +2717,25 @@
       "id": "#/texts/149",
       "page": 5,
       "order": 11,
+      "role": "paragraph",
+      "text": "·Convex — Concave",
+      "bbox": {
+        "x0": 110.53,
+        "y0": 18.64,
+        "x1": 182.44,
+        "y1": 26.63,
+        "width": 71.91,
+        "height": 7.99
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "·Convex — Concave"
+      }
+    },
+    {
+      "id": "#/texts/150",
+      "page": 5,
+      "order": 12,
       "role": "paragraph",
       "text": "Convex-Concave",
       "bbox": {
@@ -2658,36 +2752,17 @@
       }
     },
     {
-      "id": "#/texts/150",
-      "page": 5,
-      "order": 12,
-      "role": "paragraph",
-      "text": "Convex — Concave",
-      "bbox": {
-        "x0": 111.2,
-        "y0": 18.64,
-        "x1": 182.44,
-        "y1": 26.63,
-        "width": 71.24,
-        "height": 7.99
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Convex — Concave"
-      }
-    },
-    {
       "id": "#/texts/151",
       "page": 5,
       "order": 13,
       "role": "paragraph",
       "text": "…Concave-Convex",
       "bbox": {
-        "x0": 195.09,
+        "x0": 194.43,
         "y0": 19.3,
-        "x1": 241.03,
+        "x1": 241.7,
         "y1": 25.3,
-        "width": 45.94,
+        "width": 47.27,
         "height": 6.0
       },
       "meta": {
@@ -3436,5 +3511,13 @@
         "docling_orig": "[11] Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling"
+  }
 }

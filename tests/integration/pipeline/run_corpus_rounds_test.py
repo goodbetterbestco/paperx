@@ -22,10 +22,10 @@ from paper_pipeline.run_corpus_rounds import (
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
-    def test_mathpix_submit_workers_defaults_to_ten(self) -> None:
+    def test_mathpix_submit_workers_defaults_to_twenty(self) -> None:
         with patch.dict(os.environ, {}, clear=False):
             os.environ.pop("STEPVIEW_MATHPIX_SUBMIT_WORKERS", None)
-            self.assertEqual(_mathpix_submit_workers(), 10)
+            self.assertEqual(_mathpix_submit_workers(), 20)
 
     def test_mathpix_submit_workers_is_not_capped_by_max_workers(self) -> None:
         with patch.dict(os.environ, {"STEPVIEW_MATHPIX_SUBMIT_WORKERS": "12"}, clear=False):

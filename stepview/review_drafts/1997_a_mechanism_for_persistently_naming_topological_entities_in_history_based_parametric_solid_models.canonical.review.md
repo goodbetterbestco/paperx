@@ -8,15 +8,13 @@ McInnis Parkway, San Rafael, CA 94903
 
 ## Abstract
 
-One of fundamental problems in history-based parametric solid modeling systems is to identi@ topological entities of solid models in such a way that the same entities can still be identified after the models have been reevaluated from the sequential his(ory of modeling operations. The Topological ID System systematically assigns Ds (names) to topological entities (faces, edges, vertices) in solid models, When the solid model is edited and then automatically reevaluated from the history of modeling operations, the IDs of topological entities in the old version of the model are mapped to IDs of the corresponding topological entities in the new version of the model. This mapping defines the correspondence between topological entities in both models.
+Feature dependencies within the model. For example, the information that a hole lies in a particular face, that a fillet or a chamfer is attached to a particular edge or a vertex, etc. Dimensions and annotations attached to faces, edges and vertices of the model (model-drawing associativity). Variational constraints associated with the model.
 
-## Introduction
+## 1 INTRODUCTION
 
 Feature-based parametric modeling systems usually define models by a sequential histo~ of operations. Whenever the user performs a modeling operation, for instance chamfers an edge, makes a slot, etc., the parametric system not only performs the operation on the current model but also records all the defining parameters of the operation into a history tile. This sequential history of operations unambiguously defines the model and the parametric system can automatically recreate the model anytime by reevaluating this stored histo~ of operations.
 
-Feature-based modeling systems associate additional information with solid models and their topological entities such as faces, edges and vertices. These associations must be persistent, i.e. when the model is automatically reevaluated from its history of operations, the topological associations must be preserved and not lost. Typical examples of associations are:
-
-If the topology of the model change% this mapping may not be one-to-one, e.g. one edge in the old model may correspond to more than one edge in the new model or to no edge at all. The mapping algorithm should be able to handle these cases but should avoid finding false correspondences between unrelated topological entities in both models.
+Feature-based modeling systems associate additional information with solid models and their topological entities such as faces, edges and vertices. These associations must be persistent, i.e. when the model is automatically reevaluated from its history of operations, the topological associations must be preserved and not lost. Typical examples of associations are: Permission to copy without fee all or part of this material is granted provided that the copies are not made or distributed for direct commercial advantage, the ACM copyright notice and the title of the publication and its date appear, and notice is given that copyin is by permission of the Association of Computing Machinery. Yo copy otherwise, or to republish, requires a fee and or specific permission. Solid Modelin '95, Salt Lake City, Utah USA J' CI 1995 AC 0-89791-672-7 95 0005...$3.50 If the topology of the model change% this mapping may not be one-to-one, e.g. one edge in the old model may correspond to more than one edge in the new model or to no edge at all. The mapping algorithm should be able to handle these cases but should avoid finding false correspondences between unrelated topological entities in both models.
 
 The parametric modeling system communicates with the Topological ID System through a narrow interface:
 
@@ -35,7 +33,7 @@ The Topological ID System consists of five major components:
 - An additional data structure (FaceMGraph) associated with each model that keeps the information about how faces of the model were created, split merged and deleted (Section 3). This additional information is needed when mapping IDs from the old model to the new model.
 
 $$
-\text { EdgeId }(e)=[\text { adjFaceIds, endFaceIds } 0,1 \text {, edgeGeomType }]
+\text { EdgeId(e) = [adjFaceIds, endFaceIds } 0, l \text {, edgeGeomType ] }
 $$
 
 - A mapping algorithm for mapping IDs from the old version of the model to the new version of the model (Section 4). ·
@@ -66,7 +64,7 @@ Type of the underlying surface of the face.
 
 Edges are considered to be intersections of two or more faces; EdgeId of edge e is therefore defined in terms of FaceIak of faces surrounding the edge (Figure 1):
 
-![Figure 1](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-1-p002.png)
+![Figure 1](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-1-p002.png)
 
 *Figure 1: E21geld(e)= [ &jFaceIds: <f!l Jj>3. endFaceMsO” U3tJ4f~4. endFaceI&l: U&fTf/$t edgeIntersCaak: Mry&igeIntersCade]*
 
@@ -80,7 +78,7 @@ Edges are considered to be intersections of two or more faces; EdgeId of edge e 
 
 An edge which has at least one adjacent face included only once in the adjFacelds set is said to be orientab e because we can use this face to distinguish between the end Oand the end I of the edge (Figure 2a). Edges which have all their adjacent faces included more than once in the a~Facelds set are non-orientable, i.e. we cannot distinguish between end O and end I of the edge looking only at the aajFacelds set of that edge (Figure 2b).
 
-If an edge is orientable, endFaceIds \({ }_{0}\) corresponds to the end 0 of the edge and endFacelds \({ }_{I}\) corresponds to the end 1.
+If an edge is orientable, endFaceLirO corresponds to the end 0 of the edge and endFacekLrl corresponds to the end 1.
 
 However, in some cases, this local topological information is not enough to uniquely identify the edge.
 
@@ -88,7 +86,7 @@ The edgeIntersCode field of the EdgeId provides the additional information to di
 
 The EdgeIntersCode is based on the relative position of the surfaces of the adjacent faces of the edge, not on the absolute coordinates. This makes the EdgelrrfersCode invariant under rigid motion and scaling transformations.
 
-![Figure 2](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-2-p003.png)
+![Figure 2](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-2-p003.png)
 
 *Figure 2: a) The orientable edge e I is shared by two faces, adjFace]d,s(e~) = <f@-fI>. ~he end O and end 1 of the edge are defined with respect to facejo*
 
@@ -96,7 +94,7 @@ When the surfaces intersect at more than one intersection curve, each of these i
 
 4{e em, elem, ...) indicates a unordered set of elements.
 
-![Figure 3](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-3-p003.png)
+![Figure 3](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-3-p003.png)
 
 *Figure 3: The EdgeIrr/ersCade of edges e] and e2 is based on the direction of the axis of the subtracted cylinder and distinguishes these two edges.*
 
@@ -130,7 +128,7 @@ The incoming edges to a FaceIdNode represent information about the ancestors of 
 
 - If there is no outgoing edge from a FaceIdNode, it means that the face still exists in the current model. Such faces are called living faces. Any other FaceIdNodes in the graph represent faces that once existed in the model but were spli~ merged or deleted.
 
-![Figure 4](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-4-p004.png)
+![Figure 4](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-4-p004.png)
 
 *Figure 4: In this FaceJdGraph f=sf] !5,fI,2.fl,3,f2. I ~dJ2.2 have been created, thenf12 has been split into/3./ and/3.2, /]3 and ~21 have been merged into J3,3 and f2 I has been deleted. Finally, j3 z and/3.3 have been merged into }4.1. OnlY fl. p ~3.I andJ4 I exist in the cturent model.*
 
@@ -166,7 +164,7 @@ oldFaceIdGraph, newFaceIdGraph
 
 + Exstct-Equality-Test: Try to find a face with the oldFaceld in the new model. If it exists, return the oldFaceld. Otherwise, use the next two steps. ● Backward-Search in the oldFaceIdGraph:
 
-Starting from the node with the given oldFaceId, go backward in the oldFaceIdGraph, until you reach a Faceld that is also present in the newFaceIdGraph \({ }^{6}\). Select all such Facelds, i.e. process all branches in parallel. + Forward-Search in the newFaceldGraph:
+Starting from the node with the given oldFaceId, go backward in the oldFaceldGraph, until you reach a Faceld that is also present in the newFaceIdGraph \({ }^{6}\). Select all such Facelds, i.e. process all branches in parallel. + Forward-Search in the newFaceldGraph:
 
 For those FaceIak found during the Backward-Search, go forward in the rsewFaceldGraph until you reach nodes that have no successors, i.e, they are living nodes corresponding to faces that currently exist in the new model. Select all such nodes.
 
@@ -174,13 +172,13 @@ Return Facela!s of these living nodes. ❑
 
 6The purpose of the Backward-Search is to find FaceIak in the oldFaceIdGraph which resulted in the given o!dFaceId and which are also present in the newFaceldGraph. These common FaceIds mean that there was a common step in the history of the old model and the history of the new model during which these common FaceMr were created.
 
-![Figure 5](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-5-p005.png)
+![Figure 5](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-5-p005.png)
 
 *Figure 5: Two boxes have &en united. In the old model USCtop faces ~f I and ~2 f have been merged into fsw ~3,1. In the new model these faces”stay as two different faces.*
 
-When face \(f_{3.1}\) in the old model is mapped to the new model, the Backward-Search finds two common faces \(f_{1,1}\) and \(f_{2,1}\). The Forward-Search returns the same faces because both \(f_{1.1}\) and \(f_{2.1}\) are living faces in the new model.
+When face \(f_{3.1}\) in the old model is mapped to the new model, the Backward-Search finds two common faces \(f_{1.1}\) and \(f_{2.1}\). The Forward-Search returns the same faces because both \(f_{1.1}\) and \(f_{2.1}\) are living faces in the new model.
 
-![Figure 6](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-6-p005.png)
+![Figure 6](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-6-p005.png)
 
 *Figure 6: When faceff 1 in the old model is mapped to the new model, the Bsclmvsrd-Sesrch selects the same face J_l,1. The Forward-Search selects stl Iivine successors of this common face f],], i.e. faws.f2, I,Y3,I sndJ3,2-*
 
@@ -194,7 +192,7 @@ oldFaceIdGraph, newFaceIdGraph B-Rep of the new model IdMapRequest newlUgeIdSet 
 
 Otherwise we a sequence of tests to select the matching edges. Firs4 a set of candidateEdges is created and then additional rejection tests try to reject 'less matching' candidate edges and leave just a single best one. + AdjFaceIds-Test:
 
-Select all edges in the new model which have at least two adjacent Facelds matching \({ }^{7}\) adjacent Facelds of the oldEdgeld. Store all the edges found in the candidateEdges set.
+Select all edges in the new model which have at least two adjacent FaceIds matching \({ }^{7}\) adjacent FaceIds of the oldEdgeId. Store all the edges found in the candidateEdges set.
 
 The goal is to obtain exactly one matching edge, if possible. If one or zero candidate edges have been found, return the EdgeId of this candidate edge or return an empty set, respectively. If more than one candidate edge has been found, continue with the rejection tests. + EndFaceIds-Testi
 
@@ -212,15 +210,15 @@ The EdgeIntersCode-Test may eliminate some edges from the candidateEdges set. If
 
 Return EdgeIds of the edges left in the candidateEdges set.O
 
-![Figure 7](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-7-p006.png)
+![Figure 7](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-7-p006.png)
 
 *Figure 7: Edge el of the old model has been selected. In the new model, the top box has been moved. The AdjFacAls-Test finds new edge ez because fl, 1 maps tof3. 1 mdf1,2 nmps @f3,2.*
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-8-p006.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-8-p006.png)
 
 *Figure 8: Edge e of the old model has been selected. In the new model, the slot has been extended so that the edge was split. The AdjFacelds-Test selects two candidate edges el, e2. Neither the EndFaceIds-Test nor the EdgelntersCode-Test selects just a single edge, therefore both e] and ez are returned.*
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-9-p006.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-9-p006.png)
 
 *Figure 9: Edge el of the old model has been selected. In the new model, the cylinder has been sectioned. The AdjFsceIds-Test selects el and e2 as candidate edges. Because there is snore than one candidate edge, EndFaceIds-Test is tried. Neither candidate edge satisfies the EndFacelds-TesLthereforethe EdgeIntersCodeTest is used.Ilk test acceptsedgee~ snd rejectsedgee2.*
 
@@ -238,7 +236,9 @@ The given old ID is required to map to exactly the same ID in the new model.
 
 The given old ID is required to map to exactly one new ID.
 
-The given old ID is required to map to at least one new ID. kAnyIdMapRequest Any result of mapping is accepted, including the case where the given old ID couldn't map to any new ID. \({ }^{8}\)
+The given old ID is required to map to at least one new ID.
+
+Any result of mapping is accepted, including the case where the given old ID couldn't map to any new ID. \({ }^{8}\)
 
 The mapping algorithm maps the given old ID to new IDs. It then checks whether the achieved quality of the mapping (IdMapStatus) satisfies the required quality of the mapping (IdMapRequest). If yes, the resulting new IDs are returned \({ }^{9}\). If not, the system tries to meet the requested quality by performing the mapping to a previous state of the new model.
 
@@ -246,7 +246,7 @@ The new model is rolled frack to its previous state and the mapping is performed
 
 The model (Figure 8, old model) was created in three steps:
 
-Step 3: Attach a dimension to edge \(e\), record \(P e r s I d^{10}\) of edge \(e\) into the history file.
+Step 3: Attach a dimension to edge \(e\), record \(P\) ers \(/ d^{10}\) of edge \(e\) into the history file.
 
 When the length of the slot is changed, the model is reevaluated. When Step 3 is being reevahtated, the parametric system needs to find an edge or edges in the new version of the model corresponding to edge e in the old version of the model. Depending on the value of IdMapRequest, the result will be:
 
@@ -254,7 +254,7 @@ When the length of the slot is changed, the model is reevaluated. When Step 3 is
 
 - If kUniqueldMapRequest is specified, the edge e before it was split is returned.
 
-In our example, the parametric system would most likely specify \(k\) UniqueldMapRequest to receive exactly one edge \(e\) and use its geometry to place the dimension. The whole edge \(e\) before it was split would be dimensioned, as shown in Figure 8, new model.
+In our example, the parametric system would most likely specify kUniqueIdMapRequest to receive exactly one edge \(e\) and use its geometry to place the dimension. The whole edge \(e\) before it was split would be dimensioned, as shown in Figure 8, new model.
 
 In other cases, e.g., if the modeling system wanted to fillet the edge, kAnyldMapRequest would be specified and two edges \(e_{1}\) and \(e_{2}\) obtained. Both edges would then be filleted.
 
@@ -266,7 +266,7 @@ Traverse all vertices in the new model and select the vertex or vertices whose V
 
 The similarity rating is based on the similarity between adjFaceI& and vertexIntersCodes of the oldVertexId and vertices in the new model. The similarity rating algorithm is analogous to the algorithm used for determining the similarity between two FaceIdLoops (see Section 5). Cl
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-10-p007.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-10-p007.png)
 
 *Figure 10: VertexVI in the old model has been selected. in the new model, the object has been sectioned. Using the BestSimilssrity-Rathrg-Tes~the mapping algorithm selects vertex V3in the new model, whose similarity rating is k.SubsetA4atch.*
 
@@ -283,14 +283,12 @@ model to a corresponding split face in the new version of the model. The corresp
 The FaceIdLoop of face J is a cyclic list:
 
 $$
-\begin{aligned} & \text { FaceIdLoop }(f)=\left\langle\operatorname{elem}\left(e_{1}\right), \operatorname{elem}\left(e_{2}\right), \ldots\right\rangle \\ & \operatorname{elem}(e)=[\text { faceIdSet, edgeIntersCode }]^{11} \end{aligned}
+\begin{aligned} & \text { FaceIdLoop }(f)=\left\langle\text { elem }\left(e_{1}\right), \text { elem }\left(e_{2}\right), \ldots\right\rangle \\ & \text { elem }(e)=[\text { faceIdSet, edgeIntersCode }]^{11} \end{aligned}
 $$
 
 FaceIdLoop@ = < elem(el), elem(e$, ... Y elem(e) = [faceIdSet, edgeIntersCode]1 1 where: facela%t
 
-Set of Facelds of adjacent faces sharing the edge \(e\) with face \(f\).
-
-EdgeIntersCode of edge \(e\). This information is necessary to disambiguate some topologically similar cases where all the split faces have the same loops of adjacent Facelds (Figure 12).
+Set of Facekr!r of adjacent faces sharing the edge e with face~ EdgelntersCode of edge e. This information is necessary to disarnbiguate some topologically similar cases where all the split fkmeshave the same loops of adjacent FaceIa!r (Figure 12).
 
 When a face is bounded by exactly one loop of edges, this loop is used for the FaceIdLoop. When the face is bounded by more than one loop of edges, the goal is to use the most dominant loop for the FaceIdLoop. The most dominant loop of planar faces is their outer loop. If the face is non-planar and is bounded by more than one 100P of edges all faces of all looPs are taken and the FaceIdLoop is ;onside;ed to be an unordered '&t.
 
@@ -307,12 +305,12 @@ The loops match exactly. This means that each elem of one loop matches an elem o
 The cyclic ordering of elems in both loops is significant, i.e. the position of the matching elems in both loops as well as the direction of both loops is required to be the same. \({ }^{12}\) One loop is a subset of another, meaning that all e errrs of one loop match eiems in the other loop. The cyclic ordering of eferns in both loops is significant.
 
 $$
-\begin{aligned} & \text { FaceldLoop }\left(f_{7}\right)=\left\langle f_{1}, f_{2}, f_{5}, f_{4}\right. \\ & \text { FaceldLoop }\left(f_{8}\right)=\left\langle f_{2}, f_{3}, f_{4}, f_{6}\right\rangle \end{aligned}
+\begin{aligned} & \text { FaceIdLoop }\left(f_{7}\right)=\left\langle f_{1}, f_{2}, f_{5}, f_{4}\right\rangle \\ & \text { FaceldLoop }\left(f_{8}\right)=\left\langle f_{2}, f_{3}, f_{4}, f_{6}\right\rangle \end{aligned}
 $$
 
 At least three elems in one loop match elems in the other loop. The cyclic ordering of elems in both loops is significant.
 
-Two elems in one loop match two elems in the other loop. These two matching elems are positioned consecutively in both loops, so there is no gap between them. The order of the two matching elems in both loops is significant. k2ElemMatch: Similar to the above case, but there is a gap between the two matching elems in either one or both loops. The order of the two matching elems in both loops is not significant \({ }^{13}\).
+Two elems in one loop match two elems in the other loop. These two matching elems are positioned consecutively in both loops, so there is no gap between them. The order of the two matching elems in both loops is significant. k2ElemMarch: Similar to the above case, but there is a gap between the two matching elems in either one or both loops. The order of the two matching elems in both loops is not significant \({ }^{13}\).
 
 Just one elem in one loop matches an elem in the other loop.
 
@@ -323,32 +321,24 @@ Just one elem in one loop matches an elem in the other loop.
 The two loops are completely disjoint. l
 
 $$
-\begin{aligned} \text { FaceldLoop }\left(f_{6}\right) & =\left\langle f_{1}, f_{2}, f_{3}, f_{5}\right\rangle \\ \text { FaceldLoop }\left(f_{7}\right) & =\left\langle f_{1}, f_{5}, f_{3}, f_{4}\right\rangle \\ \text { FaceldLoop }\left(f_{8}\right) & =\left\langle f_{1}, f_{8}, f_{2}, f_{9}, f_{3}, f_{5}\right\rangle \\ \text { FaceldLoop }\left(f_{y}\right) & =\left\langle f_{1}, f_{5}, f_{3}, f_{10}, f_{4}, f_{11}\right\rangle \end{aligned}
-$$
-
-$$
 = -=J1. f- f~ fj~ = % fss f> f4~ = <fl. J-&f> fp f~ fs'
 $$
 
-$$
-FaceIdLoopfl+ = ~fl,fy fp flo fbfl 1'
-$$
-
-The similarity rating table between the old and the new split faces is:
+FaceIdLoopfl+ = ~fl,fy fp flo fbfl 1' The similarity rating table between the old and the new split faces is:
 
 $$
-This means that FaceIdLoop \( \left(\int_{6}\right) \) is most similar to FaceIdLoop \( \left(\gamma_{x}\right) \) and FaceIdLoop \( \left(\gamma_{7}\right) \) is most similar to
+This means that FaceIdLoop \(\left(\int_{6}\right)\) is most similar to FaceIdLoop \(\left(\sigma_{x}\right)\) and FaceIdLoop \(\left(f_{7}\right)\) is most similar to
 $$
 
-![Figure 13](/Users/evanthayer/Projects/stepview/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-13-p009.png)
+![Figure 13](/Users/evanthayer/Projects/paperx/docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/figures/figure-13-p009.png)
 
 *Figure 13: In tbc old model, the top face of the box has been split by a slot into two faces f6 and J7 In the new model, the vertical edges of the box have been filleted before the slot operation is reevstuated.*
 
 ## 6 API
 
-In order to record a topological entity (face, edge, vertex) as persistent, the application records the pointer to this topological entity and obtains a PersId \({ }^{14}\). The PersId does not change when the model is reevaluated. The application then uses this PersId to refer to the recorded topological entity in the future.
+In order to record a topological entity (face, edge, vertex) as persistent, the application records the pointer to this topological entity and obtains a PersId \({ }^{14}\). The PersId does not change when the model is reevaluated. The application then uses this Persld to refer to the recorded topological entity in the future.
 
-To record a topological entity entPtr and obtain its PersId Pers Id pers Id = TopId: : record (entPtr, reqls) ;
+To record a topological entity entPtr and obtain its Persld: PersId persId = TopId: :record(entPtr, req \({ }^{15}\) ); PersId persId = TopId: :record(entPtr, req \({ }^{15}\) );
 
 14The Pers d is basically an index of a record which keeps ID (Faceld, EdgeId, VertexId) of the recorded entity and other data. When the PersId is remapped, the stored ID may be remapped to none or to more than one new ID.
 
@@ -436,4 +426,14 @@ I would like to thank to Ravi Krkhnaswamy for reading the manuscript and making 
 
 - [Mey88] Meyer, B, Object-Oriented Sojhwre Construction Prentice Hall hrtemational, UK (1988)
 
-- [PFP89] Pinill% J M, Finger, S and Pri~ F B, 'Shape Feature Description turdRecognition Using art Augmented Topology Graph Grammar' Prac. NSFEngineering Design Research Conr College of engineering University of Massachusetts at Amherst USA (11-14 June 1989) pp 285-300 [Ro191] Roller, D, 'AnApproach to Computer-Aided Parametric Design' Comprfer-Aided Design Vol 23 No 5 (June 1991) pp 385-391 [Ros90] Rossignac, J K 'Issuesof Feature-Based Editing and Interrogation of Solid Models' Cornprders & Graphics Vol 14No 2 (1990) pp 149-172 ~V89] Roller, D, Shonek, F and VertousL A, 'IXmension-Driven Geometry in CAD A Survey' ?7reoryand Practice of Geometric Modeling Springer-Verlag (1989) pp 509-523 [SL93] Sheu L C and Lin J T, 'representation Scheme for Defining and Operating Form Features' Compurer-Aided Design Vol 25 No 6 (June 1993) pp 333-347 ~091] Wang, N and Ozsoy, M, 'AScheme to Represent Features, Dimensions and Tolerances in Geometric Modeling'J ManuJ Syst Vot 10No 3 (1991) pp 233-240
+- [PFP89] Pinill% J M, Finger, S and Pri~ F B, 'Shape Feature Description turdRecognition Using art Augmented Topology Graph Grammar' Prac. NSFEngineering Design Research Conr College of engineering University of Massachusetts at Amherst USA (11-14 June 1989) pp 285-300
+
+- [Ro191] Roller, D, 'AnApproach to Computer-Aided Parametric Design' Comprfer-Aided Design Vol 23 No 5 (June 1991) pp 385-391
+
+- [Ros90] Rossignac, J K 'Issuesof Feature-Based Editing and Interrogation of Solid Models' Cornprders & Graphics Vol 14No 2 (1990) pp 149-172
+
+- ~V89] Roller, D, Shonek, F and VertousL A, 'IXmension-Driven Geometry in CAD A Survey' ?7reoryand Practice of Geometric Modeling Springer-Verlag (1989) pp 509-523
+
+- [SL93] Sheu L C and Lin J T, 'representation Scheme for Defining and Operating Form Features' Compurer-Aided Design Vol 25 No 6 (June 1993) pp 333-347
+
+- ~091] Wang, N and Ozsoy, M, 'AScheme to Represent Features, Dimensions and Tolerances in Geometric Modeling'J ManuJ Syst Vot 10No 3 (1991) pp 233-240

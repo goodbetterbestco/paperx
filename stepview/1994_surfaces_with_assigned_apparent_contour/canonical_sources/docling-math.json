@@ -387,12 +387,12 @@
         {
           "page": 24,
           "bbox": {
-            "x0": 116.53,
-            "y0": 502.27,
+            "x0": 117.52,
+            "y0": 502.23,
             "x1": 357.67,
             "y1": 531.07,
-            "width": 241.14,
-            "height": 28.8
+            "width": 240.15,
+            "height": 28.84
           },
           "engine": "docling"
         }
@@ -438,7 +438,7 @@
     {
       "id": "docling-eq-0015",
       "kind": "display",
-      "display_latex": "PN, XR=§ÑE,→ FE, → Ep — PN, XR 1 1 1 To + PN, S' → F' F N, o PN,",
+      "display_latex": "PN, XR=§ÑE,→ FE, → Ep — PN, XR 1 1 1 1 To + PN, S' F' Ni p PN,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -452,9 +452,9 @@
             "x0": 112.58,
             "y0": 368.12,
             "x1": 358.48,
-            "y1": 423.46,
+            "y1": 422.46,
             "width": 245.9,
-            "height": 55.34
+            "height": 54.34
           },
           "engine": "docling"
         }
@@ -687,7 +687,7 @@
     {
       "id": "docling-eq-0023",
       "kind": "display",
-      "display_latex": "Jh(vi(t)) if t € [O, 1] gi(t) = (aw)h(x\"(t)) if tE 11,21 i = 1,2.",
+      "display_latex": "Jh(vi(t)) if t € [O, 1l gi(t) = (aw)h(x\"(t)) if tE 11,21 i = 1,2.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {

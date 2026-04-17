@@ -484,7 +484,7 @@ This work was supported by the Spanish Ministry of Economy and Competitiveness a
 
 - [50] Fenves SJ, Sriram RD, Subrahmanian E, Rachuri S. Product Information Exchange: Practices and Standards. J. Comput. Inf. Sci. Eng 2005; 5(3): 238-46.
 
-- [51] Bianconi F, Conti P, Di Angelo L. Interoperability among CAD CAM CAE systems: A review of current research trends. Proceedings of geometric modeling and imaging-New trends (GMAI06) art. Nº 1648749, 2006. p. 83-9.
+- [51] Bianconi F, Conti P, Di Angelo L. Interoperability among CAD/CAM/CAE systems: A review of current research trends. Proceedings of geometric modeling and imaging-New trends (GMAI06) art. \(\mathrm-N}^-\circ}\) 1648749, 2006. p. 83-9.
 
 - [52] Tornincasa S, DiMonaco F. The future and the evolution of CAD. TMT 2010, Proceedings of the14th international research expert conference: Trends in the development of machinery and associated technology. 2010. p. 11-8.
 

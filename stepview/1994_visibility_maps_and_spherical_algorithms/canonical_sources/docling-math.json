@@ -4,7 +4,7 @@
     {
       "id": "docling-eq-0001",
       "kind": "display",
-      "display_latex": "c",
+      "display_latex": "c s-jjardy",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 2,
           "bbox": {
-            "x0": 85.2,
-            "y0": 197.53,
-            "x1": 89.76,
+            "x0": 62.19,
+            "y0": 167.78,
+            "x1": 121.77,
             "y1": 201.78,
-            "width": 4.56,
-            "height": 4.25
+            "width": 59.58,
+            "height": 34.0
           },
           "engine": "docling"
         }

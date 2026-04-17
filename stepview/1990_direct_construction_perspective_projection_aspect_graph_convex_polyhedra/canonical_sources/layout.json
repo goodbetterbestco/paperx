@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra.pdf",
   "page_count": 18,
   "page_sizes_pt": [
     {
@@ -194,14 +194,14 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
-        "x0": 316.27,
+        "x0": 314.61,
         "y0": 587.71,
-        "x1": 445.42,
+        "x1": 447.08,
         "y1": 602.61,
-        "width": 129.15,
+        "width": 132.47,
         "height": 14.9
       },
       "meta": {
@@ -213,7 +213,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Koenderink and van Doorn first described a graph structure which they called the visual potential of an object [1]. Each node in this graph structure represents a different aspect of the object. An aspect is generally defined as the qualitative structure of the line drawing of an object, as seen from any point in some defined maximal, connected region of viewpoint space. For a given object, all of viewpoint space can be parcellated into such cells, so that there is a node in the aspect graph for each qualitatively different view of the object. Each arc between nodes of the graph represents a possible transition across the boundary between two cells of the parcellation. The change in aspect which occurs in crossing the boundary is termed a visual event. \"Thus the visual potential represents in a concise way any visual experience an observer can obtain by looking at the object when traversing any orbit through space\" [1]. Figure 1 shows the visual potential (aspect graph) of a tetrahedron. The term aspect graph has come to be used generically in the field of computer vision to refer to any graph based representation inspired by Koenderink and van Doorn's visual potential concept.",
       "bbox": {
         "x0": 79.48,
@@ -232,7 +232,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Perhaps the highest level distinction between the various aspect graph representations which have been described in the computer vision literature is whether they assume orthographic projection or perspective projection. If orthographic projec-",
       "bbox": {
         "x0": 81.14,
@@ -313,9 +313,9 @@
       "bbox": {
         "x0": 79.44,
         "y0": 953.58,
-        "x1": 682.24,
+        "x1": 682.25,
         "y1": 1074.43,
-        "width": 602.8,
+        "width": 602.81,
         "height": 120.85
       },
       "meta": {
@@ -366,7 +366,7 @@
       "page": 3,
       "order": 2,
       "role": "paragraph",
-      "text": "We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent (2, 5, 6].",
+      "text": "We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent [2, 5, 6].",
       "bbox": {
         "x0": 79.48,
         "y0": 453.53,
@@ -377,7 +377,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent (2, 5, 6]."
+        "docling_orig": "We follow the convention that an arc between nodes of the graph represents a visual event involving a change in visibility of a single face of the object. The reasoning behind this convention is as follows. Two viewing cells have either (1) no common boundary element, (2) a single point as the only common boundary element, (3) a single line segment or half-line as the only common boundary element, or (4) a single 2D area as the only common boundary element. With the convention we follow, only viewing cells which share a 2D boundary segment are connected by arcs in the aspect graph. This is appropriate if it is considered that it is impossible for a finite size viewer to transition exactly across a point or a line. Our convention is also consistent with Koenderink and van Doorn's original depiction of the aspect graph of a tetrahedron, but it is not the only reasonable interpretation of what an are should represent [2, 5, 6]."
       }
     },
     {
@@ -499,18 +499,18 @@
       "page": 4,
       "order": 1,
       "role": "paragraph",
-      "text": "• - object",
+      "text": "L - object",
       "bbox": {
-        "x0": 289.7,
+        "x0": 289.69,
         "y0": 127.06,
-        "x1": 357.73,
-        "y1": 139.48,
-        "width": 68.03,
-        "height": 12.42
+        "x1": 357.74,
+        "y1": 141.14,
+        "width": 68.05,
+        "height": 14.08
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "• - object"
+        "docling_orig": "L - object"
       }
     },
     {
@@ -575,6 +575,25 @@
       "page": 4,
       "order": 5,
       "role": "paragraph",
+      "text": "R",
+      "bbox": {
+        "x0": 417.27,
+        "y0": 152.31,
+        "x1": 425.55,
+        "y1": 163.9,
+        "width": 8.28,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "R"
+      }
+    },
+    {
+      "id": "#/texts/35",
+      "page": 4,
+      "order": 6,
+      "role": "paragraph",
       "text": "F== Front",
       "bbox": {
         "x0": 488.44,
@@ -590,9 +609,9 @@
       }
     },
     {
-      "id": "#/texts/35",
+      "id": "#/texts/36",
       "page": 4,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "R == Right",
       "bbox": {
@@ -609,18 +628,18 @@
       }
     },
     {
-      "id": "#/texts/36",
+      "id": "#/texts/37",
       "page": 4,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "L == Left",
       "bbox": {
-        "x0": 488.46,
-        "y0": 143.94,
-        "x1": 544.79,
-        "y1": 155.71,
-        "width": 56.33,
-        "height": 11.77
+        "x0": 488.44,
+        "y0": 143.88,
+        "x1": 544.8,
+        "y1": 155.77,
+        "width": 56.36,
+        "height": 11.89
       },
       "meta": {
         "docling_label": "text",
@@ -628,9 +647,9 @@
       }
     },
     {
-      "id": "#/texts/37",
+      "id": "#/texts/38",
       "page": 4,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "B == Back",
       "bbox": {
@@ -647,18 +666,18 @@
       }
     },
     {
-      "id": "#/texts/38",
+      "id": "#/texts/39",
       "page": 4,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "T",
       "bbox": {
-        "x0": 486.82,
+        "x0": 488.47,
         "y0": 177.14,
         "x1": 498.41,
-        "y1": 188.73,
-        "width": 11.59,
-        "height": 11.59
+        "y1": 187.07,
+        "width": 9.94,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -666,17 +685,17 @@
       }
     },
     {
-      "id": "#/texts/39",
+      "id": "#/texts/40",
       "page": 4,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "== Top",
       "bbox": {
-        "x0": 498.41,
+        "x0": 500.06,
         "y0": 177.14,
         "x1": 541.46,
         "y1": 190.39,
-        "width": 43.05,
+        "width": 41.4,
         "height": 13.25
       },
       "meta": {
@@ -685,28 +704,28 @@
       }
     },
     {
-      "id": "#/texts/40",
-      "page": 4,
-      "order": 11,
-      "role": "paragraph",
-      "text": "b == bottom",
-      "bbox": {
-        "x0": 488.47,
-        "y0": 191.94,
-        "x1": 564.64,
-        "y1": 203.63,
-        "width": 76.17,
-        "height": 11.69
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "b == bottom"
-      }
-    },
-    {
       "id": "#/texts/41",
       "page": 4,
       "order": 12,
+      "role": "paragraph",
+      "text": "== bottom",
+      "bbox": {
+        "x0": 498.41,
+        "y0": 193.61,
+        "x1": 564.64,
+        "y1": 203.63,
+        "width": 66.23,
+        "height": 10.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "== bottom"
+      }
+    },
+    {
+      "id": "#/texts/42",
+      "page": 4,
+      "order": 13,
       "role": "list_item",
       "text": "(a) A truncated wedge and its six faces",
       "bbox": {
@@ -723,9 +742,9 @@
       }
     },
     {
-      "id": "#/texts/42",
+      "id": "#/texts/43",
       "page": 4,
-      "order": 13,
+      "order": 14,
       "role": "caption",
       "text": "(b) Aspect graph for the truncated wedge",
       "bbox": {
@@ -742,17 +761,17 @@
       }
     },
     {
-      "id": "#/texts/43",
+      "id": "#/texts/44",
       "page": 4,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "TRF",
       "bbox": {
-        "x0": 264.94,
+        "x0": 263.28,
         "y0": 289.72,
-        "x1": 288.12,
+        "x1": 289.77,
         "y1": 302.96,
-        "width": 23.18,
+        "width": 26.49,
         "height": 13.24
       },
       "meta": {
@@ -761,18 +780,18 @@
       }
     },
     {
-      "id": "#/texts/44",
+      "id": "#/texts/45",
       "page": 4,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "RTFL",
       "bbox": {
         "x0": 417.27,
-        "y0": 291.37,
+        "y0": 289.72,
         "x1": 450.39,
         "y1": 304.62,
         "width": 33.12,
-        "height": 13.25
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -780,9 +799,47 @@
       }
     },
     {
-      "id": "#/texts/45",
+      "id": "#/texts/46",
       "page": 4,
-      "order": 16,
+      "order": 17,
+      "role": "paragraph",
+      "text": "FLb",
+      "bbox": {
+        "x0": 197.05,
+        "y0": 387.39,
+        "x1": 223.54,
+        "y1": 400.64,
+        "width": 26.49,
+        "height": 13.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "FLb"
+      }
+    },
+    {
+      "id": "#/texts/47",
+      "page": 4,
+      "order": 18,
+      "role": "paragraph",
+      "text": "T",
+      "bbox": {
+        "x0": 385.81,
+        "y0": 432.09,
+        "x1": 405.68,
+        "y1": 451.96,
+        "width": 19.87,
+        "height": 19.87
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "T"
+      }
+    },
+    {
+      "id": "#/texts/48",
+      "page": 4,
+      "order": 19,
       "role": "paragraph",
       "text": "Aspect with",
       "bbox": {
@@ -799,9 +856,9 @@
       }
     },
     {
-      "id": "#/texts/46",
+      "id": "#/texts/49",
       "page": 4,
-      "order": 17,
+      "order": 20,
       "role": "paragraph",
       "text": "finite cell",
       "bbox": {
@@ -818,9 +875,9 @@
       }
     },
     {
-      "id": "#/texts/47",
+      "id": "#/texts/50",
       "page": 4,
-      "order": 18,
+      "order": 21,
       "role": "paragraph",
       "text": "RLTB",
       "bbox": {
@@ -837,17 +894,17 @@
       }
     },
     {
-      "id": "#/texts/48",
+      "id": "#/texts/51",
       "page": 4,
-      "order": 19,
+      "order": 22,
       "role": "paragraph",
       "text": "TB",
       "bbox": {
-        "x0": 438.8,
+        "x0": 437.14,
         "y0": 460.24,
         "x1": 455.36,
         "y1": 475.14,
-        "width": 16.56,
+        "width": 18.22,
         "height": 14.9
       },
       "meta": {
@@ -856,9 +913,9 @@
       }
     },
     {
-      "id": "#/texts/49",
+      "id": "#/texts/52",
       "page": 4,
-      "order": 20,
+      "order": 23,
       "role": "paragraph",
       "text": "(RFb",
       "bbox": {
@@ -875,18 +932,18 @@
       }
     },
     {
-      "id": "#/texts/50",
+      "id": "#/texts/53",
       "page": 4,
-      "order": 21,
+      "order": 24,
       "role": "paragraph",
       "text": "RTB",
       "bbox": {
-        "x0": 481.85,
+        "x0": 480.19,
         "y0": 536.39,
         "x1": 506.69,
-        "y1": 549.63,
-        "width": 24.84,
-        "height": 13.24
+        "y1": 547.98,
+        "width": 26.5,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -894,37 +951,18 @@
       }
     },
     {
-      "id": "#/texts/51",
+      "id": "#/texts/54",
       "page": 4,
-      "order": 22,
-      "role": "paragraph",
-      "text": "Bb",
-      "bbox": {
-        "x0": 339.45,
-        "y0": 564.53,
-        "x1": 359.32,
-        "y1": 577.78,
-        "width": 19.87,
-        "height": 13.25
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Bb"
-      }
-    },
-    {
-      "id": "#/texts/52",
-      "page": 4,
-      "order": 23,
+      "order": 25,
       "role": "paragraph",
       "text": "LBb",
       "bbox": {
         "x0": 250.03,
-        "y0": 594.33,
+        "y0": 595.99,
         "x1": 278.18,
         "y1": 609.23,
         "width": 28.15,
-        "height": 14.9
+        "height": 13.24
       },
       "meta": {
         "docling_label": "text",
@@ -932,9 +970,9 @@
       }
     },
     {
-      "id": "#/texts/53",
+      "id": "#/texts/55",
       "page": 4,
-      "order": 24,
+      "order": 26,
       "role": "paragraph",
       "text": "RBb",
       "bbox": {
@@ -951,9 +989,9 @@
       }
     },
     {
-      "id": "#/texts/54",
+      "id": "#/texts/56",
       "page": 4,
-      "order": 25,
+      "order": 27,
       "role": "caption",
       "text": "FIG. 2. A truncated wedge and its aspect graph.",
       "bbox": {
@@ -970,9 +1008,9 @@
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "#/texts/57",
       "page": 4,
-      "order": 26,
+      "order": 28,
       "role": "paragraph",
       "text": "The origin of the model coordinate system is assumed to be inside the object and not to lie in any plane in which a face of the object lies. If planar equations are based on outward-directed normals, evaluation of the equations using point coordinates will result in a value greater than 0 if the point lies to the outside of the plane, equal to 0 if the point lies on the plane, and less than 0 if the point lies to the inside of the plane. Note that a viewpoint may lie to the inside of a given plane and still be outside the object. However, a viewpoint must lie to the outside of the plane in which a face of the object lies in order for that face to be visible. (This is true only for convex polyhedra, where exactly one face of the object lies in a given plane and \"inside\" and \"outside\" are unambiguous.)",
       "bbox": {
@@ -989,9 +1027,9 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/58",
       "page": 4,
-      "order": 27,
+      "order": 29,
       "role": "heading",
       "text": "2.B. Cell Numbering Conventions",
       "bbox": {
@@ -1008,18 +1046,18 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/59",
       "page": 4,
-      "order": 28,
+      "order": 30,
       "role": "paragraph",
       "text": "For a convex polyhedron with N faces, there are N planes involved in the parcellation of viewpoint space. There are 2N possible definitions for a cell of viewpoint space in terms of its inside outside relation to each of the N planes. We",
       "bbox": {
         "x0": 79.42,
-        "y0": 1010.88,
+        "y0": 1011.37,
         "x1": 683.86,
         "y1": 1073.1,
         "width": 604.44,
-        "height": 62.22
+        "height": 61.73
       },
       "meta": {
         "docling_label": "text",
@@ -1027,7 +1065,7 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/62",
       "page": 5,
       "order": 1,
       "role": "paragraph",
@@ -1046,18 +1084,18 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/63",
       "page": 5,
       "order": 2,
       "role": "paragraph",
       "text": "A",
       "bbox": {
-        "x0": 423.9,
+        "x0": 425.55,
         "y0": 132.44,
         "x1": 435.49,
-        "y1": 144.03,
-        "width": 11.59,
-        "height": 11.59
+        "y1": 142.37,
+        "width": 9.94,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -1065,28 +1103,9 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/64",
       "page": 5,
       "order": 3,
-      "role": "paragraph",
-      "text": "X",
-      "bbox": {
-        "x0": 342.76,
-        "y0": 188.73,
-        "x1": 356.01,
-        "y1": 203.63,
-        "width": 13.25,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "X"
-      }
-    },
-    {
-      "id": "#/texts/63",
-      "page": 5,
-      "order": 4,
       "role": "paragraph",
       "text": "Z",
       "bbox": {
@@ -1103,9 +1122,9 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/65",
       "page": 5,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "E",
       "bbox": {
@@ -1122,9 +1141,9 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/66",
       "page": 5,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "Coordinates",
       "bbox": {
@@ -1141,9 +1160,9 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/67",
       "page": 5,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "(1 4,1 2,1)",
       "bbox": {
@@ -1160,18 +1179,18 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/68",
       "page": 5,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "(-1 4,1 2,1)",
       "bbox": {
         "x0": 452.01,
-        "y0": 148.8,
+        "y0": 148.81,
         "x1": 533.22,
         "y1": 164.09,
         "width": 81.21,
-        "height": 15.29
+        "height": 15.28
       },
       "meta": {
         "docling_label": "text",
@@ -1179,9 +1198,9 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/69",
       "page": 5,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "(-1 4,1 2,- 1)",
       "bbox": {
@@ -1198,9 +1217,9 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/70",
       "page": 5,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "(1 4,1 2,-1)",
       "bbox": {
@@ -1217,18 +1236,18 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/71",
       "page": 5,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "(1,-1,-1)",
       "bbox": {
-        "x0": 453.58,
-        "y0": 196.47,
-        "x1": 508.47,
-        "y1": 210.78,
-        "width": 54.89,
-        "height": 14.31
+        "x0": 453.65,
+        "y0": 196.8,
+        "x1": 508.39,
+        "y1": 210.46,
+        "width": 54.74,
+        "height": 13.66
       },
       "meta": {
         "docling_label": "text",
@@ -1236,9 +1255,9 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/72",
       "page": 5,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "(1,-1,1)",
       "bbox": {
@@ -1255,18 +1274,18 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/73",
       "page": 5,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "(-1,-1,1)",
       "bbox": {
-        "x0": 451.99,
-        "y0": 228.25,
-        "x1": 508.4,
-        "y1": 243.57,
-        "width": 56.41,
-        "height": 15.32
+        "x0": 451.97,
+        "y0": 228.19,
+        "x1": 508.41,
+        "y1": 243.63,
+        "width": 56.44,
+        "height": 15.44
       },
       "meta": {
         "docling_label": "text",
@@ -1274,28 +1293,28 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/74",
       "page": 5,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
-      "text": "1 (-1,-1,-1)",
+      "text": "1 (-1,-1,- 1)",
       "bbox": {
-        "x0": 440.91,
-        "y0": 241.2,
-        "x1": 514.2,
-        "y1": 262.82,
-        "width": 73.29,
-        "height": 21.62
+        "x0": 443.2,
+        "y0": 243.16,
+        "x1": 513.75,
+        "y1": 259.91,
+        "width": 70.55,
+        "height": 16.75
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "1 (-1,-1,-1)"
+        "docling_orig": "1 (-1,-1,- 1)"
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/75",
       "page": 5,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "(a) Object Description",
       "bbox": {
@@ -1312,18 +1331,18 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/76",
       "page": 5,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "Truncated Wedge",
       "bbox": {
         "x0": 281.49,
         "y0": 349.23,
         "x1": 389.12,
-        "y1": 364.23,
+        "y1": 362.56,
         "width": 107.63,
-        "height": 15.0
+        "height": 13.33
       },
       "meta": {
         "docling_label": "text",
@@ -1331,9 +1350,9 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/77",
       "page": 5,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "Left",
       "bbox": {
@@ -1350,9 +1369,9 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/78",
       "page": 5,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "Back",
       "bbox": {
@@ -1369,9 +1388,9 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/79",
       "page": 5,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "7",
       "bbox": {
@@ -1388,9 +1407,9 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 5,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "Top",
       "bbox": {
@@ -1407,18 +1426,18 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/81",
       "page": 5,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "Bottom",
       "bbox": {
-        "x0": 369.25,
-        "y0": 440.37,
-        "x1": 418.93,
-        "y1": 451.96,
-        "width": 49.68,
-        "height": 11.59
+        "x0": 369.23,
+        "y0": 440.25,
+        "x1": 418.96,
+        "y1": 452.08,
+        "width": 49.73,
+        "height": 11.83
       },
       "meta": {
         "docling_label": "text",
@@ -1426,9 +1445,9 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 5,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "Front",
       "bbox": {
@@ -1445,9 +1464,9 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 5,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "Faces",
       "bbox": {
@@ -1464,9 +1483,9 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 5,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "(planar",
       "bbox": {
@@ -1483,18 +1502,18 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 5,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "polygons)",
       "bbox": {
         "x0": 511.62,
-        "y0": 474.96,
+        "y0": 474.95,
         "x1": 572.96,
-        "y1": 486.9,
+        "y1": 486.91,
         "width": 61.34,
-        "height": 11.94
+        "height": 11.96
       },
       "meta": {
         "docling_label": "text",
@@ -1502,9 +1521,9 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 5,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "Right",
       "bbox": {
@@ -1521,9 +1540,9 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 5,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "<A,B,G,F,A>",
       "bbox": {
@@ -1540,9 +1559,9 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 5,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "<A,D,C,B,A>",
       "bbox": {
@@ -1559,9 +1578,9 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 5,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "<A,F,E,D,A›",
       "bbox": {
@@ -1578,9 +1597,9 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/90",
       "page": 5,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "<E,F,G,HE>",
       "bbox": {
@@ -1597,11 +1616,11 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/91",
       "page": 5,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
-      "text": "<B,C,H,G,B>",
+      "text": "<B,CH,G,B>",
       "bbox": {
         "x0": 256.66,
         "y0": 587.71,
@@ -1612,13 +1631,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "<B,C,H,G,B>"
+        "docling_orig": "<B,CH,G,B>"
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 5,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "CBEHC",
       "bbox": {
@@ -1635,9 +1654,9 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 5,
-      "order": 33,
+      "order": 32,
       "role": "paragraph",
       "text": "Ordered",
       "bbox": {
@@ -1654,9 +1673,9 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 5,
-      "order": 34,
+      "order": 33,
       "role": "paragraph",
       "text": "vertex",
       "bbox": {
@@ -1673,9 +1692,9 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 5,
-      "order": 35,
+      "order": 34,
       "role": "paragraph",
       "text": "lists",
       "bbox": {
@@ -1692,9 +1711,9 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/96",
       "page": 5,
-      "order": 36,
+      "order": 35,
       "role": "paragraph",
       "text": "(b) Boundary Surface Representation",
       "bbox": {
@@ -1711,9 +1730,9 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/97",
       "page": 5,
-      "order": 37,
+      "order": 36,
       "role": "caption",
       "text": "FIG. 3. Object description and boundary surface representation for the truncated wedge.",
       "bbox": {
@@ -1730,9 +1749,9 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/98",
       "page": 5,
-      "order": 38,
+      "order": 37,
       "role": "paragraph",
       "text": "assign each possible cell definition an N-bit identification number, where each bit position corresponds to one of the N planes. A bit value of 1 means the cell is located outside of the associated plane, and a bit value of 0 means the cell is located inside of the associated plane. The existence of a cell defined by a particular one of the 2N possible identification numbers can be verified by finding a volume of viewpoint space which satisfies all the relationships indicated by the bit values. The cell numbers also permit easy determination of cell adjacencies (ares between nodes of the graph following the convention described in Section 1. Two cells are adjacent if they have identification numbers which differ in exactly one bit position, and the boundary shared by the two cells lies in the corresponding plane.",
       "bbox": {
@@ -1749,9 +1768,9 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/99",
       "page": 5,
-      "order": 39,
+      "order": 38,
       "role": "heading",
       "text": "2.C. Parcellation Graph Creation",
       "bbox": {
@@ -1768,17 +1787,17 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 5,
-      "order": 40,
+      "order": 39,
       "role": "paragraph",
       "text": "As mentioned previously, the first step in creating the aspect graph is to generate the intermediate parcellation graph data structure. The parcellation graph is a three-level bidirected graph which summarizes the parcellation of space by the N planes in which faces of the object lie. At the graph's top level are N nodes, one",
       "bbox": {
-        "x0": 79.48,
+        "x0": 79.43,
         "y0": 991.66,
-        "x1": 682.21,
+        "x1": 682.26,
         "y1": 1072.78,
-        "width": 602.73,
+        "width": 602.83,
         "height": 81.12
       },
       "meta": {
@@ -1787,7 +1806,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 6,
       "order": 1,
       "role": "paragraph",
@@ -1806,7 +1825,7 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 6,
       "order": 2,
       "role": "paragraph",
@@ -1825,7 +1844,7 @@
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -1844,18 +1863,18 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 6,
       "order": 4,
       "role": "paragraph",
       "text": "The resulting surface normal will always be outward-directed, since the polygon bounding the face is convex and the vertices are assumed to be listed in counterclockwise order as the face appears from outside the object. Each surface normal is stored as a vector of the form [a b c].",
       "bbox": {
-        "x0": 79.35,
+        "x0": 79.48,
         "y0": 625.79,
         "x1": 683.86,
-        "y1": 705.37,
-        "width": 604.51,
-        "height": 79.58
+        "y1": 703.6,
+        "width": 604.38,
+        "height": 77.81
       },
       "meta": {
         "docling_label": "text",
@@ -1863,7 +1882,7 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -1882,7 +1901,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/112",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -1901,7 +1920,7 @@
       }
     },
     {
-      "id": "#/texts/112",
+      "id": "#/texts/113",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -1920,7 +1939,7 @@
       }
     },
     {
-      "id": "#/texts/113",
+      "id": "#/texts/114",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -1939,7 +1958,7 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/116",
       "page": 7,
       "order": 1,
       "role": "heading",
@@ -1958,18 +1977,18 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/117",
       "page": 7,
       "order": 2,
       "role": "caption",
       "text": "TABLE 1 Plane Equations for the Truncated Wedge",
       "bbox": {
         "x0": 256.66,
-        "y0": 109.26,
+        "y0": 109.2,
         "x1": 503.38,
         "y1": 144.03,
         "width": 246.72,
-        "height": 34.77
+        "height": 34.83
       },
       "meta": {
         "docling_label": "caption",
@@ -1977,18 +1996,18 @@
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/118",
       "page": 7,
       "order": 3,
       "role": "caption",
       "text": "TABLE 2 Lines in the Parcellation for the Truncated Wedge",
       "bbox": {
         "x0": 235.13,
-        "y0": 375.8,
+        "y0": 375.69,
         "x1": 528.21,
         "y1": 410.57,
         "width": 293.08,
-        "height": 34.77
+        "height": 34.88
       },
       "meta": {
         "docling_label": "caption",
@@ -1996,18 +2015,18 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/119",
       "page": 7,
       "order": 4,
       "role": "paragraph",
       "text": "Gauss-Jordan reduction is used to solve each linear system. If a solution exists, the coefficients of the parametric form of the line equation are stored in the form [a b c de f], where",
       "bbox": {
-        "x0": 79.44,
+        "x0": 79.46,
         "y0": 764.78,
         "x1": 682.21,
-        "y1": 824.67,
-        "width": 602.77,
-        "height": 59.89
+        "y1": 824.58,
+        "width": 602.75,
+        "height": 59.8
       },
       "meta": {
         "docling_label": "text",
@@ -2015,7 +2034,7 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/121",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -2034,7 +2053,7 @@
       }
     },
     {
-      "id": "#/texts/121",
+      "id": "#/texts/122",
       "page": 7,
       "order": 6,
       "role": "paragraph",
@@ -2053,7 +2072,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/125",
       "page": 8,
       "order": 1,
       "role": "paragraph",
@@ -2062,9 +2081,9 @@
         "x0": 77.82,
         "y0": 110.92,
         "x1": 682.21,
-        "y1": 149.07,
+        "y1": 149.1,
         "width": 604.39,
-        "height": 38.15
+        "height": 38.18
       },
       "meta": {
         "docling_label": "text",
@@ -2072,7 +2091,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/126",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -2091,7 +2110,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/130",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -2110,7 +2129,7 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/133",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -2129,7 +2148,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/134",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -2148,7 +2167,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/135",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -2167,7 +2186,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/136",
       "page": 8,
       "order": 7,
       "role": "heading",
@@ -2186,7 +2205,7 @@
       }
     },
     {
-      "id": "#/texts/136",
+      "id": "#/texts/137",
       "page": 8,
       "order": 8,
       "role": "paragraph",
@@ -2205,7 +2224,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/138",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -2224,7 +2243,7 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/140",
       "page": 9,
       "order": 1,
       "role": "heading",
@@ -2243,7 +2262,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/141",
       "page": 9,
       "order": 2,
       "role": "caption",
@@ -2251,10 +2270,10 @@
       "bbox": {
         "x0": 233.41,
         "y0": 107.61,
-        "x1": 531.6,
-        "y1": 142.52,
-        "width": 298.19,
-        "height": 34.91
+        "x1": 531.59,
+        "y1": 142.45,
+        "width": 298.18,
+        "height": 34.84
       },
       "meta": {
         "docling_label": "caption",
@@ -2262,18 +2281,18 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/142",
       "page": 9,
       "order": 3,
       "role": "paragraph",
       "text": "Points of",
       "bbox": {
-        "x0": 196.87,
-        "y0": 169.64,
-        "x1": 260.14,
-        "y1": 184.64,
-        "width": 63.27,
-        "height": 15.0
+        "x0": 197.0,
+        "y0": 170.29,
+        "x1": 260.02,
+        "y1": 184.0,
+        "width": 63.02,
+        "height": 13.71
       },
       "meta": {
         "docling_label": "text",
@@ -2281,7 +2300,7 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/143",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -2300,7 +2319,7 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/144",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -2319,7 +2338,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/145",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -2338,7 +2357,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/146",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -2357,7 +2376,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/147",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -2376,28 +2395,9 @@
       }
     },
     {
-      "id": "#/texts/147",
-      "page": 9,
-      "order": 9,
-      "role": "paragraph",
-      "text": "P5",
-      "bbox": {
-        "x0": 206.98,
-        "y0": 284.75,
-        "x1": 228.51,
-        "y1": 297.99,
-        "width": 21.53,
-        "height": 13.24
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "P5"
-      }
-    },
-    {
       "id": "#/texts/148",
       "page": 9,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "P6",
       "bbox": {
@@ -2416,7 +2416,7 @@
     {
       "id": "#/texts/149",
       "page": 9,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "P7",
       "bbox": {
@@ -2435,7 +2435,7 @@
     {
       "id": "#/texts/150",
       "page": 9,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "P8",
       "bbox": {
@@ -2454,7 +2454,7 @@
     {
       "id": "#/texts/151",
       "page": 9,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "P9",
       "bbox": {
@@ -2473,7 +2473,7 @@
     {
       "id": "#/texts/152",
       "page": 9,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "P10",
       "bbox": {
@@ -2492,7 +2492,7 @@
     {
       "id": "#/texts/153",
       "page": 9,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Auxiliary",
       "bbox": {
@@ -2511,7 +2511,7 @@
     {
       "id": "#/texts/154",
       "page": 9,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "Points",
       "bbox": {
@@ -2530,7 +2530,7 @@
     {
       "id": "#/texts/155",
       "page": 9,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "Coordinates",
       "bbox": {
@@ -2549,7 +2549,7 @@
     {
       "id": "#/texts/156",
       "page": 9,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2568,7 +2568,7 @@
     {
       "id": "#/texts/157",
       "page": 9,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2587,7 +2587,7 @@
     {
       "id": "#/texts/158",
       "page": 9,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -2606,7 +2606,7 @@
     {
       "id": "#/texts/159",
       "page": 9,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "0.25",
       "bbox": {
@@ -2625,7 +2625,7 @@
     {
       "id": "#/texts/160",
       "page": 9,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "-0.25",
       "bbox": {
@@ -2644,7 +2644,7 @@
     {
       "id": "#/texts/161",
       "page": 9,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "0.25",
       "bbox": {
@@ -2663,7 +2663,7 @@
     {
       "id": "#/texts/162",
       "page": 9,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2682,7 +2682,7 @@
     {
       "id": "#/texts/163",
       "page": 9,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2701,7 +2701,7 @@
     {
       "id": "#/texts/164",
       "page": 9,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2720,16 +2720,16 @@
     {
       "id": "#/texts/165",
       "page": 9,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
         "x0": 483.51,
         "y0": 266.54,
         "x1": 501.72,
-        "y1": 279.92,
+        "y1": 278.25,
         "width": 18.21,
-        "height": 13.38
+        "height": 11.71
       },
       "meta": {
         "docling_label": "text",
@@ -2739,7 +2739,7 @@
     {
       "id": "#/texts/166",
       "page": 9,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -2758,7 +2758,7 @@
     {
       "id": "#/texts/167",
       "page": 9,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -2777,7 +2777,7 @@
     {
       "id": "#/texts/168",
       "page": 9,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -2796,7 +2796,7 @@
     {
       "id": "#/texts/169",
       "page": 9,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -2815,7 +2815,7 @@
     {
       "id": "#/texts/170",
       "page": 9,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -2834,6 +2834,25 @@
     {
       "id": "#/texts/171",
       "page": 9,
+      "order": 32,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 493.44,
+        "y0": 390.7,
+        "x1": 503.38,
+        "y1": 400.64,
+        "width": 9.94,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/172",
+      "page": 9,
       "order": 33,
       "role": "paragraph",
       "text": "1",
@@ -2851,7 +2870,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/173",
       "page": 9,
       "order": 34,
       "role": "paragraph",
@@ -2870,7 +2889,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/174",
       "page": 9,
       "order": 35,
       "role": "paragraph",
@@ -2889,28 +2908,9 @@
       }
     },
     {
-      "id": "#/texts/174",
-      "page": 9,
-      "order": 36,
-      "role": "paragraph",
-      "text": "-",
-      "bbox": {
-        "x0": 562.99,
-        "y0": 319.52,
-        "x1": 571.27,
-        "y1": 329.45,
-        "width": 8.28,
-        "height": 9.93
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-"
-      }
-    },
-    {
       "id": "#/texts/175",
       "page": 9,
-      "order": 37,
+      "order": 36,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -2929,7 +2929,7 @@
     {
       "id": "#/texts/176",
       "page": 9,
-      "order": 38,
+      "order": 37,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -2948,7 +2948,7 @@
     {
       "id": "#/texts/177",
       "page": 9,
-      "order": 39,
+      "order": 38,
       "role": "paragraph",
       "text": "A1+",
       "bbox": {
@@ -2967,7 +2967,7 @@
     {
       "id": "#/texts/178",
       "page": 9,
-      "order": 40,
+      "order": 39,
       "role": "paragraph",
       "text": "A1 -",
       "bbox": {
@@ -2986,7 +2986,7 @@
     {
       "id": "#/texts/179",
       "page": 9,
-      "order": 41,
+      "order": 40,
       "role": "paragraph",
       "text": "A2+",
       "bbox": {
@@ -3005,15 +3005,15 @@
     {
       "id": "#/texts/180",
       "page": 9,
-      "order": 42,
+      "order": 41,
       "role": "paragraph",
       "text": "A2-",
       "bbox": {
-        "x0": 311.3,
+        "x0": 312.95,
         "y0": 440.37,
         "x1": 339.45,
         "y1": 451.96,
-        "width": 28.15,
+        "width": 26.5,
         "height": 11.59
       },
       "meta": {
@@ -3024,7 +3024,7 @@
     {
       "id": "#/texts/181",
       "page": 9,
-      "order": 43,
+      "order": 42,
       "role": "paragraph",
       "text": "A3+",
       "bbox": {
@@ -3043,7 +3043,7 @@
     {
       "id": "#/texts/182",
       "page": 9,
-      "order": 44,
+      "order": 43,
       "role": "paragraph",
       "text": "A3-",
       "bbox": {
@@ -3062,7 +3062,7 @@
     {
       "id": "#/texts/183",
       "page": 9,
-      "order": 45,
+      "order": 44,
       "role": "paragraph",
       "text": "A4+",
       "bbox": {
@@ -3081,7 +3081,7 @@
     {
       "id": "#/texts/184",
       "page": 9,
-      "order": 46,
+      "order": 45,
       "role": "paragraph",
       "text": "A4-",
       "bbox": {
@@ -3100,15 +3100,15 @@
     {
       "id": "#/texts/185",
       "page": 9,
-      "order": 47,
+      "order": 46,
       "role": "paragraph",
       "text": "A5+",
       "bbox": {
         "x0": 311.3,
         "y0": 526.46,
-        "x1": 339.45,
+        "x1": 337.79,
         "y1": 539.7,
-        "width": 28.15,
+        "width": 26.49,
         "height": 13.24
       },
       "meta": {
@@ -3119,26 +3119,26 @@
     {
       "id": "#/texts/186",
       "page": 9,
-      "order": 48,
+      "order": 47,
       "role": "paragraph",
-      "text": "A5 -",
+      "text": "A5-",
       "bbox": {
         "x0": 312.95,
-        "y0": 544.51,
+        "y0": 543.01,
         "x1": 339.45,
         "y1": 554.6,
         "width": 26.5,
-        "height": 10.09
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "A5 -"
+        "docling_orig": "A5-"
       }
     },
     {
       "id": "#/texts/187",
       "page": 9,
-      "order": 49,
+      "order": 48,
       "role": "paragraph",
       "text": "Аб+",
       "bbox": {
@@ -3157,7 +3157,7 @@
     {
       "id": "#/texts/188",
       "page": 9,
-      "order": 50,
+      "order": 49,
       "role": "paragraph",
       "text": "A6 -",
       "bbox": {
@@ -3176,7 +3176,7 @@
     {
       "id": "#/texts/189",
       "page": 9,
-      "order": 51,
+      "order": 50,
       "role": "paragraph",
       "text": "A7+",
       "bbox": {
@@ -3195,7 +3195,7 @@
     {
       "id": "#/texts/190",
       "page": 9,
-      "order": 52,
+      "order": 51,
       "role": "paragraph",
       "text": "A7 -",
       "bbox": {
@@ -3214,7 +3214,7 @@
     {
       "id": "#/texts/191",
       "page": 9,
-      "order": 53,
+      "order": 52,
       "role": "paragraph",
       "text": "A8+",
       "bbox": {
@@ -3233,7 +3233,7 @@
     {
       "id": "#/texts/192",
       "page": 9,
-      "order": 54,
+      "order": 53,
       "role": "paragraph",
       "text": "A 8-",
       "bbox": {
@@ -3252,7 +3252,7 @@
     {
       "id": "#/texts/193",
       "page": 9,
-      "order": 55,
+      "order": 54,
       "role": "paragraph",
       "text": "A9+",
       "bbox": {
@@ -3271,7 +3271,7 @@
     {
       "id": "#/texts/194",
       "page": 9,
-      "order": 56,
+      "order": 55,
       "role": "paragraph",
       "text": "A9 -",
       "bbox": {
@@ -3290,7 +3290,7 @@
     {
       "id": "#/texts/195",
       "page": 9,
-      "order": 57,
+      "order": 56,
       "role": "paragraph",
       "text": "A10+",
       "bbox": {
@@ -3309,7 +3309,7 @@
     {
       "id": "#/texts/196",
       "page": 9,
-      "order": 58,
+      "order": 57,
       "role": "paragraph",
       "text": "A10-",
       "bbox": {
@@ -3328,7 +3328,7 @@
     {
       "id": "#/texts/197",
       "page": 9,
-      "order": 59,
+      "order": 58,
       "role": "paragraph",
       "text": "A11+",
       "bbox": {
@@ -3347,7 +3347,7 @@
     {
       "id": "#/texts/198",
       "page": 9,
-      "order": 60,
+      "order": 59,
       "role": "paragraph",
       "text": "A11 -",
       "bbox": {
@@ -3366,7 +3366,7 @@
     {
       "id": "#/texts/199",
       "page": 9,
-      "order": 61,
+      "order": 60,
       "role": "paragraph",
       "text": "A12+",
       "bbox": {
@@ -3385,7 +3385,7 @@
     {
       "id": "#/texts/200",
       "page": 9,
-      "order": 62,
+      "order": 61,
       "role": "paragraph",
       "text": "A 12-",
       "bbox": {
@@ -3404,7 +3404,7 @@
     {
       "id": "#/texts/201",
       "page": 9,
-      "order": 63,
+      "order": 62,
       "role": "paragraph",
       "text": "A13+",
       "bbox": {
@@ -3423,7 +3423,7 @@
     {
       "id": "#/texts/202",
       "page": 9,
-      "order": 64,
+      "order": 63,
       "role": "paragraph",
       "text": "A13-",
       "bbox": {
@@ -3442,16 +3442,92 @@
     {
       "id": "#/texts/203",
       "page": 9,
+      "order": 64,
+      "role": "paragraph",
+      "text": "N",
+      "bbox": {
+        "x0": 562.99,
+        "y0": 495.0,
+        "x1": 571.27,
+        "y1": 504.93,
+        "width": 8.28,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "N"
+      }
+    },
+    {
+      "id": "#/texts/204",
+      "page": 9,
       "order": 65,
+      "role": "paragraph",
+      "text": "N",
+      "bbox": {
+        "x0": 564.64,
+        "y0": 478.45,
+        "x1": 572.92,
+        "y1": 488.38,
+        "width": 8.28,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "N"
+      }
+    },
+    {
+      "id": "#/texts/205",
+      "page": 9,
+      "order": 66,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 425.55,
+        "y0": 509.9,
+        "x1": 433.83,
+        "y1": 521.49,
+        "width": 8.28,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/206",
+      "page": 9,
+      "order": 67,
+      "role": "paragraph",
+      "text": "0.",
+      "bbox": {
+        "x0": 413.96,
+        "y0": 562.88,
+        "x1": 425.55,
+        "y1": 571.16,
+        "width": 11.59,
+        "height": 8.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0."
+      }
+    },
+    {
+      "id": "#/texts/207",
+      "page": 9,
+      "order": 68,
       "role": "paragraph",
       "text": "5",
       "bbox": {
         "x0": 425.55,
-        "y0": 526.46,
+        "y0": 562.88,
         "x1": 433.83,
-        "y1": 538.05,
+        "y1": 571.16,
         "width": 8.28,
-        "height": 11.59
+        "height": 8.28
       },
       "meta": {
         "docling_label": "text",
@@ -3459,37 +3535,18 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/208",
       "page": 9,
-      "order": 66,
+      "order": 69,
       "role": "paragraph",
       "text": "0",
       "bbox": {
-        "x0": 483.51,
-        "y0": 701.94,
-        "x1": 491.79,
-        "y1": 711.87,
-        "width": 8.28,
-        "height": 9.93
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0"
-      }
-    },
-    {
-      "id": "#/texts/205",
-      "page": 9,
-      "order": 67,
-      "role": "paragraph",
-      "text": "0",
-      "bbox": {
-        "x0": 422.24,
+        "x0": 423.9,
         "y0": 768.16,
-        "x1": 433.83,
-        "y1": 781.41,
-        "width": 11.59,
-        "height": 13.25
+        "x1": 432.18,
+        "y1": 779.75,
+        "width": 8.28,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -3497,9 +3554,9 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/209",
       "page": 9,
-      "order": 68,
+      "order": 70,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -3516,9 +3573,9 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/210",
       "page": 9,
-      "order": 69,
+      "order": 71,
       "role": "paragraph",
       "text": "0.5",
       "bbox": {
@@ -3535,9 +3592,9 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/211",
       "page": 9,
-      "order": 70,
+      "order": 72,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -3554,9 +3611,9 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/212",
       "page": 9,
-      "order": 71,
+      "order": 73,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -3573,9 +3630,9 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/213",
       "page": 9,
-      "order": 72,
+      "order": 74,
       "role": "paragraph",
       "text": "2",
       "bbox": {
@@ -3592,9 +3649,9 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/214",
       "page": 9,
-      "order": 73,
+      "order": 75,
       "role": "paragraph",
       "text": "- 2",
       "bbox": {
@@ -3611,9 +3668,9 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/215",
       "page": 9,
-      "order": 74,
+      "order": 76,
       "role": "paragraph",
       "text": "iN N",
       "bbox": {
@@ -3630,18 +3687,18 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/216",
       "page": 9,
-      "order": 75,
+      "order": 77,
       "role": "paragraph",
       "text": "2",
       "bbox": {
         "x0": 564.64,
         "y0": 771.47,
         "x1": 572.92,
-        "y1": 783.06,
+        "y1": 781.41,
         "width": 8.28,
-        "height": 11.59
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -3649,9 +3706,9 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/217",
       "page": 9,
-      "order": 76,
+      "order": 78,
       "role": "paragraph",
       "text": "- 2",
       "bbox": {
@@ -3668,9 +3725,9 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/218",
       "page": 9,
-      "order": 77,
+      "order": 79,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -3687,9 +3744,9 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/219",
       "page": 9,
-      "order": 78,
+      "order": 80,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -3706,9 +3763,9 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/220",
       "page": 9,
-      "order": 79,
+      "order": 81,
       "role": "paragraph",
       "text": "relaxed interpretation of the cell numbers, a bit value of 1 indicates a point to the greater than three, this results in the identification of cells which do not actually exist, because in these cases space cannot be physically divided into 2M volumes sharing a common boundary point. Objects such as the example truncated wedge (Fig. 3) do not encounter this problem, since all the intersection points are defined",
       "bbox": {
@@ -3725,7 +3782,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/223",
       "page": 10,
       "order": 1,
       "role": "caption",
@@ -3744,7 +3801,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/224",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -3763,7 +3820,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/225",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -3782,7 +3839,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/226",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -3801,9 +3858,28 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/227",
       "page": 10,
       "order": 5,
+      "role": "paragraph",
+      "text": "Front",
+      "bbox": {
+        "x0": 304.61,
+        "y0": 110.66,
+        "x1": 342.83,
+        "y1": 121.12,
+        "width": 38.22,
+        "height": 10.46
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Front"
+      }
+    },
+    {
+      "id": "#/texts/228",
+      "page": 10,
+      "order": 6,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
@@ -3820,47 +3896,9 @@
       }
     },
     {
-      "id": "#/texts/225",
-      "page": 10,
-      "order": 6,
-      "role": "paragraph",
-      "text": "Front",
-      "bbox": {
-        "x0": 304.65,
-        "y0": 110.8,
-        "x1": 342.79,
-        "y1": 120.97,
-        "width": 38.14,
-        "height": 10.17
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Front"
-      }
-    },
-    {
-      "id": "#/texts/226",
+      "id": "#/texts/229",
       "page": 10,
       "order": 7,
-      "role": "paragraph",
-      "text": "Back Right Left",
-      "bbox": {
-        "x0": 349.38,
-        "y0": 109.26,
-        "x1": 470.26,
-        "y1": 124.3,
-        "width": 120.88,
-        "height": 15.04
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Back Right Left"
-      }
-    },
-    {
-      "id": "#/texts/227",
-      "page": 10,
-      "order": 8,
       "role": "paragraph",
       "text": "F3",
       "bbox": {
@@ -3877,7 +3915,26 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/230",
+      "page": 10,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Back Right Left",
+      "bbox": {
+        "x0": 354.35,
+        "y0": 109.26,
+        "x1": 470.26,
+        "y1": 124.3,
+        "width": 115.91,
+        "height": 15.04
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Back Right Left"
+      }
+    },
+    {
+      "id": "#/texts/231",
       "page": 10,
       "order": 9,
       "role": "paragraph",
@@ -3896,7 +3953,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/232",
       "page": 10,
       "order": 10,
       "role": "paragraph",
@@ -3915,7 +3972,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/233",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -3934,7 +3991,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/234",
       "page": 10,
       "order": 12,
       "role": "paragraph",
@@ -3953,7 +4010,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/235",
       "page": 10,
       "order": 13,
       "role": "paragraph",
@@ -3972,37 +4029,56 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/236",
       "page": 10,
       "order": 14,
       "role": "paragraph",
-      "text": "L1)",
+      "text": "L1",
       "bbox": {
         "x0": 165.58,
         "y0": 236.74,
-        "x1": 187.11,
+        "x1": 185.45,
         "y1": 248.33,
-        "width": 21.53,
+        "width": 19.87,
         "height": 11.59
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "L1)"
+        "docling_orig": "L1"
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/237",
       "page": 10,
       "order": 15,
+      "role": "paragraph",
+      "text": "L2",
+      "bbox": {
+        "x0": 193.73,
+        "y0": 235.08,
+        "x1": 211.95,
+        "y1": 249.98,
+        "width": 18.22,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "L2"
+      }
+    },
+    {
+      "id": "#/texts/238",
+      "page": 10,
+      "order": 16,
       "role": "paragraph",
       "text": "P2",
       "bbox": {
         "x0": 208.64,
         "y0": 322.83,
         "x1": 230.16,
-        "y1": 341.04,
+        "y1": 339.38,
         "width": 21.52,
-        "height": 18.21
+        "height": 16.55
       },
       "meta": {
         "docling_label": "text",
@@ -4010,18 +4086,18 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/239",
       "page": 10,
-      "order": 16,
+      "order": 17,
       "role": "paragraph",
       "text": "P3",
       "bbox": {
         "x0": 245.06,
-        "y0": 326.14,
+        "y0": 324.48,
         "x1": 263.28,
         "y1": 337.73,
         "width": 18.22,
-        "height": 11.59
+        "height": 13.25
       },
       "meta": {
         "docling_label": "text",
@@ -4029,18 +4105,37 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/240",
       "page": 10,
-      "order": 17,
+      "order": 18,
+      "role": "paragraph",
+      "text": "P10",
+      "bbox": {
+        "x0": 490.13,
+        "y0": 324.48,
+        "x1": 518.28,
+        "y1": 339.38,
+        "width": 28.15,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P10"
+      }
+    },
+    {
+      "id": "#/texts/241",
+      "page": 10,
+      "order": 19,
       "role": "paragraph",
       "text": "Lines",
       "bbox": {
-        "x0": 551.3,
-        "y0": 233.01,
+        "x0": 556.26,
+        "y0": 233.06,
         "x1": 591.24,
-        "y1": 243.78,
-        "width": 39.94,
-        "height": 10.77
+        "y1": 243.73,
+        "width": 34.98,
+        "height": 10.67
       },
       "meta": {
         "docling_label": "text",
@@ -4048,9 +4143,9 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/242",
       "page": 10,
-      "order": 18,
+      "order": 20,
       "role": "paragraph",
       "text": "of",
       "bbox": {
@@ -4067,18 +4162,18 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/243",
       "page": 10,
-      "order": 19,
+      "order": 21,
       "role": "paragraph",
       "text": "inter-",
       "bbox": {
-        "x0": 554.7,
-        "y0": 264.84,
-        "x1": 596.12,
-        "y1": 276.52,
-        "width": 41.42,
-        "height": 11.68
+        "x0": 554.71,
+        "y0": 264.88,
+        "x1": 596.1,
+        "y1": 276.47,
+        "width": 41.39,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -4086,9 +4181,9 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/244",
       "page": 10,
-      "order": 20,
+      "order": 22,
       "role": "paragraph",
       "text": "section",
       "bbox": {
@@ -4105,9 +4200,9 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/245",
       "page": 10,
-      "order": 21,
+      "order": 23,
       "role": "paragraph",
       "text": "- Points",
       "bbox": {
@@ -4124,9 +4219,9 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/246",
       "page": 10,
-      "order": 22,
+      "order": 24,
       "role": "paragraph",
       "text": "inter-",
       "bbox": {
@@ -4143,18 +4238,18 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/247",
       "page": 10,
-      "order": 23,
+      "order": 25,
       "role": "paragraph",
       "text": "section",
       "bbox": {
-        "x0": 554.69,
+        "x0": 554.68,
         "y0": 369.09,
         "x1": 602.75,
-        "y1": 380.86,
-        "width": 48.06,
-        "height": 11.77
+        "y1": 382.51,
+        "width": 48.07,
+        "height": 13.42
       },
       "meta": {
         "docling_label": "text",
@@ -4162,9 +4257,9 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/248",
       "page": 10,
-      "order": 24,
+      "order": 26,
       "role": "paragraph",
       "text": "by exactly three planes. However, Fig. 5 depicts an object for which the problem does arise. The top point of this four-sided pyramid represents the intersection of four planes. Sixteen cells would be validated by this boundary point, even though only 14 volumes of space are defined by the intersection of the four planes. (The two nonexistent viewing cells that would be validated by the point are ones in which one opposing pair of the four sides is visible but the other pair of sides is not.)",
       "bbox": {
@@ -4181,9 +4276,9 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/249",
       "page": 10,
-      "order": 25,
+      "order": 27,
       "role": "paragraph",
       "text": "A practical solution is found in the following way. The invalid cells are degenerate in the sense that their boundaries do not enclose a volume of space which satisfies the relationships specified by the cell number. Another way of saying this is that they can be viewed as cells which have boundaries completely comprised of dangling lines and planes. Dangling lines touch a cell boundary at only a single point. Dangling planes touch a cell boundary at a single point or along a single line.",
       "bbox": {
@@ -4200,9 +4295,9 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/250",
       "page": 10,
-      "order": 26,
+      "order": 28,
       "role": "paragraph",
       "text": "The simplest 3D volume of space has a boundary comprised of three planes which meet at one point. It has only one real 3D corner, and thus only one intersection point from the parcellation graph will satisfy the constraints imposed",
       "bbox": {
@@ -4219,9 +4314,9 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/251",
       "page": 10,
-      "order": 27,
+      "order": 29,
       "role": "caption",
       "text": "FIG. 5. A four-sided pyramid.",
       "bbox": {
@@ -4238,9 +4333,9 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/252",
       "page": 10,
-      "order": 28,
+      "order": 30,
       "role": "paragraph",
       "text": "Z",
       "bbox": {
@@ -4257,9 +4352,9 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/253",
       "page": 10,
-      "order": 29,
+      "order": 31,
       "role": "paragraph",
       "text": "→ Y",
       "bbox": {
@@ -4276,18 +4371,18 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/254",
       "page": 10,
-      "order": 30,
+      "order": 32,
       "role": "paragraph",
       "text": "Points",
       "bbox": {
-        "x0": 410.65,
-        "y0": 892.33,
-        "x1": 453.7,
-        "y1": 907.23,
-        "width": 43.05,
-        "height": 14.9
+        "x0": 410.56,
+        "y0": 892.07,
+        "x1": 453.79,
+        "y1": 907.48,
+        "width": 43.23,
+        "height": 15.41
       },
       "meta": {
         "docling_label": "text",
@@ -4295,9 +4390,9 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/255",
       "page": 10,
-      "order": 31,
+      "order": 33,
       "role": "paragraph",
       "text": "A",
       "bbox": {
@@ -4314,47 +4409,28 @@
       }
     },
     {
-      "id": "#/texts/251",
-      "page": 10,
-      "order": 32,
-      "role": "paragraph",
-      "text": "B",
-      "bbox": {
-        "x0": 427.21,
-        "y0": 935.37,
-        "x1": 437.14,
-        "y1": 946.96,
-        "width": 9.93,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "B"
-      }
-    },
-    {
-      "id": "#/texts/252",
-      "page": 10,
-      "order": 33,
-      "role": "paragraph",
-      "text": "E",
-      "bbox": {
-        "x0": 427.21,
-        "y0": 983.38,
-        "x1": 437.14,
-        "y1": 996.62,
-        "width": 9.93,
-        "height": 13.24
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "E"
-      }
-    },
-    {
-      "id": "#/texts/253",
+      "id": "#/texts/256",
       "page": 10,
       "order": 34,
+      "role": "paragraph",
+      "text": "D",
+      "bbox": {
+        "x0": 360.97,
+        "y0": 961.86,
+        "x1": 370.91,
+        "y1": 971.79,
+        "width": 9.94,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "D"
+      }
+    },
+    {
+      "id": "#/texts/257",
+      "page": 10,
+      "order": 35,
       "role": "paragraph",
       "text": "[",
       "bbox": {
@@ -4371,9 +4447,9 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/258",
       "page": 10,
-      "order": 35,
+      "order": 36,
       "role": "paragraph",
       "text": "[",
       "bbox": {
@@ -4390,9 +4466,9 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/259",
       "page": 10,
-      "order": 36,
+      "order": 37,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -4409,9 +4485,9 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/260",
       "page": 10,
-      "order": 37,
+      "order": 38,
       "role": "paragraph",
       "text": "[- 1",
       "bbox": {
@@ -4428,28 +4504,28 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/261",
       "page": 10,
-      "order": 38,
+      "order": 39,
       "role": "paragraph",
-      "text": "[- 1",
+      "text": "[-1",
       "bbox": {
-        "x0": 470.26,
+        "x0": 468.6,
         "y0": 985.04,
         "x1": 493.44,
-        "y1": 996.71,
-        "width": 23.18,
-        "height": 11.67
+        "y1": 996.62,
+        "width": 24.84,
+        "height": 11.58
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "[- 1"
+        "docling_orig": "[-1"
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/262",
       "page": 10,
-      "order": 39,
+      "order": 40,
       "role": "paragraph",
       "text": "Coordinates",
       "bbox": {
@@ -4466,18 +4542,18 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/263",
       "page": 10,
-      "order": 40,
+      "order": 41,
       "role": "paragraph",
       "text": "0 0.914 ]",
       "bbox": {
-        "x0": 518.2,
-        "y0": 920.11,
-        "x1": 581.28,
-        "y1": 934.08,
-        "width": 63.08,
-        "height": 13.97
+        "x0": 518.26,
+        "y0": 920.39,
+        "x1": 581.22,
+        "y1": 933.79,
+        "width": 62.96,
+        "height": 13.4
       },
       "meta": {
         "docling_label": "text",
@@ -4485,9 +4561,9 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/264",
       "page": 10,
-      "order": 41,
+      "order": 42,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
@@ -4504,9 +4580,9 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/265",
       "page": 10,
-      "order": 42,
+      "order": 43,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -4523,9 +4599,9 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/266",
       "page": 10,
-      "order": 43,
+      "order": 44,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -4542,17 +4618,17 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/267",
       "page": 10,
-      "order": 44,
+      "order": 45,
       "role": "paragraph",
       "text": "- 1",
       "bbox": {
         "x0": 511.66,
         "y0": 985.04,
-        "x1": 528.21,
+        "x1": 526.56,
         "y1": 995.04,
-        "width": 16.55,
+        "width": 14.9,
         "height": 10.0
       },
       "meta": {
@@ -4561,9 +4637,9 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/268",
       "page": 10,
-      "order": 45,
+      "order": 46,
       "role": "paragraph",
       "text": "-0.5 ]",
       "bbox": {
@@ -4580,9 +4656,9 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/269",
       "page": 10,
-      "order": 46,
+      "order": 47,
       "role": "paragraph",
       "text": "-0.5 ]",
       "bbox": {
@@ -4599,37 +4675,18 @@
       }
     },
     {
-      "id": "#/texts/266",
-      "page": 10,
-      "order": 47,
-      "role": "paragraph",
-      "text": "-0.5 ]",
-      "bbox": {
-        "x0": 543.12,
-        "y0": 968.38,
-        "x1": 581.2,
-        "y1": 981.73,
-        "width": 38.08,
-        "height": 13.35
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "-0.5 ]"
-      }
-    },
-    {
-      "id": "#/texts/267",
+      "id": "#/texts/270",
       "page": 10,
       "order": 48,
       "role": "paragraph",
       "text": "-0.5 ]",
       "bbox": {
-        "x0": 541.44,
-        "y0": 984.98,
-        "x1": 581.22,
-        "y1": 996.68,
-        "width": 39.78,
-        "height": 11.7
+        "x0": 541.46,
+        "y0": 968.38,
+        "x1": 581.2,
+        "y1": 983.38,
+        "width": 39.74,
+        "height": 15.0
       },
       "meta": {
         "docling_label": "text",
@@ -4637,9 +4694,28 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/271",
       "page": 10,
       "order": 49,
+      "role": "paragraph",
+      "text": "-0.5 ]",
+      "bbox": {
+        "x0": 541.44,
+        "y0": 984.97,
+        "x1": 581.22,
+        "y1": 996.69,
+        "width": 39.78,
+        "height": 11.72
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-0.5 ]"
+      }
+    },
+    {
+      "id": "#/texts/272",
+      "page": 10,
+      "order": 50,
       "role": "paragraph",
       "text": "X",
       "bbox": {
@@ -4656,9 +4732,9 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/273",
       "page": 10,
-      "order": 50,
+      "order": 51,
       "role": "paragraph",
       "text": "B",
       "bbox": {
@@ -4675,7 +4751,7 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/276",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -4694,7 +4770,7 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/277",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -4713,7 +4789,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/278",
       "page": 11,
       "order": 3,
       "role": "heading",
@@ -4732,11 +4808,11 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/279",
       "page": 11,
       "order": 4,
       "role": "paragraph",
-      "text": "The evaluation matrix is created to allow more efficient determination of valid cell numbers. During this process, the planar equations for all of the bounding planes of the object must be evaluated with the coordinates of each of the boundary points in the parcellation. Repeated evaluations are avoided by creating a matrix to hold all of the values. This evaluation matrix is M rows by N columns, where M is the total number of points from the bottom of the parcellation graph (intersection points and auxiliary points), and N is the number of bounding planes for the object. The value of each matrix entry E; j is determined by evaluating the planar equation indicated by the column with the point coordinates indicated by the row. See Eq. (9):",
+      "text": "The evaluation matrix is created to allow more efficient determination of valid cell numbers. During this process, the planar equations for all of the bounding planes of the object must be evaluated with the coordinates of each of the boundary points in the parcellation. Repeated evaluations are avoided by creating a matrix to hold all of the values. This evaluation matrix is M rows by N columns, where M is the total number of points from the bottom of the parcellation graph (intersection points and auxiliary points), and N is the number of bounding planes for the object. The value of each matrix entry E;,j is determined by evaluating the planar equation indicated by the column with the point coordinates indicated by the row. See Eq. (9):",
       "bbox": {
         "x0": 79.48,
         "y0": 412.21,
@@ -4747,11 +4823,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The evaluation matrix is created to allow more efficient determination of valid cell numbers. During this process, the planar equations for all of the bounding planes of the object must be evaluated with the coordinates of each of the boundary points in the parcellation. Repeated evaluations are avoided by creating a matrix to hold all of the values. This evaluation matrix is M rows by N columns, where M is the total number of points from the bottom of the parcellation graph (intersection points and auxiliary points), and N is the number of bounding planes for the object. The value of each matrix entry E; j is determined by evaluating the planar equation indicated by the column with the point coordinates indicated by the row. See Eq. (9):"
+        "docling_orig": "The evaluation matrix is created to allow more efficient determination of valid cell numbers. During this process, the planar equations for all of the bounding planes of the object must be evaluated with the coordinates of each of the boundary points in the parcellation. Repeated evaluations are avoided by creating a matrix to hold all of the values. This evaluation matrix is M rows by N columns, where M is the total number of points from the bottom of the parcellation graph (intersection points and auxiliary points), and N is the number of bounding planes for the object. The value of each matrix entry E;,j is determined by evaluating the planar equation indicated by the column with the point coordinates indicated by the row. See Eq. (9):"
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/281",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -4770,7 +4846,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/282",
       "page": 11,
       "order": 6,
       "role": "heading",
@@ -4789,7 +4865,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/283",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -4808,7 +4884,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/284",
       "page": 11,
       "order": 8,
       "role": "paragraph",
@@ -4827,18 +4903,18 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/287",
       "page": 12,
       "order": 1,
       "role": "caption",
       "text": "TABLE 4 Evaluation Matrix for the Truncated Wedge",
       "bbox": {
         "x0": 248.38,
-        "y0": 110.56,
+        "y0": 110.55,
         "x1": 505.03,
         "y1": 145.69,
         "width": 256.65,
-        "height": 35.13
+        "height": 35.14
       },
       "meta": {
         "docling_label": "caption",
@@ -4846,7 +4922,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/288",
       "page": 12,
       "order": 2,
       "role": "heading",
@@ -4865,7 +4941,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/289",
       "page": 12,
       "order": 3,
       "role": "paragraph",
@@ -4874,9 +4950,9 @@
         "x0": 77.82,
         "y0": 874.08,
         "x1": 682.21,
-        "y1": 913.85,
+        "y1": 915.5,
         "width": 604.39,
-        "height": 39.77
+        "height": 41.42
       },
       "meta": {
         "docling_label": "text",
@@ -4884,7 +4960,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/290",
       "page": 12,
       "order": 4,
       "role": "paragraph",
@@ -4892,9 +4968,9 @@
       "bbox": {
         "x0": 79.4,
         "y0": 913.73,
-        "x1": 683.95,
+        "x1": 683.98,
         "y1": 1074.43,
-        "width": 604.55,
+        "width": 604.58,
         "height": 160.7
       },
       "meta": {
@@ -4903,7 +4979,7 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/293",
       "page": 13,
       "order": 1,
       "role": "paragraph",
@@ -4922,7 +4998,7 @@
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/294",
       "page": 13,
       "order": 2,
       "role": "paragraph",
@@ -4941,7 +5017,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/295",
       "page": 13,
       "order": 3,
       "role": "paragraph",
@@ -4960,7 +5036,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/296",
       "page": 13,
       "order": 4,
       "role": "heading",
@@ -4979,7 +5055,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/297",
       "page": 13,
       "order": 5,
       "role": "paragraph",
@@ -4998,17 +5074,17 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/298",
       "page": 13,
       "order": 6,
       "role": "heading",
       "text": "2.H. Creation of an Explicit Aspect Graph Structure",
       "bbox": {
-        "x0": 81.14,
+        "x0": 82.79,
         "y0": 845.97,
         "x1": 468.6,
         "y1": 864.18,
-        "width": 387.46,
+        "width": 385.81,
         "height": 18.21
       },
       "meta": {
@@ -5017,7 +5093,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/299",
       "page": 13,
       "order": 7,
       "role": "paragraph",
@@ -5036,7 +5112,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/300",
       "page": 13,
       "order": 8,
       "role": "paragraph",
@@ -5055,7 +5131,7 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/303",
       "page": 14,
       "order": 1,
       "role": "caption",
@@ -5074,7 +5150,7 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/304",
       "page": 14,
       "order": 2,
       "role": "paragraph",
@@ -5093,7 +5169,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/305",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -5112,7 +5188,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/306",
       "page": 14,
       "order": 4,
       "role": "paragraph",
@@ -5131,7 +5207,7 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/307",
       "page": 14,
       "order": 5,
       "role": "paragraph",
@@ -5150,7 +5226,7 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/308",
       "page": 14,
       "order": 6,
       "role": "paragraph",
@@ -5169,7 +5245,7 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/309",
       "page": 14,
       "order": 7,
       "role": "paragraph",
@@ -5188,7 +5264,7 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/310",
       "page": 14,
       "order": 8,
       "role": "paragraph",
@@ -5196,9 +5272,9 @@
       "bbox": {
         "x0": 241.75,
         "y0": 273.16,
-        "x1": 291.43,
+        "x1": 289.77,
         "y1": 283.09,
-        "width": 49.68,
+        "width": 48.02,
         "height": 9.93
       },
       "meta": {
@@ -5207,18 +5283,18 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/311",
       "page": 14,
       "order": 9,
       "role": "paragraph",
       "text": "P5-P10",
       "bbox": {
-        "x0": 185.4,
-        "y0": 306.05,
+        "x0": 183.75,
+        "y0": 306.04,
         "x1": 233.53,
-        "y1": 318.08,
-        "width": 48.13,
-        "height": 12.03
+        "y1": 318.09,
+        "width": 49.78,
+        "height": 12.05
       },
       "meta": {
         "docling_label": "text",
@@ -5226,7 +5302,7 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/312",
       "page": 14,
       "order": 10,
       "role": "paragraph",
@@ -5245,7 +5321,7 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/313",
       "page": 14,
       "order": 11,
       "role": "paragraph",
@@ -5264,26 +5340,26 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/314",
       "page": 14,
       "order": 12,
       "role": "paragraph",
-      "text": "PI-P4",
+      "text": "PI-P4 |",
       "bbox": {
-        "x0": 274.8,
-        "y0": 411.94,
-        "x1": 316.33,
-        "y1": 422.44,
-        "width": 41.53,
-        "height": 10.5
+        "x0": 274.77,
+        "y0": 411.75,
+        "x1": 317.25,
+        "y1": 422.61,
+        "width": 42.48,
+        "height": 10.86
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "PI-P4"
+        "docling_orig": "PI-P4 |"
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/315",
       "page": 14,
       "order": 13,
       "role": "paragraph",
@@ -5302,7 +5378,7 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/316",
       "page": 14,
       "order": 14,
       "role": "paragraph",
@@ -5321,7 +5397,7 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/317",
       "page": 14,
       "order": 15,
       "role": "paragraph",
@@ -5340,18 +5416,18 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/318",
       "page": 14,
       "order": 16,
       "role": "paragraph",
       "text": "P7-P10",
       "bbox": {
-        "x0": 245.04,
-        "y0": 509.81,
-        "x1": 293.11,
-        "y1": 521.58,
-        "width": 48.07,
-        "height": 11.77
+        "x0": 243.39,
+        "y0": 509.83,
+        "x1": 293.1,
+        "y1": 523.21,
+        "width": 49.71,
+        "height": 13.38
       },
       "meta": {
         "docling_label": "text",
@@ -5359,18 +5435,18 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/319",
       "page": 14,
       "order": 17,
       "role": "paragraph",
       "text": "• Initial Call",
       "bbox": {
-        "x0": 190.36,
-        "y0": 593.91,
-        "x1": 271.63,
-        "y1": 608.0,
-        "width": 81.27,
-        "height": 14.09
+        "x0": 190.42,
+        "y0": 594.33,
+        "x1": 271.56,
+        "y1": 607.58,
+        "width": 81.14,
+        "height": 13.25
       },
       "meta": {
         "docling_label": "text",
@@ -5378,7 +5454,7 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/320",
       "page": 14,
       "order": 18,
       "role": "paragraph",
@@ -5397,7 +5473,7 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/321",
       "page": 14,
       "order": 19,
       "role": "paragraph",
@@ -5416,7 +5492,7 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/322",
       "page": 14,
       "order": 20,
       "role": "paragraph",
@@ -5435,7 +5511,7 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/323",
       "page": 14,
       "order": 21,
       "role": "paragraph",
@@ -5454,7 +5530,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/324",
       "page": 14,
       "order": 22,
       "role": "paragraph",
@@ -5473,7 +5549,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/325",
       "page": 14,
       "order": 23,
       "role": "paragraph",
@@ -5492,7 +5568,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/326",
       "page": 14,
       "order": 24,
       "role": "paragraph",
@@ -5511,7 +5587,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/327",
       "page": 14,
       "order": 25,
       "role": "paragraph",
@@ -5530,7 +5606,7 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/328",
       "page": 14,
       "order": 26,
       "role": "paragraph",
@@ -5549,7 +5625,7 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/329",
       "page": 14,
       "order": 27,
       "role": "paragraph",
@@ -5568,18 +5644,18 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/330",
       "page": 14,
       "order": 28,
       "role": "paragraph",
       "text": "100101",
       "bbox": {
-        "x0": 539.76,
-        "y0": 236.52,
-        "x1": 591.18,
-        "y1": 246.89,
-        "width": 51.42,
-        "height": 10.37
+        "x0": 539.81,
+        "y0": 236.74,
+        "x1": 591.14,
+        "y1": 246.67,
+        "width": 51.33,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -5587,7 +5663,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/331",
       "page": 14,
       "order": 29,
       "role": "paragraph",
@@ -5606,18 +5682,18 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/332",
       "page": 14,
       "order": 30,
       "role": "paragraph",
       "text": "100011",
       "bbox": {
-        "x0": 541.46,
-        "y0": 269.85,
-        "x1": 592.79,
-        "y1": 279.78,
-        "width": 51.33,
-        "height": 9.93
+        "x0": 541.44,
+        "y0": 269.72,
+        "x1": 592.82,
+        "y1": 279.92,
+        "width": 51.38,
+        "height": 10.2
       },
       "meta": {
         "docling_label": "text",
@@ -5625,7 +5701,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/333",
       "page": 14,
       "order": 31,
       "role": "paragraph",
@@ -5644,7 +5720,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/334",
       "page": 14,
       "order": 32,
       "role": "paragraph",
@@ -5653,9 +5729,9 @@
         "x0": 541.46,
         "y0": 304.62,
         "x1": 591.14,
-        "y1": 316.2,
+        "y1": 314.55,
         "width": 49.68,
-        "height": 11.58
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -5663,7 +5739,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/335",
       "page": 14,
       "order": 33,
       "role": "paragraph",
@@ -5682,7 +5758,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/336",
       "page": 14,
       "order": 34,
       "role": "paragraph",
@@ -5701,18 +5777,18 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/337",
       "page": 14,
       "order": 35,
       "role": "paragraph",
       "text": "011001",
       "bbox": {
-        "x0": 539.81,
-        "y0": 352.63,
-        "x1": 591.14,
-        "y1": 364.22,
-        "width": 51.33,
-        "height": 11.59
+        "x0": 539.76,
+        "y0": 352.43,
+        "x1": 591.18,
+        "y1": 364.41,
+        "width": 51.42,
+        "height": 11.98
       },
       "meta": {
         "docling_label": "text",
@@ -5720,7 +5796,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/338",
       "page": 14,
       "order": 36,
       "role": "paragraph",
@@ -5739,113 +5815,75 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/339",
       "page": 14,
       "order": 37,
       "role": "paragraph",
-      "text": "010110",
-      "bbox": {
-        "x0": 539.75,
-        "y0": 388.78,
-        "x1": 591.19,
-        "y1": 399.25,
-        "width": 51.44,
-        "height": 10.47
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "010110"
-      }
-    },
-    {
-      "id": "#/texts/336",
-      "page": 14,
-      "order": 38,
-      "role": "paragraph",
-      "text": "10101",
-      "bbox": {
-        "x0": 548.08,
-        "y0": 403.95,
-        "x1": 589.48,
-        "y1": 413.88,
-        "width": 41.4,
-        "height": 9.93
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "10101"
-      }
-    },
-    {
-      "id": "#/texts/337",
-      "page": 14,
-      "order": 39,
-      "role": "paragraph",
-      "text": "10100",
-      "bbox": {
-        "x0": 548.08,
-        "y0": 422.16,
-        "x1": 591.14,
-        "y1": 433.75,
-        "width": 43.06,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "10100"
-      }
-    },
-    {
-      "id": "#/texts/338",
-      "page": 14,
-      "order": 40,
-      "role": "paragraph",
-      "text": "010010",
+      "text": "0101",
       "bbox": {
         "x0": 539.81,
-        "y0": 440.37,
-        "x1": 591.14,
-        "y1": 450.3,
-        "width": 51.33,
+        "y0": 389.05,
+        "x1": 574.58,
+        "y1": 398.98,
+        "width": 34.77,
         "height": 9.93
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "010010"
-      }
-    },
-    {
-      "id": "#/texts/339",
-      "page": 14,
-      "order": 41,
-      "role": "paragraph",
-      "text": "0001",
-      "bbox": {
-        "x0": 552.99,
-        "y0": 453.38,
-        "x1": 591.2,
-        "y1": 463.78,
-        "width": 38.21,
-        "height": 10.4
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0001"
+        "docling_orig": "0101"
       }
     },
     {
       "id": "#/texts/340",
       "page": 14,
-      "order": 42,
+      "order": 38,
+      "role": "paragraph",
+      "text": "10",
+      "bbox": {
+        "x0": 572.92,
+        "y0": 389.05,
+        "x1": 591.14,
+        "y1": 398.98,
+        "width": 18.22,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "10"
+      }
+    },
+    {
+      "id": "#/texts/341",
+      "page": 14,
+      "order": 39,
+      "role": "paragraph",
+      "text": "101",
+      "bbox": {
+        "x0": 548.08,
+        "y0": 403.95,
+        "x1": 574.58,
+        "y1": 413.88,
+        "width": 26.5,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "101"
+      }
+    },
+    {
+      "id": "#/texts/342",
+      "page": 14,
+      "order": 40,
       "role": "paragraph",
       "text": "01",
       "bbox": {
-        "x0": 541.46,
-        "y0": 471.82,
-        "x1": 558.02,
-        "y1": 480.1,
+        "x0": 572.92,
+        "y0": 403.95,
+        "x1": 589.48,
+        "y1": 413.88,
         "width": 16.56,
-        "height": 8.28
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -5853,18 +5891,94 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/343",
+      "page": 14,
+      "order": 41,
+      "role": "paragraph",
+      "text": "100",
+      "bbox": {
+        "x0": 564.64,
+        "y0": 423.81,
+        "x1": 591.14,
+        "y1": 432.09,
+        "width": 26.5,
+        "height": 8.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "100"
+      }
+    },
+    {
+      "id": "#/texts/344",
+      "page": 14,
+      "order": 42,
+      "role": "paragraph",
+      "text": "01",
+      "bbox": {
+        "x0": 541.46,
+        "y0": 440.37,
+        "x1": 558.02,
+        "y1": 450.3,
+        "width": 16.56,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "01"
+      }
+    },
+    {
+      "id": "#/texts/345",
       "page": 14,
       "order": 43,
       "role": "paragraph",
-      "text": "0000",
+      "text": "0010",
       "bbox": {
         "x0": 556.36,
-        "y0": 470.17,
+        "y0": 440.37,
+        "x1": 591.14,
+        "y1": 450.3,
+        "width": 34.78,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0010"
+      }
+    },
+    {
+      "id": "#/texts/346",
+      "page": 14,
+      "order": 44,
+      "role": "paragraph",
+      "text": "0001",
+      "bbox": {
+        "x0": 554.71,
+        "y0": 453.61,
+        "x1": 591.14,
+        "y1": 463.55,
+        "width": 36.43,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "0001"
+      }
+    },
+    {
+      "id": "#/texts/347",
+      "page": 14,
+      "order": 45,
+      "role": "paragraph",
+      "text": "0000",
+      "bbox": {
+        "x0": 558.02,
+        "y0": 471.82,
         "x1": 591.14,
         "y1": 481.76,
-        "width": 34.78,
-        "height": 11.59
+        "width": 33.12,
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -5872,9 +5986,9 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/348",
       "page": 14,
-      "order": 44,
+      "order": 46,
       "role": "paragraph",
       "text": "00",
       "bbox": {
@@ -5891,28 +6005,9 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/349",
       "page": 14,
-      "order": 45,
-      "role": "paragraph",
-      "text": "0",
-      "bbox": {
-        "x0": 564.64,
-        "y0": 488.38,
-        "x1": 576.23,
-        "y1": 498.31,
-        "width": 11.59,
-        "height": 9.93
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "0"
-      }
-    },
-    {
-      "id": "#/texts/344",
-      "page": 14,
-      "order": 46,
+      "order": 47,
       "role": "paragraph",
       "text": "10",
       "bbox": {
@@ -5929,9 +6024,9 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/350",
       "page": 14,
-      "order": 47,
+      "order": 48,
       "role": "paragraph",
       "text": "001001",
       "bbox": {
@@ -5948,9 +6043,9 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/351",
       "page": 14,
-      "order": 48,
+      "order": 49,
       "role": "paragraph",
       "text": "001000",
       "bbox": {
@@ -5967,9 +6062,9 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/352",
       "page": 14,
-      "order": 49,
+      "order": 50,
       "role": "paragraph",
       "text": "000110",
       "bbox": {
@@ -5986,18 +6081,18 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/353",
       "page": 14,
-      "order": 50,
+      "order": 51,
       "role": "paragraph",
       "text": "000101",
       "bbox": {
-        "x0": 539.74,
-        "y0": 555.98,
-        "x1": 591.2,
-        "y1": 568.13,
-        "width": 51.46,
-        "height": 12.15
+        "x0": 539.78,
+        "y0": 556.13,
+        "x1": 591.16,
+        "y1": 567.97,
+        "width": 51.38,
+        "height": 11.84
       },
       "meta": {
         "docling_label": "text",
@@ -6005,18 +6100,18 @@
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/354",
       "page": 14,
-      "order": 51,
+      "order": 52,
       "role": "paragraph",
       "text": "000100",
       "bbox": {
-        "x0": 539.78,
-        "y0": 572.71,
-        "x1": 591.16,
-        "y1": 584.5,
-        "width": 51.38,
-        "height": 11.79
+        "x0": 539.7,
+        "y0": 572.34,
+        "x1": 591.24,
+        "y1": 584.87,
+        "width": 51.54,
+        "height": 12.53
       },
       "meta": {
         "docling_label": "text",
@@ -6024,18 +6119,18 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/355",
       "page": 14,
-      "order": 52,
+      "order": 53,
       "role": "paragraph",
       "text": "000010",
       "bbox": {
-        "x0": 539.79,
-        "y0": 587.65,
-        "x1": 591.15,
-        "y1": 599.36,
-        "width": 51.36,
-        "height": 11.71
+        "x0": 539.75,
+        "y0": 587.44,
+        "x1": 591.2,
+        "y1": 599.57,
+        "width": 51.45,
+        "height": 12.13
       },
       "meta": {
         "docling_label": "text",
@@ -6043,18 +6138,18 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/356",
       "page": 14,
-      "order": 53,
+      "order": 54,
       "role": "paragraph",
       "text": "000001",
       "bbox": {
-        "x0": 541.46,
-        "y0": 605.92,
-        "x1": 591.14,
-        "y1": 617.51,
-        "width": 49.68,
-        "height": 11.59
+        "x0": 541.42,
+        "y0": 605.74,
+        "x1": 591.18,
+        "y1": 617.69,
+        "width": 49.76,
+        "height": 11.95
       },
       "meta": {
         "docling_label": "text",
@@ -6062,9 +6157,9 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/357",
       "page": 14,
-      "order": 54,
+      "order": 55,
       "role": "paragraph",
       "text": "000000",
       "bbox": {
@@ -6081,9 +6176,9 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/358",
       "page": 14,
-      "order": 55,
+      "order": 56,
       "role": "paragraph",
       "text": "position, and recall that the cell numbers are found by following a tree-structured splitting from the root of the tree to a leaf (Fig. 6). Thus, two nodes of the aspect graph are to be connected if and only if the paths through the tree differ at exactly one level. All such connections can be found as follows.",
       "bbox": {
@@ -6100,17 +6195,17 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/359",
       "page": 14,
-      "order": 56,
+      "order": 57,
       "role": "paragraph",
       "text": "Beginning with the root node, whenever the processing of a node results in both a 1-descendent and a 0-descendent, then these two siblings are connected by a visual event link. After the splitting to generate the 1- and 0-descendents, the 1-descendent is expanded and then the 0-descendent is expanded. When two nodes connected by a visual event link are expanded, the 1-descendents of the two nodes (if both have a 1-descendent) and the 0-descendents of the two nodes (if both have a 0-descendent) each inherit the visual event link. In this way, the visual event links are inherited down similar paths of the tree to all pairs of cells connected by a visual event.",
       "bbox": {
-        "x0": 77.74,
+        "x0": 77.78,
         "y0": 812.76,
         "x1": 682.21,
         "y1": 990.04,
-        "width": 604.47,
+        "width": 604.43,
         "height": 177.28
       },
       "meta": {
@@ -6119,9 +6214,9 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/360",
       "page": 14,
-      "order": 57,
+      "order": 58,
       "role": "heading",
       "text": "3. ANALYSIS OF COMPLEXITY",
       "bbox": {
@@ -6138,9 +6233,9 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/361",
       "page": 14,
-      "order": 58,
+      "order": 59,
       "role": "paragraph",
       "text": "This section presents an analysis of the complexity of the data structure sizes and the execution time of the algorithm. The analysis is simplified by using one of",
       "bbox": {
@@ -6157,7 +6252,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/364",
       "page": 15,
       "order": 1,
       "role": "paragraph",
@@ -6176,7 +6271,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/365",
       "page": 15,
       "order": 2,
       "role": "paragraph",
@@ -6195,7 +6290,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/367",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -6214,7 +6309,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/368",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -6233,7 +6328,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/369",
       "page": 15,
       "order": 5,
       "role": "heading",
@@ -6252,7 +6347,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/370",
       "page": 15,
       "order": 6,
       "role": "paragraph",
@@ -6271,7 +6366,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/371",
       "page": 15,
       "order": 7,
       "role": "paragraph",
@@ -6290,18 +6385,18 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/372",
       "page": 15,
       "order": 8,
       "role": "paragraph",
       "text": "Lastly, the upper bound on the node complexity of the aspect graph itself, with one node for each cell of the parcellation, is clearly O(N'). If each node is attributed with an explicit list of the visible faces, which would be O(N), then the overall space complexity of the aspect graph data structure is O(N4).",
       "bbox": {
         "x0": 81.14,
-        "y0": 991.6,
+        "y0": 993.31,
         "x1": 685.52,
         "y1": 1072.78,
         "width": 604.38,
-        "height": 81.18
+        "height": 79.47
       },
       "meta": {
         "docling_label": "text",
@@ -6309,7 +6404,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/373",
       "page": 15,
       "order": 9,
       "role": "paragraph",
@@ -6328,7 +6423,7 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/376",
       "page": 16,
       "order": 1,
       "role": "heading",
@@ -6347,7 +6442,7 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/377",
       "page": 16,
       "order": 2,
       "role": "paragraph",
@@ -6366,26 +6461,26 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/378",
       "page": 16,
       "order": 3,
       "role": "paragraph",
-      "text": "The upper bound on the time complexity of creating the parcellation graph is O(N4), representing the solution of O(N2) pairs of plane equations to find lines of intersection, followed by the solution of ©(N4) pairs of line equations to find the coordinates of points of intersection. The links between plane nodes and line nodes and between line nodes and point nodes can be done directly as the solutions are found. (The points of intersection could be found in ©(N3) time by considering triplets of planes, but by finding the points through line intersections we can easily keep track of the outermost intersection point on each line and generate auxiliary points outside these points. This does not affect the overall complexity of the algorithm, since there are other O(N4) stages which cannot be reduced.)",
+      "text": "The upper bound on the time complexity of creating the parcellation graph is O(N4), representing the solution of O(N2) pairs of plane equations to find lines of intersection, followed by the solution of ©(N4) pairs of line equations to find the coordinates of points of intersection. The links between plane nodes and line nodes and between line nodes and point nodes can be done directly as the solutions are found. (The points of intersection could be found in O(N) time by considering triplets of planes, but by finding the points through line intersections we can easily keep track of the outermost intersection point on each line and generate auxiliary points outside these points. This does not affect the overall complexity of the algorithm, since there are other O(N4) stages which cannot be reduced.)",
       "bbox": {
-        "x0": 76.07,
+        "x0": 76.17,
         "y0": 216.87,
         "x1": 678.9,
-        "y1": 434.23,
-        "width": 602.83,
-        "height": 217.36
+        "y1": 433.93,
+        "width": 602.73,
+        "height": 217.06
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The upper bound on the time complexity of creating the parcellation graph is O(N4), representing the solution of O(N2) pairs of plane equations to find lines of intersection, followed by the solution of ©(N4) pairs of line equations to find the coordinates of points of intersection. The links between plane nodes and line nodes and between line nodes and point nodes can be done directly as the solutions are found. (The points of intersection could be found in ©(N3) time by considering triplets of planes, but by finding the points through line intersections we can easily keep track of the outermost intersection point on each line and generate auxiliary points outside these points. This does not affect the overall complexity of the algorithm, since there are other O(N4) stages which cannot be reduced.)"
+        "docling_orig": "The upper bound on the time complexity of creating the parcellation graph is O(N4), representing the solution of O(N2) pairs of plane equations to find lines of intersection, followed by the solution of ©(N4) pairs of line equations to find the coordinates of points of intersection. The links between plane nodes and line nodes and between line nodes and point nodes can be done directly as the solutions are found. (The points of intersection could be found in O(N) time by considering triplets of planes, but by finding the points through line intersections we can easily keep track of the outermost intersection point on each line and generate auxiliary points outside these points. This does not affect the overall complexity of the algorithm, since there are other O(N4) stages which cannot be reduced.)"
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/379",
       "page": 16,
       "order": 4,
       "role": "paragraph",
@@ -6404,7 +6499,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/380",
       "page": 16,
       "order": 5,
       "role": "paragraph",
@@ -6423,7 +6518,7 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/381",
       "page": 16,
       "order": 6,
       "role": "paragraph",
@@ -6442,7 +6537,7 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/382",
       "page": 16,
       "order": 7,
       "role": "paragraph",
@@ -6450,9 +6545,9 @@
       "bbox": {
         "x0": 77.82,
         "y0": 756.45,
-        "x1": 682.29,
+        "x1": 682.31,
         "y1": 993.36,
-        "width": 604.47,
+        "width": 604.49,
         "height": 236.91
       },
       "meta": {
@@ -6461,7 +6556,7 @@
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/383",
       "page": 16,
       "order": 8,
       "role": "heading",
@@ -6480,11 +6575,11 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/384",
       "page": 16,
       "order": 9,
       "role": "paragraph",
-      "text": "An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented",
+      "text": "An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented.",
       "bbox": {
         "x0": 97.69,
         "y0": 1033.03,
@@ -6495,11 +6590,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented"
+        "docling_orig": "An algorithm for directly calculating the exact perspective projection aspect graph of convex polyhedra from their boundary surface description has been presented."
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/387",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -6508,9 +6603,9 @@
         "x0": 76.17,
         "y0": 105.95,
         "x1": 680.55,
-        "y1": 248.96,
+        "y1": 249.47,
         "width": 604.38,
-        "height": 143.01
+        "height": 143.52
       },
       "meta": {
         "docling_label": "text",
@@ -6518,7 +6613,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/388",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -6537,7 +6632,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/389",
       "page": 17,
       "order": 3,
       "role": "heading",
@@ -6556,7 +6651,7 @@
       }
     },
     {
-      "id": "#/texts/385",
+      "id": "#/texts/390",
       "page": 17,
       "order": 4,
       "role": "paragraph",
@@ -6575,7 +6670,7 @@
       }
     },
     {
-      "id": "#/texts/386",
+      "id": "#/texts/391",
       "page": 17,
       "order": 5,
       "role": "heading",
@@ -6594,7 +6689,7 @@
       }
     },
     {
-      "id": "#/texts/387",
+      "id": "#/texts/392",
       "page": 17,
       "order": 6,
       "role": "list_item",
@@ -6613,7 +6708,7 @@
       }
     },
     {
-      "id": "#/texts/388",
+      "id": "#/texts/393",
       "page": 17,
       "order": 7,
       "role": "list_item",
@@ -6632,7 +6727,7 @@
       }
     },
     {
-      "id": "#/texts/389",
+      "id": "#/texts/394",
       "page": 17,
       "order": 8,
       "role": "list_item",
@@ -6651,7 +6746,7 @@
       }
     },
     {
-      "id": "#/texts/390",
+      "id": "#/texts/395",
       "page": 17,
       "order": 9,
       "role": "list_item",
@@ -6670,7 +6765,7 @@
       }
     },
     {
-      "id": "#/texts/391",
+      "id": "#/texts/396",
       "page": 17,
       "order": 10,
       "role": "list_item",
@@ -6689,7 +6784,7 @@
       }
     },
     {
-      "id": "#/texts/392",
+      "id": "#/texts/397",
       "page": 17,
       "order": 11,
       "role": "list_item",
@@ -6708,7 +6803,7 @@
       }
     },
     {
-      "id": "#/texts/393",
+      "id": "#/texts/398",
       "page": 17,
       "order": 12,
       "role": "list_item",
@@ -6727,7 +6822,7 @@
       }
     },
     {
-      "id": "#/texts/394",
+      "id": "#/texts/399",
       "page": 17,
       "order": 13,
       "role": "list_item",
@@ -6736,9 +6831,9 @@
         "x0": 86.1,
         "y0": 769.77,
         "x1": 680.55,
-        "y1": 802.93,
+        "y1": 801.43,
         "width": 594.45,
-        "height": 33.16
+        "height": 31.66
       },
       "meta": {
         "docling_label": "list_item",
@@ -6746,7 +6841,7 @@
       }
     },
     {
-      "id": "#/texts/395",
+      "id": "#/texts/400",
       "page": 17,
       "order": 14,
       "role": "list_item",
@@ -6765,7 +6860,7 @@
       }
     },
     {
-      "id": "#/texts/396",
+      "id": "#/texts/401",
       "page": 17,
       "order": 15,
       "role": "list_item",
@@ -6784,7 +6879,7 @@
       }
     },
     {
-      "id": "#/texts/397",
+      "id": "#/texts/402",
       "page": 17,
       "order": 16,
       "role": "list_item",
@@ -6803,7 +6898,7 @@
       }
     },
     {
-      "id": "#/texts/398",
+      "id": "#/texts/403",
       "page": 17,
       "order": 17,
       "role": "list_item",
@@ -6822,7 +6917,7 @@
       }
     },
     {
-      "id": "#/texts/399",
+      "id": "#/texts/404",
       "page": 17,
       "order": 18,
       "role": "list_item",
@@ -6841,7 +6936,7 @@
       }
     },
     {
-      "id": "#/texts/400",
+      "id": "#/texts/405",
       "page": 17,
       "order": 19,
       "role": "list_item",
@@ -6860,7 +6955,7 @@
       }
     },
     {
-      "id": "#/texts/401",
+      "id": "#/texts/406",
       "page": 17,
       "order": 20,
       "role": "list_item",
@@ -6879,7 +6974,7 @@
       }
     },
     {
-      "id": "#/texts/402",
+      "id": "#/texts/407",
       "page": 17,
       "order": 21,
       "role": "list_item",
@@ -6898,7 +6993,7 @@
       }
     },
     {
-      "id": "#/texts/405",
+      "id": "#/texts/410",
       "page": 18,
       "order": 1,
       "role": "list_item",
@@ -6917,17 +7012,17 @@
       }
     },
     {
-      "id": "#/texts/406",
+      "id": "#/texts/411",
       "page": 18,
       "order": 2,
       "role": "list_item",
       "text": "N. Watts, Calculating the principal views of a polyhedron, in 1988 International Conference on Pattern Recognition, pp. 316-322; also see CS-TR-234, University of Rochester, 1987.",
       "bbox": {
-        "x0": 77.82,
+        "x0": 76.17,
         "y0": 143.96,
         "x1": 678.9,
         "y1": 175.62,
-        "width": 601.08,
+        "width": 602.73,
         "height": 31.66
       },
       "meta": {
@@ -6936,7 +7031,7 @@
       }
     },
     {
-      "id": "#/texts/407",
+      "id": "#/texts/412",
       "page": 18,
       "order": 3,
       "role": "list_item",
@@ -6955,7 +7050,7 @@
       }
     },
     {
-      "id": "#/texts/408",
+      "id": "#/texts/413",
       "page": 18,
       "order": 4,
       "role": "list_item",
@@ -6974,7 +7069,7 @@
       }
     },
     {
-      "id": "#/texts/409",
+      "id": "#/texts/414",
       "page": 18,
       "order": 5,
       "role": "list_item",
@@ -6993,7 +7088,7 @@
       }
     },
     {
-      "id": "#/texts/410",
+      "id": "#/texts/415",
       "page": 18,
       "order": 6,
       "role": "list_item",
@@ -7012,7 +7107,7 @@
       }
     },
     {
-      "id": "#/texts/411",
+      "id": "#/texts/416",
       "page": 18,
       "order": 7,
       "role": "list_item",
@@ -7031,7 +7126,7 @@
       }
     },
     {
-      "id": "#/texts/412",
+      "id": "#/texts/417",
       "page": 18,
       "order": 8,
       "role": "list_item",
@@ -7050,17 +7145,17 @@
       }
     },
     {
-      "id": "#/texts/413",
+      "id": "#/texts/418",
       "page": 18,
       "order": 9,
       "role": "list_item",
       "text": "K. W. Bowyer, D. Eggert, J. Stewman, and L. Stark, Developing the aspect graph representation for use in image understanding, in 1989 DARPA Image Understanding Workshop, pp. 831-849.",
       "bbox": {
-        "x0": 76.17,
+        "x0": 77.82,
         "y0": 326.14,
         "x1": 680.55,
         "y1": 359.25,
-        "width": 604.38,
+        "width": 602.73,
         "height": 33.11
       },
       "meta": {
@@ -7068,5 +7163,25 @@
         "docling_orig": "24. K. W. Bowyer, D. Eggert, J. Stewman, and L. Stark, Developing the aspect graph representation for use in image understanding, in 1989 DARPA Image Understanding Workshop, pp. 831-849."
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling"
+  }
 }

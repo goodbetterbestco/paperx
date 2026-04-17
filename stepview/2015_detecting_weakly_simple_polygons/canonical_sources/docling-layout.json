@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2015_detecting_weakly_simple_polygons/2015_detecting_weakly_simple_polygons.pdf",
+  "pdf_path": "stepview/2015_detecting_weakly_simple_polygons/2015_detecting_weakly_simple_polygons.pdf",
   "page_count": 25,
   "page_sizes_pt": [
     {
@@ -495,7 +495,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 284.11,
@@ -514,7 +514,7 @@
       "id": "#/texts/21",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A closed curve in the plane is weakly simple if it is the limit (in the Fréchet metric) of a sequence of simple closed curves. We describe an algorithm to determine whether a closed walk of length n in a simple plane graph is weakly simple in O ( n log n ) time, improving an earlier O ( n 3 ) -time algorithm of Cortese et al. [ Discrete Math. 2009 ] . As an immediate corollary, we obtain the first efficient algorithm to determine whether an arbitrary n -vertex polygon is weakly simple; our algorithm runs in O ( n 2 log n ) time. We also describe algorithms that detect weak simplicity in O ( n log n ) time for two interesting classes of polygons. Finally, we discuss subtle errors in several previously published definitions of weak simplicity.",
       "bbox": {
         "x0": 98.86,

@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method/2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method.pdf",
   "page_count": 28,
   "page_sizes_pt": [
     {
@@ -146,326 +146,808 @@
   ],
   "blocks": [
     {
-      "id": "#/texts/0",
-      "page": 1,
-      "order": 1,
-      "role": "front_matter",
-      "text": "ELSEVIER",
-      "bbox": {
-        "x0": 59.62,
-        "y0": 145.69,
-        "x1": 142.42,
-        "y1": 160.59,
-        "width": 82.8,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "ELSEVIER"
-      }
-    },
-    {
-      "id": "#/texts/1",
+      "id": "mathpix-p001-b0002",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
-      "text": "Abstract",
+      "role": "paragraph",
+      "text": "ELSEVIER",
       "bbox": {
-        "x0": 59.6,
-        "y0": 491.61,
-        "x1": 112.63,
-        "y1": 503.36,
-        "width": 53.03,
-        "height": 11.75
+        "x0": 60.47,
+        "y0": 144.28,
+        "x1": 143.1,
+        "y1": 159.26,
+        "width": 82.64,
+        "height": 14.98
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Abstract"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "0dde606a97264f89b5e2914156809498",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/2",
-      "page": 1,
-      "order": 3,
-      "role": "front_matter",
-      "text": "This paper proposes a computational methodology for the integration of Computer Aided Design (CAD) and the Finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account the boundary of the physical domain. The true geometry is captured by a precise numerical integration of elements cut by the boundary. Thus, an effective Point Membership Classification algorithm that determines the inside-outside state of an integration point with respect to the physical domain is a core operation in FCM. To treat also \"dirty geometries\", i.e. imprecise or flawed geometric models, a combination of a segment-triangle intersection algorithm and a flood fill algorithm being insensitive to most CAD model flaws is proposed to identify the affiliation of the integration points. The present method thus allows direct computations on geometrically and topologically flawed models. The potential and merit for practical applications of the proposed method is demonstrated by several numerical examples.",
-      "bbox": {
-        "x0": 57.96,
-        "y0": 518.18,
-        "x1": 780.01,
-        "y1": 683.8,
-        "width": 722.05,
-        "height": 165.62
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "This paper proposes a computational methodology for the integration of Computer Aided Design (CAD) and the Finite Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account the boundary of the physical domain. The true geometry is captured by a precise numerical integration of elements cut by the boundary. Thus, an effective Point Membership Classification algorithm that determines the inside-outside state of an integration point with respect to the physical domain is a core operation in FCM. To treat also \"dirty geometries\", i.e. imprecise or flawed geometric models, a combination of a segment-triangle intersection algorithm and a flood fill algorithm being insensitive to most CAD model flaws is proposed to identify the affiliation of the integration points. The present method thus allows direct computations on geometrically and topologically flawed models. The potential and merit for practical applications of the proposed method is demonstrated by several numerical examples."
-      }
-    },
-    {
-      "id": "#/texts/3",
+      "id": "mathpix-p001-b0004",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
-      "text": "© 2019 Elsevier B. V. All rights reserved.",
+      "role": "paragraph",
+      "text": "Check for",
       "bbox": {
-        "x0": 61.27,
-        "y0": 687.04,
-        "x1": 284.84,
-        "y1": 700.29,
-        "width": 223.57,
+        "x0": 174.49,
+        "y0": 92.44,
+        "x1": 208.18,
+        "y1": 101.37,
+        "width": 33.69,
+        "height": 8.93
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "18e0fbced6134f44813654c7d7253390",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0005",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "updates",
+      "bbox": {
+        "x0": 177.94,
+        "y0": 99.64,
+        "x1": 206.45,
+        "y1": 108.57,
+        "width": 28.51,
+        "height": 8.93
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "18e0fbced6134f44813654c7d7253390",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0015",
+      "page": 1,
+      "order": 15,
+      "role": "paragraph",
+      "text": "Integrating CAD and numerical analysis: 'Dirty geometry' handling",
+      "bbox": {
+        "x0": 66.8,
+        "y0": 229.53,
+        "x1": 769.65,
+        "y1": 257.17,
+        "width": 702.85,
+        "height": 27.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.85400390625,
+        "confidence_rate": 0.9977479751766108,
+        "parent_id": "587415cd27ef4bfcbc09ccc1188f96f6",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0016",
+      "page": 1,
+      "order": 16,
+      "role": "paragraph",
+      "text": "using the Finite Cell Method",
+      "bbox": {
+        "x0": 270.37,
+        "y0": 259.77,
+        "x1": 566.66,
+        "y1": 287.41,
+        "width": 296.29,
+        "height": 27.65
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "587415cd27ef4bfcbc09ccc1188f96f6",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0018",
+      "page": 1,
+      "order": 18,
+      "role": "paragraph",
+      "text": "Benjamin Wassermann \\({ }^{\\mathrm{a}, *}\\), Stefan Kollmannsberger \\({ }^{\\mathrm{a}}\\), Shuohui Yin \\({ }^{\\mathrm{a}, \\mathrm{b}}\\), László Kudela \\({ }^{\\mathrm{a}}\\),",
+      "bbox": {
+        "x0": 81.77,
+        "y0": 301.53,
+        "x1": 755.26,
+        "y1": 324.85,
+        "width": 673.48,
+        "height": 23.33
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9742018246772582,
+        "confidence_rate": 0.99982576994908,
+        "parent_id": "3b65a52feaed4f6c8908224196584816",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0019",
+      "page": 1,
+      "order": 19,
+      "role": "paragraph",
+      "text": "Ernst Rank \\({ }^{\\mathrm{a}, \\mathrm{c}}\\)",
+      "bbox": {
+        "x0": 364.82,
+        "y0": 325.72,
+        "x1": 470.78,
+        "y1": 344.44,
+        "width": 105.96,
+        "height": 18.72
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999684907868702,
+        "parent_id": "3b65a52feaed4f6c8908224196584816",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0020",
+      "page": 1,
+      "order": 20,
+      "role": "paragraph",
+      "text": "\\({ }^{\\mathrm{a}}\\) Chair for Computation in Engineering, Technical University of Munich, Arcisstr. 21, 80333 München, Germany",
+      "bbox": {
+        "x0": 138.79,
+        "y0": 357.68,
+        "x1": 698.53,
+        "y1": 372.95,
+        "width": 559.75,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9980475902557373,
+        "confidence_rate": 0.9999844896585357,
+        "parent_id": "3b65a52feaed4f6c8908224196584816",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0021",
+      "page": 1,
+      "order": 21,
+      "role": "paragraph",
+      "text": "\\({ }^{\\mathrm{b}}\\) School of Mechanical Engineering, Xiangtan University, Hunan 411105, PR China",
+      "bbox": {
+        "x0": 208.18,
+        "y0": 372.08,
+        "x1": 627.13,
+        "y1": 388.79,
+        "width": 418.95,
+        "height": 16.7
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "3b65a52feaed4f6c8908224196584816",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0022",
+      "page": 1,
+      "order": 22,
+      "role": "paragraph",
+      "text": "\\({ }^{\\mathrm{c}}\\) Institute for Advanced Study, Technical University of Munich, Lichtenbergstr. 2a, 85748 Garching, Germany",
+      "bbox": {
+        "x0": 147.71,
+        "y0": 389.65,
+        "x1": 691.34,
+        "y1": 404.91,
+        "width": 543.62,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9965834617614746,
+        "confidence_rate": 0.9999724004781891,
+        "parent_id": "3b65a52feaed4f6c8908224196584816",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0023",
+      "page": 1,
+      "order": 23,
+      "role": "paragraph",
+      "text": "Received 4 October 2018; received in revised form 10 April 2019; accepted 12 April 2019",
+      "bbox": {
+        "x0": 195.8,
+        "y0": 412.98,
+        "x1": 641.52,
+        "y1": 426.23,
+        "width": 445.73,
         "height": 13.25
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "© 2019 Elsevier B. V. All rights reserved."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990236759185791,
+        "confidence_rate": 0.9999902320377446,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/4",
+      "id": "mathpix-p001-b0024",
       "page": 1,
-      "order": 5,
-      "role": "front_matter",
+      "order": 24,
+      "role": "paragraph",
+      "text": "Available online 17 April 2019",
+      "bbox": {
+        "x0": 341.49,
+        "y0": 427.95,
+        "x1": 495.54,
+        "y1": 442.35,
+        "width": 154.05,
+        "height": 14.4
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0026",
+      "page": 1,
+      "order": 26,
+      "role": "paragraph",
+      "text": "Abstract",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 491.31,
+        "x1": 112.87,
+        "y1": 503.69,
+        "width": 54.13,
+        "height": 12.38
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0027",
+      "page": 1,
+      "order": 27,
+      "role": "paragraph",
+      "text": "This paper proposes a computational methodology for the integration of Computer Aided Design (CAD) and the Finite",
+      "bbox": {
+        "x0": 76.59,
+        "y0": 516.08,
+        "x1": 778.58,
+        "y1": 532.21,
+        "width": 701.99,
+        "height": 16.13
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0028",
+      "page": 1,
+      "order": 28,
+      "role": "paragraph",
+      "text": "Cell Method (FCM) for models with \"dirty geometries\". FCM, being a fictitious domain approach based on higher order finite",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 533.93,
+        "x1": 778.58,
+        "y1": 548.91,
+        "width": 719.84,
+        "height": 14.98
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999961543341811,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0029",
+      "page": 1,
+      "order": 29,
+      "role": "paragraph",
+      "text": "elements, embeds the physical model into a fictitious domain, which can be discretized without having to take into account",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 550.06,
+        "x1": 778.58,
+        "y1": 565.9,
+        "width": 719.84,
+        "height": 15.84
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0030",
+      "page": 1,
+      "order": 30,
+      "role": "paragraph",
+      "text": "the boundary of the physical domain. The true geometry is captured by a precise numerical integration of elements cut by the",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 566.76,
+        "x1": 778.58,
+        "y1": 582.89,
+        "width": 719.84,
+        "height": 16.13
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0031",
+      "page": 1,
+      "order": 31,
+      "role": "paragraph",
+      "text": "boundary. Thus, an effective Point Membership Classification algorithm that determines the inside-outside state of an integration",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 583.76,
+        "x1": 778.58,
+        "y1": 599.88,
+        "width": 719.84,
+        "height": 16.13
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0032",
+      "page": 1,
+      "order": 32,
+      "role": "paragraph",
+      "text": "point with respect to the physical domain is a core operation in FCM. To treat also \"dirty geometries\", i.e. imprecise or flawed",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 601.61,
+        "x1": 778.58,
+        "y1": 616.59,
+        "width": 719.84,
+        "height": 14.98
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.9990234375,
+        "confidence_rate": 0.9999926538642173,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0033",
+      "page": 1,
+      "order": 33,
+      "role": "paragraph",
+      "text": "geometric models, a combination of a segment-triangle intersection algorithm and a flood fill algorithm being insensitive to",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 617.45,
+        "x1": 778.58,
+        "y1": 634.44,
+        "width": 719.84,
+        "height": 16.99
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0034",
+      "page": 1,
+      "order": 34,
+      "role": "paragraph",
+      "text": "most CAD model flaws is proposed to identify the affiliation of the integration points. The present method thus allows direct",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 635.31,
+        "x1": 778.58,
+        "y1": 650.57,
+        "width": 719.84,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0035",
+      "page": 1,
+      "order": 35,
+      "role": "paragraph",
+      "text": "computations on geometrically and topologically flawed models. The potential and merit for practical applications of the",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 651.43,
+        "x1": 778.58,
+        "y1": 667.27,
+        "width": 719.84,
+        "height": 15.84
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0036",
+      "page": 1,
+      "order": 36,
+      "role": "paragraph",
+      "text": "proposed method is demonstrated by several numerical examples.",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 669.29,
+        "x1": 435.07,
+        "y1": 684.26,
+        "width": 376.33,
+        "height": 14.98
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "bba909adcd6342e08159c380c9e539a0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0037",
+      "page": 1,
+      "order": 37,
+      "role": "paragraph",
+      "text": "(c) 2019 Elsevier B.V. All rights reserved.",
+      "bbox": {
+        "x0": 58.74,
+        "y0": 685.13,
+        "x1": 283.91,
+        "y1": 702.12,
+        "width": 225.17,
+        "height": 16.99
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.6385166645050049,
+        "confidence_rate": 0.9912423480323339,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0038",
+      "page": 1,
+      "order": 38,
+      "role": "paragraph",
       "text": "Keywords: Computer-Aided Design; Dirty geometry; Finite Cell Method; Flood fill; Point Membership Classification; Flawed geometry",
       "bbox": {
-        "x0": 59.62,
-        "y0": 728.43,
-        "x1": 728.67,
-        "y1": 741.78,
-        "width": 669.05,
-        "height": 13.35
+        "x0": 58.74,
+        "y0": 727.75,
+        "x1": 729.63,
+        "y1": 743.01,
+        "width": 670.89,
+        "height": 15.26
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Keywords: Computer-Aided Design; Dirty geometry; Finite Cell Method; Flood fill; Point Membership Classification; Flawed geometry"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/5",
+      "id": "mathpix-p001-b0040",
       "page": 1,
-      "order": 6,
-      "role": "front_matter",
+      "order": 40,
+      "role": "paragraph",
       "text": "1. Introduction",
       "bbox": {
-        "x0": 57.96,
-        "y0": 794.65,
-        "x1": 163.95,
-        "y1": 811.21,
-        "width": 105.99,
-        "height": 16.56
+        "x0": 58.74,
+        "y0": 793.7,
+        "x1": 162.68,
+        "y1": 808.96,
+        "width": 103.95,
+        "height": 15.26
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "1. Introduction"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "466e9657d6cc4e27b348911db8b450e7",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/6",
+      "id": "mathpix-p001-b0041",
       "page": 1,
-      "order": 7,
-      "role": "front_matter",
-      "text": "Product development in the scope of Computer Aided Engineering (CAE) typically involves Computer Aided Design (CAD) and numerical analyses. The life cycle of almost every complex mechanical product starts with the creation of a CAD model which is then converted into a suitable format for downstream CAE applications such as Finite Element Analysis, Rapid Prototyping, or automated manufacturing. However, a truly smooth transition from a geometric to a computational model is still challenging. This is especially the case for numerical simulations like the Finite Element Method. Very often, complex and time-consuming model preparation and pre-processing steps",
+      "order": 41,
+      "role": "paragraph",
+      "text": "Product development in the scope of Computer Aided Engineering (CAE) typically involves Computer Aided",
       "bbox": {
-        "x0": 57.96,
-        "y0": 824.43,
-        "x1": 780.06,
-        "y1": 932.06,
-        "width": 722.1,
-        "height": 107.63
+        "x0": 76.59,
+        "y0": 823.08,
+        "x1": 778.58,
+        "y1": 840.93,
+        "width": 701.99,
+        "height": 17.86
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Product development in the scope of Computer Aided Engineering (CAE) typically involves Computer Aided Design (CAD) and numerical analyses. The life cycle of almost every complex mechanical product starts with the creation of a CAD model which is then converted into a suitable format for downstream CAE applications such as Finite Element Analysis, Rapid Prototyping, or automated manufacturing. However, a truly smooth transition from a geometric to a computational model is still challenging. This is especially the case for numerical simulations like the Finite Element Method. Very often, complex and time-consuming model preparation and pre-processing steps"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/7",
+      "id": "mathpix-p001-b0042",
       "page": 1,
-      "order": 8,
-      "role": "footnote",
-      "text": "* Corresponding author:",
+      "order": 42,
+      "role": "paragraph",
+      "text": "Design (CAD) and numerical analyses. The life cycle of almost every complex mechanical product starts with the",
       "bbox": {
-        "x0": 69.16,
-        "y0": 950.07,
-        "x1": 200.67,
-        "y1": 967.54,
-        "width": 131.51,
-        "height": 17.47
+        "x0": 58.74,
+        "y0": 841.79,
+        "x1": 778.58,
+        "y1": 858.79,
+        "width": 719.84,
+        "height": 16.99
       },
       "meta": {
-        "docling_label": "footnote",
-        "docling_orig": "* Corresponding author:"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999957530481652,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/8",
+      "id": "mathpix-p001-b0043",
       "page": 1,
-      "order": 9,
-      "role": "footnote",
-      "text": "E-mail addresses: benjamin.wassermann@tum.de (B. Wassermann), stefan.kollmannsberger@tum.de (S. Kollmannsberger), yinsh2016@163.com (S. Yin), laszlo.kudela@tum.de (L. Kudela), ernst.rank@tum.de (E. Rank).",
+      "order": 43,
+      "role": "paragraph",
+      "text": "creation of a CAD model which is then converted into a suitable format for downstream CAE applications such as",
       "bbox": {
-        "x0": 57.96,
-        "y0": 966.72,
-        "x1": 713.76,
-        "y1": 995.04,
-        "width": 655.8,
-        "height": 28.32
+        "x0": 58.74,
+        "y0": 861.38,
+        "x1": 778.58,
+        "y1": 878.37,
+        "width": 719.84,
+        "height": 16.99
       },
       "meta": {
-        "docling_label": "footnote",
-        "docling_orig": "E-mail addresses: benjamin.wassermann@tum.de (B. Wassermann), stefan.kollmannsberger@tum.de (S. Kollmannsberger), yinsh2016@163.com (S. Yin), laszlo.kudela@tum.de (L. Kudela), ernst.rank@tum.de (E. Rank)."
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999957530481652,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/9",
+      "id": "mathpix-p001-b0044",
       "page": 1,
-      "order": 10,
-      "role": "front_matter",
-      "text": "Cneck Tol",
+      "order": 44,
+      "role": "paragraph",
+      "text": "Finite Element Analysis, Rapid Prototyping, or automated manufacturing. However, a truly smooth transition from",
       "bbox": {
-        "x0": 175.54,
-        "y0": 95.97,
-        "x1": 205.35,
-        "y1": 99.33,
-        "width": 29.81,
-        "height": 3.36
+        "x0": 58.74,
+        "y0": 879.23,
+        "x1": 778.58,
+        "y1": 895.94,
+        "width": 719.84,
+        "height": 16.7
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Cneck Tol"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/10",
+      "id": "mathpix-p001-b0045",
       "page": 1,
-      "order": 11,
-      "role": "front_matter",
-      "text": "Available online at www.sciencedirect.com",
+      "order": 45,
+      "role": "paragraph",
+      "text": "a geometric to a computational model is still challenging. This is especially the case for numerical simulations like",
       "bbox": {
-        "x0": 264.97,
-        "y0": 67.88,
-        "x1": 524.97,
-        "y1": 79.47,
-        "width": 260.0,
-        "height": 11.59
+        "x0": 58.74,
+        "y0": 898.82,
+        "x1": 778.58,
+        "y1": 915.52,
+        "width": 719.84,
+        "height": 16.7
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Available online at www.sciencedirect.com"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/11",
+      "id": "mathpix-p001-b0046",
       "page": 1,
-      "order": 12,
-      "role": "front_matter",
-      "text": "ScienceDirect",
+      "order": 46,
+      "role": "paragraph",
+      "text": "the Finite Element Method. Very often, complex and time-consuming model preparation and pre-processing steps",
       "bbox": {
-        "x0": 321.18,
-        "y0": 82.17,
-        "x1": 468.77,
-        "y1": 108.21,
-        "width": 147.59,
-        "height": 26.04
+        "x0": 58.74,
+        "y0": 916.67,
+        "x1": 778.58,
+        "y1": 933.38,
+        "width": 719.84,
+        "height": 16.7
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "ScienceDirect"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/12",
+      "id": "mathpix-p001-b0048",
       "page": 1,
-      "order": 13,
-      "role": "front_matter",
-      "text": "Comput. Methods Appl. Mech. Engrg. 351 (2019) 808-835",
+      "order": 48,
+      "role": "paragraph",
+      "text": "* Corresponding author.",
       "bbox": {
-        "x0": 240.13,
-        "y0": 148.96,
-        "x1": 549.81,
-        "y1": 162.29,
-        "width": 309.68,
-        "height": 13.33
+        "x0": 69.39,
+        "y0": 951.23,
+        "x1": 200.12,
+        "y1": 965.34,
+        "width": 130.72,
+        "height": 14.11
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Comput. Methods Appl. Mech. Engrg. 351 (2019) 808-835"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "6b0197a9bb9b47b6ac346c78c3585c6d",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/13",
+      "id": "mathpix-p001-b0049",
       "page": 1,
-      "order": 14,
-      "role": "front_matter",
-      "text": "Computer methods in applied mechanics and engineering www.elsevier.com locate cma",
+      "order": 49,
+      "role": "paragraph",
+      "text": "E-mail addresses: benjamin.wassermann@tum.de (B. Wassermann), stefan.kollmannsberger@tum.de (S. Kollmannsberger),",
       "bbox": {
-        "x0": 645.86,
-        "y0": 85.97,
-        "x1": 778.35,
-        "y1": 147.95,
-        "width": 132.49,
-        "height": 61.98
+        "x0": 81.77,
+        "y0": 966.49,
+        "x1": 712.64,
+        "y1": 981.47,
+        "width": 630.87,
+        "height": 14.98
       },
       "meta": {
-        "docling_label": "text",
-        "docling_orig": "Computer methods in applied mechanics and engineering www.elsevier.com locate cma"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "6b0197a9bb9b47b6ac346c78c3585c6d",
+        "children_ids": null
       }
     },
     {
-      "id": "#/texts/14",
+      "id": "mathpix-p001-b0050",
       "page": 1,
-      "order": 15,
-      "role": "front_matter",
-      "text": "Integrating CAD and numerical analysis: 'Dirty geometry' handling using the Finite Cell Method",
+      "order": 50,
+      "role": "paragraph",
+      "text": "yinsh2016@163.com (S. Yin), laszlo.kudela@tum.de (L. Kudela), ernst.rank@tum.de (E. Rank).",
       "bbox": {
-        "x0": 66.24,
-        "y0": 226.81,
-        "x1": 771.73,
-        "y1": 288.06,
-        "width": 705.49,
-        "height": 61.25
+        "x0": 58.74,
+        "y0": 982.33,
+        "x1": 552.55,
+        "y1": 995.87,
+        "width": 493.81,
+        "height": 13.54
       },
       "meta": {
-        "docling_label": "section_header",
-        "docling_orig": "Integrating CAD and numerical analysis: 'Dirty geometry' handling using the Finite Cell Method"
-      }
-    },
-    {
-      "id": "#/texts/15",
-      "page": 1,
-      "order": 16,
-      "role": "front_matter",
-      "text": "Benjamin Wassermanna,* , Stefan Kollmannsberger\", Shuohui Yin\",' ', László Kudela\", Ernst Ranka,c a Chair for Computation in Engineering, Technical University of Munich, Arcisstr: 21, 80333 München, Germany b School of Mechanical Engineering, Xiangtan University, Hunan 411105, PR China \" Institute for Advanced Study, Technical University of Munich, Lichtenbergstr: 2a, 85748 Garching, Germany",
-      "bbox": {
-        "x0": 82.45,
-        "y0": 301.05,
-        "x1": 756.82,
-        "y1": 344.35,
-        "width": 674.37,
-        "height": 43.3
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Benjamin Wassermanna,* , Stefan Kollmannsberger\", Shuohui Yin\",' ', László Kudela\", Ernst Ranka,c a Chair for Computation in Engineering, Technical University of Munich, Arcisstr: 21, 80333 München, Germany b School of Mechanical Engineering, Xiangtan University, Hunan 411105, PR China \" Institute for Advanced Study, Technical University of Munich, Lichtenbergstr: 2a, 85748 Garching, Germany"
-      }
-    },
-    {
-      "id": "#/texts/16",
-      "page": 1,
-      "order": 17,
-      "role": "front_matter",
-      "text": "Received 4 October 2018; received in revised form 10 April 2019; accepted 12 April 2019 Available online 17 April 2019",
-      "bbox": {
-        "x0": 197.07,
-        "y0": 413.88,
-        "x1": 642.55,
-        "y1": 442.02,
-        "width": 445.48,
-        "height": 28.14
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Received 4 October 2018; received in revised form 10 April 2019; accepted 12 April 2019 Available online 17 April 2019"
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.99951171875,
+        "confidence_rate": 0.9999948589553403,
+        "parent_id": "6b0197a9bb9b47b6ac346c78c3585c6d",
+        "children_ids": null
       }
     },
     {
@@ -668,9 +1150,9 @@
         "x0": 51.34,
         "y0": 283.09,
         "x1": 773.38,
-        "y1": 552.94,
+        "y1": 554.6,
         "width": 722.04,
-        "height": 269.85
+        "height": 271.51
       },
       "meta": {
         "docling_label": "text",
@@ -739,7 +1221,7 @@
       "page": 4,
       "order": 6,
       "role": "paragraph",
-      "text": "Several of these flaw operators allow introducing a control parameter e, indicating a geometric size of the respective flaws. Applying a sequence of flaw operators maps a flawless model to exactly one resulting flawed model. It is obvious that, given some flawed model, it is not possible to determine on which flawless model it could be based meaning that a class of equivalent flawless models can be associated to one 'dirty' model. Our conceptual approach therefore only assumes the existence of a flawless model that is expected to be 'close' to the 'dirty' one. This is used as the geometric basis for analysis. Further, it is to be noted that no explicit knowledge of this flawless model is required.",
+      "text": "Several of these flaw operators allow introducing a control parameter &, indicating a geometric size of the respective flaws. Applying a sequence of flaw operators maps a flawless model to exactly one resulting flawed model. It is obvious that, given some flawed model, it is not possible to determine on which flawless model it could be based meaning that a class of equivalent flawless models can be associated to one 'dirty' model. Our conceptual approach therefore only assumes the existence of a flawless model that is expected to be 'close' to the 'dirty' one. This is used as the geometric basis for analysis. Further, it is to be noted that no explicit knowledge of this flawless model is required.",
       "bbox": {
         "x0": 52.99,
         "y0": 807.76,
@@ -750,7 +1232,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Several of these flaw operators allow introducing a control parameter e, indicating a geometric size of the respective flaws. Applying a sequence of flaw operators maps a flawless model to exactly one resulting flawed model. It is obvious that, given some flawed model, it is not possible to determine on which flawless model it could be based meaning that a class of equivalent flawless models can be associated to one 'dirty' model. Our conceptual approach therefore only assumes the existence of a flawless model that is expected to be 'close' to the 'dirty' one. This is used as the geometric basis for analysis. Further, it is to be noted that no explicit knowledge of this flawless model is required."
+        "docling_orig": "Several of these flaw operators allow introducing a control parameter &, indicating a geometric size of the respective flaws. Applying a sequence of flaw operators maps a flawless model to exactly one resulting flawed model. It is obvious that, given some flawed model, it is not possible to determine on which flawless model it could be based meaning that a class of equivalent flawless models can be associated to one 'dirty' model. Our conceptual approach therefore only assumes the existence of a flawless model that is expected to be 'close' to the 'dirty' one. This is used as the geometric basis for analysis. Further, it is to be noted that no explicit knowledge of this flawless model is required."
       }
     },
     {
@@ -910,6 +1392,25 @@
       "page": 5,
       "order": 7,
       "role": "paragraph",
+      "text": "V5",
+      "bbox": {
+        "x0": 531.6,
+        "y0": 208.6,
+        "x1": 546.5,
+        "y1": 225.15,
+        "width": 14.9,
+        "height": 16.55
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "V5"
+      }
+    },
+    {
+      "id": "#/texts/52",
+      "page": 5,
+      "order": 8,
+      "role": "paragraph",
       "text": "e6",
       "bbox": {
         "x0": 458.73,
@@ -925,9 +1426,9 @@
       }
     },
     {
-      "id": "#/texts/52",
+      "id": "#/texts/53",
       "page": 5,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "with n being the number of volumetric bodies. For simplicity of presentation, we assume that a B-Rep model consists only of one domain S = B. A B-Rep body consists of topology T and geometry G [6]:",
       "bbox": {
@@ -944,9 +1445,9 @@
       }
     },
     {
-      "id": "#/texts/54",
+      "id": "#/texts/55",
       "page": 5,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "The topology T describes the relations or logical location of all entities (2.1.1), whereas the geometry G provides the physical location of points, consequently defining the actual shape of the model (2.1.2).",
       "bbox": {
@@ -963,9 +1464,9 @@
       }
     },
     {
-      "id": "#/texts/55",
+      "id": "#/texts/56",
       "page": 5,
-      "order": 10,
+      "order": 11,
       "role": "heading",
       "text": "2.1.1. Topology",
       "bbox": {
@@ -982,9 +1483,9 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/57",
       "page": 5,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "The topology T (t, rint, pext) provides the logical internal rint = (rin) and external relations rext = (rex) between the topological entities t = (ti), i.e. vertices vi, edges ej, and faces fk. Thereby, each topological entity ti has its own local, internal relation rint ', defining how and from which underlying topological entities it is constructed. Topological entities are typically represented by sets:",
       "bbox": {
@@ -1001,11 +1502,11 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/61",
       "page": 5,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
-      "text": "with n,m, o being the number of vertices, edges, and faces, respectively. The ordered pair of vertices (Va, Up) contains the bounding vertices of an edge. A face fi is described by an ordered pair containing: (i) the boundary edges, denoted by an ordered n-tuple (ex), with n being the number of boundary edges, and (ii) the respective normal vector n;. In some cases, the normal vector is provided implicitly by the order of the boundary edges (ex). The external relations rext describe the global adjacency relations between the particular entities (e.g., which faces are neighbors to each other). There are various possible methods to represent the internal and external adjacency relations, or a combination of both, such as the winged edge model or the double connected edge list [6]. Thereby, the adjacency relations can be represented by graphs. Fig. 2 shows an exemplary detail of a topology consisting of three triangles. The pure external relations can, for example, be represented by the adjacency matrix rext (see Eq. (6)). The adjacency matrices for faces and edges rFE (see Eg. (7)) and for edges and vertices rve (see Eg. (8)) represent a combination of internal and external relations.?",
+      "text": "with n,m, o being the number of vertices, edges, and faces, respectively. The ordered pair of vertices (Va, Up) contains the bounding vertices of an edge. A face fi is described by an ordered pair containing: (i) the boundary edges, denoted by an ordered n-tuple (ex), with n being the number of boundary edges, and (ii) the respective normal vector n;. In some cases, the normal vector is provided implicitly by the order of the boundary edges (ex). The external relations rext describe the global adjacency relations between the particular entities (e.g., which faces are neighbors to each other). There are various possible methods to represent the internal and external adjacency relations, or a combination of both, such as the winged edge model or the double connected edge list [6]. Thereby, the adjacency relations can be represented by graphs. Fig. 2 shows an exemplary detail of a topology consisting of three triangles. The pure external relations can, for example, be represented by the adjacency matrix rext (see Eq. (6)). The adjacency matrices for faces and edges rFE (see Eg. (7)) and for edges and vertices rve (see Eg. (8) represent a combination of internal and external relations.?",
       "bbox": {
         "x0": 56.31,
         "y0": 637.38,
@@ -1016,13 +1517,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "with n,m, o being the number of vertices, edges, and faces, respectively. The ordered pair of vertices (Va, Up) contains the bounding vertices of an edge. A face fi is described by an ordered pair containing: (i) the boundary edges, denoted by an ordered n-tuple (ex), with n being the number of boundary edges, and (ii) the respective normal vector n;. In some cases, the normal vector is provided implicitly by the order of the boundary edges (ex). The external relations rext describe the global adjacency relations between the particular entities (e.g., which faces are neighbors to each other). There are various possible methods to represent the internal and external adjacency relations, or a combination of both, such as the winged edge model or the double connected edge list [6]. Thereby, the adjacency relations can be represented by graphs. Fig. 2 shows an exemplary detail of a topology consisting of three triangles. The pure external relations can, for example, be represented by the adjacency matrix rext (see Eq. (6)). The adjacency matrices for faces and edges rFE (see Eg. (7)) and for edges and vertices rve (see Eg. (8)) represent a combination of internal and external relations.?"
+        "docling_orig": "with n,m, o being the number of vertices, edges, and faces, respectively. The ordered pair of vertices (Va, Up) contains the bounding vertices of an edge. A face fi is described by an ordered pair containing: (i) the boundary edges, denoted by an ordered n-tuple (ex), with n being the number of boundary edges, and (ii) the respective normal vector n;. In some cases, the normal vector is provided implicitly by the order of the boundary edges (ex). The external relations rext describe the global adjacency relations between the particular entities (e.g., which faces are neighbors to each other). There are various possible methods to represent the internal and external adjacency relations, or a combination of both, such as the winged edge model or the double connected edge list [6]. Thereby, the adjacency relations can be represented by graphs. Fig. 2 shows an exemplary detail of a topology consisting of three triangles. The pure external relations can, for example, be represented by the adjacency matrix rext (see Eq. (6)). The adjacency matrices for faces and edges rFE (see Eg. (7)) and for edges and vertices rve (see Eg. (8) represent a combination of internal and external relations.?"
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/62",
       "page": 5,
-      "order": 13,
+      "order": 14,
       "role": "heading",
       "text": "2.1.2. Geometry",
       "bbox": {
@@ -1039,17 +1540,17 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/63",
       "page": 5,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "The geometry G({gi)) contains the geometric entities gi, i.e. the points Pi, curves Cj(5), and surfaces Sk(5, n), which describe the actual physical location of the boundary and, thus, the shape of the geometry. Curves and surfaces are often expressed in parametric representation:",
       "bbox": {
         "x0": 59.62,
         "y0": 869.08,
-        "x1": 778.35,
+        "x1": 780.01,
         "y1": 920.47,
-        "width": 718.73,
+        "width": 720.39,
         "height": 51.39
       },
       "meta": {
@@ -1058,9 +1559,9 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/67",
       "page": 5,
-      "order": 15,
+      "order": 16,
       "role": "footnote",
       "text": "2 Please note: An entry 1 in the adjacency matrix shows which entity (row) is connected to which other entity (column). An entry 0 indicates that no direct adjacency exists.",
       "bbox": {
@@ -1077,7 +1578,7 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/70",
       "page": 6,
       "order": 1,
       "role": "caption",
@@ -1096,7 +1597,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/71",
       "page": 6,
       "order": 2,
       "role": "paragraph",
@@ -1115,7 +1616,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/72",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -1123,9 +1624,9 @@
       "bbox": {
         "x0": 294.78,
         "y0": 158.93,
-        "x1": 311.34,
+        "x1": 313.0,
         "y1": 172.17,
-        "width": 16.56,
+        "width": 18.22,
         "height": 13.24
       },
       "meta": {
@@ -1134,7 +1635,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/73",
       "page": 6,
       "order": 4,
       "role": "paragraph",
@@ -1153,7 +1654,7 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/74",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -1172,7 +1673,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/75",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -1191,7 +1692,7 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/76",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -1210,7 +1711,7 @@
       }
     },
     {
-      "id": "#/texts/76",
+      "id": "#/texts/77",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -1229,7 +1730,7 @@
       }
     },
     {
-      "id": "#/texts/77",
+      "id": "#/texts/78",
       "page": 6,
       "order": 9,
       "role": "paragraph",
@@ -1248,7 +1749,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/79",
       "page": 6,
       "order": 10,
       "role": "paragraph",
@@ -1267,7 +1768,7 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 6,
       "order": 11,
       "role": "paragraph",
@@ -1286,7 +1787,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 6,
       "order": 12,
       "role": "paragraph",
@@ -1305,7 +1806,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 6,
       "order": 13,
       "role": "paragraph",
@@ -1324,7 +1825,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 6,
       "order": 14,
       "role": "paragraph",
@@ -1343,7 +1844,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 6,
       "order": 15,
       "role": "heading",
@@ -1362,7 +1863,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 6,
       "order": 16,
       "role": "paragraph",
@@ -1381,7 +1882,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/91",
       "page": 6,
       "order": 17,
       "role": "paragraph",
@@ -1400,7 +1901,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 6,
       "order": 18,
       "role": "heading",
@@ -1419,7 +1920,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 6,
       "order": 19,
       "role": "paragraph",
@@ -1438,7 +1939,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 6,
       "order": 20,
       "role": "heading",
@@ -1457,7 +1958,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 6,
       "order": 21,
       "role": "list_item",
@@ -1476,7 +1977,7 @@
       }
     },
     {
-      "id": "#/texts/95",
+      "id": "#/texts/96",
       "page": 6,
       "order": 22,
       "role": "list_item",
@@ -1495,7 +1996,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/97",
       "page": 6,
       "order": 23,
       "role": "list_item",
@@ -1514,7 +2015,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 7,
       "order": 1,
       "role": "caption",
@@ -1533,7 +2034,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 7,
       "order": 2,
       "role": "paragraph",
@@ -1552,7 +2053,7 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 7,
       "order": 3,
       "role": "caption",
@@ -1571,7 +2072,7 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 7,
       "order": 4,
       "role": "list_item",
@@ -1590,18 +2091,18 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 7,
       "order": 5,
       "role": "heading",
       "text": "Geometry:",
       "bbox": {
-        "x0": 59.57,
-        "y0": 635.51,
-        "x1": 127.56,
-        "y1": 650.83,
-        "width": 67.99,
-        "height": 15.32
+        "x0": 59.62,
+        "y0": 635.72,
+        "x1": 127.52,
+        "y1": 650.62,
+        "width": 67.9,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "section_header",
@@ -1609,7 +2110,7 @@
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 7,
       "order": 6,
       "role": "list_item",
@@ -1628,7 +2129,7 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 7,
       "order": 7,
       "role": "list_item",
@@ -1647,7 +2148,7 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 7,
       "order": 8,
       "role": "list_item",
@@ -1656,9 +2157,9 @@
         "x0": 82.8,
         "y0": 700.13,
         "x1": 780.01,
-        "y1": 734.42,
+        "y1": 734.22,
         "width": 697.21,
-        "height": 34.29
+        "height": 34.09
       },
       "meta": {
         "docling_label": "list_item",
@@ -1666,7 +2167,7 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/108",
       "page": 7,
       "order": 9,
       "role": "list_item",
@@ -1685,7 +2186,7 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 7,
       "order": 10,
       "role": "heading",
@@ -1704,7 +2205,7 @@
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/110",
       "page": 7,
       "order": 11,
       "role": "paragraph",
@@ -1723,7 +2224,7 @@
       }
     },
     {
-      "id": "#/texts/110",
+      "id": "#/texts/111",
       "page": 7,
       "order": 12,
       "role": "heading",
@@ -1742,7 +2243,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/112",
       "page": 7,
       "order": 13,
       "role": "paragraph",
@@ -1761,7 +2262,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/115",
       "page": 8,
       "order": 1,
       "role": "caption",
@@ -1780,9 +2281,28 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/116",
       "page": 8,
       "order": 2,
+      "role": "paragraph",
+      "text": "e1",
+      "bbox": {
+        "x0": 412.36,
+        "y0": 117.54,
+        "x1": 427.26,
+        "y1": 129.13,
+        "width": 14.9,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e1"
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 8,
+      "order": 3,
       "role": "paragraph",
       "text": "V2",
       "bbox": {
@@ -1799,9 +2319,9 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/118",
       "page": 8,
-      "order": 3,
+      "order": 4,
       "role": "paragraph",
       "text": "e2",
       "bbox": {
@@ -1818,17 +2338,17 @@
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/119",
       "page": 8,
-      "order": 4,
+      "order": 5,
       "role": "paragraph",
       "text": "f2.",
       "bbox": {
-        "x0": 642.55,
+        "x0": 640.9,
         "y0": 173.83,
         "x1": 659.11,
         "y1": 190.39,
-        "width": 16.56,
+        "width": 18.21,
         "height": 16.56
       },
       "meta": {
@@ -1837,9 +2357,9 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/120",
       "page": 8,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "(a) Double vertices",
       "bbox": {
@@ -1856,9 +2376,9 @@
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/121",
       "page": 8,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "(b) Double edges",
       "bbox": {
@@ -1875,9 +2395,9 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/122",
       "page": 8,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "(c) Double faces",
       "bbox": {
@@ -1894,9 +2414,9 @@
       }
     },
     {
-      "id": "#/texts/121",
+      "id": "#/texts/123",
       "page": 8,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "fitF",
       "bbox": {
@@ -1913,9 +2433,9 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/124",
       "page": 8,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "(d) Wrong orientations",
       "bbox": {
@@ -1932,9 +2452,9 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/125",
       "page": 8,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "(e) Missing faces",
       "bbox": {
@@ -1951,9 +2471,9 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/126",
       "page": 8,
-      "order": 11,
+      "order": 12,
       "role": "caption",
       "text": "Fig. 7. Geometrical flaws.",
       "bbox": {
@@ -1970,9 +2490,9 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/127",
       "page": 8,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "SA",
       "bbox": {
@@ -1989,9 +2509,9 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/128",
       "page": 8,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "S",
       "bbox": {
@@ -2008,9 +2528,9 @@
       }
     },
     {
-      "id": "#/texts/127",
+      "id": "#/texts/129",
       "page": 8,
-      "order": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "CA# CB",
       "bbox": {
@@ -2027,17 +2547,17 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/130",
       "page": 8,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "SB",
       "bbox": {
-        "x0": 672.36,
+        "x0": 674.02,
         "y0": 660.55,
         "x1": 693.89,
         "y1": 677.11,
-        "width": 21.53,
+        "width": 19.87,
         "height": 16.56
       },
       "meta": {
@@ -2046,9 +2566,9 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/131",
       "page": 8,
-      "order": 16,
+      "order": 17,
       "role": "list_item",
       "text": "(a) Curves at common edge do not coincide",
       "bbox": {
@@ -2065,18 +2585,18 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/132",
       "page": 8,
-      "order": 17,
+      "order": 18,
       "role": "paragraph",
       "text": "(b) Surface and boundary curve self-",
       "bbox": {
         "x0": 311.34,
         "y0": 720.12,
         "x1": 515.04,
-        "y1": 733.45,
+        "y1": 735.12,
         "width": 203.7,
-        "height": 13.33
+        "height": 15.0
       },
       "meta": {
         "docling_label": "text",
@@ -2084,9 +2604,9 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/133",
       "page": 8,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "intersect",
       "bbox": {
@@ -2103,17 +2623,17 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/134",
       "page": 8,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "(c) Surface intersects with another",
       "bbox": {
-        "x0": 520.0,
+        "x0": 521.66,
         "y0": 720.12,
         "x1": 733.64,
         "y1": 731.79,
-        "width": 213.64,
+        "width": 211.98,
         "height": 11.67
       },
       "meta": {
@@ -2122,9 +2642,9 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/135",
       "page": 8,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "surface",
       "bbox": {
@@ -2141,9 +2661,9 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/136",
       "page": 8,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "To provide an easily understandable formulation of the operators, we consider an object-oriented B-Rep data structure. Thereby, the implementation must allow a distinction between internal and external adjacency relations. Fig. 9 provides a UML diagram of a possible hierarchical implementation. For an introduction to the notation of the UML (Unified Modeling Language) see, e.g., [50]. Here, the external adjacency relations rext are realized at the faces, where the adjacent faces are stored in the field: adjacentFaces. All other external adjacency relations (e.g., which edges are adjacent) can be derived from this and from the respective internal relations rint",
       "bbox": {
@@ -2160,9 +2680,9 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/137",
       "page": 8,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "Let w'i be the B-Rep sub-part, or segment, which corresponds to a topological entity ti, e.g., a face, an edge, or a vertex. The segment wi consists of all information that is needed to visualize ti. Hence, it must contain ti and, recursively, all underlying sub-topologies and geometries that are related by respective internal adjacency relations rint (see Fig. 10).",
       "bbox": {
@@ -2179,7 +2699,7 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/141",
       "page": 9,
       "order": 1,
       "role": "caption",
@@ -2198,7 +2718,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/142",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -2217,7 +2737,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/143",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -2236,7 +2756,7 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/144",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -2255,18 +2775,18 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/145",
       "page": 9,
       "order": 5,
       "role": "paragraph",
       "text": "(d) Artifacts",
       "bbox": {
-        "x0": 271.59,
-        "y0": 448.54,
-        "x1": 344.46,
-        "y1": 461.89,
-        "width": 72.87,
-        "height": 13.35
+        "x0": 271.54,
+        "y0": 448.36,
+        "x1": 344.52,
+        "y1": 463.83,
+        "width": 72.98,
+        "height": 15.47
       },
       "meta": {
         "docling_label": "text",
@@ -2274,7 +2794,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/146",
       "page": 9,
       "order": 6,
       "role": "paragraph",
@@ -2293,7 +2813,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/147",
       "page": 9,
       "order": 7,
       "role": "caption",
@@ -2312,7 +2832,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/148",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -2331,7 +2851,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/149",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -2350,18 +2870,18 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/150",
       "page": 9,
       "order": 10,
       "role": "paragraph",
       "text": "id: int",
       "bbox": {
-        "x0": 294.73,
-        "y0": 551.13,
-        "x1": 341.2,
-        "y1": 566.35,
-        "width": 46.47,
-        "height": 15.22
+        "x0": 294.76,
+        "y0": 551.22,
+        "x1": 341.17,
+        "y1": 566.25,
+        "width": 46.41,
+        "height": 15.03
       },
       "meta": {
         "docling_label": "text",
@@ -2369,7 +2889,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/151",
       "page": 9,
       "order": 11,
       "role": "paragraph",
@@ -2388,7 +2908,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/152",
       "page": 9,
       "order": 12,
       "role": "paragraph",
@@ -2407,7 +2927,7 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/153",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -2426,18 +2946,18 @@
       }
     },
     {
-      "id": "#/texts/152",
+      "id": "#/texts/154",
       "page": 9,
       "order": 14,
       "role": "paragraph",
       "text": "geometry: Surface",
       "bbox": {
-        "x0": 296.08,
-        "y0": 622.64,
-        "x1": 415.99,
-        "y1": 641.22,
-        "width": 119.91,
-        "height": 18.58
+        "x0": 294.37,
+        "y0": 622.59,
+        "x1": 416.05,
+        "y1": 642.93,
+        "width": 121.68,
+        "height": 20.34
       },
       "meta": {
         "docling_label": "text",
@@ -2445,7 +2965,7 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/155",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -2464,28 +2984,9 @@
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/156",
       "page": 9,
       "order": 16,
-      "role": "paragraph",
-      "text": "1",
-      "bbox": {
-        "x0": 528.28,
-        "y0": 592.68,
-        "x1": 536.56,
-        "y1": 604.27,
-        "width": 8.28,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "1"
-      }
-    },
-    {
-      "id": "#/texts/155",
-      "page": 9,
-      "order": 17,
       "role": "paragraph",
       "text": "0.*",
       "bbox": {
@@ -2502,9 +3003,9 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/157",
       "page": 9,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "Edge",
       "bbox": {
@@ -2521,9 +3022,9 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/158",
       "page": 9,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "0.*",
       "bbox": {
@@ -2540,9 +3041,9 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/159",
       "page": 9,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "id: int",
       "bbox": {
@@ -2559,9 +3060,9 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/160",
       "page": 9,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "vertice : list< Vertex>",
       "bbox": {
@@ -2578,9 +3079,9 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/161",
       "page": 9,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "geometry: Curve",
       "bbox": {
@@ -2597,9 +3098,9 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/162",
       "page": 9,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "Curve",
       "bbox": {
@@ -2616,9 +3117,9 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/163",
       "page": 9,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "2",
       "bbox": {
@@ -2635,9 +3136,9 @@
       }
     },
     {
-      "id": "#/texts/163",
+      "id": "#/texts/164",
       "page": 9,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "2",
       "bbox": {
@@ -2654,9 +3155,9 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/165",
       "page": 9,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "Vertex",
       "bbox": {
@@ -2673,9 +3174,9 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/166",
       "page": 9,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "id: int",
       "bbox": {
@@ -2692,18 +3193,18 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/167",
       "page": 9,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "geometry: Point",
       "bbox": {
-        "x0": 332.47,
-        "y0": 924.12,
-        "x1": 440.75,
-        "y1": 941.79,
-        "width": 108.28,
-        "height": 17.67
+        "x0": 332.48,
+        "y0": 924.22,
+        "x1": 440.74,
+        "y1": 941.69,
+        "width": 108.26,
+        "height": 17.47
       },
       "meta": {
         "docling_label": "text",
@@ -2711,9 +3212,9 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/168",
       "page": 9,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "Point",
       "bbox": {
@@ -2730,9 +3231,9 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/169",
       "page": 9,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "1",
       "bbox": {
@@ -2749,7 +3250,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/172",
       "page": 10,
       "order": 1,
       "role": "caption",
@@ -2768,7 +3269,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/173",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -2787,7 +3288,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/174",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -2806,7 +3307,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/175",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -2825,28 +3326,9 @@
       }
     },
     {
-      "id": "#/texts/175",
-      "page": 10,
-      "order": 5,
-      "role": "paragraph",
-      "text": "S1",
-      "bbox": {
-        "x0": 515.04,
-        "y0": 192.04,
-        "x1": 533.25,
-        "y1": 210.25,
-        "width": 18.21,
-        "height": 18.21
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "S1"
-      }
-    },
-    {
       "id": "#/texts/176",
       "page": 10,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "e4",
       "bbox": {
@@ -2865,7 +3347,7 @@
     {
       "id": "#/texts/177",
       "page": 10,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "e2",
       "bbox": {
@@ -2884,16 +3366,16 @@
     {
       "id": "#/texts/178",
       "page": 10,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "P",
       "bbox": {
-        "x0": 369.3,
+        "x0": 367.65,
         "y0": 205.28,
         "x1": 379.24,
-        "y1": 218.53,
-        "width": 9.94,
-        "height": 13.25
+        "y1": 220.18,
+        "width": 11.59,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -2903,16 +3385,16 @@
     {
       "id": "#/texts/179",
       "page": 10,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "P3",
       "bbox": {
         "x0": 662.43,
         "y0": 233.43,
         "x1": 682.3,
-        "y1": 251.64,
+        "y1": 249.98,
         "width": 19.87,
-        "height": 18.21
+        "height": 16.55
       },
       "meta": {
         "docling_label": "text",
@@ -2922,7 +3404,7 @@
     {
       "id": "#/texts/180",
       "page": 10,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "V1",
       "bbox": {
@@ -2941,15 +3423,15 @@
     {
       "id": "#/texts/181",
       "page": 10,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "e1",
       "bbox": {
-        "x0": 228.54,
+        "x0": 230.19,
         "y0": 293.03,
         "x1": 246.75,
         "y1": 307.93,
-        "width": 18.21,
+        "width": 16.56,
         "height": 14.9
       },
       "meta": {
@@ -2960,7 +3442,7 @@
     {
       "id": "#/texts/182",
       "page": 10,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "Tfi",
       "bbox": {
@@ -2979,7 +3461,7 @@
     {
       "id": "#/texts/183",
       "page": 10,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "V2",
       "bbox": {
@@ -2998,16 +3480,16 @@
     {
       "id": "#/texts/184",
       "page": 10,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "Gfi",
       "bbox": {
         "x0": 506.76,
         "y0": 322.83,
         "x1": 529.94,
-        "y1": 342.69,
+        "y1": 341.04,
         "width": 23.18,
-        "height": 19.86
+        "height": 18.21
       },
       "meta": {
         "docling_label": "text",
@@ -3017,7 +3499,7 @@
     {
       "id": "#/texts/185",
       "page": 10,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": ") with Ti T, pint and G'i(y) being the respective topology and geometry, where = (ti) and y = (vil denote the sets of those topological and geometrical entities which are recursively related by the internal relations pint = (pi\"'). Consequently, three different segments are possible: (1) vertex segments, (b) edge segments, and (c) face segments. As topological entities {Ti), a face segment, for example, contains the face itself and all associated edges and vertices. As geometric entities (j), it holds the corresponding surface with its boundary curves and corner points. Additionally, all internal relations (pin) are contained, i.e. the relations among face, boundary edges, and vertices, as well as the relations to the geometric entities. Not contained are external adjacency relations, i.e. those to neighboring faces or edges.",
       "bbox": {
@@ -3036,7 +3518,7 @@
     {
       "id": "#/texts/186",
       "page": 10,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "In the following, й denotes the object a after the transformation and let dist (a, b) = inf{ |la, bll) be the minimum Euclidean distance between two objects, e.g., the distance between the closest points on two different surfaces.",
       "bbox": {
@@ -3055,7 +3537,7 @@
     {
       "id": "#/texts/187",
       "page": 10,
-      "order": 17,
+      "order": 16,
       "role": "list_item",
       "text": "Let Oselect be an extraction operator, which selects for a topological entity t; the corresponding segment coi from the body B.",
       "bbox": {
@@ -3074,7 +3556,7 @@
     {
       "id": "#/texts/189",
       "page": 10,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "Note that the external relations are not extracted. Hence, the segment forgets about its logical location in the body.",
       "bbox": {
@@ -3093,7 +3575,7 @@
     {
       "id": "#/texts/191",
       "page": 10,
-      "order": 19,
+      "order": 18,
       "role": "list_item",
       "text": "Let Ojoin beja join pperator that adds a segment co\" to the body B.",
       "bbox": {
@@ -3112,9 +3594,9 @@
     {
       "id": "#/texts/192",
       "page": 10,
-      "order": 20,
+      "order": 19,
       "role": "list_item",
-      "text": "Let OshallowCopy be a shallow copy operator that copies an arbitrary entity a;. For a more detailed description of the object-oriented concept of 'shallow' and 'deep' copying see, e.g., [51]. a; can be a topological entity ti, a geometrical entity gi, or an internal ri\" or external relation rex",
+      "text": "Let OshallowCopy be a shallow copy operator that copies an arbitrary entity a;. For a more detailed description of the object-oriented concept of 'shallow' and 'deep' copying see, e.g., [51]. a; can be a topological entity ti, a geometrical entity gi, or an internal ri\" or external relation rext",
       "bbox": {
         "x0": 74.52,
         "y0": 749.95,
@@ -3125,13 +3607,13 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "3. Let OshallowCopy be a shallow copy operator that copies an arbitrary entity a;. For a more detailed description of the object-oriented concept of 'shallow' and 'deep' copying see, e.g., [51]. a; can be a topological entity ti, a geometrical entity gi, or an internal ri\" or external relation rex"
+        "docling_orig": "3. Let OshallowCopy be a shallow copy operator that copies an arbitrary entity a;. For a more detailed description of the object-oriented concept of 'shallow' and 'deep' copying see, e.g., [51]. a; can be a topological entity ti, a geometrical entity gi, or an internal ri\" or external relation rext"
       }
     },
     {
       "id": "#/texts/194",
       "page": 10,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "The ':=' in (19) is to be understood as the shallow copy assignment, according to [51]. Note that the new object is distinguishable from the old object, e.g., by an updated id, or, in the context of object-oriented programming, by a different memory address. Yet, it still uses the same references to other objects as the original segment.",
       "bbox": {
@@ -3150,7 +3632,7 @@
     {
       "id": "#/texts/196",
       "page": 10,
-      "order": 22,
+      "order": 21,
       "role": "list_item",
       "text": "Let OdeepCopy be an internal deep copy operator [51] that performs a deep copy operation on a segment cli. To this end, a shallow copy operation is carried out on all corresponding topological and geometrical entities, as well as the internal adjacency relations.",
       "bbox": {
@@ -3266,7 +3748,7 @@
       "page": 11,
       "order": 6,
       "role": "list_item",
-      "text": "Let Omove be a geometric move operation that moves the point Pi within the range e. Additionally, all adjoined surfaces and curves are adapted consistently such that they form a 2-manifold without boundaries ce a operation. This involves the following adaptions to the adjoined surfaces sP; = 15! 1 and curves",
+      "text": "Let Omove be a geometric move operation that moves the point Pi within the range e. Additionally, all adjoined surfaces and curves are adapted consistently such that they form a 2-manifold without boundaries ce El operation. This involves the following adaptions to the adjoined surfaces SPi = (S!' ) and curves",
       "bbox": {
         "x0": 82.8,
         "y0": 514.85,
@@ -3277,7 +3759,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "8. Let Omove be a geometric move operation that moves the point Pi within the range e. Additionally, all adjoined surfaces and curves are adapted consistently such that they form a 2-manifold without boundaries ce a operation. This involves the following adaptions to the adjoined surfaces sP; = 15! 1 and curves"
+        "docling_orig": "8. Let Omove be a geometric move operation that moves the point Pi within the range e. Additionally, all adjoined surfaces and curves are adapted consistently such that they form a 2-manifold without boundaries ce El operation. This involves the following adaptions to the adjoined surfaces SPi = (S!' ) and curves"
       }
     },
     {
@@ -3323,18 +3805,18 @@
       "page": 11,
       "order": 9,
       "role": "paragraph",
-      "text": "The latter condition is omitted in the case of an already broken topology, where an edge no longer has two adjoined faces surfaces.",
+      "text": "The latter condition is omitted in the case of an already broken topology, where an edge no longer has two adjoined faces surfaces. ()",
       "bbox": {
         "x0": 101.02,
         "y0": 668.8,
         "x1": 778.35,
-        "y1": 703.6,
+        "y1": 715.19,
         "width": 677.33,
-        "height": 34.8
+        "height": 46.39
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The latter condition is omitted in the case of an already broken topology, where an edge no longer has two adjoined faces surfaces."
+        "docling_orig": "The latter condition is omitted in the case of an already broken topology, where an edge no longer has two adjoined faces surfaces. ()"
       }
     },
     {
@@ -3380,18 +3862,18 @@
       "page": 11,
       "order": 12,
       "role": "list_item",
-      "text": "Let Ointersect be a geometric operator that alters a surface S;(E) such that it touches or intersects with another surface S; (n) apart from common edges. Note that we assume that there is no intersection in the original",
+      "text": "Let Ointersect be a geometric operator that alters a surface S;(E) such that it touches or intersects with another surface S;(n) apart from common edges. Note that we assume that there is no intersection in the original",
       "bbox": {
         "x0": 76.18,
         "y0": 1018.04,
         "x1": 780.01,
-        "y1": 1054.69,
+        "y1": 1056.36,
         "width": 703.83,
-        "height": 36.65
+        "height": 38.32
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "10. Let Ointersect be a geometric operator that alters a surface S;(E) such that it touches or intersects with another surface S; (n) apart from common edges. Note that we assume that there is no intersection in the original"
+        "docling_orig": "10. Let Ointersect be a geometric operator that alters a surface S;(E) such that it touches or intersects with another surface S;(n) apart from common edges. Note that we assume that there is no intersection in the original"
       }
     },
     {
@@ -3402,11 +3884,11 @@
       "text": "model, according to the definition of a valid B-Rep model.",
       "bbox": {
         "x0": 94.4,
-        "y0": 97.51,
-        "x1": 467.06,
+        "y0": 97.64,
+        "x1": 467.01,
         "y1": 114.3,
-        "width": 372.66,
-        "height": 16.79
+        "width": 372.61,
+        "height": 16.66
       },
       "meta": {
         "docling_label": "text",
@@ -3513,18 +3995,18 @@
       "page": 12,
       "order": 7,
       "role": "paragraph",
-      "text": "We now continue with the definition of a flawed model. To this end, we apply the flaw operators defined in Section 2.4 onto a valid B-Rep model. The 'dirtiness' of the model is then defined by e. It should be mentioned that, for models that are drafted by a real-life CAD system, flaws do not necessarily originate from these operators, yet most flawed models can equivalently be created by a sequence of these operators.",
+      "text": "We now continue with the definition of a flawed model. To this end, we apply the flaw operators defined in Section 2.4 onto a valid B-Rep model. The 'dirtiness' of the model is then defined by &. It should be mentioned that, for models that are drafted by a real-life CAD system, flaws do not necessarily originate from these operators, yet most flawed models can equivalently be created by a sequence of these operators.",
       "bbox": {
         "x0": 49.68,
         "y0": 352.56,
-        "x1": 773.38,
+        "x1": 773.45,
         "y1": 423.88,
-        "width": 723.7,
+        "width": 723.77,
         "height": 71.32
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We now continue with the definition of a flawed model. To this end, we apply the flaw operators defined in Section 2.4 onto a valid B-Rep model. The 'dirtiness' of the model is then defined by e. It should be mentioned that, for models that are drafted by a real-life CAD system, flaws do not necessarily originate from these operators, yet most flawed models can equivalently be created by a sequence of these operators."
+        "docling_orig": "We now continue with the definition of a flawed model. To this end, we apply the flaw operators defined in Section 2.4 onto a valid B-Rep model. The 'dirtiness' of the model is then defined by &. It should be mentioned that, for models that are drafted by a real-life CAD system, flaws do not necessarily originate from these operators, yet most flawed models can equivalently be created by a sequence of these operators."
       }
     },
     {
@@ -3705,11 +4187,11 @@
       "role": "list_item",
       "text": "Application of the move operator (24):",
       "bbox": {
-        "x0": 76.18,
+        "x0": 77.83,
         "y0": 1011.37,
         "x1": 341.15,
         "y1": 1026.42,
-        "width": 264.97,
+        "width": 263.32,
         "height": 15.05
       },
       "meta": {
@@ -3760,7 +4242,7 @@
       "page": 13,
       "order": 3,
       "role": "paragraph",
-      "text": "The resulting model violates condition 6. This is likely to happen at the intersection of free-form surfaces. The boundary curves would require unreasonably high polynomial degrees to perfectly coincide. Possible flaws can e.g., be openings or intersections (see Figs. 7a and 7c). As an example, consider the leaking Utah Teapot.",
+      "text": "The resulting model violates condition 6. This is likely to happen at the intersection of free-form surfaces. The boundary curves would require unreasonably high polynomial degrees to perfectly coincide. Possible flaws can e.g., be openings or intersections (see Figs. 7a and 7c). As an example, consider the leaking Utah teapot.",
       "bbox": {
         "x0": 101.02,
         "y0": 225.15,
@@ -3771,7 +4253,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The resulting model violates condition 6. This is likely to happen at the intersection of free-form surfaces. The boundary curves would require unreasonably high polynomial degrees to perfectly coincide. Possible flaws can e.g., be openings or intersections (see Figs. 7a and 7c). As an example, consider the leaking Utah Teapot."
+        "docling_orig": "The resulting model violates condition 6. This is likely to happen at the intersection of free-form surfaces. The boundary curves would require unreasonably high polynomial degrees to perfectly coincide. Possible flaws can e.g., be openings or intersections (see Figs. 7a and 7c). As an example, consider the leaking Utah teapot."
       }
     },
     {
@@ -3898,9 +4380,9 @@
         "x0": 56.31,
         "y0": 721.79,
         "x1": 780.01,
-        "y1": 791.56,
+        "y1": 791.51,
         "width": 723.7,
-        "height": 69.77
+        "height": 69.72
       },
       "meta": {
         "docling_label": "text",
@@ -3912,7 +4394,7 @@
       "page": 13,
       "order": 11,
       "role": "paragraph",
-      "text": "a simulation model either impossible or invalid. The necessity to heal the flaws can neither be circumvented by meshing, as in the classical FEM, nor by a direct simulation as in IGA. It is, however, possible to compute 'dirty' a sing, in mode asical mersible or invalid. Theisal to he The resulting flawed models are invalid in a mathematical sense, which renders a subsequent conversion into models directly with an embedded domain method such as the Finite Cell Method (Section 3). To this end, we construct a specially adapted Point Membership Classification test (Section 4) which is blind to flaws up to a characteristic size 8.",
+      "text": "a simulation model either impossible or invalid. The necessity to heal the flaws can neither be circumvented by meshing, as in the classical FEM, nor by a direct simulation as in IGA. It is, however, possible to compute 'dirty' a sing, in made asical mersible or invalid. Theisal to he The resulting flawed models are invalid in a mathematical sense, which renders a subsequent conversion into models directly with an embedded domain method such as the Finite Cell Method (Section 3). To this end, we construct a specially adapted Point Membership Classification test (Section 4) which is blind to flaws up to a characteristic size 8.",
       "bbox": {
         "x0": 59.62,
         "y0": 786.81,
@@ -3923,7 +4405,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "a simulation model either impossible or invalid. The necessity to heal the flaws can neither be circumvented by meshing, as in the classical FEM, nor by a direct simulation as in IGA. It is, however, possible to compute 'dirty' a sing, in mode asical mersible or invalid. Theisal to he The resulting flawed models are invalid in a mathematical sense, which renders a subsequent conversion into models directly with an embedded domain method such as the Finite Cell Method (Section 3). To this end, we construct a specially adapted Point Membership Classification test (Section 4) which is blind to flaws up to a characteristic size 8."
+        "docling_orig": "a simulation model either impossible or invalid. The necessity to heal the flaws can neither be circumvented by meshing, as in the classical FEM, nor by a direct simulation as in IGA. It is, however, possible to compute 'dirty' a sing, in made asical mersible or invalid. Theisal to he The resulting flawed models are invalid in a mathematical sense, which renders a subsequent conversion into models directly with an embedded domain method such as the Finite Cell Method (Section 3). To this end, we construct a specially adapted Point Membership Classification test (Section 4) which is blind to flaws up to a characteristic size 8."
       }
     },
     {
@@ -3988,18 +4470,18 @@
       "page": 14,
       "order": 2,
       "role": "paragraph",
-      "text": "t = 0on aSu",
+      "text": "t = 0on anu",
       "bbox": {
-        "x0": 443.83,
-        "y0": 104.3,
-        "x1": 510.07,
-        "y1": 115.97,
-        "width": 66.24,
-        "height": 11.67
+        "x0": 443.78,
+        "y0": 104.02,
+        "x1": 510.11,
+        "y1": 116.16,
+        "width": 66.33,
+        "height": 12.14
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "t = 0on aSu"
+        "docling_orig": "t = 0on anu"
       }
     },
     {
@@ -4026,6 +4508,25 @@
       "page": 14,
       "order": 4,
       "role": "paragraph",
+      "text": "Sfict",
+      "bbox": {
+        "x0": 322.93,
+        "y0": 117.54,
+        "x1": 352.74,
+        "y1": 129.13,
+        "width": 29.81,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Sfict"
+      }
+    },
+    {
+      "id": "#/texts/269",
+      "page": 14,
+      "order": 5,
+      "role": "paragraph",
       "text": "IN",
       "bbox": {
         "x0": 177.2,
@@ -4041,25 +4542,6 @@
       }
     },
     {
-      "id": "#/texts/269",
-      "page": 14,
-      "order": 5,
-      "role": "paragraph",
-      "text": "Sifict",
-      "bbox": {
-        "x0": 322.93,
-        "y0": 117.54,
-        "x1": 352.74,
-        "y1": 130.79,
-        "width": 29.81,
-        "height": 13.25
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Sifict"
-      }
-    },
-    {
       "id": "#/texts/270",
       "page": 14,
       "order": 6,
@@ -4068,10 +4550,10 @@
       "bbox": {
         "x0": 210.32,
         "y0": 157.27,
-        "x1": 228.54,
-        "y1": 173.83,
-        "width": 18.22,
-        "height": 16.56
+        "x1": 226.88,
+        "y1": 175.49,
+        "width": 16.56,
+        "height": 18.22
       },
       "meta": {
         "docling_label": "text",
@@ -4083,18 +4565,18 @@
       "page": 14,
       "order": 7,
       "role": "paragraph",
-      "text": "su=Sphy UNfict",
+      "text": "Su=Sphy UNfict",
       "bbox": {
-        "x0": 410.7,
+        "x0": 409.05,
         "y0": 160.59,
         "x1": 500.13,
         "y1": 173.95,
-        "width": 89.43,
+        "width": 91.08,
         "height": 13.36
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "su=Sphy UNfict"
+        "docling_orig": "Su=Sphy UNfict"
       }
     },
     {
@@ -4104,11 +4586,11 @@
       "role": "paragraph",
       "text": "→",
       "bbox": {
-        "x0": 551.47,
+        "x0": 553.13,
         "y0": 160.59,
-        "x1": 577.97,
+        "x1": 576.31,
         "y1": 172.17,
-        "width": 26.5,
+        "width": 23.18,
         "height": 11.58
       },
       "meta": {
@@ -4273,7 +4755,7 @@
       "page": 14,
       "order": 17,
       "role": "paragraph",
-      "text": "In FCM, the physical domain Sphys (i.e. the geometry) is recovered by the discontinuous scalar field a. Consequently, the complexity of the geometry is shifted from the finite elements to the integration of the element matrices and load vectors, which imposes less geometrical requirements on the model. It is in fact sufficient to provide a robust Point Membership Classification (PMC), i.e. for every point x e R\", it must be possible to decide whether it is inside or outside of Sphys. This implies that Sphys must have a mathematically valid description. Due to the discontinuity of a, the integrands in cut cells need to be computed by specially constructed quadrature rules, see, e.g., [35,38,63] for a recent overview of possible schemes. To perform a suitable integration, the domain is approximated by a space-tree TRint. The leaves of TRint are called integration leaves Cint. Additional information, such as explicit surface descriptions are only needed for the application of boundary conditions as well as for post-processing (see Section 3.3).",
+      "text": "In FCM, the physical domain Sphys (i.e. the geometry) is recovered by the discontinuous scalar field a. Consequently, the complexity of the geometry is shifted from the finite elements to the integration of the element matrices and load vectors, which imposes less geometrical requirements on the model. It is in fact sufficient to provide a robust Point Membership Classification (PMC), i.e. for every point × e R\", it must be possible to decide whether it is inside or outside of Sphys. This implies that Sphys must have a mathematically valid description. Due to the discontinuity of a, the integrands in cut cells need to be computed by specially constructed quadrature rules, see, e.g., [35,38,63] for a recent overview of possible schemes. To perform a suitable integration, the domain is approximated by a space-tree TRint. The leaves of TRint are called integration leaves Cint. Additional information, such as explicit surface descriptions are only needed for the application of boundary conditions as well as for post-processing (see Section 3.3).",
       "bbox": {
         "x0": 51.34,
         "y0": 741.67,
@@ -4284,7 +4766,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "In FCM, the physical domain Sphys (i.e. the geometry) is recovered by the discontinuous scalar field a. Consequently, the complexity of the geometry is shifted from the finite elements to the integration of the element matrices and load vectors, which imposes less geometrical requirements on the model. It is in fact sufficient to provide a robust Point Membership Classification (PMC), i.e. for every point x e R\", it must be possible to decide whether it is inside or outside of Sphys. This implies that Sphys must have a mathematically valid description. Due to the discontinuity of a, the integrands in cut cells need to be computed by specially constructed quadrature rules, see, e.g., [35,38,63] for a recent overview of possible schemes. To perform a suitable integration, the domain is approximated by a space-tree TRint. The leaves of TRint are called integration leaves Cint. Additional information, such as explicit surface descriptions are only needed for the application of boundary conditions as well as for post-processing (see Section 3.3)."
+        "docling_orig": "In FCM, the physical domain Sphys (i.e. the geometry) is recovered by the discontinuous scalar field a. Consequently, the complexity of the geometry is shifted from the finite elements to the integration of the element matrices and load vectors, which imposes less geometrical requirements on the model. It is in fact sufficient to provide a robust Point Membership Classification (PMC), i.e. for every point × e R\", it must be possible to decide whether it is inside or outside of Sphys. This implies that Sphys must have a mathematically valid description. Due to the discontinuity of a, the integrands in cut cells need to be computed by specially constructed quadrature rules, see, e.g., [35,38,63] for a recent overview of possible schemes. To perform a suitable integration, the domain is approximated by a space-tree TRint. The leaves of TRint are called integration leaves Cint. Additional information, such as explicit surface descriptions are only needed for the application of boundary conditions as well as for post-processing (see Section 3.3)."
       }
     },
     {
@@ -4311,18 +4793,18 @@
       "page": 14,
       "order": 19,
       "role": "paragraph",
-      "text": "Neumann boundary conditions are applied according to Eq. (37) in an integral sense on the boundary IN. Homogeneous Neumann conditions (i.e. zero traction) require no treatment, as they are automatically satisfied by setting a = 0 or, in an approximate sense, to a small value in S fict. As the boundary of the physical model typically does not coincide with the edges faces of the finite cell mesh, Dirichlet boundary conditions need to be enforced",
+      "text": "Neumann boundary conditions are applied according to Eq. (37) in an integral sense on the boundary IN. Homogeneous Neumann conditions (i.e. zero traction) require no treatment, as they are automatically satisfied by setting a = 0 or, in an approximate sense, to a small value in Sfict. As the boundary of the physical model typically does not coincide with the edges faces of the finite cell mesh, Dirichlet boundary conditions need to be enforced",
       "bbox": {
-        "x0": 52.96,
+        "x0": 52.99,
         "y0": 983.38,
         "x1": 773.38,
-        "y1": 1055.45,
-        "width": 720.42,
-        "height": 72.07
+        "y1": 1054.69,
+        "width": 720.39,
+        "height": 71.31
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Neumann boundary conditions are applied according to Eq. (37) in an integral sense on the boundary IN. Homogeneous Neumann conditions (i.e. zero traction) require no treatment, as they are automatically satisfied by setting a = 0 or, in an approximate sense, to a small value in S fict. As the boundary of the physical model typically does not coincide with the edges faces of the finite cell mesh, Dirichlet boundary conditions need to be enforced"
+        "docling_orig": "Neumann boundary conditions are applied according to Eq. (37) in an integral sense on the boundary IN. Homogeneous Neumann conditions (i.e. zero traction) require no treatment, as they are automatically satisfied by setting a = 0 or, in an approximate sense, to a small value in Sfict. As the boundary of the physical model typically does not coincide with the edges faces of the finite cell mesh, Dirichlet boundary conditions need to be enforced"
       }
     },
     {
@@ -4579,12 +5061,12 @@
       "role": "heading",
       "text": "4.2. General approach for flawed models",
       "bbox": {
-        "x0": 57.96,
+        "x0": 59.62,
         "y0": 983.38,
-        "x1": 321.28,
-        "y1": 1001.71,
-        "width": 263.32,
-        "height": 18.33
+        "x1": 322.93,
+        "y1": 1000.04,
+        "width": 263.31,
+        "height": 16.66
       },
       "meta": {
         "docling_label": "section_header",
@@ -4599,11 +5081,11 @@
       "text": "The presented PM method combines the robustness of space-tree approximation with the accuracy of ray-casting. The general approach works as follows:",
       "bbox": {
         "x0": 59.62,
-        "y0": 1019.7,
+        "y0": 1021.37,
         "x1": 780.01,
         "y1": 1054.69,
         "width": 720.39,
-        "height": 34.99
+        "height": 33.32
       },
       "meta": {
         "docling_label": "text",
@@ -4634,18 +5116,18 @@
       "page": 16,
       "order": 2,
       "role": "list_item",
-      "text": "A flood fill algorithm is applied on TRgeo to mark all connected points as inside and outside, respectively. This yields a filled space tree TRgeo. Remark: For all points that are not on cut leaves, the approximation tree TReo can be used as fast, efficient, and accurate PMC.",
+      "text": "A flood fill algorithm is applied on TReo to mark all connected points as inside and outside, respectively. This yields a filled space tree TRgeo. Remark: For all points that are not on cut leaves, the approximation tree TReo can be used as fast, efficient, and accurate PMC.",
       "bbox": {
         "x0": 77.84,
-        "y0": 135.63,
+        "y0": 133.96,
         "x1": 773.38,
         "y1": 188.73,
         "width": 695.54,
-        "height": 53.1
+        "height": 54.77
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "2. A flood fill algorithm is applied on TRgeo to mark all connected points as inside and outside, respectively. This yields a filled space tree TRgeo. Remark: For all points that are not on cut leaves, the approximation tree TReo can be used as fast, efficient, and accurate PMC."
+        "docling_orig": "2. A flood fill algorithm is applied on TReo to mark all connected points as inside and outside, respectively. This yields a filled space tree TRgeo. Remark: For all points that are not on cut leaves, the approximation tree TReo can be used as fast, efficient, and accurate PMC."
       }
     },
     {
@@ -4824,18 +5306,18 @@
       "page": 16,
       "order": 12,
       "role": "paragraph",
-      "text": "The space-tree TRgeo represents the surface only very roughly and, thus, cannot be used for a precise numerical analysis. Hence, in order to improve the representation of the boundary, an additional PM using ray casting is carried out on cut leaves. Let us first assume that the model is flawless (see Fig. 14a). Then, the ray test for any integration point in an integration leaf Cint yields a unique result without ambiguity, independent of the direction of the ray. In case of a flawed surface, the result may be ambiguous, depending on the selected direction of the ray (Fig. 14b-f). To handle this problem, we test rays in different directions, more precisely to the midpoints of all neighboring non-cut cells, which restricts the intersection tests to be carried out in the vicinity of the integration point and guarantees that various directions are queried. Hence, the probability for a correct result is increased. The PMC is then decided 'following the vote of the majority'. Clearly, this 'vote' can be wrong w.r.t. the (in general unknown) flawless model. This wrong decision results in an integration error for the computation of element matrices. In a mathematical sense, we are performing a 'variational crime' (see, e.g., [73]). For geometrically small flaws, the smallness of this integration error can be readily assumed — as, by construction of the two-stage PMC, it can only occur in the smallest leaf Ceo cut by the surface.",
+      "text": "The space-tree TReo represents the surface only very roughly and, thus, cannot be used for a precise numerical analysis. Hence, in order to improve the representation of the boundary, an additional PM using ray casting is carried out on cut leaves. Let us first assume that the model is flawless (see Fig. 14a). Then, the ray test for any integration point in an integration leaf Cint yields a unique result without ambiguity, independent of the direction of the ray. In case of a flawed surface, the result may be ambiguous, depending on the selected direction of the ray (Fig. 14b-f). To handle this problem, we test rays in different directions, more precisely to the midpoints of all neighboring non-cut cells, which restricts the intersection tests to be carried out in the vicinity of the integration point and guarantees that various directions are queried. Hence, the probability for a correct result is increased. The PMC is then decided 'following the vote of the majority'. Clearly, this 'vote' can be wrong w.r.t. the (in general unknown) flawless model. This wrong decision results in an integration error for the computation of element matrices. In a mathematical sense, we are performing a 'variational crime' (see, e.g., [73]). For geometrically small flaws, the smallness of this integration error can be readily assumed — as, by construction of the two-stage PMC, it can only occur in the smallest leaf Ceo cut by the surface.",
       "bbox": {
         "x0": 52.96,
-        "y0": 814.43,
-        "x1": 773.38,
+        "y0": 816.09,
+        "x1": 773.42,
         "y1": 1056.36,
-        "width": 720.42,
-        "height": 241.93
+        "width": 720.46,
+        "height": 240.27
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The space-tree TRgeo represents the surface only very roughly and, thus, cannot be used for a precise numerical analysis. Hence, in order to improve the representation of the boundary, an additional PM using ray casting is carried out on cut leaves. Let us first assume that the model is flawless (see Fig. 14a). Then, the ray test for any integration point in an integration leaf Cint yields a unique result without ambiguity, independent of the direction of the ray. In case of a flawed surface, the result may be ambiguous, depending on the selected direction of the ray (Fig. 14b-f). To handle this problem, we test rays in different directions, more precisely to the midpoints of all neighboring non-cut cells, which restricts the intersection tests to be carried out in the vicinity of the integration point and guarantees that various directions are queried. Hence, the probability for a correct result is increased. The PMC is then decided 'following the vote of the majority'. Clearly, this 'vote' can be wrong w.r.t. the (in general unknown) flawless model. This wrong decision results in an integration error for the computation of element matrices. In a mathematical sense, we are performing a 'variational crime' (see, e.g., [73]). For geometrically small flaws, the smallness of this integration error can be readily assumed — as, by construction of the two-stage PMC, it can only occur in the smallest leaf Ceo cut by the surface."
+        "docling_orig": "The space-tree TReo represents the surface only very roughly and, thus, cannot be used for a precise numerical analysis. Hence, in order to improve the representation of the boundary, an additional PM using ray casting is carried out on cut leaves. Let us first assume that the model is flawless (see Fig. 14a). Then, the ray test for any integration point in an integration leaf Cint yields a unique result without ambiguity, independent of the direction of the ray. In case of a flawed surface, the result may be ambiguous, depending on the selected direction of the ray (Fig. 14b-f). To handle this problem, we test rays in different directions, more precisely to the midpoints of all neighboring non-cut cells, which restricts the intersection tests to be carried out in the vicinity of the integration point and guarantees that various directions are queried. Hence, the probability for a correct result is increased. The PMC is then decided 'following the vote of the majority'. Clearly, this 'vote' can be wrong w.r.t. the (in general unknown) flawless model. This wrong decision results in an integration error for the computation of element matrices. In a mathematical sense, we are performing a 'variational crime' (see, e.g., [73]). For geometrically small flaws, the smallness of this integration error can be readily assumed — as, by construction of the two-stage PMC, it can only occur in the smallest leaf Ceo cut by the surface."
       }
     },
     {
@@ -4978,12 +5460,12 @@
       "role": "paragraph",
       "text": "(b) 2D slice",
       "bbox": {
-        "x0": 534.85,
-        "y0": 761.26,
-        "x1": 604.52,
-        "y1": 776.72,
-        "width": 69.67,
-        "height": 15.46
+        "x0": 534.86,
+        "y0": 761.31,
+        "x1": 604.51,
+        "y1": 776.68,
+        "width": 69.65,
+        "height": 15.37
       },
       "meta": {
         "docling_label": "text",
@@ -4997,12 +5479,12 @@
       "role": "paragraph",
       "text": "We can even bound this error by bracketing, i.e. by solving the elasticity problem (23) - once under the assumption that all ambiguous integration points are inside, and once assuming them outside of the domain of computation (see Section 4.5 and Example 5.1), thus ensuring that the approximation quality of the method is not corrupted.",
       "bbox": {
-        "x0": 57.96,
+        "x0": 59.48,
         "y0": 889.02,
-        "x1": 780.01,
-        "y1": 970.94,
-        "width": 722.05,
-        "height": 81.92
+        "x1": 780.07,
+        "y1": 968.94,
+        "width": 720.59,
+        "height": 79.92
       },
       "meta": {
         "docling_label": "text",
@@ -5036,11 +5518,11 @@
       "text": "Surface",
       "bbox": {
         "x0": 205.33,
-        "y0": 99.23,
-        "x1": 241.81,
-        "y1": 107.71,
-        "width": 36.48,
-        "height": 8.48
+        "y0": 99.22,
+        "x1": 243.46,
+        "y1": 107.72,
+        "width": 38.13,
+        "height": 8.5
       },
       "meta": {
         "docling_label": "text",
@@ -5204,18 +5686,18 @@
       "page": 18,
       "order": 10,
       "role": "paragraph",
-      "text": "As stated in Section 2.5 a flawed model has, in general, no mathematically valid solution. Therefore it is not possible to define an 'error' of the computed approximation w.r.t. an exact solution. Yet, in order to judge the quality we compare for a simple example energies of approximate and reference solution in dependence of the size of a flaw in the B-Rep model. In particular, we investigate the influence of the largest gap size Egap on the internal strain energy for a cube with the dimensions 1 × 1 × 1 loaded under self-weight. The cube is clamped at the bottom. It is embedded in 9 × 9 × 9 elements employing integrated Legendre polynomials of degree p = 3. The B-Rep model of the cube consists of twelve triangles. One triangle is not properly connected to two of its neighbors resulting in a flawed model with a gap of characteristic size si gap (see Fig. 15). The size of the gap limits the maximum subdivision depth of the reconstruction tree, meaning that more refined trees would lead to a non-watertight boundary of the tree (see Section 4.3).",
+      "text": "As stated in Section 2.5 a flawed model has, in general, no mathematically valid solution. Therefore it is not possible to define an 'error' of the computed approximation w.r.t. an exact solution. Yet, in order to judge the quality we compare for a simple example energies of approximate and reference solution in dependence of the size of a flaw in the B-Rep model. In particular, we investigate the influence of the largest gap size Egap on the internal strain energy for a cube with the dimensions 1 × 1 × 1 loaded under self-weight. The cube is clamped at the bottom. It is embedded in 9 × 9 × 9 elements employing integrated Legendre polynomials of degree p = 3. The B-Rep model of the cube consists of twelve triangles. One triangle is not properly connected to two of its neighbors resulting in a flawed model with a gap of characteristic size & gap (see Fig. 15). The size of the gap limits the maximum subdivision depth of the reconstruction tree, meaning that more refined trees would lead to a non-watertight boundary of the tree (see Section 4.3).",
       "bbox": {
-        "x0": 52.99,
+        "x0": 51.21,
         "y0": 610.82,
-        "x1": 773.38,
+        "x1": 773.5,
         "y1": 793.1,
-        "width": 720.39,
+        "width": 722.29,
         "height": 182.28
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "As stated in Section 2.5 a flawed model has, in general, no mathematically valid solution. Therefore it is not possible to define an 'error' of the computed approximation w.r.t. an exact solution. Yet, in order to judge the quality we compare for a simple example energies of approximate and reference solution in dependence of the size of a flaw in the B-Rep model. In particular, we investigate the influence of the largest gap size Egap on the internal strain energy for a cube with the dimensions 1 × 1 × 1 loaded under self-weight. The cube is clamped at the bottom. It is embedded in 9 × 9 × 9 elements employing integrated Legendre polynomials of degree p = 3. The B-Rep model of the cube consists of twelve triangles. One triangle is not properly connected to two of its neighbors resulting in a flawed model with a gap of characteristic size si gap (see Fig. 15). The size of the gap limits the maximum subdivision depth of the reconstruction tree, meaning that more refined trees would lead to a non-watertight boundary of the tree (see Section 4.3)."
+        "docling_orig": "As stated in Section 2.5 a flawed model has, in general, no mathematically valid solution. Therefore it is not possible to define an 'error' of the computed approximation w.r.t. an exact solution. Yet, in order to judge the quality we compare for a simple example energies of approximate and reference solution in dependence of the size of a flaw in the B-Rep model. In particular, we investigate the influence of the largest gap size Egap on the internal strain energy for a cube with the dimensions 1 × 1 × 1 loaded under self-weight. The cube is clamped at the bottom. It is embedded in 9 × 9 × 9 elements employing integrated Legendre polynomials of degree p = 3. The B-Rep model of the cube consists of twelve triangles. One triangle is not properly connected to two of its neighbors resulting in a flawed model with a gap of characteristic size & gap (see Fig. 15). The size of the gap limits the maximum subdivision depth of the reconstruction tree, meaning that more refined trees would lead to a non-watertight boundary of the tree (see Section 4.3)."
       }
     },
     {
@@ -5304,9 +5786,9 @@
         "x0": 132.49,
         "y0": 296.34,
         "x1": 147.39,
-        "y1": 309.58,
+        "y1": 307.93,
         "width": 14.9,
-        "height": 13.24
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5356,7 +5838,7 @@
       "page": 19,
       "order": 5,
       "role": "caption",
-      "text": "Fig. 16. Cut through two reconstruction trees for different gap sizes, consequently maximum subdivision depths and for different origin positions: (a)Egap=0.2, max=3, shift byB=0.(b) Egap=0.0031, max = 9, shift by B= 3.",
+      "text": "Fig. 16. Cut through two reconstruction trees for different gap sizes, consequently maximum subdivision depths and for different origin positions: (a)Egap=0.2, max=3, shift byB=0.(b) Egap=0.0031, nmax=9, shift by B= 3.",
       "bbox": {
         "x0": 57.96,
         "y0": 735.05,
@@ -5367,7 +5849,7 @@
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "Fig. 16. Cut through two reconstruction trees for different gap sizes, consequently maximum subdivision depths and for different origin positions: (a)Egap=0.2, max=3, shift byB=0.(b) Egap=0.0031, max = 9, shift by B= 3."
+        "docling_orig": "Fig. 16. Cut through two reconstruction trees for different gap sizes, consequently maximum subdivision depths and for different origin positions: (a)Egap=0.2, max=3, shift byB=0.(b) Egap=0.0031, nmax=9, shift by B= 3."
       }
     },
     {
@@ -5375,18 +5857,18 @@
       "page": 19,
       "order": 6,
       "role": "paragraph",
-      "text": "• Едар",
+      "text": "• Egap",
       "bbox": {
         "x0": 306.37,
-        "y0": 630.75,
+        "y0": 629.1,
         "x1": 337.84,
         "y1": 645.81,
         "width": 31.47,
-        "height": 15.06
+        "height": 16.71
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "• Едар"
+        "docling_orig": "• Egap"
       }
     },
     {
@@ -5394,7 +5876,7 @@
       "page": 19,
       "order": 7,
       "role": "paragraph",
-      "text": "хо",
+      "text": "XO",
       "bbox": {
         "x0": 490.19,
         "y0": 640.69,
@@ -5405,7 +5887,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "хо"
+        "docling_orig": "XO"
       }
     },
     {
@@ -5413,7 +5895,7 @@
       "page": 19,
       "order": 8,
       "role": "paragraph",
-      "text": "хо,В",
+      "text": "xo,B",
       "bbox": {
         "x0": 144.08,
         "y0": 687.04,
@@ -5424,7 +5906,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "хо,В"
+        "docling_orig": "xo,B"
       }
     },
     {
@@ -5432,7 +5914,7 @@
       "page": 19,
       "order": 9,
       "role": "paragraph",
-      "text": "хО,В",
+      "text": "xO,B",
       "bbox": {
         "x0": 458.73,
         "y0": 688.7,
@@ -5443,7 +5925,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "хО,В"
+        "docling_orig": "xO,B"
       }
     },
     {
@@ -5546,24 +6028,43 @@
       "page": 20,
       "order": 2,
       "role": "paragraph",
-      "text": ".. pmc: B = 0",
+      "text": "2",
       "bbox": {
-        "x0": 616.06,
-        "y0": 104.3,
-        "x1": 720.39,
-        "y1": 120.96,
-        "width": 104.33,
-        "height": 16.66
+        "x0": 142.42,
+        "y0": 137.41,
+        "x1": 150.7,
+        "y1": 149.0,
+        "width": 8.28,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": ".. pmc: B = 0"
+        "docling_orig": "2"
       }
     },
     {
       "id": "#/texts/367",
       "page": 20,
       "order": 3,
+      "role": "paragraph",
+      "text": "-. pmc: B = 0",
+      "bbox": {
+        "x0": 616.06,
+        "y0": 105.95,
+        "x1": 720.39,
+        "y1": 120.96,
+        "width": 104.33,
+        "height": 15.01
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "-. pmc: B = 0"
+      }
+    },
+    {
+      "id": "#/texts/368",
+      "page": 20,
+      "order": 4,
       "role": "paragraph",
       "text": "-E - pmc: B = 1",
       "bbox": {
@@ -5580,9 +6081,9 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/369",
       "page": 20,
-      "order": 4,
+      "order": 5,
       "role": "paragraph",
       "text": "-*- pmc: B = 2",
       "bbox": {
@@ -5599,17 +6100,17 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/370",
       "page": 20,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "- A",
       "bbox": {
         "x0": 617.71,
         "y0": 162.24,
-        "x1": 639.24,
+        "x1": 637.58,
         "y1": 173.95,
-        "width": 21.53,
+        "width": 19.87,
         "height": 11.71
       },
       "meta": {
@@ -5618,9 +6119,9 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/371",
       "page": 20,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "pmc: B = 3",
       "bbox": {
@@ -5637,41 +6138,22 @@
       }
     },
     {
-      "id": "#/texts/371",
-      "page": 20,
-      "order": 7,
-      "role": "paragraph",
-      "text": "Ures",
-      "bbox": {
-        "x0": 112.61,
-        "y0": 213.56,
-        "x1": 130.83,
-        "y1": 243.36,
-        "width": 18.22,
-        "height": 29.8
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Ures"
-      }
-    },
-    {
       "id": "#/texts/372",
       "page": 20,
       "order": 8,
       "role": "paragraph",
-      "text": "1",
+      "text": "Uref",
       "bbox": {
-        "x0": 142.42,
-        "y0": 201.97,
-        "x1": 150.7,
-        "y1": 213.56,
-        "width": 8.28,
-        "height": 11.59
+        "x0": 112.61,
+        "y0": 213.56,
+        "x1": 130.83,
+        "y1": 241.71,
+        "width": 18.22,
+        "height": 28.15
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "1"
+        "docling_orig": "Uref"
       }
     },
     {
@@ -5893,9 +6375,9 @@
         "x0": 337.84,
         "y0": 582.74,
         "x1": 483.57,
-        "y1": 597.64,
+        "y1": 599.3,
         "width": 145.73,
-        "height": 14.9
+        "height": 16.56
       },
       "meta": {
         "docling_label": "text",
@@ -6080,12 +6562,12 @@
       "role": "paragraph",
       "text": "t = 1.0mm",
       "bbox": {
-        "x0": 334.47,
-        "y0": 183.49,
-        "x1": 412.41,
-        "y1": 198.94,
-        "width": 77.94,
-        "height": 15.45
+        "x0": 334.46,
+        "y0": 183.43,
+        "x1": 412.42,
+        "y1": 199.0,
+        "width": 77.96,
+        "height": 15.57
       },
       "meta": {
         "docling_label": "text",
@@ -6216,9 +6698,9 @@
         "x0": 248.41,
         "y0": 403.88,
         "x1": 589.56,
-        "y1": 418.88,
+        "y1": 417.21,
         "width": 341.15,
-        "height": 15.0
+        "height": 13.33
       },
       "meta": {
         "docling_label": "caption",
@@ -6273,9 +6755,9 @@
         "x0": 178.85,
         "y0": 855.75,
         "x1": 225.22,
-        "y1": 870.81,
+        "y1": 872.46,
         "width": 46.37,
-        "height": 15.06
+        "height": 16.71
       },
       "meta": {
         "docling_label": "text",
@@ -6327,12 +6809,12 @@
       "role": "paragraph",
       "text": "In Fig. 24, it can be seen, that both models converge to a slightly different value. This is, of course, to be expected — as both models have a slightly different shape and volume. The good convergence of the flawed model is attributed to the fact that errors due to flaws are very localized. This is an inherent property of the proposed methodology.",
       "bbox": {
-        "x0": 59.6,
+        "x0": 59.55,
         "y0": 935.37,
         "x1": 778.35,
-        "y1": 1013.27,
-        "width": 718.75,
-        "height": 77.9
+        "y1": 1013.57,
+        "width": 718.8,
+        "height": 78.2
       },
       "meta": {
         "docling_label": "text",
@@ -6441,11 +6923,11 @@
       "role": "paragraph",
       "text": "14.79",
       "bbox": {
-        "x0": 263.31,
+        "x0": 264.97,
         "y0": 624.13,
         "x1": 303.06,
         "y1": 639.03,
-        "width": 39.75,
+        "width": 38.09,
         "height": 14.9
       },
       "meta": {
@@ -6479,12 +6961,12 @@
       "role": "paragraph",
       "text": "14.5",
       "bbox": {
-        "x0": 263.31,
-        "y0": 670.49,
-        "x1": 294.78,
-        "y1": 683.73,
-        "width": 31.47,
-        "height": 13.24
+        "x0": 263.15,
+        "y0": 670.09,
+        "x1": 294.94,
+        "y1": 684.13,
+        "width": 31.79,
+        "height": 14.04
       },
       "meta": {
         "docling_label": "text",
@@ -6498,12 +6980,12 @@
       "role": "paragraph",
       "text": "Strain energy norm",
       "bbox": {
-        "x0": 231.53,
-        "y0": 645.34,
-        "x1": 251.65,
-        "y1": 778.45,
-        "width": 20.12,
-        "height": 133.11
+        "x0": 230.68,
+        "y0": 645.26,
+        "x1": 252.02,
+        "y1": 778.52,
+        "width": 21.34,
+        "height": 133.26
       },
       "meta": {
         "docling_label": "text",
@@ -6574,12 +7056,12 @@
       "role": "paragraph",
       "text": "valid",
       "bbox": {
-        "x0": 498.45,
-        "y0": 769.76,
-        "x1": 534.93,
-        "y1": 784.77,
-        "width": 36.48,
-        "height": 15.01
+        "x0": 498.48,
+        "y0": 769.82,
+        "x1": 534.91,
+        "y1": 784.72,
+        "width": 36.43,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -6781,7 +7263,7 @@
       "page": 23,
       "order": 1,
       "role": "caption",
-      "text": "Fig. 25. Cut through an octree approximation FRgeo, with (a) too small cut leaves Ceo (black), so that all (non cut leaves are marked as outside (light gray). (b) with one subdivision level less leaves inside (dark gray) can be detected.",
+      "text": "Fig. 25. Cut through an octree approximation TRgeo, with (a) too small cut leaves Ceo (black), so that all (non cut leaves are marked as outside (light gray). (b) with one subdivision level less leaves inside (dark gray) can be detected.",
       "bbox": {
         "x0": 59.62,
         "y0": 294.58,
@@ -6792,7 +7274,7 @@
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "Fig. 25. Cut through an octree approximation FRgeo, with (a) too small cut leaves Ceo (black), so that all (non cut leaves are marked as outside (light gray). (b) with one subdivision level less leaves inside (dark gray) can be detected."
+        "docling_orig": "Fig. 25. Cut through an octree approximation TRgeo, with (a) too small cut leaves Ceo (black), so that all (non cut leaves are marked as outside (light gray). (b) with one subdivision level less leaves inside (dark gray) can be detected."
       }
     },
     {
@@ -6802,12 +7284,12 @@
       "role": "paragraph",
       "text": "(а) Птах = 5",
       "bbox": {
-        "x0": 225.18,
-        "y0": 259.7,
-        "x1": 291.51,
-        "y1": 273.38,
-        "width": 66.33,
-        "height": 13.68
+        "x0": 225.21,
+        "y0": 259.82,
+        "x1": 291.49,
+        "y1": 273.26,
+        "width": 66.28,
+        "height": 13.44
       },
       "meta": {
         "docling_label": "text",
@@ -7030,12 +7512,12 @@
       "role": "paragraph",
       "text": "(a) Flawed",
       "bbox": {
-        "x0": 211.87,
-        "y0": 342.18,
-        "x1": 275.01,
-        "y1": 356.45,
-        "width": 63.14,
-        "height": 14.27
+        "x0": 211.88,
+        "y0": 342.24,
+        "x1": 275.0,
+        "y1": 356.39,
+        "width": 63.12,
+        "height": 14.15
       },
       "meta": {
         "docling_label": "text",
@@ -7372,12 +7854,12 @@
       "role": "paragraph",
       "text": "(b) Details",
       "bbox": {
-        "x0": 596.1,
-        "y0": 504.52,
-        "x1": 657.54,
-        "y1": 518.59,
-        "width": 61.44,
-        "height": 14.07
+        "x0": 596.18,
+        "y0": 503.19,
+        "x1": 657.46,
+        "y1": 518.18,
+        "width": 61.28,
+        "height": 14.99
       },
       "meta": {
         "docling_label": "text",
@@ -7484,18 +7966,18 @@
       "page": 25,
       "order": 13,
       "role": "paragraph",
-      "text": "1852",
+      "text": "1950",
       "bbox": {
         "x0": 534.91,
-        "y0": 923.78,
-        "x1": 554.78,
-        "y1": 930.4,
-        "width": 19.87,
-        "height": 6.62
+        "y0": 925.44,
+        "x1": 553.13,
+        "y1": 928.75,
+        "width": 18.22,
+        "height": 3.31
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "1852"
+        "docling_orig": "1950"
       }
     },
     {
@@ -7505,12 +7987,12 @@
       "role": "paragraph",
       "text": "2.461e+03",
       "bbox": {
-        "x0": 579.62,
-        "y0": 923.78,
-        "x1": 621.02,
-        "y1": 932.06,
-        "width": 41.4,
-        "height": 8.28
+        "x0": 579.57,
+        "y0": 923.51,
+        "x1": 621.08,
+        "y1": 932.33,
+        "width": 41.51,
+        "height": 8.82
       },
       "meta": {
         "docling_label": "text",
@@ -7581,12 +8063,12 @@
       "role": "heading",
       "text": "References",
       "bbox": {
-        "x0": 52.99,
-        "y0": 400.64,
-        "x1": 127.52,
-        "y1": 415.54,
-        "width": 74.53,
-        "height": 14.9
+        "x0": 52.96,
+        "y0": 400.46,
+        "x1": 127.55,
+        "y1": 415.72,
+        "width": 74.59,
+        "height": 15.26
       },
       "meta": {
         "docling_label": "section_header",
@@ -7617,6 +8099,25 @@
       "page": 26,
       "order": 6,
       "role": "list_item",
+      "text": "T.J.R. Hughes, J.A. Cottrell, Y. Bazilevs, Isogeometric analysis: CAD, finite elements, NURBS, exact geometry and mesh refinement,",
+      "bbox": {
+        "x0": 59.62,
+        "y0": 458.53,
+        "x1": 773.38,
+        "y1": 471.86,
+        "width": 713.76,
+        "height": 13.33
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[2] T.J.R. Hughes, J.A. Cottrell, Y. Bazilevs, Isogeometric analysis: CAD, finite elements, NURBS, exact geometry and mesh refinement,"
+      }
+    },
+    {
+      "id": "#/texts/488",
+      "page": 26,
+      "order": 7,
+      "role": "list_item",
       "text": "F. Cirak, M.J. Scott, E.K. Antonsson, M. Ortiz, P. Schröder, Integrated modeling, finite-element analysis, and engineering design for thin-shell structures using subdivision, Comput. Aided Des. 34(2) (2002) 137-148, http: dx.doi.org 10.1016 S0010-4485(01)00061-6.",
       "bbox": {
         "x0": 61.27,
@@ -7632,9 +8133,9 @@
       }
     },
     {
-      "id": "#/texts/488",
+      "id": "#/texts/489",
       "page": 26,
-      "order": 7,
+      "order": 8,
       "role": "list_item",
       "text": "P. Kagan, A. Fischer, Integrated mechanically based CAE system using B-Spline finite elements, Comput. Aided Des. 32(8) (2000)",
       "bbox": {
@@ -7651,9 +8152,9 @@
       }
     },
     {
-      "id": "#/texts/489",
+      "id": "#/texts/490",
       "page": 26,
-      "order": 8,
+      "order": 9,
       "role": "list_item",
       "text": "539-552, http: dx.doi.org 10.1016 S0010-4485(00)00041-5.",
       "bbox": {
@@ -7670,9 +8171,9 @@
       }
     },
     {
-      "id": "#/texts/490",
+      "id": "#/texts/491",
       "page": 26,
-      "order": 9,
+      "order": 10,
       "role": "list_item",
       "text": "J. Yang, S. Han, Repairing CAD model errors based on the design history, Comput. Aided Des. 38(6) (2006) 627-640, http: dx.doi.org 10.1016 j.cad.2006.02.007.",
       "bbox": {
@@ -7689,9 +8190,9 @@
       }
     },
     {
-      "id": "#/texts/491",
+      "id": "#/texts/492",
       "page": 26,
-      "order": 10,
+      "order": 11,
       "role": "list_item",
       "text": "M. Mäntylä, An Introduction to Solid Modeling, in: Principles of computer science series., Rockville: Computer Science Press, ISBN: 978-0-88175-108-6, 1988, 13.",
       "bbox": {
@@ -7708,9 +8209,9 @@
       }
     },
     {
-      "id": "#/texts/492",
+      "id": "#/texts/493",
       "page": 26,
-      "order": 11,
+      "order": 12,
       "role": "list_item",
       "text": "F. Massarwi, G. Elber, A B-spline based framework for volumetric object modeling, Comput. Aided Des. 78(2016) 36-47, http: dx.doi.org 10.1016 j.cad.2016.05.003.",
       "bbox": {
@@ -7727,9 +8228,9 @@
       }
     },
     {
-      "id": "#/texts/493",
+      "id": "#/texts/494",
       "page": 26,
-      "order": 12,
+      "order": 13,
       "role": "list_item",
       "text": "G. Butlin, C. Stops, Cad data repair, in: Proceedings of the 5th International Meshing Roundtable, 1996, pp. 7-12.",
       "bbox": {
@@ -7746,9 +8247,9 @@
       }
     },
     {
-      "id": "#/texts/494",
+      "id": "#/texts/495",
       "page": 26,
-      "order": 13,
+      "order": 14,
       "role": "list_item",
       "text": "H. Gu, T.R. Chase, D.C. Cheney, T.T. Bailey, D. Johnson, Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability, J. Comput. Inf. Sci. Eng. 1(2) (2001) 156-166, http: dx.doi.org 10.1115 1.1384887.",
       "bbox": {
@@ -7765,9 +8266,9 @@
       }
     },
     {
-      "id": "#/texts/495",
+      "id": "#/texts/496",
       "page": 26,
-      "order": 14,
+      "order": 15,
       "role": "list_item",
       "text": "N.A. Petersson, K.K. Chand, Detecting Translation Errors in CAD Surfaces and Preparing Geometries for Mesh Generation, Lawrence Livermore National Lab., CA (US), Newport Beach, CA, 2001.",
       "bbox": {
@@ -7784,18 +8285,18 @@
       }
     },
     {
-      "id": "#/texts/496",
+      "id": "#/texts/497",
       "page": 26,
-      "order": 15,
+      "order": 16,
       "role": "list_item",
       "text": "J. Yang, S. Han, S. Park, A method for verification of computer-aided design model errors, J. Eng. Des. 16 (3) (2005) 337-352, http: dx.doi.org 10.1080 09544820500126565.",
       "bbox": {
         "x0": 54.65,
         "y0": 718.46,
         "x1": 773.38,
-        "y1": 748.3,
+        "y1": 746.64,
         "width": 718.73,
-        "height": 29.84
+        "height": 28.18
       },
       "meta": {
         "docling_label": "list_item",
@@ -7803,11 +8304,11 @@
       }
     },
     {
-      "id": "#/texts/497",
+      "id": "#/texts/498",
       "page": 26,
-      "order": 16,
+      "order": 17,
       "role": "list_item",
-      "text": "C.S. Chong, A. Senthil Kumar, H.P. Lee, Automatic mesh-healing technique for model repair and finite element model generation, Finite Elem. Anal. Des. 43(15)(2007) 1109-1119, http: dx.doi.org 10.1016 j.finel.2007.06.009.",
+      "text": "C.S. Chong, A. Senthil Kumar, H.P. Lee, Automatic mesh-healing technique for model repair and finite element model generation, Finite Elem. Anal. Des. 43(15) (2007) 1109-1119, 1109-1119,http: dx.doi.org 10.1016 j.finel.2007.06.009.",
       "bbox": {
         "x0": 54.65,
         "y0": 749.95,
@@ -7818,13 +8319,13 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[12] C.S. Chong, A. Senthil Kumar, H.P. Lee, Automatic mesh-healing technique for model repair and finite element model generation, Finite Elem. Anal. Des. 43(15)(2007) 1109-1119, http: dx.doi.org 10.1016 j.finel.2007.06.009."
+        "docling_orig": "[12] C.S. Chong, A. Senthil Kumar, H.P. Lee, Automatic mesh-healing technique for model repair and finite element model generation, Finite Elem. Anal. Des. 43(15) (2007) 1109-1119, 1109-1119,http: dx.doi.org 10.1016 j.finel.2007.06.009."
       }
     },
     {
-      "id": "#/texts/498",
+      "id": "#/texts/499",
       "page": 26,
-      "order": 17,
+      "order": 18,
       "role": "list_item",
       "text": "F.S. Nooruddin, G. Turk, Simplification and repair of polygonal models using volumetric techniques, IEEE Trans. Vis. Comput. Graphics 9 (2) (2003) 191-205, http: dx.doi.org 10.1109 TVCG.2003.1196006.",
       "bbox": {
@@ -7841,17 +8342,17 @@
       }
     },
     {
-      "id": "#/texts/499",
+      "id": "#/texts/500",
       "page": 26,
-      "order": 18,
+      "order": 19,
       "role": "list_item",
       "text": "S. Bischoff, L. Kobbelt, Structure preserving CAD model repair, Comput. Graph. Forum 24(3) (2005) 527-536, http: dx.doi.org 10. 1111 j.1467-8659.2005.00878.x.",
       "bbox": {
         "x0": 54.65,
         "y0": 811.1,
-        "x1": 771.73,
+        "x1": 770.07,
         "y1": 837.69,
-        "width": 717.08,
+        "width": 715.42,
         "height": 26.59
       },
       "meta": {
@@ -7860,9 +8361,9 @@
       }
     },
     {
-      "id": "#/texts/500",
+      "id": "#/texts/501",
       "page": 26,
-      "order": 19,
+      "order": 20,
       "role": "list_item",
       "text": "O. Busaryev, T.K. Dey, J.A. Levine, Repairing and meshing imperfect shapes with delaunay refinement, in: 2009 SIAM ACM Joint",
       "bbox": {
@@ -7879,9 +8380,9 @@
       }
     },
     {
-      "id": "#/texts/501",
+      "id": "#/texts/502",
       "page": 26,
-      "order": 20,
+      "order": 21,
       "role": "list_item",
       "text": "(2002) 703-717, http: dx.doi.org 10.1002 fld.344.",
       "bbox": {
@@ -7898,9 +8399,9 @@
       }
     },
     {
-      "id": "#/texts/502",
+      "id": "#/texts/503",
       "page": 26,
-      "order": 21,
+      "order": 22,
       "role": "list_item",
       "text": "Y.K. Lee, C.K. Lim, H. Ghazialam, H. Vardhan, E. Eklund, Surface mesh generation for dirty geometries by the cartesian shrink-wrapping technique, Eng. Comput. 26(4) (2010) 377-390, http: dx.doi.org 10.1007 s00366-009-0171-0.",
       "bbox": {
@@ -7917,9 +8418,9 @@
       }
     },
     {
-      "id": "#/texts/503",
+      "id": "#/texts/504",
       "page": 26,
-      "order": 22,
+      "order": 23,
       "role": "list_item",
       "text": "R. Gasparini, T. Kosta, I. Tsukanov, Engineering analysis in imprecise geometric models, in: Finite Elements in Analysis and Design, Vol. 66, 2013, pp. 96-109, http: dx.doi.org 10.1016 j.finel.2012.10.011.",
       "bbox": {
@@ -7936,9 +8437,9 @@
       }
     },
     {
-      "id": "#/texts/504",
+      "id": "#/texts/505",
       "page": 26,
-      "order": 23,
+      "order": 24,
       "role": "list_item",
       "text": "L.V. Kantorovich, V.I. Krylov, Approximate Methods of Higher Analysis, Interscience Publishers, ISBN: 978-0-486-82160-3, 1958.",
       "bbox": {
@@ -7955,9 +8456,9 @@
       }
     },
     {
-      "id": "#/texts/505",
+      "id": "#/texts/506",
       "page": 26,
-      "order": 24,
+      "order": 25,
       "role": "list_item",
       "text": "IntactSolutions, ScanAndSolve, http: www.scan-and-solve.com, 2013.",
       "bbox": {
@@ -7974,9 +8475,9 @@
       }
     },
     {
-      "id": "#/texts/506",
+      "id": "#/texts/507",
       "page": 26,
-      "order": 25,
+      "order": 26,
       "role": "list_item",
       "text": "J. Parvizian, A. Düster, E. Rank, Finite cell method, Comput. Mech. 41(1) (2007) 121-133, http: dx.doi.org 10.1007 s00466-0070173-y.",
       "bbox": {
@@ -7993,11 +8494,11 @@
       }
     },
     {
-      "id": "#/texts/507",
+      "id": "#/texts/508",
       "page": 26,
-      "order": 26,
+      "order": 27,
       "role": "list_item",
-      "text": "A. Düster, J. Parvizian, Z. Yang, E. Rank, The finite cell method for three-dimensional problems of solid mechanics, Comput. Methods Apple Engro 197(4548) 2008) 3768-3782, http: dx.doi.org 10.1016 j.cma.2008.02.036.",
+      "text": "A. Düster, J. Parvizian, Z. Yang, E. Rank, The finite cell method for three-dimensional problems of solid mechanics, Comput. Methods Appl. Mech. Engrg. 197(4548) (2008) 3768-3782, http: dx.doi.org 10.1016 j.cma.2008.02.036.",
       "bbox": {
         "x0": 54.65,
         "y0": 1024.7,
@@ -8008,11 +8509,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[22] A. Düster, J. Parvizian, Z. Yang, E. Rank, The finite cell method for three-dimensional problems of solid mechanics, Comput. Methods Apple Engro 197(4548) 2008) 3768-3782, http: dx.doi.org 10.1016 j.cma.2008.02.036."
+        "docling_orig": "[22] A. Düster, J. Parvizian, Z. Yang, E. Rank, The finite cell method for three-dimensional problems of solid mechanics, Comput. Methods Appl. Mech. Engrg. 197(4548) (2008) 3768-3782, http: dx.doi.org 10.1016 j.cma.2008.02.036."
       }
     },
     {
-      "id": "#/texts/510",
+      "id": "#/texts/511",
       "page": 27,
       "order": 1,
       "role": "list_item",
@@ -8031,45 +8532,45 @@
       }
     },
     {
-      "id": "#/texts/511",
+      "id": "#/texts/512",
       "page": 27,
       "order": 2,
       "role": "list_item",
-      "text": "cell method on constructive solid geometry, Comput. Math. Appl. (2017) http: dx.doi.org 10.1016 j.camwa.2017.01.027.",
+      "text": "B. Wassermann, S. Kollmannsberger, T. Bog, E. Rank, From geometric design to numerical analysis: A direct approach using the finite cell method on constructive solid geometry, Comput. Math. Appl. (2017) http: dx.doi.org 10.1016 j.camwa.2017.01.027.",
       "bbox": {
         "x0": 57.96,
-        "y0": 130.79,
-        "x1": 708.8,
+        "y0": 130.63,
+        "x1": 780.01,
         "y1": 158.95,
-        "width": 650.84,
-        "height": 28.16
+        "width": 722.05,
+        "height": 28.32
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[24] cell method on constructive solid geometry, Comput. Math. Appl. (2017) http: dx.doi.org 10.1016 j.camwa.2017.01.027."
-      }
-    },
-    {
-      "id": "#/texts/512",
-      "page": 27,
-      "order": 3,
-      "role": "list_item",
-      "text": "combined with level set function, Comput. Methods Appl. Mech. Engrg. 278(2014) 361-387, http: dx.doi.org 10.1016 j.cma.2014.06. 007.",
-      "bbox": {
-        "x0": 87.77,
-        "y0": 175.49,
-        "x1": 776.69,
-        "y1": 203.63,
-        "width": 688.92,
-        "height": 28.14
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "combined with level set function, Comput. Methods Appl. Mech. Engrg. 278(2014) 361-387, http: dx.doi.org 10.1016 j.cma.2014.06. 007."
+        "docling_orig": "[24] B. Wassermann, S. Kollmannsberger, T. Bog, E. Rank, From geometric design to numerical analysis: A direct approach using the finite cell method on constructive solid geometry, Comput. Math. Appl. (2017) http: dx.doi.org 10.1016 j.camwa.2017.01.027."
       }
     },
     {
       "id": "#/texts/513",
+      "page": 27,
+      "order": 3,
+      "role": "list_item",
+      "text": "S. Cai, W. Zhang, J. Zhu, T. Gao, Stress constrained shape and topology optimization with fixed mesh: A B-spline finite cell method combined with level set function, Comput. Methods Appl. Mech. Engrg. 278(2014) 361-387, http: dx.doi.org 10.1016 j.cma.2014.06. 007.",
+      "bbox": {
+        "x0": 59.62,
+        "y0": 160.59,
+        "x1": 778.35,
+        "y1": 203.63,
+        "width": 718.73,
+        "height": 43.04
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[25] S. Cai, W. Zhang, J. Zhu, T. Gao, Stress constrained shape and topology optimization with fixed mesh: A B-spline finite cell method combined with level set function, Comput. Methods Appl. Mech. Engrg. 278(2014) 361-387, http: dx.doi.org 10.1016 j.cma.2014.06. 007."
+      }
+    },
+    {
+      "id": "#/texts/514",
       "page": 27,
       "order": 4,
       "role": "list_item",
@@ -8088,7 +8589,7 @@
       }
     },
     {
-      "id": "#/texts/514",
+      "id": "#/texts/515",
       "page": 27,
       "order": 5,
       "role": "list_item",
@@ -8107,11 +8608,11 @@
       }
     },
     {
-      "id": "#/texts/515",
+      "id": "#/texts/516",
       "page": 27,
       "order": 6,
       "role": "list_item",
-      "text": "M. Joulaian, S. Duczek, U. Gabbert, A. Düster, Finite and spectral cell method for wave propagation in heterogeneous materials, Comput. Mech. 54(3) (2014) 661-675, 661-675,http: dx.doi.org 10.1007 s00466-014-1019-z.",
+      "text": "M. Joulaian, S. Duczek, U. Gabbert, A. Düster, Finite and spectral cell method for wave propagation in heterogeneous materials, Comput. Mech. 54(3) (2014) 661-675, http: dx.doi.org 10.1007 s00466-014-1019-z.",
       "bbox": {
         "x0": 59.62,
         "y0": 266.54,
@@ -8122,11 +8623,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[28] M. Joulaian, S. Duczek, U. Gabbert, A. Düster, Finite and spectral cell method for wave propagation in heterogeneous materials, Comput. Mech. 54(3) (2014) 661-675, 661-675,http: dx.doi.org 10.1007 s00466-014-1019-z."
+        "docling_orig": "[28] M. Joulaian, S. Duczek, U. Gabbert, A. Düster, Finite and spectral cell method for wave propagation in heterogeneous materials, Comput. Mech. 54(3) (2014) 661-675, http: dx.doi.org 10.1007 s00466-014-1019-z."
       }
     },
     {
-      "id": "#/texts/516",
+      "id": "#/texts/517",
       "page": 27,
       "order": 7,
       "role": "list_item",
@@ -8145,7 +8646,7 @@
       }
     },
     {
-      "id": "#/texts/517",
+      "id": "#/texts/518",
       "page": 27,
       "order": 8,
       "role": "list_item",
@@ -8164,7 +8665,7 @@
       }
     },
     {
-      "id": "#/texts/518",
+      "id": "#/texts/519",
       "page": 27,
       "order": 9,
       "role": "list_item",
@@ -8183,7 +8684,7 @@
       }
     },
     {
-      "id": "#/texts/519",
+      "id": "#/texts/520",
       "page": 27,
       "order": 10,
       "role": "list_item",
@@ -8202,26 +8703,26 @@
       }
     },
     {
-      "id": "#/texts/520",
+      "id": "#/texts/521",
       "page": 27,
       "order": 11,
       "role": "list_item",
-      "text": "S. Kollmannsberger, A. Özcan, J. Baiges, M. Ruess, E. Rank, A. Reali, Parameterfree, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches, Internat. J. Numer. Methods Engrg. 101(9) (2015) 670-699, http: dx.doi.org 10.1002 nme.4817.",
+      "text": "S. Kollmannsberger, A. Ozcan, J. Baiges, M. Ruess, E. Rank, A. Reali, Parameterfree, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches, Internat. J. Numer. Methods Engrg. 101 (9) (2015) 670-699, http: dx.doi.org 10.1002 nme.4817.",
       "bbox": {
         "x0": 59.62,
-        "y0": 417.19,
-        "x1": 780.01,
+        "y0": 418.85,
+        "x1": 778.35,
         "y1": 461.89,
-        "width": 720.39,
-        "height": 44.7
+        "width": 718.73,
+        "height": 43.04
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[33] S. Kollmannsberger, A. Özcan, J. Baiges, M. Ruess, E. Rank, A. Reali, Parameterfree, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches, Internat. J. Numer. Methods Engrg. 101(9) (2015) 670-699, http: dx.doi.org 10.1002 nme.4817."
+        "docling_orig": "[33] S. Kollmannsberger, A. Ozcan, J. Baiges, M. Ruess, E. Rank, A. Reali, Parameterfree, weak imposition of Dirichlet boundary conditions and coupling of trimmed and non-conforming patches, Internat. J. Numer. Methods Engrg. 101 (9) (2015) 670-699, http: dx.doi.org 10.1002 nme.4817."
       }
     },
     {
-      "id": "#/texts/521",
+      "id": "#/texts/522",
       "page": 27,
       "order": 12,
       "role": "list_item",
@@ -8240,7 +8741,7 @@
       }
     },
     {
-      "id": "#/texts/522",
+      "id": "#/texts/523",
       "page": 27,
       "order": 13,
       "role": "list_item",
@@ -8259,7 +8760,7 @@
       }
     },
     {
-      "id": "#/texts/523",
+      "id": "#/texts/524",
       "page": 27,
       "order": 14,
       "role": "list_item",
@@ -8278,7 +8779,7 @@
       }
     },
     {
-      "id": "#/texts/524",
+      "id": "#/texts/525",
       "page": 27,
       "order": 15,
       "role": "list_item",
@@ -8297,7 +8798,7 @@
       }
     },
     {
-      "id": "#/texts/525",
+      "id": "#/texts/526",
       "page": 27,
       "order": 16,
       "role": "list_item",
@@ -8316,7 +8817,7 @@
       }
     },
     {
-      "id": "#/texts/526",
+      "id": "#/texts/527",
       "page": 27,
       "order": 17,
       "role": "list_item",
@@ -8335,7 +8836,7 @@
       }
     },
     {
-      "id": "#/texts/527",
+      "id": "#/texts/528",
       "page": 27,
       "order": 18,
       "role": "list_item",
@@ -8343,9 +8844,9 @@
       "bbox": {
         "x0": 61.27,
         "y0": 647.14,
-        "x1": 778.35,
+        "x1": 780.01,
         "y1": 673.8,
-        "width": 717.08,
+        "width": 718.74,
         "height": 26.66
       },
       "meta": {
@@ -8354,7 +8855,7 @@
       }
     },
     {
-      "id": "#/texts/528",
+      "id": "#/texts/529",
       "page": 27,
       "order": 19,
       "role": "list_item",
@@ -8373,7 +8874,7 @@
       }
     },
     {
-      "id": "#/texts/529",
+      "id": "#/texts/530",
       "page": 27,
       "order": 20,
       "role": "list_item",
@@ -8392,7 +8893,7 @@
       }
     },
     {
-      "id": "#/texts/530",
+      "id": "#/texts/531",
       "page": 27,
       "order": 21,
       "role": "list_item",
@@ -8411,7 +8912,7 @@
       }
     },
     {
-      "id": "#/texts/531",
+      "id": "#/texts/532",
       "page": 27,
       "order": 22,
       "role": "list_item",
@@ -8430,7 +8931,7 @@
       }
     },
     {
-      "id": "#/texts/532",
+      "id": "#/texts/533",
       "page": 27,
       "order": 23,
       "role": "list_item",
@@ -8449,7 +8950,7 @@
       }
     },
     {
-      "id": "#/texts/533",
+      "id": "#/texts/534",
       "page": 27,
       "order": 24,
       "role": "list_item",
@@ -8468,7 +8969,7 @@
       }
     },
     {
-      "id": "#/texts/534",
+      "id": "#/texts/535",
       "page": 27,
       "order": 25,
       "role": "list_item",
@@ -8487,7 +8988,7 @@
       }
     },
     {
-      "id": "#/texts/535",
+      "id": "#/texts/536",
       "page": 27,
       "order": 26,
       "role": "list_item",
@@ -8506,7 +9007,7 @@
       }
     },
     {
-      "id": "#/texts/536",
+      "id": "#/texts/537",
       "page": 27,
       "order": 27,
       "role": "list_item",
@@ -8514,9 +9015,9 @@
       "bbox": {
         "x0": 69.55,
         "y0": 920.4,
-        "x1": 770.07,
+        "x1": 771.73,
         "y1": 945.39,
-        "width": 700.52,
+        "width": 702.18,
         "height": 24.99
       },
       "meta": {
@@ -8525,45 +9026,45 @@
       }
     },
     {
-      "id": "#/texts/537",
+      "id": "#/texts/538",
       "page": 27,
       "order": 28,
       "role": "list_item",
-      "text": "A. Goldberg, D. Robson, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 1983.",
+      "text": "A. Goldberg, D. Robson, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN:",
       "bbox": {
         "x0": 61.27,
-        "y0": 965.05,
-        "x1": 778.35,
-        "y1": 991.71,
-        "width": 717.08,
-        "height": 26.66
+        "y0": 964.41,
+        "x1": 778.39,
+        "y1": 978.41,
+        "width": 717.12,
+        "height": 14.0
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[51] A. Goldberg, D. Robson, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 1983."
-      }
-    },
-    {
-      "id": "#/texts/538",
-      "page": 27,
-      "order": 29,
-      "role": "list_item",
-      "text": "B. Rumpe, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 2016.",
-      "bbox": {
-        "x0": 61.17,
-        "y0": 936.71,
-        "x1": 770.24,
-        "y1": 969.02,
-        "width": 709.07,
-        "height": 32.31
-      },
-      "meta": {
-        "docling_label": "list_item",
-        "docling_orig": "[50] B. Rumpe, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 2016."
+        "docling_orig": "[51] A. Goldberg, D. Robson, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN:"
       }
     },
     {
       "id": "#/texts/539",
+      "page": 27,
+      "order": 29,
+      "role": "list_item",
+      "text": "[501 B. Rumpe, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 2016.",
+      "bbox": {
+        "x0": 61.17,
+        "y0": 936.22,
+        "x1": 770.24,
+        "y1": 969.52,
+        "width": 709.07,
+        "height": 33.3
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[501 B. Rumpe, Modeling with UML: Language, Concepts, Methods, Springer International Publishing, ISBN: 978-3-319-33932-0, 2016."
+      }
+    },
+    {
+      "id": "#/texts/540",
       "page": 27,
       "order": 30,
       "role": "list_item",
@@ -8582,7 +9083,7 @@
       }
     },
     {
-      "id": "#/texts/540",
+      "id": "#/texts/541",
       "page": 27,
       "order": 31,
       "role": "list_item",
@@ -8601,7 +9102,7 @@
       }
     },
     {
-      "id": "#/texts/543",
+      "id": "#/texts/544",
       "page": 28,
       "order": 1,
       "role": "list_item",
@@ -8620,7 +9121,7 @@
       }
     },
     {
-      "id": "#/texts/544",
+      "id": "#/texts/545",
       "page": 28,
       "order": 2,
       "role": "list_item",
@@ -8639,26 +9140,26 @@
       }
     },
     {
-      "id": "#/texts/545",
+      "id": "#/texts/546",
       "page": 28,
       "order": 3,
       "role": "list_item",
-      "text": "(561 A.ds, Ency lopedia of Sombo, That Mechanic, Vol. 2, chestet, est Susex: elmedy, i Sons, iS N: 973-1-119-039-3, Eds.), Encyclopedia of Computational Mechanics, 2017, pp. 1-35.",
+      "text": "30 Ads), Encyclopedia of Computational Mechanics, Vol. 2, Chichester, West Sussex: John Wiley e Sons, ISB: 978-1-19-00379-5 Eds.), Encyclopedia of Computational Mechanics, 2017, pp. 1-35.",
       "bbox": {
-        "x0": 56.31,
-        "y0": 191.94,
-        "x1": 770.07,
+        "x0": 59.62,
+        "y0": 193.61,
+        "x1": 766.76,
         "y1": 235.08,
-        "width": 713.76,
-        "height": 43.14
+        "width": 707.14,
+        "height": 41.47
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "(561 A.ds, Ency lopedia of Sombo, That Mechanic, Vol. 2, chestet, est Susex: elmedy, i Sons, iS N: 973-1-119-039-3, Eds.), Encyclopedia of Computational Mechanics, 2017, pp. 1-35."
+        "docling_orig": "30 Ads), Encyclopedia of Computational Mechanics, Vol. 2, Chichester, West Sussex: John Wiley e Sons, ISB: 978-1-19-00379-5 Eds.), Encyclopedia of Computational Mechanics, 2017, pp. 1-35."
       }
     },
     {
-      "id": "#/texts/546",
+      "id": "#/texts/547",
       "page": 28,
       "order": 4,
       "role": "list_item",
@@ -8677,7 +9178,7 @@
       }
     },
     {
-      "id": "#/texts/547",
+      "id": "#/texts/548",
       "page": 28,
       "order": 5,
       "role": "list_item",
@@ -8696,7 +9197,7 @@
       }
     },
     {
-      "id": "#/texts/548",
+      "id": "#/texts/549",
       "page": 28,
       "order": 6,
       "role": "list_item",
@@ -8715,7 +9216,7 @@
       }
     },
     {
-      "id": "#/texts/549",
+      "id": "#/texts/550",
       "page": 28,
       "order": 7,
       "role": "list_item",
@@ -8734,7 +9235,7 @@
       }
     },
     {
-      "id": "#/texts/550",
+      "id": "#/texts/551",
       "page": 28,
       "order": 8,
       "role": "list_item",
@@ -8753,7 +9254,7 @@
       }
     },
     {
-      "id": "#/texts/551",
+      "id": "#/texts/552",
       "page": 28,
       "order": 9,
       "role": "list_item",
@@ -8772,7 +9273,7 @@
       }
     },
     {
-      "id": "#/texts/552",
+      "id": "#/texts/553",
       "page": 28,
       "order": 10,
       "role": "list_item",
@@ -8791,7 +9292,7 @@
       }
     },
     {
-      "id": "#/texts/553",
+      "id": "#/texts/554",
       "page": 28,
       "order": 11,
       "role": "list_item",
@@ -8810,11 +9311,11 @@
       }
     },
     {
-      "id": "#/texts/554",
+      "id": "#/texts/555",
       "page": 28,
       "order": 12,
       "role": "list_item",
-      "text": "M. Ruess, D. Schillinger, Y. Bazilevs, V. Varduhn, E. Rank, Weakly enforced essential boundary conditions for nurbs-embedded and trimmed nurbs geometries on the basis of the finite cell method, Internat. J. Numer. Methods Engrg. 95 (10) (2013) 811-846, http: dx.doi.org 10.1002 nme.4522",
+      "text": "M. Ruess, D. Schillinger, Y. Bazilevs, V. Varduhn, E. Rank, Weakly enforced essential boundary conditions for nurbs-embedded and trimmed nurbs geometries on the basis of the finite cell method, Internat. J. Numer. Methods Engrg. 95(10) (2013) 811-846, http: dx.doi.org 10.1002 nme.4522",
       "bbox": {
         "x0": 54.65,
         "y0": 529.77,
@@ -8825,11 +9326,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[65] M. Ruess, D. Schillinger, Y. Bazilevs, V. Varduhn, E. Rank, Weakly enforced essential boundary conditions for nurbs-embedded and trimmed nurbs geometries on the basis of the finite cell method, Internat. J. Numer. Methods Engrg. 95 (10) (2013) 811-846, http: dx.doi.org 10.1002 nme.4522"
+        "docling_orig": "[65] M. Ruess, D. Schillinger, Y. Bazilevs, V. Varduhn, E. Rank, Weakly enforced essential boundary conditions for nurbs-embedded and trimmed nurbs geometries on the basis of the finite cell method, Internat. J. Numer. Methods Engrg. 95(10) (2013) 811-846, http: dx.doi.org 10.1002 nme.4522"
       }
     },
     {
-      "id": "#/texts/555",
+      "id": "#/texts/556",
       "page": 28,
       "order": 13,
       "role": "list_item",
@@ -8848,7 +9349,7 @@
       }
     },
     {
-      "id": "#/texts/556",
+      "id": "#/texts/557",
       "page": 28,
       "order": 14,
       "role": "list_item",
@@ -8867,17 +9368,17 @@
       }
     },
     {
-      "id": "#/texts/557",
+      "id": "#/texts/558",
       "page": 28,
       "order": 15,
       "role": "list_item",
       "text": "B. Zalik, I. Kolingerova, A cell-based point-in-polygon algorithm suitable for large sets of points, Comput. Geosci. 27(10) (2001) 1135-1145, http: dx.doi.org 10.1016 S0098-3004(01)00037-1.",
       "bbox": {
-        "x0": 54.65,
+        "x0": 56.31,
         "y0": 635.72,
         "x1": 773.38,
         "y1": 663.86,
-        "width": 718.73,
+        "width": 717.07,
         "height": 28.14
       },
       "meta": {
@@ -8886,7 +9387,7 @@
       }
     },
     {
-      "id": "#/texts/558",
+      "id": "#/texts/559",
       "page": 28,
       "order": 16,
       "role": "list_item",
@@ -8905,7 +9406,7 @@
       }
     },
     {
-      "id": "#/texts/559",
+      "id": "#/texts/560",
       "page": 28,
       "order": 17,
       "role": "list_item",
@@ -8924,7 +9425,7 @@
       }
     },
     {
-      "id": "#/texts/560",
+      "id": "#/texts/561",
       "page": 28,
       "order": 18,
       "role": "list_item",
@@ -8932,9 +9433,9 @@
       "bbox": {
         "x0": 56.31,
         "y0": 713.46,
-        "x1": 771.73,
+        "x1": 773.38,
         "y1": 726.79,
-        "width": 715.42,
+        "width": 717.07,
         "height": 13.33
       },
       "meta": {
@@ -8943,7 +9444,7 @@
       }
     },
     {
-      "id": "#/texts/561",
+      "id": "#/texts/562",
       "page": 28,
       "order": 19,
       "role": "list_item",
@@ -8962,17 +9463,17 @@
       }
     },
     {
-      "id": "#/texts/562",
+      "id": "#/texts/563",
       "page": 28,
       "order": 20,
       "role": "list_item",
       "text": "G. Strang, An Analysis of the Finite Element Method, Englewood Cliffs, NJ: Prentice-Hall, ISBN: 0-13-032946-0, 1973.",
       "bbox": {
-        "x0": 54.65,
+        "x0": 56.31,
         "y0": 774.77,
         "x1": 710.45,
         "y1": 788.1,
-        "width": 655.8,
+        "width": 654.14,
         "height": 13.33
       },
       "meta": {
@@ -8981,23 +9482,53 @@
       }
     },
     {
-      "id": "#/texts/563",
+      "id": "#/texts/564",
       "page": 28,
       "order": 21,
       "role": "list_item",
-      "text": "GrabCad, General Electric jet engine bracket challenge - GrabCAD, https: grabcad.com challenges ge-jet-engine-bracket-challenge, 2013.",
+      "text": "GrabCad, General Electric jet engine bracket challenge - GrabCAD, https: grabcad.com challenges ge-jet-engine-bracket-challenge,",
       "bbox": {
         "x0": 54.65,
         "y0": 789.68,
         "x1": 773.38,
-        "y1": 817.83,
+        "y1": 802.93,
         "width": 718.73,
-        "height": 28.15
+        "height": 13.25
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[74] GrabCad, General Electric jet engine bracket challenge - GrabCAD, https: grabcad.com challenges ge-jet-engine-bracket-challenge, 2013."
+        "docling_orig": "[74] GrabCad, General Electric jet engine bracket challenge - GrabCAD, https: grabcad.com challenges ge-jet-engine-bracket-challenge,"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling",
+    "28": "docling"
+  }
 }

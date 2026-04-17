@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
   "page_count": 40,
   "page_sizes_pt": [
     {
@@ -228,15 +228,15 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "J.H. Rieger*",
       "bbox": {
-        "x0": 211.53,
-        "y0": 305.87,
-        "x1": 330.72,
-        "y1": 329.85,
-        "width": 119.19,
-        "height": 23.98
+        "x0": 211.38,
+        "y0": 305.08,
+        "x1": 329.21,
+        "y1": 330.64,
+        "width": 117.83,
+        "height": 25.56
       },
       "meta": {
         "docling_label": "section_header",
@@ -247,7 +247,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Department of Computer Science and Statistics, Queen Mary College, University of London, Mile End Road, London El 4NS, UK; and GEC Hirst Research Centre, East Lane, Wembley, Middlesex HA9 7PP, UK",
       "bbox": {
         "x0": 213.26,
@@ -266,7 +266,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ABSTRACT",
       "bbox": {
         "x0": 94.23,
@@ -285,15 +285,15 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A view of a smooth, opaque object is a line drawing consisting of contour fragments which form closed loops, terminate, or form T-junctions. Given a compact object we have a global decomposition of the space of camera positions into cells from which topologically equivalent views are obtained. To apply certain image-based object recognition techniques based on characteristic views of an object one needs to know this cellular decomposition of view space. The boundaries of such cells of stable views are formed by the view bifurcation set from which transitional (degenerate) views are seen. We derive a finite list of geometrical models of the view bifurcation set—the view bifurcation set of any particular object is a combination of such model surfaces from this list. To match a characteristic view with an image one has to find the visible fragments of the apparent contour in the image, and we briefly describe an observation which might lead to an algorithm for finding such contour fragments.",
       "bbox": {
         "x0": 92.58,
-        "y0": 470.14,
+        "y0": 470.08,
         "x1": 677.81,
         "y1": 653.93,
         "width": 585.23,
-        "height": 183.79
+        "height": 183.85
       },
       "meta": {
         "docling_label": "text",
@@ -304,7 +304,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 213.26,
@@ -323,15 +323,15 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A view of a semitransparent object O with smooth boundary M is a line drawing consisting of the intersection of all rays of projection tangent to M with the image plane. The view space V of an object is the space R° - O of all possible centres of projection. If, instead of central projection, we consider orthogonal projections of M onto planes we identify V with the sphere S2 representing all possible directions of projection, the \"view sphere\" [4]. In either case, V consists of a finite number of cells giving rise to topologically equivalent views. These cells are separated by the view bifurcation set B. Views of M as seen from V - B consist of closed curves which are smooth everywhere except at isolated points corresponding to transverse intersections or cusps [21], whereas views seen from a point on B contain some degenerate singularity.",
       "bbox": {
-        "x0": 89.2,
-        "y0": 725.12,
+        "x0": 88.99,
+        "y0": 724.5,
         "x1": 674.62,
-        "y1": 963.86,
-        "width": 585.42,
-        "height": 238.74
+        "y1": 964.89,
+        "width": 585.63,
+        "height": 240.39
       },
       "meta": {
         "docling_label": "text",
@@ -440,11 +440,11 @@
       "role": "paragraph",
       "text": "The idea of characteristic views is also related to the problem of interpreting line drawings of objects—a problem, which has attracted much interest in computer vision from the early research on the interpretation of polyhedral scenes up to the recent work of Malik on the interpretation of views of piecewise smooth surfaces [14]. A crucial part in this work is to find a catalogue of all possible junction types in a line drawing—in the language of the present paper this corresponds to a classification of all isolated singularities of codimension 0 (like, for example, cusps and transverse fold crossings). The degenerate singularities of positive codimension are not relevant in the interpretation of single line drawings (they occur with zero probability), but they do occur in families of views and they explain how the stable views fit together globally.",
       "bbox": {
-        "x0": 94.23,
+        "x0": 94.13,
         "y0": 177.14,
         "x1": 679.46,
         "y1": 420.5,
-        "width": 585.23,
+        "width": 585.33,
         "height": 243.36
       },
       "meta": {
@@ -519,9 +519,9 @@
         "x0": 120.68,
         "y0": 887.36,
         "x1": 676.16,
-        "y1": 924.28,
+        "y1": 924.29,
         "width": 555.48,
-        "height": 36.92
+        "height": 36.93
       },
       "meta": {
         "docling_label": "list_item",
@@ -576,9 +576,9 @@
         "x0": 94.07,
         "y0": 132.29,
         "x1": 679.46,
-        "y1": 273.39,
+        "y1": 273.24,
         "width": 585.39,
-        "height": 141.1
+        "height": 140.95
       },
       "meta": {
         "docling_label": "text",
@@ -687,12 +687,12 @@
       "role": "paragraph",
       "text": "direction slightly will not change the topology of the view (for example, the cusps and crossings will move a little, but no cusps and crossings will be created or destroyed).",
       "bbox": {
-        "x0": 97.54,
+        "x0": 97.51,
         "y0": 135.63,
         "x1": 679.46,
-        "y1": 195.35,
-        "width": 581.92,
-        "height": 59.72
+        "y1": 195.55,
+        "width": 581.95,
+        "height": 59.92
       },
       "meta": {
         "docling_label": "text",
@@ -707,11 +707,11 @@
       "text": "However, in a one-parameter family of projections of M degenerate transitional views can occur for certain \"bad\" directions of projection (in such a transitional view there is a change in the number of cusps and or crossings on the apparent contour). The set of bad projection directions, the \"view bifurcation set,\" divides the space S' of all directions of orthogonal projection (the \"viewing sphere\" [4]) into different regions, see Fig. 2. Note that the bifurcation set B of an opaque bean shown in Fig. 2(b) is a subset of the full bifurcation set B shown in Fig. 2(a), which corresponds to a semitransparent bean: B and B differ by one-dimensional arcs that correspond to hidden transitions in a view. Hence, there are fewer connected regions in S' - B than in S2 - B.",
       "bbox": {
         "x0": 95.77,
-        "y0": 195.28,
+        "y0": 193.61,
         "x1": 681.11,
-        "y1": 417.64,
+        "y1": 417.62,
         "width": 585.34,
-        "height": 222.36
+        "height": 224.01
       },
       "meta": {
         "docling_label": "text",
@@ -799,7 +799,7 @@
       "page": 6,
       "order": 1,
       "role": "paragraph",
-      "text": "tions of M, then the view bifurcation sets B and B consist of, in general, singular surfaces in the three-dimensional space of centres of projection. Likewise, if we consider the evolution over time t of the bifurcation sets on the viewing sphere S of a one-parameter family of surfaces we again obtain singular surfaces B, and B, in R× S'",
+      "text": "tions of M, then the view bifurcation sets B and B consist of, in general, singular surfaces in the three-dimensional space of centres of projection. Likewise, if we consider the evolution over time t of the bifurcation sets on the viewing sphere S of a one-parameter family of surfaces we again obtain singular surfaces B, and B, in R×S?",
       "bbox": {
         "x0": 86.94,
         "y0": 128.5,
@@ -810,7 +810,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "tions of M, then the view bifurcation sets B and B consist of, in general, singular surfaces in the three-dimensional space of centres of projection. Likewise, if we consider the evolution over time t of the bifurcation sets on the viewing sphere S of a one-parameter family of surfaces we again obtain singular surfaces B, and B, in R× S'"
+        "docling_orig": "tions of M, then the view bifurcation sets B and B consist of, in general, singular surfaces in the three-dimensional space of centres of projection. Likewise, if we consider the evolution over time t of the bifurcation sets on the viewing sphere S of a one-parameter family of surfaces we again obtain singular surfaces B, and B, in R×S?"
       }
     },
     {
@@ -822,10 +822,10 @@
       "bbox": {
         "x0": 89.06,
         "y0": 234.93,
-        "x1": 674.58,
-        "y1": 882.39,
-        "width": 585.52,
-        "height": 647.46
+        "x1": 674.5,
+        "y1": 882.65,
+        "width": 585.44,
+        "height": 647.72
       },
       "meta": {
         "docling_label": "text",
@@ -861,9 +861,9 @@
         "x0": 94.04,
         "y0": 955.9,
         "x1": 674.67,
-        "y1": 1003.37,
+        "y1": 1004.52,
         "width": 580.63,
-        "height": 47.47
+        "height": 48.62
       },
       "meta": {
         "docling_label": "text",
@@ -915,11 +915,11 @@
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
-        "x0": 454.63,
+        "x0": 452.97,
         "y0": 738.36,
         "x1": 481.08,
         "y1": 763.2,
-        "width": 26.45,
+        "width": 28.11,
         "height": 24.84
       },
       "meta": {
@@ -932,7 +932,7 @@
       "page": 7,
       "order": 4,
       "role": "paragraph",
-      "text": "class of views\" (full details are given in the technical papers (18, 20]). We assume that Mis a smooth surface given by a map o: M→R° which has maximal rank everywhere (that is o is an immersion), and we choose local coordinates x, y on M and X, Y, Z in R'. Locally (at the origin, say) we can replace M by R', ', and since the rank of dø (throughout this paper d denotes the differential) is 2 we can write (in Monge form)",
+      "text": "class of views\" (full details are given in the technical papers (18, 20]). We assume that Mis a smooth surface given by a map o: MR which has maximal rank everywhere (that is o is an immersion), and we choose local coordinates x, y on M and X, Y, Z in R'. Locally (at the origin, say) we can replace M by R', ', and since the rank of dø (throughout this paper d denotes the differential) is 2 we can write (in Monge form)",
       "bbox": {
         "x0": 94.05,
         "y0": 885.28,
@@ -943,7 +943,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "class of views\" (full details are given in the technical papers (18, 20]). We assume that Mis a smooth surface given by a map o: M→R° which has maximal rank everywhere (that is o is an immersion), and we choose local coordinates x, y on M and X, Y, Z in R'. Locally (at the origin, say) we can replace M by R', ', and since the rank of dø (throughout this paper d denotes the differential) is 2 we can write (in Monge form)"
+        "docling_orig": "class of views\" (full details are given in the technical papers (18, 20]). We assume that Mis a smooth surface given by a map o: MR which has maximal rank everywhere (that is o is an immersion), and we choose local coordinates x, y on M and X, Y, Z in R'. Locally (at the origin, say) we can replace M by R', ', and since the rank of dø (throughout this paper d denotes the differential) is 2 we can write (in Monge form)"
       }
     },
     {
@@ -1046,7 +1046,7 @@
       "page": 8,
       "order": 6,
       "role": "paragraph",
-      "text": "The line of sight, the Y-direction, is tangent to this space curve at t = 4, 3т, which corresponds to the points (x, y) = (‡1, 0). Hence the apparent contour (sin t, - }cost) has cusps at t = 4, 3т.",
+      "text": "The line of sight, the Y-direction, is tangent to this space curve at t = 4, 3т, which corresponds to the points (x, y) = (‡1, 0). Hence the apparent contour (sin t, - }cost) has cusps at |T, 3т.",
       "bbox": {
         "x0": 95.69,
         "y0": 779.2,
@@ -1057,7 +1057,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The line of sight, the Y-direction, is tangent to this space curve at t = 4, 3т, which corresponds to the points (x, y) = (‡1, 0). Hence the apparent contour (sin t, - }cost) has cusps at t = 4, 3т."
+        "docling_orig": "The line of sight, the Y-direction, is tangent to this space curve at t = 4, 3т, which corresponds to the points (x, y) = (‡1, 0). Hence the apparent contour (sin t, - }cost) has cusps at |T, 3т."
       }
     },
     {
@@ -1065,7 +1065,7 @@
       "page": 8,
       "order": 7,
       "role": "paragraph",
-      "text": "It is a classical result of Whitney [21] that a stable map f from the plane to the plane has only folds and cusps as local singularities. As a consequence we can transform any stable singularity of f(x, y) = (X, Z) into one of the normal forms (x, y'), the fold, or (x, xy + y\"), the cusp, by local diffeomorphisms of the (x, y)- and (X, Z)-space (both the normal forms and these diffeomorphisms being defined in a neighborhood of (x, y) = (X, Z) = (0, 0)).",
+      "text": "It is a classical result of Whitney [21] that a stable map f from the plane to the plane has only folds and cusps as local singularities. As a consequence we can transform any stable singularity of f(x, y) = (X, Z) into one of the normal forms (x, y'), the fold, or (x, xy + y\"), the cusp, by local diffeomorphisms of phisms being defined in a neighborhood of (x, y) = (X, Z) = (0, 0)).",
       "bbox": {
         "x0": 97.4,
         "y0": 862.41,
@@ -1076,7 +1076,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "It is a classical result of Whitney [21] that a stable map f from the plane to the plane has only folds and cusps as local singularities. As a consequence we can transform any stable singularity of f(x, y) = (X, Z) into one of the normal forms (x, y'), the fold, or (x, xy + y\"), the cusp, by local diffeomorphisms of the (x, y)- and (X, Z)-space (both the normal forms and these diffeomorphisms being defined in a neighborhood of (x, y) = (X, Z) = (0, 0))."
+        "docling_orig": "It is a classical result of Whitney [21] that a stable map f from the plane to the plane has only folds and cusps as local singularities. As a consequence we can transform any stable singularity of f(x, y) = (X, Z) into one of the normal forms (x, y'), the fold, or (x, xy + y\"), the cusp, by local diffeomorphisms of phisms being defined in a neighborhood of (x, y) = (X, Z) = (0, 0))."
       }
     },
     {
@@ -1179,7 +1179,7 @@
       "page": 10,
       "order": 1,
       "role": "paragraph",
-      "text": "There are, of course, more efficient ways of checking the equivalence of a pair of maps. Right-left equivalence defines a (pseudo)group (Al., in John Mather's notation) acting on the space of maps (locally at a point), and a pair of maps being equivalent means that they are contained in the same orbit under this group action. A map is stable if it is contained in an orbit which is open and dense in the space of maps. In principle, one could choose any representative of an orbit as its normal form, but for computational reasons one picks \"the\" simplest possible polynomial map (whatever simplest means!). This technical approach has been used by the author to derive the relevant classifications of singularities on which this paper is based [18]. Here we merely study the necessary modifications to adapt these results to opaque objects based on simple geometric arguments (this implies that the readers have to take these classifications \"on trust,\" proofs and precise statements of the results can be found in the above exact sources [18, 20]).",
+      "text": "There are, of course, more efficient ways of checking the equivalence of a pair of maps. Right-left equivalence defines a (pseudo)group (st, in John Mather's notation) acting on the space of maps (locally at a point), and a pair of maps being equivalent means that they are contained in the same orbit under this group action. A map is stable if it is contained in an orbit which is open and dense in the space of maps. In principle, one could choose any representative of an orbit as its normal form, but for computational reasons one picks \"the\" simplest possible polynomial map (whatever simplest means!). This technical approach has been used by the author to derive the relevant classifications of singularities on which this paper is based [18]. Here we merely study the necessary modifications to adapt these results to opaque objects based on simple geometric arguments (this implies that the readers have to take these classifications \"on trust,\" proofs and precise statements of the results can be found in the above exact sources [18, 20]).",
       "bbox": {
         "x0": 94.13,
         "y0": 133.96,
@@ -1190,7 +1190,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "There are, of course, more efficient ways of checking the equivalence of a pair of maps. Right-left equivalence defines a (pseudo)group (Al., in John Mather's notation) acting on the space of maps (locally at a point), and a pair of maps being equivalent means that they are contained in the same orbit under this group action. A map is stable if it is contained in an orbit which is open and dense in the space of maps. In principle, one could choose any representative of an orbit as its normal form, but for computational reasons one picks \"the\" simplest possible polynomial map (whatever simplest means!). This technical approach has been used by the author to derive the relevant classifications of singularities on which this paper is based [18]. Here we merely study the necessary modifications to adapt these results to opaque objects based on simple geometric arguments (this implies that the readers have to take these classifications \"on trust,\" proofs and precise statements of the results can be found in the above exact sources [18, 20])."
+        "docling_orig": "There are, of course, more efficient ways of checking the equivalence of a pair of maps. Right-left equivalence defines a (pseudo)group (st, in John Mather's notation) acting on the space of maps (locally at a point), and a pair of maps being equivalent means that they are contained in the same orbit under this group action. A map is stable if it is contained in an orbit which is open and dense in the space of maps. In principle, one could choose any representative of an orbit as its normal form, but for computational reasons one picks \"the\" simplest possible polynomial map (whatever simplest means!). This technical approach has been used by the author to derive the relevant classifications of singularities on which this paper is based [18]. Here we merely study the necessary modifications to adapt these results to opaque objects based on simple geometric arguments (this implies that the readers have to take these classifications \"on trust,\" proofs and precise statements of the results can be found in the above exact sources [18, 20])."
       }
     },
     {
@@ -1308,7 +1308,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -1327,7 +1327,7 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -1346,7 +1346,7 @@
       }
     },
     {
-      "id": "#/texts/96",
+      "id": "#/texts/97",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -1365,18 +1365,18 @@
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/98",
       "page": 11,
       "order": 4,
       "role": "paragraph",
       "text": "For a d-parameter family F: R\"× R',0→R°× R,0 given by F(a, x, y) = (a, f(a, x, y)) we define the bifurcation set as follows",
       "bbox": {
-        "x0": 95.89,
+        "x0": 94.23,
         "y0": 576.12,
-        "x1": 676.16,
-        "y1": 620.82,
-        "width": 580.27,
-        "height": 44.7
+        "x1": 677.81,
+        "y1": 622.48,
+        "width": 583.58,
+        "height": 46.36
       },
       "meta": {
         "docling_label": "text",
@@ -1384,7 +1384,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -1403,7 +1403,7 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 11,
       "order": 6,
       "role": "caption",
@@ -1411,9 +1411,9 @@
       "bbox": {
         "x0": 95.77,
         "y0": 966.49,
-        "x1": 677.88,
+        "x1": 677.9,
         "y1": 1001.71,
-        "width": 582.11,
+        "width": 582.13,
         "height": 35.22
       },
       "meta": {
@@ -1422,7 +1422,7 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -1441,9 +1441,28 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/103",
       "page": 11,
       "order": 8,
+      "role": "paragraph",
+      "text": "Ф",
+      "bbox": {
+        "x0": 502.57,
+        "y0": 793.0,
+        "x1": 517.45,
+        "y1": 811.21,
+        "width": 14.88,
+        "height": 18.21
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ф"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 11,
+      "order": 9,
       "role": "paragraph",
       "text": "•",
       "bbox": {
@@ -1460,9 +1479,9 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/105",
       "page": 11,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "a < 0",
       "bbox": {
@@ -1479,9 +1498,9 @@
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/106",
       "page": 11,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "a = 0",
       "bbox": {
@@ -1498,9 +1517,9 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/107",
       "page": 11,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "a > 0",
       "bbox": {
@@ -1517,7 +1536,7 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/110",
       "page": 12,
       "order": 1,
       "role": "heading",
@@ -1536,7 +1555,7 @@
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/111",
       "page": 12,
       "order": 2,
       "role": "paragraph",
@@ -1555,7 +1574,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/113",
       "page": 12,
       "order": 3,
       "role": "paragraph",
@@ -1574,11 +1593,11 @@
       }
     },
     {
-      "id": "#/texts/112",
+      "id": "#/texts/114",
       "page": 12,
       "order": 4,
       "role": "paragraph",
-      "text": "We denote the singularities f(0, x, y) at the origin a = 0 of the d-parameter families (i)-(v) by Is, Ilk, Illk, I, and V, respectively (where the ranges of",
+      "text": "We denote the singularities f(0, x, y) at the origin a = 0 of the d-parameter families (i)-(v) by Is, Ilk, IlIk, I, and V, respectively (where the ranges of",
       "bbox": {
         "x0": 97.54,
         "y0": 960.05,
@@ -1589,11 +1608,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We denote the singularities f(0, x, y) at the origin a = 0 of the d-parameter families (i)-(v) by Is, Ilk, Illk, I, and V, respectively (where the ranges of"
+        "docling_orig": "We denote the singularities f(0, x, y) at the origin a = 0 of the d-parameter families (i)-(v) by Is, Ilk, IlIk, I, and V, respectively (where the ranges of"
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/117",
       "page": 13,
       "order": 1,
       "role": "caption",
@@ -1612,7 +1631,7 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/118",
       "page": 13,
       "order": 2,
       "role": "paragraph",
@@ -1631,7 +1650,7 @@
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/119",
       "page": 13,
       "order": 3,
       "role": "paragraph",
@@ -1650,11 +1669,11 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/120",
       "page": 13,
       "order": 4,
       "role": "paragraph",
-      "text": "We use the same notation when the apparent contours involved are singular (like, for example, C or II,), and hence have no well-defined tangent vector. If an apparent contour N has an isolated singularity at p, and (;) is a sequence of points on N approaching P, then we define the limiting tangent line to Nat p by T: = lim; T,N. And so, for example, the codimension-2 multi-local singularity F + + C denotes two-point contact between a fold and the limiting tangent line of a cusp (see Fig. 7).",
+      "text": "We use the same notation when the apparent contours involved are singular (like, for example, C or II,), and hence have no well-defined tangent vector. If an apparent contour N has an isolated singularity at p, and (;) is a sequence of points on N approaching P, then we define the limiting tangent line to N at p by T: = lim; T,N. And so, for example, the codimension-2 multi-local singularity F+ + C denotes two-point contact between a fold and the limiting tangent line of a cusp (see Fig. 7).",
       "bbox": {
         "x0": 94.19,
         "y0": 531.42,
@@ -1665,11 +1684,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We use the same notation when the apparent contours involved are singular (like, for example, C or II,), and hence have no well-defined tangent vector. If an apparent contour N has an isolated singularity at p, and (;) is a sequence of points on N approaching P, then we define the limiting tangent line to Nat p by T: = lim; T,N. And so, for example, the codimension-2 multi-local singularity F + + C denotes two-point contact between a fold and the limiting tangent line of a cusp (see Fig. 7)."
+        "docling_orig": "We use the same notation when the apparent contours involved are singular (like, for example, C or II,), and hence have no well-defined tangent vector. If an apparent contour N has an isolated singularity at p, and (;) is a sequence of points on N approaching P, then we define the limiting tangent line to N at p by T: = lim; T,N. And so, for example, the codimension-2 multi-local singularity F+ + C denotes two-point contact between a fold and the limiting tangent line of a cusp (see Fig. 7)."
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/121",
       "page": 13,
       "order": 5,
       "role": "caption",
@@ -1688,9 +1707,28 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/122",
       "page": 13,
       "order": 6,
+      "role": "paragraph",
+      "text": "T",
+      "bbox": {
+        "x0": 507.53,
+        "y0": 860.87,
+        "x1": 515.8,
+        "y1": 870.81,
+        "width": 8.27,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "T"
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 13,
+      "order": 7,
       "role": "paragraph",
       "text": "F",
       "bbox": {
@@ -1707,11 +1745,11 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/126",
       "page": 14,
       "order": 1,
       "role": "caption",
-      "text": "(critical sets) seen from the above, i.e., along the normal (on the left): (x, y) denote coordinates on icine oriente are the he cd thie onion erin the surface and (X, Z) denote coordinates in the image plane; lower case letters in the formulas of the right column denote real parameters defining curves.",
+      "text": "(critical sets) seen from the above, i.e., along the normal (on the left): (x, y) denote coordinates on icine oriente are the he cd thie onion enter the surface and (X, Z) denote coordinates in the image plane; lower case letters in the formulas of the right column denote real parameters defining curves.",
       "bbox": {
         "x0": 94.23,
         "y0": 716.46,
@@ -1722,11 +1760,11 @@
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "(critical sets) seen from the above, i.e., along the normal (on the left): (x, y) denote coordinates on icine oriente are the he cd thie onion erin the surface and (X, Z) denote coordinates in the image plane; lower case letters in the formulas of the right column denote real parameters defining curves."
+        "docling_orig": "(critical sets) seen from the above, i.e., along the normal (on the left): (x, y) denote coordinates on icine oriente are the he cd thie onion enter the surface and (X, Z) denote coordinates in the image plane; lower case letters in the formulas of the right column denote real parameters defining curves."
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/127",
       "page": 14,
       "order": 2,
       "role": "paragraph",
@@ -1745,7 +1783,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/128",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -1764,7 +1802,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/129",
       "page": 14,
       "order": 4,
       "role": "paragraph",
@@ -1783,18 +1821,18 @@
       }
     },
     {
-      "id": "#/texts/127",
+      "id": "#/texts/130",
       "page": 14,
       "order": 5,
       "role": "paragraph",
       "text": "{ (0.0)}",
       "bbox": {
-        "x0": 454.32,
-        "y0": 219.18,
-        "x1": 501.22,
-        "y1": 236.09,
-        "width": 46.9,
-        "height": 16.91
+        "x0": 454.53,
+        "y0": 219.89,
+        "x1": 501.01,
+        "y1": 235.38,
+        "width": 46.48,
+        "height": 15.49
       },
       "meta": {
         "docling_label": "text",
@@ -1802,7 +1840,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/131",
       "page": 14,
       "order": 6,
       "role": "paragraph",
@@ -1821,7 +1859,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/132",
       "page": 14,
       "order": 7,
       "role": "paragraph",
@@ -1840,37 +1878,18 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/133",
       "page": 14,
       "order": 8,
-      "role": "paragraph",
-      "text": "x + 6y = 0",
-      "bbox": {
-        "x0": 276.07,
-        "y0": 407.2,
-        "x1": 345.53,
-        "y1": 423.87,
-        "width": 69.46,
-        "height": 16.67
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "x + 6y = 0"
-      }
-    },
-    {
-      "id": "#/texts/131",
-      "page": 14,
-      "order": 9,
       "role": "paragraph",
       "text": "{(x, +2xº V27)}",
       "bbox": {
         "x0": 423.15,
         "y0": 307.55,
         "x1": 524.13,
-        "y1": 326.51,
+        "y1": 326.52,
         "width": 100.98,
-        "height": 18.96
+        "height": 18.97
       },
       "meta": {
         "docling_label": "text",
@@ -1878,9 +1897,9 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/134",
       "page": 14,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "W",
       "bbox": {
@@ -1897,28 +1916,28 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/135",
       "page": 14,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
-      "text": "{(-6y, - 5y°)}",
+      "text": "x + 6y = 0",
       "bbox": {
-        "x0": 418.19,
-        "y0": 408.54,
-        "x1": 512.56,
-        "y1": 427.5,
-        "width": 94.37,
-        "height": 18.96
+        "x0": 276.07,
+        "y0": 407.2,
+        "x1": 345.53,
+        "y1": 423.88,
+        "width": 69.46,
+        "height": 16.68
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "{(-6y, - 5y°)}"
+        "docling_orig": "x + 6y = 0"
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/136",
       "page": 14,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "1113",
       "bbox": {
@@ -1935,18 +1954,18 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/137",
       "page": 14,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "{Z = 0}U",
       "bbox": {
-        "x0": 467.76,
-        "y0": 476.43,
-        "x1": 534.07,
-        "y1": 493.71,
-        "width": 66.31,
-        "height": 17.28
+        "x0": 467.82,
+        "y0": 476.65,
+        "x1": 534.02,
+        "y1": 493.48,
+        "width": 66.2,
+        "height": 16.83
       },
       "meta": {
         "docling_label": "text",
@@ -1954,9 +1973,9 @@
       }
     },
     {
-      "id": "#/texts/136",
+      "id": "#/texts/138",
       "page": 14,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "(2x+4y?+7y)=0 {-2y?-7y 2,-y*- 5y (2)}",
       "bbox": {
@@ -1973,47 +1992,28 @@
       }
     },
     {
-      "id": "#/texts/137",
-      "page": 14,
-      "order": 15,
-      "role": "paragraph",
-      "text": "~ →",
-      "bbox": {
-        "x0": 221.53,
-        "y0": 529.77,
-        "x1": 348.82,
-        "y1": 587.83,
-        "width": 127.29,
-        "height": 58.06
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "~ →"
-      }
-    },
-    {
-      "id": "#/texts/138",
-      "page": 14,
-      "order": 16,
-      "role": "paragraph",
-      "text": "y (2x +5y3) = 0",
-      "bbox": {
-        "x0": 259.49,
-        "y0": 595.69,
-        "x1": 353.84,
-        "y1": 614.5,
-        "width": 94.35,
-        "height": 18.81
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "y (2x +5y3) = 0"
-      }
-    },
-    {
       "id": "#/texts/139",
       "page": 14,
-      "order": 17,
+      "order": 14,
+      "role": "paragraph",
+      "text": "У(2x +5y3) = 0",
+      "bbox": {
+        "x0": 259.48,
+        "y0": 595.61,
+        "x1": 353.85,
+        "y1": 614.58,
+        "width": 94.37,
+        "height": 18.97
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "У(2x +5y3) = 0"
+      }
+    },
+    {
+      "id": "#/texts/140",
+      "page": 14,
+      "order": 15,
       "role": "paragraph",
       "text": "{Z=0}U{(-5y* 2, -3 2)}",
       "bbox": {
@@ -2030,9 +2030,9 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/141",
       "page": 14,
-      "order": 18,
+      "order": 16,
       "role": "paragraph",
       "text": "V",
       "bbox": {
@@ -2049,18 +2049,37 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/142",
       "page": 14,
-      "order": 19,
+      "order": 17,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 284.35,
+        "y0": 640.69,
+        "x1": 327.33,
+        "y1": 677.11,
+        "width": 42.98,
+        "height": 36.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/143",
+      "page": 14,
+      "order": 18,
       "role": "paragraph",
       "text": "=2 + 4y*= 0",
       "bbox": {
         "x0": 274.4,
-        "y0": 691.86,
+        "y0": 691.85,
         "x1": 352.16,
-        "y1": 708.71,
+        "y1": 708.73,
         "width": 77.76,
-        "height": 16.85
+        "height": 16.88
       },
       "meta": {
         "docling_label": "text",
@@ -2068,9 +2087,9 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/144",
       "page": 14,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "{(21. - 31*)}",
       "bbox": {
@@ -2087,18 +2106,18 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/145",
       "page": 14,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "codimension-3 singularity is also a (zero-dimensional) stratum.) It is enough to study these bifurcation sets near a codimension-3 singularity, because the less degenerate singularities meet at such points in parameter space. Above we give formulas and pictures of the contour generators (critical sets) and the apparent contours of the (local) codimension-3 singularities (see Fig. 8). Note that these critical sets (and the contour generators for that matter) have singularities, whereas, generically, the contour generators are smooth curves on M without selfintersections. Of course, these singularities will disintegrate by changing the viewing position slightly or by slightly deforming the surface, and the bifurcation sets in Section 4 will describe all the nearby stable configurations.",
       "bbox": {
         "x0": 92.43,
-        "y0": 801.75,
+        "y0": 802.77,
         "x1": 676.24,
         "y1": 1004.1,
         "width": 583.81,
-        "height": 202.35
+        "height": 201.33
       },
       "meta": {
         "docling_label": "text",
@@ -2106,7 +2125,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/148",
       "page": 15,
       "order": 1,
       "role": "heading",
@@ -2125,18 +2144,18 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/149",
       "page": 15,
       "order": 2,
       "role": "paragraph",
       "text": "To understand the relation between the normal forms of families of maps from R' to R' of Section 2.4 and the families of projections (1)-(3) of Section 2.3, we consider here two questions. Is it true that for almost all surfaces (in the sense of Lebesgue measure) the families of projections (1) and (3) are always locally equivalent to one of the normal forms of Section 2.4? And for any given normal form: Is there always a surface which has a family of projections equivalent to that normal form?",
       "bbox": {
-        "x0": 90.82,
-        "y0": 162.55,
+        "x0": 90.83,
+        "y0": 162.96,
         "x1": 674.74,
         "y1": 306.54,
-        "width": 583.92,
-        "height": 143.99
+        "width": 583.91,
+        "height": 143.58
       },
       "meta": {
         "docling_label": "text",
@@ -2144,7 +2163,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/150",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -2163,7 +2182,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/151",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -2182,7 +2201,7 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/153",
       "page": 15,
       "order": 5,
       "role": "paragraph",
@@ -2191,9 +2210,9 @@
         "x0": 87.42,
         "y0": 740.02,
         "x1": 672.85,
-        "y1": 839.56,
+        "y1": 839.55,
         "width": 585.43,
-        "height": 99.54
+        "height": 99.53
       },
       "meta": {
         "docling_label": "text",
@@ -2201,7 +2220,7 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/155",
       "page": 15,
       "order": 6,
       "role": "paragraph",
@@ -2220,49 +2239,49 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/158",
       "page": 16,
       "order": 1,
       "role": "paragraph",
-      "text": "where",
+      "text": "by where",
       "bbox": {
-        "x0": 100.79,
-        "y0": 845.8,
-        "x1": 147.19,
-        "y1": 861.05,
-        "width": 46.4,
-        "height": 15.25
+        "x0": 94.23,
+        "y0": 135.75,
+        "x1": 114.07,
+        "y1": 153.96,
+        "width": 19.84,
+        "height": 18.21
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "where"
+        "docling_orig": "by where"
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/160",
       "page": 16,
       "order": 2,
       "role": "paragraph",
-      "text": "where a, + as + a3 = 1 (here v' denotes the transpose of v). This parametrization of the family of orthogonal projections of the surface & is in fact global, it represents the totality of views of q on the view sphere, not just the views in a neighborhood of the view sphere.",
+      "text": "where a + a + as = 1 (here v\" denotes the transpose of v). This parametrization of the family of orthogonal projections of the surface & is in fact global, it represents the totality of views of q on the view sphere, not just the views in a neighborhood of the view sphere.",
       "bbox": {
         "x0": 94.23,
-        "y0": 238.4,
-        "x1": 677.92,
+        "y0": 241.6,
+        "x1": 677.81,
         "y1": 326.24,
-        "width": 583.69,
-        "height": 87.84
+        "width": 583.58,
+        "height": 84.64
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "where a, + as + a3 = 1 (here v' denotes the transpose of v). This parametrization of the family of orthogonal projections of the surface & is in fact global, it represents the totality of views of q on the view sphere, not just the views in a neighborhood of the view sphere."
+        "docling_orig": "where a + a + as = 1 (here v\" denotes the transpose of v). This parametrization of the family of orthogonal projections of the surface & is in fact global, it represents the totality of views of q on the view sphere, not just the views in a neighborhood of the view sphere."
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/161",
       "page": 16,
       "order": 3,
       "role": "paragraph",
-      "text": "However, our concern here is merely local. One can now easily find surfaces 4(x, y) = (x, y, Z(x, y)) such that the family (4) near a, =a= x=y=0 and az = 1 is equivalent to one of the d-parameter normal forms (d ≤ 2) of Section 2.4 (possibly after adding some trivial parameters to the normal forms). To obtain the normal forms (i)2, (i)3, (ii)4, (ii)s, and (iii), of Section 2.4, we choose, for example,",
+      "text": "However, our concern here is merely local. One can now easily find surfaces 4(x, y) = (x, y, Z(x, y)) such that the family (4) near a, =a= x= y=0 and az = 1 is equivalent to one of the d-parameter normal forms (d ≤ 2) of Section 2.4 (possibly after adding some trivial parameters to the normal forms). To obtain the normal forms (i)2, (i)3, (ii)4, (ii)s, and (iii), of Section 2.4, we choose, for example,",
       "bbox": {
         "x0": 94.11,
         "y0": 326.14,
@@ -2273,30 +2292,30 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "However, our concern here is merely local. One can now easily find surfaces 4(x, y) = (x, y, Z(x, y)) such that the family (4) near a, =a= x=y=0 and az = 1 is equivalent to one of the d-parameter normal forms (d ≤ 2) of Section 2.4 (possibly after adding some trivial parameters to the normal forms). To obtain the normal forms (i)2, (i)3, (ii)4, (ii)s, and (iii), of Section 2.4, we choose, for example,"
+        "docling_orig": "However, our concern here is merely local. One can now easily find surfaces 4(x, y) = (x, y, Z(x, y)) such that the family (4) near a, =a= x= y=0 and az = 1 is equivalent to one of the d-parameter normal forms (d ≤ 2) of Section 2.4 (possibly after adding some trivial parameters to the normal forms). To obtain the normal forms (i)2, (i)3, (ii)4, (ii)s, and (iii), of Section 2.4, we choose, for example,"
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/163",
       "page": 16,
       "order": 4,
       "role": "paragraph",
-      "text": "The most degenerate member of the family (4) is the projection where a, = a, = 0 and a, = 1. In some of the above cases this projection differs from the normal forms at a, = ... = ad = 0 of Section 2.4 (although the corresponding projections are equivalent), these differences are required to make the family (4) versal (see Appendix A).",
+      "text": "The most degenerate member of the family (4) is the projection where a, = a, = 0 and as = 1. In some of the above cases this projection differs from the normal forms at a, = ... = ad = 0 of Section 2.4 (although the corresponding projections are equivalent), these differences are required to make the family (4) versal (see Appendix A).",
       "bbox": {
-        "x0": 95.89,
+        "x0": 95.82,
         "y0": 611.83,
         "x1": 679.61,
         "y1": 718.5,
-        "width": 583.72,
+        "width": 583.79,
         "height": 106.67
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The most degenerate member of the family (4) is the projection where a, = a, = 0 and a, = 1. In some of the above cases this projection differs from the normal forms at a, = ... = ad = 0 of Section 2.4 (although the corresponding projections are equivalent), these differences are required to make the family (4) versal (see Appendix A)."
+        "docling_orig": "The most degenerate member of the family (4) is the projection where a, = a, = 0 and as = 1. In some of the above cases this projection differs from the normal forms at a, = ... = ad = 0 of Section 2.4 (although the corresponding projections are equivalent), these differences are required to make the family (4) versal (see Appendix A)."
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/164",
       "page": 16,
       "order": 5,
       "role": "paragraph",
@@ -2315,7 +2334,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/169",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -2334,7 +2353,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/170",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -2353,7 +2372,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/171",
       "page": 17,
       "order": 3,
       "role": "paragraph",
@@ -2372,7 +2391,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/172",
       "page": 17,
       "order": 4,
       "role": "heading",
@@ -2391,7 +2410,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/173",
       "page": 17,
       "order": 5,
       "role": "paragraph",
@@ -2410,7 +2429,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/174",
       "page": 17,
       "order": 6,
       "role": "paragraph",
@@ -2429,7 +2448,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/175",
       "page": 17,
       "order": 7,
       "role": "caption",
@@ -2448,7 +2467,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/176",
       "page": 17,
       "order": 8,
       "role": "paragraph",
@@ -2467,7 +2486,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/177",
       "page": 17,
       "order": 9,
       "role": "paragraph",
@@ -2486,26 +2505,26 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/178",
       "page": 17,
       "order": 10,
       "role": "paragraph",
-      "text": "2",
+      "text": "1",
       "bbox": {
-        "x0": 381.89,
-        "y0": 864.18,
-        "x1": 391.81,
-        "y1": 875.77,
-        "width": 9.92,
-        "height": 11.59
+        "x0": 499.26,
+        "y0": 874.12,
+        "x1": 507.53,
+        "y1": 885.7,
+        "width": 8.27,
+        "height": 11.58
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "2"
+        "docling_orig": "1"
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/179",
       "page": 17,
       "order": 11,
       "role": "paragraph",
@@ -2524,7 +2543,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/180",
       "page": 17,
       "order": 12,
       "role": "paragraph",
@@ -2543,11 +2562,11 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/183",
       "page": 18,
       "order": 1,
       "role": "paragraph",
-      "text": "contour segments: (a) closed loops (like segment 8); (b) isolated segments terminating at cusps (like segment 7); (c) segments with one cusp and one T-junction (like segment 4); and (d) segments joining T-junctions (like segment 1). If we denote the number of cusps of a segment by C, and indicate that a segment joins a T-junction transversely by an s (like \"stem\"), we can describe Fig. 9 as follows:",
+      "text": "contour segments: (a) closed loops (like segment 8); (b) isolated segments terminating at cusps (like segment 7); (c) segments with one cusp and one T-junction (like segment 4); and (d) segments joining T-junctions (like segment 1). If we denote the number of cups of a segment by C, and indicate that a segment joins a T-junction transversely by an s (like \"stem\"), we can describe Fig. 9 as follows:",
       "bbox": {
         "x0": 94.23,
         "y0": 132.29,
@@ -2558,15 +2577,15 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "contour segments: (a) closed loops (like segment 8); (b) isolated segments terminating at cusps (like segment 7); (c) segments with one cusp and one T-junction (like segment 4); and (d) segments joining T-junctions (like segment 1). If we denote the number of cusps of a segment by C, and indicate that a segment joins a T-junction transversely by an s (like \"stem\"), we can describe Fig. 9 as follows:"
+        "docling_orig": "contour segments: (a) closed loops (like segment 8); (b) isolated segments terminating at cusps (like segment 7); (c) segments with one cusp and one T-junction (like segment 4); and (d) segments joining T-junctions (like segment 1). If we denote the number of cups of a segment by C, and indicate that a segment joins a T-junction transversely by an s (like \"stem\"), we can describe Fig. 9 as follows:"
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/184",
       "page": 18,
       "order": 2,
       "role": "code",
-      "text": "segment 1: (C = 0, T(1)s, T(3)s) , segment 2: (C = 1, T(1)) , segment 3: (C = 0, T(1), T(2)s) , segment 4: (C = 1, T(2)) , segment 5: (C = 0, T(2), T(3)) , segment 6: (C = 1, T(3)), segment 7: (C = 2), segment 8: (C = 0) .",
+      "text": "segment 1: (C = 0, T(1)s, T(3)s) , segment 2: (C = 1, T(1)) , segment 3: (C = 0, T(1), T(2)s) , segment 4: (C = 1, T(2)) , segment 5: (C = 0, T(2), T(3)) , segment 6: (C = 1, T(3)), segment 7: (C= 2), segment 8: (C = 0) .",
       "bbox": {
         "x0": 168.32,
         "y0": 276.47,
@@ -2577,11 +2596,11 @@
       },
       "meta": {
         "docling_label": "code",
-        "docling_orig": "segment 1: (C = 0, T(1)s, T(3)s) , segment 2: (C = 1, T(1)) , segment 3: (C = 0, T(1), T(2)s) , segment 4: (C = 1, T(2)) , segment 5: (C = 0, T(2), T(3)) , segment 6: (C = 1, T(3)), segment 7: (C = 2), segment 8: (C = 0) ."
+        "docling_orig": "segment 1: (C = 0, T(1)s, T(3)s) , segment 2: (C = 1, T(1)) , segment 3: (C = 0, T(1), T(2)s) , segment 4: (C = 1, T(2)) , segment 5: (C = 0, T(2), T(3)) , segment 6: (C = 1, T(3)), segment 7: (C= 2), segment 8: (C = 0) ."
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/185",
       "page": 18,
       "order": 3,
       "role": "paragraph",
@@ -2589,9 +2608,9 @@
       "bbox": {
         "x0": 94.23,
         "y0": 489.06,
-        "x1": 677.91,
+        "x1": 677.92,
         "y1": 635.81,
-        "width": 583.68,
+        "width": 583.69,
         "height": 146.75
       },
       "meta": {
@@ -2600,7 +2619,7 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/186",
       "page": 18,
       "order": 4,
       "role": "paragraph",
@@ -2619,7 +2638,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/187",
       "page": 18,
       "order": 5,
       "role": "caption",
@@ -2638,7 +2657,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/188",
       "page": 18,
       "order": 6,
       "role": "paragraph",
@@ -2657,7 +2676,7 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/189",
       "page": 18,
       "order": 7,
       "role": "paragraph",
@@ -2676,18 +2695,18 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/190",
       "page": 18,
       "order": 8,
       "role": "paragraph",
       "text": "T(1)",
       "bbox": {
         "x0": 295.92,
-        "y0": 821.14,
+        "y0": 822.8,
         "x1": 324.03,
         "y1": 837.69,
         "width": 28.11,
-        "height": 16.55
+        "height": 14.89
       },
       "meta": {
         "docling_label": "text",
@@ -2695,7 +2714,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/191",
       "page": 18,
       "order": 9,
       "role": "paragraph",
@@ -2714,7 +2733,7 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/192",
       "page": 18,
       "order": 10,
       "role": "paragraph",
@@ -2733,7 +2752,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/193",
       "page": 18,
       "order": 11,
       "role": "paragraph",
@@ -2752,7 +2771,7 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/196",
       "page": 19,
       "order": 1,
       "role": "paragraph",
@@ -2771,7 +2790,7 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/198",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -2790,7 +2809,7 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/199",
       "page": 19,
       "order": 3,
       "role": "heading",
@@ -2809,7 +2828,7 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/200",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -2828,7 +2847,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/201",
       "page": 19,
       "order": 5,
       "role": "paragraph",
@@ -2847,7 +2866,7 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/202",
       "page": 19,
       "order": 6,
       "role": "paragraph",
@@ -2866,7 +2885,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/205",
       "page": 20,
       "order": 1,
       "role": "paragraph",
@@ -2885,7 +2904,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/206",
       "page": 20,
       "order": 2,
       "role": "list_item",
@@ -2904,7 +2923,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/207",
       "page": 20,
       "order": 3,
       "role": "list_item",
@@ -2923,7 +2942,7 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/208",
       "page": 20,
       "order": 4,
       "role": "list_item",
@@ -2942,7 +2961,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/209",
       "page": 20,
       "order": 5,
       "role": "heading",
@@ -2961,11 +2980,11 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/210",
       "page": 20,
       "order": 6,
       "role": "paragraph",
-      "text": "We define an object locally as O= {(x, y, ≥Z(x, y))) or 10= {(x, y, =Z(x, y))), i.e., as the set of points (near the origin) in R' whose heights are not smaller (or not greater) than specified by the function Z. The projections of such objects along the Y-direction fall into one of two categories according to whether the degree of the lowest order term of Z(0, y) is even or odd, or, in geometrical terms, whether the line of sight has even-point contact or odd-point contact with the surface at (0,0, 0). (Here we assume that Z(0, 0) = 0, and we recall the definition of k-point contact in Section 2.4.) When the degree is even the object remains entirely above (or below) the line of sight, whereas when the degree is odd the object is above and below. Let's assume that the degree of the lowest-order term of Z(0, y) is greater than one so that the line of sight is tangent to the bounding surface of the object at (x, Y, Z) = (0, 0, 0)-otherwise not much is happening visually anyway! Define a \"front view\" (\"back view\") of (X, Y, Z) = (0, 0, 0) as a view along the Y-direction for increasing (decreasing) Y from a centre of projection c1,2 = (0, 71, 0), say, or c1.2 = (0, 70, 0) for orthogonal projection. Then there are for any given bounding surface two (possibly distinct) types of projection depending on whether the object is above or below its bounding surface and depending on whether it is viewed from the front or the back (and not four types as one might expect, see Fig. 11.",
+      "text": "We define an object locally as O= {(x, y, ≥Z(x, y))) or {(x, y, =Z(x, y))), i.e., as the set of points (near the origin) in R' whose heights are not smaller (or not greater) than specified by the function Z. The projections of such objects along the Y-direction fall into one of two categories according to whether the degree of the lowest order term of Z(0, y) is even or odd, or, in geometrical terms, whether the line of sight has even-point contact or odd-point contact with the surface at (0, 0, 0). (Here we assume that Z(0, 0) = 0, and we recall the definition of k-point contact in Section 2.4.) When the degree is even the object remains entirely above (or below) the line of sight, whereas when the degree is odd the object is above and below. Let's assume that the degree of the lowest-order term of Z(0, y) is greater than one so that the line of sight is tangent to the bounding surface of the object at (x, Y, Z) = (0, 0, 0)-otherwise not much is happening visually anyway! Define a \"front view\" (\"back view\") of (X, Y, Z) = (0, 0, 0) as a view along the Y-direction for increasing (decreasing) Y from a centre of projection c1,2 = (0, 71, 0), say, or c1.2 = (0, 70, 0) for orthogonal projection. Then there are for any given bounding surface two (possibly distinct) types of projection depending on whether the object is above or below its bounding surface and depending on whether it is viewed from the front or the back (and not four types as one might expect, see Fig. 11.",
       "bbox": {
         "x0": 97.32,
         "y0": 600.82,
@@ -2976,11 +2995,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "We define an object locally as O= {(x, y, ≥Z(x, y))) or 10= {(x, y, =Z(x, y))), i.e., as the set of points (near the origin) in R' whose heights are not smaller (or not greater) than specified by the function Z. The projections of such objects along the Y-direction fall into one of two categories according to whether the degree of the lowest order term of Z(0, y) is even or odd, or, in geometrical terms, whether the line of sight has even-point contact or odd-point contact with the surface at (0,0, 0). (Here we assume that Z(0, 0) = 0, and we recall the definition of k-point contact in Section 2.4.) When the degree is even the object remains entirely above (or below) the line of sight, whereas when the degree is odd the object is above and below. Let's assume that the degree of the lowest-order term of Z(0, y) is greater than one so that the line of sight is tangent to the bounding surface of the object at (x, Y, Z) = (0, 0, 0)-otherwise not much is happening visually anyway! Define a \"front view\" (\"back view\") of (X, Y, Z) = (0, 0, 0) as a view along the Y-direction for increasing (decreasing) Y from a centre of projection c1,2 = (0, 71, 0), say, or c1.2 = (0, 70, 0) for orthogonal projection. Then there are for any given bounding surface two (possibly distinct) types of projection depending on whether the object is above or below its bounding surface and depending on whether it is viewed from the front or the back (and not four types as one might expect, see Fig. 11."
+        "docling_orig": "We define an object locally as O= {(x, y, ≥Z(x, y))) or {(x, y, =Z(x, y))), i.e., as the set of points (near the origin) in R' whose heights are not smaller (or not greater) than specified by the function Z. The projections of such objects along the Y-direction fall into one of two categories according to whether the degree of the lowest order term of Z(0, y) is even or odd, or, in geometrical terms, whether the line of sight has even-point contact or odd-point contact with the surface at (0, 0, 0). (Here we assume that Z(0, 0) = 0, and we recall the definition of k-point contact in Section 2.4.) When the degree is even the object remains entirely above (or below) the line of sight, whereas when the degree is odd the object is above and below. Let's assume that the degree of the lowest-order term of Z(0, y) is greater than one so that the line of sight is tangent to the bounding surface of the object at (x, Y, Z) = (0, 0, 0)-otherwise not much is happening visually anyway! Define a \"front view\" (\"back view\") of (X, Y, Z) = (0, 0, 0) as a view along the Y-direction for increasing (decreasing) Y from a centre of projection c1,2 = (0, 71, 0), say, or c1.2 = (0, 70, 0) for orthogonal projection. Then there are for any given bounding surface two (possibly distinct) types of projection depending on whether the object is above or below its bounding surface and depending on whether it is viewed from the front or the back (and not four types as one might expect, see Fig. 11."
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/213",
       "page": 21,
       "order": 1,
       "role": "caption",
@@ -2999,7 +3018,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/214",
       "page": 21,
       "order": 2,
       "role": "paragraph",
@@ -3018,11 +3037,11 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/215",
       "page": 21,
       "order": 3,
       "role": "paragraph",
-      "text": "Now consider the surfaces M corresponding to the codimension-3 projections of Section 2.4, namely 14, 1I6, Ill, IV, and V. From [20] we know the bifurcation sets in the view space of these projections, and we know the apparent contours of M seen from points within the cells R° - B. We noted above that for each apparent contour of M there are two (possibly distinct) views if M is the bounding contour of an opaque object. These views are, of course, subsets of the apparent contour with the hidden lines removed. Likewise, the view bifurcation sets B of opaque objects are obtained from the full bifurcation sets B by removing two-dimensional boundaries between cells of R' - B which correspond to apparent contours that differ by some hidden detail.",
+      "text": "Now consider the surfaces M corresponding to the codimension-3 projections of Section 2.4, namely 14, 1I6, Ill, IV, and V. From [20] we know the views if M is the bounding contour of an opaque object. These views are, of course, subsets of the apparent contour with the hidden lines removed. Likewise, the view bifurcation sets B of opaque objects are obtained from the full bifurcation sets B by removing two-dimensional boundaries between cells of R' - B which correspond to apparent contours that differ by some hidden detail.",
       "bbox": {
         "x0": 95.76,
         "y0": 501.52,
@@ -3033,11 +3052,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Now consider the surfaces M corresponding to the codimension-3 projections of Section 2.4, namely 14, 1I6, Ill, IV, and V. From [20] we know the bifurcation sets in the view space of these projections, and we know the apparent contours of M seen from points within the cells R° - B. We noted above that for each apparent contour of M there are two (possibly distinct) views if M is the bounding contour of an opaque object. These views are, of course, subsets of the apparent contour with the hidden lines removed. Likewise, the view bifurcation sets B of opaque objects are obtained from the full bifurcation sets B by removing two-dimensional boundaries between cells of R' - B which correspond to apparent contours that differ by some hidden detail."
+        "docling_orig": "Now consider the surfaces M corresponding to the codimension-3 projections of Section 2.4, namely 14, 1I6, Ill, IV, and V. From [20] we know the views if M is the bounding contour of an opaque object. These views are, of course, subsets of the apparent contour with the hidden lines removed. Likewise, the view bifurcation sets B of opaque objects are obtained from the full bifurcation sets B by removing two-dimensional boundaries between cells of R' - B which correspond to apparent contours that differ by some hidden detail."
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/216",
       "page": 21,
       "order": 4,
       "role": "paragraph",
@@ -3056,11 +3075,11 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/218",
       "page": 21,
       "order": 5,
       "role": "paragraph",
-      "text": "Ho viet e plying the diffmore tany of projections (ahich preserve 23-, a,x*--'y) shows that the front and back views are equivalent. Hence, we choose the pairs (0j, c), say, as our \"normal forms.\" Figure 12 shows the bifurcation set (which is the same for It and 14)—due to the absence of any multi-local singularities, B is identical to the full bifurcation set B (this is unusual: the subsequent bifurcation sets will be different from their full",
+      "text": "Ho viet, e plying the diffmore tany of projections ahich preserve 3-1 a,x*--'y) shows that the front and back views are equivalent. Hence, we choose the pairs (OT, c,), say, as our \"normal forms.\" Figure 12 shows the bifurcation set (which is the same for It and [4)—due to the absence of any multi-local singularities, B is identical to the full bifurcation set B (this is unusual: the subsequent bifurcation sets will be different from their full",
       "bbox": {
         "x0": 94.23,
         "y0": 862.41,
@@ -3071,11 +3090,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Ho viet e plying the diffmore tany of projections (ahich preserve 23-, a,x*--'y) shows that the front and back views are equivalent. Hence, we choose the pairs (0j, c), say, as our \"normal forms.\" Figure 12 shows the bifurcation set (which is the same for It and 14)—due to the absence of any multi-local singularities, B is identical to the full bifurcation set B (this is unusual: the subsequent bifurcation sets will be different from their full"
+        "docling_orig": "Ho viet, e plying the diffmore tany of projections ahich preserve 3-1 a,x*--'y) shows that the front and back views are equivalent. Hence, we choose the pairs (OT, c,), say, as our \"normal forms.\" Figure 12 shows the bifurcation set (which is the same for It and [4)—due to the absence of any multi-local singularities, B is identical to the full bifurcation set B (this is unusual: the subsequent bifurcation sets will be different from their full"
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/221",
       "page": 22,
       "order": 1,
       "role": "caption",
@@ -3094,7 +3113,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/222",
       "page": 22,
       "order": 2,
       "role": "paragraph",
@@ -3113,18 +3132,18 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/223",
       "page": 22,
       "order": 3,
       "role": "paragraph",
       "text": "Next, consider II,, where the degree of Z(0, y) = y° is even. So we have to consider the cases",
       "bbox": {
         "x0": 95.89,
-        "y0": 556.31,
-        "x1": 677.91,
+        "y0": 555.52,
+        "x1": 677.95,
         "y1": 599.3,
-        "width": 582.02,
-        "height": 42.99
+        "width": 582.06,
+        "height": 43.78
       },
       "meta": {
         "docling_label": "text",
@@ -3132,26 +3151,26 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/225",
       "page": 22,
       "order": 4,
       "role": "paragraph",
-      "text": "(see Fig. 11). Once again there are diffeomorphisms y→-y and az→-az, sinch preserve the visible bifurcations of the family (ax. xy + y t -), and hence we may choose a single \"normal form\" (O, c,), say. Figure 14 shows B which separates R' into four cells (the full bifurcation set B has fourteen cells, see [20, Fig. 2]!), and Fig. 15 shows a section through B (at a, <O) indicating transitional views together with the four stable views. For the front view (0, cz), we obtain the same nearby stable views and the same bifurcation set modulo the reflections (X, Z)→(-X, Z) and (ay, az, a3) → (a, -az, a3) in the image plane and in view space, respectively.",
+      "text": "(see Fig. 11). Once again there are diffeomorphisms y→- y and az→-az, *ca, preserve the visible bifurcations of the family (ax. xy + y t -), and hence we may choose a single \"normal form\" (O, c,), say. Figure 14 shows B which separates R' into four cells (the full bifurcation set B has fourteen cells, see [20, Fig. 2]!), and Fig. 15 shows a section through B (at a, <O) indicating transitional views together with the four stable views. For the front view (0, cz), we obtain the same nearby stable views and the same bifurcation set modulo the reflections (X, Z)→(-X, Z) and (ay, az, a3) → (a, -az, a3) in the image plane and in view space, respectively.",
       "bbox": {
-        "x0": 94.13,
+        "x0": 94.15,
         "y0": 662.14,
         "x1": 677.88,
         "y1": 846.14,
-        "width": 583.75,
+        "width": 583.73,
         "height": 184.0
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(see Fig. 11). Once again there are diffeomorphisms y→-y and az→-az, sinch preserve the visible bifurcations of the family (ax. xy + y t -), and hence we may choose a single \"normal form\" (O, c,), say. Figure 14 shows B which separates R' into four cells (the full bifurcation set B has fourteen cells, see [20, Fig. 2]!), and Fig. 15 shows a section through B (at a, <O) indicating transitional views together with the four stable views. For the front view (0, cz), we obtain the same nearby stable views and the same bifurcation set modulo the reflections (X, Z)→(-X, Z) and (ay, az, a3) → (a, -az, a3) in the image plane and in view space, respectively."
+        "docling_orig": "(see Fig. 11). Once again there are diffeomorphisms y→- y and az→-az, *ca, preserve the visible bifurcations of the family (ax. xy + y t -), and hence we may choose a single \"normal form\" (O, c,), say. Figure 14 shows B which separates R' into four cells (the full bifurcation set B has fourteen cells, see [20, Fig. 2]!), and Fig. 15 shows a section through B (at a, <O) indicating transitional views together with the four stable views. For the front view (0, cz), we obtain the same nearby stable views and the same bifurcation set modulo the reflections (X, Z)→(-X, Z) and (ay, az, a3) → (a, -az, a3) in the image plane and in view space, respectively."
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/226",
       "page": 22,
       "order": 5,
       "role": "paragraph",
@@ -3170,11 +3189,11 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/228",
       "page": 22,
       "order": 6,
       "role": "paragraph",
-      "text": "Figure 16 (Fig. 18) shows the bifurcation sets B12, and Fig. 17 (Fig. 19) shows sections (at a, > 0) indicating strata of transitional views and the stable views for the pairs (O, c,) (and (O, c2)).",
+      "text": "Figure 16 (Fig. 18) shows the bifurcation sets B12, and Fig. 17 (Fig. 19) shows sections (at a, > 0) indicating strata of transitional views and the stable views for the pairs (O, c,) (and (O, cz)).",
       "bbox": {
         "x0": 95.68,
         "y0": 938.68,
@@ -3185,11 +3204,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Figure 16 (Fig. 18) shows the bifurcation sets B12, and Fig. 17 (Fig. 19) shows sections (at a, > 0) indicating strata of transitional views and the stable views for the pairs (O, c,) (and (O, c2))."
+        "docling_orig": "Figure 16 (Fig. 18) shows the bifurcation sets B12, and Fig. 17 (Fig. 19) shows sections (at a, > 0) indicating strata of transitional views and the stable views for the pairs (O, c,) (and (O, cz))."
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/231",
       "page": 23,
       "order": 1,
       "role": "caption",
@@ -3208,26 +3227,26 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/232",
       "page": 23,
       "order": 2,
       "role": "paragraph",
-      "text": "(a)",
+      "text": "(it)",
       "bbox": {
-        "x0": 244.67,
-        "y0": 134.1,
+        "x0": 246.33,
+        "y0": 135.75,
         "x1": 271.12,
         "y1": 157.27,
-        "width": 26.45,
-        "height": 23.17
+        "width": 24.79,
+        "height": 21.52
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(a)"
+        "docling_orig": "(it)"
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/233",
       "page": 23,
       "order": 3,
       "role": "paragraph",
@@ -3246,7 +3265,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/234",
       "page": 23,
       "order": 4,
       "role": "paragraph",
@@ -3265,18 +3284,18 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/235",
       "page": 23,
       "order": 5,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
         "x0": 310.8,
-        "y0": 319.52,
-        "x1": 325.68,
+        "y0": 317.86,
+        "x1": 327.33,
         "y1": 336.07,
-        "width": 14.88,
-        "height": 16.55
+        "width": 16.53,
+        "height": 18.21
       },
       "meta": {
         "docling_label": "text",
@@ -3284,7 +3303,7 @@
       }
     },
     {
-      "id": "#/texts/234",
+      "id": "#/texts/236",
       "page": 23,
       "order": 6,
       "role": "paragraph",
@@ -3303,18 +3322,18 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/237",
       "page": 23,
       "order": 7,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
         "x0": 219.87,
-        "y0": 544.67,
-        "x1": 239.71,
+        "y0": 547.98,
+        "x1": 238.06,
         "y1": 562.88,
-        "width": 19.84,
-        "height": 18.21
+        "width": 18.19,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -3322,17 +3341,17 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/238",
       "page": 23,
       "order": 8,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
-        "x0": 337.25,
+        "x0": 338.9,
         "y0": 546.32,
         "x1": 358.74,
         "y1": 561.22,
-        "width": 21.49,
+        "width": 19.84,
         "height": 14.9
       },
       "meta": {
@@ -3341,7 +3360,7 @@
       }
     },
     {
-      "id": "#/texts/237",
+      "id": "#/texts/239",
       "page": 23,
       "order": 9,
       "role": "paragraph",
@@ -3360,7 +3379,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/240",
       "page": 23,
       "order": 10,
       "role": "caption",
@@ -3379,11 +3398,11 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/243",
       "page": 24,
       "order": 1,
       "role": "caption",
-      "text": "Fig. 15. A section through the bifurcation set of Fig. 14 at a, <0. The notation is the same as in Fig. 13.",
+      "text": "Fig. 15. A section through the bifurcation set of Fig. 14 at a, <0. The notation is the same as in Fig. 13",
       "bbox": {
         "x0": 95.89,
         "y0": 650.48,
@@ -3394,11 +3413,11 @@
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "Fig. 15. A section through the bifurcation set of Fig. 14 at a, <0. The notation is the same as in Fig. 13."
+        "docling_orig": "Fig. 15. A section through the bifurcation set of Fig. 14 at a, <0. The notation is the same as in Fig. 13"
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/244",
       "page": 24,
       "order": 2,
       "role": "paragraph",
@@ -3417,11 +3436,11 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/245",
       "page": 24,
       "order": 3,
       "role": "paragraph",
-      "text": "111+ F",
+      "text": "111 + F",
       "bbox": {
         "x0": 249.49,
         "y0": 474.66,
@@ -3432,11 +3451,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "111+ F"
+        "docling_orig": "111 + F"
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/246",
       "page": 24,
       "order": 4,
       "role": "paragraph",
@@ -3455,7 +3474,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/247",
       "page": 24,
       "order": 5,
       "role": "paragraph",
@@ -3474,7 +3493,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/248",
       "page": 24,
       "order": 6,
       "role": "paragraph",
@@ -3493,7 +3512,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/249",
       "page": 24,
       "order": 7,
       "role": "paragraph",
@@ -3512,7 +3531,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/250",
       "page": 24,
       "order": 8,
       "role": "paragraph",
@@ -3531,7 +3550,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/251",
       "page": 24,
       "order": 9,
       "role": "paragraph",
@@ -3550,7 +3569,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/252",
       "page": 24,
       "order": 10,
       "role": "caption",
@@ -3569,7 +3588,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/255",
       "page": 25,
       "order": 1,
       "role": "caption",
@@ -3588,28 +3607,9 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/256",
       "page": 25,
       "order": 2,
-      "role": "paragraph",
-      "text": "(d)",
-      "bbox": {
-        "x0": 487.69,
-        "y0": 297.99,
-        "x1": 504.22,
-        "y1": 312.89,
-        "width": 16.53,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "(d)"
-      }
-    },
-    {
-      "id": "#/texts/255",
-      "page": 25,
-      "order": 3,
       "role": "paragraph",
       "text": "F+++F",
       "bbox": {
@@ -3626,30 +3626,30 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/257",
       "page": 25,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
-      "text": "(e)",
+      "text": "'(o)",
       "bbox": {
-        "x0": 304.19,
-        "y0": 367.53,
-        "x1": 325.68,
-        "y1": 385.74,
-        "width": 21.49,
-        "height": 18.21
+        "x0": 251.29,
+        "y0": 346.0,
+        "x1": 327.33,
+        "y1": 387.39,
+        "width": 76.04,
+        "height": 41.39
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(e)"
+        "docling_orig": "'(o)"
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/258",
       "page": 25,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
-      "text": "F+ +F~",
+      "text": "F+ +F",
       "bbox": {
         "x0": 380.23,
         "y0": 384.08,
@@ -3660,13 +3660,13 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F+ +F~"
+        "docling_orig": "F+ +F"
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/259",
       "page": 25,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "114",
       "bbox": {
@@ -3683,9 +3683,9 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/260",
       "page": 25,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
@@ -3702,9 +3702,9 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/261",
       "page": 25,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -3721,9 +3721,9 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/262",
       "page": 25,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "(e)",
       "bbox": {
@@ -3740,9 +3740,9 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/263",
       "page": 25,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -3759,9 +3759,9 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/264",
       "page": 25,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "1112",
       "bbox": {
@@ -3778,9 +3778,9 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/265",
       "page": 25,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
@@ -3797,9 +3797,9 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/266",
       "page": 25,
-      "order": 13,
+      "order": 12,
       "role": "caption",
       "text": "Fig. 18. Second type of view bifurcation set near a III, singularity. The coordinate frame is the same as in Fig. 16. Here six cells of stable views meet at the origin.",
       "bbox": {
@@ -3816,7 +3816,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/269",
       "page": 26,
       "order": 1,
       "role": "caption",
@@ -3835,7 +3835,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/270",
       "page": 26,
       "order": 2,
       "role": "paragraph",
@@ -3854,7 +3854,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/271",
       "page": 26,
       "order": 3,
       "role": "paragraph",
@@ -3873,7 +3873,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/272",
       "page": 26,
       "order": 4,
       "role": "paragraph",
@@ -3892,26 +3892,26 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/273",
       "page": 26,
       "order": 5,
       "role": "paragraph",
-      "text": "F+ +F",
+      "text": "F++F",
       "bbox": {
-        "x0": 337.25,
-        "y0": 375.8,
-        "x1": 393.46,
-        "y1": 394.01,
-        "width": 56.21,
-        "height": 18.21
+        "x0": 337.02,
+        "y0": 375.06,
+        "x1": 395.34,
+        "y1": 394.76,
+        "width": 58.32,
+        "height": 19.7
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F+ +F"
+        "docling_orig": "F++F"
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/274",
       "page": 26,
       "order": 6,
       "role": "paragraph",
@@ -3930,7 +3930,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/275",
       "page": 26,
       "order": 7,
       "role": "paragraph",
@@ -3949,7 +3949,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/276",
       "page": 26,
       "order": 8,
       "role": "paragraph",
@@ -3968,7 +3968,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/277",
       "page": 26,
       "order": 9,
       "role": "paragraph",
@@ -3987,7 +3987,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/278",
       "page": 26,
       "order": 10,
       "role": "paragraph",
@@ -4006,26 +4006,26 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/279",
       "page": 26,
       "order": 11,
       "role": "paragraph",
-      "text": "F,.A",
+      "text": "F, A",
       "bbox": {
-        "x0": 492.65,
+        "x0": 491.0,
         "y0": 490.03,
         "x1": 532.33,
         "y1": 499.97,
-        "width": 39.68,
+        "width": 41.33,
         "height": 9.94
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F,.A"
+        "docling_orig": "F, A"
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/280",
       "page": 26,
       "order": 12,
       "role": "paragraph",
@@ -4044,7 +4044,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/281",
       "page": 26,
       "order": 13,
       "role": "paragraph",
@@ -4063,11 +4063,11 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/283",
       "page": 26,
       "order": 14,
       "role": "paragraph",
-      "text": "Here the full bifurcation set B separates R' into twenty-three cells, see [20]. In the case (O,, c.) the bifurcation set B, separates R' into nine components, anc is symmetric about a, = 0 (see Fig. 20). Figure 21 shows a section through B, a a, +0 indicating strata of transitional views and nearby stable views. In the second case (02, c2) the bifurcation set is again symmetric about a, = 0, and R' - B, has five connected components (see Fig. 22). A section through B, a a, ‡0 indicating strata of transitional views and the nearby stable views are shown in Fig. 23.",
+      "text": "Here the full bifurcation set B separates R' into twenty-three cells, see [20]. In the case (O,, c.) the bifurcation set B, separates R' into nine components, anc is symmetric about a, = 0 (see Fig. 20). Figure 21 shows a section through B, a a, ‡0 indicating strata of transitional views and nearby stable views. In the second case (02, c2) the bifurcation set is again symmetric about a, = 0, and R' - B, has five connected components (see Fig. 22). A section through B, a a, ‡0 indicating strata of transitional views and the nearby stable views are shown in Fig. 23.",
       "bbox": {
         "x0": 94.1,
         "y0": 693.66,
@@ -4078,22 +4078,22 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Here the full bifurcation set B separates R' into twenty-three cells, see [20]. In the case (O,, c.) the bifurcation set B, separates R' into nine components, anc is symmetric about a, = 0 (see Fig. 20). Figure 21 shows a section through B, a a, +0 indicating strata of transitional views and nearby stable views. In the second case (02, c2) the bifurcation set is again symmetric about a, = 0, and R' - B, has five connected components (see Fig. 22). A section through B, a a, ‡0 indicating strata of transitional views and the nearby stable views are shown in Fig. 23."
+        "docling_orig": "Here the full bifurcation set B separates R' into twenty-three cells, see [20]. In the case (O,, c.) the bifurcation set B, separates R' into nine components, anc is symmetric about a, = 0 (see Fig. 20). Figure 21 shows a section through B, a a, ‡0 indicating strata of transitional views and nearby stable views. In the second case (02, c2) the bifurcation set is again symmetric about a, = 0, and R' - B, has five connected components (see Fig. 22). A section through B, a a, ‡0 indicating strata of transitional views and the nearby stable views are shown in Fig. 23."
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/284",
       "page": 26,
       "order": 15,
       "role": "paragraph",
       "text": "Finally, Z(0, y) = y* of V has even degree, and again there are two distinct cases:",
       "bbox": {
-        "x0": 97.52,
+        "x0": 97.54,
         "y0": 859.08,
         "x1": 677.81,
-        "y1": 899.03,
-        "width": 580.29,
-        "height": 39.95
+        "y1": 898.95,
+        "width": 580.27,
+        "height": 39.87
       },
       "meta": {
         "docling_label": "text",
@@ -4101,7 +4101,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/286",
       "page": 26,
       "order": 16,
       "role": "paragraph",
@@ -4120,7 +4120,7 @@
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/289",
       "page": 27,
       "order": 1,
       "role": "caption",
@@ -4139,7 +4139,7 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/290",
       "page": 27,
       "order": 2,
       "role": "caption",
@@ -4158,7 +4158,7 @@
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/291",
       "page": 27,
       "order": 3,
       "role": "paragraph",
@@ -4177,7 +4177,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/292",
       "page": 27,
       "order": 4,
       "role": "paragraph",
@@ -4196,7 +4196,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/293",
       "page": 27,
       "order": 5,
       "role": "paragraph",
@@ -4215,7 +4215,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/294",
       "page": 27,
       "order": 6,
       "role": "paragraph",
@@ -4234,7 +4234,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/295",
       "page": 27,
       "order": 7,
       "role": "paragraph",
@@ -4242,9 +4242,9 @@
       "bbox": {
         "x0": 367.01,
         "y0": 751.61,
-        "x1": 388.5,
+        "x1": 390.15,
         "y1": 768.16,
-        "width": 21.49,
+        "width": 23.14,
         "height": 16.55
       },
       "meta": {
@@ -4253,7 +4253,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/296",
       "page": 27,
       "order": 8,
       "role": "paragraph",
@@ -4272,7 +4272,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/297",
       "page": 27,
       "order": 9,
       "role": "paragraph",
@@ -4291,7 +4291,7 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/298",
       "page": 27,
       "order": 10,
       "role": "paragraph",
@@ -4310,47 +4310,28 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/299",
       "page": 27,
       "order": 11,
       "role": "paragraph",
-      "text": "- 11;",
+      "text": "- 1;",
       "bbox": {
-        "x0": 552.17,
+        "x0": 550.51,
         "y0": 801.27,
         "x1": 580.27,
-        "y1": 814.52,
-        "width": 28.1,
-        "height": 13.25
+        "y1": 816.17,
+        "width": 29.76,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "- 11;"
-      }
-    },
-    {
-      "id": "#/texts/299",
-      "page": 27,
-      "order": 12,
-      "role": "paragraph",
-      "text": "‹ + +F-",
-      "bbox": {
-        "x0": 180.2,
-        "y0": 826.09,
-        "x1": 228.14,
-        "y1": 837.75,
-        "width": 47.94,
-        "height": 11.66
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "‹ + +F-"
+        "docling_orig": "- 1;"
       }
     },
     {
       "id": "#/texts/300",
       "page": 27,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -4369,7 +4350,7 @@
     {
       "id": "#/texts/301",
       "page": 27,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -4388,15 +4369,15 @@
     {
       "id": "#/texts/302",
       "page": 27,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
         "x0": 310.8,
         "y0": 865.84,
-        "x1": 332.29,
+        "x1": 330.64,
         "y1": 880.74,
-        "width": 21.49,
+        "width": 19.84,
         "height": 14.9
       },
       "meta": {
@@ -4407,7 +4388,7 @@
     {
       "id": "#/texts/303",
       "page": 27,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "(f)",
       "bbox": {
@@ -4426,7 +4407,7 @@
     {
       "id": "#/texts/304",
       "page": 27,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -4445,7 +4426,7 @@
     {
       "id": "#/texts/305",
       "page": 27,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
@@ -4464,7 +4445,7 @@
     {
       "id": "#/texts/306",
       "page": 27,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "11.-",
       "bbox": {
@@ -4483,7 +4464,7 @@
     {
       "id": "#/texts/307",
       "page": 27,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "1112",
       "bbox": {
@@ -4500,7 +4481,26 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/308",
+      "page": 27,
+      "order": 20,
+      "role": "paragraph",
+      "text": "- C ÷F",
+      "bbox": {
+        "x0": 487.69,
+        "y0": 935.37,
+        "x1": 532.33,
+        "y1": 945.39,
+        "width": 44.64,
+        "height": 10.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "- C ÷F"
+      }
+    },
+    {
+      "id": "#/texts/311",
       "page": 28,
       "order": 1,
       "role": "caption",
@@ -4519,7 +4519,7 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/312",
       "page": 28,
       "order": 2,
       "role": "paragraph",
@@ -4538,7 +4538,7 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/313",
       "page": 28,
       "order": 3,
       "role": "paragraph",
@@ -4557,18 +4557,18 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/314",
       "page": 28,
       "order": 4,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
         "x0": 449.67,
-        "y0": 769.82,
+        "y0": 771.47,
         "x1": 471.16,
         "y1": 786.37,
         "width": 21.49,
-        "height": 16.55
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -4576,37 +4576,18 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/315",
       "page": 28,
       "order": 5,
       "role": "paragraph",
       "text": "C+ F",
       "bbox": {
-        "x0": 362.05,
+        "x0": 363.7,
         "y0": 794.65,
         "x1": 398.42,
-        "y1": 809.55,
-        "width": 36.37,
-        "height": 14.9
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "C+ F"
-      }
-    },
-    {
-      "id": "#/texts/315",
-      "page": 28,
-      "order": 6,
-      "role": "paragraph",
-      "text": "C+ F",
-      "bbox": {
-        "x0": 236.41,
-        "y0": 842.66,
-        "x1": 269.47,
-        "y1": 854.42,
-        "width": 33.06,
-        "height": 11.76
+        "y1": 807.9,
+        "width": 34.72,
+        "height": 13.25
       },
       "meta": {
         "docling_label": "text",
@@ -4615,6 +4596,25 @@
     },
     {
       "id": "#/texts/316",
+      "page": 28,
+      "order": 6,
+      "role": "paragraph",
+      "text": "C+ F",
+      "bbox": {
+        "x0": 236.41,
+        "y0": 842.66,
+        "x1": 271.12,
+        "y1": 854.25,
+        "width": 34.71,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "C+ F"
+      }
+    },
+    {
+      "id": "#/texts/317",
       "page": 28,
       "order": 7,
       "role": "paragraph",
@@ -4633,26 +4633,26 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/318",
       "page": 28,
       "order": 8,
       "role": "paragraph",
-      "text": "- IIs",
+      "text": "11s",
       "bbox": {
-        "x0": 510.84,
-        "y0": 807.76,
+        "x0": 517.45,
+        "y0": 807.9,
         "x1": 540.59,
-        "y1": 821.14,
-        "width": 29.75,
-        "height": 13.38
+        "y1": 822.8,
+        "width": 23.14,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "- IIs"
+        "docling_orig": "11s"
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/319",
       "page": 28,
       "order": 9,
       "role": "paragraph",
@@ -4660,9 +4660,9 @@
       "bbox": {
         "x0": 505.88,
         "y0": 850.94,
-        "x1": 537.29,
+        "x1": 535.63,
         "y1": 864.18,
-        "width": 31.41,
+        "width": 29.75,
         "height": 13.24
       },
       "meta": {
@@ -4671,7 +4671,7 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/320",
       "page": 28,
       "order": 10,
       "role": "paragraph",
@@ -4690,7 +4690,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/321",
       "page": 28,
       "order": 11,
       "role": "paragraph",
@@ -4709,7 +4709,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/322",
       "page": 28,
       "order": 12,
       "role": "paragraph",
@@ -4728,7 +4728,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/323",
       "page": 28,
       "order": 13,
       "role": "paragraph",
@@ -4747,7 +4747,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/324",
       "page": 28,
       "order": 14,
       "role": "caption",
@@ -4766,17 +4766,17 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/327",
       "page": 29,
       "order": 1,
       "role": "caption",
       "text": "Fig. 24. First type of view bifurcation set near a V singularity. The coordinate frame is the same as in Fig. 12. Here five cells of stable views meet at the origin. Again the bifurcation set is symmetric about a, = 0.",
       "bbox": {
-        "x0": 94.23,
+        "x0": 92.58,
         "y0": 350.9,
         "x1": 676.16,
         "y1": 400.76,
-        "width": 581.93,
+        "width": 583.58,
         "height": 49.86
       },
       "meta": {
@@ -4785,7 +4785,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/328",
       "page": 29,
       "order": 2,
       "role": "caption",
@@ -4804,7 +4804,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/329",
       "page": 29,
       "order": 3,
       "role": "paragraph",
@@ -4823,7 +4823,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/330",
       "page": 29,
       "order": 4,
       "role": "paragraph",
@@ -4842,7 +4842,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/331",
       "page": 29,
       "order": 5,
       "role": "paragraph",
@@ -4861,7 +4861,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/332",
       "page": 29,
       "order": 6,
       "role": "paragraph",
@@ -4880,7 +4880,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/333",
       "page": 29,
       "order": 7,
       "role": "paragraph",
@@ -4899,7 +4899,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/334",
       "page": 29,
       "order": 8,
       "role": "paragraph",
@@ -4918,7 +4918,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/335",
       "page": 29,
       "order": 9,
       "role": "paragraph",
@@ -4937,7 +4937,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/336",
       "page": 29,
       "order": 10,
       "role": "paragraph",
@@ -4956,7 +4956,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/339",
       "page": 30,
       "order": 1,
       "role": "caption",
@@ -4975,7 +4975,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/340",
       "page": 30,
       "order": 2,
       "role": "caption",
@@ -4994,7 +4994,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/341",
       "page": 30,
       "order": 3,
       "role": "paragraph",
@@ -5002,9 +5002,9 @@
       "bbox": {
         "x0": 256.24,
         "y0": 600.95,
-        "x1": 274.43,
+        "x1": 272.78,
         "y1": 612.54,
-        "width": 18.19,
+        "width": 16.54,
         "height": 11.59
       },
       "meta": {
@@ -5013,26 +5013,26 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/342",
       "page": 30,
       "order": 4,
       "role": "paragraph",
-      "text": "(d)",
+      "text": "(a)",
       "bbox": {
         "x0": 459.59,
         "y0": 738.36,
-        "x1": 481.08,
+        "x1": 482.73,
         "y1": 756.57,
-        "width": 21.49,
+        "width": 23.14,
         "height": 18.21
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(d)"
+        "docling_orig": "(a)"
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/343",
       "page": 30,
       "order": 5,
       "role": "paragraph",
@@ -5051,7 +5051,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/344",
       "page": 30,
       "order": 6,
       "role": "paragraph",
@@ -5070,7 +5070,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/345",
       "page": 30,
       "order": 7,
       "role": "paragraph",
@@ -5089,7 +5089,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/346",
       "page": 30,
       "order": 8,
       "role": "paragraph",
@@ -5108,7 +5108,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/347",
       "page": 30,
       "order": 9,
       "role": "paragraph",
@@ -5127,7 +5127,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/348",
       "page": 30,
       "order": 10,
       "role": "paragraph",
@@ -5146,18 +5146,18 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/349",
       "page": 30,
       "order": 11,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
         "x0": 391.81,
-        "y0": 902.26,
+        "y0": 900.6,
         "x1": 413.3,
         "y1": 915.5,
         "width": 21.49,
-        "height": 13.24
+        "height": 14.9
       },
       "meta": {
         "docling_label": "text",
@@ -5165,28 +5165,9 @@
       }
     },
     {
-      "id": "#/texts/349",
-      "page": 30,
-      "order": 12,
-      "role": "paragraph",
-      "text": "13",
-      "bbox": {
-        "x0": 457.93,
-        "y0": 932.06,
-        "x1": 471.16,
-        "y1": 943.65,
-        "width": 13.23,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "13"
-      }
-    },
-    {
       "id": "#/texts/350",
       "page": 30,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "I.",
       "bbox": {
@@ -5209,12 +5190,12 @@
       "role": "paragraph",
       "text": "Fig. 26). Figures 25 and 27 show sections at a, 0 through B, and B, indicating strata of transitional views and nearby stable views.",
       "bbox": {
-        "x0": 90.83,
+        "x0": 90.93,
         "y0": 132.29,
         "x1": 674.5,
-        "y1": 177.44,
-        "width": 583.67,
-        "height": 45.15
+        "y1": 175.62,
+        "width": 583.57,
+        "height": 43.33
       },
       "meta": {
         "docling_label": "text",
@@ -5245,18 +5226,18 @@
       "page": 31,
       "order": 3,
       "role": "paragraph",
-      "text": "The degenerate local projections arise when we view certain special points on a surface patch from special centres of projection. It is also possible to see unusual multi-local views from special centres of projection when the line of sight is tangent to a surface at several distinct points. Here the intrinsic geometry of the surface patches near such points is not very complicated but their relative locations in space are unusual. Not much is known about the local geometry of the view bifurcation set near centres of projection corresponding to multi-local singularities of codimension 3 (see, for example, [17] for a list of multi-local singularities of codimension less than or equal to 2), except in the case of bi-local singularities which have been studied in [19, Chapter 4]. Let us, however, consider one example: the singularity F + + + + F of codimension 3 consisting of a pair of folds having four-point contact. Note that a pair of folds has one-point contact if the line of sight grazes a surface at two points (i.e., is a bitangent ray) whose normals are not parallel and we see a typical Tjunction). We know that T-junctions are stable under slight changes of viewing position, and hence such viewing positions form cells in view space. Jan Koenderink introduced in [10] the concept of the bitangent ray manifold to study bifurcations of T-junctions. The boundaries of the cells of the bitangent ray manifold are formed by special rays which are tangent at two points whose normals are parallel. It follows that these boundaries (which are subsets of the view bifurcation set form ruled surfaces corresponding to views F++F containing a pair of folds having tangential contact. This ruled surface, however, is not necessarily smooth: it may have cuspidal edges corresponding to one-dimensional strata of F+ + + F views (fold pairs having inflexional contact), and from special centres of projection we might have F++++ F views. Koenderink (personal communication) discovered in numerical computer studies of the bitangent ray manifold that the most degenerate singularities of this manifold, which persist under small deformations of the surface M, are swallowtail points in view space corresponding to F + + + + F views. Calculating the bifurcation set in the parameter space of the versal unfolding of F+ + + + F (of minimal dimension) shows that the most degenerate points of the bitangent ray manifold of any generic surface M (or in fact of a versal three-parameter family of projections of any smooth surface) are indeed swallowtail points. Figure 28 shows a section through a swallowtail surface at a, <0 indicating the F+ + F and F+ + + F strata, and nearby stable views (the complete swallowtail surface looks like Fig. 12). The parameters (ay, az, a3) refer to the parameters of the versal unfolding of F + + + + F:",
+      "text": "The degenerate local projections arise when we view certain special points on a surface patch from special centres of projection. It is also possible to see unusual multi-local views from special centres of projection when the line of sight is tangent to a surface at several distinct points. Here the intrinsic geometry of the surface patches near such points is not very complicated but their relative locations in space are unusual. Not much is known about the local geometry of the view bifurcation set near centres of projection corresponding to multi-local singularities of codimension 3 (see, for example, [17] for a list of multi-local singularities of codimension less than or equal to 2), except in the case of bi-local singularities which have been studied in [19, Chapter 4]. Let us, however, consider one example: the singularity F + + + + F of codimension 3 consisting of a pair of folds having four-point contact. Note that a pair of folds has one-point contact if the line of sight grazes a surface at two points (i.e., is a bitangent ray) whose normals are not parallel (and we see a typical Tjunction). We know that T-junctions are stable under slight changes of viewing position, and hence such viewing positions form cells in view space. Jan Koenderink introduced in [10] the concept of the bitangent ray manifold to study bifurcations of T-junctions. The boundaries of the cells of the bitangent ray manifold are formed by special rays which are tangent at two points whose normals are parallel. It follows that these boundaries (which are subsets of the view bifurcation set) form ruled surfaces corresponding to views F++F containing a pair of folds having tangential contact. This ruled surface, however, is not necessarily smooth: it may have cuspidal edges corresponding to one-dimensional strata of F+ + + F views (fold pairs having inflexional contact), and from special centres of projection we might have F++++ F views. Koenderink (personal communication) discovered in numerical computer studies of the bitangent ray manifold that the most degenerate singularities of this manifold, which persist under small deformations of the surface M, are swallowtail points in view space corresponding to F + + + + F views. Calculating the bifurcation set in the parameter space of the versal unfolding of F+ + + + F (of minimal dimension) shows that the most degenerate points of the bitangent ray manifold of any generic surface M (or in fact of a versal three-parameter family of projections of any smooth surface) are indeed swallowtail points. Figure 28 shows a section through a swallowtail surface at a, <0 indicating the F+ + F and F+ + + F strata, and nearby stable views (the complete swallowtail surface looks like Fig. 12). The parameters (ay, az, a3) refer to the parameters of the versal unfolding of F + + + + F:",
       "bbox": {
         "x0": 89.27,
         "y0": 218.53,
-        "x1": 676.16,
+        "x1": 676.3,
         "y1": 963.51,
-        "width": 586.89,
+        "width": 587.03,
         "height": 744.98
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The degenerate local projections arise when we view certain special points on a surface patch from special centres of projection. It is also possible to see unusual multi-local views from special centres of projection when the line of sight is tangent to a surface at several distinct points. Here the intrinsic geometry of the surface patches near such points is not very complicated but their relative locations in space are unusual. Not much is known about the local geometry of the view bifurcation set near centres of projection corresponding to multi-local singularities of codimension 3 (see, for example, [17] for a list of multi-local singularities of codimension less than or equal to 2), except in the case of bi-local singularities which have been studied in [19, Chapter 4]. Let us, however, consider one example: the singularity F + + + + F of codimension 3 consisting of a pair of folds having four-point contact. Note that a pair of folds has one-point contact if the line of sight grazes a surface at two points (i.e., is a bitangent ray) whose normals are not parallel and we see a typical Tjunction). We know that T-junctions are stable under slight changes of viewing position, and hence such viewing positions form cells in view space. Jan Koenderink introduced in [10] the concept of the bitangent ray manifold to study bifurcations of T-junctions. The boundaries of the cells of the bitangent ray manifold are formed by special rays which are tangent at two points whose normals are parallel. It follows that these boundaries (which are subsets of the view bifurcation set form ruled surfaces corresponding to views F++F containing a pair of folds having tangential contact. This ruled surface, however, is not necessarily smooth: it may have cuspidal edges corresponding to one-dimensional strata of F+ + + F views (fold pairs having inflexional contact), and from special centres of projection we might have F++++ F views. Koenderink (personal communication) discovered in numerical computer studies of the bitangent ray manifold that the most degenerate singularities of this manifold, which persist under small deformations of the surface M, are swallowtail points in view space corresponding to F + + + + F views. Calculating the bifurcation set in the parameter space of the versal unfolding of F+ + + + F (of minimal dimension) shows that the most degenerate points of the bitangent ray manifold of any generic surface M (or in fact of a versal three-parameter family of projections of any smooth surface) are indeed swallowtail points. Figure 28 shows a section through a swallowtail surface at a, <0 indicating the F+ + F and F+ + + F strata, and nearby stable views (the complete swallowtail surface looks like Fig. 12). The parameters (ay, az, a3) refer to the parameters of the versal unfolding of F + + + + F:"
+        "docling_orig": "The degenerate local projections arise when we view certain special points on a surface patch from special centres of projection. It is also possible to see unusual multi-local views from special centres of projection when the line of sight is tangent to a surface at several distinct points. Here the intrinsic geometry of the surface patches near such points is not very complicated but their relative locations in space are unusual. Not much is known about the local geometry of the view bifurcation set near centres of projection corresponding to multi-local singularities of codimension 3 (see, for example, [17] for a list of multi-local singularities of codimension less than or equal to 2), except in the case of bi-local singularities which have been studied in [19, Chapter 4]. Let us, however, consider one example: the singularity F + + + + F of codimension 3 consisting of a pair of folds having four-point contact. Note that a pair of folds has one-point contact if the line of sight grazes a surface at two points (i.e., is a bitangent ray) whose normals are not parallel (and we see a typical Tjunction). We know that T-junctions are stable under slight changes of viewing position, and hence such viewing positions form cells in view space. Jan Koenderink introduced in [10] the concept of the bitangent ray manifold to study bifurcations of T-junctions. The boundaries of the cells of the bitangent ray manifold are formed by special rays which are tangent at two points whose normals are parallel. It follows that these boundaries (which are subsets of the view bifurcation set) form ruled surfaces corresponding to views F++F containing a pair of folds having tangential contact. This ruled surface, however, is not necessarily smooth: it may have cuspidal edges corresponding to one-dimensional strata of F+ + + F views (fold pairs having inflexional contact), and from special centres of projection we might have F++++ F views. Koenderink (personal communication) discovered in numerical computer studies of the bitangent ray manifold that the most degenerate singularities of this manifold, which persist under small deformations of the surface M, are swallowtail points in view space corresponding to F + + + + F views. Calculating the bifurcation set in the parameter space of the versal unfolding of F+ + + + F (of minimal dimension) shows that the most degenerate points of the bitangent ray manifold of any generic surface M (or in fact of a versal three-parameter family of projections of any smooth surface) are indeed swallowtail points. Figure 28 shows a section through a swallowtail surface at a, <0 indicating the F+ + F and F+ + + F strata, and nearby stable views (the complete swallowtail surface looks like Fig. 12). The parameters (ay, az, a3) refer to the parameters of the versal unfolding of F + + + + F:"
       }
     },
     {
@@ -5340,6 +5321,25 @@
       "page": 32,
       "order": 5,
       "role": "paragraph",
+      "text": "- F+++F",
+      "bbox": {
+        "x0": 456.28,
+        "y0": 246.59,
+        "x1": 537.29,
+        "y1": 259.92,
+        "width": 81.01,
+        "height": 13.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "- F+++F"
+      }
+    },
+    {
+      "id": "#/texts/364",
+      "page": 32,
+      "order": 6,
+      "role": "paragraph",
       "text": "W",
       "bbox": {
         "x0": 241.37,
@@ -5355,9 +5355,9 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/365",
       "page": 32,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
@@ -5374,9 +5374,9 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/366",
       "page": 32,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "(b)",
       "bbox": {
@@ -5393,9 +5393,9 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/367",
       "page": 32,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "(r)",
       "bbox": {
@@ -5412,9 +5412,9 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/368",
       "page": 32,
-      "order": 9,
+      "order": 10,
       "role": "paragraph",
       "text": "(Here (x, y) and (i, y) are local coordinates of the two surface patches, which project onto a common point in the image plane-see [17, 19] for details on unfoldings of multi-local singularities.)",
       "bbox": {
@@ -5431,9 +5431,9 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/369",
       "page": 32,
-      "order": 10,
+      "order": 11,
       "role": "heading",
       "text": "5. A Remark on Finding Apparent Contours",
       "bbox": {
@@ -5450,9 +5450,9 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/370",
       "page": 32,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "The simplest conceivable lighting model assumes that the image intensity of a viewed point only depends on the angle between the surface normal at that point and the direction of illumination. This assumes, apart from the surface being a diffuse (Lambertian) reflector, that the imaged surface is convex (i.e., there are no interreflections), that there is a single light source, and that there are no cast shadows or surface markings. Note that most of these complications are, however, determined by some surface characteristics and the mutual disposition of (perhaps several) light sources and a surface, and are not affected by camera position. (The exception is, of course, specular reflection: highlights tend to move on the surface as the camera position changes.) Hence, if we ignore highlights, we can conceptually decouple the projection process and the (complex) processes that light the surface and give rise to a foliation of the surface into curves of equal brightness (so-called isophotes).",
       "bbox": {
@@ -5469,9 +5469,9 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/371",
       "page": 32,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "Consider a piece of surface containing two regions with different reflectance properties, which are therefore separated by a brightness discontinuity (surface marking). On either side of the discontinuity we have (generically) fields of smooth isophotes which (again generically) meet the discontinuity transversely (see Fig. 29). Now project the patch onto the image plane: if the patch is visible and not near a contour generator the foliation by image isophotes will be diffeomorphic to the foliation of the surface patch by its isophotes (so that the projection of the patch looks like the patch itself-modulo some",
       "bbox": {
@@ -5488,7 +5488,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/374",
       "page": 33,
       "order": 1,
       "role": "caption",
@@ -5507,28 +5507,9 @@
       }
     },
     {
-      "id": "#/texts/374",
-      "page": 33,
-      "order": 2,
-      "role": "paragraph",
-      "text": "V0A0R0",
-      "bbox": {
-        "x0": 418.26,
-        "y0": 360.9,
-        "x1": 533.98,
-        "y1": 400.64,
-        "width": 115.72,
-        "height": 39.74
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "V0A0R0"
-      }
-    },
-    {
       "id": "#/texts/375",
       "page": 33,
-      "order": 3,
+      "order": 2,
       "role": "paragraph",
       "text": "distortion). If, however, the patch contains a contour generator crossing the brightness discontinuity, we see a folded version of the surface patch (see Fig. 29): generically the image isophotes will be tangent to the apparent contour (except for some exceptional image isophotes, which form a set of measure 0 and are tangent to the line of sight—see Remark 5.1 below). If the background consists of a projected piece of surface then we have also image isophotes on the opposite side of the apparent contour, which are not related to the foreground and are (generically) transverse to the apparent contour. We conclude that apparent contours are curves in the image of brightness discontinuity along which (almost) all image isophotes on one side of this curve become tangent as they approach the discontinuity. (In other words, the apparent contour is the envelope of these image isophotes.) This observation and the geometry of exceptional isophotes follow from a classification of families of plane curves by Dufour [6]. Figure 30 shows as an example the image isophotes of a torus with two cups and two T-junctions in front of a planar background (there are two lightsources in the scene).",
       "bbox": {
@@ -5547,16 +5528,16 @@
     {
       "id": "#/texts/376",
       "page": 33,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "As one of the referees of this paper has rightly pointed out, many of the isophotes on the torus actually seem to be transverse to the apparent contour. The reason for this is the high curvature of some image isophotes near the apparent contour. To illustrate this problem, let us consider the geometry near one of the degenerate isophotes mentioned above, which are actually tranverse to the apparent contour. Consider the family of isophotes parametrized by t, where each member of the family (for fixed t) is a plane curve parametrized by * (see Fig. 31). From the classification of families of plane curves (see [6; 19,",
       "bbox": {
-        "x0": 87.47,
+        "x0": 87.5,
         "y0": 844.32,
         "x1": 671.42,
-        "y1": 1006.84,
-        "width": 583.95,
-        "height": 162.52
+        "y1": 1006.85,
+        "width": 583.92,
+        "height": 162.53
       },
       "meta": {
         "docling_label": "text",
@@ -5606,18 +5587,18 @@
       "page": 34,
       "order": 3,
       "role": "paragraph",
-      "text": "where a (x) = (x\" 3,x') is the exceptional member of the family. The apparent contour is the envelope of this family, given by the set of critical values of",
+      "text": "where a, (x) = (x\" 3,x') is the exceptional member of the family. The apparent contour is the envelope of this family, given by the set of critical values of",
       "bbox": {
-        "x0": 95.74,
+        "x0": 95.77,
         "y0": 705.13,
         "x1": 679.46,
         "y1": 748.45,
-        "width": 583.72,
+        "width": 583.69,
         "height": 43.32
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "where a (x) = (x\" 3,x') is the exceptional member of the family. The apparent contour is the envelope of this family, given by the set of critical values of"
+        "docling_orig": "where a, (x) = (x\" 3,x') is the exceptional member of the family. The apparent contour is the envelope of this family, given by the set of critical values of"
       }
     },
     {
@@ -5682,7 +5663,7 @@
       "page": 35,
       "order": 2,
       "role": "paragraph",
-      "text": "Remark 5.1. Classically, the envelope of a family of plane curves F(t, X, Z) = 0, t being the parameter, is defined to be the discriminant of F, obtained by eliminating t from F(t, X, Z) = a F(t, X, Z) at = 0. We can get an implicit equation for the family of curves parametrized by alt, x) by calculating the resultant of t+ tx +x- X= x- Z= 0 with respect to x, giving F(t, X, Z) = (X - 1) - Z(Z+ 1)' = 0 (as always, (X, Z) are coordinates on the \"retina\"). We can now calculate the envelope in the old-fashioned way (as a discriminant) giving Z(1 - Z)(X + Z) = 0, where Z = 0 defines the envelope near X = Z= 0 and where (X + Z) = 0 corresponds to the selfintersections of the isophotes.",
+      "text": "Remark 5.1. Classically, the envelope of a family of plane curves F(t, X, Z) = 0, t being the parameter, is defined to be the discriminant of F, obtained by eliminating t from F(t, X, Z) = a F(t, X, Z) at = 0. We can get an implicit equation for the family of curves parametrized by alt, x) by calculating the resultant of t+ tx +x- X= x- Z= 0 with respect to x, giving F(t, X, Z) = (X - 1) - Z(Z+ 1)' = 0 (as always, (X, Z) are coordinates on the \"retina\"). We can now calculate the envelope in the old-fashioned way (as a discriminant) giving Z(1 - Z)(X + Z) = 0, where Z = 0 defines the envelope near X = Z = 0 and where (X + Z) = 0 corresponds to the selfintersections of the isophotes.",
       "bbox": {
         "x0": 89.12,
         "y0": 216.87,
@@ -5693,7 +5674,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Remark 5.1. Classically, the envelope of a family of plane curves F(t, X, Z) = 0, t being the parameter, is defined to be the discriminant of F, obtained by eliminating t from F(t, X, Z) = a F(t, X, Z) at = 0. We can get an implicit equation for the family of curves parametrized by alt, x) by calculating the resultant of t+ tx +x- X= x- Z= 0 with respect to x, giving F(t, X, Z) = (X - 1) - Z(Z+ 1)' = 0 (as always, (X, Z) are coordinates on the \"retina\"). We can now calculate the envelope in the old-fashioned way (as a discriminant) giving Z(1 - Z)(X + Z) = 0, where Z = 0 defines the envelope near X = Z= 0 and where (X + Z) = 0 corresponds to the selfintersections of the isophotes."
+        "docling_orig": "Remark 5.1. Classically, the envelope of a family of plane curves F(t, X, Z) = 0, t being the parameter, is defined to be the discriminant of F, obtained by eliminating t from F(t, X, Z) = a F(t, X, Z) at = 0. We can get an implicit equation for the family of curves parametrized by alt, x) by calculating the resultant of t+ tx +x- X= x- Z= 0 with respect to x, giving F(t, X, Z) = (X - 1) - Z(Z+ 1)' = 0 (as always, (X, Z) are coordinates on the \"retina\"). We can now calculate the envelope in the old-fashioned way (as a discriminant) giving Z(1 - Z)(X + Z) = 0, where Z = 0 defines the envelope near X = Z = 0 and where (X + Z) = 0 corresponds to the selfintersections of the isophotes."
       }
     },
     {
@@ -5701,18 +5682,18 @@
       "page": 35,
       "order": 3,
       "role": "paragraph",
-      "text": "Next, consider the curvatures of the isophotes a,(x) for fixed t as they approach the apparent contour, that is as x→0. Using the well-known formula for the curvature of a parametrized plane curve (involving the first and seconc derivatives of a,(x) = (t+ tx + x\" 3, x') with respect to x) we get",
+      "text": "Next, consider the curvatures of the isophotes a,(x) for fixed t as they approach the apparent contour, that is as x→0. Using the well-known formula for the curvature of a parametrized plane curve (involving the first and seconc derivatives of a, (x) = (t + tx + x\", x') with respect to x) we get",
       "bbox": {
-        "x0": 88.98,
+        "x0": 89.27,
         "y0": 437.06,
         "x1": 671.2,
-        "y1": 522.69,
-        "width": 582.22,
-        "height": 85.63
+        "y1": 518.18,
+        "width": 581.93,
+        "height": 81.12
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Next, consider the curvatures of the isophotes a,(x) for fixed t as they approach the apparent contour, that is as x→0. Using the well-known formula for the curvature of a parametrized plane curve (involving the first and seconc derivatives of a,(x) = (t+ tx + x\" 3, x') with respect to x) we get"
+        "docling_orig": "Next, consider the curvatures of the isophotes a,(x) for fixed t as they approach the apparent contour, that is as x→0. Using the well-known formula for the curvature of a parametrized plane curve (involving the first and seconc derivatives of a, (x) = (t + tx + x\", x') with respect to x) we get"
       }
     },
     {
@@ -5720,7 +5701,7 @@
       "page": 35,
       "order": 4,
       "role": "paragraph",
-      "text": "Along the apparent contour we have k,(0) = 2 f. Also note that the tangent vectors to the isophotes da, (x) dx = (t + 3x, 2x) are defined along the apparent contour a,(0) and are tangent to it, except for the exceptional isophote at t = 0 which has a cusp. At the cusp the curvature is infinite, and moving along the apparent contour the curvature away from t = 0 becomes finite: as the cusp unfolds, the curvature along the apparent contour drops according to 2 f. In a digital picture the isophotes have finite resolution so that the isophotes near an exceptional isophote (i.e., in some neighborhood of t= 0) appear to be transverse to the apparent contour, because of their high curvature near the contour. With the techniques of this paper (from differential topology) we can only make qualitative but no quantitative statements: we cannot predict the resolution necessary to detect the tangency of isophotes outside some interval around t=0 to the contour, we merely can guarantee that a fine enough resolution exists.",
+      "text": "Along the apparent contour we have k,(0) = 2 f. Also note that the tangent vectors to the isophotes da, (x) dx = (t + 3x' ', 2x) are defined along the apparent contour a,(0) and are tangent to it, except for the exceptional isophote at t = 0 which has a cusp. At the cusp the curvature is infinite, and moving along the apparent contour the curvature away from t = 0 becomes finite: as the cusp unfolds, the curvature along the apparent contour drops according to 2 f. In a digital picture the isophotes have finite resolution so that the isophotes near an exceptional isophote (i.e., in some neighborhood of t= 0) appear to be transverse to the apparent contour, because of their high curvature near the contour. With the techniques of this paper (from differential topology) we can only make qualitative but no quantitative statements: we cannot predict the resolution necessary to detect the tangency of isophotes outside some interval around t=0 to the contour, we merely can guarantee that a fine enough resolution exists.",
       "bbox": {
         "x0": 90.65,
         "y0": 618.45,
@@ -5731,7 +5712,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Along the apparent contour we have k,(0) = 2 f. Also note that the tangent vectors to the isophotes da, (x) dx = (t + 3x, 2x) are defined along the apparent contour a,(0) and are tangent to it, except for the exceptional isophote at t = 0 which has a cusp. At the cusp the curvature is infinite, and moving along the apparent contour the curvature away from t = 0 becomes finite: as the cusp unfolds, the curvature along the apparent contour drops according to 2 f. In a digital picture the isophotes have finite resolution so that the isophotes near an exceptional isophote (i.e., in some neighborhood of t= 0) appear to be transverse to the apparent contour, because of their high curvature near the contour. With the techniques of this paper (from differential topology) we can only make qualitative but no quantitative statements: we cannot predict the resolution necessary to detect the tangency of isophotes outside some interval around t=0 to the contour, we merely can guarantee that a fine enough resolution exists."
+        "docling_orig": "Along the apparent contour we have k,(0) = 2 f. Also note that the tangent vectors to the isophotes da, (x) dx = (t + 3x' ', 2x) are defined along the apparent contour a,(0) and are tangent to it, except for the exceptional isophote at t = 0 which has a cusp. At the cusp the curvature is infinite, and moving along the apparent contour the curvature away from t = 0 becomes finite: as the cusp unfolds, the curvature along the apparent contour drops according to 2 f. In a digital picture the isophotes have finite resolution so that the isophotes near an exceptional isophote (i.e., in some neighborhood of t= 0) appear to be transverse to the apparent contour, because of their high curvature near the contour. With the techniques of this paper (from differential topology) we can only make qualitative but no quantitative statements: we cannot predict the resolution necessary to detect the tangency of isophotes outside some interval around t=0 to the contour, we merely can guarantee that a fine enough resolution exists."
       }
     },
     {
@@ -5761,11 +5742,11 @@
       "text": "6. Open Problems and Current Work",
       "bbox": {
         "x0": 214.91,
-        "y0": 133.96,
+        "y0": 135.63,
         "x1": 499.26,
         "y1": 152.31,
         "width": 284.35,
-        "height": 18.35
+        "height": 16.68
       },
       "meta": {
         "docling_label": "section_header",
@@ -5796,7 +5777,7 @@
       "page": 36,
       "order": 3,
       "role": "paragraph",
-      "text": "Finally, we want to mention an algorithmic problem. One is interested in view bifurcation sets, because they separate the regions in view space that correspond to stable views. The computation of the view bifurcation set is the hardest step in any algorithm that derives from a parametrization of a surface all its topologically distinct views (\"characteristic views\" [5]). Using some of the results in [18, 20], we have designed an algorithm that derives the defining equations of the bifurcation set on the viewing sphere from a parametrization « of a smooth, algebraic surface (the algorithm performs symbolic rather than numerical computations). This recent work brings up many new theoretical questions of a global kind (note that the present classification merely gives local, or semiglobal, information about the bifurcation set), such as: Is there an upper bound for the number of connected regions on the viewing sphere in terms of the degree of o?",
+      "text": "Finally, we want to mention an algorithmic problem. One is interested in view bifurcation sets, because they separate the regions in view space that correspond to stable views. The computation of the view bifurcation set is the hardest step in any algorithm that derives from a parametrization of a surface all its topologically distinct views (\"characteristic views\" [5]). Using some of the results in [18, 20], we have designed an algorithm that derives the defining equations of the bifurcation set on the viewing sphere from a parametrization & of a smooth, algebraic surface (the algorithm performs symbolic rather than numerical computations). This recent work brings up many new theoretical questions of a global kind (note that the present classification merely gives local, or semiglobal, information about the bifurcation set), such as: Is there an upper bound for the number of connected regions on the viewing sphere in terms of the degree of o?",
       "bbox": {
         "x0": 94.23,
         "y0": 652.14,
@@ -5807,7 +5788,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Finally, we want to mention an algorithmic problem. One is interested in view bifurcation sets, because they separate the regions in view space that correspond to stable views. The computation of the view bifurcation set is the hardest step in any algorithm that derives from a parametrization of a surface all its topologically distinct views (\"characteristic views\" [5]). Using some of the results in [18, 20], we have designed an algorithm that derives the defining equations of the bifurcation set on the viewing sphere from a parametrization « of a smooth, algebraic surface (the algorithm performs symbolic rather than numerical computations). This recent work brings up many new theoretical questions of a global kind (note that the present classification merely gives local, or semiglobal, information about the bifurcation set), such as: Is there an upper bound for the number of connected regions on the viewing sphere in terms of the degree of o?"
+        "docling_orig": "Finally, we want to mention an algorithmic problem. One is interested in view bifurcation sets, because they separate the regions in view space that correspond to stable views. The computation of the view bifurcation set is the hardest step in any algorithm that derives from a parametrization of a surface all its topologically distinct views (\"characteristic views\" [5]). Using some of the results in [18, 20], we have designed an algorithm that derives the defining equations of the bifurcation set on the viewing sphere from a parametrization & of a smooth, algebraic surface (the algorithm performs symbolic rather than numerical computations). This recent work brings up many new theoretical questions of a global kind (note that the present classification merely gives local, or semiglobal, information about the bifurcation set), such as: Is there an upper bound for the number of connected regions on the viewing sphere in terms of the degree of o?"
       }
     },
     {
@@ -5838,9 +5819,9 @@
       "bbox": {
         "x0": 95.89,
         "y0": 981.71,
-        "x1": 677.81,
+        "x1": 679.46,
         "y1": 1019.8,
-        "width": 581.92,
+        "width": 583.57,
         "height": 38.09
       },
       "meta": {
@@ -5857,9 +5838,9 @@
       "bbox": {
         "x0": 95.89,
         "y0": 135.63,
-        "x1": 677.81,
+        "x1": 679.46,
         "y1": 216.94,
-        "width": 581.92,
+        "width": 583.57,
         "height": 81.31
       },
       "meta": {
@@ -5872,18 +5853,18 @@
       "page": 37,
       "order": 2,
       "role": "paragraph",
-      "text": "First, the definition of a versal unfolding. Let f: R\",0→ R\",0 be a C*-map germ given by X = f(x), and let F: R\" × R\",0→ R* × R\",0 denote a d-parameter unfolding of f, given by Fa, x) = (a, f(a, x)) where f(0, x) = f(x). Two d-parameter unfoldings F and G are isomorphic if there exist germs of diffeomorphisms H(a, X) = (a, ha, X)) of Rdx xR°,0 and K(a, x) = (a, K(a, x)) of R' × such such that G= H·F·K-! ! Now let F: R\" × R\",O→R° × RP,0 and G: R'×R\"0→ R'×R\"0 denote unfoldings of f: R\",0→R\",0, and let the above unto ding and ma die ive pal ad) et , as ol) s",
+      "text": "First, the definition of a versal unfolding. Let f: R\",0→ R\",0 be a C*-map germ given by X = f(x), and let F: R\" × R\",0→ R* × R\",0 denote a d-parameter unfolding of f, given by Fa, x) = (a, f(a, x)) where f(0, x) = f(x). Two d-parameter unfoldings F and G are isomorphic if there exist germs of diffeomorphisms H(a, X) = (a, ha, X)) of Rdx xR°,0 and K(a, x) = (a, K(a, x)) of R\" × R\", ,0, such that G = H·FoK ! Now let F: R\" × R\",O→R° × RP,0 and G: R'×R\"0→ R'×R\"0 denote unfoldings of f: R\",0→R\",0, and let $: R°,0 → R\",0 denote a C\"-map germ given by a = q(b). Let F(a, fa, x)) be the above unfolding, and define G = 4*F, the pull-back of F by 4, as follows:",
       "bbox": {
         "x0": 94.23,
         "y0": 256.59,
         "x1": 679.46,
-        "y1": 441.36,
+        "y1": 442.02,
         "width": 585.23,
-        "height": 184.77
+        "height": 185.43
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "First, the definition of a versal unfolding. Let f: R\",0→ R\",0 be a C*-map germ given by X = f(x), and let F: R\" × R\",0→ R* × R\",0 denote a d-parameter unfolding of f, given by Fa, x) = (a, f(a, x)) where f(0, x) = f(x). Two d-parameter unfoldings F and G are isomorphic if there exist germs of diffeomorphisms H(a, X) = (a, ha, X)) of Rdx xR°,0 and K(a, x) = (a, K(a, x)) of R' × such such that G= H·F·K-! ! Now let F: R\" × R\",O→R° × RP,0 and G: R'×R\"0→ R'×R\"0 denote unfoldings of f: R\",0→R\",0, and let the above unto ding and ma die ive pal ad) et , as ol) s"
+        "docling_orig": "First, the definition of a versal unfolding. Let f: R\",0→ R\",0 be a C*-map germ given by X = f(x), and let F: R\" × R\",0→ R* × R\",0 denote a d-parameter unfolding of f, given by Fa, x) = (a, f(a, x)) where f(0, x) = f(x). Two d-parameter unfoldings F and G are isomorphic if there exist germs of diffeomorphisms H(a, X) = (a, ha, X)) of Rdx xR°,0 and K(a, x) = (a, K(a, x)) of R\" × R\", ,0, such that G = H·FoK ! Now let F: R\" × R\",O→R° × RP,0 and G: R'×R\"0→ R'×R\"0 denote unfoldings of f: R\",0→R\",0, and let $: R°,0 → R\",0 denote a C\"-map germ given by a = q(b). Let F(a, fa, x)) be the above unfolding, and define G = 4*F, the pull-back of F by 4, as follows:"
       }
     },
     {
@@ -5910,18 +5891,18 @@
       "page": 37,
       "order": 4,
       "role": "paragraph",
-      "text": "Next, we want to state a necessary and sufficient condition for the versality of an unfolding. Let En.p denote the space of C®-map germs from R\",0 to R',0, and let A. = Diff(R\",0) × Diff(R\",0) denote the (pseudo)group of right-left equivalences (see Section 2.2). The action of this group on the space En,p is given by (h, k) · f= hofok! siver this group at on is give fory , = (nan) cEk) %, orbit her words, it is the set of germs that are right-left equivalent to f. The tangent space TAe f to this orbit at f is, roughly speaking, defined as follows. Consider curves in En.p through f obtained by composing f with one-parameter families of diffeomorphisms (h,k,) near the identity (idp\"o, idpra); these curves are given by t→f, = h, fok,', where fo= f. The tangent space TAe f is defined to be the set of tangent vectors at f of such curves, that is, the set of vectors",
+      "text": "Next, we want to state a necessary and sufficient condition for the versality of an unfolding. Let En.p denote the space of C®-map germs from R\",0 to R',0, and let A. = Diff(R\",0) × Diff(R\",0) denote the (pseudo)group of right-left equivalences (see Section 2.2). The action of this group on the space En,p is given by (h, k) f= hofok! siver this group action is give fory , = (nan) cEk) orbit ther words, it is the set of germs that are right-left equivalent to f. The tangent space TAe f to this orbit at f is, roughly speaking, defined as follows. Consider curves in En.p through f obtained by composing f with one-parameter families of diffeomorphisms (h,k,) near the identity (idp\"o, idpra); these curves are given by t→f, = h, fok,', where fo = f. The tangent space TAe f is defined to be the set of tangent vectors at f of such curves, that is, the set of vectors",
       "bbox": {
-        "x0": 92.51,
+        "x0": 92.52,
         "y0": 592.64,
         "x1": 681.11,
-        "y1": 853.16,
-        "width": 588.6,
-        "height": 260.52
+        "y1": 853.15,
+        "width": 588.59,
+        "height": 260.51
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Next, we want to state a necessary and sufficient condition for the versality of an unfolding. Let En.p denote the space of C®-map germs from R\",0 to R',0, and let A. = Diff(R\",0) × Diff(R\",0) denote the (pseudo)group of right-left equivalences (see Section 2.2). The action of this group on the space En,p is given by (h, k) · f= hofok! siver this group at on is give fory , = (nan) cEk) %, orbit her words, it is the set of germs that are right-left equivalent to f. The tangent space TAe f to this orbit at f is, roughly speaking, defined as follows. Consider curves in En.p through f obtained by composing f with one-parameter families of diffeomorphisms (h,k,) near the identity (idp\"o, idpra); these curves are given by t→f, = h, fok,', where fo= f. The tangent space TAe f is defined to be the set of tangent vectors at f of such curves, that is, the set of vectors"
+        "docling_orig": "Next, we want to state a necessary and sufficient condition for the versality of an unfolding. Let En.p denote the space of C®-map germs from R\",0 to R',0, and let A. = Diff(R\",0) × Diff(R\",0) denote the (pseudo)group of right-left equivalences (see Section 2.2). The action of this group on the space En,p is given by (h, k) f= hofok! siver this group action is give fory , = (nan) cEk) orbit ther words, it is the set of germs that are right-left equivalent to f. The tangent space TAe f to this orbit at f is, roughly speaking, defined as follows. Consider curves in En.p through f obtained by composing f with one-parameter families of diffeomorphisms (h,k,) near the identity (idp\"o, idpra); these curves are given by t→f, = h, fok,', where fo = f. The tangent space TAe f is defined to be the set of tangent vectors at f of such curves, that is, the set of vectors"
       }
     },
     {
@@ -6005,7 +5986,7 @@
       "page": 38,
       "order": 3,
       "role": "paragraph",
-      "text": "(ii) The Versality Theorem says that, in order to construct a versal unfolding of a degenerate singularity f, one simply has to add certain monomials 4; = I'=, x\"; alaX, to f, which form a linearly independent basis for the quotient space En.p Tsf. The resulting unfolding F(a, x) = (a, f(x) + 2i-, a;ф.) is versal, and its dimension d is greater than or equal to the codimension of f.",
+      "text": "(ii) The Versality Theorem says that, in order to construct a versal unfolding of a degenerate singularity f, one simply has to add certain monomials 4; = I'=, x\"; alaX, to f, which form a linearly independent basis for the quotient space En.p Tsef. The resulting unfolding F(a, x) = (a, f(x) + 2i-, a;ф.) is versal, and its dimension d is greater than or equal to the codimension of f.",
       "bbox": {
         "x0": 94.12,
         "y0": 334.42,
@@ -6016,7 +5997,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "(ii) The Versality Theorem says that, in order to construct a versal unfolding of a degenerate singularity f, one simply has to add certain monomials 4; = I'=, x\"; alaX, to f, which form a linearly independent basis for the quotient space En.p Tsf. The resulting unfolding F(a, x) = (a, f(x) + 2i-, a;ф.) is versal, and its dimension d is greater than or equal to the codimension of f."
+        "docling_orig": "(ii) The Versality Theorem says that, in order to construct a versal unfolding of a degenerate singularity f, one simply has to add certain monomials 4; = I'=, x\"; alaX, to f, which form a linearly independent basis for the quotient space En.p Tsef. The resulting unfolding F(a, x) = (a, f(x) + 2i-, a;ф.) is versal, and its dimension d is greater than or equal to the codimension of f."
       }
     },
     {
@@ -6043,18 +6024,18 @@
       "page": 38,
       "order": 5,
       "role": "paragraph",
-      "text": "where a? ; + as + a; = 1. Differentiating with respect to the unfolding parameters a;, and evaluating at a, = a, = 0, a = 1 gives:",
+      "text": "whoa, at dating Dier, a in with gect to the unfolding parameters a;, and evaluating at a, = a =0, a = 1 gives:",
       "bbox": {
-        "x0": 94.23,
-        "y0": 619.15,
-        "x1": 677.81,
+        "x0": 90.02,
+        "y0": 616.82,
+        "x1": 677.51,
         "y1": 663.86,
-        "width": 583.58,
-        "height": 44.71
+        "width": 587.49,
+        "height": 47.04
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "where a? ; + as + a; = 1. Differentiating with respect to the unfolding parameters a;, and evaluating at a, = a, = 0, a = 1 gives:"
+        "docling_orig": "whoa, at dating Dier, a in with gect to the unfolding parameters a;, and evaluating at a, = a =0, a = 1 gives:"
       }
     },
     {
@@ -6062,7 +6043,7 @@
       "page": 38,
       "order": 6,
       "role": "paragraph",
-      "text": "The last vector cannot be obtained from the family (4), because d daz is not contained in the tangent space to the two-sphere a, + a + a = 1 at a, = a. = 0, a, = 1. The family (4), at a, = a2 = 0, a =1, is an unfolding of f(x, y) = (x, Z(x, y)). Hence, in order to verify that for the list of Z(x, y) given in Section 2.5 the family (4) is versal, it remains to check that:",
+      "text": "The last vector cannot be obtained from the family (4), because d daz is not contained in the tangent space to the two-sphere a, + a + a = 1 at a, = a. = 0, a, = 1. The family (4), at a, = a2 = 0, a = 1, is an unfolding of f(x, y) = (x, Z(x, y)). Hence, in order to verify that for the list of Z(x, y) given in Section 2.5 the family (4) is versal, it remains to check that:",
       "bbox": {
         "x0": 94.23,
         "y0": 721.79,
@@ -6073,7 +6054,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The last vector cannot be obtained from the family (4), because d daz is not contained in the tangent space to the two-sphere a, + a + a = 1 at a, = a. = 0, a, = 1. The family (4), at a, = a2 = 0, a =1, is an unfolding of f(x, y) = (x, Z(x, y)). Hence, in order to verify that for the list of Z(x, y) given in Section 2.5 the family (4) is versal, it remains to check that:"
+        "docling_orig": "The last vector cannot be obtained from the family (4), because d daz is not contained in the tangent space to the two-sphere a, + a + a = 1 at a, = a. = 0, a, = 1. The family (4), at a, = a2 = 0, a = 1, is an unfolding of f(x, y) = (x, Z(x, y)). Hence, in order to verify that for the list of Z(x, y) given in Section 2.5 the family (4) is versal, it remains to check that:"
       }
     },
     {
@@ -6138,7 +6119,7 @@
       "page": 39,
       "order": 2,
       "role": "paragraph",
-      "text": "Again using the results of [18], it can be shown that this condition is satisfied for Z(1, x, y) =x+y= xy + txy and xy? +y*+ x'y + tx'y—hence the corresponding families of views are versal. The remaining Z(t, x, y) of Section 2.5 are merely topologically versal, and this is much harder to prove (see [20] for detailed statements of results and the proofs).",
+      "text": "Again using the results of [18], it can be shown that this condition is satisfied for Z(1, x, y) =x+y= xy + txy and xy +y*+ x'y + tx'y—hence the corresponding families of views are versal. The remaining Z(t, x, y) of Section 2.5 are merely topologically versal, and this is much harder to prove (see [20] for detailed statements of results and the proofs).",
       "bbox": {
         "x0": 95.69,
         "y0": 226.81,
@@ -6149,7 +6130,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Again using the results of [18], it can be shown that this condition is satisfied for Z(1, x, y) =x+y= xy + txy and xy? +y*+ x'y + tx'y—hence the corresponding families of views are versal. The remaining Z(t, x, y) of Section 2.5 are merely topologically versal, and this is much harder to prove (see [20] for detailed statements of results and the proofs)."
+        "docling_orig": "Again using the results of [18], it can be shown that this condition is satisfied for Z(1, x, y) =x+y= xy + txy and xy +y*+ x'y + tx'y—hence the corresponding families of views are versal. The remaining Z(t, x, y) of Section 2.5 are merely topologically versal, and this is much harder to prove (see [20] for detailed statements of results and the proofs)."
       }
     },
     {
@@ -6179,11 +6160,11 @@
       "text": "I am grateful to Peter Giblin and Jan Koenderink for helpful conversations, and I thank one of the referees for his critical comments concerning the presentation of results.",
       "bbox": {
         "x0": 94.14,
-        "y0": 389.01,
-        "x1": 676.22,
+        "y0": 388.89,
+        "x1": 676.16,
         "y1": 423.86,
-        "width": 582.08,
-        "height": 34.85
+        "width": 582.02,
+        "height": 34.97
       },
       "meta": {
         "docling_label": "text",
@@ -6252,18 +6233,18 @@
       "page": 39,
       "order": 8,
       "role": "list_item",
-      "text": "J.W. Bruce and P.J. Giblin, Outlines and their duals, Proc. London Math. Soc. (3) 50(1985),",
+      "text": "J.W. Bruce and P.J. Giblin, Outlines and their duals, Proc. London Math. Soc. (3) 50(1985), 552-570.",
       "bbox": {
         "x0": 102.45,
         "y0": 529.68,
         "x1": 679.51,
-        "y1": 548.01,
+        "y1": 562.06,
         "width": 577.06,
-        "height": 18.33
+        "height": 32.38
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "3. J.W. Bruce and P.J. Giblin, Outlines and their duals, Proc. London Math. Soc. (3) 50(1985),"
+        "docling_orig": "3. J.W. Bruce and P.J. Giblin, Outlines and their duals, Proc. London Math. Soc. (3) 50(1985), 552-570."
       }
     },
     {
@@ -6330,11 +6311,11 @@
       "role": "list_item",
       "text": "W.E.L. Grimson, Recognition of object families using parameterized models, in: Proceedings First International Conference Computer Vision, London (1987) 93-101.",
       "bbox": {
-        "x0": 104.06,
+        "x0": 104.07,
         "y0": 647.27,
         "x1": 677.89,
         "y1": 681.84,
-        "width": 573.83,
+        "width": 573.82,
         "height": 34.57
       },
       "meta": {
@@ -6371,9 +6352,9 @@
         "x0": 102.37,
         "y0": 713.47,
         "x1": 676.29,
-        "y1": 743.33,
+        "y1": 743.62,
         "width": 573.92,
-        "height": 29.86
+        "height": 30.15
       },
       "meta": {
         "docling_label": "list_item",
@@ -6409,9 +6390,9 @@
         "x0": 95.82,
         "y0": 799.33,
         "x1": 677.85,
-        "y1": 829.57,
+        "y1": 829.56,
         "width": 582.03,
-        "height": 30.24
+        "height": 30.23
       },
       "meta": {
         "docling_label": "list_item",
@@ -6445,11 +6426,11 @@
       "text": "J.J. Koenderink and A.J. van Doorn, Dynamic shape, Biol. Cybern. 53 (1986) 383-396.",
       "bbox": {
         "x0": 94.14,
-        "y0": 865.44,
+        "y0": 865.43,
         "x1": 653.1,
         "y1": 884.48,
         "width": 558.96,
-        "height": 19.04
+        "height": 19.05
       },
       "meta": {
         "docling_label": "list_item",
@@ -6540,11 +6521,11 @@
       "text": "J.H. Rieger, Families of maps from the plane to the plane, J. London Math. Soc. (2) 36 (1987) 351-369.",
       "bbox": {
         "x0": 95.81,
-        "y0": 134.74,
-        "x1": 677.9,
+        "y0": 134.54,
+        "x1": 677.91,
         "y1": 170.62,
-        "width": 582.09,
-        "height": 35.88
+        "width": 582.1,
+        "height": 36.08
       },
       "meta": {
         "docling_label": "list_item",
@@ -6627,5 +6608,47 @@
         "docling_orig": "Received January 1988; revised version received March 1989"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling",
+    "28": "docling",
+    "29": "docling",
+    "30": "docling",
+    "31": "docling",
+    "32": "docling",
+    "33": "docling",
+    "34": "docling",
+    "35": "docling",
+    "36": "docling",
+    "37": "docling",
+    "38": "docling",
+    "39": "docling",
+    "40": "docling"
+  }
 }

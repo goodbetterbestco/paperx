@@ -128,7 +128,7 @@
     {
       "id": "docling-eq-0005",
       "kind": "display",
-      "display_latex": "*(sin t, cos t) = (sin 1, cost, - 3cos }cos1).",
+      "display_latex": "*(sin t, cos t) = (sin 1, cost, - }cos }cosl).",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -159,7 +159,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "f(xy) = (x,}y+ x'y +2xy) at (x, y) = (0,0)",
+      "display_latex": "f(xy) = (x,}y + xy +2xy) at (x, y) = (0,0)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -221,7 +221,7 @@
     {
       "id": "docling-eq-0008",
       "kind": "display",
-      "display_latex": "(x, 3y+ xy + 2xy) ~ (x, by +2 xy + 0(4)) ~ (x, y + 6xy) ~ (Ex, y° + xy) ~ (x, y + xy) .",
+      "display_latex": "(x, 5y + xy + 2xy) ~ (x, by + 2xy + 0(4)) ~ (x, y° + 6xy) ~ (Ex, y'+ xy) ~ (x, y° + xy) .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -232,12 +232,12 @@
         {
           "page": 9,
           "bbox": {
-            "x0": 162.01,
-            "y0": 889.02,
-            "x1": 489.34,
-            "y1": 1007.09,
-            "width": 327.33,
-            "height": 118.07
+            "x0": 161.85,
+            "y0": 886.54,
+            "x1": 489.47,
+            "y1": 1007.05,
+            "width": 327.62,
+            "height": 120.51
           },
           "engine": "docling"
         }
@@ -264,11 +264,11 @@
           "page": 10,
           "bbox": {
             "x0": 163.61,
-            "y0": 560.89,
+            "y0": 560.87,
             "x1": 676.16,
             "y1": 615.85,
             "width": 512.55,
-            "height": 54.96
+            "height": 54.98
           },
           "engine": "docling"
         }
@@ -316,7 +316,7 @@
     {
       "id": "docling-eq-0011",
       "kind": "display",
-      "display_latex": "F: V X M→V x S? F(c, x, y) = (c, + (x, y) - c *(x. y) - cl) = (c, (cx. 1)).",
+      "display_latex": "F(c, x, y) = + (x, y) - c *(x. y) - cl) = (c, (cx. 1)) .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -327,12 +327,12 @@
         {
           "page": 10,
           "bbox": {
-            "x0": 164.93,
-            "y0": 928.52,
+            "x0": 165.32,
+            "y0": 960.05,
             "x1": 514.14,
             "y1": 1001.71,
-            "width": 349.21,
-            "height": 73.19
+            "width": 348.82,
+            "height": 41.66
           },
           "engine": "docling"
         }
@@ -379,7 +379,7 @@
     {
       "id": "docling-eq-0013",
       "kind": "display",
-      "display_latex": "F(a, x, y) = (a, f(a, x, y)) = (a, x, $y\" + x'y + ay)",
+      "display_latex": "F(a, x, y) = (a, f(a, x, y)) = (a, x, by\" + xy + ay)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -390,11 +390,11 @@
         {
           "page": 11,
           "bbox": {
-            "x0": 163.67,
+            "x0": 165.32,
             "y0": 312.89,
             "x1": 533.98,
             "y1": 337.73,
-            "width": 370.31,
+            "width": 368.66,
             "height": 24.84
           },
           "engine": "docling"
@@ -441,7 +441,7 @@
     {
       "id": "docling-eq-0015",
       "kind": "display",
-      "display_latex": "(i)e (ax. y = xy+La*-y). xy+La*-y). for k= k=3); (i), (a, x, xy + y*+ ½ a,y*-i-1). 4=k ≤6; (iv) (a, x, xy? +y\" +a,xy + azy + asy) ; (v) (a, x, x'y + y*+a,xy? +azy + asy).",
+      "display_latex": "(i)e (ax. y = xy+La*-y). xy+La*-y). for k= k=3); (i), (a, x, xy + y*+ ½ a,y*-i-1). 4=k ≤6; (iv) (a, x, xy? +y\" +a,xy + azy + asy) ; (v) (a, x, x'y + y\"+a,xy? +azy + asy).",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -472,7 +472,7 @@
     {
       "id": "docling-eq-0016",
       "kind": "display",
-      "display_latex": "- 2a, a z 2a, ar R= 2a,a3 - a, - as + a? - 2a, аз 2a, ar 2a, a3",
+      "display_latex": "- 2a, a z 2a, ar R= 2a,a3 - a - as + a? - 2a, аз 2a, ar 2a, a3",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -534,7 +534,7 @@
     {
       "id": "docling-eq-0018",
       "kind": "display",
-      "display_latex": "(4)",
+      "display_latex": "(4) 2a ax + 2a ay - (a- az- ai)Z(x, y)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -545,12 +545,12 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 649.7,
+            "x0": 226.49,
             "y0": 187.07,
             "x1": 676.16,
-            "y1": 203.63,
-            "width": 26.46,
-            "height": 16.56
+            "y1": 218.6,
+            "width": 449.67,
+            "height": 31.53
           },
           "engine": "docling"
         }
@@ -560,13 +560,12 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(4)"
+      }
     },
     {
       "id": "docling-eq-0019",
       "kind": "display",
-      "display_latex": "y' + x' Z(x, y) = xy + y* xy + y' ‡ xy* xy + y* + y for (i)2, for (i)3, for (ii)4, for (ii)s, for (iii)? ·",
+      "display_latex": "ỷ' + x' Z(x, y) = xy + y* xy + y I xy* xy + y* + y for (i)2, for (i)3, for (ii)4, for (ii)s, for (iii)? ·",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -577,12 +576,12 @@
         {
           "page": 16,
           "bbox": {
-            "x0": 168.54,
+            "x0": 168.57,
             "y0": 470.17,
             "x1": 446.45,
-            "y1": 594.82,
-            "width": 277.91,
-            "height": 124.65
+            "y1": 594.72,
+            "width": 277.88,
+            "height": 124.55
           },
           "engine": "docling"
         }
@@ -628,7 +627,7 @@
     {
       "id": "docling-eq-0021",
       "kind": "display",
-      "display_latex": "Z(t, x, y) = 1 xy + xy + y° + ty* xy + y*+ xy+ txy xy + y + ty* xy + y + ty for (i)4, for (ii)6, for (iii)3, for (iv), for (v).",
+      "display_latex": "Z(t, x, y) = 1 xy + xy + y° + ty* xy + y* + xy + try xy + y + ty* *y+y\" + ty for (i)4, for (ii)6, for (iii)3, for (iv), for (v).",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -659,7 +658,7 @@
     {
       "id": "docling-eq-0022",
       "kind": "display",
-      "display_latex": "segment 1: (C = 0, T(1), T(1)s) , segment 2: (C = 1, T(1)) .",
+      "display_latex": "segment 1: (C = 0, T(1), T(1)s) , segment 2: (C = 1, T(1)).",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -690,7 +689,7 @@
     {
       "id": "docling-eq-0023",
       "kind": "display",
-      "display_latex": "0; = {(x, y, ≤ (y =x\"y))}, cy, 0; = ((x, y, = (y + x\"y))}, cz.",
+      "display_latex": "0; = {(x, y, ≤ (y = x\"y))}, a, 0; = ((x, y, = (y + x\"y))}, cz.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -733,11 +732,11 @@
           "page": 22,
           "bbox": {
             "x0": 163.46,
-            "y0": 615.64,
+            "y0": 615.62,
             "x1": 382.17,
-            "y1": 644.09,
+            "y1": 644.12,
             "width": 218.71,
-            "height": 28.45
+            "height": 28.5
           },
           "engine": "docling"
         }
@@ -783,7 +782,7 @@
     {
       "id": "docling-eq-0026",
       "kind": "display",
-      "display_latex": "0, = (x, y, =(xy' + y'))), c, 0, = {(x, y, = (xy' + y))}, c2.",
+      "display_latex": "0, = (x, y, =(xy' + y'))), c, 0, = { (x, y, = (xy + y))}, c2.",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -796,9 +795,9 @@
           "bbox": {
             "x0": 161.77,
             "y0": 614.15,
-            "x1": 393.65,
+            "x1": 395.27,
             "y1": 682.43,
-            "width": 231.88,
+            "width": 233.5,
             "height": 68.28
           },
           "engine": "docling"
@@ -845,7 +844,7 @@
     {
       "id": "docling-eq-0028",
       "kind": "display",
-      "display_latex": "(а, м, у) → (а, х, у'), | (a, x, y) → (a, x, y'+**+ ax? + a„x + a,).",
+      "display_latex": "(а, м, у) → (а, х, у') ,",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -856,12 +855,12 @@
         {
           "page": 31,
           "bbox": {
-            "x0": 155.4,
+            "x0": 157.05,
             "y0": 976.71,
-            "x1": 505.88,
-            "y1": 1023.11,
-            "width": 350.48,
-            "height": 46.4
+            "x1": 330.64,
+            "y1": 995.04,
+            "width": 173.59,
+            "height": 18.33
           },
           "engine": "docling"
         }
@@ -869,7 +868,7 @@
       "alternates": [],
       "review": {
         "status": "unreviewed",
-        "risk": "high",
+        "risk": "medium",
         "notes": ""
       }
     },
@@ -907,7 +906,7 @@
     {
       "id": "docling-eq-0030",
       "kind": "display",
-      "display_latex": "2t - 6x к, (x) = (+ 4x? + 61x + 9x)3 2.",
+      "display_latex": "2t - 6x к, (x) = [i + 4x° + 61x + 9x')372 .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -938,7 +937,7 @@
     {
       "id": "docling-eq-0031",
       "kind": "display",
-      "display_latex": "G: R\" X R\",0→ R'× R*,0, G(b, x) = (b, f(p(b), x)) .",
+      "display_latex": "G: R\" XR\",0→Rº R'× R*,0, G(b, x) = (b, f(p(b), x)) .",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -982,9 +981,9 @@
           "bbox": {
             "x0": 165.32,
             "y0": 870.81,
-            "x1": 300.96,
+            "x1": 301.04,
             "y1": 907.23,
-            "width": 135.64,
+            "width": 135.72,
             "height": 36.42
           },
           "engine": "docling"
@@ -1062,7 +1061,7 @@
     {
       "id": "docling-eq-0035",
       "kind": "display",
-      "display_latex": "jaf(a, x) | TA: f+ R = En.p. i =1,...,d. da;",
+      "display_latex": "| af(a, x) | TA: f+ R = En.p. i =1,...,d. da;",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1074,11 +1073,11 @@
           "page": 38,
           "bbox": {
             "x0": 161.96,
-            "y0": 213.04,
+            "y0": 213.28,
             "x1": 505.88,
             "y1": 256.61,
             "width": 343.92,
-            "height": 43.57
+            "height": 43.33
           },
           "engine": "docling"
         }
@@ -1093,7 +1092,7 @@
     {
       "id": "docling-eq-0036",
       "kind": "display",
-      "display_latex": "(a\" - an + a)x - 2a azy + 2a, a, <(x, y) Z La, a x + 2a, azy - (a, - ag-az)Z(x, y)",
+      "display_latex": "(a\" Z 2а,ax + 2a,a,y - (a} - a?- a})Z(x, y)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -1106,10 +1105,10 @@
           "bbox": {
             "x0": 173.59,
             "y0": 549.63,
-            "x1": 531.06,
-            "y1": 607.2,
-            "width": 357.47,
-            "height": 57.57
+            "x1": 530.67,
+            "y1": 602.61,
+            "width": 357.08,
+            "height": 52.98
           },
           "engine": "docling"
         }

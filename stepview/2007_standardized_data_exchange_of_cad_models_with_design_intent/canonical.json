@@ -3,7 +3,7 @@
   "paper_id": "2007_standardized_data_exchange_of_cad_models_with_design_intent",
   "title": "2007 standardized data exchange of cad models with design intent",
   "source": {
-    "pdf_path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/2007_standardized_data_exchange_of_cad_models_with_design_intent.pdf",
+    "pdf_path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/2007_standardized_data_exchange_of_cad_models_with_design_intent.pdf",
     "page_count": 18,
     "page_sizes_pt": [
       {
@@ -99,12 +99,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:03:53Z",
-    "updated_at": "2026-04-15T17:03:53Z",
+    "created_at": "2026-04-17T04:12:27Z",
+    "updated_at": "2026-04-17T04:12:27Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "mathpix+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -116,42 +116,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/2007_standardized_data_exchange_of_cad_models_with_design_intent.pdf",
+        "path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/2007_standardized_data_exchange_of_cad_models_with_design_intent.pdf",
         "exists": true,
         "size_bytes": 303332,
-        "modified_at": "2026-04-13T16:18:57Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "f52c183b78662f73c4574af97370c0b2a33021a52b4bb7a6b1ced870435fba3d"
       },
       "external_layout": {
-        "path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/layout.json",
+        "path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 307450,
-        "modified_at": "2026-04-15T17:03:52Z",
-        "sha256": "d214f215cc39398eec5d0f8c91902188552a7cd8e060acea01da04c6080423cb"
+        "size_bytes": 307792,
+        "modified_at": "2026-04-17T04:12:22Z",
+        "sha256": "49112cfd274d2594ef085afba6c7a298364eead8b4f6019114bb044c0bf87450"
       },
       "external_math": {
-        "path": "docs/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/math.json",
+        "path": "stepview/2007_standardized_data_exchange_of_cad_models_with_design_intent/canonical_sources/math.json",
         "exists": true,
-        "size_bytes": 2721,
-        "modified_at": "2026-04-15T17:03:52Z",
-        "sha256": "d77691d6148b76feef3a0dedbe422160c101ff608c2d0751ef0835c2b968742a"
+        "size_bytes": 2676,
+        "modified_at": "2026-04-17T04:12:22Z",
+        "sha256": "d2acea9e26f31726430839c329eb24c4dd892c6f49674d92b9fbf9534ed7ee9e"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
       }
     }
   },
@@ -186,9 +189,9 @@
     "affiliations": [
       {
         "id": "aff-1",
-        "department": "\\( { }^{\\text {(a) }} \\) National Institute of Standards \\& Technology (NIST), Gaithersberg, MD, USA",
-        "institution": "\\( { }^{\\text {(b) }} \\) LMR Systems, 21 High Street, Carlton, Bedford, MK43 7LA, UK",
-        "address": ""
+        "department": "(a) National Institute of Standards & Technology (NIST)",
+        "institution": "Gaithersberg",
+        "address": "MD, USA (b) LMR Systems, 21 High Street, Carlton, Bedford, MK43 7LA, UK (c) TACOM, US Army, Warren, MI, USA"
       }
     ],
     "abstract_block_id": "blk-front-abstract-1",
@@ -203,20 +206,41 @@
     {
       "id": "sec-1",
       "label": "1",
-      "title": "Introduction",
+      "title": "1 INTRODUCTION",
       "level": 1,
       "block_ids": [
         "blk-paragraph-0002",
-        "blk-paragraph-0003",
-        "blk-paragraph-0004",
-        "blk-paragraph-0005",
-        "blk-paragraph-0006",
-        "blk-list_item-0007",
+        "blk-list_item-0003",
+        "blk-list_item-0004",
+        "blk-list_item-0005",
+        "blk-list_item-0006",
+        "blk-paragraph-0007",
         "blk-list_item-0008",
-        "blk-list_item-0009"
+        "blk-list_item-0009",
+        "blk-list_item-0010",
+        "blk-paragraph-0011",
+        "blk-paragraph-0012",
+        "blk-paragraph-0013",
+        "blk-paragraph-0014",
+        "blk-list_item-0015",
+        "blk-list_item-0016",
+        "blk-list_item-0017"
       ],
       "children": [],
-      "source_spans": []
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.0,
+            "y0": 364.13,
+            "x1": 128.53,
+            "y1": 372.3,
+            "width": 92.53,
+            "height": 8.17
+          },
+          "engine": "composed"
+        }
+      ]
     },
     {
       "id": "sec-2",
@@ -224,18 +248,18 @@
       "title": "2 LITERATURE REVIEW",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0010",
-        "blk-paragraph-0011",
-        "blk-paragraph-0012",
-        "blk-paragraph-0013",
-        "blk-paragraph-0014",
-        "blk-paragraph-0015",
-        "blk-paragraph-0016",
-        "blk-list_item-0017",
-        "blk-list_item-0018",
-        "blk-list_item-0019",
-        "blk-list_item-0020",
-        "blk-list_item-0021"
+        "blk-paragraph-0018",
+        "blk-paragraph-0019",
+        "blk-paragraph-0020",
+        "blk-paragraph-0021",
+        "blk-paragraph-0022",
+        "blk-paragraph-0023",
+        "blk-paragraph-0024",
+        "blk-list_item-0025",
+        "blk-list_item-0026",
+        "blk-list_item-0027",
+        "blk-list_item-0028",
+        "blk-list_item-0029"
       ],
       "children": [],
       "source_spans": [
@@ -249,7 +273,7 @@
             "width": 122.78,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -259,8 +283,8 @@
       "title": "3 INFORMATION CLASSIFICATION FOR STEP-BASED TRANSLATION",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0022",
-        "blk-paragraph-0023"
+        "blk-paragraph-0030",
+        "blk-paragraph-0031"
       ],
       "children": [
         "sec-3-1",
@@ -279,7 +303,7 @@
             "width": 339.09,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -289,15 +313,15 @@
       "title": "3.1 Overview",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0024",
-        "blk-paragraph-0025",
-        "blk-list_item-0026",
-        "blk-list_item-0027",
-        "blk-list_item-0028",
-        "blk-list_item-0029",
-        "blk-list_item-0030",
-        "blk-paragraph-0031",
-        "blk-paragraph-0032"
+        "blk-paragraph-0032",
+        "blk-paragraph-0033",
+        "blk-list_item-0034",
+        "blk-list_item-0035",
+        "blk-list_item-0036",
+        "blk-list_item-0037",
+        "blk-list_item-0038",
+        "blk-paragraph-0039",
+        "blk-paragraph-0040"
       ],
       "children": [],
       "source_spans": [
@@ -311,7 +335,7 @@
             "width": 58.61,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -336,7 +360,7 @@
             "width": 71.9,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -346,13 +370,13 @@
       "title": "3.2.1 Criteria for the classification of parameters",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0033",
-        "blk-list_item-0034",
-        "blk-list_item-0035",
-        "blk-list_item-0036",
-        "blk-list_item-0037",
-        "blk-list_item-0038",
-        "blk-paragraph-0039"
+        "blk-paragraph-0041",
+        "blk-list_item-0042",
+        "blk-list_item-0043",
+        "blk-list_item-0044",
+        "blk-list_item-0045",
+        "blk-list_item-0046",
+        "blk-paragraph-0047"
       ],
       "children": [],
       "source_spans": [
@@ -366,7 +390,7 @@
             "width": 200.26,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -376,16 +400,16 @@
       "title": "3.2.2 Explicit parameters",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0040",
-        "blk-list_item-0041",
-        "blk-list_item-0042",
-        "blk-list_item-0043",
-        "blk-list_item-0044",
-        "blk-list_item-0045",
-        "blk-paragraph-0046",
-        "blk-list_item-0047",
         "blk-paragraph-0048",
-        "blk-paragraph-0049"
+        "blk-list_item-0049",
+        "blk-list_item-0050",
+        "blk-list_item-0051",
+        "blk-list_item-0052",
+        "blk-list_item-0053",
+        "blk-paragraph-0054",
+        "blk-list_item-0055",
+        "blk-paragraph-0056",
+        "blk-paragraph-0057"
       ],
       "children": [],
       "source_spans": [
@@ -399,7 +423,7 @@
             "width": 104.18,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -409,19 +433,19 @@
       "title": "3.3 Constraints",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0050",
-        "blk-list_item-0051",
-        "blk-list_item-0052",
-        "blk-list_item-0053",
-        "blk-paragraph-0054",
-        "blk-paragraph-0055",
-        "blk-paragraph-0056",
-        "blk-paragraph-0057",
         "blk-paragraph-0058",
         "blk-list_item-0059",
         "blk-list_item-0060",
         "blk-list_item-0061",
-        "blk-list_item-0062"
+        "blk-paragraph-0062",
+        "blk-paragraph-0063",
+        "blk-paragraph-0064",
+        "blk-paragraph-0065",
+        "blk-paragraph-0066",
+        "blk-list_item-0067",
+        "blk-list_item-0068",
+        "blk-list_item-0069",
+        "blk-list_item-0070"
       ],
       "children": [],
       "source_spans": [
@@ -435,7 +459,7 @@
             "width": 67.49,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -445,7 +469,7 @@
       "title": "3.4 Geometry",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0063"
+        "blk-paragraph-0071"
       ],
       "children": [
         "sec-3-4-1",
@@ -462,7 +486,7 @@
             "width": 60.3,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -472,7 +496,7 @@
       "title": "3.4.1 Current and invisible geometry in a CAD model",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0064"
+        "blk-paragraph-0072"
       ],
       "children": [],
       "source_spans": [
@@ -486,7 +510,7 @@
             "width": 217.52,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -496,16 +520,16 @@
       "title": "3.4.2 Classification of geometry in construction history data exchange",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0065",
-        "blk-figure-0066",
-        "blk-paragraph-0067",
-        "blk-list_item-0068",
-        "blk-paragraph-0069",
-        "blk-list_item-0070",
-        "blk-list_item-0071",
-        "blk-list_item-0072",
         "blk-paragraph-0073",
-        "blk-paragraph-0074"
+        "blk-figure-0074",
+        "blk-paragraph-0075",
+        "blk-list_item-0076",
+        "blk-paragraph-0077",
+        "blk-list_item-0078",
+        "blk-list_item-0079",
+        "blk-list_item-0080",
+        "blk-paragraph-0081",
+        "blk-paragraph-0082"
       ],
       "children": [],
       "source_spans": [
@@ -519,7 +543,7 @@
             "width": 284.16,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -529,7 +553,7 @@
       "title": "4 INFORMATION STRUCTURING FOR STEP-BASED TRANSLATION",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0075"
+        "blk-paragraph-0083"
       ],
       "children": [
         "sec-4-1",
@@ -546,7 +570,7 @@
             "width": 327.0,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -556,16 +580,16 @@
       "title": "4.1 The ownership and structuring of identifiers",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0076",
-        "blk-paragraph-0077",
-        "blk-paragraph-0078",
-        "blk-paragraph-0079",
-        "blk-paragraph-0080",
-        "blk-paragraph-0081",
-        "blk-paragraph-0082",
-        "blk-paragraph-0083",
         "blk-paragraph-0084",
-        "blk-paragraph-0085"
+        "blk-paragraph-0085",
+        "blk-paragraph-0086",
+        "blk-paragraph-0087",
+        "blk-paragraph-0088",
+        "blk-paragraph-0089",
+        "blk-paragraph-0090",
+        "blk-paragraph-0091",
+        "blk-paragraph-0092",
+        "blk-paragraph-0093"
       ],
       "children": [],
       "source_spans": [
@@ -579,7 +603,7 @@
             "width": 207.29,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -589,7 +613,7 @@
       "title": "4.2 Feature-level data exchange",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0086"
+        "blk-paragraph-0094"
       ],
       "children": [
         "sec-4-2-1",
@@ -607,7 +631,7 @@
             "width": 136.99,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -617,9 +641,9 @@
       "title": "4.2.1 Coarse granularity: (translation at the level of features as provided in the CAD system user interface).",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0087",
-        "blk-paragraph-0088",
-        "blk-paragraph-0089"
+        "blk-paragraph-0095",
+        "blk-paragraph-0096",
+        "blk-paragraph-0097"
       ],
       "children": [],
       "source_spans": [
@@ -633,7 +657,7 @@
             "width": 440.99,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -643,10 +667,10 @@
       "title": "4.2.2 Intermediate granularity (translation using a combination of approximately compatible feature representations and lower level entities).",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0090",
-        "blk-paragraph-0091",
-        "blk-paragraph-0092",
-        "blk-paragraph-0093"
+        "blk-paragraph-0098",
+        "blk-paragraph-0099",
+        "blk-paragraph-0100",
+        "blk-paragraph-0101"
       ],
       "children": [],
       "source_spans": [
@@ -660,7 +684,7 @@
             "width": 535.25,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -670,7 +694,7 @@
       "title": "4.2.3 Fine granularity (translation in terms of low-level geometry and topology)",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0094"
+        "blk-paragraph-0102"
       ],
       "children": [],
       "source_spans": [
@@ -684,7 +708,7 @@
             "width": 323.62,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -694,13 +718,13 @@
       "title": "5 INFORMATION INTEROPERABILITY FOR ISO 10303-BASED TRANSLATION",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0095",
-        "blk-list_item-0096",
-        "blk-list_item-0097",
-        "blk-list_item-0098",
-        "blk-list_item-0099",
-        "blk-list_item-0100",
-        "blk-paragraph-0101"
+        "blk-paragraph-0103",
+        "blk-list_item-0104",
+        "blk-list_item-0105",
+        "blk-list_item-0106",
+        "blk-list_item-0107",
+        "blk-list_item-0108",
+        "blk-paragraph-0109"
       ],
       "children": [
         "sec-5-1",
@@ -719,7 +743,7 @@
             "width": 374.35,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -729,8 +753,8 @@
       "title": "5.1 Feature interoperability",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0102",
-        "blk-algorithm-0103"
+        "blk-paragraph-0110",
+        "blk-algorithm-0111"
       ],
       "children": [],
       "source_spans": [
@@ -744,7 +768,7 @@
             "width": 120.52,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -754,11 +778,11 @@
       "title": "5.2 Parameter Interoperability",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0104",
-        "blk-paragraph-0105",
-        "blk-paragraph-0106",
-        "blk-paragraph-0107",
-        "blk-paragraph-0108"
+        "blk-paragraph-0112",
+        "blk-paragraph-0113",
+        "blk-paragraph-0114",
+        "blk-paragraph-0115",
+        "blk-paragraph-0116"
       ],
       "children": [],
       "source_spans": [
@@ -772,7 +796,7 @@
             "width": 133.92,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -782,11 +806,11 @@
       "title": "5.2 Constraint Interoperability",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0109",
-        "blk-paragraph-0110",
-        "blk-paragraph-0111",
-        "blk-paragraph-0112",
-        "blk-paragraph-0113"
+        "blk-paragraph-0117",
+        "blk-paragraph-0118",
+        "blk-paragraph-0119",
+        "blk-paragraph-0120",
+        "blk-paragraph-0121"
       ],
       "children": [
         "sec-5-2-1",
@@ -805,7 +829,7 @@
             "width": 134.5,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -815,10 +839,10 @@
       "title": "5.2.1 The effect of constraint identifiers on interoperability",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0114",
-        "blk-paragraph-0115",
-        "blk-paragraph-0116",
-        "blk-paragraph-0117"
+        "blk-paragraph-0122",
+        "blk-paragraph-0123",
+        "blk-paragraph-0124",
+        "blk-paragraph-0125"
       ],
       "children": [],
       "source_spans": [
@@ -832,7 +856,7 @@
             "width": 243.46,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -842,12 +866,12 @@
       "title": "5.2.2 Semantic mapping of constraints",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0118",
-        "blk-list_item-0119",
-        "blk-list_item-0120",
-        "blk-list_item-0121",
-        "blk-list_item-0122",
-        "blk-paragraph-0123"
+        "blk-paragraph-0126",
+        "blk-list_item-0127",
+        "blk-list_item-0128",
+        "blk-list_item-0129",
+        "blk-list_item-0130",
+        "blk-paragraph-0131"
       ],
       "children": [],
       "source_spans": [
@@ -861,7 +885,7 @@
             "width": 156.41,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -871,7 +895,7 @@
       "title": "5.2.3 Constraints controlling sketch elements",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0124"
+        "blk-paragraph-0132"
       ],
       "children": [],
       "source_spans": [
@@ -885,7 +909,7 @@
             "width": 188.62,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -895,7 +919,7 @@
       "title": "5.2.4 Mathematical equation interoperability",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0125"
+        "blk-paragraph-0133"
       ],
       "children": [],
       "source_spans": [
@@ -909,7 +933,7 @@
             "width": 190.74,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -935,7 +959,7 @@
             "width": 132.21,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -945,18 +969,18 @@
       "title": "5.3.1 The geometric accuracy problem",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0126",
-        "blk-paragraph-0127",
-        "blk-paragraph-0128",
-        "blk-paragraph-0129",
-        "blk-paragraph-0130",
-        "blk-list_item-0131",
-        "blk-list_item-0132",
-        "blk-list_item-0133",
-        "blk-list_item-0134",
-        "blk-list_item-0135",
+        "blk-paragraph-0134",
+        "blk-paragraph-0135",
         "blk-paragraph-0136",
-        "blk-list_item-0137"
+        "blk-paragraph-0137",
+        "blk-paragraph-0138",
+        "blk-list_item-0139",
+        "blk-list_item-0140",
+        "blk-list_item-0141",
+        "blk-list_item-0142",
+        "blk-list_item-0143",
+        "blk-paragraph-0144",
+        "blk-list_item-0145"
       ],
       "children": [],
       "source_spans": [
@@ -970,7 +994,7 @@
             "width": 162.5,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -980,11 +1004,11 @@
       "title": "5.3.2 Preservation of selected geometry",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0138",
-        "blk-list_item-0139",
-        "blk-list_item-0140",
-        "blk-list_item-0141",
-        "blk-list_item-0142"
+        "blk-paragraph-0146",
+        "blk-list_item-0147",
+        "blk-list_item-0148",
+        "blk-list_item-0149",
+        "blk-list_item-0150"
       ],
       "children": [],
       "source_spans": [
@@ -998,7 +1022,7 @@
             "width": 168.95,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1008,17 +1032,17 @@
       "title": "5.3.3 Preservation of constraint geometry",
       "level": 3,
       "block_ids": [
-        "blk-paragraph-0143",
-        "blk-paragraph-0144",
-        "blk-list_item-0145",
-        "blk-list_item-0146",
-        "blk-list_item-0147",
-        "blk-list_item-0148",
-        "blk-list_item-0149",
-        "blk-paragraph-0150",
-        "blk-list_item-0151",
-        "blk-list_item-0152",
-        "blk-paragraph-0153"
+        "blk-paragraph-0151",
+        "blk-paragraph-0152",
+        "blk-list_item-0153",
+        "blk-list_item-0154",
+        "blk-list_item-0155",
+        "blk-list_item-0156",
+        "blk-list_item-0157",
+        "blk-paragraph-0158",
+        "blk-list_item-0159",
+        "blk-list_item-0160",
+        "blk-paragraph-0161"
       ],
       "children": [],
       "source_spans": [
@@ -1032,7 +1056,7 @@
             "width": 169.81,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1058,7 +1082,7 @@
             "width": 206.64,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1068,16 +1092,16 @@
       "title": "6.1 Translator implementation",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0154",
-        "blk-display_equation_ref-0155",
-        "blk-paragraph-0156",
-        "blk-display_equation_ref-0157",
-        "blk-paragraph-0158",
-        "blk-paragraph-0159",
-        "blk-display_equation_ref-0160",
-        "blk-paragraph-0161",
         "blk-paragraph-0162",
-        "blk-paragraph-0163"
+        "blk-display_equation_ref-0163",
+        "blk-paragraph-0164",
+        "blk-display_equation_ref-0165",
+        "blk-paragraph-0166",
+        "blk-paragraph-0167",
+        "blk-display_equation_ref-0168",
+        "blk-paragraph-0169",
+        "blk-paragraph-0170",
+        "blk-paragraph-0171"
       ],
       "children": [],
       "source_spans": [
@@ -1091,7 +1115,7 @@
             "width": 145.66,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1101,13 +1125,13 @@
       "title": "6.2 Case Study",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0164",
-        "blk-paragraph-0165",
-        "blk-paragraph-0166",
-        "blk-figure-0167",
-        "blk-paragraph-0168",
-        "blk-paragraph-0169",
-        "blk-paragraph-0170"
+        "blk-paragraph-0172",
+        "blk-paragraph-0173",
+        "blk-paragraph-0174",
+        "blk-figure-0175",
+        "blk-paragraph-0176",
+        "blk-paragraph-0177",
+        "blk-paragraph-0178"
       ],
       "children": [],
       "source_spans": [
@@ -1121,7 +1145,7 @@
             "width": 70.55,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1131,8 +1155,8 @@
       "title": "6.2 Part family transfer",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0171",
-        "blk-figure-0172"
+        "blk-paragraph-0179",
+        "blk-figure-0180"
       ],
       "children": [],
       "source_spans": [
@@ -1146,7 +1170,7 @@
             "width": 107.88,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1156,10 +1180,10 @@
       "title": "7 CONCLUSIONS",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0173",
-        "blk-paragraph-0174",
-        "blk-paragraph-0175",
-        "blk-paragraph-0176"
+        "blk-paragraph-0181",
+        "blk-paragraph-0182",
+        "blk-paragraph-0183",
+        "blk-paragraph-0184"
       ],
       "children": [],
       "source_spans": [
@@ -1173,7 +1197,7 @@
             "width": 85.84,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -1183,14 +1207,6 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0178",
-        "blk-reference-0179",
-        "blk-reference-0180",
-        "blk-reference-0181",
-        "blk-reference-0182",
-        "blk-reference-0183",
-        "blk-reference-0184",
-        "blk-reference-0185",
         "blk-reference-0186",
         "blk-reference-0187",
         "blk-reference-0188",
@@ -1215,7 +1231,15 @@
         "blk-reference-0207",
         "blk-reference-0208",
         "blk-reference-0209",
-        "blk-reference-0210"
+        "blk-reference-0210",
+        "blk-reference-0211",
+        "blk-reference-0212",
+        "blk-reference-0213",
+        "blk-reference-0214",
+        "blk-reference-0215",
+        "blk-reference-0216",
+        "blk-reference-0217",
+        "blk-reference-0218"
       ],
       "children": [],
       "source_spans": [
@@ -1229,7 +1253,7 @@
             "width": 69.8,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -1257,7 +1281,7 @@
             "width": 539.69,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 1,
@@ -1269,7 +1293,7 @@
             "width": 460.66,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1286,7 +1310,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "The exchange of CAD (Computer Aided Design) models between different CAD systems and to downstream applications has become an important industrial requirement. Until recently, national and international CAD data exchange standards, including ISO 10303 (STEP) [1,2,3], have been limited to transferring geometry. These standards have been incapable of handling the additional design intent information generated by modern CAD systems [4]. Most STEP translators can currently only transfer 'dumb' shape models representing the final result of some constructional process, all information about that process being lost in the exchange. Essential elements of the lost information include Construction history : the procedure used to construct the shape model; Parameters : variables associated with dimensional or other values in the model, providing an indication of what it is permissible to change; Constraints : relationships between parameter values or between geometric or topological elements of the model, specifying invariant characteristics in the model under editing operations, usually in the interests of maintaining product functionality during modification."
+            "text": "The exchange of CAD (Computer Aided Design) models between different CAD systems and to downstream applications has become an important industrial requirement. Until recently, national and international CAD data exchange standards, including ISO 10303 (STEP) [1,2,3], have been limited to transferring geometry. These standards have been incapable of handling the additional design intent information generated by modern CAD systems [4]. Most STEP translators can currently only transfer 'dumb' shape models representing the final result of some constructional process, all information about that process being lost in the exchange. Essential elements of the lost information include"
           }
         ]
       },
@@ -1301,43 +1325,7 @@
             "width": 540.43,
             "height": 63.56
           },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 57.3,
-            "y0": 452.59,
-            "x1": 356.99,
-            "y1": 460.76,
-            "width": 299.69,
-            "height": 8.17
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 57.3,
-            "y0": 463.69,
-            "x1": 540.11,
-            "y1": 482.9,
-            "width": 482.81,
-            "height": 19.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 57.31,
-            "y0": 485.84,
-            "x1": 568.72,
-            "y1": 516.15,
-            "width": 511.41,
-            "height": 30.31
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1348,15 +1336,123 @@
       }
     },
     {
-      "id": "blk-paragraph-0003",
-      "type": "paragraph",
+      "id": "blk-list_item-0003",
+      "type": "list_item",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "Features : local shape configurations in the model that have their own semantics. Development versions of three recently published parts of ISO 10303 were used in the work to be described: -ISO 10303-55, 'Procedural and hybrid representation' [5] provides for the transfer of construction history information. -ISO 10303-108, 'Parameterization and constraints for explicit geometric product models' [6] makes possible the capture and transfer of parameter and constraint information, and the representation of 2D sketches. -ISO 10303-111, 'Elements for the procedural modelling of solid shapes' [7] provides representations for what are commonly known as 'design features'. These documents are STEP Integrated Resources (IRs). The implementable parts of STEP are called Application Protocols (APs), and are based on specializations of selected integrated resources, as appropriate for the particular application area addressed [2,3]. In the current absence of a STEP AP referencing the three documents mentioned above, the experiments reported here used a hypothetical AP constructed from those and other IRs directly, without specialization."
+            "text": "Construction history : the procedure used to construct the shape model;"
           }
-        ]
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 57.3,
+            "y0": 452.59,
+            "x1": 356.99,
+            "y1": 460.76,
+            "width": 299.69,
+            "height": 8.17
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0004",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Parameters : variables associated with dimensional or other values in the model, providing an indication of what it is permissible to change;"
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 57.3,
+            "y0": 463.69,
+            "x1": 540.11,
+            "y1": 482.9,
+            "width": 482.81,
+            "height": 19.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0005",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Constraints : relationships between parameter values or between geometric or topological elements of the model, specifying invariant characteristics in the model under editing operations, usually in the interests of maintaining product functionality during modification."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 57.31,
+            "y0": 485.84,
+            "x1": 568.72,
+            "y1": 516.15,
+            "width": 511.41,
+            "height": 30.31
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0006",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Features : local shape configurations in the model that have their own semantics."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
       },
       "source_spans": [
         {
@@ -1369,67 +1465,7 @@
             "width": 343.96,
             "height": 8.17
           },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 36.03,
-            "y0": 530.13,
-            "x1": 473.26,
-            "y1": 538.29,
-            "width": 437.23,
-            "height": 8.16
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 54.04,
-            "y0": 541.17,
-            "x1": 549.38,
-            "y1": 549.33,
-            "width": 495.34,
-            "height": 8.16
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 54.04,
-            "y0": 552.27,
-            "x1": 573.26,
-            "y1": 571.48,
-            "width": 519.22,
-            "height": 19.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 54.04,
-            "y0": 574.41,
-            "x1": 574.75,
-            "y1": 593.62,
-            "width": 520.71,
-            "height": 19.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 1,
-          "bbox": {
-            "x0": 36.03,
-            "y0": 596.56,
-            "x1": 576.73,
-            "y1": 637.91,
-            "width": 540.7,
-            "height": 41.35
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1440,7 +1476,176 @@
       }
     },
     {
-      "id": "blk-paragraph-0004",
+      "id": "blk-paragraph-0007",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Development versions of three recently published parts of ISO 10303 were used in the work to be described:"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.03,
+            "y0": 530.13,
+            "x1": 473.26,
+            "y1": 538.29,
+            "width": 437.23,
+            "height": 8.16
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0008",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "-ISO 10303-55, 'Procedural and hybrid representation' [5] provides for the transfer of construction history information."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 54.04,
+            "y0": 541.17,
+            "x1": 549.38,
+            "y1": 549.33,
+            "width": 495.34,
+            "height": 8.16
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0009",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "-ISO 10303-108, 'Parameterization and constraints for explicit geometric product models' [6] makes possible the capture and transfer of parameter and constraint information, and the representation of 2D sketches."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 54.04,
+            "y0": 552.27,
+            "x1": 573.26,
+            "y1": 571.48,
+            "width": 519.22,
+            "height": 19.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0010",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "-ISO 10303-111, 'Elements for the procedural modelling of solid shapes' [7] provides representations for what are commonly known as 'design features'."
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 54.04,
+            "y0": 574.41,
+            "x1": 574.75,
+            "y1": 593.62,
+            "width": 520.71,
+            "height": 19.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0011",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "These documents are STEP Integrated Resources (IRs). The implementable parts of STEP are called Application Protocols (APs), and are based on specializations of selected integrated resources, as appropriate for the particular application area addressed [2,3]. In the current absence of a STEP AP referencing the three documents mentioned above, the experiments reported here used a hypothetical AP constructed from those and other IRs directly, without specialization."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 36.03,
+            "y0": 596.56,
+            "x1": 576.73,
+            "y1": 637.91,
+            "width": 540.7,
+            "height": 41.35
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0012",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1461,7 +1666,7 @@
             "width": 523.07,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1472,7 +1677,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0005",
+      "id": "blk-paragraph-0013",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1493,7 +1698,7 @@
             "width": 542.32,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1504,7 +1709,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0006",
+      "id": "blk-paragraph-0014",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1525,7 +1730,7 @@
             "width": 535.76,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1536,7 +1741,7 @@
       }
     },
     {
-      "id": "blk-list_item-0007",
+      "id": "blk-list_item-0015",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1560,7 +1765,7 @@
             "width": 517.81,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1571,7 +1776,7 @@
       }
     },
     {
-      "id": "blk-list_item-0008",
+      "id": "blk-list_item-0016",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1595,7 +1800,7 @@
             "width": 520.21,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1606,7 +1811,7 @@
       }
     },
     {
-      "id": "blk-list_item-0009",
+      "id": "blk-list_item-0017",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1630,7 +1835,7 @@
             "width": 520.1,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1641,7 +1846,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0010",
+      "id": "blk-paragraph-0018",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1662,7 +1867,7 @@
             "width": 535.43,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1673,7 +1878,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0011",
+      "id": "blk-paragraph-0019",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1694,7 +1899,7 @@
             "width": 541.48,
             "height": 107.85
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1705,7 +1910,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0012",
+      "id": "blk-paragraph-0020",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1726,7 +1931,7 @@
             "width": 541.44,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1737,7 +1942,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0013",
+      "id": "blk-paragraph-0021",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1758,7 +1963,7 @@
             "width": 540.72,
             "height": 63.49
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1769,7 +1974,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0014",
+      "id": "blk-paragraph-0022",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1790,7 +1995,7 @@
             "width": 541.01,
             "height": 63.5
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1801,7 +2006,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0015",
+      "id": "blk-paragraph-0023",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1822,7 +2027,7 @@
             "width": 542.34,
             "height": 52.4
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 3,
@@ -1834,7 +2039,7 @@
             "width": 525.71,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1845,7 +2050,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0016",
+      "id": "blk-paragraph-0024",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1866,7 +2071,7 @@
             "width": 357.69,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1877,7 +2082,7 @@
       }
     },
     {
-      "id": "blk-list_item-0017",
+      "id": "blk-list_item-0025",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1901,7 +2106,7 @@
             "width": 519.95,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1912,7 +2117,7 @@
       }
     },
     {
-      "id": "blk-list_item-0018",
+      "id": "blk-list_item-0026",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1936,7 +2141,7 @@
             "width": 518.4,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1947,7 +2152,7 @@
       }
     },
     {
-      "id": "blk-list_item-0019",
+      "id": "blk-list_item-0027",
       "type": "list_item",
       "content": {
         "spans": [
@@ -1971,7 +2176,7 @@
             "width": 501.96,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1982,7 +2187,7 @@
       }
     },
     {
-      "id": "blk-list_item-0020",
+      "id": "blk-list_item-0028",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2006,7 +2211,7 @@
             "width": 527.93,
             "height": 19.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2017,7 +2222,7 @@
       }
     },
     {
-      "id": "blk-list_item-0021",
+      "id": "blk-list_item-0029",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2041,7 +2246,7 @@
             "width": 429.36,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2052,7 +2257,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0022",
+      "id": "blk-paragraph-0030",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2073,7 +2278,7 @@
             "width": 542.5,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2084,7 +2289,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0023",
+      "id": "blk-paragraph-0031",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2105,7 +2310,7 @@
             "width": 539.81,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2116,7 +2321,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0024",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2137,7 +2342,7 @@
             "width": 538.2,
             "height": 96.74
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2148,7 +2353,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0025",
+      "id": "blk-paragraph-0033",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2169,7 +2374,7 @@
             "width": 222.82,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2180,7 +2385,7 @@
       }
     },
     {
-      "id": "blk-list_item-0026",
+      "id": "blk-list_item-0034",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2204,7 +2409,7 @@
             "width": 520.35,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2215,7 +2420,7 @@
       }
     },
     {
-      "id": "blk-list_item-0027",
+      "id": "blk-list_item-0035",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2239,7 +2444,7 @@
             "width": 514.36,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2250,7 +2455,7 @@
       }
     },
     {
-      "id": "blk-list_item-0028",
+      "id": "blk-list_item-0036",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2274,7 +2479,7 @@
             "width": 103.01,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2285,7 +2490,7 @@
       }
     },
     {
-      "id": "blk-list_item-0029",
+      "id": "blk-list_item-0037",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2309,7 +2514,7 @@
             "width": 90.54,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2320,7 +2525,7 @@
       }
     },
     {
-      "id": "blk-list_item-0030",
+      "id": "blk-list_item-0038",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2344,7 +2549,7 @@
             "width": 317.73,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2355,7 +2560,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0031",
+      "id": "blk-paragraph-0039",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2376,7 +2581,7 @@
             "width": 539.33,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2387,7 +2592,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0032",
+      "id": "blk-paragraph-0040",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2408,7 +2613,7 @@
             "width": 508.93,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2419,7 +2624,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0033",
+      "id": "blk-paragraph-0041",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2440,7 +2645,7 @@
             "width": 536.4,
             "height": 107.85
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2451,7 +2656,7 @@
       }
     },
     {
-      "id": "blk-list_item-0034",
+      "id": "blk-list_item-0042",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2475,7 +2680,7 @@
             "width": 531.82,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2486,7 +2691,7 @@
       }
     },
     {
-      "id": "blk-list_item-0035",
+      "id": "blk-list_item-0043",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2510,7 +2715,7 @@
             "width": 540.47,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2521,7 +2726,7 @@
       }
     },
     {
-      "id": "blk-list_item-0036",
+      "id": "blk-list_item-0044",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2545,7 +2750,7 @@
             "width": 539.07,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2556,7 +2761,7 @@
       }
     },
     {
-      "id": "blk-list_item-0037",
+      "id": "blk-list_item-0045",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2580,7 +2785,7 @@
             "width": 537.59,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2591,7 +2796,7 @@
       }
     },
     {
-      "id": "blk-list_item-0038",
+      "id": "blk-list_item-0046",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2615,7 +2820,7 @@
             "width": 542.09,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2626,7 +2831,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0039",
+      "id": "blk-paragraph-0047",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2647,7 +2852,7 @@
             "width": 522.42,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2658,7 +2863,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0040",
+      "id": "blk-paragraph-0048",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2679,7 +2884,7 @@
             "width": 537.03,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2690,7 +2895,7 @@
       }
     },
     {
-      "id": "blk-list_item-0041",
+      "id": "blk-list_item-0049",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2714,7 +2919,7 @@
             "width": 541.67,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2725,7 +2930,7 @@
       }
     },
     {
-      "id": "blk-list_item-0042",
+      "id": "blk-list_item-0050",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2749,7 +2954,7 @@
             "width": 540.73,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2760,7 +2965,7 @@
       }
     },
     {
-      "id": "blk-list_item-0043",
+      "id": "blk-list_item-0051",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2784,7 +2989,7 @@
             "width": 518.96,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2795,7 +3000,7 @@
       }
     },
     {
-      "id": "blk-list_item-0044",
+      "id": "blk-list_item-0052",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2819,7 +3024,7 @@
             "width": 541.27,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2830,7 +3035,7 @@
       }
     },
     {
-      "id": "blk-list_item-0045",
+      "id": "blk-list_item-0053",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2854,7 +3059,7 @@
             "width": 527.8,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2865,7 +3070,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0046",
+      "id": "blk-paragraph-0054",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2886,7 +3091,7 @@
             "width": 518.5,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2897,7 +3102,7 @@
       }
     },
     {
-      "id": "blk-list_item-0047",
+      "id": "blk-list_item-0055",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2921,7 +3126,7 @@
             "width": 525.66,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2932,7 +3137,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0048",
+      "id": "blk-paragraph-0056",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2953,7 +3158,7 @@
             "width": 477.78,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2964,7 +3169,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0049",
+      "id": "blk-paragraph-0057",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2985,7 +3190,7 @@
             "width": 541.74,
             "height": 129.99
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2996,7 +3201,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0050",
+      "id": "blk-paragraph-0058",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3017,7 +3222,7 @@
             "width": 538.49,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3028,7 +3233,7 @@
       }
     },
     {
-      "id": "blk-list_item-0051",
+      "id": "blk-list_item-0059",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3052,7 +3257,7 @@
             "width": 477.66,
             "height": 8.66
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3063,7 +3268,7 @@
       }
     },
     {
-      "id": "blk-list_item-0052",
+      "id": "blk-list_item-0060",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3087,7 +3292,7 @@
             "width": 430.21,
             "height": 8.66
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3098,7 +3303,7 @@
       }
     },
     {
-      "id": "blk-list_item-0053",
+      "id": "blk-list_item-0061",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3122,7 +3327,7 @@
             "width": 507.39,
             "height": 19.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3133,7 +3338,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0054",
+      "id": "blk-paragraph-0062",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3154,7 +3359,7 @@
             "width": 531.05,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3165,7 +3370,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0055",
+      "id": "blk-paragraph-0063",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3186,7 +3391,7 @@
             "width": 539.58,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3197,7 +3402,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0056",
+      "id": "blk-paragraph-0064",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3218,7 +3423,7 @@
             "width": 533.28,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3229,7 +3434,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0057",
+      "id": "blk-paragraph-0065",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3250,7 +3455,7 @@
             "width": 540.47,
             "height": 118.89
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3261,7 +3466,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0058",
+      "id": "blk-paragraph-0066",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3282,7 +3487,7 @@
             "width": 397.18,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3293,7 +3498,7 @@
       }
     },
     {
-      "id": "blk-list_item-0059",
+      "id": "blk-list_item-0067",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3317,7 +3522,7 @@
             "width": 540.43,
             "height": 63.5
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3328,7 +3533,7 @@
       }
     },
     {
-      "id": "blk-list_item-0060",
+      "id": "blk-list_item-0068",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3352,7 +3557,7 @@
             "width": 531.77,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3363,7 +3568,7 @@
       }
     },
     {
-      "id": "blk-list_item-0061",
+      "id": "blk-list_item-0069",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3387,7 +3592,7 @@
             "width": 531.93,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3398,7 +3603,7 @@
       }
     },
     {
-      "id": "blk-list_item-0062",
+      "id": "blk-list_item-0070",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3422,7 +3627,7 @@
             "width": 458.75,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3433,7 +3638,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0063",
+      "id": "blk-paragraph-0071",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3454,7 +3659,7 @@
             "width": 534.88,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3465,7 +3670,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0064",
+      "id": "blk-paragraph-0072",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3486,7 +3691,7 @@
             "width": 541.26,
             "height": 129.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3497,7 +3702,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0065",
+      "id": "blk-paragraph-0073",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3566,7 +3771,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3577,7 +3782,7 @@
       }
     },
     {
-      "id": "blk-figure-0066",
+      "id": "blk-figure-0074",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1"
@@ -3593,7 +3798,7 @@
             "width": 247.56,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3604,7 +3809,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0067",
+      "id": "blk-paragraph-0075",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3681,7 +3886,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -3693,7 +3898,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3704,7 +3909,7 @@
       }
     },
     {
-      "id": "blk-list_item-0068",
+      "id": "blk-list_item-0076",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3728,7 +3933,7 @@
             "width": 537.35,
             "height": 32.11
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3739,7 +3944,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0069",
+      "id": "blk-paragraph-0077",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3760,7 +3965,7 @@
             "width": 512.33,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3771,7 +3976,7 @@
       }
     },
     {
-      "id": "blk-list_item-0070",
+      "id": "blk-list_item-0078",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3795,7 +4000,7 @@
             "width": 539.32,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3806,7 +4011,7 @@
       }
     },
     {
-      "id": "blk-list_item-0071",
+      "id": "blk-list_item-0079",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3830,7 +4035,7 @@
             "width": 542.15,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3841,7 +4046,7 @@
       }
     },
     {
-      "id": "blk-list_item-0072",
+      "id": "blk-list_item-0080",
       "type": "list_item",
       "content": {
         "spans": [
@@ -3865,7 +4070,7 @@
             "width": 536.37,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3876,7 +4081,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0073",
+      "id": "blk-paragraph-0081",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3897,7 +4102,7 @@
             "width": 524.03,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3908,7 +4113,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0074",
+      "id": "blk-paragraph-0082",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3929,7 +4134,7 @@
             "width": 521.75,
             "height": 41.41
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3940,7 +4145,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0075",
+      "id": "blk-paragraph-0083",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3961,7 +4166,7 @@
             "width": 542.09,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3972,7 +4177,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0076",
+      "id": "blk-paragraph-0084",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3993,7 +4198,7 @@
             "width": 540.7,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4004,7 +4209,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0077",
+      "id": "blk-paragraph-0085",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4025,7 +4230,7 @@
             "width": 542.08,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4036,7 +4241,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0078",
+      "id": "blk-paragraph-0086",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4057,7 +4262,7 @@
             "width": 541.8,
             "height": 41.36
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4068,7 +4273,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0079",
+      "id": "blk-paragraph-0087",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4089,7 +4294,7 @@
             "width": 540.92,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4100,7 +4305,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0080",
+      "id": "blk-paragraph-0088",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4121,7 +4326,7 @@
             "width": 534.92,
             "height": 63.5
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4132,7 +4337,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0081",
+      "id": "blk-paragraph-0089",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4153,7 +4358,7 @@
             "width": 536.62,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4164,7 +4369,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0082",
+      "id": "blk-paragraph-0090",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4185,7 +4390,7 @@
             "width": 535.18,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4196,7 +4401,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0083",
+      "id": "blk-paragraph-0091",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4217,7 +4422,7 @@
             "width": 537.59,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4228,7 +4433,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0084",
+      "id": "blk-paragraph-0092",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4249,7 +4454,7 @@
             "width": 541.85,
             "height": 85.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4260,7 +4465,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0085",
+      "id": "blk-paragraph-0093",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4281,7 +4486,7 @@
             "width": 541.5,
             "height": 63.5
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4292,7 +4497,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0086",
+      "id": "blk-paragraph-0094",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4313,7 +4518,7 @@
             "width": 525.75,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4324,7 +4529,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0087",
+      "id": "blk-paragraph-0095",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4345,7 +4550,7 @@
             "width": 541.72,
             "height": 63.55
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4356,7 +4561,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0088",
+      "id": "blk-paragraph-0096",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4385,7 +4590,7 @@
             "width": 532.42,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4396,7 +4601,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0089",
+      "id": "blk-paragraph-0097",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4441,7 +4646,7 @@
             "width": 536.75,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -4453,7 +4658,7 @@
             "width": 533.75,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4464,7 +4669,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0090",
+      "id": "blk-paragraph-0098",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4485,7 +4690,7 @@
             "width": 537.24,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4496,7 +4701,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0091",
+      "id": "blk-paragraph-0099",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4517,7 +4722,7 @@
             "width": 541.5,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4528,7 +4733,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0092",
+      "id": "blk-paragraph-0100",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4542,15 +4747,7 @@
           },
           {
             "kind": "text",
-            "text": ", by contrast, provides only an operation for creating the block in a default position and orientation, so that further operations are needed to position and orient it as desired. In such a case aggregation (as defined in Section 4) must be used in transferring the block from System B to System A. A unit of construction must be defined that combines the block primitive creation operation with the additional positioning and orientation operations, and that will have the same number of degrees of freedom as the more comprehensive (coarser granularity) operation provided by System "
-          },
-          {
-            "kind": "inline_math_ref",
-            "target_id": "math-inline-19"
-          },
-          {
-            "kind": "text",
-            "text": "."
+            "text": ", by contrast, provides only an operation for creating the block in a default position and orientation, so that further operations are needed to position and orient it as desired. In such a case aggregation (as defined in Section 4) must be used in transferring the block from System B to System A. A unit of construction must be defined that combines the block primitive creation operation with the additional positioning and orientation operations, and that will have the same number of degrees of freedom as the more comprehensive (coarser granularity) operation provided by System A."
           }
         ]
       },
@@ -4565,7 +4762,7 @@
             "width": 538.56,
             "height": 85.7
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4576,7 +4773,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0093",
+      "id": "blk-paragraph-0101",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4597,7 +4794,7 @@
             "width": 528.53,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4608,7 +4805,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0094",
+      "id": "blk-paragraph-0102",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4629,7 +4826,7 @@
             "width": 541.48,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4640,7 +4837,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0095",
+      "id": "blk-paragraph-0103",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4661,7 +4858,7 @@
             "width": 534.28,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4672,7 +4869,7 @@
       }
     },
     {
-      "id": "blk-list_item-0096",
+      "id": "blk-list_item-0104",
       "type": "list_item",
       "content": {
         "spans": [
@@ -4696,7 +4893,7 @@
             "width": 518.48,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4707,7 +4904,7 @@
       }
     },
     {
-      "id": "blk-list_item-0097",
+      "id": "blk-list_item-0105",
       "type": "list_item",
       "content": {
         "spans": [
@@ -4731,7 +4928,7 @@
             "width": 526.19,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4742,7 +4939,7 @@
       }
     },
     {
-      "id": "blk-list_item-0098",
+      "id": "blk-list_item-0106",
       "type": "list_item",
       "content": {
         "spans": [
@@ -4766,7 +4963,7 @@
             "width": 523.48,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4777,7 +4974,7 @@
       }
     },
     {
-      "id": "blk-list_item-0099",
+      "id": "blk-list_item-0107",
       "type": "list_item",
       "content": {
         "spans": [
@@ -4801,7 +4998,7 @@
             "width": 511.73,
             "height": 19.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4812,7 +5009,7 @@
       }
     },
     {
-      "id": "blk-list_item-0100",
+      "id": "blk-list_item-0108",
       "type": "list_item",
       "content": {
         "spans": [
@@ -4836,7 +5033,7 @@
             "width": 521.23,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4847,7 +5044,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0101",
+      "id": "blk-paragraph-0109",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4868,7 +5065,7 @@
             "width": 532.85,
             "height": 41.36
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 10,
@@ -4880,7 +5077,7 @@
             "width": 525.48,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4891,7 +5088,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0102",
+      "id": "blk-paragraph-0110",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4912,7 +5109,7 @@
             "width": 537.76,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4923,7 +5120,7 @@
       }
     },
     {
-      "id": "blk-algorithm-0103",
+      "id": "blk-algorithm-0111",
       "type": "algorithm",
       "content": {
         "lines": [
@@ -4942,7 +5139,7 @@
             "width": 529.31,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4953,7 +5150,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0104",
+      "id": "blk-paragraph-0112",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4974,7 +5171,7 @@
             "width": 532.48,
             "height": 63.5
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4985,7 +5182,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0105",
+      "id": "blk-paragraph-0113",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5006,7 +5203,7 @@
             "width": 538.87,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5017,21 +5214,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0106",
+      "id": "blk-paragraph-0114",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "A CAD system may provide two or more data structures for dimensions, distinguishing between user created explicit dimensions and automatically created implicit dimensions. In such systems (for example, ProEngineer® and Solidworks "
-          },
-          {
-            "kind": "inline_math_ref",
-            "target_id": "math-inline-20"
-          },
-          {
-            "kind": "text",
-            "text": " ), implicit dimensions also have the effect of parameters. Implicitly defined parameters may be invisible to the designer using the graphical user interface (GUI), and only be accessible via the system API. For example, if the designer creates a fillet but does not specify a radius for it, a default value is assigned to that radius. That default value is not regarded as a dimension in the same sense as an explicitly created dimension. It is possible to change its value globally, and if that is done the radii of all fillets in the model will change. However the radius value is represented in the system, the important thing is that it exists, whether the user can see it through the GUI or not. If the system knows the value, it can be extracted and written into the exchange file."
+            "text": "A CAD system may provide two or more data structures for dimensions, distinguishing between user created explicit dimensions and automatically created implicit dimensions. In such systems (for example, ProEngineer® and Solidworks®), implicit dimensions also have the effect of parameters. Implicitly defined parameters may be invisible to the designer using the graphical user interface (GUI), and only be accessible via the system API. For example, if the designer creates a fillet but does not specify a radius for it, a default value is assigned to that radius. That default value is not regarded as a dimension in the same sense as an explicitly created dimension. It is possible to change its value globally, and if that is done the radii of all fillets in the model will change. However the radius value is represented in the system, the important thing is that it exists, whether the user can see it through the GUI or not. If the system knows the value, it can be extracted and written into the exchange file."
           }
         ]
       },
@@ -5046,7 +5235,7 @@
             "width": 539.33,
             "height": 85.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5057,7 +5246,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0107",
+      "id": "blk-paragraph-0115",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5078,7 +5267,7 @@
             "width": 542.63,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5089,7 +5278,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0108",
+      "id": "blk-paragraph-0116",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5110,7 +5299,7 @@
             "width": 535.46,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5121,7 +5310,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0109",
+      "id": "blk-paragraph-0117",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5142,7 +5331,7 @@
             "width": 537.19,
             "height": 41.41
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5153,7 +5342,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0110",
+      "id": "blk-paragraph-0118",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5174,7 +5363,7 @@
             "width": 541.5,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5185,7 +5374,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0111",
+      "id": "blk-paragraph-0119",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5195,7 +5384,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-21"
+            "target_id": "math-inline-19"
           },
           {
             "kind": "text",
@@ -5203,7 +5392,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-22"
+            "target_id": "math-inline-20"
           },
           {
             "kind": "text",
@@ -5222,7 +5411,7 @@
             "width": 545.18,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 11,
@@ -5234,7 +5423,7 @@
             "width": 532.64,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5245,7 +5434,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0112",
+      "id": "blk-paragraph-0120",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5266,7 +5455,7 @@
             "width": 542.07,
             "height": 74.59
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5277,7 +5466,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0113",
+      "id": "blk-paragraph-0121",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5298,7 +5487,7 @@
             "width": 530.83,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5309,7 +5498,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0114",
+      "id": "blk-paragraph-0122",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5330,7 +5519,7 @@
             "width": 547.11,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5341,7 +5530,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0115",
+      "id": "blk-paragraph-0123",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5362,7 +5551,7 @@
             "width": 544.68,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5373,7 +5562,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0116",
+      "id": "blk-paragraph-0124",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5394,7 +5583,7 @@
             "width": 537.18,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5405,7 +5594,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0117",
+      "id": "blk-paragraph-0125",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5426,7 +5615,7 @@
             "width": 536.08,
             "height": 41.36
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5437,7 +5626,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0118",
+      "id": "blk-paragraph-0126",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5458,7 +5647,7 @@
             "width": 532.43,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5469,7 +5658,7 @@
       }
     },
     {
-      "id": "blk-list_item-0119",
+      "id": "blk-list_item-0127",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5493,7 +5682,7 @@
             "width": 298.06,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5504,7 +5693,7 @@
       }
     },
     {
-      "id": "blk-list_item-0120",
+      "id": "blk-list_item-0128",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5528,7 +5717,7 @@
             "width": 276.37,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5539,7 +5728,7 @@
       }
     },
     {
-      "id": "blk-list_item-0121",
+      "id": "blk-list_item-0129",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5563,7 +5752,7 @@
             "width": 486.31,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5574,7 +5763,7 @@
       }
     },
     {
-      "id": "blk-list_item-0122",
+      "id": "blk-list_item-0130",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5598,7 +5787,7 @@
             "width": 411.34,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5609,7 +5798,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0123",
+      "id": "blk-paragraph-0131",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5630,7 +5819,7 @@
             "width": 542.4,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5641,7 +5830,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0124",
+      "id": "blk-paragraph-0132",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5662,7 +5851,7 @@
             "width": 537.23,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5673,7 +5862,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0125",
+      "id": "blk-paragraph-0133",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5694,7 +5883,7 @@
             "width": 539.28,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5705,7 +5894,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0126",
+      "id": "blk-paragraph-0134",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5726,7 +5915,7 @@
             "width": 540.17,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5737,7 +5926,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0127",
+      "id": "blk-paragraph-0135",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5758,7 +5947,7 @@
             "width": 539.94,
             "height": 107.84
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5769,7 +5958,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0128",
+      "id": "blk-paragraph-0136",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5790,7 +5979,7 @@
             "width": 541.33,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5801,7 +5990,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0129",
+      "id": "blk-paragraph-0137",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5822,7 +6011,7 @@
             "width": 537.35,
             "height": 85.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5833,7 +6022,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0130",
+      "id": "blk-paragraph-0138",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -5854,7 +6043,7 @@
             "width": 439.63,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5865,7 +6054,7 @@
       }
     },
     {
-      "id": "blk-list_item-0131",
+      "id": "blk-list_item-0139",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5889,7 +6078,7 @@
             "width": 512.11,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5900,7 +6089,7 @@
       }
     },
     {
-      "id": "blk-list_item-0132",
+      "id": "blk-list_item-0140",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5924,7 +6113,7 @@
             "width": 529.32,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5935,7 +6124,7 @@
       }
     },
     {
-      "id": "blk-list_item-0133",
+      "id": "blk-list_item-0141",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5959,7 +6148,7 @@
             "width": 496.83,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5970,7 +6159,7 @@
       }
     },
     {
-      "id": "blk-list_item-0134",
+      "id": "blk-list_item-0142",
       "type": "list_item",
       "content": {
         "spans": [
@@ -5994,7 +6183,7 @@
             "width": 454.69,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6005,7 +6194,7 @@
       }
     },
     {
-      "id": "blk-list_item-0135",
+      "id": "blk-list_item-0143",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6029,7 +6218,7 @@
             "width": 498.17,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6040,7 +6229,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0136",
+      "id": "blk-paragraph-0144",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6061,7 +6250,7 @@
             "width": 511.55,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6072,7 +6261,7 @@
       }
     },
     {
-      "id": "blk-list_item-0137",
+      "id": "blk-list_item-0145",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6096,7 +6285,7 @@
             "width": 527.39,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6107,7 +6296,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0138",
+      "id": "blk-paragraph-0146",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6128,7 +6317,7 @@
             "width": 537.7,
             "height": 41.41
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -6140,7 +6329,7 @@
             "width": 523.77,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6151,7 +6340,7 @@
       }
     },
     {
-      "id": "blk-list_item-0139",
+      "id": "blk-list_item-0147",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6175,7 +6364,7 @@
             "width": 531.06,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6186,7 +6375,7 @@
       }
     },
     {
-      "id": "blk-list_item-0140",
+      "id": "blk-list_item-0148",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6210,7 +6399,7 @@
             "width": 532.57,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6221,7 +6410,7 @@
       }
     },
     {
-      "id": "blk-list_item-0141",
+      "id": "blk-list_item-0149",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6245,7 +6434,7 @@
             "width": 528.1,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6256,7 +6445,7 @@
       }
     },
     {
-      "id": "blk-list_item-0142",
+      "id": "blk-list_item-0150",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6280,7 +6469,7 @@
             "width": 524.99,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6291,7 +6480,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0143",
+      "id": "blk-paragraph-0151",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6312,7 +6501,7 @@
             "width": 537.37,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6323,7 +6512,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0144",
+      "id": "blk-paragraph-0152",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6344,7 +6533,7 @@
             "width": 393.26,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6355,7 +6544,7 @@
       }
     },
     {
-      "id": "blk-list_item-0145",
+      "id": "blk-list_item-0153",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6379,7 +6568,7 @@
             "width": 524.53,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6390,7 +6579,7 @@
       }
     },
     {
-      "id": "blk-list_item-0146",
+      "id": "blk-list_item-0154",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6414,7 +6603,7 @@
             "width": 523.2,
             "height": 85.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6425,7 +6614,7 @@
       }
     },
     {
-      "id": "blk-list_item-0147",
+      "id": "blk-list_item-0155",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6449,7 +6638,7 @@
             "width": 519.3,
             "height": 96.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6460,7 +6649,7 @@
       }
     },
     {
-      "id": "blk-list_item-0148",
+      "id": "blk-list_item-0156",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6484,7 +6673,7 @@
             "width": 517.81,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6495,7 +6684,7 @@
       }
     },
     {
-      "id": "blk-list_item-0149",
+      "id": "blk-list_item-0157",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6519,7 +6708,7 @@
             "width": 523.86,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6530,7 +6719,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0150",
+      "id": "blk-paragraph-0158",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6551,7 +6740,7 @@
             "width": 401.35,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6562,7 +6751,7 @@
       }
     },
     {
-      "id": "blk-list_item-0151",
+      "id": "blk-list_item-0159",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6586,7 +6775,7 @@
             "width": 501.62,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6597,7 +6786,7 @@
       }
     },
     {
-      "id": "blk-list_item-0152",
+      "id": "blk-list_item-0160",
       "type": "list_item",
       "content": {
         "spans": [
@@ -6621,7 +6810,7 @@
             "width": 538.96,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6632,7 +6821,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0153",
+      "id": "blk-paragraph-0161",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6653,7 +6842,7 @@
             "width": 527.57,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -6665,7 +6854,7 @@
             "width": 541.75,
             "height": 63.49
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6676,7 +6865,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0154",
+      "id": "blk-paragraph-0162",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6686,7 +6875,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-23"
+            "target_id": "math-inline-21"
           },
           {
             "kind": "text",
@@ -6694,7 +6883,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-24"
+            "target_id": "math-inline-22"
           },
           {
             "kind": "text",
@@ -6713,7 +6902,7 @@
             "width": 529.02,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6724,21 +6913,21 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0155",
+      "id": "blk-display_equation_ref-0163",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p014-0014"
+        "math_id": "mathpix-eq-p014-0016"
       },
       "source_spans": [
         {
           "page": 14,
           "bbox": {
-            "x0": 218.0,
-            "y0": 235.5,
-            "x1": 388.0,
-            "y1": 269.0,
-            "width": 170.0,
-            "height": 33.5
+            "x0": 216.58,
+            "y0": 234.43,
+            "x1": 388.51,
+            "y1": 269.86,
+            "width": 171.94,
+            "height": 35.42
           },
           "engine": "mathpix"
         }
@@ -6751,7 +6940,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0156",
+      "id": "blk-paragraph-0164",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6761,7 +6950,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-25"
+            "target_id": "math-inline-23"
           },
           {
             "kind": "text",
@@ -6769,7 +6958,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-26"
+            "target_id": "math-inline-24"
           },
           {
             "kind": "text",
@@ -6777,7 +6966,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-27"
+            "target_id": "math-inline-25"
           },
           {
             "kind": "text",
@@ -6796,7 +6985,7 @@
             "width": 533.74,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6807,21 +6996,21 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0157",
+      "id": "blk-display_equation_ref-0165",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p014-0019"
+        "math_id": "mathpix-eq-p014-0021"
       },
       "source_spans": [
         {
           "page": 14,
           "bbox": {
-            "x0": 220.5,
-            "y0": 322.5,
-            "x1": 349.5,
-            "y1": 357.0,
-            "width": 129.0,
-            "height": 34.5
+            "x0": 220.32,
+            "y0": 322.27,
+            "x1": 349.63,
+            "y1": 357.12,
+            "width": 129.31,
+            "height": 34.85
           },
           "engine": "mathpix"
         }
@@ -6834,7 +7023,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0158",
+      "id": "blk-paragraph-0166",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6844,7 +7033,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-28"
+            "target_id": "math-inline-26"
           },
           {
             "kind": "text",
@@ -6852,7 +7041,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-29"
+            "target_id": "math-inline-27"
           },
           {
             "kind": "text",
@@ -6860,7 +7049,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-30"
+            "target_id": "math-inline-28"
           },
           {
             "kind": "text",
@@ -6868,7 +7057,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-31"
+            "target_id": "math-inline-29"
           },
           {
             "kind": "text",
@@ -6876,7 +7065,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-32"
+            "target_id": "math-inline-30"
           },
           {
             "kind": "text",
@@ -6884,7 +7073,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-33"
+            "target_id": "math-inline-31"
           },
           {
             "kind": "text",
@@ -6903,7 +7092,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6914,7 +7103,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0159",
+      "id": "blk-paragraph-0167",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6935,7 +7124,7 @@
             "width": 453.52,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6946,21 +7135,21 @@
       }
     },
     {
-      "id": "blk-display_equation_ref-0160",
+      "id": "blk-display_equation_ref-0168",
       "type": "display_equation_ref",
       "content": {
-        "math_id": "mathpix-eq-p014-0030"
+        "math_id": "mathpix-eq-p014-0032"
       },
       "source_spans": [
         {
           "page": 14,
           "bbox": {
-            "x0": 161.0,
-            "y0": 477.0,
-            "x1": 391.0,
-            "y1": 562.0,
-            "width": 230.0,
-            "height": 85.0
+            "x0": 161.57,
+            "y0": 476.35,
+            "x1": 390.53,
+            "y1": 561.89,
+            "width": 228.96,
+            "height": 85.54
           },
           "engine": "mathpix"
         }
@@ -6973,7 +7162,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0161",
+      "id": "blk-paragraph-0169",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -6994,7 +7183,7 @@
             "width": 541.76,
             "height": 107.84
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7005,7 +7194,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0162",
+      "id": "blk-paragraph-0170",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7026,7 +7215,7 @@
             "width": 536.6,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 15,
@@ -7038,7 +7227,7 @@
             "width": 540.18,
             "height": 96.74
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7049,7 +7238,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0163",
+      "id": "blk-paragraph-0171",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7070,7 +7259,7 @@
             "width": 530.76,
             "height": 52.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7081,7 +7270,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0164",
+      "id": "blk-paragraph-0172",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7091,7 +7280,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-34"
+            "target_id": "math-inline-32"
           },
           {
             "kind": "text",
@@ -7110,7 +7299,7 @@
             "width": 511.54,
             "height": 32.49
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7121,7 +7310,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0165",
+      "id": "blk-paragraph-0173",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7142,7 +7331,7 @@
             "width": 538.24,
             "height": 141.04
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7153,7 +7342,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0166",
+      "id": "blk-paragraph-0174",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7174,7 +7363,7 @@
             "width": 533.74,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7185,7 +7374,7 @@
       }
     },
     {
-      "id": "blk-figure-0167",
+      "id": "blk-figure-0175",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -7201,7 +7390,7 @@
             "width": 127.75,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7212,7 +7401,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0168",
+      "id": "blk-paragraph-0176",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7233,7 +7422,7 @@
             "width": 539.93,
             "height": 85.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7244,7 +7433,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0169",
+      "id": "blk-paragraph-0177",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7265,7 +7454,7 @@
             "width": 541.4,
             "height": 74.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7276,7 +7465,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0170",
+      "id": "blk-paragraph-0178",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7297,7 +7486,7 @@
             "width": 538.13,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7308,7 +7497,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0171",
+      "id": "blk-paragraph-0179",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7329,7 +7518,7 @@
             "width": 539.15,
             "height": 63.55
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7340,7 +7529,7 @@
       }
     },
     {
-      "id": "blk-figure-0172",
+      "id": "blk-figure-0180",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -7356,7 +7545,7 @@
             "width": 226.4,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7367,7 +7556,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0173",
+      "id": "blk-paragraph-0181",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7388,7 +7577,7 @@
             "width": 541.5,
             "height": 41.41
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 17,
@@ -7400,7 +7589,7 @@
             "width": 541.69,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7411,7 +7600,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0174",
+      "id": "blk-paragraph-0182",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7432,7 +7621,7 @@
             "width": 533.29,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7443,7 +7632,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0175",
+      "id": "blk-paragraph-0183",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7464,7 +7653,7 @@
             "width": 542.5,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7475,7 +7664,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0176",
+      "id": "blk-paragraph-0184",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -7504,7 +7693,7 @@
             "width": 67.51,
             "height": 8.16
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 17,
@@ -7516,7 +7705,7 @@
             "width": 537.03,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7527,7 +7716,7 @@
       }
     },
     {
-      "id": "blk-reference-0178",
+      "id": "blk-reference-0186",
       "type": "reference",
       "content": {
         "reference_id": "ref-001"
@@ -7543,7 +7732,7 @@
             "width": 520.67,
             "height": 30.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7554,7 +7743,7 @@
       }
     },
     {
-      "id": "blk-reference-0179",
+      "id": "blk-reference-0187",
       "type": "reference",
       "content": {
         "reference_id": "ref-002"
@@ -7570,7 +7759,7 @@
             "width": 396.64,
             "height": 10.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7581,7 +7770,7 @@
       }
     },
     {
-      "id": "blk-reference-0180",
+      "id": "blk-reference-0188",
       "type": "reference",
       "content": {
         "reference_id": "ref-003"
@@ -7597,7 +7786,7 @@
             "width": 536.9,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7608,7 +7797,7 @@
       }
     },
     {
-      "id": "blk-reference-0181",
+      "id": "blk-reference-0189",
       "type": "reference",
       "content": {
         "reference_id": "ref-004"
@@ -7624,7 +7813,7 @@
             "width": 449.81,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7635,7 +7824,7 @@
       }
     },
     {
-      "id": "blk-reference-0182",
+      "id": "blk-reference-0190",
       "type": "reference",
       "content": {
         "reference_id": "ref-005"
@@ -7651,7 +7840,7 @@
             "width": 537.67,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7662,7 +7851,7 @@
       }
     },
     {
-      "id": "blk-reference-0183",
+      "id": "blk-reference-0191",
       "type": "reference",
       "content": {
         "reference_id": "ref-006"
@@ -7678,7 +7867,7 @@
             "width": 510.64,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7689,7 +7878,7 @@
       }
     },
     {
-      "id": "blk-reference-0184",
+      "id": "blk-reference-0192",
       "type": "reference",
       "content": {
         "reference_id": "ref-007"
@@ -7705,7 +7894,7 @@
             "width": 540.59,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7716,7 +7905,7 @@
       }
     },
     {
-      "id": "blk-reference-0185",
+      "id": "blk-reference-0193",
       "type": "reference",
       "content": {
         "reference_id": "ref-008"
@@ -7732,7 +7921,7 @@
             "width": 510.91,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7743,7 +7932,7 @@
       }
     },
     {
-      "id": "blk-reference-0186",
+      "id": "blk-reference-0194",
       "type": "reference",
       "content": {
         "reference_id": "ref-009"
@@ -7759,7 +7948,7 @@
             "width": 517.38,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7770,7 +7959,7 @@
       }
     },
     {
-      "id": "blk-reference-0187",
+      "id": "blk-reference-0195",
       "type": "reference",
       "content": {
         "reference_id": "ref-010"
@@ -7786,7 +7975,7 @@
             "width": 535.41,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7797,7 +7986,7 @@
       }
     },
     {
-      "id": "blk-reference-0188",
+      "id": "blk-reference-0196",
       "type": "reference",
       "content": {
         "reference_id": "ref-011"
@@ -7813,7 +8002,7 @@
             "width": 498.52,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7824,7 +8013,7 @@
       }
     },
     {
-      "id": "blk-reference-0189",
+      "id": "blk-reference-0197",
       "type": "reference",
       "content": {
         "reference_id": "ref-012"
@@ -7840,7 +8029,7 @@
             "width": 500.69,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7851,7 +8040,7 @@
       }
     },
     {
-      "id": "blk-reference-0190",
+      "id": "blk-reference-0198",
       "type": "reference",
       "content": {
         "reference_id": "ref-013"
@@ -7867,7 +8056,7 @@
             "width": 537.64,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7878,7 +8067,7 @@
       }
     },
     {
-      "id": "blk-reference-0191",
+      "id": "blk-reference-0199",
       "type": "reference",
       "content": {
         "reference_id": "ref-014"
@@ -7894,7 +8083,7 @@
             "width": 538.82,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7905,7 +8094,7 @@
       }
     },
     {
-      "id": "blk-reference-0192",
+      "id": "blk-reference-0200",
       "type": "reference",
       "content": {
         "reference_id": "ref-015"
@@ -7921,7 +8110,7 @@
             "width": 530.87,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7932,7 +8121,7 @@
       }
     },
     {
-      "id": "blk-reference-0193",
+      "id": "blk-reference-0201",
       "type": "reference",
       "content": {
         "reference_id": "ref-016"
@@ -7948,7 +8137,7 @@
             "width": 539.93,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7959,7 +8148,7 @@
       }
     },
     {
-      "id": "blk-reference-0194",
+      "id": "blk-reference-0202",
       "type": "reference",
       "content": {
         "reference_id": "ref-017"
@@ -7975,7 +8164,7 @@
             "width": 526.84,
             "height": 19.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7986,7 +8175,7 @@
       }
     },
     {
-      "id": "blk-reference-0195",
+      "id": "blk-reference-0203",
       "type": "reference",
       "content": {
         "reference_id": "ref-018"
@@ -8002,7 +8191,7 @@
             "width": 542.46,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8013,7 +8202,7 @@
       }
     },
     {
-      "id": "blk-reference-0196",
+      "id": "blk-reference-0204",
       "type": "reference",
       "content": {
         "reference_id": "ref-019"
@@ -8029,7 +8218,7 @@
             "width": 510.17,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8040,7 +8229,7 @@
       }
     },
     {
-      "id": "blk-reference-0197",
+      "id": "blk-reference-0205",
       "type": "reference",
       "content": {
         "reference_id": "ref-020"
@@ -8056,7 +8245,7 @@
             "width": 538.04,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8067,7 +8256,7 @@
       }
     },
     {
-      "id": "blk-reference-0198",
+      "id": "blk-reference-0206",
       "type": "reference",
       "content": {
         "reference_id": "ref-021"
@@ -8083,7 +8272,7 @@
             "width": 534.35,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8094,7 +8283,7 @@
       }
     },
     {
-      "id": "blk-reference-0199",
+      "id": "blk-reference-0207",
       "type": "reference",
       "content": {
         "reference_id": "ref-022"
@@ -8110,7 +8299,7 @@
             "width": 539.85,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8121,7 +8310,7 @@
       }
     },
     {
-      "id": "blk-reference-0200",
+      "id": "blk-reference-0208",
       "type": "reference",
       "content": {
         "reference_id": "ref-023"
@@ -8137,7 +8326,7 @@
             "width": 532.07,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8148,7 +8337,7 @@
       }
     },
     {
-      "id": "blk-reference-0201",
+      "id": "blk-reference-0209",
       "type": "reference",
       "content": {
         "reference_id": "ref-024"
@@ -8164,7 +8353,7 @@
             "width": 537.78,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8175,7 +8364,7 @@
       }
     },
     {
-      "id": "blk-reference-0202",
+      "id": "blk-reference-0210",
       "type": "reference",
       "content": {
         "reference_id": "ref-025"
@@ -8191,7 +8380,7 @@
             "width": 511.04,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8202,7 +8391,7 @@
       }
     },
     {
-      "id": "blk-reference-0203",
+      "id": "blk-reference-0211",
       "type": "reference",
       "content": {
         "reference_id": "ref-026"
@@ -8218,7 +8407,7 @@
             "width": 517.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8229,7 +8418,7 @@
       }
     },
     {
-      "id": "blk-reference-0204",
+      "id": "blk-reference-0212",
       "type": "reference",
       "content": {
         "reference_id": "ref-027"
@@ -8245,7 +8434,7 @@
             "width": 531.62,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8256,7 +8445,7 @@
       }
     },
     {
-      "id": "blk-reference-0205",
+      "id": "blk-reference-0213",
       "type": "reference",
       "content": {
         "reference_id": "ref-028"
@@ -8272,7 +8461,7 @@
             "width": 542.53,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8283,7 +8472,7 @@
       }
     },
     {
-      "id": "blk-reference-0206",
+      "id": "blk-reference-0214",
       "type": "reference",
       "content": {
         "reference_id": "ref-029"
@@ -8299,7 +8488,7 @@
             "width": 89.52,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8310,7 +8499,7 @@
       }
     },
     {
-      "id": "blk-reference-0207",
+      "id": "blk-reference-0215",
       "type": "reference",
       "content": {
         "reference_id": "ref-030"
@@ -8326,7 +8515,7 @@
             "width": 536.24,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8337,7 +8526,7 @@
       }
     },
     {
-      "id": "blk-reference-0208",
+      "id": "blk-reference-0216",
       "type": "reference",
       "content": {
         "reference_id": "ref-031"
@@ -8353,7 +8542,7 @@
             "width": 542.62,
             "height": 96.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8364,7 +8553,7 @@
       }
     },
     {
-      "id": "blk-reference-0209",
+      "id": "blk-reference-0217",
       "type": "reference",
       "content": {
         "reference_id": "ref-032"
@@ -8380,7 +8569,7 @@
             "width": 542.6,
             "height": 96.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8391,7 +8580,7 @@
       }
     },
     {
-      "id": "blk-reference-0210",
+      "id": "blk-reference-0218",
       "type": "reference",
       "content": {
         "reference_id": "ref-033"
@@ -8407,7 +8596,7 @@
             "width": 542.56,
             "height": 96.73
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8442,7 +8631,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8484,7 +8673,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8526,7 +8715,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8568,7 +8757,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8610,7 +8799,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8652,7 +8841,7 @@
             "width": 537.96,
             "height": 52.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8694,7 +8883,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8706,7 +8895,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8748,7 +8937,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8760,7 +8949,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8802,7 +8991,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8814,7 +9003,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8856,7 +9045,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8868,7 +9057,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8910,7 +9099,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8922,7 +9111,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -8964,7 +9153,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -8976,7 +9165,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9018,7 +9207,7 @@
             "width": 541.82,
             "height": 86.89
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 6,
@@ -9030,7 +9219,7 @@
             "width": 519.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9072,7 +9261,7 @@
             "width": 532.42,
             "height": 63.56
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9114,7 +9303,7 @@
             "width": 536.75,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -9126,7 +9315,7 @@
             "width": 533.75,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9168,7 +9357,7 @@
             "width": 536.75,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -9180,7 +9369,7 @@
             "width": 533.75,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9222,7 +9411,7 @@
             "width": 536.75,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 9,
@@ -9234,7 +9423,7 @@
             "width": 533.75,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9277,7 +9466,7 @@
             "width": 538.56,
             "height": 85.7
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9298,90 +9487,6 @@
     },
     {
       "id": "math-inline-19",
-      "kind": "inline",
-      "display_latex": "\\mathbf{A}",
-      "semantic_expr": null,
-      "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x1D400;</mi></mrow></math>"
-      },
-      "conversion": {
-        "status": "converted",
-        "notes": "backend=latex2mathml"
-      },
-      "source_spans": [
-        {
-          "page": 9,
-          "bbox": {
-            "x0": 35.98,
-            "y0": 226.38,
-            "x1": 574.54,
-            "y1": 312.08,
-            "width": 538.56,
-            "height": 85.7
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "classification": {
-        "category": "symbolic_reference",
-        "semantic_policy": "graphic_only",
-        "role": "graphic",
-        "confidence": "high",
-        "signals": [
-          "inline_symbol_reference"
-        ]
-      }
-    },
-    {
-      "id": "math-inline-20",
-      "kind": "inline",
-      "display_latex": "{ }^{\\circledR}",
-      "semantic_expr": null,
-      "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow /><mrow><mi>&#x000AE;</mi></mrow></msup></mrow></math>"
-      },
-      "conversion": {
-        "status": "converted",
-        "notes": "backend=latex2mathml"
-      },
-      "source_spans": [
-        {
-          "page": 10,
-          "bbox": {
-            "x0": 35.96,
-            "y0": 326.06,
-            "x1": 575.29,
-            "y1": 411.7,
-            "width": 539.33,
-            "height": 85.64
-          },
-          "engine": "docling"
-        }
-      ],
-      "alternates": [],
-      "review": {
-        "status": "unreviewed",
-        "risk": "medium",
-        "notes": ""
-      },
-      "classification": {
-        "category": "symbolic_reference",
-        "semantic_policy": "graphic_only",
-        "role": "graphic",
-        "confidence": "high",
-        "signals": [
-          "inline_symbol_reference"
-        ]
-      }
-    },
-    {
-      "id": "math-inline-21",
       "kind": "inline",
       "display_latex": "N>2",
       "semantic_expr": {
@@ -9423,7 +9528,7 @@
             "width": 545.18,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 11,
@@ -9435,7 +9540,7 @@
             "width": 532.64,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9455,7 +9560,7 @@
       }
     },
     {
-      "id": "math-inline-22",
+      "id": "math-inline-20",
       "kind": "inline",
       "display_latex": "N-1",
       "semantic_expr": null,
@@ -9477,7 +9582,7 @@
             "width": 545.18,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 11,
@@ -9489,7 +9594,7 @@
             "width": 532.64,
             "height": 41.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9509,7 +9614,7 @@
       }
     },
     {
-      "id": "math-inline-23",
+      "id": "math-inline-21",
       "kind": "inline",
       "display_latex": "M, F",
       "semantic_expr": null,
@@ -9531,7 +9636,7 @@
             "width": 529.02,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9551,7 +9656,7 @@
       }
     },
     {
-      "id": "math-inline-24",
+      "id": "math-inline-22",
       "kind": "inline",
       "display_latex": "R",
       "semantic_expr": null,
@@ -9573,7 +9678,7 @@
             "width": 529.02,
             "height": 52.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9593,12 +9698,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0014",
+      "id": "mathpix-eq-p014-0016",
       "kind": "display",
-      "display_latex": "\\begin{equation*} M_{S}\\left(F_{S}, R_{S}\\right)=F_{S}+R_{S}=\\bigcup_{i=1}^{I} F_{S i}+\\sum_{q=1}^{Q} R_{S q} \\tag{1.1} \\end{equation*}",
+      "display_latex": "M_{S}\\left(F_{S}, R_{S}\\right)=F_{S}+R_{S}=\\bigcup_{i=1}^{I} F_{S i}+\\sum_{q=1}^{Q} R_{S q}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><msub><mi>M</mi><mrow><mi>S</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>F</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>R</mi><mrow><mi>S</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>R</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0003D;</mo><msubsup><mo>&#x022C3;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>I</mi></mrow></msubsup><msub><mi>F</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>q</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>Q</mi></mrow></msubsup><msub><mi>R</mi><mrow><mi>S</mi><mi>q</mi></mrow></msub><mi>\\tag</mi><mrow><mn>1.1</mn></mrow></mrow></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>M</mi><mrow><mi>S</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>F</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>R</mi><mrow><mi>S</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>R</mi><mrow><mi>S</mi></mrow></msub><mo>&#x0003D;</mo><msubsup><mo>&#x022C3;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>I</mi></mrow></msubsup><msub><mi>F</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>q</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>Q</mi></mrow></msubsup><msub><mi>R</mi><mrow><mi>S</mi><mi>q</mi></mrow></msub></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -9608,12 +9713,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 218.0,
-            "y0": 235.5,
-            "x1": 388.0,
-            "y1": 269.0,
-            "width": 170.0,
-            "height": 33.5
+            "x0": 216.58,
+            "y0": 234.43,
+            "x1": 388.51,
+            "y1": 269.86,
+            "width": 171.94,
+            "height": 35.42
           },
           "engine": "mathpix"
         }
@@ -9637,7 +9742,7 @@
       }
     },
     {
-      "id": "math-inline-25",
+      "id": "math-inline-23",
       "kind": "inline",
       "display_latex": "S",
       "semantic_expr": null,
@@ -9659,7 +9764,7 @@
             "width": 533.74,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9679,7 +9784,7 @@
       }
     },
     {
-      "id": "math-inline-26",
+      "id": "math-inline-24",
       "kind": "inline",
       "display_latex": "U",
       "semantic_expr": null,
@@ -9701,7 +9806,7 @@
             "width": 533.74,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9721,7 +9826,7 @@
       }
     },
     {
-      "id": "math-inline-27",
+      "id": "math-inline-25",
       "kind": "inline",
       "display_latex": "I",
       "semantic_expr": null,
@@ -9743,7 +9848,7 @@
             "width": 533.74,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9763,12 +9868,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0019",
+      "id": "mathpix-eq-p014-0021",
       "kind": "display",
-      "display_latex": "\\begin{align*} & F_{S i}=F_{S i}\\left(A_{i}, G_{S i}, H_{S i}, D_{S i}, C_{S i}\\right) \\tag{1.2,1.3}\\\\ & R_{S_{q}}=R_{S_{q}}\\left(A_{q}\\right) \\end{align*}",
+      "display_latex": "\\begin{aligned} & F_{S_{i}}=F_{S_{i}}\\left(A_{i}, G_{S_{i}}, H_{S_{i}}, D_{S_{i}}, C_{S_{i}}\\right) \\\\ & R_{S_{q}}=R_{S_{q}}\\left(A_{q}\\right) \\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mtable displaystyle=\"true\" rowspacing=\"3pt\" columnspacing=\"0em 2em\"><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>F</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>G</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>H</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>D</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>C</mi><mrow><mi>S</mi><mi>i</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mi>\\tag</mi><mrow><mn>1.2</mn><mo>&#x0002C;</mo><mn>1.3</mn></mrow></mtd></mtr><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>R</mi><mrow><msub><mi>S</mi><mrow><mi>q</mi></mrow></msub></mrow></msub><mo>&#x0003D;</mo><msub><mi>R</mi><mrow><msub><mi>S</mi><mrow><mi>q</mi></mrow></msub></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>q</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mtd></mtr></mtable></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi>&</mi><msub><mi>F</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>G</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mo>&#x0002C;</mo><msub><mi>H</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mo>&#x0002C;</mo><msub><mi>D</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mo>&#x0002C;</mo><msub><mi>C</mi><mrow><msub><mi>S</mi><mrow><mi>i</mi></mrow></msub></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mspace linebreak=\"newline\" /><mi>&</mi><msub><mi>R</mi><mrow><msub><mi>S</mi><mrow><mi>q</mi></mrow></msub></mrow></msub><mo>&#x0003D;</mo><msub><mi>R</mi><mrow><msub><mi>S</mi><mrow><mi>q</mi></mrow></msub></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>q</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -9778,12 +9883,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 220.5,
-            "y0": 322.5,
-            "x1": 349.5,
-            "y1": 357.0,
-            "width": 129.0,
-            "height": 34.5
+            "x0": 220.32,
+            "y0": 322.27,
+            "x1": 349.63,
+            "y1": 357.12,
+            "width": 129.31,
+            "height": 34.85
           },
           "engine": "mathpix"
         }
@@ -9806,7 +9911,7 @@
       }
     },
     {
-      "id": "math-inline-28",
+      "id": "math-inline-26",
       "kind": "inline",
       "display_latex": "A_{i}",
       "semantic_expr": null,
@@ -9828,7 +9933,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9848,7 +9953,7 @@
       }
     },
     {
-      "id": "math-inline-29",
+      "id": "math-inline-27",
       "kind": "inline",
       "display_latex": "G_{i}",
       "semantic_expr": null,
@@ -9870,7 +9975,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9890,7 +9995,7 @@
       }
     },
     {
-      "id": "math-inline-30",
+      "id": "math-inline-28",
       "kind": "inline",
       "display_latex": "H_{i}",
       "semantic_expr": null,
@@ -9912,7 +10017,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9932,7 +10037,7 @@
       }
     },
     {
-      "id": "math-inline-31",
+      "id": "math-inline-29",
       "kind": "inline",
       "display_latex": "D_{i}",
       "semantic_expr": null,
@@ -9954,7 +10059,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -9974,7 +10079,7 @@
       }
     },
     {
-      "id": "math-inline-32",
+      "id": "math-inline-30",
       "kind": "inline",
       "display_latex": "C_{i}",
       "semantic_expr": null,
@@ -9996,7 +10101,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10016,7 +10121,7 @@
       }
     },
     {
-      "id": "math-inline-33",
+      "id": "math-inline-31",
       "kind": "inline",
       "display_latex": "A_{q}",
       "semantic_expr": null,
@@ -10038,7 +10143,7 @@
             "width": 536.88,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10058,12 +10163,12 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0030",
+      "id": "mathpix-eq-p014-0032",
       "kind": "display",
-      "display_latex": "\\begin{align*} & M_{E}\\left(F_{E}, R_{E}\\right)=F_{E}+D_{E}+R_{E}=\\bigcup_{i=1}^{I} F_{E i}+\\sum_{j=1}^{J} D_{E j}+\\sum_{q=1}^{Q} R_{E q} \\\\ & F_{E i}=F_{E i}\\left(A_{i}, G_{E i}, H_{E i}, C_{E i}\\right) \\tag{2.1-2.4}\\\\ & D_{E j}=D_{E j}\\left(A_{j}, F_{E j}, X_{E j}\\right) \\\\ & R_{E q}=R_{E q}\\left(A_{q}, D_{E q}, P_{E q}\\right) \\end{align*}",
+      "display_latex": "\\begin{aligned} & M_{E}\\left(F_{E}, R_{E}\\right)=F_{E}+D_{E}+R_{E}=\\bigcup_{i=1}^{I} F_{E i}+\\sum_{j=1}^{J} D_{E j}+\\sum_{q=1}^{Q} R_{E q} \\\\ & F_{E i}=F_{E i}\\left(A_{i}, G_{E i}, H_{E i}, C_{E i}\\right) \\\\ & D_{E j}=D_{E j}\\left(A_{j}, F_{E j}, X_{E j}\\right) \\\\ & R_{E q}=R_{E q}\\left(A_{q}, D_{E q}, P_{E q}\\right) \\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mtable displaystyle=\"true\" rowspacing=\"3pt\" columnspacing=\"0em 2em\"><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>M</mi><mrow><mi>E</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>F</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>R</mi><mrow><mi>E</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>D</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>R</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0003D;</mo><msubsup><mo>&#x022C3;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>I</mi></mrow></msubsup><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>j</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>J</mi></mrow></msubsup><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>q</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>Q</mi></mrow></msubsup><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>G</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>H</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>C</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mi>\\tag</mi><mrow><mn>2.1</mn><mo>&#x02212;</mo><mn>2.4</mn></mrow></mtd></mtr><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>j</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>F</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>X</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mtd></mtr><mtr><mtd columnalign=\"right\" /><mtd columnalign=\"left\"><mi /><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>q</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>D</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>P</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mtd></mtr></mtable></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mrow><mi>&</mi><msub><mi>M</mi><mrow><mi>E</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>F</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>R</mi><mrow><mi>E</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>D</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0002B;</mo><msub><mi>R</mi><mrow><mi>E</mi></mrow></msub><mo>&#x0003D;</mo><msubsup><mo>&#x022C3;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>I</mi></mrow></msubsup><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>j</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>J</mi></mrow></msubsup><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0002B;</mo><msubsup><mo>&#x02211;</mo><mrow><mi>q</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>Q</mi></mrow></msubsup><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mspace linebreak=\"newline\" /><mi>&</mi><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>G</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>H</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>C</mi><mrow><mi>E</mi><mi>i</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mspace linebreak=\"newline\" /><mi>&</mi><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>D</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>j</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>F</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>X</mi><mrow><mi>E</mi><mi>j</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mspace linebreak=\"newline\" /><mi>&</mi><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>R</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>A</mi><mrow><mi>q</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>D</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>P</mi><mrow><mi>E</mi><mi>q</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -10073,12 +10178,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 161.0,
-            "y0": 477.0,
-            "x1": 391.0,
-            "y1": 562.0,
-            "width": 230.0,
-            "height": 85.0
+            "x0": 161.57,
+            "y0": 476.35,
+            "x1": 390.53,
+            "y1": 561.89,
+            "width": 228.96,
+            "height": 85.54
           },
           "engine": "mathpix"
         }
@@ -10101,7 +10206,7 @@
       }
     },
     {
-      "id": "math-inline-34",
+      "id": "math-inline-32",
       "kind": "inline",
       "display_latex": "{ }^{\\circledR}",
       "semantic_expr": null,
@@ -10123,7 +10228,7 @@
             "width": 511.54,
             "height": 32.49
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10275,7 +10380,7 @@
             "width": 520.67,
             "height": 30.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10300,7 +10405,7 @@
             "width": 396.64,
             "height": 10.35
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10325,7 +10430,7 @@
             "width": 536.9,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10350,7 +10455,7 @@
             "width": 449.81,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10375,7 +10480,7 @@
             "width": 537.67,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10400,7 +10505,7 @@
             "width": 510.64,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10425,7 +10530,7 @@
             "width": 540.59,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10450,7 +10555,7 @@
             "width": 510.91,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10475,7 +10580,7 @@
             "width": 517.38,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10500,7 +10605,7 @@
             "width": 535.41,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10525,7 +10630,7 @@
             "width": 498.52,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10550,7 +10655,7 @@
             "width": 500.69,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10575,7 +10680,7 @@
             "width": 537.64,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10600,7 +10705,7 @@
             "width": 538.82,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10625,7 +10730,7 @@
             "width": 530.87,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10650,7 +10755,7 @@
             "width": 539.93,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10675,7 +10780,7 @@
             "width": 526.84,
             "height": 19.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10700,7 +10805,7 @@
             "width": 542.46,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10725,7 +10830,7 @@
             "width": 510.17,
             "height": 19.21
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10750,7 +10855,7 @@
             "width": 538.04,
             "height": 30.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10775,7 +10880,7 @@
             "width": 534.35,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10800,7 +10905,7 @@
             "width": 539.85,
             "height": 19.26
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10825,7 +10930,7 @@
             "width": 532.07,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10850,7 +10955,7 @@
             "width": 537.78,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10875,7 +10980,7 @@
             "width": 511.04,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10900,7 +11005,7 @@
             "width": 517.55,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10925,7 +11030,7 @@
             "width": 531.62,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10950,7 +11055,7 @@
             "width": 542.53,
             "height": 19.27
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -10975,7 +11080,7 @@
             "width": 89.52,
             "height": 8.17
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -11000,7 +11105,7 @@
             "width": 536.24,
             "height": 41.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -11025,7 +11130,7 @@
             "width": 542.62,
             "height": 96.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -11050,7 +11155,7 @@
             "width": 542.6,
             "height": 96.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -11075,7 +11180,7 @@
             "width": 542.56,
             "height": 96.73
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

@@ -2,9 +2,9 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p014-0014",
+      "id": "mathpix-eq-p014-0016",
       "kind": "display",
-      "display_latex": "\\begin{equation*}\nM_{S}\\left(F_{S}, R_{S}\\right)=F_{S}+R_{S}=\\bigcup_{i=1}^{I} F_{S i}+\\sum_{q=1}^{Q} R_{S q} \\tag{1.1}\n\\end{equation*}",
+      "display_latex": "M_{S}\\left(F_{S}, R_{S}\\right)=F_{S}+R_{S}=\\bigcup_{i=1}^{I} F_{S i}+\\sum_{q=1}^{Q} R_{S q}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -15,12 +15,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 218.0,
-            "y0": 235.5,
-            "x1": 388.0,
-            "y1": 269.0,
-            "width": 170.0,
-            "height": 33.5
+            "x0": 216.58,
+            "y0": 234.43,
+            "x1": 388.51,
+            "y1": 269.86,
+            "width": 171.94,
+            "height": 35.42
           },
           "engine": "mathpix"
         }
@@ -33,9 +33,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0019",
+      "id": "mathpix-eq-p014-0021",
       "kind": "display",
-      "display_latex": "\\begin{align*}\n& F_{S i}=F_{S i}\\left(A_{i}, G_{S i}, H_{S i}, D_{S i}, C_{S i}\\right)  \\tag{1.2,1.3}\\\\\n& R_{S_{q}}=R_{S_{q}}\\left(A_{q}\\right)\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\n& F_{S_{i}}=F_{S_{i}}\\left(A_{i}, G_{S_{i}}, H_{S_{i}}, D_{S_{i}}, C_{S_{i}}\\right) \\\\\n& R_{S_{q}}=R_{S_{q}}\\left(A_{q}\\right)\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -46,12 +46,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 220.5,
-            "y0": 322.5,
-            "x1": 349.5,
-            "y1": 357.0,
-            "width": 129.0,
-            "height": 34.5
+            "x0": 220.32,
+            "y0": 322.27,
+            "x1": 349.63,
+            "y1": 357.12,
+            "width": 129.31,
+            "height": 34.85
           },
           "engine": "mathpix"
         }
@@ -64,9 +64,9 @@
       }
     },
     {
-      "id": "mathpix-eq-p014-0030",
+      "id": "mathpix-eq-p014-0032",
       "kind": "display",
-      "display_latex": "\\begin{align*}\n& M_{E}\\left(F_{E}, R_{E}\\right)=F_{E}+D_{E}+R_{E}=\\bigcup_{i=1}^{I} F_{E i}+\\sum_{j=1}^{J} D_{E j}+\\sum_{q=1}^{Q} R_{E q} \\\\\n& F_{E i}=F_{E i}\\left(A_{i}, G_{E i}, H_{E i}, C_{E i}\\right)  \\tag{2.1-2.4}\\\\\n& D_{E j}=D_{E j}\\left(A_{j}, F_{E j}, X_{E j}\\right) \\\\\n& R_{E q}=R_{E q}\\left(A_{q}, D_{E q}, P_{E q}\\right)\n\\end{align*}",
+      "display_latex": "\\begin{aligned}\n& M_{E}\\left(F_{E}, R_{E}\\right)=F_{E}+D_{E}+R_{E}=\\bigcup_{i=1}^{I} F_{E i}+\\sum_{j=1}^{J} D_{E j}+\\sum_{q=1}^{Q} R_{E q} \\\\\n& F_{E i}=F_{E i}\\left(A_{i}, G_{E i}, H_{E i}, C_{E i}\\right) \\\\\n& D_{E j}=D_{E j}\\left(A_{j}, F_{E j}, X_{E j}\\right) \\\\\n& R_{E q}=R_{E q}\\left(A_{q}, D_{E q}, P_{E q}\\right)\n\\end{aligned}",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -77,12 +77,12 @@
         {
           "page": 14,
           "bbox": {
-            "x0": 161.0,
-            "y0": 477.0,
-            "x1": 391.0,
-            "y1": 562.0,
-            "width": 230.0,
-            "height": 85.0
+            "x0": 161.57,
+            "y0": 476.35,
+            "x1": 390.53,
+            "y1": 561.89,
+            "width": 228.96,
+            "height": 85.54
           },
           "engine": "mathpix"
         }

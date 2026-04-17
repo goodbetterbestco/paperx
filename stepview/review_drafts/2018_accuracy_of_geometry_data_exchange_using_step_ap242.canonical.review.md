@@ -1,18 +1,24 @@
 # 2018 accuracy of geometry data exchange using step ap242
 
-John Bijnens, Karel Kellens, David Cheshire, KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus , Diepenbeek, Belgium, 6th CIRP Global Web Conference
+John Bijnens, Karel Kellens, David Cheshire, KU Leuven, Dept. of Mechanical Engineering, Agoralaan Gebouw B bus , Diepenbeek
 
-\( { }^{b} \) Staffordshire University
+\({ }^{b}\) Staffordshire University
 College Rd
 Stoke-on-Trent ST4 2DE, The UK
 
 ## Abstract
 
-A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data.
+A new methodology, Model Based Definition (MBD), is gaining popularity. MBD is all about adding the necessary manufacturing information directly onto the 3D model by means of 3D annotations, so-called PMI (Product and Manufacturing Information) data. Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This Two kinds of PMI exist, presentation and representation. PMI representation provides the data in a format that is readable by machines. This allows reuse of the CAD data by other stakeholders. Reuse means it is possible to interrogate the model. One stakeholder that benefits from this is quality control. Others, like manufacturing people who need to change the geometry to adhere to the tolerances specified by the PMI data, are left out in the cold. This paper researches the accuracy that can be achieved by exchanging geometry between different systems by using STEP AP242 and is a preliminary research for a new project to automatically adjust the STEP file driven by PMI data.
 
-## Introduction
+## 1 Introduction
 
-Boundary changed to respectively 40.1 and 65.05 as defined by the specified asymmetric dimensional tolerance, 20 needs to be changed to 20.0065 as defined by the specified ISO fitting. As currently most CAM systems can't apply the information contained within the PMI data to the CAD model automatically these adjustments need to be applied manually. This must be repeated with every modification to the original CAD model.
+## A new methodology for communicating engineering
+
+information called Model Based definition (MBD) is gaining popularity[1]. Proponents claim applying MBD will lead to immense (time) benefits and greater accuracy when compared with the "traditional way" [1] not only because of the way data are handled within a CAD system but also because of the implications for PDM and PLM systems[2]. This methodology is all about adding the necessary manufacturing information like tolerances and GD\&\(T(GeometricDimensioningandTolerancing)\) directly onto the 3D CAD model by means of 3D annotations, so-called PMI (Product Manufacturing Information) data. There are two kinds of PMI data, PMI presentation and PMI representation[3]. PMI presentation visualises the data graphically so it can be read by humans[4].
+
+PMI representation provides the data in a format that is readable by machines[3]. This latter allows reuse of the CAD data by other stakeholders. Reuse of the CAD data means it is possible to interrogate the model[5]. One stakeholder involved in the chain from design to production who benefits from this is quality control. They can use it to speed-up measuring procedures[6]. However, one kind of stakeholder is left out in the cold, namely the one that needs to modify CAD geometry conform the attached PMI data[7]. An example of such a stakeholder is the manufacturing division.
+
+One of the things CNC programmers need to do to generate suitable tool paths is adjusting the nominal values of a CAD model, so they correspond with the middle of the tolerance fields specified by the designer. An example of this can be seen Boundary changed to respectively 40.1 and 65.05 as defined by the specified asymmetric dimensional tolerance, 20 needs to be changed to 20.0065 as defined by the specified ISO fitting. As currently most CAM systems can't apply the information contained within the PMI data to the CAD model automatically these adjustments need to be applied manually. This must be repeated with every modification to the original CAD model.
 
 ![Figure 1](/Users/evanthayer/Projects/paperx/docs/2018_accuracy_of_geometry_data_exchange_using_step_ap242/figures/figure-1-p002.png)
 
@@ -112,4 +118,18 @@ To guarantee a good and usable transfer, the exchange between two systems must b
 
 - Alemanni M, Destefanis F, Vezzetti E. Model-based definition design in the product lifecycle management scenario. Int J Adv Manuf Technol 2011; 52(1-4):114.
 
-- Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1-Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997. Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49. Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24. Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39. Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001. Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67. Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89. Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.
+- Cheney D, Fischer B. Measuring the PMI Modeling Capability in CAD Systems: Report 1-Combined Test Case Verification. Natl Inst Stand Technol NISTGCR 2015; 15-997.
+
+- Boy J, Rosché P. Recommended Practices for PMI Polyline Presentation (AP203 AP214). 2014[Online] CAx Implementor Forum 2014. Fischer B. The changing face of CAD annotation. Mach Des Media 2011; 83(5):46-49.
+
+- Maggiano BYL. Model-Based Measurement. Qual Mag 2015; (March):20-24.
+
+- Brunsmann J, Wilkes W, Schlageter G, et al. State-ofthe-art of long-term preservation in product lifecycle management. Int J Digit Libr 2012; 12(1):27-39.
+
+- Hedberg T, Lubell J, Fischer L, et al. Testing the Digital Thread in Support of Model-Based Manufacturing and Inspection. J Comput Inf Sci Eng 2016; 16(2):021001.
+
+- Chang K-H, Chang K-H. Solid Modeling. In: eDesign Elsevier 2015; pp. 125-67.
+
+- Bianconi F, Conti P, Angelo L Di. Interoperability among CAD CAM CAE systems: a review of current research trends. Geom Model Imaging--New Trends 1993; (January):82-89.
+
+- Kim J, Pratt MJ, Iyer RG, et al. Standardized data exchange of CAD models with design intent. CAD Comput Aided Des 2008; 40(7):760-77.

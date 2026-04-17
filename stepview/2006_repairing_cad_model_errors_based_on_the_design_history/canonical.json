@@ -3,7 +3,7 @@
   "paper_id": "2006_repairing_cad_model_errors_based_on_the_design_history",
   "title": "2006 repairing cad model errors based on the design history",
   "source": {
-    "pdf_path": "docs/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
+    "pdf_path": "stepview/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
     "page_count": 14,
     "page_sizes_pt": [
       {
@@ -79,12 +79,12 @@
     ]
   },
   "build": {
-    "created_at": "2026-04-15T17:03:28Z",
-    "updated_at": "2026-04-15T17:03:28Z",
+    "created_at": "2026-04-17T04:13:04Z",
+    "updated_at": "2026-04-17T04:13:04Z",
     "builder_version": "0.2.0",
     "sources": {
       "native_pdf": true,
-      "layout_engine": "docling",
+      "layout_engine": "composed",
       "math_engine": "docling+heuristic",
       "figure_engine": "local",
       "text_engine": "native_pdf"
@@ -96,42 +96,45 @@
     },
     "inputs": {
       "pdf": {
-        "path": "docs/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
+        "path": "stepview/2006_repairing_cad_model_errors_based_on_the_design_history/2006_repairing_cad_model_errors_based_on_the_design_history.pdf",
         "exists": true,
         "size_bytes": 885334,
-        "modified_at": "2026-04-13T16:18:57Z",
+        "modified_at": "2026-04-17T03:17:21Z",
         "sha256": "3b93d98ce6594eb215e435f9911bce4f81dcd28081faef18da85afd543519e12"
       },
       "external_layout": {
-        "path": "docs/2006_repairing_cad_model_errors_based_on_the_design_history/canonical_sources/layout.json",
+        "path": "stepview/2006_repairing_cad_model_errors_based_on_the_design_history/canonical_sources/layout.json",
         "exists": true,
-        "size_bytes": 365623,
-        "modified_at": "2026-04-15T17:03:27Z",
-        "sha256": "1b270330d2492559d30d1adbaf344913980cfc6b63bb54b46fc663befd46f797"
+        "size_bytes": 365866,
+        "modified_at": "2026-04-17T04:13:03Z",
+        "sha256": "a2f4e80aad802d97eb214f1d8bf31b929f9ce0117a06aea93913bba6c29e529e"
       },
       "external_math": {
-        "path": "docs/2006_repairing_cad_model_errors_based_on_the_design_history/canonical_sources/math.json",
+        "path": "stepview/2006_repairing_cad_model_errors_based_on_the_design_history/canonical_sources/math.json",
         "exists": true,
         "size_bytes": 43,
-        "modified_at": "2026-04-15T17:03:27Z",
+        "modified_at": "2026-04-17T04:13:03Z",
         "sha256": "8718d3f4d6b7bae36f82d59a00f289a9c3282c32948edcd957292e6a4d0dee29"
       }
     },
     "pipeline": {
       "builder_version": "0.2.0",
-      "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
+      "fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4",
       "modules": {
-        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/reconcile_blocks.py": "57867ad09ca7f3e75d9fdb8861af99599ac64c17c0f5b79de40475fc0db803d8",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
         "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
         "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "155833c89d53d7d975fb4f8b903baf040da2b0708e0e71af22047b11374570e4"
       }
     }
   },
@@ -139,13 +142,13 @@
     "title": "2006 repairing cad model errors based on the design history",
     "authors": [
       {
-        "name": "Jeongsam Yang a",
+        "name": "Jeongsam Yang",
         "affiliation_ids": [
           "aff-1"
         ]
       },
       {
-        "name": "Soonhung Han b",
+        "name": "Soonhung Han",
         "affiliation_ids": [
           "aff-1"
         ]
@@ -154,9 +157,9 @@
     "affiliations": [
       {
         "id": "aff-1",
-        "department": "© 2006 Elsevier Ltd. All rights reserved.",
-        "institution": "a Division of Industrial and Information Systems Engineering, Ajou University, San 5, Wonchun-dong, Yeongtong-gu, Suwon, Kyungki-do 443-749, South Korea",
-        "address": "b Department of Mechanical Engineering, Korea Advanced Institute of Science and Technology, 373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea 0010-4485//\\$ - see front matter © 2006 Elsevier Ltd. All rights reserved."
+        "department": "\\({ }^{\\mathrm{b}}\\) Department of Mechanical Engineering",
+        "institution": "Korea Advanced Institute of Science and Technology",
+        "address": "373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea"
       }
     ],
     "abstract_block_id": "blk-front-abstract-1",
@@ -171,7 +174,7 @@
     {
       "id": "sec-1",
       "label": "1",
-      "title": "Introduction",
+      "title": "1 Introduction",
       "level": 1,
       "block_ids": [
         "blk-paragraph-0002",
@@ -179,10 +182,28 @@
         "blk-paragraph-0004",
         "blk-paragraph-0005",
         "blk-paragraph-0006",
-        "blk-paragraph-0007"
+        "blk-paragraph-0007",
+        "blk-paragraph-0008",
+        "blk-paragraph-0009",
+        "blk-display_equation_ref-0010",
+        "blk-list_item-0011",
+        "blk-paragraph-0012"
       ],
       "children": [],
-      "source_spans": []
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 42.52,
+            "y0": 410.03,
+            "x1": 107.22,
+            "y1": 418.81,
+            "width": 64.7,
+            "height": 8.78
+          },
+          "engine": "composed"
+        }
+      ]
     },
     {
       "id": "sec-2",
@@ -205,7 +226,7 @@
             "width": 72.21,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -215,10 +236,10 @@
       "title": "2.1 Error corrections based on B-Rep",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0008",
-        "blk-paragraph-0009",
-        "blk-paragraph-0010",
-        "blk-paragraph-0011"
+        "blk-paragraph-0013",
+        "blk-paragraph-0014",
+        "blk-paragraph-0015",
+        "blk-paragraph-0016"
       ],
       "children": [],
       "source_spans": [
@@ -232,7 +253,7 @@
             "width": 156.4,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -242,14 +263,14 @@
       "title": "2.2 Persistent naming problems",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0012",
-        "blk-paragraph-0013",
-        "blk-paragraph-0014",
-        "blk-paragraph-0015",
-        "blk-paragraph-0016",
         "blk-paragraph-0017",
         "blk-paragraph-0018",
-        "blk-paragraph-0019"
+        "blk-paragraph-0019",
+        "blk-paragraph-0020",
+        "blk-paragraph-0021",
+        "blk-paragraph-0022",
+        "blk-paragraph-0023",
+        "blk-paragraph-0024"
       ],
       "children": [],
       "source_spans": [
@@ -263,7 +284,7 @@
             "width": 130.98,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -292,7 +313,7 @@
             "width": 211.85,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -302,15 +323,15 @@
       "title": "3.1 Classification and checking of CAD model errors",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0020",
-        "blk-paragraph-0021",
-        "blk-paragraph-0022",
-        "blk-paragraph-0023",
-        "blk-paragraph-0024",
         "blk-paragraph-0025",
-        "blk-figure-0026",
+        "blk-paragraph-0026",
         "blk-paragraph-0027",
-        "blk-paragraph-0028"
+        "blk-paragraph-0028",
+        "blk-paragraph-0029",
+        "blk-paragraph-0030",
+        "blk-figure-0031",
+        "blk-paragraph-0032",
+        "blk-paragraph-0033"
       ],
       "children": [],
       "source_spans": [
@@ -324,7 +345,7 @@
             "width": 218.59,
             "height": 8.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -334,31 +355,32 @@
       "title": "3.2 Extraction of the design history",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0029",
-        "blk-figure-0030",
-        "blk-paragraph-0031",
-        "blk-figure-0032",
-        "blk-list_item-0033",
         "blk-paragraph-0034",
-        "blk-paragraph-0035",
+        "blk-figure-0035",
         "blk-paragraph-0036",
-        "blk-paragraph-0037",
-        "blk-figure-0038",
+        "blk-figure-0037",
+        "blk-list_item-0038",
         "blk-paragraph-0039",
-        "blk-figure-0040",
+        "blk-paragraph-0040",
         "blk-paragraph-0041",
         "blk-paragraph-0042",
-        "blk-list_item-0043",
-        "blk-list_item-0044",
-        "blk-list_item-0045",
-        "blk-list_item-0046",
-        "blk-list_item-0047",
-        "blk-list_item-0048",
-        "blk-paragraph-0049",
-        "blk-figure-0050",
-        "blk-paragraph-0051",
-        "blk-paragraph-0052",
-        "blk-paragraph-0053"
+        "blk-figure-0043",
+        "blk-paragraph-0044",
+        "blk-paragraph-0045",
+        "blk-figure-0046",
+        "blk-paragraph-0047",
+        "blk-paragraph-0048",
+        "blk-list_item-0049",
+        "blk-list_item-0050",
+        "blk-list_item-0051",
+        "blk-list_item-0052",
+        "blk-list_item-0053",
+        "blk-list_item-0054",
+        "blk-paragraph-0055",
+        "blk-figure-0056",
+        "blk-paragraph-0057",
+        "blk-paragraph-0058",
+        "blk-paragraph-0059"
       ],
       "children": [],
       "source_spans": [
@@ -372,7 +394,7 @@
             "width": 146.06,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -382,19 +404,19 @@
       "title": "3.3 Solving the persistent naming problem and the name matching problem",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0054",
-        "blk-paragraph-0055",
-        "blk-list_item-0056",
-        "blk-list_item-0057",
-        "blk-list_item-0058",
-        "blk-list_item-0059",
-        "blk-list_item-0060",
-        "blk-list_item-0061",
-        "blk-paragraph-0062",
-        "blk-figure-0063",
-        "blk-figure-0064",
-        "blk-paragraph-0065",
-        "blk-paragraph-0066"
+        "blk-paragraph-0060",
+        "blk-paragraph-0061",
+        "blk-list_item-0062",
+        "blk-list_item-0063",
+        "blk-list_item-0064",
+        "blk-list_item-0065",
+        "blk-list_item-0066",
+        "blk-list_item-0067",
+        "blk-paragraph-0068",
+        "blk-figure-0069",
+        "blk-figure-0070",
+        "blk-paragraph-0071",
+        "blk-paragraph-0072"
       ],
       "children": [],
       "source_spans": [
@@ -408,7 +430,7 @@
             "width": 232.12,
             "height": 20.42
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -418,13 +440,13 @@
       "title": "3.4 Interpretation of the design history",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0067",
-        "blk-paragraph-0068",
-        "blk-figure-0070",
-        "blk-figure-0071",
-        "blk-paragraph-0072",
         "blk-paragraph-0073",
-        "blk-paragraph-0074"
+        "blk-paragraph-0074",
+        "blk-figure-0076",
+        "blk-figure-0077",
+        "blk-paragraph-0078",
+        "blk-paragraph-0079",
+        "blk-paragraph-0080"
       ],
       "children": [],
       "source_spans": [
@@ -438,7 +460,7 @@
             "width": 159.89,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -448,12 +470,12 @@
       "title": "3.5 Building the knowledge base",
       "level": 2,
       "block_ids": [
-        "blk-paragraph-0075",
-        "blk-paragraph-0076",
-        "blk-figure-0077",
-        "blk-paragraph-0078",
-        "blk-paragraph-0079",
-        "blk-paragraph-0080"
+        "blk-paragraph-0081",
+        "blk-paragraph-0082",
+        "blk-figure-0083",
+        "blk-paragraph-0084",
+        "blk-paragraph-0085",
+        "blk-paragraph-0086"
       ],
       "children": [],
       "source_spans": [
@@ -467,7 +489,7 @@
             "width": 134.81,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -477,11 +499,11 @@
       "title": "3.6 Correcting CAD model errors",
       "level": 2,
       "block_ids": [
-        "blk-figure-0081",
-        "blk-paragraph-0082",
-        "blk-paragraph-0083",
-        "blk-paragraph-0084",
-        "blk-figure-0085"
+        "blk-figure-0087",
+        "blk-paragraph-0088",
+        "blk-paragraph-0089",
+        "blk-paragraph-0090",
+        "blk-figure-0091"
       ],
       "children": [],
       "source_spans": [
@@ -495,7 +517,7 @@
             "width": 139.98,
             "height": 8.46
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -517,7 +539,7 @@
             "width": 12.65,
             "height": 3.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -527,7 +549,7 @@
       "title": "9 PartBody",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0086"
+        "blk-paragraph-0092"
       ],
       "children": [],
       "source_spans": [
@@ -541,7 +563,7 @@
             "width": 16.65,
             "height": 4.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -551,22 +573,22 @@
       "title": "4 Implementation and experiment",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0087",
-        "blk-paragraph-0088",
-        "blk-paragraph-0089",
-        "blk-paragraph-0090",
-        "blk-paragraph-0091",
-        "blk-figure-0092",
         "blk-paragraph-0093",
         "blk-paragraph-0094",
         "blk-paragraph-0095",
         "blk-paragraph-0096",
         "blk-paragraph-0097",
         "blk-figure-0098",
-        "blk-list_item-0099",
-        "blk-figure-0100",
+        "blk-paragraph-0099",
+        "blk-paragraph-0100",
         "blk-paragraph-0101",
-        "blk-paragraph-0102"
+        "blk-paragraph-0102",
+        "blk-paragraph-0103",
+        "blk-figure-0104",
+        "blk-list_item-0105",
+        "blk-figure-0106",
+        "blk-paragraph-0107",
+        "blk-paragraph-0108"
       ],
       "children": [],
       "source_spans": [
@@ -580,7 +602,7 @@
             "width": 148.99,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -590,9 +612,9 @@
       "title": "5 Conclusion",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0103",
-        "blk-paragraph-0104",
-        "blk-paragraph-0105"
+        "blk-paragraph-0109",
+        "blk-paragraph-0110",
+        "blk-paragraph-0111"
       ],
       "children": [],
       "source_spans": [
@@ -606,7 +628,7 @@
             "width": 58.1,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -616,7 +638,7 @@
       "title": "Acknowledgements",
       "level": 1,
       "block_ids": [
-        "blk-paragraph-0106"
+        "blk-paragraph-0112"
       ],
       "children": [],
       "source_spans": [
@@ -630,7 +652,7 @@
             "width": 82.53,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     },
@@ -640,9 +662,30 @@
       "title": "References",
       "level": 1,
       "block_ids": [
-        "blk-reference-0107",
-        "blk-reference-0108",
-        "blk-reference-0109"
+        "blk-reference-0113",
+        "blk-reference-0114",
+        "blk-reference-0115",
+        "blk-reference-0116",
+        "blk-reference-0117",
+        "blk-reference-0118",
+        "blk-reference-0119",
+        "blk-reference-0120",
+        "blk-reference-0121",
+        "blk-reference-0122",
+        "blk-reference-0123",
+        "blk-reference-0124",
+        "blk-reference-0125",
+        "blk-reference-0126",
+        "blk-reference-0127",
+        "blk-reference-0128",
+        "blk-reference-0129",
+        "blk-reference-0130",
+        "blk-reference-0131",
+        "blk-reference-0132",
+        "blk-reference-0133",
+        "blk-reference-0134",
+        "blk-reference-0135",
+        "blk-reference-0136"
       ],
       "children": [],
       "source_spans": [
@@ -656,7 +699,7 @@
             "width": 46.64,
             "height": 8.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ]
     }
@@ -669,7 +712,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "For users of CAD data, few things are as frustrating as receiving unusable, poor quality data. Users often waste time fixing or rebuilding such data from scratch on the basis of paper drawings. While previous studies use the boundary representation (B-Rep) of CAD models, we propose an approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule-based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models without translating them to a B-Rep shape, and it also preserves parametric information."
+            "text": "approach to repairing CAD model errors that is based on the design history. CAD model errors can be corrected by an interdependency analysis of the feature commands or of the parametric data of each feature command, as well as by a reconstruction of the feature commands through rule- based reasoning of an expert system. Unlike other correction methods based on B-Rep models, our method repairs parametric feature models"
           }
         ]
       },
@@ -677,21 +720,45 @@
         {
           "page": 1,
           "bbox": {
-            "x0": 42.52,
-            "y0": 283.89,
-            "x1": 562.53,
-            "y1": 359.52,
-            "width": 520.01,
-            "height": 75.63
+            "x0": 40.9,
+            "y0": 303.83,
+            "x1": 563.9,
+            "y1": 315.64,
+            "width": 523.0,
+            "height": 11.81
           },
-          "engine": "docling"
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 40.9,
+            "y0": 315.07,
+            "x1": 563.9,
+            "y1": 326.87,
+            "width": 523.0,
+            "height": 11.81
+          },
+          "engine": "mathpix"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 40.9,
+            "y0": 326.3,
+            "x1": 563.9,
+            "y1": 338.11,
+            "width": 523.0,
+            "height": 11.81
+          },
+          "engine": "mathpix"
         }
       ],
       "alternates": [],
       "review": {
-        "status": "edited",
+        "status": "unreviewed",
         "risk": "medium",
-        "notes": "Recovered original abstract from PDF-derived source text; replaced malformed extraction spill."
+        "notes": ""
       }
     },
     {
@@ -716,7 +783,7 @@
             "width": 251.07,
             "height": 93.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -748,7 +815,7 @@
             "width": 251.06,
             "height": 141.75
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -796,7 +863,7 @@
             "width": 161.43,
             "height": 8.77
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -813,7 +880,23 @@
         "spans": [
           {
             "kind": "text",
-            "text": "average of 4.9 h solving each poor-quality problem. As for the cost of imperfect interoperability, the members of the US automotive supply chain reportedly spend at least $1 billion a year [1]. Similarly, in the Japanese automotive industry, which has as many as 250,000 product data exchanges a year, the cost of these exchanges is approximately $68 million a year, and 1.5 h of lead time are lost whenever one item of poor quality or unusable data needs to be repaired or replaced [2]."
+            "text": "average of 4.9 h solving each poor-quality problem. As for the cost of imperfect interoperability, the members of the US automotive supply chain reportedly spend at least "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-3"
+          },
+          {
+            "kind": "text",
+            "text": " billion a year [1]. Similarly, in the Japanese automotive industry, which has as many as 250,000 product data exchanges a year, the cost of these exchanges is approximately "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-4"
+          },
+          {
+            "kind": "text",
+            "text": " million a year, and 1.5 h of lead time are lost whenever one item of poor quality or unusable data needs to be repaired or replaced [2]."
           }
         ]
       },
@@ -828,7 +911,7 @@
             "width": 251.02,
             "height": 94.3
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -860,7 +943,7 @@
             "width": 251.05,
             "height": 167.66
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -877,7 +960,7 @@
         "spans": [
           {
             "kind": "text",
-            "text": "To repair errors, we now propose a method that can reconstruct the design history of a CAD model. The design history refers to the chronological order in which a designer created the various features of a 3D shape. In a CAD system, there are different ways of defining a shape. Thus, the design includes the geometry-controlling parameters, the geometric design features, the feature information, the design history tree, the parameterization data, and the constraints. We therefore analyzed several 3D parametric models from automotive companies to define the relationship between the various feature commands, as well as the relationship between the parametric data of each feature. We also defined a design history schema in order to structure the design history information extracted from a 3D model created in a commercial CAD system. We then used the schema to repair the CAD model through the rule reasoning of the design history. Finally, to verify the proposed method, we developed a CAD model correction system called Q-Raider, which can repair the following six types of CAD model errors: tiny faces, narrow regions, non-tangent faces, narrow steps, sharp face angles, and narrow spaces."
+            "text": "To repair errors, we now propose a method that can reconstruct the design history of a CAD model. The design history refers to the chronological order in which a designer created the various features of a 3D shape. In a CAD system, there are different ways of defining a shape. Thus, the design includes the geometry-controlling parameters, the geometric"
           }
         ]
       },
@@ -892,19 +975,7 @@
             "width": 251.03,
             "height": 69.86
           },
-          "engine": "docling"
-        },
-        {
-          "page": 2,
-          "bbox": {
-            "x0": 32.71,
-            "y0": 70.58,
-            "x1": 283.78,
-            "y1": 246.63,
-            "width": 251.07,
-            "height": 176.05
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -916,6 +987,180 @@
     },
     {
       "id": "blk-paragraph-0008",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Computer-Aided Design 38 (2006) 627-640"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 231.02,
+            "y0": 102.46,
+            "x1": 374.11,
+            "y1": 109.41,
+            "width": 143.09,
+            "height": 6.95
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0009",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Repairing CAD model errors based on the design history"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 105.96,
+            "y0": 149.47,
+            "x1": 499.09,
+            "y1": 164.25,
+            "width": 393.13,
+            "height": 14.78
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-display_equation_ref-0010",
+      "type": "display_equation_ref",
+      "content": {
+        "math_id": "eq-1"
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 202.11,
+            "y0": 177.36,
+            "x1": 402.98,
+            "y1": 191.58,
+            "width": 200.87,
+            "height": 14.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-list_item-0011",
+      "type": "list_item",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "a Division of Industrial and Information Systems engineering, Ajou University, San 5, Wonchun-dong, Yeongtong-gu, Suwon, Kyungki-do 443-749, South Korea"
+          }
+        ],
+        "marker": null,
+        "ordered": false,
+        "depth": 1
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 43.31,
+            "y0": 200.93,
+            "x1": 561.84,
+            "y1": 209.58,
+            "width": 518.53,
+            "height": 8.65
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0012",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-5"
+          },
+          {
+            "kind": "text",
+            "text": " Department of Mechanical engineering, Korea Advanced Institute of Science and Technology, 373-1, Gusong-Dong, Yusong-Gu, Daejeon 305-701, South Korea design features, the feature information, the design history tree, the parameterization data, and the constraints. We therefore analyzed several 3D parametric models from automotive companies to define the relationship between the various feature commands, as well as the relationship between the parametric data of each feature. We also defined a design history schema in order to structure the design history information extracted from a 3D model created in a commercial CAD system. We then used the schema to repair the CAD model through the rule reasoning of the design history. Finally, to verify the proposed method, we developed a CAD model correction system called Q-Raider, which can repair the following six types of CAD model errors: tiny faces, narrow regions, non-tangent faces, narrow steps, sharp face angles, and narrow spaces."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 42.52,
+            "y0": 210.91,
+            "x1": 562.63,
+            "y1": 219.56,
+            "width": 520.11,
+            "height": 8.65
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 32.71,
+            "y0": 70.58,
+            "x1": 283.78,
+            "y1": 246.63,
+            "width": 251.07,
+            "height": 176.05
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0013",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -936,7 +1181,7 @@
             "width": 251.06,
             "height": 176.11
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -947,7 +1192,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0009",
+      "id": "blk-paragraph-0014",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -968,7 +1213,7 @@
             "width": 251.04,
             "height": 92.37
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -979,7 +1224,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0010",
+      "id": "blk-paragraph-0015",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -989,11 +1234,11 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-3"
+            "target_id": "math-inline-6"
           },
           {
             "kind": "text",
-            "text": " discontinuity on surfaces (that is, the non tangent angle between adjacent surface patches), Volpin et al. [7] simplified the original free-form surface model: they first divided the regions on the basis of curvature variation; next, they generated a boundary-conforming finite element quad rilateral mesh of the regions; and, finally, they fitted a smooth surface over the quadrilateral mesh."
+            "text": " discontinuity on surfaces (that is, the nontangent angle between adjacent surface patches), Volpin et al. [7] simplified the original free-form surface model: they first divided the regions on the basis of curvature variation; next, they generated a boundary-conforming finite element quadrilateral mesh of the regions; and, finally, they fitted a smooth surface over the quadrilateral mesh."
           }
         ]
       },
@@ -1008,7 +1253,7 @@
             "width": 251.05,
             "height": 164.09
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1019,7 +1264,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0011",
+      "id": "blk-paragraph-0016",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1040,7 +1285,7 @@
             "width": 251.01,
             "height": 56.54
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1051,7 +1296,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0012",
+      "id": "blk-paragraph-0017",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1072,7 +1317,7 @@
             "width": 251.03,
             "height": 68.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1083,7 +1328,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0013",
+      "id": "blk-paragraph-0018",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1104,7 +1349,7 @@
             "width": 251.09,
             "height": 152.18
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1115,7 +1360,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0014",
+      "id": "blk-paragraph-0019",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1136,7 +1381,7 @@
             "width": 251.03,
             "height": 68.44
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1147,7 +1392,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0015",
+      "id": "blk-paragraph-0020",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1168,7 +1413,7 @@
             "width": 251.03,
             "height": 80.41
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1179,7 +1424,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0016",
+      "id": "blk-paragraph-0021",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1200,7 +1445,7 @@
             "width": 251.02,
             "height": 80.41
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1211,17 +1456,17 @@
       }
     },
     {
-      "id": "blk-paragraph-0017",
+      "id": "blk-paragraph-0022",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "Vergeest et al. [25] endeavored to anticipate the feasibility of interoperability in an approach that systematically analyzes and models the requirements of a shared infrastructure. An inherent incompatibility between different CAx models exists in CAD translations due to system-specific modeling function alities. For example, the hole creation command of Pro/E cannot be directly translated to CATIA because Pro/E provides more diverse ways to generate hole features than CATIA. Such incompatible modeling commands can be mapped through "
+            "text": "Vergeest et al. [25] endeavored to anticipate the feasibility of interoperability in an approach that systematically analyzes and models the requirements of a shared infrastructure. An inherent incompatibility between different CAx models exists in CAD translations due to system-specific modeling functionalities. For example, the hole creation command of Pro/E cannot be directly translated to CATIA because Pro/E provides more diverse ways to generate hole features than CATIA. Such incompatible modeling commands can be mapped through "
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-4"
+            "target_id": "math-inline-7"
           },
           {
             "kind": "text",
@@ -1229,7 +1474,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-5"
+            "target_id": "math-inline-8"
           },
           {
             "kind": "text",
@@ -1248,7 +1493,7 @@
             "width": 251.04,
             "height": 116.29
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1259,7 +1504,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0018",
+      "id": "blk-paragraph-0023",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1280,7 +1525,7 @@
             "width": 251.07,
             "height": 116.29
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1291,7 +1536,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0019",
+      "id": "blk-paragraph-0024",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1312,7 +1557,7 @@
             "width": 251.06,
             "height": 140.16
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1323,7 +1568,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0020",
+      "id": "blk-paragraph-0025",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1344,7 +1589,7 @@
             "width": 251.05,
             "height": 56.48
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1355,7 +1600,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0021",
+      "id": "blk-paragraph-0026",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1365,7 +1610,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-6"
+            "target_id": "math-inline-9"
           },
           {
             "kind": "text",
@@ -1384,7 +1629,7 @@
             "width": 251.06,
             "height": 92.38
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 3,
@@ -1396,7 +1641,7 @@
             "width": 250.99,
             "height": 45.26
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1407,7 +1652,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0022",
+      "id": "blk-paragraph-0027",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1428,7 +1673,7 @@
             "width": 251.04,
             "height": 179.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1439,7 +1684,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0023",
+      "id": "blk-paragraph-0028",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1460,7 +1705,7 @@
             "width": 251.06,
             "height": 57.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1471,7 +1716,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0024",
+      "id": "blk-paragraph-0029",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1492,7 +1737,7 @@
             "width": 251.03,
             "height": 118.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1503,7 +1748,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0025",
+      "id": "blk-paragraph-0030",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1513,7 +1758,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-7"
+            "target_id": "math-inline-10"
           },
           {
             "kind": "text",
@@ -1521,7 +1766,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-8"
+            "target_id": "math-inline-11"
           },
           {
             "kind": "text",
@@ -1529,7 +1774,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-9"
+            "target_id": "math-inline-12"
           },
           {
             "kind": "text",
@@ -1537,7 +1782,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-10"
+            "target_id": "math-inline-13"
           },
           {
             "kind": "text",
@@ -1545,7 +1790,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-11"
+            "target_id": "math-inline-14"
           },
           {
             "kind": "text",
@@ -1553,7 +1798,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-12"
+            "target_id": "math-inline-15"
           },
           {
             "kind": "text",
@@ -1572,7 +1817,7 @@
             "width": 251.03,
             "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1583,7 +1828,7 @@
       }
     },
     {
-      "id": "blk-figure-0026",
+      "id": "blk-figure-0031",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-1"
@@ -1599,7 +1844,7 @@
             "width": 206.98,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1610,7 +1855,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0027",
+      "id": "blk-paragraph-0032",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1631,7 +1876,7 @@
             "width": 251.01,
             "height": 44.63
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1642,7 +1887,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0028",
+      "id": "blk-paragraph-0033",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1663,7 +1908,7 @@
             "width": 251.06,
             "height": 20.66
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1674,7 +1919,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0029",
+      "id": "blk-paragraph-0034",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -1695,7 +1940,7 @@
             "width": 251.01,
             "height": 33.3
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1706,7 +1951,7 @@
       }
     },
     {
-      "id": "blk-figure-0030",
+      "id": "blk-figure-0035",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-2"
@@ -1722,7 +1967,7 @@
             "width": 255.81,
             "height": 6.96
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1733,13 +1978,13 @@
       }
     },
     {
-      "id": "blk-paragraph-0031",
+      "id": "blk-paragraph-0036",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "<xs: element name=\"Pad\"> - <xs: complexType> - <xs: sequence> - <xs: element name=\"profile_curves\" maxOccurs=\"unbounded\"> - <xs: complexType> use=\"required\" > use=\"required\" > < xs: complexType> < xs: element> <xs: element name=\"second_length\" type=\"xs:double\" > <xs: element name=\"reference_plane\" type=\"xs:string\" > exs: element name=\"own_direction\" type=\"direction\" minOccurs=\"0\" > < xs: sequence> <xs: attribute name=\"result_solid\" type=\"xs:string\" use=\"required\" > < xs: complexType> < xs: element>"
+            "text": "<xs: element name=\"Pad\"> - <xs: complexType> - <xs: sequence› - <xs: element name=\"profile_curves\" maxOccurs=\"unbounded\"> - <xs: complexType> use=\"required\" > use=\"required\" > < xs: complexType> < xs: element> <xs: element name=\"second_length\" type=\"xs:double\" > <xs: element name=\"reference_plane\" type=\"xs:string\" > exs: element name=\"own_direction\" type=\"direction\" minOccurs=\"0\" > < xs: sequence> <xs: attribute name=\"result_solid\" type=\"xs:string\" use=\"required\" > < xs: complexType> < xs: element>"
           }
         ]
       },
@@ -1754,7 +1999,7 @@
             "width": 71.9,
             "height": 5.34
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1766,7 +2011,7 @@
             "width": 55.92,
             "height": 6.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1778,7 +2023,7 @@
             "width": 46.61,
             "height": 4.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1790,7 +2035,7 @@
             "width": 105.86,
             "height": 6.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1802,7 +2047,7 @@
             "width": 74.57,
             "height": 6.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1814,7 +2059,7 @@
             "width": 56.59,
             "height": 5.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1826,7 +2071,7 @@
             "width": 50.6,
             "height": 6.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1838,7 +2083,7 @@
             "width": 50.6,
             "height": 6.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1850,7 +2095,7 @@
             "width": 53.26,
             "height": 6.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1862,19 +2107,19 @@
             "width": 39.94,
             "height": 6.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
           "bbox": {
-            "x0": 52.55,
-            "y0": 179.38,
-            "x1": 213.12,
-            "y1": 189.37,
-            "width": 160.57,
-            "height": 9.99
+            "x0": 52.6,
+            "y0": 180.67,
+            "x1": 213.05,
+            "y1": 188.0,
+            "width": 160.45,
+            "height": 7.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1886,7 +2131,7 @@
             "width": 162.45,
             "height": 7.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1898,7 +2143,7 @@
             "width": 147.81,
             "height": 6.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1910,7 +2155,7 @@
             "width": 48.61,
             "height": 6.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1922,31 +2167,31 @@
             "width": 43.27,
             "height": 5.34
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
           "bbox": {
             "x0": 47.27,
             "y0": 215.33,
-            "x1": 189.75,
+            "x1": 190.42,
             "y1": 222.0,
-            "width": 142.48,
+            "width": 143.15,
             "height": 6.67
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
           "bbox": {
-            "x0": 53.26,
-            "y0": 222.0,
+            "x0": 52.6,
+            "y0": 222.67,
             "x1": 103.2,
             "y1": 228.0,
-            "width": 49.94,
-            "height": 6.0
+            "width": 50.6,
+            "height": 5.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -1958,19 +2203,19 @@
             "width": 53.93,
             "height": 6.0
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
           "bbox": {
-            "x0": 36.62,
+            "x0": 37.28,
             "y0": 236.0,
             "x1": 75.9,
             "y1": 241.33,
-            "width": 39.28,
+            "width": 38.62,
             "height": 5.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -1981,7 +2226,7 @@
       }
     },
     {
-      "id": "blk-figure-0032",
+      "id": "blk-figure-0037",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-3"
@@ -1997,7 +2242,7 @@
             "width": 169.01,
             "height": 6.96
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2008,7 +2253,7 @@
       }
     },
     {
-      "id": "blk-list_item-0033",
+      "id": "blk-list_item-0038",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2032,7 +2277,7 @@
             "width": 134.98,
             "height": 6.94
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2044,7 +2289,7 @@
             "width": 125.64,
             "height": 6.94
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 5,
@@ -2056,7 +2301,7 @@
             "width": 129.4,
             "height": 6.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2067,7 +2312,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0034",
+      "id": "blk-paragraph-0039",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2088,7 +2333,7 @@
             "width": 251.06,
             "height": 20.88
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2099,7 +2344,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0035",
+      "id": "blk-paragraph-0040",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2109,7 +2354,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-13"
+            "target_id": "math-inline-16"
           },
           {
             "kind": "text",
@@ -2117,7 +2362,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-14"
+            "target_id": "math-inline-17"
           },
           {
             "kind": "text",
@@ -2136,7 +2381,7 @@
             "width": 251.07,
             "height": 166.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2147,7 +2392,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0036",
+      "id": "blk-paragraph-0041",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2168,7 +2413,7 @@
             "width": 251.07,
             "height": 179.05
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2179,7 +2424,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0037",
+      "id": "blk-paragraph-0042",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2200,7 +2445,7 @@
             "width": 251.0,
             "height": 45.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2211,7 +2456,7 @@
       }
     },
     {
-      "id": "blk-figure-0038",
+      "id": "blk-figure-0043",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-4"
@@ -2227,7 +2472,7 @@
             "width": 197.03,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2238,7 +2483,39 @@
       }
     },
     {
-      "id": "blk-paragraph-0039",
+      "id": "blk-paragraph-0044",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "F4. 1 4.2"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 11.41,
+            "y0": 283.99,
+            "x1": 41.34,
+            "y1": 304.21,
+            "width": 29.93,
+            "height": 20.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0045",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2259,7 +2536,7 @@
             "width": 214.35,
             "height": 222.09
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2270,7 +2547,7 @@
       }
     },
     {
-      "id": "blk-figure-0040",
+      "id": "blk-figure-0046",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-5"
@@ -2286,7 +2563,7 @@
             "width": 225.91,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2297,7 +2574,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0041",
+      "id": "blk-paragraph-0047",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2318,7 +2595,7 @@
             "width": 251.03,
             "height": 21.0
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2329,7 +2606,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0042",
+      "id": "blk-paragraph-0048",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2350,7 +2627,7 @@
             "width": 251.05,
             "height": 45.59
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2361,7 +2638,7 @@
       }
     },
     {
-      "id": "blk-list_item-0043",
+      "id": "blk-list_item-0049",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2385,7 +2662,7 @@
             "width": 249.06,
             "height": 34.38
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2396,7 +2673,7 @@
       }
     },
     {
-      "id": "blk-list_item-0044",
+      "id": "blk-list_item-0050",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2420,7 +2697,7 @@
             "width": 249.05,
             "height": 34.39
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2431,7 +2708,7 @@
       }
     },
     {
-      "id": "blk-list_item-0045",
+      "id": "blk-list_item-0051",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2455,7 +2732,7 @@
             "width": 249.04,
             "height": 34.38
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2466,7 +2743,7 @@
       }
     },
     {
-      "id": "blk-list_item-0046",
+      "id": "blk-list_item-0052",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2490,7 +2767,7 @@
             "width": 249.04,
             "height": 22.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2501,7 +2778,7 @@
       }
     },
     {
-      "id": "blk-list_item-0047",
+      "id": "blk-list_item-0053",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2525,7 +2802,7 @@
             "width": 249.06,
             "height": 22.08
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2536,7 +2813,7 @@
       }
     },
     {
-      "id": "blk-list_item-0048",
+      "id": "blk-list_item-0054",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2560,7 +2837,7 @@
             "width": 226.77,
             "height": 9.77
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2571,7 +2848,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0049",
+      "id": "blk-paragraph-0055",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2592,7 +2869,7 @@
             "width": 251.04,
             "height": 45.6
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2603,7 +2880,7 @@
       }
     },
     {
-      "id": "blk-figure-0050",
+      "id": "blk-figure-0056",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-6"
@@ -2619,7 +2896,7 @@
             "width": 158.6,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2630,7 +2907,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0051",
+      "id": "blk-paragraph-0057",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2651,7 +2928,7 @@
             "width": 251.05,
             "height": 92.37
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2662,7 +2939,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0052",
+      "id": "blk-paragraph-0058",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2683,7 +2960,7 @@
             "width": 251.07,
             "height": 152.18
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2694,7 +2971,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0053",
+      "id": "blk-paragraph-0059",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2715,7 +2992,7 @@
             "width": 251.02,
             "height": 44.58
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2726,7 +3003,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0054",
+      "id": "blk-paragraph-0060",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2747,7 +3024,7 @@
             "width": 251.02,
             "height": 20.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2758,7 +3035,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0055",
+      "id": "blk-paragraph-0061",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -2779,7 +3056,7 @@
             "width": 251.07,
             "height": 118.45
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2790,7 +3067,7 @@
       }
     },
     {
-      "id": "blk-list_item-0056",
+      "id": "blk-list_item-0062",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2814,7 +3091,7 @@
             "width": 241.02,
             "height": 9.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2825,7 +3102,7 @@
       }
     },
     {
-      "id": "blk-list_item-0057",
+      "id": "blk-list_item-0063",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2849,7 +3126,7 @@
             "width": 249.07,
             "height": 21.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2860,7 +3137,7 @@
       }
     },
     {
-      "id": "blk-list_item-0058",
+      "id": "blk-list_item-0064",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2884,7 +3161,7 @@
             "width": 237.0,
             "height": 9.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2895,7 +3172,7 @@
       }
     },
     {
-      "id": "blk-list_item-0059",
+      "id": "blk-list_item-0065",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2919,7 +3196,7 @@
             "width": 249.03,
             "height": 21.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2930,7 +3207,7 @@
       }
     },
     {
-      "id": "blk-list_item-0060",
+      "id": "blk-list_item-0066",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2954,7 +3231,7 @@
             "width": 249.04,
             "height": 21.97
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -2965,7 +3242,7 @@
       }
     },
     {
-      "id": "blk-list_item-0061",
+      "id": "blk-list_item-0067",
       "type": "list_item",
       "content": {
         "spans": [
@@ -2989,7 +3266,7 @@
             "width": 133.71,
             "height": 9.78
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3000,7 +3277,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0062",
+      "id": "blk-paragraph-0068",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3021,7 +3298,7 @@
             "width": 251.05,
             "height": 94.02
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3032,7 +3309,7 @@
       }
     },
     {
-      "id": "blk-figure-0063",
+      "id": "blk-figure-0069",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-7"
@@ -3048,7 +3325,7 @@
             "width": 271.66,
             "height": 6.96
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3059,7 +3336,7 @@
       }
     },
     {
-      "id": "blk-figure-0064",
+      "id": "blk-figure-0070",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-8"
@@ -3075,7 +3352,7 @@
             "width": 190.44,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3086,7 +3363,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0065",
+      "id": "blk-paragraph-0071",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3107,7 +3384,7 @@
             "width": 250.97,
             "height": 20.99
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3118,17 +3395,17 @@
       }
     },
     {
-      "id": "blk-paragraph-0066",
+      "id": "blk-paragraph-0072",
       "type": "paragraph",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "There are two solutions for the name-matching problem: a global matching method and a local matching method [16]. To find the topological entity of a new model that corresponds to a selected topological entity of an old model (1: "
+            "text": "There are two solutions for the name-matching problem: a global matching method and a local matching method [16]. To find the topological entity of a new model that corresponds to a selected topological entity of an old model ( "
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-15"
+            "target_id": "math-inline-18"
           },
           {
             "kind": "text",
@@ -3136,7 +3413,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-16"
+            "target_id": "math-inline-19"
           },
           {
             "kind": "text",
@@ -3155,7 +3432,7 @@
             "width": 251.06,
             "height": 156.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3166,7 +3443,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0067",
+      "id": "blk-paragraph-0073",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3187,7 +3464,7 @@
             "width": 251.08,
             "height": 128.2
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3198,7 +3475,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0068",
+      "id": "blk-paragraph-0074",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3227,7 +3504,7 @@
             "width": 251.02,
             "height": 104.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 8,
@@ -3239,7 +3516,7 @@
             "width": 251.02,
             "height": 32.61
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3250,7 +3527,7 @@
       }
     },
     {
-      "id": "blk-figure-0070",
+      "id": "blk-figure-0076",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-9"
@@ -3266,7 +3543,7 @@
             "width": 188.32,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3277,7 +3554,7 @@
       }
     },
     {
-      "id": "blk-figure-0071",
+      "id": "blk-figure-0077",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-10"
@@ -3293,7 +3570,7 @@
             "width": 251.03,
             "height": 16.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3304,7 +3581,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0072",
+      "id": "blk-paragraph-0078",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3325,7 +3602,7 @@
             "width": 251.02,
             "height": 33.01
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3336,7 +3613,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0073",
+      "id": "blk-paragraph-0079",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3357,7 +3634,7 @@
             "width": 251.05,
             "height": 105.92
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3368,7 +3645,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0074",
+      "id": "blk-paragraph-0080",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3389,7 +3666,7 @@
             "width": 251.05,
             "height": 152.8
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3400,7 +3677,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0075",
+      "id": "blk-paragraph-0081",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3421,7 +3698,7 @@
             "width": 251.08,
             "height": 80.74
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3432,7 +3709,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0076",
+      "id": "blk-paragraph-0082",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3453,7 +3730,7 @@
             "width": 251.03,
             "height": 20.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3464,7 +3741,7 @@
       }
     },
     {
-      "id": "blk-figure-0077",
+      "id": "blk-figure-0083",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-11"
@@ -3480,7 +3757,7 @@
             "width": 245.38,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3491,7 +3768,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0078",
+      "id": "blk-paragraph-0084",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3512,7 +3789,7 @@
             "width": 251.04,
             "height": 117.03
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3523,7 +3800,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0079",
+      "id": "blk-paragraph-0085",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3544,7 +3821,7 @@
             "width": 251.06,
             "height": 117.03
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3555,7 +3832,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0080",
+      "id": "blk-paragraph-0086",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3576,7 +3853,7 @@
             "width": 251.01,
             "height": 20.71
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3587,7 +3864,7 @@
       }
     },
     {
-      "id": "blk-figure-0081",
+      "id": "blk-figure-0087",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-12"
@@ -3603,7 +3880,7 @@
             "width": 236.82,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3614,7 +3891,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0082",
+      "id": "blk-paragraph-0088",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3635,7 +3912,7 @@
             "width": 251.02,
             "height": 57.9
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3646,7 +3923,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0083",
+      "id": "blk-paragraph-0089",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3667,7 +3944,7 @@
             "width": 251.01,
             "height": 82.51
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3678,7 +3955,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0084",
+      "id": "blk-paragraph-0090",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3699,7 +3976,7 @@
             "width": 251.02,
             "height": 119.47
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3710,7 +3987,7 @@
       }
     },
     {
-      "id": "blk-figure-0085",
+      "id": "blk-figure-0091",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-13"
@@ -3726,7 +4003,7 @@
             "width": 89.72,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3737,7 +4014,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0086",
+      "id": "blk-paragraph-0092",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3758,7 +4035,7 @@
             "width": 45.93,
             "height": 7.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3769,7 +4046,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0087",
+      "id": "blk-paragraph-0093",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3790,7 +4067,7 @@
             "width": 251.07,
             "height": 104.33
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3801,7 +4078,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0088",
+      "id": "blk-paragraph-0094",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3822,7 +4099,7 @@
             "width": 251.05,
             "height": 104.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3833,7 +4110,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0089",
+      "id": "blk-paragraph-0095",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3854,7 +4131,7 @@
             "width": 251.02,
             "height": 44.52
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3865,7 +4142,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0090",
+      "id": "blk-paragraph-0096",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3886,7 +4163,7 @@
             "width": 251.03,
             "height": 20.65
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3897,7 +4174,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0091",
+      "id": "blk-paragraph-0097",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3918,7 +4195,7 @@
             "width": 251.06,
             "height": 56.48
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3929,7 +4206,7 @@
       }
     },
     {
-      "id": "blk-figure-0092",
+      "id": "blk-figure-0098",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-14"
@@ -3945,7 +4222,7 @@
             "width": 193.94,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3956,7 +4233,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0093",
+      "id": "blk-paragraph-0099",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -3977,7 +4254,7 @@
             "width": 251.02,
             "height": 57.22
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -3988,7 +4265,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0094",
+      "id": "blk-paragraph-0100",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4009,7 +4286,7 @@
             "width": 251.02,
             "height": 81.54
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4020,7 +4297,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0095",
+      "id": "blk-paragraph-0101",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4041,7 +4318,7 @@
             "width": 251.04,
             "height": 93.68
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4052,7 +4329,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0096",
+      "id": "blk-paragraph-0102",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4062,7 +4339,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-17"
+            "target_id": "math-inline-20"
           },
           {
             "kind": "text",
@@ -4070,7 +4347,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-18"
+            "target_id": "math-inline-21"
           },
           {
             "kind": "text",
@@ -4089,7 +4366,7 @@
             "width": 251.11,
             "height": 117.94
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4100,7 +4377,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0097",
+      "id": "blk-paragraph-0103",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4110,7 +4387,7 @@
           },
           {
             "kind": "inline_math_ref",
-            "target_id": "math-inline-19"
+            "target_id": "math-inline-22"
           },
           {
             "kind": "text",
@@ -4129,7 +4406,7 @@
             "width": 251.05,
             "height": 93.62
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4140,7 +4417,7 @@
       }
     },
     {
-      "id": "blk-figure-0098",
+      "id": "blk-figure-0104",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-15"
@@ -4156,7 +4433,7 @@
             "width": 169.56,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4167,13 +4444,13 @@
       }
     },
     {
-      "id": "blk-list_item-0099",
+      "id": "blk-list_item-0105",
       "type": "list_item",
       "content": {
         "spans": [
           {
             "kind": "text",
-            "text": "<Body body_name=\"Body.1\"> + ‹Pad result_solid=\"Pad.3\"> + <Pattern result_solid=\"CircPattern.1'> < Body> + Body body name=\"Body.3\"> + ‹Body body_name= Body.25 <Body body_name=\"Body.4\"> - <Shaft result_solid=\"Shaft.3\"> < Shaft> s Body2.- + <Pad result_solid=\"Pad.1\"> «Body body name= Clutchdisk's - <Pad result_solid=\"Pad.2\"> parent_name=\"Clutchdisk\" > <profile_curves profile_name=\"Sketch.2\" cfirst_length>10.000c first_length> csecond_length>0.000c second_length> < Pad> - <Boolean_Op result_solid=\"Remove.3\"> <boolean_type>Remove< boolean_type> < Boolean_Op> s Body?.. - ¿Body body_name=\"Crankshäft\"5 ‹ReferenceElems + <Shaft result_solid=\"Shaft.1\"> + <Pad result_solid=\"Pad.1\"> + <Shaft result_solid=\"Shaft.2\"> + <Hole result_solid=\"Hole.1'> + cHole result_solid= Hole.2 > + <Pocket result_solid=\"Pocket.2\"> + <Pocket result_solid=\"Pocket.1\"> - <Boolean_Op result_solid=\"Remove.1\"> ‹boolean_type>Remove< boolean_type> < Boolean_Op> + <Fillet result_solid=\"Fillet.1\"> + <Bool_Op result_solid=\"Remove.2\"> --- s Body?. Tiny face Narrow step Profile"
+            "text": "<Body body_name=\"Body.1\"> + ‹Pad result_solid=\"Pad.3\"> + <Pattern result_solid=\"CircPattern.1'> < Body> + Body body name=\"Body.3\"> ‹Body body_name=\"Body.255 <Body body_name=\"Body.4\"> - <Shaft result_solid=\"Shaft.3\"> < Shaft> s Body2.- + <Pad result_solid=\"Pad.1\"> -Body body nameClutchdisk\"s - <Pad result_solid=\"Pad.2\"> parent_name=\"Clutchdisk\" > <profile_curves profile_name=\"Sketch.2\" cfirst_length>10.000c first_length> csecond_length>0.000c second_length> < Pad> - <Boolean_Op result_solid=\"Remove.3\"> <boolean_type>Remove< boolean_type> < Boolean_Op> s Body?.. - ¿Body body_name=\"Crankshäft\"5 ‹ReferenceElems + <Shaft result_solid=\"Shaft.1\"> + <Pad result_solid=\"Pad.1\"> + <Shaft result_solid=\"Shaft.2\"> + <Hole result_solid=\"Hole.1'> + cHole result_solid= Hole.2 > + <Pocket result_solid=\"Pocket.2\"> + <Pocket result_solid=\"Pocket.1\"> - <Boolean_Op result_solid=\"Remove.1\"> ‹boolean_type>Remove< boolean_type> < Boolean_Op> + <Fillet result_solid=\"Fillet.1\"> + <Bool_Op result_solid=\"Remove.2\"> --- s Body?. Tiny face Narrow step Profile"
           }
         ],
         "marker": "-",
@@ -4184,14 +4461,14 @@
         {
           "page": 12,
           "bbox": {
-            "x0": 14.25,
+            "x0": 13.41,
             "y0": 118.25,
             "x1": 115.64,
-            "y1": 124.96,
-            "width": 101.39,
-            "height": 6.71
+            "y1": 125.93,
+            "width": 102.23,
+            "height": 7.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4203,7 +4480,7 @@
             "width": 95.53,
             "height": 8.43
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4215,7 +4492,7 @@
             "width": 134.08,
             "height": 9.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4227,7 +4504,7 @@
             "width": 27.69,
             "height": 6.87
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4239,19 +4516,19 @@
             "width": 104.75,
             "height": 8.49
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
           "bbox": {
-            "x0": 11.73,
+            "x0": 16.76,
             "y0": 147.58,
             "x1": 116.48,
             "y1": 159.35,
-            "width": 104.75,
+            "width": 99.72,
             "height": 11.77
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4263,7 +4540,7 @@
             "width": 98.04,
             "height": 9.34
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4275,7 +4552,7 @@
             "width": 106.42,
             "height": 9.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4287,19 +4564,19 @@
             "width": 30.17,
             "height": 6.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
           "bbox": {
             "x0": 19.25,
-            "y0": 225.53,
-            "x1": 51.97,
-            "y1": 234.89,
-            "width": 32.72,
-            "height": 9.36
+            "y0": 225.51,
+            "x1": 51.98,
+            "y1": 234.92,
+            "width": 32.73,
+            "height": 9.41
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4311,19 +4588,19 @@
             "width": 94.69,
             "height": 7.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
           "bbox": {
-            "x0": 8.38,
+            "x0": 9.22,
             "y0": 229.79,
             "x1": 127.37,
             "y1": 241.53,
-            "width": 118.99,
+            "width": 118.15,
             "height": 11.74
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4335,7 +4612,7 @@
             "width": 94.69,
             "height": 7.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4347,7 +4624,7 @@
             "width": 98.04,
             "height": 8.39
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4359,7 +4636,7 @@
             "width": 131.57,
             "height": 9.38
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4371,7 +4648,7 @@
             "width": 116.48,
             "height": 7.55
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4383,7 +4660,7 @@
             "width": 133.24,
             "height": 7.55
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4395,7 +4672,7 @@
             "width": 24.34,
             "height": 6.86
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4407,7 +4684,7 @@
             "width": 134.91,
             "height": 7.55
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4419,7 +4696,7 @@
             "width": 134.08,
             "height": 6.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4431,7 +4708,7 @@
             "width": 49.44,
             "height": 7.55
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4443,7 +4720,7 @@
             "width": 33.52,
             "height": 10.07
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4455,7 +4732,7 @@
             "width": 117.32,
             "height": 9.33
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4467,7 +4744,7 @@
             "width": 54.5,
             "height": 10.19
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4479,7 +4756,7 @@
             "width": 104.74,
             "height": 6.99
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4491,7 +4768,7 @@
             "width": 94.69,
             "height": 6.79
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4503,7 +4780,7 @@
             "width": 105.58,
             "height": 7.66
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4515,7 +4792,7 @@
             "width": 98.88,
             "height": 6.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4527,7 +4804,7 @@
             "width": 98.06,
             "height": 6.93
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4539,7 +4816,7 @@
             "width": 116.48,
             "height": 9.38
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4551,7 +4828,7 @@
             "width": 116.48,
             "height": 9.32
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4563,7 +4840,7 @@
             "width": 135.88,
             "height": 9.47
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4575,7 +4852,7 @@
             "width": 134.08,
             "height": 6.71
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4587,7 +4864,7 @@
             "width": 49.44,
             "height": 8.39
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4599,7 +4876,7 @@
             "width": 103.91,
             "height": 8.38
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4611,7 +4888,7 @@
             "width": 124.86,
             "height": 9.22
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4623,7 +4900,7 @@
             "width": 10.06,
             "height": 1.68
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4635,31 +4912,31 @@
             "width": 38.64,
             "height": 9.65
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
           "bbox": {
-            "x0": 308.21,
-            "y0": 28.49,
-            "x1": 358.02,
-            "y1": 37.84,
-            "width": 49.81,
-            "height": 9.35
+            "x0": 308.18,
+            "y0": 28.37,
+            "x1": 358.04,
+            "y1": 37.96,
+            "width": 49.86,
+            "height": 9.59
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
           "bbox": {
-            "x0": 234.63,
-            "y0": 36.06,
-            "x1": 262.29,
-            "y1": 45.29,
-            "width": 27.66,
-            "height": 9.23
+            "x0": 234.54,
+            "y0": 35.77,
+            "x1": 262.38,
+            "y1": 45.58,
+            "width": 27.84,
+            "height": 9.81
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4670,7 +4947,7 @@
       }
     },
     {
-      "id": "blk-figure-0100",
+      "id": "blk-figure-0106",
       "type": "figure_ref",
       "content": {
         "figure_id": "fig-16"
@@ -4686,7 +4963,7 @@
             "width": 179.93,
             "height": 6.95
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4697,7 +4974,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0101",
+      "id": "blk-paragraph-0107",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4718,7 +4995,7 @@
             "width": 251.05,
             "height": 81.14
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 12,
@@ -4730,7 +5007,7 @@
             "width": 251.03,
             "height": 81.26
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4741,7 +5018,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0102",
+      "id": "blk-paragraph-0108",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4762,7 +5039,7 @@
             "width": 251.02,
             "height": 33.24
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4773,7 +5050,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0103",
+      "id": "blk-paragraph-0109",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4794,7 +5071,7 @@
             "width": 251.06,
             "height": 229.34
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4805,7 +5082,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0104",
+      "id": "blk-paragraph-0110",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4826,7 +5103,7 @@
             "width": 251.07,
             "height": 168.06
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4837,7 +5114,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0105",
+      "id": "blk-paragraph-0111",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4858,7 +5135,7 @@
             "width": 251.05,
             "height": 119.07
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4869,7 +5146,7 @@
       }
     },
     {
-      "id": "blk-paragraph-0106",
+      "id": "blk-paragraph-0112",
       "type": "paragraph",
       "content": {
         "spans": [
@@ -4890,7 +5167,7 @@
             "width": 251.04,
             "height": 20.99
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -4901,7 +5178,7 @@
       }
     },
     {
-      "id": "blk-reference-0107",
+      "id": "blk-reference-0113",
       "type": "reference",
       "content": {
         "reference_id": "ref-001"
@@ -4917,8 +5194,23 @@
             "width": 247.14,
             "height": 27.48
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0114",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-002"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4929,8 +5221,23 @@
             "width": 247.06,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0115",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-003"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4941,8 +5248,23 @@
             "width": 247.1,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0116",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-004"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4953,8 +5275,23 @@
             "width": 247.15,
             "height": 27.54
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0117",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-005"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4965,8 +5302,23 @@
             "width": 247.1,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0118",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-006"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4977,8 +5329,23 @@
             "width": 247.1,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0119",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-007"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -4989,7 +5356,7 @@
             "width": 247.07,
             "height": 17.22
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -5001,8 +5368,23 @@
             "width": 247.15,
             "height": 27.47
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0120",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-008"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5013,8 +5395,23 @@
             "width": 247.16,
             "height": 27.53
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0121",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-009"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5025,8 +5422,23 @@
             "width": 251.09,
             "height": 37.74
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0122",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-010"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5037,8 +5449,23 @@
             "width": 251.1,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0123",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-011"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5049,8 +5476,23 @@
             "width": 251.09,
             "height": 17.22
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0124",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-012"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5061,8 +5503,23 @@
             "width": 251.07,
             "height": 17.28
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0125",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-013"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5073,8 +5530,23 @@
             "width": 251.09,
             "height": 37.74
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0126",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-014"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5085,8 +5557,23 @@
             "width": 251.06,
             "height": 27.48
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0127",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-015"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5097,8 +5584,23 @@
             "width": 251.08,
             "height": 27.47
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0128",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-016"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5109,8 +5611,23 @@
             "width": 251.07,
             "height": 17.21
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0129",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-017"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5121,8 +5638,23 @@
             "width": 251.1,
             "height": 27.48
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0130",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-018"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5133,8 +5665,23 @@
             "width": 251.1,
             "height": 37.73
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0131",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-019"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5145,8 +5692,23 @@
             "width": 251.06,
             "height": 27.53
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0132",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-020"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5157,8 +5719,23 @@
             "width": 251.07,
             "height": 17.22
           },
-          "engine": "docling"
-        },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0133",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-021"
+      },
+      "source_spans": [
         {
           "page": 13,
           "bbox": {
@@ -5169,7 +5746,7 @@
             "width": 251.08,
             "height": 27.47
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 13,
@@ -5181,19 +5758,7 @@
             "width": 251.11,
             "height": 17.22
           },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 720.88,
-            "x1": 562.61,
-            "y1": 748.35,
-            "width": 251.08,
-            "height": 27.47
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5204,10 +5769,37 @@
       }
     },
     {
-      "id": "blk-reference-0108",
+      "id": "blk-reference-0134",
       "type": "reference",
       "content": {
-        "reference_id": "ref-002"
+        "reference_id": "ref-022"
+      },
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 720.88,
+            "x1": 562.61,
+            "y1": 748.35,
+            "width": 251.08,
+            "height": 27.47
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-reference-0135",
+      "type": "reference",
+      "content": {
+        "reference_id": "ref-023"
       },
       "source_spans": [
         {
@@ -5220,7 +5812,7 @@
             "width": 2.66,
             "height": 5.32
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5231,10 +5823,10 @@
       }
     },
     {
-      "id": "blk-reference-0109",
+      "id": "blk-reference-0136",
       "type": "reference",
       "content": {
-        "reference_id": "ref-003"
+        "reference_id": "ref-024"
       },
       "source_spans": [
         {
@@ -5247,7 +5839,7 @@
             "width": 251.09,
             "height": 26.86
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -5259,7 +5851,7 @@
             "width": 160.96,
             "height": 116.65
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -5271,7 +5863,7 @@
             "width": 161.21,
             "height": 110.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5306,7 +5898,7 @@
             "width": 161.43,
             "height": 8.77
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5349,7 +5941,7 @@
             "width": 161.43,
             "height": 8.77
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5372,10 +5964,10 @@
     {
       "id": "math-inline-3",
       "kind": "inline",
-      "display_latex": "\\mathrm{G}^{1}",
+      "display_latex": "\\$ 1",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi>&#x00047;</mi><mrow><mn>1</mn></mrow></msup></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x00024;</mi><mn>1</mn></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5383,16 +5975,16 @@
       },
       "source_spans": [
         {
-          "page": 2,
+          "page": 1,
           "bbox": {
-            "x0": 32.71,
-            "y0": 585.01,
-            "x1": 283.76,
-            "y1": 749.1,
-            "width": 251.05,
-            "height": 164.09
+            "x0": 311.53,
+            "y0": 410.17,
+            "x1": 562.55,
+            "y1": 504.47,
+            "width": 251.02,
+            "height": 94.3
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5414,10 +6006,10 @@
     {
       "id": "math-inline-4",
       "kind": "inline",
-      "display_latex": "1: N",
+      "display_latex": "\\$ 68",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>1</mn><mi>:</mi><mi>N</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x00024;</mi><mn>68</mn></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5425,16 +6017,16 @@
       },
       "source_spans": [
         {
-          "page": 2,
+          "page": 1,
           "bbox": {
-            "x0": 301.72,
-            "y0": 632.8,
-            "x1": 552.76,
-            "y1": 749.09,
-            "width": 251.04,
-            "height": 116.29
+            "x0": 311.53,
+            "y0": 410.17,
+            "x1": 562.55,
+            "y1": 504.47,
+            "width": 251.02,
+            "height": 94.3
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5454,12 +6046,12 @@
       }
     },
     {
-      "id": "math-inline-5",
-      "kind": "inline",
-      "display_latex": "N: 1",
+      "id": "eq-1",
+      "kind": "display",
+      "display_latex": "Jeongsam Yang \\({ }^{\\mathrm{a}, *}\\), Soonhung Han \\({ }^{\\mathrm{b}, 1}\\)",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>N</mi><mi>:</mi><mn>1</mn></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>J</mi><mi>e</mi><mi>o</mi><mi>n</mi><mi>g</mi><mi>s</mi><mi>a</mi><mi>m</mi><mi>Y</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>\\</mi><mo stretchy=\"false\">&#x00028;</mo><msup><mrow /><mrow><mi>&#x00061;</mi><mo>&#x0002C;</mo><mo>&#x0002A;</mo></mrow></msup><mi>\\</mi><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0002C;</mo><mi>S</mi><mi>o</mi><mi>o</mi><mi>n</mi><mi>h</mi><mi>u</mi><mi>n</mi><mi>g</mi><mi>H</mi><mi>a</mi><mi>n</mi><mi>\\</mi><mo stretchy=\"false\">&#x00028;</mo><msup><mrow /><mrow><mi>&#x00062;</mi><mo>&#x0002C;</mo><mn>1</mn></mrow></msup><mi>\\</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5467,16 +6059,71 @@
       },
       "source_spans": [
         {
+          "page": 1,
+          "bbox": {
+            "x0": 202.11,
+            "y0": 177.36,
+            "x1": 402.98,
+            "y1": 191.58,
+            "width": 200.87,
+            "height": 14.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "equation_number": null,
+      "classification": {
+        "category": "unknown",
+        "semantic_policy": "graphic_only",
+        "role": "unknown",
+        "confidence": "low",
+        "signals": [
+          "fallback_unknown"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-5",
+      "kind": "inline",
+      "display_latex": "{ }^{\\mathrm{b}}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mrow /><mrow><mi>&#x00062;</mi></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 42.52,
+            "y0": 210.91,
+            "x1": 562.63,
+            "y1": 219.56,
+            "width": 520.11,
+            "height": 8.65
+          },
+          "engine": "composed"
+        },
+        {
           "page": 2,
           "bbox": {
-            "x0": 301.72,
-            "y0": 632.8,
-            "x1": 552.76,
-            "y1": 749.09,
-            "width": 251.04,
-            "height": 116.29
+            "x0": 32.71,
+            "y0": 70.58,
+            "x1": 283.78,
+            "y1": 246.63,
+            "width": 251.07,
+            "height": 176.05
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5498,10 +6145,10 @@
     {
       "id": "math-inline-6",
       "kind": "inline",
-      "display_latex": "\\mathrm{C}^{0} / \\mathrm{G}^{1} / \\mathrm{G}^{2}",
+      "display_latex": "\\mathrm{G}^{1}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi>&#x00043;</mi><mrow><mn>0</mn></mrow></msup><mo>&#x0002F;</mo><msup><mi>&#x00047;</mi><mrow><mn>1</mn></mrow></msup><mo>&#x0002F;</mo><msup><mi>&#x00047;</mi><mrow><mn>2</mn></mrow></msup></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi>&#x00047;</mi><mrow><mn>1</mn></mrow></msup></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5509,28 +6156,16 @@
       },
       "source_spans": [
         {
-          "page": 3,
+          "page": 2,
           "bbox": {
-            "x0": 42.52,
-            "y0": 462.32,
-            "x1": 293.58,
-            "y1": 554.7,
-            "width": 251.06,
-            "height": 92.38
+            "x0": 32.71,
+            "y0": 585.01,
+            "x1": 283.76,
+            "y1": 749.1,
+            "width": 251.05,
+            "height": 164.09
           },
-          "engine": "docling"
-        },
-        {
-          "page": 3,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 70.58,
-            "x1": 562.52,
-            "y1": 115.84,
-            "width": 250.99,
-            "height": 45.26
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5552,10 +6187,10 @@
     {
       "id": "math-inline-7",
       "kind": "inline",
-      "display_latex": "29 \\%",
+      "display_latex": "1: N",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>29</mn><mi>&#x00025;</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>1</mn><mi>:</mi><mi>N</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5563,16 +6198,16 @@
       },
       "source_spans": [
         {
-          "page": 3,
+          "page": 2,
           "bbox": {
-            "x0": 311.53,
-            "y0": 485.07,
-            "x1": 562.56,
-            "y1": 554.71,
-            "width": 251.03,
-            "height": 69.64
+            "x0": 301.72,
+            "y0": 632.8,
+            "x1": 552.76,
+            "y1": 749.09,
+            "width": 251.04,
+            "height": 116.29
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5594,10 +6229,10 @@
     {
       "id": "math-inline-8",
       "kind": "inline",
-      "display_latex": "17 \\%",
+      "display_latex": "N: 1",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>17</mn><mi>&#x00025;</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>N</mi><mi>:</mi><mn>1</mn></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5605,16 +6240,16 @@
       },
       "source_spans": [
         {
-          "page": 3,
+          "page": 2,
           "bbox": {
-            "x0": 311.53,
-            "y0": 485.07,
-            "x1": 562.56,
-            "y1": 554.71,
-            "width": 251.03,
-            "height": 69.64
+            "x0": 301.72,
+            "y0": 632.8,
+            "x1": 552.76,
+            "y1": 749.09,
+            "width": 251.04,
+            "height": 116.29
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5636,10 +6271,10 @@
     {
       "id": "math-inline-9",
       "kind": "inline",
-      "display_latex": "(16 \\%)",
+      "display_latex": "\\mathrm{C}^{0} / \\mathrm{G}^{1} / \\mathrm{G}^{2}",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>16</mn><mi>&#x00025;</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi>&#x00043;</mi><mrow><mn>0</mn></mrow></msup><mo>&#x0002F;</mo><msup><mi>&#x00047;</mi><mrow><mn>1</mn></mrow></msup><mo>&#x0002F;</mo><msup><mi>&#x00047;</mi><mrow><mn>2</mn></mrow></msup></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5649,14 +6284,26 @@
         {
           "page": 3,
           "bbox": {
-            "x0": 311.53,
-            "y0": 485.07,
-            "x1": 562.56,
-            "y1": 554.71,
-            "width": 251.03,
-            "height": 69.64
+            "x0": 42.52,
+            "y0": 462.32,
+            "x1": 293.58,
+            "y1": 554.7,
+            "width": 251.06,
+            "height": 92.38
           },
-          "engine": "docling"
+          "engine": "composed"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 70.58,
+            "x1": 562.52,
+            "y1": 115.84,
+            "width": 250.99,
+            "height": 45.26
+          },
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5678,10 +6325,10 @@
     {
       "id": "math-inline-10",
       "kind": "inline",
-      "display_latex": "(11 \\%)",
+      "display_latex": "29 \\%",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>11</mn><mi>&#x00025;</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>29</mn><mi>&#x00025;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5698,7 +6345,7 @@
             "width": 251.03,
             "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5720,10 +6367,10 @@
     {
       "id": "math-inline-11",
       "kind": "inline",
-      "display_latex": "5 \\%",
+      "display_latex": "17 \\%",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>5</mn><mi>&#x00025;</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>17</mn><mi>&#x00025;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5740,7 +6387,7 @@
             "width": 251.03,
             "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5762,10 +6409,10 @@
     {
       "id": "math-inline-12",
       "kind": "inline",
-      "display_latex": "3 \\%",
+      "display_latex": "(16 \\%)",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>3</mn><mi>&#x00025;</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>16</mn><mi>&#x00025;</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5782,7 +6429,7 @@
             "width": 251.03,
             "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5804,10 +6451,10 @@
     {
       "id": "math-inline-13",
       "kind": "inline",
-      "display_latex": "(H)",
+      "display_latex": "(11 \\%)",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mi>H</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>11</mn><mi>&#x00025;</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5815,16 +6462,16 @@
       },
       "source_spans": [
         {
-          "page": 5,
+          "page": 3,
           "bbox": {
-            "x0": 42.52,
-            "y0": 350.98,
-            "x1": 293.59,
-            "y1": 517.91,
-            "width": 251.07,
-            "height": 166.93
+            "x0": 311.53,
+            "y0": 485.07,
+            "x1": 562.56,
+            "y1": 554.71,
+            "width": 251.03,
+            "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5846,10 +6493,10 @@
     {
       "id": "math-inline-14",
       "kind": "inline",
-      "display_latex": "2 D",
+      "display_latex": "5 \\%",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>2</mn><mi>D</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>5</mn><mi>&#x00025;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5857,16 +6504,16 @@
       },
       "source_spans": [
         {
-          "page": 5,
+          "page": 3,
           "bbox": {
-            "x0": 42.52,
-            "y0": 350.98,
-            "x1": 293.59,
-            "y1": 517.91,
-            "width": 251.07,
-            "height": 166.93
+            "x0": 311.53,
+            "y0": 485.07,
+            "x1": 562.56,
+            "y1": 554.71,
+            "width": 251.03,
+            "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5888,10 +6535,10 @@
     {
       "id": "math-inline-15",
       "kind": "inline",
-      "display_latex": "N",
+      "display_latex": "3 \\%",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>N</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>3</mn><mi>&#x00025;</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5899,16 +6546,16 @@
       },
       "source_spans": [
         {
-          "page": 8,
+          "page": 3,
           "bbox": {
-            "x0": 32.71,
-            "y0": 250.13,
-            "x1": 283.77,
-            "y1": 406.44,
-            "width": 251.06,
-            "height": 156.31
+            "x0": 311.53,
+            "y0": 485.07,
+            "x1": 562.56,
+            "y1": 554.71,
+            "width": 251.03,
+            "height": 69.64
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5930,10 +6577,10 @@
     {
       "id": "math-inline-16",
       "kind": "inline",
-      "display_latex": "N: N",
+      "display_latex": "(H)",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>N</mi><mi>:</mi><mi>N</mi></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo stretchy=\"false\">&#x00028;</mo><mi>H</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5941,16 +6588,16 @@
       },
       "source_spans": [
         {
-          "page": 8,
+          "page": 5,
           "bbox": {
-            "x0": 32.71,
-            "y0": 250.13,
-            "x1": 283.77,
-            "y1": 406.44,
-            "width": 251.06,
-            "height": 156.31
+            "x0": 42.52,
+            "y0": 350.98,
+            "x1": 293.59,
+            "y1": 517.91,
+            "width": 251.07,
+            "height": 166.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -5972,10 +6619,10 @@
     {
       "id": "math-inline-17",
       "kind": "inline",
-      "display_latex": "0.094 \\mathrm{~mm}^{2}",
+      "display_latex": "2 D",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>0.094</mn><msup><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>2</mn><mi>D</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -5983,16 +6630,16 @@
       },
       "source_spans": [
         {
-          "page": 11,
+          "page": 5,
           "bbox": {
-            "x0": 311.53,
-            "y0": 313.34,
-            "x1": 562.64,
-            "y1": 431.28,
-            "width": 251.11,
-            "height": 117.94
+            "x0": 42.52,
+            "y0": 350.98,
+            "x1": 293.59,
+            "y1": 517.91,
+            "width": 251.07,
+            "height": 166.93
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6014,10 +6661,10 @@
     {
       "id": "math-inline-18",
       "kind": "inline",
-      "display_latex": "484: 1",
+      "display_latex": "1: N",
       "semantic_expr": null,
       "compiled_targets": {
-        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>484</mn><mi>:</mi><mn>1</mn></mrow></math>"
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>1</mn><mi>:</mi><mi>N</mi></mrow></math>"
       },
       "conversion": {
         "status": "converted",
@@ -6025,16 +6672,16 @@
       },
       "source_spans": [
         {
-          "page": 11,
+          "page": 8,
           "bbox": {
-            "x0": 311.53,
-            "y0": 313.34,
-            "x1": 562.64,
-            "y1": 431.28,
-            "width": 251.11,
-            "height": 117.94
+            "x0": 32.71,
+            "y0": 250.13,
+            "x1": 283.77,
+            "y1": 406.44,
+            "width": 251.06,
+            "height": 156.31
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6056,6 +6703,132 @@
     {
       "id": "math-inline-19",
       "kind": "inline",
+      "display_latex": "N: N",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>N</mi><mi>:</mi><mi>N</mi></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 8,
+          "bbox": {
+            "x0": 32.71,
+            "y0": 250.13,
+            "x1": 283.77,
+            "y1": 406.44,
+            "width": 251.06,
+            "height": 156.31
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-20",
+      "kind": "inline",
+      "display_latex": "0.094 \\mathrm{~mm}^{2}",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>0.094</mn><msup><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 313.34,
+            "x1": 562.64,
+            "y1": 431.28,
+            "width": 251.11,
+            "height": 117.94
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-21",
+      "kind": "inline",
+      "display_latex": "484: 1",
+      "semantic_expr": null,
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn>484</mn><mi>:</mi><mn>1</mn></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 11,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 313.34,
+            "x1": 562.64,
+            "y1": 431.28,
+            "width": 251.11,
+            "height": 117.94
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "symbolic_reference",
+        "semantic_policy": "graphic_only",
+        "role": "graphic",
+        "confidence": "high",
+        "signals": [
+          "inline_symbol_reference"
+        ]
+      }
+    },
+    {
+      "id": "math-inline-22",
+      "kind": "inline",
       "display_latex": "360^{\\circ}",
       "semantic_expr": null,
       "compiled_targets": {
@@ -6076,7 +6849,7 @@
             "width": 251.05,
             "height": 93.62
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -6710,8 +7483,8 @@
   "references": [
     {
       "id": "ref-001",
-      "raw_text": "Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-Final report: RTI project number 7007-03, Research Triangle Institute; 1999. Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003. Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18. Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66. Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8. Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25. Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22. Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98. Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25. Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26. ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002. SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002. Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30. Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003. Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002. Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52. Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83. ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard). Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org. Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9. Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html. Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.",
-      "text": "Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-final report: RTI project number 7007-03, Research Triangle Institute; 1999. Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003. Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18. Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66. Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8. Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25. Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22. Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98. Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25. Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26. ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002. SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002. Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30. Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003. Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002. Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52. Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83. ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard). Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org. Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9. Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html. Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.",
+      "raw_text": "Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-Final report: RTI project number 7007-03, Research Triangle Institute; 1999.",
+      "text": "Tassey G. Interoperability cost analysis of the U.S. automotive supply chain-final report: RTI project number 7007-03, Research Triangle Institute; 1999.",
       "source_spans": [
         {
           "page": 13,
@@ -6723,283 +7496,7 @@
             "width": 247.14,
             "height": 27.48
           },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 125.42,
-            "x1": 562.56,
-            "y1": 142.63,
-            "width": 247.06,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 145.94,
-            "x1": 562.6,
-            "y1": 163.15,
-            "width": 247.1,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 166.46,
-            "x1": 562.65,
-            "y1": 194.0,
-            "width": 247.15,
-            "height": 27.54
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 197.31,
-            "x1": 562.6,
-            "y1": 214.52,
-            "width": 247.1,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 217.83,
-            "x1": 562.6,
-            "y1": 235.04,
-            "width": 247.1,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 238.35,
-            "x1": 562.57,
-            "y1": 255.57,
-            "width": 247.07,
-            "height": 17.22
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 258.88,
-            "x1": 562.65,
-            "y1": 286.35,
-            "width": 247.15,
-            "height": 27.47
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 315.5,
-            "y0": 289.66,
-            "x1": 562.66,
-            "y1": 317.19,
-            "width": 247.16,
-            "height": 27.53
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 320.5,
-            "x1": 562.62,
-            "y1": 358.24,
-            "width": 251.09,
-            "height": 37.74
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 361.55,
-            "x1": 562.63,
-            "y1": 378.76,
-            "width": 251.1,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 382.07,
-            "x1": 562.62,
-            "y1": 399.29,
-            "width": 251.09,
-            "height": 17.22
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 402.59,
-            "x1": 562.6,
-            "y1": 419.87,
-            "width": 251.07,
-            "height": 17.28
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 423.17,
-            "x1": 562.62,
-            "y1": 460.91,
-            "width": 251.09,
-            "height": 37.74
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 464.22,
-            "x1": 562.59,
-            "y1": 491.7,
-            "width": 251.06,
-            "height": 27.48
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 495.01,
-            "x1": 562.61,
-            "y1": 522.48,
-            "width": 251.08,
-            "height": 27.47
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 525.85,
-            "x1": 562.6,
-            "y1": 543.06,
-            "width": 251.07,
-            "height": 17.21
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 546.37,
-            "x1": 562.63,
-            "y1": 573.85,
-            "width": 251.1,
-            "height": 27.48
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 577.16,
-            "x1": 562.63,
-            "y1": 614.89,
-            "width": 251.1,
-            "height": 37.73
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 618.2,
-            "x1": 562.59,
-            "y1": 645.73,
-            "width": 251.06,
-            "height": 27.53
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 649.04,
-            "x1": 562.6,
-            "y1": 666.26,
-            "width": 251.07,
-            "height": 17.22
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 669.57,
-            "x1": 562.61,
-            "y1": 697.04,
-            "width": 251.08,
-            "height": 27.47
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 700.35,
-            "x1": 562.64,
-            "y1": 717.57,
-            "width": 251.11,
-            "height": 17.22
-          },
-          "engine": "docling"
-        },
-        {
-          "page": 13,
-          "bbox": {
-            "x0": 311.53,
-            "y0": 720.88,
-            "x1": 562.61,
-            "y1": 748.35,
-            "width": 251.08,
-            "height": 27.47
-          },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7011,6 +7508,555 @@
     },
     {
       "id": "ref-002",
+      "raw_text": "Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003.",
+      "text": "Japan Automobile Manufacturers Association. PDQ (Product Data Quality. Japan: JAMA (http: www.jama.or.jp); 2003.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 125.42,
+            "x1": 562.56,
+            "y1": 142.63,
+            "width": 247.06,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-003",
+      "raw_text": "Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18.",
+      "text": "Hoffman CM, Robert JA. CAD and the product master model. Comput Aided Des 1998;30(11):905-18.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 145.94,
+            "x1": 562.6,
+            "y1": 163.15,
+            "width": 247.1,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-004",
+      "raw_text": "Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66.",
+      "text": "Gu H, Chase TR, Cheney DC, Bailey T, Johnson D. Identifying, correcting, and avoiding errors in computer-aided design models which affect interoperability. J Comput Inf Sci Eng 2001;1:156-66.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 166.46,
+            "x1": 562.65,
+            "y1": 194.0,
+            "width": 247.15,
+            "height": 27.54
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-005",
+      "raw_text": "Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8.",
+      "text": "Barequet G. Using geometric hashing to repair CAD objects. IEEE Comput Sci Eng 1997;22-8.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 197.31,
+            "x1": 562.6,
+            "y1": 214.52,
+            "width": 247.1,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-006",
+      "raw_text": "Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25.",
+      "text": "Steinbrenner JP, Wynman NJ, Chawner JR. Procedural CAD model edge tolerance negotiation for surface meshing. Eng Comput 2001;17:315-25.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 217.83,
+            "x1": 562.6,
+            "y1": 235.04,
+            "width": 247.1,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-007",
+      "raw_text": "Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22.",
+      "text": "Volpin O, Sheffer A, Bercovier M, Joskowicz L. Mesh simplification with smooth surface reconstruction. Comput Aided Des 1998;30(11):875-82. Kripac J. A mechanism for persistently naming topological entities in history-based parametric solid models. Comput Aided Des 1997;29(2): 113-22.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 238.35,
+            "x1": 562.57,
+            "y1": 255.57,
+            "width": 247.07,
+            "height": 17.22
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 258.88,
+            "x1": 562.65,
+            "y1": 286.35,
+            "width": 247.15,
+            "height": 27.47
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-008",
+      "raw_text": "Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98.",
+      "text": "Wu J, Zhang T, Zhang X, Zbou J. A face based mechanism for naming, recording and retrieving topological entities. Comput Aided Des 2001;33: 687-98.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 315.5,
+            "y0": 289.66,
+            "x1": 562.66,
+            "y1": 317.19,
+            "width": 247.16,
+            "height": 27.53
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-009",
+      "raw_text": "Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25.",
+      "text": "Mun DH, Han SH. An approach to persistent naming and naming mapping based on OSI and IGM for parametric CAD model exchanges. Proceedings of the fifth Japan-Korea CAD CAM workshop on digital engineering workshop (DEWS), February 2005. p. 24-25.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 320.5,
+            "x1": 562.62,
+            "y1": 358.24,
+            "width": 251.09,
+            "height": 37.74
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-010",
+      "raw_text": "Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26.",
+      "text": "Capoyleas V, Chen X, Hoffmann CM. Generic naming in generative, constraint-based design. Comput Aided Des 1996;28:17-26.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 361.55,
+            "x1": 562.63,
+            "y1": 378.76,
+            "width": 251.1,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-011",
+      "raw_text": "ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002.",
+      "text": "ISO TC184 SC4 WG12 N1568, Minutes of WG12 parametrics meeting from Seoul, KOREA; 2002.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 382.07,
+            "x1": 562.62,
+            "y1": 399.29,
+            "width": 251.09,
+            "height": 17.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-012",
+      "raw_text": "SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002.",
+      "text": "SolidWorks Homepage, http: www.solidworks.com, SolidWorks Corporation; 2002.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 402.59,
+            "x1": 562.6,
+            "y1": 419.87,
+            "width": 251.07,
+            "height": 17.28
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-013",
+      "raw_text": "Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30.",
+      "text": "Rappoport A. The generic geometric complex (GGC): a modeling scheme for families of decomposed pointsets Proceedings of fourth ACM Siggraph symposium on solid modeling and applications (Solid Modeling'97), May 1997. Atlanta: ACM Press; 1997. p. 19-30.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 423.17,
+            "x1": 562.62,
+            "y1": 460.91,
+            "width": 251.09,
+            "height": 37.74
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-014",
+      "raw_text": "Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003.",
+      "text": "Rappoport A. An architecture for universal CAD data exchange Proceedings of the solid modeling 03, June 2003. Seattle, Washington: ACM Press; 2003.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 464.22,
+            "x1": 562.59,
+            "y1": 491.7,
+            "width": 251.06,
+            "height": 27.48
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-015",
+      "raw_text": "Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002.",
+      "text": "Marcheix D, Pierra G. A survey of the persistent naming problem. Proceedings of the seventh ACM symposium on solid modeling and applications, June 17-21, Saarbrucken, Germany; 2002.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 495.01,
+            "x1": 562.61,
+            "y1": 522.48,
+            "width": 251.08,
+            "height": 27.47
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-016",
+      "raw_text": "Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52.",
+      "text": "Yang J, Han SH, Park SH. A Method for verification of CAD model errors. J Eng Des 2005;16(3):337-52.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 525.85,
+            "x1": 562.6,
+            "y1": 543.06,
+            "width": 251.07,
+            "height": 17.21
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-017",
+      "raw_text": "Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83.",
+      "text": "Yang J, Han SH, Park SH, Jang GS. Investigation of product data quality in the Korean automotive industry. Trans Soc CAD CAM Eng 2004; 10(4):274-83.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 546.37,
+            "x1": 562.63,
+            "y1": 573.85,
+            "width": 251.1,
+            "height": 27.48
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-018",
+      "raw_text": "ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard).",
+      "text": "ISO TC184 SC4 N1944, SASIG-Product Data Quality Guidelines (SASIG-PDQ) v2 Rev 1; 2005. (The document is at http: www. tc184-sc4.org SC4_Open SC4_and-working_Groups SC4_N-DOCS; search on PDQ for a listing of documents of the standard).",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 577.16,
+            "x1": 562.63,
+            "y1": 614.89,
+            "width": 251.1,
+            "height": 37.73
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-019",
+      "raw_text": "Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org.",
+      "text": "Choi KH, Mun DH, Han SH. Exchange of CAD part models based on the macro-parametric approach. Int J CAD CAM. 2002;2(2):23-31; www.ijcc.org.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 618.2,
+            "x1": 562.59,
+            "y1": 645.73,
+            "width": 251.06,
+            "height": 27.53
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-020",
+      "raw_text": "Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9.",
+      "text": "Mun DH, Han SH, Oh YC. A set of standard modeling commands for the history-based parametric approach. Comput Aided Des 2003;35:1171-9.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 649.04,
+            "x1": 562.6,
+            "y1": 666.26,
+            "width": 251.07,
+            "height": 17.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-021",
+      "raw_text": "Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html.",
+      "text": "Yang J, Han SH, Cho J, Kim B, Lee H. An XML-based macro data representation for a parametric CAD model exchange. Comput Aided Des Appl 2004;1:153-62. CLIPS: A tool for building expert systems, http: www.ghg.net clips CLIPS.html.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 669.57,
+            "x1": 562.61,
+            "y1": 697.04,
+            "width": 251.08,
+            "height": 27.47
+          },
+          "engine": "composed"
+        },
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 700.35,
+            "x1": 562.64,
+            "y1": 717.57,
+            "width": 251.11,
+            "height": 17.22
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-022",
+      "raw_text": "Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.",
+      "text": "Rossignac J, O'Connor M. SGC: a dimension independent model for point sets with internal structures and incomplete boundaries. Geom Model Prod Eng 1989;145-80.",
+      "source_spans": [
+        {
+          "page": 13,
+          "bbox": {
+            "x0": 311.53,
+            "y0": 720.88,
+            "x1": 562.61,
+            "y1": 748.35,
+            "width": 251.08,
+            "height": 27.47
+          },
+          "engine": "composed"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ref-023",
       "raw_text": "]l",
       "text": "]l",
       "source_spans": [
@@ -7024,7 +8070,7 @@
             "width": 2.66,
             "height": 5.32
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],
@@ -7035,7 +8081,7 @@
       }
     },
     {
-      "id": "ref-003",
+      "id": "ref-024",
       "raw_text": "Vergeest JSM, Horvath I. Where interoperability ends. Proceedings of the 2001 computers and information in engineering conference, DETC'01 CIE-21233. New York: ASME; 2001. Jeongsam Yang is an assistant professor in Industrial & Information Systems Engineering at Ajou University (http: www.ajou.ac.kr english). He worked at Clausthal University of Technology, Germany, in 2002 as a visiting scholar and the University of Wisconsin-Madison, USA, in 2005 as a postdoctoral associate. He obtained his Ph.D. in mechanical engineering in 2004 at KAIST. His current research interests are product data quality (PDQ), VR application in design, product data management (PDM), knowledge-based design system, and STEP. Soonhung Han is a professor at the Department of Mechanical Engineering (http: me.kaist.ac.kr) of KAIST (Korea Advanced Institute of Science and Technology, www.kaist.ac.kr). He is leading the Intelligent CAD laboratory (http: icad.kaist.ac.kr) at KAIST, and the STEP community of Korea (www.kstep.or.kr). His research interests include STEP (ISO standard for the exchange of product model data), VR (virtual reality) for engineering design, and knowledge-based design system. His domain of interests include automotive and shipbuilding. He has a BS and a MS from the Seoul National University of Korea, another MS from the University of Newcastle upon Tyne of UK, and a PhD from the University of Michigan of USA. He is involved in the professional societies of CAD CAM (www.cadcam.or.kr) and e-Business (www.calsec.or.kr). He is an editorial member of the web-based journal, International Journal of CAD CAM (www.ijcc.org).",
       "text": "Vergeest JSM, Horvath I. Where interoperability ends. Proceedings of the 2001 computers and information in engineering conference, DETC'01 CIE-21233. New York: ASME; 2001. Jeongsam Yang is an assistant professor in Industrial & Information Systems engineering at Ajou University (http: www.ajou.ac.kr english). He worked at Clausthal University of Technology, Germany, in 2002 as a visiting scholar and the University of Wisconsin-Madison, USA, in 2005 as a postdoctoral associate. He obtained his Ph.D. in mechanical engineering in 2004 at KAIST. His current research interests are product data quality (PDQ), VR application in design, product data management (PDM), knowledge-based design system, and STEP. Soonhung Han is a professor at the Department of Mechanical engineering (http: me.kaist.ac.kr) of KAIST (Korea Advanced Institute of Science and Technology, www.kaist.ac.kr). He is leading the Intelligent CAD laboratory (http: icad.kaist.ac.kr) at KAIST, and the STEP community of Korea (www.kstep.or.kr). His research interests include STEP (ISO standard for the exchange of product model data), VR (virtual reality) for engineering design, and knowledge-based design system. His domain of interests include automotive and shipbuilding. He has a BS and a MS from the Seoul National University of Korea, another MS from the University of Newcastle upon Tyne of UK, and a PhD from the University of Michigan of USA. He is involved in the professional societies of CAD CAM (www.cadcam.or.kr) and e-Business (www.calsec.or.kr). He is an editorial member of the web-based journal, International Journal of CAD CAM (www.ijcc.org).",
       "source_spans": [
@@ -7049,7 +8095,7 @@
             "width": 251.09,
             "height": 26.86
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -7061,7 +8107,7 @@
             "width": 160.96,
             "height": 116.65
           },
-          "engine": "docling"
+          "engine": "composed"
         },
         {
           "page": 14,
@@ -7073,7 +8119,7 @@
             "width": 161.21,
             "height": 110.19
           },
-          "engine": "docling"
+          "engine": "composed"
         }
       ],
       "alternates": [],

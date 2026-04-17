@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/2006_computing_contour_generators_of_evolving_implicit_surfaces/2006_computing_contour_generators_of_evolving_implicit_surfaces.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/2006_computing_contour_generators_of_evolving_implicit_surfaces/2006_computing_contour_generators_of_evolving_implicit_surfaces.pdf",
   "page_count": 36,
   "page_sizes_pt": [
     {
@@ -12554,5 +12554,43 @@
         "docling_orig": "Using threshold T , the implicit function for the metaball object is given by"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling",
+    "28": "docling",
+    "29": "docling",
+    "30": "docling",
+    "31": "docling",
+    "32": "docling",
+    "33": "docling",
+    "34": "docling",
+    "35": "docling",
+    "36": "docling"
+  }
 }

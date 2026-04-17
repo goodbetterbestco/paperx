@@ -1375,6 +1375,25 @@
       "page": 4,
       "order": 17,
       "role": "paragraph",
+      "text": "2",
+      "bbox": {
+        "x0": 223.17,
+        "y0": 535.29,
+        "x1": 235.83,
+        "y1": 549.1,
+        "width": 12.66,
+        "height": 13.81
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "2"
+      }
+    },
+    {
+      "id": "#/texts/81",
+      "page": 4,
+      "order": 18,
+      "role": "paragraph",
       "text": "The sweep plane of a line to be drawn is the plane which contains this line and the viewpoint. This plane is bounded by a triangle whose vertex points are the eye of the observer and the end points of the line to be drawn. The line to be drawn passes behind a contour line for a specific viewpoint when (i) the piercing point of the contour line in the sweep plane lies within the limits of the contour line and (ii) the piercing point lies within the triangular boundary of the sweep plane. Condition (i) can easily be determined by a distance test or evaluation of the parametric variable of the piercing point when all line equations are in pa- rametric form. Condition (ii) can be determined by a tri-sense test of the three vertex points of the sweep line about the piercing point. Referring to Figure 4, contour line 1 satisfies both conditions on sweep plane SP~, contour line 2 fails condition (i) and contour line 3 fails condition (ii).",
       "bbox": {
         "x0": 53.04,
@@ -1390,9 +1409,9 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 4,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": ",.~o~B,,~-.=",
       "bbox": {
@@ -1409,9 +1428,9 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 4,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "~PIERCING",
       "bbox": {
@@ -1428,9 +1447,9 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 4,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "POINT 5",
       "bbox": {
@@ -1447,9 +1466,9 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 4,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "CONTOUR",
       "bbox": {
@@ -1466,9 +1485,9 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 4,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": ". I~CONTOUR",
       "bbox": {
@@ -1485,9 +1504,9 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 4,
-      "order": 23,
+      "order": 24,
       "role": "paragraph",
       "text": "~PLINE' ~",
       "bbox": {
@@ -1504,9 +1523,9 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 4,
-      "order": 24,
+      "order": 25,
       "role": "paragraph",
       "text": ")t",
       "bbox": {
@@ -1523,9 +1542,9 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/90",
       "page": 4,
-      "order": 25,
+      "order": 26,
       "role": "paragraph",
       "text": "I",
       "bbox": {
@@ -1542,9 +1561,9 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 4,
-      "order": 26,
+      "order": 27,
       "role": "paragraph",
       "text": "_",
       "bbox": {
@@ -1561,9 +1580,9 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 4,
-      "order": 27,
+      "order": 28,
       "role": "paragraph",
       "text": "~,,'~,,, PIERCING",
       "bbox": {
@@ -1580,9 +1599,9 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 4,
-      "order": 28,
+      "order": 29,
       "role": "paragraph",
       "text": "1Z",
       "bbox": {
@@ -1599,9 +1618,9 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 4,
-      "order": 29,
+      "order": 30,
       "role": "paragraph",
       "text": "LINE 3",
       "bbox": {
@@ -1618,104 +1637,9 @@
       }
     },
     {
-      "id": "#/texts/95",
-      "page": 4,
-      "order": 30,
-      "role": "paragraph",
-      "text": "PIERCING",
-      "bbox": {
-        "x0": 448.65,
-        "y0": 324.63,
-        "x1": 495.81,
-        "y1": 334.99,
-        "width": 47.16,
-        "height": 10.36
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "PIERCING"
-      }
-    },
-    {
       "id": "#/texts/96",
       "page": 4,
       "order": 31,
-      "role": "paragraph",
-      "text": "POINT 2",
-      "bbox": {
-        "x0": 448.59,
-        "y0": 334.76,
-        "x1": 490.12,
-        "y1": 345.58,
-        "width": 41.53,
-        "height": 10.82
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "POINT 2"
-      }
-    },
-    {
-      "id": "#/texts/97",
-      "page": 4,
-      "order": 32,
-      "role": "paragraph",
-      "text": "CONTOUR",
-      "bbox": {
-        "x0": 455.53,
-        "y0": 351.03,
-        "x1": 502.73,
-        "y1": 361.54,
-        "width": 47.2,
-        "height": 10.51
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "CONTOUR"
-      }
-    },
-    {
-      "id": "#/texts/98",
-      "page": 4,
-      "order": 33,
-      "role": "paragraph",
-      "text": "LINE 2",
-      "bbox": {
-        "x0": 455.55,
-        "y0": 361.33,
-        "x1": 490.06,
-        "y1": 371.83,
-        "width": 34.51,
-        "height": 10.5
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "LINE 2"
-      }
-    },
-    {
-      "id": "#/texts/99",
-      "page": 4,
-      "order": 34,
-      "role": "paragraph",
-      "text": "Y",
-      "bbox": {
-        "x0": 538.38,
-        "y0": 322.33,
-        "x1": 545.28,
-        "y1": 330.38,
-        "width": 6.9,
-        "height": 8.05
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Y"
-      }
-    },
-    {
-      "id": "#/texts/100",
-      "page": 4,
-      "order": 35,
       "role": "paragraph",
       "text": "-SP",
       "bbox": {
@@ -1732,9 +1656,9 @@
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/97",
       "page": 4,
-      "order": 36,
+      "order": 32,
       "role": "paragraph",
       "text": "LINE TO BE",
       "bbox": {
@@ -1751,9 +1675,9 @@
       }
     },
     {
-      "id": "#/texts/102",
+      "id": "#/texts/98",
       "page": 4,
-      "order": 37,
+      "order": 33,
       "role": "paragraph",
       "text": "DRAWN",
       "bbox": {
@@ -1770,9 +1694,104 @@
       }
     },
     {
+      "id": "#/texts/99",
+      "page": 4,
+      "order": 34,
+      "role": "paragraph",
+      "text": "PIERCING",
+      "bbox": {
+        "x0": 448.65,
+        "y0": 324.63,
+        "x1": 495.81,
+        "y1": 334.99,
+        "width": 47.16,
+        "height": 10.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "PIERCING"
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 4,
+      "order": 35,
+      "role": "paragraph",
+      "text": "POINT 2",
+      "bbox": {
+        "x0": 448.59,
+        "y0": 334.76,
+        "x1": 490.12,
+        "y1": 345.58,
+        "width": 41.53,
+        "height": 10.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "POINT 2"
+      }
+    },
+    {
+      "id": "#/texts/101",
+      "page": 4,
+      "order": 36,
+      "role": "paragraph",
+      "text": "CONTOUR",
+      "bbox": {
+        "x0": 455.53,
+        "y0": 351.03,
+        "x1": 502.73,
+        "y1": 361.54,
+        "width": 47.2,
+        "height": 10.51
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "CONTOUR"
+      }
+    },
+    {
+      "id": "#/texts/102",
+      "page": 4,
+      "order": 37,
+      "role": "paragraph",
+      "text": "LINE 2",
+      "bbox": {
+        "x0": 455.55,
+        "y0": 361.33,
+        "x1": 490.06,
+        "y1": 371.83,
+        "width": 34.51,
+        "height": 10.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "LINE 2"
+      }
+    },
+    {
       "id": "#/texts/103",
       "page": 4,
       "order": 38,
+      "role": "paragraph",
+      "text": "Y",
+      "bbox": {
+        "x0": 538.38,
+        "y0": 322.33,
+        "x1": 545.28,
+        "y1": 330.38,
+        "width": 6.9,
+        "height": 8.05
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Y"
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 4,
+      "order": 39,
       "role": "paragraph",
       "text": "X",
       "bbox": {
@@ -1789,9 +1808,9 @@
       }
     },
     {
-      "id": "#/texts/104",
+      "id": "#/texts/105",
       "page": 4,
-      "order": 39,
+      "order": 40,
       "role": "paragraph",
       "text": "vr'n",
       "bbox": {
@@ -1808,9 +1827,9 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 4,
-      "order": 40,
+      "order": 41,
       "role": "caption",
       "text": "Figure 4- Determining when a line to be drawn passes behind a contour line",
       "bbox": {
@@ -1827,9 +1846,9 @@
       }
     },
     {
-      "id": "#/texts/106",
+      "id": "#/texts/107",
       "page": 4,
-      "order": 41,
+      "order": 42,
       "role": "paragraph",
       "text": "After determining that a line to be drawn has passed behind a contour line, it is necessary to determine what effect his had on the count of quantitative invisibility. Referring to Figure 5, the procedure for determining this effect is as follows:",
       "bbox": {
@@ -1846,9 +1865,9 @@
       }
     },
     {
-      "id": "#/texts/107",
+      "id": "#/texts/108",
       "page": 4,
-      "order": 42,
+      "order": 43,
       "role": "list_item",
       "text": "Determine piercing point of line to be drawn (P1P2) in sweep plane (SP~) of the contour line (CL). The line to be drawn starts at point P1.",
       "bbox": {
@@ -1865,9 +1884,9 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 4,
-      "order": 43,
+      "order": 44,
       "role": "list_item",
       "text": "Locate preceding point (K) on the line to be drawn which is a small distance (usually 10 -5 units) closer to the starting end of the line (P0 to be drawn than the piercing point.",
       "bbox": {
@@ -1884,9 +1903,9 @@
       }
     },
     {
-      "id": "#/texts/109",
+      "id": "#/texts/110",
       "page": 4,
-      "order": 44,
+      "order": 45,
       "role": "list_item",
       "text": "Project this preceding point (K) onto the plane iS) which contains the contour line (CL). The projected point (J) is the piercing point of the line of sight to the preceding point (K).",
       "bbox": {
@@ -1903,9 +1922,9 @@
       }
     },
     {
-      "id": "#/texts/110",
+      "id": "#/texts/111",
       "page": 4,
-      "order": 45,
+      "order": 46,
       "role": "list_item",
       "text": "Determine the sense (CL J) of implied vorticity of the contour line (CL) about the projected point (J). When the sense (CL J) agrees with the sense of implied vorticity of the surface (S) then the line (P1P2) is coming out from behind surface (S) and the count of quantitative invisibility is to be decreased by one. When the sense (CL J) disagrees with the sense of implied vorticity of the surface (S) then the line (P~P2) is go-",
       "bbox": {
@@ -1922,7 +1941,7 @@
       }
     },
     {
-      "id": "#/texts/113",
+      "id": "#/texts/114",
       "page": 5,
       "order": 1,
       "role": "caption",
@@ -1941,7 +1960,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/115",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -1960,7 +1979,7 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/116",
       "page": 5,
       "order": 3,
       "role": "paragraph",
@@ -1979,7 +1998,7 @@
       }
     },
     {
-      "id": "#/texts/116",
+      "id": "#/texts/117",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -1998,7 +2017,7 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/119",
       "page": 5,
       "order": 5,
       "role": "paragraph",
@@ -2017,7 +2036,7 @@
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/120",
       "page": 5,
       "order": 6,
       "role": "paragraph",
@@ -2036,7 +2055,7 @@
       }
     },
     {
-      "id": "#/texts/120",
+      "id": "#/texts/121",
       "page": 5,
       "order": 7,
       "role": "paragraph",
@@ -2055,7 +2074,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/123",
       "page": 5,
       "order": 8,
       "role": "paragraph",
@@ -2074,7 +2093,7 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/124",
       "page": 5,
       "order": 9,
       "role": "paragraph",
@@ -2093,7 +2112,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/125",
       "page": 5,
       "order": 10,
       "role": "paragraph",
@@ -2112,7 +2131,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/126",
       "page": 5,
       "order": 11,
       "role": "paragraph",
@@ -2131,7 +2150,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/127",
       "page": 5,
       "order": 12,
       "role": "paragraph",
@@ -2150,7 +2169,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/131",
       "page": 5,
       "order": 13,
       "role": "paragraph",
@@ -2169,7 +2188,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/132",
       "page": 5,
       "order": 14,
       "role": "paragraph",
@@ -2188,7 +2207,7 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/133",
       "page": 5,
       "order": 15,
       "role": "paragraph",
@@ -2207,7 +2226,7 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/134",
       "page": 5,
       "order": 16,
       "role": "paragraph",
@@ -2226,7 +2245,7 @@
       }
     },
     {
-      "id": "#/texts/134",
+      "id": "#/texts/135",
       "page": 5,
       "order": 17,
       "role": "paragraph",
@@ -2245,7 +2264,7 @@
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/136",
       "page": 5,
       "order": 18,
       "role": "paragraph",
@@ -2264,7 +2283,7 @@
       }
     },
     {
-      "id": "#/texts/136",
+      "id": "#/texts/137",
       "page": 5,
       "order": 19,
       "role": "paragraph",
@@ -2283,7 +2302,7 @@
       }
     },
     {
-      "id": "#/texts/137",
+      "id": "#/texts/138",
       "page": 5,
       "order": 20,
       "role": "paragraph",
@@ -2302,7 +2321,7 @@
       }
     },
     {
-      "id": "#/texts/138",
+      "id": "#/texts/139",
       "page": 5,
       "order": 21,
       "role": "paragraph",
@@ -2321,7 +2340,7 @@
       }
     },
     {
-      "id": "#/texts/139",
+      "id": "#/texts/140",
       "page": 5,
       "order": 22,
       "role": "paragraph",
@@ -2340,7 +2359,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/141",
       "page": 5,
       "order": 23,
       "role": "heading",
@@ -2359,7 +2378,7 @@
       }
     },
     {
-      "id": "#/texts/141",
+      "id": "#/texts/142",
       "page": 5,
       "order": 24,
       "role": "paragraph",
@@ -2378,7 +2397,7 @@
       }
     },
     {
-      "id": "#/texts/142",
+      "id": "#/texts/143",
       "page": 5,
       "order": 25,
       "role": "list_item",
@@ -2397,7 +2416,7 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/144",
       "page": 5,
       "order": 26,
       "role": "list_item",
@@ -2416,7 +2435,7 @@
       }
     },
     {
-      "id": "#/texts/144",
+      "id": "#/texts/145",
       "page": 5,
       "order": 27,
       "role": "caption",
@@ -2435,7 +2454,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/146",
       "page": 5,
       "order": 28,
       "role": "paragraph",
@@ -2454,7 +2473,7 @@
       }
     },
     {
-      "id": "#/texts/146",
+      "id": "#/texts/147",
       "page": 5,
       "order": 29,
       "role": "paragraph",
@@ -2473,7 +2492,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/148",
       "page": 5,
       "order": 30,
       "role": "paragraph",
@@ -2492,7 +2511,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/149",
       "page": 5,
       "order": 31,
       "role": "paragraph",
@@ -2511,7 +2530,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/150",
       "page": 5,
       "order": 32,
       "role": "paragraph",
@@ -2530,7 +2549,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/151",
       "page": 5,
       "order": 33,
       "role": "paragraph",
@@ -2549,18 +2568,18 @@
       }
     },
     {
-      "id": "#/texts/151",
+      "id": "#/texts/152",
       "page": 5,
       "order": 34,
       "role": "paragraph",
       "text": "A",
       "bbox": {
         "x0": 523.42,
-        "y0": 482.34,
-        "x1": 534.92,
+        "y0": 481.19,
+        "x1": 536.08,
         "y1": 495.0,
-        "width": 11.5,
-        "height": 12.66
+        "width": 12.66,
+        "height": 13.81
       },
       "meta": {
         "docling_label": "text",
@@ -2568,7 +2587,7 @@
       }
     },
     {
-      "id": "#/texts/152",
+      "id": "#/texts/153",
       "page": 5,
       "order": 35,
       "role": "heading",
@@ -2587,7 +2606,7 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/154",
       "page": 5,
       "order": 36,
       "role": "paragraph",
@@ -2606,7 +2625,7 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/157",
       "page": 6,
       "order": 1,
       "role": "paragraph",
@@ -2625,7 +2644,7 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/158",
       "page": 6,
       "order": 2,
       "role": "list_item",
@@ -2644,7 +2663,7 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/159",
       "page": 6,
       "order": 3,
       "role": "list_item",
@@ -2663,7 +2682,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/160",
       "page": 6,
       "order": 4,
       "role": "list_item",
@@ -2682,7 +2701,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/161",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -2701,7 +2720,7 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/162",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -2720,7 +2739,7 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/163",
       "page": 6,
       "order": 7,
       "role": "caption",
@@ -2739,7 +2758,7 @@
       }
     },
     {
-      "id": "#/texts/163",
+      "id": "#/texts/164",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -2758,7 +2777,7 @@
       }
     },
     {
-      "id": "#/texts/164",
+      "id": "#/texts/165",
       "page": 6,
       "order": 9,
       "role": "paragraph",
@@ -2777,7 +2796,7 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/166",
       "page": 6,
       "order": 10,
       "role": "paragraph",
@@ -2796,7 +2815,7 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/167",
       "page": 6,
       "order": 11,
       "role": "paragraph",
@@ -2815,7 +2834,7 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/168",
       "page": 6,
       "order": 12,
       "role": "paragraph",
@@ -2834,7 +2853,7 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/169",
       "page": 6,
       "order": 13,
       "role": "paragraph",
@@ -2853,7 +2872,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/170",
       "page": 6,
       "order": 14,
       "role": "caption",
@@ -2872,7 +2891,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/172",
       "page": 6,
       "order": 15,
       "role": "paragraph",
@@ -2891,7 +2910,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/173",
       "page": 6,
       "order": 16,
       "role": "paragraph",
@@ -2910,7 +2929,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/174",
       "page": 6,
       "order": 17,
       "role": "paragraph",
@@ -2929,7 +2948,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/175",
       "page": 6,
       "order": 18,
       "role": "paragraph",
@@ -2948,7 +2967,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/176",
       "page": 6,
       "order": 19,
       "role": "paragraph",
@@ -2967,7 +2986,7 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/177",
       "page": 6,
       "order": 20,
       "role": "paragraph",
@@ -2986,7 +3005,7 @@
       }
     },
     {
-      "id": "#/texts/177",
+      "id": "#/texts/178",
       "page": 6,
       "order": 21,
       "role": "paragraph",
@@ -3005,7 +3024,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/179",
       "page": 6,
       "order": 22,
       "role": "paragraph",
@@ -3024,7 +3043,7 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/180",
       "page": 6,
       "order": 23,
       "role": "paragraph",
@@ -3043,7 +3062,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/181",
       "page": 6,
       "order": 24,
       "role": "paragraph",
@@ -3062,7 +3081,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/182",
       "page": 6,
       "order": 25,
       "role": "paragraph",
@@ -3081,7 +3100,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/183",
       "page": 6,
       "order": 26,
       "role": "paragraph",
@@ -3100,7 +3119,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/184",
       "page": 6,
       "order": 27,
       "role": "paragraph",
@@ -3119,7 +3138,7 @@
       }
     },
     {
-      "id": "#/texts/184",
+      "id": "#/texts/185",
       "page": 6,
       "order": 28,
       "role": "paragraph",
@@ -3138,7 +3157,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/186",
       "page": 6,
       "order": 29,
       "role": "paragraph",
@@ -3157,7 +3176,7 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/187",
       "page": 6,
       "order": 30,
       "role": "paragraph",
@@ -3176,7 +3195,7 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/188",
       "page": 6,
       "order": 31,
       "role": "paragraph",
@@ -3195,7 +3214,7 @@
       }
     },
     {
-      "id": "#/texts/188",
+      "id": "#/texts/189",
       "page": 6,
       "order": 32,
       "role": "paragraph",
@@ -3214,7 +3233,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/190",
       "page": 6,
       "order": 33,
       "role": "paragraph",
@@ -3233,7 +3252,7 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/191",
       "page": 6,
       "order": 34,
       "role": "paragraph",
@@ -3252,7 +3271,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/192",
       "page": 6,
       "order": 35,
       "role": "paragraph",
@@ -3271,7 +3290,7 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/193",
       "page": 6,
       "order": 36,
       "role": "paragraph",
@@ -3290,7 +3309,7 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/194",
       "page": 6,
       "order": 37,
       "role": "paragraph",
@@ -3309,7 +3328,7 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/195",
       "page": 6,
       "order": 38,
       "role": "paragraph",
@@ -3328,7 +3347,7 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/198",
       "page": 6,
       "order": 39,
       "role": "paragraph",
@@ -3347,7 +3366,7 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/199",
       "page": 6,
       "order": 40,
       "role": "paragraph",
@@ -3366,7 +3385,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/200",
       "page": 6,
       "order": 41,
       "role": "paragraph",
@@ -3385,7 +3404,7 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/201",
       "page": 6,
       "order": 42,
       "role": "paragraph",
@@ -3404,7 +3423,7 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/202",
       "page": 6,
       "order": 43,
       "role": "paragraph",
@@ -3423,7 +3442,7 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/203",
       "page": 6,
       "order": 44,
       "role": "paragraph",
@@ -3442,7 +3461,7 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/204",
       "page": 6,
       "order": 45,
       "role": "paragraph",
@@ -3461,7 +3480,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/205",
       "page": 6,
       "order": 46,
       "role": "paragraph",
@@ -3480,7 +3499,7 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/206",
       "page": 6,
       "order": 47,
       "role": "paragraph",
@@ -3499,7 +3518,7 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/207",
       "page": 6,
       "order": 48,
       "role": "caption",
@@ -3518,7 +3537,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/208",
       "page": 6,
       "order": 49,
       "role": "heading",
@@ -3537,7 +3556,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/209",
       "page": 6,
       "order": 50,
       "role": "paragraph",
@@ -3556,7 +3575,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/212",
       "page": 7,
       "order": 1,
       "role": "caption",
@@ -3575,7 +3594,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/213",
       "page": 7,
       "order": 2,
       "role": "paragraph",
@@ -3594,7 +3613,7 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/214",
       "page": 7,
       "order": 3,
       "role": "paragraph",
@@ -3613,7 +3632,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/215",
       "page": 7,
       "order": 4,
       "role": "paragraph",
@@ -3632,7 +3651,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/216",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -3651,7 +3670,7 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/217",
       "page": 7,
       "order": 6,
       "role": "paragraph",
@@ -3670,7 +3689,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/218",
       "page": 7,
       "order": 7,
       "role": "caption",
@@ -3689,7 +3708,7 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/219",
       "page": 7,
       "order": 8,
       "role": "heading",
@@ -3708,7 +3727,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/220",
       "page": 7,
       "order": 9,
       "role": "list_item",
@@ -3727,7 +3746,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/221",
       "page": 7,
       "order": 10,
       "role": "caption",
@@ -3746,7 +3765,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/222",
       "page": 7,
       "order": 11,
       "role": "list_item",
@@ -3765,7 +3784,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/223",
       "page": 7,
       "order": 12,
       "role": "heading",
@@ -3784,7 +3803,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/224",
       "page": 7,
       "order": 13,
       "role": "paragraph",
@@ -3803,7 +3822,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/225",
       "page": 7,
       "order": 14,
       "role": "paragraph",
@@ -3822,7 +3841,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/226",
       "page": 7,
       "order": 15,
       "role": "paragraph",
@@ -3841,7 +3860,7 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/227",
       "page": 7,
       "order": 16,
       "role": "list_item",
@@ -3860,7 +3879,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/228",
       "page": 7,
       "order": 17,
       "role": "paragraph",
@@ -3879,7 +3898,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/229",
       "page": 7,
       "order": 18,
       "role": "paragraph",
@@ -3898,7 +3917,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/230",
       "page": 7,
       "order": 19,
       "role": "paragraph",
@@ -3917,7 +3936,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/231",
       "page": 7,
       "order": 20,
       "role": "paragraph",

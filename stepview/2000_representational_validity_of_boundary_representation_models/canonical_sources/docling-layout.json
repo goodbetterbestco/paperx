@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2000_representational_validity_of_boundary_representation_models/2000_representational_validity_of_boundary_representation_models.pdf",
+  "pdf_path": "stepview/2000_representational_validity_of_boundary_representation_models/2000_representational_validity_of_boundary_representation_models.pdf",
   "page_count": 8,
   "page_sizes_pt": [
     {
@@ -68,7 +68,7 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 57.85,
@@ -87,14 +87,14 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Validity is an important property of solid modeling representations. It ensures that representations always describe physically realizable solids, instead of nonsense objects. This paper surveys and supplements the mathematical theory of ideal boundary representation (B-rep) of solids. In particular, it presents a complete set of conditions on representational nodes of a typical B-rep data structure and proves their sufficiency for model validity. Such conditions are useful in invalid model rectification procedures. © 2000 Elsevier Science Ltd. All rights reserved.",
       "bbox": {
         "x0": 56.21,
         "y0": 379.11,
-        "x1": 783.89,
+        "x1": 782.23,
         "y1": 453.69,
-        "width": 727.68,
+        "width": 726.02,
         "height": 74.58
       },
       "meta": {
@@ -106,7 +106,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: Solid modeling; Manifold boundary representation; Ideal model validity; Sufficient conditions; Rectification",
       "bbox": {
         "x0": 57.88,
@@ -125,15 +125,15 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
-        "x0": 57.88,
-        "y0": 518.18,
-        "x1": 152.15,
-        "y1": 531.51,
-        "width": 94.27,
-        "height": 13.33
+        "x0": 57.84,
+        "y0": 517.94,
+        "x1": 152.18,
+        "y1": 533.32,
+        "width": 94.34,
+        "height": 15.38
       },
       "meta": {
         "docling_label": "section_header",
@@ -144,7 +144,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Model validity has long been recognized as an important problem in solid modeling theory and CAD CAM CAE practice [1-3]. An invalid model describes a nonsense object which cannot be properly interpreted and thus cannot be realized as a physical artifact. Although validity is a highly desired property of model representations, not all modelers have it. As is well known, validity of boundary representation (B-rep) models is not self-guaranteed.",
       "bbox": {
         "x0": 56.23,
@@ -163,14 +163,14 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In spite of effort and progress in developing modeling theory and techniques for creating valid B-rep models, models created using today's CAD systems often contain defects —representational features which violate semantics rules of B-rep modelers. In a manifold B-rep model, defects visually appear as gaps, inappropriate intersections, dangling patches, internal walls and inconsistent orientations. Causes of defects exist throughout the entire life cycle of a model, just to name a few, such as pathological behaviors of solid modeling operations, improperly implemented algorithms, precision limitation of the computer, and data exchange. Consequences of defects could be severe. Invalid models may make certain modeling operations fail, create useless analysis results, produce defective products, and cost enormous resources in fixing at the other end of data exchange, and delay the overall design process considerably.",
       "bbox": {
         "x0": 54.57,
         "y0": 690.35,
-        "x1": 403.52,
+        "x1": 403.55,
         "y1": 980.37,
-        "width": 348.95,
+        "width": 348.98,
         "height": 290.02
       },
       "meta": {
@@ -206,9 +206,9 @@
       "bbox": {
         "x0": 76.07,
         "y0": 1041.32,
-        "x1": 315.87,
+        "x1": 314.22,
         "y1": 1054.69,
-        "width": 239.8,
+        "width": 238.15,
         "height": 13.37
       },
       "meta": {
@@ -220,7 +220,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In the early years of solid modeling, validity verification was mostly done by the user, and was error-prone [1]. As the complexity of models grows enormously, it becomes nearly impossible for the human being to visualize defects, and thus automated, or semi-automated (with limited user assistance), validity verification methods are needed in the solid modeling community.",
       "bbox": {
         "x0": 434.94,
@@ -239,7 +239,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In this paper, we study representational validity of ideal Brep models. In particular, we compile and prove a complete set of sufficient conditions for representational nodes of a typical B-rep data structure. Most of these conditions have appeared in various forms in extant literature, but often in a less complete manner and without a detailed mathematical proof that these conditions lead to a valid solid.",
       "bbox": {
         "x0": 434.94,
@@ -258,14 +258,14 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The paper is organized as follows: Section 2 briefly reviews prior research on model validity. Sections 3 and 4 present the mathematical theory of ideal B-rep of solid models. Section 5 first deals with representational validity of ideal B-rep models; next we present sufficient conditions for validity of manifold B-reps and prove that these conditions lead to a valid solid using methods of Geometric Algebraic Topology. Section 6 concludes this paper with comments on the usefulness of these conditions in invalid model rectification procedures.",
       "bbox": {
         "x0": 434.94,
         "y0": 759.78,
-        "x1": 783.89,
+        "x1": 782.23,
         "y1": 928.75,
-        "width": 348.95,
+        "width": 347.29,
         "height": 168.97
       },
       "meta": {
@@ -277,7 +277,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "heading",
       "text": "2. Brief literature review",
       "bbox": {
         "x0": 434.94,
@@ -296,7 +296,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Fundamental concepts and definitions of solid modeling can be found in Requicha [1], Mäntyla [2], Hoffmann [3], Braid [4], and the literature cited therein. A historical",
       "bbox": {
         "x0": 434.94,
@@ -315,7 +315,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer-Aided Design 32 (2000) 719-726",
       "bbox": {
         "x0": 315.87,
@@ -334,7 +334,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "heading",
       "text": "COMPUTER-AIDED DESIGN",
       "bbox": {
         "x0": 654.89,
@@ -353,7 +353,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "www.elsevier.com locate cad",
       "bbox": {
         "x0": 643.32,
@@ -372,7 +372,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Representational validity of boundary representation models",
       "bbox": {
         "x0": 119.07,
@@ -391,7 +391,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "T. Sakkalis, G. Shen, N.M. Patrikalakis*",
       "bbox": {
         "x0": 262.69,
@@ -410,7 +410,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139-4307, USA Received 22 June 1999; received in revised form 3 February 2000; accepted 9 February 2000",
       "bbox": {
         "x0": 185.22,
@@ -491,9 +491,9 @@
       "bbox": {
         "x0": 66.15,
         "y0": 539.7,
-        "x1": 415.23,
+        "x1": 415.18,
         "y1": 811.21,
-        "width": 349.08,
+        "width": 349.03,
         "height": 271.51
       },
       "meta": {
@@ -623,11 +623,11 @@
       "text": "B-rep model is valid if its faces form a 2-manifold without boundary. Specifically, a B-rep model is valid if the following conditions are satisfied [7]:",
       "bbox": {
         "x0": 446.52,
-        "y0": 296.27,
+        "y0": 297.91,
         "x1": 793.81,
         "y1": 347.66,
         "width": 347.29,
-        "height": 51.39
+        "height": 49.75
       },
       "meta": {
         "docling_label": "text",
@@ -717,12 +717,12 @@
       "role": "paragraph",
       "text": "Topological integrity can be assured by using Euler operators as primitive modeling operators. Euler operators were introduced by Baumgart [10] in his work on computer vision, and were extensively studied by many others [4,7,8,11,12], see also Braid [5] for historical notes on Euler operators. The theoretical basis is the well-known Euler-Poincaré formula, which holds for polyhedra in R3 A limited set of Euler operators is enough to construct any polyhedron. For convenience, often an augmented set of Euler operators is chosen. Higher level modeling operations, such as sweeping, chamfering, and set operations,",
       "bbox": {
-        "x0": 444.86,
+        "x0": 446.43,
         "y0": 625.79,
         "x1": 793.81,
-        "y1": 812.86,
-        "width": 348.95,
-        "height": 187.07
+        "y1": 814.52,
+        "width": 347.38,
+        "height": 188.73
       },
       "meta": {
         "docling_label": "text",
@@ -737,11 +737,11 @@
       "text": "(b)",
       "bbox": {
         "x0": 519.28,
-        "y0": 1008.21,
+        "y0": 1009.87,
         "x1": 539.13,
         "y1": 1023.11,
         "width": 19.85,
-        "height": 14.9
+        "height": 13.24
       },
       "meta": {
         "docling_label": "text",
@@ -1021,11 +1021,11 @@
       "role": "paragraph",
       "text": "Model",
       "bbox": {
-        "x0": 730.97,
+        "x0": 729.31,
         "y0": 99.33,
         "x1": 767.35,
         "y1": 109.26,
-        "width": 36.38,
+        "width": 38.04,
         "height": 9.93
       },
       "meta": {
@@ -1078,11 +1078,11 @@
       "role": "paragraph",
       "text": "Curve",
       "bbox": {
-        "x0": 454.79,
+        "x0": 453.13,
         "y0": 258.26,
         "x1": 487.86,
         "y1": 269.85,
-        "width": 33.07,
+        "width": 34.73,
         "height": 11.59
       },
       "meta": {
@@ -1135,12 +1135,12 @@
       "role": "paragraph",
       "text": "Edge",
       "bbox": {
-        "x0": 734.2,
-        "y0": 258.09,
-        "x1": 764.12,
-        "y1": 271.67,
-        "width": 29.92,
-        "height": 13.58
+        "x0": 734.12,
+        "y0": 257.9,
+        "x1": 764.2,
+        "y1": 271.86,
+        "width": 30.08,
+        "height": 13.96
       },
       "meta": {
         "docling_label": "text",
@@ -1228,18 +1228,18 @@
       "page": 3,
       "order": 25,
       "role": "paragraph",
-      "text": "Definition 3.1. Let AC R\". The interior Int(A) of A consists of all points a E A such that A contains a neighborhood of a. The closure A is defined as A = int(A). The boundary of A is Bd(A) = A - Int(A). A shall be called compact if it is bounded and closed.",
+      "text": "Definition 3.1. Let AC R\". The interior Int(A) of A consists of all points a E A such that A contains a neighborhood of a. The closure A is defined as A = Tint(A). The boundary of A is Bd(A) = A - Int(A). A shall be called compact if it is bounded and closed.",
       "bbox": {
-        "x0": 433.29,
+        "x0": 433.2,
         "y0": 605.82,
-        "x1": 782.23,
+        "x1": 782.35,
         "y1": 692.13,
-        "width": 348.94,
+        "width": 349.15,
         "height": 86.31
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Definition 3.1. Let AC R\". The interior Int(A) of A consists of all points a E A such that A contains a neighborhood of a. The closure A is defined as A = int(A). The boundary of A is Bd(A) = A - Int(A). A shall be called compact if it is bounded and closed."
+        "docling_orig": "Definition 3.1. Let AC R\". The interior Int(A) of A consists of all points a E A such that A contains a neighborhood of a. The closure A is defined as A = Tint(A). The boundary of A is Bd(A) = A - Int(A). A shall be called compact if it is bounded and closed."
       }
     },
     {
@@ -1361,7 +1361,7 @@
       "page": 4,
       "order": 4,
       "role": "paragraph",
-      "text": "Definition 3.5. A curve c C R\" is the image of a continuous map g : [0, 1] → R\". It is called simple if gis 1-1 over (0,1). c is closed if g(0) = g(1). We also say that c has a selfintersection if g(to) = g(t), with to # t and at least one of the to, t is in the interior of [0,1].",
+      "text": "Definition 3.5. A curve c C R\" is the image of a continuous map g: [0, 1] → R\". It is called simple if gis 1-1 over (0,1). c is closed if g(0) = g(1). We also say that c has a selfintersection if g(to) = g(t), with to # t and at least one of the to, ty is in the interior of [0,1].",
       "bbox": {
         "x0": 66.15,
         "y0": 349.23,
@@ -1372,7 +1372,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Definition 3.5. A curve c C R\" is the image of a continuous map g : [0, 1] → R\". It is called simple if gis 1-1 over (0,1). c is closed if g(0) = g(1). We also say that c has a selfintersection if g(to) = g(t), with to # t and at least one of the to, t is in the interior of [0,1]."
+        "docling_orig": "Definition 3.5. A curve c C R\" is the image of a continuous map g: [0, 1] → R\". It is called simple if gis 1-1 over (0,1). c is closed if g(0) = g(1). We also say that c has a selfintersection if g(to) = g(t), with to # t and at least one of the to, ty is in the interior of [0,1]."
       }
     },
     {
@@ -1399,18 +1399,18 @@
       "page": 4,
       "order": 6,
       "role": "paragraph",
-      "text": "If Ф is differentiable, we call ≥ a differentiable surface. In that case we say that 2 is smooth at a point (4o, Vo) if the vector аФ диХаФ д # 0. We also call I an almost smooth (AS) surface if is smooth for all points in D, except at a set of points of measure zero. Finally, we say that 2 has a self-intersection if there exist points (u1, VI) ‡ (U2, V2) E D, with at least one of these points in the interior of D, so that Ф(u1, VI) = Ф(u2, V2).",
+      "text": "If Ф is differentiable, we call ≥ a differentiable surface. In that case we say that 2 is smooth at a point (4o, Vo) if the vector аФ диХаФ д # 0. We also call I an almost smooth (AS) surface if is smooth for all points in D, except at a set of points of measure zero. Finally, we say that 2 has a self-intersection if there exist points (u1, VI) ‡ (U2, V2) E D, with at least one of these points in the interior of D, so that P(u1, VI) = Ф(U2, V2).",
       "bbox": {
         "x0": 67.8,
         "y0": 523.15,
         "x1": 415.1,
-        "y1": 657.24,
+        "y1": 658.9,
         "width": 347.3,
-        "height": 134.09
+        "height": 135.75
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "If Ф is differentiable, we call ≥ a differentiable surface. In that case we say that 2 is smooth at a point (4o, Vo) if the vector аФ диХаФ д # 0. We also call I an almost smooth (AS) surface if is smooth for all points in D, except at a set of points of measure zero. Finally, we say that 2 has a self-intersection if there exist points (u1, VI) ‡ (U2, V2) E D, with at least one of these points in the interior of D, so that Ф(u1, VI) = Ф(u2, V2)."
+        "docling_orig": "If Ф is differentiable, we call ≥ a differentiable surface. In that case we say that 2 is smooth at a point (4o, Vo) if the vector аФ диХаФ д # 0. We also call I an almost smooth (AS) surface if is smooth for all points in D, except at a set of points of measure zero. Finally, we say that 2 has a self-intersection if there exist points (u1, VI) ‡ (U2, V2) E D, with at least one of these points in the interior of D, so that P(u1, VI) = Ф(U2, V2)."
       }
     },
     {
@@ -1475,7 +1475,7 @@
       "page": 4,
       "order": 10,
       "role": "paragraph",
-      "text": "1. Its boundary dS is a 2-manifold without boundary, and 2. aS C Uf R, where (Ry) are AS surfaces.",
+      "text": "1. Its boundary dS is a 2-manifold without boundary, and 2. aS C Uf, R, where (R) are AS surfaces.",
       "bbox": {
         "x0": 67.8,
         "y0": 789.68,
@@ -1486,7 +1486,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "1. Its boundary dS is a 2-manifold without boundary, and 2. aS C Uf R, where (Ry) are AS surfaces."
+        "docling_orig": "1. Its boundary dS is a 2-manifold without boundary, and 2. aS C Uf, R, where (R) are AS surfaces."
       }
     },
     {
@@ -1532,18 +1532,18 @@
       "page": 4,
       "order": 13,
       "role": "paragraph",
-      "text": "Definition 4.2. Let S be a solid. A shell C of S is connected component of as [7]. For such a C, we define the inner (outer) part of C, C' (C9), as the interior of the unique bounded (unbounded) connected component of R3 - C, respectively.",
+      "text": "Definition 4.2. Let S be a solid. A shell C of S is connected component of as [7]. For such a C, we define the inner (outer) part of C, C' (C°), as the interior of the unique bounded (unbounded) connected component of R - C, respectively.",
       "bbox": {
-        "x0": 66.0,
+        "x0": 66.15,
         "y0": 1004.9,
-        "x1": 415.24,
-        "y1": 1057.81,
-        "width": 349.24,
-        "height": 52.91
+        "x1": 415.1,
+        "y1": 1056.36,
+        "width": 348.95,
+        "height": 51.46
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Definition 4.2. Let S be a solid. A shell C of S is connected component of as [7]. For such a C, we define the inner (outer) part of C, C' (C9), as the interior of the unique bounded (unbounded) connected component of R3 - C, respectively."
+        "docling_orig": "Definition 4.2. Let S be a solid. A shell C of S is connected component of as [7]. For such a C, we define the inner (outer) part of C, C' (C°), as the interior of the unique bounded (unbounded) connected component of R - C, respectively."
       }
     },
     {
@@ -1589,7 +1589,7 @@
       "page": 4,
       "order": 16,
       "role": "paragraph",
-      "text": "Proof. Let Ube the unique unbounded connected component of R3-S. Let now C, be a shell of S with the property that some point pE C, has a neighborhood that does not meet any other shell of S and intersects U. Since Ce is orientable, we see that every point of C. has the above property. We now claim that this shell of S is the only one with this property; for otherwise, S would not be connected. Finally, if C is another shell of S it obviously lies in the inner part of Ce, since the outer part of Ce is precisely U. O",
+      "text": "Proof. Let Ube the unique unbounded connected component of R3-S. Let now Ce be a shell of S with the property that some point pE C, has a neighborhood that does not meet any other shell of S and intersects U. Since Ce is orientable, we see that every point of C. has the above property. We now claim that this shell of S is the only one with this property; for otherwise, S would not be connected. Finally, if C is another shell of S it obviously lies in the inner part of Ce, since the outer part of Ce is precisely U.",
       "bbox": {
         "x0": 444.86,
         "y0": 297.91,
@@ -1600,7 +1600,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Proof. Let Ube the unique unbounded connected component of R3-S. Let now C, be a shell of S with the property that some point pE C, has a neighborhood that does not meet any other shell of S and intersects U. Since Ce is orientable, we see that every point of C. has the above property. We now claim that this shell of S is the only one with this property; for otherwise, S would not be connected. Finally, if C is another shell of S it obviously lies in the inner part of Ce, since the outer part of Ce is precisely U. O"
+        "docling_orig": "Proof. Let Ube the unique unbounded connected component of R3-S. Let now Ce be a shell of S with the property that some point pE C, has a neighborhood that does not meet any other shell of S and intersects U. Since Ce is orientable, we see that every point of C. has the above property. We now claim that this shell of S is the only one with this property; for otherwise, S would not be connected. Finally, if C is another shell of S it obviously lies in the inner part of Ce, since the outer part of Ce is precisely U."
       }
     },
     {
@@ -1613,9 +1613,9 @@
         "x0": 446.52,
         "y0": 488.38,
         "x1": 793.81,
-        "y1": 518.18,
+        "y1": 516.52,
         "width": 347.29,
-        "height": 29.8
+        "height": 28.14
       },
       "meta": {
         "docling_label": "text",
@@ -1722,18 +1722,18 @@
       "page": 4,
       "order": 23,
       "role": "list_item",
-      "text": "fis homeomorphic to a (topological sphere 2 minus a finite number of mutually disjoint (nondegenerate) open disks 4, C 2, i= 0,1,..,k,k ≥ 0, so that for i‡ j, д4, 0 a4, is either empty or a single point.",
+      "text": "fis homeomorphic to a (topological sphere 2 minus a finite number of mutually disjoint (nondegenerate) open disks 4, C 2, i= 0,1,...,k,k ≥ 0, so that for i‡ j, д4, n a4; is either empty or a single point.",
       "bbox": {
         "x0": 446.52,
         "y0": 781.41,
         "x1": 792.16,
-        "y1": 849.42,
+        "y1": 847.75,
         "width": 345.64,
-        "height": 68.01
+        "height": 66.34
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "3. fis homeomorphic to a (topological sphere 2 minus a finite number of mutually disjoint (nondegenerate) open disks 4, C 2, i= 0,1,..,k,k ≥ 0, so that for i‡ j, д4, 0 a4, is either empty or a single point."
+        "docling_orig": "3. fis homeomorphic to a (topological sphere 2 minus a finite number of mutually disjoint (nondegenerate) open disks 4, C 2, i= 0,1,...,k,k ≥ 0, so that for i‡ j, д4, n a4; is either empty or a single point."
       }
     },
     {
@@ -1860,9 +1860,9 @@
         "x0": 54.57,
         "y0": 441.87,
         "x1": 405.17,
-        "y1": 508.25,
+        "y1": 509.9,
         "width": 350.6,
-        "height": 66.38
+        "height": 68.03
       },
       "meta": {
         "docling_label": "text",
@@ -1912,7 +1912,7 @@
       "page": 5,
       "order": 8,
       "role": "paragraph",
-      "text": "F1. c; = B(x, r) n a4, is a simple curve. Moreover, if x E 24;, j‡ i, then c; n c; = {x}.",
+      "text": "F1. c; = B(x, r) n a4, is a simple curve. Moreover, if x E 24;, j‡ i, then c; N c; = {x}.",
       "bbox": {
         "x0": 56.23,
         "y0": 658.81,
@@ -1923,7 +1923,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F1. c; = B(x, r) n a4, is a simple curve. Moreover, if x E 24;, j‡ i, then c; n c; = {x}."
+        "docling_orig": "F1. c; = B(x, r) n a4, is a simple curve. Moreover, if x E 24;, j‡ i, then c; N c; = {x}."
       }
     },
     {
@@ -1953,11 +1953,11 @@
       "text": "Proof. F1. Let x E Bd( f). Then, x belongs to the boundary of some open disk 4j. Since that boundary is an 1-manifold without boundary, i.e. a simple closed curve, we may pick an r > 0 so that c; = B(x, r) Nд4, is a simple curve. Now, if xE 04j, j‡ i, Definition 4.3(3) says that 24, na4, = {x}. Thus, c; N c, = {x}.",
       "bbox": {
         "x0": 56.23,
-        "y0": 779.55,
+        "y0": 781.41,
         "x1": 405.17,
         "y1": 884.07,
         "width": 348.94,
-        "height": 104.52
+        "height": 102.66
       },
       "meta": {
         "docling_label": "text",
@@ -1969,18 +1969,18 @@
       "page": 5,
       "order": 11,
       "role": "paragraph",
-      "text": "F2. Let x E N#, a4,. Then if ris as above, Ex(r) = En B(x, r) is a closed disk. From F1 we see that each c; intersects Bd(Ex(r)) at precisely two points, say al, a}. Since each 4, is a 2-manifold with boundary the simple closed curve d4, we see that 4; = 4, n B(x, r) is an open half disk, whose boundary contains aj, ai. Since c, n c; = {x}, we observe that the cis divide the disk E(r) into precisely 2m connected regions R;, Ri, each one of them being a closed disk, whose boundary contain the points al, ai, and a}, alt1, respectively. The proof is now complete. ·",
+      "text": "F2. Let x E N#, a4,. Then if ris as above, Ex(r) = En B(x, r) is a closed disk. From F1 we see that each c; intersects Bd(Ex(r)) at precisely two points, say al, a}. Since each 4, is a 2-manifold with boundary the simple closed curve d4, we see that 4; = 4, n B(x, r) is an open half disk, whose boundary contains aj, ai. Since c, n c; = {x}, we observe that the ci's divide the disk 2x (r) into precisely 2m connected regions R;, Ri, each one of them being a closed disk, whose boundary contain the points al, ai, and a}, alt1, respectively. The proof is now complete. ·",
       "bbox": {
-        "x0": 54.46,
+        "x0": 54.43,
         "y0": 882.39,
         "x1": 405.17,
         "y1": 1056.36,
-        "width": 350.71,
+        "width": 350.74,
         "height": 173.97
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "F2. Let x E N#, a4,. Then if ris as above, Ex(r) = En B(x, r) is a closed disk. From F1 we see that each c; intersects Bd(Ex(r)) at precisely two points, say al, a}. Since each 4, is a 2-manifold with boundary the simple closed curve d4, we see that 4; = 4, n B(x, r) is an open half disk, whose boundary contains aj, ai. Since c, n c; = {x}, we observe that the cis divide the disk E(r) into precisely 2m connected regions R;, Ri, each one of them being a closed disk, whose boundary contain the points al, ai, and a}, alt1, respectively. The proof is now complete. ·"
+        "docling_orig": "F2. Let x E N#, a4,. Then if ris as above, Ex(r) = En B(x, r) is a closed disk. From F1 we see that each c; intersects Bd(Ex(r)) at precisely two points, say al, a}. Since each 4, is a 2-manifold with boundary the simple closed curve d4, we see that 4; = 4, n B(x, r) is an open half disk, whose boundary contains aj, ai. Since c, n c; = {x}, we observe that the ci's divide the disk 2x (r) into precisely 2m connected regions R;, Ri, each one of them being a closed disk, whose boundary contain the points al, ai, and a}, alt1, respectively. The proof is now complete. ·"
       }
     },
     {
@@ -2104,12 +2104,12 @@
       "role": "paragraph",
       "text": "Definition 4.5. An edge e of a face fis a subset of Bd(f) such that",
       "bbox": {
-        "x0": 434.86,
+        "x0": 434.9,
         "y0": 841.01,
         "x1": 782.23,
-        "y1": 871.24,
-        "width": 347.37,
-        "height": 30.23
+        "y1": 870.99,
+        "width": 347.33,
+        "height": 29.98
       },
       "meta": {
         "docling_label": "text",
@@ -2216,7 +2216,7 @@
       "page": 5,
       "order": 24,
       "role": "list_item",
-      "text": "An arbitrary point in Bd(e) if Bd(e) = Ø.",
+      "text": "An arbitrary point in Bd(e) if Bd(e) =Ø.",
       "bbox": {
         "x0": 433.2,
         "y0": 1037.88,
@@ -2227,7 +2227,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "· An arbitrary point in Bd(e) if Bd(e) = Ø."
+        "docling_orig": "· An arbitrary point in Bd(e) if Bd(e) =Ø."
       }
     },
     {
@@ -2311,18 +2311,18 @@
       "page": 6,
       "order": 5,
       "role": "list_item",
-      "text": "For any if j, tint; = Bd(ti) N Bd(ti.",
+      "text": "For any if j, tint; = Bd(ti) N Bd(t).",
       "bbox": {
         "x0": 67.8,
         "y0": 256.59,
-        "x1": 319.18,
+        "x1": 320.83,
         "y1": 273.25,
-        "width": 251.38,
+        "width": 253.03,
         "height": 16.66
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "2. For any if j, tint; = Bd(ti) N Bd(ti."
+        "docling_orig": "2. For any if j, tint; = Bd(ti) N Bd(t)."
       }
     },
     {
@@ -2373,9 +2373,9 @@
         "x0": 66.15,
         "y0": 369.18,
         "x1": 415.28,
-        "y1": 437.21,
+        "y1": 435.54,
         "width": 349.13,
-        "height": 68.03
+        "height": 66.36
       },
       "meta": {
         "docling_label": "text",
@@ -2503,12 +2503,12 @@
       "role": "heading",
       "text": "5.2. Sufficient conditions for node validity",
       "bbox": {
-        "x0": 69.32,
-        "y0": 903.4,
-        "x1": 316.02,
-        "y1": 920.63,
-        "width": 246.7,
-        "height": 17.23
+        "x0": 69.46,
+        "y0": 905.57,
+        "x1": 315.87,
+        "y1": 920.47,
+        "width": 246.41,
+        "height": 14.9
       },
       "meta": {
         "docling_label": "section_header",
@@ -2539,18 +2539,18 @@
       "page": 6,
       "order": 17,
       "role": "list_item",
-      "text": "C 5.1 Vertex node validity. A vertex node is a valid representation of a vertex if it is assigned with the coordinates specifying the position of the vertex in R.",
+      "text": "C 5.1 Vertex node validity. A vertex node is a valid representation of a vertex if it is assigned with the coordinates specifying the position of the vertex in R'.",
       "bbox": {
         "x0": 446.38,
-        "y0": 92.64,
+        "y0": 90.97,
         "x1": 792.16,
         "y1": 143.28,
         "width": 345.78,
-        "height": 50.64
+        "height": 52.31
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "C 5.1 Vertex node validity. A vertex node is a valid representation of a vertex if it is assigned with the coordinates specifying the position of the vertex in R."
+        "docling_orig": "C 5.1 Vertex node validity. A vertex node is a valid representation of a vertex if it is assigned with the coordinates specifying the position of the vertex in R'."
       }
     },
     {
@@ -2657,10 +2657,10 @@
       "bbox": {
         "x0": 446.52,
         "y0": 324.48,
-        "x1": 792.16,
-        "y1": 374.68,
-        "width": 345.64,
-        "height": 50.2
+        "x1": 793.81,
+        "y1": 374.73,
+        "width": 347.29,
+        "height": 50.25
       },
       "meta": {
         "docling_label": "list_item",
@@ -2731,12 +2731,12 @@
       "role": "list_item",
       "text": "The surface does not self-intersect in the interior of the region bounded by the loops, see Eq. (3).",
       "bbox": {
-        "x0": 446.47,
-        "y0": 478.22,
+        "x0": 446.48,
+        "y0": 478.31,
         "x1": 792.21,
         "y1": 511.56,
-        "width": 345.74,
-        "height": 33.34
+        "width": 345.73,
+        "height": 33.25
       },
       "meta": {
         "docling_label": "list_item",
@@ -2767,18 +2767,18 @@
       "page": 6,
       "order": 29,
       "role": "paragraph",
-      "text": "C 5.5 Shell node validity. A shell node represents a valid shell Cif",
+      "text": "C 5.5 Shell node validity. A shell node represents a valid shell C if",
       "bbox": {
-        "x0": 444.86,
+        "x0": 444.85,
         "y0": 539.7,
         "x1": 792.16,
-        "y1": 569.5,
-        "width": 347.3,
-        "height": 29.8
+        "y1": 569.56,
+        "width": 347.31,
+        "height": 29.86
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "C 5.5 Shell node validity. A shell node represents a valid shell Cif"
+        "docling_orig": "C 5.5 Shell node validity. A shell node represents a valid shell C if"
       }
     },
     {
@@ -2805,7 +2805,7 @@
       "page": 6,
       "order": 31,
       "role": "list_item",
-      "text": "Each vertex vE C has a finite number of incident faces f, E C and (nondegenerate) edges e; E C, 1 ≤ i ≤ m. These incident faces and edges can be arranged in the form of f, - e, - f2 - ... - fm- em - fm+1 = f, and e; is a common edge of f, and f+1, for i = 1, ...,m.",
+      "text": "Each vertex vE C has a finite number of incident faces f, E C and (nondegenerate) edges e; E C, 1 ≤ i ≤ m. These incident faces and edges can be arranged in the form of f, - e, - f2 - ... - fm- em - fm+1 = f, and e; is a common edge of f; and fi+1, for i = 1, ...,m.",
       "bbox": {
         "x0": 446.52,
         "y0": 617.49,
@@ -2816,7 +2816,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "2. Each vertex vE C has a finite number of incident faces f, E C and (nondegenerate) edges e; E C, 1 ≤ i ≤ m. These incident faces and edges can be arranged in the form of f, - e, - f2 - ... - fm- em - fm+1 = f, and e; is a common edge of f, and f+1, for i = 1, ...,m."
+        "docling_orig": "2. Each vertex vE C has a finite number of incident faces f, E C and (nondegenerate) edges e; E C, 1 ≤ i ≤ m. These incident faces and edges can be arranged in the form of f, - e, - f2 - ... - fm- em - fm+1 = f, and e; is a common edge of f; and fi+1, for i = 1, ...,m."
       }
     },
     {
@@ -2829,9 +2829,9 @@
         "x0": 446.52,
         "y0": 703.46,
         "x1": 793.81,
-        "y1": 751.71,
+        "y1": 751.85,
         "width": 347.29,
-        "height": 48.25
+        "height": 48.39
       },
       "meta": {
         "docling_label": "list_item",
@@ -2905,9 +2905,9 @@
         "x0": 446.52,
         "y0": 841.01,
         "x1": 793.81,
-        "y1": 889.38,
+        "y1": 889.27,
         "width": 347.29,
-        "height": 48.37
+        "height": 48.26
       },
       "meta": {
         "docling_label": "list_item",
@@ -3014,7 +3014,7 @@
       "page": 7,
       "order": 2,
       "role": "paragraph",
-      "text": "Our approach is primarily based on the fact that a face f that comes from a face node can be given a triangulation Tr This is easily seen from Remark 4.2. Furthermore, using C5.5.1, given any two faces fi and fz, we can always pick triangulations Tr and Ik of 4, f2 such that TiNIk is a triangulation off f2 = Bd(f) N Bd( f2).",
+      "text": "Our approach is primarily based on the fact that a face f that comes from a face node can be given a triangulation Tr This is easily seen from Remark 4.2. Furthermore, using C5.5.1, given any two faces fi and fz, we can always pick triangulations Tr and Ik of 4, f2 such that TiNIk is a triangulation of f N = Bd(f) N Bd( Bd(f2).",
       "bbox": {
         "x0": 56.23,
         "y0": 143.96,
@@ -3025,7 +3025,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Our approach is primarily based on the fact that a face f that comes from a face node can be given a triangulation Tr This is easily seen from Remark 4.2. Furthermore, using C5.5.1, given any two faces fi and fz, we can always pick triangulations Tr and Ik of 4, f2 such that TiNIk is a triangulation off f2 = Bd(f) N Bd( f2)."
+        "docling_orig": "Our approach is primarily based on the fact that a face f that comes from a face node can be given a triangulation Tr This is easily seen from Remark 4.2. Furthermore, using C5.5.1, given any two faces fi and fz, we can always pick triangulations Tr and Ik of 4, f2 such that TiNIk is a triangulation of f N = Bd(f) N Bd( Bd(f2)."
       }
     },
     {
@@ -3057,9 +3057,9 @@
         "x0": 54.57,
         "y0": 297.91,
         "x1": 405.17,
-        "y1": 500.53,
+        "y1": 501.77,
         "width": 350.6,
-        "height": 202.62
+        "height": 203.86
       },
       "meta": {
         "docling_label": "text",
@@ -3109,18 +3109,18 @@
       "page": 7,
       "order": 7,
       "role": "list_item",
-      "text": "c,N c= {a), for it j.",
+      "text": "c,N c= {a), for i ‡ j.",
       "bbox": {
         "x0": 56.23,
         "y0": 564.5,
-        "x1": 213.34,
+        "x1": 214.99,
         "y1": 584.5,
-        "width": 157.11,
+        "width": 158.76,
         "height": 20.0
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "· c,N c= {a), for it j."
+        "docling_orig": "· c,N c= {a), for i ‡ j."
       }
     },
     {
@@ -3128,7 +3128,7 @@
       "page": 7,
       "order": 8,
       "role": "paragraph",
-      "text": "From the second bullet above we see that aBne; is precisely one point; we call it a; Let N, = BN f From F2 we see that N, is a collection of k; half open disks Da(f), j= 1,...,kj. Since f is incident to ej-1 and ej Ci-1 and c, belong to one, and only one, of the above disks, say Da (fi). Call the unique simple oriented curve that is part of the boundary of Da(f) and connects aj-1 and a, without going through a, V-1. Now let = U™t {y-}, where am+1 = ay. Then, since the disks Da(f) and the interior of faces are mutually disjoint, respectively, we see that T is a simple curve that belongs to dB, and thus it is unknotted.",
+      "text": "From the second bullet above we see that aBne; is precisely one point; we call it a; Let N, = BN f From F2 we see that N, is a collection of k; half open disks Da(f), j= 1,...,kj. Since f is incident to ej-1 and e Ci-1 and c, belong to one, and only one, of the above disks, say Da (fi). Call the unique simple oriented curve that is part of the boundary of Da(f) and connects aj-1 and a, without going through a, V-1. Now let = U™t {y-}, where am+1 = ay. Then, since the disks Da(f) and the interior of faces are mutually disjoint, respectively, we see that T is a simple curve that belongs to dB, and thus it is unknotted.",
       "bbox": {
         "x0": 54.44,
         "y0": 591.02,
@@ -3139,7 +3139,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "From the second bullet above we see that aBne; is precisely one point; we call it a; Let N, = BN f From F2 we see that N, is a collection of k; half open disks Da(f), j= 1,...,kj. Since f is incident to ej-1 and ej Ci-1 and c, belong to one, and only one, of the above disks, say Da (fi). Call the unique simple oriented curve that is part of the boundary of Da(f) and connects aj-1 and a, without going through a, V-1. Now let = U™t {y-}, where am+1 = ay. Then, since the disks Da(f) and the interior of faces are mutually disjoint, respectively, we see that T is a simple curve that belongs to dB, and thus it is unknotted."
+        "docling_orig": "From the second bullet above we see that aBne; is precisely one point; we call it a; Let N, = BN f From F2 we see that N, is a collection of k; half open disks Da(f), j= 1,...,kj. Since f is incident to ej-1 and e Ci-1 and c, belong to one, and only one, of the above disks, say Da (fi). Call the unique simple oriented curve that is part of the boundary of Da(f) and connects aj-1 and a, without going through a, V-1. Now let = U™t {y-}, where am+1 = ay. Then, since the disks Da(f) and the interior of faces are mutually disjoint, respectively, we see that T is a simple curve that belongs to dB, and thus it is unknotted."
       }
     },
     {
@@ -3206,12 +3206,12 @@
       "role": "paragraph",
       "text": "Theorem 5.1. Let C be a shell that comes from a shell node satisfying conditions C5.1 to C5.5. Then C is a compact oriented triangulable 2-manifold without boundary.",
       "bbox": {
-        "x0": 436.6,
+        "x0": 434.94,
         "y0": 177.14,
         "x1": 783.89,
-        "y1": 226.93,
-        "width": 347.29,
-        "height": 49.79
+        "y1": 228.6,
+        "width": 348.95,
+        "height": 51.46
       },
       "meta": {
         "docling_label": "text",
@@ -3301,12 +3301,12 @@
       "role": "paragraph",
       "text": "It is a natural expectation that these conditions would lead to a computational method for model validity verification. B-rep models are defined in a bottom-up manner. If one representational entity is invalid, very little can be said about the validity of a higher level representational entity which uses this entity, except that the latter is invalid, i.e. we could not know how wrong it is. Nevertheless, such conditions are useful in B-rep model defect rectification, because they tell us what is a correct model. This aspect is developed extensively in our continuing work on model rectification [21,22].",
       "bbox": {
-        "x0": 433.23,
+        "x0": 433.22,
         "y0": 627.44,
         "x1": 782.23,
-        "y1": 813.09,
-        "width": 349.0,
-        "height": 185.65
+        "y1": 814.75,
+        "width": 349.01,
+        "height": 187.31
       },
       "meta": {
         "docling_label": "text",
@@ -3320,12 +3320,12 @@
       "role": "heading",
       "text": "Acknowledgements",
       "bbox": {
-        "x0": 436.6,
-        "y0": 845.97,
-        "x1": 557.32,
-        "y1": 862.53,
-        "width": 120.72,
-        "height": 16.56
+        "x0": 436.12,
+        "y0": 842.68,
+        "x1": 557.76,
+        "y1": 865.01,
+        "width": 121.64,
+        "height": 22.33
       },
       "meta": {
         "docling_label": "section_header",
@@ -3377,11 +3377,11 @@
       "role": "list_item",
       "text": "Requicha AAG. Representations of solid objects-theory, methods and systems. ACM Computing Surveys 1980;12(4):437-64.",
       "bbox": {
-        "x0": 438.25,
+        "x0": 439.9,
         "y0": 1028.03,
         "x1": 782.23,
         "y1": 1054.69,
-        "width": 343.98,
+        "width": 342.33,
         "height": 26.66
       },
       "meta": {
@@ -3415,11 +3415,11 @@
       "role": "list_item",
       "text": "Hoffmann CM. Geometric and solid modeling: an introduction. San Mateo, CA: Morgan Kaufmann, 1989.",
       "bbox": {
-        "x0": 74.42,
+        "x0": 76.07,
         "y0": 120.85,
         "x1": 415.1,
         "y1": 147.34,
-        "width": 340.68,
+        "width": 339.03,
         "height": 26.49
       },
       "meta": {
@@ -3493,9 +3493,9 @@
       "bbox": {
         "x0": 76.07,
         "y0": 292.91,
-        "x1": 413.44,
+        "x1": 415.1,
         "y1": 319.57,
-        "width": 337.37,
+        "width": 339.03,
         "height": 26.66
       },
       "meta": {
@@ -3508,18 +3508,18 @@
       "page": 8,
       "order": 7,
       "role": "list_item",
-      "text": "Braid IC, Hillyard RC, Stroud IA. Stepwise construction of polyhedra in geometric modeling. In: Brodlie KW, editor. Mathematical methods in computer graphics and design, London: Academic Press, 1980. p. 123-41.",
+      "text": "Braid IC, Hillyard RC, Stroud IA. Stepwise construction of polyhedra in geometric modeling. In: Brodlie KW, editor. Mathematical methods in computer graphics and design, London: Academic Press, 1980.",
       "bbox": {
         "x0": 74.42,
         "y0": 321.17,
         "x1": 415.1,
-        "y1": 377.69,
+        "y1": 362.56,
         "width": 340.68,
-        "height": 56.52
+        "height": 41.39
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[8] Braid IC, Hillyard RC, Stroud IA. Stepwise construction of polyhedra in geometric modeling. In: Brodlie KW, editor. Mathematical methods in computer graphics and design, London: Academic Press, 1980. p. 123-41."
+        "docling_orig": "[8] Braid IC, Hillyard RC, Stroud IA. Stepwise construction of polyhedra in geometric modeling. In: Brodlie KW, editor. Mathematical methods in computer graphics and design, London: Academic Press, 1980."
       }
     },
     {
@@ -3641,18 +3641,18 @@
       "page": 8,
       "order": 14,
       "role": "list_item",
-      "text": "Croom F. Basic concepts of algebraic topology. New York: Springer, 1978.",
+      "text": "Croom F. Basic concepts of algebraic topology. New York: Springer,",
       "bbox": {
         "x0": 69.46,
         "y0": 607.49,
         "x1": 415.1,
-        "y1": 632.58,
+        "y1": 620.82,
         "width": 345.64,
-        "height": 25.09
+        "height": 13.33
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[15] Croom F. Basic concepts of algebraic topology. New York: Springer, 1978."
+        "docling_orig": "[15] Croom F. Basic concepts of algebraic topology. New York: Springer,"
       }
     },
     {
@@ -3679,18 +3679,18 @@
       "page": 8,
       "order": 16,
       "role": "list_item",
-      "text": "Moise EE. Geometric topology in dimensions 2 and 3. New York: Springer, 1977.",
+      "text": "Moise EE. Geometric topology in dimensions 2 and 3. New York:",
       "bbox": {
         "x0": 69.46,
         "y0": 665.47,
         "x1": 415.1,
-        "y1": 692.13,
+        "y1": 677.14,
         "width": 345.64,
-        "height": 26.66
+        "height": 11.67
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[17] Moise EE. Geometric topology in dimensions 2 and 3. New York: Springer, 1977."
+        "docling_orig": "[17] Moise EE. Geometric topology in dimensions 2 and 3. New York:"
       }
     },
     {

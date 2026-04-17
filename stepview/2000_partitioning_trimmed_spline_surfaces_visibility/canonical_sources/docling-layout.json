@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2000_partitioning_trimmed_spline_surfaces_visibility/2000_partitioning_trimmed_spline_surfaces_visibility.pdf",
+  "pdf_path": "stepview/2000_partitioning_trimmed_spline_surfaces_visibility/2000_partitioning_trimmed_spline_surfaces_visibility.pdf",
   "page_count": 25,
   "page_sizes_pt": [
     {
@@ -135,7 +135,7 @@
       "page": 1,
       "order": 1,
       "role": "front_matter",
-      "text": "dol: 10.1006 gmod.2000.0526, available online at http: www.idealibrary.comonIDEA ®",
+      "text": "dol: 10.1006 gmod. 2000.0526, available online at http: www.idealibrary.comon DEAL®",
       "bbox": {
         "x0": 42.04,
         "y0": 48.07,
@@ -146,7 +146,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "dol: 10.1006 gmod.2000.0526, available online at http: www.idealibrary.comonIDEA ®"
+        "docling_orig": "dol: 10.1006 gmod. 2000.0526, available online at http: www.idealibrary.comon DEAL®"
       }
     },
     {
@@ -330,9 +330,9 @@
         "x0": 133.87,
         "y0": 137.22,
         "x1": 1077.01,
-        "y1": 210.41,
+        "y1": 207.61,
         "width": 943.14,
-        "height": 73.19
+        "height": 70.39
       },
       "meta": {
         "docling_label": "text",
@@ -520,9 +520,9 @@
         "x0": 599.35,
         "y0": 631.23,
         "x1": 629.78,
-        "y1": 670.87,
+        "y1": 667.82,
         "width": 30.43,
-        "height": 39.64
+        "height": 36.59
       },
       "meta": {
         "docling_label": "text",
@@ -556,11 +556,11 @@
       "text": "Front Facing Region",
       "bbox": {
         "x0": 483.44,
-        "y0": 882.51,
-        "x1": 657.46,
-        "y1": 916.65,
-        "width": 174.02,
-        "height": 34.14
+        "y0": 882.54,
+        "x1": 657.45,
+        "y1": 916.61,
+        "width": 174.01,
+        "height": 34.07
       },
       "meta": {
         "docling_label": "text",
@@ -631,11 +631,11 @@
       "role": "paragraph",
       "text": "82.1126 93.3985 120.048",
       "bbox": {
-        "x0": 763.64,
+        "x0": 766.68,
         "y0": 680.02,
-        "x1": 988.78,
+        "x1": 985.74,
         "y1": 710.51,
-        "width": 225.14,
+        "width": 219.06,
         "height": 30.49
       },
       "meta": {
@@ -650,11 +650,11 @@
       "role": "paragraph",
       "text": "-56.2504 112.366 87.0828",
       "bbox": {
-        "x0": 760.6,
+        "x0": 763.64,
         "y0": 704.42,
-        "x1": 991.82,
+        "x1": 988.78,
         "y1": 732.11,
-        "width": 231.22,
+        "width": 225.14,
         "height": 27.69
       },
       "meta": {
@@ -686,7 +686,7 @@
       "page": 3,
       "order": 14,
       "role": "paragraph",
-      "text": "6.4257 41.7767 113.64",
+      "text": ".425741.7767113-64",
       "bbox": {
         "x0": 772.77,
         "y0": 768.45,
@@ -697,7 +697,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "6.4257 41.7767 113.64"
+        "docling_orig": ".425741.7767113-64"
       }
     },
     {
@@ -705,24 +705,43 @@
       "page": 3,
       "order": 15,
       "role": "paragraph",
-      "text": "2. 209 3 18 1647497",
+      "text": "86.3181 - 129.309 284.667",
       "bbox": {
-        "x0": 760.6,
-        "y0": 835.54,
-        "x1": 997.91,
-        "y1": 893.48,
-        "width": 237.31,
-        "height": 57.94
+        "x0": 766.68,
+        "y0": 838.59,
+        "x1": 991.82,
+        "y1": 869.08,
+        "width": 225.14,
+        "height": 30.49
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "2. 209 3 18 1647497"
+        "docling_orig": "86.3181 - 129.309 284.667"
       }
     },
     {
       "id": "#/texts/39",
       "page": 3,
       "order": 16,
+      "role": "paragraph",
+      "text": "52.9209 33.118 184.749",
+      "bbox": {
+        "x0": 766.68,
+        "y0": 862.99,
+        "x1": 976.61,
+        "y1": 890.43,
+        "width": 209.93,
+        "height": 27.44
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "52.9209 33.118 184.749"
+      }
+    },
+    {
+      "id": "#/texts/40",
+      "page": 3,
+      "order": 17,
       "role": "paragraph",
       "text": "57.5666 84 3559 194.299",
       "bbox": {
@@ -739,9 +758,9 @@
       }
     },
     {
-      "id": "#/texts/40",
+      "id": "#/texts/41",
       "page": 3,
-      "order": 17,
+      "order": 18,
       "role": "paragraph",
       "text": "-74.642 105.59 142.717",
       "bbox": {
@@ -758,9 +777,9 @@
       }
     },
     {
-      "id": "#/texts/41",
+      "id": "#/texts/42",
       "page": 3,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "Parameter Space",
       "bbox": {
@@ -777,9 +796,9 @@
       }
     },
     {
-      "id": "#/texts/42",
+      "id": "#/texts/43",
       "page": 3,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "More recently, a hidden curve removal algorithm has been presented for parametric surfaces by Elber and Cohen [EC90] based on silhouette curves. A silhouette curve is defined as the locus of points on the surface where the normal vector is orthogonal to the viewing direction. In this paper [EC90], they extract the curves of interest by considering boundary curves, silhouette curves, isoparametric curves and curves along C' discontinuity based on 2D curve-curve intersections. Given a curved surface model and a viewpoint, the silhouettes on the model partition it into front facing and back facing regions (as shown in Fig. 1). The surfaces obtained after partitioning based on the silhouette computation need not be completely visible, as shown in Fig. 1.",
       "bbox": {
@@ -796,9 +815,9 @@
       }
     },
     {
-      "id": "#/texts/43",
+      "id": "#/texts/44",
       "page": 3,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "We present an algorithm for decomposing a spline surface into nonoverlapping regions from a given viewpoint. Given a model, we represent it as a series of Bézier surfaces using knot-insertion algorithms. Each Bézier surface is partitioned into nonoverlapping regions (these regions can overlap with each other but not with themselves) based on silhouette and visibility curves (refer to Section 5). Each computed region has the property that it is either entirely visible or invisible in the absence of other surfaces. The visibility curves are computed based on the silhouette and boundary curves. Each nonoverlapping region is represented as a trimmed Bézier surface bounded by silhouettes, visibility, and boundary curves. Since the trimming curves are algebraic in nature, it is not possible to provide a",
       "bbox": {
@@ -815,7 +834,7 @@
       }
     },
     {
-      "id": "#/texts/46",
+      "id": "#/texts/47",
       "page": 4,
       "order": 1,
       "role": "paragraph",
@@ -834,7 +853,7 @@
       }
     },
     {
-      "id": "#/texts/47",
+      "id": "#/texts/48",
       "page": 4,
       "order": 2,
       "role": "paragraph",
@@ -853,7 +872,7 @@
       }
     },
     {
-      "id": "#/texts/48",
+      "id": "#/texts/49",
       "page": 4,
       "order": 3,
       "role": "paragraph",
@@ -872,7 +891,7 @@
       }
     },
     {
-      "id": "#/texts/49",
+      "id": "#/texts/50",
       "page": 4,
       "order": 4,
       "role": "heading",
@@ -891,7 +910,7 @@
       }
     },
     {
-      "id": "#/texts/50",
+      "id": "#/texts/51",
       "page": 4,
       "order": 5,
       "role": "paragraph",
@@ -910,7 +929,7 @@
       }
     },
     {
-      "id": "#/texts/51",
+      "id": "#/texts/52",
       "page": 4,
       "order": 6,
       "role": "heading",
@@ -929,7 +948,7 @@
       }
     },
     {
-      "id": "#/texts/52",
+      "id": "#/texts/53",
       "page": 4,
       "order": 7,
       "role": "paragraph",
@@ -948,7 +967,7 @@
       }
     },
     {
-      "id": "#/texts/53",
+      "id": "#/texts/54",
       "page": 4,
       "order": 8,
       "role": "paragraph",
@@ -967,7 +986,7 @@
       }
     },
     {
-      "id": "#/texts/56",
+      "id": "#/texts/57",
       "page": 5,
       "order": 1,
       "role": "caption",
@@ -986,7 +1005,7 @@
       }
     },
     {
-      "id": "#/texts/57",
+      "id": "#/texts/58",
       "page": 5,
       "order": 2,
       "role": "paragraph",
@@ -1005,7 +1024,7 @@
       }
     },
     {
-      "id": "#/texts/58",
+      "id": "#/texts/59",
       "page": 5,
       "order": 3,
       "role": "paragraph",
@@ -1024,7 +1043,7 @@
       }
     },
     {
-      "id": "#/texts/59",
+      "id": "#/texts/60",
       "page": 5,
       "order": 4,
       "role": "paragraph",
@@ -1043,7 +1062,7 @@
       }
     },
     {
-      "id": "#/texts/60",
+      "id": "#/texts/61",
       "page": 5,
       "order": 5,
       "role": "paragraph",
@@ -1062,7 +1081,7 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/62",
       "page": 5,
       "order": 6,
       "role": "paragraph",
@@ -1081,7 +1100,7 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/63",
       "page": 5,
       "order": 7,
       "role": "paragraph",
@@ -1100,7 +1119,7 @@
       }
     },
     {
-      "id": "#/texts/63",
+      "id": "#/texts/64",
       "page": 5,
       "order": 8,
       "role": "paragraph",
@@ -1119,7 +1138,7 @@
       }
     },
     {
-      "id": "#/texts/64",
+      "id": "#/texts/65",
       "page": 5,
       "order": 9,
       "role": "paragraph",
@@ -1138,7 +1157,7 @@
       }
     },
     {
-      "id": "#/texts/65",
+      "id": "#/texts/66",
       "page": 5,
       "order": 10,
       "role": "paragraph",
@@ -1157,7 +1176,7 @@
       }
     },
     {
-      "id": "#/texts/66",
+      "id": "#/texts/67",
       "page": 5,
       "order": 11,
       "role": "paragraph",
@@ -1176,7 +1195,7 @@
       }
     },
     {
-      "id": "#/texts/67",
+      "id": "#/texts/68",
       "page": 5,
       "order": 12,
       "role": "paragraph",
@@ -1195,7 +1214,7 @@
       }
     },
     {
-      "id": "#/texts/68",
+      "id": "#/texts/69",
       "page": 5,
       "order": 13,
       "role": "paragraph",
@@ -1214,7 +1233,7 @@
       }
     },
     {
-      "id": "#/texts/69",
+      "id": "#/texts/70",
       "page": 5,
       "order": 14,
       "role": "list_item",
@@ -1233,7 +1252,7 @@
       }
     },
     {
-      "id": "#/texts/70",
+      "id": "#/texts/71",
       "page": 5,
       "order": 15,
       "role": "list_item",
@@ -1252,7 +1271,7 @@
       }
     },
     {
-      "id": "#/texts/71",
+      "id": "#/texts/72",
       "page": 5,
       "order": 16,
       "role": "list_item",
@@ -1271,7 +1290,7 @@
       }
     },
     {
-      "id": "#/texts/72",
+      "id": "#/texts/73",
       "page": 5,
       "order": 17,
       "role": "paragraph",
@@ -1290,7 +1309,7 @@
       }
     },
     {
-      "id": "#/texts/73",
+      "id": "#/texts/74",
       "page": 5,
       "order": 18,
       "role": "heading",
@@ -1309,7 +1328,7 @@
       }
     },
     {
-      "id": "#/texts/74",
+      "id": "#/texts/75",
       "page": 5,
       "order": 19,
       "role": "paragraph",
@@ -1328,7 +1347,7 @@
       }
     },
     {
-      "id": "#/texts/75",
+      "id": "#/texts/76",
       "page": 5,
       "order": 20,
       "role": "paragraph",
@@ -1347,7 +1366,7 @@
       }
     },
     {
-      "id": "#/texts/78",
+      "id": "#/texts/79",
       "page": 6,
       "order": 1,
       "role": "caption",
@@ -1366,18 +1385,18 @@
       }
     },
     {
-      "id": "#/texts/79",
+      "id": "#/texts/80",
       "page": 6,
       "order": 2,
       "role": "paragraph",
       "text": "a0",
       "bbox": {
-        "x0": 438.1,
+        "x0": 441.15,
         "y0": 210.41,
         "x1": 468.53,
-        "y1": 231.76,
-        "width": 30.43,
-        "height": 21.35
+        "y1": 228.71,
+        "width": 27.38,
+        "height": 18.3
       },
       "meta": {
         "docling_label": "text",
@@ -1385,7 +1404,7 @@
       }
     },
     {
-      "id": "#/texts/80",
+      "id": "#/texts/81",
       "page": 6,
       "order": 3,
       "role": "paragraph",
@@ -1404,7 +1423,7 @@
       }
     },
     {
-      "id": "#/texts/81",
+      "id": "#/texts/82",
       "page": 6,
       "order": 4,
       "role": "paragraph",
@@ -1423,7 +1442,7 @@
       }
     },
     {
-      "id": "#/texts/82",
+      "id": "#/texts/83",
       "page": 6,
       "order": 5,
       "role": "paragraph",
@@ -1442,7 +1461,7 @@
       }
     },
     {
-      "id": "#/texts/83",
+      "id": "#/texts/84",
       "page": 6,
       "order": 6,
       "role": "paragraph",
@@ -1461,7 +1480,7 @@
       }
     },
     {
-      "id": "#/texts/84",
+      "id": "#/texts/85",
       "page": 6,
       "order": 7,
       "role": "paragraph",
@@ -1480,7 +1499,7 @@
       }
     },
     {
-      "id": "#/texts/85",
+      "id": "#/texts/86",
       "page": 6,
       "order": 8,
       "role": "paragraph",
@@ -1499,7 +1518,7 @@
       }
     },
     {
-      "id": "#/texts/86",
+      "id": "#/texts/87",
       "page": 6,
       "order": 9,
       "role": "paragraph",
@@ -1518,7 +1537,7 @@
       }
     },
     {
-      "id": "#/texts/87",
+      "id": "#/texts/88",
       "page": 6,
       "order": 10,
       "role": "paragraph",
@@ -1537,7 +1556,7 @@
       }
     },
     {
-      "id": "#/texts/88",
+      "id": "#/texts/89",
       "page": 6,
       "order": 11,
       "role": "paragraph",
@@ -1556,7 +1575,7 @@
       }
     },
     {
-      "id": "#/texts/89",
+      "id": "#/texts/90",
       "page": 6,
       "order": 12,
       "role": "paragraph",
@@ -1575,7 +1594,7 @@
       }
     },
     {
-      "id": "#/texts/90",
+      "id": "#/texts/91",
       "page": 6,
       "order": 13,
       "role": "paragraph",
@@ -1594,7 +1613,7 @@
       }
     },
     {
-      "id": "#/texts/91",
+      "id": "#/texts/92",
       "page": 6,
       "order": 14,
       "role": "paragraph",
@@ -1613,7 +1632,7 @@
       }
     },
     {
-      "id": "#/texts/92",
+      "id": "#/texts/93",
       "page": 6,
       "order": 15,
       "role": "list_item",
@@ -1632,7 +1651,7 @@
       }
     },
     {
-      "id": "#/texts/93",
+      "id": "#/texts/94",
       "page": 6,
       "order": 16,
       "role": "list_item",
@@ -1651,11 +1670,11 @@
       }
     },
     {
-      "id": "#/texts/94",
+      "id": "#/texts/95",
       "page": 6,
       "order": 17,
       "role": "code",
-      "text": "if (q.type ‡ p.type) push(q); else if ((q.rank - p.rank == 1) && (q.in_or_out == out) && (p.in_or_out == in)) pop (p); else if ((p.rank - q.rank == 1) && (p.in_or_out == out) && (q.in_or_out == in)) pop(p); else push (q);",
+      "text": "if (q.type ‡ p.type) push(q); else if ((q.rank - p.rank == 1) && (q.in_or_out == out) && (p.in_or_out == in)) pop (p); else if ((p.rank - q.rank == 1) && (p.in_or_out == out) && (g.in_or_out == in)) pop(p); else push (q);",
       "bbox": {
         "x0": 39.36,
         "y0": 1585.47,
@@ -1666,21 +1685,21 @@
       },
       "meta": {
         "docling_label": "code",
-        "docling_orig": "if (q.type ‡ p.type) push(q); else if ((q.rank - p.rank == 1) && (q.in_or_out == out) && (p.in_or_out == in)) pop (p); else if ((p.rank - q.rank == 1) && (p.in_or_out == out) && (q.in_or_out == in)) pop(p); else push (q);"
+        "docling_orig": "if (q.type ‡ p.type) push(q); else if ((q.rank - p.rank == 1) && (q.in_or_out == out) && (p.in_or_out == in)) pop (p); else if ((p.rank - q.rank == 1) && (p.in_or_out == out) && (g.in_or_out == in)) pop(p); else push (q);"
       }
     },
     {
-      "id": "#/texts/97",
+      "id": "#/texts/98",
       "page": 7,
       "order": 1,
       "role": "paragraph",
       "text": "If p is popped, then p and q form a partition of the polygon. The corresponding partition is read out and the chain of vertices between p and q is appended to the vertex (this chain will be a part of the partition that involves this vertex) currently on top of the stack (the one that was below p). After traversing the polygon completely once, we would have obtained all the partitions.",
       "bbox": {
-        "x0": 42.59,
+        "x0": 39.55,
         "y0": 137.22,
         "x1": 1174.36,
         "y1": 335.62,
-        "width": 1131.77,
+        "width": 1134.81,
         "height": 198.4
       },
       "meta": {
@@ -1689,18 +1708,18 @@
       }
     },
     {
-      "id": "#/texts/98",
+      "id": "#/texts/99",
       "page": 7,
       "order": 2,
       "role": "paragraph",
       "text": "At this point, we have partitioned the domain using chains that end at the boundary of the domain. However, any loop that is present inside the domain must lie inside one of the partitioned regions. Each of the loops (starting from the innermost if the loops are nested) themselves form a partition. The remaining part of the region (they have boundaries with multiple components) are broken into simple regions by introducing a simple horizontal cut from the loop to the boundary of the partition or the next outer loop. The horizontal cut is made by choosing a point whose y-coordinate lies between the y extents of the loop and drawing a horizontal through the point.",
       "bbox": {
-        "x0": 39.33,
+        "x0": 39.55,
         "y0": 359.83,
         "x1": 1174.36,
-        "y1": 681.0,
-        "width": 1135.03,
-        "height": 321.17
+        "y1": 680.08,
+        "width": 1134.81,
+        "height": 320.25
       },
       "meta": {
         "docling_label": "text",
@@ -1708,7 +1727,7 @@
       }
     },
     {
-      "id": "#/texts/99",
+      "id": "#/texts/100",
       "page": 7,
       "order": 3,
       "role": "heading",
@@ -1727,11 +1746,11 @@
       }
     },
     {
-      "id": "#/texts/100",
+      "id": "#/texts/101",
       "page": 7,
       "order": 4,
       "role": "paragraph",
-      "text": "Computing the intersection of curves and surfaces is needed to find whether a given surface is occluded. Given a surface patch that is guaranteed to have the same visibility for all its points, we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects any other surface (between the chosen point on the surface and the viewpoint). If the number of intersections is O, the surface is visible; otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD94]. The algorithm we describe here can be used for any degree curve and its complexity is cubic in the degree of the curve. Therefore, even though the problem of ray-surface intersection is much simpler, our algorithm does not suffer because of its generality.",
+      "text": "Computing the intersection of curves and surfaces is needed to find whether a given surface is occluded. Given a surface patch that is guaranteed to have the same visibility for all its points, we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects any other surface (between the chosen point on the surface and the viewpoint). If the number of intersections is 0, the surface is visible; otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD94]. The algorithm we describe here can be used for any degree curve and its complexity is cubic in the degree of the curve. Therefore, even though the problem of ray-surface intersection is much simpler, our algorithm does not suffer because of its generality.",
       "bbox": {
         "x0": 39.55,
         "y0": 804.96,
@@ -1742,11 +1761,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Computing the intersection of curves and surfaces is needed to find whether a given surface is occluded. Given a surface patch that is guaranteed to have the same visibility for all its points, we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects any other surface (between the chosen point on the surface and the viewpoint). If the number of intersections is O, the surface is visible; otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD94]. The algorithm we describe here can be used for any degree curve and its complexity is cubic in the degree of the curve. Therefore, even though the problem of ray-surface intersection is much simpler, our algorithm does not suffer because of its generality."
+        "docling_orig": "Computing the intersection of curves and surfaces is needed to find whether a given surface is occluded. Given a surface patch that is guaranteed to have the same visibility for all its points, we shoot a ray from a point on the surface to the viewpoint and determine if the ray intersects any other surface (between the chosen point on the surface and the viewpoint). If the number of intersections is 0, the surface is visible; otherwise it is not. We use some recent algorithms for these intersections based on eigenvalue computations [MD94]. The algorithm we describe here can be used for any degree curve and its complexity is cubic in the degree of the curve. Therefore, even though the problem of ray-surface intersection is much simpler, our algorithm does not suffer because of its generality."
       }
     },
     {
-      "id": "#/texts/101",
+      "id": "#/texts/102",
       "page": 7,
       "order": 5,
       "role": "paragraph",
@@ -1765,7 +1784,7 @@
       }
     },
     {
-      "id": "#/texts/103",
+      "id": "#/texts/104",
       "page": 7,
       "order": 6,
       "role": "paragraph",
@@ -1784,18 +1803,18 @@
       }
     },
     {
-      "id": "#/texts/105",
+      "id": "#/texts/106",
       "page": 7,
       "order": 7,
       "role": "paragraph",
       "text": "where Mi's are matrices of order 2 mn with numeric entries. Furthermore, the roots of the",
       "bbox": {
-        "x0": 45.53,
-        "y0": 1983.94,
-        "x1": 1174.53,
-        "y1": 2023.16,
-        "width": 1129.0,
-        "height": 39.22
+        "x0": 45.57,
+        "y0": 1987.1,
+        "x1": 1174.46,
+        "y1": 2022.56,
+        "width": 1128.89,
+        "height": 35.46
       },
       "meta": {
         "docling_label": "text",
@@ -1803,7 +1822,7 @@
       }
     },
     {
-      "id": "#/texts/108",
+      "id": "#/texts/109",
       "page": 8,
       "order": 1,
       "role": "paragraph",
@@ -1822,7 +1841,7 @@
       }
     },
     {
-      "id": "#/texts/110",
+      "id": "#/texts/111",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -1841,7 +1860,7 @@
       }
     },
     {
-      "id": "#/texts/111",
+      "id": "#/texts/112",
       "page": 8,
       "order": 3,
       "role": "heading",
@@ -1860,7 +1879,7 @@
       }
     },
     {
-      "id": "#/texts/112",
+      "id": "#/texts/113",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -1879,7 +1898,7 @@
       }
     },
     {
-      "id": "#/texts/114",
+      "id": "#/texts/115",
       "page": 8,
       "order": 5,
       "role": "paragraph",
@@ -1898,26 +1917,26 @@
       }
     },
     {
-      "id": "#/texts/115",
+      "id": "#/texts/116",
       "page": 8,
       "order": 6,
       "role": "paragraph",
-      "text": "The basic idea of power iterations can be used and modified to obtain the eigenvalue of a matrix A that is closest to a given guess s. It actually corresponds to the largest eigenvalue of the matrix (A - sI) -'. Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector go, we generate a sequence of vectors qk as",
+      "text": "The basic idea of power iterations can be used and modified to obtain the eigenvalue of a matrix A that is closest to a given guess s. It actually corresponds to the largest eigenvalue of the matrix (A - sI) -1. Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector go, we generate a sequence of vectors qk as",
       "bbox": {
-        "x0": 39.32,
+        "x0": 39.29,
         "y0": 1180.12,
         "x1": 1174.36,
         "y1": 1375.29,
-        "width": 1135.04,
+        "width": 1135.07,
         "height": 195.17
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The basic idea of power iterations can be used and modified to obtain the eigenvalue of a matrix A that is closest to a given guess s. It actually corresponds to the largest eigenvalue of the matrix (A - sI) -'. Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector go, we generate a sequence of vectors qk as"
+        "docling_orig": "The basic idea of power iterations can be used and modified to obtain the eigenvalue of a matrix A that is closest to a given guess s. It actually corresponds to the largest eigenvalue of the matrix (A - sI) -1. Instead of computing the inverse explicitly (which can be numerically unstable), we use inverse power iterations. Given an initial unit vector go, we generate a sequence of vectors qk as"
       }
     },
     {
-      "id": "#/texts/117",
+      "id": "#/texts/118",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -1936,7 +1955,7 @@
       }
     },
     {
-      "id": "#/texts/118",
+      "id": "#/texts/119",
       "page": 8,
       "order": 8,
       "role": "heading",
@@ -1955,7 +1974,7 @@
       }
     },
     {
-      "id": "#/texts/119",
+      "id": "#/texts/120",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -1974,7 +1993,7 @@
       }
     },
     {
-      "id": "#/texts/122",
+      "id": "#/texts/123",
       "page": 9,
       "order": 1,
       "role": "paragraph",
@@ -1993,7 +2012,7 @@
       }
     },
     {
-      "id": "#/texts/123",
+      "id": "#/texts/124",
       "page": 9,
       "order": 2,
       "role": "list_item",
@@ -2012,7 +2031,7 @@
       }
     },
     {
-      "id": "#/texts/124",
+      "id": "#/texts/125",
       "page": 9,
       "order": 3,
       "role": "list_item",
@@ -2031,7 +2050,7 @@
       }
     },
     {
-      "id": "#/texts/125",
+      "id": "#/texts/126",
       "page": 9,
       "order": 4,
       "role": "list_item",
@@ -2050,7 +2069,7 @@
       }
     },
     {
-      "id": "#/texts/126",
+      "id": "#/texts/127",
       "page": 9,
       "order": 5,
       "role": "list_item",
@@ -2059,9 +2078,9 @@
         "x0": 42.59,
         "y0": 399.47,
         "x1": 1174.36,
-        "y1": 506.29,
+        "y1": 506.2,
         "width": 1131.77,
-        "height": 106.82
+        "height": 106.73
       },
       "meta": {
         "docling_label": "list_item",
@@ -2069,7 +2088,7 @@
       }
     },
     {
-      "id": "#/texts/127",
+      "id": "#/texts/128",
       "page": 9,
       "order": 6,
       "role": "list_item",
@@ -2088,7 +2107,7 @@
       }
     },
     {
-      "id": "#/texts/128",
+      "id": "#/texts/129",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -2107,7 +2126,7 @@
       }
     },
     {
-      "id": "#/texts/129",
+      "id": "#/texts/130",
       "page": 9,
       "order": 8,
       "role": "heading",
@@ -2126,7 +2145,7 @@
       }
     },
     {
-      "id": "#/texts/130",
+      "id": "#/texts/131",
       "page": 9,
       "order": 9,
       "role": "paragraph",
@@ -2145,7 +2164,7 @@
       }
     },
     {
-      "id": "#/texts/131",
+      "id": "#/texts/132",
       "page": 9,
       "order": 10,
       "role": "paragraph",
@@ -2164,7 +2183,7 @@
       }
     },
     {
-      "id": "#/texts/132",
+      "id": "#/texts/133",
       "page": 9,
       "order": 11,
       "role": "heading",
@@ -2183,11 +2202,11 @@
       }
     },
     {
-      "id": "#/texts/133",
+      "id": "#/texts/134",
       "page": 9,
       "order": 12,
       "role": "paragraph",
-      "text": "Let F(s, t) denote the parametric (differentiable) surface and let Ø1(s, t), Фг(s, t) and Фз (s, t) denote the mappings from the parametric space to (x, y, z) space.",
+      "text": "Let F(s, t) denote the parametric (differentiable) surface and let Ø1(s, t), Ф2(s, t) and Фз (s, t) denote the mappings from the parametric space to (x, y, z) space.",
       "bbox": {
         "x0": 42.59,
         "y0": 1710.72,
@@ -2198,11 +2217,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Let F(s, t) denote the parametric (differentiable) surface and let Ø1(s, t), Фг(s, t) and Фз (s, t) denote the mappings from the parametric space to (x, y, z) space."
+        "docling_orig": "Let F(s, t) denote the parametric (differentiable) surface and let Ø1(s, t), Ф2(s, t) and Фз (s, t) denote the mappings from the parametric space to (x, y, z) space."
       }
     },
     {
-      "id": "#/texts/135",
+      "id": "#/texts/136",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -2221,7 +2240,7 @@
       }
     },
     {
-      "id": "#/texts/138",
+      "id": "#/texts/139",
       "page": 10,
       "order": 1,
       "role": "paragraph",
@@ -2240,7 +2259,7 @@
       }
     },
     {
-      "id": "#/texts/140",
+      "id": "#/texts/141",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -2259,7 +2278,7 @@
       }
     },
     {
-      "id": "#/texts/143",
+      "id": "#/texts/144",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -2278,7 +2297,7 @@
       }
     },
     {
-      "id": "#/texts/145",
+      "id": "#/texts/146",
       "page": 10,
       "order": 4,
       "role": "paragraph",
@@ -2297,7 +2316,7 @@
       }
     },
     {
-      "id": "#/texts/147",
+      "id": "#/texts/148",
       "page": 10,
       "order": 5,
       "role": "paragraph",
@@ -2316,7 +2335,7 @@
       }
     },
     {
-      "id": "#/texts/148",
+      "id": "#/texts/149",
       "page": 10,
       "order": 6,
       "role": "paragraph",
@@ -2335,7 +2354,7 @@
       }
     },
     {
-      "id": "#/texts/149",
+      "id": "#/texts/150",
       "page": 10,
       "order": 7,
       "role": "heading",
@@ -2354,7 +2373,7 @@
       }
     },
     {
-      "id": "#/texts/150",
+      "id": "#/texts/151",
       "page": 10,
       "order": 8,
       "role": "paragraph",
@@ -2373,7 +2392,7 @@
       }
     },
     {
-      "id": "#/texts/153",
+      "id": "#/texts/154",
       "page": 11,
       "order": 1,
       "role": "paragraph",
@@ -2392,26 +2411,26 @@
       }
     },
     {
-      "id": "#/texts/154",
+      "id": "#/texts/155",
       "page": 11,
       "order": 2,
       "role": "paragraph",
-      "text": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We find all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M (0, t), M (1, t), M(s, 0), and M(s, 1). This problem can be reduced to finding the eigenvalues of an associated companion matrix (see Eq. (3)) [MD94]. We retain only the real solutions that lie within the domain.",
+      "text": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We find all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M(0, t), M(1, t), M(s, 0), and M(s, 1). This problem can be reduced to finding the eigenvalues of an associated companion matrix (see Eq. (3)) [MD94]. We retain only the real solutions that lie within the domain.",
       "bbox": {
-        "x0": 42.59,
+        "x0": 39.55,
         "y0": 298.67,
         "x1": 1177.41,
         "y1": 570.66,
-        "width": 1134.82,
+        "width": 1137.86,
         "height": 271.99
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We find all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M (0, t), M (1, t), M(s, 0), and M(s, 1). This problem can be reduced to finding the eigenvalues of an associated companion matrix (see Eq. (3)) [MD94]. We retain only the real solutions that lie within the domain."
+        "docling_orig": "To determine starting points on open components we substitute one of the variables s or t with the value 0 or 1. This reduces the silhouette equation to a polynomial equation in one variable and this has only a discrete set of solutions. We find all the boundary silhouette points by determining the roots of four univariate matrix polynomials, M(0, t), M(1, t), M(s, 0), and M(s, 1). This problem can be reduced to finding the eigenvalues of an associated companion matrix (see Eq. (3)) [MD94]. We retain only the real solutions that lie within the domain."
       }
     },
     {
-      "id": "#/texts/155",
+      "id": "#/texts/156",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -2430,11 +2449,11 @@
       }
     },
     {
-      "id": "#/texts/156",
+      "id": "#/texts/157",
       "page": 11,
       "order": 4,
       "role": "paragraph",
-      "text": "LEMMA 1 [KM97]. If the curve in the real domain [0, 1] × [O, 1] consists of a closed component, then two arbitrary complex conjugate paths meet at one of the real points (corresponding to a turning point) on the loop.",
+      "text": "LEMMA 1 [KM97]. If the curve in the real domain [0, 1] × [0, 1] consists of a closed component, then two arbitrary complex conjugate paths meet at one of the real points (corresponding to a turning point) on the loop.",
       "bbox": {
         "x0": 42.59,
         "y0": 887.18,
@@ -2445,11 +2464,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "LEMMA 1 [KM97]. If the curve in the real domain [0, 1] × [O, 1] consists of a closed component, then two arbitrary complex conjugate paths meet at one of the real points (corresponding to a turning point) on the loop."
+        "docling_orig": "LEMMA 1 [KM97]. If the curve in the real domain [0, 1] × [0, 1] consists of a closed component, then two arbitrary complex conjugate paths meet at one of the real points (corresponding to a turning point) on the loop."
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/158",
       "page": 11,
       "order": 5,
       "role": "paragraph",
@@ -2468,7 +2487,7 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/159",
       "page": 11,
       "order": 6,
       "role": "caption",
@@ -2487,7 +2506,7 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/160",
       "page": 11,
       "order": 7,
       "role": "caption",
@@ -2506,7 +2525,7 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/161",
       "page": 11,
       "order": 8,
       "role": "caption",
@@ -2525,26 +2544,26 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/162",
       "page": 11,
       "order": 9,
       "role": "caption",
-      "text": "(d) Silho uette curve in domain",
+      "text": "(di) Silhouette curve in domain",
       "bbox": {
-        "x0": 617.61,
+        "x0": 629.78,
         "y0": 1954.68,
         "x1": 952.27,
         "y1": 1982.12,
-        "width": 334.66,
+        "width": 322.49,
         "height": 27.44
       },
       "meta": {
         "docling_label": "caption",
-        "docling_orig": "(d) Silho uette curve in domain"
+        "docling_orig": "(di) Silhouette curve in domain"
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/163",
       "page": 11,
       "order": 10,
       "role": "caption",
@@ -2563,18 +2582,18 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/166",
       "page": 12,
       "order": 1,
       "role": "paragraph",
       "text": "Given a point on each component of the silhouette curve, marching methods obtain approximations of the next point by taking a small step size in a direction determined by the local geometry of the curve. Based on the approximate value, these algorithms use local iterative methods to trace back on to the curve to evaluate the silhouette curve. We have developed an algorithm based on inverse power iterations (Section 2.4) to trace the curve. The details of the complete algorithm are presented in [KM97]. Our algorithm evaluates the silhouette curve at discrete steps to create a piecewise linear approximation. The tracing algorithm has been implemented and tested on a variety of examples and has proved to be fairly robust.",
       "bbox": {
-        "x0": 39.55,
+        "x0": 39.48,
         "y0": 137.22,
         "x1": 1174.36,
-        "y1": 497.06,
-        "width": 1134.81,
-        "height": 359.84
+        "y1": 497.42,
+        "width": 1134.88,
+        "height": 360.2
       },
       "meta": {
         "docling_label": "text",
@@ -2582,11 +2601,11 @@
       }
     },
     {
-      "id": "#/texts/166",
+      "id": "#/texts/167",
       "page": 12,
       "order": 2,
       "role": "paragraph",
-      "text": "Consider a patch F(s, t) of degree m in s and n in t, and let N= max(m, n). Then the companion matrix (Eq. (3)), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3N. We use the QR method [GL89] to compute all the eigenvalues. The number of floating point operations performed is 8NS . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU decomposition is computed using Gaussian elimination and it takes about § N° operations (without pivoting). Solving each triangular system costs about {Nº operations. As a result, the inverse power iteration takes about } N3 + { N° operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition (9 N operations) as well as to solve the triangular systems (12kN operations, where k is the number of iterations).",
+      "text": "Consider a patch F(s, t) of degree m in s and n in t, and let N= max(m, n). Then the companion matrix (Eq. (3)), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3N. We use the QR method [GL89] to compute all the eigenvalues. The number of floating point operations performed is 8NS . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU decomposition is computed using Gaussian elimination and it takes about § N° operations (without pivoting). Solving each triangular system costs about {Nº operations. As a result, the inverse power iteration takes about } N3 + {N operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition (9 N operations) as well as to solve the triangular systems (12kN operations, where k is the number of iterations).",
       "bbox": {
         "x0": 36.51,
         "y0": 503.15,
@@ -2597,11 +2616,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Consider a patch F(s, t) of degree m in s and n in t, and let N= max(m, n). Then the companion matrix (Eq. (3)), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3N. We use the QR method [GL89] to compute all the eigenvalues. The number of floating point operations performed is 8NS . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU decomposition is computed using Gaussian elimination and it takes about § N° operations (without pivoting). Solving each triangular system costs about {Nº operations. As a result, the inverse power iteration takes about } N3 + { N° operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition (9 N operations) as well as to solve the triangular systems (12kN operations, where k is the number of iterations)."
+        "docling_orig": "Consider a patch F(s, t) of degree m in s and n in t, and let N= max(m, n). Then the companion matrix (Eq. (3)), whose eigenvalues correspond to the roots of the matrix polynomial) is of order 3N. We use the QR method [GL89] to compute all the eigenvalues. The number of floating point operations performed is 8NS . In inverse power iterations, the two main operations are the LU decomposition of the matrix and solving the resulting triangular systems. Usually the LU decomposition is computed using Gaussian elimination and it takes about § N° operations (without pivoting). Solving each triangular system costs about {Nº operations. As a result, the inverse power iteration takes about } N3 + {N operations, where k is the number of iterations. It turns out that the structure of the companion matrix can be used to reduce the number of operations for LU decomposition (9 N operations) as well as to solve the triangular systems (12kN operations, where k is the number of iterations)."
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/168",
       "page": 12,
       "order": 3,
       "role": "heading",
@@ -2620,17 +2639,17 @@
       }
     },
     {
-      "id": "#/texts/168",
+      "id": "#/texts/169",
       "page": 12,
       "order": 4,
       "role": "paragraph",
       "text": "Figure 5 shows the silhouette curve on an example patch along with the curve on its domain. It is clear from the figure that the silhouette divides the patch into front and back facing regions.",
       "bbox": {
-        "x0": 39.55,
+        "x0": 42.59,
         "y0": 1058.15,
         "x1": 1171.32,
         "y1": 1170.98,
-        "width": 1131.77,
+        "width": 1128.73,
         "height": 112.83
       },
       "meta": {
@@ -2639,7 +2658,7 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/170",
       "page": 12,
       "order": 5,
       "role": "paragraph",
@@ -2658,7 +2677,7 @@
       }
     },
     {
-      "id": "#/texts/170",
+      "id": "#/texts/171",
       "page": 12,
       "order": 6,
       "role": "paragraph",
@@ -2677,7 +2696,7 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/172",
       "page": 12,
       "order": 7,
       "role": "paragraph",
@@ -2696,7 +2715,7 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/173",
       "page": 12,
       "order": 8,
       "role": "paragraph",
@@ -2715,7 +2734,7 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/174",
       "page": 12,
       "order": 9,
       "role": "caption",
@@ -2734,7 +2753,7 @@
       }
     },
     {
-      "id": "#/texts/174",
+      "id": "#/texts/175",
       "page": 12,
       "order": 10,
       "role": "paragraph",
@@ -2753,7 +2772,7 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/176",
       "page": 12,
       "order": 11,
       "role": "paragraph",
@@ -2772,7 +2791,7 @@
       }
     },
     {
-      "id": "#/texts/178",
+      "id": "#/texts/179",
       "page": 13,
       "order": 1,
       "role": "paragraph",
@@ -2791,7 +2810,7 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/180",
       "page": 13,
       "order": 2,
       "role": "paragraph",
@@ -2810,7 +2829,7 @@
       }
     },
     {
-      "id": "#/texts/180",
+      "id": "#/texts/181",
       "page": 13,
       "order": 3,
       "role": "paragraph",
@@ -2829,7 +2848,7 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/182",
       "page": 13,
       "order": 4,
       "role": "paragraph",
@@ -2848,7 +2867,7 @@
       }
     },
     {
-      "id": "#/texts/182",
+      "id": "#/texts/183",
       "page": 13,
       "order": 5,
       "role": "paragraph",
@@ -2867,7 +2886,7 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/184",
       "page": 13,
       "order": 6,
       "role": "paragraph",
@@ -2886,7 +2905,7 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/186",
       "page": 13,
       "order": 7,
       "role": "paragraph",
@@ -2905,11 +2924,11 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/187",
       "page": 13,
       "order": 8,
       "role": "paragraph",
-      "text": "LEMMA 3. Let M be a mapping from R? → I2 such that M(s, t) = (s.t) Y (S, t) W(s.) · W(s,t)) . Ther the locus of all points on the surtace that have vanishing Jacobians corresponds exactly to the silhouette curve.",
+      "text": "LEMMA 3. Let M be a mapping from f? → F2 such that M(s, t) = (*(s.) Y (S, t) W(s.) · W(s,t)) . Ther the locus of all points on the surtace that have vanishing Jacobians corresponds exactly to the silhouette curve.",
       "bbox": {
         "x0": 42.59,
         "y0": 1228.92,
@@ -2920,11 +2939,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "LEMMA 3. Let M be a mapping from R? → I2 such that M(s, t) = (s.t) Y (S, t) W(s.) · W(s,t)) . Ther the locus of all points on the surtace that have vanishing Jacobians corresponds exactly to the silhouette curve."
+        "docling_orig": "LEMMA 3. Let M be a mapping from f? → F2 such that M(s, t) = (*(s.) Y (S, t) W(s.) · W(s,t)) . Ther the locus of all points on the surtace that have vanishing Jacobians corresponds exactly to the silhouette curve."
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/188",
       "page": 13,
       "order": 9,
       "role": "paragraph",
@@ -2943,7 +2962,7 @@
       }
     },
     {
-      "id": "#/texts/189",
+      "id": "#/texts/190",
       "page": 13,
       "order": 10,
       "role": "paragraph",
@@ -2962,7 +2981,7 @@
       }
     },
     {
-      "id": "#/texts/190",
+      "id": "#/texts/191",
       "page": 13,
       "order": 11,
       "role": "paragraph",
@@ -2981,7 +3000,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/192",
       "page": 13,
       "order": 12,
       "role": "heading",
@@ -3000,7 +3019,7 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/193",
       "page": 13,
       "order": 13,
       "role": "paragraph",
@@ -3019,7 +3038,7 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/196",
       "page": 14,
       "order": 1,
       "role": "paragraph",
@@ -3038,18 +3057,18 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/197",
       "page": 14,
       "order": 2,
       "role": "paragraph",
       "text": "DEFINITION 1. Given a region p e R, the visibility curves on p, V(p), is defined as the locus of points,",
       "bbox": {
-        "x0": 42.47,
+        "x0": 42.48,
         "y0": 234.67,
         "x1": 1171.32,
-        "y1": 308.82,
-        "width": 1128.85,
-        "height": 74.15
+        "y1": 308.75,
+        "width": 1128.84,
+        "height": 74.08
       },
       "meta": {
         "docling_label": "text",
@@ -3057,7 +3076,7 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/199",
       "page": 14,
       "order": 3,
       "role": "paragraph",
@@ -3076,7 +3095,7 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/200",
       "page": 14,
       "order": 4,
       "role": "paragraph",
@@ -3095,11 +3114,11 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/201",
       "page": 14,
       "order": 5,
       "role": "paragraph",
-      "text": "Proof. We shall prove this part by contradiction. Let us assume that there exists an isolated point p; € V(p). But by definition, there must be a point p € do such that M (pi) = M (p). We know that do is a continuous closed curve. Consider a small displacement, 8 ER?, of po along ass. Since M is a smooth map, there exists an € EH? such that M (pit €) = M(pb + 8) [Mun75]. In fact, in the limit & going to zero, e ~ J- (pi) J(pb) 8, where J and J-' are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J' (pi) exists because pi € int(p). Therefore, pi cannot be an isolated point, and the visibility curves indeed form a curve.",
+      "text": "Proof. We shall prove this part by contradiction. Let us assume that there exists an isolated point p; € V(p). But by definition, there must be a point p € do such that M (pi) = M(pb). We know that a is a continuous closed curve. Consider a small displacement, SER, of po along as. Since M is a smooth map, there exists an € € fil such that M (pit €) = M(pb + 8) [Mun75]. In fact, in the limit & going to zero, e ~ J- (pi) J(pb) 8, where J and J-' are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J' (pi) exists because pi € int(p). Therefore, pi cannot be an isolated point, and the visibility curves indeed form a curve.",
       "bbox": {
         "x0": 36.51,
         "y0": 628.05,
@@ -3110,11 +3129,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Proof. We shall prove this part by contradiction. Let us assume that there exists an isolated point p; € V(p). But by definition, there must be a point p € do such that M (pi) = M (p). We know that do is a continuous closed curve. Consider a small displacement, 8 ER?, of po along ass. Since M is a smooth map, there exists an € EH? such that M (pit €) = M(pb + 8) [Mun75]. In fact, in the limit & going to zero, e ~ J- (pi) J(pb) 8, where J and J-' are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J' (pi) exists because pi € int(p). Therefore, pi cannot be an isolated point, and the visibility curves indeed form a curve."
+        "docling_orig": "Proof. We shall prove this part by contradiction. Let us assume that there exists an isolated point p; € V(p). But by definition, there must be a point p € do such that M (pi) = M(pb). We know that a is a continuous closed curve. Consider a small displacement, SER, of po along as. Since M is a smooth map, there exists an € € fil such that M (pit €) = M(pb + 8) [Mun75]. In fact, in the limit & going to zero, e ~ J- (pi) J(pb) 8, where J and J-' are the Jacobian and the Jacobian inverse of M respectively. Further, we know that J' (pi) exists because pi € int(p). Therefore, pi cannot be an isolated point, and the visibility curves indeed form a curve."
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/202",
       "page": 14,
       "order": 6,
       "role": "paragraph",
@@ -3133,26 +3152,26 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/203",
       "page": 14,
       "order": 7,
       "role": "paragraph",
-      "text": "Proof. Follows from Lemma 2.",
+      "text": "Proof. Follows from Lemma 2. ·",
       "bbox": {
         "x0": 73.02,
         "y0": 1030.7,
-        "x1": 489.83,
+        "x1": 535.46,
         "y1": 1064.25,
-        "width": 416.81,
+        "width": 462.44,
         "height": 33.55
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Proof. Follows from Lemma 2."
+        "docling_orig": "Proof. Follows from Lemma 2. ·"
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/204",
       "page": 14,
       "order": 8,
       "role": "paragraph",
@@ -3171,7 +3190,7 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/205",
       "page": 14,
       "order": 9,
       "role": "caption",
@@ -3190,7 +3209,7 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/208",
       "page": 15,
       "order": 1,
       "role": "caption",
@@ -3209,7 +3228,7 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/209",
       "page": 15,
       "order": 2,
       "role": "paragraph",
@@ -3228,7 +3247,7 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/210",
       "page": 15,
       "order": 3,
       "role": "paragraph",
@@ -3247,7 +3266,7 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/211",
       "page": 15,
       "order": 4,
       "role": "paragraph",
@@ -3266,7 +3285,7 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/212",
       "page": 15,
       "order": 5,
       "role": "paragraph",
@@ -3285,7 +3304,7 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/213",
       "page": 15,
       "order": 6,
       "role": "paragraph",
@@ -3304,7 +3323,7 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/214",
       "page": 15,
       "order": 7,
       "role": "paragraph",
@@ -3323,7 +3342,7 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/215",
       "page": 15,
       "order": 8,
       "role": "paragraph",
@@ -3342,7 +3361,7 @@
       }
     },
     {
-      "id": "#/texts/215",
+      "id": "#/texts/216",
       "page": 15,
       "order": 9,
       "role": "paragraph",
@@ -3361,7 +3380,7 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/217",
       "page": 15,
       "order": 10,
       "role": "caption",
@@ -3380,7 +3399,7 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/218",
       "page": 15,
       "order": 11,
       "role": "paragraph",
@@ -3399,7 +3418,7 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/219",
       "page": 15,
       "order": 12,
       "role": "paragraph",
@@ -3418,7 +3437,7 @@
       }
     },
     {
-      "id": "#/texts/219",
+      "id": "#/texts/220",
       "page": 15,
       "order": 13,
       "role": "paragraph",
@@ -3437,7 +3456,7 @@
       }
     },
     {
-      "id": "#/texts/220",
+      "id": "#/texts/221",
       "page": 15,
       "order": 14,
       "role": "paragraph",
@@ -3456,7 +3475,7 @@
       }
     },
     {
-      "id": "#/texts/221",
+      "id": "#/texts/222",
       "page": 15,
       "order": 15,
       "role": "paragraph",
@@ -3475,7 +3494,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/223",
       "page": 15,
       "order": 16,
       "role": "paragraph",
@@ -3494,7 +3513,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/224",
       "page": 15,
       "order": 17,
       "role": "paragraph",
@@ -3513,7 +3532,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/225",
       "page": 15,
       "order": 18,
       "role": "paragraph",
@@ -3532,7 +3551,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/228",
       "page": 16,
       "order": 1,
       "role": "paragraph",
@@ -3551,7 +3570,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/229",
       "page": 16,
       "order": 2,
       "role": "paragraph",
@@ -3570,7 +3589,7 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/230",
       "page": 16,
       "order": 3,
       "role": "heading",
@@ -3589,7 +3608,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/231",
       "page": 16,
       "order": 4,
       "role": "paragraph",
@@ -3608,7 +3627,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/232",
       "page": 16,
       "order": 5,
       "role": "heading",
@@ -3627,7 +3646,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/233",
       "page": 16,
       "order": 6,
       "role": "paragraph",
@@ -3636,9 +3655,9 @@
         "x0": 39.55,
         "y0": 878.23,
         "x1": 1174.36,
-        "y1": 1317.35,
+        "y1": 1314.3,
         "width": 1134.81,
-        "height": 439.12
+        "height": 436.07
       },
       "meta": {
         "docling_label": "text",
@@ -3646,7 +3665,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/234",
       "page": 16,
       "order": 7,
       "role": "paragraph",
@@ -3665,7 +3684,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/236",
       "page": 16,
       "order": 8,
       "role": "paragraph",
@@ -3684,7 +3703,7 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/237",
       "page": 16,
       "order": 9,
       "role": "paragraph",
@@ -3703,7 +3722,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/240",
       "page": 17,
       "order": 1,
       "role": "paragraph",
@@ -3722,7 +3741,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/243",
       "page": 17,
       "order": 2,
       "role": "paragraph",
@@ -3741,7 +3760,7 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/245",
       "page": 17,
       "order": 3,
       "role": "paragraph",
@@ -3760,7 +3779,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/246",
       "page": 17,
       "order": 4,
       "role": "list_item",
@@ -3779,7 +3798,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/249",
       "page": 17,
       "order": 5,
       "role": "paragraph",
@@ -3798,7 +3817,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/251",
       "page": 17,
       "order": 6,
       "role": "paragraph",
@@ -3817,7 +3836,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/252",
       "page": 17,
       "order": 7,
       "role": "list_item",
@@ -3836,7 +3855,7 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/255",
       "page": 18,
       "order": 1,
       "role": "paragraph",
@@ -3855,7 +3874,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/256",
       "page": 18,
       "order": 2,
       "role": "paragraph",
@@ -3874,7 +3893,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/257",
       "page": 18,
       "order": 3,
       "role": "paragraph",
@@ -3893,7 +3912,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/258",
       "page": 18,
       "order": 4,
       "role": "paragraph",
@@ -3912,7 +3931,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/259",
       "page": 18,
       "order": 5,
       "role": "paragraph",
@@ -3931,7 +3950,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/260",
       "page": 18,
       "order": 6,
       "role": "paragraph",
@@ -3950,7 +3969,7 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/261",
       "page": 18,
       "order": 7,
       "role": "paragraph",
@@ -3969,7 +3988,7 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/262",
       "page": 18,
       "order": 8,
       "role": "paragraph",
@@ -3988,7 +4007,7 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/263",
       "page": 18,
       "order": 9,
       "role": "caption",
@@ -4007,7 +4026,7 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/264",
       "page": 18,
       "order": 10,
       "role": "paragraph",
@@ -4026,7 +4045,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/266",
       "page": 18,
       "order": 11,
       "role": "paragraph",
@@ -4045,7 +4064,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/268",
       "page": 18,
       "order": 12,
       "role": "paragraph",
@@ -4064,7 +4083,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/269",
       "page": 18,
       "order": 13,
       "role": "paragraph",
@@ -4083,7 +4102,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/270",
       "page": 18,
       "order": 14,
       "role": "heading",
@@ -4102,7 +4121,7 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/271",
       "page": 18,
       "order": 15,
       "role": "paragraph",
@@ -4121,7 +4140,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/272",
       "page": 18,
       "order": 16,
       "role": "paragraph",
@@ -4140,7 +4159,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/275",
       "page": 19,
       "order": 1,
       "role": "caption",
@@ -4159,7 +4178,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/276",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -4178,7 +4197,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/277",
       "page": 19,
       "order": 3,
       "role": "paragraph",
@@ -4197,7 +4216,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/278",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -4216,7 +4235,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/279",
       "page": 19,
       "order": 5,
       "role": "paragraph",
@@ -4235,26 +4254,26 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/280",
       "page": 19,
       "order": 6,
       "role": "paragraph",
-      "text": "£ (p1)",
+      "text": "f (p1)",
       "bbox": {
-        "x0": 206.75,
-        "y0": 295.41,
-        "x1": 276.99,
-        "y1": 320.57,
-        "width": 70.24,
-        "height": 25.16
+        "x0": 206.85,
+        "y0": 295.69,
+        "x1": 276.89,
+        "y1": 320.29,
+        "width": 70.04,
+        "height": 24.6
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "£ (p1)"
+        "docling_orig": "f (p1)"
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/281",
       "page": 19,
       "order": 7,
       "role": "paragraph",
@@ -4273,7 +4292,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/282",
       "page": 19,
       "order": 8,
       "role": "paragraph",
@@ -4292,7 +4311,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/283",
       "page": 19,
       "order": 9,
       "role": "paragraph",
@@ -4311,7 +4330,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/284",
       "page": 19,
       "order": 10,
       "role": "paragraph",
@@ -4330,7 +4349,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/285",
       "page": 19,
       "order": 11,
       "role": "paragraph",
@@ -4349,7 +4368,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/286",
       "page": 19,
       "order": 12,
       "role": "paragraph",
@@ -4368,7 +4387,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/287",
       "page": 19,
       "order": 13,
       "role": "paragraph",
@@ -4387,7 +4406,7 @@
       }
     },
     {
-      "id": "#/texts/287",
+      "id": "#/texts/288",
       "page": 19,
       "order": 14,
       "role": "paragraph",
@@ -4406,7 +4425,7 @@
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/289",
       "page": 19,
       "order": 15,
       "role": "paragraph",
@@ -4425,11 +4444,11 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/290",
       "page": 19,
       "order": 16,
       "role": "paragraph",
-      "text": "move to a neighboring point, h, on the visibility curve. If (gu, gu) are the domain coordinates of g, let X = W(gus&o) Y (gu-gu) *(sus and y = Wus) X, Y, and W are the componentwise functions of the original patch. We would like to find (hi, hu) in the local neighborhood of (fi, fu) such that",
+      "text": "move to a neighboring point, h, on the visibility curve. If (gu, gu) are the domain coordinates of g, let X = W(gus&o) Y (gu-go) *(sus and y = Wus) X, Y, and W are the componentwise functions of the original patch. We would like to find (hi, hu) in the local neighborhood of (fi, fu) such that",
       "bbox": {
         "x0": 41.05,
         "y0": 680.02,
@@ -4440,15 +4459,15 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "move to a neighboring point, h, on the visibility curve. If (gu, gu) are the domain coordinates of g, let X = W(gus&o) Y (gu-gu) *(sus and y = Wus) X, Y, and W are the componentwise functions of the original patch. We would like to find (hi, hu) in the local neighborhood of (fi, fu) such that"
+        "docling_orig": "move to a neighboring point, h, on the visibility curve. If (gu, gu) are the domain coordinates of g, let X = W(gus&o) Y (gu-go) *(sus and y = Wus) X, Y, and W are the componentwise functions of the original patch. We would like to find (hi, hu) in the local neighborhood of (fi, fu) such that"
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/293",
       "page": 19,
       "order": 17,
       "role": "paragraph",
-      "text": "Eliminating h, from these two equations results in a matrix polynomial in h. The singular set of this polynomial determines h, and from the corresponding eigenvector, we can find hy. However, a lot of unnecessary work can be avoided by observing that (h, hu) is in the neighborhood of (fu, fu). Using fu, as a guess to h, and building a corresponding eigenvector out of fv, we perform inverse power iterations (described in Section 2.4) to obtain (h, hu).",
+      "text": "Eliminating h, from these two equations results in a matrix polynomial in h. The singular set of this polynomial determines hu, and from the corresponding eigenvector, we can find hy. However, a lot of unnecessary work can be avoided by observing that (h, hu) is in the neighborhood of (fu, fu). Using fu, as a guess to h, and building a corresponding eigenvector out of fv, we perform inverse power iterations (described in Section 2.4) to obtain (h, hu).",
       "bbox": {
         "x0": 39.55,
         "y0": 1033.75,
@@ -4459,11 +4478,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Eliminating h, from these two equations results in a matrix polynomial in h. The singular set of this polynomial determines h, and from the corresponding eigenvector, we can find hy. However, a lot of unnecessary work can be avoided by observing that (h, hu) is in the neighborhood of (fu, fu). Using fu, as a guess to h, and building a corresponding eigenvector out of fv, we perform inverse power iterations (described in Section 2.4) to obtain (h, hu)."
+        "docling_orig": "Eliminating h, from these two equations results in a matrix polynomial in h. The singular set of this polynomial determines hu, and from the corresponding eigenvector, we can find hy. However, a lot of unnecessary work can be avoided by observing that (h, hu) is in the neighborhood of (fu, fu). Using fu, as a guess to h, and building a corresponding eigenvector out of fv, we perform inverse power iterations (described in Section 2.4) to obtain (h, hu)."
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/294",
       "page": 19,
       "order": 18,
       "role": "paragraph",
@@ -4482,7 +4501,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/295",
       "page": 19,
       "order": 19,
       "role": "paragraph",
@@ -4501,7 +4520,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/296",
       "page": 19,
       "order": 20,
       "role": "list_item",
@@ -4520,7 +4539,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/297",
       "page": 19,
       "order": 21,
       "role": "list_item",
@@ -4539,17 +4558,17 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/298",
       "page": 19,
       "order": 22,
       "role": "paragraph",
       "text": "The first case occurs more often. For example, if we trace further from point c, d goes out of the region. Therefore, after each step of the tracing process we have to check for containment of a point inside an arbitrary (simple, but not necessarily convex) polygon. This could be very expensive unless some processing is done on the polygon. We use Seidel's trapezoidation algorithm (created during triangulation) to create trapezoids by horizontal decomposition in O(N) time. Any point can then be determined inside or outside in O(log N) time.",
       "bbox": {
-        "x0": 39.55,
+        "x0": 42.59,
         "y0": 1643.64,
         "x1": 1174.36,
         "y1": 1921.13,
-        "width": 1134.81,
+        "width": 1131.77,
         "height": 277.49
       },
       "meta": {
@@ -4558,7 +4577,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/299",
       "page": 19,
       "order": 23,
       "role": "paragraph",
@@ -4577,7 +4596,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/302",
       "page": 20,
       "order": 1,
       "role": "caption",
@@ -4596,7 +4615,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/303",
       "page": 20,
       "order": 2,
       "role": "paragraph",
@@ -4615,7 +4634,7 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/304",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -4634,7 +4653,7 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/305",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -4653,7 +4672,7 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/306",
       "page": 20,
       "order": 5,
       "role": "heading",
@@ -4672,7 +4691,7 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/307",
       "page": 20,
       "order": 6,
       "role": "paragraph",
@@ -4691,7 +4710,7 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/308",
       "page": 20,
       "order": 7,
       "role": "caption",
@@ -4710,7 +4729,7 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/311",
       "page": 21,
       "order": 1,
       "role": "paragraph",
@@ -4729,7 +4748,7 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/312",
       "page": 21,
       "order": 2,
       "role": "heading",
@@ -4738,9 +4757,9 @@
         "x0": 228.18,
         "y0": 356.78,
         "x1": 988.78,
-        "y1": 390.33,
+        "y1": 387.28,
         "width": 760.6,
-        "height": 33.55
+        "height": 30.5
       },
       "meta": {
         "docling_label": "section_header",
@@ -4748,18 +4767,18 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/313",
       "page": 21,
       "order": 3,
       "role": "paragraph",
       "text": "In the previous sections, we looked at the visibility problem for a single patch. After we partition each patch based on silhouettes and visibility curves, each region is one-to-one under the projection operation and can now be treated as a polygon. We shall, therefore, refer to each such region as a face. Recently fast randomized algorithms have been developed that can handle this problem for polygonal models [Mul89]. We present a slight variation of Mulmuley's algorithm for the sake of completeness in the Appendix.",
       "bbox": {
-        "x0": 42.59,
+        "x0": 39.55,
         "y0": 429.8,
         "x1": 1174.36,
-        "y1": 664.99,
-        "width": 1131.77,
-        "height": 235.19
+        "y1": 667.82,
+        "width": 1134.81,
+        "height": 238.02
       },
       "meta": {
         "docling_label": "text",
@@ -4767,7 +4786,7 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/314",
       "page": 21,
       "order": 4,
       "role": "paragraph",
@@ -4786,7 +4805,7 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/315",
       "page": 21,
       "order": 5,
       "role": "heading",
@@ -4805,7 +4824,7 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/316",
       "page": 21,
       "order": 6,
       "role": "paragraph",
@@ -4824,7 +4843,7 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/317",
       "page": 21,
       "order": 7,
       "role": "paragraph",
@@ -4843,18 +4862,18 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/318",
       "page": 21,
       "order": 8,
       "role": "caption",
       "text": "TABLE 1 Performance of Our Algorithm",
       "bbox": {
         "x0": 416.81,
-        "y0": 1719.56,
+        "y0": 1719.61,
         "x1": 797.11,
         "y1": 1796.2,
         "width": 380.3,
-        "height": 76.64
+        "height": 76.59
       },
       "meta": {
         "docling_label": "caption",
@@ -4862,7 +4881,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/321",
       "page": 22,
       "order": 1,
       "role": "paragraph",
@@ -4881,7 +4900,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/322",
       "page": 22,
       "order": 2,
       "role": "heading",
@@ -4900,7 +4919,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/323",
       "page": 22,
       "order": 3,
       "role": "paragraph",
@@ -4919,7 +4938,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/324",
       "page": 22,
       "order": 4,
       "role": "heading",
@@ -4938,18 +4957,18 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/325",
       "page": 22,
       "order": 5,
       "role": "paragraph",
       "text": "We now present a slight variation of the hidden surface removal algorithm of Mulmuley [Mul89].",
       "bbox": {
-        "x0": 39.41,
+        "x0": 39.55,
         "y0": 829.42,
         "x1": 1168.28,
-        "y1": 903.13,
-        "width": 1128.87,
-        "height": 73.71
+        "y1": 902.63,
+        "width": 1128.73,
+        "height": 73.21
       },
       "meta": {
         "docling_label": "text",
@@ -4957,11 +4976,11 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/326",
       "page": 22,
       "order": 6,
       "role": "paragraph",
-      "text": "The input to the algorithm is a set of n faces with their boundaries represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by H= (h1, h2,...,hni. Let Vi denote the collection of visible regions after i faces are added in random. The i faces already added are kept in the set Q. We want to compute V\". After i steps of the algorithm, we maintain V'. At the (i + 1)st step, we pick a random face hit1 from the set HQ. For each face in V', we find all the boundary intersections with the face hitt using the method described in the previous section. Let us consider a specific intersection point (p, q) such that p lies on the boundary of one of the faces in Vi and q lies on the boundary of hi+1. If the z coordinate of p is less than that of q (p lies in front of q, then project the boundary curve on which p lies on hit, or else project the other way around. Tracing is accomplished by inverse power iteration, which was described in both Sections 2.4 and 6. The equations used to trace these curves are exactly the same as those used in Section 6. Tracing is done for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region are now entirely visible or not, we check only on one point. We shoot a ray from the point r to -o in the z direction and find the number of intersections with faces of V' U{hi+1). The curve surface intersection method used is described in Section 2.3. If the number of intersections is 0, this face is added; otherwise it is discarded. All the faces that were not partitioned in step (i + 1) are retained in VitI . After all the n faces are added, we obtain V\". We shall now provide the pseudocode for this algorithm. For case of writing the pseudo-code, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns O if there are no boundary curves between the two faces; otherwise, it returns 1. We also have another routine called partition _face that computes the partition of the face using the projected boundary curve.",
+      "text": "The input to the algorithm is a set of n faces with their boundaries represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by H= (h1, h2,...,hni. Let Vi denote the collection of visible regions after i faces are added in random. The i faces already added are kept in the set Q. We want to compute V\". After i steps of the algorithm, we maintain V'. At the (i + 1)st step, we pick a random face hit1 from the set HQ. For each face in V', we find all the boundary intersections with the face hitl using the method described in the previous section. Let us consider a specific intersection point (p, q) such that p lies on the boundary of one of the faces in Vi and q lies on the boundary of hi+1. If the z coordinate of p is less than that of q (p lies in front of q, then project the boundary curve on which p lies on hit, or else project the other way around. Tracing is accomplished by inverse power iteration, which was described in both Sections 2.4 and 6. The equations used to trace these curves are exactly the same as those used in Section 6. Tracing is done for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region are now entirely visible or not, we check only on one point. We shoot a ray from the point r to -o in the z direction and find the number of intersections with faces of V' U{hi+1). The curve surface intersection method used is described in Section 2.3. If the number of intersections is 0, this face is added; otherwise it is discarded. All the faces that were not partitioned in step (i + 1) are retained in VitI . After all the n faces are added, we obtain V\". We shall now provide the pseudocode for this algorithm. For case of writing the pseudo-code, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns O if there are no boundary curves between the two faces; otherwise, it returns 1. We also have another routine called partition _face that computes the partition of the face using the projected boundary curve.",
       "bbox": {
         "x0": 36.51,
         "y0": 911.63,
@@ -4972,11 +4991,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The input to the algorithm is a set of n faces with their boundaries represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by H= (h1, h2,...,hni. Let Vi denote the collection of visible regions after i faces are added in random. The i faces already added are kept in the set Q. We want to compute V\". After i steps of the algorithm, we maintain V'. At the (i + 1)st step, we pick a random face hit1 from the set HQ. For each face in V', we find all the boundary intersections with the face hitt using the method described in the previous section. Let us consider a specific intersection point (p, q) such that p lies on the boundary of one of the faces in Vi and q lies on the boundary of hi+1. If the z coordinate of p is less than that of q (p lies in front of q, then project the boundary curve on which p lies on hit, or else project the other way around. Tracing is accomplished by inverse power iteration, which was described in both Sections 2.4 and 6. The equations used to trace these curves are exactly the same as those used in Section 6. Tracing is done for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region are now entirely visible or not, we check only on one point. We shoot a ray from the point r to -o in the z direction and find the number of intersections with faces of V' U{hi+1). The curve surface intersection method used is described in Section 2.3. If the number of intersections is 0, this face is added; otherwise it is discarded. All the faces that were not partitioned in step (i + 1) are retained in VitI . After all the n faces are added, we obtain V\". We shall now provide the pseudocode for this algorithm. For case of writing the pseudo-code, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns O if there are no boundary curves between the two faces; otherwise, it returns 1. We also have another routine called partition _face that computes the partition of the face using the projected boundary curve."
+        "docling_orig": "The input to the algorithm is a set of n faces with their boundaries represented as a collection of Bézier curves and piecewise linear chains. We also have the entire face boundary as a closed simple polygon. It will be used during the tracing step. We provide an overview of the algorithm first. Let us represent the set of faces by H= (h1, h2,...,hni. Let Vi denote the collection of visible regions after i faces are added in random. The i faces already added are kept in the set Q. We want to compute V\". After i steps of the algorithm, we maintain V'. At the (i + 1)st step, we pick a random face hit1 from the set HQ. For each face in V', we find all the boundary intersections with the face hitl using the method described in the previous section. Let us consider a specific intersection point (p, q) such that p lies on the boundary of one of the faces in Vi and q lies on the boundary of hi+1. If the z coordinate of p is less than that of q (p lies in front of q, then project the boundary curve on which p lies on hit, or else project the other way around. Tracing is accomplished by inverse power iteration, which was described in both Sections 2.4 and 6. The equations used to trace these curves are exactly the same as those used in Section 6. Tracing is done for all the intersection points. We partition appropriate faces by their projection curves and locate a point r inside each of the partitioned faces. Since all points inside one region are now entirely visible or not, we check only on one point. We shoot a ray from the point r to -o in the z direction and find the number of intersections with faces of V' U{hi+1). The curve surface intersection method used is described in Section 2.3. If the number of intersections is 0, this face is added; otherwise it is discarded. All the faces that were not partitioned in step (i + 1) are retained in VitI . After all the n faces are added, we obtain V\". We shall now provide the pseudocode for this algorithm. For case of writing the pseudo-code, we shall assume that we have a routine project_boundary_curves that takes two faces as parameters and computes all the projected boundary curves as described above. It returns O if there are no boundary curves between the two faces; otherwise, it returns 1. We also have another routine called partition _face that computes the partition of the face using the projected boundary curve."
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/329",
       "page": 23,
       "order": 1,
       "role": "code",
@@ -4995,7 +5014,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/330",
       "page": 23,
       "order": 2,
       "role": "paragraph",
@@ -5014,7 +5033,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/331",
       "page": 23,
       "order": 3,
       "role": "caption",
@@ -5033,7 +5052,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/332",
       "page": 23,
       "order": 4,
       "role": "paragraph",
@@ -5052,7 +5071,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/333",
       "page": 23,
       "order": 5,
       "role": "paragraph",
@@ -5071,7 +5090,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/334",
       "page": 23,
       "order": 6,
       "role": "paragraph",
@@ -5090,7 +5109,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/335",
       "page": 23,
       "order": 7,
       "role": "paragraph",
@@ -5109,7 +5128,7 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/338",
       "page": 24,
       "order": 1,
       "role": "paragraph",
@@ -5128,7 +5147,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/339",
       "page": 24,
       "order": 2,
       "role": "heading",
@@ -5147,7 +5166,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/340",
       "page": 24,
       "order": 3,
       "role": "paragraph",
@@ -5166,7 +5185,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/341",
       "page": 24,
       "order": 4,
       "role": "heading",
@@ -5185,7 +5204,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/342",
       "page": 24,
       "order": 5,
       "role": "list_item",
@@ -5204,7 +5223,7 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/343",
       "page": 24,
       "order": 6,
       "role": "list_item",
@@ -5223,7 +5242,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/344",
       "page": 24,
       "order": 7,
       "role": "list_item",
@@ -5242,7 +5261,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/345",
       "page": 24,
       "order": 8,
       "role": "list_item",
@@ -5261,7 +5280,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/346",
       "page": 24,
       "order": 9,
       "role": "list_item",
@@ -5280,7 +5299,7 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/347",
       "page": 24,
       "order": 10,
       "role": "list_item",
@@ -5299,7 +5318,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/348",
       "page": 24,
       "order": 11,
       "role": "list_item",
@@ -5318,11 +5337,11 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/349",
       "page": 24,
       "order": 12,
       "role": "list_item",
-      "text": "[CE88] B. Chazelle and H. Edelsbrunner, An optimal algorithm for intersecting line segments in the plane, in Proc. 29th Annual TEEE Sympos. Found. Comput. Sci., 1988, pp. 590-600",
+      "text": "[CE88] B. Chazelle and H. Edelsbrunner, An optimal algorithm for intersecting line segments in the plane, in Proc. 29th Annual TEEE Sympos. Found. Comput. Sci., 1988, pp. 590-600.",
       "bbox": {
         "x0": 85.19,
         "y0": 1259.22,
@@ -5333,11 +5352,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[CE88] B. Chazelle and H. Edelsbrunner, An optimal algorithm for intersecting line segments in the plane, in Proc. 29th Annual TEEE Sympos. Found. Comput. Sci., 1988, pp. 590-600"
+        "docling_orig": "[CE88] B. Chazelle and H. Edelsbrunner, An optimal algorithm for intersecting line segments in the plane, in Proc. 29th Annual TEEE Sympos. Found. Comput. Sci., 1988, pp. 590-600."
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/350",
       "page": 24,
       "order": 13,
       "role": "list_item",
@@ -5356,7 +5375,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/351",
       "page": 24,
       "order": 14,
       "role": "list_item",
@@ -5375,7 +5394,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/352",
       "page": 24,
       "order": 15,
       "role": "list_item",
@@ -5384,9 +5403,9 @@
         "x0": 85.19,
         "y0": 1488.12,
         "x1": 1174.36,
-        "y1": 1543.01,
+        "y1": 1543.34,
         "width": 1089.17,
-        "height": 54.89
+        "height": 55.22
       },
       "meta": {
         "docling_label": "list_item",
@@ -5394,7 +5413,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/353",
       "page": 24,
       "order": 16,
       "role": "list_item",
@@ -5413,7 +5432,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/354",
       "page": 24,
       "order": 17,
       "role": "list_item",
@@ -5432,7 +5451,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/355",
       "page": 24,
       "order": 18,
       "role": "list_item",
@@ -5451,7 +5470,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/356",
       "page": 24,
       "order": 19,
       "role": "list_item",
@@ -5470,7 +5489,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/357",
       "page": 24,
       "order": 20,
       "role": "list_item",
@@ -5479,9 +5498,9 @@
         "x0": 88.23,
         "y0": 1863.19,
         "x1": 1174.36,
-        "y1": 1921.55,
+        "y1": 1921.24,
         "width": 1086.13,
-        "height": 58.36
+        "height": 58.05
       },
       "meta": {
         "docling_label": "list_item",
@@ -5489,7 +5508,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/358",
       "page": 24,
       "order": 21,
       "role": "list_item",
@@ -5498,9 +5517,9 @@
         "x0": 82.14,
         "y0": 1939.3,
         "x1": 1022.24,
-        "y1": 1963.83,
+        "y1": 1966.87,
         "width": 940.1,
-        "height": 24.53
+        "height": 27.57
       },
       "meta": {
         "docling_label": "list_item",
@@ -5508,7 +5527,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/359",
       "page": 24,
       "order": 22,
       "role": "list_item",
@@ -5527,7 +5546,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/362",
       "page": 25,
       "order": 1,
       "role": "list_item",
@@ -5546,7 +5565,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/363",
       "page": 25,
       "order": 2,
       "role": "list_item",
@@ -5565,11 +5584,11 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/364",
       "page": 25,
       "order": 3,
       "role": "list_item",
-      "text": "[G87] R. H. Güting and T. Ottmann, New algorithms for special cases of the hidden line elimination problem, Comput. Vision Graph. Image Process. 40, 1987, 188-204.",
+      "text": "[GO87] R. H. Güting and T. Ottmann, New algorithms for special cases of the hidden line elimination problem, Comput. Vision Graph. Image Process. 40, 1987, 188-204.",
       "bbox": {
         "x0": 79.1,
         "y0": 222.61,
@@ -5580,11 +5599,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[G87] R. H. Güting and T. Ottmann, New algorithms for special cases of the hidden line elimination problem, Comput. Vision Graph. Image Process. 40, 1987, 188-204."
+        "docling_orig": "[GO87] R. H. Güting and T. Ottmann, New algorithms for special cases of the hidden line elimination problem, Comput. Vision Graph. Image Process. 40, 1987, 188-204."
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/365",
       "page": 25,
       "order": 4,
       "role": "list_item",
@@ -5603,7 +5622,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/366",
       "page": 25,
       "order": 5,
       "role": "list_item",
@@ -5622,7 +5641,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/367",
       "page": 25,
       "order": 6,
       "role": "list_item",
@@ -5641,7 +5660,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/368",
       "page": 25,
       "order": 7,
       "role": "list_item",
@@ -5650,9 +5669,9 @@
         "x0": 42.59,
         "y0": 521.38,
         "x1": 1177.41,
-        "y1": 616.08,
+        "y1": 619.2,
         "width": 1134.82,
-        "height": 94.7
+        "height": 97.82
       },
       "meta": {
         "docling_label": "list_item",
@@ -5660,7 +5679,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/369",
       "page": 25,
       "order": 8,
       "role": "list_item",
@@ -5679,7 +5698,7 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/370",
       "page": 25,
       "order": 9,
       "role": "list_item",
@@ -5698,7 +5717,7 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/371",
       "page": 25,
       "order": 10,
       "role": "list_item",
@@ -5717,7 +5736,7 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/372",
       "page": 25,
       "order": 11,
       "role": "list_item",
@@ -5736,17 +5755,17 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/373",
       "page": 25,
       "order": 12,
       "role": "list_item",
       "text": "[MD94] D Manocha and J. Demmel, Algorithms for intersecting parametric and algebric curves I: Simple intersections, ACM Trans. Graph. 13(1), 1994, 73-100.",
       "bbox": {
-        "x0": 75.96,
+        "x0": 79.1,
         "y0": 966.67,
         "x1": 1174.36,
         "y1": 1030.79,
-        "width": 1098.4,
+        "width": 1095.26,
         "height": 64.12
       },
       "meta": {
@@ -5755,7 +5774,7 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/374",
       "page": 25,
       "order": 13,
       "role": "list_item",
@@ -5774,7 +5793,7 @@
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/375",
       "page": 25,
       "order": 14,
       "role": "list_item",
@@ -5793,7 +5812,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/376",
       "page": 25,
       "order": 15,
       "role": "list_item",
@@ -5812,7 +5831,7 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/377",
       "page": 25,
       "order": 16,
       "role": "list_item",
@@ -5821,9 +5840,9 @@
         "x0": 79.1,
         "y0": 1234.76,
         "x1": 1174.36,
-        "y1": 1296.16,
+        "y1": 1299.28,
         "width": 1095.26,
-        "height": 61.4
+        "height": 64.52
       },
       "meta": {
         "docling_label": "list_item",
@@ -5831,11 +5850,11 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/378",
       "page": 25,
       "order": 17,
-      "role": "list_item",
-      "text": "[PVY92] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output sensitive generation of the perspective view of isothetic par allelepipeds, Algorithmica 8, 1992, 257-283.",
+      "role": "reference",
+      "text": "PVY92] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output sensitive generation of the perspective view of isothetic par allelepipeds, Algorithmica 8, 1992, 257-283.",
       "bbox": {
         "x0": 66.54,
         "y0": 1308.13,
@@ -5846,11 +5865,11 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "[PVY92] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output sensitive generation of the perspective view of isothetic par allelepipeds, Algorithmica 8, 1992, 257-283."
+        "docling_orig": "PVY92] F. P. Preparata, J. S. Vitter, and M. Yvinec. Output sensitive generation of the perspective view of isothetic par allelepipeds, Algorithmica 8, 1992, 257-283."
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/379",
       "page": 25,
       "order": 18,
       "role": "list_item",
@@ -5869,7 +5888,7 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/380",
       "page": 25,
       "order": 19,
       "role": "list_item",
@@ -5888,7 +5907,7 @@
       }
     },
     {
-      "id": "#/texts/380",
+      "id": "#/texts/381",
       "page": 25,
       "order": 20,
       "role": "list_item",
@@ -5907,7 +5926,7 @@
       }
     },
     {
-      "id": "#/texts/381",
+      "id": "#/texts/382",
       "page": 25,
       "order": 21,
       "role": "list_item",
@@ -5926,7 +5945,7 @@
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/383",
       "page": 25,
       "order": 22,
       "role": "list_item",
@@ -5945,7 +5964,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/384",
       "page": 25,
       "order": 23,
       "role": "list_item",
@@ -5964,7 +5983,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/385",
       "page": 25,
       "order": 24,
       "role": "list_item",

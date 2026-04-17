@@ -1,6 +1,6 @@
 {
-  "engine": "docling",
-  "pdf_path": "docs/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models.pdf",
+  "engine": "composed",
+  "pdf_path": "stepview/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models/1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models.pdf",
   "page_count": 10,
   "page_sizes_pt": [
     {
@@ -306,7 +306,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ABSTRACT",
       "bbox": {
         "x0": 52.32,
@@ -325,7 +325,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "One of fundamental problems in history-based parametric solid modeling systems is to identi@ topological entities of solid models in such a way that the same entities can still be identified after the models have been reevaluated from the sequential his(ory of modeling operations.",
       "bbox": {
         "x0": 61.2,
@@ -344,7 +344,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The Topological ID System systematically assigns Ds (names) to topological entities (faces, edges, vertices) in solid models, When the solid model is edited and then automatically reevaluated from the history of modeling operations, the IDs of topological entities in the old version of the model are mapped to IDs of the corresponding topological entities in the new version of the model. This mapping defines the correspondence between topological entities in both models.",
       "bbox": {
         "x0": 61.44,
@@ -363,7 +363,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 52.8,
@@ -382,7 +382,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Feature-based parametric modeling systems usually define models by a sequential histo~ of operations. Whenever the user performs a modeling operation, for instance chamfers an edge, makes a slot, etc., the parametric system not only performs the operation on the current model but also records all the defining parameters of the operation into a history tile. This sequential history of operations unambiguously defines the model and the parametric system can automatically recreate the model anytime by reevaluating this stored histo~ of operations.",
       "bbox": {
         "x0": 52.08,
@@ -401,7 +401,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Feature-based modeling systems associate additional information with solid models and their topological entities such as faces, edges and vertices. These associations must be persistent, i.e. when the model is automatically reevaluated from its history of operations, the topological associations must be preserved and not lost. Typical examples of associations are:",
       "bbox": {
         "x0": 51.36,
@@ -420,7 +420,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Permission to copy without fee all or part of this material is granted provided that the copies are not made or distributed for direct commercial advantage, the ACM copyright notice and the title of the publication and its date appear, and notice is given that copyin is by permission of the Association of Computing Machinery. Yo copy otherwise, or to republish, requires a fee and or specific permission. Solid Modelin '95, Salt Lake City, Utah USA J' CI 1995 AC 0-89791 -672-7 95 0005 ...$3.50",
       "bbox": {
         "x0": 36.0,
@@ -5819,12 +5819,12 @@
       "role": "paragraph",
       "text": "e2",
       "bbox": {
-        "x0": 520.18,
+        "x0": 519.03,
         "y0": 339.59,
-        "x1": 529.39,
-        "y1": 346.5,
-        "width": 9.21,
-        "height": 6.91
+        "x1": 530.54,
+        "y1": 347.65,
+        "width": 11.51,
+        "height": 8.06
       },
       "meta": {
         "docling_label": "text",
@@ -6048,11 +6048,11 @@
       "text": "-",
       "bbox": {
         "x0": 467.24,
-        "y0": 659.62,
-        "x1": 479.9,
+        "y0": 660.77,
+        "x1": 478.75,
         "y1": 669.98,
-        "width": 12.66,
-        "height": 10.36
+        "width": 11.51,
+        "height": 9.21
       },
       "meta": {
         "docling_label": "text",
@@ -8289,12 +8289,12 @@
       "role": "paragraph",
       "text": "12",
       "bbox": {
-        "x0": 260.94,
+        "x0": 262.08,
         "y0": 372.91,
         "x1": 272.38,
-        "y1": 380.92,
-        "width": 11.44,
-        "height": 8.01
+        "y1": 379.77,
+        "width": 10.3,
+        "height": 6.86
       },
       "meta": {
         "docling_label": "text",
@@ -9289,5 +9289,17 @@
         "docling_orig": "~091 ] Wang, N and Ozsoy, M, 'AScheme to Represent Features, Dimensions and Tolerances in Geometric Modeling'J ManuJ Syst Vot 10No 3 (1991) pp 233-240"
       }
     }
-  ]
+  ],
+  "page_sources": {
+    "1": "docling",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling"
+  }
 }

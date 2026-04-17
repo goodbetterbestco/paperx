@@ -413,7 +413,7 @@
       "page": 2,
       "order": 7,
       "role": "paragraph",
-      "text": "~A-X",
+      "text": "^A-X",
       "bbox": {
         "x0": 66.57,
         "y0": 308.2,
@@ -424,7 +424,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "~A-X"
+        "docling_orig": "^A-X"
       }
     },
     {
@@ -1576,9 +1576,9 @@
       "bbox": {
         "x0": 214.62,
         "y0": 157.08,
-        "x1": 223.57,
+        "x1": 224.56,
         "y1": 165.03,
-        "width": 8.95,
+        "width": 9.94,
         "height": 7.95
       },
       "meta": {

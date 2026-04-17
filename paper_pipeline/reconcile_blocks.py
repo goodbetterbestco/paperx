@@ -90,6 +90,19 @@ AUTHOR_MARKER_RE = re.compile(r"(?:\\\(|\\\)|\\mathbf|\\mathrm|©|\{|\}|\^)")
 AUTHOR_AFFILIATION_INDEX_RE = re.compile(r"\b\d+\b")
 ABSTRACT_LEAD_RE = re.compile(r"^\s*abstract\b[\s:.-]*", re.IGNORECASE)
 ABSTRACT_MARKER_ONLY_RE = re.compile(r"^\s*abstract\b[\s:.-]*$", re.IGNORECASE)
+ABSTRACT_BODY_BREAK_RE = re.compile(
+    r"^\s*(?:figure|table|definition\b|theorem\b|for any two points|"
+    r"we define\b|our goal\b|a number of researchers|these problems\b|"
+    r"in this section\b|some non-simple curves\b)",
+    re.IGNORECASE,
+)
+ABSTRACT_CONTINUATION_RE = re.compile(
+    r"^\s*(?:we\b|this\b|in this paper\b|our\b|the paper\b|it\b|these\b|"
+    r"using\b|by\b|based on\b|results?\b|experiments?\b|findings?\b|"
+    r"we (?:show|present|propose|study|derive|develop|analyze|investigate)\b)",
+    re.IGNORECASE,
+)
+FIGURE_REF_RE = re.compile(r"\bfigure\s+\d", re.IGNORECASE)
 TITLE_PAGE_METADATA_RE = re.compile(
     r"\b(?:received:|accepted:|published online:|open access publication|open access order|"
     r"the original version of this article was revised|the author\(s\)|accepted manuscript|"
@@ -102,15 +115,21 @@ INTRO_MARKER_RE = re.compile(r"^(?:[0-9O](?:\.[0-9O]+)*)?\.?\s*introduction\b", 
 FRONT_MATTER_METADATA_RE = re.compile(
     r"\b(?:technical report|deliverable|available online|article history|published online|"
     r"project funded|information society technologies|revised\b|accepted\b|idealibrary|doi\b|dol:|"
-    r"ecg-tr-|ist-\d{2,}|effective computational geometry|keywords?:|corresponding author|"
+    r"ecg-tr-|ist-\d{2,}|effective computational geometry|key\s*words?:|corresponding author|"
     r"current address|creativecommons|creative commons|licensed under|this manuscript version is made available|"
     r"numdam|cedram|archive ouverte)\b",
     re.IGNORECASE,
 )
 ABBREVIATED_VENUE_LINE_RE = re.compile(r"(?:\b[A-Za-z]{2,}\.\s*){3,}")
-KEYWORDS_LEAD_RE = re.compile(r"^\s*keywords?:\s", re.IGNORECASE)
+KEYWORDS_LEAD_RE = re.compile(r"^\s*key\s*words?:\s", re.IGNORECASE)
 TRAILING_ABSTRACT_BOILERPLATE_RE = re.compile(
     r"\s+©\s*\d{4}.*?\ball rights reserved\.?$",
+    re.IGNORECASE,
+)
+TRAILING_ABSTRACT_TAIL_RE = re.compile(
+    r"\s+(?:©\s*\d{4}\b.*|key\s*words?:\s.*|keywords?\s+and\s+phrases\s+.*|"
+    r"acm\s+subject\s+classification\s+.*|digital\s+object\s+identifier\s+.*|"
+    r"(?:\d+|[IVX]+)\s+introduction\b.*)$",
     re.IGNORECASE,
 )
 CITATION_YEAR_RE = re.compile(r"\(\s*(?:18|19|20)\d{2}[a-z]?\s*\)\.")
@@ -1342,6 +1361,19 @@ def _promote_heading_like_records(records: list[dict[str, Any]]) -> list[dict[st
     for record in records:
         if record.get("type") == "paragraph":
             raw_text = str(record.get("meta", {}).get("raw_text", record.get("text", "")))
+            cleaned_raw_text = clean_heading_title(raw_text)
+            if ABSTRACT_MARKER_ONLY_RE.fullmatch(cleaned_raw_text):
+                candidate = dict(record)
+                candidate["type"] = "heading"
+                candidate["text"] = "Abstract"
+                candidate.setdefault("meta", {})
+                candidate["meta"] = {
+                    **candidate["meta"],
+                    "synthetic_heading": True,
+                    "synthetic_heading_marker_only": True,
+                }
+                promoted.append(candidate)
+                continue
             label, title = _decode_control_heading_label(raw_text)
             if not label:
                 parsed_heading = parse_heading_label(clean_heading_title(raw_text))
@@ -1673,7 +1705,10 @@ def _looks_like_body_section_marker(text: str) -> bool:
 
 
 def _strip_trailing_abstract_boilerplate(text: str) -> str:
-    return compact_text(TRAILING_ABSTRACT_BOILERPLATE_RE.sub("", _clean_text(text)))
+    cleaned = _clean_text(text)
+    cleaned = TRAILING_ABSTRACT_BOILERPLATE_RE.sub("", cleaned)
+    cleaned = TRAILING_ABSTRACT_TAIL_RE.sub("", cleaned)
+    return compact_text(cleaned)
 
 
 def _normalize_abstract_candidate_text(records: list[dict[str, Any]]) -> str:
@@ -2442,16 +2477,139 @@ def _abstract_text_looks_like_metadata(text: str) -> bool:
     return bool(abstract_quality_flags(text))
 
 
+def _should_replace_front_matter_abstract(text: str) -> bool:
+    flags = set(abstract_quality_flags(text))
+    return "missing" in flags or bool(flags)
+
+
 def _leading_abstract_text(node: SectionNode) -> tuple[str, list[dict[str, Any]]]:
-    records = [
-        record
-        for record in node.records
-        if record.get("type") in {"paragraph", "front_matter", "footnote"}
-        and not _looks_like_front_matter_metadata(str(record.get("text", "")))
-        and not AUTHOR_NOTE_RE.search(str(record.get("text", "")))
-    ]
+    records: list[dict[str, Any]] = []
+    word_total = 0
+    last_page: int | None = None
+    for index, record in enumerate(node.records):
+        record_type = str(record.get("type", ""))
+        text = _clean_text(str(record.get("text", "")))
+        if not text:
+            continue
+        if record_type == "heading" and records:
+            break
+        if record_type not in {"paragraph", "front_matter", "footnote"}:
+            continue
+        if _looks_like_front_matter_metadata(text) and not KEYWORDS_LEAD_RE.match(text):
+            if records:
+                break
+            continue
+        if AUTHOR_NOTE_RE.search(text):
+            if records:
+                break
+            continue
+        page = int(record.get("page", 0) or 0)
+        if records and last_page is not None and page - last_page > 1:
+            break
+        if records and word_total >= 60 and ABSTRACT_BODY_BREAK_RE.match(text):
+            break
+        if records and word_total >= 12:
+            future_heading_exists = any(
+                str(follower.get("type", "")) == "heading"
+                and _clean_text(str(follower.get("text", "")))
+                for follower in node.records[index + 1 :]
+            )
+            if future_heading_exists and (
+                FIGURE_REF_RE.search(text)
+                or ABSTRACT_BODY_BREAK_RE.match(text)
+                or not ABSTRACT_CONTINUATION_RE.match(text)
+            ):
+                break
+        records.append(record)
+        word_total += _record_word_count(record)
+        last_page = page
     text = _normalize_abstract_candidate_text(records)
     return text, records
+
+
+def _opening_abstract_candidate_records(prelude: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    candidate_records: list[dict[str, Any]] = []
+    for index, record in enumerate(prelude):
+        text = _clean_text(str(record.get("text", "")))
+        if not text:
+            continue
+        if ABSTRACT_LEAD_RE.match(text):
+            candidate_records.append(record)
+            for follower in prelude[index + 1 :]:
+                follower_text = _clean_text(str(follower.get("text", "")))
+                if not follower_text:
+                    continue
+                if _looks_like_body_section_marker(follower_text):
+                    break
+                if KEYWORDS_LEAD_RE.search(follower_text):
+                    candidate_records.append(follower)
+                    break
+                if _looks_like_front_matter_metadata(follower_text) and not follower_text.lower().startswith("keywords"):
+                    continue
+                if follower.get("type") not in {"paragraph", "front_matter", "footnote"}:
+                    break
+                candidate_records.append(follower)
+            return candidate_records
+
+    for index, record in enumerate(prelude[:-1]):
+        text = _clean_text(str(record.get("text", "")))
+        next_text = _clean_text(str(prelude[index + 1].get("text", "")))
+        if (
+            _record_word_count(record) >= 20
+            and not _looks_like_front_matter_metadata(text)
+            and KEYWORDS_LEAD_RE.search(next_text)
+        ):
+            return [record, prelude[index + 1]]
+    return []
+
+
+def _abstract_text_is_recoverable(text: str) -> bool:
+    flags = set(abstract_quality_flags(text))
+    return bool(text) and "missing" not in flags and "too_long" not in flags and "section_marker" not in flags
+
+
+def _replace_front_matter_abstract_text(
+    front_matter: dict[str, Any],
+    blocks: list[dict[str, Any]],
+    abstract_text: str,
+    abstract_records: list[dict[str, Any]],
+) -> bool:
+    target_id = str(front_matter.get("abstract_block_id") or "")
+    if not target_id:
+        return False
+    for block in blocks:
+        if str(block.get("id", "")) != target_id:
+            continue
+        block["content"] = {"spans": [{"kind": "text", "text": abstract_text}]}
+        block["source_spans"] = [span for record in abstract_records for span in _block_source_spans(record)]
+        return True
+    return False
+
+
+def _recover_missing_front_matter_abstract(
+    front_matter: dict[str, Any],
+    blocks: list[dict[str, Any]],
+    prelude: list[dict[str, Any]],
+    ordered_roots: list[SectionNode],
+) -> bool:
+    current_text = _front_block_text(blocks, front_matter.get("abstract_block_id"))
+    if "missing" not in abstract_quality_flags(current_text):
+        return False
+
+    for node in ordered_roots[:3]:
+        if _normalize_section_title(str(node.title)) != "abstract":
+            continue
+        abstract_text, abstract_records = _leading_abstract_text(node)
+        if _abstract_text_is_recoverable(abstract_text):
+            return _replace_front_matter_abstract_text(front_matter, blocks, abstract_text, abstract_records)
+
+    candidate_records = _opening_abstract_candidate_records(prelude)
+    if not candidate_records:
+        return False
+    candidate_text = _normalize_abstract_candidate_text(candidate_records)
+    if not _abstract_text_is_recoverable(candidate_text):
+        return False
+    return _replace_front_matter_abstract_text(front_matter, blocks, candidate_text, candidate_records)
 
 
 def _first_root_indicates_missing_intro(roots: list[Any]) -> bool:
@@ -4403,7 +4561,7 @@ def reconcile_paper(
                 )
                 front_matter["abstract_block_id"] = abstract_block_id
                 next_block_index += 1
-            elif _abstract_text_looks_like_metadata(current_abstract_text):
+            elif _should_replace_front_matter_abstract(current_abstract_text):
                 for block in blocks:
                     if str(block.get("id", "")) != str(front_matter["abstract_block_id"]):
                         continue
@@ -4412,6 +4570,7 @@ def reconcile_paper(
                     break
         if front_matter.get("abstract_block_id"):
             ordered_roots = ordered_roots[1:]
+    _recover_missing_front_matter_abstract(front_matter, blocks, prelude, ordered_roots)
     if remaining_prelude and (not ordered_roots or not str(ordered_roots[0].title).lower().endswith("introduction")):
         intro_node = SectionNode(
             title="Introduction",

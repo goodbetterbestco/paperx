@@ -162,7 +162,7 @@
     {
       "id": "docling-eq-0006",
       "kind": "display",
-      "display_latex": "(R* = D #(R), if Bd(R\") = y c, and R°' is connected otherwise",
+      "display_latex": "(R*= 7 MRL, if Bd(R) = Y c and R' is connected otherwise",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -173,12 +173,12 @@
         {
           "page": 5,
           "bbox": {
-            "x0": 472.98,
-            "y0": 726.77,
-            "x1": 782.23,
+            "x0": 472.73,
+            "y0": 726.51,
+            "x1": 782.37,
             "y1": 769.93,
-            "width": 309.25,
-            "height": 43.16
+            "width": 309.64,
+            "height": 43.42
           },
           "engine": "docling"
         }
@@ -225,7 +225,7 @@
     {
       "id": "docling-eq-0008",
       "kind": "display",
-      "display_latex": "9 = D: (f)",
+      "display_latex": "9 = Da (f)",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -237,11 +237,11 @@
           "page": 7,
           "bbox": {
             "x0": 57.88,
-            "y0": 928.73,
-            "x1": 147.19,
+            "y0": 930.39,
+            "x1": 145.53,
             "y1": 947.06,
-            "width": 89.31,
-            "height": 18.33
+            "width": 87.65,
+            "height": 16.67
           },
           "engine": "docling"
         }
@@ -256,7 +256,7 @@
     {
       "id": "docling-eq-0009",
       "kind": "display",
-      "display_latex": "S= Ce U C, (5)",
+      "display_latex": "S= Ce - U C, (5) i=1",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -270,9 +270,9 @@
             "x0": 434.94,
             "y0": 488.38,
             "x1": 782.23,
-            "y1": 508.25,
+            "y1": 513.21,
             "width": 347.29,
-            "height": 19.87
+            "height": 24.83
           },
           "engine": "docling"
         }
@@ -282,8 +282,7 @@
         "status": "unreviewed",
         "risk": "medium",
         "notes": ""
-      },
-      "equation_number": "(5)"
+      }
     }
   ]
 }

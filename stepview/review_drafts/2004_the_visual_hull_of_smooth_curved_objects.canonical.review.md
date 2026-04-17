@@ -1,12 +1,12 @@
 # The Visual Hull of Smooth Curved Objects
 
-Andrea Bottino, Aldo Laurentini, member, IEEE, Corso Duca degli Abruzzi , Torino, Italy
+Andrea Bottino, Aldo Laurentini, member, Corso Duca degli Abruzzi , Torino
 
 [missing from original]
 
 ## Abstract
 
-silhouettes or shadows. This paper develops the theory of the visual hull of generic smooth objects. This is performed by relating the surface of the visual hull of the object to its aspect graph. We show that the visual hull can be constructed using patches of the surfaces that partition the viewpoint space of the aspect graph. In particular, the visual events point generate the relevant surfaces . tangent crossing and triple A further analysis, based on the shape of the surface of the object at the tangency points of these surfaces, allows selecting their active parts, i.e. the surface patches which could actually bound the visual hull. Finally, an algorithm for computing the visual hull starting from the active patches is outlined. . Computer vision, aspect, aspect graphs, silhouettes, visual hull, smooth curved objects
+silhouettes or shadows. This paper develops the theory of the visual hull of generic smooth objects. This is performed by relating the surface of the visual hull of the object to its aspect graph. We show that the visual hull can be constructed using patches of the surfaces that partition the viewpoint space of the aspect graph. In particular, the visual events point generate the relevant surfaces . tangent crossing and
 
 ## 1 INTRODUCTION
 
@@ -36,9 +36,9 @@ Visual hull, internal visual hull and convex hull \(\mathbf{C H}(\mathbf{O})\) a
 
 The visual hull allows answering questions such as: can the shape of an object be fully determined from its silhouettes? If not, which is the closest approximation that can be obtained? Can two objects be distinguished from their silhouettes? The answers to the previous questions are: an object can be reconstructed from its silhouettes iff it is coincident with its visual hull; the closest approximation that can be obtained is the visual hull; we can tell an object from another using silhouettes iff their visual hulls are different.
 
-An intuitive physical construction of the visual hull of is as follows. Suppose filling the concavities of the object with soft material. The visual hull can be obtained by scraping off the excess material with a ruler grazing the hard surface of the object in all possible ways. In Fig.1, \(\mathbf{O}\) is one half of an object of revolution. \(\mathbf{C H}(\mathbf{O})\) is its convex hull, where the concavity has been filled. The last image shows the visual hull \(\mathbf{V H}(\mathbf{O})\), and I particular S" \({ }_{\text {vH }}\), the surface of the visual hull that covers the concavity, produced by the ruler.
+An intuitive physical construction of the visual hull of is as follows. Suppose filling the concavities of the object with soft material. The visual hull can be obtained by scraping off the excess material with a ruler grazing the hard surface of the object in all possible ways. In Fig.1, \(\mathbf{O}\) is one half of an object of revolution. \(\mathbf{C H}(\mathbf{O})\) is its convex hull, where the concavity has been filled. The last image shows the visual hull \(\mathbf{V H}(\mathbf{O})\), and I particular \(\mathrm{S}^{\prime \prime}{ }_{\text {vH }}\), the surface of the visual hull that covers the concavity, produced by the ruler.
 
-![Figure1. An object O , its convex hull CH ( O ) and its visual hull VH(O)](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-1-p004.png)
+![Figure1. An object O , its convex hull CH ( O ) and its visual hull VH(O)](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-1-p004.png)
 
 *Figure1. An object O , its convex hull CH ( O ) and its visual hull VH(O): An object O, its convex hull CH (O) and its visual hull VH(O)*
 
@@ -66,7 +66,7 @@ points of these surfaces. This analysis allows discarding entirely several of th
 
 Let us consider an object \(\mathbf{O}\) bounded by a generic smooth surface. Obviously, the line drawings of smooth objects only include occluding contours. The adjective "generic" refers to a surface without exceptional zero probability alignments. This extends to curved surfaces the 2D idea of generic polygon (three vertices do not lie on the same straight line) and the 3D idea of generic polyhedron (two edges not belonging to the same face do not lie on the same plane, and four edges do not lie on the same ruled quadric surface). In particular, generic for a smooth surface means that there can exist only isolated lines (they do not form surfaces) tangent at more than three points. For a more formal definition, the reader is referred to [7]. Aspect graphs and visual events of generic smooth surfaces have been considered explicitly in several papers, as [5], [28], and implicitly in many other papers on the subject.
 
-In general, the surface \(\mathrm{S}_{\mathrm{VH}}\) of \(\mathbf{V H}(\mathbf{O})\) can be divided into two parts: \(\mathrm{S}^{\prime}{ }_{\mathrm{VH}}\) coincident with the surface S of \(\mathbf{O}\), and S "vh, which "covers" some concavities of \(\mathbf{O}\) (see Fig. 1 for an example). Actually, S "vн could also bound volumes not connected to \(\mathbf{O}\) (see [19]). In this section we will relate \(\mathrm{S}{ }^{\prime \prime}{ }_{\text {VH }}\) to the boundary surfaces of the viewing space corresponding to two particular visual events.
+In general, the surface \(\mathrm{S}_{\mathrm{VH}}\) of \(\mathbf{V H}(\mathbf{O})\) can be divided into two parts: \(\mathrm{S}^{\prime}{ }_{\mathrm{VH}}\) coincident with the surface S of \(\mathbf{O}\), and S " \({ }_{\text {vH, }}\) which "covers" some concavities of \(\mathbf{O}\) (see Fig. 1 for an example). Actually, \(\mathrm{S}{ }^{\prime \prime}{ }_{\text {VH }}\) could also bound volumes not connected to \(\mathbf{O}\) (see [19]). In this section we will relate \(S "{ }_{v H}\) to the boundary surfaces of the viewing space corresponding to two particular visual events.
 
 For the following developments, it is important to recall that a visual line relative to an object \(\mathbf{O}\) is a straight line not sharing any point with \(\mathbf{O}\). A formal definition of visual hull is as follows [9].
 
@@ -80,9 +80,9 @@ From these statements we can derive a further necessary condition for a point to
 
 Prop. 3-If a point \(\mathbf{p}\) belongs to \(\mathrm{S}_{\mathrm{VH}}\), through \(\mathbf{p}\) passes at least one straight line intersecting \(\mathbf{O}\) only in boundary points.
 
-Proof. By contradiction, let us assume that through \(\mathbf{p} \in \mathrm{S}_{\mathrm{VH}}\) no such line passes. It follows that any line through \(\mathbf{p}\) belongs to either of two categories: 1) lines not intersecting \(\mathbf{O}\); 2) lines sharing with \(\mathbf{O}\) also interior points. If there are lines of the first category, that is visual lines, \(\mathbf{p}\) does not belong to \(\mathbf{V H}(\mathbf{O})\) because of Prop.1. If all the lines passing through \(\mathbf{p}\) belong to the second category, \(\mathbf{p}\) cannot belong to \(\mathrm{S}_{\mathrm{VH}}\) since the condition of Prop. 2 cannot be met. In this case in fact, there are no visual lines arbitrarily close to \(\mathbf{p}\), since each possible visual line \(\mathrm{L}^{\prime}\) passing at an infinitesimal distance from \(\mathbf{p}\) lies at an infinitesimal distance from a line L through \(\mathbf{p}\), and therefore also intersects \(\mathbf{O}\) in interior points (see Fig. (2)). Thus the hypothesis is contradicted and the proposition proved.
+Proof. By contradiction, let us assume that through \(\mathbf{p} \in \mathrm{S}_{\mathrm{VH}}\) no such line passes. It follows that any line through \(\mathbf{p}\) belongs to either of two categories: 1) lines not intersecting \(\mathbf{O}\); 2) lines sharing with \(\mathbf{O}\) also interior points. If there are lines of the first category, that is visual lines, \(\mathbf{p}\) does not belong to \(\mathbf{V H}(\mathbf{O})\) because of Prop. 1. If all the lines passing through \(\mathbf{p}\) belong to the second category, \(\mathbf{p}\) cannot belong to \(\mathrm{S}_{\mathrm{VH}}\) since the condition of Prop. 2 cannot be met. In this case in fact, there are no visual lines arbitrarily close to \(\mathbf{p}\), since each possible visual line \(\mathrm{L}^{\prime}\) passing at an infinitesimal distance from \(\mathbf{p}\) lies at an infinitesimal distance from a line L through \(\mathbf{p}\), and therefore also intersects \(\mathbf{O}\) in interior points (see Fig. (2)). Thus the hypothesis is contradicted and the proposition proved.
 
-![Figure2. p cannot belong to S VH if all lines through p are as L.](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-2-p007.png)
+![Figure2. p cannot belong to S VH if all lines through p are as L.](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-2-p007.png)
 
 *Figure2. p cannot belong to S VH if all lines through p are as L.: p cannot belong to S VH if all lines through p are as L.*
 
@@ -92,7 +92,7 @@ In the rest of this section we will consider the cases of lines making one, two 
 
 It is clear that a line L making contact at only one point \(\mathbf{p}\) with S cannot form boundary surfaces of the visual hull. Only \(\mathbf{p}\) belongs to \(\mathrm{S}_{\mathrm{VH}}\), since through any other point \(\mathbf{p}^{\prime}\) of L pass visual lines obtained with an infinitesimal rotation \(\partial \alpha\) of L about \(\mathbf{p}^{\prime}\), as \(\mathrm{L}^{\prime}\) in Fig 3. Since by hypothesis L does not intersect S elsewhere, this is true also after an infinitesimal rotation of the line.
 
-![Figure3. Only p belongs to S VH . Through any other point p ' pass visual lines as L'.](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-3-p008.png)
+![Figure3. Only p belongs to S VH . Through any other point p ' pass visual lines as L'.](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-3-p008.png)
 
 *Figure3. Only p belongs to S VH . Through any other point p ' pass visual lines as L'.: Only p belongs to S VH. Through any other point p ' pass visual lines as L'.*
 
@@ -100,15 +100,15 @@ In the following sub-sections we will discuss in detail the cases of lines makin
 
 ### 2.1 The Case of Bi-tangent Lines
 
-Straight lines tangent at two different points of S do not yield surfaces but fill volumes, so we need a radical pruning of these lines. For understanding if a bi-tangent line can contain points of the surface \(\mathrm{S}^{\prime \prime}\) vH of the visual hull, we will consider the normals to S at the tangency points, and investigate whether they are compatible or not with visual lines passing through points of the tangent line.
+Straight lines tangent at two different points of S do not yield surfaces but fill volumes, so we need a radical pruning of these lines. For understanding if a bi-tangent line can contain points of the surface \(S^{\prime \prime}{ }_{v h}\) of the visual hull, we will consider the normals to \(S\) at the tangency points, and investigate whether they are compatible or not with visual lines passing through points of the tangent line.
 
-Let us consider a line L tangent at two points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) of S. Assume the surface normals at \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) be \(\mathbf{n}_{1}\) and \(\mathbf{n}_{2}\), and project orthographically these entities along L, together with infinitesimal segments of the contour generators containing \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\). Also let P be a plane containing \(L\) and the unit vector \(\mathbf{n}=\left(\mathbf{n}_{1}+\mathbf{n}_{2}\right) /\left|\mathbf{n}_{1}+\mathbf{n}_{2}\right|\) (see Fig. 4 (a)).
+Let us consider a line L tangent at two points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) of S. Assume the surface normals at \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) be \(\mathbf{n}_{1}\) and \(\mathbf{n}_{2}\), and project orthographically these entities along L, together with infinitesimal segments of the contour generators containing \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\). Also let P be a plane containing L and the unit vector \(\mathbf{n}=\left(\mathbf{n}_{1}+\mathbf{n}_{2}\right) /\left|\mathbf{n}_{1}+\mathbf{n}_{2}\right|\) (see Fig. 4 (a)).
 
-![Figure4- For n 1 x n 2 ≠ 0, no point of L, excluding p 1 and p 2 , belongs to S VH](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-4-p009.png)
+![Figure4- For n 1 x n 2 ≠ 0, no point of L, excluding p 1 and p 2 , belongs to S VH](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-4-p009.png)
 
 *Figure4- For n 1 x n 2 ≠ 0, no point of L, excluding p 1 and p 2 , belongs to S VH: For n 1 x n 2 ≠ 0, no point of L, excluding p 1 and p 2, belongs to S VH*
 
-The points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) divide L into two exterior half-open infinite segments and one open interior segment. Let us consider the intersection of P and \(\mathbf{O}\) (Fig. 4(b)). It is clear that the exterior segments cannot contain points belonging to \(\mathrm{S}^{\prime \prime}{ }_{\text {VH }}\), since in P there are visual line as \(\mathrm{L}^{\prime}\) and \(\mathrm{L}^{\prime \prime}\), obtained with infinitesimal rotations of L, passing through any point of both segments.
+The points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) divide L into two exterior half-open infinite segments and one open interior segment. Let us consider the intersection of P and \(\mathbf{O}\) (Fig. 4(b)). It is clear that the exterior segments cannot contain points belonging to \(\mathrm{S}^{\prime \prime}{ }_{\mathrm{vH}}\), since in P there are visual line as \(\mathrm{L}^{\prime}\) and \(\mathrm{L}^{\prime \prime}\), obtained with infinitesimal rotations of L, passing through any point of both segments.
 
 Let us consider the interior segment. In P there are visual lines passing above the segment at an arbitrarily small distance, but no visual lines passes through points of the segment.
 
@@ -120,17 +120,17 @@ Prop. 4: a necessary condition for a bi-tangent line to contain points of \(S^{\
 
 This result links together visual hull and aspect graphs, since lines satisfying this condition produce the multi-local visual event known as tangent crossing [5], [11], [15], [28]. The visual event occurs when two limbs meet at a point and share a common tangent, forming a tacnode (Fig (5)).
 
-![Figure 5. Tangent crossing](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-5-p010.png)
+![Figure 5. Tangent crossing](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-5-p010.png)
 
 *Figure 5. Tangent crossing: Tangent crossing*
 
 For parametric surfaces \(\mathbf{p}=\mathbf{p}(u, v)\), the equations that determine the tangency points for these lines are:
 
 $$
-\begin{align*} & {\left[\mathbf{p}_{1}\left(u_{l}, v_{l}\right)-\mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \bullet \mathbf{n}_{1}\left(u_{l}, v_{l}\right)=0} \\ & {\left[\mathbf{p}_{1}\left(u_{l}, v_{l}\right)-\mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \bullet \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \tag{1}\\ & {\left[\left[\mathbf{p}_{1}\left(u_{l}, v_{l}\right)-\mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \times \mathbf{n}_{1}\left(u_{l}, v_{l}\right)\right] \bullet \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \end{align*}
+\begin{aligned} & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \bullet \mathbf{n}_{1}\left(u_{1}, v_{1}\right)=0} \\ & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \bullet \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \\ & {\left[\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \times \mathbf{n}_{1}\left(u_{1}, v_{1}\right)\right] \bullet \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \end{aligned}
 $$
 
-Where • indicates the dot product, and the surface normals are the vector product of the partial derivatives: \(\mathbf{n}(u, v)=\mathbf{p}_{\mathrm{u}}(u, v) \times \mathbf{p}_{\mathrm{v}}(u, v)\). These are 3 equations in the four variables \(u_{l}, v_{l}, u_{2}, v_{2}\), and thus determine the curves described by \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) on the surface S. Similar equations can be written for implicit surfaces (see [28]). A line joining points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) generates a ruled boundary surface of the viewing space of the aspect graph that can also be a boundary of the visual hull.
+Where • indicates the dot product, and the surface normals are the vector product of the partial derivatives: \(\mathbf{n}(u, v)=\mathbf{p}_{\mathrm{u}}(u, v) \times \mathbf{p}_{\mathrm{v}}(u, v)\). These are 3 equations in the four variables \(u_{1}, v_{1}, u_{2}, v_{2}\), and thus determine the curves described by \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) on the surface S. Similar equations can be written for implicit surfaces (see [28]). A line joining points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) generates a ruled boundary surface of the viewing space of the aspect graph that can also be a boundary of the visual hull.
 
 Observe that not all the surfaces determined by equations (1) are relevant to our purposes, since we must select the surfaces, or their parts, where the generating tangent line does not intersect O elsewhere. In other words, we are only interested in visual events that happen on the boundary of the silhouette of the object.
 
@@ -138,14 +138,14 @@ Observe that not all the surfaces determined by equations (1) are relevant to ou
 
 In this case the relationship with the aspect graph boundary surfaces is immediately established, since tri-tangent lines produce the visual event known as triple point [5], [11], [15], [28] (see Fig. 6).
 
-![Figure 6. Triple point](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-6-p010.png)
+![Figure 6. Triple point](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-6-p010.png)
 
 *Figure 6. Triple point: Triple point*
 
-Also in this case it is easy to write the equations that determine the three tangency points \(\mathbf{p}_{1}\), \(\mathbf{p}_{2}\) and \(\mathbf{p}_{3.}\) For parametric surfaces:
+Also in this case it is easy to write the equations that determine the three tangency points \(\mathbf{p}_{1}\), \(\mathbf{p}_{2}\) and \(\mathbf{p}_{3}\). For parametric surfaces:
 
 $$
-\begin{align*} & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \cdot \mathbf{n}_{3}\left(u_{3}, v_{3}\right)=0} \\ & {\left[\mathbf{p}_{2}\left(u_{2}, v_{2}\right)_{-} \mathbf{p}_{3}\left(u_{3}, v_{3}\right)\right] \cdot \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \tag{2}\\ & {\left[\mathbf{p}_{3}\left(u_{3}, v_{3}\right)-\mathbf{p}_{1}\left(u_{1}, v_{1}\right)\right] \cdot \mathbf{n}_{1}\left(u_{1}, v_{1}\right)=0} \\ & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \times\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)-\mathbf{p}_{3}\left(u_{3}, v_{3}\right)\right]=0} \end{align*}
+\begin{aligned} & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \cdot \mathbf{n}_{3}\left(u_{3}, v_{3}\right)=0} \\ & {\left[\mathbf{p}_{2}\left(u_{2}, v_{2}\right)_{-} \mathbf{p}_{3}\left(u_{3}, v_{3}\right)\right] \cdot \mathbf{n}_{2}\left(u_{2}, v_{2}\right)=0} \\ & {\left[\mathbf{p}_{3}\left(u_{3}, v_{3}\right)_{-} \mathbf{p}_{1}\left(u_{1}, v_{1}\right)\right] \cdot \mathbf{n}_{1}\left(u_{1}, v_{1}\right)=0} \\ & {\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)_{-} \mathbf{p}_{2}\left(u_{2}, v_{2}\right)\right] \times\left[\mathbf{p}_{1}\left(u_{1}, v_{1}\right)-\mathbf{p}_{3}\left(u_{3}, v_{3}\right)\right]=0} \end{aligned}
 $$
 
 The first three equations state the tangency conditions at \(\mathbf{p}_{1}, \mathbf{p}_{2}\) and \(\mathbf{p}_{3}\). The last equation states that the three points are collinear. The equations for the implicit case can be found in [28]. Since a 3D direction has two degrees of freedom, in the last vector equation only two scalar components are independent. This makes five equations in the six variables \(u_{1}, v_{1}, u_{2}, v_{2}, u_{3}, v_{3}\), which describe three curves on the surface S. The lines passing through any two of the three points describe the ruled surface which could bound the visual hull.
@@ -156,7 +156,7 @@ As for the surfaces produced by be-tangent lines, the relevant surfaces generate
 
 Let us summarize the results of the previous section:
 
-Prop. 5-A necessary condition for a point to belong to \(S "{ }_{V H}\) is that it lies on the boundary ruled surfaces of the aspect graph corresponding either to the visual event tangent crossing or to the visual event triple point. The relevant parts of these surfaces are those where the generating tangent lines shares with \(\boldsymbol{O}\) the tangency points only.
+Prop. 5-A necessary condition for a point to belong to \(S^{\prime \prime}{ }_{V H}\) is that it lies on the boundary ruled surfaces of the aspect graph corresponding either to the visual event tangent crossing or to the visual event triple point. The relevant parts of these surfaces are those where the generating tangent lines shares with \(\boldsymbol{O}\) the tangency points only.
 
 Before building the visual hull using these surfaces, we will submit the surfaces to an elimination process that will discard several of them, and in any case some of their parts. This process will be based on a closest local analysis, which will consider not only the surface normals, but also the shape of the object at the tangency points. The patches that survive this elimination process will be called locally active. This attribute will be applied also to the surfaces that contain these patches and to the segments of straight lines that generate the surfaces. n=Z The two following subsections will be devoted to determine the locally active patches generated by bi-tangent and three-tangent lines
 
@@ -172,19 +172,19 @@ $$
 
 if the axis \(Z\) is normal to the surface at \(\mathbf{p}\) and the axes \(X\) and \(Y\) are oriented along the principal directions. Approximating the surface surrounding a point with a quadric patch implies discarding higher order terms, which vanish faster than the quadratic terms approaching \(\mathbf{p}\).
 
-![Figure 7. Surface approximations](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-7-p012.png)
+![Figure 7. Surface approximations](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-7-p012.png)
 
 *Figure 7. Surface approximations: Surface approximations*
 
 This surface turns out to be: 1) a paraboloid if \(K(\mathbf{p})>0\), 2) a saddle-shaped hyperboloid if \(\mathrm{K}(\mathbf{p})<0\); 3) a cylinder if \(\mathrm{K}(\mathbf{p})=0\) and \(k_{1}(\mathbf{p})=0\), or \(k_{2}(\mathbf{p})=0\), but not both [25] (see Fig.7). We need not to consider planar points where \(k_{1}(\mathbf{p})=k_{2}(\mathbf{p})=0\), since generic surfaces can have only isolated planar points. On a generic surface, points whose Gaussian curvature is strictly positive (elliptic points), or strictly negative (hyperbolic points), forms open areas separated by curves whose points have zero Gaussian curvature (parabolic points)[1], [28].
 
-Performing an infinitesimal rotation of L about one of its point compatible with the local geometry requires determining the limits imposed by this geometry. Let us consider the pencil of lines passing through a point \(\mathbf{p}\) of L and tangent to S near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ). In the Appendix we show that, both for elliptic and hyperbolic points, these lines touch S along the planar curve intersection of S and a plane passing through the Z axis of the local coordinate system. Near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ) this curve is coincident with the contour generators \(\mathrm{C}_{1}\) (or \(\mathrm{C}_{2}\) ) produced by a pencil of lines of sight parallel to L, and can be approximated near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ) with arbitrarily high precision by a circle with radius \(1 / k\), where \(k\) is the normal curvature. For a parabolic point, the lines passing through \(\mathbf{p}\) touch S along the straight segment shared by the cylindrical approximation of the patch and the tangent plane.
+Performing an infinitesimal rotation of L about one of its point compatible with the local geometry requires determining the limits imposed by this geometry. Let us consider the pencil of lines passing through a point \(\mathbf{p}\) of L and tangent to S near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ). In the Appendix we show that, both for elliptic and hyperbolic points, these lines touch S along the planar curve intersection of S and a plane passing through the \(Z\) axis of the local coordinate system. Near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ) this curve is coincident with the contour generators \(\mathrm{C}_{1}\) (or \(\mathrm{C}_{2}\) ) produced by a pencil of lines of sight parallel to L, and can be approximated near \(\mathbf{p}_{1}\) (or \(\mathbf{p}_{2}\) ) with arbitrarily high precision by a circle with radius \(1 / k\), where \(k\) is the normal curvature. For a parabolic point, the lines passing through \(\mathbf{p}\) touch S along the straight segment shared by the cylindrical approximation of the patch and the tangent plane.
 
-![Figure 8](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-8-p013.png)
+![Figure 8](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-8-p013.png)
 
 *Figure 8: *
 
-Let \(\mathrm{P}_{\mathrm{C} 1 \text { and }} \mathrm{P}_{\mathrm{C} 2}\) be the planes normal to S at \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) and containing \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\), and let \(\mathbf{p} 1\) " and \(\mathbf{p}_{2}\) " be the intersections of the rotated line L ' with these planes. Now consider one of these points, for instance \(\mathbf{p}_{1}\) "(Fig. 8). It is clear that L ' does not intersect S near \(\mathbf{p}_{1}\) if \(\mathbf{p}_{1}\) " lies in \(\mathrm{P}_{\mathrm{C} 1}\) on the side of the contour generator marked by the external normal \(\mathbf{n}_{1}\). Clearly, \(\mathrm{L}^{\prime}\) is a visual line iff it is possible to satisfy this condition at both the tangency points.
+Let \(\mathrm{P}_{\mathrm{C} 1 \text { and }} \mathrm{P}_{\mathrm{C} 2}\) be the planes normal to S at \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) and containing \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\), and let \(\mathbf{p_{1}}\) " and \(\mathbf{p}_{2}\) " be the intersections of the rotated line \(L\) ' with these planes. Now consider one of these points, for instance \(\mathbf{p}_{1}\) "(Fig. 8). It is clear that L ' does not intersect S near \(\mathbf{p}_{1}\) if \(\mathbf{p}_{1}\) " lies in \(\mathrm{P}_{\mathrm{C} 1}\) on the side of the contour generator marked by the external normal \(\mathbf{n}_{1}\). Clearly, \(\mathrm{L}^{\prime}\) is a visual line iff it is possible to satisfy this condition at both the tangency points.
 
 In the following we will consider separately the two cases \(\mathbf{n}_{1}=\mathbf{n}_{2}\) and \(\mathbf{n}_{1}=-\mathbf{n}_{2}\)
 
@@ -192,7 +192,7 @@ In the following we will consider separately the two cases \(\mathbf{n}_{1}=\mat
 
 Observe first that only the interior segment of the tangent line could be locally active. This is easily seen considering the section of \(\mathbf{O}\) made by the plane \(\mathrm{P}_{\mathrm{N}}\) containing \(\mathbf{n}_{1}\) and \(\mathbf{n}_{2}\). This section is as that shown in Fig.4(b), and the same argument applies. Thus, we must only investigate the interior segment.
 
-The case \(\mathbf{n}_{1}=\mathbf{n}_{2}\) generates six sub-cases, since each tangency point can be elliptic, parabolic or hyperbolic. We will consider the sub-cases in the following order: elliptic-elliptic, parabolic elliptic, parabolic-parabolic, hyperbolic-parabolic, hyperbolic-hyperbolic, and hyperbolic-elliptic.
+The case \(\mathbf{n}_{1}=\mathbf{n}_{2}\) generates six sub-cases, since each tangency point can be elliptic, parabolic or hyperbolic. We will consider the sub-cases in the following order: elliptic-elliptic, parabolic-elliptic, parabolic-parabolic, hyperbolic-parabolic, hyperbolic-hyperbolic, and hyperbolic-elliptic.
 
 ```text
 For each sub-case we show a figure containing:
@@ -216,7 +216,7 @@ The sub-case elliptic-elliptic
 
 Let us consider a point \(\mathbf{p}\) of the interior segment (Fig. 9). Clearly an infinitesimal rotation \(\delta_{\alpha}\) of L about \(\mathbf{p}\) in the tangent plane \(\mathrm{P}_{\mathrm{T}}\) generates a visual line \(\mathrm{L}^{\prime}\), since both \(\mathbf{p}_{1}\) " and \(\mathbf{p}_{2}\) " lie on the external side of \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\), as shown by their projections onto the plane P. Therefore, the interior segment is not locally active.
 
-![Figure 9](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-9-p015.png)
+![Figure 9](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-9-p015.png)
 
 *Figure 9: *
 
@@ -228,11 +228,11 @@ The sub-case parabolic-parabolic
 
 In this case the parallel projections along L of the contour generators are coincident. Understanding if a rotation of L compatible with the surface at the tangency points is possible (Fig.11) would require a more detailed model of the surface at the tangency points, involving higher order terms. However, this is not necessary, since for generic surfaces this is a limit situation and there are only isolated tangent lines of this kind [28].
 
-![Figure 11](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-11-p016.png)
+![Figure 11](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-11-p016.png)
 
 *Figure 11: *
 
-![Figure 10](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-10-p016.png)
+![Figure 10](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-10-p016.png)
 
 *Figure 10: *
 
@@ -240,7 +240,7 @@ The sub-case hyperbolic-parabolic
 
 Inspecting Fig 12 shows that no rotation exists able to produce a visual line. In fact, for any rotated line \(\mathrm{L}^{*}\) such that \(\mathbf{p}_{1}\) " lies above \(\mathrm{C}_{1}, \mathbf{p}_{2}\) " lies under the line \(\mathrm{C}_{2}\), as shown by the projection of these entities onto the plane P. Thus the internal segment is locally active.
 
-![Figure 12](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-12-p017.png)
+![Figure 12](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-12-p017.png)
 
 *Figure 12: *
 
@@ -248,7 +248,7 @@ The sub-case hyperbolic-hyperbolic
 
 Thus also in this case the internal segment is locally active.
 
-![Figure 13](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-13-p017.png)
+![Figure 13](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-13-p017.png)
 
 *Figure 13: *
 
@@ -262,28 +262,16 @@ This sub-case (Fig.14) requires a more complex analysis, involving the values of
 
 where θ is the angle with the first principal direction.
 
-![Figure 14](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-14-p018.png)
+![Figure 14](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-14-p018.png)
 
 *Figure 14: *
 
-Let us consider the projection onto P of the various geometrical entities. The curvatures of the projections of \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\), which can be approximated near the projections of \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) by two infinitesimal segments of the osculating circles, are easily found dividing the 3D curvatures by the cosines of the angles between \(\mathrm{P}_{\mathrm{C} 1}, \mathrm{PC} 2\) and the projection plane. Let \(r_{1}\) and \(r_{2}\) be the radiuses of curvature of these projections, (see Fig. 14). In order to obtain a visual line L', the projections of \(\mathbf{p}_{1}\) " and \(\mathbf{p}_{2}\) " must lie on the external sides of the projections of \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\). Then the lengths in P of the two segments \(\mathbf{p}_{1}\) " \(\mathbf{p}\) and \(\mathbf{p_{p}}_{2}\) " must satisfy the following inequalities:
-
-$$
-| p 1' p | P < d 1
-$$
-
-$$
-\begin{aligned} & \left|\mathbf{p} 1^{\prime \prime} \mathbf{p}\right|_{\mathrm{P}}<d_{1} \\ & \mid \mathbf{p} \mathbf{p}_{2} \|_{\mathrm{P}}>d_{2} \end{aligned}
-$$
-
-$$
-| p p 2' | P > d 2
-$$
+Let us consider the projection onto P of the various geometrical entities. The curvatures of the projections of \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\), which can be approximated near the projections of \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) by two infinitesimal segments of the osculating circles, are easily found dividing the 3D curvatures by the cosines of the angles between \(\mathrm{P}_{\mathrm{C} 1}, \mathrm{PC} 2\) and the projection plane. Let \(r_{1}\) and \(r_{2}\) be the radiuses of curvature of these projections, (see Fig. 14). In order to obtain a visual line L', the projections of \(\mathbf{p}_{1}\) " and \(\mathbf{p}_{2}\) " must lie on the external sides of the projections of \(\mathrm{C}_{1}\) and \(\mathrm{C}_{2}\). Then the lengths in P of the two segments \(\mathbf{p}_{1}\) "p and \(\mathbf{p_{p}}_{2}\) " must satisfy the following inequalities:
 
 where \(d_{1}\) and \(d_{2}\) are the length of the segments in P intercepted by the projections of \(C^{1}\) and \(\mathrm{C}_{1}\) on the projection of L'. It follows that
 
 $$
-\begin{equation*} \left|\mathbf{p}_{1}^{\prime \prime} \mathbf{p}\right|_{\mathrm{P}} /\left|\mathbf{p} \mathbf{p}_{2}^{\prime \prime}\right|_{\mathrm{P}}<d_{1} / d_{2} \tag{*} \end{equation*}
+\left|\mathbf{p}_{1} " \mathbf{p}\right|_{\mathrm{P}} /\left|\mathbf{p} \mathbf{p}_{2} "\right|_{\mathrm{P}}<d_{1} / d_{2}
 $$
 
 Let \(\left|\mathbf{p}_{1} \mathbf{p}\right|\) and \(\left|\mathbf{p}_{2} \mathbf{p}\right|\) be the finite 3D distances between \(\mathbf{p}\) and the tangency points \(\mathbf{p}_{1}\) and \(\mathbf{p}_{2}\) (see Fig. 14). We have
@@ -295,14 +283,10 @@ $$
 In addition, for any angle α it is
 
 $$
-d_{1} / d_{2}=r_{1} / r_{2}
-$$
-
-$$
 \left|\mathbf{p}_{1} \mathbf{p}\right| /\left|\mathbf{p}_{2} \mathbf{p}\right|<r_{1} / r_{2} \quad(* *)
 $$
 
-Concluding, only through points that satisfy (**) pass visual lines compatible with the local geometry. It follows that the internal segment of L' consists of an inactive segment \(\mathbf{p}_{1} \mathbf{p}^{*}\) and a locally active segment near \(\mathbf{p}^{*} \mathbf{p}_{2}\) such that
+Concluding, only through points that satisfy (**) pass visual lines compatible with the local geometry. It follows that the internal segment of \(L\) ' consists of an inactive segment \(\mathbf{p}_{1} \mathbf{p}^{*}\) and a locally active segment near \(\mathbf{p}^{*} \mathbf{p}_{2}\) such that
 
 $$
 \left|\mathbf{p}_{1} \mathbf{p}^{*}\right| /\left|\mathbf{p}^{*} \mathbf{p}_{2}\right|=r_{1} / r_{2}
@@ -318,7 +302,7 @@ The results are as follows. The cases elliptic-elliptic and elliptic-parabolic a
 
 As in the previous section, the case hyperbolic-elliptic requires a detailed analysis involving the curvatures of the contour generators. Let us consider first (Fig.15) the external segment starting at \(\mathbf{p}_{2}\), the elliptic point.
 
-![Figure 15](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-15-p020.png)
+![Figure 15](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-15-p020.png)
 
 *Figure 15: *
 
@@ -333,7 +317,7 @@ $$
 $$
 
 $$
-\begin{equation*} \left|\mathbf{p}_{1} \mathbf{p}\right| /\left|\mathbf{p}_{2} \mathbf{p}\right|<r_{1} / r_{2} \tag{*} \end{equation*}
+\left|\mathbf{p}_{1} \mathbf{p}\right| /\left|\mathbf{p}_{2} \mathbf{p}\right|<r_{1} / r_{2}
 $$
 
 Let us assume \(r_{1}>r_{2}\), as in Fig. 15, so that \(1<r_{1} / r_{2}\). Clearly, the inequality (*) is not verified for points near \(\mathbf{p}_{2 \text {. The external segment is divided into one locally active part } \mathbf{p}_{2} \mathbf{p}^{*} \text { and an inactive }}\) part \(\mathbf{p}^{*} \infty\). The point \(\mathbf{p}^{*}\) is such that
@@ -346,17 +330,17 @@ If \(r_{1} \leq r_{2}\), that is \(1 \geq r_{1} / r_{2}\), no \(\mathbf{p}\) can
 
 Now let us consider the external segment starting at \(\mathbf{p}_{1}\), the hyperbolic point (Fig.16).
 
-![Figure 16](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-16-p021.png)
+![Figure 16](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-16-p021.png)
 
 *Figure 16: *
 
-As in the previous case, for a visual line to pass through a point \(\mathbf{p}\) it must be \(\left|\mathbf{p}_{1} \mathbf{p}\right| /\left|\mathbf{p}_{2} \mathbf{p}\right|<r_{1} / r_{2}\) (Fig. 16). If \(r_{1} \geq r_{2}\), that is \(r_{1} / r_{2} \geq 1\), as in Fig. 16, any \(\mathbf{p}\) can satisfy the inequality and the external segment is inactive. If \(r_{1}<r_{2}\), that is \(r_{1} / r_{2}<1\), the inequality is satisfied only by points of a segment \(\mathbf{p}_{1} \mathbf{p}^{*}\), which is inactive. The remaining segment \(\mathbf{p}^{*} \infty\) is locally active. Again, the position of \(\mathbf{p}^{*}\) is such that \(\left|\mathbf{p}_{1} \mathbf{p}^{*}\right| /\left|\mathbf{p}_{2} \mathbf{p}^{*}\right|=r_{1} / r_{2}\).
+As in the previous case, for a visual line to pass through a point \(\mathbf{p}\) it must be \(\left|\mathbf{p}_{1} \mathbf{p}\right| /\left|\mathbf{p}_{2} \mathbf{p}\right|<r_{1}\) \(/ r_{2}\) (Fig. 16). If \(r_{1} \geq r_{2}\), that is \(r_{1} / r_{2} \geq 1\), as in Fig. 16, any \(\mathbf{p}\) can satisfy the inequality and the external segment is inactive. If \(r_{1}<r_{2}\), that is \(r_{1} / r_{2}<1\), the inequality is satisfied only by points of a segment \(\mathbf{p}_{1} \mathbf{p}^{*}\), which is inactive. The remaining segment \(\mathbf{p}^{*} \infty\) is locally active. Again, the position of \(\mathbf{p}^{*}\) is such that \(\left|\mathbf{p}_{1} \mathbf{p}^{*}\right| /\left|\mathbf{p}_{2} \mathbf{p}^{*}\right|=r_{1} / r_{2}\).
 
 ### 3.3 Locally Active Segments of Tri-tangent Lines
 
 Let \(\mathbf{p}_{1}, \mathbf{p}_{2}\) and \(\mathbf{p}_{3}\) be the tangency points of L, and \(\mathrm{E}_{1}, \mathrm{E}_{2}\) and \(\mathrm{E}_{3}\) the orthographic projections along \(L\) of infinitesimal segments of the contour generators containing \(\mathbf{p}_{1}, \mathbf{p}_{2}\) and \(\mathbf{p}_{3}\).
 
-![Figure17. The possible arrangements of the limbs for tri-tangent lines](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-17-p022.png)
+![Figure17. The possible arrangements of the limbs for tri-tangent lines](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-17-p022.png)
 
 *Figure17. The possible arrangements of the limbs for tri-tangent lines: The possible arrangements of the limbs for tri-tangent lines*
 
@@ -366,7 +350,7 @@ Inspecting the orthographic projections could suggest that two other cases exist
 
 The tri-tangent line L is divided into two interior open segments and two half-open exterior segments. In order to determine the locally active segments, for each case we will consider the possible visual lines passing through points of L and lying in a plane \(\mathrm{P}_{\mathrm{R}}\) rotating about L. The trace of \(\mathrm{P}_{\mathrm{R}}\) in the orthographic projection plane can lie in three different areas, marked as 1,2 and 3 for case (a) in Fig. 18 (a).
 
-![Figure18. Arrangement (a) does not yield active segments](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-18-p023.png)
+![Figure18. Arrangement (a) does not yield active segments](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-18-p023.png)
 
 *Figure18. Arrangement (a) does not yield active segments: Arrangement (a) does not yield active segments*
 
@@ -374,7 +358,7 @@ The figure also shows, for case (a), the three possible intersections of \(\math
 
 We omit for brevity a similar analysis for cases (b) and (c). The results obtained are summarized in Fig.19, where the locally active segments of tri-tangent lines are solid.
 
-![Figure19. The locally active segments of tri-tangent lines.](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-19-p023.png)
+![Figure19. The locally active segments of tri-tangent lines.](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-19-p023.png)
 
 *Figure19. The locally active segments of tri-tangent lines.: The locally active segments of tri-tangent lines.*
 
@@ -390,7 +374,7 @@ By intersecting all the locally active patches we construct a partition of \(\bo
 
 The complexity of the visual hull algorithm is bounded by the complexity of the algorithm for computing the perspective aspect graph. For algebraic surfaces of degree \(g\), it has been found [29] that this complexity is \(\mathrm{O}\left(g^{18}\right)\), due to the tri-tangent surfaces.
 
-![Figure 20](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-20-p024.png)
+![Figure 20](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-20-p024.png)
 
 *Figure 20: *
 
@@ -398,29 +382,29 @@ An example is shown in Fig. 20. The object, with a simple concavity, has been mo
 
 ## 5 CONCLUSIONS
 
-In this paper we have developed the theory of the visual hull of smooth curved objects. A main result is the link established between the visual hull and the aspect graph of these objects. We have shown that \(\mathrm{S}^{\prime \prime}{ }_{\mathrm{vH}}\), the surface of the visual hull not coincident with the surface S of the original object, consists of patches of the boundary surfaces of the viewing space of the aspect graph. These surfaces correspond to the visual events tangent crossing and triple point of smooth curved objects.
+In this paper we have developed the theory of the visual hull of smooth curved objects. A main result is the link established between the visual hull and the aspect graph of these objects. We have shown that \(S^{\prime \prime}\) vh, the surface of the visual hull not coincident with the surface \(S\) of the original object, consists of patches of the boundary surfaces of the viewing space of the aspect graph. These surfaces correspond to the visual events tangent crossing and triple point of smooth curved objects.
 
 We have also shown that only in some cases patches of these surface can bound the visual hull, and we have determined these cases by inspecting the geometry of the surface S at the tangency points. We have also outlined an algorithm for computing the visual hull, which in part exploits an algorithm implemented for computing the aspect graph. Future work will be aimed at extending these results to more general curved objects.
 
 ## Appendix
 
-Let us consider the local approximation \(2 \mathrm{z}=k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\) of the surface S near an elliptic point \(\mathbf{p}^{*}\), a line L tangent to the surface at \(\mathbf{p}^{*}\), and point \(\mathbf{p}^{\prime}\) lying on L. Let, in the local coordinate system, be \(\mathbf{p}^{\prime}=\left(X^{\prime} Y^{\prime} 0\right)\) (see Fig. 21).
+Let us consider the local approximation \(2 \mathrm{z}=k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\) of the surface S near an elliptic point \(\mathbf{p}^{*}\), a line L tangent to the surface at \(\mathbf{p}^{*}\), and point \(\mathbf{p}^{\prime}\) lying on L. Let, in the local coordinate system, be \(\mathbf{p}^{\prime}=\left(\begin{array}{ll}X^{\prime} & Y^{\prime}\end{array}\right)\) (see Fig. 21).
 
-![Figure 21](/Users/evanthayer/Projects/stepview/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-21-p026.png)
+![Figure 21](/Users/evanthayer/Projects/paperx/docs/2004_the_visual_hull_of_smooth_curved_objects/figures/figure-21-p026.png)
 
 *Figure 21: *
 
-\left.y^{2}\right) \) ) is easily found as the vector product of the tangent vectors along the principal directions \(\mathbf{t}_{1}\) and
+\(\left.y^{2}\right)\) ) is easily found as the vector product of the tangent vectors along the principal directions \(\mathbf{t}_{1}\) and
 
-\mathbf{n}=\mathbf{t}_{1} \times \mathbf{t}_{2}=\left(\begin{array}{lll} 0 & 1 & \left.\left.k_{1}\left(\mathbf{p}^{*}\right) x\right) \times\left(\begin{array}{lll} 1 & 0 & k_{2}\left(\mathbf{p}^{*}\right) y \end{array}\right)\right)=\left(\begin{array}{lll} -k_{1}\left(\mathbf{p}^{*}\right) x & -k_{2}\left(\mathbf{p}^{*}\right) y & 1 \end{array}\right) \end{array}\right.
+\left.\mathbf{n}=\mathbf{t}_{1} \times \mathbf{t}_{2}=\left(\begin{array}{lll} 0 & 1 & k_{1}\left(\mathbf{p}^{*}\right) x \end{array}\right) \times\left(\begin{array}{lll} 1 & 0 & k_{2}\left(\mathbf{p}^{*}\right) y \end{array}\right)\right)=\left(\begin{array}{ll} -k_{1}\left(\mathbf{p}^{*}\right) x & -k_{2}\left(\mathbf{p}^{*}\right) y \end{array}\right.
 
-Let us rotate L about \(\mathbf{p}^{\prime}\) of an infinitesimal angle in such a way that the rotated line is tangent to S at a point \(\mathbf{p}\). The rotated line \(\mathbf{p_{p}}\) ' must be normal to \(\mathbf{n}(\mathbf{p})\). Hence their dot product must be 0 :
+Let us rotate L about \(\mathbf{p}^{\prime}\) of an infinitesimal angle in such a way that the rotated line is tangent to S at a point \(\mathbf{p}\). The rotated line \(\mathbf{p_{p}}^{\prime}\) must be normal to \(\mathbf{n}(\mathbf{p})\). Hence their dot product must be 0 :
 
 $$
-\mathbf{n}(\mathbf{p}) \bullet \mathbf{p} \mathbf{p}^{\prime}=\left(\begin{array}{lll} -k_{1}\left(\mathbf{p}^{*}\right) x & -k_{2}\left(\mathbf{p}^{*}\right) y & 1 \end{array}\right) \bullet\left(X^{\prime}-x \quad Y^{\prime}-y \quad-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)\right)=0
+\mathbf{n}(\mathbf{p}) \bullet \mathbf{p} \mathbf{p}^{\prime}=\left(-k_{1}\left(\mathbf{p}^{*}\right) x-k_{2}\left(\mathbf{p}^{*}\right) y \quad 1\right) \bullet\left(X^{\prime}-x \quad Y^{\prime}-y \quad-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)\right)=0
 $$
 
-k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right.
+k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right. k_{1}\left(\mathbf{p}^{*}\right) X^{\prime} x+\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}-k_{2}\left(\mathbf{p}^{*}\right) Y^{\prime} y+k_{2}\left(\mathbf{p}^{*}\right) y^{2}-1 / 2\left(k_{1}\left(\mathbf{p}^{*}\right) x^{2}+k_{2}\left(\mathbf{p}^{*}\right) y^{2}\right)=0\right.
 
 Neglecting second order terms, we obtain
 
@@ -428,7 +412,7 @@ $$
 x / y=-\left(k_{2}\left(\mathbf{p}^{*}\right) / k_{1}\left(\mathbf{p}^{*}\right)\right) Y^{\prime} / X^{\prime}
 $$
 
-This means that the curve formed by tangency points \(\mathbf{p}\) can be obtained by intersecting the surface S with a plane passing through the axis Z and forming with the principal directions Y an angle whose tangent is given by the above formula. Observe that neglecting second order terms means assuming that the line, rotated by an infinitesimal angle about a point \(\mathbf{p}\) ' lying at a finite distance from \(\mathbf{p}\), is parallel to L. Then the curve formed by the tangency point is arbitrarily near, approaching \(\mathbf{p}^{*}\), to the contour generator for viewlines parallel to L.
+This means that the curve formed by tangency points \(\mathbf{p}\) can be obtained by intersecting the surface S with a plane passing through the axis Z and forming with the principal directions Y an angle whose tangent is given by the above formula. Observe that neglecting second order terms means assuming that the line, rotated by an infinitesimal angle about a point \(\mathbf{p}^{\prime}\) lying at a finite distance from \(\mathbf{p}\), is parallel to L. Then the curve formed by the tangency point is arbitrarily near, approaching \(\mathbf{p}^{*}\), to the contour generator for viewlines parallel to L.
 
 The above results also hold for an hyperbolic point. The only difference is that, since the principal curvatures have opposite signs, in the plane XY the line L and the trace of the plane containing the contact curve are in the same quadrant.
 

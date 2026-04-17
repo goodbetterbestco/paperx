@@ -8,6 +8,10 @@ if str(ROOT) not in sys.path:
 
 from paper_pipeline.reconcile_blocks import (
     _append_figure_caption_fragment,
+    _leading_abstract_text,
+    _recover_missing_front_matter_abstract,
+    _should_replace_front_matter_abstract,
+    _strip_trailing_abstract_boilerplate,
     _build_blocks_for_record,
     _build_front_matter,
     _extract_reference_records_from_tail_section,
@@ -79,6 +83,186 @@ def _record(
 
 
 class ReconcileBlocksTest(unittest.TestCase):
+    def test_should_replace_front_matter_abstract_for_missing_placeholder(self) -> None:
+        self.assertTrue(_should_replace_front_matter_abstract("[missing from original]"))
+
+    def test_should_replace_front_matter_abstract_for_metadata_noise(self) -> None:
+        self.assertTrue(
+            _should_replace_front_matter_abstract(
+                "This manuscript version is made available under the CC-BY-NC-ND 4.0 license."
+            )
+        )
+
+    def test_should_not_replace_front_matter_abstract_for_valid_text(self) -> None:
+        self.assertFalse(
+            _should_replace_front_matter_abstract(
+                "This paper gives a concise abstract that should be preserved."
+            )
+        )
+
+    def test_strip_trailing_abstract_boilerplate_removes_keywords_and_copyright(self) -> None:
+        cleaned = _strip_trailing_abstract_boilerplate(
+            "A concise abstract. © 2000 Elsevier Science Ltd. All rights reserved. Keywords: one; two"
+        )
+        self.assertEqual(cleaned, "A concise abstract.")
+
+    def test_strip_trailing_abstract_boilerplate_removes_subject_classification_and_intro(self) -> None:
+        cleaned = _strip_trailing_abstract_boilerplate(
+            "A concise abstract. ACM Subject Classification I.3.5 Computational Geometry 1 Introduction Body text"
+        )
+        self.assertEqual(cleaned, "A concise abstract.")
+
+    def test_recovers_missing_abstract_from_nonfirst_abstract_root(self) -> None:
+        front_matter = {"abstract_block_id": "blk-front-abstract-1"}
+        blocks = [
+            {
+                "id": "blk-front-abstract-1",
+                "type": "paragraph",
+                "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                "source_spans": [],
+                "alternates": [],
+                "review": _review(risk="low", status="edited"),
+            }
+        ]
+        abstract_record = _record(
+            record_type="paragraph",
+            text="A proper abstract appears under the abstract heading.",
+            page=1,
+            y0=140.0,
+            height=18.0,
+            width=320.0,
+        )
+        roots = [
+            SectionNode(title="J.H Rieger*", level=1, heading_id="sec-author", records=[]),
+            SectionNode(title="Abstract", level=1, heading_id="sec-abstract", records=[abstract_record]),
+        ]
+
+        replaced = _recover_missing_front_matter_abstract(front_matter, blocks, [], roots)
+
+        self.assertTrue(replaced)
+        self.assertEqual(
+            blocks[0]["content"]["spans"][0]["text"],
+            "A proper abstract appears under the abstract heading.",
+        )
+
+    def test_leading_abstract_text_stops_at_next_heading(self) -> None:
+        node = SectionNode(
+            title="Abstract",
+            level=1,
+            heading_id="sec-abstract",
+            records=[
+                _record(
+                    record_type="paragraph",
+                    text="This paper presents a concise abstract that should be preserved as the abstract text.",
+                    page=2,
+                    y0=120.0,
+                    height=18.0,
+                    width=340.0,
+                ),
+                _record(
+                    record_type="paragraph",
+                    text="Some non-simple curves are more non-simple than others.",
+                    page=2,
+                    y0=150.0,
+                    height=18.0,
+                    width=340.0,
+                ),
+                _record(
+                    record_type="heading",
+                    text="DEFINITIONS",
+                    page=2,
+                    y0=190.0,
+                    height=12.0,
+                    width=120.0,
+                ),
+            ],
+        )
+
+        text, records = _leading_abstract_text(node)
+
+        self.assertIn("concise abstract", text)
+        self.assertNotIn("Some non-simple curves", text)
+        self.assertEqual(len(records), 1)
+
+    def test_leading_abstract_text_stops_before_later_page_jump(self) -> None:
+        node = SectionNode(
+            title="Abstract",
+            level=1,
+            heading_id="sec-abstract",
+            records=[
+                _record(
+                    record_type="paragraph",
+                    text="This paper studies viewpoint partitions and aspect graphs for polyhedra under changing viewpoint.",
+                    page=3,
+                    y0=120.0,
+                    height=18.0,
+                    width=340.0,
+                ),
+                _record(
+                    record_type="footnote",
+                    text="* This work was supported in part by the NSF.",
+                    page=3,
+                    y0=160.0,
+                    height=12.0,
+                    width=320.0,
+                ),
+                _record(
+                    record_type="paragraph",
+                    text="A number of researchers in computer vision have suggested a characteristic-view approach.",
+                    page=7,
+                    y0=120.0,
+                    height=18.0,
+                    width=360.0,
+                ),
+            ],
+        )
+
+        text, records = _leading_abstract_text(node)
+
+        self.assertIn("viewpoint partitions", text)
+        self.assertNotIn("A number of researchers", text)
+        self.assertEqual(len(records), 2)
+
+    def test_recovers_missing_abstract_from_inline_prelude_and_keywords(self) -> None:
+        front_matter = {"abstract_block_id": "blk-front-abstract-1"}
+        blocks = [
+            {
+                "id": "blk-front-abstract-1",
+                "type": "paragraph",
+                "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                "source_spans": [],
+                "alternates": [],
+                "review": _review(risk="low", status="edited"),
+            }
+        ]
+        prelude = [
+            _record(record_type="front_matter", text="Synthetic Test Paper", page=1, y0=60.0, height=16.0, width=240.0),
+            _record(
+                record_type="front_matter",
+                text=(
+                    "This paper studies model repair for invalid boundary representations, "
+                    "focusing on practical recovery strategies for defective CAD data exchange pipelines."
+                ),
+                page=1,
+                y0=120.0,
+                height=18.0,
+                width=360.0,
+            ),
+            _record(
+                record_type="front_matter",
+                text="Keywords: boundary representation; model repair",
+                page=1,
+                y0=145.0,
+                height=12.0,
+                width=260.0,
+            ),
+        ]
+
+        replaced = _recover_missing_front_matter_abstract(front_matter, blocks, prelude, [])
+
+        self.assertTrue(replaced)
+        self.assertIn("This paper studies model repair", blocks[0]["content"]["spans"][0]["text"])
+
     def test_numbered_paragraph_heading_is_promoted(self) -> None:
         record = _record(
             record_type="paragraph",
@@ -141,6 +325,22 @@ class ReconcileBlocksTest(unittest.TestCase):
         self.assertIsNone(_split_embedded_heading_paragraph(record))
         promoted = _promote_heading_like_records([record])
         self.assertEqual([entry["type"] for entry in promoted], ["paragraph"])
+
+    def test_promotes_marker_only_abstract_paragraph_to_heading(self) -> None:
+        record = _record(
+            record_type="paragraph",
+            text="Abstract",
+            page=1,
+            y0=120.0,
+            height=12.0,
+            width=80.0,
+        )
+
+        promoted = _promote_heading_like_records([record])
+
+        self.assertEqual([entry["type"] for entry in promoted], ["heading"])
+        self.assertEqual(promoted[0]["text"], "Abstract")
+        self.assertTrue(promoted[0]["meta"]["synthetic_heading_marker_only"])
 
     def test_page_one_institution_is_not_treated_as_author(self) -> None:
         self.assertTrue(_looks_like_affiliation("Universitat Politècnica de Catalunya"))

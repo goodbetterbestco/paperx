@@ -2,7 +2,7 @@
   "engine": "mathpix",
   "entries": [
     {
-      "id": "mathpix-eq-p007-0061",
+      "id": "mathpix-eq-p007-0062",
       "kind": "display",
       "display_latex": "\\Delta u=0 \\quad \\text { with }\\left.\\quad u\\right|_{\\partial M_{k}}=u_{c},",
       "semantic_expr": null,
@@ -15,12 +15,12 @@
         {
           "page": 7,
           "bbox": {
-            "x0": 387.5,
-            "y0": 354.0,
-            "x1": 490.5,
-            "y1": 365.5,
-            "width": 103.0,
-            "height": 11.5
+            "x0": 387.36,
+            "y0": 353.95,
+            "x1": 490.75,
+            "y1": 365.76,
+            "width": 103.39,
+            "height": 11.81
           },
           "engine": "mathpix"
         }

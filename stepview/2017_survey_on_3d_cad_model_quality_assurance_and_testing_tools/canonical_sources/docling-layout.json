@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools.pdf",
+  "pdf_path": "stepview/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools.pdf",
   "page_count": 38,
   "page_sizes_pt": [
     {
@@ -1210,11 +1210,11 @@
       "text": "Morphologic",
       "bbox": {
         "x0": 18.65,
-        "y0": 13.82,
+        "y0": 13.79,
         "x1": 75.35,
-        "y1": 25.84,
+        "y1": 25.87,
         "width": 56.7,
-        "height": 12.02
+        "height": 12.08
       },
       "meta": {
         "docling_label": "text",
@@ -1361,12 +1361,12 @@
       "role": "paragraph",
       "text": "Semantic",
       "bbox": {
-        "x0": 361.98,
-        "y0": 13.12,
+        "x0": 361.97,
+        "y0": 13.09,
         "x1": 405.36,
-        "y1": 23.24,
-        "width": 43.38,
-        "height": 10.12
+        "y1": 23.26,
+        "width": 43.39,
+        "height": 10.17
       },
       "meta": {
         "docling_label": "text",
@@ -2995,12 +2995,12 @@
       "role": "paragraph",
       "text": "connected",
       "bbox": {
-        "x0": 67.86,
-        "y0": 81.75,
-        "x1": 115.9,
-        "y1": 91.58,
-        "width": 48.04,
-        "height": 9.83
+        "x0": 67.87,
+        "y0": 81.78,
+        "x1": 115.89,
+        "y1": 91.55,
+        "width": 48.02,
+        "height": 9.77
       },
       "meta": {
         "docling_label": "text",
@@ -3071,12 +3071,12 @@
       "role": "paragraph",
       "text": "Undulations",
       "bbox": {
-        "x0": 119.88,
-        "y0": 49.09,
-        "x1": 131.53,
-        "y1": 104.62,
-        "width": 11.65,
-        "height": 55.53
+        "x0": 119.86,
+        "y0": 49.08,
+        "x1": 131.64,
+        "y1": 104.64,
+        "width": 11.78,
+        "height": 55.56
       },
       "meta": {
         "docling_label": "text",
@@ -3527,12 +3527,12 @@
       "role": "paragraph",
       "text": "Mapping type",
       "bbox": {
-        "x0": 24.67,
-        "y0": 13.88,
-        "x1": 86.67,
-        "y1": 25.78,
-        "width": 62.0,
-        "height": 11.9
+        "x0": 24.55,
+        "y0": 13.25,
+        "x1": 86.78,
+        "y1": 26.41,
+        "width": 62.23,
+        "height": 13.16
       },
       "meta": {
         "docling_label": "text",
@@ -3624,9 +3624,9 @@
       "bbox": {
         "x0": 96.17,
         "y0": 94.35,
-        "x1": 109.75,
+        "x1": 109.77,
         "y1": 157.87,
-        "width": 13.58,
+        "width": 13.6,
         "height": 63.52
       },
       "meta": {
@@ -3867,7 +3867,7 @@
       "page": 14,
       "order": 22,
       "role": "paragraph",
-      "text": "Domain domain",
+      "text": "Domain",
       "bbox": {
         "x0": 253.73,
         "y0": 15.97,
@@ -3878,7 +3878,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Domain domain"
+        "docling_orig": "Domain"
       }
     },
     {
@@ -3886,18 +3886,18 @@
       "page": 14,
       "order": 23,
       "role": "paragraph",
-      "text": "Incomplete",
+      "text": "Incomplete domain",
       "bbox": {
         "x0": 260.2,
         "y0": 43.79,
-        "x1": 270.12,
+        "x1": 270.13,
         "y1": 94.63,
-        "width": 9.92,
+        "width": 9.93,
         "height": 50.84
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Incomplete"
+        "docling_orig": "Incomplete domain"
       }
     },
     {
@@ -4097,12 +4097,12 @@
       "role": "paragraph",
       "text": "Simplification patterns",
       "bbox": {
-        "x0": 15.92,
-        "y0": 14.55,
-        "x1": 76.42,
-        "y1": 25.45,
-        "width": 60.5,
-        "height": 10.9
+        "x0": 15.93,
+        "y0": 14.58,
+        "x1": 76.41,
+        "y1": 25.42,
+        "width": 60.48,
+        "height": 10.84
       },
       "meta": {
         "docling_label": "text",
@@ -4213,10 +4213,10 @@
       "bbox": {
         "x0": 207.83,
         "y0": 13.55,
-        "x1": 261.71,
-        "y1": 26.92,
-        "width": 53.88,
-        "height": 13.37
+        "x1": 261.7,
+        "y1": 26.91,
+        "width": 53.87,
+        "height": 13.36
       },
       "meta": {
         "docling_label": "text",
@@ -4230,12 +4230,12 @@
       "role": "paragraph",
       "text": "Dimensional reduction",
       "bbox": {
-        "x0": 270.64,
-        "y0": 13.83,
-        "x1": 328.03,
-        "y1": 24.79,
-        "width": 57.39,
-        "height": 10.96
+        "x0": 270.67,
+        "y0": 13.98,
+        "x1": 328.0,
+        "y1": 24.63,
+        "width": 57.33,
+        "height": 10.65
       },
       "meta": {
         "docling_label": "text",
@@ -4475,25 +4475,6 @@
       "page": 18,
       "order": 1,
       "role": "paragraph",
-      "text": "Invalid",
-      "bbox": {
-        "x0": 10.67,
-        "y0": 14.67,
-        "x1": 41.33,
-        "y1": 24.67,
-        "width": 30.66,
-        "height": 10.0
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "Invalid"
-      }
-    },
-    {
-      "id": "#/texts/242",
-      "page": 18,
-      "order": 2,
-      "role": "paragraph",
       "text": "Morphologic errors in procedural models",
       "bbox": {
         "x0": 14.67,
@@ -4509,9 +4490,9 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/242",
       "page": 18,
-      "order": 3,
+      "order": 2,
       "role": "paragraph",
       "text": "Irretrievable",
       "bbox": {
@@ -4528,9 +4509,9 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/243",
       "page": 18,
-      "order": 4,
+      "order": 3,
       "role": "paragraph",
       "text": "Unusable",
       "bbox": {
@@ -4547,9 +4528,9 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/244",
       "page": 18,
-      "order": 5,
+      "order": 4,
       "role": "paragraph",
       "text": "(Errors in model tree) -",
       "bbox": {
@@ -4566,9 +4547,9 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/245",
       "page": 18,
-      "order": 6,
+      "order": 5,
       "role": "paragraph",
       "text": "Incomplete",
       "bbox": {
@@ -4585,9 +4566,9 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/246",
       "page": 18,
-      "order": 7,
+      "order": 6,
       "role": "paragraph",
       "text": "Missing elements",
       "bbox": {
@@ -4604,9 +4585,9 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/247",
       "page": 18,
-      "order": 8,
+      "order": 7,
       "role": "paragraph",
       "text": "Unrealistic elements",
       "bbox": {
@@ -4623,9 +4604,9 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/248",
       "page": 18,
-      "order": 9,
+      "order": 8,
       "role": "paragraph",
       "text": "(Degenerated shape)_",
       "bbox": {
@@ -4642,9 +4623,9 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/249",
       "page": 18,
-      "order": 10,
+      "order": 9,
       "role": "paragraph",
       "text": "Ambiguous internal definition",
       "bbox": {
@@ -4661,9 +4642,9 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/250",
       "page": 18,
-      "order": 11,
+      "order": 10,
       "role": "paragraph",
       "text": "Non-persistent",
       "bbox": {
@@ -4680,9 +4661,9 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/251",
       "page": 18,
-      "order": 12,
+      "order": 11,
       "role": "paragraph",
       "text": "Reversal naming",
       "bbox": {
@@ -4699,9 +4680,9 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/252",
       "page": 18,
-      "order": 13,
+      "order": 12,
       "role": "paragraph",
       "text": "Atomic elements - constraining",
       "bbox": {
@@ -4718,9 +4699,9 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/253",
       "page": 18,
-      "order": 14,
+      "order": 13,
       "role": "paragraph",
       "text": "Morphologic errors in procedural models",
       "bbox": {
@@ -4737,9 +4718,9 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/254",
       "page": 18,
-      "order": 15,
+      "order": 14,
       "role": "paragraph",
       "text": "Invalid",
       "bbox": {
@@ -4756,9 +4737,9 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/255",
       "page": 18,
-      "order": 16,
+      "order": 15,
       "role": "paragraph",
       "text": "Incomplete",
       "bbox": {
@@ -4775,9 +4756,9 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/256",
       "page": 18,
-      "order": 17,
+      "order": 16,
       "role": "paragraph",
       "text": "Atomic elements",
       "bbox": {
@@ -4794,9 +4775,9 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/257",
       "page": 18,
-      "order": 18,
+      "order": 17,
       "role": "paragraph",
       "text": "Reversal profiles",
       "bbox": {
@@ -4813,9 +4794,9 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/258",
       "page": 18,
-      "order": 19,
+      "order": 18,
       "role": "paragraph",
       "text": "Non-persistent",
       "bbox": {
@@ -4832,9 +4813,9 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/259",
       "page": 18,
-      "order": 20,
+      "order": 19,
       "role": "paragraph",
       "text": "naming",
       "bbox": {
@@ -4851,9 +4832,9 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/260",
       "page": 18,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "Irretrievable",
       "bbox": {
@@ -4870,9 +4851,9 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/261",
       "page": 18,
-      "order": 22,
+      "order": 21,
       "role": "paragraph",
       "text": "Unusable",
       "bbox": {
@@ -4889,9 +4870,9 @@
       }
     },
     {
-      "id": "#/texts/263",
+      "id": "#/texts/262",
       "page": 18,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "(Errors in model tree)",
       "bbox": {
@@ -4908,9 +4889,9 @@
       }
     },
     {
-      "id": "#/texts/264",
+      "id": "#/texts/263",
       "page": 18,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "Unrealistic elements",
       "bbox": {
@@ -4927,9 +4908,9 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/264",
       "page": 18,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "Reversal",
       "bbox": {
@@ -4946,9 +4927,9 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/265",
       "page": 18,
-      "order": 26,
+      "order": 25,
       "role": "paragraph",
       "text": "constraining",
       "bbox": {
@@ -4965,9 +4946,9 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/266",
       "page": 18,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "(Degenerated shape)",
       "bbox": {
@@ -4984,9 +4965,9 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/267",
       "page": 18,
-      "order": 28,
+      "order": 27,
       "role": "paragraph",
       "text": "(Abnormal size)",
       "bbox": {
@@ -5003,9 +4984,9 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/268",
       "page": 18,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "Missing elements",
       "bbox": {
@@ -5022,9 +5003,9 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/269",
       "page": 18,
-      "order": 30,
+      "order": 29,
       "role": "paragraph",
       "text": "Ambiguous internal definition",
       "bbox": {
@@ -5041,9 +5022,9 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/270",
       "page": 18,
-      "order": 31,
+      "order": 30,
       "role": "paragraph",
       "text": "Aggregates",
       "bbox": {
@@ -5060,9 +5041,9 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/271",
       "page": 18,
-      "order": 32,
+      "order": 31,
       "role": "paragraph",
       "text": "Reversal Boolean relationships",
       "bbox": {
@@ -5079,18 +5060,18 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/272",
       "page": 18,
-      "order": 33,
+      "order": 32,
       "role": "paragraph",
       "text": "(Abnormal size)",
       "bbox": {
         "x0": 90.67,
-        "y0": 151.33,
-        "x1": 100.67,
-        "y1": 226.0,
-        "width": 10.0,
-        "height": 74.67
+        "y0": 150.67,
+        "x1": 101.33,
+        "y1": 226.67,
+        "width": 10.66,
+        "height": 76.0
       },
       "meta": {
         "docling_label": "text",
@@ -5098,9 +5079,9 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/273",
       "page": 18,
-      "order": 34,
+      "order": 33,
       "role": "paragraph",
       "text": "Aggregates",
       "bbox": {
@@ -5117,9 +5098,9 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/274",
       "page": 18,
-      "order": 35,
+      "order": 34,
       "role": "caption",
       "text": "Fig. 5 Morphologic errors in procedural models",
       "bbox": {
@@ -5136,9 +5117,9 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/275",
       "page": 18,
-      "order": 36,
+      "order": 35,
       "role": "heading",
       "text": "3.5 Syntactic errors in procedural CAD models",
       "bbox": {
@@ -5155,9 +5136,9 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/276",
       "page": 18,
-      "order": 37,
+      "order": 36,
       "role": "paragraph",
       "text": "Researchers Tessier and Wang identified two types of data interoperability incompatibilities in procedural CAD systems: Structural heterogeneity (caused by the use of different data structures; such as a CAD system that defines a fillet by the removed edge and the radius, while other requires the tangent edges instead of the original edge), and semantic heterogeneity (caused by naming and terminology differences, such as a CAD system using the term fillet for a feature that other systems recognize as round ) [78]. While structural heterogeneity is the main cause of morphologic errors (and requires the mapping of features that are equivalent but defined with different data structures), the ultimate goal is the 'semantic interoperability' of procedural representations, where the term semantic can be broadly defined as the meaning associated with a terminology in a particular context [94].",
       "bbox": {
@@ -5174,9 +5155,9 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/277",
       "page": 18,
-      "order": 38,
+      "order": 37,
       "role": "paragraph",
       "text": "Direct mapping through geometric modeling kernel-level data exchange (which is a particular type of direct translation that occurs between two different CAD applications that share the same kernel, like ACIS by Dassault Systèmes or Parasolid by Siemens) continues to be an interesting approach for the semantic interoperability of procedural representations [125], but its use is limited to certain types of model exchanges because of its high cost and proprietary nature (the latter is described as a potential drawback in [78]).",
       "bbox": {
@@ -5193,9 +5174,9 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/278",
       "page": 18,
-      "order": 39,
+      "order": 38,
       "role": "paragraph",
       "text": "Mapping through neutral representations is a more efficient alternative, as procedural models with parameters, features and constraints can be processed.",
       "bbox": {
@@ -5212,7 +5193,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/280",
       "page": 19,
       "order": 1,
       "role": "paragraph",
@@ -5231,7 +5212,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/281",
       "page": 19,
       "order": 2,
       "role": "paragraph",
@@ -5250,7 +5231,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/282",
       "page": 19,
       "order": 3,
       "role": "paragraph",
@@ -5269,7 +5250,7 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/283",
       "page": 19,
       "order": 4,
       "role": "paragraph",
@@ -5288,7 +5269,7 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/284",
       "page": 19,
       "order": 5,
       "role": "paragraph",
@@ -5307,7 +5288,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/285",
       "page": 19,
       "order": 6,
       "role": "paragraph",
@@ -5326,7 +5307,7 @@
       }
     },
     {
-      "id": "#/texts/287",
+      "id": "#/texts/286",
       "page": 19,
       "order": 7,
       "role": "paragraph",
@@ -5345,7 +5326,7 @@
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/287",
       "page": 19,
       "order": 8,
       "role": "paragraph",
@@ -5364,7 +5345,7 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/288",
       "page": 19,
       "order": 9,
       "role": "paragraph",
@@ -5383,7 +5364,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/290",
       "page": 20,
       "order": 1,
       "role": "paragraph",
@@ -5402,7 +5383,7 @@
       }
     },
     {
-      "id": "#/texts/292",
+      "id": "#/texts/291",
       "page": 20,
       "order": 2,
       "role": "paragraph",
@@ -5421,7 +5402,7 @@
       }
     },
     {
-      "id": "#/texts/293",
+      "id": "#/texts/292",
       "page": 20,
       "order": 3,
       "role": "paragraph",
@@ -5440,7 +5421,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/293",
       "page": 20,
       "order": 4,
       "role": "paragraph",
@@ -5459,7 +5440,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/294",
       "page": 20,
       "order": 5,
       "role": "paragraph",
@@ -5478,7 +5459,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/295",
       "page": 20,
       "order": 6,
       "role": "paragraph",
@@ -5497,7 +5478,7 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/296",
       "page": 20,
       "order": 7,
       "role": "paragraph",
@@ -5516,7 +5497,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/297",
       "page": 20,
       "order": 8,
       "role": "paragraph",
@@ -5535,18 +5516,18 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/298",
       "page": 20,
       "order": 9,
       "role": "paragraph",
       "text": "Mapping scope",
       "bbox": {
         "x0": 18.65,
-        "y0": 14.42,
+        "y0": 14.43,
         "x1": 87.35,
         "y1": 25.88,
         "width": 68.7,
-        "height": 11.46
+        "height": 11.45
       },
       "meta": {
         "docling_label": "text",
@@ -5554,7 +5535,7 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/299",
       "page": 20,
       "order": 10,
       "role": "paragraph",
@@ -5573,7 +5554,7 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/300",
       "page": 20,
       "order": 11,
       "role": "paragraph",
@@ -5592,7 +5573,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/301",
       "page": 20,
       "order": 12,
       "role": "paragraph",
@@ -5611,18 +5592,18 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/302",
       "page": 20,
       "order": 13,
       "role": "paragraph",
       "text": "Inconsistent",
       "bbox": {
         "x0": 47.94,
-        "y0": 60.97,
+        "y0": 60.93,
         "x1": 104.06,
-        "y1": 72.86,
+        "y1": 72.9,
         "width": 56.12,
-        "height": 11.89
+        "height": 11.97
       },
       "meta": {
         "docling_label": "text",
@@ -5630,7 +5611,7 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/303",
       "page": 20,
       "order": 14,
       "role": "paragraph",
@@ -5649,7 +5630,7 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/304",
       "page": 20,
       "order": 15,
       "role": "paragraph",
@@ -5668,7 +5649,7 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/305",
       "page": 20,
       "order": 16,
       "role": "paragraph",
@@ -5687,7 +5668,7 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/306",
       "page": 20,
       "order": 17,
       "role": "paragraph",
@@ -5706,7 +5687,7 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/307",
       "page": 20,
       "order": 18,
       "role": "paragraph",
@@ -5725,7 +5706,7 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/308",
       "page": 20,
       "order": 19,
       "role": "paragraph",
@@ -5744,7 +5725,7 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/309",
       "page": 20,
       "order": 20,
       "role": "paragraph",
@@ -5763,7 +5744,7 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/310",
       "page": 20,
       "order": 21,
       "role": "paragraph",
@@ -5782,7 +5763,7 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/311",
       "page": 20,
       "order": 22,
       "role": "paragraph",
@@ -5801,7 +5782,7 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/312",
       "page": 20,
       "order": 23,
       "role": "paragraph",
@@ -5820,7 +5801,7 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/313",
       "page": 20,
       "order": 24,
       "role": "paragraph",
@@ -5839,7 +5820,7 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/314",
       "page": 20,
       "order": 25,
       "role": "paragraph",
@@ -5858,7 +5839,7 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/315",
       "page": 20,
       "order": 26,
       "role": "paragraph",
@@ -5877,7 +5858,7 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/316",
       "page": 20,
       "order": 27,
       "role": "paragraph",
@@ -5896,7 +5877,7 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/317",
       "page": 20,
       "order": 28,
       "role": "paragraph",
@@ -5915,7 +5896,7 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/318",
       "page": 20,
       "order": 29,
       "role": "paragraph",
@@ -5934,7 +5915,7 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/319",
       "page": 20,
       "order": 30,
       "role": "paragraph",
@@ -5953,7 +5934,7 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/320",
       "page": 20,
       "order": 31,
       "role": "paragraph",
@@ -5972,7 +5953,7 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/321",
       "page": 20,
       "order": 32,
       "role": "paragraph",
@@ -5991,7 +5972,7 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/322",
       "page": 20,
       "order": 33,
       "role": "paragraph",
@@ -6010,7 +5991,7 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/323",
       "page": 20,
       "order": 34,
       "role": "paragraph",
@@ -6029,7 +6010,7 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/324",
       "page": 20,
       "order": 35,
       "role": "paragraph",
@@ -6048,7 +6029,7 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/325",
       "page": 20,
       "order": 36,
       "role": "paragraph",
@@ -6067,7 +6048,7 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/326",
       "page": 20,
       "order": 37,
       "role": "paragraph",
@@ -6086,7 +6067,7 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/327",
       "page": 20,
       "order": 38,
       "role": "paragraph",
@@ -6105,7 +6086,7 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/328",
       "page": 20,
       "order": 39,
       "role": "paragraph",
@@ -6124,7 +6105,7 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/329",
       "page": 20,
       "order": 40,
       "role": "paragraph",
@@ -6143,7 +6124,7 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/330",
       "page": 20,
       "order": 41,
       "role": "paragraph",
@@ -6162,7 +6143,7 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/331",
       "page": 20,
       "order": 42,
       "role": "paragraph",
@@ -6181,7 +6162,7 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/332",
       "page": 20,
       "order": 43,
       "role": "paragraph",
@@ -6200,7 +6181,7 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/333",
       "page": 20,
       "order": 44,
       "role": "paragraph",
@@ -6219,7 +6200,7 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/334",
       "page": 20,
       "order": 45,
       "role": "paragraph",
@@ -6238,7 +6219,7 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/335",
       "page": 20,
       "order": 46,
       "role": "paragraph",
@@ -6257,7 +6238,7 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/336",
       "page": 20,
       "order": 47,
       "role": "paragraph",
@@ -6276,7 +6257,7 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/337",
       "page": 20,
       "order": 48,
       "role": "paragraph",
@@ -6295,7 +6276,7 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/338",
       "page": 20,
       "order": 49,
       "role": "paragraph",
@@ -6314,7 +6295,7 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/339",
       "page": 20,
       "order": 50,
       "role": "paragraph",
@@ -6333,7 +6314,7 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/340",
       "page": 20,
       "order": 51,
       "role": "paragraph",
@@ -6352,7 +6333,7 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/341",
       "page": 20,
       "order": 52,
       "role": "paragraph",
@@ -6371,7 +6352,7 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/342",
       "page": 20,
       "order": 53,
       "role": "paragraph",
@@ -6390,7 +6371,7 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/343",
       "page": 20,
       "order": 54,
       "role": "paragraph",
@@ -6409,7 +6390,7 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/344",
       "page": 20,
       "order": 55,
       "role": "paragraph",
@@ -6428,18 +6409,18 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/345",
       "page": 20,
       "order": 56,
       "role": "paragraph",
       "text": "concise",
       "bbox": {
-        "x0": 118.63,
-        "y0": 71.79,
-        "x1": 154.7,
-        "y1": 82.01,
-        "width": 36.07,
-        "height": 10.22
+        "x0": 118.62,
+        "y0": 71.73,
+        "x1": 154.71,
+        "y1": 82.07,
+        "width": 36.09,
+        "height": 10.34
       },
       "meta": {
         "docling_label": "text",
@@ -6447,7 +6428,7 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/346",
       "page": 20,
       "order": 57,
       "role": "paragraph",
@@ -6466,7 +6447,7 @@
       }
     },
     {
-      "id": "#/texts/348",
+      "id": "#/texts/347",
       "page": 20,
       "order": 58,
       "role": "paragraph",
@@ -6485,7 +6466,7 @@
       }
     },
     {
-      "id": "#/texts/349",
+      "id": "#/texts/348",
       "page": 20,
       "order": 59,
       "role": "paragraph",
@@ -6504,7 +6485,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/349",
       "page": 20,
       "order": 60,
       "role": "paragraph",
@@ -6523,7 +6504,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/350",
       "page": 20,
       "order": 61,
       "role": "paragraph",
@@ -6542,7 +6523,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/351",
       "page": 20,
       "order": 62,
       "role": "caption",
@@ -6561,7 +6542,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/352",
       "page": 20,
       "order": 63,
       "role": "heading",
@@ -6580,7 +6561,7 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/353",
       "page": 20,
       "order": 64,
       "role": "paragraph",
@@ -6599,7 +6580,7 @@
       }
     },
     {
-      "id": "#/texts/355",
+      "id": "#/texts/354",
       "page": 20,
       "order": 65,
       "role": "paragraph",
@@ -6618,7 +6599,7 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/355",
       "page": 20,
       "order": 66,
       "role": "paragraph",
@@ -6637,18 +6618,18 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/356",
       "page": 20,
       "order": 67,
       "role": "paragraph",
       "text": "egacy",
       "bbox": {
-        "x0": 308.58,
-        "y0": 13.75,
-        "x1": 338.08,
-        "y1": 24.87,
-        "width": 29.5,
-        "height": 11.12
+        "x0": 308.57,
+        "y0": 13.71,
+        "x1": 338.1,
+        "y1": 24.9,
+        "width": 29.53,
+        "height": 11.19
       },
       "meta": {
         "docling_label": "text",
@@ -6656,7 +6637,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/357",
       "page": 20,
       "order": 68,
       "role": "paragraph",
@@ -6675,7 +6656,7 @@
       }
     },
     {
-      "id": "#/texts/359",
+      "id": "#/texts/358",
       "page": 20,
       "order": 69,
       "role": "paragraph",
@@ -6694,7 +6675,7 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/360",
       "page": 21,
       "order": 1,
       "role": "paragraph",
@@ -6713,7 +6694,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/361",
       "page": 21,
       "order": 2,
       "role": "list_item",
@@ -6732,7 +6713,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/362",
       "page": 21,
       "order": 3,
       "role": "list_item",
@@ -6751,7 +6732,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/363",
       "page": 21,
       "order": 4,
       "role": "list_item",
@@ -6770,7 +6751,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/364",
       "page": 21,
       "order": 5,
       "role": "paragraph",
@@ -6789,7 +6770,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/365",
       "page": 21,
       "order": 6,
       "role": "paragraph",
@@ -6808,7 +6789,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/366",
       "page": 21,
       "order": 7,
       "role": "paragraph",
@@ -6827,7 +6808,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/367",
       "page": 21,
       "order": 8,
       "role": "paragraph",
@@ -6846,7 +6827,7 @@
       }
     },
     {
-      "id": "#/texts/370",
+      "id": "#/texts/369",
       "page": 22,
       "order": 1,
       "role": "paragraph",
@@ -6865,7 +6846,7 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/370",
       "page": 22,
       "order": 2,
       "role": "paragraph",
@@ -6884,7 +6865,7 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/371",
       "page": 22,
       "order": 3,
       "role": "paragraph",
@@ -6903,18 +6884,18 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/372",
       "page": 22,
       "order": 4,
       "role": "paragraph",
       "text": "Wrong labels",
       "bbox": {
-        "x0": 17.98,
-        "y0": 37.93,
-        "x1": 29.97,
-        "y1": 98.49,
-        "width": 11.99,
-        "height": 60.56
+        "x0": 16.83,
+        "y0": 37.74,
+        "x1": 30.58,
+        "y1": 98.66,
+        "width": 13.75,
+        "height": 60.92
       },
       "meta": {
         "docling_label": "text",
@@ -6922,7 +6903,7 @@
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/373",
       "page": 22,
       "order": 5,
       "role": "paragraph",
@@ -6941,7 +6922,7 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/374",
       "page": 22,
       "order": 6,
       "role": "paragraph",
@@ -6960,28 +6941,47 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/375",
       "page": 22,
       "order": 7,
       "role": "paragraph",
-      "text": "Ineffective nefficacious",
+      "text": "Ineffective",
       "bbox": {
-        "x0": 140.57,
-        "y0": 16.23,
-        "x1": 187.01,
-        "y1": 25.55,
-        "width": 46.44,
-        "height": 9.32
+        "x0": 140.59,
+        "y0": 16.32,
+        "x1": 187.0,
+        "y1": 25.45,
+        "width": 46.41,
+        "height": 9.13
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Ineffective nefficacious"
+        "docling_orig": "Ineffective"
+      }
+    },
+    {
+      "id": "#/texts/376",
+      "page": 22,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Inefficacious",
+      "bbox": {
+        "x0": 213.8,
+        "y0": 15.31,
+        "x1": 271.08,
+        "y1": 25.95,
+        "width": 57.28,
+        "height": 10.64
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Inefficacious"
       }
     },
     {
       "id": "#/texts/377",
       "page": 22,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "Semantic errors in procedural models are summarized in Fig. 7.",
       "bbox": {
@@ -7000,7 +7000,7 @@
     {
       "id": "#/texts/378",
       "page": 22,
-      "order": 9,
+      "order": 10,
       "role": "caption",
       "text": "Fig. 7 Semantic errors in procedural models",
       "bbox": {
@@ -7019,7 +7019,7 @@
     {
       "id": "#/texts/379",
       "page": 22,
-      "order": 10,
+      "order": 11,
       "role": "heading",
       "text": "4. Commercial CAD Model Quality Testing Tools",
       "bbox": {
@@ -7038,7 +7038,7 @@
     {
       "id": "#/texts/380",
       "page": 22,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "A preliminary analysis of current commercially available MQT's has been summarized in a series of tables, provided in this section. The scopes of the documents generated by CAD applications that can be tested by the various MQT tools available in the market are shown In Table 1. The types of CAD documents that can be typically tested by commercial Quality Testing Tools include models, assemblies, and drawings. Those tools that were unable to test models have been excluded from our study. In our sample, all MQT tools that test models also test assemblies, and most can also test drawings.",
       "bbox": {
@@ -7057,7 +7057,7 @@
     {
       "id": "#/texts/381",
       "page": 22,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "Table 1 also shows whether these MQT tools are linked to or embedded into any particular 3D CAD Design software. 36% of the MQT tools studied are embedded.",
       "bbox": {
@@ -7076,7 +7076,7 @@
     {
       "id": "#/texts/382",
       "page": 22,
-      "order": 13,
+      "order": 14,
       "role": "caption",
       "text": "Table 1. Document checked by different Model Quality Testing tools",
       "bbox": {

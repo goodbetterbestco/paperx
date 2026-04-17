@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities.pdf",
+  "pdf_path": "stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities.pdf",
   "page_count": 12,
   "page_sizes_pt": [
     {
@@ -88,15 +88,15 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
-        "x0": 56.17,
-        "y0": 383.76,
-        "x1": 107.55,
+        "x0": 56.16,
+        "y0": 382.11,
+        "x1": 107.56,
         "y1": 394.33,
-        "width": 51.38,
-        "height": 10.57
+        "width": 51.4,
+        "height": 12.22
       },
       "meta": {
         "docling_label": "section_header",
@@ -107,7 +107,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "One of the principal tasks of history based parametric modeling is to maintain the design history of parts. When some constrains or definitions of a feature on the part are modified, it should be guaranteed that its design history could be replayed automatically and correctly. Thus the users can get the desired part expediently, quickly and unambiguously. Topological naming mechanism is one of the main important technologies to fulfill this task. In order to solve this problem, this paper first analyzes the design history of parts, then presents a face based mechanism for naming, recording and retrieving topological entity and finally proposes a method named parametric space information to solve ambiguity when recording and retrieving entities. This mechanism, which provides a solid basis for replaying the design history precisely, has been implemented in InteSolid, a history and feature based modeling system. © 2001 Elsevier Science Ltd. All rights reserved.",
       "bbox": {
         "x0": 54.57,
@@ -126,7 +126,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Keywords: Topological name; Design history; Feature and history based design",
       "bbox": {
         "x0": 56.23,
@@ -145,15 +145,15 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
-        "x0": 54.47,
-        "y0": 577.16,
-        "x1": 150.59,
-        "y1": 594.95,
-        "width": 96.12,
-        "height": 17.79
+        "x0": 54.49,
+        "y0": 577.32,
+        "x1": 150.56,
+        "y1": 594.79,
+        "width": 96.07,
+        "height": 17.47
       },
       "meta": {
         "docling_label": "section_header",
@@ -164,14 +164,14 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Nowadays, new generation of feature based parametric modeling systems makes it easy to define part model, which can generate various similar parts. This function is realized through flexible editing tools, by which dimension values, constraint relations and feature definitions can be modified. Parametric function makes it possible to change the dimension values of part at any time and drive the part to get a completely new variant through the various information stored in part model. This is one of the main purposes of parametric models [1]. In these systems, designers usually define a part model through dimensions, constraints and features which make it possible to generate variants. When designers want to get a variant of the designed part, they can edit the designed model using editing tools. However, some times designers may not be able to get the satisfying results through this way. The typical reasons are:",
       "bbox": {
-        "x0": 52.92,
+        "x0": 54.57,
         "y0": 610.82,
         "x1": 403.5,
         "y1": 884.07,
-        "width": 350.58,
+        "width": 348.93,
         "height": 273.25
       },
       "meta": {
@@ -183,7 +183,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "the ability of solving constraints is not strong enough to handle some odd cases;",
       "bbox": {
         "x0": 56.23,
@@ -202,7 +202,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "the newly set dimension values are not reasonable or engineering oriented; and",
       "bbox": {
         "x0": 56.23,
@@ -221,7 +221,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "some related entities cannot be retrieved or identified from the information in the part model.",
       "bbox": {
         "x0": 56.23,
@@ -259,7 +259,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Computer-Aided Design 33(2001) 687-698",
       "bbox": {
         "x0": 314.2,
@@ -278,15 +278,15 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "heading",
       "text": "COMPUTER-AIDED DESIGN",
       "bbox": {
         "x0": 653.21,
         "y0": 94.36,
         "x1": 778.89,
-        "y1": 129.27,
+        "y1": 129.2,
         "width": 125.68,
-        "height": 34.91
+        "height": 34.84
       },
       "meta": {
         "docling_label": "section_header",
@@ -297,7 +297,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "www.elsevier.com locate cad",
       "bbox": {
         "x0": 641.63,
@@ -316,7 +316,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "heading",
       "text": "A face based mechanism for naming, recording and retrieving topological entities",
       "bbox": {
         "x0": 109.14,
@@ -335,15 +335,15 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Junjun Wu* *, Tianbing Zhang, Xinfang Zhang, Ji Zhou",
       "bbox": {
-        "x0": 208.37,
-        "y0": 274.82,
+        "x0": 208.34,
+        "y0": 274.72,
         "x1": 625.1,
         "y1": 297.99,
-        "width": 416.73,
-        "height": 23.17
+        "width": 416.76,
+        "height": 23.27
       },
       "meta": {
         "docling_label": "text",
@@ -354,7 +354,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "CAD Center, Huazhong University of Science and Technology, Wuhan, Hubei 430074, People's Republic of China",
       "bbox": {
         "x0": 150.49,
@@ -373,7 +373,7 @@
       "id": "#/texts/17",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received 29 October 1999; revised 19 June 2000; accepted 24 June 2000",
       "bbox": {
         "x0": 246.4,
@@ -392,7 +392,7 @@
       "id": "#/texts/18",
       "page": 1,
       "order": 18,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The first two of the above can be solved by applying Dimensional Constraint Manager (DCM), a software component module that manipulates geometric designs to satisfy given dimensions [2,3], to feature based modeling systems. However, the third is relevant to referencing topological entities. The history of designing part model is a sequential one in feature based parametric system. Usually a base feature is designed first then the other features are attached to it. Every modeling step is a design history stage in which one feature is generated. Every feature contains its specific information, such as parameters, attributes, feature operations and the records of referenced topological entities. These topological entities, that is, faces, edges and vertices, are used mainly for the following three purposes:",
       "bbox": {
         "x0": 433.27,
@@ -411,7 +411,7 @@
       "id": "#/texts/19",
       "page": 1,
       "order": 19,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "as operation object of a feature, i.e. the removed face of a shelling feature;",
       "bbox": {
         "x0": 434.92,
@@ -430,7 +430,7 @@
       "id": "#/texts/20",
       "page": 1,
       "order": 20,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "as datum object of a feature, i.e. the datum plane of the sketch of a protrusion feature; and",
       "bbox": {
         "x0": 433.27,
@@ -449,7 +449,7 @@
       "id": "#/texts/21",
       "page": 1,
       "order": 21,
-      "role": "front_matter",
+      "role": "list_item",
       "text": "as medial object between a feature and its technical information, i.e. the entities in a feature referenced by dimensions.",
       "bbox": {
         "x0": 433.27,
@@ -468,7 +468,7 @@
       "id": "#/texts/22",
       "page": 1,
       "order": 22,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "When some of the dimension values, constraint relations or feature definitions of features in a part are modified, if all the referenced topological entities can be retrieved or identified from the records, it should be reconstructed automatically",
       "bbox": {
         "x0": 433.27,
@@ -697,7 +697,7 @@
       "page": 2,
       "order": 12,
       "role": "paragraph",
-      "text": "Research on a number of commercial CAD systems, such as Pro Engineer, SolidWorks and SolidEdge, indicates that they should have done much work on the mechanism for naming, recording and retrieving topological entities. Flexible naming mechanism is one of the prerequisites of these systems. Due to severe competence in commerce, they are not willing to make it public on how to implement their mechanisms for naming, recording and retrieving topological entities, respectively.",
+      "text": "Research on a number of commercial CAD systems, such as Pro Engineer, SolidWorks and SolidEdge, indicates that they should have done much work on the mechanism for naming, recording and retrieving topological entities. Flex ible naming mechanism is one of the prerequisites of these systems. Due to severe competence in commerce, they are not willing to make it public on how to implement their mechanisms for naming, recording and retrieving topological entities, respectively.",
       "bbox": {
         "x0": 444.73,
         "y0": 642.34,
@@ -708,7 +708,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Research on a number of commercial CAD systems, such as Pro Engineer, SolidWorks and SolidEdge, indicates that they should have done much work on the mechanism for naming, recording and retrieving topological entities. Flexible naming mechanism is one of the prerequisites of these systems. Due to severe competence in commerce, they are not willing to make it public on how to implement their mechanisms for naming, recording and retrieving topological entities, respectively."
+        "docling_orig": "Research on a number of commercial CAD systems, such as Pro Engineer, SolidWorks and SolidEdge, indicates that they should have done much work on the mechanism for naming, recording and retrieving topological entities. Flex ible naming mechanism is one of the prerequisites of these systems. Due to severe competence in commerce, they are not willing to make it public on how to implement their mechanisms for naming, recording and retrieving topological entities, respectively."
       }
     },
     {
@@ -776,11 +776,11 @@
       "text": "F1",
       "bbox": {
         "x0": 160.41,
-        "y0": 150.65,
+        "y0": 152.31,
         "x1": 173.64,
         "y1": 160.59,
         "width": 13.23,
-        "height": 9.94
+        "height": 8.28
       },
       "meta": {
         "docling_label": "text",
@@ -927,11 +927,11 @@
       "role": "paragraph",
       "text": "A topological face F is the Adjacent Face (AF) of topological entity TE, if TE is contained in F. The set that contains all the adjacent faces of TE is called Adjacent Face Set (AFS) of TE, which is marked by",
       "bbox": {
-        "x0": 54.57,
+        "x0": 54.51,
         "y0": 488.38,
-        "x1": 401.85,
+        "x1": 401.92,
         "y1": 554.6,
-        "width": 347.28,
+        "width": 347.41,
         "height": 66.22
       },
       "meta": {
@@ -1024,9 +1024,9 @@
       "bbox": {
         "x0": 181.91,
         "y0": 923.73,
-        "x1": 219.94,
+        "x1": 221.6,
         "y1": 937.06,
-        "width": 38.03,
+        "width": 39.69,
         "height": 13.33
       },
       "meta": {
@@ -1038,44 +1038,6 @@
       "id": "#/texts/58",
       "page": 3,
       "order": 16,
-      "role": "paragraph",
-      "text": "F1",
-      "bbox": {
-        "x0": 208.37,
-        "y0": 946.96,
-        "x1": 226.56,
-        "y1": 958.55,
-        "width": 18.19,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "F1"
-      }
-    },
-    {
-      "id": "#/texts/59",
-      "page": 3,
-      "order": 17,
-      "role": "paragraph",
-      "text": "F3",
-      "bbox": {
-        "x0": 219.94,
-        "y0": 970.14,
-        "x1": 236.48,
-        "y1": 981.73,
-        "width": 16.54,
-        "height": 11.59
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "F3"
-      }
-    },
-    {
-      "id": "#/texts/60",
-      "page": 3,
-      "order": 18,
       "role": "paragraph",
       "text": "E3",
       "bbox": {
@@ -1092,9 +1054,9 @@
       }
     },
     {
-      "id": "#/texts/61",
+      "id": "#/texts/59",
       "page": 3,
-      "order": 19,
+      "order": 17,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
@@ -1111,9 +1073,9 @@
       }
     },
     {
-      "id": "#/texts/62",
+      "id": "#/texts/60",
       "page": 3,
-      "order": 20,
+      "order": 18,
       "role": "paragraph",
       "text": "E4",
       "bbox": {
@@ -1127,6 +1089,44 @@
       "meta": {
         "docling_label": "text",
         "docling_orig": "E4"
+      }
+    },
+    {
+      "id": "#/texts/61",
+      "page": 3,
+      "order": 19,
+      "role": "paragraph",
+      "text": "F1",
+      "bbox": {
+        "x0": 210.02,
+        "y0": 946.96,
+        "x1": 226.56,
+        "y1": 956.89,
+        "width": 16.54,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "F1"
+      }
+    },
+    {
+      "id": "#/texts/62",
+      "page": 3,
+      "order": 20,
+      "role": "paragraph",
+      "text": "F3",
+      "bbox": {
+        "x0": 219.94,
+        "y0": 970.14,
+        "x1": 236.48,
+        "y1": 981.73,
+        "width": 16.54,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "F3"
       }
     },
     {
@@ -1193,12 +1193,12 @@
       "role": "heading",
       "text": "3.4. Entity between features",
       "bbox": {
-        "x0": 433.27,
+        "x0": 434.92,
         "y0": 259.92,
         "x1": 598.64,
-        "y1": 274.92,
-        "width": 165.37,
-        "height": 15.0
+        "y1": 273.25,
+        "width": 163.72,
+        "height": 13.33
       },
       "meta": {
         "docling_label": "section_header",
@@ -1250,11 +1250,11 @@
       "role": "paragraph",
       "text": "The expression, Geom(TE), is used to represent the geometry of a topological entity TE. Part body PB is generated after the Boolean operation between body B, and B2. If there exists another topological entity TE' which is in B, or B2 and makes Geom(TE') equal to Geom(TE), then TE' is the source of TE and TE is an Entity With Source (EWS). If TE' does not exist, TE is an Entity Without Source (EWOS). For instance, Fj, F2 and F3 in Fig. 3 are EWS'es, but E2 and Ez are EWOS'es.",
       "bbox": {
-        "x0": 433.19,
+        "x0": 433.13,
         "y0": 405.55,
         "x1": 782.2,
         "y1": 556.26,
-        "width": 349.01,
+        "width": 349.07,
         "height": 150.71
       },
       "meta": {
@@ -1326,12 +1326,12 @@
       "role": "list_item",
       "text": "In the dynamical evolution of part body, EIF's and EBF's in it are created and deleted from time to time.",
       "bbox": {
-        "x0": 428.26,
-        "y0": 660.45,
-        "x1": 782.26,
+        "x0": 428.31,
+        "y0": 660.47,
+        "x1": 782.2,
         "y1": 690.46,
-        "width": 354.0,
-        "height": 30.01
+        "width": 353.89,
+        "height": 29.99
       },
       "meta": {
         "docling_label": "list_item",
@@ -1381,7 +1381,7 @@
       "page": 3,
       "order": 34,
       "role": "list_item",
-      "text": "After the Boolean operation between body PB(S;) and body PFB(S;), some EWOS'es will be created.",
+      "text": "After the Boolean operation between body PB(S;) and body PFB(S;, some EWOS'es will be created.",
       "bbox": {
         "x0": 431.61,
         "y0": 746.64,
@@ -1392,7 +1392,7 @@
       },
       "meta": {
         "docling_label": "list_item",
-        "docling_orig": "· After the Boolean operation between body PB(S;) and body PFB(S;), some EWOS'es will be created."
+        "docling_orig": "· After the Boolean operation between body PB(S;) and body PFB(S;, some EWOS'es will be created."
       }
     },
     {
@@ -1554,12 +1554,12 @@
       "role": "paragraph",
       "text": "part body",
       "bbox": {
-        "x0": 120.72,
-        "y0": 251.59,
-        "x1": 170.33,
-        "y1": 261.59,
-        "width": 49.61,
-        "height": 10.0
+        "x0": 120.7,
+        "y0": 251.52,
+        "x1": 170.35,
+        "y1": 261.69,
+        "width": 49.65,
+        "height": 10.17
       },
       "meta": {
         "docling_label": "text",
@@ -1690,9 +1690,9 @@
         "x0": 66.15,
         "y0": 407.21,
         "x1": 413.42,
-        "y1": 433.87,
+        "y1": 435.54,
         "width": 347.27,
-        "height": 26.66
+        "height": 28.33
       },
       "meta": {
         "docling_label": "caption",
@@ -1708,9 +1708,9 @@
       "bbox": {
         "x0": 66.15,
         "y0": 453.53,
-        "x1": 413.42,
+        "x1": 413.59,
         "y1": 587.83,
-        "width": 347.27,
+        "width": 347.44,
         "height": 134.3
       },
       "meta": {
@@ -1727,9 +1727,9 @@
       "bbox": {
         "x0": 66.15,
         "y0": 617.49,
-        "x1": 219.94,
+        "x1": 221.6,
         "y1": 634.15,
-        "width": 153.79,
+        "width": 155.45,
         "height": 16.66
       },
       "meta": {
@@ -1801,11 +1801,11 @@
       "role": "list_item",
       "text": "any topological face in part body has a corresponding source in one of the original features. Thus, attaching",
       "bbox": {
-        "x0": 66.15,
+        "x0": 67.8,
         "y0": 766.44,
         "x1": 413.42,
         "y1": 799.77,
-        "width": 347.27,
+        "width": 345.62,
         "height": 33.33
       },
       "meta": {
@@ -1858,12 +1858,12 @@
       "role": "paragraph",
       "text": "Ending Face",
       "bbox": {
-        "x0": 668.09,
-        "y0": 99.3,
-        "x1": 724.32,
-        "y1": 109.3,
-        "width": 56.23,
-        "height": 10.0
+        "x0": 668.07,
+        "y0": 97.57,
+        "x1": 724.34,
+        "y1": 109.37,
+        "width": 56.27,
+        "height": 11.8
       },
       "meta": {
         "docling_label": "text",
@@ -1972,11 +1972,11 @@
       "role": "paragraph",
       "text": "Starting",
       "bbox": {
-        "x0": 646.6,
+        "x0": 644.94,
         "y0": 299.65,
         "x1": 681.32,
         "y1": 309.58,
-        "width": 34.72,
+        "width": 36.38,
         "height": 9.93
       },
       "meta": {
@@ -2029,11 +2029,11 @@
       "role": "list_item",
       "text": "during the process of Boolean operations, the topological edges and topological vertices in part body are changed dynamically, whereas the faces in original features are relatively stable.",
       "bbox": {
-        "x0": 446.5,
+        "x0": 444.84,
         "y0": 402.22,
         "x1": 790.47,
         "y1": 470.2,
-        "width": 343.97,
+        "width": 345.63,
         "height": 67.98
       },
       "meta": {
@@ -2143,11 +2143,11 @@
       "role": "caption",
       "text": "Fig. 7. Name chamfer feature.",
       "bbox": {
-        "x0": 158.75,
+        "x0": 157.1,
         "y0": 364.22,
         "x1": 300.97,
         "y1": 377.56,
-        "width": 142.22,
+        "width": 143.87,
         "height": 13.34
       },
       "meta": {
@@ -2160,18 +2160,18 @@
       "page": 5,
       "order": 2,
       "role": "paragraph",
-      "text": "-14",
+      "text": "•14",
       "bbox": {
-        "x0": 205.06,
+        "x0": 206.71,
         "y0": 132.44,
         "x1": 219.94,
-        "y1": 144.03,
-        "width": 14.88,
-        "height": 11.59
+        "y1": 142.37,
+        "width": 13.23,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "-14"
+        "docling_orig": "•14"
       }
     },
     {
@@ -2447,11 +2447,11 @@
       "role": "paragraph",
       "text": "Extrude and Revolve are the two specific cases of Sweep, which is generated by sweeping a profile along a path. The profile is a 2D closed one and the path can be 2D or 3D connected segments. Fig. 6 shows a typical Sweep feature. There are three types of feature faces, that is, starting face, side face and ending face. Set element E as one of the edges of the profile, trajectory T one of the segments of the path. The context of the original name for the face decided by E and T can be decided by FeatIDp, ID element, FeatIDPath and ID trajectory where FeatIDp and FeatIDpath are the identities of the profile and path, IDelement and IDtrajectory are the identities of E and T, respectively. It's obvious that a given element E and a given trajectory T are related to a side face. Hence, the context of the original name for the side face which is in the profile based feature can be expressed by",
       "bbox": {
-        "x0": 54.5,
+        "x0": 54.57,
         "y0": 582.74,
         "x1": 403.5,
         "y1": 855.91,
-        "width": 349.0,
+        "width": 348.93,
         "height": 273.17
       },
       "meta": {
@@ -2540,7 +2540,7 @@
       "page": 5,
       "order": 22,
       "role": "paragraph",
-      "text": "A Revolve feature is formed by sweeping a profile around a central axis for a certain angle. The values for FeatID Path and ID trajectory are FeatIDp and IDaxis, respectively. When the angle is 360°, the starting face and the ending face do not exist any more. Thus, the contexts of the original names for the faces in the Revolve feature are",
+      "text": "A Revolve feature is formed by sweeping a profile around a central axis for a certain angle. The values for FeatID Path and ID trajectory are FeatIp and IDaxis, respectively. When the angle is 360°, the starting face and the ending face do not exist any more. Thus, the contexts of the original names for the faces in the Revolve feature are",
       "bbox": {
         "x0": 433.27,
         "y0": 359.23,
@@ -2551,7 +2551,7 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "A Revolve feature is formed by sweeping a profile around a central axis for a certain angle. The values for FeatID Path and ID trajectory are FeatIDp and IDaxis, respectively. When the angle is 360°, the starting face and the ending face do not exist any more. Thus, the contexts of the original names for the faces in the Revolve feature are"
+        "docling_orig": "A Revolve feature is formed by sweeping a profile around a central axis for a certain angle. The values for FeatID Path and ID trajectory are FeatIp and IDaxis, respectively. When the angle is 360°, the starting face and the ending face do not exist any more. Thus, the contexts of the original names for the faces in the Revolve feature are"
       }
     },
     {
@@ -2599,12 +2599,12 @@
       "role": "paragraph",
       "text": "The chamfered faces are achieved by replacing some of the edges in part with planes. The context of the original name for a chamfered face can exploit the contexts of the original names of the faces adjacent to the chamfered edge. Therefore, the context of the original name of any face of a chamfered feature is",
       "bbox": {
-        "x0": 434.87,
-        "y0": 738.36,
-        "x1": 780.61,
+        "x0": 433.27,
+        "y0": 736.71,
+        "x1": 780.54,
         "y1": 837.75,
-        "width": 345.74,
-        "height": 99.39
+        "width": 347.27,
+        "height": 101.04
       },
       "meta": {
         "docling_label": "text",
@@ -2692,6 +2692,25 @@
       "page": 6,
       "order": 4,
       "role": "paragraph",
+      "text": "F2",
+      "bbox": {
+        "x0": 158.75,
+        "y0": 162.24,
+        "x1": 173.64,
+        "y1": 172.17,
+        "width": 14.89,
+        "height": 9.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "F2"
+      }
+    },
+    {
+      "id": "#/texts/157",
+      "page": 6,
+      "order": 5,
+      "role": "paragraph",
       "text": "F1",
       "bbox": {
         "x0": 219.94,
@@ -2707,9 +2726,9 @@
       }
     },
     {
-      "id": "#/texts/157",
+      "id": "#/texts/158",
       "page": 6,
-      "order": 5,
+      "order": 6,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
@@ -2726,9 +2745,9 @@
       }
     },
     {
-      "id": "#/texts/158",
+      "id": "#/texts/159",
       "page": 6,
-      "order": 6,
+      "order": 7,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
@@ -2745,9 +2764,9 @@
       }
     },
     {
-      "id": "#/texts/159",
+      "id": "#/texts/160",
       "page": 6,
-      "order": 7,
+      "order": 8,
       "role": "paragraph",
       "text": "Instance2",
       "bbox": {
@@ -2764,9 +2783,9 @@
       }
     },
     {
-      "id": "#/texts/160",
+      "id": "#/texts/161",
       "page": 6,
-      "order": 8,
+      "order": 9,
       "role": "paragraph",
       "text": "Original Feature Body",
       "bbox": {
@@ -2783,9 +2802,9 @@
       }
     },
     {
-      "id": "#/texts/161",
+      "id": "#/texts/162",
       "page": 6,
-      "order": 9,
+      "order": 10,
       "role": "caption",
       "text": "Fig. 8. Name linear pattern feature.",
       "bbox": {
@@ -2802,9 +2821,9 @@
       }
     },
     {
-      "id": "#/texts/162",
+      "id": "#/texts/163",
       "page": 6,
-      "order": 10,
+      "order": 11,
       "role": "paragraph",
       "text": "The part illustrated in Fig. 7 is made by subtracting one block from the other and chamfering edge ej and edge ez. Although the original feature body contains eight faces, actually only face(a, b, e, f) and face(b, c, d, e) are the feature faces. It is sufficient only to name the two feature faces. Fi, F2 and F3 are the feature faces in the cut Extrude feature, whose identity value is assumed to be 6. This Extrude feature has a profile, which consists of four elements, 11, 12, 13 and 14. If the identity of the profile is 5, the contexts of the original names for Fi, F2 and F3 are",
       "bbox": {
@@ -2821,9 +2840,9 @@
       }
     },
     {
-      "id": "#/texts/165",
+      "id": "#/texts/166",
       "page": 6,
-      "order": 11,
+      "order": 12,
       "role": "paragraph",
       "text": "and",
       "bbox": {
@@ -2840,9 +2859,9 @@
       }
     },
     {
-      "id": "#/texts/167",
+      "id": "#/texts/168",
       "page": 6,
-      "order": 12,
+      "order": 13,
       "role": "paragraph",
       "text": "According to the idea above, the contexts of the original names for face(a, b, e, f) and face (b, c, d, e) are",
       "bbox": {
@@ -2859,9 +2878,9 @@
       }
     },
     {
-      "id": "#/texts/169",
+      "id": "#/texts/170",
       "page": 6,
-      "order": 13,
+      "order": 14,
       "role": "paragraph",
       "text": "and",
       "bbox": {
@@ -2878,9 +2897,9 @@
       }
     },
     {
-      "id": "#/texts/171",
+      "id": "#/texts/172",
       "page": 6,
-      "order": 14,
+      "order": 15,
       "role": "heading",
       "text": "4.2.3. Name feature based feature",
       "bbox": {
@@ -2897,17 +2916,17 @@
       }
     },
     {
-      "id": "#/texts/172",
+      "id": "#/texts/173",
       "page": 6,
-      "order": 15,
+      "order": 16,
       "role": "paragraph",
       "text": "Naming an entity based feature embodies the idea of exploiting the context of the original name for a profile based feature. However, naming a feature based feature can be achieved by extending the context of the original name for a profile based feature. This will be explained through naming a Linear Pattern feature.",
       "bbox": {
-        "x0": 67.6,
+        "x0": 67.62,
         "y0": 849.28,
-        "x1": 413.62,
+        "x1": 413.59,
         "y1": 950.39,
-        "width": 346.02,
+        "width": 345.97,
         "height": 101.11
       },
       "meta": {
@@ -2916,9 +2935,9 @@
       }
     },
     {
-      "id": "#/texts/173",
+      "id": "#/texts/174",
       "page": 6,
-      "order": 16,
+      "order": 17,
       "role": "paragraph",
       "text": "Linear Pattern feature is formed by copying one or more features in the part and posing them along a given direction with proportional spacing. The shape of any instance in a linear pattern feature is the same as that of the feature(s) copied. Usually the instance number of a linear pattern feature is greater than one. Therefore, it is necessary to extend the context of the original name for the face of a profile based feature so that it can be used for the face of a feature based feature. The context of the original name after being extended is",
       "bbox": {
@@ -2935,9 +2954,9 @@
       }
     },
     {
-      "id": "#/texts/175",
+      "id": "#/texts/176",
       "page": 6,
-      "order": 17,
+      "order": 18,
       "role": "paragraph",
       "text": "where symbol InsNum is the sequential number of the instance to which face F belongs.",
       "bbox": {
@@ -2954,9 +2973,9 @@
       }
     },
     {
-      "id": "#/texts/176",
+      "id": "#/texts/177",
       "page": 6,
-      "order": 18,
+      "order": 19,
       "role": "paragraph",
       "text": "The part depicted in Fig. 8 is made by uniting a block and a cylinder, both of which are Extrude features and doing a linear pattern (the instance number is 2) to the cylinder. If assuming that the value of the identity for the cylinder feature is 6 and that of the profile for the cylinder is 5, the contexts of the original names for the faces in the original feature body of the cylinder are",
       "bbox": {
@@ -2973,9 +2992,9 @@
       }
     },
     {
-      "id": "#/texts/179",
+      "id": "#/texts/180",
       "page": 6,
-      "order": 19,
+      "order": 20,
       "role": "paragraph",
       "text": "and",
       "bbox": {
@@ -2992,9 +3011,9 @@
       }
     },
     {
-      "id": "#/texts/181",
+      "id": "#/texts/182",
       "page": 6,
-      "order": 20,
+      "order": 21,
       "role": "paragraph",
       "text": "The contexts of the original names for the faces in the linear pattern feature are",
       "bbox": {
@@ -3011,9 +3030,9 @@
       }
     },
     {
-      "id": "#/texts/183",
+      "id": "#/texts/184",
       "page": 6,
-      "order": 21,
+      "order": 22,
       "role": "paragraph",
       "text": "Summarizing the above naming ideas and the research on the generations of form features in feature based parametric modeling systems, the context of the original name for the face of a general feature can be expressed by",
       "bbox": {
@@ -3030,9 +3049,9 @@
       }
     },
     {
-      "id": "#/texts/185",
+      "id": "#/texts/186",
       "page": 6,
-      "order": 22,
+      "order": 23,
       "role": "paragraph",
       "text": "where the values of idy, idz, id3, id and ids have their own specific meanings decided by the type of the feature and the location of the given face F.",
       "bbox": {
@@ -3049,9 +3068,9 @@
       }
     },
     {
-      "id": "#/texts/186",
+      "id": "#/texts/187",
       "page": 6,
-      "order": 23,
+      "order": 24,
       "role": "heading",
       "text": "4.3. Propagation of original name",
       "bbox": {
@@ -3068,9 +3087,9 @@
       }
     },
     {
-      "id": "#/texts/187",
+      "id": "#/texts/188",
       "page": 6,
-      "order": 24,
+      "order": 25,
       "role": "paragraph",
       "text": "After naming topological faces is finished, a Boolean operation will be executed between the body of the original feature and the part body. Because of the Boolean operation, the topological faces in the two bodies will be deleted, merged, split or still kept. Therefore, there should be some specific methods to handle the topological names",
       "bbox": {
@@ -3087,7 +3106,7 @@
       }
     },
     {
-      "id": "#/texts/191",
+      "id": "#/texts/192",
       "page": 7,
       "order": 1,
       "role": "caption",
@@ -3106,9 +3125,28 @@
       }
     },
     {
-      "id": "#/texts/192",
+      "id": "#/texts/193",
       "page": 7,
       "order": 2,
+      "role": "paragraph",
+      "text": "on",
+      "bbox": {
+        "x0": 257.98,
+        "y0": 153.96,
+        "x1": 271.21,
+        "y1": 162.24,
+        "width": 13.23,
+        "height": 8.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "on"
+      }
+    },
+    {
+      "id": "#/texts/194",
+      "page": 7,
+      "order": 3,
       "role": "paragraph",
       "text": "F",
       "bbox": {
@@ -3125,9 +3163,28 @@
       }
     },
     {
-      "id": "#/texts/193",
+      "id": "#/texts/195",
       "page": 7,
-      "order": 3,
+      "order": 4,
+      "role": "paragraph",
+      "text": "F2",
+      "bbox": {
+        "x0": 286.09,
+        "y0": 243.36,
+        "x1": 300.97,
+        "y1": 253.3,
+        "width": 14.88,
+        "height": 9.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "F2"
+      }
+    },
+    {
+      "id": "#/texts/196",
+      "page": 7,
+      "order": 5,
       "role": "paragraph",
       "text": "part body",
       "bbox": {
@@ -3144,9 +3201,9 @@
       }
     },
     {
-      "id": "#/texts/194",
+      "id": "#/texts/197",
       "page": 7,
-      "order": 4,
+      "order": 6,
       "role": "paragraph",
       "text": "finished part body",
       "bbox": {
@@ -3163,9 +3220,9 @@
       }
     },
     {
-      "id": "#/texts/195",
+      "id": "#/texts/198",
       "page": 7,
-      "order": 5,
+      "order": 7,
       "role": "paragraph",
       "text": "attached to those feature faces during this process. Here the change of entities is called propagation of entity. In the same manner the change of topological names is called propagation of topological name. Corresponding to the propagation types of entity, there are four types of propagation of topological name. These four types are deleting propagation, merging propagation, splitting propagation and keeping propagation.",
       "bbox": {
@@ -3182,9 +3239,9 @@
       }
     },
     {
-      "id": "#/texts/196",
+      "id": "#/texts/199",
       "page": 7,
-      "order": 6,
+      "order": 8,
       "role": "heading",
       "text": "4.3.1. Propagation of deleting topological name",
       "bbox": {
@@ -3201,9 +3258,9 @@
       }
     },
     {
-      "id": "#/texts/197",
+      "id": "#/texts/200",
       "page": 7,
-      "order": 7,
+      "order": 9,
       "role": "paragraph",
       "text": "When a feature face is deleted after a Boolean operation, the topological name attached to it should be deleted too. This is called propagation of deleting topological name.",
       "bbox": {
@@ -3220,9 +3277,9 @@
       }
     },
     {
-      "id": "#/texts/198",
+      "id": "#/texts/201",
       "page": 7,
-      "order": 8,
+      "order": 10,
       "role": "heading",
       "text": "4.3.2. Propagation of keeping topological name",
       "bbox": {
@@ -3239,9 +3296,9 @@
       }
     },
     {
-      "id": "#/texts/199",
+      "id": "#/texts/202",
       "page": 7,
-      "order": 9,
+      "order": 11,
       "role": "paragraph",
       "text": "When a topological face is still alive and not split or merged with other faces after a Boolean operation, no change will happen to the topological name of this topological face. This is called propagation of keeping topological name.",
       "bbox": {
@@ -3258,9 +3315,9 @@
       }
     },
     {
-      "id": "#/texts/200",
+      "id": "#/texts/203",
       "page": 7,
-      "order": 10,
+      "order": 12,
       "role": "heading",
       "text": "4.3.3. Propagation of splitting topological name",
       "bbox": {
@@ -3277,9 +3334,9 @@
       }
     },
     {
-      "id": "#/texts/201",
+      "id": "#/texts/204",
       "page": 7,
-      "order": 11,
+      "order": 13,
       "role": "paragraph",
       "text": "If a topological face F is still alive and is divided into two or more faces after a Boolean operation, the topological name of face F will be carried to all the faces originated",
       "bbox": {
@@ -3296,9 +3353,9 @@
       }
     },
     {
-      "id": "#/texts/202",
+      "id": "#/texts/205",
       "page": 7,
-      "order": 12,
+      "order": 14,
       "role": "caption",
       "text": "Fig. 10. Propagation of merging topological name.",
       "bbox": {
@@ -3315,9 +3372,9 @@
       }
     },
     {
-      "id": "#/texts/203",
+      "id": "#/texts/206",
       "page": 7,
-      "order": 13,
+      "order": 15,
       "role": "paragraph",
       "text": "on3",
       "bbox": {
@@ -3334,9 +3391,9 @@
       }
     },
     {
-      "id": "#/texts/204",
+      "id": "#/texts/207",
       "page": 7,
-      "order": 14,
+      "order": 16,
       "role": "paragraph",
       "text": "on2",
       "bbox": {
@@ -3353,18 +3410,18 @@
       }
     },
     {
-      "id": "#/texts/205",
+      "id": "#/texts/208",
       "page": 7,
-      "order": 15,
+      "order": 17,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
-        "x0": 181.91,
+        "x0": 183.56,
         "y0": 971.79,
         "x1": 196.79,
-        "y1": 983.38,
-        "width": 14.88,
-        "height": 11.59
+        "y1": 981.73,
+        "width": 13.23,
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -3372,9 +3429,9 @@
       }
     },
     {
-      "id": "#/texts/206",
+      "id": "#/texts/209",
       "page": 7,
-      "order": 16,
+      "order": 18,
       "role": "paragraph",
       "text": "from it. This is called propagation of splitting topological name and illustrated in Fig. 9.",
       "bbox": {
@@ -3391,9 +3448,9 @@
       }
     },
     {
-      "id": "#/texts/207",
+      "id": "#/texts/210",
       "page": 7,
-      "order": 17,
+      "order": 19,
       "role": "heading",
       "text": "4.3.4. Merging propagation of topological name",
       "bbox": {
@@ -3410,9 +3467,9 @@
       }
     },
     {
-      "id": "#/texts/208",
+      "id": "#/texts/211",
       "page": 7,
-      "order": 18,
+      "order": 20,
       "role": "paragraph",
       "text": "As depicted in Fig. 10, when face F1 and face F2 are merged into one face F, the topological name of face F2 in the part body will be used to name the new face F, i.e. ON is the same as ON2. This is called propagation of merging topological name.",
       "bbox": {
@@ -3429,9 +3486,9 @@
       }
     },
     {
-      "id": "#/texts/209",
+      "id": "#/texts/212",
       "page": 7,
-      "order": 19,
+      "order": 21,
       "role": "heading",
       "text": "5. Record and retrieve topological entity",
       "bbox": {
@@ -3448,9 +3505,9 @@
       }
     },
     {
-      "id": "#/texts/210",
+      "id": "#/texts/213",
       "page": 7,
-      "order": 20,
+      "order": 22,
       "role": "paragraph",
       "text": "As discussed above, if a feature in designing references some topological entities as its operation objects, datum objects or medial objects, these referenced topological entities should be recorded as topological names (real names). And while rebuilding the whole part or editing a feature, those referenced topological entities should be retrieved from the real names recorded in the feature. Actually recording and retrieving topological entities are the two aspects of the same problem.",
       "bbox": {
@@ -3467,9 +3524,9 @@
       }
     },
     {
-      "id": "#/texts/211",
+      "id": "#/texts/214",
       "page": 7,
-      "order": 21,
+      "order": 23,
       "role": "heading",
       "text": "5.1. Record topological entity",
       "bbox": {
@@ -3486,9 +3543,9 @@
       }
     },
     {
-      "id": "#/texts/212",
+      "id": "#/texts/215",
       "page": 7,
-      "order": 22,
+      "order": 24,
       "role": "paragraph",
       "text": "In our mechanism, the real name recording a topological entity is derived from the original name of a topological face. Thus referencing a topological entity is implemented indirectly. This is important for history and constraint based solid modeling system in which directly referencing topological entities may cause serious inconsistency problems.",
       "bbox": {
@@ -3505,9 +3562,9 @@
       }
     },
     {
-      "id": "#/texts/213",
+      "id": "#/texts/216",
       "page": 7,
-      "order": 23,
+      "order": 25,
       "role": "heading",
       "text": "5.1.1. Record topological face",
       "bbox": {
@@ -3524,9 +3581,9 @@
       }
     },
     {
-      "id": "#/texts/214",
+      "id": "#/texts/217",
       "page": 7,
-      "order": 24,
+      "order": 26,
       "role": "paragraph",
       "text": "Generally speaking, it's enough to record a topological face with the real name attached to it. Nevertheless, because of the split of topological face, things get a little complicated In order to distinguish those faces originated from the same face from each other, it is necessary to record a topological face with the combination of the real name attached to it and some specific information that can tell this face from the other. Therefore the real name for a topological face is",
       "bbox": {
@@ -3543,9 +3600,9 @@
       }
     },
     {
-      "id": "#/texts/216",
+      "id": "#/texts/219",
       "page": 7,
-      "order": 25,
+      "order": 27,
       "role": "paragraph",
       "text": "where ON(F) is the original name of the face F and symbol SI is the parametric space information that can eliminate ambiguity.",
       "bbox": {
@@ -3562,9 +3619,9 @@
       }
     },
     {
-      "id": "#/texts/217",
+      "id": "#/texts/220",
       "page": 7,
-      "order": 26,
+      "order": 28,
       "role": "heading",
       "text": "5.1.2. Record topological edge",
       "bbox": {
@@ -3581,9 +3638,9 @@
       }
     },
     {
-      "id": "#/texts/218",
+      "id": "#/texts/221",
       "page": 7,
-      "order": 27,
+      "order": 29,
       "role": "paragraph",
       "text": "Geometrically two intersected faces can express an edge in 3D space. We can take this into the consideration of recording a topological edge. It is natural to record a topological edge through recording its adjacent topological faces. If face F, and face F2 are the adjacent faces of an edge E, the real name for this topological edge is expressed by",
       "bbox": {
@@ -3600,7 +3657,7 @@
       }
     },
     {
-      "id": "#/texts/222",
+      "id": "#/texts/225",
       "page": 8,
       "order": 1,
       "role": "caption",
@@ -3619,7 +3676,7 @@
       }
     },
     {
-      "id": "#/texts/223",
+      "id": "#/texts/226",
       "page": 8,
       "order": 2,
       "role": "paragraph",
@@ -3638,7 +3695,7 @@
       }
     },
     {
-      "id": "#/texts/224",
+      "id": "#/texts/227",
       "page": 8,
       "order": 3,
       "role": "paragraph",
@@ -3657,7 +3714,7 @@
       }
     },
     {
-      "id": "#/texts/225",
+      "id": "#/texts/228",
       "page": 8,
       "order": 4,
       "role": "paragraph",
@@ -3676,17 +3733,17 @@
       }
     },
     {
-      "id": "#/texts/226",
+      "id": "#/texts/229",
       "page": 8,
       "order": 5,
       "role": "paragraph",
       "text": "Vertices",
       "bbox": {
-        "x0": 279.47,
+        "x0": 281.13,
         "y0": 115.89,
         "x1": 330.74,
         "y1": 127.48,
-        "width": 51.27,
+        "width": 49.61,
         "height": 11.59
       },
       "meta": {
@@ -3695,7 +3752,7 @@
       }
     },
     {
-      "id": "#/texts/227",
+      "id": "#/texts/230",
       "page": 8,
       "order": 6,
       "role": "paragraph",
@@ -3714,7 +3771,7 @@
       }
     },
     {
-      "id": "#/texts/228",
+      "id": "#/texts/231",
       "page": 8,
       "order": 7,
       "role": "paragraph",
@@ -3733,17 +3790,17 @@
       }
     },
     {
-      "id": "#/texts/229",
+      "id": "#/texts/232",
       "page": 8,
       "order": 8,
       "role": "paragraph",
       "text": "Original Names for",
       "bbox": {
-        "x0": 183.56,
+        "x0": 181.91,
         "y0": 248.26,
         "x1": 291.05,
         "y1": 259.92,
-        "width": 107.49,
+        "width": 109.14,
         "height": 11.66
       },
       "meta": {
@@ -3752,7 +3809,7 @@
       }
     },
     {
-      "id": "#/texts/230",
+      "id": "#/texts/233",
       "page": 8,
       "order": 9,
       "role": "paragraph",
@@ -3771,7 +3828,7 @@
       }
     },
     {
-      "id": "#/texts/231",
+      "id": "#/texts/234",
       "page": 8,
       "order": 10,
       "role": "paragraph",
@@ -3790,7 +3847,7 @@
       }
     },
     {
-      "id": "#/texts/232",
+      "id": "#/texts/235",
       "page": 8,
       "order": 11,
       "role": "heading",
@@ -3809,7 +3866,7 @@
       }
     },
     {
-      "id": "#/texts/233",
+      "id": "#/texts/236",
       "page": 8,
       "order": 12,
       "role": "paragraph",
@@ -3828,7 +3885,7 @@
       }
     },
     {
-      "id": "#/texts/235",
+      "id": "#/texts/238",
       "page": 8,
       "order": 13,
       "role": "paragraph",
@@ -3847,7 +3904,7 @@
       }
     },
     {
-      "id": "#/texts/236",
+      "id": "#/texts/239",
       "page": 8,
       "order": 14,
       "role": "paragraph",
@@ -3866,7 +3923,7 @@
       }
     },
     {
-      "id": "#/texts/238",
+      "id": "#/texts/241",
       "page": 8,
       "order": 15,
       "role": "paragraph",
@@ -3885,7 +3942,7 @@
       }
     },
     {
-      "id": "#/texts/239",
+      "id": "#/texts/242",
       "page": 8,
       "order": 16,
       "role": "paragraph",
@@ -3904,7 +3961,7 @@
       }
     },
     {
-      "id": "#/texts/240",
+      "id": "#/texts/243",
       "page": 8,
       "order": 17,
       "role": "paragraph",
@@ -3923,7 +3980,7 @@
       }
     },
     {
-      "id": "#/texts/241",
+      "id": "#/texts/244",
       "page": 8,
       "order": 18,
       "role": "caption",
@@ -3942,7 +3999,7 @@
       }
     },
     {
-      "id": "#/texts/242",
+      "id": "#/texts/245",
       "page": 8,
       "order": 19,
       "role": "paragraph",
@@ -3961,18 +4018,18 @@
       }
     },
     {
-      "id": "#/texts/243",
+      "id": "#/texts/246",
       "page": 8,
       "order": 20,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
-        "x0": 228.21,
+        "x0": 229.86,
         "y0": 908.88,
         "x1": 244.75,
-        "y1": 920.47,
-        "width": 16.54,
-        "height": 11.59
+        "y1": 918.82,
+        "width": 14.89,
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -3980,18 +4037,18 @@
       }
     },
     {
-      "id": "#/texts/244",
+      "id": "#/texts/247",
       "page": 8,
       "order": 21,
       "role": "paragraph",
       "text": "F3",
       "bbox": {
-        "x0": 276.17,
+        "x0": 277.82,
         "y0": 927.09,
         "x1": 292.7,
-        "y1": 938.68,
-        "width": 16.53,
-        "height": 11.59
+        "y1": 937.03,
+        "width": 14.88,
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -3999,7 +4056,7 @@
       }
     },
     {
-      "id": "#/texts/245",
+      "id": "#/texts/248",
       "page": 8,
       "order": 22,
       "role": "caption",
@@ -4018,7 +4075,7 @@
       }
     },
     {
-      "id": "#/texts/246",
+      "id": "#/texts/249",
       "page": 8,
       "order": 23,
       "role": "paragraph",
@@ -4037,7 +4094,7 @@
       }
     },
     {
-      "id": "#/texts/247",
+      "id": "#/texts/250",
       "page": 8,
       "order": 24,
       "role": "paragraph",
@@ -4056,7 +4113,7 @@
       }
     },
     {
-      "id": "#/texts/248",
+      "id": "#/texts/251",
       "page": 8,
       "order": 25,
       "role": "paragraph",
@@ -4075,7 +4132,7 @@
       }
     },
     {
-      "id": "#/texts/249",
+      "id": "#/texts/252",
       "page": 8,
       "order": 26,
       "role": "paragraph",
@@ -4094,7 +4151,7 @@
       }
     },
     {
-      "id": "#/texts/250",
+      "id": "#/texts/253",
       "page": 8,
       "order": 27,
       "role": "heading",
@@ -4113,7 +4170,7 @@
       }
     },
     {
-      "id": "#/texts/251",
+      "id": "#/texts/254",
       "page": 8,
       "order": 28,
       "role": "paragraph",
@@ -4132,7 +4189,7 @@
       }
     },
     {
-      "id": "#/texts/252",
+      "id": "#/texts/255",
       "page": 8,
       "order": 29,
       "role": "heading",
@@ -4151,7 +4208,7 @@
       }
     },
     {
-      "id": "#/texts/253",
+      "id": "#/texts/256",
       "page": 8,
       "order": 30,
       "role": "paragraph",
@@ -4170,7 +4227,7 @@
       }
     },
     {
-      "id": "#/texts/254",
+      "id": "#/texts/257",
       "page": 8,
       "order": 31,
       "role": "heading",
@@ -4189,7 +4246,7 @@
       }
     },
     {
-      "id": "#/texts/255",
+      "id": "#/texts/258",
       "page": 8,
       "order": 32,
       "role": "paragraph",
@@ -4208,7 +4265,7 @@
       }
     },
     {
-      "id": "#/texts/256",
+      "id": "#/texts/259",
       "page": 8,
       "order": 33,
       "role": "paragraph",
@@ -4227,7 +4284,7 @@
       }
     },
     {
-      "id": "#/texts/257",
+      "id": "#/texts/260",
       "page": 8,
       "order": 34,
       "role": "list_item",
@@ -4246,7 +4303,7 @@
       }
     },
     {
-      "id": "#/texts/258",
+      "id": "#/texts/261",
       "page": 8,
       "order": 35,
       "role": "list_item",
@@ -4265,7 +4322,7 @@
       }
     },
     {
-      "id": "#/texts/259",
+      "id": "#/texts/262",
       "page": 8,
       "order": 36,
       "role": "list_item",
@@ -4284,9 +4341,28 @@
       }
     },
     {
-      "id": "#/texts/260",
+      "id": "#/texts/263",
       "page": 8,
       "order": 37,
+      "role": "list_item",
+      "text": "^0=0",
+      "bbox": {
+        "x0": 472.96,
+        "y0": 970.05,
+        "x1": 580.45,
+        "y1": 986.71,
+        "width": 107.49,
+        "height": 16.66
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "(2) ^0=0"
+      }
+    },
+    {
+      "id": "#/texts/264",
+      "page": 8,
+      "order": 38,
       "role": "list_item",
       "text": "13 0 14 = Д",
       "bbox": {
@@ -4303,9 +4379,9 @@
       }
     },
     {
-      "id": "#/texts/261",
+      "id": "#/texts/265",
       "page": 8,
-      "order": 38,
+      "order": 39,
       "role": "list_item",
       "text": "1, and 13 are strongly symmetric to each other and",
       "bbox": {
@@ -4322,9 +4398,9 @@
       }
     },
     {
-      "id": "#/texts/262",
+      "id": "#/texts/266",
       "page": 8,
-      "order": 39,
+      "order": 40,
       "role": "list_item",
       "text": "12 and 14 are weekly symmetric to each other,",
       "bbox": {
@@ -4341,7 +4417,7 @@
       }
     },
     {
-      "id": "#/texts/265",
+      "id": "#/texts/269",
       "page": 9,
       "order": 1,
       "role": "caption",
@@ -4360,7 +4436,7 @@
       }
     },
     {
-      "id": "#/texts/266",
+      "id": "#/texts/270",
       "page": 9,
       "order": 2,
       "role": "paragraph",
@@ -4379,7 +4455,7 @@
       }
     },
     {
-      "id": "#/texts/267",
+      "id": "#/texts/271",
       "page": 9,
       "order": 3,
       "role": "paragraph",
@@ -4398,7 +4474,7 @@
       }
     },
     {
-      "id": "#/texts/268",
+      "id": "#/texts/272",
       "page": 9,
       "order": 4,
       "role": "paragraph",
@@ -4417,7 +4493,7 @@
       }
     },
     {
-      "id": "#/texts/269",
+      "id": "#/texts/273",
       "page": 9,
       "order": 5,
       "role": "paragraph",
@@ -4436,18 +4512,18 @@
       }
     },
     {
-      "id": "#/texts/270",
+      "id": "#/texts/274",
       "page": 9,
       "order": 6,
       "role": "paragraph",
       "text": "v2",
       "bbox": {
-        "x0": 282.78,
+        "x0": 281.13,
         "y0": 187.07,
         "x1": 297.67,
-        "y1": 197.01,
-        "width": 14.89,
-        "height": 9.94
+        "y1": 198.66,
+        "width": 16.54,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -4455,7 +4531,7 @@
       }
     },
     {
-      "id": "#/texts/271",
+      "id": "#/texts/275",
       "page": 9,
       "order": 7,
       "role": "paragraph",
@@ -4474,7 +4550,7 @@
       }
     },
     {
-      "id": "#/texts/272",
+      "id": "#/texts/276",
       "page": 9,
       "order": 8,
       "role": "paragraph",
@@ -4493,7 +4569,7 @@
       }
     },
     {
-      "id": "#/texts/273",
+      "id": "#/texts/277",
       "page": 9,
       "order": 9,
       "role": "list_item",
@@ -4512,7 +4588,7 @@
       }
     },
     {
-      "id": "#/texts/274",
+      "id": "#/texts/278",
       "page": 9,
       "order": 10,
       "role": "list_item",
@@ -4531,7 +4607,7 @@
       }
     },
     {
-      "id": "#/texts/275",
+      "id": "#/texts/279",
       "page": 9,
       "order": 11,
       "role": "list_item",
@@ -4550,7 +4626,7 @@
       }
     },
     {
-      "id": "#/texts/276",
+      "id": "#/texts/280",
       "page": 9,
       "order": 12,
       "role": "caption",
@@ -4569,7 +4645,7 @@
       }
     },
     {
-      "id": "#/texts/277",
+      "id": "#/texts/281",
       "page": 9,
       "order": 13,
       "role": "paragraph",
@@ -4588,7 +4664,7 @@
       }
     },
     {
-      "id": "#/texts/278",
+      "id": "#/texts/282",
       "page": 9,
       "order": 14,
       "role": "paragraph",
@@ -4607,7 +4683,7 @@
       }
     },
     {
-      "id": "#/texts/279",
+      "id": "#/texts/283",
       "page": 9,
       "order": 15,
       "role": "paragraph",
@@ -4615,9 +4691,9 @@
       "bbox": {
         "x0": 100.88,
         "y0": 774.78,
-        "x1": 117.41,
+        "x1": 119.07,
         "y1": 786.37,
-        "width": 16.53,
+        "width": 18.19,
         "height": 11.59
       },
       "meta": {
@@ -4626,7 +4702,7 @@
       }
     },
     {
-      "id": "#/texts/280",
+      "id": "#/texts/284",
       "page": 9,
       "order": 16,
       "role": "paragraph",
@@ -4645,7 +4721,7 @@
       }
     },
     {
-      "id": "#/texts/281",
+      "id": "#/texts/285",
       "page": 9,
       "order": 17,
       "role": "paragraph",
@@ -4664,7 +4740,7 @@
       }
     },
     {
-      "id": "#/texts/282",
+      "id": "#/texts/286",
       "page": 9,
       "order": 18,
       "role": "paragraph",
@@ -4683,7 +4759,7 @@
       }
     },
     {
-      "id": "#/texts/283",
+      "id": "#/texts/287",
       "page": 9,
       "order": 19,
       "role": "paragraph",
@@ -4702,18 +4778,18 @@
       }
     },
     {
-      "id": "#/texts/284",
+      "id": "#/texts/288",
       "page": 9,
       "order": 20,
       "role": "paragraph",
       "text": "location",
       "bbox": {
-        "x0": 305.81,
-        "y0": 878.42,
+        "x0": 304.15,
+        "y0": 878.4,
         "x1": 354.02,
-        "y1": 889.68,
-        "width": 48.21,
-        "height": 11.26
+        "y1": 889.7,
+        "width": 49.87,
+        "height": 11.3
       },
       "meta": {
         "docling_label": "text",
@@ -4721,18 +4797,18 @@
       }
     },
     {
-      "id": "#/texts/285",
+      "id": "#/texts/289",
       "page": 9,
       "order": 21,
       "role": "paragraph",
       "text": "gesture",
       "bbox": {
-        "x0": 304.17,
-        "y0": 976.24,
-        "x1": 347.39,
-        "y1": 987.21,
-        "width": 43.22,
-        "height": 10.97
+        "x0": 304.19,
+        "y0": 976.38,
+        "x1": 347.36,
+        "y1": 987.07,
+        "width": 43.17,
+        "height": 10.69
       },
       "meta": {
         "docling_label": "text",
@@ -4740,7 +4816,7 @@
       }
     },
     {
-      "id": "#/texts/286",
+      "id": "#/texts/290",
       "page": 9,
       "order": 22,
       "role": "paragraph",
@@ -4759,11 +4835,11 @@
       }
     },
     {
-      "id": "#/texts/287",
+      "id": "#/texts/291",
       "page": 9,
       "order": 23,
       "role": "paragraph",
-      "text": "The part in Fig. 14 is made by cutting two blind semicircle slots and a through semi-circle slot on the same face of a block. Vi and V2 are strongly symmetric to each other, V3 and V4 are moderately symmetric to each other and Vs and V6 are weakly symmetric to each other.",
+      "text": "The part in Fig. 14 is made by cutting two blind semicircle slots and a through semi-circle slot on the same face of a block. Vi and V2 are strongly symmetric to each other, V3 and V4 are moderately symmetric to each other and V5 and V6 are weakly symmetric to each other.",
       "bbox": {
         "x0": 433.27,
         "y0": 211.91,
@@ -4774,11 +4850,11 @@
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "The part in Fig. 14 is made by cutting two blind semicircle slots and a through semi-circle slot on the same face of a block. Vi and V2 are strongly symmetric to each other, V3 and V4 are moderately symmetric to each other and Vs and V6 are weakly symmetric to each other."
+        "docling_orig": "The part in Fig. 14 is made by cutting two blind semicircle slots and a through semi-circle slot on the same face of a block. Vi and V2 are strongly symmetric to each other, V3 and V4 are moderately symmetric to each other and V5 and V6 are weakly symmetric to each other."
       }
     },
     {
-      "id": "#/texts/288",
+      "id": "#/texts/292",
       "page": 9,
       "order": 24,
       "role": "paragraph",
@@ -4797,7 +4873,7 @@
       }
     },
     {
-      "id": "#/texts/289",
+      "id": "#/texts/293",
       "page": 9,
       "order": 25,
       "role": "heading",
@@ -4816,7 +4892,7 @@
       }
     },
     {
-      "id": "#/texts/290",
+      "id": "#/texts/294",
       "page": 9,
       "order": 26,
       "role": "paragraph",
@@ -4835,7 +4911,7 @@
       }
     },
     {
-      "id": "#/texts/291",
+      "id": "#/texts/295",
       "page": 9,
       "order": 27,
       "role": "paragraph",
@@ -4854,7 +4930,7 @@
       }
     },
     {
-      "id": "#/texts/294",
+      "id": "#/texts/298",
       "page": 10,
       "order": 1,
       "role": "caption",
@@ -4873,7 +4949,7 @@
       }
     },
     {
-      "id": "#/texts/295",
+      "id": "#/texts/299",
       "page": 10,
       "order": 2,
       "role": "paragraph",
@@ -4892,7 +4968,7 @@
       }
     },
     {
-      "id": "#/texts/296",
+      "id": "#/texts/300",
       "page": 10,
       "order": 3,
       "role": "paragraph",
@@ -4911,7 +4987,7 @@
       }
     },
     {
-      "id": "#/texts/297",
+      "id": "#/texts/301",
       "page": 10,
       "order": 4,
       "role": "list_item",
@@ -4930,7 +5006,7 @@
       }
     },
     {
-      "id": "#/texts/298",
+      "id": "#/texts/302",
       "page": 10,
       "order": 5,
       "role": "list_item",
@@ -4949,7 +5025,7 @@
       }
     },
     {
-      "id": "#/texts/299",
+      "id": "#/texts/303",
       "page": 10,
       "order": 6,
       "role": "list_item",
@@ -4968,7 +5044,7 @@
       }
     },
     {
-      "id": "#/texts/300",
+      "id": "#/texts/304",
       "page": 10,
       "order": 7,
       "role": "paragraph",
@@ -4987,18 +5063,18 @@
       }
     },
     {
-      "id": "#/texts/301",
+      "id": "#/texts/305",
       "page": 10,
       "order": 8,
       "role": "paragraph",
       "text": "The analysis for selecting the feature point, which determines the sorting order of topological entities, should be studied in detail. If a face is split into face A and face B, there exist several possibilities about what the corresponding parametric spaces could be. As depicted in Fig. 17, line",
       "bbox": {
         "x0": 66.08,
-        "y0": 584.4,
+        "y0": 582.74,
         "x1": 413.48,
         "y1": 667.35,
         "width": 347.4,
-        "height": 82.95
+        "height": 84.61
       },
       "meta": {
         "docling_label": "text",
@@ -5006,7 +5082,7 @@
       }
     },
     {
-      "id": "#/texts/302",
+      "id": "#/texts/306",
       "page": 10,
       "order": 9,
       "role": "caption",
@@ -5025,7 +5101,7 @@
       }
     },
     {
-      "id": "#/texts/303",
+      "id": "#/texts/307",
       "page": 10,
       "order": 10,
       "role": "paragraph",
@@ -5034,9 +5110,9 @@
         "x0": 165.37,
         "y0": 687.04,
         "x1": 175.29,
-        "y1": 695.32,
+        "y1": 696.98,
         "width": 9.92,
-        "height": 8.28
+        "height": 9.94
       },
       "meta": {
         "docling_label": "text",
@@ -5044,7 +5120,7 @@
       }
     },
     {
-      "id": "#/texts/304",
+      "id": "#/texts/308",
       "page": 10,
       "order": 11,
       "role": "paragraph",
@@ -5063,18 +5139,18 @@
       }
     },
     {
-      "id": "#/texts/305",
+      "id": "#/texts/309",
       "page": 10,
       "order": 12,
       "role": "paragraph",
       "text": "tl",
       "bbox": {
-        "x0": 246.4,
+        "x0": 244.75,
         "y0": 687.04,
         "x1": 259.63,
-        "y1": 696.98,
-        "width": 13.23,
-        "height": 9.94
+        "y1": 698.63,
+        "width": 14.88,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5082,17 +5158,17 @@
       }
     },
     {
-      "id": "#/texts/306",
+      "id": "#/texts/310",
       "page": 10,
       "order": 13,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
-        "x0": 178.6,
+        "x0": 180.25,
         "y0": 725.12,
         "x1": 193.48,
         "y1": 736.71,
-        "width": 14.88,
+        "width": 13.23,
         "height": 11.59
       },
       "meta": {
@@ -5101,7 +5177,7 @@
       }
     },
     {
-      "id": "#/texts/307",
+      "id": "#/texts/311",
       "page": 10,
       "order": 14,
       "role": "paragraph",
@@ -5110,9 +5186,9 @@
         "x0": 229.86,
         "y0": 725.12,
         "x1": 239.79,
-        "y1": 735.05,
+        "y1": 733.4,
         "width": 9.93,
-        "height": 9.93
+        "height": 8.28
       },
       "meta": {
         "docling_label": "text",
@@ -5120,7 +5196,7 @@
       }
     },
     {
-      "id": "#/texts/308",
+      "id": "#/texts/312",
       "page": 10,
       "order": 15,
       "role": "paragraph",
@@ -5139,7 +5215,7 @@
       }
     },
     {
-      "id": "#/texts/309",
+      "id": "#/texts/313",
       "page": 10,
       "order": 16,
       "role": "paragraph",
@@ -5158,7 +5234,7 @@
       }
     },
     {
-      "id": "#/texts/310",
+      "id": "#/texts/314",
       "page": 10,
       "order": 17,
       "role": "paragraph",
@@ -5177,7 +5253,7 @@
       }
     },
     {
-      "id": "#/texts/311",
+      "id": "#/texts/315",
       "page": 10,
       "order": 18,
       "role": "paragraph",
@@ -5196,7 +5272,7 @@
       }
     },
     {
-      "id": "#/texts/312",
+      "id": "#/texts/316",
       "page": 10,
       "order": 19,
       "role": "paragraph",
@@ -5215,7 +5291,7 @@
       }
     },
     {
-      "id": "#/texts/313",
+      "id": "#/texts/317",
       "page": 10,
       "order": 20,
       "role": "paragraph",
@@ -5234,18 +5310,18 @@
       }
     },
     {
-      "id": "#/texts/314",
+      "id": "#/texts/318",
       "page": 10,
       "order": 21,
       "role": "paragraph",
       "text": "s2",
       "bbox": {
-        "x0": 299.32,
+        "x0": 297.67,
         "y0": 796.31,
         "x1": 314.2,
-        "y1": 806.24,
-        "width": 14.88,
-        "height": 9.93
+        "y1": 807.9,
+        "width": 16.53,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5253,18 +5329,18 @@
       }
     },
     {
-      "id": "#/texts/315",
+      "id": "#/texts/319",
       "page": 10,
       "order": 22,
       "role": "paragraph",
       "text": "(g)",
       "bbox": {
-        "x0": 180.25,
+        "x0": 178.6,
         "y0": 829.42,
         "x1": 193.48,
-        "y1": 839.35,
-        "width": 13.23,
-        "height": 9.93
+        "y1": 841.01,
+        "width": 14.88,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5272,7 +5348,7 @@
       }
     },
     {
-      "id": "#/texts/316",
+      "id": "#/texts/320",
       "page": 10,
       "order": 23,
       "role": "paragraph",
@@ -5291,7 +5367,7 @@
       }
     },
     {
-      "id": "#/texts/317",
+      "id": "#/texts/321",
       "page": 10,
       "order": 24,
       "role": "paragraph",
@@ -5310,9 +5386,28 @@
       }
     },
     {
-      "id": "#/texts/318",
+      "id": "#/texts/322",
       "page": 10,
       "order": 25,
+      "role": "paragraph",
+      "text": "14",
+      "bbox": {
+        "x0": 163.72,
+        "y0": 855.91,
+        "x1": 180.25,
+        "y1": 870.81,
+        "width": 16.53,
+        "height": 14.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "14"
+      }
+    },
+    {
+      "id": "#/texts/323",
+      "page": 10,
+      "order": 26,
       "role": "paragraph",
       "text": "t2",
       "bbox": {
@@ -5329,18 +5424,18 @@
       }
     },
     {
-      "id": "#/texts/319",
+      "id": "#/texts/324",
       "page": 10,
-      "order": 26,
+      "order": 27,
       "role": "paragraph",
       "text": "(a)",
       "bbox": {
-        "x0": 178.6,
+        "x0": 180.25,
         "y0": 898.95,
         "x1": 195.14,
-        "y1": 910.54,
-        "width": 16.54,
-        "height": 11.59
+        "y1": 908.88,
+        "width": 14.89,
+        "height": 9.93
       },
       "meta": {
         "docling_label": "text",
@@ -5348,9 +5443,9 @@
       }
     },
     {
-      "id": "#/texts/320",
+      "id": "#/texts/325",
       "page": 10,
-      "order": 27,
+      "order": 28,
       "role": "paragraph",
       "text": "(b)p,",
       "bbox": {
@@ -5367,9 +5462,9 @@
       }
     },
     {
-      "id": "#/texts/321",
+      "id": "#/texts/326",
       "page": 10,
-      "order": 28,
+      "order": 29,
       "role": "paragraph",
       "text": "(c)",
       "bbox": {
@@ -5386,9 +5481,9 @@
       }
     },
     {
-      "id": "#/texts/322",
+      "id": "#/texts/327",
       "page": 10,
-      "order": 29,
+      "order": 30,
       "role": "paragraph",
       "text": "p2g",
       "bbox": {
@@ -5405,9 +5500,9 @@
       }
     },
     {
-      "id": "#/texts/323",
+      "id": "#/texts/328",
       "page": 10,
-      "order": 30,
+      "order": 31,
       "role": "paragraph",
       "text": "sl",
       "bbox": {
@@ -5424,9 +5519,9 @@
       }
     },
     {
-      "id": "#/texts/324",
+      "id": "#/texts/329",
       "page": 10,
-      "order": 31,
+      "order": 32,
       "role": "paragraph",
       "text": "(b) v",
       "bbox": {
@@ -5443,9 +5538,9 @@
       }
     },
     {
-      "id": "#/texts/325",
+      "id": "#/texts/330",
       "page": 10,
-      "order": 32,
+      "order": 33,
       "role": "paragraph",
       "text": "A",
       "bbox": {
@@ -5462,9 +5557,9 @@
       }
     },
     {
-      "id": "#/texts/326",
+      "id": "#/texts/331",
       "page": 10,
-      "order": 33,
+      "order": 34,
       "role": "paragraph",
       "text": "(d)",
       "bbox": {
@@ -5481,9 +5576,9 @@
       }
     },
     {
-      "id": "#/texts/327",
+      "id": "#/texts/332",
       "page": 10,
-      "order": 34,
+      "order": 35,
       "role": "paragraph",
       "text": "(f)",
       "bbox": {
@@ -5500,9 +5595,9 @@
       }
     },
     {
-      "id": "#/texts/328",
+      "id": "#/texts/333",
       "page": 10,
-      "order": 35,
+      "order": 36,
       "role": "paragraph",
       "text": "s2",
       "bbox": {
@@ -5519,16 +5614,16 @@
       }
     },
     {
-      "id": "#/texts/329",
+      "id": "#/texts/334",
       "page": 10,
-      "order": 36,
+      "order": 37,
       "role": "paragraph",
       "text": "(g)",
       "bbox": {
         "x0": 178.6,
-        "y0": 1003.25,
+        "y0": 1001.59,
         "x1": 193.48,
-        "y1": 1014.84,
+        "y1": 1013.18,
         "width": 14.88,
         "height": 11.59
       },
@@ -5538,9 +5633,9 @@
       }
     },
     {
-      "id": "#/texts/330",
+      "id": "#/texts/335",
       "page": 10,
-      "order": 37,
+      "order": 38,
       "role": "paragraph",
       "text": "(h)",
       "bbox": {
@@ -5557,17 +5652,17 @@
       }
     },
     {
-      "id": "#/texts/331",
+      "id": "#/texts/336",
       "page": 10,
-      "order": 38,
+      "order": 39,
       "role": "paragraph",
       "text": "(i)",
       "bbox": {
         "x0": 261.28,
         "y0": 1001.59,
-        "x1": 276.17,
+        "x1": 277.82,
         "y1": 1013.18,
-        "width": 14.89,
+        "width": 16.54,
         "height": 11.59
       },
       "meta": {
@@ -5576,9 +5671,9 @@
       }
     },
     {
-      "id": "#/texts/332",
+      "id": "#/texts/337",
       "page": 10,
-      "order": 39,
+      "order": 40,
       "role": "caption",
       "text": "Fig. 18. Obtain parametric space information",
       "bbox": {
@@ -5595,9 +5690,9 @@
       }
     },
     {
-      "id": "#/texts/333",
+      "id": "#/texts/338",
       "page": 10,
-      "order": 40,
+      "order": 41,
       "role": "paragraph",
       "text": "f1",
       "bbox": {
@@ -5614,17 +5709,36 @@
       }
     },
     {
-      "id": "#/texts/334",
+      "id": "#/texts/339",
       "page": 10,
-      "order": 41,
+      "order": 42,
+      "role": "paragraph",
+      "text": "V1",
+      "bbox": {
+        "x0": 486.19,
+        "y0": 140.72,
+        "x1": 499.42,
+        "y1": 149.0,
+        "width": 13.23,
+        "height": 8.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "V1"
+      }
+    },
+    {
+      "id": "#/texts/340",
+      "page": 10,
+      "order": 43,
       "role": "paragraph",
       "text": "f2",
       "bbox": {
         "x0": 539.11,
         "y0": 137.41,
-        "x1": 552.33,
+        "x1": 553.99,
         "y1": 150.65,
-        "width": 13.22,
+        "width": 14.88,
         "height": 13.24
       },
       "meta": {
@@ -5633,9 +5747,9 @@
       }
     },
     {
-      "id": "#/texts/335",
+      "id": "#/texts/341",
       "page": 10,
-      "order": 42,
+      "order": 44,
       "role": "paragraph",
       "text": "A B",
       "bbox": {
@@ -5652,9 +5766,9 @@
       }
     },
     {
-      "id": "#/texts/336",
+      "id": "#/texts/342",
       "page": 10,
-      "order": 43,
+      "order": 45,
       "role": "paragraph",
       "text": "0",
       "bbox": {
@@ -5671,18 +5785,18 @@
       }
     },
     {
-      "id": "#/texts/337",
+      "id": "#/texts/343",
       "page": 10,
-      "order": 44,
+      "order": 46,
       "role": "paragraph",
       "text": "u",
       "bbox": {
-        "x0": 679.67,
+        "x0": 678.02,
         "y0": 243.36,
         "x1": 689.59,
-        "y1": 253.3,
-        "width": 9.92,
-        "height": 9.94
+        "y1": 254.95,
+        "width": 11.57,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5690,9 +5804,9 @@
       }
     },
     {
-      "id": "#/texts/338",
+      "id": "#/texts/344",
       "page": 10,
-      "order": 45,
+      "order": 47,
       "role": "paragraph",
       "text": "1 D",
       "bbox": {
@@ -5709,9 +5823,9 @@
       }
     },
     {
-      "id": "#/texts/339",
+      "id": "#/texts/345",
       "page": 10,
-      "order": 46,
+      "order": 48,
       "role": "paragraph",
       "text": "s1 goes through the highest point of area A and is parallel to line v = 0. Line s2 goes through the lowest point of area A and is parallel to line v = 0. Line t1 is through the right point of area A and parallel to line u = 0. Line t2 is through the left point of area A and is parallel to line u = 0. The modalities of area B have the following three possibilities.",
       "bbox": {
@@ -5728,18 +5842,18 @@
       }
     },
     {
-      "id": "#/texts/340",
+      "id": "#/texts/346",
       "page": 10,
-      "order": 47,
+      "order": 49,
       "role": "list_item",
       "text": "Area B is in one of the four districts a, c, g and i. There are no intersecting points between area B and lines s1, s2, tl and t2.",
       "bbox": {
         "x0": 446.5,
         "y0": 418.85,
         "x1": 790.47,
-        "y1": 467.17,
+        "y1": 466.86,
         "width": 343.97,
-        "height": 48.32
+        "height": 48.01
       },
       "meta": {
         "docling_label": "list_item",
@@ -5747,9 +5861,9 @@
       }
     },
     {
-      "id": "#/texts/341",
+      "id": "#/texts/347",
       "page": 10,
-      "order": 48,
+      "order": 50,
       "role": "list_item",
       "text": "Area B intersects with lines sl, s2, tl and t2. Area B encompasses or is encompassed by area A",
       "bbox": {
@@ -5766,9 +5880,9 @@
       }
     },
     {
-      "id": "#/texts/342",
+      "id": "#/texts/348",
       "page": 10,
-      "order": 49,
+      "order": 51,
       "role": "list_item",
       "text": "Area B is in one of the four districts: b, d, f and h. There are no intersecting points between area B and lines sl, s2, tl and t2",
       "bbox": {
@@ -5785,9 +5899,9 @@
       }
     },
     {
-      "id": "#/texts/343",
+      "id": "#/texts/349",
       "page": 10,
-      "order": 50,
+      "order": 52,
       "role": "paragraph",
       "text": "In fact case 3 and case 2 are the same because if Area A and Area B are exchanged, case 3 now becomes case 2.",
       "bbox": {
@@ -5804,9 +5918,9 @@
       }
     },
     {
-      "id": "#/texts/344",
+      "id": "#/texts/350",
       "page": 10,
-      "order": 51,
+      "order": 53,
       "role": "paragraph",
       "text": "As to case 1, any two points in area A and area B can be treated as feature points. In order to regularize the algorithm, the left points of area A and Area B are selected as feature points. As to case 2, it is more complicated. As depicted in Fig. 17(b), line s1 intersects with area B and the intersecting points are point ple and point p2. The top point of area A is point Pa. Point Pa can be selected as the feature point of area A and Point Pe the feature point of area B. If there are intersected points in both u and v directions, select the point in u direction as the feature point. If there are more intersected points in u or v direction, select the point whose u or v value is smallest as the feature point. The most important of all, the feature points of two topological entities that may generate ambiguity must be different.",
       "bbox": {
@@ -5823,9 +5937,9 @@
       }
     },
     {
-      "id": "#/texts/345",
+      "id": "#/texts/351",
       "page": 10,
-      "order": 52,
+      "order": 54,
       "role": "paragraph",
       "text": "The principle of selecting feature points is valid not only to topological faces, but also to topological edge and topological vertices. As to a vertex, the feature point is the corresponding point in the parametric space.",
       "bbox": {
@@ -5842,18 +5956,18 @@
       }
     },
     {
-      "id": "#/texts/346",
+      "id": "#/texts/352",
       "page": 10,
-      "order": 53,
+      "order": 55,
       "role": "paragraph",
       "text": "It can be concluded that the parametric space information of a topological entity is related to one of the adjacent faces",
       "bbox": {
         "x0": 446.5,
         "y0": 918.73,
         "x1": 792.12,
-        "y1": 950.39,
+        "y1": 952.05,
         "width": 345.62,
-        "height": 31.66
+        "height": 33.32
       },
       "meta": {
         "docling_label": "text",
@@ -5861,17 +5975,17 @@
       }
     },
     {
-      "id": "#/texts/347",
+      "id": "#/texts/353",
       "page": 10,
-      "order": 54,
+      "order": 56,
       "role": "caption",
       "text": "Table 1 (u, v) value for each point",
       "bbox": {
         "x0": 444.84,
         "y0": 966.72,
-        "x1": 568.87,
+        "x1": 570.53,
         "y1": 993.38,
-        "width": 124.03,
+        "width": 125.69,
         "height": 26.66
       },
       "meta": {
@@ -5880,7 +5994,7 @@
       }
     },
     {
-      "id": "#/texts/350",
+      "id": "#/texts/356",
       "page": 11,
       "order": 1,
       "role": "caption",
@@ -5899,7 +6013,7 @@
       }
     },
     {
-      "id": "#/texts/351",
+      "id": "#/texts/357",
       "page": 11,
       "order": 2,
       "role": "paragraph",
@@ -5918,7 +6032,7 @@
       }
     },
     {
-      "id": "#/texts/352",
+      "id": "#/texts/358",
       "page": 11,
       "order": 3,
       "role": "paragraph",
@@ -5937,7 +6051,7 @@
       }
     },
     {
-      "id": "#/texts/353",
+      "id": "#/texts/359",
       "page": 11,
       "order": 4,
       "role": "paragraph",
@@ -5956,37 +6070,18 @@
       }
     },
     {
-      "id": "#/texts/354",
+      "id": "#/texts/360",
       "page": 11,
       "order": 5,
       "role": "paragraph",
-      "text": "E1",
-      "bbox": {
-        "x0": 201.75,
-        "y0": 120.85,
-        "x1": 218.29,
-        "y1": 130.79,
-        "width": 16.54,
-        "height": 9.94
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "E1"
-      }
-    },
-    {
-      "id": "#/texts/355",
-      "page": 11,
-      "order": 6,
-      "role": "paragraph",
       "text": "V1",
       "bbox": {
-        "x0": 190.18,
+        "x0": 188.52,
         "y0": 139.06,
         "x1": 203.4,
-        "y1": 149.0,
-        "width": 13.22,
-        "height": 9.94
+        "y1": 150.65,
+        "width": 14.88,
+        "height": 11.59
       },
       "meta": {
         "docling_label": "text",
@@ -5994,7 +6089,26 @@
       }
     },
     {
-      "id": "#/texts/356",
+      "id": "#/texts/361",
+      "page": 11,
+      "order": 6,
+      "role": "paragraph",
+      "text": "E1",
+      "bbox": {
+        "x0": 201.75,
+        "y0": 120.85,
+        "x1": 218.29,
+        "y1": 132.44,
+        "width": 16.54,
+        "height": 11.59
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "E1"
+      }
+    },
+    {
+      "id": "#/texts/362",
       "page": 11,
       "order": 7,
       "role": "paragraph",
@@ -6003,9 +6117,9 @@
         "x0": 233.17,
         "y0": 125.82,
         "x1": 276.17,
-        "y1": 142.38,
+        "y1": 142.37,
         "width": 43.0,
-        "height": 16.56
+        "height": 16.55
       },
       "meta": {
         "docling_label": "text",
@@ -6013,7 +6127,7 @@
       }
     },
     {
-      "id": "#/texts/357",
+      "id": "#/texts/363",
       "page": 11,
       "order": 8,
       "role": "paragraph",
@@ -6032,7 +6146,7 @@
       }
     },
     {
-      "id": "#/texts/358",
+      "id": "#/texts/364",
       "page": 11,
       "order": 9,
       "role": "paragraph",
@@ -6051,7 +6165,7 @@
       }
     },
     {
-      "id": "#/texts/360",
+      "id": "#/texts/366",
       "page": 11,
       "order": 10,
       "role": "paragraph",
@@ -6070,18 +6184,18 @@
       }
     },
     {
-      "id": "#/texts/361",
+      "id": "#/texts/367",
       "page": 11,
       "order": 11,
       "role": "paragraph",
       "text": "The following example illustrates how to obtain the parametric space information of a topological entity. The part in Fig. 18 consists of a block feature, a through slot feature and a blind slot. The valid parametric space of the top face is the hatched areas. The coordinates of every point are depicted in Table 1.",
       "bbox": {
-        "x0": 56.23,
+        "x0": 56.14,
         "y0": 455.2,
         "x1": 401.85,
-        "y1": 556.26,
-        "width": 345.62,
-        "height": 101.06
+        "y1": 556.7,
+        "width": 345.71,
+        "height": 101.5
       },
       "meta": {
         "docling_label": "text",
@@ -6089,7 +6203,7 @@
       }
     },
     {
-      "id": "#/texts/362",
+      "id": "#/texts/368",
       "page": 11,
       "order": 12,
       "role": "paragraph",
@@ -6108,7 +6222,7 @@
       }
     },
     {
-      "id": "#/texts/363",
+      "id": "#/texts/369",
       "page": 11,
       "order": 13,
       "role": "heading",
@@ -6127,7 +6241,7 @@
       }
     },
     {
-      "id": "#/texts/364",
+      "id": "#/texts/370",
       "page": 11,
       "order": 14,
       "role": "paragraph",
@@ -6146,7 +6260,7 @@
       }
     },
     {
-      "id": "#/texts/365",
+      "id": "#/texts/371",
       "page": 11,
       "order": 15,
       "role": "caption",
@@ -6165,7 +6279,7 @@
       }
     },
     {
-      "id": "#/texts/366",
+      "id": "#/texts/372",
       "page": 11,
       "order": 16,
       "role": "paragraph",
@@ -6184,7 +6298,7 @@
       }
     },
     {
-      "id": "#/texts/367",
+      "id": "#/texts/373",
       "page": 11,
       "order": 17,
       "role": "paragraph",
@@ -6203,7 +6317,7 @@
       }
     },
     {
-      "id": "#/texts/368",
+      "id": "#/texts/374",
       "page": 11,
       "order": 18,
       "role": "paragraph",
@@ -6222,28 +6336,9 @@
       }
     },
     {
-      "id": "#/texts/369",
+      "id": "#/texts/375",
       "page": 11,
       "order": 19,
-      "role": "paragraph",
-      "text": "F1",
-      "bbox": {
-        "x0": 188.52,
-        "y0": 961.86,
-        "x1": 200.1,
-        "y1": 970.14,
-        "width": 11.58,
-        "height": 8.28
-      },
-      "meta": {
-        "docling_label": "text",
-        "docling_orig": "F1"
-      }
-    },
-    {
-      "id": "#/texts/370",
-      "page": 11,
-      "order": 20,
       "role": "paragraph",
       "text": "E2",
       "bbox": {
@@ -6260,9 +6355,9 @@
       }
     },
     {
-      "id": "#/texts/371",
+      "id": "#/texts/376",
       "page": 11,
-      "order": 21,
+      "order": 20,
       "role": "paragraph",
       "text": "F2",
       "bbox": {
@@ -6279,9 +6374,9 @@
       }
     },
     {
-      "id": "#/texts/372",
+      "id": "#/texts/377",
       "page": 11,
-      "order": 22,
+      "order": 21,
       "role": "caption",
       "text": "Fig. 21. Distinguish strongly symmetric edges.",
       "bbox": {
@@ -6298,9 +6393,9 @@
       }
     },
     {
-      "id": "#/texts/373",
+      "id": "#/texts/378",
       "page": 11,
-      "order": 23,
+      "order": 22,
       "role": "paragraph",
       "text": "E1",
       "bbox": {
@@ -6317,9 +6412,9 @@
       }
     },
     {
-      "id": "#/texts/374",
+      "id": "#/texts/379",
       "page": 11,
-      "order": 24,
+      "order": 23,
       "role": "paragraph",
       "text": "E2",
       "bbox": {
@@ -6336,9 +6431,9 @@
       }
     },
     {
-      "id": "#/texts/375",
+      "id": "#/texts/380",
       "page": 11,
-      "order": 25,
+      "order": 24,
       "role": "paragraph",
       "text": "for F, and F2 are [ON(F1), PSII] and [ON(F2), PS12], where ON(FI) is equal to ON(F2). PSI1 is different from PSI2, because according to the above method of selecting feature points, the feature point of PSI1 is the point in parametric space corresponding to vertex Vi and that of PSI2 V2.",
       "bbox": {
@@ -6355,9 +6450,9 @@
       }
     },
     {
-      "id": "#/texts/376",
+      "id": "#/texts/381",
       "page": 11,
-      "order": 26,
+      "order": 25,
       "role": "heading",
       "text": "6.4. Distinguish ambiguous edges",
       "bbox": {
@@ -6374,9 +6469,9 @@
       }
     },
     {
-      "id": "#/texts/377",
+      "id": "#/texts/382",
       "page": 11,
-      "order": 27,
+      "order": 26,
       "role": "paragraph",
       "text": "As discussed previously, ambiguous edges may be weakly, moderately or strongly symmetric to each other. Actually the ambiguities caused by weak and moderate symmetry have been solved through the real name of a topological edge. This is because there must exist weakly symmetric faces in the adjacent faces of topological edges and the real names of faces in a weakly symmetric face set are different from each other. In Fig. 19, Ej and E2 are moderately symmetric to each other. They can be distinguished from each other through the real names of their adjacent faces. Because RN(FI) is not equal to RN(F2), RN(E) is different from RN(E2). This is true to Ej and Ez in Fig. 20, where Ej and Ez are weakly symmetric to each other. The part in Fig. 20 is made by uniting two intersecting cylinders. As to strongly symmetric edges, it is necessary to calculate their parametric space information through which one edge can be distinguished from the others. The part in Fig. 21 is formed by cutting a 1 4 torus from a sphere. Ej and Ez are strongly symmetric to each other. Because the parametric space information of Ej is different from that of Ez. Ey and Ez can be distinguished form each other.",
       "bbox": {
@@ -6393,9 +6488,9 @@
       }
     },
     {
-      "id": "#/texts/378",
+      "id": "#/texts/383",
       "page": 11,
-      "order": 28,
+      "order": 27,
       "role": "heading",
       "text": "6.5. Distinguish ambiguous vertices",
       "bbox": {
@@ -6412,9 +6507,9 @@
       }
     },
     {
-      "id": "#/texts/379",
+      "id": "#/texts/384",
       "page": 11,
-      "order": 29,
+      "order": 28,
       "role": "paragraph",
       "text": "Similar to distinguishing ambiguous edges, moderately and faintly symmetric vertices can be distinguished directly through the real names of their adjacent faces. For examples, V, and V2 in Fig. 19 (moderately symmetric vertices) and V5 and V6 in Fig. 14 (weakly symmetric vertices) can be distinguished directly through their real names. As to strongly vertices, it is also needed to calculate their parametric space information to distinguish them. V2 and V3 in Fig. 19 are strongly symmetric to each other. It is the parametric space information of them that can tell V2 from V3.",
       "bbox": {
@@ -6431,18 +6526,18 @@
       }
     },
     {
-      "id": "#/texts/382",
+      "id": "#/texts/387",
       "page": 12,
       "order": 1,
       "role": "heading",
       "text": "7. Summary",
       "bbox": {
-        "x0": 67.77,
-        "y0": 90.89,
-        "x1": 143.9,
-        "y1": 106.11,
-        "width": 76.13,
-        "height": 15.22
+        "x0": 67.73,
+        "y0": 90.67,
+        "x1": 143.94,
+        "y1": 106.33,
+        "width": 76.21,
+        "height": 15.66
       },
       "meta": {
         "docling_label": "section_header",
@@ -6450,7 +6545,7 @@
       }
     },
     {
-      "id": "#/texts/383",
+      "id": "#/texts/388",
       "page": 12,
       "order": 2,
       "role": "paragraph",
@@ -6469,7 +6564,7 @@
       }
     },
     {
-      "id": "#/texts/384",
+      "id": "#/texts/389",
       "page": 12,
       "order": 3,
       "role": "heading",
@@ -6488,7 +6583,7 @@
       }
     },
     {
-      "id": "#/texts/385",
+      "id": "#/texts/390",
       "page": 12,
       "order": 4,
       "role": "paragraph",
@@ -6507,7 +6602,7 @@
       }
     },
     {
-      "id": "#/texts/386",
+      "id": "#/texts/391",
       "page": 12,
       "order": 5,
       "role": "heading",
@@ -6526,7 +6621,7 @@
       }
     },
     {
-      "id": "#/texts/387",
+      "id": "#/texts/392",
       "page": 12,
       "order": 6,
       "role": "list_item",
@@ -6545,7 +6640,7 @@
       }
     },
     {
-      "id": "#/texts/388",
+      "id": "#/texts/393",
       "page": 12,
       "order": 7,
       "role": "list_item",
@@ -6564,7 +6659,7 @@
       }
     },
     {
-      "id": "#/texts/389",
+      "id": "#/texts/394",
       "page": 12,
       "order": 8,
       "role": "list_item",
@@ -6583,7 +6678,7 @@
       }
     },
     {
-      "id": "#/texts/390",
+      "id": "#/texts/395",
       "page": 12,
       "order": 9,
       "role": "list_item",
@@ -6602,7 +6697,7 @@
       }
     },
     {
-      "id": "#/texts/391",
+      "id": "#/texts/396",
       "page": 12,
       "order": 10,
       "role": "list_item",
@@ -6621,7 +6716,7 @@
       }
     },
     {
-      "id": "#/texts/392",
+      "id": "#/texts/397",
       "page": 12,
       "order": 11,
       "role": "list_item",
@@ -6640,7 +6735,7 @@
       }
     },
     {
-      "id": "#/texts/393",
+      "id": "#/texts/398",
       "page": 12,
       "order": 12,
       "role": "list_item",
@@ -6659,7 +6754,7 @@
       }
     },
     {
-      "id": "#/texts/394",
+      "id": "#/texts/399",
       "page": 12,
       "order": 13,
       "role": "list_item",
@@ -6678,7 +6773,7 @@
       }
     },
     {
-      "id": "#/texts/395",
+      "id": "#/texts/400",
       "page": 12,
       "order": 14,
       "role": "paragraph",
@@ -6697,7 +6792,7 @@
       }
     },
     {
-      "id": "#/texts/396",
+      "id": "#/texts/401",
       "page": 12,
       "order": 15,
       "role": "paragraph",
@@ -6716,7 +6811,7 @@
       }
     },
     {
-      "id": "#/texts/397",
+      "id": "#/texts/402",
       "page": 12,
       "order": 16,
       "role": "paragraph",
@@ -6735,22 +6830,22 @@
       }
     },
     {
-      "id": "#/texts/398",
+      "id": "#/texts/403",
       "page": 12,
       "order": 17,
       "role": "paragraph",
-      "text": "Zhou Ji is a professor of mechanical engineering and president of HUST. His research interests include optimal design, Intelligent CAD and computer integrated manufacturing system. Zhou received his BS degree in mechanical engineering from TsingHua University and MS degree in mechanical engineering from HUST. He received his PhD degree in mechanical engineering of New York State University at Buffalo.",
+      "text": "Zhou Ji is a professor of mechanical engineering and president of HUST. His research interests include optimal design, Intelligent CAD and computer integrated manufacturing system. Zhou received his BS degree in mechanical engineering · from TsingHua University and MS degree in mechanical engineering from HUST. He received his PhD degree in mechanical engineering of New York State University at Buffalo.",
       "bbox": {
         "x0": 573.83,
         "y0": 622.48,
-        "x1": 792.17,
+        "x1": 792.12,
         "y1": 750.11,
-        "width": 218.34,
+        "width": 218.29,
         "height": 127.63
       },
       "meta": {
         "docling_label": "text",
-        "docling_orig": "Zhou Ji is a professor of mechanical engineering and president of HUST. His research interests include optimal design, Intelligent CAD and computer integrated manufacturing system. Zhou received his BS degree in mechanical engineering from TsingHua University and MS degree in mechanical engineering from HUST. He received his PhD degree in mechanical engineering of New York State University at Buffalo."
+        "docling_orig": "Zhou Ji is a professor of mechanical engineering and president of HUST. His research interests include optimal design, Intelligent CAD and computer integrated manufacturing system. Zhou received his BS degree in mechanical engineering · from TsingHua University and MS degree in mechanical engineering from HUST. He received his PhD degree in mechanical engineering of New York State University at Buffalo."
       }
     }
   ]

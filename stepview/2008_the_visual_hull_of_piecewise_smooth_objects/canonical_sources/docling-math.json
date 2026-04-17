@@ -190,7 +190,7 @@
     {
       "id": "docling-eq-0007",
       "kind": "display",
-      "display_latex": "(PI 41, 01) - P2 (42, 02)) · 1 (42,02) = 0",
+      "display_latex": "(PI 41, 01) - P2(42, 02)) · 11(42,02) = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -221,7 +221,7 @@
     {
       "id": "docling-eq-0008",
       "kind": "display",
-      "display_latex": "(PI (41,01) - P2 (42, 02)) · 12(42,02) = 0",
+      "display_latex": "(PI (41,01) - P2(42, 02)) · 12(42,02) =0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -252,7 +252,7 @@
     {
       "id": "docling-eq-0009",
       "kind": "display",
-      "display_latex": "((PI (41, 01) - P242,02) X NI (41, 01)) · 12(4202) = 0",
+      "display_latex": "(PI (41, 01) - P242,02) X NI(41, 01)) · 12(42,02) = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -283,7 +283,7 @@
     {
       "id": "docling-eq-0010",
       "kind": "display",
-      "display_latex": "(PI (41, 01) - C3 (U3)) x (P2 (42, 02) - C3 (13)) = 0",
+      "display_latex": "(PI (41, 01) - C3 (U3)) x (P2(42,02) - C3(13)) = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -314,7 +314,7 @@
     {
       "id": "docling-eq-0011",
       "kind": "display",
-      "display_latex": "(PI (41, 01) - C3 (13)) · 11(11,01) = 0",
+      "display_latex": "(PI (41, 01) - C3 13)) · 11(11,01) = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
@@ -345,7 +345,7 @@
     {
       "id": "docling-eq-0012",
       "kind": "display",
-      "display_latex": "(P2 (42, 02) - PI (41, 01)) · 12(42, 02) = 0",
+      "display_latex": "P2(42, 02) - PI (41, 01)) · 12(42, 02) = 0",
       "semantic_expr": null,
       "compiled_targets": {},
       "conversion": {
