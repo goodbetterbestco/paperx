@@ -7,7 +7,7 @@
   "terms": [
     {
       "canonical": "Computer",
-      "count": 228,
+      "count": 230,
       "papers": [
         "1990_curve_intersection_using_bezier_clipping",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
@@ -16,6 +16,7 @@
         "1990_ray_tracing_trimmed_rational_surface_patches",
         "1990_visibility_occlusion_and_the_aspect_graph",
         "1991_on_surfaces_and_their_contours",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
@@ -58,8 +59,28 @@
       "variants": []
     },
     {
+      "canonical": "contour",
+      "count": 210,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Figure",
-      "count": 212,
+      "count": 210,
       "papers": [
         "1967_quantitative_invisibility",
         "1984_occluding_contour_tell_us_about_solid_shape",
@@ -84,26 +105,6 @@
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "contour",
-      "count": 210,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -171,9 +172,8 @@
     },
     {
       "canonical": "visibility",
-      "count": 148,
+      "count": 147,
       "papers": [
-        "1967_quantitative_invisibility",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_hidden_curve_removal_for_free_form_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
@@ -746,27 +746,8 @@
       "variants": []
     },
     {
-      "canonical": "trimmed",
-      "count": 94,
-      "papers": [
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "representation",
-      "count": 92,
+      "count": 95,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
         "1990_curve_intersection_using_bezier_clipping",
@@ -797,6 +778,25 @@
         "2023_algebraic_smooth_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "trimmed",
+      "count": 94,
+      "papers": [
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -952,7 +952,7 @@
     },
     {
       "canonical": "view",
-      "count": 89,
+      "count": 87,
       "papers": [
         "1967_quantitative_invisibility",
         "1984_occluding_contour_tell_us_about_solid_shape",
@@ -1042,6 +1042,63 @@
       "variants": []
     },
     {
+      "canonical": "objects",
+      "count": 82,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "object",
+      "count": 80,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_curve_intersection_using_bezier_clipping",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_the_visibility_complex",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "algorithms",
       "count": 79,
       "papers": [
@@ -1098,69 +1155,42 @@
       "variants": []
     },
     {
-      "canonical": "object",
+      "canonical": "graph",
       "count": 78,
       "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_curve_intersection_using_bezier_clipping",
+        "1989_detecting_and_decomposing_self_overlapping_curves",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
         "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "1993_the_visibility_complex",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "objects",
-      "count": 78,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
         "1994_visibility_maps_and_spherical_algorithms",
         "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
         "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2000_representational_validity_of_boundary_representation_models",
         "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2009_self_overlapping_curves_revisited",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review"
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_detecting_weakly_simple_polygons",
+        "2016_recognizing_weakly_simple_polygons",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
     {
       "canonical": "solid",
-      "count": 77,
+      "count": 78,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
@@ -1188,12 +1218,13 @@
     },
     {
       "canonical": "polygon",
-      "count": 76,
+      "count": 77,
       "papers": [
         "1989_detecting_and_decomposing_self_overlapping_curves",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_hidden_curve_removal_for_free_form_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "2000_partitioning_trimmed_spline_surfaces_visibility",
         "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
         "2014_locally_injective_parametrization_fixed_boundaries",
@@ -1218,34 +1249,6 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "graph",
-      "count": 75,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_the_visibility_complex",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2009_self_overlapping_curves_revisited",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_detecting_weakly_simple_polygons",
-        "2016_recognizing_weakly_simple_polygons",
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
       ],
@@ -1318,6 +1321,25 @@
       "variants": []
     },
     {
+      "canonical": "aspect",
+      "count": 73,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "vertices",
       "count": 73,
       "papers": [
@@ -1344,32 +1366,15 @@
       "variants": []
     },
     {
-      "canonical": "aspect",
-      "count": 70,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Vision",
-      "count": 70,
+      "count": 72,
       "papers": [
         "1984_occluding_contour_tell_us_about_solid_shape",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_hidden_curve_removal_for_free_form_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
@@ -1585,6 +1590,33 @@
       "variants": []
     },
     {
+      "canonical": "graphs",
+      "count": 62,
+      "papers": [
+        "1989_detecting_and_decomposing_self_overlapping_curves",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1993_the_visibility_complex",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_boundary_representation_model_rectification",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "topological",
       "count": 62,
       "papers": [
@@ -1610,28 +1642,31 @@
       "variants": []
     },
     {
-      "canonical": "graphs",
-      "count": 61,
+      "canonical": "Image",
+      "count": 60,
       "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_the_visibility_complex",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
         "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_boundary_representation_model_rectification",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2000_representational_validity_of_boundary_representation_models",
         "2001_survey_of_aspect_graphs",
         "2004_the_visual_hull_of_smooth_curved_objects",
         "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
         "2015_detecting_weakly_simple_polygons",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2016_recognizing_weakly_simple_polygons",
         "2018_trimming_in_isogeometric_analysis_review",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -1661,6 +1696,35 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "shape",
+      "count": 60,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1998_cad_and_the_product_master_model",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -1695,34 +1759,6 @@
       "variants": []
     },
     {
-      "canonical": "Image",
-      "count": 59,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_detecting_weakly_simple_polygons",
-        "2016_recognizing_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "same",
       "count": 59,
       "papers": [
@@ -1744,34 +1780,6 @@
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "shape",
-      "count": 59,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1998_cad_and_the_product_master_model",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -1887,7 +1895,7 @@
     },
     {
       "canonical": "References",
-      "count": 54,
+      "count": 55,
       "papers": [
         "1967_quantitative_invisibility",
         "1984_occluding_contour_tell_us_about_solid_shape",
@@ -1899,6 +1907,7 @@
         "1990_ray_tracing_trimmed_rational_surface_patches",
         "1990_visibility_occlusion_and_the_aspect_graph",
         "1991_on_surfaces_and_their_contours",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
@@ -1947,23 +1956,44 @@
       "variants": []
     },
     {
-      "canonical": "rendering",
+      "canonical": "Aspect",
       "count": 54,
       "papers": [
-        "1967_quantitative_invisibility",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
         "2001_survey_of_aspect_graphs",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2004_the_visual_hull_of_smooth_curved_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "convex",
+      "count": 54,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1993_the_visibility_complex",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2001_boundary_representation_model_rectification",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
         "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -1980,23 +2010,6 @@
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Aspect",
-      "count": 53,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects"
       ],
       "variants": []
     },
@@ -2027,13 +2040,33 @@
       "variants": []
     },
     {
+      "canonical": "rendering",
+      "count": 53,
+      "papers": [
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "views",
       "count": 53,
       "papers": [
-        "1967_quantitative_invisibility",
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
@@ -2049,30 +2082,6 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "convex",
-      "count": 52,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_the_visibility_complex",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2001_boundary_representation_model_rectification",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -2210,6 +2219,25 @@
       "variants": []
     },
     {
+      "canonical": "Pattern",
+      "count": 49,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "subdivision",
       "count": 49,
       "papers": [
@@ -2290,24 +2318,6 @@
         "2019_line_drawings_from_3d_models",
         "2022_versality_of_central_projections_of_regular_surfaces",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Pattern",
-      "count": 47,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -2428,6 +2438,30 @@
       "variants": []
     },
     {
+      "canonical": "projection",
+      "count": 44,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "used",
       "count": 44,
       "papers": [
@@ -2522,29 +2556,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "projection",
-      "count": 43,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -2730,6 +2741,25 @@
       "variants": []
     },
     {
+      "canonical": "visual",
+      "count": 39,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "color",
       "count": 38,
       "papers": [
@@ -2738,6 +2768,28 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2019_line_drawings_from_3d_models",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "original",
+      "count": 38,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1994_surfaces_with_assigned_apparent_contour",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -2795,24 +2847,6 @@
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "visual",
-      "count": 38,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -2912,27 +2946,6 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "original",
-      "count": 37,
-      "papers": [
-        "1994_surfaces_with_assigned_apparent_contour",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -3056,6 +3069,28 @@
       "variants": []
     },
     {
+      "canonical": "recognition",
+      "count": 36,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_cad_and_the_product_master_model",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Sederberg",
       "count": 36,
       "papers": [
@@ -3175,27 +3210,29 @@
       "variants": []
     },
     {
-      "canonical": "time",
-      "count": 35,
+      "canonical": "applications",
+      "count": 34,
       "papers": [
-        "1967_quantitative_invisibility",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "1994_surfaces_with_assigned_apparent_contour",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2009_self_overlapping_curves_revisited",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
         "2015_detecting_weakly_simple_polygons",
-        "2016_recognizing_weakly_simple_polygons",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -3305,49 +3342,26 @@
       "variants": []
     },
     {
-      "canonical": "recognition",
+      "canonical": "time",
       "count": 34,
       "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_cad_and_the_product_master_model",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "applications",
-      "count": 33,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1994_surfaces_with_assigned_apparent_contour",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
         "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2009_self_overlapping_curves_revisited",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
         "2015_detecting_weakly_simple_polygons",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_topology_first_brep_meshing"
+        "2016_recognizing_weakly_simple_polygons",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -3390,6 +3404,43 @@
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Koenderink",
+      "count": 33,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "near",
+      "count": 33,
+      "papers": [
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_survey_of_aspect_graphs",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -3475,25 +3526,6 @@
       "variants": []
     },
     {
-      "canonical": "Koenderink",
-      "count": 32,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "London",
       "count": 32,
       "papers": [
@@ -3514,22 +3546,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2022_versality_of_central_projections_of_regular_surfaces"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "near",
-      "count": 32,
-      "papers": [
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2023_contesse_occluding_contours"
       ],
       "variants": []
     },
@@ -3614,6 +3630,51 @@
       "variants": []
     },
     {
+      "canonical": "vision",
+      "count": 32,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2019_line_drawings_from_3d_models",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Workshop",
+      "count": 32,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1993_the_visibility_complex",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2023_algebraic_smooth_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Zhang",
       "count": 32,
       "papers": [
@@ -3665,6 +3726,23 @@
       "variants": []
     },
     {
+      "canonical": "Bowyer",
+      "count": 31,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "corresponding",
       "count": 31,
       "papers": [
@@ -3683,48 +3761,6 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "solids",
-      "count": 31,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_boundary_representation_model_rectification",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "vision",
-      "count": 31,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2019_line_drawings_from_3d_models",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
@@ -3885,6 +3921,24 @@
       "variants": []
     },
     {
+      "canonical": "solids",
+      "count": 30,
+      "papers": [
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_boundary_representation_model_rectification",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Transactions",
       "count": 30,
       "papers": [
@@ -3903,48 +3957,12 @@
       "variants": []
     },
     {
-      "canonical": "Workshop",
-      "count": 30,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1993_the_visibility_complex",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2023_algebraic_smooth_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "back-facing",
       "count": 29,
       "papers": [
         "2014_smooth_surface_contours_accurate_topology",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Bowyer",
-      "count": 29,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -4046,30 +4064,6 @@
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Research",
-      "count": 29,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
-        "1998_cad_and_the_product_master_model",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2023_algebraic_smooth_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -4281,6 +4275,29 @@
       "variants": []
     },
     {
+      "canonical": "Research",
+      "count": 28,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "1998_cad_and_the_product_master_model",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2022_versality_of_central_projections_of_regular_surfaces",
+        "2023_algebraic_smooth_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "silhouettes",
       "count": 28,
       "papers": [
@@ -4444,6 +4461,26 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
         "2026_robust_tessellation_without_self_intersections",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Recognition",
+      "count": 27,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_cad_and_the_product_master_model",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2022_versality_of_central_projections_of_regular_surfaces",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -4712,29 +4749,6 @@
       "variants": []
     },
     {
-      "canonical": "perspective",
-      "count": 26,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2019_line_drawings_from_3d_models",
-        "2023_algebraic_smooth_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Pratt",
       "count": 26,
       "papers": [
@@ -4758,25 +4772,6 @@
         "1984_occluding_contour_tell_us_about_solid_shape",
         "2014_smooth_surface_contours_accurate_topology",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Recognition",
-      "count": 26,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_cad_and_the_product_master_model",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2022_versality_of_central_projections_of_regular_surfaces",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -4923,6 +4918,30 @@
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "perspective",
+      "count": 25,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2019_line_drawings_from_3d_models",
+        "2023_algebraic_smooth_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -5148,6 +5167,26 @@
         "2015_detecting_weakly_simple_polygons",
         "2022_versality_of_central_projections_of_regular_surfaces",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "polyhedral",
+      "count": 24,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -5563,6 +5602,24 @@
       "variants": []
     },
     {
+      "canonical": "Dyer",
+      "count": 22,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Industrial",
       "count": 22,
       "papers": [
@@ -5619,30 +5676,29 @@
       "variants": []
     },
     {
+      "canonical": "National",
+      "count": 22,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Pixar",
       "count": 22,
       "papers": [
         "2014_smooth_surface_contours_accurate_topology",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "polyhedral",
-      "count": 22,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -5656,6 +5712,25 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "sphere",
+      "count": 22,
+      "papers": [
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1994_surfaces_with_assigned_apparent_contour",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "2001_curve_evaluation_and_interrogation_on_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -5728,23 +5803,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2022_versality_of_central_projections_of_regular_surfaces",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Dyer",
-      "count": 21,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -5850,25 +5908,22 @@
       "variants": []
     },
     {
-      "canonical": "Report",
+      "canonical": "representations",
       "count": 21,
       "papers": [
-        "1967_quantitative_invisibility",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
         "2000_representational_validity_of_boundary_representation_models",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
+        "2001_boundary_representation_model_rectification",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
+        "2015_correct_resolution_trimmed_spline_surfaces",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2023_algebraic_smooth_occluding_contours"
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -5926,25 +5981,6 @@
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2019_line_drawings_from_3d_models",
         "2022_versality_of_central_projections_of_regular_surfaces"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "sphere",
-      "count": 21,
-      "papers": [
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1994_surfaces_with_assigned_apparent_contour",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "2001_curve_evaluation_and_interrogation_on_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
-        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -6179,6 +6215,22 @@
       "variants": []
     },
     {
+      "canonical": "Intell",
+      "count": 20,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "invalid",
       "count": 20,
       "papers": [
@@ -6200,19 +6252,6 @@
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "mechanical",
-      "count": 20,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
       ],
       "variants": []
     },
@@ -6259,21 +6298,24 @@
       "variants": []
     },
     {
-      "canonical": "representations",
+      "canonical": "Report",
       "count": 20,
       "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1997_a_mechanism_for_persistently_naming_topological_entities_in_history_based_parametric_solid_models",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
         "2000_representational_validity_of_boundary_representation_models",
-        "2001_boundary_representation_model_rectification",
+        "2006_computing_contour_generators_of_evolving_implicit_surfaces",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
-        "2026_topology_first_brep_meshing"
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2023_algebraic_smooth_occluding_contours"
       ],
       "variants": []
     },
@@ -6567,21 +6609,6 @@
       "variants": []
     },
     {
-      "canonical": "Intell",
-      "count": 19,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "interoperability",
       "count": 19,
       "papers": [
@@ -6686,19 +6713,14 @@
       "variants": []
     },
     {
-      "canonical": "National",
+      "canonical": "mechanical",
       "count": 19,
       "papers": [
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "1994_visibility_maps_and_spherical_algorithms",
-        "2000_representational_validity_of_boundary_representation_models",
+        "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2007_standardized_data_exchange_of_cad_models_with_design_intent",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours"
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
       ],
       "variants": []
     },
@@ -6744,6 +6766,30 @@
         "2023_algebraic_smooth_occluding_contours",
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Seidel",
+      "count": 19,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -7258,6 +7304,25 @@
       "variants": []
     },
     {
+      "canonical": "drawings",
+      "count": 17,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2001_boundary_representation_model_rectification",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
+        "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Eggert",
       "count": 17,
       "papers": [
@@ -7505,29 +7570,6 @@
       "variants": []
     },
     {
-      "canonical": "Seidel",
-      "count": 17,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Surveys",
       "count": 17,
       "papers": [
@@ -7669,20 +7711,19 @@
       "variants": []
     },
     {
-      "canonical": "drawings",
+      "canonical": "Doorn",
       "count": 16,
       "papers": [
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
         "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "1995_introducing_the_reduced_aspect_graph",
-        "2001_boundary_representation_model_rectification",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_accuracy_of_geometry_data_exchange_using_step_ap242",
-        "2019_line_drawings_from_3d_models"
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -8154,22 +8195,6 @@
       "variants": []
     },
     {
-      "canonical": "Doorn",
-      "count": 15,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "frame",
       "count": 15,
       "papers": [
@@ -8230,6 +8255,26 @@
         "2015_correct_resolution_trimmed_spline_surfaces",
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "internal",
+      "count": 15,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2006_repairing_cad_model_errors_based_on_the_design_history",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2010_two_fast_methods_for_high_quality_line_visibility",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
       ],
       "variants": []
     },
@@ -8405,6 +8450,21 @@
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Stewman",
+      "count": 15,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -8781,25 +8841,6 @@
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "internal",
-      "count": 14,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2006_repairing_cad_model_errors_based_on_the_design_history",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2010_two_fast_methods_for_high_quality_line_visibility",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
       ],
       "variants": []
     },
@@ -9384,6 +9425,21 @@
       "variants": []
     },
     {
+      "canonical": "Gigus",
+      "count": 13,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Guibas",
       "count": 13,
       "papers": [
@@ -9727,20 +9783,6 @@
       "variants": []
     },
     {
-      "canonical": "Stewman",
-      "count": 13,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "technique",
       "count": 13,
       "papers": [
@@ -9885,15 +9927,21 @@
       "variants": []
     },
     {
-      "canonical": "background",
+      "canonical": "Canny",
       "count": 12,
       "papers": [
-        "1967_quantitative_invisibility",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
         "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2019_line_drawings_from_3d_models"
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_correct_resolution_trimmed_spline_surfaces"
       ],
       "variants": []
     },
@@ -9936,6 +9984,22 @@
         "2019_line_drawings_from_3d_models",
         "2023_algebraic_smooth_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Constructing",
+      "count": 12,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1993_the_visibility_complex",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons",
+        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -10481,20 +10545,15 @@
       "variants": []
     },
     {
-      "canonical": "Canny",
+      "canonical": "background",
       "count": 11,
       "papers": [
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_correct_resolution_trimmed_spline_surfaces"
+        "1967_quantitative_invisibility",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -10529,21 +10588,6 @@
         "2015_detecting_weakly_simple_polygons",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Constructing",
-      "count": 11,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_the_visibility_complex",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -10722,20 +10766,6 @@
       "variants": []
     },
     {
-      "canonical": "Gigus",
-      "count": 11,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "global",
       "count": 11,
       "papers": [
@@ -10886,6 +10916,19 @@
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "model-based",
+      "count": 11,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
       ],
       "variants": []
     },
@@ -11408,6 +11451,20 @@
       "variants": []
     },
     {
+      "canonical": "Biol",
+      "count": 10,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "boxes",
       "count": 10,
       "papers": [
@@ -11529,6 +11586,22 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2022_versality_of_central_projections_of_regular_surfaces",
         "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Control",
+      "count": 10,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "1995_introducing_the_reduced_aspect_graph",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -11713,6 +11786,23 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Edelsbrunner",
+      "count": 10,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_hidden_curve_removal_for_free_form_surfaces",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+        "2000_partitioning_trimmed_spline_surfaces_visibility",
+        "2001_survey_of_aspect_graphs",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -12022,18 +12112,6 @@
       "variants": []
     },
     {
-      "canonical": "model-based",
-      "count": 10,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "name",
       "count": 10,
       "papers": [
@@ -12115,6 +12193,22 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2023_contesse_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "polyhedron",
+      "count": 10,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_boundary_representation_model_rectification",
+        "2001_survey_of_aspect_graphs",
+        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -12387,17 +12481,6 @@
       "variants": []
     },
     {
-      "canonical": "aircraft",
-      "count": 9,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "always",
       "count": 9,
       "papers": [
@@ -12470,19 +12553,6 @@
         "2001_curve_evaluation_and_interrogation_on_surfaces",
         "2018_trimming_in_isogeometric_analysis_review",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Biol",
-      "count": 9,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -12581,21 +12651,6 @@
       "variants": []
     },
     {
-      "canonical": "Control",
-      "count": 9,
-      "papers": [
-        "1984_occluding_contour_tell_us_about_solid_shape",
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "1995_introducing_the_reduced_aspect_graph",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Cottrell",
       "count": 9,
       "papers": [
@@ -12603,6 +12658,19 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Cybern",
+      "count": 9,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -12732,22 +12800,6 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Edelsbrunner",
-      "count": 9,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_hidden_curve_removal_for_free_form_surfaces",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
-        "2000_partitioning_trimmed_spline_surfaces_visibility",
-        "2001_survey_of_aspect_graphs",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -13105,6 +13157,21 @@
       "variants": []
     },
     {
+      "canonical": "Malik",
+      "count": 9,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2001_survey_of_aspect_graphs"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Manuf",
       "count": 9,
       "papers": [
@@ -13158,6 +13225,21 @@
         "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2006_repairing_cad_model_errors_based_on_the_design_history",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "missing",
+      "count": 9,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1994_surfaces_with_assigned_apparent_contour",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2015_correct_resolution_trimmed_spline_surfaces",
+        "2023_contesse_occluding_contours",
+        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -13336,21 +13418,6 @@
         "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
         "2004_the_visual_hull_of_smooth_curved_objects",
         "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "polyhedron",
-      "count": 9,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_boundary_representation_model_rectification",
-        "2001_survey_of_aspect_graphs",
-        "2018_trimming_in_isogeometric_analysis_review"
       ],
       "variants": []
     },
@@ -13538,17 +13605,6 @@
         "2015_correct_resolution_trimmed_spline_surfaces",
         "2018_trimming_in_isogeometric_analysis_review",
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "seconds",
-      "count": 9,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "2023_algebraic_smooth_occluding_contours",
-        "2023_contesse_occluding_contours",
-        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -14088,18 +14144,6 @@
       "variants": []
     },
     {
-      "canonical": "Cybern",
-      "count": 8,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "degrees",
       "count": 8,
       "papers": [
@@ -14107,19 +14151,6 @@
         "2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities",
         "2018_trimming_in_isogeometric_analysis_review",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Development",
-      "count": 8,
-      "papers": [
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
-        "1998_cad_and_the_product_master_model",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
-        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
-        "2026_robust_tessellation_without_self_intersections",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -14166,6 +14197,21 @@
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "efficiently",
+      "count": 8,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2001_survey_of_aspect_graphs",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -14483,33 +14529,6 @@
       "variants": []
     },
     {
-      "canonical": "machine",
-      "count": 8,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2014_smooth_surface_contours_accurate_topology",
-        "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Malik",
-      "count": 8,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2001_survey_of_aspect_graphs"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "management",
       "count": 8,
       "papers": [
@@ -14569,20 +14588,6 @@
       "variants": []
     },
     {
-      "canonical": "missing",
-      "count": 8,
-      "papers": [
-        "1994_surfaces_with_assigned_apparent_contour",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
-        "2014_locally_injective_parametrization_fixed_boundaries",
-        "2015_correct_resolution_trimmed_spline_surfaces",
-        "2023_contesse_occluding_contours",
-        "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "moves",
       "count": 8,
       "papers": [
@@ -14622,6 +14627,19 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_algebraic_smooth_occluding_contours",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "O'Rourke",
+      "count": 8,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2015_detecting_weakly_simple_polygons"
       ],
       "variants": []
     },
@@ -14692,6 +14710,20 @@
         "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
         "2001_survey_of_aspect_graphs",
         "2004_the_visual_hull_of_smooth_curved_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "polyhedra",
+      "count": 8,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2000_representational_validity_of_boundary_representation_models",
+        "2001_survey_of_aspect_graphs",
+        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
       ],
       "variants": []
     },
@@ -14801,6 +14833,17 @@
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "2000_representational_validity_of_boundary_representation_models"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "seconds",
+      "count": 8,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "2023_algebraic_smooth_occluding_contours",
+        "2023_contesse_occluding_contours",
+        "2026_robust_tessellation_without_self_intersections"
       ],
       "variants": []
     },
@@ -14990,6 +15033,20 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "211-216",
+      "count": 7,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1995_introducing_the_reduced_aspect_graph",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2008_the_visual_hull_of_piecewise_smooth_objects"
       ],
       "variants": []
     },
@@ -15425,6 +15482,20 @@
       "variants": []
     },
     {
+      "canonical": "Davis",
+      "count": 7,
+      "papers": [
+        "1990_ray_tracing_trimmed_rational_surface_patches",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "December",
       "count": 7,
       "papers": [
@@ -15467,6 +15538,18 @@
         "2014_smooth_surface_contours_accurate_topology",
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours",
+        "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Development",
+      "count": 7,
+      "papers": [
+        "1998_cad_and_the_product_master_model",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl",
+        "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
       ],
       "variants": []
@@ -15574,20 +15657,6 @@
         "2004_the_visual_hull_of_smooth_curved_objects",
         "2019_line_drawings_from_3d_models",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "efficiently",
-      "count": 7,
-      "papers": [
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2001_survey_of_aspect_graphs",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -15976,6 +16045,18 @@
       "variants": []
     },
     {
+      "canonical": "machine",
+      "count": 7,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "1994_visibility_maps_and_spherical_algorithms",
+        "2014_locally_injective_parametrization_fixed_boundaries",
+        "2014_smooth_surface_contours_accurate_topology",
+        "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Maekawa",
       "count": 7,
       "papers": [
@@ -16069,18 +16150,6 @@
         "1991_on_surfaces_and_their_contours",
         "2006_computing_contour_generators_of_evolving_implicit_surfaces",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "O'Rourke",
-      "count": 7,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1994_visibility_maps_and_spherical_algorithms",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2015_detecting_weakly_simple_polygons"
       ],
       "variants": []
     },
@@ -16196,19 +16265,6 @@
       "variants": []
     },
     {
-      "canonical": "polyhedra",
-      "count": 7,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2000_representational_validity_of_boundary_representation_models",
-        "2001_survey_of_aspect_graphs",
-        "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Practical",
       "count": 7,
       "papers": [
@@ -16240,6 +16296,18 @@
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1994_surfaces_with_assigned_apparent_contour",
         "2016_recognizing_weakly_simple_polygons"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "principal",
+      "count": 7,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2019_line_drawings_from_3d_models"
       ],
       "variants": []
     },
@@ -16748,19 +16816,6 @@
       "variants": []
     },
     {
-      "canonical": "211-216",
-      "count": 6,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1995_introducing_the_reduced_aspect_graph",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2008_the_visual_hull_of_piecewise_smooth_objects"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "240-245",
       "count": 6,
       "papers": [
@@ -16807,6 +16862,17 @@
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
         "2023_contesse_occluding_contours",
         "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "aircraft",
+      "count": 6,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+        "2018_trimming_in_isogeometric_analysis_review",
+        "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
       ],
       "variants": []
     },
@@ -17127,19 +17193,6 @@
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Davis",
-      "count": 6,
-      "papers": [
-        "1990_ray_tracing_trimmed_rational_surface_patches",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2026_topology_first_brep_meshing"
       ],
       "variants": []
     },
@@ -18274,17 +18327,6 @@
       "variants": []
     },
     {
-      "canonical": "principal",
-      "count": 6,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "professor",
       "count": 6,
       "papers": [
@@ -19144,6 +19186,18 @@
       "variants": []
     },
     {
+      "canonical": "arrangements",
+      "count": 5,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "2004_the_visual_hull_of_smooth_curved_objects",
+        "2014_locally_injective_parametrization_fixed_boundaries"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Artif",
       "count": 5,
       "papers": [
@@ -19299,6 +19353,18 @@
         "1990_ray_tracing_trimmed_rational_surface_patches",
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Calculating",
+      "count": 5,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient"
       ],
       "variants": []
     },
@@ -19693,18 +19759,6 @@
         "2014_locally_injective_parametrization_fixed_boundaries",
         "2015_correct_resolution_trimmed_spline_surfaces",
         "2019_line_drawings_from_3d_models"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "description",
-      "count": 5,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
-        "2008_the_visual_hull_of_piecewise_smooth_objects",
-        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space"
       ],
       "variants": []
     },
@@ -20895,6 +20949,17 @@
       "variants": []
     },
     {
+      "canonical": "potential",
+      "count": 5,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "2001_survey_of_aspect_graphs"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "practical",
       "count": 5,
       "papers": [
@@ -21670,6 +21735,18 @@
       "variants": []
     },
     {
+      "canonical": "Werman",
+      "count": 5,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+        "2001_survey_of_aspect_graphs"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "whose",
       "count": 5,
       "papers": [
@@ -22036,17 +22113,6 @@
       "variants": []
     },
     {
-      "canonical": "arrangements",
-      "count": 4,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2004_the_visual_hull_of_smooth_curved_objects",
-        "2014_locally_injective_parametrization_fixed_boundaries"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Arrangements",
       "count": 4,
       "papers": [
@@ -22155,6 +22221,17 @@
         "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
         "2015_detecting_weakly_simple_polygons",
         "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Baugher",
+      "count": 4,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "2001_survey_of_aspect_graphs"
       ],
       "variants": []
     },
@@ -22291,17 +22368,6 @@
         "2015_watertight_conversion_of_trimmed_cad_surfaces_to_clough_tocher_splines",
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Calculating",
-      "count": 4,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient"
       ],
       "variants": []
     },
@@ -22703,6 +22769,17 @@
       "variants": []
     },
     {
+      "canonical": "Creating",
+      "count": 4,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Creation",
       "count": 4,
       "papers": [
@@ -22864,17 +22941,6 @@
       "variants": []
     },
     {
-      "canonical": "describe",
-      "count": 4,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2018_trimming_in_isogeometric_analysis_review",
-        "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "describing",
       "count": 4,
       "papers": [
@@ -22882,6 +22948,17 @@
         "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2008_the_visual_hull_of_piecewise_smooth_objects"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "description",
+      "count": 4,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+        "2008_the_visual_hull_of_piecewise_smooth_objects",
+        "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space"
       ],
       "variants": []
     },
@@ -24112,6 +24189,15 @@
       "variants": []
     },
     {
+      "canonical": "Meeting",
+      "count": 4,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "2019_line_drawings_from_3d_models"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "merging",
       "count": 4,
       "papers": [
@@ -24492,16 +24578,6 @@
       "papers": [
         "1998_cad_and_the_product_master_model",
         "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "potential",
-      "count": 4,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2001_survey_of_aspect_graphs"
       ],
       "variants": []
     },
@@ -25289,16 +25365,6 @@
       "variants": []
     },
     {
-      "canonical": "straight",
-      "count": 4,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "1992_surface_shape_from_the_deformation_of_apparent_contours",
-        "2014_locally_injective_parametrization_fixed_boundaries"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "stratification",
       "count": 4,
       "papers": [
@@ -25728,13 +25794,13 @@
       "variants": []
     },
     {
-      "canonical": "Werman",
+      "canonical": "Watts",
       "count": 4,
       "papers": [
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
-        "2001_survey_of_aspect_graphs"
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient"
       ],
       "variants": []
     },
@@ -25882,6 +25948,16 @@
         "1990_ray_tracing_trimmed_rational_surface_patches",
         "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "192-201",
+      "count": 3,
+      "papers": [
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
       ],
       "variants": []
     },
@@ -26035,6 +26111,16 @@
       "variants": []
     },
     {
+      "canonical": "494-500",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "5-axis",
       "count": 3,
       "papers": [
@@ -26093,6 +26179,16 @@
       "variants": []
     },
     {
+      "canonical": "91-103",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "929-932",
       "count": 3,
       "papers": [
@@ -26109,6 +26205,16 @@
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "96-130",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "2001_survey_of_aspect_graphs"
       ],
       "variants": []
     },
@@ -26292,15 +26398,6 @@
         "2018_trimming_in_isogeometric_analysis_review",
         "2023_algebraic_smooth_occluding_contours",
         "2023_contesse_occluding_contours"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "APPEL",
-      "count": 3,
-      "papers": [
-        "1967_quantitative_invisibility",
-        "2014_smooth_surface_contours_accurate_topology"
       ],
       "variants": []
     },
@@ -26579,16 +26676,6 @@
       "papers": [
         "2015_detecting_weakly_simple_polygons",
         "2016_recognizing_weakly_simple_polygons"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Baugher",
-      "count": 3,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "2001_survey_of_aspect_graphs"
       ],
       "variants": []
     },
@@ -27361,16 +27448,6 @@
       "variants": []
     },
     {
-      "canonical": "Creating",
-      "count": 3,
-      "papers": [
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
-        "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Creo",
       "count": 3,
       "papers": [
@@ -27558,6 +27635,16 @@
       "papers": [
         "1992_surface_shape_from_the_deformation_of_apparent_contours",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method",
+        "2023_contesse_occluding_contours"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "describe",
+      "count": 3,
+      "papers": [
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2018_trimming_in_isogeometric_analysis_review",
         "2023_contesse_occluding_contours"
       ],
       "variants": []
@@ -28577,6 +28664,16 @@
       "variants": []
     },
     {
+      "canonical": "hyperplanes",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "ideal",
       "count": 3,
       "papers": [
@@ -28885,6 +28982,15 @@
       "variants": []
     },
     {
+      "canonical": "JEEE",
+      "count": 3,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Jiang",
       "count": 3,
       "papers": [
@@ -28967,6 +29073,16 @@
       "papers": [
         "2026_robust_tessellation_without_self_intersections",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Korn",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
       ],
       "variants": []
     },
@@ -29485,6 +29601,16 @@
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
         "2026_topology_first_brep_meshing"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "multiview",
+      "count": 3,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1990_visibility_occlusion_and_the_aspect_graph",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
       ],
       "variants": []
     },
@@ -30112,6 +30238,16 @@
         "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
         "1990_visibility_occlusion_and_the_aspect_graph",
         "2026_robust_tessellation_without_self_intersections"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "Preliminary",
+      "count": 3,
+      "papers": [
+        "1984_occluding_contour_tell_us_about_solid_shape",
+        "2015_detecting_weakly_simple_polygons",
+        "2022_versality_of_central_projections_of_regular_surfaces"
       ],
       "variants": []
     },
@@ -31102,6 +31238,16 @@
       "variants": []
     },
     {
+      "canonical": "straight",
+      "count": 3,
+      "papers": [
+        "1967_quantitative_invisibility",
+        "1992_surface_shape_from_the_deformation_of_apparent_contours",
+        "2014_locally_injective_parametrization_fixed_boundaries"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "Strategies",
       "count": 3,
       "papers": [
@@ -31681,16 +31827,6 @@
       "variants": []
     },
     {
-      "canonical": "Watts",
-      "count": 3,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
-        "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "ways",
       "count": 3,
       "papers": [
@@ -32071,14 +32207,6 @@
       "variants": []
     },
     {
-      "canonical": "12-A",
-      "count": 2,
-      "papers": [
-        "1967_quantitative_invisibility"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "123-131",
       "count": 2,
       "papers": [
@@ -32334,15 +32462,6 @@
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "192-201",
-      "count": 2,
-      "papers": [
-        "1990_visibility_occlusion_and_the_aspect_graph",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
       ],
       "variants": []
     },
@@ -32633,6 +32752,15 @@
       "variants": []
     },
     {
+      "canonical": "30-39",
+      "count": 2,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "303-319",
       "count": 2,
       "papers": [
@@ -32655,6 +32783,15 @@
       "papers": [
         "1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach",
         "2001_boundary_representation_model_rectification"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "316-322",
+      "count": 2,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
       ],
       "variants": []
     },
@@ -32979,15 +33116,6 @@
       "variants": []
     },
     {
-      "canonical": "494-500",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "515-532",
       "count": 2,
       "papers": [
@@ -33296,24 +33424,6 @@
       "count": 2,
       "papers": [
         "2026_topology_first_brep_meshing"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "91-103",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "96-130",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "2001_survey_of_aspect_graphs"
       ],
       "variants": []
     },
@@ -35398,15 +35508,6 @@
       "variants": []
     },
     {
-      "canonical": "Electric",
-      "count": 2,
-      "papers": [
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
-        "2019_integrating_cad_and_numerical_analysis_dirty_geometry_handling_using_the_finite_cell_method"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Electronics",
       "count": 2,
       "papers": [
@@ -36468,15 +36569,6 @@
       "variants": []
     },
     {
-      "canonical": "hyperplanes",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "Hyperplanes",
       "count": 2,
       "papers": [
@@ -36957,15 +37049,6 @@
       "papers": [
         "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
         "2025_three_dimensional_visualization_of_product_manufacturing_information_in_a_web_browser_based_on_step_ap242_and_webgl"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Korn",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph"
       ],
       "variants": []
     },
@@ -37760,24 +37843,6 @@
       "variants": []
     },
     {
-      "canonical": "multiview",
-      "count": 2,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
-        "1990_visibility_occlusion_and_the_aspect_graph"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Murray",
-      "count": 2,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves",
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "München",
       "count": 2,
       "papers": [
@@ -38524,6 +38589,15 @@
       "variants": []
     },
     {
+      "canonical": "planar-face",
+      "count": 2,
+      "papers": [
+        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "plates",
       "count": 2,
       "papers": [
@@ -38698,15 +38772,6 @@
       "papers": [
         "2019_line_drawings_from_3d_models",
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "Preliminary",
-      "count": 2,
-      "papers": [
-        "2015_detecting_weakly_simple_polygons",
-        "2022_versality_of_central_projections_of_regular_surfaces"
       ],
       "variants": []
     },
@@ -42089,6 +42154,14 @@
       "variants": []
     },
     {
+      "canonical": "113-123",
+      "count": 1,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
+      ],
+      "variants": []
+    },
+    {
       "canonical": "113-135",
       "count": 1,
       "papers": [
@@ -42253,6 +42326,14 @@
       "count": 1,
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "12-A",
+      "count": 1,
+      "papers": [
+        "1967_quantitative_invisibility"
       ],
       "variants": []
     },
@@ -43869,14 +43950,6 @@
       "count": 1,
       "papers": [
         "2026_robust_tessellation_without_self_intersections"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "1965125-129",
-      "count": 1,
-      "papers": [
-        "1967_quantitative_invisibility"
       ],
       "variants": []
     },
@@ -45537,14 +45610,6 @@
       "variants": []
     },
     {
-      "canonical": "30-39",
-      "count": 1,
-      "papers": [
-        "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "30-44",
       "count": 1,
       "papers": [
@@ -45685,14 +45750,6 @@
       "count": 1,
       "papers": [
         "1998_cad_and_the_product_master_model"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "316-322",
-      "count": 1,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra"
       ],
       "variants": []
     },
@@ -45917,6 +45974,14 @@
       "count": 1,
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review"
+      ],
+      "variants": []
+    },
+    {
+      "canonical": "341-363",
+      "count": 1,
+      "papers": [
+        "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view"
       ],
       "variants": []
     },
@@ -52265,14 +52330,6 @@
       "variants": []
     },
     {
-      "canonical": "non-contour",
-      "count": 1,
-      "papers": [
-        "1967_quantitative_invisibility"
-      ],
-      "variants": []
-    },
-    {
       "canonical": "non-disk",
       "count": 1,
       "papers": [
@@ -52725,14 +52782,6 @@
       "count": 1,
       "papers": [
         "2018_trimming_in_isogeometric_analysis_review"
-      ],
-      "variants": []
-    },
-    {
-      "canonical": "planar-face",
-      "count": 1,
-      "papers": [
-        "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra"
       ],
       "variants": []
     },
@@ -54398,8 +54447,9 @@
   "authors": [
     {
       "canonical": "[missing from original]",
-      "count": 7,
+      "count": 8,
       "papers": [
+        "1967_quantitative_invisibility",
         "1994_surfaces_with_assigned_apparent_contour",
         "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
         "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
@@ -54606,13 +54656,6 @@
       ]
     },
     {
-      "canonical": "ARTHUR APPEL",
-      "count": 1,
-      "papers": [
-        "1967_quantitative_invisibility"
-      ]
-    },
-    {
       "canonical": "Beat Bruderlin",
       "count": 1,
       "papers": [
@@ -54655,7 +54698,7 @@
       ]
     },
     {
-      "canonical": "C. J. V AN WYK",
+      "canonical": "C. J. VAN WYK",
       "count": 1,
       "papers": [
         "1989_detecting_and_decomposing_self_overlapping_curves"
@@ -54788,13 +54831,6 @@
       ]
     },
     {
-      "canonical": "Development",
-      "count": 1,
-      "papers": [
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision"
-      ]
-    },
-    {
       "canonical": "Dipartimento di Automatica e Informatica",
       "count": 1,
       "papers": [
@@ -54897,13 +54933,6 @@
       "count": 1,
       "papers": [
         "1994_visibility_maps_and_spherical_algorithms"
-      ]
-    },
-    {
-      "canonical": "General Electric Corporate Reseurch",
-      "count": 1,
-      "papers": [
-        "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision"
       ]
     },
     {
@@ -55222,13 +55251,6 @@
       ]
     },
     {
-      "canonical": "Murray",
-      "count": 1,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves"
-      ]
-    },
-    {
       "canonical": "N. M. Patrikalakis",
       "count": 1,
       "papers": [
@@ -55254,13 +55276,6 @@
       "count": 1,
       "papers": [
         "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision"
-      ]
-    },
-    {
-      "canonical": "NJ",
-      "count": 1,
-      "papers": [
-        "1989_detecting_and_decomposing_self_overlapping_curves"
       ]
     },
     {
@@ -55770,7 +55785,6 @@
     "ANS",
     "AP",
     "AP242",
-    "APPEL",
     "ARTITION",
     "AS",
     "ASME",
@@ -55924,6 +55938,7 @@
     "JC",
     "JD",
     "JE",
+    "JEEE",
     "JF",
     "JG",
     "JH",
@@ -56083,6 +56098,7 @@
     "UT",
     "UU",
     "V2",
+    "VAN",
     "VC",
     "VE",
     "VF",

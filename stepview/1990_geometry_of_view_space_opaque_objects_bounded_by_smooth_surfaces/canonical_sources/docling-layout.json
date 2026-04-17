@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
+  "pdf_path": "stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
   "page_count": 40,
   "page_sizes_pt": [
     {
@@ -228,7 +228,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "J.H. Rieger*",
       "bbox": {
         "x0": 211.53,
@@ -247,7 +247,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Department of Computer Science and Statistics, Queen Mary College, University of London, Mile End Road, London El 4NS, UK; and GEC Hirst Research Centre, East Lane, Wembley, Middlesex HA9 7PP, UK",
       "bbox": {
         "x0": 213.26,
@@ -266,7 +266,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "heading",
       "text": "ABSTRACT",
       "bbox": {
         "x0": 94.23,
@@ -285,7 +285,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A view of a smooth, opaque object is a line drawing consisting of contour fragments which form closed loops, terminate, or form T-junctions. Given a compact object we have a global decomposition of the space of camera positions into cells from which topologically equivalent views are obtained. To apply certain image-based object recognition techniques based on characteristic views of an object one needs to know this cellular decomposition of view space. The boundaries of such cells of stable views are formed by the view bifurcation set from which transitional (degenerate) views are seen. We derive a finite list of geometrical models of the view bifurcation set—the view bifurcation set of any particular object is a combination of such model surfaces from this list. To match a characteristic view with an image one has to find the visible fragments of the apparent contour in the image, and we briefly describe an observation which might lead to an algorithm for finding such contour fragments.",
       "bbox": {
         "x0": 92.58,
@@ -304,7 +304,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 213.26,
@@ -323,7 +323,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "A view of a semitransparent object O with smooth boundary M is a line drawing consisting of the intersection of all rays of projection tangent to M with the image plane. The view space V of an object is the space R° - O of all possible centres of projection. If, instead of central projection, we consider orthogonal projections of M onto planes we identify V with the sphere S2 representing all possible directions of projection, the \"view sphere\" [4]. In either case, V consists of a finite number of cells giving rise to topologically equivalent views. These cells are separated by the view bifurcation set B. Views of M as seen from V - B consist of closed curves which are smooth everywhere except at isolated points corresponding to transverse intersections or cusps [21], whereas views seen from a point on B contain some degenerate singularity.",
       "bbox": {
         "x0": 89.2,

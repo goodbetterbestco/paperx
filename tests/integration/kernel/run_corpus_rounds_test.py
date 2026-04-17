@@ -13,7 +13,6 @@ from paper_pipeline.run_corpus_rounds import (
     _build_paper,
     _compose_external_sources,
     _desired_flags_for_existing_paper,
-    _mathpix_page_workers_per_paper,
     _preserve_existing_generated_abstract,
     _render_final_report,
     _summarize_round,
@@ -21,10 +20,6 @@ from paper_pipeline.run_corpus_rounds import (
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
-    def test_mathpix_page_workers_default_to_one(self) -> None:
-        with patch.dict(os.environ, {}, clear=True):
-            self.assertEqual(_mathpix_page_workers_per_paper(), 1)
-
     def test_anomaly_flags_require_reference_and_figure_expectation(self) -> None:
         document = {
             "front_matter": {

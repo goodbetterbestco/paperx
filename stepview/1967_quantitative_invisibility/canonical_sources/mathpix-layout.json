@@ -1,6 +1,6 @@
 {
   "engine": "mathpix",
-  "pdf_path": "docs/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
+  "pdf_path": "stepview/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
   "page_count": 7,
   "page_sizes_pt": [
     {
@@ -666,8 +666,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.74853515625,
-        "confidence_rate": 0.9954131375314694
+        "confidence": 0.75439453125,
+        "confidence_rate": 0.9955363442870263
       }
     },
     {
@@ -1968,8 +1968,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.98388671875,
-        "confidence_rate": 0.9996992209508939
+        "confidence": 0.9833984375,
+        "confidence_rate": 0.9996900311450735
       }
     },
     {
@@ -3291,8 +3291,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.9892628192901611,
-        "confidence_rate": 0.9997841185016547
+        "confidence": 0.9887747764587402,
+        "confidence_rate": 0.9997742514480623
       }
     },
     {
@@ -3333,8 +3333,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.966796875,
-        "confidence_rate": 0.9994373772903664
+        "confidence": 0.9658203125,
+        "confidence_rate": 0.999420543383589
       }
     },
     {
@@ -8625,8 +8625,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.95263671875,
-        "confidence_rate": 0.999361761056753
+        "confidence": 0.953125,
+        "confidence_rate": 0.9993684992281462
       }
     },
     {
@@ -8730,8 +8730,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9965834617614746,
-        "confidence_rate": 0.9998859269090666
+        "confidence": 0.9960954189300537,
+        "confidence_rate": 0.9998696010410947
       }
     },
     {
@@ -8961,8 +8961,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9326171875,
-        "confidence_rate": 0.9982575082766056
+        "confidence": 0.93359375,
+        "confidence_rate": 0.9982836273414636
       }
     },
     {

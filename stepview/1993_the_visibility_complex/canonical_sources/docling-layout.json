@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1993_the_visibility_complex/1993_the_visibility_complex.pdf",
+  "pdf_path": "stepview/1993_the_visibility_complex/1993_the_visibility_complex.pdf",
   "page_count": 10,
   "page_sizes_pt": [
     {
@@ -59,7 +59,7 @@
       "id": "#/texts/0",
       "page": 1,
       "order": 1,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 67.68,
@@ -78,7 +78,7 @@
       "id": "#/texts/1",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "We introduce the visibility complex of a collection D of n pairwise disjoint convex objects in the plane. This 2-dimensional cell complex may be considered as a generalization of the tangent visibility graph of 0. Its space complexity k is proportional to the size of the tangent visibility graph. We give an O(n log n+k) algorithm for its construction. Furthermore we show how the visibility complex can be used to compute the view from a point or a convex object with respect to O in O(rn log n) time, where m is the size of the view. The view from a point is a generalization of the visibility polygon of that point with respect to O.",
       "bbox": {
         "x0": 66.96,
@@ -97,7 +97,7 @@
       "id": "#/texts/2",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 67.44,
@@ -116,7 +116,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Consider a collection O of pairwise disjoint objects in the plane. We are interested in problems in which these objects arise m obstacles, either in connection with visibility problems where they can block the view from an other geometric object, or in motion planning, where these objects may prevent a moving object from moving along a straight line path. The visibility graph is a central object in the context of these problems. For polygonal obstacles the vertices of these polygons are the nodes of the visibility graph, and two nodes are connected by an arc if the corresponding vertices can see each other. [We185] de-",
       "bbox": {
         "x0": 66.0,
@@ -173,7 +173,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Permission to copy without fee all or part of this material is granted provided that the copies are not made or distributed for direct commercial advantage, the ACM copyright notice and the title of the publication and its date appear, and notice is given that copying is by permission of the Association for Computing Machinery. To copy otherwise, or to republish, requires a fee and or specific permission.",
       "bbox": {
         "x0": 66.0,
@@ -192,7 +192,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "9th Annual Computational Geometry,5 93 CA, USA",
       "bbox": {
         "x0": 65.77,
@@ -230,7 +230,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "heading",
       "text": "The Visibility Complex",
       "bbox": {
         "x0": 230.64,
@@ -249,7 +249,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "(Extended Abstract)",
       "bbox": {
         "x0": 269.76,
@@ -268,7 +268,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Michel Pocchiola'",
       "bbox": {
         "x0": 214.08,
@@ -287,7 +287,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Gert Vegtert scribes the first non-trivial algorithm for computing the visibility graph of a polygonal scene with a total of n vertices in 0(n2) time. [GM91] presents an optimal O(n log n + k) algorithm, where k is the number of arcs of the visibility graph. A related problem concerns the computation of the view (visibility polygon) of a point amidst polygonal obstacles. There are several output sensitive algorithms for a single shot computation, see [HM91] and the references given there.",
       "bbox": {
         "x0": 347.52,
@@ -306,7 +306,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Due to its discrete structure the visibility graph is not rich enough to maintain the view of a moving point in a continuously varying direction. To cope with this and similar problems we introduce the visibilit y complex of a set of pairwise disjoint convex objects O, a 2-dimensional cell complex that can be considered as a subdivision of the set of rays emanating from these objects. Faces correspond to collections of rays of 'constant visibility'.",
       "bbox": {
         "x0": 322.8,
@@ -325,7 +325,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Similar ideas have been used in earlier work on visibility, shortest paths and motion planning amidst polygonal obstacles, see e.g. [CG89, Poc90, Veg90, Veg91]. Here the space of directed lines, endowed wit h a part it ion generated by the set of obstacles, is regarded as the main structure, instead of the scene of obstacles itself.",
       "bbox": {
         "x0": 322.56,
@@ -344,7 +344,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Unless otherwise stated we assume that the convex objects have complexity 0(1 ), so we can compute the tangents from a point to a convex object, as well as the common tangents of two objects in O(1) time. Then the space complexity of the visibility complex is proportional to the size of the tangent visibility graph (TVG) of 0. The set of vertices of the latter graph is O. Furthermore any common tangent of two objects 01,02 E O whose endpoints can see each other correspond to an edge {01, 02} of the TVG. (Note that there are at most 4 edges between two vertices.) We show that the visibility complex can be computed in optimal O(n log n + k) time. Here k is the complexity of the visibility complex, or, equivalently, the number of arcs of the tangent visibility graph.",
       "bbox": {
         "x0": 321.11,

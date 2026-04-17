@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
+  "pdf_path": "stepview/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
   "page_count": 7,
   "page_sizes_pt": [
     {
@@ -139,7 +139,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "INTRODUCTION",
       "bbox": {
         "x0": 59.82,
@@ -158,7 +158,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "INTRODUCTION Line drawings are the most common type of rendering used to convey geometrical description. This is due to the economy of preparing such drawings and the great information density obtainable. On a pure line drawing, that is where no attempt is made to specify or suggest shadows, tone or color, the lines rendered are either the intersection curves of surfaces or the contour curves of surfaces. The nature of these curves are adequately discussed in the literature 1 and in a previous report. 2 In order to convey a realistic impression of an object or an assembly of objects, the segments of lines which cannot be seen by an observer are not drawn or are drawn dashed. Without specification of visibility a drawing is ambiguous. This paper presents a recently developed scheme for the determination of visibility in a line drawing which enables comparitively high speed calculation and excelbility scene that lent",
       "bbox": {
         "x0": 31.91,
@@ -177,7 +177,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "resolution.",
       "bbox": {
         "x0": 50.87,
@@ -196,7 +196,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Visibility ests There have been varied approaches to the determination of line drawing visibility. All schemes that have been implemented to date have assumed a limited vocabulary of solids or surfaces. E. E. Zajac and, more recently, P. Loutrel have discussed determining the hidden edges of a convex polyhedron? ,4 By their techniques if the angle between the local line of sight and the outward normal to a face of a convex polyhedron is greater than 90 ° the face is declared invisible, and any line which is the intersection of two invisible faces is declared invisible. This is essentially a surface visibility test, where the basic element tested for visibility is a surface element. Such testing is valid only for convex polyhedra because on other types of solids a surface can be partially hidden. Because surface visibility testing applied to a single convex polyhedral obing. sible ject determine the visibility",
       "bbox": {
         "x0": 30.71,
@@ -215,7 +215,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "of a complete line seg- ment, there is no resolution problem. The line connecting two vertex points is either completely Visible or completely invisible. Also since only \"one test is made on every surface the time to determine visiof an object does not vary significantly with the viewpoint. Schemes for handling convex polyhedra are very fast, usually requiring.only two to five times ment, there is no resolution problem. The line connect-",
       "bbox": {
         "x0": 162.71,
@@ -234,7 +234,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "as much calculation time as a wire frame drawing.* L. G. Roberts has done the most advanced work for convex polyhedra by determining not only the hidden edges in a single object but also the segments of visible edges that are hidden by other objects in the same 5. T h e very important aspect of his strategy was two procedures are implemented. Edges which are the intersection of hidden surfaces are determined and suppressed, and then all other edges are tested to determine to what extent they are hidden by other objects. The prime limitation of his work is that is is applicable only to solids which are assemblies of convex polyhedra modules. This is a severe limitation on the vocabulary of shapes which",
       "bbox": {
         "x0": 287.27,
@@ -253,7 +253,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "can be rendered. A far greater vocabulary of solids have been handled in the point visibility determination or \"brute force\" schemes but at very high calculation times. These schemes essentially have the following strategy: a curve is broken down into many small segments and a small segment is drawn if a test point on the segment is not hidden by any surface in the scene.",
       "bbox": {
         "x0": 286.54,
@@ -272,7 +272,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The author has developed a scheme for the perspec-",
       "bbox": {
         "x0": 286.3,
@@ -310,7 +310,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "point",
       "bbox": {
         "x0": 287.02,
@@ -329,7 +329,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "387",
       "bbox": {
         "x0": 269.98,
@@ -348,7 +348,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 17,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "for the same object.",
       "bbox": {
         "x0": 306.7,

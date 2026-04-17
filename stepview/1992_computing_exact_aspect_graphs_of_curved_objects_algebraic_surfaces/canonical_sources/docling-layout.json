@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces.pdf",
+  "pdf_path": "stepview/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces/1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces.pdf",
   "page_count": 16,
   "page_sizes_pt": [
     {
@@ -165,7 +165,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Abstract. This paper presents an algorithm for computing the exact aspect graph of an opaque solid bounded by a smooth algebraic surface and observed under orthographic projection. The algorithm uses curve tracing, cell decomposition, and ray tracing to construct the regions of the view sphere delineated by visual events. It has been fully implemented, and examples are presented.",
       "bbox": {
         "x0": 81.59,
@@ -184,7 +184,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 54.95,
@@ -203,7 +203,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The aspect graph [25] is a qualitative, viewer-centered representation that enumerates all possible appearances of an object: The range of all possible viewpoints is partitioned into maximal regions such that the structure of the image contours, also called the aspect, is the same from every viewpoint in a region. The change in the aspect at the boundary between regions is named a visual event. The maximal regions and their boundaries are organized into a graph, whose nodes represent the regions with their associated aspects and whose ares correspond to the visual event boundaries between adjacent regions.",
       "bbox": {
         "x0": 53.99,
@@ -222,7 +222,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Since their introduction by Koenderink and Van Doom [25] more than ten years ago, aspect graphs have been the object of very active research. The main focus has been on polyhedra, whose contour generators are viewpoint-independent. Indeed, approximate aspect graphs of polyhedra have been successfully used in recognition tasks [7, 18, 20], and several algorithms have been proposed for computing the exact aspect graph of these objects [6, 15, 16, 31, 36, 38, 39, 41, 42].",
       "bbox": {
         "x0": 53.99,
@@ -241,7 +241,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Recently, algorithms for constructing the exact aspect graph of simple curved objects such as solids bounded by quadric surfaces [8] and solids of revolution [11, 12, 26] have also been introduced. For more complex objects, it was recognized from the start that the necessary theoretical tools could be found in catastrophe theory [1, 5, 25]. However, algorithms based on these tools have, until very recently, remained elusive: Koenderink [24] and Kergosien [23] show the view sphere curves corresponding to the visual events of some surfaces, but, unfortunately, neither author details the algorithm used to compute these curves. Rieger [35] uses cylindrical algebraic decomposition to compute the aspect graph of a quartic surface of the form z = f(z, y).",
       "bbox": {
         "x0": 53.98,
@@ -260,7 +260,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "This paper is the third in a series on the construction of exact aspect graphs of smooth objects, based on the catalogue of possible visual events established by Kergosien [22] (see [33, 40] for the case of piecewise-smooth objects). Previously, we presented a fully implemented algorithm for solids of revolution whose generating curve is polynomial [26] (see [11, 12] for a different approach to the same problem), and reported preliminary results for polynomial parametric surfaces [32]. Here, we present a fully implemented algorithm for computing the aspect graph of an opaque solid bounded by parametric or",
       "bbox": {
         "x0": 53.98,

@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra.pdf",
+  "pdf_path": "stepview/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra/1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra.pdf",
   "page_count": 18,
   "page_sizes_pt": [
     {
@@ -194,7 +194,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. INTRODUCTION",
       "bbox": {
         "x0": 316.27,
@@ -213,7 +213,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Koenderink and van Doorn first described a graph structure which they called the visual potential of an object [1]. Each node in this graph structure represents a different aspect of the object. An aspect is generally defined as the qualitative structure of the line drawing of an object, as seen from any point in some defined maximal, connected region of viewpoint space. For a given object, all of viewpoint space can be parcellated into such cells, so that there is a node in the aspect graph for each qualitatively different view of the object. Each arc between nodes of the graph represents a possible transition across the boundary between two cells of the parcellation. The change in aspect which occurs in crossing the boundary is termed a visual event. \"Thus the visual potential represents in a concise way any visual experience an observer can obtain by looking at the object when traversing any orbit through space\" [1]. Figure 1 shows the visual potential (aspect graph) of a tetrahedron. The term aspect graph has come to be used generically in the field of computer vision to refer to any graph based representation inspired by Koenderink and van Doorn's visual potential concept.",
       "bbox": {
         "x0": 79.48,
@@ -232,7 +232,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Perhaps the highest level distinction between the various aspect graph representations which have been described in the computer vision literature is whether they assume orthographic projection or perspective projection. If orthographic projec-",
       "bbox": {
         "x0": 81.14,

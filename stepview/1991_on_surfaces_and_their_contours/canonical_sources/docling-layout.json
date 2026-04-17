@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1991_on_surfaces_and_their_contours/1991_on_surfaces_and_their_contours.pdf",
+  "pdf_path": "stepview/1991_on_surfaces_and_their_contours/1991_on_surfaces_and_their_contours.pdf",
   "page_count": 27,
   "page_sizes_pt": [
     {
@@ -201,7 +201,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "heading",
       "text": "O. Introduction",
       "bbox": {
         "x0": 87.36,
@@ -220,7 +220,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In this paper we undertake a study of surfaces, developed from a global point of view by considering apparent contours and their duals. Our aim is to illustrate the interrelation between some features of these curves and the topology of the surface to which they belong. We are led, in this way, into a region that has been depicted as \"a mixture of integral and mod.2 phenomena\" [K].",
       "bbox": {
         "x0": 65.76,
@@ -239,7 +239,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The three sections of this article are meant to unfold different aspects of the subject. Section 1 concerns general properties of curves with cusps and double points in a real projective plane. Some very appropriate remarks of the referee (unknown to us, but whose qualified criticism has been of great help in smoothing the style and improving the structure of this paper) have stimulated us to redesign this part. We have introduced a new and simple presentation of a few basic topological facts concerning singular projective curves. It may be of interest that the present approach leads to a straightforward proof of a slight refinement (Proposition 3) of a celebrated theorem of M6bius [M6]. Our argument is essentially topological (a discussion of related aspects can be found in [Po]).",
       "bbox": {
         "x0": 65.76,
@@ -258,7 +258,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In Section 2 we apply to apparent contours our results on singular projective curves, making use of some Morse theoretical instruments introduced by Banchoff and Kuiper",
       "bbox": {
         "x0": 66.24,
@@ -277,7 +277,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "manuscripta",
       "bbox": {
         "x0": 328.56,
@@ -296,7 +296,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "mathematica",
       "bbox": {
         "x0": 328.56,
@@ -315,7 +315,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "9 Sprmger-Verlag",
       "bbox": {
         "x0": 328.08,
@@ -334,7 +334,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "1991",
       "bbox": {
         "x0": 380.64,

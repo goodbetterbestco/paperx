@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations.pdf",
+  "pdf_path": "stepview/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations/1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations.pdf",
   "page_count": 35,
   "page_sizes_pt": [
     {
@@ -431,7 +431,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Abstract. This paper describes a new algorithm for constructing the set of free bitangents of a collection of n disjoint convex obstacles of constant complexity. The algorithm runs in time O(nlogn + k), where k is the output size, and uses O(n) space. While earlier algorithms achieve the same optimal running time, this is the first optimal algorithm that uses only linear space. The visibility graph or the visibility complex can be computed in the same time and space. The only complicated data structure used by the algorithm is a splittable queue, which can be implemented easily using red-black trees. The algorithm is conceptually very simple, and should therefore be easy to implement and quite fast in practice. The algorithm relies on greedy pseudotriangulations, which are subgraphs of the visibility graph with many nice combinatorial properties. These properties, and thus the correctness of the algorithm, are partially derived from properties of a certain partial order on the faces of the visibility complex.",
       "bbox": {
         "x0": 90.0,
@@ -450,7 +450,7 @@
       "id": "#/texts/15",
       "page": 1,
       "order": 15,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1. Introduction",
       "bbox": {
         "x0": 78.48,
@@ -469,7 +469,7 @@
       "id": "#/texts/16",
       "page": 1,
       "order": 16,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Visibility graphs (for polygonal obstacles) were introduced by Lozano-P6rez and Wesley [18] for planning collision-free paths among polyhedral obstacles; in the plane a shortest euclidean path between two points runs via edges of the visibility graph of the collection of obstacles, augmented with the source and target points. Since then numerous papers have been devoted to the problem of their efficient construction",
       "bbox": {
         "x0": 77.76,

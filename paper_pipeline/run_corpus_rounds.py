@@ -7,6 +7,7 @@ from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
 import json
 import os
 import re
+from threading import Event, Thread
 import time
 import traceback
 from datetime import datetime, timezone
@@ -26,7 +27,13 @@ from paper_pipeline.corpus_layout import (
 from paper_pipeline.corpus_metadata import discover_paper_pdf_paths, paper_id_from_pdf_path
 from paper_pipeline.docling_adapter import docling_json_to_external_sources, run_docling
 from paper_pipeline.external_sources import external_layout_path, external_math_path
-from paper_pipeline.mathpix_adapter import mathpix_pages_to_external_sources, run_mathpix
+from paper_pipeline.mathpix_adapter import (
+    download_mathpix_pdf,
+    fetch_mathpix_pdf_status,
+    mathpix_pages_to_external_sources,
+    run_mathpix,
+    submit_mathpix_pdf,
+)
 from paper_pipeline.policies.abstract_quality import abstract_quality_flags, abstract_quality_rank
 from paper_pipeline.policies.completeness import (
     block_text as completeness_block_text,
@@ -108,6 +115,16 @@ def _int_env(name: str, default: int) -> int:
         return default
 
 
+def _float_env(name: str, default: float) -> float:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        return max(0.0, float(raw))
+    except ValueError:
+        return default
+
+
 def _paper_ids() -> list[str]:
     return [paper_id_from_pdf_path(path) for path in discover_paper_pdf_paths()]
 
@@ -144,6 +161,14 @@ def _mathpix_credentials_available() -> bool:
     return bool(os.environ.get("MATHPIX_APP_ID") and os.environ.get("MATHPIX_APP_KEY"))
 
 
+def _mathpix_submit_workers(max_workers: int) -> int:
+    return min(max_workers, _int_env("STEPVIEW_MATHPIX_SUBMIT_WORKERS", 6))
+
+
+def _mathpix_round_poll_seconds() -> float:
+    return _float_env("STEPVIEW_MATHPIX_ROUND_POLL_SECONDS", 30.0)
+
+
 def _snapshot_external_source(path: Path, snapshot_name: str) -> Path | None:
     if not path.exists():
         return None
@@ -171,10 +196,8 @@ def _build_docling_sources(paper_id: str) -> dict[str, Any]:
     }
 
 
-def _build_mathpix_sources(paper_id: str, *, page_workers: int = 1) -> dict[str, Any] | None:
-    if not _mathpix_credentials_available():
-        return None
-    payloads = run_mathpix(paper_id, page_workers=page_workers)
+def _build_mathpix_sources_from_result(paper_id: str, mathpix_result: dict[str, Any]) -> dict[str, Any]:
+    payloads = list(mathpix_result.get("pages") or [])
     layout, math = mathpix_pages_to_external_sources(payloads, paper_id)
     sources_dir = external_layout_path(paper_id).parent
     sources_dir.mkdir(parents=True, exist_ok=True)
@@ -182,13 +205,25 @@ def _build_mathpix_sources(paper_id: str, *, page_workers: int = 1) -> dict[str,
     mathpix_math_path = sources_dir / "mathpix-math.json"
     _write_json(mathpix_layout_path, layout)
     _write_json(mathpix_math_path, math)
-    return {
+    result = {
         "layout": layout,
         "math": math,
         "layout_path": str(mathpix_layout_path),
         "math_path": str(mathpix_math_path),
         "math_entries": len(math.get("entries", [])),
     }
+    if "pdf_id" in mathpix_result:
+        result["pdf_id"] = str(mathpix_result["pdf_id"])
+    if "elapsed_seconds" in mathpix_result:
+        result["elapsed_seconds"] = float(mathpix_result["elapsed_seconds"])
+    return result
+
+
+def _build_mathpix_sources(paper_id: str) -> dict[str, Any] | None:
+    if not _mathpix_credentials_available():
+        return None
+    mathpix_result = run_mathpix(paper_id)
+    return _build_mathpix_sources_from_result(paper_id, mathpix_result)
 
 
 def _timed_call(label: str, fn: Any, /, *args: Any, **kwargs: Any) -> tuple[str, float, Any]:
@@ -197,34 +232,109 @@ def _timed_call(label: str, fn: Any, /, *args: Any, **kwargs: Any) -> tuple[str,
     return label, round(time.perf_counter() - started, 3), result
 
 
-def _mathpix_page_workers_per_paper() -> int:
-    return _int_env("STEPVIEW_MATHPIX_PAGE_WORKERS", 1)
+class _MathpixRoundCoordinator:
+    def __init__(self, paper_ids: list[str], *, submit_workers: int, poll_seconds: float) -> None:
+        self._paper_ids = list(paper_ids)
+        self._submit_workers = max(1, submit_workers)
+        self._poll_seconds = max(1.0, poll_seconds)
+        self._futures = {paper_id: Future() for paper_id in self._paper_ids}
+        self._thread = Thread(target=self._run, name="mathpix-round-coordinator", daemon=True)
+        self._stop = Event()
+
+    def start(self) -> None:
+        self._thread.start()
+
+    def future_for(self, paper_id: str) -> Future[dict[str, Any]]:
+        return self._futures[paper_id]
+
+    def close(self) -> None:
+        self._stop.set()
+        self._thread.join()
+
+    def _run(self) -> None:
+        submit_started: dict[str, float] = {}
+        submitted_jobs: dict[str, str] = {}
+        pending_submissions: dict[Future[str], str] = {}
+
+        with ThreadPoolExecutor(max_workers=self._submit_workers) as executor:
+            for paper_id in self._paper_ids:
+                submit_started[paper_id] = time.perf_counter()
+                pending_submissions[executor.submit(submit_mathpix_pdf, paper_id)] = paper_id
+
+            next_poll_at = time.monotonic() + self._poll_seconds
+            while (pending_submissions or submitted_jobs) and not self._stop.is_set():
+                done_submits: set[Future[str]] = set()
+                if pending_submissions:
+                    done_submits, _ = wait(tuple(pending_submissions.keys()), timeout=0.2, return_when=FIRST_COMPLETED)
+
+                for future in done_submits:
+                    paper_id = pending_submissions.pop(future)
+                    paper_future = self._futures[paper_id]
+                    try:
+                        submitted_jobs[paper_id] = future.result()
+                    except Exception as exc:  # pragma: no cover - defensive
+                        if not paper_future.done():
+                            paper_future.set_exception(exc)
+
+                now = time.monotonic()
+                if submitted_jobs and now >= next_poll_at:
+                    for paper_id, pdf_id in list(submitted_jobs.items()):
+                        paper_future = self._futures[paper_id]
+                        if paper_future.done():
+                            submitted_jobs.pop(paper_id, None)
+                            continue
+                        try:
+                            status = fetch_mathpix_pdf_status(pdf_id)
+                            state = str(status.get("status", "")).strip().lower()
+                            if state == "completed":
+                                result = download_mathpix_pdf(paper_id, pdf_id)
+                                result["elapsed_seconds"] = round(time.perf_counter() - submit_started[paper_id], 3)
+                                paper_future.set_result(result)
+                                submitted_jobs.pop(paper_id, None)
+                            elif state == "error" or status.get("error"):
+                                raise RuntimeError(f"Mathpix PDF {pdf_id} failed: {status}")
+                        except Exception as exc:  # pragma: no cover - defensive
+                            if not paper_future.done():
+                                paper_future.set_exception(exc)
+                            submitted_jobs.pop(paper_id, None)
+                    next_poll_at = time.monotonic() + self._poll_seconds
+
+            if self._stop.is_set():
+                for paper_id, paper_future in self._futures.items():
+                    if not paper_future.done():
+                        paper_future.set_exception(RuntimeError(f"Mathpix round coordinator stopped before {paper_id} completed."))
 
 
 def _build_extraction_sources_for_paper(
     paper_id: str,
+    *,
+    prefetched_mathpix_future: Future[dict[str, Any]] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any] | None, dict[str, float]]:
     timings: dict[str, float] = {}
     mathpix_enabled = _mathpix_credentials_available()
-    max_workers = PER_PAPER_SOURCE_WORKERS if mathpix_enabled else 1
+    max_workers = 1 if prefetched_mathpix_future is not None else (PER_PAPER_SOURCE_WORKERS if mathpix_enabled else 1)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         docling_future = executor.submit(_timed_call, "docling", _build_docling_sources, paper_id)
-        mathpix_future: Future[tuple[str, float, Any]] | None = None
-        if mathpix_enabled:
-            mathpix_future = executor.submit(
+        local_mathpix_future: Future[tuple[str, float, Any]] | None = None
+        if mathpix_enabled and prefetched_mathpix_future is None:
+            local_mathpix_future = executor.submit(
                 _timed_call,
                 "mathpix",
                 _build_mathpix_sources,
                 paper_id,
-                page_workers=_mathpix_page_workers_per_paper(),
             )
 
         _, docling_seconds, docling_sources = docling_future.result()
         timings["docling_seconds"] = docling_seconds
         mathpix_sources = None
-        if mathpix_future is not None:
-            _, mathpix_seconds, mathpix_sources = mathpix_future.result()
+        if prefetched_mathpix_future is not None:
+            mathpix_result = prefetched_mathpix_future.result()
+            mathpix_sources = _build_mathpix_sources_from_result(paper_id, mathpix_result)
+            mathpix_seconds = float(mathpix_result.get("elapsed_seconds", 0.0))
+            timings["mathpix_seconds"] = mathpix_seconds
+        elif local_mathpix_future is not None:
+            _, mathpix_seconds, mathpix_sources = local_mathpix_future.result()
             timings["mathpix_seconds"] = mathpix_seconds
         else:
             timings["mathpix_seconds"] = 0.0
@@ -541,7 +651,12 @@ def _build_paper(paper_id: str) -> dict[str, Any]:
     }
 
 
-def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
+def _run_paper_job(
+    paper_id: str,
+    *,
+    force_rebuild: bool,
+    prefetched_mathpix_future: Future[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     paper_status: dict[str, Any] = {}
     timings: dict[str, float] = {}
     overall_started = time.perf_counter()
@@ -588,7 +703,10 @@ def _run_paper_job(paper_id: str, *, force_rebuild: bool) -> dict[str, Any]:
             )
             return paper_status
 
-        docling_sources, mathpix_sources, extraction_timings = _build_extraction_sources_for_paper(paper_id)
+        docling_sources, mathpix_sources, extraction_timings = _build_extraction_sources_for_paper(
+            paper_id,
+            prefetched_mathpix_future=prefetched_mathpix_future,
+        )
         timings.update(extraction_timings)
 
         compose_started = time.perf_counter()
@@ -778,6 +896,16 @@ def _process_round(
     ]
     next_index = 0
     active_jobs: dict[Future[dict[str, Any]], str] = {}
+    use_round_mathpix = bool(force_rebuild and _mathpix_credentials_available() and len(pending_papers) > 1)
+    mathpix_coordinator: _MathpixRoundCoordinator | None = None
+
+    if use_round_mathpix:
+        mathpix_coordinator = _MathpixRoundCoordinator(
+            pending_papers,
+            submit_workers=_mathpix_submit_workers(max_workers),
+            poll_seconds=_mathpix_round_poll_seconds(),
+        )
+        mathpix_coordinator.start()
 
     def schedule_ready_papers(executor: ThreadPoolExecutor) -> None:
         nonlocal next_index
@@ -788,28 +916,35 @@ def _process_round(
                 "started_at": _now_iso(),
                 "status": "running",
             }
-            active_jobs[executor.submit(_run_paper_job, paper_id, force_rebuild=force_rebuild)] = paper_id
+            submit_kwargs: dict[str, Any] = {"force_rebuild": force_rebuild}
+            if mathpix_coordinator is not None:
+                submit_kwargs["prefetched_mathpix_future"] = mathpix_coordinator.future_for(paper_id)
+            active_jobs[executor.submit(_run_paper_job, paper_id, **submit_kwargs)] = paper_id
             _save_status(status)
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        schedule_ready_papers(executor)
-        while active_jobs:
-            done, _ = wait(tuple(active_jobs.keys()), return_when=FIRST_COMPLETED)
-            for future in done:
-                paper_id = active_jobs.pop(future)
-                paper_status = round_status["papers"].setdefault(paper_id, {})
-                try:
-                    result = future.result()
-                except Exception as exc:  # pragma: no cover - defensive
-                    result = {
-                        "status": "failed",
-                        "completed_at": _now_iso(),
-                        "error": str(exc),
-                        "traceback": traceback.format_exc(limit=20),
-                    }
-                paper_status.update(result)
-                _save_status(status)
+    try:
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
             schedule_ready_papers(executor)
+            while active_jobs:
+                done, _ = wait(tuple(active_jobs.keys()), return_when=FIRST_COMPLETED)
+                for future in done:
+                    paper_id = active_jobs.pop(future)
+                    paper_status = round_status["papers"].setdefault(paper_id, {})
+                    try:
+                        result = future.result()
+                    except Exception as exc:  # pragma: no cover - defensive
+                        result = {
+                            "status": "failed",
+                            "completed_at": _now_iso(),
+                            "error": str(exc),
+                            "traceback": traceback.format_exc(limit=20),
+                        }
+                    paper_status.update(result)
+                    _save_status(status)
+                schedule_ready_papers(executor)
+    finally:
+        if mathpix_coordinator is not None:
+            mathpix_coordinator.close()
 
     round_status["completed_at"] = _now_iso()
     _save_status(status)
@@ -877,7 +1012,7 @@ def run_rounds(
         f"Corpus temp paths are redirected into {TMP_DIR}.",
         f"Configured worker concurrency: {max_workers}.",
         "Fresh canonicals are skipped when source inputs, build flags, and pipeline fingerprints still match.",
-        f"Per-paper source overlap is enabled with Mathpix page workers set to {_mathpix_page_workers_per_paper()}.",
+        "Mathpix runs at whole-PDF granularity and downloads line-level output from the document endpoint.",
     ]
     if PROJECT_MODE:
         status["notes"].append(f"Project reports are written into {BATCH_DIR}.")

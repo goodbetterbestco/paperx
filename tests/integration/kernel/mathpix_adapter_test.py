@@ -1,6 +1,6 @@
 import os
 import sys
-import time
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -10,23 +10,13 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.mathpix_adapter import call_mathpix_on_page_image, run_mathpix
-
-
-class _FakeDoc:
-    def __init__(self, page_count: int) -> None:
-        self.page_count = page_count
-
-    def __enter__(self) -> "_FakeDoc":
-        return self
-
-    def __exit__(self, exc_type, exc, tb) -> bool:
-        return False
-
-
-class _FakeFitz:
-    def open(self, path: Path) -> _FakeDoc:
-        return _FakeDoc(page_count=3)
+from paper_pipeline.mathpix_adapter import (
+    _mathpix_pdf_submit,
+    _mathpix_pdf_wait_for_completion,
+    _mathpix_request_semaphore,
+    call_mathpix_on_page_image,
+    run_mathpix,
+)
 
 
 class _FakeMathpixResponse:
@@ -46,38 +36,103 @@ class _FakeMathpixResponse:
 
 
 class MathpixAdapterTest(unittest.TestCase):
-    def test_parallel_run_mathpix_preserves_page_order(self) -> None:
-        def fake_render(pdf_path: Path, page_number: int, *, scale: float) -> tuple[bytes, int, int, float, float]:
-            return (str(page_number).encode("ascii"), 100, 100, 612.0, 792.0)
+    def test_mathpix_request_limit_defaults_to_six(self) -> None:
+        with patch.dict(os.environ, {}, clear=True):
+            semaphore = _mathpix_request_semaphore()
 
-        def fake_call(
-            image_bytes: bytes,
-            *,
-            app_id: str,
-            app_key: str,
-            endpoint: str,
-            timeout_seconds: int = 180,
-        ) -> dict[str, int]:
-            page_number = int(image_bytes.decode("ascii"))
-            if page_number == 1:
-                time.sleep(0.03)
-            elif page_number == 2:
-                time.sleep(0.01)
-            return {"page_number": page_number}
+        self.assertEqual(semaphore._value, 6)
+
+    def test_run_mathpix_downloads_pdf_lines_preserves_page_order(self) -> None:
+        lines_payload = {
+            "pages": [
+                {"page": 2, "page_width": 200, "page_height": 400, "lines": [{"type": "math", "text": r"\[y\]"}]},
+                {"page": 1, "page_width": 100, "page_height": 200, "lines": [{"type": "text", "text": "alpha"}]},
+            ]
+        }
 
         with (
             patch.dict(os.environ, {"MATHPIX_APP_ID": "id", "MATHPIX_APP_KEY": "key"}, clear=False),
-            patch("paper_pipeline.mathpix_adapter._load_fitz", return_value=_FakeFitz()),
-            patch("paper_pipeline.mathpix_adapter._render_page_png_bytes", side_effect=fake_render),
-            patch("paper_pipeline.mathpix_adapter.call_mathpix_on_page_image", side_effect=fake_call),
+            patch("paper_pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value=lines_payload),
+            patch(
+                "paper_pipeline.mathpix_adapter._pdf_page_sizes_pt",
+                return_value=[(612.0, 792.0), (612.0, 792.0)],
+            ),
         ):
-            payloads = run_mathpix("test-paper", page_workers=3)
+            result = run_mathpix("test-paper")
 
-        self.assertEqual([payload["page"] for payload in payloads], [1, 2, 3])
-        self.assertEqual(
-            [payload["response"]["page_number"] for payload in payloads],
-            [1, 2, 3],
-        )
+        self.assertEqual(result["pdf_id"], "pdf-123")
+        self.assertEqual([payload["page"] for payload in result["pages"]], [1, 2])
+        self.assertEqual(result["pages"][0]["response"]["line_data"][0]["text"], "alpha")
+        self.assertEqual(result["pages"][1]["response"]["line_data"][0]["text"], r"\[y\]")
+        self.assertEqual(submit_mock.call_args.kwargs["page_ranges"], None)
+
+    def test_run_mathpix_passes_page_ranges_to_pdf_submit(self) -> None:
+        with (
+            patch.dict(os.environ, {"MATHPIX_APP_ID": "id", "MATHPIX_APP_KEY": "key"}, clear=False),
+            patch("paper_pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value={"pages": []}),
+            patch(
+                "paper_pipeline.mathpix_adapter._pdf_page_sizes_pt",
+                return_value=[(612.0, 792.0), (612.0, 792.0), (612.0, 792.0)],
+            ),
+        ):
+            run_mathpix("test-paper", pages=[3, 1, 3])
+
+        self.assertEqual(submit_mock.call_args.kwargs["page_ranges"], "1,3")
+
+    def test_mathpix_pdf_wait_for_completion_retries_until_completed(self) -> None:
+        with (
+            patch(
+                "paper_pipeline.mathpix_adapter._mathpix_pdf_status",
+                side_effect=[
+                    {"status": "received"},
+                    {"status": "split"},
+                    {"status": "completed", "num_pages": 2},
+                ],
+            ) as status_mock,
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_timeout_seconds", return_value=60),
+            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_poll_seconds", return_value=0.25),
+            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+        ):
+            result = _mathpix_pdf_wait_for_completion("pdf-123", app_id="id", app_key="key")
+
+        self.assertEqual(result["status"], "completed")
+        self.assertEqual(status_mock.call_count, 3)
+        self.assertEqual(sleep_mock.call_count, 2)
+        self.assertEqual(sleep_mock.call_args.args[0], 0.25)
+
+    def test_mathpix_pdf_submit_uses_multipart_pdf_upload_shape(self) -> None:
+        captured: dict[str, object] = {}
+
+        class _Completed:
+            def __init__(self, stdout: str) -> None:
+                self.stdout = stdout
+
+        def fake_run(command, check, capture_output, text):
+            captured["command"] = command
+            self.assertTrue(check)
+            self.assertTrue(capture_output)
+            self.assertTrue(text)
+            return _Completed('{"pdf_id":"pdf-123"}')
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            pdf_path = Path(tmpdir) / "fake.pdf"
+            pdf_path.write_bytes(b"%PDF-1.4 test")
+            with patch("paper_pipeline.mathpix_adapter.subprocess.run", side_effect=fake_run):
+                pdf_id = _mathpix_pdf_submit(pdf_path, app_id="id", app_key="key", page_ranges="1,3")
+
+        self.assertEqual(pdf_id, "pdf-123")
+        command = list(captured["command"])
+        self.assertEqual(command[:4], ["curl", "-sS", "-X", "POST"])
+        self.assertIn("app_id: id", command)
+        self.assertIn("app_key: key", command)
+        self.assertIn(f"file=@{pdf_path}", command)
+        self.assertIn('options_json={"include_equation_tags":true,"include_page_info":true,"page_ranges":"1,3"}', command)
 
     def test_call_mathpix_retries_connection_reset_then_succeeds(self) -> None:
         with (
@@ -108,10 +163,7 @@ class MathpixAdapterTest(unittest.TestCase):
             captured["body"] = req.data
             return _FakeMathpixResponse({"ok": True})
 
-        with (
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=1),
-            patch("paper_pipeline.mathpix_adapter.request.urlopen", side_effect=fake_urlopen),
-        ):
+        with patch("paper_pipeline.mathpix_adapter.request.urlopen", side_effect=fake_urlopen):
             payload = call_mathpix_on_page_image(b"PNGDATA", app_id="id", app_key="key")
 
         self.assertEqual(payload, {"ok": True})

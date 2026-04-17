@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces.pdf",
+  "pdf_path": "stepview/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces/1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces.pdf",
   "page_count": 24,
   "page_sizes_pt": [
     {
@@ -148,7 +148,7 @@
       "id": "#/texts/3",
       "page": 1,
       "order": 2,
-      "role": "front_matter",
+      "role": "heading",
       "text": "J.H. RIEGER",
       "bbox": {
         "x0": 49.92,
@@ -167,7 +167,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 3,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Fachbereich fiir Informatik, Universit& Karlsruhe, Hamburg, Bodenstedt str. 16, 2000 Hamburg 50, Germany",
       "bbox": {
         "x0": 49.92,
@@ -186,7 +186,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Received January, 1990. Revised July 31, 1991.",
       "bbox": {
         "x0": 49.92,
@@ -205,7 +205,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 49.92,
@@ -224,7 +224,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The view graph of a surface is a planar graph whose nodes are the stable views (projections) of the surface and whose edges represent ransitional views of codimension one. The space of all directions of orthogonal projection can be identified with the projective plane. The set of \"bad\" projection directions, associated with the degenerate views of positive codimension, forms a graph in the projective plane (the view bifurcation set). This graph is dual to the view graph and divides the projective plane into a certain number of connected regions whose representatives are the nodes of the view graph. We assume that the projected surface is nonsingular and parameterized by polynomials of degree d. We present an estimate for the number of nodes in the view graph in terms of d and describe symbolic algorithms for computing the bifurcation set and the view graph of a surface from a parametrization.",
       "bbox": {
         "x0": 49.92,
@@ -243,7 +243,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 50.64,
@@ -262,7 +262,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In the present article we consider the following problem in computational geometry. Let S be a nonsingular surface in R 3 defined by some polynomial, and let e ~ p2 denote a direction of projection. For \"most\" directions f (that is for all directions in p2 except for a set of positive codimension) the orthogonal projection of S onto a plane perpendicular to f will give rise to a smooth apparent contour with isolated cusps and transverse crossing (this follows from classical results of Whitney [1955] and Mather [1973]). The apparent contour of S will, in general, have degenerate singularities for certain \"bad\" directions f, and the set 23 of such bad directions consists of (in general, singular) curves in p2. This set is called the bifurcation set of the family of orthogonal projections of S. The connected components of p2 \\ 23 correspond to directions of projection e which will give rise to equivalent views of the surface S (strictly speaking, this is only true for compact surfaces S--see section 1.2). In the past 10 years a substantial number of investigations of the local behavior of apparent contours in the neighborhood of some point on a surface S have been carried out within the framework of the theory of singularities of smooth mappings. In particular, extensive classifications of degenerate singularities of apparent contours and the bifurcation sets associated with these singularities have been obtained [Arnol'd 1983; Gaffney & Ruas 1977; Kergosien 1981; Rieger 1987a, 1990b]. Here we want to consider certain global and algorithmic aspects of this problem, such as: given an algebraic surface S the view bifurcation set ~3 is a semialgebraic curve in p2, are there bounds for the topology of 23 (for the Betti numbers and the number of connected components of p2 \\ 23) in terms of the degree of S? Are there algorithms for computing representatives for all the connected components of p2 \\ ~, which represent the nodes in the view graph (or aspect graph) of S (in the sense of Koenderink and van Doom [1986; 1986])? These questions will be studied in this article.",
       "bbox": {
         "x0": 49.44,
@@ -281,7 +281,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The contents of the more technical parts (sections 2-7) of the article are summarized in section t.4 of this introduction. The remaining sections of the introduction are less technical: the use of view graphs and characteristic views in computer vision is briefly described in section 1.1. In 1.2 we give informal definitions of stable projections and view graphs of smooth",
       "bbox": {
         "x0": 287.52,

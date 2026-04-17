@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach.pdf",
+  "pdf_path": "stepview/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach.pdf",
   "page_count": 29,
   "page_sizes_pt": [
     {
@@ -249,7 +249,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "heading",
       "text": "A b s t r a c t",
       "bbox": {
         "x0": 265.7,
@@ -268,7 +268,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "This paper presents a new robustness method for geometric modeling operations. It com­ putes geometric relations from the tolerances defined for geometric objects and dynamically updates the tolerances to preserve the properties of the relations, using an intuitionistic self-validation approach. Geometric algorithms using this approach are proved to be ro­ bust. A robust Boolean set operation algorithm using this robustness approach has been implementedand test examples are described in this paper as well.",
       "bbox": {
         "x0": 59.1,
@@ -287,7 +287,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "'",
       "bbox": {
         "x0": 402.5,
@@ -306,7 +306,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "·",
       "bbox": {
         "x0": 408.95,

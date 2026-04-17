@@ -1,6 +1,6 @@
 {
   "engine": "mathpix",
-  "pdf_path": "docs/1989_detecting_and_decomposing_self_overlapping_curves/1989_detecting_and_decomposing_self_overlapping_curves.pdf",
+  "pdf_path": "stepview/1989_detecting_and_decomposing_self_overlapping_curves/1989_detecting_and_decomposing_self_overlapping_curves.pdf",
   "page_count": 8,
   "page_sizes_pt": [
     {
@@ -2246,8 +2246,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5260457858454126,
-        "confidence_rate": 0.993189604821954
+        "confidence": 0.5221290861840364,
+        "confidence_rate": 0.9931106451035038
       }
     },
     {
@@ -2309,8 +2309,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.55419921875,
-        "confidence_rate": 0.9925565614352465
+        "confidence": 0.55810546875,
+        "confidence_rate": 0.992644811600638
       }
     },
     {
@@ -2393,8 +2393,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9442971163826879,
-        "confidence_rate": 0.9993012878664191
+        "confidence": 0.9452385890809757,
+        "confidence_rate": 0.9993134320379484
       }
     },
     {
@@ -2477,8 +2477,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8403611183166504,
-        "confidence_rate": 0.9975533700480663
+        "confidence": 0.8407938480377197,
+        "confidence_rate": 0.9975606030461164
       }
     },
     {
@@ -2561,8 +2561,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.68603515625,
-        "confidence_rate": 0.9954702134097523
+        "confidence": 0.69287109375,
+        "confidence_rate": 0.9955891383698785
       }
     },
     {
@@ -2813,8 +2813,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.99755859375,
-        "confidence_rate": 0.9999650807333806
+        "confidence": 0.998046875,
+        "confidence_rate": 0.9999720713209299
       }
     },
     {
@@ -2876,8 +2876,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.4949963092803955,
-        "confidence_rate": 0.9917611274100784
+        "confidence": 0.4983808994293213,
+        "confidence_rate": 0.9918406387615503
       }
     },
     {
@@ -2960,8 +2960,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.7775320999476776,
-        "confidence_rate": 0.9971766857694706
+        "confidence": 0.7780847608776185,
+        "confidence_rate": 0.9971846468126362
       }
     },
     {
@@ -3065,8 +3065,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.49048733711242676,
-        "confidence_rate": 0.9895788594718546
+        "confidence": 0.4834064245223999,
+        "confidence_rate": 0.9893672620566201
       }
     },
     {
@@ -3338,8 +3338,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5489721298217773,
-        "confidence_rate": 0.9922418406386935
+        "confidence": 0.5523505210876465,
+        "confidence_rate": 0.9923209031937207
       }
     },
     {
@@ -3485,8 +3485,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6566429138183594,
-        "confidence_rate": 0.9941751566985474
+        "confidence": 0.6490206718444824,
+        "confidence_rate": 0.994013950563406
       }
     },
     {
@@ -3506,8 +3506,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.909235954284668,
-        "confidence_rate": 0.9986974156371824
+        "confidence": 0.9106693267822266,
+        "confidence_rate": 0.9987189660760635
       }
     },
     {
@@ -3569,8 +3569,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6678619384765625,
-        "confidence_rate": 0.9937124466973385
+        "confidence": 0.6611061096191406,
+        "confidence_rate": 0.9935545968754157
       }
     },
     {
@@ -3737,8 +3737,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8627948760986328,
-        "confidence_rate": 0.9982446578566662
+        "confidence": 0.8652329444885254,
+        "confidence_rate": 0.9982781922489755
       }
     },
     {
@@ -3800,8 +3800,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9796173402237471,
-        "confidence_rate": 0.9997737261232478
+        "confidence": 0.9800987246661175,
+        "confidence_rate": 0.9997791235952892
       }
     },
     {
@@ -3863,8 +3863,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8522397014312446,
-        "confidence_rate": 0.9960107918152805
+        "confidence": 0.8530844443012029,
+        "confidence_rate": 0.9960354611283048
       }
     },
     {
@@ -3884,8 +3884,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6130738258361816,
-        "confidence_rate": 0.9923843050373573
+        "confidence": 0.626563310623169,
+        "confidence_rate": 0.9927218422685931
       }
     },
     {
@@ -3947,8 +3947,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.5158155187964439,
-        "confidence_rate": 0.9801390879750299
+        "confidence": 0.5260996869765222,
+        "confidence_rate": 0.9807256103351839
       }
     },
     {
@@ -3968,8 +3968,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9873046875,
-        "confidence_rate": 0.9998064340911623
+        "confidence": 0.98779296875,
+        "confidence_rate": 0.9998139241477191
       }
     },
     {
@@ -4073,8 +4073,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8394477367401123,
-        "confidence_rate": 0.9978679947437382
+        "confidence": 0.834686279296875,
+        "confidence_rate": 0.9977987757899559
       }
     },
     {
@@ -4094,8 +4094,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6415271759033203,
-        "confidence_rate": 0.9922424614426439
+        "confidence": 0.6488227844238281,
+        "confidence_rate": 0.9924393292321352
       }
     },
     {
@@ -4178,8 +4178,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.91455078125,
-        "confidence_rate": 0.9987247811589501
+        "confidence": 0.91943359375,
+        "confidence_rate": 0.998800755989924
       }
     },
     {
@@ -4220,8 +4220,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9692673683166504,
-        "confidence_rate": 0.9996570392282822
+        "confidence": 0.9644055366516113,
+        "confidence_rate": 0.9996018002733417
       }
     },
     {
@@ -9281,8 +9281,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.96337890625,
-        "confidence_rate": 0.9992541087125746
+        "confidence": 0.9609375,
+        "confidence_rate": 0.9992033992840075
       }
     },
     {
@@ -9617,8 +9617,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.9664921760559082,
-        "confidence_rate": 0.9996255418247991
+        "confidence": 0.9664821624755859,
+        "confidence_rate": 0.9996254280124938
       }
     },
     {
@@ -9681,7 +9681,7 @@
         "mathpix_type": "text",
         "mathpix_subtype": "",
         "confidence": 0.99951171875,
-        "confidence_rate": 0.9999928176655268
+        "confidence_rate": 0.9999928176655267
       }
     },
     {
@@ -9806,8 +9806,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.6778726577758789,
-        "confidence_rate": 0.9948973284919121
+        "confidence": 0.6846952438354492,
+        "confidence_rate": 0.9950284330465742
       }
     },
     {
@@ -10121,8 +10121,8 @@
       "meta": {
         "mathpix_type": "text",
         "mathpix_subtype": "",
-        "confidence": 0.8585098972566673,
-        "confidence_rate": 0.9975424268836989
+        "confidence": 0.8616990401105782,
+        "confidence_rate": 0.9976020858796072
       }
     },
     {
@@ -10331,8 +10331,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.99169921875,
-        "confidence_rate": 0.9991668048421101
+        "confidence": 0.9921875,
+        "confidence_rate": 0.9992159897506638
       }
     },
     {
@@ -10373,8 +10373,8 @@
       "meta": {
         "mathpix_type": "figure_label",
         "mathpix_subtype": "",
-        "confidence": 0.6513671875,
-        "confidence_rate": 0.9580376741318556
+        "confidence": 0.658203125,
+        "confidence_rate": 0.9590383939786941
       }
     },
     {

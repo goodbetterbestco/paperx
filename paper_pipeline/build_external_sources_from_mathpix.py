@@ -20,11 +20,10 @@ from paper_pipeline.mathpix_adapter import (
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build canonical_sources from Mathpix page OCR output.")
+    parser = argparse.ArgumentParser(description="Build canonical_sources from Mathpix PDF OCR output.")
     parser.add_argument("paper_id", help="Paper directory id under the configured corpus.")
     parser.add_argument("--page", type=int, action="append", dest="pages", help="Limit to one or more 1-based page numbers.")
-    parser.add_argument("--scale", type=float, default=2.0, help="PDF render scale before upload to Mathpix. Defaults to 2.0.")
-    parser.add_argument("--endpoint", default="https://api.mathpix.com/v3/text", help="Mathpix OCR endpoint.")
+    parser.add_argument("--endpoint", default="https://api.mathpix.com/v3/pdf", help="Mathpix PDF OCR endpoint.")
     parser.add_argument("--app-id", help="Override MATHPIX_APP_ID.")
     parser.add_argument("--app-key", help="Override MATHPIX_APP_KEY.")
     parser.add_argument(
@@ -61,14 +60,14 @@ def main() -> int:
         payloads = _load_saved_payloads(args.mathpix_json)
         source = ",".join(args.mathpix_json)
     else:
-        payloads = run_mathpix(
+        mathpix_result = run_mathpix(
             args.paper_id,
             pages=args.pages,
-            scale=args.scale,
             endpoint=args.endpoint,
             app_id=args.app_id,
             app_key=args.app_key,
         )
+        payloads = list(mathpix_result.get("pages") or [])
         source = "mathpix_api"
 
     layout, math = mathpix_pages_to_external_sources(payloads, args.paper_id)

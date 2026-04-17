@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1984_occluding_contour_tell_us_about_solid_shape/1984_occluding_contour_tell_us_about_solid_shape.pdf",
+  "pdf_path": "stepview/1984_occluding_contour_tell_us_about_solid_shape/1984_occluding_contour_tell_us_about_solid_shape.pdf",
   "page_count": 10,
   "page_sizes_pt": [
     {
@@ -116,7 +116,7 @@
       "id": "#/texts/4",
       "page": 1,
       "order": 4,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Abstract. A new theorem is discussed that relates the apparent curvature of the occluding contour of a visual shape to the intrinsic curvature of the surface and the radial curvature. This theorem allows the formulation of general laws for the apparent curvature, independent of viewing distance and regardless of the fact that the rim (the boundary between the visible and invisible parts of the object) is a general, thus twisted, space curve. Consequently convexities, concavities, or inflextions of contours in the retinal image allow the observer to draw inferences about local surface geometry with certainty. These results appear to be counterintuitive, witness to the treatment of the problem by recent authors. It is demonstrated how well-known examples, used to show how concavities and convexities of the contour have no obvious relation to solid shape, are actually good illustrations of the fact that convexities are due to local ovoid shapes, concavities to local saddle shapes.",
       "bbox": {
         "x0": 63.36,
@@ -135,7 +135,7 @@
       "id": "#/texts/5",
       "page": 1,
       "order": 5,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 64.44,
@@ -154,7 +154,7 @@
       "id": "#/texts/6",
       "page": 1,
       "order": 6,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Three-dimensional Euclidean geometry is so complicated that many people experience difficulties in obtaining veridical notions about unfamiliar spatial relationships. Oddly enough, our visual systems automatically interpret some complicated spatial configurations correctly, despite the fact that we may hold primitive and even incorrect intellectual notions about geometrical relations. One such instance is the interpretation of the visual contours of smooth curved objects. Here, even scientific investigators appear as a rule to hold quite false and unfruitful notions. Despite this fact (which will be illustrated later) even these investigators have quite normal visual impressions; this is duly noted by them as a remarkable and as yet unexplained fact. Because the geometry is incompletely or wrongly understood, it is thought that the performance of the visual system must be due to (uncannily lucky) guesswork or the use of prior information and cannot be based on causal relationships.",
       "bbox": {
         "x0": 63.36,
@@ -173,7 +173,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "In this paper I intend to discuss some common fallacies in this respect, and to replace them with factual observations. Some of the latter are not at all new, but apparently only known to mathematicians (differential geometers) and not to visual scientists. One result I will present is (as far as I could ascertain) new, and of recurring applicability in matters of visual perception of solid shape. In order to convince the reader of the need for a thorough analysis I need a few quotations, and 1 have selected them from the well-known book of the late David Marr (1982), which is so widely appreciated that I could hardly detract from its importance.",
       "bbox": {
         "x0": 63.18,
@@ -192,7 +192,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "heading",
       "text": "2 Preliminary",
       "bbox": {
         "x0": 63.54,
@@ -211,7 +211,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Consider smooth rigid bodies, for which the tangent plane is defined for every point of the surface and moreover is a smooth (as many times differentiable as necessary) function of position. From a given position in space all the rays through the vantage point that are tangent to the surface of the body can be constructed. These rays form a conical surface, the contour (or, equivalently, the curve through which this conical surface cuts the unit sphere around the vantage point may be regarded as the contour). The rays touch the object along a smooth curve on its surface, the rim.",
       "bbox": {
         "x0": 63.0,

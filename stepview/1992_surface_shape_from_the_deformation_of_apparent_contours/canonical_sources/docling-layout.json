@@ -1,6 +1,6 @@
 {
   "engine": "docling",
-  "pdf_path": "docs/1992_surface_shape_from_the_deformation_of_apparent_contours/1992_surface_shape_from_the_deformation_of_apparent_contours.pdf",
+  "pdf_path": "stepview/1992_surface_shape_from_the_deformation_of_apparent_contours/1992_surface_shape_from_the_deformation_of_apparent_contours.pdf",
   "page_count": 30,
   "page_sizes_pt": [
     {
@@ -273,7 +273,7 @@
       "id": "#/texts/7",
       "page": 1,
       "order": 7,
-      "role": "front_matter",
+      "role": "heading",
       "text": "Abstract",
       "bbox": {
         "x0": 35.31,
@@ -292,7 +292,7 @@
       "id": "#/texts/8",
       "page": 1,
       "order": 8,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "One immediate facility afforded by the analysis is that surface patches can be reconstructed in the vicinity of contour generators. Once surface curvature is known, it is possible to discriminate extremal contours from other fixed curves in space. Furthermore, the known robustness of parallax as a cue to depth extends to the case of surface curvature. Its derivative-rate of parallax-is shown theoretically to be a curvature cue that is robust to uncertainties in the known viewer motion. This robustness has been confirmed in experiments.",
       "bbox": {
         "x0": 35.38,
@@ -311,7 +311,7 @@
       "id": "#/texts/9",
       "page": 1,
       "order": 9,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The spatitemporal analysis of deforming silhouettes (apparent contours) is here extended using the mathematics of perspective projections and tools from differential geometry. Analysis of the image motion of a silhouette or apparent contour enables computation of local surface curvature along the corresponding contour generator on the surface, assuming viewer motion is known. To perform the analysis, a spatiotemporal parameterization of imagecurve motion is needed, but is underconstrained (a manifestation of the well-known aperture problem). It is shown that an epipolar parameterization is most naturally matched to the recovery of surface curvature.",
       "bbox": {
         "x0": 34.11,
@@ -330,7 +330,7 @@
       "id": "#/texts/10",
       "page": 1,
       "order": 10,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "Finally, the power of the new analysis for robotics applications is demonstrated. Illustrations are given of an Adept robot, equipped with a CCD camera, circumnavigating curved obstacles. When further equipped with a suction gripper the robot manipulator can pick up an object by its curved surface, under visual guidance.",
       "bbox": {
         "x0": 34.21,
@@ -349,7 +349,7 @@
       "id": "#/texts/11",
       "page": 1,
       "order": 11,
-      "role": "front_matter",
+      "role": "heading",
       "text": "1 Introduction",
       "bbox": {
         "x0": 32.99,
@@ -368,7 +368,7 @@
       "id": "#/texts/12",
       "page": 1,
       "order": 12,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "For a smooth arbitrarily curved surface-especially in man-made environments where surface texture may be sparse-the dominant image feature is the apparent contour or silhouette. The apparent contour is the projection of the locus of points on the object-the contour generator or extremal boundary-which separates the visible from the occluded parts of a smooth, opaque, curved surface.",
       "bbox": {
         "x0": 31.77,
@@ -387,7 +387,7 @@
       "id": "#/texts/13",
       "page": 1,
       "order": 13,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "The apparent contour and its deformation under information for navigation, object manipulation, motion baum [41 pointed out that surface orientation along the apparent contour can be computed directly from image data. Koenderink [29] related the curvature of an appar-",
       "bbox": {
         "x0": 30.54,
@@ -406,7 +406,7 @@
       "id": "#/texts/14",
       "page": 1,
       "order": 14,
-      "role": "front_matter",
+      "role": "paragraph",
       "text": "(Gaussian curvature); the sign of Gaussian curvature is equal to the sign of the curvature of the image contour. Convexities, concavities, and inflections of an apparent contour indicate, respectively, convex, hyperbolic, and parabolic surface points. Giblin and Weiss [23] extended this by adding viewer motions to obtain quantitative estimates of surface curvature. A surface (excluding concavities in opaque objects) can be reconstructed from the envelope of all its tangent planes, which in turn are computed directly from the family of apparent contours silhouettes of the surface, obtained under motion of the viewer. By assuming that the viewer follows a great circle of viewer directions around the object, they restricted the problem of analyzing the envelope of tangent planes to the less general problen of computing the envelope of a family of lines in a plane. Their algorithm was tested on noise-free, synthetic data (on the assumption that apparent contours",
       "bbox": {
         "x0": 268.68,
