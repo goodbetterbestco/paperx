@@ -15,8 +15,7 @@ Right now this repo contains two things:
 - `paper_pipeline/`
   Core pipeline code, CLI entrypoints, policies, and adapters.
 - `stepview/`
-  Current research corpus for the StepView kernel paper and related source
-  papers.
+  Current research corpus for StepView and related source papers.
 - `tests/`
   Integration tests for the pipeline.
 - `tmp/`

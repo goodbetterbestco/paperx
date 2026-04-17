@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shlex
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -33,6 +35,24 @@ def _docling_output_dir(paper_id: str, output_dir: Path | None = None) -> Path:
     return output_dir or Path(tempfile.mkdtemp(prefix=f"{paper_id}-docling-", dir=str(ensure_repo_tmp_dir())))
 
 
+def _resolve_docling_command() -> list[str]:
+    configured_bin = os.environ.get("PAPER_PIPELINE_DOCLING_BIN", "").strip()
+    if configured_bin:
+        return [configured_bin]
+
+    repo_venv_bin = Path(__file__).resolve().parents[1] / ".venv-paperx" / "bin" / "docling"
+    if repo_venv_bin.exists():
+        return [str(repo_venv_bin)]
+
+    path_bin = shutil.which("docling")
+    if path_bin:
+        return [path_bin]
+
+    raise FileNotFoundError(
+        "Docling CLI not found. Install `docling`, add it to PATH, or set PAPER_PIPELINE_DOCLING_BIN."
+    )
+
+
 def run_docling(
     paper_id: str,
     *,
@@ -44,23 +64,22 @@ def run_docling(
     output_dir = _docling_output_dir(paper_id, output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = _paper_pdf_path(paper_id)
-    device_arg = f" --device {shlex.quote(device)}" if device else ""
     command = [
-        "/bin/zsh",
-        "-lc",
-        " ".join(
-            [
-                "source /tmp/stepview-kernel-venv/bin/activate &&",
-                "docling",
-                shlex.quote(str(pdf_path)),
-                "--from pdf --to json",
-                f"--output {shlex.quote(str(output_dir))}",
-                device_arg,
-                f"--page-batch-size {page_batch_size}",
-                f"--document-timeout {timeout_seconds}",
-            ]
-        ).replace("  ", " "),
+        *_resolve_docling_command(),
+        str(pdf_path),
+        "--from",
+        "pdf",
+        "--to",
+        "json",
+        "--output",
+        str(output_dir),
+        "--page-batch-size",
+        str(page_batch_size),
+        "--document-timeout",
+        str(timeout_seconds),
     ]
+    if device:
+        command.extend(["--device", device])
     subprocess.run(command, check=True, env=runtime_env(), capture_output=True, text=True)
     return output_dir / f"{paper_id}.json"
 

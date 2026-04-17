@@ -2,7 +2,7 @@
   "schemaVersion": 4,
   "entries": [
     {
-      "id": "kernel_1967_quantitative_invisibility",
+      "id": "1967_quantitative_invisibility",
       "title": "The Notion of Quantitative Invisibility",
       "year": 1967,
       "doi": null,
@@ -14,7 +14,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_1989_detecting_and_decomposing_self_overlapping_curves",
+      "id": "1989_detecting_and_decomposing_self_overlapping_curves",
       "title": "Detecting and Decomposing Self-Overlapping Curves",
       "year": 1989,
       "doi": null,
@@ -26,7 +26,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_1990_curve_intersection_using_bezier_clipping",
+      "id": "1990_curve_intersection_using_bezier_clipping",
       "title": "Curve Intersection Using Bezier Clipping",
       "year": 1990,
       "doi": null,
@@ -38,7 +38,7 @@
       "verificationNotes": "Priority paper rechecked against the local PDF-derived extraction and processed corpus metadata."
     },
     {
-      "id": "kernel_1990_hidden_curve_removal_for_free_form_surfaces",
+      "id": "1990_hidden_curve_removal_for_free_form_surfaces",
       "title": "Hidden Surface Removal Algorithms for Curved Surfaces",
       "year": 1990,
       "doi": null,
@@ -50,7 +50,7 @@
       "verificationNotes": "Priority paper rechecked against the local PDF-derived extraction and processed corpus metadata."
     },
     {
-      "id": "kernel_1990_ray_tracing_trimmed_rational_surface_patches",
+      "id": "1990_ray_tracing_trimmed_rational_surface_patches",
       "title": "Ray Tracing Trimmed Rational Surface Patches",
       "year": 1990,
       "doi": null,
@@ -62,7 +62,7 @@
       "verificationNotes": "Priority paper rechecked against the local PDF-derived extraction and processed corpus metadata."
     },
     {
-      "id": "kernel_1994_visibility_maps_and_spherical_algorithms",
+      "id": "1994_visibility_maps_and_spherical_algorithms",
       "title": "Visibility Maps and Spherical Algorithms",
       "year": 1994,
       "doi": null,
@@ -74,7 +74,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
+      "id": "1995_arbitrarily_precise_computation_of_gauss_maps_and_visibility_sets_for_freeform_surfaces",
       "title": "Arbitrarily Precise Computation of Gauss Maps and Visibility Sets for Freeform Surfaces",
       "year": 1995,
       "doi": null,
@@ -86,7 +86,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2000_partitioning_trimmed_spline_surfaces_visibility",
+      "id": "2000_partitioning_trimmed_spline_surfaces_visibility",
       "title": "Partitioning Trimmed Spline Surfaces into NonSelf-Occluding Regions for Visibility Computation",
       "year": 2000,
       "doi": "10.1006/gmod.2000.0526",
@@ -98,7 +98,7 @@
       "verificationNotes": "Priority paper rechecked against the local PDF-derived extraction and processed corpus metadata."
     },
     {
-      "id": "kernel_2000_practical_ray_tracing_trimmed_nurbs_surfaces",
+      "id": "2000_practical_ray_tracing_trimmed_nurbs_surfaces",
       "title": "Practical Ray Tracing of Trimmed NURBS Surfaces",
       "year": 2000,
       "doi": null,
@@ -110,7 +110,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2001_curve_evaluation_and_interrogation_on_surfaces",
+      "id": "2001_curve_evaluation_and_interrogation_on_surfaces",
       "title": "Curve Evaluation and Interrogation on Surfaces",
       "year": 2001,
       "doi": null,
@@ -122,7 +122,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2006_computing_contour_generators_of_evolving_implicit_surfaces",
+      "id": "2006_computing_contour_generators_of_evolving_implicit_surfaces",
       "title": "Computing Contour Generators of Evolving Implicit Surfaces",
       "year": 2006,
       "doi": null,
@@ -134,7 +134,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2009_self_overlapping_curves_revisited",
+      "id": "2009_self_overlapping_curves_revisited",
       "title": "Self-Overlapping Curves Revisited",
       "year": 2009,
       "doi": null,
@@ -146,7 +146,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2010_two_fast_methods_for_high_quality_line_visibility",
+      "id": "2010_two_fast_methods_for_high_quality_line_visibility",
       "title": "Two Fast Methods for High-Quality Line Visibility",
       "year": 2010,
       "doi": null,
@@ -158,7 +158,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2014_locally_injective_parametrization_fixed_boundaries",
+      "id": "2014_locally_injective_parametrization_fixed_boundaries",
       "title": "Locally Injective Parametrization with Arbitrary Fixed Boundaries",
       "year": 2014,
       "doi": null,
@@ -170,7 +170,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2014_smooth_surface_contours_accurate_topology",
+      "id": "2014_smooth_surface_contours_accurate_topology",
       "title": "Computing Smooth Surface Contours with Accurate Topology",
       "year": 2014,
       "doi": null,
@@ -182,7 +182,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2015_correct_resolution_trimmed_spline_surfaces",
+      "id": "2015_correct_resolution_trimmed_spline_surfaces",
       "title": "Correct Resolution Rendering of Trimmed Spline Surfaces",
       "year": 2015,
       "doi": null,
@@ -194,7 +194,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2018_trimming_in_isogeometric_analysis_review",
+      "id": "2018_trimming_in_isogeometric_analysis_review",
       "title": "A Review of Trimming in Isogeometric Analysis",
       "year": 2018,
       "doi": null,
@@ -206,7 +206,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2019_line_drawings_from_3d_models",
+      "id": "2019_line_drawings_from_3d_models",
       "title": "Line Drawings from 3D Models",
       "year": 2019,
       "doi": null,
@@ -218,7 +218,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2023_algebraic_smooth_occluding_contours",
+      "id": "2023_algebraic_smooth_occluding_contours",
       "title": "Algebraic Smooth Occluding Contours",
       "year": 2023,
       "doi": null,
@@ -230,7 +230,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2023_contesse_occluding_contours",
+      "id": "2023_contesse_occluding_contours",
       "title": "ConTesse: Accurate Occluding Contours for Subdivision Surfaces",
       "year": 2023,
       "doi": null,
@@ -242,7 +242,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2026_robust_tessellation_without_self_intersections",
+      "id": "2026_robust_tessellation_without_self_intersections",
       "title": "Robust Tessellation of CAD Models without Self-Intersections",
       "year": 2026,
       "doi": null,
@@ -254,7 +254,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_2026_topology_first_brep_meshing",
+      "id": "2026_topology_first_brep_meshing",
       "title": "Topology-First B-Rep Meshing",
       "year": 2026,
       "doi": null,
@@ -266,7 +266,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; source metadata still needs future enrichment where authors or venue are missing."
     },
     {
-      "id": "kernel_1984_occluding_contour_tell_us_about_solid_shape",
+      "id": "1984_occluding_contour_tell_us_about_solid_shape",
       "title": "What Does the Occluding Contour Tell Us about Solid Shape?",
       "year": 1984,
       "doi": "10.1068/p130321",
@@ -278,7 +278,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
+      "id": "1990_direct_construction_perspective_projection_aspect_graph_convex_polyhedra",
       "title": "Direct Construction of the Perspective Projection Aspect Graph of Convex Polyhedra",
       "year": 1990,
       "doi": "10.1016/S0734-189X(05)80060-X",
@@ -290,7 +290,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
+      "id": "1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces",
       "title": "The Geometry of View Space of Opaque Objects Bounded by Smooth Surfaces",
       "year": 1990,
       "doi": "10.1016/0004-3702(90)90097-J",
@@ -302,7 +302,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1990_visibility_occlusion_and_the_aspect_graph",
+      "id": "1990_visibility_occlusion_and_the_aspect_graph",
       "title": "Visibility, Occlusion, and the Aspect Graph",
       "year": 1990,
       "doi": null,
@@ -314,7 +314,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1991_on_surfaces_and_their_contours",
+      "id": "1991_on_surfaces_and_their_contours",
       "title": "On Surfaces and Their Contours",
       "year": 1991,
       "doi": null,
@@ -326,7 +326,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
+      "id": "1992_aspect_graph_generation_non_convex_polyhedra_perspective_projection_view",
       "title": "Aspect Graph Generation for Non-Convex Polyhedra from Perspective Projection View",
       "year": 1992,
       "doi": "10.1016/0031-3203(92)90012-8",
@@ -338,7 +338,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
+      "id": "1992_computing_exact_aspect_graphs_of_curved_objects_algebraic_surfaces",
       "title": "Computing Exact Aspect Graphs of Curved Objects: Algebraic Surfaces",
       "year": 1992,
       "doi": "10.1007/BF00133703",
@@ -350,7 +350,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
+      "id": "1992_global_bifurcation_sets_stable_projections_nonsingular_algebraic_surfaces",
       "title": "Global Bifurcation Sets and Stable Projections of Nonsingular Algebraic Surfaces",
       "year": 1992,
       "doi": "10.1007/BF00126392",
@@ -362,7 +362,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1992_surface_shape_from_the_deformation_of_apparent_contours",
+      "id": "1992_surface_shape_from_the_deformation_of_apparent_contours",
       "title": "Surface Shape from the Deformation of Apparent Contours",
       "year": 1992,
       "doi": "10.1007/BF00129682",
@@ -374,7 +374,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+      "id": "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
       "title": "Why Aspect Graphs Are Not (Yet) Practical for Computer Vision",
       "year": 1992,
       "doi": null,
@@ -386,7 +386,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1993_the_visibility_complex",
+      "id": "1993_the_visibility_complex",
       "title": "The Visibility Complex",
       "year": 1993,
       "doi": null,
@@ -398,7 +398,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1994_surfaces_with_assigned_apparent_contour",
+      "id": "1994_surfaces_with_assigned_apparent_contour",
       "title": "Surfaces with Assigned Apparent Contour",
       "year": 1994,
       "doi": null,
@@ -410,7 +410,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1995_introducing_the_reduced_aspect_graph",
+      "id": "1995_introducing_the_reduced_aspect_graph",
       "title": "Introducing the Reduced Aspect Graph",
       "year": 1995,
       "doi": "10.1016/0167-8655(94)00060-G",
@@ -422,7 +422,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
+      "id": "1996_topologically_sweeping_visibility_complexes_via_pseudotriangulations",
       "title": "Topologically Sweeping Visibility Complexes via Pseudotriangulations",
       "year": 1996,
       "doi": null,
@@ -434,7 +434,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+      "id": "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
       "title": "Entity-Based Aspect Graphs: Making Viewer Centered Representations More Efficient",
       "year": 1998,
       "doi": "10.1016/S0167-8655(98)00006-3",
@@ -446,7 +446,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2001_survey_of_aspect_graphs",
+      "id": "2001_survey_of_aspect_graphs",
       "title": "A Survey of Aspect Graphs",
       "year": 2001,
       "doi": null,
@@ -458,7 +458,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2004_the_visual_hull_of_smooth_curved_objects",
+      "id": "2004_the_visual_hull_of_smooth_curved_objects",
       "title": "The Visual Hull of Smooth Curved Objects",
       "year": 2004,
       "doi": "10.1109/TPAMI.2004.130",
@@ -470,7 +470,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2008_the_visual_hull_of_piecewise_smooth_objects",
+      "id": "2008_the_visual_hull_of_piecewise_smooth_objects",
       "title": "The Visual Hull of Piecewise Smooth Objects",
       "year": 2008,
       "doi": "10.1016/j.cviu.2006.12.003",
@@ -482,7 +482,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
+      "id": "2012_completeness_of_reidemeister_type_moves_for_surfaces_embedded_in_three_dimensional_space",
       "title": "Completeness of Reidemeister-Type Moves for Surfaces Embedded in Three-Dimensional Space",
       "year": 2012,
       "doi": "10.4171/RLM/617",
@@ -494,7 +494,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2015_detecting_weakly_simple_polygons",
+      "id": "2015_detecting_weakly_simple_polygons",
       "title": "Detecting Weakly Simple Polygons",
       "year": 2015,
       "doi": "10.1137/1.9781611973730.110",
@@ -506,7 +506,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2016_recognizing_weakly_simple_polygons",
+      "id": "2016_recognizing_weakly_simple_polygons",
       "title": "Recognizing Weakly Simple Polygons",
       "year": 2016,
       "doi": "10.4230/LIPIcs.SoCG.2016.8",
@@ -518,7 +518,7 @@
       "verificationNotes": "Title and local provenance normalized from processed corpus metadata; outside-corpus support paper added for the white-paper research lanes."
     },
     {
-      "id": "kernel_2022_versality_of_central_projections_of_regular_surfaces",
+      "id": "2022_versality_of_central_projections_of_regular_surfaces",
       "title": "Versality of Central Projections of Regular Surfaces",
       "year": 2022,
       "doi": "10.1016/j.topol.2021.107982",

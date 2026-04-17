@@ -1,7 +1,7 @@
-# Kernel Corpus
+# StepView Corpus
 
 This directory is the canonical-first research corpus for the academic-paper
-ingestion work and the StepView kernel white-paper work.
+ingestion work and the StepView white-paper work.
 
 The important shift is that the paper pipeline is no longer passage-first.
 `passages.jsonl` is gone. The paper-owned source of truth is now
@@ -40,8 +40,6 @@ Root files:
 - [figure_expectations.json](./figure_expectations.json)
   Corpus-owned figure completeness expectations used by figure regeneration and
   completeness auditing.
-- [stepview-kernel-whitepaper-skeleton.md](./stepview-kernel-whitepaper-skeleton.md)
-  Working scaffold for the kernel white paper.
 - [whitepaper-editorial-standards.md](./whitepaper-editorial-standards.md)
   Drafting standards for tone, notation, and evidence handling.
 
@@ -68,12 +66,8 @@ Derived review output:
 - [Paper Pipeline](../paper_pipeline/README.md)
   Top-level architectural boundary for the ingestion system as it is prepared
   for extraction into its own repo.
-- [Canonical Builder README](../scripts/kernel/canonical/README.md)
+- [paper_pipeline/README.md](../paper_pipeline/README.md)
   Canonical build contract, source adapters, formula policy, and audit seam.
-- [parser/README.md](../parser/README.md)
-  Parser architecture and the current engineering center of gravity.
-- [parser/ROADMAP.md](../parser/ROADMAP.md)
-  Active StepView implementation plan and phase progress.
 
 If you are answering a question about one paper:
 
@@ -160,9 +154,9 @@ for semantic work:
 
 So the live semantic work is intentionally narrower than "all formulas."
 
-## Kernel Program Map
+## Program Map
 
-The kernel program is still the same six-stage mathematical program:
+The current program is still the same six-stage mathematical program:
 
 1. topology-preserving AP242 / B-Rep ingestion
 2. exact local trimmed-face predicates and intersection queries
@@ -204,17 +198,16 @@ Support lanes outside the main build order:
 - assembly visibility
 - CAD validity, repair, naming, and interoperability
 
-Use the actual paper folder ids above when navigating the corpus. The old
-`kernel_*` path naming is no longer the filesystem shape.
+Use the actual paper folder ids above when navigating the corpus.
 
 ## Working Method
 
 Single-paper loop:
 
 ```bash
-python3 -m venv .venv-kernel-tools
-.venv-kernel-tools/bin/python -m pip install -r requirements.txt
-.venv-kernel-tools/bin/python -m paper_pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math
+python3 -m venv .venv-paperx
+.venv-paperx/bin/python -m pip install -r requirements.txt
+.venv-paperx/bin/python -m paper_pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math
 python3 -m paper_pipeline.cli.audit_corpus --top 12
 ```
 
@@ -236,13 +229,8 @@ human report to `tmp/canonical_corpus_rounds/final_summary.md`, including
 pre-rebuild stale reasons when an existing `canonical.json` no longer matches
 its recorded inputs or the active canonical pipeline.
 
-Source-generation helpers still exist when stronger evidence is needed:
-
-- `scripts/kernel/ingest_pdfs.py`
-- `scripts/kernel/canonical/build_external_sources_from_docling.py`
-- `scripts/kernel/canonical/build_external_sources_from_mathpix.py`
-- `scripts/kernel/canonical/build_external_sources_from_marker.py`
-- `scripts/kernel/canonical/build_external_sources_from_grobid.py`
+Source-generation helpers now live under `paper_pipeline/` when stronger
+evidence is needed.
 
 The remaining corpus-generation seam is now split this way:
 
@@ -256,7 +244,7 @@ The remaining corpus-generation seam is now split this way:
   assets.
 - If a figure needs manual repair, replace or edit that paper-owned PNG
   directly.
-- `scripts/kernel/link_figures.py` preserves existing checked-in figures and
+- `paper_pipeline.figure_linking` preserves existing checked-in figures and
   fills gaps, so deleting a specific PNG is the explicit way to force
   regeneration.
 

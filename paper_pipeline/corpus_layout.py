@@ -54,7 +54,7 @@ def normalize_paper_id(value: str) -> str:
 
 
 def corpus_paper_id(paper_id: str) -> str:
-    return normalize_paper_id(paper_id.removeprefix("kernel_"))
+    return normalize_paper_id(paper_id)
 
 
 def project_root() -> Path:

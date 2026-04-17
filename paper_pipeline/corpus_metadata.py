@@ -9,7 +9,7 @@ from typing import Any
 from paper_pipeline.corpus_layout import CORPUS_DIR, PROJECT_MODE, SOURCE_DIR, corpus_paper_id, normalize_paper_id, paper_pdf_path
 
 
-PAPER_DIR_RE = re.compile(r"^(?:kernel_)?\d{4}_.+")
+PAPER_DIR_RE = re.compile(r"^\d{4}_.+")
 FIGURE_EXPECTATIONS_PATH = CORPUS_DIR / "figure_expectations.json"
 
 

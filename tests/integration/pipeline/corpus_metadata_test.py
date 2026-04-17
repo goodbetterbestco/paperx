@@ -22,7 +22,7 @@ class CorpusMetadataTest(unittest.TestCase):
         importlib.reload(corpus_metadata)
         importlib.reload(text_utils)
 
-    def test_corpus_discovers_unprefixed_ids_and_keeps_legacy_metadata_lookup(self) -> None:
+    def test_corpus_discovers_unprefixed_ids_and_looks_up_matching_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             corpus_dir = Path(temp_dir).resolve() / "stepview"
             paper_dir = corpus_dir / "1967_quantitative_invisibility"
@@ -34,7 +34,7 @@ class CorpusMetadataTest(unittest.TestCase):
                     {
                         "entries": [
                             {
-                                "id": "kernel_1967_quantitative_invisibility",
+                                "id": "1967_quantitative_invisibility",
                                 "title": "Quantitative Invisibility",
                             }
                         ]
@@ -56,13 +56,13 @@ class CorpusMetadataTest(unittest.TestCase):
                 "1967_quantitative_invisibility",
             )
             self.assertEqual(
-                corpus_layout.paper_pdf_path("kernel_1967_quantitative_invisibility"),
+                corpus_layout.paper_pdf_path("1967_quantitative_invisibility"),
                 pdf_path,
             )
             self.assertEqual(
                 text_utils.paper_metadata("1967_quantitative_invisibility"),
                 {
-                    "id": "kernel_1967_quantitative_invisibility",
+                    "id": "1967_quantitative_invisibility",
                     "title": "Quantitative Invisibility",
                 },
             )

@@ -20,6 +20,7 @@ from paper_pipeline.corpus_layout import (
     CORPUS_LEXICON_PATH,
     PROJECT_MODE,
     canonical_path,
+    canonical_sources_dir,
     project_report_path,
     project_status_path,
     review_draft_path,
@@ -497,9 +498,11 @@ def _document_has_generated_abstract(document: dict[str, Any] | None) -> bool:
     return notes.startswith(GENERATED_ABSTRACT_NOTE_PREFIX) or text.startswith("[Generated abstract from ")
 
 
-def _preserve_existing_generated_abstract(existing_document: dict[str, Any] | None, new_document: dict[str, Any]) -> bool:
-    if not _document_has_generated_abstract(existing_document):
-        return False
+def _paper_has_generated_abstract_file(paper_id: str) -> bool:
+    return (canonical_sources_dir(paper_id) / "generated-abstract.txt").exists()
+
+
+def _copy_existing_abstract_block(existing_document: dict[str, Any] | None, new_document: dict[str, Any]) -> bool:
     existing_block = _document_abstract_block(existing_document or {})
     if not existing_block:
         return False
@@ -527,6 +530,25 @@ def _preserve_existing_generated_abstract(existing_document: dict[str, Any] | No
     blocks.append(preserved_block)
     new_document["blocks"] = blocks
     return True
+
+
+def _preserve_existing_generated_abstract(existing_document: dict[str, Any] | None, new_document: dict[str, Any]) -> bool:
+    if not _document_has_generated_abstract(existing_document):
+        return False
+    return _copy_existing_abstract_block(existing_document, new_document)
+
+
+def _preserve_existing_generated_abstract_file(
+    paper_id: str,
+    existing_document: dict[str, Any] | None,
+    new_document: dict[str, Any],
+) -> bool:
+    if not _paper_has_generated_abstract_file(paper_id):
+        return False
+    existing_text = _document_abstract_text(existing_document or {})
+    if not existing_text or "missing" in abstract_quality_flags(existing_text):
+        return False
+    return _copy_existing_abstract_block(existing_document, new_document)
 
 
 def _anomaly_flags(document: dict[str, Any]) -> list[str]:
@@ -730,6 +752,7 @@ def _run_paper_job(
         timings["build_seconds"] = round(time.perf_counter() - build_started, 3)
         document = build_result["document"]
         preserved_generated_abstract = _preserve_existing_generated_abstract(existing_document, document)
+        preserved_generated_abstract_file = _preserve_existing_generated_abstract_file(paper_id, existing_document, document)
         outputs = _write_canonical_outputs(paper_id, document)
         anomalies = _anomaly_flags(document)
         timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
@@ -755,6 +778,7 @@ def _run_paper_job(
                 "skipped_fresh": False,
                 "forced_rebuild": bool(force_rebuild),
                 "preserved_generated_abstract": preserved_generated_abstract,
+                "preserved_generated_abstract_file": preserved_generated_abstract_file,
                 "timings": timings,
             }
         )
@@ -896,7 +920,7 @@ def _process_round(
     ]
     next_index = 0
     active_jobs: dict[Future[dict[str, Any]], str] = {}
-    use_round_mathpix = bool(force_rebuild and _mathpix_credentials_available() and len(pending_papers) > 1)
+    use_round_mathpix = bool(_mathpix_credentials_available() and len(pending_papers) > 1)
     mathpix_coordinator: _MathpixRoundCoordinator | None = None
 
     if use_round_mathpix:
@@ -1012,7 +1036,7 @@ def run_rounds(
         f"Corpus temp paths are redirected into {TMP_DIR}.",
         f"Configured worker concurrency: {max_workers}.",
         "Fresh canonicals are skipped when source inputs, build flags, and pipeline fingerprints still match.",
-        "Mathpix runs at whole-PDF granularity and downloads line-level output from the document endpoint.",
+        "Mathpix defaults to whole-PDF round coordination when multiple papers are pending and credentials are available.",
     ]
     if PROJECT_MODE:
         status["notes"].append(f"Project reports are written into {BATCH_DIR}.")

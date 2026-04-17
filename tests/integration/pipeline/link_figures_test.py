@@ -32,7 +32,7 @@ class LinkFiguresTest(unittest.TestCase):
         pdf_path = root / "docs" / "2016_recognizing_weakly_simple_polygons" / "2016_recognizing_weakly_simple_polygons.pdf"
         manifest = build_manifest_from_pdf_path(pdf_path)
 
-        self.assertEqual(manifest["id"], "kernel_2016_recognizing_weakly_simple_polygons")
+        self.assertEqual(manifest["id"], "2016_recognizing_weakly_simple_polygons")
         self.assertEqual(
             manifest["source_pdf"],
             "docs/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",

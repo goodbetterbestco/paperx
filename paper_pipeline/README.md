@@ -23,8 +23,6 @@ Today, the system has one primary engine home and one remaining legacy helper
 surface:
 
 - engine implementation lives primarily under `paper_pipeline/`
-- `scripts/kernel/canonical/*.py` now exist mostly as compatibility shims
-- a smaller set of source-generation helpers still live under `scripts/kernel/`
 - paper corpus and checked-in outputs still live under `docs/`
 
 The code now has an explicit corpus-layout seam so that current `docs/` can be
@@ -58,9 +56,6 @@ Current preferred commands:
 - `python3 -m paper_pipeline.cli.audit_corpus --top 12`
 - `python3 -m paper_pipeline.cli.run_corpus_rounds`
 
-The older `scripts/kernel/canonical/*.py` commands still exist, but they are
-now compatibility shims rather than the preferred engine boundary.
-
 ## Bootstrap
 
 Minimal Python bootstrap for audit/review work:
@@ -85,13 +80,12 @@ Figure regeneration now also lives under this package:
 - `paper_pipeline.figure_linking`
 - `paper_pipeline.vision_ocr.js`
 
-Corpus-specific figure expectations are no longer read from
-`scripts/kernel/ingest_pdfs.py`. They now live with the corpus itself at
+Corpus-specific figure expectations now live with the corpus itself at
 `<corpus-root>/figure_expectations.json`.
 
 The copied local extraction target at `/Users/evanthayer/Projects/paperx`
 already passes the audit path directly against `/Users/evanthayer/Projects/paperx/stepview`.
-The build path also works there when run with the current kernel-tools Python
+The build path also works there when run with the current local Python
 environment; the remaining plain-`python3` gap is just dependency bootstrap.
 
 The extraction plan is:

@@ -944,7 +944,7 @@ def render_markdown(report: dict[str, Any], *, top_n: int) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Audit canonical kernel corpus quality and rank the most broken papers.")
+    parser = argparse.ArgumentParser(description="Audit canonical corpus quality and rank the most broken papers.")
     parser.add_argument("--top", type=int, default=10, help="Number of papers to include in the markdown summary.")
     args = parser.parse_args()
 

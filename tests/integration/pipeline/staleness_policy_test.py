@@ -30,7 +30,7 @@ class StalenessPolicyTest(unittest.TestCase):
             pdf_path = Path(temp_dir) / "paper.pdf"
             pdf_path.write_text("pdf-v1", encoding="utf-8")
             metadata = build_metadata_for_paper(
-                "test_kernel_paper",
+                "test_paper",
                 pdf_path=pdf_path,
                 timestamp="2026-04-14T00:00:00Z",
                 layout_engine="native_pdf",
@@ -41,7 +41,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 use_external_math=False,
             )
             document = {
-                "paper_id": "test_kernel_paper",
+                "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
                 "build": metadata,
             }
@@ -50,7 +50,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 document,
                 desired_flags={"use_external_layout": False, "use_external_math": False},
                 current_inputs=build_input_fingerprints(
-                    "test_kernel_paper",
+                    "test_paper",
                     pdf_path=pdf_path,
                     use_external_layout=False,
                     use_external_math=False,
@@ -67,7 +67,7 @@ class StalenessPolicyTest(unittest.TestCase):
             pdf_path.write_text("pdf-v1", encoding="utf-8")
             current_pipeline = pipeline_fingerprint()
             metadata = build_metadata_for_paper(
-                "test_kernel_paper",
+                "test_paper",
                 pdf_path=pdf_path,
                 timestamp="2026-04-15T00:00:00Z",
                 layout_engine="native_pdf",
@@ -79,7 +79,7 @@ class StalenessPolicyTest(unittest.TestCase):
             )
             metadata["pipeline"]["fingerprint"] = current_pipeline["compatibility"]["legacy_path_fingerprint"]
             document = {
-                "paper_id": "test_kernel_paper",
+                "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
                 "build": metadata,
             }
@@ -88,7 +88,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 document,
                 desired_flags={"use_external_layout": False, "use_external_math": False},
                 current_inputs=build_input_fingerprints(
-                    "test_kernel_paper",
+                    "test_paper",
                     pdf_path=pdf_path,
                     use_external_layout=False,
                     use_external_math=False,
@@ -104,7 +104,7 @@ class StalenessPolicyTest(unittest.TestCase):
             pdf_path = Path(temp_dir) / "paper.pdf"
             pdf_path.write_text("pdf-v1", encoding="utf-8")
             document = {
-                "paper_id": "test_kernel_paper",
+                "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
                 "build": {
                     "created_at": "2026-04-14T00:00:00Z",
@@ -129,7 +129,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 document,
                 desired_flags={"use_external_layout": False, "use_external_math": False},
                 current_inputs=build_input_fingerprints(
-                    "test_kernel_paper",
+                    "test_paper",
                     pdf_path=pdf_path,
                     use_external_layout=False,
                     use_external_math=False,
@@ -148,7 +148,7 @@ class StalenessPolicyTest(unittest.TestCase):
             pdf_path = Path(temp_dir) / "paper.pdf"
             pdf_path.write_text("pdf-v1", encoding="utf-8")
             metadata = build_metadata_for_paper(
-                "test_kernel_paper",
+                "test_paper",
                 pdf_path=pdf_path,
                 timestamp="2026-04-14T00:00:00Z",
                 layout_engine="native_pdf",
@@ -159,7 +159,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 use_external_math=False,
             )
             document = {
-                "paper_id": "test_kernel_paper",
+                "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
                 "build": metadata,
             }
@@ -169,7 +169,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 document,
                 desired_flags={"use_external_layout": False, "use_external_math": False},
                 current_inputs=build_input_fingerprints(
-                    "test_kernel_paper",
+                    "test_paper",
                     pdf_path=pdf_path,
                     use_external_layout=False,
                     use_external_math=False,
@@ -187,7 +187,7 @@ class StalenessPolicyTest(unittest.TestCase):
             external_math_path = Path(temp_dir) / "math.json"
             external_math_path.write_text("{}", encoding="utf-8")
             metadata = build_metadata_for_paper(
-                "test_kernel_paper",
+                "test_paper",
                 pdf_path=pdf_path,
                 timestamp="2026-04-14T00:00:00Z",
                 layout_engine="native_pdf",
@@ -198,7 +198,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 use_external_math=False,
             )
             document = {
-                "paper_id": "test_kernel_paper",
+                "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
                 "build": metadata,
             }

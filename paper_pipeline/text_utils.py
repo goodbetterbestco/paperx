@@ -75,13 +75,8 @@ def bibliography_entries() -> list[dict[str, Any]]:
 
 
 def paper_metadata(paper_id: str) -> dict[str, Any] | None:
-    canonical_id = paper_id.removeprefix("kernel_")
-    candidate_ids = {
-        canonical_id,
-        f"kernel_{canonical_id}",
-    }
     for entry in bibliography_entries():
-        if str(entry.get("id", "")) in candidate_ids:
+        if str(entry.get("id", "")) == paper_id:
             return entry
     return None
 

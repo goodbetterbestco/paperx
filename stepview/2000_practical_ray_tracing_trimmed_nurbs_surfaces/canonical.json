@@ -136,17 +136,17 @@
       "builder_version": "0.2.0",
       "fingerprint": "954e5ce4d6cbf92bef87c209d638b714b913d22e6063d0534bb20d6b55ac4e7b",
       "modules": {
-        "scripts/kernel/canonical/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
-        "scripts/kernel/canonical/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
-        "scripts/kernel/canonical/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
-        "scripts/kernel/canonical/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
-        "scripts/kernel/canonical/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
-        "scripts/kernel/canonical/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
-        "scripts/kernel/canonical/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
-        "scripts/kernel/canonical/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
-        "scripts/kernel/canonical/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
-        "scripts/kernel/canonical/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
-        "scripts/kernel/canonical/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+        "paper_pipeline/reconcile_blocks.py": "55bda19aa8183a956de85f953f72933486fd46d48076c8f7d3e241264fe5367b",
+        "paper_pipeline/extract_math.py": "616b3eba4da8edff915ab944c588e25c2a8bfd700ec0ff81bd8db6bcd1e4e645",
+        "paper_pipeline/normalize_prose.py": "e5588aca3c998fe7200df4435e19c0fb728c9710199611bd9b74561ab514c660",
+        "paper_pipeline/extract_figures.py": "21784347b997a5c34d6a7bb5bd4dd3c9ccf2222a8e6aef2c3d7bf0628db99ddb",
+        "paper_pipeline/math_review_policy.py": "eb1596c6cdaaa30a4b30d1f6d53177f16eeaa9b4ec32e2600dac27ae8487b8c0",
+        "paper_pipeline/compile_formulas.py": "747380a9e94e4ad32ce0414b09eae601ca66ba91e9fd34ed649d8cf182963a37",
+        "paper_pipeline/mathml_compiler.py": "c938affef12ea850a0f7f08e404647d65f1b388e0f3f8f8c88b6b6311cf31c12",
+        "paper_pipeline/lexicon.py": "f55f95aa4d925ddd8a0e3697325a51efb38da50f66f3a8484669d857e6a827b0",
+        "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
+        "paper_pipeline/formula_semantic_policy.py": "8d8ade78668dc92ed000dfc3b6c9d025e24b85c192dc4a3853523d6a72d8c607",
+        "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
       }
     }
   },

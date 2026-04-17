@@ -1,4 +1,5 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -7,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.docling_adapter import docling_json_to_external_sources
+from paper_pipeline.docling_adapter import _resolve_docling_command, docling_json_to_external_sources, run_docling
 
 
 def _docling_item(ref: str, label: str, text: str, *, page: int, left: float, top: float, right: float, bottom: float) -> dict:
@@ -26,6 +27,20 @@ def _docling_item(ref: str, label: str, text: str, *, page: int, left: float, to
 
 
 class DoclingAdapterTest(unittest.TestCase):
+    def test_resolve_docling_command_uses_configured_bin(self) -> None:
+        with patch.dict("os.environ", {"PAPER_PIPELINE_DOCLING_BIN": "/custom/docling"}):
+            self.assertEqual(_resolve_docling_command(), ["/custom/docling"])
+
+    def test_run_docling_raises_clear_error_when_cli_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_dir = Path(tmpdir)
+            with (
+                patch("paper_pipeline.docling_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+                patch("paper_pipeline.docling_adapter._resolve_docling_command", side_effect=FileNotFoundError("Docling CLI not found.")),
+            ):
+                with self.assertRaisesRegex(FileNotFoundError, "Docling CLI not found"):
+                    run_docling("synthetic_test_paper", output_dir=output_dir)
+
     def test_page_one_abstract_and_intro_close_front_matter(self) -> None:
         docling_document = {
             "texts": [

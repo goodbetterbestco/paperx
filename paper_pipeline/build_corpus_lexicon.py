@@ -154,7 +154,7 @@ def _collect_bibliography_sources() -> tuple[Counter[str], dict[str, set[str]], 
 
     bibliography = json.loads(bibliography_path.read_text(encoding="utf-8"))
     for entry in bibliography.get("entries", []):
-        paper_id = str(entry.get("id", "")).replace("kernel_", "")
+        paper_id = str(entry.get("id", ""))
         _add_text_sources(
             str(entry.get("title", "")),
             paper_id=paper_id,

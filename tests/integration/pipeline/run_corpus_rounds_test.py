@@ -14,6 +14,7 @@ from paper_pipeline.run_corpus_rounds import (
     _compose_external_sources,
     _desired_flags_for_existing_paper,
     _preserve_existing_generated_abstract,
+    _preserve_existing_generated_abstract_file,
     _render_final_report,
     _summarize_round,
 )
@@ -280,6 +281,62 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(
             new_document["blocks"][0]["content"]["spans"][0]["text"],
             "[Generated abstract from paper content.] A preserved generated abstract.",
+        )
+        self.assertEqual(
+            new_document["blocks"][0]["review"]["notes"],
+            "Generated abstract from paper content; original abstract unavailable in source PDF.",
+        )
+
+    def test_preserve_existing_generated_abstract_file_copies_prior_text(self) -> None:
+        existing_document = {
+            "front_matter": {
+                "abstract_block_id": "blk-abstract-old",
+            },
+            "blocks": [
+                {
+                    "id": "blk-abstract-old",
+                    "type": "paragraph",
+                    "content": {
+                        "spans": [
+                            {
+                                "kind": "text",
+                                "text": "A manually curated abstract that should survive regeneration.",
+                            }
+                        ]
+                    },
+                    "source_spans": [{"page": 1, "span_id": "orig"}],
+                    "alternates": [],
+                    "review": {
+                        "status": "edited",
+                        "risk": "low",
+                        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF.",
+                    },
+                }
+            ],
+        }
+        new_document = {
+            "front_matter": {
+                "abstract_block_id": "blk-abstract-new",
+            },
+            "blocks": [
+                {
+                    "id": "blk-abstract-new",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "A newly extracted abstract."}]},
+                    "source_spans": [],
+                    "alternates": [],
+                    "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
+                }
+            ],
+        }
+
+        with patch("paper_pipeline.run_corpus_rounds._paper_has_generated_abstract_file", return_value=True):
+            preserved = _preserve_existing_generated_abstract_file("synthetic_test_paper", existing_document, new_document)
+
+        self.assertTrue(preserved)
+        self.assertEqual(
+            new_document["blocks"][0]["content"]["spans"][0]["text"],
+            "A manually curated abstract that should survive regeneration.",
         )
         self.assertEqual(
             new_document["blocks"][0]["review"]["notes"],

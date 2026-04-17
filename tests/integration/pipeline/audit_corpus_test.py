@@ -144,7 +144,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_reports_core_canonical_failures(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -230,7 +230,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_missing_figures_without_figure_cues(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {
@@ -321,7 +321,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_treats_placeholder_abstract_as_missing(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -380,7 +380,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_flags_boilerplate_abstract_text(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -446,7 +446,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_missing_references_without_citation_cues(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Panel Paper",
             "source": {},
             "build": {
@@ -528,7 +528,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_ignores_raw_display_latex_paragraph_when_counting_fragments(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -594,7 +594,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_ignores_mapsto_heavy_raw_display_latex_paragraph(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -674,7 +674,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_counts_converted_display_math(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -746,7 +746,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_reports_formula_diagnostic_hits(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -818,7 +818,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_tracks_formula_policies_and_semantic_ir(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -905,7 +905,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_flags_missing_semantic_ir_for_semantic_formula(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -983,7 +983,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_figure_interrupted_prose_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1056,7 +1056,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_section_opener_after_heading_like_block(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1122,7 +1122,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_short_where_lead_in_as_fragment(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1195,7 +1195,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_clause_and_display_lead_ins_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1281,7 +1281,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_leading_inline_math_paragraph_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1352,7 +1352,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_affiliation_or_algorithm_spill_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1460,7 +1460,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_subcase_lead_in_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1526,7 +1526,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_standalone_result_statement_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1628,7 +1628,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_blame_long_continuation_after_short_fragment(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1708,7 +1708,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_glossary_entry_as_fragmented(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1781,7 +1781,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_keeps_glossary_context_across_abbreviation_run(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
@@ -1861,7 +1861,7 @@ class AuditCorpusTest(unittest.TestCase):
     def test_audit_document_does_not_flag_figure_axis_label_as_fragmented_context(self) -> None:
         document = {
             "schema_version": "1.0",
-            "paper_id": "test_kernel_paper",
+            "paper_id": "test_paper",
             "title": "Synthetic Test Paper",
             "source": {},
             "build": {},
