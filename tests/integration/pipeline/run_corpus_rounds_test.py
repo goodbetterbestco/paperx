@@ -358,7 +358,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         round_status = {
             "papers": {
                 "paper-a": {
-                    "status": "ok",
+                    "status": "completed",
                     "anomalies": ["missing_figures"],
                     "skipped_fresh": True,
                     "prebuild_staleness": {
@@ -367,7 +367,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
                     },
                 },
                 "paper-b": {
-                    "status": "ok",
+                    "status": "completed",
                     "anomalies": [],
                     "prebuild_staleness": {
                         "stale": False,
@@ -380,6 +380,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         summary = _summarize_round(round_status)
 
         self.assertEqual(summary["success_count"], 2)
+        self.assertEqual(summary["running_count"], 0)
         self.assertEqual(summary["stale_before_build_count"], 1)
         self.assertEqual(summary["fresh_skip_count"], 1)
         self.assertEqual(summary["stale_reasons"]["pipeline_fingerprint_changed"], 1)
@@ -393,8 +394,8 @@ class RunCorpusRoundsTest(unittest.TestCase):
                     "started_at": "2026-04-14T00:00:00Z",
                     "completed_at": "2026-04-14T00:05:00Z",
                     "papers": {
-                        "paper-a": {"status": "ok", "completed_at": "2026-04-14T00:01:00Z"},
-                        "paper-b": {"status": "ok", "completed_at": "2026-04-14T00:02:00Z"},
+                        "paper-a": {"status": "completed", "completed_at": "2026-04-14T00:01:00Z"},
+                        "paper-b": {"status": "completed", "completed_at": "2026-04-14T00:02:00Z"},
                     },
                 }
             },
@@ -402,7 +403,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         def fake_run_paper_job(paper_id: str, *, force_rebuild: bool, prefetched_mathpix_future=None) -> dict:
             return {
-                "status": "ok",
+                "status": "completed",
                 "completed_at": "2026-04-14T00:10:00Z",
                 "forced_rebuild": force_rebuild,
                 "paper_id": paper_id,
@@ -420,6 +421,40 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertTrue(round_status["paper-b"]["forced_rebuild"])
         self.assertEqual(round_status["paper-a"]["paper_id"], "paper-a")
         self.assertEqual(round_status["paper-b"]["paper_id"], "paper-b")
+        self.assertNotEqual(status["rounds"]["round_1"]["started_at"], "2026-04-14T00:00:00Z")
+        self.assertIsNotNone(status["rounds"]["round_1"]["completed_at"])
+        self.assertTrue(status["rounds"]["round_1"]["force_rebuild"])
+
+    def test_final_report_mentions_running_papers(self) -> None:
+        status = {
+            "started_at": "2026-04-14T00:00:00Z",
+            "updated_at": "2026-04-14T00:05:00Z",
+            "papers": ["paper-a", "paper-b"],
+            "rounds": {
+                "round_1": {
+                    "started_at": "2026-04-14T00:00:00Z",
+                    "completed_at": None,
+                    "papers": {
+                        "paper-a": {
+                            "status": "running",
+                            "started_at": "2026-04-14T00:01:00Z",
+                        },
+                        "paper-b": {
+                            "status": "completed",
+                            "metrics": {"sections": 4, "references": 3, "figures": 2},
+                            "anomalies": [],
+                            "prebuild_staleness": {"stale": False, "reasons": []},
+                        },
+                    },
+                }
+            },
+            "notes": [],
+        }
+
+        report = _render_final_report(status)
+
+        self.assertIn("- Running: 1", report)
+        self.assertIn("running (started 2026-04-14T00:01:00Z)", report)
 
     def test_final_report_mentions_stale_reasons(self) -> None:
         status = {
@@ -432,7 +467,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
                     "completed_at": "2026-04-14T00:05:00Z",
                     "papers": {
                         "paper-a": {
-                            "status": "ok",
+                            "status": "completed",
                             "metrics": {"sections": 4, "references": 3, "figures": 2},
                             "anomalies": [],
                             "skipped_fresh": True,
@@ -467,7 +502,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
                     "completed_at": "2026-04-14T00:05:00Z",
                     "papers": {
                         "paper-a": {
-                            "status": "ok",
+                            "status": "completed",
                             "metrics": {"sections": 4, "references": 3, "figures": 2},
                             "anomalies": [],
                             "prebuild_staleness": {"stale": False, "reasons": []},

@@ -701,7 +701,7 @@ def _run_paper_job(
             timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
             paper_status.update(
                 {
-                    "status": "ok",
+                    "status": "completed",
                     "completed_at": _now_iso(),
                     "mode": "fresh_canonical",
                     "metrics": outputs,
@@ -758,7 +758,7 @@ def _run_paper_job(
         timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
         paper_status.update(
             {
-                "status": "ok",
+                "status": "completed",
                 "completed_at": _now_iso(),
                 "mode": build_result["mode"],
                 "metrics": outputs,
@@ -798,8 +798,9 @@ def _run_paper_job(
 
 def _summarize_round(round_status: dict[str, Any]) -> dict[str, Any]:
     paper_results = round_status.get("papers", {})
-    success_results = [item for item in paper_results.values() if item.get("status") == "ok"]
-    failed_results = [item for item in paper_results.values() if item.get("status") != "ok"]
+    success_results = [item for item in paper_results.values() if item.get("status") == "completed"]
+    failed_results = [item for item in paper_results.values() if item.get("status") == "failed"]
+    running_results = [item for item in paper_results.values() if item.get("status") == "running"]
     anomalies: dict[str, int] = {}
     stale_reasons: dict[str, int] = {}
     stale_before_build_count = 0
@@ -818,6 +819,7 @@ def _summarize_round(round_status: dict[str, Any]) -> dict[str, Any]:
     return {
         "success_count": len(success_results),
         "failure_count": len(failed_results),
+        "running_count": len(running_results),
         "anomalies": anomalies,
         "stale_before_build_count": stale_before_build_count,
         "stale_reasons": stale_reasons,
@@ -845,6 +847,7 @@ def _render_final_report(status: dict[str, Any]) -> str:
                 f"- Started: {round_status.get('started_at', '')}",
                 f"- Completed: {round_status.get('completed_at', '')}",
                 f"- Successes: {summary['success_count']}",
+                f"- Running: {summary['running_count']}",
                 f"- Failures: {summary['failure_count']}",
                 f"- Stale before rebuild: {summary['stale_before_build_count']}",
                 f"- Fresh canonical skips: {summary['fresh_skip_count']}",
@@ -873,9 +876,9 @@ def _render_final_report(status: dict[str, Any]) -> str:
         row = [paper_id]
         for round_name in round_names:
             paper_status = status.get("rounds", {}).get(round_name, {}).get("papers", {}).get(paper_id, {})
-            if paper_status.get("status") == "ok":
+            if paper_status.get("status") == "completed":
                 metrics = paper_status.get("metrics", {})
-                cell = f"ok ({metrics.get('sections', 0)} s / {metrics.get('references', 0)} r / {metrics.get('figures', 0)} f)"
+                cell = f"completed ({metrics.get('sections', 0)} s / {metrics.get('references', 0)} r / {metrics.get('figures', 0)} f)"
                 anomalies = paper_status.get("anomalies", [])
                 if anomalies:
                     cell += f" {';'.join(anomalies[:3])}"
@@ -883,6 +886,8 @@ def _render_final_report(status: dict[str, Any]) -> str:
                     cell += " stale-before-build"
                 if paper_status.get("skipped_fresh"):
                     cell += " fresh-skip"
+            elif paper_status.get("status") == "running":
+                cell = f"running (started {paper_status.get('started_at', '')})"
             elif paper_status:
                 cell = "failed"
             else:
@@ -909,17 +914,26 @@ def _process_round(
     force_rebuild: bool,
 ) -> None:
     round_name = f"round_{round_index}"
-    round_status = status.setdefault("rounds", {}).setdefault(
-        round_name,
-        {"started_at": _now_iso(), "completed_at": None, "papers": {}},
-    )
+    if force_rebuild:
+        round_status = {
+            "started_at": _now_iso(),
+            "completed_at": None,
+            "papers": {},
+            "force_rebuild": True,
+        }
+        status.setdefault("rounds", {})[round_name] = round_status
+    else:
+        round_status = status.setdefault("rounds", {}).setdefault(
+            round_name,
+            {"started_at": _now_iso(), "completed_at": None, "papers": {}},
+        )
     papers = status.get("papers", [])
 
     if force_rebuild:
         pending_papers = list(papers)
     else:
         pending_papers = [
-            paper_id for paper_id in papers if round_status["papers"].get(paper_id, {}).get("status") != "ok"
+            paper_id for paper_id in papers if round_status["papers"].get(paper_id, {}).get("status") != "completed"
         ]
     next_index = 0
     active_jobs: dict[Future[dict[str, Any]], str] = {}
