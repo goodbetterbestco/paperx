@@ -162,8 +162,8 @@ def _mathpix_credentials_available() -> bool:
     return bool(os.environ.get("MATHPIX_APP_ID") and os.environ.get("MATHPIX_APP_KEY"))
 
 
-def _mathpix_submit_workers(max_workers: int) -> int:
-    return min(max_workers, _int_env("STEPVIEW_MATHPIX_SUBMIT_WORKERS", 6))
+def _mathpix_submit_workers() -> int:
+    return _int_env("STEPVIEW_MATHPIX_SUBMIT_WORKERS", 10)
 
 
 def _mathpix_round_poll_seconds() -> float:
@@ -926,7 +926,7 @@ def _process_round(
     if use_round_mathpix:
         mathpix_coordinator = _MathpixRoundCoordinator(
             pending_papers,
-            submit_workers=_mathpix_submit_workers(max_workers),
+            submit_workers=_mathpix_submit_workers(),
             poll_seconds=_mathpix_round_poll_seconds(),
         )
         mathpix_coordinator.start()

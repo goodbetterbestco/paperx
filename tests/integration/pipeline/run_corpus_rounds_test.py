@@ -13,6 +13,7 @@ from paper_pipeline.run_corpus_rounds import (
     _build_paper,
     _compose_external_sources,
     _desired_flags_for_existing_paper,
+    _mathpix_submit_workers,
     _preserve_existing_generated_abstract,
     _preserve_existing_generated_abstract_file,
     _render_final_report,
@@ -21,6 +22,15 @@ from paper_pipeline.run_corpus_rounds import (
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
+    def test_mathpix_submit_workers_defaults_to_ten(self) -> None:
+        with patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("STEPVIEW_MATHPIX_SUBMIT_WORKERS", None)
+            self.assertEqual(_mathpix_submit_workers(), 10)
+
+    def test_mathpix_submit_workers_is_not_capped_by_max_workers(self) -> None:
+        with patch.dict(os.environ, {"STEPVIEW_MATHPIX_SUBMIT_WORKERS": "12"}, clear=False):
+            self.assertEqual(_mathpix_submit_workers(), 12)
+
     def test_anomaly_flags_require_reference_and_figure_expectation(self) -> None:
         document = {
             "front_matter": {
