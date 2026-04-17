@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.formula_semantic_ir import annotate_formula_semantic_expr
+from pipeline.formula_semantic_ir import annotate_formula_semantic_expr
 
 
 class FormulaSemanticIrTest(unittest.TestCase):

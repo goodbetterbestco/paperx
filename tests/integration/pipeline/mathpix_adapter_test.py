@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.mathpix_adapter import (
+from pipeline.mathpix_adapter import (
     _mathpix_pdf_submit,
     _mathpix_pdf_wait_for_completion,
     _mathpix_request_semaphore,
@@ -52,12 +52,12 @@ class MathpixAdapterTest(unittest.TestCase):
 
         with (
             patch.dict(os.environ, {"MATHPIX_APP_ID": "id", "MATHPIX_APP_KEY": "key"}, clear=False),
-            patch("paper_pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value=lines_payload),
+            patch("pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+            patch("pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
+            patch("pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
+            patch("pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value=lines_payload),
             patch(
-                "paper_pipeline.mathpix_adapter._pdf_page_sizes_pt",
+                "pipeline.mathpix_adapter._pdf_page_sizes_pt",
                 return_value=[(612.0, 792.0), (612.0, 792.0)],
             ),
         ):
@@ -72,12 +72,12 @@ class MathpixAdapterTest(unittest.TestCase):
     def test_run_mathpix_passes_page_ranges_to_pdf_submit(self) -> None:
         with (
             patch.dict(os.environ, {"MATHPIX_APP_ID": "id", "MATHPIX_APP_KEY": "key"}, clear=False),
-            patch("paper_pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value={"pages": []}),
+            patch("pipeline.mathpix_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+            patch("pipeline.mathpix_adapter._mathpix_pdf_submit", return_value="pdf-123") as submit_mock,
+            patch("pipeline.mathpix_adapter._mathpix_pdf_wait_for_completion", return_value={"status": "completed"}),
+            patch("pipeline.mathpix_adapter._mathpix_pdf_download_lines", return_value={"pages": []}),
             patch(
-                "paper_pipeline.mathpix_adapter._pdf_page_sizes_pt",
+                "pipeline.mathpix_adapter._pdf_page_sizes_pt",
                 return_value=[(612.0, 792.0), (612.0, 792.0), (612.0, 792.0)],
             ),
         ):
@@ -88,16 +88,16 @@ class MathpixAdapterTest(unittest.TestCase):
     def test_mathpix_pdf_wait_for_completion_retries_until_completed(self) -> None:
         with (
             patch(
-                "paper_pipeline.mathpix_adapter._mathpix_pdf_status",
+                "pipeline.mathpix_adapter._mathpix_pdf_status",
                 side_effect=[
                     {"status": "received"},
                     {"status": "split"},
                     {"status": "completed", "num_pages": 2},
                 ],
             ) as status_mock,
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_wait_timeout_seconds", return_value=60),
-            patch("paper_pipeline.mathpix_adapter._mathpix_pdf_poll_seconds", return_value=0.25),
-            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch("pipeline.mathpix_adapter._mathpix_pdf_wait_timeout_seconds", return_value=60),
+            patch("pipeline.mathpix_adapter._mathpix_pdf_poll_seconds", return_value=0.25),
+            patch("pipeline.mathpix_adapter._sleep") as sleep_mock,
         ):
             result = _mathpix_pdf_wait_for_completion("pdf-123", app_id="id", app_key="key")
 
@@ -123,7 +123,7 @@ class MathpixAdapterTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             pdf_path = Path(tmpdir) / "fake.pdf"
             pdf_path.write_bytes(b"%PDF-1.4 test")
-            with patch("paper_pipeline.mathpix_adapter.subprocess.run", side_effect=fake_run):
+            with patch("pipeline.mathpix_adapter.subprocess.run", side_effect=fake_run):
                 pdf_id = _mathpix_pdf_submit(pdf_path, app_id="id", app_key="key", page_ranges="1,3")
 
         self.assertEqual(pdf_id, "pdf-123")
@@ -136,11 +136,11 @@ class MathpixAdapterTest(unittest.TestCase):
 
     def test_call_mathpix_retries_connection_reset_then_succeeds(self) -> None:
         with (
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
-            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch("pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("pipeline.mathpix_adapter._sleep") as sleep_mock,
             patch(
-                "paper_pipeline.mathpix_adapter.request.urlopen",
+                "pipeline.mathpix_adapter.request.urlopen",
                 side_effect=[
                     ConnectionResetError(54, "Connection reset by peer"),
                     _FakeMathpixResponse({"ok": True}),
@@ -163,7 +163,7 @@ class MathpixAdapterTest(unittest.TestCase):
             captured["body"] = req.data
             return _FakeMathpixResponse({"ok": True})
 
-        with patch("paper_pipeline.mathpix_adapter.request.urlopen", side_effect=fake_urlopen):
+        with patch("pipeline.mathpix_adapter.request.urlopen", side_effect=fake_urlopen):
             payload = call_mathpix_on_page_image(b"PNGDATA", app_id="id", app_key="key")
 
         self.assertEqual(payload, {"ok": True})
@@ -182,11 +182,11 @@ class MathpixAdapterTest(unittest.TestCase):
 
     def test_call_mathpix_retries_broken_pipe_urlerror_then_succeeds(self) -> None:
         with (
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
-            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch("pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("pipeline.mathpix_adapter._sleep") as sleep_mock,
             patch(
-                "paper_pipeline.mathpix_adapter.request.urlopen",
+                "pipeline.mathpix_adapter.request.urlopen",
                 side_effect=[
                     error.URLError(BrokenPipeError(32, "Broken pipe")),
                     _FakeMathpixResponse({"ok": True}),
@@ -202,11 +202,11 @@ class MathpixAdapterTest(unittest.TestCase):
 
     def test_call_mathpix_raises_after_retry_budget_exhausted(self) -> None:
         with (
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
-            patch("paper_pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
-            patch("paper_pipeline.mathpix_adapter._sleep") as sleep_mock,
+            patch("pipeline.mathpix_adapter._mathpix_retry_attempts", return_value=3),
+            patch("pipeline.mathpix_adapter._mathpix_retry_backoff_seconds", side_effect=[0.25, 0.5]),
+            patch("pipeline.mathpix_adapter._sleep") as sleep_mock,
             patch(
-                "paper_pipeline.mathpix_adapter.request.urlopen",
+                "pipeline.mathpix_adapter.request.urlopen",
                 side_effect=[
                     ConnectionResetError(54, "Connection reset by peer"),
                     ConnectionResetError(54, "Connection reset by peer"),

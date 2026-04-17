@@ -7,13 +7,13 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.compile_formulas import compile_formulas
+from pipeline.compile_formulas import compile_formulas
 
 
 class CompileFormulasTest(unittest.TestCase):
     def test_display_formula_stays_unconverted_when_backend_is_unavailable(self) -> None:
         with patch(
-            "paper_pipeline.compile_formulas.compile_latex_targets",
+            "pipeline.compile_formulas.compile_latex_targets",
             return_value=({}, {"status": "unconverted", "notes": "latex2mathml unavailable"}),
         ):
             compiled = compile_formulas(
@@ -31,7 +31,7 @@ class CompileFormulasTest(unittest.TestCase):
 
     def test_display_formula_compiles_to_mathml_when_backend_is_available(self) -> None:
         with patch(
-            "paper_pipeline.compile_formulas.compile_latex_targets",
+            "pipeline.compile_formulas.compile_latex_targets",
             return_value=({"mathml": "<math><mi>x</mi></math>"}, {"status": "converted", "notes": "backend=test"}),
         ):
             compiled = compile_formulas(
@@ -53,7 +53,7 @@ class CompileFormulasTest(unittest.TestCase):
             ({}, {"status": "failed", "notes": "backend=test: parse error"}),
         ]
 
-        with patch("paper_pipeline.compile_formulas.compile_latex_targets", side_effect=responses):
+        with patch("pipeline.compile_formulas.compile_latex_targets", side_effect=responses):
             compiled = compile_formulas(
                 [
                     {

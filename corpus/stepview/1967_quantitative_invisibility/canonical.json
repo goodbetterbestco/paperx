@@ -1,0 +1,1880 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "1967_quantitative_invisibility",
+  "title": "The Notion of Quantitative Invisibility",
+  "source": {
+    "pdf_path": "stepview/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
+    "page_count": 7,
+    "page_sizes_pt": [
+      {
+        "page": 1,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 2,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 3,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 4,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 5,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 6,
+        "width": 612.0,
+        "height": 792.0
+      },
+      {
+        "page": 7,
+        "width": 612.0,
+        "height": 792.0
+      }
+    ]
+  },
+  "build": {
+    "created_at": "2026-04-17T05:34:05Z",
+    "updated_at": "2026-04-17T05:34:05Z",
+    "builder_version": "0.2.0",
+    "sources": {
+      "native_pdf": true,
+      "layout_engine": "native_pdf",
+      "math_engine": "heuristic",
+      "figure_engine": "local",
+      "text_engine": "native_pdf"
+    },
+    "flags": {
+      "use_external_layout": false,
+      "use_external_math": false,
+      "rebuild": false
+    },
+    "inputs": {
+      "pdf": {
+        "path": "stepview/1967_quantitative_invisibility/1967_quantitative_invisibility.pdf",
+        "exists": true,
+        "size_bytes": 529410,
+        "modified_at": "2026-04-17T03:17:21Z",
+        "sha256": "d670f1a182d6d2981568ec856406235bf1ed2637cc3753b37dfd1b1325f60ef5"
+      }
+    },
+    "pipeline": {
+      "builder_version": "0.2.0",
+      "fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b",
+      "modules": {
+        "paper_pipeline/reconcile_blocks.py": "31591e292cc2448fa29f0ecb27bcf6744f166529f46310b942b729efbfe80060",
+        "paper_pipeline/extract_math.py": "407507a897f75aacb9f09b4410748f278421e4c1a7ffd3cb5e4337b3311abe92",
+        "paper_pipeline/normalize_prose.py": "3945f0161dfb827a2c8a8921514e3d97604c51226fbf32978bdec0fb11df35b5",
+        "paper_pipeline/extract_figures.py": "c9f0038c67e195ef6013623c86224621f7e4d96a4a6612482d9ea9e6a4ff4c97",
+        "paper_pipeline/math_review_policy.py": "4e24dbf12cee254e5cde146bd5cbd98b33be48dc45fb2170da8b5d3f333d524a",
+        "paper_pipeline/compile_formulas.py": "445ef3de76ab81916a03e5038346568fb7e7e87db883a4764eef91f0eac41f00",
+        "paper_pipeline/mathml_compiler.py": "2c3be155c58264ccef87fb805a2af4bd3909b6d13fc097af041a7109b7f2696c",
+        "paper_pipeline/lexicon.py": "1c60312ca4ca92911d61c3e7b0d08db35cabd86f75d3580c205e500bb1363610",
+        "paper_pipeline/formula_diagnostics.py": "bc6299150620af48f3b66c58a3453a2d141738999178ca5855b8b5305a1fb3aa",
+        "paper_pipeline/formula_semantic_policy.py": "27efffee09914e79172c6d82bda23d68b992fc24349e32c8747c30713363aee3",
+        "paper_pipeline/formula_semantic_ir.py": "86ee40ef34c118a40de674963b11a3a3ad50afed0dbd2e790b680dd76618aa15"
+      },
+      "compatibility": {
+        "legacy_path_fingerprint": "e0d1298f83d6f0e8747fff9a46496d0a2801060d0dd0a1da7053f15e4963192b"
+      }
+    }
+  },
+  "front_matter": {
+    "title": "The Notion of Quantitative Invisibility",
+    "authors": [
+      {
+        "name": "[missing from original]",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "aff-1",
+        "department": "by ARTHUR APPEL International Business Machines Corporation Yorktown Heights, New York",
+        "institution": "",
+        "address": ""
+      }
+    ],
+    "abstract_block_id": "blk-front-abstract-1",
+    "funding_block_id": null
+  },
+  "styles": {
+    "document_style": {},
+    "category_styles": {},
+    "block_styles": {}
+  },
+  "sections": [
+    {
+      "id": "sec-1",
+      "label": "1",
+      "title": "Introduction",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0002"
+      ],
+      "children": [],
+      "source_spans": []
+    },
+    {
+      "id": "sec-388",
+      "label": "388",
+      "title": "388 Proceedings A.C.M. National Meeting,",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0004",
+        "blk-paragraph-0005",
+        "blk-figure-0006",
+        "blk-paragraph-0007",
+        "blk-paragraph-0008",
+        "blk-figure-0009",
+        "blk-paragraph-0010",
+        "blk-paragraph-0011"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 86.64,
+            "y0": 72.45,
+            "x1": 327.1,
+            "y1": 85.26,
+            "width": 240.46,
+            "height": 12.81
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sec-390",
+      "label": "390",
+      "title": "390 Proceedings A.C.M. National Meeting,",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0012",
+        "blk-figure-0013",
+        "blk-paragraph-0014",
+        "blk-figure-0015",
+        "blk-paragraph-0016",
+        "blk-display_equation_ref-0017",
+        "blk-figure-0018",
+        "blk-paragraph-0019",
+        "blk-paragraph-0020",
+        "blk-figure-0021",
+        "blk-paragraph-0022"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 70.8,
+            "y0": 47.72,
+            "x1": 302.46,
+            "y1": 60.85,
+            "width": 231.66,
+            "height": 13.13
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sec-392",
+      "label": "392",
+      "title": "392 Proceedings A.C~M. National Meeting,",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0023",
+        "blk-figure-0024",
+        "blk-figure-0025",
+        "blk-figure-0026"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 62.16,
+            "y0": 46.06,
+            "x1": 299.04,
+            "y1": 58.55,
+            "width": 236.88,
+            "height": 12.49
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sec-acknowledgments",
+      "label": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0027",
+        "blk-paragraph-0028",
+        "blk-figure-0029"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 312.0,
+            "y0": 607.18,
+            "x1": 425.53,
+            "y1": 619.67,
+            "width": 113.53,
+            "height": 12.49
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sec-references",
+      "label": null,
+      "title": "References",
+      "level": 1,
+      "block_ids": [],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 58.56,
+            "y0": 588.06,
+            "x1": 118.37,
+            "y1": 598.63,
+            "width": 59.81,
+            "height": 10.57
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sec-1",
+      "label": "1",
+      "title": "1 JVSLUH and RMKROLAK",
+      "level": 1,
+      "block_ids": [
+        "blk-paragraph-0030",
+        "blk-figure-0031",
+        "blk-paragraph-0032"
+      ],
+      "children": [],
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 63.84,
+            "y0": 601.5,
+            "x1": 256.31,
+            "y1": 632.47,
+            "width": 192.47,
+            "height": 30.97
+          },
+          "engine": "native_pdf"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-front-abstract-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "[Generated abstract from paper content.] This paper introduces quantitative invisibility for line drawings of solid objects, measuring at each point on a line how many surfaces obscure it instead of treating visibility as a simple binary state. For assemblies of planar surfaces bounded by straight segments, the author develops tests for deciding when contour edges change that count, using implied vorticity and related point-in-boundary predicates. The resulting method is positioned between fast but limited surface-visibility schemes and expensive point-sampling approaches, and it enables practical hidden-line renderings for fairly complex scenes."
+          }
+        ]
+      },
+      "source_spans": [],
+      "alternates": [],
+      "review": {
+        "status": "edited",
+        "risk": "medium",
+        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF."
+      }
+    },
+    {
+      "id": "blk-paragraph-0002",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "There have been varied approaches to the determination of line drawing visibility. All schemes that have been implemented to date have assumed a limited vocabulary of solids or surfaces. E. E. Zajac and, more recently, P. Loutrel have discussed determining the hidden edges of a convex polyhedron? ,4 By their techniques if the angle between the local line of sight and the outward normal to a face of a convex polyhedron is greater than 90 ° the face is declared invisible, and any line which is the intersection of two invisible faces is declared invisible. This is essentially a surface visibility test, where the basic element tested for visibility is a surface element. Such testing is valid only for convex polyhedra because on other types of solids a surface can be partially hidden. Because surface visibility testing applied to a single convex polyhedral object determine the visibility of a complete line segment, there is no resolution problem. The line connecting two vertex points is either completely Visible or completely invisible. Also since only \"one test is made on every surface the time to determine visibility of an object does not vary significantly with the viewpoint. Schemes for handling convex polyhedra are very fast, usually requiring.only two to five times as much calculation time as a wire frame drawing.* L. G. Roberts has done the most advanced work for convex polyhedra by determining not only the hidden edges in a single object but also the segments of visible edges that are hidden by other objects in the same scene 5. The very important aspect of his strategy was that two procedures are implemented. Edges which are the intersection of hidden surfaces are determined and suppressed, and then all other edges are tested to determine to what extent they are hidden by other objects. The prime limitation of his work is that is is applicable only to solids which are assemblies of convex polyhedra modules. This is a severe limitation on the vocabulary of shapes which can be rendered. A far greater vocabulary of solids have been handled in the point visibility determination or \"brute force\" schemes but at very high calculation times. These schemes essentially have the following strategy: a curve is broken down into many small segments and a small segment is drawn if a test point on the segment is not hidden by any surface in the scene. The author has developed a scheme for the perspec- *A good machine independent measure of visibility versus nonvisibility rendering is the ratio of calculation time required for rendering. The ratios mentioned in this paper are based upon measurements of the author's programs run on an IBM 7094 and are meant to provide an approximate comparison of schemes and are not indicative of limitations of the state-of-the-art. In general, it is not possible to exactly specify a ratio of visibility to non-visibility time since this ratio varies from object to object and from viewpoint to viewpoint for the same object."
+          },
+          {
+            "kind": "text",
+            "text": " "
+          },
+          {
+            "kind": "text",
+            "text": "387"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 29.99,
+            "y0": 545.02,
+            "x1": 271.49,
+            "y1": 750.47,
+            "width": 241.5,
+            "height": 205.44
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 286.3,
+            "y0": 286.3,
+            "x1": 529.16,
+            "y1": 650.62,
+            "width": 242.87,
+            "height": 364.32
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 287.02,
+            "y0": 658.78,
+            "x1": 528.78,
+            "y1": 751.66,
+            "width": 241.76,
+            "height": 92.88
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 1,
+          "bbox": {
+            "x0": 269.98,
+            "y0": 763.89,
+            "x1": 287.07,
+            "y1": 776.38,
+            "width": 17.09,
+            "height": 12.49
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0004",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "tive rendering of assemblies of planes in space which are bounded by straight line segments, z This work takes into account internal boundaries (holes), and external boundaries. Y. Okaya has applied the point visibility scheme to assemblies of spheres and cylinders which are used to form a molecular model.6R.A. Weiss has developed a very powerful system for rendering combinations of planes and quadric surfaces in orthographic projection. 7 point visibility schemes are applicable to a large vocabulary of surfaces, combinations of surfaces and projection schemes. These schemes are very docile, since computation errors are not cumulative and usually affect only a small curve segment. The main disadvantage of point visibility tests is the large computation times required for high resolution renderings. For renderings Of engineering usefulness of about 40 surfaces and 150 lines, computation time for visibility determination can exceed fifteen minutes on an IBM 7094. This cost increases directly with the size of the picture, the resolution required, and the complexity of the scene. Rendering assemblies of planes bounded by line segments with visibility determined at points costs about 100 to 1000 times as much as the wire frame rendering."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 84.0,
+            "y0": 100.05,
+            "x1": 326.42,
+            "y1": 393.9,
+            "width": 242.42,
+            "height": 293.85
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0005",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The rationale behind the scheme to be presented in this paper is that there ought to be a visibility determination scheme which would be midway in characteristics between the surface visibility and the point visibility schemes. Obviously the scheme should be based upon determining the change in visibility on a curve. The fundamental notion of quantitative invisibility is that it is not sufficient to specify a curve invisible or visible, but that the total number of visible surfaces that hide a point on the curve should be measured and when no surface hides points on the curve, the curve is rendered. This notion is useful because techniques developed for detecting changes in quantitative invisibility along a line are more economical than measuring quantitative invisibility at a point. algorithms for detecting changes in quantitative invisibility have only been developed for straight lines and planes but the strategy should be applicable to higher order curves and surfaces. Procedures for line visibility determination have been implemented, and calculation times of about 10 to 20 times the wire frame calculation time resulted. define a material line as having specific end points and that this line does not pierce any bounded surface with the surface boundary. From a practical viewpoint, only material lines are manufactured and since we are interested in rendering real objects only material lines need be dealt with. When a volume is cornpletely enclosed by flat surfaces, assign to every surface a material vector which points into the volume or into the material of the object. When the angle between a material vector and the line of sight to the origin of that vector is less than 90 ° then the surface associated with that material vector can never be seen and the surface must be invisible. Lines which are the intersection of two invisible surfaces are obviously invisible. Surfaces whose material vectors form angles of greater than 90 ° with the local line of sight may be completely or partially visible or even completely invisible. define a contour line as being a line along which the line of sight is tangent to the surface. For polyhedra, given a specific viewpoint, a contour line is a material line which is the intersection of two surfaces, only one of which is invisible. For a given viewpoint, the quantitative invisibility of a material line can change only when it passes behind a contour line. Figure 1A illustrates the variation in quantitative invisibility as a line passes behind two overlap-"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 84.24,
+            "y0": 426.21,
+            "x1": 326.76,
+            "y1": 766.86,
+            "width": 242.52,
+            "height": 340.65
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 342.25,
+            "y0": 100.05,
+            "x1": 585.03,
+            "y1": 345.9,
+            "width": 242.78,
+            "height": 245.85
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0006",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-1"
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 382.32,
+            "y0": 698.85,
+            "x1": 545.16,
+            "y1": 711.66,
+            "width": 162.84,
+            "height": 12.81
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0007",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "ping surfaces. Figure 1B illustrates how quantitative invisibility varies as a line pases behind a solid. Notice that quantitative invisibility can change as it Notion Of Quantitative Invisibility And The Machine Rendering Of Solids 389"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 2,
+          "bbox": {
+            "x0": 342.48,
+            "y0": 730.05,
+            "x1": 584.42,
+            "y1": 767.82,
+            "width": 241.94,
+            "height": 37.77
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 178.32,
+            "y0": 69.57,
+            "x1": 548.6,
+            "y1": 82.38,
+            "width": 370.28,
+            "height": 12.81
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0008",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "crosses a hidden contour line which is a concave corner. Only surfaces that are viewed from the spatial side should affect the measurement of quantitative invisibility. Implied vorticity There are two basic mathematical procedures required in order to utilize the notion of quantitative invisibility: detecting when a material line passes behind a contour line, and determining whether the material line is going behind or coming from behind the visible surface of which the contour line is a boundary. Economic techniques developed for these two procedures make use of a property of closed plane boundaries which can be called implied vorticity. This property is a consequence of the order in which the vertex points of a plane bounded by line segments are entered and stored. From the order in which vertex points are stored it can be determined whether a point coplaner with the bounding line segments is on the interior or exterior side of the line. Referring to Figure 2, where the vertex points Pn are entered in a counterclockwise manner, when point A or B are on the interior side of"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 57.36,
+            "y0": 98.13,
+            "x1": 298.08,
+            "y1": 159.81,
+            "width": 240.72,
+            "height": 61.68
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 57.36,
+            "y0": 165.57,
+            "x1": 299.67,
+            "y1": 374.7,
+            "width": 242.31,
+            "height": 209.13
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0009",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-2"
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 101.76,
+            "y0": 647.83,
+            "x1": 253.02,
+            "y1": 658.08,
+            "width": 151.26,
+            "height": 10.25
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0010",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "a line PHPn+I the sense of rotation about A or B from Pn to Pn+l is counterclockwise. Wlaen A or B is on the exterior side of a line the sense of rotation from Pn to Pn+l is clockwise. In essense then, the vector from Pn to Pn+~ has a moment or an implied vorticity about a point not colinear with the vector. When the sense of the vorticity is compared to the sense in which the vertex points of the plane containing Pn are listed, the location of the point relative to the line can be quickly deduced. When the sense of vorticity and the sense of listing are the same then the point lies on the interior side of the line. If the senses disagree the point is on the exterior side. This does not necessarily mean the point lies within the boundary. For example, in Figure 2, point A lies on the exterior side of line PzP3 and point B lies on the interior side on line P3P4. However, when the surface boundary is a triangle and if the sense of implied vorticity of all three sides are identical about a coplaner point, that point must lie within the triangular boundary. This test for whether a point lies within a triangle is very fast and for reference we can call this a tri-sense test. Another application of implied vorticity is that it can be used to determine whether a vector is pointing into or out of a surface boundary as it crosses the boundary. For example, referring again to Figure 2, if we take the vector A to B which crosses line P~P2, the sense of P~P2 about point B disagrees with the implied vorticity of the vertex points so the vector AB points out of the boundary as it crosses line P1Pz. The vector BA points into the boundary as it crosses P~Pz because the sense of implied vorticity about point A agrees with the implied vorticity of the vertex points. This notion of implied vorticity and its applications can be applied to holes in a surface if the direction in which the vertex points which describe the hole is opposite to the outer bounddary direction. A rapid method to determine the sense of rotation of a vector Pi Pi+l about a point O is to take the sign of the matrix equation for the area of the triangle (Pi,Pi+I,0)."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 56.16,
+            "y0": 664.05,
+            "x1": 299.27,
+            "y1": 762.15,
+            "width": 243.11,
+            "height": 98.1
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 314.16,
+            "y0": 98.13,
+            "x1": 557.82,
+            "y1": 504.3,
+            "width": 243.66,
+            "height": 406.17
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0011",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "where a, b, c, are the direction cosines of a line perpendicular to the plane of the triangle (Pi,Pi+l,O). At least one of the equations (1) can be used for any plane since aZ-l-bZ+"
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-1"
+          },
+          {
+            "kind": "text",
+            "text": ". In the usual application of the matrix equations (1) the indeterminancy of sign is treated as a nuisance, but for purposes of indicating the direc-"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 315.12,
+            "y0": 689.01,
+            "x1": 556.06,
+            "y1": 762.06,
+            "width": 240.94,
+            "height": 73.05
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0012",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "tion of rotation it is essential. Since the sign of a matrix is changed if any two rows are interchanged, a change in the order in which the points are entered in the matrix equations (1) will change th sign of the matrix. For example, the matrix A/a is positive when evaluated for a triangle in the first quadrant which is not perpendicular to the x ~ 0 plane when the points are entered in a counterclockwise sense, and the matrix is negative if the points are entered in a clockwise sense. This is illustrated for a simple triangle in Fig-ure3."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 59.28,
+            "y0": 74.12,
+            "x1": 303.3,
+            "y1": 207.97,
+            "width": 244.02,
+            "height": 133.85
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0013",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-3"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 97.68,
+            "y0": 575.0,
+            "x1": 256.8,
+            "y1": 588.12,
+            "width": 159.12,
+            "height": 13.13
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0014",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The sweep plane of a line to be drawn is the plane which contains this line and the viewpoint. This plane is bounded by a triangle whose vertex points are the eye of the observer and the end points of the line to be drawn. The line to be drawn passes behind a contour line for a specific viewpoint when (i) the piercing point of the contour line in the sweep plane lies within the limits of the contour line and (ii) the piercing point lies within the triangular boundary of the sweep plane. Condition (i) can easily be determined by a distance test or evaluation of the parametric variable of the piercing point when all line equations are in parametric form. Condition (ii) can be determined by a tri-sense test of the three vertex points of the sweep line about the piercing point. Referring to Figure 4, contour line 1 satisfies both conditions on sweep plane SP~, contour line 2 fails condition (i) and contour line 3 fails condition (ii)."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 53.04,
+            "y0": 594.2,
+            "x1": 295.29,
+            "y1": 740.29,
+            "width": 242.25,
+            "height": 146.09
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 318.48,
+            "y0": 78.2,
+            "x1": 560.53,
+            "y1": 151.81,
+            "width": 242.05,
+            "height": 73.61
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0015",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-4"
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 324.0,
+            "y0": 406.76,
+            "x1": 549.71,
+            "y1": 430.21,
+            "width": 225.71,
+            "height": 23.45
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0016",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "After determining that a line to be drawn has passed behind a contour line, it is necessary to determine what effect this had on the count of quantitative invisibility. Referring to Figure 5, the procedure for determining this effect is as follows: 1. determine piercing point of line to be drawn (P1P2) in sweep plane (SP~) of the contour line (CL). The line to be drawn starts at point P1. 2. Locate preceding point (K) on the line to be drawn which is a small distance (usually 10-5 units) closer to the starting end of the line (P0 to be drawn than the piercing point. 3. Project this preceding point (K) onto the plane iS) which contains the contour line (CL). The projected point (J) is the piercing point of the line of sight to the preceding point (K). 4. determine the sense (CL/J) of implied vorticity of the contour line (CL) about the projected point (J). When the sense (CL/J) agrees with the sense of implied vorticity of the surface (S) then the line (P1P2) is coming out from behind surface (S) and the count of quantitative invisibility is to be decreased by one. When the sense (CL/J) disagrees with the sense of implied vorticity of the surface (S) then the line (P~P2) is goNotion Of Quantitative Invisibility And The Machine Rendering Of Solids 391"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 4,
+          "bbox": {
+            "x0": 313.2,
+            "y0": 439.4,
+            "x1": 555.8,
+            "y1": 744.12,
+            "width": 242.6,
+            "height": 304.73
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 169.44,
+            "y0": 70.29,
+            "x1": 541.93,
+            "y1": 83.1,
+            "width": 372.49,
+            "height": 12.81
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-display_equation_ref-0017",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Z I LINE OF intersection / t) OF SPI a SPZc/ / / OBSERVER _, _ _ . / / / '-sP, o s,G."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 99.12,
+            "y0": 110.37,
+            "x1": 109.06,
+            "y1": 129.87,
+            "width": 9.94,
+            "height": 19.5
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 101.04,
+            "y0": 130.29,
+            "x1": 152.15,
+            "y1": 149.79,
+            "width": 51.11,
+            "height": 19.5
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 89.04,
+            "y0": 180.45,
+            "x1": 302.41,
+            "y1": 213.15,
+            "width": 213.37,
+            "height": 32.7
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 82.56,
+            "y0": 315.47,
+            "x1": 244.1,
+            "y1": 331.36,
+            "width": 161.54,
+            "height": 15.89
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0018",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-5"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 67.68,
+            "y0": 377.57,
+            "x1": 282.11,
+            "y1": 388.45,
+            "width": 214.43,
+            "height": 10.89
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0019",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Since all the lines to be rendered on a drawing are in contact with other lines, for example the line (PIP2) has a common vertex Pz with line (PzP3), an initial measurement of quantitative invisibility need not be made very often, as the count of quantitative invisibility is valid for both intersecting lines at their common vertex point. This initial measurement of quantitative invisibility is a count of all those surfaces which hide the starting point. The starting point is connected to all other vertex points on a completely described object by material lines so that the changes in quantitative invisibility can be rapidly determined by the methods of implied vorticity. An initial measurement of quantitative invisibility need be undertaken only once for every object in a scene or, where the list processing becomes time consuming, once for every internal or external surface boundary."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 53.52,
+            "y0": 401.49,
+            "x1": 293.67,
+            "y1": 657.9,
+            "width": 240.15,
+            "height": 256.41
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0020",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "A bounded surface hides a point when the line of sight to that point pierces the surface within the surface boundaries, and the piercing point is closer to the observer than the point being tested for visibility. The essential problem of point visibility testing is the determination of when a point lies within a surface boundary. The author has previously described in another report a test of this kind, 2 but J. Rutledge has suggested a scheme which has proven to be more economical. If we connect a point, whose relative location to a surface boundary is unknown, to a point which is outside the boundary by a curve (usually a line), and if the number of times this connecting curve (line) crosses the boundary is odd, the point being tested lies within the boundary. In order to make an initial measurement of quantitative invisibility at a point the piercing points of the line of sight to that point on all surfaces are determined and a count is made of those piercing points which are: i) closer to the observer than the point being measured. ii) within a surface boundary as detected by Rutledge's scheme."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 53.52,
+            "y0": 687.81,
+            "x1": 293.91,
+            "y1": 760.14,
+            "width": 240.39,
+            "height": 72.33
+          },
+          "engine": "native_pdf"
+        },
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 310.08,
+            "y0": 99.09,
+            "x1": 552.79,
+            "y1": 308.7,
+            "width": 242.71,
+            "height": 209.61
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0021",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-6"
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 388.8,
+            "y0": 499.73,
+            "x1": 471.46,
+            "y1": 510.61,
+            "width": 82.66,
+            "height": 10.89
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0022",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Several singularities arise in the implementation of the notion of quantitative invisibility and techniques of implied vorticity. These are illustrated in Figure 6. In drawing the boundary of surface A, as line 4-7 is completed, contour line 2-7 is crossed at vertex point 7. There should be no change in quantitative invisibility at point 7. In rendering surface B, as the boundary turns at vertex point 2 from line 1-2 to line 2-3 the count of quantitative invisibility should increase by one, which in this single object picture will make line 2-3 invisible. When drawing surface C as the boundary turns at vertex point 2 from line 6-2 to line 2-1, the count of quantitative invisibility should decrease by one. If surface C is being drawn in the opposite direction, as line 2-6 leads to line 6-5 at vertex point 6, no change should occur at the vertex point as the far segment of line 6-5 will become visible as it crosses contour line 8-2. Obviously, the rules to specify"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 5,
+          "bbox": {
+            "x0": 310.56,
+            "y0": 541.89,
+            "x1": 551.19,
+            "y1": 760.62,
+            "width": 240.63,
+            "height": 218.73
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0023",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "changes in quantitative invisibility when a contour line passes thru a vertex point are: a) when an external corner line leads at a common vertex point to an internal corner line, quantitative invisibility increases by one only when a contour line exists at the common vertex and the internal corner is a contour line. b) When an internal corner line leads at a common vertex point to an external corner linel quantitative invisibility decreases by one only when a contour line exists at the common vertex and the internal corner is a contour line. c) When no contour line exists at a common vertex no change in quantitative invisibility can take place. What these rules essentially detect is the instance when an internal corner line is hidden from view. When an internal corner line is not a contour line, we are looking into the corner. For example in drawing surface D as line 8-2 leads to line 2-10 at vertex point 2, the internal corner 2-10 is not a contour line so no change in quantitative invisibility occurs. All of the procedures discussed in this paper have been reduced to practice. Coding has been in Fortran IV and is executed on an IBM 7094 with graphic output on an IBM 1627 (CalComp) plotter. Figures 7 thru 12 are examples of the graphic output. When appropriate, the captions specify calculation time and the number of surfaces and surface boundary lines in a scene. All computer generated pictures in this article were rendered under the control of the same computer program."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 56.16,
+            "y0": 74.62,
+            "x1": 297.97,
+            "y1": 466.79,
+            "width": 241.81,
+            "height": 392.17
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0024",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-7"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 63.84,
+            "y0": 724.63,
+            "x1": 285.16,
+            "y1": 744.96,
+            "width": 221.32,
+            "height": 20.33
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0025",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-8"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 318.48,
+            "y0": 370.63,
+            "x1": 547.87,
+            "y1": 390.96,
+            "width": 229.39,
+            "height": 20.33
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0026",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-9"
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 313.68,
+            "y0": 565.99,
+            "x1": 552.67,
+            "y1": 596.64,
+            "width": 238.99,
+            "height": 30.65
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0027",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The author is grateful to Dr. J. D. Rutledge for many helpful discussions, and to P. Loutrel for a helpful conversation. J.A. Dobbs, L. E. Harrington, Mr. & Mrs. E. P. McGilton, S. L. Tramaglini, and R. M. Warner among others were especially helpful with plotter output problems and the maintenance of a high computer thruput which contributed significantly to this project. The author is deeply indebted to J. P. Gilvey and F. L. Graner for their continuing encouragement and support of this work."
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 6,
+          "bbox": {
+            "x0": 311.04,
+            "y0": 625.66,
+            "x1": 553.22,
+            "y1": 747.11,
+            "width": 242.18,
+            "height": 121.45
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0028",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Notion Of Quantitative Invisibility And The Machine Rendering Of Solids 393"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 179.28,
+            "y0": 90.03,
+            "x1": 551.19,
+            "y1": 104.32,
+            "width": 371.91,
+            "height": 14.29
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0029",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-11"
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 60.96,
+            "y0": 533.82,
+            "x1": 293.56,
+            "y1": 574.87,
+            "width": 232.6,
+            "height": 41.05
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0030",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "A mathematic model for mechanical part description Carom ACM Feb 1965 125-129"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 63.84,
+            "y0": 601.5,
+            "x1": 256.31,
+            "y1": 632.47,
+            "width": 192.47,
+            "height": 30.97
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-figure-0031",
+      "type": "figure_ref",
+      "content": {
+        "figure_id": "fig-12"
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 320.16,
+            "y0": 354.54,
+            "x1": 550.14,
+            "y1": 375.19,
+            "width": 229.98,
+            "height": 20.65
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-paragraph-0032",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "2 A APPEL The visibility problem and machine rendering of solids IBM Research Report RC 1618 May 20 1966 3 E E ZAJAC Computer-made perspective movies as a scientific communication tool Carom ACM 7 March 1964 169-170 4 P LOUTREL Determination of hidden edges in polyhedral figures: convex case Technical Report 400-145 Laboratory for Electroscience Research N. Y. U. September 1966 5 L G ROBERTS Machine perception of three-dimensional solids Technical Report No 315 Lincoln Laboratory MIT May 1963 6 Y OKAYA Graphic display of crystal structures: an example of manmachine interaction IBM Research Report RC 1706 November 3 1966 7 R A WEISS BE VISION a package of lBM 7090 FORTRAN programs to draw orthographic views of combinations of plane and quadric surfaces JACM 13 April 1966 194-204"
+          }
+        ]
+      },
+      "source_spans": [
+        {
+          "page": 7,
+          "bbox": {
+            "x0": 320.88,
+            "y0": 387.42,
+            "x1": 553.99,
+            "y1": 632.71,
+            "width": 233.11,
+            "height": 245.29
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "math": [
+    {
+      "id": "math-inline-1",
+      "kind": "inline",
+      "display_latex": "c_{2}=1",
+      "semantic_expr": {
+        "schema_version": "formula_semantic_expr/v1",
+        "category": "relation",
+        "role": "assertion",
+        "kind": "inline",
+        "normalized_latex": "c_{2}=1",
+        "symbols": [
+          "c_{2}"
+        ],
+        "operators": [
+          "eq"
+        ],
+        "relations": [
+          {
+            "lhs": "c_{2}",
+            "operator": "eq",
+            "operator_token": "=",
+            "rhs": "1"
+          }
+        ]
+      },
+      "compiled_targets": {
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msub><mi>c</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0003D;</mo><mn>1</mn></mrow></math>"
+      },
+      "conversion": {
+        "status": "converted",
+        "notes": "backend=latex2mathml"
+      },
+      "source_spans": [
+        {
+          "page": 3,
+          "bbox": {
+            "x0": 315.12,
+            "y0": 689.01,
+            "x1": 556.06,
+            "y1": 762.06,
+            "width": 240.94,
+            "height": 73.05
+          },
+          "engine": "native_pdf"
+        }
+      ],
+      "alternates": [],
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      },
+      "classification": {
+        "category": "relation",
+        "semantic_policy": "semantic",
+        "role": "assertion",
+        "confidence": "medium",
+        "signals": [
+          "single_relation"
+        ]
+      }
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig-1",
+      "label": "Figure 1 - Changes in quantitative invisibility",
+      "caption": "Figure 1-Changes in quantitative invisibility",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-1-p002.png",
+      "page": 2,
+      "bbox": {
+        "x0": 324.36,
+        "y0": 349.9,
+        "x1": 587.52,
+        "y1": 694.85,
+        "width": 263.16,
+        "height": 344.95
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 4.791
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 382.32,
+          "y0": 698.85,
+          "x1": 545.16,
+          "y1": 711.66,
+          "width": 162.84,
+          "height": 12.81
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-2",
+      "label": "Figure 2 - A bounded plane and two points",
+      "caption": "Figure 2-A bounded plane and two points",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-2-p003.png",
+      "page": 3,
+      "bbox": {
+        "x0": 178.32,
+        "y0": 508.3,
+        "x1": 548.6,
+        "y1": 643.83,
+        "width": 370.28,
+        "height": 135.54
+      },
+      "display_size_in": {
+        "width": 5.1428,
+        "height": 1.8825
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 101.76,
+          "y0": 647.83,
+          "x1": 253.02,
+          "y1": 658.08,
+          "width": 151.26,
+          "height": 10.25
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-4",
+      "label": "Figure 4- Determining when a line to be drawn passes behind a contour line",
+      "caption": "Figure 4-Determining when a line to be drawn passes behind a contour line",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-4-p004.png",
+      "page": 4,
+      "bbox": {
+        "x0": 324.36,
+        "y0": 155.81,
+        "x1": 587.52,
+        "y1": 402.76,
+        "width": 263.16,
+        "height": 246.95
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 3.4299
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 324.0,
+          "y0": 406.76,
+          "x1": 549.71,
+          "y1": 430.21,
+          "width": 225.71,
+          "height": 23.45
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-3",
+      "label": "Figure 3 -Sign change of area with direction",
+      "caption": "Figure 3-Sign change of area with direction",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-3-p004.png",
+      "page": 4,
+      "bbox": {
+        "x0": 24.48,
+        "y0": 211.97,
+        "x1": 287.64,
+        "y1": 571.0,
+        "width": 263.16,
+        "height": 359.03
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 4.9865
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 97.68,
+          "y0": 575.0,
+          "x1": 256.8,
+          "y1": 588.12,
+          "width": 159.12,
+          "height": 13.13
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-5",
+      "label": "Figure 5 - Determining the change of quantitative invisibility",
+      "caption": "Figure 5-Determining the change of quantitative invisibility",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-5-p005.png",
+      "page": 5,
+      "bbox": {
+        "x0": 169.44,
+        "y0": 312.7,
+        "x1": 541.93,
+        "y1": 373.57,
+        "width": 372.49,
+        "height": 60.87
+      },
+      "display_size_in": {
+        "width": 5.1735,
+        "height": 0.8454
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 67.68,
+          "y0": 377.57,
+          "x1": 282.11,
+          "y1": 388.45,
+          "width": 214.43,
+          "height": 10.89
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-6",
+      "label": "Figure 6- Singularities",
+      "caption": "Figure 6-Singularities",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-6-p005.png",
+      "page": 5,
+      "bbox": {
+        "x0": 169.44,
+        "y0": 392.45,
+        "x1": 541.93,
+        "y1": 495.73,
+        "width": 372.49,
+        "height": 103.27
+      },
+      "display_size_in": {
+        "width": 5.1735,
+        "height": 1.4343
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 388.8,
+          "y0": 499.73,
+          "x1": 471.46,
+          "y1": 510.61,
+          "width": 82.66,
+          "height": 10.89
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-8",
+      "label": "Figure 8- Assembly of three machine parts 41 surfaces 104 lines 7094 calculation time per view",
+      "caption": "about 9.3 seconds",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-8-p006.png",
+      "page": 6,
+      "bbox": {
+        "x0": 324.36,
+        "y0": 43.6,
+        "x1": 587.52,
+        "y1": 366.63,
+        "width": 263.16,
+        "height": 323.03
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 4.4865
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 318.48,
+          "y0": 370.63,
+          "x1": 547.87,
+          "y1": 390.96,
+          "width": 229.39,
+          "height": 20.33
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-9",
+      "label": "Figure 9 - Assembly of a transonic aircraft from five components each of which may be altered independently, 143 surfaces, 226 lines 7094 calculation lime per view",
+      "caption": "about 41.5 seconds",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-9-p006.png",
+      "page": 6,
+      "bbox": {
+        "x0": 324.36,
+        "y0": 394.96,
+        "x1": 587.52,
+        "y1": 561.99,
+        "width": 263.16,
+        "height": 167.03
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 2.3199
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 313.68,
+          "y0": 565.99,
+          "x1": 552.67,
+          "y1": 596.64,
+          "width": 238.99,
+          "height": 30.65
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-7",
+      "label": "Figure 7- Assembly of two objects, 32 surfaces, 84 lines, 7094 calculation time per view",
+      "caption": "about 6.5 seconds",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-7-p006.png",
+      "page": 6,
+      "bbox": {
+        "x0": 24.48,
+        "y0": 470.79,
+        "x1": 287.64,
+        "y1": 720.63,
+        "width": 263.16,
+        "height": 249.84
+      },
+      "display_size_in": {
+        "width": 3.655,
+        "height": 3.47
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 63.84,
+          "y0": 724.63,
+          "x1": 285.16,
+          "y1": 744.96,
+          "width": 221.32,
+          "height": 20.33
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-12",
+      "label": "Figure 12 - A perspective view of the aircraft climbing straight up with the aircraft carrier in the background",
+      "caption": "Figure 12-A perspective view of the aircraft climbing straight up with the aircraft carrier in the background",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-12-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 179.28,
+        "y0": 108.32,
+        "x1": 551.19,
+        "y1": 350.54,
+        "width": 371.91,
+        "height": 242.22
+      },
+      "display_size_in": {
+        "width": 5.1654,
+        "height": 3.3642
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 320.16,
+          "y0": 354.54,
+          "x1": 550.14,
+          "y1": 375.19,
+          "width": 229.98,
+          "height": 20.65
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    },
+    {
+      "id": "fig-11",
+      "label": "Figure 11 - A perspective view of the aircraft flying over an object which in general layout approximates an Essex class (CVS) air- craft carrier 190 surfaces 402 lines 7094 calculation time",
+      "caption": "about 84.6 seconds",
+      "image_path": "docs/1967_quantitative_invisibility/figures/figure-11-p007.png",
+      "page": 7,
+      "bbox": {
+        "x0": 179.28,
+        "y0": 390.71,
+        "x1": 551.19,
+        "y1": 529.82,
+        "width": 371.91,
+        "height": 139.11
+      },
+      "display_size_in": {
+        "width": 5.1654,
+        "height": 1.9321
+      },
+      "provenance": {
+        "link_mode": "column_gap_fallback",
+        "sources": [
+          "heuristic_scope"
+        ],
+        "caption_bbox": {
+          "x0": 60.96,
+          "y0": 533.82,
+          "x1": 293.56,
+          "y1": 574.87,
+          "width": 232.6,
+          "height": 41.05
+        }
+      },
+      "review": {
+        "status": "unreviewed",
+        "risk": "medium",
+        "notes": ""
+      }
+    }
+  ],
+  "references": []
+}

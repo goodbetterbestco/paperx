@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.policies.figure_caption import apply_figure_caption_policy
+from pipeline.policies.figure_caption import apply_figure_caption_policy
 
 
 class FigureCaptionPolicyTest(unittest.TestCase):

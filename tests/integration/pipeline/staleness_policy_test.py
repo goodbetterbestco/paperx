@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.staleness_policy import (
+from pipeline.staleness_policy import (
     build_input_fingerprints,
     build_metadata_for_paper,
     detect_canonical_staleness,
@@ -21,8 +21,8 @@ class StalenessPolicyTest(unittest.TestCase):
     def test_pipeline_fingerprint_uses_stable_component_ids(self) -> None:
         fingerprint = pipeline_fingerprint()
 
-        self.assertIn("paper_pipeline/reconcile_blocks.py", fingerprint["modules"])
-        self.assertIn("paper_pipeline/formula_semantic_ir.py", fingerprint["modules"])
+        self.assertIn("pipeline/reconcile_blocks.py", fingerprint["modules"])
+        self.assertIn("pipeline/formula_semantic_ir.py", fingerprint["modules"])
         self.assertIn("legacy_path_fingerprint", fingerprint["compatibility"])
 
     def test_document_with_matching_inputs_and_pipeline_is_not_stale(self) -> None:

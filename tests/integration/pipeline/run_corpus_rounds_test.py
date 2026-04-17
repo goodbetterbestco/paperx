@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.run_corpus_rounds import (
+from pipeline.run_corpus_rounds import (
     _MathpixRoundCoordinator,
     _anomaly_flags,
     _assert_mathpix_dns_available,
@@ -23,14 +23,76 @@ from paper_pipeline.run_corpus_rounds import (
     _preserve_existing_generated_abstract_file,
     _render_final_report,
     _summarize_round,
+    _write_canonical_outputs,
 )
 
 
 class RunCorpusRoundsTest(unittest.TestCase):
+    def test_write_canonical_outputs_writes_decision_sidecars(self) -> None:
+        written_json: dict[str, dict] = {}
+        written_text: dict[str, str] = {}
+
+        def capture_json(path: Path, payload: dict) -> None:
+            written_json[path.name] = payload
+
+        def capture_write_text(self: Path, data: str, encoding: str | None = None) -> int:
+            written_text[self.name] = data
+            return len(data)
+
+        document = {
+            "schema_version": "1.0",
+            "paper_id": "synthetic_test_paper",
+            "title": "Synthetic Test Paper",
+            "source": {"pdf_path": "synthetic.pdf", "page_count": 1, "page_sizes_pt": []},
+            "build": {},
+            "front_matter": {
+                "title": "Synthetic Test Paper",
+                "authors": [],
+                "affiliations": [],
+                "abstract_block_id": "blk-front-abstract-1",
+                "funding_block_id": None,
+            },
+            "styles": {"document_style": {}, "category_styles": {}, "block_styles": {}},
+            "sections": [],
+            "blocks": [
+                {
+                    "id": "blk-front-abstract-1",
+                    "type": "paragraph",
+                    "content": {"spans": [{"kind": "text", "text": "Synthetic abstract."}]},
+                    "source_spans": [],
+                    "alternates": [],
+                    "review": {"risk": "low", "status": "unreviewed", "notes": ""},
+                }
+            ],
+            "math": [],
+            "figures": [],
+            "references": [],
+            "_decision_artifacts": {
+                "title": {"selected_text": "Synthetic Test Paper", "source": "front_matter_records"},
+                "abstract": {"selected_text": "Synthetic abstract.", "source": "front_matter_records", "placeholder": False},
+            },
+        }
+
+        with (
+            patch("pipeline.output_artifacts.validate_canonical"),
+            patch("pipeline.output_artifacts.render_document", return_value="# synthetic\n"),
+            patch("pipeline.output_artifacts.build_summary", return_value={"summary_key": 1}),
+            patch("pipeline.output_artifacts._write_json", side_effect=capture_json),
+            patch("pathlib.Path.write_text", new=capture_write_text),
+        ):
+            outputs = _write_canonical_outputs("synthetic_test_paper", document)
+
+        self.assertNotIn("_decision_artifacts", document)
+        self.assertIn("title-decision.json", written_json)
+        self.assertIn("abstract-decision.json", written_json)
+        self.assertIn("canonical.json", written_text)
+        self.assertIn("synthetic_test_paper.canonical.review.md", written_text)
+        self.assertEqual(outputs["summary_key"], 1)
+
     def test_docling_device_defaults_to_mps_on_macos(self) -> None:
         with (
             patch.dict(os.environ, {}, clear=False),
-            patch("paper_pipeline.run_corpus_rounds.sys.platform", "darwin"),
+            patch("pipeline.run_corpus_rounds.sys.platform", "darwin"),
         ):
             os.environ.pop("STEPVIEW_DOCLING_DEVICE", None)
             self.assertEqual(_docling_device(), "mps")
@@ -40,12 +102,12 @@ class RunCorpusRoundsTest(unittest.TestCase):
             self.assertEqual(_docling_device(), "cpu")
 
     def test_mathpix_dns_preflight_resolves_host(self) -> None:
-        with patch("paper_pipeline.run_corpus_rounds.socket.getaddrinfo", return_value=[object()]):
+        with patch("pipeline.run_corpus_rounds.socket.getaddrinfo", return_value=[object()]):
             _assert_mathpix_dns_available()
 
     def test_mathpix_dns_preflight_fails_with_sandbox_guidance(self) -> None:
         with patch(
-            "paper_pipeline.run_corpus_rounds.socket.getaddrinfo",
+            "pipeline.run_corpus_rounds.socket.getaddrinfo",
             side_effect=socket.gaierror(8, "nodename nor servname provided, or not known"),
         ):
             with self.assertRaises(SystemExit) as ctx:
@@ -157,9 +219,9 @@ class RunCorpusRoundsTest(unittest.TestCase):
         }
 
         with (
-            patch("paper_pipeline.run_corpus_rounds._write_json", side_effect=capture),
-            patch("paper_pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
-            patch("paper_pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
+            patch("pipeline.run_corpus_rounds._write_json", side_effect=capture),
+            patch("pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
         ):
             summary = _compose_external_sources(
                 "synthetic_test_paper",
@@ -212,9 +274,9 @@ class RunCorpusRoundsTest(unittest.TestCase):
         }
 
         with (
-            patch("paper_pipeline.run_corpus_rounds._write_json", side_effect=capture),
-            patch("paper_pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
-            patch("paper_pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
+            patch("pipeline.run_corpus_rounds._write_json", side_effect=capture),
+            patch("pipeline.run_corpus_rounds.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("pipeline.run_corpus_rounds.external_math_path", return_value=Path("/tmp/math.json")),
         ):
             _compose_external_sources(
                 "synthetic_test_paper",
@@ -266,8 +328,8 @@ class RunCorpusRoundsTest(unittest.TestCase):
         }
 
         with (
-            patch("paper_pipeline.run_corpus_rounds.reconcile_paper", side_effect=[bad_document, good_document]),
-            patch("paper_pipeline.run_corpus_rounds.validate_canonical"),
+            patch("pipeline.run_corpus_rounds.reconcile_paper", side_effect=[bad_document, good_document]),
+            patch("pipeline.run_corpus_rounds.validate_canonical"),
         ):
             result = _build_paper("synthetic_test_paper")
 
@@ -373,7 +435,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
             ],
         }
 
-        with patch("paper_pipeline.run_corpus_rounds._paper_has_generated_abstract_file", return_value=True):
+        with patch("pipeline.run_corpus_rounds._paper_has_generated_abstract_file", return_value=True):
             preserved = _preserve_existing_generated_abstract_file("synthetic_test_paper", existing_document, new_document)
 
         self.assertTrue(preserved)
@@ -443,9 +505,9 @@ class RunCorpusRoundsTest(unittest.TestCase):
             }
 
         with (
-            patch("paper_pipeline.run_corpus_rounds._mathpix_credentials_available", return_value=False),
-            patch("paper_pipeline.run_corpus_rounds._run_paper_job", side_effect=fake_run_paper_job),
-            patch("paper_pipeline.run_corpus_rounds._save_status"),
+            patch("pipeline.run_corpus_rounds._mathpix_credentials_available", return_value=False),
+            patch("pipeline.run_corpus_rounds._run_paper_job", side_effect=fake_run_paper_job),
+            patch("pipeline.run_corpus_rounds._save_status"),
         ):
             _process_round(status, 1, max_workers=2, force_rebuild=True)
 
@@ -521,9 +583,9 @@ class RunCorpusRoundsTest(unittest.TestCase):
             events.append((paper_id, payload))
 
         with (
-            patch("paper_pipeline.run_corpus_rounds.submit_mathpix_pdf", return_value="pdf-123"),
-            patch("paper_pipeline.run_corpus_rounds.fetch_mathpix_pdf_status", return_value={"status": "completed"}),
-            patch("paper_pipeline.run_corpus_rounds.download_mathpix_pdf", return_value={"pdf_id": "pdf-123", "pages": []}),
+            patch("pipeline.run_corpus_rounds.submit_mathpix_pdf", return_value="pdf-123"),
+            patch("pipeline.run_corpus_rounds.fetch_mathpix_pdf_status", return_value={"status": "completed"}),
+            patch("pipeline.run_corpus_rounds.download_mathpix_pdf", return_value={"pdf_id": "pdf-123", "pages": []}),
         ):
             coordinator = _MathpixRoundCoordinator(
                 ["paper-a"],

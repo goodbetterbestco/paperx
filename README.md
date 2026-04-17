@@ -3,26 +3,29 @@
 `paperx` is the extracted home for the academic paper ingestion pipeline and its
 checked-in corpora.
 
-Right now this repo contains two things:
+Right now this repo contains three first-class areas:
 
-- `paper_pipeline/`: the reusable engine for canonical extraction, review
+- `pipeline/`: the reusable engine for canonical extraction, review
   rendering, auditing, and corpus-wide rebuilds
-- `stepview/`: the first project corpus migrated into this repo, including
+- `corpus/`: checked-in corpora, with `stepview/` as the first migrated corpus
+- `corpus/stepview/`: the current StepView corpus, including
   source PDFs, `canonical.json` outputs, figure assets, and review drafts
 
 ## Repository Layout
 
-- `paper_pipeline/`
+- `pipeline/`
   Core pipeline code, CLI entrypoints, policies, and adapters.
-- `stepview/`
+- `corpus/`
+  Root container for checked-in corpora.
+- `corpus/stepview/`
   Current research corpus for StepView and related source papers.
 - `tests/`
   Integration tests for the pipeline.
 - `tmp/`
   Generated local audit and round-run output. This is ignored by Git.
 
-See [paper_pipeline/README.md](./paper_pipeline/README.md) for engine details
-and [stepview/README.md](./stepview/README.md) for corpus structure and working
+See [pipeline/README.md](./pipeline/README.md) for engine details
+and [corpus/stepview/README.md](./corpus/stepview/README.md) for corpus structure and working
 method.
 
 ## Quick Start
@@ -46,25 +49,25 @@ Full source regeneration may also require:
 Audit the current corpus:
 
 ```bash
-python -m paper_pipeline.cli.audit_corpus --top 12
+python -m pipeline.cli.audit_corpus --top 12
 ```
 
 Build a review draft for one paper from the configured corpus:
 
 ```bash
-python -m paper_pipeline.cli.build_review 1990_hidden_curve_removal_for_free_form_surfaces --use-external-layout --use-external-math
+python -m pipeline.cli.build_review 1990_hidden_curve_removal_for_free_form_surfaces --use-external-layout --use-external-math
 ```
 
 Rebuild corpus rounds:
 
 ```bash
-python -m paper_pipeline.cli.run_corpus_rounds --max-workers 1
+python -m pipeline.cli.run_corpus_rounds --max-workers 1
 ```
 
 Normalize and process a project folder:
 
 ```bash
-python -m paper_pipeline.cli.run_project ./stepview
+python -m pipeline.cli.run_project ./corpus/stepview
 ```
 
 `run_project` is the forward-looking entrypoint for new corpora. It prepares a
@@ -75,9 +78,9 @@ pipeline rounds against that project.
 
 The intended shape for future corpora is:
 
-1. Create a new folder under the repo, such as `paperx/<project>/`.
+1. Create a new folder under `paperx/corpus/`, such as `paperx/corpus/<project>/`.
 2. Drop PDFs into that project root or `source/`.
-3. Run `python -m paper_pipeline.cli.run_project <project-dir>`.
+3. Run `python -m pipeline.cli.run_project <project-dir>`.
 4. Let the engine normalize the project into project-owned corpus outputs and
    review artifacts.
 

@@ -1,0 +1,4444 @@
+{
+  "engine": "composed",
+  "pdf_path": "stepview/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach/1993_robustness_in_solid_modelling_a_tolerance_based_intuitionistic_approach.pdf",
+  "page_count": 29,
+  "page_sizes_pt": [
+    {
+      "page": 1,
+      "width": 576.95,
+      "height": 774.0
+    },
+    {
+      "page": 2,
+      "width": 576.95,
+      "height": 774.0
+    },
+    {
+      "page": 3,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 4,
+      "width": 577.9,
+      "height": 774.95
+    },
+    {
+      "page": 5,
+      "width": 577.9,
+      "height": 774.95
+    },
+    {
+      "page": 6,
+      "width": 577.9,
+      "height": 774.95
+    },
+    {
+      "page": 7,
+      "width": 580.1,
+      "height": 777.1
+    },
+    {
+      "page": 8,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 9,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 10,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 11,
+      "width": 580.1,
+      "height": 777.1
+    },
+    {
+      "page": 12,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 13,
+      "width": 577.9,
+      "height": 774.95
+    },
+    {
+      "page": 14,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 15,
+      "width": 576.95,
+      "height": 774.0
+    },
+    {
+      "page": 16,
+      "width": 581.05,
+      "height": 777.1
+    },
+    {
+      "page": 17,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 18,
+      "width": 577.9,
+      "height": 774.95
+    },
+    {
+      "page": 19,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 20,
+      "width": 576.95,
+      "height": 774.0
+    },
+    {
+      "page": 21,
+      "width": 576.0,
+      "height": 774.0
+    },
+    {
+      "page": 22,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 23,
+      "width": 576.95,
+      "height": 774.95
+    },
+    {
+      "page": 24,
+      "width": 579.1,
+      "height": 775.9
+    },
+    {
+      "page": 25,
+      "width": 627.1,
+      "height": 768.0
+    },
+    {
+      "page": 26,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 27,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 28,
+      "width": 576.0,
+      "height": 773.05
+    },
+    {
+      "page": 29,
+      "width": 576.0,
+      "height": 773.05
+    }
+  ],
+  "blocks": [
+    {
+      "id": "mathpix-p001-b0002",
+      "page": 1,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Robustness In Solid Modeling",
+      "bbox": {
+        "x0": 198.36,
+        "y0": 90.7,
+        "x1": 391.26,
+        "y1": 107.12,
+        "width": 192.89,
+        "height": 16.41
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "7e14a5a7a2da4a5ab7ae8295f9488b1a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0003",
+      "page": 1,
+      "order": 3,
+      "role": "paragraph",
+      "text": "- A Tolerance Based, Intuitionistic Approach",
+      "bbox": {
+        "x0": 150.57,
+        "y0": 105.1,
+        "x1": 439.05,
+        "y1": 120.36,
+        "width": 288.48,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "7e14a5a7a2da4a5ab7ae8295f9488b1a",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0005",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Shiaofen Fang, Xiaohong Zhu, Beat Bruderlin",
+      "bbox": {
+        "x0": 174.75,
+        "y0": 131.88,
+        "x1": 414.86,
+        "y1": 146.85,
+        "width": 240.11,
+        "height": 14.97
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 0.994140625,
+        "confidence_rate": 0.9998775781506457,
+        "parent_id": "459457eb107f478aaee6a1693b56dfc0",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0006",
+      "page": 1,
+      "order": 6,
+      "role": "paragraph",
+      "text": "UUCS-92-030",
+      "bbox": {
+        "x0": 250.18,
+        "y0": 163.27,
+        "x1": 339.15,
+        "y1": 177.66,
+        "width": 88.96,
+        "height": 14.4
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0008",
+      "page": 1,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Department of Computer Science",
+      "bbox": {
+        "x0": 206.71,
+        "y0": 195.8,
+        "x1": 382.62,
+        "y1": 211.06,
+        "width": 175.91,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "9b620bf361034401a5c3ef0c5b031daa",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0009",
+      "page": 1,
+      "order": 9,
+      "role": "paragraph",
+      "text": "University of Utah",
+      "bbox": {
+        "x0": 245.58,
+        "y0": 210.49,
+        "x1": 344.04,
+        "y1": 225.46,
+        "width": 98.46,
+        "height": 14.97
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "9b620bf361034401a5c3ef0c5b031daa",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0010",
+      "page": 1,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Salt Lake City, UT 84112 USA",
+      "bbox": {
+        "x0": 212.76,
+        "y0": 224.89,
+        "x1": 376.57,
+        "y1": 240.15,
+        "width": 163.81,
+        "height": 15.26
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "9b620bf361034401a5c3ef0c5b031daa",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0011",
+      "page": 1,
+      "order": 11,
+      "role": "paragraph",
+      "text": "August 20, 1992",
+      "bbox": {
+        "x0": 251.62,
+        "y0": 251.67,
+        "x1": 337.99,
+        "y1": 265.49,
+        "width": 86.37,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": null,
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0013",
+      "page": 1,
+      "order": 13,
+      "role": "paragraph",
+      "text": "Abstract",
+      "bbox": {
+        "x0": 263.72,
+        "y0": 348.42,
+        "x1": 327.63,
+        "y1": 365.12,
+        "width": 63.91,
+        "height": 16.7
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0014",
+      "page": 1,
+      "order": 14,
+      "role": "paragraph",
+      "text": "This paper presents a new robustness method for geometric modeling operations. It com-",
+      "bbox": {
+        "x0": 74.85,
+        "y0": 370.01,
+        "x1": 533.77,
+        "y1": 384.7,
+        "width": 458.91,
+        "height": 14.69
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0015",
+      "page": 1,
+      "order": 15,
+      "role": "paragraph",
+      "text": "putes geometric relations from the tolerances defined for geometric objects and dynamically",
+      "bbox": {
+        "x0": 56.72,
+        "y0": 384.7,
+        "x1": 534.34,
+        "y1": 398.52,
+        "width": 477.62,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0016",
+      "page": 1,
+      "order": 16,
+      "role": "paragraph",
+      "text": "updates the tolerances to preserve the properties of the relations, using an intuitionistic",
+      "bbox": {
+        "x0": 56.72,
+        "y0": 399.09,
+        "x1": 534.92,
+        "y1": 412.92,
+        "width": 478.2,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0017",
+      "page": 1,
+      "order": 17,
+      "role": "paragraph",
+      "text": "self-validation approach. Geometric algorithms using this approach are proved to be ro-",
+      "bbox": {
+        "x0": 56.72,
+        "y0": 412.34,
+        "x1": 533.77,
+        "y1": 427.02,
+        "width": 477.05,
+        "height": 14.69
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0018",
+      "page": 1,
+      "order": 18,
+      "role": "paragraph",
+      "text": "bust. A robust Boolean set operation algorithm using this robustness approach has been",
+      "bbox": {
+        "x0": 56.72,
+        "y0": 427.02,
+        "x1": 533.77,
+        "y1": 440.85,
+        "width": 477.05,
+        "height": 13.82
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "mathpix-p001-b0019",
+      "page": 1,
+      "order": 19,
+      "role": "paragraph",
+      "text": "implementedand test examples are described in this paper as well.",
+      "bbox": {
+        "x0": 56.72,
+        "y0": 440.85,
+        "x1": 403.92,
+        "y1": 455.24,
+        "width": 347.21,
+        "height": 14.4
+      },
+      "meta": {
+        "mathpix_type": "text",
+        "mathpix_subtype": "",
+        "confidence": 1,
+        "confidence_rate": 1,
+        "parent_id": "4ee0065dfdbe4ed49c972d61ae365af9",
+        "children_ids": null
+      }
+    },
+    {
+      "id": "#/texts/9",
+      "page": 2,
+      "order": 1,
+      "role": "heading",
+      "text": "R o b u s t n e s s I n S o l i d M o d e l i n g - A T o l e r a n c e B a s e d , I n t u i t i o n i s t i c A p p r o a c h",
+      "bbox": {
+        "x0": 106.3,
+        "y0": 98.73,
+        "x1": 498.32,
+        "y1": 132.55,
+        "width": 392.02,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "R o b u s t n e s s I n S o l i d M o d e l i n g - A T o l e r a n c e B a s e d , I n t u i t i o n i s t i c A p p r o a c h"
+      }
+    },
+    {
+      "id": "#/texts/10",
+      "page": 2,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Shiaofen Fang Beat Bruderlin",
+      "bbox": {
+        "x0": 175.7,
+        "y0": 157.53,
+        "x1": 346.12,
+        "y1": 167.35,
+        "width": 170.42,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Shiaofen Fang Beat Bruderlin"
+      }
+    },
+    {
+      "id": "#/texts/11",
+      "page": 2,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Xiaohong Zhu",
+      "bbox": {
+        "x0": 362.15,
+        "y0": 157.53,
+        "x1": 434.34,
+        "y1": 167.35,
+        "width": 72.19,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Xiaohong Zhu"
+      }
+    },
+    {
+      "id": "#/texts/12",
+      "page": 2,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Computer Science Department University of Utah",
+      "bbox": {
+        "x0": 226.1,
+        "y0": 191.93,
+        "x1": 383.63,
+        "y1": 225.55,
+        "width": 157.53,
+        "height": 33.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Computer Science Department University of Utah"
+      }
+    },
+    {
+      "id": "#/texts/13",
+      "page": 2,
+      "order": 5,
+      "role": "paragraph",
+      "text": "'",
+      "bbox": {
+        "x0": 409.7,
+        "y0": 215.73,
+        "x1": 411.84,
+        "y1": 225.55,
+        "width": 2.14,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "'"
+      }
+    },
+    {
+      "id": "#/texts/14",
+      "page": 2,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Salt Lake City, UT 84112, USA",
+      "bbox": {
+        "x0": 223.7,
+        "y0": 239.73,
+        "x1": 385.33,
+        "y1": 249.55,
+        "width": 161.63,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Salt Lake City, UT 84112, USA"
+      }
+    },
+    {
+      "id": "#/texts/15",
+      "page": 2,
+      "order": 7,
+      "role": "paragraph",
+      "text": "A b s t r a c t . This paper presents a new robustness method for geometric modeling operations. It computes geometric relations from the tolerances defined for geometric objects and dynamically updates the tolerances to preserve the properties of the relations, using an intuitionistic self-validation approach. Geometric algorithms using this approach are proved to be robust. A robust Boolean set operation algorithm using this robustness approach has been implemented and test examples are described in this paper as well.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 286.73,
+        "x1": 543.87,
+        "y1": 415.85,
+        "width": 474.97,
+        "height": 129.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A b s t r a c t . This paper presents a new robustness method for geometric modeling operations. It computes geometric relations from the tolerances defined for geometric objects and dynamically updates the tolerances to preserve the properties of the relations, using an intuitionistic self-validation approach. Geometric algorithms using this approach are proved to be robust. A robust Boolean set operation algorithm using this robustness approach has been implemented and test examples are described in this paper as well."
+      }
+    },
+    {
+      "id": "#/texts/16",
+      "page": 2,
+      "order": 8,
+      "role": "heading",
+      "text": "1 I n t r o d u c t i o n",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 445.42,
+        "x1": 203.17,
+        "y1": 456.42,
+        "width": 133.57,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1 I n t r o d u c t i o n"
+      }
+    },
+    {
+      "id": "#/texts/17",
+      "page": 2,
+      "order": 9,
+      "role": "heading",
+      "text": "1.1 G e o m e t r i c R o b u s t n e s s P r o b l e m",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 475.63,
+        "x1": 332.78,
+        "y1": 485.45,
+        "width": 263.18,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1.1 G e o m e t r i c R o b u s t n e s s P r o b l e m"
+      }
+    },
+    {
+      "id": "#/texts/18",
+      "page": 2,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Geometric algorithms are usually designed for objects defined over the domain of real num­ bers which can only be approximated on a computer, for instance, with floating point num­ bers. In addition to the floating point arithmetic errors, there often are geometric approxi­ mation errors, which are generated when only approximated solutions can be computed, e. g. using a piecewise linear curve to approximate a higher degree curve.",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 507.33,
+        "x1": 542.92,
+        "y1": 612.65,
+        "width": 474.32,
+        "height": 105.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Geometric algorithms are usually designed for objects defined over the domain of real num­ bers which can only be approximated on a computer, for instance, with floating point num­ bers. In addition to the floating point arithmetic errors, there often are geometric approxi­ mation errors, which are generated when only approximated solutions can be computed, e. g. using a piecewise linear curve to approximate a higher degree curve."
+      }
+    },
+    {
+      "id": "#/texts/19",
+      "page": 2,
+      "order": 11,
+      "role": "paragraph",
+      "text": "Considering these errors, geometric algorithms are hardly robust without special treat­ ment. Computing relations between geometric objects (e.g. coincidence of points, colinear lines or coplanar planes) using approximate numerical data is arbitrary and likely to be inconsistent. This causes geometric algorithms to produce invalid geometric representations",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 627.03,
+        "x1": 543.53,
+        "y1": 709.15,
+        "width": 474.93,
+        "height": 82.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Considering these errors, geometric algorithms are hardly robust without special treat­ ment. Computing relations between geometric objects (e.g. coincidence of points, colinear lines or coplanar planes) using approximate numerical data is arbitrary and likely to be inconsistent. This causes geometric algorithms to produce invalid geometric representations"
+      }
+    },
+    {
+      "id": "#/texts/20",
+      "page": 2,
+      "order": 12,
+      "role": "paragraph",
+      "text": "·",
+      "bbox": {
+        "x0": 478.02,
+        "y0": 171.0,
+        "x1": 485.89,
+        "y1": 182.25,
+        "width": 7.87,
+        "height": 11.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "·"
+      }
+    },
+    {
+      "id": "#/texts/22",
+      "page": 3,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 1 : (a) Computing the union of two objects; (b) Invalid result with dangling edge or even crash.",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 262.34,
+        "x1": 535.22,
+        "y1": 305.37,
+        "width": 465.62,
+        "height": 43.03
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 1 : (a) Computing the union of two objects; (b) Invalid result with dangling edge or even crash."
+      }
+    },
+    {
+      "id": "#/texts/24",
+      "page": 3,
+      "order": 2,
+      "role": "paragraph",
+      "text": "P",
+      "bbox": {
+        "x0": 131.8,
+        "y0": 134.22,
+        "x1": 141.93,
+        "y1": 145.5,
+        "width": 10.13,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "P"
+      }
+    },
+    {
+      "id": "#/texts/25",
+      "page": 3,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Q",
+      "bbox": {
+        "x0": 212.9,
+        "y0": 136.48,
+        "x1": 223.04,
+        "y1": 147.76,
+        "width": 10.14,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Q"
+      }
+    },
+    {
+      "id": "#/texts/26",
+      "page": 3,
+      "order": 4,
+      "role": "paragraph",
+      "text": "An example is given in figure 1 . A Boolean union operation is computed for two identical cubes with one translated. The algorithm first finds that planes P and Q are coincident within some defined tolerance. However, because of a slightly larger floating point error for the representation of edge A B , the edge is found to be intersecting plane P instead of being incident on plane P. Theoretically, if a line is incident on a plane Q, it is also incident on all the planes that are coincident with Q. Algorithms based on such inconsistent decisions produce an invalid solid representations like in figure 1 (b), where a dangling edge is created. More of these kinds of example can be found in [ 11 ],",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 318.94,
+        "x1": 544.82,
+        "y1": 496.94,
+        "width": 475.22,
+        "height": 178.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "An example is given in figure 1 . A Boolean union operation is computed for two identical cubes with one translated. The algorithm first finds that planes P and Q are coincident within some defined tolerance. However, because of a slightly larger floating point error for the representation of edge A B , the edge is found to be intersecting plane P instead of being incident on plane P. Theoretically, if a line is incident on a plane Q, it is also incident on all the planes that are coincident with Q. Algorithms based on such inconsistent decisions produce an invalid solid representations like in figure 1 (b), where a dangling edge is created. More of these kinds of example can be found in [ 11 ],"
+      }
+    },
+    {
+      "id": "#/texts/27",
+      "page": 3,
+      "order": 5,
+      "role": "heading",
+      "text": "1.2 R e l a t e d W o r k",
+      "bbox": {
+        "x0": 70.8,
+        "y0": 521.15,
+        "x1": 205.18,
+        "y1": 530.97,
+        "width": 134.38,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1.2 R e l a t e d W o r k"
+      }
+    },
+    {
+      "id": "#/texts/28",
+      "page": 3,
+      "order": 6,
+      "role": "paragraph",
+      "text": "A number of publications have addressed the geometric robustness problem recently[12|[ll]. Approaches in [9] [24] [31] [32] perform precise computations by using only exact numbers (e. g. bounded rational numbers, exact algebraic numbers or space grids). They work on the supposition (that is often not true) that geometric shapes (and all computations on them) can be represented with exact numbers. However, curves and curved surfaces are outside the domain that can be represented by rational numbers. Approaches in [41 [34] perturb the input data a small amount to avoid positional degeneracy. These approaches cannot",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 552.85,
+        "x1": 544.62,
+        "y1": 706.17,
+        "width": 475.02,
+        "height": 153.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A number of publications have addressed the geometric robustness problem recently[12|[ll]. Approaches in [9] [24] [31] [32] perform precise computations by using only exact numbers (e. g. bounded rational numbers, exact algebraic numbers or space grids). They work on the supposition (that is often not true) that geometric shapes (and all computations on them) can be represented with exact numbers. However, curves and curved surfaces are outside the domain that can be represented by rational numbers. Approaches in [41 [34] perturb the input data a small amount to avoid positional degeneracy. These approaches cannot"
+      }
+    },
+    {
+      "id": "#/texts/30",
+      "page": 4,
+      "order": 1,
+      "role": "paragraph",
+      "text": "represent intentionally degenerate cases occurring in geometric modeling applications and are therefore not suitable for CAD. Approaches in [14] [161 [19] [20] [211 [22] [29] [30] try to use pure symbolic reasoning to maintain the consistency among all the decisions made regarding geometric relations. However to strictly adhere to all the symbolic constraints necessitates a theorem proving process[3][15][17] which is usually too complicated for practical applica­ tions. Provably fail-save symbolic inferencing is generally limited to some simple geometric problems.",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 96.59,
+        "x1": 543.42,
+        "y1": 249.91,
+        "width": 474.72,
+        "height": 153.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "represent intentionally degenerate cases occurring in geometric modeling applications and are therefore not suitable for CAD. Approaches in [14] [161 [19] [20] [211 [22] [29] [30] try to use pure symbolic reasoning to maintain the consistency among all the decisions made regarding geometric relations. However to strictly adhere to all the symbolic constraints necessitates a theorem proving process[3][15][17] which is usually too complicated for practical applica­ tions. Provably fail-save symbolic inferencing is generally limited to some simple geometric problems."
+      }
+    },
+    {
+      "id": "#/texts/31",
+      "page": 4,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Tolerance-based approaches can be found in [1|[6][7][5|[28]. They keep sufficient informa­ tion about uncertainty regions (tolerances) of geometric objects and update the tolerances according to the decisions made in order to maintain the consistency of the decisions. The ideas of these approaches are partially derived from interval arithmetic[23]. A direct geo­ metric generalization of interval arithmetic is 'Epsilon Geometry' [10] [27] [26]. A direct use of dynamic tolerances can be found in a polyhedral Boolean operation algorithm developed by Sega] [28], and [2]. In both approaches, geometric relations are detected based on the tolerances of geometric objects. Tolerances grow upon the detection of a special geometric relation. Ambiguities are reported when the tolerances violate four robustness criteria which are defined to avoid certain invalid geometric representations. A proof of robustness is given in [ 2 ],",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 263.69,
+        "x1": 543.42,
+        "y1": 512.78,
+        "width": 475.22,
+        "height": 249.09
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Tolerance-based approaches can be found in [1|[6][7][5|[28]. They keep sufficient informa­ tion about uncertainty regions (tolerances) of geometric objects and update the tolerances according to the decisions made in order to maintain the consistency of the decisions. The ideas of these approaches are partially derived from interval arithmetic[23]. A direct geo­ metric generalization of interval arithmetic is 'Epsilon Geometry' [10] [27] [26]. A direct use of dynamic tolerances can be found in a polyhedral Boolean operation algorithm developed by Sega] [28], and [2]. In both approaches, geometric relations are detected based on the tolerances of geometric objects. Tolerances grow upon the detection of a special geometric relation. Ambiguities are reported when the tolerances violate four robustness criteria which are defined to avoid certain invalid geometric representations. A proof of robustness is given in [ 2 ],"
+      }
+    },
+    {
+      "id": "#/texts/32",
+      "page": 4,
+      "order": 3,
+      "role": "heading",
+      "text": "1.3 O v e r v i e w",
+      "bbox": {
+        "x0": 69.4,
+        "y0": 536.99,
+        "x1": 170.87,
+        "y1": 546.81,
+        "width": 101.47,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "1.3 O v e r v i e w"
+      }
+    },
+    {
+      "id": "#/texts/33",
+      "page": 4,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Although geometric modeling algorithms and other geometric algorithms such as those in computational geometry all seem to have similar robustness problems, geometric modeling problems tend to have more emphasis on three dimensional curves, surfaces and sculptured solids instead of the two dimensional lines, polygons and polyhedra dealt with in compu­ tational geometry. In the authors' opinion, previous approaches have not been very useful in dealing with general geometric modeling problems, such as occurring in a complete CAD",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 568.89,
+        "x1": 543.17,
+        "y1": 698.31,
+        "width": 474.47,
+        "height": 129.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Although geometric modeling algorithms and other geometric algorithms such as those in computational geometry all seem to have similar robustness problems, geometric modeling problems tend to have more emphasis on three dimensional curves, surfaces and sculptured solids instead of the two dimensional lines, polygons and polyhedra dealt with in compu­ tational geometry. In the authors' opinion, previous approaches have not been very useful in dealing with general geometric modeling problems, such as occurring in a complete CAD"
+      }
+    },
+    {
+      "id": "#/texts/34",
+      "page": 4,
+      "order": 5,
+      "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 353.3,
+        "y0": 760.9,
+        "x1": 355.52,
+        "y1": 764.64,
+        "width": 2.22,
+        "height": 3.74
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/36",
+      "page": 5,
+      "order": 1,
+      "role": "paragraph",
+      "text": "system. This paper presents a tolerance-based robustness approach for geometric compu­ tation, in general, and geometric modeling, in particular. It computes geometric relations based on tolerances of the geometric objects and dynamically updates the tolerances to preserve the properties of the geometric relations. The approach is based on intuitionistic mathematics[33].",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 95.19,
+        "x1": 544.12,
+        "y1": 201.21,
+        "width": 474.52,
+        "height": 106.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "system. This paper presents a tolerance-based robustness approach for geometric compu­ tation, in general, and geometric modeling, in particular. It computes geometric relations based on tolerances of the geometric objects and dynamically updates the tolerances to preserve the properties of the geometric relations. The approach is based on intuitionistic mathematics[33]."
+      }
+    },
+    {
+      "id": "#/texts/37",
+      "page": 5,
+      "order": 2,
+      "role": "paragraph",
+      "text": "This paper does not give the complete theory and proofs. Those can be found in [5]. Section 2 gives a definition of geometric robustness. The general robustness approach is presented in section 3. Section 4 discusses the application of this approach to a Boolean operation algorithm on 3D objects, bounded by planar and natural quadric surfaces. Exper­ imental data is given in section 5.",
+      "bbox": {
+        "x0": 69.1,
+        "y0": 214.69,
+        "x1": 543.42,
+        "y1": 320.01,
+        "width": 474.32,
+        "height": 105.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "This paper does not give the complete theory and proofs. Those can be found in [5]. Section 2 gives a definition of geometric robustness. The general robustness approach is presented in section 3. Section 4 discusses the application of this approach to a Boolean operation algorithm on 3D objects, bounded by planar and natural quadric surfaces. Exper­ imental data is given in section 5."
+      }
+    },
+    {
+      "id": "#/texts/38",
+      "page": 5,
+      "order": 3,
+      "role": "heading",
+      "text": "2 T o l e r a n c e - B a s e d R o b u s t n e s s",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 349.59,
+        "x1": 342.61,
+        "y1": 359.41,
+        "width": 273.01,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2 T o l e r a n c e - B a s e d R o b u s t n e s s"
+      }
+    },
+    {
+      "id": "#/texts/39",
+      "page": 5,
+      "order": 4,
+      "role": "heading",
+      "text": "2.1 T h e I n c o n s i s t e n c y P r o b l e m , a n d I n t u i t i o n i s t i c L o g i c",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 379.59,
+        "x1": 483.36,
+        "y1": 389.41,
+        "width": 413.76,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2.1 T h e I n c o n s i s t e n c y P r o b l e m , a n d I n t u i t i o n i s t i c L o g i c"
+      }
+    },
+    {
+      "id": "#/texts/40",
+      "page": 5,
+      "order": 5,
+      "role": "paragraph",
+      "text": "A common practice to detect degenerate cases with inaccurate data is to use tolerances. Assume the tolerance is set to be r, which is the computed maximal error for all point posi­ tions. When the distance of two points, for example, is less than 2r, they are considered close enough and determined to be coincident, otherwise they are considered apart. However, a closer look at this approach reveals that this definition of coincidence relation is problematic. For instance in figure 2, it is first found that Pi and P 3 are apart (Pi ^ P 3 ), and Pi and P 2 are coincident (Pi = P 2 ), then P 2 and P 3 are found coincident (P 2 = -^ 3 )-Since Pi = P 2 and Pi = P 3 lead to Pi = P 3 which contradicts an earlier decision of Pi ^ P 3 , so these coincidence and apartness relations are not consistent.",
+      "bbox": {
+        "x0": 69.1,
+        "y0": 410.99,
+        "x1": 543.62,
+        "y1": 612.31,
+        "width": 474.52,
+        "height": 201.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A common practice to detect degenerate cases with inaccurate data is to use tolerances. Assume the tolerance is set to be r, which is the computed maximal error for all point posi­ tions. When the distance of two points, for example, is less than 2r, they are considered close enough and determined to be coincident, otherwise they are considered apart. However, a closer look at this approach reveals that this definition of coincidence relation is problematic. For instance in figure 2, it is first found that Pi and P 3 are apart (Pi ^ P 3 ), and Pi and P 2 are coincident (Pi = P 2 ), then P 2 and P 3 are found coincident (P 2 = -^ 3 )-Since Pi = P 2 and Pi = P 3 lead to Pi = P 3 which contradicts an earlier decision of Pi ^ P 3 , so these coincidence and apartness relations are not consistent."
+      }
+    },
+    {
+      "id": "#/texts/41",
+      "page": 5,
+      "order": 6,
+      "role": "paragraph",
+      "text": "In earlier research Brauer [Troelstra] found that the equality relation for real numbers is undecidable. Roughly speaking, if two numbers are equal we would have to compute infinitely many decimal places to confirm the equality. If they are unequal we would find out after some",
+      "bbox": {
+        "x0": 69.1,
+        "y0": 626.49,
+        "x1": 543.62,
+        "y1": 684.31,
+        "width": 474.52,
+        "height": 57.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In earlier research Brauer [Troelstra] found that the equality relation for real numbers is undecidable. Roughly speaking, if two numbers are equal we would have to compute infinitely many decimal places to confirm the equality. If they are unequal we would find out after some"
+      }
+    },
+    {
+      "id": "#/texts/43",
+      "page": 6,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 2 : Comparing Three Points",
+      "bbox": {
+        "x0": 214.6,
+        "y0": 248.25,
+        "x1": 391.86,
+        "y1": 258.75,
+        "width": 177.26,
+        "height": 10.5
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 2 : Comparing Three Points"
+      }
+    },
+    {
+      "id": "#/texts/44",
+      "page": 6,
+      "order": 2,
+      "role": "paragraph",
+      "text": "finite process. This asymmetry led Brauer to develop a new logic, the so called intuitionistic logic. Instead of just one relation '= ' (equality) Brauer also introduced the apartness relation V ', and showed that the refutation of equal is not equivalent to apartness. Intuitionistic logic therefore does not have the law of the excluded middle which is an important inference rule applying to any predicate in classical logic. Instead, a constructive approach is taken, i.e. the affirmation of a relation, or the converse relation has to be computed, i.e. constructed , explicitly. The mathematics based on intuitionistic logic is therefore also called constructivist mathematics.",
+      "bbox": {
+        "x0": 67.7,
+        "y0": 280.19,
+        "x1": 542.42,
+        "y1": 456.61,
+        "width": 474.72,
+        "height": 176.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "finite process. This asymmetry led Brauer to develop a new logic, the so called intuitionistic logic. Instead of just one relation '= ' (equality) Brauer also introduced the apartness relation V ', and showed that the refutation of equal is not equivalent to apartness. Intuitionistic logic therefore does not have the law of the excluded middle which is an important inference rule applying to any predicate in classical logic. Instead, a constructive approach is taken, i.e. the affirmation of a relation, or the converse relation has to be computed, i.e. constructed , explicitly. The mathematics based on intuitionistic logic is therefore also called constructivist mathematics."
+      }
+    },
+    {
+      "id": "#/texts/45",
+      "page": 6,
+      "order": 3,
+      "role": "paragraph",
+      "text": "Since the field of real numbers is a model of Euclidean geometry it becomes clear that geometric relations such as incidence, coincidence, etc. cannot be decided from their repre­ sentation.",
+      "bbox": {
+        "x0": 67.7,
+        "y0": 470.99,
+        "x1": 541.75,
+        "y1": 529.11,
+        "width": 474.05,
+        "height": 58.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Since the field of real numbers is a model of Euclidean geometry it becomes clear that geometric relations such as incidence, coincidence, etc. cannot be decided from their repre­ sentation."
+      }
+    },
+    {
+      "id": "#/texts/46",
+      "page": 6,
+      "order": 4,
+      "role": "paragraph",
+      "text": "In our intuitionistic, tolerance based geometry approach, we therefore also separately define two relations, namely equality and apartness. Both of these relations are based on tolerances and are therefore approximate. Both relations are semi decidable (actually in constant time). To be consistent with the theoretical undecidablility of the exact relations (which they are supposed to represent) we introduce a third relation, 'ambiguity' which captures those cases where we cannot distinguish between equality and apartness. Geometric relations such as coincidence, incidence, intersection, coplanarity, inside outside, etc. can be",
+      "bbox": {
+        "x0": 67.9,
+        "y0": 542.99,
+        "x1": 542.67,
+        "y1": 696.81,
+        "width": 474.77,
+        "height": 153.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In our intuitionistic, tolerance based geometry approach, we therefore also separately define two relations, namely equality and apartness. Both of these relations are based on tolerances and are therefore approximate. Both relations are semi decidable (actually in constant time). To be consistent with the theoretical undecidablility of the exact relations (which they are supposed to represent) we introduce a third relation, 'ambiguity' which captures those cases where we cannot distinguish between equality and apartness. Geometric relations such as coincidence, incidence, intersection, coplanarity, inside outside, etc. can be"
+      }
+    },
+    {
+      "id": "#/texts/48",
+      "page": 7,
+      "order": 1,
+      "role": "paragraph",
+      "text": "derived from equality and apartness relations.",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 97.98,
+        "x1": 305.15,
+        "y1": 108.27,
+        "width": 235.55,
+        "height": 10.29
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "derived from equality and apartness relations."
+      }
+    },
+    {
+      "id": "#/texts/49",
+      "page": 7,
+      "order": 2,
+      "role": "heading",
+      "text": "2.2 R e p r e s e n t a t i o n a n d M o d e l",
+      "bbox": {
+        "x0": 69.8,
+        "y0": 132.85,
+        "x1": 298.61,
+        "y1": 142.67,
+        "width": 228.81,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2.2 R e p r e s e n t a t i o n a n d M o d e l"
+      }
+    },
+    {
+      "id": "#/texts/50",
+      "page": 7,
+      "order": 3,
+      "role": "paragraph",
+      "text": "The notion of representation and model was introduced in [13]. A representation is a data structure intended to describe a geometric object in Euclidean space. It consists of three parts: a) The mathematical form (syntax) of the representation; b) The constraints describ­ ing relationships among geometric objects; c) The numerical data representing the values for the position and shape parameters occurring in the mathematical representation of the object.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 164.35,
+        "x1": 543.63,
+        "y1": 293.37,
+        "width": 474.73,
+        "height": 129.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The notion of representation and model was introduced in [13]. A representation is a data structure intended to describe a geometric object in Euclidean space. It consists of three parts: a) The mathematical form (syntax) of the representation; b) The constraints describ­ ing relationships among geometric objects; c) The numerical data representing the values for the position and shape parameters occurring in the mathematical representation of the object."
+      }
+    },
+    {
+      "id": "#/texts/51",
+      "page": 7,
+      "order": 4,
+      "role": "paragraph",
+      "text": "When working with inaccurate numerical data a representation does not usually satisfy all the constraints. We define an object in Euclidean space, satisfying all the constraints of the representation of the object 0 , a model of 0 . A representation is considered valid if there exists a model.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 307.55,
+        "x1": 544.12,
+        "y1": 388.67,
+        "width": 475.22,
+        "height": 81.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "When working with inaccurate numerical data a representation does not usually satisfy all the constraints. We define an object in Euclidean space, satisfying all the constraints of the representation of the object 0 , a model of 0 . A representation is considered valid if there exists a model."
+      }
+    },
+    {
+      "id": "#/texts/52",
+      "page": 7,
+      "order": 5,
+      "role": "heading",
+      "text": "2 .3 T o l e r a n c e - B a s e d R e p r e s e n t a t i o n",
+      "bbox": {
+        "x0": 69.4,
+        "y0": 413.15,
+        "x1": 337.81,
+        "y1": 422.97,
+        "width": 268.41,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "2 .3 T o l e r a n c e - B a s e d R e p r e s e n t a t i o n"
+      }
+    },
+    {
+      "id": "#/texts/53",
+      "page": 7,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Define the r region of an object 0 as the subset of E$ in which each point has a distance less than r to the representation of 0 . For instance, the r region of a point is a sphere with x y z-coordinates of the point as center and a radius r. Assume that an initial tolerance r is defined ( t > 0). Any object M inside the r region of O satisfies the tolerance restriction of object O and is therefore a potential Model of a point coincident with O, and any object M outside the t region of O is a model for a point that can be apart from O.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 444.85,
+        "x1": 543.41,
+        "y1": 574.67,
+        "width": 474.51,
+        "height": 129.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Define the r region of an object 0 as the subset of E$ in which each point has a distance less than r to the representation of 0 . For instance, the r region of a point is a sphere with x y z-coordinates of the point as center and a radius r. Assume that an initial tolerance r is defined ( t > 0). Any object M inside the r region of O satisfies the tolerance restriction of object O and is therefore a potential Model of a point coincident with O, and any object M outside the t region of O is a model for a point that can be apart from O."
+      }
+    },
+    {
+      "id": "#/texts/54",
+      "page": 7,
+      "order": 7,
+      "role": "paragraph",
+      "text": "We define that an object M in Euclidean space is an approximated model of an object O (with representation R ) iff M satisfies the tolerance restriction of O and all the constraints of R but we don't require it to have the exact mathematical form of O. So, an approximated model of object O approximates the shape of object O. For example, in figure 3, the approximated model of a line can be a curve. IF M also has the same mathematical form,",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 588.85,
+        "x1": 543.42,
+        "y1": 694.67,
+        "width": 474.82,
+        "height": 105.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We define that an object M in Euclidean space is an approximated model of an object O (with representation R ) iff M satisfies the tolerance restriction of O and all the constraints of R but we don't require it to have the exact mathematical form of O. So, an approximated model of object O approximates the shape of object O. For example, in figure 3, the approximated model of a line can be a curve. IF M also has the same mathematical form,"
+      }
+    },
+    {
+      "id": "#/texts/56",
+      "page": 8,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 3: approximated models of a line",
+      "bbox": {
+        "x0": 201.1,
+        "y0": 237.38,
+        "x1": 407.85,
+        "y1": 247.67,
+        "width": 206.75,
+        "height": 10.29
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 3: approximated models of a line"
+      }
+    },
+    {
+      "id": "#/texts/57",
+      "page": 8,
+      "order": 2,
+      "role": "paragraph",
+      "text": "approximated models",
+      "bbox": {
+        "x0": 197.13,
+        "y0": 110.53,
+        "x1": 301.89,
+        "y1": 121.81,
+        "width": 104.76,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "approximated models"
+      }
+    },
+    {
+      "id": "#/texts/58",
+      "page": 8,
+      "order": 3,
+      "role": "paragraph",
+      "text": "analytic model",
+      "bbox": {
+        "x0": 368.35,
+        "y0": 117.3,
+        "x1": 441.57,
+        "y1": 128.67,
+        "width": 73.22,
+        "height": 11.37
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "analytic model"
+      }
+    },
+    {
+      "id": "#/texts/59",
+      "page": 8,
+      "order": 4,
+      "role": "paragraph",
+      "text": "it is called an analytic model of 0 .",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 269.58,
+        "x1": 245.4,
+        "y1": 279.87,
+        "width": 176.7,
+        "height": 10.29
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "it is called an analytic model of 0 ."
+      }
+    },
+    {
+      "id": "#/texts/60",
+      "page": 8,
+      "order": 5,
+      "role": "paragraph",
+      "text": "We consider a geometric algorithm robust if there exists an approximated model for the representation of all the objects presented in the algorithm, including the input objects, output objects and the objects created during the execution of the algorithm. Using ap­ proximated model rather than the analytic model definition, makes the robustness approach more practical and flexible. The relevant arguments can be found in [ 6 ] and [5].",
+      "bbox": {
+        "x0": 68.4,
+        "y0": 293.65,
+        "x1": 542.47,
+        "y1": 399.34,
+        "width": 474.07,
+        "height": 105.69
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We consider a geometric algorithm robust if there exists an approximated model for the representation of all the objects presented in the algorithm, including the input objects, output objects and the objects created during the execution of the algorithm. Using ap­ proximated model rather than the analytic model definition, makes the robustness approach more practical and flexible. The relevant arguments can be found in [ 6 ] and [5]."
+      }
+    },
+    {
+      "id": "#/texts/61",
+      "page": 8,
+      "order": 6,
+      "role": "heading",
+      "text": "3 T h e I n t u i t i o n i s t i c R o b u s t n e s s A p p r o a c h",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 428.75,
+        "x1": 442.02,
+        "y1": 438.57,
+        "width": 373.12,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3 T h e I n t u i t i o n i s t i c R o b u s t n e s s A p p r o a c h"
+      }
+    },
+    {
+      "id": "#/texts/62",
+      "page": 8,
+      "order": 7,
+      "role": "heading",
+      "text": "3.1 T o l e r a n c e a n d G e o m e t r i c R e l a t i o n s",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 458.55,
+        "x1": 360.41,
+        "y1": 468.37,
+        "width": 291.51,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3.1 T o l e r a n c e a n d G e o m e t r i c R e l a t i o n s"
+      }
+    },
+    {
+      "id": "#/texts/63",
+      "page": 8,
+      "order": 8,
+      "role": "paragraph",
+      "text": "An r region of an object 0 is the subset of En (n is the dimension of our working space) in which each point has an Euclidean distance of r or less to 0 . The tolerance environment of an object consists of three regions: the £ region, the 8 region, and the A region. The e, 8 and A values are initialized as following: e = t - v , 8 = t + v and A = +oo, where r is the initial tolerance, as used in defining tolerance restriction of last section. Assume u is a secondary error bound, interpreted as the error in computing relations among geometric objects (we assume that r v). Figure 4 shows the tolerance definition of a point.",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 490.25,
+        "x1": 543.16,
+        "y1": 643.37,
+        "width": 474.56,
+        "height": 153.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "An r region of an object 0 is the subset of En (n is the dimension of our working space) in which each point has an Euclidean distance of r or less to 0 . The tolerance environment of an object consists of three regions: the £ region, the 8 region, and the A region. The e, 8 and A values are initialized as following: e = t - v , 8 = t + v and A = +oo, where r is the initial tolerance, as used in defining tolerance restriction of last section. Assume u is a secondary error bound, interpreted as the error in computing relations among geometric objects (we assume that r v). Figure 4 shows the tolerance definition of a point."
+      }
+    },
+    {
+      "id": "#/texts/64",
+      "page": 8,
+      "order": 9,
+      "role": "paragraph",
+      "text": "The e and 8 values should be considered as the lower and upper bounds of the initial error bound r with errors generated in the relation detection computations (the tolerances of",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 657.51,
+        "x1": 542.67,
+        "y1": 691.37,
+        "width": 473.97,
+        "height": 33.86
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The e and 8 values should be considered as the lower and upper bounds of the initial error bound r with errors generated in the relation detection computations (the tolerances of"
+      }
+    },
+    {
+      "id": "#/texts/66",
+      "page": 9,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 4: Initial tolerance definition of a point",
+      "bbox": {
+        "x0": 185.8,
+        "y0": 240.15,
+        "x1": 423.69,
+        "y1": 249.97,
+        "width": 237.89,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 4: Initial tolerance definition of a point"
+      }
+    },
+    {
+      "id": "#/texts/67",
+      "page": 9,
+      "order": 2,
+      "role": "paragraph",
+      "text": "A = +00",
+      "bbox": {
+        "x0": 352.58,
+        "y0": 116.17,
+        "x1": 399.89,
+        "y1": 127.45,
+        "width": 47.31,
+        "height": 11.28
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A = +00"
+      }
+    },
+    {
+      "id": "#/texts/68",
+      "page": 9,
+      "order": 3,
+      "role": "paragraph",
+      "text": "related geometric objects and the secondary error v). A regions are used to separate 'apart' objects. The following rules are used to detect relations between two geometric objects and update their tolerances.",
+      "bbox": {
+        "x0": 69.3,
+        "y0": 272.05,
+        "x1": 543.5,
+        "y1": 329.47,
+        "width": 474.2,
+        "height": 57.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "related geometric objects and the secondary error v). A regions are used to separate 'apart' objects. The following rules are used to detect relations between two geometric objects and update their tolerances."
+      }
+    },
+    {
+      "id": "#/texts/69",
+      "page": 9,
+      "order": 4,
+      "role": "list_item",
+      "text": "If the 8 regions of two objects 0\\ and 0 2 do not intersect, they are apart ( 0\\ 0 2). The A value of each object will be updated to be half of the smallest distance between these two objects if this A value is larger than this distance, otherwise A stays unchanged.",
+      "bbox": {
+        "x0": 87.3,
+        "y0": 356.14,
+        "x1": 543.7,
+        "y1": 438.17,
+        "width": 456.4,
+        "height": 82.03
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If the 8 regions of two objects 0\\ and 0 2 do not intersect, they are apart ( 0\\ 0 2). The A value of each object will be updated to be half of the smallest distance between these two objects if this A value is larger than this distance, otherwise A stays unchanged."
+      }
+    },
+    {
+      "id": "#/texts/70",
+      "page": 9,
+      "order": 5,
+      "role": "list_item",
+      "text": "If there exists a common approximated model for two objects 0\\ and 0 2, the two objects are coincident ( 0\\ 0 2). They will then be merged into one single object 0 . The £ and A regions of 0 are the maximal possible regions of 0 inside the intersections of the previous £ and A regions of 0\\ and 0 2, respectively. The 8 region of 0 is the minimal region of the 0 enclosing the union of the previous 8 regions of 0 \\ and 0 2 (see Figure 5).",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 461.95,
+        "x1": 543.77,
+        "y1": 591.77,
+        "width": 456.17,
+        "height": 129.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If there exists a common approximated model for two objects 0\\ and 0 2, the two objects are coincident ( 0\\ 0 2). They will then be merged into one single object 0 . The £ and A regions of 0 are the maximal possible regions of 0 inside the intersections of the previous £ and A regions of 0\\ and 0 2, respectively. The 8 region of 0 is the minimal region of the 0 enclosing the union of the previous 8 regions of 0 \\ and 0 2 (see Figure 5)."
+      }
+    },
+    {
+      "id": "#/texts/71",
+      "page": 9,
+      "order": 6,
+      "role": "list_item",
+      "text": "For two objects 0\\ and 0 2, if there exists an approximated model of 0 1 , Mi, and an approximated model of 0 2, M2, so that Mi is incident on M 2 as objects in Euclidean space, then 0\\ is incident on ( 0\\ C 0 2)0 1 will then be updated to the represen­ tation of its approximated model. The new £ and A regions of 0\\ are the maximal",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 615.34,
+        "x1": 543.87,
+        "y1": 697.37,
+        "width": 455.97,
+        "height": 82.03
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· For two objects 0\\ and 0 2, if there exists an approximated model of 0 1 , Mi, and an approximated model of 0 2, M2, so that Mi is incident on M 2 as objects in Euclidean space, then 0\\ is incident on ( 0\\ C 0 2)0 1 will then be updated to the represen­ tation of its approximated model. The new £ and A regions of 0\\ are the maximal"
+      }
+    },
+    {
+      "id": "#/texts/73",
+      "page": 10,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 5: Tolerance update of two coincident points",
+      "bbox": {
+        "x0": 170.6,
+        "y0": 578.07,
+        "x1": 436.96,
+        "y1": 587.89,
+        "width": 266.36,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 5: Tolerance update of two coincident points"
+      }
+    },
+    {
+      "id": "#/texts/74",
+      "page": 10,
+      "order": 2,
+      "role": "paragraph",
+      "text": "02",
+      "bbox": {
+        "x0": 360.42,
+        "y0": 353.92,
+        "x1": 370.53,
+        "y1": 364.03,
+        "width": 10.11,
+        "height": 10.11
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "02"
+      }
+    },
+    {
+      "id": "#/texts/75",
+      "page": 10,
+      "order": 3,
+      "role": "paragraph",
+      "text": "A2",
+      "bbox": {
+        "x0": 424.42,
+        "y0": 353.92,
+        "x1": 440.14,
+        "y1": 366.28,
+        "width": 15.72,
+        "height": 12.36
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A2"
+      }
+    },
+    {
+      "id": "#/texts/76",
+      "page": 10,
+      "order": 4,
+      "role": "paragraph",
+      "text": "9999....................",
+      "bbox": {
+        "x0": 208.9,
+        "y0": 499.76,
+        "x1": 300.85,
+        "y1": 542.53,
+        "width": 91.95,
+        "height": 42.77
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9999...................."
+      }
+    },
+    {
+      "id": "#/texts/77",
+      "page": 10,
+      "order": 5,
+      "role": "paragraph",
+      "text": "9000000.000.........0",
+      "bbox": {
+        "x0": 320.35,
+        "y0": 499.21,
+        "x1": 398.39,
+        "y1": 538.86,
+        "width": 78.04,
+        "height": 39.65
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9000000.000.........0"
+      }
+    },
+    {
+      "id": "#/texts/78",
+      "page": 10,
+      "order": 6,
+      "role": "paragraph",
+      "text": ".....",
+      "bbox": {
+        "x0": 334.24,
+        "y0": 499.28,
+        "x1": 408.91,
+        "y1": 549.18,
+        "width": 74.67,
+        "height": 49.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "....."
+      }
+    },
+    {
+      "id": "#/texts/80",
+      "page": 11,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 6 : Point-Curve incidence relations",
+      "bbox": {
+        "x0": 199.2,
+        "y0": 291.34,
+        "x1": 410.87,
+        "y1": 302.34,
+        "width": 211.67,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 6 : Point-Curve incidence relations"
+      }
+    },
+    {
+      "id": "#/texts/81",
+      "page": 11,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Approximated Model",
+      "bbox": {
+        "x0": 303.54,
+        "y0": 153.59,
+        "x1": 406.23,
+        "y1": 166.02,
+        "width": 102.69,
+        "height": 12.43
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Approximated Model"
+      }
+    },
+    {
+      "id": "#/texts/82",
+      "page": 11,
+      "order": 3,
+      "role": "paragraph",
+      "text": "28",
+      "bbox": {
+        "x0": 493.11,
+        "y0": 161.5,
+        "x1": 506.65,
+        "y1": 171.66,
+        "width": 13.54,
+        "height": 10.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "28"
+      }
+    },
+    {
+      "id": "#/texts/83",
+      "page": 11,
+      "order": 4,
+      "role": "paragraph",
+      "text": "----------",
+      "bbox": {
+        "x0": 315.95,
+        "y0": 251.85,
+        "x1": 398.33,
+        "y1": 259.75,
+        "width": 82.38,
+        "height": 7.9
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "----------"
+      }
+    },
+    {
+      "id": "#/texts/84",
+      "page": 11,
+      "order": 5,
+      "role": "paragraph",
+      "text": "regions of 0\\ inside the intersections of the e and A regions of the old 0\\ and 0 2, respectively. The object O 2 , its tolerance environment and the 8 region of 0\\ stay unchanged. Figure 6 shows a possible tolerance configuration in which several points are incident on a curve (only e and 8 regions are shown).",
+      "bbox": {
+        "x0": 99.1,
+        "y0": 323.95,
+        "x1": 543.53,
+        "y1": 405.91,
+        "width": 444.43,
+        "height": 81.96
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "regions of 0\\ inside the intersections of the e and A regions of the old 0\\ and 0 2, respectively. The object O 2 , its tolerance environment and the 8 region of 0\\ stay unchanged. Figure 6 shows a possible tolerance configuration in which several points are incident on a curve (only e and 8 regions are shown)."
+      }
+    },
+    {
+      "id": "#/texts/85",
+      "page": 11,
+      "order": 6,
+      "role": "list_item",
+      "text": "If two objects have neither coincidence nor incidence relations, and their e regions intersect, then the two objects are intersecting. The tolerances of the intersection objects of are defined in such a way that the intersections objects are incident on both the original objects.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 429.05,
+        "x1": 543.87,
+        "y1": 510.37,
+        "width": 456.27,
+        "height": 81.32
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If two objects have neither coincidence nor incidence relations, and their e regions intersect, then the two objects are intersecting. The tolerances of the intersection objects of are defined in such a way that the intersections objects are incident on both the original objects."
+      }
+    },
+    {
+      "id": "#/texts/86",
+      "page": 11,
+      "order": 7,
+      "role": "list_item",
+      "text": "When the tolerance of an object 0 is updated, all the tolerances of those objects that have been detected to be incident on 0 also need to be updated so that the incidence relations still hold, i. e. the e and A regions of these objects must be shrunk (if necessary) so that they are inside the e and A regions of O respectively.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 535.15,
+        "x1": 543.77,
+        "y1": 616.67,
+        "width": 456.17,
+        "height": 81.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When the tolerance of an object 0 is updated, all the tolerances of those objects that have been detected to be incident on 0 also need to be updated so that the incidence relations still hold, i. e. the e and A regions of these objects must be shrunk (if necessary) so that they are inside the e and A regions of O respectively."
+      }
+    },
+    {
+      "id": "#/texts/87",
+      "page": 11,
+      "order": 8,
+      "role": "list_item",
+      "text": "If the e region is empty or the 8 region is not totally included in the A region for some object, then an ambiguity is detected. An ambiguity handling mechanism needs to be invoked to solve the ambiguity, as described in section 3.3.",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 640.41,
+        "x1": 544.27,
+        "y1": 698.27,
+        "width": 456.37,
+        "height": 57.86
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If the e region is empty or the 8 region is not totally included in the A region for some object, then an ambiguity is detected. An ambiguity handling mechanism needs to be invoked to solve the ambiguity, as described in section 3.3."
+      }
+    },
+    {
+      "id": "#/texts/88",
+      "page": 11,
+      "order": 9,
+      "role": "paragraph",
+      "text": "5",
+      "bbox": {
+        "x0": 353.0,
+        "y0": 758.05,
+        "x1": 358.0,
+        "y1": 768.14,
+        "width": 5.0,
+        "height": 10.09
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "5"
+      }
+    },
+    {
+      "id": "#/texts/90",
+      "page": 12,
+      "order": 1,
+      "role": "heading",
+      "text": "3 .2 R o b u s t n e s s a n d P r o p e r t i e s",
+      "bbox": {
+        "x0": 69.8,
+        "y0": 97.85,
+        "x1": 299.61,
+        "y1": 107.67,
+        "width": 229.81,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3 .2 R o b u s t n e s s a n d P r o p e r t i e s"
+      }
+    },
+    {
+      "id": "#/texts/91",
+      "page": 12,
+      "order": 2,
+      "role": "paragraph",
+      "text": "The tolerance updating rules, applied after the computation of any relation, ensure that there is always an approximated model for the representation of all the objects presented such that all the previously detected relations as well as the newly detected relation hold, as long as no ambiguity has been found. In other words, the algorithm is robust if it terminates normally (without ambiguity).",
+      "bbox": {
+        "x0": 69.1,
+        "y0": 129.25,
+        "x1": 543.54,
+        "y1": 234.87,
+        "width": 474.44,
+        "height": 105.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The tolerance updating rules, applied after the computation of any relation, ensure that there is always an approximated model for the representation of all the objects presented such that all the previously detected relations as well as the newly detected relation hold, as long as no ambiguity has been found. In other words, the algorithm is robust if it terminates normally (without ambiguity)."
+      }
+    },
+    {
+      "id": "#/texts/92",
+      "page": 12,
+      "order": 3,
+      "role": "paragraph",
+      "text": "In [5] we proved that the following and other properties are guaranteed by the robustness method introduced in section 3.1.",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 248.75,
+        "x1": 542.63,
+        "y1": 282.37,
+        "width": 474.03,
+        "height": 33.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In [5] we proved that the following and other properties are guaranteed by the robustness method introduced in section 3.1."
+      }
+    },
+    {
+      "id": "#/texts/93",
+      "page": 12,
+      "order": 4,
+      "role": "list_item",
+      "text": "The coincidence relation is an equivalence relation.",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 308.75,
+        "x1": 359.97,
+        "y1": 318.57,
+        "width": 273.07,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· The coincidence relation is an equivalence relation."
+      }
+    },
+    {
+      "id": "#/texts/94",
+      "page": 12,
+      "order": 5,
+      "role": "list_item",
+      "text": "the incidence relation has transitivity, i. e. if A C B and B C C, then A d C .",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 342.35,
+        "x1": 500.83,
+        "y1": 352.17,
+        "width": 413.93,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· the incidence relation has transitivity, i. e. if A C B and B C C, then A d C ."
+      }
+    },
+    {
+      "id": "#/texts/95",
+      "page": 12,
+      "order": 6,
+      "role": "list_item",
+      "text": "If A = B and A ± C , then B ± C.",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 375.95,
+        "x1": 275.74,
+        "y1": 385.77,
+        "width": 188.84,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If A = B and A ± C , then B ± C."
+      }
+    },
+    {
+      "id": "#/texts/96",
+      "page": 12,
+      "order": 7,
+      "role": "list_item",
+      "text": "If A C B and B ^ C , then A ^ C.",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 409.35,
+        "x1": 275.88,
+        "y1": 419.17,
+        "width": 188.98,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If A C B and B ^ C , then A ^ C."
+      }
+    },
+    {
+      "id": "#/texts/97",
+      "page": 12,
+      "order": 8,
+      "role": "list_item",
+      "text": "If A C B and A = C, then C C B.",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 443.15,
+        "x1": 275.42,
+        "y1": 452.97,
+        "width": 188.52,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If A C B and A = C, then C C B."
+      }
+    },
+    {
+      "id": "#/texts/98",
+      "page": 12,
+      "order": 9,
+      "role": "list_item",
+      "text": "If A C B and B = C, then A C C.",
+      "bbox": {
+        "x0": 86.9,
+        "y0": 477.05,
+        "x1": 276.18,
+        "y1": 486.87,
+        "width": 189.28,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· If A C B and B = C, then A C C."
+      }
+    },
+    {
+      "id": "#/texts/99",
+      "page": 12,
+      "order": 10,
+      "role": "paragraph",
+      "text": "In [5] additional rules are provided to preserve the properties such as two lines only intersect at one point, which is not automatically guaranteed by the approximated model method.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 513.75,
+        "x1": 543.17,
+        "y1": 571.07,
+        "width": 474.27,
+        "height": 57.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In [5] additional rules are provided to preserve the properties such as two lines only intersect at one point, which is not automatically guaranteed by the approximated model method."
+      }
+    },
+    {
+      "id": "#/texts/100",
+      "page": 12,
+      "order": 11,
+      "role": "heading",
+      "text": "3.3 A m b ig u i t y H a n d lin g",
+      "bbox": {
+        "x0": 69.4,
+        "y0": 595.55,
+        "x1": 252.64,
+        "y1": 605.37,
+        "width": 183.24,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "3.3 A m b ig u i t y H a n d lin g"
+      }
+    },
+    {
+      "id": "#/texts/101",
+      "page": 12,
+      "order": 12,
+      "role": "paragraph",
+      "text": "As indicated in section 3.1, if any e region becomes empty (e < 0) or any 6 region grows out of its A region (6 > A ), an ambiguity is detected. In this case we can no longer guarantee the the relations are consistent with each other, i.e. the existence of a model, is not guaranteed. The algorithm cannot continue before the ambiguity being solved.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 627.21,
+        "x1": 543.22,
+        "y1": 709.37,
+        "width": 474.32,
+        "height": 82.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "As indicated in section 3.1, if any e region becomes empty (e < 0) or any 6 region grows out of its A region (6 > A ), an ambiguity is detected. In this case we can no longer guarantee the the relations are consistent with each other, i.e. the existence of a model, is not guaranteed. The algorithm cannot continue before the ambiguity being solved."
+      }
+    },
+    {
+      "id": "#/texts/103",
+      "page": 13,
+      "order": 1,
+      "role": "paragraph",
+      "text": "An ambiguity means that the algorithm cannot make a consistent set of decisions with the initial tolerance (the t value). To solve the ambiguity, the t value has to be redefined. The problem is whether we need to rerun the algorithm with a new tolerance or we can change the t value dynamically and then continue the algorithm afterwards. It is shown in [5] that increasing or decreasing t value by an amount d is equivalent to increasing or decreasing all the e values and 8 values simultaneously by the same amount d, and that if this simultaneous change of £ and 6 values does not create new ambiguities, all the previously detected relations stay unchanged. In other words, the initial tolerance value r can be dynamically changed by changing all the £ and 6 values, and the algorithm can then be continued. However a total rerun of the algorithm is still necessary when new ambiguities are created by above dynamic tolerance adjustment. Practical implementation shows that a total rerun of the algorithm is rarely needed (see section 4.3).",
+      "bbox": {
+        "x0": 68.1,
+        "y0": 96.39,
+        "x1": 542.67,
+        "y1": 369.01,
+        "width": 474.57,
+        "height": 272.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "An ambiguity means that the algorithm cannot make a consistent set of decisions with the initial tolerance (the t value). To solve the ambiguity, the t value has to be redefined. The problem is whether we need to rerun the algorithm with a new tolerance or we can change the t value dynamically and then continue the algorithm afterwards. It is shown in [5] that increasing or decreasing t value by an amount d is equivalent to increasing or decreasing all the e values and 8 values simultaneously by the same amount d, and that if this simultaneous change of £ and 6 values does not create new ambiguities, all the previously detected relations stay unchanged. In other words, the initial tolerance value r can be dynamically changed by changing all the £ and 6 values, and the algorithm can then be continued. However a total rerun of the algorithm is still necessary when new ambiguities are created by above dynamic tolerance adjustment. Practical implementation shows that a total rerun of the algorithm is rarely needed (see section 4.3)."
+      }
+    },
+    {
+      "id": "#/texts/104",
+      "page": 13,
+      "order": 2,
+      "role": "heading",
+      "text": "4 R o b u s t B o o l e a n O p e r a t i o n s",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 398.79,
+        "x1": 335.31,
+        "y1": 408.61,
+        "width": 267.11,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 R o b u s t B o o l e a n O p e r a t i o n s"
+      }
+    },
+    {
+      "id": "#/texts/105",
+      "page": 13,
+      "order": 3,
+      "role": "paragraph",
+      "text": "We have implemented a robust Boolean operation algorithm in an experimental solid modeler based on above robustness approach. Solids in this modeler are represented with a hybrid representation and are bounded by planes and natural quadric surfaces.",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 434.29,
+        "x1": 542.92,
+        "y1": 492.61,
+        "width": 474.72,
+        "height": 58.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "We have implemented a robust Boolean operation algorithm in an experimental solid modeler based on above robustness approach. Solids in this modeler are represented with a hybrid representation and are bounded by planes and natural quadric surfaces."
+      }
+    },
+    {
+      "id": "#/texts/106",
+      "page": 13,
+      "order": 4,
+      "role": "heading",
+      "text": "4.1 A H y b r i d R e p r e s e n t a t i o n",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 517.09,
+        "x1": 287.87,
+        "y1": 526.91,
+        "width": 219.67,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.1 A H y b r i d R e p r e s e n t a t i o n"
+      }
+    },
+    {
+      "id": "#/texts/107",
+      "page": 13,
+      "order": 5,
+      "role": "paragraph",
+      "text": "The 3D space can be subdivided by a continuous function f ( x , y , z ) into three areas, the surface F° and two half spaces F + and F ~, where",
+      "bbox": {
+        "x0": 68.1,
+        "y0": 548.79,
+        "x1": 542.42,
+        "y1": 582.11,
+        "width": 474.32,
+        "height": 33.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The 3D space can be subdivided by a continuous function f ( x , y , z ) into three areas, the surface F° and two half spaces F + and F ~, where"
+      }
+    },
+    {
+      "id": "#/texts/109",
+      "page": 13,
+      "order": 6,
+      "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 352.8,
+        "y0": 756.89,
+        "x1": 357.8,
+        "y1": 766.98,
+        "width": 5.0,
+        "height": 10.09
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/111",
+      "page": 14,
+      "order": 1,
+      "role": "paragraph",
+      "text": "In the half space representation, a solid is represented as the union of a number of generalized convex bodies (GCBs), which is defined as the intersection of half spaces[2]. i. e. a solid can be represented as the following normal form:",
+      "bbox": {
+        "x0": 68.6,
+        "y0": 97.85,
+        "x1": 542.66,
+        "y1": 155.37,
+        "width": 474.06,
+        "height": 57.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In the half space representation, a solid is represented as the union of a number of generalized convex bodies (GCBs), which is defined as the intersection of half spaces[2]. i. e. a solid can be represented as the following normal form:"
+      }
+    },
+    {
+      "id": "#/texts/113",
+      "page": 14,
+      "order": 2,
+      "role": "paragraph",
+      "text": "'",
+      "bbox": {
+        "x0": 483.4,
+        "y0": 187.54,
+        "x1": 488.5,
+        "y1": 194.7,
+        "width": 5.1,
+        "height": 7.16
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "'"
+      }
+    },
+    {
+      "id": "#/texts/114",
+      "page": 14,
+      "order": 3,
+      "role": "paragraph",
+      "text": "where the union and intersection operations are regularized set operations[25]. The half space representation is volume based because it uses volume information (half spaces) as the basic components of the representation, and it is easy to extract volume information (e. g. test whether a point is inside a solid) from it.",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 216.85,
+        "x1": 543.33,
+        "y1": 298.67,
+        "width": 475.13,
+        "height": 81.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "where the union and intersection operations are regularized set operations[25]. The half space representation is volume based because it uses volume information (half spaces) as the basic components of the representation, and it is easy to extract volume information (e. g. test whether a point is inside a solid) from it."
+      }
+    },
+    {
+      "id": "#/texts/115",
+      "page": 14,
+      "order": 4,
+      "role": "paragraph",
+      "text": "On the other hand, in a boundary representation (B_Rep), a solid is represented by its boundaries. Boundary hierarchies (faces, rings, edges and vertices) are often used to facilitate the access of boundary information[25].",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 312.65,
+        "x1": 542.67,
+        "y1": 370.17,
+        "width": 474.47,
+        "height": 57.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "On the other hand, in a boundary representation (B_Rep), a solid is represented by its boundaries. Boundary hierarchies (faces, rings, edges and vertices) are often used to facilitate the access of boundary information[25]."
+      }
+    },
+    {
+      "id": "#/texts/116",
+      "page": 14,
+      "order": 5,
+      "role": "paragraph",
+      "text": "The modeler presented here uses a hybrid representation method that combines the half space representation and the boundary representation to take advantages of both represen­ tation methods, namely easy accesses to both boundary and volume information. As shown in in Figure 7, an intermediate representation, in which the boundary curves are associated with each half space, stored as a single unsorted edge-list. These curves will be used to represent the edges and rings in the B-rep data structure, later.",
+      "bbox": {
+        "x0": 68.2,
+        "y0": 384.15,
+        "x1": 543.16,
+        "y1": 513.27,
+        "width": 474.96,
+        "height": 129.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The modeler presented here uses a hybrid representation method that combines the half space representation and the boundary representation to take advantages of both represen­ tation methods, namely easy accesses to both boundary and volume information. As shown in in Figure 7, an intermediate representation, in which the boundary curves are associated with each half space, stored as a single unsorted edge-list. These curves will be used to represent the edges and rings in the B-rep data structure, later."
+      }
+    },
+    {
+      "id": "#/texts/117",
+      "page": 14,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Because any Boolean operation can be written as a normal form of half spaces, the Boolean operation algorithm is basically a process of converting a normal form (half space representation) to an intermediate representation, i. e. evaluating edges from a normal form. Details of this edge evaluation process can be found in [2]. B_Reps are built from the intermediate representation only when it is needed by certain applications such as hidden line removal display.",
+      "bbox": {
+        "x0": 68.4,
+        "y0": 527.45,
+        "x1": 542.67,
+        "y1": 656.97,
+        "width": 474.27,
+        "height": 129.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Because any Boolean operation can be written as a normal form of half spaces, the Boolean operation algorithm is basically a process of converting a normal form (half space representation) to an intermediate representation, i. e. evaluating edges from a normal form. Details of this edge evaluation process can be found in [2]. B_Reps are built from the intermediate representation only when it is needed by certain applications such as hidden line removal display."
+      }
+    },
+    {
+      "id": "#/texts/119",
+      "page": 15,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 7: The hybrid representation structure",
+      "bbox": {
+        "x0": 186.7,
+        "y0": 636.56,
+        "x1": 422.88,
+        "y1": 646.85,
+        "width": 236.18,
+        "height": 10.29
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 7: The hybrid representation structure"
+      }
+    },
+    {
+      "id": "#/texts/120",
+      "page": 15,
+      "order": 2,
+      "role": "paragraph",
+      "text": "HALF-SPACE REPRESENTATION:",
+      "bbox": {
+        "x0": 210.33,
+        "y0": 177.67,
+        "x1": 392.54,
+        "y1": 189.0,
+        "width": 182.21,
+        "height": 11.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "HALF-SPACE REPRESENTATION:"
+      }
+    },
+    {
+      "id": "#/texts/121",
+      "page": 15,
+      "order": 3,
+      "role": "paragraph",
+      "text": "(Normal Form)",
+      "bbox": {
+        "x0": 244.04,
+        "y0": 187.72,
+        "x1": 318.34,
+        "y1": 202.66,
+        "width": 74.3,
+        "height": 14.94
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(Normal Form)"
+      }
+    },
+    {
+      "id": "#/texts/122",
+      "page": 15,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Ui ni(i) Sis",
+      "bbox": {
+        "x0": 276.69,
+        "y0": 211.5,
+        "x1": 328.43,
+        "y1": 227.33,
+        "width": 51.74,
+        "height": 15.83
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ui ni(i) Sis"
+      }
+    },
+    {
+      "id": "#/texts/123",
+      "page": 15,
+      "order": 5,
+      "role": "paragraph",
+      "text": "INTERMEDIATE REPRESENTATION:",
+      "bbox": {
+        "x0": 172.09,
+        "y0": 291.33,
+        "x1": 373.42,
+        "y1": 303.75,
+        "width": 201.33,
+        "height": 12.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "INTERMEDIATE REPRESENTATION:"
+      }
+    },
+    {
+      "id": "#/texts/124",
+      "page": 15,
+      "order": 6,
+      "role": "paragraph",
+      "text": "(Evaluating edges by computing intersections of",
+      "bbox": {
+        "x0": 170.96,
+        "y0": 304.88,
+        "x1": 406.04,
+        "y1": 317.33,
+        "width": 235.08,
+        "height": 12.45
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(Evaluating edges by computing intersections of"
+      }
+    },
+    {
+      "id": "#/texts/125",
+      "page": 15,
+      "order": 7,
+      "role": "paragraph",
+      "text": "the half-spaces)",
+      "bbox": {
+        "x0": 170.96,
+        "y0": 316.0,
+        "x1": 248.57,
+        "y1": 328.5,
+        "width": 77.61,
+        "height": 12.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "the half-spaces)"
+      }
+    },
+    {
+      "id": "#/texts/126",
+      "page": 15,
+      "order": 8,
+      "role": "paragraph",
+      "text": "U",
+      "bbox": {
+        "x0": 295.81,
+        "y0": 346.5,
+        "x1": 305.93,
+        "y1": 357.75,
+        "width": 10.12,
+        "height": 11.25
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "U"
+      }
+    },
+    {
+      "id": "#/texts/127",
+      "page": 15,
+      "order": 9,
+      "role": "paragraph",
+      "text": "Sil",
+      "bbox": {
+        "x0": 242.95,
+        "y0": 427.5,
+        "x1": 260.94,
+        "y1": 441.0,
+        "width": 17.99,
+        "height": 13.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Sil"
+      }
+    },
+    {
+      "id": "#/texts/128",
+      "page": 15,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Sij",
+      "bbox": {
+        "x0": 299.19,
+        "y0": 424.12,
+        "x1": 316.06,
+        "y1": 438.75,
+        "width": 16.87,
+        "height": 14.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Sij"
+      }
+    },
+    {
+      "id": "#/texts/129",
+      "page": 15,
+      "order": 11,
+      "role": "paragraph",
+      "text": "e",
+      "bbox": {
+        "x0": 257.57,
+        "y0": 469.12,
+        "x1": 264.32,
+        "y1": 477.0,
+        "width": 6.75,
+        "height": 7.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e"
+      }
+    },
+    {
+      "id": "#/texts/130",
+      "page": 15,
+      "order": 12,
+      "role": "paragraph",
+      "text": "* .....",
+      "bbox": {
+        "x0": 322.81,
+        "y0": 470.25,
+        "x1": 368.92,
+        "y1": 479.33,
+        "width": 46.11,
+        "height": 9.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "* ....."
+      }
+    },
+    {
+      "id": "#/texts/131",
+      "page": 15,
+      "order": 13,
+      "role": "paragraph",
+      "text": "BOUNDARY REPRESENTATION",
+      "bbox": {
+        "x0": 220.45,
+        "y0": 544.5,
+        "x1": 392.54,
+        "y1": 559.13,
+        "width": 172.09,
+        "height": 14.63
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "BOUNDARY REPRESENTATION"
+      }
+    },
+    {
+      "id": "#/texts/132",
+      "page": 15,
+      "order": 14,
+      "role": "paragraph",
+      "text": "(building topological relations and",
+      "bbox": {
+        "x0": 218.2,
+        "y0": 560.25,
+        "x1": 386.92,
+        "y1": 575.0,
+        "width": 168.72,
+        "height": 14.75
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "(building topological relations and"
+      }
+    },
+    {
+      "id": "#/texts/133",
+      "page": 15,
+      "order": 15,
+      "role": "paragraph",
+      "text": "boundary hierachy - faces, rings, edges",
+      "bbox": {
+        "x0": 221.58,
+        "y0": 576.0,
+        "x1": 411.66,
+        "y1": 589.5,
+        "width": 190.08,
+        "height": 13.5
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "boundary hierachy - faces, rings, edges"
+      }
+    },
+    {
+      "id": "#/texts/134",
+      "page": 15,
+      "order": 16,
+      "role": "paragraph",
+      "text": "and points)",
+      "bbox": {
+        "x0": 221.56,
+        "y0": 590.54,
+        "x1": 278.96,
+        "y1": 601.96,
+        "width": 57.4,
+        "height": 11.42
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "and points)"
+      }
+    },
+    {
+      "id": "#/texts/136",
+      "page": 16,
+      "order": 1,
+      "role": "heading",
+      "text": "4 .2 G e o m e t r i c R e l a t i o n s a n d I n t e r s e c t i o n s",
+      "bbox": {
+        "x0": 72.3,
+        "y0": 99.25,
+        "x1": 385.97,
+        "y1": 109.07,
+        "width": 313.67,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 .2 G e o m e t r i c R e l a t i o n s a n d I n t e r s e c t i o n s"
+      }
+    },
+    {
+      "id": "#/texts/137",
+      "page": 16,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Our algorithm is designed to be independent of the implementation of the low level geometric relation detection operations. Details of computing geometric relations and the consistency tests using tolerances are hidden from the main algorithm and implemented in an inde­ pendent tolerance processing module, which primarily performs the operations of tolerance definition, computation, updating and ambiguity handling.",
+      "bbox": {
+        "x0": 71.7,
+        "y0": 130.45,
+        "x1": 546.26,
+        "y1": 235.57,
+        "width": 474.56,
+        "height": 105.12
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Our algorithm is designed to be independent of the implementation of the low level geometric relation detection operations. Details of computing geometric relations and the consistency tests using tolerances are hidden from the main algorithm and implemented in an inde­ pendent tolerance processing module, which primarily performs the operations of tolerance definition, computation, updating and ambiguity handling."
+      }
+    },
+    {
+      "id": "#/texts/138",
+      "page": 16,
+      "order": 3,
+      "role": "heading",
+      "text": "4.2.1 Geometric Intersections",
+      "bbox": {
+        "x0": 71.5,
+        "y0": 266.05,
+        "x1": 252.96,
+        "y1": 275.87,
+        "width": 181.46,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.2.1 Geometric Intersections"
+      }
+    },
+    {
+      "id": "#/texts/139",
+      "page": 16,
+      "order": 4,
+      "role": "paragraph",
+      "text": "For Boolean operations on solids, we must determine the relation between two surfaces using our robustness method, and find intersections of the two surfaces if they are detected intersecting. Algebraic solutions are available for relation detections of planes and natural quadric surfaces.",
+      "bbox": {
+        "x0": 71.3,
+        "y0": 297.55,
+        "x1": 545.56,
+        "y1": 378.57,
+        "width": 474.26,
+        "height": 81.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "For Boolean operations on solids, we must determine the relation between two surfaces using our robustness method, and find intersections of the two surfaces if they are detected intersecting. Algebraic solutions are available for relation detections of planes and natural quadric surfaces."
+      }
+    },
+    {
+      "id": "#/texts/140",
+      "page": 16,
+      "order": 5,
+      "role": "paragraph",
+      "text": "An approach of finding all the conic section intersections of two natural quadrics is used based on Goldman and Miller's work[ 8 ]. The paper gives a complete set of all the special cases occurring when two natural quadric surfaces intersect in one or more conic sections, using a case by case geometric analysis approach. An example is shown in figure 8 in which three quadric surfaces intersect in a single ellipse.",
+      "bbox": {
+        "x0": 71.0,
+        "y0": 392.75,
+        "x1": 545.35,
+        "y1": 498.37,
+        "width": 474.35,
+        "height": 105.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "An approach of finding all the conic section intersections of two natural quadrics is used based on Goldman and Miller's work[ 8 ]. The paper gives a complete set of all the special cases occurring when two natural quadric surfaces intersect in one or more conic sections, using a case by case geometric analysis approach. An example is shown in figure 8 in which three quadric surfaces intersect in a single ellipse."
+      }
+    },
+    {
+      "id": "#/texts/141",
+      "page": 16,
+      "order": 6,
+      "role": "paragraph",
+      "text": "Levin's parametric approach[18], which uses piecewise linear segments to approximate the intersection curves, is used to find other general intersections of two quadric surfaces. However, a piecewise linear approximation requires much larger tolerances to be used in the algorithm which in turn creates more ambiguous relations between objects. Therefore, using algebraic methods as we do for the special cases, is more efficient and more robust.",
+      "bbox": {
+        "x0": 71.1,
+        "y0": 512.35,
+        "x1": 546.02,
+        "y1": 618.17,
+        "width": 474.92,
+        "height": 105.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Levin's parametric approach[18], which uses piecewise linear segments to approximate the intersection curves, is used to find other general intersections of two quadric surfaces. However, a piecewise linear approximation requires much larger tolerances to be used in the algorithm which in turn creates more ambiguous relations between objects. Therefore, using algebraic methods as we do for the special cases, is more efficient and more robust."
+      }
+    },
+    {
+      "id": "#/texts/142",
+      "page": 16,
+      "order": 7,
+      "role": "paragraph",
+      "text": "For geometric intersections, if the intersection computation involves approximation errors, these errors should be considered in the tolerance updating process. For example in Figure 9, two curves intersect at a point with their linear approximations. In building the tolerance",
+      "bbox": {
+        "x0": 71.3,
+        "y0": 631.85,
+        "x1": 545.56,
+        "y1": 690.07,
+        "width": 474.26,
+        "height": 58.22
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "For geometric intersections, if the intersection computation involves approximation errors, these errors should be considered in the tolerance updating process. For example in Figure 9, two curves intersect at a point with their linear approximations. In building the tolerance"
+      }
+    },
+    {
+      "id": "#/texts/144",
+      "page": 17,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 8: Three quadric surfaces intersect a single ellipse",
+      "bbox": {
+        "x0": 151.58,
+        "y0": 548.29,
+        "x1": 446.88,
+        "y1": 564.09,
+        "width": 295.3,
+        "height": 15.8
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 8: Three quadric surfaces intersect a single ellipse"
+      }
+    },
+    {
+      "id": "#/texts/145",
+      "page": 17,
+      "order": 2,
+      "role": "paragraph",
+      "text": "•Common Ellipse Intersection",
+      "bbox": {
+        "x0": 321.12,
+        "y0": 432.48,
+        "x1": 414.32,
+        "y1": 440.48,
+        "width": 93.2,
+        "height": 8.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "•Common Ellipse Intersection"
+      }
+    },
+    {
+      "id": "#/texts/147",
+      "page": 18,
+      "order": 1,
+      "role": "caption",
+      "text": "Figure 9: intersecting two curves with tolerances",
+      "bbox": {
+        "x0": 180.2,
+        "y0": 441.99,
+        "x1": 430.22,
+        "y1": 451.81,
+        "width": 250.02,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Figure 9: intersecting two curves with tolerances"
+      }
+    },
+    {
+      "id": "#/texts/148",
+      "page": 18,
+      "order": 2,
+      "role": "paragraph",
+      "text": "I",
+      "bbox": {
+        "x0": 271.0,
+        "y0": 342.59,
+        "x1": 275.32,
+        "y1": 352.41,
+        "width": 4.32,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "I"
+      }
+    },
+    {
+      "id": "#/texts/149",
+      "page": 18,
+      "order": 3,
+      "role": "paragraph",
+      "text": "I",
+      "bbox": {
+        "x0": 272.1,
+        "y0": 349.79,
+        "x1": 276.52,
+        "y1": 359.61,
+        "width": 4.42,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "I"
+      }
+    },
+    {
+      "id": "#/texts/150",
+      "page": 18,
+      "order": 4,
+      "role": "paragraph",
+      "text": "I",
+      "bbox": {
+        "x0": 273.4,
+        "y0": 356.79,
+        "x1": 277.72,
+        "y1": 366.61,
+        "width": 4.32,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "I"
+      }
+    },
+    {
+      "id": "#/texts/151",
+      "page": 18,
+      "order": 5,
+      "role": "paragraph",
+      "text": "I",
+      "bbox": {
+        "x0": 274.5,
+        "y0": 363.99,
+        "x1": 278.92,
+        "y1": 373.81,
+        "width": 4.42,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "I"
+      }
+    },
+    {
+      "id": "#/texts/152",
+      "page": 18,
+      "order": 6,
+      "role": "paragraph",
+      "text": "I",
+      "bbox": {
+        "x0": 275.5,
+        "y0": 370.89,
+        "x1": 279.77,
+        "y1": 380.71,
+        "width": 4.27,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "I"
+      }
+    },
+    {
+      "id": "#/texts/153",
+      "page": 18,
+      "order": 7,
+      "role": "paragraph",
+      "text": "• € - e",
+      "bbox": {
+        "x0": 344.77,
+        "y0": 186.92,
+        "x1": 372.94,
+        "y1": 196.0,
+        "width": 28.17,
+        "height": 9.08
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "• € - e"
+      }
+    },
+    {
+      "id": "#/texts/154",
+      "page": 18,
+      "order": 8,
+      "role": "paragraph",
+      "text": "--_-",
+      "bbox": {
+        "x0": 191.09,
+        "y0": 252.78,
+        "x1": 224.67,
+        "y1": 276.66,
+        "width": 33.58,
+        "height": 23.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "--_-"
+      }
+    },
+    {
+      "id": "#/texts/155",
+      "page": 18,
+      "order": 9,
+      "role": "paragraph",
+      "text": "_____-",
+      "bbox": {
+        "x0": 390.41,
+        "y0": 243.76,
+        "x1": 470.31,
+        "y1": 280.3,
+        "width": 79.9,
+        "height": 36.54
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "_____-"
+      }
+    },
+    {
+      "id": "#/texts/156",
+      "page": 18,
+      "order": 10,
+      "role": "paragraph",
+      "text": "e: approximation error",
+      "bbox": {
+        "x0": 123.94,
+        "y0": 343.52,
+        "x1": 236.61,
+        "y1": 354.85,
+        "width": 112.67,
+        "height": 11.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "e: approximation error"
+      }
+    },
+    {
+      "id": "#/texts/157",
+      "page": 18,
+      "order": 11,
+      "role": "paragraph",
+      "text": "of the intersection point, the approximation error must be subtracted from £ and A to guarantee that the point is incident on the two curves.",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 472.89,
+        "x1": 544.11,
+        "y1": 506.71,
+        "width": 474.51,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "of the intersection point, the approximation error must be subtracted from £ and A to guarantee that the point is incident on the two curves."
+      }
+    },
+    {
+      "id": "#/texts/158",
+      "page": 18,
+      "order": 12,
+      "role": "heading",
+      "text": "4.2.2 Inside O utside O n Tests",
+      "bbox": {
+        "x0": 70.3,
+        "y0": 537.49,
+        "x1": 257.56,
+        "y1": 547.31,
+        "width": 187.26,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4.2.2 Inside O utside O n Tests"
+      }
+    },
+    {
+      "id": "#/texts/159",
+      "page": 18,
+      "order": 13,
+      "role": "paragraph",
+      "text": "The inside outside on test for a solid, which is a key operation for a volume-based repre­ sentation, can be done entirely with the half space representation and is redefined for our representation, based on tolerance regions e, 8 and A.",
+      "bbox": {
+        "x0": 70.1,
+        "y0": 569.39,
+        "x1": 544.62,
+        "y1": 626.71,
+        "width": 474.52,
+        "height": 57.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The inside outside on test for a solid, which is a key operation for a volume-based repre­ sentation, can be done entirely with the half space representation and is redefined for our representation, based on tolerance regions e, 8 and A."
+      }
+    },
+    {
+      "id": "#/texts/160",
+      "page": 18,
+      "order": 14,
+      "role": "heading",
+      "text": "Definition 1 (inside outside a regularized solid)",
+      "bbox": {
+        "x0": 70.6,
+        "y0": 651.08,
+        "x1": 323.36,
+        "y1": 662.08,
+        "width": 252.76,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "Definition 1 (inside outside a regularized solid)"
+      }
+    },
+    {
+      "id": "#/texts/161",
+      "page": 18,
+      "order": 15,
+      "role": "paragraph",
+      "text": "A point P is inside a solid iff P is inside one of the GCBs of the solid or P is on the boundary of more than one GCB and the two implicit surfaces in the two different GCBs on",
+      "bbox": {
+        "x0": 71.3,
+        "y0": 676.81,
+        "x1": 541.98,
+        "y1": 709.19,
+        "width": 470.68,
+        "height": 32.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is inside a solid iff P is inside one of the GCBs of the solid or P is on the boundary of more than one GCB and the two implicit surfaces in the two different GCBs on"
+      }
+    },
+    {
+      "id": "#/texts/163",
+      "page": 19,
+      "order": 1,
+      "role": "paragraph",
+      "text": "which P is incident are coincident with opposite surface normals at P .",
+      "bbox": {
+        "x0": 70.6,
+        "y0": 98.69,
+        "x1": 432.54,
+        "y1": 107.07,
+        "width": 361.94,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "which P is incident are coincident with opposite surface normals at P ."
+      }
+    },
+    {
+      "id": "#/texts/164",
+      "page": 19,
+      "order": 2,
+      "role": "paragraph",
+      "text": "A point P is outside a solid iff P is outside all the GCBs of the solid.",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 122.69,
+        "x1": 453.79,
+        "y1": 131.07,
+        "width": 365.89,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is outside a solid iff P is outside all the GCBs of the solid."
+      }
+    },
+    {
+      "id": "#/texts/165",
+      "page": 19,
+      "order": 3,
+      "role": "paragraph",
+      "text": "A point P is on the boundary of a solid iff P is neither inside nor outside the solid.",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 146.29,
+        "x1": 526.03,
+        "y1": 154.67,
+        "width": 438.13,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is on the boundary of a solid iff P is neither inside nor outside the solid."
+      }
+    },
+    {
+      "id": "#/texts/166",
+      "page": 19,
+      "order": 4,
+      "role": "paragraph",
+      "text": "A point P is inside a G CB iff P is inside all the half spaces of the GCB.",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 170.49,
+        "x1": 469.73,
+        "y1": 178.87,
+        "width": 381.83,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is inside a G CB iff P is inside all the half spaces of the GCB."
+      }
+    },
+    {
+      "id": "#/texts/167",
+      "page": 19,
+      "order": 5,
+      "role": "paragraph",
+      "text": "A point P is outside a GCB iff P is outside one of the half spaces of the GCB.",
+      "bbox": {
+        "x0": 87.9,
+        "y0": 194.29,
+        "x1": 501.43,
+        "y1": 202.67,
+        "width": 413.53,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is outside a GCB iff P is outside one of the half spaces of the GCB."
+      }
+    },
+    {
+      "id": "#/texts/168",
+      "page": 19,
+      "order": 6,
+      "role": "paragraph",
+      "text": "A point P is on the boundary of a GCB iff P is neither inside nor outside the GCB.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 217.99,
+        "x1": 530.48,
+        "y1": 226.37,
+        "width": 442.88,
+        "height": 8.38
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is on the boundary of a GCB iff P is neither inside nor outside the GCB."
+      }
+    },
+    {
+      "id": "#/texts/169",
+      "page": 19,
+      "order": 7,
+      "role": "paragraph",
+      "text": "A point P is inside a half space F + iff P and F are apart and P is on the positive side of F .",
+      "bbox": {
+        "x0": 70.3,
+        "y0": 241.99,
+        "x1": 541.02,
+        "y1": 273.87,
+        "width": 470.72,
+        "height": 31.88
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is inside a half space F + iff P and F are apart and P is on the positive side of F ."
+      }
+    },
+    {
+      "id": "#/texts/170",
+      "page": 19,
+      "order": 8,
+      "role": "paragraph",
+      "text": "A point P is outside a half space F + iff P and F are apart and P is on the negative side of F .",
+      "bbox": {
+        "x0": 69.8,
+        "y0": 289.49,
+        "x1": 540.62,
+        "y1": 321.67,
+        "width": 470.82,
+        "height": 32.18
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A point P is outside a half space F + iff P and F are apart and P is on the negative side of F ."
+      }
+    },
+    {
+      "id": "#/texts/171",
+      "page": 19,
+      "order": 9,
+      "role": "paragraph",
+      "text": "□",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 335.17,
+        "x1": 93.94,
+        "y1": 344.99,
+        "width": 6.34,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "□"
+      }
+    },
+    {
+      "id": "#/texts/172",
+      "page": 19,
+      "order": 10,
+      "role": "paragraph",
+      "text": "Ambiguous relations that might occur during the computation are solved automatically as described in 3.3.",
+      "bbox": {
+        "x0": 69.3,
+        "y0": 365.47,
+        "x1": 543.87,
+        "y1": 399.29,
+        "width": 474.57,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ambiguous relations that might occur during the computation are solved automatically as described in 3.3."
+      }
+    },
+    {
+      "id": "#/texts/173",
+      "page": 19,
+      "order": 11,
+      "role": "heading",
+      "text": "4 .3 T e s t s",
+      "bbox": {
+        "x0": 69.6,
+        "y0": 422.57,
+        "x1": 142.26,
+        "y1": 432.39,
+        "width": 72.66,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "4 .3 T e s t s"
+      }
+    },
+    {
+      "id": "#/texts/174",
+      "page": 19,
+      "order": 12,
+      "role": "paragraph",
+      "text": "Two identical cubes of dimensions 100 x 100 x 100, one rotated about all three axis with an angle a, are tested for Boolean union operation. The initial tolerance r = IE 3, secondary error v = I E 4. Following cases are tested:",
+      "bbox": {
+        "x0": 69.3,
+        "y0": 454.27,
+        "x1": 543.42,
+        "y1": 511.79,
+        "width": 474.12,
+        "height": 57.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Two identical cubes of dimensions 100 x 100 x 100, one rotated about all three axis with an angle a, are tested for Boolean union operation. The initial tolerance r = IE 3, secondary error v = I E 4. Following cases are tested:"
+      }
+    },
+    {
+      "id": "#/texts/175",
+      "page": 19,
+      "order": 13,
+      "role": "list_item",
+      "text": "When a > l.ShE 6 , the two cubes intersect.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 531.16,
+        "x1": 336.17,
+        "y1": 542.16,
+        "width": 248.57,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When a > l.ShE 6 , the two cubes intersect."
+      }
+    },
+    {
+      "id": "#/texts/176",
+      "page": 19,
+      "order": 14,
+      "role": "list_item",
+      "text": "When a = l.SE 6 , ambiguities are created, after r is increased to AE - 3, they are detected coincident.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 563.06,
+        "x1": 544.37,
+        "y1": 597.29,
+        "width": 456.77,
+        "height": 34.23
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When a = l.SE 6 , ambiguities are created, after r is increased to AE - 3, they are detected coincident."
+      }
+    },
+    {
+      "id": "#/texts/177",
+      "page": 19,
+      "order": 15,
+      "role": "list_item",
+      "text": "When a = 1.5E 6 , ambiguities are created, after r is increased to 3E 3, they are detected coincident.",
+      "bbox": {
+        "x0": 87.6,
+        "y0": 618.96,
+        "x1": 544.12,
+        "y1": 652.99,
+        "width": 456.52,
+        "height": 34.03
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When a = 1.5E 6 , ambiguities are created, after r is increased to 3E 3, they are detected coincident."
+      }
+    },
+    {
+      "id": "#/texts/178",
+      "page": 19,
+      "order": 16,
+      "role": "list_item",
+      "text": "When a - IE 6 , ambiguities are created, after r is increased to 2E 3, they axe detected coincident.",
+      "bbox": {
+        "x0": 87.8,
+        "y0": 674.86,
+        "x1": 544.41,
+        "y1": 709.09,
+        "width": 456.61,
+        "height": 34.23
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When a - IE 6 , ambiguities are created, after r is increased to 2E 3, they axe detected coincident."
+      }
+    },
+    {
+      "id": "#/texts/180",
+      "page": 20,
+      "order": 1,
+      "role": "paragraph",
+      "text": "1",
+      "bbox": {
+        "x0": 73.7,
+        "y0": 121.39,
+        "x1": 77.7,
+        "y1": 129.32,
+        "width": 4.0,
+        "height": 7.93
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "1"
+      }
+    },
+    {
+      "id": "#/texts/181",
+      "page": 20,
+      "order": 2,
+      "role": "paragraph",
+      "text": "Ambiguities in this example only occur in a very small range, namely for angles 1.8.E -6 > A > \\E - § (about a factor of two). In a previous approachfuiis range was about 10.E4, roughly 5000 times bigger. The main difference is that we are not using an analytical model, but an approximated model now, which is more forgiving, but still maintains the desired properties.",
+      "bbox": {
+        "x0": 66.2,
+        "y0": 132.92,
+        "x1": 540.76,
+        "y1": 238.25,
+        "width": 474.56,
+        "height": 105.33
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "Ambiguities in this example only occur in a very small range, namely for angles 1.8.E -6 > A > \\E - § (about a factor of two). In a previous approachfuiis range was about 10.E4, roughly 5000 times bigger. The main difference is that we are not using an analytical model, but an approximated model now, which is more forgiving, but still maintains the desired properties."
+      }
+    },
+    {
+      "id": "#/texts/182",
+      "page": 20,
+      "order": 3,
+      "role": "paragraph",
+      "text": "In another test example, we use two identical cylinders with radius 50 and height 400, one rotated about X axis with an angle ?, and then do a Boolean union of them, r and v are defined the same as the last example. Five pictures from this test example are shown at the end of this paper. When angle ? < 0.000001, ambiguities are created. Increasing tolerance r will solve all the ambiguities, and result in two coincident cylinders.",
+      "bbox": {
+        "x0": 66.0,
+        "y0": 252.43,
+        "x1": 540.77,
+        "y1": 357.35,
+        "width": 474.77,
+        "height": 104.92
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "In another test example, we use two identical cylinders with radius 50 and height 400, one rotated about X axis with an angle ?, and then do a Boolean union of them, r and v are defined the same as the last example. Five pictures from this test example are shown at the end of this paper. When angle ? < 0.000001, ambiguities are created. Increasing tolerance r will solve all the ambiguities, and result in two coincident cylinders."
+      }
+    },
+    {
+      "id": "#/texts/183",
+      "page": 20,
+      "order": 4,
+      "role": "paragraph",
+      "text": "When we position the two cylinders parallel to each other, they intersect in two straight line. The second intersection which occurred previously no longer exists.",
+      "bbox": {
+        "x0": 66.0,
+        "y0": 371.43,
+        "x1": 540.31,
+        "y1": 405.25,
+        "width": 474.31,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "When we position the two cylinders parallel to each other, they intersect in two straight line. The second intersection which occurred previously no longer exists."
+      }
+    },
+    {
+      "id": "#/texts/184",
+      "page": 20,
+      "order": 5,
+      "role": "heading",
+      "text": "5 C o n c l u s i o n s",
+      "bbox": {
+        "x0": 66.7,
+        "y0": 435.33,
+        "x1": 195.26,
+        "y1": 445.15,
+        "width": 128.56,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "5 C o n c l u s i o n s"
+      }
+    },
+    {
+      "id": "#/texts/185",
+      "page": 20,
+      "order": 6,
+      "role": "paragraph",
+      "text": "A new tolerance-based robustness method is introduced and applied to Boolean set opera­ tions on 3D objects bounded by planes and natural quadric surfaces. The algebraic methods for detecting conic section intersections for natural quadric surfaces, together with our toler­ ance based, intuitionistic robustness approach generate very reliable and efficient geometric algorithms.",
+      "bbox": {
+        "x0": 66.0,
+        "y0": 471.03,
+        "x1": 541.22,
+        "y1": 576.35,
+        "width": 475.22,
+        "height": 105.32
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "A new tolerance-based robustness method is introduced and applied to Boolean set opera­ tions on 3D objects bounded by planes and natural quadric surfaces. The algebraic methods for detecting conic section intersections for natural quadric surfaces, together with our toler­ ance based, intuitionistic robustness approach generate very reliable and efficient geometric algorithms."
+      }
+    },
+    {
+      "id": "#/texts/186",
+      "page": 20,
+      "order": 7,
+      "role": "paragraph",
+      "text": "The robustness method used in this paper is very general and can be applied to other geometric algorithms without any changes. In our implementation we completely abstracted away the low level geometric operations (computing intersections an geometric relations) from the high level application specific algorithms. This advantage makes the approach bet­ ter suitable as an underlying abstract data type for CAD systems (where different algorithms",
+      "bbox": {
+        "x0": 66.0,
+        "y0": 590.83,
+        "x1": 540.77,
+        "y1": 696.35,
+        "width": 474.77,
+        "height": 105.52
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "The robustness method used in this paper is very general and can be applied to other geometric algorithms without any changes. In our implementation we completely abstracted away the low level geometric operations (computing intersections an geometric relations) from the high level application specific algorithms. This advantage makes the approach bet­ ter suitable as an underlying abstract data type for CAD systems (where different algorithms"
+      }
+    },
+    {
+      "id": "#/texts/187",
+      "page": 20,
+      "order": 8,
+      "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 353.3,
+        "y0": 759.74,
+        "x1": 355.52,
+        "y1": 763.48,
+        "width": 2.22,
+        "height": 3.74
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/188",
+      "page": 20,
+      "order": 9,
+      "role": "list_item",
+      "text": "When a < 0.9 E 6 , The two cubes are detected coincident",
+      "bbox": {
+        "x0": 84.5,
+        "y0": 96.22,
+        "x1": 403.04,
+        "y1": 107.22,
+        "width": 318.54,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "· When a < 0.9 E 6 , The two cubes are detected coincident"
+      }
+    },
+    {
+      "id": "#/texts/190",
+      "page": 21,
+      "order": 1,
+      "role": "paragraph",
+      "text": "access the same model data) than previously published special reasoning solutions.",
+      "bbox": {
+        "x0": 62.7,
+        "y0": 95.73,
+        "x1": 488.98,
+        "y1": 105.55,
+        "width": 426.28,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "access the same model data) than previously published special reasoning solutions."
+      }
+    },
+    {
+      "id": "#/texts/191",
+      "page": 21,
+      "order": 2,
+      "role": "heading",
+      "text": "6 A c k n o w l e d g m e n t s",
+      "bbox": {
+        "x0": 62.9,
+        "y0": 134.82,
+        "x1": 244.71,
+        "y1": 145.82,
+        "width": 181.81,
+        "height": 11.0
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "6 A c k n o w l e d g m e n t s"
+      }
+    },
+    {
+      "id": "#/texts/192",
+      "page": 21,
+      "order": 3,
+      "role": "paragraph",
+      "text": "This work has been supported, in part, by NSF grants DDM-89 10229 and ASC-89 20219, and a grant from the Hewlett-Packard Laboratories. All opinions, findings, conclusions, or recommendations expressed in this document are those of the authors and do not necessarily reflect the view of the sponsoring agencies.",
+      "bbox": {
+        "x0": 62.4,
+        "y0": 171.03,
+        "x1": 536.42,
+        "y1": 252.65,
+        "width": 474.02,
+        "height": 81.62
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "This work has been supported, in part, by NSF grants DDM-89 10229 and ASC-89 20219, and a grant from the Hewlett-Packard Laboratories. All opinions, findings, conclusions, or recommendations expressed in this document are those of the authors and do not necessarily reflect the view of the sponsoring agencies."
+      }
+    },
+    {
+      "id": "#/texts/193",
+      "page": 21,
+      "order": 4,
+      "role": "heading",
+      "text": "R e f e r e n c e s",
+      "bbox": {
+        "x0": 62.4,
+        "y0": 282.43,
+        "x1": 151.61,
+        "y1": 292.25,
+        "width": 89.21,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "section_header",
+        "docling_orig": "R e f e r e n c e s"
+      }
+    },
+    {
+      "id": "#/texts/194",
+      "page": 21,
+      "order": 5,
+      "role": "list_item",
+      "text": "BRUDERLIN, B. Detecting ambiguities: An optimistic approach to robustness problems in computational geometry. Tech. Rep. UUCS 90-003 (submitted), Computer Science Department, University of Utah, April 1990.",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 318.13,
+        "x1": 536.67,
+        "y1": 375.55,
+        "width": 467.97,
+        "height": 57.42
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[1] BRUDERLIN, B. Detecting ambiguities: An optimistic approach to robustness problems in computational geometry. Tech. Rep. UUCS 90-003 (submitted), Computer Science Department, University of Utah, April 1990."
+      }
+    },
+    {
+      "id": "#/texts/195",
+      "page": 21,
+      "order": 6,
+      "role": "list_item",
+      "text": "BRUDERLIN, B. Robust regularized set operations on polyhedra. In Proc. of Hawaii International Conference on System Science (January 1991).",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 399.53,
+        "x1": 533.8,
+        "y1": 433.15,
+        "width": 464.9,
+        "height": 33.62
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[2] BRUDERLIN, B. Robust regularized set operations on polyhedra. In Proc. of Hawaii International Conference on System Science (January 1991)."
+      }
+    },
+    {
+      "id": "#/texts/196",
+      "page": 21,
+      "order": 7,
+      "role": "list_item",
+      "text": "CHOU, S. C. Mechanical Geometry Theorem Proving. D. Reidel Publ., Doordrecht, Holland, 1988.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 456.93,
+        "x1": 535.97,
+        "y1": 490.45,
+        "width": 467.07,
+        "height": 33.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[3] CHOU, S. C. Mechanical Geometry Theorem Proving. D. Reidel Publ., Doordrecht, Holland, 1988."
+      }
+    },
+    {
+      "id": "#/texts/197",
+      "page": 21,
+      "order": 8,
+      "role": "list_item",
+      "text": "EDELSBRUNNER, H., AND M u c k e , E. Simulation of simlicity: A technique to cope with degenerate cases in geometric algorithms. In Proc. of 4th A C M Symposium on Comp. Geometry (June 1988), pp. 118-133.",
+      "bbox": {
+        "x0": 68.9,
+        "y0": 514.93,
+        "x1": 536.47,
+        "y1": 573.05,
+        "width": 467.57,
+        "height": 58.12
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[4] EDELSBRUNNER, H., AND M u c k e , E. Simulation of simlicity: A technique to cope with degenerate cases in geometric algorithms. In Proc. of 4th A C M Symposium on Comp. Geometry (June 1988), pp. 118-133."
+      }
+    },
+    {
+      "id": "#/texts/198",
+      "page": 21,
+      "order": 9,
+      "role": "list_item",
+      "text": "FANG, S. Robustness in geometric modeling - an intuitionistic and toleranced-based approach. Ph.D dissertation, University of Utah, Computer Science Department, 1992.",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 597.03,
+        "x1": 535.97,
+        "y1": 630.55,
+        "width": 467.27,
+        "height": 33.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[5] FANG, S. Robustness in geometric modeling - an intuitionistic and toleranced-based approach. Ph.D dissertation, University of Utah, Computer Science Department, 1992."
+      }
+    },
+    {
+      "id": "#/texts/199",
+      "page": 21,
+      "order": 10,
+      "role": "list_item",
+      "text": "[ 6 ] FANG, S., AND B r u d e r l i n , B. Robustness in geometric modeling - tolerance based methods. In Computational Geometry -Methods, Algorithms and Applications, Inter­",
+      "bbox": {
+        "x0": 68.7,
+        "y0": 654.02,
+        "x1": 536.05,
+        "y1": 688.25,
+        "width": 467.35,
+        "height": 34.23
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[ 6 ] FANG, S., AND B r u d e r l i n , B. Robustness in geometric modeling - tolerance based methods. In Computational Geometry -Methods, Algorithms and Applications, Inter­"
+      }
+    },
+    {
+      "id": "#/texts/200",
+      "page": 21,
+      "order": 11,
+      "role": "paragraph",
+      "text": "■",
+      "bbox": {
+        "x0": 74.7,
+        "y0": 728.89,
+        "x1": 80.4,
+        "y1": 736.89,
+        "width": 5.7,
+        "height": 8.0
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "■"
+      }
+    },
+    {
+      "id": "#/texts/201",
+      "page": 21,
+      "order": 12,
+      "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 353.0,
+        "y0": 755.93,
+        "x1": 358.0,
+        "y1": 766.02,
+        "width": 5.0,
+        "height": 10.09
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/203",
+      "page": 22,
+      "order": 1,
+      "role": "paragraph",
+      "text": "national Workshop on Computational Geometry C G '91 (March 1991), Springer Lecture Notes in Computer Science 553, Bern, Switzerland.",
+      "bbox": {
+        "x0": 85.2,
+        "y0": 97.17,
+        "x1": 535.22,
+        "y1": 131.19,
+        "width": 450.02,
+        "height": 34.02
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "national Workshop on Computational Geometry C G '91 (March 1991), Springer Lecture Notes in Computer Science 553, Bern, Switzerland."
+      }
+    },
+    {
+      "id": "#/texts/204",
+      "page": 22,
+      "order": 2,
+      "role": "list_item",
+      "text": "FANG, S., AND BRUDERLIN, B. Robust geometric modeling with implicit surfaces. In Proc. of International Conference on Manufacturing Automation, Hong Kong (August 1992).",
+      "bbox": {
+        "x0": 67.5,
+        "y0": 154.77,
+        "x1": 535.22,
+        "y1": 212.09,
+        "width": 467.72,
+        "height": 57.32
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[7] FANG, S., AND BRUDERLIN, B. Robust geometric modeling with implicit surfaces. In Proc. of International Conference on Manufacturing Automation, Hong Kong (August 1992)."
+      }
+    },
+    {
+      "id": "#/texts/205",
+      "page": 22,
+      "order": 3,
+      "role": "list_item",
+      "text": "[ 8 ] GOLDMAN, R. N., AND M il l e r , J. R. Combining algebraic rigor with geometric robustness for the detection and calculation of conic sections in the intersection of two natural quadric surfaces. In Proc. of the A C M S IG G R A P H Symposium on Solid Modeling Foundations and C A D C A M Applications (June 1991), Austin Texas.",
+      "bbox": {
+        "x0": 67.2,
+        "y0": 234.96,
+        "x1": 535.97,
+        "y1": 316.69,
+        "width": 468.77,
+        "height": 81.73
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[ 8 ] GOLDMAN, R. N., AND M il l e r , J. R. Combining algebraic rigor with geometric robustness for the detection and calculation of conic sections in the intersection of two natural quadric surfaces. In Proc. of the A C M S IG G R A P H Symposium on Solid Modeling Foundations and C A D C A M Applications (June 1991), Austin Texas."
+      }
+    },
+    {
+      "id": "#/texts/206",
+      "page": 22,
+      "order": 4,
+      "role": "list_item",
+      "text": "GREENE, D., AND Y a o , F. Finite resolution computational geometry. In Proc. 27th IEEE Symp. Fundations of Computer Science (1986), pp. 143-152.",
+      "bbox": {
+        "x0": 67.0,
+        "y0": 340.47,
+        "x1": 532.12,
+        "y1": 374.29,
+        "width": 465.12,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[9] GREENE, D., AND Y a o , F. Finite resolution computational geometry. In Proc. 27th IEEE Symp. Fundations of Computer Science (1986), pp. 143-152."
+      }
+    },
+    {
+      "id": "#/texts/207",
+      "page": 22,
+      "order": 5,
+      "role": "list_item",
+      "text": "GUIBAS, L., Sa l ESIN, D., AND STOLFI, J. Epsilon geometry: Building robust algo­ rithms from imprecise computations. In Proc. of 5th A C M Symposium on Computational Geometry (1989).",
+      "bbox": {
+        "x0": 61.2,
+        "y0": 397.57,
+        "x1": 532.8,
+        "y1": 454.99,
+        "width": 471.6,
+        "height": 57.42
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[10] GUIBAS, L., Sa l ESIN, D., AND STOLFI, J. Epsilon geometry: Building robust algo­ rithms from imprecise computations. In Proc. of 5th A C M Symposium on Computational Geometry (1989)."
+      }
+    },
+    {
+      "id": "#/texts/208",
+      "page": 22,
+      "order": 6,
+      "role": "list_item",
+      "text": "HOFFMANN, C. M. Geometric and Solid Modeling: An Introduction. Morgan Kaufmann Publishers, 1989, ch. 4.",
+      "bbox": {
+        "x0": 61.5,
+        "y0": 478.77,
+        "x1": 534.47,
+        "y1": 512.29,
+        "width": 472.97,
+        "height": 33.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[11] HOFFMANN, C. M. Geometric and Solid Modeling: An Introduction. Morgan Kaufmann Publishers, 1989, ch. 4."
+      }
+    },
+    {
+      "id": "#/texts/209",
+      "page": 22,
+      "order": 7,
+      "role": "list_item",
+      "text": "HOFFMANN, C. M. The problems of accuracy and robustness in geometric computation. IEEE Computer 22, 3 (March 1989), 31-41.",
+      "bbox": {
+        "x0": 61.5,
+        "y0": 536.37,
+        "x1": 534.77,
+        "y1": 570.19,
+        "width": 473.27,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[12] HOFFMANN, C. M. The problems of accuracy and robustness in geometric computation. IEEE Computer 22, 3 (March 1989), 31-41."
+      }
+    },
+    {
+      "id": "#/texts/210",
+      "page": 22,
+      "order": 8,
+      "role": "list_item",
+      "text": "H o f f m a n n , C. M., H o p c r o f t , J. E., AND K a r a s i c k , M. S. Towards implementating robust geometric computations. In Proc. of 4th A C M Symposium on Computational Geometry (June 1988), pp. 106-117.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 593.47,
+        "x1": 535.22,
+        "y1": 651.49,
+        "width": 473.52,
+        "height": 58.02
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[13] H o f f m a n n , C. M., H o p c r o f t , J. E., AND K a r a s i c k , M. S. Towards implementating robust geometric computations. In Proc. of 4th A C M Symposium on Computational Geometry (June 1988), pp. 106-117."
+      }
+    },
+    {
+      "id": "#/texts/211",
+      "page": 22,
+      "order": 9,
+      "role": "list_item",
+      "text": "H o f f m a n n , C. M., H o p c r o f t , J. E., a n d K a r a s i c k , M. S. Robust set operations on polyhedral solids. IEEE Computer Graphics and Application 9 (November 1989).",
+      "bbox": {
+        "x0": 61.5,
+        "y0": 675.07,
+        "x1": 535.02,
+        "y1": 709.09,
+        "width": 473.52,
+        "height": 34.02
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[14] H o f f m a n n , C. M., H o p c r o f t , J. E., a n d K a r a s i c k , M. S. Robust set operations on polyhedral solids. IEEE Computer Graphics and Application 9 (November 1989)."
+      }
+    },
+    {
+      "id": "#/texts/213",
+      "page": 23,
+      "order": 1,
+      "role": "list_item",
+      "text": "KAPUR, D. Using grobner bases to reason about geometry. J. Symbolic Comp. 2 (1986), 399-408.",
+      "bbox": {
+        "x0": 61.0,
+        "y0": 98.09,
+        "x1": 533.74,
+        "y1": 132.31,
+        "width": 472.74,
+        "height": 34.22
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[15] KAPUR, D. Using grobner bases to reason about geometry. J. Symbolic Comp. 2 (1986), 399-408."
+      }
+    },
+    {
+      "id": "#/texts/214",
+      "page": 23,
+      "order": 2,
+      "role": "list_item",
+      "text": "KARASICK, M. On the representation and manipulations of rigid solids. Ph.D thesis, McGill University, 1989.",
+      "bbox": {
+        "x0": 61.0,
+        "y0": 154.69,
+        "x1": 534.55,
+        "y1": 188.51,
+        "width": 473.55,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[16] KARASICK, M. On the representation and manipulations of rigid solids. Ph.D thesis, McGill University, 1989."
+      }
+    },
+    {
+      "id": "#/texts/215",
+      "page": 23,
+      "order": 3,
+      "role": "list_item",
+      "text": "KUTZLER, B. Algebraic approaches to automated geometry proving. Ph.D Diss., Re­ port 88-74.0, Research Institute for Symbolic Comp., Kepler University, Linz, Austria, 1988.",
+      "bbox": {
+        "x0": 60.7,
+        "y0": 210.59,
+        "x1": 534.44,
+        "y1": 268.21,
+        "width": 473.74,
+        "height": 57.62
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[17] KUTZLER, B. Algebraic approaches to automated geometry proving. Ph.D Diss., Re­ port 88-74.0, Research Institute for Symbolic Comp., Kepler University, Linz, Austria, 1988."
+      }
+    },
+    {
+      "id": "#/texts/216",
+      "page": 23,
+      "order": 4,
+      "role": "list_item",
+      "text": "LEVIN, J. A parametric algorithm for drawing pictures of solid objects composed of quadric surfaces. Communications of A C M 19, 10 (October 1976), 555-563.",
+      "bbox": {
+        "x0": 60.7,
+        "y0": 290.49,
+        "x1": 535.47,
+        "y1": 324.61,
+        "width": 474.77,
+        "height": 34.12
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[18] LEVIN, J. A parametric algorithm for drawing pictures of solid objects composed of quadric surfaces. Communications of A C M 19, 10 (October 1976), 555-563."
+      }
+    },
+    {
+      "id": "#/texts/217",
+      "page": 23,
+      "order": 5,
+      "role": "list_item",
+      "text": "MlLENKOVIC, V. Verifiable implementations of geometric algorithm using finite preci­ sion arithmetic. Artificial Intelligence 37 (1988), 377-401.",
+      "bbox": {
+        "x0": 60.7,
+        "y0": 346.89,
+        "x1": 532.19,
+        "y1": 380.51,
+        "width": 471.49,
+        "height": 33.62
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[19] MlLENKOVIC, V. Verifiable implementations of geometric algorithm using finite preci­ sion arithmetic. Artificial Intelligence 37 (1988), 377-401."
+      }
+    },
+    {
+      "id": "#/texts/218",
+      "page": 23,
+      "order": 6,
+      "role": "list_item",
+      "text": "MlLENKOVIC, V. Verifiable implementations of geometric algorithm using finite preci­ sion arithmetic. Ph.D thesis, Carnegie Mellon University, 1988.",
+      "bbox": {
+        "x0": 60.9,
+        "y0": 402.59,
+        "x1": 532.19,
+        "y1": 436.21,
+        "width": 471.29,
+        "height": 33.62
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[20] MlLENKOVIC, V. Verifiable implementations of geometric algorithm using finite preci­ sion arithmetic. Ph.D thesis, Carnegie Mellon University, 1988."
+      }
+    },
+    {
+      "id": "#/texts/219",
+      "page": 23,
+      "order": 7,
+      "role": "list_item",
+      "text": "MlLENKOVIC, V. Calculating approximate curve arrangement using rounded arith­ metic. In ACM Annual Symposium on Computational Geometry (1989), pp. 197-207.",
+      "bbox": {
+        "x0": 60.9,
+        "y0": 458.79,
+        "x1": 531.91,
+        "y1": 492.81,
+        "width": 471.01,
+        "height": 34.02
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[21] MlLENKOVIC, V. Calculating approximate curve arrangement using rounded arith­ metic. In ACM Annual Symposium on Computational Geometry (1989), pp. 197-207."
+      }
+    },
+    {
+      "id": "#/texts/220",
+      "page": 23,
+      "order": 8,
+      "role": "list_item",
+      "text": "MlLENKOVIC, V., AND Nackman, L. R. Finding compact coordinate representations for polygons and polyhedra. In ACM Annual Symposium on Computational Geometry (1990), pp. 244-252.",
+      "bbox": {
+        "x0": 61.0,
+        "y0": 515.89,
+        "x1": 534.52,
+        "y1": 573.51,
+        "width": 473.52,
+        "height": 57.62
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[22] MlLENKOVIC, V., AND Nackman, L. R. Finding compact coordinate representations for polygons and polyhedra. In ACM Annual Symposium on Computational Geometry (1990), pp. 244-252."
+      }
+    },
+    {
+      "id": "#/texts/221",
+      "page": 23,
+      "order": 9,
+      "role": "list_item",
+      "text": "MUDUR, S. P., AND KOPARKAR, P. A. Interval methods for processing geometric objects. IEEE Computer Graphics and Application 4, 2 (February 1984), 7 - 17.",
+      "bbox": {
+        "x0": 61.2,
+        "y0": 595.79,
+        "x1": 535.46,
+        "y1": 629.61,
+        "width": 474.26,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[23] MUDUR, S. P., AND KOPARKAR, P. A. Interval methods for processing geometric objects. IEEE Computer Graphics and Application 4, 2 (February 1984), 7 - 17."
+      }
+    },
+    {
+      "id": "#/texts/222",
+      "page": 23,
+      "order": 10,
+      "role": "list_item",
+      "text": "OTTMANN, T., TlIIEMT, G., AND ULLRICH, C. Numerical stability of geometric algorithms. In ACM Annual Symposium on Computational Geometry (June 1987), pp. 119-125.",
+      "bbox": {
+        "x0": 61.4,
+        "y0": 652.19,
+        "x1": 535.72,
+        "y1": 710.31,
+        "width": 474.32,
+        "height": 58.12
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[24] OTTMANN, T., TlIIEMT, G., AND ULLRICH, C. Numerical stability of geometric algorithms. In ACM Annual Symposium on Computational Geometry (June 1987), pp. 119-125."
+      }
+    },
+    {
+      "id": "#/texts/224",
+      "page": 24,
+      "order": 1,
+      "role": "list_item",
+      "text": "ReqUICHA, A. A. G. Representation for rigid solids: Theory, methods and systems. Computing Surveys 12 , 4 (December 1980).",
+      "bbox": {
+        "x0": 62.2,
+        "y0": 97.15,
+        "x1": 535.72,
+        "y1": 131.17,
+        "width": 473.52,
+        "height": 34.02
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[25] ReqUICHA, A. A. G. Representation for rigid solids: Theory, methods and systems. Computing Surveys 12 , 4 (December 1980)."
+      }
+    },
+    {
+      "id": "#/texts/225",
+      "page": 24,
+      "order": 2,
+      "role": "list_item",
+      "text": "SALESIN, D. Epsilon geometry: Building robust algorithms from imprecise computa­ tions. Ph.D thesis, Stanford University, 1991. ·",
+      "bbox": {
+        "x0": 61.9,
+        "y0": 154.45,
+        "x1": 532.9,
+        "y1": 188.27,
+        "width": 471.0,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[26] SALESIN, D. Epsilon geometry: Building robust algorithms from imprecise computa­ tions. Ph.D thesis, Stanford University, 1991. ·"
+      }
+    },
+    {
+      "id": "#/texts/226",
+      "page": 24,
+      "order": 3,
+      "role": "list_item",
+      "text": "SALESIN, D., STOLFI, J., AND GuIBAS, L. Epsilon geometry: Building robust al­ gorithms from imprecise calculations. In A C M A n n u a l S ym posiu m on C om p u ta tion a l G eom etry (1989), pp. 208-217.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 211.85,
+        "x1": 532.95,
+        "y1": 269.37,
+        "width": 471.25,
+        "height": 57.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[27] SALESIN, D., STOLFI, J., AND GuIBAS, L. Epsilon geometry: Building robust al­ gorithms from imprecise calculations. In A C M A n n u a l S ym posiu m on C om p u ta tion a l G eom etry (1989), pp. 208-217."
+      }
+    },
+    {
+      "id": "#/texts/227",
+      "page": 24,
+      "order": 4,
+      "role": "list_item",
+      "text": "SEGAL, M. Using tolerances to guarantee valid polyhedral modeling results. Computer Graphics 24 , 4 (1990), 105-114.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 292.75,
+        "x1": 532.87,
+        "y1": 326.57,
+        "width": 471.17,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[28] SEGAL, M. Using tolerances to guarantee valid polyhedral modeling results. Computer Graphics 24 , 4 (1990), 105-114."
+      }
+    },
+    {
+      "id": "#/texts/228",
+      "page": 24,
+      "order": 5,
+      "role": "list_item",
+      "text": "STEWART, A. J. Robust point location in approximate polygons. In 1991 Canadian Conference on Compxitational G eom etry (August 1991), pp. 179-182.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 349.85,
+        "x1": 531.89,
+        "y1": 383.37,
+        "width": 470.19,
+        "height": 33.52
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[29] STEWART, A. J. Robust point location in approximate polygons. In 1991 Canadian Conference on Compxitational G eom etry (August 1991), pp. 179-182."
+      }
+    },
+    {
+      "id": "#/texts/229",
+      "page": 24,
+      "order": 6,
+      "role": "list_item",
+      "text": "STEWART, A. J. The theory and practice of robust geometric computation, or, how to build robust solid modelers. Ph.D Thesis 91-1229, Department of Computer Science, Cornell University, 1991.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 406.75,
+        "x1": 535.72,
+        "y1": 464.77,
+        "width": 474.02,
+        "height": 58.02
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[30] STEWART, A. J. The theory and practice of robust geometric computation, or, how to build robust solid modelers. Ph.D Thesis 91-1229, Department of Computer Science, Cornell University, 1991."
+      }
+    },
+    {
+      "id": "#/texts/230",
+      "page": 24,
+      "order": 7,
+      "role": "list_item",
+      "text": "SUGIIIARA, K., AND IRI, M. Geometric algorithms in finite precision arithmetic. Res. Mem. 88-14, Math. Eng. and Information Physicas, University of Tokyo, 1988.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 488.75,
+        "x1": 535.23,
+        "y1": 522.57,
+        "width": 473.53,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[31] SUGIIIARA, K., AND IRI, M. Geometric algorithms in finite precision arithmetic. Res. Mem. 88-14, Math. Eng. and Information Physicas, University of Tokyo, 1988."
+      }
+    },
+    {
+      "id": "#/texts/231",
+      "page": 24,
+      "order": 8,
+      "role": "list_item",
+      "text": "SUGIHARA, K., AND IRI, M. A solid modeling system free from topological inconsis­ tency. Journal o f Inform ation P rocessing 12 , 4 (1989), 380-393.",
+      "bbox": {
+        "x0": 61.7,
+        "y0": 546.15,
+        "x1": 532.95,
+        "y1": 579.97,
+        "width": 471.25,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[32] SUGIHARA, K., AND IRI, M. A solid modeling system free from topological inconsis­ tency. Journal o f Inform ation P rocessing 12 , 4 (1989), 380-393."
+      }
+    },
+    {
+      "id": "#/texts/232",
+      "page": 24,
+      "order": 9,
+      "role": "list_item",
+      "text": "TROELSTRA, A. S. Constructivism in M athem atics : A n Introduction. Elsevier Science Pub. Co., 1988.",
+      "bbox": {
+        "x0": 61.9,
+        "y0": 603.25,
+        "x1": 536.37,
+        "y1": 637.37,
+        "width": 474.47,
+        "height": 34.12
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[33] TROELSTRA, A. S. Constructivism in M athem atics : A n Introduction. Elsevier Science Pub. Co., 1988."
+      }
+    },
+    {
+      "id": "#/texts/233",
+      "page": 24,
+      "order": 10,
+      "role": "list_item",
+      "text": "Yap, C. K. A geometric consistency theorem for a symbolic perturbation theorem. In Proc. o f 4th A C M S ym posium on C om p. G eom etry (June 1988), pp. 134-142.",
+      "bbox": {
+        "x0": 61.9,
+        "y0": 660.85,
+        "x1": 535.42,
+        "y1": 694.67,
+        "width": 473.52,
+        "height": 33.82
+      },
+      "meta": {
+        "docling_label": "list_item",
+        "docling_orig": "[34] Yap, C. K. A geometric consistency theorem for a symbolic perturbation theorem. In Proc. o f 4th A C M S ym posium on C om p. G eom etry (June 1988), pp. 134-142."
+      }
+    },
+    {
+      "id": "#/texts/235",
+      "page": 25,
+      "order": 1,
+      "role": "caption",
+      "text": "Rotation Angle: 1.2 (in radians)",
+      "bbox": {
+        "x0": 202.94,
+        "y0": 536.85,
+        "x1": 370.56,
+        "y1": 552.41,
+        "width": 167.62,
+        "height": 15.56
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Rotation Angle: 1.2 (in radians)"
+      }
+    },
+    {
+      "id": "#/texts/236",
+      "page": 26,
+      "order": 1,
+      "role": "caption",
+      "text": "Rotation Angle: 0.489957 (in radians)",
+      "bbox": {
+        "x0": 169.7,
+        "y0": 573.57,
+        "x1": 364.8,
+        "y1": 583.39,
+        "width": 195.1,
+        "height": 9.82
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Rotation Angle: 0.489957 (in radians)"
+      }
+    },
+    {
+      "id": "#/texts/237",
+      "page": 27,
+      "order": 1,
+      "role": "caption",
+      "text": "Rotation Angle: 0.3 (in radians)",
+      "bbox": {
+        "x0": 176.28,
+        "y0": 553.76,
+        "x1": 344.7,
+        "y1": 566.42,
+        "width": 168.42,
+        "height": 12.66
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Rotation Angle: 0.3 (in radians)"
+      }
+    },
+    {
+      "id": "#/texts/238",
+      "page": 28,
+      "order": 1,
+      "role": "caption",
+      "text": "Rotation Angle: 0.00001 (in radians)",
+      "bbox": {
+        "x0": 165.05,
+        "y0": 517.95,
+        "x1": 358.18,
+        "y1": 531.44,
+        "width": 193.13,
+        "height": 13.49
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Rotation Angle: 0.00001 (in radians)"
+      }
+    },
+    {
+      "id": "#/texts/239",
+      "page": 28,
+      "order": 2,
+      "role": "paragraph",
+      "text": "9",
+      "bbox": {
+        "x0": 349.9,
+        "y0": 762.84,
+        "x1": 352.24,
+        "y1": 766.4,
+        "width": 2.34,
+        "height": 3.56
+      },
+      "meta": {
+        "docling_label": "text",
+        "docling_orig": "9"
+      }
+    },
+    {
+      "id": "#/texts/240",
+      "page": 29,
+      "order": 1,
+      "role": "caption",
+      "text": "Translation: (80,0,0)",
+      "bbox": {
+        "x0": 213.4,
+        "y0": 577.97,
+        "x1": 317.8,
+        "y1": 586.4,
+        "width": 104.4,
+        "height": 8.43
+      },
+      "meta": {
+        "docling_label": "caption",
+        "docling_orig": "Translation: (80,0,0)"
+      }
+    }
+  ],
+  "page_sources": {
+    "1": "mathpix",
+    "2": "docling",
+    "3": "docling",
+    "4": "docling",
+    "5": "docling",
+    "6": "docling",
+    "7": "docling",
+    "8": "docling",
+    "9": "docling",
+    "10": "docling",
+    "11": "docling",
+    "12": "docling",
+    "13": "docling",
+    "14": "docling",
+    "15": "docling",
+    "16": "docling",
+    "17": "docling",
+    "18": "docling",
+    "19": "docling",
+    "20": "docling",
+    "21": "docling",
+    "22": "docling",
+    "23": "docling",
+    "24": "docling",
+    "25": "docling",
+    "26": "docling",
+    "27": "docling",
+    "28": "docling",
+    "29": "docling"
+  }
+}

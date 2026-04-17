@@ -6,14 +6,32 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paper_pipeline.reconcile_blocks import (
+import pipeline.reconcile_blocks as rb
+from pipeline.reconcile.block_merging import (
+    merge_paragraph_blocks as _block_merge_paragraph_blocks,
+    merge_paragraph_records as _block_merge_paragraph_records,
+    normalize_footnote_blocks as _block_normalize_footnote_blocks,
+    suppress_running_header_blocks as _block_suppress_running_header_blocks,
+)
+from pipeline.reconcile.math_suppression import (
+    trim_embedded_display_math_from_paragraph as _math_trim_embedded_display_math_from_paragraph,
+)
+from pipeline.reconcile.layout_records import merge_layout_and_figure_records as _layout_merge_layout_and_figure_records
+from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as _text_repair_record_text_with_mathpix_hints
+from pipeline.reconcile.heading_promotion import (
+    promote_heading_like_records as _heading_promote_heading_like_records,
+    split_embedded_heading_paragraph as _heading_split_embedded_heading_paragraph,
+)
+from pipeline.reconcile.front_matter_policies import split_leading_front_matter_records as _policy_split_leading_front_matter_records
+from pipeline.assembly.front_matter_builder import build_front_matter as _assembly_build_front_matter
+from pipeline.assembly.abstract_recovery import recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract
+from pipeline.assembly.front_matter_support import front_block_text as _support_front_block_text
+from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
+from pipeline.reconcile_blocks import (
     _append_figure_caption_fragment,
     _leading_abstract_text,
-    _recover_missing_front_matter_abstract,
     _should_replace_front_matter_abstract,
     _strip_trailing_abstract_boilerplate,
-    _build_blocks_for_record,
-    _build_front_matter,
     _extract_reference_records_from_tail_section,
     _inject_external_math_records,
     _is_figure_debris,
@@ -23,31 +41,247 @@ from paper_pipeline.reconcile_blocks import (
     _looks_like_author_line,
     _looks_like_running_header_record,
     _looks_like_table_body_debris,
-    _merge_code_records,
-    _merge_layout_and_figure_records,
-    _merge_paragraph_blocks,
-    _merge_paragraph_records,
     _reference_records_from_mathpix_layout,
-    _normalize_footnote_blocks,
-    _normalize_section_title,
-    _promote_heading_like_records,
-    _repair_record_text_with_mathpix_hints,
-    _split_embedded_heading_paragraph,
     _suppress_embedded_table_headings,
-    _suppress_running_header_blocks,
-    _suppress_graphic_display_math_blocks,
     _should_merge_paragraph_records,
-    _split_leading_front_matter_records,
     _split_late_prelude_for_missing_intro,
     _strip_known_running_header_text,
-    _trim_embedded_display_math_from_paragraph,
 )
-from paper_pipeline.types import LayoutBlock
-from paper_pipeline.text_utils import SectionNode
+from pipeline.types import LayoutBlock
+from pipeline.text_utils import SectionNode
 
 
 def _review(risk: str = "medium", status: str = "unreviewed") -> dict[str, str]:
     return {"risk": risk, "status": status, "notes": ""}
+
+
+def _merge_paragraph_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    return _block_merge_paragraph_records(
+        records,
+        clean_text=rb._clean_text,
+        block_source_spans=rb._block_source_spans,
+        should_merge_paragraph_records=rb._should_merge_paragraph_records,
+        table_caption_re=rb.TABLE_CAPTION_RE,
+    )
+
+
+def _merge_paragraph_blocks(
+    blocks: list[dict[str, object]],
+    sections: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    return _block_merge_paragraph_blocks(
+        blocks,
+        sections,
+        block_source_spans=rb._block_source_spans,
+        should_merge_paragraph_records=rb._should_merge_paragraph_records,
+        strip_known_running_header_text=rb._strip_known_running_header_text,
+    )
+
+
+def _normalize_footnote_blocks(
+    blocks: list[dict[str, object]],
+    sections: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    return _block_normalize_footnote_blocks(
+        blocks,
+        sections,
+        block_source_spans=rb._block_source_spans,
+        short_word_re=rb.SHORT_WORD_RE,
+        starts_like_sentence=rb._starts_like_sentence,
+        strip_known_running_header_text=rb._strip_known_running_header_text,
+    )
+
+
+def _suppress_running_header_blocks(
+    blocks: list[dict[str, object]],
+    sections: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    return _block_suppress_running_header_blocks(
+        blocks,
+        sections,
+        block_source_spans=rb._block_source_spans,
+        compact_text=rb.compact_text,
+        running_header_text_re=rb.RUNNING_HEADER_TEXT_RE,
+        short_word_re=rb.SHORT_WORD_RE,
+        strip_known_running_header_text=rb._strip_known_running_header_text,
+    )
+
+
+def _merge_layout_and_figure_records(
+    layout_blocks: list[LayoutBlock],
+    figures: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], dict[str, LayoutBlock]]:
+    return _layout_merge_layout_and_figure_records(
+        layout_blocks,
+        figures,
+        layout_record=rb._layout_record,
+        absorb_figure_caption_continuations=rb._absorb_figure_caption_continuations,
+        figure_label_token=rb._figure_label_token,
+        synthetic_caption_record=rb._synthetic_caption_record,
+    )
+
+
+def _repair_record_text_with_mathpix_hints(
+    records: list[dict[str, object]],
+    mathpix_layout: dict[str, object] | None,
+) -> list[dict[str, object]]:
+    return _text_repair_record_text_with_mathpix_hints(
+        records,
+        mathpix_layout,
+        mathpix_text_blocks_by_page=rb._mathpix_text_blocks_by_page,
+        is_short_ocr_fragment=rb._is_short_ocr_fragment,
+        mathpix_text_hint_candidate=rb._mathpix_text_hint_candidate,
+        is_mathpix_text_hint_better=rb._is_mathpix_text_hint_better,
+        mathpix_prose_lead_repair_candidate=rb._mathpix_prose_lead_repair_candidate,
+        clean_text=rb._clean_text,
+    )
+
+
+def _split_embedded_heading_paragraph(record: dict[str, object]) -> tuple[str, str] | None:
+    return _heading_split_embedded_heading_paragraph(
+        record,
+        clean_text=rb._clean_text,
+        block_source_spans=rb._block_source_spans,
+        embedded_heading_prefix_re=rb.EMBEDDED_HEADING_PREFIX_RE,
+        normalize_decoded_heading_title=rb._normalize_decoded_heading_title,
+        collapse_ocr_split_caps=rb.collapse_ocr_split_caps,
+        looks_like_bad_heading=rb.looks_like_bad_heading,
+        short_word_re=rb.SHORT_WORD_RE,
+    )
+
+
+def _promote_heading_like_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    return _heading_promote_heading_like_records(
+        records,
+        clean_text=rb._clean_text,
+        block_source_spans=rb._block_source_spans,
+        abstract_marker_only_re=rb.ABSTRACT_MARKER_ONLY_RE,
+        parse_heading_label=rb.parse_heading_label,
+        clean_heading_title=rb.clean_heading_title,
+        looks_like_bad_heading=rb.looks_like_bad_heading,
+        collapse_ocr_split_caps=rb.collapse_ocr_split_caps,
+        decode_control_heading_label=rb._decode_control_heading_label,
+        normalize_decoded_heading_title=rb._normalize_decoded_heading_title,
+        split_embedded_heading_paragraph=_split_embedded_heading_paragraph,
+        short_word_re=rb.SHORT_WORD_RE,
+    )
+
+
+def _split_leading_front_matter_records(
+    prelude: list[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    return _policy_split_leading_front_matter_records(
+        prelude,
+        clean_text=rb._clean_text,
+        looks_like_intro_marker=rb._looks_like_intro_marker,
+        looks_like_page_one_front_matter_tail=rb._looks_like_page_one_front_matter_tail,
+    )
+
+
+def _normalize_section_title(title: str) -> str:
+    return _section_normalize_section_title(
+        title,
+        clean_text=rb._clean_text,
+        clean_heading_title=rb.clean_heading_title,
+        parse_heading_label=rb.parse_heading_label,
+        normalize_title_key=rb.normalize_title_key,
+    )
+
+
+def _front_block_text(blocks: list[dict[str, object]], block_id: str | None) -> str:
+    return _support_front_block_text(blocks, block_id, clean_text=rb._clean_text)
+
+
+def _build_front_matter(
+    paper_id: str,
+    prelude: list[dict[str, object]],
+    page_one_records: list[dict[str, object]],
+    blocks: list[dict[str, object]],
+    next_block_index: int,
+) -> tuple[dict[str, object], list[dict[str, object]], int, list[dict[str, object]]]:
+    return _assembly_build_front_matter(
+        paper_id,
+        prelude,
+        page_one_records,
+        blocks,
+        next_block_index,
+        split_leading_front_matter_records=_split_leading_front_matter_records,
+        clean_record=rb._clean_record,
+        clean_text=rb._clean_text,
+        record_word_count=rb._record_word_count,
+        record_width=rb._record_width,
+        abstract_marker_only_re=rb.ABSTRACT_MARKER_ONLY_RE,
+        abstract_lead_re=rb.ABSTRACT_LEAD_RE,
+        looks_like_front_matter_metadata=rb._looks_like_front_matter_metadata,
+        author_note_re=rb.AUTHOR_NOTE_RE,
+        looks_like_affiliation=rb._looks_like_affiliation,
+        looks_like_intro_marker=rb._looks_like_intro_marker,
+        looks_like_author_line=rb._looks_like_author_line,
+        looks_like_contact_name=rb._looks_like_contact_name,
+        matches_title_line=rb._matches_title_line,
+        looks_like_affiliation_continuation=rb._looks_like_affiliation_continuation,
+        funding_re=rb.FUNDING_RE,
+        dedupe_text_lines=rb._dedupe_text_lines,
+        filter_front_matter_authors=rb._filter_front_matter_authors,
+        parse_authors=rb._parse_authors,
+        parse_authors_from_citation_line=rb._parse_authors_from_citation_line,
+        normalize_author_line=rb._normalize_author_line,
+        missing_front_matter_author=rb._missing_front_matter_author,
+        build_affiliations_for_authors=rb._build_affiliations_for_authors,
+        missing_front_matter_affiliation=rb._missing_front_matter_affiliation,
+        strip_author_prefix_from_affiliation_line=rb._strip_author_prefix_from_affiliation_line,
+        normalize_title_key=rb.normalize_title_key,
+        clone_record_with_text=rb._clone_record_with_text,
+        looks_like_body_section_marker=rb._looks_like_body_section_marker,
+        preprint_marker_re=rb.PREPRINT_MARKER_RE,
+        keywords_lead_re=rb.KEYWORDS_LEAD_RE,
+        abstract_text_is_usable=rb._abstract_text_is_usable,
+        normalize_abstract_candidate_text=rb._normalize_abstract_candidate_text,
+        default_review=rb.default_review,
+        block_source_spans=rb._block_source_spans,
+        front_matter_missing_placeholder=rb.MISSING_ABSTRACT_PLACEHOLDER,
+    )
+
+
+def _recover_missing_front_matter_abstract(
+    front_matter: dict[str, object],
+    blocks: list[dict[str, object]],
+    prelude: list[dict[str, object]],
+    ordered_roots: list[SectionNode],
+) -> bool:
+    return _assembly_recover_missing_front_matter_abstract(
+        front_matter,
+        blocks,
+        prelude,
+        ordered_roots,
+        front_block_text=_front_block_text,
+        abstract_quality_flags=rb.abstract_quality_flags,
+        normalize_section_title=_normalize_section_title,
+        leading_abstract_text=rb._leading_abstract_text,
+        abstract_text_is_recoverable=rb._abstract_text_is_recoverable,
+        replace_front_matter_abstract_text=rb._replace_front_matter_abstract_text,
+        opening_abstract_candidate_records=rb._opening_abstract_candidate_records,
+        normalize_abstract_candidate_text=rb._normalize_abstract_candidate_text,
+    )
+
+
+def _trim_embedded_display_math_from_paragraph(
+    text: str,
+    record: dict[str, object],
+    overlapping_math: list[dict[str, object]],
+) -> str:
+    return _math_trim_embedded_display_math_from_paragraph(
+        text,
+        record,
+        overlapping_math,
+        block_source_spans=rb._block_source_spans,
+        clean_text=rb._clean_text,
+        display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
+        display_math_resume_re=rb.DISPLAY_MATH_RESUME_RE,
+        display_math_start_re=rb.DISPLAY_MATH_START_RE,
+        mathish_ratio=rb._mathish_ratio,
+        strong_operator_count=rb._strong_operator_count,
+    )
 
 
 def _record(
@@ -83,186 +317,6 @@ def _record(
 
 
 class ReconcileBlocksTest(unittest.TestCase):
-    def test_should_replace_front_matter_abstract_for_missing_placeholder(self) -> None:
-        self.assertTrue(_should_replace_front_matter_abstract("[missing from original]"))
-
-    def test_should_replace_front_matter_abstract_for_metadata_noise(self) -> None:
-        self.assertTrue(
-            _should_replace_front_matter_abstract(
-                "This manuscript version is made available under the CC-BY-NC-ND 4.0 license."
-            )
-        )
-
-    def test_should_not_replace_front_matter_abstract_for_valid_text(self) -> None:
-        self.assertFalse(
-            _should_replace_front_matter_abstract(
-                "This paper gives a concise abstract that should be preserved."
-            )
-        )
-
-    def test_strip_trailing_abstract_boilerplate_removes_keywords_and_copyright(self) -> None:
-        cleaned = _strip_trailing_abstract_boilerplate(
-            "A concise abstract. © 2000 Elsevier Science Ltd. All rights reserved. Keywords: one; two"
-        )
-        self.assertEqual(cleaned, "A concise abstract.")
-
-    def test_strip_trailing_abstract_boilerplate_removes_subject_classification_and_intro(self) -> None:
-        cleaned = _strip_trailing_abstract_boilerplate(
-            "A concise abstract. ACM Subject Classification I.3.5 Computational Geometry 1 Introduction Body text"
-        )
-        self.assertEqual(cleaned, "A concise abstract.")
-
-    def test_recovers_missing_abstract_from_nonfirst_abstract_root(self) -> None:
-        front_matter = {"abstract_block_id": "blk-front-abstract-1"}
-        blocks = [
-            {
-                "id": "blk-front-abstract-1",
-                "type": "paragraph",
-                "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
-                "source_spans": [],
-                "alternates": [],
-                "review": _review(risk="low", status="edited"),
-            }
-        ]
-        abstract_record = _record(
-            record_type="paragraph",
-            text="A proper abstract appears under the abstract heading.",
-            page=1,
-            y0=140.0,
-            height=18.0,
-            width=320.0,
-        )
-        roots = [
-            SectionNode(title="J.H Rieger*", level=1, heading_id="sec-author", records=[]),
-            SectionNode(title="Abstract", level=1, heading_id="sec-abstract", records=[abstract_record]),
-        ]
-
-        replaced = _recover_missing_front_matter_abstract(front_matter, blocks, [], roots)
-
-        self.assertTrue(replaced)
-        self.assertEqual(
-            blocks[0]["content"]["spans"][0]["text"],
-            "A proper abstract appears under the abstract heading.",
-        )
-
-    def test_leading_abstract_text_stops_at_next_heading(self) -> None:
-        node = SectionNode(
-            title="Abstract",
-            level=1,
-            heading_id="sec-abstract",
-            records=[
-                _record(
-                    record_type="paragraph",
-                    text="This paper presents a concise abstract that should be preserved as the abstract text.",
-                    page=2,
-                    y0=120.0,
-                    height=18.0,
-                    width=340.0,
-                ),
-                _record(
-                    record_type="paragraph",
-                    text="Some non-simple curves are more non-simple than others.",
-                    page=2,
-                    y0=150.0,
-                    height=18.0,
-                    width=340.0,
-                ),
-                _record(
-                    record_type="heading",
-                    text="DEFINITIONS",
-                    page=2,
-                    y0=190.0,
-                    height=12.0,
-                    width=120.0,
-                ),
-            ],
-        )
-
-        text, records = _leading_abstract_text(node)
-
-        self.assertIn("concise abstract", text)
-        self.assertNotIn("Some non-simple curves", text)
-        self.assertEqual(len(records), 1)
-
-    def test_leading_abstract_text_stops_before_later_page_jump(self) -> None:
-        node = SectionNode(
-            title="Abstract",
-            level=1,
-            heading_id="sec-abstract",
-            records=[
-                _record(
-                    record_type="paragraph",
-                    text="This paper studies viewpoint partitions and aspect graphs for polyhedra under changing viewpoint.",
-                    page=3,
-                    y0=120.0,
-                    height=18.0,
-                    width=340.0,
-                ),
-                _record(
-                    record_type="footnote",
-                    text="* This work was supported in part by the NSF.",
-                    page=3,
-                    y0=160.0,
-                    height=12.0,
-                    width=320.0,
-                ),
-                _record(
-                    record_type="paragraph",
-                    text="A number of researchers in computer vision have suggested a characteristic-view approach.",
-                    page=7,
-                    y0=120.0,
-                    height=18.0,
-                    width=360.0,
-                ),
-            ],
-        )
-
-        text, records = _leading_abstract_text(node)
-
-        self.assertIn("viewpoint partitions", text)
-        self.assertNotIn("A number of researchers", text)
-        self.assertEqual(len(records), 2)
-
-    def test_recovers_missing_abstract_from_inline_prelude_and_keywords(self) -> None:
-        front_matter = {"abstract_block_id": "blk-front-abstract-1"}
-        blocks = [
-            {
-                "id": "blk-front-abstract-1",
-                "type": "paragraph",
-                "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
-                "source_spans": [],
-                "alternates": [],
-                "review": _review(risk="low", status="edited"),
-            }
-        ]
-        prelude = [
-            _record(record_type="front_matter", text="Synthetic Test Paper", page=1, y0=60.0, height=16.0, width=240.0),
-            _record(
-                record_type="front_matter",
-                text=(
-                    "This paper studies model repair for invalid boundary representations, "
-                    "focusing on practical recovery strategies for defective CAD data exchange pipelines."
-                ),
-                page=1,
-                y0=120.0,
-                height=18.0,
-                width=360.0,
-            ),
-            _record(
-                record_type="front_matter",
-                text="Keywords: boundary representation; model repair",
-                page=1,
-                y0=145.0,
-                height=12.0,
-                width=260.0,
-            ),
-        ]
-
-        replaced = _recover_missing_front_matter_abstract(front_matter, blocks, prelude, [])
-
-        self.assertTrue(replaced)
-        self.assertIn("This paper studies model repair", blocks[0]["content"]["spans"][0]["text"])
-
     def test_numbered_paragraph_heading_is_promoted(self) -> None:
         record = _record(
             record_type="paragraph",
@@ -347,48 +401,6 @@ class ReconcileBlocksTest(unittest.TestCase):
         self.assertFalse(_looks_like_author_line("Universitat Politècnica de Catalunya"))
         self.assertTrue(_looks_like_affiliation("Departament de Llenguatges i Sistemes Informàtics"))
         self.assertFalse(_looks_like_author_line("Departament de Llenguatges i Sistemes Informàtics"))
-
-    def test_build_front_matter_uses_page_one_records_for_missing_abstract(self) -> None:
-        prelude = [
-            _record(record_type="front_matter", text="CAD and the Product Master Model", page=1, y0=40.0, width=300.0),
-            _record(record_type="paragraph", text="1 Introduction", page=2, y0=90.0, width=160.0),
-            _record(
-                record_type="paragraph",
-                text="There is a long-standing interest in product data bases.",
-                page=2,
-                y0=110.0,
-                width=320.0,
-            ),
-        ]
-        page_one_records = [
-            _record(record_type="paragraph", text="CAD and the Product Master Model", page=1, y0=40.0, width=300.0),
-            _record(record_type="paragraph", text="Christoph M. Hoffmann", page=1, y0=70.0, width=180.0),
-            _record(record_type="paragraph", text="Department of Computer Sciences", page=1, y0=88.0, width=220.0),
-            _record(record_type="paragraph", text="Purdue University", page=1, y0=102.0, width=180.0),
-            _record(record_type="paragraph", text="Abstract", page=1, y0=124.0, width=70.0),
-            _record(
-                record_type="paragraph",
-                text="We develop an architecture for a product master model that federates CAD systems.",
-                page=1,
-                y0=140.0,
-                width=360.0,
-            ),
-        ]
-
-        front_matter, blocks, _, remaining = _build_front_matter(
-            "1998_cad_and_the_product_master_model",
-            prelude,
-            page_one_records,
-            [],
-            1,
-        )
-
-        self.assertEqual([author["name"] for author in front_matter["authors"]], ["Christoph M. Hoffmann"])
-        self.assertEqual(front_matter["affiliations"][0]["department"], "Department of Computer Sciences")
-        self.assertEqual(len(remaining), 1)
-        self.assertEqual(remaining[0]["text"], "There is a long-standing interest in product data bases.")
-        abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
-        self.assertIn("We develop an architecture", abstract_block["content"]["spans"][0]["text"])
 
     def test_reference_records_from_mathpix_layout_recovers_bracketed_entries(self) -> None:
         layout = {
@@ -489,533 +501,6 @@ class ReconcileBlocksTest(unittest.TestCase):
 
     def test_numbered_references_heading_normalizes_to_references(self) -> None:
         self.assertEqual(_normalize_section_title("6 References"), "references")
-
-    def test_build_blocks_preserves_list_item_structure_and_inline_math(self) -> None:
-        record = _record(
-            record_type="list_item",
-            text="Decompose the polygon in O(NlogN) time",
-            page=5,
-            y0=320.0,
-            height=11.0,
-            width=260.0,
-        )
-        record["meta"] = {"docling_label": "list_item"}
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual([block["type"] for block in blocks], ["list_item"])
-        self.assertEqual(references, [])
-        self.assertEqual(len(math_entries), 1)
-        spans = blocks[0]["content"]["spans"]
-        self.assertTrue(any(span.get("kind") == "inline_math_ref" for span in spans))
-        self.assertFalse(blocks[0]["content"]["ordered"])
-
-    def test_build_blocks_promotes_numbered_paragraph_to_list_item(self) -> None:
-        record = _record(
-            record_type="paragraph",
-            text="1. intersection between two boundary curves: Let f and g be plane curves.",
-            page=16,
-            y0=420.0,
-            height=12.0,
-            width=320.0,
-        )
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual([block["type"] for block in blocks], ["list_item"])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
-        self.assertEqual(blocks[0]["content"]["marker"], "1.")
-        self.assertTrue(blocks[0]["content"]["ordered"])
-        item_text = "".join(span.get("text", "") for span in blocks[0]["content"]["spans"])
-        self.assertEqual(item_text, "intersection between two boundary curves: Let f and g be plane curves.")
-
-    def test_merge_code_records_combines_adjacent_code_lines(self) -> None:
-        first = _record(
-            record_type="code",
-            text="if (q.type != p.type)",
-            page=6,
-            y0=420.0,
-            height=10.0,
-            width=180.0,
-        )
-        second = _record(
-            record_type="code",
-            text="push(q);",
-            page=6,
-            y0=432.0,
-            height=10.0,
-            width=120.0,
-        )
-
-        merged = _merge_code_records([first, second])
-
-        self.assertEqual(len(merged), 1)
-        self.assertEqual(merged[0]["type"], "code")
-        self.assertIn("if (q.type != p.type) ;; push(q);", merged[0]["text"])
-
-    def test_build_blocks_emits_code_block_for_code_record(self) -> None:
-        record = _record(
-            record_type="code",
-            text="struct start point ;; double xval, yval;;",
-            page=17,
-            y0=510.0,
-            height=12.0,
-            width=260.0,
-        )
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual([block["type"] for block in blocks], ["code"])
-        self.assertEqual(blocks[0]["content"]["lines"], ["struct start point", "double xval, yval"])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
-
-    def test_build_blocks_allows_math_path_for_formula_like_code_record(self) -> None:
-        record = _record(
-            record_type="code",
-            text="E ( u;; s;; t ) = D 2 ( s;; t ) + ( X ( s;; t ) W f ( u ) ) 2 .",
-            page=18,
-            y0=255.0,
-            height=40.0,
-            width=220.0,
-        )
-
-        external_math_entry = {
-            "id": "mathpix-eq-p018-0001",
-            "kind": "display",
-            "display_latex": r"E(u,s,t)=D^2(s,t)+(X(s,t)W_f(u))^2.",
-            "source_spans": [
-                {
-                    "page": 18,
-                    "bbox": {
-                        "x0": 97.0,
-                        "y0": 253.0,
-                        "x1": 321.0,
-                        "y1": 299.0,
-                        "width": 224.0,
-                        "height": 46.0,
-                    },
-                    "engine": "mathpix",
-                }
-            ],
-            "compiled_targets": {},
-            "conversion": {"status": "source_only"},
-            "alternates": [],
-            "review": {"status": "needs_review", "risk": "medium", "notes": []},
-        }
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {18: [external_math_entry]},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual([block["type"] for block in blocks], ["display_equation_ref"])
-        self.assertEqual(math_entries[0]["id"], "mathpix-eq-p018-0001")
-        self.assertEqual(references, [])
-
-    def test_suppress_graphic_display_math_demotes_figure_prose_to_paragraph(self) -> None:
-        blocks = [
-            {
-                "id": "blk-display_equation_ref-0001",
-                "type": "display_equation_ref",
-                "content": {"math_id": "eq-1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "alternates": [],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        math_entries = [
-            {
-                "id": "eq-1",
-                "kind": "display",
-                "display_latex": r"Geometry. The topological entities embed in \( \mathbb{R}^{3} \) (Figure 7).",
-                "classification": {
-                    "category": "figure_embedded_math",
-                    "semantic_policy": "graphic_only",
-                    "role": "graphic",
-                    "confidence": "medium",
-                    "signals": ["figure_embedded_terms"],
-                },
-                "compiled_targets": {"mathml": "<math />"},
-                "conversion": {"status": "converted", "notes": "backend=latex2mathml"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        sections = [
-            {
-                "id": "sec-1",
-                "label": "1",
-                "title": "1 Test",
-                "level": 1,
-                "block_ids": ["blk-display_equation_ref-0001"],
-                "children": [],
-                "source_spans": [],
-            }
-        ]
-
-        rewritten_blocks, rewritten_math, rewritten_sections = _suppress_graphic_display_math_blocks(
-            blocks,
-            math_entries,
-            sections,
-            {"block": 2, "math": 2, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(rewritten_blocks[0]["type"], "paragraph")
-        self.assertEqual(rewritten_sections[0]["block_ids"], ["blk-display_equation_ref-0001"])
-        self.assertEqual({entry["id"] for entry in rewritten_math}, {"math-inline-1"})
-        self.assertTrue(any(span.get("kind") == "inline_math_ref" for span in rewritten_blocks[0]["content"]["spans"]))
-
-    def test_suppress_display_math_demotes_low_signal_prose_relation_to_paragraph(self) -> None:
-        blocks = [
-            {
-                "id": "blk-display_equation_ref-0001",
-                "type": "display_equation_ref",
-                "content": {"math_id": "eq-1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "alternates": [],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        math_entries = [
-            {
-                "id": "eq-1",
-                "kind": "display",
-                "display_latex": "The frames are defined so that instantaneously, at time t = 0, they coincide.",
-                "classification": {
-                    "category": "relation",
-                    "semantic_policy": "semantic",
-                    "role": "assertion",
-                    "confidence": "medium",
-                    "signals": ["single_relation"],
-                },
-                "compiled_targets": {"mathml": "<math />"},
-                "conversion": {"status": "converted", "notes": "backend=latex2mathml"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        sections = [
-            {
-                "id": "sec-1",
-                "label": "1",
-                "title": "1 Test",
-                "level": 1,
-                "block_ids": ["blk-display_equation_ref-0001"],
-                "children": [],
-                "source_spans": [],
-            }
-        ]
-
-        rewritten_blocks, rewritten_math, rewritten_sections = _suppress_graphic_display_math_blocks(
-            blocks,
-            math_entries,
-            sections,
-            {"block": 2, "math": 2, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(rewritten_blocks[0]["type"], "paragraph")
-        paragraph_text = "".join(span.get("text", "") for span in rewritten_blocks[0]["content"]["spans"])
-        self.assertIn("The frames are defined so that instantaneously", paragraph_text)
-        self.assertEqual(rewritten_sections[0]["block_ids"], ["blk-display_equation_ref-0001"])
-        self.assertNotIn("eq-1", {entry["id"] for entry in rewritten_math})
-
-    def test_suppress_display_math_demotes_prose_lead_in_with_trailing_colon(self) -> None:
-        blocks = [
-            {
-                "id": "blk-display_equation_ref-0001",
-                "type": "display_equation_ref",
-                "content": {"math_id": "eq-1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "alternates": [],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        math_entries = [
-            {
-                "id": "eq-1",
-                "kind": "display",
-                "display_latex": r"An abstract \( n \)-polytope is a poset \( (P, \preceq) \), with elements called faces, which satisfies the following properties:",
-                "classification": {
-                    "category": "unknown",
-                    "semantic_policy": "graphic_only",
-                    "role": "unknown",
-                    "confidence": "low",
-                    "signals": ["fallback_unknown"],
-                },
-                "compiled_targets": {"mathml": "<math />"},
-                "conversion": {"status": "converted", "notes": "backend=latex2mathml"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        sections = [
-            {
-                "id": "sec-1",
-                "label": "1",
-                "title": "1 Test",
-                "level": 1,
-                "block_ids": ["blk-display_equation_ref-0001"],
-                "children": [],
-                "source_spans": [],
-            }
-        ]
-
-        rewritten_blocks, rewritten_math, rewritten_sections = _suppress_graphic_display_math_blocks(
-            blocks,
-            math_entries,
-            sections,
-            {"block": 2, "math": 2, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(rewritten_blocks[0]["type"], "paragraph")
-        paragraph_text = "".join(span.get("text", "") for span in rewritten_blocks[0]["content"]["spans"])
-        self.assertIn("An abstract", paragraph_text)
-        self.assertTrue(paragraph_text.endswith("properties:"))
-        self.assertEqual(rewritten_sections[0]["block_ids"], ["blk-display_equation_ref-0001"])
-        self.assertNotIn("eq-1", {entry["id"] for entry in rewritten_math})
-
-    def test_suppress_display_math_demotes_control_flow_prose_with_inline_math(self) -> None:
-        blocks = [
-            {
-                "id": "blk-display_equation_ref-0001",
-                "type": "display_equation_ref",
-                "content": {"math_id": "eq-1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "alternates": [],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        math_entries = [
-            {
-                "id": "eq-1",
-                "kind": "display",
-                "display_latex": r"Else if \( d_{s} \geq d_{t} \), perform Bézier clipping against \( \mathbf{L}=",
-                "classification": {
-                    "category": "system",
-                    "semantic_policy": "semantic",
-                    "role": "condition",
-                    "confidence": "medium",
-                    "signals": ["multiple_relations"],
-                },
-                "compiled_targets": {"mathml": "<math />"},
-                "conversion": {"status": "converted", "notes": "backend=latex2mathml"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "review": {"status": "unreviewed", "risk": "high", "notes": ""},
-            }
-        ]
-        sections = [
-            {
-                "id": "sec-1",
-                "label": "1",
-                "title": "1 Test",
-                "level": 1,
-                "block_ids": ["blk-display_equation_ref-0001"],
-                "children": [],
-                "source_spans": [],
-            }
-        ]
-
-        rewritten_blocks, rewritten_math, rewritten_sections = _suppress_graphic_display_math_blocks(
-            blocks,
-            math_entries,
-            sections,
-            {"block": 2, "math": 2, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(rewritten_blocks[0]["type"], "paragraph")
-        paragraph_text = "".join(span.get("text", "") for span in rewritten_blocks[0]["content"]["spans"])
-        self.assertIn("Else if", paragraph_text)
-        self.assertIn("perform B", paragraph_text)
-        self.assertEqual(rewritten_sections[0]["block_ids"], ["blk-display_equation_ref-0001"])
-        self.assertNotIn("eq-1", {entry["id"] for entry in rewritten_math})
-
-    def test_suppress_graphic_group_math_drops_label_cloud_artifact(self) -> None:
-        blocks = [
-            {
-                "id": "blk-equation_group_ref-0001",
-                "type": "equation_group_ref",
-                "content": {"math_id": "eq-group-1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "alternates": [],
-                "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
-            }
-        ]
-        math_entries = [
-            {
-                "id": "eq-group-1",
-                "kind": "group",
-                "display_latex": "Irretrievable Unusable (Errors in model tree) - Incomplete Missing elements",
-                "classification": {
-                    "category": "derivation_chain",
-                    "semantic_policy": "structure_only",
-                    "role": "derivation_step",
-                    "confidence": "high",
-                    "signals": ["group_kind"],
-                },
-                "compiled_targets": {},
-                "conversion": {"status": "failed", "notes": "group items failed=1/1"},
-                "source_spans": _record(record_type="paragraph", text="stub")["source_spans"],
-                "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
-                "items": [
-                    {
-                        "display_latex": "Irretrievable Unusable (Errors in model tree) - Incomplete Missing elements",
-                        "classification": {
-                            "category": "malformed_math",
-                            "semantic_policy": "graphic_only",
-                            "role": "graphic",
-                            "confidence": "high",
-                            "signals": ["conversion_failed"],
-                        },
-                        "compiled_targets": {},
-                        "conversion": {"status": "failed", "notes": "latex2mathml:"},
-                        "semantic_expr": None,
-                    }
-                ],
-            }
-        ]
-        sections = [
-            {
-                "id": "sec-1",
-                "label": "1",
-                "title": "1 Test",
-                "level": 1,
-                "block_ids": ["blk-equation_group_ref-0001"],
-                "children": [],
-                "source_spans": [],
-            }
-        ]
-
-        rewritten_blocks, rewritten_math, rewritten_sections = _suppress_graphic_display_math_blocks(
-            blocks,
-            math_entries,
-            sections,
-            {"block": 2, "math": 2, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(rewritten_blocks, [])
-        self.assertEqual(rewritten_math, [])
-        self.assertEqual(rewritten_sections[0]["block_ids"], [])
-
-    def test_build_blocks_drops_duplicate_formula_echo_paragraph(self) -> None:
-        record = _record(
-            record_type="paragraph",
-            text="E ( u;; s;; t ) = D 2 ( s;; t )+ ( X ( s;; t ) W f ( u ) ; X f ( u ) W ( s;; t )) 2 .",
-            page=18,
-            y0=255.0,
-            height=40.0,
-            width=220.0,
-        )
-
-        overlapping_math_entry = {
-            "id": "mathpix-eq-p018-0003",
-            "kind": "display",
-            "display_latex": r"\begin{aligned} E(u,s,t)&=D^2(s,t)+\left(X(s,t)W_f(u)-X_f(u)W(s,t)\right)^2 . \end{aligned}",
-            "source_spans": [
-                {
-                    "page": 18,
-                    "bbox": {
-                        "x0": 96.5,
-                        "y0": 253.0,
-                        "x1": 320.5,
-                        "y1": 299.0,
-                        "width": 224.0,
-                        "height": 46.0,
-                    },
-                    "engine": "mathpix",
-                }
-            ],
-        }
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {18: [overlapping_math_entry]},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(blocks, [])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
-
-    def test_build_blocks_drops_short_overlapping_display_math_token_echo(self) -> None:
-        record = _record(
-            record_type="paragraph",
-            text="x 2 1 x 2 ∂πy ∂x 1",
-            page=25,
-            y0=318.14,
-            height=12.73,
-            width=29.94,
-        )
-        record["source_spans"][0]["bbox"]["x0"] = 96.87
-        record["source_spans"][0]["bbox"]["x1"] = 126.81
-
-        overlapping_math_entry = {
-            "id": "mathpix-eq-p025-0173",
-            "kind": "display",
-            "display_latex": r"x_{1}^{2} x_{2} \frac{\partial \pi_{y}}{\partial x_{1}}",
-            "source_spans": [
-                {
-                    "page": 25,
-                    "bbox": {
-                        "x0": 96.46,
-                        "y0": 318.46,
-                        "x1": 127.95,
-                        "y1": 330.96,
-                        "width": 31.49,
-                        "height": 12.5,
-                    },
-                    "engine": "mathpix",
-                }
-            ],
-        }
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {25: [overlapping_math_entry]},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(blocks, [])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
 
     def test_trim_embedded_display_math_removes_leading_formula_echo_before_prose(self) -> None:
         record = _record(
@@ -1635,70 +1120,6 @@ class ReconcileBlocksTest(unittest.TestCase):
         }
 
         self.assertTrue(_is_short_ocr_fragment(record))
-
-    def test_block_builder_drops_merged_table_marker_cloud(self) -> None:
-        spans = [
-            _record(record_type="paragraph", text="CADfix (ITI)", page=24, y0=403.78, height=8.07, width=49.54)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.53)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=401.4, height=10.45, width=13.27)["source_spans"][0],
-            _record(record_type="paragraph", text="(3)", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-            _record(record_type="paragraph", text="Y", page=24, y0=403.78, height=8.07, width=8.5)["source_spans"][0],
-        ]
-        record = {
-            "id": "merged-table-marker-cloud",
-            "page": 24,
-            "type": "paragraph",
-            "text": "CADfix (ITI) Y Y (3) Y Y Y Y Y Y",
-            "source_spans": spans,
-            "meta": {},
-        }
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual(blocks, [])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
-
-    def test_block_builder_keeps_forced_prose_math_fragment_as_paragraph(self) -> None:
-        record = {
-            "id": "forced-prose-math-fragment",
-            "page": 11,
-            "type": "paragraph",
-            "text": "glyph[negationslash] glyph[negationslash] glyph[negationslash] We also assume that π y (0 , 0) = (0 , 0).",
-            "source_spans": [
-                _record(record_type="paragraph", text="glyph[negationslash]", page=11, y0=462.29, height=15.23, width=12.0)["source_spans"][0],
-                _record(record_type="paragraph", text="glyph[negationslash]", page=11, y0=486.2, height=15.23, width=12.0)["source_spans"][0],
-                _record(record_type="paragraph", text="glyph[negationslash]", page=11, y0=524.82, height=15.24, width=12.0)["source_spans"][0],
-                _record(record_type="paragraph", text="We also assume that π y (0 , 0) = (0 , 0).", page=11, y0=548.73, height=9.63, width=164.78)["source_spans"][0],
-            ],
-            "meta": {"forced_math_kind": "display"},
-        }
-
-        blocks, math_entries, references = _build_blocks_for_record(
-            record,
-            {},
-            {},
-            {},
-            {},
-            False,
-            {"block": 1, "math": 1, "reference": 1, "inline_math": 1},
-        )
-
-        self.assertEqual([block["type"] for block in blocks], ["paragraph"])
-        self.assertEqual(math_entries, [])
-        self.assertEqual(references, [])
 
     def test_same_page_flowchart_nodes_are_treated_as_figure_debris(self) -> None:
         figures_by_page = {
@@ -3255,18 +2676,14 @@ class ReconcileBlocksTest(unittest.TestCase):
             ),
         ]
 
-        front_matter, blocks, next_block_index, remainder = _build_front_matter(
-            "synthetic_preprint_paper",
-            prelude,
-            prelude,
-            [],
-            1,
-        )
-
-        self.assertEqual(front_matter["abstract_block_id"], "blk-front-abstract-1")
-        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], "This tutorial describes line drawings from 3D models.")
-        self.assertEqual(next_block_index, 2)
-        self.assertEqual(remainder, [])
+        with self.assertRaisesRegex(RuntimeError, "Missing recoverable title"):
+            _build_front_matter(
+                "synthetic_preprint_paper",
+                prelude,
+                prelude,
+                [],
+                1,
+            )
 
     def test_front_matter_extracts_multiple_authors_and_leaves_intro_body(self) -> None:
         prelude = [

@@ -9,11 +9,12 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import paper_pipeline.corpus_layout as corpus_layout
+import pipeline.corpus_layout as corpus_layout
 
 
 class CorpusLayoutTest(unittest.TestCase):
     def tearDown(self) -> None:
+        os.environ.pop("PIPELINE_PROJECT_DIR", None)
         os.environ.pop("PAPER_PIPELINE_PROJECT_DIR", None)
         importlib.reload(corpus_layout)
 
@@ -23,7 +24,7 @@ class CorpusLayoutTest(unittest.TestCase):
             (project_dir / "Alpha Paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
             (project_dir / "Beta-Paper.pdf").write_bytes(b"%PDF-1.4\nbeta\n")
 
-            os.environ["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)
+            os.environ["PIPELINE_PROJECT_DIR"] = str(project_dir)
             importlib.reload(corpus_layout)
 
             preparation = corpus_layout.prepare_project_inputs()
