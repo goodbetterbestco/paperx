@@ -2,7 +2,7 @@
 
 Date: 2026-04-18
 
-Status: active, mid-refactor
+Status: late-stage boundary finalization
 
 Current naming note:
 
@@ -22,6 +22,46 @@ The practical target is not novelty in architecture. It is a standard, boring sh
 - document-quality heuristics are pure and testable
 - assembly is separate from selection and cleanup
 - root-level files become wrappers or small coordinators instead of implementation homes
+
+## Current Architecture
+
+The engine has now converged on a stable package-first shape.
+
+The intended `pipeline/` root boundary is:
+
+- `pipeline/config.py`
+- `pipeline/corpus_layout.py`
+- `pipeline/run_corpus_rounds.py`
+- `pipeline/runtime_paths.py`
+- `pipeline/state.py`
+- `pipeline/types.py`
+
+Those files are now the intentionally stable root surface for:
+
+- runtime config and state objects
+- corpus/project path resolution
+- the top-level corpus round runner
+- engine/runtime path discovery
+- shared type/default objects
+
+Implementation ownership lives below that boundary in package families:
+
+- `pipeline/assembly/`
+- `pipeline/cli/`
+- `pipeline/corpus/`
+- `pipeline/figures/`
+- `pipeline/math/`
+- `pipeline/orchestrator/`
+- `pipeline/output/`
+- `pipeline/policies/`
+- `pipeline/reconcile/`
+- `pipeline/selectors/`
+- `pipeline/sources/`
+- `pipeline/text/`
+
+One compatibility rule still matters even though many root facades are gone:
+
+- historical logical component ids are preserved in `pipeline.output.identity` so canonical fingerprint compatibility survives file moves and deleted root wrappers
 
 ## Verified Current Status
 
@@ -53,9 +93,9 @@ Current implementation package families:
 
 Current compatibility pattern:
 
-- keep public root import paths stable when tests or scripts patch them
-- move real implementation into a package family
-- leave a root wrapper or facade in place until downstream usage no longer depends on it
+- keep only the intentional root boundary files at `pipeline/*.py`
+- move real implementation into a package family as soon as patch/import pressure is gone
+- preserve historical logical component ids in fingerprint metadata even after deleting root wrappers
 
 Phase 1 root deprecation status:
 
@@ -323,20 +363,13 @@ Interpretation:
 - the remaining `run_corpus_rounds.py` helper names are increasingly true orchestration seams rather than test-only helper homes; the run-round integration coverage now exercises several owner modules directly instead of reaching through the root coordinator
 - the round-execution queue tests now bind to `pipeline.orchestrator.round_execution` directly, which removed the last root-only coverage pressure around `_process_round(...)`
 - the root `run_corpus_rounds.py` file is now mostly startup, round-loop orchestration, and CLI argument handling; the former source-builder and paper-job wrapper layers are gone
+- the old `pipeline/reconcile_blocks.py` facade is now gone too; `pipeline.reconcile.entrypoint` owns the default `run_paper_pipeline` seam directly, while `pipeline.output.identity` preserves the historical logical component id for canonical fingerprint compatibility
 - the first coordinator-stage split is now in place: front-matter build, abstract recovery, and block-assembly binding moved behind `pipeline/reconcile/stage_runtime.py`
 - that coordinator-stage extraction has now expanded to absorb normalization/postprocess binding closures as well, further reducing the inline orchestration burden inside `reconcile_paper_state`
 - `reconcile_paper_state` no longer carries nested helper `def`s; it is now primarily factory composition plus the final `run_paper_pipeline(...)` orchestration call
 - `reconcile_paper_state` now also carries zero inline lambdas; the root entrypoint is effectively a declarative coordinator over stage-runtime factories and `run_paper_pipeline(...)`
-- `reconcile_paper_state` is now a minimal facade over `pipeline/reconcile/stage_runtime.py`, and `pipeline/reconcile/entrypoint.py` now owns the default `run_paper_pipeline` seam directly
-- the old `pipeline/reconcile_blocks.py` wrapper is now gone; CLI/runtime callers and the remaining layout-binding integration coverage import `pipeline.reconcile.entrypoint` directly
-- `pipeline/reconcile_blocks.py` now imports the stage-runtime executor directly rather than the full factory toolbox, which is a better match for its compatibility-facade role
-- stale root-only imports from earlier extraction phases have been trimmed from `pipeline/reconcile_blocks.py`, reducing facade noise without changing the test-facing helper surface
-- the patch-sensitive dependency bundle construction in `reconcile_blocks.py` now lives behind dedicated root-local helper builders instead of one giant inline call site
-- the root binding dependency seam is now decomposed into smaller concern-grouped helper builders, which keeps the patch surface local while making the remaining debt easier to target
-- the stage-runtime kwargs seam is now decomposed into grouped helper builders for text, math, front-matter, record/postprocess, and loader runtime wiring
-- the runtime dependency bundle assembly has now also moved into `pipeline/reconcile/runtime_deps.py`, leaving the root file with a single compact runtime-deps handoff instead of multiple local packaging helpers
-- the remaining front-matter/reference root helper names are now mostly direct bound facades over extracted runtime helpers rather than hand-written pass-through wrapper defs, which trims facade debt without changing the test-facing symbol surface
-- the screening and paragraph/postprocess helper names at the root are now also mostly direct bound facades over extracted helpers, further shrinking facade-only code while keeping the stable test-facing symbol surface intact
+- `reconcile_paper_state` is now a minimal facade over `pipeline/reconcile/stage_runtime.py`, and `pipeline/reconcile/entrypoint.py` owns the default `run_paper_pipeline` seam directly
+- the root `pipeline/reconcile_blocks.py` wrapper has been fully retired after the remaining CLI/runtime callers and the layout-binding integration coverage moved onto `pipeline.reconcile.entrypoint`
 - the screening runtime binding layer for OCR/noise and figure-debris heuristics now lives in `pipeline/reconcile/screening_runtime.py`, so those root helper names are no longer responsible for binding that domain-specific dependency set inline
 - the text-repair runtime binding layer for pdftotext and Mathpix hint helpers now lives in `pipeline/reconcile/text_repairs_runtime.py`, so the root file no longer owns that dependency wiring inline either
 - the front-matter parsing/policy runtime binding layer now lives in `pipeline/reconcile/front_matter_parsing_runtime.py`, leaving the root file with the same test-facing helper names but far less inline front-matter dependency wiring
