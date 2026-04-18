@@ -1,45 +1,59 @@
 # Pipeline
 
-This directory is the new top-level architectural boundary for the academic
-paper ingestion system. In the extracted shape, `paperx/` will be the engine
-repo root, and each project corpus will live under `corpus/` as data only.
+This directory is the top-level engine boundary for the academic paper
+ingestion system.
 
-Planned extraction target:
-
-- local repo: `/Users/evanthayer/Projects/paperx`
-- remote repo: `https://github.com/goodbetterbestco/paperx`
-
-Planned project layout inside that repo:
-
-- `/Users/evanthayer/Projects/paperx/pipeline/...`
-- `/Users/evanthayer/Projects/paperx/corpus/<project>/source/*.pdf`
-- `/Users/evanthayer/Projects/paperx/corpus/<project>/corpus/<paper-id>/...`
-- `/Users/evanthayer/Projects/paperx/corpus/<project>/*.canonical.review.md`
-
-`corpus/stepview/` is just the first migrated corpus inside `paperx/`, not an
-operational dependency of the StepView app.
-
-Today, the primary checked-in engine/data split is:
+Today, the checked-in engine/data split is:
 
 - engine implementation under `pipeline/`
 - checked-in corpora under `corpus/`
 - local generated run state under `tmp/`
 
-The build and orchestration entrypoints now live under this package boundary,
-with user-facing commands preferring `pipeline.cli.*` shims and implementation
-living in the family packages:
+`corpus/stepview/` is just the first migrated corpus inside `paperx/`, not an
+runtime dependency of another application.
+
+The current architecture is package-first:
+
+- stable root boundary files live directly under `pipeline/`
+- implementation lives in package families under `pipeline/*/`
+- user-facing commands prefer `pipeline.cli.*`
+
+The intended stable root boundary is:
 
 - `pipeline.run_corpus_rounds`
+- `pipeline.config`
+- `pipeline.corpus_layout`
 - `pipeline.runtime_paths`
-- `pipeline.output.*`
-- `pipeline.policies.*`
+- `pipeline.state`
+- `pipeline.types`
 
-That is intentional for now. The goal of this boundary is to make a later repo
-extraction low-risk by stabilizing:
+The main implementation families are:
+
+- `pipeline.assembly`
+- `pipeline.cli`
+- `pipeline.corpus`
+- `pipeline.figures`
+- `pipeline.math`
+- `pipeline.orchestrator`
+- `pipeline.output`
+- `pipeline.policies`
+- `pipeline.reconcile`
+- `pipeline.selectors`
+- `pipeline.sources`
+- `pipeline.text`
+
+This boundary is intentionally stable so that the engine can evolve without
+reintroducing large root-level facade modules. Historical logical component ids
+for canonical fingerprint compatibility are preserved in
+`pipeline.output.identity` even when old root wrappers have been deleted.
+
+The architecture goals are:
 
 - the user-facing CLI entrypoints
-- the logical identity of the pipeline components
-- the documentation center of gravity
+- explicit config, state, and path resolution
+- thin orchestration
+- package-owned implementation by domain
+- stable canonical fingerprint identity across file moves
 
 Current preferred commands:
 
@@ -55,6 +69,10 @@ Current preferred commands:
 - `python3 -m pipeline.cli.export_titles_and_abstracts`
 - `python3 -m pipeline.cli.audit_corpus --top 12`
 - `python3 -m pipeline.cli.run_corpus_rounds`
+
+## Source Of Truth
+
+This README is the current architecture reference for the pipeline package.
 
 ## Bootstrap
 
@@ -82,27 +100,6 @@ Figure regeneration now also lives under this package:
 
 Corpus-specific figure expectations now live with the corpus itself at
 `<corpus-root>/figure_expectations.json`.
-
-The local extraction target at `/Users/evanthayer/Projects/paperx` now routes
-the default checked-in corpus through `/Users/evanthayer/Projects/paperx/corpus/stepview`.
-The remaining plain-`python3` gap is dependency bootstrap, not path coupling.
-
-The extraction plan is:
-
-1. keep this package as the stable boundary
-2. move the remaining parser/extractor implementation under this boundary in
-   smaller slices
-3. move the corpus out of the StepView repo only after the contracts are clean
-
-When the extracted repo exists, the preferred user flow is:
-
-1. create `paperx/corpus/<project>/`
-2. drop PDFs into that project root
-3. run `python3 -m pipeline.cli.run_project <project-path>`
-4. let the engine normalize the project into:
-   - `source/` for the input PDFs
-   - `corpus/` for canonical outputs
-   - project-root generated review drafts
 
 For compatibility, `PIPELINE_CORPUS_DIR` can point the code at a single corpus
 root, and the older `PAPER_PIPELINE_CORPUS_DIR` still works as a fallback.
