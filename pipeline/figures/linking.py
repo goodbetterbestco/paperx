@@ -37,7 +37,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = CORPUS_DIR
-VISION_SCRIPT = ROOT / "pipeline" / "vision_ocr.js"
+VISION_SCRIPT = ROOT / "pipeline" / "figures" / "vision_ocr.js"
 
 REFERENCE_SEQUENCE_RE = re.compile(
     r"\b(?:Fig(?:ure)?s?\.?)\s*((?:[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)(?:\s*(?:,|and|&)\s*[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)+|[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)",

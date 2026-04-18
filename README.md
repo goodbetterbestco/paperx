@@ -87,12 +87,10 @@ The intended shape for future corpora is:
 ## Credentials
 
 Repo-local credentials should live in `.env.local`, which is ignored by Git.
-Current environment keys used around this repo include:
+Current environment keys used by the pipeline include:
 
-- `MATHPIX_NAME`
 - `MATHPIX_APP_ID`
 - `MATHPIX_APP_KEY`
-- `GITHUB_PAT`
 
 When using env-backed commands for this repo, prefer sourcing
 `/Users/evanthayer/Projects/paperx/.env.local` explicitly so work here does not
