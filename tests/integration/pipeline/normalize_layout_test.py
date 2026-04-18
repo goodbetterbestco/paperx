@@ -11,9 +11,9 @@ if str(ROOT) not in sys.path:
 
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.normalize_prose import normalize_prose_text
-from pipeline.normalize_references import normalize_reference_text
-from pipeline.reconcile_blocks import reconcile_paper_state
+from pipeline.reconcile.entrypoint import reconcile_paper_state
+from pipeline.text.prose import normalize_prose_text
+from pipeline.text.references import normalize_reference_text
 
 
 def _corpus_layout(root: Path) -> ProjectLayout:
@@ -72,7 +72,7 @@ class NormalizeLayoutTest(unittest.TestCase):
             _write_lexicon(with_term_layout, terms=["trimmedsurface"])
             _write_lexicon(without_term_layout, terms=[])
 
-            with patch("pipeline.normalize_prose.zipf_frequency", side_effect=_fake_zipf_frequency):
+            with patch("pipeline.text.prose.zipf_frequency", side_effect=_fake_zipf_frequency):
                 normalized_with_term, with_term_counts = normalize_prose_text(
                     "trimmed surface",
                     layout=with_term_layout,
@@ -93,7 +93,7 @@ class NormalizeLayoutTest(unittest.TestCase):
             layout = _corpus_layout(root)
             _write_lexicon(layout, terms=["trimmedsurface"])
 
-            with patch("pipeline.normalize_prose.zipf_frequency", side_effect=_fake_zipf_frequency):
+            with patch("pipeline.text.prose.zipf_frequency", side_effect=_fake_zipf_frequency):
                 normalized, counts = normalize_reference_text(
                     "[12] trimmed surface",
                     layout=layout,
@@ -110,8 +110,8 @@ class NormalizeLayoutTest(unittest.TestCase):
             config = build_pipeline_config(layout=layout, include_review=False)
 
             with (
-                patch("pipeline.normalize_prose.zipf_frequency", side_effect=_fake_zipf_frequency),
-                patch("pipeline.reconcile_blocks.run_paper_pipeline") as run_paper_pipeline,
+                patch("pipeline.text.prose.zipf_frequency", side_effect=_fake_zipf_frequency),
+                patch("pipeline.reconcile.entrypoint.run_paper_pipeline") as run_paper_pipeline,
             ):
                 run_paper_pipeline.side_effect = (
                     lambda *args, **kwargs: kwargs["normalize_figure_caption_text"]("Fig. 1 trimmed surface")

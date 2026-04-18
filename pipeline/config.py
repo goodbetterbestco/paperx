@@ -7,7 +7,7 @@ import shutil
 from typing import Literal
 
 from pipeline.corpus_layout import ProjectLayout, current_layout
-from pipeline.staleness_policy import CURRENT_BUILDER_VERSION
+from pipeline.output.fingerprints import CURRENT_BUILDER_VERSION
 
 
 TextEngine = Literal["native", "pdftotext", "hybrid"]

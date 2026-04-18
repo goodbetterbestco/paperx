@@ -6,9 +6,59 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
 from pipeline.reconcile.layout_records import merge_layout_and_figure_records, page_one_front_matter_records
+from pipeline.reconcile.layout_records_runtime import (
+    figure_label_token,
+    make_absorb_figure_caption_continuations,
+    make_append_figure_caption_fragment,
+    make_layout_record,
+    make_match_figure_for_caption_record,
+    make_page_one_front_matter_records,
+    make_record_bbox,
+    make_strip_caption_label_prefix,
+    rect_x_overlap_ratio,
+    synthetic_caption_record,
+)
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+    make_normalize_figure_caption_text,
+)
+from pipeline.reconcile.text_repairs_runtime import mathpix_text_blocks_by_page
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
+from pipeline.text.headings import compact_text, normalize_title_key
+from pipeline.text.prose import normalize_prose_text
 from pipeline.types import LayoutBlock
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+LAYOUT_RECORD = make_layout_record(clean_text=CLEAN_TEXT)
+PAGE_ONE_FRONT_MATTER_RECORDS = make_page_one_front_matter_records(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+    layout_record=LAYOUT_RECORD,
+)
+APPEND_FIGURE_CAPTION_FRAGMENT = make_append_figure_caption_fragment(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    normalize_figure_caption_text=make_normalize_figure_caption_text(
+        clean_text=CLEAN_TEXT,
+        normalize_prose_text=normalize_prose_text,
+    ),
+    strip_caption_label_prefix=make_strip_caption_label_prefix(clean_text=CLEAN_TEXT),
+)
+ABSORB_FIGURE_CAPTION_CONTINUATIONS = make_absorb_figure_caption_continuations(
+    match_figure_for_caption_record=make_match_figure_for_caption_record(
+        record_bbox=make_record_bbox(block_source_spans=block_source_spans),
+        rect_x_overlap_ratio=rect_x_overlap_ratio,
+        figure_label_token=figure_label_token,
+    ),
+    append_figure_caption_fragment=APPEND_FIGURE_CAPTION_FRAGMENT,
+)
 
 
 class LayoutRecordsTest(unittest.TestCase):
@@ -48,14 +98,7 @@ class LayoutRecordsTest(unittest.TestCase):
             ]
         }
 
-        combined = page_one_front_matter_records(
-            records,
-            mathpix_layout,
-            clean_text=rb._clean_text,
-            normalize_title_key=rb.normalize_title_key,
-            mathpix_text_blocks_by_page=rb._mathpix_text_blocks_by_page,
-            layout_record=rb._layout_record,
-        )
+        combined = PAGE_ONE_FRONT_MATTER_RECORDS(records, mathpix_layout)
 
         self.assertEqual([record["text"] for record in combined], ["A Good Paper", "Jane Doe"])
 
@@ -94,10 +137,10 @@ class LayoutRecordsTest(unittest.TestCase):
         records, _ = merge_layout_and_figure_records(
             layout_blocks,
             figures,
-            layout_record=rb._layout_record,
-            absorb_figure_caption_continuations=rb._absorb_figure_caption_continuations,
-            figure_label_token=rb._figure_label_token,
-            synthetic_caption_record=rb._synthetic_caption_record,
+            layout_record=LAYOUT_RECORD,
+            absorb_figure_caption_continuations=ABSORB_FIGURE_CAPTION_CONTINUATIONS,
+            figure_label_token=figure_label_token,
+            synthetic_caption_record=synthetic_caption_record,
         )
 
         self.assertEqual(len(records), 1)

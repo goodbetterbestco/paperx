@@ -10,8 +10,7 @@ except ModuleNotFoundError:  # pragma: no cover
 
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, display_path, paper_pdf_path
 from pipeline.figures.labels import caption_label
-
-from pipeline.text_utils import compact_text, heading_info, looks_like_structural_title  # noqa: E402
+from pipeline.text.headings import compact_text, heading_info, looks_like_structural_title  # noqa: E402
 from pipeline.types import LayoutBlock  # noqa: E402
 
 DOCS_DIR = CORPUS_DIR

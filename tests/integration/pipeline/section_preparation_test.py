@@ -11,7 +11,7 @@ from pipeline.reconcile.section_preparation import (  # noqa: E402
     flatten_sections,
     prepare_section_nodes,
 )
-from pipeline.text_utils import SectionNode  # noqa: E402
+from pipeline.text.headings import SectionNode  # noqa: E402
 
 
 class SectionPreparationTest(unittest.TestCase):

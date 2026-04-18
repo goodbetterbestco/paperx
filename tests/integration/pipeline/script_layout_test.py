@@ -10,15 +10,16 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.build_canonical as build_canonical
-import pipeline.build_external_layout_from_pdftotext as build_external_layout_from_pdftotext
-import pipeline.build_external_sources_from_docling as build_external_sources_from_docling
-import pipeline.build_external_sources_from_mathpix as build_external_sources_from_mathpix
-import pipeline.build_review as build_review
-import pipeline.compose_external_sources as compose_external_sources
-import pipeline.export_titles_and_abstracts as export_titles_and_abstracts
-import pipeline.render_review_from_canonical as render_review_from_canonical
+import pipeline.cli.build_canonical as build_canonical
+import pipeline.cli.build_review as build_review
+import pipeline.cli.build_external_layout_from_pdftotext as build_external_layout_from_pdftotext
+import pipeline.cli.build_external_sources_from_docling as build_external_sources_from_docling
+import pipeline.cli.build_external_sources_from_mathpix as build_external_sources_from_mathpix
+import pipeline.cli.compose_external_sources as compose_external_sources
+import pipeline.cli.export_titles_and_abstracts as export_titles_and_abstracts
+import pipeline.cli.render_review_from_canonical as render_review_from_canonical
 from pipeline.corpus_layout import ProjectLayout
+from pipeline.output.title_abstract_export import build_export_text
 
 
 def _corpus_layout(root: Path) -> ProjectLayout:
@@ -107,7 +108,7 @@ class ScriptLayoutTest(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            exported = export_titles_and_abstracts.build_export_text(layout=layout)
+            exported = build_export_text(layout=layout)
 
             self.assertIn("Synthetic Test Paper", exported)
             self.assertIn("Synthetic abstract.", exported)
@@ -129,30 +130,44 @@ class ScriptLayoutTest(unittest.TestCase):
                 captured["write_layout"] = layout
                 return {"canonical_path": str(layout.canonical_path(paper_id))}
 
-            with (
-                patch.object(
-                    build_canonical,
-                    "parse_args",
-                    return_value=Namespace(
-                        paper_id=paper_id,
-                        text_engine="native",
-                        use_external_layout=False,
-                        use_external_math=False,
-                        dry_run=False,
-                        validate=False,
-                    ),
-                ),
-                patch.object(build_canonical, "current_layout", return_value=layout),
-                patch.object(build_canonical, "build_paper", return_value=FakeBuild()) as build_paper,
-                patch.object(build_canonical, "validate_canonical"),
-                patch.object(build_canonical, "write_canonical_outputs", side_effect=fake_write_outputs),
-                patch("builtins.print"),
-            ):
-                result = build_canonical.main()
+            def fake_build_paper(
+                _paper_id: str,
+                *,
+                text_engine: str,
+                use_external_layout: bool,
+                use_external_math: bool,
+                include_review: bool,
+                layout=None,
+            ) -> FakeBuild:
+                captured["build_layout"] = layout
+                captured["text_engine"] = text_engine
+                captured["use_external_layout"] = use_external_layout
+                captured["use_external_math"] = use_external_math
+                captured["include_review"] = include_review
+                return FakeBuild()
+
+            args = Namespace(
+                paper_id=paper_id,
+                text_engine="native",
+                use_external_layout=False,
+                use_external_math=False,
+                dry_run=False,
+                validate=False,
+            )
+            result = build_canonical.run_build_canonical(
+                args,
+                current_layout_fn=lambda: layout,
+                build_paper_fn=fake_build_paper,
+                validate_canonical_fn=lambda _document: None,
+                build_summary_fn=lambda _document: {"sections": 0, "references": 0, "figures": 0},
+                write_canonical_outputs_fn=fake_write_outputs,
+                print_fn=lambda *args, **kwargs: None,
+            )
 
             self.assertEqual(result, 0)
-            self.assertIs(build_paper.call_args.kwargs["layout"], layout)
+            self.assertIs(captured["build_layout"], layout)
             self.assertIs(captured["write_layout"], layout)
+            self.assertFalse(captured["include_review"])
 
     def test_build_review_main_threads_layout_to_config_and_writer(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -174,29 +189,44 @@ class ScriptLayoutTest(unittest.TestCase):
                     "review_path": str(layout.review_draft_path(paper_id)),
                 }
 
-            with (
-                patch.object(
-                    build_review,
-                    "parse_args",
-                    return_value=Namespace(
-                        paper_id=paper_id,
-                        text_engine="native",
-                        use_external_layout=False,
-                        use_external_math=False,
-                        dry_run=False,
-                    ),
-                ),
-                patch.object(build_review, "current_layout", return_value=layout),
-                patch.object(build_review, "build_paper", return_value=FakeBuild()) as build_paper,
-                patch.object(build_review, "validate_canonical"),
-                patch.object(build_review, "write_canonical_outputs", side_effect=fake_write_outputs),
-                patch("builtins.print"),
-            ):
-                result = build_review.main()
+            def fake_build_paper(
+                _paper_id: str,
+                *,
+                text_engine: str,
+                use_external_layout: bool,
+                use_external_math: bool,
+                include_review: bool,
+                layout=None,
+            ) -> FakeBuild:
+                captured["build_layout"] = layout
+                captured["text_engine"] = text_engine
+                captured["use_external_layout"] = use_external_layout
+                captured["use_external_math"] = use_external_math
+                captured["include_review"] = include_review
+                return FakeBuild()
+
+            args = Namespace(
+                paper_id=paper_id,
+                text_engine="native",
+                use_external_layout=False,
+                use_external_math=False,
+                dry_run=False,
+            )
+            result = build_review.run_build_review(
+                args,
+                current_layout_fn=lambda: layout,
+                build_paper_fn=fake_build_paper,
+                validate_canonical_fn=lambda _document: None,
+                build_summary_fn=lambda _document: {"sections": 0, "references": 0, "figures": 0},
+                render_document_fn=lambda _document: "# synthetic\n",
+                write_canonical_outputs_fn=fake_write_outputs,
+                print_fn=lambda *args, **kwargs: None,
+            )
 
             self.assertEqual(result, 0)
-            self.assertIs(build_paper.call_args.kwargs["layout"], layout)
+            self.assertIs(captured["build_layout"], layout)
             self.assertIs(captured["write_layout"], layout)
+            self.assertTrue(captured["include_review"])
 
     def test_build_external_layout_from_pdftotext_main_uses_helper_with_explicit_layout(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

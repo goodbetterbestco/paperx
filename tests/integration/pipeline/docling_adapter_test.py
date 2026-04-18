@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.docling_adapter import _resolve_docling_command, docling_json_to_external_sources, run_docling
+from pipeline.sources.docling import _resolve_docling_command, docling_json_to_external_sources, run_docling
 
 
 def _docling_item(ref: str, label: str, text: str, *, page: int, left: float, top: float, right: float, bottom: float) -> dict:
@@ -35,8 +35,8 @@ class DoclingAdapterTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             output_dir = Path(tmpdir)
             with (
-                patch("pipeline.docling_adapter._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
-                patch("pipeline.docling_adapter._resolve_docling_command", side_effect=FileNotFoundError("Docling CLI not found.")),
+                patch("pipeline.sources.docling._paper_pdf_path", return_value=Path("/tmp/fake.pdf")),
+                patch("pipeline.sources.docling._resolve_docling_command", side_effect=FileNotFoundError("Docling CLI not found.")),
             ):
                 with self.assertRaisesRegex(FileNotFoundError, "Docling CLI not found"):
                     run_docling("synthetic_test_paper", output_dir=output_dir)
@@ -59,7 +59,7 @@ class DoclingAdapterTest(unittest.TestCase):
             "blocks": [],
         }
 
-        with patch("pipeline.docling_adapter.extract_layout", return_value=fake_layout):
+        with patch("pipeline.sources.docling.extract_layout", return_value=fake_layout):
             layout, _ = docling_json_to_external_sources(docling_document, "synthetic_test_paper")
 
         roles = {block["text"]: block["role"] for block in layout["blocks"]}

@@ -4,10 +4,10 @@ import re
 from typing import Any
 
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.sources.layout import extract_layout
 from pipeline.math.extract import INLINE_MATH_RE, classify_math_block
+from pipeline.sources.layout import extract_layout
 from pipeline.sources.pdftotext import bbox_to_line_window, extract_pdftotext_pages, slice_page_text
-from pipeline.text_utils import compact_text
+from pipeline.text.headings import compact_text
 from pipeline.types import LayoutBlock
 
 
@@ -161,3 +161,12 @@ def overlay_pdftotext_onto_layout(
         ],
     }
     return overlay, {"changed_blocks": changed, "skipped_blocks": skipped, "total_blocks": len(repaired_blocks)}
+
+
+__all__ = [
+    "candidate_text_for_block",
+    "clean_text",
+    "is_better_candidate",
+    "overlay_pdftotext_onto_layout",
+    "should_skip_repair",
+]

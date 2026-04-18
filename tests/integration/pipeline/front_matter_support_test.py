@@ -6,22 +6,38 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
+import pipeline.reconcile.shared_patterns as rsp
 from pipeline.assembly.front_matter_support import (
     abstract_text_looks_like_metadata,
     front_block_text,
-    matches_title_line,
-    title_lookup_keys,
+)
+from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
+from pipeline.reconcile.front_matter_runtime import make_bound_front_matter_support_helpers
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+)
+from pipeline.text.headings import compact_text, normalize_title_key
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+SUPPORT_HELPERS = make_bound_front_matter_support_helpers(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    compact_text=compact_text,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+    abstract_quality_flags=abstract_quality_flags,
 )
 
 
 class FrontMatterSupportTest(unittest.TestCase):
     def test_title_lookup_keys_strip_year_and_article(self) -> None:
-        keys = title_lookup_keys(
-            "2001 The Aspect Graph Survey",
-            clean_text=rb._clean_text,
-            normalize_title_key=rb.normalize_title_key,
-        )
+        keys = SUPPORT_HELPERS.title_lookup_keys("2001 The Aspect Graph Survey")
 
         self.assertIn("2001theaspectgraphsurvey", keys)
         self.assertIn("theaspectgraphsurvey", keys)
@@ -29,14 +45,9 @@ class FrontMatterSupportTest(unittest.TestCase):
 
     def test_matches_title_line_accepts_prefix_match(self) -> None:
         self.assertTrue(
-            matches_title_line(
+            SUPPORT_HELPERS.matches_title_line(
                 "Aspect Graph Survey",
                 "The Aspect Graph Survey",
-                clean_text=rb._clean_text,
-                compact_text=rb.compact_text,
-                short_word_re=rb.SHORT_WORD_RE,
-                normalize_title_key=rb.normalize_title_key,
-                title_lookup_keys=rb._title_lookup_keys,
             )
         )
 
@@ -54,15 +65,15 @@ class FrontMatterSupportTest(unittest.TestCase):
             }
         ]
 
-        text = front_block_text(blocks, "blk-front-abstract-1", clean_text=rb._clean_text)
+        text = front_block_text(blocks, "blk-front-abstract-1", clean_text=CLEAN_TEXT)
 
         self.assertEqual(text, "First part second part")
 
     def test_abstract_text_looks_like_metadata_flags_placeholder(self) -> None:
         self.assertTrue(
             abstract_text_looks_like_metadata(
-                rb.MISSING_ABSTRACT_PLACEHOLDER,
-                abstract_quality_flags=rb.abstract_quality_flags,
+                MISSING_ABSTRACT_PLACEHOLDER,
+                abstract_quality_flags=abstract_quality_flags,
             )
         )
 

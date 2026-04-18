@@ -6,9 +6,214 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
-from pipeline.assembly.record_block_builder import build_blocks_for_record, split_code_lines
-from pipeline.reconcile.block_merging import merge_code_records
+import pipeline.reconcile.shared_patterns as rsp
+from pipeline.assembly.record_block_builder import (
+    build_blocks_for_record as assemble_build_blocks_for_record,
+    split_code_lines,
+)
+from pipeline.figures.labels import caption_label
+from pipeline.math import (
+    classify_math_block,
+    extract_general_inline_math_spans,
+    looks_like_prose_math_fragment,
+    looks_like_prose_paragraph,
+    merge_inline_math_relation_suffixes,
+    normalize_inline_math_spans,
+    review_for_algorithm_block_text,
+    review_for_math_entry,
+    review_for_math_ref_block,
+    split_inline_math,
+)
+from pipeline.math.extract import build_block_math_entry, repair_symbolic_ocr_spans
+from pipeline.reconcile.block_builder_binding_runtime import (
+    make_list_item_marker,
+    make_looks_like_real_code_record,
+    make_match_external_math_entry,
+)
+from pipeline.reconcile.block_merging import merge_code_records as reconcile_merge_code_records
+from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
+from pipeline.reconcile.math_runtime import (
+    make_looks_like_display_math_echo,
+    make_overlapping_external_math_entries,
+    make_trim_embedded_display_math_from_paragraph,
+)
+from pipeline.reconcile.math_suppression import (
+    looks_like_display_math_echo as suppression_looks_like_display_math_echo,
+    overlapping_external_math_entries as suppression_overlapping_external_math_entries,
+    trim_embedded_display_math_from_paragraph as suppression_trim_embedded_display_math_from_paragraph,
+)
+from pipeline.reconcile.record_runtime import make_build_blocks_for_record, make_merge_code_records
+from pipeline.reconcile.reference_binding_runtime import make_reference_entry
+from pipeline.reconcile.runtime_constants import (
+    CONTROL_CHAR_RE,
+    LABEL_CLOUD_TOKEN_RE,
+    LEADING_NEGATIONSLASH_ARTIFACT_RE,
+    LEADING_OCR_MARKER_RE,
+    LEADING_PUNCT_ARTIFACT_RE,
+    LEADING_VAR_ARTIFACT_RE,
+    MATH_TOKEN_RE,
+    QUOTED_IDENTIFIER_FRAGMENT_RE,
+    SHORT_OCR_NOISE_RE,
+    TERMINAL_PUNCTUATION_RE,
+    TRAILING_NUMERIC_ARTIFACT_RE,
+)
+from pipeline.reconcile.screening_runtime import (
+    make_is_short_ocr_fragment,
+    make_looks_like_browser_ui_scrap,
+    make_looks_like_glyph_noise_cloud,
+    make_looks_like_quoted_identifier_fragment,
+    make_looks_like_table_marker_cloud,
+    make_looks_like_vertical_label_cloud,
+)
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_record,
+    make_clean_text,
+    make_mathish_ratio,
+    make_normalize_formula_display_text,
+    make_normalize_paragraph_text,
+    make_record_analysis_text,
+    make_strip_known_running_header_text,
+    make_word_count,
+)
+from pipeline.text.headings import compact_text
+from pipeline.text.prose import decode_ocr_codepoint_tokens, normalize_prose_text
+from pipeline.text.references import normalize_reference_text
+from pipeline.types import default_review
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+STRIP_KNOWN_RUNNING_HEADER_TEXT = make_strip_known_running_header_text(
+    procedia_running_header_re=rsp.PROCEDIA_RUNNING_HEADER_RE,
+    clean_text=CLEAN_TEXT,
+)
+CLEAN_RECORD = make_clean_record(
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+)
+NORMALIZE_PARAGRAPH_TEXT = make_normalize_paragraph_text(
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+    leading_negationslash_artifact_re=LEADING_NEGATIONSLASH_ARTIFACT_RE,
+    leading_ocr_marker_re=LEADING_OCR_MARKER_RE,
+    leading_punct_artifact_re=LEADING_PUNCT_ARTIFACT_RE,
+    leading_var_artifact_re=LEADING_VAR_ARTIFACT_RE,
+    trailing_numeric_artifact_re=TRAILING_NUMERIC_ARTIFACT_RE,
+    normalize_prose_text=normalize_prose_text,
+    clean_text=CLEAN_TEXT,
+)
+NORMALIZE_FORMULA_DISPLAY_TEXT = make_normalize_formula_display_text(
+    clean_text=CLEAN_TEXT,
+    decode_ocr_codepoint_tokens=decode_ocr_codepoint_tokens,
+)
+RECORD_ANALYSIS_TEXT = make_record_analysis_text(clean_text=CLEAN_TEXT)
+WORD_COUNT = make_word_count(short_word_re=rsp.SHORT_WORD_RE)
+MATH_SIGNAL_COUNT = make_math_signal_count(math_token_re=MATH_TOKEN_RE)
+MATHISH_RATIO = make_mathish_ratio(
+    word_count=WORD_COUNT,
+    math_signal_count=MATH_SIGNAL_COUNT,
+)
+LOOKS_LIKE_BROWSER_UI_SCRAP = make_looks_like_browser_ui_scrap(
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+LOOKS_LIKE_QUOTED_IDENTIFIER_FRAGMENT = make_looks_like_quoted_identifier_fragment(
+    short_word_re=rsp.SHORT_WORD_RE,
+    quoted_identifier_fragment_re=QUOTED_IDENTIFIER_FRAGMENT_RE,
+)
+LOOKS_LIKE_GLYPH_NOISE_CLOUD = make_looks_like_glyph_noise_cloud(
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+LOOKS_LIKE_VERTICAL_LABEL_CLOUD = make_looks_like_vertical_label_cloud(
+    strong_operator_count=strong_operator_count,
+)
+LOOKS_LIKE_TABLE_MARKER_CLOUD = make_looks_like_table_marker_cloud(
+    strong_operator_count=strong_operator_count,
+)
+IS_SHORT_OCR_FRAGMENT = make_is_short_ocr_fragment(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    looks_like_browser_ui_scrap=LOOKS_LIKE_BROWSER_UI_SCRAP,
+    looks_like_quoted_identifier_fragment=LOOKS_LIKE_QUOTED_IDENTIFIER_FRAGMENT,
+    looks_like_glyph_noise_cloud=LOOKS_LIKE_GLYPH_NOISE_CLOUD,
+    looks_like_vertical_label_cloud=LOOKS_LIKE_VERTICAL_LABEL_CLOUD,
+    looks_like_table_marker_cloud=LOOKS_LIKE_TABLE_MARKER_CLOUD,
+    short_word_re=rsp.SHORT_WORD_RE,
+    label_cloud_token_re=LABEL_CLOUD_TOKEN_RE,
+    short_ocr_noise_re=SHORT_OCR_NOISE_RE,
+    terminal_punctuation_re=TERMINAL_PUNCTUATION_RE,
+    strong_operator_count=strong_operator_count,
+)
+MAKE_REFERENCE_ENTRY = make_reference_entry(
+    clean_text=CLEAN_TEXT,
+    normalize_reference_text=normalize_reference_text,
+    block_source_spans=block_source_spans,
+    default_review=default_review,
+)
+LIST_ITEM_MARKER = make_list_item_marker(clean_text=CLEAN_TEXT)
+LOOKS_LIKE_REAL_CODE_RECORD = make_looks_like_real_code_record(clean_text=CLEAN_TEXT)
+MATCH_EXTERNAL_MATH_ENTRY = make_match_external_math_entry(
+    block_source_spans=block_source_spans,
+    clean_text=CLEAN_TEXT,
+)
+OVERLAPPING_EXTERNAL_MATH_ENTRIES = make_overlapping_external_math_entries(
+    overlapping_external_math_entries_impl=suppression_overlapping_external_math_entries,
+    block_source_spans=block_source_spans,
+)
+TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH = make_trim_embedded_display_math_from_paragraph(
+    trim_embedded_display_math_from_paragraph_impl=suppression_trim_embedded_display_math_from_paragraph,
+    block_source_spans=block_source_spans,
+    clean_text=CLEAN_TEXT,
+    display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+    display_math_resume_re=rsp.DISPLAY_MATH_RESUME_RE,
+    display_math_start_re=rsp.DISPLAY_MATH_START_RE,
+    mathish_ratio=MATHISH_RATIO,
+    strong_operator_count=strong_operator_count,
+)
+LOOKS_LIKE_DISPLAY_MATH_ECHO = make_looks_like_display_math_echo(
+    looks_like_display_math_echo_impl=suppression_looks_like_display_math_echo,
+    block_source_spans=block_source_spans,
+    clean_text=CLEAN_TEXT,
+    mathish_ratio=MATHISH_RATIO,
+    strong_operator_count=strong_operator_count,
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+MERGE_CODE_RECORDS = make_merge_code_records(
+    merge_code_records_impl=reconcile_merge_code_records,
+    block_source_spans=block_source_spans,
+    clean_text=CLEAN_TEXT,
+)
+BUILD_BLOCKS_FOR_RECORD = make_build_blocks_for_record(
+    build_blocks_for_record_impl=assemble_build_blocks_for_record,
+    clean_record=CLEAN_RECORD,
+    record_analysis_text=RECORD_ANALYSIS_TEXT,
+    is_short_ocr_fragment=IS_SHORT_OCR_FRAGMENT,
+    block_source_spans=block_source_spans,
+    caption_label=caption_label,
+    default_review=default_review,
+    make_reference_entry=MAKE_REFERENCE_ENTRY,
+    looks_like_real_code_record=LOOKS_LIKE_REAL_CODE_RECORD,
+    split_code_lines=split_code_lines,
+    list_item_marker=LIST_ITEM_MARKER,
+    normalize_paragraph_text=NORMALIZE_PARAGRAPH_TEXT,
+    split_inline_math=split_inline_math,
+    repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
+    extract_general_inline_math_spans=extract_general_inline_math_spans,
+    merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
+    normalize_inline_math_spans=normalize_inline_math_spans,
+    review_for_math_entry=review_for_math_entry,
+    review_for_math_ref_block=review_for_math_ref_block,
+    looks_like_prose_paragraph=looks_like_prose_paragraph,
+    looks_like_prose_math_fragment=looks_like_prose_math_fragment,
+    match_external_math_entry=MATCH_EXTERNAL_MATH_ENTRY,
+    build_block_math_entry=build_block_math_entry,
+    normalize_formula_display_text=NORMALIZE_FORMULA_DISPLAY_TEXT,
+    classify_math_block=classify_math_block,
+    review_for_algorithm_block_text=review_for_algorithm_block_text,
+    overlapping_external_math_entries=OVERLAPPING_EXTERNAL_MATH_ENTRIES,
+    trim_embedded_display_math_from_paragraph=TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH,
+    looks_like_display_math_echo=LOOKS_LIKE_DISPLAY_MATH_ECHO,
+)
 
 
 def _record(
@@ -44,11 +249,7 @@ def _record(
 
 
 def _merge_code_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
-    return merge_code_records(
-        records,
-        block_source_spans=rb._block_source_spans,
-        clean_text=rb._clean_text,
-    )
+    return MERGE_CODE_RECORDS(records)
 
 
 def _build_blocks_for_record(
@@ -60,7 +261,7 @@ def _build_blocks_for_record(
     references_section: bool,
     counters: dict[str, int],
 ) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]]]:
-    return build_blocks_for_record(
+    return BUILD_BLOCKS_FOR_RECORD(
         record,
         layout_by_id,
         figures_by_label,
@@ -68,63 +269,6 @@ def _build_blocks_for_record(
         external_math_overlap_by_page,
         references_section,
         counters,
-        clean_record=rb._clean_record,
-        record_analysis_text=rb._record_analysis_text,
-        is_short_ocr_fragment=rb._is_short_ocr_fragment,
-        block_source_spans=rb._block_source_spans,
-        caption_label=rb.caption_label,
-        default_review=rb.default_review,
-        make_reference_entry=rb._make_reference_entry,
-        looks_like_real_code_record=lambda text: rb._looks_like_real_code_record(text),
-        split_code_lines=split_code_lines,
-        list_item_marker=lambda text: rb._list_item_marker(text),
-        normalize_paragraph_text=rb._normalize_paragraph_text,
-        split_inline_math=rb.split_inline_math,
-        repair_symbolic_ocr_spans=rb.repair_symbolic_ocr_spans,
-        extract_general_inline_math_spans=rb.extract_general_inline_math_spans,
-        merge_inline_math_relation_suffixes=rb.merge_inline_math_relation_suffixes,
-        normalize_inline_math_spans=rb.normalize_inline_math_spans,
-        review_for_math_entry=rb.review_for_math_entry,
-        review_for_math_ref_block=rb.review_for_math_ref_block,
-        looks_like_prose_paragraph=rb.looks_like_prose_paragraph,
-        looks_like_prose_math_fragment=rb.looks_like_prose_math_fragment,
-        match_external_math_entry=lambda record_item, external_math_map: rb.reconcile_match_external_math_entry(
-            record_item,
-            external_math_map,
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
-        ),
-        build_block_math_entry=rb.build_block_math_entry,
-        normalize_formula_display_text=rb._normalize_formula_display_text,
-        classify_math_block=rb.classify_math_block,
-        review_for_algorithm_block_text=rb.review_for_algorithm_block_text,
-        overlapping_external_math_entries=lambda record_item, overlap_map: rb.reconcile_overlapping_external_math_entries(
-            record_item,
-            overlap_map,
-            block_source_spans=rb._block_source_spans,
-        ),
-        trim_embedded_display_math_from_paragraph=lambda text_value, record_item, overlapping_math: rb.reconcile_trim_embedded_display_math_from_paragraph(
-            text_value,
-            record_item,
-            overlapping_math,
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
-            display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
-            display_math_resume_re=rb.DISPLAY_MATH_RESUME_RE,
-            display_math_start_re=rb.DISPLAY_MATH_START_RE,
-            mathish_ratio=rb._mathish_ratio,
-            strong_operator_count=rb._strong_operator_count,
-        ),
-        looks_like_display_math_echo=lambda record_item, text_value, overlapping_math: rb.reconcile_looks_like_display_math_echo(
-            record_item,
-            text_value,
-            overlapping_math,
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
-            mathish_ratio=rb._mathish_ratio,
-            strong_operator_count=rb._strong_operator_count,
-            short_word_re=rb.SHORT_WORD_RE,
-        ),
     )
 
 

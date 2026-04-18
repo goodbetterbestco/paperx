@@ -1,18 +1,11 @@
-#!/usr/bin/env python3
-
 from __future__ import annotations
 
 import argparse
 import json
 from pathlib import Path
-import sys
-
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 
 from pipeline.corpus_layout import current_layout
-from pipeline.output.title_abstract_export import build_export_text, export_titles_and_abstracts
+from pipeline.output.title_abstract_export import export_titles_and_abstracts
 
 
 def parse_args() -> argparse.Namespace:

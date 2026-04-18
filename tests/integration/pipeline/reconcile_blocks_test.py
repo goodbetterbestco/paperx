@@ -1,195 +1,550 @@
 import sys
 import unittest
+from functools import partial
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
+import pipeline.reconcile.front_matter_patterns as fmp
+import pipeline.reconcile.shared_patterns as rsp
+from pipeline.assembly.abstract_recovery import recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract
+from pipeline.assembly.front_matter_builder import build_front_matter as _assembly_build_front_matter
+from pipeline.assembly.front_matter_support import (
+    front_block_text as _support_front_block_text,
+    missing_front_matter_affiliation,
+    missing_front_matter_author,
+)
+from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
+from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
 from pipeline.reconcile.block_merging import (
     merge_paragraph_blocks as _block_merge_paragraph_blocks,
     merge_paragraph_records as _block_merge_paragraph_records,
     normalize_footnote_blocks as _block_normalize_footnote_blocks,
     suppress_running_header_blocks as _block_suppress_running_header_blocks,
 )
-from pipeline.reconcile.math_suppression import (
-    trim_embedded_display_math_from_paragraph as _math_trim_embedded_display_math_from_paragraph,
+from pipeline.reconcile.external_math_binding_runtime import make_inject_external_math_records
+from pipeline.reconcile.external_math import rect_intersection_area
+from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
+from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers
+from pipeline.reconcile.front_matter_runtime import (
+    make_bound_front_matter_recovery_helpers,
+    make_bound_front_matter_support_helpers,
+    make_build_front_matter,
+    make_front_block_text,
+    make_normalize_section_title,
+    make_recover_missing_front_matter_abstract,
+)
+from pipeline.reconcile.heading_promotion import promote_heading_like_records as _heading_promote_heading_like_records
+from pipeline.reconcile.heading_promotion_runtime import (
+    decode_control_heading_label,
+    make_normalize_decoded_heading_title,
+    make_split_embedded_heading_paragraph,
 )
 from pipeline.reconcile.layout_records import merge_layout_and_figure_records as _layout_merge_layout_and_figure_records
+from pipeline.reconcile.layout_records_runtime import (
+    figure_label_token,
+    make_absorb_figure_caption_continuations,
+    make_append_figure_caption_fragment,
+    make_layout_record,
+    make_match_figure_for_caption_record,
+    make_record_bbox,
+    make_strip_caption_label_prefix,
+    rect_x_overlap_ratio,
+    synthetic_caption_record,
+)
+from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
+from pipeline.reconcile.math_runtime import make_trim_embedded_display_math_from_paragraph
+from pipeline.reconcile.math_suppression import trim_embedded_display_math_from_paragraph as _math_trim_embedded_display_math_from_paragraph
+from pipeline.reconcile.record_runtime import (
+    make_merge_layout_and_figure_records as make_record_merge_layout_and_figure_records,
+    make_merge_paragraph_blocks,
+    make_merge_paragraph_records,
+    make_normalize_footnote_blocks,
+    make_promote_heading_like_records,
+    make_repair_record_text_with_mathpix_hints,
+    make_suppress_running_header_blocks,
+)
+from pipeline.reconcile.reference_binding_runtime import make_bound_reference_helpers
+from pipeline.reconcile.runtime_constants import (
+    ABOUT_AUTHOR_RE,
+    CONTROL_CHAR_RE,
+    DIAGRAM_ACTION_RE,
+    DIAGRAM_DECISION_RE,
+    DIAGRAM_QUERY_RE,
+    LABEL_CLOUD_TOKEN_RE,
+    MATHPIX_HINT_TOKEN_RE,
+    MATH_TOKEN_RE,
+    QUOTED_IDENTIFIER_FRAGMENT_RE,
+    REFERENCE_AUTHOR_RE,
+    REFERENCE_START_RE,
+    REFERENCE_YEAR_RE,
+    SHORT_OCR_NOISE_RE,
+    TERMINAL_PUNCTUATION_RE,
+    TRUNCATED_PROSE_LEAD_STOPWORDS,
+)
+from pipeline.reconcile.screening_runtime import (
+    make_is_figure_debris,
+    make_is_short_ocr_fragment,
+    make_looks_like_browser_ui_scrap,
+    make_looks_like_glyph_noise_cloud,
+    make_looks_like_quoted_identifier_fragment,
+    make_looks_like_table_marker_cloud,
+    make_looks_like_vertical_label_cloud,
+)
+from pipeline.reconcile.section_filter_binding_runtime import (
+    make_looks_like_running_header_record,
+    make_looks_like_table_body_debris,
+    make_should_merge_paragraph_records,
+    make_suppress_embedded_table_headings,
+    starts_like_sentence,
+)
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_record,
+    make_clean_text,
+    make_is_pdftotext_candidate_better,
+    make_mathish_ratio,
+    make_normalize_figure_caption_text,
+    make_strip_known_running_header_text,
+    make_word_count,
+)
 from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as _text_repair_record_text_with_mathpix_hints
-from pipeline.reconcile.heading_promotion import (
-    promote_heading_like_records as _heading_promote_heading_like_records,
-    split_embedded_heading_paragraph as _heading_split_embedded_heading_paragraph,
-)
-from pipeline.reconcile.front_matter_policies import split_leading_front_matter_records as _policy_split_leading_front_matter_records
-from pipeline.assembly.front_matter_builder import build_front_matter as _assembly_build_front_matter
-from pipeline.assembly.abstract_recovery import recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract
-from pipeline.assembly.front_matter_support import front_block_text as _support_front_block_text
-from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
-from pipeline.reconcile_blocks import (
-    _append_figure_caption_fragment,
-    _leading_abstract_text,
-    _should_replace_front_matter_abstract,
-    _strip_trailing_abstract_boilerplate,
-    _extract_reference_records_from_tail_section,
-    _inject_external_math_records,
-    _is_figure_debris,
-    _is_reference_start,
-    _is_short_ocr_fragment,
-    _looks_like_affiliation,
-    _looks_like_author_line,
-    _looks_like_running_header_record,
-    _looks_like_table_body_debris,
-    _reference_records_from_mathpix_layout,
-    _suppress_embedded_table_headings,
-    _should_merge_paragraph_records,
-    _split_late_prelude_for_missing_intro,
-    _strip_known_running_header_text,
-)
+from pipeline.reconcile.text_repairs_runtime import make_bound_text_repair_helpers, mathpix_text_blocks_by_page
+from pipeline.math.extract import INLINE_MATH_RE
+from pipeline.text.headings import collapse_ocr_split_caps, looks_like_bad_heading
+from pipeline.text.prose import normalize_prose_text
 from pipeline.types import LayoutBlock
-from pipeline.text_utils import SectionNode
+from pipeline.types import default_review
+from pipeline.text.headings import SectionNode
+from pipeline.text.headings import clean_heading_title, compact_text, normalize_title_key, parse_heading_label
 
 
 def _review(risk: str = "medium", status: str = "unreviewed") -> dict[str, str]:
     return {"risk": risk, "status": status, "notes": ""}
 
 
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+STRIP_KNOWN_RUNNING_HEADER_TEXT = make_strip_known_running_header_text(
+    procedia_running_header_re=rsp.PROCEDIA_RUNNING_HEADER_RE,
+    clean_text=CLEAN_TEXT,
+)
+CLEAN_RECORD = make_clean_record(
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+)
+WORD_COUNT = make_word_count(short_word_re=rsp.SHORT_WORD_RE)
+MATHISH_RATIO = make_mathish_ratio(
+    word_count=WORD_COUNT,
+    math_signal_count=make_math_signal_count(math_token_re=MATH_TOKEN_RE),
+)
+LOOKS_LIKE_BROWSER_UI_SCRAP = make_looks_like_browser_ui_scrap(
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+LOOKS_LIKE_QUOTED_IDENTIFIER_FRAGMENT = make_looks_like_quoted_identifier_fragment(
+    short_word_re=rsp.SHORT_WORD_RE,
+    quoted_identifier_fragment_re=QUOTED_IDENTIFIER_FRAGMENT_RE,
+)
+LOOKS_LIKE_GLYPH_NOISE_CLOUD = make_looks_like_glyph_noise_cloud(
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+LOOKS_LIKE_VERTICAL_LABEL_CLOUD = make_looks_like_vertical_label_cloud(
+    strong_operator_count=strong_operator_count,
+)
+LOOKS_LIKE_TABLE_MARKER_CLOUD = make_looks_like_table_marker_cloud(
+    strong_operator_count=strong_operator_count,
+)
+IS_SHORT_OCR_FRAGMENT = make_is_short_ocr_fragment(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    looks_like_browser_ui_scrap=LOOKS_LIKE_BROWSER_UI_SCRAP,
+    looks_like_quoted_identifier_fragment=LOOKS_LIKE_QUOTED_IDENTIFIER_FRAGMENT,
+    looks_like_glyph_noise_cloud=LOOKS_LIKE_GLYPH_NOISE_CLOUD,
+    looks_like_vertical_label_cloud=LOOKS_LIKE_VERTICAL_LABEL_CLOUD,
+    looks_like_table_marker_cloud=LOOKS_LIKE_TABLE_MARKER_CLOUD,
+    short_word_re=rsp.SHORT_WORD_RE,
+    label_cloud_token_re=LABEL_CLOUD_TOKEN_RE,
+    short_ocr_noise_re=SHORT_OCR_NOISE_RE,
+    terminal_punctuation_re=TERMINAL_PUNCTUATION_RE,
+    strong_operator_count=strong_operator_count,
+)
+LOOKS_LIKE_RUNNING_HEADER_RECORD = make_looks_like_running_header_record(
+    clean_text=CLEAN_TEXT,
+    running_header_text_re=rsp.RUNNING_HEADER_TEXT_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+)
+LOOKS_LIKE_TABLE_BODY_DEBRIS = make_looks_like_table_body_debris(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+)
+SHOULD_MERGE_PARAGRAPH_RECORDS = make_should_merge_paragraph_records(
+    clean_text=CLEAN_TEXT,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+    terminal_punctuation_re=TERMINAL_PUNCTUATION_RE,
+)
+SUPPRESS_EMBEDDED_TABLE_HEADINGS = make_suppress_embedded_table_headings(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    table_caption_re=rsp.TABLE_CAPTION_RE,
+    parse_heading_label=parse_heading_label,
+    clean_heading_title=clean_heading_title,
+)
+LAYOUT_RECORD = make_layout_record(clean_text=CLEAN_TEXT)
+APPEND_FIGURE_CAPTION_FRAGMENT = make_append_figure_caption_fragment(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    normalize_figure_caption_text=make_normalize_figure_caption_text(
+        clean_text=CLEAN_TEXT,
+        normalize_prose_text=normalize_prose_text,
+    ),
+    strip_caption_label_prefix=make_strip_caption_label_prefix(clean_text=CLEAN_TEXT),
+)
+ABSORB_FIGURE_CAPTION_CONTINUATIONS = make_absorb_figure_caption_continuations(
+    match_figure_for_caption_record=make_match_figure_for_caption_record(
+        record_bbox=make_record_bbox(block_source_spans=block_source_spans),
+        rect_x_overlap_ratio=rect_x_overlap_ratio,
+        figure_label_token=figure_label_token,
+    ),
+    append_figure_caption_fragment=APPEND_FIGURE_CAPTION_FRAGMENT,
+)
+MERGE_LAYOUT_AND_FIGURE_RECORDS = make_record_merge_layout_and_figure_records(
+    merge_layout_and_figure_records_impl=_layout_merge_layout_and_figure_records,
+    layout_record=LAYOUT_RECORD,
+    absorb_figure_caption_continuations=ABSORB_FIGURE_CAPTION_CONTINUATIONS,
+    figure_label_token=figure_label_token,
+    synthetic_caption_record=synthetic_caption_record,
+)
+TEXT_REPAIR_HELPERS = make_bound_text_repair_helpers(
+    clean_text=CLEAN_TEXT,
+    word_count=WORD_COUNT,
+    inline_math_re=INLINE_MATH_RE,
+    block_source_spans=block_source_spans,
+    bbox_to_line_window=lambda bbox, *, page_height, line_count: (0, 0),
+    slice_page_text=lambda lines, *, start_line, end_line: "",
+    is_pdftotext_candidate_better=make_is_pdftotext_candidate_better(
+        clean_text=CLEAN_TEXT,
+        word_count=WORD_COUNT,
+    ),
+    rect_x_overlap_ratio=rect_x_overlap_ratio,
+    display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+    display_math_start_re=rsp.DISPLAY_MATH_START_RE,
+    math_signal_count=make_math_signal_count(math_token_re=MATH_TOKEN_RE),
+    hint_token_re=MATHPIX_HINT_TOKEN_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    truncated_prose_lead_stopwords=TRUNCATED_PROSE_LEAD_STOPWORDS,
+    parse_heading_label=parse_heading_label,
+)
+REPAIR_RECORD_TEXT_WITH_MATHPIX_HINTS = make_repair_record_text_with_mathpix_hints(
+    repair_record_text_with_mathpix_hints_impl=_text_repair_record_text_with_mathpix_hints,
+    mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+    is_short_ocr_fragment=IS_SHORT_OCR_FRAGMENT,
+    mathpix_text_hint_candidate=TEXT_REPAIR_HELPERS.mathpix_text_hint_candidate,
+    is_mathpix_text_hint_better=TEXT_REPAIR_HELPERS.is_mathpix_text_hint_better,
+    mathpix_prose_lead_repair_candidate=TEXT_REPAIR_HELPERS.mathpix_prose_lead_repair_candidate,
+    clean_text=CLEAN_TEXT,
+)
+NORMALIZE_DECODED_HEADING_TITLE = make_normalize_decoded_heading_title(
+    clean_text=CLEAN_TEXT,
+    clean_heading_title=clean_heading_title,
+)
+SPLIT_EMBEDDED_HEADING_PARAGRAPH = make_split_embedded_heading_paragraph(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    embedded_heading_prefix_re=rsp.EMBEDDED_HEADING_PREFIX_RE,
+    normalize_decoded_heading_title=NORMALIZE_DECODED_HEADING_TITLE,
+    collapse_ocr_split_caps=collapse_ocr_split_caps,
+    looks_like_bad_heading=looks_like_bad_heading,
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+PROMOTE_HEADING_LIKE_RECORDS = make_promote_heading_like_records(
+    promote_heading_like_records_impl=_heading_promote_heading_like_records,
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
+    parse_heading_label=parse_heading_label,
+    clean_heading_title=clean_heading_title,
+    looks_like_bad_heading=looks_like_bad_heading,
+    collapse_ocr_split_caps=collapse_ocr_split_caps,
+    decode_control_heading_label=decode_control_heading_label,
+    normalize_decoded_heading_title=NORMALIZE_DECODED_HEADING_TITLE,
+    split_embedded_heading_paragraph=SPLIT_EMBEDDED_HEADING_PARAGRAPH,
+    short_word_re=rsp.SHORT_WORD_RE,
+)
+MERGE_PARAGRAPH_RECORDS = make_merge_paragraph_records(
+    merge_paragraph_records_impl=_block_merge_paragraph_records,
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    should_merge_paragraph_records=SHOULD_MERGE_PARAGRAPH_RECORDS,
+    table_caption_re=rsp.TABLE_CAPTION_RE,
+)
+MERGE_PARAGRAPH_BLOCKS = make_merge_paragraph_blocks(
+    merge_paragraph_blocks_impl=_block_merge_paragraph_blocks,
+    block_source_spans=block_source_spans,
+    should_merge_paragraph_records=SHOULD_MERGE_PARAGRAPH_RECORDS,
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+)
+NORMALIZE_FOOTNOTE_BLOCKS = make_normalize_footnote_blocks(
+    normalize_footnote_blocks_impl=_block_normalize_footnote_blocks,
+    block_source_spans=block_source_spans,
+    short_word_re=rsp.SHORT_WORD_RE,
+    starts_like_sentence=starts_like_sentence,
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+)
+SUPPRESS_RUNNING_HEADER_BLOCKS = make_suppress_running_header_blocks(
+    suppress_running_header_blocks_impl=_block_suppress_running_header_blocks,
+    block_source_spans=block_source_spans,
+    compact_text=compact_text,
+    running_header_text_re=rsp.RUNNING_HEADER_TEXT_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
+)
+SUPPORT_HELPERS = make_bound_front_matter_support_helpers(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    compact_text=compact_text,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+    abstract_quality_flags=abstract_quality_flags,
+)
+PARSING_HELPERS = make_bound_front_matter_parsing_helpers(
+    clean_text=CLEAN_TEXT,
+    compact_text=compact_text,
+    normalize_title_key=normalize_title_key,
+    clean_heading_title=clean_heading_title,
+    parse_heading_label=parse_heading_label,
+    block_source_spans=block_source_spans,
+    title_lookup_keys=SUPPORT_HELPERS.title_lookup_keys,
+    abstract_quality_flags=abstract_quality_flags,
+    looks_like_affiliation=looks_like_affiliation,
+    author_marker_re=fmp.AUTHOR_MARKER_RE,
+    author_affiliation_index_re=fmp.AUTHOR_AFFILIATION_INDEX_RE,
+    name_token_re=fmp.NAME_TOKEN_RE,
+    abbreviated_venue_line_re=fmp.ABBREVIATED_VENUE_LINE_RE,
+    title_page_metadata_re=fmp.TITLE_PAGE_METADATA_RE,
+    front_matter_metadata_re=fmp.FRONT_MATTER_METADATA_RE,
+    reference_venue_re=fmp.REFERENCE_VENUE_RE,
+    author_token_re=fmp.AUTHOR_TOKEN_RE,
+    intro_marker_re=fmp.INTRO_MARKER_RE,
+    abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
+    abstract_lead_re=fmp.ABSTRACT_LEAD_RE,
+    trailing_abstract_boilerplate_re=fmp.TRAILING_ABSTRACT_BOILERPLATE_RE,
+    trailing_abstract_tail_re=fmp.TRAILING_ABSTRACT_TAIL_RE,
+    preprint_marker_re=fmp.PREPRINT_MARKER_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    author_note_re=fmp.AUTHOR_NOTE_RE,
+    citation_year_re=fmp.CITATION_YEAR_RE,
+    citation_author_split_re=fmp.CITATION_AUTHOR_SPLIT_RE,
+)
+RECOVERY_HELPERS = make_bound_front_matter_recovery_helpers(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    abstract_quality_flags=abstract_quality_flags,
+    clean_heading_title=clean_heading_title,
+    parse_heading_label=parse_heading_label,
+    normalize_title_key=normalize_title_key,
+    looks_like_front_matter_metadata=PARSING_HELPERS.looks_like_front_matter_metadata,
+    looks_like_body_section_marker=PARSING_HELPERS.looks_like_body_section_marker,
+    keywords_lead_re=fmp.KEYWORDS_LEAD_RE,
+    author_note_re=fmp.AUTHOR_NOTE_RE,
+    abstract_body_break_re=fmp.ABSTRACT_BODY_BREAK_RE,
+    figure_ref_re=fmp.FIGURE_REF_RE,
+    abstract_continuation_re=fmp.ABSTRACT_CONTINUATION_RE,
+    abstract_lead_re=fmp.ABSTRACT_LEAD_RE,
+    record_word_count=SUPPORT_HELPERS.record_word_count,
+    normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
+)
+REFERENCE_HELPERS = make_bound_reference_helpers(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    reference_start_re=REFERENCE_START_RE,
+    reference_year_re=REFERENCE_YEAR_RE,
+    reference_venue_re=fmp.REFERENCE_VENUE_RE,
+    reference_author_re=REFERENCE_AUTHOR_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    about_author_re=ABOUT_AUTHOR_RE,
+    mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+    normalize_title_key=normalize_title_key,
+    layout_record=LAYOUT_RECORD,
+)
+MISSING_FRONT_MATTER_AUTHOR = partial(
+    missing_front_matter_author,
+    MISSING_ABSTRACT_PLACEHOLDER,
+)
+MISSING_FRONT_MATTER_AFFILIATION = partial(
+    missing_front_matter_affiliation,
+    MISSING_ABSTRACT_PLACEHOLDER,
+)
+NORMALIZE_SECTION_TITLE = make_normalize_section_title(
+    normalize_section_title_impl=_section_normalize_section_title,
+    clean_text=CLEAN_TEXT,
+    clean_heading_title=clean_heading_title,
+    parse_heading_label=parse_heading_label,
+    normalize_title_key=normalize_title_key,
+)
+FRONT_BLOCK_TEXT = make_front_block_text(
+    front_block_text_impl=_support_front_block_text,
+    clean_text=CLEAN_TEXT,
+)
+BUILD_FRONT_MATTER = make_build_front_matter(
+    build_front_matter_impl=_assembly_build_front_matter,
+    split_leading_front_matter_records=PARSING_HELPERS.split_leading_front_matter_records,
+    clean_record=CLEAN_RECORD,
+    clean_text=CLEAN_TEXT,
+    record_word_count=SUPPORT_HELPERS.record_word_count,
+    record_width=SUPPORT_HELPERS.record_width,
+    abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
+    abstract_lead_re=fmp.ABSTRACT_LEAD_RE,
+    looks_like_front_matter_metadata=PARSING_HELPERS.looks_like_front_matter_metadata,
+    author_note_re=fmp.AUTHOR_NOTE_RE,
+    looks_like_affiliation=looks_like_affiliation,
+    looks_like_intro_marker=PARSING_HELPERS.looks_like_intro_marker,
+    looks_like_author_line=PARSING_HELPERS.looks_like_author_line,
+    looks_like_contact_name=PARSING_HELPERS.looks_like_contact_name,
+    matches_title_line=SUPPORT_HELPERS.matches_title_line,
+    looks_like_affiliation_continuation=PARSING_HELPERS.looks_like_affiliation_continuation,
+    funding_re=fmp.FUNDING_RE,
+    dedupe_text_lines=SUPPORT_HELPERS.dedupe_text_lines,
+    filter_front_matter_authors=PARSING_HELPERS.filter_front_matter_authors,
+    parse_authors=PARSING_HELPERS.parse_authors,
+    parse_authors_from_citation_line=PARSING_HELPERS.parse_authors_from_citation_line,
+    normalize_author_line=PARSING_HELPERS.normalize_author_line,
+    missing_front_matter_author=MISSING_FRONT_MATTER_AUTHOR,
+    build_affiliations_for_authors=PARSING_HELPERS.build_affiliations_for_authors,
+    missing_front_matter_affiliation=MISSING_FRONT_MATTER_AFFILIATION,
+    strip_author_prefix_from_affiliation_line=PARSING_HELPERS.strip_author_prefix_from_affiliation_line,
+    normalize_title_key=normalize_title_key,
+    clone_record_with_text=SUPPORT_HELPERS.clone_record_with_text,
+    looks_like_body_section_marker=PARSING_HELPERS.looks_like_body_section_marker,
+    preprint_marker_re=fmp.PREPRINT_MARKER_RE,
+    keywords_lead_re=fmp.KEYWORDS_LEAD_RE,
+    abstract_text_is_usable=PARSING_HELPERS.abstract_text_is_usable,
+    normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
+    default_review=default_review,
+    block_source_spans=block_source_spans,
+    front_matter_missing_placeholder=MISSING_ABSTRACT_PLACEHOLDER,
+)
+RECOVER_MISSING_FRONT_MATTER_ABSTRACT = make_recover_missing_front_matter_abstract(
+    recover_missing_front_matter_abstract_impl=_assembly_recover_missing_front_matter_abstract,
+    front_block_text=FRONT_BLOCK_TEXT,
+    abstract_quality_flags=abstract_quality_flags,
+    normalize_section_title=NORMALIZE_SECTION_TITLE,
+    leading_abstract_text=RECOVERY_HELPERS.leading_abstract_text,
+    abstract_text_is_recoverable=RECOVERY_HELPERS.abstract_text_is_recoverable,
+    replace_front_matter_abstract_text=RECOVERY_HELPERS.replace_front_matter_abstract_text,
+    opening_abstract_candidate_records=RECOVERY_HELPERS.opening_abstract_candidate_records,
+    normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
+)
+TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH = make_trim_embedded_display_math_from_paragraph(
+    trim_embedded_display_math_from_paragraph_impl=_math_trim_embedded_display_math_from_paragraph,
+    block_source_spans=block_source_spans,
+    clean_text=CLEAN_TEXT,
+    display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+    display_math_resume_re=rsp.DISPLAY_MATH_RESUME_RE,
+    display_math_start_re=rsp.DISPLAY_MATH_START_RE,
+    mathish_ratio=MATHISH_RATIO,
+    strong_operator_count=strong_operator_count,
+)
+INJECT_EXTERNAL_MATH_RECORDS = make_inject_external_math_records(
+    clean_text=CLEAN_TEXT,
+    display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+    mathish_ratio=MATHISH_RATIO,
+    strong_operator_count=strong_operator_count,
+)
+IS_FIGURE_DEBRIS = make_is_figure_debris(
+    clean_text=CLEAN_TEXT,
+    block_source_spans=block_source_spans,
+    diagram_decision_re=DIAGRAM_DECISION_RE,
+    diagram_query_re=DIAGRAM_QUERY_RE,
+    diagram_action_re=DIAGRAM_ACTION_RE,
+    terminal_punctuation_re=TERMINAL_PUNCTUATION_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    rect_intersection_area=rect_intersection_area,
+)
+
+_append_figure_caption_fragment = APPEND_FIGURE_CAPTION_FRAGMENT
+_leading_abstract_text = RECOVERY_HELPERS.leading_abstract_text
+_should_replace_front_matter_abstract = SUPPORT_HELPERS.should_replace_front_matter_abstract
+_strip_trailing_abstract_boilerplate = PARSING_HELPERS.strip_trailing_abstract_boilerplate
+_extract_reference_records_from_tail_section = REFERENCE_HELPERS.extract_reference_records_from_tail_section
+_inject_external_math_records = INJECT_EXTERNAL_MATH_RECORDS
+_is_figure_debris = IS_FIGURE_DEBRIS
+_is_reference_start = REFERENCE_HELPERS.is_reference_start
+_is_short_ocr_fragment = IS_SHORT_OCR_FRAGMENT
+_looks_like_affiliation = looks_like_affiliation
+_looks_like_author_line = PARSING_HELPERS.looks_like_author_line
+_looks_like_running_header_record = LOOKS_LIKE_RUNNING_HEADER_RECORD
+_looks_like_table_body_debris = LOOKS_LIKE_TABLE_BODY_DEBRIS
+_reference_records_from_mathpix_layout = REFERENCE_HELPERS.reference_records_from_mathpix_layout
+_suppress_embedded_table_headings = SUPPRESS_EMBEDDED_TABLE_HEADINGS
+_should_merge_paragraph_records = SHOULD_MERGE_PARAGRAPH_RECORDS
+_split_late_prelude_for_missing_intro = RECOVERY_HELPERS.split_late_prelude_for_missing_intro
+_strip_known_running_header_text = STRIP_KNOWN_RUNNING_HEADER_TEXT
+
+
 def _merge_paragraph_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
-    return _block_merge_paragraph_records(
-        records,
-        clean_text=rb._clean_text,
-        block_source_spans=rb._block_source_spans,
-        should_merge_paragraph_records=rb._should_merge_paragraph_records,
-        table_caption_re=rb.TABLE_CAPTION_RE,
-    )
+    return MERGE_PARAGRAPH_RECORDS(records)
 
 
 def _merge_paragraph_blocks(
     blocks: list[dict[str, object]],
     sections: list[dict[str, object]],
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
-    return _block_merge_paragraph_blocks(
-        blocks,
-        sections,
-        block_source_spans=rb._block_source_spans,
-        should_merge_paragraph_records=rb._should_merge_paragraph_records,
-        strip_known_running_header_text=rb._strip_known_running_header_text,
-    )
+    return MERGE_PARAGRAPH_BLOCKS(blocks, sections)
 
 
 def _normalize_footnote_blocks(
     blocks: list[dict[str, object]],
     sections: list[dict[str, object]],
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
-    return _block_normalize_footnote_blocks(
-        blocks,
-        sections,
-        block_source_spans=rb._block_source_spans,
-        short_word_re=rb.SHORT_WORD_RE,
-        starts_like_sentence=rb._starts_like_sentence,
-        strip_known_running_header_text=rb._strip_known_running_header_text,
-    )
+    return NORMALIZE_FOOTNOTE_BLOCKS(blocks, sections)
 
 
 def _suppress_running_header_blocks(
     blocks: list[dict[str, object]],
     sections: list[dict[str, object]],
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
-    return _block_suppress_running_header_blocks(
-        blocks,
-        sections,
-        block_source_spans=rb._block_source_spans,
-        compact_text=rb.compact_text,
-        running_header_text_re=rb.RUNNING_HEADER_TEXT_RE,
-        short_word_re=rb.SHORT_WORD_RE,
-        strip_known_running_header_text=rb._strip_known_running_header_text,
-    )
+    return SUPPRESS_RUNNING_HEADER_BLOCKS(blocks, sections)
 
 
 def _merge_layout_and_figure_records(
     layout_blocks: list[LayoutBlock],
     figures: list[dict[str, object]],
 ) -> tuple[list[dict[str, object]], dict[str, LayoutBlock]]:
-    return _layout_merge_layout_and_figure_records(
-        layout_blocks,
-        figures,
-        layout_record=rb._layout_record,
-        absorb_figure_caption_continuations=rb._absorb_figure_caption_continuations,
-        figure_label_token=rb._figure_label_token,
-        synthetic_caption_record=rb._synthetic_caption_record,
-    )
+    return MERGE_LAYOUT_AND_FIGURE_RECORDS(layout_blocks, figures)
 
 
 def _repair_record_text_with_mathpix_hints(
     records: list[dict[str, object]],
     mathpix_layout: dict[str, object] | None,
 ) -> list[dict[str, object]]:
-    return _text_repair_record_text_with_mathpix_hints(
-        records,
-        mathpix_layout,
-        mathpix_text_blocks_by_page=rb._mathpix_text_blocks_by_page,
-        is_short_ocr_fragment=rb._is_short_ocr_fragment,
-        mathpix_text_hint_candidate=rb._mathpix_text_hint_candidate,
-        is_mathpix_text_hint_better=rb._is_mathpix_text_hint_better,
-        mathpix_prose_lead_repair_candidate=rb._mathpix_prose_lead_repair_candidate,
-        clean_text=rb._clean_text,
-    )
+    return REPAIR_RECORD_TEXT_WITH_MATHPIX_HINTS(records, mathpix_layout)
 
 
 def _split_embedded_heading_paragraph(record: dict[str, object]) -> tuple[str, str] | None:
-    return _heading_split_embedded_heading_paragraph(
-        record,
-        clean_text=rb._clean_text,
-        block_source_spans=rb._block_source_spans,
-        embedded_heading_prefix_re=rb.EMBEDDED_HEADING_PREFIX_RE,
-        normalize_decoded_heading_title=rb._normalize_decoded_heading_title,
-        collapse_ocr_split_caps=rb.collapse_ocr_split_caps,
-        looks_like_bad_heading=rb.looks_like_bad_heading,
-        short_word_re=rb.SHORT_WORD_RE,
-    )
+    return SPLIT_EMBEDDED_HEADING_PARAGRAPH(record)
 
 
 def _promote_heading_like_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
-    return _heading_promote_heading_like_records(
-        records,
-        clean_text=rb._clean_text,
-        block_source_spans=rb._block_source_spans,
-        abstract_marker_only_re=rb.ABSTRACT_MARKER_ONLY_RE,
-        parse_heading_label=rb.parse_heading_label,
-        clean_heading_title=rb.clean_heading_title,
-        looks_like_bad_heading=rb.looks_like_bad_heading,
-        collapse_ocr_split_caps=rb.collapse_ocr_split_caps,
-        decode_control_heading_label=rb._decode_control_heading_label,
-        normalize_decoded_heading_title=rb._normalize_decoded_heading_title,
-        split_embedded_heading_paragraph=_split_embedded_heading_paragraph,
-        short_word_re=rb.SHORT_WORD_RE,
-    )
+    return PROMOTE_HEADING_LIKE_RECORDS(records)
 
 
 def _split_leading_front_matter_records(
     prelude: list[dict[str, object]],
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
-    return _policy_split_leading_front_matter_records(
-        prelude,
-        clean_text=rb._clean_text,
-        looks_like_intro_marker=rb._looks_like_intro_marker,
-        looks_like_page_one_front_matter_tail=rb._looks_like_page_one_front_matter_tail,
-    )
+    return PARSING_HELPERS.split_leading_front_matter_records(prelude)
 
 
 def _normalize_section_title(title: str) -> str:
-    return _section_normalize_section_title(
-        title,
-        clean_text=rb._clean_text,
-        clean_heading_title=rb.clean_heading_title,
-        parse_heading_label=rb.parse_heading_label,
-        normalize_title_key=rb.normalize_title_key,
-    )
+    return NORMALIZE_SECTION_TITLE(title)
 
 
 def _front_block_text(blocks: list[dict[str, object]], block_id: str | None) -> str:
-    return _support_front_block_text(blocks, block_id, clean_text=rb._clean_text)
+    return FRONT_BLOCK_TEXT(blocks, block_id)
 
 
 def _build_front_matter(
@@ -199,47 +554,12 @@ def _build_front_matter(
     blocks: list[dict[str, object]],
     next_block_index: int,
 ) -> tuple[dict[str, object], list[dict[str, object]], int, list[dict[str, object]]]:
-    return _assembly_build_front_matter(
+    return BUILD_FRONT_MATTER(
         paper_id,
         prelude,
         page_one_records,
         blocks,
         next_block_index,
-        split_leading_front_matter_records=_split_leading_front_matter_records,
-        clean_record=rb._clean_record,
-        clean_text=rb._clean_text,
-        record_word_count=rb._record_word_count,
-        record_width=rb._record_width,
-        abstract_marker_only_re=rb.ABSTRACT_MARKER_ONLY_RE,
-        abstract_lead_re=rb.ABSTRACT_LEAD_RE,
-        looks_like_front_matter_metadata=rb._looks_like_front_matter_metadata,
-        author_note_re=rb.AUTHOR_NOTE_RE,
-        looks_like_affiliation=rb._looks_like_affiliation,
-        looks_like_intro_marker=rb._looks_like_intro_marker,
-        looks_like_author_line=rb._looks_like_author_line,
-        looks_like_contact_name=rb._looks_like_contact_name,
-        matches_title_line=rb._matches_title_line,
-        looks_like_affiliation_continuation=rb._looks_like_affiliation_continuation,
-        funding_re=rb.FUNDING_RE,
-        dedupe_text_lines=rb._dedupe_text_lines,
-        filter_front_matter_authors=rb._filter_front_matter_authors,
-        parse_authors=rb._parse_authors,
-        parse_authors_from_citation_line=rb._parse_authors_from_citation_line,
-        normalize_author_line=rb._normalize_author_line,
-        missing_front_matter_author=rb._missing_front_matter_author,
-        build_affiliations_for_authors=rb._build_affiliations_for_authors,
-        missing_front_matter_affiliation=rb._missing_front_matter_affiliation,
-        strip_author_prefix_from_affiliation_line=rb._strip_author_prefix_from_affiliation_line,
-        normalize_title_key=rb.normalize_title_key,
-        clone_record_with_text=rb._clone_record_with_text,
-        looks_like_body_section_marker=rb._looks_like_body_section_marker,
-        preprint_marker_re=rb.PREPRINT_MARKER_RE,
-        keywords_lead_re=rb.KEYWORDS_LEAD_RE,
-        abstract_text_is_usable=rb._abstract_text_is_usable,
-        normalize_abstract_candidate_text=rb._normalize_abstract_candidate_text,
-        default_review=rb.default_review,
-        block_source_spans=rb._block_source_spans,
-        front_matter_missing_placeholder=rb.MISSING_ABSTRACT_PLACEHOLDER,
     )
 
 
@@ -249,19 +569,11 @@ def _recover_missing_front_matter_abstract(
     prelude: list[dict[str, object]],
     ordered_roots: list[SectionNode],
 ) -> bool:
-    return _assembly_recover_missing_front_matter_abstract(
+    return RECOVER_MISSING_FRONT_MATTER_ABSTRACT(
         front_matter,
         blocks,
         prelude,
         ordered_roots,
-        front_block_text=_front_block_text,
-        abstract_quality_flags=rb.abstract_quality_flags,
-        normalize_section_title=_normalize_section_title,
-        leading_abstract_text=rb._leading_abstract_text,
-        abstract_text_is_recoverable=rb._abstract_text_is_recoverable,
-        replace_front_matter_abstract_text=rb._replace_front_matter_abstract_text,
-        opening_abstract_candidate_records=rb._opening_abstract_candidate_records,
-        normalize_abstract_candidate_text=rb._normalize_abstract_candidate_text,
     )
 
 
@@ -270,17 +582,10 @@ def _trim_embedded_display_math_from_paragraph(
     record: dict[str, object],
     overlapping_math: list[dict[str, object]],
 ) -> str:
-    return _math_trim_embedded_display_math_from_paragraph(
+    return TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH(
         text,
         record,
         overlapping_math,
-        block_source_spans=rb._block_source_spans,
-        clean_text=rb._clean_text,
-        display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
-        display_math_resume_re=rb.DISPLAY_MATH_RESUME_RE,
-        display_math_start_re=rb.DISPLAY_MATH_START_RE,
-        mathish_ratio=rb._mathish_ratio,
-        strong_operator_count=rb._strong_operator_count,
     )
 
 

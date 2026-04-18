@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.formula_diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
+from pipeline.math.diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
 
 
 class FormulaDiagnosticsTest(unittest.TestCase):

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Callable
 
 from pipeline.reconcile.text_repairs import (
@@ -18,6 +19,19 @@ from pipeline.reconcile.text_repairs import (
     should_skip_pdftotext_repair as repair_should_skip_pdftotext_repair,
     token_subsequence_index as repair_token_subsequence_index,
 )
+
+
+@dataclass(frozen=True)
+class BoundTextRepairHelpers:
+    should_skip_pdftotext_repair: Callable[[dict[str, Any]], bool]
+    repair_record_text_with_pdftotext: Callable[
+        [list[dict[str, Any]], dict[int, list[str]], dict[int, float]],
+        list[dict[str, Any]],
+    ]
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[Any]]]
+    mathpix_text_hint_candidate: Callable[[dict[str, Any], dict[int, list[Any]]], str]
+    mathpix_prose_lead_repair_candidate: Callable[[dict[str, Any], dict[int, list[Any]]], str]
+    is_mathpix_text_hint_better: Callable[[str, str], bool]
 
 
 def make_should_skip_pdftotext_repair(
@@ -245,3 +259,90 @@ def make_is_mathpix_text_hint_better(
 mathpix_text_blocks_by_page = repair_mathpix_text_blocks_by_page
 inline_tex_signal_count = repair_inline_tex_signal_count
 token_subsequence_index = repair_token_subsequence_index
+
+
+def make_bound_text_repair_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    word_count: Callable[[str], int],
+    inline_math_re: Any,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    bbox_to_line_window: Callable[..., tuple[int, int]],
+    slice_page_text: Callable[..., str],
+    is_pdftotext_candidate_better: Callable[[str, str, str], bool],
+    rect_x_overlap_ratio: Callable[[dict[str, Any], dict[str, Any]], float],
+    display_math_prose_cue_re: Any,
+    display_math_start_re: Any,
+    math_signal_count: Callable[[str], int],
+    hint_token_re: Any,
+    short_word_re: Any,
+    truncated_prose_lead_stopwords: set[str],
+    parse_heading_label: Callable[[str], Any],
+) -> BoundTextRepairHelpers:
+    should_skip_pdftotext_repair = make_should_skip_pdftotext_repair(
+        clean_text=clean_text,
+        word_count=word_count,
+        inline_math_re=inline_math_re,
+    )
+    repair_record_text_with_pdftotext = make_repair_record_text_with_pdftotext(
+        should_skip_pdftotext_repair=should_skip_pdftotext_repair,
+        block_source_spans=block_source_spans,
+        bbox_to_line_window=bbox_to_line_window,
+        slice_page_text=slice_page_text,
+        clean_text=clean_text,
+        is_pdftotext_candidate_better=is_pdftotext_candidate_better,
+    )
+    record_union_bbox = make_record_union_bbox(
+        block_source_spans=block_source_spans,
+    )
+    matching_mathpix_text_blocks = make_matching_mathpix_text_blocks(
+        record_union_bbox=record_union_bbox,
+        rect_x_overlap_ratio=rect_x_overlap_ratio,
+    )
+    mathpix_hint_alignment_text = make_mathpix_hint_alignment_text(
+        clean_text=clean_text,
+        display_math_prose_cue_re=display_math_prose_cue_re,
+        display_math_start_re=display_math_start_re,
+        math_signal_count=math_signal_count,
+        word_count=word_count,
+    )
+    mathpix_text_candidate_score = make_mathpix_text_candidate_score(
+        mathpix_hint_alignment_text=mathpix_hint_alignment_text,
+        mathpix_hint_tokens=make_mathpix_hint_tokens(
+            hint_token_re=hint_token_re,
+        ),
+        inline_tex_signal_count=inline_tex_signal_count,
+    )
+    mathpix_text_hint_candidate = make_mathpix_text_hint_candidate(
+        matching_mathpix_text_blocks=matching_mathpix_text_blocks,
+        word_count=word_count,
+        mathpix_hint_alignment_text=mathpix_hint_alignment_text,
+        clean_text=clean_text,
+        mathpix_text_candidate_score=mathpix_text_candidate_score,
+    )
+    mathpix_prose_lead_repair_candidate = make_mathpix_prose_lead_repair_candidate(
+        clean_text=clean_text,
+        looks_like_truncated_prose_lead=make_looks_like_truncated_prose_lead(
+            clean_text=clean_text,
+            short_word_re=short_word_re,
+            truncated_prose_lead_stopwords=truncated_prose_lead_stopwords,
+        ),
+        matching_mathpix_text_blocks=matching_mathpix_text_blocks,
+        short_word_re=short_word_re,
+        word_count=word_count,
+        parse_heading_label=parse_heading_label,
+        token_subsequence_index=token_subsequence_index,
+    )
+    is_mathpix_text_hint_better = make_is_mathpix_text_hint_better(
+        clean_text=clean_text,
+        word_count=word_count,
+        inline_tex_signal_count=inline_tex_signal_count,
+    )
+    return BoundTextRepairHelpers(
+        should_skip_pdftotext_repair=should_skip_pdftotext_repair,
+        repair_record_text_with_pdftotext=repair_record_text_with_pdftotext,
+        mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+        mathpix_text_hint_candidate=mathpix_text_hint_candidate,
+        mathpix_prose_lead_repair_candidate=mathpix_prose_lead_repair_candidate,
+        is_mathpix_text_hint_better=is_mathpix_text_hint_better,
+    )

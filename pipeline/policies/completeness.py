@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pipeline.text_utils import compact_text
+from pipeline.text.headings import compact_text
 
 
 FIGURE_REFERENCE_RE = re.compile(r"\b(?:fig(?:ure)?s?\.?|plate)\s*\d+[A-Za-z]?\b", re.IGNORECASE)

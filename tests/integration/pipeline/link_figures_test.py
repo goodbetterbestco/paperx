@@ -10,7 +10,7 @@ if str(ROOT) not in sys.path:
 
 sys.modules.setdefault("fitz", types.SimpleNamespace(Document=object, Matrix=object, Page=object, Rect=object))
 
-from pipeline.figure_linking import build_manifest_from_pdf_path, caption_label, render_crop_if_missing
+from pipeline.figures.linking import build_manifest_from_pdf_path, caption_label, render_crop_if_missing
 
 
 class LinkFiguresTest(unittest.TestCase):

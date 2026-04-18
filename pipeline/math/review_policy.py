@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pipeline.text_utils import compact_text
+from pipeline.text.headings import compact_text
 from pipeline.types import default_review
 
 

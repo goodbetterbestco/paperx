@@ -9,7 +9,7 @@ from pipeline.corpus_layout import ProjectLayout, current_layout
 from pipeline.sources.docling import docling_json_to_external_sources, run_docling
 from pipeline.sources.external import external_layout_path, external_math_path
 from pipeline.sources.mathpix import mathpix_pages_to_external_sources, run_mathpix
-from pipeline.pdftotext_overlay import overlay_pdftotext_onto_layout
+from pipeline.sources.pdftotext_overlay import overlay_pdftotext_onto_layout
 
 
 def _load_json(path: str | Path) -> dict[str, Any]:

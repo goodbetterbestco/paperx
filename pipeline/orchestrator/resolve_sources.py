@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any, Callable
 
 from pipeline.config import PipelineConfig
-from pipeline.staleness_policy import build_input_fingerprints
+from pipeline.output.fingerprints import build_input_fingerprints
 from pipeline.state import PaperState
 
 

@@ -11,11 +11,11 @@ if str(ROOT) not in sys.path:
 
 sys.modules.setdefault("fitz", types.SimpleNamespace(Document=object, Matrix=object, Page=object, Rect=object))
 
-from pipeline.build_corpus_lexicon import _build_lexicon
+from pipeline.corpus.lexicon import corpus_join_terms, load_corpus_lexicon
+from pipeline.corpus.lexicon_builder import _build_lexicon
 from pipeline.corpus_layout import ProjectLayout, display_path
-from pipeline.corpus_metadata import load_figure_expectations, paper_figure_metadata
-from pipeline.figure_linking import build_manifest_from_pdf_path
-from pipeline.lexicon import corpus_join_terms, load_corpus_lexicon
+from pipeline.corpus.metadata import load_figure_expectations, paper_figure_metadata
+from pipeline.figures.linking import build_manifest_from_pdf_path
 
 
 def _corpus_layout(root: Path) -> ProjectLayout:

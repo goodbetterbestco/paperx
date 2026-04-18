@@ -6,9 +6,36 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
-from pipeline.reconcile.external_math import inject_external_math_records, match_external_math_entry
+import pipeline.reconcile.shared_patterns as rsp
+from pipeline.reconcile.external_math import match_external_math_entry
+from pipeline.reconcile.external_math_binding_runtime import make_inject_external_math_records
+from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE, MATH_TOKEN_RE
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+    make_mathish_ratio,
+    make_word_count,
+)
+from pipeline.text.headings import compact_text
 from pipeline.types import LayoutBlock
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+WORD_COUNT = make_word_count(short_word_re=rsp.SHORT_WORD_RE)
+MATHISH_RATIO = make_mathish_ratio(
+    word_count=WORD_COUNT,
+    math_signal_count=make_math_signal_count(math_token_re=MATH_TOKEN_RE),
+)
+INJECT_EXTERNAL_MATH_RECORDS = make_inject_external_math_records(
+    clean_text=CLEAN_TEXT,
+    display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+    mathish_ratio=MATHISH_RATIO,
+    strong_operator_count=strong_operator_count,
+)
 
 
 def _record(text: str) -> dict[str, object]:
@@ -48,8 +75,8 @@ class ExternalMathTest(unittest.TestCase):
         matched = match_external_math_entry(
             _record("x = y + z"),
             external_by_page,
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
+            block_source_spans=block_source_spans,
+            clean_text=CLEAN_TEXT,
         )
 
         self.assertIsNotNone(matched)
@@ -83,18 +110,10 @@ class ExternalMathTest(unittest.TestCase):
             }
         ]
 
-        combined, injected = inject_external_math_records(
+        combined, injected = INJECT_EXTERNAL_MATH_RECORDS(
             [],
             layout_blocks,
             external_entries,
-            clean_text=rb._clean_text,
-            looks_like_leading_display_math_echo=lambda text: rb.reconcile_looks_like_leading_display_math_echo(
-                text,
-                clean_text=rb._clean_text,
-                display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
-                mathish_ratio=rb._mathish_ratio,
-                strong_operator_count=rb._strong_operator_count,
-            ),
         )
 
         self.assertEqual(injected, {"m1"})

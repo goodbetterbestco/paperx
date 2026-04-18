@@ -6,8 +6,41 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
-from pipeline.reconcile.math_fragments import merge_math_fragment_records
+import pipeline.reconcile.shared_patterns as rsp
+from pipeline.math import looks_like_prose_paragraph
+from pipeline.reconcile.math_fragments_runtime import (
+    make_looks_like_math_fragment,
+    make_math_signal_count,
+    make_merge_math_fragment_records,
+)
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE, MATH_TOKEN_RE
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+    make_record_analysis_text,
+)
+from pipeline.text.headings import compact_text
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+RECORD_ANALYSIS_TEXT = make_record_analysis_text(clean_text=CLEAN_TEXT)
+MATH_SIGNAL_COUNT = make_math_signal_count(math_token_re=MATH_TOKEN_RE)
+LOOKS_LIKE_MATH_FRAGMENT = make_looks_like_math_fragment(
+    record_analysis_text=RECORD_ANALYSIS_TEXT,
+    looks_like_prose_paragraph=looks_like_prose_paragraph,
+    short_word_re=rsp.SHORT_WORD_RE,
+    math_token_re=MATH_TOKEN_RE,
+)
+MERGE_MATH_FRAGMENT_RECORDS = make_merge_math_fragment_records(
+    looks_like_math_fragment=LOOKS_LIKE_MATH_FRAGMENT,
+    clean_text=CLEAN_TEXT,
+    record_analysis_text=RECORD_ANALYSIS_TEXT,
+    math_signal_count=MATH_SIGNAL_COUNT,
+    block_source_spans=block_source_spans,
+)
 
 
 def _record(text: str, *, group_index: int) -> dict[str, object]:
@@ -31,14 +64,7 @@ class MathFragmentsTest(unittest.TestCase):
             _record("( u )", group_index=30),
         ]
 
-        merged = merge_math_fragment_records(
-            records,
-            looks_like_math_fragment=rb._looks_like_math_fragment,
-            clean_text=rb._clean_text,
-            record_analysis_text=rb._record_analysis_text,
-            math_signal_count=rb._math_signal_count,
-            block_source_spans=rb._block_source_spans,
-        )
+        merged = MERGE_MATH_FRAGMENT_RECORDS(records)
 
         self.assertEqual(len(merged), 1)
         self.assertEqual(merged[0]["meta"]["forced_math_kind"], "display")

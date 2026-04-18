@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 
-from pipeline.text_utils import compact_text
+from pipeline.text.headings import compact_text
 
 
 MISSING_ABSTRACT_PLACEHOLDER = "[missing from original]"

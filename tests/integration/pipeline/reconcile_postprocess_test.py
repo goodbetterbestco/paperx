@@ -6,11 +6,38 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
+import pipeline.reconcile.shared_patterns as rsp
 from pipeline.reconcile.block_merging import merge_code_records, merge_paragraph_records
+from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
 from pipeline.reconcile.math_suppression import (
     looks_like_leading_display_math_echo,
     trim_embedded_display_math_from_paragraph,
+)
+from pipeline.reconcile.section_filter_binding_runtime import make_should_merge_paragraph_records
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE, MATH_TOKEN_RE, TERMINAL_PUNCTUATION_RE
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+    make_mathish_ratio,
+    make_word_count,
+)
+from pipeline.text.headings import compact_text
+
+
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+WORD_COUNT = make_word_count(short_word_re=rsp.SHORT_WORD_RE)
+MATHISH_RATIO = make_mathish_ratio(
+    word_count=WORD_COUNT,
+    math_signal_count=make_math_signal_count(math_token_re=MATH_TOKEN_RE),
+)
+SHOULD_MERGE_PARAGRAPH_RECORDS = make_should_merge_paragraph_records(
+    clean_text=CLEAN_TEXT,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+    terminal_punctuation_re=TERMINAL_PUNCTUATION_RE,
 )
 
 
@@ -53,10 +80,10 @@ class ReconcilePostprocessTest(unittest.TestCase):
 
         merged = merge_paragraph_records(
             [previous, caption, current],
-            clean_text=rb._clean_text,
-            block_source_spans=rb._block_source_spans,
-            should_merge_paragraph_records=rb._should_merge_paragraph_records,
-            table_caption_re=rb.TABLE_CAPTION_RE,
+            clean_text=CLEAN_TEXT,
+            block_source_spans=block_source_spans,
+            should_merge_paragraph_records=SHOULD_MERGE_PARAGRAPH_RECORDS,
+            table_caption_re=rsp.TABLE_CAPTION_RE,
         )
 
         self.assertEqual(len(merged), 2)
@@ -71,8 +98,8 @@ class ReconcilePostprocessTest(unittest.TestCase):
 
         merged = merge_code_records(
             [first, second],
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
+            block_source_spans=block_source_spans,
+            clean_text=CLEAN_TEXT,
         )
 
         self.assertEqual(len(merged), 1)
@@ -102,13 +129,13 @@ class ReconcilePostprocessTest(unittest.TestCase):
             record["text"],
             record,
             overlapping_math,
-            block_source_spans=rb._block_source_spans,
-            clean_text=rb._clean_text,
-            display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
-            display_math_resume_re=rb.DISPLAY_MATH_RESUME_RE,
-            display_math_start_re=rb.DISPLAY_MATH_START_RE,
-            mathish_ratio=rb._mathish_ratio,
-            strong_operator_count=rb._strong_operator_count,
+            block_source_spans=block_source_spans,
+            clean_text=CLEAN_TEXT,
+            display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+            display_math_resume_re=rsp.DISPLAY_MATH_RESUME_RE,
+            display_math_start_re=rsp.DISPLAY_MATH_START_RE,
+            mathish_ratio=MATHISH_RATIO,
+            strong_operator_count=strong_operator_count,
         )
 
         self.assertEqual(trimmed, "however the proof continues.")
@@ -117,10 +144,10 @@ class ReconcilePostprocessTest(unittest.TestCase):
         self.assertTrue(
             looks_like_leading_display_math_echo(
                 "x = y + z + w therefore we continue",
-                clean_text=rb._clean_text,
-                display_math_prose_cue_re=rb.DISPLAY_MATH_PROSE_CUE_RE,
-                mathish_ratio=rb._mathish_ratio,
-                strong_operator_count=rb._strong_operator_count,
+                clean_text=CLEAN_TEXT,
+                display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
+                mathish_ratio=MATHISH_RATIO,
+                strong_operator_count=strong_operator_count,
             )
         )
 

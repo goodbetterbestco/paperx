@@ -5,7 +5,7 @@ from typing import Any
 
 from pipeline.config import PipelineConfig, TextEngine, build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout, current_layout
-from pipeline.reconcile_blocks import reconcile_paper_state
+from pipeline.reconcile.entrypoint import reconcile_paper_state
 from pipeline.state import PaperState
 
 

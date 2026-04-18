@@ -10,14 +10,14 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.external_sources import (
+from pipeline.output.artifacts import write_canonical_outputs
+from pipeline.sources.external import (
     external_layout_path,
     external_math_path,
     load_external_layout,
     load_external_math,
     load_mathpix_layout,
 )
-from pipeline.output_artifacts import write_canonical_outputs
 
 
 def _corpus_layout(root: Path) -> ProjectLayout:
@@ -130,8 +130,8 @@ class LayoutIoTest(unittest.TestCase):
             }
 
             with (
-                patch("pipeline.output_artifacts.validate_canonical"),
-                patch("pipeline.output_artifacts.render_document", return_value="# synthetic\n"),
+                patch("pipeline.output.artifacts.validate_canonical"),
+                patch("pipeline.output.artifacts.render_document", return_value="# synthetic\n"),
             ):
                 outputs = write_canonical_outputs(paper_id, document, include_review=True, layout=layout)
 

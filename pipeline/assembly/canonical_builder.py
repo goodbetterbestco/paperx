@@ -6,7 +6,7 @@ from pipeline.math.compile import compile_formulas
 from pipeline.text.document_policy import apply_document_policy
 from pipeline.math.semantic_ir import annotate_formula_semantic_expr
 from pipeline.math.semantic_policy import annotate_formula_classifications
-from pipeline.staleness_policy import build_metadata_for_paper
+from pipeline.output.fingerprints import build_metadata_for_paper
 
 
 def build_canonical_document(

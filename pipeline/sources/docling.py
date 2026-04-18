@@ -15,7 +15,7 @@ from pipeline.sources.external import external_layout_path, external_math_path
 from pipeline.sources.layout import extract_layout
 from pipeline.math.review_policy import review_for_math_entry
 from pipeline.runtime_paths import ensure_repo_tmp_dir, runtime_env
-from pipeline.text_utils import clean_heading_title, compact_text, normalize_title_key, parse_heading_label
+from pipeline.text.headings import clean_heading_title, compact_text, normalize_title_key, parse_heading_label
 from pipeline.types import default_formula_conversion, default_review
 
 ENGINE_ROOT = Path(__file__).resolve().parents[2]
@@ -62,17 +62,20 @@ def run_docling(
     page_batch_size: int = 4,
     timeout_seconds: int = 1800,
     layout: ProjectLayout | None = None,
-    docling_output_dir_fn=_docling_output_dir,
-    paper_pdf_path_fn=_paper_pdf_path,
-    resolve_docling_command_fn=_resolve_docling_command,
+    docling_output_dir_fn=None,
+    paper_pdf_path_fn=None,
+    resolve_docling_command_fn=None,
     subprocess_run=subprocess.run,
     runtime_env_fn=runtime_env,
 ) -> Path:
-    output_dir = docling_output_dir_fn(paper_id, output_dir)
+    active_docling_output_dir = docling_output_dir_fn or _docling_output_dir
+    active_paper_pdf_path = paper_pdf_path_fn or _paper_pdf_path
+    active_resolve_docling_command = resolve_docling_command_fn or _resolve_docling_command
+    output_dir = active_docling_output_dir(paper_id, output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    pdf_path = paper_pdf_path_fn(paper_id, layout=layout)
+    pdf_path = active_paper_pdf_path(paper_id, layout=layout)
     command = [
-        *resolve_docling_command_fn(),
+        *active_resolve_docling_command(),
         str(pdf_path),
         "--from",
         "pdf",
@@ -250,9 +253,10 @@ def docling_json_to_external_sources(
     paper_id: str,
     *,
     layout: ProjectLayout | None = None,
-    extract_layout_fn=extract_layout,
+    extract_layout_fn=None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    native_layout = extract_layout_fn(paper_id, layout=layout)
+    active_extract_layout = extract_layout_fn or extract_layout
+    native_layout = active_extract_layout(paper_id, layout=layout)
     page_sizes = list(native_layout["page_sizes_pt"])
     page_heights = _page_heights(native_layout)
     page_count = int(native_layout["page_count"])

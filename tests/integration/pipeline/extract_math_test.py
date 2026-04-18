@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.extract_math import (
+from pipeline.math.extract import (
     classify_math_block,
     extract_general_inline_math_spans,
     looks_like_prose_math_fragment,

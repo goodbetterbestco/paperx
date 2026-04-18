@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from pipeline.math.mathml import compile_latex_targets as compile_latex_targets_impl
+from pipeline.math.mathml import compile_latex_targets
 from pipeline.types import default_formula_conversion
 
 
 def _compiled_formula_item(
     entry: dict[str, Any],
     *,
-    compile_latex_targets=compile_latex_targets_impl,
+    compile_latex_targets_fn=None,
 ) -> dict[str, Any]:
     item = dict(entry)
     item.setdefault("semantic_expr", None)
@@ -21,7 +21,8 @@ def _compiled_formula_item(
         item["conversion"] = existing_conversion
         return item
 
-    compiled_targets, conversion = compile_latex_targets(str(item.get("display_latex", "")))
+    active_compile_latex_targets = compile_latex_targets_fn or compile_latex_targets
+    compiled_targets, conversion = active_compile_latex_targets(str(item.get("display_latex", "")))
     item["compiled_targets"] = compiled_targets
     item["conversion"] = conversion
     return item
@@ -54,8 +55,9 @@ def _group_conversion_from_items(items: list[dict[str, Any]]) -> tuple[dict[str,
 def compile_formulas(
     math_entries: list[dict[str, Any]],
     *,
-    compile_latex_targets=compile_latex_targets_impl,
+    compile_latex_targets_fn=None,
 ) -> list[dict[str, Any]]:
+    active_compile_latex_targets = compile_latex_targets_fn or compile_latex_targets
     compiled: list[dict[str, Any]] = []
     for entry in math_entries:
         item = dict(entry)
@@ -64,7 +66,7 @@ def compile_formulas(
             for group_item in item.get("items", []):
                 next_item = _compiled_formula_item(
                     group_item,
-                    compile_latex_targets=compile_latex_targets,
+                    compile_latex_targets_fn=active_compile_latex_targets,
                 )
                 items.append(next_item)
             item["items"] = items
@@ -80,7 +82,7 @@ def compile_formulas(
             continue
         item = _compiled_formula_item(
             item,
-            compile_latex_targets=compile_latex_targets,
+            compile_latex_targets_fn=active_compile_latex_targets,
         )
         compiled.append(item)
     return compiled

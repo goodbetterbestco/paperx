@@ -25,16 +25,13 @@ Today, the primary checked-in engine/data split is:
 - checked-in corpora under `corpus/`
 - local generated run state under `tmp/`
 
-The build and orchestration entrypoints now live directly under this package,
-and the first extraction-prep slices also live here:
+The build and orchestration entrypoints now live under this package boundary,
+with user-facing commands preferring `pipeline.cli.*` shims and implementation
+living in the family packages:
 
-- `pipeline.build_canonical`
-- `pipeline.build_review`
-- `pipeline.build_corpus_lexicon`
-- `pipeline.audit_corpus`
 - `pipeline.run_corpus_rounds`
 - `pipeline.runtime_paths`
-- `pipeline.staleness_policy`
+- `pipeline.output.*`
 - `pipeline.policies.*`
 
 That is intentional for now. The goal of this boundary is to make a later repo
@@ -47,8 +44,15 @@ extraction low-risk by stabilizing:
 Current preferred commands:
 
 - `python3 -m pipeline.cli.run_project /Users/evanthayer/Projects/paperx/<project>`
+- `python3 -m pipeline.cli.build_canonical <paper-id> --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.build_corpus_lexicon`
+- `python3 -m pipeline.cli.build_external_layout_from_pdftotext <paper-id>`
+- `python3 -m pipeline.cli.build_external_sources_from_docling <paper-id>`
+- `python3 -m pipeline.cli.build_external_sources_from_mathpix <paper-id>`
+- `python3 -m pipeline.cli.compose_external_sources <paper-id> --layout-json ... --math-json ...`
+- `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
+- `python3 -m pipeline.cli.export_titles_and_abstracts`
 - `python3 -m pipeline.cli.audit_corpus --top 12`
 - `python3 -m pipeline.cli.run_corpus_rounds`
 
@@ -73,7 +77,7 @@ Full source regeneration still expects additional tools and credentials:
 
 Figure regeneration now also lives under this package:
 
-- `pipeline.figures.linking` (with `pipeline.figure_linking` kept as a compatibility shim)
+- `pipeline.figures.linking`
 - `pipeline.vision_ocr.js`
 
 Corpus-specific figure expectations now live with the corpus itself at

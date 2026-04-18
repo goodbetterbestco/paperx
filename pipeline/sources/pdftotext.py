@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, paper_pdf_path
-from pipeline.text_utils import compact_text
+from pipeline.text.headings import compact_text
 
 DOCS_DIR = CORPUS_DIR
 PAGE_SPLIT_RE = "\f"

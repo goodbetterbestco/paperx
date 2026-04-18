@@ -1,19 +1,12 @@
-#!/usr/bin/env python3
-
 from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
-import sys
-
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+from collections.abc import Callable
 
 from pipeline.cli.paper_build import build_paper
 from pipeline.corpus_layout import CORPUS_DIR, current_layout
-from pipeline.output_artifacts import build_summary, write_canonical_outputs
+from pipeline.output.artifacts import build_summary, write_canonical_outputs
 from pipeline.output.validation import CanonicalValidationError, validate_canonical
 
 
@@ -41,10 +34,18 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> int:
-    args = parse_args()
-    layout = current_layout()
-    build = build_paper(
+def run_build_canonical(
+    args: argparse.Namespace,
+    *,
+    current_layout_fn: Callable[[], object] = current_layout,
+    build_paper_fn: Callable[..., object] = build_paper,
+    validate_canonical_fn: Callable[[dict[str, object]], None] = validate_canonical,
+    build_summary_fn: Callable[[dict[str, object]], dict[str, object]] = build_summary,
+    write_canonical_outputs_fn: Callable[..., dict[str, str]] = write_canonical_outputs,
+    print_fn: Callable[..., None] = print,
+) -> int:
+    layout = current_layout_fn()
+    build = build_paper_fn(
         args.paper_id,
         text_engine=args.text_engine,
         use_external_layout=args.use_external_layout,
@@ -54,18 +55,23 @@ def main() -> int:
     )
     document = build.document
     try:
-        validate_canonical(document)
+        validate_canonical_fn(document)
     except CanonicalValidationError as exc:
-        print(f"validation_error={exc}")
+        print_fn(f"validation_error={exc}")
         return 2
 
+    summary = build_summary_fn(document)
     if args.dry_run or args.validate:
-        print(json.dumps(build_summary(document), indent=2))
+        print_fn(json.dumps(summary, indent=2))
         return 0
 
-    outputs = write_canonical_outputs(args.paper_id, document, include_review=False, layout=build.layout)
-    print(json.dumps({"path": outputs["canonical_path"], **build_summary(document)}, indent=2))
+    outputs = write_canonical_outputs_fn(args.paper_id, document, include_review=False, layout=build.layout)
+    print_fn(json.dumps({"path": outputs["canonical_path"], **summary}, indent=2))
     return 0
+
+
+def main() -> int:
+    return run_build_canonical(parse_args())
 
 
 if __name__ == "__main__":

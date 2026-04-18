@@ -2,19 +2,17 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from pipeline.corpus_layout import paper_pdf_path
 from pipeline.output.fingerprints import (
     CURRENT_BUILDER_VERSION,
     build_input_fingerprints,
-    build_metadata_for_paper,
-    fingerprint_path,
     pipeline_fingerprint,
 )
 
 
-def _normalize_desired_flags(document: dict[str, Any], desired_flags: dict[str, bool] | None) -> dict[str, bool]:
+def normalize_desired_flags(document: dict[str, Any], desired_flags: dict[str, bool] | None) -> dict[str, bool]:
     if desired_flags is not None:
         return {
             "use_external_layout": bool(desired_flags.get("use_external_layout")),
@@ -27,7 +25,7 @@ def _normalize_desired_flags(document: dict[str, Any], desired_flags: dict[str, 
     }
 
 
-def _fingerprints_match(stored: dict[str, Any] | None, current: dict[str, Any]) -> bool:
+def fingerprints_match(stored: dict[str, Any] | None, current: dict[str, Any]) -> bool:
     if not isinstance(stored, dict):
         return False
     return (
@@ -40,6 +38,10 @@ def _fingerprints_match(stored: dict[str, Any] | None, current: dict[str, Any]) 
 def detect_document_staleness(
     document: dict[str, Any],
     *,
+    current_builder_version: str = CURRENT_BUILDER_VERSION,
+    build_input_fingerprints_impl: Callable[..., dict[str, Any]] = build_input_fingerprints,
+    paper_pdf_path_impl: Callable[[str], Path] = paper_pdf_path,
+    pipeline_fingerprint_impl: Callable[[], dict[str, Any]] = pipeline_fingerprint,
     desired_flags: dict[str, bool] | None = None,
     current_inputs: dict[str, Any] | None = None,
     current_pipeline: dict[str, Any] | None = None,
@@ -50,17 +52,17 @@ def detect_document_staleness(
         "use_external_layout": bool(build.get("flags", {}).get("use_external_layout")),
         "use_external_math": bool(build.get("flags", {}).get("use_external_math")),
     }
-    effective_flags = _normalize_desired_flags(document, desired_flags)
-    inputs = current_inputs or build_input_fingerprints(
+    effective_flags = normalize_desired_flags(document, desired_flags)
+    inputs = current_inputs or build_input_fingerprints_impl(
         paper_id,
-        pdf_path=document.get("source", {}).get("pdf_path") or paper_pdf_path(paper_id),
+        pdf_path=document.get("source", {}).get("pdf_path") or paper_pdf_path_impl(paper_id),
         use_external_layout=effective_flags["use_external_layout"],
         use_external_math=effective_flags["use_external_math"],
     )
-    pipeline = current_pipeline or pipeline_fingerprint()
+    pipeline = current_pipeline or pipeline_fingerprint_impl()
 
     reasons: list[str] = []
-    if str(build.get("builder_version", "")) != CURRENT_BUILDER_VERSION:
+    if str(build.get("builder_version", "")) != current_builder_version:
         reasons.append("builder_version_changed")
 
     stored_pipeline = build.get("pipeline")
@@ -86,7 +88,7 @@ def detect_document_staleness(
         if key not in stored_inputs:
             reasons.append(f"missing_{key}_fingerprint")
             continue
-        if not _fingerprints_match(stored_inputs.get(key), current):
+        if not fingerprints_match(stored_inputs.get(key), current):
             reasons.append(f"{key}_input_changed")
 
     return {
@@ -94,7 +96,7 @@ def detect_document_staleness(
         "stale": bool(reasons),
         "reasons": sorted(set(reasons)),
         "builder_version": str(build.get("builder_version", "")),
-        "current_builder_version": CURRENT_BUILDER_VERSION,
+        "current_builder_version": current_builder_version,
         "desired_flags": effective_flags,
     }
 
@@ -102,6 +104,8 @@ def detect_document_staleness(
 def detect_canonical_staleness(
     canonical_path: Path,
     *,
+    current_builder_version: str = CURRENT_BUILDER_VERSION,
+    detect_document_staleness_impl: Callable[..., dict[str, Any]] = detect_document_staleness,
     desired_flags: dict[str, bool] | None = None,
 ) -> dict[str, Any]:
     if not canonical_path.exists():
@@ -110,8 +114,16 @@ def detect_canonical_staleness(
             "stale": True,
             "reasons": ["canonical_missing"],
             "builder_version": "",
-            "current_builder_version": CURRENT_BUILDER_VERSION,
+            "current_builder_version": current_builder_version,
             "desired_flags": desired_flags or {"use_external_layout": False, "use_external_math": False},
         }
     document = json.loads(canonical_path.read_text(encoding="utf-8"))
-    return detect_document_staleness(document, desired_flags=desired_flags)
+    return detect_document_staleness_impl(document, desired_flags=desired_flags)
+
+
+__all__ = [
+    "detect_canonical_staleness",
+    "detect_document_staleness",
+    "fingerprints_match",
+    "normalize_desired_flags",
+]

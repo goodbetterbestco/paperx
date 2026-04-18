@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.document_policy import apply_document_policy
+from pipeline.text.document_policy import apply_document_policy
 
 
 class DocumentPolicyTest(unittest.TestCase):

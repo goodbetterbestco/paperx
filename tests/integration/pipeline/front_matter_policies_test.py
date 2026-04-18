@@ -6,12 +6,22 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import pipeline.reconcile_blocks as rb
-from pipeline.reconcile.front_matter_policies import (
-    is_title_page_metadata_record,
-    looks_like_body_section_marker,
-    normalize_abstract_candidate_text,
-    split_leading_front_matter_records,
+import pipeline.reconcile.front_matter_patterns as fmp
+import pipeline.reconcile.shared_patterns as rsp
+from pipeline.policies.abstract_quality import abstract_quality_flags
+from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
+from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers
+from pipeline.reconcile.front_matter_runtime import make_bound_front_matter_support_helpers
+from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
+from pipeline.reconcile.support_binding_runtime import (
+    block_source_spans,
+    make_clean_text,
+)
+from pipeline.text.headings import (
+    clean_heading_title,
+    compact_text,
+    normalize_title_key,
+    parse_heading_label,
 )
 
 
@@ -26,28 +36,56 @@ def _record(text: str, *, page: int = 1, y0: float = 120.0) -> dict[str, object]
     }
 
 
+CLEAN_TEXT = make_clean_text(
+    control_char_re=CONTROL_CHAR_RE,
+    compact_text=compact_text,
+)
+SUPPORT_HELPERS = make_bound_front_matter_support_helpers(
+    clean_text=CLEAN_TEXT,
+    normalize_title_key=normalize_title_key,
+    compact_text=compact_text,
+    short_word_re=rsp.SHORT_WORD_RE,
+    block_source_spans=block_source_spans,
+    abstract_quality_flags=abstract_quality_flags,
+)
+PARSING_HELPERS = make_bound_front_matter_parsing_helpers(
+    clean_text=CLEAN_TEXT,
+    compact_text=compact_text,
+    normalize_title_key=normalize_title_key,
+    clean_heading_title=clean_heading_title,
+    parse_heading_label=parse_heading_label,
+    block_source_spans=block_source_spans,
+    title_lookup_keys=SUPPORT_HELPERS.title_lookup_keys,
+    abstract_quality_flags=abstract_quality_flags,
+    looks_like_affiliation=looks_like_affiliation,
+    author_marker_re=fmp.AUTHOR_MARKER_RE,
+    author_affiliation_index_re=fmp.AUTHOR_AFFILIATION_INDEX_RE,
+    name_token_re=fmp.NAME_TOKEN_RE,
+    abbreviated_venue_line_re=fmp.ABBREVIATED_VENUE_LINE_RE,
+    title_page_metadata_re=fmp.TITLE_PAGE_METADATA_RE,
+    front_matter_metadata_re=fmp.FRONT_MATTER_METADATA_RE,
+    reference_venue_re=fmp.REFERENCE_VENUE_RE,
+    author_token_re=fmp.AUTHOR_TOKEN_RE,
+    intro_marker_re=fmp.INTRO_MARKER_RE,
+    abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
+    abstract_lead_re=fmp.ABSTRACT_LEAD_RE,
+    trailing_abstract_boilerplate_re=fmp.TRAILING_ABSTRACT_BOILERPLATE_RE,
+    trailing_abstract_tail_re=fmp.TRAILING_ABSTRACT_TAIL_RE,
+    preprint_marker_re=fmp.PREPRINT_MARKER_RE,
+    short_word_re=rsp.SHORT_WORD_RE,
+    author_note_re=fmp.AUTHOR_NOTE_RE,
+    citation_year_re=fmp.CITATION_YEAR_RE,
+    citation_author_split_re=fmp.CITATION_AUTHOR_SPLIT_RE,
+)
+
+
 class FrontMatterPoliciesTest(unittest.TestCase):
     def test_looks_like_body_section_marker_accepts_numbered_heading(self) -> None:
-        self.assertTrue(
-            looks_like_body_section_marker(
-                "2 Methods",
-                clean_text=rb._clean_text,
-                clean_heading_title=rb.clean_heading_title,
-                abstract_marker_only_re=rb.ABSTRACT_MARKER_ONLY_RE,
-                abstract_lead_re=rb.ABSTRACT_LEAD_RE,
-                looks_like_intro_marker=rb._looks_like_intro_marker,
-                normalize_title_key=rb.normalize_title_key,
-                parse_heading_label=rb.parse_heading_label,
-            )
-        )
+        self.assertTrue(PARSING_HELPERS.looks_like_body_section_marker("2 Methods"))
 
     def test_normalize_abstract_candidate_text_strips_lead_and_keywords(self) -> None:
-        text = normalize_abstract_candidate_text(
-            [{"text": "Abstract: A concise summary. Keywords: shape, topology"}],
-            clean_text=rb._clean_text,
-            preprint_marker_re=rb.PREPRINT_MARKER_RE,
-            abstract_lead_re=rb.ABSTRACT_LEAD_RE,
-            strip_trailing_abstract_boilerplate=rb._strip_trailing_abstract_boilerplate,
+        text = PARSING_HELPERS.normalize_abstract_candidate_text(
+            [{"text": "Abstract: A concise summary. Keywords: shape, topology"}]
         )
         self.assertEqual(text, "A concise summary.")
 
@@ -59,30 +97,14 @@ class FrontMatterPoliciesTest(unittest.TestCase):
             _record("Real introduction body", page=2, y0=110.0),
         ]
 
-        front, remainder = split_leading_front_matter_records(
-            prelude,
-            clean_text=rb._clean_text,
-            looks_like_intro_marker=rb._looks_like_intro_marker,
-            looks_like_page_one_front_matter_tail=rb._looks_like_page_one_front_matter_tail,
-        )
+        front, remainder = PARSING_HELPERS.split_leading_front_matter_records(prelude)
 
         self.assertEqual([r["text"] for r in front], ["Synthetic Title", "Alice Example"])
         self.assertEqual([r["text"] for r in remainder], ["Real introduction body"])
 
     def test_is_title_page_metadata_record_flags_footer_affiliation(self) -> None:
         record = _record("Department of Computer Science", page=1, y0=650.0)
-        self.assertTrue(
-            is_title_page_metadata_record(
-                record,
-                clean_text=rb._clean_text,
-                preprint_marker_re=rb.PREPRINT_MARKER_RE,
-                looks_like_front_matter_metadata=rb._looks_like_front_matter_metadata,
-                author_note_re=rb.AUTHOR_NOTE_RE,
-                block_source_spans=rb._block_source_spans,
-                looks_like_affiliation=rb._looks_like_affiliation,
-                looks_like_contact_name=rb._looks_like_contact_name,
-            )
-        )
+        self.assertTrue(PARSING_HELPERS.is_title_page_metadata_record(record))
 
 
 if __name__ == "__main__":

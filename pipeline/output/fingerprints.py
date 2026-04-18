@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.corpus_layout import ProjectLayout, current_layout, paper_pdf_path
-from pipeline.pipeline_identity import LEGACY_PIPELINE_COMPONENTS, PIPELINE_COMPONENTS
+from pipeline.output.identity import LEGACY_PIPELINE_COMPONENTS, PIPELINE_COMPONENTS
 
 
 ROOT = Path(__file__).resolve().parents[2]

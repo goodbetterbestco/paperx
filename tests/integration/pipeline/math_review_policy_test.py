@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.math_review_policy import (
+from pipeline.math.review_policy import (
     review_for_algorithm_block_text,
     review_for_math_entry,
     review_for_math_ref_block,

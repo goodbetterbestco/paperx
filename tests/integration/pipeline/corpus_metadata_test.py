@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+import pipeline.corpus.metadata as corpus_metadata
 import pipeline.corpus_layout as corpus_layout
-import pipeline.corpus_metadata as corpus_metadata
 
 
 class CorpusMetadataTest(unittest.TestCase):

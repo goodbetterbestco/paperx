@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pipeline.text_utils import SectionNode
+from pipeline.text.headings import SectionNode
 
 
 def flatten_sections(roots: list[Any]) -> list[Any]:

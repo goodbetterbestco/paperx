@@ -16,7 +16,7 @@ from pipeline.policies.completeness import (
     document_expects_figures,
     document_expects_references,
 )
-from pipeline.text_utils import clean_heading_title, compact_text
+from pipeline.text.headings import clean_heading_title, compact_text
 
 
 SENTENCE_END_RE = re.compile(r'[.!?]["\')\]]?$')
