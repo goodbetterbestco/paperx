@@ -1,0 +1,59 @@
+{
+  "paper_id": "2022_versality_of_central_projections_of_regular_surfaces",
+  "pdf_path": "corpus/stepview/2022_versality_of_central_projections_of_regular_surfaces/2022_versality_of_central_projections_of_regular_surfaces.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 32,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 2242.94,
+    "avg_image_coverage": 0.0,
+    "max_image_coverage": 0.0,
+    "avg_text_block_count": 40.28,
+    "max_text_block_count": 136,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.01283,
+    "reference_marker_density": 0.00091
+  }
+}

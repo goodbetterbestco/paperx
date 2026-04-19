@@ -1,0 +1,63 @@
+{
+  "paper_id": "1991_on_surfaces_and_their_contours",
+  "pdf_path": "corpus/stepview/1991_on_surfaces_and_their_contours/1991_on_surfaces_and_their_contours.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references",
+    "image_heavy"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": [
+      "high_avg_image_coverage",
+      "high_max_image_coverage"
+    ]
+  },
+  "signals": {
+    "page_count": 27,
+    "text_page_ratio": 0.963,
+    "avg_text_chars_per_page": 2149.93,
+    "avg_image_coverage": 1.0,
+    "max_image_coverage": 1.0,
+    "avg_text_block_count": 28.22,
+    "max_text_block_count": 56,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.0077,
+    "reference_marker_density": 0.00057
+  }
+}

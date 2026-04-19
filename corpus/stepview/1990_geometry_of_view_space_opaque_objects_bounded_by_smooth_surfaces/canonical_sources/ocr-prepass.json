@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
+  "original_pdf_path": "corpus/stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/1990_geometry_of_view_space_opaque_objects_bounded_by_smooth_surfaces/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "required",
+  "ocr_prepass_tool": "ocrmypdf",
+  "ocr_prepass_applied": false
+}

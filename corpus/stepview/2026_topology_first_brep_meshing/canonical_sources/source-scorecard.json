@@ -1,0 +1,68 @@
+{
+  "providers": [
+    {
+      "provider": "docling",
+      "kind": "layout",
+      "block_count": 805,
+      "math_entry_count": 1,
+      "page_count": 15,
+      "heading_count": 21,
+      "front_matter_count": 13,
+      "paragraph_count": 709,
+      "reference_count": 0,
+      "caption_count": 23,
+      "avg_text_chars_per_block": 76.37,
+      "page_one_marker_score": 4,
+      "overall_score": 4.12
+    },
+    {
+      "provider": "mathpix",
+      "kind": "layout",
+      "block_count": 954,
+      "math_entry_count": 1,
+      "page_count": 15,
+      "heading_count": 0,
+      "front_matter_count": 0,
+      "paragraph_count": 906,
+      "reference_count": 0,
+      "caption_count": 4,
+      "avg_text_chars_per_block": 63.58,
+      "page_one_marker_score": 4,
+      "overall_score": 2.28
+    },
+    {
+      "provider": "docling",
+      "kind": "math",
+      "block_count": 0,
+      "math_entry_count": 1,
+      "page_count": 0,
+      "heading_count": 0,
+      "front_matter_count": 0,
+      "paragraph_count": 0,
+      "reference_count": 0,
+      "caption_count": 0,
+      "avg_text_chars_per_block": 0.0,
+      "page_one_marker_score": 0,
+      "overall_score": 0.07
+    },
+    {
+      "provider": "mathpix",
+      "kind": "math",
+      "block_count": 0,
+      "math_entry_count": 1,
+      "page_count": 0,
+      "heading_count": 0,
+      "front_matter_count": 0,
+      "paragraph_count": 0,
+      "reference_count": 0,
+      "caption_count": 0,
+      "avg_text_chars_per_block": 0.0,
+      "page_one_marker_score": 0,
+      "overall_score": 0.07
+    }
+  ],
+  "recommended_primary_layout_provider": "docling",
+  "recommended_primary_math_provider": "docling",
+  "recommended_primary_metadata_provider": null,
+  "recommended_primary_reference_provider": null
+}

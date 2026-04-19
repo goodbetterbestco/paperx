@@ -1,0 +1,59 @@
+{
+  "paper_id": "2004_the_visual_hull_of_smooth_curved_objects",
+  "pdf_path": "corpus/stepview/2004_the_visual_hull_of_smooth_curved_objects/2004_the_visual_hull_of_smooth_curved_objects.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 30,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 1435.2,
+    "avg_image_coverage": 0.082,
+    "max_image_coverage": 0.344,
+    "avg_text_block_count": 19.57,
+    "max_text_block_count": 27,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.00418,
+    "reference_marker_density": 0.00223
+  }
+}

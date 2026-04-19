@@ -1,0 +1,60 @@
+{
+  "paper_id": "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline",
+  "pdf_path": "corpus/stepview/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline/2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references",
+    "two_column"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 19,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 3559.95,
+    "avg_image_coverage": 0.165,
+    "max_image_coverage": 0.484,
+    "avg_text_block_count": 16.53,
+    "max_text_block_count": 67,
+    "two_column_ratio": 0.632,
+    "math_token_density": 0.00665,
+    "reference_marker_density": 0.00177
+  }
+}

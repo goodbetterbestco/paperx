@@ -1,0 +1,57 @@
+{
+  "paper_id": "1998_cad_and_the_product_master_model",
+  "pdf_path": "corpus/stepview/1998_cad_and_the_product_master_model/1998_cad_and_the_product_master_model.pdf",
+  "primary_route": "layout_complex",
+  "traits": [],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 32,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 2451.25,
+    "avg_image_coverage": 0.0,
+    "max_image_coverage": 0.0,
+    "avg_text_block_count": 38.84,
+    "max_text_block_count": 77,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.00288,
+    "reference_marker_density": 0.0
+  }
+}

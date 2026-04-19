@@ -68,6 +68,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.compose_external_sources <paper-id> --layout-json ... --math-json ...`
 - `python3 -m pipeline.cli.inspect_acquisition_route <paper-id>`
 - `python3 -m pipeline.cli.inspect_acquisition_scorecard <paper-id>`
+- `python3 -m pipeline.cli.backfill_acquisition_sidecars`
 - `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`

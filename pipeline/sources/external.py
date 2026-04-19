@@ -72,6 +72,13 @@ def load_mathpix_layout(paper_id: str, *, layout: ProjectLayout | None = None) -
     )
 
 
+def load_docling_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
+    return _load_layout_payload(
+        _paper_sources_dir(paper_id, layout=layout) / "docling-layout.json",
+        default_engine="docling",
+    )
+
+
 def _normalize_external_math_item(
     item: dict[str, Any],
     *,
@@ -121,6 +128,35 @@ def load_external_math(paper_id: str, *, layout: ProjectLayout | None = None) ->
         "engine": engine,
         "entries": entries,
     }
+
+
+def _load_math_payload(path: Path, *, default_engine: str) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    engine = str(payload.get("engine", default_engine))
+    entries = [
+        _normalize_external_math_item(entry, default_engine=engine, index=index)
+        for index, entry in enumerate(payload.get("entries", []), start=1)
+    ]
+    return {
+        "engine": engine,
+        "entries": entries,
+    }
+
+
+def load_docling_math(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
+    return _load_math_payload(
+        _paper_sources_dir(paper_id, layout=layout) / "docling-math.json",
+        default_engine="docling",
+    )
+
+
+def load_mathpix_math(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
+    return _load_math_payload(
+        _paper_sources_dir(paper_id, layout=layout) / "mathpix-math.json",
+        default_engine="mathpix",
+    )
 
 
 def load_grobid_metadata_observation(

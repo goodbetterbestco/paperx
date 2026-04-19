@@ -1,0 +1,59 @@
+{
+  "paper_id": "2016_recognizing_weakly_simple_polygons",
+  "pdf_path": "corpus/stepview/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 16,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 2863.81,
+    "avg_image_coverage": 0.0,
+    "max_image_coverage": 0.0,
+    "avg_text_block_count": 22.62,
+    "max_text_block_count": 40,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.00624,
+    "reference_marker_density": 0.00079
+  }
+}

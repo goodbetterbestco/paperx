@@ -1,0 +1,59 @@
+{
+  "paper_id": "1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision",
+  "pdf_path": "corpus/stepview/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision/1992_why_aspect_graphs_are_not_yet_practical_for_computer_vision.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "two_column"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 8,
+    "text_page_ratio": 0.875,
+    "avg_text_chars_per_page": 4430.88,
+    "avg_image_coverage": 0.011,
+    "max_image_coverage": 0.026,
+    "avg_text_block_count": 9.25,
+    "max_text_block_count": 28,
+    "two_column_ratio": 0.625,
+    "math_token_density": 0.00544,
+    "reference_marker_density": 0.0
+  }
+}

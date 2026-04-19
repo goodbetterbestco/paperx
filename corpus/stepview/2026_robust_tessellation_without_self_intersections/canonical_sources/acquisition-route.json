@@ -1,0 +1,64 @@
+{
+  "paper_id": "2026_robust_tessellation_without_self_intersections",
+  "pdf_path": "corpus/stepview/2026_robust_tessellation_without_self_intersections/2026_robust_tessellation_without_self_intersections.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references",
+    "two_column",
+    "image_heavy"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": [
+      "high_avg_image_coverage",
+      "high_max_image_coverage"
+    ]
+  },
+  "signals": {
+    "page_count": 20,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 3361.7,
+    "avg_image_coverage": 0.236,
+    "max_image_coverage": 0.583,
+    "avg_text_block_count": 18.65,
+    "max_text_block_count": 43,
+    "two_column_ratio": 0.7,
+    "math_token_density": 0.00922,
+    "reference_marker_density": 0.00119
+  }
+}

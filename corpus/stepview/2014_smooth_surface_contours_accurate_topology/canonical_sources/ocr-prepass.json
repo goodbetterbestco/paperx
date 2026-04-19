@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/2014_smooth_surface_contours_accurate_topology/2014_smooth_surface_contours_accurate_topology.pdf",
+  "original_pdf_path": "corpus/stepview/2014_smooth_surface_contours_accurate_topology/2014_smooth_surface_contours_accurate_topology.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/2014_smooth_surface_contours_accurate_topology/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "skip",
+  "ocr_prepass_tool": null,
+  "ocr_prepass_applied": false
+}

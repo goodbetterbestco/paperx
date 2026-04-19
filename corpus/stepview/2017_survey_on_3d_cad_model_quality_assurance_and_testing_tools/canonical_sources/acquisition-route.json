@@ -1,0 +1,59 @@
+{
+  "paper_id": "2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools",
+  "pdf_path": "corpus/stepview/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools/2017_survey_on_3d_cad_model_quality_assurance_and_testing_tools.pdf",
+  "primary_route": "layout_complex",
+  "traits": [
+    "scholarly_references"
+  ],
+  "rationale": [
+    "layout block distribution suggests a multi-column or structurally complex document"
+  ],
+  "recommended_providers": [
+    "docling",
+    "llamaparse",
+    "marker",
+    "mineru"
+  ],
+  "product_plan": {
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse",
+      "marker",
+      "mineru"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": false,
+    "policy": "skip",
+    "tool": null,
+    "output_pdf_kind": null,
+    "rationale": [
+      "embedded text quality is sufficient to skip OCR normalization."
+    ],
+    "trigger_signals": []
+  },
+  "signals": {
+    "page_count": 38,
+    "text_page_ratio": 1.0,
+    "avg_text_chars_per_page": 2695.68,
+    "avg_image_coverage": 0.016,
+    "max_image_coverage": 0.136,
+    "avg_text_block_count": 15.32,
+    "max_text_block_count": 49,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.00418,
+    "reference_marker_density": 0.00299
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/2001_boundary_representation_model_rectification/2001_boundary_representation_model_rectification.pdf",
+  "original_pdf_path": "corpus/stepview/2001_boundary_representation_model_rectification/2001_boundary_representation_model_rectification.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/2001_boundary_representation_model_rectification/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "required",
+  "ocr_prepass_tool": "ocrmypdf",
+  "ocr_prepass_applied": false
+}

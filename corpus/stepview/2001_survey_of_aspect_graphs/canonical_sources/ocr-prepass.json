@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/2001_survey_of_aspect_graphs/2001_survey_of_aspect_graphs.pdf",
+  "original_pdf_path": "corpus/stepview/2001_survey_of_aspect_graphs/2001_survey_of_aspect_graphs.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/2001_survey_of_aspect_graphs/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "skip",
+  "ocr_prepass_tool": null,
+  "ocr_prepass_applied": false
+}

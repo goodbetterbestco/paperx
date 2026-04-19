@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/1994_surfaces_with_assigned_apparent_contour/1994_surfaces_with_assigned_apparent_contour.pdf",
+  "original_pdf_path": "corpus/stepview/1994_surfaces_with_assigned_apparent_contour/1994_surfaces_with_assigned_apparent_contour.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/1994_surfaces_with_assigned_apparent_contour/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "skip",
+  "ocr_prepass_tool": null,
+  "ocr_prepass_applied": false
+}

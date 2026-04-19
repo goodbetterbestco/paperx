@@ -1,0 +1,9 @@
+{
+  "selected_pdf_path": "corpus/stepview/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient.pdf",
+  "original_pdf_path": "corpus/stepview/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient.pdf",
+  "ocr_normalized_pdf_path": "corpus/stepview/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/canonical_sources/ocr-normalized.pdf",
+  "pdf_source_kind": "original",
+  "ocr_prepass_policy": "required",
+  "ocr_prepass_tool": "ocrmypdf",
+  "ocr_prepass_applied": false
+}

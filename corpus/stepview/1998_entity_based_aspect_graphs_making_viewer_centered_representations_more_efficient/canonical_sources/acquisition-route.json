@@ -1,0 +1,64 @@
+{
+  "paper_id": "1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient",
+  "pdf_path": "corpus/stepview/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient/1998_entity_based_aspect_graphs_making_viewer_centered_representations_more_efficient.pdf",
+  "primary_route": "scan_or_image_heavy",
+  "traits": [
+    "image_heavy"
+  ],
+  "rationale": [
+    "low embedded text coverage with high image coverage suggests a scan-first route"
+  ],
+  "recommended_providers": [
+    "ocrmypdf",
+    "docling",
+    "mathpix"
+  ],
+  "product_plan": {
+    "prepass": [
+      "ocrmypdf"
+    ],
+    "metadata": [
+      "grobid",
+      "docling"
+    ],
+    "layout": [
+      "docling",
+      "llamaparse"
+    ],
+    "math": [
+      "mathpix",
+      "docling"
+    ],
+    "references": [
+      "grobid",
+      "docling"
+    ]
+  },
+  "ocr_prepass": {
+    "should_run": true,
+    "policy": "required",
+    "tool": "ocrmypdf",
+    "output_pdf_kind": "searchable_pdf",
+    "rationale": [
+      "scan-first routing indicates the PDF should be normalized before extraction."
+    ],
+    "trigger_signals": [
+      "low_text_page_ratio",
+      "high_avg_image_coverage",
+      "high_max_image_coverage",
+      "low_avg_text_chars_per_page"
+    ]
+  },
+  "signals": {
+    "page_count": 13,
+    "text_page_ratio": 0.0,
+    "avg_text_chars_per_page": 0,
+    "avg_image_coverage": 1.0,
+    "max_image_coverage": 1.0,
+    "avg_text_block_count": 0,
+    "max_text_block_count": 0,
+    "two_column_ratio": 0.0,
+    "math_token_density": 0.0,
+    "reference_marker_density": 0.0
+  }
+}

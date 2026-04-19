@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pipeline.acquisition.backfill import backfill_acquisition_sidecars
 from pipeline.acquisition.benchmark import (
     load_benchmark_manifest,
     run_acquisition_benchmark,
@@ -29,6 +30,7 @@ __all__ = [
     "MetadataReferenceObservation",
     "OcrPrepassDecision",
     "audit_acquisition_quality",
+    "backfill_acquisition_sidecars",
     "build_acquisition_route_report",
     "build_source_scorecard",
     "decide_ocr_prepass_policy",
