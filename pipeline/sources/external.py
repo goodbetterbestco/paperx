@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pipeline.acquisition.providers import load_metadata_reference_observation
 from pipeline.corpus_layout import ProjectLayout, canonical_sources_dir
 from pipeline.math.review_policy import review_for_math_entry
 from pipeline.types import LayoutBlock, default_formula_conversion, default_review
@@ -54,6 +55,10 @@ def ocr_normalized_pdf_path(paper_id: str, *, layout: ProjectLayout | None = Non
 
 def ocr_prepass_report_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
     return _paper_sources_dir(paper_id, layout=layout) / "ocr-prepass.json"
+
+
+def grobid_tei_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
+    return _paper_sources_dir(paper_id, layout=layout) / "grobid.tei.xml"
 
 
 def load_external_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
@@ -116,3 +121,14 @@ def load_external_math(paper_id: str, *, layout: ProjectLayout | None = None) ->
         "engine": engine,
         "entries": entries,
     }
+
+
+def load_grobid_metadata_observation(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+) -> dict[str, Any] | None:
+    path = grobid_tei_path(paper_id, layout=layout)
+    if not path.exists():
+        return None
+    return load_metadata_reference_observation("grobid", path).to_dict()

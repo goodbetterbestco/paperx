@@ -10,7 +10,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
-from pipeline.acquisition.scoring import build_source_scorecard, score_layout_provider, score_math_provider
+from pipeline.acquisition.scoring import (
+    build_source_scorecard,
+    score_layout_provider,
+    score_math_provider,
+    score_metadata_provider,
+)
 
 
 class AcquisitionScoringTest(unittest.TestCase):
@@ -71,6 +76,41 @@ class AcquisitionScoringTest(unittest.TestCase):
         )
 
         self.assertGreater(mathpix["overall_score"], docling["overall_score"])
+
+    def test_score_metadata_provider_rewards_clean_abstract_and_references(self) -> None:
+        grobid = score_metadata_provider(
+            "grobid",
+            {
+                "title": "Synthetic Acquisition Benchmark Paper",
+                "abstract": "We evaluate structured document extraction for synthetic papers.",
+                "references": ["Author. Journal of Tests. 2024."],
+            },
+            route_bias="born_digital_scholarly",
+        )
+
+        self.assertTrue(grobid["title_present"])
+        self.assertTrue(grobid["abstract_clean"])
+        self.assertEqual(grobid["reference_count"], 1)
+        self.assertGreater(grobid["overall_score"], 0.8)
+
+    def test_build_source_scorecard_includes_metadata_and_reference_recommendations(self) -> None:
+        scorecard = build_source_scorecard(
+            native_layout={"page_count": 1, "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}]},
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            route_bias="born_digital_scholarly",
+            metadata_observations={
+                "grobid": {
+                    "title": "Synthetic Acquisition Benchmark Paper",
+                    "abstract": "We evaluate structured document extraction for synthetic papers.",
+                    "references": ["Author. Journal of Tests. 2024."],
+                }
+            },
+        )
+
+        self.assertEqual(scorecard["recommended_primary_metadata_provider"], "grobid")
+        self.assertEqual(scorecard["recommended_primary_reference_provider"], "grobid")
 
 
 if __name__ == "__main__":

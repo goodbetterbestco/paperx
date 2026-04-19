@@ -4,6 +4,7 @@ from typing import Any, Callable
 
 from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.orchestrator.assemble_document import assemble_paper_document
+from pipeline.orchestrator.metadata_enrichment import apply_metadata_observation
 from pipeline.orchestrator.normalize_records import normalize_paper_records
 from pipeline.orchestrator.resolve_sources import resolve_paper_sources
 from pipeline.state import PaperState
@@ -121,7 +122,7 @@ def run_paper_pipeline(
         is_title_page_metadata_record=is_title_page_metadata_record,
         build_section_tree=build_section_tree,
     )
-    return assemble_paper_document(
+    paper_state = assemble_paper_document(
         paper_state,
         build_front_matter=build_front_matter,
         attach_orphan_numbered_roots=attach_orphan_numbered_roots,
@@ -162,6 +163,7 @@ def run_paper_pipeline(
         now_iso=now_iso,
         build_canonical_document=build_canonical_document,
     )
+    return apply_metadata_observation(paper_state)
 
 
 def reconcile_paper_document(

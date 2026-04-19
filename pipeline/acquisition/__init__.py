@@ -15,7 +15,12 @@ from pipeline.acquisition.routing import (
     inspect_pdf_signals,
     route_pdf_signals,
 )
-from pipeline.acquisition.scoring import build_source_scorecard, score_layout_provider, score_math_provider
+from pipeline.acquisition.scoring import (
+    build_source_scorecard,
+    score_layout_provider,
+    score_math_provider,
+    score_metadata_provider,
+)
 from pipeline.acquisition.source_ownership import reported_layout_provider, reported_math_provider
 
 __all__ = [
@@ -37,5 +42,6 @@ __all__ = [
     "reported_layout_provider",
     "reported_math_provider",
     "score_math_provider",
+    "score_metadata_provider",
     "score_layout_provider",
 ]

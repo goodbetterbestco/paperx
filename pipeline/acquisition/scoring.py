@@ -4,6 +4,8 @@ from dataclasses import asdict, dataclass
 import re
 from typing import Any
 
+from pipeline.policies.abstract_quality import abstract_quality_flags
+
 
 ABSTRACT_PAGE_MARKER_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
 INTRO_PAGE_MARKER_RE = re.compile(r"^\s*(?:\d+|[IVX]+)(?:\.\d+)*\.?\s*introduction\b", re.IGNORECASE)
@@ -169,12 +171,60 @@ def score_math_provider(
     }
 
 
+def score_metadata_provider(
+    provider: str,
+    observation: dict[str, Any] | None,
+    *,
+    route_bias: str | None = None,
+) -> dict[str, Any]:
+    payload = dict(observation or {})
+    title = str(payload.get("title", "") or "").strip()
+    abstract = str(payload.get("abstract", "") or "").strip()
+    references = [str(item).strip() for item in payload.get("references", []) if str(item).strip()]
+    clean_abstract = bool(abstract) and not abstract_quality_flags(abstract)
+    route_bonus = 0.0
+    if provider == "grobid" and route_bias in {
+        "born_digital_scholarly",
+        "layout_complex",
+        "math_dense",
+        "degraded_or_garbled",
+    }:
+        route_bonus = 0.15
+    overall_score = round(
+        (0.35 if title else 0.0)
+        + (0.35 if clean_abstract else 0.15 if abstract else 0.0)
+        + min(len(references), 40) * 0.02
+        + route_bonus,
+        3,
+    )
+    return {
+        "provider": provider,
+        "kind": "metadata",
+        "block_count": 0,
+        "math_entry_count": 0,
+        "page_count": 0,
+        "heading_count": 0,
+        "front_matter_count": 0,
+        "paragraph_count": 0,
+        "reference_count": len(references),
+        "caption_count": 0,
+        "avg_text_chars_per_block": 0.0,
+        "page_one_marker_score": 0,
+        "title_present": bool(title),
+        "abstract_present": bool(abstract),
+        "abstract_clean": clean_abstract,
+        "overall_score": overall_score,
+    }
+
+
 def build_source_scorecard(
     *,
     native_layout: dict[str, Any] | None,
     external_layout: dict[str, Any] | None,
     mathpix_layout: dict[str, Any] | None,
     external_math: dict[str, Any] | None,
+    route_bias: str | None = None,
+    metadata_observations: dict[str, dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     external_math_entries = len((external_math or {}).get("entries", []))
     providers = [
@@ -198,8 +248,12 @@ def build_source_scorecard(
             score_math_provider(
                 str(external_math.get("engine", "external_math")),
                 external_math,
+                route_bias=route_bias,
             )
         )
+    for provider, observation in sorted((metadata_observations or {}).items()):
+        if observation:
+            providers.append(score_metadata_provider(provider, observation, route_bias=route_bias))
 
     providers.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"]), str(item["kind"])))
     return {
@@ -216,11 +270,36 @@ def build_source_scorecard(
             ),
             None,
         ),
+        "recommended_primary_metadata_provider": next(
+            (
+                item["provider"]
+                for item in providers
+                if str(item.get("kind")) == "metadata"
+                and (
+                    bool(item.get("title_present"))
+                    or bool(item.get("abstract_present"))
+                    or int(item.get("reference_count", 0) or 0) > 0
+                )
+            ),
+            None,
+        ),
+        "recommended_primary_reference_provider": next(
+            (
+                item["provider"]
+                for item in providers
+                if (
+                    (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
+                    or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
+                )
+            ),
+            None,
+        ),
     }
 
 
 __all__ = [
     "build_source_scorecard",
+    "score_metadata_provider",
     "score_math_provider",
     "score_layout_provider",
 ]

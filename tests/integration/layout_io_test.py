@@ -199,10 +199,13 @@ class LayoutIoTest(unittest.TestCase):
                     "source_scorecard": {
                         "providers": [{"provider": "native_pdf", "overall_score": 0.8}],
                         "recommended_primary_layout_provider": "native_pdf",
-                        "recommended_primary_math_provider": None
+                        "recommended_primary_math_provider": None,
+                        "recommended_primary_metadata_provider": "grobid",
+                        "recommended_primary_reference_provider": "grobid",
                     },
                     "title": {"selected_text": "Synthetic Test Paper", "source": "front_matter_records"},
                     "abstract": {"selected_text": "Synthetic abstract.", "source": "front_matter_records", "placeholder": False},
+                    "metadata": {"provider": "grobid", "abstract_applied": True, "references_applied": True, "reference_count": 2},
                 },
             }
 
@@ -224,6 +227,7 @@ class LayoutIoTest(unittest.TestCase):
             self.assertTrue((sources_target / "source-scorecard.json").exists())
             self.assertTrue((sources_target / "title-decision.json").exists())
             self.assertTrue((sources_target / "abstract-decision.json").exists())
+            self.assertTrue((sources_target / "metadata-decision.json").exists())
             self.assertEqual(
                 json.loads((sources_target / "acquisition-route.json").read_text(encoding="utf-8"))["primary_route"],
                 "born_digital_scholarly",
@@ -235,6 +239,10 @@ class LayoutIoTest(unittest.TestCase):
             self.assertEqual(
                 json.loads((sources_target / "title-decision.json").read_text(encoding="utf-8"))["selected_text"],
                 "Synthetic Test Paper",
+            )
+            self.assertEqual(
+                json.loads((sources_target / "metadata-decision.json").read_text(encoding="utf-8"))["provider"],
+                "grobid",
             )
 
 

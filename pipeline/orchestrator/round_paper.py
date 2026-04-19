@@ -17,7 +17,12 @@ from pipeline.orchestrator.source_composition import compose_layout_sources
 from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.output.validation import validate_canonical
 from pipeline.reconcile.entrypoint import reconcile_paper
-from pipeline.sources.external import external_layout_path, external_math_path, ocr_prepass_report_path
+from pipeline.sources.external import (
+    external_layout_path,
+    external_math_path,
+    load_grobid_metadata_observation,
+    ocr_prepass_report_path,
+)
 
 
 def compose_external_sources(
@@ -33,6 +38,7 @@ def compose_external_sources(
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     score_layout_provider_impl: Callable[..., dict[str, Any]] | None = None,
     score_math_provider_impl: Callable[..., dict[str, Any]] | None = None,
+    load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     compose_layout_sources_impl = compose_layout_sources_impl or compose_layout_sources
     external_layout_path_impl = external_layout_path_impl or external_layout_path
@@ -41,12 +47,18 @@ def compose_external_sources(
     build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
     score_layout_provider_impl = score_layout_provider_impl or score_layout_provider
     score_math_provider_impl = score_math_provider_impl or score_math_provider
+    load_grobid_metadata_observation_impl = (
+        load_grobid_metadata_observation_impl or load_grobid_metadata_observation
+    )
+    from pipeline.acquisition.scoring import score_metadata_provider
+
     acquisition_route = build_acquisition_route_report_impl(paper_id, layout=layout)
     primary_route = str(acquisition_route.get("primary_route", "") or "")
     docling_layout = (docling_sources or {}).get("layout") or {}
     mathpix_layout = (mathpix_sources or {}).get("layout") or {}
     docling_math = (docling_sources or {}).get("math") or {}
     mathpix_math = (mathpix_sources or {}).get("math") or {}
+    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout)
     docling_math_entries = len(((docling_sources or {}).get("math") or {}).get("entries", []))
     mathpix_math_entries = len(((mathpix_sources or {}).get("math") or {}).get("entries", []))
     provider_scores = []
@@ -84,6 +96,8 @@ def compose_external_sources(
                 route_bias=primary_route,
             )
         )
+    if metadata_observation:
+        provider_scores.append(score_metadata_provider("grobid", metadata_observation, route_bias=primary_route))
     provider_scores.sort(key=lambda item: (-float(item.get("overall_score", 0.0) or 0.0), str(item.get("provider", ""))))
     source_scorecard = {
         "providers": provider_scores,
@@ -92,7 +106,35 @@ def compose_external_sources(
             None,
         ),
         "recommended_primary_math_provider": next(
-            (item["provider"] for item in provider_scores if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0),
+            (
+                item["provider"]
+                for item in provider_scores
+                if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0
+            ),
+            None,
+        ),
+        "recommended_primary_metadata_provider": next(
+            (
+                item["provider"]
+                for item in provider_scores
+                if str(item.get("kind")) == "metadata"
+                and (
+                    bool(item.get("title_present"))
+                    or bool(item.get("abstract_present"))
+                    or int(item.get("reference_count", 0) or 0) > 0
+                )
+            ),
+            None,
+        ),
+        "recommended_primary_reference_provider": next(
+            (
+                item["provider"]
+                for item in provider_scores
+                if (
+                    (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
+                    or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
+                )
+            ),
             None,
         ),
     }
@@ -142,6 +184,8 @@ def compose_external_sources(
         "math_entries": len(final_math.get("entries", [])),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
+        "recommended_primary_metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
+        "recommended_primary_reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
         "acquisition_route": acquisition_route.get("primary_route"),
         "ocr_prepass_policy": ocr_prepass.get("policy"),
         "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
@@ -213,11 +257,15 @@ def existing_composed_sources(
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
     ocr_prepass_report_path_impl: Callable[..., Path] | None = None,
+    load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     load_json_if_exists_impl = load_json_if_exists_impl or load_json_if_exists
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
     ocr_prepass_report_path_impl = ocr_prepass_report_path_impl or ocr_prepass_report_path
+    load_grobid_metadata_observation_impl = (
+        load_grobid_metadata_observation_impl or load_grobid_metadata_observation
+    )
     external_layout = load_json_if_exists_impl(external_layout_path_impl(paper_id, layout=layout)) or {
         "engine": "none",
         "blocks": [],
@@ -230,6 +278,7 @@ def existing_composed_sources(
     acquisition_route = load_json_if_exists_impl(sources_dir / "acquisition-route.json") or {}
     source_scorecard = load_json_if_exists_impl(sources_dir / "source-scorecard.json") or {}
     ocr_prepass = load_json_if_exists_impl(ocr_prepass_report_path_impl(paper_id, layout=layout)) or {}
+    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout) or {}
     route_ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
@@ -256,6 +305,9 @@ def existing_composed_sources(
         "selected_pdf_path": ocr_prepass.get("selected_pdf_path"),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
+        "recommended_primary_metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
+        "recommended_primary_reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
+        "metadata_provider": metadata_observation.get("provider"),
     }
 
 

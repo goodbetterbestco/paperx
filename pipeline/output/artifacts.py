@@ -83,6 +83,9 @@ def write_canonical_outputs_impl(
         abstract_decision = decision_artifacts.get("abstract")
         if isinstance(abstract_decision, dict):
             write_json(sources_target / "abstract-decision.json", abstract_decision)
+        metadata_decision = decision_artifacts.get("metadata")
+        if isinstance(metadata_decision, dict):
+            write_json(sources_target / "metadata-decision.json", metadata_decision)
     return {
         "canonical_path": str(canonical_target),
         "review_path": str(review_target),

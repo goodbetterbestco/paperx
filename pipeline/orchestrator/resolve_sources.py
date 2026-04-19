@@ -8,6 +8,7 @@ from pipeline.acquisition.source_ownership import reported_layout_provider, repo
 from pipeline.config import PipelineConfig
 from pipeline.output.fingerprints import build_input_fingerprints
 from pipeline.state import PaperState
+from pipeline.sources.external import load_grobid_metadata_observation
 
 
 def resolve_paper_sources(
@@ -25,9 +26,13 @@ def resolve_paper_sources(
     normalize_figure_caption_text: Callable[[str], str],
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     build_source_scorecard_impl: Callable[..., dict[str, Any]] | None = None,
+    load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> PaperState:
     build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
     build_source_scorecard_impl = build_source_scorecard_impl or build_source_scorecard
+    load_grobid_metadata_observation_impl = (
+        load_grobid_metadata_observation_impl or load_grobid_metadata_observation
+    )
     paper_id = state.paper_id
     native_layout = layout_output or extract_layout(paper_id)
     layout = native_layout
@@ -42,6 +47,7 @@ def resolve_paper_sources(
     external_math = load_external_math(paper_id) if config.use_external_math else None
     external_math_engine = str((external_math or {}).get("engine", "")) or None
     mathpix_layout = load_mathpix_layout(paper_id) if config.use_external_math else None
+    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=config.layout)
 
     resolved_figures = figures or extract_figures(paper_id)
     resolved_figures = [
@@ -57,17 +63,29 @@ def resolve_paper_sources(
     state.merged_layout = layout
     state.external_math = external_math
     state.mathpix_layout = mathpix_layout
+    state.metadata_observation = metadata_observation
     state.figures = resolved_figures
     state.acquisition_route = build_acquisition_route_report_impl(
         paper_id,
         layout=config.layout,
     )
-    source_scorecard = build_source_scorecard_impl(
-        native_layout=native_layout,
-        external_layout=external_layout,
-        mathpix_layout=mathpix_layout,
-        external_math=external_math,
-    )
+    primary_route = str((state.acquisition_route or {}).get("primary_route", "") or "")
+    try:
+        source_scorecard = build_source_scorecard_impl(
+            native_layout=native_layout,
+            external_layout=external_layout,
+            mathpix_layout=mathpix_layout,
+            external_math=external_math,
+            route_bias=primary_route,
+            metadata_observations={"grobid": metadata_observation},
+        )
+    except TypeError:
+        source_scorecard = build_source_scorecard_impl(
+            native_layout=native_layout,
+            external_layout=external_layout,
+            mathpix_layout=mathpix_layout,
+            external_math=external_math,
+        )
     state.source_scorecard = source_scorecard
     state.layout_engine_name = reported_layout_provider(
         external_layout_engine,

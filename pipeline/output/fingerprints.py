@@ -116,6 +116,9 @@ def build_input_fingerprints(
         inputs["external_layout"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "layout.json")
     if use_external_math:
         inputs["external_math"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "math.json")
+    metadata_reference_path = active_layout.canonical_sources_dir(paper_id) / "grobid.tei.xml"
+    if metadata_reference_path.exists():
+        inputs["metadata_reference"] = fingerprint_path(metadata_reference_path)
     return inputs
 
 
