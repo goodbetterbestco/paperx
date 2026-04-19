@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "1990_synthetic_test_paper",
+  "title": "Synthetic Test Paper",
+  "source": {
+    "pdf_path": "source/1990_synthetic_test_paper.pdf",
+    "page_count": 1,
+    "page_sizes_pt": []
+  },
+  "build": {},
+  "front_matter": {
+    "title": "Synthetic Test Paper",
+    "authors": [
+      {
+        "name": "Ada Example",
+        "affiliation_ids": [
+          "aff-1"
+        ]
+      }
+    ],
+    "affiliations": [
+      {
+        "id": "aff-1",
+        "department": "Department of Geometry",
+        "institution": "Synthetic Institute",
+        "address": "Example City"
+      }
+    ],
+    "abstract_block_id": "blk-front-abstract-1",
+    "funding_block_id": null
+  },
+  "styles": {
+    "document_style": {},
+    "category_styles": {},
+    "block_styles": {}
+  },
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Introduction",
+      "level": 1,
+      "block_ids": [
+        "blk-1"
+      ],
+      "children": [],
+      "source_spans": []
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-front-abstract-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "Synthetic abstract for the end-to-end review rendering test."
+          }
+        ]
+      },
+      "source_spans": [],
+      "alternates": [],
+      "review": {
+        "risk": "low",
+        "status": "unreviewed",
+        "notes": ""
+      }
+    },
+    {
+      "id": "blk-1",
+      "type": "paragraph",
+      "content": {
+        "spans": [
+          {
+            "kind": "text",
+            "text": "The introduction references "
+          },
+          {
+            "kind": "inline_math_ref",
+            "target_id": "math-inline-1"
+          },
+          {
+            "kind": "text",
+            "text": " and a stable synthetic figure."
+          }
+        ]
+      },
+      "source_spans": [],
+      "alternates": [],
+      "review": {
+        "risk": "low",
+        "status": "unreviewed",
+        "notes": ""
+      }
+    }
+  ],
+  "math": [
+    {
+      "id": "math-inline-1",
+      "kind": "inline",
+      "display_latex": "O(N \\log N)"
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig-1",
+      "label": "1",
+      "caption": "Synthetic figure caption."
+    }
+  ],
+  "references": []
+}
