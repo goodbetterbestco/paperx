@@ -10,7 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
-from pipeline.acquisition.scoring import build_source_scorecard, score_layout_provider
+from pipeline.acquisition.scoring import build_source_scorecard, score_layout_provider, score_math_provider
 
 
 class AcquisitionScoringTest(unittest.TestCase):
@@ -56,7 +56,21 @@ class AcquisitionScoringTest(unittest.TestCase):
 
         self.assertEqual(scorecard["providers"][0]["provider"], "docling")
         self.assertEqual(scorecard["recommended_primary_layout_provider"], "docling")
-        self.assertEqual(scorecard["recommended_primary_math_provider"], "docling")
+        self.assertEqual(scorecard["recommended_primary_math_provider"], "mathpix")
+
+    def test_score_math_provider_biases_mathpix_for_math_dense_routes(self) -> None:
+        docling = score_math_provider(
+            "docling",
+            {"entries": [{"id": "eq-1", "kind": "display"}]},
+            route_bias="math_dense",
+        )
+        mathpix = score_math_provider(
+            "mathpix",
+            {"entries": [{"id": "eq-1", "kind": "display"}]},
+            route_bias="math_dense",
+        )
+
+        self.assertGreater(mathpix["overall_score"], docling["overall_score"])
 
 
 if __name__ == "__main__":

@@ -1,9 +1,17 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+import re
 from typing import Any
 
-from pipeline.orchestrator.source_composition import page_one_layout_score
+
+ABSTRACT_PAGE_MARKER_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
+INTRO_PAGE_MARKER_RE = re.compile(r"^\s*(?:\d+|[IVX]+)(?:\.\d+)*\.?\s*introduction\b", re.IGNORECASE)
+LAYOUT_METADATA_RE = re.compile(
+    r"\b(?:accepted manuscript|manuscript version|creative commons|creativecommons|"
+    r"this manuscript version is made available|available online|article history|doi\b)\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -68,6 +76,19 @@ def _dict_layout_for_page_score(layout: dict[str, Any] | None) -> dict[str, Any]
     return {"blocks": blocks}
 
 
+def _page_one_layout_score(blocks: list[dict[str, Any]]) -> int:
+    if not blocks:
+        return -10
+    texts = [str(block.get("text", "")).strip() for block in blocks if str(block.get("text", "")).strip()]
+    marker_score = 0
+    if any(ABSTRACT_PAGE_MARKER_RE.match(text) for text in texts):
+        marker_score += 8
+    if any(INTRO_PAGE_MARKER_RE.match(text) for text in texts):
+        marker_score += 4
+    marker_score -= sum(3 for text in texts if LAYOUT_METADATA_RE.search(text))
+    return marker_score
+
+
 def score_layout_provider(
     provider: str,
     layout: dict[str, Any] | None,
@@ -83,7 +104,7 @@ def score_layout_provider(
     captions = sum(1 for block in blocks if str(_block_attr(block, "role", "")) == "caption")
     text_lengths = [len(str(_block_attr(block, "text", "") or "").strip()) for block in blocks if str(_block_attr(block, "text", "") or "").strip()]
     avg_text_chars_per_block = round(sum(text_lengths) / max(len(text_lengths), 1), 2) if text_lengths else 0.0
-    marker_score = page_one_layout_score(
+    marker_score = _page_one_layout_score(
         [block for block in _dict_layout_for_page_score(layout).get("blocks", []) if int(block.get("page", 0) or 0) == 1]
     )
     overall_score = round(
@@ -116,6 +137,38 @@ def score_layout_provider(
     ).to_dict()
 
 
+def score_math_provider(
+    provider: str,
+    math_payload: dict[str, Any] | None,
+    *,
+    route_bias: str | None = None,
+) -> dict[str, Any]:
+    entries = list((math_payload or {}).get("entries", []))
+    entry_count = len(entries)
+    display_like_count = sum(1 for entry in entries if str(entry.get("kind", "display")) in {"display", "group"})
+    route_bonus = 0.0
+    if route_bias in {"math_dense", "scan_or_image_heavy", "degraded_or_garbled"} and provider == "mathpix":
+        route_bonus = 0.1
+    elif route_bias == "born_digital_scholarly" and provider == "docling":
+        route_bonus = 0.05
+    overall_score = round(min(entry_count, 40) * 0.05 + min(display_like_count, 40) * 0.02 + route_bonus, 3)
+    return {
+        "provider": provider,
+        "kind": "math",
+        "block_count": 0,
+        "math_entry_count": entry_count,
+        "page_count": 0,
+        "heading_count": 0,
+        "front_matter_count": 0,
+        "paragraph_count": 0,
+        "reference_count": 0,
+        "caption_count": 0,
+        "avg_text_chars_per_block": 0.0,
+        "page_one_marker_score": 0,
+        "overall_score": overall_score,
+    }
+
+
 def build_source_scorecard(
     *,
     native_layout: dict[str, Any] | None,
@@ -142,21 +195,10 @@ def build_source_scorecard(
         )
     if external_math:
         providers.append(
-            {
-                "provider": str(external_math.get("engine", "external_math")),
-                "kind": "math",
-                "block_count": 0,
-                "math_entry_count": external_math_entries,
-                "page_count": 0,
-                "heading_count": 0,
-                "front_matter_count": 0,
-                "paragraph_count": 0,
-                "reference_count": 0,
-                "caption_count": 0,
-                "avg_text_chars_per_block": 0.0,
-                "page_one_marker_score": 0,
-                "overall_score": round(min(external_math_entries, 40) * 0.05, 3),
-            }
+            score_math_provider(
+                str(external_math.get("engine", "external_math")),
+                external_math,
+            )
         )
 
     providers.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"]), str(item["kind"])))
@@ -170,7 +212,7 @@ def build_source_scorecard(
             (
                 item["provider"]
                 for item in providers
-                if str(item.get("math_entry_count", 0)) != "0" and int(item.get("math_entry_count", 0) or 0) > 0
+                if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0
             ),
             None,
         ),
@@ -179,5 +221,6 @@ def build_source_scorecard(
 
 __all__ = [
     "build_source_scorecard",
+    "score_math_provider",
     "score_layout_provider",
 ]

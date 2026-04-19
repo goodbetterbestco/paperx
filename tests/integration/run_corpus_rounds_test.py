@@ -240,6 +240,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(summary["layout_engine"], "composed")
         self.assertEqual(summary["math_engine"], "mathpix")
         self.assertEqual(summary["recommended_primary_layout_provider"], "mathpix")
+        self.assertEqual(summary["recommended_primary_math_provider"], "mathpix")
         self.assertEqual(summary["acquisition_route"], "math_dense")
         layout_blocks = captured["layout.json"]["blocks"]
         page_one_texts = [block["text"] for block in layout_blocks if block["page"] == 1]
@@ -248,6 +249,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(page_two_texts, ["Page two body."])
         self.assertEqual(captured["acquisition-route.json"]["primary_route"], "math_dense")
         self.assertEqual(captured["source-scorecard.json"]["recommended_primary_layout_provider"], "mathpix")
+        self.assertEqual(captured["source-scorecard.json"]["recommended_primary_math_provider"], "mathpix")
 
     def test_compose_external_sources_keeps_docling_page_one_on_score_tie(self) -> None:
         captured: dict[str, dict] = {}
@@ -303,6 +305,56 @@ class RunCorpusRoundsTest(unittest.TestCase):
         layout_blocks = captured["layout.json"]["blocks"]
         self.assertEqual([block["id"] for block in layout_blocks], ["d1", "d2", "d3"])
         self.assertEqual(captured["source-scorecard.json"]["recommended_primary_layout_provider"], "docling")
+
+    def test_compose_external_sources_can_choose_docling_math_explicitly(self) -> None:
+        captured: dict[str, dict] = {}
+
+        def capture(path: Path, payload: dict) -> None:
+            captured[path.name] = payload
+
+        docling_sources = {
+            "layout": {
+                "engine": "docling",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "d1", "page": 1, "order": 1, "role": "front_matter", "text": "Synthetic Title", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "docling", "entries": [{"id": "doc-eq-1", "kind": "display"}, {"id": "doc-eq-2", "kind": "display"}]},
+        }
+        mathpix_sources = {
+            "layout": {
+                "engine": "mathpix",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "m1", "page": 1, "order": 1, "role": "paragraph", "text": "Synthetic Title", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "mathpix", "entries": [{"id": "mx-eq-1", "kind": "inline"}]},
+        }
+
+        with (
+            patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
+            patch("pipeline.orchestrator.round_paper.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
+            patch(
+                "pipeline.orchestrator.round_paper.build_acquisition_route_report",
+                return_value={"paper_id": "synthetic_test_paper", "primary_route": "born_digital_scholarly"},
+            ),
+        ):
+            summary = compose_external_sources(
+                "synthetic_test_paper",
+                docling_sources=docling_sources,
+                mathpix_sources=mathpix_sources,
+            )
+
+        self.assertEqual(summary["recommended_primary_math_provider"], "docling")
+        self.assertEqual(summary["math_engine"], "docling")
+        self.assertEqual([entry["id"] for entry in captured["math.json"]["entries"]], ["doc-eq-1", "doc-eq-2"])
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
         bad_document = {

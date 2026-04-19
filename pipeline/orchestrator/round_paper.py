@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.acquisition.scoring import score_layout_provider
+from pipeline.acquisition.scoring import score_layout_provider, score_math_provider
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.corpus_layout import canonical_sources_dir
@@ -31,6 +31,7 @@ def compose_external_sources(
     write_json_impl: Callable[[Path, Any], None] | None = None,
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     score_layout_provider_impl: Callable[..., dict[str, Any]] | None = None,
+    score_math_provider_impl: Callable[..., dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     compose_layout_sources_impl = compose_layout_sources_impl or compose_layout_sources
     external_layout_path_impl = external_layout_path_impl or external_layout_path
@@ -38,9 +39,13 @@ def compose_external_sources(
     write_json_impl = write_json_impl or write_json
     build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
     score_layout_provider_impl = score_layout_provider_impl or score_layout_provider
+    score_math_provider_impl = score_math_provider_impl or score_math_provider
     acquisition_route = build_acquisition_route_report_impl(paper_id, layout=layout)
+    primary_route = str(acquisition_route.get("primary_route", "") or "")
     docling_layout = (docling_sources or {}).get("layout") or {}
     mathpix_layout = (mathpix_sources or {}).get("layout") or {}
+    docling_math = (docling_sources or {}).get("math") or {}
+    mathpix_math = (mathpix_sources or {}).get("math") or {}
     docling_math_entries = len(((docling_sources or {}).get("math") or {}).get("entries", []))
     mathpix_math_entries = len(((mathpix_sources or {}).get("math") or {}).get("entries", []))
     provider_scores = []
@@ -62,10 +67,33 @@ def compose_external_sources(
                 math_entry_count=mathpix_math_entries,
             )
         )
+    if docling_math:
+        provider_scores.append(
+            score_math_provider_impl(
+                str(docling_math.get("engine", "docling")),
+                docling_math,
+                route_bias=primary_route,
+            )
+        )
+    if mathpix_math:
+        provider_scores.append(
+            score_math_provider_impl(
+                str(mathpix_math.get("engine", "mathpix")),
+                mathpix_math,
+                route_bias=primary_route,
+            )
+        )
     provider_scores.sort(key=lambda item: (-float(item.get("overall_score", 0.0) or 0.0), str(item.get("provider", ""))))
     source_scorecard = {
         "providers": provider_scores,
-        "recommended_primary_layout_provider": provider_scores[0]["provider"] if provider_scores else None,
+        "recommended_primary_layout_provider": next(
+            (item["provider"] for item in provider_scores if str(item.get("kind")) == "layout"),
+            None,
+        ),
+        "recommended_primary_math_provider": next(
+            (item["provider"] for item in provider_scores if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0),
+            None,
+        ),
     }
     try:
         final_layout = compose_layout_sources_impl(
@@ -76,10 +104,15 @@ def compose_external_sources(
         )
     except TypeError:
         final_layout = compose_layout_sources_impl(docling_sources, mathpix_sources)
-    if mathpix_sources and mathpix_sources.get("math", {}).get("entries"):
-        final_math = mathpix_sources["math"]
-    elif docling_sources:
-        final_math = docling_sources["math"]
+    preferred_math_provider = str(source_scorecard.get("recommended_primary_math_provider") or "")
+    if preferred_math_provider == str(mathpix_math.get("engine", "mathpix")) and mathpix_math.get("entries"):
+        final_math = mathpix_math
+    elif preferred_math_provider == str(docling_math.get("engine", "docling")) and docling_math.get("entries"):
+        final_math = docling_math
+    elif mathpix_math.get("entries"):
+        final_math = mathpix_math
+    elif docling_math.get("entries"):
+        final_math = docling_math
     else:
         final_math = {"engine": "none", "entries": []}
     layout_path = external_layout_path_impl(paper_id, layout=layout)
@@ -97,6 +130,7 @@ def compose_external_sources(
         "math_engine": final_math.get("engine"),
         "math_entries": len(final_math.get("entries", [])),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
+        "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
         "acquisition_route": acquisition_route.get("primary_route"),
     }
 
