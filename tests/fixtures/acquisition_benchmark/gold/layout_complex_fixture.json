@@ -1,0 +1,24 @@
+{
+  "family": "layout_complex",
+  "expected_route": "layout_complex",
+  "ocr_should_run": false,
+  "expected_primary_layout_provider": "docling",
+  "expected_primary_math_provider": "mathpix",
+  "title": "Synthetic Layout Complex Benchmark Paper",
+  "abstract": "This benchmark paper simulates a layout complex source with multi column structure and caption heavy content.",
+  "headings": [
+    "Introduction",
+    "Method",
+    "Results"
+  ],
+  "paragraphs": [
+    "Complex layouts should preserve reading order across columns and figure regions.",
+    "Provider selection should prefer the layout engine that best preserves headings and references."
+  ],
+  "equations": [
+    "f(x) = x^2 + 1"
+  ],
+  "references": [
+    "[1] Donald Knuth. Literate Programming."
+  ]
+}

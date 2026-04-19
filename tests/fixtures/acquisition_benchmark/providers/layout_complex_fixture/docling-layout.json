@@ -1,0 +1,85 @@
+{
+  "engine": "docling",
+  "blocks": [
+    {
+      "id": "docling-front-title",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Synthetic Layout Complex Benchmark Paper",
+      "bbox": {}
+    },
+    {
+      "id": "docling-front-abstract-marker",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "Abstract",
+      "bbox": {}
+    },
+    {
+      "id": "docling-front-abstract",
+      "page": 1,
+      "order": 3,
+      "role": "front_matter",
+      "text": "This benchmark paper simulates a layout complex source with multi column structure and caption heavy content.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-1",
+      "page": 1,
+      "order": 4,
+      "role": "heading",
+      "text": "Introduction",
+      "bbox": {}
+    },
+    {
+      "id": "docling-paragraph-1",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Complex layouts should preserve reading order across columns and figure regions.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-caption-1",
+      "page": 1,
+      "order": 6,
+      "role": "caption",
+      "text": "Figure 1. Structured caption text aligned with the figure.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-2",
+      "page": 1,
+      "order": 7,
+      "role": "heading",
+      "text": "Method",
+      "bbox": {}
+    },
+    {
+      "id": "docling-paragraph-2",
+      "page": 1,
+      "order": 8,
+      "role": "paragraph",
+      "text": "Provider selection should prefer the layout engine that best preserves headings and references.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-3",
+      "page": 1,
+      "order": 9,
+      "role": "heading",
+      "text": "Results",
+      "bbox": {}
+    },
+    {
+      "id": "docling-reference-1",
+      "page": 2,
+      "order": 10,
+      "role": "reference",
+      "text": "[1] Donald Knuth. Literate Programming.",
+      "bbox": {}
+    }
+  ]
+}
