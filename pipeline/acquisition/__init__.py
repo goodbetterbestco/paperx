@@ -6,6 +6,7 @@ from pipeline.acquisition.benchmark import (
     run_acquisition_benchmark,
 )
 from pipeline.acquisition.benchmark_history import list_benchmark_history
+from pipeline.acquisition.benchmark_trend import summarize_benchmark_trend
 from pipeline.acquisition.audit import audit_acquisition_quality
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
 from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
@@ -43,6 +44,7 @@ __all__ = [
     "route_pdf_signals",
     "run_acquisition_benchmark",
     "run_grobid_trial",
+    "summarize_benchmark_trend",
     "reported_layout_provider",
     "reported_math_provider",
     "score_math_provider",

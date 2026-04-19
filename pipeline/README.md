@@ -74,6 +74,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
 - `python3 -m pipeline.cli.list_acquisition_benchmark_history --limit 5`
+- `python3 -m pipeline.cli.summarize_acquisition_benchmark_trend`
 - `python3 -m pipeline.cli.compare_acquisition_benchmark --base tmp/acquisition_benchmark/history/baseline-apr19.json --candidate tmp/acquisition_benchmark/history/candidate-apr20.json`
 - `python3 -m pipeline.cli.compare_acquisition_benchmark --base previous --candidate latest`
 - `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`
@@ -128,6 +129,8 @@ diff two saved summary JSON files by provider and benchmark family. The compare
 CLI also accepts snapshot labels plus `latest` and `previous` aliases resolved
 from benchmark history. `pipeline.cli.list_acquisition_benchmark_history` shows
 the saved runs and per-provider aggregate deltas versus the previous snapshot.
+`pipeline.cli.summarize_acquisition_benchmark_trend` turns the latest-vs-previous
+comparison into a short improvement/regression watchlist overall and by family.
 
 Figure regeneration now also lives under this package:
 
