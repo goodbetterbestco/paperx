@@ -1,4 +1,5 @@
 from pipeline.sources.external import (
+    acquisition_execution_report_path,
     grobid_tei_path,
     load_docling_layout,
     load_docling_math,
@@ -26,6 +27,7 @@ from pipeline.sources.pdftotext import (
 
 __all__ = [
     "bbox_to_line_window",
+    "acquisition_execution_report_path",
     "docling_json_to_external_sources",
     "ensure_figure_manifest",
     "external_layout_path",

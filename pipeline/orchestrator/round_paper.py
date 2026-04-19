@@ -18,11 +18,88 @@ from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.output.validation import validate_canonical
 from pipeline.reconcile.entrypoint import reconcile_paper
 from pipeline.sources.external import (
+    acquisition_execution_report_path,
     external_layout_path,
     external_math_path,
     load_grobid_metadata_observation,
     ocr_prepass_report_path,
 )
+
+
+def build_acquisition_execution_summary(
+    *,
+    acquisition_route: dict[str, Any],
+    source_scorecard: dict[str, Any],
+    docling_sources: dict[str, Any] | None,
+    mathpix_sources: dict[str, Any] | None,
+    final_layout: dict[str, Any],
+    final_math: dict[str, Any],
+    metadata_observation: dict[str, Any] | None,
+) -> dict[str, Any]:
+    pdf_selection = dict((docling_sources or {}).get("pdf_selection") or (mathpix_sources or {}).get("pdf_selection") or {})
+    execution_plan = dict((docling_sources or {}).get("execution_plan") or (mathpix_sources or {}).get("execution_plan") or {})
+    docling_layout = (docling_sources or {}).get("layout") or {}
+    mathpix_layout = (mathpix_sources or {}).get("layout") or {}
+    docling_math = (docling_sources or {}).get("math") or {}
+    mathpix_math = (mathpix_sources or {}).get("math") or {}
+    metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
+    selected_layout_provider = reported_layout_provider(
+        str(final_layout.get("engine", "") or "") or None,
+        source_scorecard=source_scorecard,
+        fallback="none",
+    )
+    selected_math_provider = reported_math_provider(
+        str(final_math.get("engine", "") or "") or None,
+        source_scorecard=source_scorecard,
+        math_payload=final_math,
+        fallback="none",
+    )
+    executed_layout_candidates = [
+        provider
+        for provider, payload in (
+            ("docling", docling_layout),
+            ("mathpix", mathpix_layout),
+        )
+        if payload
+    ]
+    executed_math_candidates = [
+        provider
+        for provider, payload in (
+            ("docling", docling_math),
+            ("mathpix", mathpix_math),
+        )
+        if payload and list(payload.get("entries", []))
+    ]
+    return {
+        "route_primary": acquisition_route.get("primary_route"),
+        "route_traits": list(acquisition_route.get("traits", [])),
+        "provider_order": list(execution_plan.get("provider_order", [])),
+        "recommended": {
+            "layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
+            "math_provider": source_scorecard.get("recommended_primary_math_provider"),
+            "metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
+            "reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
+        },
+        "executed": {
+            "layout_candidates": executed_layout_candidates,
+            "math_candidates": executed_math_candidates,
+            "selected_layout_provider": selected_layout_provider,
+            "selected_math_provider": selected_math_provider,
+            "metadata_provider": metadata_provider,
+            "docling_ran": bool(docling_sources),
+            "mathpix_ran": bool(mathpix_sources),
+            "mathpix_strategy": execution_plan.get("mathpix_strategy"),
+            "mathpix_reason": execution_plan.get("mathpix_reason"),
+            "mathpix_prefetch_eligible": bool(execution_plan.get("mathpix_prefetch_eligible")),
+        },
+        "ocr": {
+            "policy": pdf_selection.get("ocr_prepass_policy") or (acquisition_route.get("ocr_prepass") or {}).get("policy"),
+            "tool": pdf_selection.get("ocr_prepass_tool") or (acquisition_route.get("ocr_prepass") or {}).get("tool"),
+            "applied": bool(pdf_selection.get("ocr_prepass_applied")),
+            "pdf_source_kind": pdf_selection.get("pdf_source_kind"),
+            "selected_pdf_path": pdf_selection.get("selected_pdf_path"),
+        },
+    }
 
 
 def compose_external_sources(
@@ -35,6 +112,7 @@ def compose_external_sources(
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
     write_json_impl: Callable[[Path, Any], None] | None = None,
+    acquisition_execution_report_path_impl: Callable[..., Path] | None = None,
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     score_layout_provider_impl: Callable[..., dict[str, Any]] | None = None,
     score_math_provider_impl: Callable[..., dict[str, Any]] | None = None,
@@ -44,6 +122,7 @@ def compose_external_sources(
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
     write_json_impl = write_json_impl or write_json
+    acquisition_execution_report_path_impl = acquisition_execution_report_path_impl or acquisition_execution_report_path
     build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
     score_layout_provider_impl = score_layout_provider_impl or score_layout_provider
     score_math_provider_impl = score_math_provider_impl or score_math_provider
@@ -165,10 +244,21 @@ def compose_external_sources(
     sources_dir = layout_path.parent
     write_json_impl(sources_dir / "acquisition-route.json", acquisition_route)
     write_json_impl(sources_dir / "source-scorecard.json", source_scorecard)
+    acquisition_execution = build_acquisition_execution_summary(
+        acquisition_route=acquisition_route,
+        source_scorecard=source_scorecard,
+        docling_sources=docling_sources,
+        mathpix_sources=mathpix_sources,
+        final_layout=final_layout,
+        final_math=final_math,
+        metadata_observation=metadata_observation,
+    )
+    write_json_impl(acquisition_execution_report_path_impl(paper_id, layout=layout), acquisition_execution)
     ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(layout_path),
         "math_path": str(math_path),
+        "acquisition_execution_path": str(acquisition_execution_report_path_impl(paper_id, layout=layout)),
         "layout_engine": reported_layout_provider(
             str(final_layout.get("engine", "") or "") or None,
             source_scorecard=source_scorecard,
@@ -186,6 +276,9 @@ def compose_external_sources(
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
         "recommended_primary_metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
         "recommended_primary_reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
+        "executed_layout_provider": acquisition_execution["executed"]["selected_layout_provider"],
+        "executed_math_provider": acquisition_execution["executed"]["selected_math_provider"],
+        "executed_metadata_provider": acquisition_execution["executed"]["metadata_provider"],
         "acquisition_route": acquisition_route.get("primary_route"),
         "ocr_prepass_policy": ocr_prepass.get("policy"),
         "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
@@ -257,12 +350,14 @@ def existing_composed_sources(
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
     ocr_prepass_report_path_impl: Callable[..., Path] | None = None,
+    acquisition_execution_report_path_impl: Callable[..., Path] | None = None,
     load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     load_json_if_exists_impl = load_json_if_exists_impl or load_json_if_exists
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
     ocr_prepass_report_path_impl = ocr_prepass_report_path_impl or ocr_prepass_report_path
+    acquisition_execution_report_path_impl = acquisition_execution_report_path_impl or acquisition_execution_report_path
     load_grobid_metadata_observation_impl = (
         load_grobid_metadata_observation_impl or load_grobid_metadata_observation
     )
@@ -278,6 +373,9 @@ def existing_composed_sources(
     acquisition_route = load_json_if_exists_impl(sources_dir / "acquisition-route.json") or {}
     source_scorecard = load_json_if_exists_impl(sources_dir / "source-scorecard.json") or {}
     ocr_prepass = load_json_if_exists_impl(ocr_prepass_report_path_impl(paper_id, layout=layout)) or {}
+    acquisition_execution = (
+        load_json_if_exists_impl(acquisition_execution_report_path_impl(paper_id, layout=layout)) or {}
+    )
     metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout) or {}
     route_ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
@@ -307,6 +405,9 @@ def existing_composed_sources(
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
         "recommended_primary_metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
         "recommended_primary_reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
+        "executed_layout_provider": ((acquisition_execution.get("executed") or {}).get("selected_layout_provider")),
+        "executed_math_provider": ((acquisition_execution.get("executed") or {}).get("selected_math_provider")),
+        "executed_metadata_provider": ((acquisition_execution.get("executed") or {}).get("metadata_provider")),
         "metadata_provider": metadata_observation.get("provider"),
     }
 

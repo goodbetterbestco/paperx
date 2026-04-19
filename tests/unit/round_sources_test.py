@@ -207,6 +207,15 @@ class RoundSourcesTest(unittest.TestCase):
                 fn(*args, **kwargs),
             ),
             resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
+                "acquisition_route": {
+                    "paper_id": paper_id,
+                    "primary_route": "math_dense",
+                    "product_plan": {
+                        "layout": ["docling"],
+                        "math": ["mathpix", "docling"],
+                    },
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
                 "selected_pdf_path": selected_pdf_path,
                 "original_pdf_path": selected_pdf_path,
                 "ocr_normalized_pdf_path": Path("/tmp/missing-local.pdf"),
@@ -238,6 +247,98 @@ class RoundSourcesTest(unittest.TestCase):
         self.assertEqual(timings["docling_seconds"], 0.75)
         self.assertEqual(timings["mathpix_seconds"], 2.5)
         self.assertIn("ocr_prepass_seconds", timings)
+
+    def test_build_extraction_sources_skips_mathpix_when_docling_satisfies_route(self) -> None:
+        selected_pdf_path = Path("/tmp/selected-skip.pdf")
+        docling_sources, mathpix_sources, timings = build_extraction_sources_for_paper(
+            "1990_synthetic_test_paper",
+            mathpix_credentials_available_impl=lambda: True,
+            timed_call_impl=lambda label, fn, /, *args, **kwargs: (
+                label,
+                0.5 if label == "docling" else 2.0,
+                fn(*args, **kwargs),
+            ),
+            resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
+                "acquisition_route": {
+                    "paper_id": paper_id,
+                    "primary_route": "born_digital_scholarly",
+                    "product_plan": {
+                        "layout": ["docling"],
+                        "math": ["docling", "mathpix"],
+                    },
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+                "selected_pdf_path": selected_pdf_path,
+                "original_pdf_path": selected_pdf_path,
+                "ocr_normalized_pdf_path": Path("/tmp/missing-skip.pdf"),
+                "pdf_source_kind": "original",
+                "ocr_prepass_policy": "skip",
+                "ocr_prepass_tool": None,
+                "ocr_prepass_applied": False,
+            },
+            write_json_impl=lambda path, payload: None,
+            build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
+                "layout": {"blocks": [{"id": "docling"}]},
+                "math": {"entries": [{"id": "eq-1"}]},
+                "source_pdf_path": str(pdf_path),
+            },
+            build_mathpix_sources_impl=lambda *args, **kwargs: (_ for _ in ()).throw(
+                AssertionError("mathpix should not run when docling already satisfies the route")
+            ),
+        )
+
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_strategy"], "skipped")
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_reason"], "route_sufficient_without_mathpix")
+        self.assertIsNone(mathpix_sources)
+        self.assertEqual(timings["mathpix_seconds"], 0.0)
+
+    def test_build_extraction_sources_runs_mathpix_as_docling_fallback(self) -> None:
+        selected_pdf_path = Path("/tmp/selected-fallback.pdf")
+        docling_sources, mathpix_sources, timings = build_extraction_sources_for_paper(
+            "1990_synthetic_test_paper",
+            mathpix_credentials_available_impl=lambda: True,
+            timed_call_impl=lambda label, fn, /, *args, **kwargs: (
+                label,
+                0.5 if label == "docling" else 1.75,
+                fn(*args, **kwargs),
+            ),
+            resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
+                "acquisition_route": {
+                    "paper_id": paper_id,
+                    "primary_route": "layout_complex",
+                    "product_plan": {
+                        "layout": ["docling", "llamaparse", "marker", "mineru"],
+                        "math": ["mathpix", "docling"],
+                    },
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+                "selected_pdf_path": selected_pdf_path,
+                "original_pdf_path": selected_pdf_path,
+                "ocr_normalized_pdf_path": Path("/tmp/missing-fallback.pdf"),
+                "pdf_source_kind": "original",
+                "ocr_prepass_policy": "skip",
+                "ocr_prepass_tool": None,
+                "ocr_prepass_applied": False,
+            },
+            write_json_impl=lambda path, payload: None,
+            build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
+                "layout": {"blocks": [{"id": "docling"}]},
+                "math": {"entries": []},
+                "source_pdf_path": str(pdf_path),
+            },
+            build_mathpix_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
+                "math_entries": 2,
+                "layout": {"blocks": []},
+                "math": {"entries": [{"id": "mx-eq-1"}, {"id": "mx-eq-2"}]},
+                "source_pdf_path": str(pdf_path),
+            },
+        )
+
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_strategy"], "fallback_after_docling")
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_reason"], "math_fallback_no_docling_math")
+        self.assertIsNotNone(mathpix_sources)
+        self.assertEqual(mathpix_sources["math_entries"], 2)
+        self.assertEqual(timings["mathpix_seconds"], 1.75)
 
 
 if __name__ == "__main__":

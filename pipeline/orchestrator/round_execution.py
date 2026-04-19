@@ -5,6 +5,7 @@ import time
 import traceback
 from typing import Any, Callable
 
+from pipeline.acquisition.routing import build_acquisition_route_report
 from pipeline.corpus_layout import ProjectLayout, canonical_path
 from pipeline.orchestrator.round_document import (
     anomaly_flags,
@@ -26,7 +27,7 @@ from pipeline.orchestrator.round_settings import (
     mathpix_round_poll_seconds,
     mathpix_submit_workers,
 )
-from pipeline.orchestrator.round_sources import build_extraction_sources_for_paper
+from pipeline.orchestrator.round_sources import build_extraction_sources_for_paper, mathpix_prefetch_allowed
 from pipeline.output.staleness import detect_canonical_staleness
 
 
@@ -206,6 +207,7 @@ def process_round(
     mathpix_credentials_available_impl: Callable[[], bool] | None = None,
     mathpix_submit_workers_impl: Callable[[], int] | None = None,
     mathpix_round_poll_seconds_impl: Callable[[], float] | None = None,
+    build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     mathpix_round_coordinator_cls: type[Any] | None = None,
     run_paper_job_impl: Callable[..., dict[str, Any]] | None = None,
 ) -> None:
@@ -214,6 +216,7 @@ def process_round(
     mathpix_credentials_available_impl = mathpix_credentials_available_impl or mathpix_credentials_available
     mathpix_submit_workers_impl = mathpix_submit_workers_impl or mathpix_submit_workers
     mathpix_round_poll_seconds_impl = mathpix_round_poll_seconds_impl or mathpix_round_poll_seconds
+    build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
     mathpix_round_coordinator_cls = mathpix_round_coordinator_cls or MathpixRoundCoordinator
     run_paper_job_impl = run_paper_job_impl or run_paper_job
     round_name = f"round_{round_index}"
@@ -253,12 +256,21 @@ def process_round(
         ]
     next_index = 0
     active_jobs: dict[Future[dict[str, Any]], str] = {}
+    mathpix_prefetch_papers: set[str] = set()
     use_round_mathpix = bool(mathpix_credentials_available_impl() and len(pending_papers) > 1)
     mathpix_coordinator: Any | None = None
 
     if use_round_mathpix:
+        mathpix_prefetch_papers = {
+            paper_id
+            for paper_id in pending_papers
+            if mathpix_prefetch_allowed(build_acquisition_route_report_impl(paper_id, layout=layout))
+        }
+        use_round_mathpix = bool(mathpix_prefetch_papers)
+
+    if use_round_mathpix:
         mathpix_coordinator = mathpix_round_coordinator_cls(
-            pending_papers,
+            sorted(mathpix_prefetch_papers),
             submit_workers=mathpix_submit_workers_impl(),
             poll_seconds=mathpix_round_poll_seconds_impl(),
             status_callback=update_paper_status,
@@ -279,7 +291,7 @@ def process_round(
                 }
             )
             submit_kwargs: dict[str, Any] = {"force_rebuild": force_rebuild}
-            if mathpix_coordinator is not None:
+            if mathpix_coordinator is not None and paper_id in mathpix_prefetch_papers:
                 submit_kwargs["prefetched_mathpix_future"] = mathpix_coordinator.future_for(paper_id)
             if layout is not None:
                 submit_kwargs["layout"] = layout

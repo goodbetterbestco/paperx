@@ -57,6 +57,10 @@ def ocr_prepass_report_path(paper_id: str, *, layout: ProjectLayout | None = Non
     return _paper_sources_dir(paper_id, layout=layout) / "ocr-prepass.json"
 
 
+def acquisition_execution_report_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
+    return _paper_sources_dir(paper_id, layout=layout) / "acquisition-execution.json"
+
+
 def grobid_tei_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
     return _paper_sources_dir(paper_id, layout=layout) / "grobid.tei.xml"
 

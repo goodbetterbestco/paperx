@@ -2,6 +2,7 @@ import os
 import socket
 import sys
 import unittest
+from concurrent.futures import Future
 from pathlib import Path
 from unittest.mock import patch
 
@@ -257,6 +258,10 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(captured["acquisition-route.json"]["primary_route"], "math_dense")
         self.assertEqual(captured["source-scorecard.json"]["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(captured["source-scorecard.json"]["recommended_primary_math_provider"], "mathpix")
+        self.assertEqual(captured["acquisition-execution.json"]["recommended"]["layout_provider"], "mathpix")
+        self.assertEqual(captured["acquisition-execution.json"]["executed"]["selected_layout_provider"], "mathpix")
+        self.assertEqual(captured["acquisition-execution.json"]["executed"]["selected_math_provider"], "mathpix")
+        self.assertFalse(captured["acquisition-execution.json"]["ocr"]["applied"])
 
     def test_compose_external_sources_keeps_docling_page_one_on_score_tie(self) -> None:
         captured: dict[str, dict] = {}
@@ -703,6 +708,71 @@ class RunCorpusRoundsTest(unittest.TestCase):
             process_round(status, 1, max_workers=1, force_rebuild=False, layout=layout)
 
         self.assertEqual(captured_layouts, [layout])
+
+    def test_process_round_prefetches_mathpix_only_for_route_eligible_papers(self) -> None:
+        status = {
+            "papers": ["paper-a", "paper-b"],
+            "rounds": {},
+        }
+        prefetched_flags: dict[str, bool] = {}
+        coordinator_papers: list[str] = []
+
+        class FakeCoordinator:
+            def __init__(self, paper_ids, **kwargs):
+                coordinator_papers.extend(paper_ids)
+                self._futures = {}
+                for paper_id in paper_ids:
+                    future: Future[dict[str, object]] = Future()
+                    future.set_result({"pdf_id": f"{paper_id}-pdf", "elapsed_seconds": 1.0, "pages": []})
+                    self._futures[paper_id] = future
+
+            def start(self) -> None:
+                return None
+
+            def future_for(self, paper_id: str):
+                return self._futures[paper_id]
+
+            def close(self) -> None:
+                return None
+
+        def fake_run_paper_job(
+            paper_id: str,
+            *,
+            force_rebuild: bool,
+            prefetched_mathpix_future=None,
+            layout=None,
+        ) -> dict:
+            prefetched_flags[paper_id] = prefetched_mathpix_future is not None
+            return {
+                "status": "completed",
+                "completed_at": "2026-04-14T00:10:00Z",
+                "paper_id": paper_id,
+            }
+
+        with (
+            patch("pipeline.orchestrator.round_execution.mathpix_credentials_available", return_value=True),
+            patch(
+                "pipeline.orchestrator.round_execution.build_acquisition_route_report",
+                side_effect=lambda paper_id, *, layout=None: {
+                    "paper_id": paper_id,
+                    "primary_route": "math_dense" if paper_id == "paper-b" else "born_digital_scholarly",
+                },
+            ),
+            patch("pipeline.orchestrator.round_execution.run_paper_job", side_effect=fake_run_paper_job),
+            patch("pipeline.orchestrator.round_execution.save_status"),
+        ):
+            process_round(
+                status,
+                1,
+                max_workers=2,
+                force_rebuild=False,
+                layout=None,
+                mathpix_round_coordinator_cls=FakeCoordinator,
+            )
+
+        self.assertEqual(coordinator_papers, ["paper-b"])
+        self.assertFalse(prefetched_flags["paper-a"])
+        self.assertTrue(prefetched_flags["paper-b"])
 
     def test_final_report_mentions_running_papers(self) -> None:
         status = {

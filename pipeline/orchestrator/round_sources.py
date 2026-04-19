@@ -17,6 +17,11 @@ from pipeline.sources.ocrmypdf import run_ocrmypdf
 
 
 PER_PAPER_SOURCE_WORKERS = 2
+MATHPIX_PREFETCH_PRIMARY_ROUTES = {
+    "scan_or_image_heavy",
+    "degraded_or_garbled",
+    "math_dense",
+}
 
 
 def build_docling_sources(
@@ -124,6 +129,29 @@ def build_mathpix_sources(
     return build_mathpix_sources_from_result_impl(paper_id, mathpix_result, pdf_path=pdf_path, layout=layout)
 
 
+def mathpix_prefetch_allowed(acquisition_route: dict[str, Any] | None) -> bool:
+    primary_route = str((acquisition_route or {}).get("primary_route", "") or "")
+    return primary_route in MATHPIX_PREFETCH_PRIMARY_ROUTES
+
+
+def mathpix_fallback_needed(
+    acquisition_route: dict[str, Any] | None,
+    *,
+    docling_sources: dict[str, Any] | None,
+) -> tuple[bool, str]:
+    product_plan = dict((acquisition_route or {}).get("product_plan") or {})
+    layout_plan = [str(item).strip() for item in product_plan.get("layout", []) if str(item).strip()]
+    math_plan = [str(item).strip() for item in product_plan.get("math", []) if str(item).strip()]
+    docling_layout_blocks = len((((docling_sources or {}).get("layout") or {}).get("blocks") or []))
+    docling_math_entries = len((((docling_sources or {}).get("math") or {}).get("entries") or []))
+
+    if "mathpix" in layout_plan and docling_layout_blocks <= 0:
+        return True, "layout_fallback_no_docling_blocks"
+    if "mathpix" in math_plan and docling_math_entries <= 0:
+        return True, "math_fallback_no_docling_math"
+    return False, "route_sufficient_without_mathpix"
+
+
 def resolve_extraction_pdf(
     paper_id: str,
     *,
@@ -227,12 +255,14 @@ def build_extraction_sources_for_paper(
     pdf_selection = resolve_extraction_pdf_impl(paper_id, layout=layout)
     timings["ocr_prepass_seconds"] = round(time.perf_counter() - pdf_selection_started, 3)
     selected_pdf_path = pdf_selection["selected_pdf_path"]
+    acquisition_route = dict(pdf_selection.get("acquisition_route") or {})
     write_json_impl(
         ocr_prepass_report_path_impl(paper_id, layout=layout),
         _ocr_prepass_report_payload(pdf_selection, layout=layout),
     )
     mathpix_enabled = mathpix_credentials_available_impl()
-    max_workers = 1 if prefetched_mathpix_future is not None else (per_paper_source_workers if mathpix_enabled else 1)
+    eager_mathpix = mathpix_enabled and mathpix_prefetch_allowed(acquisition_route)
+    max_workers = 1 if prefetched_mathpix_future is not None else (per_paper_source_workers if eager_mathpix else 1)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         docling_future = executor.submit(
@@ -244,7 +274,7 @@ def build_extraction_sources_for_paper(
             layout=layout,
         )
         local_mathpix_future: Future[tuple[str, float, Any]] | None = None
-        if mathpix_enabled and prefetched_mathpix_future is None:
+        if eager_mathpix and prefetched_mathpix_future is None:
             local_mathpix_future = executor.submit(
                 timed_call_impl,
                 "mathpix",
@@ -257,7 +287,11 @@ def build_extraction_sources_for_paper(
         _, docling_seconds, docling_sources = docling_future.result()
         timings["docling_seconds"] = docling_seconds
         mathpix_sources = None
+        mathpix_reason = "route_requested_prefetch" if eager_mathpix else "skipped"
+        mathpix_strategy = "skipped"
         if prefetched_mathpix_future is not None:
+            mathpix_strategy = "prefetched_primary"
+            mathpix_reason = "prefetched_mathpix_future"
             mathpix_result = prefetched_mathpix_future.result()
             mathpix_sources = build_mathpix_sources_from_result_impl(
                 paper_id,
@@ -268,11 +302,46 @@ def build_extraction_sources_for_paper(
             mathpix_seconds = float(mathpix_result.get("elapsed_seconds", 0.0))
             timings["mathpix_seconds"] = mathpix_seconds
         elif local_mathpix_future is not None:
+            mathpix_strategy = "parallel_primary"
             _, mathpix_seconds, mathpix_sources = local_mathpix_future.result()
             timings["mathpix_seconds"] = mathpix_seconds
         else:
-            timings["mathpix_seconds"] = 0.0
+            needs_fallback_mathpix = False
+            if mathpix_enabled:
+                needs_fallback_mathpix, mathpix_reason = mathpix_fallback_needed(
+                    acquisition_route,
+                    docling_sources=docling_sources,
+                )
+            if needs_fallback_mathpix:
+                mathpix_strategy = "fallback_after_docling"
+                _, mathpix_seconds, mathpix_sources = timed_call_impl(
+                    "mathpix",
+                    build_mathpix_sources_impl,
+                    paper_id,
+                    pdf_path=selected_pdf_path,
+                    layout=layout,
+                )
+                timings["mathpix_seconds"] = mathpix_seconds
+            else:
+                timings["mathpix_seconds"] = 0.0
 
+    execution_plan = {
+        "route_primary": acquisition_route.get("primary_route"),
+        "provider_order": [
+            *(
+                ["ocrmypdf"]
+                if bool(pdf_selection["ocr_prepass_applied"])
+                or bool((acquisition_route.get("ocr_prepass") or {}).get("should_run"))
+                else []
+            ),
+            "docling",
+            *(["mathpix"] if mathpix_sources is not None or eager_mathpix else []),
+        ],
+        "mathpix_requested": bool(mathpix_sources),
+        "mathpix_strategy": mathpix_strategy,
+        "mathpix_reason": mathpix_reason,
+        "mathpix_prefetch_eligible": eager_mathpix,
+    }
     docling_sources["pdf_selection"] = {
         "selected_pdf_path": str(selected_pdf_path),
         "pdf_source_kind": str(pdf_selection["pdf_source_kind"]),
@@ -280,8 +349,10 @@ def build_extraction_sources_for_paper(
         "ocr_prepass_tool": pdf_selection["ocr_prepass_tool"],
         "ocr_prepass_applied": bool(pdf_selection["ocr_prepass_applied"]),
     }
+    docling_sources["execution_plan"] = execution_plan
     if mathpix_sources is not None:
         mathpix_sources["pdf_selection"] = dict(docling_sources["pdf_selection"])
+        mathpix_sources["execution_plan"] = dict(execution_plan)
     return docling_sources, mathpix_sources, timings
 
 
@@ -290,6 +361,8 @@ __all__ = [
     "build_extraction_sources_for_paper",
     "build_mathpix_sources",
     "build_mathpix_sources_from_result",
+    "mathpix_fallback_needed",
+    "mathpix_prefetch_allowed",
     "resolve_extraction_pdf",
     "timed_call",
 ]
