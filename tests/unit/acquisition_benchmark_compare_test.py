@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
-from pipeline.acquisition.benchmark_compare import compare_benchmark_reports
+from pipeline.acquisition.benchmark_compare import compare_benchmark_reports, resolve_benchmark_report_path
 from pipeline.cli.compare_acquisition_benchmark import run_compare_benchmark_cli
 
 
@@ -96,9 +96,47 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
                 print_fn=printed.append,
             )
 
-        self.assertEqual(exit_code, 0)
+            self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Comparison", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+
+    def test_resolve_benchmark_report_path_supports_labels_and_aliases(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_dir = Path(temp_dir) / "history"
+            history_dir.mkdir(parents=True, exist_ok=True)
+            older_path = history_dir / "older.json"
+            newer_path = history_dir / "newer.json"
+            older_path.write_text("{}", encoding="utf-8")
+            newer_path.write_text("{}", encoding="utf-8")
+
+            self.assertEqual(resolve_benchmark_report_path("older", history_dir=history_dir), older_path.resolve())
+            self.assertEqual(resolve_benchmark_report_path("latest", history_dir=history_dir), newer_path.resolve())
+            self.assertEqual(resolve_benchmark_report_path("previous", history_dir=history_dir), older_path.resolve())
+
+    def test_compare_benchmark_cli_resolves_history_labels(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_dir = Path(temp_dir) / "history"
+            history_dir.mkdir(parents=True, exist_ok=True)
+            base_path = history_dir / "baseline.json"
+            candidate_path = history_dir / "candidate.json"
+            payload = {
+                "paper_count": 1,
+                "aggregate": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}],
+                "families": [{"family": "born_digital_scholarly", "providers": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}]}],
+            }
+            base_path.write_text(json.dumps(payload), encoding="utf-8")
+            candidate_path.write_text(json.dumps(payload), encoding="utf-8")
+            printed: list[str] = []
+
+            exit_code = run_compare_benchmark_cli(
+                argparse.Namespace(base="baseline", candidate="candidate", history_dir=str(history_dir), format="markdown"),
+                print_fn=printed.append,
+            )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("# Acquisition Benchmark Comparison", printed[0])
+        self.assertIn(str(base_path), printed[0])
+        self.assertIn(str(candidate_path), printed[0])
 
 
 if __name__ == "__main__":
