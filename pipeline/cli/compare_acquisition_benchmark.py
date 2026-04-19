@@ -5,7 +5,8 @@ import json
 from pathlib import Path
 from typing import Any, Callable
 
-from pipeline.acquisition.benchmark_compare import compare_benchmark_reports, resolve_benchmark_report_path
+from pipeline.acquisition.benchmark_compare import compare_benchmark_reports
+from pipeline.acquisition.benchmark_reports import resolve_benchmark_report_path
 from pipeline.output.acquisition_benchmark_compare_report import (
     render_acquisition_benchmark_comparison_markdown,
 )

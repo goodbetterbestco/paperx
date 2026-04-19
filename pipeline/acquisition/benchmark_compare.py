@@ -1,69 +1,15 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
-from pipeline.runtime_paths import ensure_repo_tmp_dir
-
-
-DEFAULT_HISTORY_DIR = ensure_repo_tmp_dir() / "acquisition_benchmark" / "history"
-
-
-def _load_report(path: str | Path) -> dict[str, Any]:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
-
-
-def _history_reports(history_dir: str | Path) -> list[Path]:
-    root = Path(history_dir)
-    if not root.exists():
-        return []
-    return sorted(
-        (path for path in root.glob("*.json") if path.is_file()),
-        key=lambda path: (path.stat().st_mtime, path.name),
-    )
-
-
-def resolve_benchmark_report_path(path_or_label: str | Path, *, history_dir: str | Path = DEFAULT_HISTORY_DIR) -> Path:
-    candidate = Path(path_or_label)
-    if candidate.exists():
-        return candidate.resolve()
-
-    value = str(path_or_label).strip()
-    reports = _history_reports(history_dir)
-    if value == "latest":
-        if not reports:
-            raise FileNotFoundError(f"No benchmark history reports found under {Path(history_dir).resolve()}")
-        return reports[-1].resolve()
-    if value == "previous":
-        if len(reports) < 2:
-            raise FileNotFoundError(
-                f"Need at least two benchmark history reports under {Path(history_dir).resolve()} for 'previous'"
-            )
-        return reports[-2].resolve()
-
-    if value:
-        label_candidate = Path(history_dir) / f"{value.removesuffix('.json')}.json"
-        if label_candidate.exists():
-            return label_candidate.resolve()
-
-    raise FileNotFoundError(
-        f"Could not resolve benchmark report '{path_or_label}' as a path, snapshot label, or latest/previous alias"
-    )
-
-
-def _provider_scores(items: list[dict[str, Any]]) -> dict[str, dict[str, float]]:
-    scores: dict[str, dict[str, float]] = {}
-    for item in items:
-        provider = str(item.get("provider", "") or "").strip()
-        if not provider:
-            continue
-        scores[provider] = {
-            "overall": float(item.get("avg_overall_score", item.get("overall_score", 0.0)) or 0.0),
-            "content": float(item.get("avg_content_score", item.get("content_score", 0.0)) or 0.0),
-            "execution": float(item.get("avg_execution_score", item.get("execution_score", 0.0)) or 0.0),
-        }
-    return scores
+from pipeline.acquisition.benchmark_reports import (
+    DEFAULT_HISTORY_DIR,
+    aggregate_provider_score_map,
+    family_provider_score_maps,
+    load_benchmark_report,
+    resolve_benchmark_report_path,
+)
 
 
 def _delta_table(
@@ -90,8 +36,8 @@ def _delta_table(
 
 
 def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path) -> dict[str, Any]:
-    base_report = _load_report(base_path)
-    candidate_report = _load_report(candidate_path)
+    base_report = load_benchmark_report(base_path)
+    candidate_report = load_benchmark_report(candidate_path)
     family_names = sorted(
         {
             str(item.get("family", "") or "").strip()
@@ -100,14 +46,8 @@ def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path)
         }
     )
 
-    base_family_map = {
-        str(item.get("family", "") or ""): _provider_scores(list(item.get("providers") or []))
-        for item in list(base_report.get("families") or [])
-    }
-    candidate_family_map = {
-        str(item.get("family", "") or ""): _provider_scores(list(item.get("providers") or []))
-        for item in list(candidate_report.get("families") or [])
-    }
+    base_family_map = family_provider_score_maps(base_report)
+    candidate_family_map = family_provider_score_maps(candidate_report)
 
     family_deltas = [
         {
@@ -122,8 +62,8 @@ def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path)
         "base_paper_count": int(base_report.get("paper_count", 0) or 0),
         "candidate_paper_count": int(candidate_report.get("paper_count", 0) or 0),
         "aggregate": _delta_table(
-            _provider_scores(list(base_report.get("aggregate") or [])),
-            _provider_scores(list(candidate_report.get("aggregate") or [])),
+            aggregate_provider_score_map(base_report),
+            aggregate_provider_score_map(candidate_report),
         ),
         "families": family_deltas,
     }

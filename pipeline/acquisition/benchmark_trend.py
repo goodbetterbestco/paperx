@@ -3,7 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from pipeline.acquisition.benchmark_compare import compare_benchmark_reports, resolve_benchmark_report_path
+from pipeline.acquisition.benchmark_compare import compare_benchmark_reports
+from pipeline.acquisition.benchmark_reports import resolve_benchmark_report_path
 
 
 def _top_changes(rows: list[dict[str, Any]], *, limit: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:

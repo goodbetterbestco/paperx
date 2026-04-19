@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
-from pipeline.acquisition.benchmark_compare import compare_benchmark_reports, resolve_benchmark_report_path
+from pipeline.acquisition.benchmark_compare import compare_benchmark_reports
 from pipeline.cli.compare_acquisition_benchmark import run_compare_benchmark_cli
 
 
@@ -99,19 +99,6 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
             self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Comparison", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
-
-    def test_resolve_benchmark_report_path_supports_labels_and_aliases(self) -> None:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            history_dir = Path(temp_dir) / "history"
-            history_dir.mkdir(parents=True, exist_ok=True)
-            older_path = history_dir / "older.json"
-            newer_path = history_dir / "newer.json"
-            older_path.write_text("{}", encoding="utf-8")
-            newer_path.write_text("{}", encoding="utf-8")
-
-            self.assertEqual(resolve_benchmark_report_path("older", history_dir=history_dir), older_path.resolve())
-            self.assertEqual(resolve_benchmark_report_path("latest", history_dir=history_dir), newer_path.resolve())
-            self.assertEqual(resolve_benchmark_report_path("previous", history_dir=history_dir), older_path.resolve())
 
     def test_compare_benchmark_cli_resolves_history_labels(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
