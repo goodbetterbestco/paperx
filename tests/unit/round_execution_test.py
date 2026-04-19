@@ -53,7 +53,7 @@ class RoundExecutionTest(unittest.TestCase):
                 now_iso_impl=lambda: "2026-04-19T00:00:00Z",
                 canonical_path_impl=lambda paper_id, *, layout=None: canonical_target,
                 load_json_if_exists_impl=lambda path: existing_document,
-                existing_composed_sources_impl=lambda paper_id, *, layout=None: {"layout_engine": "docling"},
+                existing_composed_sources_impl=lambda paper_id, *, layout=None: {"layout_engine": "docling", "ocr_prepass_policy": "skip"},
                 desired_flags_for_existing_paper_impl=lambda document, composed: {"needs_refresh": False},
                 detect_canonical_staleness_impl=lambda path, *, desired_flags: {"stale": False, "reasons": []},
                 write_canonical_outputs_impl=lambda paper_id, document, *, layout=None: {"canonical_path": str(canonical_target)},
@@ -71,6 +71,7 @@ class RoundExecutionTest(unittest.TestCase):
             self.assertEqual(result["anomalies"], ["weak_sections"])
             self.assertEqual(result["docling"], {"layout_blocks": 0, "math_entries": 0})
             self.assertEqual(result["mathpix"], {"present": False, "math_entries": 0})
+            self.assertEqual(result["composed_sources"]["ocr_prepass_policy"], "skip")
 
     def test_run_paper_job_rebuilds_from_extracted_sources_and_records_outputs(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -93,7 +94,7 @@ class RoundExecutionTest(unittest.TestCase):
                 now_iso_impl=lambda: "2026-04-19T00:10:00Z",
                 canonical_path_impl=lambda paper_id, *, layout=None: canonical_target,
                 load_json_if_exists_impl=lambda path: {"front_matter": {"generated_abstract": "old"}},
-                existing_composed_sources_impl=lambda paper_id, *, layout=None: {"layout_engine": "docling"},
+                existing_composed_sources_impl=lambda paper_id, *, layout=None: {"layout_engine": "docling", "ocr_prepass_policy": "recommended"},
                 desired_flags_for_existing_paper_impl=lambda document, composed: {"needs_refresh": True},
                 detect_canonical_staleness_impl=lambda path, *, desired_flags: {"stale": True, "reasons": ["pipeline_fingerprint_changed"]},
                 build_extraction_sources_for_paper_impl=lambda paper_id, *, prefetched_mathpix_future=None, layout=None: (
@@ -104,6 +105,9 @@ class RoundExecutionTest(unittest.TestCase):
                 compose_external_sources_impl=lambda paper_id, *, docling_sources, mathpix_sources, layout=None: {
                     "layout_engine": "composed",
                     "math_engine": "mathpix",
+                    "ocr_prepass_policy": "recommended",
+                    "ocr_prepass_should_run": True,
+                    "ocr_prepass_tool": "ocrmypdf",
                 },
                 build_paper_impl=lambda paper_id, *, layout=None: {
                     "mode": "layout_plus_mathpix",
@@ -126,7 +130,16 @@ class RoundExecutionTest(unittest.TestCase):
             self.assertTrue(result["forced_rebuild"])
             self.assertEqual(result["docling"], {"layout_blocks": 1, "math_entries": 1})
             self.assertEqual(result["mathpix"], {"present": True, "math_entries": 3})
-            self.assertEqual(result["composed_sources"], {"layout_engine": "composed", "math_engine": "mathpix"})
+            self.assertEqual(
+                result["composed_sources"],
+                {
+                    "layout_engine": "composed",
+                    "math_engine": "mathpix",
+                    "ocr_prepass_policy": "recommended",
+                    "ocr_prepass_should_run": True,
+                    "ocr_prepass_tool": "ocrmypdf",
+                },
+            )
             self.assertEqual(result["attempts"], ["layout_only", "layout_plus_mathpix"])
             self.assertEqual(result["prebuild_staleness"]["reasons"], ["pipeline_fingerprint_changed"])
             self.assertTrue(result["preserved_generated_abstract"])

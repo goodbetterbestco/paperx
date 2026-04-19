@@ -123,6 +123,7 @@ def compose_external_sources(
     sources_dir = layout_path.parent
     write_json_impl(sources_dir / "acquisition-route.json", acquisition_route)
     write_json_impl(sources_dir / "source-scorecard.json", source_scorecard)
+    ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(layout_path),
         "math_path": str(math_path),
@@ -142,6 +143,9 @@ def compose_external_sources(
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
         "acquisition_route": acquisition_route.get("primary_route"),
+        "ocr_prepass_policy": ocr_prepass.get("policy"),
+        "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
+        "ocr_prepass_tool": ocr_prepass.get("tool"),
     }
 
 
@@ -223,6 +227,7 @@ def existing_composed_sources(
     sources_dir = external_layout_path_impl(paper_id, layout=layout).parent
     acquisition_route = load_json_if_exists_impl(sources_dir / "acquisition-route.json") or {}
     source_scorecard = load_json_if_exists_impl(sources_dir / "source-scorecard.json") or {}
+    ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
         "math_path": str(external_math_path_impl(paper_id, layout=layout)),
@@ -240,6 +245,9 @@ def existing_composed_sources(
         ),
         "math_entries": len(math.get("entries", [])),
         "acquisition_route": acquisition_route.get("primary_route"),
+        "ocr_prepass_policy": ocr_prepass.get("policy"),
+        "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
+        "ocr_prepass_tool": ocr_prepass.get("tool"),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
     }

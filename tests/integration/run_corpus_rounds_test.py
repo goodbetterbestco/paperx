@@ -228,7 +228,11 @@ class RunCorpusRoundsTest(unittest.TestCase):
             patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
             patch(
                 "pipeline.orchestrator.round_paper.build_acquisition_route_report",
-                return_value={"paper_id": "synthetic_test_paper", "primary_route": "math_dense"},
+                return_value={
+                    "paper_id": "synthetic_test_paper",
+                    "primary_route": "math_dense",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
             ),
         ):
             summary = compose_external_sources(
@@ -242,6 +246,9 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(summary["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(summary["recommended_primary_math_provider"], "mathpix")
         self.assertEqual(summary["acquisition_route"], "math_dense")
+        self.assertEqual(summary["ocr_prepass_policy"], "skip")
+        self.assertFalse(summary["ocr_prepass_should_run"])
+        self.assertIsNone(summary["ocr_prepass_tool"])
         layout_blocks = captured["layout.json"]["blocks"]
         page_one_texts = [block["text"] for block in layout_blocks if block["page"] == 1]
         page_two_texts = [block["text"] for block in layout_blocks if block["page"] == 2]
@@ -293,7 +300,11 @@ class RunCorpusRoundsTest(unittest.TestCase):
             patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
             patch(
                 "pipeline.orchestrator.round_paper.build_acquisition_route_report",
-                return_value={"paper_id": "synthetic_test_paper", "primary_route": "born_digital_scholarly"},
+                return_value={
+                    "paper_id": "synthetic_test_paper",
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
             ),
         ):
             compose_external_sources(
@@ -343,7 +354,11 @@ class RunCorpusRoundsTest(unittest.TestCase):
             patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
             patch(
                 "pipeline.orchestrator.round_paper.build_acquisition_route_report",
-                return_value={"paper_id": "synthetic_test_paper", "primary_route": "born_digital_scholarly"},
+                return_value={
+                    "paper_id": "synthetic_test_paper",
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
             ),
         ):
             summary = compose_external_sources(
@@ -354,6 +369,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         self.assertEqual(summary["recommended_primary_math_provider"], "docling")
         self.assertEqual(summary["math_engine"], "docling")
+        self.assertEqual(summary["ocr_prepass_policy"], "skip")
         self.assertEqual([entry["id"] for entry in captured["math.json"]["entries"]], ["doc-eq-1", "doc-eq-2"])
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
