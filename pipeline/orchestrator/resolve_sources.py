@@ -9,6 +9,38 @@ from pipeline.output.fingerprints import build_input_fingerprints
 from pipeline.state import PaperState
 
 
+GENERIC_LAYOUT_ENGINE_NAMES = {"composed", "external_layout", "merged_layout"}
+GENERIC_MATH_ENGINE_NAMES = {"external_math"}
+
+
+def _reported_layout_engine_name(
+    external_layout_engine: str | None,
+    *,
+    source_scorecard: dict[str, Any] | None,
+) -> str:
+    if not external_layout_engine:
+        return "native_pdf"
+    preferred_provider = str((source_scorecard or {}).get("recommended_primary_layout_provider", "") or "")
+    if external_layout_engine in GENERIC_LAYOUT_ENGINE_NAMES and preferred_provider:
+        return preferred_provider
+    return external_layout_engine
+
+
+def _reported_math_engine_name(
+    external_math_engine: str | None,
+    *,
+    source_scorecard: dict[str, Any] | None,
+    external_math: dict[str, Any] | None,
+) -> str:
+    math_entries = list((external_math or {}).get("entries", []))
+    preferred_provider = str((source_scorecard or {}).get("recommended_primary_math_provider", "") or "")
+    if preferred_provider and math_entries:
+        return preferred_provider
+    if external_math_engine and math_entries and external_math_engine not in GENERIC_MATH_ENGINE_NAMES:
+        return external_math_engine
+    return "heuristic"
+
+
 def resolve_paper_sources(
     state: PaperState,
     *,
@@ -61,14 +93,22 @@ def resolve_paper_sources(
         paper_id,
         layout=config.layout,
     )
-    state.source_scorecard = build_source_scorecard_impl(
+    source_scorecard = build_source_scorecard_impl(
         native_layout=native_layout,
         external_layout=external_layout,
         mathpix_layout=mathpix_layout,
         external_math=external_math,
     )
-    state.layout_engine_name = external_layout_engine or "native_pdf"
-    state.math_engine_name = f"{external_math_engine}+heuristic" if external_math_engine else "heuristic"
+    state.source_scorecard = source_scorecard
+    state.layout_engine_name = _reported_layout_engine_name(
+        external_layout_engine,
+        source_scorecard=source_scorecard,
+    )
+    state.math_engine_name = _reported_math_engine_name(
+        external_math_engine,
+        source_scorecard=source_scorecard,
+        external_math=external_math,
+    )
     state.input_fingerprints = build_input_fingerprints(
         paper_id,
         pdf_path=state.pdf_path,

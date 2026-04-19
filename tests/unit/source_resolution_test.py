@@ -13,7 +13,7 @@ from pipeline.state import PaperState
 
 
 class SourceResolutionTest(unittest.TestCase):
-    def test_resolve_paper_sources_populates_state(self) -> None:
+    def test_resolve_paper_sources_reports_primary_provider_for_generic_engines(self) -> None:
         engine_root = Path("/tmp/paperx-source-resolution").resolve()
         corpus_root = engine_root / "corpus" / "synthetic"
         layout = ProjectLayout(
@@ -49,7 +49,7 @@ class SourceResolutionTest(unittest.TestCase):
             "blocks": [{"id": "native-1", "page": 1, "order": 1, "text": "Native text", "role": "paragraph", "bbox": {}}],
         }
         external_layout = {
-            "engine": "mathpix",
+            "engine": "composed",
             "pdf_path": str(state.pdf_path),
             "page_count": 1,
             "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
@@ -99,8 +99,84 @@ class SourceResolutionTest(unittest.TestCase):
         self.assertEqual(resolved.acquisition_route, {"paper_id": "1990_synthetic_test_paper", "primary_route": "math_dense"})
         self.assertEqual(resolved.source_scorecard["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(resolved.layout_engine_name, "mathpix")
-        self.assertEqual(resolved.math_engine_name, "mathpix+heuristic")
+        self.assertEqual(resolved.math_engine_name, "mathpix")
         self.assertIn("pdf", resolved.input_fingerprints)
+
+    def test_resolve_paper_sources_preserves_concrete_external_layout_engine(self) -> None:
+        engine_root = Path("/tmp/paperx-source-resolution").resolve()
+        corpus_root = engine_root / "corpus" / "synthetic"
+        layout = ProjectLayout(
+            engine_root=engine_root,
+            mode="corpus",
+            corpus_name="synthetic",
+            project_dir=None,
+            corpus_root=corpus_root,
+            source_root=corpus_root,
+            review_root=corpus_root / "review_drafts",
+            runs_root=corpus_root / "_runs",
+            tmp_root=engine_root / "tmp",
+            figure_expectations_path=corpus_root / "figure_expectations.json",
+        )
+        config = build_pipeline_config(
+            layout=layout,
+            text_engine="native",
+            use_external_layout=True,
+            use_external_math=True,
+            include_review=False,
+        )
+        state = PaperState.begin(
+            "1990_synthetic_test_paper",
+            config=config,
+            started_at="2026-04-17T00:00:00Z",
+        )
+
+        native_layout = {
+            "engine": "native_pdf",
+            "pdf_path": str(state.pdf_path),
+            "page_count": 1,
+            "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+            "blocks": [{"id": "native-1", "page": 1, "order": 1, "text": "Native text", "role": "paragraph", "bbox": {}}],
+        }
+        external_layout = {
+            "engine": "docling",
+            "pdf_path": str(state.pdf_path),
+            "page_count": 1,
+            "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+            "blocks": [{"id": "external-1", "page": 1, "order": 1, "text": "External text", "role": "paragraph", "bbox": {}}],
+        }
+        external_math = {
+            "engine": "mathpix",
+            "entries": [],
+        }
+
+        resolved = resolve_paper_sources(
+            state,
+            config=config,
+            layout_output=native_layout,
+            figures=[],
+            extract_layout=lambda paper_id: native_layout,
+            load_external_layout=lambda paper_id: external_layout,
+            merge_native_and_external_layout=lambda native, external: external,
+            load_external_math=lambda paper_id: external_math,
+            load_mathpix_layout=lambda paper_id: None,
+            extract_figures=lambda paper_id: [],
+            normalize_figure_caption_text=lambda text: text,
+            build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
+                "paper_id": paper_id,
+                "primary_route": "born_digital_scholarly",
+            },
+            build_source_scorecard_impl=lambda **kwargs: {
+                "providers": [
+                    {"provider": "mathpix_layout", "kind": "layout", "overall_score": 1.4},
+                    {"provider": "docling", "kind": "layout", "overall_score": 1.2},
+                ],
+                "recommended_primary_layout_provider": "mathpix_layout",
+                "recommended_primary_math_provider": None,
+            },
+        )
+
+        self.assertEqual(resolved.layout_engine_name, "docling")
+        self.assertEqual(resolved.math_engine_name, "heuristic")
 
 
 if __name__ == "__main__":
