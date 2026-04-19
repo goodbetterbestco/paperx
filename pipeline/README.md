@@ -71,7 +71,9 @@ Current preferred commands:
 - `python3 -m pipeline.cli.backfill_acquisition_sidecars`
 - `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
+- `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
+- `python3 -m pipeline.cli.compare_acquisition_benchmark --base tmp/acquisition_benchmark/history/baseline-apr19.json --candidate tmp/acquisition_benchmark/history/candidate-apr20.json`
 - `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`
 - `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
 - `python3 -m pipeline.cli.export_titles_and_abstracts`
@@ -116,7 +118,11 @@ acquisition audit CLI summarizes their coverage and OCR execution drift into
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
-agreement against gold expectations.
+agreement against gold expectations. Each benchmark run also writes the usual
+`tmp/acquisition_benchmark/summary.{json,md}` convenience files plus a labeled
+snapshot pair under `tmp/acquisition_benchmark/history/`; use `--label` to name
+those artifacts explicitly and `pipeline.cli.compare_acquisition_benchmark` to
+diff two saved summary JSON files by provider and benchmark family.
 
 Figure regeneration now also lives under this package:
 

@@ -98,8 +98,11 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             output_dir = Path(temp_dir) / "benchmark"
             json_path = output_dir / "summary.json"
             markdown_path = output_dir / "summary.md"
+            history_dir = output_dir / "history"
+            snapshot_json_path = history_dir / "fixture-run.json"
+            snapshot_markdown_path = history_dir / "fixture-run.md"
             exit_code = run_benchmark_cli(
-                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json"),
+                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json", label="fixture-run"),
                 print_fn=printed.append,
                 output_dir=output_dir,
                 json_report_path=json_path,
@@ -120,8 +123,13 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                 },
             )
             self.assertEqual(payload["report_paths"]["json"], str(json_path))
+            self.assertEqual(payload["report_paths"]["snapshot_json"], str(snapshot_json_path))
+            self.assertEqual(payload["report_paths"]["snapshot_markdown"], str(snapshot_markdown_path))
+            self.assertEqual(payload["snapshot_label"], "fixture-run")
             self.assertTrue(json_path.exists())
             self.assertTrue(markdown_path.exists())
+            self.assertTrue(snapshot_json_path.exists())
+            self.assertTrue(snapshot_markdown_path.exists())
 
     def test_benchmark_cli_prints_markdown_report(self) -> None:
         printed: list[str] = []
@@ -129,8 +137,15 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             output_dir = Path(temp_dir) / "benchmark"
             json_path = output_dir / "summary.json"
             markdown_path = output_dir / "summary.md"
+            history_dir = output_dir / "history"
+            snapshot_json_path = history_dir / "benchmark-markdown.json"
+            snapshot_markdown_path = history_dir / "benchmark-markdown.md"
             exit_code = run_benchmark_cli(
-                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="markdown"),
+                argparse.Namespace(
+                    manifest=str(FIXTURE_ROOT / "manifest.json"),
+                    format="markdown",
+                    label="benchmark-markdown",
+                ),
                 print_fn=printed.append,
                 output_dir=output_dir,
                 json_report_path=json_path,
@@ -145,8 +160,12 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("layout_complex_fixture", printed[0])
             self.assertIn("degraded_garbled_fixture", printed[0])
             self.assertIn(str(json_path), printed[0])
+            self.assertIn(str(snapshot_json_path), printed[0])
+            self.assertIn(str(snapshot_markdown_path), printed[0])
             self.assertTrue(json_path.exists())
             self.assertTrue(markdown_path.exists())
+            self.assertTrue(snapshot_json_path.exists())
+            self.assertTrue(snapshot_markdown_path.exists())
 
 
 if __name__ == "__main__":
