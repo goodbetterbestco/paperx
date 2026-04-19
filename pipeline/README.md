@@ -68,6 +68,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.compose_external_sources <paper-id> --layout-json ... --math-json ...`
 - `python3 -m pipeline.cli.inspect_acquisition_route <paper-id>`
 - `python3 -m pipeline.cli.inspect_acquisition_scorecard <paper-id>`
+- `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`
 - `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
@@ -105,6 +106,11 @@ source builders will prefer that PDF over the original input for Docling and
 Mathpix extraction.
 The OCR execution result is also persisted to
 `<corpus-root>/<paper-id>/canonical_sources/ocr-prepass.json`.
+Acquisition routing and provider recommendation sidecars remain at
+`<corpus-root>/<paper-id>/canonical_sources/acquisition-route.json` and
+`<corpus-root>/<paper-id>/canonical_sources/source-scorecard.json`, and the
+acquisition audit CLI summarizes their coverage and OCR execution drift into
+`tmp/acquisition_quality_audit/`.
 
 Figure regeneration now also lives under this package:
 
