@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from typing import Any, Callable
 
+from pipeline.acquisition.routing import build_acquisition_route_report
+from pipeline.acquisition.scoring import score_layout_provider
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.corpus_layout import canonical_sources_dir
@@ -27,12 +29,53 @@ def compose_external_sources(
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
     write_json_impl: Callable[[Path, Any], None] | None = None,
+    build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
+    score_layout_provider_impl: Callable[..., dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     compose_layout_sources_impl = compose_layout_sources_impl or compose_layout_sources
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
     write_json_impl = write_json_impl or write_json
-    final_layout = compose_layout_sources_impl(docling_sources, mathpix_sources)
+    build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
+    score_layout_provider_impl = score_layout_provider_impl or score_layout_provider
+    acquisition_route = build_acquisition_route_report_impl(paper_id, layout=layout)
+    docling_layout = (docling_sources or {}).get("layout") or {}
+    mathpix_layout = (mathpix_sources or {}).get("layout") or {}
+    docling_math_entries = len(((docling_sources or {}).get("math") or {}).get("entries", []))
+    mathpix_math_entries = len(((mathpix_sources or {}).get("math") or {}).get("entries", []))
+    provider_scores = []
+    if docling_layout:
+        provider_scores.append(
+            score_layout_provider_impl(
+                str(docling_layout.get("engine", "docling")),
+                docling_layout,
+                kind="layout",
+                math_entry_count=docling_math_entries,
+            )
+        )
+    if mathpix_layout:
+        provider_scores.append(
+            score_layout_provider_impl(
+                str(mathpix_layout.get("engine", "mathpix")),
+                mathpix_layout,
+                kind="layout",
+                math_entry_count=mathpix_math_entries,
+            )
+        )
+    provider_scores.sort(key=lambda item: (-float(item.get("overall_score", 0.0) or 0.0), str(item.get("provider", ""))))
+    source_scorecard = {
+        "providers": provider_scores,
+        "recommended_primary_layout_provider": provider_scores[0]["provider"] if provider_scores else None,
+    }
+    try:
+        final_layout = compose_layout_sources_impl(
+            docling_sources,
+            mathpix_sources,
+            acquisition_route=acquisition_route,
+            source_scorecard=source_scorecard,
+        )
+    except TypeError:
+        final_layout = compose_layout_sources_impl(docling_sources, mathpix_sources)
     if mathpix_sources and mathpix_sources.get("math", {}).get("entries"):
         final_math = mathpix_sources["math"]
     elif docling_sources:
@@ -43,6 +86,9 @@ def compose_external_sources(
     math_path = external_math_path_impl(paper_id, layout=layout)
     write_json_impl(layout_path, final_layout)
     write_json_impl(math_path, final_math)
+    sources_dir = layout_path.parent
+    write_json_impl(sources_dir / "acquisition-route.json", acquisition_route)
+    write_json_impl(sources_dir / "source-scorecard.json", source_scorecard)
     return {
         "layout_path": str(layout_path),
         "math_path": str(math_path),
@@ -50,6 +96,8 @@ def compose_external_sources(
         "layout_blocks": len(final_layout.get("blocks", [])),
         "math_engine": final_math.get("engine"),
         "math_entries": len(final_math.get("entries", [])),
+        "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
+        "acquisition_route": acquisition_route.get("primary_route"),
     }
 
 
@@ -128,6 +176,9 @@ def existing_composed_sources(
         "engine": "none",
         "entries": [],
     }
+    sources_dir = external_layout_path_impl(paper_id, layout=layout).parent
+    acquisition_route = load_json_if_exists_impl(sources_dir / "acquisition-route.json") or {}
+    source_scorecard = load_json_if_exists_impl(sources_dir / "source-scorecard.json") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
         "math_path": str(external_math_path_impl(paper_id, layout=layout)),
@@ -135,6 +186,8 @@ def existing_composed_sources(
         "layout_blocks": len(external_layout.get("blocks", [])),
         "math_engine": math.get("engine"),
         "math_entries": len(math.get("entries", [])),
+        "acquisition_route": acquisition_route.get("primary_route"),
+        "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
     }
 
 
@@ -148,6 +201,7 @@ def build_best_round_paper(
     validate_canonical_impl: Callable[[dict[str, Any]], None] | None = None,
     anomaly_flags_impl: Callable[[dict[str, Any]], list[str]] | None = None,
     document_quality_key_impl: Callable[[dict[str, Any], int], Any] | None = None,
+    existing_composed_sources_impl: Callable[..., dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     build_best_paper_impl = build_best_paper_impl or build_best_paper
     build_pipeline_config_impl = build_pipeline_config_impl or build_pipeline_config
@@ -155,14 +209,61 @@ def build_best_round_paper(
     validate_canonical_impl = validate_canonical_impl or validate_canonical
     anomaly_flags_impl = anomaly_flags_impl or anomaly_flags
     document_quality_key_impl = document_quality_key_impl or document_quality_key
-    return build_best_paper_impl(
-        paper_id,
-        layout=layout,
-        mode_configs=(
+    existing_composed_sources_impl = existing_composed_sources_impl or existing_composed_sources
+    composed_sources = existing_composed_sources_impl(paper_id, layout=layout)
+    layout_blocks = int(composed_sources.get("layout_blocks", 0) or 0)
+    math_entries = int(composed_sources.get("math_entries", 0) or 0)
+    primary_route = str(composed_sources.get("acquisition_route", "") or "")
+    preferred_text_engine = "hybrid" if primary_route in {"scan_or_image_heavy", "degraded_or_garbled"} else "native"
+
+    if layout_blocks <= 0 and math_entries <= 0:
+        mode_configs = (
             {"use_external_layout": True, "use_external_math": True, "text_engine": "native", "label": "hybrid"},
             {"use_external_layout": True, "use_external_math": False, "text_engine": "native", "label": "layout_only"},
             {"use_external_layout": False, "use_external_math": False, "text_engine": "native", "label": "native"},
-        ),
+        )
+    else:
+        dynamic_mode_configs: list[dict[str, Any]] = []
+        if layout_blocks > 0 and math_entries > 0:
+            dynamic_mode_configs.append(
+                {
+                    "use_external_layout": True,
+                    "use_external_math": True,
+                    "text_engine": preferred_text_engine,
+                    "label": "hybrid",
+                }
+            )
+        if layout_blocks > 0:
+            dynamic_mode_configs.append(
+                {
+                    "use_external_layout": True,
+                    "use_external_math": False,
+                    "text_engine": preferred_text_engine,
+                    "label": "layout_only",
+                }
+            )
+        if layout_blocks <= 0 and math_entries > 0:
+            dynamic_mode_configs.append(
+                {
+                    "use_external_layout": False,
+                    "use_external_math": True,
+                    "text_engine": preferred_text_engine,
+                    "label": "math_only",
+                }
+            )
+        dynamic_mode_configs.append(
+            {
+                "use_external_layout": False,
+                "use_external_math": False,
+                "text_engine": "native",
+                "label": "native",
+            }
+        )
+        mode_configs = tuple(dynamic_mode_configs)
+    return build_best_paper_impl(
+        paper_id,
+        layout=layout,
+        mode_configs=mode_configs,
         build_pipeline_config=build_pipeline_config_impl,
         reconcile_paper=reconcile_paper_impl,
         validate_canonical=validate_canonical_impl,

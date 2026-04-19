@@ -226,6 +226,10 @@ class RunCorpusRoundsTest(unittest.TestCase):
             patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
             patch("pipeline.orchestrator.round_paper.external_layout_path", return_value=Path("/tmp/layout.json")),
             patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
+            patch(
+                "pipeline.orchestrator.round_paper.build_acquisition_route_report",
+                return_value={"paper_id": "synthetic_test_paper", "primary_route": "math_dense"},
+            ),
         ):
             summary = compose_external_sources(
                 "synthetic_test_paper",
@@ -235,11 +239,15 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         self.assertEqual(summary["layout_engine"], "composed")
         self.assertEqual(summary["math_engine"], "mathpix")
+        self.assertEqual(summary["recommended_primary_layout_provider"], "mathpix")
+        self.assertEqual(summary["acquisition_route"], "math_dense")
         layout_blocks = captured["layout.json"]["blocks"]
         page_one_texts = [block["text"] for block in layout_blocks if block["page"] == 1]
         page_two_texts = [block["text"] for block in layout_blocks if block["page"] == 2]
         self.assertEqual(page_one_texts, ["Abstract", "A real abstract paragraph.", "1. Introduction"])
         self.assertEqual(page_two_texts, ["Page two body."])
+        self.assertEqual(captured["acquisition-route.json"]["primary_route"], "math_dense")
+        self.assertEqual(captured["source-scorecard.json"]["recommended_primary_layout_provider"], "mathpix")
 
     def test_compose_external_sources_keeps_docling_page_one_on_score_tie(self) -> None:
         captured: dict[str, dict] = {}
@@ -281,6 +289,10 @@ class RunCorpusRoundsTest(unittest.TestCase):
             patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
             patch("pipeline.orchestrator.round_paper.external_layout_path", return_value=Path("/tmp/layout.json")),
             patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
+            patch(
+                "pipeline.orchestrator.round_paper.build_acquisition_route_report",
+                return_value={"paper_id": "synthetic_test_paper", "primary_route": "born_digital_scholarly"},
+            ),
         ):
             compose_external_sources(
                 "synthetic_test_paper",
@@ -290,6 +302,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         layout_blocks = captured["layout.json"]["blocks"]
         self.assertEqual([block["id"] for block in layout_blocks], ["d1", "d2", "d3"])
+        self.assertEqual(captured["source-scorecard.json"]["recommended_primary_layout_provider"], "docling")
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
         bad_document = {
@@ -378,6 +391,35 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertIs(captured_configs[0].layout, layout)
         self.assertTrue(captured_configs[0].use_external_layout)
         self.assertTrue(captured_configs[0].use_external_math)
+
+    def test_build_paper_uses_route_aware_mode_configs_when_composed_sources_exist(self) -> None:
+        captured: dict[str, object] = {}
+
+        def fake_build_best_paper(paper_id: str, *, layout, mode_configs, **kwargs):
+            captured["paper_id"] = paper_id
+            captured["mode_configs"] = mode_configs
+            return {"mode": "layout_only", "document": {"paper_id": paper_id}, "attempts": [], "anomalies": []}
+
+        result = build_best_round_paper(
+            "synthetic_test_paper",
+            layout=current_layout(),
+            build_best_paper_impl=fake_build_best_paper,
+            existing_composed_sources_impl=lambda paper_id, *, layout=None: {
+                "layout_blocks": 12,
+                "math_entries": 0,
+                "acquisition_route": "scan_or_image_heavy",
+            },
+        )
+
+        self.assertEqual(result["mode"], "layout_only")
+        self.assertEqual(captured["paper_id"], "synthetic_test_paper")
+        self.assertEqual(
+            captured["mode_configs"],
+            (
+                {"use_external_layout": True, "use_external_math": False, "text_engine": "hybrid", "label": "layout_only"},
+                {"use_external_layout": False, "use_external_math": False, "text_engine": "native", "label": "native"},
+            ),
+        )
 
     def test_preserve_existing_generated_abstract_copies_prior_generated_text(self) -> None:
         existing_document = {
