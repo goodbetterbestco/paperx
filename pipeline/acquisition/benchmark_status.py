@@ -1,0 +1,28 @@
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
+from pipeline.acquisition.benchmark_history import list_benchmark_history
+from pipeline.acquisition.benchmark_trend import summarize_benchmark_trend
+
+
+def summarize_latest_benchmark_status(
+    *,
+    history_dir: str | Path | None = None,
+    limit: int = 3,
+) -> dict[str, Any]:
+    history_kwargs = {"history_dir": history_dir} if history_dir is not None else {}
+    history = list_benchmark_history(limit=1, **history_kwargs)
+    trend = summarize_benchmark_trend(limit=limit, **history_kwargs)
+    latest_run = list(history.get("runs") or [])
+    latest = latest_run[-1] if latest_run else None
+
+    return {
+        "history_dir": history.get("history_dir"),
+        "latest_run": latest,
+        "trend": trend,
+    }
+
+
+__all__ = ["summarize_latest_benchmark_status"]
