@@ -1,0 +1,21 @@
+{
+  "title": "Synthetic Acquisition Benchmark Paper",
+  "abstract": "This benchmark paper demonstrates routing and acquisition scoring for structured document extraction.",
+  "headings": [
+    "Introduction",
+    "Method",
+    "Conclusion"
+  ],
+  "paragraphs": [
+    "Structured extraction should preserve reading order and section boundaries.",
+    "The routing stage chooses the best acquisition path before reconciliation."
+  ],
+  "equations": [
+    "E = mc^2",
+    "x_{n+1} = x_n + 1"
+  ],
+  "references": [
+    "[1] Ada Lovelace. Notes on Analytical Engines.",
+    "[2] Alan Turing. Computing Machinery and Intelligence."
+  ]
+}

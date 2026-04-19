@@ -1,0 +1,61 @@
+{
+  "engine": "mathpix",
+  "blocks": [
+    {
+      "id": "mathpix-front-title",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Synthetic Acquisition Benchmark Paper",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-front-abstract",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "This benchmark paper demonstrates acquisition scoring for document extraction.",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-heading-1",
+      "page": 1,
+      "order": 3,
+      "role": "heading",
+      "text": "Introduction",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-paragraph-1",
+      "page": 1,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Structured extraction should preserve reading order and section boundaries.",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-heading-2",
+      "page": 1,
+      "order": 5,
+      "role": "heading",
+      "text": "Methods",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-paragraph-2",
+      "page": 1,
+      "order": 6,
+      "role": "paragraph",
+      "text": "The routing stage chooses the best path before reconciliation.",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-reference-1",
+      "page": 2,
+      "order": 7,
+      "role": "reference",
+      "text": "[1] Ada Lovelace. Notes on Analytical Engines.",
+      "bbox": {}
+    }
+  ]
+}

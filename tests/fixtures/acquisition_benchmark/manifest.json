@@ -1,0 +1,18 @@
+{
+  "papers": [
+    {
+      "paper_id": "fixture_paper",
+      "gold": "gold/fixture_paper.json",
+      "providers": {
+        "docling": {
+          "layout": "providers/fixture_paper/docling-layout.json",
+          "math": "providers/fixture_paper/docling-math.json"
+        },
+        "mathpix": {
+          "layout": "providers/fixture_paper/mathpix-layout.json",
+          "math": "providers/fixture_paper/mathpix-math.json"
+        }
+      }
+    }
+  ]
+}

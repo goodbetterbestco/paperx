@@ -29,6 +29,7 @@ The intended stable root boundary is:
 
 The main implementation families are:
 
+- `pipeline.acquisition`
 - `pipeline.assembly`
 - `pipeline.cli`
 - `pipeline.corpus`
@@ -65,6 +66,8 @@ Current preferred commands:
 - `python3 -m pipeline.cli.build_external_sources_from_docling <paper-id>`
 - `python3 -m pipeline.cli.build_external_sources_from_mathpix <paper-id>`
 - `python3 -m pipeline.cli.compose_external_sources <paper-id> --layout-json ... --math-json ...`
+- `python3 -m pipeline.cli.inspect_acquisition_route <paper-id>`
+- `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
 - `python3 -m pipeline.cli.export_titles_and_abstracts`
 - `python3 -m pipeline.cli.audit_corpus --top 12`

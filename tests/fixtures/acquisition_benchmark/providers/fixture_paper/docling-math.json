@@ -1,0 +1,13 @@
+{
+  "engine": "docling",
+  "entries": [
+    {
+      "id": "docling-eq-1",
+      "display_latex": "E = mc^2"
+    },
+    {
+      "id": "docling-eq-2",
+      "display_latex": "x_{n+1} = x_n + 1"
+    }
+  ]
+}
