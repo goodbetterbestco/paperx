@@ -1,0 +1,14 @@
+{
+  "route_primary": "scan_or_image_heavy",
+  "recommended": {
+    "layout_provider": "docling",
+    "math_provider": "mathpix"
+  },
+  "executed": {
+    "selected_layout_provider": "docling",
+    "selected_math_provider": "mathpix"
+  },
+  "ocr": {
+    "applied": true
+  }
+}

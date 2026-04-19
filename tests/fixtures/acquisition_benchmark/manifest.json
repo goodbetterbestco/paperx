@@ -31,6 +31,22 @@
           "execution": "providers/math_dense_fixture/mathpix-execution.json"
         }
       }
+    },
+    {
+      "paper_id": "scan_image_heavy_fixture",
+      "gold": "gold/scan_image_heavy_fixture.json",
+      "providers": {
+        "docling": {
+          "layout": "providers/scan_image_heavy_fixture/docling-layout.json",
+          "math": "providers/scan_image_heavy_fixture/docling-math.json",
+          "execution": "providers/scan_image_heavy_fixture/docling-execution.json"
+        },
+        "mathpix": {
+          "layout": "providers/scan_image_heavy_fixture/mathpix-layout.json",
+          "math": "providers/scan_image_heavy_fixture/mathpix-math.json",
+          "execution": "providers/scan_image_heavy_fixture/mathpix-execution.json"
+        }
+      }
     }
   ]
 }

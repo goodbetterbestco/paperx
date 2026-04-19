@@ -1,0 +1,37 @@
+{
+  "engine": "mathpix",
+  "blocks": [
+    {
+      "id": "mathpix-front-title",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Synthetic Scan Benchmark Paper",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-front-abstract",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "This benchmark simulates a scan source needing OCR before extraction.",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-heading-1",
+      "page": 1,
+      "order": 3,
+      "role": "heading",
+      "text": "Introduction",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-paragraph-1",
+      "page": 1,
+      "order": 4,
+      "role": "paragraph",
+      "text": "OCR should restore enough text for downstream structure recovery.",
+      "bbox": {}
+    }
+  ]
+}

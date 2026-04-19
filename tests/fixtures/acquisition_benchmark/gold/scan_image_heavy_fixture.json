@@ -1,0 +1,23 @@
+{
+  "family": "scan_or_image_heavy",
+  "expected_route": "scan_or_image_heavy",
+  "ocr_should_run": true,
+  "expected_primary_layout_provider": "docling",
+  "expected_primary_math_provider": "mathpix",
+  "title": "Synthetic Scan Heavy Benchmark Paper",
+  "abstract": "This benchmark paper simulates a scan heavy source that needs OCR normalization before structured extraction.",
+  "headings": [
+    "Introduction",
+    "Observations"
+  ],
+  "paragraphs": [
+    "OCR normalization should restore enough text for downstream structure recovery.",
+    "The acquisition route should recognize image heavy evidence and prefer OCR before extraction."
+  ],
+  "equations": [
+    "y = mx + b"
+  ],
+  "references": [
+    "[1] Grace Hopper. Automatic Coding for Digital Computers."
+  ]
+}
