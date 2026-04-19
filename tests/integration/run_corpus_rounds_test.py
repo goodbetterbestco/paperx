@@ -237,7 +237,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
                 mathpix_sources=mathpix_sources,
             )
 
-        self.assertEqual(summary["layout_engine"], "composed")
+        self.assertEqual(summary["layout_engine"], "mathpix")
         self.assertEqual(summary["math_engine"], "mathpix")
         self.assertEqual(summary["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(summary["recommended_primary_math_provider"], "mathpix")

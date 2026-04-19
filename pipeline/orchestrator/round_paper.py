@@ -6,6 +6,7 @@ from typing import Any, Callable
 
 from pipeline.acquisition.routing import build_acquisition_route_report
 from pipeline.acquisition.scoring import score_layout_provider, score_math_provider
+from pipeline.acquisition.source_ownership import reported_layout_provider, reported_math_provider
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.corpus_layout import canonical_sources_dir
@@ -125,9 +126,18 @@ def compose_external_sources(
     return {
         "layout_path": str(layout_path),
         "math_path": str(math_path),
-        "layout_engine": final_layout.get("engine"),
+        "layout_engine": reported_layout_provider(
+            str(final_layout.get("engine", "") or "") or None,
+            source_scorecard=source_scorecard,
+            fallback="none",
+        ),
         "layout_blocks": len(final_layout.get("blocks", [])),
-        "math_engine": final_math.get("engine"),
+        "math_engine": reported_math_provider(
+            str(final_math.get("engine", "") or "") or None,
+            source_scorecard=source_scorecard,
+            math_payload=final_math,
+            fallback="none",
+        ),
         "math_entries": len(final_math.get("entries", [])),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
@@ -216,12 +226,22 @@ def existing_composed_sources(
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
         "math_path": str(external_math_path_impl(paper_id, layout=layout)),
-        "layout_engine": external_layout.get("engine"),
+        "layout_engine": reported_layout_provider(
+            str(external_layout.get("engine", "") or "") or None,
+            source_scorecard=source_scorecard,
+            fallback="none",
+        ),
         "layout_blocks": len(external_layout.get("blocks", [])),
-        "math_engine": math.get("engine"),
+        "math_engine": reported_math_provider(
+            str(math.get("engine", "") or "") or None,
+            source_scorecard=source_scorecard,
+            math_payload=math,
+            fallback="none",
+        ),
         "math_entries": len(math.get("entries", [])),
         "acquisition_route": acquisition_route.get("primary_route"),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
+        "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
     }
 
 

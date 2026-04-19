@@ -12,6 +12,7 @@ from pipeline.acquisition.routing import (
     route_pdf_signals,
 )
 from pipeline.acquisition.scoring import build_source_scorecard, score_layout_provider, score_math_provider
+from pipeline.acquisition.source_ownership import reported_layout_provider, reported_math_provider
 
 __all__ = [
     "AcquisitionRouteDecision",
@@ -22,6 +23,8 @@ __all__ = [
     "load_benchmark_manifest",
     "route_pdf_signals",
     "run_acquisition_benchmark",
+    "reported_layout_provider",
+    "reported_math_provider",
     "score_math_provider",
     "score_layout_provider",
 ]
