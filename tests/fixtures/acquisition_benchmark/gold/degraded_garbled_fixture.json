@@ -1,0 +1,23 @@
+{
+  "family": "degraded_or_garbled",
+  "expected_route": "degraded_or_garbled",
+  "ocr_should_run": true,
+  "expected_primary_layout_provider": "docling",
+  "expected_primary_math_provider": "mathpix",
+  "title": "Synthetic Degraded Acquisition Benchmark Paper",
+  "abstract": "This benchmark paper simulates a degraded born digital source with noisy extraction and partial OCR recovery.",
+  "headings": [
+    "Introduction",
+    "Recovery"
+  ],
+  "paragraphs": [
+    "Degraded born digital sources should trigger a recovery oriented acquisition route.",
+    "The benchmark checks whether OCR and provider choice recover enough structure to continue reconciliation."
+  ],
+  "equations": [
+    "z = x + y"
+  ],
+  "references": [
+    "[1] Claude Shannon. A Mathematical Theory of Communication."
+  ]
+}

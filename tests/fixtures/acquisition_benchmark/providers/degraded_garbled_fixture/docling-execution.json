@@ -1,0 +1,14 @@
+{
+  "route_primary": "degraded_or_garbled",
+  "recommended": {
+    "layout_provider": "docling",
+    "math_provider": "mathpix"
+  },
+  "executed": {
+    "selected_layout_provider": "docling",
+    "selected_math_provider": "mathpix"
+  },
+  "ocr": {
+    "applied": true
+  }
+}

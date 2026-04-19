@@ -1,0 +1,37 @@
+{
+  "engine": "mathpix",
+  "blocks": [
+    {
+      "id": "mathpix-front-title",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Synthetic Degraded Benchmark Paper",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-front-abstract",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "This benchmark simulates a degraded source with OCR artifacts.",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-heading-1",
+      "page": 1,
+      "order": 3,
+      "role": "heading",
+      "text": "Intro",
+      "bbox": {}
+    },
+    {
+      "id": "mathpix-paragraph-1",
+      "page": 1,
+      "order": 4,
+      "role": "paragraph",
+      "text": "Degraded sources should trigger a recovery route.",
+      "bbox": {}
+    }
+  ]
+}
