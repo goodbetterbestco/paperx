@@ -1,1 +1,0 @@
-"""Pipeline end-to-end tests."""

@@ -48,14 +48,18 @@ def run_build_review(
     write_canonical_outputs_fn: Callable[..., dict[str, str]] = write_canonical_outputs,
     print_fn: Callable[..., None] = print,
 ) -> int:
-    build = build_paper_fn(
-        args.paper_id,
-        text_engine=args.text_engine,
-        use_external_layout=args.use_external_layout,
-        use_external_math=args.use_external_math,
-        include_review=True,
-        layout=current_layout_fn(),
-    )
+    try:
+        build = build_paper_fn(
+            args.paper_id,
+            text_engine=args.text_engine,
+            use_external_layout=args.use_external_layout,
+            use_external_math=args.use_external_math,
+            include_review=True,
+            layout=current_layout_fn(),
+        )
+    except RuntimeError as exc:
+        print_fn(f"build_error={exc}")
+        return 1
     document = build.document
     try:
         validate_canonical_fn(document)

@@ -20,7 +20,7 @@ Important current-state note:
 - this audit drove the first taxonomy pass that split former
   `tests/integration/` files into honest `unit` and `integration` locations
 - `tests/e2e/` now has its first true subprocess-driven CLI test
-- `tests/smoke/` still exists as a placeholder only
+- `tests/smoke/` now has its first gated real-environment smoke skeleton
 
 The suite is more honestly labeled now, but higher-layer coverage is still
 thin.
@@ -38,7 +38,7 @@ python3 -m trace --count --summary --missing \
   --coverdir tmp/tracecov \
   --ignore-dir '/opt/homebrew,/Library/Frameworks' \
   --ignore-module unittest,argparse,tempfile,json,urllib,http,ssl,subprocess,multiprocessing,concurrent,threading,logging,tokenize,linecache,inspect,dataclasses,pathlib,typing,traceback,contextlib,collections,enum,re,pprint,shlex,base64,binascii,hashlib,math,statistics,random,email,importlib,_pytest \
-  --module unittest discover -s tests/integration/pipeline -p '*_test.py'
+  --module unittest discover -s tests/integration -p '*_test.py'
 ```
 
 Result:
@@ -109,51 +109,51 @@ Legend:
 
 | File | Actual type | Proposed destination | Notes |
 |---|---|---|---|
-| `audit_corpus_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real heuristic behavior with minimal seams |
-| `block_builder_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Large real behavior surface |
-| `cli_helper_test.py` | `unit/contract` | `tests/unit/pipeline/` | Mostly argument threading and file-target contracts |
-| `compile_formulas_test.py` | `unit/contract` | `tests/unit/pipeline/` | Backend seam contract, not real compilation integration |
-| `config_test.py` | `unit/contract` | `tests/unit/pipeline/` | Env/runtime capability contract |
-| `corpus_layout_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real project filesystem normalization |
-| `corpus_metadata_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real corpus discovery behavior |
-| `display_math_suppression_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real logic tests |
-| `docling_adapter_test.py` | `unit/contract` | `tests/unit/pipeline/` | Docling seam and transformation contract, not live Docling |
-| `document_policy_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real renderer/policy behavior |
-| `external_math_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real matching and geometry behavior |
-| `extract_math_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real math extraction behavior |
-| `figure_caption_policy_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure policy tests |
-| `formula_diagnostics_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure behavior |
-| `formula_semantic_ir_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure behavior |
-| `formula_semantic_policy_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure behavior |
-| `front_matter_parsing_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure logic |
-| `front_matter_policies_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure policy |
-| `front_matter_recovery_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real behavior across recovery helpers |
-| `front_matter_selector_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure selector logic |
-| `front_matter_support_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure helper behavior |
-| `heading_promotion_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure promotion logic |
-| `helper_layout_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real filesystem/layout, but figure path uses stubbed `fitz` |
-| `layout_io_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real file targets; output rendering/validation still patched |
-| `layout_merge_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure merge logic |
-| `layout_records_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real record behavior |
-| `link_figures_test.py` | `unit/contract` | `tests/unit/pipeline/` | Not true figure-linking integration; `fitz` is stubbed |
-| `math_entry_policies_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure policy logic |
-| `math_fragments_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure helper logic |
-| `math_review_policy_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure policy logic |
-| `mathpix_adapter_test.py` | `unit/contract` | `tests/unit/pipeline/` | Transport and payload shape; no live Mathpix |
-| `normalize_layout_test.py` | `unit/contract` | `tests/unit/pipeline/` | Layout-binding contract with patched seams |
-| `output_helper_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real files and outputs |
-| `reconcile_blocks_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Main logic safety net |
-| `reconcile_postprocess_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure behavior |
-| `render_review_from_canonical_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real render behavior |
-| `root_boundary_test.py` | `integration/contract` | `tests/integration/pipeline/` | Architectural invariant, not behavioral integration |
-| `run_corpus_rounds_test.py` | `integration/contract` | `tests/integration/pipeline/` | Important orchestration contract, but seam-heavy |
-| `runtime_paths_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure helper behavior |
-| `script_layout_test.py` | `integration/contract` | `tests/integration/pipeline/` | CLI wrapper contract, not true e2e |
-| `section_preparation_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure behavior |
-| `section_support_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Pure helper behavior |
-| `source_resolution_test.py` | `unit/contract` | `tests/unit/pipeline/` | State-population contract via injected collaborators |
-| `staleness_policy_test.py` | `integration/behavior` | `tests/integration/pipeline/` | Real metadata and file fingerprints |
-| `text_repairs_test.py` | `unit/behavior` | `tests/unit/pipeline/` | Real repair behavior |
+| `audit_corpus_test.py` | `unit/behavior` | `tests/unit/` | Real heuristic behavior with minimal seams |
+| `block_builder_test.py` | `unit/behavior` | `tests/unit/` | Large real behavior surface |
+| `cli_helper_test.py` | `unit/contract` | `tests/unit/` | Mostly argument threading and file-target contracts |
+| `compile_formulas_test.py` | `unit/contract` | `tests/unit/` | Backend seam contract, not real compilation integration |
+| `config_test.py` | `unit/contract` | `tests/unit/` | Env/runtime capability contract |
+| `corpus_layout_test.py` | `integration/behavior` | `tests/integration/` | Real project filesystem normalization |
+| `corpus_metadata_test.py` | `integration/behavior` | `tests/integration/` | Real corpus discovery behavior |
+| `display_math_suppression_test.py` | `unit/behavior` | `tests/unit/` | Real logic tests |
+| `docling_adapter_test.py` | `unit/contract` | `tests/unit/` | Docling seam and transformation contract, not live Docling |
+| `document_policy_test.py` | `unit/behavior` | `tests/unit/` | Real renderer/policy behavior |
+| `external_math_test.py` | `unit/behavior` | `tests/unit/` | Real matching and geometry behavior |
+| `extract_math_test.py` | `unit/behavior` | `tests/unit/` | Real math extraction behavior |
+| `figure_caption_policy_test.py` | `unit/behavior` | `tests/unit/` | Pure policy tests |
+| `formula_diagnostics_test.py` | `unit/behavior` | `tests/unit/` | Pure behavior |
+| `formula_semantic_ir_test.py` | `unit/behavior` | `tests/unit/` | Pure behavior |
+| `formula_semantic_policy_test.py` | `unit/behavior` | `tests/unit/` | Pure behavior |
+| `front_matter_parsing_test.py` | `unit/behavior` | `tests/unit/` | Pure logic |
+| `front_matter_policies_test.py` | `unit/behavior` | `tests/unit/` | Pure policy |
+| `front_matter_recovery_test.py` | `unit/behavior` | `tests/unit/` | Real behavior across recovery helpers |
+| `front_matter_selector_test.py` | `unit/behavior` | `tests/unit/` | Pure selector logic |
+| `front_matter_support_test.py` | `unit/behavior` | `tests/unit/` | Pure helper behavior |
+| `heading_promotion_test.py` | `unit/behavior` | `tests/unit/` | Pure promotion logic |
+| `helper_layout_test.py` | `integration/behavior` | `tests/integration/` | Real filesystem/layout, but figure path uses stubbed `fitz` |
+| `layout_io_test.py` | `integration/behavior` | `tests/integration/` | Real file targets; output rendering/validation still patched |
+| `layout_merge_test.py` | `unit/behavior` | `tests/unit/` | Pure merge logic |
+| `layout_records_test.py` | `unit/behavior` | `tests/unit/` | Real record behavior |
+| `link_figures_test.py` | `unit/contract` | `tests/unit/` | Not true figure-linking integration; `fitz` is stubbed |
+| `math_entry_policies_test.py` | `unit/behavior` | `tests/unit/` | Pure policy logic |
+| `math_fragments_test.py` | `unit/behavior` | `tests/unit/` | Pure helper logic |
+| `math_review_policy_test.py` | `unit/behavior` | `tests/unit/` | Pure policy logic |
+| `mathpix_adapter_test.py` | `unit/contract` | `tests/unit/` | Transport and payload shape; no live Mathpix |
+| `normalize_layout_test.py` | `unit/contract` | `tests/unit/` | Layout-binding contract with patched seams |
+| `output_helper_test.py` | `integration/behavior` | `tests/integration/` | Real files and outputs |
+| `reconcile_blocks_test.py` | `unit/behavior` | `tests/unit/` | Main logic safety net |
+| `reconcile_postprocess_test.py` | `unit/behavior` | `tests/unit/` | Pure behavior |
+| `render_review_from_canonical_test.py` | `unit/behavior` | `tests/unit/` | Real render behavior |
+| `root_boundary_test.py` | `integration/contract` | `tests/integration/` | Architectural invariant, not behavioral integration |
+| `run_corpus_rounds_test.py` | `integration/contract` | `tests/integration/` | Important orchestration contract, but seam-heavy |
+| `runtime_paths_test.py` | `unit/behavior` | `tests/unit/` | Pure helper behavior |
+| `script_layout_test.py` | `integration/contract` | `tests/integration/` | CLI wrapper contract, not true e2e |
+| `section_preparation_test.py` | `unit/behavior` | `tests/unit/` | Pure behavior |
+| `section_support_test.py` | `unit/behavior` | `tests/unit/` | Pure helper behavior |
+| `source_resolution_test.py` | `unit/contract` | `tests/unit/` | State-population contract via injected collaborators |
+| `staleness_policy_test.py` | `integration/behavior` | `tests/integration/` | Real metadata and file fingerprints |
+| `text_repairs_test.py` | `unit/behavior` | `tests/unit/` | Real repair behavior |
 
 ## Gaps Against The Standard
 
@@ -161,12 +161,14 @@ Legend:
 
 Current higher-layer status:
 
-- `tests/e2e/` has one true subprocess-driven CLI test for
-  `pipeline.cli.render_review_from_canonical`
-- `tests/smoke/` has no real coverage yet
+- `tests/e2e/` has true subprocess-driven CLI tests for
+  `pipeline.cli.render_review_from_canonical` and
+  `pipeline.cli.export_titles_and_abstracts`, plus
+  `pipeline.cli.audit_corpus` and `pipeline.cli.build_corpus_lexicon`
+- `tests/smoke/` has one gated PyMuPDF layout-extraction smoke skeleton
 
 The biggest remaining structural gap is the lack of breadth in e2e coverage
-and the absence of any real smoke coverage.
+and the lack of breadth in smoke coverage.
 
 ### Mislabeling
 
@@ -213,6 +215,12 @@ Status:
 
 - started on 2026-04-19 with a real subprocess-driven test for
   `pipeline.cli.render_review_from_canonical`
+- expanded on 2026-04-19 with a real subprocess-driven test for
+  `pipeline.cli.export_titles_and_abstracts`
+- expanded again on 2026-04-19 with a real subprocess-driven test for
+  `pipeline.cli.audit_corpus`
+- expanded again on 2026-04-19 with a real subprocess-driven test for
+  `pipeline.cli.build_corpus_lexicon`
 
 Add subprocess-based e2e tests for a tiny fixture project covering:
 
@@ -224,6 +232,10 @@ At least one test should assert real artifact paths and exit status without
 patching internal helpers.
 
 ### Pass 3: Add Smoke Coverage For Optional Integrations
+
+Status:
+
+- started on 2026-04-19 with a gated PyMuPDF layout-extraction smoke skeleton
 
 Add gated smoke tests for:
 
@@ -254,7 +266,7 @@ Suggested targets for the first improvement wave:
 
 The next concrete repository changes should be:
 
-1. add a second true e2e around `pipeline.cli.build_review` or `pipeline.cli.build_canonical`
-2. add one gated smoke test skeleton for an optional real integration
+1. add a fifth true e2e around `pipeline.cli.build_review` or `pipeline.cli.build_canonical`
+2. expand smoke coverage beyond the first PyMuPDF skeleton
 3. attack the lowest-covered orchestrator and figures modules with real tests
-4. rerun traced coverage after the next e2e and first smoke addition
+4. rerun traced coverage after the next e2e and smoke expansion

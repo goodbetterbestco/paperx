@@ -1,1 +1,1 @@
-"""Smoke tests."""
+"""Pipeline smoke tests."""

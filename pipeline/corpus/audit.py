@@ -6,7 +6,8 @@ from pathlib import Path
 import re
 from typing import Any
 
-from pipeline.corpus_layout import display_path
+from pipeline.corpus.metadata import discover_paper_pdf_paths, paper_id_from_pdf_path
+from pipeline.corpus_layout import current_layout, display_path
 from pipeline.math.diagnostics import diagnose_formula_entry, summarize_formula_diagnostics
 from pipeline.math.review_policy import math_text_looks_suspicious
 from pipeline.output.validation import CanonicalValidationError, validate_canonical
@@ -807,6 +808,7 @@ def audit_corpus(
     json_report_path: Path,
     markdown_report_path: Path,
 ) -> dict[str, Any]:
+    layout = current_layout()
     papers: list[dict[str, Any]] = []
     canonical_count = 0
     missing_canonical_papers: list[str] = []
@@ -815,10 +817,9 @@ def audit_corpus(
     corpus_role_counts: dict[str, int] = {}
     semantic_expr_units = 0
     semantic_formula_units = 0
-    for paper_dir in sorted(path for path in docs_dir.iterdir() if path.is_dir() and path.name != "review_drafts"):
-        pdf_path = paper_dir / f"{paper_dir.name}.pdf"
-        if not pdf_path.exists():
-            continue
+    for pdf_path in discover_paper_pdf_paths(layout=layout):
+        paper_id = paper_id_from_pdf_path(pdf_path, layout=layout)
+        paper_dir = docs_dir / paper_id
         canonical_path = paper_dir / "canonical.json"
         if canonical_path.exists():
             paper_report = audit_document(canonical_path)
