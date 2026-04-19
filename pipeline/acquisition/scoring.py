@@ -5,6 +5,7 @@ import re
 from typing import Any
 
 from pipeline.policies.abstract_quality import abstract_quality_flags
+from pipeline.acquisition.source_ownership import normalize_scorecard_recommendations
 
 
 ABSTRACT_PAGE_MARKER_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
@@ -223,27 +224,47 @@ def build_source_scorecard(
     external_layout: dict[str, Any] | None,
     mathpix_layout: dict[str, Any] | None,
     external_math: dict[str, Any] | None,
+    layout_candidates: dict[str, dict[str, Any] | None] | None = None,
+    math_candidates: dict[str, dict[str, Any] | None] | None = None,
     route_bias: str | None = None,
     metadata_observations: dict[str, dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     external_math_entries = len((external_math or {}).get("entries", []))
-    providers = [
-        score_layout_provider("native_pdf", native_layout, kind="layout"),
-    ]
-    if external_layout:
+    providers = []
+    if layout_candidates is not None:
+        for provider, payload in layout_candidates.items():
+            if payload:
+                math_entry_count = len(list((math_candidates or {}).get(provider, {}).get("entries", [])))
+                providers.append(
+                    score_layout_provider(
+                        provider,
+                        payload,
+                        kind="layout",
+                        math_entry_count=math_entry_count,
+                    )
+                )
+    else:
         providers.append(
-            score_layout_provider(
-                str(external_layout.get("engine", "external_layout")),
-                external_layout,
-                kind="layout",
-                math_entry_count=external_math_entries,
+            score_layout_provider("native_pdf", native_layout, kind="layout"),
+        )
+        if external_layout:
+            providers.append(
+                score_layout_provider(
+                    str(external_layout.get("engine", "external_layout")),
+                    external_layout,
+                    kind="layout",
+                    math_entry_count=external_math_entries,
+                )
             )
-        )
-    if mathpix_layout:
-        providers.append(
-            score_layout_provider("mathpix_layout", mathpix_layout, kind="layout")
-        )
-    if external_math:
+        if mathpix_layout:
+            providers.append(
+                score_layout_provider("mathpix_layout", mathpix_layout, kind="layout")
+            )
+    if math_candidates is not None:
+        for provider, payload in math_candidates.items():
+            if payload:
+                providers.append(score_math_provider(provider, payload, route_bias=route_bias))
+    elif external_math:
         providers.append(
             score_math_provider(
                 str(external_math.get("engine", "external_math")),
@@ -256,7 +277,7 @@ def build_source_scorecard(
             providers.append(score_metadata_provider(provider, observation, route_bias=route_bias))
 
     providers.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"]), str(item["kind"])))
-    return {
+    scorecard = {
         "providers": providers,
         "recommended_primary_layout_provider": next(
             (item["provider"] for item in providers if str(item.get("kind")) == "layout"),
@@ -295,6 +316,7 @@ def build_source_scorecard(
             None,
         ),
     }
+    return normalize_scorecard_recommendations(scorecard)
 
 
 __all__ = [

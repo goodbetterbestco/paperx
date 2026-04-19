@@ -5,8 +5,13 @@ from pathlib import Path
 from typing import Any, Callable
 
 from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.acquisition.scoring import score_layout_provider, score_math_provider
-from pipeline.acquisition.source_ownership import reported_layout_provider, reported_math_provider
+from pipeline.acquisition.scoring import build_source_scorecard
+from pipeline.acquisition.source_ownership import (
+    normalize_scorecard_recommendations,
+    reported_layout_provider,
+    reported_math_provider,
+    select_math_payload,
+)
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.corpus_layout import canonical_sources_dir
@@ -114,8 +119,7 @@ def compose_external_sources(
     write_json_impl: Callable[[Path, Any], None] | None = None,
     acquisition_execution_report_path_impl: Callable[..., Path] | None = None,
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
-    score_layout_provider_impl: Callable[..., dict[str, Any]] | None = None,
-    score_math_provider_impl: Callable[..., dict[str, Any]] | None = None,
+    build_source_scorecard_impl: Callable[..., dict[str, Any]] | None = None,
     load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     compose_layout_sources_impl = compose_layout_sources_impl or compose_layout_sources
@@ -124,12 +128,10 @@ def compose_external_sources(
     write_json_impl = write_json_impl or write_json
     acquisition_execution_report_path_impl = acquisition_execution_report_path_impl or acquisition_execution_report_path
     build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
-    score_layout_provider_impl = score_layout_provider_impl or score_layout_provider
-    score_math_provider_impl = score_math_provider_impl or score_math_provider
+    build_source_scorecard_impl = build_source_scorecard_impl or build_source_scorecard
     load_grobid_metadata_observation_impl = (
         load_grobid_metadata_observation_impl or load_grobid_metadata_observation
     )
-    from pipeline.acquisition.scoring import score_metadata_provider
 
     acquisition_route = build_acquisition_route_report_impl(paper_id, layout=layout)
     primary_route = str(acquisition_route.get("primary_route", "") or "")
@@ -138,85 +140,33 @@ def compose_external_sources(
     docling_math = (docling_sources or {}).get("math") or {}
     mathpix_math = (mathpix_sources or {}).get("math") or {}
     metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout)
-    docling_math_entries = len(((docling_sources or {}).get("math") or {}).get("entries", []))
-    mathpix_math_entries = len(((mathpix_sources or {}).get("math") or {}).get("entries", []))
-    provider_scores = []
-    if docling_layout:
-        provider_scores.append(
-            score_layout_provider_impl(
-                str(docling_layout.get("engine", "docling")),
-                docling_layout,
-                kind="layout",
-                math_entry_count=docling_math_entries,
-            )
+    try:
+        source_scorecard = build_source_scorecard_impl(
+            native_layout=None,
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            layout_candidates={
+                "docling": docling_layout,
+                "mathpix": mathpix_layout,
+            },
+            math_candidates={
+                "docling": docling_math,
+                "mathpix": mathpix_math,
+            },
+            route_bias=primary_route,
+            metadata_observations={"grobid": metadata_observation},
         )
-    if mathpix_layout:
-        provider_scores.append(
-            score_layout_provider_impl(
-                str(mathpix_layout.get("engine", "mathpix")),
-                mathpix_layout,
-                kind="layout",
-                math_entry_count=mathpix_math_entries,
-            )
+    except TypeError:
+        source_scorecard = build_source_scorecard_impl(
+            native_layout=None,
+            external_layout=docling_layout,
+            mathpix_layout=mathpix_layout,
+            external_math=mathpix_math or docling_math,
+            route_bias=primary_route,
+            metadata_observations={"grobid": metadata_observation},
         )
-    if docling_math:
-        provider_scores.append(
-            score_math_provider_impl(
-                str(docling_math.get("engine", "docling")),
-                docling_math,
-                route_bias=primary_route,
-            )
-        )
-    if mathpix_math:
-        provider_scores.append(
-            score_math_provider_impl(
-                str(mathpix_math.get("engine", "mathpix")),
-                mathpix_math,
-                route_bias=primary_route,
-            )
-        )
-    if metadata_observation:
-        provider_scores.append(score_metadata_provider("grobid", metadata_observation, route_bias=primary_route))
-    provider_scores.sort(key=lambda item: (-float(item.get("overall_score", 0.0) or 0.0), str(item.get("provider", ""))))
-    source_scorecard = {
-        "providers": provider_scores,
-        "recommended_primary_layout_provider": next(
-            (item["provider"] for item in provider_scores if str(item.get("kind")) == "layout"),
-            None,
-        ),
-        "recommended_primary_math_provider": next(
-            (
-                item["provider"]
-                for item in provider_scores
-                if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0
-            ),
-            None,
-        ),
-        "recommended_primary_metadata_provider": next(
-            (
-                item["provider"]
-                for item in provider_scores
-                if str(item.get("kind")) == "metadata"
-                and (
-                    bool(item.get("title_present"))
-                    or bool(item.get("abstract_present"))
-                    or int(item.get("reference_count", 0) or 0) > 0
-                )
-            ),
-            None,
-        ),
-        "recommended_primary_reference_provider": next(
-            (
-                item["provider"]
-                for item in provider_scores
-                if (
-                    (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
-                    or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
-                )
-            ),
-            None,
-        ),
-    }
+    source_scorecard = normalize_scorecard_recommendations(source_scorecard)
     try:
         final_layout = compose_layout_sources_impl(
             docling_sources,
@@ -226,17 +176,11 @@ def compose_external_sources(
         )
     except TypeError:
         final_layout = compose_layout_sources_impl(docling_sources, mathpix_sources)
-    preferred_math_provider = str(source_scorecard.get("recommended_primary_math_provider") or "")
-    if preferred_math_provider == str(mathpix_math.get("engine", "mathpix")) and mathpix_math.get("entries"):
-        final_math = mathpix_math
-    elif preferred_math_provider == str(docling_math.get("engine", "docling")) and docling_math.get("entries"):
-        final_math = docling_math
-    elif mathpix_math.get("entries"):
-        final_math = mathpix_math
-    elif docling_math.get("entries"):
-        final_math = docling_math
-    else:
-        final_math = {"engine": "none", "entries": []}
+    final_math = select_math_payload(
+        source_scorecard=source_scorecard,
+        docling_math=docling_math,
+        mathpix_math=mathpix_math,
+    )
     layout_path = external_layout_path_impl(paper_id, layout=layout)
     math_path = external_math_path_impl(paper_id, layout=layout)
     write_json_impl(layout_path, final_layout)

@@ -4,6 +4,7 @@ import re
 from typing import Any
 
 from pipeline.acquisition.scoring import score_layout_provider
+from pipeline.acquisition.source_ownership import canonical_provider_name
 
 
 ABSTRACT_PAGE_MARKER_RE = re.compile(r"^\s*abstract\b", re.IGNORECASE)
@@ -65,6 +66,7 @@ def preferred_layout_provider(
     mathpix_engine = str((mathpix_layout or {}).get("engine", "mathpix") or "mathpix")
     docling_score = provider_scores.get(docling_engine)
     mathpix_score = provider_scores.get(mathpix_engine)
+    recommended_provider = canonical_provider_name((source_scorecard or {}).get("recommended_primary_layout_provider"))
     if docling_score is None:
         docling_score = float(score_layout_provider(docling_engine, docling_layout, kind="layout")["overall_score"])
     if mathpix_score is None:
@@ -72,6 +74,8 @@ def preferred_layout_provider(
 
     if abs(docling_score - mathpix_score) >= 0.15:
         return "docling" if docling_score > mathpix_score else "mathpix"
+    if recommended_provider in {"docling", "mathpix"}:
+        return recommended_provider
 
     primary_route = str((acquisition_route or {}).get("primary_route", "") or "")
     if primary_route in {"scan_or_image_heavy", "degraded_or_garbled"}:

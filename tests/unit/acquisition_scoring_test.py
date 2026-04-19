@@ -112,6 +112,38 @@ class AcquisitionScoringTest(unittest.TestCase):
         self.assertEqual(scorecard["recommended_primary_metadata_provider"], "grobid")
         self.assertEqual(scorecard["recommended_primary_reference_provider"], "grobid")
 
+    def test_build_source_scorecard_can_score_multiple_explicit_candidates(self) -> None:
+        scorecard = build_source_scorecard(
+            native_layout=None,
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            layout_candidates={
+                "docling": {
+                    "engine": "docling",
+                    "page_count": 1,
+                    "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}],
+                },
+                "mathpix": {
+                    "engine": "mathpix",
+                    "page_count": 1,
+                    "blocks": [
+                        {"page": 1, "order": 1, "role": "front_matter", "text": "Synthetic Title"},
+                        {"page": 1, "order": 2, "role": "heading", "text": "Abstract"},
+                        {"page": 1, "order": 3, "role": "paragraph", "text": "Body text."},
+                    ],
+                },
+            },
+            math_candidates={
+                "docling": {"engine": "docling", "entries": [{"id": "doc-eq-1", "kind": "display"}]},
+                "mathpix": {"engine": "mathpix", "entries": [{"id": "mx-eq-1", "kind": "display"}, {"id": "mx-eq-2", "kind": "display"}]},
+            },
+            route_bias="math_dense",
+        )
+
+        self.assertEqual(scorecard["recommended_primary_layout_provider"], "mathpix")
+        self.assertEqual(scorecard["recommended_primary_math_provider"], "mathpix")
+
 
 if __name__ == "__main__":
     unittest.main()
