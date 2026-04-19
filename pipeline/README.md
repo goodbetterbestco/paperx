@@ -99,6 +99,11 @@ Full source regeneration still expects additional tools and credentials:
 - a working `docling` CLI for Docling source generation
 - `ocrmypdf` when the acquisition route recommends or requires an OCR pre-pass
 
+When OCR normalization runs, the generated artifact is written to
+`<corpus-root>/<paper-id>/canonical_sources/ocr-normalized.pdf`, and the round
+source builders will prefer that PDF over the original input for Docling and
+Mathpix extraction.
+
 Figure regeneration now also lives under this package:
 
 - `pipeline.figures.linking`

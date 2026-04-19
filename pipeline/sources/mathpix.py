@@ -243,8 +243,9 @@ def mathpix_pages_to_external_sources(
     paper_id: str,
     *,
     layout: ProjectLayout | None = None,
+    pdf_path: Path | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    pdf_path = _paper_pdf_path(paper_id, layout=layout)
+    pdf_path = pdf_path or _paper_pdf_path(paper_id, layout=layout)
     page_count = len(page_payloads)
     page_sizes_pt = [
         {"page": payload["page"], "width": payload["page_width_pt"], "height": payload["page_height_pt"]}
@@ -564,8 +565,9 @@ def _mathpix_pdf_lines_to_page_payloads(
     paper_id: str,
     *,
     layout: ProjectLayout | None = None,
+    pdf_path: Path | None = None,
 ) -> list[dict[str, Any]]:
-    pdf_path = _paper_pdf_path(paper_id, layout=layout)
+    pdf_path = pdf_path or _paper_pdf_path(paper_id, layout=layout)
     page_sizes_pt = _pdf_page_sizes_pt(pdf_path)
     payloads: list[dict[str, Any]] = []
     for page_data in list(lines_payload.get("pages") or []):
@@ -591,6 +593,7 @@ def submit_mathpix_pdf(
     paper_id: str,
     *,
     pages: list[int] | None = None,
+    pdf_path: Path | None = None,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
     app_id: str | None = None,
     app_key: str | None = None,
@@ -603,7 +606,7 @@ def submit_mathpix_pdf(
     if endpoint.rstrip("/") != MATHPIX_PDF_ENDPOINT:
         raise RuntimeError(f"submit_mathpix_pdf expects the Mathpix PDF endpoint, not {endpoint}.")
 
-    pdf_path = _paper_pdf_path(paper_id, layout=layout)
+    pdf_path = pdf_path or _paper_pdf_path(paper_id, layout=layout)
     page_ranges = _mathpix_pdf_page_ranges(pages)
     return _mathpix_pdf_submit(
         pdf_path,
@@ -634,6 +637,7 @@ def download_mathpix_pdf(
     paper_id: str,
     pdf_id: str,
     *,
+    pdf_path: Path | None = None,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
     app_id: str | None = None,
     app_key: str | None = None,
@@ -650,7 +654,7 @@ def download_mathpix_pdf(
     return {
         "pdf_id": pdf_id,
         "lines": lines_payload,
-        "pages": _mathpix_pdf_lines_to_page_payloads(lines_payload, paper_id, layout=layout),
+        "pages": _mathpix_pdf_lines_to_page_payloads(lines_payload, paper_id, layout=layout, pdf_path=pdf_path),
     }
 
 
@@ -658,6 +662,7 @@ def run_mathpix(
     paper_id: str,
     *,
     pages: list[int] | None = None,
+    pdf_path: Path | None = None,
     endpoint: str = MATHPIX_PDF_ENDPOINT,
     app_id: str | None = None,
     app_key: str | None = None,
@@ -673,6 +678,7 @@ def run_mathpix(
     pdf_id = submit_mathpix_pdf(
         paper_id,
         pages=pages,
+        pdf_path=pdf_path,
         endpoint=endpoint,
         app_id=resolved_app_id,
         app_key=resolved_app_key,
@@ -682,6 +688,7 @@ def run_mathpix(
     return download_mathpix_pdf(
         paper_id,
         pdf_id,
+        pdf_path=pdf_path,
         endpoint=endpoint,
         app_id=resolved_app_id,
         app_key=resolved_app_key,

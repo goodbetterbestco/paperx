@@ -58,6 +58,7 @@ def run_docling(
     paper_id: str,
     *,
     output_dir: Path | None = None,
+    pdf_path: Path | None = None,
     device: str | None = None,
     page_batch_size: int = 4,
     timeout_seconds: int = 1800,
@@ -73,7 +74,7 @@ def run_docling(
     active_resolve_docling_command = resolve_docling_command_fn or _resolve_docling_command
     output_dir = active_docling_output_dir(paper_id, output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    pdf_path = active_paper_pdf_path(paper_id, layout=layout)
+    pdf_path = pdf_path or active_paper_pdf_path(paper_id, layout=layout)
     command = [
         *active_resolve_docling_command(),
         str(pdf_path),
@@ -253,10 +254,11 @@ def docling_json_to_external_sources(
     paper_id: str,
     *,
     layout: ProjectLayout | None = None,
+    pdf_path: Path | None = None,
     extract_layout_fn=None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     active_extract_layout = extract_layout_fn or extract_layout
-    native_layout = active_extract_layout(paper_id, layout=layout)
+    native_layout = active_extract_layout(paper_id, layout=layout, pdf_path=pdf_path)
     page_sizes = list(native_layout["page_sizes_pt"])
     page_heights = _page_heights(native_layout)
     page_count = int(native_layout["page_count"])

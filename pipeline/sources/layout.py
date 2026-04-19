@@ -94,10 +94,15 @@ def _block_text(block: dict[str, Any]) -> tuple[str, dict[str, Any]]:
     }
 
 
-def extract_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any]:
+def extract_layout(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+    pdf_path: str | Any | None = None,
+) -> dict[str, Any]:
     fitz_module = _require_fitz()
-    pdf_path = paper_pdf_path(paper_id, layout=layout)
-    doc = fitz_module.open(pdf_path)
+    resolved_pdf_path = paper_pdf_path(paper_id, layout=layout) if pdf_path is None else pdf_path
+    doc = fitz_module.open(resolved_pdf_path)
     blocks: list[LayoutBlock] = []
     page_sizes: list[dict[str, float]] = []
 
@@ -131,7 +136,7 @@ def extract_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dic
 
     doc.close()
     return {
-        "pdf_path": display_path(pdf_path, layout=layout),
+        "pdf_path": display_path(resolved_pdf_path, layout=layout),
         "page_count": len(page_sizes),
         "page_sizes_pt": page_sizes,
         "blocks": blocks,
