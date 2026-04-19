@@ -1,0 +1,33 @@
+from __future__ import annotations
+
+from typing import Any
+
+
+def render_acquisition_benchmark_history_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        "# Acquisition Benchmark History",
+        "",
+        f"- History directory: `{report.get('history_dir')}`",
+        f"- Saved runs: `{report.get('run_count', 0)}`",
+        "",
+    ]
+
+    for run in reversed(list(report.get("runs") or [])):
+        lines.append(f"## `{run['label']}`")
+        lines.append("")
+        lines.append(f"- Report: `{run['path']}`")
+        lines.append(f"- Papers benchmarked: `{run['paper_count']}`")
+        lines.append(f"- Providers scored: `{run['provider_count']}`")
+        lines.append("")
+        for provider in list(run.get("providers") or []):
+            delta = provider.get("overall_delta_vs_previous", 0.0)
+            lines.append(
+                f"- `{provider['provider']}`: overall `{provider['overall']}` "
+                f"(delta vs previous `{delta}`), content `{provider['content']}`, execution `{provider['execution']}`"
+            )
+        lines.append("")
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
+__all__ = ["render_acquisition_benchmark_history_markdown"]

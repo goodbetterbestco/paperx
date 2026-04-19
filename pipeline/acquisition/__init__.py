@@ -5,6 +5,7 @@ from pipeline.acquisition.benchmark import (
     load_benchmark_manifest,
     run_acquisition_benchmark,
 )
+from pipeline.acquisition.benchmark_history import list_benchmark_history
 from pipeline.acquisition.audit import audit_acquisition_quality
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
 from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
@@ -38,6 +39,7 @@ __all__ = [
     "load_benchmark_manifest",
     "load_grobid_trial_manifest",
     "load_metadata_reference_observation",
+    "list_benchmark_history",
     "route_pdf_signals",
     "run_acquisition_benchmark",
     "run_grobid_trial",
