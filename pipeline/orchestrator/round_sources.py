@@ -7,12 +7,11 @@ from pathlib import Path
 from typing import Any, Callable
 
 from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.corpus_layout import ProjectLayout
-from pipeline.corpus_layout import paper_pdf_path
+from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 from pipeline.orchestrator.round_runtime import write_json
 from pipeline.orchestrator.round_settings import docling_device, mathpix_credentials_available
 from pipeline.sources.docling import docling_json_to_external_sources, run_docling
-from pipeline.sources.external import external_layout_path, ocr_normalized_pdf_path
+from pipeline.sources.external import external_layout_path, ocr_normalized_pdf_path, ocr_prepass_report_path
 from pipeline.sources.mathpix import mathpix_pages_to_external_sources, run_mathpix
 from pipeline.sources.ocrmypdf import run_ocrmypdf
 
@@ -186,6 +185,18 @@ def timed_call(label: str, fn: Any, /, *args: Any, **kwargs: Any) -> tuple[str, 
     return label, round(time.perf_counter() - started, 3), result
 
 
+def _ocr_prepass_report_payload(pdf_selection: dict[str, Any], *, layout: ProjectLayout | None = None) -> dict[str, Any]:
+    return {
+        "selected_pdf_path": display_path(pdf_selection["selected_pdf_path"], layout=layout),
+        "original_pdf_path": display_path(pdf_selection["original_pdf_path"], layout=layout),
+        "ocr_normalized_pdf_path": display_path(pdf_selection["ocr_normalized_pdf_path"], layout=layout),
+        "pdf_source_kind": str(pdf_selection["pdf_source_kind"]),
+        "ocr_prepass_policy": str(pdf_selection["ocr_prepass_policy"]),
+        "ocr_prepass_tool": pdf_selection["ocr_prepass_tool"],
+        "ocr_prepass_applied": bool(pdf_selection["ocr_prepass_applied"]),
+    }
+
+
 def build_extraction_sources_for_paper(
     paper_id: str,
     *,
@@ -195,6 +206,8 @@ def build_extraction_sources_for_paper(
     per_paper_source_workers: int = PER_PAPER_SOURCE_WORKERS,
     timed_call_impl: Callable[..., tuple[str, float, Any]] | None = None,
     resolve_extraction_pdf_impl: Callable[..., dict[str, Any]] | None = None,
+    ocr_prepass_report_path_impl: Callable[..., Path] | None = None,
+    write_json_impl: Callable[[Path, Any], None] | None = None,
     build_docling_sources_impl: Callable[..., dict[str, Any]] | None = None,
     build_mathpix_sources_impl: Callable[..., dict[str, Any] | None] | None = None,
     build_mathpix_sources_from_result_impl: Callable[..., dict[str, Any]] | None = None,
@@ -202,6 +215,8 @@ def build_extraction_sources_for_paper(
     mathpix_credentials_available_impl = mathpix_credentials_available_impl or mathpix_credentials_available
     timed_call_impl = timed_call_impl or timed_call
     resolve_extraction_pdf_impl = resolve_extraction_pdf_impl or resolve_extraction_pdf
+    ocr_prepass_report_path_impl = ocr_prepass_report_path_impl or ocr_prepass_report_path
+    write_json_impl = write_json_impl or write_json
     build_docling_sources_impl = build_docling_sources_impl or build_docling_sources
     build_mathpix_sources_impl = build_mathpix_sources_impl or build_mathpix_sources
     build_mathpix_sources_from_result_impl = (
@@ -212,6 +227,10 @@ def build_extraction_sources_for_paper(
     pdf_selection = resolve_extraction_pdf_impl(paper_id, layout=layout)
     timings["ocr_prepass_seconds"] = round(time.perf_counter() - pdf_selection_started, 3)
     selected_pdf_path = pdf_selection["selected_pdf_path"]
+    write_json_impl(
+        ocr_prepass_report_path_impl(paper_id, layout=layout),
+        _ocr_prepass_report_payload(pdf_selection, layout=layout),
+    )
     mathpix_enabled = mathpix_credentials_available_impl()
     max_workers = 1 if prefetched_mathpix_future is not None else (per_paper_source_workers if mathpix_enabled else 1)
 

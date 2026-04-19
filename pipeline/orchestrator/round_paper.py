@@ -17,7 +17,7 @@ from pipeline.orchestrator.source_composition import compose_layout_sources
 from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.output.validation import validate_canonical
 from pipeline.reconcile.entrypoint import reconcile_paper
-from pipeline.sources.external import external_layout_path, external_math_path
+from pipeline.sources.external import external_layout_path, external_math_path, ocr_prepass_report_path
 
 
 def compose_external_sources(
@@ -212,10 +212,12 @@ def existing_composed_sources(
     load_json_if_exists_impl: Callable[[Path], dict[str, Any] | None] | None = None,
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
+    ocr_prepass_report_path_impl: Callable[..., Path] | None = None,
 ) -> dict[str, Any]:
     load_json_if_exists_impl = load_json_if_exists_impl or load_json_if_exists
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
+    ocr_prepass_report_path_impl = ocr_prepass_report_path_impl or ocr_prepass_report_path
     external_layout = load_json_if_exists_impl(external_layout_path_impl(paper_id, layout=layout)) or {
         "engine": "none",
         "blocks": [],
@@ -227,7 +229,8 @@ def existing_composed_sources(
     sources_dir = external_layout_path_impl(paper_id, layout=layout).parent
     acquisition_route = load_json_if_exists_impl(sources_dir / "acquisition-route.json") or {}
     source_scorecard = load_json_if_exists_impl(sources_dir / "source-scorecard.json") or {}
-    ocr_prepass = acquisition_route.get("ocr_prepass") or {}
+    ocr_prepass = load_json_if_exists_impl(ocr_prepass_report_path_impl(paper_id, layout=layout)) or {}
+    route_ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
         "math_path": str(external_math_path_impl(paper_id, layout=layout)),
@@ -245,9 +248,12 @@ def existing_composed_sources(
         ),
         "math_entries": len(math.get("entries", [])),
         "acquisition_route": acquisition_route.get("primary_route"),
-        "ocr_prepass_policy": ocr_prepass.get("policy"),
-        "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
-        "ocr_prepass_tool": ocr_prepass.get("tool"),
+        "ocr_prepass_policy": ocr_prepass.get("ocr_prepass_policy") or route_ocr_prepass.get("policy"),
+        "ocr_prepass_should_run": bool(route_ocr_prepass.get("should_run")),
+        "ocr_prepass_tool": ocr_prepass.get("ocr_prepass_tool") or route_ocr_prepass.get("tool"),
+        "ocr_prepass_applied": bool(ocr_prepass.get("ocr_prepass_applied")),
+        "pdf_source_kind": ocr_prepass.get("pdf_source_kind"),
+        "selected_pdf_path": ocr_prepass.get("selected_pdf_path"),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
     }

@@ -5,6 +5,7 @@ from pipeline.sources.external import (
     load_external_math,
     load_mathpix_layout,
     ocr_normalized_pdf_path,
+    ocr_prepass_report_path,
 )
 from pipeline.sources.docling import docling_json_to_external_sources, run_docling, write_external_sources
 from pipeline.sources.figures import ensure_figure_manifest, extract_figures
@@ -32,6 +33,7 @@ __all__ = [
     "load_mathpix_layout",
     "mathpix_pages_to_external_sources",
     "ocr_normalized_pdf_path",
+    "ocr_prepass_report_path",
     "pdftotext_available",
     "run_mathpix",
     "run_ocrmypdf",

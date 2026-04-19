@@ -52,6 +52,10 @@ def ocr_normalized_pdf_path(paper_id: str, *, layout: ProjectLayout | None = Non
     return _paper_sources_dir(paper_id, layout=layout) / "ocr-normalized.pdf"
 
 
+def ocr_prepass_report_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
+    return _paper_sources_dir(paper_id, layout=layout) / "ocr-prepass.json"
+
+
 def load_external_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
     return _load_layout_payload(external_layout_path(paper_id, layout=layout), default_engine="external_layout")
 

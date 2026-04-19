@@ -103,6 +103,8 @@ When OCR normalization runs, the generated artifact is written to
 `<corpus-root>/<paper-id>/canonical_sources/ocr-normalized.pdf`, and the round
 source builders will prefer that PDF over the original input for Docling and
 Mathpix extraction.
+The OCR execution result is also persisted to
+`<corpus-root>/<paper-id>/canonical_sources/ocr-prepass.json`.
 
 Figure regeneration now also lives under this package:
 

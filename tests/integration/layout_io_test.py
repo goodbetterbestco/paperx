@@ -10,6 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipeline.corpus_layout import ProjectLayout
+from pipeline.orchestrator.round_paper import existing_composed_sources
 from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.sources.external import (
     external_layout_path,
@@ -17,6 +18,7 @@ from pipeline.sources.external import (
     load_external_layout,
     load_external_math,
     load_mathpix_layout,
+    ocr_prepass_report_path,
 )
 
 
@@ -83,12 +85,81 @@ class LayoutIoTest(unittest.TestCase):
 
             self.assertEqual(external_layout_path(paper_id, layout=layout), sources_dir / "layout.json")
             self.assertEqual(external_math_path(paper_id, layout=layout), sources_dir / "math.json")
+            self.assertEqual(ocr_prepass_report_path(paper_id, layout=layout), sources_dir / "ocr-prepass.json")
             self.assertEqual(loaded_layout["engine"], "mathpix")
             self.assertEqual(loaded_layout["blocks"][0].id, "mx-1")
             self.assertEqual(loaded_layout["blocks"][0].engine, "mathpix")
             self.assertEqual(loaded_math["engine"], "mathpix")
             self.assertEqual(loaded_math["entries"][0]["external_engine"], "mathpix")
             self.assertEqual(loaded_mathpix_layout["engine"], "mathpix_layout")
+
+    def test_existing_composed_sources_prefers_persisted_ocr_prepass_report(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir).resolve()
+            layout = _corpus_layout(root)
+            paper_id = "1990_synthetic_test_paper"
+            sources_dir = layout.canonical_sources_dir(paper_id)
+            sources_dir.mkdir(parents=True, exist_ok=True)
+
+            external_layout_path(paper_id, layout=layout).write_text(
+                json.dumps(
+                    {
+                        "engine": "docling",
+                        "pdf_path": str(layout.paper_pdf_path(paper_id)),
+                        "page_count": 1,
+                        "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                        "blocks": [{"id": "d-1", "page": 1, "order": 1, "text": "Synthetic", "role": "paragraph", "bbox": {}}],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            external_math_path(paper_id, layout=layout).write_text(
+                json.dumps({"engine": "mathpix", "entries": [{"id": "eq-1", "display_latex": "x+y", "source_spans": [{"page": 1, "bbox": {}}]}]}),
+                encoding="utf-8",
+            )
+            (sources_dir / "acquisition-route.json").write_text(
+                json.dumps(
+                    {
+                        "paper_id": paper_id,
+                        "primary_route": "scan_or_image_heavy",
+                        "ocr_prepass": {"policy": "required", "should_run": True, "tool": "ocrmypdf"},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (sources_dir / "source-scorecard.json").write_text(
+                json.dumps(
+                    {
+                        "providers": [{"provider": "docling", "kind": "layout", "overall_score": 1.0}],
+                        "recommended_primary_layout_provider": "docling",
+                        "recommended_primary_math_provider": "mathpix",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            ocr_prepass_report_path(paper_id, layout=layout).write_text(
+                json.dumps(
+                    {
+                        "selected_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
+                        "original_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/paper.pdf",
+                        "ocr_normalized_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
+                        "pdf_source_kind": "ocr_normalized_generated",
+                        "ocr_prepass_policy": "required",
+                        "ocr_prepass_tool": "ocrmypdf",
+                        "ocr_prepass_applied": True,
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            summary = existing_composed_sources(paper_id, layout=layout)
+
+            self.assertEqual(summary["ocr_prepass_policy"], "required")
+            self.assertTrue(summary["ocr_prepass_should_run"])
+            self.assertEqual(summary["ocr_prepass_tool"], "ocrmypdf")
+            self.assertTrue(summary["ocr_prepass_applied"])
+            self.assertEqual(summary["pdf_source_kind"], "ocr_normalized_generated")
+            self.assertTrue(str(summary["selected_pdf_path"]).endswith("ocr-normalized.pdf"))
 
     def test_write_canonical_outputs_uses_explicit_layout_targets(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

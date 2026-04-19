@@ -155,6 +155,7 @@ class RoundSourcesTest(unittest.TestCase):
         prefetched: Future[dict[str, object]] = Future()
         prefetched.set_result({"elapsed_seconds": 3.5, "pages": [{"page": 1}], "pdf_id": "prefetched-1"})
         selected_pdf_path = Path("/tmp/selected-prefetched.pdf")
+        written_reports: dict[str, dict] = {}
 
         docling_sources, mathpix_sources, timings = build_extraction_sources_for_paper(
             "1990_synthetic_test_paper",
@@ -163,11 +164,14 @@ class RoundSourcesTest(unittest.TestCase):
             timed_call_impl=lambda label, fn, /, *args, **kwargs: (label, 1.25, fn(*args, **kwargs)),
             resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
                 "selected_pdf_path": selected_pdf_path,
+                "original_pdf_path": Path("/tmp/original-prefetched.pdf"),
+                "ocr_normalized_pdf_path": selected_pdf_path,
                 "pdf_source_kind": "ocr_normalized_existing",
                 "ocr_prepass_policy": "required",
                 "ocr_prepass_tool": "ocrmypdf",
                 "ocr_prepass_applied": True,
             },
+            write_json_impl=lambda path, payload: written_reports.__setitem__(path.name, payload),
             build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
                 "layout": {"blocks": []},
                 "math": {"entries": []},
@@ -185,12 +189,15 @@ class RoundSourcesTest(unittest.TestCase):
         self.assertEqual(mathpix_sources["math_entries"], 1)
         self.assertEqual(docling_sources["source_pdf_path"], str(selected_pdf_path))
         self.assertEqual(mathpix_sources["source_pdf_path"], str(selected_pdf_path))
+        self.assertEqual(written_reports["ocr-prepass.json"]["pdf_source_kind"], "ocr_normalized_existing")
+        self.assertTrue(written_reports["ocr-prepass.json"]["ocr_prepass_applied"])
         self.assertEqual(timings["docling_seconds"], 1.25)
         self.assertEqual(timings["mathpix_seconds"], 3.5)
         self.assertIn("ocr_prepass_seconds", timings)
 
     def test_build_extraction_sources_runs_local_mathpix_when_enabled(self) -> None:
         selected_pdf_path = Path("/tmp/selected-local.pdf")
+        written_reports: dict[str, dict] = {}
         docling_sources, mathpix_sources, timings = build_extraction_sources_for_paper(
             "1990_synthetic_test_paper",
             mathpix_credentials_available_impl=lambda: True,
@@ -201,11 +208,14 @@ class RoundSourcesTest(unittest.TestCase):
             ),
             resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
                 "selected_pdf_path": selected_pdf_path,
+                "original_pdf_path": selected_pdf_path,
+                "ocr_normalized_pdf_path": Path("/tmp/missing-local.pdf"),
                 "pdf_source_kind": "original",
                 "ocr_prepass_policy": "skip",
                 "ocr_prepass_tool": None,
                 "ocr_prepass_applied": False,
             },
+            write_json_impl=lambda path, payload: written_reports.__setitem__(path.name, payload),
             build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
                 "layout": {"blocks": [{"id": "docling"}]},
                 "math": {"entries": []},
@@ -223,6 +233,8 @@ class RoundSourcesTest(unittest.TestCase):
         self.assertEqual(mathpix_sources["math_entries"], 4)
         self.assertEqual(docling_sources["source_pdf_path"], str(selected_pdf_path))
         self.assertEqual(mathpix_sources["source_pdf_path"], str(selected_pdf_path))
+        self.assertEqual(written_reports["ocr-prepass.json"]["pdf_source_kind"], "original")
+        self.assertFalse(written_reports["ocr-prepass.json"]["ocr_prepass_applied"])
         self.assertEqual(timings["docling_seconds"], 0.75)
         self.assertEqual(timings["mathpix_seconds"], 2.5)
         self.assertIn("ocr_prepass_seconds", timings)
