@@ -21,6 +21,8 @@ class PaperState:
     mathpix_layout: dict[str, Any] | None = None
     external_math: dict[str, Any] | None = None
     figures: list[dict[str, Any]] = field(default_factory=list)
+    acquisition_route: dict[str, Any] | None = None
+    source_scorecard: dict[str, Any] | None = None
 
     records: list[dict[str, Any]] = field(default_factory=list)
     layout_by_id: dict[str, Any] = field(default_factory=dict)

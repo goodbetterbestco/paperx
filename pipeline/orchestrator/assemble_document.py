@@ -195,6 +195,10 @@ def assemble_paper_document(
     )
 
     decision_artifacts: dict[str, Any] = {}
+    if state.acquisition_route:
+        decision_artifacts["acquisition_route"] = state.acquisition_route
+    if state.source_scorecard:
+        decision_artifacts["source_scorecard"] = state.source_scorecard
     if title_decision:
         decision_artifacts["title"] = title_decision
     if abstract_decision:

@@ -71,6 +71,12 @@ def write_canonical_outputs_impl(
         review_target.write_text(review_markdown, encoding="utf-8")
     if isinstance(decision_artifacts, dict):
         sources_target.mkdir(parents=True, exist_ok=True)
+        acquisition_route = decision_artifacts.get("acquisition_route")
+        if isinstance(acquisition_route, dict):
+            write_json(sources_target / "acquisition-route.json", acquisition_route)
+        source_scorecard = decision_artifacts.get("source_scorecard")
+        if isinstance(source_scorecard, dict):
+            write_json(sources_target / "source-scorecard.json", source_scorecard)
         title_decision = decision_artifacts.get("title")
         if isinstance(title_decision, dict):
             write_json(sources_target / "title-decision.json", title_decision)

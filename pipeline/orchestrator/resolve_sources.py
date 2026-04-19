@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
+from pipeline.acquisition.routing import build_acquisition_route_report
+from pipeline.acquisition.scoring import build_source_scorecard
 from pipeline.config import PipelineConfig
 from pipeline.output.fingerprints import build_input_fingerprints
 from pipeline.state import PaperState
@@ -20,7 +22,11 @@ def resolve_paper_sources(
     load_mathpix_layout: Callable[[str], dict[str, Any] | None],
     extract_figures: Callable[[str], list[dict[str, Any]]],
     normalize_figure_caption_text: Callable[[str], str],
+    build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
+    build_source_scorecard_impl: Callable[..., dict[str, Any]] | None = None,
 ) -> PaperState:
+    build_acquisition_route_report_impl = build_acquisition_route_report_impl or build_acquisition_route_report
+    build_source_scorecard_impl = build_source_scorecard_impl or build_source_scorecard
     paper_id = state.paper_id
     native_layout = layout_output or extract_layout(paper_id)
     layout = native_layout
@@ -51,6 +57,16 @@ def resolve_paper_sources(
     state.external_math = external_math
     state.mathpix_layout = mathpix_layout
     state.figures = resolved_figures
+    state.acquisition_route = build_acquisition_route_report_impl(
+        paper_id,
+        layout=config.layout,
+    )
+    state.source_scorecard = build_source_scorecard_impl(
+        native_layout=native_layout,
+        external_layout=external_layout,
+        mathpix_layout=mathpix_layout,
+        external_math=external_math,
+    )
     state.layout_engine_name = external_layout_engine or "native_pdf"
     state.math_engine_name = f"{external_math_engine}+heuristic" if external_math_engine else "heuristic"
     state.input_fingerprints = build_input_fingerprints(

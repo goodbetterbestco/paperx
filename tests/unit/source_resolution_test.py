@@ -79,6 +79,15 @@ class SourceResolutionTest(unittest.TestCase):
             load_mathpix_layout=lambda paper_id: mathpix_layout,
             extract_figures=lambda paper_id: [],
             normalize_figure_caption_text=lambda text: text.upper(),
+            build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
+                "paper_id": paper_id,
+                "primary_route": "math_dense",
+            },
+            build_source_scorecard_impl=lambda **kwargs: {
+                "providers": [{"provider": "mathpix", "overall_score": 1.2}],
+                "recommended_primary_layout_provider": "mathpix",
+                "recommended_primary_math_provider": "mathpix",
+            },
         )
 
         self.assertEqual(resolved.native_layout, native_layout)
@@ -87,6 +96,8 @@ class SourceResolutionTest(unittest.TestCase):
         self.assertEqual(resolved.mathpix_layout, mathpix_layout)
         self.assertEqual(resolved.external_math, external_math)
         self.assertEqual(resolved.figures[0]["caption"], "CAPTION TEXT")
+        self.assertEqual(resolved.acquisition_route, {"paper_id": "1990_synthetic_test_paper", "primary_route": "math_dense"})
+        self.assertEqual(resolved.source_scorecard["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(resolved.layout_engine_name, "mathpix")
         self.assertEqual(resolved.math_engine_name, "mathpix+heuristic")
         self.assertIn("pdf", resolved.input_fingerprints)
