@@ -30,6 +30,9 @@ Phase 1 and Phase 5 are implemented first.
 - `pipeline/acquisition/providers.py`
   - provider artifact adapters
   - GROBID TEI metadata/reference extraction
+- `pipeline/acquisition/ocr_policy.py`
+  - explicit OCR pre-pass decisioning
+  - required vs recommended vs skip policy
 - `pipeline/acquisition/__init__.py`
   - public boundary for routing and benchmark helpers
 
@@ -38,8 +41,6 @@ Planned follow-on modules:
 - `pipeline/acquisition/scoring.py`
   - document-level and page-level source scorecards
   - accept/reject thresholds for provider outputs
-- `pipeline/acquisition/ocr_policy.py`
-  - pre-pass routing for scanned and degraded PDFs
 - `pipeline/acquisition/source_ownership.py`
   - provider ownership by output product such as metadata, layout,
     references, math, and tables

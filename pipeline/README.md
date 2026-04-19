@@ -97,6 +97,7 @@ Full source regeneration still expects additional tools and credentials:
 - `pdftotext` on `PATH`
 - Mathpix credentials for live Mathpix calls
 - a working `docling` CLI for Docling source generation
+- `ocrmypdf` when the acquisition route recommends or requires an OCR pre-pass
 
 Figure regeneration now also lives under this package:
 

@@ -90,6 +90,8 @@ class AcquisitionRoutingTest(unittest.TestCase):
         self.assertEqual(decision.primary_route, "scan_or_image_heavy")
         self.assertIn("ocrmypdf", decision.recommended_providers)
         self.assertIn("image_heavy", decision.traits)
+        self.assertEqual(decision.ocr_prepass["policy"], "required")
+        self.assertTrue(decision.ocr_prepass["should_run"])
 
     def test_routes_math_dense_for_born_digital_stem_pdf(self) -> None:
         stem_text = (
@@ -122,6 +124,7 @@ class AcquisitionRoutingTest(unittest.TestCase):
         self.assertEqual(decision.primary_route, "math_dense")
         self.assertIn("mathpix", decision.recommended_providers)
         self.assertIn("math_heavy", decision.traits)
+        self.assertEqual(decision.ocr_prepass["policy"], "skip")
 
     def test_routes_layout_complex_for_two_column_pdf(self) -> None:
         pages = [
@@ -142,6 +145,7 @@ class AcquisitionRoutingTest(unittest.TestCase):
         self.assertEqual(decision.primary_route, "layout_complex")
         self.assertIn("two_column", decision.traits)
         self.assertIn("llamaparse", decision.recommended_providers)
+        self.assertEqual(decision.ocr_prepass["policy"], "skip")
 
 
 if __name__ == "__main__":

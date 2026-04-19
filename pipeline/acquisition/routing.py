@@ -37,6 +37,7 @@ class AcquisitionRouteDecision:
     rationale: list[str]
     recommended_providers: list[str]
     product_plan: dict[str, list[str]]
+    ocr_prepass: dict[str, Any]
     signals: AcquisitionSignals
 
     def to_dict(self) -> dict[str, Any]:
@@ -215,6 +216,8 @@ def inspect_pdf_signals(pdf_path: str | Path, *, load_fitz: Any | None = None) -
 
 
 def route_pdf_signals(signals: AcquisitionSignals) -> AcquisitionRouteDecision:
+    from pipeline.acquisition.ocr_policy import decide_ocr_prepass_policy
+
     rationale: list[str] = []
     traits: list[str] = []
 
@@ -249,12 +252,14 @@ def route_pdf_signals(signals: AcquisitionSignals) -> AcquisitionRouteDecision:
         rationale.append("defaulted to born-digital scholarly route")
 
     recommended_providers, product_plan = _route_profile(primary_route)
+    ocr_prepass = decide_ocr_prepass_policy(primary_route, signals=signals)
     return AcquisitionRouteDecision(
         primary_route=primary_route,
         traits=traits,
         rationale=rationale,
         recommended_providers=recommended_providers,
         product_plan=product_plan,
+        ocr_prepass=ocr_prepass.to_dict(),
         signals=signals,
     )
 

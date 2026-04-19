@@ -5,6 +5,7 @@ from pipeline.acquisition.benchmark import (
     run_acquisition_benchmark,
 )
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
+from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
 from pipeline.acquisition.providers import MetadataReferenceObservation, load_metadata_reference_observation
 from pipeline.acquisition.routing import (
     AcquisitionRouteDecision,
@@ -20,8 +21,10 @@ __all__ = [
     "AcquisitionRouteDecision",
     "AcquisitionSignals",
     "MetadataReferenceObservation",
+    "OcrPrepassDecision",
     "build_acquisition_route_report",
     "build_source_scorecard",
+    "decide_ocr_prepass_policy",
     "inspect_pdf_signals",
     "load_benchmark_manifest",
     "load_grobid_trial_manifest",
