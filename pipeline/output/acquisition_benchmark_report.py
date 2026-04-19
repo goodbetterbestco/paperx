@@ -9,6 +9,8 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
         "",
         f"- Manifest: `{report.get('manifest_path')}`",
         f"- Papers benchmarked: `{report.get('paper_count', 0)}`",
+        f"- JSON report: `{((report.get('report_paths') or {}).get('json')) or 'not written'}`",
+        f"- Markdown report: `{((report.get('report_paths') or {}).get('markdown')) or 'not written'}`",
         "",
         "## Aggregate Ranking",
         "",

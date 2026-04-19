@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -75,32 +76,52 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
 
     def test_benchmark_cli_prints_json_report(self) -> None:
         printed: list[str] = []
-        exit_code = run_benchmark_cli(
-            argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json"),
-            print_fn=printed.append,
-        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir) / "benchmark"
+            json_path = output_dir / "summary.json"
+            markdown_path = output_dir / "summary.md"
+            exit_code = run_benchmark_cli(
+                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json"),
+                print_fn=printed.append,
+                output_dir=output_dir,
+                json_report_path=json_path,
+                markdown_report_path=markdown_path,
+            )
 
-        self.assertEqual(exit_code, 0)
-        payload = json.loads(printed[0])
-        self.assertEqual(payload["paper_count"], 4)
-        self.assertEqual(
-            {paper["paper_id"] for paper in payload["papers"]},
-            {"fixture_paper", "math_dense_fixture", "scan_image_heavy_fixture", "layout_complex_fixture"},
-        )
+            self.assertEqual(exit_code, 0)
+            payload = json.loads(printed[0])
+            self.assertEqual(payload["paper_count"], 4)
+            self.assertEqual(
+                {paper["paper_id"] for paper in payload["papers"]},
+                {"fixture_paper", "math_dense_fixture", "scan_image_heavy_fixture", "layout_complex_fixture"},
+            )
+            self.assertEqual(payload["report_paths"]["json"], str(json_path))
+            self.assertTrue(json_path.exists())
+            self.assertTrue(markdown_path.exists())
 
     def test_benchmark_cli_prints_markdown_report(self) -> None:
         printed: list[str] = []
-        exit_code = run_benchmark_cli(
-            argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="markdown"),
-            print_fn=printed.append,
-        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir) / "benchmark"
+            json_path = output_dir / "summary.json"
+            markdown_path = output_dir / "summary.md"
+            exit_code = run_benchmark_cli(
+                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="markdown"),
+                print_fn=printed.append,
+                output_dir=output_dir,
+                json_report_path=json_path,
+                markdown_report_path=markdown_path,
+            )
 
-        self.assertEqual(exit_code, 0)
-        self.assertIn("# Acquisition Benchmark", printed[0])
-        self.assertIn("fixture_paper", printed[0])
-        self.assertIn("math_dense_fixture", printed[0])
-        self.assertIn("scan_image_heavy_fixture", printed[0])
-        self.assertIn("layout_complex_fixture", printed[0])
+            self.assertEqual(exit_code, 0)
+            self.assertIn("# Acquisition Benchmark", printed[0])
+            self.assertIn("fixture_paper", printed[0])
+            self.assertIn("math_dense_fixture", printed[0])
+            self.assertIn("scan_image_heavy_fixture", printed[0])
+            self.assertIn("layout_complex_fixture", printed[0])
+            self.assertIn(str(json_path), printed[0])
+            self.assertTrue(json_path.exists())
+            self.assertTrue(markdown_path.exists())
 
 
 if __name__ == "__main__":
