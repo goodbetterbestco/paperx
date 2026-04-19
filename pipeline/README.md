@@ -69,6 +69,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.inspect_acquisition_route <paper-id>`
 - `python3 -m pipeline.cli.inspect_acquisition_scorecard <paper-id>`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
+- `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`
 - `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
 - `python3 -m pipeline.cli.export_titles_and_abstracts`
 - `python3 -m pipeline.cli.audit_corpus --top 12`

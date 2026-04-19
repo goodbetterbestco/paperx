@@ -24,6 +24,12 @@ Phase 1 and Phase 5 are implemented first.
   - provider artifact loading
   - gold annotation loading
   - task-level scoring and aggregate reporting
+- `pipeline/acquisition/grobid_trial.py`
+  - fixture-backed GROBID metadata/reference bakeoff
+  - per-paper scoring and aggregate reporting
+- `pipeline/acquisition/providers.py`
+  - provider artifact adapters
+  - GROBID TEI metadata/reference extraction
 - `pipeline/acquisition/__init__.py`
   - public boundary for routing and benchmark helpers
 
@@ -32,9 +38,6 @@ Planned follow-on modules:
 - `pipeline/acquisition/scoring.py`
   - document-level and page-level source scorecards
   - accept/reject thresholds for provider outputs
-- `pipeline/acquisition/providers.py`
-  - provider adapters for GROBID, Docling, Mathpix, Marker, MinerU,
-    LlamaParse, OCRmyPDF-normalized variants, and future experiments
 - `pipeline/acquisition/ocr_policy.py`
   - pre-pass routing for scanned and degraded PDFs
 - `pipeline/acquisition/source_ownership.py`
@@ -54,8 +57,6 @@ Phase 1 and Phase 5 CLIs:
 
 Planned follow-on CLIs:
 
-- `pipeline.cli.run_grobid_trial`
-  - scholarly metadata and reference bakeoff
 - `pipeline.cli.run_acquisition_bakeoff`
   - compare multiple providers over a shared manifest and cost budget
 - `pipeline.cli.audit_acquisition_quality`

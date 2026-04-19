@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Synthetic Acquisition Benchmark Paper</title>
+      </titleStmt>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <p>This benchmark paper demonstrates routing and acquisition scoring for structured document extraction.</p>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <back>
+      <div type="references">
+        <listBibl>
+          <biblStruct>
+            <analytic>
+              <author><persName><forename>A.</forename><surname>Example</surname></persName></author>
+              <author><persName><forename>B.</forename><surname>Example</surname></persName></author>
+              <title level="a">Structured Document Extraction for Benchmarks</title>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Tests</title>
+              <imprint><date when="2021">2021</date></imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct>
+            <analytic>
+              <author><persName><forename>C.</forename><surname>Example</surname></persName></author>
+              <title level="a">Metadata Routing in Practice</title>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of Synthetic Systems</title>
+              <imprint><date when="2020">2020</date></imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -4,6 +4,8 @@ from pipeline.acquisition.benchmark import (
     load_benchmark_manifest,
     run_acquisition_benchmark,
 )
+from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
+from pipeline.acquisition.providers import MetadataReferenceObservation, load_metadata_reference_observation
 from pipeline.acquisition.routing import (
     AcquisitionRouteDecision,
     AcquisitionSignals,
@@ -17,12 +19,16 @@ from pipeline.acquisition.source_ownership import reported_layout_provider, repo
 __all__ = [
     "AcquisitionRouteDecision",
     "AcquisitionSignals",
+    "MetadataReferenceObservation",
     "build_acquisition_route_report",
     "build_source_scorecard",
     "inspect_pdf_signals",
     "load_benchmark_manifest",
+    "load_grobid_trial_manifest",
+    "load_metadata_reference_observation",
     "route_pdf_signals",
     "run_acquisition_benchmark",
+    "run_grobid_trial",
     "reported_layout_provider",
     "reported_math_provider",
     "score_math_provider",
