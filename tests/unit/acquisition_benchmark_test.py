@@ -25,9 +25,11 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
 
         self.assertEqual(len(papers), 1)
         self.assertEqual(papers[0].paper_id, "fixture_paper")
+        self.assertEqual(papers[0].family, "born_digital_scholarly")
         self.assertEqual({provider.name for provider in papers[0].providers}, {"docling", "mathpix"})
         for provider in papers[0].providers:
             self.assertTrue(provider.layout_path.is_absolute())
+            self.assertTrue(provider.execution_path is None or provider.execution_path.is_absolute())
 
     def test_benchmark_scores_docling_above_mathpix_for_fixture(self) -> None:
         report = run_acquisition_benchmark(FIXTURE_ROOT / "manifest.json")
@@ -35,15 +37,20 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         self.assertEqual(report["paper_count"], 1)
         paper_report = report["papers"][0]
         self.assertEqual(paper_report["paper_id"], "fixture_paper")
+        self.assertEqual(paper_report["family"], "born_digital_scholarly")
         providers = {entry["provider"]: entry for entry in paper_report["providers"]}
         self.assertGreater(providers["docling"]["overall_score"], providers["mathpix"]["overall_score"])
         self.assertEqual(providers["docling"]["metrics"]["title_match"], 1.0)
         self.assertGreaterEqual(providers["docling"]["metrics"]["equation_hit_rate"], 1.0)
+        self.assertEqual(providers["docling"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(providers["docling"]["metrics"]["selected_layout_provider_match"], 1.0)
+        self.assertEqual(providers["mathpix"]["metrics"]["selected_layout_provider_match"], 0.0)
+        self.assertEqual(report["families"][0]["family"], "born_digital_scholarly")
 
     def test_benchmark_cli_prints_json_report(self) -> None:
         printed: list[str] = []
         exit_code = run_benchmark_cli(
-            argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json")),
+            argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json"),
             print_fn=printed.append,
         )
 
@@ -51,6 +58,17 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         payload = json.loads(printed[0])
         self.assertEqual(payload["paper_count"], 1)
         self.assertEqual(payload["aggregate"][0]["provider"], "docling")
+
+    def test_benchmark_cli_prints_markdown_report(self) -> None:
+        printed: list[str] = []
+        exit_code = run_benchmark_cli(
+            argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="markdown"),
+            print_fn=printed.append,
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("# Acquisition Benchmark", printed[0])
+        self.assertIn("fixture_paper", printed[0])
 
 
 if __name__ == "__main__":

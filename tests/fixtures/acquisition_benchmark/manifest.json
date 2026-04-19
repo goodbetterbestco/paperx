@@ -6,11 +6,13 @@
       "providers": {
         "docling": {
           "layout": "providers/fixture_paper/docling-layout.json",
-          "math": "providers/fixture_paper/docling-math.json"
+          "math": "providers/fixture_paper/docling-math.json",
+          "execution": "providers/fixture_paper/docling-execution.json"
         },
         "mathpix": {
           "layout": "providers/fixture_paper/mathpix-layout.json",
-          "math": "providers/fixture_paper/mathpix-math.json"
+          "math": "providers/fixture_paper/mathpix-math.json",
+          "execution": "providers/fixture_paper/mathpix-execution.json"
         }
       }
     }

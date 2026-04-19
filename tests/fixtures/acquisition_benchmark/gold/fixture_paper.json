@@ -1,4 +1,9 @@
 {
+  "family": "born_digital_scholarly",
+  "expected_route": "born_digital_scholarly",
+  "ocr_should_run": false,
+  "expected_primary_layout_provider": "docling",
+  "expected_primary_math_provider": "docling",
   "title": "Synthetic Acquisition Benchmark Paper",
   "abstract": "This benchmark paper demonstrates routing and acquisition scoring for structured document extraction.",
   "headings": [

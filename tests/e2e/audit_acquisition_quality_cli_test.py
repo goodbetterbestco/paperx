@@ -63,6 +63,19 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                 + "\n",
                 encoding="utf-8",
             )
+            (sources_dir / "acquisition-execution.json").write_text(
+                json.dumps(
+                    {
+                        "executed": {
+                            "selected_layout_provider": "docling",
+                            "selected_math_provider": "mathpix",
+                        }
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
 
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
@@ -95,10 +108,12 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["canonical_count"], 1)
             self.assertEqual(report["route_counts"]["degraded_or_garbled"], 1)
             self.assertEqual(report["ocr_summary"]["applied_count"], 1)
+            self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("# Acquisition Quality Audit", markdown)
             self.assertIn("1990_synthetic_test_paper", markdown)
+            self.assertIn("Executed: layout `docling`", markdown)
 
 
 if __name__ == "__main__":

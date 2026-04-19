@@ -74,6 +74,15 @@ class AcquisitionAuditTest(unittest.TestCase):
                     "pdf_source_kind": "original",
                 },
             )
+            _write_json(
+                required_dir / "acquisition-execution.json",
+                {
+                    "executed": {
+                        "selected_layout_provider": "docling",
+                        "selected_math_provider": "mathpix",
+                    }
+                },
+            )
 
             _write_json(
                 recommended_dir / "acquisition-route.json",
@@ -98,6 +107,15 @@ class AcquisitionAuditTest(unittest.TestCase):
                     "pdf_source_kind": "ocr_normalized_generated",
                 },
             )
+            _write_json(
+                recommended_dir / "acquisition-execution.json",
+                {
+                    "executed": {
+                        "selected_layout_provider": "mathpix",
+                        "selected_math_provider": "mathpix",
+                    }
+                },
+            )
 
             report = audit_acquisition_quality(layout=layout)
 
@@ -108,6 +126,8 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["route_counts"]["degraded_or_garbled"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["docling"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["mathpix"], 1)
+        self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
+        self.assertEqual(report["executed_layout_provider_counts"]["mathpix"], 1)
         self.assertEqual(report["ocr_policy_counts"]["required"], 1)
         self.assertEqual(report["ocr_policy_counts"]["recommended"], 1)
         self.assertEqual(report["pdf_source_kind_counts"]["original"], 1)
@@ -123,6 +143,8 @@ class AcquisitionAuditTest(unittest.TestCase):
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
         self.assertIn("required_ocr_not_applied", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
+        self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
+        self.assertTrue(papers["1991_recommended_ocr"]["has_execution_report"])
         self.assertEqual(
             papers["1992_missing_sidecars"]["missing_sidecars"],
             ["acquisition-route.json", "source-scorecard.json", "ocr-prepass.json"],

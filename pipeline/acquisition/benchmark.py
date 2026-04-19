@@ -20,6 +20,11 @@ class AcquisitionGoldRecord:
     paragraphs: list[str]
     equations: list[str]
     references: list[str]
+    family: str | None
+    expected_route: str | None
+    ocr_should_run: bool | None
+    expected_primary_layout_provider: str | None
+    expected_primary_math_provider: str | None
 
 
 @dataclass(frozen=True)
@@ -27,12 +32,14 @@ class ProviderArtifacts:
     name: str
     layout_path: Path
     math_path: Path | None
+    execution_path: Path | None
 
 
 @dataclass(frozen=True)
 class BenchmarkPaper:
     paper_id: str
     gold_path: Path
+    family: str | None
     providers: list[ProviderArtifacts]
 
 
@@ -122,6 +129,23 @@ def _extract_provider_observation(layout_path: Path, math_path: Path | None) -> 
     }
 
 
+def _extract_execution_observation(execution_path: Path | None) -> dict[str, Any]:
+    if execution_path is None or not execution_path.exists():
+        return {}
+    payload = _load_json(execution_path)
+    recommended = dict(payload.get("recommended") or {})
+    executed = dict(payload.get("executed") or {})
+    ocr = dict(payload.get("ocr") or {})
+    return {
+        "route_primary": str(payload.get("route_primary", "") or "").strip() or None,
+        "recommended_layout_provider": str(recommended.get("layout_provider", "") or "").strip() or None,
+        "recommended_math_provider": str(recommended.get("math_provider", "") or "").strip() or None,
+        "selected_layout_provider": str(executed.get("selected_layout_provider", "") or "").strip() or None,
+        "selected_math_provider": str(executed.get("selected_math_provider", "") or "").strip() or None,
+        "ocr_applied": bool(ocr.get("applied")) if "applied" in ocr else None,
+    }
+
+
 def _list_hit_rate(expected_items: list[str], observed_items: list[str], fallback_text: str) -> float:
     if not expected_items:
         return 1.0
@@ -135,7 +159,7 @@ def _list_hit_rate(expected_items: list[str], observed_items: list[str], fallbac
     return round(hits / len(expected_items), 3)
 
 
-def _overall_score(metrics: dict[str, float]) -> float:
+def _content_score(metrics: dict[str, float]) -> float:
     weighted_total = (
         metrics["title_match"] * 0.2
         + metrics["abstract_token_recall"] * 0.2
@@ -145,6 +169,41 @@ def _overall_score(metrics: dict[str, float]) -> float:
         + metrics["reference_hit_rate"] * 0.1
     )
     return round(weighted_total, 3)
+
+
+def _execution_metrics(gold: AcquisitionGoldRecord, execution: dict[str, Any]) -> dict[str, float]:
+    metrics: dict[str, float] = {}
+    if gold.expected_route:
+        metrics["route_match"] = float(execution.get("route_primary") == gold.expected_route)
+    if gold.ocr_should_run is not None:
+        metrics["ocr_should_run_match"] = float(execution.get("ocr_applied") == gold.ocr_should_run)
+    if gold.expected_primary_layout_provider:
+        metrics["recommended_layout_provider_match"] = float(
+            execution.get("recommended_layout_provider") == gold.expected_primary_layout_provider
+        )
+        metrics["selected_layout_provider_match"] = float(
+            execution.get("selected_layout_provider") == gold.expected_primary_layout_provider
+        )
+    if gold.expected_primary_math_provider:
+        metrics["recommended_math_provider_match"] = float(
+            execution.get("recommended_math_provider") == gold.expected_primary_math_provider
+        )
+        metrics["selected_math_provider_match"] = float(
+            execution.get("selected_math_provider") == gold.expected_primary_math_provider
+        )
+    return metrics
+
+
+def _execution_score(metrics: dict[str, float]) -> float | None:
+    if not metrics:
+        return None
+    return round(sum(metrics.values()) / len(metrics), 3)
+
+
+def _overall_score(content_score: float, execution_score: float | None) -> float:
+    if execution_score is None:
+        return content_score
+    return round(content_score * 0.8 + execution_score * 0.2, 3)
 
 
 def _load_gold_record(paper_id: str, gold_path: Path) -> AcquisitionGoldRecord:
@@ -157,6 +216,11 @@ def _load_gold_record(paper_id: str, gold_path: Path) -> AcquisitionGoldRecord:
         paragraphs=[str(item) for item in payload.get("paragraphs", [])],
         equations=[str(item) for item in payload.get("equations", [])],
         references=[str(item) for item in payload.get("references", [])],
+        family=(str(payload.get("family", "")).strip() or None),
+        expected_route=(str(payload.get("expected_route", "")).strip() or None),
+        ocr_should_run=(bool(payload["ocr_should_run"]) if "ocr_should_run" in payload else None),
+        expected_primary_layout_provider=(str(payload.get("expected_primary_layout_provider", "")).strip() or None),
+        expected_primary_math_provider=(str(payload.get("expected_primary_math_provider", "")).strip() or None),
     )
 
 
@@ -175,10 +239,23 @@ def load_benchmark_manifest(manifest_path: str | Path) -> list[BenchmarkPaper]:
                 name=str(provider_name),
                 layout_path=(manifest_dir / str(provider_payload["layout"])).resolve(),
                 math_path=((manifest_dir / str(provider_payload["math"])).resolve() if provider_payload.get("math") else None),
+                execution_path=(
+                    (manifest_dir / str(provider_payload["execution"])).resolve()
+                    if provider_payload.get("execution")
+                    else None
+                ),
             )
             for provider_name, provider_payload in (paper_payload.get("providers", {}) or {}).items()
         ]
-        papers.append(BenchmarkPaper(paper_id=paper_id, gold_path=gold_path, providers=providers))
+        gold_payload = _load_json(gold_path)
+        papers.append(
+            BenchmarkPaper(
+                paper_id=paper_id,
+                gold_path=gold_path,
+                family=(str(gold_payload.get("family", "")).strip() or None),
+                providers=providers,
+            )
+        )
     return papers
 
 
@@ -186,13 +263,14 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
     papers = load_benchmark_manifest(manifest_path)
     per_paper_results: list[dict[str, Any]] = []
     aggregate_totals: dict[str, dict[str, float]] = {}
+    family_totals: dict[str, dict[str, dict[str, float]]] = {}
 
     for paper in papers:
         gold = _load_gold_record(paper.paper_id, paper.gold_path)
         provider_results: list[dict[str, Any]] = []
         for provider in paper.providers:
             observed = _extract_provider_observation(provider.layout_path, provider.math_path)
-            metrics = {
+            content_metrics = {
                 "title_match": float(_contains_normalized(observed["title"], gold.title)),
                 "abstract_token_recall": _token_recall(gold.abstract, observed["abstract"]),
                 "heading_hit_rate": _list_hit_rate(gold.headings, observed["headings"], observed["full_text"]),
@@ -200,25 +278,56 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "equation_hit_rate": _list_hit_rate(gold.equations, observed["equations"], observed["full_text"]),
                 "reference_hit_rate": _list_hit_rate(gold.references, observed["references"], observed["full_text"]),
             }
-            overall = _overall_score(metrics)
+            execution_observation = _extract_execution_observation(provider.execution_path)
+            execution_metrics = _execution_metrics(gold, execution_observation)
+            content_score = _content_score(content_metrics)
+            execution_score = _execution_score(execution_metrics)
+            overall = _overall_score(content_score, execution_score)
             result = {
                 "provider": provider.name,
                 "layout_path": str(provider.layout_path),
                 "math_path": str(provider.math_path) if provider.math_path is not None else None,
-                "metrics": metrics,
+                "execution_path": str(provider.execution_path) if provider.execution_path is not None else None,
+                "metrics": {
+                    **content_metrics,
+                    **execution_metrics,
+                },
+                "content_score": content_score,
+                "execution_score": execution_score,
                 "overall_score": overall,
+                "execution_observation": execution_observation,
             }
             provider_results.append(result)
 
-            provider_totals = aggregate_totals.setdefault(provider.name, {"papers": 0, "overall_score_total": 0.0})
+            provider_totals = aggregate_totals.setdefault(
+                provider.name,
+                {"papers": 0, "overall_score_total": 0.0, "content_score_total": 0.0, "execution_score_total": 0.0},
+            )
             provider_totals["papers"] += 1
             provider_totals["overall_score_total"] += overall
+            provider_totals["content_score_total"] += content_score
+            provider_totals["execution_score_total"] += execution_score or 0.0
+
+            family_name = gold.family or "unclassified"
+            family_provider_totals = family_totals.setdefault(family_name, {}).setdefault(
+                provider.name,
+                {"papers": 0, "overall_score_total": 0.0, "content_score_total": 0.0, "execution_score_total": 0.0},
+            )
+            family_provider_totals["papers"] += 1
+            family_provider_totals["overall_score_total"] += overall
+            family_provider_totals["content_score_total"] += content_score
+            family_provider_totals["execution_score_total"] += execution_score or 0.0
 
         provider_results.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"])))
         per_paper_results.append(
             {
                 "paper_id": paper.paper_id,
                 "gold_path": str(paper.gold_path),
+                "family": gold.family,
+                "expected_route": gold.expected_route,
+                "ocr_should_run": gold.ocr_should_run,
+                "expected_primary_layout_provider": gold.expected_primary_layout_provider,
+                "expected_primary_math_provider": gold.expected_primary_math_provider,
                 "providers": provider_results,
             }
         )
@@ -228,15 +337,38 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
             "provider": provider_name,
             "papers": int(values["papers"]),
             "avg_overall_score": round(values["overall_score_total"] / max(values["papers"], 1), 3),
+            "avg_content_score": round(values["content_score_total"] / max(values["papers"], 1), 3),
+            "avg_execution_score": round(values["execution_score_total"] / max(values["papers"], 1), 3),
         }
         for provider_name, values in aggregate_totals.items()
     ]
     aggregate.sort(key=lambda item: (-float(item["avg_overall_score"]), str(item["provider"])))
+    families = []
+    for family_name, provider_values in sorted(family_totals.items()):
+        rankings = [
+            {
+                "provider": provider_name,
+                "papers": int(values["papers"]),
+                "avg_overall_score": round(values["overall_score_total"] / max(values["papers"], 1), 3),
+                "avg_content_score": round(values["content_score_total"] / max(values["papers"], 1), 3),
+                "avg_execution_score": round(values["execution_score_total"] / max(values["papers"], 1), 3),
+            }
+            for provider_name, values in provider_values.items()
+        ]
+        rankings.sort(key=lambda item: (-float(item["avg_overall_score"]), str(item["provider"])))
+        families.append(
+            {
+                "family": family_name,
+                "paper_count": sum(int(values["papers"]) for values in provider_values.values()),
+                "providers": rankings,
+            }
+        )
     return {
         "manifest_path": str(Path(manifest_path).resolve()),
         "paper_count": len(per_paper_results),
         "papers": per_paper_results,
         "aggregate": aggregate,
+        "families": families,
     }
 
 

@@ -30,6 +30,8 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         f"- Routes: {_render_top_counts(report.get('route_counts', {}))}",
         f"- Layout recommendations: {_render_top_counts(report.get('recommended_layout_provider_counts', {}))}",
         f"- Math recommendations: {_render_top_counts(report.get('recommended_math_provider_counts', {}))}",
+        f"- Executed layout providers: {_render_top_counts(report.get('executed_layout_provider_counts', {}))}",
+        f"- Executed math providers: {_render_top_counts(report.get('executed_math_provider_counts', {}))}",
         "",
         "## OCR Summary",
         "",
@@ -53,7 +55,8 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         lines.extend(
             [
                 f"{index}. `{paper['paper_id']}` — issues `{paper['issue_count']}`",
-                f"   Route: `{paper.get('primary_route') or 'unknown'}` | layout `{paper.get('recommended_primary_layout_provider') or 'unknown'}` | math `{paper.get('recommended_primary_math_provider') or 'unknown'}`",
+                f"   Route: `{paper.get('primary_route') or 'unknown'}` | recommended layout `{paper.get('recommended_primary_layout_provider') or 'unknown'}` | recommended math `{paper.get('recommended_primary_math_provider') or 'unknown'}`",
+                f"   Executed: layout `{paper.get('executed_layout_provider') or 'unknown'}` | math `{paper.get('executed_math_provider') or 'unknown'}` | execution report `{paper.get('has_execution_report')}`",
                 f"   OCR: policy `{paper.get('ocr_policy') or 'unknown'}`, should-run `{paper.get('ocr_should_run')}`, applied `{paper.get('ocr_applied')}`, source `{paper.get('pdf_source_kind') or 'unknown'}`",
                 f"   Findings: {issue_summary}",
             ]

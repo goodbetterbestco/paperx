@@ -1,0 +1,58 @@
+from __future__ import annotations
+
+from typing import Any
+
+
+def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        "# Acquisition Benchmark",
+        "",
+        f"- Manifest: `{report.get('manifest_path')}`",
+        f"- Papers benchmarked: `{report.get('paper_count', 0)}`",
+        "",
+        "## Aggregate Ranking",
+        "",
+    ]
+
+    for index, provider in enumerate(list(report.get("aggregate") or []), start=1):
+        lines.append(
+            f"{index}. `{provider['provider']}` — overall `{provider['avg_overall_score']}`, "
+            f"content `{provider['avg_content_score']}`, execution `{provider['avg_execution_score']}`"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Family Breakdown",
+            "",
+        ]
+    )
+    for family in list(report.get("families") or []):
+        lines.append(f"### `{family['family']}`")
+        lines.append("")
+        for provider in list(family.get("providers") or []):
+            lines.append(
+                f"- `{provider['provider']}`: overall `{provider['avg_overall_score']}`, "
+                f"content `{provider['avg_content_score']}`, execution `{provider['avg_execution_score']}`"
+            )
+        lines.append("")
+
+    lines.append("## Per-Paper Results")
+    lines.append("")
+    for paper in list(report.get("papers") or []):
+        lines.append(
+            f"- `{paper['paper_id']}` ({paper.get('family') or 'unclassified'}) — "
+            f"route `{paper.get('expected_route') or 'n/a'}`, "
+            f"layout target `{paper.get('expected_primary_layout_provider') or 'n/a'}`, "
+            f"math target `{paper.get('expected_primary_math_provider') or 'n/a'}`"
+        )
+        for provider in list(paper.get("providers") or []):
+            lines.append(
+                f"  - `{provider['provider']}`: overall `{provider['overall_score']}`, "
+                f"content `{provider['content_score']}`, execution `{provider.get('execution_score')}`"
+            )
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
+__all__ = ["render_acquisition_benchmark_markdown"]

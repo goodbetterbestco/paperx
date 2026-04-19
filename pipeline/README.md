@@ -71,6 +71,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.backfill_acquisition_sidecars`
 - `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
+- `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
 - `python3 -m pipeline.cli.run_grobid_trial --manifest tests/fixtures/grobid_trial/manifest.json`
 - `python3 -m pipeline.cli.render_review_from_canonical <paper-id>`
 - `python3 -m pipeline.cli.export_titles_and_abstracts`
@@ -112,6 +113,10 @@ Acquisition routing and provider recommendation sidecars remain at
 `<corpus-root>/<paper-id>/canonical_sources/source-scorecard.json`, and the
 acquisition audit CLI summarizes their coverage and OCR execution drift into
 `tmp/acquisition_quality_audit/`.
+The fixture-backed acquisition benchmark can now also score execution-policy
+behavior when provider fixtures include `acquisition-execution.json` sidecars,
+including route agreement, OCR application correctness, and selected-provider
+agreement against gold expectations.
 
 Figure regeneration now also lives under this package:
 

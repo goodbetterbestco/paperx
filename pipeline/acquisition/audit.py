@@ -11,6 +11,7 @@ from pipeline.corpus_layout import ProjectLayout
 SIDECARE_ROUTE = "acquisition-route.json"
 SIDECARE_SCORECARD = "source-scorecard.json"
 SIDECARE_OCR = "ocr-prepass.json"
+SIDECAR_EXECUTION = "acquisition-execution.json"
 
 
 def _load_json_dict(path: Path) -> dict[str, Any] | None:
@@ -63,6 +64,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
     recommended_math_provider_counts: dict[str, int] = {}
+    executed_layout_provider_counts: dict[str, int] = {}
+    executed_math_provider_counts: dict[str, int] = {}
     ocr_policy_counts: dict[str, int] = {}
     pdf_source_kind_counts: dict[str, int] = {}
     sidecar_missing_counts: dict[str, int] = {}
@@ -79,11 +82,15 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         route = _load_json_dict(sources_dir / SIDECARE_ROUTE)
         scorecard = _load_json_dict(sources_dir / SIDECARE_SCORECARD)
         ocr_report = _load_json_dict(sources_dir / SIDECARE_OCR)
+        execution_report = _load_json_dict(sources_dir / SIDECAR_EXECUTION)
         route_ocr = dict((route or {}).get("ocr_prepass") or {})
+        executed = dict((execution_report or {}).get("executed") or {})
 
         primary_route = str((route or {}).get("primary_route") or "").strip() or None
         recommended_layout_provider = str((scorecard or {}).get("recommended_primary_layout_provider") or "").strip() or None
         recommended_math_provider = str((scorecard or {}).get("recommended_primary_math_provider") or "").strip() or None
+        executed_layout_provider = str(executed.get("selected_layout_provider") or "").strip() or None
+        executed_math_provider = str(executed.get("selected_math_provider") or "").strip() or None
         ocr_policy = str((ocr_report or {}).get("ocr_prepass_policy") or route_ocr.get("policy") or "").strip() or None
         ocr_tool = str((ocr_report or {}).get("ocr_prepass_tool") or route_ocr.get("tool") or "").strip() or None
         ocr_should_run = bool(route_ocr.get("should_run"))
@@ -98,6 +105,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         _increment(route_counts, primary_route)
         _increment(recommended_layout_provider_counts, recommended_layout_provider)
         _increment(recommended_math_provider_counts, recommended_math_provider)
+        _increment(executed_layout_provider_counts, executed_layout_provider)
+        _increment(executed_math_provider_counts, executed_math_provider)
         _increment(ocr_policy_counts, ocr_policy)
         _increment(pdf_source_kind_counts, pdf_source_kind)
 
@@ -132,6 +141,9 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "primary_route": primary_route,
                 "recommended_primary_layout_provider": recommended_layout_provider,
                 "recommended_primary_math_provider": recommended_math_provider,
+                "executed_layout_provider": executed_layout_provider,
+                "executed_math_provider": executed_math_provider,
+                "has_execution_report": execution_report is not None,
                 "ocr_policy": ocr_policy,
                 "ocr_should_run": ocr_should_run,
                 "ocr_tool": ocr_tool,
@@ -152,6 +164,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "route_counts": route_counts,
         "recommended_layout_provider_counts": recommended_layout_provider_counts,
         "recommended_math_provider_counts": recommended_math_provider_counts,
+        "executed_layout_provider_counts": executed_layout_provider_counts,
+        "executed_math_provider_counts": executed_math_provider_counts,
         "ocr_policy_counts": ocr_policy_counts,
         "pdf_source_kind_counts": pdf_source_kind_counts,
         "sidecar_missing_counts": sidecar_missing_counts,
