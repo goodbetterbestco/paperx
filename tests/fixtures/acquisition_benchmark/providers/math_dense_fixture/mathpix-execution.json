@@ -1,0 +1,14 @@
+{
+  "route_primary": "math_dense",
+  "recommended": {
+    "layout_provider": "mathpix",
+    "math_provider": "mathpix"
+  },
+  "executed": {
+    "selected_layout_provider": "mathpix",
+    "selected_math_provider": "mathpix"
+  },
+  "ocr": {
+    "applied": false
+  }
+}

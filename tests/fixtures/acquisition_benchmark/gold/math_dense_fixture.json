@@ -1,0 +1,25 @@
+{
+  "family": "math_dense",
+  "expected_route": "math_dense",
+  "ocr_should_run": false,
+  "expected_primary_layout_provider": "mathpix",
+  "expected_primary_math_provider": "mathpix",
+  "title": "Synthetic Math Dense Benchmark Paper",
+  "abstract": "This benchmark paper stresses math dense acquisition, layout selection, and formula recovery.",
+  "headings": [
+    "Introduction",
+    "Derivation",
+    "Results"
+  ],
+  "paragraphs": [
+    "Dense mathematical notation should survive acquisition without losing sentence structure.",
+    "The benchmark compares layout and math extraction quality under a math dense route."
+  ],
+  "equations": [
+    "\\int_0^1 x^2 dx = 1/3",
+    "a_n = a_{n-1} + a_{n-2}"
+  ],
+  "references": [
+    "[1] Emmy Noether. Invariant Variation Problems."
+  ]
+}

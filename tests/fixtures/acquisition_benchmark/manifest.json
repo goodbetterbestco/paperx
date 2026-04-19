@@ -15,6 +15,22 @@
           "execution": "providers/fixture_paper/mathpix-execution.json"
         }
       }
+    },
+    {
+      "paper_id": "math_dense_fixture",
+      "gold": "gold/math_dense_fixture.json",
+      "providers": {
+        "docling": {
+          "layout": "providers/math_dense_fixture/docling-layout.json",
+          "math": "providers/math_dense_fixture/docling-math.json",
+          "execution": "providers/math_dense_fixture/docling-execution.json"
+        },
+        "mathpix": {
+          "layout": "providers/math_dense_fixture/mathpix-layout.json",
+          "math": "providers/math_dense_fixture/mathpix-math.json",
+          "execution": "providers/math_dense_fixture/mathpix-execution.json"
+        }
+      }
     }
   ]
 }
