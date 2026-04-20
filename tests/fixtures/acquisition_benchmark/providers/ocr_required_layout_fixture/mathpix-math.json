@@ -1,0 +1,9 @@
+{
+  "engine": "mathpix",
+  "entries": [
+    {
+      "id": "mathpix-eq-1",
+      "display_latex": "h(x) = x^3 - x"
+    }
+  ]
+}

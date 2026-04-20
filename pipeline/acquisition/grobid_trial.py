@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 from typing import Any
 
+from pipeline.acquisition.grobid_policy import grobid_policy_snapshot
 from pipeline.acquisition.providers import load_metadata_reference_observation
 
 
@@ -135,6 +136,7 @@ def run_grobid_trial(manifest_path: str | Path) -> dict[str, Any]:
 
     return {
         "manifest_path": str(Path(manifest_path).resolve()),
+        "policy": grobid_policy_snapshot(),
         "paper_count": len(per_paper_results),
         "papers": per_paper_results,
         "aggregate": {

@@ -4,6 +4,7 @@ from dataclasses import asdict, dataclass
 import re
 from typing import Any
 
+from pipeline.acquisition.grobid_policy import is_grobid_live_for_route
 from pipeline.policies.abstract_quality import abstract_quality_flags
 from pipeline.acquisition.source_ownership import normalize_scorecard_recommendations
 
@@ -270,12 +271,7 @@ def score_metadata_provider(
     references = [str(item).strip() for item in payload.get("references", []) if str(item).strip()]
     clean_abstract = bool(abstract) and not abstract_quality_flags(abstract)
     route_bonus = 0.0
-    if provider == "grobid" and route_bias in {
-        "born_digital_scholarly",
-        "layout_complex",
-        "math_dense",
-        "degraded_or_garbled",
-    }:
+    if provider == "grobid" and is_grobid_live_for_route("metadata", route_bias):
         route_bonus = 0.15
     overall_score = round(
         (0.35 if title else 0.0)

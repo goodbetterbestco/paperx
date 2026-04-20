@@ -129,6 +129,30 @@ class AcquisitionScoringTest(unittest.TestCase):
         self.assertEqual(scorecard["recommended_primary_metadata_provider"], "grobid")
         self.assertEqual(scorecard["recommended_primary_reference_provider"], "grobid")
 
+    def test_build_source_scorecard_keeps_grobid_live_for_scan_metadata(self) -> None:
+        scorecard = build_source_scorecard(
+            native_layout={"page_count": 1, "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}]},
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            route_bias="scan_or_image_heavy",
+            metadata_observations={
+                "docling": {
+                    "title": "Synthetic Scan Paper",
+                    "abstract": "",
+                    "references": [],
+                },
+                "grobid": {
+                    "title": "Synthetic Scan Paper",
+                    "abstract": "Recovered metadata for a scan-heavy paper.",
+                    "references": ["Author. Journal of Tests. 2024."],
+                },
+            },
+        )
+
+        self.assertEqual(scorecard["recommended_primary_metadata_provider"], "grobid")
+        self.assertEqual(scorecard["recommended_primary_reference_provider"], "grobid")
+
     def test_build_source_scorecard_can_score_multiple_explicit_candidates(self) -> None:
         scorecard = build_source_scorecard(
             native_layout=None,

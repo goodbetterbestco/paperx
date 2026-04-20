@@ -6,6 +6,7 @@ import re
 from statistics import mean
 from typing import Any
 
+from pipeline.acquisition.grobid_policy import grobid_product_provider_chain
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 
 
@@ -104,15 +105,17 @@ def _is_two_column_page(page: Any, blocks: list[tuple[float, float, float, float
 
 
 def _route_profile(primary_route: str) -> tuple[list[str], dict[str, list[str]]]:
+    metadata_plan = grobid_product_provider_chain("metadata")
+    reference_plan = grobid_product_provider_chain("references")
     if primary_route == "scan_or_image_heavy":
         return (
             ["ocrmypdf", "docling", "mathpix"],
             {
                 "prepass": ["ocrmypdf"],
-                "metadata": ["grobid", "docling"],
+                "metadata": metadata_plan,
                 "layout": ["docling", "llamaparse"],
                 "math": ["mathpix", "docling"],
-                "references": ["grobid", "docling"],
+                "references": reference_plan,
             },
         )
     if primary_route == "degraded_or_garbled":
@@ -120,39 +123,39 @@ def _route_profile(primary_route: str) -> tuple[list[str], dict[str, list[str]]]
             ["ocrmypdf", "docling", "mathpix", "marker"],
             {
                 "prepass": ["ocrmypdf"],
-                "metadata": ["grobid", "docling"],
+                "metadata": metadata_plan,
                 "layout": ["docling", "marker"],
                 "math": ["mathpix", "docling"],
-                "references": ["grobid", "docling"],
+                "references": reference_plan,
             },
         )
     if primary_route == "layout_complex":
         return (
             ["docling", "llamaparse", "marker", "mineru"],
             {
-                "metadata": ["grobid", "docling"],
+                "metadata": metadata_plan,
                 "layout": ["docling", "llamaparse", "marker", "mineru"],
                 "math": ["mathpix", "docling"],
-                "references": ["grobid", "docling"],
+                "references": reference_plan,
             },
         )
     if primary_route == "math_dense":
         return (
             ["docling", "mathpix", "grobid"],
             {
-                "metadata": ["grobid", "docling"],
+                "metadata": metadata_plan,
                 "layout": ["docling"],
                 "math": ["mathpix", "docling"],
-                "references": ["grobid", "docling"],
+                "references": reference_plan,
             },
         )
     return (
         ["grobid", "docling"],
         {
-            "metadata": ["grobid", "docling"],
+            "metadata": metadata_plan,
             "layout": ["docling"],
             "math": ["docling", "mathpix"],
-            "references": ["grobid", "docling"],
+            "references": reference_plan,
         },
     )
 

@@ -1,0 +1,85 @@
+{
+  "engine": "docling",
+  "blocks": [
+    {
+      "id": "docling-front-title",
+      "page": 1,
+      "order": 1,
+      "role": "front_matter",
+      "text": "Synthetic OCR Forbidden Layout Benchmark Paper",
+      "bbox": {}
+    },
+    {
+      "id": "docling-front-abstract-marker",
+      "page": 1,
+      "order": 2,
+      "role": "front_matter",
+      "text": "Abstract",
+      "bbox": {}
+    },
+    {
+      "id": "docling-front-abstract",
+      "page": 1,
+      "order": 3,
+      "role": "front_matter",
+      "text": "This benchmark paper simulates a figure rich but healthy born digital layout where OCR would add noise instead of value.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-1",
+      "page": 1,
+      "order": 4,
+      "role": "heading",
+      "text": "Introduction",
+      "bbox": {}
+    },
+    {
+      "id": "docling-paragraph-1",
+      "page": 1,
+      "order": 5,
+      "role": "paragraph",
+      "text": "Complex born digital layouts should preserve embedded text without an OCR pre-pass.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-caption-1",
+      "page": 1,
+      "order": 6,
+      "role": "caption",
+      "text": "Figure 2. A born digital caption that should not trigger OCR by itself.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-2",
+      "page": 1,
+      "order": 7,
+      "role": "heading",
+      "text": "Observations",
+      "bbox": {}
+    },
+    {
+      "id": "docling-paragraph-2",
+      "page": 1,
+      "order": 8,
+      "role": "paragraph",
+      "text": "The benchmark verifies that OCR remains disabled when text quality is already healthy.",
+      "bbox": {}
+    },
+    {
+      "id": "docling-heading-3",
+      "page": 2,
+      "order": 9,
+      "role": "heading",
+      "text": "Discussion",
+      "bbox": {}
+    },
+    {
+      "id": "docling-reference-1",
+      "page": 2,
+      "order": 10,
+      "role": "reference",
+      "text": "[1] Barbara Liskov. Data Abstraction and Hierarchy.",
+      "bbox": {}
+    }
+  ]
+}

@@ -72,6 +72,8 @@ class GrobidTrialTest(unittest.TestCase):
         report = run_grobid_trial(FIXTURE_ROOT / "manifest.json")
 
         self.assertEqual(report["paper_count"], 1)
+        self.assertEqual(report["policy"]["status"], "live_metadata_reference_only")
+        self.assertEqual(report["policy"]["live_products"], ["metadata", "references"])
         self.assertEqual(report["aggregate"]["provider"], "grobid")
         self.assertGreaterEqual(report["aggregate"]["avg_overall_score"], 0.95)
         paper = report["papers"][0]

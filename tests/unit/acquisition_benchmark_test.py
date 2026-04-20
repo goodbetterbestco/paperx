@@ -24,7 +24,7 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
     def test_load_benchmark_manifest_resolves_provider_paths(self) -> None:
         papers = load_benchmark_manifest(FIXTURE_ROOT / "manifest.json")
 
-        self.assertEqual(len(papers), 5)
+        self.assertEqual(len(papers), 7)
         self.assertEqual(
             {paper.paper_id for paper in papers},
             {
@@ -33,6 +33,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                 "scan_image_heavy_fixture",
                 "layout_complex_fixture",
                 "degraded_garbled_fixture",
+                "ocr_forbidden_layout_fixture",
+                "ocr_required_layout_fixture",
             },
         )
         self.assertEqual(
@@ -47,6 +49,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                 "layout_complex_fixture": "routing",
                 "scan_image_heavy_fixture": "ocr",
                 "degraded_garbled_fixture": "ocr",
+                "ocr_forbidden_layout_fixture": "ocr",
+                "ocr_required_layout_fixture": "ocr",
             },
         )
         for paper in papers:
@@ -64,7 +68,7 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
     def test_benchmark_scores_docling_above_mathpix_for_fixture(self) -> None:
         report = run_acquisition_benchmark(FIXTURE_ROOT / "manifest.json")
 
-        self.assertEqual(report["paper_count"], 5)
+        self.assertEqual(report["paper_count"], 7)
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
 
         born_digital = {entry["provider"]: entry for entry in papers["fixture_paper"]["providers"]}
@@ -120,6 +124,25 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         self.assertEqual(degraded["docling"]["metrics"]["ocr_policy_match"], 1.0)
         self.assertEqual(degraded["docling"]["metrics"]["route_reason_code_recall"], 1.0)
         self.assertEqual(degraded["mathpix"]["metrics"]["ocr_should_run_match"], 0.0)
+
+        ocr_forbidden = {entry["provider"]: entry for entry in papers["ocr_forbidden_layout_fixture"]["providers"]}
+        self.assertGreater(ocr_forbidden["docling"]["overall_score"], ocr_forbidden["mathpix"]["overall_score"])
+        self.assertEqual(ocr_forbidden["docling"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(ocr_forbidden["docling"]["metrics"]["ocr_should_run_match"], 1.0)
+        self.assertEqual(ocr_forbidden["docling"]["metrics"]["ocr_policy_match"], 1.0)
+        self.assertEqual(ocr_forbidden["docling"]["metrics"]["selected_math_provider_match"], 1.0)
+        self.assertEqual(ocr_forbidden["mathpix"]["metrics"]["selected_layout_provider_match"], 0.0)
+        self.assertEqual(ocr_forbidden["mathpix"]["metrics"]["selected_math_provider_match"], 0.0)
+
+        ocr_required = {entry["provider"]: entry for entry in papers["ocr_required_layout_fixture"]["providers"]}
+        self.assertGreater(ocr_required["docling"]["overall_score"], ocr_required["mathpix"]["overall_score"])
+        self.assertEqual(ocr_required["docling"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(ocr_required["docling"]["metrics"]["ocr_should_run_match"], 1.0)
+        self.assertEqual(ocr_required["docling"]["metrics"]["ocr_policy_match"], 1.0)
+        self.assertEqual(ocr_required["docling"]["metrics"]["route_reason_code_recall"], 1.0)
+        self.assertEqual(ocr_required["mathpix"]["metrics"]["ocr_should_run_match"], 0.0)
+        self.assertEqual(ocr_required["mathpix"]["metrics"]["selected_layout_provider_match"], 0.0)
+
         self.assertEqual(
             {entry["family"] for entry in report["families"]},
             {
@@ -179,7 +202,7 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
 
             self.assertEqual(exit_code, 0)
             payload = json.loads(printed[0])
-            self.assertEqual(payload["paper_count"], 5)
+            self.assertEqual(payload["paper_count"], 7)
             self.assertEqual(
                 {paper["paper_id"] for paper in payload["papers"]},
                 {
@@ -188,6 +211,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                     "scan_image_heavy_fixture",
                     "layout_complex_fixture",
                     "degraded_garbled_fixture",
+                    "ocr_forbidden_layout_fixture",
+                    "ocr_required_layout_fixture",
                 },
             )
             self.assertIn("grobid", {provider["provider"] for provider in payload["aggregate"]})
@@ -210,7 +235,7 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             status_payload = json.loads(status_json_path.read_text(encoding="utf-8"))
             dashboard_payload = json.loads(dashboard_json_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["latest_run"]["label"], "fixture-run")
-            self.assertEqual(status_payload["latest_run"]["paper_count"], 5)
+            self.assertEqual(status_payload["latest_run"]["paper_count"], 7)
             self.assertEqual(dashboard_payload["overview"]["run_count"], 1)
             self.assertEqual(dashboard_payload["overview"]["latest_label"], "fixture-run")
 
@@ -252,6 +277,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("scan_image_heavy_fixture", printed[0])
             self.assertIn("layout_complex_fixture", printed[0])
             self.assertIn("degraded_garbled_fixture", printed[0])
+            self.assertIn("ocr_forbidden_layout_fixture", printed[0])
+            self.assertIn("ocr_required_layout_fixture", printed[0])
             self.assertIn("grobid", printed[0])
             self.assertIn("metadata target", printed[0])
             self.assertIn("section `routing`", printed[0])

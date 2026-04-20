@@ -21,6 +21,7 @@ class GrobidTrialCliTest(unittest.TestCase):
             argparse.Namespace(manifest=str(Path("tests/fixtures/grobid_trial/manifest.json"))),
             run_trial_fn=lambda manifest: {
                 "manifest_path": manifest,
+                "policy": {"status": "live_metadata_reference_only"},
                 "paper_count": 1,
                 "aggregate": {"provider": "grobid", "avg_overall_score": 0.99},
             },

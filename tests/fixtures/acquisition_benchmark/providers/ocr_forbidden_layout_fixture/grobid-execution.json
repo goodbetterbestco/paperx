@@ -1,0 +1,19 @@
+{
+  "route_primary": "layout_complex",
+  "route_traits": [
+    "scholarly_references",
+    "two_column"
+  ],
+  "recommended": {
+    "metadata_provider": "grobid",
+    "reference_provider": "grobid"
+  },
+  "executed": {
+    "metadata_provider": "grobid",
+    "reference_provider": "grobid"
+  },
+  "ocr": {
+    "policy": "skip",
+    "applied": false
+  }
+}

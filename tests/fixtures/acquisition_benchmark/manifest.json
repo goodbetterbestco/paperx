@@ -107,6 +107,46 @@
               "execution": "providers/degraded_garbled_fixture/mathpix-execution.json"
             }
           }
+        },
+        {
+          "paper_id": "ocr_forbidden_layout_fixture",
+          "gold": "gold/ocr_forbidden_layout_fixture.json",
+          "providers": {
+            "docling": {
+              "layout": "providers/ocr_forbidden_layout_fixture/docling-layout.json",
+              "math": "providers/ocr_forbidden_layout_fixture/docling-math.json",
+              "execution": "providers/ocr_forbidden_layout_fixture/docling-execution.json"
+            },
+            "grobid": {
+              "metadata": "providers/ocr_forbidden_layout_fixture/grobid.tei.xml",
+              "execution": "providers/ocr_forbidden_layout_fixture/grobid-execution.json"
+            },
+            "mathpix": {
+              "layout": "providers/ocr_forbidden_layout_fixture/mathpix-layout.json",
+              "math": "providers/ocr_forbidden_layout_fixture/mathpix-math.json",
+              "execution": "providers/ocr_forbidden_layout_fixture/mathpix-execution.json"
+            }
+          }
+        },
+        {
+          "paper_id": "ocr_required_layout_fixture",
+          "gold": "gold/ocr_required_layout_fixture.json",
+          "providers": {
+            "docling": {
+              "layout": "providers/ocr_required_layout_fixture/docling-layout.json",
+              "math": "providers/ocr_required_layout_fixture/docling-math.json",
+              "execution": "providers/ocr_required_layout_fixture/docling-execution.json"
+            },
+            "grobid": {
+              "metadata": "providers/ocr_required_layout_fixture/grobid.tei.xml",
+              "execution": "providers/ocr_required_layout_fixture/grobid-execution.json"
+            },
+            "mathpix": {
+              "layout": "providers/ocr_required_layout_fixture/mathpix-layout.json",
+              "math": "providers/ocr_required_layout_fixture/mathpix-math.json",
+              "execution": "providers/ocr_required_layout_fixture/mathpix-execution.json"
+            }
+          }
         }
       ]
     }

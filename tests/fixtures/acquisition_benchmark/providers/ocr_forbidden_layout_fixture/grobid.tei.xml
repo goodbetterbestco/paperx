@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Synthetic OCR Forbidden Layout Benchmark Paper</title>
+      </titleStmt>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <p>This benchmark paper simulates a figure rich but healthy born digital layout where OCR would add noise instead of value.</p>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <back>
+      <div type="references">
+        <listBibl>
+          <biblStruct><note>[1] Barbara Liskov. Data Abstraction and Hierarchy.</note></biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -208,6 +208,11 @@ with that watchlist into a single “where are we now?” status view, and
 dashboard across leaders, regressions, latest-vs-previous movement, and recent
 runs. Both status and dashboard CLIs accept `--from-artifacts` when you want to
 read the saved current bundle directly instead of recomputing from history.
+GROBID now has an explicit live-policy boundary: it is a live provider only for
+metadata and references, while layout and math remain trial-only. The
+`pipeline.cli.run_grobid_trial` command measures TEI quality inside that
+boundary instead of silently implying that GROBID is eligible for live
+layout/math routing.
 
 Figure regeneration now also lives under this package:
 

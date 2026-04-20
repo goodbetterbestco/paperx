@@ -53,6 +53,14 @@ from pipeline.acquisition.remediation_plan import plan_remediation_waves
 from pipeline.acquisition.remediation_status import summarize_latest_remediation_status
 from pipeline.acquisition.remediation_trend import summarize_remediation_trend
 from pipeline.acquisition.audit import audit_acquisition_quality
+from pipeline.acquisition.grobid_policy import (
+    GrobidPolicyDecision,
+    grobid_policy_decision,
+    grobid_policy_snapshot,
+    grobid_product_provider_chain,
+    is_grobid_live_for_route,
+    is_grobid_live_product,
+)
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
 from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
 from pipeline.acquisition.providers import (
@@ -80,6 +88,7 @@ from pipeline.acquisition.source_ownership import reported_layout_provider, repo
 __all__ = [
     "AcquisitionRouteDecision",
     "AcquisitionSignals",
+    "GrobidPolicyDecision",
     "MathpixExecutionDecision",
     "MetadataReferenceObservation",
     "OcrPrepassDecision",
@@ -100,7 +109,12 @@ __all__ = [
     "decide_mathpix_execution",
     "decide_ocr_prepass_policy",
     "family_provider_score_maps",
+    "grobid_policy_decision",
+    "grobid_policy_snapshot",
+    "grobid_product_provider_chain",
     "inspect_pdf_signals",
+    "is_grobid_live_for_route",
+    "is_grobid_live_product",
     "load_benchmark_manifest",
     "load_current_benchmark_dashboard",
     "load_current_benchmark_status",

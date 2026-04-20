@@ -70,6 +70,8 @@ Before adding or editing a fixture, confirm:
 - the provider-selection expectation is explicit
 - the fixture would catch a realistic regression, not only a formatting change
 - the manifest path makes the fixture family obvious
+- OCR cases are added in pairs when possible: one where OCR is genuinely needed
+  and one nearby case where OCR should stay off
 
 ## Expansion Priority
 
