@@ -1,7 +1,19 @@
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass
 from typing import Any, Callable, Pattern
+
+
+@dataclass(frozen=True)
+class BoundFrontMatterSupportHelpers:
+    title_lookup_keys: Callable[[str], list[str]]
+    matches_title_line: Callable[[str, str], bool]
+    dedupe_text_lines: Callable[[list[str]], list[str]]
+    clone_record_with_text: Callable[[dict[str, Any], str], dict[str, Any]]
+    record_word_count: Callable[[dict[str, Any]], int]
+    record_width: Callable[[dict[str, Any]], float]
+    should_replace_front_matter_abstract: Callable[[str], bool]
 
 
 def missing_front_matter_author(placeholder: str) -> dict[str, Any]:
@@ -160,3 +172,82 @@ def abstract_text_looks_like_metadata(
     abstract_quality_flags: Callable[[str], list[str]],
 ) -> bool:
     return bool(abstract_quality_flags(text))
+
+
+def make_bound_front_matter_support_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    compact_text: Callable[[str], str],
+    short_word_re: Pattern[str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    abstract_quality_flags: Callable[[str], list[str]],
+) -> BoundFrontMatterSupportHelpers:
+    bound_title_lookup_keys = lambda title: title_lookup_keys(
+        title,
+        clean_text=clean_text,
+        normalize_title_key=normalize_title_key,
+    )
+    return BoundFrontMatterSupportHelpers(
+        title_lookup_keys=bound_title_lookup_keys,
+        matches_title_line=lambda text, title: matches_title_line(
+            text,
+            title,
+            clean_text=clean_text,
+            compact_text=compact_text,
+            short_word_re=short_word_re,
+            normalize_title_key=normalize_title_key,
+            title_lookup_keys=bound_title_lookup_keys,
+        ),
+        dedupe_text_lines=lambda lines: dedupe_text_lines(
+            lines,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+        ),
+        clone_record_with_text=lambda record, text: clone_record_with_text(
+            record,
+            text,
+            clean_text=clean_text,
+        ),
+        record_word_count=lambda record: record_word_count(
+            record,
+            clean_text=clean_text,
+            short_word_re=short_word_re,
+        ),
+        record_width=lambda record: record_width(
+            record,
+            block_source_spans=block_source_spans,
+        ),
+        should_replace_front_matter_abstract=lambda text: abstract_text_looks_like_metadata(
+            text,
+            abstract_quality_flags=abstract_quality_flags,
+        ),
+    )
+
+
+def make_front_block_text(
+    *,
+    front_block_text_impl: Callable[..., str],
+    clean_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]], str | None], str]:
+    def bound_front_block_text(blocks: list[dict[str, Any]], block_id: str | None) -> str:
+        return front_block_text_impl(blocks, block_id, clean_text=clean_text)
+
+    return bound_front_block_text
+
+
+__all__ = [
+    "BoundFrontMatterSupportHelpers",
+    "abstract_text_looks_like_metadata",
+    "clone_record_with_text",
+    "dedupe_text_lines",
+    "front_block_text",
+    "make_bound_front_matter_support_helpers",
+    "make_front_block_text",
+    "matches_title_line",
+    "missing_front_matter_affiliation",
+    "missing_front_matter_author",
+    "record_width",
+    "record_word_count",
+    "title_lookup_keys",
+]

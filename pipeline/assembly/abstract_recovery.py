@@ -1,6 +1,24 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Callable
+
+from pipeline.assembly.section_support import (
+    make_normalize_section_title,
+    normalize_section_title,
+)
+
+
+@dataclass(frozen=True)
+class BoundFrontMatterRecoveryHelpers:
+    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]]
+    opening_abstract_candidate_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    abstract_text_is_recoverable: Callable[[str], bool]
+    replace_front_matter_abstract_text: Callable[[dict[str, Any], list[dict[str, Any]], str, list[dict[str, Any]]], bool]
+    split_late_prelude_for_missing_intro: Callable[
+        [list[dict[str, Any]], list[Any]],
+        tuple[list[dict[str, Any]], list[dict[str, Any]]],
+    ]
 
 
 def should_replace_front_matter_abstract(
@@ -213,3 +231,131 @@ def split_late_prelude_for_missing_intro(
     if not overflow:
         return prelude, []
     return leading, overflow
+
+
+def make_bound_front_matter_recovery_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    abstract_quality_flags: Callable[[str], list[str]],
+    clean_heading_title: Callable[[str], str],
+    parse_heading_label: Callable[[str], Any],
+    normalize_title_key: Callable[[str], str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    looks_like_body_section_marker: Callable[[str], bool],
+    keywords_lead_re: Any,
+    author_note_re: Any,
+    abstract_body_break_re: Any,
+    figure_ref_re: Any,
+    abstract_continuation_re: Any,
+    abstract_lead_re: Any,
+    record_word_count: Callable[[dict[str, Any]], int],
+    normalize_abstract_candidate_text: Callable[[list[dict[str, Any]]], str],
+) -> BoundFrontMatterRecoveryHelpers:
+    bound_normalize_section_title = make_normalize_section_title(
+        normalize_section_title_impl=normalize_section_title,
+        clean_text=clean_text,
+        clean_heading_title=clean_heading_title,
+        parse_heading_label=parse_heading_label,
+        normalize_title_key=normalize_title_key,
+    )
+    bound_leading_abstract_text = lambda node: leading_abstract_text(
+        node,
+        clean_text=clean_text,
+        looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+        keywords_lead_re=keywords_lead_re,
+        author_note_re=author_note_re,
+        abstract_body_break_re=abstract_body_break_re,
+        figure_ref_re=figure_ref_re,
+        abstract_continuation_re=abstract_continuation_re,
+        record_word_count=record_word_count,
+        normalize_abstract_candidate_text=normalize_abstract_candidate_text,
+    )
+    bound_opening_abstract_candidate_records = lambda prelude: opening_abstract_candidate_records(
+        prelude,
+        clean_text=clean_text,
+        abstract_lead_re=abstract_lead_re,
+        looks_like_body_section_marker=looks_like_body_section_marker,
+        keywords_lead_re=keywords_lead_re,
+        looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+        record_word_count=record_word_count,
+    )
+    bound_abstract_text_is_recoverable = lambda text: abstract_text_is_recoverable(
+        text,
+        abstract_quality_flags=abstract_quality_flags,
+    )
+    bound_replace_front_matter_abstract_text = (
+        lambda front_matter, blocks, abstract_text, abstract_records: replace_front_matter_abstract_text(
+            front_matter,
+            blocks,
+            abstract_text,
+            abstract_records,
+            block_source_spans=block_source_spans,
+        )
+    )
+    bound_first_root_indicates_missing_intro = lambda roots: first_root_indicates_missing_intro(
+        roots,
+        normalize_section_title=bound_normalize_section_title,
+    )
+    return BoundFrontMatterRecoveryHelpers(
+        leading_abstract_text=bound_leading_abstract_text,
+        opening_abstract_candidate_records=bound_opening_abstract_candidate_records,
+        abstract_text_is_recoverable=bound_abstract_text_is_recoverable,
+        replace_front_matter_abstract_text=bound_replace_front_matter_abstract_text,
+        split_late_prelude_for_missing_intro=lambda prelude, roots: split_late_prelude_for_missing_intro(
+            prelude,
+            roots,
+            first_root_indicates_missing_intro=bound_first_root_indicates_missing_intro,
+        ),
+    )
+
+
+def make_recover_missing_front_matter_abstract(
+    *,
+    recover_missing_front_matter_abstract_impl: Callable[..., bool],
+    front_block_text: Callable[[list[dict[str, Any]], str | None], str],
+    abstract_quality_flags: Callable[[str], list[str]],
+    normalize_section_title: Callable[[str], str],
+    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]],
+    abstract_text_is_recoverable: Callable[[str], bool],
+    replace_front_matter_abstract_text: Callable[[dict[str, Any], list[dict[str, Any]], str, list[dict[str, Any]]], bool],
+    opening_abstract_candidate_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
+    normalize_abstract_candidate_text: Callable[[list[dict[str, Any]]], str],
+) -> Callable[[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[Any]], bool]:
+    def bound_recover_missing_front_matter_abstract(
+        front_matter: dict[str, Any],
+        blocks: list[dict[str, Any]],
+        prelude: list[dict[str, Any]],
+        ordered_roots: list[Any],
+    ) -> bool:
+        return recover_missing_front_matter_abstract_impl(
+            front_matter,
+            blocks,
+            prelude,
+            ordered_roots,
+            front_block_text=front_block_text,
+            abstract_quality_flags=abstract_quality_flags,
+            normalize_section_title=normalize_section_title,
+            leading_abstract_text=leading_abstract_text,
+            abstract_text_is_recoverable=abstract_text_is_recoverable,
+            replace_front_matter_abstract_text=replace_front_matter_abstract_text,
+            opening_abstract_candidate_records=opening_abstract_candidate_records,
+            normalize_abstract_candidate_text=normalize_abstract_candidate_text,
+        )
+
+    return bound_recover_missing_front_matter_abstract
+
+
+__all__ = [
+    "BoundFrontMatterRecoveryHelpers",
+    "abstract_text_is_recoverable",
+    "first_root_indicates_missing_intro",
+    "leading_abstract_text",
+    "make_bound_front_matter_recovery_helpers",
+    "make_recover_missing_front_matter_abstract",
+    "opening_abstract_candidate_records",
+    "recover_missing_front_matter_abstract",
+    "replace_front_matter_abstract_text",
+    "should_replace_front_matter_abstract",
+    "split_late_prelude_for_missing_intro",
+]

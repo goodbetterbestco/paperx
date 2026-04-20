@@ -10,9 +10,9 @@ import pipeline.reconcile.shared_patterns as rsp
 from pipeline.assembly.front_matter_support import (
     abstract_text_looks_like_metadata,
     front_block_text,
+    make_bound_front_matter_support_helpers,
 )
 from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
-from pipeline.reconcile.front_matter_runtime import make_bound_front_matter_support_helpers
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
 from pipeline.reconcile.support_binding_runtime import (
     block_source_spans,

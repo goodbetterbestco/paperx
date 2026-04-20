@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
 import pipeline.reconcile.front_matter_patterns as fmp  # noqa: E402
 import pipeline.reconcile.shared_patterns as rsp  # noqa: E402
 from pipeline.assembly.front_matter_support import (  # noqa: E402
+    make_bound_front_matter_support_helpers,
     missing_front_matter_affiliation,
     missing_front_matter_author,
 )
@@ -21,7 +22,6 @@ from pipeline.policies.abstract_quality import (  # noqa: E402
 )
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation  # noqa: E402
 from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers  # noqa: E402
-from pipeline.reconcile.front_matter_runtime import make_bound_front_matter_support_helpers  # noqa: E402
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE  # noqa: E402
 from pipeline.reconcile.support_binding_runtime import (  # noqa: E402
     block_source_spans,

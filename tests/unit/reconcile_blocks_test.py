@@ -9,14 +9,26 @@ if str(ROOT) not in sys.path:
 
 import pipeline.reconcile.front_matter_patterns as fmp
 import pipeline.reconcile.shared_patterns as rsp
-from pipeline.assembly.abstract_recovery import recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract
-from pipeline.assembly.front_matter_builder import build_front_matter as _assembly_build_front_matter
+from pipeline.assembly.abstract_recovery import (
+    make_bound_front_matter_recovery_helpers,
+    make_recover_missing_front_matter_abstract,
+    recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract,
+)
+from pipeline.assembly.front_matter_builder import (
+    build_front_matter as _assembly_build_front_matter,
+    make_build_front_matter,
+)
 from pipeline.assembly.front_matter_support import (
     front_block_text as _support_front_block_text,
+    make_bound_front_matter_support_helpers,
+    make_front_block_text,
     missing_front_matter_affiliation,
     missing_front_matter_author,
 )
-from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
+from pipeline.assembly.section_support import (
+    make_normalize_section_title,
+    normalize_section_title as _section_normalize_section_title,
+)
 from pipeline.policies.abstract_quality import (
     MISSING_ABSTRACT_PLACEHOLDER,
     NO_ABSTRACT_IN_BASE_MATERIAL,
@@ -26,14 +38,6 @@ from pipeline.reconcile.external_math_binding_runtime import make_inject_externa
 from pipeline.reconcile.external_math import rect_intersection_area
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
 from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers
-from pipeline.reconcile.front_matter_runtime import (
-    make_bound_front_matter_recovery_helpers,
-    make_bound_front_matter_support_helpers,
-    make_build_front_matter,
-    make_front_block_text,
-    make_normalize_section_title,
-    make_recover_missing_front_matter_abstract,
-)
 from pipeline.reconcile.heading_promotion_runtime import (
     decode_control_heading_label,
     make_normalize_decoded_heading_title,

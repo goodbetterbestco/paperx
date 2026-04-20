@@ -4,6 +4,12 @@ from dataclasses import dataclass
 from functools import partial
 from typing import Any
 
+from pipeline.assembly.abstract_recovery import (
+    make_bound_front_matter_recovery_helpers as reconcile_make_bound_front_matter_recovery_helpers_runtime,
+)
+from pipeline.assembly.front_matter_support import (
+    make_bound_front_matter_support_helpers as reconcile_make_bound_front_matter_support_helpers_runtime,
+)
 from pipeline.reconcile.external_math_binding_runtime import (
     make_inject_external_math_records as reconcile_make_inject_external_math_records_binding_runtime,
 )
@@ -14,10 +20,6 @@ from pipeline.reconcile.block_builder_binding_runtime import (
 )
 from pipeline.reconcile.front_matter_parsing_runtime import (
     make_bound_front_matter_parsing_helpers as reconcile_make_bound_front_matter_parsing_helpers_runtime,
-)
-from pipeline.reconcile.front_matter_runtime import (
-    make_bound_front_matter_recovery_helpers as reconcile_make_bound_front_matter_recovery_helpers_runtime,
-    make_bound_front_matter_support_helpers as reconcile_make_bound_front_matter_support_helpers_runtime,
 )
 from pipeline.reconcile.heading_promotion_runtime import (
     decode_control_heading_label as reconcile_decode_control_heading_label_runtime,
