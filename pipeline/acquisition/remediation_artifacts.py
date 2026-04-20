@@ -45,6 +45,12 @@ def ensure_remediation_artifact_dirs(paths: RemediationArtifactPaths) -> None:
     paths.history_dir.mkdir(parents=True, exist_ok=True)
 
 
+def current_remediation_output_dir(*, history_dir: str | Path | None = None) -> Path:
+    if history_dir is not None:
+        return Path(history_dir).resolve().parent
+    return DEFAULT_REMEDIATION_OUTPUT_DIR.resolve()
+
+
 def write_remediation_artifact_bundle(report: dict[str, Any], *, paths: RemediationArtifactPaths) -> dict[str, Any]:
     ensure_remediation_artifact_dirs(paths)
     report["report_paths"] = paths.report_paths()
@@ -65,6 +71,7 @@ __all__ = [
     "DEFAULT_REMEDIATION_OUTPUT_DIR",
     "RemediationArtifactPaths",
     "build_remediation_artifact_paths",
+    "current_remediation_output_dir",
     "ensure_remediation_artifact_dirs",
     "load_current_remediation_summary",
     "write_remediation_artifact_bundle",
