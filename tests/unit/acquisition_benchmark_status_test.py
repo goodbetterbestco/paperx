@@ -110,3 +110,26 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
         self.assertIn("## Current Leaders", printed[0])
         self.assertIn("family `born_digital_scholarly` overall leader", printed[0])
         self.assertIn("Latest Capability Scores", printed[0])
+
+    def test_show_benchmark_status_cli_can_load_saved_dashboard_artifact(self) -> None:
+        printed: list[str] = []
+        exit_code = run_show_benchmark_status_cli(
+            argparse.Namespace(history_dir=None, limit=3, format="markdown", from_artifacts=True),
+            load_status_fn=lambda **_: {
+                "history_dir": "/tmp/history",
+                "latest_run": {
+                    "label": "candidate",
+                    "path": "/tmp/history/candidate.json",
+                    "paper_count": 1,
+                    "providers": [],
+                    "capabilities": [],
+                },
+                "leaders": {"overall": {"provider": "docling", "overall": 0.8}},
+                "trend": None,
+            },
+            print_fn=printed.append,
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("# Acquisition Benchmark Status", printed[0])
+        self.assertIn("candidate", printed[0])

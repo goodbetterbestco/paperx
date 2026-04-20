@@ -36,4 +36,14 @@ def summarize_latest_benchmark_status(
     }
 
 
-__all__ = ["summarize_latest_benchmark_status"]
+def benchmark_status_from_dashboard(dashboard: dict[str, Any]) -> dict[str, Any]:
+    overview = dashboard.get("overview") or {}
+    return {
+        "history_dir": overview.get("history_dir"),
+        "latest_run": dashboard.get("latest_run"),
+        "leaders": dashboard.get("leaders") or {},
+        "trend": dashboard.get("trend"),
+    }
+
+
+__all__ = ["benchmark_status_from_dashboard", "summarize_latest_benchmark_status"]

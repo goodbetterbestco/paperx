@@ -74,6 +74,9 @@ Current preferred commands:
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
 - `python3 -m pipeline.cli.show_acquisition_benchmark_status`
+- `python3 -m pipeline.cli.show_acquisition_benchmark_status --from-artifacts`
+- `python3 -m pipeline.cli.show_acquisition_benchmark_dashboard`
+- `python3 -m pipeline.cli.show_acquisition_benchmark_dashboard --from-artifacts`
 - `python3 -m pipeline.cli.list_acquisition_benchmark_history --limit 5`
 - `python3 -m pipeline.cli.summarize_acquisition_benchmark_trend`
 - `python3 -m pipeline.cli.compare_acquisition_benchmark --base tmp/acquisition_benchmark/history/baseline-apr19.json --candidate tmp/acquisition_benchmark/history/candidate-apr20.json`
@@ -122,18 +125,28 @@ acquisition audit CLI summarizes their coverage and OCR execution drift into
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
-agreement against gold expectations. Each benchmark run also writes the usual
-`tmp/acquisition_benchmark/summary.{json,md}` convenience files plus a labeled
-snapshot pair under `tmp/acquisition_benchmark/history/`; use `--label` to name
-those artifacts explicitly and `pipeline.cli.compare_acquisition_benchmark` to
-diff two saved summary JSON files by provider and benchmark family. The compare
-CLI also accepts snapshot labels plus `latest` and `previous` aliases resolved
-from benchmark history. `pipeline.cli.list_acquisition_benchmark_history` shows
-the saved runs and per-provider aggregate deltas versus the previous snapshot.
+agreement against gold expectations. Each benchmark run now writes a current
+artifact bundle under `tmp/acquisition_benchmark/`:
+
+- `summary.{json,md}` for the raw benchmark report
+- `status.{json,md}` for the latest operator status view
+- `dashboard.{json,md}` for the broader operator dashboard
+- `history/<label>.{json,md}` for the labeled benchmark snapshot
+
+Use `--label` on `pipeline.cli.run_acquisition_benchmark` to name snapshot
+artifacts explicitly. `pipeline.cli.compare_acquisition_benchmark` can diff two
+saved summary JSON files by provider and benchmark family, and it also accepts
+snapshot labels plus `latest` and `previous` aliases resolved from benchmark
+history. `pipeline.cli.list_acquisition_benchmark_history` shows the saved runs
+and per-provider aggregate deltas versus the previous snapshot.
 `pipeline.cli.summarize_acquisition_benchmark_trend` turns the latest-vs-previous
 comparison into a short improvement/regression watchlist overall and by family.
 `pipeline.cli.show_acquisition_benchmark_status` combines the latest saved run
-with that watchlist into a single “where are we now?” status view.
+with that watchlist into a single “where are we now?” status view, and
+`pipeline.cli.show_acquisition_benchmark_dashboard` gives the fuller operator
+dashboard across leaders, regressions, latest-vs-previous movement, and recent
+runs. Both status and dashboard CLIs accept `--from-artifacts` when you want to
+read the saved current bundle directly instead of recomputing from history.
 
 Figure regeneration now also lives under this package:
 

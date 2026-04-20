@@ -17,14 +17,22 @@ class AcquisitionPackageExportsTest(unittest.TestCase):
     def test_benchmark_utilities_are_exported_from_package_boundary(self) -> None:
         self.assertTrue(callable(acquisition.compare_benchmark_reports))
         self.assertTrue(callable(acquisition.list_benchmark_history))
+        self.assertTrue(callable(acquisition.summarize_benchmark_dashboard))
         self.assertTrue(callable(acquisition.summarize_benchmark_trend))
+        self.assertTrue(callable(acquisition.benchmark_status_from_dashboard))
         self.assertTrue(callable(acquisition.aggregate_provider_score_map))
         self.assertTrue(callable(acquisition.benchmark_report_label))
+        self.assertTrue(callable(acquisition.build_benchmark_artifact_paths))
+        self.assertTrue(callable(acquisition.current_benchmark_output_dir))
         self.assertTrue(callable(acquisition.family_provider_score_maps))
+        self.assertTrue(callable(acquisition.load_current_benchmark_dashboard))
+        self.assertTrue(callable(acquisition.load_current_benchmark_status))
+        self.assertTrue(callable(acquisition.load_current_benchmark_summary))
         self.assertTrue(callable(acquisition.load_benchmark_report))
         self.assertTrue(callable(acquisition.list_history_reports))
         self.assertTrue(callable(acquisition.resolve_benchmark_report_path))
         self.assertTrue(callable(acquisition.provider_score_map))
+        self.assertTrue(callable(acquisition.write_benchmark_artifact_bundle))
 
 
 if __name__ == "__main__":

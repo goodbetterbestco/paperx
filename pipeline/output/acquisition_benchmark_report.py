@@ -15,6 +15,8 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
         f"- Snapshot label: `{report.get('snapshot_label') or 'not set'}`",
         f"- JSON report: `{((report.get('report_paths') or {}).get('json')) or 'not written'}`",
         f"- Markdown report: `{((report.get('report_paths') or {}).get('markdown')) or 'not written'}`",
+        f"- Status JSON report: `{((report.get('report_paths') or {}).get('status_json')) or 'not written'}`",
+        f"- Status Markdown report: `{((report.get('report_paths') or {}).get('status_markdown')) or 'not written'}`",
         f"- Snapshot JSON report: `{((report.get('report_paths') or {}).get('snapshot_json')) or 'not written'}`",
         f"- Snapshot Markdown report: `{((report.get('report_paths') or {}).get('snapshot_markdown')) or 'not written'}`",
         f"- Dashboard JSON report: `{((report.get('report_paths') or {}).get('dashboard_json')) or 'not written'}`",

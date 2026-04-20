@@ -133,6 +133,24 @@ class AcquisitionBenchmarkDashboardTest(unittest.TestCase):
         self.assertIn("Regression Watch", printed[0])
         self.assertIn("Recent Runs", printed[0])
 
+    def test_dashboard_cli_can_load_saved_artifact(self) -> None:
+        printed: list[str] = []
+        exit_code = run_show_benchmark_dashboard_cli(
+            argparse.Namespace(history_dir=None, history_limit=5, trend_limit=3, format="markdown", from_artifacts=True),
+            load_dashboard_fn=lambda **_: {
+                "overview": {"history_dir": "/tmp/history", "run_count": 1, "latest_label": "candidate"},
+                "leaders": {"overall": {"provider": "docling", "overall": 0.8}},
+                "latest_run": {"providers": []},
+                "alerts": {},
+                "recent_history": [],
+            },
+            print_fn=printed.append,
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("# Acquisition Benchmark Dashboard", printed[0])
+        self.assertIn("candidate", printed[0])
+
 
 if __name__ == "__main__":
     unittest.main()
