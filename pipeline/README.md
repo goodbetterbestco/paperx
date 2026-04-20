@@ -77,6 +77,9 @@ Current preferred commands:
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --priority critical --fail-fast`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --resume-from latest --min-priority high`
 - `python3 -m pipeline.cli.show_acquisition_remediation_status`
+- `python3 -m pipeline.cli.list_acquisition_remediation_history --limit 5`
+- `python3 -m pipeline.cli.summarize_acquisition_remediation_trend`
+- `python3 -m pipeline.cli.show_acquisition_remediation_dashboard`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
@@ -142,7 +145,11 @@ work only `critical` and `high` items first via `--priority` or
 history snapshots, and `--resume-from latest` or `--resume-from previous` can
 skip papers that already completed successfully in an earlier batch.
 `pipeline.cli.show_acquisition_remediation_status` renders the latest saved run
-as a compact operator status view.
+as a compact operator status view. `pipeline.cli.list_acquisition_remediation_history`,
+`pipeline.cli.summarize_acquisition_remediation_trend`, and
+`pipeline.cli.show_acquisition_remediation_dashboard` provide the corresponding
+history, latest-vs-previous change summary, and operator dashboard over those
+saved remediation run artifacts.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
