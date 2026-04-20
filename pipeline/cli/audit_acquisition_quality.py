@@ -19,6 +19,12 @@ MARKDOWN_REPORT_PATH = OUTPUT_DIR / "summary.md"
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Audit acquisition routing, scoring, and OCR execution quality.")
     parser.add_argument("--top", type=int, default=12, help="Number of papers to include in the markdown summary.")
+    parser.add_argument(
+        "--format",
+        choices=("markdown", "json", "commands"),
+        default="markdown",
+        help="Console output format. Reports are still written to disk in both JSON and markdown.",
+    )
     return parser.parse_args()
 
 
@@ -45,7 +51,17 @@ def run_audit_acquisition_quality(
     json_report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     markdown = render_markdown_fn(report, top_n=max(1, args.top))
     markdown_report_path.write_text(markdown, encoding="utf-8")
-    print_fn(markdown)
+    if args.format == "json":
+        print_fn(json.dumps(report, indent=2, ensure_ascii=False))
+    elif args.format == "commands":
+        commands = [
+            str(item.get("remediation_command") or "").strip()
+            for item in list(report.get("remediation_queue") or [])
+            if str(item.get("remediation_command") or "").strip()
+        ]
+        print_fn("\n".join(commands))
+    else:
+        print_fn(markdown)
     return 0
 
 
