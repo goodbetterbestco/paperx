@@ -64,6 +64,16 @@ def acquisition_execution_report_path(paper_id: str, *, layout: ProjectLayout | 
     return _paper_sources_dir(paper_id, layout=layout) / "acquisition-execution.json"
 
 
+def acquisition_trial_dir(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+    label: str = "follow-up",
+) -> Path:
+    normalized_label = str(label).strip() or "follow-up"
+    return _paper_sources_dir(paper_id, layout=layout) / "trials" / normalized_label
+
+
 def grobid_tei_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
     return _paper_sources_dir(paper_id, layout=layout) / "grobid.tei.xml"
 
