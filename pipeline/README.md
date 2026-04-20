@@ -70,6 +70,9 @@ Current preferred commands:
 - `python3 -m pipeline.cli.inspect_acquisition_scorecard <paper-id>`
 - `python3 -m pipeline.cli.backfill_acquisition_sidecars`
 - `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
+- `python3 -m pipeline.cli.audit_acquisition_quality --format commands`
+- `python3 -m pipeline.cli.run_acquisition_remediation_queue --dry-run`
+- `python3 -m pipeline.cli.run_acquisition_remediation_queue --fail-fast --limit 5`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
@@ -122,6 +125,12 @@ Acquisition routing and provider recommendation sidecars remain at
 `<corpus-root>/<paper-id>/canonical_sources/source-scorecard.json`, and the
 acquisition audit CLI summarizes their coverage and OCR execution drift into
 `tmp/acquisition_quality_audit/`.
+That audit also writes a structured `remediation_queue` into
+`tmp/acquisition_quality_audit/summary.json`; use
+`pipeline.cli.audit_acquisition_quality --format commands` to print only the
+queued remediation commands, or
+`pipeline.cli.run_acquisition_remediation_queue` to batch-run the selected
+follow-up remediations from either a live audit or a saved report.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
