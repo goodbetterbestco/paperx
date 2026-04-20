@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 import re
 from typing import Any, Callable, Pattern
 
@@ -454,3 +455,357 @@ def repair_record_text_with_mathpix_hints(
         updated["meta"] = meta
         repaired.append(updated)
     return repaired
+
+
+@dataclass(frozen=True)
+class BoundTextRepairHelpers:
+    should_skip_pdftotext_repair: Callable[[dict[str, Any]], bool]
+    repair_record_text_with_pdftotext: Callable[
+        [list[dict[str, Any]], dict[int, list[str]], dict[int, float]],
+        list[dict[str, Any]],
+    ]
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[LayoutBlock]]]
+    mathpix_text_hint_candidate: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str]
+    mathpix_prose_lead_repair_candidate: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str]
+    is_mathpix_text_hint_better: Callable[[str, str], bool]
+
+
+def make_should_skip_pdftotext_repair(
+    *,
+    clean_text: Callable[[str], str],
+    word_count: Callable[[str], int],
+    inline_math_re: Pattern[str],
+) -> Callable[[dict[str, Any]], bool]:
+    def build_should_skip_pdftotext_repair(record: dict[str, Any]) -> bool:
+        return should_skip_pdftotext_repair(
+            record,
+            clean_text=clean_text,
+            word_count=word_count,
+            inline_math_re=inline_math_re,
+        )
+
+    return build_should_skip_pdftotext_repair
+
+
+def make_repair_record_text_with_pdftotext(
+    *,
+    should_skip_pdftotext_repair: Callable[[dict[str, Any]], bool],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    bbox_to_line_window: Callable[..., tuple[int, int]],
+    slice_page_text: Callable[..., str],
+    clean_text: Callable[[str], str],
+    is_pdftotext_candidate_better: Callable[[str, str, str], bool],
+) -> Callable[[list[dict[str, Any]], dict[int, list[str]], dict[int, float]], list[dict[str, Any]]]:
+    def build_repair_record_text_with_pdftotext(
+        records: list[dict[str, Any]],
+        pdftotext_pages: dict[int, list[str]],
+        page_heights: dict[int, float],
+    ) -> list[dict[str, Any]]:
+        return repair_record_text_with_pdftotext(
+            records,
+            pdftotext_pages,
+            page_heights,
+            should_skip_pdftotext_repair=should_skip_pdftotext_repair,
+            block_source_spans=block_source_spans,
+            bbox_to_line_window=bbox_to_line_window,
+            slice_page_text=slice_page_text,
+            clean_text=clean_text,
+            is_pdftotext_candidate_better=is_pdftotext_candidate_better,
+        )
+
+    return build_repair_record_text_with_pdftotext
+
+
+def make_record_union_bbox(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any]], tuple[int, dict[str, float]] | None]:
+    def build_record_union_bbox(record: dict[str, Any]) -> tuple[int, dict[str, float]] | None:
+        return record_union_bbox(
+            record,
+            block_source_spans=block_source_spans,
+        )
+
+    return build_record_union_bbox
+
+
+def make_mathpix_hint_alignment_text(
+    *,
+    clean_text: Callable[[str], str],
+    display_math_prose_cue_re: Pattern[str],
+    display_math_start_re: Pattern[str],
+    math_signal_count: Callable[[str], int],
+    word_count: Callable[[str], int],
+) -> Callable[[str], str]:
+    def build_mathpix_hint_alignment_text(text: str) -> str:
+        return mathpix_hint_alignment_text(
+            text,
+            clean_text=clean_text,
+            display_math_prose_cue_re=display_math_prose_cue_re,
+            display_math_start_re=display_math_start_re,
+            math_signal_count=math_signal_count,
+            word_count=word_count,
+        )
+
+    return build_mathpix_hint_alignment_text
+
+
+def make_mathpix_hint_tokens(
+    *,
+    hint_token_re: Pattern[str],
+) -> Callable[[str], list[str]]:
+    def build_mathpix_hint_tokens(text: str) -> list[str]:
+        return mathpix_hint_tokens(
+            text,
+            hint_token_re=hint_token_re,
+        )
+
+    return build_mathpix_hint_tokens
+
+
+def make_mathpix_text_candidate_score(
+    *,
+    mathpix_hint_alignment_text: Callable[[str], str],
+    mathpix_hint_tokens: Callable[[str], list[str]],
+    inline_tex_signal_count: Callable[[str], int],
+) -> Callable[[str, str], tuple[int, int, int, int]]:
+    def build_mathpix_text_candidate_score(
+        original_text: str,
+        candidate_text: str,
+    ) -> tuple[int, int, int, int]:
+        return mathpix_text_candidate_score(
+            original_text,
+            candidate_text,
+            mathpix_hint_alignment_text=mathpix_hint_alignment_text,
+            mathpix_hint_tokens=mathpix_hint_tokens,
+            inline_tex_signal_count=inline_tex_signal_count,
+        )
+
+    return build_mathpix_text_candidate_score
+
+
+def make_matching_mathpix_text_blocks(
+    *,
+    record_union_bbox: Callable[[dict[str, Any]], tuple[int, dict[str, float]] | None],
+    rect_x_overlap_ratio: Callable[[dict[str, Any], dict[str, Any]], float],
+) -> Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], list[LayoutBlock]]:
+    def build_matching_mathpix_text_blocks(
+        record: dict[str, Any],
+        mathpix_blocks_by_page: dict[int, list[LayoutBlock]],
+    ) -> list[LayoutBlock]:
+        return matching_mathpix_text_blocks(
+            record,
+            mathpix_blocks_by_page,
+            record_union_bbox=record_union_bbox,
+            rect_x_overlap_ratio=rect_x_overlap_ratio,
+        )
+
+    return build_matching_mathpix_text_blocks
+
+
+def make_mathpix_text_hint_candidate(
+    *,
+    matching_mathpix_text_blocks: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], list[LayoutBlock]],
+    word_count: Callable[[str], int],
+    mathpix_hint_alignment_text: Callable[[str], str],
+    clean_text: Callable[[str], str],
+    mathpix_text_candidate_score: Callable[[str, str], tuple[int, int, int, int]],
+) -> Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str]:
+    def build_mathpix_text_hint_candidate(
+        record: dict[str, Any],
+        mathpix_blocks_by_page: dict[int, list[LayoutBlock]],
+    ) -> str:
+        return mathpix_text_hint_candidate(
+            record,
+            mathpix_blocks_by_page,
+            matching_mathpix_text_blocks=matching_mathpix_text_blocks,
+            word_count=word_count,
+            mathpix_hint_alignment_text=mathpix_hint_alignment_text,
+            clean_text=clean_text,
+            mathpix_text_candidate_score=mathpix_text_candidate_score,
+        )
+
+    return build_mathpix_text_hint_candidate
+
+
+def make_looks_like_truncated_prose_lead(
+    *,
+    clean_text: Callable[[str], str],
+    short_word_re: Pattern[str],
+    truncated_prose_lead_stopwords: set[str],
+) -> Callable[[str], bool]:
+    def build_looks_like_truncated_prose_lead(text: str) -> bool:
+        return looks_like_truncated_prose_lead(
+            text,
+            clean_text=clean_text,
+            short_word_re=short_word_re,
+            truncated_prose_lead_stopwords=truncated_prose_lead_stopwords,
+        )
+
+    return build_looks_like_truncated_prose_lead
+
+
+def make_mathpix_prose_lead_repair_candidate(
+    *,
+    clean_text: Callable[[str], str],
+    looks_like_truncated_prose_lead: Callable[[str], bool],
+    matching_mathpix_text_blocks: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], list[LayoutBlock]],
+    short_word_re: Pattern[str],
+    word_count: Callable[[str], int],
+    parse_heading_label: Callable[[str], Any],
+    token_subsequence_index: Callable[[list[str], list[str]], int | None],
+) -> Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str]:
+    def build_mathpix_prose_lead_repair_candidate(
+        record: dict[str, Any],
+        mathpix_blocks_by_page: dict[int, list[LayoutBlock]],
+    ) -> str:
+        return mathpix_prose_lead_repair_candidate(
+            record,
+            mathpix_blocks_by_page,
+            clean_text=clean_text,
+            looks_like_truncated_prose_lead=looks_like_truncated_prose_lead,
+            matching_mathpix_text_blocks=matching_mathpix_text_blocks,
+            short_word_re=short_word_re,
+            word_count=word_count,
+            parse_heading_label=parse_heading_label,
+            token_subsequence_index=token_subsequence_index,
+        )
+
+    return build_mathpix_prose_lead_repair_candidate
+
+
+def make_is_mathpix_text_hint_better(
+    *,
+    clean_text: Callable[[str], str],
+    word_count: Callable[[str], int],
+    inline_tex_signal_count: Callable[[str], int],
+) -> Callable[[str, str], bool]:
+    def build_is_mathpix_text_hint_better(original_text: str, candidate_text: str) -> bool:
+        return is_mathpix_text_hint_better(
+            original_text,
+            candidate_text,
+            clean_text=clean_text,
+            word_count=word_count,
+            inline_tex_signal_count=inline_tex_signal_count,
+        )
+
+    return build_is_mathpix_text_hint_better
+
+
+def make_bound_text_repair_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    word_count: Callable[[str], int],
+    inline_math_re: Pattern[str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    bbox_to_line_window: Callable[..., tuple[int, int]],
+    slice_page_text: Callable[..., str],
+    is_pdftotext_candidate_better: Callable[[str, str, str], bool],
+    rect_x_overlap_ratio: Callable[[dict[str, Any], dict[str, Any]], float],
+    display_math_prose_cue_re: Pattern[str],
+    display_math_start_re: Pattern[str],
+    math_signal_count: Callable[[str], int],
+    hint_token_re: Pattern[str],
+    short_word_re: Pattern[str],
+    truncated_prose_lead_stopwords: set[str],
+    parse_heading_label: Callable[[str], Any],
+) -> BoundTextRepairHelpers:
+    should_skip = make_should_skip_pdftotext_repair(
+        clean_text=clean_text,
+        word_count=word_count,
+        inline_math_re=inline_math_re,
+    )
+    repair_pdftotext = make_repair_record_text_with_pdftotext(
+        should_skip_pdftotext_repair=should_skip,
+        block_source_spans=block_source_spans,
+        bbox_to_line_window=bbox_to_line_window,
+        slice_page_text=slice_page_text,
+        clean_text=clean_text,
+        is_pdftotext_candidate_better=is_pdftotext_candidate_better,
+    )
+    bound_record_union_bbox = make_record_union_bbox(
+        block_source_spans=block_source_spans,
+    )
+    bound_matching_mathpix_text_blocks = make_matching_mathpix_text_blocks(
+        record_union_bbox=bound_record_union_bbox,
+        rect_x_overlap_ratio=rect_x_overlap_ratio,
+    )
+    bound_mathpix_hint_alignment_text = make_mathpix_hint_alignment_text(
+        clean_text=clean_text,
+        display_math_prose_cue_re=display_math_prose_cue_re,
+        display_math_start_re=display_math_start_re,
+        math_signal_count=math_signal_count,
+        word_count=word_count,
+    )
+    bound_mathpix_text_candidate_score = make_mathpix_text_candidate_score(
+        mathpix_hint_alignment_text=bound_mathpix_hint_alignment_text,
+        mathpix_hint_tokens=make_mathpix_hint_tokens(
+            hint_token_re=hint_token_re,
+        ),
+        inline_tex_signal_count=inline_tex_signal_count,
+    )
+    bound_mathpix_text_hint_candidate = make_mathpix_text_hint_candidate(
+        matching_mathpix_text_blocks=bound_matching_mathpix_text_blocks,
+        word_count=word_count,
+        mathpix_hint_alignment_text=bound_mathpix_hint_alignment_text,
+        clean_text=clean_text,
+        mathpix_text_candidate_score=bound_mathpix_text_candidate_score,
+    )
+    bound_mathpix_prose_lead_repair_candidate = make_mathpix_prose_lead_repair_candidate(
+        clean_text=clean_text,
+        looks_like_truncated_prose_lead=make_looks_like_truncated_prose_lead(
+            clean_text=clean_text,
+            short_word_re=short_word_re,
+            truncated_prose_lead_stopwords=truncated_prose_lead_stopwords,
+        ),
+        matching_mathpix_text_blocks=bound_matching_mathpix_text_blocks,
+        short_word_re=short_word_re,
+        word_count=word_count,
+        parse_heading_label=parse_heading_label,
+        token_subsequence_index=token_subsequence_index,
+    )
+    bound_is_mathpix_text_hint_better = make_is_mathpix_text_hint_better(
+        clean_text=clean_text,
+        word_count=word_count,
+        inline_tex_signal_count=inline_tex_signal_count,
+    )
+    return BoundTextRepairHelpers(
+        should_skip_pdftotext_repair=should_skip,
+        repair_record_text_with_pdftotext=repair_pdftotext,
+        mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+        mathpix_text_hint_candidate=bound_mathpix_text_hint_candidate,
+        mathpix_prose_lead_repair_candidate=bound_mathpix_prose_lead_repair_candidate,
+        is_mathpix_text_hint_better=bound_is_mathpix_text_hint_better,
+    )
+
+
+__all__ = [
+    "BoundTextRepairHelpers",
+    "inline_tex_signal_count",
+    "is_mathpix_text_hint_better",
+    "looks_like_truncated_prose_lead",
+    "make_bound_text_repair_helpers",
+    "make_is_mathpix_text_hint_better",
+    "make_looks_like_truncated_prose_lead",
+    "make_matching_mathpix_text_blocks",
+    "make_mathpix_hint_alignment_text",
+    "make_mathpix_hint_tokens",
+    "make_mathpix_prose_lead_repair_candidate",
+    "make_mathpix_text_candidate_score",
+    "make_mathpix_text_hint_candidate",
+    "make_record_union_bbox",
+    "make_repair_record_text_with_pdftotext",
+    "make_should_skip_pdftotext_repair",
+    "matching_mathpix_text_blocks",
+    "mathpix_hint_alignment_text",
+    "mathpix_hint_tokens",
+    "mathpix_prose_lead_repair_candidate",
+    "mathpix_text_blocks_by_page",
+    "mathpix_text_candidate_score",
+    "mathpix_text_hint_candidate",
+    "record_union_bbox",
+    "repair_record_text_with_mathpix_hints",
+    "repair_record_text_with_pdftotext",
+    "should_skip_pdftotext_repair",
+    "token_subsequence_index",
+]

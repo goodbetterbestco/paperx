@@ -72,8 +72,8 @@ from pipeline.reconcile.stage_runtime import (
     ReconcileLoaderDeps,
     ReconcileRuntimeDeps,
 )
-from pipeline.reconcile.text_repairs_runtime import (
-    make_bound_text_repair_helpers as reconcile_make_bound_text_repair_helpers_runtime,
+from pipeline.reconcile.text_repairs import (
+    make_bound_text_repair_helpers as reconcile_make_bound_text_repair_helpers,
 )
 
 
@@ -278,7 +278,7 @@ def build_reconcile_text_repair_helpers(
     truncated_prose_lead_stopwords: set[str],
     parse_heading_label: Any,
 ) -> Any:
-    return reconcile_make_bound_text_repair_helpers_runtime(
+    return reconcile_make_bound_text_repair_helpers(
         clean_text=base_helpers.clean_text,
         word_count=base_helpers.word_count,
         inline_math_re=inline_math_re,

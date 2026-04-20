@@ -115,7 +115,7 @@ from pipeline.reconcile.support_binding_runtime import (
     make_word_count,
 )
 from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as _text_repair_record_text_with_mathpix_hints
-from pipeline.reconcile.text_repairs_runtime import make_bound_text_repair_helpers, mathpix_text_blocks_by_page
+from pipeline.reconcile.text_repairs import make_bound_text_repair_helpers, mathpix_text_blocks_by_page
 from pipeline.math.extract import INLINE_MATH_RE
 from pipeline.text.headings import collapse_ocr_split_caps, looks_like_bad_heading
 from pipeline.text.prose import normalize_prose_text

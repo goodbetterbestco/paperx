@@ -25,7 +25,7 @@ from pipeline.reconcile.support_binding_runtime import (
     make_clean_text,
     make_normalize_figure_caption_text,
 )
-from pipeline.reconcile.text_repairs_runtime import mathpix_text_blocks_by_page
+from pipeline.reconcile.text_repairs import mathpix_text_blocks_by_page
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
 from pipeline.text.headings import compact_text, normalize_title_key
 from pipeline.text.prose import normalize_prose_text

@@ -35,7 +35,7 @@ from pipeline.reconcile.support_binding_runtime import (
     make_is_pdftotext_candidate_better,
     make_word_count,
 )
-from pipeline.reconcile.text_repairs_runtime import make_bound_text_repair_helpers
+from pipeline.reconcile.text_repairs import make_bound_text_repair_helpers
 from pipeline.text.headings import compact_text, parse_heading_label
 from pipeline.types import LayoutBlock
 
