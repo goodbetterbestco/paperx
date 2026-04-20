@@ -41,6 +41,11 @@ def _render_follow_up(items: list[dict[str, Any]]) -> str:
 
 def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> str:
     ocr_summary = dict(report.get("ocr_summary") or {})
+    actionable_papers = [
+        paper
+        for paper in list(report.get("papers") or [])
+        if str(paper.get("remediation_command") or "").strip()
+    ]
     lines = [
         "# Acquisition Quality Audit",
         "",
@@ -86,9 +91,29 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         f"- Selected PDF kinds: {_render_top_counts(report.get('pdf_source_kind_counts', {}))}",
         f"- Missing sidecars: {_render_top_counts(report.get('sidecar_missing_counts', {}))}",
         "",
-        "## Highest-Risk Papers",
+        "## Remediation Queue",
         "",
     ]
+
+    if actionable_papers:
+        for index, paper in enumerate(actionable_papers[:top_n], start=1):
+            lines.extend(
+                [
+                    f"{index}. `{paper['paper_id']}` — issues `{paper['issue_count']}`",
+                    f"   Follow-up: {_render_follow_up(list(paper.get('follow_up_actions') or []))}",
+                    f"   Command: `{paper.get('remediation_command')}`",
+                ]
+            )
+    else:
+        lines.append("- No actionable remediation commands.")
+
+    lines.extend(
+        [
+            "",
+        "## Highest-Risk Papers",
+        "",
+        ]
+    )
 
     for index, paper in enumerate(list(report.get("papers") or [])[:top_n], start=1):
         missing_sidecars = list(paper.get("missing_sidecars") or [])
