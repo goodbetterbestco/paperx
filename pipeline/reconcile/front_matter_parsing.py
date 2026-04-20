@@ -1,7 +1,47 @@
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass
 from typing import Any, Callable, Pattern
+
+from pipeline.reconcile.front_matter_policies import (
+    make_abstract_text_is_usable,
+    make_is_title_page_metadata_record,
+    make_looks_like_body_section_marker,
+    make_looks_like_intro_marker,
+    make_looks_like_page_one_front_matter_tail,
+    make_normalize_abstract_candidate_text,
+    make_split_leading_front_matter_records,
+    make_strip_trailing_abstract_boilerplate,
+)
+
+
+@dataclass(frozen=True)
+class BoundFrontMatterParsingHelpers:
+    normalize_author_line: Callable[[str], str]
+    looks_like_contact_name: Callable[[str], bool]
+    looks_like_front_matter_metadata: Callable[[str], bool]
+    looks_like_author_line: Callable[[str], bool]
+    looks_like_intro_marker: Callable[[str], bool]
+    looks_like_body_section_marker: Callable[[str], bool]
+    strip_trailing_abstract_boilerplate: Callable[[str], str]
+    normalize_abstract_candidate_text: Callable[[list[dict[str, Any]]], str]
+    abstract_text_is_usable: Callable[[str], bool]
+    looks_like_page_one_front_matter_tail: Callable[[dict[str, Any]], bool]
+    split_leading_front_matter_records: Callable[
+        [list[dict[str, Any]]],
+        tuple[list[dict[str, Any]], list[dict[str, Any]]],
+    ]
+    parse_authors: Callable[[str], list[dict[str, Any]]]
+    parse_authors_from_citation_line: Callable[[str, str], list[dict[str, Any]]]
+    is_title_page_metadata_record: Callable[[dict[str, Any]], bool]
+    normalize_affiliation_line: Callable[[str], str]
+    looks_like_affiliation_continuation: Callable[[str], bool]
+    split_affiliation_fields: Callable[[list[str]], tuple[str, str, str]]
+    dedupe_authors: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    filter_front_matter_authors: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    build_affiliations_for_authors: Callable[[int, list[str]], tuple[list[dict[str, Any]], list[list[str]]]]
+    strip_author_prefix_from_affiliation_line: Callable[[str, list[dict[str, Any]]], str]
 
 
 def looks_like_affiliation(text: str) -> bool:
@@ -389,3 +429,452 @@ def strip_author_prefix_from_affiliation_line(
             if cleaned.lower().startswith(prefix.lower() + " "):
                 return clean_text(cleaned[len(prefix) :])
     return cleaned
+
+
+def make_normalize_author_line(
+    *,
+    clean_text: Callable[[str], str],
+    author_marker_re: Pattern[str],
+    author_affiliation_index_re: Pattern[str],
+    compact_text: Callable[[str], str],
+) -> Callable[[str], str]:
+    def bound_normalize_author_line(text: str) -> str:
+        return normalize_author_line(
+            text,
+            clean_text=clean_text,
+            author_marker_re=author_marker_re,
+            author_affiliation_index_re=author_affiliation_index_re,
+            compact_text=compact_text,
+        )
+
+    return bound_normalize_author_line
+
+
+def make_looks_like_contact_name(
+    *,
+    clean_text: Callable[[str], str],
+    name_token_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_contact_name(text: str) -> bool:
+        return looks_like_contact_name(
+            text,
+            clean_text=clean_text,
+            name_token_re=name_token_re,
+        )
+
+    return bound_looks_like_contact_name
+
+
+def make_looks_like_front_matter_metadata(
+    *,
+    clean_text: Callable[[str], str],
+    abbreviated_venue_line_re: Pattern[str],
+    title_page_metadata_re: Pattern[str],
+    front_matter_metadata_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_front_matter_metadata(text: str) -> bool:
+        return looks_like_front_matter_metadata(
+            text,
+            clean_text=clean_text,
+            abbreviated_venue_line_re=abbreviated_venue_line_re,
+            title_page_metadata_re=title_page_metadata_re,
+            front_matter_metadata_re=front_matter_metadata_re,
+        )
+
+    return bound_looks_like_front_matter_metadata
+
+
+def make_looks_like_author_line(
+    *,
+    looks_like_affiliation: Callable[[str], bool],
+    normalize_author_line: Callable[[str], str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    reference_venue_re: Pattern[str],
+    author_token_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_author_line(text: str) -> bool:
+        return looks_like_author_line(
+            text,
+            looks_like_affiliation=looks_like_affiliation,
+            normalize_author_line=normalize_author_line,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            reference_venue_re=reference_venue_re,
+            author_token_re=author_token_re,
+        )
+
+    return bound_looks_like_author_line
+
+
+def make_parse_authors(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_author_line: Callable[[str], str],
+) -> Callable[[str], list[dict[str, Any]]]:
+    def bound_parse_authors(text: str) -> list[dict[str, Any]]:
+        return parse_authors(
+            text,
+            clean_text=clean_text,
+            normalize_author_line=normalize_author_line,
+        )
+
+    return bound_parse_authors
+
+
+def make_parse_authors_from_citation_line(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    title_lookup_keys: Callable[[str], list[str]],
+    citation_year_re: Pattern[str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    citation_author_split_re: Pattern[str],
+    normalize_author_line: Callable[[str], str],
+    short_word_re: Pattern[str],
+    looks_like_affiliation: Callable[[str], bool],
+) -> Callable[[str, str], list[dict[str, Any]]]:
+    def bound_parse_authors_from_citation_line(text: str, title: str) -> list[dict[str, Any]]:
+        return parse_authors_from_citation_line(
+            text,
+            title,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+            title_lookup_keys=title_lookup_keys,
+            citation_year_re=citation_year_re,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            citation_author_split_re=citation_author_split_re,
+            normalize_author_line=normalize_author_line,
+            short_word_re=short_word_re,
+            looks_like_affiliation=looks_like_affiliation,
+        )
+
+    return bound_parse_authors_from_citation_line
+
+
+def make_normalize_affiliation_line(
+    *,
+    clean_text: Callable[[str], str],
+    author_note_re: Pattern[str],
+    compact_text: Callable[[str], str],
+) -> Callable[[str], str]:
+    def bound_normalize_affiliation_line(text: str) -> str:
+        return normalize_affiliation_line(
+            text,
+            clean_text=clean_text,
+            author_note_re=author_note_re,
+            compact_text=compact_text,
+        )
+
+    return bound_normalize_affiliation_line
+
+
+def make_looks_like_affiliation_continuation(
+    *,
+    clean_text: Callable[[str], str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    short_word_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_affiliation_continuation(text: str) -> bool:
+        return looks_like_affiliation_continuation(
+            text,
+            clean_text=clean_text,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_affiliation_continuation
+
+
+def make_split_affiliation_fields(
+    *,
+    normalize_affiliation_line: Callable[[str], str],
+) -> Callable[[list[str]], tuple[str, str, str]]:
+    def bound_split_affiliation_fields(affiliation_lines: list[str]) -> tuple[str, str, str]:
+        return split_affiliation_fields(
+            affiliation_lines,
+            normalize_affiliation_line=normalize_affiliation_line,
+        )
+
+    return bound_split_affiliation_fields
+
+
+def make_dedupe_authors(
+    *,
+    normalize_author_line: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def bound_dedupe_authors(authors: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return dedupe_authors(
+            authors,
+            normalize_author_line=normalize_author_line,
+            normalize_title_key=normalize_title_key,
+        )
+
+    return bound_dedupe_authors
+
+
+def make_filter_front_matter_authors(
+    *,
+    normalize_author_line: Callable[[str], str],
+    short_word_re: Pattern[str],
+    looks_like_affiliation: Callable[[str], bool],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    dedupe_authors: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def bound_filter_front_matter_authors(authors: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return filter_front_matter_authors(
+            authors,
+            normalize_author_line=normalize_author_line,
+            short_word_re=short_word_re,
+            looks_like_affiliation=looks_like_affiliation,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            dedupe_authors=dedupe_authors,
+        )
+
+    return bound_filter_front_matter_authors
+
+
+def make_build_affiliations_for_authors(
+    *,
+    normalize_affiliation_line: Callable[[str], str],
+    split_affiliation_fields: Callable[[list[str]], tuple[str, str, str]],
+) -> Callable[[int, list[str]], tuple[list[dict[str, Any]], list[list[str]]]]:
+    def bound_build_affiliations_for_authors(
+        author_count: int,
+        affiliation_lines: list[str],
+    ) -> tuple[list[dict[str, Any]], list[list[str]]]:
+        return build_affiliations_for_authors(
+            author_count,
+            affiliation_lines,
+            normalize_affiliation_line=normalize_affiliation_line,
+            split_affiliation_fields=split_affiliation_fields,
+        )
+
+    return bound_build_affiliations_for_authors
+
+
+def make_strip_author_prefix_from_affiliation_line(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_author_line: Callable[[str], str],
+) -> Callable[[str, list[dict[str, Any]]], str]:
+    def bound_strip_author_prefix_from_affiliation_line(
+        text: str,
+        authors: list[dict[str, Any]],
+    ) -> str:
+        return strip_author_prefix_from_affiliation_line(
+            text,
+            authors,
+            clean_text=clean_text,
+            normalize_author_line=normalize_author_line,
+        )
+
+    return bound_strip_author_prefix_from_affiliation_line
+
+
+def make_bound_front_matter_parsing_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    compact_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    clean_heading_title: Callable[[str], str],
+    parse_heading_label: Callable[[str], Any],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    title_lookup_keys: Callable[[str], list[str]],
+    abstract_quality_flags: Callable[[str], list[str]],
+    looks_like_affiliation: Callable[[str], bool],
+    author_marker_re: Pattern[str],
+    author_affiliation_index_re: Pattern[str],
+    name_token_re: Pattern[str],
+    abbreviated_venue_line_re: Pattern[str],
+    title_page_metadata_re: Pattern[str],
+    front_matter_metadata_re: Pattern[str],
+    reference_venue_re: Pattern[str],
+    author_token_re: Pattern[str],
+    intro_marker_re: Pattern[str],
+    abstract_marker_only_re: Pattern[str],
+    abstract_lead_re: Pattern[str],
+    trailing_abstract_boilerplate_re: Pattern[str],
+    trailing_abstract_tail_re: Pattern[str],
+    preprint_marker_re: Pattern[str],
+    short_word_re: Pattern[str],
+    author_note_re: Pattern[str],
+    citation_year_re: Pattern[str],
+    citation_author_split_re: Pattern[str],
+) -> BoundFrontMatterParsingHelpers:
+    bound_normalize_author_line = make_normalize_author_line(
+        clean_text=clean_text,
+        author_marker_re=author_marker_re,
+        author_affiliation_index_re=author_affiliation_index_re,
+        compact_text=compact_text,
+    )
+    bound_looks_like_contact_name = make_looks_like_contact_name(
+        clean_text=clean_text,
+        name_token_re=name_token_re,
+    )
+    bound_looks_like_front_matter_metadata = make_looks_like_front_matter_metadata(
+        clean_text=clean_text,
+        abbreviated_venue_line_re=abbreviated_venue_line_re,
+        title_page_metadata_re=title_page_metadata_re,
+        front_matter_metadata_re=front_matter_metadata_re,
+    )
+    bound_looks_like_author_line = make_looks_like_author_line(
+        looks_like_affiliation=looks_like_affiliation,
+        normalize_author_line=bound_normalize_author_line,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        reference_venue_re=reference_venue_re,
+        author_token_re=author_token_re,
+    )
+    bound_looks_like_intro_marker = make_looks_like_intro_marker(
+        clean_text=clean_text,
+        normalize_title_key=normalize_title_key,
+        intro_marker_re=intro_marker_re,
+    )
+    bound_looks_like_body_section_marker = make_looks_like_body_section_marker(
+        clean_text=clean_text,
+        clean_heading_title=clean_heading_title,
+        abstract_marker_only_re=abstract_marker_only_re,
+        abstract_lead_re=abstract_lead_re,
+        looks_like_intro_marker=bound_looks_like_intro_marker,
+        normalize_title_key=normalize_title_key,
+        parse_heading_label=parse_heading_label,
+    )
+    bound_strip_trailing_abstract_boilerplate = make_strip_trailing_abstract_boilerplate(
+        clean_text=clean_text,
+        compact_text=compact_text,
+        trailing_abstract_boilerplate_re=trailing_abstract_boilerplate_re,
+        trailing_abstract_tail_re=trailing_abstract_tail_re,
+    )
+    bound_normalize_abstract_candidate_text = make_normalize_abstract_candidate_text(
+        clean_text=clean_text,
+        preprint_marker_re=preprint_marker_re,
+        abstract_lead_re=abstract_lead_re,
+        strip_trailing_abstract_boilerplate=bound_strip_trailing_abstract_boilerplate,
+    )
+    bound_abstract_text_is_usable = make_abstract_text_is_usable(
+        abstract_quality_flags=abstract_quality_flags,
+    )
+    bound_looks_like_page_one_front_matter_tail = make_looks_like_page_one_front_matter_tail(
+        clean_text=clean_text,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        looks_like_author_line=bound_looks_like_author_line,
+        looks_like_affiliation=looks_like_affiliation,
+        looks_like_contact_name=bound_looks_like_contact_name,
+        short_word_re=short_word_re,
+    )
+    bound_split_leading_front_matter_records = make_split_leading_front_matter_records(
+        clean_text=clean_text,
+        looks_like_intro_marker=bound_looks_like_intro_marker,
+        looks_like_page_one_front_matter_tail=bound_looks_like_page_one_front_matter_tail,
+    )
+    bound_parse_authors = make_parse_authors(
+        clean_text=clean_text,
+        normalize_author_line=bound_normalize_author_line,
+    )
+    bound_parse_authors_from_citation_line = make_parse_authors_from_citation_line(
+        clean_text=clean_text,
+        normalize_title_key=normalize_title_key,
+        title_lookup_keys=title_lookup_keys,
+        citation_year_re=citation_year_re,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        citation_author_split_re=citation_author_split_re,
+        normalize_author_line=bound_normalize_author_line,
+        short_word_re=short_word_re,
+        looks_like_affiliation=looks_like_affiliation,
+    )
+    bound_is_title_page_metadata_record = make_is_title_page_metadata_record(
+        clean_text=clean_text,
+        preprint_marker_re=preprint_marker_re,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        author_note_re=author_note_re,
+        block_source_spans=block_source_spans,
+        looks_like_affiliation=looks_like_affiliation,
+        looks_like_contact_name=bound_looks_like_contact_name,
+    )
+    bound_normalize_affiliation_line = make_normalize_affiliation_line(
+        clean_text=clean_text,
+        author_note_re=author_note_re,
+        compact_text=compact_text,
+    )
+    bound_looks_like_affiliation_continuation = make_looks_like_affiliation_continuation(
+        clean_text=clean_text,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        short_word_re=short_word_re,
+    )
+    bound_split_affiliation_fields = make_split_affiliation_fields(
+        normalize_affiliation_line=bound_normalize_affiliation_line,
+    )
+    bound_dedupe_authors = make_dedupe_authors(
+        normalize_author_line=bound_normalize_author_line,
+        normalize_title_key=normalize_title_key,
+    )
+    bound_filter_front_matter_authors = make_filter_front_matter_authors(
+        normalize_author_line=bound_normalize_author_line,
+        short_word_re=short_word_re,
+        looks_like_affiliation=looks_like_affiliation,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        dedupe_authors=bound_dedupe_authors,
+    )
+    bound_build_affiliations_for_authors = make_build_affiliations_for_authors(
+        normalize_affiliation_line=bound_normalize_affiliation_line,
+        split_affiliation_fields=bound_split_affiliation_fields,
+    )
+    bound_strip_author_prefix_from_affiliation_line = make_strip_author_prefix_from_affiliation_line(
+        clean_text=clean_text,
+        normalize_author_line=bound_normalize_author_line,
+    )
+    return BoundFrontMatterParsingHelpers(
+        normalize_author_line=bound_normalize_author_line,
+        looks_like_contact_name=bound_looks_like_contact_name,
+        looks_like_front_matter_metadata=bound_looks_like_front_matter_metadata,
+        looks_like_author_line=bound_looks_like_author_line,
+        looks_like_intro_marker=bound_looks_like_intro_marker,
+        looks_like_body_section_marker=bound_looks_like_body_section_marker,
+        strip_trailing_abstract_boilerplate=bound_strip_trailing_abstract_boilerplate,
+        normalize_abstract_candidate_text=bound_normalize_abstract_candidate_text,
+        abstract_text_is_usable=bound_abstract_text_is_usable,
+        looks_like_page_one_front_matter_tail=bound_looks_like_page_one_front_matter_tail,
+        split_leading_front_matter_records=bound_split_leading_front_matter_records,
+        parse_authors=bound_parse_authors,
+        parse_authors_from_citation_line=bound_parse_authors_from_citation_line,
+        is_title_page_metadata_record=bound_is_title_page_metadata_record,
+        normalize_affiliation_line=bound_normalize_affiliation_line,
+        looks_like_affiliation_continuation=bound_looks_like_affiliation_continuation,
+        split_affiliation_fields=bound_split_affiliation_fields,
+        dedupe_authors=bound_dedupe_authors,
+        filter_front_matter_authors=bound_filter_front_matter_authors,
+        build_affiliations_for_authors=bound_build_affiliations_for_authors,
+        strip_author_prefix_from_affiliation_line=bound_strip_author_prefix_from_affiliation_line,
+    )
+
+
+__all__ = [
+    "BoundFrontMatterParsingHelpers",
+    "build_affiliations_for_authors",
+    "dedupe_authors",
+    "filter_front_matter_authors",
+    "looks_like_affiliation",
+    "looks_like_affiliation_continuation",
+    "looks_like_author_line",
+    "looks_like_contact_name",
+    "looks_like_front_matter_metadata",
+    "make_bound_front_matter_parsing_helpers",
+    "make_build_affiliations_for_authors",
+    "make_dedupe_authors",
+    "make_filter_front_matter_authors",
+    "make_looks_like_affiliation_continuation",
+    "make_looks_like_author_line",
+    "make_looks_like_contact_name",
+    "make_looks_like_front_matter_metadata",
+    "make_normalize_affiliation_line",
+    "make_normalize_author_line",
+    "make_parse_authors",
+    "make_parse_authors_from_citation_line",
+    "make_split_affiliation_fields",
+    "make_strip_author_prefix_from_affiliation_line",
+    "normalize_affiliation_line",
+    "normalize_author_line",
+    "parse_authors",
+    "parse_authors_from_citation_line",
+    "split_affiliation_fields",
+    "strip_author_prefix_from_affiliation_line",
+]

@@ -20,8 +20,10 @@ from pipeline.policies.abstract_quality import (  # noqa: E402
     NO_ABSTRACT_IN_BASE_MATERIAL,
     abstract_quality_flags,
 )
-from pipeline.reconcile.front_matter_parsing import looks_like_affiliation  # noqa: E402
-from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers  # noqa: E402
+from pipeline.reconcile.front_matter_parsing import (  # noqa: E402
+    looks_like_affiliation,
+    make_bound_front_matter_parsing_helpers,
+)
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE  # noqa: E402
 from pipeline.reconcile.support_binding_runtime import (  # noqa: E402
     block_source_spans,

@@ -58,7 +58,7 @@ from pipeline.reconcile.block_merging import (
     suppress_running_header_blocks as reconcile_suppress_running_header_blocks,
 )
 from pipeline.reconcile.external_math import match_external_math_entry as reconcile_match_external_math_entry
-from pipeline.reconcile.front_matter_parsing_runtime import looks_like_affiliation as reconcile_looks_like_affiliation_runtime
+from pipeline.reconcile.front_matter_parsing import looks_like_affiliation as reconcile_looks_like_affiliation_runtime
 from pipeline.reconcile.front_matter_patterns import (
     ABBREVIATED_VENUE_LINE_RE,
     ABSTRACT_BODY_BREAK_RE,

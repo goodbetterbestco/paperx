@@ -167,3 +167,183 @@ def is_title_page_metadata_record(
     if y0 >= 620.0 and (looks_like_affiliation(text) or looks_like_contact_name(text)):
         return True
     return False
+
+
+def make_looks_like_intro_marker(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    intro_marker_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_intro_marker(text: str) -> bool:
+        return looks_like_intro_marker(
+            text,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+            intro_marker_re=intro_marker_re,
+        )
+
+    return bound_looks_like_intro_marker
+
+
+def make_looks_like_body_section_marker(
+    *,
+    clean_text: Callable[[str], str],
+    clean_heading_title: Callable[[str], str],
+    abstract_marker_only_re: Pattern[str],
+    abstract_lead_re: Pattern[str],
+    looks_like_intro_marker: Callable[[str], bool],
+    normalize_title_key: Callable[[str], str],
+    parse_heading_label: Callable[[str], Any],
+) -> Callable[[str], bool]:
+    def bound_looks_like_body_section_marker(text: str) -> bool:
+        return looks_like_body_section_marker(
+            text,
+            clean_text=clean_text,
+            clean_heading_title=clean_heading_title,
+            abstract_marker_only_re=abstract_marker_only_re,
+            abstract_lead_re=abstract_lead_re,
+            looks_like_intro_marker=looks_like_intro_marker,
+            normalize_title_key=normalize_title_key,
+            parse_heading_label=parse_heading_label,
+        )
+
+    return bound_looks_like_body_section_marker
+
+
+def make_strip_trailing_abstract_boilerplate(
+    *,
+    clean_text: Callable[[str], str],
+    compact_text: Callable[[str], str],
+    trailing_abstract_boilerplate_re: Pattern[str],
+    trailing_abstract_tail_re: Pattern[str],
+) -> Callable[[str], str]:
+    def bound_strip_trailing_abstract_boilerplate(text: str) -> str:
+        return strip_trailing_abstract_boilerplate(
+            text,
+            clean_text=clean_text,
+            compact_text=compact_text,
+            trailing_abstract_boilerplate_re=trailing_abstract_boilerplate_re,
+            trailing_abstract_tail_re=trailing_abstract_tail_re,
+        )
+
+    return bound_strip_trailing_abstract_boilerplate
+
+
+def make_normalize_abstract_candidate_text(
+    *,
+    clean_text: Callable[[str], str],
+    preprint_marker_re: Pattern[str],
+    abstract_lead_re: Pattern[str],
+    strip_trailing_abstract_boilerplate: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]]], str]:
+    def bound_normalize_abstract_candidate_text(records: list[dict[str, Any]]) -> str:
+        return normalize_abstract_candidate_text(
+            records,
+            clean_text=clean_text,
+            preprint_marker_re=preprint_marker_re,
+            abstract_lead_re=abstract_lead_re,
+            strip_trailing_abstract_boilerplate=strip_trailing_abstract_boilerplate,
+        )
+
+    return bound_normalize_abstract_candidate_text
+
+
+def make_abstract_text_is_usable(
+    *,
+    abstract_quality_flags: Callable[[str], list[str]],
+) -> Callable[[str], bool]:
+    def bound_abstract_text_is_usable(text: str) -> bool:
+        return abstract_text_is_usable(
+            text,
+            abstract_quality_flags=abstract_quality_flags,
+        )
+
+    return bound_abstract_text_is_usable
+
+
+def make_looks_like_page_one_front_matter_tail(
+    *,
+    clean_text: Callable[[str], str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    looks_like_author_line: Callable[[str], bool],
+    looks_like_affiliation: Callable[[str], bool],
+    looks_like_contact_name: Callable[[str], bool],
+    short_word_re: Pattern[str],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_looks_like_page_one_front_matter_tail(record: dict[str, Any]) -> bool:
+        return looks_like_page_one_front_matter_tail(
+            record,
+            clean_text=clean_text,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            looks_like_author_line=looks_like_author_line,
+            looks_like_affiliation=looks_like_affiliation,
+            looks_like_contact_name=looks_like_contact_name,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_page_one_front_matter_tail
+
+
+def make_split_leading_front_matter_records(
+    *,
+    clean_text: Callable[[str], str],
+    looks_like_intro_marker: Callable[[str], bool],
+    looks_like_page_one_front_matter_tail: Callable[[dict[str, Any]], bool],
+) -> Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def bound_split_leading_front_matter_records(
+        prelude: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return split_leading_front_matter_records(
+            prelude,
+            clean_text=clean_text,
+            looks_like_intro_marker=looks_like_intro_marker,
+            looks_like_page_one_front_matter_tail=looks_like_page_one_front_matter_tail,
+        )
+
+    return bound_split_leading_front_matter_records
+
+
+def make_is_title_page_metadata_record(
+    *,
+    clean_text: Callable[[str], str],
+    preprint_marker_re: Pattern[str],
+    looks_like_front_matter_metadata: Callable[[str], bool],
+    author_note_re: Pattern[str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    looks_like_affiliation: Callable[[str], bool],
+    looks_like_contact_name: Callable[[str], bool],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_is_title_page_metadata_record(record: dict[str, Any]) -> bool:
+        return is_title_page_metadata_record(
+            record,
+            clean_text=clean_text,
+            preprint_marker_re=preprint_marker_re,
+            looks_like_front_matter_metadata=looks_like_front_matter_metadata,
+            author_note_re=author_note_re,
+            block_source_spans=block_source_spans,
+            looks_like_affiliation=looks_like_affiliation,
+            looks_like_contact_name=looks_like_contact_name,
+        )
+
+    return bound_is_title_page_metadata_record
+
+
+__all__ = [
+    "abstract_text_is_usable",
+    "is_title_page_metadata_record",
+    "looks_like_body_section_marker",
+    "looks_like_intro_marker",
+    "looks_like_page_one_front_matter_tail",
+    "make_abstract_text_is_usable",
+    "make_is_title_page_metadata_record",
+    "make_looks_like_body_section_marker",
+    "make_looks_like_intro_marker",
+    "make_looks_like_page_one_front_matter_tail",
+    "make_normalize_abstract_candidate_text",
+    "make_split_leading_front_matter_records",
+    "make_strip_trailing_abstract_boilerplate",
+    "normalize_abstract_candidate_text",
+    "split_leading_front_matter_records",
+    "strip_trailing_abstract_boilerplate",
+]

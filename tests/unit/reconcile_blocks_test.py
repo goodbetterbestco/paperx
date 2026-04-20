@@ -36,8 +36,10 @@ from pipeline.policies.abstract_quality import (
 )
 from pipeline.reconcile.external_math_binding_runtime import make_inject_external_math_records
 from pipeline.reconcile.external_math import rect_intersection_area
-from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
-from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers
+from pipeline.reconcile.front_matter_parsing import (
+    looks_like_affiliation,
+    make_bound_front_matter_parsing_helpers,
+)
 from pipeline.reconcile.heading_promotion_runtime import (
     decode_control_heading_label,
     make_normalize_decoded_heading_title,
