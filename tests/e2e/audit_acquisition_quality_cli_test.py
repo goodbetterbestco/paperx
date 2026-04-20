@@ -184,6 +184,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["latest_applied_trial_counts"]["trial-mathpix"], 1)
             self.assertEqual(report["metadata_application_counts"]["applied"], 1)
             self.assertEqual(report["reference_application_counts"]["applied"], 1)
+            self.assertEqual(report["remediation_priority_counts"], {})
             self.assertEqual(report["remediation_queue"], [])
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
@@ -297,6 +298,9 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(len(report["remediation_queue"]), 1)
             self.assertEqual(report["remediation_queue"][0]["paper_id"], "1990_synthetic_test_paper")
             self.assertEqual(report["remediation_queue"][0]["primary_route"], "born_digital_scholarly")
+            self.assertEqual(report["remediation_queue"][0]["remediation_priority_label"], "high")
+            self.assertEqual(report["remediation_queue"][0]["remediation_priority_score"], 5)
+            self.assertEqual(report["remediation_priority_counts"]["high"], 1)
             self.assertEqual(
                 report["remediation_queue"][0]["remediation_command"],
                 "python3 -m pipeline.cli.remediate_acquisition_follow_up 1990_synthetic_test_paper --label trial-mathpix",
@@ -304,6 +308,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("## Remediation Queue", markdown)
+            self.assertIn("priority `high` score `5`", markdown)
             self.assertIn("Command: `python3 -m pipeline.cli.remediate_acquisition_follow_up 1990_synthetic_test_paper --label trial-mathpix`", markdown)
 
 

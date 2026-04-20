@@ -11,6 +11,13 @@ from typing import Any
 from pipeline.acquisition.audit import audit_acquisition_quality as audit_acquisition_quality_impl
 from pipeline.corpus_layout import current_layout
 
+REMEDIATION_PRIORITY_RANK = {
+    "critical": 3,
+    "high": 2,
+    "medium": 1,
+    "low": 0,
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -25,6 +32,18 @@ def parse_args() -> argparse.Namespace:
         action="append",
         default=[],
         help="Restrict execution to one or more paper ids. Repeat the flag to select multiple papers.",
+    )
+    parser.add_argument(
+        "--priority",
+        action="append",
+        choices=tuple(REMEDIATION_PRIORITY_RANK),
+        default=[],
+        help="Restrict execution to one or more exact remediation priority levels. Repeat the flag to select multiple.",
+    )
+    parser.add_argument(
+        "--min-priority",
+        choices=tuple(REMEDIATION_PRIORITY_RANK),
+        help="Restrict execution to queue items at or above the given remediation priority level.",
     )
     parser.add_argument("--limit", type=int, help="Only process the first N selected queue items.")
     parser.add_argument("--dry-run", action="store_true", help="Print the selected queue commands without executing them.")
@@ -45,8 +64,21 @@ def _run_command(command: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def _select_queue_items(report: dict[str, Any], *, paper_ids: list[str], limit: int | None) -> list[dict[str, Any]]:
+def _priority_rank(label: str | None) -> int:
+    return int(REMEDIATION_PRIORITY_RANK.get(str(label or "").strip().lower(), -1))
+
+
+def _select_queue_items(
+    report: dict[str, Any],
+    *,
+    paper_ids: list[str],
+    priorities: list[str],
+    min_priority: str | None,
+    limit: int | None,
+) -> list[dict[str, Any]]:
     selected_ids = {paper_id.strip() for paper_id in paper_ids if paper_id and paper_id.strip()}
+    selected_priorities = {priority.strip() for priority in priorities if priority and priority.strip()}
+    min_priority_rank = _priority_rank(min_priority) if min_priority else None
     queue = [
         dict(item)
         for item in list(report.get("remediation_queue") or [])
@@ -54,6 +86,14 @@ def _select_queue_items(report: dict[str, Any], *, paper_ids: list[str], limit: 
     ]
     if selected_ids:
         queue = [item for item in queue if str(item.get("paper_id") or "") in selected_ids]
+    if selected_priorities:
+        queue = [item for item in queue if str(item.get("remediation_priority_label") or "") in selected_priorities]
+    if min_priority_rank is not None:
+        queue = [
+            item
+            for item in queue
+            if _priority_rank(str(item.get("remediation_priority_label") or None)) >= min_priority_rank
+        ]
     if limit is not None:
         queue = queue[: max(0, int(limit))]
     return queue
@@ -78,6 +118,8 @@ def run_remediation_queue_cli(
     queue = _select_queue_items(
         report,
         paper_ids=list(args.paper_id or []),
+        priorities=list(args.priority or []),
+        min_priority=args.min_priority,
         limit=args.limit,
     )
     payload: dict[str, Any] = {
@@ -85,6 +127,7 @@ def run_remediation_queue_cli(
         "source": source,
         "selected_count": len(queue),
         "selected_papers": [str(item.get("paper_id") or "") for item in queue],
+        "selected_priorities": sorted({str(item.get("remediation_priority_label") or "") for item in queue if str(item.get("remediation_priority_label") or "").strip()}),
         "results": [],
     }
 
@@ -92,6 +135,8 @@ def run_remediation_queue_cli(
         payload["results"] = [
             {
                 "paper_id": str(item.get("paper_id") or ""),
+                "priority": str(item.get("remediation_priority_label") or ""),
+                "priority_score": int(item.get("remediation_priority_score") or 0),
                 "command": str(item.get("remediation_command") or ""),
                 "status": "planned",
             }
@@ -109,6 +154,8 @@ def run_remediation_queue_cli(
         payload["results"].append(
             {
                 "paper_id": str(item.get("paper_id") or ""),
+                "priority": str(item.get("remediation_priority_label") or ""),
+                "priority_score": int(item.get("remediation_priority_score") or 0),
                 "command": command,
                 "status": "succeeded" if ok else "failed",
                 "returncode": returncode,

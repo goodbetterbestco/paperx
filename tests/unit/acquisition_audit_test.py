@@ -261,6 +261,7 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["ocr_summary"]["applied_count"], 1)
         self.assertEqual(report["ocr_summary"]["required_not_applied_count"], 1)
         self.assertEqual(report["ocr_summary"]["recommended_not_applied_count"], 0)
+        self.assertEqual(report["remediation_priority_counts"], {})
         self.assertEqual(report["remediation_queue"], [])
 
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
@@ -278,6 +279,9 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(papers["1990_required_ocr"]["active_promoted_trial_label"], "trial-mathpix")
         self.assertEqual(papers["1990_required_ocr"]["latest_applied_trial_label"], "trial-mathpix")
         self.assertIsNone(papers["1990_required_ocr"]["remediation_command"])
+        self.assertIsNone(papers["1990_required_ocr"]["remediation_priority_label"])
+        self.assertIsNone(papers["1990_required_ocr"]["remediation_priority_score"])
+        self.assertEqual(papers["1990_required_ocr"]["remediation_priority_reasons"], [])
         self.assertEqual(papers["1990_required_ocr"]["follow_up_actions"][0]["action"], "escalate_grobid_metadata")
         self.assertFalse(papers["1990_required_ocr"]["metadata_applied"])
         self.assertFalse(papers["1990_required_ocr"]["references_applied"])
@@ -376,10 +380,139 @@ class AcquisitionAuditTest(unittest.TestCase):
             report["remediation_queue"][0]["remediation_command"],
             papers[paper_id]["remediation_command"],
         )
+        self.assertEqual(report["remediation_priority_counts"]["high"], 1)
+        self.assertEqual(papers[paper_id]["remediation_priority_label"], "high")
+        self.assertEqual(papers[paper_id]["remediation_priority_score"], 5)
+        self.assertEqual(
+            papers[paper_id]["remediation_priority_reasons"],
+            ["fallback_recommendation", "follow_up_actions"],
+        )
+        self.assertEqual(report["remediation_queue"][0]["remediation_priority_label"], "high")
+        self.assertEqual(report["remediation_queue"][0]["remediation_priority_score"], 5)
         self.assertEqual(
             report["remediation_queue"][0]["follow_up_actions"],
             papers[paper_id]["follow_up_actions"],
         )
+
+    def test_audit_acquisition_quality_sorts_remediation_queue_by_priority_then_issue_pressure(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            layout = _corpus_layout(Path(temp_dir).resolve())
+
+            critical_id = "1994_critical_follow_up"
+            high_id = "1995_high_follow_up"
+
+            critical_sources = layout.canonical_sources_dir(critical_id)
+            high_sources = layout.canonical_sources_dir(high_id)
+            layout.canonical_path(critical_id).parent.mkdir(parents=True, exist_ok=True)
+            layout.canonical_path(critical_id).write_text("{}", encoding="utf-8")
+            layout.canonical_path(high_id).parent.mkdir(parents=True, exist_ok=True)
+            layout.canonical_path(high_id).write_text("{}", encoding="utf-8")
+
+            _write_json(
+                critical_sources / "acquisition-route.json",
+                {
+                    "primary_route": "scan_or_image_heavy",
+                    "ocr_prepass": {"policy": "required", "should_run": True, "tool": "ocrmypdf"},
+                },
+            )
+            _write_json(
+                critical_sources / "source-scorecard.json",
+                {
+                    "recommended_primary_layout_provider": "docling",
+                    "recommended_primary_math_provider": "mathpix",
+                    "layout_recommendation_basis": "accepted",
+                    "math_recommendation_basis": "accepted",
+                },
+            )
+            _write_json(
+                critical_sources / "ocr-prepass.json",
+                {
+                    "ocr_prepass_policy": "required",
+                    "ocr_prepass_tool": "ocrmypdf",
+                    "ocr_prepass_applied": False,
+                    "pdf_source_kind": "original",
+                },
+            )
+            _write_json(
+                critical_sources / "acquisition-execution.json",
+                {
+                    "executed": {
+                        "selected_layout_provider": "docling",
+                        "selected_math_provider": "mathpix",
+                    },
+                    "follow_up": {
+                        "needs_attention": True,
+                        "actions": [
+                            {
+                                "product": "layout",
+                                "action": "trial_layout_provider",
+                                "target_provider": "mathpix",
+                            }
+                        ],
+                    },
+                },
+            )
+
+            _write_json(
+                high_sources / "acquisition-route.json",
+                {
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+            )
+            _write_json(
+                high_sources / "source-scorecard.json",
+                {
+                    "recommended_primary_layout_provider": "docling",
+                    "recommended_primary_math_provider": "docling",
+                    "layout_recommendation_basis": "fallback_unaccepted",
+                    "math_recommendation_basis": "fallback_unaccepted",
+                },
+            )
+            _write_json(
+                high_sources / "ocr-prepass.json",
+                {
+                    "ocr_prepass_policy": "skip",
+                    "ocr_prepass_tool": None,
+                    "ocr_prepass_applied": False,
+                    "pdf_source_kind": "original",
+                },
+            )
+            _write_json(
+                high_sources / "acquisition-execution.json",
+                {
+                    "executed": {
+                        "selected_layout_provider": "docling",
+                        "selected_math_provider": "docling",
+                    },
+                    "follow_up": {
+                        "needs_attention": True,
+                        "actions": [
+                            {
+                                "product": "layout",
+                                "action": "trial_layout_provider",
+                                "target_provider": "mathpix",
+                            },
+                            {
+                                "product": "math",
+                                "action": "trial_math_provider",
+                                "target_provider": "mathpix",
+                            },
+                        ],
+                    },
+                },
+            )
+
+            report = audit_acquisition_quality(layout=layout)
+
+        self.assertEqual(
+            [item["paper_id"] for item in report["remediation_queue"]],
+            [critical_id, high_id],
+        )
+        self.assertEqual(report["remediation_queue"][0]["remediation_priority_label"], "critical")
+        self.assertEqual(report["remediation_queue"][1]["remediation_priority_label"], "high")
+        self.assertEqual(report["remediation_priority_counts"]["critical"], 1)
+        self.assertEqual(report["remediation_priority_counts"]["high"], 1)
 
 
 if __name__ == "__main__":

@@ -39,6 +39,13 @@ def _render_follow_up(items: list[dict[str, Any]]) -> str:
     return ", ".join(parts)
 
 
+def _render_priority_reasons(items: list[str]) -> str:
+    reasons = [str(item).strip() for item in items if str(item).strip()]
+    if not reasons:
+        return "none"
+    return ", ".join(f"`{reason}`" for reason in reasons)
+
+
 def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> str:
     ocr_summary = dict(report.get("ocr_summary") or {})
     actionable_papers = list(report.get("remediation_queue") or [])
@@ -80,6 +87,7 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         f"- Metadata suppressed reasons: {_render_top_counts(report.get('metadata_suppressed_reason_counts', {}))}",
         f"- Reference suppressed reasons: {_render_top_counts(report.get('reference_suppressed_reason_counts', {}))}",
         f"- Rejection reasons: {_render_top_counts(report.get('provider_rejection_reason_counts', {}))}",
+        f"- Remediation priorities: {_render_top_counts(report.get('remediation_priority_counts', {}))}",
         "",
         "## OCR Summary",
         "",
@@ -95,7 +103,8 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         for index, paper in enumerate(actionable_papers[:top_n], start=1):
             lines.extend(
                 [
-                    f"{index}. `{paper['paper_id']}` — issues `{paper['issue_count']}`",
+                    f"{index}. `{paper['paper_id']}` — priority `{paper.get('remediation_priority_label') or 'unknown'}` score `{paper.get('remediation_priority_score') or 0}` | issues `{paper['issue_count']}`",
+                    f"   Why: {_render_priority_reasons(list(paper.get('remediation_priority_reasons') or []))}",
                     f"   Follow-up: {_render_follow_up(list(paper.get('follow_up_actions') or []))}",
                     f"   Command: `{paper.get('remediation_command')}`",
                 ]
@@ -128,7 +137,7 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
                 f"   Executed: layout `{paper.get('executed_layout_provider') or 'unknown'}` | math `{paper.get('executed_math_provider') or 'unknown'}` | metadata `{paper.get('executed_metadata_provider') or 'unknown'}` | references `{paper.get('executed_reference_provider') or 'unknown'}` | execution report `{paper.get('has_execution_report')}`",
                 f"   Follow-up: needed `{paper.get('follow_up_needed')}` | {_render_follow_up(list(paper.get('follow_up_actions') or []))}",
                 f"   Trials: latest applied `{paper.get('latest_applied_trial_label') or 'none'}` at `{paper.get('latest_applied_trial_at') or 'none'}` | active promoted `{paper.get('active_promoted_trial_label') or 'none'}` at `{paper.get('active_promoted_trial_at') or 'none'}`",
-                f"   Remediation: `{paper.get('remediation_command') or 'none'}`",
+                f"   Remediation: `{paper.get('remediation_command') or 'none'}` | priority `{paper.get('remediation_priority_label') or 'none'}` score `{paper.get('remediation_priority_score') or 0}`",
                 f"   Applied: metadata `{paper.get('metadata_applied')}` | references `{paper.get('references_applied')}` | suppressed metadata `{paper.get('metadata_suppressed_reason') or 'none'}` | suppressed references `{paper.get('reference_suppressed_reason') or 'none'}`",
                 f"   OCR: policy `{paper.get('ocr_policy') or 'unknown'}`, should-run `{paper.get('ocr_should_run')}`, applied `{paper.get('ocr_applied')}`, source `{paper.get('pdf_source_kind') or 'unknown'}`",
                 f"   Rejections: {_render_rejections(list(paper.get('rejected_providers') or []))}",

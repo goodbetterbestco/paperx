@@ -73,6 +73,8 @@ Current preferred commands:
 - `python3 -m pipeline.cli.audit_acquisition_quality --format commands`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --dry-run`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --fail-fast --limit 5`
+- `python3 -m pipeline.cli.run_acquisition_remediation_queue --min-priority high --dry-run`
+- `python3 -m pipeline.cli.run_acquisition_remediation_queue --priority critical --fail-fast`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
@@ -130,7 +132,10 @@ That audit also writes a structured `remediation_queue` into
 `pipeline.cli.audit_acquisition_quality --format commands` to print only the
 queued remediation commands, or
 `pipeline.cli.run_acquisition_remediation_queue` to batch-run the selected
-follow-up remediations from either a live audit or a saved report.
+follow-up remediations from either a live audit or a saved report. Queue items
+now include explicit remediation priority labels and scores so operators can
+work only `critical` and `high` items first via `--priority` or
+`--min-priority`.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider

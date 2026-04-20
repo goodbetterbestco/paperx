@@ -13,6 +13,12 @@ SIDECARE_SCORECARD = "source-scorecard.json"
 SIDECARE_OCR = "ocr-prepass.json"
 SIDECAR_EXECUTION = "acquisition-execution.json"
 SIDECAR_METADATA_DECISION = "metadata-decision.json"
+REMEDIATION_PRIORITY_RANK = {
+    "critical": 3,
+    "high": 2,
+    "medium": 1,
+    "low": 0,
+}
 
 
 def _load_json_dict(path: Path) -> dict[str, Any] | None:
@@ -111,6 +117,65 @@ def _remediation_command(
     return f"python3 -m pipeline.cli.remediate_acquisition_follow_up {paper_id} --label {label}"
 
 
+def _remediation_priority_rank(label: str | None) -> int:
+    return int(REMEDIATION_PRIORITY_RANK.get(str(label or "").strip().lower(), -1))
+
+
+def _remediation_priority(
+    *,
+    primary_route: str | None,
+    missing_sidecars: list[str],
+    ocr_policy: str | None,
+    ocr_should_run: bool,
+    ocr_applied: bool,
+    follow_up_actions: list[dict[str, Any]],
+    layout_recommendation_basis: str | None,
+    math_recommendation_basis: str | None,
+    metadata_suppressed_reason: str | None,
+    reference_suppressed_reason: str | None,
+) -> dict[str, Any]:
+    score = 0
+    reasons: list[str] = []
+    if missing_sidecars:
+        score += 6
+        reasons.append("missing_sidecars")
+    if ocr_policy == "required" and ocr_should_run and not ocr_applied:
+        score += 8
+        reasons.append("required_ocr_not_applied")
+    elif ocr_policy == "recommended" and ocr_should_run and not ocr_applied:
+        score += 2
+        reasons.append("recommended_ocr_not_applied")
+    if layout_recommendation_basis == "fallback_unaccepted" or math_recommendation_basis == "fallback_unaccepted":
+        score += 3
+        reasons.append("fallback_recommendation")
+    if metadata_suppressed_reason:
+        score += 2
+        reasons.append("metadata_application_suppressed")
+    if reference_suppressed_reason:
+        score += 2
+        reasons.append("reference_application_suppressed")
+    if follow_up_actions:
+        score += min(len(follow_up_actions), 3)
+        reasons.append("follow_up_actions")
+    if primary_route in {"scan_or_image_heavy", "degraded_or_garbled"}:
+        score += 1
+        reasons.append("route_complexity")
+
+    if score >= 8:
+        label = "critical"
+    elif score >= 5:
+        label = "high"
+    elif score >= 3:
+        label = "medium"
+    else:
+        label = "low"
+    return {
+        "label": label,
+        "score": score,
+        "reasons": reasons,
+    }
+
+
 def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
@@ -138,6 +203,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     pdf_source_kind_counts: dict[str, int] = {}
     sidecar_missing_counts: dict[str, int] = {}
     provider_rejection_reason_counts: dict[str, int] = {}
+    remediation_priority_counts: dict[str, int] = {}
     papers: list[dict[str, Any]] = []
     ocr_should_run_count = 0
     ocr_applied_count = 0
@@ -281,6 +347,23 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         if active_promoted_trial_label:
             issue_flags.append("trial_promoted")
 
+        issue_count = len(missing_sidecars) + len([flag for flag in issue_flags if flag != "missing_sidecars"])
+        remediation_priority: dict[str, Any] | None = None
+        if remediation_command:
+            remediation_priority = _remediation_priority(
+                primary_route=primary_route,
+                missing_sidecars=missing_sidecars,
+                ocr_policy=ocr_policy,
+                ocr_should_run=ocr_should_run,
+                ocr_applied=ocr_applied,
+                follow_up_actions=follow_up_actions,
+                layout_recommendation_basis=layout_recommendation_basis,
+                math_recommendation_basis=math_recommendation_basis,
+                metadata_suppressed_reason=metadata_suppressed_reason,
+                reference_suppressed_reason=reference_suppressed_reason,
+            )
+            _increment(remediation_priority_counts, str(remediation_priority.get("label") or "").strip() or None)
+
         papers.append(
             {
                 "paper_id": paper_id,
@@ -307,6 +390,13 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "latest_applied_trial_label": latest_applied_trial_label,
                 "latest_applied_trial_at": latest_applied_trial_at,
                 "remediation_command": remediation_command,
+                "remediation_priority_label": (
+                    str(remediation_priority.get("label") or "").strip() or None if remediation_priority else None
+                ),
+                "remediation_priority_score": (
+                    int(remediation_priority.get("score") or 0) if remediation_priority else None
+                ),
+                "remediation_priority_reasons": list(remediation_priority.get("reasons") or []) if remediation_priority else [],
                 "metadata_applied": metadata_applied,
                 "references_applied": references_applied,
                 "metadata_suppressed_reason": metadata_suppressed_reason,
@@ -320,7 +410,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "rejected_providers": rejected_providers,
                 "missing_sidecars": missing_sidecars,
                 "issue_flags": issue_flags,
-                "issue_count": len(missing_sidecars) + len([flag for flag in issue_flags if flag != "missing_sidecars"]),
+                "issue_count": issue_count,
             }
         )
 
@@ -331,6 +421,9 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             "issue_count": int(paper["issue_count"]),
             "primary_route": paper["primary_route"],
             "follow_up_actions": list(paper["follow_up_actions"]),
+            "remediation_priority_label": paper["remediation_priority_label"],
+            "remediation_priority_score": paper["remediation_priority_score"],
+            "remediation_priority_reasons": list(paper["remediation_priority_reasons"]),
             "latest_applied_trial_label": paper["latest_applied_trial_label"],
             "latest_applied_trial_at": paper["latest_applied_trial_at"],
             "active_promoted_trial_label": paper["active_promoted_trial_label"],
@@ -340,6 +433,14 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         for paper in papers
         if str(paper.get("remediation_command") or "").strip()
     ]
+    remediation_queue.sort(
+        key=lambda item: (
+            -_remediation_priority_rank(str(item.get("remediation_priority_label") or None)),
+            -int(item.get("remediation_priority_score") or 0),
+            -int(item.get("issue_count") or 0),
+            str(item.get("paper_id") or ""),
+        )
+    )
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "paper_count": len(papers),
@@ -371,6 +472,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "pdf_source_kind_counts": pdf_source_kind_counts,
         "sidecar_missing_counts": sidecar_missing_counts,
         "provider_rejection_reason_counts": provider_rejection_reason_counts,
+        "remediation_priority_counts": remediation_priority_counts,
         "ocr_summary": {
             "should_run_count": ocr_should_run_count,
             "applied_count": ocr_applied_count,
