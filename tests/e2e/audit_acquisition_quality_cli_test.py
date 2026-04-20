@@ -44,8 +44,12 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                     {
                         "recommended_primary_layout_provider": "docling",
                         "recommended_primary_math_provider": "mathpix",
+                        "recommended_primary_metadata_provider": "grobid",
+                        "recommended_primary_reference_provider": "docling",
                         "layout_recommendation_basis": "accepted",
                         "math_recommendation_basis": "accepted",
+                        "metadata_recommendation_basis": "accepted",
+                        "reference_recommendation_basis": "accepted",
                         "providers": [
                             {
                                 "provider": "docling",
@@ -85,6 +89,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                         "executed": {
                             "selected_layout_provider": "docling",
                             "selected_math_provider": "mathpix",
+                            "metadata_provider": "grobid",
+                            "reference_provider": "docling",
                         }
                     },
                     indent=2,
@@ -126,11 +132,15 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["ocr_summary"]["applied_count"], 1)
             self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
             self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
+            self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 1)
+            self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("# Acquisition Quality Audit", markdown)
             self.assertIn("1990_synthetic_test_paper", markdown)
             self.assertIn("Executed: layout `docling`", markdown)
+            self.assertIn("metadata `grobid`", markdown)
+            self.assertIn("references `docling`", markdown)
             self.assertIn("recommended layout `docling` (accepted)", markdown)
 
 

@@ -63,8 +63,12 @@ class AcquisitionAuditTest(unittest.TestCase):
                 {
                     "recommended_primary_layout_provider": "docling",
                     "recommended_primary_math_provider": "mathpix",
+                    "recommended_primary_metadata_provider": "grobid",
+                    "recommended_primary_reference_provider": "docling",
                     "layout_recommendation_basis": "fallback_unaccepted",
                     "math_recommendation_basis": "accepted",
+                    "metadata_recommendation_basis": "accepted",
+                    "reference_recommendation_basis": "accepted",
                     "providers": [
                         {
                             "provider": "docling",
@@ -96,6 +100,8 @@ class AcquisitionAuditTest(unittest.TestCase):
                     "executed": {
                         "selected_layout_provider": "docling",
                         "selected_math_provider": "mathpix",
+                        "metadata_provider": "grobid",
+                        "reference_provider": "docling",
                     }
                 },
             )
@@ -112,8 +118,12 @@ class AcquisitionAuditTest(unittest.TestCase):
                 {
                     "recommended_primary_layout_provider": "mathpix",
                     "recommended_primary_math_provider": "mathpix",
+                    "recommended_primary_metadata_provider": "grobid",
+                    "recommended_primary_reference_provider": "grobid",
                     "layout_recommendation_basis": "accepted",
                     "math_recommendation_basis": "accepted",
+                    "metadata_recommendation_basis": "accepted",
+                    "reference_recommendation_basis": "accepted",
                     "providers": [
                         {
                             "provider": "mathpix",
@@ -139,6 +149,8 @@ class AcquisitionAuditTest(unittest.TestCase):
                     "executed": {
                         "selected_layout_provider": "mathpix",
                         "selected_math_provider": "mathpix",
+                        "metadata_provider": "grobid",
+                        "reference_provider": "grobid",
                     }
                 },
             )
@@ -152,11 +164,19 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["route_counts"]["degraded_or_garbled"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["docling"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["mathpix"], 1)
+        self.assertEqual(report["recommended_metadata_provider_counts"]["grobid"], 2)
+        self.assertEqual(report["recommended_reference_provider_counts"]["docling"], 1)
+        self.assertEqual(report["recommended_reference_provider_counts"]["grobid"], 1)
         self.assertEqual(report["layout_recommendation_basis_counts"]["fallback_unaccepted"], 1)
         self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
         self.assertEqual(report["math_recommendation_basis_counts"]["accepted"], 2)
+        self.assertEqual(report["metadata_recommendation_basis_counts"]["accepted"], 2)
+        self.assertEqual(report["reference_recommendation_basis_counts"]["accepted"], 2)
         self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
         self.assertEqual(report["executed_layout_provider_counts"]["mathpix"], 1)
+        self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 2)
+        self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
+        self.assertEqual(report["executed_reference_provider_counts"]["grobid"], 1)
         self.assertEqual(report["ocr_policy_counts"]["required"], 1)
         self.assertEqual(report["ocr_policy_counts"]["recommended"], 1)
         self.assertEqual(report["pdf_source_kind_counts"]["original"], 1)
@@ -175,6 +195,8 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertIn("fallback_recommendation", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
         self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
+        self.assertEqual(papers["1990_required_ocr"]["executed_metadata_provider"], "grobid")
+        self.assertEqual(papers["1990_required_ocr"]["executed_reference_provider"], "docling")
         self.assertEqual(papers["1990_required_ocr"]["layout_recommendation_basis"], "fallback_unaccepted")
         self.assertEqual(
             papers["1990_required_ocr"]["rejected_providers"][0]["rejection_reasons"],

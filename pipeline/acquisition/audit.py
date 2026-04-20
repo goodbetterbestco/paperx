@@ -64,10 +64,16 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
     recommended_math_provider_counts: dict[str, int] = {}
+    recommended_metadata_provider_counts: dict[str, int] = {}
+    recommended_reference_provider_counts: dict[str, int] = {}
     layout_recommendation_basis_counts: dict[str, int] = {}
     math_recommendation_basis_counts: dict[str, int] = {}
+    metadata_recommendation_basis_counts: dict[str, int] = {}
+    reference_recommendation_basis_counts: dict[str, int] = {}
     executed_layout_provider_counts: dict[str, int] = {}
     executed_math_provider_counts: dict[str, int] = {}
+    executed_metadata_provider_counts: dict[str, int] = {}
+    executed_reference_provider_counts: dict[str, int] = {}
     ocr_policy_counts: dict[str, int] = {}
     pdf_source_kind_counts: dict[str, int] = {}
     sidecar_missing_counts: dict[str, int] = {}
@@ -92,10 +98,16 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         primary_route = str((route or {}).get("primary_route") or "").strip() or None
         recommended_layout_provider = str((scorecard or {}).get("recommended_primary_layout_provider") or "").strip() or None
         recommended_math_provider = str((scorecard or {}).get("recommended_primary_math_provider") or "").strip() or None
+        recommended_metadata_provider = str((scorecard or {}).get("recommended_primary_metadata_provider") or "").strip() or None
+        recommended_reference_provider = str((scorecard or {}).get("recommended_primary_reference_provider") or "").strip() or None
         layout_recommendation_basis = str((scorecard or {}).get("layout_recommendation_basis") or "").strip() or None
         math_recommendation_basis = str((scorecard or {}).get("math_recommendation_basis") or "").strip() or None
+        metadata_recommendation_basis = str((scorecard or {}).get("metadata_recommendation_basis") or "").strip() or None
+        reference_recommendation_basis = str((scorecard or {}).get("reference_recommendation_basis") or "").strip() or None
         executed_layout_provider = str(executed.get("selected_layout_provider") or "").strip() or None
         executed_math_provider = str(executed.get("selected_math_provider") or "").strip() or None
+        executed_metadata_provider = str(executed.get("metadata_provider") or "").strip() or None
+        executed_reference_provider = str(executed.get("reference_provider") or "").strip() or None
         ocr_policy = str((ocr_report or {}).get("ocr_prepass_policy") or route_ocr.get("policy") or "").strip() or None
         ocr_tool = str((ocr_report or {}).get("ocr_prepass_tool") or route_ocr.get("tool") or "").strip() or None
         ocr_should_run = bool(route_ocr.get("should_run"))
@@ -119,10 +131,16 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         _increment(route_counts, primary_route)
         _increment(recommended_layout_provider_counts, recommended_layout_provider)
         _increment(recommended_math_provider_counts, recommended_math_provider)
+        _increment(recommended_metadata_provider_counts, recommended_metadata_provider)
+        _increment(recommended_reference_provider_counts, recommended_reference_provider)
         _increment(layout_recommendation_basis_counts, layout_recommendation_basis)
         _increment(math_recommendation_basis_counts, math_recommendation_basis)
+        _increment(metadata_recommendation_basis_counts, metadata_recommendation_basis)
+        _increment(reference_recommendation_basis_counts, reference_recommendation_basis)
         _increment(executed_layout_provider_counts, executed_layout_provider)
         _increment(executed_math_provider_counts, executed_math_provider)
+        _increment(executed_metadata_provider_counts, executed_metadata_provider)
+        _increment(executed_reference_provider_counts, executed_reference_provider)
         _increment(ocr_policy_counts, ocr_policy)
         _increment(pdf_source_kind_counts, pdf_source_kind)
         for item in rejected_providers:
@@ -162,10 +180,16 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "primary_route": primary_route,
                 "recommended_primary_layout_provider": recommended_layout_provider,
                 "recommended_primary_math_provider": recommended_math_provider,
+                "recommended_primary_metadata_provider": recommended_metadata_provider,
+                "recommended_primary_reference_provider": recommended_reference_provider,
                 "layout_recommendation_basis": layout_recommendation_basis,
                 "math_recommendation_basis": math_recommendation_basis,
+                "metadata_recommendation_basis": metadata_recommendation_basis,
+                "reference_recommendation_basis": reference_recommendation_basis,
                 "executed_layout_provider": executed_layout_provider,
                 "executed_math_provider": executed_math_provider,
+                "executed_metadata_provider": executed_metadata_provider,
+                "executed_reference_provider": executed_reference_provider,
                 "has_execution_report": execution_report is not None,
                 "ocr_policy": ocr_policy,
                 "ocr_should_run": ocr_should_run,
@@ -188,10 +212,16 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "route_counts": route_counts,
         "recommended_layout_provider_counts": recommended_layout_provider_counts,
         "recommended_math_provider_counts": recommended_math_provider_counts,
+        "recommended_metadata_provider_counts": recommended_metadata_provider_counts,
+        "recommended_reference_provider_counts": recommended_reference_provider_counts,
         "layout_recommendation_basis_counts": layout_recommendation_basis_counts,
         "math_recommendation_basis_counts": math_recommendation_basis_counts,
+        "metadata_recommendation_basis_counts": metadata_recommendation_basis_counts,
+        "reference_recommendation_basis_counts": reference_recommendation_basis_counts,
         "executed_layout_provider_counts": executed_layout_provider_counts,
         "executed_math_provider_counts": executed_math_provider_counts,
+        "executed_metadata_provider_counts": executed_metadata_provider_counts,
+        "executed_reference_provider_counts": executed_reference_provider_counts,
         "ocr_policy_counts": ocr_policy_counts,
         "pdf_source_kind_counts": pdf_source_kind_counts,
         "sidecar_missing_counts": sidecar_missing_counts,
