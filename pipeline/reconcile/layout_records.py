@@ -287,3 +287,149 @@ def merge_layout_and_figure_records(
         records.append(synthetic_caption_record(figure, page_blocks.get(int(figure["page"]), [])))
 
     return records, layout_by_id
+
+
+def make_layout_record(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[LayoutBlock], dict[str, Any]]:
+    def build_layout_record(block: LayoutBlock) -> dict[str, Any]:
+        return layout_record(
+            block,
+            clean_text=clean_text,
+        )
+
+    return build_layout_record
+
+
+def make_page_one_front_matter_records(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[LayoutBlock]]],
+    layout_record: Callable[[LayoutBlock], dict[str, Any]],
+) -> Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]]:
+    def build_page_one_front_matter_records(
+        records: list[dict[str, Any]],
+        mathpix_layout: dict[str, Any] | None,
+    ) -> list[dict[str, Any]]:
+        return page_one_front_matter_records(
+            records,
+            mathpix_layout,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+            mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+            layout_record=layout_record,
+        )
+
+    return build_page_one_front_matter_records
+
+
+def make_record_bbox(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any]], dict[str, Any]]:
+    def build_record_bbox(record: dict[str, Any]) -> dict[str, Any]:
+        return record_bbox(
+            record,
+            block_source_spans=block_source_spans,
+        )
+
+    return build_record_bbox
+
+
+def make_strip_caption_label_prefix(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[str, dict[str, Any] | None], str]:
+    def build_strip_caption_label_prefix(text: str, figure: dict[str, Any] | None = None) -> str:
+        return strip_caption_label_prefix(
+            text,
+            clean_text=clean_text,
+            figure=figure,
+        )
+
+    return build_strip_caption_label_prefix
+
+
+def make_append_figure_caption_fragment(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    normalize_figure_caption_text: Callable[[str], str],
+    strip_caption_label_prefix: Callable[[str, dict[str, Any] | None], str],
+) -> Callable[[dict[str, Any], str], None]:
+    def build_append_figure_caption_fragment(figure: dict[str, Any], fragment: str) -> None:
+        append_figure_caption_fragment(
+            figure,
+            fragment,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+            normalize_figure_caption_text=normalize_figure_caption_text,
+            strip_caption_label_prefix=strip_caption_label_prefix,
+        )
+
+    return build_append_figure_caption_fragment
+
+
+def make_match_figure_for_caption_record(
+    *,
+    record_bbox: Callable[[dict[str, Any]], dict[str, Any]],
+    rect_x_overlap_ratio: Callable[[dict[str, Any], dict[str, Any]], float],
+    figure_label_token: Callable[[dict[str, Any]], str | None],
+) -> Callable[[dict[str, Any], list[dict[str, Any]]], dict[str, Any] | None]:
+    def build_match_figure_for_caption_record(
+        record: dict[str, Any],
+        figures_on_page: list[dict[str, Any]],
+    ) -> dict[str, Any] | None:
+        return match_figure_for_caption_record(
+            record,
+            figures_on_page,
+            record_bbox=record_bbox,
+            rect_x_overlap_ratio=rect_x_overlap_ratio,
+            figure_label_token=figure_label_token,
+        )
+
+    return build_match_figure_for_caption_record
+
+
+def make_absorb_figure_caption_continuations(
+    *,
+    match_figure_for_caption_record: Callable[[dict[str, Any], list[dict[str, Any]]], dict[str, Any] | None],
+    append_figure_caption_fragment: Callable[[dict[str, Any], str], None],
+) -> Callable[[list[dict[str, Any]], list[dict[str, Any]]], list[dict[str, Any]]]:
+    def build_absorb_figure_caption_continuations(
+        records: list[dict[str, Any]],
+        figures: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        return absorb_figure_caption_continuations(
+            records,
+            figures,
+            match_figure_for_caption_record=match_figure_for_caption_record,
+            append_figure_caption_fragment=append_figure_caption_fragment,
+        )
+
+    return build_absorb_figure_caption_continuations
+
+
+__all__ = [
+    "absorb_figure_caption_continuations",
+    "append_figure_caption_fragment",
+    "figure_label_token",
+    "layout_record",
+    "make_absorb_figure_caption_continuations",
+    "make_append_figure_caption_fragment",
+    "make_layout_record",
+    "make_match_figure_for_caption_record",
+    "make_page_one_front_matter_records",
+    "make_record_bbox",
+    "make_strip_caption_label_prefix",
+    "match_figure_for_caption_record",
+    "merge_layout_and_figure_records",
+    "normalize_figure_caption_text",
+    "page_one_front_matter_records",
+    "record_bbox",
+    "rect_x_overlap_ratio",
+    "strip_caption_label_prefix",
+    "synthetic_caption_record",
+]

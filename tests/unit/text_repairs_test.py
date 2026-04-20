@@ -19,7 +19,7 @@ from pipeline.reconcile.runtime_constants import (
     TRUNCATED_PROSE_LEAD_STOPWORDS,
 )
 from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints, repair_record_text_with_pdftotext
-from pipeline.reconcile.layout_records_runtime import rect_x_overlap_ratio
+from pipeline.reconcile.layout_records import rect_x_overlap_ratio
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
 from pipeline.reconcile.screening_runtime import (
     make_is_short_ocr_fragment,

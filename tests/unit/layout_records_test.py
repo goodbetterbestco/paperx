@@ -6,8 +6,9 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.reconcile.layout_records import merge_layout_and_figure_records, page_one_front_matter_records
-from pipeline.reconcile.layout_records_runtime import (
+from pipeline.reconcile.layout_records import (
+    merge_layout_and_figure_records,
+    page_one_front_matter_records,
     figure_label_token,
     make_absorb_figure_caption_continuations,
     make_append_figure_caption_fragment,

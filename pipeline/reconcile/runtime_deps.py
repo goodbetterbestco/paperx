@@ -24,17 +24,17 @@ from pipeline.reconcile.heading_promotion_runtime import (
     make_normalize_decoded_heading_title as reconcile_make_normalize_decoded_heading_title_runtime,
     make_split_embedded_heading_paragraph as reconcile_make_split_embedded_heading_paragraph_runtime,
 )
-from pipeline.reconcile.layout_records_runtime import (
-    figure_label_token as reconcile_figure_label_token_runtime,
-    make_absorb_figure_caption_continuations as reconcile_make_absorb_figure_caption_continuations_runtime,
-    make_append_figure_caption_fragment as reconcile_make_append_figure_caption_fragment_runtime,
-    make_layout_record as reconcile_make_layout_record_runtime,
-    make_match_figure_for_caption_record as reconcile_make_match_figure_for_caption_record_runtime,
-    make_page_one_front_matter_records as reconcile_make_page_one_front_matter_records_runtime,
-    make_record_bbox as reconcile_make_record_bbox_runtime,
-    make_strip_caption_label_prefix as reconcile_make_strip_caption_label_prefix_runtime,
-    rect_x_overlap_ratio as reconcile_rect_x_overlap_ratio_runtime,
-    synthetic_caption_record as reconcile_synthetic_caption_record_runtime,
+from pipeline.reconcile.layout_records import (
+    figure_label_token as reconcile_figure_label_token,
+    make_absorb_figure_caption_continuations as reconcile_make_absorb_figure_caption_continuations,
+    make_append_figure_caption_fragment as reconcile_make_append_figure_caption_fragment,
+    make_layout_record as reconcile_make_layout_record,
+    make_match_figure_for_caption_record as reconcile_make_match_figure_for_caption_record,
+    make_page_one_front_matter_records as reconcile_make_page_one_front_matter_records,
+    make_record_bbox as reconcile_make_record_bbox,
+    make_strip_caption_label_prefix as reconcile_make_strip_caption_label_prefix,
+    rect_x_overlap_ratio as reconcile_rect_x_overlap_ratio,
+    synthetic_caption_record as reconcile_synthetic_caption_record,
 )
 from pipeline.reconcile.math_entry_binding_runtime import (
     make_group_entry_items_are_graphic_only as reconcile_make_group_entry_items_are_graphic_only_binding_runtime,
@@ -320,7 +320,7 @@ def build_reconcile_reference_helpers(
         reference_author_re=reference_author_re,
         short_word_re=short_word_re,
         normalize_title_key=normalize_title_key,
-        layout_record=reconcile_make_layout_record_runtime(
+        layout_record=reconcile_make_layout_record(
             clean_text=base_helpers.clean_text,
         ),
     )
@@ -1002,31 +1002,31 @@ def build_reconcile_binding_layout_heading_deps(
     )
     return make_reconcile_binding_layout_heading_deps(
         merge_layout_and_figure_records_impl=merge_layout_and_figure_records_impl,
-        layout_record=reconcile_make_layout_record_runtime(
+        layout_record=reconcile_make_layout_record(
             clean_text=clean_text,
         ),
-        absorb_figure_caption_continuations=reconcile_make_absorb_figure_caption_continuations_runtime(
-            match_figure_for_caption_record=reconcile_make_match_figure_for_caption_record_runtime(
-                record_bbox=reconcile_make_record_bbox_runtime(
+        absorb_figure_caption_continuations=reconcile_make_absorb_figure_caption_continuations(
+            match_figure_for_caption_record=reconcile_make_match_figure_for_caption_record(
+                record_bbox=reconcile_make_record_bbox(
                     block_source_spans=block_source_spans,
                 ),
-                rect_x_overlap_ratio=reconcile_rect_x_overlap_ratio_runtime,
-                figure_label_token=reconcile_figure_label_token_runtime,
+                rect_x_overlap_ratio=reconcile_rect_x_overlap_ratio,
+                figure_label_token=reconcile_figure_label_token,
             ),
-            append_figure_caption_fragment=reconcile_make_append_figure_caption_fragment_runtime(
+            append_figure_caption_fragment=reconcile_make_append_figure_caption_fragment(
                 clean_text=clean_text,
                 normalize_title_key=normalize_title_key,
                 normalize_figure_caption_text=reconcile_make_normalize_figure_caption_text_binding_runtime(
                     clean_text=clean_text,
                     normalize_prose_text=normalize_prose_text,
                 ),
-                strip_caption_label_prefix=reconcile_make_strip_caption_label_prefix_runtime(
+                strip_caption_label_prefix=reconcile_make_strip_caption_label_prefix(
                     clean_text=clean_text,
                 ),
             ),
         ),
-        figure_label_token=reconcile_figure_label_token_runtime,
-        synthetic_caption_record=reconcile_synthetic_caption_record_runtime,
+        figure_label_token=reconcile_figure_label_token,
+        synthetic_caption_record=reconcile_synthetic_caption_record,
         inject_external_math_records=reconcile_make_inject_external_math_records_binding_runtime(
             clean_text=clean_text,
             display_math_prose_cue_re=display_math_prose_cue_re,
@@ -1170,11 +1170,11 @@ def build_reconcile_assembly_record_prep_deps(
             math_signal_count=math_signal_count,
             block_source_spans=block_source_spans,
         ),
-        "page_one_front_matter_records": reconcile_make_page_one_front_matter_records_runtime(
+        "page_one_front_matter_records": reconcile_make_page_one_front_matter_records(
             clean_text=clean_text,
             normalize_title_key=normalize_title_key,
             mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
-            layout_record=reconcile_make_layout_record_runtime(
+            layout_record=reconcile_make_layout_record(
                 clean_text=clean_text,
             ),
         ),

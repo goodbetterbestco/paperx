@@ -46,8 +46,8 @@ from pipeline.reconcile.heading_promotion_runtime import (
     make_normalize_decoded_heading_title,
     make_split_embedded_heading_paragraph,
 )
-from pipeline.reconcile.layout_records import merge_layout_and_figure_records as _layout_merge_layout_and_figure_records
-from pipeline.reconcile.layout_records_runtime import (
+from pipeline.reconcile.layout_records import (
+    merge_layout_and_figure_records as _layout_merge_layout_and_figure_records,
     figure_label_token,
     make_absorb_figure_caption_continuations,
     make_append_figure_caption_fragment,

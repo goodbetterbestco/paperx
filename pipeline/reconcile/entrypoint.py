@@ -87,8 +87,8 @@ from pipeline.reconcile.heading_promotion import promote_heading_like_records as
 from pipeline.reconcile.layout_records import (
     merge_layout_and_figure_records as reconcile_merge_layout_and_figure_records,
     normalize_figure_caption_text as reconcile_normalize_figure_caption_text,
+    rect_x_overlap_ratio as reconcile_rect_x_overlap_ratio,
 )
-from pipeline.reconcile.layout_records_runtime import rect_x_overlap_ratio as reconcile_rect_x_overlap_ratio_runtime
 from pipeline.reconcile.math_entry_policies import (
     math_entry_looks_like_prose as reconcile_math_entry_looks_like_prose,
     paragraph_block_from_graphic_math_entry as reconcile_paragraph_block_from_graphic_math_entry,
@@ -194,7 +194,7 @@ _helper_bundles = reconcile_build_reconcile_root_helper_bundles_runtime(
     inline_math_re=INLINE_MATH_RE,
     bbox_to_line_window=bbox_to_line_window,
     slice_page_text=slice_page_text,
-    rect_x_overlap_ratio=reconcile_rect_x_overlap_ratio_runtime,
+    rect_x_overlap_ratio=reconcile_rect_x_overlap_ratio,
     display_math_prose_cue_re=DISPLAY_MATH_PROSE_CUE_RE,
     display_math_start_re=DISPLAY_MATH_START_RE,
     hint_token_re=MATHPIX_HINT_TOKEN_RE,
