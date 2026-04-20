@@ -13,6 +13,7 @@ def _render_status_counts(counts: dict[str, int]) -> str:
 def render_acquisition_remediation_status_markdown(report: dict[str, Any]) -> str:
     latest = dict(report.get("latest_run") or {})
     source = dict(latest.get("source") or {})
+    plan = dict(latest.get("plan") or {})
     resume = latest.get("resume")
     lines = [
         "# Acquisition Remediation Status",
@@ -22,6 +23,8 @@ def render_acquisition_remediation_status_markdown(report: dict[str, Any]) -> st
         f"- Generated at: `{latest.get('generated_at') or 'none'}`",
         f"- Mode: `{latest.get('mode') or 'unknown'}`",
         f"- Source: `{source.get('kind') or 'unknown'}`",
+        f"- Plan label: `{plan.get('label') or 'none'}`",
+        f"- Plan wave: `{plan.get('wave_id') or 'none'}`",
         f"- Requested papers: `{latest.get('requested_count', 0)}`",
         f"- Selected papers: `{latest.get('selected_count', 0)}`",
         f"- Skipped papers: `{latest.get('skipped_count', 0)}`",

@@ -52,6 +52,8 @@ def parse_args() -> argparse.Namespace:
         default=str(OUTPUT_DIR),
         help="Directory for current and historical remediation run artifacts.",
     )
+    parser.add_argument("--plan-label", help="Optional originating remediation plan label for reconciliation.")
+    parser.add_argument("--plan-wave-id", help="Optional originating remediation wave id for reconciliation.")
     parser.add_argument(
         "--paper-id",
         action="append",
@@ -217,6 +219,10 @@ def run_remediation_queue_cli(
         "snapshot_label": snapshot_label,
         "mode": "dry_run" if args.dry_run else "execute",
         "source": source,
+        "plan": {
+            "label": str(getattr(args, "plan_label", None) or "").strip() or None,
+            "wave_id": str(getattr(args, "plan_wave_id", None) or "").strip() or None,
+        },
         "resume": resume_info,
         "requested_count": len(queue) + len(skipped_papers),
         "selected_count": len(queue),

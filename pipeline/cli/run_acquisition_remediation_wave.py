@@ -57,10 +57,16 @@ def _build_wave_command(wave: dict[str, Any], *, queue_output_dir: str | Path, l
     tokens = shlex.split(str(wave.get("execution_command") or ""))
     if not tokens:
         return ""
+    plan_label = str(wave.get("plan_label") or "").strip()
+    wave_id = str(wave.get("wave_id") or "").strip()
     if "--label" not in tokens:
         tokens.extend(["--label", str(label)])
     if "--output-dir" not in tokens:
         tokens.extend(["--output-dir", str(queue_output_dir)])
+    if plan_label and "--plan-label" not in tokens:
+        tokens.extend(["--plan-label", plan_label])
+    if wave_id and "--plan-wave-id" not in tokens:
+        tokens.extend(["--plan-wave-id", wave_id])
     return " ".join(shlex.quote(token) for token in tokens)
 
 
@@ -98,6 +104,7 @@ def run_remediation_wave_cli(
         return 3
 
     label = str(getattr(args, "label", None) or wave_id)
+    wave = {**wave, "plan_label": str(plan.get("snapshot_label") or "").strip() or None}
     command = _build_wave_command(
         wave,
         queue_output_dir=Path(getattr(args, "queue_output_dir", DEFAULT_REMEDIATION_OUTPUT_DIR)),

@@ -159,7 +159,12 @@ and ready-to-run batch commands that target the existing remediation queue CLI.
 Planned waves are now also persisted under `tmp/acquisition_remediation_plans/`
 with current and history snapshots, and `pipeline.cli.run_acquisition_remediation_wave`
 can execute a chosen saved `wave_id` directly without copying the emitted queue
-command by hand.
+command by hand. Wave executions now also stamp the originating plan label and
+wave id into the remediation run artifacts, so
+`pipeline.cli.show_acquisition_remediation_plan_status`,
+`pipeline.cli.list_acquisition_remediation_plan_history`, and
+`pipeline.cli.show_acquisition_remediation_plan_dashboard` can reconcile saved
+plans against actual queue executions.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider

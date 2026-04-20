@@ -19,6 +19,9 @@ def render_acquisition_remediation_history_markdown(report: dict[str, Any]) -> s
         lines.append(f"- Mode: `{run.get('mode') or 'unknown'}`")
         lines.append(f"- Source: `{run.get('source_kind') or 'unknown'}`")
         lines.append(
+            f"- Plan provenance: label `{run.get('plan_label') or 'none'}` | wave `{run.get('plan_wave_id') or 'none'}`"
+        )
+        lines.append(
             f"- Counts: requested `{run.get('requested_count', 0)}`, selected `{run.get('selected_count', 0)}`, "
             f"skipped `{run.get('skipped_count', 0)}`, succeeded `{run.get('succeeded_count', 0)}`, "
             f"failed `{run.get('failed_count', 0)}`"

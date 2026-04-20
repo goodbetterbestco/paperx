@@ -25,6 +25,7 @@ class AcquisitionRemediationStatusTest(unittest.TestCase):
                 "generated_at": "2026-04-19T00:00:00Z",
                 "mode": "execute",
                 "source": {"kind": "live_audit"},
+                "plan": {"label": "fixture-plan", "wave_id": "wave-2"},
                 "resume": {"requested": "latest", "path": "/tmp/remediation/history/latest.json"},
                 "requested_count": 3,
                 "selected_count": 2,
@@ -54,6 +55,7 @@ class AcquisitionRemediationStatusTest(unittest.TestCase):
         )
 
         self.assertEqual(report["latest_run"]["label"], "queue-run")
+        self.assertEqual(report["latest_run"]["plan"]["label"], "fixture-plan")
         self.assertEqual(report["latest_run"]["status_counts"]["failed"], 1)
         self.assertEqual(report["failures"][0]["paper_id"], "paper-c")
         self.assertEqual(report["skipped_papers"][0]["paper_id"], "paper-a")
@@ -69,6 +71,7 @@ class AcquisitionRemediationStatusTest(unittest.TestCase):
                     "generated_at": "2026-04-19T00:00:00Z",
                     "mode": "execute",
                     "source": {"kind": "live_audit"},
+                    "plan": {"label": "fixture-plan", "wave_id": "wave-2"},
                     "resume": {"requested": "latest", "path": "/tmp/remediation/history/latest.json"},
                     "requested_count": 3,
                     "selected_count": 2,
@@ -93,6 +96,7 @@ class AcquisitionRemediationStatusTest(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Remediation Status", printed[0])
+        self.assertIn("fixture-plan", printed[0])
         self.assertIn("queue-run", printed[0])
         self.assertIn("paper-c", printed[0])
         self.assertIn("paper-a", printed[0])

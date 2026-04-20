@@ -197,6 +197,8 @@ class AcquisitionRemediationPlanTest(unittest.TestCase):
         self.assertEqual(payload["queue_label"], "recovery-critical-mathpix-1")
         self.assertIn("--output-dir /tmp/paperx-remediation", payload["command"])
         self.assertIn("--label recovery-critical-mathpix-1", payload["command"])
+        self.assertIn("--plan-label fixture-plan", payload["command"])
+        self.assertIn("--plan-wave-id recovery-critical-mathpix-1", payload["command"])
 
     def test_run_remediation_wave_cli_executes_saved_plan_wave(self) -> None:
         printed: list[str] = []
@@ -234,6 +236,8 @@ class AcquisitionRemediationPlanTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertEqual(len(commands_seen), 1)
         self.assertIn("--label wave-run", commands_seen[0])
+        self.assertIn("--plan-label fixture-plan", commands_seen[0])
+        self.assertIn("--plan-wave-id remediation-high-grobid-1", commands_seen[0])
         payload = json.loads(printed[0])
         self.assertEqual(payload["status"], "succeeded")
         self.assertEqual(payload["plan_path"], "/tmp/paperx-remediation-plans/history/latest.json")

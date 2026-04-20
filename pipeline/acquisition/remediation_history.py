@@ -43,6 +43,8 @@ def list_remediation_history(
                 "generated_at": report.get("generated_at"),
                 "mode": report.get("mode"),
                 "source_kind": str((report.get("source") or {}).get("kind") or ""),
+                "plan_label": str((report.get("plan") or {}).get("label") or ""),
+                "plan_wave_id": str((report.get("plan") or {}).get("wave_id") or ""),
                 "requested_count": current_counts["requested_count"],
                 "selected_count": current_counts["selected_count"],
                 "skipped_count": current_counts["skipped_count"],

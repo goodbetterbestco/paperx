@@ -33,6 +33,7 @@ class AcquisitionRemediationHistoryTest(unittest.TestCase):
                     "generated_at": "2026-04-19T00:00:00Z",
                     "mode": "execute",
                     "source": {"kind": "live_audit"},
+                    "plan": {"label": "fixture-plan", "wave_id": "wave-1"},
                     "requested_count": 2,
                     "selected_count": 2,
                     "skipped_count": 0,
@@ -47,6 +48,7 @@ class AcquisitionRemediationHistoryTest(unittest.TestCase):
                     "generated_at": "2026-04-19T01:00:00Z",
                     "mode": "execute",
                     "source": {"kind": "report"},
+                    "plan": {"label": "fixture-plan", "wave_id": "wave-2"},
                     "requested_count": 3,
                     "selected_count": 2,
                     "skipped_count": 1,
@@ -60,6 +62,8 @@ class AcquisitionRemediationHistoryTest(unittest.TestCase):
         self.assertEqual(report["run_count"], 2)
         self.assertEqual(report["runs"][0]["label"], "baseline")
         self.assertEqual(report["runs"][1]["label"], "candidate")
+        self.assertEqual(report["runs"][1]["plan_label"], "fixture-plan")
+        self.assertEqual(report["runs"][1]["plan_wave_id"], "wave-2")
         self.assertEqual(report["runs"][1]["requested_delta_vs_previous"], 1)
         self.assertEqual(report["runs"][1]["failed_delta_vs_previous"], -1)
         self.assertEqual(report["runs"][1]["skipped_delta_vs_previous"], 1)
@@ -78,6 +82,8 @@ class AcquisitionRemediationHistoryTest(unittest.TestCase):
                         "generated_at": "2026-04-19T01:00:00Z",
                         "mode": "execute",
                         "source_kind": "live_audit",
+                        "plan_label": "fixture-plan",
+                        "plan_wave_id": "wave-2",
                         "requested_count": 3,
                         "selected_count": 2,
                         "skipped_count": 1,
@@ -98,6 +104,7 @@ class AcquisitionRemediationHistoryTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Remediation History", printed[0])
         self.assertIn("candidate", printed[0])
+        self.assertIn("fixture-plan", printed[0])
 
 
 if __name__ == "__main__":

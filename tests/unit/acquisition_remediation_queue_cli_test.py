@@ -26,6 +26,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                 resume_from=None,
                 label="fixture-run",
                 output_dir="/tmp/paperx-remediation",
+                plan_label="fixture-plan",
+                plan_wave_id="wave-1",
                 paper_id=["paper-b"],
                 priority=[],
                 min_priority=None,
@@ -62,6 +64,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
         self.assertEqual(payload["skipped_count"], 0)
         self.assertEqual(payload["selected_papers"], ["paper-b"])
         self.assertEqual(payload["selected_priorities"], ["high"])
+        self.assertEqual(payload["plan"]["label"], "fixture-plan")
+        self.assertEqual(payload["plan"]["wave_id"], "wave-1")
         self.assertEqual(payload["results"][0]["status"], "planned")
         self.assertEqual(payload["results"][0]["priority"], "high")
         self.assertEqual(payload["status_counts"]["planned"], 1)
@@ -83,6 +87,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                 resume_from=None,
                 label="fixture-run",
                 output_dir="/tmp/paperx-remediation",
+                plan_label=None,
+                plan_wave_id=None,
                 paper_id=[],
                 priority=[],
                 min_priority=None,
@@ -140,6 +146,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                 resume_from=None,
                 label="fixture-run",
                 output_dir="/tmp/paperx-remediation",
+                plan_label=None,
+                plan_wave_id=None,
                 paper_id=[],
                 priority=[],
                 min_priority=None,
@@ -179,6 +187,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                 resume_from=None,
                 label="fixture-run",
                 output_dir="/tmp/paperx-remediation",
+                plan_label=None,
+                plan_wave_id=None,
                 paper_id=[],
                 priority=[],
                 min_priority="high",
@@ -227,6 +237,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                     resume_from=None,
                     label="queue-run",
                     output_dir=str(output_dir),
+                    plan_label="fixture-plan",
+                    plan_wave_id="wave-1",
                     paper_id=[],
                     priority=[],
                     min_priority=None,
@@ -252,6 +264,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
             self.assertTrue((output_dir / "summary.json").exists())
             self.assertTrue((output_dir / "history" / "queue-run.json").exists())
             payload = json.loads((output_dir / "summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(payload["plan"]["label"], "fixture-plan")
+            self.assertEqual(payload["plan"]["wave_id"], "wave-1")
             self.assertEqual(payload["report_paths"]["json"], str((output_dir / "summary.json")))
             self.assertEqual(payload["report_paths"]["snapshot_json"], str((output_dir / "history" / "queue-run.json")))
 
@@ -265,6 +279,8 @@ class AcquisitionRemediationQueueCliTest(unittest.TestCase):
                 resume_from="latest",
                 label="resume-run",
                 output_dir="/tmp/paperx-remediation",
+                plan_label=None,
+                plan_wave_id=None,
                 paper_id=[],
                 priority=[],
                 min_priority=None,

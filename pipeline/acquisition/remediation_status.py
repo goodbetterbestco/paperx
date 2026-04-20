@@ -35,6 +35,7 @@ def summarize_latest_remediation_status(
             "generated_at": summary.get("generated_at"),
             "mode": summary.get("mode"),
             "source": summary.get("source") or {},
+            "plan": summary.get("plan") or {},
             "resume": summary.get("resume"),
             "selected_count": int(summary.get("selected_count") or 0),
             "requested_count": int(summary.get("requested_count") or 0),

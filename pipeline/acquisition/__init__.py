@@ -33,6 +33,19 @@ from pipeline.acquisition.remediation_artifacts import (
     load_current_remediation_summary,
     write_remediation_artifact_bundle,
 )
+from pipeline.acquisition.remediation_plan_artifacts import (
+    build_remediation_plan_artifact_paths,
+    current_remediation_plan_output_dir,
+    load_current_remediation_plan_summary,
+    write_remediation_plan_artifact_bundle,
+)
+from pipeline.acquisition.remediation_plan_dashboard import summarize_remediation_plan_dashboard
+from pipeline.acquisition.remediation_plan_history import list_remediation_plan_history
+from pipeline.acquisition.remediation_plan_reports import (
+    list_remediation_plan_history_reports,
+    resolve_remediation_plan_report_path,
+)
+from pipeline.acquisition.remediation_plan_status import summarize_remediation_plan_status
 from pipeline.acquisition.remediation_dashboard import summarize_remediation_dashboard
 from pipeline.acquisition.remediation_history import list_remediation_history
 from pipeline.acquisition.remediation_plan import plan_remediation_waves
@@ -69,11 +82,13 @@ __all__ = [
     "benchmark_report_label",
     "build_benchmark_artifact_paths",
     "build_remediation_artifact_paths",
+    "build_remediation_plan_artifact_paths",
     "build_acquisition_route_report",
     "build_source_scorecard",
     "compare_benchmark_reports",
     "current_benchmark_output_dir",
     "current_remediation_output_dir",
+    "current_remediation_plan_output_dir",
     "decide_ocr_prepass_policy",
     "family_provider_score_maps",
     "inspect_pdf_signals",
@@ -81,17 +96,21 @@ __all__ = [
     "load_current_benchmark_dashboard",
     "load_current_benchmark_status",
     "load_current_benchmark_summary",
+    "load_current_remediation_plan_summary",
     "load_current_remediation_summary",
     "load_benchmark_report",
     "load_grobid_trial_manifest",
     "load_metadata_reference_observation",
     "list_benchmark_history",
     "list_remediation_history",
+    "list_remediation_plan_history",
     "plan_remediation_waves",
     "list_history_reports",
+    "list_remediation_plan_history_reports",
     "provider_score_map",
     "route_pdf_signals",
     "resolve_benchmark_report_path",
+    "resolve_remediation_plan_report_path",
     "run_acquisition_benchmark",
     "run_grobid_trial",
     "summarize_benchmark_dashboard",
@@ -99,6 +118,8 @@ __all__ = [
     "summarize_benchmark_trend",
     "summarize_latest_remediation_status",
     "summarize_remediation_dashboard",
+    "summarize_remediation_plan_dashboard",
+    "summarize_remediation_plan_status",
     "summarize_remediation_trend",
     "reported_layout_provider",
     "reported_math_provider",
@@ -106,5 +127,6 @@ __all__ = [
     "score_metadata_provider",
     "score_layout_provider",
     "write_benchmark_artifact_bundle",
+    "write_remediation_plan_artifact_bundle",
     "write_remediation_artifact_bundle",
 ]
