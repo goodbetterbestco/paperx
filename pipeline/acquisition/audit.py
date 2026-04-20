@@ -12,6 +12,7 @@ SIDECARE_ROUTE = "acquisition-route.json"
 SIDECARE_SCORECARD = "source-scorecard.json"
 SIDECARE_OCR = "ocr-prepass.json"
 SIDECAR_EXECUTION = "acquisition-execution.json"
+SIDECAR_METADATA_DECISION = "metadata-decision.json"
 
 
 def _load_json_dict(path: Path) -> dict[str, Any] | None:
@@ -74,6 +75,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     executed_math_provider_counts: dict[str, int] = {}
     executed_metadata_provider_counts: dict[str, int] = {}
     executed_reference_provider_counts: dict[str, int] = {}
+    metadata_application_counts: dict[str, int] = {}
+    reference_application_counts: dict[str, int] = {}
+    metadata_suppressed_reason_counts: dict[str, int] = {}
+    reference_suppressed_reason_counts: dict[str, int] = {}
     ocr_policy_counts: dict[str, int] = {}
     pdf_source_kind_counts: dict[str, int] = {}
     sidecar_missing_counts: dict[str, int] = {}
@@ -92,6 +97,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         scorecard = _load_json_dict(sources_dir / SIDECARE_SCORECARD)
         ocr_report = _load_json_dict(sources_dir / SIDECARE_OCR)
         execution_report = _load_json_dict(sources_dir / SIDECAR_EXECUTION)
+        metadata_decision = _load_json_dict(sources_dir / SIDECAR_METADATA_DECISION)
         route_ocr = dict((route or {}).get("ocr_prepass") or {})
         executed = dict((execution_report or {}).get("executed") or {})
 
@@ -108,6 +114,13 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         executed_math_provider = str(executed.get("selected_math_provider") or "").strip() or None
         executed_metadata_provider = str(executed.get("metadata_provider") or "").strip() or None
         executed_reference_provider = str(executed.get("reference_provider") or "").strip() or None
+        metadata_applied = bool((metadata_decision or {}).get("title_applied")) or bool((metadata_decision or {}).get("abstract_applied"))
+        references_applied = bool((metadata_decision or {}).get("references_applied"))
+        metadata_suppressed_reason = (
+            str((metadata_decision or {}).get("title_suppressed_reason") or (metadata_decision or {}).get("abstract_suppressed_reason") or "").strip()
+            or None
+        )
+        reference_suppressed_reason = str((metadata_decision or {}).get("references_suppressed_reason") or "").strip() or None
         ocr_policy = str((ocr_report or {}).get("ocr_prepass_policy") or route_ocr.get("policy") or "").strip() or None
         ocr_tool = str((ocr_report or {}).get("ocr_prepass_tool") or route_ocr.get("tool") or "").strip() or None
         ocr_should_run = bool(route_ocr.get("should_run"))
@@ -141,6 +154,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         _increment(executed_math_provider_counts, executed_math_provider)
         _increment(executed_metadata_provider_counts, executed_metadata_provider)
         _increment(executed_reference_provider_counts, executed_reference_provider)
+        _increment(metadata_application_counts, "applied" if metadata_applied else "not_applied")
+        _increment(reference_application_counts, "applied" if references_applied else "not_applied")
+        _increment(metadata_suppressed_reason_counts, metadata_suppressed_reason)
+        _increment(reference_suppressed_reason_counts, reference_suppressed_reason)
         _increment(ocr_policy_counts, ocr_policy)
         _increment(pdf_source_kind_counts, pdf_source_kind)
         for item in rejected_providers:
@@ -170,6 +187,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             issue_flags.append("missing_sidecars")
         if layout_recommendation_basis == "fallback_unaccepted" or math_recommendation_basis == "fallback_unaccepted":
             issue_flags.append("fallback_recommendation")
+        if metadata_suppressed_reason:
+            issue_flags.append("metadata_application_suppressed")
+        if reference_suppressed_reason:
+            issue_flags.append("reference_application_suppressed")
 
         papers.append(
             {
@@ -190,6 +211,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "executed_math_provider": executed_math_provider,
                 "executed_metadata_provider": executed_metadata_provider,
                 "executed_reference_provider": executed_reference_provider,
+                "metadata_applied": metadata_applied,
+                "references_applied": references_applied,
+                "metadata_suppressed_reason": metadata_suppressed_reason,
+                "reference_suppressed_reason": reference_suppressed_reason,
                 "has_execution_report": execution_report is not None,
                 "ocr_policy": ocr_policy,
                 "ocr_should_run": ocr_should_run,
@@ -222,6 +247,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "executed_math_provider_counts": executed_math_provider_counts,
         "executed_metadata_provider_counts": executed_metadata_provider_counts,
         "executed_reference_provider_counts": executed_reference_provider_counts,
+        "metadata_application_counts": metadata_application_counts,
+        "reference_application_counts": reference_application_counts,
+        "metadata_suppressed_reason_counts": metadata_suppressed_reason_counts,
+        "reference_suppressed_reason_counts": reference_suppressed_reason_counts,
         "ocr_policy_counts": ocr_policy_counts,
         "pdf_source_kind_counts": pdf_source_kind_counts,
         "sidecar_missing_counts": sidecar_missing_counts,

@@ -105,6 +105,20 @@ class AcquisitionAuditTest(unittest.TestCase):
                     }
                 },
             )
+            _write_json(
+                required_dir / "metadata-decision.json",
+                {
+                    "provider": "grobid",
+                    "reference_provider": "docling",
+                    "title_applied": False,
+                    "abstract_applied": False,
+                    "references_applied": False,
+                    "title_suppressed_reason": "metadata_provider_not_accepted",
+                    "abstract_suppressed_reason": "metadata_provider_not_accepted",
+                    "references_suppressed_reason": "reference_provider_not_accepted",
+                    "reference_count": 2,
+                },
+            )
 
             _write_json(
                 recommended_dir / "acquisition-route.json",
@@ -154,6 +168,17 @@ class AcquisitionAuditTest(unittest.TestCase):
                     }
                 },
             )
+            _write_json(
+                recommended_dir / "metadata-decision.json",
+                {
+                    "provider": "grobid",
+                    "reference_provider": "grobid",
+                    "title_applied": True,
+                    "abstract_applied": True,
+                    "references_applied": True,
+                    "reference_count": 5,
+                },
+            )
 
             report = audit_acquisition_quality(layout=layout)
 
@@ -177,6 +202,12 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 2)
         self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
         self.assertEqual(report["executed_reference_provider_counts"]["grobid"], 1)
+        self.assertEqual(report["metadata_application_counts"]["applied"], 1)
+        self.assertEqual(report["metadata_application_counts"]["not_applied"], 2)
+        self.assertEqual(report["reference_application_counts"]["applied"], 1)
+        self.assertEqual(report["reference_application_counts"]["not_applied"], 2)
+        self.assertEqual(report["metadata_suppressed_reason_counts"]["metadata_provider_not_accepted"], 1)
+        self.assertEqual(report["reference_suppressed_reason_counts"]["reference_provider_not_accepted"], 1)
         self.assertEqual(report["ocr_policy_counts"]["required"], 1)
         self.assertEqual(report["ocr_policy_counts"]["recommended"], 1)
         self.assertEqual(report["pdf_source_kind_counts"]["original"], 1)
@@ -193,10 +224,22 @@ class AcquisitionAuditTest(unittest.TestCase):
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
         self.assertIn("required_ocr_not_applied", papers["1990_required_ocr"]["issue_flags"])
         self.assertIn("fallback_recommendation", papers["1990_required_ocr"]["issue_flags"])
+        self.assertIn("metadata_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
+        self.assertIn("reference_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
         self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
         self.assertEqual(papers["1990_required_ocr"]["executed_metadata_provider"], "grobid")
         self.assertEqual(papers["1990_required_ocr"]["executed_reference_provider"], "docling")
+        self.assertFalse(papers["1990_required_ocr"]["metadata_applied"])
+        self.assertFalse(papers["1990_required_ocr"]["references_applied"])
+        self.assertEqual(
+            papers["1990_required_ocr"]["metadata_suppressed_reason"],
+            "metadata_provider_not_accepted",
+        )
+        self.assertEqual(
+            papers["1990_required_ocr"]["reference_suppressed_reason"],
+            "reference_provider_not_accepted",
+        )
         self.assertEqual(papers["1990_required_ocr"]["layout_recommendation_basis"], "fallback_unaccepted")
         self.assertEqual(
             papers["1990_required_ocr"]["rejected_providers"][0]["rejection_reasons"],

@@ -98,6 +98,21 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                 + "\n",
                 encoding="utf-8",
             )
+            (sources_dir / "metadata-decision.json").write_text(
+                json.dumps(
+                    {
+                        "provider": "grobid",
+                        "reference_provider": "docling",
+                        "title_applied": True,
+                        "abstract_applied": True,
+                        "references_applied": True,
+                        "reference_count": 3,
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
 
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
@@ -134,6 +149,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
             self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 1)
             self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
+            self.assertEqual(report["metadata_application_counts"]["applied"], 1)
+            self.assertEqual(report["reference_application_counts"]["applied"], 1)
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("# Acquisition Quality Audit", markdown)
@@ -141,6 +158,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertIn("Executed: layout `docling`", markdown)
             self.assertIn("metadata `grobid`", markdown)
             self.assertIn("references `docling`", markdown)
+            self.assertIn("Applied: metadata `True` | references `True`", markdown)
             self.assertIn("recommended layout `docling` (accepted)", markdown)
 
 
