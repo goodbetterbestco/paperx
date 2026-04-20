@@ -87,6 +87,30 @@ def _latest_trial_info(sources_dir: Path) -> dict[str, str | None]:
     }
 
 
+def _default_trial_label(follow_up_actions: list[dict[str, Any]]) -> str:
+    providers = [
+        str(item.get("target_provider") or "").strip()
+        for item in follow_up_actions
+        if str(item.get("target_provider") or "").strip()
+    ]
+    if providers:
+        return f"trial-{'-'.join(sorted(set(providers)))}"
+    return "follow-up"
+
+
+def _remediation_command(
+    paper_id: str,
+    *,
+    follow_up_needed: bool,
+    follow_up_actions: list[dict[str, Any]],
+    active_promoted_trial_label: str | None,
+) -> str | None:
+    if not follow_up_needed or active_promoted_trial_label:
+        return None
+    label = _default_trial_label(follow_up_actions)
+    return f"python3 -m pipeline.cli.remediate_acquisition_follow_up {paper_id} --label {label}"
+
+
 def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
@@ -163,6 +187,12 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             for item in list(follow_up.get("actions") or [])
             if isinstance(item, dict)
         ]
+        remediation_command = _remediation_command(
+            paper_id,
+            follow_up_needed=follow_up_needed,
+            follow_up_actions=follow_up_actions,
+            active_promoted_trial_label=active_promoted_trial_label,
+        )
         metadata_applied = bool((metadata_decision or {}).get("title_applied")) or bool((metadata_decision or {}).get("abstract_applied"))
         references_applied = bool((metadata_decision or {}).get("references_applied"))
         metadata_suppressed_reason = (
@@ -276,6 +306,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "active_promoted_trial_at": active_promoted_trial_at,
                 "latest_applied_trial_label": latest_applied_trial_label,
                 "latest_applied_trial_at": latest_applied_trial_at,
+                "remediation_command": remediation_command,
                 "metadata_applied": metadata_applied,
                 "references_applied": references_applied,
                 "metadata_suppressed_reason": metadata_suppressed_reason,

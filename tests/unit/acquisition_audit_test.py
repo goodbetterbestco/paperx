@@ -276,6 +276,7 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertTrue(papers["1990_required_ocr"]["follow_up_needed"])
         self.assertEqual(papers["1990_required_ocr"]["active_promoted_trial_label"], "trial-mathpix")
         self.assertEqual(papers["1990_required_ocr"]["latest_applied_trial_label"], "trial-mathpix")
+        self.assertIsNone(papers["1990_required_ocr"]["remediation_command"])
         self.assertEqual(papers["1990_required_ocr"]["follow_up_actions"][0]["action"], "escalate_grobid_metadata")
         self.assertFalse(papers["1990_required_ocr"]["metadata_applied"])
         self.assertFalse(papers["1990_required_ocr"]["references_applied"])
@@ -293,9 +294,78 @@ class AcquisitionAuditTest(unittest.TestCase):
             ["score_below_threshold"],
         )
         self.assertTrue(papers["1991_recommended_ocr"]["has_execution_report"])
+        self.assertIsNone(papers["1991_recommended_ocr"]["remediation_command"])
         self.assertEqual(
             papers["1992_missing_sidecars"]["missing_sidecars"],
             ["acquisition-route.json", "source-scorecard.json", "ocr-prepass.json"],
+        )
+
+    def test_audit_acquisition_quality_emits_remediation_command_for_actionable_follow_up(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            layout = _corpus_layout(Path(temp_dir).resolve())
+            paper_id = "1993_actionable_follow_up"
+            sources_dir = layout.canonical_sources_dir(paper_id)
+            layout.canonical_path(paper_id).parent.mkdir(parents=True, exist_ok=True)
+            layout.canonical_path(paper_id).write_text("{}", encoding="utf-8")
+
+            _write_json(
+                sources_dir / "acquisition-route.json",
+                {
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+            )
+            _write_json(
+                sources_dir / "source-scorecard.json",
+                {
+                    "recommended_primary_layout_provider": "docling",
+                    "recommended_primary_math_provider": "docling",
+                    "layout_recommendation_basis": "fallback_unaccepted",
+                    "math_recommendation_basis": "fallback_unaccepted",
+                },
+            )
+            _write_json(
+                sources_dir / "ocr-prepass.json",
+                {
+                    "ocr_prepass_policy": "skip",
+                    "ocr_prepass_tool": None,
+                    "ocr_prepass_applied": False,
+                    "pdf_source_kind": "original",
+                },
+            )
+            _write_json(
+                sources_dir / "acquisition-execution.json",
+                {
+                    "executed": {
+                        "selected_layout_provider": "docling",
+                        "selected_math_provider": "docling",
+                    },
+                    "follow_up": {
+                        "needs_attention": True,
+                        "actions": [
+                            {
+                                "product": "layout",
+                                "reason": "layout_provider_not_accepted",
+                                "action": "trial_layout_provider",
+                                "target_provider": "mathpix",
+                            },
+                            {
+                                "product": "math",
+                                "reason": "math_provider_not_accepted",
+                                "action": "trial_math_provider",
+                                "target_provider": "mathpix",
+                            },
+                        ],
+                    },
+                },
+            )
+
+            report = audit_acquisition_quality(layout=layout)
+
+        papers = {paper["paper_id"]: paper for paper in report["papers"]}
+        self.assertEqual(
+            papers[paper_id]["remediation_command"],
+            f"python3 -m pipeline.cli.remediate_acquisition_follow_up {paper_id} --label trial-mathpix",
         )
 
 

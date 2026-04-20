@@ -107,6 +107,7 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
                 f"   Executed: layout `{paper.get('executed_layout_provider') or 'unknown'}` | math `{paper.get('executed_math_provider') or 'unknown'}` | metadata `{paper.get('executed_metadata_provider') or 'unknown'}` | references `{paper.get('executed_reference_provider') or 'unknown'}` | execution report `{paper.get('has_execution_report')}`",
                 f"   Follow-up: needed `{paper.get('follow_up_needed')}` | {_render_follow_up(list(paper.get('follow_up_actions') or []))}",
                 f"   Trials: latest applied `{paper.get('latest_applied_trial_label') or 'none'}` at `{paper.get('latest_applied_trial_at') or 'none'}` | active promoted `{paper.get('active_promoted_trial_label') or 'none'}` at `{paper.get('active_promoted_trial_at') or 'none'}`",
+                f"   Remediation: `{paper.get('remediation_command') or 'none'}`",
                 f"   Applied: metadata `{paper.get('metadata_applied')}` | references `{paper.get('references_applied')}` | suppressed metadata `{paper.get('metadata_suppressed_reason') or 'none'}` | suppressed references `{paper.get('reference_suppressed_reason') or 'none'}`",
                 f"   OCR: policy `{paper.get('ocr_policy') or 'unknown'}`, should-run `{paper.get('ocr_should_run')}`, applied `{paper.get('ocr_applied')}`, source `{paper.get('pdf_source_kind') or 'unknown'}`",
                 f"   Rejections: {_render_rejections(list(paper.get('rejected_providers') or []))}",

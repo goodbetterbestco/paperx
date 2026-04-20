@@ -194,6 +194,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertIn("Follow-up: needed `True`", markdown)
             self.assertIn("latest applied `trial-mathpix`", markdown)
             self.assertIn("active promoted `trial-mathpix`", markdown)
+            self.assertIn("Remediation: `none`", markdown)
             self.assertIn("`metadata` -> `escalate_grobid_metadata` via `grobid`", markdown)
             self.assertIn("Applied: metadata `True` | references `True`", markdown)
             self.assertIn("recommended layout `docling` (accepted)", markdown)
