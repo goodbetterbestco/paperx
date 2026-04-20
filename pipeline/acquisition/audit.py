@@ -325,6 +325,21 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         )
 
     papers.sort(key=lambda item: (-int(item["issue_count"]), str(item["paper_id"])))
+    remediation_queue = [
+        {
+            "paper_id": str(paper["paper_id"]),
+            "issue_count": int(paper["issue_count"]),
+            "primary_route": paper["primary_route"],
+            "follow_up_actions": list(paper["follow_up_actions"]),
+            "latest_applied_trial_label": paper["latest_applied_trial_label"],
+            "latest_applied_trial_at": paper["latest_applied_trial_at"],
+            "active_promoted_trial_label": paper["active_promoted_trial_label"],
+            "active_promoted_trial_at": paper["active_promoted_trial_at"],
+            "remediation_command": paper["remediation_command"],
+        }
+        for paper in papers
+        if str(paper.get("remediation_command") or "").strip()
+    ]
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "paper_count": len(papers),
@@ -362,6 +377,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             "required_not_applied_count": required_not_applied_count,
             "recommended_not_applied_count": recommended_not_applied_count,
         },
+        "remediation_queue": remediation_queue,
         "papers": papers,
     }
 

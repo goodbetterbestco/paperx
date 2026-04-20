@@ -184,6 +184,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["latest_applied_trial_counts"]["trial-mathpix"], 1)
             self.assertEqual(report["metadata_application_counts"]["applied"], 1)
             self.assertEqual(report["reference_application_counts"]["applied"], 1)
+            self.assertEqual(report["remediation_queue"], [])
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("# Acquisition Quality Audit", markdown)
@@ -290,6 +291,15 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                 capture_output=True,
                 text=True,
                 env=env,
+            )
+
+            report = json.loads(JSON_REPORT.read_text(encoding="utf-8"))
+            self.assertEqual(len(report["remediation_queue"]), 1)
+            self.assertEqual(report["remediation_queue"][0]["paper_id"], "1990_synthetic_test_paper")
+            self.assertEqual(report["remediation_queue"][0]["primary_route"], "born_digital_scholarly")
+            self.assertEqual(
+                report["remediation_queue"][0]["remediation_command"],
+                "python3 -m pipeline.cli.remediate_acquisition_follow_up 1990_synthetic_test_paper --label trial-mathpix",
             )
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")

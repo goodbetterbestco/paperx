@@ -261,6 +261,7 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["ocr_summary"]["applied_count"], 1)
         self.assertEqual(report["ocr_summary"]["required_not_applied_count"], 1)
         self.assertEqual(report["ocr_summary"]["recommended_not_applied_count"], 0)
+        self.assertEqual(report["remediation_queue"], [])
 
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
         self.assertIn("required_ocr_not_applied", papers["1990_required_ocr"]["issue_flags"])
@@ -366,6 +367,18 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(
             papers[paper_id]["remediation_command"],
             f"python3 -m pipeline.cli.remediate_acquisition_follow_up {paper_id} --label trial-mathpix",
+        )
+        self.assertEqual(len(report["remediation_queue"]), 1)
+        self.assertEqual(report["remediation_queue"][0]["paper_id"], paper_id)
+        self.assertEqual(report["remediation_queue"][0]["issue_count"], papers[paper_id]["issue_count"])
+        self.assertEqual(report["remediation_queue"][0]["primary_route"], "born_digital_scholarly")
+        self.assertEqual(
+            report["remediation_queue"][0]["remediation_command"],
+            papers[paper_id]["remediation_command"],
+        )
+        self.assertEqual(
+            report["remediation_queue"][0]["follow_up_actions"],
+            papers[paper_id]["follow_up_actions"],
         )
 
 

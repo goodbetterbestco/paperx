@@ -41,11 +41,7 @@ def _render_follow_up(items: list[dict[str, Any]]) -> str:
 
 def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> str:
     ocr_summary = dict(report.get("ocr_summary") or {})
-    actionable_papers = [
-        paper
-        for paper in list(report.get("papers") or [])
-        if str(paper.get("remediation_command") or "").strip()
-    ]
+    actionable_papers = list(report.get("remediation_queue") or [])
     lines = [
         "# Acquisition Quality Audit",
         "",
