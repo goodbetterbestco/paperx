@@ -67,8 +67,8 @@ from pipeline.reconcile.block_merging import (
     make_suppress_running_header_blocks,
 )
 from pipeline.reconcile.heading_promotion import make_promote_heading_like_records
+from pipeline.reconcile.references import make_bound_reference_helpers
 from pipeline.reconcile.text_repairs import make_repair_record_text_with_mathpix_hints
-from pipeline.reconcile.reference_binding_runtime import make_bound_reference_helpers
 from pipeline.reconcile.runtime_constants import (
     ABOUT_AUTHOR_RE,
     CONTROL_CHAR_RE,

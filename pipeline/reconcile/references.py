@@ -1,7 +1,24 @@
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass
 from typing import Any, Callable, Pattern
+
+
+@dataclass(frozen=True)
+class BoundReferenceHelpers:
+    looks_like_reference_text: Callable[[str], bool]
+    is_reference_start: Callable[[dict[str, Any]], bool]
+    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    split_trailing_reference_records: Callable[
+        [list[dict[str, Any]]],
+        tuple[list[dict[str, Any]], list[dict[str, Any]]],
+    ]
+    extract_reference_records_from_tail_section: Callable[
+        [list[dict[str, Any]]],
+        tuple[list[dict[str, Any]], list[dict[str, Any]]],
+    ]
+    reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]]
 
 
 def make_reference_entry(
@@ -208,3 +225,220 @@ def reference_records_from_mathpix_layout(
     if len(reference_records) < 3:
         return []
     return merge_reference_records(reference_records)
+
+
+def make_reference_entry_builder(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_reference_text: Callable[[str], tuple[str, Any]],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    default_review: Callable[..., dict[str, Any]],
+) -> Callable[[dict[str, Any], int], dict[str, Any]]:
+    def build_reference_entry(record: dict[str, Any], index: int) -> dict[str, Any]:
+        return make_reference_entry(
+            record,
+            index,
+            clean_text=clean_text,
+            normalize_reference_text=normalize_reference_text,
+            block_source_spans=block_source_spans,
+            default_review=default_review,
+        )
+
+    return build_reference_entry
+
+
+def make_looks_like_reference_text(
+    *,
+    clean_text: Callable[[str], str],
+    reference_year_re: Pattern[str],
+    reference_venue_re: Pattern[str],
+    reference_author_re: Pattern[str],
+    short_word_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_reference_text(text: str) -> bool:
+        return looks_like_reference_text(
+            text,
+            clean_text=clean_text,
+            reference_year_re=reference_year_re,
+            reference_venue_re=reference_venue_re,
+            reference_author_re=reference_author_re,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_reference_text
+
+
+def make_is_reference_start(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    reference_start_re: Pattern[str],
+    looks_like_reference_text: Callable[[str], bool],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_is_reference_start(record: dict[str, Any]) -> bool:
+        return is_reference_start(
+            record,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            reference_start_re=reference_start_re,
+            looks_like_reference_text=looks_like_reference_text,
+        )
+
+    return bound_is_reference_start
+
+
+def make_merge_reference_records(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    is_reference_start: Callable[[dict[str, Any]], bool],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def bound_merge_reference_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return merge_reference_records(
+            records,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            is_reference_start=is_reference_start,
+        )
+
+    return bound_merge_reference_records
+
+
+def make_split_trailing_reference_records(
+    *,
+    looks_like_reference_text: Callable[[str], bool],
+    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
+) -> Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def bound_split_trailing_reference_records(
+        records: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return split_trailing_reference_records(
+            records,
+            looks_like_reference_text=looks_like_reference_text,
+            merge_reference_records=merge_reference_records,
+        )
+
+    return bound_split_trailing_reference_records
+
+
+def make_extract_reference_records_from_tail_section(
+    *,
+    clean_text: Callable[[str], str],
+    about_author_re: Pattern[str],
+    looks_like_reference_text: Callable[[str], bool],
+    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
+) -> Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def bound_extract_reference_records_from_tail_section(
+        records: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return extract_reference_records_from_tail_section(
+            records,
+            clean_text=clean_text,
+            about_author_re=about_author_re,
+            looks_like_reference_text=looks_like_reference_text,
+            merge_reference_records=merge_reference_records,
+        )
+
+    return bound_extract_reference_records_from_tail_section
+
+
+def make_reference_records_from_mathpix_layout(
+    *,
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[Any]]],
+    clean_text: Callable[[str], str],
+    normalize_title_key: Callable[[str], str],
+    layout_record: Callable[[Any], dict[str, Any]],
+    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any] | None], list[dict[str, Any]]]:
+    def bound_reference_records_from_mathpix_layout(
+        layout: dict[str, Any] | None,
+    ) -> list[dict[str, Any]]:
+        return reference_records_from_mathpix_layout(
+            layout,
+            mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+            clean_text=clean_text,
+            normalize_title_key=normalize_title_key,
+            layout_record=layout_record,
+            merge_reference_records=merge_reference_records,
+        )
+
+    return bound_reference_records_from_mathpix_layout
+
+
+def make_bound_reference_helpers(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    reference_start_re: Pattern[str],
+    reference_year_re: Pattern[str],
+    reference_venue_re: Pattern[str],
+    reference_author_re: Pattern[str],
+    short_word_re: Pattern[str],
+    about_author_re: Pattern[str],
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[Any]]],
+    normalize_title_key: Callable[[str], str],
+    layout_record: Callable[[Any], dict[str, Any]],
+) -> BoundReferenceHelpers:
+    bound_looks_like_reference_text = make_looks_like_reference_text(
+        clean_text=clean_text,
+        reference_year_re=reference_year_re,
+        reference_venue_re=reference_venue_re,
+        reference_author_re=reference_author_re,
+        short_word_re=short_word_re,
+    )
+    bound_is_reference_start = make_is_reference_start(
+        clean_text=clean_text,
+        block_source_spans=block_source_spans,
+        reference_start_re=reference_start_re,
+        looks_like_reference_text=bound_looks_like_reference_text,
+    )
+    bound_merge_reference_records = make_merge_reference_records(
+        clean_text=clean_text,
+        block_source_spans=block_source_spans,
+        is_reference_start=bound_is_reference_start,
+    )
+    bound_split_trailing_reference_records = make_split_trailing_reference_records(
+        looks_like_reference_text=bound_looks_like_reference_text,
+        merge_reference_records=bound_merge_reference_records,
+    )
+    bound_extract_reference_records_from_tail_section = make_extract_reference_records_from_tail_section(
+        clean_text=clean_text,
+        about_author_re=about_author_re,
+        looks_like_reference_text=bound_looks_like_reference_text,
+        merge_reference_records=bound_merge_reference_records,
+    )
+    bound_reference_records_from_mathpix_layout = make_reference_records_from_mathpix_layout(
+        mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+        clean_text=clean_text,
+        normalize_title_key=normalize_title_key,
+        layout_record=layout_record,
+        merge_reference_records=bound_merge_reference_records,
+    )
+    return BoundReferenceHelpers(
+        looks_like_reference_text=bound_looks_like_reference_text,
+        is_reference_start=bound_is_reference_start,
+        merge_reference_records=bound_merge_reference_records,
+        split_trailing_reference_records=bound_split_trailing_reference_records,
+        extract_reference_records_from_tail_section=bound_extract_reference_records_from_tail_section,
+        reference_records_from_mathpix_layout=bound_reference_records_from_mathpix_layout,
+    )
+
+
+__all__ = [
+    "BoundReferenceHelpers",
+    "extract_reference_records_from_tail_section",
+    "is_reference_start",
+    "looks_like_reference_text",
+    "make_bound_reference_helpers",
+    "make_extract_reference_records_from_tail_section",
+    "make_is_reference_start",
+    "make_looks_like_reference_text",
+    "make_merge_reference_records",
+    "make_reference_entry",
+    "make_reference_entry_builder",
+    "make_reference_records_from_mathpix_layout",
+    "make_split_trailing_reference_records",
+    "merge_reference_records",
+    "reference_records_from_mathpix_layout",
+    "split_trailing_reference_records",
+]

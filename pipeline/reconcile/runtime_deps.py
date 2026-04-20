@@ -62,7 +62,7 @@ from pipeline.reconcile.support_binding_runtime import (
     make_word_count as reconcile_make_word_count_binding_runtime,
     now_iso as reconcile_now_iso_binding_runtime,
 )
-from pipeline.reconcile.reference_binding_runtime import (
+from pipeline.reconcile.references import (
     make_bound_reference_helpers as reconcile_make_bound_reference_helpers_binding_runtime,
 )
 from pipeline.reconcile.screening_runtime import (

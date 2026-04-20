@@ -42,7 +42,7 @@ from pipeline.reconcile.math_suppression import (
     trim_embedded_display_math_from_paragraph as suppression_trim_embedded_display_math_from_paragraph,
 )
 from pipeline.reconcile.block_merging import make_merge_code_records
-from pipeline.reconcile.reference_binding_runtime import make_reference_entry
+from pipeline.reconcile.references import make_reference_entry_builder as make_reference_entry
 from pipeline.reconcile.runtime_constants import (
     CONTROL_CHAR_RE,
     LABEL_CLOUD_TOKEN_RE,
