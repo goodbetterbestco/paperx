@@ -35,6 +35,7 @@ from pipeline.acquisition.remediation_artifacts import (
 )
 from pipeline.acquisition.remediation_dashboard import summarize_remediation_dashboard
 from pipeline.acquisition.remediation_history import list_remediation_history
+from pipeline.acquisition.remediation_plan import plan_remediation_waves
 from pipeline.acquisition.remediation_status import summarize_latest_remediation_status
 from pipeline.acquisition.remediation_trend import summarize_remediation_trend
 from pipeline.acquisition.audit import audit_acquisition_quality
@@ -86,6 +87,7 @@ __all__ = [
     "load_metadata_reference_observation",
     "list_benchmark_history",
     "list_remediation_history",
+    "plan_remediation_waves",
     "list_history_reports",
     "provider_score_map",
     "route_pdf_signals",

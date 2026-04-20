@@ -20,6 +20,7 @@ class AcquisitionPackageExportsTest(unittest.TestCase):
         self.assertTrue(callable(acquisition.list_remediation_history))
         self.assertTrue(callable(acquisition.summarize_benchmark_dashboard))
         self.assertTrue(callable(acquisition.summarize_benchmark_trend))
+        self.assertTrue(callable(acquisition.plan_remediation_waves))
         self.assertTrue(callable(acquisition.summarize_remediation_dashboard))
         self.assertTrue(callable(acquisition.summarize_remediation_trend))
         self.assertTrue(callable(acquisition.benchmark_status_from_dashboard))
