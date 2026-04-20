@@ -26,6 +26,15 @@ def render_acquisition_benchmark_history_markdown(report: dict[str, Any]) -> str
                 f"(delta vs previous `{delta}`), content `{provider['content']}`, execution `{provider['execution']}`"
             )
         lines.append("")
+        for capability in list(run.get("capabilities") or []):
+            lines.append(f"### `{capability['capability']}`")
+            lines.append("")
+            for provider in list(capability.get("providers") or []):
+                lines.append(
+                    f"- `{provider['provider']}`: score `{provider['score']}` "
+                    f"(delta vs previous `{provider['score_delta_vs_previous']}`)"
+                )
+        lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 

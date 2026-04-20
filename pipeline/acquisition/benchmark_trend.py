@@ -19,6 +19,18 @@ def _top_changes(rows: list[dict[str, Any]], *, limit: int) -> tuple[list[dict[s
     return improvements, regressions
 
 
+def _top_score_changes(rows: list[dict[str, Any]], *, limit: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    improvements = sorted(
+        (row for row in rows if float(row.get("score_delta", 0.0)) > 0.0),
+        key=lambda row: (-float(row.get("score_delta", 0.0)), str(row.get("provider", ""))),
+    )[:limit]
+    regressions = sorted(
+        (row for row in rows if float(row.get("score_delta", 0.0)) < 0.0),
+        key=lambda row: (float(row.get("score_delta", 0.0)), str(row.get("provider", ""))),
+    )[:limit]
+    return improvements, regressions
+
+
 def summarize_benchmark_trend(
     *,
     history_dir: str | Path | None = None,
@@ -32,15 +44,38 @@ def summarize_benchmark_trend(
     comparison = compare_benchmark_reports(base_path, candidate_path)
 
     aggregate_improvements, aggregate_regressions = _top_changes(list(comparison.get("aggregate") or []), limit=limit)
+    capability_summaries: list[dict[str, Any]] = []
+    for capability in list(comparison.get("capabilities") or []):
+        providers = list(capability.get("providers") or [])
+        improvements, regressions = _top_score_changes(providers, limit=limit)
+        capability_summaries.append(
+            {
+                "capability": capability.get("capability"),
+                "improvements": improvements,
+                "regressions": regressions,
+            }
+        )
     family_summaries: list[dict[str, Any]] = []
     for family in list(comparison.get("families") or []):
         providers = list(family.get("providers") or [])
         improvements, regressions = _top_changes(providers, limit=limit)
+        capability_summaries_for_family: list[dict[str, Any]] = []
+        for capability in list(family.get("capabilities") or []):
+            capability_rows = list(capability.get("providers") or [])
+            capability_improvements, capability_regressions = _top_score_changes(capability_rows, limit=limit)
+            capability_summaries_for_family.append(
+                {
+                    "capability": capability.get("capability"),
+                    "improvements": capability_improvements,
+                    "regressions": capability_regressions,
+                }
+            )
         family_summaries.append(
             {
                 "family": family.get("family"),
                 "improvements": improvements,
                 "regressions": regressions,
+                "capabilities": capability_summaries_for_family,
             }
         )
 
@@ -52,6 +87,7 @@ def summarize_benchmark_trend(
         "aggregate": list(comparison.get("aggregate") or []),
         "top_improvements": aggregate_improvements,
         "top_regressions": aggregate_regressions,
+        "capabilities": capability_summaries,
         "families": family_summaries,
     }
 

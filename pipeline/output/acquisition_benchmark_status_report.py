@@ -25,6 +25,17 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
             f"content `{provider['content']}`, execution `{provider['execution']}`"
         )
 
+    lines.extend(["", "## Latest Capability Scores", ""])
+    for capability in list(latest.get("capabilities") or []):
+        lines.append(f"### `{capability['capability']}`")
+        lines.append("")
+        for provider in list(capability.get("providers") or []):
+            lines.append(
+                f"- `{provider['provider']}`: score `{provider['score']}` "
+                f"(delta vs previous `{provider['score_delta_vs_previous']}`)"
+            )
+        lines.append("")
+
     lines.extend(["", "## Trend Watchlist", ""])
 
     improvements = list(trend.get("top_improvements") or [])
@@ -46,6 +57,22 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
                 f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
             )
 
+    lines.extend(["", "## Capability Watchlist", ""])
+    for capability in list(trend.get("capabilities") or []):
+        lines.append(f"### `{capability['capability']}`")
+        lines.append("")
+        improvements = list(capability.get("improvements") or [])
+        regressions = list(capability.get("regressions") or [])
+        if not improvements and not regressions:
+            lines.append("- no capability movement")
+            lines.append("")
+            continue
+        for row in improvements:
+            lines.append(f"- improvement `{row['provider']}`: score delta `{row['score_delta']}`")
+        for row in regressions:
+            lines.append(f"- regression `{row['provider']}`: score delta `{row['score_delta']}`")
+        lines.append("")
+
     lines.extend(["", "## Family Watchlist", ""])
     for family in list(trend.get("families") or []):
         lines.append(f"### `{family['family']}`")
@@ -66,6 +93,20 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
                 f"- regression `{row['provider']}`: overall delta `{row['overall_delta']}`, "
                 f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
             )
+        lines.append("")
+        for capability in list(family.get("capabilities") or []):
+            lines.append(f"#### `{capability['capability']}`")
+            lines.append("")
+            capability_improvements = list(capability.get("improvements") or [])
+            capability_regressions = list(capability.get("regressions") or [])
+            if not capability_improvements and not capability_regressions:
+                lines.append("- no capability movement")
+                lines.append("")
+                continue
+            for row in capability_improvements:
+                lines.append(f"- improvement `{row['provider']}`: score delta `{row['score_delta']}`")
+            for row in capability_regressions:
+                lines.append(f"- regression `{row['provider']}`: score delta `{row['score_delta']}`")
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"

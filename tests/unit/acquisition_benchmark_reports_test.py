@@ -15,7 +15,9 @@ if str(ROOT) not in sys.path:
 from pipeline.acquisition.benchmark_reports import (
     aggregate_provider_score_map,
     benchmark_report_label,
+    benchmark_capability_score_maps,
     family_provider_score_maps,
+    family_capability_score_maps,
     list_history_reports,
     resolve_benchmark_report_path,
 )
@@ -65,15 +67,36 @@ class AcquisitionBenchmarkReportsTest(unittest.TestCase):
                     ],
                 }
             ],
+            "capabilities": [
+                {
+                    "capability": "metadata_reference",
+                    "providers": [{"provider": "grobid", "avg_score": 0.95}],
+                }
+            ],
+            "family_capabilities": [
+                {
+                    "family": "math_dense",
+                    "capabilities": [
+                        {
+                            "capability": "math",
+                            "providers": [{"provider": "mathpix", "avg_score": 0.88}],
+                        }
+                    ],
+                }
+            ],
         }
 
         self.assertEqual(benchmark_report_label(report), "candidate-run")
         self.assertEqual(benchmark_report_label({}, fallback_path="history/fallback.json"), "fallback")
         aggregate_scores = aggregate_provider_score_map(report, round_values=True)
         family_scores = family_provider_score_maps(report, round_values=True)
+        capability_scores = benchmark_capability_score_maps(report, round_values=True)
+        family_capability_scores = family_capability_score_maps(report, round_values=True)
 
         self.assertEqual(aggregate_scores["docling"]["overall"], 0.8)
         self.assertEqual(family_scores["math_dense"]["mathpix"]["execution"], 0.85)
+        self.assertEqual(capability_scores["metadata_reference"]["grobid"]["score"], 0.95)
+        self.assertEqual(family_capability_scores["math_dense"]["math"]["mathpix"]["score"], 0.88)
 
 
 if __name__ == "__main__":

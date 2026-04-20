@@ -69,6 +69,19 @@ def provider_score_map(items: list[dict[str, Any]], *, round_values: bool = Fals
     return scores
 
 
+def capability_score_map(items: list[dict[str, Any]], *, round_values: bool = False) -> dict[str, dict[str, float]]:
+    scores: dict[str, dict[str, float]] = {}
+    for item in items:
+        provider = str(item.get("provider", "") or "").strip()
+        if not provider:
+            continue
+        row = {"score": float(item.get("avg_score", item.get("score", 0.0)) or 0.0)}
+        if round_values:
+            row = {key: round(value, 3) for key, value in row.items()}
+        scores[provider] = row
+    return scores
+
+
 def aggregate_provider_score_map(report: dict[str, Any], *, round_values: bool = False) -> dict[str, dict[str, float]]:
     return provider_score_map(list(report.get("aggregate") or []), round_values=round_values)
 
@@ -78,6 +91,42 @@ def family_provider_score_maps(report: dict[str, Any], *, round_values: bool = F
         str(item.get("family", "") or ""): provider_score_map(list(item.get("providers") or []), round_values=round_values)
         for item in list(report.get("families") or [])
     }
+
+
+def benchmark_capability_score_maps(
+    report: dict[str, Any],
+    *,
+    round_values: bool = False,
+) -> dict[str, dict[str, dict[str, float]]]:
+    return {
+        str(item.get("capability", "") or ""): capability_score_map(
+            list(item.get("providers") or []),
+            round_values=round_values,
+        )
+        for item in list(report.get("capabilities") or [])
+        if str(item.get("capability", "") or "").strip()
+    }
+
+
+def family_capability_score_maps(
+    report: dict[str, Any],
+    *,
+    round_values: bool = False,
+) -> dict[str, dict[str, dict[str, dict[str, float]]]]:
+    family_maps: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
+    for item in list(report.get("family_capabilities") or []):
+        family = str(item.get("family", "") or "").strip()
+        if not family:
+            continue
+        family_maps[family] = {
+            str(capability.get("capability", "") or ""): capability_score_map(
+                list(capability.get("providers") or []),
+                round_values=round_values,
+            )
+            for capability in list(item.get("capabilities") or [])
+            if str(capability.get("capability", "") or "").strip()
+        }
+    return family_maps
 
 
 def benchmark_report_label(report: dict[str, Any], *, fallback_path: str | Path | None = None) -> str:
@@ -93,6 +142,9 @@ __all__ = [
     "DEFAULT_HISTORY_DIR",
     "aggregate_provider_score_map",
     "benchmark_report_label",
+    "benchmark_capability_score_maps",
+    "capability_score_map",
+    "family_capability_score_maps",
     "family_provider_score_maps",
     "list_history_reports",
     "load_benchmark_report",

@@ -31,12 +31,24 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
                             {"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8},
                             {"provider": "mathpix", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6},
                         ],
+                        "capabilities": [
+                            {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]},
+                            {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.9}]},
+                        ],
                         "families": [
                             {
                                 "family": "math_dense",
                                 "providers": [
                                     {"provider": "docling", "avg_overall_score": 0.3, "avg_content_score": 0.2, "avg_execution_score": 0.4},
                                     {"provider": "mathpix", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "math_dense",
+                                "capabilities": [
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.9}]}
                                 ],
                             }
                         ],
@@ -53,12 +65,24 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
                             {"provider": "docling", "avg_overall_score": 0.82, "avg_content_score": 0.72, "avg_execution_score": 0.92},
                             {"provider": "mathpix", "avg_overall_score": 0.42, "avg_content_score": 0.32, "avg_execution_score": 0.52},
                         ],
+                        "capabilities": [
+                            {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.85}]},
+                            {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.7}]},
+                        ],
                         "families": [
                             {
                                 "family": "math_dense",
                                 "providers": [
                                     {"provider": "docling", "avg_overall_score": 0.55, "avg_content_score": 0.45, "avg_execution_score": 0.65},
                                     {"provider": "mathpix", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "math_dense",
+                                "capabilities": [
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.75}]}
                                 ],
                             }
                         ],
@@ -75,6 +99,11 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
         self.assertEqual(family["family"], "math_dense")
         self.assertEqual(family["improvements"][0]["provider"], "docling")
         self.assertEqual(family["regressions"][0]["provider"], "mathpix")
+        capability = {item["capability"]: item for item in report["capabilities"]}
+        self.assertEqual(capability["layout"]["improvements"][0]["provider"], "docling")
+        self.assertEqual(capability["math"]["regressions"][0]["provider"], "mathpix")
+        family_capability = {item["capability"]: item for item in family["capabilities"]}
+        self.assertEqual(family_capability["math"]["regressions"][0]["provider"], "mathpix")
 
     def test_summarize_benchmark_trend_cli_prints_markdown(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -84,7 +113,9 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
                 "snapshot_label": "baseline",
                 "paper_count": 1,
                 "aggregate": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}],
+                "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
                 "families": [{"family": "born_digital_scholarly", "providers": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}]}],
+                "family_capabilities": [{"family": "born_digital_scholarly", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
             }
             (history_dir / "baseline.json").write_text(json.dumps(payload), encoding="utf-8")
             (history_dir / "candidate.json").write_text(json.dumps(payload), encoding="utf-8")
@@ -98,6 +129,7 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Trend", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+        self.assertIn("Capability Watchlist", printed[0])
 
 
 if __name__ == "__main__":

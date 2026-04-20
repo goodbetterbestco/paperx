@@ -108,6 +108,17 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                 "degraded_or_garbled",
             },
         )
+        capabilities = {entry["capability"]: entry["providers"] for entry in report["capabilities"]}
+        self.assertEqual(capabilities["layout"][0]["provider"], "docling")
+        self.assertEqual(capabilities["math"][0]["provider"], "mathpix")
+        metadata_leaders = {entry["provider"] for entry in capabilities["metadata_reference"][:2]}
+        self.assertIn("grobid", metadata_leaders)
+        family_capabilities = {entry["family"]: entry["capabilities"] for entry in report["family_capabilities"]}
+        self.assertIn("born_digital_scholarly", family_capabilities)
+        self.assertEqual(
+            {entry["capability"] for entry in family_capabilities["born_digital_scholarly"]},
+            {"layout", "math", "metadata_reference"},
+        )
 
     def test_benchmark_cli_prints_json_report(self) -> None:
         printed: list[str] = []
@@ -179,6 +190,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("degraded_garbled_fixture", printed[0])
             self.assertIn("grobid", printed[0])
             self.assertIn("metadata target", printed[0])
+            self.assertIn("## Capability Ranking", printed[0])
+            self.assertIn("## Family Capability Breakdown", printed[0])
             self.assertIn(str(json_path), printed[0])
             self.assertIn(str(snapshot_json_path), printed[0])
             self.assertIn(str(snapshot_markdown_path), printed[0])

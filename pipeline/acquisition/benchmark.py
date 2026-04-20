@@ -14,6 +14,30 @@ from pipeline.acquisition.providers import (
 
 SPACE_RE = re.compile(r"\s+")
 NON_WORD_RE = re.compile(r"[^a-z0-9]+")
+CAPABILITY_ORDER = ("layout", "math", "metadata_reference")
+CAPABILITY_METRIC_NAMES: dict[str, tuple[str, ...]] = {
+    "layout": (
+        "title_match",
+        "heading_hit_rate",
+        "paragraph_hit_rate",
+        "recommended_layout_provider_match",
+        "selected_layout_provider_match",
+    ),
+    "math": (
+        "equation_hit_rate",
+        "recommended_math_provider_match",
+        "selected_math_provider_match",
+    ),
+    "metadata_reference": (
+        "title_match",
+        "abstract_token_recall",
+        "reference_hit_rate",
+        "recommended_metadata_provider_match",
+        "selected_metadata_provider_match",
+        "recommended_reference_provider_match",
+        "selected_reference_provider_match",
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -257,6 +281,34 @@ def _overall_score(content_score: float, execution_score: float | None) -> float
     return round(content_score * 0.8 + execution_score * 0.2, 3)
 
 
+def _capability_scores(metrics: dict[str, float]) -> dict[str, float]:
+    scores: dict[str, float] = {}
+    for capability in CAPABILITY_ORDER:
+        values = [float(metrics[name]) for name in CAPABILITY_METRIC_NAMES[capability] if name in metrics]
+        if values:
+            scores[capability] = round(sum(values) / len(values), 3)
+    return scores
+
+
+def _aggregate_capability_rankings(
+    totals: dict[str, dict[str, dict[str, float]]],
+) -> list[dict[str, Any]]:
+    rankings: list[dict[str, Any]] = []
+    for capability in CAPABILITY_ORDER:
+        provider_values = totals.get(capability, {})
+        providers = [
+            {
+                "provider": provider_name,
+                "papers": int(values["papers"]),
+                "avg_score": round(values["score_total"] / max(values["papers"], 1), 3),
+            }
+            for provider_name, values in provider_values.items()
+        ]
+        providers.sort(key=lambda item: (-float(item["avg_score"]), str(item["provider"])))
+        rankings.append({"capability": capability, "providers": providers})
+    return rankings
+
+
 def _load_gold_record(paper_id: str, gold_path: Path) -> AcquisitionGoldRecord:
     payload = _load_json(gold_path)
     return AcquisitionGoldRecord(
@@ -326,6 +378,8 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
     per_paper_results: list[dict[str, Any]] = []
     aggregate_totals: dict[str, dict[str, float]] = {}
     family_totals: dict[str, dict[str, dict[str, float]]] = {}
+    capability_totals: dict[str, dict[str, dict[str, float]]] = {capability: {} for capability in CAPABILITY_ORDER}
+    family_capability_totals: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
 
     for paper in papers:
         gold = _load_gold_record(paper.paper_id, paper.gold_path)
@@ -350,6 +404,7 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
             content_score = _content_score(content_metrics)
             execution_score = _execution_score(execution_metrics)
             overall = _overall_score(content_score, execution_score)
+            capability_scores = _capability_scores({**content_metrics, **execution_metrics})
             result = {
                 "provider": provider.name,
                 "layout_path": str(provider.layout_path) if provider.layout_path is not None else None,
@@ -363,6 +418,7 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "content_score": content_score,
                 "execution_score": execution_score,
                 "overall_score": overall,
+                "capability_scores": capability_scores,
                 "metadata_observation": observed["metadata_observation"],
                 "execution_observation": execution_observation,
             }
@@ -386,6 +442,26 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
             family_provider_totals["overall_score_total"] += overall
             family_provider_totals["content_score_total"] += content_score
             family_provider_totals["execution_score_total"] += execution_score or 0.0
+
+            family_name = gold.family or "unclassified"
+            family_capability_map = family_capability_totals.setdefault(
+                family_name,
+                {capability: {} for capability in CAPABILITY_ORDER},
+            )
+            for capability, score in capability_scores.items():
+                capability_provider_totals = capability_totals.setdefault(capability, {}).setdefault(
+                    provider.name,
+                    {"papers": 0, "score_total": 0.0},
+                )
+                capability_provider_totals["papers"] += 1
+                capability_provider_totals["score_total"] += score
+
+                family_capability_provider_totals = family_capability_map.setdefault(capability, {}).setdefault(
+                    provider.name,
+                    {"papers": 0, "score_total": 0.0},
+                )
+                family_capability_provider_totals["papers"] += 1
+                family_capability_provider_totals["score_total"] += score
 
         provider_results.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"])))
         per_paper_results.append(
@@ -434,12 +510,21 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "providers": rankings,
             }
         )
+    family_capabilities = [
+        {
+            "family": family_name,
+            "capabilities": _aggregate_capability_rankings(capability_values),
+        }
+        for family_name, capability_values in sorted(family_capability_totals.items())
+    ]
     return {
         "manifest_path": str(Path(manifest_path).resolve()),
         "paper_count": len(per_paper_results),
         "papers": per_paper_results,
         "aggregate": aggregate,
         "families": families,
+        "capabilities": _aggregate_capability_rankings(capability_totals),
+        "family_capabilities": family_capabilities,
     }
 
 

@@ -31,12 +31,24 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
                             {"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8},
                             {"provider": "mathpix", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6},
                         ],
+                        "capabilities": [
+                            {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.6}]},
+                            {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.9}]},
+                        ],
                         "families": [
                             {
                                 "family": "math_dense",
                                 "providers": [
                                     {"provider": "docling", "avg_overall_score": 0.3, "avg_content_score": 0.2, "avg_execution_score": 0.4},
                                     {"provider": "mathpix", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "math_dense",
+                                "capabilities": [
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.9}]}
                                 ],
                             }
                         ],
@@ -52,12 +64,24 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
                             {"provider": "docling", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9},
                             {"provider": "mathpix", "avg_overall_score": 0.45, "avg_content_score": 0.35, "avg_execution_score": 0.55},
                         ],
+                        "capabilities": [
+                            {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.85}]},
+                            {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.75}]},
+                        ],
                         "families": [
                             {
                                 "family": "math_dense",
                                 "providers": [
                                     {"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6},
                                     {"provider": "mathpix", "avg_overall_score": 0.75, "avg_content_score": 0.65, "avg_execution_score": 0.85},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "math_dense",
+                                "capabilities": [
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.7}]}
                                 ],
                             }
                         ],
@@ -76,6 +100,10 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
         family_providers = {item["provider"]: item for item in family["providers"]}
         self.assertEqual(family_providers["docling"]["overall_delta"], 0.2)
         self.assertEqual(family_providers["mathpix"]["overall_delta"], -0.05)
+        capability = {item["capability"]: item["providers"] for item in report["capabilities"]}
+        self.assertEqual(capability["layout"][0]["score_delta"], 0.25)
+        family_capability = {item["capability"]: item["providers"] for item in family["capabilities"]}
+        self.assertEqual(family_capability["math"][0]["score_delta"], -0.2)
 
     def test_compare_benchmark_cli_prints_markdown(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -85,7 +113,9 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
             payload = {
                 "paper_count": 1,
                 "aggregate": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}],
+                "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
                 "families": [{"family": "born_digital_scholarly", "providers": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}]}],
+                "family_capabilities": [{"family": "born_digital_scholarly", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
             }
             base_path.write_text(json.dumps(payload), encoding="utf-8")
             candidate_path.write_text(json.dumps(payload), encoding="utf-8")
@@ -96,9 +126,10 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
                 print_fn=printed.append,
             )
 
-            self.assertEqual(exit_code, 0)
+        self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Comparison", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+        self.assertIn("Capability Deltas", printed[0])
 
     def test_compare_benchmark_cli_resolves_history_labels(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -109,7 +140,9 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
             payload = {
                 "paper_count": 1,
                 "aggregate": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}],
+                "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
                 "families": [{"family": "born_digital_scholarly", "providers": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}]}],
+                "family_capabilities": [{"family": "born_digital_scholarly", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
             }
             base_path.write_text(json.dumps(payload), encoding="utf-8")
             candidate_path.write_text(json.dumps(payload), encoding="utf-8")

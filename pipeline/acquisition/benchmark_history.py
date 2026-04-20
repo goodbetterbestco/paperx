@@ -6,6 +6,7 @@ from typing import Any
 from pipeline.acquisition.benchmark_reports import (
     DEFAULT_HISTORY_DIR,
     aggregate_provider_score_map,
+    benchmark_capability_score_maps,
     benchmark_report_label,
     list_history_reports,
     load_benchmark_report,
@@ -19,9 +20,11 @@ def list_benchmark_history(history_dir: str | Path = DEFAULT_HISTORY_DIR, *, lim
 
     runs: list[dict[str, Any]] = []
     previous_provider_map: dict[str, dict[str, float]] = {}
+    previous_capability_map: dict[str, dict[str, dict[str, float]]] = {}
     for path in history_paths:
         report = load_benchmark_report(path)
         provider_map = aggregate_provider_score_map(report, round_values=True)
+        capability_map = benchmark_capability_score_maps(report, round_values=True)
         provider_rows: list[dict[str, Any]] = []
         for provider in sorted(provider_map):
             current = provider_map[provider]
@@ -38,6 +41,29 @@ def list_benchmark_history(history_dir: str | Path = DEFAULT_HISTORY_DIR, *, lim
                     ),
                 }
             )
+        capability_rows: list[dict[str, Any]] = []
+        for capability in sorted(capability_map):
+            provider_rows_for_capability: list[dict[str, Any]] = []
+            for provider in sorted(capability_map[capability]):
+                current = capability_map[capability][provider]
+                previous = previous_capability_map.get(capability, {}).get(provider, {})
+                provider_rows_for_capability.append(
+                    {
+                        "provider": provider,
+                        "score": current["score"],
+                        "score_delta_vs_previous": round(
+                            current["score"] - float(previous.get("score", current["score"])),
+                            3,
+                        ),
+                    }
+                )
+            capability_rows.append(
+                {
+                    "capability": capability,
+                    "provider_count": len(provider_rows_for_capability),
+                    "providers": provider_rows_for_capability,
+                }
+            )
 
         runs.append(
             {
@@ -46,9 +72,11 @@ def list_benchmark_history(history_dir: str | Path = DEFAULT_HISTORY_DIR, *, lim
                 "paper_count": int(report.get("paper_count", 0) or 0),
                 "provider_count": len(provider_rows),
                 "providers": provider_rows,
+                "capabilities": capability_rows,
             }
         )
         previous_provider_map = provider_map
+        previous_capability_map = capability_map
 
     return {
         "history_dir": str(Path(history_dir).resolve()),

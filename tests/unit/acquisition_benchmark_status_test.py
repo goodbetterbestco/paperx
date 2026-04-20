@@ -28,7 +28,9 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
                         "snapshot_label": "baseline",
                         "paper_count": 1,
                         "aggregate": [{"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8}],
+                        "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
                         "families": [{"family": "math_dense", "providers": [{"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8}]}],
+                        "family_capabilities": [{"family": "math_dense", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
                     }
                 ),
                 encoding="utf-8",
@@ -39,7 +41,9 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
                         "snapshot_label": "candidate",
                         "paper_count": 1,
                         "aggregate": [{"provider": "docling", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9}],
+                        "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.85}]}],
                         "families": [{"family": "math_dense", "providers": [{"provider": "docling", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9}]}],
+                        "family_capabilities": [{"family": "math_dense", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.85}]}]}],
                     }
                 ),
                 encoding="utf-8",
@@ -49,6 +53,8 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
 
         self.assertEqual(report["latest_run"]["label"], "candidate")
         self.assertEqual(report["trend"]["top_improvements"][0]["provider"], "docling")
+        self.assertEqual(report["latest_run"]["capabilities"][0]["capability"], "layout")
+        self.assertEqual(report["trend"]["capabilities"][0]["capability"], "layout")
 
     def test_show_benchmark_status_cli_prints_markdown(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -58,7 +64,9 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
                 "snapshot_label": "baseline",
                 "paper_count": 1,
                 "aggregate": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}],
+                "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
                 "families": [{"family": "born_digital_scholarly", "providers": [{"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}]}],
+                "family_capabilities": [{"family": "born_digital_scholarly", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
             }
             (history_dir / "baseline.json").write_text(json.dumps(payload), encoding="utf-8")
             (history_dir / "candidate.json").write_text(json.dumps(payload), encoding="utf-8")
@@ -72,3 +80,4 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Status", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+        self.assertIn("Latest Capability Scores", printed[0])

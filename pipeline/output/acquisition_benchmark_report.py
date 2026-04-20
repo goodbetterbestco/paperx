@@ -25,6 +25,14 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
             f"content `{provider['avg_content_score']}`, execution `{provider['avg_execution_score']}`"
         )
 
+    lines.extend(["", "## Capability Ranking", ""])
+    for capability in list(report.get("capabilities") or []):
+        lines.append(f"### `{capability['capability']}`")
+        lines.append("")
+        for provider in list(capability.get("providers") or []):
+            lines.append(f"- `{provider['provider']}`: score `{provider['avg_score']}`")
+        lines.append("")
+
     lines.extend(
         [
             "",
@@ -40,6 +48,19 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
                 f"- `{provider['provider']}`: overall `{provider['avg_overall_score']}`, "
                 f"content `{provider['avg_content_score']}`, execution `{provider['avg_execution_score']}`"
             )
+        lines.append("")
+
+    lines.append("## Family Capability Breakdown")
+    lines.append("")
+    for family in list(report.get("family_capabilities") or []):
+        lines.append(f"### `{family['family']}`")
+        lines.append("")
+        for capability in list(family.get("capabilities") or []):
+            lines.append(f"#### `{capability['capability']}`")
+            lines.append("")
+            for provider in list(capability.get("providers") or []):
+                lines.append(f"- `{provider['provider']}`: score `{provider['avg_score']}`")
+            lines.append("")
         lines.append("")
 
     lines.append("## Per-Paper Results")

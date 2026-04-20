@@ -21,6 +21,14 @@ def render_acquisition_benchmark_comparison_markdown(report: dict[str, Any]) -> 
             f"content delta `{item['content_delta']}`, execution delta `{item['execution_delta']}`"
         )
 
+    lines.extend(["", "## Capability Deltas", ""])
+    for capability in list(report.get("capabilities") or []):
+        lines.append(f"### `{capability['capability']}`")
+        lines.append("")
+        for item in list(capability.get("providers") or []):
+            lines.append(f"- `{item['provider']}`: score delta `{item['score_delta']}`")
+        lines.append("")
+
     lines.extend(["", "## Family Deltas", ""])
     for family in list(report.get("families") or []):
         lines.append(f"### `{family['family']}`")
@@ -30,6 +38,12 @@ def render_acquisition_benchmark_comparison_markdown(report: dict[str, Any]) -> 
                 f"- `{item['provider']}`: overall delta `{item['overall_delta']}`, "
                 f"content delta `{item['content_delta']}`, execution delta `{item['execution_delta']}`"
             )
+        lines.append("")
+        for capability in list(family.get("capabilities") or []):
+            lines.append(f"#### `{capability['capability']}`")
+            lines.append("")
+            for item in list(capability.get("providers") or []):
+                lines.append(f"- `{item['provider']}`: score delta `{item['score_delta']}`")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
