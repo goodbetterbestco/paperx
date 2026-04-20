@@ -18,7 +18,6 @@ from pipeline.acquisition.source_ownership import (
 )
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.corpus_layout import canonical_sources_dir
 from pipeline.orchestrator.round_build import build_best_paper
 from pipeline.orchestrator.round_document import anomaly_flags, document_quality_key
 from pipeline.orchestrator.round_runtime import write_json
@@ -421,42 +420,6 @@ def load_json_if_exists(path: Path) -> dict[str, Any] | None:
     return None
 
 
-def paper_has_generated_abstract_file(
-    paper_id: str,
-    *,
-    layout: ProjectLayout | None = None,
-    canonical_sources_dir_impl: Callable[..., Path] | None = None,
-) -> bool:
-    canonical_sources_dir_impl = canonical_sources_dir_impl or canonical_sources_dir
-    return (canonical_sources_dir_impl(paper_id, layout=layout) / "generated-abstract.txt").exists()
-
-
-def preserve_existing_generated_abstract_file(
-    paper_id: str,
-    existing_document: dict[str, Any] | None,
-    new_document: dict[str, Any],
-    *,
-    layout: ProjectLayout | None = None,
-    preserve_existing_generated_abstract_file_impl: Callable[..., bool] | None = None,
-    paper_has_generated_abstract_file_impl: Callable[..., bool] | None = None,
-) -> bool:
-    from pipeline.orchestrator.round_document import preserve_existing_generated_abstract_file as _preserve_generated_abstract_file
-
-    preserve_existing_generated_abstract_file_impl = (
-        preserve_existing_generated_abstract_file_impl or _preserve_generated_abstract_file
-    )
-    paper_has_generated_abstract_file_impl = paper_has_generated_abstract_file_impl or paper_has_generated_abstract_file
-    return preserve_existing_generated_abstract_file_impl(
-        paper_id,
-        existing_document,
-        new_document,
-        abstract_file_exists=lambda current_paper_id: paper_has_generated_abstract_file_impl(
-            current_paper_id,
-            layout=layout,
-        ),
-    )
-
-
 def existing_composed_sources(
     paper_id: str,
     *,
@@ -637,7 +600,5 @@ __all__ = [
     "compose_external_sources",
     "existing_composed_sources",
     "load_json_if_exists",
-    "paper_has_generated_abstract_file",
-    "preserve_existing_generated_abstract_file",
     "write_round_canonical_outputs",
 ]

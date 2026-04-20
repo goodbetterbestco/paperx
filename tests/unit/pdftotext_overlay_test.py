@@ -62,7 +62,7 @@ class PdftotextOverlayTest(unittest.TestCase):
     def test_overlay_pdftotext_onto_layout_repairs_only_better_candidates(self) -> None:
         native_layout = {
             "engine": "native_pdf",
-            "pdf_path": "source/1990_synthetic_test_paper.pdf",
+            "pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
             "page_count": 1,
             "page_sizes_pt": [{"page": 1, "width": 612.0, "height": 792.0}],
             "blocks": [

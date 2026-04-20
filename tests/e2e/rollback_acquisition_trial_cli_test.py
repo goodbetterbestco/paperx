@@ -18,7 +18,7 @@ class RollbackAcquisitionTrialCliE2ETest(unittest.TestCase):
     def test_cli_rolls_back_promoted_trial_bundle(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "rollback_project"
-            sources_dir = project_dir / "corpus" / "1990_synthetic_test_paper" / "canonical_sources"
+            sources_dir = project_dir / "1990_synthetic_test_paper" / "canonical_sources"
             trial_dir = sources_dir / "trials" / "trial-mathpix"
             backup_dir = trial_dir / "previous-live"
             backup_dir.mkdir(parents=True, exist_ok=True)

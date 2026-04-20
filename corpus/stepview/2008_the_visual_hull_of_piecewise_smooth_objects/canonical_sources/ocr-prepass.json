@@ -1,9 +1,0 @@
-{
-  "selected_pdf_path": "corpus/stepview/2008_the_visual_hull_of_piecewise_smooth_objects/2008_the_visual_hull_of_piecewise_smooth_objects.pdf",
-  "original_pdf_path": "corpus/stepview/2008_the_visual_hull_of_piecewise_smooth_objects/2008_the_visual_hull_of_piecewise_smooth_objects.pdf",
-  "ocr_normalized_pdf_path": "corpus/stepview/2008_the_visual_hull_of_piecewise_smooth_objects/canonical_sources/ocr-normalized.pdf",
-  "pdf_source_kind": "original",
-  "ocr_prepass_policy": "required",
-  "ocr_prepass_tool": "ocrmypdf",
-  "ocr_prepass_applied": false
-}

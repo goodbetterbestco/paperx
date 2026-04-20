@@ -14,7 +14,11 @@ from pipeline.assembly.front_matter_support import (  # noqa: E402
     missing_front_matter_affiliation,
     missing_front_matter_author,
 )
-from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags  # noqa: E402
+from pipeline.policies.abstract_quality import (  # noqa: E402
+    MISSING_ABSTRACT_PLACEHOLDER,
+    NO_ABSTRACT_IN_BASE_MATERIAL,
+    abstract_quality_flags,
+)
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation  # noqa: E402
 from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers  # noqa: E402
 from pipeline.reconcile.front_matter_runtime import make_bound_front_matter_support_helpers  # noqa: E402
@@ -138,6 +142,36 @@ class FrontMatterSelectorTest(unittest.TestCase):
 
         self.assertEqual(title, "Synthetic Test Paper")
         self.assertEqual(source, "front_matter_records")
+
+    def test_recover_title_extracts_title_from_combined_title_and_byline(self) -> None:
+        title, source = recover_title(
+            [
+                _record(
+                    record_type="front_matter",
+                    text=(
+                        "Geometry -Completeness of Reidemeister-type moves for surfaces "
+                        "embedded in three-dimensional space , by Giovanni Bellettini , "
+                        "Valentina Beorchia and Maurizio Paolini ."
+                    ),
+                    width=410.0,
+                ),
+                _record(record_type="front_matter", text="Abstract.", y0=130.0, width=90.0),
+            ],
+            clean_text=CLEAN_TEXT,
+            record_word_count=SUPPORT_HELPERS.record_word_count,
+            record_width=SUPPORT_HELPERS.record_width,
+            abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
+            abstract_lead_re=fmp.ABSTRACT_LEAD_RE,
+            looks_like_front_matter_metadata=PARSING_HELPERS.looks_like_front_matter_metadata,
+            author_note_re=fmp.AUTHOR_NOTE_RE,
+            looks_like_affiliation=looks_like_affiliation,
+            looks_like_intro_marker=lambda text: bool(re.match(r"^\s*1\.?\s*introduction\b", text, re.IGNORECASE)),
+            looks_like_author_line=PARSING_HELPERS.looks_like_author_line,
+            looks_like_contact_name=PARSING_HELPERS.looks_like_contact_name,
+        )
+
+        self.assertEqual(title, "Completeness of Reidemeister-type moves for surfaces embedded in three-dimensional space")
+        self.assertEqual(source, "front_matter_combined_byline")
 
     def test_collect_abstract_and_funding_records_extracts_inline_abstract(self) -> None:
         abstract_records, funding_records = collect_abstract_and_funding_records(

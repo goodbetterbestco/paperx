@@ -59,6 +59,7 @@ The architecture goals are:
 Current preferred commands:
 
 - `python3 -m pipeline.cli.run_project /Users/evanthayer/Projects/paperx/<project>`
+- `python3 -m pipeline.cli.reset_corpus_to_source /Users/evanthayer/Projects/paperx/<project>`
 - `python3 -m pipeline.cli.build_canonical <paper-id> --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.build_corpus_lexicon`
@@ -116,6 +117,13 @@ That is enough for:
 - `python3 -m pipeline.cli.audit_corpus`
 - `python3 -m pipeline.cli.build_review ... --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.run_project /path/to/project`
+
+`run_project` expects the corpus folder to begin in `source` state with PDFs at
+the corpus root. It moves the corpus into `processed` state by placing each PDF
+into its paper-owned folder, generating local build artifacts, and writing the
+top-level review surface into `_canon/`. Use
+`python3 -m pipeline.cli.reset_corpus_to_source /path/to/project` to return the
+corpus to source-only form.
 
 Full source regeneration still expects additional tools and credentials:
 

@@ -23,7 +23,7 @@ class BuildCorpusLexiconCliE2ETest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "lexicon_project"
             shutil.copytree(FIXTURE_PROJECT, project_dir)
-            lexicon_path = project_dir / "corpus" / "corpus_lexicon.json"
+            lexicon_path = project_dir / "corpus_lexicon.json"
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
             env["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)

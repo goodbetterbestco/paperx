@@ -10,7 +10,7 @@ from pathlib import Path
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Normalize a paperx project folder, then run the full pipeline against it."
+        description="Convert a corpus folder from source state into processed state, then run the full pipeline against it."
     )
     parser.add_argument("project_dir", help="Path to the paperx project folder.")
     parser.add_argument(
@@ -65,7 +65,7 @@ def main() -> int:
             json.dumps(
                 {
                     "project_dir": str(project_dir),
-                    "error": "No PDF inputs were found in the project root or source/.",
+                    "error": "No PDF inputs were found in the project root.",
                     **preparation,
                 },
                 indent=2,

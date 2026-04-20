@@ -41,6 +41,28 @@ class DoclingAdapterTest(unittest.TestCase):
                 with self.assertRaisesRegex(FileNotFoundError, "Docling CLI not found"):
                     run_docling("synthetic_test_paper", output_dir=output_dir)
 
+    def test_run_docling_resolves_json_by_actual_input_pdf_stem(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_dir = Path(tmpdir)
+            normalized_pdf_path = output_dir / "ocr-normalized.pdf"
+            normalized_pdf_path.write_bytes(b"%PDF-1.4\n")
+
+            def fake_subprocess_run(*args, **kwargs):
+                (output_dir / "ocr-normalized.json").write_text('{"texts": []}', encoding="utf-8")
+                return None
+
+            result = run_docling(
+                "synthetic_test_paper",
+                output_dir=output_dir,
+                pdf_path=normalized_pdf_path,
+                device="cpu",
+                resolve_docling_command_fn=lambda: ["/tmp/docling"],
+                subprocess_run=fake_subprocess_run,
+                runtime_env_fn=lambda: {},
+            )
+
+            self.assertEqual(result, output_dir / "ocr-normalized.json")
+
     def test_page_one_abstract_and_intro_close_front_matter(self) -> None:
         docling_document = {
             "texts": [

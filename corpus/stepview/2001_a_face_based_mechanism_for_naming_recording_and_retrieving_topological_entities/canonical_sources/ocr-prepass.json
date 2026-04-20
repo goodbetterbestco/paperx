@@ -1,9 +1,0 @@
-{
-  "selected_pdf_path": "corpus/stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities.pdf",
-  "original_pdf_path": "corpus/stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities.pdf",
-  "ocr_normalized_pdf_path": "corpus/stepview/2001_a_face_based_mechanism_for_naming_recording_and_retrieving_topological_entities/canonical_sources/ocr-normalized.pdf",
-  "pdf_source_kind": "original",
-  "ocr_prepass_policy": "required",
-  "ocr_prepass_tool": "ocrmypdf",
-  "ocr_prepass_applied": false
-}

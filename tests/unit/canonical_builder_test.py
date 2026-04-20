@@ -51,7 +51,7 @@ class CanonicalBuilderTest(unittest.TestCase):
             document = build_canonical_document(
                 paper_id="1990_synthetic_test_paper",
                 title="Synthetic Test Paper",
-                source={"pdf_path": "source/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": []},
+                source={"pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": []},
                 timestamp="2026-04-19T00:00:00Z",
                 layout_engine_name="docling",
                 math_engine_name="mathpix",
@@ -77,7 +77,7 @@ class CanonicalBuilderTest(unittest.TestCase):
         self.assertTrue(all(entry.get("semantic") for entry in document["math"]))
         build_metadata.assert_called_once_with(
             "1990_synthetic_test_paper",
-            pdf_path="source/1990_synthetic_test_paper.pdf",
+            pdf_path="1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
             timestamp="2026-04-19T00:00:00Z",
             layout_engine="docling",
             math_engine="mathpix",
@@ -98,7 +98,7 @@ class CanonicalBuilderTest(unittest.TestCase):
             document = build_canonical_document(
                 paper_id="1990_synthetic_test_paper",
                 title="Synthetic Test Paper",
-                source={"pdf_path": "source/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": []},
+                source={"pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": []},
                 timestamp="2026-04-19T00:00:00Z",
                 layout_engine_name="native_pdf",
                 math_engine_name="heuristic",

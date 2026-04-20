@@ -110,7 +110,7 @@ class AssembleDocumentTest(unittest.TestCase):
 
     def test_assemble_paper_document_creates_leading_abstract_and_synthetic_intro(self) -> None:
         layout = {
-            "pdf_path": "source/1990_synthetic_test_paper.pdf",
+            "pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
             "page_count": 1,
             "page_sizes_pt": [{"page": 1, "width": 612.0, "height": 792.0}],
             "blocks": [],
@@ -170,13 +170,13 @@ class AssembleDocumentTest(unittest.TestCase):
         self.assertEqual([node.title for node in captured["ordered_roots"]], ["Introduction", "Methods"])
         self.assertEqual(captured["ordered_roots"][0].heading_id, "synthetic-introduction")
         self.assertEqual(captured["ordered_roots"][0].label, ("1",))
-        self.assertEqual(captured["document"]["source"]["pdf_path"], "source/1990_synthetic_test_paper.pdf")
+        self.assertEqual(captured["document"]["source"]["pdf_path"], "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf")
         self.assertEqual(captured["document"]["title"], "Synthetic Test Paper")
         self.assertEqual(captured["document"]["decision_artifacts"]["abstract"]["source"], "leading_abstract_section_created")
 
     def test_assemble_paper_document_replaces_placeholder_front_matter_abstract(self) -> None:
         layout = {
-            "pdf_path": "source/1990_synthetic_test_paper.pdf",
+            "pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
             "page_count": 1,
             "page_sizes_pt": [{"page": 1, "width": 612.0, "height": 792.0}],
             "blocks": [],

@@ -118,7 +118,7 @@ class SourceLayoutTest(unittest.TestCase):
             source_layout.fitz = fake_fitz
             with (
                 unittest.mock.patch("pipeline.sources.layout.paper_pdf_path", return_value=Path("/tmp/synthetic.pdf")),
-                unittest.mock.patch("pipeline.sources.layout.display_path", return_value="source/1990_synthetic_test_paper.pdf"),
+                unittest.mock.patch("pipeline.sources.layout.display_path", return_value="1990_synthetic_test_paper/1990_synthetic_test_paper.pdf"),
             ):
                 extracted = source_layout.extract_layout(
                     "1990_synthetic_test_paper",

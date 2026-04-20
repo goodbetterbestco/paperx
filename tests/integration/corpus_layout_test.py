@@ -18,7 +18,7 @@ class CorpusLayoutTest(unittest.TestCase):
         os.environ.pop("PAPER_PIPELINE_PROJECT_DIR", None)
         importlib.reload(corpus_layout)
 
-    def test_project_layout_moves_root_pdfs_and_uses_root_review_outputs(self) -> None:
+    def test_project_layout_moves_root_pdfs_into_processed_state(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir).resolve()
             (project_dir / "Alpha Paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
@@ -31,41 +31,41 @@ class CorpusLayoutTest(unittest.TestCase):
             layout = corpus_layout.current_layout()
 
             self.assertTrue(corpus_layout.PROJECT_MODE)
-            self.assertEqual(corpus_layout.SOURCE_DIR, project_dir / "source")
-            self.assertEqual(corpus_layout.CORPUS_DIR, project_dir / "corpus")
+            self.assertEqual(corpus_layout.SOURCE_DIR, project_dir)
+            self.assertEqual(corpus_layout.CORPUS_DIR, project_dir)
             self.assertEqual(layout.mode, "project")
             self.assertEqual(layout.project_dir, project_dir)
-            self.assertEqual(layout.source_root, project_dir / "source")
-            self.assertEqual(layout.corpus_root, project_dir / "corpus")
+            self.assertEqual(layout.source_root, project_dir)
+            self.assertEqual(layout.corpus_root, project_dir)
             self.assertEqual(
                 preparation["paper_ids"],
                 ["alpha_paper", "beta_paper"],
             )
-            self.assertTrue((project_dir / "source" / "alpha_paper.pdf").exists())
-            self.assertTrue((project_dir / "source" / "beta_paper.pdf").exists())
+            self.assertTrue((project_dir / "alpha_paper" / "alpha_paper.pdf").exists())
+            self.assertTrue((project_dir / "beta_paper" / "beta_paper.pdf").exists())
             self.assertFalse((project_dir / "Alpha Paper.pdf").exists())
             self.assertFalse((project_dir / "Beta-Paper.pdf").exists())
-            self.assertTrue((project_dir / "corpus" / "alpha_paper").is_dir())
-            self.assertTrue((project_dir / "corpus" / "beta_paper").is_dir())
+            self.assertTrue((project_dir / "alpha_paper").is_dir())
+            self.assertTrue((project_dir / "beta_paper").is_dir())
             self.assertEqual(
                 corpus_layout.paper_pdf_path("alpha_paper"),
-                project_dir / "source" / "alpha_paper.pdf",
+                project_dir / "alpha_paper" / "alpha_paper.pdf",
             )
             self.assertEqual(
                 corpus_layout.paper_pdf_path("alpha_paper", layout=layout),
-                project_dir / "source" / "alpha_paper.pdf",
+                project_dir / "alpha_paper" / "alpha_paper.pdf",
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper"),
-                project_dir / "alpha_paper.canonical.review.md",
+                project_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper", layout=layout),
-                project_dir / "alpha_paper.canonical.review.md",
+                project_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
             self.assertEqual(
                 layout.review_draft_path("alpha_paper"),
-                project_dir / "alpha_paper.canonical.review.md",
+                project_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
 
 

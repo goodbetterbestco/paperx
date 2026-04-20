@@ -14,14 +14,12 @@ from pipeline.corpus_layout import current_layout
 from pipeline.orchestrator.round_document import (
     anomaly_flags,
     desired_flags_for_existing_paper,
-    preserve_existing_generated_abstract,
 )
 from pipeline.orchestrator.round_execution import process_round
 from pipeline.orchestrator.round_mathpix import MathpixRoundCoordinator
 from pipeline.orchestrator.round_paper import (
     build_best_round_paper,
     compose_external_sources,
-    preserve_existing_generated_abstract_file,
     write_round_canonical_outputs,
 )
 from pipeline.orchestrator.round_reporting import render_final_report, summarize_round
@@ -678,117 +676,6 @@ class RunCorpusRoundsTest(unittest.TestCase):
                 {"use_external_layout": True, "use_external_math": False, "text_engine": "hybrid", "label": "layout_only"},
                 {"use_external_layout": False, "use_external_math": False, "text_engine": "native", "label": "native"},
             ),
-        )
-
-    def test_preserve_existing_generated_abstract_copies_prior_generated_text(self) -> None:
-        existing_document = {
-            "front_matter": {
-                "abstract_block_id": "blk-abstract-old",
-            },
-            "blocks": [
-                {
-                    "id": "blk-abstract-old",
-                    "type": "paragraph",
-                    "content": {
-                        "spans": [
-                            {
-                                "kind": "text",
-                                "text": "[Generated abstract from paper content.] A preserved generated abstract.",
-                            }
-                        ]
-                    },
-                    "source_spans": [],
-                    "alternates": [],
-                    "review": {
-                        "status": "edited",
-                        "risk": "low",
-                        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF.",
-                    },
-                }
-            ],
-        }
-        new_document = {
-            "front_matter": {
-                "abstract_block_id": "blk-abstract-new",
-            },
-            "blocks": [
-                {
-                    "id": "blk-abstract-new",
-                    "type": "paragraph",
-                    "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
-                    "source_spans": [],
-                    "alternates": [],
-                    "review": {"status": "edited", "risk": "low", "notes": "[missing from original]"},
-                }
-            ],
-        }
-
-        preserved = preserve_existing_generated_abstract(existing_document, new_document)
-
-        self.assertTrue(preserved)
-        self.assertEqual(
-            new_document["blocks"][0]["content"]["spans"][0]["text"],
-            "[Generated abstract from paper content.] A preserved generated abstract.",
-        )
-        self.assertEqual(
-            new_document["blocks"][0]["review"]["notes"],
-            "Generated abstract from paper content; original abstract unavailable in source PDF.",
-        )
-
-    def test_preserve_existing_generated_abstract_file_copies_prior_text(self) -> None:
-        existing_document = {
-            "front_matter": {
-                "abstract_block_id": "blk-abstract-old",
-            },
-            "blocks": [
-                {
-                    "id": "blk-abstract-old",
-                    "type": "paragraph",
-                    "content": {
-                        "spans": [
-                            {
-                                "kind": "text",
-                                "text": "A manually curated abstract that should survive regeneration.",
-                            }
-                        ]
-                    },
-                    "source_spans": [{"page": 1, "span_id": "orig"}],
-                    "alternates": [],
-                    "review": {
-                        "status": "edited",
-                        "risk": "low",
-                        "notes": "Generated abstract from paper content; original abstract unavailable in source PDF.",
-                    },
-                }
-            ],
-        }
-        new_document = {
-            "front_matter": {
-                "abstract_block_id": "blk-abstract-new",
-            },
-            "blocks": [
-                {
-                    "id": "blk-abstract-new",
-                    "type": "paragraph",
-                    "content": {"spans": [{"kind": "text", "text": "A newly extracted abstract."}]},
-                    "source_spans": [],
-                    "alternates": [],
-                    "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
-                }
-            ],
-        }
-
-        with patch("pipeline.orchestrator.round_paper.paper_has_generated_abstract_file", return_value=True):
-            preserved = preserve_existing_generated_abstract_file("synthetic_test_paper", existing_document, new_document)
-
-        self.assertTrue(preserved)
-        self.assertEqual(
-            new_document["blocks"][0]["content"]["spans"][0]["text"],
-            "A manually curated abstract that should survive regeneration.",
-        )
-        self.assertEqual(
-            new_document["blocks"][0]["review"]["notes"],
-            "Generated abstract from paper content; original abstract unavailable in source PDF.",
         )
 
     def test_round_summary_counts_prebuild_staleness(self) -> None:

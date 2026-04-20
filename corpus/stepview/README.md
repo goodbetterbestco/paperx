@@ -14,16 +14,18 @@ live alongside it in the future.
 
 ## Current Truth
 
-- There are `58` paper-owned folders directly under this corpus root at `<paper-id>/`.
-- Each paper folder is the authoritative local home for that paper's PDF,
-  canonical extraction, source-evidence files, and checked-in figures.
-- `review_drafts/*.canonical.review.md` are derived review views for human
-  QA. They are useful, but they are not the source of truth.
+- This corpus is meant to move between exactly two states: `source` and
+  `processed`.
+- In `source` state, the corpus root contains only the original paper PDFs plus
+  repo-owned documentation.
+- In `processed` state, each source PDF has been moved into its paper-owned
+  folder, the local build artifacts live alongside it, and `_canon/` provides a
+  top-level review surface across the whole corpus.
 - Corpus quality is tracked through the canonical audit, not by ad hoc notes.
 
-Current working shape:
+Processed working shape:
 
-`PDF + canonical_sources -> canonical.json -> review draft / audit / later retrieval products`
+`root PDF -> <paper-id>/<paper-id>.pdf + canonical_sources + canonical.json + figures + _canon review output`
 
 Current formula shape inside canonical:
 
@@ -36,27 +38,31 @@ Root files:
 - [README.md](./README.md)
   Corpus scope, working method, and paper-map guidance.
   Normalized citation and provenance layer for drafting and source tracking.
-- [figure_expectations.json](./figure_expectations.json)
-  Corpus-owned figure completeness expectations used by figure regeneration and
-  completeness auditing.
 - [whitepaper-editorial-standards.md](./whitepaper-editorial-standards.md)
   Drafting standards for tone, notation, and evidence handling.
+- `*.pdf`
+  The source-state papers that are intended to be checked into Git.
+
+Processed-state root artifacts:
+
+- `_canon/<paper-id>.canonical.review.md`
+  Human-readable review view derived from `canonical.json`.
+- `figure_expectations.json`
+  Corpus-owned figure completeness expectations used during processed-state
+  figure regeneration and completeness auditing.
+- `corpus_lexicon.json`
+  Processed-state lexicon output built from the active canonicals.
 
 Per-paper folders:
 
 - `<paper-id>/<paper-id>.pdf`
-  Normalized local paper PDF.
+  The source PDF after the corpus has been moved into processed state.
 - `<paper-id>/canonical.json`
   Paper-owned structured extraction target.
 - `<paper-id>/canonical_sources/`
   Engine-specific layout and math evidence.
 - `<paper-id>/figures/`
-  Checked-in figure assets.
-
-Derived review output:
-
-- `review_drafts/<paper-id>.canonical.review.md`
-  Human-readable review draft derived from `canonical.json`.
+  Processed-state figure assets.
 
 ## Where To Start
 
@@ -77,14 +83,16 @@ If you are answering a question about one paper:
 
 ## Corpus State
 
-The corpus is complete enough that implementation is now the bottleneck, not
-paper acquisition.
+The checked-in repo copy should stay in `source` state. Local processing moves
+the corpus into `processed` state, and `python -m pipeline.cli.reset_corpus_to_source`
+returns it to the source-only layout for check-in.
 
 What is materially true right now:
 
-- all `58` papers have paper-owned homes under this corpus root
-- the canonical pipeline is the active ingestion surface
-- review drafts are derived from canonical and used for QA only
+- there are `58` source papers in this corpus
+- the canonical pipeline is the active ingestion surface once the corpus is in
+  processed state
+- `_canon/` is the top-level review surface for processed output
 - formula work is now policy-gated:
   only a minority of formulas are treated as semantic objects
 - the live parser queue should be taken from the audit report, not from stale
@@ -213,7 +221,7 @@ python3 -m pipeline.cli.audit_corpus --top 12
 Useful paper checks:
 
 - read `<paper-id>/canonical.json`
-- read `review_drafts/<paper-id>.canonical.review.md`
+- read `_canon/<paper-id>.canonical.review.md`
 - inspect `<paper-id>/canonical_sources/*`
 - open the local PDF when exact source verification matters
 

@@ -24,7 +24,7 @@ def _corpus_layout(root: Path) -> ProjectLayout:
         project_dir=None,
         corpus_root=corpus_root,
         source_root=corpus_root,
-        review_root=corpus_root / "review_drafts",
+        review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",
@@ -114,8 +114,6 @@ class RoundExecutionTest(unittest.TestCase):
                     "attempts": ["layout_only", "layout_plus_mathpix"],
                     "document": document,
                 },
-                preserve_existing_generated_abstract_impl=lambda existing_document, new_document: True,
-                preserve_existing_generated_abstract_file_impl=lambda paper_id, existing_document, new_document, *, layout=None: False,
                 write_canonical_outputs_impl=lambda paper_id, new_document, *, layout=None: {
                     "canonical_path": str(canonical_target),
                     "references": 0,
@@ -142,8 +140,6 @@ class RoundExecutionTest(unittest.TestCase):
             )
             self.assertEqual(result["attempts"], ["layout_only", "layout_plus_mathpix"])
             self.assertEqual(result["prebuild_staleness"]["reasons"], ["pipeline_fingerprint_changed"])
-            self.assertTrue(result["preserved_generated_abstract"])
-            self.assertFalse(result["preserved_generated_abstract_file"])
             self.assertEqual(result["build_sources"], {"layout_engine": "composed", "math_engine": "mathpix"})
             self.assertIn("build_seconds", result["timings"])
             self.assertIn("compose_sources_seconds", result["timings"])

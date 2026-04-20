@@ -220,7 +220,7 @@ class LinkFiguresTest(unittest.TestCase):
                 project_dir=None,
                 corpus_root=corpus_root,
                 source_root=corpus_root,
-                review_root=corpus_root / "review_drafts",
+                review_root=corpus_root / "_canon",
                 runs_root=corpus_root / "_runs",
                 tmp_root=root / "tmp",
                 figure_expectations_path=corpus_root / "figure_expectations.json",
@@ -272,7 +272,7 @@ class LinkFiguresTest(unittest.TestCase):
     def test_resolve_manifest_paths_prefer_explicit_project_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
-            project_pdf = root / "source" / "1990_synthetic_test_paper.pdf"
+            project_pdf = root / "1990_synthetic_test_paper" / "1990_synthetic_test_paper.pdf"
             project_figures_dir = root / "artifacts" / "figures"
             project_pdf.parent.mkdir(parents=True, exist_ok=True)
             project_figures_dir.mkdir(parents=True, exist_ok=True)
@@ -282,18 +282,18 @@ class LinkFiguresTest(unittest.TestCase):
                 mode="project",
                 corpus_name="fixture",
                 project_dir=root,
-                corpus_root=root / "corpus",
-                source_root=root / "source",
-                review_root=root,
-                runs_root=root / "corpus" / "_runs",
+                corpus_root=root,
+                source_root=root,
+                review_root=root / "_canon",
+                runs_root=root / "_runs",
                 tmp_root=root / "tmp",
-                figure_expectations_path=root / "corpus" / "figure_expectations.json",
+                figure_expectations_path=root / "figure_expectations.json",
             )
             manifest = {
                 "id": "1990_synthetic_test_paper",
-                "source_pdf": "source/1990_synthetic_test_paper.pdf",
+                "source_pdf": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
                 "artifacts": {
-                    "pdf": "source/1990_synthetic_test_paper.pdf",
+                    "pdf": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
                     "figures_dir": "artifacts/figures",
                 },
             }

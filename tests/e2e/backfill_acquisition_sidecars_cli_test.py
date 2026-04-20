@@ -57,7 +57,7 @@ class BackfillAcquisitionSidecarsCliE2ETest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "audit_project"
             shutil.copytree(FIXTURE_PROJECT, project_dir)
-            (project_dir / "source" / "1990_synthetic_test_paper.pdf").write_bytes(MINIMAL_PDF)
+            (project_dir / "1990_synthetic_test_paper" / "1990_synthetic_test_paper.pdf").write_bytes(MINIMAL_PDF)
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
             env["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)
@@ -85,7 +85,7 @@ class BackfillAcquisitionSidecarsCliE2ETest(unittest.TestCase):
             self.assertEqual(payload["updated"]["source-scorecard.json"], 1)
             self.assertEqual(payload["updated"]["ocr-prepass.json"], 1)
 
-            sources_dir = project_dir / "corpus" / "1990_synthetic_test_paper" / "canonical_sources"
+            sources_dir = project_dir / "1990_synthetic_test_paper" / "canonical_sources"
             self.assertTrue((sources_dir / "acquisition-route.json").exists())
             self.assertTrue((sources_dir / "source-scorecard.json").exists())
             self.assertTrue((sources_dir / "ocr-prepass.json").exists())

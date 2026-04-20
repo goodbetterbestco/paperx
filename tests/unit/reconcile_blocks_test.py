@@ -17,7 +17,11 @@ from pipeline.assembly.front_matter_support import (
     missing_front_matter_author,
 )
 from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
-from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
+from pipeline.policies.abstract_quality import (
+    MISSING_ABSTRACT_PLACEHOLDER,
+    NO_ABSTRACT_IN_BASE_MATERIAL,
+    abstract_quality_flags,
+)
 from pipeline.reconcile.block_merging import (
     merge_paragraph_blocks as _block_merge_paragraph_blocks,
     merge_paragraph_records as _block_merge_paragraph_records,
@@ -426,7 +430,7 @@ BUILD_FRONT_MATTER = make_build_front_matter(
     normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
     default_review=default_review,
     block_source_spans=block_source_spans,
-    front_matter_missing_placeholder=MISSING_ABSTRACT_PLACEHOLDER,
+    front_matter_missing_placeholder=NO_ABSTRACT_IN_BASE_MATERIAL,
 )
 RECOVER_MISSING_FRONT_MATTER_ABSTRACT = make_recover_missing_front_matter_abstract(
     recover_missing_front_matter_abstract_impl=_assembly_recover_missing_front_matter_abstract,
@@ -3309,7 +3313,7 @@ class ReconcileBlocksTest(unittest.TestCase):
         self.assertEqual(front_matter["affiliations"][0]["institution"], "Yorktown Heights")
         self.assertEqual(front_matter["affiliations"][0]["address"], "New York")
         self.assertEqual(front_matter["abstract_block_id"], "blk-front-abstract-1")
-        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(blocks[0]["review"]["status"], "edited")
         self.assertEqual(remainder, [])
 
@@ -3335,12 +3339,12 @@ class ReconcileBlocksTest(unittest.TestCase):
             [{"id": "aff-1", "department": "[missing from original]", "institution": "", "address": ""}],
         )
         self.assertEqual(front_matter["abstract_block_id"], "blk-front-abstract-1")
-        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], "[missing from original]")
-        self.assertEqual(blocks[0]["review"]["notes"], "[missing from original]")
+        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
+        self.assertEqual(blocks[0]["review"]["notes"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(next_block_index, 2)
         self.assertEqual(remainder, [])
 
-    def test_front_matter_fallback_abstract_skips_metadata_lines(self) -> None:
+    def test_front_matter_does_not_infer_abstract_from_metadata_filtered_body_text(self) -> None:
         prelude = [
             _record(record_type="front_matter", text="Synthetic Test Paper", y0=80.0, height=16.0, width=320.0),
             _record(record_type="front_matter", text="Shankar Krishnan", y0=140.0, height=12.0, width=140.0),
@@ -3365,10 +3369,7 @@ class ReconcileBlocksTest(unittest.TestCase):
         )
 
         self.assertEqual(front_matter["abstract_block_id"], "blk-front-abstract-1")
-        self.assertEqual(
-            blocks[0]["content"]["spans"][0]["text"],
-            "Computing the visible portions of curved surfaces from a given viewpoint is of great interest in many applications.",
-        )
+        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(next_block_index, 2)
         self.assertEqual(remainder, [])
 
@@ -3398,7 +3399,7 @@ class ReconcileBlocksTest(unittest.TestCase):
         )
 
         abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
-        self.assertEqual(abstract_block["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(abstract_block["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(len(remaining), 1)
         self.assertIn("introductory paragraph", remaining[0]["text"])
 
@@ -3427,7 +3428,7 @@ class ReconcileBlocksTest(unittest.TestCase):
         )
 
         abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
-        self.assertEqual(abstract_block["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(abstract_block["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(len(remaining), 1)
 
     def test_front_matter_participants_page_uses_missing_abstract_placeholder(self) -> None:
@@ -3451,7 +3452,7 @@ class ReconcileBlocksTest(unittest.TestCase):
         )
 
         abstract_block = next(block for block in blocks if block["id"] == front_matter["abstract_block_id"])
-        self.assertEqual(abstract_block["content"]["spans"][0]["text"], "[missing from original]")
+        self.assertEqual(abstract_block["content"]["spans"][0]["text"], NO_ABSTRACT_IN_BASE_MATERIAL)
         self.assertEqual(abstract_block["review"]["status"], "edited")
         self.assertEqual(len(remaining), 1)
 

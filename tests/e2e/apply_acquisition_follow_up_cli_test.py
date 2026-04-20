@@ -18,7 +18,7 @@ class ApplyAcquisitionFollowUpCliE2ETest(unittest.TestCase):
     def test_cli_materializes_follow_up_trial_bundle(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "follow_up_project"
-            sources_dir = project_dir / "corpus" / "1990_synthetic_test_paper" / "canonical_sources"
+            sources_dir = project_dir / "1990_synthetic_test_paper" / "canonical_sources"
             sources_dir.mkdir(parents=True, exist_ok=True)
 
             (sources_dir / "acquisition-route.json").write_text(

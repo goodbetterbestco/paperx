@@ -230,7 +230,7 @@ def build_front_matter(
         if not abstract_records:
             abstract_decision = build_abstract_decision(
                 abstract_text=front_matter_missing_placeholder,
-                source="missing_placeholder",
+                source="no_abstract_in_base_material",
                 candidate_records=[],
                 placeholder=True,
             )

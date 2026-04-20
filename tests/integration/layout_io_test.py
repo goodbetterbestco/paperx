@@ -31,7 +31,7 @@ def _corpus_layout(root: Path) -> ProjectLayout:
         project_dir=None,
         corpus_root=corpus_root,
         source_root=corpus_root,
-        review_root=corpus_root / "review_drafts",
+        review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",

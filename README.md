@@ -9,7 +9,8 @@ Right now this repo contains three first-class areas:
   rendering, auditing, and corpus-wide rebuilds
 - `corpus/`: checked-in corpora, with `stepview/` as the first migrated corpus
 - `corpus/stepview/`: the current StepView corpus, including
-  source PDFs, `canonical.json` outputs, figure assets, and review drafts
+  checked-in source PDFs plus local processed-state build artifacts when you
+  run the pipeline
 
 ## Repository Layout
 
@@ -70,19 +71,21 @@ Normalize and process a project folder:
 python -m pipeline.cli.run_project ./corpus/stepview
 ```
 
-`run_project` is the forward-looking entrypoint for new corpora. It prepares a
-project folder, discovers PDFs from the project root or `source/`, and runs the
-pipeline rounds against that project.
+`run_project` is the forward-looking entrypoint for corpora in `source` state.
+It moves root PDFs into processed per-paper folders, materializes the build
+artifacts, writes top-level review outputs into `_canon/`, and runs the
+pipeline rounds against that corpus folder.
 
 ## New Project Flow
 
 The intended shape for future corpora is:
 
 1. Create a new folder under `paperx/corpus/`, such as `paperx/corpus/<project>/`.
-2. Drop PDFs into that project root or `source/`.
+2. Drop source PDFs directly into that corpus root.
 3. Run `python -m pipeline.cli.run_project <project-dir>`.
-4. Let the engine normalize the project into project-owned corpus outputs and
-   review artifacts.
+4. Let the engine move the corpus from `source` state into `processed` state.
+5. Use `python -m pipeline.cli.reset_corpus_to_source <project-dir>` to return
+   the corpus to source-only form for check-in.
 
 ## Credentials
 

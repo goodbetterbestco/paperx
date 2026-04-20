@@ -27,7 +27,7 @@ def _layout() -> ProjectLayout:
         project_dir=None,
         corpus_root=corpus_root,
         source_root=corpus_root,
-        review_root=corpus_root / "review_drafts",
+        review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",
@@ -113,13 +113,13 @@ class PaperReconcilerTest(unittest.TestCase):
             calls.append("resolve")
             self.assertEqual(state.started_at, "2026-04-19T00:00:00Z")
             self.assertIs(config.layout, layout)
-            state.native_layout = {"pdf_path": "source/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": [], "blocks": []}
+            state.native_layout = {"pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": [], "blocks": []}
             return state
 
         def fake_normalize_records(state: PaperState, *, config, **kwargs) -> PaperState:
             calls.append("normalize")
             self.assertIs(config.layout, layout)
-            state.merged_layout = {"pdf_path": "source/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": [], "blocks": []}
+            state.merged_layout = {"pdf_path": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf", "page_count": 1, "page_sizes_pt": [], "blocks": []}
             return state
 
         def fake_assemble_document(state: PaperState, **kwargs) -> PaperState:

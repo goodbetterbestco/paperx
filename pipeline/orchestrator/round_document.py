@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Callable
+from typing import Any
 
 from pipeline.policies.abstract_quality import abstract_quality_flags, abstract_quality_rank
 from pipeline.policies.completeness import (
@@ -18,9 +18,6 @@ ANOMALY_WEIGHTS = {
     "missing_references": 1,
     "missing_figures": 1,
 }
-GENERATED_ABSTRACT_NOTE_PREFIX = "Generated abstract from "
-
-
 def document_abstract_text(document: dict[str, Any]) -> str:
     abstract_id = str(document.get("front_matter", {}).get("abstract_block_id") or "")
     if not abstract_id:
@@ -29,82 +26,6 @@ def document_abstract_text(document: dict[str, Any]) -> str:
         if str(block.get("id", "")) == abstract_id:
             return completeness_block_text(block)
     return ""
-
-
-def document_abstract_block(document: dict[str, Any]) -> dict[str, Any] | None:
-    abstract_id = str(document.get("front_matter", {}).get("abstract_block_id") or "")
-    if not abstract_id:
-        return None
-    for block in document.get("blocks", []):
-        if str(block.get("id", "")) == abstract_id:
-            return block
-    return None
-
-
-def document_has_generated_abstract(document: dict[str, Any] | None) -> bool:
-    if not isinstance(document, dict):
-        return False
-    abstract_block = document_abstract_block(document)
-    if not abstract_block:
-        return False
-    review = abstract_block.get("review", {})
-    notes = str(review.get("notes", "")) if isinstance(review, dict) else ""
-    text = completeness_block_text(abstract_block)
-    return notes.startswith(GENERATED_ABSTRACT_NOTE_PREFIX) or text.startswith("[Generated abstract from ")
-
-
-def copy_existing_abstract_block(existing_document: dict[str, Any] | None, new_document: dict[str, Any]) -> bool:
-    existing_block = document_abstract_block(existing_document or {})
-    if not existing_block:
-        return False
-
-    target_id = str(new_document.get("front_matter", {}).get("abstract_block_id") or "")
-    if not target_id:
-        return False
-
-    blocks = list(new_document.get("blocks", []))
-    for block in blocks:
-        if str(block.get("id", "")) != target_id:
-            continue
-        block["type"] = str(existing_block.get("type", block.get("type", "paragraph")))
-        block["content"] = dict(existing_block.get("content", {}))
-        block["source_spans"] = list(existing_block.get("source_spans", []))
-        block["alternates"] = list(existing_block.get("alternates", []))
-        block["review"] = dict(existing_block.get("review", {}))
-        new_document["blocks"] = blocks
-        return True
-
-    preserved_block = {
-        **existing_block,
-        "id": target_id,
-    }
-    blocks.append(preserved_block)
-    new_document["blocks"] = blocks
-    return True
-
-
-def preserve_existing_generated_abstract(
-    existing_document: dict[str, Any] | None,
-    new_document: dict[str, Any],
-) -> bool:
-    if not document_has_generated_abstract(existing_document):
-        return False
-    return copy_existing_abstract_block(existing_document, new_document)
-
-
-def preserve_existing_generated_abstract_file(
-    paper_id: str,
-    existing_document: dict[str, Any] | None,
-    new_document: dict[str, Any],
-    *,
-    abstract_file_exists: Callable[[str], bool],
-) -> bool:
-    if not abstract_file_exists(paper_id):
-        return False
-    existing_text = document_abstract_text(existing_document or {})
-    if not existing_text or "missing" in abstract_quality_flags(existing_text):
-        return False
-    return copy_existing_abstract_block(existing_document, new_document)
 
 
 def anomaly_flags(document: dict[str, Any]) -> list[str]:
@@ -161,15 +82,9 @@ def desired_flags_for_existing_paper(
 
 __all__ = [
     "ANOMALY_WEIGHTS",
-    "GENERATED_ABSTRACT_NOTE_PREFIX",
     "anomaly_flags",
-    "copy_existing_abstract_block",
     "desired_flags_for_existing_paper",
     "desired_flags_from_composed_sources",
-    "document_abstract_block",
     "document_abstract_text",
-    "document_has_generated_abstract",
     "document_quality_key",
-    "preserve_existing_generated_abstract",
-    "preserve_existing_generated_abstract_file",
 ]

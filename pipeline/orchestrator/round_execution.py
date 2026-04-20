@@ -10,7 +10,6 @@ from pipeline.corpus_layout import ProjectLayout, canonical_path
 from pipeline.orchestrator.round_document import (
     anomaly_flags,
     desired_flags_for_existing_paper,
-    preserve_existing_generated_abstract,
 )
 from pipeline.orchestrator.round_mathpix import MathpixRoundCoordinator
 from pipeline.orchestrator.round_paper import (
@@ -18,7 +17,6 @@ from pipeline.orchestrator.round_paper import (
     compose_external_sources,
     existing_composed_sources,
     load_json_if_exists,
-    preserve_existing_generated_abstract_file,
     write_round_canonical_outputs,
 )
 from pipeline.orchestrator.round_runtime import now_iso, save_status
@@ -48,8 +46,6 @@ def run_paper_job(
     build_extraction_sources_for_paper_impl: Callable[..., tuple[dict[str, Any], dict[str, Any] | None, dict[str, float]]] | None = None,
     compose_external_sources_impl: Callable[..., dict[str, Any]] | None = None,
     build_paper_impl: Callable[..., dict[str, Any]] | None = None,
-    preserve_existing_generated_abstract_impl: Callable[[dict[str, Any] | None, dict[str, Any]], bool] | None = None,
-    preserve_existing_generated_abstract_file_impl: Callable[..., bool] | None = None,
 ) -> dict[str, Any]:
     now_iso_impl = now_iso_impl or now_iso
     load_json_if_exists_impl = load_json_if_exists_impl or load_json_if_exists
@@ -62,10 +58,6 @@ def run_paper_job(
     build_extraction_sources_for_paper_impl = build_extraction_sources_for_paper_impl or build_extraction_sources_for_paper
     compose_external_sources_impl = compose_external_sources_impl or compose_external_sources
     build_paper_impl = build_paper_impl or build_best_round_paper
-    preserve_existing_generated_abstract_impl = preserve_existing_generated_abstract_impl or preserve_existing_generated_abstract
-    preserve_existing_generated_abstract_file_impl = (
-        preserve_existing_generated_abstract_file_impl or preserve_existing_generated_abstract_file
-    )
     canonical_target = canonical_path_impl(paper_id, layout=layout)
     paper_status: dict[str, Any] = {}
     timings: dict[str, float] = {}
@@ -141,13 +133,6 @@ def run_paper_job(
         build_result = build_paper_impl(paper_id, layout=layout)
         timings["build_seconds"] = round(time.perf_counter() - build_started, 3)
         document = build_result["document"]
-        preserved_generated_abstract = preserve_existing_generated_abstract_impl(existing_document, document)
-        preserved_generated_abstract_file = preserve_existing_generated_abstract_file_impl(
-            paper_id,
-            existing_document,
-            document,
-            layout=layout,
-        )
         outputs = write_canonical_outputs_impl(paper_id, document, layout=layout)
         anomalies = anomaly_flags_impl(document)
         timings["total_seconds"] = round(time.perf_counter() - overall_started, 3)
@@ -172,8 +157,6 @@ def run_paper_job(
                 "prebuild_staleness": prebuild_staleness,
                 "skipped_fresh": False,
                 "forced_rebuild": bool(force_rebuild),
-                "preserved_generated_abstract": preserved_generated_abstract,
-                "preserved_generated_abstract_file": preserved_generated_abstract_file,
                 "timings": timings,
             }
         )

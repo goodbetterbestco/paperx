@@ -198,7 +198,7 @@ def resolve_front_matter_resolution(
         page_one_content_records = page_one_clean_records[page_one_content_start_index:]
         page_one_abstract_records, page_one_funding_records = collect_abstract_and_funding_records(
             page_one_content_records,
-            allow_fallback=True,
+            allow_fallback=False,
             title=title,
             clean_text=clean_text,
             normalize_title_key=normalize_title_key,

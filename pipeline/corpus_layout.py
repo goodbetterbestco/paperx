@@ -37,15 +37,15 @@ class ProjectLayout:
         corpus_name = _env_value("PIPELINE_CORPUS_NAME", "PAPER_PIPELINE_CORPUS_NAME", DEFAULT_CORPUS_NAME) or DEFAULT_CORPUS_NAME
         project_dir = _configured_project_dir()
         if project_dir is not None:
-            source_root = project_dir / "source"
-            corpus_root = project_dir / "corpus"
-            review_root = project_dir
-            runs_root = corpus_root / "_runs"
+            source_root = project_dir
+            corpus_root = project_dir
+            review_root = project_dir / "_canon"
+            runs_root = project_dir / "_runs"
             mode = "project"
         else:
             corpus_root = _configured_corpus_dir(root, corpus_name)
             source_root = corpus_root
-            review_root = corpus_root / "review_drafts"
+            review_root = corpus_root / "_canon"
             runs_root = corpus_root / "_runs"
             mode = "corpus"
         return cls(
@@ -77,9 +77,16 @@ class ProjectLayout:
 
     def paper_pdf_path(self, paper_id: str) -> Path:
         canonical_paper_id = corpus_paper_id(paper_id)
-        if self.project_mode:
-            return self.source_root / f"{canonical_paper_id}.pdf"
-        return self.paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
+        converted = self.paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
+        if converted.exists():
+            return converted
+        source = self.source_root / f"{canonical_paper_id}.pdf"
+        if source.exists():
+            return source
+        legacy_source = self.project_root() / "source" / f"{canonical_paper_id}.pdf"
+        if legacy_source.exists():
+            return legacy_source
+        return converted
 
     def canonical_path(self, paper_id: str) -> Path:
         return self.paper_dir(paper_id) / "canonical.json"

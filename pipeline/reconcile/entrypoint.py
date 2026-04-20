@@ -45,7 +45,11 @@ from pipeline.math.semantic_ir import annotate_formula_semantic_expr
 from pipeline.math.semantic_policy import annotate_formula_classifications
 from pipeline.orchestrator.layout_merge import merge_native_and_external_layout as orchestrate_merge_native_and_external_layout
 from pipeline.orchestrator.paper_reconciler import run_paper_pipeline
-from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
+from pipeline.policies.abstract_quality import (
+    MISSING_ABSTRACT_PLACEHOLDER,
+    NO_ABSTRACT_IN_BASE_MATERIAL,
+    abstract_quality_flags,
+)
 from pipeline.reconcile.block_merging import (
     merge_code_records as reconcile_merge_code_records,
     merge_paragraph_blocks as reconcile_merge_paragraph_blocks,
@@ -299,7 +303,7 @@ def reconcile_paper_state(
             author_note_re=AUTHOR_NOTE_RE,
             looks_like_affiliation=reconcile_looks_like_affiliation_runtime,
             funding_re=FUNDING_RE,
-            missing_front_matter_placeholder=MISSING_ABSTRACT_PLACEHOLDER,
+            missing_front_matter_placeholder=NO_ABSTRACT_IN_BASE_MATERIAL,
             missing_front_matter_author_impl=assemble_missing_front_matter_author,
             missing_front_matter_affiliation_impl=assemble_missing_front_matter_affiliation,
             normalize_title_key=normalize_title_key,

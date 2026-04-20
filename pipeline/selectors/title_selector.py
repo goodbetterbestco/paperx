@@ -47,6 +47,20 @@ def recover_title(
             return ""
         return clean_text(match.group("title"))
 
+    def title_from_combined_byline(text: str, record: dict[str, Any]) -> str:
+        if record_word_count(record) < 5:
+            return ""
+        match = re.match(
+            r"^(?:(?P<prefix>[A-Z][A-Za-z]+)\s*-\s*)?(?P<title>.+?)\s*,?\s+by\s+[A-Z]",
+            text,
+        )
+        if not match:
+            return ""
+        title = clean_text(match.group("title"))
+        if len(title.split()) < 4:
+            return ""
+        return title
+
     def title_signal(text: str, record: dict[str, Any], *, allow_author_like: bool) -> bool:
         word_count = record_word_count(record)
         width = record_width(record)
@@ -80,6 +94,9 @@ def recover_title(
             citation_title = title_from_citation(text)
             if citation_title:
                 return citation_title, "front_matter_citation"
+            byline_title = title_from_combined_byline(text, record)
+            if byline_title:
+                return byline_title, "front_matter_combined_byline"
         if looks_like_front_matter_metadata(text) or author_note_re.search(text):
             continue
         if looks_like_affiliation(text):

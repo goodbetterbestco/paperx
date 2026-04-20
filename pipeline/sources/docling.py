@@ -36,6 +36,27 @@ def _docling_output_dir(paper_id: str, output_dir: Path | None = None) -> Path:
     return output_dir or Path(tempfile.mkdtemp(prefix=f"{paper_id}-docling-", dir=str(ensure_repo_tmp_dir())))
 
 
+def _resolve_docling_json_path(output_dir: Path, *, paper_id: str, pdf_path: Path) -> Path:
+    preferred_paths: list[Path] = [output_dir / f"{pdf_path.stem}.json"]
+    legacy_path = output_dir / f"{paper_id}.json"
+    if legacy_path not in preferred_paths:
+        preferred_paths.append(legacy_path)
+
+    for candidate in preferred_paths:
+        if candidate.exists():
+            return candidate
+
+    json_paths = sorted(output_dir.glob("*.json"))
+    if len(json_paths) == 1:
+        return json_paths[0]
+
+    raise FileNotFoundError(
+        "Docling did not produce an expected JSON output. "
+        f"Looked for {[path.name for path in preferred_paths]} in {output_dir} "
+        f"and found {[path.name for path in json_paths]}."
+    )
+
+
 def _resolve_docling_command() -> list[str]:
     configured_bin = os.environ.get("PIPELINE_DOCLING_BIN", os.environ.get("PAPER_PIPELINE_DOCLING_BIN", "")).strip()
     if configured_bin:
@@ -92,7 +113,7 @@ def run_docling(
     if device:
         command.extend(["--device", device])
     subprocess_run(command, check=True, env=runtime_env_fn(), capture_output=True, text=True)
-    return output_dir / f"{paper_id}.json"
+    return _resolve_docling_json_path(output_dir, paper_id=paper_id, pdf_path=pdf_path)
 
 
 def _page_heights(layout: dict[str, Any]) -> dict[int, float]:
@@ -389,6 +410,7 @@ __all__ = [
     "_page_number_from_item",
     "_paper_pdf_path",
     "_resolve_docling_command",
+    "_resolve_docling_json_path",
     "docling_json_to_external_sources",
     "run_docling",
     "write_external_sources",

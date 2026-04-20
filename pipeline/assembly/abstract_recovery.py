@@ -168,14 +168,7 @@ def recover_missing_front_matter_abstract(
         abstract_text, abstract_records = leading_abstract_text(node)
         if abstract_text_is_recoverable(abstract_text):
             return replace_front_matter_abstract_text(front_matter, blocks, abstract_text, abstract_records)
-
-    candidate_records = opening_abstract_candidate_records(prelude)
-    if not candidate_records:
-        return False
-    candidate_text = normalize_abstract_candidate_text(candidate_records)
-    if not abstract_text_is_recoverable(candidate_text):
-        return False
-    return replace_front_matter_abstract_text(front_matter, blocks, candidate_text, candidate_records)
+    return False
 
 
 def first_root_indicates_missing_intro(

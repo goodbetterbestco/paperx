@@ -38,7 +38,7 @@ def is_paper_dir(path: Path) -> bool:
 
 def paper_id_from_pdf_path(pdf_path: Path, *, layout: ProjectLayout | None = None) -> str:
     active_layout = layout or current_layout()
-    if active_layout.project_mode and pdf_path.parent.resolve() == active_layout.source_root.resolve():
+    if pdf_path.parent.resolve() == active_layout.source_root.resolve():
         return corpus_paper_id(pdf_path.stem)
     if PAPER_DIR_RE.match(pdf_path.parent.name):
         return paper_id_from_dir_name(pdf_path.parent.name)
@@ -51,27 +51,28 @@ def canonical_pdf_filename(paper_id: str) -> str:
 
 def discover_paper_pdf_paths(*, layout: ProjectLayout | None = None) -> list[Path]:
     active_layout = layout or current_layout()
-    if active_layout.project_mode:
-        return sorted(path for path in active_layout.source_root.glob("*.pdf") if path.is_file())
-
-    pdf_paths: list[Path] = []
+    pdf_by_id: dict[str, Path] = {}
     corpus_root = active_layout.corpus_root
     if not corpus_root.exists():
         return []
+    for pdf_path in sorted(path for path in active_layout.source_root.glob("*.pdf") if path.is_file()):
+        pdf_by_id[paper_id_from_pdf_path(pdf_path, layout=active_layout)] = pdf_path
     for candidate_dir in sorted(path for path in corpus_root.iterdir() if is_paper_dir(path)):
         paper_id = paper_id_from_dir_name(candidate_dir.name)
+        if paper_id in pdf_by_id:
+            continue
         preferred = active_layout.paper_pdf_path(paper_id)
         legacy = candidate_dir / f"{paper_id}.pdf"
         if preferred.exists():
-            pdf_paths.append(preferred)
+            pdf_by_id[paper_id] = preferred
             continue
         if legacy.exists():
-            pdf_paths.append(legacy)
+            pdf_by_id[paper_id] = legacy
             continue
         other_pdfs = sorted(path for path in candidate_dir.glob("*.pdf") if path.is_file())
         if other_pdfs:
-            pdf_paths.append(other_pdfs[0])
-    return pdf_paths
+            pdf_by_id[paper_id] = other_pdfs[0]
+    return [pdf_by_id[paper_id] for paper_id in sorted(pdf_by_id)]
 
 
 @lru_cache(maxsize=None)

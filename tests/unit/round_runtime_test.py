@@ -26,7 +26,7 @@ def _corpus_layout(root: Path) -> ProjectLayout:
         project_dir=None,
         corpus_root=corpus_root,
         source_root=corpus_root,
-        review_root=corpus_root / "review_drafts",
+        review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",
@@ -34,15 +34,15 @@ def _corpus_layout(root: Path) -> ProjectLayout:
 
 
 def _project_layout(root: Path) -> ProjectLayout:
-    corpus_root = root / "corpus"
+    corpus_root = root
     return ProjectLayout(
         engine_root=root,
         mode="project",
         corpus_name="fixture",
         project_dir=root,
         corpus_root=corpus_root,
-        source_root=root / "source",
-        review_root=root,
+        source_root=root,
+        review_root=root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",

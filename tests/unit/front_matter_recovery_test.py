@@ -17,7 +17,11 @@ from pipeline.assembly.front_matter_support import (
     missing_front_matter_author,
 )
 from pipeline.assembly.section_support import normalize_section_title as _section_normalize_section_title
-from pipeline.policies.abstract_quality import MISSING_ABSTRACT_PLACEHOLDER, abstract_quality_flags
+from pipeline.policies.abstract_quality import (
+    MISSING_ABSTRACT_PLACEHOLDER,
+    NO_ABSTRACT_IN_BASE_MATERIAL,
+    abstract_quality_flags,
+)
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
 from pipeline.reconcile.front_matter_parsing_runtime import make_bound_front_matter_parsing_helpers
 from pipeline.reconcile.front_matter_runtime import (
@@ -198,7 +202,7 @@ BUILD_FRONT_MATTER = make_build_front_matter(
     normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
     default_review=default_review,
     block_source_spans=block_source_spans,
-    front_matter_missing_placeholder=MISSING_ABSTRACT_PLACEHOLDER,
+    front_matter_missing_placeholder=NO_ABSTRACT_IN_BASE_MATERIAL,
 )
 RECOVER_MISSING_FRONT_MATTER_ABSTRACT = make_recover_missing_front_matter_abstract(
     recover_missing_front_matter_abstract_impl=_assembly_recover_missing_front_matter_abstract,
@@ -390,13 +394,13 @@ class FrontMatterRecoveryTest(unittest.TestCase):
         self.assertNotIn("A number of researchers", text)
         self.assertEqual(len(records), 2)
 
-    def test_recovers_missing_abstract_from_inline_prelude_and_keywords(self) -> None:
+    def test_does_not_recover_missing_abstract_from_inline_prelude_and_keywords(self) -> None:
         front_matter = {"abstract_block_id": "blk-front-abstract-1"}
         blocks = [
             {
                 "id": "blk-front-abstract-1",
                 "type": "paragraph",
-                "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                "content": {"spans": [{"kind": "text", "text": MISSING_ABSTRACT_PLACEHOLDER}]},
                 "source_spans": [],
                 "alternates": [],
                 "review": _review(risk="low", status="edited"),
@@ -410,10 +414,10 @@ class FrontMatterRecoveryTest(unittest.TestCase):
 
         replaced = _recover_missing_front_matter_abstract(front_matter, blocks, prelude, [])
 
-        self.assertTrue(replaced)
-        self.assertIn("This paper studies model repair", blocks[0]["content"]["spans"][0]["text"])
+        self.assertFalse(replaced)
+        self.assertEqual(blocks[0]["content"]["spans"][0]["text"], MISSING_ABSTRACT_PLACEHOLDER)
 
-    def test_build_front_matter_uses_page_one_records_for_missing_abstract(self) -> None:
+    def test_build_front_matter_uses_page_one_abstract_anchor_for_missing_abstract(self) -> None:
         prelude = [
             _record(record_type="front_matter", text="CAD and the Product Master Model", page=1, y0=40.0, width=300.0),
             _record(record_type="paragraph", text="1 Introduction", page=2, y0=90.0, width=160.0),

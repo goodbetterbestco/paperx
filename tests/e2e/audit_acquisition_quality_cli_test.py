@@ -26,7 +26,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "audit_project"
             shutil.copytree(FIXTURE_PROJECT, project_dir)
-            sources_dir = project_dir / "corpus" / "1990_synthetic_test_paper" / "canonical_sources"
+            sources_dir = project_dir / "1990_synthetic_test_paper" / "canonical_sources"
             sources_dir.mkdir(parents=True, exist_ok=True)
             (sources_dir / "acquisition-route.json").write_text(
                 json.dumps(
@@ -205,7 +205,7 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "audit_project"
             shutil.copytree(FIXTURE_PROJECT, project_dir)
-            sources_dir = project_dir / "corpus" / "1990_synthetic_test_paper" / "canonical_sources"
+            sources_dir = project_dir / "1990_synthetic_test_paper" / "canonical_sources"
             sources_dir.mkdir(parents=True, exist_ok=True)
             (sources_dir / "acquisition-route.json").write_text(
                 json.dumps(

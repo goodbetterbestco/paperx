@@ -6,6 +6,7 @@ from pipeline.text.headings import compact_text
 
 
 MISSING_ABSTRACT_PLACEHOLDER = "[missing from original]"
+NO_ABSTRACT_IN_BASE_MATERIAL = "No abstract in base material."
 WORD_RE = re.compile(r"[A-Za-z0-9]+")
 ABSTRACT_ONLY_RE = re.compile(r"^\s*abstract\b[\s:.-]*$", re.IGNORECASE)
 KEYWORDS_RE = re.compile(r"(?:^|\s)key\s*words?:\s", re.IGNORECASE)
@@ -34,7 +35,7 @@ def abstract_word_count(text: str) -> int:
 
 def abstract_quality_flags(text: str) -> list[str]:
     cleaned = clean_abstract_text(text)
-    if not cleaned or cleaned == MISSING_ABSTRACT_PLACEHOLDER:
+    if not cleaned or cleaned in {MISSING_ABSTRACT_PLACEHOLDER, NO_ABSTRACT_IN_BASE_MATERIAL}:
         return ["missing"]
 
     flags: list[str] = []
