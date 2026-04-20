@@ -75,6 +75,9 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     executed_math_provider_counts: dict[str, int] = {}
     executed_metadata_provider_counts: dict[str, int] = {}
     executed_reference_provider_counts: dict[str, int] = {}
+    follow_up_needed_counts: dict[str, int] = {}
+    follow_up_action_counts: dict[str, int] = {}
+    follow_up_target_provider_counts: dict[str, int] = {}
     metadata_application_counts: dict[str, int] = {}
     reference_application_counts: dict[str, int] = {}
     metadata_suppressed_reason_counts: dict[str, int] = {}
@@ -100,6 +103,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         metadata_decision = _load_json_dict(sources_dir / SIDECAR_METADATA_DECISION)
         route_ocr = dict((route or {}).get("ocr_prepass") or {})
         executed = dict((execution_report or {}).get("executed") or {})
+        follow_up = dict((execution_report or {}).get("follow_up") or {})
 
         primary_route = str((route or {}).get("primary_route") or "").strip() or None
         recommended_layout_provider = str((scorecard or {}).get("recommended_primary_layout_provider") or "").strip() or None
@@ -114,6 +118,17 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         executed_math_provider = str(executed.get("selected_math_provider") or "").strip() or None
         executed_metadata_provider = str(executed.get("metadata_provider") or "").strip() or None
         executed_reference_provider = str(executed.get("reference_provider") or "").strip() or None
+        follow_up_needed = bool(follow_up.get("needs_attention"))
+        follow_up_actions = [
+            {
+                "product": str(item.get("product") or "").strip() or None,
+                "reason": str(item.get("reason") or "").strip() or None,
+                "action": str(item.get("action") or "").strip() or None,
+                "target_provider": str(item.get("target_provider") or "").strip() or None,
+            }
+            for item in list(follow_up.get("actions") or [])
+            if isinstance(item, dict)
+        ]
         metadata_applied = bool((metadata_decision or {}).get("title_applied")) or bool((metadata_decision or {}).get("abstract_applied"))
         references_applied = bool((metadata_decision or {}).get("references_applied"))
         metadata_suppressed_reason = (
@@ -154,6 +169,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         _increment(executed_math_provider_counts, executed_math_provider)
         _increment(executed_metadata_provider_counts, executed_metadata_provider)
         _increment(executed_reference_provider_counts, executed_reference_provider)
+        _increment(follow_up_needed_counts, "needs_attention" if follow_up_needed else "no_follow_up")
+        for item in follow_up_actions:
+            _increment(follow_up_action_counts, item["action"])
+            _increment(follow_up_target_provider_counts, item["target_provider"])
         _increment(metadata_application_counts, "applied" if metadata_applied else "not_applied")
         _increment(reference_application_counts, "applied" if references_applied else "not_applied")
         _increment(metadata_suppressed_reason_counts, metadata_suppressed_reason)
@@ -191,6 +210,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             issue_flags.append("metadata_application_suppressed")
         if reference_suppressed_reason:
             issue_flags.append("reference_application_suppressed")
+        if follow_up_needed:
+            issue_flags.append("follow_up_recommended")
 
         papers.append(
             {
@@ -211,6 +232,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "executed_math_provider": executed_math_provider,
                 "executed_metadata_provider": executed_metadata_provider,
                 "executed_reference_provider": executed_reference_provider,
+                "follow_up_needed": follow_up_needed,
+                "follow_up_actions": follow_up_actions,
                 "metadata_applied": metadata_applied,
                 "references_applied": references_applied,
                 "metadata_suppressed_reason": metadata_suppressed_reason,
@@ -247,6 +270,9 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "executed_math_provider_counts": executed_math_provider_counts,
         "executed_metadata_provider_counts": executed_metadata_provider_counts,
         "executed_reference_provider_counts": executed_reference_provider_counts,
+        "follow_up_needed_counts": follow_up_needed_counts,
+        "follow_up_action_counts": follow_up_action_counts,
+        "follow_up_target_provider_counts": follow_up_target_provider_counts,
         "metadata_application_counts": metadata_application_counts,
         "reference_application_counts": reference_application_counts,
         "metadata_suppressed_reason_counts": metadata_suppressed_reason_counts,

@@ -36,6 +36,77 @@ from pipeline.sources.external import (
 )
 
 
+def _observation_has_metadata(observation: dict[str, Any] | None) -> bool:
+    payload = dict(observation or {})
+    return bool(str(payload.get("title", "")).strip() or str(payload.get("abstract", "")).strip())
+
+
+def _observation_has_references(observation: dict[str, Any] | None) -> bool:
+    payload = dict(observation or {})
+    return any(str(item).strip() for item in list(payload.get("references", [])))
+
+
+def build_acquisition_follow_up(
+    *,
+    source_scorecard: dict[str, Any],
+    metadata_candidates: dict[str, dict[str, Any] | None] | None,
+    metadata_observation: dict[str, Any] | None,
+    reference_observation: dict[str, Any] | None,
+) -> dict[str, Any]:
+    actions: list[dict[str, Any]] = []
+    metadata_basis = str(source_scorecard.get("metadata_recommendation_basis", "") or "")
+    reference_basis = str(source_scorecard.get("reference_recommendation_basis", "") or "")
+    selected_metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
+    selected_reference_provider = str((reference_observation or {}).get("provider", "") or "") or None
+    candidates = {str(key): dict(value or {}) for key, value in (metadata_candidates or {}).items()}
+    grobid_candidate = candidates.get("grobid") or {}
+
+    if metadata_basis == "fallback_unaccepted":
+        if _observation_has_metadata(grobid_candidate) and selected_metadata_provider != "grobid":
+            actions.append(
+                {
+                    "product": "metadata",
+                    "reason": "metadata_provider_not_accepted",
+                    "action": "escalate_grobid_metadata",
+                    "target_provider": "grobid",
+                }
+            )
+        else:
+            actions.append(
+                {
+                    "product": "metadata",
+                    "reason": "metadata_provider_not_accepted",
+                    "action": "manual_review_metadata",
+                    "target_provider": None,
+                }
+            )
+
+    if reference_basis == "fallback_unaccepted":
+        if _observation_has_references(grobid_candidate) and selected_reference_provider != "grobid":
+            actions.append(
+                {
+                    "product": "references",
+                    "reason": "reference_provider_not_accepted",
+                    "action": "escalate_grobid_references",
+                    "target_provider": "grobid",
+                }
+            )
+        else:
+            actions.append(
+                {
+                    "product": "references",
+                    "reason": "reference_provider_not_accepted",
+                    "action": "manual_review_references",
+                    "target_provider": None,
+                }
+            )
+
+    return {
+        "needs_attention": bool(actions),
+        "actions": actions,
+    }
+
+
 def build_acquisition_execution_summary(
     *,
     acquisition_route: dict[str, Any],
@@ -88,6 +159,12 @@ def build_acquisition_execution_summary(
         for provider, payload in sorted((metadata_candidates or {}).items())
         if payload
     ]
+    follow_up = build_acquisition_follow_up(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+        metadata_observation=metadata_observation,
+        reference_observation=reference_observation,
+    )
     return {
         "route_primary": acquisition_route.get("primary_route"),
         "route_traits": list(acquisition_route.get("traits", [])),
@@ -123,6 +200,7 @@ def build_acquisition_execution_summary(
             "pdf_source_kind": pdf_selection.get("pdf_source_kind"),
             "selected_pdf_path": pdf_selection.get("selected_pdf_path"),
         },
+        "follow_up": follow_up,
     }
 
 
@@ -273,6 +351,8 @@ def compose_external_sources(
         "executed_math_provider": acquisition_execution["executed"]["selected_math_provider"],
         "executed_metadata_provider": acquisition_execution["executed"]["metadata_provider"],
         "executed_reference_provider": acquisition_execution["executed"]["reference_provider"],
+        "follow_up_needed": bool((acquisition_execution.get("follow_up") or {}).get("needs_attention")),
+        "follow_up_actions": list((acquisition_execution.get("follow_up") or {}).get("actions") or []),
         "acquisition_route": acquisition_route.get("primary_route"),
         "ocr_prepass_policy": ocr_prepass.get("policy"),
         "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
@@ -423,6 +503,8 @@ def existing_composed_sources(
         "executed_math_provider": ((acquisition_execution.get("executed") or {}).get("selected_math_provider")),
         "executed_metadata_provider": ((acquisition_execution.get("executed") or {}).get("metadata_provider")),
         "executed_reference_provider": ((acquisition_execution.get("executed") or {}).get("reference_provider")),
+        "follow_up_needed": bool((acquisition_execution.get("follow_up") or {}).get("needs_attention")),
+        "follow_up_actions": list((acquisition_execution.get("follow_up") or {}).get("actions") or []),
         "metadata_provider": metadata_observation.get("provider"),
         "reference_provider": reference_observation.get("provider"),
     }

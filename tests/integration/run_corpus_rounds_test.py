@@ -261,6 +261,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(captured["acquisition-execution.json"]["recommended"]["layout_provider"], "mathpix")
         self.assertEqual(captured["acquisition-execution.json"]["executed"]["selected_layout_provider"], "mathpix")
         self.assertEqual(captured["acquisition-execution.json"]["executed"]["selected_math_provider"], "mathpix")
+        self.assertIn("follow_up", captured["acquisition-execution.json"])
         self.assertFalse(captured["acquisition-execution.json"]["ocr"]["applied"])
 
     def test_compose_external_sources_keeps_docling_page_one_on_score_tie(self) -> None:
@@ -374,8 +375,73 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         self.assertEqual(summary["recommended_primary_math_provider"], "docling")
         self.assertEqual(summary["math_engine"], "docling")
+        self.assertFalse(summary["follow_up_needed"])
+        self.assertEqual(summary["follow_up_actions"], [])
         self.assertEqual(summary["ocr_prepass_policy"], "skip")
         self.assertEqual([entry["id"] for entry in captured["math.json"]["entries"]], ["doc-eq-1", "doc-eq-2"])
+
+    def test_compose_external_sources_recommends_grobid_escalation_for_unaccepted_metadata_and_references(self) -> None:
+        captured: dict[str, dict] = {}
+
+        def capture(path: Path, payload: dict) -> None:
+            captured[path.name] = payload
+
+        docling_sources = {
+            "layout": {
+                "engine": "docling",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "d1", "page": 1, "order": 1, "role": "front_matter", "text": "Synthetic Title", "bbox": {}, "meta": {}},
+                    {"id": "d2", "page": 1, "order": 2, "role": "heading", "text": "Abstract", "bbox": {}, "meta": {}},
+                    {"id": "d3", "page": 1, "order": 3, "role": "paragraph", "text": "Weak abstract candidate.", "bbox": {}, "meta": {}},
+                    {"id": "d4", "page": 1, "order": 4, "role": "reference", "text": "[1] Weak Ref", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "docling", "entries": []},
+        }
+
+        with (
+            patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
+            patch("pipeline.orchestrator.round_paper.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
+            patch(
+                "pipeline.orchestrator.round_paper.build_acquisition_route_report",
+                return_value={
+                    "paper_id": "synthetic_test_paper",
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+            ),
+        ):
+            summary = compose_external_sources(
+                "synthetic_test_paper",
+                docling_sources=docling_sources,
+                mathpix_sources=None,
+                build_source_scorecard_impl=lambda **kwargs: {
+                    "providers": [],
+                    "recommended_primary_layout_provider": "docling",
+                    "recommended_primary_math_provider": None,
+                    "recommended_primary_metadata_provider": "docling",
+                    "recommended_primary_reference_provider": "docling",
+                    "metadata_recommendation_basis": "fallback_unaccepted",
+                    "reference_recommendation_basis": "fallback_unaccepted",
+                },
+                load_grobid_metadata_observation_impl=lambda paper_id, *, layout=None: {
+                    "provider": "grobid",
+                    "title": "Synthetic Title",
+                    "abstract": "Synthetic abstract.",
+                    "references": ["A. Ref"],
+                },
+            )
+
+        self.assertTrue(summary["follow_up_needed"])
+        self.assertEqual(
+            [item["action"] for item in summary["follow_up_actions"]],
+            ["escalate_grobid_metadata", "escalate_grobid_references"],
+        )
+        self.assertTrue(captured["acquisition-execution.json"]["follow_up"]["needs_attention"])
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
         bad_document = {

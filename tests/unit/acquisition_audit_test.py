@@ -102,7 +102,24 @@ class AcquisitionAuditTest(unittest.TestCase):
                         "selected_math_provider": "mathpix",
                         "metadata_provider": "grobid",
                         "reference_provider": "docling",
-                    }
+                    },
+                    "follow_up": {
+                        "needs_attention": True,
+                        "actions": [
+                            {
+                                "product": "metadata",
+                                "reason": "metadata_provider_not_accepted",
+                                "action": "escalate_grobid_metadata",
+                                "target_provider": "grobid",
+                            },
+                            {
+                                "product": "references",
+                                "reason": "reference_provider_not_accepted",
+                                "action": "manual_review_references",
+                                "target_provider": None,
+                            },
+                        ],
+                    },
                 },
             )
             _write_json(
@@ -165,7 +182,11 @@ class AcquisitionAuditTest(unittest.TestCase):
                         "selected_math_provider": "mathpix",
                         "metadata_provider": "grobid",
                         "reference_provider": "grobid",
-                    }
+                    },
+                    "follow_up": {
+                        "needs_attention": False,
+                        "actions": [],
+                    },
                 },
             )
             _write_json(
@@ -202,6 +223,11 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 2)
         self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
         self.assertEqual(report["executed_reference_provider_counts"]["grobid"], 1)
+        self.assertEqual(report["follow_up_needed_counts"]["needs_attention"], 1)
+        self.assertEqual(report["follow_up_needed_counts"]["no_follow_up"], 2)
+        self.assertEqual(report["follow_up_action_counts"]["escalate_grobid_metadata"], 1)
+        self.assertEqual(report["follow_up_action_counts"]["manual_review_references"], 1)
+        self.assertEqual(report["follow_up_target_provider_counts"]["grobid"], 1)
         self.assertEqual(report["metadata_application_counts"]["applied"], 1)
         self.assertEqual(report["metadata_application_counts"]["not_applied"], 2)
         self.assertEqual(report["reference_application_counts"]["applied"], 1)
@@ -226,10 +252,13 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertIn("fallback_recommendation", papers["1990_required_ocr"]["issue_flags"])
         self.assertIn("metadata_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
         self.assertIn("reference_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
+        self.assertIn("follow_up_recommended", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
         self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
         self.assertEqual(papers["1990_required_ocr"]["executed_metadata_provider"], "grobid")
         self.assertEqual(papers["1990_required_ocr"]["executed_reference_provider"], "docling")
+        self.assertTrue(papers["1990_required_ocr"]["follow_up_needed"])
+        self.assertEqual(papers["1990_required_ocr"]["follow_up_actions"][0]["action"], "escalate_grobid_metadata")
         self.assertFalse(papers["1990_required_ocr"]["metadata_applied"])
         self.assertFalse(papers["1990_required_ocr"]["references_applied"])
         self.assertEqual(

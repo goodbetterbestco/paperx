@@ -91,7 +91,18 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                             "selected_math_provider": "mathpix",
                             "metadata_provider": "grobid",
                             "reference_provider": "docling",
-                        }
+                        },
+                        "follow_up": {
+                            "needs_attention": True,
+                            "actions": [
+                                {
+                                    "product": "metadata",
+                                    "reason": "metadata_provider_not_accepted",
+                                    "action": "escalate_grobid_metadata",
+                                    "target_provider": "grobid",
+                                }
+                            ],
+                        },
                     },
                     indent=2,
                 )
@@ -149,6 +160,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
             self.assertEqual(report["executed_metadata_provider_counts"]["grobid"], 1)
             self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
+            self.assertEqual(report["follow_up_needed_counts"]["needs_attention"], 1)
+            self.assertEqual(report["follow_up_action_counts"]["escalate_grobid_metadata"], 1)
             self.assertEqual(report["metadata_application_counts"]["applied"], 1)
             self.assertEqual(report["reference_application_counts"]["applied"], 1)
 
@@ -158,6 +171,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertIn("Executed: layout `docling`", markdown)
             self.assertIn("metadata `grobid`", markdown)
             self.assertIn("references `docling`", markdown)
+            self.assertIn("Follow-up: needed `True`", markdown)
+            self.assertIn("`metadata` -> `escalate_grobid_metadata` via `grobid`", markdown)
             self.assertIn("Applied: metadata `True` | references `True`", markdown)
             self.assertIn("recommended layout `docling` (accepted)", markdown)
 

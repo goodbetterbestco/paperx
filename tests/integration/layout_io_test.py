@@ -151,6 +151,30 @@ class LayoutIoTest(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
+            (sources_dir / "acquisition-execution.json").write_text(
+                json.dumps(
+                    {
+                        "executed": {
+                            "selected_layout_provider": "docling",
+                            "selected_math_provider": "mathpix",
+                            "metadata_provider": "grobid",
+                            "reference_provider": "grobid",
+                        },
+                        "follow_up": {
+                            "needs_attention": True,
+                            "actions": [
+                                {
+                                    "product": "metadata",
+                                    "reason": "metadata_provider_not_accepted",
+                                    "action": "manual_review_metadata",
+                                    "target_provider": None,
+                                }
+                            ],
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
 
             summary = existing_composed_sources(paper_id, layout=layout)
 
@@ -160,6 +184,8 @@ class LayoutIoTest(unittest.TestCase):
             self.assertTrue(summary["ocr_prepass_applied"])
             self.assertEqual(summary["pdf_source_kind"], "ocr_normalized_generated")
             self.assertTrue(str(summary["selected_pdf_path"]).endswith("ocr-normalized.pdf"))
+            self.assertTrue(summary["follow_up_needed"])
+            self.assertEqual(summary["follow_up_actions"][0]["action"], "manual_review_metadata")
 
     def test_write_canonical_outputs_uses_explicit_layout_targets(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
