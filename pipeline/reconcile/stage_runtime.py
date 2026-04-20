@@ -39,22 +39,15 @@ class ReconcileLoaderDeps:
 class ReconcileBindingDeps:
     normalize_prose_text_impl: Callable[..., tuple[str, Any]]
     normalize_reference_text_impl: Callable[..., tuple[str, Any]]
-    normalize_paragraph_text_impl: Callable[..., str]
-    normalize_figure_caption_text_impl: Callable[..., str]
     strip_known_running_header_text: Callable[[str], str]
     clean_text: Callable[[str], str]
     block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]]
     default_review: Callable[..., dict[str, Any]]
-    make_reference_entry_impl: Callable[..., dict[str, Any]]
     leading_negationslash_artifact_re: Any
     leading_ocr_marker_re: Any
     leading_punct_artifact_re: Any
     leading_var_artifact_re: Any
     trailing_numeric_artifact_re: Any
-    math_entry_looks_like_prose_impl: Callable[..., bool]
-    should_demote_prose_math_entry_to_paragraph_impl: Callable[..., bool]
-    should_demote_graphic_math_entry_to_paragraph_impl: Callable[..., bool]
-    should_drop_display_math_artifact_impl: Callable[..., bool]
     group_entry_items_are_graphic_only: Callable[[dict[str, Any]], bool]
     math_entry_semantic_policy: Callable[[dict[str, Any]], str]
     math_entry_category: Callable[[dict[str, Any]], str]
@@ -63,7 +56,6 @@ class ReconcileBindingDeps:
     word_count: Callable[[str], int]
     strong_operator_count: Callable[[str], int]
     mathish_ratio: Callable[[str], float]
-    paragraph_block_from_graphic_math_entry_impl: Callable[..., tuple[dict[str, Any] | None, list[dict[str, Any]]]]
     split_inline_math: Callable[..., Any]
     repair_symbolic_ocr_spans: Callable[..., Any]
     extract_general_inline_math_spans: Callable[..., Any]
@@ -112,7 +104,6 @@ class ReconcileBindingDeps:
     abstract_text_is_recoverable: Callable[[str], bool]
     replace_front_matter_abstract_text: Callable[[dict[str, Any], list[dict[str, Any]], str, list[dict[str, Any]]], bool]
     opening_abstract_candidate_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
-    build_blocks_for_record_impl: Callable[..., Any]
     record_analysis_text: Callable[[dict[str, Any]], str]
     is_short_ocr_fragment: Callable[[dict[str, Any]], bool]
     caption_label: Callable[[str], str | None]
@@ -133,19 +124,15 @@ class ReconcileBindingDeps:
     display_math_start_re: Any
     looks_like_display_math_echo_impl: Callable[..., bool]
     short_word_re: Any
-    merge_layout_and_figure_records_impl: Callable[..., tuple[list[dict[str, Any]], dict[str, Any]]]
     layout_record: Callable[[Any], dict[str, Any]]
     absorb_figure_caption_continuations: Callable[[list[dict[str, Any]], list[dict[str, Any]]], list[dict[str, Any]]]
     figure_label_token: Callable[[dict[str, Any]], str | None]
     synthetic_caption_record: Callable[[dict[str, Any], list[Any]], dict[str, Any]]
     inject_external_math_records: Callable[[list[dict[str, Any]], list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], set[str]]]
-    mark_records_with_external_math_overlap_impl: Callable[..., list[dict[str, Any]]]
-    repair_record_text_with_mathpix_hints_impl: Callable[..., list[dict[str, Any]]]
     mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[Any]]]
     mathpix_text_hint_candidate: Callable[[dict[str, Any], dict[int, list[Any]]], str]
     is_mathpix_text_hint_better: Callable[[str, str], bool]
     mathpix_prose_lead_repair_candidate: Callable[[dict[str, Any], dict[int, list[Any]]], str]
-    promote_heading_like_records_impl: Callable[..., list[dict[str, Any]]]
     looks_like_bad_heading: Callable[[str], bool]
     collapse_ocr_split_caps: Callable[[str], str]
     decode_control_heading_label: Callable[[str], tuple[str | None, str]]
@@ -177,18 +164,12 @@ class ReconcileAssemblyDeps:
     suppress_embedded_table_headings: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
     should_merge_paragraph_records: Callable[[dict[str, Any], dict[str, Any]], bool]
     table_caption_re: Any
-    merge_code_records_impl: Callable[..., list[dict[str, Any]]]
-    merge_paragraph_records_impl: Callable[..., list[dict[str, Any]]]
     compile_formulas: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
     annotate_formula_classifications: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
     annotate_formula_semantic_expr: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
-    suppress_graphic_display_math_blocks_impl: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]
-    suppress_running_header_blocks_impl: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]]]]
     compact_text: Callable[[str], str]
     running_header_text_re: Any
-    normalize_footnote_blocks_impl: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]]]]
     starts_like_sentence: Callable[[str], bool]
-    merge_paragraph_blocks_impl: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]]]]
     now_iso: Callable[[], str]
     build_canonical_document: Callable[..., dict[str, Any]]
 

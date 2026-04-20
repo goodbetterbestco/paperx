@@ -12,10 +12,7 @@ from pipeline.assembly.front_matter_support import (
     missing_front_matter_affiliation as assemble_missing_front_matter_affiliation,
     missing_front_matter_author as assemble_missing_front_matter_author,
 )
-from pipeline.assembly.record_block_builder import (
-    build_blocks_for_record as assemble_blocks_for_record,
-    split_code_lines as assemble_split_code_lines,
-)
+from pipeline.assembly.record_block_builder import split_code_lines as assemble_split_code_lines
 from pipeline.assembly.section_builder import materialize_sections
 from pipeline.assembly.section_support import (
     normalize_section_title as assemble_normalize_section_title,
@@ -50,13 +47,6 @@ from pipeline.policies.abstract_quality import (
     NO_ABSTRACT_IN_BASE_MATERIAL,
     abstract_quality_flags,
 )
-from pipeline.reconcile.block_merging import (
-    merge_code_records as reconcile_merge_code_records,
-    merge_paragraph_blocks as reconcile_merge_paragraph_blocks,
-    merge_paragraph_records as reconcile_merge_paragraph_records,
-    normalize_footnote_blocks as reconcile_normalize_footnote_blocks,
-    suppress_running_header_blocks as reconcile_suppress_running_header_blocks,
-)
 from pipeline.reconcile.external_math import match_external_math_entry as reconcile_match_external_math_entry
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation as reconcile_looks_like_affiliation_runtime
 from pipeline.reconcile.front_matter_patterns import (
@@ -83,28 +73,15 @@ from pipeline.reconcile.front_matter_patterns import (
     TRAILING_ABSTRACT_BOILERPLATE_RE,
     TRAILING_ABSTRACT_TAIL_RE,
 )
-from pipeline.reconcile.heading_promotion import promote_heading_like_records as reconcile_promote_heading_like_records
 from pipeline.reconcile.layout_records import (
-    merge_layout_and_figure_records as reconcile_merge_layout_and_figure_records,
-    normalize_figure_caption_text as reconcile_normalize_figure_caption_text,
     rect_x_overlap_ratio as reconcile_rect_x_overlap_ratio,
-)
-from pipeline.reconcile.math_entry_policies import (
-    math_entry_looks_like_prose as reconcile_math_entry_looks_like_prose,
-    paragraph_block_from_graphic_math_entry as reconcile_paragraph_block_from_graphic_math_entry,
-    should_demote_graphic_math_entry_to_paragraph as reconcile_should_demote_graphic_math_entry_to_paragraph,
-    should_demote_prose_math_entry_to_paragraph as reconcile_should_demote_prose_math_entry_to_paragraph,
-    should_drop_display_math_artifact as reconcile_should_drop_display_math_artifact,
 )
 from pipeline.reconcile.math_suppression import (
     external_math_by_page as reconcile_external_math_by_page,
     looks_like_display_math_echo as reconcile_looks_like_display_math_echo,
-    mark_records_with_external_math_overlap as reconcile_mark_records_with_external_math_overlap,
     overlapping_external_math_entries as reconcile_overlapping_external_math_entries,
-    suppress_graphic_display_math_blocks as reconcile_suppress_graphic_display_math_blocks,
     trim_embedded_display_math_from_paragraph as reconcile_trim_embedded_display_math_from_paragraph,
 )
-from pipeline.reconcile.reference_runtime import make_reference_entry as reconcile_make_reference_entry_runtime
 from pipeline.reconcile.runtime_constants import (
     ABOUT_AUTHOR_RE,
     CONTROL_CHAR_RE,
@@ -145,8 +122,6 @@ from pipeline.reconcile.shared_patterns import (
 )
 from pipeline.reconcile.stage_runtime import ReconcileRuntimeInputs, run_reconcile_pipeline as reconcile_run_reconcile_pipeline_runtime
 from pipeline.reconcile.runtime_support import page_height_map as reconcile_page_height_map_binding_runtime
-from pipeline.reconcile.text_cleaning import normalize_paragraph_text as reconcile_normalize_paragraph_text
-from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as reconcile_repair_record_text_with_mathpix_hints
 from pipeline.selectors.abstract_selector import build_abstract_decision
 from pipeline.sources.external import load_external_layout, load_external_math, load_mathpix_layout
 from pipeline.sources.figures import extract_figures
@@ -276,22 +251,14 @@ def reconcile_paper_state(
             page_height_map=reconcile_page_height_map_binding_runtime,
             normalize_prose_text_impl=normalize_prose_text,
             normalize_reference_text_impl=normalize_reference_text,
-            normalize_paragraph_text_impl=reconcile_normalize_paragraph_text,
-            normalize_figure_caption_text_impl=reconcile_normalize_figure_caption_text,
             default_review=default_review,
-            make_reference_entry_impl=reconcile_make_reference_entry_runtime,
             leading_negationslash_artifact_re=LEADING_NEGATIONSLASH_ARTIFACT_RE,
             leading_ocr_marker_re=LEADING_OCR_MARKER_RE,
             leading_punct_artifact_re=LEADING_PUNCT_ARTIFACT_RE,
             leading_var_artifact_re=LEADING_VAR_ARTIFACT_RE,
             trailing_numeric_artifact_re=TRAILING_NUMERIC_ARTIFACT_RE,
-            math_entry_looks_like_prose_impl=reconcile_math_entry_looks_like_prose,
-            should_demote_prose_math_entry_to_paragraph_impl=reconcile_should_demote_prose_math_entry_to_paragraph,
-            should_demote_graphic_math_entry_to_paragraph_impl=reconcile_should_demote_graphic_math_entry_to_paragraph,
-            should_drop_display_math_artifact_impl=reconcile_should_drop_display_math_artifact,
             looks_like_prose_paragraph=looks_like_prose_paragraph,
             looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-            paragraph_block_from_graphic_math_entry_impl=reconcile_paragraph_block_from_graphic_math_entry,
             split_inline_math=split_inline_math,
             repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
             extract_general_inline_math_spans=extract_general_inline_math_spans,
@@ -315,7 +282,6 @@ def reconcile_paper_state(
             front_block_text_impl=assemble_front_block_text,
             recover_missing_front_matter_abstract_impl=assemble_recover_missing_front_matter_abstract,
             abstract_quality_flags=abstract_quality_flags,
-            build_blocks_for_record_impl=assemble_blocks_for_record,
             caption_label=caption_label,
             split_code_lines=assemble_split_code_lines,
             review_for_math_entry=review_for_math_entry,
@@ -331,10 +297,6 @@ def reconcile_paper_state(
             display_math_start_re=DISPLAY_MATH_START_RE,
             looks_like_display_math_echo_impl=reconcile_looks_like_display_math_echo,
             short_word_re=SHORT_WORD_RE,
-            merge_layout_and_figure_records_impl=reconcile_merge_layout_and_figure_records,
-            mark_records_with_external_math_overlap_impl=reconcile_mark_records_with_external_math_overlap,
-            repair_record_text_with_mathpix_hints_impl=reconcile_repair_record_text_with_mathpix_hints,
-            promote_heading_like_records_impl=reconcile_promote_heading_like_records,
             looks_like_bad_heading=looks_like_bad_heading,
             collapse_ocr_split_caps=collapse_ocr_split_caps,
             embedded_heading_prefix_re=EMBEDDED_HEADING_PREFIX_RE,
@@ -345,19 +307,13 @@ def reconcile_paper_state(
             prepare_section_nodes=prepare_section_nodes,
             materialize_sections=materialize_sections,
             section_id_impl=assemble_section_id,
-            merge_code_records_impl=reconcile_merge_code_records,
-            merge_paragraph_records_impl=reconcile_merge_paragraph_records,
             compile_formulas=compile_formulas,
             annotate_formula_classifications=annotate_formula_classifications,
             annotate_formula_semantic_expr=annotate_formula_semantic_expr,
             table_caption_re=TABLE_CAPTION_RE,
-            suppress_graphic_display_math_blocks_impl=reconcile_suppress_graphic_display_math_blocks,
-            suppress_running_header_blocks_impl=reconcile_suppress_running_header_blocks,
             compact_text=compact_text,
             running_header_text_re=RUNNING_HEADER_TEXT_RE,
-            normalize_footnote_blocks_impl=reconcile_normalize_footnote_blocks,
             starts_like_sentence=reconcile_starts_like_sentence,
-            merge_paragraph_blocks_impl=reconcile_merge_paragraph_blocks,
             build_canonical_document=build_canonical_document,
         ),
     )

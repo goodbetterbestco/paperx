@@ -2,6 +2,14 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
+from pipeline.reconcile.math_entry_policies import (
+    make_math_entry_looks_like_prose,
+    make_paragraph_block_from_graphic_math_entry,
+    make_should_demote_graphic_math_entry_to_paragraph,
+    make_should_demote_prose_math_entry_to_paragraph,
+    make_should_drop_display_math_artifact,
+)
+
 
 def make_match_external_math_entry(
     *,
@@ -101,132 +109,18 @@ def make_looks_like_display_math_echo(
     return looks_like_display_math_echo
 
 
-def make_math_entry_looks_like_prose(
-    *,
-    math_entry_looks_like_prose_impl: Callable[..., bool],
-    normalize_paragraph_text: Callable[[str], str],
-    looks_like_prose_paragraph: Callable[[str], bool],
-    looks_like_prose_math_fragment: Callable[[str], bool],
-    word_count: Callable[[str], int],
-) -> Callable[[dict[str, Any]], bool]:
-    def math_entry_looks_like_prose(entry: dict[str, Any]) -> bool:
-        return math_entry_looks_like_prose_impl(
-            entry,
-            normalize_paragraph_text=normalize_paragraph_text,
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-            looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-            word_count=word_count,
-        )
-
-    return math_entry_looks_like_prose
-
-
-def make_should_demote_prose_math_entry_to_paragraph(
-    *,
-    should_demote_prose_math_entry_to_paragraph_impl: Callable[..., bool],
-    normalize_paragraph_text: Callable[[str], str],
-    word_count: Callable[[str], int],
-    strong_operator_count: Callable[[str], int],
-    mathish_ratio: Callable[[str], float],
-    math_entry_looks_like_prose: Callable[[dict[str, Any]], bool],
-    math_entry_semantic_policy: Callable[[dict[str, Any]], str],
-    looks_like_prose_paragraph: Callable[[str], bool],
-) -> Callable[[dict[str, Any]], bool]:
-    def should_demote_prose_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
-        return should_demote_prose_math_entry_to_paragraph_impl(
-            entry,
-            normalize_paragraph_text=normalize_paragraph_text,
-            word_count=word_count,
-            strong_operator_count=strong_operator_count,
-            mathish_ratio=mathish_ratio,
-            math_entry_looks_like_prose=math_entry_looks_like_prose,
-            math_entry_semantic_policy=math_entry_semantic_policy,
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-        )
-
-    return should_demote_prose_math_entry_to_paragraph
-
-
-def make_should_demote_graphic_math_entry_to_paragraph(
-    *,
-    should_demote_graphic_math_entry_to_paragraph_impl: Callable[..., bool],
-    should_demote_prose_math_entry_to_paragraph: Callable[[dict[str, Any]], bool],
-) -> Callable[[dict[str, Any]], bool]:
-    def should_demote_graphic_math_entry_to_paragraph(entry: dict[str, Any]) -> bool:
-        return should_demote_graphic_math_entry_to_paragraph_impl(
-            entry,
-            should_demote_prose_math_entry_to_paragraph=should_demote_prose_math_entry_to_paragraph,
-        )
-
-    return should_demote_graphic_math_entry_to_paragraph
-
-
-def make_should_drop_display_math_artifact(
-    *,
-    should_drop_display_math_artifact_impl: Callable[..., bool],
-    should_demote_graphic_math_entry_to_paragraph: Callable[[dict[str, Any]], bool],
-    group_entry_items_are_graphic_only: Callable[[dict[str, Any]], bool],
-    math_entry_semantic_policy: Callable[[dict[str, Any]], str],
-    math_entry_category: Callable[[dict[str, Any]], str],
-) -> Callable[[dict[str, Any]], bool]:
-    def should_drop_display_math_artifact(entry: dict[str, Any]) -> bool:
-        return should_drop_display_math_artifact_impl(
-            entry,
-            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
-            group_entry_items_are_graphic_only=group_entry_items_are_graphic_only,
-            math_entry_semantic_policy=math_entry_semantic_policy,
-            math_entry_category=math_entry_category,
-        )
-
-    return should_drop_display_math_artifact
-
-
-def make_paragraph_block_from_graphic_math_entry(
-    *,
-    paragraph_block_from_graphic_math_entry_impl: Callable[..., tuple[dict[str, Any] | None, list[dict[str, Any]]]],
-    normalize_paragraph_text: Callable[[str], str],
-    split_inline_math: Callable[..., Any],
-    repair_symbolic_ocr_spans: Callable[..., Any],
-    extract_general_inline_math_spans: Callable[..., Any],
-    merge_inline_math_relation_suffixes: Callable[..., Any],
-    normalize_inline_math_spans: Callable[..., Any],
-    default_review: Callable[..., dict[str, Any]],
-) -> Callable[[dict[str, Any], dict[str, Any], dict[str, int]], tuple[dict[str, Any] | None, list[dict[str, Any]]]]:
-    def paragraph_block_from_graphic_math_entry(
-        block: dict[str, Any],
-        math_entry: dict[str, Any],
-        counters: dict[str, int],
-    ) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
-        return paragraph_block_from_graphic_math_entry_impl(
-            block,
-            math_entry,
-            counters,
-            normalize_paragraph_text=normalize_paragraph_text,
-            split_inline_math=split_inline_math,
-            repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
-            extract_general_inline_math_spans=extract_general_inline_math_spans,
-            merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
-            normalize_inline_math_spans=normalize_inline_math_spans,
-            default_review=default_review,
-        )
-
-    return paragraph_block_from_graphic_math_entry
-
-
 def build_reconcile_math_runtime_helpers(
     *,
     bindings: Any,
     text_helpers: dict[str, Any],
 ) -> dict[str, Any]:
     math_entry_looks_like_prose = make_math_entry_looks_like_prose(
-        math_entry_looks_like_prose_impl=bindings.math_entry_looks_like_prose_impl,
         normalize_paragraph_text=text_helpers["normalize_paragraph_text"],
         looks_like_prose_paragraph=bindings.looks_like_prose_paragraph,
         looks_like_prose_math_fragment=bindings.looks_like_prose_math_fragment,
         word_count=bindings.word_count,
     )
     should_demote_prose_math_entry_to_paragraph = make_should_demote_prose_math_entry_to_paragraph(
-        should_demote_prose_math_entry_to_paragraph_impl=bindings.should_demote_prose_math_entry_to_paragraph_impl,
         normalize_paragraph_text=text_helpers["normalize_paragraph_text"],
         word_count=bindings.word_count,
         strong_operator_count=bindings.strong_operator_count,
@@ -236,18 +130,15 @@ def build_reconcile_math_runtime_helpers(
         looks_like_prose_paragraph=bindings.looks_like_prose_paragraph,
     )
     should_demote_graphic_math_entry_to_paragraph = make_should_demote_graphic_math_entry_to_paragraph(
-        should_demote_graphic_math_entry_to_paragraph_impl=bindings.should_demote_graphic_math_entry_to_paragraph_impl,
         should_demote_prose_math_entry_to_paragraph=should_demote_prose_math_entry_to_paragraph,
     )
     should_drop_display_math_artifact = make_should_drop_display_math_artifact(
-        should_drop_display_math_artifact_impl=bindings.should_drop_display_math_artifact_impl,
         should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
         group_entry_items_are_graphic_only=bindings.group_entry_items_are_graphic_only,
         math_entry_semantic_policy=bindings.math_entry_semantic_policy,
         math_entry_category=bindings.math_entry_category,
     )
     paragraph_block_from_graphic_math_entry = make_paragraph_block_from_graphic_math_entry(
-        paragraph_block_from_graphic_math_entry_impl=bindings.paragraph_block_from_graphic_math_entry_impl,
         normalize_paragraph_text=text_helpers["normalize_paragraph_text"],
         split_inline_math=bindings.split_inline_math,
         repair_symbolic_ocr_spans=bindings.repair_symbolic_ocr_spans,

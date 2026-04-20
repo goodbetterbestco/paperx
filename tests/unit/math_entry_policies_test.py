@@ -16,7 +16,7 @@ from pipeline.math import (
     split_inline_math,
 )
 from pipeline.math.extract import repair_symbolic_ocr_spans
-from pipeline.reconcile.math_entry_binding_runtime import (
+from pipeline.reconcile.math_entry_policies import (
     make_group_entry_items_are_graphic_only,
     make_math_entry_looks_like_prose,
     make_paragraph_block_from_graphic_math_entry,
