@@ -52,11 +52,17 @@ class AcquisitionGoldRecord:
     references: list[str]
     family: str | None
     expected_route: str | None
+    expected_route_reason_codes: list[str]
     ocr_should_run: bool | None
+    expected_ocr_policy: str | None
     expected_primary_layout_provider: str | None
     expected_primary_math_provider: str | None
     expected_primary_metadata_provider: str | None
     expected_primary_reference_provider: str | None
+    acceptable_selected_layout_providers: list[str]
+    acceptable_selected_math_providers: list[str]
+    acceptable_selected_metadata_providers: list[str]
+    acceptable_selected_reference_providers: list[str]
 
 
 @dataclass(frozen=True)
@@ -73,6 +79,7 @@ class BenchmarkPaper:
     paper_id: str
     gold_path: Path
     family: str | None
+    section: str | None
     providers: list[ProviderArtifacts]
 
 
@@ -189,8 +196,15 @@ def _extract_execution_observation(execution_path: Path | None) -> dict[str, Any
     recommended = dict(payload.get("recommended") or {})
     executed = dict(payload.get("executed") or {})
     ocr = dict(payload.get("ocr") or {})
+    follow_up = dict(payload.get("follow_up") or {})
+    route_reason_codes = [
+        str(item).strip()
+        for item in list(payload.get("route_reason_codes") or payload.get("route_traits") or [])
+        if str(item).strip()
+    ]
     return {
         "route_primary": str(payload.get("route_primary", "") or "").strip() or None,
+        "route_reason_codes": route_reason_codes,
         "recommended_layout_provider": str(recommended.get("layout_provider", "") or "").strip() or None,
         "recommended_math_provider": str(recommended.get("math_provider", "") or "").strip() or None,
         "recommended_metadata_provider": str(recommended.get("metadata_provider", "") or "").strip() or None,
@@ -199,7 +213,9 @@ def _extract_execution_observation(execution_path: Path | None) -> dict[str, Any
         "selected_math_provider": str(executed.get("selected_math_provider", "") or "").strip() or None,
         "selected_metadata_provider": str(executed.get("metadata_provider", "") or "").strip() or None,
         "selected_reference_provider": str(executed.get("reference_provider", "") or "").strip() or None,
+        "ocr_policy": str(ocr.get("policy", "") or "").strip() or None,
         "ocr_applied": bool(ocr.get("applied")) if "applied" in ocr else None,
+        "follow_up_needed": bool(follow_up.get("needs_attention")) if "needs_attention" in follow_up else None,
     }
 
 
@@ -228,6 +244,20 @@ def _content_score(metrics: dict[str, float]) -> float:
     return round(weighted_total, 3)
 
 
+def _selected_provider_match(
+    selected_provider: str | None,
+    *,
+    expected_provider: str | None,
+    acceptable_providers: list[str],
+) -> float | None:
+    allowed = [provider for provider in acceptable_providers if provider]
+    if not allowed and expected_provider:
+        allowed = [expected_provider]
+    if not allowed:
+        return None
+    return float((selected_provider or "") in allowed)
+
+
 def _execution_metrics(
     gold: AcquisitionGoldRecord,
     execution: dict[str, Any],
@@ -237,36 +267,61 @@ def _execution_metrics(
     metrics: dict[str, float] = {}
     if gold.expected_route:
         metrics["route_match"] = float(execution.get("route_primary") == gold.expected_route)
+    if gold.expected_route_reason_codes:
+        observed_codes = {str(item).strip() for item in list(execution.get("route_reason_codes") or []) if str(item).strip()}
+        expected_codes = {str(item).strip() for item in gold.expected_route_reason_codes if str(item).strip()}
+        metrics["route_reason_code_recall"] = round(
+            len(observed_codes & expected_codes) / max(len(expected_codes), 1),
+            3,
+        )
     if gold.ocr_should_run is not None:
         metrics["ocr_should_run_match"] = float(execution.get("ocr_applied") == gold.ocr_should_run)
+    if gold.expected_ocr_policy:
+        metrics["ocr_policy_match"] = float(execution.get("ocr_policy") == gold.expected_ocr_policy)
     if gold.expected_primary_layout_provider and provider.layout_path is not None:
         metrics["recommended_layout_provider_match"] = float(
             execution.get("recommended_layout_provider") == gold.expected_primary_layout_provider
         )
-        metrics["selected_layout_provider_match"] = float(
-            execution.get("selected_layout_provider") == gold.expected_primary_layout_provider
+        selected_layout_provider_match = _selected_provider_match(
+            execution.get("selected_layout_provider"),
+            expected_provider=gold.expected_primary_layout_provider,
+            acceptable_providers=gold.acceptable_selected_layout_providers,
         )
+        if selected_layout_provider_match is not None:
+            metrics["selected_layout_provider_match"] = selected_layout_provider_match
     if gold.expected_primary_math_provider and provider.math_path is not None:
         metrics["recommended_math_provider_match"] = float(
             execution.get("recommended_math_provider") == gold.expected_primary_math_provider
         )
-        metrics["selected_math_provider_match"] = float(
-            execution.get("selected_math_provider") == gold.expected_primary_math_provider
+        selected_math_provider_match = _selected_provider_match(
+            execution.get("selected_math_provider"),
+            expected_provider=gold.expected_primary_math_provider,
+            acceptable_providers=gold.acceptable_selected_math_providers,
         )
+        if selected_math_provider_match is not None:
+            metrics["selected_math_provider_match"] = selected_math_provider_match
     if gold.expected_primary_metadata_provider and (provider.metadata_path is not None or provider.layout_path is not None):
         metrics["recommended_metadata_provider_match"] = float(
             execution.get("recommended_metadata_provider") == gold.expected_primary_metadata_provider
         )
-        metrics["selected_metadata_provider_match"] = float(
-            execution.get("selected_metadata_provider") == gold.expected_primary_metadata_provider
+        selected_metadata_provider_match = _selected_provider_match(
+            execution.get("selected_metadata_provider"),
+            expected_provider=gold.expected_primary_metadata_provider,
+            acceptable_providers=gold.acceptable_selected_metadata_providers,
         )
+        if selected_metadata_provider_match is not None:
+            metrics["selected_metadata_provider_match"] = selected_metadata_provider_match
     if gold.expected_primary_reference_provider and (provider.metadata_path is not None or provider.layout_path is not None):
         metrics["recommended_reference_provider_match"] = float(
             execution.get("recommended_reference_provider") == gold.expected_primary_reference_provider
         )
-        metrics["selected_reference_provider_match"] = float(
-            execution.get("selected_reference_provider") == gold.expected_primary_reference_provider
+        selected_reference_provider_match = _selected_provider_match(
+            execution.get("selected_reference_provider"),
+            expected_provider=gold.expected_primary_reference_provider,
+            acceptable_providers=gold.acceptable_selected_reference_providers,
         )
+        if selected_reference_provider_match is not None:
+            metrics["selected_reference_provider_match"] = selected_reference_provider_match
     return metrics
 
 
@@ -322,12 +377,52 @@ def _load_gold_record(paper_id: str, gold_path: Path) -> AcquisitionGoldRecord:
         references=[str(item) for item in payload.get("references", [])],
         family=(str(payload.get("family", "")).strip() or None),
         expected_route=(str(payload.get("expected_route", "")).strip() or None),
+        expected_route_reason_codes=[
+            str(item).strip()
+            for item in list(payload.get("expected_route_reason_codes") or payload.get("route_reason_codes") or [])
+            if str(item).strip()
+        ],
         ocr_should_run=(bool(payload["ocr_should_run"]) if "ocr_should_run" in payload else None),
+        expected_ocr_policy=(str(payload.get("expected_ocr_policy", "")).strip() or None),
         expected_primary_layout_provider=(str(payload.get("expected_primary_layout_provider", "")).strip() or None),
         expected_primary_math_provider=(str(payload.get("expected_primary_math_provider", "")).strip() or None),
         expected_primary_metadata_provider=(str(payload.get("expected_primary_metadata_provider", "")).strip() or None),
         expected_primary_reference_provider=(str(payload.get("expected_primary_reference_provider", "")).strip() or None),
+        acceptable_selected_layout_providers=[
+            str(item).strip()
+            for item in list(payload.get("acceptable_selected_layout_providers") or [])
+            if str(item).strip()
+        ],
+        acceptable_selected_math_providers=[
+            str(item).strip()
+            for item in list(payload.get("acceptable_selected_math_providers") or [])
+            if str(item).strip()
+        ],
+        acceptable_selected_metadata_providers=[
+            str(item).strip()
+            for item in list(payload.get("acceptable_selected_metadata_providers") or [])
+            if str(item).strip()
+        ],
+        acceptable_selected_reference_providers=[
+            str(item).strip()
+            for item in list(payload.get("acceptable_selected_reference_providers") or [])
+            if str(item).strip()
+        ],
     )
+
+
+def _iter_manifest_papers(payload: dict[str, Any], *, inherited_section: str | None = None) -> list[tuple[str | None, dict[str, Any]]]:
+    rows: list[tuple[str | None, dict[str, Any]]] = []
+    for paper_payload in list(payload.get("papers", []) or []):
+        if isinstance(paper_payload, dict):
+            section = str(paper_payload.get("section", "")).strip() or inherited_section
+            rows.append((section, paper_payload))
+    for section_payload in list(payload.get("sections", []) or []):
+        if not isinstance(section_payload, dict):
+            continue
+        section_name = str(section_payload.get("name", "") or section_payload.get("section", "")).strip() or inherited_section
+        rows.extend(_iter_manifest_papers(section_payload, inherited_section=section_name))
+    return rows
 
 
 def load_benchmark_manifest(manifest_path: str | Path) -> list[BenchmarkPaper]:
@@ -335,7 +430,7 @@ def load_benchmark_manifest(manifest_path: str | Path) -> list[BenchmarkPaper]:
     manifest_dir = resolved_manifest_path.parent
     payload = _load_json(resolved_manifest_path)
     papers: list[BenchmarkPaper] = []
-    for paper_payload in payload.get("papers", []):
+    for section_name, paper_payload in _iter_manifest_papers(payload):
         paper_id = str(paper_payload.get("paper_id", "")).strip()
         if not paper_id:
             continue
@@ -368,6 +463,7 @@ def load_benchmark_manifest(manifest_path: str | Path) -> list[BenchmarkPaper]:
                 paper_id=paper_id,
                 gold_path=gold_path,
                 family=(str(gold_payload.get("family", "")).strip() or None),
+                section=section_name,
                 providers=providers,
             )
         )
@@ -469,13 +565,20 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
             {
                 "paper_id": paper.paper_id,
                 "gold_path": str(paper.gold_path),
+                "section": paper.section,
                 "family": gold.family,
                 "expected_route": gold.expected_route,
+                "expected_route_reason_codes": list(gold.expected_route_reason_codes),
                 "ocr_should_run": gold.ocr_should_run,
+                "expected_ocr_policy": gold.expected_ocr_policy,
                 "expected_primary_layout_provider": gold.expected_primary_layout_provider,
                 "expected_primary_math_provider": gold.expected_primary_math_provider,
                 "expected_primary_metadata_provider": gold.expected_primary_metadata_provider,
                 "expected_primary_reference_provider": gold.expected_primary_reference_provider,
+                "acceptable_selected_layout_providers": list(gold.acceptable_selected_layout_providers),
+                "acceptable_selected_math_providers": list(gold.acceptable_selected_math_providers),
+                "acceptable_selected_metadata_providers": list(gold.acceptable_selected_metadata_providers),
+                "acceptable_selected_reference_providers": list(gold.acceptable_selected_reference_providers),
                 "providers": provider_results,
             }
         )

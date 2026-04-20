@@ -1,5 +1,8 @@
 {
   "route_primary": "scan_or_image_heavy",
+  "route_traits": [
+    "image_heavy"
+  ],
   "recommended": {
     "layout_provider": "docling",
     "math_provider": "mathpix",
@@ -13,6 +16,7 @@
     "reference_provider": "grobid"
   },
   "ocr": {
+    "policy": "required",
     "applied": false
   }
 }

@@ -39,6 +39,16 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             {paper.family for paper in papers},
             {"born_digital_scholarly", "math_dense", "scan_or_image_heavy", "layout_complex", "degraded_or_garbled"},
         )
+        self.assertEqual(
+            {paper.paper_id: paper.section for paper in papers},
+            {
+                "fixture_paper": "routing",
+                "math_dense_fixture": "routing",
+                "layout_complex_fixture": "routing",
+                "scan_image_heavy_fixture": "ocr",
+                "degraded_garbled_fixture": "ocr",
+            },
+        )
         for paper in papers:
             self.assertEqual({provider.name for provider in paper.providers}, {"docling", "grobid", "mathpix"})
             for provider in paper.providers:
@@ -65,9 +75,13 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         self.assertIn("routing and acquisition scoring", born_digital["docling"]["metadata_observation"]["abstract"].lower())
         self.assertGreaterEqual(born_digital["docling"]["metrics"]["equation_hit_rate"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(born_digital["docling"]["metrics"]["route_reason_code_recall"], 1.0)
+        self.assertEqual(born_digital["docling"]["metrics"]["ocr_policy_match"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["selected_layout_provider_match"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["selected_metadata_provider_match"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["selected_reference_provider_match"], 1.0)
+        self.assertEqual(born_digital["docling"]["execution_observation"]["selected_reference_provider"], "docling")
+        self.assertEqual(born_digital["docling"]["execution_observation"]["route_reason_codes"], ["scholarly_references"])
         self.assertEqual(born_digital["grobid"]["metadata_observation"]["provider"], "grobid")
         self.assertEqual(born_digital["grobid"]["metrics"]["title_match"], 1.0)
         self.assertEqual(born_digital["grobid"]["metrics"]["recommended_metadata_provider_match"], 1.0)
@@ -78,6 +92,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         math_dense = {entry["provider"]: entry for entry in papers["math_dense_fixture"]["providers"]}
         self.assertGreater(math_dense["mathpix"]["overall_score"], math_dense["docling"]["overall_score"])
         self.assertEqual(math_dense["mathpix"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(math_dense["mathpix"]["metrics"]["route_reason_code_recall"], 1.0)
+        self.assertEqual(math_dense["mathpix"]["metrics"]["ocr_policy_match"], 1.0)
         self.assertEqual(math_dense["mathpix"]["metrics"]["selected_math_provider_match"], 1.0)
         self.assertEqual(math_dense["mathpix"]["metrics"]["recommended_metadata_provider_match"], 1.0)
         self.assertEqual(math_dense["docling"]["metrics"]["selected_math_provider_match"], 0.0)
@@ -85,11 +101,15 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         scan_heavy = {entry["provider"]: entry for entry in papers["scan_image_heavy_fixture"]["providers"]}
         self.assertGreater(scan_heavy["docling"]["overall_score"], scan_heavy["mathpix"]["overall_score"])
         self.assertEqual(scan_heavy["docling"]["metrics"]["ocr_should_run_match"], 1.0)
+        self.assertEqual(scan_heavy["docling"]["metrics"]["ocr_policy_match"], 1.0)
+        self.assertEqual(scan_heavy["docling"]["metrics"]["route_reason_code_recall"], 1.0)
         self.assertEqual(scan_heavy["mathpix"]["metrics"]["ocr_should_run_match"], 0.0)
 
         layout_complex = {entry["provider"]: entry for entry in papers["layout_complex_fixture"]["providers"]}
         self.assertGreater(layout_complex["docling"]["overall_score"], layout_complex["mathpix"]["overall_score"])
         self.assertEqual(layout_complex["docling"]["metrics"]["route_match"], 1.0)
+        self.assertEqual(layout_complex["docling"]["metrics"]["route_reason_code_recall"], 1.0)
+        self.assertEqual(layout_complex["docling"]["metrics"]["ocr_policy_match"], 1.0)
         self.assertEqual(layout_complex["docling"]["metrics"]["selected_layout_provider_match"], 1.0)
         self.assertEqual(layout_complex["mathpix"]["metrics"]["selected_layout_provider_match"], 0.0)
 
@@ -97,6 +117,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
         self.assertGreater(degraded["docling"]["overall_score"], degraded["mathpix"]["overall_score"])
         self.assertEqual(degraded["docling"]["metrics"]["route_match"], 1.0)
         self.assertEqual(degraded["docling"]["metrics"]["ocr_should_run_match"], 1.0)
+        self.assertEqual(degraded["docling"]["metrics"]["ocr_policy_match"], 1.0)
+        self.assertEqual(degraded["docling"]["metrics"]["route_reason_code_recall"], 1.0)
         self.assertEqual(degraded["mathpix"]["metrics"]["ocr_should_run_match"], 0.0)
         self.assertEqual(
             {entry["family"] for entry in report["families"]},
@@ -232,6 +254,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("degraded_garbled_fixture", printed[0])
             self.assertIn("grobid", printed[0])
             self.assertIn("metadata target", printed[0])
+            self.assertIn("section `routing`", printed[0])
+            self.assertIn("OCR policy `skip`", printed[0])
             self.assertIn("## Current Leaders", printed[0])
             self.assertIn("## Capability Ranking", printed[0])
             self.assertIn("## Family Capability Breakdown", printed[0])

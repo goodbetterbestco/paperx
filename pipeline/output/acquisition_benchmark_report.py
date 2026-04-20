@@ -80,9 +80,15 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
     lines.append("## Per-Paper Results")
     lines.append("")
     for paper in list(report.get("papers") or []):
+        route_reason_codes = ", ".join(f"`{item}`" for item in list(paper.get("expected_route_reason_codes") or [])) or "`n/a`"
+        ocr_policy = paper.get("expected_ocr_policy") or "n/a"
         lines.append(
-            f"- `{paper['paper_id']}` ({paper.get('family') or 'unclassified'}) — "
+            f"- `{paper['paper_id']}` "
+            f"[section `{paper.get('section') or 'unsectioned'}`] "
+            f"({paper.get('family') or 'unclassified'}) — "
             f"route `{paper.get('expected_route') or 'n/a'}`, "
+            f"route reasons {route_reason_codes}, "
+            f"OCR policy `{ocr_policy}`, "
             f"layout target `{paper.get('expected_primary_layout_provider') or 'n/a'}`, "
             f"math target `{paper.get('expected_primary_math_provider') or 'n/a'}`, "
             f"metadata target `{paper.get('expected_primary_metadata_provider') or 'n/a'}`, "

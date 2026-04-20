@@ -1,5 +1,8 @@
 {
   "route_primary": "degraded_or_garbled",
+  "route_traits": [
+    "image_heavy"
+  ],
   "recommended": {
     "metadata_provider": "grobid",
     "reference_provider": "grobid"
@@ -9,6 +12,7 @@
     "reference_provider": "grobid"
   },
   "ocr": {
+    "policy": "recommended",
     "applied": true
   }
 }

@@ -1,7 +1,11 @@
 {
   "family": "degraded_or_garbled",
   "expected_route": "degraded_or_garbled",
+  "expected_route_reason_codes": [
+    "image_heavy"
+  ],
   "ocr_should_run": true,
+  "expected_ocr_policy": "recommended",
   "expected_primary_layout_provider": "docling",
   "expected_primary_math_provider": "mathpix",
   "expected_primary_metadata_provider": "grobid",

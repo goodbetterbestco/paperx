@@ -1,5 +1,8 @@
 {
   "route_primary": "born_digital_scholarly",
+  "route_traits": [
+    "scholarly_references"
+  ],
   "recommended": {
     "layout_provider": "docling",
     "math_provider": "docling",
@@ -13,6 +16,7 @@
     "reference_provider": "grobid"
   },
   "ocr": {
+    "policy": "skip",
     "applied": false
   }
 }

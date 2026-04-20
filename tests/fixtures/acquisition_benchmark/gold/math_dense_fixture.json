@@ -1,7 +1,11 @@
 {
   "family": "math_dense",
   "expected_route": "math_dense",
+  "expected_route_reason_codes": [
+    "math_heavy"
+  ],
   "ocr_should_run": false,
+  "expected_ocr_policy": "skip",
   "expected_primary_layout_provider": "mathpix",
   "expected_primary_math_provider": "mathpix",
   "expected_primary_metadata_provider": "grobid",

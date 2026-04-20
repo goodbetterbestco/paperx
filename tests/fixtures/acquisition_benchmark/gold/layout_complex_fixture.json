@@ -1,7 +1,12 @@
 {
   "family": "layout_complex",
   "expected_route": "layout_complex",
+  "expected_route_reason_codes": [
+    "scholarly_references",
+    "two_column"
+  ],
   "ocr_should_run": false,
+  "expected_ocr_policy": "skip",
   "expected_primary_layout_provider": "docling",
   "expected_primary_math_provider": "mathpix",
   "expected_primary_metadata_provider": "grobid",

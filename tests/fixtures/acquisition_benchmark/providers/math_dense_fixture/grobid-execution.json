@@ -1,5 +1,8 @@
 {
   "route_primary": "math_dense",
+  "route_traits": [
+    "math_heavy"
+  ],
   "recommended": {
     "metadata_provider": "grobid",
     "reference_provider": "grobid"
@@ -9,6 +12,7 @@
     "reference_provider": "grobid"
   },
   "ocr": {
+    "policy": "skip",
     "applied": false
   }
 }
