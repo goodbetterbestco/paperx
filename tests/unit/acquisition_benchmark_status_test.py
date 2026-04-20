@@ -18,6 +18,30 @@ from pipeline.cli.show_acquisition_benchmark_status import run_show_benchmark_st
 
 
 class AcquisitionBenchmarkStatusTest(unittest.TestCase):
+    def test_summarize_latest_benchmark_status_handles_single_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            history_dir = Path(temp_dir) / "history"
+            history_dir.mkdir(parents=True, exist_ok=True)
+            (history_dir / "baseline.json").write_text(
+                json.dumps(
+                    {
+                        "snapshot_label": "baseline",
+                        "paper_count": 1,
+                        "aggregate": [{"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8}],
+                        "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}],
+                        "families": [{"family": "math_dense", "providers": [{"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8}]}],
+                        "family_capabilities": [{"family": "math_dense", "capabilities": [{"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}]}],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = summarize_latest_benchmark_status(history_dir=history_dir, limit=2)
+
+        self.assertEqual(report["latest_run"]["label"], "baseline")
+        self.assertIsNone(report["trend"])
+        self.assertEqual(report["leaders"]["overall"]["provider"], "docling")
+
     def test_summarize_latest_benchmark_status_returns_latest_run_and_trend(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             history_dir = Path(temp_dir) / "history"

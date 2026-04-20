@@ -15,7 +15,10 @@ def summarize_latest_benchmark_status(
 ) -> dict[str, Any]:
     history_kwargs = {"history_dir": history_dir} if history_dir is not None else {}
     history = list_benchmark_history(limit=1, **history_kwargs)
-    trend = summarize_benchmark_trend(limit=limit, **history_kwargs)
+    try:
+        trend = summarize_benchmark_trend(limit=limit, **history_kwargs)
+    except FileNotFoundError:
+        trend = None
     latest_run = list(history.get("runs") or [])
     latest = latest_run[-1] if latest_run else None
     latest_providers = list((latest or {}).get("providers") or [])
