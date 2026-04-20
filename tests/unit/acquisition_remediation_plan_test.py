@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -14,6 +15,7 @@ if str(ROOT) not in sys.path:
 
 from pipeline.acquisition.remediation_plan import plan_remediation_waves
 from pipeline.cli.plan_acquisition_remediation_waves import run_plan_remediation_waves_cli
+from pipeline.cli.run_acquisition_remediation_wave import run_remediation_wave_cli
 
 
 class AcquisitionRemediationPlanTest(unittest.TestCase):
@@ -85,7 +87,14 @@ class AcquisitionRemediationPlanTest(unittest.TestCase):
     def test_plan_remediation_waves_cli_prints_commands(self) -> None:
         printed: list[str] = []
         exit_code = run_plan_remediation_waves_cli(
-            argparse.Namespace(from_report=None, history_dir=None, max_wave_size=2, format="commands"),
+            argparse.Namespace(
+                from_report=None,
+                history_dir=None,
+                label="fixture-plan",
+                output_dir="/tmp/paperx-remediation-plans",
+                max_wave_size=2,
+                format="commands",
+            ),
             current_layout_fn=lambda: object(),
             audit_acquisition_quality_fn=lambda *, layout=None: {"remediation_queue": []},
             plan_waves_fn=lambda report, **kwargs: {
@@ -111,7 +120,14 @@ class AcquisitionRemediationPlanTest(unittest.TestCase):
     def test_plan_remediation_waves_cli_prints_json(self) -> None:
         printed: list[str] = []
         exit_code = run_plan_remediation_waves_cli(
-            argparse.Namespace(from_report=None, history_dir=None, max_wave_size=3, format="json"),
+            argparse.Namespace(
+                from_report=None,
+                history_dir=None,
+                label="fixture-plan",
+                output_dir="/tmp/paperx-remediation-plans",
+                max_wave_size=3,
+                format="json",
+            ),
             current_layout_fn=lambda: object(),
             audit_acquisition_quality_fn=lambda *, layout=None: {"remediation_queue": []},
             plan_waves_fn=lambda report, **kwargs: {"wave_count": 0, "waves": []},
@@ -120,6 +136,109 @@ class AcquisitionRemediationPlanTest(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertEqual(json.loads(printed[0])["wave_count"], 0)
+
+    def test_plan_remediation_waves_cli_writes_current_and_snapshot_artifacts(self) -> None:
+        printed: list[str] = []
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir) / "plans"
+            exit_code = run_plan_remediation_waves_cli(
+                argparse.Namespace(
+                    from_report=None,
+                    history_dir=None,
+                    label="wave-plan",
+                    output_dir=str(output_dir),
+                    max_wave_size=2,
+                    format="json",
+                ),
+                current_layout_fn=lambda: object(),
+                audit_acquisition_quality_fn=lambda *, layout=None: {"remediation_queue": []},
+                plan_waves_fn=lambda report, **kwargs: {"wave_count": 0, "waves": []},
+                print_fn=printed.append,
+            )
+
+            self.assertEqual(exit_code, 0)
+            self.assertTrue((output_dir / "summary.json").exists())
+            self.assertTrue((output_dir / "history" / "wave-plan.json").exists())
+            payload = json.loads((output_dir / "summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(payload["snapshot_label"], "wave-plan")
+            self.assertEqual(payload["report_paths"]["json"], str(output_dir / "summary.json"))
+            self.assertEqual(payload["report_paths"]["snapshot_json"], str(output_dir / "history" / "wave-plan.json"))
+
+    def test_run_remediation_wave_cli_dry_run_uses_current_plan_summary(self) -> None:
+        printed: list[str] = []
+        exit_code = run_remediation_wave_cli(
+            argparse.Namespace(
+                wave_id="recovery-critical-mathpix-1",
+                from_plan=None,
+                plan_output_dir="/tmp/paperx-remediation-plans",
+                queue_output_dir="/tmp/paperx-remediation",
+                label=None,
+                dry_run=True,
+            ),
+            load_current_plan_fn=lambda *, output_dir=None: {
+                "snapshot_label": "fixture-plan",
+                "waves": [
+                    {
+                        "wave_id": "recovery-critical-mathpix-1",
+                        "wave_kind": "recovery",
+                        "provider_focus": "mathpix",
+                        "paper_ids": ["paper-a"],
+                        "execution_command": "python3 -m pipeline.cli.run_acquisition_remediation_queue --from-report /tmp/audit.json --fail-fast --paper-id paper-a",
+                    }
+                ],
+            },
+            print_fn=printed.append,
+        )
+
+        self.assertEqual(exit_code, 0)
+        payload = json.loads(printed[0])
+        self.assertEqual(payload["status"], "planned")
+        self.assertEqual(payload["plan_label"], "fixture-plan")
+        self.assertEqual(payload["queue_label"], "recovery-critical-mathpix-1")
+        self.assertIn("--output-dir /tmp/paperx-remediation", payload["command"])
+        self.assertIn("--label recovery-critical-mathpix-1", payload["command"])
+
+    def test_run_remediation_wave_cli_executes_saved_plan_wave(self) -> None:
+        printed: list[str] = []
+        commands_seen: list[str] = []
+
+        exit_code = run_remediation_wave_cli(
+            argparse.Namespace(
+                wave_id="remediation-high-grobid-1",
+                from_plan="latest",
+                plan_output_dir="/tmp/paperx-remediation-plans",
+                queue_output_dir="/tmp/paperx-remediation",
+                label="wave-run",
+                dry_run=False,
+            ),
+            load_plan_report_fn=lambda value, *, history_dir=None: {
+                "snapshot_label": "fixture-plan",
+                "waves": [
+                    {
+                        "wave_id": "remediation-high-grobid-1",
+                        "wave_kind": "remediation",
+                        "provider_focus": "grobid",
+                        "paper_ids": ["paper-c"],
+                        "execution_command": "python3 -m pipeline.cli.run_acquisition_remediation_queue --paper-id paper-c",
+                    }
+                ],
+            },
+            resolve_plan_path_fn=lambda value, *, history_dir=None: Path("/tmp/paperx-remediation-plans/history/latest.json"),
+            run_command_fn=lambda command: (
+                commands_seen.append(command)
+                or type("Completed", (), {"returncode": 0, "stdout": "ok", "stderr": ""})()
+            ),
+            print_fn=printed.append,
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(len(commands_seen), 1)
+        self.assertIn("--label wave-run", commands_seen[0])
+        payload = json.loads(printed[0])
+        self.assertEqual(payload["status"], "succeeded")
+        self.assertEqual(payload["plan_path"], "/tmp/paperx-remediation-plans/history/latest.json")
+        self.assertEqual(payload["wave_kind"], "remediation")
+        self.assertEqual(payload["paper_ids"], ["paper-c"])
 
 
 if __name__ == "__main__":

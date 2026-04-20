@@ -82,6 +82,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.show_acquisition_remediation_dashboard`
 - `python3 -m pipeline.cli.plan_acquisition_remediation_waves --max-wave-size 5`
 - `python3 -m pipeline.cli.plan_acquisition_remediation_waves --format commands`
+- `python3 -m pipeline.cli.run_acquisition_remediation_wave recovery-critical-mathpix-1`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
@@ -155,6 +156,10 @@ saved remediation run artifacts. `pipeline.cli.plan_acquisition_remediation_wave
 turns the current actionable queue plus recent remediation failure context into
 provider-focused execution waves, with recovery waves for still-failing papers
 and ready-to-run batch commands that target the existing remediation queue CLI.
+Planned waves are now also persisted under `tmp/acquisition_remediation_plans/`
+with current and history snapshots, and `pipeline.cli.run_acquisition_remediation_wave`
+can execute a chosen saved `wave_id` directly without copying the emitted queue
+command by hand.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
