@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
 import shlex
 import subprocess
@@ -8,6 +9,16 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from pipeline.acquisition.remediation_artifacts import (
+    DEFAULT_REMEDIATION_OUTPUT_DIR,
+    RemediationArtifactPaths,
+    build_remediation_artifact_paths,
+    write_remediation_artifact_bundle,
+)
+from pipeline.acquisition.remediation_reports import (
+    load_remediation_report,
+    resolve_remediation_report_path,
+)
 from pipeline.acquisition.audit import audit_acquisition_quality as audit_acquisition_quality_impl
 from pipeline.corpus_layout import current_layout
 
@@ -17,6 +28,7 @@ REMEDIATION_PRIORITY_RANK = {
     "medium": 1,
     "low": 0,
 }
+OUTPUT_DIR = DEFAULT_REMEDIATION_OUTPUT_DIR
 
 
 def parse_args() -> argparse.Namespace:
@@ -26,6 +38,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--from-report",
         help="Read remediation_queue from an existing acquisition audit JSON report instead of recomputing a live audit.",
+    )
+    parser.add_argument(
+        "--resume-from",
+        help="Resume from a prior remediation run report path or saved snapshot label such as latest or previous.",
+    )
+    parser.add_argument(
+        "--label",
+        help="Optional snapshot label for the saved remediation run. Defaults to a UTC timestamp.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=str(OUTPUT_DIR),
+        help="Directory for current and historical remediation run artifacts.",
     )
     parser.add_argument(
         "--paper-id",
@@ -49,6 +74,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true", help="Print the selected queue commands without executing them.")
     parser.add_argument("--fail-fast", action="store_true", help="Stop after the first failed remediation command.")
     return parser.parse_args()
+
+
+def _snapshot_label(value: str | None) -> str:
+    if value:
+        cleaned = "".join(character if character.isalnum() or character in ("-", "_") else "-" for character in value)
+        cleaned = cleaned.strip("-_")
+        if cleaned:
+            return cleaned
+    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
 
 def _load_report(path: Path) -> dict[str, Any]:
@@ -99,15 +133,36 @@ def _select_queue_items(
     return queue
 
 
+def _status_counts(results: list[dict[str, Any]], skipped_papers: list[dict[str, Any]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for item in results:
+        status = str(item.get("status") or "").strip()
+        if not status:
+            continue
+        counts[status] = counts.get(status, 0) + 1
+    for item in skipped_papers:
+        status = str(item.get("status") or "").strip()
+        if not status:
+            continue
+        counts[status] = counts.get(status, 0) + 1
+    return counts
+
+
 def run_remediation_queue_cli(
     args: argparse.Namespace,
     *,
     current_layout_fn: Callable[[], object] = current_layout,
     audit_acquisition_quality_fn: Callable[..., dict[str, Any]] = audit_acquisition_quality_impl,
     load_report_fn: Callable[[Path], dict[str, Any]] = _load_report,
+    load_resume_report_fn: Callable[..., dict[str, Any]] = load_remediation_report,
+    resolve_resume_path_fn: Callable[..., Path] = resolve_remediation_report_path,
     run_command_fn: Callable[[str], Any] = _run_command,
+    build_artifact_paths_fn: Callable[..., RemediationArtifactPaths] = build_remediation_artifact_paths,
+    write_artifact_bundle_fn: Callable[..., dict[str, Any]] = write_remediation_artifact_bundle,
     print_fn: Callable[[str], None] = print,
 ) -> int:
+    snapshot_label = _snapshot_label(getattr(args, "label", None))
+    paths = build_artifact_paths_fn(snapshot_label, output_dir=getattr(args, "output_dir", OUTPUT_DIR))
     if args.from_report:
         report = load_report_fn(Path(args.from_report))
         source = {"kind": "report", "path": str(Path(args.from_report))}
@@ -122,12 +177,53 @@ def run_remediation_queue_cli(
         min_priority=args.min_priority,
         limit=args.limit,
     )
+    resume_info: dict[str, Any] | None = None
+    skipped_papers: list[dict[str, Any]] = []
+    if getattr(args, "resume_from", None):
+        resume_report = load_resume_report_fn(
+            getattr(args, "resume_from"),
+            history_dir=Path(getattr(args, "output_dir", OUTPUT_DIR)) / "history",
+        )
+        resume_path = resolve_resume_path_fn(
+            getattr(args, "resume_from"),
+            history_dir=Path(getattr(args, "output_dir", OUTPUT_DIR)) / "history",
+        )
+        succeeded_ids = {
+            str(item.get("paper_id") or "").strip()
+            for item in list(resume_report.get("results") or [])
+            if str(item.get("status") or "").strip() == "succeeded" and str(item.get("paper_id") or "").strip()
+        }
+        original_queue = list(queue)
+        queue = [item for item in original_queue if str(item.get("paper_id") or "").strip() not in succeeded_ids]
+        skipped_papers = [
+            {
+                "paper_id": str(item.get("paper_id") or ""),
+                "priority": str(item.get("remediation_priority_label") or ""),
+                "priority_score": int(item.get("remediation_priority_score") or 0),
+                "command": str(item.get("remediation_command") or ""),
+                "status": "skipped_succeeded",
+            }
+            for item in original_queue
+            if str(item.get("paper_id") or "").strip() in succeeded_ids
+        ]
+        resume_info = {
+            "requested": str(getattr(args, "resume_from")),
+            "path": str(resume_path),
+            "successful_papers": sorted(succeeded_ids),
+        }
+
     payload: dict[str, Any] = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "snapshot_label": snapshot_label,
         "mode": "dry_run" if args.dry_run else "execute",
         "source": source,
+        "resume": resume_info,
+        "requested_count": len(queue) + len(skipped_papers),
         "selected_count": len(queue),
+        "skipped_count": len(skipped_papers),
         "selected_papers": [str(item.get("paper_id") or "") for item in queue],
         "selected_priorities": sorted({str(item.get("remediation_priority_label") or "") for item in queue if str(item.get("remediation_priority_label") or "").strip()}),
+        "skipped_papers": skipped_papers,
         "results": [],
     }
 
@@ -142,6 +238,8 @@ def run_remediation_queue_cli(
             }
             for item in queue
         ]
+        payload["status_counts"] = _status_counts(list(payload["results"]), skipped_papers)
+        write_artifact_bundle_fn(payload, paths=paths)
         print_fn(json.dumps(payload, indent=2))
         return 0
 
@@ -168,6 +266,8 @@ def run_remediation_queue_cli(
             if args.fail_fast:
                 break
 
+    payload["status_counts"] = _status_counts(list(payload["results"]), skipped_papers)
+    write_artifact_bundle_fn(payload, paths=paths)
     print_fn(json.dumps(payload, indent=2))
     return exit_code
 

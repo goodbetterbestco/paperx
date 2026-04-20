@@ -75,6 +75,7 @@ Current preferred commands:
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --fail-fast --limit 5`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --min-priority high --dry-run`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --priority critical --fail-fast`
+- `python3 -m pipeline.cli.run_acquisition_remediation_queue --resume-from latest --min-priority high`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --label baseline-apr19`
 - `python3 -m pipeline.cli.run_acquisition_benchmark --manifest tests/fixtures/acquisition_benchmark/manifest.json --format markdown`
@@ -135,7 +136,10 @@ queued remediation commands, or
 follow-up remediations from either a live audit or a saved report. Queue items
 now include explicit remediation priority labels and scores so operators can
 work only `critical` and `high` items first via `--priority` or
-`--min-priority`.
+`--min-priority`. Remediation runs are now persisted under
+`tmp/acquisition_remediation/` with a current `summary.json` and timestamped
+history snapshots, and `--resume-from latest` or `--resume-from previous` can
+skip papers that already completed successfully in an earlier batch.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider
