@@ -63,6 +63,22 @@ class AcquisitionAuditTest(unittest.TestCase):
                 {
                     "recommended_primary_layout_provider": "docling",
                     "recommended_primary_math_provider": "mathpix",
+                    "layout_recommendation_basis": "fallback_unaccepted",
+                    "math_recommendation_basis": "accepted",
+                    "providers": [
+                        {
+                            "provider": "docling",
+                            "kind": "layout",
+                            "accepted": False,
+                            "rejection_reasons": ["score_below_threshold"],
+                        },
+                        {
+                            "provider": "mathpix",
+                            "kind": "math",
+                            "accepted": True,
+                            "rejection_reasons": [],
+                        },
+                    ],
                 },
             )
             _write_json(
@@ -96,6 +112,16 @@ class AcquisitionAuditTest(unittest.TestCase):
                 {
                     "recommended_primary_layout_provider": "mathpix",
                     "recommended_primary_math_provider": "mathpix",
+                    "layout_recommendation_basis": "accepted",
+                    "math_recommendation_basis": "accepted",
+                    "providers": [
+                        {
+                            "provider": "mathpix",
+                            "kind": "layout",
+                            "accepted": True,
+                            "rejection_reasons": [],
+                        }
+                    ],
                 },
             )
             _write_json(
@@ -126,12 +152,16 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["route_counts"]["degraded_or_garbled"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["docling"], 1)
         self.assertEqual(report["recommended_layout_provider_counts"]["mathpix"], 1)
+        self.assertEqual(report["layout_recommendation_basis_counts"]["fallback_unaccepted"], 1)
+        self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
+        self.assertEqual(report["math_recommendation_basis_counts"]["accepted"], 2)
         self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
         self.assertEqual(report["executed_layout_provider_counts"]["mathpix"], 1)
         self.assertEqual(report["ocr_policy_counts"]["required"], 1)
         self.assertEqual(report["ocr_policy_counts"]["recommended"], 1)
         self.assertEqual(report["pdf_source_kind_counts"]["original"], 1)
         self.assertEqual(report["pdf_source_kind_counts"]["ocr_normalized_generated"], 1)
+        self.assertEqual(report["provider_rejection_reason_counts"]["score_below_threshold"], 1)
         self.assertEqual(report["sidecar_missing_counts"]["acquisition-route.json"], 1)
         self.assertEqual(report["sidecar_missing_counts"]["source-scorecard.json"], 1)
         self.assertEqual(report["sidecar_missing_counts"]["ocr-prepass.json"], 1)
@@ -142,8 +172,14 @@ class AcquisitionAuditTest(unittest.TestCase):
 
         papers = {paper["paper_id"]: paper for paper in report["papers"]}
         self.assertIn("required_ocr_not_applied", papers["1990_required_ocr"]["issue_flags"])
+        self.assertIn("fallback_recommendation", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
         self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
+        self.assertEqual(papers["1990_required_ocr"]["layout_recommendation_basis"], "fallback_unaccepted")
+        self.assertEqual(
+            papers["1990_required_ocr"]["rejected_providers"][0]["rejection_reasons"],
+            ["score_below_threshold"],
+        )
         self.assertTrue(papers["1991_recommended_ocr"]["has_execution_report"])
         self.assertEqual(
             papers["1992_missing_sidecars"]["missing_sidecars"],

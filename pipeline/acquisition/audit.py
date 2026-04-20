@@ -64,11 +64,14 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
     recommended_math_provider_counts: dict[str, int] = {}
+    layout_recommendation_basis_counts: dict[str, int] = {}
+    math_recommendation_basis_counts: dict[str, int] = {}
     executed_layout_provider_counts: dict[str, int] = {}
     executed_math_provider_counts: dict[str, int] = {}
     ocr_policy_counts: dict[str, int] = {}
     pdf_source_kind_counts: dict[str, int] = {}
     sidecar_missing_counts: dict[str, int] = {}
+    provider_rejection_reason_counts: dict[str, int] = {}
     papers: list[dict[str, Any]] = []
     ocr_should_run_count = 0
     ocr_applied_count = 0
@@ -89,6 +92,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         primary_route = str((route or {}).get("primary_route") or "").strip() or None
         recommended_layout_provider = str((scorecard or {}).get("recommended_primary_layout_provider") or "").strip() or None
         recommended_math_provider = str((scorecard or {}).get("recommended_primary_math_provider") or "").strip() or None
+        layout_recommendation_basis = str((scorecard or {}).get("layout_recommendation_basis") or "").strip() or None
+        math_recommendation_basis = str((scorecard or {}).get("math_recommendation_basis") or "").strip() or None
         executed_layout_provider = str(executed.get("selected_layout_provider") or "").strip() or None
         executed_math_provider = str(executed.get("selected_math_provider") or "").strip() or None
         ocr_policy = str((ocr_report or {}).get("ocr_prepass_policy") or route_ocr.get("policy") or "").strip() or None
@@ -96,6 +101,15 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         ocr_should_run = bool(route_ocr.get("should_run"))
         ocr_applied = bool((ocr_report or {}).get("ocr_prepass_applied"))
         pdf_source_kind = str((ocr_report or {}).get("pdf_source_kind") or "").strip() or None
+        rejected_providers = [
+            {
+                "provider": str(item.get("provider") or ""),
+                "kind": str(item.get("kind") or ""),
+                "rejection_reasons": [str(reason) for reason in list(item.get("rejection_reasons") or []) if str(reason)],
+            }
+            for item in list((scorecard or {}).get("providers") or [])
+            if item and not bool(item.get("accepted"))
+        ]
         missing_sidecars = _missing_sidecars(route, scorecard, ocr_report)
         issue_flags: list[str] = []
 
@@ -105,10 +119,15 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         _increment(route_counts, primary_route)
         _increment(recommended_layout_provider_counts, recommended_layout_provider)
         _increment(recommended_math_provider_counts, recommended_math_provider)
+        _increment(layout_recommendation_basis_counts, layout_recommendation_basis)
+        _increment(math_recommendation_basis_counts, math_recommendation_basis)
         _increment(executed_layout_provider_counts, executed_layout_provider)
         _increment(executed_math_provider_counts, executed_math_provider)
         _increment(ocr_policy_counts, ocr_policy)
         _increment(pdf_source_kind_counts, pdf_source_kind)
+        for item in rejected_providers:
+            for reason in item["rejection_reasons"]:
+                _increment(provider_rejection_reason_counts, reason)
 
         for sidecar_name in missing_sidecars:
             sidecar_missing_counts[sidecar_name] = sidecar_missing_counts.get(sidecar_name, 0) + 1
@@ -131,6 +150,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             issue_flags.append("unexpected_ocr_application")
         if missing_sidecars:
             issue_flags.append("missing_sidecars")
+        if layout_recommendation_basis == "fallback_unaccepted" or math_recommendation_basis == "fallback_unaccepted":
+            issue_flags.append("fallback_recommendation")
 
         papers.append(
             {
@@ -141,6 +162,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "primary_route": primary_route,
                 "recommended_primary_layout_provider": recommended_layout_provider,
                 "recommended_primary_math_provider": recommended_math_provider,
+                "layout_recommendation_basis": layout_recommendation_basis,
+                "math_recommendation_basis": math_recommendation_basis,
                 "executed_layout_provider": executed_layout_provider,
                 "executed_math_provider": executed_math_provider,
                 "has_execution_report": execution_report is not None,
@@ -149,6 +172,7 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "ocr_tool": ocr_tool,
                 "ocr_applied": ocr_applied,
                 "pdf_source_kind": pdf_source_kind,
+                "rejected_providers": rejected_providers,
                 "missing_sidecars": missing_sidecars,
                 "issue_flags": issue_flags,
                 "issue_count": len(missing_sidecars) + len([flag for flag in issue_flags if flag != "missing_sidecars"]),
@@ -164,11 +188,14 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "route_counts": route_counts,
         "recommended_layout_provider_counts": recommended_layout_provider_counts,
         "recommended_math_provider_counts": recommended_math_provider_counts,
+        "layout_recommendation_basis_counts": layout_recommendation_basis_counts,
+        "math_recommendation_basis_counts": math_recommendation_basis_counts,
         "executed_layout_provider_counts": executed_layout_provider_counts,
         "executed_math_provider_counts": executed_math_provider_counts,
         "ocr_policy_counts": ocr_policy_counts,
         "pdf_source_kind_counts": pdf_source_kind_counts,
         "sidecar_missing_counts": sidecar_missing_counts,
+        "provider_rejection_reason_counts": provider_rejection_reason_counts,
         "ocr_summary": {
             "should_run_count": ocr_should_run_count,
             "applied_count": ocr_applied_count,

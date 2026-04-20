@@ -10,6 +10,20 @@ def _render_top_counts(counts: dict[str, int], *, limit: int = 8) -> str:
     return ", ".join(f"`{name}`={count}" for name, count in ranked)
 
 
+def _render_rejections(items: list[dict[str, Any]]) -> str:
+    parts: list[str] = []
+    for item in items:
+        provider = str(item.get("provider") or "unknown")
+        kind = str(item.get("kind") or "unknown")
+        reasons = [str(reason) for reason in list(item.get("rejection_reasons") or []) if str(reason)]
+        if reasons:
+            rendered_reasons = "/".join(f"`{reason}`" for reason in reasons)
+            parts.append(f"`{provider}`/{kind}:{rendered_reasons}")
+    if not parts:
+        return "none"
+    return ", ".join(parts)
+
+
 def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> str:
     ocr_summary = dict(report.get("ocr_summary") or {})
     lines = [
@@ -30,8 +44,11 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         f"- Routes: {_render_top_counts(report.get('route_counts', {}))}",
         f"- Layout recommendations: {_render_top_counts(report.get('recommended_layout_provider_counts', {}))}",
         f"- Math recommendations: {_render_top_counts(report.get('recommended_math_provider_counts', {}))}",
+        f"- Layout recommendation basis: {_render_top_counts(report.get('layout_recommendation_basis_counts', {}))}",
+        f"- Math recommendation basis: {_render_top_counts(report.get('math_recommendation_basis_counts', {}))}",
         f"- Executed layout providers: {_render_top_counts(report.get('executed_layout_provider_counts', {}))}",
         f"- Executed math providers: {_render_top_counts(report.get('executed_math_provider_counts', {}))}",
+        f"- Rejection reasons: {_render_top_counts(report.get('provider_rejection_reason_counts', {}))}",
         "",
         "## OCR Summary",
         "",
@@ -55,9 +72,10 @@ def render_acquisition_audit_markdown(report: dict[str, Any], *, top_n: int) -> 
         lines.extend(
             [
                 f"{index}. `{paper['paper_id']}` — issues `{paper['issue_count']}`",
-                f"   Route: `{paper.get('primary_route') or 'unknown'}` | recommended layout `{paper.get('recommended_primary_layout_provider') or 'unknown'}` | recommended math `{paper.get('recommended_primary_math_provider') or 'unknown'}`",
+                f"   Route: `{paper.get('primary_route') or 'unknown'}` | recommended layout `{paper.get('recommended_primary_layout_provider') or 'unknown'}` ({paper.get('layout_recommendation_basis') or 'unknown'}) | recommended math `{paper.get('recommended_primary_math_provider') or 'unknown'}` ({paper.get('math_recommendation_basis') or 'unknown'})",
                 f"   Executed: layout `{paper.get('executed_layout_provider') or 'unknown'}` | math `{paper.get('executed_math_provider') or 'unknown'}` | execution report `{paper.get('has_execution_report')}`",
                 f"   OCR: policy `{paper.get('ocr_policy') or 'unknown'}`, should-run `{paper.get('ocr_should_run')}`, applied `{paper.get('ocr_applied')}`, source `{paper.get('pdf_source_kind') or 'unknown'}`",
+                f"   Rejections: {_render_rejections(list(paper.get('rejected_providers') or []))}",
                 f"   Findings: {issue_summary}",
             ]
         )

@@ -44,6 +44,22 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                     {
                         "recommended_primary_layout_provider": "docling",
                         "recommended_primary_math_provider": "mathpix",
+                        "layout_recommendation_basis": "accepted",
+                        "math_recommendation_basis": "accepted",
+                        "providers": [
+                            {
+                                "provider": "docling",
+                                "kind": "layout",
+                                "accepted": True,
+                                "rejection_reasons": [],
+                            },
+                            {
+                                "provider": "mathpix",
+                                "kind": "math",
+                                "accepted": True,
+                                "rejection_reasons": [],
+                            },
+                        ],
                     },
                     indent=2,
                 )
@@ -109,11 +125,13 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["route_counts"]["degraded_or_garbled"], 1)
             self.assertEqual(report["ocr_summary"]["applied_count"], 1)
             self.assertEqual(report["executed_layout_provider_counts"]["docling"], 1)
+            self.assertEqual(report["layout_recommendation_basis_counts"]["accepted"], 1)
 
             markdown = MARKDOWN_REPORT.read_text(encoding="utf-8")
             self.assertIn("# Acquisition Quality Audit", markdown)
             self.assertIn("1990_synthetic_test_paper", markdown)
             self.assertIn("Executed: layout `docling`", markdown)
+            self.assertIn("recommended layout `docling` (accepted)", markdown)
 
 
 if __name__ == "__main__":

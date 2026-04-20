@@ -94,6 +94,10 @@ def build_acquisition_execution_summary(
             "math_provider": source_scorecard.get("recommended_primary_math_provider"),
             "metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
             "reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
+            "layout_basis": source_scorecard.get("layout_recommendation_basis"),
+            "math_basis": source_scorecard.get("math_recommendation_basis"),
+            "metadata_basis": source_scorecard.get("metadata_recommendation_basis"),
+            "reference_basis": source_scorecard.get("reference_recommendation_basis"),
         },
         "executed": {
             "layout_candidates": executed_layout_candidates,
