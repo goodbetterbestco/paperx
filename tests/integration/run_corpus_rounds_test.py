@@ -375,8 +375,18 @@ class RunCorpusRoundsTest(unittest.TestCase):
 
         self.assertEqual(summary["recommended_primary_math_provider"], "docling")
         self.assertEqual(summary["math_engine"], "docling")
-        self.assertFalse(summary["follow_up_needed"])
-        self.assertEqual(summary["follow_up_actions"], [])
+        self.assertTrue(summary["follow_up_needed"])
+        self.assertEqual(
+            summary["follow_up_actions"],
+            [
+                {
+                    "product": "layout",
+                    "reason": "layout_provider_not_accepted",
+                    "action": "manual_review_layout",
+                    "target_provider": None,
+                }
+            ],
+        )
         self.assertEqual(summary["ocr_prepass_policy"], "skip")
         self.assertEqual([entry["id"] for entry in captured["math.json"]["entries"]], ["doc-eq-1", "doc-eq-2"])
 
@@ -441,6 +451,76 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertFalse(summary["follow_up_needed"])
         self.assertEqual(summary["follow_up_actions"], [])
         self.assertFalse(captured["acquisition-execution.json"]["follow_up"]["needs_attention"])
+
+    def test_compose_external_sources_reports_follow_up_for_unaccepted_layout_and_math(self) -> None:
+        captured: dict[str, dict] = {}
+
+        def capture(path: Path, payload: dict) -> None:
+            captured[path.name] = payload
+
+        docling_sources = {
+            "layout": {
+                "engine": "docling",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "d1", "page": 1, "order": 1, "role": "paragraph", "text": "Sparse body text.", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "docling", "entries": [{"id": "eq-1", "kind": "inline"}]},
+        }
+
+        with (
+            patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
+            patch("pipeline.orchestrator.round_paper.external_layout_path", return_value=Path("/tmp/layout.json")),
+            patch("pipeline.orchestrator.round_paper.external_math_path", return_value=Path("/tmp/math.json")),
+            patch(
+                "pipeline.orchestrator.round_paper.build_acquisition_route_report",
+                return_value={
+                    "paper_id": "synthetic_test_paper",
+                    "primary_route": "born_digital_scholarly",
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+            ),
+        ):
+            summary = compose_external_sources(
+                "synthetic_test_paper",
+                docling_sources=docling_sources,
+                mathpix_sources=None,
+                build_source_scorecard_impl=lambda **kwargs: {
+                    "providers": [],
+                    "recommended_primary_layout_provider": "docling",
+                    "recommended_primary_math_provider": "docling",
+                    "recommended_primary_metadata_provider": "docling",
+                    "recommended_primary_reference_provider": "docling",
+                    "layout_recommendation_basis": "fallback_unaccepted",
+                    "math_recommendation_basis": "fallback_unaccepted",
+                    "metadata_recommendation_basis": "accepted",
+                    "reference_recommendation_basis": "accepted",
+                },
+                load_grobid_metadata_observation_impl=lambda paper_id, *, layout=None: None,
+            )
+
+        self.assertTrue(summary["follow_up_needed"])
+        self.assertEqual(
+            summary["follow_up_actions"],
+            [
+                {
+                    "product": "layout",
+                    "reason": "layout_provider_not_accepted",
+                    "action": "manual_review_layout",
+                    "target_provider": None,
+                },
+                {
+                    "product": "math",
+                    "reason": "math_provider_not_accepted",
+                    "action": "manual_review_math",
+                    "target_provider": None,
+                },
+            ],
+        )
+        self.assertTrue(captured["acquisition-execution.json"]["follow_up"]["needs_attention"])
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
         bad_document = {

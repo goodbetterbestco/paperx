@@ -49,17 +49,41 @@ def _observation_has_references(observation: dict[str, Any] | None) -> bool:
 def build_acquisition_follow_up(
     *,
     source_scorecard: dict[str, Any],
+    selected_layout_provider: str | None,
+    selected_math_provider: str | None,
     metadata_candidates: dict[str, dict[str, Any] | None] | None,
     metadata_observation: dict[str, Any] | None,
     reference_observation: dict[str, Any] | None,
 ) -> dict[str, Any]:
     actions: list[dict[str, Any]] = []
+    layout_basis = str(source_scorecard.get("layout_recommendation_basis", "") or "")
+    math_basis = str(source_scorecard.get("math_recommendation_basis", "") or "")
     metadata_basis = str(source_scorecard.get("metadata_recommendation_basis", "") or "")
     reference_basis = str(source_scorecard.get("reference_recommendation_basis", "") or "")
     selected_metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
     selected_reference_provider = str((reference_observation or {}).get("provider", "") or "") or None
     candidates = {str(key): dict(value or {}) for key, value in (metadata_candidates or {}).items()}
     grobid_candidate = candidates.get("grobid") or {}
+
+    if layout_basis == "fallback_unaccepted":
+        actions.append(
+            {
+                "product": "layout",
+                "reason": "layout_provider_not_accepted",
+                "action": "manual_review_layout",
+                "target_provider": None,
+            }
+        )
+
+    if math_basis == "fallback_unaccepted":
+        actions.append(
+            {
+                "product": "math",
+                "reason": "math_provider_not_accepted",
+                "action": "manual_review_math",
+                "target_provider": None,
+            }
+        )
 
     if metadata_basis == "fallback_unaccepted":
         if selected_metadata_provider == "grobid":
@@ -165,6 +189,8 @@ def build_acquisition_execution_summary(
     ]
     follow_up = build_acquisition_follow_up(
         source_scorecard=source_scorecard,
+        selected_layout_provider=selected_layout_provider,
+        selected_math_provider=selected_math_provider,
         metadata_candidates=metadata_candidates,
         metadata_observation=metadata_observation,
         reference_observation=reference_observation,
