@@ -2,24 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-
-def _append_family_leaders(lines: list[str], families: list[dict[str, Any]], *, score_key: str) -> None:
-    for family in families:
-        family_name = family.get("family")
-        leaders = family.get("leaders") or {}
-        overall = leaders.get("overall") or {}
-        if overall:
-            lines.append(
-                f"- family `{family_name}` overall leader: `{overall['provider']}` "
-                f"at `{overall.get('avg_overall_score', overall.get('overall'))}`"
-            )
-        for capability in list(leaders.get("capabilities") or []):
-            leader = capability.get("leader") or {}
-            if leader:
-                lines.append(
-                    f"- family `{family_name}` capability `{capability['capability']}` leader: "
-                    f"`{leader['provider']}` at `{leader.get(score_key, leader.get('score'))}`"
-                )
+from pipeline.output.acquisition_benchmark_leaders import append_leader_lines
 
 
 def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
@@ -38,20 +21,7 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
         "## Current Leaders",
         "",
     ]
-    overall = leaders.get("overall") or {}
-    content = leaders.get("content") or {}
-    execution = leaders.get("execution") or {}
-    if overall:
-        lines.append(f"- overall: `{overall['provider']}` at `{overall['avg_overall_score']}`")
-    if content:
-        lines.append(f"- content: `{content['provider']}` at `{content['avg_content_score']}`")
-    if execution:
-        lines.append(f"- execution: `{execution['provider']}` at `{execution['avg_execution_score']}`")
-    for capability in list(leaders.get("capabilities") or []):
-        leader = capability.get("leader") or {}
-        if leader:
-            lines.append(f"- `{capability['capability']}`: `{leader['provider']}` at `{leader['avg_score']}`")
-    _append_family_leaders(lines, list(leaders.get("families") or []), score_key="avg_score")
+    append_leader_lines(lines, leaders)
 
     lines.extend([
         "",

@@ -2,6 +2,13 @@ from __future__ import annotations
 
 from typing import Any
 
+from pipeline.output.acquisition_benchmark_deltas import (
+    append_named_provider_delta_lines,
+    append_named_score_delta_lines,
+    render_delta_section,
+)
+from pipeline.output.acquisition_benchmark_leaders import capability_leader_map, family_leader_map, leader_value
+
 
 def _render_leader_shift(report: dict[str, Any]) -> list[str]:
     leaders = report.get("leaders") or {}
@@ -16,29 +23,21 @@ def _render_leader_shift(report: dict[str, Any]) -> list[str]:
             continue
         lines.append(
             f"- {label}: "
-            f"`{base_row.get('provider', 'none')}` `{base_row.get(f'avg_{value_key}_score', base_row.get(value_key, 'n/a'))}`"
+            f"`{base_row.get('provider', 'none')}` `{leader_value(base_row, f'avg_{value_key}_score', value_key)}`"
             f" -> `{candidate_row.get('provider', 'none')}` "
-            f"`{candidate_row.get(f'avg_{value_key}_score', candidate_row.get(value_key, 'n/a'))}`"
+            f"`{leader_value(candidate_row, f'avg_{value_key}_score', value_key)}`"
         )
 
-    base_capabilities = {
-        str(item.get("capability", "") or ""): item.get("leader") or {}
-        for item in list(base.get("capabilities") or [])
-        if str(item.get("capability", "") or "").strip()
-    }
-    candidate_capabilities = {
-        str(item.get("capability", "") or ""): item.get("leader") or {}
-        for item in list(candidate.get("capabilities") or [])
-        if str(item.get("capability", "") or "").strip()
-    }
+    base_capabilities = capability_leader_map(base)
+    candidate_capabilities = capability_leader_map(candidate)
     for capability in sorted(set(base_capabilities) | set(candidate_capabilities)):
         base_row = base_capabilities.get(capability, {})
         candidate_row = candidate_capabilities.get(capability, {})
         lines.append(
             f"- `{capability}`: "
-            f"`{base_row.get('provider', 'none')}` `{base_row.get('avg_score', base_row.get('score', 'n/a'))}`"
+            f"`{base_row.get('provider', 'none')}` `{leader_value(base_row, 'avg_score', 'score')}`"
             f" -> `{candidate_row.get('provider', 'none')}` "
-            f"`{candidate_row.get('avg_score', candidate_row.get('score', 'n/a'))}`"
+            f"`{leader_value(candidate_row, 'avg_score', 'score')}`"
         )
 
     lines.append("")
@@ -47,16 +46,8 @@ def _render_leader_shift(report: dict[str, Any]) -> list[str]:
 
 def _render_family_leader_shift(report: dict[str, Any]) -> list[str]:
     leaders = report.get("leaders") or {}
-    base = {
-        str(item.get("family", "") or ""): item.get("leaders") or {}
-        for item in list((leaders.get("base") or {}).get("families") or [])
-        if str(item.get("family", "") or "").strip()
-    }
-    candidate = {
-        str(item.get("family", "") or ""): item.get("leaders") or {}
-        for item in list((leaders.get("candidate") or {}).get("families") or [])
-        if str(item.get("family", "") or "").strip()
-    }
+    base = family_leader_map(leaders.get("base") or {})
+    candidate = family_leader_map(leaders.get("candidate") or {})
     lines = ["## Family Leader Shift", ""]
     for family in sorted(set(base) | set(candidate)):
         base_leaders = base.get(family, {})
@@ -66,59 +57,23 @@ def _render_family_leader_shift(report: dict[str, Any]) -> list[str]:
         lines.append(
             f"- family `{family}` overall: "
             f"`{base_overall.get('provider', 'none')}` "
-            f"`{base_overall.get('avg_overall_score', base_overall.get('overall', 'n/a'))}`"
+            f"`{leader_value(base_overall, 'avg_overall_score', 'overall')}`"
             f" -> `{candidate_overall.get('provider', 'none')}` "
-            f"`{candidate_overall.get('avg_overall_score', candidate_overall.get('overall', 'n/a'))}`"
+            f"`{leader_value(candidate_overall, 'avg_overall_score', 'overall')}`"
         )
-        base_capabilities = {
-            str(item.get("capability", "") or ""): item.get("leader") or {}
-            for item in list(base_leaders.get("capabilities") or [])
-            if str(item.get("capability", "") or "").strip()
-        }
-        candidate_capabilities = {
-            str(item.get("capability", "") or ""): item.get("leader") or {}
-            for item in list(candidate_leaders.get("capabilities") or [])
-            if str(item.get("capability", "") or "").strip()
-        }
+        base_capabilities = capability_leader_map(base_leaders)
+        candidate_capabilities = capability_leader_map(candidate_leaders)
         for capability in sorted(set(base_capabilities) | set(candidate_capabilities)):
             base_row = base_capabilities.get(capability, {})
             candidate_row = candidate_capabilities.get(capability, {})
             lines.append(
                 f"- family `{family}` capability `{capability}`: "
-                f"`{base_row.get('provider', 'none')}` `{base_row.get('avg_score', base_row.get('score', 'n/a'))}`"
+                f"`{base_row.get('provider', 'none')}` `{leader_value(base_row, 'avg_score', 'score')}`"
                 f" -> `{candidate_row.get('provider', 'none')}` "
-                f"`{candidate_row.get('avg_score', candidate_row.get('score', 'n/a'))}`"
+                f"`{leader_value(candidate_row, 'avg_score', 'score')}`"
             )
     lines.append("")
     return lines
-
-
-def _render_changes(title: str, rows: list[dict[str, Any]]) -> list[str]:
-    lines = [title, ""]
-    if not rows:
-        lines.append("- none")
-        lines.append("")
-        return lines
-    for row in rows:
-        lines.append(
-            f"- `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-            f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-        )
-    lines.append("")
-    return lines
-
-
-def _render_score_changes(title: str, rows: list[dict[str, Any]]) -> list[str]:
-    lines = [title, ""]
-    if not rows:
-        lines.append("- none")
-        lines.append("")
-        return lines
-    for row in rows:
-        lines.append(f"- `{row['provider']}`: score delta `{row['score_delta']}`")
-    lines.append("")
-    return lines
-
 
 def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
     lines = [
@@ -132,15 +87,15 @@ def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
     ]
     lines.extend(_render_leader_shift(report))
     lines.extend(_render_family_leader_shift(report))
-    lines.extend(_render_changes("## Top Improvements", list(report.get("top_improvements") or [])))
-    lines.extend(_render_changes("## Top Regressions", list(report.get("top_regressions") or [])))
+    lines.extend(render_delta_section("## Top Improvements", list(report.get("top_improvements") or [])))
+    lines.extend(render_delta_section("## Top Regressions", list(report.get("top_regressions") or [])))
     lines.append("## Capability Watchlist")
     lines.append("")
     for capability in list(report.get("capabilities") or []):
         lines.append(f"### `{capability['capability']}`")
         lines.append("")
-        lines.extend(_render_score_changes("#### Improvements", list(capability.get("improvements") or [])))
-        lines.extend(_render_score_changes("#### Regressions", list(capability.get("regressions") or [])))
+        lines.extend(render_delta_section("#### Improvements", list(capability.get("improvements") or []), kind="score"))
+        lines.extend(render_delta_section("#### Regressions", list(capability.get("regressions") or []), kind="score"))
     lines.append("## Family Watchlist")
     lines.append("")
     for family in list(report.get("families") or []):
@@ -152,16 +107,8 @@ def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
             lines.append("- no provider movement")
             lines.append("")
             continue
-        for row in family_improvements:
-            lines.append(
-                f"- improvement `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
-        for row in family_regressions:
-            lines.append(
-                f"- regression `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
+        append_named_provider_delta_lines(lines, family_improvements, label="improvement")
+        append_named_provider_delta_lines(lines, family_regressions, label="regression")
         lines.append("")
         for capability in list(family.get("capabilities") or []):
             lines.append(f"#### `{capability['capability']}`")
@@ -172,10 +119,8 @@ def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
                 lines.append("- no capability movement")
                 lines.append("")
                 continue
-            for row in capability_improvements:
-                lines.append(f"- improvement `{row['provider']}`: score delta `{row['score_delta']}`")
-            for row in capability_regressions:
-                lines.append(f"- regression `{row['provider']}`: score delta `{row['score_delta']}`")
+            append_named_score_delta_lines(lines, capability_improvements, label="improvement")
+            append_named_score_delta_lines(lines, capability_regressions, label="regression")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 

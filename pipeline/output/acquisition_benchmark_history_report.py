@@ -2,42 +2,15 @@ from __future__ import annotations
 
 from typing import Any
 
+from pipeline.output.acquisition_benchmark_leaders import append_leader_lines, metric_leader_summary_parts
 
 def _render_run_leaders(run: dict[str, Any]) -> list[str]:
     leaders = run.get("leaders") or {}
-    overall = leaders.get("overall") or {}
-    content = leaders.get("content") or {}
-    execution = leaders.get("execution") or {}
-    summary_parts: list[str] = []
-    if overall:
-        summary_parts.append(f"overall `{overall['provider']}` at `{overall['overall']}`")
-    if content:
-        summary_parts.append(f"content `{content['provider']}` at `{content['content']}`")
-    if execution:
-        summary_parts.append(f"execution `{execution['provider']}` at `{execution['execution']}`")
-
+    summary_parts = metric_leader_summary_parts(leaders)
     lines: list[str] = []
     if summary_parts:
         lines.append(f"- Leaders: {', '.join(summary_parts)}")
-    for capability in list(leaders.get("capabilities") or []):
-        leader = capability.get("leader") or {}
-        if leader:
-            lines.append(f"- Capability `{capability['capability']}` leader: `{leader['provider']}` at `{leader['score']}`")
-    for family in list(leaders.get("families") or []):
-        family_leaders = family.get("leaders") or {}
-        overall_leader = family_leaders.get("overall") or {}
-        if overall_leader:
-            lines.append(
-                f"- Family `{family['family']}` overall leader: "
-                f"`{overall_leader['provider']}` at `{overall_leader.get('avg_overall_score', overall_leader.get('overall'))}`"
-            )
-        for capability in list(family_leaders.get("capabilities") or []):
-            leader = capability.get("leader") or {}
-            if leader:
-                lines.append(
-                    f"- Family `{family['family']}` capability `{capability['capability']}` leader: "
-                    f"`{leader['provider']}` at `{leader.get('avg_score', leader.get('score'))}`"
-                )
+    append_leader_lines(lines, {"capabilities": leaders.get("capabilities"), "families": leaders.get("families")}, family_label="Family")
     return lines
 
 

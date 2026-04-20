@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
+from pipeline.output.acquisition_benchmark_deltas import append_named_provider_delta_lines, append_named_score_delta_lines
+from pipeline.output.acquisition_benchmark_leaders import append_leader_lines
+
 
 def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
     latest = report.get("latest_run") or {}
@@ -18,36 +21,7 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
         "## Current Leaders",
         "",
     ]
-
-    overall_leader = leaders.get("overall") or {}
-    content_leader = leaders.get("content") or {}
-    execution_leader = leaders.get("execution") or {}
-    if overall_leader:
-        lines.append(f"- overall: `{overall_leader['provider']}` at `{overall_leader['overall']}`")
-    if content_leader:
-        lines.append(f"- content: `{content_leader['provider']}` at `{content_leader['content']}`")
-    if execution_leader:
-        lines.append(f"- execution: `{execution_leader['provider']}` at `{execution_leader['execution']}`")
-    for capability in list(leaders.get("capabilities") or []):
-        leader = capability.get("leader") or {}
-        if leader:
-            lines.append(f"- `{capability['capability']}`: `{leader['provider']}` at `{leader['score']}`")
-    for family in list(leaders.get("families") or []):
-        family_leaders = family.get("leaders") or {}
-        overall_family_leader = family_leaders.get("overall") or {}
-        if overall_family_leader:
-            lines.append(
-                f"- family `{family['family']}` overall leader: "
-                f"`{overall_family_leader['provider']}` "
-                f"at `{overall_family_leader.get('avg_overall_score', overall_family_leader.get('overall'))}`"
-            )
-        for capability in list(family_leaders.get("capabilities") or []):
-            leader = capability.get("leader") or {}
-            if leader:
-                lines.append(
-                    f"- family `{family['family']}` capability `{capability['capability']}` leader: "
-                    f"`{leader['provider']}` at `{leader.get('avg_score', leader.get('score'))}`"
-                )
+    append_leader_lines(lines, leaders)
 
     lines.extend([
         "",
@@ -80,19 +54,11 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
     if not improvements:
         lines.append("- improvements: none")
     else:
-        for row in improvements:
-            lines.append(
-                f"- improvement `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
+        append_named_provider_delta_lines(lines, improvements, label="improvement")
     if not regressions:
         lines.append("- regressions: none")
     else:
-        for row in regressions:
-            lines.append(
-                f"- regression `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
+        append_named_provider_delta_lines(lines, regressions, label="regression")
 
     lines.extend(["", "## Capability Watchlist", ""])
     for capability in list(trend.get("capabilities") or []):
@@ -104,10 +70,8 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
             lines.append("- no capability movement")
             lines.append("")
             continue
-        for row in improvements:
-            lines.append(f"- improvement `{row['provider']}`: score delta `{row['score_delta']}`")
-        for row in regressions:
-            lines.append(f"- regression `{row['provider']}`: score delta `{row['score_delta']}`")
+        append_named_score_delta_lines(lines, improvements, label="improvement")
+        append_named_score_delta_lines(lines, regressions, label="regression")
         lines.append("")
 
     lines.extend(["", "## Family Watchlist", ""])
@@ -120,16 +84,8 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
             lines.append("- no provider movement")
             lines.append("")
             continue
-        for row in family_improvements:
-            lines.append(
-                f"- improvement `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
-        for row in family_regressions:
-            lines.append(
-                f"- regression `{row['provider']}`: overall delta `{row['overall_delta']}`, "
-                f"content delta `{row['content_delta']}`, execution delta `{row['execution_delta']}`"
-            )
+        append_named_provider_delta_lines(lines, family_improvements, label="improvement")
+        append_named_provider_delta_lines(lines, family_regressions, label="regression")
         lines.append("")
         for capability in list(family.get("capabilities") or []):
             lines.append(f"#### `{capability['capability']}`")
@@ -140,10 +96,8 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
                 lines.append("- no capability movement")
                 lines.append("")
                 continue
-            for row in capability_improvements:
-                lines.append(f"- improvement `{row['provider']}`: score delta `{row['score_delta']}`")
-            for row in capability_regressions:
-                lines.append(f"- regression `{row['provider']}`: score delta `{row['score_delta']}`")
+            append_named_score_delta_lines(lines, capability_improvements, label="improvement")
+            append_named_score_delta_lines(lines, capability_regressions, label="regression")
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
