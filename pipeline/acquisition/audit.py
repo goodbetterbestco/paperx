@@ -61,6 +61,32 @@ def _missing_sidecars(
     return missing
 
 
+def _latest_trial_info(sources_dir: Path) -> dict[str, str | None]:
+    trials_dir = sources_dir / "trials"
+    latest_label: str | None = None
+    latest_applied_at: str | None = None
+    if not trials_dir.exists():
+        return {
+            "latest_applied_trial_label": None,
+            "latest_applied_trial_at": None,
+        }
+    for trial_dir in sorted(path for path in trials_dir.iterdir() if path.is_dir()):
+        execution_path = trial_dir / SIDECAR_EXECUTION
+        if not execution_path.exists():
+            continue
+        payload = _load_json_dict(execution_path) or {}
+        trial = dict(payload.get("trial") or {})
+        applied_at = str(trial.get("applied_at") or "").strip() or None
+        label = str(trial.get("label") or trial_dir.name).strip() or trial_dir.name
+        if applied_at and (latest_applied_at is None or applied_at > latest_applied_at):
+            latest_applied_at = applied_at
+            latest_label = label
+    return {
+        "latest_applied_trial_label": latest_label,
+        "latest_applied_trial_at": latest_applied_at,
+    }
+
+
 def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     route_counts: dict[str, int] = {}
     recommended_layout_provider_counts: dict[str, int] = {}
@@ -78,6 +104,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
     follow_up_needed_counts: dict[str, int] = {}
     follow_up_action_counts: dict[str, int] = {}
     follow_up_target_provider_counts: dict[str, int] = {}
+    active_promoted_trial_counts: dict[str, int] = {}
+    latest_applied_trial_counts: dict[str, int] = {}
     metadata_application_counts: dict[str, int] = {}
     reference_application_counts: dict[str, int] = {}
     metadata_suppressed_reason_counts: dict[str, int] = {}
@@ -104,6 +132,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         route_ocr = dict((route or {}).get("ocr_prepass") or {})
         executed = dict((execution_report or {}).get("executed") or {})
         follow_up = dict((execution_report or {}).get("follow_up") or {})
+        promotion = dict((execution_report or {}).get("promotion") or {})
+        latest_trial = _latest_trial_info(sources_dir)
 
         primary_route = str((route or {}).get("primary_route") or "").strip() or None
         recommended_layout_provider = str((scorecard or {}).get("recommended_primary_layout_provider") or "").strip() or None
@@ -119,6 +149,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         executed_metadata_provider = str(executed.get("metadata_provider") or "").strip() or None
         executed_reference_provider = str(executed.get("reference_provider") or "").strip() or None
         follow_up_needed = bool(follow_up.get("needs_attention"))
+        active_promoted_trial_label = str(promotion.get("label") or "").strip() or None
+        active_promoted_trial_at = str(promotion.get("promoted_at") or "").strip() or None
+        latest_applied_trial_label = str(latest_trial.get("latest_applied_trial_label") or "").strip() or None
+        latest_applied_trial_at = str(latest_trial.get("latest_applied_trial_at") or "").strip() or None
         follow_up_actions = [
             {
                 "product": str(item.get("product") or "").strip() or None,
@@ -173,6 +207,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         for item in follow_up_actions:
             _increment(follow_up_action_counts, item["action"])
             _increment(follow_up_target_provider_counts, item["target_provider"])
+        _increment(active_promoted_trial_counts, active_promoted_trial_label)
+        _increment(latest_applied_trial_counts, latest_applied_trial_label)
         _increment(metadata_application_counts, "applied" if metadata_applied else "not_applied")
         _increment(reference_application_counts, "applied" if references_applied else "not_applied")
         _increment(metadata_suppressed_reason_counts, metadata_suppressed_reason)
@@ -212,6 +248,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
             issue_flags.append("reference_application_suppressed")
         if follow_up_needed:
             issue_flags.append("follow_up_recommended")
+        if active_promoted_trial_label:
+            issue_flags.append("trial_promoted")
 
         papers.append(
             {
@@ -234,6 +272,10 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
                 "executed_reference_provider": executed_reference_provider,
                 "follow_up_needed": follow_up_needed,
                 "follow_up_actions": follow_up_actions,
+                "active_promoted_trial_label": active_promoted_trial_label,
+                "active_promoted_trial_at": active_promoted_trial_at,
+                "latest_applied_trial_label": latest_applied_trial_label,
+                "latest_applied_trial_at": latest_applied_trial_at,
                 "metadata_applied": metadata_applied,
                 "references_applied": references_applied,
                 "metadata_suppressed_reason": metadata_suppressed_reason,
@@ -273,6 +315,8 @@ def audit_acquisition_quality(*, layout: ProjectLayout) -> dict[str, Any]:
         "follow_up_needed_counts": follow_up_needed_counts,
         "follow_up_action_counts": follow_up_action_counts,
         "follow_up_target_provider_counts": follow_up_target_provider_counts,
+        "active_promoted_trial_counts": active_promoted_trial_counts,
+        "latest_applied_trial_counts": latest_applied_trial_counts,
         "metadata_application_counts": metadata_application_counts,
         "reference_application_counts": reference_application_counts,
         "metadata_suppressed_reason_counts": metadata_suppressed_reason_counts,

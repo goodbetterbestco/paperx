@@ -103,6 +103,24 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
                                 }
                             ],
                         },
+                        "promotion": {
+                            "label": "trial-mathpix",
+                            "promoted_at": "2026-04-19T01:00:00Z",
+                        },
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (sources_dir / "trials" / "trial-mathpix").mkdir(parents=True, exist_ok=True)
+            (sources_dir / "trials" / "trial-mathpix" / "acquisition-execution.json").write_text(
+                json.dumps(
+                    {
+                        "trial": {
+                            "label": "trial-mathpix",
+                            "applied_at": "2026-04-19T00:30:00Z",
+                        }
                     },
                     indent=2,
                 )
@@ -162,6 +180,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertEqual(report["executed_reference_provider_counts"]["docling"], 1)
             self.assertEqual(report["follow_up_needed_counts"]["needs_attention"], 1)
             self.assertEqual(report["follow_up_action_counts"]["escalate_grobid_metadata"], 1)
+            self.assertEqual(report["active_promoted_trial_counts"]["trial-mathpix"], 1)
+            self.assertEqual(report["latest_applied_trial_counts"]["trial-mathpix"], 1)
             self.assertEqual(report["metadata_application_counts"]["applied"], 1)
             self.assertEqual(report["reference_application_counts"]["applied"], 1)
 
@@ -172,6 +192,8 @@ class AuditAcquisitionQualityCliE2ETest(unittest.TestCase):
             self.assertIn("metadata `grobid`", markdown)
             self.assertIn("references `docling`", markdown)
             self.assertIn("Follow-up: needed `True`", markdown)
+            self.assertIn("latest applied `trial-mathpix`", markdown)
+            self.assertIn("active promoted `trial-mathpix`", markdown)
             self.assertIn("`metadata` -> `escalate_grobid_metadata` via `grobid`", markdown)
             self.assertIn("Applied: metadata `True` | references `True`", markdown)
             self.assertIn("recommended layout `docling` (accepted)", markdown)

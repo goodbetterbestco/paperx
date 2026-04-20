@@ -120,6 +120,19 @@ class AcquisitionAuditTest(unittest.TestCase):
                             },
                         ],
                     },
+                    "promotion": {
+                        "label": "trial-mathpix",
+                        "promoted_at": "2026-04-19T01:00:00Z",
+                    },
+                },
+            )
+            _write_json(
+                required_dir / "trials" / "trial-mathpix" / "acquisition-execution.json",
+                {
+                    "trial": {
+                        "label": "trial-mathpix",
+                        "applied_at": "2026-04-19T00:30:00Z",
+                    }
                 },
             )
             _write_json(
@@ -228,6 +241,8 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertEqual(report["follow_up_action_counts"]["escalate_grobid_metadata"], 1)
         self.assertEqual(report["follow_up_action_counts"]["manual_review_references"], 1)
         self.assertEqual(report["follow_up_target_provider_counts"]["grobid"], 1)
+        self.assertEqual(report["active_promoted_trial_counts"]["trial-mathpix"], 1)
+        self.assertEqual(report["latest_applied_trial_counts"]["trial-mathpix"], 1)
         self.assertEqual(report["metadata_application_counts"]["applied"], 1)
         self.assertEqual(report["metadata_application_counts"]["not_applied"], 2)
         self.assertEqual(report["reference_application_counts"]["applied"], 1)
@@ -253,11 +268,14 @@ class AcquisitionAuditTest(unittest.TestCase):
         self.assertIn("metadata_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
         self.assertIn("reference_application_suppressed", papers["1990_required_ocr"]["issue_flags"])
         self.assertIn("follow_up_recommended", papers["1990_required_ocr"]["issue_flags"])
+        self.assertIn("trial_promoted", papers["1990_required_ocr"]["issue_flags"])
         self.assertEqual(papers["1991_recommended_ocr"]["pdf_source_kind"], "ocr_normalized_generated")
         self.assertEqual(papers["1990_required_ocr"]["executed_layout_provider"], "docling")
         self.assertEqual(papers["1990_required_ocr"]["executed_metadata_provider"], "grobid")
         self.assertEqual(papers["1990_required_ocr"]["executed_reference_provider"], "docling")
         self.assertTrue(papers["1990_required_ocr"]["follow_up_needed"])
+        self.assertEqual(papers["1990_required_ocr"]["active_promoted_trial_label"], "trial-mathpix")
+        self.assertEqual(papers["1990_required_ocr"]["latest_applied_trial_label"], "trial-mathpix")
         self.assertEqual(papers["1990_required_ocr"]["follow_up_actions"][0]["action"], "escalate_grobid_metadata")
         self.assertFalse(papers["1990_required_ocr"]["metadata_applied"])
         self.assertFalse(papers["1990_required_ocr"]["references_applied"])
