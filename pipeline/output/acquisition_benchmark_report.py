@@ -17,6 +17,8 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
         f"- Markdown report: `{((report.get('report_paths') or {}).get('markdown')) or 'not written'}`",
         f"- Snapshot JSON report: `{((report.get('report_paths') or {}).get('snapshot_json')) or 'not written'}`",
         f"- Snapshot Markdown report: `{((report.get('report_paths') or {}).get('snapshot_markdown')) or 'not written'}`",
+        f"- Dashboard JSON report: `{((report.get('report_paths') or {}).get('dashboard_json')) or 'not written'}`",
+        f"- Dashboard Markdown report: `{((report.get('report_paths') or {}).get('dashboard_markdown')) or 'not written'}`",
         "",
         "## Current Leaders",
         "",

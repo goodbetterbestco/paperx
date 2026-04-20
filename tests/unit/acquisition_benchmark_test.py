@@ -130,15 +130,25 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             output_dir = Path(temp_dir) / "benchmark"
             json_path = output_dir / "summary.json"
             markdown_path = output_dir / "summary.md"
+            dashboard_json_path = output_dir / "dashboard.json"
+            dashboard_markdown_path = output_dir / "dashboard.md"
             history_dir = output_dir / "history"
             snapshot_json_path = history_dir / "fixture-run.json"
             snapshot_markdown_path = history_dir / "fixture-run.md"
             exit_code = run_benchmark_cli(
-                argparse.Namespace(manifest=str(FIXTURE_ROOT / "manifest.json"), format="json", label="fixture-run"),
+                argparse.Namespace(
+                    manifest=str(FIXTURE_ROOT / "manifest.json"),
+                    format="json",
+                    label="fixture-run",
+                    dashboard_history_limit=5,
+                    dashboard_trend_limit=3,
+                ),
                 print_fn=printed.append,
                 output_dir=output_dir,
                 json_report_path=json_path,
                 markdown_report_path=markdown_path,
+                dashboard_json_report_path=dashboard_json_path,
+                dashboard_markdown_report_path=dashboard_markdown_path,
             )
 
             self.assertEqual(exit_code, 0)
@@ -158,9 +168,13 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertEqual(payload["report_paths"]["json"], str(json_path))
             self.assertEqual(payload["report_paths"]["snapshot_json"], str(snapshot_json_path))
             self.assertEqual(payload["report_paths"]["snapshot_markdown"], str(snapshot_markdown_path))
+            self.assertEqual(payload["report_paths"]["dashboard_json"], str(dashboard_json_path))
+            self.assertEqual(payload["report_paths"]["dashboard_markdown"], str(dashboard_markdown_path))
             self.assertEqual(payload["snapshot_label"], "fixture-run")
             self.assertTrue(json_path.exists())
             self.assertTrue(markdown_path.exists())
+            self.assertTrue(dashboard_json_path.exists())
+            self.assertTrue(dashboard_markdown_path.exists())
             self.assertTrue(snapshot_json_path.exists())
             self.assertTrue(snapshot_markdown_path.exists())
 
@@ -170,6 +184,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             output_dir = Path(temp_dir) / "benchmark"
             json_path = output_dir / "summary.json"
             markdown_path = output_dir / "summary.md"
+            dashboard_json_path = output_dir / "dashboard.json"
+            dashboard_markdown_path = output_dir / "dashboard.md"
             history_dir = output_dir / "history"
             snapshot_json_path = history_dir / "benchmark-markdown.json"
             snapshot_markdown_path = history_dir / "benchmark-markdown.md"
@@ -178,11 +194,15 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                     manifest=str(FIXTURE_ROOT / "manifest.json"),
                     format="markdown",
                     label="benchmark-markdown",
+                    dashboard_history_limit=5,
+                    dashboard_trend_limit=3,
                 ),
                 print_fn=printed.append,
                 output_dir=output_dir,
                 json_report_path=json_path,
                 markdown_report_path=markdown_path,
+                dashboard_json_report_path=dashboard_json_path,
+                dashboard_markdown_report_path=dashboard_markdown_path,
             )
 
             self.assertEqual(exit_code, 0)
@@ -201,8 +221,12 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn(str(json_path), printed[0])
             self.assertIn(str(snapshot_json_path), printed[0])
             self.assertIn(str(snapshot_markdown_path), printed[0])
+            self.assertIn(str(dashboard_json_path), printed[0])
+            self.assertIn(str(dashboard_markdown_path), printed[0])
             self.assertTrue(json_path.exists())
             self.assertTrue(markdown_path.exists())
+            self.assertTrue(dashboard_json_path.exists())
+            self.assertTrue(dashboard_markdown_path.exists())
             self.assertTrue(snapshot_json_path.exists())
             self.assertTrue(snapshot_markdown_path.exists())
 

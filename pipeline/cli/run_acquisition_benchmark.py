@@ -7,6 +7,10 @@ from pathlib import Path
 from typing import Any, Callable
 
 from pipeline.acquisition.benchmark import run_acquisition_benchmark
+from pipeline.acquisition.benchmark_dashboard import summarize_benchmark_dashboard
+from pipeline.output.acquisition_benchmark_dashboard_report import (
+    render_acquisition_benchmark_dashboard_markdown,
+)
 from pipeline.output.acquisition_benchmark_report import render_acquisition_benchmark_markdown
 from pipeline.runtime_paths import ensure_repo_tmp_dir
 
@@ -14,6 +18,8 @@ from pipeline.runtime_paths import ensure_repo_tmp_dir
 OUTPUT_DIR = ensure_repo_tmp_dir() / "acquisition_benchmark"
 JSON_REPORT_PATH = OUTPUT_DIR / "summary.json"
 MARKDOWN_REPORT_PATH = OUTPUT_DIR / "summary.md"
+DASHBOARD_JSON_REPORT_PATH = OUTPUT_DIR / "dashboard.json"
+DASHBOARD_MARKDOWN_REPORT_PATH = OUTPUT_DIR / "dashboard.md"
 
 
 def parse_args() -> argparse.Namespace:
@@ -23,6 +29,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--label",
         help="Optional snapshot label. Defaults to a UTC timestamp and is used for history artifact filenames.",
+    )
+    parser.add_argument(
+        "--dashboard-history-limit",
+        type=int,
+        default=5,
+        help="Number of recent runs to include in the generated dashboard artifact.",
+    )
+    parser.add_argument(
+        "--dashboard-trend-limit",
+        type=int,
+        default=3,
+        help="Maximum regressions to highlight in the generated dashboard artifact.",
     )
     return parser.parse_args()
 
@@ -44,6 +62,10 @@ def run_benchmark_cli(
     output_dir: Path = OUTPUT_DIR,
     json_report_path: Path = JSON_REPORT_PATH,
     markdown_report_path: Path = MARKDOWN_REPORT_PATH,
+    dashboard_json_report_path: Path = DASHBOARD_JSON_REPORT_PATH,
+    dashboard_markdown_report_path: Path = DASHBOARD_MARKDOWN_REPORT_PATH,
+    summarize_dashboard_fn: Callable[..., dict[str, Any]] = summarize_benchmark_dashboard,
+    render_dashboard_markdown_fn: Callable[[dict[str, Any]], str] = render_acquisition_benchmark_dashboard_markdown,
     print_fn: Callable[[str], None] = print,
 ) -> int:
     report = run_benchmark_fn(args.manifest)
@@ -56,6 +78,8 @@ def run_benchmark_cli(
         "markdown": str(markdown_report_path),
         "snapshot_json": str(snapshot_json_path),
         "snapshot_markdown": str(snapshot_markdown_path),
+        "dashboard_json": str(dashboard_json_report_path),
+        "dashboard_markdown": str(dashboard_markdown_report_path),
     }
     report["snapshot_label"] = snapshot_label
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -65,6 +89,13 @@ def run_benchmark_cli(
     markdown_report_path.write_text(markdown, encoding="utf-8")
     snapshot_json_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     snapshot_markdown_path.write_text(markdown, encoding="utf-8")
+    dashboard = summarize_dashboard_fn(
+        history_dir=history_dir,
+        history_limit=getattr(args, "dashboard_history_limit", 5),
+        trend_limit=getattr(args, "dashboard_trend_limit", 3),
+    )
+    dashboard_json_report_path.write_text(json.dumps(dashboard, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    dashboard_markdown_report_path.write_text(render_dashboard_markdown_fn(dashboard), encoding="utf-8")
     if args.format == "markdown":
         print_fn(markdown)
     else:
