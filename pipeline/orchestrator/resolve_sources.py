@@ -13,6 +13,7 @@ from pipeline.acquisition.source_ownership import (
 )
 from pipeline.config import PipelineConfig
 from pipeline.output.fingerprints import build_input_fingerprints
+from pipeline.orchestrator.pipeline_deps import PaperSourceResolutionDeps
 from pipeline.state import PaperState
 from pipeline.sources.external import (
     load_docling_metadata_observation,
@@ -27,13 +28,7 @@ def resolve_paper_sources(
     config: PipelineConfig,
     layout_output: dict[str, Any] | None,
     figures: list[dict[str, Any]] | None,
-    extract_layout: Callable[[str], dict[str, Any]],
-    load_external_layout: Callable[[str], dict[str, Any] | None],
-    merge_native_and_external_layout: Callable[[dict[str, Any], dict[str, Any]], dict[str, Any]],
-    load_external_math: Callable[[str], dict[str, Any] | None],
-    load_mathpix_layout: Callable[[str], dict[str, Any] | None],
-    extract_figures: Callable[[str], list[dict[str, Any]]],
-    normalize_figure_caption_text: Callable[[str], str],
+    deps: PaperSourceResolutionDeps,
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] | None = None,
     build_source_scorecard_impl: Callable[..., dict[str, Any]] | None = None,
     load_docling_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
@@ -52,19 +47,19 @@ def resolve_paper_sources(
         load_mathpix_metadata_observation_impl or load_mathpix_metadata_observation
     )
     paper_id = state.paper_id
-    native_layout = layout_output or extract_layout(paper_id)
+    native_layout = layout_output or deps.extract_layout(paper_id)
     layout = native_layout
     external_layout = None
     external_layout_engine: str | None = None
     if config.use_external_layout:
-        external_layout = load_external_layout(paper_id)
+        external_layout = deps.load_external_layout(paper_id)
         if external_layout and external_layout.get("blocks"):
-            layout = merge_native_and_external_layout(native_layout, external_layout)
+            layout = deps.merge_native_and_external_layout(native_layout, external_layout)
             external_layout_engine = str(external_layout.get("engine", "external_layout"))
 
-    external_math = load_external_math(paper_id) if config.use_external_math else None
+    external_math = deps.load_external_math(paper_id) if config.use_external_math else None
     external_math_engine = str((external_math or {}).get("engine", "")) or None
-    mathpix_layout = load_mathpix_layout(paper_id) if config.use_external_math else None
+    mathpix_layout = deps.load_mathpix_layout(paper_id) if config.use_external_math else None
     metadata_candidates = {
         "docling": load_docling_metadata_observation_impl(paper_id, layout=config.layout),
         "grobid": load_grobid_metadata_observation_impl(paper_id, layout=config.layout),
@@ -79,11 +74,11 @@ def resolve_paper_sources(
         metadata_candidates=metadata_candidates,
     )
 
-    resolved_figures = figures or extract_figures(paper_id)
+    resolved_figures = figures or deps.extract_figures(paper_id)
     resolved_figures = [
         {
             **figure,
-            "caption": normalize_figure_caption_text(str(figure.get("caption", ""))),
+            "caption": deps.normalize_figure_caption_text(str(figure.get("caption", ""))),
         }
         for figure in resolved_figures
     ]

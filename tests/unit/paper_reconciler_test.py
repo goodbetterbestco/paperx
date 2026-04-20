@@ -14,12 +14,14 @@ if str(ROOT) not in sys.path:
 
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.orchestrator.paper_reconciler import (
+    reconcile_paper_document,
+    run_paper_pipeline,
+)
+from pipeline.orchestrator.pipeline_deps import (
     PaperDocumentAssemblyDeps,
     PaperPipelineDeps,
     PaperRecordNormalizationDeps,
     PaperSourceResolutionDeps,
-    reconcile_paper_document,
-    run_paper_pipeline,
 )
 from pipeline.state import PaperState
 

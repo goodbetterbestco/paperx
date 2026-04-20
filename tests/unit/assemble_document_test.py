@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+from pipeline.orchestrator.pipeline_deps import PaperDocumentAssemblyDeps
 from pipeline.orchestrator.assemble_document import assemble_paper_document
 from pipeline.state import PaperState
 
@@ -37,8 +38,8 @@ def _state(*, layout: dict[str, Any] | None = None) -> PaperState:
     )
 
 
-def _base_kwargs() -> dict[str, Any]:
-    return {
+def _document_assembly_deps(**overrides: object) -> PaperDocumentAssemblyDeps:
+    values: dict[str, object] = {
         "build_front_matter": lambda paper_id, prelude, page_one_records, blocks, next_index: (
             {"title": "Synthetic Test Paper"},
             list(blocks),
@@ -97,6 +98,8 @@ def _base_kwargs() -> dict[str, Any]:
         "now_iso": lambda: "2026-04-19T00:00:00Z",
         "build_canonical_document": lambda **kwargs: dict(kwargs),
     }
+    values.update(overrides)
+    return PaperDocumentAssemblyDeps(**values)
 
 
 class AssembleDocumentTest(unittest.TestCase):
@@ -104,7 +107,7 @@ class AssembleDocumentTest(unittest.TestCase):
         state = _state(layout=None)
 
         with self.assertRaises(RuntimeError) as ctx:
-            assemble_paper_document(state, **_base_kwargs())
+            assemble_paper_document(state, deps=_document_assembly_deps())
 
         self.assertEqual(str(ctx.exception), "Missing resolved layout for 1990_synthetic_test_paper")
 
@@ -138,28 +141,25 @@ class AssembleDocumentTest(unittest.TestCase):
         ]
 
         captured: dict[str, Any] = {}
-        kwargs = _base_kwargs()
-        kwargs.update(
-            {
-                "build_front_matter": lambda paper_id, prelude, page_one_records, blocks, next_index: (
-                    {
-                        "title": "Synthetic Test Paper",
-                        "_debug_title_decision": {"source": "front_matter_records"},
-                    },
-                    list(blocks),
-                    next_index,
-                    list(prelude),
-                ),
-                "leading_abstract_text": lambda node: (
-                    "A compact abstract from the leading abstract section.",
-                    list(node.records),
-                ),
-                "prepare_section_nodes": lambda **kwargs: captured.setdefault("ordered_roots", list(kwargs["ordered_roots"])),
-                "build_canonical_document": lambda **kwargs: captured.setdefault("document", dict(kwargs)),
-            }
+        deps = _document_assembly_deps(
+            build_front_matter=lambda paper_id, prelude, page_one_records, blocks, next_index: (
+                {
+                    "title": "Synthetic Test Paper",
+                    "_debug_title_decision": {"source": "front_matter_records"},
+                },
+                list(blocks),
+                next_index,
+                list(prelude),
+            ),
+            leading_abstract_text=lambda node: (
+                "A compact abstract from the leading abstract section.",
+                list(node.records),
+            ),
+            prepare_section_nodes=lambda **kwargs: captured.setdefault("ordered_roots", list(kwargs["ordered_roots"])),
+            build_canonical_document=lambda **kwargs: captured.setdefault("document", dict(kwargs)),
         )
 
-        result = assemble_paper_document(state, **kwargs)
+        result = assemble_paper_document(state, deps=deps)
 
         self.assertIs(result, state)
         self.assertEqual(result.front_matter["abstract_block_id"], "blk-front-abstract-1")
@@ -193,42 +193,39 @@ class AssembleDocumentTest(unittest.TestCase):
             )
         ]
 
-        kwargs = _base_kwargs()
-        kwargs.update(
-            {
-                "build_front_matter": lambda paper_id, prelude, page_one_records, blocks, next_index: (
+        deps = _document_assembly_deps(
+            build_front_matter=lambda paper_id, prelude, page_one_records, blocks, next_index: (
+                {
+                    "title": "Synthetic Test Paper",
+                    "abstract_block_id": "blk-front-abstract-1",
+                },
+                [
                     {
-                        "title": "Synthetic Test Paper",
-                        "abstract_block_id": "blk-front-abstract-1",
-                    },
-                    [
-                        {
-                            "id": "blk-front-abstract-1",
-                            "type": "paragraph",
-                            "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
-                            "source_spans": [],
-                            "alternates": [],
-                            "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
-                        }
-                    ],
-                    next_index,
-                    [],
+                        "id": "blk-front-abstract-1",
+                        "type": "paragraph",
+                        "content": {"spans": [{"kind": "text", "text": "[missing from original]"}]},
+                        "source_spans": [],
+                        "alternates": [],
+                        "review": {"status": "unreviewed", "risk": "medium", "notes": ""},
+                    }
+                ],
+                next_index,
+                [],
+            ),
+            leading_abstract_text=lambda node: ("Recovered abstract from body section.", list(node.records)),
+            front_block_text=lambda blocks, block_id: next(
+                (
+                    span["text"]
+                    for block in blocks
+                    if block.get("id") == block_id
+                    for span in block.get("content", {}).get("spans", [])
                 ),
-                "leading_abstract_text": lambda node: ("Recovered abstract from body section.", list(node.records)),
-                "front_block_text": lambda blocks, block_id: next(
-                    (
-                        span["text"]
-                        for block in blocks
-                        if block.get("id") == block_id
-                        for span in block.get("content", {}).get("spans", [])
-                    ),
-                    "",
-                ),
-                "should_replace_front_matter_abstract": lambda text: text == "[missing from original]",
-            }
+                "",
+            ),
+            should_replace_front_matter_abstract=lambda text: text == "[missing from original]",
         )
 
-        result = assemble_paper_document(state, **kwargs)
+        result = assemble_paper_document(state, deps=deps)
 
         self.assertEqual(result.blocks[0]["content"]["spans"][0]["text"], "Recovered abstract from body section.")
         self.assertEqual(result.blocks[0]["source_spans"], [{"page": 1, "bbox": {"x0": 7}, "engine": "native_pdf"}])

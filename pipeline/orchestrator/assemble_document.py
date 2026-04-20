@@ -1,51 +1,15 @@
 from __future__ import annotations
 
-from typing import Any, Callable
+from typing import Any
 
+from pipeline.orchestrator.pipeline_deps import PaperDocumentAssemblyDeps
 from pipeline.state import PaperState
 
 
 def assemble_paper_document(
     state: PaperState,
     *,
-    build_front_matter: Callable[[str, list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], int], tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]],
-    attach_orphan_numbered_roots: Callable[[list[Any]], list[Any]],
-    split_late_prelude_for_missing_intro: Callable[[list[dict[str, Any]], list[Any]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_section_title: Callable[[str], str],
-    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]],
-    front_block_text: Callable[[list[dict[str, Any]], str | None], str],
-    default_review: Callable[..., dict[str, Any]],
-    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
-    build_abstract_decision: Callable[..., dict[str, Any]],
-    should_replace_front_matter_abstract: Callable[[str], bool],
-    recover_missing_front_matter_abstract: Callable[[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[Any]], bool],
-    section_node_type: Any,
-    figure_label_token: Callable[[dict[str, Any]], str | None],
-    prepare_section_nodes: Callable[..., list[Any]],
-    split_trailing_reference_records: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    extract_reference_records_from_tail_section: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]],
-    materialize_sections: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    section_id_for: Callable[[Any, int], str],
-    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    is_figure_debris: Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool],
-    looks_like_running_header_record: Callable[[dict[str, Any]], bool],
-    looks_like_table_body_debris: Callable[[dict[str, Any]], bool],
-    is_short_ocr_fragment: Callable[[dict[str, Any]], bool],
-    suppress_embedded_table_headings: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_code_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_paragraph_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    build_blocks_for_record: Callable[[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]], dict[int, list[dict[str, Any]]], dict[int, list[dict[str, Any]]], bool, dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    clean_text: Callable[[str], str],
-    compile_formulas: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_classifications: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_semantic_expr: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    suppress_graphic_display_math_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    suppress_running_header_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_footnote_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    merge_paragraph_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    now_iso: Callable[[], str],
-    build_canonical_document: Callable[..., dict[str, Any]],
+    deps: PaperDocumentAssemblyDeps,
 ) -> PaperState:
     layout = state.merged_layout or state.native_layout
     if layout is None:
@@ -53,7 +17,7 @@ def assemble_paper_document(
 
     blocks: list[dict[str, Any]] = []
     prelude = list(state.prelude_records)
-    front_matter, blocks, next_block_index, remaining_prelude = build_front_matter(
+    front_matter, blocks, next_block_index, remaining_prelude = deps.build_front_matter(
         state.paper_id,
         prelude,
         state.page_one_records,
@@ -63,11 +27,11 @@ def assemble_paper_document(
     title_decision = front_matter.pop("_debug_title_decision", None)
     abstract_decision = front_matter.pop("_debug_abstract_decision", None)
 
-    ordered_roots = attach_orphan_numbered_roots(list(state.section_roots))
+    ordered_roots = deps.attach_orphan_numbered_roots(list(state.section_roots))
     if not remaining_prelude and front_matter.get("abstract_block_id"):
-        trimmed_prelude, overflow_prelude = split_late_prelude_for_missing_intro(prelude, ordered_roots)
+        trimmed_prelude, overflow_prelude = deps.split_late_prelude_for_missing_intro(prelude, ordered_roots)
         if overflow_prelude:
-            front_matter, blocks, next_block_index, _ = build_front_matter(
+            front_matter, blocks, next_block_index, _ = deps.build_front_matter(
                 state.paper_id,
                 trimmed_prelude,
                 state.page_one_records,
@@ -77,10 +41,10 @@ def assemble_paper_document(
             title_decision = front_matter.pop("_debug_title_decision", None)
             abstract_decision = front_matter.pop("_debug_abstract_decision", None)
             remaining_prelude = overflow_prelude
-    if ordered_roots and normalize_section_title(str(ordered_roots[0].title)) == "abstract":
-        abstract_text, abstract_records = leading_abstract_text(ordered_roots[0])
+    if ordered_roots and deps.normalize_section_title(str(ordered_roots[0].title)) == "abstract":
+        abstract_text, abstract_records = deps.leading_abstract_text(ordered_roots[0])
         if abstract_text:
-            current_abstract_text = front_block_text(blocks, front_matter.get("abstract_block_id"))
+            current_abstract_text = deps.front_block_text(blocks, front_matter.get("abstract_block_id"))
             if not front_matter.get("abstract_block_id"):
                 abstract_block_id = f"blk-front-abstract-{next_block_index}"
                 blocks.append(
@@ -88,25 +52,25 @@ def assemble_paper_document(
                         "id": abstract_block_id,
                         "type": "paragraph",
                         "content": {"spans": [{"kind": "text", "text": abstract_text}]},
-                        "source_spans": [span for record in abstract_records for span in block_source_spans(record)],
+                        "source_spans": [span for record in abstract_records for span in deps.block_source_spans(record)],
                         "alternates": [],
-                        "review": default_review(risk="medium"),
+                        "review": deps.default_review(risk="medium"),
                     }
                 )
                 front_matter["abstract_block_id"] = abstract_block_id
                 next_block_index += 1
-                abstract_decision = build_abstract_decision(
+                abstract_decision = deps.build_abstract_decision(
                     abstract_text=abstract_text,
                     source="leading_abstract_section_created",
                     candidate_records=abstract_records,
                 )
-            elif should_replace_front_matter_abstract(current_abstract_text):
+            elif deps.should_replace_front_matter_abstract(current_abstract_text):
                 for block in blocks:
                     if str(block.get("id", "")) != str(front_matter["abstract_block_id"]):
                         continue
                     block["content"] = {"spans": [{"kind": "text", "text": abstract_text}]}
-                    block["source_spans"] = [span for record in abstract_records for span in block_source_spans(record)]
-                    abstract_decision = build_abstract_decision(
+                    block["source_spans"] = [span for record in abstract_records for span in deps.block_source_spans(record)]
+                    abstract_decision = deps.build_abstract_decision(
                         abstract_text=abstract_text,
                         source="leading_abstract_section_replaced",
                         candidate_records=abstract_records,
@@ -114,14 +78,14 @@ def assemble_paper_document(
                     break
         if front_matter.get("abstract_block_id"):
             ordered_roots = ordered_roots[1:]
-    if recover_missing_front_matter_abstract(front_matter, blocks, prelude, ordered_roots):
-        abstract_decision = build_abstract_decision(
-            abstract_text=front_block_text(blocks, front_matter.get("abstract_block_id")),
+    if deps.recover_missing_front_matter_abstract(front_matter, blocks, prelude, ordered_roots):
+        abstract_decision = deps.build_abstract_decision(
+            abstract_text=deps.front_block_text(blocks, front_matter.get("abstract_block_id")),
             source="recovered_from_body_or_prelude",
             candidate_records=[],
         )
     if remaining_prelude and (not ordered_roots or not str(ordered_roots[0].title).lower().endswith("introduction")):
-        intro_node = section_node_type(
+        intro_node = deps.section_node_type(
             title="Introduction",
             level=1,
             heading_id="synthetic-introduction",
@@ -132,7 +96,7 @@ def assemble_paper_document(
         ordered_roots = [intro_node, *ordered_roots]
 
     figures_by_label = {
-        (figure_label_token(figure) or ""): figure
+        (deps.figure_label_token(figure) or ""): figure
         for figure in state.figures
     }
     figures_by_page: dict[int, list[dict[str, Any]]] = {}
@@ -145,15 +109,15 @@ def assemble_paper_document(
         "reference": 1,
     }
 
-    section_nodes = prepare_section_nodes(
+    section_nodes = deps.prepare_section_nodes(
         ordered_roots=ordered_roots,
-        normalize_section_title=normalize_section_title,
-        split_trailing_reference_records=split_trailing_reference_records,
-        extract_reference_records_from_tail_section=extract_reference_records_from_tail_section,
-        reference_records_from_mathpix_layout=reference_records_from_mathpix_layout,
+        normalize_section_title=deps.normalize_section_title,
+        split_trailing_reference_records=deps.split_trailing_reference_records,
+        extract_reference_records_from_tail_section=deps.extract_reference_records_from_tail_section,
+        reference_records_from_mathpix_layout=deps.reference_records_from_mathpix_layout,
         mathpix_layout=state.mathpix_layout,
     )
-    blocks, sections, all_math, all_references = materialize_sections(
+    blocks, sections, all_math, all_references = deps.materialize_sections(
         section_nodes=section_nodes,
         records=state.records,
         blocks=blocks,
@@ -163,35 +127,35 @@ def assemble_paper_document(
         figures_by_page=figures_by_page,
         external_math_page_map=state.external_math_page_map,
         external_math_overlap_page_map=state.external_math_overlap_page_map,
-        section_id_for=section_id_for,
-        normalize_section_title=normalize_section_title,
-        merge_reference_records=merge_reference_records,
-        is_figure_debris=is_figure_debris,
-        looks_like_running_header_record=looks_like_running_header_record,
-        looks_like_table_body_debris=looks_like_table_body_debris,
-        is_short_ocr_fragment=is_short_ocr_fragment,
-        suppress_embedded_table_headings=suppress_embedded_table_headings,
-        merge_code_records=merge_code_records,
-        merge_paragraph_records=merge_paragraph_records,
-        build_blocks_for_record=build_blocks_for_record,
-        clean_text=clean_text,
-        block_source_spans=block_source_spans,
+        section_id_for=deps.section_id_for,
+        normalize_section_title=deps.normalize_section_title,
+        merge_reference_records=deps.merge_reference_records,
+        is_figure_debris=deps.is_figure_debris,
+        looks_like_running_header_record=deps.looks_like_running_header_record,
+        looks_like_table_body_debris=deps.looks_like_table_body_debris,
+        is_short_ocr_fragment=deps.is_short_ocr_fragment,
+        suppress_embedded_table_headings=deps.suppress_embedded_table_headings,
+        merge_code_records=deps.merge_code_records,
+        merge_paragraph_records=deps.merge_paragraph_records,
+        build_blocks_for_record=deps.build_blocks_for_record,
+        clean_text=deps.clean_text,
+        block_source_spans=deps.block_source_spans,
     )
 
-    compiled_math = annotate_formula_semantic_expr(
-        annotate_formula_classifications(compile_formulas(all_math))
+    compiled_math = deps.annotate_formula_semantic_expr(
+        deps.annotate_formula_classifications(deps.compile_formulas(all_math))
     )
-    blocks, compiled_math, sections = suppress_graphic_display_math_blocks(
+    blocks, compiled_math, sections = deps.suppress_graphic_display_math_blocks(
         blocks,
         compiled_math,
         sections,
         counters,
     )
-    blocks, sections = suppress_running_header_blocks(blocks, sections)
-    blocks, sections = normalize_footnote_blocks(blocks, sections)
-    blocks, sections = merge_paragraph_blocks(blocks, sections)
-    compiled_math = annotate_formula_semantic_expr(
-        annotate_formula_classifications(compile_formulas(compiled_math))
+    blocks, sections = deps.suppress_running_header_blocks(blocks, sections)
+    blocks, sections = deps.normalize_footnote_blocks(blocks, sections)
+    blocks, sections = deps.merge_paragraph_blocks(blocks, sections)
+    compiled_math = deps.annotate_formula_semantic_expr(
+        deps.annotate_formula_classifications(deps.compile_formulas(compiled_math))
     )
 
     decision_artifacts: dict[str, Any] = {}
@@ -210,7 +174,7 @@ def assemble_paper_document(
     state.math_entries = compiled_math
     state.references = all_references
     state.decision_artifacts = decision_artifacts
-    state.document = build_canonical_document(
+    state.document = deps.build_canonical_document(
         paper_id=state.paper_id,
         title=front_matter["title"],
         source={
@@ -218,7 +182,7 @@ def assemble_paper_document(
             "page_count": int(layout["page_count"]),
             "page_sizes_pt": list(layout["page_sizes_pt"]),
         },
-        timestamp=now_iso(),
+        timestamp=deps.now_iso(),
         layout_engine_name=state.layout_engine_name,
         math_engine_name=state.math_engine_name,
         effective_text_engine=state.effective_text_engine,

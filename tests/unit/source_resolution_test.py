@@ -8,8 +8,23 @@ if str(ROOT) not in sys.path:
 
 from pipeline.config import build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout
+from pipeline.orchestrator.pipeline_deps import PaperSourceResolutionDeps
 from pipeline.orchestrator.resolve_sources import resolve_paper_sources
 from pipeline.state import PaperState
+
+
+def _source_resolution_deps(**overrides: object) -> PaperSourceResolutionDeps:
+    values: dict[str, object] = {
+        "extract_layout": lambda paper_id: {"engine": "native_pdf"},
+        "load_external_layout": lambda paper_id: None,
+        "merge_native_and_external_layout": lambda native_layout, external_layout: native_layout,
+        "load_external_math": lambda paper_id: None,
+        "load_mathpix_layout": lambda paper_id: None,
+        "extract_figures": lambda paper_id: [],
+        "normalize_figure_caption_text": lambda text: text,
+    }
+    values.update(overrides)
+    return PaperSourceResolutionDeps(**values)
 
 
 class SourceResolutionTest(unittest.TestCase):
@@ -66,19 +81,21 @@ class SourceResolutionTest(unittest.TestCase):
             config=config,
             layout_output=native_layout,
             figures=[{"id": "fig-1", "page": 1, "caption": "caption text"}],
-            extract_layout=lambda paper_id: native_layout,
-            load_external_layout=lambda paper_id: external_layout,
-            merge_native_and_external_layout=lambda native, external: {
-                **external,
-                "engine": "merged_layout",
-                "pdf_path": native["pdf_path"],
-                "page_count": native["page_count"],
-                "page_sizes_pt": native["page_sizes_pt"],
-            },
-            load_external_math=lambda paper_id: external_math,
-            load_mathpix_layout=lambda paper_id: mathpix_layout,
-            extract_figures=lambda paper_id: [],
-            normalize_figure_caption_text=lambda text: text.upper(),
+            deps=_source_resolution_deps(
+                extract_layout=lambda paper_id: native_layout,
+                load_external_layout=lambda paper_id: external_layout,
+                merge_native_and_external_layout=lambda native, external: {
+                    **external,
+                    "engine": "merged_layout",
+                    "pdf_path": native["pdf_path"],
+                    "page_count": native["page_count"],
+                    "page_sizes_pt": native["page_sizes_pt"],
+                },
+                load_external_math=lambda paper_id: external_math,
+                load_mathpix_layout=lambda paper_id: mathpix_layout,
+                extract_figures=lambda paper_id: [],
+                normalize_figure_caption_text=lambda text: text.upper(),
+            ),
             build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
                 "paper_id": paper_id,
                 "primary_route": "math_dense",
@@ -179,13 +196,12 @@ class SourceResolutionTest(unittest.TestCase):
             config=config,
             layout_output=native_layout,
             figures=[],
-            extract_layout=lambda paper_id: native_layout,
-            load_external_layout=lambda paper_id: external_layout,
-            merge_native_and_external_layout=lambda native, external: external,
-            load_external_math=lambda paper_id: external_math,
-            load_mathpix_layout=lambda paper_id: None,
-            extract_figures=lambda paper_id: [],
-            normalize_figure_caption_text=lambda text: text,
+            deps=_source_resolution_deps(
+                extract_layout=lambda paper_id: native_layout,
+                load_external_layout=lambda paper_id: external_layout,
+                merge_native_and_external_layout=lambda native, external: external,
+                load_external_math=lambda paper_id: external_math,
+            ),
             build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
                 "paper_id": paper_id,
                 "primary_route": "born_digital_scholarly",
@@ -244,13 +260,9 @@ class SourceResolutionTest(unittest.TestCase):
             config=config,
             layout_output=native_layout,
             figures=[],
-            extract_layout=lambda paper_id: native_layout,
-            load_external_layout=lambda paper_id: None,
-            merge_native_and_external_layout=lambda native, external: native,
-            load_external_math=lambda paper_id: None,
-            load_mathpix_layout=lambda paper_id: None,
-            extract_figures=lambda paper_id: [],
-            normalize_figure_caption_text=lambda text: text,
+            deps=_source_resolution_deps(
+                extract_layout=lambda paper_id: native_layout,
+            ),
             build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
                 "paper_id": paper_id,
                 "primary_route": "born_digital_scholarly",

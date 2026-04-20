@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from pipeline.orchestrator.paper_reconciler import (
+from pipeline.orchestrator.pipeline_deps import (
     PaperDocumentAssemblyDeps,
     PaperPipelineDeps,
     PaperRecordNormalizationDeps,
@@ -53,7 +53,7 @@ def build_reconcile_source_resolution_deps(
     runtime_layout: Any,
     loaders: Any,
     normalize_figure_caption_text: Any,
-)-> PaperSourceResolutionDeps:
+) -> PaperSourceResolutionDeps:
     return PaperSourceResolutionDeps(
         extract_layout=make_layout_bound_loader(loader=loaders.extract_layout, layout=runtime_layout),
         load_external_layout=make_layout_bound_loader(loader=loaders.load_external_layout, layout=runtime_layout),

@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+from pipeline.orchestrator.pipeline_deps import PaperRecordNormalizationDeps
 from pipeline.orchestrator.normalize_records import normalize_paper_records
 from pipeline.state import PaperState
 
@@ -29,6 +30,27 @@ def _state(*, layout: dict[str, Any] | None = None) -> PaperState:
     )
 
 
+def _record_normalization_deps(**overrides: object) -> PaperRecordNormalizationDeps:
+    values: dict[str, object] = {
+        "external_math_by_page": lambda entries: {},
+        "merge_layout_and_figure_records": lambda blocks, figures: ([], {}),
+        "inject_external_math_records": lambda records, layout_blocks, external_math_entries: ([], set()),
+        "mark_records_with_external_math_overlap": lambda records, overlap_map: records,
+        "repair_record_text_with_mathpix_hints": lambda records, mathpix_layout: records,
+        "pdftotext_available": lambda: False,
+        "repair_record_text_with_pdftotext": lambda records, pages, heights: records,
+        "extract_pdftotext_pages": lambda paper_id: {},
+        "page_height_map": lambda layout: {},
+        "promote_heading_like_records": lambda records: records,
+        "merge_math_fragment_records": lambda records: records,
+        "page_one_front_matter_records": lambda records, mathpix_layout: [],
+        "is_title_page_metadata_record": lambda record: False,
+        "build_section_tree": lambda records: ([], []),
+    }
+    values.update(overrides)
+    return PaperRecordNormalizationDeps(**values)
+
+
 class NormalizeRecordsOrchestratorTest(unittest.TestCase):
     def test_normalize_paper_records_requires_resolved_layout(self) -> None:
         state = _state(layout=None)
@@ -38,20 +60,7 @@ class NormalizeRecordsOrchestratorTest(unittest.TestCase):
             normalize_paper_records(
                 state,
                 config=config,
-                external_math_by_page=lambda entries: {},
-                merge_layout_and_figure_records=lambda blocks, figures: ([], {}),
-                inject_external_math_records=lambda records, layout_blocks, external_math_entries: ([], set()),
-                mark_records_with_external_math_overlap=lambda records, overlap_map: records,
-                repair_record_text_with_mathpix_hints=lambda records, mathpix_layout: records,
-                pdftotext_available=lambda: False,
-                repair_record_text_with_pdftotext=lambda records, pages, heights: records,
-                extract_pdftotext_pages=lambda paper_id: {},
-                page_height_map=lambda layout: {},
-                promote_heading_like_records=lambda records: records,
-                merge_math_fragment_records=lambda records: records,
-                page_one_front_matter_records=lambda records, mathpix_layout: [],
-                is_title_page_metadata_record=lambda record: False,
-                build_section_tree=lambda records: ([], []),
+                deps=_record_normalization_deps(),
             )
 
         self.assertEqual(str(ctx.exception), "Missing resolved layout for 1990_synthetic_test_paper")
@@ -73,40 +82,42 @@ class NormalizeRecordsOrchestratorTest(unittest.TestCase):
         result = normalize_paper_records(
             state,
             config=config,
-            external_math_by_page=external_math_by_page,
-            merge_layout_and_figure_records=lambda blocks, figures: (
-                [
-                    {"id": "title-meta", "kind": "meta"},
-                    {"id": "body-1", "kind": "paragraph"},
+            deps=_record_normalization_deps(
+                external_math_by_page=external_math_by_page,
+                merge_layout_and_figure_records=lambda blocks, figures: (
+                    [
+                        {"id": "title-meta", "kind": "meta"},
+                        {"id": "body-1", "kind": "paragraph"},
+                    ],
+                    {"layout-1": {"page": 1}},
+                ),
+                inject_external_math_records=lambda records, layout_blocks, external_math_entries: (
+                    [*records, {"id": "math-injected", "kind": "math"}],
+                    {"math-1"},
+                ),
+                mark_records_with_external_math_overlap=lambda records, overlap_map: [
+                    {**record, "overlap_pages": sorted(overlap_map)}
+                    for record in records
                 ],
-                {"layout-1": {"page": 1}},
-            ),
-            inject_external_math_records=lambda records, layout_blocks, external_math_entries: (
-                [*records, {"id": "math-injected", "kind": "math"}],
-                {"math-1"},
-            ),
-            mark_records_with_external_math_overlap=lambda records, overlap_map: [
-                {**record, "overlap_pages": sorted(overlap_map)}
-                for record in records
-            ],
-            repair_record_text_with_mathpix_hints=lambda records, mathpix_layout: [
-                {**record, "mathpix_hint": bool(mathpix_layout)}
-                for record in records
-            ],
-            pdftotext_available=lambda: True,
-            repair_record_text_with_pdftotext=lambda records, pages, heights: [
-                {**record, "pdftotext_pages": sorted(pages), "page_heights": heights}
-                for record in records
-            ],
-            extract_pdftotext_pages=lambda paper_id: {1: ["Recovered text line"]},
-            page_height_map=lambda resolved_layout: {1: 792.0},
-            promote_heading_like_records=lambda records: [{**record, "promoted": True} for record in records],
-            merge_math_fragment_records=lambda records: [{**record, "merged_math": True} for record in records],
-            page_one_front_matter_records=lambda records, mathpix_layout: [record for record in records if record["id"] == "title-meta"],
-            is_title_page_metadata_record=lambda record: record["id"] == "title-meta",
-            build_section_tree=lambda records: (
-                [{"id": "prelude-1"}],
-                [SimpleNamespace(title="Methods", level=1, heading_id="sec-methods", records=list(records), children=[])],
+                repair_record_text_with_mathpix_hints=lambda records, mathpix_layout: [
+                    {**record, "mathpix_hint": bool(mathpix_layout)}
+                    for record in records
+                ],
+                pdftotext_available=lambda: True,
+                repair_record_text_with_pdftotext=lambda records, pages, heights: [
+                    {**record, "pdftotext_pages": sorted(pages), "page_heights": heights}
+                    for record in records
+                ],
+                extract_pdftotext_pages=lambda paper_id: {1: ["Recovered text line"]},
+                page_height_map=lambda resolved_layout: {1: 792.0},
+                promote_heading_like_records=lambda records: [{**record, "promoted": True} for record in records],
+                merge_math_fragment_records=lambda records: [{**record, "merged_math": True} for record in records],
+                page_one_front_matter_records=lambda records, mathpix_layout: [record for record in records if record["id"] == "title-meta"],
+                is_title_page_metadata_record=lambda record: record["id"] == "title-meta",
+                build_section_tree=lambda records: (
+                    [{"id": "prelude-1"}],
+                    [SimpleNamespace(title="Methods", level=1, heading_id="sec-methods", records=list(records), children=[])],
+                ),
             ),
         )
 
