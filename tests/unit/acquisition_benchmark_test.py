@@ -185,6 +185,12 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertTrue(dashboard_markdown_path.exists())
             self.assertTrue(snapshot_json_path.exists())
             self.assertTrue(snapshot_markdown_path.exists())
+            status_payload = json.loads(status_json_path.read_text(encoding="utf-8"))
+            dashboard_payload = json.loads(dashboard_json_path.read_text(encoding="utf-8"))
+            self.assertEqual(status_payload["latest_run"]["label"], "fixture-run")
+            self.assertEqual(status_payload["latest_run"]["paper_count"], 5)
+            self.assertEqual(dashboard_payload["overview"]["run_count"], 1)
+            self.assertEqual(dashboard_payload["overview"]["latest_label"], "fixture-run")
 
     def test_benchmark_cli_prints_markdown_report(self) -> None:
         printed: list[str] = []
@@ -245,6 +251,11 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertTrue(dashboard_markdown_path.exists())
             self.assertTrue(snapshot_json_path.exists())
             self.assertTrue(snapshot_markdown_path.exists())
+            status_payload = json.loads(status_json_path.read_text(encoding="utf-8"))
+            dashboard_payload = json.loads(dashboard_json_path.read_text(encoding="utf-8"))
+            self.assertEqual(status_payload["latest_run"]["label"], "benchmark-markdown")
+            self.assertEqual(dashboard_payload["overview"]["run_count"], 1)
+            self.assertEqual(dashboard_payload["overview"]["latest_label"], "benchmark-markdown")
 
 
 if __name__ == "__main__":

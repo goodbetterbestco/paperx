@@ -11,6 +11,7 @@ from pipeline.acquisition.benchmark_artifacts import (
     DEFAULT_BENCHMARK_OUTPUT_DIR,
     BenchmarkArtifactPaths,
     build_benchmark_artifact_paths,
+    ensure_benchmark_artifact_dirs,
     write_benchmark_artifact_bundle,
 )
 from pipeline.acquisition.benchmark_dashboard import summarize_benchmark_dashboard
@@ -102,6 +103,10 @@ def run_benchmark_cli(
     report["snapshot_label"] = snapshot_label
     report["report_paths"] = paths.report_paths()
     markdown = render_markdown_fn(report)
+    ensure_benchmark_artifact_dirs(paths)
+    snapshot_payload = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
+    paths.snapshot_json.write_text(snapshot_payload, encoding="utf-8")
+    paths.snapshot_markdown.write_text(markdown, encoding="utf-8")
     dashboard = summarize_dashboard_fn(
         history_dir=paths.history_dir,
         history_limit=getattr(args, "dashboard_history_limit", 5),

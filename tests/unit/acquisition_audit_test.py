@@ -38,6 +38,26 @@ def _write_json(path: Path, payload: dict[str, object]) -> None:
 
 
 class AcquisitionAuditTest(unittest.TestCase):
+    def test_audit_acquisition_quality_discovers_source_state_root_pdfs_in_corpus_mode(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            layout = _corpus_layout(Path(temp_dir).resolve())
+            layout.corpus_root.mkdir(parents=True, exist_ok=True)
+            (layout.corpus_root / "1990_root_pdf_only.pdf").write_bytes(b"%PDF-1.4\n")
+
+            report = audit_acquisition_quality(layout=layout)
+
+        self.assertEqual(report["paper_count"], 1)
+        self.assertEqual(report["canonical_count"], 0)
+        self.assertEqual(report["missing_canonical_count"], 1)
+        self.assertEqual(report["sidecar_missing_counts"]["acquisition-route.json"], 1)
+        self.assertEqual(report["sidecar_missing_counts"]["source-scorecard.json"], 1)
+        self.assertEqual(report["sidecar_missing_counts"]["ocr-prepass.json"], 1)
+        self.assertEqual(report["papers"][0]["paper_id"], "1990_root_pdf_only")
+        self.assertEqual(
+            report["papers"][0]["missing_sidecars"],
+            ["acquisition-route.json", "source-scorecard.json", "ocr-prepass.json"],
+        )
+
     def test_audit_acquisition_quality_reports_route_provider_and_ocr_gaps(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             layout = _corpus_layout(Path(temp_dir).resolve())

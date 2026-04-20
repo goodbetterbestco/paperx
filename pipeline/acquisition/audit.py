@@ -46,9 +46,8 @@ def _discover_paper_ids(layout: ProjectLayout) -> list[str]:
             if child.name.startswith("_") or child.name == "review_drafts":
                 continue
             paper_ids.add(child.name)
-    if layout.project_mode:
-        for pdf_path in layout.discover_source_pdfs():
-            paper_ids.add(pdf_path.stem)
+    for pdf_path in layout.discover_source_pdfs():
+        paper_ids.add(pdf_path.stem)
     return sorted(paper_ids)
 
 
