@@ -1,0 +1,12 @@
+{
+  "label": "fixed-validation-slice",
+  "description": "Real stepview papers used for repeated source-to-processed validation runs during acquisition finalization.",
+  "papers": [
+    "1967_quantitative_invisibility",
+    "1990_curve_intersection_using_bezier_clipping",
+    "1990_hidden_curve_removal_for_free_form_surfaces",
+    "2001_survey_of_aspect_graphs",
+    "2018_trimming_in_isogeometric_analysis_review",
+    "2024_from_cad_to_representations_suitable_for_isogeometric_analysis_a_complete_pipeline"
+  ]
+}

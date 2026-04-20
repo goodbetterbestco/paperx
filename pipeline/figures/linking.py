@@ -322,6 +322,14 @@ def run_vision_ocr(page_image_paths: list[Path]) -> list[dict[str, Any]]:
     return json.loads(completed.stdout.strip())
 
 
+def vision_ocr_error_message(exc: Exception) -> str:
+    if isinstance(exc, subprocess.CalledProcessError):
+        detail = (exc.stderr or exc.stdout or "").strip()
+        if detail:
+            return detail
+    return str(exc)
+
+
 def render_pages_for_ocr(doc: fitz.Document, output_dir: Path) -> list[Path]:
     ensure_dir(output_dir)
     image_paths: list[Path] = []
@@ -884,7 +892,28 @@ def load_or_generate_ocr_records(
         doc = fitz.open(source_pdf)
     with tempfile.TemporaryDirectory(prefix=f"{manifest['id']}-figure-ocr-") as temp_dir:
         image_paths = render_pages_for_ocr(doc, Path(temp_dir))
-        return run_vision_ocr(image_paths)
+        try:
+            records = run_vision_ocr(image_paths)
+        except (FileNotFoundError, subprocess.CalledProcessError) as exc:
+            error_message = vision_ocr_error_message(exc)
+            manifest.setdefault("artifacts", {})
+            manifest["artifacts"]["figure_ocr"] = {
+                "status": "unavailable",
+                "tool": "vision_ocr",
+                "error": error_message,
+            }
+            manifest.setdefault("warnings", [])
+            warning = f"figure_ocr_unavailable: {error_message}"
+            if warning not in manifest["warnings"]:
+                manifest["warnings"].append(warning)
+            return []
+        manifest.setdefault("artifacts", {})
+        manifest["artifacts"]["figure_ocr"] = {
+            "status": "completed",
+            "tool": "vision_ocr",
+            "page_count": len(image_paths),
+        }
+        return records
 
 def main() -> int:
     layout = current_layout()

@@ -148,14 +148,22 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
 
 def display_path(path: str | Path, *, layout: ProjectLayout, root: Path) -> str:
     resolved = Path(path).expanduser().resolve()
-    candidate_bases = [root]
+    candidate_bases: list[Path] = []
     if layout.project_dir is not None:
-        candidate_bases.extend([layout.project_dir, layout.source_root, layout.corpus_root])
+        candidate_bases.extend([layout.project_dir, layout.source_root, layout.corpus_root, root])
     else:
-        candidate_bases.extend([layout.corpus_root.parent, layout.corpus_root])
+        candidate_bases.extend([layout.corpus_root.parent, layout.corpus_root, root])
+    deduped_bases: list[Path] = []
+    seen_bases: set[Path] = set()
     for base in candidate_bases:
+        resolved_base = base.resolve()
+        if resolved_base in seen_bases:
+            continue
+        deduped_bases.append(resolved_base)
+        seen_bases.add(resolved_base)
+    for base in deduped_bases:
         try:
-            return str(resolved.relative_to(base.resolve()))
+            return str(resolved.relative_to(base))
         except ValueError:
             continue
     return str(resolved)

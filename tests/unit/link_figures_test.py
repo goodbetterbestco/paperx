@@ -1,4 +1,5 @@
 import json
+import subprocess
 import tempfile
 import sys
 import types
@@ -123,16 +124,44 @@ class LinkFiguresTest(unittest.TestCase):
         self.assertIsNone(caption_label("As shown in Figure 3, the method changes."))
 
     def test_build_manifest_from_pdf_path_uses_paper_owned_pdf(self) -> None:
-        root = Path(__file__).resolve().parents[2]
-        pdf_path = root / "docs" / "2016_recognizing_weakly_simple_polygons" / "2016_recognizing_weakly_simple_polygons.pdf"
-        manifest = build_manifest_from_pdf_path(pdf_path)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir).resolve()
+            corpus_root = root / "corpus" / "stepview"
+            pdf_path = corpus_root / "2016_recognizing_weakly_simple_polygons.pdf"
+            corpus_root.mkdir(parents=True, exist_ok=True)
+            pdf_path.write_bytes(b"%PDF-1.4\n")
+            (corpus_root / "figure_expectations.json").write_text(
+                json.dumps(
+                    {
+                        "entries": {
+                            "2016_recognizing_weakly_simple_polygons": {
+                                "expected_semantic_figure_count": 18,
+                            }
+                        }
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            layout = linking.ProjectLayout(
+                engine_root=root,
+                mode="corpus",
+                corpus_name="stepview",
+                project_dir=None,
+                corpus_root=corpus_root,
+                source_root=corpus_root,
+                review_root=corpus_root / "_canon",
+                runs_root=corpus_root / "_runs",
+                tmp_root=root / "tmp",
+                figure_expectations_path=corpus_root / "figure_expectations.json",
+            )
 
-        self.assertEqual(manifest["id"], "2016_recognizing_weakly_simple_polygons")
-        self.assertEqual(
-            manifest["source_pdf"],
-            "docs/2016_recognizing_weakly_simple_polygons/2016_recognizing_weakly_simple_polygons.pdf",
-        )
-        self.assertEqual(manifest["figure_expectations"]["expected_semantic_figure_count"], 18)
+            manifest = build_manifest_from_pdf_path(pdf_path, layout=layout)
+
+            self.assertEqual(manifest["id"], "2016_recognizing_weakly_simple_polygons")
+            self.assertEqual(manifest["source_pdf"], "stepview/2016_recognizing_weakly_simple_polygons.pdf")
+            self.assertEqual(manifest["figure_expectations"]["expected_semantic_figure_count"], 18)
 
     def test_render_crop_if_missing_preserves_existing_file(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -301,6 +330,32 @@ class LinkFiguresTest(unittest.TestCase):
             self.assertEqual(resolve_manifest_pdf_path(manifest, layout=layout), project_pdf)
             self.assertEqual(resolve_manifest_figures_dir(manifest, layout=layout), project_figures_dir)
 
+    def test_build_manifest_from_pdf_path_uses_project_relative_artifact_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir).resolve()
+            paper_id = "1990_synthetic_test_paper"
+            paper_dir = root / paper_id
+            project_pdf = paper_dir / f"{paper_id}.pdf"
+            project_pdf.parent.mkdir(parents=True, exist_ok=True)
+            project_pdf.write_bytes(b"%PDF-1.4\n")
+            layout = linking.ProjectLayout(
+                engine_root=root,
+                mode="project",
+                corpus_name="fixture",
+                project_dir=root,
+                corpus_root=root,
+                source_root=root,
+                review_root=root / "_canon",
+                runs_root=root / "_runs",
+                tmp_root=root / "tmp",
+                figure_expectations_path=root / "figure_expectations.json",
+            )
+
+            manifest = build_manifest_from_pdf_path(project_pdf, layout=layout)
+
+            self.assertEqual(manifest["source_pdf"], f"{paper_id}/{paper_id}.pdf")
+            self.assertEqual(manifest["artifacts"]["figures_dir"], f"{paper_id}/figures")
+
     def test_group_ocr_lines_merges_column_lines_and_extracts_unique_caption_lines(self) -> None:
         page_rect = _Rect(0, 0, 200, 300)
         grouped_lines = [
@@ -370,6 +425,24 @@ class LinkFiguresTest(unittest.TestCase):
             records = load_or_generate_ocr_records(manifest, doc)
 
         self.assertEqual(records, [{"lines": [{"text": "Figure 2"}]}])
+
+    def test_load_or_generate_ocr_records_falls_back_when_vision_ocr_is_unavailable(self) -> None:
+        doc = _FakeDocument(_FakePage(_Rect(0, 0, 200, 300)))
+        manifest = {"id": "1990_synthetic_test_paper", "source_pdf": "ignored.pdf"}
+
+        with (
+            patch.object(linking, "render_pages_for_ocr", return_value=[Path("/tmp/page-001.png")]),
+            patch.object(
+                linking,
+                "run_vision_ocr",
+                side_effect=subprocess.CalledProcessError(1, ["osascript"], stderr="Execution error: osascript unavailable"),
+            ),
+        ):
+            records = load_or_generate_ocr_records(manifest, doc)
+
+        self.assertEqual(records, [])
+        self.assertEqual(manifest["artifacts"]["figure_ocr"]["status"], "unavailable")
+        self.assertIn("figure_ocr_unavailable", manifest["warnings"][0])
 
 
 if __name__ == "__main__":

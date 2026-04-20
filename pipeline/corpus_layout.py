@@ -173,4 +173,5 @@ def prepare_project_inputs(layout: ProjectLayout | None = None) -> dict[str, obj
 
 
 def display_path(path: str | Path, *, layout: ProjectLayout | None = None) -> str:
-    return _display_path(path, layout=layout or DEFAULT_LAYOUT, root=ROOT)
+    active_layout = layout or DEFAULT_LAYOUT
+    return _display_path(path, layout=active_layout, root=active_layout.engine_root)

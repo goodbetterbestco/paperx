@@ -104,6 +104,9 @@ flow for the fixed slice before we trust trend or remediation dashboards.
 Use the following `stepview` papers as the fixed real-corpus slice for repeated
 validation during the roadmap:
 
+The machine-readable manifest for this slice now lives at
+`docs/fixed_validation_slice.json`.
+
 - `corpus/stepview/1967_quantitative_invisibility.pdf`
 - `corpus/stepview/1990_curve_intersection_using_bezier_clipping.pdf`
 - `corpus/stepview/1990_hidden_curve_removal_for_free_form_surfaces.pdf`

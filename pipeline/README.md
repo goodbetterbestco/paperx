@@ -59,6 +59,7 @@ The architecture goals are:
 Current preferred commands:
 
 - `python3 -m pipeline.cli.run_project /Users/evanthayer/Projects/paperx/<project>`
+- `python3 -m pipeline.cli.materialize_source_slice /Users/evanthayer/Projects/paperx/tmp/fixed_validation_slice --manifest /Users/evanthayer/Projects/paperx/docs/fixed_validation_slice.json`
 - `python3 -m pipeline.cli.reset_corpus_to_source /Users/evanthayer/Projects/paperx/<project>`
 - `python3 -m pipeline.cli.build_canonical <paper-id> --use-external-layout --use-external-math`
 - `python3 -m pipeline.cli.build_review <paper-id> --use-external-layout --use-external-math`
@@ -124,6 +125,12 @@ into its paper-owned folder, generating local build artifacts, and writing the
 top-level review surface into `_canon/`. Use
 `python3 -m pipeline.cli.reset_corpus_to_source /path/to/project` to return the
 corpus to source-only form.
+
+For repeatable real-corpus validation without mutating `corpus/stepview`, first
+materialize a throwaway project from the source-state corpus:
+
+- `python3 -m pipeline.cli.materialize_source_slice /Users/evanthayer/Projects/paperx/tmp/fixed_validation_slice --manifest /Users/evanthayer/Projects/paperx/docs/fixed_validation_slice.json`
+- `python3 -m pipeline.cli.run_project /Users/evanthayer/Projects/paperx/tmp/fixed_validation_slice`
 
 Full source regeneration still expects additional tools and credentials:
 
