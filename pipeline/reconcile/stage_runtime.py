@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Callable
 
-from pipeline.reconcile.runtime_builders import build_reconcile_runtime_kwargs
+from pipeline.reconcile.runtime_builders import build_reconcile_paper_pipeline_deps
 
 
 @dataclass(frozen=True)
@@ -174,7 +174,7 @@ def run_reconcile_pipeline(
     inputs: ReconcileRuntimeInputs,
     deps: ReconcileRuntimeDeps,
 ) -> Any:
-    runtime_kwargs = build_reconcile_runtime_kwargs(
+    pipeline_deps = build_reconcile_paper_pipeline_deps(
         runtime_layout=inputs.runtime_layout,
         loaders=deps.loaders,
         bindings=deps.bindings,
@@ -187,7 +187,7 @@ def run_reconcile_pipeline(
         use_external_math=inputs.use_external_math,
         layout_output=inputs.layout_output,
         figures=inputs.figures,
+        deps=pipeline_deps,
         config=inputs.config,
         state=inputs.state,
-        **runtime_kwargs,
     )

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Callable
 
 from pipeline.config import PipelineConfig, build_pipeline_config
@@ -10,6 +11,84 @@ from pipeline.orchestrator.resolve_sources import resolve_paper_sources
 from pipeline.state import PaperState
 
 
+@dataclass(frozen=True)
+class PaperSourceResolutionDeps:
+    extract_layout: Callable[[str], dict[str, Any]]
+    load_external_layout: Callable[[str], dict[str, Any] | None]
+    merge_native_and_external_layout: Callable[[dict[str, Any], dict[str, Any]], dict[str, Any]]
+    load_external_math: Callable[[str], dict[str, Any] | None]
+    load_mathpix_layout: Callable[[str], dict[str, Any] | None]
+    extract_figures: Callable[[str], list[dict[str, Any]]]
+    normalize_figure_caption_text: Callable[[str], str]
+
+
+@dataclass(frozen=True)
+class PaperRecordNormalizationDeps:
+    external_math_by_page: Callable[[list[dict[str, Any]]], dict[int, list[dict[str, Any]]]]
+    merge_layout_and_figure_records: Callable[[list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], dict[str, Any]]]
+    inject_external_math_records: Callable[[list[dict[str, Any]], list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], set[str]]]
+    mark_records_with_external_math_overlap: Callable[[list[dict[str, Any]], dict[int, list[dict[str, Any]]]], list[dict[str, Any]]]
+    repair_record_text_with_mathpix_hints: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]]
+    pdftotext_available: Callable[[], bool]
+    repair_record_text_with_pdftotext: Callable[[list[dict[str, Any]], dict[int, list[str]], dict[int, float]], list[dict[str, Any]]]
+    extract_pdftotext_pages: Callable[[str], dict[int, list[str]]]
+    page_height_map: Callable[[dict[str, Any]], dict[int, float]]
+    promote_heading_like_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    merge_math_fragment_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    page_one_front_matter_records: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]]
+    is_title_page_metadata_record: Callable[[dict[str, Any]], bool]
+    build_section_tree: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[Any]]]
+
+
+@dataclass(frozen=True)
+class PaperDocumentAssemblyDeps:
+    build_front_matter: Callable[[str, list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], int], tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]]
+    attach_orphan_numbered_roots: Callable[[list[Any]], list[Any]]
+    split_late_prelude_for_missing_intro: Callable[[list[dict[str, Any]], list[Any]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    normalize_section_title: Callable[[str], str]
+    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]]
+    front_block_text: Callable[[list[dict[str, Any]], str | None], str]
+    default_review: Callable[..., dict[str, Any]]
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]]
+    build_abstract_decision: Callable[..., dict[str, Any]]
+    should_replace_front_matter_abstract: Callable[[str], bool]
+    recover_missing_front_matter_abstract: Callable[[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[Any]], bool]
+    section_node_type: Any
+    figure_label_token: Callable[[dict[str, Any]], str | None]
+    prepare_section_nodes: Callable[..., list[Any]]
+    split_trailing_reference_records: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    extract_reference_records_from_tail_section: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]]
+    materialize_sections: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]
+    section_id_for: Callable[[Any, int], str]
+    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    is_figure_debris: Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool]
+    looks_like_running_header_record: Callable[[dict[str, Any]], bool]
+    looks_like_table_body_debris: Callable[[dict[str, Any]], bool]
+    is_short_ocr_fragment: Callable[[dict[str, Any]], bool]
+    suppress_embedded_table_headings: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    merge_code_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    merge_paragraph_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    build_blocks_for_record: Callable[[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]], dict[int, list[dict[str, Any]]], dict[int, list[dict[str, Any]]], bool, dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]
+    clean_text: Callable[[str], str]
+    compile_formulas: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    annotate_formula_classifications: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    annotate_formula_semantic_expr: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
+    suppress_graphic_display_math_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]
+    suppress_running_header_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    normalize_footnote_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    merge_paragraph_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
+    now_iso: Callable[[], str]
+    build_canonical_document: Callable[..., dict[str, Any]]
+
+
+@dataclass(frozen=True)
+class PaperPipelineDeps:
+    source_resolution: PaperSourceResolutionDeps
+    record_normalization: PaperRecordNormalizationDeps
+    document_assembly: PaperDocumentAssemblyDeps
+
+
 def run_paper_pipeline(
     paper_id: str,
     *,
@@ -18,65 +97,7 @@ def run_paper_pipeline(
     use_external_math: bool,
     layout_output: dict[str, Any] | None,
     figures: list[dict[str, Any]] | None,
-    extract_layout: Callable[[str], dict[str, Any]],
-    load_external_layout: Callable[[str], dict[str, Any] | None],
-    merge_native_and_external_layout: Callable[[dict[str, Any], dict[str, Any]], dict[str, Any]],
-    load_external_math: Callable[[str], dict[str, Any] | None],
-    external_math_by_page: Callable[[list[dict[str, Any]]], dict[int, list[dict[str, Any]]]],
-    load_mathpix_layout: Callable[[str], dict[str, Any] | None],
-    extract_figures: Callable[[str], list[dict[str, Any]]],
-    normalize_figure_caption_text: Callable[[str], str],
-    merge_layout_and_figure_records: Callable[[list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], dict[str, Any]]],
-    inject_external_math_records: Callable[[list[dict[str, Any]], list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], set[str]]],
-    mark_records_with_external_math_overlap: Callable[[list[dict[str, Any]], dict[int, list[dict[str, Any]]]], list[dict[str, Any]]],
-    repair_record_text_with_mathpix_hints: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]],
-    pdftotext_available: Callable[[], bool],
-    repair_record_text_with_pdftotext: Callable[[list[dict[str, Any]], dict[int, list[str]], dict[int, float]], list[dict[str, Any]]],
-    extract_pdftotext_pages: Callable[[str], dict[int, list[str]]],
-    page_height_map: Callable[[dict[str, Any]], dict[int, float]],
-    promote_heading_like_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_math_fragment_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    page_one_front_matter_records: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]],
-    is_title_page_metadata_record: Callable[[dict[str, Any]], bool],
-    build_section_tree: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[Any]]],
-    build_front_matter: Callable[[str, list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], int], tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]],
-    attach_orphan_numbered_roots: Callable[[list[Any]], list[Any]],
-    split_late_prelude_for_missing_intro: Callable[[list[dict[str, Any]], list[Any]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_section_title: Callable[[str], str],
-    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]],
-    front_block_text: Callable[[list[dict[str, Any]], str | None], str],
-    default_review: Callable[..., dict[str, Any]],
-    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
-    build_abstract_decision: Callable[..., dict[str, Any]],
-    should_replace_front_matter_abstract: Callable[[str], bool],
-    recover_missing_front_matter_abstract: Callable[[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[Any]], bool],
-    section_node_type: Any,
-    figure_label_token: Callable[[dict[str, Any]], str | None],
-    prepare_section_nodes: Callable[..., list[Any]],
-    split_trailing_reference_records: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    extract_reference_records_from_tail_section: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]],
-    materialize_sections: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    section_id_for: Callable[[Any, int], str],
-    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    is_figure_debris: Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool],
-    looks_like_running_header_record: Callable[[dict[str, Any]], bool],
-    looks_like_table_body_debris: Callable[[dict[str, Any]], bool],
-    is_short_ocr_fragment: Callable[[dict[str, Any]], bool],
-    suppress_embedded_table_headings: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_code_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_paragraph_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    build_blocks_for_record: Callable[[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]], dict[int, list[dict[str, Any]]], dict[int, list[dict[str, Any]]], bool, dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    clean_text: Callable[[str], str],
-    compile_formulas: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_classifications: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_semantic_expr: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    suppress_graphic_display_math_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    suppress_running_header_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_footnote_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    merge_paragraph_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    now_iso: Callable[[], str],
-    build_canonical_document: Callable[..., dict[str, Any]],
+    deps: PaperPipelineDeps,
     config: PipelineConfig | None = None,
     state: PaperState | None = None,
 ) -> PaperState:
@@ -89,79 +110,79 @@ def run_paper_pipeline(
     paper_state = state or PaperState.begin(
         paper_id,
         config=runtime_config,
-        started_at=now_iso(),
+        started_at=deps.document_assembly.now_iso(),
     )
     paper_state = resolve_paper_sources(
         paper_state,
         config=runtime_config,
         layout_output=layout_output,
         figures=figures,
-        extract_layout=extract_layout,
-        load_external_layout=load_external_layout,
-        merge_native_and_external_layout=merge_native_and_external_layout,
-        load_external_math=load_external_math,
-        load_mathpix_layout=load_mathpix_layout,
-        extract_figures=extract_figures,
-        normalize_figure_caption_text=normalize_figure_caption_text,
+        extract_layout=deps.source_resolution.extract_layout,
+        load_external_layout=deps.source_resolution.load_external_layout,
+        merge_native_and_external_layout=deps.source_resolution.merge_native_and_external_layout,
+        load_external_math=deps.source_resolution.load_external_math,
+        load_mathpix_layout=deps.source_resolution.load_mathpix_layout,
+        extract_figures=deps.source_resolution.extract_figures,
+        normalize_figure_caption_text=deps.source_resolution.normalize_figure_caption_text,
     )
     paper_state = normalize_paper_records(
         paper_state,
         config=runtime_config,
-        external_math_by_page=external_math_by_page,
-        merge_layout_and_figure_records=merge_layout_and_figure_records,
-        inject_external_math_records=inject_external_math_records,
-        mark_records_with_external_math_overlap=mark_records_with_external_math_overlap,
-        repair_record_text_with_mathpix_hints=repair_record_text_with_mathpix_hints,
-        pdftotext_available=pdftotext_available,
-        repair_record_text_with_pdftotext=repair_record_text_with_pdftotext,
-        extract_pdftotext_pages=extract_pdftotext_pages,
-        page_height_map=page_height_map,
-        promote_heading_like_records=promote_heading_like_records,
-        merge_math_fragment_records=merge_math_fragment_records,
-        page_one_front_matter_records=page_one_front_matter_records,
-        is_title_page_metadata_record=is_title_page_metadata_record,
-        build_section_tree=build_section_tree,
+        external_math_by_page=deps.record_normalization.external_math_by_page,
+        merge_layout_and_figure_records=deps.record_normalization.merge_layout_and_figure_records,
+        inject_external_math_records=deps.record_normalization.inject_external_math_records,
+        mark_records_with_external_math_overlap=deps.record_normalization.mark_records_with_external_math_overlap,
+        repair_record_text_with_mathpix_hints=deps.record_normalization.repair_record_text_with_mathpix_hints,
+        pdftotext_available=deps.record_normalization.pdftotext_available,
+        repair_record_text_with_pdftotext=deps.record_normalization.repair_record_text_with_pdftotext,
+        extract_pdftotext_pages=deps.record_normalization.extract_pdftotext_pages,
+        page_height_map=deps.record_normalization.page_height_map,
+        promote_heading_like_records=deps.record_normalization.promote_heading_like_records,
+        merge_math_fragment_records=deps.record_normalization.merge_math_fragment_records,
+        page_one_front_matter_records=deps.record_normalization.page_one_front_matter_records,
+        is_title_page_metadata_record=deps.record_normalization.is_title_page_metadata_record,
+        build_section_tree=deps.record_normalization.build_section_tree,
     )
     paper_state = assemble_paper_document(
         paper_state,
-        build_front_matter=build_front_matter,
-        attach_orphan_numbered_roots=attach_orphan_numbered_roots,
-        split_late_prelude_for_missing_intro=split_late_prelude_for_missing_intro,
-        normalize_section_title=normalize_section_title,
-        leading_abstract_text=leading_abstract_text,
-        front_block_text=front_block_text,
-        default_review=default_review,
-        block_source_spans=block_source_spans,
-        build_abstract_decision=build_abstract_decision,
-        should_replace_front_matter_abstract=should_replace_front_matter_abstract,
-        recover_missing_front_matter_abstract=recover_missing_front_matter_abstract,
-        section_node_type=section_node_type,
-        figure_label_token=figure_label_token,
-        prepare_section_nodes=prepare_section_nodes,
-        split_trailing_reference_records=split_trailing_reference_records,
-        extract_reference_records_from_tail_section=extract_reference_records_from_tail_section,
-        reference_records_from_mathpix_layout=reference_records_from_mathpix_layout,
-        materialize_sections=materialize_sections,
-        section_id_for=section_id_for,
-        merge_reference_records=merge_reference_records,
-        is_figure_debris=is_figure_debris,
-        looks_like_running_header_record=looks_like_running_header_record,
-        looks_like_table_body_debris=looks_like_table_body_debris,
-        is_short_ocr_fragment=is_short_ocr_fragment,
-        suppress_embedded_table_headings=suppress_embedded_table_headings,
-        merge_code_records=merge_code_records,
-        merge_paragraph_records=merge_paragraph_records,
-        build_blocks_for_record=build_blocks_for_record,
-        clean_text=clean_text,
-        compile_formulas=compile_formulas,
-        annotate_formula_classifications=annotate_formula_classifications,
-        annotate_formula_semantic_expr=annotate_formula_semantic_expr,
-        suppress_graphic_display_math_blocks=suppress_graphic_display_math_blocks,
-        suppress_running_header_blocks=suppress_running_header_blocks,
-        normalize_footnote_blocks=normalize_footnote_blocks,
-        merge_paragraph_blocks=merge_paragraph_blocks,
-        now_iso=now_iso,
-        build_canonical_document=build_canonical_document,
+        build_front_matter=deps.document_assembly.build_front_matter,
+        attach_orphan_numbered_roots=deps.document_assembly.attach_orphan_numbered_roots,
+        split_late_prelude_for_missing_intro=deps.document_assembly.split_late_prelude_for_missing_intro,
+        normalize_section_title=deps.document_assembly.normalize_section_title,
+        leading_abstract_text=deps.document_assembly.leading_abstract_text,
+        front_block_text=deps.document_assembly.front_block_text,
+        default_review=deps.document_assembly.default_review,
+        block_source_spans=deps.document_assembly.block_source_spans,
+        build_abstract_decision=deps.document_assembly.build_abstract_decision,
+        should_replace_front_matter_abstract=deps.document_assembly.should_replace_front_matter_abstract,
+        recover_missing_front_matter_abstract=deps.document_assembly.recover_missing_front_matter_abstract,
+        section_node_type=deps.document_assembly.section_node_type,
+        figure_label_token=deps.document_assembly.figure_label_token,
+        prepare_section_nodes=deps.document_assembly.prepare_section_nodes,
+        split_trailing_reference_records=deps.document_assembly.split_trailing_reference_records,
+        extract_reference_records_from_tail_section=deps.document_assembly.extract_reference_records_from_tail_section,
+        reference_records_from_mathpix_layout=deps.document_assembly.reference_records_from_mathpix_layout,
+        materialize_sections=deps.document_assembly.materialize_sections,
+        section_id_for=deps.document_assembly.section_id_for,
+        merge_reference_records=deps.document_assembly.merge_reference_records,
+        is_figure_debris=deps.document_assembly.is_figure_debris,
+        looks_like_running_header_record=deps.document_assembly.looks_like_running_header_record,
+        looks_like_table_body_debris=deps.document_assembly.looks_like_table_body_debris,
+        is_short_ocr_fragment=deps.document_assembly.is_short_ocr_fragment,
+        suppress_embedded_table_headings=deps.document_assembly.suppress_embedded_table_headings,
+        merge_code_records=deps.document_assembly.merge_code_records,
+        merge_paragraph_records=deps.document_assembly.merge_paragraph_records,
+        build_blocks_for_record=deps.document_assembly.build_blocks_for_record,
+        clean_text=deps.document_assembly.clean_text,
+        compile_formulas=deps.document_assembly.compile_formulas,
+        annotate_formula_classifications=deps.document_assembly.annotate_formula_classifications,
+        annotate_formula_semantic_expr=deps.document_assembly.annotate_formula_semantic_expr,
+        suppress_graphic_display_math_blocks=deps.document_assembly.suppress_graphic_display_math_blocks,
+        suppress_running_header_blocks=deps.document_assembly.suppress_running_header_blocks,
+        normalize_footnote_blocks=deps.document_assembly.normalize_footnote_blocks,
+        merge_paragraph_blocks=deps.document_assembly.merge_paragraph_blocks,
+        now_iso=deps.document_assembly.now_iso,
+        build_canonical_document=deps.document_assembly.build_canonical_document,
     )
     return apply_metadata_observation(paper_state)
 
@@ -174,65 +195,7 @@ def reconcile_paper_document(
     use_external_math: bool,
     layout_output: dict[str, Any] | None,
     figures: list[dict[str, Any]] | None,
-    extract_layout: Callable[[str], dict[str, Any]],
-    load_external_layout: Callable[[str], dict[str, Any] | None],
-    merge_native_and_external_layout: Callable[[dict[str, Any], dict[str, Any]], dict[str, Any]],
-    load_external_math: Callable[[str], dict[str, Any] | None],
-    external_math_by_page: Callable[[list[dict[str, Any]]], dict[int, list[dict[str, Any]]]],
-    load_mathpix_layout: Callable[[str], dict[str, Any] | None],
-    extract_figures: Callable[[str], list[dict[str, Any]]],
-    normalize_figure_caption_text: Callable[[str], str],
-    merge_layout_and_figure_records: Callable[[list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], dict[str, Any]]],
-    inject_external_math_records: Callable[[list[dict[str, Any]], list[Any], list[dict[str, Any]]], tuple[list[dict[str, Any]], set[str]]],
-    mark_records_with_external_math_overlap: Callable[[list[dict[str, Any]], dict[int, list[dict[str, Any]]]], list[dict[str, Any]]],
-    repair_record_text_with_mathpix_hints: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]],
-    pdftotext_available: Callable[[], bool],
-    repair_record_text_with_pdftotext: Callable[[list[dict[str, Any]], dict[int, list[str]], dict[int, float]], list[dict[str, Any]]],
-    extract_pdftotext_pages: Callable[[str], dict[int, list[str]]],
-    page_height_map: Callable[[dict[str, Any]], dict[int, float]],
-    promote_heading_like_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_math_fragment_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    page_one_front_matter_records: Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]],
-    is_title_page_metadata_record: Callable[[dict[str, Any]], bool],
-    build_section_tree: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[Any]]],
-    build_front_matter: Callable[[str, list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], int], tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]],
-    attach_orphan_numbered_roots: Callable[[list[Any]], list[Any]],
-    split_late_prelude_for_missing_intro: Callable[[list[dict[str, Any]], list[Any]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_section_title: Callable[[str], str],
-    leading_abstract_text: Callable[[Any], tuple[str, list[dict[str, Any]]]],
-    front_block_text: Callable[[list[dict[str, Any]], str | None], str],
-    default_review: Callable[..., dict[str, Any]],
-    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
-    build_abstract_decision: Callable[..., dict[str, Any]],
-    should_replace_front_matter_abstract: Callable[[str], bool],
-    recover_missing_front_matter_abstract: Callable[[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[Any]], bool],
-    section_node_type: Any,
-    figure_label_token: Callable[[dict[str, Any]], str | None],
-    prepare_section_nodes: Callable[..., list[Any]],
-    split_trailing_reference_records: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    extract_reference_records_from_tail_section: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]],
-    materialize_sections: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    section_id_for: Callable[[Any, int], str],
-    merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    is_figure_debris: Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool],
-    looks_like_running_header_record: Callable[[dict[str, Any]], bool],
-    looks_like_table_body_debris: Callable[[dict[str, Any]], bool],
-    is_short_ocr_fragment: Callable[[dict[str, Any]], bool],
-    suppress_embedded_table_headings: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_code_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    merge_paragraph_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    build_blocks_for_record: Callable[[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]], dict[int, list[dict[str, Any]]], dict[int, list[dict[str, Any]]], bool, dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    clean_text: Callable[[str], str],
-    compile_formulas: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_classifications: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    annotate_formula_semantic_expr: Callable[[list[dict[str, Any]]], list[dict[str, Any]]],
-    suppress_graphic_display_math_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]],
-    suppress_running_header_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    normalize_footnote_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    merge_paragraph_blocks: Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
-    now_iso: Callable[[], str],
-    build_canonical_document: Callable[..., dict[str, Any]],
+    deps: PaperPipelineDeps,
     config: PipelineConfig | None = None,
     state: PaperState | None = None,
 ) -> dict[str, Any]:
@@ -243,65 +206,7 @@ def reconcile_paper_document(
         use_external_math=use_external_math,
         layout_output=layout_output,
         figures=figures,
-        extract_layout=extract_layout,
-        load_external_layout=load_external_layout,
-        merge_native_and_external_layout=merge_native_and_external_layout,
-        load_external_math=load_external_math,
-        external_math_by_page=external_math_by_page,
-        load_mathpix_layout=load_mathpix_layout,
-        extract_figures=extract_figures,
-        normalize_figure_caption_text=normalize_figure_caption_text,
-        merge_layout_and_figure_records=merge_layout_and_figure_records,
-        inject_external_math_records=inject_external_math_records,
-        mark_records_with_external_math_overlap=mark_records_with_external_math_overlap,
-        repair_record_text_with_mathpix_hints=repair_record_text_with_mathpix_hints,
-        pdftotext_available=pdftotext_available,
-        repair_record_text_with_pdftotext=repair_record_text_with_pdftotext,
-        extract_pdftotext_pages=extract_pdftotext_pages,
-        page_height_map=page_height_map,
-        promote_heading_like_records=promote_heading_like_records,
-        merge_math_fragment_records=merge_math_fragment_records,
-        page_one_front_matter_records=page_one_front_matter_records,
-        is_title_page_metadata_record=is_title_page_metadata_record,
-        build_section_tree=build_section_tree,
-        build_front_matter=build_front_matter,
-        attach_orphan_numbered_roots=attach_orphan_numbered_roots,
-        split_late_prelude_for_missing_intro=split_late_prelude_for_missing_intro,
-        normalize_section_title=normalize_section_title,
-        leading_abstract_text=leading_abstract_text,
-        front_block_text=front_block_text,
-        default_review=default_review,
-        block_source_spans=block_source_spans,
-        build_abstract_decision=build_abstract_decision,
-        should_replace_front_matter_abstract=should_replace_front_matter_abstract,
-        recover_missing_front_matter_abstract=recover_missing_front_matter_abstract,
-        section_node_type=section_node_type,
-        figure_label_token=figure_label_token,
-        prepare_section_nodes=prepare_section_nodes,
-        split_trailing_reference_records=split_trailing_reference_records,
-        extract_reference_records_from_tail_section=extract_reference_records_from_tail_section,
-        reference_records_from_mathpix_layout=reference_records_from_mathpix_layout,
-        materialize_sections=materialize_sections,
-        section_id_for=section_id_for,
-        merge_reference_records=merge_reference_records,
-        is_figure_debris=is_figure_debris,
-        looks_like_running_header_record=looks_like_running_header_record,
-        looks_like_table_body_debris=looks_like_table_body_debris,
-        is_short_ocr_fragment=is_short_ocr_fragment,
-        suppress_embedded_table_headings=suppress_embedded_table_headings,
-        merge_code_records=merge_code_records,
-        merge_paragraph_records=merge_paragraph_records,
-        build_blocks_for_record=build_blocks_for_record,
-        clean_text=clean_text,
-        compile_formulas=compile_formulas,
-        annotate_formula_classifications=annotate_formula_classifications,
-        annotate_formula_semantic_expr=annotate_formula_semantic_expr,
-        suppress_graphic_display_math_blocks=suppress_graphic_display_math_blocks,
-        suppress_running_header_blocks=suppress_running_header_blocks,
-        normalize_footnote_blocks=normalize_footnote_blocks,
-        merge_paragraph_blocks=merge_paragraph_blocks,
-        now_iso=now_iso,
-        build_canonical_document=build_canonical_document,
+        deps=deps,
         config=config,
         state=state,
     )
