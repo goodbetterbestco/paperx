@@ -95,6 +95,8 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
         aggregate = {item["provider"]: item for item in report["aggregate"]}
         self.assertEqual(aggregate["docling"]["overall_delta"], 0.1)
         self.assertEqual(aggregate["mathpix"]["overall_delta"], -0.05)
+        self.assertEqual(report["leaders"]["base"]["overall"]["provider"], "docling")
+        self.assertEqual(report["leaders"]["candidate"]["capabilities"][0]["leader"]["provider"], "docling")
         family = report["families"][0]
         self.assertEqual(family["family"], "math_dense")
         family_providers = {item["provider"]: item for item in family["providers"]}
@@ -129,6 +131,7 @@ class AcquisitionBenchmarkCompareTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Comparison", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+        self.assertIn("Leader Snapshot", printed[0])
         self.assertIn("Capability Deltas", printed[0])
 
     def test_compare_benchmark_cli_resolves_history_labels(self) -> None:

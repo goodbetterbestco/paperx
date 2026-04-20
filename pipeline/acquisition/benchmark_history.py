@@ -8,8 +8,10 @@ from pipeline.acquisition.benchmark_reports import (
     aggregate_provider_score_map,
     benchmark_capability_score_maps,
     benchmark_report_label,
+    capability_leader_rows,
     list_history_reports,
     load_benchmark_report,
+    provider_leader_summary,
 )
 
 
@@ -72,6 +74,10 @@ def list_benchmark_history(history_dir: str | Path = DEFAULT_HISTORY_DIR, *, lim
                 "paper_count": int(report.get("paper_count", 0) or 0),
                 "provider_count": len(provider_rows),
                 "providers": provider_rows,
+                "leaders": {
+                    **provider_leader_summary(provider_rows),
+                    "capabilities": capability_leader_rows(capability_rows),
+                },
                 "capabilities": capability_rows,
             }
         )

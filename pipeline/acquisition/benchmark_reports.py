@@ -129,6 +129,57 @@ def family_capability_score_maps(
     return family_maps
 
 
+def leader_for_metric(
+    items: list[dict[str, Any]],
+    *,
+    value_key: str,
+) -> dict[str, Any] | None:
+    leader: dict[str, Any] | None = None
+    leader_value = float("-inf")
+    leader_provider = ""
+    for item in items:
+        provider = str(item.get("provider", "") or "").strip()
+        if not provider:
+            continue
+        value = float(item.get(value_key, 0.0) or 0.0)
+        if value > leader_value or (value == leader_value and provider < leader_provider):
+            leader = dict(item)
+            leader_value = value
+            leader_provider = provider
+    return leader
+
+
+def provider_leader_summary(
+    items: list[dict[str, Any]],
+    *,
+    overall_key: str = "overall",
+    content_key: str = "content",
+    execution_key: str = "execution",
+) -> dict[str, dict[str, Any] | None]:
+    return {
+        "overall": leader_for_metric(items, value_key=overall_key),
+        "content": leader_for_metric(items, value_key=content_key),
+        "execution": leader_for_metric(items, value_key=execution_key),
+    }
+
+
+def capability_leader_rows(
+    capabilities: list[dict[str, Any]],
+    *,
+    value_key: str = "score",
+) -> list[dict[str, Any]]:
+    leaders: list[dict[str, Any]] = []
+    for capability in capabilities:
+        capability_name = str(capability.get("capability", "") or "").strip()
+        if not capability_name:
+            continue
+        leader = leader_for_metric(list(capability.get("providers") or []), value_key=value_key)
+        if leader is None:
+            continue
+        leaders.append({"capability": capability_name, "leader": leader})
+    return leaders
+
+
 def benchmark_report_label(report: dict[str, Any], *, fallback_path: str | Path | None = None) -> str:
     label = str(report.get("snapshot_label", "") or "").strip()
     if label:
@@ -144,10 +195,13 @@ __all__ = [
     "benchmark_report_label",
     "benchmark_capability_score_maps",
     "capability_score_map",
+    "capability_leader_rows",
     "family_capability_score_maps",
     "family_provider_score_maps",
+    "leader_for_metric",
     "list_history_reports",
     "load_benchmark_report",
+    "provider_leader_summary",
     "provider_score_map",
     "resolve_benchmark_report_path",
 ]

@@ -84,6 +84,7 @@ def summarize_benchmark_trend(
         "candidate_report_path": str(candidate_path.resolve()),
         "base_paper_count": int(comparison.get("base_paper_count", 0) or 0),
         "candidate_paper_count": int(comparison.get("candidate_paper_count", 0) or 0),
+        "leaders": comparison.get("leaders") or {},
         "aggregate": list(comparison.get("aggregate") or []),
         "top_improvements": aggregate_improvements,
         "top_regressions": aggregate_regressions,

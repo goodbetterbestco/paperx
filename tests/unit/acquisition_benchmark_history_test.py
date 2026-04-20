@@ -65,6 +65,7 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
         providers = {item["provider"]: item for item in latest["providers"]}
         self.assertEqual(providers["docling"]["overall_delta_vs_previous"], 0.1)
         self.assertEqual(providers["mathpix"]["overall_delta_vs_previous"], -0.05)
+        self.assertEqual(latest["leaders"]["overall"]["provider"], "docling")
         capabilities = {item["capability"]: item["providers"] for item in latest["capabilities"]}
         self.assertEqual(capabilities["layout"][0]["score_delta_vs_previous"], 0.1)
         self.assertEqual(capabilities["math"][0]["score_delta_vs_previous"], -0.1)
@@ -98,6 +99,7 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark History", printed[0])
         self.assertIn("baseline", printed[0])
+        self.assertIn("Leaders:", printed[0])
         self.assertIn("layout", printed[0])
 
 

@@ -3,6 +3,48 @@ from __future__ import annotations
 from typing import Any
 
 
+def _render_leader_shift(report: dict[str, Any]) -> list[str]:
+    leaders = report.get("leaders") or {}
+    base = leaders.get("base") or {}
+    candidate = leaders.get("candidate") or {}
+    lines = ["## Leader Shift", ""]
+
+    for label, value_key in (("overall", "overall"), ("content", "content"), ("execution", "execution")):
+        base_row = base.get(label) or {}
+        candidate_row = candidate.get(label) or {}
+        if not base_row and not candidate_row:
+            continue
+        lines.append(
+            f"- {label}: "
+            f"`{base_row.get('provider', 'none')}` `{base_row.get(f'avg_{value_key}_score', base_row.get(value_key, 'n/a'))}`"
+            f" -> `{candidate_row.get('provider', 'none')}` "
+            f"`{candidate_row.get(f'avg_{value_key}_score', candidate_row.get(value_key, 'n/a'))}`"
+        )
+
+    base_capabilities = {
+        str(item.get("capability", "") or ""): item.get("leader") or {}
+        for item in list(base.get("capabilities") or [])
+        if str(item.get("capability", "") or "").strip()
+    }
+    candidate_capabilities = {
+        str(item.get("capability", "") or ""): item.get("leader") or {}
+        for item in list(candidate.get("capabilities") or [])
+        if str(item.get("capability", "") or "").strip()
+    }
+    for capability in sorted(set(base_capabilities) | set(candidate_capabilities)):
+        base_row = base_capabilities.get(capability, {})
+        candidate_row = candidate_capabilities.get(capability, {})
+        lines.append(
+            f"- `{capability}`: "
+            f"`{base_row.get('provider', 'none')}` `{base_row.get('avg_score', base_row.get('score', 'n/a'))}`"
+            f" -> `{candidate_row.get('provider', 'none')}` "
+            f"`{candidate_row.get('avg_score', candidate_row.get('score', 'n/a'))}`"
+        )
+
+    lines.append("")
+    return lines
+
+
 def _render_changes(title: str, rows: list[dict[str, Any]]) -> list[str]:
     lines = [title, ""]
     if not rows:
@@ -40,6 +82,7 @@ def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
         f"- Candidate paper count: `{report.get('candidate_paper_count', 0)}`",
         "",
     ]
+    lines.extend(_render_leader_shift(report))
     lines.extend(_render_changes("## Top Improvements", list(report.get("top_improvements") or [])))
     lines.extend(_render_changes("## Top Regressions", list(report.get("top_regressions") or [])))
     lines.append("## Capability Watchlist")

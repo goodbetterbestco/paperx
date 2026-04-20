@@ -3,6 +3,29 @@ from __future__ import annotations
 from typing import Any
 
 
+def _render_run_leaders(run: dict[str, Any]) -> list[str]:
+    leaders = run.get("leaders") or {}
+    overall = leaders.get("overall") or {}
+    content = leaders.get("content") or {}
+    execution = leaders.get("execution") or {}
+    summary_parts: list[str] = []
+    if overall:
+        summary_parts.append(f"overall `{overall['provider']}` at `{overall['overall']}`")
+    if content:
+        summary_parts.append(f"content `{content['provider']}` at `{content['content']}`")
+    if execution:
+        summary_parts.append(f"execution `{execution['provider']}` at `{execution['execution']}`")
+
+    lines: list[str] = []
+    if summary_parts:
+        lines.append(f"- Leaders: {', '.join(summary_parts)}")
+    for capability in list(leaders.get("capabilities") or []):
+        leader = capability.get("leader") or {}
+        if leader:
+            lines.append(f"- Capability `{capability['capability']}` leader: `{leader['provider']}` at `{leader['score']}`")
+    return lines
+
+
 def render_acquisition_benchmark_history_markdown(report: dict[str, Any]) -> str:
     lines = [
         "# Acquisition Benchmark History",
@@ -18,6 +41,7 @@ def render_acquisition_benchmark_history_markdown(report: dict[str, Any]) -> str
         lines.append(f"- Report: `{run['path']}`")
         lines.append(f"- Papers benchmarked: `{run['paper_count']}`")
         lines.append(f"- Providers scored: `{run['provider_count']}`")
+        lines.extend(_render_run_leaders(run))
         lines.append("")
         for provider in list(run.get("providers") or []):
             delta = provider.get("overall_delta_vs_previous", 0.0)

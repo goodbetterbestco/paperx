@@ -5,6 +5,7 @@ from typing import Any
 
 def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
     latest = report.get("latest_run") or {}
+    leaders = report.get("leaders") or {}
     trend = report.get("trend") or {}
     lines = [
         "# Acquisition Benchmark Status",
@@ -14,9 +15,29 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
         f"- Latest report: `{latest.get('path') or 'not available'}`",
         f"- Papers benchmarked: `{latest.get('paper_count', 0)}`",
         "",
-        "## Latest Aggregate Scores",
+        "## Current Leaders",
         "",
     ]
+
+    overall_leader = leaders.get("overall") or {}
+    content_leader = leaders.get("content") or {}
+    execution_leader = leaders.get("execution") or {}
+    if overall_leader:
+        lines.append(f"- overall: `{overall_leader['provider']}` at `{overall_leader['overall']}`")
+    if content_leader:
+        lines.append(f"- content: `{content_leader['provider']}` at `{content_leader['content']}`")
+    if execution_leader:
+        lines.append(f"- execution: `{execution_leader['provider']}` at `{execution_leader['execution']}`")
+    for capability in list(leaders.get("capabilities") or []):
+        leader = capability.get("leader") or {}
+        if leader:
+            lines.append(f"- `{capability['capability']}`: `{leader['provider']}` at `{leader['score']}`")
+
+    lines.extend([
+        "",
+        "## Latest Aggregate Scores",
+        "",
+    ])
 
     for provider in list(latest.get("providers") or []):
         lines.append(

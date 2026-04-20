@@ -7,9 +7,11 @@ from pipeline.acquisition.benchmark_reports import (
     DEFAULT_HISTORY_DIR,
     aggregate_provider_score_map,
     benchmark_capability_score_maps,
+    capability_leader_rows,
     family_capability_score_maps,
     family_provider_score_maps,
     load_benchmark_report,
+    provider_leader_summary,
     resolve_benchmark_report_path,
 )
 
@@ -100,6 +102,29 @@ def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path)
         "candidate_report_path": str(Path(candidate_path).resolve()),
         "base_paper_count": int(base_report.get("paper_count", 0) or 0),
         "candidate_paper_count": int(candidate_report.get("paper_count", 0) or 0),
+        "leaders": {
+            "base": {
+                **provider_leader_summary(
+                    list(base_report.get("aggregate") or []),
+                    overall_key="avg_overall_score",
+                    content_key="avg_content_score",
+                    execution_key="avg_execution_score",
+                ),
+                "capabilities": capability_leader_rows(list(base_report.get("capabilities") or []), value_key="avg_score"),
+            },
+            "candidate": {
+                **provider_leader_summary(
+                    list(candidate_report.get("aggregate") or []),
+                    overall_key="avg_overall_score",
+                    content_key="avg_content_score",
+                    execution_key="avg_execution_score",
+                ),
+                "capabilities": capability_leader_rows(
+                    list(candidate_report.get("capabilities") or []),
+                    value_key="avg_score",
+                ),
+            },
+        },
         "aggregate": _delta_table(
             aggregate_provider_score_map(base_report),
             aggregate_provider_score_map(candidate_report),

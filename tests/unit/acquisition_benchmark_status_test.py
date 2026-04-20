@@ -55,6 +55,8 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
         self.assertEqual(report["trend"]["top_improvements"][0]["provider"], "docling")
         self.assertEqual(report["latest_run"]["capabilities"][0]["capability"], "layout")
         self.assertEqual(report["trend"]["capabilities"][0]["capability"], "layout")
+        self.assertEqual(report["leaders"]["overall"]["provider"], "docling")
+        self.assertEqual(report["leaders"]["capabilities"][0]["capability"], "layout")
 
     def test_show_benchmark_status_cli_prints_markdown(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -80,4 +82,5 @@ class AcquisitionBenchmarkStatusTest(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("# Acquisition Benchmark Status", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
+        self.assertIn("## Current Leaders", printed[0])
         self.assertIn("Latest Capability Scores", printed[0])

@@ -3,7 +3,31 @@ from __future__ import annotations
 from typing import Any
 
 
+def _render_leader_snapshot(label: str, leaders: dict[str, Any]) -> list[str]:
+    lines = [f"### {label}", ""]
+    overall = leaders.get("overall") or {}
+    content = leaders.get("content") or {}
+    execution = leaders.get("execution") or {}
+    if overall:
+        lines.append(f"- overall: `{overall['provider']}` at `{overall.get('avg_overall_score', overall.get('overall'))}`")
+    if content:
+        lines.append(f"- content: `{content['provider']}` at `{content.get('avg_content_score', content.get('content'))}`")
+    if execution:
+        lines.append(
+            f"- execution: `{execution['provider']}` at `{execution.get('avg_execution_score', execution.get('execution'))}`"
+        )
+    for capability in list(leaders.get("capabilities") or []):
+        leader = capability.get("leader") or {}
+        if leader:
+            lines.append(
+                f"- `{capability['capability']}`: `{leader['provider']}` at `{leader.get('avg_score', leader.get('score'))}`"
+            )
+    lines.append("")
+    return lines
+
+
 def render_acquisition_benchmark_comparison_markdown(report: dict[str, Any]) -> str:
+    leaders = report.get("leaders") or {}
     lines = [
         "# Acquisition Benchmark Comparison",
         "",
@@ -12,9 +36,15 @@ def render_acquisition_benchmark_comparison_markdown(report: dict[str, Any]) -> 
         f"- Base paper count: `{report.get('base_paper_count', 0)}`",
         f"- Candidate paper count: `{report.get('candidate_paper_count', 0)}`",
         "",
-        "## Aggregate Deltas",
+        "## Leader Snapshot",
         "",
     ]
+    lines.extend(_render_leader_snapshot("Base", leaders.get("base") or {}))
+    lines.extend(_render_leader_snapshot("Candidate", leaders.get("candidate") or {}))
+    lines.extend([
+        "## Aggregate Deltas",
+        "",
+    ])
     for item in list(report.get("aggregate") or []):
         lines.append(
             f"- `{item['provider']}`: overall delta `{item['overall_delta']}`, "
