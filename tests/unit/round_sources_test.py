@@ -278,8 +278,16 @@ class RoundSourcesTest(unittest.TestCase):
             },
             write_json_impl=lambda path, payload: None,
             build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
-                "layout": {"blocks": [{"id": "docling"}]},
-                "math": {"entries": [{"id": "eq-1"}]},
+                "layout": {
+                    "page_count": 1,
+                    "blocks": [
+                        {"id": "docling-1", "page": 1, "order": 1, "role": "front_matter", "text": "Synthetic Title"},
+                        {"id": "docling-2", "page": 1, "order": 2, "role": "heading", "text": "Abstract"},
+                        {"id": "docling-3", "page": 1, "order": 3, "role": "paragraph", "text": "A coherent abstract paragraph."},
+                        {"id": "docling-4", "page": 1, "order": 4, "role": "paragraph", "text": "1. Introduction"},
+                    ],
+                },
+                "math": {"entries": [{"id": "eq-1", "kind": "display"}]},
                 "source_pdf_path": str(pdf_path),
             },
             build_mathpix_sources_impl=lambda *args, **kwargs: (_ for _ in ()).throw(
@@ -339,6 +347,56 @@ class RoundSourcesTest(unittest.TestCase):
         self.assertIsNotNone(mathpix_sources)
         self.assertEqual(mathpix_sources["math_entries"], 2)
         self.assertEqual(timings["mathpix_seconds"], 1.75)
+
+    def test_build_extraction_sources_runs_mathpix_when_docling_layout_is_weak_but_nonempty(self) -> None:
+        selected_pdf_path = Path("/tmp/selected-weak-layout.pdf")
+        docling_sources, mathpix_sources, timings = build_extraction_sources_for_paper(
+            "1990_synthetic_test_paper",
+            mathpix_credentials_available_impl=lambda: True,
+            timed_call_impl=lambda label, fn, /, *args, **kwargs: (
+                label,
+                0.5 if label == "docling" else 1.25,
+                fn(*args, **kwargs),
+            ),
+            resolve_extraction_pdf_impl=lambda paper_id, *, layout=None: {
+                "acquisition_route": {
+                    "paper_id": paper_id,
+                    "primary_route": "layout_complex",
+                    "product_plan": {
+                        "layout": ["docling", "mathpix"],
+                        "math": ["docling"],
+                    },
+                    "ocr_prepass": {"policy": "skip", "should_run": False, "tool": None},
+                },
+                "selected_pdf_path": selected_pdf_path,
+                "original_pdf_path": selected_pdf_path,
+                "ocr_normalized_pdf_path": Path("/tmp/missing-weak-layout.pdf"),
+                "pdf_source_kind": "original",
+                "ocr_prepass_policy": "skip",
+                "ocr_prepass_tool": None,
+                "ocr_prepass_applied": False,
+            },
+            write_json_impl=lambda path, payload: None,
+            build_docling_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
+                "layout": {
+                    "page_count": 1,
+                    "blocks": [{"id": "docling", "page": 1, "order": 1, "role": "paragraph", "text": "Body"}],
+                },
+                "math": {"entries": [{"id": "eq-1", "kind": "display"}]},
+                "source_pdf_path": str(pdf_path),
+            },
+            build_mathpix_sources_impl=lambda paper_id, *, pdf_path=None, layout=None: {
+                "math_entries": 1,
+                "layout": {"blocks": [{"id": "mathpix"}]},
+                "math": {"entries": [{"id": "mx-eq-1", "kind": "display"}]},
+                "source_pdf_path": str(pdf_path),
+            },
+        )
+
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_strategy"], "fallback_after_docling")
+        self.assertEqual(docling_sources["execution_plan"]["mathpix_reason"], "layout_fallback_docling_rejected")
+        self.assertIsNotNone(mathpix_sources)
+        self.assertEqual(timings["mathpix_seconds"], 1.25)
 
 
 if __name__ == "__main__":

@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
 
 
 from pipeline.acquisition.scoring import (
+    annotate_provider_acceptance,
     build_source_scorecard,
     score_layout_provider,
     score_math_provider,
@@ -42,6 +43,19 @@ class AcquisitionScoringTest(unittest.TestCase):
         self.assertEqual(score["math_entry_count"], 2)
         self.assertGreater(score["overall_score"], 0.0)
 
+    def test_annotate_provider_acceptance_rejects_weak_layout(self) -> None:
+        score = annotate_provider_acceptance(
+            score_layout_provider(
+                "docling",
+                {"page_count": 1, "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}]},
+                kind="layout",
+            ),
+            route_bias="born_digital_scholarly",
+        )
+
+        self.assertFalse(score["accepted"])
+        self.assertEqual(score["rejection_reasons"], ["score_below_threshold"])
+
     def test_build_source_scorecard_sorts_best_provider_first(self) -> None:
         scorecard = build_source_scorecard(
             native_layout={"page_count": 1, "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}]},
@@ -62,6 +76,9 @@ class AcquisitionScoringTest(unittest.TestCase):
         self.assertEqual(scorecard["providers"][0]["provider"], "docling")
         self.assertEqual(scorecard["recommended_primary_layout_provider"], "docling")
         self.assertEqual(scorecard["recommended_primary_math_provider"], "mathpix")
+        self.assertEqual(scorecard["layout_recommendation_basis"], "accepted")
+        self.assertEqual(scorecard["math_recommendation_basis"], "accepted")
+        self.assertTrue(scorecard["providers"][0]["accepted"])
 
     def test_score_math_provider_biases_mathpix_for_math_dense_routes(self) -> None:
         docling = score_math_provider(
@@ -143,6 +160,22 @@ class AcquisitionScoringTest(unittest.TestCase):
 
         self.assertEqual(scorecard["recommended_primary_layout_provider"], "mathpix")
         self.assertEqual(scorecard["recommended_primary_math_provider"], "mathpix")
+
+    def test_build_source_scorecard_falls_back_when_no_layout_candidate_is_accepted(self) -> None:
+        scorecard = build_source_scorecard(
+            native_layout={
+                "page_count": 1,
+                "blocks": [{"page": 1, "order": 1, "role": "paragraph", "text": "Body text."}],
+            },
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            route_bias="born_digital_scholarly",
+        )
+
+        self.assertEqual(scorecard["recommended_primary_layout_provider"], "native_pdf")
+        self.assertEqual(scorecard["layout_recommendation_basis"], "fallback_unaccepted")
+        self.assertFalse(scorecard["providers"][0]["accepted"])
 
 
 if __name__ == "__main__":

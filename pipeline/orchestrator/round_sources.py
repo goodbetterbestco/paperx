@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from pipeline.acquisition.routing import build_acquisition_route_report
+from pipeline.acquisition.scoring import annotate_provider_acceptance, score_layout_provider, score_math_provider
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 from pipeline.orchestrator.round_runtime import write_json
 from pipeline.orchestrator.round_settings import docling_device, mathpix_credentials_available
@@ -139,16 +140,38 @@ def mathpix_fallback_needed(
     *,
     docling_sources: dict[str, Any] | None,
 ) -> tuple[bool, str]:
+    primary_route = str((acquisition_route or {}).get("primary_route", "") or "")
     product_plan = dict((acquisition_route or {}).get("product_plan") or {})
     layout_plan = [str(item).strip() for item in product_plan.get("layout", []) if str(item).strip()]
     math_plan = [str(item).strip() for item in product_plan.get("math", []) if str(item).strip()]
+    docling_layout = dict((docling_sources or {}).get("layout") or {})
+    docling_math = dict((docling_sources or {}).get("math") or {})
     docling_layout_blocks = len((((docling_sources or {}).get("layout") or {}).get("blocks") or []))
     docling_math_entries = len((((docling_sources or {}).get("math") or {}).get("entries") or []))
 
     if "mathpix" in layout_plan and docling_layout_blocks <= 0:
         return True, "layout_fallback_no_docling_blocks"
+    if "mathpix" in layout_plan:
+        docling_layout_score = annotate_provider_acceptance(
+            score_layout_provider(
+                "docling",
+                docling_layout,
+                kind="layout",
+                math_entry_count=docling_math_entries,
+            ),
+            route_bias=primary_route,
+        )
+        if not bool(docling_layout_score.get("accepted")):
+            return True, "layout_fallback_docling_rejected"
     if "mathpix" in math_plan and docling_math_entries <= 0:
         return True, "math_fallback_no_docling_math"
+    if "mathpix" in math_plan:
+        docling_math_score = annotate_provider_acceptance(
+            score_math_provider("docling", docling_math, route_bias=primary_route),
+            route_bias=primary_route,
+        )
+        if not bool(docling_math_score.get("accepted")):
+            return True, "math_fallback_docling_rejected"
     return False, "route_sufficient_without_mathpix"
 
 

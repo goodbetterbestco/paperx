@@ -16,6 +16,28 @@ LAYOUT_METADATA_RE = re.compile(
     re.IGNORECASE,
 )
 
+LAYOUT_ACCEPTANCE_THRESHOLD_BY_ROUTE = {
+    "born_digital_scholarly": 0.3,
+    "layout_complex": 0.3,
+    "math_dense": 0.28,
+    "scan_or_image_heavy": 0.18,
+    "degraded_or_garbled": 0.18,
+}
+MATH_ACCEPTANCE_THRESHOLD_BY_ROUTE = {
+    "born_digital_scholarly": 0.05,
+    "layout_complex": 0.05,
+    "math_dense": 0.08,
+    "scan_or_image_heavy": 0.05,
+    "degraded_or_garbled": 0.05,
+}
+METADATA_ACCEPTANCE_THRESHOLD_BY_ROUTE = {
+    "born_digital_scholarly": 0.45,
+    "layout_complex": 0.45,
+    "math_dense": 0.45,
+    "scan_or_image_heavy": 0.35,
+    "degraded_or_garbled": 0.35,
+}
+
 
 @dataclass(frozen=True)
 class ProviderScore:
@@ -90,6 +112,70 @@ def _page_one_layout_score(blocks: list[dict[str, Any]]) -> int:
         marker_score += 4
     marker_score -= sum(3 for text in texts if LAYOUT_METADATA_RE.search(text))
     return marker_score
+
+
+def acceptance_threshold(kind: str, *, route_bias: str | None = None) -> float:
+    normalized_kind = str(kind or "").strip()
+    route = str(route_bias or "").strip()
+    if normalized_kind == "layout":
+        return LAYOUT_ACCEPTANCE_THRESHOLD_BY_ROUTE.get(route, 0.22)
+    if normalized_kind == "math":
+        return MATH_ACCEPTANCE_THRESHOLD_BY_ROUTE.get(route, 0.05)
+    if normalized_kind == "metadata":
+        return METADATA_ACCEPTANCE_THRESHOLD_BY_ROUTE.get(route, 0.4)
+    return 0.0
+
+
+def annotate_provider_acceptance(
+    provider_score: dict[str, Any],
+    *,
+    route_bias: str | None = None,
+) -> dict[str, Any]:
+    payload = dict(provider_score)
+    kind = str(payload.get("kind", "") or "")
+    threshold = acceptance_threshold(kind, route_bias=route_bias)
+    rejection_reasons: list[str] = []
+    overall_score = float(payload.get("overall_score", 0.0) or 0.0)
+
+    if kind == "layout":
+        if int(payload.get("block_count", 0) or 0) <= 0:
+            rejection_reasons.append("no_blocks")
+        elif overall_score < threshold:
+            rejection_reasons.append("score_below_threshold")
+    elif kind == "math":
+        if int(payload.get("math_entry_count", 0) or 0) <= 0:
+            rejection_reasons.append("no_math_entries")
+        elif overall_score < threshold:
+            rejection_reasons.append("score_below_threshold")
+    elif kind == "metadata":
+        has_structured_fields = (
+            bool(payload.get("title_present"))
+            or bool(payload.get("abstract_present"))
+            or int(payload.get("reference_count", 0) or 0) > 0
+        )
+        if not has_structured_fields:
+            rejection_reasons.append("no_structured_fields")
+        elif overall_score < threshold:
+            rejection_reasons.append("score_below_threshold")
+
+    payload["acceptance_threshold"] = threshold
+    payload["accepted"] = not rejection_reasons
+    payload["rejection_reasons"] = rejection_reasons
+    return payload
+
+
+def _recommended_provider(
+    providers: list[dict[str, Any]],
+    *,
+    matches: Any,
+) -> tuple[str | None, str | None]:
+    accepted = next((item for item in providers if matches(item) and bool(item.get("accepted"))), None)
+    if accepted is not None:
+        return str(accepted.get("provider") or ""), "accepted"
+    fallback = next((item for item in providers if matches(item)), None)
+    if fallback is not None:
+        return str(fallback.get("provider") or ""), "fallback_unaccepted"
+    return None, None
 
 
 def score_layout_provider(
@@ -276,50 +362,56 @@ def build_source_scorecard(
         if observation:
             providers.append(score_metadata_provider(provider, observation, route_bias=route_bias))
 
-    providers.sort(key=lambda item: (-float(item["overall_score"]), str(item["provider"]), str(item["kind"])))
+    providers = [annotate_provider_acceptance(item, route_bias=route_bias) for item in providers]
+    providers.sort(
+        key=lambda item: (
+            -int(bool(item.get("accepted"))),
+            -float(item["overall_score"]),
+            str(item["provider"]),
+            str(item["kind"]),
+        )
+    )
+    recommended_layout_provider, layout_basis = _recommended_provider(
+        providers,
+        matches=lambda item: str(item.get("kind")) == "layout",
+    )
+    recommended_math_provider, math_basis = _recommended_provider(
+        providers,
+        matches=lambda item: str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0,
+    )
+    recommended_metadata_provider, metadata_basis = _recommended_provider(
+        providers,
+        matches=lambda item: str(item.get("kind")) == "metadata"
+        and (
+            bool(item.get("title_present"))
+            or bool(item.get("abstract_present"))
+            or int(item.get("reference_count", 0) or 0) > 0
+        ),
+    )
+    recommended_reference_provider, reference_basis = _recommended_provider(
+        providers,
+        matches=lambda item: (
+            (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
+            or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
+        ),
+    )
     scorecard = {
         "providers": providers,
-        "recommended_primary_layout_provider": next(
-            (item["provider"] for item in providers if str(item.get("kind")) == "layout"),
-            None,
-        ),
-        "recommended_primary_math_provider": next(
-            (
-                item["provider"]
-                for item in providers
-                if str(item.get("kind")) == "math" and int(item.get("math_entry_count", 0) or 0) > 0
-            ),
-            None,
-        ),
-        "recommended_primary_metadata_provider": next(
-            (
-                item["provider"]
-                for item in providers
-                if str(item.get("kind")) == "metadata"
-                and (
-                    bool(item.get("title_present"))
-                    or bool(item.get("abstract_present"))
-                    or int(item.get("reference_count", 0) or 0) > 0
-                )
-            ),
-            None,
-        ),
-        "recommended_primary_reference_provider": next(
-            (
-                item["provider"]
-                for item in providers
-                if (
-                    (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
-                    or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
-                )
-            ),
-            None,
-        ),
+        "recommended_primary_layout_provider": recommended_layout_provider,
+        "recommended_primary_math_provider": recommended_math_provider,
+        "recommended_primary_metadata_provider": recommended_metadata_provider,
+        "recommended_primary_reference_provider": recommended_reference_provider,
+        "layout_recommendation_basis": layout_basis,
+        "math_recommendation_basis": math_basis,
+        "metadata_recommendation_basis": metadata_basis,
+        "reference_recommendation_basis": reference_basis,
     }
     return normalize_scorecard_recommendations(scorecard)
 
 
 __all__ = [
+    "acceptance_threshold",
+    "annotate_provider_acceptance",
     "build_source_scorecard",
     "score_metadata_provider",
     "score_math_provider",
