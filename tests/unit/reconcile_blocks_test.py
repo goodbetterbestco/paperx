@@ -12,23 +12,17 @@ import pipeline.reconcile.shared_patterns as rsp
 from pipeline.assembly.abstract_recovery import (
     make_bound_front_matter_recovery_helpers,
     make_recover_missing_front_matter_abstract,
-    recover_missing_front_matter_abstract as _assembly_recover_missing_front_matter_abstract,
 )
 from pipeline.assembly.front_matter_builder import (
-    build_front_matter as _assembly_build_front_matter,
     make_build_front_matter,
 )
 from pipeline.assembly.front_matter_support import (
-    front_block_text as _support_front_block_text,
     make_bound_front_matter_support_helpers,
     make_front_block_text,
     missing_front_matter_affiliation,
     missing_front_matter_author,
 )
-from pipeline.assembly.section_support import (
-    make_normalize_section_title,
-    normalize_section_title as _section_normalize_section_title,
-)
+from pipeline.assembly.section_support import make_normalize_section_title
 from pipeline.policies.abstract_quality import (
     MISSING_ABSTRACT_PLACEHOLDER,
     NO_ABSTRACT_IN_BASE_MATERIAL,
@@ -374,18 +368,15 @@ MISSING_FRONT_MATTER_AFFILIATION = partial(
     MISSING_ABSTRACT_PLACEHOLDER,
 )
 NORMALIZE_SECTION_TITLE = make_normalize_section_title(
-    normalize_section_title_impl=_section_normalize_section_title,
     clean_text=CLEAN_TEXT,
     clean_heading_title=clean_heading_title,
     parse_heading_label=parse_heading_label,
     normalize_title_key=normalize_title_key,
 )
 FRONT_BLOCK_TEXT = make_front_block_text(
-    front_block_text_impl=_support_front_block_text,
     clean_text=CLEAN_TEXT,
 )
 BUILD_FRONT_MATTER = make_build_front_matter(
-    build_front_matter_impl=_assembly_build_front_matter,
     split_leading_front_matter_records=PARSING_HELPERS.split_leading_front_matter_records,
     clean_record=CLEAN_RECORD,
     clean_text=CLEAN_TEXT,
@@ -423,7 +414,6 @@ BUILD_FRONT_MATTER = make_build_front_matter(
     front_matter_missing_placeholder=NO_ABSTRACT_IN_BASE_MATERIAL,
 )
 RECOVER_MISSING_FRONT_MATTER_ABSTRACT = make_recover_missing_front_matter_abstract(
-    recover_missing_front_matter_abstract_impl=_assembly_recover_missing_front_matter_abstract,
     front_block_text=FRONT_BLOCK_TEXT,
     abstract_quality_flags=abstract_quality_flags,
     normalize_section_title=NORMALIZE_SECTION_TITLE,

@@ -3,21 +3,13 @@ from __future__ import annotations
 from typing import Any
 
 from pipeline.assembly.canonical_builder import build_canonical_document
-from pipeline.assembly.abstract_recovery import (
-    recover_missing_front_matter_abstract as assemble_recover_missing_front_matter_abstract,
-)
-from pipeline.assembly.front_matter_builder import build_front_matter as assemble_front_matter
 from pipeline.assembly.front_matter_support import (
-    front_block_text as assemble_front_block_text,
     missing_front_matter_affiliation as assemble_missing_front_matter_affiliation,
     missing_front_matter_author as assemble_missing_front_matter_author,
 )
 from pipeline.assembly.record_block_builder import split_code_lines as assemble_split_code_lines
 from pipeline.assembly.section_builder import materialize_sections
-from pipeline.assembly.section_support import (
-    normalize_section_title as assemble_normalize_section_title,
-    section_id as assemble_section_id,
-)
+from pipeline.assembly.section_support import section_id as assemble_section_id
 from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.figures.labels import caption_label
 from pipeline.math.compile import compile_formulas
@@ -264,7 +256,6 @@ def reconcile_paper_state(
             extract_general_inline_math_spans=extract_general_inline_math_spans,
             merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
             normalize_inline_math_spans=normalize_inline_math_spans,
-            build_front_matter_impl=assemble_front_matter,
             abstract_marker_only_re=ABSTRACT_MARKER_ONLY_RE,
             abstract_lead_re=ABSTRACT_LEAD_RE,
             author_note_re=AUTHOR_NOTE_RE,
@@ -276,11 +267,8 @@ def reconcile_paper_state(
             normalize_title_key=normalize_title_key,
             preprint_marker_re=PREPRINT_MARKER_RE,
             keywords_lead_re=KEYWORDS_LEAD_RE,
-            normalize_section_title_impl=assemble_normalize_section_title,
             clean_heading_title=clean_heading_title,
             parse_heading_label=parse_heading_label,
-            front_block_text_impl=assemble_front_block_text,
-            recover_missing_front_matter_abstract_impl=assemble_recover_missing_front_matter_abstract,
             abstract_quality_flags=abstract_quality_flags,
             caption_label=caption_label,
             split_code_lines=assemble_split_code_lines,

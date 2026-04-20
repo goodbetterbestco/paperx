@@ -227,11 +227,10 @@ def make_bound_front_matter_support_helpers(
 
 def make_front_block_text(
     *,
-    front_block_text_impl: Callable[..., str],
     clean_text: Callable[[str], str],
 ) -> Callable[[list[dict[str, Any]], str | None], str]:
     def bound_front_block_text(blocks: list[dict[str, Any]], block_id: str | None) -> str:
-        return front_block_text_impl(blocks, block_id, clean_text=clean_text)
+        return front_block_text(blocks, block_id, clean_text=clean_text)
 
     return bound_front_block_text
 

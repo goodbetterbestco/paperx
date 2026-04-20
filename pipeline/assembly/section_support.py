@@ -28,14 +28,13 @@ def normalize_section_title(
 
 def make_normalize_section_title(
     *,
-    normalize_section_title_impl: Callable[..., str],
     clean_text: Callable[[str], str],
     clean_heading_title: Callable[[str], str],
     parse_heading_label: Callable[[str], Any],
     normalize_title_key: Callable[[str], str],
 ) -> Callable[[str], str]:
     def bound_normalize_section_title(title: str) -> str:
-        return normalize_section_title_impl(
+        return normalize_section_title(
             title,
             clean_text=clean_text,
             clean_heading_title=clean_heading_title,

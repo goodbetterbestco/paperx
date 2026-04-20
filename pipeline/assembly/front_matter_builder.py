@@ -285,7 +285,6 @@ def build_front_matter(
 
 def make_build_front_matter(
     *,
-    build_front_matter_impl: Callable[..., tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]],
     split_leading_front_matter_records: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]],
     clean_record: Callable[[dict[str, Any]], dict[str, Any]],
     clean_text: Callable[[str], str],
@@ -329,7 +328,7 @@ def make_build_front_matter(
         blocks: list[dict[str, Any]],
         next_block_index: int,
     ) -> tuple[dict[str, Any], list[dict[str, Any]], int, list[dict[str, Any]]]:
-        return build_front_matter_impl(
+        return build_front_matter(
             paper_id,
             prelude,
             page_one_records,

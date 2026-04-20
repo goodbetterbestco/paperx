@@ -35,7 +35,6 @@ def build_reconcile_front_matter_runtime_helpers(
     text_helpers: dict[str, object],
 ) -> dict[str, object]:
     build_front_matter = make_build_front_matter(
-        build_front_matter_impl=bindings.build_front_matter_impl,
         split_leading_front_matter_records=bindings.split_leading_front_matter_records,
         clean_record=bindings.clean_record,
         clean_text=text_helpers["clean_text"],
@@ -73,14 +72,12 @@ def build_reconcile_front_matter_runtime_helpers(
         front_matter_missing_placeholder=bindings.front_matter_missing_placeholder,
     )
     normalize_section_title = make_normalize_section_title(
-        normalize_section_title_impl=bindings.normalize_section_title_impl,
         clean_text=text_helpers["clean_text"],
         clean_heading_title=bindings.clean_heading_title,
         parse_heading_label=text_helpers["parse_heading_label"],
         normalize_title_key=text_helpers["normalize_title_key"],
     )
     front_block_text_fn = make_front_block_text(
-        front_block_text_impl=bindings.front_block_text_impl,
         clean_text=text_helpers["clean_text"],
     )
     return {
@@ -88,7 +85,6 @@ def build_reconcile_front_matter_runtime_helpers(
         "normalize_section_title": normalize_section_title,
         "front_block_text": front_block_text_fn,
         "recover_missing_front_matter_abstract": make_recover_missing_front_matter_abstract(
-            recover_missing_front_matter_abstract_impl=bindings.recover_missing_front_matter_abstract_impl,
             front_block_text=front_block_text_fn,
             abstract_quality_flags=bindings.abstract_quality_flags,
             normalize_section_title=normalize_section_title,

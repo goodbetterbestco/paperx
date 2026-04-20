@@ -5,7 +5,6 @@ from typing import Any, Callable
 
 from pipeline.assembly.section_support import (
     make_normalize_section_title,
-    normalize_section_title,
 )
 
 
@@ -253,7 +252,6 @@ def make_bound_front_matter_recovery_helpers(
     normalize_abstract_candidate_text: Callable[[list[dict[str, Any]]], str],
 ) -> BoundFrontMatterRecoveryHelpers:
     bound_normalize_section_title = make_normalize_section_title(
-        normalize_section_title_impl=normalize_section_title,
         clean_text=clean_text,
         clean_heading_title=clean_heading_title,
         parse_heading_label=parse_heading_label,
@@ -312,7 +310,6 @@ def make_bound_front_matter_recovery_helpers(
 
 def make_recover_missing_front_matter_abstract(
     *,
-    recover_missing_front_matter_abstract_impl: Callable[..., bool],
     front_block_text: Callable[[list[dict[str, Any]], str | None], str],
     abstract_quality_flags: Callable[[str], list[str]],
     normalize_section_title: Callable[[str], str],
@@ -328,7 +325,7 @@ def make_recover_missing_front_matter_abstract(
         prelude: list[dict[str, Any]],
         ordered_roots: list[Any],
     ) -> bool:
-        return recover_missing_front_matter_abstract_impl(
+        return recover_missing_front_matter_abstract(
             front_matter,
             blocks,
             prelude,
