@@ -12,6 +12,7 @@ from pipeline.acquisition.source_ownership import (
     reported_layout_provider,
     reported_math_provider,
     select_metadata_observation,
+    select_reference_observation,
     select_math_payload,
 )
 
@@ -99,6 +100,28 @@ class AcquisitionSourceOwnershipTest(unittest.TestCase):
             metadata_candidates={
                 "grobid": {"provider": "grobid", "title": "A title", "abstract": "", "references": []},
                 "other": {"provider": "other", "title": "B title", "abstract": "", "references": []},
+            },
+        )
+
+        self.assertEqual(selected["provider"], "grobid")
+
+    def test_select_reference_observation_prefers_recommended_provider(self) -> None:
+        selected = select_reference_observation(
+            source_scorecard={"recommended_primary_reference_provider": "mathpix"},
+            metadata_candidates={
+                "grobid": {"provider": "grobid", "title": "A title", "abstract": "", "references": ["G. Ref"]},
+                "mathpix": {"provider": "mathpix", "title": "", "abstract": "", "references": ["M. Ref"]},
+            },
+        )
+
+        self.assertEqual(selected["provider"], "mathpix")
+
+    def test_select_reference_observation_falls_back_to_any_provider_with_references(self) -> None:
+        selected = select_reference_observation(
+            source_scorecard={"recommended_primary_reference_provider": "mathpix"},
+            metadata_candidates={
+                "grobid": {"provider": "grobid", "title": "A title", "abstract": "", "references": ["G. Ref"]},
+                "mathpix": {"provider": "mathpix", "title": "", "abstract": "", "references": []},
             },
         )
 

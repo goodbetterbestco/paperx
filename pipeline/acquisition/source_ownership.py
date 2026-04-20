@@ -111,11 +111,35 @@ def select_metadata_observation(
     return {}
 
 
+def select_reference_observation(
+    *,
+    source_scorecard: dict[str, Any] | None,
+    metadata_candidates: dict[str, dict[str, Any] | None] | None,
+) -> dict[str, Any]:
+    candidates = {
+        canonical_provider_name(provider) or str(provider): dict(payload or {})
+        for provider, payload in (metadata_candidates or {}).items()
+        if payload
+    }
+    preferred_provider = canonical_provider_name((source_scorecard or {}).get("recommended_primary_reference_provider"))
+    if preferred_provider:
+        preferred_payload = candidates.get(preferred_provider)
+        preferred_references = [str(item).strip() for item in list((preferred_payload or {}).get("references", [])) if str(item).strip()]
+        if preferred_payload and preferred_references:
+            return preferred_payload
+    for provider in sorted(candidates):
+        payload = candidates[provider]
+        if any(str(item).strip() for item in payload.get("references", [])):
+            return payload
+    return {}
+
+
 __all__ = [
     "canonical_provider_name",
     "normalize_scorecard_recommendations",
     "reported_layout_provider",
     "reported_math_provider",
     "select_metadata_observation",
+    "select_reference_observation",
     "select_math_payload",
 ]

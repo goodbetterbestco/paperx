@@ -88,6 +88,7 @@ class SourceResolutionTest(unittest.TestCase):
                 "recommended_primary_layout_provider": "mathpix",
                 "recommended_primary_math_provider": "mathpix",
                 "recommended_primary_metadata_provider": "docling",
+                "recommended_primary_reference_provider": "grobid",
             },
             load_docling_metadata_observation_impl=lambda paper_id, *, layout=None: {
                 "provider": "docling",
@@ -123,6 +124,7 @@ class SourceResolutionTest(unittest.TestCase):
         self.assertEqual(resolved.layout_engine_name, "mathpix")
         self.assertEqual(resolved.math_engine_name, "mathpix")
         self.assertEqual(resolved.metadata_observation["provider"], "docling")
+        self.assertEqual(resolved.reference_observation["provider"], "grobid")
         self.assertIn("pdf", resolved.input_fingerprints)
 
     def test_resolve_paper_sources_preserves_concrete_external_layout_engine(self) -> None:

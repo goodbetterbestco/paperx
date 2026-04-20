@@ -39,10 +39,16 @@ def _metadata_reference_entry(text: str, *, index: int, provider: str) -> dict[s
 
 def apply_metadata_observation(state: Any) -> Any:
     observation = dict(getattr(state, "metadata_observation", None) or {})
-    if not observation:
+    reference_observation = dict(getattr(state, "reference_observation", None) or {})
+    if not observation and not reference_observation:
         return state
 
-    provider = str(observation.get("provider", "metadata_observation") or "metadata_observation")
+    provider = str(
+        observation.get("provider") or reference_observation.get("provider") or "metadata_observation"
+    )
+    reference_provider = str(
+        reference_observation.get("provider") or observation.get("provider", "metadata_observation") or "metadata_observation"
+    )
     source_scorecard = dict(getattr(state, "source_scorecard", {}) or {})
     decision_artifacts = dict(getattr(state, "decision_artifacts", {}) or {})
     front_matter = dict(getattr(state, "front_matter", None) or {})
@@ -51,6 +57,7 @@ def apply_metadata_observation(state: Any) -> Any:
 
     metadata_decision = dict(decision_artifacts.get("metadata") or {})
     metadata_decision.setdefault("provider", provider)
+    metadata_decision["reference_provider"] = reference_provider
     metadata_decision["recommended_metadata_provider"] = canonical_provider_name(
         source_scorecard.get("recommended_primary_metadata_provider")
     )
@@ -92,14 +99,15 @@ def apply_metadata_observation(state: Any) -> Any:
     else:
         metadata_decision.setdefault("abstract_applied", False)
 
+    selected_reference_observation = reference_observation or observation
     observed_references = [
         str(item).strip()
-        for item in observation.get("references", [])
+        for item in selected_reference_observation.get("references", [])
         if str(item).strip()
     ]
     if observed_references and not references:
         references = [
-            _metadata_reference_entry(text, index=index, provider=provider)
+            _metadata_reference_entry(text, index=index, provider=reference_provider)
             for index, text in enumerate(observed_references, start=1)
         ]
         state.references = references

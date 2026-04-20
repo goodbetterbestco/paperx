@@ -12,6 +12,7 @@ from pipeline.acquisition.source_ownership import (
     reported_layout_provider,
     reported_math_provider,
     select_metadata_observation,
+    select_reference_observation,
     select_math_payload,
 )
 from pipeline.config import build_pipeline_config
@@ -45,6 +46,7 @@ def build_acquisition_execution_summary(
     final_math: dict[str, Any],
     metadata_candidates: dict[str, dict[str, Any] | None] | None,
     metadata_observation: dict[str, Any] | None,
+    reference_observation: dict[str, Any] | None,
 ) -> dict[str, Any]:
     pdf_selection = dict((docling_sources or {}).get("pdf_selection") or (mathpix_sources or {}).get("pdf_selection") or {})
     execution_plan = dict((docling_sources or {}).get("execution_plan") or (mathpix_sources or {}).get("execution_plan") or {})
@@ -53,6 +55,7 @@ def build_acquisition_execution_summary(
     docling_math = (docling_sources or {}).get("math") or {}
     mathpix_math = (mathpix_sources or {}).get("math") or {}
     metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
+    reference_provider = str((reference_observation or {}).get("provider", "") or "") or None
     selected_layout_provider = reported_layout_provider(
         str(final_layout.get("engine", "") or "") or None,
         source_scorecard=source_scorecard,
@@ -105,6 +108,7 @@ def build_acquisition_execution_summary(
             "selected_layout_provider": selected_layout_provider,
             "selected_math_provider": selected_math_provider,
             "metadata_provider": metadata_provider,
+            "reference_provider": reference_provider,
             "metadata_candidates": executed_metadata_candidates,
             "docling_ran": bool(docling_sources),
             "mathpix_ran": bool(mathpix_sources),
@@ -206,6 +210,10 @@ def compose_external_sources(
         source_scorecard=source_scorecard,
         metadata_candidates=metadata_candidates,
     )
+    reference_observation = select_reference_observation(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
     try:
         final_layout = compose_layout_sources_impl(
             docling_sources,
@@ -236,6 +244,7 @@ def compose_external_sources(
         final_math=final_math,
         metadata_candidates=metadata_candidates,
         metadata_observation=metadata_observation,
+        reference_observation=reference_observation,
     )
     write_json_impl(acquisition_execution_report_path_impl(paper_id, layout=layout), acquisition_execution)
     ocr_prepass = acquisition_route.get("ocr_prepass") or {}
@@ -263,6 +272,7 @@ def compose_external_sources(
         "executed_layout_provider": acquisition_execution["executed"]["selected_layout_provider"],
         "executed_math_provider": acquisition_execution["executed"]["selected_math_provider"],
         "executed_metadata_provider": acquisition_execution["executed"]["metadata_provider"],
+        "executed_reference_provider": acquisition_execution["executed"]["reference_provider"],
         "acquisition_route": acquisition_route.get("primary_route"),
         "ocr_prepass_policy": ocr_prepass.get("policy"),
         "ocr_prepass_should_run": bool(ocr_prepass.get("should_run")),
@@ -377,6 +387,10 @@ def existing_composed_sources(
         source_scorecard=source_scorecard,
         metadata_candidates=metadata_candidates,
     )
+    reference_observation = select_reference_observation(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
     route_ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),
@@ -408,7 +422,9 @@ def existing_composed_sources(
         "executed_layout_provider": ((acquisition_execution.get("executed") or {}).get("selected_layout_provider")),
         "executed_math_provider": ((acquisition_execution.get("executed") or {}).get("selected_math_provider")),
         "executed_metadata_provider": ((acquisition_execution.get("executed") or {}).get("metadata_provider")),
+        "executed_reference_provider": ((acquisition_execution.get("executed") or {}).get("reference_provider")),
         "metadata_provider": metadata_observation.get("provider"),
+        "reference_provider": reference_observation.get("provider"),
     }
 
 

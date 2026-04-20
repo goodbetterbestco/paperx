@@ -21,6 +21,12 @@ class MetadataEnrichmentTest(unittest.TestCase):
                 "provider": "grobid",
                 "title": "Synthetic Acquisition Benchmark Paper",
                 "abstract": "We evaluate structured document extraction for synthetic papers.",
+                "references": [],
+            },
+            reference_observation={
+                "provider": "docling",
+                "title": "Synthetic Acquisition Benchmark Paper",
+                "abstract": "",
                 "references": [
                     "A. Author. Journal of Tests. 2024.",
                     "B. Author. Proceedings of Examples. 2023.",
@@ -47,7 +53,7 @@ class MetadataEnrichmentTest(unittest.TestCase):
             decision_artifacts={},
             source_scorecard={
                 "recommended_primary_metadata_provider": "grobid",
-                "recommended_primary_reference_provider": "grobid",
+                "recommended_primary_reference_provider": "docling",
             },
             document={
                 "title": "Synthetic Acquisition Benchmark Paper",
@@ -79,8 +85,10 @@ class MetadataEnrichmentTest(unittest.TestCase):
         self.assertEqual(len(enriched.references), 2)
         self.assertTrue(enriched.decision_artifacts["metadata"]["abstract_applied"])
         self.assertTrue(enriched.decision_artifacts["metadata"]["references_applied"])
+        self.assertEqual(enriched.decision_artifacts["metadata"]["provider"], "grobid")
+        self.assertEqual(enriched.decision_artifacts["metadata"]["reference_provider"], "docling")
         self.assertEqual(enriched.decision_artifacts["metadata"]["recommended_metadata_provider"], "grobid")
-        self.assertEqual(enriched.decision_artifacts["metadata"]["recommended_reference_provider"], "grobid")
+        self.assertEqual(enriched.decision_artifacts["metadata"]["recommended_reference_provider"], "docling")
         self.assertEqual(enriched.document["references"][0]["id"], "ref-001")
 
 

@@ -9,6 +9,7 @@ from pipeline.acquisition.source_ownership import (
     reported_layout_provider,
     reported_math_provider,
     select_metadata_observation,
+    select_reference_observation,
 )
 from pipeline.config import PipelineConfig
 from pipeline.output.fingerprints import build_input_fingerprints
@@ -73,6 +74,10 @@ def resolve_paper_sources(
         source_scorecard=None,
         metadata_candidates=metadata_candidates,
     )
+    reference_observation = select_reference_observation(
+        source_scorecard=None,
+        metadata_candidates=metadata_candidates,
+    )
 
     resolved_figures = figures or extract_figures(paper_id)
     resolved_figures = [
@@ -90,6 +95,7 @@ def resolve_paper_sources(
     state.mathpix_layout = mathpix_layout
     state.metadata_candidates = metadata_candidates
     state.metadata_observation = metadata_observation
+    state.reference_observation = reference_observation
     state.figures = resolved_figures
     state.acquisition_route = build_acquisition_route_report_impl(
         paper_id,
@@ -115,6 +121,10 @@ def resolve_paper_sources(
     source_scorecard = normalize_scorecard_recommendations(source_scorecard)
     state.source_scorecard = source_scorecard
     state.metadata_observation = select_metadata_observation(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
+    state.reference_observation = select_reference_observation(
         source_scorecard=source_scorecard,
         metadata_candidates=metadata_candidates,
     )
