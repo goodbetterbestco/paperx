@@ -380,7 +380,7 @@ class RunCorpusRoundsTest(unittest.TestCase):
         self.assertEqual(summary["ocr_prepass_policy"], "skip")
         self.assertEqual([entry["id"] for entry in captured["math.json"]["entries"]], ["doc-eq-1", "doc-eq-2"])
 
-    def test_compose_external_sources_recommends_grobid_escalation_for_unaccepted_metadata_and_references(self) -> None:
+    def test_compose_external_sources_applies_grobid_escalation_for_unaccepted_metadata_and_references(self) -> None:
         captured: dict[str, dict] = {}
 
         def capture(path: Path, payload: dict) -> None:
@@ -436,12 +436,11 @@ class RunCorpusRoundsTest(unittest.TestCase):
                 },
             )
 
-        self.assertTrue(summary["follow_up_needed"])
-        self.assertEqual(
-            [item["action"] for item in summary["follow_up_actions"]],
-            ["escalate_grobid_metadata", "escalate_grobid_references"],
-        )
-        self.assertTrue(captured["acquisition-execution.json"]["follow_up"]["needs_attention"])
+        self.assertEqual(summary["executed_metadata_provider"], "grobid")
+        self.assertEqual(summary["executed_reference_provider"], "grobid")
+        self.assertFalse(summary["follow_up_needed"])
+        self.assertEqual(summary["follow_up_actions"], [])
+        self.assertFalse(captured["acquisition-execution.json"]["follow_up"]["needs_attention"])
 
     def test_build_paper_prefers_cleaner_later_candidate(self) -> None:
         bad_document = {

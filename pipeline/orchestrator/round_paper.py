@@ -62,7 +62,9 @@ def build_acquisition_follow_up(
     grobid_candidate = candidates.get("grobid") or {}
 
     if metadata_basis == "fallback_unaccepted":
-        if _observation_has_metadata(grobid_candidate) and selected_metadata_provider != "grobid":
+        if selected_metadata_provider == "grobid":
+            pass
+        elif _observation_has_metadata(grobid_candidate):
             actions.append(
                 {
                     "product": "metadata",
@@ -82,7 +84,9 @@ def build_acquisition_follow_up(
             )
 
     if reference_basis == "fallback_unaccepted":
-        if _observation_has_references(grobid_candidate) and selected_reference_provider != "grobid":
+        if selected_reference_provider == "grobid":
+            pass
+        elif _observation_has_references(grobid_candidate):
             actions.append(
                 {
                     "product": "references",

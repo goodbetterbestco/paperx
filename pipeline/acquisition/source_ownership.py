@@ -35,6 +35,20 @@ def normalize_scorecard_recommendations(source_scorecard: dict[str, Any] | None)
     return payload
 
 
+def _fallback_unaccepted(source_scorecard: dict[str, Any] | None, key: str) -> bool:
+    return str((source_scorecard or {}).get(key, "") or "").strip() == "fallback_unaccepted"
+
+
+def _has_metadata_fields(payload: dict[str, Any] | None) -> bool:
+    candidate = dict(payload or {})
+    return bool(str(candidate.get("title", "")).strip() or str(candidate.get("abstract", "")).strip())
+
+
+def _has_reference_fields(payload: dict[str, Any] | None) -> bool:
+    candidate = dict(payload or {})
+    return any(str(item).strip() for item in list(candidate.get("references", [])))
+
+
 def reported_layout_provider(
     layout_engine: str | None,
     *,
@@ -95,6 +109,9 @@ def select_metadata_observation(
         for provider, payload in (metadata_candidates or {}).items()
         if payload
     }
+    grobid_payload = candidates.get("grobid")
+    if _fallback_unaccepted(source_scorecard, "metadata_recommendation_basis") and _has_metadata_fields(grobid_payload):
+        return dict(grobid_payload or {})
     preferred_provider = canonical_provider_name((source_scorecard or {}).get("recommended_primary_metadata_provider"))
     if preferred_provider:
         preferred_payload = candidates.get(preferred_provider)
@@ -121,6 +138,9 @@ def select_reference_observation(
         for provider, payload in (metadata_candidates or {}).items()
         if payload
     }
+    grobid_payload = candidates.get("grobid")
+    if _fallback_unaccepted(source_scorecard, "reference_recommendation_basis") and _has_reference_fields(grobid_payload):
+        return dict(grobid_payload or {})
     preferred_provider = canonical_provider_name((source_scorecard or {}).get("recommended_primary_reference_provider"))
     if preferred_provider:
         preferred_payload = candidates.get(preferred_provider)

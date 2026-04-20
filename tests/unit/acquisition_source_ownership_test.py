@@ -105,6 +105,20 @@ class AcquisitionSourceOwnershipTest(unittest.TestCase):
 
         self.assertEqual(selected["provider"], "grobid")
 
+    def test_select_metadata_observation_escalates_to_grobid_when_fallback_is_unaccepted(self) -> None:
+        selected = select_metadata_observation(
+            source_scorecard={
+                "recommended_primary_metadata_provider": "docling",
+                "metadata_recommendation_basis": "fallback_unaccepted",
+            },
+            metadata_candidates={
+                "docling": {"provider": "docling", "title": "Weak title", "abstract": "", "references": []},
+                "grobid": {"provider": "grobid", "title": "A title", "abstract": "Abstract", "references": []},
+            },
+        )
+
+        self.assertEqual(selected["provider"], "grobid")
+
     def test_select_reference_observation_prefers_recommended_provider(self) -> None:
         selected = select_reference_observation(
             source_scorecard={"recommended_primary_reference_provider": "mathpix"},
@@ -122,6 +136,20 @@ class AcquisitionSourceOwnershipTest(unittest.TestCase):
             metadata_candidates={
                 "grobid": {"provider": "grobid", "title": "A title", "abstract": "", "references": ["G. Ref"]},
                 "mathpix": {"provider": "mathpix", "title": "", "abstract": "", "references": []},
+            },
+        )
+
+        self.assertEqual(selected["provider"], "grobid")
+
+    def test_select_reference_observation_escalates_to_grobid_when_fallback_is_unaccepted(self) -> None:
+        selected = select_reference_observation(
+            source_scorecard={
+                "recommended_primary_reference_provider": "docling",
+                "reference_recommendation_basis": "fallback_unaccepted",
+            },
+            metadata_candidates={
+                "docling": {"provider": "docling", "title": "", "abstract": "", "references": ["D. Ref"]},
+                "grobid": {"provider": "grobid", "title": "", "abstract": "", "references": ["G. Ref"]},
             },
         )
 

@@ -203,6 +203,85 @@ class SourceResolutionTest(unittest.TestCase):
         self.assertEqual(resolved.layout_engine_name, "docling")
         self.assertEqual(resolved.math_engine_name, "heuristic")
 
+    def test_resolve_paper_sources_escalates_metadata_and_references_to_grobid_when_fallback_is_unaccepted(self) -> None:
+        engine_root = Path("/tmp/paperx-source-resolution").resolve()
+        corpus_root = engine_root / "corpus" / "synthetic"
+        layout = ProjectLayout(
+            engine_root=engine_root,
+            mode="corpus",
+            corpus_name="synthetic",
+            project_dir=None,
+            corpus_root=corpus_root,
+            source_root=corpus_root,
+            review_root=corpus_root / "review_drafts",
+            runs_root=corpus_root / "_runs",
+            tmp_root=engine_root / "tmp",
+            figure_expectations_path=corpus_root / "figure_expectations.json",
+        )
+        config = build_pipeline_config(
+            layout=layout,
+            text_engine="native",
+            use_external_layout=True,
+            use_external_math=True,
+            include_review=False,
+        )
+        state = PaperState.begin(
+            "1990_synthetic_test_paper",
+            config=config,
+            started_at="2026-04-17T00:00:00Z",
+        )
+
+        native_layout = {
+            "engine": "native_pdf",
+            "pdf_path": str(state.pdf_path),
+            "page_count": 1,
+            "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+            "blocks": [{"id": "native-1", "page": 1, "order": 1, "text": "Native text", "role": "paragraph", "bbox": {}}],
+        }
+
+        resolved = resolve_paper_sources(
+            state,
+            config=config,
+            layout_output=native_layout,
+            figures=[],
+            extract_layout=lambda paper_id: native_layout,
+            load_external_layout=lambda paper_id: None,
+            merge_native_and_external_layout=lambda native, external: native,
+            load_external_math=lambda paper_id: None,
+            load_mathpix_layout=lambda paper_id: None,
+            extract_figures=lambda paper_id: [],
+            normalize_figure_caption_text=lambda text: text,
+            build_acquisition_route_report_impl=lambda paper_id, *, layout=None: {
+                "paper_id": paper_id,
+                "primary_route": "born_digital_scholarly",
+            },
+            build_source_scorecard_impl=lambda **kwargs: {
+                "providers": [],
+                "recommended_primary_layout_provider": "native_pdf",
+                "recommended_primary_math_provider": None,
+                "recommended_primary_metadata_provider": "docling",
+                "recommended_primary_reference_provider": "docling",
+                "metadata_recommendation_basis": "fallback_unaccepted",
+                "reference_recommendation_basis": "fallback_unaccepted",
+            },
+            load_docling_metadata_observation_impl=lambda paper_id, *, layout=None: {
+                "provider": "docling",
+                "title": "Weak title",
+                "abstract": "",
+                "references": ["D. Ref"],
+            },
+            load_grobid_metadata_observation_impl=lambda paper_id, *, layout=None: {
+                "provider": "grobid",
+                "title": "Strong title",
+                "abstract": "Strong abstract.",
+                "references": ["G. Ref"],
+            },
+            load_mathpix_metadata_observation_impl=lambda paper_id, *, layout=None: None,
+        )
+
+        self.assertEqual(resolved.metadata_observation["provider"], "grobid")
+        self.assertEqual(resolved.reference_observation["provider"], "grobid")
+
 
 if __name__ == "__main__":
     unittest.main()
