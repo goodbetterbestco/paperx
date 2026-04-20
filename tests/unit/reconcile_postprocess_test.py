@@ -13,7 +13,7 @@ from pipeline.reconcile.math_suppression import (
     looks_like_leading_display_math_echo,
     trim_embedded_display_math_from_paragraph,
 )
-from pipeline.reconcile.section_filter_binding_runtime import make_should_merge_paragraph_records
+from pipeline.reconcile.section_filters import make_should_merge_paragraph_records
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE, MATH_TOKEN_RE, TERMINAL_PUNCTUATION_RE
 from pipeline.reconcile.support_binding_runtime import (
     block_source_spans,

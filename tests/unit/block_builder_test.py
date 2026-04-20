@@ -56,7 +56,7 @@ from pipeline.reconcile.runtime_constants import (
     TERMINAL_PUNCTUATION_RE,
     TRAILING_NUMERIC_ARTIFACT_RE,
 )
-from pipeline.reconcile.screening_runtime import (
+from pipeline.reconcile.screening import (
     make_is_short_ocr_fragment,
     make_looks_like_browser_ui_scrap,
     make_looks_like_glyph_noise_cloud,

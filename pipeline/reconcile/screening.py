@@ -315,3 +315,156 @@ def is_short_ocr_fragment(
     if width and width > 80 and height < 30:
         return False
     return True
+
+
+def make_looks_like_vertical_label_cloud(
+    *,
+    strong_operator_count: Callable[[str], int],
+) -> Callable[[str, list[dict[str, Any]]], bool]:
+    def bound_looks_like_vertical_label_cloud(text: str, spans: list[dict[str, Any]]) -> bool:
+        return looks_like_vertical_label_cloud(
+            text,
+            spans,
+            strong_operator_count=strong_operator_count,
+        )
+
+    return bound_looks_like_vertical_label_cloud
+
+
+def make_looks_like_table_marker_cloud(
+    *,
+    strong_operator_count: Callable[[str], int],
+) -> Callable[[str, list[dict[str, Any]]], bool]:
+    def bound_looks_like_table_marker_cloud(text: str, spans: list[dict[str, Any]]) -> bool:
+        return looks_like_table_marker_cloud(
+            text,
+            spans,
+            strong_operator_count=strong_operator_count,
+        )
+
+    return bound_looks_like_table_marker_cloud
+
+
+def make_looks_like_browser_ui_scrap(
+    *,
+    short_word_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_browser_ui_scrap(text: str) -> bool:
+        return looks_like_browser_ui_scrap(
+            text,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_browser_ui_scrap
+
+
+def make_looks_like_quoted_identifier_fragment(
+    *,
+    short_word_re: Pattern[str],
+    quoted_identifier_fragment_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_quoted_identifier_fragment(text: str) -> bool:
+        return looks_like_quoted_identifier_fragment(
+            text,
+            short_word_re=short_word_re,
+            quoted_identifier_fragment_re=quoted_identifier_fragment_re,
+        )
+
+    return bound_looks_like_quoted_identifier_fragment
+
+
+def make_looks_like_glyph_noise_cloud(
+    *,
+    short_word_re: Pattern[str],
+) -> Callable[[str], bool]:
+    def bound_looks_like_glyph_noise_cloud(text: str) -> bool:
+        return looks_like_glyph_noise_cloud(
+            text,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_glyph_noise_cloud
+
+
+def make_is_figure_debris(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    diagram_decision_re: Pattern[str],
+    diagram_query_re: Pattern[str],
+    diagram_action_re: Pattern[str],
+    terminal_punctuation_re: Pattern[str],
+    short_word_re: Pattern[str],
+    rect_intersection_area: Callable[[dict[str, Any], dict[str, Any]], float],
+) -> Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool]:
+    def bound_is_figure_debris(
+        record: dict[str, Any],
+        figures_by_page: dict[int, list[dict[str, Any]]],
+    ) -> bool:
+        return is_figure_debris(
+            record,
+            figures_by_page,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            diagram_decision_re=diagram_decision_re,
+            diagram_query_re=diagram_query_re,
+            diagram_action_re=diagram_action_re,
+            terminal_punctuation_re=terminal_punctuation_re,
+            short_word_re=short_word_re,
+            rect_intersection_area=rect_intersection_area,
+        )
+
+    return bound_is_figure_debris
+
+
+def make_is_short_ocr_fragment(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    looks_like_browser_ui_scrap: Callable[[str], bool],
+    looks_like_quoted_identifier_fragment: Callable[[str], bool],
+    looks_like_glyph_noise_cloud: Callable[[str], bool],
+    looks_like_vertical_label_cloud: Callable[[str, list[dict[str, Any]]], bool],
+    looks_like_table_marker_cloud: Callable[[str, list[dict[str, Any]]], bool],
+    short_word_re: Pattern[str],
+    label_cloud_token_re: Pattern[str],
+    short_ocr_noise_re: Pattern[str],
+    terminal_punctuation_re: Pattern[str],
+    strong_operator_count: Callable[[str], int],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_is_short_ocr_fragment(record: dict[str, Any]) -> bool:
+        return is_short_ocr_fragment(
+            record,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            looks_like_browser_ui_scrap=looks_like_browser_ui_scrap,
+            looks_like_quoted_identifier_fragment=looks_like_quoted_identifier_fragment,
+            looks_like_glyph_noise_cloud=looks_like_glyph_noise_cloud,
+            looks_like_vertical_label_cloud=looks_like_vertical_label_cloud,
+            looks_like_table_marker_cloud=looks_like_table_marker_cloud,
+            short_word_re=short_word_re,
+            label_cloud_token_re=label_cloud_token_re,
+            short_ocr_noise_re=short_ocr_noise_re,
+            terminal_punctuation_re=terminal_punctuation_re,
+            strong_operator_count=strong_operator_count,
+        )
+
+    return bound_is_short_ocr_fragment
+
+
+__all__ = [
+    "is_figure_debris",
+    "is_short_ocr_fragment",
+    "looks_like_browser_ui_scrap",
+    "looks_like_glyph_noise_cloud",
+    "looks_like_quoted_identifier_fragment",
+    "looks_like_table_marker_cloud",
+    "looks_like_vertical_label_cloud",
+    "make_is_figure_debris",
+    "make_is_short_ocr_fragment",
+    "make_looks_like_browser_ui_scrap",
+    "make_looks_like_glyph_noise_cloud",
+    "make_looks_like_quoted_identifier_fragment",
+    "make_looks_like_table_marker_cloud",
+    "make_looks_like_vertical_label_cloud",
+]

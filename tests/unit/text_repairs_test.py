@@ -21,7 +21,7 @@ from pipeline.reconcile.runtime_constants import (
 from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints, repair_record_text_with_pdftotext
 from pipeline.reconcile.layout_records import rect_x_overlap_ratio
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
-from pipeline.reconcile.screening_runtime import (
+from pipeline.reconcile.screening import (
     make_is_short_ocr_fragment,
     make_looks_like_browser_ui_scrap,
     make_looks_like_glyph_noise_cloud,

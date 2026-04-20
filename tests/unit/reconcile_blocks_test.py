@@ -86,7 +86,7 @@ from pipeline.reconcile.runtime_constants import (
     TERMINAL_PUNCTUATION_RE,
     TRUNCATED_PROSE_LEAD_STOPWORDS,
 )
-from pipeline.reconcile.screening_runtime import (
+from pipeline.reconcile.screening import (
     make_is_figure_debris,
     make_is_short_ocr_fragment,
     make_looks_like_browser_ui_scrap,
@@ -95,7 +95,7 @@ from pipeline.reconcile.screening_runtime import (
     make_looks_like_table_marker_cloud,
     make_looks_like_vertical_label_cloud,
 )
-from pipeline.reconcile.section_filter_binding_runtime import (
+from pipeline.reconcile.section_filters import (
     make_looks_like_running_header_record,
     make_looks_like_table_body_debris,
     make_should_merge_paragraph_records,

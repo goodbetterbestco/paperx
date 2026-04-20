@@ -387,3 +387,168 @@ def should_merge_paragraph_records(
     if previous_has_terminal and current_starts_sentence and current_x0 >= previous_x0 - 2:
         return False
     return True
+
+
+def make_starts_like_paragraph_continuation(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[str], bool]:
+    def bound_starts_like_paragraph_continuation(text: str) -> bool:
+        return starts_like_paragraph_continuation(
+            text,
+            clean_text=clean_text,
+        )
+
+    return bound_starts_like_paragraph_continuation
+
+
+def make_starts_like_strong_paragraph_continuation(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[str], bool]:
+    def bound_starts_like_strong_paragraph_continuation(text: str) -> bool:
+        return starts_like_strong_paragraph_continuation(
+            text,
+            clean_text=clean_text,
+        )
+
+    return bound_starts_like_strong_paragraph_continuation
+
+
+def make_ends_like_short_lead_in(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[str], bool]:
+    def bound_ends_like_short_lead_in(text: str) -> bool:
+        return ends_like_short_lead_in(
+            text,
+            clean_text=clean_text,
+        )
+
+    return bound_ends_like_short_lead_in
+
+
+def make_ends_like_clause_lead_in(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[str], bool]:
+    def bound_ends_like_clause_lead_in(text: str) -> bool:
+        return ends_like_clause_lead_in(
+            text,
+            clean_text=clean_text,
+        )
+
+    return bound_ends_like_clause_lead_in
+
+
+def make_merge_anchor_spans(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any]], list[dict[str, Any]]]:
+    def bound_merge_anchor_spans(record: dict[str, Any]) -> list[dict[str, Any]]:
+        return merge_anchor_spans(
+            record,
+            block_source_spans=block_source_spans,
+        )
+
+    return bound_merge_anchor_spans
+
+
+def make_looks_like_running_header_record(
+    *,
+    clean_text: Callable[[str], str],
+    running_header_text_re: Any,
+    short_word_re: Any,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_looks_like_running_header_record(record: dict[str, Any]) -> bool:
+        return looks_like_running_header_record(
+            record,
+            clean_text=clean_text,
+            running_header_text_re=running_header_text_re,
+            short_word_re=short_word_re,
+            block_source_spans=block_source_spans,
+        )
+
+    return bound_looks_like_running_header_record
+
+
+def make_looks_like_table_body_debris(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any]], bool]:
+    def bound_looks_like_table_body_debris(record: dict[str, Any]) -> bool:
+        return looks_like_table_body_debris(
+            record,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+        )
+
+    return bound_looks_like_table_body_debris
+
+
+def make_suppress_embedded_table_headings(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    table_caption_re: Any,
+    parse_heading_label: Callable[[str], Any],
+    clean_heading_title: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def bound_suppress_embedded_table_headings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return suppress_embedded_table_headings(
+            records,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            table_caption_re=table_caption_re,
+            parse_heading_label=parse_heading_label,
+            clean_heading_title=clean_heading_title,
+        )
+
+    return bound_suppress_embedded_table_headings
+
+
+def make_should_merge_paragraph_records(
+    *,
+    clean_text: Callable[[str], str],
+    short_word_re: Any,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    terminal_punctuation_re: Any,
+) -> Callable[[dict[str, Any], dict[str, Any]], bool]:
+    def bound_should_merge_paragraph_records(previous: dict[str, Any], current: dict[str, Any]) -> bool:
+        return should_merge_paragraph_records(
+            previous,
+            current,
+            clean_text=clean_text,
+            short_word_re=short_word_re,
+            block_source_spans=block_source_spans,
+            terminal_punctuation_re=terminal_punctuation_re,
+        )
+
+    return bound_should_merge_paragraph_records
+
+
+__all__ = [
+    "ends_like_clause_lead_in",
+    "ends_like_short_lead_in",
+    "is_paragraph_like_record",
+    "looks_like_running_header_record",
+    "looks_like_same_page_column_continuation",
+    "looks_like_table_body_debris",
+    "make_ends_like_clause_lead_in",
+    "make_ends_like_short_lead_in",
+    "make_looks_like_running_header_record",
+    "make_looks_like_table_body_debris",
+    "make_merge_anchor_spans",
+    "make_should_merge_paragraph_records",
+    "make_starts_like_paragraph_continuation",
+    "make_starts_like_strong_paragraph_continuation",
+    "make_suppress_embedded_table_headings",
+    "merge_anchor_spans",
+    "should_merge_paragraph_records",
+    "starts_like_paragraph_continuation",
+    "starts_like_sentence",
+    "starts_like_strong_paragraph_continuation",
+    "suppress_embedded_table_headings",
+]
