@@ -32,6 +32,22 @@ def render_acquisition_benchmark_status_markdown(report: dict[str, Any]) -> str:
         leader = capability.get("leader") or {}
         if leader:
             lines.append(f"- `{capability['capability']}`: `{leader['provider']}` at `{leader['score']}`")
+    for family in list(leaders.get("families") or []):
+        family_leaders = family.get("leaders") or {}
+        overall_family_leader = family_leaders.get("overall") or {}
+        if overall_family_leader:
+            lines.append(
+                f"- family `{family['family']}` overall leader: "
+                f"`{overall_family_leader['provider']}` "
+                f"at `{overall_family_leader.get('avg_overall_score', overall_family_leader.get('overall'))}`"
+            )
+        for capability in list(family_leaders.get("capabilities") or []):
+            leader = capability.get("leader") or {}
+            if leader:
+                lines.append(
+                    f"- family `{family['family']}` capability `{capability['capability']}` leader: "
+                    f"`{leader['provider']}` at `{leader.get('avg_score', leader.get('score'))}`"
+                )
 
     lines.extend([
         "",

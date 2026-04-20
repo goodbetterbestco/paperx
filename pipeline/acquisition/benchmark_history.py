@@ -9,6 +9,7 @@ from pipeline.acquisition.benchmark_reports import (
     benchmark_capability_score_maps,
     benchmark_report_label,
     capability_leader_rows,
+    family_leader_rows,
     list_history_reports,
     load_benchmark_report,
     provider_leader_summary,
@@ -77,6 +78,14 @@ def list_benchmark_history(history_dir: str | Path = DEFAULT_HISTORY_DIR, *, lim
                 "leaders": {
                     **provider_leader_summary(provider_rows),
                     "capabilities": capability_leader_rows(capability_rows),
+                    "families": family_leader_rows(
+                        list(report.get("families") or []),
+                        list(report.get("family_capabilities") or []),
+                        overall_key="avg_overall_score",
+                        content_key="avg_content_score",
+                        execution_key="avg_execution_score",
+                        capability_value_key="avg_score",
+                    ),
                 },
                 "capabilities": capability_rows,
             }

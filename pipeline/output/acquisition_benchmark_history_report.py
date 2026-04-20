@@ -23,6 +23,21 @@ def _render_run_leaders(run: dict[str, Any]) -> list[str]:
         leader = capability.get("leader") or {}
         if leader:
             lines.append(f"- Capability `{capability['capability']}` leader: `{leader['provider']}` at `{leader['score']}`")
+    for family in list(leaders.get("families") or []):
+        family_leaders = family.get("leaders") or {}
+        overall_leader = family_leaders.get("overall") or {}
+        if overall_leader:
+            lines.append(
+                f"- Family `{family['family']}` overall leader: "
+                f"`{overall_leader['provider']}` at `{overall_leader.get('avg_overall_score', overall_leader.get('overall'))}`"
+            )
+        for capability in list(family_leaders.get("capabilities") or []):
+            leader = capability.get("leader") or {}
+            if leader:
+                lines.append(
+                    f"- Family `{family['family']}` capability `{capability['capability']}` leader: "
+                    f"`{leader['provider']}` at `{leader.get('avg_score', leader.get('score'))}`"
+                )
     return lines
 
 

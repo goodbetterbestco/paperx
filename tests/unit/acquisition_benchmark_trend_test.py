@@ -96,6 +96,7 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
         self.assertEqual(report["top_improvements"][0]["provider"], "docling")
         self.assertEqual(report["top_regressions"][0]["provider"], "mathpix")
         self.assertEqual(report["leaders"]["candidate"]["overall"]["provider"], "docling")
+        self.assertEqual(report["leaders"]["candidate"]["families"][0]["family"], "math_dense")
         family = report["families"][0]
         self.assertEqual(family["family"], "math_dense")
         self.assertEqual(family["improvements"][0]["provider"], "docling")
@@ -131,6 +132,7 @@ class AcquisitionBenchmarkTrendTest(unittest.TestCase):
         self.assertIn("# Acquisition Benchmark Trend", printed[0])
         self.assertIn("born_digital_scholarly", printed[0])
         self.assertIn("Leader Shift", printed[0])
+        self.assertIn("Family Leader Shift", printed[0])
         self.assertIn("Capability Watchlist", printed[0])
 
 

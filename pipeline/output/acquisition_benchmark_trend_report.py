@@ -45,6 +45,54 @@ def _render_leader_shift(report: dict[str, Any]) -> list[str]:
     return lines
 
 
+def _render_family_leader_shift(report: dict[str, Any]) -> list[str]:
+    leaders = report.get("leaders") or {}
+    base = {
+        str(item.get("family", "") or ""): item.get("leaders") or {}
+        for item in list((leaders.get("base") or {}).get("families") or [])
+        if str(item.get("family", "") or "").strip()
+    }
+    candidate = {
+        str(item.get("family", "") or ""): item.get("leaders") or {}
+        for item in list((leaders.get("candidate") or {}).get("families") or [])
+        if str(item.get("family", "") or "").strip()
+    }
+    lines = ["## Family Leader Shift", ""]
+    for family in sorted(set(base) | set(candidate)):
+        base_leaders = base.get(family, {})
+        candidate_leaders = candidate.get(family, {})
+        base_overall = base_leaders.get("overall") or {}
+        candidate_overall = candidate_leaders.get("overall") or {}
+        lines.append(
+            f"- family `{family}` overall: "
+            f"`{base_overall.get('provider', 'none')}` "
+            f"`{base_overall.get('avg_overall_score', base_overall.get('overall', 'n/a'))}`"
+            f" -> `{candidate_overall.get('provider', 'none')}` "
+            f"`{candidate_overall.get('avg_overall_score', candidate_overall.get('overall', 'n/a'))}`"
+        )
+        base_capabilities = {
+            str(item.get("capability", "") or ""): item.get("leader") or {}
+            for item in list(base_leaders.get("capabilities") or [])
+            if str(item.get("capability", "") or "").strip()
+        }
+        candidate_capabilities = {
+            str(item.get("capability", "") or ""): item.get("leader") or {}
+            for item in list(candidate_leaders.get("capabilities") or [])
+            if str(item.get("capability", "") or "").strip()
+        }
+        for capability in sorted(set(base_capabilities) | set(candidate_capabilities)):
+            base_row = base_capabilities.get(capability, {})
+            candidate_row = candidate_capabilities.get(capability, {})
+            lines.append(
+                f"- family `{family}` capability `{capability}`: "
+                f"`{base_row.get('provider', 'none')}` `{base_row.get('avg_score', base_row.get('score', 'n/a'))}`"
+                f" -> `{candidate_row.get('provider', 'none')}` "
+                f"`{candidate_row.get('avg_score', candidate_row.get('score', 'n/a'))}`"
+            )
+    lines.append("")
+    return lines
+
+
 def _render_changes(title: str, rows: list[dict[str, Any]]) -> list[str]:
     lines = [title, ""]
     if not rows:
@@ -83,6 +131,7 @@ def render_acquisition_benchmark_trend_markdown(report: dict[str, Any]) -> str:
         "",
     ]
     lines.extend(_render_leader_shift(report))
+    lines.extend(_render_family_leader_shift(report))
     lines.extend(_render_changes("## Top Improvements", list(report.get("top_improvements") or [])))
     lines.extend(_render_changes("## Top Regressions", list(report.get("top_regressions") or [])))
     lines.append("## Capability Watchlist")

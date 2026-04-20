@@ -119,6 +119,10 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             {entry["capability"] for entry in family_capabilities["born_digital_scholarly"]},
             {"layout", "math", "metadata_reference"},
         )
+        self.assertEqual(report["leaders"]["overall"]["provider"], "docling")
+        family_leaders = {entry["family"]: entry["leaders"] for entry in report["leaders"]["families"]}
+        self.assertIn("math_dense", family_leaders)
+        self.assertEqual(family_leaders["math_dense"]["overall"]["provider"], "mathpix")
 
     def test_benchmark_cli_prints_json_report(self) -> None:
         printed: list[str] = []
@@ -190,8 +194,10 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("degraded_garbled_fixture", printed[0])
             self.assertIn("grobid", printed[0])
             self.assertIn("metadata target", printed[0])
+            self.assertIn("## Current Leaders", printed[0])
             self.assertIn("## Capability Ranking", printed[0])
             self.assertIn("## Family Capability Breakdown", printed[0])
+            self.assertIn("family `math_dense` overall leader", printed[0])
             self.assertIn(str(json_path), printed[0])
             self.assertIn(str(snapshot_json_path), printed[0])
             self.assertIn(str(snapshot_markdown_path), printed[0])

@@ -180,6 +180,40 @@ def capability_leader_rows(
     return leaders
 
 
+def family_leader_rows(
+    families: list[dict[str, Any]],
+    family_capabilities: list[dict[str, Any]],
+    *,
+    overall_key: str = "overall",
+    content_key: str = "content",
+    execution_key: str = "execution",
+    capability_value_key: str = "score",
+) -> list[dict[str, Any]]:
+    capability_lookup = {
+        str(item.get("family", "") or "").strip(): list(item.get("capabilities") or [])
+        for item in family_capabilities
+        if str(item.get("family", "") or "").strip()
+    }
+    rows: list[dict[str, Any]] = []
+    for family in families:
+        family_name = str(family.get("family", "") or "").strip()
+        if not family_name:
+            continue
+        leaders = provider_leader_summary(
+            list(family.get("providers") or []),
+            overall_key=overall_key,
+            content_key=content_key,
+            execution_key=execution_key,
+        )
+        leaders["capabilities"] = capability_leader_rows(
+            capability_lookup.get(family_name, []),
+            value_key=capability_value_key,
+        )
+        rows.append({"family": family_name, "leaders": leaders})
+    rows.sort(key=lambda item: item["family"])
+    return rows
+
+
 def benchmark_report_label(report: dict[str, Any], *, fallback_path: str | Path | None = None) -> str:
     label = str(report.get("snapshot_label", "") or "").strip()
     if label:
@@ -197,6 +231,7 @@ __all__ = [
     "capability_score_map",
     "capability_leader_rows",
     "family_capability_score_maps",
+    "family_leader_rows",
     "family_provider_score_maps",
     "leader_for_metric",
     "list_history_reports",

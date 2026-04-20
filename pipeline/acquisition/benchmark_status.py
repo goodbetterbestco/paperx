@@ -20,8 +20,10 @@ def summarize_latest_benchmark_status(
     latest = latest_run[-1] if latest_run else None
     latest_providers = list((latest or {}).get("providers") or [])
     latest_capabilities = list((latest or {}).get("capabilities") or [])
-    leaders = provider_leader_summary(latest_providers)
-    leaders["capabilities"] = capability_leader_rows(latest_capabilities)
+    leaders = dict((latest or {}).get("leaders") or {})
+    if not leaders:
+        leaders = provider_leader_summary(latest_providers)
+        leaders["capabilities"] = capability_leader_rows(latest_capabilities)
 
     return {
         "history_dir": history.get("history_dir"),

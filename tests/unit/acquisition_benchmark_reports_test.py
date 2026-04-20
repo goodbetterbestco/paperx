@@ -19,6 +19,7 @@ from pipeline.acquisition.benchmark_reports import (
     family_provider_score_maps,
     family_capability_score_maps,
     capability_leader_rows,
+    family_leader_rows,
     leader_for_metric,
     list_history_reports,
     provider_leader_summary,
@@ -111,6 +112,17 @@ class AcquisitionBenchmarkReportsTest(unittest.TestCase):
             "docling",
         )
         self.assertEqual(capability_leader_rows(report["capabilities"])[0]["leader"]["provider"], "grobid")
+        self.assertEqual(
+            family_leader_rows(
+                report["families"],
+                report["family_capabilities"],
+                overall_key="avg_overall_score",
+                content_key="avg_content_score",
+                execution_key="avg_execution_score",
+                capability_value_key="avg_score",
+            )[0]["leaders"]["overall"]["provider"],
+            "mathpix",
+        )
 
 
 if __name__ == "__main__":

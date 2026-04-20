@@ -9,6 +9,7 @@ from pipeline.acquisition.benchmark_reports import (
     benchmark_capability_score_maps,
     capability_leader_rows,
     family_capability_score_maps,
+    family_leader_rows,
     family_provider_score_maps,
     load_benchmark_report,
     provider_leader_summary,
@@ -111,6 +112,14 @@ def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path)
                     execution_key="avg_execution_score",
                 ),
                 "capabilities": capability_leader_rows(list(base_report.get("capabilities") or []), value_key="avg_score"),
+                "families": family_leader_rows(
+                    list(base_report.get("families") or []),
+                    list(base_report.get("family_capabilities") or []),
+                    overall_key="avg_overall_score",
+                    content_key="avg_content_score",
+                    execution_key="avg_execution_score",
+                    capability_value_key="avg_score",
+                ),
             },
             "candidate": {
                 **provider_leader_summary(
@@ -122,6 +131,14 @@ def compare_benchmark_reports(base_path: str | Path, candidate_path: str | Path)
                 "capabilities": capability_leader_rows(
                     list(candidate_report.get("capabilities") or []),
                     value_key="avg_score",
+                ),
+                "families": family_leader_rows(
+                    list(candidate_report.get("families") or []),
+                    list(candidate_report.get("family_capabilities") or []),
+                    overall_key="avg_overall_score",
+                    content_key="avg_content_score",
+                    execution_key="avg_execution_score",
+                    capability_value_key="avg_score",
                 ),
             },
         },

@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 from typing import Any
 
+from pipeline.acquisition.benchmark_reports import capability_leader_rows, family_leader_rows, provider_leader_summary
 from pipeline.acquisition.providers import (
     derive_metadata_reference_observation_from_layout,
     load_metadata_reference_observation,
@@ -517,14 +518,32 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
         }
         for family_name, capability_values in sorted(family_capability_totals.items())
     ]
+    capabilities = _aggregate_capability_rankings(capability_totals)
     return {
         "manifest_path": str(Path(manifest_path).resolve()),
         "paper_count": len(per_paper_results),
         "papers": per_paper_results,
         "aggregate": aggregate,
         "families": families,
-        "capabilities": _aggregate_capability_rankings(capability_totals),
+        "capabilities": capabilities,
         "family_capabilities": family_capabilities,
+        "leaders": {
+            **provider_leader_summary(
+                aggregate,
+                overall_key="avg_overall_score",
+                content_key="avg_content_score",
+                execution_key="avg_execution_score",
+            ),
+            "capabilities": capability_leader_rows(capabilities, value_key="avg_score"),
+            "families": family_leader_rows(
+                families,
+                family_capabilities,
+                overall_key="avg_overall_score",
+                content_key="avg_content_score",
+                execution_key="avg_execution_score",
+                capability_value_key="avg_score",
+            ),
+        },
     }
 
 

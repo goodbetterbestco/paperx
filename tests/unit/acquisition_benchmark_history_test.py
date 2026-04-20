@@ -35,6 +35,24 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
                             {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.8}]},
                             {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.7}]},
                         ],
+                        "families": [
+                            {
+                                "family": "unclassified",
+                                "providers": [
+                                    {"provider": "docling", "avg_overall_score": 0.7, "avg_content_score": 0.6, "avg_execution_score": 0.8},
+                                    {"provider": "mathpix", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "unclassified",
+                                "capabilities": [
+                                    {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.8}]},
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.7}]},
+                                ],
+                            }
+                        ],
                     }
                 ),
                 encoding="utf-8",
@@ -52,6 +70,24 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
                             {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.9}]},
                             {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.6}]},
                         ],
+                        "families": [
+                            {
+                                "family": "unclassified",
+                                "providers": [
+                                    {"provider": "docling", "avg_overall_score": 0.8, "avg_content_score": 0.7, "avg_execution_score": 0.9},
+                                    {"provider": "mathpix", "avg_overall_score": 0.45, "avg_content_score": 0.35, "avg_execution_score": 0.55},
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "unclassified",
+                                "capabilities": [
+                                    {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.9}]},
+                                    {"capability": "math", "providers": [{"provider": "mathpix", "avg_score": 0.6}]},
+                                ],
+                            }
+                        ],
                     }
                 ),
                 encoding="utf-8",
@@ -66,6 +102,7 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
         self.assertEqual(providers["docling"]["overall_delta_vs_previous"], 0.1)
         self.assertEqual(providers["mathpix"]["overall_delta_vs_previous"], -0.05)
         self.assertEqual(latest["leaders"]["overall"]["provider"], "docling")
+        self.assertEqual(latest["leaders"]["families"][0]["family"], "unclassified")
         capabilities = {item["capability"]: item["providers"] for item in latest["capabilities"]}
         self.assertEqual(capabilities["layout"][0]["score_delta_vs_previous"], 0.1)
         self.assertEqual(capabilities["math"][0]["score_delta_vs_previous"], -0.1)
@@ -85,6 +122,22 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
                         "capabilities": [
                             {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}
                         ],
+                        "families": [
+                            {
+                                "family": "unclassified",
+                                "providers": [
+                                    {"provider": "docling", "avg_overall_score": 0.5, "avg_content_score": 0.4, "avg_execution_score": 0.6}
+                                ],
+                            }
+                        ],
+                        "family_capabilities": [
+                            {
+                                "family": "unclassified",
+                                "capabilities": [
+                                    {"capability": "layout", "providers": [{"provider": "docling", "avg_score": 0.7}]}
+                                ],
+                            }
+                        ],
                     }
                 ),
                 encoding="utf-8",
@@ -100,6 +153,7 @@ class AcquisitionBenchmarkHistoryTest(unittest.TestCase):
         self.assertIn("# Acquisition Benchmark History", printed[0])
         self.assertIn("baseline", printed[0])
         self.assertIn("Leaders:", printed[0])
+        self.assertIn("Family `unclassified` overall leader", printed[0])
         self.assertIn("layout", printed[0])
 
 
