@@ -14,11 +14,8 @@ from pipeline.reconcile.math_fragments_runtime import (
     make_merge_math_fragment_records,
 )
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE, MATH_TOKEN_RE
-from pipeline.reconcile.support_binding_runtime import (
-    block_source_spans,
-    make_clean_text,
-    make_record_analysis_text,
-)
+from pipeline.reconcile.runtime_support import block_source_spans
+from pipeline.reconcile.text_cleaning import make_clean_text, make_record_analysis_text
 from pipeline.text.headings import compact_text
 
 

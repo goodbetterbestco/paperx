@@ -14,17 +14,15 @@ from pipeline.reconcile.layout_records import (
     make_append_figure_caption_fragment,
     make_layout_record,
     make_match_figure_for_caption_record,
+    make_normalize_figure_caption_text,
     make_page_one_front_matter_records,
     make_record_bbox,
     make_strip_caption_label_prefix,
     rect_x_overlap_ratio,
     synthetic_caption_record,
 )
-from pipeline.reconcile.support_binding_runtime import (
-    block_source_spans,
-    make_clean_text,
-    make_normalize_figure_caption_text,
-)
+from pipeline.reconcile.runtime_support import block_source_spans
+from pipeline.reconcile.text_cleaning import make_clean_text
 from pipeline.reconcile.text_repairs import mathpix_text_blocks_by_page
 from pipeline.reconcile.runtime_constants import CONTROL_CHAR_RE
 from pipeline.text.headings import compact_text, normalize_title_key

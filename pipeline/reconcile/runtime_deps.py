@@ -49,18 +49,22 @@ from pipeline.reconcile.math_fragments_runtime import (
     make_merge_math_fragment_records as reconcile_make_merge_math_fragment_records_runtime,
     strong_operator_count as reconcile_strong_operator_count_runtime,
 )
-from pipeline.reconcile.support_binding_runtime import (
+from pipeline.reconcile.layout_records import (
+    make_normalize_figure_caption_text as reconcile_make_normalize_figure_caption_text_binding_runtime,
+)
+from pipeline.reconcile.runtime_support import (
     block_source_spans as reconcile_block_source_spans_binding_runtime,
+    make_mathish_ratio as reconcile_make_mathish_ratio_binding_runtime,
+    make_normalize_formula_display_text as reconcile_make_normalize_formula_display_text_binding_runtime,
+    now_iso as reconcile_now_iso_binding_runtime,
+)
+from pipeline.reconcile.text_cleaning import (
     make_clean_record as reconcile_make_clean_record_binding_runtime,
     make_clean_text as reconcile_make_clean_text_binding_runtime,
     make_is_pdftotext_candidate_better as reconcile_make_is_pdftotext_candidate_better_binding_runtime,
-    make_mathish_ratio as reconcile_make_mathish_ratio_binding_runtime,
-    make_normalize_figure_caption_text as reconcile_make_normalize_figure_caption_text_binding_runtime,
-    make_normalize_formula_display_text as reconcile_make_normalize_formula_display_text_binding_runtime,
     make_record_analysis_text as reconcile_make_record_analysis_text_binding_runtime,
     make_strip_known_running_header_text as reconcile_make_strip_known_running_header_text_binding_runtime,
     make_word_count as reconcile_make_word_count_binding_runtime,
-    now_iso as reconcile_now_iso_binding_runtime,
 )
 from pipeline.reconcile.references import (
     make_bound_reference_helpers as reconcile_make_bound_reference_helpers_binding_runtime,

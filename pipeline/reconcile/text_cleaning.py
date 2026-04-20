@@ -105,3 +105,138 @@ def is_pdftotext_candidate_better(
     if candidate_words > max(12, int(original_words * 2.25)):
         return False
     return True
+
+
+def make_clean_text(
+    *,
+    control_char_re: Any,
+    compact_text: Callable[[str], str],
+) -> Callable[[str], str]:
+    def bound_clean_text(text: str) -> str:
+        return clean_text(
+            text,
+            control_char_re=control_char_re,
+            compact_text=compact_text,
+        )
+
+    return bound_clean_text
+
+
+def make_strip_known_running_header_text(
+    *,
+    procedia_running_header_re: Any,
+    clean_text: Callable[[str], str],
+) -> Callable[[str], str]:
+    def bound_strip_known_running_header_text(text: str) -> str:
+        return strip_known_running_header_text(
+            text,
+            procedia_running_header_re=procedia_running_header_re,
+            clean_text=clean_text,
+        )
+
+    return bound_strip_known_running_header_text
+
+
+def make_clean_record(
+    *,
+    strip_known_running_header_text: Callable[[str], str],
+) -> Callable[[dict[str, Any]], dict[str, Any]]:
+    def bound_clean_record(record: dict[str, Any]) -> dict[str, Any]:
+        return clean_record(
+            record,
+            strip_known_running_header_text=strip_known_running_header_text,
+        )
+
+    return bound_clean_record
+
+
+def make_normalize_paragraph_text(
+    *,
+    strip_known_running_header_text: Callable[[str], str],
+    leading_negationslash_artifact_re: Any,
+    leading_ocr_marker_re: Any,
+    leading_punct_artifact_re: Any,
+    leading_var_artifact_re: Any,
+    trailing_numeric_artifact_re: Any,
+    normalize_prose_text: Callable[[str], tuple[str, Any]],
+    clean_text: Callable[[str], str],
+) -> Callable[[str], str]:
+    def bound_normalize_paragraph_text(text: str) -> str:
+        return normalize_paragraph_text(
+            text,
+            strip_known_running_header_text=strip_known_running_header_text,
+            leading_negationslash_artifact_re=leading_negationslash_artifact_re,
+            leading_ocr_marker_re=leading_ocr_marker_re,
+            leading_punct_artifact_re=leading_punct_artifact_re,
+            leading_var_artifact_re=leading_var_artifact_re,
+            trailing_numeric_artifact_re=trailing_numeric_artifact_re,
+            normalize_prose_text=normalize_prose_text,
+            clean_text=clean_text,
+        )
+
+    return bound_normalize_paragraph_text
+
+
+def make_record_analysis_text(
+    *,
+    clean_text: Callable[[str], str],
+) -> Callable[[dict[str, Any]], str]:
+    def bound_record_analysis_text(record: dict[str, Any]) -> str:
+        return record_analysis_text(
+            record,
+            clean_text=clean_text,
+        )
+
+    return bound_record_analysis_text
+
+
+def make_word_count(
+    *,
+    short_word_re: Any,
+) -> Callable[[str], int]:
+    def bound_word_count(text: str) -> int:
+        return word_count(
+            text,
+            short_word_re=short_word_re,
+        )
+
+    return bound_word_count
+
+
+def make_is_pdftotext_candidate_better(
+    *,
+    clean_text: Callable[[str], str],
+    word_count: Callable[[str], int],
+) -> Callable[[str, str, str], bool]:
+    def bound_is_pdftotext_candidate_better(
+        original_text: str,
+        candidate_text: str,
+        record_type: str,
+    ) -> bool:
+        return is_pdftotext_candidate_better(
+            original_text,
+            candidate_text,
+            record_type,
+            clean_text=clean_text,
+            word_count=word_count,
+        )
+
+    return bound_is_pdftotext_candidate_better
+
+
+__all__ = [
+    "clean_record",
+    "clean_text",
+    "is_pdftotext_candidate_better",
+    "make_clean_record",
+    "make_clean_text",
+    "make_is_pdftotext_candidate_better",
+    "make_normalize_paragraph_text",
+    "make_record_analysis_text",
+    "make_strip_known_running_header_text",
+    "make_word_count",
+    "normalize_paragraph_text",
+    "record_analysis_text",
+    "strip_known_running_header_text",
+    "word_count",
+]

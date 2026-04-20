@@ -20,6 +20,21 @@ def normalize_figure_caption_text(
     return clean_text(normalized)
 
 
+def make_normalize_figure_caption_text(
+    *,
+    clean_text: Callable[[str], str],
+    normalize_prose_text: Callable[[str], tuple[str, Any]],
+) -> Callable[[str], str]:
+    def bound_normalize_figure_caption_text(text: str) -> str:
+        return normalize_figure_caption_text(
+            text,
+            clean_text=clean_text,
+            normalize_prose_text=normalize_prose_text,
+        )
+
+    return bound_normalize_figure_caption_text
+
+
 def layout_record(
     block: LayoutBlock,
     *,
@@ -445,6 +460,7 @@ __all__ = [
     "make_layout_record",
     "make_merge_layout_and_figure_records",
     "make_match_figure_for_caption_record",
+    "make_normalize_figure_caption_text",
     "make_page_one_front_matter_records",
     "make_record_bbox",
     "make_strip_caption_label_prefix",

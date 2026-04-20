@@ -144,7 +144,7 @@ from pipeline.reconcile.shared_patterns import (
     TABLE_CAPTION_RE,
 )
 from pipeline.reconcile.stage_runtime import ReconcileRuntimeInputs, run_reconcile_pipeline as reconcile_run_reconcile_pipeline_runtime
-from pipeline.reconcile.support_binding_runtime import page_height_map as reconcile_page_height_map_binding_runtime
+from pipeline.reconcile.runtime_support import page_height_map as reconcile_page_height_map_binding_runtime
 from pipeline.reconcile.text_cleaning import normalize_paragraph_text as reconcile_normalize_paragraph_text
 from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as reconcile_repair_record_text_with_mathpix_hints
 from pipeline.selectors.abstract_selector import build_abstract_decision
