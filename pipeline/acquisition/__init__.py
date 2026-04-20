@@ -39,6 +39,7 @@ from pipeline.acquisition.remediation_plan_artifacts import (
     load_current_remediation_plan_summary,
     write_remediation_plan_artifact_bundle,
 )
+from pipeline.acquisition.remediation_plan_backlog import select_remediation_plan_waves
 from pipeline.acquisition.remediation_plan_dashboard import summarize_remediation_plan_dashboard
 from pipeline.acquisition.remediation_plan_history import list_remediation_plan_history
 from pipeline.acquisition.remediation_plan_reports import (
@@ -113,6 +114,7 @@ __all__ = [
     "resolve_remediation_plan_report_path",
     "run_acquisition_benchmark",
     "run_grobid_trial",
+    "select_remediation_plan_waves",
     "summarize_benchmark_dashboard",
     "summarize_latest_benchmark_status",
     "summarize_benchmark_trend",

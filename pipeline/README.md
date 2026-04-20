@@ -164,7 +164,10 @@ wave id into the remediation run artifacts, so
 `pipeline.cli.show_acquisition_remediation_plan_status`,
 `pipeline.cli.list_acquisition_remediation_plan_history`, and
 `pipeline.cli.show_acquisition_remediation_plan_dashboard` can reconcile saved
-plans against actual queue executions.
+plans against actual queue executions. `pipeline.cli.run_acquisition_remediation_plan_backlog`
+can then batch the still-actionable waves from that saved plan, defaulting to
+pending, dry-run-only, and failed waves so operators can keep working the plan
+without re-curating the next run set by hand.
 The fixture-backed acquisition benchmark can now also score execution-policy
 behavior when provider fixtures include `acquisition-execution.json` sidecars,
 including route agreement, OCR application correctness, and selected-provider

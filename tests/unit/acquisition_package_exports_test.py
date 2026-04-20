@@ -46,6 +46,7 @@ class AcquisitionPackageExportsTest(unittest.TestCase):
         self.assertTrue(callable(acquisition.resolve_benchmark_report_path))
         self.assertTrue(callable(acquisition.resolve_remediation_plan_report_path))
         self.assertTrue(callable(acquisition.provider_score_map))
+        self.assertTrue(callable(acquisition.select_remediation_plan_waves))
         self.assertTrue(callable(acquisition.write_benchmark_artifact_bundle))
         self.assertTrue(callable(acquisition.write_remediation_plan_artifact_bundle))
         self.assertTrue(callable(acquisition.write_remediation_artifact_bundle))
