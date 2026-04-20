@@ -8,7 +8,7 @@ if str(ROOT) not in sys.path:
 
 import pipeline.reconcile.shared_patterns as rsp
 from pipeline.assembly.record_block_builder import (
-    build_blocks_for_record as assemble_build_blocks_for_record,
+    make_build_blocks_for_record,
     split_code_lines,
 )
 from pipeline.figures.labels import caption_label
@@ -30,7 +30,6 @@ from pipeline.reconcile.block_builder_binding_runtime import (
     make_looks_like_real_code_record,
     make_match_external_math_entry,
 )
-from pipeline.reconcile.block_merging import merge_code_records as reconcile_merge_code_records
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
 from pipeline.reconcile.math_runtime import (
     make_looks_like_display_math_echo,
@@ -42,7 +41,7 @@ from pipeline.reconcile.math_suppression import (
     overlapping_external_math_entries as suppression_overlapping_external_math_entries,
     trim_embedded_display_math_from_paragraph as suppression_trim_embedded_display_math_from_paragraph,
 )
-from pipeline.reconcile.record_runtime import make_build_blocks_for_record, make_merge_code_records
+from pipeline.reconcile.block_merging import make_merge_code_records
 from pipeline.reconcile.reference_binding_runtime import make_reference_entry
 from pipeline.reconcile.runtime_constants import (
     CONTROL_CHAR_RE,
@@ -179,12 +178,10 @@ LOOKS_LIKE_DISPLAY_MATH_ECHO = make_looks_like_display_math_echo(
     short_word_re=rsp.SHORT_WORD_RE,
 )
 MERGE_CODE_RECORDS = make_merge_code_records(
-    merge_code_records_impl=reconcile_merge_code_records,
     block_source_spans=block_source_spans,
     clean_text=CLEAN_TEXT,
 )
 BUILD_BLOCKS_FOR_RECORD = make_build_blocks_for_record(
-    build_blocks_for_record_impl=assemble_build_blocks_for_record,
     clean_record=CLEAN_RECORD,
     record_analysis_text=RECORD_ANALYSIS_TEXT,
     is_short_ocr_fragment=IS_SHORT_OCR_FRAGMENT,

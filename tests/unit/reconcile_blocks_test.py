@@ -22,12 +22,6 @@ from pipeline.policies.abstract_quality import (
     NO_ABSTRACT_IN_BASE_MATERIAL,
     abstract_quality_flags,
 )
-from pipeline.reconcile.block_merging import (
-    merge_paragraph_blocks as _block_merge_paragraph_blocks,
-    merge_paragraph_records as _block_merge_paragraph_records,
-    normalize_footnote_blocks as _block_normalize_footnote_blocks,
-    suppress_running_header_blocks as _block_suppress_running_header_blocks,
-)
 from pipeline.reconcile.external_math_binding_runtime import make_inject_external_math_records
 from pipeline.reconcile.external_math import rect_intersection_area
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation
@@ -40,18 +34,17 @@ from pipeline.reconcile.front_matter_runtime import (
     make_normalize_section_title,
     make_recover_missing_front_matter_abstract,
 )
-from pipeline.reconcile.heading_promotion import promote_heading_like_records as _heading_promote_heading_like_records
 from pipeline.reconcile.heading_promotion_runtime import (
     decode_control_heading_label,
     make_normalize_decoded_heading_title,
     make_split_embedded_heading_paragraph,
 )
 from pipeline.reconcile.layout_records import (
-    merge_layout_and_figure_records as _layout_merge_layout_and_figure_records,
     figure_label_token,
     make_absorb_figure_caption_continuations,
     make_append_figure_caption_fragment,
     make_layout_record,
+    make_merge_layout_and_figure_records as make_record_merge_layout_and_figure_records,
     make_match_figure_for_caption_record,
     make_record_bbox,
     make_strip_caption_label_prefix,
@@ -61,15 +54,14 @@ from pipeline.reconcile.layout_records import (
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
 from pipeline.reconcile.math_runtime import make_trim_embedded_display_math_from_paragraph
 from pipeline.reconcile.math_suppression import trim_embedded_display_math_from_paragraph as _math_trim_embedded_display_math_from_paragraph
-from pipeline.reconcile.record_runtime import (
-    make_merge_layout_and_figure_records as make_record_merge_layout_and_figure_records,
+from pipeline.reconcile.block_merging import (
     make_merge_paragraph_blocks,
     make_merge_paragraph_records,
     make_normalize_footnote_blocks,
-    make_promote_heading_like_records,
-    make_repair_record_text_with_mathpix_hints,
     make_suppress_running_header_blocks,
 )
+from pipeline.reconcile.heading_promotion import make_promote_heading_like_records
+from pipeline.reconcile.text_repairs import make_repair_record_text_with_mathpix_hints
 from pipeline.reconcile.reference_binding_runtime import make_bound_reference_helpers
 from pipeline.reconcile.runtime_constants import (
     ABOUT_AUTHOR_RE,
@@ -114,7 +106,6 @@ from pipeline.reconcile.support_binding_runtime import (
     make_strip_known_running_header_text,
     make_word_count,
 )
-from pipeline.reconcile.text_repairs import repair_record_text_with_mathpix_hints as _text_repair_record_text_with_mathpix_hints
 from pipeline.reconcile.text_repairs import make_bound_text_repair_helpers, mathpix_text_blocks_by_page
 from pipeline.math.extract import INLINE_MATH_RE
 from pipeline.text.headings import collapse_ocr_split_caps, looks_like_bad_heading
@@ -217,7 +208,6 @@ ABSORB_FIGURE_CAPTION_CONTINUATIONS = make_absorb_figure_caption_continuations(
     append_figure_caption_fragment=APPEND_FIGURE_CAPTION_FRAGMENT,
 )
 MERGE_LAYOUT_AND_FIGURE_RECORDS = make_record_merge_layout_and_figure_records(
-    merge_layout_and_figure_records_impl=_layout_merge_layout_and_figure_records,
     layout_record=LAYOUT_RECORD,
     absorb_figure_caption_continuations=ABSORB_FIGURE_CAPTION_CONTINUATIONS,
     figure_label_token=figure_label_token,
@@ -244,7 +234,6 @@ TEXT_REPAIR_HELPERS = make_bound_text_repair_helpers(
     parse_heading_label=parse_heading_label,
 )
 REPAIR_RECORD_TEXT_WITH_MATHPIX_HINTS = make_repair_record_text_with_mathpix_hints(
-    repair_record_text_with_mathpix_hints_impl=_text_repair_record_text_with_mathpix_hints,
     mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
     is_short_ocr_fragment=IS_SHORT_OCR_FRAGMENT,
     mathpix_text_hint_candidate=TEXT_REPAIR_HELPERS.mathpix_text_hint_candidate,
@@ -266,7 +255,6 @@ SPLIT_EMBEDDED_HEADING_PARAGRAPH = make_split_embedded_heading_paragraph(
     short_word_re=rsp.SHORT_WORD_RE,
 )
 PROMOTE_HEADING_LIKE_RECORDS = make_promote_heading_like_records(
-    promote_heading_like_records_impl=_heading_promote_heading_like_records,
     clean_text=CLEAN_TEXT,
     block_source_spans=block_source_spans,
     abstract_marker_only_re=fmp.ABSTRACT_MARKER_ONLY_RE,
@@ -280,27 +268,23 @@ PROMOTE_HEADING_LIKE_RECORDS = make_promote_heading_like_records(
     short_word_re=rsp.SHORT_WORD_RE,
 )
 MERGE_PARAGRAPH_RECORDS = make_merge_paragraph_records(
-    merge_paragraph_records_impl=_block_merge_paragraph_records,
     clean_text=CLEAN_TEXT,
     block_source_spans=block_source_spans,
     should_merge_paragraph_records=SHOULD_MERGE_PARAGRAPH_RECORDS,
     table_caption_re=rsp.TABLE_CAPTION_RE,
 )
 MERGE_PARAGRAPH_BLOCKS = make_merge_paragraph_blocks(
-    merge_paragraph_blocks_impl=_block_merge_paragraph_blocks,
     block_source_spans=block_source_spans,
     should_merge_paragraph_records=SHOULD_MERGE_PARAGRAPH_RECORDS,
     strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
 )
 NORMALIZE_FOOTNOTE_BLOCKS = make_normalize_footnote_blocks(
-    normalize_footnote_blocks_impl=_block_normalize_footnote_blocks,
     block_source_spans=block_source_spans,
     short_word_re=rsp.SHORT_WORD_RE,
     starts_like_sentence=starts_like_sentence,
     strip_known_running_header_text=STRIP_KNOWN_RUNNING_HEADER_TEXT,
 )
 SUPPRESS_RUNNING_HEADER_BLOCKS = make_suppress_running_header_blocks(
-    suppress_running_header_blocks_impl=_block_suppress_running_header_blocks,
     block_source_spans=block_source_spans,
     compact_text=compact_text,
     running_header_text_re=rsp.RUNNING_HEADER_TEXT_RE,

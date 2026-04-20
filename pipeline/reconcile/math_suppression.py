@@ -307,3 +307,45 @@ def mark_records_with_external_math_overlap(
         updated["meta"] = meta
         marked.append(updated)
     return marked
+
+
+def make_suppress_graphic_display_math_blocks(
+    *,
+    should_demote_graphic_math_entry_to_paragraph: Callable[[dict[str, Any]], bool],
+    paragraph_block_from_graphic_math_entry: Callable[[dict[str, Any], dict[str, Any], dict[str, int]], tuple[dict[str, Any] | None, list[dict[str, Any]]]],
+    should_drop_display_math_artifact: Callable[[dict[str, Any]], bool],
+) -> Callable[[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, int]], tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]:
+    def build_suppress_graphic_display_math_blocks(
+        blocks: list[dict[str, Any]],
+        compiled_math: list[dict[str, Any]],
+        sections: list[dict[str, Any]],
+        counters: dict[str, int],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+        return suppress_graphic_display_math_blocks(
+            blocks,
+            compiled_math,
+            sections,
+            counters,
+            should_demote_graphic_math_entry_to_paragraph=should_demote_graphic_math_entry_to_paragraph,
+            paragraph_block_from_graphic_math_entry=paragraph_block_from_graphic_math_entry,
+            should_drop_display_math_artifact=should_drop_display_math_artifact,
+        )
+
+    return build_suppress_graphic_display_math_blocks
+
+
+def make_mark_records_with_external_math_overlap(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[list[dict[str, Any]], dict[int, list[dict[str, Any]]]], list[dict[str, Any]]]:
+    def build_mark_records_with_external_math_overlap(
+        records: list[dict[str, Any]],
+        external_math_overlap_by_page: dict[int, list[dict[str, Any]]],
+    ) -> list[dict[str, Any]]:
+        return mark_records_with_external_math_overlap(
+            records,
+            external_math_overlap_by_page,
+            block_source_spans=block_source_spans,
+        )
+
+    return build_mark_records_with_external_math_overlap

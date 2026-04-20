@@ -516,3 +516,106 @@ def merge_code_records(
     if current is not None:
         merged.append(current)
     return merged
+
+
+def make_merge_code_records(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    clean_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def build_merge_code_records(record_batch: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return merge_code_records(
+            record_batch,
+            block_source_spans=block_source_spans,
+            clean_text=clean_text,
+        )
+
+    return build_merge_code_records
+
+
+def make_merge_paragraph_records(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    should_merge_paragraph_records: Callable[[dict[str, Any], dict[str, Any]], bool],
+    table_caption_re: Pattern[str],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def build_merge_paragraph_records(record_batch: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return merge_paragraph_records(
+            record_batch,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            should_merge_paragraph_records=should_merge_paragraph_records,
+            table_caption_re=table_caption_re,
+        )
+
+    return build_merge_paragraph_records
+
+
+def make_suppress_running_header_blocks(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    compact_text: Callable[[str], str],
+    running_header_text_re: Pattern[str],
+    short_word_re: Pattern[str],
+    strip_known_running_header_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def build_suppress_running_header_blocks(
+        blocks: list[dict[str, Any]],
+        sections: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return suppress_running_header_blocks(
+            blocks,
+            sections,
+            block_source_spans=block_source_spans,
+            compact_text=compact_text,
+            running_header_text_re=running_header_text_re,
+            short_word_re=short_word_re,
+            strip_known_running_header_text=strip_known_running_header_text,
+        )
+
+    return build_suppress_running_header_blocks
+
+
+def make_normalize_footnote_blocks(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    short_word_re: Pattern[str],
+    starts_like_sentence: Callable[[str], bool],
+    strip_known_running_header_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def build_normalize_footnote_blocks(
+        blocks: list[dict[str, Any]],
+        sections: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return normalize_footnote_blocks(
+            blocks,
+            sections,
+            block_source_spans=block_source_spans,
+            short_word_re=short_word_re,
+            starts_like_sentence=starts_like_sentence,
+            strip_known_running_header_text=strip_known_running_header_text,
+        )
+
+    return build_normalize_footnote_blocks
+
+
+def make_merge_paragraph_blocks(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    should_merge_paragraph_records: Callable[[dict[str, Any], dict[str, Any]], bool],
+    strip_known_running_header_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]], list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]:
+    def build_merge_paragraph_blocks(
+        blocks: list[dict[str, Any]],
+        sections: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        return merge_paragraph_blocks(
+            blocks,
+            sections,
+            block_source_spans=block_source_spans,
+            should_merge_paragraph_records=should_merge_paragraph_records,
+            strip_known_running_header_text=strip_known_running_header_text,
+        )
+
+    return build_merge_paragraph_blocks

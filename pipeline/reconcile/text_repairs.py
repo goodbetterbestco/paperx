@@ -692,6 +692,33 @@ def make_is_mathpix_text_hint_better(
     return build_is_mathpix_text_hint_better
 
 
+def make_repair_record_text_with_mathpix_hints(
+    *,
+    mathpix_text_blocks_by_page: Callable[[dict[str, Any]], dict[int, list[LayoutBlock]]],
+    is_short_ocr_fragment: Callable[[dict[str, Any]], bool],
+    mathpix_text_hint_candidate: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str],
+    is_mathpix_text_hint_better: Callable[[str, str], bool],
+    mathpix_prose_lead_repair_candidate: Callable[[dict[str, Any], dict[int, list[LayoutBlock]]], str],
+    clean_text: Callable[[str], str],
+) -> Callable[[list[dict[str, Any]], dict[str, Any] | None], list[dict[str, Any]]]:
+    def build_repair_record_text_with_mathpix_hints(
+        records: list[dict[str, Any]],
+        mathpix_layout: dict[str, Any] | None,
+    ) -> list[dict[str, Any]]:
+        return repair_record_text_with_mathpix_hints(
+            records,
+            mathpix_layout,
+            mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
+            is_short_ocr_fragment=is_short_ocr_fragment,
+            mathpix_text_hint_candidate=mathpix_text_hint_candidate,
+            is_mathpix_text_hint_better=is_mathpix_text_hint_better,
+            mathpix_prose_lead_repair_candidate=mathpix_prose_lead_repair_candidate,
+            clean_text=clean_text,
+        )
+
+    return build_repair_record_text_with_mathpix_hints
+
+
 def make_bound_text_repair_helpers(
     *,
     clean_text: Callable[[str], str],
@@ -791,6 +818,7 @@ __all__ = [
     "make_mathpix_hint_alignment_text",
     "make_mathpix_hint_tokens",
     "make_mathpix_prose_lead_repair_candidate",
+    "make_repair_record_text_with_mathpix_hints",
     "make_mathpix_text_candidate_score",
     "make_mathpix_text_hint_candidate",
     "make_record_union_bbox",

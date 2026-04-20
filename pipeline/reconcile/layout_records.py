@@ -412,6 +412,29 @@ def make_absorb_figure_caption_continuations(
     return build_absorb_figure_caption_continuations
 
 
+def make_merge_layout_and_figure_records(
+    *,
+    layout_record: Callable[[LayoutBlock], dict[str, Any]],
+    absorb_figure_caption_continuations: Callable[[list[dict[str, Any]], list[dict[str, Any]]], list[dict[str, Any]]],
+    figure_label_token: Callable[[dict[str, Any]], str | None],
+    synthetic_caption_record: Callable[[dict[str, Any], list[LayoutBlock]], dict[str, Any]],
+) -> Callable[[list[LayoutBlock], list[dict[str, Any]]], tuple[list[dict[str, Any]], dict[str, LayoutBlock]]]:
+    def build_merge_layout_and_figure_records(
+        layout_blocks: list[LayoutBlock],
+        figures: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], dict[str, LayoutBlock]]:
+        return merge_layout_and_figure_records(
+            layout_blocks,
+            figures,
+            layout_record=layout_record,
+            absorb_figure_caption_continuations=absorb_figure_caption_continuations,
+            figure_label_token=figure_label_token,
+            synthetic_caption_record=synthetic_caption_record,
+        )
+
+    return build_merge_layout_and_figure_records
+
+
 __all__ = [
     "absorb_figure_caption_continuations",
     "append_figure_caption_fragment",
@@ -420,6 +443,7 @@ __all__ = [
     "make_absorb_figure_caption_continuations",
     "make_append_figure_caption_fragment",
     "make_layout_record",
+    "make_merge_layout_and_figure_records",
     "make_match_figure_for_caption_record",
     "make_page_one_front_matter_records",
     "make_record_bbox",

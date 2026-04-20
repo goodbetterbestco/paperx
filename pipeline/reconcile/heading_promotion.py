@@ -238,3 +238,45 @@ def promote_heading_like_records(
                 continue
         promoted.append(record)
     return promoted
+
+
+def make_promote_heading_like_records(
+    *,
+    clean_text: Callable[[str], str],
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    abstract_marker_only_re: Pattern[str],
+    parse_heading_label: Callable[[str], Any],
+    clean_heading_title: Callable[[str], str],
+    looks_like_bad_heading: Callable[[str], bool],
+    collapse_ocr_split_caps: Callable[[str], str],
+    decode_control_heading_label: Callable[[str], tuple[str | None, str]],
+    normalize_decoded_heading_title: Callable[[str], str],
+    split_embedded_heading_paragraph: Callable[[dict[str, Any]], tuple[str, str] | None],
+    short_word_re: Pattern[str],
+) -> Callable[[list[dict[str, Any]]], list[dict[str, Any]]]:
+    def build_promote_heading_like_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return promote_heading_like_records(
+            records,
+            clean_text=clean_text,
+            block_source_spans=block_source_spans,
+            abstract_marker_only_re=abstract_marker_only_re,
+            parse_heading_label=parse_heading_label,
+            clean_heading_title=clean_heading_title,
+            looks_like_bad_heading=looks_like_bad_heading,
+            collapse_ocr_split_caps=collapse_ocr_split_caps,
+            decode_control_heading_label=decode_control_heading_label,
+            normalize_decoded_heading_title=normalize_decoded_heading_title,
+            split_embedded_heading_paragraph=split_embedded_heading_paragraph,
+            short_word_re=short_word_re,
+        )
+
+    return build_promote_heading_like_records
+
+
+__all__ = [
+    "decode_control_heading_label",
+    "make_promote_heading_like_records",
+    "normalize_decoded_heading_title",
+    "promote_heading_like_records",
+    "split_embedded_heading_paragraph",
+]
