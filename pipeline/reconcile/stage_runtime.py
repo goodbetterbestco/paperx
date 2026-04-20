@@ -37,8 +37,6 @@ class ReconcileLoaderDeps:
 
 @dataclass(frozen=True)
 class ReconcileBindingDeps:
-    normalize_prose_text_impl: Callable[..., tuple[str, Any]]
-    normalize_reference_text_impl: Callable[..., tuple[str, Any]]
     strip_known_running_header_text: Callable[[str], str]
     clean_text: Callable[[str], str]
     block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]]
@@ -108,17 +106,13 @@ class ReconcileBindingDeps:
     list_item_marker: Callable[[str], tuple[str | None, bool, str]]
     review_for_math_entry: Callable[..., dict[str, Any]]
     review_for_math_ref_block: Callable[..., dict[str, Any]]
-    match_external_math_entry_impl: Callable[..., dict[str, Any] | None]
     build_block_math_entry: Callable[..., dict[str, Any]]
     normalize_formula_display_text: Callable[[str], str]
     classify_math_block: Callable[..., str]
     review_for_algorithm_block_text: Callable[..., dict[str, Any]]
-    overlapping_external_math_entries_impl: Callable[..., list[dict[str, Any]]]
-    trim_embedded_display_math_from_paragraph_impl: Callable[..., str]
     display_math_prose_cue_re: Any
     display_math_resume_re: Any
     display_math_start_re: Any
-    looks_like_display_math_echo_impl: Callable[..., bool]
     short_word_re: Any
     layout_record: Callable[[Any], dict[str, Any]]
     absorb_figure_caption_continuations: Callable[[list[dict[str, Any]], list[dict[str, Any]]], list[dict[str, Any]]]
@@ -152,7 +146,6 @@ class ReconcileAssemblyDeps:
     extract_reference_records_from_tail_section: Callable[[list[dict[str, Any]]], tuple[list[dict[str, Any]], list[dict[str, Any]]]]
     reference_records_from_mathpix_layout: Callable[[dict[str, Any] | None], list[dict[str, Any]]]
     materialize_sections: Callable[..., tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]]
-    section_id_impl: Callable[..., str]
     merge_reference_records: Callable[[list[dict[str, Any]]], list[dict[str, Any]]]
     is_figure_debris: Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], bool]
     looks_like_running_header_record: Callable[[dict[str, Any]], bool]

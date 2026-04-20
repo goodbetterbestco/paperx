@@ -68,6 +68,25 @@ def match_external_math_entry(
     return external_math_by_page[page].pop(best_index)
 
 
+def make_match_external_math_entry(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    clean_text: Callable[[str], str],
+) -> Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], dict[str, Any] | None]:
+    def bound_match_external_math_entry(
+        record: dict[str, Any],
+        external_math_by_page: dict[int, list[dict[str, Any]]],
+    ) -> dict[str, Any] | None:
+        return match_external_math_entry(
+            record,
+            external_math_by_page,
+            block_source_spans=block_source_spans,
+            clean_text=clean_text,
+        )
+
+    return bound_match_external_math_entry
+
+
 def inject_external_math_records(
     records: list[dict[str, Any]],
     layout_blocks: list[LayoutBlock],
@@ -157,3 +176,12 @@ def inject_external_math_records(
     combined.extend(injected_records)
     combined.sort(key=lambda record: (int(record.get("page", 0)), int(record.get("group_index", 0)), int(record.get("split_index", 0))))
     return combined, injected_ids
+
+
+__all__ = [
+    "inject_external_math_records",
+    "make_match_external_math_entry",
+    "match_external_math_entry",
+    "rect_area",
+    "rect_intersection_area",
+]

@@ -3,13 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from pipeline.assembly.canonical_builder import build_canonical_document
-from pipeline.assembly.front_matter_support import (
-    missing_front_matter_affiliation as assemble_missing_front_matter_affiliation,
-    missing_front_matter_author as assemble_missing_front_matter_author,
-)
 from pipeline.assembly.record_block_builder import split_code_lines as assemble_split_code_lines
 from pipeline.assembly.section_builder import materialize_sections
-from pipeline.assembly.section_support import section_id as assemble_section_id
 from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.figures.labels import caption_label
 from pipeline.math.compile import compile_formulas
@@ -35,11 +30,9 @@ from pipeline.math.semantic_policy import annotate_formula_classifications
 from pipeline.orchestrator.layout_merge import merge_native_and_external_layout as orchestrate_merge_native_and_external_layout
 from pipeline.orchestrator.paper_reconciler import run_paper_pipeline
 from pipeline.policies.abstract_quality import (
-    MISSING_ABSTRACT_PLACEHOLDER,
     NO_ABSTRACT_IN_BASE_MATERIAL,
     abstract_quality_flags,
 )
-from pipeline.reconcile.external_math import match_external_math_entry as reconcile_match_external_math_entry
 from pipeline.reconcile.front_matter_parsing import looks_like_affiliation as reconcile_looks_like_affiliation_runtime
 from pipeline.reconcile.front_matter_patterns import (
     ABBREVIATED_VENUE_LINE_RE,
@@ -70,9 +63,6 @@ from pipeline.reconcile.layout_records import (
 )
 from pipeline.reconcile.math_suppression import (
     external_math_by_page as reconcile_external_math_by_page,
-    looks_like_display_math_echo as reconcile_looks_like_display_math_echo,
-    overlapping_external_math_entries as reconcile_overlapping_external_math_entries,
-    trim_embedded_display_math_from_paragraph as reconcile_trim_embedded_display_math_from_paragraph,
 )
 from pipeline.reconcile.runtime_constants import (
     ABOUT_AUTHOR_RE,
@@ -136,7 +126,6 @@ from pipeline.text.headings import (
     parse_heading_label,
 )
 from pipeline.text.prose import decode_ocr_codepoint_tokens, normalize_prose_text
-from pipeline.text.references import normalize_reference_text
 from pipeline.types import default_review
 
 _helper_bundles = reconcile_build_reconcile_root_helper_bundles_runtime(
@@ -241,8 +230,6 @@ def reconcile_paper_state(
             pdftotext_available=pdftotext_available,
             extract_pdftotext_pages=extract_pdftotext_pages,
             page_height_map=reconcile_page_height_map_binding_runtime,
-            normalize_prose_text_impl=normalize_prose_text,
-            normalize_reference_text_impl=normalize_reference_text,
             default_review=default_review,
             leading_negationslash_artifact_re=LEADING_NEGATIONSLASH_ARTIFACT_RE,
             leading_ocr_marker_re=LEADING_OCR_MARKER_RE,
@@ -262,8 +249,6 @@ def reconcile_paper_state(
             looks_like_affiliation=reconcile_looks_like_affiliation_runtime,
             funding_re=FUNDING_RE,
             missing_front_matter_placeholder=NO_ABSTRACT_IN_BASE_MATERIAL,
-            missing_front_matter_author_impl=assemble_missing_front_matter_author,
-            missing_front_matter_affiliation_impl=assemble_missing_front_matter_affiliation,
             normalize_title_key=normalize_title_key,
             preprint_marker_re=PREPRINT_MARKER_RE,
             keywords_lead_re=KEYWORDS_LEAD_RE,
@@ -274,16 +259,12 @@ def reconcile_paper_state(
             split_code_lines=assemble_split_code_lines,
             review_for_math_entry=review_for_math_entry,
             review_for_math_ref_block=review_for_math_ref_block,
-            match_external_math_entry_impl=reconcile_match_external_math_entry,
             build_block_math_entry=build_block_math_entry,
             classify_math_block=classify_math_block,
             review_for_algorithm_block_text=review_for_algorithm_block_text,
-            overlapping_external_math_entries_impl=reconcile_overlapping_external_math_entries,
-            trim_embedded_display_math_from_paragraph_impl=reconcile_trim_embedded_display_math_from_paragraph,
             display_math_prose_cue_re=DISPLAY_MATH_PROSE_CUE_RE,
             display_math_resume_re=DISPLAY_MATH_RESUME_RE,
             display_math_start_re=DISPLAY_MATH_START_RE,
-            looks_like_display_math_echo_impl=reconcile_looks_like_display_math_echo,
             short_word_re=SHORT_WORD_RE,
             looks_like_bad_heading=looks_like_bad_heading,
             collapse_ocr_split_caps=collapse_ocr_split_caps,
@@ -294,7 +275,6 @@ def reconcile_paper_state(
             section_node_type=SectionNode,
             prepare_section_nodes=prepare_section_nodes,
             materialize_sections=materialize_sections,
-            section_id_impl=assemble_section_id,
             compile_formulas=compile_formulas,
             annotate_formula_classifications=annotate_formula_classifications,
             annotate_formula_semantic_expr=annotate_formula_semantic_expr,

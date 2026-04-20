@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
+
 from pipeline.assembly.abstract_recovery import (
     BoundFrontMatterRecoveryHelpers,
     abstract_text_is_recoverable,
@@ -29,15 +31,23 @@ from pipeline.assembly.front_matter_support import (
 from pipeline.assembly.section_support import make_normalize_section_title
 
 
+@dataclass(frozen=True)
+class ReconcileFrontMatterRuntimeHelpers:
+    build_front_matter: object
+    normalize_section_title: object
+    front_block_text: object
+    recover_missing_front_matter_abstract: object
+
+
 def build_reconcile_front_matter_runtime_helpers(
     *,
     bindings: object,
-    text_helpers: dict[str, object],
-) -> dict[str, object]:
+    text_helpers: object,
+) -> ReconcileFrontMatterRuntimeHelpers:
     build_front_matter = make_build_front_matter(
         split_leading_front_matter_records=bindings.split_leading_front_matter_records,
         clean_record=bindings.clean_record,
-        clean_text=text_helpers["clean_text"],
+        clean_text=text_helpers.clean_text,
         record_word_count=bindings.record_word_count,
         record_width=bindings.record_width,
         abstract_marker_only_re=bindings.abstract_marker_only_re,
@@ -60,31 +70,31 @@ def build_reconcile_front_matter_runtime_helpers(
         build_affiliations_for_authors=bindings.build_affiliations_for_authors,
         missing_front_matter_affiliation=bindings.missing_front_matter_affiliation,
         strip_author_prefix_from_affiliation_line=bindings.strip_author_prefix_from_affiliation_line,
-        normalize_title_key=text_helpers["normalize_title_key"],
+        normalize_title_key=text_helpers.normalize_title_key,
         clone_record_with_text=bindings.clone_record_with_text,
         looks_like_body_section_marker=bindings.looks_like_body_section_marker,
         preprint_marker_re=bindings.preprint_marker_re,
         keywords_lead_re=bindings.keywords_lead_re,
         abstract_text_is_usable=bindings.abstract_text_is_usable,
         normalize_abstract_candidate_text=bindings.normalize_abstract_candidate_text,
-        default_review=text_helpers["default_review"],
-        block_source_spans=text_helpers["block_source_spans"],
+        default_review=text_helpers.default_review,
+        block_source_spans=text_helpers.block_source_spans,
         front_matter_missing_placeholder=bindings.front_matter_missing_placeholder,
     )
     normalize_section_title = make_normalize_section_title(
-        clean_text=text_helpers["clean_text"],
+        clean_text=text_helpers.clean_text,
         clean_heading_title=bindings.clean_heading_title,
-        parse_heading_label=text_helpers["parse_heading_label"],
-        normalize_title_key=text_helpers["normalize_title_key"],
+        parse_heading_label=text_helpers.parse_heading_label,
+        normalize_title_key=text_helpers.normalize_title_key,
     )
     front_block_text_fn = make_front_block_text(
-        clean_text=text_helpers["clean_text"],
+        clean_text=text_helpers.clean_text,
     )
-    return {
-        "build_front_matter": build_front_matter,
-        "normalize_section_title": normalize_section_title,
-        "front_block_text": front_block_text_fn,
-        "recover_missing_front_matter_abstract": make_recover_missing_front_matter_abstract(
+    return ReconcileFrontMatterRuntimeHelpers(
+        build_front_matter=build_front_matter,
+        normalize_section_title=normalize_section_title,
+        front_block_text=front_block_text_fn,
+        recover_missing_front_matter_abstract=make_recover_missing_front_matter_abstract(
             front_block_text=front_block_text_fn,
             abstract_quality_flags=bindings.abstract_quality_flags,
             normalize_section_title=normalize_section_title,
@@ -94,12 +104,13 @@ def build_reconcile_front_matter_runtime_helpers(
             opening_abstract_candidate_records=bindings.opening_abstract_candidate_records,
             normalize_abstract_candidate_text=bindings.normalize_abstract_candidate_text,
         ),
-    }
+    )
 
 
 __all__ = [
     "BoundFrontMatterRecoveryHelpers",
     "BoundFrontMatterSupportHelpers",
+    "ReconcileFrontMatterRuntimeHelpers",
     "abstract_text_is_recoverable",
     "abstract_text_looks_like_metadata",
     "build_reconcile_front_matter_runtime_helpers",

@@ -9,6 +9,8 @@ from pipeline.assembly.abstract_recovery import (
 )
 from pipeline.assembly.front_matter_support import (
     make_bound_front_matter_support_helpers as reconcile_make_bound_front_matter_support_helpers_runtime,
+    missing_front_matter_affiliation,
+    missing_front_matter_author,
 )
 from pipeline.reconcile.front_matter_parsing import (
     make_bound_front_matter_parsing_helpers as reconcile_make_bound_front_matter_parsing_helpers_runtime,
@@ -81,6 +83,7 @@ from pipeline.reconcile.stage_runtime import (
 from pipeline.reconcile.text_repairs import (
     make_bound_text_repair_helpers as reconcile_make_bound_text_repair_helpers,
 )
+from pipeline.text.prose import normalize_prose_text
 
 
 @dataclass(frozen=True)
@@ -105,6 +108,36 @@ class ReconcileFrontMatterHelperBundles:
     support_helpers: Any
     parsing_helpers: Any
     recovery_helpers: Any
+
+
+@dataclass(frozen=True)
+class ReconcileAssemblyRecordPrepDeps:
+    merge_math_fragment_records: Any
+    page_one_front_matter_records: Any
+
+
+@dataclass(frozen=True)
+class ReconcileAssemblyStructureDeps:
+    is_title_page_metadata_record: Any
+    split_late_prelude_for_missing_intro: Any
+    should_replace_front_matter_abstract: Any
+    split_trailing_reference_records: Any
+    extract_reference_records_from_tail_section: Any
+    reference_records_from_mathpix_layout: Any
+    merge_reference_records: Any
+
+
+@dataclass(frozen=True)
+class ReconcileAssemblyPostprocessDeps:
+    is_figure_debris: Any
+    looks_like_running_header_record: Any
+    looks_like_table_body_debris: Any
+    suppress_embedded_table_headings: Any
+    should_merge_paragraph_records: Any
+    table_caption_re: Any
+    compact_text: Any
+    running_header_text_re: Any
+    starts_like_sentence: Any
 
 
 @dataclass(frozen=True)
@@ -513,99 +546,6 @@ def build_reconcile_root_helper_bundles(
     )
 
 
-def make_reconcile_loader_deps(
-    *,
-    run_paper_pipeline_impl: Any,
-    extract_layout: Any,
-    load_external_layout: Any,
-    merge_native_and_external_layout: Any,
-    load_external_math: Any,
-    external_math_by_page: Any,
-    load_mathpix_layout: Any,
-    extract_figures: Any,
-    pdftotext_available: Any,
-    repair_record_text_with_pdftotext: Any,
-    extract_pdftotext_pages: Any,
-    page_height_map: Any,
-) -> ReconcileLoaderDeps:
-    return ReconcileLoaderDeps(
-        run_paper_pipeline_impl=run_paper_pipeline_impl,
-        extract_layout=extract_layout,
-        load_external_layout=load_external_layout,
-        merge_native_and_external_layout=merge_native_and_external_layout,
-        load_external_math=load_external_math,
-        external_math_by_page=external_math_by_page,
-        load_mathpix_layout=load_mathpix_layout,
-        extract_figures=extract_figures,
-        pdftotext_available=pdftotext_available,
-        repair_record_text_with_pdftotext=repair_record_text_with_pdftotext,
-        extract_pdftotext_pages=extract_pdftotext_pages,
-        page_height_map=page_height_map,
-    )
-
-
-def make_reconcile_binding_text_deps(
-    *,
-    normalize_prose_text_impl: Any,
-    normalize_reference_text_impl: Any,
-    strip_known_running_header_text: Any,
-    clean_text: Any,
-    block_source_spans: Any,
-    default_review: Any,
-    leading_negationslash_artifact_re: Any,
-    leading_ocr_marker_re: Any,
-    leading_punct_artifact_re: Any,
-    leading_var_artifact_re: Any,
-    trailing_numeric_artifact_re: Any,
-) -> dict[str, Any]:
-    return {
-        "normalize_prose_text_impl": normalize_prose_text_impl,
-        "normalize_reference_text_impl": normalize_reference_text_impl,
-        "strip_known_running_header_text": strip_known_running_header_text,
-        "clean_text": clean_text,
-        "block_source_spans": block_source_spans,
-        "default_review": default_review,
-        "leading_negationslash_artifact_re": leading_negationslash_artifact_re,
-        "leading_ocr_marker_re": leading_ocr_marker_re,
-        "leading_punct_artifact_re": leading_punct_artifact_re,
-        "leading_var_artifact_re": leading_var_artifact_re,
-        "trailing_numeric_artifact_re": trailing_numeric_artifact_re,
-    }
-
-
-def make_reconcile_binding_math_deps(
-    *,
-    group_entry_items_are_graphic_only: Any,
-    math_entry_semantic_policy: Any,
-    math_entry_category: Any,
-    looks_like_prose_paragraph: Any,
-    looks_like_prose_math_fragment: Any,
-    word_count: Any,
-    strong_operator_count: Any,
-    mathish_ratio: Any,
-    split_inline_math: Any,
-    repair_symbolic_ocr_spans: Any,
-    extract_general_inline_math_spans: Any,
-    merge_inline_math_relation_suffixes: Any,
-    normalize_inline_math_spans: Any,
-) -> dict[str, Any]:
-    return {
-        "group_entry_items_are_graphic_only": group_entry_items_are_graphic_only,
-        "math_entry_semantic_policy": math_entry_semantic_policy,
-        "math_entry_category": math_entry_category,
-        "looks_like_prose_paragraph": looks_like_prose_paragraph,
-        "looks_like_prose_math_fragment": looks_like_prose_math_fragment,
-        "word_count": word_count,
-        "strong_operator_count": strong_operator_count,
-        "mathish_ratio": mathish_ratio,
-        "split_inline_math": split_inline_math,
-        "repair_symbolic_ocr_spans": repair_symbolic_ocr_spans,
-        "extract_general_inline_math_spans": extract_general_inline_math_spans,
-        "merge_inline_math_relation_suffixes": merge_inline_math_relation_suffixes,
-        "normalize_inline_math_spans": normalize_inline_math_spans,
-    }
-
-
 def build_reconcile_binding_math_deps(
     *,
     looks_like_prose_paragraph: Any,
@@ -619,107 +559,22 @@ def build_reconcile_binding_math_deps(
     merge_inline_math_relation_suffixes: Any,
     normalize_inline_math_spans: Any,
 ) -> dict[str, Any]:
-    return make_reconcile_binding_math_deps(
-        group_entry_items_are_graphic_only=reconcile_make_group_entry_items_are_graphic_only_binding_runtime(
+    return {
+        "group_entry_items_are_graphic_only": reconcile_make_group_entry_items_are_graphic_only_binding_runtime(
             math_entry_semantic_policy=reconcile_math_entry_semantic_policy_binding_runtime,
         ),
-        math_entry_semantic_policy=reconcile_math_entry_semantic_policy_binding_runtime,
-        math_entry_category=reconcile_math_entry_category_binding_runtime,
-        looks_like_prose_paragraph=looks_like_prose_paragraph,
-        looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-        word_count=word_count,
-        strong_operator_count=strong_operator_count,
-        mathish_ratio=mathish_ratio,
-        split_inline_math=split_inline_math,
-        repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
-        extract_general_inline_math_spans=extract_general_inline_math_spans,
-        merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
-        normalize_inline_math_spans=normalize_inline_math_spans,
-    )
-
-
-def make_reconcile_binding_front_matter_deps(
-    *,
-    split_leading_front_matter_records: Any,
-    clean_record: Any,
-    record_word_count: Any,
-    record_width: Any,
-    abstract_marker_only_re: Any,
-    abstract_lead_re: Any,
-    looks_like_front_matter_metadata: Any,
-    author_note_re: Any,
-    looks_like_affiliation: Any,
-    looks_like_intro_marker: Any,
-    looks_like_author_line: Any,
-    looks_like_contact_name: Any,
-    matches_title_line: Any,
-    looks_like_affiliation_continuation: Any,
-    funding_re: Any,
-    dedupe_text_lines: Any,
-    filter_front_matter_authors: Any,
-    parse_authors: Any,
-    parse_authors_from_citation_line: Any,
-    normalize_author_line: Any,
-    missing_front_matter_author: Any,
-    build_affiliations_for_authors: Any,
-    missing_front_matter_affiliation: Any,
-    strip_author_prefix_from_affiliation_line: Any,
-    normalize_title_key: Any,
-    clone_record_with_text: Any,
-    looks_like_body_section_marker: Any,
-    preprint_marker_re: Any,
-    keywords_lead_re: Any,
-    abstract_text_is_usable: Any,
-    normalize_abstract_candidate_text: Any,
-    front_matter_missing_placeholder: Any,
-    clean_heading_title: Any,
-    parse_heading_label: Any,
-    abstract_quality_flags: Any,
-    leading_abstract_text: Any,
-    abstract_text_is_recoverable: Any,
-    replace_front_matter_abstract_text: Any,
-    opening_abstract_candidate_records: Any,
-) -> dict[str, Any]:
-    return {
-        "split_leading_front_matter_records": split_leading_front_matter_records,
-        "clean_record": clean_record,
-        "record_word_count": record_word_count,
-        "record_width": record_width,
-        "abstract_marker_only_re": abstract_marker_only_re,
-        "abstract_lead_re": abstract_lead_re,
-        "looks_like_front_matter_metadata": looks_like_front_matter_metadata,
-        "author_note_re": author_note_re,
-        "looks_like_affiliation": looks_like_affiliation,
-        "looks_like_intro_marker": looks_like_intro_marker,
-        "looks_like_author_line": looks_like_author_line,
-        "looks_like_contact_name": looks_like_contact_name,
-        "matches_title_line": matches_title_line,
-        "looks_like_affiliation_continuation": looks_like_affiliation_continuation,
-        "funding_re": funding_re,
-        "dedupe_text_lines": dedupe_text_lines,
-        "filter_front_matter_authors": filter_front_matter_authors,
-        "parse_authors": parse_authors,
-        "parse_authors_from_citation_line": parse_authors_from_citation_line,
-        "normalize_author_line": normalize_author_line,
-        "missing_front_matter_author": missing_front_matter_author,
-        "build_affiliations_for_authors": build_affiliations_for_authors,
-        "missing_front_matter_affiliation": missing_front_matter_affiliation,
-        "strip_author_prefix_from_affiliation_line": strip_author_prefix_from_affiliation_line,
-        "normalize_title_key": normalize_title_key,
-        "clone_record_with_text": clone_record_with_text,
-        "looks_like_body_section_marker": looks_like_body_section_marker,
-        "preprint_marker_re": preprint_marker_re,
-        "keywords_lead_re": keywords_lead_re,
-        "abstract_text_is_usable": abstract_text_is_usable,
-        "normalize_abstract_candidate_text": normalize_abstract_candidate_text,
-        "front_matter_missing_placeholder": front_matter_missing_placeholder,
-        "clean_heading_title": clean_heading_title,
-        "parse_heading_label": parse_heading_label,
-        "abstract_quality_flags": abstract_quality_flags,
-        "leading_abstract_text": leading_abstract_text,
-        "abstract_text_is_recoverable": abstract_text_is_recoverable,
-        "replace_front_matter_abstract_text": replace_front_matter_abstract_text,
-        "opening_abstract_candidate_records": opening_abstract_candidate_records,
+        "math_entry_semantic_policy": reconcile_math_entry_semantic_policy_binding_runtime,
+        "math_entry_category": reconcile_math_entry_category_binding_runtime,
+        "looks_like_prose_paragraph": looks_like_prose_paragraph,
+        "looks_like_prose_math_fragment": looks_like_prose_math_fragment,
+        "word_count": word_count,
+        "strong_operator_count": strong_operator_count,
+        "mathish_ratio": mathish_ratio,
+        "split_inline_math": split_inline_math,
+        "repair_symbolic_ocr_spans": repair_symbolic_ocr_spans,
+        "extract_general_inline_math_spans": extract_general_inline_math_spans,
+        "merge_inline_math_relation_suffixes": merge_inline_math_relation_suffixes,
+        "normalize_inline_math_spans": normalize_inline_math_spans,
     }
 
 
@@ -735,8 +590,6 @@ def build_reconcile_binding_front_matter_deps(
     looks_like_affiliation: Any,
     funding_re: Any,
     missing_front_matter_placeholder: Any,
-    missing_front_matter_author_impl: Any,
-    missing_front_matter_affiliation_impl: Any,
     normalize_title_key: Any,
     preprint_marker_re: Any,
     keywords_lead_re: Any,
@@ -744,99 +597,52 @@ def build_reconcile_binding_front_matter_deps(
     parse_heading_label: Any,
     abstract_quality_flags: Any,
 ) -> dict[str, Any]:
-    return make_reconcile_binding_front_matter_deps(
-        split_leading_front_matter_records=front_matter_helpers.split_leading_front_matter_records,
-        clean_record=clean_record,
-        record_word_count=front_matter_support_helpers.record_word_count,
-        record_width=front_matter_support_helpers.record_width,
-        abstract_marker_only_re=abstract_marker_only_re,
-        abstract_lead_re=abstract_lead_re,
-        looks_like_front_matter_metadata=front_matter_helpers.looks_like_front_matter_metadata,
-        author_note_re=author_note_re,
-        looks_like_affiliation=looks_like_affiliation,
-        looks_like_intro_marker=front_matter_helpers.looks_like_intro_marker,
-        looks_like_author_line=front_matter_helpers.looks_like_author_line,
-        looks_like_contact_name=front_matter_helpers.looks_like_contact_name,
-        matches_title_line=front_matter_support_helpers.matches_title_line,
-        looks_like_affiliation_continuation=front_matter_helpers.looks_like_affiliation_continuation,
-        funding_re=funding_re,
-        dedupe_text_lines=front_matter_support_helpers.dedupe_text_lines,
-        filter_front_matter_authors=front_matter_helpers.filter_front_matter_authors,
-        parse_authors=front_matter_helpers.parse_authors,
-        parse_authors_from_citation_line=front_matter_helpers.parse_authors_from_citation_line,
-        normalize_author_line=front_matter_helpers.normalize_author_line,
-        missing_front_matter_author=partial(
-            missing_front_matter_author_impl,
-            missing_front_matter_placeholder,
-        ),
-        build_affiliations_for_authors=front_matter_helpers.build_affiliations_for_authors,
-        missing_front_matter_affiliation=partial(
-            missing_front_matter_affiliation_impl,
-            missing_front_matter_placeholder,
-        ),
-        strip_author_prefix_from_affiliation_line=front_matter_helpers.strip_author_prefix_from_affiliation_line,
-        normalize_title_key=normalize_title_key,
-        clone_record_with_text=front_matter_support_helpers.clone_record_with_text,
-        looks_like_body_section_marker=front_matter_helpers.looks_like_body_section_marker,
-        preprint_marker_re=preprint_marker_re,
-        keywords_lead_re=keywords_lead_re,
-        abstract_text_is_usable=front_matter_helpers.abstract_text_is_usable,
-        normalize_abstract_candidate_text=front_matter_helpers.normalize_abstract_candidate_text,
-        front_matter_missing_placeholder=missing_front_matter_placeholder,
-        clean_heading_title=clean_heading_title,
-        parse_heading_label=parse_heading_label,
-        abstract_quality_flags=abstract_quality_flags,
-        leading_abstract_text=front_matter_recovery_helpers.leading_abstract_text,
-        abstract_text_is_recoverable=front_matter_recovery_helpers.abstract_text_is_recoverable,
-        replace_front_matter_abstract_text=front_matter_recovery_helpers.replace_front_matter_abstract_text,
-        opening_abstract_candidate_records=front_matter_recovery_helpers.opening_abstract_candidate_records,
-    )
-
-
-def make_reconcile_binding_block_builder_deps(
-    *,
-    record_analysis_text: Any,
-    is_short_ocr_fragment: Any,
-    caption_label: Any,
-    looks_like_real_code_record: Any,
-    split_code_lines: Any,
-    list_item_marker: Any,
-    review_for_math_entry: Any,
-    review_for_math_ref_block: Any,
-    match_external_math_entry_impl: Any,
-    build_block_math_entry: Any,
-    normalize_formula_display_text: Any,
-    classify_math_block: Any,
-    review_for_algorithm_block_text: Any,
-    overlapping_external_math_entries_impl: Any,
-    trim_embedded_display_math_from_paragraph_impl: Any,
-    display_math_prose_cue_re: Any,
-    display_math_resume_re: Any,
-    display_math_start_re: Any,
-    looks_like_display_math_echo_impl: Any,
-    short_word_re: Any,
-) -> dict[str, Any]:
     return {
-        "record_analysis_text": record_analysis_text,
-        "is_short_ocr_fragment": is_short_ocr_fragment,
-        "caption_label": caption_label,
-        "looks_like_real_code_record": looks_like_real_code_record,
-        "split_code_lines": split_code_lines,
-        "list_item_marker": list_item_marker,
-        "review_for_math_entry": review_for_math_entry,
-        "review_for_math_ref_block": review_for_math_ref_block,
-        "match_external_math_entry_impl": match_external_math_entry_impl,
-        "build_block_math_entry": build_block_math_entry,
-        "normalize_formula_display_text": normalize_formula_display_text,
-        "classify_math_block": classify_math_block,
-        "review_for_algorithm_block_text": review_for_algorithm_block_text,
-        "overlapping_external_math_entries_impl": overlapping_external_math_entries_impl,
-        "trim_embedded_display_math_from_paragraph_impl": trim_embedded_display_math_from_paragraph_impl,
-        "display_math_prose_cue_re": display_math_prose_cue_re,
-        "display_math_resume_re": display_math_resume_re,
-        "display_math_start_re": display_math_start_re,
-        "looks_like_display_math_echo_impl": looks_like_display_math_echo_impl,
-        "short_word_re": short_word_re,
+        "split_leading_front_matter_records": front_matter_helpers.split_leading_front_matter_records,
+        "clean_record": clean_record,
+        "record_word_count": front_matter_support_helpers.record_word_count,
+        "record_width": front_matter_support_helpers.record_width,
+        "abstract_marker_only_re": abstract_marker_only_re,
+        "abstract_lead_re": abstract_lead_re,
+        "looks_like_front_matter_metadata": front_matter_helpers.looks_like_front_matter_metadata,
+        "author_note_re": author_note_re,
+        "looks_like_affiliation": looks_like_affiliation,
+        "looks_like_intro_marker": front_matter_helpers.looks_like_intro_marker,
+        "looks_like_author_line": front_matter_helpers.looks_like_author_line,
+        "looks_like_contact_name": front_matter_helpers.looks_like_contact_name,
+        "matches_title_line": front_matter_support_helpers.matches_title_line,
+        "looks_like_affiliation_continuation": front_matter_helpers.looks_like_affiliation_continuation,
+        "funding_re": funding_re,
+        "dedupe_text_lines": front_matter_support_helpers.dedupe_text_lines,
+        "filter_front_matter_authors": front_matter_helpers.filter_front_matter_authors,
+        "parse_authors": front_matter_helpers.parse_authors,
+        "parse_authors_from_citation_line": front_matter_helpers.parse_authors_from_citation_line,
+        "normalize_author_line": front_matter_helpers.normalize_author_line,
+        "missing_front_matter_author": partial(
+            missing_front_matter_author,
+            missing_front_matter_placeholder,
+        ),
+        "build_affiliations_for_authors": front_matter_helpers.build_affiliations_for_authors,
+        "missing_front_matter_affiliation": partial(
+            missing_front_matter_affiliation,
+            missing_front_matter_placeholder,
+        ),
+        "strip_author_prefix_from_affiliation_line": front_matter_helpers.strip_author_prefix_from_affiliation_line,
+        "normalize_title_key": normalize_title_key,
+        "clone_record_with_text": front_matter_support_helpers.clone_record_with_text,
+        "looks_like_body_section_marker": front_matter_helpers.looks_like_body_section_marker,
+        "preprint_marker_re": preprint_marker_re,
+        "keywords_lead_re": keywords_lead_re,
+        "abstract_text_is_usable": front_matter_helpers.abstract_text_is_usable,
+        "normalize_abstract_candidate_text": front_matter_helpers.normalize_abstract_candidate_text,
+        "front_matter_missing_placeholder": missing_front_matter_placeholder,
+        "clean_heading_title": clean_heading_title,
+        "parse_heading_label": parse_heading_label,
+        "abstract_quality_flags": abstract_quality_flags,
+        "leading_abstract_text": front_matter_recovery_helpers.leading_abstract_text,
+        "abstract_text_is_recoverable": front_matter_recovery_helpers.abstract_text_is_recoverable,
+        "replace_front_matter_abstract_text": front_matter_recovery_helpers.replace_front_matter_abstract_text,
+        "opening_abstract_candidate_records": front_matter_recovery_helpers.opening_abstract_candidate_records,
     }
 
 
@@ -849,79 +655,36 @@ def build_reconcile_binding_block_builder_deps(
     split_code_lines: Any,
     review_for_math_entry: Any,
     review_for_math_ref_block: Any,
-    match_external_math_entry_impl: Any,
     build_block_math_entry: Any,
     normalize_formula_display_text: Any,
     classify_math_block: Any,
     review_for_algorithm_block_text: Any,
-    overlapping_external_math_entries_impl: Any,
-    trim_embedded_display_math_from_paragraph_impl: Any,
     display_math_prose_cue_re: Any,
     display_math_resume_re: Any,
     display_math_start_re: Any,
-    looks_like_display_math_echo_impl: Any,
     short_word_re: Any,
 ) -> dict[str, Any]:
-    return make_reconcile_binding_block_builder_deps(
-        record_analysis_text=record_analysis_text,
-        is_short_ocr_fragment=screening_helpers.is_short_ocr_fragment,
-        caption_label=caption_label,
-        looks_like_real_code_record=reconcile_make_looks_like_real_code_record_binding_runtime(
-            clean_text=clean_text,
-        ),
-        split_code_lines=split_code_lines,
-        list_item_marker=reconcile_make_list_item_marker_binding_runtime(
-            clean_text=clean_text,
-        ),
-        review_for_math_entry=review_for_math_entry,
-        review_for_math_ref_block=review_for_math_ref_block,
-        match_external_math_entry_impl=match_external_math_entry_impl,
-        build_block_math_entry=build_block_math_entry,
-        normalize_formula_display_text=normalize_formula_display_text,
-        classify_math_block=classify_math_block,
-        review_for_algorithm_block_text=review_for_algorithm_block_text,
-        overlapping_external_math_entries_impl=overlapping_external_math_entries_impl,
-        trim_embedded_display_math_from_paragraph_impl=trim_embedded_display_math_from_paragraph_impl,
-        display_math_prose_cue_re=display_math_prose_cue_re,
-        display_math_resume_re=display_math_resume_re,
-        display_math_start_re=display_math_start_re,
-        looks_like_display_math_echo_impl=looks_like_display_math_echo_impl,
-        short_word_re=short_word_re,
-    )
-
-
-def make_reconcile_binding_layout_heading_deps(
-    *,
-    layout_record: Any,
-    absorb_figure_caption_continuations: Any,
-    figure_label_token: Any,
-    synthetic_caption_record: Any,
-    inject_external_math_records: Any,
-    mathpix_text_blocks_by_page: Any,
-    mathpix_text_hint_candidate: Any,
-    is_mathpix_text_hint_better: Any,
-    mathpix_prose_lead_repair_candidate: Any,
-    looks_like_bad_heading: Any,
-    collapse_ocr_split_caps: Any,
-    decode_control_heading_label: Any,
-    normalize_decoded_heading_title: Any,
-    split_embedded_heading_paragraph: Any,
-) -> dict[str, Any]:
     return {
-        "layout_record": layout_record,
-        "absorb_figure_caption_continuations": absorb_figure_caption_continuations,
-        "figure_label_token": figure_label_token,
-        "synthetic_caption_record": synthetic_caption_record,
-        "inject_external_math_records": inject_external_math_records,
-        "mathpix_text_blocks_by_page": mathpix_text_blocks_by_page,
-        "mathpix_text_hint_candidate": mathpix_text_hint_candidate,
-        "is_mathpix_text_hint_better": is_mathpix_text_hint_better,
-        "mathpix_prose_lead_repair_candidate": mathpix_prose_lead_repair_candidate,
-        "looks_like_bad_heading": looks_like_bad_heading,
-        "collapse_ocr_split_caps": collapse_ocr_split_caps,
-        "decode_control_heading_label": decode_control_heading_label,
-        "normalize_decoded_heading_title": normalize_decoded_heading_title,
-        "split_embedded_heading_paragraph": split_embedded_heading_paragraph,
+        "record_analysis_text": record_analysis_text,
+        "is_short_ocr_fragment": screening_helpers.is_short_ocr_fragment,
+        "caption_label": caption_label,
+        "looks_like_real_code_record": reconcile_make_looks_like_real_code_record_binding_runtime(
+            clean_text=clean_text,
+        ),
+        "split_code_lines": split_code_lines,
+        "list_item_marker": reconcile_make_list_item_marker_binding_runtime(
+            clean_text=clean_text,
+        ),
+        "review_for_math_entry": review_for_math_entry,
+        "review_for_math_ref_block": review_for_math_ref_block,
+        "build_block_math_entry": build_block_math_entry,
+        "normalize_formula_display_text": normalize_formula_display_text,
+        "classify_math_block": classify_math_block,
+        "review_for_algorithm_block_text": review_for_algorithm_block_text,
+        "display_math_prose_cue_re": display_math_prose_cue_re,
+        "display_math_resume_re": display_math_resume_re,
+        "display_math_start_re": display_math_start_re,
+        "short_word_re": short_word_re,
     }
 
 
@@ -948,11 +711,11 @@ def build_reconcile_binding_layout_heading_deps(
         clean_text=clean_text,
         clean_heading_title=clean_heading_title,
     )
-    return make_reconcile_binding_layout_heading_deps(
-        layout_record=reconcile_make_layout_record(
+    return {
+        "layout_record": reconcile_make_layout_record(
             clean_text=clean_text,
         ),
-        absorb_figure_caption_continuations=reconcile_make_absorb_figure_caption_continuations(
+        "absorb_figure_caption_continuations": reconcile_make_absorb_figure_caption_continuations(
             match_figure_for_caption_record=reconcile_make_match_figure_for_caption_record(
                 record_bbox=reconcile_make_record_bbox(
                     block_source_spans=block_source_spans,
@@ -972,23 +735,23 @@ def build_reconcile_binding_layout_heading_deps(
                 ),
             ),
         ),
-        figure_label_token=reconcile_figure_label_token,
-        synthetic_caption_record=reconcile_synthetic_caption_record,
-        inject_external_math_records=reconcile_make_inject_external_math_records_binding_runtime(
+        "figure_label_token": reconcile_figure_label_token,
+        "synthetic_caption_record": reconcile_synthetic_caption_record,
+        "inject_external_math_records": reconcile_make_inject_external_math_records_binding_runtime(
             clean_text=clean_text,
             display_math_prose_cue_re=display_math_prose_cue_re,
             mathish_ratio=mathish_ratio,
             strong_operator_count=strong_operator_count,
         ),
-        mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
-        mathpix_text_hint_candidate=mathpix_text_hint_candidate,
-        is_mathpix_text_hint_better=is_mathpix_text_hint_better,
-        mathpix_prose_lead_repair_candidate=mathpix_prose_lead_repair_candidate,
-        looks_like_bad_heading=looks_like_bad_heading,
-        collapse_ocr_split_caps=collapse_ocr_split_caps,
-        decode_control_heading_label=reconcile_decode_control_heading_label_runtime,
-        normalize_decoded_heading_title=normalize_decoded_heading_title,
-        split_embedded_heading_paragraph=reconcile_make_split_embedded_heading_paragraph_runtime(
+        "mathpix_text_blocks_by_page": mathpix_text_blocks_by_page,
+        "mathpix_text_hint_candidate": mathpix_text_hint_candidate,
+        "is_mathpix_text_hint_better": is_mathpix_text_hint_better,
+        "mathpix_prose_lead_repair_candidate": mathpix_prose_lead_repair_candidate,
+        "looks_like_bad_heading": looks_like_bad_heading,
+        "collapse_ocr_split_caps": collapse_ocr_split_caps,
+        "decode_control_heading_label": reconcile_decode_control_heading_label_runtime,
+        "normalize_decoded_heading_title": normalize_decoded_heading_title,
+        "split_embedded_heading_paragraph": reconcile_make_split_embedded_heading_paragraph_runtime(
             clean_text=clean_text,
             block_source_spans=block_source_spans,
             embedded_heading_prefix_re=embedded_heading_prefix_re,
@@ -997,91 +760,7 @@ def build_reconcile_binding_layout_heading_deps(
             looks_like_bad_heading=looks_like_bad_heading,
             short_word_re=short_word_re,
         ),
-    )
-
-
-def make_reconcile_binding_deps(
-    *,
-    text_deps: dict[str, Any],
-    math_deps: dict[str, Any],
-    front_matter_deps: dict[str, Any],
-    block_builder_deps: dict[str, Any],
-    layout_heading_deps: dict[str, Any],
-) -> ReconcileBindingDeps:
-    return ReconcileBindingDeps(
-        **text_deps,
-        **math_deps,
-        **front_matter_deps,
-        **block_builder_deps,
-        **layout_heading_deps,
-    )
-
-
-def make_reconcile_assembly_deps(
-    *,
-    merge_math_fragment_records: Any,
-    page_one_front_matter_records: Any,
-    is_title_page_metadata_record: Any,
-    build_section_tree: Any,
-    attach_orphan_numbered_roots: Any,
-    split_late_prelude_for_missing_intro: Any,
-    build_abstract_decision: Any,
-    should_replace_front_matter_abstract: Any,
-    section_node_type: Any,
-    prepare_section_nodes: Any,
-    split_trailing_reference_records: Any,
-    extract_reference_records_from_tail_section: Any,
-    reference_records_from_mathpix_layout: Any,
-    materialize_sections: Any,
-    section_id_impl: Any,
-    merge_reference_records: Any,
-    is_figure_debris: Any,
-    looks_like_running_header_record: Any,
-    looks_like_table_body_debris: Any,
-    suppress_embedded_table_headings: Any,
-    should_merge_paragraph_records: Any,
-    table_caption_re: Any,
-    compile_formulas: Any,
-    annotate_formula_classifications: Any,
-    annotate_formula_semantic_expr: Any,
-    compact_text: Any,
-    running_header_text_re: Any,
-    starts_like_sentence: Any,
-    now_iso: Any,
-    build_canonical_document: Any,
-) -> ReconcileAssemblyDeps:
-    return ReconcileAssemblyDeps(
-        merge_math_fragment_records=merge_math_fragment_records,
-        page_one_front_matter_records=page_one_front_matter_records,
-        is_title_page_metadata_record=is_title_page_metadata_record,
-        build_section_tree=build_section_tree,
-        attach_orphan_numbered_roots=attach_orphan_numbered_roots,
-        split_late_prelude_for_missing_intro=split_late_prelude_for_missing_intro,
-        build_abstract_decision=build_abstract_decision,
-        should_replace_front_matter_abstract=should_replace_front_matter_abstract,
-        section_node_type=section_node_type,
-        prepare_section_nodes=prepare_section_nodes,
-        split_trailing_reference_records=split_trailing_reference_records,
-        extract_reference_records_from_tail_section=extract_reference_records_from_tail_section,
-        reference_records_from_mathpix_layout=reference_records_from_mathpix_layout,
-        materialize_sections=materialize_sections,
-        section_id_impl=section_id_impl,
-        merge_reference_records=merge_reference_records,
-        is_figure_debris=is_figure_debris,
-        looks_like_running_header_record=looks_like_running_header_record,
-        looks_like_table_body_debris=looks_like_table_body_debris,
-        suppress_embedded_table_headings=suppress_embedded_table_headings,
-        should_merge_paragraph_records=should_merge_paragraph_records,
-        table_caption_re=table_caption_re,
-        compile_formulas=compile_formulas,
-        annotate_formula_classifications=annotate_formula_classifications,
-        annotate_formula_semantic_expr=annotate_formula_semantic_expr,
-        compact_text=compact_text,
-        running_header_text_re=running_header_text_re,
-        starts_like_sentence=starts_like_sentence,
-        now_iso=now_iso,
-        build_canonical_document=build_canonical_document,
-    )
+    }
 
 
 def build_reconcile_assembly_record_prep_deps(
@@ -1093,16 +772,16 @@ def build_reconcile_assembly_record_prep_deps(
     block_source_spans: Any,
     normalize_title_key: Any,
     mathpix_text_blocks_by_page: Any,
-) -> dict[str, Any]:
-    return {
-        "merge_math_fragment_records": reconcile_make_merge_math_fragment_records_runtime(
+) -> ReconcileAssemblyRecordPrepDeps:
+    return ReconcileAssemblyRecordPrepDeps(
+        merge_math_fragment_records=reconcile_make_merge_math_fragment_records_runtime(
             looks_like_math_fragment=looks_like_math_fragment,
             clean_text=clean_text,
             record_analysis_text=record_analysis_text,
             math_signal_count=math_signal_count,
             block_source_spans=block_source_spans,
         ),
-        "page_one_front_matter_records": reconcile_make_page_one_front_matter_records(
+        page_one_front_matter_records=reconcile_make_page_one_front_matter_records(
             clean_text=clean_text,
             normalize_title_key=normalize_title_key,
             mathpix_text_blocks_by_page=mathpix_text_blocks_by_page,
@@ -1110,7 +789,7 @@ def build_reconcile_assembly_record_prep_deps(
                 clean_text=clean_text,
             ),
         ),
-    }
+    )
 
 
 def build_reconcile_assembly_structure_deps(
@@ -1119,16 +798,16 @@ def build_reconcile_assembly_structure_deps(
     front_matter_recovery_helpers: Any,
     front_matter_support_helpers: Any,
     reference_helpers: Any,
-) -> dict[str, Any]:
-    return {
-        "is_title_page_metadata_record": front_matter_helpers.is_title_page_metadata_record,
-        "split_late_prelude_for_missing_intro": front_matter_recovery_helpers.split_late_prelude_for_missing_intro,
-        "should_replace_front_matter_abstract": front_matter_support_helpers.should_replace_front_matter_abstract,
-        "split_trailing_reference_records": reference_helpers.split_trailing_reference_records,
-        "extract_reference_records_from_tail_section": reference_helpers.extract_reference_records_from_tail_section,
-        "reference_records_from_mathpix_layout": reference_helpers.reference_records_from_mathpix_layout,
-        "merge_reference_records": reference_helpers.merge_reference_records,
-    }
+) -> ReconcileAssemblyStructureDeps:
+    return ReconcileAssemblyStructureDeps(
+        is_title_page_metadata_record=front_matter_helpers.is_title_page_metadata_record,
+        split_late_prelude_for_missing_intro=front_matter_recovery_helpers.split_late_prelude_for_missing_intro,
+        should_replace_front_matter_abstract=front_matter_support_helpers.should_replace_front_matter_abstract,
+        split_trailing_reference_records=reference_helpers.split_trailing_reference_records,
+        extract_reference_records_from_tail_section=reference_helpers.extract_reference_records_from_tail_section,
+        reference_records_from_mathpix_layout=reference_helpers.reference_records_from_mathpix_layout,
+        merge_reference_records=reference_helpers.merge_reference_records,
+    )
 
 
 def build_reconcile_assembly_postprocess_deps(
@@ -1138,30 +817,17 @@ def build_reconcile_assembly_postprocess_deps(
     compact_text: Any,
     running_header_text_re: Any,
     starts_like_sentence: Any,
-) -> dict[str, Any]:
-    return {
-        "is_figure_debris": screening_helpers.is_figure_debris,
-        "looks_like_running_header_record": screening_helpers.looks_like_running_header_record,
-        "looks_like_table_body_debris": screening_helpers.looks_like_table_body_debris,
-        "suppress_embedded_table_headings": screening_helpers.suppress_embedded_table_headings,
-        "should_merge_paragraph_records": screening_helpers.should_merge_paragraph_records,
-        "table_caption_re": table_caption_re,
-        "compact_text": compact_text,
-        "running_header_text_re": running_header_text_re,
-        "starts_like_sentence": starts_like_sentence,
-    }
-
-
-def make_reconcile_runtime_deps(
-    *,
-    loaders: ReconcileLoaderDeps,
-    bindings: ReconcileBindingDeps,
-    assembly: ReconcileAssemblyDeps,
-) -> ReconcileRuntimeDeps:
-    return ReconcileRuntimeDeps(
-        loaders=loaders,
-        bindings=bindings,
-        assembly=assembly,
+) -> ReconcileAssemblyPostprocessDeps:
+    return ReconcileAssemblyPostprocessDeps(
+        is_figure_debris=screening_helpers.is_figure_debris,
+        looks_like_running_header_record=screening_helpers.looks_like_running_header_record,
+        looks_like_table_body_debris=screening_helpers.looks_like_table_body_debris,
+        suppress_embedded_table_headings=screening_helpers.suppress_embedded_table_headings,
+        should_merge_paragraph_records=screening_helpers.should_merge_paragraph_records,
+        table_caption_re=table_caption_re,
+        compact_text=compact_text,
+        running_header_text_re=running_header_text_re,
+        starts_like_sentence=starts_like_sentence,
     )
 
 
@@ -1179,8 +845,6 @@ def build_reconcile_runtime_deps(
     pdftotext_available: Any,
     extract_pdftotext_pages: Any,
     page_height_map: Any,
-    normalize_prose_text_impl: Any,
-    normalize_reference_text_impl: Any,
     default_review: Any,
     leading_negationslash_artifact_re: Any,
     leading_ocr_marker_re: Any,
@@ -1200,8 +864,6 @@ def build_reconcile_runtime_deps(
     looks_like_affiliation: Any,
     funding_re: Any,
     missing_front_matter_placeholder: Any,
-    missing_front_matter_author_impl: Any,
-    missing_front_matter_affiliation_impl: Any,
     normalize_title_key: Any,
     preprint_marker_re: Any,
     keywords_lead_re: Any,
@@ -1212,16 +874,12 @@ def build_reconcile_runtime_deps(
     split_code_lines: Any,
     review_for_math_entry: Any,
     review_for_math_ref_block: Any,
-    match_external_math_entry_impl: Any,
     build_block_math_entry: Any,
     classify_math_block: Any,
     review_for_algorithm_block_text: Any,
-    overlapping_external_math_entries_impl: Any,
-    trim_embedded_display_math_from_paragraph_impl: Any,
     display_math_prose_cue_re: Any,
     display_math_resume_re: Any,
     display_math_start_re: Any,
-    looks_like_display_math_echo_impl: Any,
     short_word_re: Any,
     looks_like_bad_heading: Any,
     collapse_ocr_split_caps: Any,
@@ -1232,7 +890,6 @@ def build_reconcile_runtime_deps(
     section_node_type: Any,
     prepare_section_nodes: Any,
     materialize_sections: Any,
-    section_id_impl: Any,
     compile_formulas: Any,
     annotate_formula_classifications: Any,
     annotate_formula_semantic_expr: Any,
@@ -1248,7 +905,7 @@ def build_reconcile_runtime_deps(
     front_matter_helper_bundles = helper_bundles.front_matter_helper_bundles
     reference_helpers = helper_bundles.reference_helpers
 
-    loaders = make_reconcile_loader_deps(
+    loaders = ReconcileLoaderDeps(
         run_paper_pipeline_impl=run_paper_pipeline_impl,
         extract_layout=extract_layout,
         load_external_layout=load_external_layout,
@@ -1262,91 +919,88 @@ def build_reconcile_runtime_deps(
         extract_pdftotext_pages=extract_pdftotext_pages,
         page_height_map=page_height_map,
     )
-    bindings = make_reconcile_binding_deps(
-        text_deps=make_reconcile_binding_text_deps(
-            normalize_prose_text_impl=normalize_prose_text_impl,
-            normalize_reference_text_impl=normalize_reference_text_impl,
-            strip_known_running_header_text=base_helpers.strip_known_running_header_text,
-            clean_text=base_helpers.clean_text,
-            block_source_spans=base_helpers.block_source_spans,
-            default_review=default_review,
-            leading_negationslash_artifact_re=leading_negationslash_artifact_re,
-            leading_ocr_marker_re=leading_ocr_marker_re,
-            leading_punct_artifact_re=leading_punct_artifact_re,
-            leading_var_artifact_re=leading_var_artifact_re,
-            trailing_numeric_artifact_re=trailing_numeric_artifact_re,
-        ),
-        math_deps=build_reconcile_binding_math_deps(
-            looks_like_prose_paragraph=looks_like_prose_paragraph,
-            looks_like_prose_math_fragment=looks_like_prose_math_fragment,
-            word_count=base_helpers.word_count,
-            strong_operator_count=base_helpers.strong_operator_count,
-            mathish_ratio=base_helpers.mathish_ratio,
-            split_inline_math=split_inline_math,
-            repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
-            extract_general_inline_math_spans=extract_general_inline_math_spans,
-            merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
-            normalize_inline_math_spans=normalize_inline_math_spans,
-        ),
-        front_matter_deps=build_reconcile_binding_front_matter_deps(
-            clean_record=base_helpers.clean_record,
-            front_matter_support_helpers=front_matter_helper_bundles.support_helpers,
-            front_matter_helpers=front_matter_helper_bundles.parsing_helpers,
-            front_matter_recovery_helpers=front_matter_helper_bundles.recovery_helpers,
-            abstract_marker_only_re=abstract_marker_only_re,
-            abstract_lead_re=abstract_lead_re,
-            author_note_re=author_note_re,
-            looks_like_affiliation=looks_like_affiliation,
-            funding_re=funding_re,
-            missing_front_matter_placeholder=missing_front_matter_placeholder,
-            missing_front_matter_author_impl=missing_front_matter_author_impl,
-            missing_front_matter_affiliation_impl=missing_front_matter_affiliation_impl,
-            normalize_title_key=normalize_title_key,
-            preprint_marker_re=preprint_marker_re,
-            keywords_lead_re=keywords_lead_re,
-            clean_heading_title=clean_heading_title,
-            parse_heading_label=parse_heading_label,
-            abstract_quality_flags=abstract_quality_flags,
-        ),
-        block_builder_deps=build_reconcile_binding_block_builder_deps(
-            record_analysis_text=base_helpers.record_analysis_text,
-            screening_helpers=screening_helpers,
-            caption_label=caption_label,
-            clean_text=base_helpers.clean_text,
-            split_code_lines=split_code_lines,
-            review_for_math_entry=review_for_math_entry,
-            review_for_math_ref_block=review_for_math_ref_block,
-            match_external_math_entry_impl=match_external_math_entry_impl,
-            build_block_math_entry=build_block_math_entry,
-            normalize_formula_display_text=base_helpers.normalize_formula_display_text,
-            classify_math_block=classify_math_block,
-            review_for_algorithm_block_text=review_for_algorithm_block_text,
-            overlapping_external_math_entries_impl=overlapping_external_math_entries_impl,
-            trim_embedded_display_math_from_paragraph_impl=trim_embedded_display_math_from_paragraph_impl,
-            display_math_prose_cue_re=display_math_prose_cue_re,
-            display_math_resume_re=display_math_resume_re,
-            display_math_start_re=display_math_start_re,
-            looks_like_display_math_echo_impl=looks_like_display_math_echo_impl,
-            short_word_re=short_word_re,
-        ),
-        layout_heading_deps=build_reconcile_binding_layout_heading_deps(
-            clean_text=base_helpers.clean_text,
-            block_source_spans=base_helpers.block_source_spans,
-            normalize_title_key=normalize_title_key,
-            normalize_prose_text=normalize_prose_text_impl,
-            display_math_prose_cue_re=display_math_prose_cue_re,
-            mathish_ratio=base_helpers.mathish_ratio,
-            strong_operator_count=base_helpers.strong_operator_count,
-            mathpix_text_blocks_by_page=text_repair_helpers.mathpix_text_blocks_by_page,
-            mathpix_text_hint_candidate=text_repair_helpers.mathpix_text_hint_candidate,
-            is_mathpix_text_hint_better=text_repair_helpers.is_mathpix_text_hint_better,
-            mathpix_prose_lead_repair_candidate=text_repair_helpers.mathpix_prose_lead_repair_candidate,
-            looks_like_bad_heading=looks_like_bad_heading,
-            collapse_ocr_split_caps=collapse_ocr_split_caps,
-            clean_heading_title=clean_heading_title,
-            embedded_heading_prefix_re=embedded_heading_prefix_re,
-            short_word_re=short_word_re,
-        ),
+    text_deps = {
+        "strip_known_running_header_text": base_helpers.strip_known_running_header_text,
+        "clean_text": base_helpers.clean_text,
+        "block_source_spans": base_helpers.block_source_spans,
+        "default_review": default_review,
+        "leading_negationslash_artifact_re": leading_negationslash_artifact_re,
+        "leading_ocr_marker_re": leading_ocr_marker_re,
+        "leading_punct_artifact_re": leading_punct_artifact_re,
+        "leading_var_artifact_re": leading_var_artifact_re,
+        "trailing_numeric_artifact_re": trailing_numeric_artifact_re,
+    }
+    math_deps = build_reconcile_binding_math_deps(
+        looks_like_prose_paragraph=looks_like_prose_paragraph,
+        looks_like_prose_math_fragment=looks_like_prose_math_fragment,
+        word_count=base_helpers.word_count,
+        strong_operator_count=base_helpers.strong_operator_count,
+        mathish_ratio=base_helpers.mathish_ratio,
+        split_inline_math=split_inline_math,
+        repair_symbolic_ocr_spans=repair_symbolic_ocr_spans,
+        extract_general_inline_math_spans=extract_general_inline_math_spans,
+        merge_inline_math_relation_suffixes=merge_inline_math_relation_suffixes,
+        normalize_inline_math_spans=normalize_inline_math_spans,
+    )
+    front_matter_deps = build_reconcile_binding_front_matter_deps(
+        clean_record=base_helpers.clean_record,
+        front_matter_support_helpers=front_matter_helper_bundles.support_helpers,
+        front_matter_helpers=front_matter_helper_bundles.parsing_helpers,
+        front_matter_recovery_helpers=front_matter_helper_bundles.recovery_helpers,
+        abstract_marker_only_re=abstract_marker_only_re,
+        abstract_lead_re=abstract_lead_re,
+        author_note_re=author_note_re,
+        looks_like_affiliation=looks_like_affiliation,
+        funding_re=funding_re,
+        missing_front_matter_placeholder=missing_front_matter_placeholder,
+        normalize_title_key=normalize_title_key,
+        preprint_marker_re=preprint_marker_re,
+        keywords_lead_re=keywords_lead_re,
+        clean_heading_title=clean_heading_title,
+        parse_heading_label=parse_heading_label,
+        abstract_quality_flags=abstract_quality_flags,
+    )
+    block_builder_deps = build_reconcile_binding_block_builder_deps(
+        record_analysis_text=base_helpers.record_analysis_text,
+        screening_helpers=screening_helpers,
+        caption_label=caption_label,
+        clean_text=base_helpers.clean_text,
+        split_code_lines=split_code_lines,
+        review_for_math_entry=review_for_math_entry,
+        review_for_math_ref_block=review_for_math_ref_block,
+        build_block_math_entry=build_block_math_entry,
+        normalize_formula_display_text=base_helpers.normalize_formula_display_text,
+        classify_math_block=classify_math_block,
+        review_for_algorithm_block_text=review_for_algorithm_block_text,
+        display_math_prose_cue_re=display_math_prose_cue_re,
+        display_math_resume_re=display_math_resume_re,
+        display_math_start_re=display_math_start_re,
+        short_word_re=short_word_re,
+    )
+    layout_heading_deps = build_reconcile_binding_layout_heading_deps(
+        clean_text=base_helpers.clean_text,
+        block_source_spans=base_helpers.block_source_spans,
+        normalize_title_key=normalize_title_key,
+        normalize_prose_text=normalize_prose_text,
+        display_math_prose_cue_re=display_math_prose_cue_re,
+        mathish_ratio=base_helpers.mathish_ratio,
+        strong_operator_count=base_helpers.strong_operator_count,
+        mathpix_text_blocks_by_page=text_repair_helpers.mathpix_text_blocks_by_page,
+        mathpix_text_hint_candidate=text_repair_helpers.mathpix_text_hint_candidate,
+        is_mathpix_text_hint_better=text_repair_helpers.is_mathpix_text_hint_better,
+        mathpix_prose_lead_repair_candidate=text_repair_helpers.mathpix_prose_lead_repair_candidate,
+        looks_like_bad_heading=looks_like_bad_heading,
+        collapse_ocr_split_caps=collapse_ocr_split_caps,
+        clean_heading_title=clean_heading_title,
+        embedded_heading_prefix_re=embedded_heading_prefix_re,
+        short_word_re=short_word_re,
+    )
+    bindings = ReconcileBindingDeps(
+        **text_deps,
+        **math_deps,
+        **front_matter_deps,
+        **block_builder_deps,
+        **layout_heading_deps,
     )
     assembly_record_prep_deps = build_reconcile_assembly_record_prep_deps(
         looks_like_math_fragment=base_helpers.looks_like_math_fragment,
@@ -1370,39 +1024,38 @@ def build_reconcile_runtime_deps(
         running_header_text_re=running_header_text_re,
         starts_like_sentence=starts_like_sentence,
     )
-    assembly = make_reconcile_assembly_deps(
-        merge_math_fragment_records=assembly_record_prep_deps["merge_math_fragment_records"],
-        page_one_front_matter_records=assembly_record_prep_deps["page_one_front_matter_records"],
-        is_title_page_metadata_record=assembly_structure_deps["is_title_page_metadata_record"],
+    assembly = ReconcileAssemblyDeps(
+        merge_math_fragment_records=assembly_record_prep_deps.merge_math_fragment_records,
+        page_one_front_matter_records=assembly_record_prep_deps.page_one_front_matter_records,
+        is_title_page_metadata_record=assembly_structure_deps.is_title_page_metadata_record,
         build_section_tree=build_section_tree,
         attach_orphan_numbered_roots=attach_orphan_numbered_roots,
-        split_late_prelude_for_missing_intro=assembly_structure_deps["split_late_prelude_for_missing_intro"],
+        split_late_prelude_for_missing_intro=assembly_structure_deps.split_late_prelude_for_missing_intro,
         build_abstract_decision=build_abstract_decision,
-        should_replace_front_matter_abstract=assembly_structure_deps["should_replace_front_matter_abstract"],
+        should_replace_front_matter_abstract=assembly_structure_deps.should_replace_front_matter_abstract,
         section_node_type=section_node_type,
         prepare_section_nodes=prepare_section_nodes,
-        split_trailing_reference_records=assembly_structure_deps["split_trailing_reference_records"],
-        extract_reference_records_from_tail_section=assembly_structure_deps["extract_reference_records_from_tail_section"],
-        reference_records_from_mathpix_layout=assembly_structure_deps["reference_records_from_mathpix_layout"],
+        split_trailing_reference_records=assembly_structure_deps.split_trailing_reference_records,
+        extract_reference_records_from_tail_section=assembly_structure_deps.extract_reference_records_from_tail_section,
+        reference_records_from_mathpix_layout=assembly_structure_deps.reference_records_from_mathpix_layout,
         materialize_sections=materialize_sections,
-        section_id_impl=section_id_impl,
-        merge_reference_records=assembly_structure_deps["merge_reference_records"],
-        is_figure_debris=assembly_postprocess_deps["is_figure_debris"],
-        looks_like_running_header_record=assembly_postprocess_deps["looks_like_running_header_record"],
-        looks_like_table_body_debris=assembly_postprocess_deps["looks_like_table_body_debris"],
-        suppress_embedded_table_headings=assembly_postprocess_deps["suppress_embedded_table_headings"],
-        should_merge_paragraph_records=assembly_postprocess_deps["should_merge_paragraph_records"],
-        table_caption_re=assembly_postprocess_deps["table_caption_re"],
+        merge_reference_records=assembly_structure_deps.merge_reference_records,
+        is_figure_debris=assembly_postprocess_deps.is_figure_debris,
+        looks_like_running_header_record=assembly_postprocess_deps.looks_like_running_header_record,
+        looks_like_table_body_debris=assembly_postprocess_deps.looks_like_table_body_debris,
+        suppress_embedded_table_headings=assembly_postprocess_deps.suppress_embedded_table_headings,
+        should_merge_paragraph_records=assembly_postprocess_deps.should_merge_paragraph_records,
+        table_caption_re=assembly_postprocess_deps.table_caption_re,
         compile_formulas=compile_formulas,
         annotate_formula_classifications=annotate_formula_classifications,
         annotate_formula_semantic_expr=annotate_formula_semantic_expr,
-        compact_text=assembly_postprocess_deps["compact_text"],
-        running_header_text_re=assembly_postprocess_deps["running_header_text_re"],
-        starts_like_sentence=assembly_postprocess_deps["starts_like_sentence"],
+        compact_text=assembly_postprocess_deps.compact_text,
+        running_header_text_re=assembly_postprocess_deps.running_header_text_re,
+        starts_like_sentence=assembly_postprocess_deps.starts_like_sentence,
         now_iso=base_helpers.now_iso,
         build_canonical_document=build_canonical_document,
     )
-    return make_reconcile_runtime_deps(
+    return ReconcileRuntimeDeps(
         loaders=loaders,
         bindings=bindings,
         assembly=assembly,

@@ -7,7 +7,7 @@ from pipeline.assembly.record_block_builder import (
     looks_like_real_code_record as builder_looks_like_real_code_record,
 )
 from pipeline.reconcile.external_math import (
-    match_external_math_entry as external_match_external_math_entry,
+    make_match_external_math_entry as external_make_match_external_math_entry,
     rect_area as external_rect_area,
     rect_intersection_area as external_rect_intersection_area,
 )
@@ -15,6 +15,7 @@ from pipeline.reconcile.external_math import (
 
 rect_intersection_area = external_rect_intersection_area
 rect_area = external_rect_area
+make_match_external_math_entry = external_make_match_external_math_entry
 
 
 def make_list_item_marker(
@@ -41,22 +42,3 @@ def make_looks_like_real_code_record(
         )
 
     return looks_like_real_code_record
-
-
-def make_match_external_math_entry(
-    *,
-    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
-    clean_text: Callable[[str], str],
-) -> Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], dict[str, Any] | None]:
-    def match_external_math_entry(
-        record: dict[str, Any],
-        external_math_by_page: dict[int, list[dict[str, Any]]],
-    ) -> dict[str, Any] | None:
-        return external_match_external_math_entry(
-            record,
-            external_math_by_page,
-            block_source_spans=block_source_spans,
-            clean_text=clean_text,
-        )
-
-    return match_external_math_entry

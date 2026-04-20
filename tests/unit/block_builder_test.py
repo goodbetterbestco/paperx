@@ -31,15 +31,10 @@ from pipeline.reconcile.block_builder_binding_runtime import (
     make_match_external_math_entry,
 )
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
-from pipeline.reconcile.math_runtime import (
+from pipeline.reconcile.math_suppression import (
     make_looks_like_display_math_echo,
     make_overlapping_external_math_entries,
     make_trim_embedded_display_math_from_paragraph,
-)
-from pipeline.reconcile.math_suppression import (
-    looks_like_display_math_echo as suppression_looks_like_display_math_echo,
-    overlapping_external_math_entries as suppression_overlapping_external_math_entries,
-    trim_embedded_display_math_from_paragraph as suppression_trim_embedded_display_math_from_paragraph,
 )
 from pipeline.reconcile.block_merging import make_merge_code_records
 from pipeline.reconcile.references import make_reference_entry_builder as make_reference_entry
@@ -156,11 +151,9 @@ MATCH_EXTERNAL_MATH_ENTRY = make_match_external_math_entry(
     clean_text=CLEAN_TEXT,
 )
 OVERLAPPING_EXTERNAL_MATH_ENTRIES = make_overlapping_external_math_entries(
-    overlapping_external_math_entries_impl=suppression_overlapping_external_math_entries,
     block_source_spans=block_source_spans,
 )
 TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH = make_trim_embedded_display_math_from_paragraph(
-    trim_embedded_display_math_from_paragraph_impl=suppression_trim_embedded_display_math_from_paragraph,
     block_source_spans=block_source_spans,
     clean_text=CLEAN_TEXT,
     display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,
@@ -170,7 +163,6 @@ TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH = make_trim_embedded_display_math_from
     strong_operator_count=strong_operator_count,
 )
 LOOKS_LIKE_DISPLAY_MATH_ECHO = make_looks_like_display_math_echo(
-    looks_like_display_math_echo_impl=suppression_looks_like_display_math_echo,
     block_source_spans=block_source_spans,
     clean_text=CLEAN_TEXT,
     mathish_ratio=MATHISH_RATIO,

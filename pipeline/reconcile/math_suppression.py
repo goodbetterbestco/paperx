@@ -131,6 +131,23 @@ def overlapping_external_math_entries(
     return [entry for _, entry in matches]
 
 
+def make_overlapping_external_math_entries(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+) -> Callable[[dict[str, Any], dict[int, list[dict[str, Any]]]], list[dict[str, Any]]]:
+    def bound_overlapping_external_math_entries(
+        record: dict[str, Any],
+        external_math_by_page_map: dict[int, list[dict[str, Any]]],
+    ) -> list[dict[str, Any]]:
+        return overlapping_external_math_entries(
+            record,
+            external_math_by_page_map,
+            block_source_spans=block_source_spans,
+        )
+
+    return bound_overlapping_external_math_entries
+
+
 def trim_embedded_display_math_from_paragraph(
     text: str,
     record: dict[str, Any],
@@ -214,6 +231,37 @@ def trim_embedded_display_math_from_paragraph(
     return clean_text(trimmed)
 
 
+def make_trim_embedded_display_math_from_paragraph(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    clean_text: Callable[[str], str],
+    display_math_prose_cue_re: Pattern[str],
+    display_math_resume_re: Pattern[str],
+    display_math_start_re: Pattern[str],
+    mathish_ratio: Callable[[str], float],
+    strong_operator_count: Callable[[str], int],
+) -> Callable[[str, dict[str, Any], list[dict[str, Any]]], str]:
+    def bound_trim_embedded_display_math_from_paragraph(
+        text: str,
+        record: dict[str, Any],
+        overlapping_math: list[dict[str, Any]],
+    ) -> str:
+        return trim_embedded_display_math_from_paragraph(
+            text,
+            record,
+            overlapping_math,
+            block_source_spans=block_source_spans,
+            clean_text=clean_text,
+            display_math_prose_cue_re=display_math_prose_cue_re,
+            display_math_resume_re=display_math_resume_re,
+            display_math_start_re=display_math_start_re,
+            mathish_ratio=mathish_ratio,
+            strong_operator_count=strong_operator_count,
+        )
+
+    return bound_trim_embedded_display_math_from_paragraph
+
+
 def looks_like_display_math_echo(
     record: dict[str, Any],
     text: str,
@@ -260,6 +308,33 @@ def looks_like_display_math_echo(
     if mathish_ratio(cleaned) >= 0.22 and strong_count >= 1:
         return True
     return False
+
+
+def make_looks_like_display_math_echo(
+    *,
+    block_source_spans: Callable[[dict[str, Any]], list[dict[str, Any]]],
+    clean_text: Callable[[str], str],
+    mathish_ratio: Callable[[str], float],
+    strong_operator_count: Callable[[str], int],
+    short_word_re: Pattern[str],
+) -> Callable[[dict[str, Any], str, list[dict[str, Any]]], bool]:
+    def bound_looks_like_display_math_echo(
+        record: dict[str, Any],
+        text: str,
+        overlapping_math: list[dict[str, Any]],
+    ) -> bool:
+        return looks_like_display_math_echo(
+            record,
+            text,
+            overlapping_math,
+            block_source_spans=block_source_spans,
+            clean_text=clean_text,
+            mathish_ratio=mathish_ratio,
+            strong_operator_count=strong_operator_count,
+            short_word_re=short_word_re,
+        )
+
+    return bound_looks_like_display_math_echo
 
 
 def looks_like_leading_display_math_echo(
@@ -349,3 +424,18 @@ def make_mark_records_with_external_math_overlap(
         )
 
     return build_mark_records_with_external_math_overlap
+
+
+__all__ = [
+    "external_math_by_page",
+    "looks_like_display_math_echo",
+    "make_looks_like_display_math_echo",
+    "make_mark_records_with_external_math_overlap",
+    "make_overlapping_external_math_entries",
+    "make_suppress_graphic_display_math_blocks",
+    "make_trim_embedded_display_math_from_paragraph",
+    "mark_records_with_external_math_overlap",
+    "overlapping_external_math_entries",
+    "suppress_graphic_display_math_blocks",
+    "trim_embedded_display_math_from_paragraph",
+]

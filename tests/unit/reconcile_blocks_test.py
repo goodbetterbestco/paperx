@@ -52,8 +52,7 @@ from pipeline.reconcile.layout_records import (
     synthetic_caption_record,
 )
 from pipeline.reconcile.math_fragments_runtime import make_math_signal_count, strong_operator_count
-from pipeline.reconcile.math_runtime import make_trim_embedded_display_math_from_paragraph
-from pipeline.reconcile.math_suppression import trim_embedded_display_math_from_paragraph as _math_trim_embedded_display_math_from_paragraph
+from pipeline.reconcile.math_suppression import make_trim_embedded_display_math_from_paragraph
 from pipeline.reconcile.block_merging import (
     make_merge_paragraph_blocks,
     make_merge_paragraph_records,
@@ -424,7 +423,6 @@ RECOVER_MISSING_FRONT_MATTER_ABSTRACT = make_recover_missing_front_matter_abstra
     normalize_abstract_candidate_text=PARSING_HELPERS.normalize_abstract_candidate_text,
 )
 TRIM_EMBEDDED_DISPLAY_MATH_FROM_PARAGRAPH = make_trim_embedded_display_math_from_paragraph(
-    trim_embedded_display_math_from_paragraph_impl=_math_trim_embedded_display_math_from_paragraph,
     block_source_spans=block_source_spans,
     clean_text=CLEAN_TEXT,
     display_math_prose_cue_re=rsp.DISPLAY_MATH_PROSE_CUE_RE,

@@ -1,10 +1,27 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Callable
 
 from pipeline.reconcile.layout_records import make_normalize_figure_caption_text
 from pipeline.reconcile.references import make_reference_entry_builder
 from pipeline.reconcile.text_cleaning import make_normalize_paragraph_text
+from pipeline.text.prose import normalize_prose_text
+from pipeline.text.references import normalize_reference_text
+
+
+@dataclass(frozen=True)
+class ReconcileTextRuntimeHelpers:
+    clean_text: Any
+    block_source_spans: Any
+    default_review: Any
+    normalize_title_key: Any
+    parse_heading_label: Any
+    strip_known_running_header_text: Any
+    short_word_re: Any
+    normalize_paragraph_text: Any
+    normalize_figure_caption_text: Any
+    make_reference_entry: Any
 
 
 def make_normalize_text_for_layout(
@@ -22,7 +39,7 @@ def build_reconcile_text_runtime_helpers(
     *,
     runtime_layout: Any,
     bindings: Any,
-) -> dict[str, Any]:
+) -> ReconcileTextRuntimeHelpers:
     clean_text = bindings.clean_text
     block_source_spans = bindings.block_source_spans
     default_review = bindings.default_review
@@ -32,11 +49,11 @@ def build_reconcile_text_runtime_helpers(
     short_word_re = bindings.short_word_re
 
     normalize_prose_text_for_layout = make_normalize_text_for_layout(
-        normalize_text_impl=bindings.normalize_prose_text_impl,
+        normalize_text_impl=normalize_prose_text,
         layout=runtime_layout,
     )
     normalize_reference_text_for_layout = make_normalize_text_for_layout(
-        normalize_text_impl=bindings.normalize_reference_text_impl,
+        normalize_text_impl=normalize_reference_text,
         layout=runtime_layout,
     )
     normalize_paragraph_text = make_normalize_paragraph_text(
@@ -49,29 +66,30 @@ def build_reconcile_text_runtime_helpers(
         normalize_prose_text=normalize_prose_text_for_layout,
         clean_text=clean_text,
     )
-    return {
-        "clean_text": clean_text,
-        "block_source_spans": block_source_spans,
-        "default_review": default_review,
-        "normalize_title_key": normalize_title_key,
-        "parse_heading_label": parse_heading_label,
-        "strip_known_running_header_text": strip_known_running_header_text,
-        "short_word_re": short_word_re,
-        "normalize_paragraph_text": normalize_paragraph_text,
-        "normalize_figure_caption_text": make_normalize_figure_caption_text(
+    return ReconcileTextRuntimeHelpers(
+        clean_text=clean_text,
+        block_source_spans=block_source_spans,
+        default_review=default_review,
+        normalize_title_key=normalize_title_key,
+        parse_heading_label=parse_heading_label,
+        strip_known_running_header_text=strip_known_running_header_text,
+        short_word_re=short_word_re,
+        normalize_paragraph_text=normalize_paragraph_text,
+        normalize_figure_caption_text=make_normalize_figure_caption_text(
             clean_text=clean_text,
             normalize_prose_text=normalize_prose_text_for_layout,
         ),
-        "make_reference_entry": make_reference_entry_builder(
+        make_reference_entry=make_reference_entry_builder(
             clean_text=clean_text,
             normalize_reference_text=normalize_reference_text_for_layout,
             block_source_spans=block_source_spans,
             default_review=default_review,
         ),
-    }
+    )
 
 
 __all__ = [
+    "ReconcileTextRuntimeHelpers",
     "build_reconcile_text_runtime_helpers",
     "make_normalize_text_for_layout",
 ]
