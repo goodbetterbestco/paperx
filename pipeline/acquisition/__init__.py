@@ -55,7 +55,13 @@ from pipeline.acquisition.remediation_trend import summarize_remediation_trend
 from pipeline.acquisition.audit import audit_acquisition_quality
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
 from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
-from pipeline.acquisition.providers import MetadataReferenceObservation, load_metadata_reference_observation
+from pipeline.acquisition.providers import (
+    MathpixExecutionDecision,
+    MetadataReferenceObservation,
+    build_provider_execution_plan,
+    decide_mathpix_execution,
+    load_metadata_reference_observation,
+)
 from pipeline.acquisition.routing import (
     AcquisitionRouteDecision,
     AcquisitionSignals,
@@ -74,6 +80,7 @@ from pipeline.acquisition.source_ownership import reported_layout_provider, repo
 __all__ = [
     "AcquisitionRouteDecision",
     "AcquisitionSignals",
+    "MathpixExecutionDecision",
     "MetadataReferenceObservation",
     "OcrPrepassDecision",
     "audit_acquisition_quality",
@@ -90,6 +97,7 @@ __all__ = [
     "current_benchmark_output_dir",
     "current_remediation_output_dir",
     "current_remediation_plan_output_dir",
+    "decide_mathpix_execution",
     "decide_ocr_prepass_policy",
     "family_provider_score_maps",
     "inspect_pdf_signals",
@@ -128,6 +136,7 @@ __all__ = [
     "score_math_provider",
     "score_metadata_provider",
     "score_layout_provider",
+    "build_provider_execution_plan",
     "write_benchmark_artifact_bundle",
     "write_remediation_plan_artifact_bundle",
     "write_remediation_artifact_bundle",

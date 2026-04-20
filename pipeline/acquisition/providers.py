@@ -4,6 +4,7 @@ from dataclasses import asdict, dataclass
 import json
 from pathlib import Path
 import re
+from typing import Any
 import xml.etree.ElementTree as ET
 
 from pipeline.text.headings import clean_heading_title, normalize_title_key
@@ -22,6 +23,38 @@ REFERENCE_SIGNAL_RE = re.compile(
     r"\b(?:19|20)\d{2}\b|\bdoi\b|\bjournal\b|\bproceedings\b|\bvol\.\b|\bpp\.\b",
     re.IGNORECASE,
 )
+MATHPIX_EXECUTION_POLICY_BY_ROUTE: dict[str, dict[str, bool]] = {
+    "born_digital_scholarly": {
+        "primary": False,
+        "layout_fallback": False,
+        "math_fallback": True,
+    },
+    "layout_complex": {
+        "primary": False,
+        "layout_fallback": True,
+        "math_fallback": True,
+    },
+    "math_dense": {
+        "primary": True,
+        "layout_fallback": False,
+        "math_fallback": True,
+    },
+    "scan_or_image_heavy": {
+        "primary": True,
+        "layout_fallback": True,
+        "math_fallback": True,
+    },
+    "degraded_or_garbled": {
+        "primary": True,
+        "layout_fallback": True,
+        "math_fallback": True,
+    },
+}
+DEFAULT_MATHPIX_EXECUTION_POLICY = {
+    "primary": False,
+    "layout_fallback": False,
+    "math_fallback": True,
+}
 
 
 @dataclass(frozen=True)
@@ -30,6 +63,17 @@ class MetadataReferenceObservation:
     title: str
     abstract: str
     references: list[str]
+
+    def to_dict(self) -> dict[str, object]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class MathpixExecutionDecision:
+    requested: bool
+    phase: str
+    reason: str
+    prefetch_eligible: bool
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -248,6 +292,150 @@ def _references_from_layout_blocks(blocks: list[object]) -> list[str]:
     return _dedupe_texts(references)
 
 
+def _route_name(acquisition_route: dict[str, Any] | None) -> str:
+    return str((acquisition_route or {}).get("primary_route", "") or "")
+
+
+def _route_product_plan(acquisition_route: dict[str, Any] | None, product: str) -> list[str]:
+    plan = dict((acquisition_route or {}).get("product_plan") or {})
+    return [str(item).strip() for item in plan.get(product, []) if str(item).strip()]
+
+
+def _docling_layout_acceptance(
+    primary_route: str,
+    docling_sources: dict[str, Any] | None,
+) -> dict[str, Any]:
+    from pipeline.acquisition.scoring import annotate_provider_acceptance, score_layout_provider
+
+    docling_layout = dict((docling_sources or {}).get("layout") or {})
+    docling_math = dict((docling_sources or {}).get("math") or {})
+    docling_math_entries = len(docling_math.get("entries", []) or [])
+    return annotate_provider_acceptance(
+        score_layout_provider(
+            "docling",
+            docling_layout,
+            kind="layout",
+            math_entry_count=docling_math_entries,
+        ),
+        route_bias=primary_route,
+    )
+
+
+def _docling_math_acceptance(
+    primary_route: str,
+    docling_sources: dict[str, Any] | None,
+) -> dict[str, Any]:
+    from pipeline.acquisition.scoring import annotate_provider_acceptance, score_math_provider
+
+    docling_math = dict((docling_sources or {}).get("math") or {})
+    return annotate_provider_acceptance(
+        score_math_provider("docling", docling_math, route_bias=primary_route),
+        route_bias=primary_route,
+    )
+
+
+def decide_mathpix_execution(
+    acquisition_route: dict[str, Any] | None,
+    *,
+    docling_sources: dict[str, Any] | None = None,
+    mathpix_available: bool = True,
+) -> MathpixExecutionDecision:
+    primary_route = _route_name(acquisition_route)
+    route_policy = dict(MATHPIX_EXECUTION_POLICY_BY_ROUTE.get(primary_route, DEFAULT_MATHPIX_EXECUTION_POLICY))
+    prefetch_eligible = bool(mathpix_available and route_policy.get("primary"))
+    if not mathpix_available:
+        return MathpixExecutionDecision(
+            requested=False,
+            phase="skip",
+            reason="mathpix_unavailable",
+            prefetch_eligible=False,
+        )
+    if prefetch_eligible:
+        return MathpixExecutionDecision(
+            requested=True,
+            phase="primary",
+            reason="route_requested_primary_mathpix",
+            prefetch_eligible=True,
+        )
+    if docling_sources is None:
+        return MathpixExecutionDecision(
+            requested=False,
+            phase="skip",
+            reason="awaiting_docling_assessment",
+            prefetch_eligible=False,
+        )
+
+    layout_plan = _route_product_plan(acquisition_route, "layout")
+    math_plan = _route_product_plan(acquisition_route, "math")
+    docling_layout = dict((docling_sources or {}).get("layout") or {})
+    docling_math = dict((docling_sources or {}).get("math") or {})
+    docling_layout_blocks = len(docling_layout.get("blocks", []) or [])
+    docling_math_entries = len(docling_math.get("entries", []) or [])
+
+    if route_policy.get("layout_fallback") and "mathpix" in layout_plan:
+        if docling_layout_blocks <= 0:
+            return MathpixExecutionDecision(
+                requested=True,
+                phase="fallback",
+                reason="layout_fallback_no_docling_blocks",
+                prefetch_eligible=False,
+            )
+        if not bool(_docling_layout_acceptance(primary_route, docling_sources).get("accepted")):
+            return MathpixExecutionDecision(
+                requested=True,
+                phase="fallback",
+                reason="layout_fallback_docling_rejected",
+                prefetch_eligible=False,
+            )
+
+    if route_policy.get("math_fallback") and "mathpix" in math_plan:
+        if docling_math_entries <= 0:
+            return MathpixExecutionDecision(
+                requested=True,
+                phase="fallback",
+                reason="math_fallback_no_docling_math",
+                prefetch_eligible=False,
+            )
+        if not bool(_docling_math_acceptance(primary_route, docling_sources).get("accepted")):
+            return MathpixExecutionDecision(
+                requested=True,
+                phase="fallback",
+                reason="math_fallback_docling_rejected",
+                prefetch_eligible=False,
+            )
+
+    return MathpixExecutionDecision(
+        requested=False,
+        phase="skip",
+        reason="route_sufficient_without_mathpix",
+        prefetch_eligible=False,
+    )
+
+
+def build_provider_execution_plan(
+    acquisition_route: dict[str, Any] | None,
+    *,
+    mathpix_decision: MathpixExecutionDecision,
+    mathpix_strategy: str,
+    ocr_prepass_applied: bool = False,
+) -> dict[str, Any]:
+    ocr_prepass = dict((acquisition_route or {}).get("ocr_prepass") or {})
+    provider_order: list[str] = []
+    if bool(ocr_prepass.get("should_run")) or ocr_prepass_applied:
+        provider_order.append(str(ocr_prepass.get("tool", "") or "ocr_prepass"))
+    provider_order.append("docling")
+    if mathpix_decision.requested:
+        provider_order.append("mathpix")
+    return {
+        "route_primary": (acquisition_route or {}).get("primary_route"),
+        "provider_order": provider_order,
+        "mathpix_requested": bool(mathpix_decision.requested),
+        "mathpix_strategy": mathpix_strategy,
+        "mathpix_reason": mathpix_decision.reason,
+        "mathpix_prefetch_eligible": bool(mathpix_decision.prefetch_eligible),
+    }
+
+
 def derive_metadata_reference_observation_from_layout(
     provider: str,
     layout: dict[str, object] | None,
@@ -285,6 +473,9 @@ def load_metadata_reference_observation(
 
 
 __all__ = [
+    "MathpixExecutionDecision",
+    "build_provider_execution_plan",
+    "decide_mathpix_execution",
     "MetadataReferenceObservation",
     "derive_metadata_reference_observation_from_layout",
     "load_metadata_reference_observation",

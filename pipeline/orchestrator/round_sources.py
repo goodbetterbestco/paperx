@@ -6,8 +6,8 @@ import time
 from pathlib import Path
 from typing import Any, Callable
 
+from pipeline.acquisition.providers import build_provider_execution_plan, decide_mathpix_execution
 from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.acquisition.scoring import annotate_provider_acceptance, score_layout_provider, score_math_provider
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 from pipeline.orchestrator.round_runtime import write_json
 from pipeline.orchestrator.round_settings import docling_device, mathpix_credentials_available
@@ -16,13 +16,7 @@ from pipeline.sources.external import external_layout_path, ocr_normalized_pdf_p
 from pipeline.sources.mathpix import mathpix_pages_to_external_sources, run_mathpix
 from pipeline.sources.ocrmypdf import run_ocrmypdf
 
-
 PER_PAPER_SOURCE_WORKERS = 2
-MATHPIX_PREFETCH_PRIMARY_ROUTES = {
-    "scan_or_image_heavy",
-    "degraded_or_garbled",
-    "math_dense",
-}
 
 
 def build_docling_sources(
@@ -131,8 +125,7 @@ def build_mathpix_sources(
 
 
 def mathpix_prefetch_allowed(acquisition_route: dict[str, Any] | None) -> bool:
-    primary_route = str((acquisition_route or {}).get("primary_route", "") or "")
-    return primary_route in MATHPIX_PREFETCH_PRIMARY_ROUTES
+    return decide_mathpix_execution(acquisition_route).prefetch_eligible
 
 
 def mathpix_fallback_needed(
@@ -140,39 +133,11 @@ def mathpix_fallback_needed(
     *,
     docling_sources: dict[str, Any] | None,
 ) -> tuple[bool, str]:
-    primary_route = str((acquisition_route or {}).get("primary_route", "") or "")
-    product_plan = dict((acquisition_route or {}).get("product_plan") or {})
-    layout_plan = [str(item).strip() for item in product_plan.get("layout", []) if str(item).strip()]
-    math_plan = [str(item).strip() for item in product_plan.get("math", []) if str(item).strip()]
-    docling_layout = dict((docling_sources or {}).get("layout") or {})
-    docling_math = dict((docling_sources or {}).get("math") or {})
-    docling_layout_blocks = len((((docling_sources or {}).get("layout") or {}).get("blocks") or []))
-    docling_math_entries = len((((docling_sources or {}).get("math") or {}).get("entries") or []))
-
-    if "mathpix" in layout_plan and docling_layout_blocks <= 0:
-        return True, "layout_fallback_no_docling_blocks"
-    if "mathpix" in layout_plan:
-        docling_layout_score = annotate_provider_acceptance(
-            score_layout_provider(
-                "docling",
-                docling_layout,
-                kind="layout",
-                math_entry_count=docling_math_entries,
-            ),
-            route_bias=primary_route,
-        )
-        if not bool(docling_layout_score.get("accepted")):
-            return True, "layout_fallback_docling_rejected"
-    if "mathpix" in math_plan and docling_math_entries <= 0:
-        return True, "math_fallback_no_docling_math"
-    if "mathpix" in math_plan:
-        docling_math_score = annotate_provider_acceptance(
-            score_math_provider("docling", docling_math, route_bias=primary_route),
-            route_bias=primary_route,
-        )
-        if not bool(docling_math_score.get("accepted")):
-            return True, "math_fallback_docling_rejected"
-    return False, "route_sufficient_without_mathpix"
+    decision = decide_mathpix_execution(
+        acquisition_route,
+        docling_sources=docling_sources,
+    )
+    return decision.phase == "fallback", decision.reason
 
 
 def resolve_extraction_pdf(
@@ -284,7 +249,12 @@ def build_extraction_sources_for_paper(
         _ocr_prepass_report_payload(pdf_selection, layout=layout),
     )
     mathpix_enabled = mathpix_credentials_available_impl()
-    eager_mathpix = mathpix_enabled and mathpix_prefetch_allowed(acquisition_route)
+    initial_mathpix_decision = decide_mathpix_execution(
+        acquisition_route,
+        mathpix_available=mathpix_enabled,
+    )
+    final_mathpix_decision = initial_mathpix_decision
+    eager_mathpix = initial_mathpix_decision.phase == "primary"
     max_workers = 1 if prefetched_mathpix_future is not None else (per_paper_source_workers if eager_mathpix else 1)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -310,11 +280,9 @@ def build_extraction_sources_for_paper(
         _, docling_seconds, docling_sources = docling_future.result()
         timings["docling_seconds"] = docling_seconds
         mathpix_sources = None
-        mathpix_reason = "route_requested_prefetch" if eager_mathpix else "skipped"
         mathpix_strategy = "skipped"
         if prefetched_mathpix_future is not None:
             mathpix_strategy = "prefetched_primary"
-            mathpix_reason = "prefetched_mathpix_future"
             mathpix_result = prefetched_mathpix_future.result()
             mathpix_sources = build_mathpix_sources_from_result_impl(
                 paper_id,
@@ -329,13 +297,12 @@ def build_extraction_sources_for_paper(
             _, mathpix_seconds, mathpix_sources = local_mathpix_future.result()
             timings["mathpix_seconds"] = mathpix_seconds
         else:
-            needs_fallback_mathpix = False
-            if mathpix_enabled:
-                needs_fallback_mathpix, mathpix_reason = mathpix_fallback_needed(
-                    acquisition_route,
-                    docling_sources=docling_sources,
-                )
-            if needs_fallback_mathpix:
+            final_mathpix_decision = decide_mathpix_execution(
+                acquisition_route,
+                docling_sources=docling_sources,
+                mathpix_available=mathpix_enabled,
+            )
+            if final_mathpix_decision.phase == "fallback":
                 mathpix_strategy = "fallback_after_docling"
                 _, mathpix_seconds, mathpix_sources = timed_call_impl(
                     "mathpix",
@@ -348,23 +315,14 @@ def build_extraction_sources_for_paper(
             else:
                 timings["mathpix_seconds"] = 0.0
 
-    execution_plan = {
-        "route_primary": acquisition_route.get("primary_route"),
-        "provider_order": [
-            *(
-                ["ocrmypdf"]
-                if bool(pdf_selection["ocr_prepass_applied"])
-                or bool((acquisition_route.get("ocr_prepass") or {}).get("should_run"))
-                else []
-            ),
-            "docling",
-            *(["mathpix"] if mathpix_sources is not None or eager_mathpix else []),
-        ],
-        "mathpix_requested": bool(mathpix_sources),
-        "mathpix_strategy": mathpix_strategy,
-        "mathpix_reason": mathpix_reason,
-        "mathpix_prefetch_eligible": eager_mathpix,
-    }
+    if initial_mathpix_decision.phase == "primary":
+        final_mathpix_decision = initial_mathpix_decision
+    execution_plan = build_provider_execution_plan(
+        acquisition_route,
+        mathpix_decision=final_mathpix_decision,
+        mathpix_strategy=mathpix_strategy,
+        ocr_prepass_applied=bool(pdf_selection["ocr_prepass_applied"]),
+    )
     docling_sources["pdf_selection"] = {
         "selected_pdf_path": str(selected_pdf_path),
         "pdf_source_kind": str(pdf_selection["pdf_source_kind"]),
