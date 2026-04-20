@@ -382,8 +382,8 @@ class RunCorpusRoundsTest(unittest.TestCase):
                 {
                     "product": "layout",
                     "reason": "layout_provider_not_accepted",
-                    "action": "manual_review_layout",
-                    "target_provider": None,
+                    "action": "trial_layout_provider",
+                    "target_provider": "mathpix",
                 }
             ],
         )
@@ -470,6 +470,18 @@ class RunCorpusRoundsTest(unittest.TestCase):
             },
             "math": {"engine": "docling", "entries": [{"id": "eq-1", "kind": "inline"}]},
         }
+        mathpix_sources = {
+            "layout": {
+                "engine": "mathpix",
+                "pdf_path": "docs/synthetic.pdf",
+                "page_count": 1,
+                "page_sizes_pt": [{"page": 1, "width": 600.0, "height": 800.0}],
+                "blocks": [
+                    {"id": "m1", "page": 1, "order": 1, "role": "paragraph", "text": "Alternative body text.", "bbox": {}, "meta": {}},
+                ],
+            },
+            "math": {"engine": "mathpix", "entries": [{"id": "mx-eq-1", "kind": "display"}]},
+        }
 
         with (
             patch("pipeline.orchestrator.round_paper.write_json", side_effect=capture),
@@ -487,9 +499,38 @@ class RunCorpusRoundsTest(unittest.TestCase):
             summary = compose_external_sources(
                 "synthetic_test_paper",
                 docling_sources=docling_sources,
-                mathpix_sources=None,
+                mathpix_sources=mathpix_sources,
                 build_source_scorecard_impl=lambda **kwargs: {
-                    "providers": [],
+                    "providers": [
+                        {
+                            "provider": "docling",
+                            "kind": "layout",
+                            "accepted": False,
+                            "overall_score": 0.25,
+                            "block_count": 1,
+                        },
+                        {
+                            "provider": "mathpix",
+                            "kind": "layout",
+                            "accepted": False,
+                            "overall_score": 0.2,
+                            "block_count": 1,
+                        },
+                        {
+                            "provider": "docling",
+                            "kind": "math",
+                            "accepted": False,
+                            "overall_score": 0.12,
+                            "math_entry_count": 1,
+                        },
+                        {
+                            "provider": "mathpix",
+                            "kind": "math",
+                            "accepted": False,
+                            "overall_score": 0.09,
+                            "math_entry_count": 1,
+                        },
+                    ],
                     "recommended_primary_layout_provider": "docling",
                     "recommended_primary_math_provider": "docling",
                     "recommended_primary_metadata_provider": "docling",
@@ -509,14 +550,14 @@ class RunCorpusRoundsTest(unittest.TestCase):
                 {
                     "product": "layout",
                     "reason": "layout_provider_not_accepted",
-                    "action": "manual_review_layout",
-                    "target_provider": None,
+                    "action": "trial_layout_provider",
+                    "target_provider": "mathpix",
                 },
                 {
                     "product": "math",
                     "reason": "math_provider_not_accepted",
-                    "action": "manual_review_math",
-                    "target_provider": None,
+                    "action": "trial_math_provider",
+                    "target_provider": "mathpix",
                 },
             ],
         )

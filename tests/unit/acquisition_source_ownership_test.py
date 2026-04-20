@@ -11,6 +11,7 @@ from pipeline.acquisition.source_ownership import (
     normalize_scorecard_recommendations,
     reported_layout_provider,
     reported_math_provider,
+    select_follow_up_provider,
     select_metadata_observation,
     select_reference_observation,
     select_math_payload,
@@ -93,6 +94,34 @@ class AcquisitionSourceOwnershipTest(unittest.TestCase):
         )
 
         self.assertEqual(selected["engine"], "mathpix")
+
+    def test_select_follow_up_provider_prefers_best_alternate_candidate(self) -> None:
+        selected = select_follow_up_provider(
+            source_scorecard={
+                "providers": [
+                    {"provider": "docling", "kind": "layout", "accepted": False, "overall_score": 0.25, "block_count": 6},
+                    {"provider": "mathpix", "kind": "layout", "accepted": False, "overall_score": 0.21, "block_count": 8},
+                ]
+            },
+            kind="layout",
+            selected_provider="docling",
+        )
+
+        self.assertEqual(selected, "mathpix")
+
+    def test_select_follow_up_provider_requires_real_payload_signal(self) -> None:
+        selected = select_follow_up_provider(
+            source_scorecard={
+                "providers": [
+                    {"provider": "docling", "kind": "math", "accepted": False, "overall_score": 0.12, "math_entry_count": 2},
+                    {"provider": "mathpix", "kind": "math", "accepted": False, "overall_score": 0.1, "math_entry_count": 0},
+                ]
+            },
+            kind="math",
+            selected_provider="docling",
+        )
+
+        self.assertIsNone(selected)
 
     def test_select_metadata_observation_prefers_recommended_provider(self) -> None:
         selected = select_metadata_observation(

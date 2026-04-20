@@ -99,6 +99,32 @@ def select_math_payload(
     return {"engine": "none", "entries": []}
 
 
+def select_follow_up_provider(
+    *,
+    source_scorecard: dict[str, Any] | None,
+    kind: str,
+    selected_provider: str | None,
+) -> str | None:
+    normalized_kind = str(kind or "").strip()
+    normalized_selected = canonical_provider_name(selected_provider)
+    candidates: list[tuple[int, float, str]] = []
+    for item in list((source_scorecard or {}).get("providers") or []):
+        if str(item.get("kind", "") or "").strip() != normalized_kind:
+            continue
+        provider = canonical_provider_name(item.get("provider"))
+        if not provider or provider == normalized_selected:
+            continue
+        if normalized_kind == "layout" and int(item.get("block_count", 0) or 0) <= 0:
+            continue
+        if normalized_kind == "math" and int(item.get("math_entry_count", 0) or 0) <= 0:
+            continue
+        accepted_rank = 1 if bool(item.get("accepted")) else 0
+        overall_score = float(item.get("overall_score", 0.0) or 0.0)
+        candidates.append((accepted_rank, overall_score, provider))
+    candidates.sort(key=lambda item: (-item[0], -item[1], item[2]))
+    return candidates[0][2] if candidates else None
+
+
 def select_metadata_observation(
     *,
     source_scorecard: dict[str, Any] | None,
@@ -159,6 +185,7 @@ __all__ = [
     "normalize_scorecard_recommendations",
     "reported_layout_provider",
     "reported_math_provider",
+    "select_follow_up_provider",
     "select_metadata_observation",
     "select_reference_observation",
     "select_math_payload",

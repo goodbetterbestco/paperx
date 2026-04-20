@@ -11,6 +11,7 @@ from pipeline.acquisition.source_ownership import (
     normalize_scorecard_recommendations,
     reported_layout_provider,
     reported_math_provider,
+    select_follow_up_provider,
     select_metadata_observation,
     select_reference_observation,
     select_math_payload,
@@ -66,22 +67,32 @@ def build_acquisition_follow_up(
     grobid_candidate = candidates.get("grobid") or {}
 
     if layout_basis == "fallback_unaccepted":
+        layout_trial_provider = select_follow_up_provider(
+            source_scorecard=source_scorecard,
+            kind="layout",
+            selected_provider=selected_layout_provider,
+        )
         actions.append(
             {
                 "product": "layout",
                 "reason": "layout_provider_not_accepted",
-                "action": "manual_review_layout",
-                "target_provider": None,
+                "action": "trial_layout_provider" if layout_trial_provider else "manual_review_layout",
+                "target_provider": layout_trial_provider,
             }
         )
 
     if math_basis == "fallback_unaccepted":
+        math_trial_provider = select_follow_up_provider(
+            source_scorecard=source_scorecard,
+            kind="math",
+            selected_provider=selected_math_provider,
+        )
         actions.append(
             {
                 "product": "math",
                 "reason": "math_provider_not_accepted",
-                "action": "manual_review_math",
-                "target_provider": None,
+                "action": "trial_math_provider" if math_trial_provider else "manual_review_math",
+                "target_provider": math_trial_provider,
             }
         )
 
