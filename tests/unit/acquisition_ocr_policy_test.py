@@ -65,6 +65,38 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
         self.assertEqual(decision.policy, "recommended")
         self.assertEqual(decision.output_pdf_kind, "searchable_pdf")
 
+    def test_degraded_route_escalates_to_required_when_signal_severity_is_scan_like(self) -> None:
+        decision = decide_ocr_prepass_policy(
+            "degraded_or_garbled",
+            signals=_signals(
+                text_page_ratio=0.3,
+                avg_text_chars_per_page=140.0,
+                avg_image_coverage=0.42,
+                max_image_coverage=0.9,
+            ),
+        )
+
+        self.assertTrue(decision.should_run)
+        self.assertEqual(decision.policy, "required")
+        self.assertIn("very_low_text_page_ratio", decision.trigger_signals)
+        self.assertIn("very_high_max_image_coverage", decision.trigger_signals)
+
+    def test_layout_complex_route_recommends_ocr_when_multiple_risk_signals_accumulate(self) -> None:
+        decision = decide_ocr_prepass_policy(
+            "layout_complex",
+            signals=_signals(
+                text_page_ratio=0.68,
+                avg_text_chars_per_page=420.0,
+                avg_image_coverage=0.22,
+                max_image_coverage=0.4,
+            ),
+        )
+
+        self.assertTrue(decision.should_run)
+        self.assertEqual(decision.policy, "recommended")
+        self.assertIn("low_avg_text_chars_per_page", decision.trigger_signals)
+        self.assertIn("high_avg_image_coverage", decision.trigger_signals)
+
     def test_born_digital_route_skips_ocr_prepass(self) -> None:
         decision = decide_ocr_prepass_policy(
             "born_digital_scholarly",
@@ -79,6 +111,21 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
         self.assertFalse(decision.should_run)
         self.assertEqual(decision.policy, "skip")
         self.assertIsNone(decision.tool)
+
+    def test_born_digital_route_skips_ocr_for_single_large_figure_when_text_is_healthy(self) -> None:
+        decision = decide_ocr_prepass_policy(
+            "born_digital_scholarly",
+            signals=_signals(
+                text_page_ratio=1.0,
+                avg_text_chars_per_page=1800.0,
+                avg_image_coverage=0.05,
+                max_image_coverage=0.58,
+            ),
+        )
+
+        self.assertFalse(decision.should_run)
+        self.assertEqual(decision.policy, "skip")
+        self.assertEqual(decision.trigger_signals, ["high_max_image_coverage"])
 
 
 if __name__ == "__main__":
