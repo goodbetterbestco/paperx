@@ -73,6 +73,8 @@ Current preferred commands:
 - `python3 -m pipeline.cli.backfill_acquisition_sidecars`
 - `python3 -m pipeline.cli.audit_acquisition_quality --top 12`
 - `python3 -m pipeline.cli.audit_acquisition_quality --format commands`
+- `python3 -m pipeline.cli.summarize_acquisition_policy_feedback`
+- `python3 -m pipeline.cli.summarize_acquisition_policy_feedback --from-report tmp/acquisition_quality_audit/summary.json`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --dry-run`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --fail-fast --limit 5`
 - `python3 -m pipeline.cli.run_acquisition_remediation_queue --min-priority high --dry-run`
@@ -152,6 +154,10 @@ Acquisition routing and provider recommendation sidecars remain at
 `<corpus-root>/<paper-id>/canonical_sources/source-scorecard.json`, and the
 acquisition audit CLI summarizes their coverage and OCR execution drift into
 `tmp/acquisition_quality_audit/`.
+`pipeline.cli.summarize_acquisition_policy_feedback` then turns that saved audit
+surface into a ranked list of upstream policy actions, grouping recurring OCR
+gaps, provider fallbacks, metadata/reference ownership drift, and missing
+sidecar coverage into concrete modules to revisit next.
 That audit also writes a structured `remediation_queue` into
 `tmp/acquisition_quality_audit/summary.json`; use
 `pipeline.cli.audit_acquisition_quality --format commands` to print only the

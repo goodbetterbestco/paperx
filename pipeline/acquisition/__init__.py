@@ -68,6 +68,10 @@ from pipeline.acquisition.grobid_policy import (
 )
 from pipeline.acquisition.grobid_trial import load_grobid_trial_manifest, run_grobid_trial
 from pipeline.acquisition.ocr_policy import OcrPrepassDecision, decide_ocr_prepass_policy
+from pipeline.acquisition.policy_feedback import (
+    POLICY_ACTION_RULES,
+    summarize_acquisition_policy_feedback,
+)
 from pipeline.acquisition.providers import (
     MathpixExecutionDecision,
     MetadataReferenceObservation,
@@ -98,6 +102,7 @@ __all__ = [
     "MathpixExecutionDecision",
     "MetadataReferenceObservation",
     "OcrPrepassDecision",
+    "POLICY_ACTION_RULES",
     "audit_acquisition_quality",
     "aggregate_provider_score_map",
     "backfill_acquisition_sidecars",
@@ -144,6 +149,7 @@ __all__ = [
     "resolve_remediation_plan_report_path",
     "run_acquisition_benchmark",
     "run_grobid_trial",
+    "summarize_acquisition_policy_feedback",
     "select_remediation_plan_waves",
     "summarize_benchmark_dashboard",
     "summarize_latest_benchmark_status",
