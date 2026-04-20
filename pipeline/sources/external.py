@@ -4,7 +4,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from pipeline.acquisition.providers import load_metadata_reference_observation
+from pipeline.acquisition.providers import (
+    derive_metadata_reference_observation_from_layout,
+    load_metadata_reference_observation,
+)
 from pipeline.corpus_layout import ProjectLayout, canonical_sources_dir
 from pipeline.math.review_policy import review_for_math_entry
 from pipeline.types import LayoutBlock, default_formula_conversion, default_review
@@ -172,3 +175,39 @@ def load_grobid_metadata_observation(
     if not path.exists():
         return None
     return load_metadata_reference_observation("grobid", path).to_dict()
+
+
+def _nonempty_metadata_observation(observation: dict[str, Any]) -> dict[str, Any] | None:
+    if (
+        str(observation.get("title", "")).strip()
+        or str(observation.get("abstract", "")).strip()
+        or any(str(item).strip() for item in observation.get("references", []))
+    ):
+        return observation
+    return None
+
+
+def load_docling_metadata_observation(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+) -> dict[str, Any] | None:
+    docling_layout = load_docling_layout(paper_id, layout=layout)
+    if not docling_layout:
+        return None
+    return _nonempty_metadata_observation(
+        derive_metadata_reference_observation_from_layout("docling", docling_layout).to_dict()
+    )
+
+
+def load_mathpix_metadata_observation(
+    paper_id: str,
+    *,
+    layout: ProjectLayout | None = None,
+) -> dict[str, Any] | None:
+    mathpix_layout = load_mathpix_layout(paper_id, layout=layout)
+    if not mathpix_layout:
+        return None
+    return _nonempty_metadata_observation(
+        derive_metadata_reference_observation_from_layout("mathpix", mathpix_layout).to_dict()
+    )

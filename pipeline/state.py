@@ -20,6 +20,7 @@ class PaperState:
     merged_layout: dict[str, Any] | None = None
     mathpix_layout: dict[str, Any] | None = None
     external_math: dict[str, Any] | None = None
+    metadata_candidates: dict[str, dict[str, Any] | None] = field(default_factory=dict)
     metadata_observation: dict[str, Any] | None = None
     figures: list[dict[str, Any]] = field(default_factory=list)
     acquisition_route: dict[str, Any] | None = None

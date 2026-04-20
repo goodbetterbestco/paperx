@@ -1,14 +1,10 @@
 {
-  "route_primary": "scan_or_image_heavy",
+  "route_primary": "math_dense",
   "recommended": {
-    "layout_provider": "docling",
-    "math_provider": "mathpix",
     "metadata_provider": "grobid",
     "reference_provider": "grobid"
   },
   "executed": {
-    "selected_layout_provider": "mathpix",
-    "selected_math_provider": "mathpix",
     "metadata_provider": "grobid",
     "reference_provider": "grobid"
   },

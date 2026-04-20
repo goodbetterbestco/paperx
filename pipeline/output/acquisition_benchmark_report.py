@@ -49,7 +49,9 @@ def render_acquisition_benchmark_markdown(report: dict[str, Any]) -> str:
             f"- `{paper['paper_id']}` ({paper.get('family') or 'unclassified'}) — "
             f"route `{paper.get('expected_route') or 'n/a'}`, "
             f"layout target `{paper.get('expected_primary_layout_provider') or 'n/a'}`, "
-            f"math target `{paper.get('expected_primary_math_provider') or 'n/a'}`"
+            f"math target `{paper.get('expected_primary_math_provider') or 'n/a'}`, "
+            f"metadata target `{paper.get('expected_primary_metadata_provider') or 'n/a'}`, "
+            f"reference target `{paper.get('expected_primary_reference_provider') or 'n/a'}`"
         )
         for provider in list(paper.get("providers") or []):
             lines.append(

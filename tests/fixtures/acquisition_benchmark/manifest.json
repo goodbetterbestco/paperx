@@ -9,6 +9,10 @@
           "math": "providers/fixture_paper/docling-math.json",
           "execution": "providers/fixture_paper/docling-execution.json"
         },
+        "grobid": {
+          "metadata": "providers/fixture_paper/grobid.tei.xml",
+          "execution": "providers/fixture_paper/grobid-execution.json"
+        },
         "mathpix": {
           "layout": "providers/fixture_paper/mathpix-layout.json",
           "math": "providers/fixture_paper/mathpix-math.json",
@@ -24,6 +28,10 @@
           "layout": "providers/math_dense_fixture/docling-layout.json",
           "math": "providers/math_dense_fixture/docling-math.json",
           "execution": "providers/math_dense_fixture/docling-execution.json"
+        },
+        "grobid": {
+          "metadata": "providers/math_dense_fixture/grobid.tei.xml",
+          "execution": "providers/math_dense_fixture/grobid-execution.json"
         },
         "mathpix": {
           "layout": "providers/math_dense_fixture/mathpix-layout.json",
@@ -41,6 +49,10 @@
           "math": "providers/scan_image_heavy_fixture/docling-math.json",
           "execution": "providers/scan_image_heavy_fixture/docling-execution.json"
         },
+        "grobid": {
+          "metadata": "providers/scan_image_heavy_fixture/grobid.tei.xml",
+          "execution": "providers/scan_image_heavy_fixture/grobid-execution.json"
+        },
         "mathpix": {
           "layout": "providers/scan_image_heavy_fixture/mathpix-layout.json",
           "math": "providers/scan_image_heavy_fixture/mathpix-math.json",
@@ -57,6 +69,10 @@
           "math": "providers/layout_complex_fixture/docling-math.json",
           "execution": "providers/layout_complex_fixture/docling-execution.json"
         },
+        "grobid": {
+          "metadata": "providers/layout_complex_fixture/grobid.tei.xml",
+          "execution": "providers/layout_complex_fixture/grobid-execution.json"
+        },
         "mathpix": {
           "layout": "providers/layout_complex_fixture/mathpix-layout.json",
           "math": "providers/layout_complex_fixture/mathpix-math.json",
@@ -72,6 +88,10 @@
           "layout": "providers/degraded_garbled_fixture/docling-layout.json",
           "math": "providers/degraded_garbled_fixture/docling-math.json",
           "execution": "providers/degraded_garbled_fixture/docling-execution.json"
+        },
+        "grobid": {
+          "metadata": "providers/degraded_garbled_fixture/grobid.tei.xml",
+          "execution": "providers/degraded_garbled_fixture/grobid-execution.json"
         },
         "mathpix": {
           "layout": "providers/degraded_garbled_fixture/mathpix-layout.json",

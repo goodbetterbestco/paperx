@@ -4,6 +4,8 @@
   "ocr_should_run": false,
   "expected_primary_layout_provider": "docling",
   "expected_primary_math_provider": "docling",
+  "expected_primary_metadata_provider": "grobid",
+  "expected_primary_reference_provider": "grobid",
   "title": "Synthetic Acquisition Benchmark Paper",
   "abstract": "This benchmark paper demonstrates routing and acquisition scoring for structured document extraction.",
   "headings": [

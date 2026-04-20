@@ -6,6 +6,11 @@ from pathlib import Path
 import re
 from typing import Any
 
+from pipeline.acquisition.providers import (
+    derive_metadata_reference_observation_from_layout,
+    load_metadata_reference_observation,
+)
+
 
 SPACE_RE = re.compile(r"\s+")
 NON_WORD_RE = re.compile(r"[^a-z0-9]+")
@@ -25,12 +30,15 @@ class AcquisitionGoldRecord:
     ocr_should_run: bool | None
     expected_primary_layout_provider: str | None
     expected_primary_math_provider: str | None
+    expected_primary_metadata_provider: str | None
+    expected_primary_reference_provider: str | None
 
 
 @dataclass(frozen=True)
 class ProviderArtifacts:
     name: str
-    layout_path: Path
+    layout_path: Path | None
+    metadata_path: Path | None
     math_path: Path | None
     execution_path: Path | None
 
@@ -105,27 +113,47 @@ def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _extract_provider_observation(layout_path: Path, math_path: Path | None) -> dict[str, Any]:
-    layout_payload = _load_json(layout_path)
+def _extract_provider_observation(
+    provider_name: str,
+    *,
+    layout_path: Path | None,
+    metadata_path: Path | None,
+    math_path: Path | None,
+) -> dict[str, Any]:
+    layout_payload = _load_json(layout_path) if layout_path is not None and layout_path.exists() else {}
     math_payload = _load_json(math_path) if math_path is not None and math_path.exists() else {}
     blocks = list(layout_payload.get("blocks", []))
+    if metadata_path is not None and metadata_path.exists():
+        metadata_observation = load_metadata_reference_observation(provider_name, metadata_path).to_dict()
+    else:
+        inferred_provider_name = str(
+            layout_payload.get("engine", provider_name) or provider_name
+        ).strip()
+        metadata_observation = derive_metadata_reference_observation_from_layout(
+            inferred_provider_name,
+            layout_payload,
+        ).to_dict()
     headings = [str(block.get("text", "")).strip() for block in blocks if str(block.get("role", "")) == "heading"]
     paragraphs = [str(block.get("text", "")).strip() for block in blocks if str(block.get("role", "")) == "paragraph"]
-    references = [str(block.get("text", "")).strip() for block in blocks if str(block.get("role", "")) == "reference"]
-    full_text = "\n".join(text for text in headings + paragraphs + references if text)
+    layout_references = [str(block.get("text", "")).strip() for block in blocks if str(block.get("role", "")) == "reference"]
+    references = list(metadata_observation.get("references", [])) or layout_references
+    title = str(metadata_observation.get("title", "")).strip() or _guess_title(blocks)
+    abstract = str(metadata_observation.get("abstract", "")).strip() or _guess_abstract(blocks)
+    full_text = "\n".join(text for text in [title, abstract, *headings, *paragraphs, *references] if text)
     equations = [
         str(entry.get("display_latex", "") or entry.get("text", "")).strip()
         for entry in math_payload.get("entries", [])
         if str(entry.get("display_latex", "") or entry.get("text", "")).strip()
     ]
     return {
-        "title": _guess_title(blocks),
-        "abstract": _guess_abstract(blocks),
+        "title": title,
+        "abstract": abstract,
         "headings": headings,
         "paragraphs": paragraphs,
         "references": references,
         "equations": equations,
         "full_text": full_text,
+        "metadata_observation": metadata_observation,
     }
 
 
@@ -140,8 +168,12 @@ def _extract_execution_observation(execution_path: Path | None) -> dict[str, Any
         "route_primary": str(payload.get("route_primary", "") or "").strip() or None,
         "recommended_layout_provider": str(recommended.get("layout_provider", "") or "").strip() or None,
         "recommended_math_provider": str(recommended.get("math_provider", "") or "").strip() or None,
+        "recommended_metadata_provider": str(recommended.get("metadata_provider", "") or "").strip() or None,
+        "recommended_reference_provider": str(recommended.get("reference_provider", "") or "").strip() or None,
         "selected_layout_provider": str(executed.get("selected_layout_provider", "") or "").strip() or None,
         "selected_math_provider": str(executed.get("selected_math_provider", "") or "").strip() or None,
+        "selected_metadata_provider": str(executed.get("metadata_provider", "") or "").strip() or None,
+        "selected_reference_provider": str(executed.get("reference_provider", "") or "").strip() or None,
         "ocr_applied": bool(ocr.get("applied")) if "applied" in ocr else None,
     }
 
@@ -171,25 +203,44 @@ def _content_score(metrics: dict[str, float]) -> float:
     return round(weighted_total, 3)
 
 
-def _execution_metrics(gold: AcquisitionGoldRecord, execution: dict[str, Any]) -> dict[str, float]:
+def _execution_metrics(
+    gold: AcquisitionGoldRecord,
+    execution: dict[str, Any],
+    *,
+    provider: ProviderArtifacts,
+) -> dict[str, float]:
     metrics: dict[str, float] = {}
     if gold.expected_route:
         metrics["route_match"] = float(execution.get("route_primary") == gold.expected_route)
     if gold.ocr_should_run is not None:
         metrics["ocr_should_run_match"] = float(execution.get("ocr_applied") == gold.ocr_should_run)
-    if gold.expected_primary_layout_provider:
+    if gold.expected_primary_layout_provider and provider.layout_path is not None:
         metrics["recommended_layout_provider_match"] = float(
             execution.get("recommended_layout_provider") == gold.expected_primary_layout_provider
         )
         metrics["selected_layout_provider_match"] = float(
             execution.get("selected_layout_provider") == gold.expected_primary_layout_provider
         )
-    if gold.expected_primary_math_provider:
+    if gold.expected_primary_math_provider and provider.math_path is not None:
         metrics["recommended_math_provider_match"] = float(
             execution.get("recommended_math_provider") == gold.expected_primary_math_provider
         )
         metrics["selected_math_provider_match"] = float(
             execution.get("selected_math_provider") == gold.expected_primary_math_provider
+        )
+    if gold.expected_primary_metadata_provider and (provider.metadata_path is not None or provider.layout_path is not None):
+        metrics["recommended_metadata_provider_match"] = float(
+            execution.get("recommended_metadata_provider") == gold.expected_primary_metadata_provider
+        )
+        metrics["selected_metadata_provider_match"] = float(
+            execution.get("selected_metadata_provider") == gold.expected_primary_metadata_provider
+        )
+    if gold.expected_primary_reference_provider and (provider.metadata_path is not None or provider.layout_path is not None):
+        metrics["recommended_reference_provider_match"] = float(
+            execution.get("recommended_reference_provider") == gold.expected_primary_reference_provider
+        )
+        metrics["selected_reference_provider_match"] = float(
+            execution.get("selected_reference_provider") == gold.expected_primary_reference_provider
         )
     return metrics
 
@@ -221,6 +272,8 @@ def _load_gold_record(paper_id: str, gold_path: Path) -> AcquisitionGoldRecord:
         ocr_should_run=(bool(payload["ocr_should_run"]) if "ocr_should_run" in payload else None),
         expected_primary_layout_provider=(str(payload.get("expected_primary_layout_provider", "")).strip() or None),
         expected_primary_math_provider=(str(payload.get("expected_primary_math_provider", "")).strip() or None),
+        expected_primary_metadata_provider=(str(payload.get("expected_primary_metadata_provider", "")).strip() or None),
+        expected_primary_reference_provider=(str(payload.get("expected_primary_reference_provider", "")).strip() or None),
     )
 
 
@@ -237,7 +290,16 @@ def load_benchmark_manifest(manifest_path: str | Path) -> list[BenchmarkPaper]:
         providers = [
             ProviderArtifacts(
                 name=str(provider_name),
-                layout_path=(manifest_dir / str(provider_payload["layout"])).resolve(),
+                layout_path=(
+                    (manifest_dir / str(provider_payload["layout"])).resolve()
+                    if provider_payload.get("layout")
+                    else None
+                ),
+                metadata_path=(
+                    (manifest_dir / str(provider_payload["metadata"])).resolve()
+                    if provider_payload.get("metadata")
+                    else None
+                ),
                 math_path=((manifest_dir / str(provider_payload["math"])).resolve() if provider_payload.get("math") else None),
                 execution_path=(
                     (manifest_dir / str(provider_payload["execution"])).resolve()
@@ -269,7 +331,12 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
         gold = _load_gold_record(paper.paper_id, paper.gold_path)
         provider_results: list[dict[str, Any]] = []
         for provider in paper.providers:
-            observed = _extract_provider_observation(provider.layout_path, provider.math_path)
+            observed = _extract_provider_observation(
+                provider.name,
+                layout_path=provider.layout_path,
+                metadata_path=provider.metadata_path,
+                math_path=provider.math_path,
+            )
             content_metrics = {
                 "title_match": float(_contains_normalized(observed["title"], gold.title)),
                 "abstract_token_recall": _token_recall(gold.abstract, observed["abstract"]),
@@ -279,13 +346,14 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "reference_hit_rate": _list_hit_rate(gold.references, observed["references"], observed["full_text"]),
             }
             execution_observation = _extract_execution_observation(provider.execution_path)
-            execution_metrics = _execution_metrics(gold, execution_observation)
+            execution_metrics = _execution_metrics(gold, execution_observation, provider=provider)
             content_score = _content_score(content_metrics)
             execution_score = _execution_score(execution_metrics)
             overall = _overall_score(content_score, execution_score)
             result = {
                 "provider": provider.name,
-                "layout_path": str(provider.layout_path),
+                "layout_path": str(provider.layout_path) if provider.layout_path is not None else None,
+                "metadata_path": str(provider.metadata_path) if provider.metadata_path is not None else None,
                 "math_path": str(provider.math_path) if provider.math_path is not None else None,
                 "execution_path": str(provider.execution_path) if provider.execution_path is not None else None,
                 "metrics": {
@@ -295,6 +363,7 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "content_score": content_score,
                 "execution_score": execution_score,
                 "overall_score": overall,
+                "metadata_observation": observed["metadata_observation"],
                 "execution_observation": execution_observation,
             }
             provider_results.append(result)
@@ -328,6 +397,8 @@ def run_acquisition_benchmark(manifest_path: str | Path) -> dict[str, Any]:
                 "ocr_should_run": gold.ocr_should_run,
                 "expected_primary_layout_provider": gold.expected_primary_layout_provider,
                 "expected_primary_math_provider": gold.expected_primary_math_provider,
+                "expected_primary_metadata_provider": gold.expected_primary_metadata_provider,
+                "expected_primary_reference_provider": gold.expected_primary_reference_provider,
                 "providers": provider_results,
             }
         )

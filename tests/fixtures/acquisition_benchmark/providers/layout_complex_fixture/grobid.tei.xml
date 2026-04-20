@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Synthetic Layout Complex Benchmark Paper</title>
+      </titleStmt>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <p>This benchmark paper simulates a layout complex source with multi column structure and caption heavy content.</p>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <back>
+      <div type="references">
+        <listBibl>
+          <biblStruct><note>[1] Donald Knuth. Literate Programming.</note></biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

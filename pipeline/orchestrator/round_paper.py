@@ -4,12 +4,14 @@ import json
 from pathlib import Path
 from typing import Any, Callable
 
+from pipeline.acquisition.providers import derive_metadata_reference_observation_from_layout
 from pipeline.acquisition.routing import build_acquisition_route_report
 from pipeline.acquisition.scoring import build_source_scorecard
 from pipeline.acquisition.source_ownership import (
     normalize_scorecard_recommendations,
     reported_layout_provider,
     reported_math_provider,
+    select_metadata_observation,
     select_math_payload,
 )
 from pipeline.config import build_pipeline_config
@@ -26,7 +28,9 @@ from pipeline.sources.external import (
     acquisition_execution_report_path,
     external_layout_path,
     external_math_path,
+    load_docling_metadata_observation,
     load_grobid_metadata_observation,
+    load_mathpix_metadata_observation,
     ocr_prepass_report_path,
 )
 
@@ -39,6 +43,7 @@ def build_acquisition_execution_summary(
     mathpix_sources: dict[str, Any] | None,
     final_layout: dict[str, Any],
     final_math: dict[str, Any],
+    metadata_candidates: dict[str, dict[str, Any] | None] | None,
     metadata_observation: dict[str, Any] | None,
 ) -> dict[str, Any]:
     pdf_selection = dict((docling_sources or {}).get("pdf_selection") or (mathpix_sources or {}).get("pdf_selection") or {})
@@ -75,6 +80,11 @@ def build_acquisition_execution_summary(
         )
         if payload and list(payload.get("entries", []))
     ]
+    executed_metadata_candidates = [
+        provider
+        for provider, payload in sorted((metadata_candidates or {}).items())
+        if payload
+    ]
     return {
         "route_primary": acquisition_route.get("primary_route"),
         "route_traits": list(acquisition_route.get("traits", [])),
@@ -91,6 +101,7 @@ def build_acquisition_execution_summary(
             "selected_layout_provider": selected_layout_provider,
             "selected_math_provider": selected_math_provider,
             "metadata_provider": metadata_provider,
+            "metadata_candidates": executed_metadata_candidates,
             "docling_ran": bool(docling_sources),
             "mathpix_ran": bool(mathpix_sources),
             "mathpix_strategy": execution_plan.get("mathpix_strategy"),
@@ -105,6 +116,22 @@ def build_acquisition_execution_summary(
             "selected_pdf_path": pdf_selection.get("selected_pdf_path"),
         },
     }
+
+
+def _nonempty_metadata_observation(
+    provider: str,
+    layout_payload: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    if not layout_payload:
+        return None
+    observation = derive_metadata_reference_observation_from_layout(provider, layout_payload).to_dict()
+    if (
+        str(observation.get("title", "")).strip()
+        or str(observation.get("abstract", "")).strip()
+        or any(str(item).strip() for item in observation.get("references", []))
+    ):
+        return observation
+    return None
 
 
 def compose_external_sources(
@@ -139,7 +166,11 @@ def compose_external_sources(
     mathpix_layout = (mathpix_sources or {}).get("layout") or {}
     docling_math = (docling_sources or {}).get("math") or {}
     mathpix_math = (mathpix_sources or {}).get("math") or {}
-    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout)
+    metadata_candidates = {
+        "docling": _nonempty_metadata_observation("docling", docling_layout),
+        "grobid": load_grobid_metadata_observation_impl(paper_id, layout=layout),
+        "mathpix": _nonempty_metadata_observation("mathpix", mathpix_layout),
+    }
     try:
         source_scorecard = build_source_scorecard_impl(
             native_layout=None,
@@ -155,7 +186,7 @@ def compose_external_sources(
                 "mathpix": mathpix_math,
             },
             route_bias=primary_route,
-            metadata_observations={"grobid": metadata_observation},
+            metadata_observations=metadata_candidates,
         )
     except TypeError:
         source_scorecard = build_source_scorecard_impl(
@@ -164,9 +195,13 @@ def compose_external_sources(
             mathpix_layout=mathpix_layout,
             external_math=mathpix_math or docling_math,
             route_bias=primary_route,
-            metadata_observations={"grobid": metadata_observation},
+            metadata_observations=metadata_candidates,
         )
     source_scorecard = normalize_scorecard_recommendations(source_scorecard)
+    metadata_observation = select_metadata_observation(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
     try:
         final_layout = compose_layout_sources_impl(
             docling_sources,
@@ -195,6 +230,7 @@ def compose_external_sources(
         mathpix_sources=mathpix_sources,
         final_layout=final_layout,
         final_math=final_math,
+        metadata_candidates=metadata_candidates,
         metadata_observation=metadata_observation,
     )
     write_json_impl(acquisition_execution_report_path_impl(paper_id, layout=layout), acquisition_execution)
@@ -295,15 +331,23 @@ def existing_composed_sources(
     external_math_path_impl: Callable[..., Path] | None = None,
     ocr_prepass_report_path_impl: Callable[..., Path] | None = None,
     acquisition_execution_report_path_impl: Callable[..., Path] | None = None,
+    load_docling_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
     load_grobid_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
+    load_mathpix_metadata_observation_impl: Callable[..., dict[str, Any] | None] | None = None,
 ) -> dict[str, Any]:
     load_json_if_exists_impl = load_json_if_exists_impl or load_json_if_exists
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     external_math_path_impl = external_math_path_impl or external_math_path
     ocr_prepass_report_path_impl = ocr_prepass_report_path_impl or ocr_prepass_report_path
     acquisition_execution_report_path_impl = acquisition_execution_report_path_impl or acquisition_execution_report_path
+    load_docling_metadata_observation_impl = (
+        load_docling_metadata_observation_impl or load_docling_metadata_observation
+    )
     load_grobid_metadata_observation_impl = (
         load_grobid_metadata_observation_impl or load_grobid_metadata_observation
+    )
+    load_mathpix_metadata_observation_impl = (
+        load_mathpix_metadata_observation_impl or load_mathpix_metadata_observation
     )
     external_layout = load_json_if_exists_impl(external_layout_path_impl(paper_id, layout=layout)) or {
         "engine": "none",
@@ -320,7 +364,15 @@ def existing_composed_sources(
     acquisition_execution = (
         load_json_if_exists_impl(acquisition_execution_report_path_impl(paper_id, layout=layout)) or {}
     )
-    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout) or {}
+    metadata_candidates = {
+        "docling": load_docling_metadata_observation_impl(paper_id, layout=layout),
+        "grobid": load_grobid_metadata_observation_impl(paper_id, layout=layout),
+        "mathpix": load_mathpix_metadata_observation_impl(paper_id, layout=layout),
+    }
+    metadata_observation = select_metadata_observation(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
     route_ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
         "layout_path": str(external_layout_path_impl(paper_id, layout=layout)),

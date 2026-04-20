@@ -11,6 +11,7 @@ from pipeline.acquisition.source_ownership import (
     normalize_scorecard_recommendations,
     reported_layout_provider,
     reported_math_provider,
+    select_metadata_observation,
     select_math_payload,
 )
 
@@ -91,6 +92,17 @@ class AcquisitionSourceOwnershipTest(unittest.TestCase):
         )
 
         self.assertEqual(selected["engine"], "mathpix")
+
+    def test_select_metadata_observation_prefers_recommended_provider(self) -> None:
+        selected = select_metadata_observation(
+            source_scorecard={"recommended_primary_metadata_provider": "grobid"},
+            metadata_candidates={
+                "grobid": {"provider": "grobid", "title": "A title", "abstract": "", "references": []},
+                "other": {"provider": "other", "title": "B title", "abstract": "", "references": []},
+            },
+        )
+
+        self.assertEqual(selected["provider"], "grobid")
 
 
 if __name__ == "__main__":

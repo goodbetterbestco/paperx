@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from pipeline.policies.abstract_quality import abstract_quality_flags
+from pipeline.acquisition.source_ownership import canonical_provider_name
 from pipeline.text.references import normalize_reference_text
 from pipeline.types import default_review
 
@@ -42,6 +43,7 @@ def apply_metadata_observation(state: Any) -> Any:
         return state
 
     provider = str(observation.get("provider", "metadata_observation") or "metadata_observation")
+    source_scorecard = dict(getattr(state, "source_scorecard", {}) or {})
     decision_artifacts = dict(getattr(state, "decision_artifacts", {}) or {})
     front_matter = dict(getattr(state, "front_matter", None) or {})
     blocks = list(getattr(state, "blocks", []) or [])
@@ -49,6 +51,12 @@ def apply_metadata_observation(state: Any) -> Any:
 
     metadata_decision = dict(decision_artifacts.get("metadata") or {})
     metadata_decision.setdefault("provider", provider)
+    metadata_decision["recommended_metadata_provider"] = canonical_provider_name(
+        source_scorecard.get("recommended_primary_metadata_provider")
+    )
+    metadata_decision["recommended_reference_provider"] = canonical_provider_name(
+        source_scorecard.get("recommended_primary_reference_provider")
+    )
 
     current_title = str(front_matter.get("title", "") or "").strip()
     observed_title = str(observation.get("title", "") or "").strip()

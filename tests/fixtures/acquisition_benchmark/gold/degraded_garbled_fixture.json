@@ -4,6 +4,8 @@
   "ocr_should_run": true,
   "expected_primary_layout_provider": "docling",
   "expected_primary_math_provider": "mathpix",
+  "expected_primary_metadata_provider": "grobid",
+  "expected_primary_reference_provider": "grobid",
   "title": "Synthetic Degraded Acquisition Benchmark Paper",
   "abstract": "This benchmark paper simulates a degraded born digital source with noisy extraction and partial OCR recovery.",
   "headings": [

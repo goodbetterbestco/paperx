@@ -3,8 +3,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Callable
 
+from pipeline.acquisition.providers import derive_metadata_reference_observation_from_layout
 from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.acquisition.scoring import score_layout_provider, score_math_provider, score_metadata_provider
+from pipeline.acquisition.scoring import build_source_scorecard
+from pipeline.acquisition.source_ownership import normalize_scorecard_recommendations
 from pipeline.corpus_layout import ProjectLayout, canonical_sources_dir, display_path, paper_pdf_path
 from pipeline.orchestrator.round_runtime import write_json
 
@@ -24,18 +26,19 @@ def _discover_paper_ids(layout: ProjectLayout) -> list[str]:
     return sorted(paper_ids)
 
 
-def _recommended_provider(provider_scores: list[dict[str, Any]], kind: str) -> str | None:
-    for item in provider_scores:
-        if str(item.get("kind")) == kind:
-            if kind == "math" and int(item.get("math_entry_count", 0) or 0) <= 0:
-                continue
-            if kind == "metadata" and not (
-                bool(item.get("title_present"))
-                or bool(item.get("abstract_present"))
-                or int(item.get("reference_count", 0) or 0) > 0
-            ):
-                continue
-            return str(item.get("provider", "") or "") or None
+def _nonempty_metadata_observation(
+    provider: str,
+    layout_payload: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    if not layout_payload:
+        return None
+    observation = derive_metadata_reference_observation_from_layout(provider, layout_payload).to_dict()
+    if (
+        str(observation.get("title", "")).strip()
+        or str(observation.get("abstract", "")).strip()
+        or any(str(item).strip() for item in observation.get("references", []))
+    ):
+        return observation
     return None
 
 
@@ -44,6 +47,7 @@ def build_backfill_source_scorecard(
     *,
     layout: ProjectLayout,
     build_acquisition_route_report_impl: Callable[..., dict[str, Any]] = build_acquisition_route_report,
+    build_source_scorecard_impl: Callable[..., dict[str, Any]] = build_source_scorecard,
     load_docling_layout_impl: Callable[..., dict[str, Any] | None],
     load_mathpix_layout_impl: Callable[..., dict[str, Any] | None],
     load_external_layout_impl: Callable[..., dict[str, Any] | None],
@@ -60,82 +64,41 @@ def build_backfill_source_scorecard(
     docling_math = load_docling_math_impl(paper_id, layout=layout) or {}
     mathpix_math = load_mathpix_math_impl(paper_id, layout=layout) or {}
     composed_math = load_external_math_impl(paper_id, layout=layout) or {}
-    metadata_observation = load_grobid_metadata_observation_impl(paper_id, layout=layout) or {}
-
-    provider_scores: list[dict[str, Any]] = []
-    if docling_layout:
-        provider_scores.append(
-            score_layout_provider(
-                str(docling_layout.get("engine", "docling")),
-                docling_layout,
-                kind="layout",
-                math_entry_count=len((docling_math.get("entries") or [])),
-            )
-        )
-    if mathpix_layout:
-        provider_scores.append(
-            score_layout_provider(
-                str(mathpix_layout.get("engine", "mathpix")),
-                mathpix_layout,
-                kind="layout",
-                math_entry_count=len((mathpix_math.get("entries") or [])),
-            )
-        )
-    if not provider_scores and composed_layout:
-        provider_scores.append(
-            score_layout_provider(
-                str(composed_layout.get("engine", "composed")),
-                composed_layout,
-                kind="layout",
-                math_entry_count=len((composed_math.get("entries") or [])),
-            )
-        )
-
-    if docling_math:
-        provider_scores.append(
-            score_math_provider(
-                str(docling_math.get("engine", "docling")),
-                docling_math,
-                route_bias=primary_route,
-            )
-        )
-    if mathpix_math:
-        provider_scores.append(
-            score_math_provider(
-                str(mathpix_math.get("engine", "mathpix")),
-                mathpix_math,
-                route_bias=primary_route,
-            )
-        )
-    if not any(str(item.get("kind")) == "math" for item in provider_scores) and composed_math:
-        provider_scores.append(
-            score_math_provider(
-                str(composed_math.get("engine", "external_math")),
-                composed_math,
-                route_bias=primary_route,
-            )
-        )
-    if metadata_observation:
-        provider_scores.append(score_metadata_provider("grobid", metadata_observation, route_bias=primary_route))
-
-    provider_scores.sort(key=lambda item: (-float(item.get("overall_score", 0.0) or 0.0), str(item.get("provider", ""))))
-    return {
-        "providers": provider_scores,
-        "recommended_primary_layout_provider": _recommended_provider(provider_scores, "layout"),
-        "recommended_primary_math_provider": _recommended_provider(provider_scores, "math"),
-        "recommended_primary_metadata_provider": _recommended_provider(provider_scores, "metadata"),
-        "recommended_primary_reference_provider": next(
-            (
-                str(item.get("provider", "") or "")
-                for item in provider_scores
-                if (
-                    (str(item.get("kind")) == "metadata" and int(item.get("reference_count", 0) or 0) > 0)
-                    or (str(item.get("kind")) == "layout" and int(item.get("reference_count", 0) or 0) > 0)
-                )
-            ),
-            None,
-        ),
+    metadata_observations = {
+        "docling": _nonempty_metadata_observation("docling", docling_layout),
+        "grobid": load_grobid_metadata_observation_impl(paper_id, layout=layout) or {},
+        "mathpix": _nonempty_metadata_observation("mathpix", mathpix_layout),
     }
+
+    try:
+        scorecard = build_source_scorecard_impl(
+            native_layout=None,
+            external_layout=None,
+            mathpix_layout=None,
+            external_math=None,
+            layout_candidates={
+                "docling": docling_layout,
+                "mathpix": mathpix_layout,
+                "composed": composed_layout if not docling_layout and not mathpix_layout else None,
+            },
+            math_candidates={
+                "docling": docling_math,
+                "mathpix": mathpix_math,
+                "composed": composed_math if not docling_math and not mathpix_math else None,
+            },
+            route_bias=primary_route,
+            metadata_observations=metadata_observations,
+        )
+    except TypeError:
+        scorecard = build_source_scorecard_impl(
+            native_layout=None,
+            external_layout=composed_layout or docling_layout,
+            mathpix_layout=mathpix_layout,
+            external_math=composed_math or mathpix_math or docling_math,
+            route_bias=primary_route,
+            metadata_observations=metadata_observations,
+        )
+    return normalize_scorecard_recommendations(scorecard)
 
 
 def build_backfill_ocr_prepass_report(

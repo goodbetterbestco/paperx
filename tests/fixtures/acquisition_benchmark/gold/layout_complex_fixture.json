@@ -4,6 +4,8 @@
   "ocr_should_run": false,
   "expected_primary_layout_provider": "docling",
   "expected_primary_math_provider": "mathpix",
+  "expected_primary_metadata_provider": "grobid",
+  "expected_primary_reference_provider": "grobid",
   "title": "Synthetic Layout Complex Benchmark Paper",
   "abstract": "This benchmark paper simulates a layout complex source with multi column structure and caption heavy content.",
   "headings": [

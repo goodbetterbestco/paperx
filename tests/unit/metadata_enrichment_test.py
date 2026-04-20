@@ -45,6 +45,10 @@ class MetadataEnrichmentTest(unittest.TestCase):
             ],
             references=[],
             decision_artifacts={},
+            source_scorecard={
+                "recommended_primary_metadata_provider": "grobid",
+                "recommended_primary_reference_provider": "grobid",
+            },
             document={
                 "title": "Synthetic Acquisition Benchmark Paper",
                 "front_matter": {
@@ -75,6 +79,8 @@ class MetadataEnrichmentTest(unittest.TestCase):
         self.assertEqual(len(enriched.references), 2)
         self.assertTrue(enriched.decision_artifacts["metadata"]["abstract_applied"])
         self.assertTrue(enriched.decision_artifacts["metadata"]["references_applied"])
+        self.assertEqual(enriched.decision_artifacts["metadata"]["recommended_metadata_provider"], "grobid")
+        self.assertEqual(enriched.decision_artifacts["metadata"]["recommended_reference_provider"], "grobid")
         self.assertEqual(enriched.document["references"][0]["id"], "ref-001")
 
 

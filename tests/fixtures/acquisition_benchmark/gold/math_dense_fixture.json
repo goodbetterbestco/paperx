@@ -4,6 +4,8 @@
   "ocr_should_run": false,
   "expected_primary_layout_provider": "mathpix",
   "expected_primary_math_provider": "mathpix",
+  "expected_primary_metadata_provider": "grobid",
+  "expected_primary_reference_provider": "grobid",
   "title": "Synthetic Math Dense Benchmark Paper",
   "abstract": "This benchmark paper stresses math dense acquisition, layout selection, and formula recovery.",
   "headings": [

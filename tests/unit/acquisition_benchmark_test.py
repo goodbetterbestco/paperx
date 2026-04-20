@@ -40,9 +40,15 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             {"born_digital_scholarly", "math_dense", "scan_or_image_heavy", "layout_complex", "degraded_or_garbled"},
         )
         for paper in papers:
-            self.assertEqual({provider.name for provider in paper.providers}, {"docling", "mathpix"})
+            self.assertEqual({provider.name for provider in paper.providers}, {"docling", "grobid", "mathpix"})
             for provider in paper.providers:
-                self.assertTrue(provider.layout_path.is_absolute())
+                self.assertTrue(
+                    (provider.layout_path is not None and provider.layout_path.is_absolute())
+                    or (provider.metadata_path is not None and provider.metadata_path.is_absolute())
+                )
+                if provider.name == "grobid":
+                    self.assertIsNone(provider.layout_path)
+                    self.assertIsNotNone(provider.metadata_path)
                 self.assertTrue(provider.execution_path is None or provider.execution_path.is_absolute())
 
     def test_benchmark_scores_docling_above_mathpix_for_fixture(self) -> None:
@@ -53,16 +59,27 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
 
         born_digital = {entry["provider"]: entry for entry in papers["fixture_paper"]["providers"]}
         self.assertGreater(born_digital["docling"]["overall_score"], born_digital["mathpix"]["overall_score"])
+        self.assertGreater(born_digital["grobid"]["overall_score"], born_digital["mathpix"]["overall_score"])
         self.assertEqual(born_digital["docling"]["metrics"]["title_match"], 1.0)
+        self.assertEqual(born_digital["docling"]["metadata_observation"]["provider"], "docling")
+        self.assertIn("routing and acquisition scoring", born_digital["docling"]["metadata_observation"]["abstract"].lower())
         self.assertGreaterEqual(born_digital["docling"]["metrics"]["equation_hit_rate"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["route_match"], 1.0)
         self.assertEqual(born_digital["docling"]["metrics"]["selected_layout_provider_match"], 1.0)
+        self.assertEqual(born_digital["docling"]["metrics"]["selected_metadata_provider_match"], 1.0)
+        self.assertEqual(born_digital["docling"]["metrics"]["selected_reference_provider_match"], 1.0)
+        self.assertEqual(born_digital["grobid"]["metadata_observation"]["provider"], "grobid")
+        self.assertEqual(born_digital["grobid"]["metrics"]["title_match"], 1.0)
+        self.assertEqual(born_digital["grobid"]["metrics"]["recommended_metadata_provider_match"], 1.0)
+        self.assertEqual(born_digital["grobid"]["metrics"]["selected_reference_provider_match"], 1.0)
+        self.assertNotIn("selected_layout_provider_match", born_digital["grobid"]["metrics"])
         self.assertEqual(born_digital["mathpix"]["metrics"]["selected_layout_provider_match"], 0.0)
 
         math_dense = {entry["provider"]: entry for entry in papers["math_dense_fixture"]["providers"]}
         self.assertGreater(math_dense["mathpix"]["overall_score"], math_dense["docling"]["overall_score"])
         self.assertEqual(math_dense["mathpix"]["metrics"]["route_match"], 1.0)
         self.assertEqual(math_dense["mathpix"]["metrics"]["selected_math_provider_match"], 1.0)
+        self.assertEqual(math_dense["mathpix"]["metrics"]["recommended_metadata_provider_match"], 1.0)
         self.assertEqual(math_dense["docling"]["metrics"]["selected_math_provider_match"], 0.0)
 
         scan_heavy = {entry["provider"]: entry for entry in papers["scan_image_heavy_fixture"]["providers"]}
@@ -122,6 +139,7 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
                     "degraded_garbled_fixture",
                 },
             )
+            self.assertIn("grobid", {provider["provider"] for provider in payload["aggregate"]})
             self.assertEqual(payload["report_paths"]["json"], str(json_path))
             self.assertEqual(payload["report_paths"]["snapshot_json"], str(snapshot_json_path))
             self.assertEqual(payload["report_paths"]["snapshot_markdown"], str(snapshot_markdown_path))
@@ -159,6 +177,8 @@ class AcquisitionBenchmarkTest(unittest.TestCase):
             self.assertIn("scan_image_heavy_fixture", printed[0])
             self.assertIn("layout_complex_fixture", printed[0])
             self.assertIn("degraded_garbled_fixture", printed[0])
+            self.assertIn("grobid", printed[0])
+            self.assertIn("metadata target", printed[0])
             self.assertIn(str(json_path), printed[0])
             self.assertIn(str(snapshot_json_path), printed[0])
             self.assertIn(str(snapshot_markdown_path), printed[0])

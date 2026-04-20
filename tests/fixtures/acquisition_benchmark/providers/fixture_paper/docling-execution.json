@@ -2,11 +2,15 @@
   "route_primary": "born_digital_scholarly",
   "recommended": {
     "layout_provider": "docling",
-    "math_provider": "docling"
+    "math_provider": "docling",
+    "metadata_provider": "grobid",
+    "reference_provider": "grobid"
   },
   "executed": {
     "selected_layout_provider": "docling",
-    "selected_math_provider": "docling"
+    "selected_math_provider": "docling",
+    "metadata_provider": "grobid",
+    "reference_provider": "grobid"
   },
   "ocr": {
     "applied": false

@@ -89,6 +89,9 @@ class AcquisitionBackfillTest(unittest.TestCase):
             self.assertEqual(scorecard["recommended_primary_math_provider"], "docling")
             self.assertEqual(scorecard["recommended_primary_metadata_provider"], "grobid")
             self.assertEqual(scorecard["recommended_primary_reference_provider"], "grobid")
+            provider_names = {item["provider"] for item in scorecard["providers"]}
+            self.assertIn("docling", provider_names)
+            self.assertIn("grobid", provider_names)
 
             ocr_report = json.loads((sources_dir / "ocr-prepass.json").read_text(encoding="utf-8"))
             self.assertEqual(ocr_report["ocr_prepass_policy"], "skip")
