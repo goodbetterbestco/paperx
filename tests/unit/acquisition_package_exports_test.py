@@ -16,6 +16,8 @@ from pipeline import acquisition
 class AcquisitionPackageExportsTest(unittest.TestCase):
     def test_benchmark_utilities_are_exported_from_package_boundary(self) -> None:
         self.assertTrue(callable(acquisition.compare_benchmark_reports))
+        self.assertTrue(callable(acquisition.evaluate_benchmark_gates))
+        self.assertTrue(callable(acquisition.evaluate_latest_benchmark_gates))
         self.assertTrue(callable(acquisition.list_benchmark_history))
         self.assertTrue(callable(acquisition.list_remediation_history))
         self.assertTrue(callable(acquisition.list_remediation_plan_history))
@@ -35,6 +37,7 @@ class AcquisitionPackageExportsTest(unittest.TestCase):
         self.assertTrue(callable(acquisition.current_remediation_output_dir))
         self.assertTrue(callable(acquisition.current_remediation_plan_output_dir))
         self.assertTrue(callable(acquisition.family_provider_score_maps))
+        self.assertTrue(bool(acquisition.DEFAULT_FAMILY_SOFT_GATES))
         self.assertTrue(callable(acquisition.load_current_benchmark_dashboard))
         self.assertTrue(callable(acquisition.load_current_benchmark_status))
         self.assertTrue(callable(acquisition.load_current_benchmark_summary))

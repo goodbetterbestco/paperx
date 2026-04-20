@@ -15,6 +15,11 @@ from pipeline.acquisition.benchmark import (
 )
 from pipeline.acquisition.benchmark_compare import compare_benchmark_reports
 from pipeline.acquisition.benchmark_dashboard import summarize_benchmark_dashboard
+from pipeline.acquisition.benchmark_gates import (
+    DEFAULT_FAMILY_SOFT_GATES,
+    evaluate_benchmark_gates,
+    evaluate_latest_benchmark_gates,
+)
 from pipeline.acquisition.benchmark_history import list_benchmark_history
 from pipeline.acquisition.benchmark_reports import (
     aggregate_provider_score_map,
@@ -88,6 +93,7 @@ from pipeline.acquisition.source_ownership import reported_layout_provider, repo
 __all__ = [
     "AcquisitionRouteDecision",
     "AcquisitionSignals",
+    "DEFAULT_FAMILY_SOFT_GATES",
     "GrobidPolicyDecision",
     "MathpixExecutionDecision",
     "MetadataReferenceObservation",
@@ -108,6 +114,8 @@ __all__ = [
     "current_remediation_plan_output_dir",
     "decide_mathpix_execution",
     "decide_ocr_prepass_policy",
+    "evaluate_benchmark_gates",
+    "evaluate_latest_benchmark_gates",
     "family_provider_score_maps",
     "grobid_policy_decision",
     "grobid_policy_snapshot",

@@ -92,6 +92,8 @@ Current preferred commands:
 - `python3 -m pipeline.cli.show_acquisition_benchmark_status --from-artifacts`
 - `python3 -m pipeline.cli.show_acquisition_benchmark_dashboard`
 - `python3 -m pipeline.cli.show_acquisition_benchmark_dashboard --from-artifacts`
+- `python3 -m pipeline.cli.check_acquisition_benchmark_gates`
+- `python3 -m pipeline.cli.check_acquisition_benchmark_gates --base previous --candidate latest`
 - `python3 -m pipeline.cli.list_acquisition_benchmark_history --limit 5`
 - `python3 -m pipeline.cli.summarize_acquisition_benchmark_trend`
 - `python3 -m pipeline.cli.compare_acquisition_benchmark --base tmp/acquisition_benchmark/history/baseline-apr19.json --candidate tmp/acquisition_benchmark/history/candidate-apr20.json`
@@ -208,6 +210,11 @@ with that watchlist into a single “where are we now?” status view, and
 dashboard across leaders, regressions, latest-vs-previous movement, and recent
 runs. Both status and dashboard CLIs accept `--from-artifacts` when you want to
 read the saved current bundle directly instead of recomputing from history.
+`pipeline.cli.check_acquisition_benchmark_gates` adds a CI-facing soft gate over
+the current routing and OCR families, comparing a base and candidate snapshot
+and exiting nonzero when the expected family provider regresses beyond the
+configured threshold or loses leader status where we consider that family
+stable.
 GROBID now has an explicit live-policy boundary: it is a live provider only for
 metadata and references, while layout and math remain trial-only. The
 `pipeline.cli.run_grobid_trial` command measures TEI quality inside that
