@@ -97,23 +97,18 @@ def _validate_formula_classification(classification: dict[str, Any], context: st
 def validate_build(document: dict[str, Any]) -> None:
     build = document["build"]
     _require(isinstance(build, dict), "build must be an object")
-    for key in ("created_at", "updated_at", "builder_version", "sources", "flags"):
+    for key in ("created_at", "updated_at", "builder_version", "sources"):
         _require(key in build, f"build missing key: {key}")
     _require(isinstance(build.get("created_at"), str), "build.created_at must be text")
     _require(isinstance(build.get("updated_at"), str), "build.updated_at must be text")
     _require(isinstance(build.get("builder_version"), str), "build.builder_version must be text")
     _require(isinstance(build.get("sources"), dict), "build.sources must be an object")
-    _require(isinstance(build.get("flags"), dict), "build.flags must be an object")
 
     for key in ("native_pdf", "layout_engine", "math_engine", "figure_engine", "text_engine"):
         _require(key in build["sources"], f"build.sources missing key: {key}")
     _require(isinstance(build["sources"].get("native_pdf"), bool), "build.sources.native_pdf must be boolean")
     for key in ("layout_engine", "math_engine", "figure_engine", "text_engine"):
         _require(isinstance(build["sources"].get(key), str), f"build.sources.{key} must be text")
-
-    for key in ("use_external_layout", "use_external_math", "rebuild"):
-        _require(key in build["flags"], f"build.flags missing key: {key}")
-        _require(isinstance(build["flags"].get(key), bool), f"build.flags.{key} must be boolean")
 
     if "inputs" in build:
         inputs = build["inputs"]

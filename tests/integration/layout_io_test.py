@@ -10,7 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.orchestrator.round_paper import existing_composed_sources
+from pipeline.processor.sources import existing_composed_sources
 from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.sources.external import (
     external_layout_path,
@@ -140,9 +140,9 @@ class LayoutIoTest(unittest.TestCase):
             ocr_prepass_report_path(paper_id, layout=layout).write_text(
                 json.dumps(
                     {
-                        "selected_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
+                        "selected_pdf_path": "synthetic/_runs/papers/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
                         "original_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/paper.pdf",
-                        "ocr_normalized_pdf_path": "corpus/synthetic/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
+                        "ocr_normalized_pdf_path": "synthetic/_runs/papers/1990_synthetic_test_paper/canonical_sources/ocr-normalized.pdf",
                         "pdf_source_kind": "ocr_normalized_generated",
                         "ocr_prepass_policy": "required",
                         "ocr_prepass_tool": "ocrmypdf",

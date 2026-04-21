@@ -12,7 +12,6 @@ if str(ROOT) not in sys.path:
 sys.modules.setdefault("fitz", types.SimpleNamespace(Document=object, Matrix=object, Page=object, Rect=object))
 
 from pipeline.corpus.lexicon import corpus_join_terms, load_corpus_lexicon
-from pipeline.corpus.lexicon_builder import _build_lexicon
 from pipeline.corpus_layout import ProjectLayout, display_path
 from pipeline.corpus.metadata import load_figure_expectations, paper_figure_metadata
 from pipeline.figures.linking import build_manifest_from_pdf_path
@@ -114,25 +113,6 @@ class HelperLayoutTest(unittest.TestCase):
             self.assertEqual(lexicon["terms"][0]["canonical"], "trimmedsurface")
             self.assertIn("trimmedsurface", join_terms)
             self.assertIn("cad", join_terms)
-
-    def test_build_lexicon_uses_explicit_layout_canonicals(self) -> None:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            root = Path(temp_dir).resolve()
-            layout = _corpus_layout(root)
-            paper_id = "1990_synthetic_test_paper"
-            paper_dir = layout.paper_dir(paper_id)
-            paper_dir.mkdir(parents=True, exist_ok=True)
-            canonical_path = layout.canonical_path(paper_id)
-            canonical_path.write_text(
-                json.dumps(_minimal_document(paper_id, layout.paper_pdf_path(paper_id))),
-                encoding="utf-8",
-            )
-
-            lexicon = _build_lexicon(layout=layout)
-
-            self.assertEqual(lexicon["sources"]["canonical_papers"], 1)
-            self.assertTrue(any(entry["canonical"] == "Ada Example" for entry in lexicon["authors"]))
-            self.assertGreaterEqual(len(lexicon["terms"]), 1)
 
     def test_build_manifest_from_pdf_path_uses_explicit_layout(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

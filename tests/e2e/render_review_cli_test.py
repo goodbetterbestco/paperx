@@ -43,7 +43,7 @@ class RenderReviewCliE2ETest(unittest.TestCase):
             )
 
             payload = json.loads(completed.stdout)
-            review_path = (project_dir / "_canon" / f"{PAPER_ID}.canonical.review.md").resolve()
+            review_path = (project_dir / "_runs" / "review_drafts" / f"{PAPER_ID}.canonical.review.md").resolve()
 
             self.assertEqual(Path(payload["path"]).resolve(), review_path)
             self.assertTrue(review_path.exists())

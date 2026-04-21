@@ -26,8 +26,6 @@ class PipelineConfig:
     layout: ProjectLayout
     builder_version: str
     text_engine: TextEngine
-    use_external_layout: bool
-    use_external_math: bool
     include_review: bool
     fail_on_missing_title: bool
     write_decision_sidecars: bool
@@ -41,8 +39,6 @@ def build_pipeline_config(
     *,
     layout: ProjectLayout | None = None,
     text_engine: TextEngine = "native",
-    use_external_layout: bool = False,
-    use_external_math: bool = False,
     include_review: bool = True,
     fail_on_missing_title: bool = True,
     write_decision_sidecars: bool = True,
@@ -53,8 +49,6 @@ def build_pipeline_config(
         layout=active_layout,
         builder_version=CURRENT_BUILDER_VERSION,
         text_engine=text_engine,
-        use_external_layout=bool(use_external_layout),
-        use_external_math=bool(use_external_math),
         include_review=include_review,
         fail_on_missing_title=fail_on_missing_title,
         write_decision_sidecars=write_decision_sidecars,

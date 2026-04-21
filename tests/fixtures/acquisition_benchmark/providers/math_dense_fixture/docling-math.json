@@ -1,9 +1,0 @@
-{
-  "engine": "docling",
-  "entries": [
-    {
-      "id": "docling-eq-1",
-      "display_latex": "\\int_0^1 x^2 dx = 1/3"
-    }
-  ]
-}

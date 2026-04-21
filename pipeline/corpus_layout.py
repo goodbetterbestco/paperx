@@ -39,14 +39,14 @@ class ProjectLayout:
         if project_dir is not None:
             source_root = project_dir
             corpus_root = project_dir
-            review_root = project_dir / "_canon"
             runs_root = project_dir / "_runs"
+            review_root = runs_root / "review_drafts"
             mode = "project"
         else:
             corpus_root = _configured_corpus_dir(root, corpus_name)
             source_root = corpus_root
-            review_root = corpus_root / "_canon"
             runs_root = corpus_root / "_runs"
+            review_root = runs_root / "review_drafts"
             mode = "corpus"
         return cls(
             engine_root=root,
@@ -75,6 +75,9 @@ class ProjectLayout:
     def paper_dir(self, paper_id: str) -> Path:
         return self.corpus_root / corpus_paper_id(paper_id)
 
+    def paper_runs_dir(self, paper_id: str) -> Path:
+        return self.runs_root / "papers" / corpus_paper_id(paper_id)
+
     def paper_pdf_path(self, paper_id: str) -> Path:
         canonical_paper_id = corpus_paper_id(paper_id)
         converted = self.paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
@@ -89,7 +92,7 @@ class ProjectLayout:
         return self.paper_dir(paper_id) / "canonical.json"
 
     def canonical_sources_dir(self, paper_id: str) -> Path:
-        return self.paper_dir(paper_id) / "canonical_sources"
+        return self.paper_runs_dir(paper_id) / "canonical_sources"
 
     def figures_dir(self, paper_id: str) -> Path:
         return self.paper_dir(paper_id) / "figures"

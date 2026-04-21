@@ -86,8 +86,6 @@ def build_input_fingerprints(
     paper_id: str,
     *,
     pdf_path: str | Path | None = None,
-    use_external_layout: bool,
-    use_external_math: bool,
     layout: ProjectLayout | None = None,
 ) -> dict[str, Any]:
     active_layout = layout or current_layout()
@@ -95,13 +93,15 @@ def build_input_fingerprints(
     inputs: dict[str, Any] = {
         "pdf": fingerprint_path(resolved_pdf_path),
     }
-    if use_external_layout:
-        inputs["external_layout"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "layout.json")
-    if use_external_math:
-        inputs["external_math"] = fingerprint_path(active_layout.canonical_sources_dir(paper_id) / "math.json")
+    layout_path = active_layout.canonical_sources_dir(paper_id) / "layout.json"
+    if layout_path.exists():
+        inputs["layout"] = fingerprint_path(layout_path)
+    math_path = active_layout.canonical_sources_dir(paper_id) / "math.json"
+    if math_path.exists():
+        inputs["math"] = fingerprint_path(math_path)
     metadata_reference_path = active_layout.canonical_sources_dir(paper_id) / "grobid.tei.xml"
     if metadata_reference_path.exists():
-        inputs["metadata_reference"] = fingerprint_path(metadata_reference_path)
+        inputs["metadata"] = fingerprint_path(metadata_reference_path)
     return inputs
 
 
@@ -114,8 +114,6 @@ def build_metadata_for_paper(
     math_engine: str,
     figure_engine: str,
     text_engine: str,
-    use_external_layout: bool,
-    use_external_math: bool,
 ) -> dict[str, Any]:
     return {
         "created_at": timestamp,
@@ -128,16 +126,9 @@ def build_metadata_for_paper(
             "figure_engine": figure_engine,
             "text_engine": text_engine,
         },
-        "flags": {
-            "use_external_layout": use_external_layout,
-            "use_external_math": use_external_math,
-            "rebuild": False,
-        },
         "inputs": build_input_fingerprints(
             paper_id,
             pdf_path=pdf_path,
-            use_external_layout=use_external_layout,
-            use_external_math=use_external_math,
         ),
         "pipeline": pipeline_fingerprint(),
     }

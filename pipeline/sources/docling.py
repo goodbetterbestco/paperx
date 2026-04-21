@@ -13,7 +13,7 @@ from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, paper_pdf_path
 from pipeline.sources.external import external_layout_path, external_math_path
 from pipeline.sources.layout import extract_layout
 from pipeline.math.review_policy import review_for_math_entry
-from pipeline.runtime_paths import ensure_repo_tmp_dir, runtime_env
+from pipeline.runtime_paths import runtime_env
 from pipeline.text.headings import clean_heading_title, compact_text, normalize_title_key, parse_heading_label
 from pipeline.types import default_formula_conversion, default_review
 
@@ -32,7 +32,7 @@ def _paper_pdf_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Pa
 
 
 def _docling_output_dir(paper_id: str, output_dir: Path | None = None) -> Path:
-    return output_dir or Path(tempfile.mkdtemp(prefix=f"{paper_id}-docling-", dir=str(ensure_repo_tmp_dir())))
+    return output_dir or Path(tempfile.mkdtemp(prefix=f"{paper_id}-docling-"))
 
 
 def _resolve_docling_json_path(output_dir: Path, *, pdf_path: Path) -> Path:

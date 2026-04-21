@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[2]
 # to survive a later repo extraction so canonical build metadata does not go
 # stale merely because files moved to a different repository.
 PIPELINE_COMPONENTS: tuple[tuple[str, Path], ...] = (
-    # Keep the historical logical id even though the root facade is gone.
-    ("pipeline/reconcile_blocks.py", ROOT / "pipeline" / "reconcile" / "entrypoint.py"),
+    # Keep the historical logical id even though the implementation moved.
+    ("pipeline/reconcile_blocks.py", ROOT / "pipeline" / "processor" / "assembly.py"),
     ("pipeline/extract_math.py", ROOT / "pipeline" / "math" / "extract.py"),
     ("pipeline/normalize_prose.py", ROOT / "pipeline" / "text" / "prose.py"),
     ("pipeline/extract_figures.py", ROOT / "pipeline" / "sources" / "figures.py"),

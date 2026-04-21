@@ -35,7 +35,6 @@ class BuildReviewCliE2ETest(unittest.TestCase):
                     "-m",
                     "pipeline.cli.build_review",
                     PAPER_ID,
-                    "--use-external-layout",
                 ],
                 cwd=ROOT,
                 check=True,
@@ -46,7 +45,7 @@ class BuildReviewCliE2ETest(unittest.TestCase):
 
             payload = json.loads(completed.stdout)
             canonical_path = paper_dir / "canonical.json"
-            review_path = project_dir / "_canon" / f"{PAPER_ID}.canonical.review.md"
+            review_path = project_dir / "_runs" / "review_drafts" / f"{PAPER_ID}.canonical.review.md"
 
             self.assertEqual(Path(payload["canonical_path"]).resolve(), canonical_path.resolve())
             self.assertEqual(Path(payload["review_path"]).resolve(), review_path.resolve())

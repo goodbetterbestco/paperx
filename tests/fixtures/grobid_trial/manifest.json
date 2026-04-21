@@ -1,9 +1,0 @@
-{
-  "papers": [
-    {
-      "paper_id": "fixture_paper",
-      "gold": "gold/fixture_paper.json",
-      "grobid_tei": "providers/fixture_paper/grobid.tei.xml"
-    }
-  ]
-}

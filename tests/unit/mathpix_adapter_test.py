@@ -74,11 +74,11 @@ class MathpixAdapterTest(unittest.TestCase):
             self.assertEqual(_mathpix_retry_backoff_seconds(3), 0.0)
             self.assertEqual(_int_env("STEPVIEW_MATHPIX_PDF_WAIT_TIMEOUT_SECONDS", 1800), 1800)
 
-    def test_mathpix_request_limit_defaults_to_six(self) -> None:
+    def test_mathpix_request_limit_defaults_to_twenty(self) -> None:
         with patch.dict(os.environ, {}, clear=True):
             semaphore = _mathpix_request_semaphore()
 
-        self.assertEqual(semaphore._value, 6)
+        self.assertEqual(semaphore._value, 20)
 
     def test_retryable_socket_error_handles_nested_and_non_retryable_exceptions(self) -> None:
         self.assertTrue(_retryable_socket_error(error.URLError(BrokenPipeError(32, "Broken pipe"))))

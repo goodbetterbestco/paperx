@@ -3,8 +3,12 @@ from __future__ import annotations
 import filecmp
 import shutil
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from pipeline.corpus.paths import PAPER_DIR_RE, normalize_paper_id
+
+if TYPE_CHECKING:
+    from pipeline.corpus_layout import ProjectLayout
 
 
 def _remove_path(path: Path) -> int:
@@ -95,6 +99,37 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
         "source_pdfs": source_pdfs,
         "moved_pdfs": moved_pdfs,
         "deduped_pdfs": deduped_pdfs,
+        "removed_paths": removed_paths,
+        "removed_file_count": removed_files,
+    }
+
+
+def cleanup_processed_runtime_artifacts(layout: "ProjectLayout") -> dict[str, object]:
+    root = Path(layout.corpus_root).resolve()
+    removed_files = 0
+    removed_paths: list[str] = []
+
+    legacy_paths = [
+        root / "_canon",
+        root / "review_drafts",
+    ]
+    legacy_paths.extend(
+        paper_dir / "canonical_sources"
+        for paper_dir in sorted(path for path in root.iterdir() if path.is_dir() and PAPER_DIR_RE.match(path.name))
+    )
+
+    for artifact_path in legacy_paths:
+        if not artifact_path.exists():
+            continue
+        removed_files += _remove_path(artifact_path)
+        removed_paths.append(str(artifact_path))
+
+    for review_path in sorted(root.glob("*.canonical.review.md")):
+        removed_files += _remove_path(review_path)
+        removed_paths.append(str(review_path))
+
+    return {
+        "corpus_dir": str(root),
         "removed_paths": removed_paths,
         "removed_file_count": removed_files,
     }

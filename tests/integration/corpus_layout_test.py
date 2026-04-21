@@ -56,15 +56,19 @@ class CorpusLayoutTest(unittest.TestCase):
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper"),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                project_dir / "_runs" / "review_drafts" / "alpha_paper.canonical.review.md",
+            )
+            self.assertEqual(
+                corpus_layout.canonical_sources_dir("alpha_paper"),
+                project_dir / "_runs" / "papers" / "alpha_paper" / "canonical_sources",
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper", layout=layout),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                project_dir / "_runs" / "review_drafts" / "alpha_paper.canonical.review.md",
             )
             self.assertEqual(
                 layout.review_draft_path("alpha_paper"),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                project_dir / "_runs" / "review_drafts" / "alpha_paper.canonical.review.md",
             )
 
     def test_project_layout_rejects_legacy_source_directory(self) -> None:

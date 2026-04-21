@@ -45,15 +45,11 @@ class PipelineConfigTest(unittest.TestCase):
             config = build_pipeline_config(
                 layout=layout,
                 text_engine="hybrid",
-                use_external_layout=True,
-                use_external_math=False,
                 include_review=False,
             )
 
         self.assertEqual(config.layout, layout)
         self.assertEqual(config.text_engine, "hybrid")
-        self.assertTrue(config.use_external_layout)
-        self.assertFalse(config.use_external_math)
         self.assertFalse(config.include_review)
         self.assertEqual(config.docling_bin, Path("/tmp/docling").resolve())
         self.assertEqual(config.docling_device, "cpu")

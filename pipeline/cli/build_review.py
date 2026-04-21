@@ -5,11 +5,11 @@ import json
 from collections.abc import Callable
 from pathlib import Path
 
-from pipeline.cli.paper_build import build_paper
 from pipeline.corpus_layout import CORPUS_DIR, current_layout
 from pipeline.output.artifacts import build_summary, write_canonical_outputs
 from pipeline.output.review_renderer import render_document
 from pipeline.output.validation import CanonicalValidationError, validate_canonical
+from pipeline.processor.paper import build_paper
 
 
 def parse_args() -> argparse.Namespace:
@@ -22,16 +22,6 @@ def parse_args() -> argparse.Namespace:
         choices=("native", "pdftotext", "hybrid"),
         default="native",
         help="Text extraction source for prose blocks.",
-    )
-    parser.add_argument(
-        "--use-external-layout",
-        action="store_true",
-        help="Use <corpus>/<paper>/canonical_sources/layout.json when present.",
-    )
-    parser.add_argument(
-        "--use-external-math",
-        action="store_true",
-        help="Use <corpus>/<paper>/canonical_sources/math.json when present.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Validate and summarize without writing files.")
     return parser.parse_args()
@@ -52,8 +42,6 @@ def run_build_review(
         build = build_paper_fn(
             args.paper_id,
             text_engine=args.text_engine,
-            use_external_layout=args.use_external_layout,
-            use_external_math=args.use_external_math,
             include_review=True,
             layout=current_layout_fn(),
         )

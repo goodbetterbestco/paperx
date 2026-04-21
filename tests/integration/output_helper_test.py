@@ -10,7 +10,6 @@ if str(ROOT) not in sys.path:
 
 from pipeline.corpus_layout import ProjectLayout
 from pipeline.output.review_renderer import write_review_from_canonical
-from pipeline.output.title_abstract_export import export_titles_and_abstracts
 
 
 def _corpus_layout(root: Path) -> ProjectLayout:
@@ -79,27 +78,6 @@ class OutputHelperTest(unittest.TestCase):
             self.assertEqual(destination, layout.review_draft_path(paper_id))
             self.assertTrue(destination.exists())
             self.assertIn("Synthetic Test Paper", destination.read_text(encoding="utf-8"))
-
-    def test_export_titles_and_abstracts_uses_explicit_layout(self) -> None:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            root = Path(temp_dir).resolve()
-            layout = _corpus_layout(root)
-            paper_id = "1990_synthetic_test_paper"
-            paper_dir = layout.paper_dir(paper_id)
-            paper_dir.mkdir(parents=True, exist_ok=True)
-            layout.paper_pdf_path(paper_id).write_bytes(b"%PDF-1.4\nsynthetic\n")
-            layout.canonical_path(paper_id).write_text(
-                json.dumps(_minimal_document(paper_id, layout.paper_pdf_path(paper_id))),
-                encoding="utf-8",
-            )
-            output_path = layout.tmp_root / "titles_and_abstracts.md"
-
-            summary = export_titles_and_abstracts(output_path, layout=layout)
-
-            self.assertEqual(summary["path"], str(output_path.resolve()))
-            self.assertEqual(summary["papers"], 1)
-            self.assertIn("Synthetic Test Paper", output_path.read_text(encoding="utf-8"))
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,25 +2,30 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+import tempfile
 
 
 ENGINE_ROOT = Path(__file__).resolve().parents[1]
 ROOT = ENGINE_ROOT
-TMP_DIR = ENGINE_ROOT / "tmp"
+CORPUS_ROOT = ENGINE_ROOT / "corpus"
+TMP_DIR = Path(tempfile.gettempdir()).resolve()
 
 
 def ensure_repo_tmp_dir() -> Path:
-    TMP_DIR.mkdir(parents=True, exist_ok=True)
     return TMP_DIR
 
 
+def shared_report_root() -> Path:
+    CORPUS_ROOT.mkdir(parents=True, exist_ok=True)
+    return CORPUS_ROOT
+
+
+def shared_report_dir(name: str) -> Path:
+    return shared_report_root() / name
+
+
 def runtime_env(*, extra: dict[str, str] | None = None) -> dict[str, str]:
-    tmp_dir = ensure_repo_tmp_dir()
     env = os.environ.copy()
-    env.setdefault("TMPDIR", str(tmp_dir))
-    env.setdefault("TMP", str(tmp_dir))
-    env.setdefault("TEMP", str(tmp_dir))
-    env.setdefault("DATALAB_CACHE_DIR", str(tmp_dir / "datalab-cache"))
     if extra:
         env.update(extra)
     return env

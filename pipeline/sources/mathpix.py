@@ -63,7 +63,7 @@ def _float_env(name: str, default: float) -> float:
 def _mathpix_request_semaphore() -> BoundedSemaphore:
     global _MATHPIX_REQUEST_SEMAPHORE, _MATHPIX_REQUEST_LIMIT
     # Cap concurrent Mathpix network work across paper workers.
-    limit = _int_env("STEPVIEW_MATHPIX_REQUEST_LIMIT", 6)
+    limit = _int_env("STEPVIEW_MATHPIX_REQUEST_LIMIT", 20)
     with _MATHPIX_REQUEST_LOCK:
         if _MATHPIX_REQUEST_SEMAPHORE is None or _MATHPIX_REQUEST_LIMIT != limit:
             _MATHPIX_REQUEST_SEMAPHORE = BoundedSemaphore(limit)

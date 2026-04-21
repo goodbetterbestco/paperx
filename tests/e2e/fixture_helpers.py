@@ -162,7 +162,8 @@ def _processed_layout_payload() -> dict[str, object]:
 
 def create_processed_project_fixture(project_dir: Path) -> Path:
     paper_dir = project_dir / PAPER_ID
-    sources_dir = paper_dir / "canonical_sources"
+    sources_dir = project_dir / "_runs" / "papers" / PAPER_ID / "canonical_sources"
+    paper_dir.mkdir(parents=True, exist_ok=True)
     sources_dir.mkdir(parents=True, exist_ok=True)
     (paper_dir / f"{PAPER_ID}.pdf").write_bytes(build_single_page_text_pdf())
     (sources_dir / "layout.json").write_text(

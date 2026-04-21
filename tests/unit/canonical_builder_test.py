@@ -56,8 +56,6 @@ class CanonicalBuilderTest(unittest.TestCase):
                 layout_engine_name="docling",
                 math_engine_name="mathpix",
                 effective_text_engine="native_pdf+pdftotext",
-                use_external_layout=True,
-                use_external_math=True,
                 front_matter={"title": "Synthetic Test Paper"},
                 sections=[{"id": "sec-1"}],
                 blocks=[{"id": "blk-1"}],
@@ -83,8 +81,6 @@ class CanonicalBuilderTest(unittest.TestCase):
             math_engine="mathpix",
             figure_engine="local",
             text_engine="native_pdf+pdftotext",
-            use_external_layout=True,
-            use_external_math=True,
         )
 
     def test_build_canonical_document_omits_decision_artifacts_when_not_present(self) -> None:
@@ -103,8 +99,6 @@ class CanonicalBuilderTest(unittest.TestCase):
                 layout_engine_name="native_pdf",
                 math_engine_name="heuristic",
                 effective_text_engine="native_pdf",
-                use_external_layout=False,
-                use_external_math=False,
                 front_matter={"title": "Synthetic Test Paper"},
                 sections=[],
                 blocks=[],

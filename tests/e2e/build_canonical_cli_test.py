@@ -34,7 +34,6 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
                     "-m",
                     "pipeline.cli.build_canonical",
                     PAPER_ID,
-                    "--use-external-layout",
                 ],
                 cwd=ROOT,
                 check=True,
@@ -55,7 +54,7 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
             self.assertEqual(document["paper_id"], PAPER_ID)
             self.assertEqual(document["title"], TITLE)
             self.assertEqual(document["build"]["sources"]["layout_engine"], "docling")
-            self.assertTrue(document["build"]["flags"]["use_external_layout"])
+            self.assertIn("layout", document["build"]["inputs"])
 
 
 if __name__ == "__main__":

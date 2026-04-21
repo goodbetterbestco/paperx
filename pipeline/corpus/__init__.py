@@ -4,10 +4,6 @@ from importlib import import_module
 
 
 _EXPORTS = {
-    "_build_lexicon": ("pipeline.corpus.lexicon_builder", "_build_lexicon"),
-    "audit_corpus": ("pipeline.corpus.audit", "audit_corpus"),
-    "audit_document": ("pipeline.corpus.audit", "audit_document"),
-    "audit_missing_canonical": ("pipeline.corpus.audit", "audit_missing_canonical"),
     "build_figure_expectations": ("pipeline.corpus.metadata", "build_figure_expectations"),
     "canonical_pdf_filename": ("pipeline.corpus.metadata", "canonical_pdf_filename"),
     "configured_corpus_dir": ("pipeline.corpus.paths", "configured_corpus_dir"),
@@ -19,10 +15,7 @@ _EXPORTS = {
     "env_value": ("pipeline.corpus.paths", "env_value"),
     "load_corpus_lexicon": ("pipeline.corpus.lexicon", "load_corpus_lexicon"),
     "load_figure_expectations": ("pipeline.corpus.metadata", "load_figure_expectations"),
-    "load_source_slice_manifest": ("pipeline.corpus.slices", "load_source_slice_manifest"),
-    "materialize_source_slice": ("pipeline.corpus.slices", "materialize_source_slice"),
     "normalize_paper_id": ("pipeline.corpus.paths", "normalize_paper_id"),
-    "normalize_requested_paper_ids": ("pipeline.corpus.slices", "normalize_requested_paper_ids"),
     "paper_dir_name_from_paper_id": ("pipeline.corpus.metadata", "paper_dir_name_from_paper_id"),
     "paper_figure_metadata": ("pipeline.corpus.metadata", "paper_figure_metadata"),
     "paper_id_from_dir_name": ("pipeline.corpus.metadata", "paper_id_from_dir_name"),

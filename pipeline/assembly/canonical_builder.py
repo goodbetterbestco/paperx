@@ -18,8 +18,6 @@ def build_canonical_document(
     layout_engine_name: str,
     math_engine_name: str,
     effective_text_engine: str,
-    use_external_layout: bool,
-    use_external_math: bool,
     front_matter: dict[str, Any],
     sections: list[dict[str, Any]],
     blocks: list[dict[str, Any]],
@@ -44,8 +42,6 @@ def build_canonical_document(
             math_engine=math_engine_name,
             figure_engine="local",
             text_engine=effective_text_engine,
-            use_external_layout=use_external_layout,
-            use_external_math=use_external_math,
         ),
         "front_matter": front_matter,
         "styles": {
