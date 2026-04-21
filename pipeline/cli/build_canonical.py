@@ -12,7 +12,7 @@ from pipeline.processor.paper import build_paper
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build canonical.json for a paper.")
-    parser.add_argument("paper_id", help=f"Paper directory id under the configured corpus ({CORPUS_DIR}).")
+    parser.add_argument("paper_id", help=f"Paper id in the configured layout ({CORPUS_DIR}).")
     parser.add_argument(
         "--text-engine",
         choices=("native", "pdftotext", "hybrid"),

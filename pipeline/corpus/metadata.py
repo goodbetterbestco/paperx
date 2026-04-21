@@ -40,10 +40,6 @@ def paper_id_from_pdf_path(pdf_path: Path, *, layout: ProjectLayout | None = Non
     active_layout = layout or current_layout()
     if pdf_path.parent.resolve() == active_layout.source_root.resolve():
         return corpus_paper_id(pdf_path.stem)
-    if pdf_path.parent.resolve() == active_layout.corpus_root.resolve():
-        return corpus_paper_id(pdf_path.stem)
-    if PAPER_DIR_RE.match(pdf_path.parent.name):
-        return paper_id_from_dir_name(pdf_path.parent.name)
     return corpus_paper_id(pdf_path.stem)
 
 
@@ -53,21 +49,18 @@ def canonical_pdf_filename(paper_id: str) -> str:
 
 def discover_paper_pdf_paths(*, layout: ProjectLayout | None = None) -> list[Path]:
     active_layout = layout or current_layout()
-    pdf_by_id: dict[str, Path] = {}
     corpus_root = active_layout.corpus_root
     if not corpus_root.exists():
         return []
-    for pdf_path in active_layout.discover_source_pdfs():
-        pdf_by_id[paper_id_from_pdf_path(pdf_path, layout=active_layout)] = pdf_path
-    for candidate_dir in sorted(path for path in corpus_root.iterdir() if is_paper_dir(path)):
-        paper_id = paper_id_from_dir_name(candidate_dir.name)
-        if paper_id in pdf_by_id:
-            continue
-        expected_pdf = candidate_dir / canonical_pdf_filename(paper_id)
-        if not expected_pdf.exists():
-            raise FileNotFoundError(f"Missing expected paper PDF: {expected_pdf}")
-        pdf_by_id[paper_id] = expected_pdf
-    return [pdf_by_id[paper_id] for paper_id in sorted(pdf_by_id)]
+    paper_dirs = sorted(path for path in corpus_root.iterdir() if is_paper_dir(path))
+    if paper_dirs:
+        joined = ", ".join(path.name for path in paper_dirs[:3])
+        suffix = "" if len(paper_dirs) <= 3 else ", ..."
+        raise RuntimeError(
+            "Unsupported processed corpus layout. Paper directories are not valid acquisition inputs: "
+            f"{joined}{suffix}. Reset the corpus or move PDFs into _source/."
+        )
+    return active_layout.discover_source_pdfs()
 
 
 @lru_cache(maxsize=None)

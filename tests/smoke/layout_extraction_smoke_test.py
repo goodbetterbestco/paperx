@@ -20,16 +20,14 @@ PAPER_ID = "smoke_layout_test"
 SMOKE_ENV = "PAPERX_RUN_SMOKE"
 
 
-def _project_layout(root: Path) -> ProjectLayout:
-    corpus_root = root
+def _corpus_layout(root: Path) -> ProjectLayout:
+    corpus_root = root / "corpus" / "synthetic"
     return ProjectLayout(
         engine_root=root,
-        mode="project",
-        corpus_name="fixture",
-        project_dir=root,
+        corpus_name="synthetic",
         corpus_root=corpus_root,
-        source_root=root,
-        review_root=root / "_canon",
+        source_root=corpus_root / "_source",
+        review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
         figure_expectations_path=corpus_root / "figure_expectations.json",
@@ -46,8 +44,8 @@ class LayoutExtractionSmokeTest(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
-            layout = _project_layout(root)
-            layout.paper_dir(PAPER_ID).mkdir(parents=True, exist_ok=True)
+            layout = _corpus_layout(root)
+            layout.source_root.mkdir(parents=True, exist_ok=True)
             pdf_path = layout.paper_pdf_path(PAPER_ID)
 
             doc = fitz.open()

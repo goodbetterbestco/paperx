@@ -68,6 +68,11 @@ def render_report(status: dict[str, Any]) -> str:
             if paper_status.get("status") == "completed":
                 metrics = paper_status.get("metrics", {})
                 cell = f"completed ({metrics.get('sections', 0)} s / {metrics.get('references', 0)} r / {metrics.get('figures', 0)} f)"
+                owners = dict((paper_status.get("acquisition") or {}).get("owners") or {})
+                layout_owner = str(owners.get("layout", "") or "").strip()
+                math_owner = str(owners.get("math", "") or "").strip()
+                if layout_owner or math_owner:
+                    cell += f" [{layout_owner or 'none'}/{math_owner or 'none'}]"
                 anomalies = paper_status.get("anomalies", [])
                 if anomalies:
                     cell += f" {';'.join(anomalies[:3])}"

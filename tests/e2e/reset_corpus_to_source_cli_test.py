@@ -13,6 +13,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+from tests.e2e.fixture_helpers import cli_python
+
+
 MINIMAL_PDF = b"%PDF-1.4\nsynthetic\n"
 
 
@@ -32,7 +35,7 @@ class ResetCorpusToSourceCliE2ETest(unittest.TestCase):
 
             completed = subprocess.run(
                 [
-                    sys.executable,
+                    cli_python(),
                     "-m",
                     "pipeline.cli.reset_corpus_to_source",
                     str(corpus_dir),

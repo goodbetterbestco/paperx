@@ -12,7 +12,7 @@ if str(ROOT) not in sys.path:
 sys.modules.setdefault("fitz", types.SimpleNamespace(Document=object, Matrix=object, Page=object, Rect=object))
 
 from pipeline.corpus.lexicon import corpus_join_terms, load_corpus_lexicon
-from pipeline.corpus_layout import ProjectLayout, display_path
+from pipeline.corpus_layout import ProjectLayout, display_path, paper_uid
 from pipeline.corpus.metadata import load_figure_expectations, paper_figure_metadata
 from pipeline.figures.linking import build_manifest_from_pdf_path
 
@@ -21,11 +21,9 @@ def _corpus_layout(root: Path) -> ProjectLayout:
     corpus_root = root / "corpus" / "synthetic"
     return ProjectLayout(
         engine_root=root,
-        mode="corpus",
         corpus_name="synthetic",
-        project_dir=None,
         corpus_root=corpus_root,
-        source_root=corpus_root,
+        source_root=corpus_root / "_source",
         review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
@@ -37,6 +35,7 @@ def _minimal_document(paper_id: str, pdf_path: Path) -> dict:
     return {
         "schema_version": "1.0",
         "paper_id": paper_id,
+        "paper_uid": paper_uid(paper_id),
         "title": "Synthetic Test Paper",
         "source": {"pdf_path": str(pdf_path), "page_count": 1, "page_sizes_pt": []},
         "build": {},
@@ -119,8 +118,7 @@ class HelperLayoutTest(unittest.TestCase):
             root = Path(temp_dir).resolve()
             layout = _corpus_layout(root)
             paper_id = "1990_synthetic_test_paper"
-            paper_dir = layout.paper_dir(paper_id)
-            paper_dir.mkdir(parents=True, exist_ok=True)
+            layout.source_root.mkdir(parents=True, exist_ok=True)
             pdf_path = layout.paper_pdf_path(paper_id)
             pdf_path.write_bytes(b"%PDF-1.4\nsynthetic\n")
             layout.figure_expectations_path.parent.mkdir(parents=True, exist_ok=True)

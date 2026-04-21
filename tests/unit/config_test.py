@@ -18,11 +18,9 @@ class PipelineConfigTest(unittest.TestCase):
         corpus_root = engine_root / "corpus" / "synthetic"
         layout = ProjectLayout(
             engine_root=engine_root,
-            mode="corpus",
             corpus_name="synthetic",
-            project_dir=None,
             corpus_root=corpus_root,
-            source_root=corpus_root,
+            source_root=corpus_root / "_source",
             review_root=corpus_root / "_canon",
             runs_root=corpus_root / "_runs",
             tmp_root=engine_root / "tmp",

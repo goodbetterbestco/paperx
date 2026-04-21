@@ -1,79 +1,82 @@
 # paperx
 
-`paperx` is the extracted home for the academic paper ingestion engine and the
-checked-in research corpora it operates on.
+`paperx` is a straightforward PDF processor for turning paper PDFs into
+canonical JSON plus a markdown review draft.
 
-The project is now organized around one simple truth:
+The repo is organized around one clear contract:
 
 - engine code lives under `pipeline/`
 - checked-in corpora live under `corpus/`
-- processed outputs are local artifacts only
-- the checked-in copy of a corpus stays in source state
+- source PDFs live under `_source/`
+- processed outputs live under `_data/`, `_canon/`, `_figures/`, and `_runs/`
+- `reset_corpus_to_source` is the reverse path back to clean source state
 
-The first migrated corpus is `corpus/stepview`, which currently contains `58`
-checked-in source PDFs.
+The main architectural bias is acquisition-first:
+
+- prefer better provider choice, OCR policy, and source capture over downstream
+  repair
+- keep post-acquisition handling structural and minimal
+- if a document needs heavy reconstruction after acquisition, treat that as an
+  acquisition problem first
 
 ## Repository Layout
 
 - `pipeline/`
-  Engine code, CLI entrypoints, acquisition policy, orchestration, reconcile
-  helpers, assembly, and output writers.
+  Engine code, CLI entrypoints, provider routing, source extraction, assembly,
+  and output writers.
 - `corpus/`
-  Checked-in corpora. In Git they should remain source-only.
+  Checked-in corpora and local regression surfaces.
 - `tests/`
   `unit`, `integration`, `e2e`, and `smoke` coverage.
 - `docs/`
-  Machine-readable repo assets such as `fixed_validation_slice.json`, not
-  prose documentation.
+  Machine-readable repo assets such as `fixed_validation_slice.json`.
 - `tmp/`
   Local audits, reports, scratch slices, and other generated artifacts.
 
-## Operating Model
+## Layout Contract
 
-Every corpus has exactly two meaningful states.
+There is one supported mode.
 
-`source`
+`corpus`
 
-- the corpus root contains only the original PDFs
-- this is the checked-in Git state
-
-`processed`
-
-- PDFs have been moved into per-paper folders
-- the engine may generate `canonical.json`, `canonical_sources/`, `figures/`,
-  `_canon/`, `_runs/`, and other local outputs
+- source PDFs live under `corpus/<name>/_source/`
+- outputs are written under that corpus directory
 
 Rules:
 
-- commit source-state inputs
-- do not commit processed-state outputs
-- use the CLI to move between states instead of hand-editing the layout
+- use `_source/` as the only supported source-PDF location
+- treat `_data/`, `_canon/`, `_figures/`, and `_runs/` as generated artifacts
+- use the CLI to move between states instead of hand-editing layout by hand
+- fail fast when required tools or expected files are missing
 
 ## Pipeline Map
 
 The main engine ownership is:
 
-- `pipeline.acquisition`: provider routing, OCR policy, scorecards, audits,
-  benchmarks, and remediation surfaces
-- `pipeline.corpus`: layout resolution, corpus-state transitions, metadata, and
-  scratch-slice materialization
-- `pipeline.orchestrator`: source resolution, record normalization, document
-  assembly sequencing, and metadata overlay
-- `pipeline.reconcile`: dense helper and dependency-binding layer for layout,
-  text, front matter, sections, and math
-- `pipeline.assembly`: canonical-document construction
-- `pipeline.output`: canonicals, review drafts, staleness, dashboards, and
-  reports
+- `pipeline.acquisition`: provider routing, OCR policy, scorecards, and source
+  ownership decisions
+- `pipeline.corpus`: corpus paths, metadata, and reset helpers
+- `pipeline.processor`: batch execution, source extraction, runtime status, and
+  paper-level orchestration
+- `pipeline.sources`: Docling, Mathpix, OCRmyPDF, and pdftotext adapters
+- `pipeline.assembly`: thin canonical document construction from acquired
+  sources
+- `pipeline.output`: canonical writing, validation, and review rendering
 
 The hot path is:
 
 1. CLI entrypoint
 2. layout resolution
-3. source resolution
-4. record normalization
-5. document assembly
-6. metadata overlay
-7. output writing or audit rendering
+3. source extraction and provider composition
+4. minimal paper assembly
+5. canonical validation
+6. output writing
+
+The reverse path is:
+
+1. `pipeline.cli.reset_corpus_to_source`
+2. `pipeline.corpus.state.reset_corpus_to_source_state`
+3. `_source/` restored, generated artifacts removed
 
 ## Quick Start
 
@@ -86,62 +89,54 @@ python3 -m venv .venv-paperx
 
 Optional external dependencies:
 
+- Docling CLI in `./.venv-paperx/bin/docling` or `PIPELINE_DOCLING_BIN`
+- `ocrmypdf` in `./.venv-paperx/bin/ocrmypdf`, `PIPELINE_OCRMYPDF_BIN`, or
+  `PATH`
 - `pdftotext` on `PATH`
-- `ocrmypdf` on `PATH`
-- Mathpix credentials in `.env.local`
-- a working Docling CLI in `.venv-paperx` or `PIPELINE_DOCLING_BIN`
+- Mathpix credentials in `.env.local` when Mathpix is intentionally enabled
 
 ## Common Workflows
 
-Inspect the checked-in source-state corpus:
+Run the configured checked-in corpus:
 
 ```bash
-./.venv-paperx/bin/python -m pipeline.cli.audit_acquisition_quality --top 12
+PIPELINE_CORPUS_NAME=stepview ./.venv-paperx/bin/python -m pipeline.cli.run_corpus_rounds --max-workers 2
 ```
 
-Materialize a scratch validation slice:
+Build one canonical from the configured corpus:
 
 ```bash
-./.venv-paperx/bin/python -m pipeline.cli.materialize_source_slice ./tmp/fixed_validation_slice --manifest ./docs/fixed_validation_slice.json --force
+PIPELINE_CORPUS_NAME=stepview ./.venv-paperx/bin/python -m pipeline.cli.build_canonical 1990_hidden_curve_removal_for_free_form_surfaces
 ```
 
-Convert that slice from source to processed state and run the pipeline:
+Build canonical plus review draft in one pass:
 
 ```bash
-./.venv-paperx/bin/python -m pipeline.cli.run_project ./tmp/fixed_validation_slice --max-workers 2
+PIPELINE_CORPUS_NAME=stepview ./.venv-paperx/bin/python -m pipeline.cli.build_review 1990_hidden_curve_removal_for_free_form_surfaces
 ```
 
-Build a canonical or review draft for one paper in a processed corpus:
+Render a review draft from an existing canonical:
 
 ```bash
-./.venv-paperx/bin/python -m pipeline.cli.build_canonical 1990_hidden_curve_removal_for_free_form_surfaces --use-external-layout --use-external-math
-./.venv-paperx/bin/python -m pipeline.cli.build_review 1990_hidden_curve_removal_for_free_form_surfaces --use-external-layout --use-external-math
+PIPELINE_CORPUS_NAME=stepview ./.venv-paperx/bin/python -m pipeline.cli.render_review_from_canonical 1990_hidden_curve_removal_for_free_form_surfaces
 ```
 
-Audit processed-state canonicals:
+Reset a processed corpus back to source state:
 
 ```bash
-./.venv-paperx/bin/python -m pipeline.cli.audit_corpus --top 12
-```
-
-Return a processed corpus or scratch slice to clean source state:
-
-```bash
-./.venv-paperx/bin/python -m pipeline.cli.reset_corpus_to_source ./tmp/fixed_validation_slice
+./.venv-paperx/bin/python -m pipeline.cli.reset_corpus_to_source ./corpus/stepview
 ```
 
 ## Testing
 
-Current test inventory:
-
-- `tests/unit/`: `94` files
-- `tests/integration/`: `9` files
-- `tests/e2e/`: `14` files
-- `tests/smoke/`: `1` file
-
 Recommended commands:
 
 ```bash
+make test-unit
+make test-integration
+make test-e2e
+make test-smoke
+
 ./.venv-paperx/bin/python -m unittest discover -s tests/unit -t . -p '*_test.py'
 ./.venv-paperx/bin/python -m unittest discover -s tests/integration -t . -p '*_test.py'
 ./.venv-paperx/bin/python -m unittest discover -s tests/e2e -t . -p '*_test.py'
@@ -151,7 +146,7 @@ PAPERX_RUN_SMOKE=1 ./.venv-paperx/bin/python -m unittest discover -s tests/smoke
 ## Credentials
 
 Repo-local credentials belong in `.env.local`, which is ignored by Git.
-Current live provider keys include:
+Current provider keys include:
 
 - `MATHPIX_APP_ID`
 - `MATHPIX_APP_KEY`

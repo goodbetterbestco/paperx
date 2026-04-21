@@ -12,7 +12,7 @@ from pipeline.corpus_layout import current_layout
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Reset a processed corpus back to source state by moving PDFs to the corpus root and removing generated artifacts."
+        description="Reset a processed corpus back to source state by moving PDFs into _source and removing generated artifacts."
     )
     parser.add_argument(
         "corpus_dir",

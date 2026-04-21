@@ -14,19 +14,21 @@ if str(ROOT) not in sys.path:
 
 
 from tests.e2e.fixture_helpers import (
+    CANONICAL_FILENAME,
     PAPER_ID,
+    PAPER_UID,
     TITLE,
+    corpus_env,
     cli_python,
-    create_processed_project_fixture,
-    project_env,
+    create_processed_corpus_fixture,
 )
 
 
 class BuildCanonicalCliE2ETest(unittest.TestCase):
-    def test_build_canonical_cli_writes_canonical_for_processed_project_fixture(self) -> None:
+    def test_build_canonical_cli_writes_canonical_for_processed_corpus_fixture(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            project_dir = Path(temp_dir) / "build_canonical_project"
-            pdf_path = create_processed_project_fixture(project_dir)
+            corpus_dir = Path(temp_dir) / "build_canonical_corpus"
+            pdf_path = create_processed_corpus_fixture(corpus_dir)
 
             completed = subprocess.run(
                 [
@@ -39,11 +41,11 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
                 check=True,
                 capture_output=True,
                 text=True,
-                env=project_env(project_dir),
+                env=corpus_env(corpus_dir),
             )
 
             payload = json.loads(completed.stdout)
-            canonical_path = project_dir / "_data" / f"{PAPER_ID}.json"
+            canonical_path = corpus_dir / "_data" / CANONICAL_FILENAME
 
             self.assertEqual(Path(payload["path"]).resolve(), canonical_path.resolve())
             self.assertGreaterEqual(payload["sections"], 2)
@@ -53,8 +55,11 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
 
             document = json.loads(canonical_path.read_text(encoding="utf-8"))
             self.assertEqual(document["paper_id"], PAPER_ID)
+            self.assertEqual(document["paper_uid"], PAPER_UID)
             self.assertEqual(document["title"], TITLE)
             self.assertEqual(document["build"]["sources"]["layout_engine"], "docling")
+            self.assertEqual(document["_decision_artifacts"]["acquisition"]["owners"]["layout"], "docling")
+            self.assertFalse(document["_decision_artifacts"]["acquisition"]["recovery"]["layout_composed"])
             self.assertIn("pdf", document["build"]["inputs"])
 
 

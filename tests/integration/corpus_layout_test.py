@@ -10,81 +10,78 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import pipeline.corpus_layout as corpus_layout
+from pipeline.corpus_layout import paper_uid
 
 
 class CorpusLayoutTest(unittest.TestCase):
     def tearDown(self) -> None:
-        os.environ.pop("PIPELINE_PROJECT_DIR", None)
+        os.environ.pop("PIPELINE_CORPUS_DIR", None)
+        os.environ.pop("PIPELINE_CORPUS_NAME", None)
         importlib.reload(corpus_layout)
 
-    def test_project_layout_moves_root_pdfs_into_processed_state(self) -> None:
+    def test_corpus_layout_uses_configured_source_and_artifact_roots(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            project_dir = Path(temp_dir).resolve()
-            (project_dir / "Alpha Paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
-            (project_dir / "Beta-Paper.pdf").write_bytes(b"%PDF-1.4\nbeta\n")
+            corpus_dir = Path(temp_dir).resolve() / "synthetic"
+            source_dir = corpus_dir / "_source"
+            source_dir.mkdir(parents=True, exist_ok=True)
+            (source_dir / "alpha_paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
+            (source_dir / "beta_paper.pdf").write_bytes(b"%PDF-1.4\nbeta\n")
 
-            os.environ["PIPELINE_PROJECT_DIR"] = str(project_dir)
+            os.environ["PIPELINE_CORPUS_DIR"] = str(corpus_dir)
+            os.environ["PIPELINE_CORPUS_NAME"] = "synthetic"
             importlib.reload(corpus_layout)
 
-            preparation = corpus_layout.prepare_project_inputs()
             layout = corpus_layout.current_layout()
 
-            self.assertTrue(corpus_layout.PROJECT_MODE)
-            self.assertEqual(corpus_layout.SOURCE_DIR, project_dir / "_source")
-            self.assertEqual(corpus_layout.CORPUS_DIR, project_dir)
-            self.assertEqual(layout.mode, "project")
-            self.assertEqual(layout.project_dir, project_dir)
-            self.assertEqual(layout.source_root, project_dir / "_source")
-            self.assertEqual(layout.corpus_root, project_dir)
+            self.assertEqual(corpus_layout.SOURCE_DIR, source_dir)
+            self.assertEqual(corpus_layout.CORPUS_DIR, corpus_dir)
+            self.assertEqual(layout.source_root, source_dir)
+            self.assertEqual(layout.corpus_root, corpus_dir)
             self.assertEqual(
-                preparation["paper_ids"],
-                ["alpha_paper", "beta_paper"],
+                layout.discover_source_pdfs(),
+                [source_dir / "alpha_paper.pdf", source_dir / "beta_paper.pdf"],
             )
-            self.assertTrue((project_dir / "_source" / "alpha_paper.pdf").exists())
-            self.assertTrue((project_dir / "_source" / "beta_paper.pdf").exists())
-            self.assertFalse((project_dir / "Alpha Paper.pdf").exists())
-            self.assertFalse((project_dir / "Beta-Paper.pdf").exists())
             self.assertEqual(
                 corpus_layout.paper_pdf_path("alpha_paper"),
-                project_dir / "_source" / "alpha_paper.pdf",
+                source_dir / "alpha_paper.pdf",
             )
             self.assertEqual(
                 corpus_layout.paper_pdf_path("alpha_paper", layout=layout),
-                project_dir / "_source" / "alpha_paper.pdf",
+                source_dir / "alpha_paper.pdf",
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper"),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                corpus_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
             self.assertEqual(
                 corpus_layout.canonical_path("alpha_paper"),
-                project_dir / "_data" / "alpha_paper.json",
+                corpus_dir / "_data" / f"canonical_{paper_uid('alpha_paper')}.json",
             )
             self.assertEqual(
                 corpus_layout.figures_dir("alpha_paper"),
-                project_dir / "_figures" / "alpha_paper",
+                corpus_dir / "_figures",
             )
             self.assertEqual(
                 corpus_layout.review_draft_path("alpha_paper", layout=layout),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                corpus_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
             self.assertEqual(
                 layout.review_draft_path("alpha_paper"),
-                project_dir / "_canon" / "alpha_paper.canonical.review.md",
+                corpus_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
 
-    def test_project_layout_rejects_legacy_source_directory(self) -> None:
+    def test_corpus_layout_rejects_root_level_pdf_layout(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            project_dir = Path(temp_dir).resolve()
-            legacy_source = project_dir / "source"
-            legacy_source.mkdir(parents=True, exist_ok=True)
-            (legacy_source / "Alpha Paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
+            corpus_dir = Path(temp_dir).resolve() / "synthetic"
+            corpus_dir.mkdir(parents=True, exist_ok=True)
+            (corpus_dir / "alpha_paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
 
-            os.environ["PIPELINE_PROJECT_DIR"] = str(project_dir)
+            os.environ["PIPELINE_CORPUS_DIR"] = str(corpus_dir)
+            os.environ["PIPELINE_CORPUS_NAME"] = "synthetic"
             importlib.reload(corpus_layout)
 
-            with self.assertRaisesRegex(RuntimeError, "Legacy project input directory is no longer supported"):
-                corpus_layout.prepare_project_inputs()
+            with self.assertRaises(RuntimeError):
+                corpus_layout.current_layout().discover_source_pdfs()
 
 
 if __name__ == "__main__":

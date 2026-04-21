@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.corpus_layout import ProjectLayout
+from pipeline.corpus_layout import ProjectLayout, paper_uid
 from pipeline.output.review_renderer import write_review_from_canonical
 
 
@@ -16,11 +16,9 @@ def _corpus_layout(root: Path) -> ProjectLayout:
     corpus_root = root / "corpus" / "synthetic"
     return ProjectLayout(
         engine_root=root,
-        mode="corpus",
         corpus_name="synthetic",
-        project_dir=None,
         corpus_root=corpus_root,
-        source_root=corpus_root,
+        source_root=corpus_root / "_source",
         review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
@@ -32,6 +30,7 @@ def _minimal_document(paper_id: str, pdf_path: Path) -> dict:
     return {
         "schema_version": "1.0",
         "paper_id": paper_id,
+        "paper_uid": paper_uid(paper_id),
         "title": "Synthetic Test Paper",
         "source": {"pdf_path": str(pdf_path), "page_count": 1, "page_sizes_pt": []},
         "build": {},
@@ -68,6 +67,8 @@ class OutputHelperTest(unittest.TestCase):
             paper_id = "1990_synthetic_test_paper"
             canonical_target = layout.canonical_path(paper_id)
             canonical_target.parent.mkdir(parents=True, exist_ok=True)
+            layout.source_root.mkdir(parents=True, exist_ok=True)
+            layout.paper_pdf_path(paper_id).write_bytes(b"%PDF-1.4\nsynthetic\n")
             canonical_target.write_text(
                 json.dumps(_minimal_document(paper_id, layout.paper_pdf_path(paper_id))),
                 encoding="utf-8",

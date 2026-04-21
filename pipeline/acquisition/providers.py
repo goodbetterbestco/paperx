@@ -188,6 +188,27 @@ def _title_from_layout_blocks(blocks: list[object]) -> str:
     if explicit_titles:
         return _collapse_text(" ".join(explicit_titles[:3]))
 
+    page_one_candidates: list[tuple[str, str]] = []
+    for block in page_one_blocks:
+        text = _block_text(block)
+        if not text:
+            continue
+        if ABSTRACT_LEAD_RE.match(text):
+            break
+        if _looks_like_layout_metadata_line(text):
+            continue
+        if _looks_like_title_candidate(text):
+            page_one_candidates.append((_block_role(block), text))
+        elif page_one_candidates:
+            break
+        if len(page_one_candidates) >= 4:
+            break
+    heading_candidates = [text for role, text in page_one_candidates if role == "heading"]
+    if heading_candidates:
+        return heading_candidates[0]
+    if page_one_candidates:
+        return page_one_candidates[0][1]
+
     front_matter_blocks = [block for block in page_one_blocks if _block_role(block) == "front_matter"]
     title_candidates: list[str] = []
     for block in front_matter_blocks:

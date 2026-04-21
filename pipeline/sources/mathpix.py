@@ -14,7 +14,7 @@ import uuid
 
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, canonical_sources_dir, display_path, paper_pdf_path
 from pipeline.math.review_policy import review_for_math_entry
-from pipeline.native_stderr import run_with_stderr_label
+from pipeline.native_stderr import open_pdf_with_diagnostics, run_with_stderr_label
 from pipeline.types import default_formula_conversion, default_review
 
 DOCS_DIR = CORPUS_DIR
@@ -304,9 +304,14 @@ def mathpix_pages_to_external_sources(
 
 def _render_page_png_bytes(pdf_path: Path, page_number: int, *, scale: float) -> tuple[bytes, int, int, float, float]:
     fitz = _load_fitz()
+    document = open_pdf_with_diagnostics(
+        f"{pdf_path.stem} stage=mathpix-render-open page={page_number}",
+        pdf_path,
+        fitz_module=fitz,
+    )
 
     def _render() -> tuple[bytes, int, int, float, float]:
-        with fitz.open(pdf_path) as document:
+        with document:
             page = document[page_number - 1]
             matrix = fitz.Matrix(scale, scale)
             pixmap = page.get_pixmap(matrix=matrix, alpha=False)
@@ -436,9 +441,14 @@ def call_mathpix_on_page_image(
 
 def _pdf_page_sizes_pt(pdf_path: Path) -> list[tuple[float, float]]:
     fitz = _load_fitz()
+    document = open_pdf_with_diagnostics(
+        f"{pdf_path.stem} stage=mathpix-page-sizes-open",
+        pdf_path,
+        fitz_module=fitz,
+    )
 
     def _read_sizes() -> list[tuple[float, float]]:
-        with fitz.open(pdf_path) as document:
+        with document:
             return [(float(page.rect.width), float(page.rect.height)) for page in document]
 
     return run_with_stderr_label(f"{pdf_path.stem} stage=mathpix-page-sizes", _read_sizes)

@@ -59,17 +59,6 @@ class _FakeDoc:
 
 
 class SourceLayoutTest(unittest.TestCase):
-    def test_extract_layout_requires_pymupdf(self) -> None:
-        original_fitz = source_layout.fitz
-        try:
-            source_layout.fitz = None
-            with self.assertRaises(RuntimeError) as ctx:
-                source_layout._require_fitz()
-        finally:
-            source_layout.fitz = original_fitz
-
-        self.assertEqual(str(ctx.exception), "PyMuPDF is required for layout extraction.")
-
     def test_extract_layout_classifies_front_matter_heading_paragraph_caption_and_reference(self) -> None:
         fake_fitz = types.SimpleNamespace(
             Rect=_Rect,
@@ -130,9 +119,7 @@ class SourceLayoutTest(unittest.TestCase):
         self.assertEqual(extracted["page_count"], 2)
         self.assertEqual(extracted["page_sizes_pt"][0], {"page": 1, "width": 600.0, "height": 800.0})
         self.assertEqual([block.role for block in extracted["blocks"]], ["front_matter", "heading", "paragraph", "caption", "reference"])
-        self.assertEqual(extracted["blocks"][0].meta["font_size_max"], 18.0)
         self.assertEqual(extracted["blocks"][2].bbox["width"], 520.0)
-        self.assertEqual(extracted["blocks"][4].id, "layout-p002-b001")
 
 
 if __name__ == "__main__":

@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
 sys.modules.setdefault("fitz", types.SimpleNamespace(Document=object, Matrix=object, Page=object, Rect=object))
 
 import pipeline.figures.linking as linking
+from pipeline.corpus_layout import display_path, paper_uid
 from pipeline.figures.linking import (
     build_manifest_from_pdf_path,
     choose_visual_region,
@@ -85,7 +86,11 @@ class _Rect:
         )
 
 
-linking.fitz = types.SimpleNamespace(Rect=_Rect)
+def _unpatched_open(*args, **kwargs):
+    raise AssertionError("linking.fitz.open must be patched in this test")
+
+
+linking.fitz = types.SimpleNamespace(Rect=_Rect, open=_unpatched_open)
 
 
 class _FakePage:
@@ -127,8 +132,9 @@ class LinkFiguresTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
             corpus_root = root / "corpus" / "stepview"
-            pdf_path = corpus_root / "2016_recognizing_weakly_simple_polygons.pdf"
-            corpus_root.mkdir(parents=True, exist_ok=True)
+            source_root = corpus_root / "_source"
+            pdf_path = source_root / "2016_recognizing_weakly_simple_polygons.pdf"
+            source_root.mkdir(parents=True, exist_ok=True)
             pdf_path.write_bytes(b"%PDF-1.4\n")
             (corpus_root / "figure_expectations.json").write_text(
                 json.dumps(
@@ -146,11 +152,9 @@ class LinkFiguresTest(unittest.TestCase):
             )
             layout = linking.ProjectLayout(
                 engine_root=root,
-                mode="corpus",
                 corpus_name="stepview",
-                project_dir=None,
                 corpus_root=corpus_root,
-                source_root=corpus_root,
+                source_root=source_root,
                 review_root=corpus_root / "_canon",
                 runs_root=corpus_root / "_runs",
                 tmp_root=root / "tmp",
@@ -160,7 +164,7 @@ class LinkFiguresTest(unittest.TestCase):
             manifest = build_manifest_from_pdf_path(pdf_path, layout=layout)
 
             self.assertEqual(manifest["id"], "2016_recognizing_weakly_simple_polygons")
-            self.assertEqual(manifest["source_pdf"], "stepview/2016_recognizing_weakly_simple_polygons.pdf")
+            self.assertEqual(manifest["source_pdf"], display_path(pdf_path, layout=layout))
             self.assertEqual(manifest["figure_expectations"]["expected_semantic_figure_count"], 18)
 
     def test_render_crop_if_missing_preserves_existing_file(self) -> None:
@@ -237,18 +241,17 @@ class LinkFiguresTest(unittest.TestCase):
             root = Path(temp_dir).resolve()
             paper_id = "1990_synthetic_test_paper"
             corpus_root = root / "corpus" / "synthetic"
-            paper_dir = corpus_root / paper_id
-            figures_dir = paper_dir / "figures"
-            pdf_path = paper_dir / f"{paper_id}.pdf"
+            source_root = corpus_root / "_source"
+            figures_dir = corpus_root / "_figures"
+            pdf_path = source_root / f"{paper_id}.pdf"
+            source_root.mkdir(parents=True, exist_ok=True)
             figures_dir.mkdir(parents=True, exist_ok=True)
             pdf_path.write_bytes(b"%PDF-1.4")
             layout = linking.ProjectLayout(
                 engine_root=root,
-                mode="corpus",
                 corpus_name="synthetic",
-                project_dir=None,
                 corpus_root=corpus_root,
-                source_root=corpus_root,
+                source_root=source_root,
                 review_root=corpus_root / "_canon",
                 runs_root=corpus_root / "_runs",
                 tmp_root=root / "tmp",
@@ -284,77 +287,80 @@ class LinkFiguresTest(unittest.TestCase):
 
             self.assertEqual(count, 1)
             self.assertTrue(document.closed)
-            self.assertEqual(rendered, [figures_dir / "figure-2-p001.png"])
+            self.assertEqual(rendered, [figures_dir / f"figure_{paper_uid(paper_id)}_001.png"])
             self.assertEqual(updated_manifest["stats"]["semantic_figure_count"], 1)
             self.assertEqual(updated_manifest["stats"]["semantic_figure_link_modes"], {"visual_blocks": 1})
             self.assertEqual(updated_manifest["stats"]["semantic_figure_reference_count"], 1)
             self.assertEqual(updated_manifest["stats"]["semantic_figure_expectation_status"], "matched")
 
-            manifest_path = figures_dir / "manifest.json"
+            manifest_path = layout.figure_manifest_path(paper_id)
             payload = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertEqual(len(payload["records"]), 1)
+            self.assertEqual(payload["paper_uid"], paper_uid(paper_id))
             self.assertEqual(payload["records"][0]["figure_id"], "figure-2")
             self.assertEqual(payload["records"][0]["label"], "2")
             self.assertEqual(payload["records"][0]["link_mode"], "visual_blocks")
             self.assertEqual(payload["records"][0]["sources"], ["image_xref_7"])
 
-    def test_resolve_manifest_paths_prefer_explicit_project_artifacts(self) -> None:
+    def test_resolve_manifest_paths_use_corpus_relative_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
-            project_pdf = root / "1990_synthetic_test_paper" / "1990_synthetic_test_paper.pdf"
-            project_figures_dir = root / "artifacts" / "figures"
-            project_pdf.parent.mkdir(parents=True, exist_ok=True)
-            project_figures_dir.mkdir(parents=True, exist_ok=True)
+            corpus_root = root / "corpus" / "synthetic"
+            source_root = corpus_root / "_source"
+            figures_dir = corpus_root / "_figures"
+            project_pdf = source_root / "1990_synthetic_test_paper.pdf"
+            source_root.mkdir(parents=True, exist_ok=True)
+            figures_dir.mkdir(parents=True, exist_ok=True)
             project_pdf.write_bytes(b"%PDF-1.4")
             layout = linking.ProjectLayout(
                 engine_root=root,
-                mode="project",
-                corpus_name="fixture",
-                project_dir=root,
-                corpus_root=root,
-                source_root=root,
-                review_root=root / "_canon",
-                runs_root=root / "_runs",
+                corpus_name="synthetic",
+                corpus_root=corpus_root,
+                source_root=source_root,
+                review_root=corpus_root / "_canon",
+                runs_root=corpus_root / "_runs",
                 tmp_root=root / "tmp",
-                figure_expectations_path=root / "figure_expectations.json",
+                figure_expectations_path=corpus_root / "figure_expectations.json",
             )
             manifest = {
                 "id": "1990_synthetic_test_paper",
-                "source_pdf": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
+                "source_pdf": display_path(project_pdf, layout=layout),
                 "artifacts": {
-                    "pdf": "1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
-                    "figures_dir": "artifacts/figures",
+                    "pdf": display_path(project_pdf, layout=layout),
+                    "figures_dir": display_path(figures_dir, layout=layout),
                 },
             }
 
             self.assertEqual(resolve_manifest_pdf_path(manifest, layout=layout), project_pdf)
-            self.assertEqual(resolve_manifest_figures_dir(manifest, layout=layout), project_figures_dir)
+            self.assertEqual(resolve_manifest_figures_dir(manifest, layout=layout), figures_dir)
 
-    def test_build_manifest_from_pdf_path_uses_project_relative_artifact_paths(self) -> None:
+    def test_build_manifest_from_pdf_path_uses_corpus_relative_artifact_paths(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
             paper_id = "1990_synthetic_test_paper"
-            paper_dir = root / paper_id
-            project_pdf = paper_dir / f"{paper_id}.pdf"
-            project_pdf.parent.mkdir(parents=True, exist_ok=True)
+            corpus_root = root / "corpus" / "synthetic"
+            source_root = corpus_root / "_source"
+            figures_dir = corpus_root / "_figures"
+            project_pdf = source_root / f"{paper_id}.pdf"
+            source_root.mkdir(parents=True, exist_ok=True)
+            figures_dir.mkdir(parents=True, exist_ok=True)
             project_pdf.write_bytes(b"%PDF-1.4\n")
             layout = linking.ProjectLayout(
                 engine_root=root,
-                mode="project",
-                corpus_name="fixture",
-                project_dir=root,
-                corpus_root=root,
-                source_root=root,
-                review_root=root / "_canon",
-                runs_root=root / "_runs",
+                corpus_name="synthetic",
+                corpus_root=corpus_root,
+                source_root=source_root,
+                review_root=corpus_root / "_canon",
+                runs_root=corpus_root / "_runs",
                 tmp_root=root / "tmp",
-                figure_expectations_path=root / "figure_expectations.json",
+                figure_expectations_path=corpus_root / "figure_expectations.json",
             )
 
             manifest = build_manifest_from_pdf_path(project_pdf, layout=layout)
 
-            self.assertEqual(manifest["source_pdf"], f"{paper_id}/{paper_id}.pdf")
-            self.assertEqual(manifest["artifacts"]["figures_dir"], f"{paper_id}/figures")
+            self.assertEqual(manifest["source_pdf"], display_path(project_pdf, layout=layout))
+            self.assertEqual(manifest["paper_uid"], paper_uid(paper_id))
+            self.assertEqual(manifest["artifacts"]["figures_dir"], display_path(figures_dir, layout=layout))
 
     def test_group_ocr_lines_merges_column_lines_and_extracts_unique_caption_lines(self) -> None:
         page_rect = _Rect(0, 0, 200, 300)

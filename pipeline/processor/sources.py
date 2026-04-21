@@ -12,17 +12,13 @@ from pipeline.acquisition.providers import derive_metadata_reference_observation
 from pipeline.acquisition.routing import build_acquisition_route_report
 from pipeline.acquisition.scoring import build_source_scorecard
 from pipeline.acquisition.source_ownership import (
+    canonical_provider_name,
     normalize_scorecard_recommendations,
-    reported_layout_provider,
-    reported_math_provider,
+    provider_score_row,
     select_follow_up_provider,
-    select_metadata_observation,
-    select_reference_observation,
-    select_math_payload,
 )
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 from pipeline.processor.settings import docling_device, mathpix_credentials_available
-from pipeline.processor.status import write_json
 from pipeline.orchestrator.source_composition import compose_layout_sources
 from pipeline.output.artifacts import write_canonical_outputs
 from pipeline.sources.docling import docling_json_to_external_sources, run_docling
@@ -319,26 +315,269 @@ def _observation_has_references(observation: dict[str, Any] | None) -> bool:
     return any(str(item).strip() for item in list(payload.get("references", [])))
 
 
+def _layout_payload_present(payload: dict[str, Any] | None) -> bool:
+    candidate = dict(payload or {})
+    return bool(list(candidate.get("blocks", [])))
+
+
+def _math_payload_present(payload: dict[str, Any] | None) -> bool:
+    candidate = dict(payload or {})
+    return bool(list(candidate.get("entries", [])))
+
+
+def _selection_candidates(
+    *,
+    source_scorecard: dict[str, Any],
+    kind: str,
+    candidates: dict[str, dict[str, Any] | None],
+    payload_present: Callable[[dict[str, Any] | None], bool],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for raw_provider, payload in sorted(candidates.items()):
+        provider = canonical_provider_name(raw_provider) or str(raw_provider)
+        score_row = provider_score_row(source_scorecard, kind=kind, provider=provider) or {}
+        rows.append(
+            {
+                "provider": provider,
+                "payload": dict(payload or {}),
+                "present": payload_present(payload),
+                "accepted": bool(score_row.get("accepted")),
+                "overall_score": float(score_row.get("overall_score", 0.0) or 0.0),
+                "acceptance_threshold": score_row.get("acceptance_threshold"),
+                "rejection_reasons": list(score_row.get("rejection_reasons", [])),
+            }
+        )
+    rows.sort(key=lambda item: (-int(item["accepted"]), -item["overall_score"], item["provider"]))
+    return rows
+
+
+def _selected_candidate(
+    candidates: list[dict[str, Any]],
+    *,
+    preferred_provider: str | None,
+) -> dict[str, Any] | None:
+    normalized_preferred = canonical_provider_name(preferred_provider)
+    if normalized_preferred:
+        for candidate in candidates:
+            if candidate["provider"] == normalized_preferred:
+                return candidate
+    return candidates[0] if candidates else None
+
+
+def _selection_snapshot(
+    *,
+    owner: str | None,
+    status: str,
+    basis: str,
+    selected: dict[str, Any] | None,
+    candidates: list[dict[str, Any]],
+) -> dict[str, Any]:
+    return {
+        "owner": owner,
+        "status": status,
+        "basis": basis,
+        "accepted": bool((selected or {}).get("accepted")),
+        "overall_score": (selected or {}).get("overall_score"),
+        "acceptance_threshold": (selected or {}).get("acceptance_threshold"),
+        "rejection_reasons": list((selected or {}).get("rejection_reasons", [])),
+        "payload": dict((selected or {}).get("payload", {}) or {}),
+        "candidates": [
+            {
+                "provider": candidate["provider"],
+                "present": bool(candidate["present"]),
+                "accepted": bool(candidate["accepted"]),
+                "overall_score": candidate["overall_score"],
+                "acceptance_threshold": candidate["acceptance_threshold"],
+                "rejection_reasons": list(candidate["rejection_reasons"]),
+            }
+            for candidate in candidates
+        ],
+    }
+
+
+def _select_owned_layout(
+    *,
+    source_scorecard: dict[str, Any],
+    docling_layout: dict[str, Any] | None,
+    mathpix_layout: dict[str, Any] | None,
+) -> dict[str, Any]:
+    candidates = _selection_candidates(
+        source_scorecard=source_scorecard,
+        kind="layout",
+        candidates={"docling": docling_layout, "mathpix": mathpix_layout},
+        payload_present=_layout_payload_present,
+    )
+    accepted_candidates = [item for item in candidates if item["present"] and item["accepted"]]
+    selected = _selected_candidate(
+        accepted_candidates,
+        preferred_provider=source_scorecard.get("recommended_primary_layout_provider"),
+    )
+    if selected is not None:
+        basis = "recommended_accepted" if selected["provider"] == canonical_provider_name(source_scorecard.get("recommended_primary_layout_provider")) else "highest_accepted"
+        return _selection_snapshot(
+            owner=selected["provider"],
+            status="selected",
+            basis=basis,
+            selected=selected,
+            candidates=candidates,
+        )
+    if any(item["present"] for item in candidates):
+        return _selection_snapshot(
+            owner=None,
+            status="rejected",
+            basis="no_accepted_layout_owner",
+            selected=None,
+            candidates=candidates,
+        )
+    return _selection_snapshot(
+        owner=None,
+        status="missing",
+        basis="no_layout_candidates",
+        selected=None,
+        candidates=candidates,
+    )
+
+
+def _select_owned_math(
+    *,
+    source_scorecard: dict[str, Any],
+    docling_math: dict[str, Any] | None,
+    mathpix_math: dict[str, Any] | None,
+) -> dict[str, Any]:
+    candidates = _selection_candidates(
+        source_scorecard=source_scorecard,
+        kind="math",
+        candidates={"docling": docling_math, "mathpix": mathpix_math},
+        payload_present=_math_payload_present,
+    )
+    accepted_candidates = [item for item in candidates if item["present"] and item["accepted"]]
+    selected = _selected_candidate(
+        accepted_candidates,
+        preferred_provider=source_scorecard.get("recommended_primary_math_provider"),
+    )
+    if selected is not None:
+        basis = "recommended_accepted" if selected["provider"] == canonical_provider_name(source_scorecard.get("recommended_primary_math_provider")) else "highest_accepted"
+        return _selection_snapshot(
+            owner=selected["provider"],
+            status="selected",
+            basis=basis,
+            selected=selected,
+            candidates=candidates,
+        )
+    if any(item["present"] for item in candidates):
+        return _selection_snapshot(
+            owner=None,
+            status="rejected",
+            basis="no_accepted_math_owner",
+            selected=None,
+            candidates=candidates,
+        )
+    return {
+        **_selection_snapshot(
+            owner="none",
+            status="missing",
+            basis="no_math_candidates",
+            selected=None,
+            candidates=candidates,
+        ),
+        "payload": {"engine": "none", "entries": []},
+    }
+
+
+def _select_owned_metadata(
+    *,
+    source_scorecard: dict[str, Any],
+    metadata_candidates: dict[str, dict[str, Any] | None],
+) -> dict[str, Any]:
+    candidates = _selection_candidates(
+        source_scorecard=source_scorecard,
+        kind="metadata",
+        candidates=metadata_candidates,
+        payload_present=_observation_has_metadata,
+    )
+    accepted_candidates = [item for item in candidates if item["present"] and item["accepted"]]
+    selected = _selected_candidate(
+        accepted_candidates,
+        preferred_provider=source_scorecard.get("recommended_primary_metadata_provider"),
+    )
+    if selected is not None:
+        basis = "recommended_accepted" if selected["provider"] == canonical_provider_name(source_scorecard.get("recommended_primary_metadata_provider")) else "highest_accepted"
+        return _selection_snapshot(
+            owner=selected["provider"],
+            status="selected",
+            basis=basis,
+            selected=selected,
+            candidates=candidates,
+        )
+    return _selection_snapshot(
+        owner=None,
+        status="missing" if not any(item["present"] for item in candidates) else "rejected",
+        basis="no_accepted_metadata_owner",
+        selected=None,
+        candidates=candidates,
+    )
+
+
+def _select_owned_references(
+    *,
+    source_scorecard: dict[str, Any],
+    metadata_candidates: dict[str, dict[str, Any] | None],
+) -> dict[str, Any]:
+    candidates = _selection_candidates(
+        source_scorecard=source_scorecard,
+        kind="metadata",
+        candidates=metadata_candidates,
+        payload_present=_observation_has_references,
+    )
+    accepted_candidates = [item for item in candidates if item["present"] and item["accepted"]]
+    selected = _selected_candidate(
+        accepted_candidates,
+        preferred_provider=source_scorecard.get("recommended_primary_reference_provider"),
+    )
+    if selected is not None:
+        basis = "recommended_accepted" if selected["provider"] == canonical_provider_name(source_scorecard.get("recommended_primary_reference_provider")) else "highest_accepted"
+        return _selection_snapshot(
+            owner=selected["provider"],
+            status="selected",
+            basis=basis,
+            selected=selected,
+            candidates=candidates,
+        )
+    return _selection_snapshot(
+        owner=None,
+        status="missing" if not any(item["present"] for item in candidates) else "rejected",
+        basis="no_accepted_reference_owner",
+        selected=None,
+        candidates=candidates,
+    )
+
+
+def _selection_failure_message(kind: str, selection: dict[str, Any]) -> str:
+    candidate_summary = ", ".join(
+        f"{item['provider']}(accepted={item['accepted']}, present={item['present']}, reasons={item['rejection_reasons']})"
+        for item in selection.get("candidates", [])
+    )
+    return (
+        f"No accepted {kind} owner was available. "
+        f"basis={selection.get('basis')} candidates=[{candidate_summary}]"
+    )
+
+
 def build_acquisition_follow_up(
     *,
     source_scorecard: dict[str, Any],
-    selected_layout_provider: str | None,
-    selected_math_provider: str | None,
-    metadata_candidates: dict[str, dict[str, Any] | None] | None,
-    metadata_observation: dict[str, Any] | None,
-    reference_observation: dict[str, Any] | None,
+    layout_selection: dict[str, Any],
+    math_selection: dict[str, Any],
+    metadata_selection: dict[str, Any],
+    reference_selection: dict[str, Any],
 ) -> dict[str, Any]:
     actions: list[dict[str, Any]] = []
-    layout_basis = str(source_scorecard.get("layout_recommendation_basis", "") or "")
-    math_basis = str(source_scorecard.get("math_recommendation_basis", "") or "")
-    metadata_basis = str(source_scorecard.get("metadata_recommendation_basis", "") or "")
-    reference_basis = str(source_scorecard.get("reference_recommendation_basis", "") or "")
-    selected_metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
-    selected_reference_provider = str((reference_observation or {}).get("provider", "") or "") or None
-    candidates = {str(key): dict(value or {}) for key, value in (metadata_candidates or {}).items()}
-    grobid_candidate = candidates.get("grobid") or {}
+    selected_layout_provider = str(layout_selection.get("owner", "") or "") or None
+    selected_math_provider = str(math_selection.get("owner", "") or "") or None
+    selected_metadata_provider = str(metadata_selection.get("owner", "") or "") or None
+    selected_reference_provider = str(reference_selection.get("owner", "") or "") or None
 
-    if layout_basis == "fallback_unaccepted":
+    if layout_selection.get("status") == "rejected":
         layout_trial_provider = select_follow_up_provider(
             source_scorecard=source_scorecard,
             kind="layout",
@@ -347,7 +586,7 @@ def build_acquisition_follow_up(
         actions.append(
             {"product": "layout", "reason": "layout_provider_not_accepted", "action": "trial_layout_provider" if layout_trial_provider else "manual_review_layout", "target_provider": layout_trial_provider}
         )
-    if math_basis == "fallback_unaccepted":
+    if math_selection.get("status") == "rejected":
         math_trial_provider = select_follow_up_provider(
             source_scorecard=source_scorecard,
             kind="math",
@@ -356,18 +595,10 @@ def build_acquisition_follow_up(
         actions.append(
             {"product": "math", "reason": "math_provider_not_accepted", "action": "trial_math_provider" if math_trial_provider else "manual_review_math", "target_provider": math_trial_provider}
         )
-    if metadata_basis == "fallback_unaccepted":
-        if selected_metadata_provider != "grobid":
-            if _observation_has_metadata(grobid_candidate):
-                actions.append({"product": "metadata", "reason": "metadata_provider_not_accepted", "action": "escalate_grobid_metadata", "target_provider": "grobid"})
-            else:
-                actions.append({"product": "metadata", "reason": "metadata_provider_not_accepted", "action": "manual_review_metadata", "target_provider": None})
-    if reference_basis == "fallback_unaccepted":
-        if selected_reference_provider != "grobid":
-            if _observation_has_references(grobid_candidate):
-                actions.append({"product": "references", "reason": "reference_provider_not_accepted", "action": "escalate_grobid_references", "target_provider": "grobid"})
-            else:
-                actions.append({"product": "references", "reason": "reference_provider_not_accepted", "action": "manual_review_references", "target_provider": None})
+    if metadata_selection.get("status") == "rejected" and selected_metadata_provider != "grobid":
+        actions.append({"product": "metadata", "reason": "metadata_provider_not_accepted", "action": "manual_review_metadata", "target_provider": None})
+    if reference_selection.get("status") == "rejected" and selected_reference_provider != "grobid":
+        actions.append({"product": "references", "reason": "reference_provider_not_accepted", "action": "manual_review_references", "target_provider": None})
     return {"needs_attention": bool(actions), "actions": actions}
 
 
@@ -377,11 +608,10 @@ def build_acquisition_execution_summary(
     source_scorecard: dict[str, Any],
     docling_sources: dict[str, Any] | None,
     mathpix_sources: dict[str, Any] | None,
-    final_layout: dict[str, Any],
-    final_math: dict[str, Any],
-    metadata_candidates: dict[str, dict[str, Any] | None] | None,
-    metadata_observation: dict[str, Any] | None,
-    reference_observation: dict[str, Any] | None,
+    layout_selection: dict[str, Any],
+    math_selection: dict[str, Any],
+    metadata_selection: dict[str, Any],
+    reference_selection: dict[str, Any],
 ) -> dict[str, Any]:
     pdf_selection = dict((docling_sources or {}).get("pdf_selection") or (mathpix_sources or {}).get("pdf_selection") or {})
     execution_plan = dict((docling_sources or {}).get("execution_plan") or (mathpix_sources or {}).get("execution_plan") or {})
@@ -389,54 +619,37 @@ def build_acquisition_execution_summary(
     mathpix_layout = (mathpix_sources or {}).get("layout") or {}
     docling_math = (docling_sources or {}).get("math") or {}
     mathpix_math = (mathpix_sources or {}).get("math") or {}
-    metadata_provider = str((metadata_observation or {}).get("provider", "") or "") or None
-    reference_provider = str((reference_observation or {}).get("provider", "") or "") or None
-    selected_layout_provider = reported_layout_provider(
-        str(final_layout.get("engine", "") or "") or None,
-        source_scorecard=source_scorecard,
-        fallback="none",
-    )
-    selected_math_provider = reported_math_provider(
-        str(final_math.get("engine", "") or "") or None,
-        source_scorecard=source_scorecard,
-        math_payload=final_math,
-        fallback="none",
-    )
     follow_up = build_acquisition_follow_up(
         source_scorecard=source_scorecard,
-        selected_layout_provider=selected_layout_provider,
-        selected_math_provider=selected_math_provider,
-        metadata_candidates=metadata_candidates,
-        metadata_observation=metadata_observation,
-        reference_observation=reference_observation,
+        layout_selection=layout_selection,
+        math_selection=math_selection,
+        metadata_selection=metadata_selection,
+        reference_selection=reference_selection,
     )
     return {
         "route_primary": acquisition_route.get("primary_route"),
         "route_traits": list(acquisition_route.get("traits", [])),
         "provider_order": list(execution_plan.get("provider_order", [])),
-        "recommended": {
-            "layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
-            "math_provider": source_scorecard.get("recommended_primary_math_provider"),
-            "metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
-            "reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
-            "layout_basis": source_scorecard.get("layout_recommendation_basis"),
-            "math_basis": source_scorecard.get("math_recommendation_basis"),
-            "metadata_basis": source_scorecard.get("metadata_recommendation_basis"),
-            "reference_basis": source_scorecard.get("reference_recommendation_basis"),
-        },
-        "executed": {
+        "available": {
             "layout_candidates": [provider for provider, payload in (("docling", docling_layout), ("mathpix", mathpix_layout)) if payload],
             "math_candidates": [provider for provider, payload in (("docling", docling_math), ("mathpix", mathpix_math)) if payload and list(payload.get("entries", []))],
-            "selected_layout_provider": selected_layout_provider,
-            "selected_math_provider": selected_math_provider,
-            "metadata_provider": metadata_provider,
-            "reference_provider": reference_provider,
-            "metadata_candidates": [provider for provider, payload in sorted((metadata_candidates or {}).items()) if payload],
             "docling_ran": bool(docling_sources),
             "mathpix_ran": bool(mathpix_sources),
             "mathpix_strategy": execution_plan.get("mathpix_strategy"),
             "mathpix_reason": execution_plan.get("mathpix_reason"),
             "mathpix_prefetch_eligible": bool(execution_plan.get("mathpix_prefetch_eligible")),
+        },
+        "owners": {
+            "layout": layout_selection["owner"],
+            "math": math_selection["owner"],
+            "metadata": metadata_selection["owner"],
+            "references": reference_selection["owner"],
+        },
+        "ownership": {
+            "layout": {key: value for key, value in layout_selection.items() if key != "payload"},
+            "math": {key: value for key, value in math_selection.items() if key != "payload"},
+            "metadata": {key: value for key, value in metadata_selection.items() if key != "payload"},
+            "references": {key: value for key, value in reference_selection.items() if key != "payload"},
         },
         "ocr": {
             "policy": pdf_selection.get("ocr_prepass_policy") or (acquisition_route.get("ocr_prepass") or {}).get("policy"),
@@ -444,6 +657,11 @@ def build_acquisition_execution_summary(
             "applied": bool(pdf_selection.get("ocr_prepass_applied")),
             "pdf_source_kind": pdf_selection.get("pdf_source_kind"),
             "selected_pdf_path": pdf_selection.get("selected_pdf_path"),
+        },
+        "recovery": {
+            "layout_composed": False,
+            "abstract_placeholder_used": False,
+            "page_one_override_used": False,
         },
         "follow_up": follow_up,
     }
@@ -494,29 +712,46 @@ def compose_external_sources(
             metadata_observations=metadata_candidates,
         )
     )
-    metadata_observation = select_metadata_observation(source_scorecard=source_scorecard, metadata_candidates=metadata_candidates)
-    reference_observation = select_reference_observation(source_scorecard=source_scorecard, metadata_candidates=metadata_candidates)
+    layout_selection = _select_owned_layout(
+        source_scorecard=source_scorecard,
+        docling_layout=docling_layout,
+        mathpix_layout=mathpix_layout,
+    )
+    if layout_selection["status"] != "selected":
+        raise RuntimeError(_selection_failure_message("layout", layout_selection))
     final_layout = compose_layout_sources_impl(
         docling_sources,
         mathpix_sources,
         acquisition_route=acquisition_route,
         source_scorecard=source_scorecard,
     )
-    final_math = select_math_payload(
+    math_selection = _select_owned_math(
         source_scorecard=source_scorecard,
         docling_math=docling_math,
         mathpix_math=mathpix_math,
     )
+    if math_selection["status"] == "rejected":
+        raise RuntimeError(_selection_failure_message("math", math_selection))
+    final_math = dict(math_selection.get("payload") or {"engine": "none", "entries": []})
+    metadata_selection = _select_owned_metadata(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
+    reference_selection = _select_owned_references(
+        source_scorecard=source_scorecard,
+        metadata_candidates=metadata_candidates,
+    )
+    metadata_observation = dict(metadata_selection.get("payload") or {}) or None
+    reference_observation = dict(reference_selection.get("payload") or {}) or None
     acquisition_execution = build_acquisition_execution_summary(
         acquisition_route=acquisition_route,
         source_scorecard=source_scorecard,
         docling_sources=docling_sources,
         mathpix_sources=mathpix_sources,
-        final_layout=final_layout,
-        final_math=final_math,
-        metadata_candidates=metadata_candidates,
-        metadata_observation=metadata_observation,
-        reference_observation=reference_observation,
+        layout_selection=layout_selection,
+        math_selection=math_selection,
+        metadata_selection=metadata_selection,
+        reference_selection=reference_selection,
     )
     ocr_prepass = acquisition_route.get("ocr_prepass") or {}
     return {
@@ -532,18 +767,23 @@ def compose_external_sources(
         "acquisition_route_payload": acquisition_route,
         "source_scorecard": source_scorecard,
         "acquisition_execution": acquisition_execution,
-        "layout_engine": reported_layout_provider(str(final_layout.get("engine", "") or "") or None, source_scorecard=source_scorecard, fallback="none"),
+        "layout_owner": layout_selection["owner"],
+        "math_owner": math_selection["owner"],
+        "metadata_owner": metadata_selection["owner"],
+        "reference_owner": reference_selection["owner"],
+        "ownership": acquisition_execution["ownership"],
+        "layout_engine": layout_selection["owner"] or "none",
         "layout_blocks": len(final_layout.get("blocks", [])),
-        "math_engine": reported_math_provider(str(final_math.get("engine", "") or "") or None, source_scorecard=source_scorecard, math_payload=final_math, fallback="none"),
+        "math_engine": math_selection["owner"] or "none",
         "math_entries": len(final_math.get("entries", [])),
         "recommended_primary_layout_provider": source_scorecard.get("recommended_primary_layout_provider"),
         "recommended_primary_math_provider": source_scorecard.get("recommended_primary_math_provider"),
         "recommended_primary_metadata_provider": source_scorecard.get("recommended_primary_metadata_provider"),
         "recommended_primary_reference_provider": source_scorecard.get("recommended_primary_reference_provider"),
-        "executed_layout_provider": acquisition_execution["executed"]["selected_layout_provider"],
-        "executed_math_provider": acquisition_execution["executed"]["selected_math_provider"],
-        "executed_metadata_provider": acquisition_execution["executed"]["metadata_provider"],
-        "executed_reference_provider": acquisition_execution["executed"]["reference_provider"],
+        "executed_layout_provider": layout_selection["owner"],
+        "executed_math_provider": math_selection["owner"],
+        "executed_metadata_provider": metadata_selection["owner"],
+        "executed_reference_provider": reference_selection["owner"],
         "follow_up_needed": bool((acquisition_execution.get("follow_up") or {}).get("needs_attention")),
         "follow_up_actions": list((acquisition_execution.get("follow_up") or {}).get("actions") or []),
         "acquisition_route": acquisition_route.get("primary_route"),

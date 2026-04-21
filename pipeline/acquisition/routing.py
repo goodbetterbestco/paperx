@@ -6,7 +6,7 @@ import re
 from statistics import mean
 from typing import Any
 
-from pipeline.native_stderr import run_with_stderr_label
+from pipeline.native_stderr import open_pdf_with_diagnostics, run_with_stderr_label
 from pipeline.acquisition.grobid_policy import grobid_product_provider_chain
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 
@@ -170,9 +170,14 @@ def inspect_pdf_signals(
     fitz = load_fitz() if load_fitz is not None else _load_fitz()
     resolved_path = Path(pdf_path).resolve()
     label = paper_id or resolved_path.stem
+    document = open_pdf_with_diagnostics(
+        f"{label} stage=acquisition-routing-open",
+        resolved_path,
+        fitz_module=fitz,
+    )
 
     def _inspect() -> AcquisitionSignals:
-        with fitz.open(resolved_path) as document:
+        with document:
             page_count = len(document)
             if page_count <= 0:
                 return AcquisitionSignals(

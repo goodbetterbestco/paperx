@@ -8,7 +8,7 @@ try:
 except ModuleNotFoundError:  # pragma: no cover
     fitz = None  # type: ignore
 
-from pipeline.native_stderr import run_with_stderr_label
+from pipeline.native_stderr import open_pdf_with_diagnostics, run_with_stderr_label
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, display_path, paper_pdf_path
 from pipeline.figures.labels import caption_label
 from pipeline.text.headings import compact_text, heading_info, looks_like_structural_title  # noqa: E402
@@ -103,46 +103,50 @@ def extract_layout(
 ) -> dict[str, Any]:
     fitz_module = _require_fitz()
     resolved_pdf_path = paper_pdf_path(paper_id, layout=layout) if pdf_path is None else pdf_path
+    document = open_pdf_with_diagnostics(
+        f"{paper_id} stage=layout-open",
+        resolved_pdf_path,
+        fitz_module=fitz_module,
+    )
 
     def _extract() -> dict[str, Any]:
-        doc = fitz_module.open(resolved_pdf_path)
         blocks: list[LayoutBlock] = []
         page_sizes: list[dict[str, float]] = []
+        try:
+            for page_index in range(document.page_count):
+                page_num = page_index + 1
+                page = document.load_page(page_index)
+                page_rect = fitz_module.Rect(page.rect)
+                page_sizes.append({"page": page_num, "width": round(page_rect.width, 2), "height": round(page_rect.height, 2)})
 
-        for page_index in range(doc.page_count):
-            page_num = page_index + 1
-            page = doc.load_page(page_index)
-            page_rect = fitz_module.Rect(page.rect)
-            page_sizes.append({"page": page_num, "width": round(page_rect.width, 2), "height": round(page_rect.height, 2)})
-
-            order = 0
-            for block in page.get_text("dict")["blocks"]:
-                if block.get("type") != 0:
-                    continue
-                rect = fitz_module.Rect(block["bbox"])
-                text, meta = _block_text(block)
-                if not text:
-                    continue
-                order += 1
-                role = _classify_role(text, page_num, doc.page_count, rect, page_rect, meta)
-                blocks.append(
-                    LayoutBlock(
-                        id=f"layout-p{page_num:03d}-b{order:03d}",
-                        page=page_num,
-                        order=order,
-                        text=text,
-                        role=role,
-                        bbox=_rect_dict(rect),
-                        meta=meta,
+                order = 0
+                for block in page.get_text("dict")["blocks"]:
+                    if block.get("type") != 0:
+                        continue
+                    rect = fitz_module.Rect(block["bbox"])
+                    text, meta = _block_text(block)
+                    if not text:
+                        continue
+                    order += 1
+                    role = _classify_role(text, page_num, document.page_count, rect, page_rect, meta)
+                    blocks.append(
+                        LayoutBlock(
+                            id=f"layout-p{page_num:03d}-b{order:03d}",
+                            page=page_num,
+                            order=order,
+                            text=text,
+                            role=role,
+                            bbox=_rect_dict(rect),
+                            meta=meta,
+                        )
                     )
-                )
-
-        doc.close()
-        return {
-            "pdf_path": display_path(resolved_pdf_path, layout=layout),
-            "page_count": len(page_sizes),
-            "page_sizes_pt": page_sizes,
-            "blocks": blocks,
-        }
+            return {
+                "pdf_path": display_path(resolved_pdf_path, layout=layout),
+                "page_count": len(page_sizes),
+                "page_sizes_pt": page_sizes,
+                "blocks": blocks,
+            }
+        finally:
+            document.close()
 
     return run_with_stderr_label(f"{paper_id} stage=layout-extraction", _extract)

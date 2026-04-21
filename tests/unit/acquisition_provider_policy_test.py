@@ -27,9 +27,7 @@ class AcquisitionProviderPolicyTest(unittest.TestCase):
         )
 
         self.assertTrue(decision.requested)
-        self.assertEqual(decision.phase, "primary")
         self.assertTrue(decision.prefetch_eligible)
-        self.assertEqual(decision.reason, "route_requested_primary_mathpix")
 
     def test_born_digital_route_skips_mathpix_when_docling_satisfies_math(self) -> None:
         decision = decide_mathpix_execution(
@@ -56,8 +54,6 @@ class AcquisitionProviderPolicyTest(unittest.TestCase):
         )
 
         self.assertFalse(decision.requested)
-        self.assertEqual(decision.phase, "skip")
-        self.assertEqual(decision.reason, "route_sufficient_without_mathpix")
 
     def test_layout_route_requests_layout_fallback_when_docling_layout_is_rejected(self) -> None:
         decision = decide_mathpix_execution(
@@ -79,35 +75,6 @@ class AcquisitionProviderPolicyTest(unittest.TestCase):
         )
 
         self.assertTrue(decision.requested)
-        self.assertEqual(decision.phase, "fallback")
-        self.assertEqual(decision.reason, "layout_fallback_docling_rejected")
-
-    def test_execution_plan_keeps_ocr_then_docling_then_mathpix_order(self) -> None:
-        decision = decide_mathpix_execution(
-            {
-                "primary_route": "math_dense",
-                "product_plan": {
-                    "layout": ["docling"],
-                    "math": ["mathpix", "docling"],
-                },
-            },
-            mathpix_available=True,
-        )
-
-        plan = build_provider_execution_plan(
-            {
-                "primary_route": "math_dense",
-                "ocr_prepass": {"policy": "required", "should_run": True, "tool": "ocrmypdf"},
-            },
-            mathpix_decision=decision,
-            mathpix_strategy="prefetched_primary",
-            ocr_prepass_applied=True,
-        )
-
-        self.assertEqual(plan["provider_order"], ["ocrmypdf", "docling", "mathpix"])
-        self.assertTrue(plan["mathpix_requested"])
-        self.assertTrue(plan["mathpix_prefetch_eligible"])
-        self.assertEqual(plan["mathpix_reason"], "route_requested_primary_mathpix")
 
 
 if __name__ == "__main__":

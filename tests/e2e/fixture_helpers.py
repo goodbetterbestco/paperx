@@ -2,13 +2,16 @@ from __future__ import annotations
 
 import json
 import os
-import sys
 from pathlib import Path
+
+from pipeline.corpus_layout import paper_uid
 
 
 ROOT = Path(__file__).resolve().parents[2]
 CLI_PYTHON = ROOT / ".venv-paperx" / "bin" / "python"
 PAPER_ID = "1990_synthetic_test_paper"
+PAPER_UID = paper_uid(PAPER_ID)
+CANONICAL_FILENAME = f"canonical_{PAPER_UID}.json"
 TITLE = "A Synthetic Study of Stable Figure Recovery"
 AUTHORS = "Ada Example and Bob Example"
 AFFILIATION = "Department of Geometry, Synthetic Institute, Example City"
@@ -27,13 +30,17 @@ PDF_LINES: tuple[tuple[int, str], ...] = (
 
 
 def cli_python() -> str:
-    return str(CLI_PYTHON if CLI_PYTHON.exists() else Path(sys.executable))
+    if not CLI_PYTHON.exists():
+        raise FileNotFoundError(
+            f"Expected repo venv interpreter at {CLI_PYTHON}. Run `make install` before e2e tests."
+        )
+    return str(CLI_PYTHON)
 
 
-def project_env(project_dir: Path, *, skip_env_local: bool = False) -> dict[str, str]:
+def corpus_env(corpus_dir: Path, *, corpus_name: str = "synthetic", skip_env_local: bool = False) -> dict[str, str]:
     env = os.environ.copy()
-    env["PIPELINE_PROJECT_DIR"] = str(project_dir)
-    env.pop("PIPELINE_CORPUS_DIR", None)
+    env["PIPELINE_CORPUS_DIR"] = str(corpus_dir)
+    env["PIPELINE_CORPUS_NAME"] = corpus_name
     env["STEPVIEW_DOCLING_DEVICE"] = "cpu"
     if skip_env_local:
         env["PIPELINE_SKIP_ENV_LOCAL"] = "1"
@@ -86,16 +93,9 @@ def build_single_page_text_pdf(lines: tuple[tuple[int, str], ...] = PDF_LINES) -
     return b"".join(parts)
 
 
-def create_processed_project_fixture(project_dir: Path) -> Path:
-    source_dir = project_dir / "_source"
+def create_processed_corpus_fixture(corpus_dir: Path) -> Path:
+    source_dir = corpus_dir / "_source"
     source_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = source_dir / f"{PAPER_ID}.pdf"
-    pdf_path.write_bytes(build_single_page_text_pdf())
-    return pdf_path
-
-
-def create_source_project_fixture(project_dir: Path) -> Path:
-    project_dir.mkdir(parents=True, exist_ok=True)
-    pdf_path = project_dir / f"{PAPER_ID}.pdf"
     pdf_path.write_bytes(build_single_page_text_pdf())
     return pdf_path

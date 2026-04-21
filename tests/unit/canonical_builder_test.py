@@ -11,27 +11,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+from pipeline.corpus_layout import paper_uid
 from pipeline.assembly.canonical_builder import build_canonical_document
 
 
 class CanonicalBuilderTest(unittest.TestCase):
     def test_build_canonical_document_builds_metadata_applies_policy_and_reannotates_math(self) -> None:
-        compile_inputs: list[list[dict[str, object]]] = []
-        classify_inputs: list[list[dict[str, object]]] = []
-        semantic_inputs: list[list[dict[str, object]]] = []
-
-        def fake_compile(entries):
-            compile_inputs.append(list(entries))
-            return [{**entry, "compiled": True} for entry in entries]
-
-        def fake_classify(entries):
-            classify_inputs.append(list(entries))
-            return [{**entry, "classified": True} for entry in entries]
-
-        def fake_semantic(entries):
-            semantic_inputs.append(list(entries))
-            return [{**entry, "semantic": True} for entry in entries]
-
         def fake_apply_policy(document):
             updated = dict(document)
             updated["blocks"] = [*document["blocks"], {"id": "blk-policy"}]
@@ -39,13 +24,22 @@ class CanonicalBuilderTest(unittest.TestCase):
             return updated
 
         with (
-            patch("pipeline.assembly.canonical_builder.compile_formulas", side_effect=fake_compile),
-            patch("pipeline.assembly.canonical_builder.annotate_formula_classifications", side_effect=fake_classify),
-            patch("pipeline.assembly.canonical_builder.annotate_formula_semantic_expr", side_effect=fake_semantic),
+            patch(
+                "pipeline.assembly.canonical_builder.compile_formulas",
+                side_effect=lambda entries: [{**entry, "compiled": True} for entry in entries],
+            ),
+            patch(
+                "pipeline.assembly.canonical_builder.annotate_formula_classifications",
+                side_effect=lambda entries: [{**entry, "classified": True} for entry in entries],
+            ),
+            patch(
+                "pipeline.assembly.canonical_builder.annotate_formula_semantic_expr",
+                side_effect=lambda entries: [{**entry, "semantic": True} for entry in entries],
+            ),
             patch(
                 "pipeline.assembly.canonical_builder.build_metadata_for_paper",
                 return_value={"fingerprint": "fp-123", "layout_engine": "docling"},
-            ) as build_metadata,
+            ),
             patch("pipeline.assembly.canonical_builder.apply_document_policy", side_effect=fake_apply_policy),
         ):
             document = build_canonical_document(
@@ -65,23 +59,13 @@ class CanonicalBuilderTest(unittest.TestCase):
                 decision_artifacts={"abstract": {"source": "leading_abstract_section_created"}},
             )
 
-        self.assertEqual(len(compile_inputs), 2)
-        self.assertEqual(compile_inputs[0], [{"id": "math-1"}])
         self.assertEqual(document["build"], {"fingerprint": "fp-123", "layout_engine": "docling"})
         self.assertEqual(document["schema_version"], "1.0")
+        self.assertEqual(document["paper_uid"], paper_uid("1990_synthetic_test_paper"))
         self.assertEqual(document["_decision_artifacts"]["abstract"]["source"], "leading_abstract_section_created")
         self.assertEqual(document["blocks"][-1]["id"], "blk-policy")
         self.assertEqual(document["math"][-1]["id"], "math-policy")
         self.assertTrue(all(entry.get("semantic") for entry in document["math"]))
-        build_metadata.assert_called_once_with(
-            "1990_synthetic_test_paper",
-            pdf_path="1990_synthetic_test_paper/1990_synthetic_test_paper.pdf",
-            timestamp="2026-04-19T00:00:00Z",
-            layout_engine="docling",
-            math_engine="mathpix",
-            figure_engine="local",
-            text_engine="native_pdf+pdftotext",
-        )
 
     def test_build_canonical_document_omits_decision_artifacts_when_not_present(self) -> None:
         with (

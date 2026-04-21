@@ -137,8 +137,9 @@ def validate_build(document: dict[str, Any]) -> None:
 
 
 def validate_top_level(document: dict[str, Any]) -> None:
-    for key in ("schema_version", "paper_id", "title", "source", "build", "front_matter", "sections", "blocks", "math", "figures", "references", "styles"):
+    for key in ("schema_version", "paper_id", "paper_uid", "title", "source", "build", "front_matter", "sections", "blocks", "math", "figures", "references", "styles"):
         _require(key in document, f"missing top-level key: {key}")
+    _require(isinstance(document.get("paper_uid"), str) and document["paper_uid"], "paper_uid must be non-empty text")
 
 
 def validate_styles(document: dict[str, Any]) -> None:

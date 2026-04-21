@@ -10,14 +10,15 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from pipeline.native_stderr import run_with_stderr_label
+from pipeline.native_stderr import open_pdf_with_diagnostics, run_with_stderr_label
 from pipeline.corpus_layout import (
     CORPUS_DIR,
     ProjectLayout,
     current_layout,
     display_path,
+    figure_manifest_path,
     figures_dir as corpus_figures_dir,
-    project_root,
+    paper_uid,
 )
 from pipeline.corpus.metadata import (
     build_figure_expectations,
@@ -66,7 +67,9 @@ def _resolve_manifest_relative_path(path_value: str, *, layout: ProjectLayout | 
     corpus_parent = active_layout.corpus_root.parent
     corpus_root_from_engine = active_layout.engine_root / "corpus"
     for base in (
-        project_root(layout=active_layout),
+        active_layout.source_root,
+        active_layout.resolved_data_root(),
+        active_layout.resolved_figures_root(),
         corpus_parent,
         corpus_root_from_engine,
         ROOT,
@@ -78,8 +81,7 @@ def _resolve_manifest_relative_path(path_value: str, *, layout: ProjectLayout | 
         candidate = base / path_value
         if candidate.exists():
             return candidate
-    fallback_base = project_root(layout=active_layout) if active_layout.project_mode else corpus_parent
-    return fallback_base / path_value
+    return corpus_parent / path_value
 
 
 def resolve_manifest_pdf_path(manifest: dict[str, Any], *, layout: ProjectLayout | None = None) -> Path:
@@ -91,6 +93,10 @@ def resolve_manifest_pdf_path(manifest: dict[str, Any], *, layout: ProjectLayout
 
 
 def resolve_manifest_figures_dir(manifest: dict[str, Any], *, layout: ProjectLayout | None = None) -> Path:
+    artifacts = manifest.get("artifacts") or {}
+    figures_dir = artifacts.get("figures_dir")
+    if figures_dir:
+        return _resolve_manifest_relative_path(str(figures_dir), layout=layout)
     return corpus_figures_dir(str(manifest["id"]), layout=layout)
 
 
@@ -98,9 +104,17 @@ def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
 
 
-def write_figure_manifest(figures_dir: Path, records: list[dict[str, Any]]) -> Path:
-    manifest_path = figures_dir / "manifest.json"
+def write_figure_manifest(
+    paper_id: str,
+    records: list[dict[str, Any]],
+    *,
+    paper_uid_value: str,
+    layout: ProjectLayout | None = None,
+) -> Path:
+    manifest_path = figure_manifest_path(paper_id, layout=layout)
     payload = {
+        "paper_id": paper_id,
+        "paper_uid": paper_uid_value,
         "records": [
             {
                 "figure_id": record["figure_id"],
@@ -495,8 +509,10 @@ def merge_missing_caption_blocks(
 def build_manifest_from_pdf_path(pdf_path: Path, *, layout: ProjectLayout | None = None) -> dict[str, Any]:
     active_layout = layout or current_layout()
     paper_id = paper_id_from_pdf_path(pdf_path, layout=active_layout)
+    paper_uid_value = paper_uid(paper_id)
     manifest: dict[str, Any] = {
         "id": paper_id,
+        "paper_uid": paper_uid_value,
         "source_pdf": display_path(pdf_path, layout=active_layout),
         "artifacts": {
             "pdf": display_path(pdf_path, layout=active_layout),
@@ -774,13 +790,16 @@ def process_paper(
     layout: ProjectLayout | None = None,
 ) -> tuple[dict[str, Any], int]:
     active_layout = layout or current_layout()
+    paper_id = str(manifest["id"])
+    paper_uid_value = str(manifest.get("paper_uid") or paper_uid(paper_id))
     source_pdf = resolve_manifest_pdf_path(manifest, layout=active_layout)
     figures_dir = resolve_manifest_figures_dir(manifest, layout=active_layout)
     figures_dir.mkdir(parents=True, exist_ok=True)
 
-    doc = run_with_stderr_label(
-        f"{manifest['id']} stage=figure-linking-open",
-        lambda: fitz.open(source_pdf),
+    doc = open_pdf_with_diagnostics(
+        f"{paper_id} stage=figure-linking-open",
+        source_pdf,
+        fitz_module=fitz,
     )
     records: list[dict[str, Any]] = []
     used_ids: set[str] = set()
@@ -852,7 +871,7 @@ def process_paper(
                 suffix += 1
             used_ids.add(figure_id)
 
-            filename = f"{figure_id}-p{page_index + 1:03d}.png"
+            filename = f"figure_{paper_uid_value}_{len(records) + 1:03d}.png"
             output_path = figures_dir / filename
             render_crop_if_missing(page, rect, output_path)
 
@@ -879,8 +898,14 @@ def process_paper(
         record["references"] = references
         record["reference_count"] = len(references)
 
-    manifest_path = write_figure_manifest(figures_dir, records)
+    manifest_path = write_figure_manifest(
+        paper_id,
+        records,
+        paper_uid_value=paper_uid_value,
+        layout=active_layout,
+    )
     manifest.setdefault("artifacts", {})
+    manifest["paper_uid"] = paper_uid_value
     manifest["artifacts"]["figures_dir"] = display_path(figures_dir, layout=active_layout)
     manifest["artifacts"]["figures_manifest"] = display_path(manifest_path, layout=active_layout)
     manifest.setdefault("stats", {})
@@ -903,9 +928,10 @@ def load_or_generate_ocr_records(
 ) -> list[dict[str, Any]]:
     if doc is None:
         source_pdf = resolve_manifest_pdf_path(manifest, layout=layout)
-        doc = run_with_stderr_label(
+        doc = open_pdf_with_diagnostics(
             f"{manifest['id']} stage=figure-ocr-open",
-            lambda: fitz.open(source_pdf),
+            source_pdf,
+            fitz_module=fitz,
         )
     with tempfile.TemporaryDirectory(prefix=f"{manifest['id']}-figure-ocr-") as temp_dir:
         image_paths = render_pages_for_ocr(doc, Path(temp_dir))

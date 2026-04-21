@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from pipeline.corpus_layout import paper_uid
 from pipeline.math.compile import compile_formulas
 from pipeline.text.document_policy import apply_document_policy
 from pipeline.math.semantic_ir import annotate_formula_semantic_expr
@@ -32,6 +33,7 @@ def build_canonical_document(
     document = {
         "schema_version": "1.0",
         "paper_id": paper_id,
+        "paper_uid": paper_uid(paper_id),
         "title": title,
         "source": source,
         "build": build_metadata_for_paper(

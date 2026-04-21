@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.corpus_layout import ProjectLayout
+from pipeline.corpus_layout import ProjectLayout, paper_uid
 from pipeline.sources.figures import ensure_figure_manifest, extract_figures
 
 
@@ -16,11 +16,9 @@ def _corpus_layout(root: Path) -> ProjectLayout:
     corpus_root = root / "corpus" / "synthetic"
     return ProjectLayout(
         engine_root=root,
-        mode="corpus",
         corpus_name="synthetic",
-        project_dir=None,
         corpus_root=corpus_root,
-        source_root=corpus_root,
+        source_root=corpus_root / "_source",
         review_root=corpus_root / "_canon",
         runs_root=corpus_root / "_runs",
         tmp_root=root / "tmp",
@@ -32,7 +30,7 @@ class FigureSourcesTest(unittest.TestCase):
     def test_ensure_figure_manifest_returns_existing_manifest_without_rebuilding(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             layout = _corpus_layout(Path(temp_dir).resolve())
-            manifest_path = layout.paper_dir("1990_synthetic_test_paper") / "figures" / "manifest.json"
+            manifest_path = layout.figure_manifest_path("1990_synthetic_test_paper")
             manifest_path.parent.mkdir(parents=True, exist_ok=True)
             manifest_path.write_text('{"records": []}\n', encoding="utf-8")
 
@@ -44,17 +42,19 @@ class FigureSourcesTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             layout = _corpus_layout(Path(temp_dir).resolve())
             paper_id = "1990_synthetic_test_paper"
-            manifest_path = layout.paper_dir(paper_id) / "figures" / "manifest.json"
+            manifest_path = layout.figure_manifest_path(paper_id)
             manifest_path.parent.mkdir(parents=True, exist_ok=True)
             manifest_path.write_text(
                 json.dumps(
                     {
+                        "paper_id": paper_id,
+                        "paper_uid": paper_uid(paper_id),
                         "records": [
                             {
                                 "figure_id": "figure-2a",
                                 "label": "2A",
                                 "page": 7,
-                                "image_path": "corpus/synthetic/1990_synthetic_test_paper/figures/figure-2a-p007.png",
+                                "image_path": f"synthetic/_figures/figure_{paper_uid(paper_id)}_001.png",
                                 "caption_text": "Fig. 2A: Boundary silhouette used for evaluation.",
                                 "figure_bbox": {
                                     "x0": 10.0,
@@ -72,7 +72,7 @@ class FigureSourcesTest(unittest.TestCase):
                                 "figure_id": "",
                                 "label": "4",
                                 "page": 9,
-                                "image_path": "corpus/synthetic/1990_synthetic_test_paper/figures/figure-4-p009.png",
+                                "image_path": f"synthetic/_figures/figure_{paper_uid(paper_id)}_002.png",
                                 "caption_text": "Unprefixed caption text",
                                 "figure_bbox": {
                                     "x0": 0.0,

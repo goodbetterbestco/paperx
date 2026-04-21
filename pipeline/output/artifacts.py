@@ -58,7 +58,6 @@ def write_canonical_outputs_impl(
     validate_canonical: Callable[[dict[str, Any]], None],
     render_document: Callable[[dict[str, Any]], str],
 ) -> dict[str, Any]:
-    decision_artifacts = document.pop("_decision_artifacts", None)
     validate_canonical(document)
     review_markdown = render_document(document) if include_review else ""
     canonical_target = canonical_path(paper_id, layout=layout)

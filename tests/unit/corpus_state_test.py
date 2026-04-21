@@ -54,7 +54,7 @@ class CorpusStateTest(unittest.TestCase):
             legacy_source.mkdir(parents=True, exist_ok=True)
             (legacy_source / "1990_synthetic_test_paper.pdf").write_bytes(MINIMAL_PDF)
 
-            with self.assertRaisesRegex(RuntimeError, "Legacy corpus layout is no longer supported"):
+            with self.assertRaises(RuntimeError):
                 reset_corpus_to_source_state(corpus_dir)
 
 

@@ -35,6 +35,44 @@ def normalize_scorecard_recommendations(source_scorecard: dict[str, Any] | None)
     return payload
 
 
+def provider_score_rows(
+    source_scorecard: dict[str, Any] | None,
+    *,
+    kind: str,
+) -> list[dict[str, Any]]:
+    normalized_kind = str(kind or "").strip()
+    rows = []
+    for item in list((source_scorecard or {}).get("providers") or []):
+        if str(item.get("kind", "") or "").strip() != normalized_kind:
+            continue
+        payload = dict(item)
+        payload["provider"] = canonical_provider_name(payload.get("provider")) or str(payload.get("provider", "") or "")
+        rows.append(payload)
+    rows.sort(
+        key=lambda item: (
+            -int(bool(item.get("accepted"))),
+            -float(item.get("overall_score", 0.0) or 0.0),
+            str(item.get("provider", "")),
+        )
+    )
+    return rows
+
+
+def provider_score_row(
+    source_scorecard: dict[str, Any] | None,
+    *,
+    kind: str,
+    provider: str | None,
+) -> dict[str, Any] | None:
+    normalized_provider = canonical_provider_name(provider)
+    if not normalized_provider:
+        return None
+    for item in provider_score_rows(source_scorecard, kind=kind):
+        if canonical_provider_name(item.get("provider")) == normalized_provider:
+            return item
+    return None
+
+
 def _fallback_unaccepted(source_scorecard: dict[str, Any] | None, key: str) -> bool:
     return str((source_scorecard or {}).get(key, "") or "").strip() == "fallback_unaccepted"
 
@@ -55,12 +93,8 @@ def reported_layout_provider(
     source_scorecard: dict[str, Any] | None,
     fallback: str = "native_pdf",
 ) -> str:
-    if not layout_engine:
-        return fallback
-    preferred_provider = str((source_scorecard or {}).get("recommended_primary_layout_provider", "") or "")
-    if layout_engine in GENERIC_LAYOUT_PROVIDER_NAMES and preferred_provider:
-        return preferred_provider
-    return layout_engine
+    reported = canonical_provider_name(layout_engine)
+    return reported or fallback
 
 
 def reported_math_provider(
@@ -71,11 +105,9 @@ def reported_math_provider(
     fallback: str = "heuristic",
 ) -> str:
     math_entries = list((math_payload or {}).get("entries", []))
-    preferred_provider = str((source_scorecard or {}).get("recommended_primary_math_provider", "") or "")
-    if preferred_provider and math_entries:
-        return preferred_provider
-    if math_engine and math_entries and math_engine not in GENERIC_MATH_PROVIDER_NAMES:
-        return math_engine
+    reported = canonical_provider_name(math_engine)
+    if reported and math_entries and reported not in GENERIC_MATH_PROVIDER_NAMES:
+        return reported
     return fallback
 
 
@@ -183,6 +215,8 @@ def select_reference_observation(
 __all__ = [
     "canonical_provider_name",
     "normalize_scorecard_recommendations",
+    "provider_score_row",
+    "provider_score_rows",
     "reported_layout_provider",
     "reported_math_provider",
     "select_follow_up_provider",

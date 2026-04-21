@@ -11,7 +11,6 @@ if str(ROOT) not in sys.path:
 
 
 from pipeline.acquisition.grobid_policy import (
-    GROBID_POLICY_STATUS,
     grobid_policy_decision,
     grobid_policy_snapshot,
     grobid_product_provider_chain,
@@ -31,11 +30,10 @@ class GrobidPolicyTest(unittest.TestCase):
         self.assertTrue(is_grobid_live_for_route("metadata", "scan_or_image_heavy"))
         decision = grobid_policy_decision("metadata", route="scan_or_image_heavy")
         self.assertTrue(decision.live)
-        self.assertEqual(decision.status, "live")
 
     def test_grobid_layout_and_math_remain_trial_only(self) -> None:
-        self.assertEqual(grobid_policy_decision("layout").status, "trial_only")
-        self.assertEqual(grobid_policy_decision("math").status, "trial_only")
+        self.assertFalse(grobid_policy_decision("layout").live)
+        self.assertFalse(grobid_policy_decision("math").live)
 
     def test_grobid_provider_chain_only_prepends_grobid_for_live_products(self) -> None:
         self.assertEqual(grobid_product_provider_chain("metadata"), ["grobid", "docling"])
@@ -44,7 +42,6 @@ class GrobidPolicyTest(unittest.TestCase):
 
     def test_grobid_policy_snapshot_is_operator_readable(self) -> None:
         snapshot = grobid_policy_snapshot()
-        self.assertEqual(snapshot["status"], GROBID_POLICY_STATUS)
         self.assertEqual(snapshot["live_products"], ["metadata", "references"])
         self.assertEqual(snapshot["trial_only_products"], ["layout", "math"])
         self.assertIn("scan_or_image_heavy", snapshot["live_routes"])

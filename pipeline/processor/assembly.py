@@ -3,10 +3,6 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pipeline.acquisition.source_ownership import (
-    reported_layout_provider,
-    reported_math_provider,
-)
 from pipeline.assembly.canonical_builder import build_canonical_document
 from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.output.fingerprints import build_input_fingerprints
@@ -100,8 +96,6 @@ def _front_matter_from_layout(layout: dict[str, Any], observation: dict[str, Any
     lines = [_block_text(block) for block in page_one_front_matter if _block_text(block)]
     if lines:
         title = lines[0]
-    elif page_one_blocks:
-        title = _block_text(page_one_blocks[0])
     if not title:
         title = str((observation or {}).get("title", "")).strip()
 
@@ -293,10 +287,18 @@ def build_paper_state(
     reference_observation = dict(prepared_sources.get("reference_observation") or {}) or None
     acquisition_route = dict(prepared_sources.get("acquisition_route_payload") or {})
     source_scorecard = dict(prepared_sources.get("source_scorecard") or {})
+    acquisition_execution = dict(prepared_sources.get("acquisition_execution") or {})
+    layout_owner = str(prepared_sources.get("layout_owner", "") or "") or None
+    math_owner = str(prepared_sources.get("math_owner", "") or "") or None
+    metadata_owner = str(prepared_sources.get("metadata_owner", "") or "") or None
+    reference_owner = str(prepared_sources.get("reference_owner", "") or "") or None
     figures = extract_figures(paper_id, layout=runtime_config.layout)
     title, authors, affiliations, abstract = _front_matter_from_layout(acquired_layout, metadata_observation)
-    if not abstract:
-        abstract = str((metadata_observation or {}).get("abstract", "") or "").strip()
+    title = str(title or str((metadata_observation or {}).get("title", "") or "")).strip()
+    if not title:
+        raise RuntimeError(
+            f"Missing trustworthy acquired title for {paper_id}. Refusing to fall back to the paper id."
+        )
     observed_references = [
         str(item).strip()
         for item in list((reference_observation or {}).get("references", []))
@@ -305,19 +307,26 @@ def build_paper_state(
     references = [_reference_entry(text, index=index) for index, text in enumerate(observed_references, start=1)]
     sections, blocks, abstract_block_id = _sections_and_blocks(acquired_layout, abstract, references)
     front_matter = {
-        "title": title or paper_id,
+        "title": title,
         "authors": authors,
         "affiliations": affiliations,
         "abstract_block_id": abstract_block_id,
         "funding_block_id": None,
     }
     decision_artifacts = {
-        "acquisition_route": acquisition_route,
-        "source_scorecard": source_scorecard,
-        "metadata": {
-            "provider": str((metadata_observation or {}).get("provider", "") or ""),
-            "reference_provider": str((reference_observation or {}).get("provider", "") or ""),
+        "acquisition": {
+            "route": acquisition_route.get("primary_route"),
+            "traits": list(acquisition_route.get("traits", [])),
+            "owners": {
+                "layout": layout_owner,
+                "math": math_owner,
+                "metadata": metadata_owner,
+                "references": reference_owner,
+            },
+            "ownership": dict(acquisition_execution.get("ownership") or {}),
+            "recovery": dict(acquisition_execution.get("recovery") or {}),
         },
+        "source_scorecard": source_scorecard,
     }
 
     paper_state.native_layout = acquired_layout
@@ -338,17 +347,8 @@ def build_paper_state(
     paper_state.references = references
     paper_state.decision_artifacts = decision_artifacts
     paper_state.effective_text_engine = text_engine
-    paper_state.layout_engine_name = reported_layout_provider(
-        str((acquired_layout or {}).get("engine", "native_pdf") or "native_pdf"),
-        source_scorecard=source_scorecard,
-        fallback="native_pdf",
-    )
-    paper_state.math_engine_name = reported_math_provider(
-        str((external_math or {}).get("engine", "") or "") or None,
-        source_scorecard=source_scorecard,
-        math_payload=external_math,
-        fallback="heuristic",
-    )
+    paper_state.layout_engine_name = layout_owner or "none"
+    paper_state.math_engine_name = math_owner or "none"
     paper_state.input_fingerprints = build_input_fingerprints(
         paper_id,
         pdf_path=paper_state.pdf_path,

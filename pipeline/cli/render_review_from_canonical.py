@@ -9,7 +9,7 @@ from pipeline.output.review_renderer import write_review_from_canonical
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Render a markdown review draft from canonical.json.")
-    parser.add_argument("paper_id", help=f"Paper directory id under the configured corpus ({CORPUS_DIR}).")
+    parser.add_argument("paper_id", help=f"Paper id in the configured layout ({CORPUS_DIR}).")
     return parser.parse_args()
 
 

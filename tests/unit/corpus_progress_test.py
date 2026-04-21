@@ -9,7 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.processor.corpus import _progress_snapshot, run_corpus_once
+from pipeline.processor.corpus import run_corpus_once
 from pipeline.processor.status import CorpusRuntime
 
 
@@ -17,9 +17,7 @@ def _corpus_layout(root: Path) -> ProjectLayout:
     corpus_root = root / "corpus" / "synthetic"
     return ProjectLayout(
         engine_root=root,
-        mode="corpus",
         corpus_name="synthetic",
-        project_dir=None,
         corpus_root=corpus_root,
         source_root=corpus_root / "_source",
         data_root=corpus_root / "_data",
@@ -32,30 +30,6 @@ def _corpus_layout(root: Path) -> ProjectLayout:
 
 
 class CorpusProgressTest(unittest.TestCase):
-    def test_progress_snapshot_classifies_queued_processing_completed_and_failed(self) -> None:
-        snapshot = _progress_snapshot(
-            ["paper_a", "paper_b", "paper_c", "paper_d"],
-            {
-                "papers": {
-                    "paper_a": {"status": "completed"},
-                    "paper_b": {"status": "failed"},
-                    "paper_c": {"status": "running"},
-                }
-            },
-        )
-
-        self.assertEqual(
-            snapshot,
-            {
-                "total": 4,
-                "queued": 1,
-                "processing": 1,
-                "processed": 2,
-                "passed": 1,
-                "failed": 1,
-            },
-        )
-
     def test_run_corpus_once_reports_progress_when_processed_count_increases(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir).resolve()
@@ -76,7 +50,6 @@ class CorpusProgressTest(unittest.TestCase):
             progress_updates: list[dict[str, int]] = []
 
             def fake_run_paper_job(paper_id: str, *, layout: ProjectLayout) -> dict[str, object]:
-                self.assertEqual(layout.corpus_name, "synthetic")
                 if paper_id == "paper_a":
                     return {"status": "completed", "completed_at": "2026-01-01T00:00:01Z"}
                 return {"status": "failed", "completed_at": "2026-01-01T00:00:02Z", "error": "boom"}

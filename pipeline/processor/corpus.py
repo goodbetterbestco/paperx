@@ -140,7 +140,17 @@ def run_paper_job(
                     "present": bool(mathpix_sources),
                     "math_entries": int((mathpix_sources or {}).get("math_entries", 0)),
                 },
-                "composed_sources": composed,
+                "acquisition": {
+                    "owners": {
+                        "layout": composed.get("layout_owner"),
+                        "math": composed.get("math_owner"),
+                        "metadata": composed.get("metadata_owner"),
+                        "references": composed.get("reference_owner"),
+                    },
+                    "ownership": composed.get("ownership", {}),
+                    "execution": composed.get("acquisition_execution", {}),
+                },
+                "acquisition_sources": composed,
                 "attempts": [],
                 "timings": timings,
             }
@@ -273,8 +283,6 @@ def process_corpus(
         "Each paper is processed once from its PDF into canonical output and figures.",
         "Mathpix uses whole-PDF coordination when multiple papers are pending and credentials are available.",
     ]
-    if runtime.layout.project_mode:
-        status["notes"].append(f"Project reports are written into {runtime.batch_dir}.")
     save_status(status, runtime)
 
     run_corpus_once(

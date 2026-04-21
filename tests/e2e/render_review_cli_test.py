@@ -15,33 +15,32 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+from tests.e2e.fixture_helpers import CANONICAL_FILENAME, cli_python, corpus_env
+
+
 FIXTURE_PROJECT = ROOT / "tests" / "fixtures" / "render_review_project"
 PAPER_ID = "1990_synthetic_test_paper"
 
 
 class RenderReviewCliE2ETest(unittest.TestCase):
-    def test_render_review_cli_writes_review_for_project_fixture(self) -> None:
+    def test_render_review_cli_writes_review_for_corpus_fixture(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            project_dir = Path(temp_dir) / "render_review_project"
-            shutil.copytree(FIXTURE_PROJECT, project_dir)
-            (project_dir / "_source").mkdir(parents=True, exist_ok=True)
-            (project_dir / "_data").mkdir(parents=True, exist_ok=True)
+            corpus_dir = Path(temp_dir) / "render_review_corpus"
+            shutil.copytree(FIXTURE_PROJECT, corpus_dir)
+            (corpus_dir / "_source").mkdir(parents=True, exist_ok=True)
+            (corpus_dir / "_data").mkdir(parents=True, exist_ok=True)
             shutil.move(
-                str(project_dir / PAPER_ID / f"{PAPER_ID}.pdf"),
-                str(project_dir / "_source" / f"{PAPER_ID}.pdf"),
+                str(corpus_dir / PAPER_ID / f"{PAPER_ID}.pdf"),
+                str(corpus_dir / "_source" / f"{PAPER_ID}.pdf"),
             )
             shutil.move(
-                str(project_dir / PAPER_ID / "canonical.json"),
-                str(project_dir / "_data" / f"{PAPER_ID}.json"),
+                str(corpus_dir / PAPER_ID / "canonical.json"),
+                str(corpus_dir / "_data" / CANONICAL_FILENAME),
             )
-            shutil.rmtree(project_dir / PAPER_ID)
-            env = os.environ.copy()
-            env["PIPELINE_PROJECT_DIR"] = str(project_dir)
-            env.pop("PIPELINE_CORPUS_DIR", None)
-
+            shutil.rmtree(corpus_dir / PAPER_ID)
             completed = subprocess.run(
                 [
-                    sys.executable,
+                    cli_python(),
                     "-m",
                     "pipeline.cli.render_review_from_canonical",
                     PAPER_ID,
@@ -50,11 +49,11 @@ class RenderReviewCliE2ETest(unittest.TestCase):
                 check=True,
                 capture_output=True,
                 text=True,
-                env=env,
+                env=corpus_env(corpus_dir),
             )
 
             payload = json.loads(completed.stdout)
-            review_path = (project_dir / "_canon" / f"{PAPER_ID}.canonical.review.md").resolve()
+            review_path = (corpus_dir / "_canon" / f"{PAPER_ID}.canonical.review.md").resolve()
 
             self.assertEqual(Path(payload["path"]).resolve(), review_path)
             self.assertTrue(review_path.exists())

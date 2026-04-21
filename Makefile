@@ -3,7 +3,7 @@ CORPUS ?= stepview
 CORPUS_DIR := corpus/$(CORPUS)
 MAX_WORKERS ?= 20
 
-.PHONY: help install run-corpus reset-corpus corpus-status run-project test-unit test-integration test-e2e test-smoke
+.PHONY: help install run-corpus reset-corpus corpus-status test-unit test-integration test-e2e test-smoke
 
 help:
 	@printf '%s\n' \
@@ -11,7 +11,6 @@ help:
 		'make run-corpus CORPUS=stepview MAX_WORKERS=20' \
 		'make reset-corpus CORPUS=stepview' \
 		'make corpus-status CORPUS=stepview' \
-		'make run-project PROJECT_DIR=./tmp/fixed_validation_slice MAX_WORKERS=2' \
 		'make test-unit' \
 		'make test-integration' \
 		'make test-e2e' \
@@ -29,10 +28,6 @@ reset-corpus:
 
 corpus-status:
 	@test -f $(CORPUS_DIR)/_runs/status.json && sed -n '1,240p' $(CORPUS_DIR)/_runs/status.json || echo 'No status file found at $(CORPUS_DIR)/_runs/status.json'
-
-run-project:
-	@test -n "$(PROJECT_DIR)" || (echo 'PROJECT_DIR is required'; exit 2)
-	$(VENV_PYTHON) -m pipeline.cli.run_project $(PROJECT_DIR) --max-workers $(MAX_WORKERS)
 
 test-unit:
 	$(VENV_PYTHON) -m unittest discover -s tests/unit -t . -p '*_test.py'

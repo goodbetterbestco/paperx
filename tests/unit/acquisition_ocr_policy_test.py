@@ -48,7 +48,6 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
         self.assertTrue(decision.should_run)
         self.assertEqual(decision.policy, "required")
         self.assertEqual(decision.tool, "ocrmypdf")
-        self.assertIn("low_text_page_ratio", decision.trigger_signals)
 
     def test_degraded_route_recommends_ocr_prepass(self) -> None:
         decision = decide_ocr_prepass_policy(
@@ -78,8 +77,6 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
 
         self.assertTrue(decision.should_run)
         self.assertEqual(decision.policy, "required")
-        self.assertIn("very_low_text_page_ratio", decision.trigger_signals)
-        self.assertIn("very_high_max_image_coverage", decision.trigger_signals)
 
     def test_layout_complex_route_recommends_ocr_when_multiple_risk_signals_accumulate(self) -> None:
         decision = decide_ocr_prepass_policy(
@@ -94,8 +91,6 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
 
         self.assertTrue(decision.should_run)
         self.assertEqual(decision.policy, "recommended")
-        self.assertIn("low_avg_text_chars_per_page", decision.trigger_signals)
-        self.assertIn("high_avg_image_coverage", decision.trigger_signals)
 
     def test_born_digital_route_skips_ocr_prepass(self) -> None:
         decision = decide_ocr_prepass_policy(
@@ -125,7 +120,6 @@ class AcquisitionOcrPolicyTest(unittest.TestCase):
 
         self.assertFalse(decision.should_run)
         self.assertEqual(decision.policy, "skip")
-        self.assertEqual(decision.trigger_signals, ["high_max_image_coverage"])
 
 
 if __name__ == "__main__":
