@@ -52,9 +52,7 @@ def main() -> int:
     args = parse_args()
     project_dir = Path(args.project_dir).expanduser().resolve()
     os.environ["PIPELINE_PROJECT_DIR"] = str(project_dir)
-    os.environ["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)
     os.environ.pop("PIPELINE_CORPUS_DIR", None)
-    os.environ.pop("PAPER_PIPELINE_CORPUS_DIR", None)
 
     from pipeline.corpus_layout import prepare_project_inputs
 

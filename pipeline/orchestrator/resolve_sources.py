@@ -97,22 +97,14 @@ def resolve_paper_sources(
         layout=config.layout,
     )
     primary_route = str((state.acquisition_route or {}).get("primary_route", "") or "")
-    try:
-        source_scorecard = build_source_scorecard_impl(
-            native_layout=native_layout,
-            external_layout=external_layout,
-            mathpix_layout=mathpix_layout,
-            external_math=external_math,
-            route_bias=primary_route,
-            metadata_observations=metadata_candidates,
-        )
-    except TypeError:
-        source_scorecard = build_source_scorecard_impl(
-            native_layout=native_layout,
-            external_layout=external_layout,
-            mathpix_layout=mathpix_layout,
-            external_math=external_math,
-        )
+    source_scorecard = build_source_scorecard_impl(
+        native_layout=native_layout,
+        external_layout=external_layout,
+        mathpix_layout=mathpix_layout,
+        external_math=external_math,
+        route_bias=primary_route,
+        metadata_observations=metadata_candidates,
+    )
     source_scorecard = normalize_scorecard_recommendations(source_scorecard)
     state.source_scorecard = source_scorecard
     state.metadata_observation = select_metadata_observation(

@@ -70,34 +70,24 @@ def build_backfill_source_scorecard(
         "mathpix": _nonempty_metadata_observation("mathpix", mathpix_layout),
     }
 
-    try:
-        scorecard = build_source_scorecard_impl(
-            native_layout=None,
-            external_layout=None,
-            mathpix_layout=None,
-            external_math=None,
-            layout_candidates={
-                "docling": docling_layout,
-                "mathpix": mathpix_layout,
-                "composed": composed_layout if not docling_layout and not mathpix_layout else None,
-            },
-            math_candidates={
-                "docling": docling_math,
-                "mathpix": mathpix_math,
-                "composed": composed_math if not docling_math and not mathpix_math else None,
-            },
-            route_bias=primary_route,
-            metadata_observations=metadata_observations,
-        )
-    except TypeError:
-        scorecard = build_source_scorecard_impl(
-            native_layout=None,
-            external_layout=composed_layout or docling_layout,
-            mathpix_layout=mathpix_layout,
-            external_math=composed_math or mathpix_math or docling_math,
-            route_bias=primary_route,
-            metadata_observations=metadata_observations,
-        )
+    scorecard = build_source_scorecard_impl(
+        native_layout=None,
+        external_layout=None,
+        mathpix_layout=None,
+        external_math=None,
+        layout_candidates={
+            "docling": docling_layout,
+            "mathpix": mathpix_layout,
+            "composed": composed_layout if not docling_layout and not mathpix_layout else None,
+        },
+        math_candidates={
+            "docling": docling_math,
+            "mathpix": mathpix_math,
+            "composed": composed_math if not docling_math and not mathpix_math else None,
+        },
+        route_bias=primary_route,
+        metadata_observations=metadata_observations,
+    )
     return normalize_scorecard_recommendations(scorecard)
 
 

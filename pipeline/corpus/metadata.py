@@ -61,17 +61,10 @@ def discover_paper_pdf_paths(*, layout: ProjectLayout | None = None) -> list[Pat
         paper_id = paper_id_from_dir_name(candidate_dir.name)
         if paper_id in pdf_by_id:
             continue
-        preferred = active_layout.paper_pdf_path(paper_id)
-        legacy = candidate_dir / f"{paper_id}.pdf"
-        if preferred.exists():
-            pdf_by_id[paper_id] = preferred
-            continue
-        if legacy.exists():
-            pdf_by_id[paper_id] = legacy
-            continue
-        other_pdfs = sorted(path for path in candidate_dir.glob("*.pdf") if path.is_file())
-        if other_pdfs:
-            pdf_by_id[paper_id] = other_pdfs[0]
+        expected_pdf = candidate_dir / canonical_pdf_filename(paper_id)
+        if not expected_pdf.exists():
+            raise FileNotFoundError(f"Missing expected paper PDF: {expected_pdf}")
+        pdf_by_id[paper_id] = expected_pdf
     return [pdf_by_id[paper_id] for paper_id in sorted(pdf_by_id)]
 
 

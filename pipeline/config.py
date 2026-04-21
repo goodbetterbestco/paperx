@@ -14,10 +14,6 @@ TextEngine = Literal["native", "pdftotext", "hybrid"]
 _DOCLING_DEVICE_VALUES = {"auto", "cpu", "mps", "cuda", "xpu"}
 
 
-def _env_value(name: str, legacy_name: str, default: str = "") -> str:
-    return os.environ.get(name, os.environ.get(legacy_name, default)).strip()
-
-
 def _configured_docling_device() -> str | None:
     configured = os.environ.get("STEPVIEW_DOCLING_DEVICE", "").strip().lower()
     if configured in _DOCLING_DEVICE_VALUES:
@@ -52,7 +48,7 @@ def build_pipeline_config(
     write_decision_sidecars: bool = True,
 ) -> PipelineConfig:
     active_layout = layout or current_layout()
-    docling_bin = _env_value("PIPELINE_DOCLING_BIN", "PAPER_PIPELINE_DOCLING_BIN")
+    docling_bin = os.environ.get("PIPELINE_DOCLING_BIN", "").strip()
     return PipelineConfig(
         layout=active_layout,
         builder_version=CURRENT_BUILDER_VERSION,

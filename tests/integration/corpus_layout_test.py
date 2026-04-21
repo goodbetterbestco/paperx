@@ -15,7 +15,6 @@ import pipeline.corpus_layout as corpus_layout
 class CorpusLayoutTest(unittest.TestCase):
     def tearDown(self) -> None:
         os.environ.pop("PIPELINE_PROJECT_DIR", None)
-        os.environ.pop("PAPER_PIPELINE_PROJECT_DIR", None)
         importlib.reload(corpus_layout)
 
     def test_project_layout_moves_root_pdfs_into_processed_state(self) -> None:
@@ -67,6 +66,19 @@ class CorpusLayoutTest(unittest.TestCase):
                 layout.review_draft_path("alpha_paper"),
                 project_dir / "_canon" / "alpha_paper.canonical.review.md",
             )
+
+    def test_project_layout_rejects_legacy_source_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            project_dir = Path(temp_dir).resolve()
+            legacy_source = project_dir / "source"
+            legacy_source.mkdir(parents=True, exist_ok=True)
+            (legacy_source / "Alpha Paper.pdf").write_bytes(b"%PDF-1.4\nalpha\n")
+
+            os.environ["PIPELINE_PROJECT_DIR"] = str(project_dir)
+            importlib.reload(corpus_layout)
+
+            with self.assertRaisesRegex(RuntimeError, "Legacy project input directory is no longer supported"):
+                corpus_layout.prepare_project_inputs()
 
 
 if __name__ == "__main__":

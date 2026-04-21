@@ -86,8 +86,10 @@ from pipeline.reconcile.runtime_constants import (
     TRAILING_NUMERIC_ARTIFACT_RE,
     TRUNCATED_PROSE_LEAD_STOPWORDS,
 )
-from pipeline.reconcile.runtime_deps import (
+from pipeline.reconcile.root_helper_bundles import (
     build_reconcile_root_helper_bundles as reconcile_build_reconcile_root_helper_bundles_runtime,
+)
+from pipeline.reconcile.runtime_deps import (
     build_reconcile_runtime_deps as reconcile_build_reconcile_runtime_deps_runtime,
 )
 from pipeline.reconcile.section_filters import starts_like_sentence as reconcile_starts_like_sentence

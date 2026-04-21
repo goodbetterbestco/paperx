@@ -266,7 +266,7 @@ def compose_external_sources(
     docling_sources: dict[str, Any] | None,
     mathpix_sources: dict[str, Any] | None,
     layout: ProjectLayout | None = None,
-    compose_layout_sources_impl: Callable[[dict[str, Any] | None, dict[str, Any] | None], dict[str, Any]] | None = None,
+    compose_layout_sources_impl: Callable[..., dict[str, Any]] | None = None,
     external_layout_path_impl: Callable[..., Path] | None = None,
     external_math_path_impl: Callable[..., Path] | None = None,
     write_json_impl: Callable[[Path, Any], None] | None = None,
@@ -297,32 +297,22 @@ def compose_external_sources(
         "grobid": load_grobid_metadata_observation_impl(paper_id, layout=layout),
         "mathpix": _nonempty_metadata_observation("mathpix", mathpix_layout),
     }
-    try:
-        source_scorecard = build_source_scorecard_impl(
-            native_layout=None,
-            external_layout=None,
-            mathpix_layout=None,
-            external_math=None,
-            layout_candidates={
-                "docling": docling_layout,
-                "mathpix": mathpix_layout,
-            },
-            math_candidates={
-                "docling": docling_math,
-                "mathpix": mathpix_math,
-            },
-            route_bias=primary_route,
-            metadata_observations=metadata_candidates,
-        )
-    except TypeError:
-        source_scorecard = build_source_scorecard_impl(
-            native_layout=None,
-            external_layout=docling_layout,
-            mathpix_layout=mathpix_layout,
-            external_math=mathpix_math or docling_math,
-            route_bias=primary_route,
-            metadata_observations=metadata_candidates,
-        )
+    source_scorecard = build_source_scorecard_impl(
+        native_layout=None,
+        external_layout=None,
+        mathpix_layout=None,
+        external_math=None,
+        layout_candidates={
+            "docling": docling_layout,
+            "mathpix": mathpix_layout,
+        },
+        math_candidates={
+            "docling": docling_math,
+            "mathpix": mathpix_math,
+        },
+        route_bias=primary_route,
+        metadata_observations=metadata_candidates,
+    )
     source_scorecard = normalize_scorecard_recommendations(source_scorecard)
     metadata_observation = select_metadata_observation(
         source_scorecard=source_scorecard,
@@ -332,15 +322,12 @@ def compose_external_sources(
         source_scorecard=source_scorecard,
         metadata_candidates=metadata_candidates,
     )
-    try:
-        final_layout = compose_layout_sources_impl(
-            docling_sources,
-            mathpix_sources,
-            acquisition_route=acquisition_route,
-            source_scorecard=source_scorecard,
-        )
-    except TypeError:
-        final_layout = compose_layout_sources_impl(docling_sources, mathpix_sources)
+    final_layout = compose_layout_sources_impl(
+        docling_sources,
+        mathpix_sources,
+        acquisition_route=acquisition_route,
+        source_scorecard=source_scorecard,
+    )
     final_math = select_math_payload(
         source_scorecard=source_scorecard,
         docling_math=docling_math,

@@ -23,8 +23,6 @@ class StalenessPolicyTest(unittest.TestCase):
         self.assertIn("pipeline/reconcile_blocks.py", fingerprint["modules"])
         self.assertIn("pipeline/formula_semantic_ir.py", fingerprint["modules"])
         self.assertNotIn("missing", fingerprint["modules"].values())
-        self.assertIn("legacy_path_fingerprint", fingerprint["compatibility"])
-        self.assertIn("paper_pipeline_fingerprint", fingerprint["compatibility"])
 
     def test_document_with_matching_inputs_and_pipeline_is_not_stale(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -62,7 +60,7 @@ class StalenessPolicyTest(unittest.TestCase):
             self.assertFalse(result["stale"])
             self.assertEqual(result["reasons"], [])
 
-    def test_legacy_pipeline_fingerprint_is_still_accepted(self) -> None:
+    def test_document_with_legacy_pipeline_fingerprint_is_now_stale(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             pdf_path = Path(temp_dir) / "paper.pdf"
             pdf_path.write_text("pdf-v1", encoding="utf-8")
@@ -78,7 +76,7 @@ class StalenessPolicyTest(unittest.TestCase):
                 use_external_layout=False,
                 use_external_math=False,
             )
-            metadata["pipeline"]["fingerprint"] = current_pipeline["compatibility"]["legacy_path_fingerprint"]
+            metadata["pipeline"]["fingerprint"] = "legacy-path-fingerprint"
             document = {
                 "paper_id": "test_paper",
                 "source": {"pdf_path": str(pdf_path)},
@@ -97,50 +95,8 @@ class StalenessPolicyTest(unittest.TestCase):
                 current_pipeline=current_pipeline,
             )
 
-            self.assertFalse(result["stale"])
-            self.assertEqual(result["reasons"], [])
-
-    def test_paper_pipeline_component_fingerprint_is_still_accepted(self) -> None:
-        with tempfile.TemporaryDirectory() as temp_dir:
-            pdf_path = Path(temp_dir) / "paper.pdf"
-            pdf_path.write_text("pdf-v1", encoding="utf-8")
-            current_pipeline = pipeline_fingerprint()
-            metadata = build_metadata_for_paper(
-                "test_paper",
-                pdf_path=pdf_path,
-                timestamp="2026-04-15T00:00:00Z",
-                layout_engine="native_pdf",
-                math_engine="heuristic",
-                figure_engine="local",
-                text_engine="native_pdf",
-                use_external_layout=False,
-                use_external_math=False,
-            )
-            metadata["pipeline"]["fingerprint"] = current_pipeline["compatibility"]["paper_pipeline_fingerprint"]
-            metadata["pipeline"]["modules"] = {
-                module_id.replace("pipeline/", "paper_pipeline/", 1): module_hash
-                for module_id, module_hash in metadata["pipeline"]["modules"].items()
-            }
-            document = {
-                "paper_id": "test_paper",
-                "source": {"pdf_path": str(pdf_path)},
-                "build": metadata,
-            }
-
-            result = detect_document_staleness(
-                document,
-                desired_flags={"use_external_layout": False, "use_external_math": False},
-                current_inputs=build_input_fingerprints(
-                    "test_paper",
-                    pdf_path=pdf_path,
-                    use_external_layout=False,
-                    use_external_math=False,
-                ),
-                current_pipeline=current_pipeline,
-            )
-
-            self.assertFalse(result["stale"])
-            self.assertEqual(result["reasons"], [])
+            self.assertTrue(result["stale"])
+            self.assertIn("pipeline_fingerprint_changed", result["reasons"])
 
     def test_document_without_stale_metadata_is_flagged(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

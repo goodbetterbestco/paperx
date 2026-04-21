@@ -22,10 +22,3 @@ PIPELINE_COMPONENTS: tuple[tuple[str, Path], ...] = (
     ("pipeline/formula_semantic_policy.py", ROOT / "pipeline" / "math" / "semantic_policy.py"),
     ("pipeline/formula_semantic_ir.py", ROOT / "pipeline" / "math" / "semantic_ir.py"),
 )
-
-# Compatibility ids for historical canonicals that fingerprinted the same
-# files under the old `paper_pipeline/` package name.
-LEGACY_PIPELINE_COMPONENTS: tuple[tuple[str, Path], ...] = tuple(
-    (component_id.replace("pipeline/", "paper_pipeline/", 1), path)
-    for component_id, path in PIPELINE_COMPONENTS
-)

@@ -47,6 +47,16 @@ class CorpusStateTest(unittest.TestCase):
             self.assertFalse((corpus_dir / "corpus_lexicon.json").exists())
             self.assertFalse((corpus_dir / "figure_expectations.json").exists())
 
+    def test_reset_corpus_to_source_state_rejects_legacy_layout_directories(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            corpus_dir = Path(temp_dir).resolve() / "stepview"
+            legacy_source = corpus_dir / "source"
+            legacy_source.mkdir(parents=True, exist_ok=True)
+            (legacy_source / "1990_synthetic_test_paper.pdf").write_bytes(MINIMAL_PDF)
+
+            with self.assertRaisesRegex(RuntimeError, "Legacy corpus layout is no longer supported"):
+                reset_corpus_to_source_state(corpus_dir)
+
 
 if __name__ == "__main__":
     unittest.main()

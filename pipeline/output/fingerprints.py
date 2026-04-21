@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.corpus_layout import ProjectLayout, current_layout, paper_pdf_path
-from pipeline.output.identity import LEGACY_PIPELINE_COMPONENTS, PIPELINE_COMPONENTS
+from pipeline.output.identity import PIPELINE_COMPONENTS
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -73,29 +73,12 @@ def _stable_pipeline_modules() -> dict[str, str]:
     return _component_modules(PIPELINE_COMPONENTS)
 
 
-def _legacy_pipeline_fingerprint() -> str:
-    legacy_modules: dict[str, str] = {}
-    for _, path in PIPELINE_COMPONENTS:
-        fingerprint = fingerprint_path(path)
-        module_path = str(fingerprint["path"])
-        legacy_modules[module_path] = str(fingerprint.get("sha256", "missing"))
-    return _combined_pipeline_hash(legacy_modules)
-
-
-def _paper_pipeline_fingerprint() -> str:
-    return _combined_pipeline_hash(_component_modules(LEGACY_PIPELINE_COMPONENTS))
-
-
 def pipeline_fingerprint() -> dict[str, Any]:
     modules = _stable_pipeline_modules()
     return {
         "builder_version": CURRENT_BUILDER_VERSION,
         "fingerprint": _combined_pipeline_hash(modules),
         "modules": modules,
-        "compatibility": {
-            "legacy_path_fingerprint": _legacy_pipeline_fingerprint(),
-            "paper_pipeline_fingerprint": _paper_pipeline_fingerprint(),
-        },
     }
 
 

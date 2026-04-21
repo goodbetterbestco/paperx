@@ -26,9 +26,7 @@ class ExportTitlesCliE2ETest(unittest.TestCase):
             output_path = project_dir / "tmp" / "titles_and_abstracts.md"
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
-            env["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)
             env.pop("PIPELINE_CORPUS_DIR", None)
-            env.pop("PAPER_PIPELINE_CORPUS_DIR", None)
 
             completed = subprocess.run(
                 [

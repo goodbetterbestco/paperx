@@ -49,7 +49,14 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def _env_local_disabled() -> bool:
+    raw = os.environ.get("PIPELINE_SKIP_ENV_LOCAL", "").strip().lower()
+    return raw in {"1", "true", "yes", "on"}
+
+
 def read_env_local() -> dict[str, str]:
+    if _env_local_disabled():
+        return {}
     if not ENV_LOCAL_PATH.exists():
         return {}
     loaded: dict[str, str] = {}

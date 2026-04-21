@@ -23,32 +23,18 @@ def corpus_paper_id(paper_id: str) -> str:
     return normalize_paper_id(paper_id)
 
 
-def env_value(name: str, legacy_name: str, default: str = "") -> str:
-    return os.environ.get(name, os.environ.get(legacy_name, default)).strip()
-
-
 def configured_project_dir() -> Path | None:
-    configured = env_value("PIPELINE_PROJECT_DIR", "PAPER_PIPELINE_PROJECT_DIR")
+    configured = os.environ.get("PIPELINE_PROJECT_DIR", "").strip()
     if not configured:
         return None
     return Path(configured).expanduser().resolve()
 
 
 def configured_corpus_dir(root: Path, corpus_name: str) -> Path:
-    configured = env_value("PIPELINE_CORPUS_DIR", "PAPER_PIPELINE_CORPUS_DIR")
+    configured = os.environ.get("PIPELINE_CORPUS_DIR", "").strip()
     if configured:
         return Path(configured).expanduser().resolve()
-    corpora_dir = root / "corpus"
-    extracted_home = corpora_dir / corpus_name
-    if extracted_home.exists():
-        return extracted_home
-    legacy_home = root / corpus_name
-    if legacy_home.exists():
-        return legacy_home
-    # Current in-repo fallback during migration. The intended home is
-    # ~/Projects/paperx/corpus/<corpus-name>, beginning with
-    # ~/Projects/paperx/corpus/stepview.
-    return root / "docs"
+    return root / "corpus" / corpus_name
 
 
 def existing_project_paper_ids(layout: ProjectLayout) -> set[str]:
@@ -80,6 +66,12 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
     runs_dir = layout.runs_root
     legacy_source_dir = project_dir / "source"
 
+    if legacy_source_dir.exists():
+        raise RuntimeError(
+            f"Legacy project input directory is no longer supported: {legacy_source_dir}. "
+            "Move PDFs into the project root and rerun."
+        )
+
     project_dir.mkdir(parents=True, exist_ok=True)
     corpus_dir.mkdir(parents=True, exist_ok=True)
     runs_dir.mkdir(parents=True, exist_ok=True)
@@ -90,8 +82,6 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
     discovered_ids: set[str] = set()
 
     candidate_pdfs = sorted(path for path in project_dir.glob("*.pdf") if path.is_file())
-    if legacy_source_dir.exists():
-        candidate_pdfs.extend(sorted(path for path in legacy_source_dir.glob("*.pdf") if path.is_file()))
 
     for existing_dir in sorted(path for path in corpus_dir.iterdir() if path.is_dir()):
         if existing_dir.name.startswith("_") or existing_dir.name in {"source", "corpus"}:
@@ -126,12 +116,6 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
                 "paper_id": paper_id,
             }
         )
-
-    if legacy_source_dir.exists():
-        try:
-            legacy_source_dir.rmdir()
-        except OSError:
-            pass
 
     for paper_id in sorted(existing_project_paper_ids(layout)):
         discovered_ids.add(normalize_paper_id(paper_id))

@@ -26,9 +26,7 @@ class BuildCorpusLexiconCliE2ETest(unittest.TestCase):
             lexicon_path = project_dir / "corpus_lexicon.json"
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
-            env["PAPER_PIPELINE_PROJECT_DIR"] = str(project_dir)
             env.pop("PIPELINE_CORPUS_DIR", None)
-            env.pop("PAPER_PIPELINE_CORPUS_DIR", None)
 
             completed = subprocess.run(
                 [

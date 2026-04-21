@@ -37,15 +37,12 @@ def build_docling_sources(
     write_json_impl = write_json_impl or write_json
     docling_json_path = run_docling_impl(paper_id, pdf_path=pdf_path, device=docling_device_impl(), layout=layout)
     docling_document = json.loads(docling_json_path.read_text(encoding="utf-8"))
-    try:
-        external_layout, math = docling_json_to_external_sources_impl(
-            docling_document,
-            paper_id,
-            layout=layout,
-            pdf_path=pdf_path,
-        )
-    except TypeError:
-        external_layout, math = docling_json_to_external_sources_impl(docling_document, paper_id, layout=layout)
+    external_layout, math = docling_json_to_external_sources_impl(
+        docling_document,
+        paper_id,
+        layout=layout,
+        pdf_path=pdf_path,
+    )
     sources_dir = external_layout_path_impl(paper_id, layout=layout).parent
     sources_dir.mkdir(parents=True, exist_ok=True)
     docling_layout_path = sources_dir / "docling-layout.json"
@@ -76,15 +73,12 @@ def build_mathpix_sources_from_result(
     external_layout_path_impl = external_layout_path_impl or external_layout_path
     write_json_impl = write_json_impl or write_json
     payloads = list(mathpix_result.get("pages") or [])
-    try:
-        external_layout, math = mathpix_pages_to_external_sources_impl(
-            payloads,
-            paper_id,
-            layout=layout,
-            pdf_path=pdf_path,
-        )
-    except TypeError:
-        external_layout, math = mathpix_pages_to_external_sources_impl(payloads, paper_id, layout=layout)
+    external_layout, math = mathpix_pages_to_external_sources_impl(
+        payloads,
+        paper_id,
+        layout=layout,
+        pdf_path=pdf_path,
+    )
     sources_dir = external_layout_path_impl(paper_id, layout=layout).parent
     sources_dir.mkdir(parents=True, exist_ok=True)
     mathpix_layout_path = sources_dir / "mathpix-layout.json"

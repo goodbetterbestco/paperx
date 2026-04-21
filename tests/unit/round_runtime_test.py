@@ -81,6 +81,19 @@ class RoundRuntimeTest(unittest.TestCase):
                 },
             )
 
+    def test_read_env_local_can_be_disabled_by_env_flag(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            env_local = Path(temp_dir) / ".env.local"
+            env_local.write_text("API_KEY=secret\n", encoding="utf-8")
+
+            with (
+                patch.object(round_runtime, "ENV_LOCAL_PATH", env_local),
+                patch.dict("os.environ", {"PIPELINE_SKIP_ENV_LOCAL": "1"}, clear=False),
+            ):
+                loaded = round_runtime.read_env_local()
+
+            self.assertEqual(loaded, {})
+
     def test_load_status_discovers_papers_when_status_file_is_missing(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             layout = _corpus_layout(Path(temp_dir).resolve())

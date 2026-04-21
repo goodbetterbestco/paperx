@@ -114,7 +114,9 @@ class NormalizeLayoutTest(unittest.TestCase):
                 patch("pipeline.reconcile.entrypoint.run_paper_pipeline") as run_paper_pipeline,
             ):
                 run_paper_pipeline.side_effect = (
-                    lambda *args, **kwargs: kwargs["normalize_figure_caption_text"]("Fig. 1 trimmed surface")
+                    lambda *args, **kwargs: kwargs["deps"].source_resolution.normalize_figure_caption_text(
+                        "Fig. 1 trimmed surface"
+                    )
                 )
                 normalized_caption = reconcile_paper_state(
                     "1990_synthetic_test_paper",

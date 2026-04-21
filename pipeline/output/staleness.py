@@ -68,13 +68,8 @@ def detect_document_staleness(
     stored_pipeline = build.get("pipeline")
     if not isinstance(stored_pipeline, dict) or not stored_pipeline.get("fingerprint"):
         reasons.append("missing_pipeline_fingerprint")
-    else:
-        accepted_fingerprints = {str(pipeline.get("fingerprint", ""))}
-        compatibility = pipeline.get("compatibility")
-        if isinstance(compatibility, dict):
-            accepted_fingerprints.update(str(value) for value in compatibility.values() if value)
-        if str(stored_pipeline.get("fingerprint")) not in accepted_fingerprints:
-            reasons.append("pipeline_fingerprint_changed")
+    elif str(stored_pipeline.get("fingerprint")) != str(pipeline.get("fingerprint", "")):
+        reasons.append("pipeline_fingerprint_changed")
 
     if stored_flags != effective_flags:
         reasons.append("build_flags_changed")

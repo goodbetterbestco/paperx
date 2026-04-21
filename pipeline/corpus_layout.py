@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 
 from pipeline.corpus.paths import (
@@ -8,7 +9,6 @@ from pipeline.corpus.paths import (
     configured_project_dir as _configured_project_dir,
     corpus_paper_id,
     display_path as _display_path,
-    env_value as _env_value,
     normalize_paper_id,
     prepare_project_inputs as _prepare_project_inputs,
 )
@@ -34,7 +34,7 @@ class ProjectLayout:
     @classmethod
     def from_environment(cls, *, engine_root: Path | None = None) -> ProjectLayout:
         root = (engine_root or ROOT).resolve()
-        corpus_name = _env_value("PIPELINE_CORPUS_NAME", "PAPER_PIPELINE_CORPUS_NAME", DEFAULT_CORPUS_NAME) or DEFAULT_CORPUS_NAME
+        corpus_name = os.environ.get("PIPELINE_CORPUS_NAME", DEFAULT_CORPUS_NAME).strip() or DEFAULT_CORPUS_NAME
         project_dir = _configured_project_dir()
         if project_dir is not None:
             source_root = project_dir
@@ -83,9 +83,6 @@ class ProjectLayout:
         source = self.source_root / f"{canonical_paper_id}.pdf"
         if source.exists():
             return source
-        legacy_source = self.project_root() / "source" / f"{canonical_paper_id}.pdf"
-        if legacy_source.exists():
-            return legacy_source
         return converted
 
     def canonical_path(self, paper_id: str) -> Path:

@@ -19,11 +19,9 @@ def _remove_path(path: Path) -> int:
 
 
 def _paper_id_for_pdf(pdf_path: Path, *, corpus_dir: Path) -> str:
-    if pdf_path.parent == corpus_dir or pdf_path.parent.name == "source":
+    if pdf_path.parent == corpus_dir:
         return normalize_paper_id(pdf_path.stem)
     if PAPER_DIR_RE.match(pdf_path.parent.name):
-        return normalize_paper_id(pdf_path.parent.name)
-    if pdf_path.parent.parent == corpus_dir / "corpus" and PAPER_DIR_RE.match(pdf_path.parent.name):
         return normalize_paper_id(pdf_path.parent.name)
     return normalize_paper_id(pdf_path.stem)
 
@@ -31,19 +29,20 @@ def _paper_id_for_pdf(pdf_path: Path, *, corpus_dir: Path) -> str:
 def _discover_pdf_candidates(corpus_dir: Path) -> list[Path]:
     candidates: list[Path] = []
     candidates.extend(sorted(path for path in corpus_dir.glob("*.pdf") if path.is_file()))
-    legacy_source = corpus_dir / "source"
-    if legacy_source.exists():
-        candidates.extend(sorted(path for path in legacy_source.glob("*.pdf") if path.is_file()))
     candidates.extend(sorted(path for path in corpus_dir.glob("*/*.pdf") if path.is_file() and PAPER_DIR_RE.match(path.parent.name)))
-    legacy_corpus = corpus_dir / "corpus"
-    if legacy_corpus.exists():
-        candidates.extend(sorted(path for path in legacy_corpus.glob("*/*.pdf") if path.is_file() and PAPER_DIR_RE.match(path.parent.name)))
     return candidates
 
 
 def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
     root = Path(corpus_dir).expanduser().resolve()
     root.mkdir(parents=True, exist_ok=True)
+
+    for legacy_path in (root / "source", root / "corpus"):
+        if legacy_path.exists():
+            raise RuntimeError(
+                f"Legacy corpus layout is no longer supported: {legacy_path}. "
+                "Move PDFs into the corpus root or paper directories before resetting."
+            )
 
     moved_pdfs: list[dict[str, str]] = []
     deduped_pdfs: list[str] = []
@@ -72,8 +71,6 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
         root / "_canon",
         root / "review_drafts",
         root / "_runs",
-        root / "source",
-        root / "corpus",
         root / "corpus_lexicon.json",
         root / "figure_expectations.json",
     ]:
@@ -101,4 +98,3 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
         "removed_paths": removed_paths,
         "removed_file_count": removed_files,
     }
-

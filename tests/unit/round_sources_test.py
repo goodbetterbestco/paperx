@@ -103,7 +103,7 @@ class RoundSourcesTest(unittest.TestCase):
                 layout=layout,
                 docling_device_impl=lambda: "cpu",
                 run_docling_impl=lambda *args, **kwargs: docling_json_path,
-                docling_json_to_external_sources_impl=lambda document, target_paper_id, *, layout=None: (
+                docling_json_to_external_sources_impl=lambda document, target_paper_id, *, layout=None, pdf_path=None: (
                     {"engine": "docling", "blocks": [{"id": "blk-1"}], "from": target_paper_id},
                     {"engine": "docling", "entries": [{"id": "eq-1"}]},
                 ),
@@ -128,7 +128,7 @@ class RoundSourcesTest(unittest.TestCase):
                 paper_id,
                 {"pdf_id": "pdf-123", "elapsed_seconds": 4.25, "pages": [{"page": 1}]},
                 layout=layout,
-                mathpix_pages_to_external_sources_impl=lambda payloads, target_paper_id, *, layout=None: (
+                mathpix_pages_to_external_sources_impl=lambda payloads, target_paper_id, *, layout=None, pdf_path=None: (
                     {"engine": "mathpix", "blocks": [{"id": f"{target_paper_id}-blk"}]},
                     {"engine": "mathpix", "entries": [{"id": "math-1"}, {"id": "math-2"}]},
                 ),

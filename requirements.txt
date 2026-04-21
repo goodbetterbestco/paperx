@@ -1,3 +1,5 @@
 PyMuPDF==1.27.2.2
 docling==2.89.0
 latex2mathml==3.78.1
+ocrmypdf==17.4.1
+wordfreq
