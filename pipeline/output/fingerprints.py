@@ -88,21 +88,10 @@ def build_input_fingerprints(
     pdf_path: str | Path | None = None,
     layout: ProjectLayout | None = None,
 ) -> dict[str, Any]:
-    active_layout = layout or current_layout()
     resolved_pdf_path = pdf_path or paper_pdf_path(paper_id)
-    inputs: dict[str, Any] = {
+    return {
         "pdf": fingerprint_path(resolved_pdf_path),
     }
-    layout_path = active_layout.canonical_sources_dir(paper_id) / "layout.json"
-    if layout_path.exists():
-        inputs["layout"] = fingerprint_path(layout_path)
-    math_path = active_layout.canonical_sources_dir(paper_id) / "math.json"
-    if math_path.exists():
-        inputs["math"] = fingerprint_path(math_path)
-    metadata_reference_path = active_layout.canonical_sources_dir(paper_id) / "grobid.tei.xml"
-    if metadata_reference_path.exists():
-        inputs["metadata"] = fingerprint_path(metadata_reference_path)
-    return inputs
 
 
 def build_metadata_for_paper(

@@ -30,6 +30,8 @@ class ProjectLayout:
     runs_root: Path
     tmp_root: Path
     figure_expectations_path: Path
+    data_root: Path | None = None
+    figures_root: Path | None = None
 
     @classmethod
     def from_environment(cls, *, engine_root: Path | None = None) -> ProjectLayout:
@@ -37,16 +39,20 @@ class ProjectLayout:
         corpus_name = os.environ.get("PIPELINE_CORPUS_NAME", DEFAULT_CORPUS_NAME).strip() or DEFAULT_CORPUS_NAME
         project_dir = _configured_project_dir()
         if project_dir is not None:
-            source_root = project_dir
+            source_root = project_dir / "_source"
             corpus_root = project_dir
+            data_root = project_dir / "_data"
+            figures_root = project_dir / "_figures"
             runs_root = project_dir / "_runs"
-            review_root = runs_root / "review_drafts"
+            review_root = project_dir / "_canon"
             mode = "project"
         else:
             corpus_root = _configured_corpus_dir(root, corpus_name)
-            source_root = corpus_root
+            source_root = corpus_root / "_source"
+            data_root = corpus_root / "_data"
+            figures_root = corpus_root / "_figures"
             runs_root = corpus_root / "_runs"
-            review_root = runs_root / "review_drafts"
+            review_root = corpus_root / "_canon"
             mode = "corpus"
         return cls(
             engine_root=root,
@@ -55,6 +61,8 @@ class ProjectLayout:
             project_dir=project_dir,
             corpus_root=corpus_root,
             source_root=source_root,
+            data_root=data_root,
+            figures_root=figures_root,
             review_root=review_root,
             runs_root=runs_root,
             tmp_root=root / "tmp",
@@ -72,6 +80,12 @@ class ProjectLayout:
     def project_root(self) -> Path:
         return self.project_dir if self.project_dir is not None else self.corpus_root
 
+    def resolved_data_root(self) -> Path:
+        return self.data_root or (self.corpus_root / "_data")
+
+    def resolved_figures_root(self) -> Path:
+        return self.figures_root or (self.corpus_root / "_figures")
+
     def paper_dir(self, paper_id: str) -> Path:
         return self.corpus_root / corpus_paper_id(paper_id)
 
@@ -80,22 +94,25 @@ class ProjectLayout:
 
     def paper_pdf_path(self, paper_id: str) -> Path:
         canonical_paper_id = corpus_paper_id(paper_id)
-        converted = self.paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
-        if converted.exists():
-            return converted
         source = self.source_root / f"{canonical_paper_id}.pdf"
         if source.exists():
             return source
-        return converted
+        legacy_root = self.corpus_root / f"{canonical_paper_id}.pdf"
+        if legacy_root.exists():
+            return legacy_root
+        legacy_processed = self.paper_dir(canonical_paper_id) / f"{canonical_paper_id}.pdf"
+        if legacy_processed.exists():
+            return legacy_processed
+        return source
 
     def canonical_path(self, paper_id: str) -> Path:
-        return self.paper_dir(paper_id) / "canonical.json"
+        return self.resolved_data_root() / f"{corpus_paper_id(paper_id)}.json"
 
     def canonical_sources_dir(self, paper_id: str) -> Path:
         return self.paper_runs_dir(paper_id) / "canonical_sources"
 
     def figures_dir(self, paper_id: str) -> Path:
-        return self.paper_dir(paper_id) / "figures"
+        return self.resolved_figures_root() / corpus_paper_id(paper_id)
 
     def figure_manifest_path(self, paper_id: str) -> Path:
         return self.figures_dir(paper_id) / "manifest.json"
@@ -110,7 +127,10 @@ class ProjectLayout:
         return self.runs_root / "status.json"
 
     def discover_source_pdfs(self) -> list[Path]:
-        return sorted(path for path in self.source_root.glob("*.pdf") if path.is_file())
+        source_pdfs = sorted(path for path in self.source_root.glob("*.pdf") if path.is_file())
+        if source_pdfs:
+            return source_pdfs
+        return sorted(path for path in self.corpus_root.glob("*.pdf") if path.is_file())
 
 
 DEFAULT_LAYOUT = ProjectLayout.from_environment(engine_root=ROOT)

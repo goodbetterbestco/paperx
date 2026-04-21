@@ -40,6 +40,8 @@ def paper_id_from_pdf_path(pdf_path: Path, *, layout: ProjectLayout | None = Non
     active_layout = layout or current_layout()
     if pdf_path.parent.resolve() == active_layout.source_root.resolve():
         return corpus_paper_id(pdf_path.stem)
+    if pdf_path.parent.resolve() == active_layout.corpus_root.resolve():
+        return corpus_paper_id(pdf_path.stem)
     if PAPER_DIR_RE.match(pdf_path.parent.name):
         return paper_id_from_dir_name(pdf_path.parent.name)
     return corpus_paper_id(pdf_path.stem)
@@ -55,7 +57,7 @@ def discover_paper_pdf_paths(*, layout: ProjectLayout | None = None) -> list[Pat
     corpus_root = active_layout.corpus_root
     if not corpus_root.exists():
         return []
-    for pdf_path in sorted(path for path in active_layout.source_root.glob("*.pdf") if path.is_file()):
+    for pdf_path in active_layout.discover_source_pdfs():
         pdf_by_id[paper_id_from_pdf_path(pdf_path, layout=active_layout)] = pdf_path
     for candidate_dir in sorted(path for path in corpus_root.iterdir() if is_paper_dir(path)):
         paper_id = paper_id_from_dir_name(candidate_dir.name)

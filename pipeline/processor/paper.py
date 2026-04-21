@@ -29,6 +29,7 @@ def build_paper(
     include_review: bool = False,
     layout: ProjectLayout | None = None,
     state: PaperState | None = None,
+    prepared_sources: dict[str, Any] | None = None,
 ) -> PaperBuildResult:
     active_layout = layout or current_layout()
     config = build_pipeline_config(
@@ -41,6 +42,7 @@ def build_paper(
         text_engine=text_engine,
         config=config,
         state=state,
+        prepared_sources=prepared_sources,
     )
     return PaperBuildResult(
         layout=active_layout,

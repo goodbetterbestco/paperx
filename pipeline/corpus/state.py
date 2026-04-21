@@ -23,7 +23,7 @@ def _remove_path(path: Path) -> int:
 
 
 def _paper_id_for_pdf(pdf_path: Path, *, corpus_dir: Path) -> str:
-    if pdf_path.parent == corpus_dir:
+    if pdf_path.parent == corpus_dir or pdf_path.parent == corpus_dir / "_source":
         return normalize_paper_id(pdf_path.stem)
     if PAPER_DIR_RE.match(pdf_path.parent.name):
         return normalize_paper_id(pdf_path.parent.name)
@@ -32,6 +32,8 @@ def _paper_id_for_pdf(pdf_path: Path, *, corpus_dir: Path) -> str:
 
 def _discover_pdf_candidates(corpus_dir: Path) -> list[Path]:
     candidates: list[Path] = []
+    source_root = corpus_dir / "_source"
+    candidates.extend(sorted(path for path in source_root.glob("*.pdf") if path.is_file()))
     candidates.extend(sorted(path for path in corpus_dir.glob("*.pdf") if path.is_file()))
     candidates.extend(sorted(path for path in corpus_dir.glob("*/*.pdf") if path.is_file() and PAPER_DIR_RE.match(path.parent.name)))
     return candidates
@@ -40,6 +42,8 @@ def _discover_pdf_candidates(corpus_dir: Path) -> list[Path]:
 def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
     root = Path(corpus_dir).expanduser().resolve()
     root.mkdir(parents=True, exist_ok=True)
+    source_root = root / "_source"
+    source_root.mkdir(parents=True, exist_ok=True)
 
     for legacy_path in (root / "source", root / "corpus"):
         if legacy_path.exists():
@@ -53,7 +57,7 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
 
     for pdf_path in _discover_pdf_candidates(root):
         paper_id = _paper_id_for_pdf(pdf_path, corpus_dir=root)
-        target_path = root / f"{paper_id}.pdf"
+        target_path = source_root / f"{paper_id}.pdf"
         if pdf_path == target_path:
             continue
         if target_path.exists():
@@ -72,6 +76,8 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
     removed_files = 0
     removed_paths: list[str] = []
     for artifact_path in [
+        root / "_data",
+        root / "_figures",
         root / "_canon",
         root / "review_drafts",
         root / "_runs",
@@ -91,10 +97,11 @@ def reset_corpus_to_source_state(corpus_dir: str | Path) -> dict[str, object]:
         removed_files += _remove_path(paper_dir)
         removed_paths.append(str(paper_dir))
 
-    source_pdfs = sorted(path.name for path in root.glob("*.pdf") if path.is_file())
+    source_pdfs = sorted(path.name for path in source_root.glob("*.pdf") if path.is_file())
     return {
         "corpus_dir": str(root),
         "state": "source",
+        "source_dir": str(source_root),
         "paper_count": len(source_pdfs),
         "source_pdfs": source_pdfs,
         "moved_pdfs": moved_pdfs,
@@ -110,8 +117,10 @@ def cleanup_processed_runtime_artifacts(layout: "ProjectLayout") -> dict[str, ob
     removed_paths: list[str] = []
 
     legacy_paths = [
-        root / "_canon",
+        root / "_data" / "sources",
+        root / "_figures" / "review_drafts",
         root / "review_drafts",
+        root / "_runs" / "papers",
     ]
     legacy_paths.extend(
         paper_dir / "canonical_sources"

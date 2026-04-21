@@ -86,91 +86,12 @@ def build_single_page_text_pdf(lines: tuple[tuple[int, str], ...] = PDF_LINES) -
     return b"".join(parts)
 
 
-def _processed_layout_payload() -> dict[str, object]:
-    return {
-        "engine": "docling",
-        "pdf_path": f"{PAPER_ID}/{PAPER_ID}.pdf",
-        "page_count": 1,
-        "page_sizes_pt": [{"page": 1, "width": 612.0, "height": 792.0}],
-        "blocks": [
-            {
-                "id": "b1",
-                "page": 1,
-                "order": 1,
-                "text": TITLE,
-                "role": "front_matter",
-                "bbox": {"x0": 72, "y0": 72, "x1": 420, "y1": 90},
-                "meta": {},
-            },
-            {
-                "id": "b2",
-                "page": 1,
-                "order": 2,
-                "text": AUTHORS,
-                "role": "front_matter",
-                "bbox": {"x0": 72, "y0": 110, "x1": 350, "y1": 126},
-                "meta": {},
-            },
-            {
-                "id": "b3",
-                "page": 1,
-                "order": 3,
-                "text": AFFILIATION,
-                "role": "front_matter",
-                "bbox": {"x0": 72, "y0": 140, "x1": 460, "y1": 156},
-                "meta": {},
-            },
-            {
-                "id": "b4",
-                "page": 1,
-                "order": 4,
-                "text": "Abstract",
-                "role": "front_matter",
-                "bbox": {"x0": 72, "y0": 180, "x1": 130, "y1": 196},
-                "meta": {},
-            },
-            {
-                "id": "b5",
-                "page": 1,
-                "order": 5,
-                "text": ABSTRACT,
-                "role": "front_matter",
-                "bbox": {"x0": 72, "y0": 200, "x1": 500, "y1": 216},
-                "meta": {},
-            },
-            {
-                "id": "b6",
-                "page": 1,
-                "order": 6,
-                "text": "1. Introduction",
-                "role": "heading",
-                "bbox": {"x0": 72, "y0": 240, "x1": 220, "y1": 256},
-                "meta": {},
-            },
-            {
-                "id": "b7",
-                "page": 1,
-                "order": 7,
-                "text": BODY,
-                "role": "paragraph",
-                "bbox": {"x0": 72, "y0": 270, "x1": 520, "y1": 286},
-                "meta": {},
-            },
-        ],
-    }
-
-
 def create_processed_project_fixture(project_dir: Path) -> Path:
-    paper_dir = project_dir / PAPER_ID
-    sources_dir = project_dir / "_runs" / "papers" / PAPER_ID / "canonical_sources"
-    paper_dir.mkdir(parents=True, exist_ok=True)
-    sources_dir.mkdir(parents=True, exist_ok=True)
-    (paper_dir / f"{PAPER_ID}.pdf").write_bytes(build_single_page_text_pdf())
-    (sources_dir / "layout.json").write_text(
-        json.dumps(_processed_layout_payload(), indent=2) + "\n",
-        encoding="utf-8",
-    )
-    return paper_dir
+    source_dir = project_dir / "_source"
+    source_dir.mkdir(parents=True, exist_ok=True)
+    pdf_path = source_dir / f"{PAPER_ID}.pdf"
+    pdf_path.write_bytes(build_single_page_text_pdf())
+    return pdf_path
 
 
 def create_source_project_fixture(project_dir: Path) -> Path:

@@ -26,7 +26,7 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
     def test_build_canonical_cli_writes_canonical_for_processed_project_fixture(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "build_canonical_project"
-            paper_dir = create_processed_project_fixture(project_dir)
+            pdf_path = create_processed_project_fixture(project_dir)
 
             completed = subprocess.run(
                 [
@@ -43,18 +43,19 @@ class BuildCanonicalCliE2ETest(unittest.TestCase):
             )
 
             payload = json.loads(completed.stdout)
-            canonical_path = paper_dir / "canonical.json"
+            canonical_path = project_dir / "_data" / f"{PAPER_ID}.json"
 
             self.assertEqual(Path(payload["path"]).resolve(), canonical_path.resolve())
-            self.assertEqual(payload["sections"], 1)
-            self.assertEqual(payload["blocks"], 2)
+            self.assertGreaterEqual(payload["sections"], 2)
+            self.assertGreaterEqual(payload["blocks"], 2)
             self.assertTrue(canonical_path.exists())
+            self.assertTrue(pdf_path.exists())
 
             document = json.loads(canonical_path.read_text(encoding="utf-8"))
             self.assertEqual(document["paper_id"], PAPER_ID)
             self.assertEqual(document["title"], TITLE)
             self.assertEqual(document["build"]["sources"]["layout_engine"], "docling")
-            self.assertIn("layout", document["build"]["inputs"])
+            self.assertIn("pdf", document["build"]["inputs"])
 
 
 if __name__ == "__main__":

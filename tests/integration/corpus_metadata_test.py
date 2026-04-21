@@ -22,8 +22,9 @@ class CorpusMetadataTest(unittest.TestCase):
     def test_corpus_discovers_unprefixed_ids(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             corpus_dir = Path(temp_dir).resolve() / "stepview"
-            corpus_dir.mkdir(parents=True, exist_ok=True)
-            pdf_path = corpus_dir / "1967_quantitative_invisibility.pdf"
+            source_dir = corpus_dir / "_source"
+            source_dir.mkdir(parents=True, exist_ok=True)
+            pdf_path = source_dir / "1967_quantitative_invisibility.pdf"
             pdf_path.write_bytes(b"%PDF-1.4\nsynthetic\n")
 
             os.environ["PIPELINE_CORPUS_DIR"] = str(corpus_dir)

@@ -45,9 +45,8 @@ class RunProjectCliE2ETest(unittest.TestCase):
             )
 
             payload = json.loads(completed.stdout)
-            paper_dir = project_dir / PAPER_ID
-            canonical_path = paper_dir / "canonical.json"
-            review_path = project_dir / "_runs" / "review_drafts" / f"{PAPER_ID}.canonical.review.md"
+            canonical_path = project_dir / "_data" / f"{PAPER_ID}.json"
+            review_path = project_dir / "_canon" / f"{PAPER_ID}.canonical.review.md"
             status_path = project_dir / "_runs" / "status.json"
             report_path = project_dir / "_runs" / "final_summary.md"
 
@@ -55,11 +54,9 @@ class RunProjectCliE2ETest(unittest.TestCase):
             self.assertEqual(payload["paper_ids"], [PAPER_ID])
             self.assertEqual(len(payload["moved_pdfs"]), 1)
             self.assertFalse(source_pdf_path.exists())
-            self.assertTrue((paper_dir / f"{PAPER_ID}.pdf").exists())
+            self.assertTrue((project_dir / "_source" / f"{PAPER_ID}.pdf").exists())
             self.assertTrue(canonical_path.exists())
             self.assertTrue(review_path.exists())
-            self.assertFalse((paper_dir / "canonical_sources").exists())
-            self.assertFalse((project_dir / "_canon").exists())
             self.assertEqual(Path(payload["status_path"]).resolve(), status_path.resolve())
             self.assertEqual(Path(payload["report_path"]).resolve(), report_path.resolve())
 

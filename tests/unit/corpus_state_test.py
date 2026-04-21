@@ -18,7 +18,7 @@ MINIMAL_PDF = b"%PDF-1.4\nsynthetic\n"
 
 
 class CorpusStateTest(unittest.TestCase):
-    def test_reset_corpus_to_source_state_moves_pdfs_back_to_root_and_removes_artifacts(self) -> None:
+    def test_reset_corpus_to_source_state_moves_pdfs_into_source_dir_and_removes_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             corpus_dir = Path(temp_dir).resolve() / "stepview"
             paper_dir = corpus_dir / "1990_synthetic_test_paper"
@@ -40,7 +40,7 @@ class CorpusStateTest(unittest.TestCase):
             result = reset_corpus_to_source_state(corpus_dir)
 
             self.assertEqual(result["state"], "source")
-            self.assertTrue((corpus_dir / "1990_synthetic_test_paper.pdf").exists())
+            self.assertTrue((corpus_dir / "_source" / "1990_synthetic_test_paper.pdf").exists())
             self.assertFalse(paper_dir.exists())
             self.assertFalse((corpus_dir / "_canon").exists())
             self.assertFalse((corpus_dir / "_runs").exists())

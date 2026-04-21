@@ -85,6 +85,7 @@ def run_paper_job(
             text_engine=preferred_text_engine,
             include_review=True,
             layout=layout,
+            prepared_sources=composed,
         )
         timings["build_seconds"] = round(time.perf_counter() - build_started, 3)
         document = build_result.document if hasattr(build_result, "document") else build_result["document"]

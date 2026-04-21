@@ -9,11 +9,7 @@ __pycache__/
 venv/
 .env.local
 tmp/
-corpus/*/_canon/
-corpus/*/_runs/
-corpus/*/source/
-corpus/*/corpus/
-corpus/*/corpus_lexicon.json
-corpus/*/figure_expectations.json
-corpus/*/*.canonical.review.md
-corpus/*/[0-9][0-9][0-9][0-9]_*/
+corpus/*/**
+!corpus/*/
+!corpus/*/_source/
+!corpus/*/_source/**

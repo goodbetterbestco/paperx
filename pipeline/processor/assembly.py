@@ -3,29 +3,15 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pipeline.acquisition.providers import derive_metadata_reference_observation_from_layout
-from pipeline.acquisition.routing import build_acquisition_route_report
-from pipeline.acquisition.scoring import build_source_scorecard
 from pipeline.acquisition.source_ownership import (
-    normalize_scorecard_recommendations,
     reported_layout_provider,
     reported_math_provider,
-    select_metadata_observation,
-    select_reference_observation,
 )
 from pipeline.assembly.canonical_builder import build_canonical_document
 from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.output.fingerprints import build_input_fingerprints
 from pipeline.processor.status import now_iso
-from pipeline.sources.external import (
-    load_external_layout,
-    load_external_math,
-    load_grobid_metadata_observation,
-    load_mathpix_layout,
-    load_mathpix_metadata_observation,
-)
 from pipeline.sources.figures import extract_figures
-from pipeline.sources.layout import extract_layout
 from pipeline.state import PaperState
 from pipeline.text.references import normalize_reference_text
 from pipeline.types import default_review
@@ -276,6 +262,7 @@ def build_paper_state(
     text_engine: str = "native",
     config: PipelineConfig | None = None,
     state: PaperState | None = None,
+    prepared_sources: dict[str, Any] | None = None,
 ) -> PaperState:
     runtime_config = config or build_pipeline_config(text_engine=text_engine, include_review=False)
     paper_state = state or PaperState.begin(
@@ -284,39 +271,29 @@ def build_paper_state(
         started_at=now_iso(),
     )
 
-    native_layout = extract_layout(paper_id, layout=runtime_config.layout)
-    acquired_layout = load_external_layout(paper_id, layout=runtime_config.layout) or native_layout
-    external_math = load_external_math(paper_id, layout=runtime_config.layout)
-    mathpix_layout = load_mathpix_layout(paper_id, layout=runtime_config.layout)
-    figures = extract_figures(paper_id, layout=runtime_config.layout)
-    metadata_layout_provider = str((acquired_layout or {}).get("engine", "docling") or "docling")
-    metadata_candidates = {
-        metadata_layout_provider: derive_metadata_reference_observation_from_layout(
-            metadata_layout_provider,
-            acquired_layout,
-        ).to_dict() if acquired_layout else None,
-        "grobid": load_grobid_metadata_observation(paper_id, layout=runtime_config.layout),
-        "mathpix": load_mathpix_metadata_observation(paper_id, layout=runtime_config.layout),
-    }
-    acquisition_route = build_acquisition_route_report(paper_id, layout=runtime_config.layout)
-    source_scorecard = normalize_scorecard_recommendations(
-        build_source_scorecard(
-            native_layout=native_layout,
-            external_layout=acquired_layout,
-            mathpix_layout=mathpix_layout,
-            external_math=external_math,
-            route_bias=str(acquisition_route.get("primary_route", "") or ""),
-            metadata_observations=metadata_candidates,
+    if prepared_sources is None:
+        from pipeline.processor.sources import build_extraction_sources_for_paper, compose_external_sources
+
+        docling_sources, mathpix_sources, _ = build_extraction_sources_for_paper(
+            paper_id,
+            layout=runtime_config.layout,
         )
-    )
-    metadata_observation = select_metadata_observation(
-        source_scorecard=source_scorecard,
-        metadata_candidates=metadata_candidates,
-    )
-    reference_observation = select_reference_observation(
-        source_scorecard=source_scorecard,
-        metadata_candidates=metadata_candidates,
-    )
+        prepared_sources = compose_external_sources(
+            paper_id,
+            docling_sources=docling_sources,
+            mathpix_sources=mathpix_sources,
+            layout=runtime_config.layout,
+        )
+
+    acquired_layout = dict(prepared_sources.get("final_layout") or {})
+    external_math = dict(prepared_sources.get("final_math") or {})
+    mathpix_layout = dict(prepared_sources.get("mathpix_layout") or {})
+    metadata_candidates = dict(prepared_sources.get("metadata_candidates") or {})
+    metadata_observation = dict(prepared_sources.get("metadata_observation") or {}) or None
+    reference_observation = dict(prepared_sources.get("reference_observation") or {}) or None
+    acquisition_route = dict(prepared_sources.get("acquisition_route_payload") or {})
+    source_scorecard = dict(prepared_sources.get("source_scorecard") or {})
+    figures = extract_figures(paper_id, layout=runtime_config.layout)
     title, authors, affiliations, abstract = _front_matter_from_layout(acquired_layout, metadata_observation)
     if not abstract:
         abstract = str((metadata_observation or {}).get("abstract", "") or "").strip()
@@ -343,7 +320,7 @@ def build_paper_state(
         },
     }
 
-    paper_state.native_layout = native_layout
+    paper_state.native_layout = acquired_layout
     paper_state.external_layout = acquired_layout
     paper_state.merged_layout = acquired_layout
     paper_state.external_math = external_math
@@ -375,12 +352,11 @@ def build_paper_state(
     paper_state.input_fingerprints = build_input_fingerprints(
         paper_id,
         pdf_path=paper_state.pdf_path,
-        layout=runtime_config.layout,
     )
     source = {
-        "pdf_path": str((acquired_layout or native_layout).get("pdf_path", paper_state.pdf_path)),
-        "page_count": int((acquired_layout or native_layout).get("page_count", 0) or 0),
-        "page_sizes_pt": list((acquired_layout or native_layout).get("page_sizes_pt", [])),
+        "pdf_path": str(paper_state.pdf_path),
+        "page_count": int(acquired_layout.get("page_count", 0) or 0),
+        "page_sizes_pt": list(acquired_layout.get("page_sizes_pt", [])),
     }
     paper_state.document = build_canonical_document(
         paper_id=paper_id,

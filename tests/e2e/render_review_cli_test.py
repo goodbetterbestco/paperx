@@ -24,6 +24,17 @@ class RenderReviewCliE2ETest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_dir = Path(temp_dir) / "render_review_project"
             shutil.copytree(FIXTURE_PROJECT, project_dir)
+            (project_dir / "_source").mkdir(parents=True, exist_ok=True)
+            (project_dir / "_data").mkdir(parents=True, exist_ok=True)
+            shutil.move(
+                str(project_dir / PAPER_ID / f"{PAPER_ID}.pdf"),
+                str(project_dir / "_source" / f"{PAPER_ID}.pdf"),
+            )
+            shutil.move(
+                str(project_dir / PAPER_ID / "canonical.json"),
+                str(project_dir / "_data" / f"{PAPER_ID}.json"),
+            )
+            shutil.rmtree(project_dir / PAPER_ID)
             env = os.environ.copy()
             env["PIPELINE_PROJECT_DIR"] = str(project_dir)
             env.pop("PIPELINE_CORPUS_DIR", None)
@@ -43,7 +54,7 @@ class RenderReviewCliE2ETest(unittest.TestCase):
             )
 
             payload = json.loads(completed.stdout)
-            review_path = (project_dir / "_runs" / "review_drafts" / f"{PAPER_ID}.canonical.review.md").resolve()
+            review_path = (project_dir / "_canon" / f"{PAPER_ID}.canonical.review.md").resolve()
 
             self.assertEqual(Path(payload["path"]).resolve(), review_path)
             self.assertTrue(review_path.exists())

@@ -40,14 +40,15 @@ def configured_corpus_dir(root: Path, corpus_name: str) -> Path:
 def existing_project_paper_ids(layout: ProjectLayout) -> set[str]:
     paper_ids: set[str] = set()
     if layout.corpus_root.exists():
+        for pdf_path in sorted(path for path in layout.source_root.glob("*.pdf") if path.is_file()):
+            paper_ids.add(normalize_paper_id(pdf_path.stem))
+        data_root = layout.resolved_data_root()
+        if data_root.exists():
+            for json_path in sorted(path for path in data_root.glob("*.json") if path.is_file()):
+                paper_ids.add(normalize_paper_id(json_path.stem))
         for path in layout.corpus_root.iterdir():
-            if not path.is_dir():
-                continue
-            if path.name.startswith("_") or path.name in {"source", "corpus"}:
-                continue
-            if not PAPER_DIR_RE.match(path.name):
-                continue
-            paper_ids.add(path.name)
+            if path.is_dir() and PAPER_DIR_RE.match(path.name):
+                paper_ids.add(path.name)
     return paper_ids
 
 
@@ -64,6 +65,8 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
     source_dir = layout.source_root
     corpus_dir = layout.corpus_root
     runs_dir = layout.runs_root
+    data_dir = layout.resolved_data_root()
+    figures_dir = layout.resolved_figures_root()
     legacy_source_dir = project_dir / "source"
 
     if legacy_source_dir.exists():
@@ -73,7 +76,10 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
         )
 
     project_dir.mkdir(parents=True, exist_ok=True)
+    source_dir.mkdir(parents=True, exist_ok=True)
     corpus_dir.mkdir(parents=True, exist_ok=True)
+    data_dir.mkdir(parents=True, exist_ok=True)
+    figures_dir.mkdir(parents=True, exist_ok=True)
     runs_dir.mkdir(parents=True, exist_ok=True)
 
     preexisting_ids = existing_project_paper_ids(layout)
@@ -83,28 +89,20 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
 
     candidate_pdfs = sorted(path for path in project_dir.glob("*.pdf") if path.is_file())
 
-    for existing_dir in sorted(path for path in corpus_dir.iterdir() if path.is_dir()):
-        if existing_dir.name.startswith("_") or existing_dir.name in {"source", "corpus"}:
-            continue
-        existing_pdf = existing_dir / f"{normalize_paper_id(existing_dir.name)}.pdf"
-        if existing_pdf.exists():
-            discovered_ids.add(normalize_paper_id(existing_dir.name))
-            reserved_ids.add(normalize_paper_id(existing_dir.name))
-
     for pdf_path in candidate_pdfs:
         base_id = normalize_paper_id(pdf_path.stem)
         paper_id = base_id
         suffix = 2
         while paper_id in reserved_ids:
             if paper_id in preexisting_ids:
-                existing_target = corpus_dir / paper_id / f"{paper_id}.pdf"
+                existing_target = source_dir / f"{paper_id}.pdf"
                 raise FileExistsError(
                     f"Cannot move {pdf_path.name} into processed state; {existing_target} already exists. "
                     "Reset the corpus back to source state before rebuilding."
                 )
             paper_id = f"{base_id}_{suffix}"
             suffix += 1
-        target_path = corpus_dir / paper_id / f"{paper_id}.pdf"
+        target_path = source_dir / f"{paper_id}.pdf"
         target_path.parent.mkdir(parents=True, exist_ok=True)
         pdf_path.rename(target_path)
         reserved_ids.add(paper_id)
@@ -124,6 +122,8 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
         "project_mode": True,
         "project_dir": str(project_dir),
         "source_dir": str(source_dir),
+        "data_dir": str(data_dir),
+        "figures_dir": str(figures_dir),
         "corpus_dir": str(corpus_dir),
         "moved_pdfs": moved_pdfs,
         "paper_ids": sorted(discovered_ids),
@@ -133,10 +133,12 @@ def prepare_project_inputs(layout: ProjectLayout) -> dict[str, object]:
 def display_path(path: str | Path, *, layout: ProjectLayout, root: Path) -> str:
     resolved = Path(path).expanduser().resolve()
     candidate_bases: list[Path] = []
+    data_root = layout.resolved_data_root()
+    figures_root = layout.resolved_figures_root()
     if layout.project_dir is not None:
-        candidate_bases.extend([layout.project_dir, layout.source_root, layout.corpus_root, root])
+        candidate_bases.extend([layout.project_dir, layout.source_root, data_root, figures_root, layout.corpus_root, root])
     else:
-        candidate_bases.extend([layout.corpus_root.parent, layout.corpus_root, root])
+        candidate_bases.extend([layout.corpus_root.parent, layout.source_root, data_root, figures_root, layout.corpus_root, root])
     deduped_bases: list[Path] = []
     seen_bases: set[Path] = set()
     for base in candidate_bases:

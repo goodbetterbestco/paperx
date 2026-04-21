@@ -45,7 +45,7 @@ class ResetCorpusToSourceCliE2ETest(unittest.TestCase):
 
             payload = json.loads(completed.stdout)
             self.assertEqual(payload["state"], "source")
-            self.assertTrue((corpus_dir / "1990_synthetic_test_paper.pdf").exists())
+            self.assertTrue((corpus_dir / "_source" / "1990_synthetic_test_paper.pdf").exists())
             self.assertFalse(paper_dir.exists())
             self.assertFalse((corpus_dir / "_canon").exists())
 
