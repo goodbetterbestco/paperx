@@ -14,6 +14,7 @@ import uuid
 
 from pipeline.corpus_layout import CORPUS_DIR, ProjectLayout, canonical_sources_dir, display_path, paper_pdf_path
 from pipeline.math.review_policy import review_for_math_entry
+from pipeline.native_stderr import run_with_stderr_label
 from pipeline.types import default_formula_conversion, default_review
 
 DOCS_DIR = CORPUS_DIR
@@ -303,12 +304,16 @@ def mathpix_pages_to_external_sources(
 
 def _render_page_png_bytes(pdf_path: Path, page_number: int, *, scale: float) -> tuple[bytes, int, int, float, float]:
     fitz = _load_fitz()
-    with fitz.open(pdf_path) as document:
-        page = document[page_number - 1]
-        matrix = fitz.Matrix(scale, scale)
-        pixmap = page.get_pixmap(matrix=matrix, alpha=False)
-        png_bytes = pixmap.tobytes("png")
-        return png_bytes, int(pixmap.width), int(pixmap.height), float(page.rect.width), float(page.rect.height)
+
+    def _render() -> tuple[bytes, int, int, float, float]:
+        with fitz.open(pdf_path) as document:
+            page = document[page_number - 1]
+            matrix = fitz.Matrix(scale, scale)
+            pixmap = page.get_pixmap(matrix=matrix, alpha=False)
+            png_bytes = pixmap.tobytes("png")
+            return png_bytes, int(pixmap.width), int(pixmap.height), float(page.rect.width), float(page.rect.height)
+
+    return run_with_stderr_label(f"{pdf_path.stem} stage=mathpix-render page={page_number}", _render)
 
 
 def _mathpix_headers(
@@ -431,8 +436,12 @@ def call_mathpix_on_page_image(
 
 def _pdf_page_sizes_pt(pdf_path: Path) -> list[tuple[float, float]]:
     fitz = _load_fitz()
-    with fitz.open(pdf_path) as document:
-        return [(float(page.rect.width), float(page.rect.height)) for page in document]
+
+    def _read_sizes() -> list[tuple[float, float]]:
+        with fitz.open(pdf_path) as document:
+            return [(float(page.rect.width), float(page.rect.height)) for page in document]
+
+    return run_with_stderr_label(f"{pdf_path.stem} stage=mathpix-page-sizes", _read_sizes)
 
 
 def _mathpix_pdf_page_ranges(pages: list[int] | None) -> str | None:

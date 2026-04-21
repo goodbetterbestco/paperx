@@ -35,6 +35,38 @@ from pipeline.processor.settings import (
 from pipeline.processor.paper import build_paper
 
 
+def _progress_snapshot(
+    paper_ids: list[str],
+    run_status: dict[str, Any],
+) -> dict[str, int]:
+    passed = 0
+    failed = 0
+    queued = 0
+    processing = 0
+
+    paper_statuses = dict(run_status.get("papers", {}))
+    for paper_id in paper_ids:
+        payload = dict(paper_statuses.get(paper_id) or {})
+        state = str(payload.get("status", "queued") or "queued")
+        if state == "completed":
+            passed += 1
+        elif state == "failed":
+            failed += 1
+        elif state == "queued":
+            queued += 1
+        else:
+            processing += 1
+
+    return {
+        "total": len(paper_ids),
+        "queued": queued,
+        "processing": processing,
+        "processed": passed + failed,
+        "passed": passed,
+        "failed": failed,
+    }
+
+
 def run_paper_job(
     paper_id: str,
     *,
@@ -134,6 +166,7 @@ def run_corpus_once(
     layout: ProjectLayout,
     runtime: CorpusRuntime,
     run_paper_job_impl: Callable[..., dict[str, Any]] | None = None,
+    progress_callback: Callable[[dict[str, int]], None] | None = None,
 ) -> None:
     run_paper_job_impl = run_paper_job_impl or run_paper_job
     run_status = {
@@ -145,6 +178,7 @@ def run_corpus_once(
     pending_papers = list(status.get("papers", []))
     active_jobs: dict[Future[dict[str, Any]], str] = {}
     next_index = 0
+    reported_processed = 0
 
     def update_paper_status(paper_id: str, payload: dict[str, Any]) -> None:
         paper_status = run_status.setdefault("papers", {}).setdefault(paper_id, {"status": "queued"})
@@ -203,6 +237,11 @@ def run_corpus_once(
                     run_status["papers"].setdefault(paper_id, {}).update(future.result())
                     save_status(status, runtime)
                 schedule_ready(executor)
+                if progress_callback is not None:
+                    snapshot = _progress_snapshot(pending_papers, run_status)
+                    if snapshot["processed"] > reported_processed:
+                        reported_processed = snapshot["processed"]
+                        progress_callback(snapshot)
     finally:
         if mathpix_coordinator is not None:
             mathpix_coordinator.close()
@@ -215,6 +254,7 @@ def process_corpus(
     *,
     max_workers: int = 20,
     layout: ProjectLayout | None = None,
+    progress_callback: Callable[[dict[str, int]], None] | None = None,
 ) -> dict[str, Any]:
     if max_workers < 1:
         raise SystemExit("--max-workers must be at least 1")
@@ -242,6 +282,7 @@ def process_corpus(
         max_workers=max_workers,
         layout=runtime.layout,
         runtime=runtime,
+        progress_callback=progress_callback,
     )
 
     cleanup = cleanup_processed_runtime_artifacts(runtime.layout)

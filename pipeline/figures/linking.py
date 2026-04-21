@@ -10,6 +10,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from pipeline.native_stderr import run_with_stderr_label
 from pipeline.corpus_layout import (
     CORPUS_DIR,
     ProjectLayout,
@@ -62,14 +63,22 @@ def normalize_label_key(value: str) -> str:
 def _resolve_manifest_relative_path(path_value: str, *, layout: ProjectLayout | None = None) -> Path:
     active_layout = layout or current_layout()
     candidate_bases: list[Path] = []
-    for base in (project_root(layout=active_layout), ROOT, active_layout.corpus_root):
+    corpus_parent = active_layout.corpus_root.parent
+    corpus_root_from_engine = active_layout.engine_root / "corpus"
+    for base in (
+        project_root(layout=active_layout),
+        corpus_parent,
+        corpus_root_from_engine,
+        ROOT,
+        active_layout.corpus_root,
+    ):
         if base not in candidate_bases:
             candidate_bases.append(base)
     for base in candidate_bases:
         candidate = base / path_value
         if candidate.exists():
             return candidate
-    fallback_base = project_root(layout=active_layout) if active_layout.project_mode else ROOT
+    fallback_base = project_root(layout=active_layout) if active_layout.project_mode else corpus_parent
     return fallback_base / path_value
 
 
@@ -82,10 +91,6 @@ def resolve_manifest_pdf_path(manifest: dict[str, Any], *, layout: ProjectLayout
 
 
 def resolve_manifest_figures_dir(manifest: dict[str, Any], *, layout: ProjectLayout | None = None) -> Path:
-    artifacts = manifest.get("artifacts") or {}
-    figures_path = artifacts.get("figures_dir")
-    if figures_path:
-        return _resolve_manifest_relative_path(str(figures_path), layout=layout)
     return corpus_figures_dir(str(manifest["id"]), layout=layout)
 
 
@@ -335,7 +340,10 @@ def render_pages_for_ocr(doc: fitz.Document, output_dir: Path) -> list[Path]:
     image_paths: list[Path] = []
     for page_index in range(doc.page_count):
         page = doc.load_page(page_index)
-        pixmap = page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
+        pixmap = run_with_stderr_label(
+            f"{output_dir.name} stage=figure-ocr-render page={page_index + 1}",
+            lambda: page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False),
+        )
         image_path = output_dir / f"page-{page_index + 1:03d}.png"
         pixmap.save(image_path)
         image_paths.append(image_path)
@@ -721,7 +729,10 @@ def choose_visual_region(
 
 
 def render_crop(page: fitz.Page, rect: fitz.Rect, output_path: Path) -> None:
-    pixmap = page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False)
+    pixmap = run_with_stderr_label(
+        f"{output_path.parent.name} stage=figure-crop output={output_path.name}",
+        lambda: page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False),
+    )
     pixmap.save(output_path)
 
 
@@ -767,7 +778,10 @@ def process_paper(
     figures_dir = resolve_manifest_figures_dir(manifest, layout=active_layout)
     figures_dir.mkdir(parents=True, exist_ok=True)
 
-    doc = fitz.open(source_pdf)
+    doc = run_with_stderr_label(
+        f"{manifest['id']} stage=figure-linking-open",
+        lambda: fitz.open(source_pdf),
+    )
     records: list[dict[str, Any]] = []
     used_ids: set[str] = set()
     page_states: list[dict[str, Any]] = []
@@ -889,7 +903,10 @@ def load_or_generate_ocr_records(
 ) -> list[dict[str, Any]]:
     if doc is None:
         source_pdf = resolve_manifest_pdf_path(manifest, layout=layout)
-        doc = fitz.open(source_pdf)
+        doc = run_with_stderr_label(
+            f"{manifest['id']} stage=figure-ocr-open",
+            lambda: fitz.open(source_pdf),
+        )
     with tempfile.TemporaryDirectory(prefix=f"{manifest['id']}-figure-ocr-") as temp_dir:
         image_paths = render_pages_for_ocr(doc, Path(temp_dir))
         try:

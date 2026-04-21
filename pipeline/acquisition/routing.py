@@ -6,6 +6,7 @@ import re
 from statistics import mean
 from typing import Any
 
+from pipeline.native_stderr import run_with_stderr_label
 from pipeline.acquisition.grobid_policy import grobid_product_provider_chain
 from pipeline.corpus_layout import ProjectLayout, display_path, paper_pdf_path
 
@@ -160,62 +161,71 @@ def _route_profile(primary_route: str) -> tuple[list[str], dict[str, list[str]]]
     )
 
 
-def inspect_pdf_signals(pdf_path: str | Path, *, load_fitz: Any | None = None) -> AcquisitionSignals:
+def inspect_pdf_signals(
+    pdf_path: str | Path,
+    *,
+    paper_id: str | None = None,
+    load_fitz: Any | None = None,
+) -> AcquisitionSignals:
     fitz = load_fitz() if load_fitz is not None else _load_fitz()
     resolved_path = Path(pdf_path).resolve()
+    label = paper_id or resolved_path.stem
 
-    with fitz.open(resolved_path) as document:
-        page_count = len(document)
-        if page_count <= 0:
-            return AcquisitionSignals(
-                page_count=0,
-                text_page_ratio=0.0,
-                avg_text_chars_per_page=0.0,
-                avg_image_coverage=0.0,
-                max_image_coverage=0.0,
-                avg_text_block_count=0.0,
-                max_text_block_count=0,
-                two_column_ratio=0.0,
-                math_token_density=0.0,
-                reference_marker_density=0.0,
-            )
+    def _inspect() -> AcquisitionSignals:
+        with fitz.open(resolved_path) as document:
+            page_count = len(document)
+            if page_count <= 0:
+                return AcquisitionSignals(
+                    page_count=0,
+                    text_page_ratio=0.0,
+                    avg_text_chars_per_page=0.0,
+                    avg_image_coverage=0.0,
+                    max_image_coverage=0.0,
+                    avg_text_block_count=0.0,
+                    max_text_block_count=0,
+                    two_column_ratio=0.0,
+                    math_token_density=0.0,
+                    reference_marker_density=0.0,
+                )
 
-        text_lengths: list[int] = []
-        image_coverages: list[float] = []
-        text_block_counts: list[int] = []
-        two_column_pages = 0
-        text_pages = 0
-        full_text_parts: list[str] = []
+            text_lengths: list[int] = []
+            image_coverages: list[float] = []
+            text_block_counts: list[int] = []
+            two_column_pages = 0
+            text_pages = 0
+            full_text_parts: list[str] = []
 
-        for page in document:
-            text = str(page.get_text("text") or "")
-            blocks = _page_text_blocks(page)
-            image_coverage = _page_image_coverage(page)
-            text_length = len(text.strip())
-            if text_length >= 80:
-                text_pages += 1
-            text_lengths.append(text_length)
-            text_block_counts.append(len(blocks))
-            image_coverages.append(image_coverage)
-            if _is_two_column_page(page, blocks):
-                two_column_pages += 1
-            full_text_parts.append(text)
+            for page in document:
+                text = str(page.get_text("text") or "")
+                blocks = _page_text_blocks(page)
+                image_coverage = _page_image_coverage(page)
+                text_length = len(text.strip())
+                if text_length >= 80:
+                    text_pages += 1
+                text_lengths.append(text_length)
+                text_block_counts.append(len(blocks))
+                image_coverages.append(image_coverage)
+                if _is_two_column_page(page, blocks):
+                    two_column_pages += 1
+                full_text_parts.append(text)
 
-    full_text = "\n".join(full_text_parts)
-    text_chars = sum(text_lengths)
-    text_length_denominator = max(text_chars, 1)
-    return AcquisitionSignals(
-        page_count=page_count,
-        text_page_ratio=round(text_pages / max(page_count, 1), 3),
-        avg_text_chars_per_page=round(mean(text_lengths), 2),
-        avg_image_coverage=round(mean(image_coverages), 3),
-        max_image_coverage=round(max(image_coverages, default=0.0), 3),
-        avg_text_block_count=round(mean(text_block_counts), 2),
-        max_text_block_count=max(text_block_counts, default=0),
-        two_column_ratio=round(two_column_pages / max(page_count, 1), 3),
-        math_token_density=round(len(MATH_TOKEN_RE.findall(full_text)) / text_length_denominator, 5),
-        reference_marker_density=round(len(REFERENCE_MARKER_RE.findall(full_text)) / text_length_denominator, 5),
-    )
+        full_text = "\n".join(full_text_parts)
+        text_chars = sum(text_lengths)
+        text_length_denominator = max(text_chars, 1)
+        return AcquisitionSignals(
+            page_count=page_count,
+            text_page_ratio=round(text_pages / max(page_count, 1), 3),
+            avg_text_chars_per_page=round(mean(text_lengths), 2),
+            avg_image_coverage=round(mean(image_coverages), 3),
+            max_image_coverage=round(max(image_coverages, default=0.0), 3),
+            avg_text_block_count=round(mean(text_block_counts), 2),
+            max_text_block_count=max(text_block_counts, default=0),
+            two_column_ratio=round(two_column_pages / max(page_count, 1), 3),
+            math_token_density=round(len(MATH_TOKEN_RE.findall(full_text)) / text_length_denominator, 5),
+            reference_marker_density=round(len(REFERENCE_MARKER_RE.findall(full_text)) / text_length_denominator, 5),
+        )
+
+    return run_with_stderr_label(f"{label} stage=acquisition-routing", _inspect)
 
 
 def route_pdf_signals(signals: AcquisitionSignals) -> AcquisitionRouteDecision:
@@ -276,7 +286,7 @@ def build_acquisition_route_report(
     active_layout = layout or ProjectLayout.from_environment()
     pdf_path = paper_pdf_path(paper_id, layout=active_layout)
     active_inspect_pdf_signals = inspect_pdf_signals_fn or inspect_pdf_signals
-    signals = active_inspect_pdf_signals(pdf_path)
+    signals = active_inspect_pdf_signals(pdf_path, paper_id=paper_id)
     decision = route_pdf_signals(signals)
     return {
         "paper_id": paper_id,
