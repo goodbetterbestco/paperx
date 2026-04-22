@@ -17,12 +17,6 @@ def parse_args() -> argparse.Namespace:
         description="Build canonical.json and the markdown review draft in one sequential pass."
     )
     parser.add_argument("paper_id", help=f"Paper id in the configured layout ({CORPUS_DIR}).")
-    parser.add_argument(
-        "--text-engine",
-        choices=("native", "pdftotext", "hybrid"),
-        default="native",
-        help="Text extraction source for prose blocks.",
-    )
     parser.add_argument("--dry-run", action="store_true", help="Validate and summarize without writing files.")
     return parser.parse_args()
 
@@ -41,7 +35,6 @@ def run_build_review(
     try:
         build = build_paper_fn(
             args.paper_id,
-            text_engine=args.text_engine,
             include_review=True,
             layout=current_layout_fn(),
         )

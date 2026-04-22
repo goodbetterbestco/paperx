@@ -4,10 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from pipeline.acquisition.providers import (
-    derive_metadata_reference_observation_from_layout,
-    load_metadata_reference_observation,
-)
+from pipeline.acquisition.providers import derive_metadata_reference_observation_from_layout
 from pipeline.corpus_layout import ProjectLayout, canonical_sources_dir
 from pipeline.math.review_policy import review_for_math_entry
 from pipeline.types import LayoutBlock, default_formula_conversion, default_review
@@ -52,14 +49,6 @@ def external_math_path(paper_id: str, *, layout: ProjectLayout | None = None) ->
     return _paper_sources_dir(paper_id, layout=layout) / "math.json"
 
 
-def ocr_normalized_pdf_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
-    return _paper_sources_dir(paper_id, layout=layout) / "ocr-normalized.pdf"
-
-
-def ocr_prepass_report_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
-    return _paper_sources_dir(paper_id, layout=layout) / "ocr-prepass.json"
-
-
 def acquisition_execution_report_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
     return _paper_sources_dir(paper_id, layout=layout) / "acquisition-execution.json"
 
@@ -72,10 +61,6 @@ def acquisition_trial_dir(
 ) -> Path:
     normalized_label = str(label).strip() or "follow-up"
     return _paper_sources_dir(paper_id, layout=layout) / "trials" / normalized_label
-
-
-def grobid_tei_path(paper_id: str, *, layout: ProjectLayout | None = None) -> Path:
-    return _paper_sources_dir(paper_id, layout=layout) / "grobid.tei.xml"
 
 
 def load_external_layout(paper_id: str, *, layout: ProjectLayout | None = None) -> dict[str, Any] | None:
@@ -174,17 +159,6 @@ def load_mathpix_math(paper_id: str, *, layout: ProjectLayout | None = None) -> 
         _paper_sources_dir(paper_id, layout=layout) / "mathpix-math.json",
         default_engine="mathpix",
     )
-
-
-def load_grobid_metadata_observation(
-    paper_id: str,
-    *,
-    layout: ProjectLayout | None = None,
-) -> dict[str, Any] | None:
-    path = grobid_tei_path(paper_id, layout=layout)
-    if not path.exists():
-        return None
-    return load_metadata_reference_observation("grobid", path).to_dict()
 
 
 def _nonempty_metadata_observation(observation: dict[str, Any]) -> dict[str, Any] | None:

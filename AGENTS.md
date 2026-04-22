@@ -33,3 +33,10 @@ This `AGENTS.md` is the authoritative default for code-generating agents working
 - When touching code that contains legacy branches, remove dead fallback logic instead of routing around it.
 - Keep the hot path readable. If a branch exists only for history, it probably should not exist.
 - Add tests for the intended path and for the fail-fast behavior when a legacy path is no longer supported.
+
+## Test Discipline
+
+- Do not add tests that only lock internal implementation details, helper wiring, object identity, call ordering, mock interactions, or intermediate payload shape.
+- Add tests for externally observable behavior, fail-fast behavior at a contract boundary, or a concrete regression seen in real use.
+- If a test would fail after an internal refactor while the work product remains correct, do not add it.
+- If the value of a new test is debatable, do not add it without explicit human approval in the current thread.

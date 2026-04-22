@@ -7,6 +7,11 @@ from pathlib import Path
 from threading import Lock
 from typing import Any, Callable, TypeVar, cast
 
+try:
+    import fitz as _fitz  # type: ignore
+except ModuleNotFoundError:  # pragma: no cover
+    _fitz = None  # type: ignore
+
 
 T = TypeVar("T")
 
@@ -14,19 +19,36 @@ _NATIVE_STDERR_LOCK = Lock()
 _MUPDF_CMS_PROFILE_ERROR = "cmsopenprofilefrommem failed"
 
 
-def run_with_stderr_label(label: str, fn: Callable[[], T]) -> T:
-    result, output, error = _capture_native_stderr(fn)
-    _emit_labeled_output(label, output)
-    if error is not None:
-        raise error.with_traceback(error.__traceback__)
-    return result
+def _configure_mupdf_message_output() -> None:
+    tools = getattr(_fitz, "TOOLS", None)
+    if tools is None:
+        return
+    try:
+        tools.mupdf_display_errors(False)
+        tools.mupdf_display_warnings(False)
+    except Exception:
+        return
+
+
+def _consume_mupdf_messages() -> str:
+    tools = getattr(_fitz, "TOOLS", None)
+    if tools is None:
+        return ""
+    try:
+        messages = str(tools.mupdf_warnings(reset=1) or "")
+    except Exception:
+        return ""
+    return messages.strip()
+
+
+_configure_mupdf_message_output()
 
 
 def open_pdf_with_diagnostics(label: str, pdf_path: str | Path, fitz_module: Any) -> Any:
     source_path = Path(pdf_path)
     result, output, error = _capture_native_stderr(lambda: fitz_module.open(source_path))
-    _emit_labeled_output(label, output)
     if error is not None:
+        _emit_labeled_output(label, output)
         if _is_cms_profile_open_error(error, output):
             raise RuntimeError(
                 f"Failed to open source PDF for {label}: {source_path}. "
@@ -39,6 +61,7 @@ def open_pdf_with_diagnostics(label: str, pdf_path: str | Path, fitz_module: Any
 
 def _capture_native_stderr(fn: Callable[[], T]) -> tuple[T, str, Exception | None]:
     with _NATIVE_STDERR_LOCK:
+        _consume_mupdf_messages()
         sys.stderr.flush()
         original_stderr_fd = os.dup(2)
         error: Exception | None = None
@@ -56,6 +79,9 @@ def _capture_native_stderr(fn: Callable[[], T]) -> tuple[T, str, Exception | Non
                 os.close(original_stderr_fd)
             capture.seek(0)
             output = capture.read().decode("utf-8", errors="replace")
+        stored_output = _consume_mupdf_messages()
+        if stored_output:
+            output = "\n".join(part for part in (output.strip(), stored_output) if part)
         return cast(T, result), output, error
 
 
@@ -72,4 +98,4 @@ def _emit_labeled_output(label: str, output: str) -> None:
         print(f"[native-stderr paper={label}] {line}", file=sys.stderr, flush=True)
 
 
-__all__ = ["open_pdf_with_diagnostics", "run_with_stderr_label"]
+__all__ = ["open_pdf_with_diagnostics"]

@@ -4,13 +4,11 @@ from __future__ import annotations
 
 import json
 import re
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 from typing import Any
 
-from pipeline.native_stderr import open_pdf_with_diagnostics, run_with_stderr_label
+from pipeline.native_stderr import open_pdf_with_diagnostics
 from pipeline.corpus_layout import (
     CORPUS_DIR,
     ProjectLayout,
@@ -39,7 +37,6 @@ except ModuleNotFoundError as exc:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = CORPUS_DIR
-VISION_SCRIPT = ROOT / "pipeline" / "figures" / "vision_ocr.js"
 
 REFERENCE_SEQUENCE_RE = re.compile(
     r"\b(?:Fig(?:ure)?s?\.?)\s*((?:[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)(?:\s*(?:,|and|&)\s*[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)+|[A-Za-z]?\d+(?:\.\d+)*[A-Za-z]?)",
@@ -329,181 +326,8 @@ def extract_drawing_rects(page: fitz.Page) -> list[fitz.Rect]:
     return rects
 
 
-def run_vision_ocr(page_image_paths: list[Path]) -> list[dict[str, Any]]:
-    command = [
-        "osascript",
-        "-l",
-        "JavaScript",
-        str(VISION_SCRIPT),
-        *[str(path) for path in page_image_paths],
-    ]
-    completed = subprocess.run(command, check=True, capture_output=True, text=True)
-    return json.loads(completed.stdout.strip())
-
-
-def vision_ocr_error_message(exc: Exception) -> str:
-    if isinstance(exc, subprocess.CalledProcessError):
-        detail = (exc.stderr or exc.stdout or "").strip()
-        if detail:
-            return detail
-    return str(exc)
-
-
-def render_pages_for_ocr(doc: fitz.Document, output_dir: Path) -> list[Path]:
-    ensure_dir(output_dir)
-    image_paths: list[Path] = []
-    for page_index in range(doc.page_count):
-        page = doc.load_page(page_index)
-        pixmap = run_with_stderr_label(
-            f"{output_dir.name} stage=figure-ocr-render page={page_index + 1}",
-            lambda: page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False),
-        )
-        image_path = output_dir / f"page-{page_index + 1:03d}.png"
-        pixmap.save(image_path)
-        image_paths.append(image_path)
-    return image_paths
-
-
-def classify_ocr_column(rect: fitz.Rect, page_rect: fitz.Rect) -> str:
-    page_width = max(page_rect.width, 1.0)
-    width_ratio = rect.width / page_width
-    mid_x = page_rect.x0 + page_width / 2
-    gutter = page_width * 0.04
-    center_x = (rect.x0 + rect.x1) / 2
-    spans_mid = rect.x0 < mid_x - gutter and rect.x1 > mid_x + gutter
-
-    if width_ratio >= 0.58 or spans_mid:
-        return "wide"
-    if center_x <= mid_x:
-        return "left"
-    return "right"
-
-
-def build_ocr_block(lines: list[dict[str, Any]], column: str) -> dict[str, Any]:
-    rect = union_rects([line["rect"] for line in lines])
-    text = normalize_text(" ".join(line["text"] for line in lines))
-    return {"rect": rect, "text": text, "source": "ocr_text", "column": column}
-
-
-def build_ocr_line_block(line: dict[str, Any], page_rect: fitz.Rect) -> dict[str, Any] | None:
-    bbox = line["bbox"]
-    rect = fitz.Rect(
-        bbox["x0"] * page_rect.width,
-        bbox["y0"] * page_rect.height,
-        bbox["x1"] * page_rect.width,
-        bbox["y1"] * page_rect.height,
-    )
-    text = normalize_text(line["text"])
-    if not text:
-        return None
-    return {
-        "rect": rect,
-        "text": text,
-        "source": "ocr_line",
-        "column": classify_ocr_column(rect, page_rect),
-    }
-
-
-def merge_ocr_column_lines(lines: list[dict[str, Any]], page_rect: fitz.Rect, column: str) -> list[dict[str, Any]]:
-    if not lines:
-        return []
-
-    lines = sorted(lines, key=lambda item: (item["rect"].y0, item["rect"].x0))
-    blocks: list[dict[str, Any]] = []
-    current_lines: list[dict[str, Any]] = [lines[0]]
-
-    for line in lines[1:]:
-        current_block = build_ocr_block(current_lines, column)
-        gap = line["rect"].y0 - current_block["rect"].y1
-        x_gap = abs(line["rect"].x0 - current_block["rect"].x0)
-        current_is_caption = caption_label(current_block["text"]) is not None
-        vertical_limit = max(12.0, line["rect"].height * 1.8)
-        horizontal_limit = page_rect.width * (0.07 if column != "wide" else 0.11)
-
-        if current_is_caption:
-            vertical_limit = max(vertical_limit, page_rect.height * 0.03)
-            horizontal_limit = max(horizontal_limit, page_rect.width * 0.18)
-
-        same_scope = blocks_overlap_scope(line["rect"], scope_from_rect(page_rect, current_block["rect"]))
-        continuation_hint = (
-            current_is_caption
-            and gap <= page_rect.height * 0.04
-            and same_scope
-            and len(line["text"]) < 220
-        )
-
-        if (gap <= vertical_limit and x_gap <= horizontal_limit and same_scope) or continuation_hint:
-            current_lines.append(line)
-        else:
-            blocks.append(current_block)
-            current_lines = [line]
-
-    blocks.append(build_ocr_block(current_lines, column))
-    return blocks
-
-
-def group_ocr_lines(lines: list[dict[str, Any]], page_rect: fitz.Rect) -> list[dict[str, Any]]:
-    normalized: list[dict[str, Any]] = []
-    for line in lines:
-        block = build_ocr_line_block(line, page_rect)
-        if block is not None:
-            normalized.append(block)
-
-    blocks: list[dict[str, Any]] = []
-    for column in ("wide", "left", "right"):
-        blocks.extend(merge_ocr_column_lines([line for line in normalized if line["column"] == column], page_rect, column))
-
-    return sorted(blocks, key=lambda block: (block["rect"].y0, block["rect"].x0))
-
-
-def extract_ocr_caption_lines(lines: list[dict[str, Any]], page_rect: fitz.Rect) -> list[dict[str, Any]]:
-    captions: list[dict[str, Any]] = []
-    seen: set[tuple[float, float, float, float, str]] = set()
-
-    for line in lines:
-        block = build_ocr_line_block(line, page_rect)
-        if block is None or caption_label(block["text"]) is None:
-            continue
-
-        key = (
-            round(block["rect"].x0, 1),
-            round(block["rect"].y0, 1),
-            round(block["rect"].x1, 1),
-            round(block["rect"].y1, 1),
-            block["text"],
-        )
-        if key in seen:
-            continue
-        seen.add(key)
-        block["source"] = "ocr_caption"
-        captions.append(block)
-
-    return sorted(captions, key=lambda block: (block["rect"].y0, block["rect"].x0))
-
-
 def collect_caption_blocks(text_blocks: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [block for block in text_blocks if caption_label(block["text"])]
-
-
-def merge_missing_caption_blocks(
-    text_blocks: list[dict[str, Any]],
-    extra_caption_blocks: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    merged = list(text_blocks)
-    existing_labels = {
-        label
-        for block in collect_caption_blocks(text_blocks)
-        if (label := caption_label(block["text"])) is not None
-    }
-
-    for block in extra_caption_blocks:
-        label = caption_label(block["text"])
-        if label is None or label in existing_labels:
-            continue
-        merged.append(block)
-        existing_labels.add(label)
-
-    return sorted(merged, key=lambda block: (block["rect"].y0, block["rect"].x0))
 
 
 def build_manifest_from_pdf_path(pdf_path: Path, *, layout: ProjectLayout | None = None) -> dict[str, Any]:
@@ -745,11 +569,28 @@ def choose_visual_region(
 
 
 def render_crop(page: fitz.Page, rect: fitz.Rect, output_path: Path) -> None:
-    pixmap = run_with_stderr_label(
-        f"{output_path.parent.name} stage=figure-crop output={output_path.name}",
-        lambda: page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False),
-    )
+    pixmap = page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=rect, alpha=False)
     pixmap.save(output_path)
+
+
+def _close_document(doc: fitz.Document) -> None:
+    doc.close()
+
+
+def _page_state_from_document(doc: fitz.Document, page_index: int) -> dict[str, Any]:
+    page = doc.load_page(page_index)
+    page_rect = fitz.Rect(page.rect)
+    return {
+        "page": page_index + 1,
+        "page_rect": page_rect,
+        "text_blocks": extract_pdf_text_blocks(page),
+        "visual_blocks": extract_pdf_visual_blocks(doc, page),
+        "drawing_rects": extract_drawing_rects(page),
+    }
+
+
+def _load_page(doc: fitz.Document, page_index: int) -> fitz.Page:
+    return doc.load_page(page_index)
 
 
 def collect_references(label: str, caption_page: int, page_states: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -785,7 +626,6 @@ def collect_references(label: str, caption_page: int, page_states: list[dict[str
 
 def process_paper(
     manifest: dict[str, Any],
-    image_ocr_records: list[dict[str, Any]] | None = None,
     *,
     layout: ProjectLayout | None = None,
 ) -> tuple[dict[str, Any], int]:
@@ -801,162 +641,88 @@ def process_paper(
         source_pdf,
         fitz_module=fitz,
     )
-    records: list[dict[str, Any]] = []
-    used_ids: set[str] = set()
-    page_states: list[dict[str, Any]] = []
+    try:
+        records: list[dict[str, Any]] = []
+        used_ids: set[str] = set()
+        page_states = [
+            _page_state_from_document(doc, page_index)
+            for page_index in range(doc.page_count)
+        ]
 
-    for page_index in range(doc.page_count):
-        page = doc.load_page(page_index)
-        page_rect = fitz.Rect(page.rect)
-        text_blocks = extract_pdf_text_blocks(page)
-        visual_blocks = extract_pdf_visual_blocks(doc, page)
-        drawing_rects = extract_drawing_rects(page)
-        page_states.append(
-            {
-                "page": page_index + 1,
-                "page_rect": page_rect,
-                "text_blocks": text_blocks,
-                "visual_blocks": visual_blocks,
-                "drawing_rects": drawing_rects,
-            }
+        for page_state in page_states:
+            page_index = int(page_state["page"]) - 1
+            page = _load_page(doc, page_index)
+            page_rect = page_state["page_rect"]
+            text_blocks = page_state["text_blocks"]
+            visual_blocks = page_state["visual_blocks"]
+            captions = collect_caption_blocks(text_blocks)
+            drawing_rects = page_state["drawing_rects"]
+
+            for sequence, caption_block in enumerate(captions, start=1):
+                label = caption_label(caption_block["text"])
+                if not label:
+                    continue
+
+                rect, link_mode, sources = choose_visual_region(page_rect, caption_block, text_blocks, visual_blocks, drawing_rects)
+                if rect is None or rect.width < 30 or rect.height < 30:
+                    continue
+
+                base_id = f"figure-{slugify(label)}"
+                figure_id = base_id
+                suffix = 2
+                while figure_id in used_ids:
+                    figure_id = f"{base_id}-{suffix}"
+                    suffix += 1
+                used_ids.add(figure_id)
+
+                filename = f"figure_{paper_uid_value}_{len(records) + 1:03d}.png"
+                output_path = figures_dir / filename
+                render_crop_if_missing(page, rect, output_path)
+
+                records.append(
+                    {
+                        "figure_id": figure_id,
+                        "label": label,
+                        "page": page_index + 1,
+                        "page_size": rect_to_dict(page_rect),
+                        "caption_text": caption_block["text"],
+                        "caption_bbox": rect_to_dict(caption_block["rect"]),
+                        "figure_bbox": rect_to_dict(rect),
+                        "image_path": display_path(output_path, layout=active_layout),
+                        "link_mode": link_mode,
+                        "sources": sources,
+                        "sequence_on_page": sequence,
+                        "references": [],
+                        "reference_count": 0,
+                    }
+                )
+
+        for record in records:
+            references = collect_references(record["label"], int(record["page"]), page_states)
+            record["references"] = references
+            record["reference_count"] = len(references)
+
+        manifest_path = write_figure_manifest(
+            paper_id,
+            records,
+            paper_uid_value=paper_uid_value,
+            layout=active_layout,
         )
-
-    figure_expectations = manifest.get("figure_expectations") or {}
-    expected_figure_count = figure_expectations.get("expected_semantic_figure_count")
-    detected_caption_count = sum(len(collect_caption_blocks(page_state["text_blocks"])) for page_state in page_states)
-    needs_page_level_caption_fallback = any(
-        not collect_caption_blocks(page_state["text_blocks"])
-        and (page_state["visual_blocks"] or page_state["drawing_rects"])
-        for page_state in page_states
-    )
-    if (
-        detected_caption_count == 0
-        or (expected_figure_count and detected_caption_count < expected_figure_count)
-        or needs_page_level_caption_fallback
-    ):
-        page_ocr_records = image_ocr_records or load_or_generate_ocr_records(manifest, doc, layout=active_layout)
-        for page_state, ocr_record in zip(page_states, page_ocr_records, strict=False):
-            if collect_caption_blocks(page_state["text_blocks"]):
-                continue
-            if not page_state["visual_blocks"] and not page_state["drawing_rects"]:
-                continue
-            ocr_captions = extract_ocr_caption_lines(ocr_record.get("lines", []), page_state["page_rect"])
-            if not ocr_captions:
-                continue
-            page_state["text_blocks"] = merge_missing_caption_blocks(page_state["text_blocks"], ocr_captions)
-
-    for page_state in page_states:
-        page_index = int(page_state["page"]) - 1
-        page = doc.load_page(page_index)
-        page_rect = page_state["page_rect"]
-        text_blocks = page_state["text_blocks"]
-        visual_blocks = page_state["visual_blocks"]
-        captions = collect_caption_blocks(text_blocks)
-        drawing_rects = page_state["drawing_rects"]
-
-        for sequence, caption_block in enumerate(captions, start=1):
-            label = caption_label(caption_block["text"])
-            if not label:
-                continue
-
-            rect, link_mode, sources = choose_visual_region(page_rect, caption_block, text_blocks, visual_blocks, drawing_rects)
-            if rect is None or rect.width < 30 or rect.height < 30:
-                continue
-
-            base_id = f"figure-{slugify(label)}"
-            figure_id = base_id
-            suffix = 2
-            while figure_id in used_ids:
-                figure_id = f"{base_id}-{suffix}"
-                suffix += 1
-            used_ids.add(figure_id)
-
-            filename = f"figure_{paper_uid_value}_{len(records) + 1:03d}.png"
-            output_path = figures_dir / filename
-            render_crop_if_missing(page, rect, output_path)
-
-            records.append(
-                {
-                    "figure_id": figure_id,
-                    "label": label,
-                    "page": page_index + 1,
-                    "page_size": rect_to_dict(page_rect),
-                    "caption_text": caption_block["text"],
-                    "caption_bbox": rect_to_dict(caption_block["rect"]),
-                    "figure_bbox": rect_to_dict(rect),
-                    "image_path": display_path(output_path, layout=active_layout),
-                    "link_mode": link_mode,
-                    "sources": sources,
-                    "sequence_on_page": sequence,
-                    "references": [],
-                    "reference_count": 0,
-                }
-            )
-
-    for record in records:
-        references = collect_references(record["label"], int(record["page"]), page_states)
-        record["references"] = references
-        record["reference_count"] = len(references)
-
-    manifest_path = write_figure_manifest(
-        paper_id,
-        records,
-        paper_uid_value=paper_uid_value,
-        layout=active_layout,
-    )
-    manifest.setdefault("artifacts", {})
-    manifest["paper_uid"] = paper_uid_value
-    manifest["artifacts"]["figures_dir"] = display_path(figures_dir, layout=active_layout)
-    manifest["artifacts"]["figures_manifest"] = display_path(manifest_path, layout=active_layout)
-    manifest.setdefault("stats", {})
-    manifest["stats"]["semantic_figure_count"] = len(records)
-    manifest["stats"]["semantic_figure_link_modes"] = {
-        mode: sum(1 for record in records if record["link_mode"] == mode)
-        for mode in sorted({record["link_mode"] for record in records})
-    }
-    manifest["stats"]["semantic_figure_reference_count"] = sum(record["reference_count"] for record in records)
-    manifest["stats"].update(summarize_figure_expectations(manifest.get("figure_expectations"), len(records)))
-    doc.close()
-    return manifest, len(records)
-
-
-def load_or_generate_ocr_records(
-    manifest: dict[str, Any],
-    doc: fitz.Document | None = None,
-    *,
-    layout: ProjectLayout | None = None,
-) -> list[dict[str, Any]]:
-    if doc is None:
-        source_pdf = resolve_manifest_pdf_path(manifest, layout=layout)
-        doc = open_pdf_with_diagnostics(
-            f"{manifest['id']} stage=figure-ocr-open",
-            source_pdf,
-            fitz_module=fitz,
-        )
-    with tempfile.TemporaryDirectory(prefix=f"{manifest['id']}-figure-ocr-") as temp_dir:
-        image_paths = render_pages_for_ocr(doc, Path(temp_dir))
-        try:
-            records = run_vision_ocr(image_paths)
-        except (FileNotFoundError, subprocess.CalledProcessError) as exc:
-            error_message = vision_ocr_error_message(exc)
-            manifest.setdefault("artifacts", {})
-            manifest["artifacts"]["figure_ocr"] = {
-                "status": "unavailable",
-                "tool": "vision_ocr",
-                "error": error_message,
-            }
-            manifest.setdefault("warnings", [])
-            warning = f"figure_ocr_unavailable: {error_message}"
-            if warning not in manifest["warnings"]:
-                manifest["warnings"].append(warning)
-            return []
         manifest.setdefault("artifacts", {})
-        manifest["artifacts"]["figure_ocr"] = {
-            "status": "completed",
-            "tool": "vision_ocr",
-            "page_count": len(image_paths),
+        manifest["paper_uid"] = paper_uid_value
+        manifest["artifacts"]["figures_dir"] = display_path(figures_dir, layout=active_layout)
+        manifest["artifacts"]["figures_manifest"] = display_path(manifest_path, layout=active_layout)
+        manifest.setdefault("stats", {})
+        manifest["stats"]["semantic_figure_count"] = len(records)
+        manifest["stats"]["semantic_figure_link_modes"] = {
+            mode: sum(1 for record in records if record["link_mode"] == mode)
+            for mode in sorted({record["link_mode"] for record in records})
         }
-        return records
+        manifest["stats"]["semantic_figure_reference_count"] = sum(record["reference_count"] for record in records)
+        manifest["stats"].update(summarize_figure_expectations(manifest.get("figure_expectations"), len(records)))
+        return manifest, len(records)
+    finally:
+        _close_document(doc)
 
 def main() -> int:
     layout = current_layout()

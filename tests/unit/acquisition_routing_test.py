@@ -70,7 +70,7 @@ class _FakeFitz:
 
 
 class AcquisitionRoutingTest(unittest.TestCase):
-    def test_routes_scan_first_for_image_heavy_pdf(self) -> None:
+    def test_routes_image_heavy_pdf_to_mathpix_assisted_priorities(self) -> None:
         pages = [
             _FakePage(
                 text="scanned page",
@@ -87,13 +87,11 @@ class AcquisitionRoutingTest(unittest.TestCase):
         signals = inspect_pdf_signals("/tmp/scan.pdf", load_fitz=lambda: _FakeFitz(_FakeDocument(pages)))
         decision = route_pdf_signals(signals)
 
-        self.assertEqual(decision.primary_route, "scan_or_image_heavy")
-        self.assertIn("ocrmypdf", decision.recommended_providers)
+        self.assertEqual(decision.layout_priority, ["docling", "mathpix"])
+        self.assertEqual(decision.math_priority, ["mathpix", "docling"])
         self.assertIn("image_heavy", decision.traits)
-        self.assertEqual(decision.ocr_prepass["policy"], "required")
-        self.assertTrue(decision.ocr_prepass["should_run"])
 
-    def test_routes_math_dense_for_born_digital_stem_pdf(self) -> None:
+    def test_routes_math_heavy_pdf_to_mathpix_math_priority(self) -> None:
         stem_text = (
             "Abstract\n"
             "We prove a theorem about x_{n+1} = x_n + 1 and E = mc^2. "
@@ -121,12 +119,11 @@ class AcquisitionRoutingTest(unittest.TestCase):
         signals = inspect_pdf_signals("/tmp/stem.pdf", load_fitz=lambda: _FakeFitz(_FakeDocument(pages)))
         decision = route_pdf_signals(signals)
 
-        self.assertEqual(decision.primary_route, "math_dense")
-        self.assertIn("mathpix", decision.recommended_providers)
+        self.assertEqual(decision.layout_priority, ["docling"])
+        self.assertEqual(decision.math_priority, ["mathpix", "docling"])
         self.assertIn("math_heavy", decision.traits)
-        self.assertEqual(decision.ocr_prepass["policy"], "skip")
 
-    def test_routes_layout_complex_for_two_column_pdf(self) -> None:
+    def test_routes_two_column_pdf_to_layout_assistance_priority(self) -> None:
         pages = [
             _FakePage(
                 text="two column content " * 80,
@@ -142,10 +139,8 @@ class AcquisitionRoutingTest(unittest.TestCase):
         signals = inspect_pdf_signals("/tmp/two-column.pdf", load_fitz=lambda: _FakeFitz(_FakeDocument(pages)))
         decision = route_pdf_signals(signals)
 
-        self.assertEqual(decision.primary_route, "layout_complex")
         self.assertIn("two_column", decision.traits)
-        self.assertIn("llamaparse", decision.recommended_providers)
-        self.assertEqual(decision.ocr_prepass["policy"], "skip")
+        self.assertEqual(decision.layout_priority, ["docling", "mathpix"])
 
 
 if __name__ == "__main__":

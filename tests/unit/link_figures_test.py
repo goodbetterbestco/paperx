@@ -1,5 +1,4 @@
 import json
-import subprocess
 import tempfile
 import sys
 import types
@@ -20,11 +19,7 @@ from pipeline.figures.linking import (
     choose_visual_region,
     caption_label,
     collect_references,
-    extract_ocr_caption_lines,
     extract_reference_labels,
-    group_ocr_lines,
-    load_or_generate_ocr_records,
-    merge_missing_caption_blocks,
     render_crop_if_missing,
     resolve_manifest_figures_dir,
     resolve_manifest_pdf_path,
@@ -181,24 +176,6 @@ class LinkFiguresTest(unittest.TestCase):
         labels = extract_reference_labels("See Figs. 2, 3a and B4.1 for the construction, then compare with Figure 7.")
 
         self.assertEqual(labels, {"2", "3a", "b4.1", "7"})
-
-    def test_merge_missing_caption_blocks_adds_only_new_caption_labels(self) -> None:
-        text_blocks = [
-            {"rect": _Rect(0, 10, 50, 20), "text": "Figure 1: Existing caption"},
-            {"rect": _Rect(0, 40, 50, 50), "text": "Body text that remains in place."},
-        ]
-        extra_caption_blocks = [
-            {"rect": _Rect(0, 5, 50, 15), "text": "Figure 1: OCR duplicate"},
-            {"rect": _Rect(0, 25, 50, 35), "text": "Figure 2: OCR-only caption"},
-        ]
-
-        merged = merge_missing_caption_blocks(text_blocks, extra_caption_blocks)
-
-        self.assertEqual([block["text"] for block in merged], [
-            "Figure 1: Existing caption",
-            "Figure 2: OCR-only caption",
-            "Body text that remains in place.",
-        ])
 
     def test_collect_references_returns_same_and_cross_page_mentions_without_duplicates(self) -> None:
         page_states = [
@@ -362,26 +339,6 @@ class LinkFiguresTest(unittest.TestCase):
             self.assertEqual(manifest["paper_uid"], paper_uid(paper_id))
             self.assertEqual(manifest["artifacts"]["figures_dir"], display_path(figures_dir, layout=layout))
 
-    def test_group_ocr_lines_merges_column_lines_and_extracts_unique_caption_lines(self) -> None:
-        page_rect = _Rect(0, 0, 200, 300)
-        grouped_lines = [
-            {"text": "Figure 2:", "bbox": {"x0": 0.10, "y0": 0.60, "x1": 0.40, "y1": 0.65}},
-            {"text": "Stable silhouette", "bbox": {"x0": 0.10, "y0": 0.66, "x1": 0.45, "y1": 0.71}},
-            {"text": "Body line one", "bbox": {"x0": 0.55, "y0": 0.20, "x1": 0.85, "y1": 0.24}},
-            {"text": "Body line two", "bbox": {"x0": 0.55, "y0": 0.25, "x1": 0.85, "y1": 0.29}},
-        ]
-        caption_lines = [*grouped_lines, {"text": "Figure 2:", "bbox": {"x0": 0.10, "y0": 0.60, "x1": 0.40, "y1": 0.65}}]
-
-        grouped = group_ocr_lines(grouped_lines, page_rect)
-        captions = extract_ocr_caption_lines(caption_lines, page_rect)
-
-        self.assertEqual(len(grouped), 2)
-        self.assertEqual(grouped[0]["text"], "Body line one Body line two")
-        self.assertEqual(grouped[1]["text"], "Figure 2: Stable silhouette")
-        self.assertEqual(len(captions), 1)
-        self.assertEqual(captions[0]["source"], "ocr_caption")
-        self.assertEqual(captions[0]["text"], "Figure 2:")
-
     def test_choose_visual_region_returns_column_gap_fallback_when_visuals_are_missing(self) -> None:
         page_rect = _Rect(0, 0, 200, 300)
         caption_block = {"rect": _Rect(20, 150, 80, 168), "text": "Figure 2: Caption"}
@@ -419,36 +376,6 @@ class LinkFiguresTest(unittest.TestCase):
         self.assertEqual(sources, ["drawing_rects"])
         self.assertGreaterEqual(rect.width, drawing_rect.width)
         self.assertGreaterEqual(rect.height, drawing_rect.height)
-
-    def test_load_or_generate_ocr_records_renders_pages_and_invokes_vision_ocr(self) -> None:
-        doc = _FakeDocument(_FakePage(_Rect(0, 0, 200, 300)))
-        manifest = {"id": "1990_synthetic_test_paper", "source_pdf": "ignored.pdf"}
-
-        with (
-            patch.object(linking, "render_pages_for_ocr", return_value=[Path("/tmp/page-001.png")]),
-            patch.object(linking, "run_vision_ocr", return_value=[{"lines": [{"text": "Figure 2"}]}]),
-        ):
-            records = load_or_generate_ocr_records(manifest, doc)
-
-        self.assertEqual(records, [{"lines": [{"text": "Figure 2"}]}])
-
-    def test_load_or_generate_ocr_records_falls_back_when_vision_ocr_is_unavailable(self) -> None:
-        doc = _FakeDocument(_FakePage(_Rect(0, 0, 200, 300)))
-        manifest = {"id": "1990_synthetic_test_paper", "source_pdf": "ignored.pdf"}
-
-        with (
-            patch.object(linking, "render_pages_for_ocr", return_value=[Path("/tmp/page-001.png")]),
-            patch.object(
-                linking,
-                "run_vision_ocr",
-                side_effect=subprocess.CalledProcessError(1, ["osascript"], stderr="Execution error: osascript unavailable"),
-            ),
-        ):
-            records = load_or_generate_ocr_records(manifest, doc)
-
-        self.assertEqual(records, [])
-        self.assertEqual(manifest["artifacts"]["figure_ocr"]["status"], "unavailable")
-        self.assertIn("figure_ocr_unavailable", manifest["warnings"][0])
 
 
 if __name__ == "__main__":

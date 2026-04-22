@@ -102,7 +102,6 @@ def build_metadata_for_paper(
     layout_engine: str,
     math_engine: str,
     figure_engine: str,
-    text_engine: str,
 ) -> dict[str, Any]:
     return {
         "created_at": timestamp,
@@ -113,7 +112,6 @@ def build_metadata_for_paper(
             "layout_engine": layout_engine,
             "math_engine": math_engine,
             "figure_engine": figure_engine,
-            "text_engine": text_engine,
         },
         "inputs": build_input_fingerprints(
             paper_id,

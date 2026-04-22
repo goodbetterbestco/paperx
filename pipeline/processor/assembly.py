@@ -253,12 +253,11 @@ def _sections_and_blocks(layout: dict[str, Any], abstract_text: str, references:
 def build_paper_state(
     paper_id: str,
     *,
-    text_engine: str = "native",
     config: PipelineConfig | None = None,
     state: PaperState | None = None,
     prepared_sources: dict[str, Any] | None = None,
 ) -> PaperState:
-    runtime_config = config or build_pipeline_config(text_engine=text_engine, include_review=False)
+    runtime_config = config or build_pipeline_config(include_review=False)
     paper_state = state or PaperState.begin(
         paper_id,
         config=runtime_config,
@@ -266,17 +265,24 @@ def build_paper_state(
     )
 
     if prepared_sources is None:
+        from pipeline.acquisition.routing import build_acquisition_route_report
         from pipeline.processor.sources import build_extraction_sources_for_paper, compose_external_sources
+
+        acquisition_route = build_acquisition_route_report(
+            paper_id,
+            layout=runtime_config.layout,
+        )
 
         docling_sources, mathpix_sources, _ = build_extraction_sources_for_paper(
             paper_id,
+            acquisition_route=acquisition_route,
             layout=runtime_config.layout,
         )
         prepared_sources = compose_external_sources(
             paper_id,
+            acquisition_route=acquisition_route,
             docling_sources=docling_sources,
             mathpix_sources=mathpix_sources,
-            layout=runtime_config.layout,
         )
 
     acquired_layout = dict(prepared_sources.get("final_layout") or {})
@@ -286,7 +292,6 @@ def build_paper_state(
     metadata_observation = dict(prepared_sources.get("metadata_observation") or {}) or None
     reference_observation = dict(prepared_sources.get("reference_observation") or {}) or None
     acquisition_route = dict(prepared_sources.get("acquisition_route_payload") or {})
-    source_scorecard = dict(prepared_sources.get("source_scorecard") or {})
     acquisition_execution = dict(prepared_sources.get("acquisition_execution") or {})
     layout_owner = str(prepared_sources.get("layout_owner", "") or "") or None
     math_owner = str(prepared_sources.get("math_owner", "") or "") or None
@@ -315,8 +320,9 @@ def build_paper_state(
     }
     decision_artifacts = {
         "acquisition": {
-            "route": acquisition_route.get("primary_route"),
             "traits": list(acquisition_route.get("traits", [])),
+            "layout_priority": list(acquisition_route.get("layout_priority", [])),
+            "math_priority": list(acquisition_route.get("math_priority", [])),
             "owners": {
                 "layout": layout_owner,
                 "math": math_owner,
@@ -326,7 +332,6 @@ def build_paper_state(
             "ownership": dict(acquisition_execution.get("ownership") or {}),
             "recovery": dict(acquisition_execution.get("recovery") or {}),
         },
-        "source_scorecard": source_scorecard,
     }
 
     paper_state.native_layout = acquired_layout
@@ -339,14 +344,12 @@ def build_paper_state(
     paper_state.reference_observation = reference_observation
     paper_state.figures = figures
     paper_state.acquisition_route = acquisition_route
-    paper_state.source_scorecard = source_scorecard
     paper_state.front_matter = front_matter
     paper_state.blocks = blocks
     paper_state.sections = sections
     paper_state.math_entries = list((external_math or {}).get("entries", []))
     paper_state.references = references
     paper_state.decision_artifacts = decision_artifacts
-    paper_state.effective_text_engine = text_engine
     paper_state.layout_engine_name = layout_owner or "none"
     paper_state.math_engine_name = math_owner or "none"
     paper_state.input_fingerprints = build_input_fingerprints(
@@ -365,7 +368,6 @@ def build_paper_state(
         timestamp=paper_state.started_at,
         layout_engine_name=paper_state.layout_engine_name,
         math_engine_name=paper_state.math_engine_name,
-        effective_text_engine=paper_state.effective_text_engine,
         front_matter=front_matter,
         sections=sections,
         blocks=blocks,

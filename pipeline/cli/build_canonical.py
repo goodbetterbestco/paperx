@@ -13,12 +13,6 @@ from pipeline.processor.paper import build_paper
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build canonical.json for a paper.")
     parser.add_argument("paper_id", help=f"Paper id in the configured layout ({CORPUS_DIR}).")
-    parser.add_argument(
-        "--text-engine",
-        choices=("native", "pdftotext", "hybrid"),
-        default="native",
-        help="Text extraction source for prose blocks.",
-    )
     parser.add_argument("--dry-run", action="store_true", help="Validate and summarize without writing the file.")
     parser.add_argument("--validate", action="store_true", help="Validate the output and exit.")
     return parser.parse_args()
@@ -38,7 +32,6 @@ def run_build_canonical(
     try:
         build = build_paper_fn(
             args.paper_id,
-            text_engine=args.text_engine,
             include_review=False,
             layout=layout,
         )

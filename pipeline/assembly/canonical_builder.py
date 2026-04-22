@@ -18,7 +18,6 @@ def build_canonical_document(
     timestamp: str,
     layout_engine_name: str,
     math_engine_name: str,
-    effective_text_engine: str,
     front_matter: dict[str, Any],
     sections: list[dict[str, Any]],
     blocks: list[dict[str, Any]],
@@ -43,7 +42,6 @@ def build_canonical_document(
             layout_engine=layout_engine_name,
             math_engine=math_engine_name,
             figure_engine="local",
-            text_engine=effective_text_engine,
         ),
         "front_matter": front_matter,
         "styles": {

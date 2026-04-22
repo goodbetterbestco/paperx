@@ -104,10 +104,10 @@ def validate_build(document: dict[str, Any]) -> None:
     _require(isinstance(build.get("builder_version"), str), "build.builder_version must be text")
     _require(isinstance(build.get("sources"), dict), "build.sources must be an object")
 
-    for key in ("native_pdf", "layout_engine", "math_engine", "figure_engine", "text_engine"):
+    for key in ("native_pdf", "layout_engine", "math_engine", "figure_engine"):
         _require(key in build["sources"], f"build.sources missing key: {key}")
     _require(isinstance(build["sources"].get("native_pdf"), bool), "build.sources.native_pdf must be boolean")
-    for key in ("layout_engine", "math_engine", "figure_engine", "text_engine"):
+    for key in ("layout_engine", "math_engine", "figure_engine"):
         _require(isinstance(build["sources"].get(key), str), f"build.sources.{key} must be text")
 
     if "inputs" in build:

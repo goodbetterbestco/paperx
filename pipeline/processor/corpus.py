@@ -8,13 +8,11 @@ from typing import Any, Callable
 from pipeline.acquisition.routing import build_acquisition_route_report
 from pipeline.corpus.state import cleanup_processed_runtime_artifacts
 from pipeline.corpus_layout import ProjectLayout
-from pipeline.processor.mathpix import MathpixCoordinator
 from pipeline.processor.quality import anomaly_flags as default_anomaly_flags
 from pipeline.processor.report import render_report
 from pipeline.processor.sources import (
     build_extraction_sources_for_paper,
     compose_external_sources,
-    mathpix_prefetch_allowed,
     write_canonical_outputs_for_run,
 )
 from pipeline.processor.status import (
@@ -29,8 +27,6 @@ from pipeline.processor.status import (
 from pipeline.processor.settings import (
     assert_mathpix_dns_available,
     mathpix_credentials_available,
-    mathpix_round_poll_seconds,
-    mathpix_submit_workers,
 )
 from pipeline.processor.paper import build_paper
 
@@ -71,7 +67,6 @@ def run_paper_job(
     paper_id: str,
     *,
     layout: ProjectLayout,
-    prefetched_mathpix_future: Future[dict[str, Any]] | None = None,
     now_iso_impl: Callable[[], str] | None = None,
     build_extraction_sources_for_paper_impl: Callable[..., tuple[dict[str, Any], dict[str, Any] | None, dict[str, float]]] | None = None,
     compose_external_sources_impl: Callable[..., dict[str, Any]] | None = None,
@@ -90,9 +85,12 @@ def run_paper_job(
     overall_started = time.perf_counter()
     paper_status: dict[str, Any] = {}
     try:
+        route_started = time.perf_counter()
+        acquisition_route = build_acquisition_route_report(paper_id, layout=layout)
+        timings["route_seconds"] = round(time.perf_counter() - route_started, 3)
         docling_sources, mathpix_sources, extraction_timings = build_extraction_sources_for_paper_impl(
             paper_id,
-            prefetched_mathpix_future=prefetched_mathpix_future,
+            acquisition_route=acquisition_route,
             layout=layout,
         )
         timings.update(extraction_timings)
@@ -100,21 +98,15 @@ def run_paper_job(
         compose_started = time.perf_counter()
         composed = compose_external_sources_impl(
             paper_id,
+            acquisition_route=acquisition_route,
             docling_sources=docling_sources,
             mathpix_sources=mathpix_sources,
-            layout=layout,
         )
         timings["compose_sources_seconds"] = round(time.perf_counter() - compose_started, 3)
 
         build_started = time.perf_counter()
-        preferred_text_engine = (
-            "hybrid"
-            if str(composed.get("acquisition_route") or "") in {"scan_or_image_heavy", "degraded_or_garbled"}
-            else "native"
-        )
         build_result = build_paper_impl(
             paper_id,
-            text_engine=preferred_text_engine,
             include_review=True,
             layout=layout,
             prepared_sources=composed,
@@ -188,40 +180,7 @@ def run_corpus_once(
     pending_papers = list(status.get("papers", []))
     active_jobs: dict[Future[dict[str, Any]], str] = {}
     next_index = 0
-    reported_processed = 0
-
-    def update_paper_status(paper_id: str, payload: dict[str, Any]) -> None:
-        paper_status = run_status.setdefault("papers", {}).setdefault(paper_id, {"status": "queued"})
-        for key, value in payload.items():
-            if key == "mathpix" and isinstance(value, dict):
-                existing = paper_status.setdefault("mathpix", {})
-                if isinstance(existing, dict):
-                    existing.update(value)
-                else:
-                    paper_status["mathpix"] = dict(value)
-            else:
-                paper_status[key] = value
-        save_status(status, runtime)
-
-    mathpix_prefetch_papers: set[str] = set()
-    mathpix_coordinator: MathpixCoordinator | None = None
-    use_mathpix = bool(mathpix_credentials_available() and len(pending_papers) > 1)
-    if use_mathpix:
-        mathpix_prefetch_papers = {
-            paper_id
-            for paper_id in pending_papers
-            if mathpix_prefetch_allowed(build_acquisition_route_report(paper_id, layout=layout))
-        }
-        use_mathpix = bool(mathpix_prefetch_papers)
-    if use_mathpix:
-        mathpix_coordinator = MathpixCoordinator(
-            sorted(mathpix_prefetch_papers),
-            submit_workers=mathpix_submit_workers(),
-            poll_seconds=mathpix_round_poll_seconds(),
-            status_callback=update_paper_status,
-            layout=layout,
-        )
-        mathpix_coordinator.start()
+    reported_snapshot: dict[str, int] | None = None
 
     def schedule_ready(executor: ThreadPoolExecutor) -> None:
         nonlocal next_index
@@ -231,30 +190,29 @@ def run_corpus_once(
             run_status["papers"].setdefault(paper_id, {}).update(
                 {"started_at": now_iso(), "status": "running"}
             )
-            submit_kwargs: dict[str, Any] = {"layout": layout}
-            if mathpix_coordinator is not None and paper_id in mathpix_prefetch_papers:
-                submit_kwargs["prefetched_mathpix_future"] = mathpix_coordinator.future_for(paper_id)
-            active_jobs[executor.submit(run_paper_job_impl, paper_id, **submit_kwargs)] = paper_id
+            active_jobs[executor.submit(run_paper_job_impl, paper_id, layout=layout)] = paper_id
             save_status(status, runtime)
 
-    try:
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+    def maybe_report_progress() -> None:
+        nonlocal reported_snapshot
+        if progress_callback is None:
+            return
+        snapshot = _progress_snapshot(pending_papers, run_status)
+        if snapshot != reported_snapshot:
+            reported_snapshot = dict(snapshot)
+            progress_callback(snapshot)
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        schedule_ready(executor)
+        maybe_report_progress()
+        while active_jobs:
+            done, _ = wait(tuple(active_jobs.keys()), return_when=FIRST_COMPLETED)
+            for future in done:
+                paper_id = active_jobs.pop(future)
+                run_status["papers"].setdefault(paper_id, {}).update(future.result())
+                save_status(status, runtime)
             schedule_ready(executor)
-            while active_jobs:
-                done, _ = wait(tuple(active_jobs.keys()), return_when=FIRST_COMPLETED)
-                for future in done:
-                    paper_id = active_jobs.pop(future)
-                    run_status["papers"].setdefault(paper_id, {}).update(future.result())
-                    save_status(status, runtime)
-                schedule_ready(executor)
-                if progress_callback is not None:
-                    snapshot = _progress_snapshot(pending_papers, run_status)
-                    if snapshot["processed"] > reported_processed:
-                        reported_processed = snapshot["processed"]
-                        progress_callback(snapshot)
-    finally:
-        if mathpix_coordinator is not None:
-            mathpix_coordinator.close()
+            maybe_report_progress()
 
     run_status["completed_at"] = now_iso()
     save_status(status, runtime)
@@ -280,8 +238,8 @@ def process_corpus(
         "Processing uses Docling for layout and Mathpix for math when credentials are available.",
         "Temporary process files use the system temp area and are not retained as repo artifacts.",
         f"Configured worker concurrency: {max_workers}.",
-        "Each paper is processed once from its PDF into canonical output and figures.",
-        "Mathpix uses whole-PDF coordination when multiple papers are pending and credentials are available.",
+        "Each paper is routed once, then processed from its PDF into canonical output and figures.",
+        "Mathpix runs only within eligible paper jobs; there is no corpus-wide routing barrier before processing starts.",
     ]
     save_status(status, runtime)
 

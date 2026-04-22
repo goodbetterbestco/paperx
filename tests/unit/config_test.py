@@ -37,22 +37,18 @@ class PipelineConfigTest(unittest.TestCase):
                     "STEPVIEW_DOCLING_DEVICE": "cpu",
                 },
                 clear=False,
-            ),
-            patch("pipeline.config.shutil.which", return_value="/usr/bin/pdftotext"),
+            )
         ):
             config = build_pipeline_config(
                 layout=layout,
-                text_engine="hybrid",
                 include_review=False,
             )
 
         self.assertEqual(config.layout, layout)
-        self.assertEqual(config.text_engine, "hybrid")
         self.assertFalse(config.include_review)
         self.assertEqual(config.docling_bin, Path("/tmp/docling").resolve())
         self.assertEqual(config.docling_device, "cpu")
         self.assertTrue(config.mathpix_enabled)
-        self.assertTrue(config.pdftotext_enabled)
 
 
 if __name__ == "__main__":

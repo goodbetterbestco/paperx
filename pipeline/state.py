@@ -25,7 +25,6 @@ class PaperState:
     reference_observation: dict[str, Any] | None = None
     figures: list[dict[str, Any]] = field(default_factory=list)
     acquisition_route: dict[str, Any] | None = None
-    source_scorecard: dict[str, Any] | None = None
 
     records: list[dict[str, Any]] = field(default_factory=list)
     layout_by_id: dict[str, Any] = field(default_factory=dict)
@@ -45,7 +44,6 @@ class PaperState:
     decision_artifacts: dict[str, Any] = field(default_factory=dict)
 
     document: dict[str, Any] | None = None
-    effective_text_engine: str = "native_pdf"
     layout_engine_name: str = "native_pdf"
     math_engine_name: str = "heuristic"
     notes: list[str] = field(default_factory=list)

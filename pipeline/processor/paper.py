@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from pipeline.config import PipelineConfig, TextEngine, build_pipeline_config
+from pipeline.config import PipelineConfig, build_pipeline_config
 from pipeline.corpus_layout import ProjectLayout, current_layout
 from pipeline.processor.assembly import build_paper_state
 from pipeline.state import PaperState
@@ -25,7 +25,6 @@ class PaperBuildResult:
 def build_paper(
     paper_id: str,
     *,
-    text_engine: TextEngine = "native",
     include_review: bool = False,
     layout: ProjectLayout | None = None,
     state: PaperState | None = None,
@@ -34,12 +33,10 @@ def build_paper(
     active_layout = layout or current_layout()
     config = build_pipeline_config(
         layout=active_layout,
-        text_engine=text_engine,
         include_review=include_review,
     )
     paper_state = build_paper_state(
         paper_id,
-        text_engine=text_engine,
         config=config,
         state=state,
         prepared_sources=prepared_sources,
